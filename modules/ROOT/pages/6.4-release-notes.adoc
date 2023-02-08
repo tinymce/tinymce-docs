@@ -1,0 +1,482 @@
+= TinyMCE 6.4
+:navtitle: TinyMCE 6.4
+:description: Release notes for TinyMCE 6.4
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+[[overview]]
+== Overview
+
+{productname} 6.4 was released for {enterpriseversion} and {cloudname} on Wednesday, March 15^th^, 2023. It includes {productname} 6.4, additional changes to Premium plugins, and a new Premium plugin, Advanced Template. These release notes provide an overview of the changes for {productname} 6.4:
+
+* xref:new-premium-plugin[New Premium plugin]
+* xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
+* xref:accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
+* xref:improvement[Improvement]
+* xref:additions[Additions]
+* xref:changes[Changes]
+* xref:bug-fixes[Bug fixes]
+// * xref:security-fixes[Security fixes] -- leave until closer to 2023-03-15 and remove or make visible as appropriate.
+// * xref:known-issues[Known issues] -- leave until closer to 2023-03-15 and remove or make visible as appropriate.
+// NB: edit the equivalent section of nav.adoc when the remove or make visible decision is made.
+
+[[new-premium-plugin]]
+== New Premium plugin
+
+=== Advanced Template 1.0.0
+
+
+
+[[accompanying-premium-plugin-changes]]
+== Accompanying Premium Plugin changes
+
+The following premium plugin updates were released alongside {productname} 6.4.
+
+=== <premium-plugin-name-1> <premium-plugin-name-1-version-number>
+
+The {productname} 6.4 release includes an accompanying release of the **<premium-plugin-name-1>** premium plugin.
+
+**<premium-plugin-name-1>** 3.1.0 includes the following fixes, additions, and improvements.
+
+==== <premium-plugin-name-1> fix, addition or improvement 1
+
+
+
+==== <premium-plugin-name-1> fix, addition or improvement 2
+
+
+
+==== <premium-plugin-name-1> fix, addition or improvement 3
+
+
+
+==== <premium-plugin-name-1> fix, addition or improvement 4
+
+
+
+==== <premium-plugin-name-1> fix, addition or improvement 5
+
+
+For information on the **<premium-plugin-name-1>** plugin, see: xref:<premium-plugin-file-name-1>.adoc[<premium-plugin-name-1>].
+
+
+
+=== <premium-plugin-name-2> <premium-plugin-name-2-version-number>
+
+The {productname} 6.4 release includes an accompanying release of the **<premium-plugin-name-2>** premium plugin.
+
+**<premium-plugin-name-2>** 3.1.0 includes the following fixes, additions, and improvements.
+
+==== <premium-plugin-name-2> fix, addition or improvement 1
+
+
+
+==== <premium-plugin-name-2> fix, addition or improvement 2
+
+
+
+==== <premium-plugin-name-2> fix, addition or improvement 3
+
+
+
+==== <premium-plugin-name-2> fix, addition or improvement 4
+
+
+
+==== <premium-plugin-name-2> fix, addition or improvement 5
+
+
+For information on the **<premium-plugin-name-2>** plugin, see: xref:<premium-plugin-file-name-2>.adoc[<premium-plugin-name-2>].
+
+
+
+=== <premium-plugin-name-3> <premium-plugin-name-3-version-number>
+
+The {productname} 6.4 release includes an accompanying release of the **<premium-plugin-name-3>** premium plugin.
+
+**<premium-plugin-name-3>** 3.1.0 includes the following fixes, additions, and improvements.
+
+==== <premium-plugin-name-3> fix, addition or improvement 1
+
+
+
+==== <premium-plugin-name-3> fix, addition or improvement 2
+
+
+
+==== <premium-plugin-name-3> fix, addition or improvement 3
+
+
+
+==== <premium-plugin-name-3> fix, addition or improvement 4
+
+
+
+==== <premium-plugin-name-3> fix, addition or improvement 5
+
+
+For information on the **<premium-plugin-name-3>** plugin, see: xref:<premium-plugin-file-name-3>.adoc[<premium-plugin-name-3>].
+
+
+=== <premium-plugin-name-4> <premium-plugin-name-4-version-number>
+
+The {productname} 6.4 release includes an accompanying release of the **<premium-plugin-name-4>** premium plugin.
+
+**<premium-plugin-name-4>** 3.1.0 includes the following fixes, additions, and improvements.
+
+==== <premium-plugin-name-4> fix, addition or improvement 1
+
+
+
+==== <premium-plugin-name-4> fix, addition or improvement 2
+
+
+
+==== <premium-plugin-name-4> fix, addition or improvement 3
+
+
+
+==== <premium-plugin-name-4> fix, addition or improvement 4
+
+
+
+==== <premium-plugin-name-4> fix, addition or improvement 5
+
+
+For information on the **<premium-plugin-name-4>** plugin, see: xref:<premium-plugin-file-name-4>.adoc[<premium-plugin-name-4>].
+
+
+=== <premium-plugin-name-5> <premium-plugin-name-5-version-number>
+
+The {productname} 6.4 release includes an accompanying release of the **<premium-plugin-name-5>** premium plugin.
+
+**<premium-plugin-name-5>** 3.1.0 includes the following fixes, additions, and improvements.
+
+==== <premium-plugin-name-5> fix, addition or improvement 1
+
+
+
+==== <premium-plugin-name-5> fix, addition or improvement 2
+
+
+
+==== <premium-plugin-name-5> fix, addition or improvement 3
+
+
+
+==== <premium-plugin-name-5> fix, addition or improvement 4
+
+
+
+==== <premium-plugin-name-5> fix, addition or improvement 5
+
+
+For information on the **<premium-plugin-name-5>** plugin, see: xref:<premium-plugin-file-name-5>.adoc[<premium-plugin-name-5>].
+
+
+
+[[accompanying-premium-skins-and-icon-packs-changes]]
+== Accompanying Premium Skins and Icon Packs changes
+
+The {productname} 6.4 release includes an accompanying release of the **Premium Skins and Icon Packs**.
+
+=== Premium Skins and Icon Packs
+
+The **Premium Skins and Icon Packs** release includes the following updates:
+
+The **Premium Skins and Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} 6.4 skin, Oxide.
+
+For information on using premium skins and icon packs, see: xref:premium-skins-and-icons.adoc[Premium Skins and Icon Packs].
+
+
+[[improvement]]
+== Improvement
+
+{productname} 6.4 also includes the following improvement:
+
+=== Direct invalid child text nodes of list elements will be wrapped in list item elements.
+
+// https://ephocks.atlassian.net/browse/TINY-4818
+// Cause, Consequence, Change, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+[[additions]]
+== Additions
+
+{productname} 6.4 also includes the following additions:
+
+=== renderUI property in the Theme type can now return a Promise <RenderResult> instead of RenderResult
+
+// https://ephocks.atlassian.net/browse/TINY-9556
+// Cause, Consequence, Change, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== New isEditable API to editor.selection that returns true or false if the current selection is editable
+
+// https://ephocks.atlassian.net/browse/TINY-9462
+// Cause, Consequence, Change, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== New isEditable API to editor.dom that returns true or false if the specified node is editable
+
+// https://ephocks.atlassian.net/browse/TINY-9462
+// Cause, Consequence, Change, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== New setText and setIcon methods added to menu button and toolbar button apis
+
+// https://ephocks.atlassian.net/browse/TINY-9268
+// Cause, Consequence, Change, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== New highlight_on_focus option which enables highlighting the content area on focus
+
+// https://ephocks.atlassian.net/browse/TINY-9277
+// Cause, Consequence, Change, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== New fontsizeinput toolbar item which allows the user to set the size via input and also increase and decrease it with + and - buttons
+
+// https://ephocks.atlassian.net/browse/TINY-9429
+// Cause, Consequence, Change, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+[[changes]]
+== Changes
+
+{productname} 6.4 also incorporates the following changes:
+
+=== The link plugins context menu items will no longer appear for noneditable links
+
+// https://ephocks.atlassian.net/browse/TINY-9491
+// Cause, Consequence, Change, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== The formatting of contenteditable="false" elements are no longer cloned to new cells while creating new table rows
+
+// https://ephocks.atlassian.net/browse/TINY-9449
+// Cause, Consequence, Change, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Changed the color of @dialog-table-border-color, and added right padding to the first cell of dialog table
+
+// https://ephocks.atlassian.net/browse/TINY-9380
+// Cause, Consequence, Change, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+
+
+[[bug-fixes]]
+== Bug fixes
+
+{productname} 6.4 also includes the following bug fixes:
+
+=== Sometimes the editor would finish initializing before the silver theme would have finished loading
+
+// https://ephocks.atlassian.net/browse/TINY-9556
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== The searchreplace modal would close incorrectly when clicking outside of the alert that pops up when no match is found
+
+// https://ephocks.atlassian.net/browse/TINY-9443
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Color picker on toolbar would not update when changing forecolor or backcolor from menu
+
+// https://ephocks.atlassian.net/browse/TINY-9439
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== The onSetup api function would not run when defining custom group toolbar button
+
+// https://ephocks.atlassian.net/browse/TINY-9496
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== An element could be dropped onto the decendants of a noneditable element
+
+// https://ephocks.atlassian.net/browse/TINY-9364
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Checkmark did not show in menu colorswatches
+
+// https://ephocks.atlassian.net/browse/TINY-9395
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Toolbar split buttons in advlist plugin to show the correct state when the cursor is in a checklist
+
+// https://ephocks.atlassian.net/browse/TINY-5167
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Dragging transparent elements into transparent blocks elements could produce invalid nesting of transparents
+
+// https://ephocks.atlassian.net/browse/TINY-9231
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== The editor.insertContent API would insert contents inside noneditable elements if the selection was inside the element
+
+// https://ephocks.atlassian.net/browse/TINY-9462
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Closing a dialog would scroll down the document in Safari
+
+// https://ephocks.atlassian.net/browse/TINY-9148
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Quick toolbars were incorrectly rendered during the dragging of contenteditable="false" elements
+
+// https://ephocks.atlassian.net/browse/TINY-9305
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Selection of images, hrs, tables or noneditable elements was possible if they were within a noneditable element
+
+// https://ephocks.atlassian.net/browse/TINY-9473
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Ranged deletion of formatted text using selection or keyboard shortcut would sometimes cause Blink and Webkit browsers to insert interpreted tags upon typing, which may result in inconsistent tags
+
+// https://ephocks.atlassian.net/browse/TINY-9302
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Visual characters were rendered inside noneditable elements
+
+// https://ephocks.atlassian.net/browse/TINY-9474
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Removed a workaround for ensuring stylesheets are loaded in an outdated version of webkit
+
+// https://ephocks.atlassian.net/browse/TINY-9433
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Lists in a noneditable root were incorrectly editable using list API commands, toolbar buttons and menu items
+
+// https://ephocks.atlassian.net/browse/TINY-9458
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Color picker dialog would not update the preview color if the hex input value was prefixed with # symbol
+
+// https://ephocks.atlassian.net/browse/TINY-9457
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Table cell selection was possible even if the element was in a noneditable root element
+
+// https://ephocks.atlassian.net/browse/TINY-9459
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Table commands were modifying tables in a noneditable root element
+
+// https://ephocks.atlassian.net/browse/TINY-9459
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Fake carets were rendered for noneditable elements and tables in a noneditable root element
+
+// https://ephocks.atlassian.net/browse/TINY-9459
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Textareas with scrollbars in dialogs would not render rounded corners correctly on some browsers
+
+// https://ephocks.atlassian.net/browse/TINY-9331
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== It was possible to open links inside the editor if the editor root was noneditable
+
+// https://ephocks.atlassian.net/browse/TINY-9470
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Inline boundary was rendered for noneditable inline boundary elements
+
+// https://ephocks.atlassian.net/browse/TINY-9471
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Clicking on a disabled split button will no longer call the onAction callback
+
+// https://ephocks.atlassian.net/browse/TINY-9504
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== The "Edit Link" dialog incorrectly retrieved the URL value when opened immediately after the link insertion
+
+// https://ephocks.atlassian.net/browse/TINY-7993
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
+
+////
+
+// No security issues as of 2023-02-09
+//
+// Leave this comment block in place until closer to 2023-03-15 and remove or make visible as appropriate.
+
+[[security-fixes]]
+== Security fixes
+
+{productname} 6.4 includes a fix for the following security issue:
+
+No security issues as of 2023-02-09
+
+Leave this comment block in place until closer to 2023-03-15 and remove or make visible as appropriate.
+
+////
+
+
+////
+
+// No known issues as of 2023-02-09
+//
+// Leave this comment block in place until closer to 2023-03-15 and remove or make visible as appropriate.
+
+[[known-issues]]
+== Known issues
+
+This section describes issues that users of {productname} 6.4 may encounter and possible workarounds for these issues.
+
+There are several known issues in {productname} 6.4.
+
+=== known issue 1
+
+
+
+=== known issue 2
+
+
+
+=== known issue 3
+
+
+
+=== known issue 4
+
+
+
+=== known issue 5
+
+
+
+////

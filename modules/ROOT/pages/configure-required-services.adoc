@@ -88,7 +88,7 @@ ephox {
 
 The `+*+` wildcard character matches any value. Wildcards are supported in the following parts of entries in the `+allowed-origin+` list:
 
-. As a prefix of the domain (e.g. `+*.mydomain.com+`).
+. As a prefix of the domain (e.g. `+*.example.com+`).
 . As the only character (e.g. `+*+`). This will allow *any* Origin to access the server-side components.
 
 NOTE: Option 2 allows a broad set of origins access to the server-side components and is NOT recommended for production deployments.

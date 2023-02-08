@@ -11,7 +11,7 @@ The {pluginname} plugin cannot work with images from another domain due to secur
 
 An array of supported domains for the images (with CORS enabled on them) can be supplied to {productname} via the `{plugincode}_cors_hosts` option.
 
-NOTE: Each string in the array _must_ be in the format of `+mydomain.com+`. Do not include protocols (`+http://, https://+`) or any trailing slashes in your domains.
+NOTE: Each string in the array _must_ be in the format of `+example.com+`. Do not include protocols (for example, `+http://, https://+`) or any trailing slashes in your domains.
 
 NOTE: `{plugincode}_cors_hosts` is *not* required when enabling this plugin via xref:editor-and-features.adoc[{cloudname}].
 
@@ -27,6 +27,6 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   toolbar: '{plugincode}',
   plugins: 'image {plugincode}',
-  {plugincode}_cors_hosts: [ 'mydomain.com', 'otherdomain.com' ]
+  {plugincode}_cors_hosts: [ 'example.com', 'example.net' ]
 });
 ----

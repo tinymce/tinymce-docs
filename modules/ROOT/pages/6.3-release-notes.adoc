@@ -243,13 +243,13 @@ NOTE: Some non-ASCII characters or Unicode codepoints count as more than one cha
 For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
 
 
-=== Spellchecker Pro 3.1.1
+=== Spell Checker Pro 3.1.1
 
-The {productname} 6.3 release includes an accompanying release of the **Spellchecker Pro** premium plugin.
+The {productname} 6.3 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
 
-**Spellchecker Pro** 3.1.1 includes one fix:
+**Spell Checker Pro** 3.1.1 includes one fix:
 
-==== Spellchecker Pro could search outside of the {productname} editor for a language match
+==== Spell Checker Pro could search outside of the {productname} editor for a language match
 
 For spelling, a word’s language was identified by finding the nearest `lang` attribute anywhere in an ancestor HTML element to the word (ie, any elements that contain the word). 
 
@@ -259,7 +259,7 @@ If a `lang` attribute existed anywhere in that ancestry, this ancestral `lang` a
 
 As of {productname} 6.3, the `lang` attribute inherits the default settings for the {productname} editor body. As a consequence, the editor no longer searches elements external to the editor body when searching for `lang` attributes.
 
-For information on the **Spellchecker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spellchecker Pro].
+For information on the **Spell Checker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro].
 
 === Spelling Autocorrect 1.0.1
 
@@ -599,6 +599,27 @@ In previous versions of {productname}, when running on Firefox and after pressin
 
 This error has been corrected in {productname} 6.3. When running {productname} 6.3 on Firefox and creating a merge tag using `mceInsertContent`, pressing Enter or Return to generate the desired merge tag moves the insertion point to the end of said newly-created merge tag, as expected.
 
+=== The `autoresize` plugin caused the editor area to infinitely resize when `content_css` was set to `document`
+
+The `document` skin’s CSS aligns the bottom of the content area to the bottom of the editor, but does not set anything for `autoresize_bottom_margin`. As a consequence the {productname} editor takes the default value for this attribute: 50.
+
+Simulaneously, everytime the `resize` function calculated the editor size it added this `autoresize_bottom_margin` value.
+
+Since, however, the aligning CSS sets the bottom of the content area to a value incrementally less than the `autoresize_bottom_margin` value, the `resize` function went into a loop.
+
+Consequently, and as per the example below, if a {productname} instance was setup with the xref:autoresize.adoc[Autoresize] plugin active and `content_css` set to `document`, the editor increased its height indefinitely.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'autoresize',
+  content_css: 'document',
+});
+----
+
+With this update, {productname} now checkes for the `resize` function going into a loop. And, if it does so, the function treats the margin bottom as always 0 instead of the `autoresize_bottom_margin` value. This changes the `min-height` of HTML and Body and prevents the infinite resizing.
+
 
 [[security-fixes]]
 == Security fixes
@@ -614,6 +635,10 @@ As a consequence, plugins that used the alert or confirm dialogs could be used t
 As of {productname} 6.3, HTML being provided to the DOM for presentation in {productname} alert and confirm dialogs is now sanitized before being added.
 
 This sanitizing closes the XSS vulnerability.
+
+CVE: https://www.cve.org/CVERecord?id=CVE-2022-23494[CVE-2022-23494].
+
+NOTE: Tiny Technologies would like to thank https://p4rkjw.com/[P4rkJW] for discovering this vulnerability.
 
 [[known-issues]]
 == Known issues

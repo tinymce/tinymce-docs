@@ -63,6 +63,11 @@ A numeric and alpha value series are available by default. The available value s
 
 image::advtable-row-numbering.png[Table with numeric row numbering column and row numbering menu open (Numeric item checked)]
 
+A commonly desired customisation of the row-numbering column is that a table’s header and footer rows not be included in the numbering.
+
+This can be done using the xref:advtable_value_series[`+advtable_value_series+` option] to specify a custom generator.
+
+
 == Options
 
 The following configuration options affect the behavior of the {pluginname} plugin.

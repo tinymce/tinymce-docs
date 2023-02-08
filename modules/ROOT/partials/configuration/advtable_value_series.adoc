@@ -111,3 +111,41 @@ tinymce.init({
   }
 });
 ----
+
+=== Example: using a custom generator to exclude header and footer rows from row numbering
+
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",  // change this value according to your html
+  plugins: 'table advtable',
+  toolbar: "table advtablerownumbering",
+  advtable_value_series: {
+    numbers: {
+      update: true,
+      resizable: false,
+      generator: function(info, rowIndex, colIndex) {
+        var prevCount = info.prev ? info.prev.count : 0;
+        if (info.sectionType === 'tbody' && info.cellType === 'td') {
+          var newCount = prevCount + 1;
+          return {
+            value: newCount,
+            count: newCount
+          };
+        } else {
+          return {
+            count: prevCount
+          };
+        }
+      }
+    }
+  }
+});
+----
+
+With this custom generator, when a table with a header and footer row already set has row numbers added via the `advtablerownumbering` toolbar item, row numbers are not added to the header and footer rows.
+
+image::advtable-row-numbered-table-with-un-numbered-header-and-footer-rows.png[Row-numbered table with un-numbered header and footer rows]
+
+NOTE: This simple custom generator is a demonstration. It has limitations. Perhaps most significant, it requires the header and footer rows be set _before_ row numbers are added to a table. If row numbers are added and then a header row, or a footer row, or both, are set, this generator will _not_ remove existing row numbers from the now-set header and footer rows.
+

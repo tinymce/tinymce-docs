@@ -140,7 +140,7 @@ The following events are provided by the {productname} editor.
 |PreProcess |`+{ node: Element, format: string }+` |Fired before serializing a DOM node to HTML content.
 |PostProcess |`+{ node: Element, format: string }+` |Fired after serializing a DOM node to HTML content.
 |SetAttrib |`+{ attrElm: Element, attrName: string, attrValue: string }+` |Fired when an attribute is updated using the editor xref:apis/tinymce.dom.domutils.adoc[DOMUtils API].
-|ResizeEditor |N/A |Fired when the editor is resized, either by the resize handles or the auto-resize plugin.
+|ResizeEditor |N/A |Fired when the editor is resized, either by the resize handles or the auto-resize plugin. In {productname} 6.1 and later, this event is also fired when fullscreen mode is toggled. Toggling fullscreen mode requires the xref:fullscreen.adoc[`fullscreen`] plugin to be enabled.
 |SkinLoaded |N/A |Fired when the editor skin has been loaded.
 |SkinLoadError |`+{ message: string }+` |Fired when the editor skin fails to load.
 |ThemeLoadError |`+{ message: string }+` |Fired when the editor theme fails to load.

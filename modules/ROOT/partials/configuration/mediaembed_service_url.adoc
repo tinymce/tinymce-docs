@@ -12,6 +12,6 @@ This option specifies the URL to the service that will handle your requests and 
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   plugins: 'media mediaembed',
-  mediaembed_service_url: 'http://mydomain.com/mediaembed_service'
+  mediaembed_service_url: 'http://example.com/mediaembed_service'
 });
 ----

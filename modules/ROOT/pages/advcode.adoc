@@ -34,6 +34,8 @@ tinymce.init({
 });
 ----
 
+include::partial$configuration/advcode.adoc[]
+
 include::partial$misc/advcode-shortcuts.adoc[]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]

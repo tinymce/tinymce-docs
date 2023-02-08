@@ -50,7 +50,7 @@ Each rule has a severity level, which will be one of the following, listed in or
 [[D1]]
 === D1 - Usage of paragraphs as headings
 
-*Rule description:* This rule checks that `+h1+`-`+h6+` tags are used for heading content, not `+p+` tags. Not using correct heading markup will make it difficult for assistive technologies to represent and navigate through your content.
+*Rule description:* this rule checks that `+h1+`-`+h6+` tags are used for heading content, not `+p+` tags. Not using correct heading markup will make it difficult for assistive technologies to represent and navigate through your content.
 
 ==== {pluginname} rule details - D1
 
@@ -68,7 +68,7 @@ WCAG 2.1 specifications::
 [[D2]]
 === D2 - Sequential headings
 
-*Rule description:* This rule checks that headings tags are used sequentially.
+*Rule description:* this rule checks that headings tags are used sequentially.
 
 For example: A `+h1+` heading should be followed by a `+h2+` heading, not a `+h3+` heading. Using sequential headings will make it easier for assistive technology to parse your content.
 
@@ -85,7 +85,7 @@ WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/general/G141.h
 [[D3]]
 === D3 - Adjacent links
 
-*Rule description:* This rule checks that links next to other links do not have the same `+href+` attribute.
+*Rule description:* this rule checks that links next to other links do not have the same `+href+` attribute.
 
 For example: If an image link and a text link have the same `+href+` attribute, both elements should be in the same `+a+` element. If an image link and a text link point to the same URL but are two separate elements, it can be confusing for users of screen readers and other assistive technologies.
 
@@ -102,7 +102,7 @@ WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H2.html[H
 [[D4O]]
 === D4O - Ordered list structure
 
-*Rule description:* This rule checks that an `+ol+` element is used for ordered lists. Do not use paragraphs beginning with numbers or roman numerals instead of an `+ol+` element containing `+li+` items. This is to simplify navigation and parsing of the content for users of assistive technologies.
+*Rule description:* this rule checks that an `+ol+` element is used for ordered lists. Do not use paragraphs beginning with numbers or roman numerals instead of an `+ol+` element containing `+li+` items. This is to simplify navigation and parsing of the content for users of assistive technologies.
 
 ==== {pluginname} rule details - D4O
 
@@ -117,7 +117,7 @@ WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H48.html[
 [[D4U]]
 === D4U - Unordered list structure
 
-*Rule description:* This rule checks that a `+ul+` element is used for unordered lists. Do not use paragraphs beginning with `+*+` or `+-+` or some similar character instead of an `+ol+` element containing `+li+` items. This is to simplify navigation and parsing of the content for users of assistive technologies.
+*Rule description:* this rule checks that a `+ul+` element is used for unordered lists. Do not use paragraphs beginning with `+*+` or `+-+` or some similar character instead of an `+ol+` element containing `+li+` items. This is to simplify navigation and parsing of the content for users of assistive technologies.
 
 ==== {pluginname} rule details - D4U
 
@@ -132,7 +132,7 @@ WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H48.html[
 [[D5]]
 === D5 - Contrast ratio of the text (D5A, D5B, and D5C)
 
-*Rule description:* This rule checks that the contrast ratio of the text is above the following values:
+*Rule description:* this rule checks that the contrast ratio of the text is above the following values:
 
 * When the compliance level is set to AA,
 ** 4.5:1 for normal text
@@ -178,7 +178,7 @@ WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/general/G17.ht
 [[H93]]
 === H93 - IDs must be unique
 
-*Rule description:* This rule checks that all `+id+` attributes are unique in the editor. Duplicate `+id+` attributes are known to cause problems for assistive technologies when parsing the content.
+*Rule description:* this rule checks that all `+id+` attributes are unique in the editor. Duplicate `+id+` attributes are known to cause problems for assistive technologies when parsing the content.
 
 ==== {pluginname} rule details - H93
 
@@ -193,7 +193,7 @@ WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H93.html[
 [[I1]]
 === I1 - Image `+alt+` text
 
-*Rule description:* This rule checks that all images have alternative (`+alt+`) text for screen readers and other assistive technologies.
+*Rule description:* this rule checks that all images have alternative (`+alt+`) text for screen readers and other assistive technologies.
 
 ==== {pluginname} rule details - I1
 
@@ -205,10 +205,12 @@ xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
 
 WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html[G95 - Providing short text alternatives that provide a brief description of the non-text content].
 
+include::partial$misc/admon-accessibility-rule-i3-can-also-be-applied.adoc[]
+
 [[I2]]
 === I2 - Image `+alt+` text is not the image filename
 
-*Rule description:* This rule checks that the `+alt+` attribute text of the image is not the same as the filename of the image.
+*Rule description:* this rule checks that the `+alt+` attribute text of the image is not the same as the filename of the image.
 
 ==== {pluginname} rule details - I2
 
@@ -220,10 +222,32 @@ xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
 
 WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html[G95 - Providing short text alternatives that provide a brief description of the non-text content].
 
+include::partial$misc/admon-accessibility-rule-i3-can-also-be-applied.adoc[]
+
+[[I3]]
+=== I3 - Image `+alt+` text is not greater than 100 characters
+
+*Rule description:* this rule checks that the `+alt+` attribute text of the image is not more than 100 characters.
+
+An _Image alternative text should be less than 100 characters_ warning dialog presents if the alternative (`+alt+`) text is longer than 100 characters. This dialog also presents the alternative text in an editable field, for immediate repair.
+
+==== {pluginname} rule details - I3
+
+Notification level (severity):: Warning
+
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
+
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
+
+WCAG 2.1 specification:: n/a.
+
+include::partial$misc/admon-requires-6.3v.adoc[]
+
+
 [[T1]]
 === T1 - Table caption
 
-*Rule description:* This rule checks that all `+table+` elements have a `+caption+` element describing the data inside the table to simplify parsing and navigation of the content for users of assistive technologies.
+*Rule description:* this rule checks that all `+table+` elements have a `+caption+` element describing the data inside the table to simplify parsing and navigation of the content for users of assistive technologies.
 
 ==== {pluginname} rule details - T1
 
@@ -238,7 +262,7 @@ WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H39.html[
 [[T2]]
 === T2 - Complex table summary
 
-*Rule description:* This rule checks that all complex tables must have a `+summary+` attribute explaining to users of assistive technologies how to navigate through the data inside of the table.
+*Rule description:* this rule checks that all complex tables must have a `+summary+` attribute explaining to users of assistive technologies how to navigate through the data inside of the table.
 
 NOTE: This rule only applies to HTML 4 content and is not checked when `+a11ychecker_html_version+` is set to `+html5+`.
 
@@ -255,7 +279,7 @@ WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H73.html[
 [[T3]]
 === T3 - Table caption and summary
 
-*Rule description:* This rule checks that the table caption and summary does not have the same text content. The caption should explain *what* the table is about while the summary should explain *how* to navigate the data inside of the table.
+*Rule description:* this rule checks that the table caption and summary does not have the same text content. The caption should explain *what* the table is about while the summary should explain *how* to navigate the data inside of the table.
 
 NOTE: The table `+summary+` attribute was deprecated in HTML 5, both the *what* and *how* information should be moved to the table caption.
 
@@ -272,7 +296,7 @@ WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H73.html[
 [[T4A]]
 === T4A - Table markup
 
-*Rule description:* This rule checks that all `+tables+` contain both `+td+` and `+th+` elements.
+*Rule description:* this rule checks that all `+tables+` contain both `+td+` and `+th+` elements.
 
 ==== {pluginname} rule details - T4A
 
@@ -287,7 +311,7 @@ WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H51.html[
 [[T4B]]
 === T4B - Table headers
 
-*Rule description:* This rule checks that all `+table+` elements contain at least one table header (`+th+`) element.
+*Rule description:* this rule checks that all `+table+` elements contain at least one table header (`+th+`) element.
 
 ==== {pluginname} rule details - T4B
 
@@ -302,7 +326,7 @@ WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H51.html[
 [[T4C]]
 === T4C - Table heading scope
 
-*Rule description:* This rule checks that all table header (`+th+`) elements have a `+scope+` attribute clarifying what scope the heading has inside of the `+table+`. The allowed values are `+row+`, `+col+`, `+rowgroup+`, and `+colgroup+`. This is important for users of assistive technologies to be able to parse table data.
+*Rule description:* this rule checks that all table header (`+th+`) elements have a `+scope+` attribute clarifying what scope the heading has inside of the `+table+`. The allowed values are `+row+`, `+col+`, `+rowgroup+`, and `+colgroup+`. This is important for users of assistive technologies to be able to parse table data.
 
 ==== {pluginname} rule details - T4C
 
@@ -395,7 +419,7 @@ The `+'issue'+` object provides relevant data pertaining to any issue generated 
 
 * `+description+` : `+String+` description of the issue; as will be displayed in the dialog.
 
-* `+severity+` : `+String+` severity level of the issue; either `+info+`, `+warning+`, or `+error+`.
+* `+severity+` : `+String+` severity level of the issue; either `+info+`, `+warning+` or `+error+`.
 
 * `+url+` : `+String+` URL reference for the issue. By default, this will be a link to the W3 website, containing the W3 WCAG technique that needs to be addressed to clear the issue.
 

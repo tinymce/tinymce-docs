@@ -51,7 +51,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'export',
   toolbar: 'export',
-  export_image_proxy_service_url: 'http://mydomain.com/imageproxy' // Required for rendering remote images
+  export_image_proxy_service_url: 'http://example.com/imageproxy' // Required for rendering remote images
 });
 ----
 

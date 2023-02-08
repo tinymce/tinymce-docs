@@ -199,7 +199,15 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === Direct invalid child text nodes of list elements will be wrapped in list item elements.
 
 // https://ephocks.atlassian.net/browse/TINY-4818
-// Cause, Consequence, Change, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+Invalid child nodes were throwing a `Uncaught TypeError:` when `<ol>` tags directly included a text node.
+//2. Consequence - What happens when the bug presents.
+The `TypeError` would not allow the user to `Tab` a text node while nested within `<ol>/<li>` *HTML* tags.
+//3. Fix - What was done to fix the bug.
+Improvements were made to add a content filter for lists within {productname} 6.4. This improvement meant that any _invalid child nodes_ nested within `<li>` elements would be wrapped with this filter to avoid the `Uncaught TypeError:`.
+//4. Result - What now happens when the actions or circumstances above occur.
+//NB: this is not the same as the bug doesn't present anymore.
+In {productname} 6.4, direct _invalid child text nodes_ of list elements are now wrapped in list item elements, which allow the user to now `Tab` nested text nodes that are within `<ol>/<li>` tags.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
@@ -285,7 +293,18 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === The searchreplace modal would close incorrectly when clicking outside of the alert that pops up when no match is found
 
 // https://ephocks.atlassian.net/browse/TINY-9443
-// Cause, Consequence, Fix, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+In previous versions of {productname}, the searchreplace modal would close incorrectly when clicking outside of the alert dialog.
+
+//2. Consequence - What happens when the bug presents.
+The expexted behaviour in previous versions was that an error dialog would open when **no <string> match** was found within the {productname} editor viewport. The identifying issue found was when the user would `click` outside of the error dialog, resulting in the `Find and Replace` modal to closes incorrectly.
+
+//3. Fix - What was done to fix the bug.
+In {productname} 6.4, when a **no <string> match** occurs within the {productname} editor viewport, an error banner will render in the `Find and Replace` modal beneith the (Replace with) field.
+
+//4. Result - What now happens when the actions or circumstances above occur.
+//NB: this is not the same as the bug doesn't present anymore.
+As a result the when the instance occurs where **no <string> match** is triggered, the user will be prompted with the following warning: *`Could not find the specified string`*.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Color picker on toolbar would not update when changing forecolor or backcolor from menu
@@ -321,7 +340,15 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === Dragging transparent elements into transparent blocks elements could produce invalid nesting of transparents
 
 // https://ephocks.atlassian.net/browse/TINY-9231
-// Cause, Consequence, Fix, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+Dragging or dropping block `links` into other `links` was producing invalid nesting of other transparents such as `anchors`.
+//2. Consequence - What happens when the bug presents.
+As a result, these transparent elements would produce `anchor` tags within other `anchor` tags, which is not a general practice. As an example `links` and `anchors` that are defined to an element, must not be nested within or contain any other element and vice versa.
+//3. Fix - What was done to fix the bug.
+Changes were implemented in {productname} 6.4 to fix this issue to ensure that any invalid child anchor elements that try to reproduce this action are unwrapped when the editor verifies another transparent has been dropped into another transparent (anchor) element.
+//4. Result - What now happens when the actions or circumstances above occur.
+//NB: this is not the same as the bug doesn't present anymore.
+In {productname} 6.4, dragging content such as `links` into other `links` will now produce *valid* HTML `output` after a drag operation occurs which will be consistent across all browsers.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === The editor.insertContent API would insert contents inside noneditable elements if the selection was inside the element
@@ -333,7 +360,15 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === Closing a dialog would scroll down the document in Safari
 
 // https://ephocks.atlassian.net/browse/TINY-9148
-// Cause, Consequence, Fix, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+While using previous versions of {productname}, `clicking` away to dismiss the *Search* and *Replace* dialog within Safari would scroll the page to the bottom of the editor.
+//2. Consequence - What happens when the bug presents.
+As a result the user would have to manually scroll back to the original `focus` area each time the steps above were executed.
+//3. Fix - What was done to fix the bug.
+To correct this issue, a new Css.set was implemented to keep the `focus` on the DOM container in the initial scroll document position. 
+//4. Result - What now happens when the actions or circumstances above occur.
+//NB: this is not the same as the bug doesn't present anymore.
+In {productname} 6.4, when the user `clicks` away to dismiss the *Search* and *Replace* dialog within Safari, the focus now returns to the editor and the scroll does not change position within the editor.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Quick toolbars were incorrectly rendered during the dragging of contenteditable="false" elements
@@ -345,7 +380,22 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === Selection of images, hrs, tables or noneditable elements was possible if they were within a noneditable element
 
 // https://ephocks.atlassian.net/browse/TINY-9473
-// Cause, Consequence, Fix, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+In previous versions of {productname}, elements that were nested within another `noneditable` element such as a element set with a `contenteditable="false"` attribute, was avoiding the `noneditables` guidelines set.
+//2. Consequence - What happens when the bug presents.
+As a consequence, selection of images, hrs, tables or noneditable elements was possible if they were nested within a noneditable element.
+//3. Fix - What was done to fix the bug.
+Improvements were made to the `SelectionOverride` to now check if the DOM parent node is either set as an `editable` or `noneditable` element.
+//4. Result - What now happens when the actions or circumstances above occur.
+//NB: this is not the same as the bug doesn't present anymore.
+In {productname} 6.4, elements with contenteditable="false" attributes can no longer be selected when they are children of another contenteditable="false" attribute, such as:
+
+.Example of `noneditables`
+[source,HTML]
+----
+<div contenteditable="false">noneditables div text</div>
+<div>editable div text</div>
+----
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Ranged deletion of formatted text using selection or keyboard shortcut would sometimes cause Blink and Webkit browsers to insert interpreted tags upon typing, which may result in inconsistent tags
@@ -363,13 +413,29 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === Removed a workaround for ensuring stylesheets are loaded in an outdated version of webkit
 
 // https://ephocks.atlassian.net/browse/TINY-9433
-// Cause, Consequence, Fix, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+In certain webkit browsers the onload event wasn't supported due to an old `bug` within {productname}. A workaround was implemented that manually checked that `stylesheets` were being loaded rather than relying on the event being triggered.
+//2. Consequence - What happens when the bug presents.
+Due to this `bug`, a fixed was applied to the onload event, to ensure that it is now supported by webkit.
+//3. Fix - What was done to fix the bug.
+The previous workaround has now been removed and replaced with the native browser event.
+//4. Result - What now happens when the actions or circumstances above occur.
+//NB: this is not the same as the bug doesn't present anymore.
+In {productname} 6.4, the onload event `error` that stopped stylesheets to load have now been fixed with the new native browser implementation.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Lists in a noneditable root were incorrectly editable using list API commands, toolbar buttons and menu items
 
 // https://ephocks.atlassian.net/browse/TINY-9458
-// Cause, Consequence, Fix, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+In previous versions of {productname}, a bug was found that affected the `lists` and `advlist` plugins when the {productname} editor body was set to `contentEditable = 'false'`.
+//2. Consequence - What happens when the bug presents.
+The consequence meant that `lists` that were *noneditable* could be *edited* using list API commands, toolbar buttons and menu items.
+//3. Fix - What was done to fix the bug.
+The fix involved implementing a new process to  check the element conditions.  The check now looks to  identify if the `lists` or `advlists` in the DOM are set to be either `contentEditable = 'false'` or `contentEditable = 'true'.
+//4. Result - What now happens when the actions or circumstances above occur.
+//NB: this is not the same as the bug doesn't present anymore.
+As a result, in {productname} 6.4, `lists` and `advlist` plugins that are set as `contentEditable = 'false'` elements will no longer be *editable* using list API commands, toolbar buttons and menu items.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Color picker dialog would not update the preview color if the hex input value was prefixed with # symbol
@@ -405,25 +471,79 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === It was possible to open links inside the editor if the editor root was noneditable
 
 // https://ephocks.atlassian.net/browse/TINY-9470
-// Cause, Consequence, Fix, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+Setting the `contentEditable` property to the editor root to `false` such as the below example, would result in `noneditable` elements like `links` could be navigable.
+
+[source, js]
+----
+setup: (editor) => {
+    editor.on('preinit', () => {
+        editor.getBody().contentEditable = false;
+    })
+}
+----
+//2. Consequence - What happens when the bug presents.
+As a result, links could be opened within the `iframe` element.
+//3. Fix - What was done to fix the bug.
+In {productname} 6.4, links can no longer be navigable by clicking on them while they are inside a `noneditable` root, after a blocker was implemented to avoid this event `action`.
+//4. Result - What now happens when the actions or circumstances above occur.
+//NB: this is not the same as the bug doesn't present anymore.
+{productname} 6.4, all links in a `noneditable` behave as expected.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Inline boundary was rendered for noneditable inline boundary elements
 
 // https://ephocks.atlassian.net/browse/TINY-9471
-// Cause, Consequence, Fix, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+Inline boundaries for noneditable elements were rendering styling in previous versions of {productname} 6.4 after the user `selected` before and after the noneditable elements node.
+//2. Consequence - What happens when the bug presents.
+The expected behaviour is that noneditable elements should *not* have inline boundaries when a caret is inside an noneditable anchor or root.
+//3. Fix - What was done to fix the bug.
+Added a predicate check for inline boundaries before they render, and additional tests for `selections` for some special cases surrounding particular noneditable elements.
+//4. Result - What now happens when the actions or circumstances above occur.
+//NB: this is not the same as the bug doesn't present anymore.
+In {productname} 6.4, it is now not possible to highlight inline boundary elements that are classified as a `noneditable` content element.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Clicking on a disabled split button will no longer call the onAction callback
 
 // https://ephocks.atlassian.net/browse/TINY-9504
-// Cause, Consequence, Fix, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+A bug was found in versions of {productname} prior to the 6.4 release, that would call the `onAction` callback for *split buttons* regardless of the action being `disabled`.
+//2. Consequence - What happens when the bug presents.
+This meant it was possible for the user to emit the `onAction` call wether or not the `disable` function was enabled or not.
+//3. Fix - What was done to fix the bug.
+As a fix to the issue, {productname} 6.4 introduced a new conditional check to identify *if* the button is `enabled` or `disabled`. If the button is set to `enabled` then {productname} executes the secondary check, which will identify wether or not the button is a *split button*.  Split buttons are classified as “special buttons”,  as they are unique and require both `advlists` and `dropdowns` to function, this makes them more complex than traditional buttons.
+//4. Result - What now happens when the actions or circumstances above occur.
+//NB: this is not the same as the bug doesn't present anymore.
+In {productname} 6.4, clicking on a disabled split button won't call the `onAction` callback anymore.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === The "Edit Link" dialog incorrectly retrieved the URL value when opened immediately after the link insertion
 
 // https://ephocks.atlassian.net/browse/TINY-7993
-// Cause, Consequence, Fix, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+A bug was found within the context menu and dialog when inserting `links` in previous versions of {productname}.
+//2. Consequence - What happens when the bug presents.
+The issue resulted in the `open link` being deactivated within the context menu and dialog when the user would execute a specific chain of clicks. Such as:
+
+.Example
+====
+. Opening the editor
+. Type “test1 test2 test3” into the editor
+. Double click to select “test2”
+. Use the context menu to insert a new link over the text “test2”
+. Add a valid URL
+. Press `Enter`
+. Without taking any other action, right click on “test2”
+
+In this example the bug would deactivate the `open link` button within the context menu and dialog, which removes the users ability to reopen the “open link” dialog.
+====
+//3. Fix - What was done to fix the bug.
+The fix now allows all 3 link-plugins to work within the context menu items.
+//4. Result - What now happens when the actions or circumstances above occur.
+//NB: this is not the same as the bug doesn't present anymore.
+In {productname} 6.4, when the user executes right `mouse click` on the link selection immediately after attaching a link to a `<string>`, the link-plugins now work as expected.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 

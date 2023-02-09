@@ -197,7 +197,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 {productname} 6.4 also includes the following improvement:
 
 === Direct invalid child text nodes of list elements will be wrapped in list item elements.
-
+// @bforte @KKS waiting on TINY-9589 to be merged for confirmation of adding this.
 // https://ephocks.atlassian.net/browse/TINY-4818
 //1. Cause - What actions or circumstances cause this bug to present.
 Invalid child nodes were throwing a `Uncaught TypeError:` when `<ol>` tags directly included a text node.
@@ -210,6 +210,53 @@ Improvements were made to add a content filter for lists within {productname} 6.
 In {productname} 6.4, direct _invalid child text nodes_ of list elements are now wrapped in list item elements, which allow the user to now `Tab` nested text nodes that are within `<ol>/<li>` tags.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
+=== Opening the toolbar drawer steals focus even if skip_focus is set
+// @bforte @KKS waiting on TINY-9589 to be merged for confirmation of adding this.
+//https://ephocks.atlassian.net/browse/TINY-9337		
+//
+//1. Cause - What actions or circumstances cause this bug to present.
+A focusing event that was in the initial *FloatingToolbarButton* config, in previous versions of {productname} in (2019) was causing `focus` issues with the *ToggleToolbarDrawer*.
+//2. Consequence - What happens when the bug presents.
+As a consequence, this meant that while the editor was been scrolled into `focus`(viewport position), and the *ToggleToolbarDrawer* command `skipFocus: 'boolean' ` was set, the toolbar draw could still take `focus` when It was not meant to.
+//3. Fix - What was done to fix the bug.
+In {productname} 6.4, the focusing `event` was removed after toggling the toolbar.
+
+//4. Result - What now happens when the actions or circumstances above occur.
+//NB: this is not the same as the bug doesn't present anymore.
+As a result to the fix, while the *FloatingToolbarButton* `focus` is initiated, the toolbar now focuses correctly without stealing `focus` when `skipFocus: 'boolean' is set.
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Add Typography to the default menubar config
+// @bforte @KKS waiting on TINY-9589 to be merged for confirmation of adding this.
+//https://ephocks.atlassian.net/browse/TINY-9450		
+//
+//1. Cause - What actions or circumstances cause this bug to present.
+In previous versions of {productname}, the typography button would *not* appear in the `menubar` by default.
+//2. Consequence - What happens when the bug presents.
+As a consequence, the user could only `find` the typography button in the `toolbar` due to it not appearing in the `menubar` dropdown.
+//3. Fix - What was done to fix the bug.
+To correct this bug, the typography plugin was added to the default `menubar` config.
+//4. Result - What now happens when the actions or circumstances above occur.
+//NB: this is not the same as the bug doesn't present anymore.
+{productname} 6.4, by default, will now display the typography button in both the `toolbar` and below the “Source code" button in the `menubar`.
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Fix removing spaces between exclamation marks ! !
+// @bforte @KKS waiting on TINY-9589 to be merged for confirmation of adding this.
+//https://ephocks.atlassian.net/browse/TINY-9398		
+//
+//1. Cause - What actions or circumstances cause this bug to present.
+A issue was discovered that affected the typography plugin in previous versions of {productname} that was associated with inserting content into the editor, but specifically *exclamation marks* and the spaces between them. Such as: `“Hello! !“`
+//2. Consequence - What happens when the bug presents.
+This issue meant that the editor would not remove the spaces between the double *exclamation marks* `! <space>!` after the typography plugin `toolbar` or `menubar` button was executed.
+//3. Fix - What was done to fix the bug.
+The fix for this involved adding a new rule which removes the spaces between exclamation marks when the typography button is pressed.
+//4. Result - What now happens when the actions or circumstances above occur.
+//NB: this is not the same as the bug doesn't present anymore.
+In {productname} 6.4, spaces are now removed between exclamation marks `!!` for formatted HTML documents when the typography plugin is used.
+
+Read more about xref:advanced-typography.adoc[Advanced Typography] and how you can add this new premium plugin to your project.
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 [[additions]]
 == Additions
@@ -219,37 +266,79 @@ In {productname} 6.4, direct _invalid child text nodes_ of list elements are now
 === renderUI property in the Theme type can now return a Promise <RenderResult> instead of RenderResult
 
 // https://ephocks.atlassian.net/browse/TINY-9556
-// Cause, Consequence, Change, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+
+//2. Consequence - What happens when the bug presents.
+
+//3. Fix - What was done to fix the bug.
+
+//4. Result - What now happens when the actions or circumstances above occur.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === New isEditable API to editor.selection that returns true or false if the current selection is editable
 
 // https://ephocks.atlassian.net/browse/TINY-9462
-// Cause, Consequence, Change, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+
+//2. Consequence - What happens when the bug presents.
+
+//3. Fix - What was done to fix the bug.
+
+//4. Result - What now happens when the actions or circumstances above occur.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === New isEditable API to editor.dom that returns true or false if the specified node is editable
 
 // https://ephocks.atlassian.net/browse/TINY-9462
-// Cause, Consequence, Change, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+
+//2. Consequence - What happens when the bug presents.
+
+//3. Fix - What was done to fix the bug.
+
+//4. Result - What now happens when the actions or circumstances above occur.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === New setText and setIcon methods added to menu button and toolbar button apis
 
 // https://ephocks.atlassian.net/browse/TINY-9268
-// Cause, Consequence, Change, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+
+//2. Consequence - What happens when the bug presents.
+
+//3. Fix - What was done to fix the bug.
+
+//4. Result - What now happens when the actions or circumstances above occur.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === New highlight_on_focus option which enables highlighting the content area on focus
 
 // https://ephocks.atlassian.net/browse/TINY-9277
-// Cause, Consequence, Change, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+
+//2. Consequence - What happens when the bug presents.
+
+//3. Fix - What was done to fix the bug.
+
+//4. Result - What now happens when the actions or circumstances above occur.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === New fontsizeinput toolbar item which allows the user to set the size via input and also increase and decrease it with + and - buttons
 
 // https://ephocks.atlassian.net/browse/TINY-9429
-// Cause, Consequence, Change, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+
+//2. Consequence - What happens when the bug presents.
+
+//3. Fix - What was done to fix the bug.
+
+//4. Result - What now happens when the actions or circumstances above occur.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
@@ -261,19 +350,40 @@ In {productname} 6.4, direct _invalid child text nodes_ of list elements are now
 === The link plugins context menu items will no longer appear for noneditable links
 
 // https://ephocks.atlassian.net/browse/TINY-9491
-// Cause, Consequence, Change, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+
+//2. Consequence - What happens when the bug presents.
+
+//3. Fix - What was done to fix the bug.
+
+//4. Result - What now happens when the actions or circumstances above occur.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === The formatting of contenteditable="false" elements are no longer cloned to new cells while creating new table rows
 
 // https://ephocks.atlassian.net/browse/TINY-9449
-// Cause, Consequence, Change, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+
+//2. Consequence - What happens when the bug presents.
+
+//3. Fix - What was done to fix the bug.
+
+//4. Result - What now happens when the actions or circumstances above occur.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Changed the color of @dialog-table-border-color, and added right padding to the first cell of dialog table
 
 // https://ephocks.atlassian.net/browse/TINY-9380
-// Cause, Consequence, Change, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+
+//2. Consequence - What happens when the bug presents.
+
+//3. Fix - What was done to fix the bug.
+
+//4. Result - What now happens when the actions or circumstances above occur.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
@@ -285,9 +395,16 @@ In {productname} 6.4, direct _invalid child text nodes_ of list elements are now
 {productname} 6.4 also includes the following bug fixes:
 
 === Sometimes the editor would finish initializing before the silver theme would have finished loading
-
+// Waiting for QA_Verified
 // https://ephocks.atlassian.net/browse/TINY-9556
-// Cause, Consequence, Fix, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+
+//2. Consequence - What happens when the bug presents.
+
+//3. Fix - What was done to fix the bug.
+
+//4. Result - What now happens when the actions or circumstances above occur.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === The searchreplace modal would close incorrectly when clicking outside of the alert that pops up when no match is found
@@ -295,13 +412,10 @@ In {productname} 6.4, direct _invalid child text nodes_ of list elements are now
 // https://ephocks.atlassian.net/browse/TINY-9443
 //1. Cause - What actions or circumstances cause this bug to present.
 In previous versions of {productname}, the searchreplace modal would close incorrectly when clicking outside of the alert dialog.
-
 //2. Consequence - What happens when the bug presents.
 The expexted behaviour in previous versions was that an error dialog would open when **no <string> match** was found within the {productname} editor viewport. The identifying issue found was when the user would `click` outside of the error dialog, resulting in the `Find and Replace` modal to closes incorrectly.
-
 //3. Fix - What was done to fix the bug.
 In {productname} 6.4, when a **no <string> match** occurs within the {productname} editor viewport, an error banner will render in the `Find and Replace` modal beneith the (Replace with) field.
-
 //4. Result - What now happens when the actions or circumstances above occur.
 //NB: this is not the same as the bug doesn't present anymore.
 As a result the when the instance occurs where **no <string> match** is triggered, the user will be prompted with the following warning: *`Could not find the specified string`*.
@@ -310,31 +424,67 @@ As a result the when the instance occurs where **no <string> match** is triggere
 === Color picker on toolbar would not update when changing forecolor or backcolor from menu
 
 // https://ephocks.atlassian.net/browse/TINY-9439
-// Cause, Consequence, Fix, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+In {productname} 6.3, when the https://www.tiny.cloud/docs/tinymce/6/6.3-release-notes/#new-color_map_foreground-and-color_map_background-options-store-custom-colors-selected-using-the-text-color-and-background-color-menus[new color map] was introduced, a regression was found that affected the UI for *Color Swatch*.
+//2. Consequence - What happens when the bug presents.
+A regression was found, that meant the colors would not display the (tick) inside the color palette to reflect the selected `color_map_foreground` and `color_map_background` stored.
+//3. Fix - What was done to fix the bug.
+To correct this {productname}, added a register that would store the `last color` for each  specific `node | cell` that will hold this `value` for the color picker pallette.
+//4. Result - What now happens when the actions or circumstances above occur.
+In {productname} 6.4, when the color picker in the `toolbar` is updated when changing either the `forecolor` or `backcolor` from the `menubar`.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === The onSetup api function would not run when defining custom group toolbar button
 
 // https://ephocks.atlassian.net/browse/TINY-9496
-// Cause, Consequence, Fix, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+A bug was discovered that affected the custom group toolbar button `config` in {productname}, due to a missing `Event Behaviour`.
+//2. Consequence - What happens when the bug presents.
+As a consequence, the `onSetup` api function would not run as intended when defining a custom group toolbar `button`, resulting in the `console` returning `blank`.
+//3. Fix - What was done to fix the bug.
+In {productname} 6.4, this bug was fixed by adding a `Event Behaviour` to the toolbar group button that now calls the `api` as intended.
+//4. Result - What now happens when the actions or circumstances above occur.
+As a result, the `onSetup` function for custom group toolbar buttons now runs correctly in {productname} 6.4.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === An element could be dropped onto the decendants of a noneditable element
 
 // https://ephocks.atlassian.net/browse/TINY-9364
-// Cause, Consequence, Fix, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+In {productname} 6.0, the drag and drop `config` did not check some conditions surrounding element placements using either a grag or drop action. 
+//2. Consequence - What happens when the bug presents.
+This affected users running {productname} 6.0, which would affectivly allow decendants of *noneditable elements* to be dropped into another *noneditable element*.
+//3. Fix - What was done to fix the bug.
+Fixes were made to ensure that `dragging | dropping` onto *noneditable element* targets on all browsers is `disabled`. This also includes when the drop target cursor is inside the contenteditable element, or just before it.
+//4. Result - What now happens when the actions or circumstances above occur.
+In {productname} 6.4, now prevents the user from having the ability to drag and drop any descendants of a `contenteditable=false element` within another *noneditable element*.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Checkmark did not show in menu colorswatches
 
 // https://ephocks.atlassian.net/browse/TINY-9395
-// Cause, Consequence, Fix, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+
+//2. Consequence - What happens when the bug presents.
+
+//3. Fix - What was done to fix the bug.
+
+//4. Result - What now happens when the actions or circumstances above occur.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Toolbar split buttons in advlist plugin to show the correct state when the cursor is in a checklist
 
 // https://ephocks.atlassian.net/browse/TINY-5167
-// Cause, Consequence, Fix, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+
+//2. Consequence - What happens when the bug presents.
+
+//3. Fix - What was done to fix the bug.
+
+//4. Result - What now happens when the actions or circumstances above occur.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Dragging transparent elements into transparent blocks elements could produce invalid nesting of transparents
@@ -354,7 +504,14 @@ In {productname} 6.4, dragging content such as `links` into other `links` will n
 === The editor.insertContent API would insert contents inside noneditable elements if the selection was inside the element
 
 // https://ephocks.atlassian.net/browse/TINY-9462
-// Cause, Consequence, Fix, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+
+//2. Consequence - What happens when the bug presents.
+
+//3. Fix - What was done to fix the bug.
+
+//4. Result - What now happens when the actions or circumstances above occur.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Closing a dialog would scroll down the document in Safari
@@ -374,7 +531,14 @@ In {productname} 6.4, when the user `clicks` away to dismiss the *Search* and *R
 === Quick toolbars were incorrectly rendered during the dragging of contenteditable="false" elements
 
 // https://ephocks.atlassian.net/browse/TINY-9305
-// Cause, Consequence, Fix, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+
+//2. Consequence - What happens when the bug presents.
+
+//3. Fix - What was done to fix the bug.
+
+//4. Result - What now happens when the actions or circumstances above occur.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Selection of images, hrs, tables or noneditable elements was possible if they were within a noneditable element
@@ -401,13 +565,27 @@ In {productname} 6.4, elements with contenteditable="false" attributes can no lo
 === Ranged deletion of formatted text using selection or keyboard shortcut would sometimes cause Blink and Webkit browsers to insert interpreted tags upon typing, which may result in inconsistent tags
 
 // https://ephocks.atlassian.net/browse/TINY-9302
-// Cause, Consequence, Fix, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+
+//2. Consequence - What happens when the bug presents.
+
+//3. Fix - What was done to fix the bug.
+
+//4. Result - What now happens when the actions or circumstances above occur.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Visual characters were rendered inside noneditable elements
 
 // https://ephocks.atlassian.net/browse/TINY-9474
-// Cause, Consequence, Fix, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+
+//2. Consequence - What happens when the bug presents.
+
+//3. Fix - What was done to fix the bug.
+
+//4. Result - What now happens when the actions or circumstances above occur.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Removed a workaround for ensuring stylesheets are loaded in an outdated version of webkit
@@ -441,31 +619,66 @@ As a result, in {productname} 6.4, `lists` and `advlist` plugins that are set as
 === Color picker dialog would not update the preview color if the hex input value was prefixed with # symbol
 
 // https://ephocks.atlassian.net/browse/TINY-9457
-// Cause, Consequence, Fix, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+
+//2. Consequence - What happens when the bug presents.
+
+//3. Fix - What was done to fix the bug.
+
+//4. Result - What now happens when the actions or circumstances above occur.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Table cell selection was possible even if the element was in a noneditable root element
 
 // https://ephocks.atlassian.net/browse/TINY-9459
-// Cause, Consequence, Fix, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+
+//2. Consequence - What happens when the bug presents.
+
+//3. Fix - What was done to fix the bug.
+
+//4. Result - What now happens when the actions or circumstances above occur.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Table commands were modifying tables in a noneditable root element
 
 // https://ephocks.atlassian.net/browse/TINY-9459
-// Cause, Consequence, Fix, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+
+//2. Consequence - What happens when the bug presents.
+
+//3. Fix - What was done to fix the bug.
+
+//4. Result - What now happens when the actions or circumstances above occur.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Fake carets were rendered for noneditable elements and tables in a noneditable root element
 
 // https://ephocks.atlassian.net/browse/TINY-9459
-// Cause, Consequence, Fix, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+
+//2. Consequence - What happens when the bug presents.
+
+//3. Fix - What was done to fix the bug.
+
+//4. Result - What now happens when the actions or circumstances above occur.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Textareas with scrollbars in dialogs would not render rounded corners correctly on some browsers
 
 // https://ephocks.atlassian.net/browse/TINY-9331
-// Cause, Consequence, Fix, Result
+//1. Cause - What actions or circumstances cause this bug to present.
+
+//2. Consequence - What happens when the bug presents.
+
+//3. Fix - What was done to fix the bug.
+
+//4. Result - What now happens when the actions or circumstances above occur.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === It was possible to open links inside the editor if the editor root was noneditable
@@ -546,7 +759,39 @@ The fix now allows all 3 link-plugins to work within the context menu items.
 In {productname} 6.4, when the user executes right `mouse click` on the link selection immediately after attaching a link to a `<string>`, the link-plugins now work as expected.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
+=== Creating a list in a table cell when the caret is in front of an anchor element would not properly include the anchor in the list.
+// @bforte @KKS waiting on TINY-9589 to be merged for confirmation of adding this.	
+//https://ephocks.atlassian.net/browse/TINY-6853
+//
+//1. Cause - What actions or circumstances cause this bug to present.
+In previous versions of {productname}, a bug was causing issues with `links` while they were nested within table-cells.
+//2. Consequence - What happens when the bug presents.
+As a consequence, it was found that when creating a `num-list` or `bullet-list` to the left (node) of a `link` that was nested within a table cell the `list` would *not* include the created `link` within the `num or bullet-list` as expected. 
+//3. Fix - What was done to fix the bug.
+To fix this bug, the table cell now checks *If* the caret position is in front of an *anchor element*, `if` (true), then the table cell will include the anchor in the `list`.
+//4. Result - What now happens when the actions or circumstances above occur.
+//NB: this is not the same as the bug doesn't present anymore.
+In {productname} 6.4, anchor elements are included inside `lists` while nested within table cells.
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
+=== Fixed the space between a comma and a quote in typography.
+// @bforte @KKS waiting on TINY-9589 to be merged for confirmation of adding this.
+//https://ephocks.atlassian.net/browse/TINY-9442
+//
+//1. Cause - What actions or circumstances cause this bug to present.
+After {productname} introduced the `Smart Typography` plugin, a bug was discovered that was causing a `space` to be introduced between a `comma` and a closing `double-quote` mark. Such as in the below example.
+
+.Example
+> “They went that way,[space introduced here] ” he said as he pointed.
+
+//2. Consequence - What happens when the bug presents.
+As displayed in the above example, a unintentional/redundant `space` was inserted into a seperate node position without intention.
+//3. Fix - What was done to fix the bug.
+{productname} fixed the issue by switching the sequence of executing `safe` and `unsafe` rules surrounding *Typography*.
+//4. Result - What now happens when the actions or circumstances above occur.
+//NB: this is not the same as the bug doesn't present anymore.
+In {productname} 6.4, the `Smart Typography` plugin, no longer creates a `space` between a `comma` and a closing `double-quote` mark.
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 ////
 

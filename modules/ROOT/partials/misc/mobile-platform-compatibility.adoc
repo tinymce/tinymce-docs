@@ -1,30 +1,20 @@
 == Supported Mobile Platforms
 
-{productname} mobile is tested against, and is designed to run on the following mobile operating system and browser combinations:
+{productname} mobile is tested against, and is designed to run on, the default browser running on a currently vendor-supported version of both Android and iOS.
 
 [cols="1,1",options="header"]
 |===
-|Operating System |Browser
+|Operating System |Default browser
 
 |Android
 |Chrome
 
 |iOS
-| Safari
+|Safari
 |===
 
-{productname} supports the current and penultimate pairings of these combinations.
+Google supports the current and two previous versions of Android.
 
-////
-This matches Apple’s approach. They have long supported both the current and penultimate (previous) version of iOS.
+Apple supports the current and previous versions of iOS.
 
-However it does not match Google’s approach to Android.
-
-As of this note, Android 14 is the current version, but Google supports Android back to version 10.
-
-NB: Google’s support is not more generous than Apple’s, despite superficial appearances.
-
-In terms of what hardware remains supported by the software support approach used by both companies, Apple is ahead. Because Apple supports a much greater percentage of extant devices with each iOS update
-
-Google, by contrast, drops support for many more devices with OS updates.
-////
+NOTE: By default, both Android and iOS automatically update both the operating system and default browser. Consequently, {productname} mobile is only supported on the most recent releases of each supported operating system and browser combination.

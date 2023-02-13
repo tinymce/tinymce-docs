@@ -306,12 +306,16 @@ Read more about xref:advanced-typography.adoc[Advanced Typography] and how you c
 
 // https://ephocks.atlassian.net/browse/TINY-9268
 //1. Cause - What actions or circumstances cause this bug to present.
-
+Previous versions of {productname}, the menu button APIs did not behave as expected with the parent `icon` or `text` selection.
 //2. Consequence - What happens when the bug presents.
-
+As a consequence, the menu button API, would not extend or update the parent `icon` or `text` directly, based upon what `icon` or `text` the user had selected within the menubar.
 //3. Fix - What was done to fix the bug.
+In {productname} 6.4, two new additions were added to the menu button API.
 
+. Added `setText` and `setIcon` properties to both the toolbar button `api`, and menu button `api`.
+. Provided the menu button `api` property as an *argument* which will fetch a function that will allow menu items to change the `icon` or `text` of the parent menu button.
 //4. Result - What now happens when the actions or circumstances above occur.
+As a result, in {productname} 6.4, menu items can chance based on the parent menu button `api` properties.
 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
@@ -364,13 +368,13 @@ Read more about xref:advanced-typography.adoc[Advanced Typography] and how you c
 
 // https://ephocks.atlassian.net/browse/TINY-9449
 //1. Cause - What actions or circumstances cause this bug to present.
-
+Previous versions of {productname}, contenteditable="false" elements such as a *merge tags* could clone the styling to a new table row.
 //2. Consequence - What happens when the bug presents.
-
+In some situations, this cloning would happen during the creation of new table row, where the merge tag prefix would unexpectedly clone the formatting from the previous cell to the new cell.
 //3. Fix - What was done to fix the bug.
-
+To correct this issue, {productname} added changes to the *clone logic*, and the cursor position API, which will now return `true`, for any passed `contenteditable=false` elements.
 //4. Result - What now happens when the actions or circumstances above occur.
-
+In {productname} 6.4, the formatting of `contenteditable="false"` elements are no longer cloned to new cells while creating new table rows.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Changed the color of @dialog-table-border-color, and added right padding to the first cell of dialog table
@@ -398,13 +402,13 @@ Read more about xref:advanced-typography.adoc[Advanced Typography] and how you c
 // Waiting for QA_Verified
 // https://ephocks.atlassian.net/browse/TINY-9556
 //1. Cause - What actions or circumstances cause this bug to present.
-
+In earlier versions of {productname}, the properties set for the `renderUI`, caused conflicting issues with the theme rendering load times.
 //2. Consequence - What happens when the bug presents.
-
+As a consequence, the `renderUI` would finish rendering before the {productname} theme `silver` would finish load.
 //3. Fix - What was done to fix the bug.
-
+To fix this bug, {productname}, made changes to the `renderUI` properties that allowed the theme type the to return a `Promise<RenderResult>` instead of `RenderResult`, which corrects the issues found previously. 
 //4. Result - What now happens when the actions or circumstances above occur.
-
+In {productname} 6.4, all `renderUI` property loading issues have been resolved.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === The searchreplace modal would close incorrectly when clicking outside of the alert that pops up when no match is found
@@ -427,7 +431,7 @@ As a result the when the instance occurs where **no <string> match** is triggere
 //1. Cause - What actions or circumstances cause this bug to present.
 In {productname} 6.3, when the https://www.tiny.cloud/docs/tinymce/6/6.3-release-notes/#new-color_map_foreground-and-color_map_background-options-store-custom-colors-selected-using-the-text-color-and-background-color-menus[new color map] was introduced, a regression was found that affected the UI for *Color Swatch*.
 //2. Consequence - What happens when the bug presents.
-A regression was found, that meant the colors would not display the (tick) inside the color palette to reflect the selected `color_map_foreground` and `color_map_background` stored.
+A regression was found, that meant the colors would not render inside the color palette to reflect the selected `color_map_foreground` and `color_map_background` stored.
 //3. Fix - What was done to fix the bug.
 To correct this {productname}, added a register that would store the `last color` for each  specific `node | cell` that will hold this `value` for the color picker pallette.
 //4. Result - What now happens when the actions or circumstances above occur.
@@ -465,13 +469,19 @@ In {productname} 6.4, now prevents the user from having the ability to drag and 
 
 // https://ephocks.atlassian.net/browse/TINY-9395
 //1. Cause - What actions or circumstances cause this bug to present.
-
+Previous versions of {productname} the known issue, (_https://www.tiny.cloud/docs/tinymce/6/6.3-release-notes/#checkmark-over-the-current-background-color-is-not-displayed-when-inline-formatting-is-applied-in-a-certain-order[checkmark-over-the-current-background-color-is-not-displayed-when-inline-formatting-is-applied-in-a-certain-order]_) was identifed.
 //2. Consequence - What happens when the bug presents.
 
+As a consequence, when text was formatted in the following order, the *checkmark* over the currently active background color would not display in the Background color swatch menu:
+
+. When the user appled inline formatting, such as *bold* or _Italic_.
+. After applying a forground(text) color.
+. After applying a background color.
+
 //3. Fix - What was done to fix the bug.
-
+To fix this bug, {productname} introduced a new variable to store the node `selection` and `color` format value, which then renders a checkmark to appear in both the toolbar and menubar for both the `forecolor` and `background` color.
 //4. Result - What now happens when the actions or circumstances above occur.
-
+As a result, in {productname} 6.4, checkmarks now work as expected when using the color swatch in both the toolbar and menubar.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Toolbar split buttons in advlist plugin to show the correct state when the cursor is in a checklist
@@ -585,13 +595,13 @@ As a result, the ranged selection for backspace/delete now check that all of the
 
 // https://ephocks.atlassian.net/browse/TINY-9474
 //1. Cause - What actions or circumstances cause this bug to present.
-
+In previous versions of {productname}, a bug was found that affected the `visual characters` plugin.
 //2. Consequence - What happens when the bug presents.
-
+As a consequence, the visual characters selecter would render inside `noneditable` elements after the plugin was applied to the editor.
 //3. Fix - What was done to fix the bug.
-
+To fix this issue, a conditional filter was added which identifies, if an element is either `editable` or `noneditable` to its decendants.  If the element matches `noneditable` to itself or decendants, the `visual character` plugin will remove the highlighted selecter from within the `dom` viewport.
 //4. Result - What now happens when the actions or circumstances above occur.
-
+As a result, in {productname} 6.4, visual characters no longer render inside `noneditable` elements.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Removed a workaround for ensuring stylesheets are loaded in an outdated version of webkit
@@ -626,25 +636,31 @@ As a result, in {productname} 6.4, `lists` and `advlist` plugins that are set as
 
 // https://ephocks.atlassian.net/browse/TINY-9457
 //1. Cause - What actions or circumstances cause this bug to present.
-
+In previous versions of {productname}, the preview sample box within the color picker dialod would not render.
 //2. Consequence - What happens when the bug presents.
+This issue could be replicated when a hex `value` was prefixed with a `#` symbol before the hex `value`.
 
+Example of a `incorrect` vs `correct` value input:
+
+* *`#BDE123`*: Incorrect hex value input.
+* *`BDE123`*: Correct hex value input.
 //3. Fix - What was done to fix the bug.
-
+In order to fix this bug, {productname} 6.4, not detects if the user inserts a `#` symbol before the hex `value`, which removes the leading `#` prefix before rendering to the color picker component.
 //4. Result - What now happens when the actions or circumstances above occur.
-
+In {productname} 6.4, the color picker works as expected when using hex `values`.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Table cell selection was possible even if the element was in a noneditable root element
 
 // https://ephocks.atlassian.net/browse/TINY-9459
 //1. Cause - What actions or circumstances cause this bug to present.
-
+Previous versions of {productname}, table cells set with the `noneditable` properties could still be modified.
 //2. Consequence - What happens when the bug presents.
-
+This was because the `contentEditable` property settings were set to `false` in the root. This meant that any table UI actions, commands or table selections could still affect any tables that were within that specific `noneditable` root.
 //3. Fix - What was done to fix the bug.
-
+{productname} 6.4, introduced a blocker that executes when tables are inside a `noneditable` root.
 //4. Result - What now happens when the actions or circumstances above occur.
+In {productname} 6.4, all table UI actions, commands and selections have been `disabled` for tables when either the table or the editor body have been set as `noneditable` elements.
 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 

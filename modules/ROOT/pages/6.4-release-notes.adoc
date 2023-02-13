@@ -478,13 +478,13 @@ In {productname} 6.4, now prevents the user from having the ability to drag and 
 
 // https://ephocks.atlassian.net/browse/TINY-5167
 //1. Cause - What actions or circumstances cause this bug to present.
-
+In previous versions of {productname}, when a cursor was placed within a checklist item, the icon for both the checklist and the bullet list would show as `active`.
 //2. Consequence - What happens when the bug presents.
-
+This created UX issues, as having both buttons showing a `active` state was confusing for the user, specifically for navigation purposes when using checklists from the `advlist` plugin.
 //3. Fix - What was done to fix the bug.
-
+To fix this issue, {productname} added improvements to the list configuration to checks a new set of conditionals which would determine if the `node` selected matched the parent `node` within the checklist. If the match returns as `true`, the (api) will set only the checklist icon to a `active` state.
 //4. Result - What now happens when the actions or circumstances above occur.
-
+As a result, the checklist `icon` in {productname} 6.4, related to the `advlist` plugin will only appear in a `active` state, when the `node` checklist meets the new conditions implemented.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Dragging transparent elements into transparent blocks elements could produce invalid nesting of transparents
@@ -505,13 +505,13 @@ In {productname} 6.4, dragging content such as `links` into other `links` will n
 
 // https://ephocks.atlassian.net/browse/TINY-9462
 //1. Cause - What actions or circumstances cause this bug to present.
-
+In previous versions of {productname}, the settings for the `contentEditable` property in the editor root was set to `false`.
 //2. Consequence - What happens when the bug presents.
-
+As a consequence, the user could insert content using `api` commands to edit a `noneditable` root element.
 //3. Fix - What was done to fix the bug.
-
+To fix this bug, in {productname} 6.4, a blocker was added to the `editor.insertContent` api and `mceInsertContent` command, which stops `noneditable` root element from being edited.
 //4. Result - What now happens when the actions or circumstances above occur.
-
+In {productname} 6.4, inserting contents inside a `noneditable` element while the selection is inside another element, is no longer possible.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Closing a dialog would scroll down the document in Safari
@@ -532,13 +532,13 @@ In {productname} 6.4, when the user `clicks` away to dismiss the *Search* and *R
 
 // https://ephocks.atlassian.net/browse/TINY-9305
 //1. Cause - What actions or circumstances cause this bug to present.
-
+The quickbar was displaying incorrectly during a drag and drop `action` for contenteditable="false" elements.
 //2. Consequence - What happens when the bug presents.
-
+As a consequence, during the movement of contenteditable="false" element, the selection was updated, which triggered a *NodeChange*. This selection update would cause an absence of the caret location during a dragging or dropping event.
 //3. Fix - What was done to fix the bug.
-
+To fix this bug, {productname} 6.4 added a new check to identify when the user is dragging a contenteditable="false" element, which blocks the quickbar from rendering.
 //4. Result - What now happens when the actions or circumstances above occur.
-
+As a result, the quickbar no longer opens in {productname} 6.4, when the user is dragging a contenteditable="false" element.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Selection of images, hrs, tables or noneditable elements was possible if they were within a noneditable element
@@ -566,12 +566,18 @@ In {productname} 6.4, elements with contenteditable="false" attributes can no lo
 
 // https://ephocks.atlassian.net/browse/TINY-9302
 //1. Cause - What actions or circumstances cause this bug to present.
-
+Blink & Webkit browsers (Chrome & Safari) were deleting the contents of inline formats which would cause the format to be lost and not retained.
 //2. Consequence - What happens when the bug presents.
-
+As a consequence, this issue would impact the semantics and visuals for the *HTML* document, which is not be visible to the user.
 //3. Fix - What was done to fix the bug.
+A override fix already exists for _character-by-character_ deletion using backspace/delete keys with a collapsed selection. However, this particular bug persists when the format is deleted when there is a ranged selection that starts at the beginning of the inline format(s) and encompasses at least the entirety of the inline format(s). The bug also occurs when deletion is done using common keyboard shortcuts including `Ctrl/Alt + Backspace`, `Ctrl/Alt + Delete`, and `Cmd + Backspace`.
 
+In {productname} 6.4, two new key overrides have been added to:
+
+. Check that a `non-collapsed` selection satisfies the conditions set (specifically for a ranged selection using `backspace/delete`).
+. Check a range of conditions *before* continuing (for keyboard shortcut `backspace/delete`).
 //4. Result - What now happens when the actions or circumstances above occur.
+As a result, the ranged selection for backspace/delete now check that all of the original formats at the cursor selection *start*, before deletion, are retained with either the native browser behaviour or a caret. For keyboard shortcuts that are using backspace/delete, will create a new unformatted caret which prevents browsers from inserting interpolated formats.
 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 

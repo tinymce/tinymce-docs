@@ -34,146 +34,205 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} 6.4.
 
-=== <premium-plugin-name-1> <premium-plugin-name-1-version-number>
+=== Advanced Typography 1.0.1
 
-The {productname} 6.4 release includes an accompanying release of the **<premium-plugin-name-1>** premium plugin.
+The {productname} 6.4 release includes an accompanying release of the **Advanced Typography** premium plugin.
 
-**<premium-plugin-name-1>** 3.1.0 includes the following fixes, additions, and improvements.
+**Advanced Typography** 1.0.1 includes the following fixes, additions, and improvements.
 
-==== <premium-plugin-name-1> fix, addition or improvement 1
+=== Spaces after opening and before closing quotes are not added anymore in French
 
+// https://ephocks.atlassian.net/browse/TINY-9434
+// 1. Cause - What actions or circumstances cause this bug to present.
+// 2. Consequence - What happens when the bug presents
+// 3. Fix - What was done to fix the bug.
+// 4. Result - What now happens when the actions or circumstances above occur.
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
+=== Fixed adding redundant space between a comma and a quote by switching the sequence of executing safe and unsafe rules
 
-==== <premium-plugin-name-1> fix, addition or improvement 2
+// https://ephocks.atlassian.net/browse/TINY-9442
+// 1. Cause - What actions or circumstances cause this bug to present.
+// 2. Consequence - What happens when the bug presents
+// 3. Fix - What was done to fix the bug.
+// 4. Result - What now happens when the actions or circumstances above occur.
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
+=== Added common/space/delBetweenExclamationMarks to remove spaces between exclamation marks
 
+// https://ephocks.atlassian.net/browse/TINY-9398
+// 1. Cause - What actions or circumstances cause this bug to present.
+// 2. Consequence - What happens when the bug presents
+// 3. Fix - What was done to fix the bug.
+// 4. Result - What now happens when the actions or circumstances above occur.
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
-==== <premium-plugin-name-1> fix, addition or improvement 3
+=== Added typography plugin to the default menubar
 
+// https://ephocks.atlassian.net/browse/TINY-9450
+// 1. Cause - What actions or circumstances cause this bug to present.
+// 2. Consequence - What happens when the bug presents
+// 3. Fix - What was done to fix the bug.
+// 4. Result - What now happens when the actions or circumstances above occur.
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
+=== Typography button and menu item will be disabled if editor has no content
 
-==== <premium-plugin-name-1> fix, addition or improvement 4
+// https://ephocks.atlassian.net/browse/TINY-9441
+// 1. Cause - What actions or circumstances cause this bug to present.
+// 2. Consequence - What happens when the bug presents
+// 3. Fix - What was done to fix the bug.
+// 4. Result - What now happens when the actions or circumstances above occur.
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
+For information on the **Advanced Typography** plugin, see: xref:advanced-typography.adoc[Advanced Typography].
 
+////
+Be wary of the version number listed above.
 
-==== <premium-plugin-name-1> fix, addition or improvement 5
+To quote my [comment, left on the TinyMCE 6.4 BoM][0] in Notion:
 
+> Given the five changes in the Unreleased section of the Advanced
+> Typography plugin’s [changelog][1], is it sensible to assume this plugin
+> is getting a version bump?
 
-For information on the **<premium-plugin-name-1>** plugin, see: xref:<premium-plugin-file-name-1>.adoc[<premium-plugin-name-1>].
+[0]: <https://notion.so/TinyMCE-6-4-Bill-of-materials-BOM-885a34e3b9884be0b69cd30eba7c618b?d=5267c02d507140c2882a18c2a9c7c753#0067a51f89bc45f1a99cc1b80a6e7a39>
 
+[1]: <https://github.com/tinymce/typography/blob/main/CHANGELOG.md>
+////
 
 
-=== <premium-plugin-name-2> <premium-plugin-name-2-version-number>
 
-The {productname} 6.4 release includes an accompanying release of the **<premium-plugin-name-2>** premium plugin.
+=== Checklist 2.0.3
 
-**<premium-plugin-name-2>** 3.1.0 includes the following fixes, additions, and improvements.
+The {productname} 6.4 release includes an accompanying release of the **Checklist** premium plugin.
 
-==== <premium-plugin-name-2> fix, addition or improvement 1
+**Checklist** 2.0.3 includes the following fix
 
+////
+To quote my [comment, left on the TinyMCE 6.4 BoM][2] in Notion
 
+> What changes were made to the Checklist plugin? The [changelog][3]
+> contains no entries beyond 2022-11-23 and the only [commits this
+> year][4] have been dependabot bumps or back-end changes.
 
-==== <premium-plugin-name-2> fix, addition or improvement 2
+[2]: <https://notion.so/TinyMCE-6-4-Bill-of-materials-BOM-885a34e3b9884be0b69cd30eba7c618b?d=a1149ea94c2e459b80773fa2e59a6cc6#e826f887f0654bafb3ec0fdcb1659385>
 
+[3]: <https://github.com/tinymce/santa/blob/main/CHANGELOG.md>
 
+[4]: <https://github.com/tinymce/santa/commits/main>
+////
 
-==== <premium-plugin-name-2> fix, addition or improvement 3
+For information on the **Checklist** plugin, see: xref:checklist.adoc[Checklist].
 
 
 
-==== <premium-plugin-name-2> fix, addition or improvement 4
+=== Merge Tags 1.2.0
 
+The {productname} 6.4 release includes an accompanying release of the **Merge Tags** premium plugin.
 
+**Merge Tags** 1.2.0 includes the following change.
 
-==== <premium-plugin-name-2> fix, addition or improvement 5
+==== The mceMergeTag command now preserves the selected content as a plain text and wraps it in a merge tag prefix and suffix if the content length exceeds the limit.
 
+// https://ephocks.atlassian.net/browse/TINY-9444
+// 1. Cause - What actions or circumstances cause this bug to present.
+// 2. Consequence - What happens when the bug presents
+// 3. Fix - What was done to fix the bug.
+// 4. Result - What now happens when the actions or circumstances above occur.
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
-For information on the **<premium-plugin-name-2>** plugin, see: xref:<premium-plugin-file-name-2>.adoc[<premium-plugin-name-2>].
+For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
 
 
+=== PowerPaste 6.1.3
 
-=== <premium-plugin-name-3> <premium-plugin-name-3-version-number>
+The {productname} 6.4 release includes an accompanying release of the **PowerPaste** premium plugin.
 
-The {productname} 6.4 release includes an accompanying release of the **<premium-plugin-name-3>** premium plugin.
+**PowerPaste** 6.1.3 includes the following fixes, additions, and improvements.
 
-**<premium-plugin-name-3>** 3.1.0 includes the following fixes, additions, and improvements.
+////
+To quote my [comment, left on the TinyMCE 6.4 BoM][5] in Notion
 
-==== <premium-plugin-name-3> fix, addition or improvement 1
+> What changes were made to the Checklist plugin? The [changelog][6]
+> contains no entries beyond 2022-11-23 and the only [commits this
+> year][7] have been dependabot bumps or back-end changes.
 
+[5]: <https://www.notion.so/TinyMCE-6-4-Bill-of-materials-BOM-885a34e3b9884be0b69cd30eba7c618b?d=32ea41e705fb460c99f63ad7c1ef6043#3531017a765f43868ca2cadf7133ef1b>
 
+[6]: <https://github.com/tinymce/powerpaste2/blob/main/CHANGELOG.md>
 
-==== <premium-plugin-name-3> fix, addition or improvement 2
+[7]: <https://github.com/tinymce/powerpaste2/commits/main>
+////
 
 
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
 
-==== <premium-plugin-name-3> fix, addition or improvement 3
 
+=== Comments 3.3.0
 
+The {productname} 6.4 release includes an accompanying release of the **Comments** premium plugin.
 
-==== <premium-plugin-name-3> fix, addition or improvement 4
+**Comments** 3.3.0 includes the following fix.
 
+==== The comment input box now has a max height to prevent long comments from expanding the box indefinitely
 
+// https://ephocks.atlassian.net/browse/TINY-8894
+// 1. Cause - What actions or circumstances cause this bug to present.
+// 2. Consequence - What happens when the bug presents
+// 3. Fix - What was done to fix the bug.
+// 4. Result - What now happens when the actions or circumstances above occur.
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
-==== <premium-plugin-name-3> fix, addition or improvement 5
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to Tiny Comments].
 
 
-For information on the **<premium-plugin-name-3>** plugin, see: xref:<premium-plugin-file-name-3>.adoc[<premium-plugin-name-3>].
+=== Enhanced Media Embed 3.0.5
 
+The {productname} 6.4 release includes an accompanying release of the **Enhanced Media Embed** premium plugin.
 
-=== <premium-plugin-name-4> <premium-plugin-name-4-version-number>
+**Enhanced Media Embed** 3.0.5 includes the following fixes, additions, and improvements.
 
-The {productname} 6.4 release includes an accompanying release of the **<premium-plugin-name-4>** premium plugin.
+////
+To quote my [comment, left on the TinyMCE 6.4 BoM][8] in Notion
 
-**<premium-plugin-name-4>** 3.1.0 includes the following fixes, additions, and improvements.
+> What changes were made to the Enhanced Media Embed plugin? The
+> [changelog][9] contains no entries beyond 2022-09-08 and the only [commits
+> this year][10] have been dependabot bumps or back-end changes.
 
-==== <premium-plugin-name-4> fix, addition or improvement 1
+[8]: <https://notion.so/TinyMCE-6-4-Bill-of-materials-BOM-885a34e3b9884be0b69cd30eba7c618b?d=1c6d570eebbf4a8697d959425fa02808#476b7ddffb464f6c8ffbe9e98db4af84>
 
+[9]: <https://github.com/tinymce/pillow/blob/main/CHANGELOG.md>
 
+[10]: <https://github.com/tinymce/pillow/commits/main>
+////
 
-==== <premium-plugin-name-4> fix, addition or improvement 2
 
+For information on the **Enhanced Media Embed** plugin, see: xref:introduction-to-mediaembed.adoc[Introduction to Enhanced Media Embed].
 
 
-==== <premium-plugin-name-4> fix, addition or improvement 3
+=== Spell Checker Pro 3.2.0
 
+The {productname} 6.4 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
 
+**Spell Checker Pro** 3.2.0 includes the following fixes, additions, and improvements.
 
-==== <premium-plugin-name-4> fix, addition or improvement 4
+////
+To quote my [comment, left on the TinyMCE 6.4 BoM][11] in Notion
 
+> What changes were made to the Enhanced Media Embed plugin? The
+> [changelog][12] contains no entries beyond 2022-09-08 and the only [commits
+> this year][13] have been dependabot bumps or back-end changes.
 
+[11]: <https://notion.so/TinyMCE-6-4-Bill-of-materials-BOM-885a34e3b9884be0b69cd30eba7c618b?d=40e8ab59323f4319bfbb83898a3fe18c#0c32239916564963850ca08c2ab4f112>
 
-==== <premium-plugin-name-4> fix, addition or improvement 5
+[12]: <https://github.com/tinymce/powerspell/blob/main/CHANGELOG.md>
 
+[13]: <https://github.com/tinymce/powerspell/commits/main>
+////
 
-For information on the **<premium-plugin-name-4>** plugin, see: xref:<premium-plugin-file-name-4>.adoc[<premium-plugin-name-4>].
 
-
-=== <premium-plugin-name-5> <premium-plugin-name-5-version-number>
-
-The {productname} 6.4 release includes an accompanying release of the **<premium-plugin-name-5>** premium plugin.
-
-**<premium-plugin-name-5>** 3.1.0 includes the following fixes, additions, and improvements.
-
-==== <premium-plugin-name-5> fix, addition or improvement 1
-
-
-
-==== <premium-plugin-name-5> fix, addition or improvement 2
-
-
-
-==== <premium-plugin-name-5> fix, addition or improvement 3
-
-
-
-==== <premium-plugin-name-5> fix, addition or improvement 4
-
-
-
-==== <premium-plugin-name-5> fix, addition or improvement 5
-
-
-For information on the **<premium-plugin-name-5>** plugin, see: xref:<premium-plugin-file-name-5>.adoc[<premium-plugin-name-5>].
+For information on the **Spell Checker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[INtroduction to Spell Checker Pro].
 
 
 

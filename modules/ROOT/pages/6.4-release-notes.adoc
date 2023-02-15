@@ -409,15 +409,13 @@ In {productname} 6.4, the formatting of `contenteditable="false"` elements are n
 === Changed the color of @dialog-table-border-color, and added right padding to the first cell of dialog table
 
 // https://ephocks.atlassian.net/browse/TINY-9380
-//1. Cause - What actions or circumstances cause this bug to present.
+An area for improvement was identified during an accessibility audit for the *help menu* within {productname}, which focuses on users that rely on `zoom` orient to help with visibility.
 
-//2. Consequence - What happens when the bug presents.
+The consequence of the previous UX, meant that adjustments needed to be made to the horizontal lines within the *help menu* table, that seperate each `row`.
 
-//3. Fix - What was done to fix the bug.
+To fix this accessibility issue, {productname} 6.4, increased the contrast ratio to `3:1` to each line divider, and changed the `line` color to `#646D78` to further help define were the separations occur in the table.
 
-//4. Result - What now happens when the actions or circumstances above occur.
-
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+As a result, the `help menu` is now styled to support a wider range of users, by these new changes implemented.
 
 
 [[bug-fixes]]
@@ -604,12 +602,12 @@ In {productname} 6.4, the color picker works as expected when using hex `values`
 // https://ephocks.atlassian.net/browse/TINY-9459
 Previous versions of {productname}, table cells set with the `noneditable` properties could still be modified. This was because the `contentEditable` property settings were set to `false` in the root. This meant that any table UI actions, commands or table selections could still affect any tables that were within that specific `noneditable` root.
 
-{productname} 6.4, introduced a blocker that executes when tables are inside a `noneditable` root.
+{productname} 6.4, introduced a blocker that is executed when tables are inside a `noneditable` root.
 
 In {productname} 6.4, all table UI actions, commands and selections have been `disabled` for tables when either the table or the editor body have been set as `noneditable` elements.
 
 === Table commands were modifying tables in a noneditable root element
-
+// ONHOLD waiting for final implementation
 // https://ephocks.atlassian.net/browse/TINY-9459
 //1. Cause - What actions or circumstances cause this bug to present.
 
@@ -622,7 +620,7 @@ In {productname} 6.4, all table UI actions, commands and selections have been `d
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Fake carets were rendered for noneditable elements and tables in a noneditable root element
-
+// ONHOLD waiting for final implementation
 // https://ephocks.atlassian.net/browse/TINY-9459
 //1. Cause - What actions or circumstances cause this bug to present.
 

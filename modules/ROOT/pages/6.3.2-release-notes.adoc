@@ -12,12 +12,9 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 {productname} 6.3.2 was released for {enterpriseversion} and {cloudname} on Wednesday, March 1^st^, 2023. It includes {productname} 6.3.2. These release notes provide an overview of the changes for {productname} 6.3.2:
 
 * xref:accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
-* xref:improvements[Improvements]
-* xref:additions[Additions]
-* xref:changes[Changes]
 * xref:bug-fixes[Bug fixes]
-* xref:security-fixes[Security fixes]
-* xref:known-issues[Known issues]
+//* xref:security-fixes[Security fixes]
+//* xref:known-issues[Known issues]
 
 [[accompanying-premium-skins-and-icon-packs-changes]]
 == Accompanying Premium Skins and Icon Packs changes
@@ -32,46 +29,63 @@ The **Premium Skins and Icon Packs** were rebuilt to pull in the changes also in
 
 For information on using premium skins and icon packs, see: xref:premium-skins-and-icons.adoc[Premium Skins and Icon Packs].
 
-[[improvements]]
-== Improvements
-
-{productname} 6.3.2 also includes the following improvements
-
-=== improvement
-
-Explanatory text.
-
-
-[[additions]]
-== Additions
-
-{productname} 6.3.2 also includes the following additions:
-
-=== addition
-
-Explanatory text.
-
-
-[[changes]]
-== Changes
-
-{productname} 6.3.2 also incorporates the following changes:
-
-=== change
-
-Explanatory text.
-
-
 [[bug-fixes]]
 == Bug fixes
 
 {productname} 6.3.2 also includes the following bug fixes:
 
-=== bug fix
+=== An element could be dropped onto the decendants of a noneditable element
 
-Explanatory text.
+// https://ephocks.atlassian.net/browse/TINY-9364
+In {productname} 6.0, the drag and drop `config` did not check some conditions surrounding element placements using either a grag or drop action.  This affected users running {productname} 6.0, which would affectivly allow decendants of *noneditable elements* to be dropped into another *noneditable element*.
+
+Fixes were made to ensure that `dragging | dropping` onto *noneditable element* targets on all browsers is `disabled`. This also includes when the drop target cursor is inside the contenteditable element, or just before it.
+
+In {productname} 6.4, now prevents the user from having the ability to drag and drop any descendants of a `contenteditable=false element` within another *noneditable element*.
+
+=== Toolbar split buttons in advlist plugin to show the correct state when the cursor is in a checklist
+
+// https://ephocks.atlassian.net/browse/TINY-5167
+In previous versions of {productname}, when a cursor was placed within a checklist item, the icon for both the checklist and the bullet list would show as `active`. This created UX issues, as having both buttons showing a `active` state was confusing for the user, specifically for navigation purposes when using checklists from the `advlist` plugin.
+
+To fix this issue, {productname} added improvements to the list configuration to checks a new set of conditionals which would determine if the `node` selected matched the parent `node` within the checklist. If the match returns as `true`, the (api) will set only the checklist icon to a `active` state.
+
+As a result, the checklist `icon` in {productname} 6.4, related to the `advlist` plugin will only appear in a `active` state, when the `node` checklist meets the new conditions implemented.
+
+=== Removed a workaround for ensuring stylesheets are loaded in an outdated version of webkit
+
+// https://ephocks.atlassian.net/browse/TINY-9433
+In certain webkit browsers the onload event wasn't supported due to an old `bug` within {productname}. A workaround was implemented that manually checked that `stylesheets` were being loaded rather than relying on the event being triggered. Due to this `bug`, a fixed was applied to the onload event, to ensure that it is now supported by webkit.
+
+The previous workaround has now been removed and replaced with the native browser event.
+
+In {productname} 6.4, the onload event `error` that stopped stylesheets to load have now been fixed with the new native browser implementation.
+
+=== Color picker dialog would not update the preview color if the hex input value was prefixed with # symbol
+
+// https://ephocks.atlassian.net/browse/TINY-9457
+In previous versions of {productname}, the preview sample box within the color picker dialod would not render. This issue could be replicated when a hex `value` was prefixed with a `#` symbol before the hex `value`.
+
+Example of a `incorrect` vs `correct` value input:
+
+* *`#BDE123`*: Incorrect hex value input.
+* *`BDE123`*: Correct hex value input.
+
+In order to fix this bug, {productname} 6.4, not detects if the user inserts a `#` symbol before the hex `value`, which removes the leading `#` prefix before rendering to the color picker component.
+
+In {productname} 6.4, the color picker works as expected when using hex `values`.
+
+=== Clicking on a disabled split button will no longer call the onAction callback
+
+// https://ephocks.atlassian.net/browse/TINY-9504
+A bug was found in versions of {productname} prior to the 6.4 release, that would call the `onAction` callback for *split buttons* regardless of the action being `disabled`. This meant it was possible for the user to emit the `onAction` call wether or not the `disable` function was enabled or not.
+
+As a fix to the issue, {productname} 6.4 introduced a new conditional check to identify *if* the button is `enabled` or `disabled`. If the button is set to `enabled` then {productname} executes the secondary check, which will identify wether or not the button is a *split button*.  Split buttons are classified as “special buttons”,  as they are unique and require both `advlists` and `dropdowns` to function, this makes them more complex than traditional buttons.
+
+In {productname} 6.4, clicking on a disabled split button won't call the `onAction` callback anymore.
 
 
+////
 [[security-fixes]]
 == Security fixes
 
@@ -92,5 +106,4 @@ There are several known issues in {productname} 6.3.2.
 === known issue
 
 Explanatory text.
-
-
+////

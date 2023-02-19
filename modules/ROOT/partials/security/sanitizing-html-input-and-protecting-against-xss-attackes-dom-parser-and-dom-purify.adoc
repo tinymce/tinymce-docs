@@ -7,7 +7,7 @@ The `SaxParser` API was developed in the then-absence of alternatives.
 
 When this API’s validate setting was enabled — `validate: true` — `SaxParser` removed elements and attributes that did not fit the declared schema.
 
-And, over its lifetime `SaxParser` was extended. For example, as of {productname} 5.9, the `SaxParser` API marked attributes with certain names or IDs as unsafe, because some names or IDs can cause the host browser to overwrite existing properties or functions.
+And, over its lifetime, `SaxParser` was extended. For example, as of {productname} 5.9, the `SaxParser` API marked attributes with certain names or IDs as unsafe, because some names or IDs can cause the host browser to overwrite existing properties or functions.
 
 For {productname} 6.0, however, this basic parser was removed and replaced with two significantly more thorough alternatives:
 

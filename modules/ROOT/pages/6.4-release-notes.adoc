@@ -51,30 +51,37 @@ The {productname} 6.4 release includes an accompanying release of the **Advanced
 
 === Fixed adding redundant space between a comma and a quote by switching the sequence of executing safe and unsafe rules
 
-// https://ephocks.atlassian.net/browse/TINY-9442
-// 1. Cause - What actions or circumstances cause this bug to present.
-// 2. Consequence - What happens when the bug presents
-// 3. Fix - What was done to fix the bug.
-// 4. Result - What now happens when the actions or circumstances above occur.
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+//https://ephocks.atlassian.net/browse/TINY-9442
+After {productname} introduced the `Smart Typography` plugin, a bug was discovered that was causing a `space` to be introduced between a `comma` and a closing `double-quote` mark. Such as in the below example.
+
+.Example
+> “They went that way,[space introduced here] ” he said as he pointed.
+
+As displayed in the above example, a unintentional/redundant `space` was inserted into a seperate node position without intention.
+
+{productname} fixed the issue by switching the sequence of executing `safe` and `unsafe` rules surrounding *Typography*.
+
+In {productname} 6.4, the `Smart Typography` plugin, no longer creates a `space` between a `comma` and a closing `double-quote` mark.
 
 === Added common/space/delBetweenExclamationMarks to remove spaces between exclamation marks
 
-// https://ephocks.atlassian.net/browse/TINY-9398
-// 1. Cause - What actions or circumstances cause this bug to present.
-// 2. Consequence - What happens when the bug presents
-// 3. Fix - What was done to fix the bug.
-// 4. Result - What now happens when the actions or circumstances above occur.
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+//https://ephocks.atlassian.net/browse/TINY-9398		
+
+A issue was discovered that affected the typography plugin in previous versions of {productname} that was associated with inserting content into the editor, but specifically *exclamation marks* and the spaces between them. Such as: `“Hello! !“`. This issue meant that the editor would not remove the spaces between the double *exclamation marks* `! <space>!` after the typography plugin `toolbar` or `menubar` button was executed.
+
+The fix for this involved adding a new rule which removes the spaces between exclamation marks when the typography button is pressed.
+
+In {productname} 6.4, spaces are now removed between exclamation marks `!!` for formatted HTML documents when the typography plugin is used. Read more about xref:advanced-typography.adoc[Advanced Typography] and how you can add this new premium plugin to your project.
 
 === Added typography plugin to the default menubar
 
-// https://ephocks.atlassian.net/browse/TINY-9450
-// 1. Cause - What actions or circumstances cause this bug to present.
-// 2. Consequence - What happens when the bug presents
-// 3. Fix - What was done to fix the bug.
-// 4. Result - What now happens when the actions or circumstances above occur.
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+//https://ephocks.atlassian.net/browse/TINY-9450		
+
+In previous versions of {productname}, the typography button would *not* appear in the `menubar` by default. As a consequence, the user could only `find` the typography button in the `toolbar` due to it not appearing in the `menubar` dropdown.
+
+To correct this bug, the typography plugin was added to the default `menubar` config.
+
+{productname} 6.4, by default, will now display the typography button in both the `toolbar` and below the “Source code" button in the `menubar`.
 
 === Typography button and menu item will be disabled if editor has no content
 
@@ -276,25 +283,6 @@ In {productname} 6.4, a improvement was made to the focusing `event` which is no
 
 As a result to the fix, while the *FloatingToolbarButton* `focus` is initiated, the toolbar now focuses correctly without stealing `focus` when `skipFocus: 'boolean' is set.
 
-=== Add Typography to the default menubar config
-// @bforte @KKS waiting on TINY-9589 to be merged for confirmation of adding this.
-//https://ephocks.atlassian.net/browse/TINY-9450		
-
-In previous versions of {productname}, the typography button would *not* appear in the `menubar` by default. As a consequence, the user could only `find` the typography button in the `toolbar` due to it not appearing in the `menubar` dropdown.
-
-To correct this bug, the typography plugin was added to the default `menubar` config.
-
-{productname} 6.4, by default, will now display the typography button in both the `toolbar` and below the “Source code" button in the `menubar`.
-
-=== Fix removing spaces between exclamation marks ! !
-// @bforte @KKS waiting on TINY-9589 to be merged for confirmation of adding this.
-//https://ephocks.atlassian.net/browse/TINY-9398		
-
-A issue was discovered that affected the typography plugin in previous versions of {productname} that was associated with inserting content into the editor, but specifically *exclamation marks* and the spaces between them. Such as: `“Hello! !“`. This issue meant that the editor would not remove the spaces between the double *exclamation marks* `! <space>!` after the typography plugin `toolbar` or `menubar` button was executed.
-
-The fix for this involved adding a new rule which removes the spaces between exclamation marks when the typography button is pressed.
-
-In {productname} 6.4, spaces are now removed between exclamation marks `!!` for formatted HTML documents when the typography plugin is used. Read more about xref:advanced-typography.adoc[Advanced Typography] and how you can add this new premium plugin to your project.
 
 [[additions]]
 == Additions
@@ -304,39 +292,50 @@ In {productname} 6.4, spaces are now removed between exclamation marks `!!` for 
 === renderUI property in the Theme type can now return a Promise <RenderResult> instead of RenderResult
 
 // https://ephocks.atlassian.net/browse/TINY-9556
-//1. Cause - What actions or circumstances cause this bug to present.
+In earlier versions of {productname}, the properties set for the `renderUI`, was causing issues with the theme rendering load times. As a result {productname} 6.4 added fixes to the `renderUI` properties to correct this issue.
 
-//2. Consequence - What happens when the bug presents.
+The changes saw the introduction of a new `renderUI` property called `Promise<RenderResult>` , which allows the current theme type to return a `Promise<RenderResult>` instead of the origional  `RenderResult`.
 
-//3. Fix - What was done to fix the bug.
-
-//4. Result - What now happens when the actions or circumstances above occur.
-
+In {productname} 6.4, the `renderUI` property in the Theme type, now returns a `Promise <RenderResult>`.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === New isEditable API to editor.selection that returns true or false if the current selection is editable
 
 // https://ephocks.atlassian.net/browse/TINY-9462
-//1. Cause - What actions or circumstances cause this bug to present.
+In previous versions of {productname}, elements that where within the `editor.selection` could be modified, if they sat within a HTML document body with the properties set to `editor.getBody().contentEditable = false`.
 
-//2. Consequence - What happens when the bug presents.
+As a consequence, any `selection | node`, that was encapsulate within the editor body, could be affected by this such as:
 
-//3. Fix - What was done to fix the bug.
+Expected output example:
 
-//4. Result - What now happens when the actions or circumstances above occur.
+[source, HTML]
+----
+<p>Try to insert content here</p>
+----
+
+After executing a `onclick` event within the current `selection | node` using `<button onclick="tinymce.activeEditor.insertContent('text')">insertContent</button>`, the output would modify the existing `editor.getBody().contentEditable = false;` element, which should not be possible.
+
+[source, HTML]
+----
+<p>Try to inserttextcontent here</p>
+----
+
+The new additions and improvements with the introduction of {productname} 6.4, include a new `isEditable` API been added to the `editor.selection` which now blocks the `editor.insertContent` API and `mceInsertContent` command when the contents return a `true` value if the editor detects the element is a `noneditable` in a `noneditable` root.
+
+As a result, any `editor.selection` elements that return a `true` value when a specified element is `editable`, will call the new `isEditable` API to execute the new blocker.
 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === New isEditable API to editor.dom that returns true or false if the specified node is editable
 
 // https://ephocks.atlassian.net/browse/TINY-9462
-//1. Cause - What actions or circumstances cause this bug to present.
+In previous versions of {productname}, elements within the editor.dom could be _changed/modified_ regardless if they were assigned to be `editable` or `noneditable`.
 
-//2. Consequence - What happens when the bug presents.
+As a consequence all elements within the root `body` set to `editor.getBody().contentEditable = false;` value, were affected by the issue.
 
-//3. Fix - What was done to fix the bug.
+The new additions and improvements with the introduction of {productname} 6.4, include a new `isEditable` API been added to the `editor.dom` which now blocks the `editor.insertContent` API and `mceInsertContent` command when the contents return a `true` value if the editor detects the element is a `noneditable` in a `noneditable` root.
 
-//4. Result - What now happens when the actions or circumstances above occur.
+As a result, any elements that return a `true` value when a specified element is `editable`, will call the new `isEditable` API to action the new blocker to ensure `noneditable` elements cannot be changes/modified when they are within a root that is set to `editor.getBody().contentEditable = false`.
 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
@@ -353,7 +352,7 @@ In {productname} 6.4, two new additions were added to the menu button API.
 As a result, in {productname} 6.4, menu items can chance based on the parent menu button `api` properties.
 
 === New highlight_on_focus option which enables highlighting the content area on focus
-
+// @bforte- this is still WIP
 // https://ephocks.atlassian.net/browse/TINY-9277
 //1. Cause - What actions or circumstances cause this bug to present.
 
@@ -702,20 +701,6 @@ In previous versions of {productname}, a bug was causing issues with `links` whi
 To fix this bug, the table cell now checks *If* the caret position is in front of an *anchor element*, `if` (true), then the table cell will include the anchor in the `list`.
 
 In {productname} 6.4, anchor elements are included inside `lists` while nested within table cells.
-
-=== Fixed the space between a comma and a quote in typography.
-// @bforte @KKS waiting on TINY-9589 to be merged for confirmation of adding this.
-//https://ephocks.atlassian.net/browse/TINY-9442
-After {productname} introduced the `Smart Typography` plugin, a bug was discovered that was causing a `space` to be introduced between a `comma` and a closing `double-quote` mark. Such as in the below example.
-
-.Example
-> “They went that way,[space introduced here] ” he said as he pointed.
-
-As displayed in the above example, a unintentional/redundant `space` was inserted into a seperate node position without intention.
-
-{productname} fixed the issue by switching the sequence of executing `safe` and `unsafe` rules surrounding *Typography*.
-
-In {productname} 6.4, the `Smart Typography` plugin, no longer creates a `space` between a `comma` and a closing `double-quote` mark.
 
 ////
 

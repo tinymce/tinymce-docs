@@ -1,3 +1,4 @@
+[[sanitizing-html-input-to-protect-against-xss-attacks]]
 === Sanitizing HTML input to protect against XSS attacks
 
 Previously, before HTML content was passed to {productname} 5.x, it was parsed using an https://tiny.cloud/docs/api/tinymce.html/tinymce.html.saxparser/[in-house developed API], `SaxParser`.

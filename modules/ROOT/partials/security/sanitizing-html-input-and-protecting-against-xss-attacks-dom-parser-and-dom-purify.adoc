@@ -44,9 +44,9 @@ Next, the, now correctly formed, DOM object is passed to `DOMPurify`.
 
 Both `DOMParser` and `DOMPurify` are on by default, and `DOMParser` cannot be turned off.
 
-As of {productname} 6.4, however, it is possible to turn `DOMPurify` off using the `editor_security` option.
+As of {productname} 6.4, however, it is possible to turn `DOMPurify` off using the `xss_sanitization` option.
 
-NOTE: `editor_security` is set to `true` by default. That is, {productname} specifically sets the `editor_security` option to `true`, even if this option is not declared in a {productname} configuration.
+NOTE: `xss_sanitization` is set to `true` by default. That is, {productname} specifically sets the `xss_sanitization` option to `true`, even if this option is not declared in a {productname} configuration.
 
 *Type:* `+Boolean+`
 
@@ -54,13 +54,13 @@ NOTE: `editor_security` is set to `true` by default. That is, {productname} spec
 
 *Possible values:* `+true+`, `+false+`
 
-===== Example: using `+editor_security+` to turn DOMPurify off and no longer sanitize HTML against XSS attacks
+===== Example: using `+xss_sanitization+` to turn DOMPurify off and no longer sanitize HTML against XSS attacks
 
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  editor_security: {
+  xss_sanitization: {
     content: false
   }
 });

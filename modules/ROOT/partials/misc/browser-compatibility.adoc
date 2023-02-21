@@ -36,20 +36,5 @@
 . The 60 days of support for penultimate versions begins as of the release of the current version. Once a current browser release is more than 60 days old, {productname} is no longer supported on the penultimate version.
 . {productname} is supported on the most recent update of the browsers listed above, on the operating systems listed above.
 . {productname} is not supported on browsers running in Quirks or backward compatibility modes.
-. {productname} is not supported on pre-release, beta or other ‘technology preview’ browser releases.
+. {productname} is not supported on pre-release, beta, or other ‘technology preview’ browser releases.
 . On browsers that have Extended Support Release versions, {productname} is only supported on the current Extended Support Release release.
-
-
-////
-So, for example, {productname} is supported on the current release of Google Chrome running on macOS, Windows, or GNU/Linux. But {productname} is only supported on the current release of Microsoft Edge when said browser is running on Windows.
-
-{productname} also supports the current Extended Support Release (ESR) version from vendors who produce ESR versions of their browsers.
-
-{productname} is, therefore, supported on the current ESR version of Mozilla Firefox and Google Chrome.
-
-NOTE: ESR releases are not always available for every operating system. {productname} is only supported on an ESR release if it is running on an already-supported operating system.
-
-{productname} is also supported on the previous major version release for 60 days after said major version release has been superseded by a new major version.
-
-_Major version_ is defined as a change to the whole number portion of a browser’s version number. For example Google Chrome 110 is the major version release that supercedes Google Chrome 109. And Safari 16 is the major version release that supercedes Safari 15.
-////

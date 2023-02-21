@@ -54,7 +54,7 @@ NOTE: `editor_security` is set to `true` by default. That is, {productname} spec
 
 *Possible values:* `+true+`, `+false+`
 
-=== Example: using `+editor_security+` to turn DOMPurify off and no longer sanitize HTML against XSS attacks
+===== Example: using `+editor_security+` to turn DOMPurify off and no longer sanitize HTML against XSS attacks
 
 [source,js]
 ----

@@ -46,7 +46,7 @@ Both `DOMParser` and `DOMPurify` are on by default, and `DOMParser` cannot be tu
 
 As of {productname} 6.4, however, it is possible to turn `DOMPurify` off using the `editor_security` option.
 
-NOTE: `editor_security` is set to `true` by default. That is, {productname} specifically sets `editor_security` option to `true`, even if this option is not declared in a {productname} configuration.
+NOTE: `editor_security` is set to `true` by default. That is, {productname} specifically sets the `editor_security` option to `true`, even if this option is not declared in a {productname} configuration.
 
 *Type:* `+Boolean+`
 

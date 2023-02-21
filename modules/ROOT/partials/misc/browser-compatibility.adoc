@@ -13,13 +13,41 @@
 
 [cols=",^,^,^",options="header"]
 |===
-|Browser |Windows |Mac |GNU/Linux
-|Chrome |{tick} |{tick} |{tick}
-|Firefox |{tick} |{tick} |{tick}
-|Edge |{tick} |- |-
-|Safari |- |{tick} |-
+|Browser                       |Windows |macOS   |GNU/Linux
+|Chrome (current version)      |{tick}  |{tick}  |{tick}
+|Chrome (penultimate version)  |60 days |60 days |-
+|Chrome ESR (current version)  |{tick}  |{tick}  |{tick}
+|Firefox (current version)     |{tick}  |{tick}  |{tick}
+|Firefox (penultimate version) |60 days |60 days |60 days
+|Firefox ESR (current version} |{tick}  |{tick}  |{tick}
+|Edge (current version)        |{tick}  |-       |-
+|Edge (penultimate version)    |{tick}  |-       |-
+|Safari (current version)      |-       |{tick}  |-
+|Safari (penultimate version)  |-       |{tick}  |-
 |===
 
-NOTE: {productname} does not support browsers running in Quirks or backward compatibility modes.
+=== Notes on the supported web browsers table.
 
-{productname} supports the most recent version of all browsers listed above. {productname} also supports the latest Extended Support Release (ESR) from each vendor (e.g. Firefox). {productname} provides support for the prior major version for 60 days after the release has been superseded by a new major version (e.g. Chrome 98 vs. Chrome 97).
+. _Penultimate version_ is defined as the most-recent-but-one _major_ version of the listed browser.
+.. And _major version_ is defined as a change to the whole number portion of a browser’s version number.
+... For example Google Chrome 110 is the major version release that supercedes Google Chrome 109. So long as Google Chrome 110 is the current version, Google Chrome 109 will be the penultimate version.
+. The 60 days of support for penultimate versions begins as of the release of the current version. Once a current browser release is more than 60 days old, {productname} is no longer supported on the penultimate version.
+. {productname} is supported on the most recent update of the browsers listed above, on the operating systems listed above.
+. {productname} is not supported on browsers running in Quirks or backward compatibility modes.
+. {productname} is not supported on pre-release, beta or other ‘technology preview’ browser releases.
+. On browsers that have Extended Support Release versions, {productname} is only supported on the current Extended Support Release release.
+
+
+////
+So, for example, {productname} is supported on the current release of Google Chrome running on macOS, Windows, or GNU/Linux. But {productname} is only supported on the current release of Microsoft Edge when said browser is running on Windows.
+
+{productname} also supports the current Extended Support Release (ESR) version from vendors who produce ESR versions of their browsers.
+
+{productname} is, therefore, supported on the current ESR version of Mozilla Firefox and Google Chrome.
+
+NOTE: ESR releases are not always available for every operating system. {productname} is only supported on an ESR release if it is running on an already-supported operating system.
+
+{productname} is also supported on the previous major version release for 60 days after said major version release has been superseded by a new major version.
+
+_Major version_ is defined as a change to the whole number portion of a browser’s version number. For example Google Chrome 110 is the major version release that supercedes Google Chrome 109. And Safari 16 is the major version release that supercedes Safari 15.
+////

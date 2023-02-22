@@ -15,17 +15,17 @@
 
 [cols=",^,^,^",options="header"]
 |===
-|Browser                       |Windows |macOS   |GNU/Linux
-|Chrome (current version)      |{tick}  |{tick}  |{tick}
-|Chrome (penultimate version)  |60 days |60 days |-
-|Chrome ESR (current version)  |{tick}  |{tick}  |{tick}
-|Firefox (current version)     |{tick}  |{tick}  |{tick}
-|Firefox (penultimate version) |60 days |60 days |60 days
-|Firefox ESR (current version) |{tick}  |{tick}  |{tick}
-|Edge (current version)        |{tick}  |-       |-
-|Edge (penultimate version)    |{tick}  |-       |-
-|Safari (current version)      |-       |{tick}  |-
-|Safari (penultimate version)  |-       |{tick}  |-
+|Browser                                   |Windows |macOS   |GNU/Linux
+|Chrome (current version)                  |{tick}  |{tick}  |{tick}
+|Chrome (penultimate version)              |60 days |60 days |-
+|Chrome Extended stable (current version)  |{tick}  |{tick}  |{tick}
+|Firefox (current version)                 |{tick}  |{tick}  |{tick}
+|Firefox (penultimate version)             |60 days |60 days |60 days
+|Firefox ESR (current version)             |{tick}  |{tick}  |{tick}
+|Edge (current version)                    |{tick}  |-       |-
+|Edge (penultimate version)                |{tick}  |-       |-
+|Safari (current version)                  |-       |{tick}  |-
+|Safari (penultimate version)              |-       |{tick}  |-
 |===
 
 === Notes on the supported web browsers table.
@@ -37,4 +37,4 @@
 . {productname} is supported on the most recent update of the browsers listed above, on the operating systems listed above.
 . {productname} is not supported on browsers running in Quirks or backward compatibility modes.
 . {productname} is not supported on pre-release, beta, or other ‘technology preview’ browser releases.
-. On browsers that have Extended Support Release versions, {productname} is only supported on the current Extended Support Release release.
+. On browsers that offer a longer-term stable version (ie Firefox Extended Support Release and Chrome Extended stable), {productname} is only supported on the current longer-term stable release.

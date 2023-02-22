@@ -60,9 +60,7 @@ NOTE: `xss_sanitization` is set to `true` by default. That is, {productname} spe
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  xss_sanitization: {
-    content: false
-  }
+  xss_sanitization: false
 });
 ----
 

@@ -13,8 +13,6 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 * xref:accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
 * xref:bug-fix[Bug fix]
-//* xref:security-fixes[Security fixes]
-//* xref:known-issues[Known issues]
 
 [[accompanying-premium-skins-and-icon-packs-changes]]
 == Accompanying Premium Skins and Icon Packs changes
@@ -42,26 +40,3 @@ In certain webkit browsers the onload event wasn't supported due to an old `bug`
 The previous workaround has now been removed and replaced with the native browser event.
 
 In {productname} 6.4, the onload event `error` that stopped stylesheets to load have now been fixed with the new native browser implementation.
-
-////
-[[security-fixes]]
-== Security fixes
-
-{productname} 6.3.2 includes a fix for the following security issue:
-
-=== security fix
-
-Explanatory text.
-
-
-[[known-issues]]
-== Known issues
-
-This section describes issues that users of {productname} 6.3.2 may encounter and possible workarounds for these issues.
-
-There are several known issues in {productname} 6.3.2.
-
-=== known issue
-
-Explanatory text.
-////

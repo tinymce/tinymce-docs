@@ -74,6 +74,7 @@ For information on:
 
 include::partial$misc/admon-no-functionality-changes-in-updated-server-side-components.adoc[]
 
+
 [[bug-fix]]
 == Bug fix
 
@@ -81,12 +82,11 @@ include::partial$misc/admon-no-functionality-changes-in-updated-server-side-comp
 
 === Removed a workaround for ensuring stylesheets are loaded in an outdated version of webkit
 
-// https://ephocks.atlassian.net/browse/TINY-9433
 In certain webkit browsers the onload event wasn't supported due to an old `bug` within {productname}. A workaround was implemented that manually checked that `stylesheets` were being loaded rather than relying on the event being triggered. Due to this `bug`, a fixed was applied to the onload event, to ensure that it is now supported by webkit.
 
 The previous workaround has now been removed and replaced with the native browser event.
 
-In {productname} 6.4, the onload event `error` that stopped stylesheets to load have now been fixed with the new native browser implementation.
+In {productname} 6.3, the onload event `error` that stopped stylesheets to load have now been fixed with the new native browser implementation.
 
 
 [[security-fixes]]

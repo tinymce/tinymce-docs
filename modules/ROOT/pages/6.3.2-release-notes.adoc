@@ -12,7 +12,9 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 {productname} 6.3.2 was released for {enterpriseversion} and {cloudname} on Wednesday, March 1^st^, 2023. It includes {productname} 6.3.2. These release notes provide an overview of the changes for {productname} 6.3.2:
 
 * xref:accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
+* xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
 * xref:bug-fix[Bug fix]
+* xref:security-fixes[Security fixes]
 
 [[accompanying-premium-skins-and-icon-packs-changes]]
 == Accompanying Premium Skins and Icon Packs changes
@@ -27,6 +29,51 @@ The **Premium Skins and Icon Packs** were rebuilt to pull in the changes also in
 
 For information on using premium skins and icon packs, see: xref:premium-skins-and-icons.adoc[Premium Skins and Icon Packs].
 
+[[accompanying-premium-self-hosted-server-side-component-changes]]
+== Accompanying Premium self-hosted server-side component changes
+
+The {productname} 6.3.2 release includes accompanying changes affecting the {productname} **self-hosted** services for the following plugins:
+
+* Enhanced Media Embed plugin (`mediaembed`)
+* Export plugin (`export`)
+* Enhanced Image Editing plugin (`editimage`)
+* Link Checker plugin (`linkchecker`)
+* Spell Checker Pro plugin (`tinymcespellchecker`)
+* Spelling Autocorrect plugin (`autocorrect`)
+
+For information on:
+
+* The Enhanced Media Embed plugin, see: xref:introduction-to-mediaembed.adoc[Enhanced Media Embed plugin].
+* The Export plugin, see: xref:export.adoc[Export plugin].
+* The Enhanced Image Editing plugin, see: xref:editimage.adoc[Enhanced Image Editing plugin].
+* The Link Checker plugin, see: xref:linkchecker.adoc[Link Checker plugin].
+* The Spell Checker Pro plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
+* The Spelling Autocorrect plugin, see: xref:autocorrect.adoc[Spelling Autocorrect plugin].
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+
+The Java server-side components have been updated to the following versions:
+
+* `ephox-hyperlinking.war`: 2.105.14
+* `ephox-image-proxy.war`: 2.106.5
+* `ephox-spelling.war`: 2.118.7
+
+=== Updating the self-hosted server-side components
+
+The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
+
+. Update your Java Application Server to the minimum required version:
+
+include::partial$misc/supported-application-servers.adoc[]
+
+. Replace the existing server-side `.war` files with the `.war` files bundled with {productname} vnumtxt or later.
+
+For information on:
+
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+* Deploying the server-side components using Docker, see: xref:bundle-intro-setup.adoc[Containerized service deployments].
+
+include::partial$misc/admon-no-functionality-changes-in-updated-server-side-components.adoc[]
+
 [[bug-fix]]
 == Bug fix
 
@@ -40,3 +87,22 @@ In certain webkit browsers the onload event wasn't supported due to an old `bug`
 The previous workaround has now been removed and replaced with the native browser event.
 
 In {productname} 6.4, the onload event `error` that stopped stylesheets to load have now been fixed with the new native browser implementation.
+
+
+[[security-fixes]]
+== Security fixes
+
+{productname} 6.3.2 includes a fix for the following security issues:
+
+All 3 server-side components have been updated to include dependency updates addressing the following security issues. 
+
+* https://nvd.nist.gov/vuln/detail/CVE-2022-41881[CVE-2022-41881]
+* https://nvd.nist.gov/vuln/detail/CVE-2022-41915[CVE-2022-41881]
+* https://nvd.nist.gov/vuln/detail/CVE-2023-22465[CVE-2022-41881]
+
+
+This updates include both Medium and High severity vulnerability fixes.
+
+For information on the server-side components updates, see: xref:#accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes].
+
+include::partial$misc/admon-no-functionality-changes-in-updated-server-side-components.adoc[]

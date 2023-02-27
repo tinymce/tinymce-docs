@@ -86,10 +86,13 @@ To correct this bug, the typography plugin was added to the default `menubar` co
 === Typography button and menu item will be disabled if editor has no content
 
 // https://ephocks.atlassian.net/browse/TINY-9441
-// 1. Cause - What actions or circumstances cause this bug to present.
-// 2. Consequence - What happens when the bug presents
-// 3. Fix - What was done to fix the bug.
-// 4. Result - What now happens when the actions or circumstances above occur.
+In previous versions of {productname}, the typography plugin button would render to the toolbar when the editor contained no content.
+
+As a consequence of this, users would be able to apply the typography button features to an editor that contained no physical content.
+
+As a fix, {productname} added some new improvements to the Advanced Typography plugin that now disables the users ability to apply the plugin and use its features, when the editor content value returns as `empty`.
+
+In {productname} 6.4, applying the typography button to an empty editor, will no longer be possible.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 For information on the **Advanced Typography** plugin, see: xref:advanced-typography.adoc[Advanced Typography].
@@ -352,20 +355,20 @@ In {productname} 6.4, two new additions were added to the menu button API.
 As a result, in {productname} 6.4, menu items can chance based on the parent menu button `api` properties.
 
 === New highlight_on_focus option which enables highlighting the content area on focus
-// @bforte- this is still WIP
+
 // https://ephocks.atlassian.net/browse/TINY-9277
-//1. Cause - What actions or circumstances cause this bug to present.
+In previous versions of {productname}, when using `devtools` such as `Chrome devTools`, the editor content area would not render the `focus` border when the editor was `infocus`.
 
-//2. Consequence - What happens when the bug presents.
+As a consequence, this issue, whilst creating no impending impacts on the functionality of the editor, would create an inconsistency with the visual UX for the `devTools` environment. As `devTools` is used by developers to inspect the rendered HTML, and troubleshoot issues, the importance for rendering {productname} elements is vital. 
 
-//3. Fix - What was done to fix the bug.
+To fix this issues, {productname} 6.4, made some changes to the `focusController` to ensure that when the editor content is `infocus` the editor will render the highlighted border within `devTools`, and when the editor is not `infocus` to remove `focus`.
 
-//4. Result - What now happens when the actions or circumstances above occur.
+In {productname} 6.4, the editor now renders the highlighted border when in `focus` which is visible only via `devTools`.
 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === New fontsizeinput toolbar item which allows the user to set the size via input and also increase and decrease it with + and - buttons
-
+// @bforte waiting on QA Verified before drafting.
 // https://ephocks.atlassian.net/browse/TINY-9429
 //1. Cause - What actions or circumstances cause this bug to present.
 
@@ -386,14 +389,13 @@ As a result, in {productname} 6.4, menu items can chance based on the parent men
 === The link plugins context menu items will no longer appear for noneditable links
 
 // https://ephocks.atlassian.net/browse/TINY-9491
-//1. Cause - What actions or circumstances cause this bug to present.
+In previous versions of {productname}, the link plugin would display the context menu items for `noneditable` links.
 
-//2. Consequence - What happens when the bug presents.
+As a consequence, links such as `table of contents` would open the context menu when `clicked`. The behaviour for the `table of contents`, is not designed to allow links to be modified or removed as the `table of contents` plugin is considered as a `noneditable` element.
 
-//3. Fix - What was done to fix the bug.
+To fix this bug, {productname} 6.4 introduced a new check that now verify if the link plugin is opened, which will now block the context menu on `table of contents` from opening upon when the `toc` is clicked. 
 
-//4. Result - What now happens when the actions or circumstances above occur.
-
+As a result, the context menu for the `table of contents` now behaves as expected in {productname} 6.4.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === The formatting of contenteditable="false" elements are no longer cloned to new cells while creating new table rows
@@ -595,41 +597,42 @@ Previous versions of {productname}, table cells set with the `noneditable` prope
 In {productname} 6.4, all table UI actions, commands and selections have been `disabled` for tables when either the table or the editor body have been set as `noneditable` elements.
 
 === Table commands were modifying tables in a noneditable root element
-// ONHOLD waiting for final implementation
+
 // https://ephocks.atlassian.net/browse/TINY-9459
-//1. Cause - What actions or circumstances cause this bug to present.
+In versions of {productname}, prior to 6.4, tables could be modified by using `execCommands` when tables are placed within a `noneditable` root element.
 
-//2. Consequence - What happens when the bug presents.
+As a consequence, a bug was identified that by using the `execCommands`, which are provided by {productname}, the user could modify the table element regardless of it being nested within a `noneditable` root element. This was made possible by by overriding the `noneditable` element settings by using the `execCommand`'s' to trigger the `action` event.
 
-//3. Fix - What was done to fix the bug.
+To fix this bug, {productname} 6.4, made improvements to the DOM `Commands` API that now blocks all Table UI actions via the `execCommands` when a `noneditable` element selection is highlighted inside a `noneditable` root.
 
-//4. Result - What now happens when the actions or circumstances above occur.
+As a result, `noneditable` elements such as tables cannot have their properties overridden by using the `execCommands`.
 
+_(Readmore about editorCommands xref:editor-command-identifiers.adoc[here])_
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Fake carets were rendered for noneditable elements and tables in a noneditable root element
-// ONHOLD waiting for final implementation
+
 // https://ephocks.atlassian.net/browse/TINY-9459
-//1. Cause - What actions or circumstances cause this bug to present.
+In previous versions of {productname}, `fake` carets that are within a `noneditable` element, would render as a `highlighted` node, when nested within another `noneditable` element, this would occured when the content was placed within a `table` placed in the root element.
 
-//2. Consequence - What happens when the bug presents.
+As a consequence, `fake` caret/s would be visibly highlighted within the editor viewport,  which would allow content to be inserted into the element when the table was selected by using either the keyboard and mouse function commands.
 
-//3. Fix - What was done to fix the bug.
+To fix this {productname} 6.4, added a new function to the Utils API that filters any content that is considered as a `fake caret` element, which now disables the users ability to add/insert or modify the content contained within the `noneditable` element node space.
 
-//4. Result - What now happens when the actions or circumstances above occur.
+As a result, any `noneditable` elements that are nested within another `noneditable` element root that are nested within `table` elements, can no longer be edited in {productname} 6.4.
 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Textareas with scrollbars in dialogs would not render rounded corners correctly on some browsers
 
 // https://ephocks.atlassian.net/browse/TINY-9331
-//1. Cause - What actions or circumstances cause this bug to present.
+In previous versions of {productname}, the source code visible UI boarder would not render correctly in some browsers.
 
-//2. Consequence - What happens when the bug presents.
+As a consequence, when viewing text-areas that contain `scrollbars` within dialogs, the `focus` visible boarder was not rendering the corners inside the dialog.
 
-//3. Fix - What was done to fix the bug.
+To correct this issue, {productname} 6.4, introduced a new text-area wrapper that fixes the issues with the `boarder-color, radius, style and width` that directly affects the `focus` render element for the dialog.  In addition `overflow: hidden;`, has been added to clip the scrollbars to the border-radius.
 
-//4. Result - What now happens when the actions or circumstances above occur.
+As a result, the `focus` dialog boarder now renders correctly in {productname} 6.4.
 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 

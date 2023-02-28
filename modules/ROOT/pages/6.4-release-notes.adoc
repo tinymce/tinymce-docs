@@ -137,10 +137,18 @@ The {productname} 6.4 release includes an accompanying release of the **Merge Ta
 ==== The mceMergeTag command now preserves the selected content as a plain text and wraps it in a merge tag prefix and suffix if the content length exceeds the limit.
 
 // https://ephocks.atlassian.net/browse/TINY-9444
-// 1. Cause - What actions or circumstances cause this bug to present.
-// 2. Consequence - What happens when the bug presents
-// 3. Fix - What was done to fix the bug.
-// 4. Result - What now happens when the actions or circumstances above occur.
+
+In previous versions of {productname}, `mceMergeTag`'s would not preserve the selected content within the merge tag `prefix` and `suffix` in some events.
+
+As a consequence, when the user applied the trailing suffix `}}` to the end of the content, the selected content wrapped within the `mceMergeTag` would not be preserved as plain text.  This would occur in specifically in instances when the `mceMergeTag` content length exceeded the character limit set by {productname}.
+
+To fix this issue, improvements to the `mceMergeTag` commands were introduced with the release of {productname} 6.4, that focused on adding a new feature that impacts the way text_patterns handle specific cases such as when `mceMergeTag`'s exceed the character limit set by {productname}. These improvements now wraps any content that exceeds the `mceMergeTag` limit, by converting the content into *plain text* whilst encapsulating it in the `prefix` and `suffix`.
+
+As a result of these improvements, the `mceMergeTag` command now preserves the selected content as a plain text and wraps it in a merge tag `prefix` and `suffix` as expected.
+
+[NOTE]
+Any content that is covered into plain text that exceeds the `mceMergeTag` character limit rules, will not be converted into an official `mceMergeTag`.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
@@ -179,10 +187,16 @@ The {productname} 6.4 release includes an accompanying release of the **Comments
 ==== The comment input box now has a max height to prevent long comments from expanding the box indefinitely
 
 // https://ephocks.atlassian.net/browse/TINY-8894
-// 1. Cause - What actions or circumstances cause this bug to present.
-// 2. Consequence - What happens when the bug presents
-// 3. Fix - What was done to fix the bug.
-// 4. Result - What now happens when the actions or circumstances above occur.
+In previous versions of {productname}, the comment input box for the popup dialog would exceed the max height for the {productname} viewport.
+
+As a consequence, in situations when the user would insert content into the input field, the height of the comment box would expand beyond the max viewport height (vh), for {productname}.  This caused UX issues which restricted the users ability to `submit` the add **Comment** button as it was forced outside of the border `bounds` of the {productname} editor. 
+
+To fix this issue, {productname} introduced two changes which improved the way the **Comment** input box behaves.
+
+. Updates to the max height for the **Comment** input box, which now prevents long comments from expanding the box indefinitely beyond the editor set `bounds`. 
+. Set new heights for the **Comment** containers that is focused on improving the visibility of long comments by containing them within a smaller scrolling space with the added benefit of `SHOW MORE` or `SHOW LESS`.
+
+As a result, the input box for the **Comments** premium plugin now offers these improvements with the most recent release of {productname} 6.4.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to Tiny Comments].
@@ -257,7 +271,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 {productname} 6.4 also includes the following improvement:
 
 === Direct invalid child text nodes of list elements will be wrapped in list item elements.
-// @bforte @KKS waiting on TINY-9589 to be merged for confirmation of adding this.
+
 // https://ephocks.atlassian.net/browse/TINY-4818
 
 Invalid child nodes were throwing a `Uncaught TypeError:` when `<ol>` tags directly included a text node. This `TypeError` would not allow the user to `Tab` a text node while nested within `<ol>/<li>` HTML tags.
@@ -268,7 +282,7 @@ In {productname} 6.4, direct _invalid child text nodes_ of list elements are now
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Opening the toolbar drawer steals focus even if skip_focus is set.
-// @bforte @KKS waiting on TINY-9589 to be merged for confirmation of adding this.
+
 //https://ephocks.atlassian.net/browse/TINY-9337		
 
 A focusing event that was in the initial *FloatingToolbarButton* config, in previous versions of {productname} in (2019) was causing `focus` issues with the *ToggleToolbarDrawer*. As a consequence, this meant that while the editor was been scrolled into `focus`(viewport position), and the *ToggleToolbarDrawer* command `skipFocus: boolean` was set, the toolbar draw could still take `focus` when It was not meant to.
@@ -688,7 +702,7 @@ The fix now allows all 3 link-plugins to work within the context menu items.
 In {productname} 6.4, when the user executes right `mouse click` on the link selection immediately after attaching a link to a `<string>`, the link-plugins now work as expected.
 
 === Creating a list in a table cell when the caret is in front of an anchor element would not properly include the anchor in the list.
-// @bforte @KKS waiting on TINY-9589 to be merged for confirmation of adding this.	
+
 //https://ephocks.atlassian.net/browse/TINY-6853
 In previous versions of {productname}, a bug was causing issues with `links` while they were nested within table-cells. As a consequence, it was found that when creating a `num-list` or `bullet-list` to the left (node) of a `link` that was nested within a table cell the `list` would *not* include the created `link` within the `num or bullet-list` as expected. 
 

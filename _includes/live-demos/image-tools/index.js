@@ -4,7 +4,7 @@ tinymce.init({
   plugins: [
     'advlist autolink lists link image charmap print preview anchor',
     'searchreplace visualblocks code fullscreen',
-    'insertdatetime media table paste imagetools wordcount'
+    'insertdatetime media table imagetools wordcount'
   ],
   toolbar: 'insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
   content_style: {{site.liveDemoIframeCSSStyles}}

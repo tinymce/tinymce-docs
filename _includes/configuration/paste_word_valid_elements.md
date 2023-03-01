@@ -13,7 +13,6 @@ This option enables you to configure the `valid_elements` specific to MS Office.
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: 'paste',
   menubar: 'edit',
   toolbar: 'paste',
   paste_word_valid_elements: 'b,strong,i,em,h1,h2'

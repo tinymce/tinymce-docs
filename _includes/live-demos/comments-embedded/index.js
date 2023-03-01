@@ -11,7 +11,7 @@ tinymce.init({
       items: 'addcomment showcomments deleteallconversations'
     }
   },
-  plugins: 'paste code tinycomments',
+  plugins: 'code tinycomments',
   tinycomments_mode: 'embedded',
   tinycomments_author: currentAuthor,
   tinycomments_can_resolve: function (req, done, fail) {

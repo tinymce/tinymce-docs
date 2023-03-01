@@ -12,6 +12,8 @@ controls: toolbar button, menu item
 
 > Looking for more advanced Microsoft Word importing and pasting? Try the [PowerPaste]({{site.baseurl}}/plugins/premium/powerpaste/) plugin.
 
+> **Note:** The functionality of this plugin has been included in core of TinyMCE since version 6.0.0 and it is no longer required to include `paste` as part of the plugins. 
+
 This plugin will filter/cleanup content pasted from Microsoft Word. The power of the plugin is in its options, so please take the time to learn more about them below.
 
 The plugin also adds a menu item `Paste as text` under the `Edit` menu dropdown and a toolbar button.
@@ -23,7 +25,6 @@ The plugin also adds a menu item `Paste as text` under the `Edit` menu dropdown 
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: 'paste',
   menubar: 'edit',
   toolbar: 'paste pastetext'
 });

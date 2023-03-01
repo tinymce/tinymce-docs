@@ -15,7 +15,7 @@ If `help_tabs` is not configured, any tabs defined using `addTab` will be displa
 ```js
 tinymce.init({
   selector: 'textarea',
-  plugins: 'help link table paste code emoticons',
+  plugins: 'help link table code emoticons',
   toolbar: 'help addTab',
   help_tabs: [
     'shortcuts', // the default shortcuts tab

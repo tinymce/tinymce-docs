@@ -15,6 +15,7 @@ This option enables you to set the default state of the `Paste as text` menu ite
 
 #### Example: Using `paste_as_text`
 
+{% if plugin == "powerpaste" %}
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
@@ -24,4 +25,14 @@ tinymce.init({
   paste_as_text: true
 });
 ```
+{% else %}
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  menubar: 'edit',
+  toolbar: 'paste',
+  paste_as_text: true
+});
+```
+{% endif %}
 

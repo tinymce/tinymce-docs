@@ -17,7 +17,6 @@ For example, Firefox enables you to paste images directly into any `contentEdita
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: 'paste',
   menubar: 'edit',
   toolbar: 'paste',
   paste_data_images: true

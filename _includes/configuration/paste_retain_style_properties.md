@@ -11,7 +11,6 @@ This option allows you to specify which styles you want to retain when pasting c
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
-  plugins: 'paste',
   menubar: 'edit',
   toolbar: 'paste',
   paste_retain_style_properties: 'color font-size'

@@ -17,6 +17,7 @@ This option enables the merge format feature of the {{pluginname}} plugin. This 
 
 #### Example: Using `paste_merge_formats`
 
+{% if plugin == "powerpaste" %}
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
@@ -24,3 +25,13 @@ tinymce.init({
   paste_merge_formats: false
 });
 ```
+{% else %}
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  paste_merge_formats: false
+});
+```
+{% endif %}
+
+

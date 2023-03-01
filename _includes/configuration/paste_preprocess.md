@@ -10,7 +10,6 @@ This option enables you to modify the pasted content before it gets inserted int
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: 'paste',
   menubar: 'edit',
   toolbar: 'paste',
   paste_preprocess: function(plugin, args) {

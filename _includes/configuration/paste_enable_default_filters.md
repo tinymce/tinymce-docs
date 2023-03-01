@@ -13,7 +13,6 @@ This option allows you to disable {{site.productname}}'s default paste filters w
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
-  plugins: 'paste',
   menubar: 'edit',
   toolbar: 'paste',
   paste_enable_default_filters: false

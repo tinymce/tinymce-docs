@@ -262,7 +262,7 @@ When using `tinymce-react`:
 <Editor
   init={% raw %}{{{% endraw %}
     plugins: [
-     'lists link image paste help wordcount'
+     'lists link image help wordcount'
     ],
     toolbar: 'undo redo | formatselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | help'
   {% raw %}}}{% endraw %}

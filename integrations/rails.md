@@ -31,7 +31,7 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
         plugins: [
           'advlist autolink lists link image charmap print preview anchor',
           'searchreplace visualblocks code fullscreen',
-          'insertdatetime media table paste code help wordcount'
+          'insertdatetime media table code help wordcount'
         ],
           toolbar: 'undo redo | formatselect | ' +
           ' bold italic backcolor | alignleft aligncenter ' +
@@ -73,7 +73,7 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
         plugins: [
           'advlist autolink lists link image charmap print preview anchor',
           'searchreplace visualblocks code fullscreen',
-          'insertdatetime media table paste code help wordcount'
+          'insertdatetime media table code help wordcount'
         ],
           toolbar: 'undo redo | formatselect | ' +
           'bold italic backcolor | alignleft aligncenter ' +
@@ -140,7 +140,7 @@ This procedure creates a [basic Ruby on Rails application](https://guides.rubyon
       plugins:
         - advlist autolink lists link image charmap print preview anchor
         - searchreplace visualblocks code fullscreen
-        - insertdatetime media table paste code help wordcount
+        - insertdatetime media table code help wordcount
       ```
 
 3. Add the following lines within the `<head>` element of `app/views/layouts/application.html.erb` to automatically include {{site.productname}} on pages using the `application` layout:

@@ -17,6 +17,7 @@ This option controls how many spaces are used to represent a tab character in HT
 
 #### Example: Using `paste_tab_spaces`
 
+{% if plugin == "powerpaste" %}
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
@@ -24,3 +25,11 @@ tinymce.init({
   paste_tab_spaces: 2
 });
 ```
+{% else %}
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  paste_tab_spaces: 2
+});
+```
+{% endif %}

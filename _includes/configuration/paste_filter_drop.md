@@ -13,7 +13,6 @@ This option allows developers to disable the default drop filters when set to `f
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: 'paste',
   paste_filter_drop: false
 });
 ```

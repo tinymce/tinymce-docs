@@ -15,7 +15,6 @@ This option lets you disable the logic that converts list like paragraph structu
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: 'paste',
   menubar: 'edit',
   toolbar: 'paste',
   paste_convert_word_fake_lists: false

@@ -18,6 +18,7 @@ Due to browser limitations, it is not possible to filter content that is dragged
 #### Example: Using `powerpaste_block_drop`
 {% endif %}
 
+{% if plugin == "powerpaste" %}
 ```js
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
@@ -25,3 +26,11 @@ tinymce.init({
   {{plugin}}_block_drop: false
 });
 ```
+{% else %}
+```js
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  {{plugin}}_block_drop: false
+});
+```
+{% endif %}

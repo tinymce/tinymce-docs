@@ -8,6 +8,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### 2032-02-22
 
+- DOC-1913: added `6.3.2-release-note.adoc`. Added outline to this file.
 - DOC-1918: added the TinyMCE 6.3.2-specific change to `changelog.adoc`.
 
 ### 2023-01-20

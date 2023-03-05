@@ -15,7 +15,47 @@ The {pluginname} plugin, depending on its setting, can replace common typewriter
 
 For example, if English-language typography rules are set, the {pluginname} plugin can automatically replace an open-hyphen (`-`) with an em-dash (`—`). And it can automatically replace the teardrop apostrophe (`'`) with opening and closing quote marks (`‘` and `’`).
 
-NOTE: The {pluginname} plugin rules are sourced from the https://github.com/typograf/typograf[typograf] library.
+== Advanced Typography plugin rules
+
+The {pluginname} plugin rules are sourced from the https://github.com/typograf/typograf[typograf] library.
+
+However, the {pluginname} plugin only uses a sub-set of all the rules available in this library.
+
+Of the library’s full https://github.com/typograf/typograf/blob/dev/docs/RULES.en-US.md[Rules of typograf] list, the {pluginname} plugin uses the following:
+
+* common/space/delBeforePunctuation
+* common/space/afterComma
+* common/space/afterColon
+* common/space/delBetweenExclamationMarks
+* common/space/afterExclamationMark
+* common/space/afterQuestionMark
+* common/space/afterSemicolon
+* common/space/beforeBracket
+* common/space/bracket
+* common/space/delBeforeDot
+* common/space/delBeforePercent
+* common/space/squareBracket
+* common/number/mathSigns
+* common/number/times
+* common/number/fraction
+* common/symbols/arrow
+* common/symbols/cf
+* common/symbols/copy
+* common/punctuation/delDoublePunctuation
+* common/punctuation/hellip
+* common/nbsp/afterSectionMark
+* common/punctuation/quote
+* en-US/dash/main
+* common/nbsp/afterParagraphMark
+* common/nbsp/afterShortWord
+* common/nbsp/beforeShortLastNumber
+* common/nbsp/beforeShortLastWord
+* common/nbsp/dpi
+* common/punctuation/apostrophe
+
+No other typograf rules are used and the {pluginname} plugin cannot be configured to use any typograf rules other than those listed above.
+
+NOTE: The {pluginname} plugin affects text only. It does not modify the underlying HTML markup.
 
 == Interactive example
 

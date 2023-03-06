@@ -309,21 +309,40 @@ Improvements were made to add a content filter for lists within {productname} 6.
 In {productname} 6.4, direct _invalid child text nodes_ of list elements are now wrapped in list item elements, which allow the user to now `Tab` nested text nodes that are within `<ol>/<li>` tags.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
-=== Opening the toolbar drawer steals focus even if skip_focus is set.
+=== Templates will be parsed before preview and insertion to make preview consistent with inserted template content and prevent XSS
 
-//https://ephocks.atlassian.net/browse/TINY-9337		
+// https://ephocks.atlassian.net/browse/TINY-9244
+// Cause, Consequence, Change, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
-A focusing event that was in the initial *FloatingToolbarButton* config, in previous versions of {productname} in (2019) was causing `focus` issues with the *ToggleToolbarDrawer*. As a consequence, this meant that while the editor was been scrolled into `focus`(viewport position), and the *ToggleToolbarDrawer* command `skipFocus: boolean` was set, the toolbar draw could still take `focus` when It was not meant to.
+=== Pressing backspace in an empty line now preserves formatting in a previous empty line
 
-In {productname} 6.4, a improvement was made to the focusing `event` which is now removed after toggling the toolbar.
+// https://ephocks.atlassian.net/browse/TINY-9454
+// Cause, Consequence, Change, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
-As a result to the fix, while the *FloatingToolbarButton* `focus` is initiated, the toolbar now focuses correctly without stealing `focus` when `skipFocus: 'boolean' is set.
+=== Pressing enter inside the inputfontsize input would not move the focus back into the editor content
 
+// https://ephocks.atlassian.net/browse/TINY-9598
+// Cause, Consequence, Change, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Improved contrast of border colors against the background color throughout the UI
+
+// https://ephocks.atlassian.net/browse/TINY-9587
+// Cause, Consequence, Change, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 [[additions]]
 == Additions
 
 {productname} 6.4 also includes the following additions:
+
+=== New tree component that can be used in dialog body panel
+
+// https://ephocks.atlassian.net/browse/TINY-9532
+// Cause, Consequence, Change, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === renderUI property in the Theme type can now return a Promise <RenderResult> instead of RenderResult
 
@@ -403,15 +422,74 @@ In {productname} 6.4, the editor now renders the highlighted border when in `foc
 
 === New fontsizeinput toolbar item which allows the user to set the size via input and also increase and decrease it with + and - buttons
 // @bforte this is related to https://ephocks.atlassian.net/browse/DOC-1892
+
 // https://ephocks.atlassian.net/browse/TINY-9429
-//1. Cause - What actions or circumstances cause this bug to present.
+// Cause, Consequence, Change, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
-//2. Consequence - What happens when the bug presents.
+=== Added skipFocus option to the ToggleToolbarDrawer command to preserve focus
 
-//3. Fix - What was done to fix the bug.
+//https://ephocks.atlassian.net/browse/TINY-9337		
 
-//4. Result - What now happens when the actions or circumstances above occur.
+A focusing event that was in the initial *FloatingToolbarButton* config, in previous versions of {productname} in (2019) was causing `focus` issues with the *ToggleToolbarDrawer*. As a consequence, this meant that while the editor was been scrolled into `focus`(viewport position), and the *ToggleToolbarDrawer* command `skipFocus: boolean` was set, the toolbar draw could still take `focus` when It was not meant to.
 
+In {productname} 6.4, a improvement was made to the focusing `event` which is now removed after toggling the toolbar.
+
+As a result to the fix, while the *FloatingToolbarButton* `focus` is initiated, the toolbar now focuses correctly without stealing `focus` when `skipFocus: 'boolean' is set.
+
+=== New font_size_input_default_unit option allow to use of numbers without a unit in fontsizeinput and have them parsed with the default unit, if it is not defined the default is pt
+
+// https://ephocks.atlassian.net/browse/TINY-9585
+// Cause, Consequence, Change, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== New group and togglebutton in view
+
+// https://ephocks.atlassian.net/browse/TINY-9523
+// Cause, Consequence, Change, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== New togglebutton in dialog footer buttons
+
+// https://ephocks.atlassian.net/browse/TINY-9523
+// Cause, Consequence, Change, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Added toggleFullscreen to dialog API
+
+// https://ephocks.atlassian.net/browse/TINY-9528
+// Cause, Consequence, Change, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== New text-size-increase and text-size-decrease icons
+
+// https://ephocks.atlassian.net/browse/TINY-9530
+// Cause, Consequence, Change, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== New text-size-increase and text-size-decrease icons
+
+// https://ephocks.atlassian.net/browse/TINY-9530
+// Cause, Consequence, Change, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== New xss_sanitization option to allow for XSS sanitization to be disabled
+
+// https://ephocks.atlassian.net/browse/TINY-9600
+// Cause, Consequence, Change, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Added top right close 'x' button of the modal dialogs to keyboard navigation
+
+// https://ephocks.atlassian.net/browse/TINY-9520
+// Cause, Consequence, Change, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== New ui_mode option for editor in scrollable containers support
+
+// https://ephocks.atlassian.net/browse/TINY-9414
+// Cause, Consequence, Change, Result
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
@@ -451,6 +529,13 @@ The consequence of the previous UX, meant that adjustments needed to be made to 
 To fix this accessibility issue, {productname} 6.4, increased the contrast ratio to `3:1` to each line divider, and changed the `line` color to `#646D78` to further help define were the separations occur in the table.
 
 As a result, the `help menu` is now styled to support a wider range of users, by these new changes implemented.
+
+=== The sidebar element now has accessibility role region when visible and presentation when hidden
+
+// https://ephocks.atlassian.net/browse/TINY-9517
+// Cause, Consequence, Change, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
 
 === Provide configuration to turn DomPurify off
 // @bforte this is a placeholder
@@ -507,12 +592,14 @@ In {productname} 6.4, this bug was fixed by adding a `Event Behaviour` to the to
 
 As a result, the `onSetup` function for custom group toolbar buttons now runs correctly in {productname} 6.4.
 
+=== An element could be dropped onto the decendants of an element with a `noneditable` attribute
+
 // https://ephocks.atlassian.net/browse/TINY-9364
 In {productname} 6.0, the drag and drop `config` did not check some conditions surrounding element placements using either a grag or drop action.  This affected users running {productname} 6.0, which would affectivly allow decendants of *noneditable elements* to be dropped into another *noneditable element*.
 
 Fixes were made to ensure that `dragging | dropping` onto *noneditable element* targets on all browsers is `disabled`. This also includes when the drop target cursor is inside the contenteditable element, or just before it.
 
-In {productname} 6.4, now prevents the user from having the ability to drag and drop any descendants of a `contenteditable=false element` within another *noneditable element*.
+{productname} 6.4, now prevents the user from having the ability to drag and drop any descendants of a `contenteditable=false element` within another *noneditable element*.
 
 === Checkmark did not show in menu colorswatches
 
@@ -526,6 +613,24 @@ Previous versions of {productname} the known issue, (_https://www.tiny.cloud/doc
 To fix this bug, {productname} introduced a new variable to store the node `selection` and `color` format value, which then renders a checkmark to appear in both the toolbar and menubar for both the `forecolor` and `background` color.
 
 As a result, in {productname} 6.4, checkmarks now work as expected when using the color swatch in both the toolbar and menubar.
+
+=== The foreground and background menu icons would not properly update to display the last used color
+
+// https://ephocks.atlassian.net/browse/TINY-9497
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Added new setIconFill function to NestedMenuItemInstanceApi
+
+// https://ephocks.atlassian.net/browse/TINY-9497
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Pasting links to text would sometimes not generate the correct undo stack on safari
+
+// https://ephocks.atlassian.net/browse/TINY-9489
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Toolbar split buttons in advlist plugin to show the correct state when the cursor is in a checklist
 
@@ -562,6 +667,12 @@ While using previous versions of {productname}, `clicking` away to dismiss the *
 To correct this issue, a new Css.set was implemented to keep the `focus` on the DOM container in the initial scroll document position. 
 
 In {productname} 6.4, when the user `clicks` away to dismiss the *Search* and *Replace* dialog within Safari, the focus now returns to the editor and the scroll does not change position within the editor.
+
+=== Inline headers would not work in some situations when the editor was moved too far right horizontally
+
+// https://ephocks.atlassian.net/browse/TINY-8977
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Quick toolbars were incorrectly rendered during the dragging of contenteditable="false" elements
 
@@ -743,6 +854,24 @@ The fix now allows all 3 link-plugins to work within the context menu items.
 
 In {productname} 6.4, when the user executes right `mouse click` on the link selection immediately after attaching a link to a `<string>`, the link-plugins now work as expected.
 
+=== Editor commands ForwardDelete and Delete was deleting contents inside noneditable elements
+
+// https://ephocks.atlassian.net/browse/TINY-9477
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Backspace or delete keys was deleting contents inside noneditable elements
+
+// https://ephocks.atlassian.net/browse/TINY-9477
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Inserting newlines inside an editable element inside a noneditable root would sometimes try to split the editable element
+
+// https://ephocks.atlassian.net/browse/TINY-9461
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
 === Creating a list in a table cell when the caret is in front of an anchor element would not properly include the anchor in the list.
 
 //https://ephocks.atlassian.net/browse/TINY-6853
@@ -751,6 +880,68 @@ In previous versions of {productname}, a bug was causing issues with `links` whi
 To fix this bug, the table cell now checks *If* the caret position is in front of an *anchor element*, `if` (true), then the table cell will include the anchor in the `list`.
 
 In {productname} 6.4, anchor elements are included inside `lists` while nested within table cells.
+
+=== Dragging and dropping noneditable elements on table borders would remove the element on drop
+
+// https://ephocks.atlassian.net/browse/TINY-9021
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Noneditable elements would be removed when dragged and dropped within a noneditable root
+
+// https://ephocks.atlassian.net/browse/TINY-9558
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Formatting could be applied or removed on noneditable list items inside a noneditable root
+
+// https://ephocks.atlassian.net/browse/TINY-9563
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Annotation would not be removed if the annotation was immediately deleted after being created
+
+// https://ephocks.atlassian.net/browse/TINY-9399
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Inserting a link for a selection from quickbars didn't preserve formatting
+
+// https://ephocks.atlassian.net/browse/TINY-9593
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Inline dialog position was not correct when the editor wasn't inline and was contained in a fixed or absolute positioned element
+
+// https://ephocks.atlassian.net/browse/TINY-9554
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Sticky toolbars would not have fade transition when undocking in classic iframe mode
+
+// https://ephocks.atlassian.net/browse/TINY-9408
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Inserting elements that was not valid within the closest editing host would incorrectly split the editing host
+
+// https://ephocks.atlassian.net/browse/TINY-9595
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== color_cols option was not respected in the forecolor or backcolor color swatches
+
+// https://ephocks.atlassian.net/browse/TINY-9560
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+=== Drag and dropping the last noneditable element out of its parent block would not properly pad the parent block element
+
+// https://ephocks.atlassian.net/browse/TINY-9606
+// Cause, Consequence, Fix, Result
+// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+
+
 
 ////
 

@@ -44,7 +44,7 @@ Next, the, now correctly formed, DOM object is passed to DOMPurify.
 
 Both `DOMParser` and `DOMPurify` are on by default, and `DOMParser` cannot be turned off.
 
-As of {productname} 6.4, however, it is possible to turn `DOMPurify` off using the `xss_sanitization` option.
+As of {productname} 6.4, however, it is possible to turn DOMPurify off using the `xss_sanitization` option.
 
 NOTE: `xss_sanitization` is set to `true` by default. That is, {productname} specifically sets the `xss_sanitization` option to `true`, even if this option is not declared in a {productname} configuration.
 

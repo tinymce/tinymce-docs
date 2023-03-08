@@ -12,7 +12,7 @@ And, over its lifetime, `SaxParser` was extended. For example, as of {productnam
 For {productname} 6.0, however, this basic parser was removed and replaced with two significantly more thorough alternatives:
 
 . the https://developer.mozilla.org/en-US/docs/Web/API/DOMParser[native browser API], `DOMParser()`; and
-. the Free and Open Source _https://github.com/cure53/DOMPurify[XSS sanitizer for HTML, MathML and SVG]_, `DOMPurify`.
+. the Free and Open Source _https://github.com/cure53/DOMPurify[XSS sanitizer for HTML, MathML and SVG]_, DOMPurify.
 
 NOTE: {productname} uses DOMPurify 2.x, which was current at the time version 6 was developed.
 

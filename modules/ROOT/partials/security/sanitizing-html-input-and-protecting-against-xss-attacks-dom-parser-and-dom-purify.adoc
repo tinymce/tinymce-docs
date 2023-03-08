@@ -38,7 +38,7 @@ When this string is passed in, the `DOMParser` API adds the missing closing anch
 
 Next, the, now correctly formed, DOM object is passed to DOMPurify.
 
-`DOMPurify` runs a security-focussed ruleset over the DOM object to sanitize the HTML and protect {productname}, and applications built using {productname}, against XSS attacks.
+DOMPurify runs a security-focused ruleset over the DOM object to sanitize the HTML and protect {productname}, and applications using {productname}, against XSS attacks.
 
 ==== Turning DOMPurify off
 

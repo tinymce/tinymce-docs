@@ -42,7 +42,7 @@ DOMPurify runs a security-focused ruleset over the DOM object to sanitize the HT
 
 ==== Turning DOMPurify off
 
-Both `DOMParser` and `DOMPurify` are on by default, and `DOMParser` cannot be turned off.
+DOMPurify sanitization is on by default, and prior to {productname} 6.4, it could not be turned off.
 
 As of {productname} 6.4, however, it is possible to turn DOMPurify off using the `xss_sanitization` option.
 

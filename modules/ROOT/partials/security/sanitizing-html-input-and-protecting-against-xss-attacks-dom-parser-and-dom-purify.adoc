@@ -14,7 +14,7 @@ For {productname} 6.0, however, this basic parser was removed and replaced with 
 . the https://developer.mozilla.org/en-US/docs/Web/API/DOMParser[native browser API], `DOMParser()`; and
 . the Free and Open Source _https://github.com/cure53/DOMPurify[XSS sanitizer for HTML, MathML and SVG]_, `DOMPurify`.
 
-NOTE: {productname} uses DomPurify 2.x, which was current at the time version 6 was developed.
+NOTE: {productname} uses DOMPurify 2.x, which was current at the time version 6 was developed.
 
 Before HTML (or XML) content is passed to {productname} 6.x, the `DOMParser` API parses the HTML (or XML) string into a https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model[DOM object]. As part of this process, `DOMParser` attempts to correct mal-formed HTML.
 

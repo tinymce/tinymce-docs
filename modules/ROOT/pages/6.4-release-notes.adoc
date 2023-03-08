@@ -629,7 +629,14 @@ As a result, in {productname} 6.4, checkmarks now work as expected when using th
 === Pasting links to text would sometimes not generate the correct undo stack on safari
 
 // https://ephocks.atlassian.net/browse/TINY-9489
-// Cause, Consequence, Fix, Result
+In previous versions of {productname}, pasting links to `text` selections in Safari would sometimes not generate the correct undo stack.
+
+This is due to Safari not supporting the ability to track changes to a page within the editor, which can create issues for users when pasting links to `text` selections, as the undo stack would not be able to recognise the link as a separate element, resulting in the undo action when called, to not remove the hyperlink.
+
+To fix this issue, a workaround was implemented in {productname} 6.4, that now bypasses the default paste functionality for this undo function.
+
+In {productname} 6.4, pasting links to text selections now generates the correct undo stack on Safari.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Toolbar split buttons in advlist plugin to show the correct state when the cursor is in a checklist
@@ -857,19 +864,46 @@ In {productname} 6.4, when the user executes right `mouse click` on the link sel
 === Editor commands ForwardDelete and Delete was deleting contents inside noneditable elements
 
 // https://ephocks.atlassian.net/browse/TINY-9477
-// Cause, Consequence, Fix, Result
+In the previous versions of {productname}, when utilizing the `forwarddelete` or delete keys, they would delete the contents inside `noneditable` elements. 
+
+As a consequence, elements nested within a `noneditable` root element set to `contentEditable = false;`, were able to be deleted from the `noneditable` root element.
+
+To fix this issue, {productname} 6.4 introduced various improvements to block all commands and keyboard functions such as `delete/forwarddelete` from being applied to `noneditable` content.  The changes made to {productname} with the release of v6.4, included updates to the editor selection `isEditable` function, which now prioritizes fake selections first.
+
+As a result, in {productname} 6.4, when using the `forwarddelete` or `delete` keys on `noneditable` elements within a `noneditable` element, the contents within the `noneditable` elements will no longer be deleted.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Backspace or delete keys was deleting contents inside noneditable elements
 
 // https://ephocks.atlassian.net/browse/TINY-9477
-// Cause, Consequence, Fix, Result
+In the previous versions of {productname}, when utilizing the backspace or delete keys, they would delete the contents inside `noneditable` elements.
+
+As a consequence, elements nested within a `noneditable` root element set to `contentEditable = false;`, were able to be removed/deleted from the `noneditable` root element. To fix this issue, {productname} 6.4 introduced various improvements to block all commands and keyboard functions such as `delete/backspace` from being applied to `noneditable` content. 
+
+The changes made to {productname} 6.4 included updates to the editor selection `isEditable` function, which now prioritizes fake selections first.
+
+As a result, in {productname} 6.4, when using the backspace or delete function keys on `noneditable` elements within a `noneditable` element, the contents within the `noneditable` elements will no longer be deleted. 
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Inserting newlines inside an editable element inside a noneditable root would sometimes try to split the editable element
 
 // https://ephocks.atlassian.net/browse/TINY-9461
-// Cause, Consequence, Fix, Result
+In previous versions of {productname}, inserting newlines inside an `editable` element while it was inside a `noneditable` root would sometimes try to split the `editable` element. 
+
+As a consequence, when child block elements set as `editable` such as a `<p>` tag were nested within the `noneditable` element root, the editor would try to split the child block element when the user hit the `enter` command. 
+
+As the paragraph tag is intended to be a block for `text`, it is classified as `semantically incorrect` to split a paragraph block element.
+In this particular instance, child elements in {productname} such as the `<p>` tag would split the block element resulting in a new block (such as a new paragraph) to be created inside the paragraph when a user attempted to edit it inside a `noneditable` root element. 
+
+Fixes were introduced with the release of {productname} 6.4, that:
+
+* Prevents editing host elements like `<p contenteditable="true">paragraph text</p>` in a `contentEditable = false;` root to be split.
+* Prevents editing hosts elements inside a `noneditable` root to be split.
+
+As a result, when a root element is set to `noneditable`, any `editable` elements inside that root element such as `<p>` tag will no longer try to split the `editable` element. 
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Creating a list in a table cell when the caret is in front of an anchor element would not properly include the anchor in the list.
@@ -884,43 +918,84 @@ In {productname} 6.4, anchor elements are included inside `lists` while nested w
 === Dragging and dropping noneditable elements on table borders would remove the element on drop
 
 // https://ephocks.atlassian.net/browse/TINY-9021
-// Cause, Consequence, Fix, Result
+In previous versions of {productname}, dragging and dropping `noneditable` elements on table borders would create issues during the drop action.
+
+As a consequence, this would result in the `noneditable` element being deleted after the  `action` when dropped onto the borderline within the table cell.
+To fix this issue, {productname} 6.4, introduced a new `isActive` api to the handler for dragger, that checks if the event `isActive` or not, which then hides the resize bar during the dragging event, which now prevents content from being dropped onto table bars.
+
+In {productname} 6.4, dragging an inline `contentEditable = 'false'; element onto the border inside a table, now moves it into a neighbouring cell instead of deleting it.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Noneditable elements would be removed when dragged and dropped within a noneditable root
 
 // https://ephocks.atlassian.net/browse/TINY-9558
-// Cause, Consequence, Fix, Result
+In previous version of {productname}, dragging `noneditable` elements into a `noneditable` root would remove the elements `contentEditable = 'false';` attributes.
+
+As this is not the expected behaviour for a `noneditable` element or root, this bug in particular, created issues in situations such as: *(a)* when the editor body was set to `contentEditable = 'false';`, and *(b)* when a `non editable` element is dragged and dropped into a table element that is within a `non editable` root, which would result in the `noneditable` attributes blocks being deleted from the element that was dropped.
+
+To fix this issue, improvements were made to the drag and drop function that checks if the `dom` element `isEditable` to its `parentElement`.
+
+In {productname} 6.4, `noneditable` elements now preserve their `contentEditable = 'false';` attributes if they are dragged and dropped within a `noneditable` root.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Formatting could be applied or removed on noneditable list items inside a noneditable root
 
 // https://ephocks.atlassian.net/browse/TINY-9563
-// Cause, Consequence, Fix, Result
+In a `noneditable` root, when selecting multiple lines from lists, it was possible to add formatting to the selection such as `*bold*` and `_italic_`. As a consequence, this would allow contents that are considered `noneditable` to be modified which is not the expected behaviour for `noneditable` elements within the root.
+
+To fix this bug, {productname}, disabled list formatting, if the list is in within a `noneditable` root
+
+In {productname} 6.4, a selection of multiple lines from lists can no longer be formatted when inside a `noneditable` root.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Annotation would not be removed if the annotation was immediately deleted after being created
 
 // https://ephocks.atlassian.net/browse/TINY-9399
-// Cause, Consequence, Fix, Result
+In previous versions of {productname}, the annotations behaviour was not working as expected when using `comments`.
+
+As a consequence, the annotation (highlighted-text-selection) would not be removed from the text selection, if the annotation was immediately deleted after being created.
+
+While applying a fix for this issues, it was identified that this was a regression created when {productname} fixed issue: _`Change the annotation api to avoid dom mutation in plugins using it`_, which adjusts the selection in the way that it is _impossible_, to retain the selected word. 
+
+However, with the release of {productname} 6.4, after immediately deleting annotations after they are created no longer will be retained on the text selection.
+
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Inserting a link for a selection from quickbars didn't preserve formatting
 
 // https://ephocks.atlassian.net/browse/TINY-9593
 // Cause, Consequence, Fix, Result
+In previous versions of {productname}, inserting a link for a text selection from `quickbars` did not preserve formatting.
+
+As a consequence, when formatting the selection such as with `*bold*` or `_italic_`, then inserting the link via the `quickbars` plugin, the link would result in the applied formatting been removed from the text selection.
+
+To fix this issue, improvements were made to the conditional check that is responsible for returning `optionals` when the anchor is called to gather the text selection.
+
+As a result, formatting after pasting a link from `quickbars` is now preserved to the selection {productname} 6.4.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Inline dialog position was not correct when the editor wasn't inline and was contained in a fixed or absolute positioned element
 
 // https://ephocks.atlassian.net/browse/TINY-9554
-// Cause, Consequence, Fix, Result
+In previous versions of {productname}, a bug was found that affected the inline dialog position for elements set to either a `fixed` or `absolute` position.  As a consequence, this bug in particular, presented itself when the editor wasn't `inline`, which resulted in the dialog being rendered outside of the {productname} viewport `bounds`.
+
+A fix for this bugs was implemented in {productname} 6.4, that corrected this issue, resulting in the `inline` dialog working as expected with this release.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Sticky toolbars would not have fade transition when undocking in classic iframe mode
 
 // https://ephocks.atlassian.net/browse/TINY-9408
-// Cause, Consequence, Fix, Result
+In previous versions of {productname}, a css selector which was overriding the transition property for the sticky toolbar in iframe mode was causing visual issues with the user interface.
+
+As a consequence, the sticky toolbar would immediately render off-screen rather than fading out using a css `transition` animation.
+
+In {productname} 6.4, the selector configuration was updated when the editor is docked, resulting in the sticky toolbar in classic `iframe` mode now fading out correctly when the editor is out of view, similar to how it transitions in `inline` mode.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Inserting elements that was not valid within the closest editing host would incorrectly split the editing host
@@ -930,7 +1005,7 @@ In {productname} 6.4, anchor elements are included inside `lists` while nested w
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === color_cols option was not respected in the forecolor or backcolor color swatches
-
+// @bforte check out this https://ephocks.atlassian.net/browse/TINY-9649 this was found during QAing, this might be included in 6.4 also.
 // https://ephocks.atlassian.net/browse/TINY-9560
 // Cause, Consequence, Fix, Result
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
@@ -939,6 +1014,12 @@ In {productname} 6.4, anchor elements are included inside `lists` while nested w
 
 // https://ephocks.atlassian.net/browse/TINY-9606
 // Cause, Consequence, Fix, Result
+In previous versions of {productname}, dragging and dropping `noneditable` elements into another block elements would cause issues with the original parent block. As a consequence, the parent block element where the `noneditable` element was dragged from would leave the parent block as a `contentEditable = false` element, as it was not discarding the contents when the element was transferred.
+
+As a fix, {productname} 6.4, added a new condition which validates a set of conditions the check if the parent block element is within a `parentNode` and is a block element, in which it will trigger a action to remove elements with padding that meet this condition. 
+
+In {productname} 6.4, dragging and dropping elements that are `noneditable` out of they're parent blocks now correctly pad the parent block element.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 

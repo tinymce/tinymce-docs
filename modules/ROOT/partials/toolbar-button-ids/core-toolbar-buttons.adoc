@@ -13,8 +13,10 @@
 |`+copy+` |Copies the current selection into clipboard.
 |`+cut+` |Cuts the current selection into clipboard.
 |`+fontfamily+` |Dropdown list with font families to apply to selection.
-|`+fontsize+` |Dropdown list with font sizes to apply to selection.
-|`+fontsizeinput+` |Text entry input field to change font size of selection or current insertion point. Also provides increase and decrease font size buttons on either side of said input field.
+|`+fontsize+` |Dropdown list with font sizes to apply to selection. +
+The `+fontsize+` and `+fontsizeinput+` toolbar buttons should not be used together.
+|`+fontsizeinput+` |Text entry input field to change font size of selection or current insertion point. Also provides increase and decrease font size buttons on either side of said input field. +
+The `+fontsize+` and `+fontsizeinput+` toolbar buttons should not be used together.
 |`+forecolor+` |Applies foreground/text color to selection.
 |`+h1+` |Changes current line to the "Heading 1" style.
 |`+h2+` |Changes current line to the "Heading 2" style.

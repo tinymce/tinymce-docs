@@ -37,55 +37,151 @@ tinymce.init({
 
 The {pluginname} plugin does not support
 
-. https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes[Pseudo-classes] (for example `button:hover { color: blue; }`).
-. https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements[Pseudo-elements] (for example `p::first-line { color: blue; }`)
-. https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule[@ rules] (for example `@media (screen)`)
+. https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes[Pseudo-classes].
++
+For example:
++
+[source,html]
+----
+button:hover { color: blue; }
+----
+
+. https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements[Pseudo-elements].
++
+For example:
++
+[source,html]
+----
+p::first-line { color: blue; }
+----
+
+. https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule[@ rules].
++
+For example:
++
+[source,html]
+----
+@media (screen)
+----
+
 . The `!important` property.
 
-=== Iframe mode is fully supported with some notable limitations
 
-Since iframe is a sandbox, specifying CSS is reasonably constrained at this stage. 
+=== Classic or iframe mode support
 
-CSS styling information can be specified in several places for iframe mode:
+xref:use-tinymce-classic.adoc[Classic or iframe mode] is a sandbox. Consequently, specifying CSS is constrained. 
 
-* A CSS stylesheet that is specified in the `<head>` of the iframe document i.e. `<link rel="stylesheet" href="styles.css">`
-** The supported way to add a stylesheet in {productname} is using the `content_css` option which automatically creates the `<link>` tag and puts it in the `<head>` of the document.
-** The user can also manually insert a stylesheet link in the <head> of the `iframe`.
-* A `<style>` tag in the `<head>` of the `iframe` document i.e. `<style>p { color: red; }</style>`
-** The supported way to add a style tag in {productname}, is using the `content_style` option which automatically creates the `<style>` tag and puts in the head of the document
-** The user can manually insert a style tag in the <head> of the `iframe`.
-* A `style` attribute on an element within the content i.e. inline CSS
+CSS can be specified in classic mode in the following ways:
 
-It is worth noting that by default, {productname} does not support having a `<style>` tags as part of the body HTML content.
+. the `content_css` option
++
+Setting the `xref:add-css-options#content_css[content_css] option automatically creates the `<link>` tag and puts it in the {productname} document’s `<head>`.
++
+NOTE: This is the only supported way of adding a stylesheet to {productname} in Classic mode. 
 
-=== Inline mode is supported with some notable limitations
+. A CSS stylesheet specified in the `<head>` of the iframe.
++
+For example:
++
+[source,html]
+----
+<link rel="stylesheet" href="styles.css">
+----
 
-As `inline` mode for {productname} editor is not sandboxed and as a result, any CSS specified on the main page can have an effect on how the editor content looks. 
+. A `<link>` tag pointing to a stylesheet can also be manually inserted in the iframe `<head>`.
 
-CSS styling information can be specified in several places for inline mode:
+. A `<style>` tag in the `<head>` of the iframe.
++
+For example:
++
+[source,html]
+----
+<style>p { color: red; }</style>
+----
 
-* A CSS stylesheet that is specified in the `<head>` of the page i.e. `<link rel="stylesheet" href="styles.css">`
-** Adding a stylesheet in {productname}, can be done by using the `content_css` option which automatically creates the `<link>` tag in the <head> of the page.
-*** It is recommended to not use the `content_css` option though and just **manually** include the stylesheets.
-*** The user can also manually insert a stylesheet link in the <head> of the page.
-* A CSS stylesheet that is specified in the `<body>` of the page i.e. `<link rel="stylesheet" href="styles.css">`
-** This is not recommended by https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link[MDN], but some browsers do allow it
-* A `<style>` in the `<head>` of the page i.e. `<style>p { color: red; }</style>`
-** To add a `<style>` in {productname} is by using the `content_style` option which automatically creates the `<style>` tag in the <head> of the document
-** The user can also manually put a `<style>` tag in the <head> of the page.
-* A `<style>` in the `<body>` of the page
-** As noted in the `Classic iframe` section, this should not be done, but some browsers will still allow it.
-* A `style` attribute on an {productname} element within the content i.e. inline CSS
+. A `<style>` tag can also be manually inserted in the iframe `<head>`.
 
-=== Shadow DOM is supported but **not** officially, with some notable limitations
+. `style` attributes applied to specific elements within a document. That is, inline CSS
 
-Shadow DOM is **not** officially supported by {productname}, but the feature will work when an editor running in `inline` or `iframe` is contained within a shadow root. 
+NOTE: By default, {productname} does not support `<style>` tags in the document `<body>`.
 
-When an `iframe` mode editor is contained with a shadow root, the editor content can be styled the same way, where the expected behavior for the `feature` is that it should not have to consider if the editor is in a shadow root. When an `inline` editor is contained within a shadow root, the stylesheet (`<link>` tags) and `<style>` tags are added directly as children of the shadow root and do not need to be contained within a `<head>` tag. 
 
-When in `inline mode`, the feature checks if the editor is inside a shadow root to ensure it does not try to get `<styles>` that are outside the shadow root.
+=== Inline mode support
 
-When an editor is in a shadow root, the feature should still support getting the stylesheets specified via the `content_css` option as well as the CSS styles specified via  the`content_style` option.
+xref:use-tinymce-inline.adoc[Inline mode] is not sandboxed. Consequently, any specified CSS can effect how editor content presents. 
+
+CSS can be specified in inline mode in the following ways:
+
+. the `content_css` option
++
+Setting the `xref:add-css-options#content_css[content_css]` option automatically creates the `<link>` tag and puts it in the {productname} document’s `<head>`.
++
+NOTE: This is not recommended.
+
+. A CSS stylesheet specified in the `<head>` of the document.
++
+For example:
++
+[source,html]
+----
+<head>
+<link rel="stylesheet" href="styles.css">
+</head>
+----
+
+. A `<link>` tag pointing to a stylesheet can also be manually inserted in the document `<head>`.
+
+. A CSS stylesheet specified in the `<body>` of the document.
++
+For example:
++
+[source,html]
+----
+<body>
+<link rel="stylesheet" href="styles.css">
+</body>
+----
++
+IMPORTANT: This is https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link[not recommended]. Some browsers allow it, however, and it is, as a consequence, honored by {productname} when presented.
+
+. A `<style>` tag in the `<head>` of the document.
++
+For example:
++
+[source,html]
+----
+<style>p { color: red; }</style>
+----
+
+. A `<style>` tag can also be manually inserted in the document `<head>`.
+
+. `style` attributes applied to specific elements within a document. That is, inline CSS
+
+NOTE: By default, {productname} does not support `<style>` tags in the document `<body>`.
+
+
+=== Shadow DOM support
+
+IMPORTANT: Although the {pluginname} will likely work when an editor running in classic or inline mode is contained within a shadow root, Shadow DOM is **not** currently supported by {companynameformal}.
+
+When a {productname} instance is in a shadow root, the {pluginame} should still support
+
+* CSS specified by the `xref:add-css-options#content_css[content_css]` option; and
+
+* CSS specified by the `xref:add-css-options/#content_style[content_style]` option.
+
+
+==== Classic mode
+
+When a {productname} editor in classic mode is contained within a shadow root, CSS applied to the editor’s content will work as expected if the editor can also safely assume it is not operating in a shadow root.
+
+
+==== Inline mode
+
+When a {productname} editor in inline mode is contained within a shadow root, tags pointing to CSS declarations — either `<link>` tags pointing to stylesheet files or `<style>` tags containing specific CSS examples — are added as children of the shadow root. These tags do not need to be contained with the `<head>` tag.
+
+As well, when {productname} is working in inline mode, {pluginame} checks if the editor is inside a shadow root. If it finds it is, {pluginame} does not look for CSS declarations outside the shadow root.
+
 
 // * some pseudo-class selectors. See the specification for more details
 // (https://notion.so/tinycloud/Technical-specification-7c16d4522d1241ba9e7364880eab3e51#94b1d13ff444492bbfce789f7876f39c)

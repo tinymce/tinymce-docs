@@ -21,7 +21,7 @@ NOTE: If `font_size_input_default_unit` is set to an invalid value (ie, any stri
 [source,js]
 ----
 tinymce.init({
-    selector: "textarea",
+    selector: "textarea",  // change this value according to your HTML
     toolbar: "fontsizeinput",
     font_size_input_default_unit: "pt"
 });

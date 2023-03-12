@@ -5,6 +5,8 @@ This option sets the default unit of measure for typeface sizes as input in, for
 
 Numbers entered in the `fontsizeinput` toolbar without a qualifying unit of measure will be calculated using the unit of measure set.
 
+This option is commonly used in conjunction with the `fontsizeinput` xref:available-toolbar-buttons.adoc#the-core-toolbar-buttons[toolbar button].
+
 *Type:* `+String+`
 
 *Default value:* `+pt+`
@@ -24,3 +26,5 @@ tinymce.init({
     font_size_input_default_unit: "pt"
 });
 ----
+
+

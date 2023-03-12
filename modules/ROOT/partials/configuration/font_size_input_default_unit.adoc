@@ -12,3 +12,15 @@ Numbers entered in the `fontsizeinput` toolbar without a qualifying unit of meas
 *Possible values:* `+pt+`, `+px+`, `+em+`, `+cm+`, `+mm+`
 
 NOTE: If `font_size_input_default_unit` is set to an invalid value (ie, any string other than one of the *possible values* listed above), the setting is ignored. In such a case, numbers entered in the `fontsizeinput` toolbar without a qualifying unit of measure are also ignored.
+
+
+=== Example: using `+font_size_input_default_unit+`
+
+[source,js]
+----
+tinymce.init({
+    selector: "textarea",
+    toolbar: "fontsizeinput",
+    font_size_input_default_unit: "pt"
+});
+----

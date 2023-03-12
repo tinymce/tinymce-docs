@@ -6,6 +6,8 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-1889: restructured `inline-css.adoc`.
+
 ### 2032-02-22
 
 - DOC-1913: added `6.3.2-release-note.adoc`. Added outline to this file.

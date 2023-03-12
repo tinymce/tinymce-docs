@@ -1,11 +1,9 @@
 [[font_size_input_default_unit]]
 == `+font_size_input_default_unit+`
 
-This option sets the default unit of measure for typeface sizes as input in, for example, the `fontsizeinput` toolbar button’s text-entry field.
+This option sets the default unit of measure for typeface sizes as input in, for example, the `xref:available-toolbar-buttons.adoc#the-core-toolbar-buttons[fontsizeinput]` toolbar button’s text-entry field.
 
 Numbers entered in the `fontsizeinput` toolbar without a qualifying unit of measure will be calculated using the unit of measure set.
-
-This option is commonly used in conjunction with the `xref:available-toolbar-buttons.adoc#the-core-toolbar-buttons[fontsizeinput]` toolbar button.
 
 *Type:* `+String+`
 

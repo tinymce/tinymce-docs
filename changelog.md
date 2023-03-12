@@ -6,6 +6,8 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-1892: `fontsizeinput` documentation added to `core-toolbar-buttons.adoc`; `font_size_input_default_unit.adoc` added to `/modules/ROOT/partials/configuration/`' and xref to this new file added to `user-formatting-options.adoc`.
+
 ### 2032-02-22
 
 - DOC-1913: added `6.3.2-release-note.adoc`. Added outline to this file.

@@ -54,7 +54,9 @@ For example:
 +
 [source,html]
 ----
-p::first-line { color: blue; }
+p::first-line {
+  color: blue;
+}
 ----
 
 . https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule[@ rules].

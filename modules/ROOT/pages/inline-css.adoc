@@ -77,9 +77,9 @@ xref:use-tinymce-classic.adoc[Classic or iframe mode] is a sandbox. Consequently
 
 CSS can be specified in classic mode in the following ways:
 
-. the `content_css` option
+. The `content_css` option
 +
-Setting the `xref:add-css-options#content_css[content_css] option automatically creates the `<link>` tag and puts it in the {productname} document’s `<head>`.
+Setting the xref:add-css-options.adoc#content_css[`content_css`] option automatically creates the `<link>` tag and puts it in the {productname} document’s `<head>`.
 +
 NOTE: This is the only supported way of adding a stylesheet to {productname} in Classic mode. 
 

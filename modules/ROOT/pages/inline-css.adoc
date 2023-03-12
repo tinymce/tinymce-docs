@@ -187,27 +187,6 @@ When a {productname} editor in inline mode is contained within a shadow root, ta
 As well, when {productname} is working in inline mode, {pluginame} checks if the editor is inside a shadow root. If it finds it is, {pluginame} does not look for CSS declarations outside the shadow root.
 
 
-// * some pseudo-class selectors. See the specification for more details
-// (https://notion.so/tinycloud/Technical-specification-7c16d4522d1241ba9e7364880eab3e51#94b1d13ff444492bbfce789f7876f39c)
-// 
-// 2. Vogue only supports `@import` @-rules at this stage.
-// 
-// See the Jira ticket: https://ephocks.atlassian.net/browse/TINY-9265
-// 
-// see the tech spec for @-rule support:
-// https://notion.so/tinycloud/Technical-specification-7c16d4522d1241ba9e7364880eab3e51#555fede3a4ff4a26ad5efdf72bc1af6f.
-
-// This plugin allows extracting the content of the editor with CSS inlined.
-// Support classic and inline modes. Can be used in shadow dom. 
-// Should be able to extract CSS from the stylesheets defined via
-// `content_css` and `font_css` options, and CSS styles defined via `style_css` option.
-
-
-// There is only one API: `getContent()`.
-// Regarding to the events, it dispatches `InlineCSS` event.
-// I think it is OK to document this event even though its purpose isn’t really for the user’s usage.
-
-
 == Options
 
 The following configuration options affect the behavior of the {pluginname} plugin.

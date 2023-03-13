@@ -7,16 +7,11 @@
 :plugincode: advtemplate
 :plugincategory: premium
 
-include::partial$misc/admon_premium_plugin.adoc[]
+include::partial$misc/admon-premium-plugin.adoc[]
 
 // Add an introduction. What does the plugin do? Why would I use this plugin? Keep it concise.
 
 == Interactive example
-
-////
-  No Lorem Ipsum! Add some content to test on, possibly just a description of how end-users use the feature?
-  See the emoticons, advtable,and advcode demos for examples.
-////
 
 liveDemo::{plugincode}[]
 

@@ -312,26 +312,44 @@ In {productname} 6.4, direct _invalid child text nodes_ of list elements are now
 === Templates will be parsed before preview and insertion to make preview consistent with inserted template content and prevent XSS
 
 // https://ephocks.atlassian.net/browse/TINY-9244
-// Cause, Consequence, Change, Result
+In previous versions of {productname}, templates were being parsed before `preview` and `insertion` to make preview consistent with content being inserted into the template to prevent Cross-Site Scripting (XSS) issues.
+As a consequence, the Templates plugin would not automatically format or sanitise the HTML passed to it as templates. This means that when previewing templates, the content may look different compared to when it is actually inserted into the editor. This can be a security issue, as unsanitised HTML can allow for Cross-Site Scripting (XSS), which can be harmful.
+
+To prevent this from happening, {productname} made improvements to the Template plugin that now sanitises content when retrieving preview content, and again before running `editor.dom.create` on it during the template insertion action. By doing this, all preview content will now match the template when it is inserted into the editor, which removed the possibility of any XSS issues arrising.
+
+In {productname}, Templates are now parsed before preview and insertion to make preview consistent with inserted template content and prevent XSS from occuring.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Pressing backspace in an empty line now preserves formatting in a previous empty line
 
 // https://ephocks.atlassian.net/browse/TINY-9454
-// Cause, Consequence, Change, Result
+In previous versions of {productname}, pressing `backspace` in an empty line would not preserve previously applied formatting to the previous line.
+
+As a consequence, when backspacing from an empty block from another empty block within {productname}, the editor would lose the preserved formatting for the previous block element.
+Its worth noting that `_this action is only excpected for when content is inserted into a `br[data-mce-bogus]` empty block. This is because the br[data-mce-bogus] tag is programmed to reset the formatting to the default setting for a empty block such as the `br`.
+
+[TIP]
+To avoid this, it is *important* to use a `backspace` instead of an `enter key` when moving from one empty block to another. This will ensure that the formatting of the previous block is preserved and the br[data-mce-bogus] tag is not inserted.
+
+To fix this issue, {productname} added improvements that now allow merge blocks to filter all block element decentants, such as the `br[data-mce-bogus]` block element, to ensure preservation of previously applied formatting is not removed from other block elements.
+
+In {productname} 6.4, pressing backspace in an empty line now preserves formatting in a previous empty line.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Pressing enter inside the inputfontsize input would not move the focus back into the editor content
 
 // https://ephocks.atlassian.net/browse/TINY-9598
-// Cause, Consequence, Change, Result
+During development for the new `fontsizeinput` toolbar item, an issue was found that by pressing enter inside the input field would not move the `focus` back into the {productname} editor body. 
+
+As a consequence, any changes made to the font size within the new toolbar input field, would result in the user having no way to use the new font size within the editor.
+
+After some improvements to the `fontsizeinput` toolbar item, pressing enter in the input field now sets the focus back to the {productname} editor viewport, which allows the new font size to be used within the content body. 
+
+In {productname} 6.4, pressing enter inside the `inputfontsize` input now returns the focus back into the editor content.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
-=== Improved contrast of border colors against the background color throughout the UI
-
-// https://ephocks.atlassian.net/browse/TINY-9587
-// Cause, Consequence, Change, Result
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 [[additions]]
 == Additions
@@ -341,7 +359,12 @@ In {productname} 6.4, direct _invalid child text nodes_ of list elements are now
 === New tree component that can be used in dialog body panel
 
 // https://ephocks.atlassian.net/browse/TINY-9532
-// Cause, Consequence, Change, Result
+A new tree component has been created to support the *Advanced Template* premium plugin that works in conjuction with a new tree dialog body panel.
+
+This tree component is limited to *one* level and is used in the dialog body panel to allow users to organize templates into levels for better UI. The tree component is designed to create a visual representation of the hierarchical structure for the template system, which allows users to easily identify the various templates and levels within each catagory, giving users the ability to quickly and easily navigate through the templates, and select the right one for their needs.
+
+This new tree component is an important addition to the new Premium Plugin: *Advanced Templates*, which is now available as a premium plugin with editors running {productname} v6.4+.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === renderUI property in the Theme type can now return a Promise <RenderResult> instead of RenderResult
@@ -421,11 +444,23 @@ In {productname} 6.4, the editor now renders the highlighted border when in `foc
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === New fontsizeinput toolbar item which allows the user to set the size via input and also increase and decrease it with + and - buttons
-// @bforte this is related to https://ephocks.atlassian.net/browse/DOC-1892
-
 // https://ephocks.atlassian.net/browse/TINY-9429
-// Cause, Consequence, Change, Result
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+In previous versions of {productname}, users did not have the ability to set their font size by either direct input into a component field or by using plus `+` or minus `-` buttons.
+
+As a consequence, {productname} introduced a new UI component that give users an option to set the default unit of measure (UOM) for font sizes via the new input field or the plus `+` or minus `-` buttons within the toolbar when the `fontsizeinput` is set within the tinymce.init() such as the below:
+
+[source,js]
+----
+tinymce.init({
+    selector: "textarea",  // change this value according to your HTML
+    toolbar: "fontsizeinput",
+    font_size_input_default_unit: "pt"
+});
+----
+
+[NOTE]
+More details about this component and the possible values that can be used within the new `fontsizeinput` input field can be found in `xref:available-toolbar-buttons.adoc#the-core-toolbar-buttons[fontsizeinput]`.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Added skipFocus option to the ToggleToolbarDrawer command to preserve focus
@@ -441,19 +476,42 @@ As a result to the fix, while the *FloatingToolbarButton* `focus` is initiated, 
 === New font_size_input_default_unit option allow to use of numbers without a unit in fontsizeinput and have them parsed with the default unit, if it is not defined the default is pt
 
 // https://ephocks.atlassian.net/browse/TINY-9585
-// Cause, Consequence, Change, Result
+In early development prior to release of the 'new toolbar component' ("fontsizeinput"), users had to define the unit of measurement (UOM), when setting their font size by direct input into the 'new toolbar component'  input field.
+
+The new `toolbar: "font_size_input_default_unit": "<UOM>"`, option now allows users to use (values) ie, (numbers) without having to manually input the unit of measurement (UOM) after they define the `value`.
+
+This means that users can now specify the UOM in the `tinymce.init` script tag buy configuring the UOM value by changing the default value:* `+pt+` to one of the below possible values:* `+px+`, `+em+`, `+cm+`, `+mm+`
+
+[source, js]
+----
+tinymce.init({
+    selector: "textarea",
+    toolbar: "fontsizeinput", "font_size_input_default_unit": "em",
+});
+----
+
+As a result of this addition, this new option makes it easier and faster for users that are using the 'new toolbar component' to customize their font size within {productname}, as they no longer need to worry about selecting the correct UOM.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === New group and togglebutton in view
 
 // https://ephocks.atlassian.net/browse/TINY-9523
-// Cause, Consequence, Change, Result
+The release of {productname} 6.4 provides users with new features, such as the impovements to the Advanced Code plugin dialog, which have introduced a group of new buttons to the view bar. A new togglable button has also been added, allowing users to change its icon and active status with the click of a button, and is available in both the modal footer and view header.
+
+Furthermore, this button can differentiate between text and icon, making it much more user friendly as it can show both instead of just the icon like a normal button.
+
+In {productname} 6.4, these new buttons are now available for the *Advanced Code* plugin dialog.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === New togglebutton in dialog footer buttons
 
 // https://ephocks.atlassian.net/browse/TINY-9523
-// Cause, Consequence, Change, Result
+The {productname} modal footer and view header dialog have recently added a new improvement by introducing a new togglebutton. This togglebutton allows users to quickly and easily toggle between the footer buttons withing the dialog. This makes navigation easier and more efficient than having to manually search through menus and dropdowns. 
+
+The togglebutton is present in {productname} 6.4 and it helps users to simplify their navigation of the footer buttons dialog. With the introduction of this togglebutton, users are now able to access footer buttons in a more efficient manner. The new togglebutton is a great addition to the {productname} modal footer and view header dialog, as it greatly simplifies the navigation of the footer buttons dialog and increases the overall usability of the feature.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Added toggleFullscreen to dialog API
@@ -1001,13 +1059,36 @@ In {productname} 6.4, the selector configuration was updated when the editor is 
 === Inserting elements that was not valid within the closest editing host would incorrectly split the editing host
 
 // https://ephocks.atlassian.net/browse/TINY-9595
-// Cause, Consequence, Fix, Result
+In previous versions of {productname}, inserting invalid child blocks into a parent block element would create issues with the editing host element.
+
+As a consequence, the editing host element would incorrectly split itself into multiple elements. 
+
+To fix this issue, with the release of {productname} 6.4, pasted elements are now instead unwrapped inside the target element rather than being wrapped.
+
+In {productname} 6.4, pasting blocks that are invalid children of a `editable` block will no longer split that block, but instead unwrap the blocks to fit within the specific `editable` block.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === color_cols option was not respected in the forecolor or backcolor color swatches
-// @bforte check out this https://ephocks.atlassian.net/browse/TINY-9649 this was found during QAing, this might be included in 6.4 also.
+
 // https://ephocks.atlassian.net/browse/TINY-9560
-// Cause, Consequence, Fix, Result
+In previous versions of {productname}, the logic for specifying the number of columns in the `forecolor` and `backcolor` swatches was updated with the release of {productname} 6.3.
+
+As a consequence, this logic didn't use the color_cols option in {productname} v6.3
+
+[source, js]
+----
+tinymce.init({
+    selector: "textarea",
+    plugins: "table code",
+    toolbar: "forecolor backcolor tableprops",
+    color_cols: 7, // <-- option was not respected
+});
+----
+
+To fix this issue, the default value for `color_cols_foreground` and `color_cols_background` was updated to use color_cols if it is set within the `tinymce.init` script, and otherwise use the correct default number of columns.
+
+In {productname} 6.4, the correct number of columns is respected in the forecolor and backcolor colour swatches.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Drag and dropping the last noneditable element out of its parent block would not properly pad the parent block element

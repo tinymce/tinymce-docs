@@ -11,7 +11,22 @@ include::partial$misc/admon-premium-plugin.adoc[]
 
 include::partial$misc/admon-requires-6.4v.adoc[]
 
-// Add an introduction. What does the plugin do? Why would I use this plugin? Keep it concise.
+The Advanced Template Premium plugin enables the creation and editing of complex, interactive templates using {productname}.
+
+Templates are declared as `const` variables that can be setup as part of a {productname} instance.
+
+They can also be added to a {productname} instance by end-users selecting content in a {productname} document and saving the selection as a template.
+
+The Plugin’s utility is made available to end-users via two menu items:
+
+* *Insert > Template…*
+* *Tools > Save as template…*
+
+And two toolbar buttons:
+
+* `addtemplate`
+* `inserttemplate`
+
 
 == Interactive example
 

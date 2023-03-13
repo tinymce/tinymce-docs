@@ -517,19 +517,74 @@ The togglebutton is present in {productname} 6.4 and it helps users to simplify 
 === Added toggleFullscreen to dialog API
 
 // https://ephocks.atlassian.net/browse/TINY-9528
-// Cause, Consequence, Change, Result
+{productname} recently added a new *"fullscreen"* toggle button to the Advanced Code Editor Premium plugin, that gives users the ability to expand the Advanced Code Editor dialog toolbar in order to make better use of the available space on their screen, while providing them with a more comfortable working environment.
+
+The toggle button is easily accessible for users that have the Advanced Code Editor Premium plugin by integrating it into their editor by using the `plugins: [ "fullscreen" ]` in pair with the below options.
+
+.Example of fullscreen mode integration within {productname}.
+[source, js]
+----
+tinymce.init({
+  selector: "textarea",
+  advcode_inline: true,
+  plugins: [
+    "code", "fullscreen", 'advcode',
+  ],
+  toolbar: "code"
+});
+----
+
+As a result, the toggle button can be found in the top left corner of the Advanced Code Editor Premium toolbar. Once clicked, it will expand the dialog toolbar to fill the entire window, providing a more comprehensive view of the available options. A second click of the toggle button will return the dialog toolbar to its original size.
+
+This option is now available in {productname} 6.4, as part of the core/ui API.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === New text-size-increase and text-size-decrease icons
 
 // https://ephocks.atlassian.net/browse/TINY-9530
-// Cause, Consequence, Change, Result
+
+The {productname} package files have been updated with two new icons that enable users to increase or decrease the size of text in the Advanced Code Editor. The new icons are the `text-size-increase` and `text-size-decrease` icons. These new icons have been added to make it easier for users to adjust the size of the text within the code editor while making it easier to read and understand the code they are writing. 
+
+.Example of `textSizeIncrease` and `textSizeDecrease` integration within {productname}.
+[source, js]
+----
+tinymce.init({
+  selector: "textarea",
+	advcode_inline: true,
+  plugins: [
+    "code", 'advcode', 
+  ],
+  toolbar: "textSizeIncrease textSizeDecrease"
+});
+----
+[NOTE]
+This plugin feature is only available for paid {productname} subscriptions.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === New xss_sanitization option to allow for XSS sanitization to be disabled
 
 // https://ephocks.atlassian.net/browse/TINY-9600
-// Cause, Consequence, Change, Result
+Currently, we use the `DOMPurify` library to sanitize HTML content when it is inserted into the editor in order to remove unsafe tags & attributes in order to prevent XSS (cross-site scripting). However, customers in some situations have found that the HTML sanitization from the `DOMPurify` library is changing their content in undesired ways. 
+
+To address this issue, we have added a new `xss_sanitization: boolean` editor option. This option is enabled by default which enables sanitization, but can now be set to `false` to disable sanitization. If a customer wishes to prevent their content from being modified by the sanitization, they can now set this option to `false`.
+
+.Example: using `+xss_sanitization+` to turn DOMPurify off and no longer sanitize HTML against XSS attacks
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  xss_sanitization: false
+});
+----
+
+[IMPORTANT]
+It is important to note that disabling sanitization introduces potential security issues, especially if the server-side XSS sanitization is weak or non-existent and is therefore not recommended.
+
+// @bforte, should we add a xref to the below update you made in DOC-1910: Add basic overview of DOMParser and DomPurify use to Security Guide and Migration Guide
+// Read more about xref:sanitizing-html-input-to-protect-against-xss-attacks[Sanitizing HTML input to protect against XSS attacks]
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Added top right close 'x' button of the modal dialogs to keyboard navigation

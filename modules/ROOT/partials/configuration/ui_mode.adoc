@@ -1,0 +1,36 @@
+== Editor in scrollable container
+
+[[ui_mode]]
+=== `+ui_mode+`
+
+include::partial$misc/admon-requires-6.4v.adoc[]
+
+This option configures the location of the container where popup menus and inline dialogs are rendered. 
+
+By default, these elements are rendered in a container located in the body. When the editor is rendered in a scrollable container, scrolling the editor's container will cause popup menus and inline dialogs to be detached from the anchor. If `+toolbar_sticky+` is set to true, the sticky toolbar and the menu have no effect on docking when scrolling the editor's container.
+
+However, setting this option to `+split+` enables support for editor in scrollable containers and adjusts the behaviour as follows:
+
+* Popup menus and inline dialogs are rendered in a separate container adjacent to the editor. These elements moves together as you scroll the editor's container. 
+* If `+toolbar_sticky+` is set to true, the sticky toolbar and the menu will be docked to the top of the editor's container when scrolling down the container and the page until the editor is no longer visible.
+
+*Type:* `+String+`
+
+*Default value:* `+'combined'+`
+
+*Possible values:* `+'combined'+`, `+'split'+`
+
+
+==== Example: using `+ui_mode+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  ui_mode: 'split'
+});
+----
+
+==== Interactive example
+
+liveDemo::ui-mode[]

@@ -55,12 +55,12 @@ const advtemplate_templates = [
 ];
 
 tinymce.init({
-    selector: "textarea#advanced-template",
+  selector: "textarea#advanced-template",
     plugins: [
         "advlist", "anchor", "autolink", "charmap", "code", "fullscreen", 
         "help", "image", "insertdatetime", "link", "lists", "media", 
         "preview", "searchreplace", "table", "visualblocks", "advtemplate"
     ],
 	advtemplate_templates,
-    toolbar: "addtemplate inserttemplate | undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+  toolbar: "addtemplate inserttemplate | undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
 });

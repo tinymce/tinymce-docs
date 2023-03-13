@@ -6,6 +6,8 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+DOC-1867: added notes regarding setting `autoresize_bottom_margin` in relation to values for `margin-bottom` to `autoresize_bottom_margin.adoc`.
+
 ### 2032-02-22
 
 - DOC-1913: added `6.3.2-release-note.adoc`. Added outline to this file.

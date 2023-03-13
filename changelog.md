@@ -6,6 +6,8 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-1902: `ui_mode` documentation added to `ui-mode-configuration.adoc`; `ui_mode.adoc` added to `/modules/ROOT/partials/configuration/`' and xref to this new file added to `ui-mode-configuration.adoc`.
+
 ### 2032-02-22
 
 - DOC-1913: added `6.3.2-release-note.adoc`. Added outline to this file.

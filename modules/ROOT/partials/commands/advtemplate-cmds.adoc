@@ -1,0 +1,15 @@
+[cols="1,3",options="header"]
+|===
+|Command |Description
+|mceInsertTemplate |Inserts a template into the editor at the selection.
+|mceAddTemplate |Turns the current selection into a new template.
+|===
+
+.Example
+[source,js]
+----
+tinymce.activeEditor.execCommand('mceInsertTemplate');
+tinymce.activeEditor.execCommand('mceAddTemplate');
+----
+
+NOTE: these are pure guesses. I don’t know if these commands exist, if the command names are correct if they do exist, or if the work as described. Off the top of my head, for example, I’d assume the first guessed-at command would require parameters for selecting which template to insert and the second guessed-ad command would require parameters for setting the id and category of a newly-created template.

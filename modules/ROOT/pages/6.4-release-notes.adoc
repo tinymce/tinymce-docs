@@ -590,13 +590,54 @@ It is important to note that disabling sanitization introduces potential securit
 === Added top right close 'x' button of the modal dialogs to keyboard navigation
 
 // https://ephocks.atlassian.net/browse/TINY-9520
-// Cause, Consequence, Change, Result
+In previous versions of {productname}, the top right close 'x' button within the modal dialogs were not keyboard-navigable by the Tab key.
+
+With the release of {productname} 6.4, various changes have now made it possible for modal dialogues to be navigated with the Tab key. This is accomplished by adding a `Tabbing.config` to the close 'x' button. The `Tabbing.config` is an object that describes the sequence of focusable elements, their `tabindex` and the `initial focus` within the dialog when it is opened. in addition an optional `firstTabstop` property has also been added to the `Tabbing.config` to specify which element receives focus first when the dialog is opened.
+
+This update enables users to more easily and quickly access the modal dialogues within {productname}, which includes dialogs such as:
+
+* Search and Replace
+* Accessibility Checker
+* Table Properties
+* Help
+* Source Code
+* URL
+* Image
+* Url Modal Dialog toolbar buttons. 
+
+[NOTE]
+Its worth nothing that the expected result for the Alert and Confrim dialogs is that the `initial focus` is set on the most appropriate button when the dialog is opened; for example, the “OK” button for Alert dialogs, and the “Yes” button for Confirm dialogs.
+
+In {productname} 6.4, these new additions/improvements are now available.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === New ui_mode option for editor in scrollable containers support
 
 // https://ephocks.atlassian.net/browse/TINY-9414
-// Cause, Consequence, Change, Result
+A new `ui_mode: 'split'` option for scrollable containers has been introduced with the release of {productname} 6.4.
+
+This new option is designed to give users a better UX, by allowing them to navigate content within their editor easier with the use of the new ui_mode when integrated into their editors. This can be achieved by adding the `ui_mode: 'split'` option to the `tinymce.init()` within the `<script>` tags as below:
+
+.Basic integration for new ui_mode option using `split`
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  ui_mode: 'split',
+  min_height: 1400,
+});
+----
+
+[TIP]
+Its worth noting that when setting the new `ui_mode: 'split'` option for scrollable containers, when setting the height for the `<div class="scrollable-container">` ensure that the height is set to be less than `<` the `min_height` set of the {productname} editor container and by applying the `overflow: scroll;` CSS bevaviour to the `<div class="scrollable-container">`.
+
+The docking behaviour of UI elements is usually only triggered when the page is scrolled. This means that the UI element will stay in the same place relative to the page, no matter how much you scroll. However, with the introduction of the 'split' UI mode, it is now possible to dock the UI element on both page and container scroll. This means that the UI element will stay in the same place relative to the container, regardless of how much you scroll the page or the container itself.
+
+[NOTE]
+* If you're using classic mode and sticky toolbars, the toolbar will dock, but it won't be entirely visible in either the window or the scrollable element. This applies to both viewports.
+* In inline mode, the toolbar will also dock, but it won't be entirely visible in either the window or the scrollable element.
+* ShadowDom is partially supported in this case, where the scrollable container is inside the shadow Root. But in cases when the scrollable container is outside the shadow Root (or an ancestor of it) it is not currently supported within versions of {productname} 6.4 or prior.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 

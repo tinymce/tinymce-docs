@@ -8,10 +8,10 @@ NOTE: This is the {productname} Community version changelog. For information abo
 
 === Added
 * New `tree` component that can be used in dialog body panel.
-* renderUI property in the `Theme` type can now return a `Promise<RenderResult>` instead of `RenderResult`.
+* `renderUI` property in the `Theme` type can now return a `Promise<RenderResult>` instead of `RenderResult`.
 * New `isEditable` API to `editor.selection` that returns true or false if the current selection is editable.
 * New `isEditable` API to `editor.dom` that returns true or false if the specified node is editable.
-* New `setText` and `setIcon` methods added to menu button and toolbar button apis.
+* New `setText` and `setIcon` methods added to menu button and toolbar button API.
 * New `highlight_on_focus` option which enables highlighting the content area on focus.
 * New `fontsizeinput` toolbar item which allows the user to set the size via input and also increase and decrease it with `+` and `-` buttons.
 * Added `skipFocus` option to the `ToggleToolbarDrawer` command to preserve focus.

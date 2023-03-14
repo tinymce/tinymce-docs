@@ -55,13 +55,13 @@ include::partial$configuration/<setting-name-in-hyphen-case>.adoc[]
 ////
   Toolbar buttons content, uses the pluginname and plugincode variables.
   The toolbar buttons are the same as another plugin, assign the other plugin's identifier to `altplugincode`
-  Don't forget to add this to available-toolbar-buttons.md
+  Don’t forget to add this to available-toolbar-buttons.adoc
 ////
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 ////
   Menu items content, uses the pluginname and plugincode variables.
   The menu items are the same as another plugin, assign the other plugin's identifier to `altplugincode`
-  Don't forget to add this to available-menu-items.md
+  Don’t forget to add this to available-menu-items.adoc
 ////
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 

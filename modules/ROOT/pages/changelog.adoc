@@ -23,6 +23,8 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * New `xss_sanitization` option to allow disabling of XSS sanitization.
 * Added the top right close button of modal dialogs to the tabbing order. The 'x' button in these dialogs can now be accessed using keyboard navigation.
 * New `ui_mode` option for editor in scrollable containers support.
+* The sidebar element now has the accessibility role `region` when visible and the accessibility role `presentation` when hidden.
+* The `tox-custom-editor` class now has a border highlight when it is selected.
 
 === Improved
 * Direct invalid child text nodes of list elements are now wrapped in list item elements.
@@ -36,8 +38,6 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * The `link` plugins context menu items no longer appears for links that include elements with a `contenteditable="false"` attribute.
 * The formatting of elements with a `contenteditable="false"` attribute are no longer cloned to new cells when new table rows are created.
 * Changed the color of `@dialog-table-border-color`, and added right padding to the first cell of dialog table.
-* The sidebar element now has the accessibility role `region` when visible and the accessibility role `presentation` when hidden.
-* The `tox-custom-editor` class now has a border highlight when it is selected.
 
 === Fixed
 * Add support for navigating inside the tree component using arrow keys and shift key.

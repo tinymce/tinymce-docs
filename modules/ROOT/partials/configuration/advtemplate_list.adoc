@@ -1,0 +1,44 @@
+[[advtemplate_list]]
+== `+advtemplate_list+`
+
+This options allows for the loading of templates from external data sources. 
+
+To load templates from an external source, configure the `advtemplate_list` option to return a `Promise` containing the initial template list.
+
+*Type:* `+Object+`
+
+=== Example: using `+advtemplate_list+` to load a template collection on {productname} initialization
+
+[source,js]
+----
+tinymce.init({
+  plugins: 'advtemplate',
+  toolbar: 'advtemplate',
+  advtemplate_list: () => {
+      return Promise.resolve([
+        {
+          id: 1,
+          title: 'Template 1'
+        },
+        {
+          id: 2,
+          title: 'Category 2',
+          items: [
+            {
+              id: 3,
+              title: 'Template 2.1',
+            },
+            {
+              id: 4,
+              title: 'Category 2.2',
+              items: []
+            }
+          ]
+        }
+    ]);
+  }
+})
+----
+
+NOTE: A unique id value must be provided for every input item.
+

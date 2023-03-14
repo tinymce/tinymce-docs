@@ -15,18 +15,7 @@ The Advanced Template Premium plugin enables the creation and editing of complex
 
 Templates are declared as `const` variables that can be setup as part of a {productname} instance.
 
-They can also be added to a {productname} instance by end-users selecting content in a {productname} document and saving the selection as a template.
-
-The Plugin’s utility is made available to end-users via two menu items:
-
-* *Insert > Template…*
-* *Tools > Save as template…*
-
-And two toolbar buttons:
-
-* `+inserttemplate+`
-* `+addtemplate+`
-
+They can also be added to a {productname} instance by end-users selecting content in a {productname} document and saving the selection as a template via the {productname} user-interface.
 
 == Interactive example
 
@@ -103,8 +92,6 @@ tinymce.init({
 
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
-
-//include::partial$toolbar-button-ids/advanced-templates-toolbar-buttons.adoc[]
 
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 

@@ -13,7 +13,7 @@
 |advtemplate_delete_template         |id: `+id+`                                              |Deletes the designated template.
 |advtemplate_delete_all              |N/A                                                     |Deletes all templates and template categories.
 |advtemplate_templates               |item: `+array+`                                         |Returns an array of the current templates and their categories.
-
+|===
 
 .Examples
 [source,js]

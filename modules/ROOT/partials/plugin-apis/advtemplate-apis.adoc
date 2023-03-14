@@ -18,50 +18,39 @@
 .Examples
 [source,js]
 ----
-// 
+// Import the supplied template list.
 tinymce.activeEditor.plugins.advtemplate.advtemplate_list();
 
-
-//
+// Create the <name> template category.
 tinymce.activeEditor.plugins.advtemplate.advtemplate_create_category();
 
-
-//
+// Rename the <name> template category to <new-name> category.
 tinymce.activeEditor.plugins.advtemplate.advtemplate_rename_category();
 
-
-//
+// Move the <name> template category to <different-name> category.
 tinymce.activeEditor.plugins.advtemplate.advtemplate_move_category_templates();
 
-
-//
+// Delete the <name> template category.
 tinymce.activeEditor.plugins.advtemplate.advtemplate_delete_category();
 
-
-//
+// Create the <name> template category.
 tinymce.activeEditor.plugins.advtemplate.advtemplate_create_template();
 
-
-//
+// Rename the <name> template to <new-name>.
 tinymce.activeEditor.plugins.advtemplate.advtemplate_rename_template();
 
-
-//
+// Move the <name> template to the <other-name> category.
 tinymce.activeEditor.plugins.advtemplate.advtemplate_move_template();
 
-
-//
+// Return the template with <id>.
 tinymce.activeEditor.plugins.advtemplate.advtemplate_get_template();
 
-
-//
+// Delete the <name> template.
 tinymce.activeEditor.plugins.advtemplate.advtemplate_delete_template();
 
-
-//
+// Delete all templates and template categories.
 tinymce.activeEditor.plugins.advtemplate.advtemplate_delete_all();
 
-
-//
+// Return the <name> templates and template categories.
 tinymce.activeEditor.plugins.advtemplate.advtemplate_templates();
 ----

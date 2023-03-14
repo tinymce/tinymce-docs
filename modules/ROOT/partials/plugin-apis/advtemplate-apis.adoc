@@ -15,27 +15,6 @@
 |advtemplate_templates |item: `+array+` |Returns an array of the current templates and their categories.
 |===
 
-
-
-////
-[cols="1,2,3",options="header"]
-|===
-|Name                                |Arguments                                               |Description
-|advtemplate_list                    |settings: Object                                        |Imports the supplied list of templates.
-|advtemplate_create_category         |title: `+string+`, parent?: `+id+`                      |Creates a template category with a designated name in the designated category.
-|advtemplate_rename_category         |id: `+id+`, title: `+string+`                           |Changes a template category name to the designated title.
-|advtemplate_move_category_templates |id: `+id+`, parent?: `+id+`                             |Moves a template category to the designated category. 
-|advtemplate_delete_category         |id: `+id+`                                              |Deletes the designated template category.
-|advtemplate_create_template         |title: `+string+`, content: `+string+`, parent?: `+id+` |Creates a template with the designated name and id containing the designated content.
-|advtemplate_rename_template         |id: `+id+`, title: `+string+`                           |Changes a template name to the designated title.
-|advtemplate_move_template           |id: `+id+`, parent?: `+id+`                             |Moves a template to the designated category. 
-|advtemplate_get_template            |id: `+id+`                                              |Retrieves the designated template.
-|advtemplate_delete_template         |id: `+id+`                                              |Deletes the designated template.
-|advtemplate_delete_all              |N/A                                                     |Deletes all templates and template categories.
-|advtemplate_templates               |item: `+array+`                                         |Returns an array of the current templates and their categories.
-|===
-////
-
 .Examples
 [source,js]
 ----

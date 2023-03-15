@@ -681,7 +681,16 @@ As a result, the `help menu` is now styled to support a wider range of users, by
 === The sidebar element now has accessibility role region when visible and presentation when hidden
 
 // https://ephocks.atlassian.net/browse/TINY-9517
-// Cause, Consequence, Change, Result
+In previous versions of {productname}, Axe-DevTools (web accessibility testing extension) identified that the sidebar element within {productname} was set to `role="complementary"` when the element was either in a visible or hidden state, which created issues with screen readers, as the general rule is that landmarks should not be contained within another landmark.
+
+As a consequence by having the sidebar set to `role="complementary"` for both states, tools such as screen readers in some situations would disable their functionality.
+
+This is important as when a sidebar element is visible, it has an accessibility role of `region`. This ensures the sidebar and its contents are accessible to screen readers and other accessibility tools. This role is important for screen readers to identify the sidebar as a meaningful part of the page. When the sidebar element is hidden, it has a role of presentation, which is used to inform the user that the element is not important and can be safely ignored. 
+
+To fix this issue, changes were made to the role attribute of the sidebar element `(.tox-sidebar)`, which is now set to `role="region"` when it's active state is visible, otherwise it defaults to `role="presentation"` when hidden.
+
+In {productname} 6.4, when the sidebar is either visible or hidden now passes the accessibility test with Axe-DevTools.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
@@ -691,7 +700,7 @@ As a result, the `help menu` is now styled to support a wider range of users, by
 {productname} 6.4 also includes the following bug fixes:
 
 === Sometimes the editor would finish initializing before the silver theme would have finished loading
-// Waiting for QA_Verified
+
 // https://ephocks.atlassian.net/browse/TINY-9556
 In earlier versions of {productname}, the properties set for the `renderUI`, caused conflicting issues with the theme rendering load times. As a consequence, the `renderUI` would finish rendering before the {productname} theme `silver` would finish load.
 
@@ -751,13 +760,23 @@ As a result, in {productname} 6.4, checkmarks now work as expected when using th
 === The foreground and background menu icons would not properly update to display the last used color
 
 // https://ephocks.atlassian.net/browse/TINY-9497
-// Cause, Consequence, Fix, Result
+In previous versions of {productname}, while the foreground and background icons were updating in the toolbar dropdown, the menu icons in the menubar dropdown would not update the colour option in the format menu after the user applied colors to the selected text, despite the fact that this was the expected behaviour. While workarounds where available, this deviation from the expected functionality caused confusion for some users until the fix was applied.
+
+To correct this, {productname} added a new set icon fill function to the nested menu item spec, to ensure that the icon is filled when a color is selected from the format menu.
+
+In {productname} 6.4, this issues has be rectified, which now ensures that the foreground and background menu icons now accurately reflect the last used color within the menu dropdown swatch.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Added new setIconFill function to NestedMenuItemInstanceApi
 
 // https://ephocks.atlassian.net/browse/TINY-9497
-// Cause, Consequence, Fix, Result
+In previous versions of {productname} up until the changes and improvements were made with the release of v6.4, the foreground and background menu icons would not properly update to display the last used color, as outlined in the above.
+
+To facilitate this change, {productname} has added a new `setIconFill` function to the `NestedMenuItemInstanceAPI`, which allows users to set the fill color of an icon when the user selects an option from the format menu. This ensures that the menu icon changes to accurately reflect the user's selection.
+
+In {productname} 6.4, these new functions allow the foreground and background menu icons to function as expected.
+
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Pasting links to text would sometimes not generate the correct undo stack on safari

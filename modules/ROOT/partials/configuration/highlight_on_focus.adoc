@@ -1,0 +1,22 @@
+[[highlight_on_focus]]
+== `+highlight_on_focus+`
+
+The `+highlight_on_focus+` option allows users to clearly see when the editor is in focus, as the `highlight_on_focus` feature makes it easier to identify which editor is currently in focus. Additionally, users with accessibility issues will be able to use the editor in keyboard mode more easily when using this option.
+
+The *highlight_on_focus* option can be enabled by using these controls.
+
+*Type:* `+Boolean+`
+
+*Default value:* `+false+`
+
+*Possible values:* `+true+`, `+false+`
+
+=== Example: using `+hidden_input+`
+
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  highlight_on_focus: true
+});
+----

@@ -20,3 +20,14 @@ tinymce.init({
   highlight_on_focus: true
 });
 ----
+
+[TIP]
+Customers using custom skins in versions of {productname} prior to v6.4+, are advised to update their custom skins for the above option of work correctly.
+
+Required updates for the below two variables added:
+
+[source, css]
+----
+@edit-area-border-color: #2D6ADF;
+@edit-area-border-width: 2px;
+----

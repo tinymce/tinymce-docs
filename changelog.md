@@ -6,6 +6,8 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-1929: added `admon-rtc-eol.adoc` to `/modules/partials/misc` and added `include::` statements pointing to this across the RTC documentation chapters.
+
 ### 2023-03-15
 
 - DOC-1930: added the TinyMCE 6.4-specific changes to `changelog.adoc`.

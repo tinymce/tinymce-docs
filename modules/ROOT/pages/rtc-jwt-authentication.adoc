@@ -5,6 +5,8 @@
 :pluginname: Real-Time Collaboration (RTC)
 :plugincode: rtc
 
+include::$partial/misc/admon-rtc-eol.adoc[]
+
 == Introduction
 
 Real-Time Collaboration (RTC) requires setting up JSON Web Token (JWT) authentication. This is to ensure that only authenticated users will be able to access and collaborate on documents.

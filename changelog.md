@@ -6,6 +6,8 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-1907: updated `advcode.adoc` and documentation related live-demo to cover new functionality.
+
 ### 2023-03-15
 
 - DOC-1930: added the TinyMCE 6.4-specific changes to `changelog.adoc`.

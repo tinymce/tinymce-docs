@@ -6,6 +6,8 @@ description: Useful information for setting up encryption for RTC
 keywords: rtc encrypt decrypt key rotate signature
 ---
 
+{% include rtc/admon-rtc-eol.md %}
+
 {{site.productname}} Real-time Collaboration (RTC) uses encryption keys to encrypt content before sending it to collaborators through the RTC server to provide end-to-end encryption. This is different from the use of JWTs for RTC, which are used to verify that your servers have allowed the user to access and collaborate on the content.
 
 > **Caution**: The advice on this page does not guarantee a secure connection. If data secrecy is important for your users, please consult a security professional.

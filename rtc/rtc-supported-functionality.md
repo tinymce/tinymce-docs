@@ -6,6 +6,8 @@ description: Information on what TinyMCE functionality is, and is not, supported
 keywords: rtc support functionality
 ---
 
+{% include rtc/admon-rtc-eol.md %}
+
 ## Browser support
 
 The Real-time Collaboration (RTC) plugin supports the latest desktop versions of:

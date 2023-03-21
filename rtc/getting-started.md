@@ -9,6 +9,8 @@ keywords: rtc
 {% assign pluginname = "Real-time Collaboration (RTC)" %}
 {% assign plugincode = "rtc" %}
 
+{% include rtc/admon-rtc-eol.md %}
+
 {{site.requires_5_9v}}
 
 This procedure will assist with setting up {{site.productname}} with real-time collaboration.

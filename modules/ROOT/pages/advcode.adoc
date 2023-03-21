@@ -20,6 +20,8 @@ The xref:advcode.adoc[Advanced Code Editor] plugin (`+advcode+`) brings a more a
 * Increase and decrease display font size buttons.
 * Full-screen mode button.
 
+NOTE: For the {pluginname} to offer a full-screen mode requires the xref:fullscreen.adoc[Full screen] plugin and requires {pluginname} to be running in xref:advcode.adoc#advcode_inline[inline mode].
+
 == The difference between the Code and Advanced Code Editor plugins
 
 liveDemo::advcode[]
@@ -36,6 +38,26 @@ tinymce.init({
   toolbar: 'code'
 });
 ----
+
+== Example: enable the {pluginname} full-screen mode button
+
+[source,js]
+----
+<script type="text/javascript">
+tinymce.init({
+  selector: "textarea",
+  plugins: "advcode, fullscreen",
+  toolbar: "code | fullscreen",
+  advcode_inline: true,
+});
+</script>
+
+
+<textarea>
+<p>Text and markup loaded into <em>TinyMCE</em> editor on initialization.</p>
+</textarea>
+----
+
 
 include::partial$configuration/advcode.adoc[]
 

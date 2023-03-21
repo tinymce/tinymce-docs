@@ -43,19 +43,14 @@ tinymce.init({
 
 [source,js]
 ----
-<script type="text/javascript">
 tinymce.init({
   selector: "textarea",
-  plugins: "advcode, fullscreen",
-  toolbar: "code | fullscreen",
   advcode_inline: true,
+  plugins: [
+    "code", "fullscreen", 'advcode',
+  ],
+  toolbar: "code"
 });
-</script>
-
-
-<textarea>
-<p>Text and markup loaded into <em>TinyMCE</em> editor on initialization.</p>
-</textarea>
 ----
 
 

@@ -44,7 +44,7 @@ tinymce.init({
 [source,js]
 ----
 tinymce.init({
-  selector: "textarea",
+  selector: "textarea",  // change this value according to your HTML
   advcode_inline: true,
   plugins: [
     "code", "fullscreen", 'advcode',

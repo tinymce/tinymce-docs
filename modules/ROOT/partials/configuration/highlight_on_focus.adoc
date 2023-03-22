@@ -23,7 +23,7 @@ tinymce.init({
 
 === Using `+highlight_on_focus+` with custom skins
 
-If a xref:creating-a-skin.adoc[custom skin] is being used with a version of {productname} prior to version 6.4, two at-rules must be updated for the `+highlight_on_focus+` option to work correctly.
+If a xref:creating-a-skin.adoc[custom skin] is being used, two at-rules must be updated for the `+highlight_on_focus+` option to work correctly.
 
 The two rules and their required updates are:
 

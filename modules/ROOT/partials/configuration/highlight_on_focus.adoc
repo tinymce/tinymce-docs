@@ -1,9 +1,9 @@
 [[highlight_on_focus]]
 == `+highlight_on_focus+`
 
-The `+highlight_on_focus+` option allows users to clearly see when the editor is in focus, as the `highlight_on_focus` feature makes it easier to identify which editor is currently in focus. Additionally, users with accessibility issues will be able to use the editor in keyboard mode more easily when using this option.
+The `+highlight_on_focus+` option adds a blue outline to an instantiated {productname} editor when that editor is made the input focus.
 
-The *highlight_on_focus* option can be enabled by using these controls.
+This allows users to clearly see when the editor is in focus, or which editor has focus if more than one {productname} instance is available.
 
 *Type:* `+Boolean+`
 
@@ -21,10 +21,11 @@ tinymce.init({
 });
 ----
 
-[TIP]
-Customers using custom skins in versions of {productname} prior to v6.4+, are advised to update their custom skins for the above option of work correctly.
+=== Using `+highlight_on_focus+` with custom skins
 
-Required updates for the below two variables added:
+If a xref:creating-a-skin.adoc[custom skin] is being used with a version of {productname} prior to version 6.4, two at-rules must be updated for the `+highlight_on_focus+` option to work correctly.
+
+The two rules and their required updates are:
 
 [source, css]
 ----

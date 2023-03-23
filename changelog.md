@@ -6,6 +6,8 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-1900: added documentation of `setText` and `setIcon` functions to `custom-*-toolbar-button.adoc` files.
+
 ### 2023-03-15
 
 - DOC-1930: added the TinyMCE 6.4-specific changes to `changelog.adoc`.

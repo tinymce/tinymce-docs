@@ -55,26 +55,26 @@ The {productname} 6.4 release includes an accompanying release of the **Advanced
 === Fixed adding redundant space between a comma and a quote by switching the sequence of executing safe and unsafe rules
 
 //https://ephocks.atlassian.net/browse/TINY-9442
-After {productname} introduced the `Smart Typography` plugin, a bug was discovered that was causing a `space` to be introduced between a `comma` and a closing `double-quote` mark. Such as in the below example.
+After {productname} introduced the Smart Typography plugin, a bug was discovered that was causing a space to be introduced between a comma and a closing double-quote mark, as shown in the example below:
 
 .Example
-> “They went that way,[space introduced here] ” he said as he pointed.
+> “They went that way,[space introduced here]” he said as he pointed.
 
-As displayed in the above example, a unintentional/redundant `space` was inserted into a seperate node position without intention.
+As demonstrated in the example above, an unintentional or redundant space was inserted into a separate node position without intention.
 
-{productname} fixed the issue by switching the sequence of executing `safe` and `unsafe` rules surrounding *Typography*.
+{productname} fixed the issue by changing the sequence of executing safe and unsafe rules surrounding Typography.
 
-In {productname} 6.4, the `Smart Typography` plugin, no longer creates a `space` between a `comma` and a closing `double-quote` mark.
+In {productname} version 6.4, the Smart Typography plugin no longer creates a space between a comma and a closing double-quote mark.
 
 === Added common/space/delBetweenExclamationMarks to remove spaces between exclamation marks
 
 //https://ephocks.atlassian.net/browse/TINY-9398		
 
-A issue was discovered that affected the typography plugin in previous versions of {productname} that was associated with inserting content into the editor, but specifically *exclamation marks* and the spaces between them. Such as: `“Hello! !“`. This issue meant that the editor would not remove the spaces between the double *exclamation marks* `! <space>!` after the typography plugin `toolbar` or `menubar` button was executed.
+An issue was discovered that affected the typography plugin in previous versions of {productname} when inserting content into the editor. Specifically, the issue involved exclamation marks and the spaces between them, such as in the example `“Hello! !“`. This issue prevented the editor from removing the spaces between the double *exclamation marks* `! !` after executing the typography plugin toolbar or menubar button.
 
 The fix for this involved adding a new rule which removes the spaces between exclamation marks when the typography button is pressed.
 
-In {productname} 6.4, spaces are now removed between exclamation marks `!!` for formatted HTML documents when the typography plugin is used. Read more about xref:advanced-typography.adoc[Advanced Typography] and how you can add this new premium plugin to your project.
+In {productname} 6.4, spaces are now removed between exclamation marks `!!` for formatted HTML documents when the typography plugin is used. To learn more about Advanced Typography and how to add this new premium plugin to your project, please refer xref:advanced-typography.adoc[Advanced Typography].
 
 === Added typography plugin to the default menubar
 
@@ -154,7 +154,7 @@ In previous versions of {productname}, `mceMergeTag's` would not preserve the se
 
 As a consequence, when the user applied the trailing suffix `}}` to the end of the content, the selected content wrapped within the `mceMergeTag` would not be preserved as plain text.  This would occur in specifically in instances when the `mceMergeTag` content length exceeded the character limit set by {productname}.
 
-To fix this issue, improvements to the `mceMergeTag` commands were introduced with the release of {productname} 6.4, that focused on adding a new feature that impacts the way text_patterns handle specific cases such as when `mceMergeTag's` exceed the character limit set by {productname}. These improvements now wraps any content that exceeds the `mceMergeTag` limit, by converting the content into *plain text* whilst encapsulating it in the `prefix` and `suffix`.
+To fix this issue, improvements to the `mceMergeTag` commands were introduced with the release of {productname} 6.4, that focused on adding a new feature that impacts the way text_patterns handle specific cases such as when `mceMergeTag's` exceed the character limit set by {productname}. These improvements now wrap any content that exceeds the `mceMergeTag` limit, by converting the content into *plain text* whilst encapsulating it in the `prefix` and `suffix`.
 
 As a result of these improvements, the `mceMergeTag` command now preserves the selected content as a plain text and wraps it in a merge tag `prefix` and `suffix` as expected.
 
@@ -317,7 +317,7 @@ As a consequence, the Templates plugin would not automatically format or sanitis
 
 To prevent this from happening, {productname} made improvements to the Template plugin that now sanitises content when retrieving preview content, and again before running `editor.dom.create` on it during the template insertion action. By doing this, all preview content will now match the template when it is inserted into the editor, which removed the possibility of any XSS issues arrising.
 
-In {productname}, Templates are now parsed before preview and insertion to make preview consistent with inserted template content and prevent XSS from occuring.
+In {productname} 6.4, Templates are now parsed before preview and insertion to make preview consistent with inserted template content and prevent XSS from occuring.
 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
@@ -330,7 +330,7 @@ As a consequence, when backspacing from an empty block from another empty block 
 Its worth noting that `_this action is only excpected for when content is inserted into a `br[data-mce-bogus]` empty block. This is because the br[data-mce-bogus] tag is programmed to reset the formatting to the default setting for a empty block such as the `br`.
 
 [TIP]
-To avoid this, it is *important* to use a `backspace` instead of an `enter key` when moving from one empty block to another. This will ensure that the formatting of the previous block is preserved and the br[data-mce-bogus] tag is not inserted.
+To avoid this, it is *important* to use a `backspace` instead of an `enter key` when moving from one empty block to another. This will ensure that the formatting of the previous block is preserved and the `br[data-mce-bogus]` tag is not inserted.
 
 To fix this issue, {productname} added improvements that now allow merge blocks to filter all block element decentants, such as the `br[data-mce-bogus]` block element, to ensure preservation of previously applied formatting is not removed from other block elements.
 
@@ -345,9 +345,9 @@ During development for the new `fontsizeinput` toolbar item, an issue was found 
 
 As a consequence, any changes made to the font size within the new toolbar input field, would result in the user having no way to use the new font size within the editor.
 
-After some improvements to the `fontsizeinput` toolbar item, pressing enter in the input field now sets the focus back to the {productname} editor viewport, which allows the new font size to be used within the content body. 
+After some improvements to the `fontsizeinput` toolbar item, pressing enter in the input field now sets the focus back to the {productname} editor viewport, which allows the new font size to be used. 
 
-In {productname} 6.4, pressing enter inside the `inputfontsize` input now returns the focus back into the editor content.
+In {productname} 6.4, pressing enter inside the `inputfontsize` input now returns the focus back to the editor content body.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 
@@ -381,7 +381,7 @@ In {productname} 6.4, the `renderUI` property in the Theme type, now returns a `
 
 // https://ephocks.atlassian.net/browse/TINY-9462
 // bforte this seems to be connected to https://ephocks.atlassian.net/browse/DOC-1888
-In previous versions of {productname}, elements that where within the `editor.selection` could be modified, if they sat within a HTML document body with the properties set to `editor.getBody().contentEditable = false`.
+In previous versions of {productname}, elements that where within the `editor.selection` could be modified, if they sat within a HTML document body with the properties set to `contentEditable = false`.
 
 As a consequence, any `selection | node`, that was encapsulate within the editor body, could be affected by this such as:
 
@@ -392,29 +392,29 @@ Expected output example:
 <p>Try to insert content here</p>
 ----
 
-After executing a `onclick` event within the current `selection | node` using `<button onclick="tinymce.activeEditor.insertContent('text')">insertContent</button>`, the output would modify the existing `editor.getBody().contentEditable = false;` element, which should not be possible.
+After executing a `onclick` event within the current `selection | node` using `<button onclick="tinymce.activeEditor.insertContent('text')">insertContent</button>`, the output would modify the existing `contentEditable = false;` element, which should not be possible.
 
 [source, HTML]
 ----
 <p>Try to inserttextcontent here</p>
 ----
 
-The new additions and improvements with the introduction of {productname} 6.4, include a new `isEditable` API been added to the `editor.selection` which now blocks the `editor.insertContent` API and `mceInsertContent` command when the contents return a `true` value if the editor detects the element is a `noneditable` in a `noneditable` root.
+The new additions and improvements with the introduction of {productname} 6.4, include a new `isEditable` API been added to the `editor.selection` which now blocks the `editor.insertContent` API and `mceInsertContent` command when the contents return a `true` value if the editor detects the element is a `contentEditable = false;` element in a `contentEditable = false;` root.
 
-As a result, any `editor.selection` elements that return a `true` value when a specified element is `editable`, will call the new `isEditable` API to execute the new blocker.
+As a result, any `editor.selection` elements that return a `true` value when a specified element is `contentEditable = true;`, will call the new `isEditable` API to execute the new blocker.
 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === New isEditable API to editor.dom that returns true or false if the specified node is editable
 
 // https://ephocks.atlassian.net/browse/TINY-9462
-In previous versions of {productname}, elements within the editor.dom could be _changed/modified_ regardless if they were assigned to be `editable` or `noneditable`.
+In previous versions of {productname}, elements within the editor.dom could be _modified_ regardless if they were assigned to be `contentEditable = true;` or `contentEditable = false;`.
 
-As a consequence all elements within the root `body` set to `editor.getBody().contentEditable = false;` value, were affected by the issue.
+As a consequence all elements within the root `body` set to `contentEditable = false;` value, were affected by the issue.
 
-The new additions and improvements with the introduction of {productname} 6.4, include a new `isEditable` API been added to the `editor.dom` which now blocks the `editor.insertContent` API and `mceInsertContent` command when the contents return a `true` value if the editor detects the element is a `noneditable` in a `noneditable` root.
+The new additions and improvements with the introduction of {productname} 6.4, include a new `isEditable` API been added to the `editor.dom` which now blocks the `editor.insertContent` API and `mceInsertContent` command when the contents return a `true` value if the editor detects the element is a `contentEditable = false;` in a `contentEditable = false;` root.
 
-As a result, any elements that return a `true` value when a specified element is `editable`, will call the new `isEditable` API to action the new blocker to ensure `noneditable` elements cannot be changes/modified when they are within a root that is set to `editor.getBody().contentEditable = false`.
+As a result, any elements that return a `true` value when a specified element is `contentEditable = true;`, will call the new `isEditable` API to action the new blocker to ensure `contentEditable = false;` elements cannot be modified when they are within a root that is set to `contentEditable = false`.
 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
@@ -428,7 +428,7 @@ In {productname} 6.4, two new additions were added to the menu button API.
 . Added `setText` and `setIcon` properties to both the toolbar button `api`, and menu button `api`.
 . Provided the menu button `api` property as an *argument* which will fetch a function that will allow menu items to change the `icon` or `text` of the parent menu button.
 
-As a result, in {productname} 6.4, menu items can chance based on the parent menu button `api` properties.
+As a result, in {productname} 6.4, menu items can change based on the parent menu button `api` properties.
 
 === New highlight_on_focus option which enables highlighting the content area on focus
 // bforte this is related to https://ephocks.atlassian.net/browse/DOC-1893
@@ -437,7 +437,7 @@ In previous versions of {productname}, when using `devtools` such as `Chrome dev
 
 As a consequence, this issue, whilst creating no impending impacts on the functionality of the editor, would create an inconsistency with the visual UX for the `devTools` environment. As `devTools` is used by developers to inspect the rendered HTML, and troubleshoot issues, the importance for rendering {productname} elements is vital. 
 
-To fix this issues, {productname} 6.4, made some changes to the `focusController` to ensure that when the editor content is `infocus` the editor will render the highlighted border within `devTools`, and when the editor is not `infocus` to remove `focus`.
+To fix this issue, {productname} 6.4, made some changes to the `focusController` to ensure that when the editor content is `infocus` the editor will render the highlighted border within `devTools`, and when the editor is not `infocus` to remove `focus`.
 
 In {productname} 6.4, the editor now renders the highlighted border when in `focus` which is visible only via `devTools`.
 
@@ -447,7 +447,7 @@ In {productname} 6.4, the editor now renders the highlighted border when in `foc
 // https://ephocks.atlassian.net/browse/TINY-9429
 In previous versions of {productname}, users did not have the ability to set their font size by either direct input into a component field or by using plus `+` or minus `-` buttons.
 
-As a consequence, {productname} introduced a new UI component that give users an option to set the default unit of measure (UOM) for font sizes via the new input field or the plus `+` or minus `-` buttons within the toolbar when the `fontsizeinput` is set within the tinymce.init() such as the below:
+As a consequence, {productname} introduced a new UI component that gives users an option to set the default unit of measure (UOM) for font sizes via the new input field or the plus `+` or minus `-` buttons within the toolbar when the `fontsizeinput` is set within the tinymce.init() such as the below:
 
 [source,js]
 ----
@@ -497,7 +497,7 @@ As a result of this addition, this new option makes it easier and faster for use
 === New group and togglebutton in view
 
 // https://ephocks.atlassian.net/browse/TINY-9523
-The release of {productname} 6.4 provides users with new features, such as the impovements to the Advanced Code plugin dialog, which have introduced a group of new buttons to the view bar. A new togglable button has also been added, allowing users to change its icon and active status with the click of a button, and is available in both the modal footer and view header.
+The release of {productname} 6.4 provides users with new features, such as the improvements to the Advanced Code plugin dialog, which have introduced a group of new buttons to the view bar. A new togglable button has also been added, allowing users to change its icon and active status with the click of a button, and is available in both the modal footer and view header.
 
 Furthermore, this button can differentiate between text and icon, making it much more user friendly as it can show both instead of just the icon like a normal button.
 
@@ -592,7 +592,7 @@ It is important to note that disabling sanitization introduces potential securit
 // https://ephocks.atlassian.net/browse/TINY-9520
 In previous versions of {productname}, the top right close 'x' button within the modal dialogs were not keyboard-navigable by the Tab key.
 
-With the release of {productname} 6.4, various changes have now made it possible for modal dialogues to be navigated with the Tab key. This is accomplished by adding a `Tabbing.config` to the close 'x' button. The `Tabbing.config` is an object that describes the sequence of focusable elements, their `tabindex` and the `initial focus` within the dialog when it is opened. in addition an optional `firstTabstop` property has also been added to the `Tabbing.config` to specify which element receives focus first when the dialog is opened.
+With the release of {productname} 6.4, various changes have now made it possible for modal dialogues to be navigated with the Tab key. This is accomplished by adding a `Tabbing.config` to the close 'x' button. The `Tabbing.config` is an object that describes the sequence of focusable elements, their `tabindex` and the `initial focus` within the dialog when it is opened. In addition an optional `firstTabstop` property has also been added to the `Tabbing.config` to specify which element receives focus first when the dialog is opened.
 
 This update enables users to more easily and quickly access the modal dialogues within {productname}, which includes dialogs such as:
 
@@ -649,9 +649,9 @@ The docking behaviour of UI elements is usually only triggered when the page is 
 === The link plugins context menu items will no longer appear for noneditable links
 
 // https://ephocks.atlassian.net/browse/TINY-9491
-In previous versions of {productname}, the link plugin would display the context menu items for `noneditable` links.
+In previous versions of {productname}, the link plugin would display the context menu items for `contenteditable="false"` links.
 
-As a consequence, links such as `table of contents` would open the context menu when `clicked`. The behaviour for the `table of contents`, is not designed to allow links to be modified or removed as the `table of contents` plugin is considered as a `noneditable` element.
+As a consequence, links such as `table of contents` would open the context menu when `clicked`. The behaviour for the `table of contents`, is not designed to allow links to be modified or removed as the `table of contents` plugin is considered as a `contenteditable="false"` element.
 
 To fix this bug, {productname} 6.4 introduced a new check that now verify if the link plugin is opened, which will now block the context menu on `table of contents` from opening upon when the `toc` is clicked. 
 
@@ -661,7 +661,7 @@ As a result, the context menu for the `table of contents` now behaves as expecte
 === The formatting of contenteditable="false" elements are no longer cloned to new cells while creating new table rows
 
 // https://ephocks.atlassian.net/browse/TINY-9449
-Previous versions of {productname}, contenteditable="false" elements such as a *merge tags* could clone the styling to a new table row. In some situations, this cloning would happen during the creation of new table row, where the merge tag prefix would unexpectedly clone the formatting from the previous cell to the new cell.
+In previous versions of {productname}, contenteditable="false" elements such as a *merge tags* could clone the styling to a new table row. In some situations, this cloning would happen during the creation of new table row, where the merge tag prefix would unexpectedly clone the formatting from the previous cell to the new cell.
 
 To correct this issue, {productname} added changes to the *clone logic*, and the cursor position API, which will now return `true`, for any passed `contenteditable=false` elements.
 
@@ -670,7 +670,7 @@ In {productname} 6.4, the formatting of `contenteditable="false"` elements are n
 === Changed the color of @dialog-table-border-color, and added right padding to the first cell of dialog table
 
 // https://ephocks.atlassian.net/browse/TINY-9380
-An area for improvement was identified during an accessibility audit for the *help menu* within {productname}, which focuses on users that rely on `zoom` orient to help with visibility.
+An area for improvement was identified during an accessibility audit for the *help menu* within {productname}, which focuses on users that rely on **zoom orient** to help with visibility.
 
 The consequence of the previous UX, meant that adjustments needed to be made to the horizontal lines within the *help menu* table, that seperate each `row`.
 
@@ -689,7 +689,7 @@ This is important as when a sidebar element is visible, it has an accessibility 
 
 To fix this issue, changes were made to the role attribute of the sidebar element `(.tox-sidebar)`, which is now set to `role="region"` when it's active state is visible, otherwise it defaults to `role="presentation"` when hidden.
 
-In {productname} 6.4, when the sidebar is either visible or hidden now passes the accessibility test with Axe-DevTools.
+In {productname} 6.4, when the sidebar is either visible or hidden it now passes the accessibility test with Axe-DevTools.
 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
@@ -702,7 +702,7 @@ In {productname} 6.4, when the sidebar is either visible or hidden now passes th
 === Sometimes the editor would finish initializing before the silver theme would have finished loading
 
 // https://ephocks.atlassian.net/browse/TINY-9556
-In earlier versions of {productname}, the properties set for the `renderUI`, caused conflicting issues with the theme rendering load times. As a consequence, the `renderUI` would finish rendering before the {productname} theme `silver` would finish load.
+In earlier versions of {productname}, the properties set for the `renderUI`, caused conflicting issues with the theme rendering load times. As a consequence, the `renderUI` would finish rendering before the {productname} theme `silver` would finish loading.
 
 To fix this bug, {productname}, made changes to the `renderUI` properties that allowed the theme type the to return a `Promise<RenderResult>` instead of `RenderResult`, which corrects the issues found previously. 
 
@@ -711,7 +711,7 @@ In {productname} 6.4, all `renderUI` property loading issues have been resolved.
 === The searchreplace modal would close incorrectly when clicking outside of the alert that pops up when no match is found
 
 // https://ephocks.atlassian.net/browse/TINY-9443
-In previous versions of {productname}, the searchreplace modal would close incorrectly when clicking outside of the alert dialog. The expexted behaviour in previous versions was that an error dialog would open when **no <string> match** was found within the {productname} editor viewport. The identifying issue found was when the user would `click` outside of the error dialog, resulting in the `Find and Replace` modal to closes incorrectly.
+In previous versions of {productname}, the search replace modal would close incorrectly when clicking outside of the alert dialog. The expexted behaviour in previous versions was that an error dialog would open when **no <string> match** was found within the {productname} editor viewport. The identifying issue found was when the user would `click` outside of the error dialog, resulting in the `Find and Replace` modal to closes incorrectly.
 
 In {productname} 6.4, when a **no <string> match** occurs within the {productname} editor viewport, an error banner will render in the `Find and Replace` modal beneith the (Replace with) field.
 
@@ -722,7 +722,7 @@ As a result the when the instance occurs where **no <string> match** is triggere
 // https://ephocks.atlassian.net/browse/TINY-9439
 In {productname} 6.3, when the https://www.tiny.cloud/docs/tinymce/6/6.3-release-notes/#new-color_map_foreground-and-color_map_background-options-store-custom-colors-selected-using-the-text-color-and-background-color-menus[new color map] was introduced, a regression was found that affected the UI for *Color Swatch*.
 
-A regression was found, that meant the colors would not render inside the color palette to reflect the selected `color_map_foreground` and `color_map_background` stored. To correct this {productname}, added a register that would store the `last color` for each  specific `node | cell` that will hold this `value` for the color picker pallette.
+The regression meant the colors would not render inside the color palette to reflect the selected `color_map_foreground` and `color_map_background` stored. To correct this {productname}, added a register that would store the `last color` for each  specific `node | cell` that will hold this `value` for the color picker pallette.
 
 In {productname} 6.4, when the color picker in the `toolbar` is updated when changing either the `forecolor` or `backcolor` from the `menubar`.
 
@@ -738,16 +738,16 @@ As a result, the `onSetup` function for custom group toolbar buttons now runs co
 === An element could be dropped onto the decendants of an element with a `noneditable` attribute
 
 // https://ephocks.atlassian.net/browse/TINY-9364
-In {productname} 6.0, the drag and drop `config` did not check some conditions surrounding element placements using either a grag or drop action.  This affected users running {productname} 6.0, which would affectivly allow decendants of *noneditable elements* to be dropped into another *noneditable element*.
+In {productname} 6.0, the drag and drop `config` did not check some conditions surrounding element placements using either a drag or drop action.  This affected users running {productname} 6.0, which would affectivly allow decendants of `contenteditable="false"` element to be dropped into another `contenteditable="false"` element.
 
-Fixes were made to ensure that `dragging | dropping` onto *noneditable element* targets on all browsers is `disabled`. This also includes when the drop target cursor is inside the contenteditable element, or just before it.
+Fixes were made to ensure that `dragging | dropping` onto `contenteditable="false"` element targets on all browsers is `disabled`. This also includes when the drop target cursor is inside the `contenteditable="true"` element, or just before it.
 
-{productname} 6.4, now prevents the user from having the ability to drag and drop any descendants of a `contenteditable=false element` within another *noneditable element*.
+{productname} 6.4, now prevents the user from having the ability to drag and drop any descendants of a `contenteditable=false element` within another `contenteditable="false"` element.
 
 === Checkmark did not show in menu colorswatches
 
 // https://ephocks.atlassian.net/browse/TINY-9395
-Previous versions of {productname} the known issue, (_https://www.tiny.cloud/docs/tinymce/6/6.3-release-notes/#checkmark-over-the-current-background-color-is-not-displayed-when-inline-formatting-is-applied-in-a-certain-order[checkmark-over-the-current-background-color-is-not-displayed-when-inline-formatting-is-applied-in-a-certain-order]_) was identifed. As a consequence, when text was formatted in the following order, the *checkmark* over the currently active background color would not display in the Background color swatch menu:
+Previous versions of {productname} the known issue, (_https://www.tiny.cloud/docs/tinymce/6/6.3-release-notes/#checkmark-over-the-current-background-color-is-not-displayed-when-inline-formatting-is-applied-in-a-certain-order[checkmark-over-the-current-background-color-is-not-displayed-when-inline-formatting-is-applied-in-a-certain-order]_) was identified. As a consequence, when text was formatted in the following order, the *checkmark* over the currently active background color would not display in the Background color swatch menu:
 
 . When the user appled inline formatting, such as *bold* or _Italic_.
 . After applying a forground(text) color.
@@ -764,14 +764,14 @@ In previous versions of {productname}, while the foreground and background icons
 
 To correct this, {productname} added a new set icon fill function to the nested menu item spec, to ensure that the icon is filled when a color is selected from the format menu.
 
-In {productname} 6.4, this issues has be rectified, which now ensures that the foreground and background menu icons now accurately reflect the last used color within the menu dropdown swatch.
+In {productname} 6.4, this issue has be rectified, which now ensures that the foreground and background menu icons now accurately reflects the last used color within the menu dropdown swatch.
 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Added new setIconFill function to NestedMenuItemInstanceApi
 
 // https://ephocks.atlassian.net/browse/TINY-9497
-In previous versions of {productname} up until the changes and improvements were made with the release of v6.4, the foreground and background menu icons would not properly update to display the last used color, as outlined in the above.
+In previous versions of {productname} up until the changes and improvements made with the release of v6.4, the foreground and background menu icons would not properly update to display the last used color, as outlined in the above.
 
 To facilitate this change, {productname} has added a new `setIconFill` function to the `NestedMenuItemInstanceAPI`, which allows users to set the fill color of an icon when the user selects an option from the format menu. This ensures that the menu icon changes to accurately reflect the user's selection.
 
@@ -813,11 +813,11 @@ In {productname} 6.4, dragging content such as `links` into other `links` will n
 === The editor.insertContent API would insert contents inside noneditable elements if the selection was inside the element
 
 // https://ephocks.atlassian.net/browse/TINY-9462
-In previous versions of {productname}, the settings for the `contentEditable` property in the editor root was set to `false`. As a consequence, the user could insert content using `api` commands to edit a `noneditable` root element.
+In previous versions of {productname}, the settings for the `contentEditable` property in the editor root was set to `false`. As a consequence, the user could insert content using `api` commands to edit a `contenteditable="false"` root element.
 
-To fix this bug, in {productname} 6.4, a blocker was added to the `editor.insertContent` api and `mceInsertContent` command, which stops `noneditable` root element from being edited.
+To fix this bug, in {productname} 6.4, a blocker was added to the `editor.insertContent` api and `mceInsertContent` command, which stops `contenteditable="false"` root elements from being edited.
 
-In {productname} 6.4, inserting contents inside a `noneditable` element while the selection is inside another element, is no longer possible.
+In {productname} 6.4, inserting contents inside a `contenteditable="false"` element while the selection is inside another element, is no longer possible.
 
 === Closing a dialog would scroll down the document in Safari
 
@@ -829,7 +829,7 @@ To correct this issue, a new Css.set was implemented to keep the `focus` on the 
 In {productname} 6.4, when the user `clicks` away to dismiss the *Search* and *Replace* dialog within Safari, the focus now returns to the editor and the scroll does not change position within the editor.
 
 === Inline headers would not work in some situations when the editor was moved too far right horizontally
-
+// @KKS note to self, this still needs to be verified by QA.
 // https://ephocks.atlassian.net/browse/TINY-8977
 // Cause, Consequence, Fix, Result
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
@@ -837,22 +837,22 @@ In {productname} 6.4, when the user `clicks` away to dismiss the *Search* and *R
 === Quick toolbars were incorrectly rendered during the dragging of contenteditable="false" elements
 
 // https://ephocks.atlassian.net/browse/TINY-9305
-The quickbar was displaying incorrectly during a drag and drop `action` for contenteditable="false" elements. As a consequence, during the movement of contenteditable="false" element, the selection was updated, which triggered a *NodeChange*. This selection update would cause an absence of the caret location during a dragging or dropping event.
+The quickbar was displaying incorrectly during a drag and drop `action` for contenteditable="false" elements. As a consequence, during the movement of a contenteditable="false" element, the selection was updated, which triggered a *NodeChange*. This selection update would cause an absence of the caret location during a dragging or dropping event.
 
 To fix this bug, {productname} 6.4 added a new check to identify when the user is dragging a contenteditable="false" element, which blocks the quickbar from rendering.
 
-As a result, the quickbar no longer opens in {productname} 6.4, when the user is dragging a contenteditable="false" element.
+As a result, the quickbar no longer opens in {productname} v6.4+, when the user is dragging a contenteditable="false" elements.
 
 === Selection of images, hrs, tables or noneditable elements was possible if they were within a noneditable element
 
 // https://ephocks.atlassian.net/browse/TINY-9473
-In previous versions of {productname}, elements that were nested within another `noneditable` element such as a element set with a `contenteditable="false"` attribute, was avoiding the `noneditables` guidelines set. As a consequence, selection of images, hrs, tables or noneditable elements was possible if they were nested within a noneditable element.
+In previous versions of {productname}, `contenteditable="false"` elements that were nested within another such as a element set with the `contenteditable="false"` attribute, would avoid the `contenteditable="false"` guidelines set. As a consequence, selection of images, hrs, tables or `contenteditable="false"` elements was possible if they were nested within a `contenteditable="false"` element.
 
-Improvements were made to the `SelectionOverride` to now check if the DOM parent node is either set as an `editable` or `noneditable` element.
+Improvements were made to the `SelectionOverride` to now check if the DOM parent node is either set as a `contenteditable="true"` element or as a `contenteditable="false"` element.
 
-In {productname} 6.4, elements with contenteditable="false" attributes can no longer be selected when they are children of another contenteditable="false" attribute, such as:
+In {productname} 6.4, elements with `contenteditable="false"` attributes can no longer be selected when they are children of another `contenteditable="false"` attribute, such as:
 
-.Example of `noneditables`
+.Example of `contenteditable="false"` elements
 [source,HTML]
 ----
 <div contenteditable="false">noneditables div text</div>
@@ -876,20 +876,20 @@ As a result, the ranged selection for backspace/delete now check that all of the
 === Visual characters were rendered inside noneditable elements
 
 // https://ephocks.atlassian.net/browse/TINY-9474
-In previous versions of {productname}, a bug was found that affected the `visual characters` plugin. As a consequence, the visual characters selecter would render inside `noneditable` elements after the plugin was applied to the editor.
+In previous versions of {productname}, a bug was found that affected the `visual characters` plugin. As a consequence, the visual characters selecter would render inside `contenteditable="false"` elements after the plugin was applied to the editor.
 
-To fix this issue, a conditional filter was added which identifies, if an element is either `editable` or `noneditable` to its decendants.  If the element matches `noneditable` to itself or decendants, the `visual character` plugin will remove the highlighted selecter from within the `dom` viewport.
+To fix this issue, a conditional filter was added which identifies, if an element is either a `contenteditable="true"` element or a `contenteditable="false"` element to its decendants.  If the element matches as a `contenteditable="false"` element to itself or decendants, the `visual character` plugin will remove the highlighted selecter from within the `dom` viewport.
 
-As a result, in {productname} 6.4, visual characters no longer render inside `noneditable` elements.
+As a result, in {productname} 6.4, visual characters no longer render inside `contenteditable="false"` elements.
 
 === Lists in a noneditable root were incorrectly editable using list API commands, toolbar buttons and menu items
 
 // https://ephocks.atlassian.net/browse/TINY-9458
-In previous versions of {productname}, a bug was found that affected the `lists` and `advlist` plugins when the {productname} editor body was set to `contentEditable = 'false'`. The consequence meant that `lists` that were *noneditable* could be *edited* using list API commands, toolbar buttons and menu items.
+In previous versions of {productname}, a bug was found that affected the `lists` and `advlist` plugins when the {productname} editor body was set to `contentEditable = 'false'`. The consequence meant that `lists` that were set as `contenteditable="false"` elements could be modified by using list API commands, toolbar buttons and menu items.
 
 The fix involved implementing a new process to  check the element conditions.  The check now looks to  identify if the `lists` or `advlists` in the DOM are set to be either `contentEditable = 'false'` or `contentEditable = 'true'.
 
-As a result, in {productname} 6.4, `lists` and `advlist` plugins that are set as `contentEditable = 'false'` elements will no longer be *editable* using list API commands, toolbar buttons and menu items.
+As a result, in {productname} 6.4, `lists` and `advlist` plugins that are set as `contentEditable = 'false'` elements can no longer be modified by using list API commands, toolbar buttons and menu items.
 
 === Color picker dialog would not update the preview color if the hex input value was prefixed with # symbol
 
@@ -898,8 +898,8 @@ In previous versions of {productname}, the preview sample box within the color p
 
 Example of a `incorrect` vs `correct` value input:
 
-* *`#BDE123`*: Incorrect hex value input.
-* *`BDE123`*: Correct hex value input.
+* `#BDE123`: Incorrect hex value input.
+* `BDE123`: Correct hex value input.
 
 In order to fix this bug, {productname} 6.4, not detects if the user inserts a `#` symbol before the hex `value`, which removes the leading `#` prefix before rendering to the color picker component.
 
@@ -908,22 +908,22 @@ In {productname} 6.4, the color picker works as expected when using hex `values`
 === Table cell selection was possible even if the element was in a noneditable root element
 
 // https://ephocks.atlassian.net/browse/TINY-9459
-Previous versions of {productname}, table cells set with the `noneditable` properties could still be modified. This was because the `contentEditable` property settings were set to `false` in the root. This meant that any table UI actions, commands or table selections could still affect any tables that were within that specific `noneditable` root.
+Previous versions of {productname}, table cells set with the `contenteditable="false"` element properties could still be modified. This was because the `contenteditable="true"` element property settings were set to `false` in the root. This meant that any table UI actions, commands or table selections could still affect any tables that were within that specific `contenteditable="false"` element root.
 
-{productname} 6.4, introduced a blocker that is executed when tables are inside a `noneditable` root.
+{productname} 6.4, introduced a blocker that is executed when tables are inside a `contenteditable="false"` element root.
 
-In {productname} 6.4, all table UI actions, commands and selections have been `disabled` for tables when either the table or the editor body have been set as `noneditable` elements.
+In {productname} 6.4, all table UI actions, commands and selections have been `disabled` for tables when either the table or the editor body have been set as `contenteditable="false"` elements.
 
 === Table commands were modifying tables in a noneditable root element
 
 // https://ephocks.atlassian.net/browse/TINY-9459
-In versions of {productname}, prior to 6.4, tables could be modified by using `execCommands` when tables are placed within a `noneditable` root element.
+In versions of {productname}, prior to 6.4, tables could be modified by using `execCommands` when tables are placed within a `contenteditable="false"` root element.
 
-As a consequence, a bug was identified that by using the `execCommands`, which are provided by {productname}, the user could modify the table element regardless of it being nested within a `noneditable` root element. This was made possible by by overriding the `noneditable` element settings by using the `execCommand`'s' to trigger the `action` event.
+As a consequence, a bug was identified that by using the `execCommands`, which are provided by {productname}, the user could modify the table element regardless of it being nested within a `contenteditable="false"` root element. This was made possible by by overriding the `contenteditable="false"` element settings by using the `execCommand`'s' to trigger the `action` event.
 
-To fix this bug, {productname} 6.4, made improvements to the DOM `Commands` API that now blocks all Table UI actions via the `execCommands` when a `noneditable` element selection is highlighted inside a `noneditable` root.
+To fix this bug, {productname} 6.4, made improvements to the DOM `Commands` API that now blocks all Table UI actions via the `execCommands` when a `contenteditable="false"` element selection is highlighted inside a `contenteditable="false"` root.
 
-As a result, `noneditable` elements such as tables cannot have their properties overridden by using the `execCommands`.
+As a result, `contenteditable="false"` elements such as tables cannot have their properties overridden by using the `execCommands`.
 
 _(Readmore about editorCommands xref:editor-command-identifiers.adoc[here])_
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
@@ -931,13 +931,13 @@ _(Readmore about editorCommands xref:editor-command-identifiers.adoc[here])_
 === Fake carets were rendered for noneditable elements and tables in a noneditable root element
 
 // https://ephocks.atlassian.net/browse/TINY-9459
-In previous versions of {productname}, `fake` carets that are within a `noneditable` element, would render as a `highlighted` node, when nested within another `noneditable` element, this would occured when the content was placed within a `table` placed in the root element.
+In previous versions of {productname}, `fake` carets that are within a `contenteditable="false"` element, would render as a `highlighted` node, when nested within another `contenteditable="false"` element, this would occured when the content was placed within a `table` placed in the root element.
 
 As a consequence, `fake` caret/s would be visibly highlighted within the editor viewport,  which would allow content to be inserted into the element when the table was selected by using either the keyboard and mouse function commands.
 
-To fix this {productname} 6.4, added a new function to the Utils API that filters any content that is considered as a `fake caret` element, which now disables the users ability to add/insert or modify the content contained within the `noneditable` element node space.
+To fix this {productname} 6.4, added a new function to the Utils API that filters any content that is considered as a `fake caret` element, which now disables the users ability to add/insert or modify the content contained within the `contenteditable="false"` element node space.
 
-As a result, any `noneditable` elements that are nested within another `noneditable` element root that are nested within `table` elements, can no longer be edited in {productname} 6.4.
+As a result, any `contenteditable="false"` elements that are nested within another `contenteditable="false"` element root that are nested within `table` elements, can no longer be edited in {productname} 6.4.
 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
@@ -957,7 +957,7 @@ As a result, the `focus` dialog boarder now renders correctly in {productname} 6
 === It was possible to open links inside the editor if the editor root was noneditable
 
 // https://ephocks.atlassian.net/browse/TINY-9470
-Setting the `contentEditable` property to the editor root to `false` such as the below example, would result in `noneditable` elements like `links` could be navigable.
+Setting the `contenteditable` property to the editor root to `false` such as the below example, would result in `contenteditable="false"` elements meant that `links` could be navigable.
 
 [source, js]
 ----
@@ -970,18 +970,18 @@ setup: (editor) => {
 
 As a result, links could be opened within the `iframe` element.
 
-In {productname} 6.4, links can no longer be navigable by clicking on them while they are inside a `noneditable` root, after a blocker was implemented to avoid this event `action`.
+In {productname} 6.4, links can no longer be navigable by clicking on them while they are inside a `contenteditable="false"` root, after a blocker was implemented to avoid this event `action`.
 
-{productname} 6.4, all links in a `noneditable` behave as expected.
+In {productname} 6.4, all links in a `contenteditable="false"` now behave as expected.
 
 === Inline boundary was rendered for noneditable inline boundary elements
 
 // https://ephocks.atlassian.net/browse/TINY-9471
-Inline boundaries for noneditable elements were rendering styling in previous versions of {productname} 6.4 after the user `selected` before and after the noneditable elements node. The expected behaviour is that noneditable elements should *not* have inline boundaries when a caret is inside an noneditable anchor or root.
+Inline boundaries for `contenteditable="false"` elements were rendering styling in previous versions of {productname} 6.4 after the user `selected` before and after the `contenteditable="false"` elements node. The expected behaviour is that `contenteditable="false"` elements should *not* have inline boundaries when a caret is inside an `contenteditable="false"` anchor or root.
 
-Added a predicate check for inline boundaries before they render, and additional tests for `selections` for some special cases surrounding particular noneditable elements.
+Added a predicate check for inline boundaries before they render, and additional tests for `selections` for some special cases surrounding particular `contenteditable="false"` elements.
 
-In {productname} 6.4, it is now not possible to highlight inline boundary elements that are classified as a `noneditable` content element.
+In {productname} 6.4, it is now not possible to highlight inline boundary elements that are classified as a `contenteditable="false"` content element.
 
 === Clicking on a disabled split button will no longer call the onAction callback
 
@@ -1010,52 +1010,50 @@ A bug was found within the context menu and dialog when inserting `links` in pre
 In this example the bug would deactivate the `open link` button within the context menu and dialog, which removes the users ability to reopen the “open link” dialog.
 ====
 
-The fix now allows all 3 link-plugins to work within the context menu items.
+The fix now allows all three link-plugins to work within the context menu items.
 
 In {productname} 6.4, when the user executes right `mouse click` on the link selection immediately after attaching a link to a `<string>`, the link-plugins now work as expected.
 
 === Editor commands ForwardDelete and Delete was deleting contents inside noneditable elements
 
 // https://ephocks.atlassian.net/browse/TINY-9477
-In the previous versions of {productname}, when utilizing the `forwarddelete` or delete keys, they would delete the contents inside `noneditable` elements. 
+Previously, when using the forwarddelete or delete keys in earlier versions of {productname}, the contents within `contenteditable="false"` elements were deleted. This meant that if there were nested elements within a `contenteditable="false"` root element that were also set to `contenteditable="false"`, they could be deleted from the root element.
 
-As a consequence, elements nested within a `noneditable` root element set to `contentEditable = false;`, were able to be deleted from the `noneditable` root element.
+To resolve this issue, {productname} 6.4 included several enhancements to prevent all commands and keyboard functions, including delete/forwarddelete, from affecting `contenteditable="false"` content. These changes also updated the editor selection `isEditable` function to prioritize fake selections first.
 
-To fix this issue, {productname} 6.4 introduced various improvements to block all commands and keyboard functions such as `delete/forwarddelete` from being applied to `noneditable` content.  The changes made to {productname} with the release of v6.4, included updates to the editor selection `isEditable` function, which now prioritizes fake selections first.
-
-As a result, in {productname} 6.4, when using the `forwarddelete` or `delete` keys on `noneditable` elements within a `noneditable` element, the contents within the `noneditable` elements will no longer be deleted.
+Consequently, in {productname} 6.4, using the forwarddelete or delete keys on `contenteditable="false"` elements within a `contenteditable="false"` element will no longer delete the contents within the `contenteditable="false"` elements.
 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Backspace or delete keys was deleting contents inside noneditable elements
 
 // https://ephocks.atlassian.net/browse/TINY-9477
-In the previous versions of {productname}, when utilizing the backspace or delete keys, they would delete the contents inside `noneditable` elements.
+In the previous versions of {productname}, when utilizing the backspace or delete keys, they would delete the contents inside `contenteditable="false"` elements.
 
-As a consequence, elements nested within a `noneditable` root element set to `contentEditable = false;`, were able to be removed/deleted from the `noneditable` root element. To fix this issue, {productname} 6.4 introduced various improvements to block all commands and keyboard functions such as `delete/backspace` from being applied to `noneditable` content. 
+As a consequence, elements nested within a `contenteditable="false"` root element set to `contentEditable= false;`, were able to be removed/deleted from the `contenteditable="false"` root element. To fix this issue, {productname} 6.4 introduced various improvements to block all commands and keyboard functions such as `delete/backspace` from being applied to `contenteditable="false"` content. 
 
 The changes made to {productname} 6.4 included updates to the editor selection `isEditable` function, which now prioritizes fake selections first.
 
-As a result, in {productname} 6.4, when using the backspace or delete function keys on `noneditable` elements within a `noneditable` element, the contents within the `noneditable` elements will no longer be deleted. 
+As a result, in {productname} 6.4, when using the backspace or delete function keys on `contenteditable="false"` elements within a `contenteditable="false"` element, the contents within the `contenteditable="false"` elements will no longer be deleted. 
 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Inserting newlines inside an editable element inside a noneditable root would sometimes try to split the editable element
 
 // https://ephocks.atlassian.net/browse/TINY-9461
-In previous versions of {productname}, inserting newlines inside an `editable` element while it was inside a `noneditable` root would sometimes try to split the `editable` element. 
+In previous versions of {productname}, inserting newlines inside an `contentEditable= true;` element while it was inside a `contentEditable= false;` root would sometimes try to split the `contentEditable= true;` element. 
 
-As a consequence, when child block elements set as `editable` such as a `<p>` tag were nested within the `noneditable` element root, the editor would try to split the child block element when the user hit the `enter` command. 
+As a consequence, when child block elements set to `contentEditable=true;` such as a `<p>` tag were nested within the `contentEditable= false;` element root, the editor would try to split the child block element when the user hit the `enter` command. 
 
 As the paragraph tag is intended to be a block for `text`, it is classified as `semantically incorrect` to split a paragraph block element.
-In this particular instance, child elements in {productname} such as the `<p>` tag would split the block element resulting in a new block (such as a new paragraph) to be created inside the paragraph when a user attempted to edit it inside a `noneditable` root element. 
+In this particular instance, child elements in {productname} such as the `<p>` tag would split the block element resulting in a new block (such as a new paragraph) to be created inside the paragraph when a user attempted to edit it inside a `contentEditable= false;` root element. 
 
 Fixes were introduced with the release of {productname} 6.4, that:
 
-* Prevents editing host elements like `<p contenteditable="true">paragraph text</p>` in a `contentEditable = false;` root to be split.
-* Prevents editing hosts elements inside a `noneditable` root to be split.
+* Prevents editing host elements like `<p contenteditable="true">paragraph text</p>` in a `contentEditable= false;` root to be split.
+* Prevents editing hosts elements inside a `contentEditable= false;` root to be split.
 
-As a result, when a root element is set to `noneditable`, any `editable` elements inside that root element such as `<p>` tag will no longer try to split the `editable` element. 
+As a result, when a root element is set to `contentEditable= false;`, any `contentEditable= true;` elements inside that root element such as `<p>` tag will no longer try to split the `contentEditable= true;` element. 
 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
@@ -1071,36 +1069,36 @@ In {productname} 6.4, anchor elements are included inside `lists` while nested w
 === Dragging and dropping noneditable elements on table borders would remove the element on drop
 
 // https://ephocks.atlassian.net/browse/TINY-9021
-In previous versions of {productname}, dragging and dropping `noneditable` elements on table borders would create issues during the drop action.
+In previous versions of {productname}, dragging and dropping `contentEditable= false;` elements on table borders would create issues during the drop action.
 
-As a consequence, this would result in the `noneditable` element being deleted after the  `action` when dropped onto the borderline within the table cell.
+As a consequence, this would result in the `contentEditable= false;` element being deleted after the `action` when dropped onto the borderline within the table cell.
 To fix this issue, {productname} 6.4, introduced a new `isActive` api to the handler for dragger, that checks if the event `isActive` or not, which then hides the resize bar during the dragging event, which now prevents content from being dropped onto table bars.
 
-In {productname} 6.4, dragging an inline `contentEditable = 'false'; element onto the border inside a table, now moves it into a neighbouring cell instead of deleting it.
+In {productname} 6.4, dragging an inline `contentEditable= false;` element onto the border inside a table, now moves it into a neighbouring cell instead of deleting it.
 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Noneditable elements would be removed when dragged and dropped within a noneditable root
 
 // https://ephocks.atlassian.net/browse/TINY-9558
-In previous version of {productname}, dragging `noneditable` elements into a `noneditable` root would remove the elements `contentEditable = 'false';` attributes.
+In previous version of {productname}, dragging ``contentEditable= false;` elements into a `contentEditable= false;` root would remove the elements `contentEditable= false;` attributes.
 
-As this is not the expected behaviour for a `noneditable` element or root, this bug in particular, created issues in situations such as: *(a)* when the editor body was set to `contentEditable = 'false';`, and *(b)* when a `non editable` element is dragged and dropped into a table element that is within a `non editable` root, which would result in the `noneditable` attributes blocks being deleted from the element that was dropped.
+As this is not the expected behaviour for a `contentEditable= false;` element or root, this bug in particular, created issues in situations such as: *(a)* when the editor body was set to `contentEditable= false;`, and *(b)* when a `contentEditable= false;` element is dragged and dropped into a table element that is within a `contentEditable= false;` root, which would result in the `contentEditable= false;` attributes blocks being deleted from the element that was dropped.
 
 To fix this issue, improvements were made to the drag and drop function that checks if the `dom` element `isEditable` to its `parentElement`.
 
-In {productname} 6.4, `noneditable` elements now preserve their `contentEditable = 'false';` attributes if they are dragged and dropped within a `noneditable` root.
+In {productname} 6.4, `contentEditable= false;` elements now preserve their `contentEditable= false;` attributes if they are dragged and dropped within a `contentEditable= false;` root.
 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === Formatting could be applied or removed on noneditable list items inside a noneditable root
 
 // https://ephocks.atlassian.net/browse/TINY-9563
-In a `noneditable` root, when selecting multiple lines from lists, it was possible to add formatting to the selection such as `*bold*` and `_italic_`. As a consequence, this would allow contents that are considered `noneditable` to be modified which is not the expected behaviour for `noneditable` elements within the root.
+In a `contentEditable= false;` root, when selecting multiple lines from lists, it was possible to add formatting to the selection such as `*bold*` and `_italic_`. As a consequence, this would allow contents that are considered `contentEditable= false;` to be modified which is not the expected behaviour for `contentEditable= false;` elements within the root.
 
-To fix this bug, {productname}, disabled list formatting, if the list is in within a `noneditable` root
+To fix this bug, {productname}, disabled list formatting, if the list is in within a `contentEditable= false;` root
 
-In {productname} 6.4, a selection of multiple lines from lists can no longer be formatted when inside a `noneditable` root.
+In {productname} 6.4, a selection of multiple lines from lists can no longer be formatted when inside a `contentEditable= false;` root.
 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
@@ -1111,9 +1109,9 @@ In previous versions of {productname}, the annotations behaviour was not working
 
 As a consequence, the annotation (highlighted-text-selection) would not be removed from the text selection, if the annotation was immediately deleted after being created.
 
-While applying a fix for this issues, it was identified that this was a regression created when {productname} fixed issue: _`Change the annotation api to avoid dom mutation in plugins using it`_, which adjusts the selection in the way that it is _impossible_, to retain the selected word. 
+While applying a fix for this issue, it was identified that this was a regression created when {productname} fixed issue: _`Change the annotation api to avoid dom mutation in plugins using it`_, which adjusts the selection in the way that it is _impossible_, to retain the selected word. 
 
-However, with the release of {productname} 6.4, after immediately deleting annotations after they are created no longer will be retained on the text selection.
+However, with the release of {productname} 6.4, after immediately deleting annotations after they are created, they will no longer will be retained on the text selection.
 
 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
@@ -1160,7 +1158,7 @@ As a consequence, the editing host element would incorrectly split itself into m
 
 To fix this issue, with the release of {productname} 6.4, pasted elements are now instead unwrapped inside the target element rather than being wrapped.
 
-In {productname} 6.4, pasting blocks that are invalid children of a `editable` block will no longer split that block, but instead unwrap the blocks to fit within the specific `editable` block.
+In {productname} 6.4, pasting blocks that are invalid children of a `contentEditable= true;` blocks will no longer split that block, but instead unwrap the blocks to fit within the specific `contentEditable= true;` block.
 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
@@ -1190,11 +1188,11 @@ In {productname} 6.4, the correct number of columns is respected in the forecolo
 
 // https://ephocks.atlassian.net/browse/TINY-9606
 // Cause, Consequence, Fix, Result
-In previous versions of {productname}, dragging and dropping `noneditable` elements into another block elements would cause issues with the original parent block. As a consequence, the parent block element where the `noneditable` element was dragged from would leave the parent block as a `contentEditable = false` element, as it was not discarding the contents when the element was transferred.
+In previous versions of {productname}, dragging and dropping `contentEditable= false;` elements into another block elements would cause issues with the original parent block. As a consequence, the parent block element where the `contentEditable= false;` element was dragged from would leave the parent block as a `contentEditable= false;` element, as it was not discarding the contents when the element was transferred.
 
 As a fix, {productname} 6.4, added a new condition which validates a set of conditions the check if the parent block element is within a `parentNode` and is a block element, in which it will trigger a action to remove elements with padding that meet this condition. 
 
-In {productname} 6.4, dragging and dropping elements that are `noneditable` out of they're parent blocks now correctly pad the parent block element.
+In {productname} 6.4, dragging and dropping elements that are `contentEditable= false;` out of they're parent blocks now correctly pad the parent block element.
 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 

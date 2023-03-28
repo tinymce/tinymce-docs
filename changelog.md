@@ -6,6 +6,8 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-1914: added documentation of the new `tree` component to `dialog-components.adoc`.
+
 ### 2023-03-15
 
 - DOC-1930: added the TinyMCE 6.4-specific changes to `changelog.adoc`.

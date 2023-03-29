@@ -152,7 +152,7 @@ The {productname} 6.4 release includes an accompanying release of the **Merge Ta
 
 In previous versions of {productname}, `mceMergeTag's` would not preserve the selected content within the merge tag `prefix` and `suffix` in some events.
 
-As a consequence, when the user applied the trailing suffix `}}` to the end of the content, the selected content wrapped within the `mceMergeTag` would not be preserved as plain text.  This would occur in specifically in instances when the `mceMergeTag` content length exceeded the character limit set by {productname}.
+As a consequence, when the user applied the trailing suffix `}}` to the end of the content, the selected content wrapped within the `mceMergeTag` would not be preserved as plain text.  This would occur specifically in instances when the `mceMergeTag` content length exceeded the character limit set by {productname}.
 
 To fix this issue, improvements to the `mceMergeTag` commands were introduced with the release of {productname} 6.4, that focused on adding a new feature that impacts the way text_patterns handle specific cases such as when `mceMergeTag's` exceed the character limit set by {productname}. These improvements now wrap any content that exceeds the `mceMergeTag` limit, by converting the content into *plain text* whilst encapsulating it in the `prefix` and `suffix`.
 

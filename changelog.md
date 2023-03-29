@@ -6,6 +6,10 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+### 2023-03-29
+
+- DOC-1939: added the TinyMCE 6.4.1-specific changes to `changelog.adoc`.
+
 ### 2023-03-15
 
 - DOC-1930: added the TinyMCE 6.4-specific changes to `changelog.adoc`.

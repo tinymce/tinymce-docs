@@ -4,7 +4,15 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
-== 6.4 - 2023-03-15
+
+== 6.4.1 - 2023-03-29
+
+=== Fixed
+* The `fontsizeinput` increase and decrease size buttons now work on TinyMCE mobile.
+* The TinyMCE editor toolbar is now accessible for all editor widths; it no longer collapses into an inaccessible vertical line at any presented editor width.
+* Reverted the changes made, in TinyMCE 6.4.0, to UI button colors in focus, active, and enabled states.
+
+== 6.4.0 - 2023-03-16
 
 === Added
 * New `tree` component that can be used in dialog body panel.

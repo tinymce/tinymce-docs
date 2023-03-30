@@ -750,7 +750,7 @@ Fixes were made to ensure that `dragging | dropping` onto `contenteditable="fals
 Previous versions of {productname} the known issue, (_https://www.tiny.cloud/docs/tinymce/6/6.3-release-notes/#checkmark-over-the-current-background-color-is-not-displayed-when-inline-formatting-is-applied-in-a-certain-order[checkmark-over-the-current-background-color-is-not-displayed-when-inline-formatting-is-applied-in-a-certain-order]_) was identified. As a consequence, when text was formatted in the following order, the *checkmark* over the currently active background color would not display in the Background color swatch menu:
 
 . When the user appled inline formatting, such as *bold* or _Italic_.
-. After applying a forground(text) color.
+. After applying a foreground(text) color.
 . After applying a background color.
 
 To fix this bug, {productname} introduced a new variable to store the node `selection` and `color` format value, which then renders a checkmark to appear in both the toolbar and menubar for both the `forecolor` and `background` color.

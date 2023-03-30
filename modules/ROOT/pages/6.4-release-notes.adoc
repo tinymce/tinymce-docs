@@ -433,7 +433,7 @@ As a result, in {productname} 6.4, menu items can change based on the parent men
 === New highlight_on_focus option which enables highlighting the content area on focus
 // bforte this is related to https://ephocks.atlassian.net/browse/DOC-1893
 // https://ephocks.atlassian.net/browse/TINY-9277
-In previous versions of {productname}, when using `devtools` such as `Chrome devTools`, the editor content area would not render the `focus` border when the editor was `infocus`.
+In previous versions of {productname}, when using developer tools such as Chrome DevTools, the editor content area would not render the `focus` border when the editor was `infocus`.
 
 As a consequence, this issue, whilst creating no impending impacts on the functionality of the editor, would create an inconsistency with the visual UX for the `devTools` environment. As `devTools` is used by developers to inspect the rendered HTML, and troubleshoot issues, the importance for rendering {productname} elements is vital. 
 

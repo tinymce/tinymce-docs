@@ -33,64 +33,39 @@ To setup the {pluginname} plugin in the editor
 
 * add `inserttemplate` and `addtemplate` to the `toolbar` option in the editor configuration;
 
-* add the templates to use in the editor instance as a `const` declaration; and
-
-* add the `const` name to the initialisation script.
+* add the templates to use in the editor instance as a function returning the Promise which contains the editor instance’s initial template list.
 
 For example:
 
 [source,js]
 ----
-const advtemplate_templates = [
-  {
-    id: '1',
-    title: 'Numbered templates',
-    items: [
-      {
-        id: '2',
-        title: 'Template 01',
-        content: '<p><strong>Template 01</strong> contents.</p>'
-      },
-      {
-        id: '3',
-        title: 'Template 02',
-        content: '<p><strong>Template 02</strong> contents.</p>'
-      },
-      {
-        id: '6',
-        title: 'Template 03',
-        content: '<p><strong>Template 03</strong> contents.</p>'
-      }
-    ]
-  },
-  {
-    id: '4',
-    title: 'Lettered templates',
-    items: [
-      {
-        id: '7',
-        title: 'Template A',
-        content: '<p><strong>Template A</strong> contents.</p>'
-      },
-      {
-        id: '8',
-        title: 'Template B',
-        content: '<p><strong>Template B</strong> contents.</p>'
-      },
-      {
-        id: '9',
-        title: 'Template C',
-        content: '<p><strong>Template C</strong> contents.</p>'
-      },
-    ]
-  },
-];
-
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'advtemplate',
-  toolbar: 'inserttemplate addtemplate',
-  advtemplate_templates,
+    selector: "textarea",
+    plugins: "advtemplate",
+    toolbar: "inserttemplate addtemplate",
+  	advtemplate_list: () => {
+      return Promise.resolve([
+        {
+          id: '1',
+          title: 'Template 1'
+        },
+        {
+          id: '2',
+          title: 'Category 2',
+          items: [
+            {
+              id: '3',
+              title: 'Template 2.1',
+            },
+            {
+              id: '4',
+              title: 'Category 2.2',
+              items: []
+            }
+          ]
+        }
+    ]);
+  }
 });
 ----
 

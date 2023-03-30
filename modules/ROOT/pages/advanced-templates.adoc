@@ -86,7 +86,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'advtemplate',
   toolbar: 'inserttemplate addtemplate',
-	advtemplate_templates,
+  advtemplate_templates,
 });
 ----
 

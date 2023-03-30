@@ -1,15 +1,15 @@
 [cols="1,3",options="header"]
 |===
 |Command |Description
-|mceInsertTemplate |Inserts a template into the editor at the selection.
-|mceAddTemplate |Turns the current selection into a new template.
+|AdvTemplateAddDialog |Opens the `Add Template` dialog, allowing the current selection to be added as a template.
+| AdvTemplateInsertDialog |Opens the `Insert Template` dialog, allowing a template to be inserted at the current selection
 |===
 
 .Example
 [source,js]
 ----
-tinymce.activeEditor.execCommand('mceInsertTemplate');
-tinymce.activeEditor.execCommand('mceAddTemplate');
+tinymce.activeEditor.execCommand('AdvTemplateAddDialog');
+tinymce.activeEditor.execCommand('AdvTemplateInsertDialog');
 ----
 
 NOTE: These are pure guesses. I don’t know if these (or any) commands exist for this plugin; if the command names are correct if they do exist; or if they work as described. Off the top of my head, for example, I’d assume the first guessed-at command would require parameters for selecting which template to insert and the second guessed-at command would require parameters for setting the id and category of a newly-created template.

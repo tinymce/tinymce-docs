@@ -23,7 +23,7 @@ tinymce.init({
 
 === Using `+highlight_on_focus+` with custom skins
 
-If a xref:creating-a-skin.adoc[custom skin] is being used, two variables can be updated for customized appearance of the `+highlight_on_focus+` option.
+If a xref:creating-a-skin.adoc[custom skin] is being used, two variables can be updated to match the  `+highlight_on_focus+` option’s appearance with the custom skin.
 
 The two rules and their default values are:
 
@@ -32,3 +32,5 @@ The two rules and their default values are:
 @edit-area-border-color: #2D6ADF;
 @edit-area-border-width: 2px;
 ----
+
+NOTE: This is entirely optional. If the default values are not changed, the `+highlight_on_focus+` option works with a custom skin exactly as it does with {productname} default skins.

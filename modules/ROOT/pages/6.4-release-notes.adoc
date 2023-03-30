@@ -392,7 +392,7 @@ Expected output example:
 <p>Try to insert content here</p>
 ----
 
-After executing a `onclick` event within the current `selection | node` using `<button onclick="tinymce.activeEditor.insertContent('text')">insertContent</button>`, the output would modify the existing `contentEditable = false;` element, which should not be possible.
+After executing an `onclick` event within the current `selection | node` using `<button onclick="tinymce.activeEditor.insertContent('text')">insertContent</button>`, the output would modify the existing `contentEditable = false;` element, which should not be possible.
 
 [source, HTML]
 ----

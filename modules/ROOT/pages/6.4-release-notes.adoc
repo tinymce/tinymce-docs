@@ -372,7 +372,7 @@ This new tree component is an important addition to the new Premium Plugin: *Adv
 // https://ephocks.atlassian.net/browse/TINY-9556
 In earlier versions of {productname}, the properties set for the `renderUI`, was causing issues with the theme rendering load times. As a result {productname} 6.4 added fixes to the `renderUI` properties to correct this issue.
 
-The changes saw the introduction of a new `renderUI` property called `Promise<RenderResult>` , which allows the current theme type to return a `Promise<RenderResult>` instead of the origional  `RenderResult`.
+The changes saw the introduction of a new `renderUI` property called `Promise<RenderResult>` , which allows the current theme type to return a `Promise<RenderResult>` instead of the original  `RenderResult`.
 
 In {productname} 6.4, the `renderUI` property in the Theme type, now returns a `Promise <RenderResult>`.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480

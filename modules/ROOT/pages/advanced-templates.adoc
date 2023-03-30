@@ -1,7 +1,7 @@
 = Advanced Template plugin
 :navtitle: Advanced Template
 :description: Create and edit complex templates in {productname} for use with {productname}.
-:description_short: Create and edit templates.
+:description_short: Create templates.
 :keywords: plugin, advanced template, templates, advtemplate.
 :pluginname: Advanced Template
 :plugincode: advtemplate
@@ -11,11 +11,15 @@ include::partial$misc/admon-premium-plugin.adoc[]
 
 include::partial$misc/admon-requires-6.4v.adoc[]
 
-The Advanced Template Premium plugin enables the creation and editing of complex, interactive templates using {productname}.
+The Advanced Template Premium plugin enables the creation of complex, interactive templates using {productname}.
 
 Templates are declared as `const` variables that can be setup as part of a {productname} instance.
 
 They can also be added to a {productname} instance by end-users selecting content in a {productname} document and saving the selection as a template via the {productname} user-interface.
+
+IMPORTANT: This initial Advanced Template release does not support template editing. To update a particular template; insert the template into an editor; make edits; select the, now edited, content; and then create a new template (using, for example, the *Tools > Save as Template…* menu item).
+
+
 
 == Interactive example
 

@@ -562,7 +562,7 @@ This plugin feature is only available for paid {productname} subscriptions.
 === New xss_sanitization option to allow for XSS sanitization to be disabled
 
 // https://ephocks.atlassian.net/browse/TINY-9600
-Currently, we use the `DOMPurify` library to sanitize HTML content when it is inserted into the editor in order to remove unsafe tags & attributes in order to prevent XSS (cross-site scripting). However, customers in some situations have found that the HTML sanitization from the `DOMPurify` library is changing their content in undesired ways. 
+Currently, we use the DOMPurify library to sanitize HTML content when it is inserted into the editor in order to remove unsafe tags & attributes in order to prevent XSS (cross-site scripting). However, customers in some situations have found that the HTML sanitization from the DOMPurify library is changing their content in undesired ways. 
 
 To address this issue, we have added a new `xss_sanitization: boolean` editor option. This option is enabled by default which enables sanitization, but can now be set to `false` to disable sanitization. If a customer wishes to prevent their content from being modified by the sanitization, they can now set this option to `false`.
 

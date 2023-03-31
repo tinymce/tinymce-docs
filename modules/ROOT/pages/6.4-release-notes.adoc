@@ -311,7 +311,7 @@ In {productname} 6.4, direct _invalid child text nodes_ of list elements are now
 
 // https://ephocks.atlassian.net/browse/TINY-9244
 In previous versions of {productname}, templates were being parsed before `preview` and `insertion` to make preview consistent with content being inserted into the template to prevent Cross-Site Scripting (XSS) issues.
-As a consequence, the Templates plugin would not automatically format or sanitise the HTML passed to it as templates. This means that when previewing templates, the content may look different compared to when it is actually inserted into the editor. This can be a security issue, as unsanitised HTML can allow for Cross-Site Scripting (XSS), which can be harmful.
+As a consequence, the Templates plugin would not automatically format or sanitise the HTML passed to it as templates. This means that when previewing templates, the content may look different compared to when it is actually inserted into the editor. This can be a security issue, as unsanitized HTML can allow for Cross-Site Scripting (XSS), which can be harmful.
 
 To prevent this from happening, {productname} made improvements to the Template plugin that now sanitises content when retrieving preview content, and again before running `editor.dom.create` on it during the template insertion action. By doing this, all preview content will now match the template when it is inserted into the editor, which removed the possibility of any XSS issues arrising.
 

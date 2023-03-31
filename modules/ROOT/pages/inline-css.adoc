@@ -83,7 +83,13 @@ Setting the xref:add-css-options.adoc#content_css[`content_css`] option automati
 +
 NOTE: This is the only supported way of adding a stylesheet to {productname} in Classic mode. 
 
-. A CSS stylesheet specified in the `<head>` of the iframe.
+. The `content_style` option
++
+Setting the xref:add-css-options.adoc#content_style[`content_style`] option automatically creates the `<style>` tag and puts it in the {productname} document’s `<head>`.
++
+NOTE: This is the only supported way of adding a `<style>` tag to {productname} in Classic mode. 
+
+. A CSS stylesheet specified in the `<head>` of the iframe with a `<link>` tag.
 +
 For example:
 +
@@ -91,8 +97,6 @@ For example:
 ----
 <link rel="stylesheet" href="styles.css">
 ----
-
-. A `<link>` tag pointing to a stylesheet can also be manually inserted in the iframe `<head>`.
 
 . A `<style>` tag in the `<head>` of the iframe.
 +
@@ -102,8 +106,6 @@ For example:
 ----
 <style>p { color: red; }</style>
 ----
-
-. A `<style>` tag can also be manually inserted in the iframe `<head>`.
 
 . `style` attributes applied to specific elements within a document. That is, inline CSS
 

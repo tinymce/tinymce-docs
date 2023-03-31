@@ -367,7 +367,7 @@ The new additions and improvements with the introduction of {productname} 6.4, i
 
 As a result, any `editor.selection` elements that return a `true` value when a specified element is `contentEditable = true;`, will call the new `isEditable` API to execute the new blocker.
 
-=== New isEditable API to editor.dom that returns true or false if the specified node is editable
+=== New `editor.dom.isEditable` and `editor.selection.isEditable` APIs that returns whether the specified node is editable
 // TINY-9462
 
 In previous versions of {productname}, elements within the editor.dom could be _modified_ regardless if they were assigned to be `contentEditable = true;` or `contentEditable = false;`.

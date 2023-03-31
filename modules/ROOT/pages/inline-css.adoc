@@ -118,13 +118,13 @@ xref:use-tinymce-inline.adoc[Inline mode] is not sandboxed. Consequently, any sp
 
 CSS can be specified in inline mode in the following ways:
 
-. the `content_css` option
+. The `content_css` option
 +
 Setting the xref:add-css-options.adoc#content_css[`content_css`] option automatically creates the `<link>` tag and puts it in the {productname} document’s `<head>`.
 +
 NOTE: This is not recommended.
 
-. A CSS stylesheet specified in the `<head>` of the document.
+. A CSS stylesheet specified in the `<head>` of the document with a `<link>` tag.
 +
 For example:
 +
@@ -134,8 +134,6 @@ For example:
 <link rel="stylesheet" href="styles.css">
 </head>
 ----
-
-. A `<link>` tag pointing to a stylesheet can also be manually inserted in the document `<head>`.
 
 . A CSS stylesheet specified in the `<body>` of the document.
 +

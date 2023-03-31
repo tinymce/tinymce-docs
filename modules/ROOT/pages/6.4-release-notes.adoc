@@ -157,7 +157,7 @@ As a consequence, when the `text_patterns` feature was enabled and a user entere
 To address this problem, improvements to the `mceMergeTag` command were introduced with the release of {productname} 6.4. Now, if the length of the selected content exceeds the character limit for the merge tag, the content will be inserted as a plain text, including the prefix and suffix.
 
 [NOTE]
-Any content that is covered into plain text that exceeds the `mceMergeTag` character limit rules, will not be converted into an official `mceMergeTag`.
+If any content is embraced with a merge tag prefix and suffix but exceeds the character limit for merge tag content length, it will not be converted into an official merge tag.
 
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 

@@ -309,7 +309,7 @@ In previous versions of {productname}, when pressing backspace in an empty line 
 
 In {productname} 6.4, pressing backspace in an empty line now preserves the inline formats of the previous empty line.
 
-=== Pressing enter inside the inputfontsize input would not move the focus back into the editor content
+=== Pressing enter inside the `fontsizeinput` input would not move the focus back into the editor content
 // TINY-9598
 
 During development for the new `fontsizeinput` toolbar item, an issue was found that by pressing enter inside the input field would not move the `focus` back into the {productname} editor body. 

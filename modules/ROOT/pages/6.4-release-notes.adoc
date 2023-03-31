@@ -150,13 +150,11 @@ The {productname} 6.4 release includes an accompanying release of the **Merge Ta
 
 // https://ephocks.atlassian.net/browse/TINY-9444
 
-In previous versions of {productname}, `mceMergeTag's` would not preserve the selected content within the merge tag `prefix` and `suffix` in some events.
+In previous versions of {productname}, the `mceMergeTag` command would not wrap the selected content within the merge tag prefix and suffix when the content length exceeded the character limit for the merge tag.
 
-As a consequence, when the user applied the trailing suffix `}}` to the end of the content, the selected content wrapped within the `mceMergeTag` would not be preserved as plain text.  This would occur specifically in instances when the `mceMergeTag` content length exceeded the character limit set by {productname}.
+As a consequence, when the `text_patterns` feature was enabled and a user entered a too-long merge tag, the prefix and suffix of the tag were excluded from the inserted content.
 
-To fix this issue, improvements to the `mceMergeTag` commands were introduced with the release of {productname} 6.4, that focused on adding a new feature that impacts the way text_patterns handle specific cases such as when `mceMergeTag's` exceed the character limit set by {productname}. These improvements now wrap any content that exceeds the `mceMergeTag` limit, by converting the content into *plain text* whilst encapsulating it in the `prefix` and `suffix`.
-
-As a result of these improvements, the `mceMergeTag` command now preserves the selected content as a plain text and wraps it in a merge tag `prefix` and `suffix` as expected.
+To address this problem, improvements to the `mceMergeTag` command were introduced with the release of {productname} 6.4. Now, if the length of the selected content exceeds the character limit for the merge tag, the content will be inserted as a plain text, including the prefix and suffix.
 
 [NOTE]
 Any content that is covered into plain text that exceeds the `mceMergeTag` character limit rules, will not be converted into an official `mceMergeTag`.

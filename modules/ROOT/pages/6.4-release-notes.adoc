@@ -322,19 +322,9 @@ In {productname} 6.4, Templates are now parsed before preview and insertion to m
 === Pressing backspace in an empty line now preserves formatting in a previous empty line
 
 // https://ephocks.atlassian.net/browse/TINY-9454
-In previous versions of {productname}, pressing `backspace` in an empty line would not preserve previously applied formatting to the previous line.
+In previous versions of {productname}, when pressing backspace in an empty line with another empty line containing inline formats above it, the deletion handler was found to be first removing both lines and then inserting a newline. As a consequence, the existing inline formats of the previous empty line was not preserved.
 
-As a consequence, when backspacing from an empty block from another empty block within {productname}, the editor would lose the preserved formatting for the previous block element.
-Its worth noting that `_this action is only excpected for when content is inserted into a `br[data-mce-bogus]` empty block. This is because the br[data-mce-bogus] tag is programmed to reset the formatting to the default setting for a empty block such as the `br`.
-
-[TIP]
-To avoid this, it is *important* to use a `backspace` instead of an `enter key` when moving from one empty block to another. This will ensure that the formatting of the previous block is preserved and the `br[data-mce-bogus]` tag is not inserted.
-
-To fix this issue, {productname} added improvements that now allow merge blocks to filter all block element decentants, such as the `br[data-mce-bogus]` block element, to ensure preservation of previously applied formatting is not removed from other block elements.
-
-In {productname} 6.4, pressing backspace in an empty line now preserves formatting in a previous empty line.
-
-// https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
+In {productname} 6.4, pressing backspace in an empty line now preserves the inline formats of the previous empty line.
 
 === Pressing enter inside the inputfontsize input would not move the focus back into the editor content
 

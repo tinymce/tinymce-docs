@@ -368,11 +368,9 @@ This new tree component is an important addition to the new Premium Plugin: *Adv
 === renderUI property in the Theme type can now return a Promise <RenderResult> instead of RenderResult
 
 // https://ephocks.atlassian.net/browse/TINY-9556
-In earlier versions of {productname}, the properties set for the `renderUI`, was causing issues with the theme rendering load times. As a result {productname} 6.4 added fixes to the `renderUI` properties to correct this issue.
+In earlier versions of {productname} the `renderUI` function which initiates theme rendering did not wait for the CSS to load. This could cause race conditions with other parts of the editor or customer integrations. As a result {productname} 6.4 now waits for a CSS load event before returning from the `renderUI` function. This process necessitates changing the return type of the `renderUI` function; it now returns a `Promise<RenderResult>`. The type is `Promise<RenderResult> | RenderResult` for compatibility, but the `silver` theme always returns a promise.
 
-The changes saw the introduction of a new `renderUI` property called `Promise<RenderResult>` , which allows the current theme type to return a `Promise<RenderResult>` instead of the original  `RenderResult`.
-
-In {productname} 6.4, the `renderUI` property in the Theme type, now returns a `Promise <RenderResult>`.
+This change should have no impact on customer integrations, even those implementing custom themes.
 // https://notion.so/tinycloud/Four-words-to-live-by-96e307110aaa4137b94f9ba12874d480
 
 === New isEditable API to editor.selection that returns true or false if the current selection is editable

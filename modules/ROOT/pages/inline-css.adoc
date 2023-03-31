@@ -168,7 +168,7 @@ NOTE: By default, {productname} does not support `<style>` tags in the document 
 
 IMPORTANT: Although the {pluginname} plugin will likely work when an editor running in classic or inline mode is contained within a shadow root, Shadow DOM is **not** currently supported by {productname}.
 
-When a {productname} instance is in a shadow root, the {pluginame} should still support
+When a {productname} instance is in a shadow root, the {pluginname} should still support
 
 * CSS specified by the `xref:add-css-options.adoc#content_css[content_css]` option; and
 
@@ -184,7 +184,7 @@ When a {productname} editor in classic mode is contained within a shadow root, C
 
 When a {productname} editor in inline mode is contained within a shadow root, tags pointing to CSS declarations — either `<link>` tags pointing to stylesheet files or `<style>` tags containing specific CSS examples — are added as children of the shadow root. These tags do not need to be contained with the `<head>` tag.
 
-As well, when {productname} is working in inline mode, {pluginame} checks if the editor is inside a shadow root. If it finds it is, {pluginame} does not look for CSS declarations outside the shadow root.
+As well, when {productname} is working in inline mode, {pluginname} checks if the editor is inside a shadow root. If it finds it is, {pluginname} does not look for CSS declarations outside the shadow root.
 
 
 == Options

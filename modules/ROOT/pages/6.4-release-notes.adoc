@@ -428,7 +428,7 @@ In {productname} 6.4, two new additions were added to the menu button API.
 
 As a result, in {productname} 6.4, menu items can change based on the parent menu button `api` properties.
 
-=== New highlight_on_focus option which enables highlighting the content area on focus
+=== New `highlight_on_focus` option which enables highlighting the content area on focus
 // bforte this is related to https://ephocks.atlassian.net/browse/DOC-1893
 // https://ephocks.atlassian.net/browse/TINY-9277
 In previous versions of {productname}, when using developer tools such as Chrome DevTools, the editor content area would not render the `focus` border when the editor was `infocus`.

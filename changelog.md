@@ -8,7 +8,6 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 - DOC-1915: Updated supported versions table  in `supported-versions.adoc`. It now include support end dates for TinyMCE versions 6.2 and 6.3 and version 6.4’s release date and the TBD status of 6.4’s support end date. Also re-structured browser compatibility table in `browser-compatibility.adoc` and re-wrote the notes associated with said table.
 
-
 ### 2023-01-20
 
 - DOC-1898: added changelog file, `changelog.md`, to the TinyMCE Documentation project. Entries for several month’s changes dating back from this initial creation date added to the file.

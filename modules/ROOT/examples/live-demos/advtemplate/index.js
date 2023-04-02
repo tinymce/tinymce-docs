@@ -63,4 +63,5 @@ tinymce.init({
     ],
 	advtemplate_templates,
   toolbar: "addtemplate inserttemplate | undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+  contextmenu: 'addtemplate',
 });

@@ -1113,13 +1113,6 @@ Leave this comment block in place until closer to 2023-03-15 and remove or make 
 
 ////
 
-
-////
-
-// No known issues as of 2023-02-09
-//
-// Leave this comment block in place until closer to 2023-03-15 and remove or make visible as appropriate.
-
 [[known-issues]]
 == Known issues
 
@@ -1127,24 +1120,23 @@ This section describes issues that users of {productname} 6.4 may encounter and 
 
 There are several known issues in {productname} 6.4.
 
-=== known issue 1
+=== Accessibility check dropdown not populated when switching between issues
+// TINY-9679
+// cause
+// consequence
+// fix
+// result
 
+=== Bug with Table Icon in more drawer
+// TINY-9723
+// cause
+// consequence
+// fix
+// result
 
-
-=== known issue 2
-
-
-
-=== known issue 3
-
-
-
-=== known issue 4
-
-
-
-=== known issue 5
-
-
-
-////
+=== Fix height overflow issues on "some" dialogs
+// TINY-9668
+// cause
+// consequence
+// fix
+// result

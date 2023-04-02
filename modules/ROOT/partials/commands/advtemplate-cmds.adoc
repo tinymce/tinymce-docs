@@ -11,5 +11,3 @@
 tinymce.activeEditor.execCommand('AdvTemplateAddDialog');
 tinymce.activeEditor.execCommand('AdvTemplateInsertDialog');
 ----
-
-NOTE: These are pure guesses. I don’t know if these (or any) commands exist for this plugin; if the command names are correct if they do exist; or if they work as described. Off the top of my head, for example, I’d assume the first guessed-at command would require parameters for selecting which template to insert and the second guessed-at command would require parameters for setting the id and category of a newly-created template.

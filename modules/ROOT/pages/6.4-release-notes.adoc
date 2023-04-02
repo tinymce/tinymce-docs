@@ -393,7 +393,7 @@ As a result, any elements that return a `true` value when a specified element is
 === New setText and setIcon methods added to menu button and toolbar button apis
 // TINY-9268
 
-Previous versions of {productname}, the menu button APIs did not behave as expected with the parent `icon` or `text` selection. As a consequence, the menu button API, would not extend or update the parent `icon` or `text` directly, based upon what `icon` or `text` the user had selected within the menubar.
+In previous versions of {productname}, it was not possible to change the `text` or `icon` of a toolbar button after it had been set for the first time. As a consequence, the menu and toolbar button API, would not extend or update the parent `icon` or `text` directly, based upon what the user had selected within the menubar or toolbar.
 
 In {productname} 6.4, two new additions were added to the menu button API.
 

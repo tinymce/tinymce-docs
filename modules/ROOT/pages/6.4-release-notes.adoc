@@ -27,15 +27,16 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 == New Premium Plugin
 
 === Advanced Template 1.0.0
-// TINY-9532
 
-//1. Cause - What actions or circumstances cause this bug to present.
+The {productname} 6.4 release includes the release of a new premium plugin: **Advanced Templates**.
 
-//2. Consequence - What happens when the bug presents.
+The **Advanced Template** Premium plugin enables the creation of complex, interactive templates using {productname}.
 
-//3. Fix - What was done to fix the bug.
+Templates are declared as `const` variables that can be setup as part of a {productname} instance.
 
-//4. Result - What now happens when the actions or circumstances above occur.
+They can also be added to a {productname} instance by end-users selecting content in a {productname} document and saving the selection as a template via the {productname} user-interface.
+
+For information on the **Advanced Template** plugin, see: xref:advanced-template.adoc[Advanced Templates].
 
 
 [[accompanying-premium-plugin-changes]]

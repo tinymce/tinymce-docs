@@ -166,18 +166,20 @@ NOTE: By default, {productname} does not support `<style>` tags in the document 
 
 === Shadow DOM support
 
-IMPORTANT: Although the {pluginname} plugin will likely work when an editor running in classic or inline mode is contained within a shadow root, Shadow DOM is **not** currently supported by {productname}.
+IMPORTANT: {productname} currently assumes it is _not_ operating in a Shadow DOM. Consequently, Shadow DOMs are **not** supported by {productname} or any {productname} plugins.
 
-When a {productname} instance is in a shadow root, the {pluginname} should still support
+Although neither {productname} nor the {pluginname} plugin are supported, when a {productname} instance is in a shadow root, the {pluginname} will likely still present
 
 * CSS specified by the `xref:add-css-options.adoc#content_css[content_css]` option; and
 
-* CSS specified by the `xref:add-css-options.adoc#content_style[content_style]` option.
+* CSS specified by the `xref:add-css-options.adoc#content_style[content_style]` option
+
+as expected.
 
 
 ==== Classic mode
 
-When a {productname} editor in classic mode is contained within a shadow root, CSS applied to the editor’s content will work as expected if the editor can also safely assume it is not operating in a shadow root.
+A {productname} editor in classic mode assumes it is _not_ operating in a shadow root. If a {productname} editor in classic mode is contained within a shadow root, CSS applied to the editor’s content may work as expected but is not guaranteed to do so.
 
 
 ==== Inline mode

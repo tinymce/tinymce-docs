@@ -8,6 +8,15 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 - DOC-1909: re-wrote the Supported Mobile Platforms section to match the Browser Compatibility section language, tying supported platforms to release recency rather than specific version numbers.
 
+### 2023-03-15
+
+- DOC-1930: added the TinyMCE 6.4-specific changes to `changelog.adoc`.
+
+### 2023-02-22
+
+- DOC-1913: added `6.3.2-release-note.adoc`. Added outline to this file.
+- DOC-1918: added the TinyMCE 6.3.2-specific change to `changelog.adoc`.
+
 ### 2023-01-20
 
 - DOC-1898: added changelog file, `changelog.md`, to the TinyMCE Documentation project. Entries for several month’s changes dating back from this initial creation date added to the file.

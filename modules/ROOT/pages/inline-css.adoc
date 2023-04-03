@@ -166,7 +166,7 @@ NOTE: By default, {productname} does not support `<style>` tags in the document 
 
 === Shadow DOM support
 
-IMPORTANT: {productname} currently assumes it is _not_ operating in a Shadow DOM. Consequently, Shadow DOMs are **not** supported by {productname} or any {productname} plugins.
+IMPORTANT: Running a {productname} instance inside a Shadow DOM is xref:shadow-dom.adoc[not supported].
 
 Although neither {productname} nor the {pluginname} plugin are supported, when a {productname} instance is in a shadow root, the {pluginname} will likely still present
 

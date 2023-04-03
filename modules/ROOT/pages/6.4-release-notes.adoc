@@ -670,7 +670,7 @@ As a result the when the instance occurs where **no <string> match** is triggere
 
 In {productname} 6.3, when the https://www.tiny.cloud/docs/tinymce/6/6.3-release-notes/#new-color_map_foreground-and-color_map_background-options-store-custom-colors-selected-using-the-text-color-and-background-color-menus[new color map] was introduced, a regression was found that affected the UI for *Color Swatch*.
 
-The regression meant the colors would not render inside the color palette to reflect the selected `color_map_foreground` and `color_map_background` stored. To correct this {productname}, added a register that would store the `last color` for each  specific `node | cell` that will hold this `value` for the color picker pallette.
+The regression meant the colors would not render inside the color palette to reflect the selected `color_map_foreground` and `color_map_background` stored. 
 
 In {productname} 6.4, when the color picker in the `toolbar` is updated when changing either the `forecolor` or `backcolor` from the `menubar`.
 

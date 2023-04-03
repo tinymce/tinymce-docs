@@ -74,11 +74,9 @@ In {productname} 6.4, spaces are now removed between exclamation marks `!!` for 
 === Added **Advanced Typography** to the default menubar
 //#TINY-9450		
 
-In previous versions of {productname}, the typography button would *not* appear in the `menubar` by default. As a consequence, the user could only `find` the typography button in the `toolbar` due to it not appearing in the `menubar` dropdown.
+In the previous version of {productname}, the typography menu item was *not* available in the `**Tools**` menu from the `menubar` by default.
 
-To correct this bug, the typography plugin was added to the default `menubar` config.
-
-{productname} 6.4, by default, will now display the typography button in both the `toolbar` and below the “Source code" button in the `menubar`.
+In {productname} 6.4, the typography menu item will display in the `**Tools**` menu by default, given that the `typography_default_lang` option is set.
 
 === Typography button and menu item will be disabled if editor has no content
 //#TINY-9441

@@ -637,7 +637,7 @@ As a consequence by having the sidebar set to `role="complementary"` for both st
 
 This is important as when a sidebar element is visible, it has an accessibility role of `region`. This ensures the sidebar and its contents are accessible to screen readers and other accessibility tools. This role is important for screen readers to identify the sidebar as a meaningful part of the page. When the sidebar element is hidden, it has a role of presentation, which is used to inform the user that the element is not important and can be safely ignored. 
 
-To fix this issue, changes were made to the role attribute of the sidebar element `(.tox-sidebar)`, which is now set to `role="region"` when it's active state is visible, otherwise it defaults to `role="presentation"` when hidden.
+To fix this issue, changes were made to the role attribute of the sidebar element, which is now set to `role="region"` when it's active state is visible, otherwise it defaults to `role="presentation"` when hidden.
 
 In {productname} 6.4, when the sidebar is either visible or hidden it now passes the accessibility test with Axe-DevTools.
 

@@ -578,7 +578,10 @@ tinymce.init({
       onAction: () => {
         ed.windowManager.open({
           title: 'Tree dialog',
-          buttons: [{type: 'cancel', text: 'Cancel',}],
+          buttons: [{
+	    type: 'cancel',
+	    text: 'Cancel'
+	  }],
           body : {
             type: 'panel',
             items: [{

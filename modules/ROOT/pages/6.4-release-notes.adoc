@@ -473,7 +473,7 @@ In early development prior to release of the 'new toolbar component' ("fontsizei
 
 The new `toolbar: "font_size_input_default_unit": "<UOM>"`, option now allows users to use (values) ie, (numbers) without having to manually input the unit of measurement (UOM) after they define the `value`.
 
-This means that users can now specify the UOM in the `tinymce.init` script tag buy configuring the UOM value by changing the default value:* `+pt+` to one of the below possible values:* `+px+`, `+em+`, `+cm+`, `+mm+`
+This means that users can now specify the UOM in the `tinymce.init` config by configuring the UOM value by changing the default value:* `+pt+` to one of the below possible values:* `+px+`, `+em+`, `+cm+`, `+mm+`
 
 [source, js]
 ----

@@ -381,7 +381,7 @@ This change should have no impact on customer integrations, even those implement
 === New isEditable API to editor.selection that returns true or false if the current selection is editable
 //#TINY-9462
 
-In previous versions of {productname}, elements that where within the `editor.selection` could be modified, if they sat within a HTML document body with the properties set to `contentEditable = false`.
+In previous versions of {productname}, elements that where within the `editor.selection` could be modified, if they sat within a HTML document body with the properties set to `contenteditable="false"`.
 
 As a consequence, any `selection | node`, that was encapsulate within the editor body, could be affected by this such as:
 
@@ -392,27 +392,27 @@ Expected output example:
 <p>Try to insert content here</p>
 ----
 
-After executing an `onclick` event within the current `selection | node` using `<button onclick="tinymce.activeEditor.insertContent('text')">insertContent</button>`, the output would modify the existing `contentEditable = false;` element, which should not be possible.
+After executing an `onclick` event within the current `selection | node` using `<button onclick="tinymce.activeEditor.insertContent('text')">insertContent</button>`, the output would modify the existing `contenteditable="false";` element, which should not be possible.
 
 [source, HTML]
 ----
 <p>Try to inserttextcontent here</p>
 ----
 
-The new additions and improvements with the introduction of {productname} 6.4, include a new `isEditable` API been added to the `editor.selection` which now blocks the `editor.insertContent` API and `mceInsertContent` command when the contents return a `true` value if the editor detects the element is a `contentEditable = false;` element in a `contentEditable = false;` root.
+The new additions and improvements with the introduction of {productname} 6.4, include a new `isEditable` API been added to the `editor.selection` which now blocks the `editor.insertContent` API and `mceInsertContent` command when the contents return a `true` value if the editor detects the element is a `contenteditable="false";` element in a `contenteditable="false";` root.
 
-As a result, any `editor.selection` elements that return a `true` value when a specified element is `contentEditable = true;`, will call the new `isEditable` API to execute the new blocker.
+As a result, any `editor.selection` elements that return a `true` value when a specified element is `contenteditable="true"`, will call the new `isEditable` API to execute the new blocker.
 
 === New `editor.dom.isEditable` and `editor.selection.isEditable` APIs that returns whether the specified node is editable
 //#TINY-9462
 
-In previous versions of {productname}, elements within a `contentEditable ="false"` root could be unexpectedly modified by the `editor.insertContent` API and the `mceInsertContent` command..
+In previous versions of {productname}, elements within a `contenteditable="false"` root could be unexpectedly modified by the `editor.insertContent` API and the `mceInsertContent` command..
 
-As a consequence all elements within the root `body` set to `contentEditable = false;` value, were affected by the issue.
+As a consequence all elements within the root `body` set to `contenteditable="false";` value, were affected by the issue.
 
-The new additions and improvements with the introduction of {productname} 6.4, include a new `isEditable` API been added to the `editor.dom` which now blocks the `editor.insertContent` API and `mceInsertContent` command when the contents return a `true` value if the editor detects the element is a `contentEditable = false;` in a `contentEditable = false;` root.
+The new additions and improvements with the introduction of {productname} 6.4, include a new `isEditable` API been added to the `editor.dom` which now blocks the `editor.insertContent` API and `mceInsertContent` command when the contents return a `true` value if the editor detects the element is a `contenteditable="false";` in a `contenteditable="false";` root.
 
-As a result, any elements that return a `true` value when a specified element is `contentEditable = true;`, will call the new `isEditable` API to action the new blocker to ensure `contentEditable = false;` elements cannot be modified when they are within a root that is set to `contentEditable = false`.
+As a result, any elements that return a `true` value when a specified element is `contenteditable="true"`, will call the new `isEditable` API to action the new blocker to ensure `contenteditable="false";` elements cannot be modified when they are within a root that is set to `contenteditable="false"`.
 
 === New setText and setIcon methods added to menu button and toolbar button APIs
 //#TINY-9268
@@ -926,7 +926,7 @@ Setting the `contenteditable` property to the editor root to `false` such as the
 ----
 setup: (editor) => {
     editor.on('preinit', () => {
-        editor.getBody().contentEditable = false;
+        editor.getBody().contenteditable="false";
     });
 }
 ----
@@ -991,7 +991,7 @@ Consequently, in {productname} 6.4, using the forwarddelete or delete keys on `c
 
 In the previous versions of {productname}, when utilizing the backspace or delete keys, they would delete the contents inside `contenteditable="false"` elements.
 
-As a consequence, elements nested within a `contenteditable="false"` root element set to `contenteditable= false;`, were able to be removed/deleted from the `contenteditable="false"` root element. To fix this issue, {productname} 6.4 introduced various improvements to block all commands and keyboard functions such as `delete/backspace` from being applied to `contenteditable="false"` content. 
+As a consequence, elements nested within a `contenteditable="false"` root element set to `contenteditable="false"`, were able to be removed/deleted from the `contenteditable="false"` root element. To fix this issue, {productname} 6.4 introduced various improvements to block all commands and keyboard functions such as `delete/backspace` from being applied to `contenteditable="false"` content. 
 
 The changes made to {productname} 6.4 included updates to the editor selection `isEditable` function, which now prioritizes fake selections first.
 
@@ -1000,9 +1000,9 @@ As a result, in {productname} 6.4, when using the backspace or delete function k
 === Inserting newlines inside an editable element inside a noneditable root would sometimes try to split the editable element
 //#TINY-9461
 
-In previous versions of {productname}, inserting newlines inside an `contenteditable= true` element while it was inside a `contenteditable= false` root would sometimes try to split the `contenteditable= true` element. 
+In previous versions of {productname}, inserting newlines inside an `contenteditable="true"` element while it was inside a `contenteditable="false"` root would sometimes try to split the `contenteditable="true"` element. 
 
-As a consequence, when child block elements set to `contenteditable=true` such as a `<p>` tag were nested within the `contenteditable= false` element root, the editor would try to split the child block element when the user hit the `enter` command. 
+As a consequence, when child block elements set to `contenteditable="true"` such as a `<p>` tag were nested within the `contenteditable="false"` element root, the editor would try to split the child block element when the user hit the `enter` command. 
 
 As the paragraph tag is intended to be a block for `text`, it is classified as `semantically incorrect` to split a paragraph block element.
 In this particular instance, child elements in {productname} such as the `<p>` tag would split the block element resulting in a new block (such as a new paragraph) to be created inside the paragraph when a user attempted to edit it inside a `contenteditable="false"` root element. 
@@ -1010,7 +1010,7 @@ In this particular instance, child elements in {productname} such as the `<p>` t
 Fixes were introduced with the release of {productname} 6.4, that:
 
 * Prevents editing host elements like `<p contenteditable="true">paragraph text</p>` in a `contenteditable="false"` root to be split.
-* Prevents editing hosts elements inside a `contenteditable= false` root to be split.
+* Prevents editing hosts elements inside a `contenteditable="false"` root to be split.
 
 As a result, when a root element is set to `contenteditable="false"`, any `contenteditable="true"` elements inside that root element such as `<p>` tag will no longer try to split the `contenteditable="true"` element. 
 
@@ -1026,32 +1026,32 @@ In {productname} 6.4, anchor elements are included inside `lists` while nested w
 === Dragging and dropping noneditable elements on table borders would remove the element on drop
 //#TINY-9021
 
-In previous versions of {productname}, dragging and dropping `contentEditable= false;` elements on table borders would create issues during the drop action.
+In previous versions of {productname}, dragging and dropping `contenteditable="false"` elements on table borders would create issues during the drop action.
 
-As a consequence, this would result in the `contentEditable= false;` element being deleted after the `action` when dropped onto the borderline within the table cell.
+As a consequence, this would result in the `contenteditable="false"` element being deleted after the `action` when dropped onto the borderline within the table cell.
 To fix this issue, {productname} 6.4, introduced a new `isActive` api to the handler for dragger, that checks if the event `isActive` or not, which then hides the resize bar during the dragging event, which now prevents content from being dropped onto table bars.
 
-In {productname} 6.4, dragging an inline `contentEditable= false;` element onto the border inside a table, now moves it into a neighbouring cell instead of deleting it.
+In {productname} 6.4, dragging an inline `contenteditable="false"` element onto the border inside a table, now moves it into a neighbouring cell instead of deleting it.
 
 === Noneditable elements would be removed when dragged and dropped within a noneditable root
 //#TINY-9558
 
-In previous version of {productname}, dragging ``contentEditable= false;` elements into a `contentEditable= false;` root would remove the elements `contentEditable= false;` attributes.
+In previous version of {productname}, dragging ``contenteditable="false"` elements into a `contenteditable="false"` root would remove the elements `contenteditable="false"` attributes.
 
-As this is not the expected behaviour for a `contentEditable= false;` element or root, this bug in particular, created issues in situations such as: *(a)* when the editor body was set to `contentEditable= false;`, and *(b)* when a `contentEditable= false;` element is dragged and dropped into a table element that is within a `contentEditable= false;` root, which would result in the `contentEditable= false;` attributes blocks being deleted from the element that was dropped.
+As this is not the expected behaviour for a `contenteditable="false"` element or root, this bug in particular, created issues in situations such as: *(a)* when the editor body was set to `contenteditable="false"`, and *(b)* when a `contenteditable="false"` element is dragged and dropped into a table element that is within a `contenteditable="false"` root, which would result in the `contenteditable="false"` attributes blocks being deleted from the element that was dropped.
 
 To fix this issue, improvements were made to the drag and drop function that checks if the `dom` element `isEditable` to its `parentElement`.
 
-In {productname} 6.4, `contentEditable= false;` elements now preserve their `contentEditable= false;` attributes if they are dragged and dropped within a `contentEditable= false;` root.
+In {productname} 6.4, `contenteditable="false"` elements now preserve their `contenteditable="false"` attributes if they are dragged and dropped within a `contenteditable="false"` root.
 
 === Formatting could be applied or removed on noneditable list items inside a noneditable root
 //#TINY-9563
 
-In a `contentEditable= false;` root, when selecting multiple lines from lists, it was possible to add formatting to the selection such as `*bold*` and `_italic_`. As a consequence, this would allow contents that are considered `contentEditable= false;` to be modified which is not the expected behaviour for `contentEditable= false;` elements within the root.
+In a `contenteditable="false"` root, when selecting multiple lines from lists, it was possible to add formatting to the selection such as `*bold*` and `_italic_`. As a consequence, this would allow contents that are considered `contenteditable="false"` to be modified which is not the expected behaviour for `contenteditable="false"` elements within the root.
 
-To fix this bug, {productname}, disabled list formatting, if the list is in within a `contentEditable= false;` root
+To fix this bug, {productname}, disabled list formatting, if the list is in within a `contenteditable="false"` root
 
-In {productname} 6.4, a selection of multiple lines from lists can no longer be formatted when inside a `contentEditable= false;` root.
+In {productname} 6.4, a selection of multiple lines from lists can no longer be formatted when inside a `contenteditable="false"` root.
 
 === Annotation would not be removed if the annotation was immediately deleted after being created
 //#TINY-9399
@@ -1100,7 +1100,7 @@ As a consequence, the editing host element would incorrectly split itself into m
 
 To fix this issue, with the release of {productname} 6.4, pasted elements are now instead unwrapped inside the target element rather than being wrapped.
 
-In {productname} 6.4, pasting blocks that are invalid children of a `contentEditable= true;` blocks will no longer split that block, but instead unwrap the blocks to fit within the specific `contentEditable= true;` block.
+In {productname} 6.4, pasting blocks that are invalid children of a `contenteditable="true"` blocks will no longer split that block, but instead unwrap the blocks to fit within the specific `contenteditable="true"` block.
 
 === color_cols option was not respected in the forecolor or backcolor color swatches
 //#TINY-9560
@@ -1124,11 +1124,11 @@ In {productname} 6.4, the color swatches opened by the `forecolor` and `backcolo
 === Drag and dropping the last noneditable element out of its parent block would not properly pad the parent block element
 //#TINY-9606
 
-In previous versions of {productname}, dragging and dropping `contentEditable= false;` elements into another block elements would cause issues with the original parent block. As a consequence, the parent block element where the `contentEditable= false;` element was dragged from would leave the parent block as a `contentEditable= false;` element, as it was not discarding the contents when the element was transferred.
+In previous versions of {productname}, dragging and dropping `contenteditable="false"` elements into another block elements would cause issues with the original parent block. As a consequence, the parent block element where the `contenteditable="false"` element was dragged from would leave the parent block as a `contenteditable="false"` element, as it was not discarding the contents when the element was transferred.
 
 As a fix, {productname} 6.4, added a new condition which validates a set of conditions the check if the parent block element is within a `parentNode` and is a block element, in which it will trigger a action to remove elements with padding that meet this condition. 
 
-In {productname} 6.4, dragging and dropping elements that are `contentEditable= false;` out of they're parent blocks now correctly pad the parent block element.
+In {productname} 6.4, dragging and dropping elements that are `contenteditable="false"` out of they're parent blocks now correctly pad the parent block element.
 
 === Nonbreaking space do not get highlighted when enabling show invisible characters
 //#TINY-9685

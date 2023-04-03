@@ -910,13 +910,13 @@ As a result, any `contenteditable="false"` elements that are nested within anoth
 === Textareas with scrollbars in dialogs would not render rounded corners correctly on some browsers
 // TINY-9331
 
-In previous versions of {productname}, the source code visible UI boarder would not render correctly in some browsers.
+In previous versions of {productname}, the source code visible UI border would not render correctly in some browsers.
 
-As a consequence, when viewing text-areas that contain `scrollbars` within dialogs, the `focus` visible boarder was not rendering the corners inside the dialog.
+As a consequence, when viewing text-areas that contain `scrollbars` within dialogs, the `focus` visible border was not rendering the corners inside the dialog.
 
-To correct this issue, {productname} 6.4, introduced a new text-area wrapper that fixes the issues with the `boarder-color, radius, style and width` that directly affects the `focus` render element for the dialog.  In addition `overflow: hidden;`, has been added to clip the scrollbars to the border-radius.
+To correct this issue, {productname} 6.4, introduced a new text-area wrapper that fixes the issues with the `border-color, radius, style and width` that directly affects the `focus` render element for the dialog.  In addition `overflow: hidden`, has been added to clip the scrollbars to the border-radius.
 
-As a result, the `focus` dialog boarder now renders correctly in {productname} 6.4.
+As a result, the `focus` dialog border now renders correctly in {productname} 6.4.
 
 === It was possible to open links inside the editor if the editor root was noneditable
 // TINY-9470

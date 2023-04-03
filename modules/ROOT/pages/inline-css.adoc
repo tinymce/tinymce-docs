@@ -174,19 +174,7 @@ Although neither {productname} nor the {pluginname} plugin are supported, when a
 
 * CSS specified by the `xref:add-css-options.adoc#content_style[content_style]` option
 
-as expected.
-
-
-==== Classic mode
-
-A {productname} editor in classic mode assumes it is _not_ operating in a shadow root. If a {productname} editor in classic mode is contained within a shadow root, CSS applied to the editor’s content may work as expected but is not guaranteed to do so.
-
-
-==== Inline mode
-
-When a {productname} editor in inline mode is contained within a shadow root, tags pointing to CSS declarations — either `<link>` tags pointing to stylesheet files or `<style>` tags containing specific CSS examples — are added as children of the shadow root. These tags do not need to be contained with the `<head>` tag.
-
-As well, when {productname} is working in inline mode, {pluginname} checks if the editor is inside a shadow root. If it finds it is, {pluginname} does not look for CSS declarations outside the shadow root.
+as expected, whether running in xref:use-tinymce-classic.adoc[Classic mode] or xref:use-tinymce-inline.adoc[Inline mode].
 
 
 == Options

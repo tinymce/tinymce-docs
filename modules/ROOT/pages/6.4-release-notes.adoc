@@ -746,7 +746,7 @@ In previous versions of {productname} up until the changes and improvements made
 
 To facilitate this change, {productname} has added a new `setIconFill` function to the `NestedMenuItemInstanceAPI`, which allows users to set the fill color of an icon when the user selects an option from the format menu. This ensures that the menu icon changes to accurately reflect the user's selection.
 
-In {productname} 6.4, these new functions allow the foreground and background menu icons to function as expected.
+In {productname} 6.4, this new function allows the foreground and background menu icons to function as expected.
 
 === Pasting links to text would sometimes not generate the correct undo stack on safari
 // TINY-9489

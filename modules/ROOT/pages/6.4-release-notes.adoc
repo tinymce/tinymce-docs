@@ -71,7 +71,7 @@ An issue was discovered that affected the typography plugin in previous versions
 
 In {productname} 6.4, spaces are now removed between exclamation marks `!!` for formatted HTML documents when the typography plugin is used. To learn more about Advanced Typography and how to add this new premium plugin to your project, please refer xref:advanced-typography.adoc[Advanced Typography].
 
-=== Added typography plugin to the default menubar
+=== Added **Advanced Typography** to the default menubar
 //#TINY-9450		
 
 In previous versions of {productname}, the typography button would *not* appear in the `menubar` by default. As a consequence, the user could only `find` the typography button in the `toolbar` due to it not appearing in the `menubar` dropdown.

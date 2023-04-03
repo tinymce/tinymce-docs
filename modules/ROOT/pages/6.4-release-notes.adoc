@@ -469,7 +469,7 @@ As a result to the fix, while the *FloatingToolbarButton* `focus` is initiated, 
 === New font_size_input_default_unit option allow to use of numbers without a unit in fontsizeinput and have them parsed with the default unit, if it is not defined the default is pt
 // TINY-9585
 
-In early development prior to release of the 'new toolbar component' ("fontsizeinput"), users had to define the unit of measurement (UOM), when setting their font size by direct input into the 'new toolbar component'  input field.
+In early development before the release of the 'new toolbar component' ("fontsizeinput"), users had to define the unit of measurement (UOM), when setting their font size by direct input into the 'new toolbar component' input field.
 
 The new `toolbar: "font_size_input_default_unit": "<UOM>"`, option now allows users to use (values) ie, (numbers) without having to manually input the unit of measurement (UOM) after they define the `value`.
 

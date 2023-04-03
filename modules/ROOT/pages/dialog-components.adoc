@@ -615,13 +615,7 @@ tinymce.init({
                         icon: 'image-options',
                         type: 'menubutton',
                         fetch: (success) => success([
-                          {
-                            type: 'menuitem',
-                            text: 'Menu item',
-                            onAction: () => {
-                              console.log; // for demo purposes
-                            }
-                          }
+			  'blocks', 'fontfamily', 'fontsize'
                         ])
                       }
                     },

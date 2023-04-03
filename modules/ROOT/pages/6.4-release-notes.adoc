@@ -53,7 +53,7 @@ The {productname} 6.4 release includes an accompanying release of the **Advanced
 === Fixed adding redundant space between a comma and a quote by switching the sequence of executing safe and unsafe rules
 // TINY-9442
 
-After {productname} introduced the Smart Typography plugin, a bug was discovered that was causing a space to be introduced between a comma and a closing double-quote mark, as shown in the example below:
+After {productname} introduced the **Advanced Typography** plugin, a bug was discovered that was causing a space to be introduced between a comma and a closing double-quote mark, as shown in the example below:
 
 .Example
 > “They went that way,[space introduced here]” he said as he pointed.

@@ -250,22 +250,16 @@ For information on the **Mentions** plugin, see xref:mentions.adoc[Mentions].
 
 The {productname} 6.4 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
 
-**Spell Checker Pro** 3.2.1 includes the following fixes, additions, and improvements.
+**Spell Checker Pro** 3.2.1 includes the following fix.
 
-////
-To quote my [comment, left on the TinyMCE 6.4 BoM][11] in Notion
+==== Spelling plugin can crash the service
+//#TINY-9391
 
-> What changes were made to the Enhanced Media Embed plugin? The
-> [changelog][12] contains no entries beyond 2022-09-08 and the only [commits
-> this year][13] have been dependabot bumps or back-end changes.
+Previously, the Spell Checker Pro service could be crashed by large requests or by the Spell Checker Pro server not being able to manage the number of requests made in a given time. This latter issue could be exacerbated by the plugin immediately re-sending a failed query.
 
-[11]: <https://notion.so/TinyMCE-6-4-Bill-of-materials-BOM-885a34e3b9884be0b69cd30eba7c618b?d=40e8ab59323f4319bfbb83898a3fe18c#0c32239916564963850ca08c2ab4f112>
+With this update, Spell Checker Pro now caches outgoing and in-queue requests; filters duplicate requests; and retrieves returned responses for duplicate queries from the cache.
 
-[12]: <https://github.com/tinymce/powerspell/blob/main/CHANGELOG.md>
-
-[13]: <https://github.com/tinymce/powerspell/commits/main>
-////
-
+This both limits and reduces the number of requests made to the Spell Checker Pro service, improving the reliability of the service and the plugin.
 
 For information on the **Spell Checker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Introduction to Spell Checker Pro].
 
@@ -1209,15 +1203,6 @@ In {productname} v6.4, pressing backspace after adding a Text Pattern, now forma
 
 === Backcolor not showing selected color-picker in dialog when inline styles (B/I/U..) applied before applying backcolor
 //#TINY-9410
-
-// Cause
-// Consequence
-// Fix
-// Result
-
-=== Spelling plugin can crash the service
-//#TINY-9391
-// Spell Checker Pro
 
 // Cause
 // Consequence

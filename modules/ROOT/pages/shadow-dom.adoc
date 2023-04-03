@@ -3,11 +3,11 @@
 :description: Running TinyMCE in a Shadow DOM
 :keywords: Shadow DOM Web Components
 
-== Running TinyMCE in a Shadow DOM
+== Running {productname} in a Shadow DOM
 
-IMPORTANT: Running a TinyMCE instance inside a Shadow DOM is not, currently, supported.
+IMPORTANT: Running a {productname} instance inside a Shadow DOM is not, currently, supported.
 
-Running a TinyMCE instance — whether in xref:use-tinymce-classic.adoc[classic mode] or xref:use-tinymce-inline.adoc[inline mode] — inside a Shadow DOM will, likely, work.
+Running a {productname} instance — whether in xref:use-tinymce-classic.adoc[classic mode] or xref:use-tinymce-inline.adoc[inline mode] — inside a Shadow DOM will, likely, work.
 
 For example:
 
@@ -40,8 +40,7 @@ For example:
 </script>
 ----
 
-But TinyMCE does not, currently, check its host node for evidence it is inside a Shadow DOM (eg, checking for the `#shadow-root` string immediately before the host node’s opening tag).
+But {productname} does not, currently, check its host node for evidence it is inside a Shadow DOM (eg, checking for the `#shadow-root` string immediately before the host node’s opening tag).
 
-If a Shadow DOM operates identically to a standard DOM, a TinyMCE instance will likely work as expected.
+Consequently, while a {productname} instance will likely work as expected inside a Shadow DOM, {productname} instances are not, currently, supported inside Shadow DOMs.
 
-Nonetheless, TinyMCE instances are not, currently, supported inside Shadow DOMs.

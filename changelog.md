@@ -6,7 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
-- DOC-1927: copy-edits and typo corrections to `6.3.2-release-notes.adoc`, `invalid_styles.adoc`, `schema.adoc`, and `spellchecker_dialog.adoc`.
+- DOC-1927: copy-edits and typo corrections to `6.3.2-release-notes.adoc`, `invalid_styles.adoc`, `schema.adoc`, `spellchecker_dialog.adoc`, and `indentation.adoc`.
 
 ### 2023-03-15
 

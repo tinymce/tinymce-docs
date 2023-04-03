@@ -168,7 +168,7 @@ NOTE: By default, {productname} does not support `<style>` tags in the document 
 
 IMPORTANT: Running a {productname} instance inside a Shadow DOM is xref:shadow-dom.adoc[not supported].
 
-Although neither {productname} nor the {pluginname} plugin are supported, when a {productname} instance is in a shadow root, the {pluginname} will likely still present
+Although running neither {productname} nor the {pluginname} plugin in a Shadow DOM is supported, when a {productname} instance _is_ in a shadow root, the {pluginname} will likely still present
 
 * CSS specified by the `xref:add-css-options.adoc#content_css[content_css]` option; and
 

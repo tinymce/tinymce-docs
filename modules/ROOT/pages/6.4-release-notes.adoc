@@ -735,7 +735,7 @@ As a result, in {productname} 6.4, checkmarks now work as expected when using th
 
 In previous versions of {productname}, while the foreground and background icons were updating in the toolbar dropdown, the menu icons in the menubar dropdown would not update the colour option in the format menu after the user applied colors to the selected text, despite the fact that this was the expected behaviour. While workarounds where available, this deviation from the expected functionality caused confusion for some users until the fix was applied.
 
-To correct this, {productname} added a new set icon fill function to the nested menu item spec, to ensure that the icon is filled when a color is selected from the format menu.
+To correct this, {productname} added a new set icon fill function to ensure that the icon is filled when a color is selected from the format menu.
 
 In {productname} 6.4, this issue has be rectified, which now ensures that the foreground and background menu icons now accurately reflects the last used color within the menu dropdown swatch.
 

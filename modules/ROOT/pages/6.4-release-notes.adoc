@@ -952,7 +952,7 @@ In {productname} 6.4, it is now not possible to highlight inline boundary elemen
 
 A bug was found in versions of {productname} prior to the 6.4 release, that would call the `onAction` callback for *split buttons* regardless of the action being `disabled`. This meant it was possible for the user to call `onAction` unintentionally
 
-As a fix to the issue, {productname} 6.4 introduced a new conditional check to identify *if* the button is `enabled` or `disabled`. If the button is set to `enabled` then {productname} executes the secondary check, which will identify wether or not the button is a *split button*.  Split buttons are classified as “special buttons”,  as they are unique and require both `advlists` and `dropdowns` to function, this makes them more complex than traditional buttons.
+As a fix to the issue, {productname} 6.4 introduced a new conditional check to identify *if* the button is `disabled`  before calling the `onAction` callback.
 
 In {productname} 6.4, clicking on a disabled split button won't call the `onAction` callback anymore.
 

@@ -535,7 +535,7 @@ The {productname} package files have been updated with two new icons that enable
 ----
 tinymce.init({
   selector: "textarea",
-	advcode_inline: true,
+  advcode_inline: true,
   plugins: [
     "code", 'advcode', 
   ],

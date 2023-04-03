@@ -613,7 +613,7 @@ As a result, the context menu for the `table of contents` now behaves as expecte
 
 In previous versions of {productname}, contenteditable="false" elements such as a *merge tags* could clone the styling to a new table row. In some situations, this cloning would happen during the creation of new table row, where the merge tag prefix would unexpectedly clone the formatting from the previous cell to the new cell.
 
-To correct this issue, {productname} added changes to the *clone logic*, and the cursor position API, which will now return `true`, for any passed `contenteditable=false` elements.
+To correct this issue, {productname} added changes to the *clone logic*, to not copy the format for `contenteditable="false"` elements.
 
 In {productname} 6.4, the formatting of `contenteditable="false"` elements are no longer cloned to new cells while creating new table rows.
 

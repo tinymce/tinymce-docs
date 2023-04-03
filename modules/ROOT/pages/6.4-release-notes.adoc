@@ -1172,18 +1172,16 @@ In {productname} v6.4, pressing backspace after adding a Text Pattern, now forma
 === Dialog getting cut offscreen when opened from toolbar button in Inline Mode
 //#TINY-9588
 
-// Cause
-// Consequence
-// Fix
-// Result
+A bug was discovered in previous version of {productname}, that would arise when dragging and dropping `contenteditable="false"` elements within the editor was that the target of the dragstart, dragend or drop events would be the editor instance itself, rather than the expected DOM target.
+
+In {productname} 6.4, the events are now simulated based on the mouse event that produced them, meaning that the target and other properties, such as mouse coordinates, are now properly produced for the simulated drag and drop events.
 
 === Checkmark icons are added to every color in color swatch
 //#TINY-9567
 
-// Cause
-// Consequence
-// Fix
-// Result
+In previous versions of {productname}, the color swatch feature would add a checkmark icon to every color, but would only display the checkmark on the "aria-checked" attribute.
+
+In {productname} 6.4, a fix was applied that replaced the previous selector, `aria-checked='true'``, with `tox-collection__item--enabled`. This fix, ensures that the checkmark is only displayed on the enabled colors.
 
 === Formatting Issue with Checklist on Formatted Lists and Non-Lists
 //#TINY-9499

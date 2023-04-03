@@ -1,8 +1,7 @@
 tinymce.init({
     selector: 'textarea#iframe',
-    plugins: 'quickbars table image link lists media autoresize help',
-    toolbar: 'undo redo | blocks | bold italic | alignleft aligncentre alignright alignjustify | indent outdent | bullist numlist',
-    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
+    plugins: 'lists help',
+    toolbar: 'undo redo | blocks | bold italic | bullist numlist',
     ui_mode: 'split',
     min_height: 500
   });

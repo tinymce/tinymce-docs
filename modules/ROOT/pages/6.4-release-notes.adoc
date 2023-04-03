@@ -872,7 +872,7 @@ Example of a `incorrect` vs `correct` value input:
 
 In order to fix this bug, {productname} 6.4, not detects if the user inserts a `#` symbol before the hex `value`, which removes the leading `#` prefix before rendering to the color picker component.
 
-In {productname} 6.4, the color picker works as expected when using hex `values`.
+In {productname} 6.4, the color picker works as expected when using hex `values` with the `#` prefix.
 
 === Table cell selection was possible even if the element was in a noneditable root element
 // TINY-9459

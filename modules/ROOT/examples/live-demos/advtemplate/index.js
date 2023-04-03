@@ -62,6 +62,6 @@ tinymce.init({
         "preview", "searchreplace", "table", "visualblocks", "advtemplate"
     ],
 	advtemplate_templates,
-  toolbar: "addtemplate inserttemplate | undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
   contextmenu: 'addtemplate',
+  toolbar: "addtemplate inserttemplate | undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
 });

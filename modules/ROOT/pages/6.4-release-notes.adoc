@@ -265,21 +265,29 @@ For information on the **Spell Checker Pro** plugin, see: xref:introduction-to-t
 
 
 === Advanced Code Editor 3.2.1
-// bforte this is related to https://ephocks.atlassian.net/browse/DOC-1907
-////
-To quote my [comment, left on the TinyMCE 6.4 BoM][11] in Notion
 
-> What changes were made to the Advanced Code Premium plugin? The
-> [changelog][12] contains the below:
-> New button to copy the current dialog content. #TINY-9525
-> New buttons to increase and decrease the font size in the dialog. #TINY-9526
-> New button to toggle dark mode. #TINY-9527
-> New button to toggle fullscreen. #TINY-9529
+The {productname} 6.4 release includes an accompanying release of the **Advanced Code Editor** premium plugin.
 
-[14]: <https://github.com/tinymce/advcode/blob/main/CHANGELOG.md>
+**Advanced Code Editor** 3.2.1 includes the following improvements and additions.
 
-[15]: <https://github.com/tinymce/advcode/commits/main>
-////
+==== New button to copy the current dialog content.
+
+This update adds a new **Copy code** button to the Advanced Code Editor dialog, enabling the copying of the entire contents of the dialog without having to first select.
+
+==== New buttons to increase and decrease the font size in the dialog.
+
+This update adds two new buttons for increasing and decreasing the font size of code displayed in the Advanced Code Editor dialogs.
+
+==== New button to toggle dark mode.
+
+This update adds a new **Dark/light mode** button for toggling the Advanced Code Editor dialog between dark and light display modes.
+
+==== New button to toggle fullscreen.
+
+This update adds a new **Fullscreen** button that for toggling the Advanced Code Editor dialog between fullscreen and dialog modes.
+
+NOTE: For the Advanced Code Editor to offer a full-screen mode requires the xref:fullscreen.adoc[Full screen] plugin and requires {pluginname} to be running in xref:advcode.adoc#advcode_inline[inline mode].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement

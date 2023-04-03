@@ -1013,7 +1013,7 @@ Fixes were introduced with the release of {productname} 6.4, that:
 * Prevents editing host elements like `<p contenteditable="true">paragraph text</p>` in a `contenteditable="false"` root to be split.
 * Prevents editing hosts elements inside a `contenteditable= false` root to be split.
 
-As a result, when a root element is set to `contentEditable= false;`, any `contentEditable= true;` elements inside that root element such as `<p>` tag will no longer try to split the `contentEditable= true;` element. 
+As a result, when a root element is set to `contenteditable="false"`, any `contenteditable="true"` elements inside that root element such as `<p>` tag will no longer try to split the `contenteditable="true"` element. 
 
 === Creating a list in a table cell when the caret is in front of an anchor element would not properly include the anchor in the list.
 // TINY-6853

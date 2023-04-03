@@ -1121,9 +1121,7 @@ tinymce.init({
 });
 ----
 
-To fix this issue, the default value for `color_cols_foreground` and `color_cols_background` was updated to use color_cols if it is set within the `tinymce.init` script, and otherwise use the correct default number of columns.
-
-In {productname} 6.4, the correct number of columns is respected in the forecolor and backcolor colour swatches.
+In {productname} 6.4, the color swatches opened by the `forecolor` and `backcolor` toolbar buttons have the amount of columns set by the `color_cols` option, if it is set.
 
 === Drag and dropping the last noneditable element out of its parent block would not properly pad the parent block element
 // TINY-9606

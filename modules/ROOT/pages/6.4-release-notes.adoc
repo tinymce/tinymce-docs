@@ -447,13 +447,24 @@ As a result, in {productname} 6.4, menu items can change based on the parent men
 === New `highlight_on_focus` option which enables highlighting the content area on focus
 //#TINY-9277
 
-In previous versions of {productname}, when using developer tools such as Chrome DevTools, the editor content area would not render the `focus` border when the editor was `infocus`.
+In previous versions of {productname}, the highlighted border around the editor content window did not render when the editor was `infocus`.
 
-As a consequence, this issue, whilst creating no impending impacts on the functionality of the editor, would create an inconsistency with the visual UX for the `devTools` environment. As `devTools` is used by developers to inspect the rendered HTML, and troubleshoot issues, the importance for rendering {productname} elements is vital. 
+As a consequence, this issue, whilst creating no impending impacts on the functionality of the editor, created issues for users that rely on accessibility features such as this.
 
-To fix this issue, {productname} 6.4, made some changes to the `focusController` to ensure that when the editor content is `infocus` the editor will render the highlighted border within `devTools`, and when the editor is not `infocus` to remove `focus`.
+To fix this issue, {productname} 6.4, introduced some improvements to ensure that when the editor content window is `infocus`, the editor will render a visible `highlighted` border around the content window when the below option is added to the `tinymce.init()` config.
 
-In {productname} 6.4, the editor now renders the highlighted border when in `focus` which is visible only via `devTools`.
+.Setting `highlight_on_focus: true` option to tinymce.init().
+[source, js]
+----
+tinymce.init({
+    selector: "textarea",
+    plugins: [ 
+    ],
+    highlight_on_focus: true // This option is required to be set to `true`.
+});
+----
+
+In {productname} 6.4, when the ` highlight_on_focus: true` option is set, the editor will render the highlighted border for the active editor window.
 
 === New fontsizeinput toolbar item which allows the user to set the size via input and also increase and decrease it with + and - buttons
 //#TINY-9429

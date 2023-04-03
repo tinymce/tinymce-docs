@@ -661,7 +661,7 @@ In {productname} 6.4, all `renderUI` property loading issues have been resolved.
 
 In previous versions of {productname}, the search replace modal would close incorrectly when clicking outside of the alert dialog. The expexted behaviour in previous versions was that an error dialog would open when **no <string> match** was found within the {productname} editor viewport. The identifying issue found was when the user would `click` outside of the error dialog, resulting in the `Find and Replace` modal to closes incorrectly.
 
-In {productname} 6.4, when a **no <string> match** occurs within the {productname} editor viewport, an error banner will render in the `Find and Replace` modal beneith the (Replace with) field.
+In {productname} 6.4, when a **no <string> match** occurs within the {productname} editor viewport, an error banner will render in the `Find and Replace` modal beneath the (Replace with) field.
 
 As a result the when the instance occurs where **no <string> match** is triggered, the user will be prompted with the following warning: *`Could not find the specified string`*.
 

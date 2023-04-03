@@ -81,11 +81,11 @@ In {productname} 6.4, the typography menu item will display in the `**Tools**` m
 === Typography button and menu item will be disabled if editor has no content
 //#TINY-9441
 
-In previous versions of {productname}, the typography plugin button would render to the toolbar when the editor contained no content.
+In the previous version of {productname}, the typography toolbar button would be enabled when the editor contained no content.
 
-As a consequence of this, users would be able to apply the typography button features to an editor that contained no physical content.
+As a consequence of this, when users clicked the button while the editor was empty, the notification `'Document Typography has been enhanced'` would display unexpectedly.
 
-As a fix, {productname} added some new improvements to the Advanced Typography plugin that now disables the users ability to apply the plugin and use its features, when the editor content value returns as `empty`.
+In {productname}, the typography toolbar button is now disabled when the editor is empty.
 
 
 For information on the **Advanced Typography** plugin, see: xref:advanced-typography.adoc[Advanced Typography].

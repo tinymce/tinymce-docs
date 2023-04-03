@@ -621,7 +621,7 @@ tinymce.init({
                             type: 'menuitem',
                             text: 'Menu item',
                             onAction: () => {
-                              console.log; // for demo purposes
+                              console.log('leaf menu item'); // for demo purposes
                             }
                           }
                         ])

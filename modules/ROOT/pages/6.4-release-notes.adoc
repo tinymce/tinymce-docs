@@ -863,7 +863,7 @@ As a result, in {productname} 6.4, *list* or *Advanced List*  plugins that are s
 === Color picker dialog would not update the preview color if the hex input value was prefixed with # symbol
 // TINY-9457
 
-In previous versions of {productname}, the preview sample box within the color picker dialod would not render. This issue could be replicated when a hex `value` was prefixed with a `#` symbol before the hex `value`.
+In previous versions of {productname}, the preview sample box within the color picker dialog would not render. This issue could be replicated when a hex `value` was prefixed with a `#` symbol.
 
 Example of a `incorrect` vs `correct` value input:
 

@@ -854,7 +854,7 @@ As a result, in {productname} 6.4, visual characters no longer render inside `co
 === Lists in a noneditable root were incorrectly editable using list API commands, toolbar buttons and menu items
 // TINY-9458
 
-In previous versions of {productname}, a bug was found that affected the `lists` and `advlist` plugins when the {productname} editor body was set to `contentEditable = 'false'`. The consequence meant that `lists` that were set as `contenteditable="false"` elements could be modified by using list API commands, toolbar buttons and menu items.
+In previous versions of {productname}, a bug was found that affected the *lists*  and *Advanced List* plugins when the {productname} editor body was set to `contenteditable = "false"`. The consequence meant that the lists, that were even set as `contenteditable="false"`,  elements could be modified by using list API commands, toolbar buttons and menu items.
 
 The fix involved implementing a new process to  check the element conditions.  The check now looks to identify if the *list* or *Advanced List* is a `contenteditable = "false"` element.
 

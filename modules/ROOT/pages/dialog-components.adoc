@@ -578,7 +578,7 @@ tinymce.init({
                         type: 'menuitem',
                         text: 'Menu item',
                         onAction: () => {
-                          store.add('menuitem');
+                          console.log; // for demo purposes
                         }
                       }
                     ])
@@ -601,7 +601,7 @@ tinymce.init({
                             type: 'menuitem',
                             text: 'Menu item',
                             onAction: () => {
-                              store.add('menuitem');
+                              console.log; // for demo purposes
                             }
                           }
                         ])

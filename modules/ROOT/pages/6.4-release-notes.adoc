@@ -981,7 +981,7 @@ In {productname} 6.4, when the user executes right `mouse click` on the link sel
 === Editor commands ForwardDelete and Delete was deleting contents inside noneditable elements
 // TINY-9477
 
-Previously, when using the forwarddelete or delete keys in earlier versions of {productname}, the contents within `contenteditable="false"` elements were deleted. This meant that if there were nested elements within a `contenteditable="false"` root element that were also set to `contenteditable="false"`, they could be deleted from the root element.
+Previously, when using the `ForwardDelete` or `Delete` commands in earlier versions of {productname}, the contents within `contenteditable="false"` elements were deleted. This meant that if there were nested elements within a `contenteditable="false"` root element that were also set to `contenteditable="false"`, they could be deleted from the root element.
 
 To resolve this issue, {productname} 6.4 included several enhancements to prevent all commands and keyboard functions, including delete/forwarddelete, from affecting `contenteditable="false"` content. These changes also updated the editor selection `isEditable` function to prioritize fake selections first.
 

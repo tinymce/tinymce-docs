@@ -416,7 +416,7 @@ The new additions and improvements with the introduction of {productname} 6.4, i
 
 As a result, any elements that return a `true` value when a specified element is `contentEditable = true;`, will call the new `isEditable` API to action the new blocker to ensure `contentEditable = false;` elements cannot be modified when they are within a root that is set to `contentEditable = false`.
 
-=== New setText and setIcon methods added to menu button and toolbar button apis
+=== New setText and setIcon methods added to menu button and toolbar button APIs
 // TINY-9268
 
 In previous versions of {productname}, it was not possible to change the `text` or `icon` of a toolbar button after it had been set for the first time. As a consequence, the menu and toolbar button API, would not extend or update the parent `icon` or `text` directly, based upon what the user had selected within the menubar or toolbar.

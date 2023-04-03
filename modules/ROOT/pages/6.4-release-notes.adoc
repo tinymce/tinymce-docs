@@ -1006,7 +1006,7 @@ In previous versions of {productname}, inserting newlines inside an `contentedit
 As a consequence, when child block elements set to `contenteditable=true` such as a `<p>` tag were nested within the `contenteditable= false` element root, the editor would try to split the child block element when the user hit the `enter` command. 
 
 As the paragraph tag is intended to be a block for `text`, it is classified as `semantically incorrect` to split a paragraph block element.
-In this particular instance, child elements in {productname} such as the `<p>` tag would split the block element resulting in a new block (such as a new paragraph) to be created inside the paragraph when a user attempted to edit it inside a `contentEditable= false;` root element. 
+In this particular instance, child elements in {productname} such as the `<p>` tag would split the block element resulting in a new block (such as a new paragraph) to be created inside the paragraph when a user attempted to edit it inside a `contenteditable="false"` root element. 
 
 Fixes were introduced with the release of {productname} 6.4, that:
 

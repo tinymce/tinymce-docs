@@ -794,10 +794,9 @@ In {productname} 6.4, when the user `clicks` away to dismiss the *Search* and *R
 === Inline headers would not work in some situations when the editor was moved too far right horizontally
 //#TINY-8977
 
-// Cause
-// Consequence
-// Fix
-// Result
+In previous versions of {productname} It was discovered that the inline mode toolbar did not have a fixed width set, causing it to wrap when its `x position` exceeded the window width. But as the user scrolled horizontally, and the toolbar width space reduced, the editor became unusable after it surpassed its original width.
+
+To fix this issue, {productname} now explicitly sets the width on the toolbar to ensure that the editor is usable when the viewport width is reduced.
 
 === Quick toolbars were incorrectly rendered during the dragging of contenteditable="false" elements
 //#TINY-9305
@@ -1130,35 +1129,24 @@ In {productname} 6.4, dragging and dropping elements that are `contenteditable="
 === Nonbreaking space do not get highlighted when enabling show invisible characters
 //#TINY-9685
 
-// Cause
-// Consequence
-// Fix
-// Result
+In previous versions of {productname}, it was discovered that nonbreaking spaces were not highlighting correctly when the "show invisible characters" plugin was enabled.
 
-=== Implement rest of fix for toolbar width during horizontal scrolling
-//#TINY-9646
-
-// Cause
-// Consequence
-// Fix
-// Result
+This issue caused not only confusion with the intended text layout, but impacted the overall user experience. To resolve this issue, {productname} introduced a fix to ensure that all invisible characters, including nonbreaking spaces, are accurately displayed when the plugin is enabled.
 
 === White-space style property stripped from copied Excel content by word import
 //#TINY-9607
 // Powerpaste
 
-// Cause
-// Consequence
-// Fix
-// Result
+The white-space style property, which determines how white space characters are handled in HTML, was causing issues when content was copied from Excel and pasted into the {productname} editor. The problem occurred in Chrome and Firefox, but was not visable in Safari. Upon import, the white-space style property was being stripped from the content, resulting in a loss of formatting.
+
+After the issue was fixed, copied content containing a valid white-space property now retains its original formatting when pasted in {productname}.
 
 === Non breaking space is added after backspace below text pattern heading
 //#TINY-9603
 
-// Cause
-// Consequence
-// Fix
-// Result
+A recently discovered issue was identified in previous versions of {productname}, that affected the text formatting feature for **Text Pattern**. When a user would apply a text pattern heading such as `# Title`, followed by pressing "enter", the issue would the occur when the backspace key was pressed. As a result, a non-breaking space was being inserted to the beginning of the line instead. This unintended addition of a Non-breaking space caused formatting inconsistencies and errors.
+
+In {productname} v6.4, pressing backspace after adding a Text Pattern, now formats the content as expected.
 
 === Incorrect event target for dragend and drop events when dragging and dropping noneditable elements within editor
 //#TINY-9599

@@ -1001,7 +1001,7 @@ As a result, in {productname} 6.4, when using the backspace or delete function k
 === Inserting newlines inside an editable element inside a noneditable root would sometimes try to split the editable element
 // TINY-9461
 
-In previous versions of {productname}, inserting newlines inside an `contentEditable= true;` element while it was inside a `contentEditable= false;` root would sometimes try to split the `contentEditable= true;` element. 
+In previous versions of {productname}, inserting newlines inside an `contenteditable= true` element while it was inside a `contenteditable= false` root would sometimes try to split the `contenteditable= true` element. 
 
 As a consequence, when child block elements set to `contentEditable=true;` such as a `<p>` tag were nested within the `contentEditable= false;` element root, the editor would try to split the child block element when the user hit the `enter` command. 
 

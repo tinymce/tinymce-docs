@@ -708,7 +708,7 @@ In {productname} 6.4, this bug was fixed by adding a handler to the toolbar grou
 
 As a result, the `onSetup` function for custom group toolbar buttons now runs correctly in {productname} 6.4.
 
-=== An element could be dropped onto the decendants of an element with a `noneditable` attribute
+=== An element could be dropped onto the descendants of an element with a `contenteditable="false"` attribute
 // TINY-9364
 
 In {productname} 6.0, the drag and drop `config` did not check some conditions surrounding element placements using either a drag or drop action.  This affected users running {productname} 6.0, which would effectively allow descendants of `contenteditable="false"` element to be dropped into another `contenteditable="false"` element.

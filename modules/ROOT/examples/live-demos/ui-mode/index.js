@@ -1,50 +1,25 @@
+const settings = {
+  plugins: 'lists help',
+  toolbar: 'undo redo | blocks | bold italic | bullist numlist',
+  ui_mode: 'split',
+  min_height: 500
+};
+
 tinymce.init({
-    selector: 'textarea#iframe',
-    plugins: 'lists help',
-    toolbar: 'undo redo | blocks | bold italic | bullist numlist',
-    ui_mode: 'split',
-    min_height: 500
-  });
-  
-const emailHeaderConfig = {
+  ...settings,
+  selector: 'textarea#iframe'
+});
+
+tinymce.init({
+  ...settings,
+  inline: true,
   selector: '.tinymce-heading',
-  menubar: false,
   inline: true,
-  plugins: [
-    'lists',
-    'powerpaste',
-    'autolink'
-  ],
-  toolbar: 'undo redo | bold italic underline',
-  valid_elements: 'strong,em,span[style],a[href]',
-  valid_styles: {
-    '*': 'font-size,font-family,color,text-decoration,text-align'
-  },
-  powerpaste_word_import: 'clean',
-  powerpaste_html_import: 'clean',
-  ui_mode: 'split'
-};
+  toolbar: 'undo redo | bold italic underline'
+});
 
-const emailBodyConfig = {
+tinymce.init({
+  ...settings,
   selector: '.tinymce-body',
-  menubar: false,
-  inline: true,
-  plugins: [
-    'link', 'lists', 'powerpaste',
-    'autolink', 'tinymcespellchecker'
-  ],
-  toolbar: [
-    'undo redo | bold italic underline | fontfamily fontsize',
-    'forecolor backcolor | alignleft aligncenter alignright alignfull | numlist bullist outdent indent'
-  ],
-  valid_elements: 'p[style],strong,em,span[style],a[href],ul,ol,li',
-  valid_styles: {
-    '*': 'font-size,font-family,color,text-decoration,text-align'
-  },
-  powerpaste_word_import: 'clean',
-  powerpaste_html_import: 'clean',
-  ui_mode: 'split'
-};
-
-tinymce.init(emailHeaderConfig);
-tinymce.init(emailBodyConfig);
+  inline: true
+});

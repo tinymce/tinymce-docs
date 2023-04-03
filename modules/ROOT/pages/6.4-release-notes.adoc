@@ -928,7 +928,7 @@ Setting the `contenteditable` property to the editor root to `false` such as the
 setup: (editor) => {
     editor.on('preinit', () => {
         editor.getBody().contentEditable = false;
-    })
+    });
 }
 ----
 

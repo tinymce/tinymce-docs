@@ -556,79 +556,41 @@ tinymce.init({
       text: 'Tree toolbar button',
       onAction: () => {
       ed.windowManager.open({
-        title: 'Tree dialog',
-        buttons: [
-          {
-            type: 'cancel',
-            text: 'Cancel',
-          }
-        ],
-        body : {
-          type: 'panel',
-          items: [{
-            type: 'tree',
-            onLeafAction: (id) => {
-              console.log('clicked on item with id', id);
-            },
-            items: [
-                    {
-      type: 'directory',
-      id: 'dir',
-      title: 'Directory',
+      title: 'Tree dialog',
+      buttons: [{type: 'cancel', text: 'Cancel',}],
+      body : {
+        type: 'panel',
+        items: [{
+          type: 'tree',
+          onLeafAction: (id) => {
+            console.log('clicked on item with id', id);
+          },
+          items: [{type: 'directory', id: 'dir', title: 'Directory',
       menu: {
         icon: 'image-options',
           type: 'menubutton',
           fetch: (success) => success([
-            {
-              type: 'menuitem',
-              text: 'Menu item',
-              onAction: () => {
-                store.add('menuitem');
-              }
-            }
+            {type: 'menuitem', text: 'Menu item', onAction: () => {store.add('menuitem');}}
           ])
       },
       children: [
-        {
-          type: 'leaf',
-          title: 'Leaf 3',
-          id: '3',
-        },
-        {
-          type: 'leaf',
-          title: 'Leaf 4',
-          id: '4',
-          menu: {
-            icon: 'image-options',
-            type: 'menubutton',
-            fetch: (success) => success([
-              {
-                type: 'menuitem',
-                text: 'Menu item',
-                onAction: () => {
-                  store.add('menuitem');
-                }
-              }
-            ])
-          }
-        },
-      ]
-    },
-    {
-      type: 'leaf',
-      title: 'Leaf 5',
-      id: '5',
-    },
-    {
-      type: 'leaf',
-      title: 'Leaf 6',
-      id: '6',
-    },
+        {type: 'leaf', title: 'Leaf 3', id: '3',},
+        {type: 'leaf', title: 'Leaf 4', id: '4',
+          menu: { icon: 'image-options', type: 'menubutton', fetch: (success) => success([
+            {type: 'menuitem', text: 'Menu item', onAction: () => {store.add('menuitem');}
+            }
+          ])
+        }
+      },
     ]
-    }]
-    }
-    })
-    }
+  },
+  {type: 'leaf', title: 'Leaf 5', id: '5',},
+  {type: 'leaf', title: 'Leaf 6',id: '6',},
+  ]
+  }]
+  }
+  })
+  }
   })
   }
 });

@@ -544,7 +544,7 @@ A *textarea* is a multiline text field.
 
 A *tree* is a composite component that presents an expandable category tree expandable down one level. It can also include a search and filter field.
 
-*Events:* Interacting with a *tree* component fires the `+onChange+` function in the dialog’s configuration.
+*onLeafAction:* Interacting with a *tree* component executes the `+onLeafAction+` callback set in the dialog configuration.
 
 [source,js]
 ----

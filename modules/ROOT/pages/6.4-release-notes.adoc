@@ -1010,7 +1010,7 @@ In this particular instance, child elements in {productname} such as the `<p>` t
 
 Fixes were introduced with the release of {productname} 6.4, that:
 
-* Prevents editing host elements like `<p contenteditable="true">paragraph text</p>` in a `contentEditable= false;` root to be split.
+* Prevents editing host elements like `<p contenteditable="true">paragraph text</p>` in a `contenteditable="false"` root to be split.
 * Prevents editing hosts elements inside a `contentEditable= false;` root to be split.
 
 As a result, when a root element is set to `contentEditable= false;`, any `contentEditable= true;` elements inside that root element such as `<p>` tag will no longer try to split the `contentEditable= true;` element. 

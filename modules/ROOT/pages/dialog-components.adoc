@@ -551,6 +551,8 @@ A *tree* can include two different items:
 
 A directory item can contain other directory items and leaf items.
 
+
+
 ==== Activating items in a tree
 
 Activating a directory item toggles the item between two states: collapsed and expanded.
@@ -566,6 +568,90 @@ Items are activated by clicking, pressing or by using keyboard-navigation.
 * If the hightlighted item is a leaf, pressing **Return** triggers the `+onLeafAction+` callback.
 
 *onLeafAction:* Interacting with a *tree* component executes the `+onLeafAction+` callback set in the dialog configuration.
+
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  toolbar: "tree",
+  setup: (ed) => {
+    ed.ui.registry.addButton('tree', {
+      text: 'Tree toolbar button',
+      onAction: () => {
+        ed.windowManager.open({
+          title: 'Tree dialog',
+          buttons: [{
+	    type: 'cancel',
+	    text: 'Cancel'
+	  }],
+          body : {
+            type: 'panel',
+            items: [{
+              type: 'tree',
+              onLeafAction: (id) => {
+                console.log('clicked on item with id', id);
+              },
+              items: [
+                {
+                  type: 'directory',
+                  id: 'dir',
+                  title: 'Directory',
+                  menu: {
+                    icon: 'image-options',
+                    type: 'menubutton',
+                    fetch: (success) => success([
+		     'bold', 'italic', 'underline'
+                    ])
+                  },
+                  children: [
+                    {
+                      type: 'leaf',
+                      title: 'Leaf 3',
+                      id: '3'
+                    },
+                    {
+                      type: 'leaf',
+                      title: 'Leaf 4',
+                      id: '4',
+                      menu: {
+                        icon: 'image-options',
+                        type: 'menubutton',
+                        fetch: (success) => success([
+                          {
+                            type: 'menuitem',
+                            text: 'Menu item',
+                            onAction: () => {
+                              console.log; // for demo purposes
+                            }
+                          }
+                        ])
+                      }
+                    },
+                  ]
+                },
+                {
+                  type: 'leaf',
+                  title: 'Leaf 5',
+                  id: '5'
+                },
+                {
+                  type: 'leaf',
+                  title: 'Leaf 6',
+                  id: '6'
+                },
+              ]
+            }]
+          }
+        });
+      }
+    });
+  },
+});
+----
+
+*tree* items can also be set to `+fetch+` other {productname} menus.
+
+For example: //restructure the example below to present the menus in a more structured fashion?
 
 [source,js]
 ----
@@ -640,6 +726,7 @@ tinymce.init({
   },
 });
 ----
+
 
 [[urlinput]]
 === urlinput

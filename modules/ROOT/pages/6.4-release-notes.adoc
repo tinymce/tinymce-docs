@@ -650,7 +650,7 @@ In {productname} 6.4, when the sidebar is either visible or hidden it now passes
 === Sometimes the editor would finish initializing before the silver theme would have finished loading
 // TINY-9556
 
-In earlier versions of {productname}, the properties set for the `renderUI`, caused conflicting issues with the theme rendering load times. As a consequence, the `renderUI` would finish rendering before the {productname} theme `silver` would finish loading.
+In earlier versions of {productname}, the properties set for the `renderUI`, caused conflicting issues with the theme rendering load times. As a consequence, the `renderUI` would finish rendering before the {productname} theme would finish loading.
 
 To fix this bug, {productname}, made changes to the `renderUI` properties that allowed the theme type the to return a `Promise<RenderResult>` instead of `RenderResult`, which corrects the issues found previously. 
 

@@ -239,9 +239,18 @@ The {productname} 6.4 release includes an accompanyin release of the **Mentions*
 
 **Mentions** 3.0.4 includes the following fix:
 
-==== It wasn’t possible to press enter after a pasted mention.
-
+==== It wasn’t possible to create a new line immediately after a pasted Mention.
 //#TINY-9432
+
+Previously, if a _Mention_ was added to a {productname} editor; and the _Mention_ was selected; copied or cut; and then pasted on to a new line, attempting to then create a new line by pressing the **Return** key failed.
+
+As well, and depending on the host browser, the insertion point would not present in the editor until it was moved, by clicking elsewhere in the editor.
+
+This could be worked-around by moving the insertion point and then moving it back to immediately after the _Mention_ or by typing any character and then deleting that character.
+
+With this update, pressing **Return** immediately following the pasting of a _Mention_ string in a {productname} editor creates a new line, as expected.
+
+Also, the insertion point displays in all browsers immediately following a pasted _Mention_ string, also as expected.
 
 For information on the **Mentions** plugin, see xref:mentions.adoc[Mentions].
 

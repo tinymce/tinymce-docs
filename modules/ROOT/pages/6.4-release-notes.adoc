@@ -845,7 +845,7 @@ As a result, the ranged selection for backspace/delete now check that all of the
 === Visual characters were rendered inside noneditable elements
 // TINY-9474
 
-In previous versions of {productname}, a bug was found that affected the `visual characters` plugin. As a consequence, the visual characters selecter would render inside `contenteditable="false"` elements after the plugin was applied to the editor.
+In previous versions of {productname}, a bug was found that affected the `visual characters` plugin. As a consequence, the visual characters selector would render inside `contenteditable="false"` elements after the plugin was applied to the editor.
 
 To fix this issue, a conditional filter was added which identifies, if an element is either a `contenteditable="true"` element or a `contenteditable="false"` element to its decendants.  If the element matches as a `contenteditable="false"` element to itself or decendants, the `visual character` plugin will remove the highlighted selecter from within the `dom` viewport.
 

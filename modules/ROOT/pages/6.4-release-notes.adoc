@@ -762,7 +762,7 @@ In {productname} 6.4, pasting links to text selections now generates the correct
 === Toolbar split buttons in advlist plugin to show the correct state when the cursor is in a checklist
 // TINY-5167
 
-In previous versions of {productname}, when a cursor was placed within a checklist item, the icon for both the checklist and the bullet list would show as `active`. This created UX issues, as having both buttons showing a `active` state was confusing for the user, specifically for navigation purposes when using checklists from the `advlist` plugin.
+In previous versions of {productname}, when a cursor was placed within a checklist item, the icon for both the checklist and the bullet list would show as `active`. This created UX issues, as having both buttons showing an `active` state was confusing for the user, specifically for navigation purposes when using checklists from the *Advanced List* plugin.
 
 To fix this issue, {productname} added improvements to the list configuration to checks a new set of conditionals which would determine if the `node` selected matched the parent `node` within the checklist. If the match returns as `true`, the (api) will set only the checklist icon to a `active` state.
 

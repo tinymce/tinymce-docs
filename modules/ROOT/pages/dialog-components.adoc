@@ -600,6 +600,9 @@ tinymce.init({
                     icon: 'image-options',
                     type: 'menubutton',
                     fetch: (success) => success([
+                      'bold',
+                      'italic',
+                      'underline',
                       {
                           type: 'menuitem',
                           text: 'Menu item',
@@ -623,6 +626,9 @@ tinymce.init({
                         icon: 'image-options',
                         type: 'menubutton',
                         fetch: (success) => success([
+                          'blocks',
+                          'fontfamily',
+                          'fontsize',
                           {
                             type: 'menuitem',
                             text: 'Menu item',

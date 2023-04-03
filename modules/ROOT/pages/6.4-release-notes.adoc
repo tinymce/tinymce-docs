@@ -737,7 +737,7 @@ In previous versions of {productname}, while the foreground and background icons
 
 To correct this, {productname} added a new set icon fill function to ensure that the icon is filled when a color is selected from the format menu.
 
-In {productname} 6.4, this issue has be rectified, which now ensures that the foreground and background menu icons now accurately reflects the last used color within the menu dropdown swatch.
+In {productname} 6.4, this issue has be rectified, which now ensures that the foreground and background menu icons now accurately reflects the previously selected color within the menu dropdown swatch.
 
 === Added new setIconFill function to NestedMenuItemInstanceApi
 // TINY-9497

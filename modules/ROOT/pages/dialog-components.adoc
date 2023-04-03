@@ -600,7 +600,13 @@ tinymce.init({
                     icon: 'image-options',
                     type: 'menubutton',
                     fetch: (success) => success([
-		     'bold', 'italic', 'underline'
+                      {
+                          type: 'menuitem',
+                          text: 'Menu item',
+                          onAction: () => {
+                            console.log('dir menu item');
+                          }
+                      }
                     ])
                   },
                   children: [

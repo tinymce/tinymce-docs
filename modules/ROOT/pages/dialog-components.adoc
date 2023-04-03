@@ -542,7 +542,28 @@ A *textarea* is a multiline text field.
 [[tree]]
 === tree
 
-A *tree* is a composite component that presents an expandable category tree expandable down one level. It can also include a search and filter field.
+A *tree* is a component used to present a tree-style hierarchy. For example a list of folders containing other folders and files.
+
+A *tree* can include two different items:
+
+* a directory; and
+* a leaf.
+
+A directory item can contain other directory items and leaf items.
+
+==== Activating items in a tree
+
+Activating a directory item toggles the item between two states: collapsed and expanded.
+
+Activating a leaf item triggers the `+onLeafAction+` callback.
+
+Items are activated by clicking, pressing or by using keyboard-navigation.
+
+==== Tree navigation and activation using a keyboard
+
+* The **up–** or **down–arrow-key** highlights an item.
+* If the highlighted item is a directory, the **left–** or **right–arrow-key** collapses or expands a directory item
+* If the hightlighted item is a leaf, pressing **Return** triggers the `+onLeafAction+` callback.
 
 *onLeafAction:* Interacting with a *tree* component executes the `+onLeafAction+` callback set in the dialog configuration.
 

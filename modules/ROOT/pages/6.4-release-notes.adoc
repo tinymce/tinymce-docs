@@ -977,7 +977,7 @@ The fix now allows all three link-plugins to work within the context menu items.
 
 In {productname} 6.4, when the user executes right `mouse click` on the link selection immediately after attaching a link to a `<string>`, the link-plugins now work as expected.
 
-=== Editor commands ForwardDelete and Delete was deleting contents inside noneditable elements
+=== Editor commands ForwardDelete and Delete were deleting contents inside noneditable elements
 //#TINY-9477
 
 Previously, when using the `ForwardDelete` or `Delete` commands in earlier versions of {productname}, the contents within `contenteditable="false"` elements were deleted. This meant that if there were nested elements within a `contenteditable="false"` root element that were also set to `contenteditable="false"`, they could be deleted from the root element.

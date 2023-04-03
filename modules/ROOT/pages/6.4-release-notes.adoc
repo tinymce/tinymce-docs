@@ -550,7 +550,7 @@ This plugin feature is only available for paid {productname} subscriptions.
 
 Currently, we use the DOMPurify library to sanitize HTML content when it is inserted into the editor in order to remove unsafe tags & attributes in order to prevent XSS (cross-site scripting). However, customers in some situations have found that the HTML sanitization from the DOMPurify library is changing their content in undesired ways. 
 
-To address this issue, we have added a new `xss_sanitization: boolean` editor option. This option is enabled by default which enables sanitization, but can now be set to `false` to disable sanitization. If a customer wishes to prevent their content from being modified by the sanitization, they can now set this option to `false`.
+To address this issue, we have added a new `xss_sanitization: boolean` editor option. This option is enabled by default which enables sanitization and can be set to `false` to disable sanitization. If a customer wishes to prevent their content from being modified by the sanitization, they can now set this option to `false`.
 
 .Example: using `+xss_sanitization+` to turn DOMPurify off and no longer sanitize HTML against XSS attacks
 [source,js]

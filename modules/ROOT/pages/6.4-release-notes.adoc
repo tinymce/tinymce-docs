@@ -782,7 +782,7 @@ In {productname} 6.4, dragging content such as `links` into other `links` will n
 
 In previous versions of {productname}, the settings for the `contentEditable` property in the editor root was set to `false`. As a consequence, the user could insert content using `api` commands to edit a `contenteditable="false"` root element.
 
-To fix this bug, in {productname} 6.4, a blocker was added to the `editor.insertContent` api and `mceInsertContent` command, which stops `contenteditable="false"` root elements from being edited.
+To fix this bug, in {productname} 6.4, a blocker was added to the `editor.insertContent` API and `mceInsertContent` command, which stops `contenteditable="false"` root elements from being edited.
 
 In {productname} 6.4, inserting contents inside a `contenteditable="false"` element while the selection is inside another element, is no longer possible.
 

@@ -858,7 +858,7 @@ In previous versions of {productname}, a bug was found that affected the `lists`
 
 The fix involved implementing a new process to  check the element conditions.  The check now looks to  identify if the `lists` or `advlists` in the DOM are set to be either `contentEditable = 'false'` or `contentEditable = 'true'.
 
-As a result, in {productname} 6.4, `lists` and `advlist` plugins that are set as `contentEditable = 'false'` elements can no longer be modified by using list API commands, toolbar buttons and menu items.
+As a result, in {productname} 6.4, *list* or *Advanced List*  plugins that are set as `contenteditable = "false"` elements can no longer be modified by using list API commands, toolbar buttons and menu items.
 
 === Color picker dialog would not update the preview color if the hex input value was prefixed with # symbol
 // TINY-9457

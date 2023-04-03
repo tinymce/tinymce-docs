@@ -677,9 +677,9 @@ In {productname} 6.4, when the color picker in the `toolbar` is updated when cha
 === The onSetup api function would not run when defining custom group toolbar button
 // TINY-9496
 
-A bug was discovered that affected the custom group toolbar button `config` in {productname}, due to a missing `Event Behaviour`. As a consequence, the `onSetup` api function would not run as intended when defining a custom group toolbar `button`, resulting in the `console` returning `blank`.
+A bug was discovered that affected the custom group toolbar button in {productname}, due to missing some event handlers. As a consequence, the `onSetup` api function would not run as intended when defining a custom group toolbar button.
 
-In {productname} 6.4, this bug was fixed by adding a `Event Behaviour` to the toolbar group button that now calls the `api` as intended.
+In {productname} 6.4, this bug was fixed by adding a handler to the toolbar group button that now calls the `api` as intended.
 
 As a result, the `onSetup` function for custom group toolbar buttons now runs correctly in {productname} 6.4.
 

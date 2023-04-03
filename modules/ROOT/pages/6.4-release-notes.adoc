@@ -548,7 +548,7 @@ In previous versions of {productname}, the top right close 'x' button within the
 
 With the release of {productname} 6.4, various changes have now made it possible for modal dialogues to be navigated with the Tab key. This is accomplished by adding a `Tabbing.config` to the close 'x' button. The `Tabbing.config` is an object that describes the sequence of focusable elements, their `tabindex` and the `initial focus` within the dialog when it is opened. In addition an optional `firstTabstop` property has also been added to the `Tabbing.config` to specify which element receives focus first when the dialog is opened.
 
-This update enables users to more easily and quickly access the modal dialogues within {productname}, which includes dialogs such as:
+This update enables users to more easily and quickly access the modal dialogues within {productname}.
 
 * Search and Replace
 * Accessibility Checker

@@ -155,20 +155,30 @@ The {productname} 6.4 release includes an accompanying release of the **PowerPas
 
 **PowerPaste** 6.1.4 includes the following fixes, additions, and improvements.
 
-////
-To quote my [comment, left on the TinyMCE 6.4 BoM][5] in Notion
+==== White-space style property stripped from copied Excel content by word import
+//#TINY-9607
 
-> What changes were made to the Checklist plugin? The [changelog][6]
-> contains no entries beyond 2022-11-23 and the only [commits this
-> year][7] have been dependabot bumps or back-end changes.
+The white-space style property, which determines how white space characters are handled in HTML, was causing issues when content was copied from Excel and pasted into the {productname} editor. The problem occurred in Chrome and Firefox, but was not visable in Safari. Upon import, the white-space style property was being stripped from the content, resulting in a loss of formatting.
 
-[5]: <https://www.notion.so/TinyMCE-6-4-Bill-of-materials-BOM-885a34e3b9884be0b69cd30eba7c618b?d=32ea41e705fb460c99f63ad7c1ef6043#3531017a765f43868ca2cadf7133ef1b>
+After the issue was fixed, copied content containing a valid white-space property now retains its original formatting when pasted in {productname}.
 
-[6]: <https://github.com/tinymce/powerpaste2/blob/main/CHANGELOG.md>
+==== Lists of different nesting levels should not be under different OLs but merged into the same OL
+//#TINY-9333
+// Powerpaste
 
-[7]: <https://github.com/tinymce/powerpaste2/commits/main>
-////
+// Cause
+// Consequence
+// Fix
+// Result
 
+==== Nested lists result is incorrect numbering when pasting from word
+//#TINY-6446
+// Powerpaste
+
+// Cause
+// Consequence
+// Fix
+// Result
 
 For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
 
@@ -1144,14 +1154,6 @@ In previous versions of {productname}, it was discovered that nonbreaking spaces
 
 This issue caused not only confusion with the intended text layout, but impacted the overall user experience. To resolve this issue, {productname} introduced a fix to ensure that all invisible characters, including nonbreaking spaces, are accurately displayed when the plugin is enabled.
 
-=== White-space style property stripped from copied Excel content by word import
-//#TINY-9607
-// Powerpaste
-
-The white-space style property, which determines how white space characters are handled in HTML, was causing issues when content was copied from Excel and pasted into the {productname} editor. The problem occurred in Chrome and Firefox, but was not visable in Safari. Upon import, the white-space style property was being stripped from the content, resulting in a loss of formatting.
-
-After the issue was fixed, copied content containing a valid white-space property now retains its original formatting when pasted in {productname}.
-
 === Non breaking space is added after backspace below text pattern heading
 //#TINY-9603
 
@@ -1226,26 +1228,8 @@ In {productname} v6.4, pressing backspace after adding a Text Pattern, now forma
 // Fix
 // Result
 
-=== Lists of different nesting levels should not be under different OLs but merged into the same OL
-//#TINY-9333
-// Powerpaste
-
-// Cause
-// Consequence
-// Fix
-// Result
-
 === Editor increases the height indefinitely when using autoresize with content_css document
 //#TINY-8872
-
-// Cause
-// Consequence
-// Fix
-// Result
-
-=== Nested lists result is incorrect numbering when pasting from word
-//#TINY-6446
-// Powerpaste
 
 // Cause
 // Consequence

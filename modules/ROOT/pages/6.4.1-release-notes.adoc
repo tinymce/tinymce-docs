@@ -465,27 +465,22 @@ This change should have no impact on customer integrations, even those implement
 === New isEditable API to editor.selection that returns true or false if the current selection is editable
 //#TINY-9462
 
-In previous versions of {productname}, elements that where within the `editor.selection` could be modified, if they sat within a HTML document body with the properties set to `contenteditable="false"`.
+In previous versions of {productname}, when the body was set to `contenteditable="false"` content could still be inserted with the `insertContent` API.
 
-As a consequence, any `selection | node`, that was encapsulate within the editor body, could be affected by this such as:
+Example content:
+[source, HTML]
+----
+<body contenteditable="false"><p>Try to insert content here</p></body>
+----
 
-Expected output example:
+After selecting the space between "insert" and "content", executing `tinymce.activeEditor.insertContent('text')` would incorrectly insert the text which should not be possible.
 
 [source, HTML]
 ----
-<p>Try to insert content here</p>
+<body contenteditable="false"><p>Try to inserttextcontent here</p></body>
 ----
 
-After executing an `onclick` event within the current `selection | node` using `<button onclick="tinymce.activeEditor.insertContent('text')">insertContent</button>`, the output would modify the existing `contenteditable="false";` element, which should not be possible.
-
-[source, HTML]
-----
-<p>Try to insert text content here</p>
-----
-
-The new additions and improvements with the introduction of {productname} 6.4.1, include a new `isEditable` API been added to the `editor.selection` which now blocks the `editor.insertContent` API and `mceInsertContent` command when the contents return a `true` value if the editor detects the element is a `contenteditable="false";` element in a `contenteditable="false";` root.
-
-As a result, any `editor.selection` elements that return a `true` value when a specified element is `contenteditable="true"`, will call the new `isEditable` API to execute the new blocker.
+{productname} 6.4 includes a new `isEditable` method on both the `editor.selection` and `editor.dom` APIs which are used to block the `editor.insertContent` API and `mceInsertContent` command when the selection covers a `contenteditable="false"` element.
 
 === New `editor.dom.isEditable` and `editor.selection.isEditable` APIs that returns whether the specified node is editable
 //#TINY-9462

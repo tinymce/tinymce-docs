@@ -153,32 +153,27 @@ For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tag
 
 The {productname} 6.4 release includes an accompanying release of the **PowerPaste** premium plugin.
 
-**PowerPaste** 6.1.4 includes the following fixes, additions, and improvements.
+**PowerPaste** 6.1.4 includes the following fixes.
 
 ==== White-space style property stripped from copied Excel content by word import
 //#TINY-9607
 
 The white-space style property, which determines how white space characters are handled in HTML, was causing issues when content was copied from Excel and pasted into the {productname} editor. The problem occurred in Chrome and Firefox, but was not visable in Safari. Upon import, the white-space style property was being stripped from the content, resulting in a loss of formatting.
 
-After the issue was fixed, copied content containing a valid white-space property now retains its original formatting when pasted in {productname}.
+With this release, the issue has been fixed. Copied content containing a valid white-space property now retains its original formatting when pasted in {productname}.
 
-==== Lists of different nesting levels should not be under different OLs but merged into the same OL
-//#TINY-9333
-// Powerpaste
-
-// Cause
-// Consequence
-// Fix
-// Result
-
-==== Nested lists result is incorrect numbering when pasting from word
+==== Lists separated by empty paragraphs resulted in incorrect numbering when pasted from Microsoft Word
 //#TINY-6446
-// Powerpaste
 
-// Cause
-// Consequence
-// Fix
-// Result
+
+Previously, when an ordered list, with nested elements, that also included blank lines between list items was copied from Microsoft Word and pasted into a {productname} editor instance, the numbering of the pasted-in list was incorrect.
+
+In pasting, the PowerPaste plugin made two errors:
+
+. it incorrectly incremented outer list items where these increments should have only applied to nested items; and
+. it incorrectly joined the nested list item numbering.
+
+This update corrects both these errors. Pasting lists from Microsoft Word into a {productname} editor now shows the correct numbering in the pasted list, even when the list includes non-list paragraphs between list items.
 
 For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
 

@@ -89,21 +89,6 @@ In {productname}, the typography toolbar button is now disabled when the editor 
 
 For information on the **Advanced Typography** plugin, see: xref:advanced-typography.adoc[Advanced Typography].
 
-////
-Be wary of the version number listed above.
-
-To quote my [comment, left on the TinyMCE 6.4 BoM][0] in Notion:
-
-> Given the five changes in the Unreleased section of the Advanced
-> Typography plugin’s [changelog][1], is it sensible to assume this plugin
-> is getting a version bump?
-
-[0]: <https://notion.so/TinyMCE-6-4-Bill-of-materials-BOM-885a34e3b9884be0b69cd30eba7c618b?d=5267c02d507140c2882a18c2a9c7c753#0067a51f89bc45f1a99cc1b80a6e7a39>
-
-[1]: <https://github.com/tinymce/typography/blob/main/CHANGELOG.md>
-////
-
-
 === Checklist 2.0.4
 
 The {productname} 6.4 release includes an accompanying release of the **Checklist** premium plugin.
@@ -199,22 +184,16 @@ For information on the **Comments** plugin, see: xref:introduction-to-tiny-comme
 
 The {productname} 6.4 release includes an accompanying release of the **Enhanced Media Embed** premium plugin.
 
-**Enhanced Media Embed** 3.1.1 includes the following fixes, additions, and improvements.
+**Enhanced Media Embed** 3.1.1 includes the following addition.
 
-////
-To quote my [comment, left on the TinyMCE 6.4 BoM][8] in Notion
+==== The aspect ratio of media embed elements was not maintained
+//#TINY-8714
 
-> What changes were made to the Enhanced Media Embed plugin? The
-> [changelog][9] contains no entries beyond 2022-09-08 and the only [commits
-> this year][10] have been dependabot bumps or back-end changes.
+Previously, when a URL pointing to a media element (eg a URL pointing to a video hosted on YouTube) was pasted in to {productname}, and the **Return**  key was pressed to convert the URL string into an embedded media element, the aspect-ratio of the embedded element was not preserved.
 
-[8]: <https://notion.so/TinyMCE-6-4-Bill-of-materials-BOM-885a34e3b9884be0b69cd30eba7c618b?d=1c6d570eebbf4a8697d959425fa02808#476b7ddffb464f6c8ffbe9e98db4af84>
+With this update, Enhanced Media Embed now wraps media elements in a responsive `<div>` container and moves the controlling `max-width` property to this outer container.
 
-[9]: <https://github.com/tinymce/pillow/blob/main/CHANGELOG.md>
-
-[10]: <https://github.com/tinymce/pillow/commits/main>
-////
-
+This allows the embedded element to maintain its aspect ratio, as expected.
 
 For information on the **Enhanced Media Embed** plugin, see: xref:introduction-to-mediaembed.adoc[Introduction to Enhanced Media Embed].
 

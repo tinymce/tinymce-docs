@@ -274,11 +274,9 @@ The {productname} 6.4 release includes an accompanying release of the **Spell Ch
 ==== Spelling plugin can crash the service
 //#TINY-9391
 
-Previously, the Spell Checker Pro service could be crashed by large requests or by the Spell Checker Pro server not being able to manage the number of requests made in a given time. This latter issue could be exacerbated by the plugin immediately re-sending a failed query.
+Previously, the Spell Checker Pro plugin would request each word in the content, and repeatedly request these words every time the spellchecker was activated. This resulted in duplicate words being requested during regular use of the plugin.
 
-With this update, Spell Checker Pro now caches outgoing and in-queue requests; filters duplicate requests; and retrieves returned responses for duplicate queries from the cache.
-
-This both limits and reduces the number of requests made to the Spell Checker Pro service, improving the reliability of the service and the plugin.
+With this update, Spell Checker Pro now only sends requests to the spelling service for each unique word and caches these results for later retrieval. This greatly reduces the amount and size of requests sent by the plugin during regular use.
 
 For information on the **Spell Checker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Introduction to Spell Checker Pro].
 

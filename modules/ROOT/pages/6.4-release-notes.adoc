@@ -471,7 +471,8 @@ This means that users can now specify the UOM in the `tinymce.init` config by co
 ----
 tinymce.init({
     selector: "textarea",
-    toolbar: "fontsizeinput", "font_size_input_default_unit": "em",
+    toolbar: "fontsizeinput",
+    font_size_input_default_unit: "em"
 });
 ----
 

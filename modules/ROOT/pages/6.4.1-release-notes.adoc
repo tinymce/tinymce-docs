@@ -931,7 +931,7 @@ In {productname} 6.4.1, elements with `contenteditable="false"` attributes can n
 </div>
 ----
 
-=== Ranged deletion of formatted text using selection or keyboard shortcut would sometimes cause Blink and Webkit browsers to insert interpreted tags upon typing, which may result in inconsistent tags
+=== Ranged deletion of formatted text using selection or keyboard shortcut would sometimes cause Blink and Webkit browsers to recreate tags upon typing, which may result in inconsistent tags
 //#TINY-9302
 
 Blink & Webkit browsers (Chrome & Safari) were deleting the contents of inline formats which would cause the format to be lost and not retained. As a consequence, this issue would impact the semantics and visuals for the *HTML* document, which is not be visible to the user.

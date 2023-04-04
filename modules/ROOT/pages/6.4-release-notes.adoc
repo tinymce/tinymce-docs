@@ -1182,11 +1182,9 @@ In {productname} 6.4, this bug has been fixed.
 === Toolbar doesn't hide when editor is out of view in scrollable container
 //#TINY-9652
 
-In previous versions of {productname}, the toolbar would remain visible even when the editor was out of view within a scrollable container.
+In previous versions of {productname}, when the editor is within a scrollable container, the toolbar would remain visible when the editor is scrolled out of view.
 
-To fix this issue, {productname} added improvements to the scrollable container that included changing the logic of the visibility function for the toolbar when the `ui_mode` is set to 'split'.
-
-With the release of {productname} 6.4, this issue has been resolved. Now, when the editor is out of view within a scrollable container, the toolbar will hide appropriately.
+With the release of {productname} 6.4, the new `ui_mode` option provides improvements to editors within scrollable contexts, including hiding the toolbar when the editor is out of view when the `ui_mode` option is set to 'split'.
 
 === `color_cols`: 0 Memory Leak
 //#TINY-9649

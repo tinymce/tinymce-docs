@@ -801,7 +801,7 @@ The quickbar was displaying incorrectly during a drag and drop `action` for cont
 
 To fix this bug, {productname} 6.4 added a new check to identify when the user is dragging a contenteditable="false" element, which blocks the quickbar from rendering.
 
-As a result, the quickbar no longer opens in {productname} v6.4+, when the user is dragging a contenteditable="false" elements.
+As a result, the quickbar no longer opens in {productname} v6.4, when the user is dragging a contenteditable="false" elements.
 
 === Selection of images, hr, tables or noneditable elements was possible if they were within a noneditable element
 //#TINY-9473

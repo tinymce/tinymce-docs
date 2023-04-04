@@ -1,6 +1,6 @@
-= TinyMCE 6.4
-:navtitle: TinyMCE 6.4
-:description: Release notes for TinyMCE 6.4
+= TinyMCE 6.4.1
+:navtitle: TinyMCE 6.4.1
+:description: Release notes for TinyMCE 6.4.1
 :keywords: releasenotes, new, changes, bugfixes
 :page-toclevels: 1
 
@@ -9,7 +9,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[overview]]
 == Overview
 
-{productname} 6.4 was released for {enterpriseversion} and {cloudname} on Tuesday, April 4^th^, 2023. It includes {productname} 6.4, additional changes to Premium plugins, and a new Premium plugin, Advanced Template. These release notes provide an overview of the changes for {productname} 6.4:
+{productname} 6.4.1 was released for {enterpriseversion} and {cloudname} on Tuesday, April 4^th^, 2023. It includes {productname} 6.4.1, additional changes to Premium plugins, and a new Premium plugin, Advanced Template. These release notes provide an overview of the changes for {productname} 6.4.1:
 
 * xref:new-premium-plugin[New Premium Plugin]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
@@ -22,12 +22,14 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:known-issues[Known issues] -- leave until closer to 2023-03-15 and remove or make visible as appropriate.
 // NB: edit the equivalent section of nav.adoc when the remove or make visible decision is made.
 
+NOTE: Although there was a Community release of {productname} 6.4, it was not released as an {enterpriseversion} or {cloudname} release. The first commercially supported release of {productname} post version 6.3.2 is {productname} 6.4.1.
+
 [[new-premium-plugin]]
 == New Premium Plugin
 
 === Advanced Template 1.1.0
 
-The {productname} 6.4 release includes the release of a new premium plugin: **Advanced Template**.
+The {productname} 6.4.1 release includes the release of a new premium plugin: **Advanced Template**.
 
 The **Advanced Template** Premium plugin enables the creation of complex, interactive templates using {productname}.
 
@@ -41,11 +43,11 @@ For information on the **Advanced Template** plugin, see: xref:advanced-template
 [[accompanying-premium-plugin-changes]]
 == Accompanying Premium Plugin changes
 
-The following premium plugin updates were released alongside {productname} 6.4.
+The following premium plugin updates were released alongside {productname} 6.4.1.
 
 === Accessibility Checker 3.1.1
 
-The {productname} 6.4 release includes an accompanying release of the **Accessibility Checker** premium plugin.
+The {productname} 6.4.1 release includes an accompanying release of the **Accessibility Checker** premium plugin.
 
 **Accessibility Checker** 3.1.1 includes the following addition:
 
@@ -61,7 +63,7 @@ For information on the **Accessibility Checker** plugin, see xref:a11ychecker.ad
 
 === Advanced Code Editor 3.2.1
 
-The {productname} 6.4 release includes an accompanying release of the **Advanced Code Editor** premium plugin.
+The {productname} 6.4.1 release includes an accompanying release of the **Advanced Code Editor** premium plugin.
 
 **Advanced Code Editor** 3.2.1 includes the following improvements and additions.
 
@@ -86,7 +88,7 @@ NOTE: For the Advanced Code Editor to offer a full-screen mode requires the xref
 
 === Advanced Table 2.0.3
 
-The {productname} 6.4 release includes an accompanying release of the **Advanced Table** premium plugin.
+The {productname} 6.4.1 release includes an accompanying release of the **Advanced Table** premium plugin.
 
 **Advanced Table** 2.0.3 includes the following addition:
 
@@ -102,7 +104,7 @@ For information on the **Advanced Table** plugin, see xref:advtable.adoc[Advance
 
 === Advanced Typography 1.1.1
 
-The {productname} 6.4 release includes an accompanying release of the **Advanced Typography** premium plugin.
+The {productname} 6.4.1 release includes an accompanying release of the **Advanced Typography** premium plugin.
 
 **Advanced Typography** 1.1.1 includes the following fixes, additions, and improvements.
 
@@ -118,21 +120,21 @@ As demonstrated in the example above, an unintentional or redundant space was in
 
 {productname} fixed the issue by changing the sequence of executing safe and unsafe rules surrounding Typography.
 
-In {productname} version 6.4, the Smart Typography plugin no longer creates a space between a comma and a closing double-quote mark.
+In {productname} 6.4.1, the Smart Typography plugin no longer creates a space between a comma and a closing double-quote mark.
 
 === Added functionality to remove spaces between exclamation marks
 //#TINY-9398		
 
 An issue was discovered that affected the typography plugin in previous versions of {productname} when inserting content into the editor. Specifically, the issue involved exclamation marks and the spaces between them, such as in the example `“Hello! !“`. This issue prevented the editor from removing the spaces between the double *exclamation marks* `! !` after executing the typography plugin toolbar or menubar button.
 
-In {productname} 6.4, spaces are now removed between exclamation marks `!!` for formatted HTML documents when the typography plugin is used. To learn more about Advanced Typography and how to add this new premium plugin to your project, please refer xref:advanced-typography.adoc[Advanced Typography].
+In {productname} 6.4.1, spaces are now removed between exclamation marks `!!` for formatted HTML documents when the typography plugin is used. To learn more about Advanced Typography and how to add this new premium plugin to your project, please refer xref:advanced-typography.adoc[Advanced Typography].
 
 === Added **Advanced Typography** to the default menubar
 //#TINY-9450		
 
 In the previous version of {productname}, the typography menu item was *not* available in the `**Tools**` menu from the `menubar` by default.
 
-In {productname} 6.4, the typography menu item will display in the `**Tools**` menu by default, given that the `typography_default_lang` option is set.
+In {productname} 6.4.1, the typography menu item will display in the `**Tools**` menu by default, given that the `typography_default_lang` option is set.
 
 === Typography button and menu item will be disabled if editor has no content
 //#TINY-9441
@@ -148,7 +150,7 @@ For information on the **Advanced Typography** plugin, see: xref:advanced-typogr
 
 === Checklist 2.0.4
 
-The {productname} 6.4 release includes an accompanying release of the **Checklist** premium plugin.
+The {productname} 6.4.1 release includes an accompanying release of the **Checklist** premium plugin.
 
 **Checklist** 2.0.4 includes the following fix.
 
@@ -157,7 +159,7 @@ The {productname} 6.4 release includes an accompanying release of the **Checklis
 
 In previous versions of {productname}, a formatting issue was found while working with checklists on formatted lists and unordered lists. This issue resulted in incorrect formatting of certain elements when a selection contained a mix of list elements.
 
-In {productname} 6.4, this issue has been addressed.
+In {productname} 6.4.1, this issue has been addressed.
 
 Applying checklists on a selection that includes lists now converts the selected items into checklists, as expected.
 
@@ -166,7 +168,7 @@ For information on the **Checklist** plugin, see: xref:checklist.adoc[Checklist]
 
 === Merge Tags 1.2.1
 
-The {productname} 6.4 release includes an accompanying release of the **Merge Tags** premium plugin.
+The {productname} 6.4.1 release includes an accompanying release of the **Merge Tags** premium plugin.
 
 **Merge Tags** 1.2.1 includes the following change.
 
@@ -175,7 +177,7 @@ The {productname} 6.4 release includes an accompanying release of the **Merge Ta
 
 In previous versions of {productname}, content which exceeded the character limit for Merge Tags was removed when surrounded by the configured Merge Tag prefix and suffix.
 
-In {productname} 6.4 this content is retained, as well as the prefix and suffix, though it is not converted into a Merge Tag.
+In {productname} 6.4.1 this content is retained, as well as the prefix and suffix, though it is not converted into a Merge Tag.
 
 [NOTE]
 Any content exceeding the character limit for Merge Tags will be converted into a Merge Tag.
@@ -185,7 +187,7 @@ For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tag
 
 === PowerPaste 6.1.4
 
-The {productname} 6.4 release includes an accompanying release of the **PowerPaste** premium plugin.
+The {productname} 6.4.1 release includes an accompanying release of the **PowerPaste** premium plugin.
 
 **PowerPaste** 6.1.4 includes the following fixes.
 
@@ -213,7 +215,7 @@ For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpas
 
 === Comments 3.3.1
 
-The {productname} 6.4 release includes an accompanying release of the **Comments** premium plugin.
+The {productname} 6.4.1 release includes an accompanying release of the **Comments** premium plugin.
 
 **Comments** 3.3.1 includes the following fix.
 
@@ -229,14 +231,14 @@ To fix this issue, {productname} introduced two changes which improved the way t
 . Updates to the max height for the **Comment** input box, which now prevents long comments from expanding the box indefinitely beyond the editor set `bounds`. 
 . Set new heights for the **Comment** containers that is focused on improving the visibility of long comments by containing them within a smaller scrolling space with the added benefit of `SHOW MORE` or `SHOW LESS`.
 
-As a result, the input box for the **Comments** premium plugin now offers these improvements with the most recent release of {productname} 6.4.
+As a result, the input box for the **Comments** premium plugin now offers these improvements with the most recent release of {productname} 6.4.1.
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to Tiny Comments].
 
 
 === Enhanced Media Embed 3.1.1
 
-The {productname} 6.4 release includes an accompanying release of the **Enhanced Media Embed** premium plugin.
+The {productname} 6.4.1 release includes an accompanying release of the **Enhanced Media Embed** premium plugin.
 
 **Enhanced Media Embed** 3.1.1 includes the following addition.
 
@@ -254,7 +256,7 @@ For information on the **Enhanced Media Embed** plugin, see: xref:introduction-t
 
 === Mentions 3.0.4
 
-The {productname} 6.4 release includes an accompanyin release of the **Mentions** premium plugin.
+The {productname} 6.4.1 release includes an accompanyin release of the **Mentions** premium plugin.
 
 **Mentions** 3.0.4 includes the following fix:
 
@@ -276,7 +278,7 @@ For information on the **Mentions** plugin, see xref:mentions.adoc[Mentions].
 
 === Merge Tags 1.2.1
 
-The {productname} 6.4 release includes an accompanying release of the **Merge Tags** premium plugin.
+The {productname} 6.4.1 release includes an accompanying release of the **Merge Tags** premium plugin.
 
 **Merge Tags** 1.2.1 includes the following change.
 
@@ -287,7 +289,7 @@ In previous versions of {productname}, the `mceMergeTag` command would not wrap 
 
 As a consequence, when the `text_patterns` feature was enabled and a user entered a too-long merge tag, the prefix and suffix of the tag were excluded from the inserted content.
 
-To address this problem, improvements to the `mceMergeTag` command were introduced with the release of {productname} 6.4. Now, if the length of the selected content exceeds the character limit for the merge tag, the content will be inserted as a plain text, including the prefix and suffix.
+To address this problem, improvements to the `mceMergeTag` command were introduced with the release of {productname} 6.4.1. Now, if the length of the selected content exceeds the character limit for the merge tag, the content will be inserted as a plain text, including the prefix and suffix.
 
 [NOTE]
 If any content is embraced with a merge tag prefix and suffix but exceeds the character limit for merge tag content length, it will not be converted into an official merge tag.
@@ -297,7 +299,7 @@ For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tag
 
 === Page Embed 2.1.1
 
-The {productname} 6.4 release includes an accompanying release of the **Page Embed** premium plugin.
+The {productname} 6.4.1 release includes an accompanying release of the **Page Embed** premium plugin.
 
 **Page Embed** 2.1.1 includes the following addition:
 
@@ -313,7 +315,7 @@ For information on the **Page Embed** plugin, see xref:pageembed.adoc[Page Embed
 
 === Permanent Pen 2.0.3
 
-The {productname} 6.4 release includes an accompanying release of the **Permanent Pen** premium plugin.
+The {productname} 6.4.1 release includes an accompanying release of the **Permanent Pen** premium plugin.
 
 **Permanent Pen** 2.0.3 includes the following addition:
 
@@ -329,7 +331,7 @@ For information on the **Permanent Pen** plugin, see xref:permanentpen.adoc[Perm
 
 === PowerPaste 6.1.4
 
-The {productname} 6.4 release includes an accompanying release of the **PowerPaste** premium plugin.
+The {productname} 6.4.1 release includes an accompanying release of the **PowerPaste** premium plugin.
 
 **PowerPaste** 6.1.4 includes the following fixes.
 
@@ -358,7 +360,7 @@ For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpas
 
 === Spell Checker Pro 3.2.1
 
-The {productname} 6.4 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
+The {productname} 6.4.1 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
 
 **Spell Checker Pro** 3.2.1 includes the following fix.
 
@@ -385,13 +387,13 @@ TinyMCE’s xref:rtc-introduction.adoc[Real-time Collaboration (RTC)] plugin wil
 [[accompanying-premium-skins-and-icon-packs-changes]]
 == Accompanying Premium Skins and Icon Packs changes
 
-The {productname} 6.4 release includes an accompanying release of the **Premium Skins and Icon Packs**.
+The {productname} 6.4.1 release includes an accompanying release of the **Premium Skins and Icon Packs**.
 
 === Premium Skins and Icon Packs
 
 The **Premium Skins and Icon Packs** release includes the following updates:
 
-The **Premium Skins and Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} 6.4 skin, Oxide.
+The **Premium Skins and Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} 6.4.1 skin, Oxide.
 
 For information on using premium skins and icon packs, see: xref:premium-skins-and-icons.adoc[Premium Skins and Icon Packs].
 
@@ -399,16 +401,16 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 [[improvements]]
 == Improvements
 
-{productname} 6.4 also includes the following improvements:
+{productname} 6.4.1 also includes the following improvements:
 
 === Direct invalid child text nodes of list elements will be wrapped in list item elements.
 //#TINY-4818
 
 Invalid child nodes were throwing a `Uncaught TypeError:` when `<ol>` tags directly included a text node. This `TypeError` would not allow the user to `Tab` a text node while nested within `<ol>/<li>` HTML tags.
 
-Improvements were made to add a content filter for lists within {productname} 6.4. This improvement meant that any _invalid child nodes_ nested within `<li>` elements would be wrapped with this filter to avoid the `Uncaught TypeError:`.
+Improvements were made to add a content filter for lists within {productname} 6.4.1. This improvement meant that any _invalid child nodes_ nested within `<li>` elements would be wrapped with this filter to avoid the `Uncaught TypeError:`.
 
-In {productname} 6.4, direct _invalid child text nodes_ of list elements are now wrapped in list item elements, which allow the user to now `Tab` nested text nodes that are within `<ol>/<li>` tags.
+In {productname} 6.4.1, direct _invalid child text nodes_ of list elements are now wrapped in list item elements, which allow the user to now `Tab` nested text nodes that are within `<ol>/<li>` tags.
 
 === Templates will be parsed before preview and insertion to make preview consistent with inserted template content and prevent XSS
 //#TINY-9244
@@ -418,14 +420,14 @@ As a consequence, the Templates plugin would not automatically format or sanitis
 
 To prevent this from happening, {productname} made improvements to the Template plugin that now sanitises content when retrieving preview content, and again before running `editor.dom.create` on it during the template insertion action. By doing this, all preview content will now match the template when it is inserted into the editor, which removed the possibility of any XSS issues arising.
 
-In {productname} 6.4, Templates are now parsed before preview and insertion to make preview consistent with inserted template content and prevent XSS from occuring.
+In {productname} 6.4.1, Templates are now parsed before preview and insertion to make preview consistent with inserted template content and prevent XSS from occuring.
 
 === Pressing backspace in an empty line now preserves formatting in a previous empty line
 //#TINY-9454
 
 In previous versions of {productname}, when pressing backspace in an empty line with another empty line containing inline formats above it, the deletion handler was found to be first removing both lines and then inserting a newline. As a consequence, the existing inline formats of the previous empty line was not preserved.
 
-In {productname} 6.4, pressing backspace in an empty line now preserves the inline formats of the previous empty line.
+In {productname} 6.4.1, pressing backspace in an empty line now preserves the inline formats of the previous empty line.
 
 === Pressing enter inside the `fontsizeinput` input would not move the focus back into the editor content
 //#TINY-9598
@@ -436,13 +438,13 @@ As a consequence, any changes made to the font size within the new toolbar input
 
 After some improvements to the `fontsizeinput` toolbar item, pressing enter in the input field now sets the focus back to the {productname} editor viewport, which allows the new font size to be used. 
 
-In {productname} 6.4, pressing enter inside the `fontsizeinput` input now returns the focus back to the editor content body.
+In {productname} 6.4.1, pressing enter inside the `fontsizeinput` input now returns the focus back to the editor content body.
 
 
 [[additions]]
 == Additions
 
-{productname} 6.4 also includes the following additions:
+{productname} 6.4.1 also includes the following additions:
 
 === New tree component that can be used in dialog body panel
 //#TINY-9532
@@ -451,12 +453,12 @@ A new tree component has been created to support the *Advanced Template* premium
 
 This tree component is limited to *one* level and is used in the dialog body panel to allow users to organize templates into levels for better UI. The tree component is designed to create a visual representation of the hierarchical structure for the template system, which allows users to easily identify the various templates and levels within each catagory, giving users the ability to quickly and easily navigate through the templates, and select the right one for their needs.
 
-This new tree component is an important addition to the new Premium Plugin: *Advanced Templates*, which is now available as a premium plugin with editors running {productname} v6.4+.
+This new tree component is an important addition to the new Premium Plugin: *Advanced Templates*, which is now available as a premium plugin with editors running {productname} 6.4.1 or later.
 
 === renderUI property in the Theme type can now return a Promise <RenderResult> instead of RenderResult
 //#TINY-9556
 
-In earlier versions of {productname} the `renderUI` function which initiates theme rendering did not wait for the CSS to load. This could cause race conditions with other parts of the editor or customer integrations. As a result {productname} 6.4 now waits for a CSS load event before returning from the `renderUI` function. This process necessitates changing the return type of the `renderUI` function; it now returns a `Promise<RenderResult>`. The type is `Promise<RenderResult> | RenderResult` for compatibility, but the `silver` theme always returns a promise.
+In earlier versions of {productname} the `renderUI` function which initiates theme rendering did not wait for the CSS to load. This could cause race conditions with other parts of the editor or customer integrations. As a result {productname} 6.4.1 now waits for a CSS load event before returning from the `renderUI` function. This process necessitates changing the return type of the `renderUI` function; it now returns a `Promise<RenderResult>`. The type is `Promise<RenderResult> | RenderResult` for compatibility, but the `silver` theme always returns a promise.
 
 This change should have no impact on customer integrations, even those implementing custom themes.
 
@@ -481,7 +483,7 @@ After executing an `onclick` event within the current `selection | node` using `
 <p>Try to insert text content here</p>
 ----
 
-The new additions and improvements with the introduction of {productname} 6.4, include a new `isEditable` API been added to the `editor.selection` which now blocks the `editor.insertContent` API and `mceInsertContent` command when the contents return a `true` value if the editor detects the element is a `contenteditable="false";` element in a `contenteditable="false";` root.
+The new additions and improvements with the introduction of {productname} 6.4.1, include a new `isEditable` API been added to the `editor.selection` which now blocks the `editor.insertContent` API and `mceInsertContent` command when the contents return a `true` value if the editor detects the element is a `contenteditable="false";` element in a `contenteditable="false";` root.
 
 As a result, any `editor.selection` elements that return a `true` value when a specified element is `contenteditable="true"`, will call the new `isEditable` API to execute the new blocker.
 
@@ -492,7 +494,7 @@ In previous versions of {productname}, elements within a `contenteditable="false
 
 As a consequence all elements within the root `body` set to `contenteditable="false";` value, were affected by the issue.
 
-The new additions and improvements with the introduction of {productname} 6.4, include a new `isEditable` API been added to the `editor.dom` which now blocks the `editor.insertContent` API and `mceInsertContent` command when the contents return a `true` value if the editor detects the element is a `contenteditable="false";` in a `contenteditable="false";` root.
+The new additions and improvements with the introduction of {productname} 6.4.1, include a new `isEditable` API been added to the `editor.dom` which now blocks the `editor.insertContent` API and `mceInsertContent` command when the contents return a `true` value if the editor detects the element is a `contenteditable="false";` in a `contenteditable="false";` root.
 
 As a result, any elements that return a `true` value when a specified element is `contenteditable="true"`, will call the new `isEditable` API to action the new blocker to ensure `contenteditable="false";` elements cannot be modified when they are within a root that is set to `contenteditable="false"`.
 
@@ -501,12 +503,12 @@ As a result, any elements that return a `true` value when a specified element is
 
 In previous versions of {productname}, it was not possible to change the `text` or `icon` of a toolbar button after it had been set for the first time. As a consequence, the menu and toolbar button API, would not extend or update the parent `icon` or `text` directly, based upon what the user had selected within the menubar or toolbar.
 
-In {productname} 6.4, two new additions were added to the menu button API.
+In {productname} 6.4.1, two new additions were added to the menu button API.
 
 . Added `setText` and `setIcon` properties to both the toolbar button `api`, and menu button `api`.
 . Provided the menu button `api` property as an *argument* which will fetch a function that will allow menu items to change the `icon` or `text` of the parent menu button.
 
-As a result, in {productname} 6.4, menu items can change based on the parent menu button `api` properties.
+As a result, in {productname} 6.4.1, menu items can change based on the parent menu button `api` properties.
 
 === New `highlight_on_focus` option which enables highlighting the content area on focus
 //#TINY-9277
@@ -515,7 +517,7 @@ In previous versions of {productname}, the highlighted border around the editor 
 
 As a consequence, this issue, whilst creating no impending impacts on the functionality of the editor, created issues for users that rely on accessibility features such as this.
 
-To fix this issue, {productname} 6.4, introduced some improvements to ensure that when the editor content window is `infocus`, the editor will render a visible `highlighted` border around the content window when the below option is added to the `tinymce.init()` config.
+To fix this issue, {productname} 6.4.1, introduced some improvements to ensure that when the editor content window is `infocus`, the editor will render a visible `highlighted` border around the content window when the below option is added to the `tinymce.init()` config.
 
 .Setting `highlight_on_focus: true` option to tinymce.init().
 [source, js]
@@ -528,7 +530,7 @@ tinymce.init({
 });
 ----
 
-In {productname} 6.4, when the ` highlight_on_focus: true` option is set, the editor will render the highlighted border for the active editor window.
+In {productname} 6.4.1, when the ` highlight_on_focus: true` option is set, the editor will render the highlighted border for the active editor window.
 
 === New fontsizeinput toolbar item which allows the user to set the size via input and also increase and decrease it with + and - buttons
 //#TINY-9429
@@ -554,7 +556,7 @@ More details about this component and the possible values that can be used withi
 
 A focusing event that was in the initial *FloatingToolbarButton* config, in previous versions of {productname} in (2019) was causing `focus` issues with the *ToggleToolbarDrawer*. As a consequence, this meant that while the editor was been scrolled into `focus`(viewport position), and the *ToggleToolbarDrawer* command `skipFocus: boolean` was set, the toolbar draw could still take `focus` when It was not meant to.
 
-In {productname} 6.4, an improvement was made to the focusing `event` which is now removed after toggling the toolbar.
+In {productname} 6.4.1, an improvement was made to the focusing `event` which is now removed after toggling the toolbar.
 
 As a result to the fix, while the *FloatingToolbarButton* `focus` is initiated, the toolbar now focuses correctly without stealing `focus` when `skipFocus: 'boolean' is set.
 
@@ -581,18 +583,18 @@ As a result of this addition, this new option makes it easier and faster for use
 === New group and togglebutton in view
 //#TINY-9523
 
-The release of {productname} 6.4 provides users with new features, such as the improvements to the Advanced Code plugin dialog, which have introduced a group of new buttons to the view bar. A new togglable button has also been added, allowing users to change its icon and active status with the click of a button, and is available in both the modal footer and view header.
+The release of {productname} 6.4.1 provides users with new features, such as the improvements to the Advanced Code plugin dialog, which have introduced a group of new buttons to the view bar. A new togglable button has also been added, allowing users to change its icon and active status with the click of a button, and is available in both the modal footer and view header.
 
 Furthermore, this button can differentiate between text and icon, making it much more user friendly as it can show both instead of just the icon like a normal button.
 
-In {productname} 6.4, these new buttons are now available for the *Advanced Code* plugin dialog.
+In {productname} 6.4.1, these new buttons are now available for the *Advanced Code* plugin dialog.
 
 === New togglebutton in dialog footer buttons
 //#TINY-9523
 
 The {productname} modal footer and view header dialog have recently added a new improvement by introducing a new togglebutton. This togglebutton allows users to quickly and easily toggle between the footer buttons withing the dialog. This makes navigation easier and more efficient than having to manually search through menus and dropdowns. 
 
-The togglebutton is present in {productname} 6.4 and it helps users to simplify their navigation of the footer buttons dialog. With the introduction of this togglebutton, users are now able to access footer buttons in a more efficient manner. The new togglebutton is a great addition to the {productname} modal footer and view header dialog, as it greatly simplifies the navigation of the footer buttons dialog and increases the overall usability of the feature.
+The togglebutton is present in {productname} 6.4.1 and it helps users to simplify their navigation of the footer buttons dialog. With the introduction of this togglebutton, users are now able to access footer buttons in a more efficient manner. The new togglebutton is a great addition to the {productname} modal footer and view header dialog, as it greatly simplifies the navigation of the footer buttons dialog and increases the overall usability of the feature.
 
 === Added toggleFullscreen to dialog API
 //#TINY-9528
@@ -616,7 +618,7 @@ tinymce.init({
 
 As a result, the toggle button can be found in the top left corner of the Advanced Code Editor Premium toolbar. Once clicked, it will expand the dialog toolbar to fill the entire window, providing a more comprehensive view of the available options. A second click of the toggle button will return the dialog toolbar to its original size.
 
-This option is now available in {productname} 6.4, as part of the core/ui API.
+This option is now available in {productname} 6.4.1, as part of the core/ui API.
 
 === New text-size-increase and text-size-decrease icons
 //#TINY-9530
@@ -664,7 +666,7 @@ It is important to note that disabling sanitization introduces potential securit
 
 In previous versions of {productname}, the top right close 'x' button within the modal dialogs were not keyboard-navigable by the Tab key.
 
-With the latest release of {productname} 6.4, users can now navigate through all dialogs that have a `x` close button. With these updates, users can now use the `Tab` key to move through the elements within the modal dialogue, making it more accessible and user-friendly. 
+With the latest release of {productname} 6.4.1, users can now navigate through all dialogs that have a `x` close button. With these updates, users can now use the `Tab` key to move through the elements within the modal dialogue, making it more accessible and user-friendly. 
 
 This change is applied to all dialogs that have a `x` close button within {productname}.
 
@@ -680,12 +682,12 @@ This change is applied to all dialogs that have a `x` close button within {produ
 [NOTE]
 Its worth nothing that the expected result for the Alert and Confirm dialogs is that the `initial focus` is set on the most appropriate button when the dialog is opened; for example, the “OK” button for Alert dialogs, and the “Yes” button for Confirm dialogs.
 
-In {productname} 6.4, these new additions/improvements are now available.
+In {productname} 6.4.1, these new additions/improvements are now available.
 
 === New ui_mode option for editor in scrollable containers support
 //#TINY-9414
 
-A new `ui_mode: 'split'` option for scrollable containers has been introduced with the release of {productname} 6.4.
+A new `ui_mode: 'split'` option for scrollable containers has been introduced with the release of {productname} 6.4.1.
 
 This new option is designed to give users a better UX, by allowing them to navigate content within their editor easier with the use of the new ui_mode when integrated into their editors. This can be achieved by adding the `ui_mode: 'split'` option to the `tinymce.init()` within the `<script>` tags as below:
 
@@ -707,13 +709,13 @@ The docking behaviour of UI elements is usually only triggered when the page is 
 [NOTE]
 * If you're using classic mode and sticky toolbars, the toolbar will dock, but it won't be entirely visible in either the window or the scrollable element. This applies to both viewports.
 * In inline mode, the toolbar will also dock, but it won't be entirely visible in either the window or the scrollable element.
-* ShadowDom is partially supported in this case, where the scrollable container is inside the shadow Root. But in cases when the scrollable container is outside the shadow Root (or an ancestor of it) it is not currently supported within versions of {productname} 6.4 or prior.
+* ShadowDom is partially supported in this case, where the scrollable container is inside the shadow Root. But in cases when the scrollable container is outside the shadow Root (or an ancestor of it) it is not currently supported within versions of {productname} 6.4.1 or prior.
 
 
 [[changes]]
 == Changes
 
-{productname} 6.4 also incorporates the following changes:
+{productname} 6.4.1 also incorporates the following changes:
 
 === The link plugins context menu items will no longer appear for noneditable links
 //#TINY-9491
@@ -722,9 +724,9 @@ In previous versions of {productname}, the link plugin would display the context
 
 As a consequence, links such as `table of contents` would open the context menu when `clicked`. The behaviour for the `table of contents`, is not designed to allow links to be modified or removed as the `table of contents` plugin is considered as a `contenteditable="false"` element.
 
-To fix this bug, {productname} 6.4 introduced a new check that now verify if the link plugin is opened, which will now block the context menu on `table of contents` from opening upon when the `toc` is clicked. 
+To fix this bug, {productname} 6.4.1 introduced a new check that now verify if the link plugin is opened, which will now block the context menu on `table of contents` from opening upon when the `toc` is clicked. 
 
-As a result, the context menu for the `table of contents` now behaves as expected in {productname} 6.4.
+As a result, the context menu for the `table of contents` now behaves as expected in {productname} 6.4.1.
 
 === The formatting of contenteditable="false" elements are no longer cloned to new cells while creating new table rows
 //#TINY-9449
@@ -733,7 +735,7 @@ In previous versions of {productname}, contenteditable="false" elements such as 
 
 To correct this issue, {productname} added changes to the *clone logic*, to not copy the format for `contenteditable="false"` elements.
 
-In {productname} 6.4, the formatting of `contenteditable="false"` elements are no longer cloned to new cells while creating new table rows.
+In {productname} 6.4.1, the formatting of `contenteditable="false"` elements are no longer cloned to new cells while creating new table rows.
 
 === Changed the color of @dialog-table-border-color, and added right padding to the first cell of dialog table
 //#TINY-9380
@@ -742,7 +744,7 @@ An area for improvement was identified during an accessibility audit for the *he
 
 The consequence of the previous UX, meant that adjustments needed to be made to the horizontal lines within the *help menu* table, that seperate each `row`.
 
-To fix this accessibility issue, {productname} 6.4, increased the contrast ratio to `3:1` for each line divider for better visibility
+To fix this accessibility issue, {productname} 6.4.1, increased the contrast ratio to `3:1` for each line divider for better visibility
 
 As a result, the `help menu` is now styled to support a wider range of users, by these new changes implemented.
 
@@ -757,7 +759,7 @@ This is important as when a sidebar element is visible, it has an accessibility 
 
 To fix this issue, changes were made to the role attribute of the sidebar element, which is now set to `role="region"` when it's active state is visible, otherwise it defaults to `role="presentation"` when hidden.
 
-In {productname} 6.4, when the sidebar is either visible or hidden it now passes the accessibility test with Axe-DevTools.
+In {productname} 6.4.1, when the sidebar is either visible or hidden it now passes the accessibility test with Axe-DevTools.
 
 === Updated the Code Sample and Template plugin dropdown menu styles to match the default {productname} styles
 //#TINY-9630
@@ -770,7 +772,7 @@ With this update, these menus are now created using the equivalent {productname}
 [[bug-fixes]]
 == Bug fixes
 
-{productname} 6.4 also includes the following bug fixes:
+{productname} 6.4.1 also includes the following bug fixes:
 
 === Sometimes the editor would finish initializing before the theme would have finished loading
 //#TINY-9556
@@ -779,14 +781,14 @@ In earlier versions of {productname}, the properties set for the `renderUI`, cau
 
 To fix this bug, {productname}, made changes to the `renderUI` properties that allowed the theme type the to return a `Promise<RenderResult>` instead of `RenderResult`, which corrects the issues found previously. 
 
-In {productname} 6.4, all `renderUI` property loading issues have been resolved.
+In {productname} 6.4.1, all `renderUI` property loading issues have been resolved.
 
 === The searchreplace modal would close incorrectly when clicking outside of the alert that pops up when no match is found
 //#TINY-9443
 
 In previous versions of {productname}, the searchreplace modal would close incorrectly when clicking outside of the alert dialog. The expected behavior in previous versions was that an error dialog would open when **no <string> match** was found within the {productname} editor viewport. The identifying issue found was when the user would `click` outside of the error dialog, resulting in the `Find and Replace` modal to closes incorrectly.
 
-In {productname} 6.4, when a **no <string> match** occurs within the {productname} editor viewport, an error banner will render in the `Find and Replace` modal beneath the (Replace with) field.
+In {productname} 6.4.1, when a **no <string> match** occurs within the {productname} editor viewport, an error banner will render in the `Find and Replace` modal beneath the (Replace with) field.
 
 As a result the when the instance occurs where **no <string> match** is triggered, the user will be prompted with the following warning: *`Could not find the specified string`*.
 
@@ -797,16 +799,16 @@ In {productname} 6.3, when the https://www.tiny.cloud/docs/tinymce/6/6.3-release
 
 The regression meant the colors would not render inside the color palette to reflect the selected `color_map_foreground` and `color_map_background` stored. 
 
-In {productname} 6.4, when the color picker in the `toolbar` is updated when changing either the `forecolor` or `backcolor` from the `menubar`.
+In {productname} 6.4.1, when the color picker in the `toolbar` is updated when changing either the `forecolor` or `backcolor` from the `menubar`.
 
 === The onSetup api function would not run when defining custom group toolbar button
 //#TINY-9496
 
 A bug was discovered that affected the custom group toolbar button in {productname}, due to missing some event handlers. As a consequence, the `onSetup` api function would not run as intended when defining a custom group toolbar button.
 
-In {productname} 6.4, this bug was fixed by adding a handler to the toolbar group button that now calls the `api` as intended.
+In {productname} 6.4.1, this bug was fixed by adding a handler to the toolbar group button that now calls the `api` as intended.
 
-As a result, the `onSetup` function for custom group toolbar buttons now runs correctly in {productname} 6.4.
+As a result, the `onSetup` function for custom group toolbar buttons now runs correctly in {productname} 6.4.1.
 
 === An element could be dropped onto the descendants of an element with a `contenteditable="false"` attribute
 //#TINY-9364
@@ -815,7 +817,7 @@ In {productname} 6.0, the drag and drop `config` did not check some conditions s
 
 Fixes were made to ensure that `dragging | dropping` onto `contenteditable="false"` element targets on all browsers is `disabled`. This also includes when the drop target cursor is inside the `contenteditable="true"` element, or just before it.
 
-{productname} 6.4, now prevents the user from having the ability to drag and drop any descendants of a `contenteditable=false element` within another `contenteditable="false"` element.
+{productname} 6.4.1, now prevents the user from having the ability to drag and drop any descendants of a `contenteditable=false element` within another `contenteditable="false"` element.
 
 === Checkmark did not show in menu colorswatches
 //#TINY-9395
@@ -828,7 +830,7 @@ Previous versions of {productname} the known issue, (_https://www.tiny.cloud/doc
 
 To fix this bug, {productname} introduced a new variable to store the node `selection` and `color` format value, which then renders a checkmark to appear in both the toolbar and menubar for both the `forecolor` and `background` color.
 
-As a result, in {productname} 6.4, checkmarks now work as expected when using the color swatch in both the toolbar and menubar.
+As a result, in {productname} 6.4.1, checkmarks now work as expected when using the color swatch in both the toolbar and menubar.
 
 === The foreground and background menu icons would not properly update to display the last used color
 //#TINY-9497
@@ -837,16 +839,16 @@ In previous versions of {productname}, while the foreground and background icons
 
 To correct this, {productname} added a new set icon fill function to ensure that the icon is filled when a color is selected from the format menu.
 
-In {productname} 6.4, this issue has be rectified, which now ensures that the foreground and background menu icons now accurately reflects the previously selected color within the menu dropdown swatch.
+In {productname} 6.4.1, this issue has be rectified, which now ensures that the foreground and background menu icons now accurately reflects the previously selected color within the menu dropdown swatch.
 
 === Added new setIconFill function to editor.ui.addNestedMenuItem
 //#TINY-9497
 
-In previous versions of {productname} up until the changes and improvements made with the release of v6.4, the foreground and background menu icons would not properly update to display the last used color, as outlined in the above.
+In previous versions of {productname} up until the changes and improvements made with the release of 6.4.1, the foreground and background menu icons would not properly update to display the last used color, as outlined in the above.
 
 To facilitate this change, {productname} has added a new `setIconFill` function to the `editor.ui.addNestedMenuItem`, which allows users to set the fill color of an icon when the user selects an option from the format menu. This ensures that the menu icon changes to accurately reflect the user's selection.
 
-In {productname} 6.4, this new function allows the foreground and background menu icons to function as expected.
+In {productname} 6.4.1, this new function allows the foreground and background menu icons to function as expected.
 
 === Pasting links to text would sometimes not generate the correct undo stack on Safari
 //#TINY-9489
@@ -855,9 +857,9 @@ In previous versions of {productname}, pasting links to `text` selections in Saf
 
 This is due to Safari not supporting the ability to track changes to a page within the editor, which can create issues for users when pasting links to `text` selections, as the undo stack would not be able to recognise the link as a separate element, resulting in the undo action when called, to not remove the hyperlink.
 
-To fix this issue, a workaround was implemented in {productname} 6.4, that now bypasses the default paste functionality for this undo function.
+To fix this issue, a workaround was implemented in {productname} 6.4.1, that now bypasses the default paste functionality for this undo function.
 
-In {productname} 6.4, pasting links to text selections now generates the correct undo stack on Safari.
+In {productname} 6.4.1, pasting links to text selections now generates the correct undo stack on Safari.
 
 === Toolbar split buttons in *Advanced List* plugin to show the correct state when the cursor is in a checklist
 //#TINY-5167
@@ -866,25 +868,25 @@ In previous versions of {productname}, when a cursor was placed within a checkli
 
 To fix this issue, {productname} added improvements to the list configuration to checks a new set of conditionals which would determine if the `node` selected matched the parent `node` within the checklist. If the match returns as `true`, the (api) will set only the checklist icon to a `active` state.
 
-As a result, the checklist `icon` in {productname} 6.4, related to the `advlist` plugin will only appear in a `active` state, when the `node` checklist meets the new conditions implemented.
+As a result, the checklist `icon` in {productname} 6.4.1, related to the `advlist` plugin will only appear in a `active` state, when the `node` checklist meets the new conditions implemented.
 
 === Dragging transparent elements into transparent blocks elements could produce invalid nesting of transparents
 //#TINY-9231
 
 Dragging or dropping block `links` into other `links` was producing invalid nesting of other transparents such as `anchors`. As a result, these transparent elements would produce `anchor` tags within other `anchor` tags, which is not a general practice. As an example `links` and `anchors` that are defined to an element, must not be nested within or contain any other element and vice versa.
 
-Changes were implemented in {productname} 6.4 to fix this issue to ensure that any invalid child anchor elements that try to reproduce this action are unwrapped when the editor verifies another transparent has been dropped into another transparent (anchor) element.
+Changes were implemented in {productname} 6.4.1 to fix this issue to ensure that any invalid child anchor elements that try to reproduce this action are unwrapped when the editor verifies another transparent has been dropped into another transparent (anchor) element.
 
-In {productname} 6.4, dragging content such as `links` into other `links` will now produce *valid* HTML `output` after a drag operation occurs which will be consistent across all browsers.
+In {productname} 6.4.1, dragging content such as `links` into other `links` will now produce *valid* HTML `output` after a drag operation occurs which will be consistent across all browsers.
 
 === The editor.insertContent API would insert contents inside noneditable elements if the selection was inside the element
 //#TINY-9462
 
 In previous versions of {productname}, the settings for the `contentEditable` property in the editor root was set to `false`. As a consequence, the user could insert content using `api` commands to edit a `contenteditable="false"` root element.
 
-To fix this bug, in {productname} 6.4, a blocker was added to the `editor.insertContent` API and `mceInsertContent` command, which stops `contenteditable="false"` root elements from being edited.
+To fix this bug, in {productname} 6.4.1, a blocker was added to the `editor.insertContent` API and `mceInsertContent` command, which stops `contenteditable="false"` root elements from being edited.
 
-In {productname} 6.4, inserting contents inside a `contenteditable="false"` element while the selection is inside another element, is no longer possible.
+In {productname} 6.4.1, inserting contents inside a `contenteditable="false"` element while the selection is inside another element, is no longer possible.
 
 === Closing a dialog would scroll down the document in Safari
 //#TINY-9148
@@ -893,7 +895,7 @@ While using previous versions of {productname}, `clicking` away to dismiss the *
 
 To correct this issue, a new Css.set was implemented to keep the `focus` on the DOM container in the initial scroll document position. 
 
-In {productname} 6.4, when the user `clicks` away to dismiss the *Search* and *Replace* dialog within Safari, the focus now returns to the editor and the scroll does not change position within the editor.
+In {productname} 6.4.1, when the user `clicks` away to dismiss the *Search* and *Replace* dialog within Safari, the focus now returns to the editor and the scroll does not change position within the editor.
 
 === Inline headers would not work in some situations when the editor was moved too far right horizontally
 //#TINY-8977
@@ -907,9 +909,9 @@ To fix this issue, {productname} now explicitly sets the width on the toolbar to
 
 The quickbar was displaying incorrectly during a drag and drop `action` for contenteditable="false" elements. As a consequence, during the movement of a contenteditable="false" element, the selection was updated, which triggered a *NodeChange* event. This selection update would cause an absence of the caret location during a dragging or dropping event.
 
-To fix this bug, {productname} 6.4 added a new check to identify when the user is dragging a contenteditable="false" element, which blocks the quickbar from rendering.
+To fix this bug, {productname} 6.4.1 added a new check to identify when the user is dragging a contenteditable="false" element, which blocks the quickbar from rendering.
 
-As a result, the quickbar no longer opens in {productname} v6.4, when the user is dragging a contenteditable="false" elements.
+As a result, the quickbar no longer opens in {productname} 6.4.1, when the user is dragging a contenteditable="false" elements.
 
 === Selection of images, hr, tables or noneditable elements was possible if they were within a noneditable element
 //#TINY-9473
@@ -918,7 +920,7 @@ In previous versions of {productname}, `contenteditable="false"` elements that w
 
 Improvements were made to check if the DOM parent node is a `contenteditable="false"` element.
 
-In {productname} 6.4, elements with `contenteditable="false"` attributes can no longer be selected when they are children of another `contenteditable="false"` attribute, such as:
+In {productname} 6.4.1, elements with `contenteditable="false"` attributes can no longer be selected when they are children of another `contenteditable="false"` attribute, such as:
 
 .Example of `contenteditable="false"` elements inside `contenteditable="false"` root.
 [source,HTML]
@@ -936,7 +938,7 @@ Blink & Webkit browsers (Chrome & Safari) were deleting the contents of inline f
 
 A override fix already exists for _character-by-character_ deletion using backspace/delete keys with a collapsed selection. However, this particular bug persists when the format is deleted when there is a ranged selection that starts at the beginning of the inline format(s) and encompasses at least the entirety of the inline format(s). The bug also occurs when deletion is done using common keyboard shortcuts including `Ctrl/Alt + Backspace`, `Ctrl/Alt + Delete`, and `Cmd + Backspace`.
 
-In {productname} 6.4, two new key overrides have been added to:
+In {productname} 6.4.1, two new key overrides have been added to:
 
 . Check that a `non-collapsed` selection satisfies the conditions set (specifically for a ranged selection using `backspace/delete`).
 . Check a range of conditions *before* continuing (for keyboard shortcut `backspace/delete`).
@@ -950,7 +952,7 @@ In previous versions of {productname}, a bug was found that affected the `visual
 
 To fix this issue, a conditional filter was added which identifies, if an element is either a `contenteditable="true"` element or a `contenteditable="false"` element to its decendants.  If the element matches as a `contenteditable="false"` element to itself or decendants, the `visual character` plugin will remove the highlighted selecter from within the `dom` viewport.
 
-As a result, in {productname} 6.4, visual characters no longer render inside `contenteditable="false"` elements.
+As a result, in {productname} 6.4.1, visual characters no longer render inside `contenteditable="false"` elements.
 
 === Lists in a noneditable root were incorrectly editable using list API commands, toolbar buttons and menu items
 //#TINY-9458
@@ -959,7 +961,7 @@ In previous versions of {productname}, a bug was found that affected the *lists*
 
 The fix involved implementing a new process to  check the element conditions.  The check now looks to identify if the *list* or *Advanced List* is a `contenteditable = "false"` element.
 
-As a result, in {productname} 6.4, *list* or *Advanced List*  plugins that are set as `contenteditable = "false"` elements can no longer be modified by using list API commands, toolbar buttons and menu items.
+As a result, in {productname} 6.4.1, *list* or *Advanced List*  plugins that are set as `contenteditable = "false"` elements can no longer be modified by using list API commands, toolbar buttons and menu items.
 
 === Color picker dialog would not update the preview color if the hex input value was prefixed with # symbol
 //#TINY-9457
@@ -971,27 +973,27 @@ Example of a `incorrect` vs `correct` value input:
 * `#BDE123`: Incorrect hex value input.
 * `BDE123`: Correct hex value input.
 
-In order to fix this bug, {productname} 6.4, not detects if the user inserts a `#` symbol before the hex `value`, which removes the leading `#` prefix before rendering to the color picker component.
+In order to fix this bug, {productname} 6.4.1, not detects if the user inserts a `#` symbol before the hex `value`, which removes the leading `#` prefix before rendering to the color picker component.
 
-In {productname} 6.4, the color picker works as expected when using hex `values` with the `#` prefix.
+In {productname} 6.4.1, the color picker works as expected when using hex `values` with the `#` prefix.
 
 === Table cell selection was possible even if the element was in a noneditable root element
 //#TINY-9459
 
 Previous versions of {productname}, table cells set with the `contenteditable="false"` element properties could still be modified. This was because the `contenteditable="true"` element property settings were set to `false` in the root. This meant that any table UI actions, commands or table selections could still affect any tables that were within that specific `contenteditable="false"` element root.
 
-{productname} 6.4, introduced a blocker that is executed when tables are inside a `contenteditable="false"` element root.
+{productname} 6.4.1, introduced a blocker that is executed when tables are inside a `contenteditable="false"` element root.
 
-In {productname} 6.4, all table UI actions, commands and selections have been `disabled` for tables when either the table or the editor body have been set as `contenteditable="false"` elements.
+In {productname} 6.4.1, all table UI actions, commands and selections have been `disabled` for tables when either the table or the editor body have been set as `contenteditable="false"` elements.
 
 === Table commands were modifying tables in a noneditable root element
 //#TINY-9459
 
-In versions of {productname}, prior to 6.4, tables could be modified by using `execCommands` when tables are placed within a `contenteditable="false"` root element.
+In versions of {productname}, prior to 6.4.1, tables could be modified by using `execCommands` when tables are placed within a `contenteditable="false"` root element.
 
 As a consequence, a bug was identified that by using the `execCommands`, which are provided by {productname}, the user could modify the table element regardless of it being nested within a `contenteditable="false"` root element. This was made possible by by overriding the `contenteditable="false"` element settings by using the `execCommand`'s' to trigger the `action` event.
 
-To fix this bug, {productname} 6.4, made improvements to the DOM `Commands` API that now blocks all Table UI actions via the `execCommands` when a `contenteditable="false"` element selection is highlighted inside a `contenteditable="false"` root.
+To fix this bug, {productname} 6.4.1, made improvements to the DOM `Commands` API that now blocks all Table UI actions via the `execCommands` when a `contenteditable="false"` element selection is highlighted inside a `contenteditable="false"` root.
 
 As a result, `contenteditable="false"` elements such as tables cannot have their properties overridden by using the `execCommands`.
 
@@ -1004,9 +1006,9 @@ In previous versions of {productname}, `fake` carets that are within a `contente
 
 As a consequence, `fake` caret/s would be visibly highlighted within the editor viewport,  which would allow content to be inserted into the element when the table was selected by using either the keyboard and mouse function commands.
 
-To fix this {productname} 6.4, added a new function to the Utils API that filters any content that is considered as a `fake caret` element, which now disables the users ability to add/insert or modify the content contained within the `contenteditable="false"` element node space.
+To fix this {productname} 6.4.1, added a new function to the Utils API that filters any content that is considered as a `fake caret` element, which now disables the users ability to add/insert or modify the content contained within the `contenteditable="false"` element node space.
 
-As a result, any `contenteditable="false"` elements that are nested within another `contenteditable="false"` element root that are nested within `table` elements, can no longer be edited in {productname} 6.4.
+As a result, any `contenteditable="false"` elements that are nested within another `contenteditable="false"` element root that are nested within `table` elements, can no longer be edited in {productname} 6.4.1.
 
 === Textareas with scrollbars in dialogs would not render rounded corners correctly on some browsers
 //#TINY-9331
@@ -1015,9 +1017,9 @@ In previous versions of {productname}, the source code visible UI border would n
 
 As a consequence, when viewing text-areas that contain `scrollbars` within dialogs, the `focus` visible border was not rendering the corners inside the dialog.
 
-To correct this issue, {productname} 6.4, introduced a new text-area wrapper that fixes the issues with the `border-color, radius, style and width` that directly affects the `focus` render element for the dialog.  In addition `overflow: hidden`, has been added to clip the scrollbars to the border-radius.
+To correct this issue, {productname} 6.4.1, introduced a new text-area wrapper that fixes the issues with the `border-color, radius, style and width` that directly affects the `focus` render element for the dialog.  In addition `overflow: hidden`, has been added to clip the scrollbars to the border-radius.
 
-As a result, the `focus` dialog border now renders correctly in {productname} 6.4.
+As a result, the `focus` dialog border now renders correctly in {productname} 6.4.1.
 
 === It was possible to open links inside the editor if the editor root was noneditable
 //#TINY-9470
@@ -1039,20 +1041,20 @@ As a result, {productname} now blocks links from being selected while inside a `
 === Inline boundary was rendered for noneditable inline boundary elements
 //#TINY-9471
 
-Inline boundaries for `contenteditable="false"` elements were rendering styling in previous versions of {productname} 6.4 after the user `selected` before and after the `contenteditable="false"` elements node. The expected behaviour is that `contenteditable="false"` elements should *not* have inline boundaries when a caret is inside an `contenteditable="false"` anchor or root.
+Inline boundaries for `contenteditable="false"` elements were rendering styling in previous versions of {productname} 6.4.1 after the user `selected` before and after the `contenteditable="false"` elements node. The expected behaviour is that `contenteditable="false"` elements should *not* have inline boundaries when a caret is inside an `contenteditable="false"` anchor or root.
 
 Added a predicate check for inline boundaries before they render, and additional tests for `selections` for some special cases surrounding particular `contenteditable="false"` elements.
 
-In {productname} 6.4, it is now not possible to highlight inline boundary elements that are classified as a `contenteditable="false"` content element.
+In {productname} 6.4.1, it is now not possible to highlight inline boundary elements that are classified as a `contenteditable="false"` content element.
 
 === Clicking on a disabled split button would call the onAction callback
 //#TINY-9504
 
-A bug was found in versions of {productname} prior to the 6.4 release, that would call the `onAction` callback for *split buttons* regardless of the action being `disabled`. This meant it was possible for the user to call `onAction` unintentionally
+A bug was found in versions of {productname} prior to the 6.4.1 release, that would call the `onAction` callback for *split buttons* regardless of the action being `disabled`. This meant it was possible for the user to call `onAction` unintentionally
 
-As a fix to the issue, {productname} 6.4 introduced a new conditional check to identify *if* the button is `disabled`  before calling the `onAction` callback.
+As a fix to the issue, {productname} 6.4.1 introduced a new conditional check to identify *if* the button is `disabled`  before calling the `onAction` callback.
 
-In {productname} 6.4, clicking on a disabled split button won't call the `onAction` callback anymore.
+In {productname} 6.4.1, clicking on a disabled split button won't call the `onAction` callback anymore.
 
 === The "Edit Link" dialog incorrectly retrieved the URL value when opened immediately after the link insertion
 //#TINY-7993
@@ -1074,26 +1076,26 @@ In this example the bug would deactivate the `open link` button within the conte
 
 The fix now allows all three link-plugins (Link, Remove link and Open link) to work within the context menu items.
 
-In {productname} 6.4, when the user executes right `mouse click` on the link selection immediately after attaching a link to a `<string>`, the link-plugins now work as expected.
+In {productname} 6.4.1, when the user executes right `mouse click` on the link selection immediately after attaching a link to a `<string>`, the link-plugins now work as expected.
 
 === Editor commands ForwardDelete and Delete were deleting contents inside noneditable elements
 //#TINY-9477
 
 Previously, when using the `ForwardDelete` or `Delete` commands in earlier versions of {productname}, the contents within `contenteditable="false"` elements were deleted. This meant that if there were nested elements within a `contenteditable="false"` root element that were also set to `contenteditable="false"`, they could be deleted from the root element.
 
-To resolve this issue, {productname} 6.4 included several enhancements to prevent all commands and keyboard functions, including delete/forwarddelete, from affecting `contenteditable="false"` content.
+To resolve this issue, {productname} 6.4.1 included several enhancements to prevent all commands and keyboard functions, including delete/forwarddelete, from affecting `contenteditable="false"` content.
 
-Consequently, in {productname} 6.4, using the forwarddelete or delete keys on `contenteditable="false"` elements within a `contenteditable="false"` element will no longer delete the contents within the `contenteditable="false"` elements.
+Consequently, in {productname} 6.4.1, using the forwarddelete or delete keys on `contenteditable="false"` elements within a `contenteditable="false"` element will no longer delete the contents within the `contenteditable="false"` elements.
 
 === Backspace or delete keys was deleting contents inside noneditable elements
 //#TINY-9477
 
 In the previous versions of {productname}, when utilizing the backspace or delete keys, they would delete the contents inside `contenteditable="false"` elements.
 
-As a consequence, elements nested within a `contenteditable="false"` root element set to `contenteditable="false"`, were able to be removed/deleted from the `contenteditable="false"` root element. To fix this issue, {productname} 6.4 introduced various improvements to block all commands and keyboard functions such as `delete/backspace` from being applied to `contenteditable="false"` content. 
+As a consequence, elements nested within a `contenteditable="false"` root element set to `contenteditable="false"`, were able to be removed/deleted from the `contenteditable="false"` root element. To fix this issue, {productname} 6.4.1 introduced various improvements to block all commands and keyboard functions such as `delete/backspace` from being applied to `contenteditable="false"` content. 
 
 
-As a result, in {productname} 6.4, when using the backspace or delete function keys on `contenteditable="false"` elements within a `contenteditable="false"` element, the contents within the `contenteditable="false"` elements will no longer be deleted. 
+As a result, in {productname} 6.4.1, when using the backspace or delete function keys on `contenteditable="false"` elements within a `contenteditable="false"` element, the contents within the `contenteditable="false"` elements will no longer be deleted. 
 
 === Inserting newlines inside an editable element inside a noneditable root would sometimes try to split the editable element
 //#TINY-9461
@@ -1105,7 +1107,7 @@ As a consequence, when child block elements set to `contenteditable="true"` such
 As the paragraph tag is intended to be a block for `text`, it is classified as `semantically incorrect` to split a paragraph block element.
 In this particular instance, child elements in {productname} such as the `<p>` tag would split the block element resulting in a new block (such as a new paragraph) to be created inside the paragraph when a user attempted to edit it inside a `contenteditable="false"` root element. 
 
-Fixes were introduced with the release of {productname} 6.4, that:
+Fixes were introduced with the release of {productname} 6.4.1, that:
 
 * Prevents editing host elements like `<p contenteditable="true">paragraph text</p>` in a `contenteditable="false"` root to be split.
 * Prevents editing hosts elements inside a `contenteditable="false"` root to be split.
@@ -1119,7 +1121,7 @@ In previous versions of {productname}, a bug was causing issues with `links` whi
 
 To fix this bug, the table cell now checks *If* the caret position is in front of an *anchor element*, `if` (true), then the table cell will include the anchor in the `list`.
 
-In {productname} 6.4, anchor elements are included inside `lists` while nested within table cells.
+In {productname} 6.4.1, anchor elements are included inside `lists` while nested within table cells.
 
 === Dragging and dropping noneditable elements on table borders would remove the element on drop
 //#TINY-9021
@@ -1127,9 +1129,9 @@ In {productname} 6.4, anchor elements are included inside `lists` while nested w
 In previous versions of {productname}, dragging and dropping `contenteditable="false"` elements on table borders would create issues during the drop action.
 
 As a consequence, this would result in the `contenteditable="false"` element being deleted after the `action` when dropped onto the borderline within the table cell.
-To fix this issue, {productname} 6.4, introduced a new `isActive` api to the handler for dragger, that checks if the event `isActive` or not, which then hides the resize bar during the dragging event, which now prevents content from being dropped onto table bars.
+To fix this issue, {productname} 6.4.1, introduced a new `isActive` api to the handler for dragger, that checks if the event `isActive` or not, which then hides the resize bar during the dragging event, which now prevents content from being dropped onto table bars.
 
-In {productname} 6.4, dragging an inline `contenteditable="false"` element onto the border inside a table, now moves it into a neighbouring cell instead of deleting it.
+In {productname} 6.4.1, dragging an inline `contenteditable="false"` element onto the border inside a table, now moves it into a neighbouring cell instead of deleting it.
 
 === Noneditable elements would be removed when dragged and dropped within a noneditable root
 //#TINY-9558
@@ -1140,7 +1142,7 @@ As this is not the expected behaviour for a `contenteditable="false"` element or
 
 To fix this issue, improvements were made to the drag and drop function that checks if the `dom` element `isEditable` to its `parentElement`.
 
-In {productname} 6.4, `contenteditable="false"` elements now preserve their `contenteditable="false"` attributes if they are dragged and dropped within a `contenteditable="false"` root.
+In {productname} 6.4.1, `contenteditable="false"` elements now preserve their `contenteditable="false"` attributes if they are dragged and dropped within a `contenteditable="false"` root.
 
 === Formatting could be applied or removed on noneditable list items inside a noneditable root
 //#TINY-9563
@@ -1149,7 +1151,7 @@ In a `contenteditable="false"` root, when selecting multiple lines from lists, i
 
 To fix this bug, {productname}, disabled list formatting, if the list is in within a `contenteditable="false"` root
 
-In {productname} 6.4, a selection of multiple lines from lists can no longer be formatted when inside a `contenteditable="false"` root.
+In {productname} 6.4.1, a selection of multiple lines from lists can no longer be formatted when inside a `contenteditable="false"` root.
 
 === Annotation would not be removed if the annotation was immediately deleted after being created
 //#TINY-9399
@@ -1160,7 +1162,7 @@ As a consequence, the annotation (highlighted-text-selection) would not be remov
 
 While applying a fix for this issue, it was identified that this was a regression created when {productname} fixed issue: _`Change the annotation api to avoid dom mutation in plugins using it`_, which adjusts the selection in the way that it is _impossible_, to retain the selected word. 
 
-However, with the release of {productname} 6.4, after immediately deleting annotations after they are created, they will no longer will be retained on the text selection.
+However, with the release of {productname} 6.4.1, after immediately deleting annotations after they are created, they will no longer will be retained on the text selection.
 
 === Inserting a link for a selection from quickbars didn't preserve formatting
 //#TINY-9593
@@ -1171,14 +1173,14 @@ As a consequence, when formatting the selection such as with `*bold*` or `_itali
 
 To fix this issue, improvements were made to the conditional check that is responsible for returning `optionals` when the anchor is called to gather the text selection.
 
-As a result, formatting after pasting a link from `quickbars` is now preserved to the selection {productname} 6.4.
+As a result, formatting after pasting a link from `quickbars` is now preserved to the selection {productname} 6.4.1.
 
 === Inline dialog position was not correct when the editor wasn't inline and was contained in a fixed or absolute positioned element
 //#TINY-9554
 
 In previous versions of {productname}, a bug was found that affected the inline dialog position for elements set to either a `fixed` or `absolute` position.  As a consequence, this bug in particular, presented itself when the editor wasn't `inline`, which resulted in the dialog being rendered outside of the {productname} viewport `bounds`.
 
-A fix for this bugs was implemented in {productname} 6.4, that corrected this issue, resulting in the `inline` dialog working as expected with this release.
+A fix for this bugs was implemented in {productname} 6.4.1, that corrected this issue, resulting in the `inline` dialog working as expected with this release.
 
 === Sticky toolbars would not have fade transition when undocking in classic iframe mode
 //#TINY-9408
@@ -1187,7 +1189,7 @@ In previous versions of {productname}, a css selector which was overriding the t
 
 As a consequence, the sticky toolbar would immediately render off-screen rather than fading out using a css `transition` animation.
 
-In {productname} 6.4, the selector configuration was updated when the editor is docked, resulting in the sticky toolbar in classic `iframe` mode now fading out correctly when the editor is out of view, similar to how it transitions in `inline` mode.
+In {productname} 6.4.1, the selector configuration was updated when the editor is docked, resulting in the sticky toolbar in classic `iframe` mode now fading out correctly when the editor is out of view, similar to how it transitions in `inline` mode.
 
 === Inserting elements that was not valid within the closest editing host would incorrectly split the editing host
 //#TINY-9595
@@ -1196,9 +1198,9 @@ In previous versions of {productname}, inserting invalid child blocks into a par
 
 As a consequence, the editing host element would incorrectly split itself into multiple elements. 
 
-To fix this issue, with the release of {productname} 6.4, pasted elements are now instead unwrapped inside the target element rather than being wrapped.
+To fix this issue, with the release of {productname} 6.4.1, pasted elements are now instead unwrapped inside the target element rather than being wrapped.
 
-In {productname} 6.4, pasting blocks that are invalid children of a `contenteditable="true"` blocks will no longer split that block, but instead unwrap the blocks to fit within the specific `contenteditable="true"` block.
+In {productname} 6.4.1, pasting blocks that are invalid children of a `contenteditable="true"` blocks will no longer split that block, but instead unwrap the blocks to fit within the specific `contenteditable="true"` block.
 
 === color_cols option was not respected in the forecolor or backcolor color swatches
 //#TINY-9560
@@ -1217,16 +1219,16 @@ tinymce.init({
 });
 ----
 
-In {productname} 6.4, the color swatches opened by the `forecolor` and `backcolor` toolbar buttons have the amount of columns set by the `color_cols` option, if it is set.
+In {productname} 6.4.1, the color swatches opened by the `forecolor` and `backcolor` toolbar buttons have the amount of columns set by the `color_cols` option, if it is set.
 
 === Drag and dropping the last noneditable element out of its parent block would not properly pad the parent block element
 //#TINY-9606
 
 In previous versions of {productname}, dragging and dropping `contenteditable="false"` elements into another block elements would cause issues with the original parent block. As a consequence, the parent block element where the `contenteditable="false"` element was dragged from would leave the parent block as a `contenteditable="false"` element, as it was not discarding the contents when the element was transferred.
 
-As a fix, {productname} 6.4, added a new condition which validates a set of conditions the check if the parent block element is within a `parentNode` and is a block element, in which it will trigger a action to remove elements with padding that meet this condition. 
+As a fix, {productname} 6.4.1, added a new condition which validates a set of conditions the check if the parent block element is within a `parentNode` and is a block element, in which it will trigger a action to remove elements with padding that meet this condition. 
 
-In {productname} 6.4, dragging and dropping elements that are `contenteditable="false"` out of they're parent blocks now correctly pad the parent block element.
+In {productname} 6.4.1, dragging and dropping elements that are `contenteditable="false"` out of they're parent blocks now correctly pad the parent block element.
 
 === Nonbreaking space do not get highlighted when enabling show invisible characters
 //#TINY-9685
@@ -1240,14 +1242,14 @@ This issue caused not only confusion with the intended text layout, but impacted
 
 A recently discovered issue was identified in previous versions of {productname}, that affected the text formatting feature for **Text Pattern**. When a user would apply a text pattern heading such as `# Title`, followed by pressing "enter", the issue would the occur when the backspace key was pressed. As a result, a non-breaking space was being inserted to the beginning of the line instead. This unintended addition of a Non-breaking space caused formatting inconsistencies and errors.
 
-In {productname} v6.4, pressing backspace after adding a Text Pattern, now formats the content as expected.
+In {productname} 6.4.1, pressing backspace after adding a Text Pattern, now formats the content as expected.
 
 === Incorrect event target for dragend and drop events when dragging and dropping noneditable elements within editor
 //#TINY-9599
 
 A bug was discovered in previous version of {productname}, that would arise when dragging and dropping `contenteditable="false"` elements within the editor was that the target of the dragstart, dragend or drop events would be the editor instance itself, rather than the expected DOM target.
 
-In {productname} 6.4, the events are now simulated based on the mouse event that produced them, meaning that the target and other properties, such as mouse coordinates, are now properly produced for the simulated drag and drop events.
+In {productname} 6.4.1, the events are now simulated based on the mouse event that produced them, meaning that the target and other properties, such as mouse coordinates, are now properly produced for the simulated drag and drop events.
 
 === Dialog getting cut offscreen when opened from toolbar button in Inline Mode
 //#TINY-9588
@@ -1261,21 +1263,21 @@ To address this issue, improvements made allow inline dialogs the flexability to
 
 In previous versions of {productname}, the color swatch feature would add a checkmark icon to every color, but would only display the checkmark on the "aria-checked" attribute.
 
-In {productname} 6.4, a fix was applied that replaced the previous selector, `aria-checked='true'``, with `tox-collection__item--enabled`. This fix, ensures that the checkmark is only displayed on the enabled colors.
+In {productname} 6.4.1, a fix was applied that replaced the previous selector, `aria-checked='true'``, with `tox-collection__item--enabled`. This fix, ensures that the checkmark is only displayed on the enabled colors.
 
 === The colour picker reset to default when formatting pre element with addtional format options
 //#TINY-9342
 
 In previous versions of {productname}, formatting elements with a `pre-formatted` tag, and applying a background color from the color swatch would cause formatting issues when additional formatting options such as bold and italics were applied to the `pre-formatted` element. When these formatting conditions were combined, the color picker would reset the users defined color value, which would triggered the color picker to reset this value to default "000000".
 
-In {productname} 6.4, this issue has been resolved. Any pre-formatted elements what have additional formatting such as a color from the color picker no longer reset to its default color.
+In {productname} 6.4.1, this issue has been resolved. Any pre-formatted elements what have additional formatting such as a color from the color picker no longer reset to its default color.
 
 === Editor increases the height indefinitely when using autoresize with content_css document
 //#TINY-8872
 
 In previous versions of {productname}, It was discovered that the editor had some issues with the autoresize function when using content_css documents, which caused the editor to have a indefinite height when content was being added.
 
-To fix this issue, {productname} 6.4 fixed this issue by addressing the conflict between the document skin's CSS and the autoresize bottom margin setting. After this fix, the resize function now checks for loops and considers the margin bottom as always set to 0 instead of autoresize bottom margin, which ensutes that the editor's height is calculated correctly. 
+To fix this issue, {productname} 6.4.1 fixed this issue by addressing the conflict between the document skin's CSS and the autoresize bottom margin setting. After this fix, the resize function now checks for loops and considers the margin bottom as always set to 0 instead of autoresize bottom margin, which ensutes that the editor's height is calculated correctly. 
 
 === Plugin - Search and Replace - Throws a JS console error if you search for a string that doesn't exist and try to click on the preferences button.
 //#TINY-9686
@@ -1284,36 +1286,36 @@ In previous versions of {productname}, the 'Search and Replace' plugin had a kno
 
 As a result, an "incorrect type" error would prevent users from opening the preferences section.
 
-In {productname} 6.4, this issue has been resolved.
+In {productname} 6.4.1, this issue has been resolved.
 
 === Toolbar doesn't hide when editor is out of view in scrollable container
 //#TINY-9652
 
 In previous versions of {productname}, when the editor is within a scrollable container, the toolbar would remain visible when the editor is scrolled out of view.
 
-With the release of {productname} 6.4, the new `ui_mode` option provides improvements to editors within scrollable contexts, including hiding the toolbar when the editor is out of view when the `ui_mode` option is set to 'split'.
+With the release of {productname} 6.4.1, the new `ui_mode` option provides improvements to editors within scrollable contexts, including hiding the toolbar when the editor is out of view when the `ui_mode` option is set to 'split'.
 
 === `color_cols`: 0 Memory Leak
 //#TINY-9649
 
 In previous versions of {productname}, the color swatch would attempt to display 0 columns of colors when the relevant `color_cols`, `color_cols_foreground` or `color_cols_background` options were set to 0. As a consequence, the tab would crash when opening that color swatch.
 
-In  {productname} 6.4, the default number of columns, 5, are now used when any of these options is set to 0 or less, preventing this issue from occurring.
+In  {productname} 6.4.1, the default number of columns, 5, are now used when any of these options is set to 0 or less, preventing this issue from occurring.
 
 
 [[known-issues]]
 == Known issues
 
-This section describes issues that users of {productname} 6.4 may encounter and possible workarounds for these issues.
+This section describes issues that users of {productname} 6.4.1 may encounter and possible workarounds for these issues.
 
-There are several known issues in {productname} 6.4.
+There are several known issues in {productname} 6.4.1.
 
 === Accessibility check dropdown not populated when switching between issues
 //#TINY-9679
 
 In previous versions of {productname}, a bug was discovered that encountered an issue with the **Accessibility Checker** dropdown. When switching between different issues, the dropdown would not re-populate on existing viewed issues.
 
-As a result, improvements were made to the **Accessibility Checker** dropdown with {productname} 6.4, to ensure that users can now switch between issues with confidence that the dropdown will populate as expected.
+As a result, improvements were made to the **Accessibility Checker** dropdown with {productname} 6.4.1, to ensure that users can now switch between issues with confidence that the dropdown will populate as expected.
 
 === Bug with Table Icon in more drawer
 //#TINY-9723

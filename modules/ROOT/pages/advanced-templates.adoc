@@ -13,8 +13,6 @@ include::partial$misc/admon-requires-6.4v.adoc[]
 
 The Advanced Template Premium plugin enables the creation of complex, interactive templates using {productname}.
 
-Templates are declared as `const` variables that can be setup as part of a {productname} instance.
-
 They can also be added to a {productname} instance by end-users selecting content in a {productname} document and saving the selection as a template via the {productname} user-interface.
 
 IMPORTANT: This initial Advanced Template release does not support template editing. To update a particular template; insert the template into an editor; make edits; select the, now edited, content; and then create a new template (using, for example, the *Tools > Save as Template…* menu item).
@@ -43,26 +41,25 @@ tinymce.init({
     toolbar: "inserttemplate addtemplate",
   	advtemplate_list: () => {
       return Promise.resolve([
+      {
+        id: '1',
+        title: 'Template 1'
+      },
+      {
+        id: '2',
+        title: 'Category 2',
+        items: [
         {
-          id: '1',
-          title: 'Template 1'
+          id: '3',
+          title: 'Template 2.1',
         },
         {
-          id: '2',
-          title: 'Category 2',
-          items: [
-            {
-              id: '3',
-              title: 'Template 2.1',
-            },
-            {
-              id: '4',
-              title: 'Category 2.2',
-              items: []
-            }
-          ]
+          id: '4',
+          title: 'Template 2.3',
         }
-    ]);
+      ]
+    }
+  ]);
   }
 });
 ----

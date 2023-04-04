@@ -1191,7 +1191,7 @@ With the release of {productname} 6.4, this issue has been resolved. Now, when t
 === `color_cols`: 0 Memory Leak
 //#TINY-9649
 
-In previous versions of {productname}, the color swatch would attempt to display 0 columns of colors when `color_cols`, `color_cols_foreground` and `color_cols_background` are set to 0. As a consequence, the tab would crash and run out of memory when opening a color swatch.
+In previous versions of {productname}, the color swatch would attempt to display 0 columns of colors when the relevant `color_cols`, `color_cols_foreground` or `color_cols_background` options were set to 0. As a consequence, the tab would crash when opening that color swatch.
 
 To fix this issue, {productname} 6.4 added improvements to the default number of columns, 5, which is now used when an option is set to 0 or less.
 

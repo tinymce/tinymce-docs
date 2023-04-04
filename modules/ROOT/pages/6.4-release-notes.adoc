@@ -1193,9 +1193,7 @@ With the release of {productname} 6.4, this issue has been resolved. Now, when t
 
 In previous versions of {productname}, the color swatch would attempt to display 0 columns of colors when the relevant `color_cols`, `color_cols_foreground` or `color_cols_background` options were set to 0. As a consequence, the tab would crash when opening that color swatch.
 
-To fix this issue, {productname} 6.4 added improvements to the default number of columns, 5, which is now used when an option is set to 0 or less.
-
-In {productname} 6.4, the color swatches no longer causes a memory crash.
+In  {productname} 6.4, the default number of columns, 5, are now used when any of these options is set to 0 or less, preventing this issue from occurring.
 
 
 [[known-issues]]

@@ -740,7 +740,7 @@ To facilitate this change, {productname} has added a new `setIconFill` function 
 
 In {productname} 6.4, this new function allows the foreground and background menu icons to function as expected.
 
-=== Pasting links to text would sometimes not generate the correct undo stack on safari
+=== Pasting links to text would sometimes not generate the correct undo stack on Safari
 //#TINY-9489
 
 In previous versions of {productname}, pasting links to `text` selections in Safari would sometimes not generate the correct undo stack.

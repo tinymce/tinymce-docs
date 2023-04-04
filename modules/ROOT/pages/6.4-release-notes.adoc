@@ -759,6 +759,13 @@ To fix this issue, changes were made to the role attribute of the sidebar elemen
 
 In {productname} 6.4, when the sidebar is either visible or hidden it now passes the accessibility test with Axe-DevTools.
 
+=== Updated the Code Sample and Template plugin dropdown menu styles to match the default {productname} styles
+//#TINY-9630
+
+Previously, the Code Sample and Template open source plugins used browser-native elements for some dropdown menus.
+
+With this update, these menus are now created using the equivalent {productname} custom element, making these dropdown menus present with the same styling as other {productname} UI elements.
+
 
 [[bug-fixes]]
 == Bug fixes

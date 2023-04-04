@@ -1195,10 +1195,11 @@ In {productname} 6.4, a fix was applied that replaced the previous selector, `ar
 //#TINY-9499
 // Advanced List
 
-// Cause
-// Consequence
-// Fix
-// Result
+In previous versions of {productname}, a formatting issue was found while working with checklists on formatted lists and unordered lists. This issue resulted in incorrect formatting of certain elements when a selection contained a mix of list elements.
+
+In {productname} 6.4, this issue has been addressed.
+
+Applying checklists on a selection that includes lists now converts the selected items into checklists.
 
 === Backcolor - Color swatch - Checkmark on selected color is not applied
 //#TINY-9435
@@ -1236,18 +1237,20 @@ In {productname} 6.4, a fix was applied that replaced the previous selector, `ar
 === Plugin - Search and Replace - Throws a JS console error if you search for a string that doesn't exist and try to click on the preferences button.
 //#TINY-9686
 
-// Cause
-// Consequence
-// Fix
-// Result
+In previous versions of {productname}, the Plugin 'Search and Replace' had a known issue that caused it to throw a JavaScript error if you searched for a string that didn't exist while trying to click on the `preferences` button. 
+
+As a result, a `Uncaught TypeError:` error message would prevent users from accessing the preferences section, which is essential for configuring the plugin's behavior.
+
+In {productname} 6.4, this bug has been fixed.
 
 === Toolbar doesn't hide when editor is out of view in scrollable container
 //#TINY-9652
 
-// Cause
-// Consequence
-// Fix
-// Result
+In previous versions of {productname}, the toolbar would remain visible even when the editor was out of view within a scrollable container.
+
+To fix this issue, {productname} added improvements to the scrollable container that included changing the logic of the visibility function for the toolbar when the `ui_mode` is set to 'split'.
+
+With the release of {productname} 6.4, this issue has been resolved. Now, when the editor is out of view within a scrollable container, the toolbar will hide appropriately.
 
 === `color_cols`: 0 Memory Leak
 //#TINY-9649

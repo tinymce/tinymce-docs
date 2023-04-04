@@ -5,18 +5,18 @@
 
 include::partial$misc/admon-requires-6.4v.adoc[]
 
-This option configures the location of the container where popup menus and inline dialogs are rendered. 
+This option configures the location of all the UI elements that should scroll with the editor, such as popups, menus and inline dialogs.
 
-By default, these elements are rendered in a container located in the body.
+By default, these UI elements are rendered in a container that is attached to the document body, meaning they are not connected to any scrollable containers the editor might be in. 
 
-When the editor is rendered in a scrollable container, scrolling the editor’s container will cause popup menus and inline dialogs to be detached from the anchor.
+When the editor is rendered in a scrollable container, scrolling the editor's container will cause these UI elements to be detached from the anchor.
 
-If `+toolbar_sticky+` is set to true, the sticky toolbar and the menu have no effect on docking when scrolling the editor’s container; they are only triggered when the page is scrolled.
+If `+toolbar_sticky+` is set to true, the sticky toolbar and the menus have no effect on docking when scrolling the editor’s container; they are only triggered when the page is scrolled.
 
 However, setting this option to `+'split'+` enables support for editors in scrollable containers and adjusts the behaviour as follows:
 
-* Popup menus and inline dialogs are rendered in a separate container adjacent to the editor. These elements moves together as you scroll the editor’s container. 
-* If `+toolbar_sticky+` is set to true,  the UI element can be docked on both page and container scroll. This means the UI element will stay in the same place relative to the container, regardless of how much you scroll the page or the container itself.
+* Popups, menus and inline dialogs are rendered in a separate container and inserted as a sibling to the editor. These UI elements move together as you scroll the editor’s container. 
+* If `+toolbar_sticky+` is set to true, the UI element can be docked on both page and container scroll. This means the UI element will stay in the same place relative to the container, regardless of how much you scroll the page or the container itself.
 
 *Type:* `+String+`
 

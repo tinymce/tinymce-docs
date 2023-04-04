@@ -797,7 +797,7 @@ To fix this issue, {productname} now explicitly sets the width on the toolbar to
 === Quick toolbars were incorrectly rendered during the dragging of contenteditable="false" elements
 //#TINY-9305
 
-The quickbar was displaying incorrectly during a drag and drop `action` for contenteditable="false" elements. As a consequence, during the movement of a contenteditable="false" element, the selection was updated, which triggered a *NodeChange*. This selection update would cause an absence of the caret location during a dragging or dropping event.
+The quickbar was displaying incorrectly during a drag and drop `action` for contenteditable="false" elements. As a consequence, during the movement of a contenteditable="false" element, the selection was updated, which triggered a *NodeChange* event. This selection update would cause an absence of the caret location during a dragging or dropping event.
 
 To fix this bug, {productname} 6.4 added a new check to identify when the user is dragging a contenteditable="false" element, which blocks the quickbar from rendering.
 

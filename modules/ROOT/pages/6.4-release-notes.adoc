@@ -1173,11 +1173,11 @@ To fix this issue, {productname} 6.4 fixed this issue by addressing the conflict
 === Plugin - Search and Replace - Throws a JS console error if you search for a string that doesn't exist and try to click on the preferences button.
 //#TINY-9686
 
-In previous versions of {productname}, the Plugin 'Search and Replace' had a known issue that caused it to throw a JavaScript error if you searched for a string that didn't exist while trying to click on the `preferences` button. 
+In previous versions of {productname}, the 'Search and Replace' plugin had a known issue that caused a console error when searching for a string that wasn't in the editor content, and then attempting to click on the `preferences` button.
 
-As a result, a `Uncaught TypeError:` error message would prevent users from accessing the preferences section, which is essential for configuring the plugin's behavior.
+As a result, an "incorrect type" error would prevent users from opening the preferences section.
 
-In {productname} 6.4, this bug has been fixed.
+In {productname} 6.4, this issue has been resolved.
 
 === Toolbar doesn't hide when editor is out of view in scrollable container
 //#TINY-9652

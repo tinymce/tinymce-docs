@@ -36,39 +36,58 @@ For example:
 [source,js]
 ----
 tinymce.init({
-    selector: "textarea",
-    plugins: "advtemplate",
-    toolbar: "inserttemplate addtemplate",
-  	advtemplate_list: () => {
-      return Promise.resolve([
+  selector: "textarea",
+  plugins: "advtemplate",
+  toolbar: "inserttemplate addtemplate",
+  advtemplate_list: () => {
+    return Promise.resolve([
+    {
+      id: '1',
+      title: 'Template 1'
+    },
+    {
+      id: '2',
+      title: 'Category 2',
+      items: [
       {
-        id: '1',
-        title: 'Template 1'
+        id: '3',
+        title: 'Template 2.1',
       },
       {
-        id: '2',
-        title: 'Category 2',
-        items: [
-        {
-          id: '3',
-          title: 'Template 2.1',
-        },
-        {
-          id: '4',
-          title: 'Template 2.3',
-        }
-      ]
-    }
+        id: '4',
+        title: 'Template 2.3',
+      }
+    ]
+  }
   ]);
   }
 });
 ----
 
-NOTE: A unique id value must be provided for every input item.
-
 == Options
 
 The following configuration options affect the behavior of the {pluginname} plugin.
+
+include::partial$configuration/advtemplate_list.adoc[]
+
+include::partial$configuration/advtemplate_get_template.adoc[]
+
+include::partial$configuration/advtemplate_create_category.adoc[]
+
+include::partial$configuration/advtemplate_create_template.adoc[]
+
+include::partial$configuration/advtemplate_rename_category.adoc[]
+
+include::partial$configuration/advtemplate_rename_template.adoc[]
+
+include::partial$configuration/advtemplate_delete_template.adoc[]
+
+include::partial$configuration/advtemplate_delete_category.adoc[]
+
+include::partial$configuration/advtemplate_move_template.adoc[]
+
+include::partial$configuration/advtemplate_move_category_items.adoc[]
+
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

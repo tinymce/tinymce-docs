@@ -1173,17 +1173,16 @@ In {productname} v6.4, pressing backspace after adding a Text Pattern, now forma
 === Incorrect event target for dragend and drop events when dragging and dropping noneditable elements within editor
 //#TINY-9599
 
-// Cause
-// Consequence
-// Fix
-// Result
+A bug was discovered in previous version of {productname}, that would arise when dragging and dropping `contenteditable="false"` elements within the editor was that the target of the dragstart, dragend or drop events would be the editor instance itself, rather than the expected DOM target.
+
+In {productname} 6.4, the events are now simulated based on the mouse event that produced them, meaning that the target and other properties, such as mouse coordinates, are now properly produced for the simulated drag and drop events.
 
 === Dialog getting cut offscreen when opened from toolbar button in Inline Mode
 //#TINY-9588
 
-A bug was discovered in previous version of {productname}, that would arise when dragging and dropping `contenteditable="false"` elements within the editor was that the target of the dragstart, dragend or drop events would be the editor instance itself, rather than the expected DOM target.
+In previous versions of {productname}, inline dialogs would always open in the South West layout from the toolbar, or South East with RTL (Right-to-Left) directionality. However, this sometimes caused problems when the toolbar was shorter than the inline dialog, causing the dialog to open partially off screen.
 
-In {productname} 6.4, the events are now simulated based on the mouse event that produced them, meaning that the target and other properties, such as mouse coordinates, are now properly produced for the simulated drag and drop events.
+To address this issue, improvements made allow inline dialogs the flexability to be opened in other South layouts when they would otherwise be outside of the viewable area. Moreover, inline dialogs now anchor to the toolbar in an appropriate direction with the entire dialog on screen when opened, ensuring a better user experience.
 
 === Checkmark icons are added to every color in color swatch
 //#TINY-9567

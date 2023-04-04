@@ -794,7 +794,7 @@ In previous versions of {productname} It was discovered that the inline mode too
 
 To fix this issue, {productname} now explicitly sets the width on the toolbar to ensure that the editor is usable when the viewport width is reduced.
 
-=== Quick toolbars were incorrectly rendered during the dragging of contenteditable="false" elements
+=== Quick toolbars were incorrectly rendered during the dragging of `contenteditable="false"` elements
 //#TINY-9305
 
 The quickbar was displaying incorrectly during a drag and drop `action` for contenteditable="false" elements. As a consequence, during the movement of a contenteditable="false" element, the selection was updated, which triggered a *NodeChange* event. This selection update would cause an absence of the caret location during a dragging or dropping event.

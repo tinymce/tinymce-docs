@@ -449,11 +449,11 @@ In {productname} 6.4.1, pressing enter inside the `fontsizeinput` input now retu
 === New tree component that can be used in dialog body panel
 //#TINY-9532
 
-A new tree component has been created to support the *Advanced Template* premium plugin that works in conjunction with a new tree dialog body panel.
+A new tree component has been added to {productname}, that can be used in custom plugins and models.
 
-This tree component is limited to *one* level and is used in the dialog body panel to allow users to organize templates into levels for better UI. The tree component is designed to create a visual representation of the hierarchical structure for the template system, which allows users to easily identify the various templates and levels within each catagory, giving users the ability to quickly and easily navigate through the templates, and select the right one for their needs.
+The new tree component is designed to create a visual representation of the hierarchical structure of items such as, showcasing folders and the files within these folders, similar to how a directory works which allows users to easily identify various structure levels within set categories, such as how the new `advtemplate` works.
 
-This new tree component is an important addition to the new Premium Plugin: *Advanced Templates*, which is now available as a premium plugin with editors running {productname} 6.4.1 or later.
+This new tree component is an important addition to {productname} which will be used in several features with up and coming releases in the future.
 
 === renderUI property in the Theme type can now return a Promise <RenderResult> instead of RenderResult
 //#TINY-9556

@@ -1234,6 +1234,31 @@ In {productname} 6.4, a fix was applied that replaced the previous selector, `ar
 // Fix
 // Result
 
+=== Plugin - Search and Replace - Throws a JS console error if you search for a string that doesn't exist and try to click on the preferences button.
+//#TINY-9686
+
+// Cause
+// Consequence
+// Fix
+// Result
+
+=== Toolbar doesn't hide when editor is out of view in scrollable container
+//#TINY-9652
+
+// Cause
+// Consequence
+// Fix
+// Result
+
+=== `color_cols`: 0 Memory Leak
+//#TINY-9649
+
+In previous versions of {productname}, the color swatch would attempt to display 0 columns of colors when `color_cols`, `color_cols_foreground` and `color_cols_background` are set to 0. As a consequence, the tab would crash and run out of memory when opening a color swatch.
+
+To fix this issue, {productname} 6.4 added improvements to the default number of columns, 5, which is now used when an option is set to 0 or less.
+
+In {productname} 6.4, the color swatches no longer causes a memory crash.
+
 
 [[known-issues]]
 == Known issues
@@ -1245,23 +1270,26 @@ There are several known issues in {productname} 6.4.
 === Accessibility check dropdown not populated when switching between issues
 //#TINY-9679
 
-// cause
-// consequence
-// fix
-// result
+In previous versions of {productname}, a bug was discovered that encountered an issue with the **Accessibility Checker** dropdown. When switching between different issues, the dropdown would not re-populate on existing viewed issues.
+
+As a result, improvements were made to the **Accessibility Checker** dropdown with {productname} 6.4, to ensure that users can now switch between issues with confidence that the dropdown will populate as expected.
 
 === Bug with Table Icon in more drawer
 //#TINY-9723
 
-// cause
-// consequence
-// fix
-// result
+Recently, a known issue was discovered that affects the table icon in the more drawer, which is causing tabbing issues.
+
+The issue arises when the regular toolbar overflows, and the tab stopping selector used is not disabled. This causes issues when the user is navigating through the toolbar while using the tab key.
+
+For example, when the tab key navigation is located at the first icon within the link icons group, pressing the tab key jumps into the table icon, which is not the intended behavior. Ideally, the tab key should jump into the source code icon instead in this setup. As it stands, the table icon in the more drawer is being skipped over when using the tab key, which is not the expected result.
+
+Currently the only work around for this known issue is to use the mouse to select the table icon, until the known issue is resolved.
 
 === Fix height overflow issues on "some" dialogs
 //#TINY-9668
 
-// cause
-// consequence
-// fix
-// result
+After conducting a thorough investigation into the new **Advanced Template** plugin, we have discovered a known issue with certain dialogs. Specifically, we found that dialogs without tabs do not handle viewport height gracefully. As a result, these dialogs can push out the button area and disrupt the expected layout. The header and footer area of the dialog should always remain visible, while scrolling should only apply to the internal content, not the header or footer.
+
+We have identified that the "Insert link" dialog is an example of a dialog that does **not work** correctly in this regard, while the "Insert image" dialog functions as expected. These issues were discovered while examining mobile performance within the new **Advanced Template** plugin, and we are working to address them in order to provide a smoother and more user-friendly experience.
+
+Unfortunately, at this time there is no known workarounds for the issue with dialogs.

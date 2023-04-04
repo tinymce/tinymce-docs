@@ -751,7 +751,7 @@ To fix this issue, a workaround was implemented in {productname} 6.4, that now b
 
 In {productname} 6.4, pasting links to text selections now generates the correct undo stack on Safari.
 
-=== Toolbar split buttons in advlist plugin to show the correct state when the cursor is in a checklist
+=== Toolbar split buttons in *Advanced List* plugin to show the correct state when the cursor is in a checklist
 //#TINY-5167
 
 In previous versions of {productname}, when a cursor was placed within a checklist item, the icon for both the checklist and the bullet list would show as `active`. This created UX issues, as having both buttons showing an `active` state was confusing for the user, specifically for navigation purposes when using checklists from the *Advanced List* plugin.

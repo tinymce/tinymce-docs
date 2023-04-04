@@ -1215,13 +1215,9 @@ As a result, improvements were made to the **Accessibility Checker** dropdown wi
 === Bug with Table Icon in more drawer
 //#TINY-9723
 
-Recently, a known issue was discovered that affects the table icon in the more drawer, which is causing tabbing issues.
+Recently an issue was discovered which affects keyboard navigation of the toolbar. The issue occurs when the "More" toolbar is opened and contains a "Menu Toolbar Button", such as the `table` or `language` toolbar buttons, when a user attempts to use the "tab" key to navigate between toolbar groups, any Menu Buttons not at the beginning of a toolbar group will incorrectly be navigable. The correct behaviour would involve these buttons only being navigable via the arrow keys.
 
-The issue arises when the regular toolbar overflows, and the tab stopping selector used is not disabled. This causes issues when the user is navigating through the toolbar while using the tab key.
-
-For example, when the tab key navigation is located at the first icon within the link icons group, pressing the tab key jumps into the table icon, which is not the intended behavior. Ideally, the tab key should jump into the source code icon instead in this setup. As it stands, the table icon in the more drawer is being skipped over when using the tab key, which is not the expected result.
-
-Currently the only work around for this known issue is to use the mouse to select the table icon, until the known issue is resolved.
+This cannot be prevented, however the user may require extra presses of the "tab" key to navigate to the desired toolbar group.
 
 === Fix height overflow issues on "some" dialogs
 //#TINY-9668

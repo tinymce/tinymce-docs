@@ -68,7 +68,6 @@ In {productname} version 6.4, the Smart Typography plugin no longer creates a sp
 
 An issue was discovered that affected the typography plugin in previous versions of {productname} when inserting content into the editor. Specifically, the issue involved exclamation marks and the spaces between them, such as in the example `“Hello! !“`. This issue prevented the editor from removing the spaces between the double *exclamation marks* `! !` after executing the typography plugin toolbar or menubar button.
 
-
 In {productname} 6.4, spaces are now removed between exclamation marks `!!` for formatted HTML documents when the typography plugin is used. To learn more about Advanced Typography and how to add this new premium plugin to your project, please refer xref:advanced-typography.adoc[Advanced Typography].
 
 === Added **Advanced Typography** to the default menubar
@@ -109,21 +108,16 @@ To quote my [comment, left on the TinyMCE 6.4 BoM][0] in Notion:
 
 The {productname} 6.4 release includes an accompanying release of the **Checklist** premium plugin.
 
-**Checklist** 2.0.3 includes the following fix
+**Checklist** 2.0.4 includes the following fix.
 
-////
-To quote my [comment, left on the TinyMCE 6.4 BoM][2] in Notion
+==== Formatting Issue with Checklist on Formatted Lists and Non-Lists
+//#TINY-9499
 
-> What changes were made to the Checklist plugin? The [changelog][3]
-> contains no entries beyond 2022-11-23 and the only [commits this
-> year][4] have been dependabot bumps or back-end changes.
+In previous versions of {productname}, a formatting issue was found while working with checklists on formatted lists and unordered lists. This issue resulted in incorrect formatting of certain elements when a selection contained a mix of list elements.
 
-[2]: <https://notion.so/TinyMCE-6-4-Bill-of-materials-BOM-885a34e3b9884be0b69cd30eba7c618b?d=a1149ea94c2e459b80773fa2e59a6cc6#e826f887f0654bafb3ec0fdcb1659385>
+In {productname} 6.4, this issue has been addressed.
 
-[3]: <https://github.com/tinymce/santa/blob/main/CHANGELOG.md>
-
-[4]: <https://github.com/tinymce/santa/commits/main>
-////
+Applying checklists on a selection that includes lists now converts the selected items into checklists, as expected.
 
 For information on the **Checklist** plugin, see: xref:checklist.adoc[Checklist].
 
@@ -1185,16 +1179,6 @@ To address this issue, improvements made allow inline dialogs the flexability to
 In previous versions of {productname}, the color swatch feature would add a checkmark icon to every color, but would only display the checkmark on the "aria-checked" attribute.
 
 In {productname} 6.4, a fix was applied that replaced the previous selector, `aria-checked='true'``, with `tox-collection__item--enabled`. This fix, ensures that the checkmark is only displayed on the enabled colors.
-
-=== Formatting Issue with Checklist on Formatted Lists and Non-Lists
-//#TINY-9499
-// Advanced List
-
-In previous versions of {productname}, a formatting issue was found while working with checklists on formatted lists and unordered lists. This issue resulted in incorrect formatting of certain elements when a selection contained a mix of list elements.
-
-In {productname} 6.4, this issue has been addressed.
-
-Applying checklists on a selection that includes lists now converts the selected items into checklists.
 
 === Backcolor - Color swatch - Checkmark on selected color is not applied
 //#TINY-9435

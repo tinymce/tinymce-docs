@@ -30,12 +30,12 @@ For example:
     // Note: use ‘target’ to specify the node the TinyMCE editor instance replaces.
     // Do not use ‘selector’.
     target: node,
-	plugins: [
-		"advlist autolink lists link image charmap print preview anchor",
-		"searchreplace visualblocks code fullscreen",
-		"insertdatetime media table help"
-	].join(' '),
-	toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+    plugins: [
+        "advlist autolink lists link image charmap print preview anchor",
+        "searchreplace visualblocks code fullscreen",
+        "insertdatetime media table help"
+    ].join(' '),
+    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
   });
 </script>
 ----

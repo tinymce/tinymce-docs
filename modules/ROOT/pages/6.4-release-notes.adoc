@@ -803,7 +803,7 @@ To fix this bug, {productname} 6.4 added a new check to identify when the user i
 
 As a result, the quickbar no longer opens in {productname} v6.4+, when the user is dragging a contenteditable="false" elements.
 
-=== Selection of images, hrs, tables or noneditable elements was possible if they were within a noneditable element
+=== Selection of images, hr, tables or noneditable elements was possible if they were within a noneditable element
 //#TINY-9473
 
 In previous versions of {productname}, `contenteditable="false"` elements that were nested within another such as a element set with the `contenteditable="false"` attribute, would avoid the `contenteditable="false"` guidelines set. As a consequence, selection of images, hrs, tables or `contenteditable="false"` elements was possible if they were nested within a `contenteditable="false"` element.

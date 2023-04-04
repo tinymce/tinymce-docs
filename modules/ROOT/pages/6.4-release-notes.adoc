@@ -964,7 +964,7 @@ A bug was found within the context menu and dialog when inserting `links` in pre
 In this example the bug would deactivate the `open link` button within the context menu and dialog, which removes the users ability to reopen the “open link” dialog.
 ====
 
-The fix now allows all three link-plugins to work within the context menu items.
+The fix now allows all three link-plugins (Link, Remove link and Open link) to work within the context menu items.
 
 In {productname} 6.4, when the user executes right `mouse click` on the link selection immediately after attaching a link to a `<string>`, the link-plugins now work as expected.
 

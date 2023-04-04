@@ -378,7 +378,7 @@ After executing an `onclick` event within the current `selection | node` using `
 
 [source, HTML]
 ----
-<p>Try to inserttextcontent here</p>
+<p>Try to insert text content here</p>
 ----
 
 The new additions and improvements with the introduction of {productname} 6.4, include a new `isEditable` API been added to the `editor.selection` which now blocks the `editor.insertContent` API and `mceInsertContent` command when the contents return a `true` value if the editor detects the element is a `contenteditable="false";` element in a `contenteditable="false";` root.

@@ -812,11 +812,13 @@ Improvements were made to the `SelectionOverride` to now check if the DOM parent
 
 In {productname} 6.4, elements with `contenteditable="false"` attributes can no longer be selected when they are children of another `contenteditable="false"` attribute, such as:
 
-.Example of `contenteditable="false"` elements
+.Example of `contenteditable="false"` elements inside `contenteditable="false"` root.
 [source,HTML]
 ----
-<div contenteditable="false">noneditables div text</div>
-<div>editable div text</div>
+<div> Parent div element
+  <div contenteditable="false">First child noneditable div element</div>
+  <div contenteditable="true">Second child editable div element</div>
+</div>
 ----
 
 === Ranged deletion of formatted text using selection or keyboard shortcut would sometimes cause Blink and Webkit browsers to insert interpreted tags upon typing, which may result in inconsistent tags

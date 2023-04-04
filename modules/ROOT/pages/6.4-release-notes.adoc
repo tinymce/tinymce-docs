@@ -121,7 +121,7 @@ In previous versions of {productname}, content which exceeded the character limi
 In {productname} 6.4 this content is retained, as well as the prefix and suffix, though it is not converted into a Merge Tag.
 
 [NOTE]
-If any content is embraced with a merge tag prefix and suffix but exceeds the character limit for merge tag content length, it will not be converted into an official merge tag.
+Any content exceeding the character limit for Merge Tags will be converted into a Merge Tag.
 
 For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
 

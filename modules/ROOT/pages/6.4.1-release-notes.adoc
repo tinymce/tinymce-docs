@@ -554,7 +554,7 @@ More details about this component and the possible values that can be used withi
 === Added skipFocus option to the ToggleToolbarDrawer command to preserve focus
 //#TINY-9337
 
-A focusing event that was in the initial *FloatingToolbarButton* config, in previous versions of {productname} in (2019) was causing `focus` issues with the *ToggleToolbarDrawer*. As a consequence, this meant that while the editor was been scrolled into `focus`(viewport position), and the *ToggleToolbarDrawer* command `skipFocus: boolean` was set, the toolbar draw could still take `focus` when It was not meant to.
+A focusing event that was in the initial *FloatingToolbarButton* config, in previous versions of {productname} in (2019) was causing `focus` issues with the *ToggleToolbarDrawer*. As a consequence, this meant that while the editor was scrolled into `focus`(viewport position), and the *ToggleToolbarDrawer* command `skipFocus: boolean` was set, the toolbar draw could still take `focus` when it was not meant to.
 
 In {productname} 6.4.1, an improvement was made to the focusing `event` which is now removed after toggling the toolbar.
 

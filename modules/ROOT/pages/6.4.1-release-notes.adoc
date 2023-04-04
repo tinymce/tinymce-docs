@@ -697,7 +697,7 @@ tinymce.init({
 [TIP]
 Its worth noting that when setting the new `ui_mode: 'split'` option for scrollable containers, when setting the height for the `<div class="scrollable-container">` ensure that the height is set to be less than `<` the `min_height` set of the {productname} editor container and by applying the `overflow: scroll;` CSS bevaviour to the `<div class="scrollable-container">`.
 
-The docking behaviour of UI elements is usually only triggered when the page is scrolled. This means that the UI element will stay in the same place relative to the page, no matter how much you scroll. However, with the introduction of the 'split' UI mode, it is now possible to dock the UI element on both page and container scroll. This means that the UI element will stay in the same place relative to the container, regardless of how much you scroll the page or the container itself.
+The docking behavior of UI elements is usually only triggered when the page is scrolled. This means that the UI element will stay in the same place relative to the page, no matter how much you scroll. However, with the introduction of the 'split' UI mode, it is now possible to dock the UI element on both page and container scroll. This means that the UI element will stay in the same place relative to the container, regardless of how much you scroll the page or the container itself.
 
 [NOTE]
 * If you're using classic mode and sticky toolbars, the toolbar will dock, but it won't be entirely visible in either the window or the scrollable element. This applies to both viewports.
@@ -715,7 +715,7 @@ The docking behaviour of UI elements is usually only triggered when the page is 
 
 In previous versions of {productname}, the link plugin would display the context menu items for `contenteditable="false"` links.
 
-As a consequence, links such as `table of contents` would open the context menu when `clicked`. The behaviour for the `table of contents`, is not designed to allow links to be modified or removed as the `table of contents` plugin is considered as a `contenteditable="false"` element.
+As a consequence, links such as `table of contents` would open the context menu when `clicked`. The behavior for the `table of contents`, is not designed to allow links to be modified or removed as the `table of contents` plugin is considered as a `contenteditable="false"` element.
 
 To fix this bug, {productname} 6.4.1 introduced a new check that now verify if the link plugin is opened, which will now block the context menu on `table of contents` from opening upon when the `toc` is clicked. 
 
@@ -828,7 +828,7 @@ As a result, in {productname} 6.4.1, checkmarks now work as expected when using 
 === The foreground and background menu icons would not properly update to display the last used color
 //#TINY-9497
 
-In previous versions of {productname}, while the foreground and background icons were updating in the toolbar dropdown, the menu icons in the menubar dropdown would not update the colour option in the format menu after the user applied colors to the selected text, despite the fact that this was the expected behaviour. While workarounds where available, this deviation from the expected functionality caused confusion for some users until the fix was applied.
+In previous versions of {productname}, while the foreground and background icons were updating in the toolbar dropdown, the menu icons in the menubar dropdown would not update the colour option in the format menu after the user applied colors to the selected text, despite the fact that this was the expected behavior. While workarounds where available, this deviation from the expected functionality caused confusion for some users until the fix was applied.
 
 To correct this, {productname} added a new set icon fill function to ensure that the icon is filled when a color is selected from the format menu.
 
@@ -927,7 +927,7 @@ In {productname} 6.4.1, elements with `contenteditable="false"` attributes can n
 === Ranged deletion of formatted text using selection or keyboard shortcut would sometimes cause Blink and Webkit browsers to recreate tags upon typing, which may result in inconsistent tags
 //#TINY-9302
 
-The native `contenteditable` behaviour on Blink & Webkit browsers (Chrome & Safari) does not retain the original format(s) at the caret after all content within an inline format tag has been deleted. Upon typing again, the browser will attempt to recreate the formats, if one of the following methods is used to delete all content in the format tag:
+The native `contenteditable` behavior on Blink & Webkit browsers (Chrome & Safari) does not retain the original format(s) at the caret after all content within an inline format tag has been deleted. Upon typing again, the browser will attempt to recreate the formats, if one of the following methods is used to delete all content in the format tag:
 
 . When the selection is collapsed and the last character or element of the content of a format tag is deleted by pressing Backspace or Delete (e.g. `<p><span style="text-decoration: underline;">a</span></p>` with the caret positioned after `a`);
 . When a ranged selection has been made from the start of the content of a format tag to at or after the end of the content (to include the content's entirety), and the ranged selection is deleted by pressing Backspace or Delete (e.g. `<p><span style="text-decoration: underline;">ab</span>c</p>` with the selection made to include `ab`); or
@@ -940,7 +940,7 @@ A key override on the Backspace and Delete keys already exists to address the fi
 In {productname} 6.4, two new key overrides have been added to address the second and third method:
 
 * For Method 2: When Backspace or Delete is detected on `keydown` on a ranged selection, the override checks if the conditions for Method 2 is satisfied. If so, the override will read the current formats, delete the selection, and then create a caret containing the original formats.
-* For Method 3: When one of the keyboard shortcuts from Method 3 is detected on `keyup`, the override creates an unformatted caret at the current selection. Performing the override on `keyup` allows the native behaviour of the deletion shortcuts to occur. Then, applying an unformatted caret at the selection after deletion will prevent the browser from recreating any formats.
+* For Method 3: When one of the keyboard shortcuts from Method 3 is detected on `keyup`, the override creates an unformatted caret at the current selection. Performing the override on `keyup` allows the native behavior of the deletion shortcuts to occur. Then, applying an unformatted caret at the selection after deletion will prevent the browser from recreating any formats.
 
 === Visual characters were rendered inside noneditable elements
 //#TINY-9474
@@ -1038,7 +1038,7 @@ As a result, {productname} now blocks links from being selected while inside a `
 === Inline boundary was rendered for noneditable inline boundary elements
 //#TINY-9471
 
-Inline boundaries for `contenteditable="false"` elements were rendering styling in previous versions of {productname} 6.4.1 after the user `selected` before and after the `contenteditable="false"` elements node. The expected behaviour is that `contenteditable="false"` elements should *not* have inline boundaries when a caret is inside an `contenteditable="false"` anchor or root.
+Inline boundaries for `contenteditable="false"` elements were rendering styling in previous versions of {productname} 6.4.1 after the user `selected` before and after the `contenteditable="false"` elements node. The expected behavior is that `contenteditable="false"` elements should *not* have inline boundaries when a caret is inside an `contenteditable="false"` anchor or root.
 
 Added a predicate check for inline boundaries before they render, and additional tests for `selections` for some special cases surrounding particular `contenteditable="false"` elements.
 
@@ -1135,7 +1135,7 @@ In {productname} 6.4.1, dragging an inline `contenteditable="false"` element ont
 
 In previous version of {productname}, dragging ``contenteditable="false"` elements into a `contenteditable="false"` root would remove the elements `contenteditable="false"` attributes.
 
-As this is not the expected behaviour for a `contenteditable="false"` element or root, this bug in particular, created issues in situations such as: *(a)* when the editor body was set to `contenteditable="false"`, and *(b)* when a `contenteditable="false"` element is dragged and dropped into a table element that is within a `contenteditable="false"` root, which would result in the `contenteditable="false"` attributes blocks being deleted from the element that was dropped.
+As this is not the expected behavior for a `contenteditable="false"` element or root, this bug in particular, created issues in situations such as: *(a)* when the editor body was set to `contenteditable="false"`, and *(b)* when a `contenteditable="false"` element is dragged and dropped into a table element that is within a `contenteditable="false"` root, which would result in the `contenteditable="false"` attributes blocks being deleted from the element that was dropped.
 
 To fix this issue, improvements were made to the drag and drop function that checks if the `dom` element `isEditable` to its `parentElement`.
 
@@ -1144,7 +1144,7 @@ In {productname} 6.4.1, `contenteditable="false"` elements now preserve their `c
 === Formatting could be applied or removed on noneditable list items inside a noneditable root
 //#TINY-9563
 
-In a `contenteditable="false"` root, when selecting multiple lines from lists, it was possible to add formatting to the selection such as `*bold*` and `_italic_`. As a consequence, this would allow contents that are considered `contenteditable="false"` to be modified which is not the expected behaviour for `contenteditable="false"` elements within the root.
+In a `contenteditable="false"` root, when selecting multiple lines from lists, it was possible to add formatting to the selection such as `*bold*` and `_italic_`. As a consequence, this would allow contents that are considered `contenteditable="false"` to be modified which is not the expected behavior for `contenteditable="false"` elements within the root.
 
 To fix this bug, {productname}, disabled list formatting, if the list is in within a `contenteditable="false"` root
 
@@ -1153,7 +1153,7 @@ In {productname} 6.4.1, a selection of multiple lines from lists can no longer b
 === Annotation would not be removed if the annotation was immediately deleted after being created
 //#TINY-9399
 
-In previous versions of {productname}, the annotations behaviour was not working as expected when using `comments`.
+In previous versions of {productname}, the annotations behavior was not working as expected when using `comments`.
 
 As a consequence, the annotation (highlighted-text-selection) would not be removed from the text selection, if the annotation was immediately deleted after being created.
 
@@ -1315,7 +1315,7 @@ In previous versions of {productname}, a bug was discovered that encountered an 
 === Bug with Table Icon in more drawer
 //#TINY-9723
 
-Recently an issue was discovered which affects keyboard navigation of the toolbar. The issue occurs when the "More" toolbar is opened and contains a "Menu Toolbar Button", such as the `table` or `language` toolbar buttons, when a user attempts to use the "tab" key to navigate between toolbar groups, any Menu Buttons not at the beginning of a toolbar group will incorrectly be navigable. The correct behaviour would involve these buttons only being navigable via the arrow keys.
+Recently an issue was discovered which affects keyboard navigation of the toolbar. The issue occurs when the "More" toolbar is opened and contains a "Menu Toolbar Button", such as the `table` or `language` toolbar buttons, when a user attempts to use the "tab" key to navigate between toolbar groups, any Menu Buttons not at the beginning of a toolbar group will incorrectly be navigable. The correct behavior would involve these buttons only being navigable via the arrow keys.
 
 This cannot be prevented, however the user may require extra presses of the "tab" key to navigate to the desired toolbar group.
 

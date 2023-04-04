@@ -43,6 +43,63 @@ For information on the **Advanced Template** plugin, see: xref:advanced-template
 
 The following premium plugin updates were released alongside {productname} 6.4.
 
+=== Accessibility Checker 3.1.1
+
+The {productname} 6.4 release includes an accompanying release of the **Accessibility Checker** premium plugin.
+
+**Accessibility Checker** 3.1.1 includes the following addition:
+
+==== Updated the **Accessibility Checker** dropdown menu styles to match the default {productname} styles
+//#TINY-9630
+
+Previously, the **Accessibility Checker** premium plugin used browser-native elements for some dropdown menus.
+
+With this update, these menus are now created using the equivalent {productname} custom element, making these dropdown menus present with the same styling as other {productname} UI elements.
+
+For information on the **Accessibility Checker** plugin, see xref:a11ychecker.adoc[Accessibility Checker].
+
+
+=== Advanced Code Editor 3.2.1
+
+The {productname} 6.4 release includes an accompanying release of the **Advanced Code Editor** premium plugin.
+
+**Advanced Code Editor** 3.2.1 includes the following improvements and additions.
+
+==== New button to copy the current dialog content.
+
+This update adds a new **Copy code** button to the Advanced Code Editor dialog, enabling the copying of the entire contents of the dialog without having to first select.
+
+==== New buttons to increase and decrease the font size in the dialog.
+
+This update adds two new buttons for increasing and decreasing the font size of code displayed in the Advanced Code Editor dialogs.
+
+==== New button to toggle dark mode.
+
+This update adds a new **Dark/light mode** button for toggling the Advanced Code Editor dialog between dark and light display modes.
+
+==== New button to toggle fullscreen.
+
+This update adds a new **Fullscreen** button that for toggling the Advanced Code Editor dialog between fullscreen and dialog modes.
+
+NOTE: For the Advanced Code Editor to offer a full-screen mode requires the xref:fullscreen.adoc[Full screen] plugin and requires {pluginname} to be running in xref:advcode.adoc#advcode_inline[inline mode].
+
+
+=== Advanced Table 2.0.3
+
+The {productname} 6.4 release includes an accompanying release of the **Advanced Table** premium plugin.
+
+**Advanced Table** 2.0.3 includes the following addition:
+
+==== Updated the **Advanced Table** dropdown menu styles to match the default {productname} styles
+//#TINY-9630
+
+Previously, the **Advanced Table** premium plugin used browser-native elements for some dropdown menus.
+
+With this update, these menus are now created using the equivalent {productname} custom element, making these dropdown menus present with the same styling as other {productname} UI elements.
+
+For information on the **Advanced Table** plugin, see xref:advtable.adoc[Advanced Table].
+
+
 === Advanced Typography 1.1.1
 
 The {productname} 6.4 release includes an accompanying release of the **Advanced Typography** premium plugin.
@@ -86,8 +143,8 @@ As a consequence of this, when users clicked the button while the editor was emp
 
 In {productname}, the typography toolbar button is now disabled when the editor is empty.
 
-
 For information on the **Advanced Typography** plugin, see: xref:advanced-typography.adoc[Advanced Typography].
+
 
 === Checklist 2.0.4
 
@@ -142,7 +199,6 @@ With this release, the issue has been fixed. Copied content containing a valid w
 ==== Lists separated by empty paragraphs resulted in incorrect numbering when pasted from Microsoft Word
 //#TINY-6446
 
-
 Previously, when an ordered list, with nested elements, that also included blank lines between list items was copied from Microsoft Word and pasted into a {productname} editor instance, the numbering of the pasted-in list was incorrect.
 
 In pasting, the PowerPaste plugin made two errors:
@@ -196,19 +252,6 @@ This allows the embedded element to maintain its aspect ratio, as expected.
 For information on the **Enhanced Media Embed** plugin, see: xref:introduction-to-mediaembed.adoc[Introduction to Enhanced Media Embed].
 
 
-=== Permanent Pen 2.0.3
-
-The {productname} 6.4 release includes an accompanyin release of the **Permanent Pen** premium plugin.
-
-**Permanent Pen 2.0.3 includes the following fix:
-
-==== Updated the font and fontsize dropdown styles to match the default TinyMCE styles
-
-//#TINY-9630
-
-For information on the **Permanent Pen** plugin, see xref:permanentpen.adoc[Permanent Pen].
-
-
 === Mentions 3.0.4
 
 The {productname} 6.4 release includes an accompanyin release of the **Mentions** premium plugin.
@@ -231,6 +274,88 @@ Also, the insertion point displays in all browsers immediately following a paste
 For information on the **Mentions** plugin, see xref:mentions.adoc[Mentions].
 
 
+=== Merge Tags 1.2.1
+
+The {productname} 6.4 release includes an accompanying release of the **Merge Tags** premium plugin.
+
+**Merge Tags** 1.2.1 includes the following change.
+
+==== The mceMergeTag command now preserves the selected content as a plain text and wraps it in a merge tag prefix and suffix if the content length exceeds the limit.
+//#TINY-9444
+
+In previous versions of {productname}, the `mceMergeTag` command would not wrap the selected content within the merge tag prefix and suffix when the content length exceeded the character limit for the merge tag.
+
+As a consequence, when the `text_patterns` feature was enabled and a user entered a too-long merge tag, the prefix and suffix of the tag were excluded from the inserted content.
+
+To address this problem, improvements to the `mceMergeTag` command were introduced with the release of {productname} 6.4. Now, if the length of the selected content exceeds the character limit for the merge tag, the content will be inserted as a plain text, including the prefix and suffix.
+
+[NOTE]
+If any content is embraced with a merge tag prefix and suffix but exceeds the character limit for merge tag content length, it will not be converted into an official merge tag.
+
+For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
+
+
+=== Page Embed 2.1.1
+
+The {productname} 6.4 release includes an accompanying release of the **Page Embed** premium plugin.
+
+**Page Embed** 2.1.1 includes the following addition:
+
+==== Updated the **Page Embed** dropdown menu styles to match the default {productname} styles
+//#TINY-9630
+
+Previously, the **Page Embed** premium plugin used browser-native elements for some dropdown menus.
+
+With this update, these menus are now created using the equivalent {productname} custom element, making these dropdown menus present with the same styling as other {productname} UI elements.
+
+For information on the **Page Embed** plugin, see xref:pageembed.adoc[Page Embed].
+
+
+=== Permanent Pen 2.0.3
+
+The {productname} 6.4 release includes an accompanying release of the **Permanent Pen** premium plugin.
+
+**Permanent Pen** 2.0.3 includes the following addition:
+
+==== Updated the **Permanent Pen** dropdown menu styles to match the default {productname} styles
+//#TINY-9630
+
+Previously, the **Permanent Pen** premium plugin used browser-native elements for some dropdown menus.
+
+With this update, these menus are now created using the equivalent {productname} custom element, making these dropdown menus present with the same styling as other {productname} UI elements.
+
+For information on the **Permanent Pen** plugin, see xref:permanentpen.adoc[Permanent Pen].
+
+
+=== PowerPaste 6.1.4
+
+The {productname} 6.4 release includes an accompanying release of the **PowerPaste** premium plugin.
+
+**PowerPaste** 6.1.4 includes the following fixes.
+
+==== White-space style property stripped from copied Excel content by word import
+//#TINY-9607
+
+The white-space style property, which determines how white space characters are handled in HTML, was causing issues when content was copied from Excel and pasted into the {productname} editor. The problem occurred in Chrome and Firefox, but was not visable in Safari. Upon import, the white-space style property was being stripped from the content, resulting in a loss of formatting.
+
+With this release, the issue has been fixed. Copied content containing a valid white-space property now retains its original formatting when pasted in {productname}.
+
+==== Lists separated by empty paragraphs resulted in incorrect numbering when pasted from Microsoft Word
+//#TINY-6446
+
+
+Previously, when an ordered list, with nested elements, that also included blank lines between list items was copied from Microsoft Word and pasted into a {productname} editor instance, the numbering of the pasted-in list was incorrect.
+
+In pasting, the PowerPaste plugin made two errors:
+
+. it incorrectly incremented outer list items where these increments should have only applied to nested items; and
+. it incorrectly joined the nested list item numbering.
+
+This update corrects both these errors. Pasting lists from Microsoft Word into a {productname} editor now shows the correct numbering in the pasted list, even when the list includes non-list paragraphs between list items.
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
+
+
 === Spell Checker Pro 3.2.1
 
 The {productname} 6.4 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
@@ -245,31 +370,6 @@ Previously, the Spell Checker Pro plugin would request each word in the content,
 With this update, Spell Checker Pro now only sends requests to the spelling service for each unique word and caches these results for later retrieval. This greatly reduces the amount and size of requests sent by the plugin during regular use, improving the reliability of the service and the plugin.
 
 For information on the **Spell Checker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Introduction to Spell Checker Pro].
-
-
-=== Advanced Code Editor 3.2.1
-
-The {productname} 6.4 release includes an accompanying release of the **Advanced Code Editor** premium plugin.
-
-**Advanced Code Editor** 3.2.1 includes the following improvements and additions.
-
-==== New button to copy the current dialog content.
-
-This update adds a new **Copy code** button to the Advanced Code Editor dialog, enabling the copying of the entire contents of the dialog without having to first select.
-
-==== New buttons to increase and decrease the font size in the dialog.
-
-This update adds two new buttons for increasing and decreasing the font size of code displayed in the Advanced Code Editor dialogs.
-
-==== New button to toggle dark mode.
-
-This update adds a new **Dark/light mode** button for toggling the Advanced Code Editor dialog between dark and light display modes.
-
-==== New button to toggle fullscreen.
-
-This update adds a new **Fullscreen** button that for toggling the Advanced Code Editor dialog between fullscreen and dialog modes.
-
-NOTE: For the Advanced Code Editor to offer a full-screen mode requires the xref:fullscreen.adoc[Full screen] plugin and requires {pluginname} to be running in xref:advcode.adoc#advcode_inline[inline mode].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]

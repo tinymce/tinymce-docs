@@ -984,7 +984,6 @@ In the previous versions of {productname}, when utilizing the backspace or delet
 
 As a consequence, elements nested within a `contenteditable="false"` root element set to `contenteditable="false"`, were able to be removed/deleted from the `contenteditable="false"` root element. To fix this issue, {productname} 6.4 introduced various improvements to block all commands and keyboard functions such as `delete/backspace` from being applied to `contenteditable="false"` content. 
 
-The changes made to {productname} 6.4 included updates to the editor selection `isEditable` function, which now prioritizes fake selections first.
 
 As a result, in {productname} 6.4, when using the backspace or delete function keys on `contenteditable="false"` elements within a `contenteditable="false"` element, the contents within the `contenteditable="false"` elements will no longer be deleted. 
 

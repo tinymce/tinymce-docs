@@ -934,16 +934,20 @@ In {productname} 6.4.1, elements with `contenteditable="false"` attributes can n
 === Ranged deletion of formatted text using selection or keyboard shortcut would sometimes cause Blink and Webkit browsers to recreate tags upon typing, which may result in inconsistent tags
 //#TINY-9302
 
-Blink & Webkit browsers (Chrome & Safari) were deleting the contents of inline formats which would cause the format to be lost and not retained. As a consequence, this issue would impact the semantics and visuals for the *HTML* document, which is not be visible to the user.
+The native `contenteditable` behaviour on Blink & Webkit browsers (Chrome & Safari) does not retain the original format(s) at the caret after all content within an inline format tag has been deleted. Upon typing again, the browser will attempt to recreate the formats, if one of the following methods is used to delete all content in the format tag:
 
-A override fix already exists for _character-by-character_ deletion using backspace/delete keys with a collapsed selection. However, this particular bug persists when the format is deleted when there is a ranged selection that starts at the beginning of the inline format(s) and encompasses at least the entirety of the inline format(s). The bug also occurs when deletion is done using common keyboard shortcuts including `Ctrl/Alt + Backspace`, `Ctrl/Alt + Delete`, and `Cmd + Backspace`.
+. When the selection is collapsed and the last character or element of the content of a format tag is deleted by pressing Backspace or Delete (e.g. `<p><span style="text-decoration: underline;">a</span></p>` with the caret positioned after `a`);
+. When a ranged selection has been made from the start of the content of a format tag to at or after the end of the content (to include the content's entirety), and the ranged selection is deleted by pressing Backspace or Delete (e.g. `<p><span style="text-decoration: underline;">ab</span>c</p>` with the selection made to include `ab`); or
+. When the selection is collapsed and a keyboard shortcut, namely Ctrl+Backspace (Windows/Linux), Ctrl+Delete (Windows/Linux), Opt+Delete (macOS), Opt+Fn+Delete (macOS), or ⌘+Delete (macOS), is used to delete all content within a format tag and the post-deletion caret is placed at where the start of the content used to be (e.g. `<p>word1 <span style="text-decoration: underline;">word2</span></p>` with the caret positioned after `2`, and Ctrl+Backspace (Windows/Linux) or Opt+Delete (macOS) is performed to delete `word2`).
 
-In {productname} 6.4.1, two new key overrides have been added to:
+The recreated formats are not consistent with the original formats. For example, a `<span style="text-decoration: underline;">` tag will be recreated as a `<u>` tag. This can consequently impact the HTML document's semantics and visuals, causing a bug.
 
-. Check that a `non-collapsed` selection satisfies the conditions set (specifically for a ranged selection using `backspace/delete`).
-. Check a range of conditions *before* continuing (for keyboard shortcut `backspace/delete`).
+A key override on the Backspace and Delete keys already exists to address the first method. However, the bug persists for the second and third methods.
 
-As a result, the ranged selection for backspace/delete now check that all of the original formats at the cursor selection *start*, before deletion, are retained with either the native browser behaviour or a caret. For keyboard shortcuts that are using backspace/delete, will create a new unformatted caret which prevents browsers from inserting interpolated formats.
+In {productname} 6.4, two new key overrides have been added to address the second and third method:
+
+* For Method 2: When Backspace or Delete is detected on `keydown` on a ranged selection, the override checks if the conditions for Method 2 is satisfied. If so, the override will read the current formats, delete the selection, and then create a caret containing the original formats.
+* For Method 3: When one of the keyboard shortcuts from Method 3 is detected on `keyup`, the override creates an unformatted caret at the current selection. Performing the override on `keyup` allows the native behaviour of the deletion shortcuts to occur. Then, applying an unformatted caret at the selection after deletion will prevent the browser from recreating any formats.
 
 === Visual characters were rendered inside noneditable elements
 //#TINY-9474

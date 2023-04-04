@@ -489,9 +489,7 @@ In previous versions of {productname}, elements within a `contenteditable="false
 
 As a consequence all elements within the root `body` set to `contenteditable="false";` value, were affected by the issue.
 
-The new additions and improvements with the introduction of {productname} 6.4.1, include a new `isEditable` API been added to the `editor.dom` which now blocks the `editor.insertContent` API and `mceInsertContent` command when the contents return a `true` value if the editor detects the element is a `contenteditable="false";` in a `contenteditable="false";` root.
-
-As a result, any elements that return a `true` value when a specified element is `contenteditable="true"`, will call the new `isEditable` API to action the new blocker to ensure `contenteditable="false";` elements cannot be modified when they are within a root that is set to `contenteditable="false"`.
+The new additions and improvements with the introduction of {productname} 6.4 include new `editor.dom.isEditable` and `editor.selection.isEditable` APIs which now block the `editor.insertContent` API and `mceInsertContent` command if the selection is in a `contenteditable="false"` part of the root contents.
 
 === New setText and setIcon methods added to menu button and toolbar button APIs
 //#TINY-9268

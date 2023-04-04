@@ -458,7 +458,7 @@ In {productname} 6.4, an improvement was made to the focusing `event` which is n
 
 As a result to the fix, while the *FloatingToolbarButton* `focus` is initiated, the toolbar now focuses correctly without stealing `focus` when `skipFocus: 'boolean' is set.
 
-=== New font_size_input_default_unit option allow to use of numbers without a unit in fontsizeinput and have them parsed with the default unit, if it is not defined the default is pt
+=== New font_size_input_default_unit option allows to use of numbers without a unit in `fontsizeinput` and have them parsed with the default unit, if it is not defined the default is `pt`
 //#TINY-9585
 
 In early development before the release of the 'new toolbar component' ("fontsizeinput"), users had to define the unit of measurement (UOM), when setting their font size by direct input into the 'new toolbar component' input field.

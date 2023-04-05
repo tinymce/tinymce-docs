@@ -6,7 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
-- DOC-1860: added `6.4-release-note.adoc`. Added outline to this file.
+- DOC-1860: added `6.4.1-release-note.adoc`. Added outline to this file.
 
 ### 2023-03-15
 

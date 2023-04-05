@@ -238,16 +238,6 @@ The {productname} 6.4.1 release includes an accompanying release of the **Enhanc
 
 **Enhanced Media Embed** 3.1.1 includes the following addition.
 
-==== The aspect ratio of media embed elements was not maintained
-//#TINY-8714
-
-Previously, when a URL pointing to a media element (eg a URL pointing to a video hosted on YouTube) was pasted in to {productname}, and the **Return**  key was pressed to convert the URL string into an embedded media element, the aspect-ratio of the embedded element was not preserved.
-
-With this update, Enhanced Media Embed now wraps media elements in a responsive `<div>` container and moves the controlling `max-width` property to this outer container.
-
-This allows the embedded element to maintain its aspect ratio, as expected.
-
-For information on the **Enhanced Media Embed** plugin, see: xref:introduction-to-mediaembed.adoc[Introduction to Enhanced Media Embed].
 
 
 === Mentions 3.0.4

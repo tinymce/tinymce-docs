@@ -336,22 +336,7 @@ This change should have no impact on customer integrations, even those implement
 === New `editor.selection.isEditable` API method that returns whether the current selection is editable
 //#TINY-9462
 
-In previous versions of {productname}, when the body was set to `contenteditable="false"` content could still be inserted with the `insertContent` API.
-
-Example content:
-[source, HTML]
-----
-<body contenteditable="false"><p>Try to insert content here</p></body>
-----
-
-After selecting the space between "insert" and "content", executing `tinymce.activeEditor.insertContent('text')` would incorrectly insert `text` at the selection which should not be possible.
-
-[source, HTML]
-----
-<body contenteditable="false"><p>Try to inserttextcontent here</p></body>
-----
-
-{productname} 6.4 includes a new `isEditable` method on both the `editor.selection` and `editor.dom` APIs which are used to block the `editor.insertContent` API and `mceInsertContent` command when the selection covers a `contenteditable="false"` element.
+{productname} 6.4 includes a new `isEditable` method on the `editor.selection` that will check if the selection  is editable by finding the closest ascendant element for each selection endpoint with either a `true` or `false` value for it's `contenteditable` attribute. If both endpoints of the selection has it's closest ancestor `contenteditable` attribute value of `true` then the selection is editable.
 
 === New `editor.dom.isEditable` API method that returns whether the specified node is editable
 //#TINY-9462

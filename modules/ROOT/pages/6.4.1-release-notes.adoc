@@ -957,7 +957,7 @@ As a result, in {productname} 6.4.1, when using the backspace or delete function
 
 In previous versions of {productname}, inserting newlines inside an `contenteditable="true"` element while it was inside a `contenteditable="false"` root would sometimes try to split the `contenteditable="true"` element. 
 
-As a consequence, when child block elements set to `contenteditable="true"` such as a `<p>` tag were nested within the `contenteditable="false"` element root, the editor would try to split the child block element when the user hit the `enter` command. 
+As a consequence, when child block elements set to `contenteditable="true"` such as a `<p>` tag were nested within the `contenteditable="false"` element root, the editor would try to split the child block element when the user hit the `enter` key. 
 
 As the paragraph tag is intended to be a block for `text`, it is classified as `semantically incorrect` to contain other block elements.
 In this particular instance, child elements in {productname} such as the `<p>` tag would split the block element resulting in a new block (such as a new paragraph) to be created inside the paragraph when a user attempted to edit it inside a `contenteditable="false"` root element. 

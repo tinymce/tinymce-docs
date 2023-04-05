@@ -865,7 +865,7 @@ In {productname} 6.4.1, inserting contents inside a `contenteditable="false"` el
 
 While using previous versions of {productname}, `clicking` away to dismiss the *Search* and *Replace* dialog within Safari would scroll the page to the bottom of the editor. As a result the user would have to manually scroll back to the original `focus` area each time the steps above were executed.
 
-To correct this issue, the active element will be blurred before closing the dialog.
+To correct this issue, the dialog will be blurred upon closing.
 
 In {productname} 6.4.1, when the user `clicks` away to dismiss the *Search* and *Replace* dialog within Safari, the focus now returns to the editor and the scroll does not change position within the editor.
 

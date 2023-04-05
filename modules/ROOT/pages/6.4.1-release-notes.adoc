@@ -755,7 +755,6 @@ In previous versions of {productname}, when a cursor was placed within a checkli
 To fix this issue, {productname} updates the logic to prevent setting the bullet list to `active` when the cursor is in a checklist.
 
 As a result, in {productname} 6.4.1, only the checklist `icon` will appear as `active` when the cursor is in a checklist.
- (edited) 
 
 === Dragging transparent elements into transparent blocks elements could produce invalid nesting of transparents
 //#TINY-9231

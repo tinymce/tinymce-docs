@@ -1,0 +1,18 @@
+[[advtemplate_delete_category]]
+== `advtemplate_delete_category`
+
+This option deletes the nominated Template category.
+
+*Type:* `+String+`
+
+*Possible values:* `'id: "string"'`
+
+=== Example: using `advtemplate_delete_category`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  advtemplate_delete_category: 'id: "<template-category>"',
+});
+----

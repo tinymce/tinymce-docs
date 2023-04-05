@@ -1,0 +1,75 @@
+[[advtemplate_list]]
+== `advtemplate_list`
+
+This option retrieves the list of available Templates.
+
+*Type:* see the example below
+
+*Possible values:* see the example below
+
+=== Example: using `advtemplate_list`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  advtemplate_list: () => {
+    return Promise.resolve(
+    [
+      {
+        id: '1',
+        title: 'Template 1'
+      },
+      {
+        id: '2',
+        title: 'Category 2',
+        items: [
+      {
+        id: '3',
+        title: 'Template 2.1',
+      },
+      {
+        id: '4',
+        title: 'Template 2.3',
+      }
+    ]
+  }
+]
+    );
+});
+----
+
+This example returns the following:
+
+[source,js]
+----
+[
+  {
+    id: '1',
+    title: 'Template 1'
+  },
+  {
+    id: '2',
+    title: 'Category 2',
+    items: [
+      {
+        id: '3',
+        title: 'Template 2.1',
+      },
+      {
+        id: '4',
+        title: 'Template 2.3',
+      }
+    ]
+  }
+]
+----
+
+The list returned by `advtemplate_list` must match the following requirements:
+
+. Each list item must have a unique `id` value.
+. Each list item must have a non-empty `title` value.
+. Category items in the list must not contain nested categories.
+. Each template item in the list must have a non-empty `content` value.
+
+However, a category item in the response may contain an empty `items` list.

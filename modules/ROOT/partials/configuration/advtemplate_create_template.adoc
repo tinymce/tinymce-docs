@@ -1,0 +1,45 @@
+[[advtemplate_create_template]]
+== `advtemplate_create_template`
+
+This option creates a Template.
+
+*Type:* `+String+`
+
+*Possible values:* `id: '<string>'`
+
+=== Example: using `advtemplate_create_template`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  advtemplate_create_template: 'id: "id: ID, title: TITLE, content: CONTENT, categoryId: CATEGORYID"',
+});
+----
+
+
+=== Example: a function that sets a value for `advtemplate_create_template`
+
+[source,js]
+----
+const advtemplate_create_template = (title, content, categoryId) => {
+  return fetch("/templates", {
+    method: "POST",
+    body: JSON.stringify({
+      title,
+      content,
+      categoryId,
+    }),
+    headers,
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error("Failed to create template");
+      }
+      return response.json();
+    })
+    .then((data) => {
+      return { id: data.id };
+    });
+};
+----

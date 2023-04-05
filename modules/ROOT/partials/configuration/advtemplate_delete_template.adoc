@@ -1,0 +1,18 @@
+[[advtemplate_delete_template]]
+== `advtemplate_delete_template`
+
+This option deletes the nominated Template.
+
+*Type:* `+String+`
+
+*Possible values:* `'id: "string"'`
+
+=== Example: using `advtemplate_delete_template`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  advtemplate_delete_template: 'id: "<template>"',
+});
+----

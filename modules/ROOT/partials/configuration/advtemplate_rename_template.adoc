@@ -1,0 +1,18 @@
+[[advtemplate_rename_template]]
+== `advtemplate_rename_template`
+
+This option renames a Template.
+
+*Type:* `+String+`
+
+*Possible values:* `'id: "string" title: "string"'
+
+=== Example: using `advtemplate_rename_template`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  advtemplate_rename_template: 'id: "template-id" title: "template-title"',
+});
+----

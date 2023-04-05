@@ -1,0 +1,18 @@
+[[advtemplate_create_category]]
+== `advtemplate_create_category`
+
+This option creates a Template category.
+
+*Type:* `+String+`
+
+*Possible values:* `id: '<string>'`
+
+=== Example: using `advtemplate_create_category`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  advtemplate_create_category: "id: 'category 01'",
+});
+----

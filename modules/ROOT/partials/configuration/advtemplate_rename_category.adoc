@@ -1,0 +1,18 @@
+[[advtemplate_rename_category]]
+== `advtemplate_rename_category`
+
+This option renames a Template category.
+
+*Type:* `+String+`
+
+*Possible values:* `'id: "string" title: "string"'`
+
+=== Example: using `advtemplate_rename_category`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  advtemplate_rename_category: 'id: "id" title: "category-name"',
+});
+----

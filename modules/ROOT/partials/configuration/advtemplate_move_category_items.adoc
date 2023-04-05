@@ -1,0 +1,19 @@
+[[advtemplate_move_category_items]]
+== `advtemplate_move_category_items`
+
+This option moves Template categories to a different Template category.
+
+*Type:* `+String+`
+
+*Possible values:* `categoryId: "<categoryId>" newCategoryId: "<newCategoryId>"`
+
+=== Example: using `advtemplate_move_category_items`
+
+// This should be a working configuration. Please test.
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  advtemplate_move_category_items: 'categoryId: "<categoryId>" newCategoryId: "<newCategoryId>"',
+});
+----

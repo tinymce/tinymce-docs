@@ -1,0 +1,18 @@
+[[advtemplate_get_template]]
+== `advtemplate_get_template`
+
+This option retrieves the nominated Template.
+
+*Type:* `+String+`
+
+*Possible values:* `'id: "string"'`
+
+=== Example: using `advtemplate_get_template`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  advtemplate_get_template: 'id: "<template>"',
+});
+----

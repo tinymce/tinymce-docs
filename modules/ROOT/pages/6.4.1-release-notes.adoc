@@ -406,7 +406,7 @@ In previous versions of {productname}, the highlighted border around the editor 
 
 As a consequence, this issue, whilst creating no impending impacts on the functionality of the editor, created issues for users that rely on accessibility features such as this.
 
-To fix this issue, {productname} 6.4.1, introduced some improvements to ensure that when the editor content window is `infocus`, the editor will render a visible `highlighted` border around the content window when the below option is added to the `tinymce.init()` config.
+To fix this issue, {productname} 6.4.1, when the editor content window is `infocus`, the editor will render a visible `highlighted` border around the content window when the option is added to the `tinymce.init()` config as below.
 
 .Setting `highlight_on_focus: true` option to tinymce.init().
 [source, js]

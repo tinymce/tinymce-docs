@@ -374,7 +374,7 @@ Example content:
 <body contenteditable="false"><p>Try to insert content here</p></body>
 ----
 
-After selecting the space between "insert" and "content", executing `tinymce.activeEditor.insertContent('text')` would incorrectly insert the text which should not be possible.
+After selecting the space between "insert" and "content", executing `tinymce.activeEditor.insertContent('text')` would incorrectly insert `text` at the selection which should not be possible.
 
 [source, HTML]
 ----

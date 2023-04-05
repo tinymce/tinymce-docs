@@ -41,31 +41,6 @@ tinymce.init({
 });
 ----
 
-This example returns the following:
-
-[source,js]
-----
-[
-  {
-    id: '1',
-    title: 'Template 1'
-  },
-  {
-    id: '2',
-    title: 'Category 2',
-    items: [
-      {
-        id: '3',
-        title: 'Template 2.1',
-      },
-      {
-        id: '4',
-        title: 'Template 2.3',
-      }
-    ]
-  }
-]
-----
 
 The list returned by `advtemplate_list` must match the following requirements:
 

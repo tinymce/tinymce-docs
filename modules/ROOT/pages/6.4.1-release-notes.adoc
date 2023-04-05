@@ -383,7 +383,7 @@ After selecting the space between "insert" and "content", executing `tinymce.act
 
 {productname} 6.4 includes a new `isEditable` method on both the `editor.selection` and `editor.dom` APIs which are used to block the `editor.insertContent` API and `mceInsertContent` command when the selection covers a `contenteditable="false"` element.
 
-=== New `editor.dom.isEditable` and `editor.selection.isEditable` APIs that returns whether the specified node is editable
+=== New `editor.dom.isEditable` API method that returns whether the specified node is editable
 //#TINY-9462
 
 In previous versions of {productname}, elements within a `contenteditable="false"` root could be unexpectedly modified by the `editor.insertContent` API and the `mceInsertContent` command..

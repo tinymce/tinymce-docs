@@ -71,7 +71,7 @@ tinymce.init({
 });
 ----
 
-NOTE: The above example only demonstrates the {pluginname} user interface. An xref:#advtemplate_list[`advtemplate_list`] option has been added, with an included function returning a promise that contains a basic Template structure. This allows the {pluginname} user interface to load and present in a {productname} editor instance. This basic setup example cannot create, edit, or save new {pluginname} items. Nor can it insert Template items into a {productname} editor instance.
+NOTE: The above example only demonstrates the {pluginname} user interface. An xref:#advtemplate_list[`advtemplate_list`] option has been added, with an included function returning a promise that contains a basic Template structure. This allows the {pluginname} user interface to load and present in a {productname} editor instance. This basic setup example cannot create, edit, or save new {pluginname} items. Nor can it preview Template items or insert Template items into a {productname} editor instance.
 
 
 == Options

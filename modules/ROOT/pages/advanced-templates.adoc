@@ -31,7 +31,6 @@ To setup the {pluginname} plugin in the editor
 
 * add `inserttemplate` and `addtemplate` to the `toolbar` option in the editor configuration;
 
-* add the templates to use in the editor instance as a function returning the Promise which contains the editor instance’s initial template list.
 
 For example:
 

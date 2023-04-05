@@ -52,21 +52,23 @@ The {productname} 6.4.1 release includes an accompanying release of the **Advanc
 
 ==== New button to copy the current dialog content.
 
-This update adds a new **Copy code** button to the Advanced Code Editor dialog, enabling the copying of the entire contents of the dialog without having to first select.
+This update adds a new **Copy code** button to the **Advanced Code Editor** for editors. This new **Copy code** button allows users to copy the entire contents of the dialog.
 
 ==== New buttons to increase and decrease the font size in the dialog.
 
-This update adds two new buttons for increasing and decreasing the font size of code displayed in the Advanced Code Editor dialogs.
+This update adds two new buttons for increasing and decreasing the font size of code displayed in the dialog.
 
 ==== New button to toggle dark mode.
 
-This update adds a new **Dark/light mode** button for toggling the Advanced Code Editor dialog between dark and light display modes.
+This update adds a new **Dark/light mode** button to toggle between either dark or light display modes for the dialog.
 
 ==== New button to toggle fullscreen.
 
-This update adds a new **Fullscreen** button that for toggling the Advanced Code Editor dialog between fullscreen and dialog modes.
+This update adds a new **Fullscreen** button to toggle between fullscreen and dialog modes.
 
-NOTE: For the Advanced Code Editor to offer a full-screen mode requires the xref:fullscreen.adoc[Full screen] plugin and requires {pluginname} to be running in xref:advcode.adoc#advcode_inline[inline mode].
+NOTE: For the Advanced Code Editor to offer a full-screen mode, it requires the xref:fullscreen.adoc[Full screen] plugin and requires {pluginname} to be running in xref:advcode.adoc#advcode_inline[inline mode].
+
+NOTE: For the Advanced Code Editor to offer a **Copy** button, it requires a https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts[*secure contexts*].
 
 
 === Advanced Typography 1.1.1

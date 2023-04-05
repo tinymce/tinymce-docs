@@ -70,22 +70,6 @@ This update adds a new **Fullscreen** button that for toggling the Advanced Code
 NOTE: For the Advanced Code Editor to offer a full-screen mode requires the xref:fullscreen.adoc[Full screen] plugin and requires {pluginname} to be running in xref:advcode.adoc#advcode_inline[inline mode].
 
 
-=== Advanced Table 2.0.3
-
-The {productname} 6.4.1 release includes an accompanying release of the **Advanced Table** premium plugin.
-
-**Advanced Table** 2.0.3 includes the following addition:
-
-==== Updated the **Advanced Table** dropdown menu styles to match the default {productname} styles
-//#TINY-9630
-
-Previously, the **Advanced Table** premium plugin used browser-native elements for some dropdown menus.
-
-With this update, these menus are now created using the equivalent {productname} custom element, making these dropdown menus present with the same styling as other {productname} UI elements.
-
-For information on the **Advanced Table** plugin, see xref:advtable.adoc[Advanced Table].
-
-
 === Advanced Typography 1.1.1
 
 The {productname} 6.4.1 release includes an accompanying release of the **Advanced Typography** premium plugin.

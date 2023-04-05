@@ -853,7 +853,6 @@ In previous versions of {productname}, textareas with scrollbars in dialogs woul
 
 {productname} 6.4.1 added to the form textarea element a wrapper class containing border properties and an `overflow: hidden` property. This correctly clips the scrollbars to the border-radius on all browsers, resolving the bug.
 
-As a result, the `focus` dialog border now renders correctly in {productname} 6.4.1.
 
 === It was possible to open links inside the editor if the editor root was noneditable
 //#TINY-9470

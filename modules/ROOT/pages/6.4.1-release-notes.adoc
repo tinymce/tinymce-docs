@@ -902,11 +902,9 @@ As a result, any `contenteditable="false"` elements that are nested within anoth
 === Textareas with scrollbars in dialogs would not render rounded corners correctly on some browsers
 //#TINY-9331
 
-In previous versions of {productname}, the source code visible UI border would not render correctly in some browsers.
+In previous versions of {productname}, textareas with scrollbars in dialogs would not render rounded corners correctly on some browsers, as the rounded corner would be overlaid by the right-angled corner of the scrollbar track. An example of a dialog affected by this issue was the source code dialog.
 
-As a consequence, when viewing text-areas that contain `scrollbars` within dialogs, the `focus` visible border was not rendering the corners inside the dialog.
-
-To correct this issue, {productname} 6.4.1, introduced a new text-area wrapper that fixes the issues with the `border-color, radius, style and width` that directly affects the `focus` render element for the dialog.  In addition `overflow: hidden`, has been added to clip the scrollbars to the border-radius.
+{productname} 6.4.1 added to the form textarea element a wrapper class containing border properties and an `overflow: hidden` property. This correctly clips the scrollbars to the border-radius on all browsers, resolving the bug.
 
 As a result, the `focus` dialog border now renders correctly in {productname} 6.4.1.
 

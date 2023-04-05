@@ -12,6 +12,7 @@ include::partial$misc/admon-premium-plugin.adoc[]
 include::partial$misc/admon-requires-6.4v.adoc[]
 
 NOTE: The documentation for this page is a work in progress. Further details on the {pluginname} plugin will be added to this page soon.
+
 The {pluginname} Premium plugin enables the creation of complex, interactive templates using {productname}.
 
 They can also be added to a {productname} instance by end-users selecting content in a {productname} document and saving the selection as a template via the {productname} user-interface.
@@ -33,6 +34,7 @@ To setup the {pluginname} plugin user-interface in the editor
 * add `inserttemplate` and `addtemplate` to the `toolbar` option in the editor configuration;
 
 * add each {pluginname} option to the editor configuration;
+
 For example:
 
 [source,js]

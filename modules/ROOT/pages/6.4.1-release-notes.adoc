@@ -276,27 +276,6 @@ Also, the insertion point displays in all browsers immediately following a paste
 For information on the **Mentions** plugin, see xref:mentions.adoc[Mentions].
 
 
-=== Merge Tags 1.2.1
-
-The {productname} 6.4.1 release includes an accompanying release of the **Merge Tags** premium plugin.
-
-**Merge Tags** 1.2.1 includes the following change.
-
-==== The mceMergeTag command now preserves the selected content as a plain text and wraps it in a merge tag prefix and suffix if the content length exceeds the limit.
-//#TINY-9444
-
-In previous versions of {productname}, the `mceMergeTag` command would not wrap the selected content within the merge tag prefix and suffix when the content length exceeded the character limit for the merge tag.
-
-As a consequence, when the `text_patterns` feature was enabled and a user entered a too-long merge tag, the prefix and suffix of the tag were excluded from the inserted content.
-
-To address this problem, improvements to the `mceMergeTag` command were introduced with the release of {productname} 6.4.1. Now, if the length of the selected content exceeds the character limit for the merge tag, the content will be inserted as a plain text, including the prefix and suffix.
-
-[NOTE]
-If any content is embraced with a merge tag prefix and suffix but exceeds the character limit for merge tag content length, it will not be converted into an official merge tag.
-
-For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
-
-
 === Page Embed 2.1.1
 
 The {productname} 6.4.1 release includes an accompanying release of the **Page Embed** premium plugin.

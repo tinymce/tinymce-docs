@@ -38,30 +38,31 @@ For example:
 [source,js]
 ----
 tinymce.init({
-  selector: "textarea",
-  plugins: "advtemplate",
-  toolbar: "inserttemplate addtemplate",
+  selector: 'textarea',  // change this value according to your html
   advtemplate_list: () => {
     return Promise.resolve([
-    {
-      id: '1',
-      title: 'Template 1'
-    },
-    {
-      id: '2',
-      title: 'Category 2',
-      items: [
       {
-        id: '3',
-        title: 'Template 2.1',
+        id: '1',
+        title: 'Resolving tickets',
+        content: '<p>As we have not heard back from you in over a week, so we have gone ahead and resolved your ticket</p>'
       },
       {
-        id: '4',
-        title: 'Template 2.3',
+        id: '2',
+        title: 'Quick replies',
+        items: [
+          {
+            id: '3',
+            title: 'Message received',
+            content: '<p>Just a quick note to say we have received your message, and will get back to you within 48 hours.</p>'
+          },
+          {
+            id: '4',
+            title: 'Progress update',
+            content: '</p>Just a quick note to let you know we are still working on your case</p>'
+          }
+        ]
       }
-    ]
-  }
-  ]);
+    ]);
   }
 });
 ----

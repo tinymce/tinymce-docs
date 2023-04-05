@@ -1093,12 +1093,9 @@ In {productname} 6.4.1, anchor elements are included inside `lists` while nested
 === Dragging and dropping noneditable elements on table borders would remove the element on drop
 //#TINY-9021
 
-In previous versions of {productname}, dragging and dropping `contenteditable="false"` elements on table borders would create issues during the drop action.
+In previous versions of {productname}, dragging a `contenteditable="false"` element and dropping it on a table border would cause the `contenteditable="false"` element to be deleted. The user often intends to drop the element into a table cell, but may accidentally drop it on a table border, undesirably causing the element's deletion.
 
-As a consequence, this would result in the `contenteditable="false"` element being deleted after the `action` when dropped onto the borderline within the table cell.
-To fix this issue, {productname} 6.4.1, introduced a new `isActive` api to the handler for dragger, that checks if the event `isActive` or not, which then hides the resize bar during the dragging event, which now prevents content from being dropped onto table bars.
-
-In {productname} 6.4.1, dragging an inline `contenteditable="false"` element onto the border inside a table, now moves it into a neighbouring cell instead of deleting it.
+{productname} 6.4.1 introduced a new `isActive` api for Dragster that checks whether an element is being dragged or not. If an element is being dragged, the resize bars on table borders are hidden, which prevents the deletion side-effect of dropping elements onto the table border resize bars. If an element is dropped onto a table border, it will now be inserted into the left or right adjacent cell instead of being deleted.
 
 === Noneditable elements would be removed when dragged and dropped within a noneditable root
 //#TINY-9558

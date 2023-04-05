@@ -818,7 +818,7 @@ As a result, in {productname} 6.4.1, visual characters no longer render inside `
 
 In previous versions of {productname}, a bug was found that affected the *lists*  and *Advanced List* plugins when the {productname} editor body was set to `contenteditable = "false"`. The consequence meant that the lists, that were even set as `contenteditable="false"`,  elements could be modified by using list API commands, toolbar buttons and menu items.
 
-The fix involved implementing a new process to  check the element conditions.  The check now looks to identify if the *list* or *Advanced List* is a `contenteditable = "false"` element.
+The fix involved implementing a new process to  check the element conditions. The check now looks to identify if the *list* or *Advanced List* is a `contenteditable = "false"` element.
 
 As a result, in {productname} 6.4.1, *list* or *Advanced List*  plugins that are set as `contenteditable = "false"` elements can no longer be modified by using list API commands, toolbar buttons and menu items.
 

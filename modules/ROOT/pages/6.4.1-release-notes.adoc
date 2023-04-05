@@ -820,11 +820,9 @@ In {productname} 6.4.1, the color picker works as expected when using hex `value
 === Table cell selection was possible even if the element was in a noneditable root element
 //#TINY-9459
 
-Previous versions of {productname}, table cells set with the `contenteditable="false"` element properties could still be modified. This was because the `contenteditable="true"` element property settings were set to `false` in the root. This meant that any table UI actions, commands or table selections could still affect any tables that were within that specific `contenteditable="false"` element root.
+In previous versions of {productname}, table cells set within a `contenteditable="false"` root element could still be selected and modified. This meant that any table UI actions, commands or selections could affect tables that were nested within the `contenteditable="false"` root element.
 
-{productname} 6.4.1, introduced a blocker that is executed when tables are inside a `contenteditable="false"` element root.
-
-In {productname} 6.4.1, all table UI actions, commands and selections have been `disabled` for tables when either the table or the editor body have been set as `contenteditable="false"` elements.
+In {productname} 6.4.1, table is no longer selectable or editable by table UI and commands, when either the table or the editor body have been set as `contenteditable="false"` elements.
 
 === Table commands were modifying tables in a noneditable root element
 //#TINY-9459

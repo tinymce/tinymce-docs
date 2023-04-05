@@ -222,16 +222,12 @@ The {productname} 6.4.1 release includes an accompanying release of the **Commen
 ==== The comment input box now has a max height to prevent long comments from expanding the box indefinitely
 //#TINY-8894
 
-In previous versions of {productname}, the comment input box for the popup dialog would exceed the max height for the {productname} viewport.
+In previous versions of {productname}, if the comment string is larger than the initial height of the comment box, the comment input box would automatically expand its height to fit the comment string. However, when given long enough comment strings, the comment input box would grow beyond the viewable bounds of {productname}. This caused UX issues as:
 
-As a consequence, in situations when the user would insert content into the input field, the height of the comment box would expand beyond the max viewport height (vh), for {productname}.  This caused UX issues which restricted the users ability to `submit` the add **Comment** button as it was forced outside of the border `bounds` of the {productname} editor. 
+* the out-of-bounds parts of the comment was not viewable or editable; and 
+* the user was unable to submit the comment as the Add Comment button was also forced out of bounds.
 
-To fix this issue, {productname} introduced two changes which improved the way the **Comment** input box behaves.
-
-. Updates to the max height for the **Comment** input box, which now prevents long comments from expanding the box indefinitely beyond the editor set `bounds`. 
-. Set new heights for the **Comment** containers that is focused on improving the visibility of long comments by containing them within a smaller scrolling space with the added benefit of `SHOW MORE` or `SHOW LESS`.
-
-As a result, the input box for the **Comments** premium plugin now offers these improvements with the most recent release of {productname} 6.4.1.
+To address this issue, the **Comments** 3.3.1 in {productname} 6.4.1 set a maximum height for the comment input box, defined as half the height of the conversations area in the sidebar. At this maximum height, the height of the comment input box will be the same height as the viewing area for existing comments above, providing visual symmetry. The comment input box will not grow beyond the maximum height, and if the comment string is larger than this maximum height, the comment input box can be scrolled for the user to view and edit the entire comment string.
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to Tiny Comments].
 

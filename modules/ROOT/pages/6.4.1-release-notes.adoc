@@ -469,14 +469,9 @@ The new additions and improvements with the introduction of {productname} 6.4 in
 === New setText and setIcon methods added to menu button and toolbar button APIs
 //#TINY-9268
 
-In previous versions of {productname}, it was not possible to change the `text` or `icon` of a toolbar button after it had been set for the first time. As a consequence, the menu and toolbar button API, would not extend or update the parent `icon` or `text` directly, based upon what the user had selected within the menubar or toolbar.
+In previous versions of {productname}, it was not possible to change the `text` or `icon` of a toolbar or menu button dynamically.
 
-In {productname} 6.4.1, two new additions were added to the menu button API.
-
-. Added `setText` and `setIcon` properties to both the toolbar button `api`, and menu button `api`.
-. Provided the menu button `api` property as an *argument* which will fetch a function that will allow menu items to change the `icon` or `text` of the parent menu button.
-
-As a result, in {productname} 6.4.1, menu items can change based on the parent menu button `api` properties.
+In {productname} 6.4, two new methods `setText` and `setIcon` were added to the menu and toolbar button APIs, to enable updating the `text` and `icon` of the buttons after the editor initialization.
 
 === New `highlight_on_focus` option which enables highlighting the content area on focus
 //#TINY-9277

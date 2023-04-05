@@ -850,7 +850,7 @@ In {productname} 6.4.1, all table UI actions, commands and selections have been 
 
 In versions of {productname}, prior to 6.4.1, tables could be modified by using `execCommands` when tables are placed within a `contenteditable="false"` root element.
 
-As a consequence, a bug was identified that by using the `execCommands`, which are provided by {productname}, the user could modify the table element regardless of it being nested within a `contenteditable="false"` root element. This was made possible by by overriding the `contenteditable="false"` element settings by using the `execCommand`'s' to trigger the `action` event.
+As a consequence, a bug was identified that by using the `execCommands`, which are provided by {productname}, the user could modify the table element regardless of it being nested within a `contenteditable="false"` root element.
 
 To fix this bug, {productname} 6.4.1, made improvements to the DOM `Commands` API that now blocks all Table UI actions via the `execCommands` when a `contenteditable="false"` element selection is highlighted inside a `contenteditable="false"` root.
 

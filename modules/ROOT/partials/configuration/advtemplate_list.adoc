@@ -14,8 +14,7 @@ This option retrieves the list of available Templates.
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   advtemplate_list: () => {
-    return Promise.resolve(
-    [
+    return Promise.resolve([
       {
         id: '1',
         title: 'Resolving tickets',

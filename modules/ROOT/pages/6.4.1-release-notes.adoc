@@ -896,11 +896,11 @@ As a result, {productname} now blocks links from being selected while inside a `
 === Inline boundary was rendered for noneditable inline boundary elements
 //#TINY-9471
 
-Inline boundaries for `contenteditable="false"` elements were rendering styling in previous versions of {productname} 6.4.1 after the user `selected` before and after the `contenteditable="false"` elements node. The expected behavior is that `contenteditable="false"` elements should *not* have inline boundaries when a caret is inside an `contenteditable="false"` anchor or root.
+Inline boundaries were rendered for inline elements within a `contenteditable="false"` editor root. The expected behavior is that `contenteditable="false"` elements should *not* highlight inline boundaries when a selection is inside an `contenteditable="false"` element.
 
-Added a predicate check for inline boundaries before they render, and additional tests for `selections` for some special cases surrounding particular `contenteditable="false"` elements.
+Added a check for inline boundaries within `contenteditable="false"` elements that blocks the highlight.
 
-In {productname} 6.4.1, it is now not possible to highlight inline boundary elements that are classified as a `contenteditable="false"` content element.
+In {productname} 6.4.1, it is now not possible to highlight inline boundary elements that are contained inside a `contenteditable="false"` element.
 
 === Clicking on a disabled split button would call the onAction callback
 //#TINY-9504

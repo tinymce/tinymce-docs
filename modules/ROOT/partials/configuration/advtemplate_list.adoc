@@ -47,6 +47,5 @@ The list returned by `advtemplate_list` must match the following requirements:
 . Each list item must have a unique `id` value.
 . Each list item must have a non-empty `title` value.
 . Category items in the list must not contain nested categories.
-. Each template item in the list must have a non-empty `content` value.
 
 However, a category item in the response may contain an empty `items` list.

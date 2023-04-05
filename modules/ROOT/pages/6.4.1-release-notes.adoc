@@ -829,9 +829,10 @@ In {productname} 6.4.1, pasting links to text selections now generates the corre
 
 In previous versions of {productname}, when a cursor was placed within a checklist item, the icon for both the checklist and the bullet list would show as `active`. This created UX issues, as having both buttons showing an `active` state was confusing for the user, specifically for navigation purposes when using checklists from the *Advanced List* plugin.
 
-To fix this issue, {productname} added improvements to the list configuration to checks a new set of conditionals which would determine if the `node` selected matched the parent `node` within the checklist. If the match returns as `true`, the (api) will set only the checklist icon to a `active` state.
+To fix this issue, {productname} updates the logic to prevent setting the bullet list to `active` when the cursor is in a checklist.
 
-As a result, the checklist `icon` in {productname} 6.4.1, related to the `advlist` plugin will only appear in a `active` state, when the `node` checklist meets the new conditions implemented.
+As a result, in {productname} 6.4.1, only the checklist `icon` will appear as `active` when the cursor is in a checklist.
+ (edited) 
 
 === Dragging transparent elements into transparent blocks elements could produce invalid nesting of transparents
 //#TINY-9231

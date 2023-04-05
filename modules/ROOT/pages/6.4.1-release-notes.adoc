@@ -629,7 +629,7 @@ tinymce.init({
 ----
 
 [IMPORTANT]
-It is important to note that disabling sanitization introduces potential security issues, especially if the server-side XSS sanitization is weak or non-existent and is therefore not recommended.
+It is important to note that disabling sanitization introduces potential security issues, especially if the server-side XSS sanitization is weak or non-existent. Using this option therefore not recommended.
 
 // Read more about xref:sanitizing-html-input-to-protect-against-xss-attacks[Sanitizing HTML input to protect against XSS attacks]
 

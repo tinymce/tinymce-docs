@@ -147,7 +147,7 @@ In previous versions of {productname}, the prefix and suffix were removed when m
 In {productname} 6.4.1 this content is retained, as well as the prefix and suffix, though it is not converted into a Merge Tag.
 
 [NOTE]
-Any content exceeding the character limit for Merge Tags will be converted into a Merge Tag.
+Any content exceeding the character limit for Merge Tags will not be converted into a Merge Tag.
 
 For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
 

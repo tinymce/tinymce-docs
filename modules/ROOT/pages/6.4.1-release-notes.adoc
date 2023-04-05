@@ -836,11 +836,9 @@ As a result, the checklist `icon` in {productname} 6.4.1, related to the `advlis
 === Dragging transparent elements into transparent blocks elements could produce invalid nesting of transparents
 //#TINY-9231
 
-Dragging or dropping block `links` into other `links` was producing invalid nesting of other transparents such as `anchors`. As a result, these transparent elements would produce `anchor` tags within other `anchor` tags, which is not a general practice. As an example `links` and `anchors` that are defined to an element, must not be nested within or contain any other element and vice versa.
+In previous versions of {productname}, dragging and dropping inline anchor links into block anchor links was producing invalid nesting of anchors in Chrome. Anchors, like all other transparent elements, must not be nested within each other.
 
-Changes were implemented in {productname} 6.4.1 to fix this issue to ensure that any invalid child anchor elements that try to reproduce this action are unwrapped when the editor verifies another transparent has been dropped into another transparent (anchor) element.
-
-In {productname} 6.4.1, dragging content such as `links` into other `links` will now produce *valid* HTML `output` after a drag operation occurs which will be consistent across all browsers.
+Changes were implemented in {productname} 6.4.1 such that when an inline transparent element such as an anchor is dragged and dropped into a transparent block element of the same type (e.g. also an anchor), the dropped inline transparent element is unwrapped to prevent the nesting behavior. This ensures that the HTML output after the drag operation is valid and consistent across browsers.
 
 === The editor.insertContent API would insert contents inside noneditable elements if the selection was inside the element
 //#TINY-9462

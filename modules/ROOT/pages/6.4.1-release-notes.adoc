@@ -880,17 +880,8 @@ As a result, the `focus` dialog border now renders correctly in {productname} 6.
 
 === It was possible to open links inside the editor if the editor root was noneditable
 //#TINY-9470
-While setting the editor root to `contenteditable="false"`, it was discovered that links could still be opened, even in instances where the editor was setup as the below:
-.Example setup
-[source, js]
-----
-tinymce.init({
-    selector: "textarea",
-    init_instance_callback: (editor) => {
-      editor.getBody().contentEditable = 'false';
-    }
-});
-----
+While setting the editor root to `contenteditable="false"`, it was discovered that links could still be opened.
+
 As a result, {productname} now blocks links from being selected while inside a `contenteditable="false"` root.
 
 === Inline boundary was rendered for noneditable inline boundary elements

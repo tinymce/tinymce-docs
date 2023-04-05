@@ -356,11 +356,7 @@ After selecting the space between "insert" and "content", executing `tinymce.act
 === New `editor.dom.isEditable` API method that returns whether the specified node is editable
 //#TINY-9462
 
-In previous versions of {productname}, elements within a `contenteditable="false"` root could be unexpectedly modified by the `editor.insertContent` API and the `mceInsertContent` command..
-
-As a consequence all elements within the root `body` set to `contenteditable="false";` value, were affected by the issue.
-
-The new additions and improvements with the introduction of {productname} 6.4 include new `editor.dom.isEditable` and `editor.selection.isEditable` APIs which now block the `editor.insertContent` API and `mceInsertContent` command if the selection is in a `contenteditable="false"` part of the root contents.
+{productname} 6.4 includes a new `isEditable` method on the `editor.dom` that will check if the specified node is editable by finding the closest ascendant with either a `true` or `false` value for it's `contenteditable` attribute. If that value is `true` then the node is editable, if that value if `false` then it's not editable.
 
 === New setText and setIcon methods added to menu button and toolbar button APIs
 //#TINY-9268

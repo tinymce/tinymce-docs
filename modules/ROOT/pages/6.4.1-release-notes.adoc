@@ -469,7 +469,7 @@ tinymce.init({
   selector: "textarea",
   advcode_inline: true,
   plugins: [
-    "code", 'advcode', 
+    "code", "advcode", 
   ],
   toolbar: "textSizeIncrease textSizeDecrease"
 });

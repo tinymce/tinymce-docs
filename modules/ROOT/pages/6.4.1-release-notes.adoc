@@ -1076,9 +1076,9 @@ In {productname} 6.4.1, the color swatches opened by the `forecolor` and `backco
 === Drag and dropping the last noneditable element out of its parent block would not properly pad the parent block element
 //#TINY-9606
 
-In previous versions of {productname}, dragging and dropping `contenteditable="false"` elements into another block elements would cause issues with the original parent block. As a consequence, the parent block element where the `contenteditable="false"` element was dragged from would leave the parent block as a `contenteditable="false"` element, as it was not discarding the contents when the element was transferred.
+In previous versions of {productname}, dragging the last child element with a `contentedtiable="false"` attribute out of a block element would prevent the user from placing the caret back into that source block.
 
-As a fix, {productname} 6.4.1, added a new condition which validates a set of conditions the check if the parent block element is within a `parentNode` and is a block element, in which it will trigger a action to remove elements with padding that meet this condition. 
+As a fix, {productname} 6.4.1, added a new condition which validates if the source element is empty when the drop operation occurs. If it is empty then it will be padded with a `BR` element so that it's possible to place the caret inside the block. 
 
 In {productname} 6.4.1, dragging and dropping elements that are `contenteditable="false"` out of they're parent blocks now correctly pad the parent block element.
 

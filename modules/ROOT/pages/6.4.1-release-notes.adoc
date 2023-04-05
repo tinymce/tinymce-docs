@@ -363,7 +363,7 @@ In earlier versions of {productname} the `renderUI` function which initiates the
 
 This change should have no impact on customer integrations, even those implementing custom themes.
 
-=== New isEditable API to editor.selection that returns true or false if the current selection is editable
+=== New `editor.selection.isEditable` API method that returns whether the current selection is editable
 //#TINY-9462
 
 In previous versions of {productname}, when the body was set to `contenteditable="false"` content could still be inserted with the `insertContent` API.

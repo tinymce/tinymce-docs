@@ -916,7 +916,7 @@ The recreated formats are not consistent with the original formats. For example,
 
 A key override on the Backspace and Delete keys already exists to address the first method. However, the bug persists for the second and third methods.
 
-In {productname} 6.4, two new key overrides have been added to address the second and third methods:
+In {productname} 6.4.1, two new key overrides have been added to address the second and third methods:
 
 * For Method 2: When Backspace or Delete is detected on `keydown` on a ranged selection, the override checks if the conditions for Method 2 is satisfied. If so, the override will read the current formats, delete the selection, and then create a caret containing the original formats.
 * For Method 3: When one of the keyboard shortcuts from Method 3 is detected on `keyup`, the override creates an unformatted caret at the current selection. Performing the override on `keyup` allows the native behavior of the deletion shortcuts to occur. Then, applying an unformatted caret at the selection after deletion will prevent the browser from recreating any formats.

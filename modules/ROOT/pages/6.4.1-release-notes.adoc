@@ -426,7 +426,7 @@ In {productname} 6.4.1, when the ` highlight_on_focus: true` option is set, the 
 
 In previous versions of {productname}, users did not have the ability to set their font size by either direct input into a component field or by using plus `+` or minus `-` buttons.
 
-As a consequence, {productname} introduced a new UI component that gives users an option to set the default unit of measure (UOM) for font sizes via the new input field or the plus `+` or minus `-` buttons within the toolbar when the `fontsizeinput` is set within the tinymce.init() such as the below:
+As a consequence, {productname} introduced a new UI component that gives users an option to set the font sizes via the `fontsizeinput` toolbar button. For example:
 
 [source,js]
 ----

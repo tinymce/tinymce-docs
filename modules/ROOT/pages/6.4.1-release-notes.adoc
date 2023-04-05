@@ -995,8 +995,6 @@ While setting the editor root to `contenteditable="false"`, it was discovered th
 ----
 tinymce.init({
     selector: "textarea",
-    plugins: [
-    ],
     init_instance_callback: (editor) => {
       editor.getBody().contentEditable = 'false';
     }

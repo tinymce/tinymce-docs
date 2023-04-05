@@ -372,11 +372,11 @@ In {productname} 6.4, two new methods `setText` and `setIcon` were added to the 
 === New `highlight_on_focus` option which enables highlighting the content area on focus
 //#TINY-9277
 
-In previous versions of {productname}, the highlighted border around the editor content window did not render when the editor was `infocus`.
+In previous versions of {productname}, the highlighted border around the editor content window did not render when the editor was in focus.
 
 As a consequence, this issue, whilst creating no impending impacts on the functionality of the editor, created issues for users that rely on accessibility features such as this.
 
-To fix this issue, {productname} 6.4.1, when the editor content window is `infocus`, the editor will render a visible `highlighted` border around the content window when the option is added to the `tinymce.init()` config as below.
+To fix this issue, {productname} 6.4.1, when the editor content window is in focus, the editor will render a visible `highlighted` border around the content window when the option is added to the `tinymce.init()` config as below.
 
 .Setting `highlight_on_focus: true` option to tinymce.init().
 [source, js]

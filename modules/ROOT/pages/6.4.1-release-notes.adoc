@@ -736,7 +736,7 @@ Changes were implemented in {productname} 6.4.1 such that when an inline transpa
 === The editor.insertContent API would insert contents inside noneditable elements if the selection was inside the element
 //#TINY-9462
 
-In previous versions of {productname}, the settings for the `contentEditable` property in the editor root was set to `false`. As a consequence, the user could insert content using `api` commands to edit a `contenteditable="false"` root element.
+In previous versions of {productname}, if setting the `contentEditable` attribute of the editor root to `false`. A user could insert content using `api` commands to edit the contents of the `contenteditable="false"` root element even when that content wasn't editable.
 
 To fix this bug, in {productname} 6.4.1, a blocker was added to the `editor.insertContent` API and `mceInsertContent` command, which stops `contenteditable="false"` root elements from being edited.
 

@@ -861,13 +861,11 @@ _(Readmore about editorCommands xref:editor-command-identifiers.adoc[here])_
 === Fake carets were rendered for noneditable elements and tables in a noneditable root element
 //#TINY-9459
 
-In previous versions of {productname}, `fake` carets that are within a `contenteditable="false"` element, would render as a `highlighted` node, when nested within another `contenteditable="false"` element, this would occured when the content was placed within a `table` placed in the root element.
+In previous versions of {productname}, `fake` carets would be rendered before or after tables or `contenteditable="false"` elements that was nested within another `contenteditable="false"` element.
 
-As a consequence, `fake` caret/s would be visibly highlighted within the editor viewport,  which would allow content to be inserted into the element when the table was selected by using either the keyboard and mouse function commands.
+To fix this {productname} 6.4.1, added a blocker for rendering fake carets for `contenteditable="false"` and table elements that are contained within other `contenteditable="false"` elements.
 
-To fix this {productname} 6.4.1, added a new function to the Utils API that filters any content that is considered as a `fake caret` element, which now disables the users ability to add/insert or modify the content contained within the `contenteditable="false"` element node space.
-
-As a result, any `contenteditable="false"` elements that are nested within another `contenteditable="false"` element root that are nested within `table` elements, can no longer be edited in {productname} 6.4.1.
+As a result, any `contenteditable="false"` or table elements that are nested within another `contenteditable="false"` element root will no longer have fake carets in {productname} 6.4.1.
 
 === Textareas with scrollbars in dialogs would not render rounded corners correctly on some browsers
 //#TINY-9331

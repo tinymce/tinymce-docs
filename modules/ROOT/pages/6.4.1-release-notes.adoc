@@ -1225,9 +1225,9 @@ To address this issue, improvements made allow inline dialogs the flexability to
 === Checkmark icons are added to every color in color swatch
 //#TINY-9567
 
-In previous versions of {productname}, the color swatch feature would add a checkmark icon to every color, but would only display the checkmark on the "aria-checked" attribute.
+In previous versions of {productname}, the color swatch feature added a checkmark icon to every color, but would only display the checkmark when one is enabled.
 
-In {productname} 6.4.1, a fix was applied that replaced the previous selector, `aria-checked='true'``, with `tox-collection__item--enabled`. This fix, ensures that the checkmark is only displayed on the enabled colors.
+In {productname} 6.4.1, the selector for applying the checkmark is updated so the checkmark will only be added and displayed for enabled colors.
 
 === The colour picker reset to default when formatting pre element with addtional format options
 //#TINY-9342

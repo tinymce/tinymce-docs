@@ -413,9 +413,7 @@ To fix this issue, {productname} 6.4.1, when the editor content window is `infoc
 ----
 tinymce.init({
     selector: "textarea",
-    plugins: [ 
-    ],
-    highlight_on_focus: true // This option is required to be set to `true`.
+    highlight_on_focus: true
 });
 ----
 

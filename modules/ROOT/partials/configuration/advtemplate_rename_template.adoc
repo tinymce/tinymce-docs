@@ -30,8 +30,7 @@ tinymce.init({
         title
       }),
     })
-    .then((response) => response.json())
-    .then(({ id }) => ({}))
+    .then(() => ({}))
     .catch((error) => console.log('Failed to rename template\n' + error)),
 });
 ----

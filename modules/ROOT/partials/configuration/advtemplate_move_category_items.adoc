@@ -30,8 +30,7 @@ tinymce.init({
         newCategoryId
       }),
     })
-    .then((response) => response.json())
-    .then(({ id }) => ({}))
+    .then(() => ({}))
     .catch((error) => console.log('Failed to move category items\n' + error)),
 });
 ----

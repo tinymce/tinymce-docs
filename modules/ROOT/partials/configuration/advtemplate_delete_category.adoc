@@ -26,8 +26,7 @@ tinymce.init({
     fetch('/categories/' + id, {
       method: 'DELETE',
     })
-    .then((response) => response.json())
-    .then(({ id }) => ({}))
+    .then(() => ({}))
     .catch((error) => console.log('Failed to delete category\n' + error)),
 });
 ----

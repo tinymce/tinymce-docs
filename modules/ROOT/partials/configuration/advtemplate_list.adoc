@@ -41,11 +41,13 @@ tinymce.init({
 });
 ----
 
-
 The list returned by `advtemplate_list` must match the following requirements:
 
 . Each list item must have a unique `id` value.
 . Each list item must have a non-empty `title` value.
 . Category items in the list must not contain nested categories.
 
-However, a category item in the response may contain an empty `items` list.
+However, a category item in the response:
+
+. May contain an empty `items` list.
+. Is not required to include a `content` value.

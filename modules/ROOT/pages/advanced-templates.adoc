@@ -41,6 +41,8 @@ For example:
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
+  plugins: "advtemplate",
+  toolbar: "inserttemplate addtemplate",
   advtemplate_list: () => {
     return Promise.resolve([
       {

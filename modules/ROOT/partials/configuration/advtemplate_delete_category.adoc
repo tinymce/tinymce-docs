@@ -1,18 +1,33 @@
 [[advtemplate_delete_category]]
 == `advtemplate_delete_category`
 
-This option deletes the nominated Template category.
+The plugin uses the `advtemplate_delete_category` asynchronous function to delete a category.
 
-*Type:* `+String+`
+*Type:* `+Function+` (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
 
-*Possible values:* `'id: "string"'`
+*Input parameters:*
+[cols="1,1,1,3",options="header"]
+|===
+|Field |Type |Required? |Description
+|`+id+` | `+string+` | required | The id of the category to delete.
+|===
+
+*Return data:*
+Empty object  `{}`
 
 === Example: using `advtemplate_delete_category`
 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
-  advtemplate_delete_category: 'id: "<template-category>"',
+  selector: 'textarea#advtemplate',  // change this value according to your html
+  plugins: ["advtemplate"],
+  advtemplate_delete_category: (id) =>
+    fetch('/categories/' + id, {
+      method: 'DELETE',
+    })
+    .then((response) => response.json())
+    .then(({ id }) => ({}))
+    .catch((error) => console.log('Failed to delete category\n' + error)),
 });
 ----

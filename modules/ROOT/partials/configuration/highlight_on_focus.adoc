@@ -1,0 +1,38 @@
+[[highlight_on_focus]]
+== `+highlight_on_focus+`
+
+include::partial/$misc/admon-requires-6.4v.adoc[]
+
+The `+highlight_on_focus+` option adds a blue outline to an instantiated {productname} editor when that editor is made the input focus. When using the `oxide-dark` skin, the outline is white.
+
+This allows users to clearly see when the editor is in focus, or which editor has focus if more than one {productname} instance is available.
+
+*Type:* `+Boolean+`
+
+*Default value:* `+false+`
+
+*Possible values:* `+true+`, `+false+`
+
+=== Example: using `+highlight_on_focus+`
+
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  highlight_on_focus: true
+});
+----
+
+=== Using `+highlight_on_focus+` with custom skins
+
+If a xref:creating-a-skin.adoc[custom skin] is being used, two variables can be updated to match the  `+highlight_on_focus+` option’s appearance with the custom skin.
+
+The two rules and their default values are:
+
+[source,css]
+----
+@edit-area-border-color: #2D6ADF;
+@edit-area-border-width: 2px;
+----
+
+NOTE: This is entirely optional. If the default values are not changed, the `+highlight_on_focus+` option works with a custom skin exactly as it does with {productname} default skins.

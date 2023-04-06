@@ -539,6 +539,129 @@ A *textarea* is a multiline text field.
 }
 ----
 
+[[tree]]
+=== tree
+
+A *tree* is a component used to present a tree-style hierarchy. For example a list of folders containing other folders and files.
+
+A *tree* can include two different items:
+
+* a directory; and
+* a leaf.
+
+A directory item can contain other directory items and leaf items.
+
+As well, *tree* items can be set to `+fetch+` other {productname} menus.
+
+==== Activating items in a tree
+
+Activating a directory item toggles the item between two states: collapsed and expanded.
+
+Activating a leaf item triggers the `+onLeafAction+` callback.
+
+Items are activated by clicking, pressing or by using keyboard-navigation.
+
+==== Tree navigation and activation using a keyboard
+
+* The **up–** or **down–arrow-key** highlights an item.
+* If the highlighted item is a directory, the **left–** or **right–arrow-key** collapses or expands a directory item
+* If the hightlighted item is a leaf, pressing **Return** triggers the `+onLeafAction+` callback.
+
+*onLeafAction:* Interacting with a *tree* component executes the `+onLeafAction+` callback set in the dialog configuration.
+
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  toolbar: "tree",
+  setup: (ed) => {
+    ed.ui.registry.addButton('tree', {
+      text: 'Tree toolbar button',
+      onAction: () => {
+        ed.windowManager.open({
+          title: 'Tree dialog',
+          buttons: [{
+	    type: 'cancel',
+	    text: 'Cancel'
+	  }],
+          body : {
+            type: 'panel',
+            items: [{
+              type: 'tree',
+              onLeafAction: (id) => {
+                console.log('clicked on item with id', id);
+              },
+              items: [
+                {
+                  type: 'directory',
+                  id: 'dir',
+                  title: 'Directory',
+                  menu: {
+                    icon: 'image-options',
+                    type: 'menubutton',
+                    fetch: (success) => success([
+                      'bold',
+                      'italic',
+                      'underline',
+                      {
+                          type: 'menuitem',
+                          text: 'Menu item',
+                          onAction: () => {
+                            console.log('dir menu item');
+                          }
+                      }
+                    ])
+                  },
+                  children: [
+                    {
+                      type: 'leaf',
+                      title: 'Leaf 3',
+                      id: '3'
+                    },
+                    {
+                      type: 'leaf',
+                      title: 'Leaf 4',
+                      id: '4',
+                      menu: {
+                        icon: 'image-options',
+                        type: 'menubutton',
+                        fetch: (success) => success([
+                          'blocks',
+                          'fontfamily',
+                          'fontsize',
+                          {
+                            type: 'menuitem',
+                            text: 'Menu item',
+                            onAction: () => {
+                              console.log('leaf menu item'); // for demo purposes
+                            }
+                          }
+                        ])
+                      }
+                    },
+                  ]
+                },
+                {
+                  type: 'leaf',
+                  title: 'Leaf 5',
+                  id: '5'
+                },
+                {
+                  type: 'leaf',
+                  title: 'Leaf 6',
+                  id: '6'
+                },
+              ]
+            }]
+          }
+        });
+      }
+    });
+  },
+});
+----
+
+
 [[urlinput]]
 === urlinput
 

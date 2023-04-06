@@ -27,6 +27,9 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 |Name |Value |Description
 |isEnabled |`+() => boolean+` |Checks if the button is enabled.
 |setEnabled |`+(state: boolean) => void+` |Sets the button's enabled state.
+3+|include::partial$misc/admon-requires-6.4v.adoc[]
+|setText |`+(text: string) => void+` |Sets the text label to display.
+|setIcon |`+(icon: string) => void+` |Sets the icon of the button.
 |===
 
 == Group toolbar button example and explanation

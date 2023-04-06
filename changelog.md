@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-1929: added `admon-rtc-eol.adoc` to `/modules/partials/misc` and added `include::` statements pointing to this across the RTC documentation chapters.
 - DOC-1889: restructured `inline-css.adoc`.
 - DOC-1867: added notes regarding setting `autoresize_bottom_margin` in relation to values for `margin-bottom` to `autoresize_bottom_margin.adoc`.
 - DOC-1907: updated `advcode.adoc` and documentation related live-demo to cover new functionality.

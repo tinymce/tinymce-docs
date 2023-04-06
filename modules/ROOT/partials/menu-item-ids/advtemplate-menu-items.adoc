@@ -1,0 +1,6 @@
+[cols="1,1,2",options="header"]
+|===
+|Menu item identifier |xref:menus-configuration-options.adoc#example-the-tinymce-default-menu-items[Default Menu Location] |Description
+|`+inserttemplate+` |Insert |Opens the Templates dialog which presents all templates available to the particular {productname} instance for selection and insertion.
+|`+addtemplate+` |Tools |Open the New template dialog, allowing for the selected text to saved as a named template and placed in an already-set category. If there is no selection current in the {productname} editor, this menu item is disabled.
+|===

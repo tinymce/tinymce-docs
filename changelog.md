@@ -6,6 +6,22 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-1912: Advanced Template documentation added.
+- DOC-1893: new file, `/modules/ROOT/partials/configuration/highlight_on_focus.adoc`, added. Documentation of new option, `highlight_on_focus`, added to new file. `include::` statements pointing to new file added to `content-appearance.adoc` and `accessibility.adoc`.
+- DOC-1909: re-wrote the Supported Mobile Platforms section to match the Browser Compatibility section language, tying supported platforms to release recency rather than specific version numbers.
+- DOC-1910: `sanitizing-html-input-and-protecting-against-xss-attacks-dom-parser-and-dom-purify.adoc` added as new partial. `includes` to this added to `security.adoc` and `migration-from-5x.adoc`. This new partial outlines how TinyMCE 6.x uses the `DOMParser` and `DOMPurify` APIs, how to turn `DOMPurify` off, and why doing so is dangerous.
+- DOC-1914: added documentation of the new `tree` component to `dialog-components.adoc`.
+- DOC-1915: Updated supported versions table  in `supported-versions.adoc`. It now include support end dates for TinyMCE versions 6.2 and 6.3 and version 6.4’s release date and the TBD status of 6.4’s support end date. Also re-structured browser compatibility table in `browser-compatibility.adoc` and re-wrote the notes associated with said table.
+- DOC-1922: Added a new section, ‘Advanced Typography plugin rules’, to `advanced-typography.adoc`.
+- DOC-1927: copy-edits and typo corrections to `6.3.2-release-notes.adoc`, `invalid_styles.adoc`, `schema.adoc`, `spellchecker_dialog.adoc`, and `indentation.adoc`.
+- DOC-1929: added `admon-rtc-eol.adoc` to `/modules/partials/misc` and added `include::` statements pointing to this across the RTC documentation chapters.
+- DOC-1889: restructured `inline-css.adoc`.
+- DOC-1867: added notes regarding setting `autoresize_bottom_margin` in relation to values for `margin-bottom` to `autoresize_bottom_margin.adoc`.
+- DOC-1907: updated `advcode.adoc` and documentation related live-demo to cover new functionality.
+- DOC-1892: `fontsizeinput` documentation added to `core-toolbar-buttons.adoc`; `font_size_input_default_unit.adoc` added to `/modules/ROOT/partials/configuration/`' and xref to this new file added to `user-formatting-options.adoc`.
+- DOC-1900: added documentation of `setText` and `setIcon` functions to `custom-*-toolbar-button.adoc` files.
+- DOC-1902: `ui_mode` documentation added to `ui-mode-configuration.adoc`; `ui_mode.adoc` added to `/modules/ROOT/partials/configuration/` and xref to this new file added to `ui-mode-configuration.adoc`.
+
 ### 2023-03-29
 
 - DOC-1939: added the TinyMCE 6.4.1-specific changes to `changelog.adoc`.

@@ -36,6 +36,7 @@
 ***** xref:webcomponent-pm.adoc[Using a package manager]
 ***** xref:webcomponent-zip.adoc[Using a .zip package]
 **** xref:swing.adoc[Java Swing]
+**** xref:shadow-dom.adoc[Shadow DOM]
 **** xref:jquery-pm.adoc[jQuery]
 **** xref:bootstrap-zip.adoc[Bootstrap]
 **** xref:django-zip.adoc[Django]
@@ -260,6 +261,7 @@
 ** xref:statusbar-configuration-options.adoc[Statusbar]
 ** xref:accessibility.adoc[Accessibility]
 ** xref:ui-localization.adoc[Localization options]
+** xref:ui-mode-configuration-options.adoc[UI Mode]
 * Content
 ** xref:add-css-options.adoc[Add CSS]
 ** xref:content-behavior-options.adoc[Behaviors]
@@ -279,6 +281,7 @@
 *** xref:a11ychecker.adoc[Accessibility Checker]
 *** xref:advcode.adoc[Advanced Code Editor]
 *** xref:advtable.adoc[Advanced Tables]
+*** xref:advanced-templates.adoc[Advanced Templates]
 *** xref:advanced-typography.adoc[Advanced Typography]
 *** xref:casechange.adoc[Case Change]
 *** xref:checklist.adoc[Checklist]
@@ -387,6 +390,10 @@
 ** xref:keyboard-shortcuts.adoc[TinyMCE Keyboard shortcuts]
 * Security
 ** xref:security.adoc[Security guide]
+*** xref:security.adoc#reporting-tinymce-security-issues[Reporting TinyMCE security issues]
+*** xref:security.adoc#xref:what-we-do-to-maintain-security-for-tinymce[What we do to maintain security for TinyMCE]
+*** xref:security.adoc#configuring-content-security-policy-csp-for-tinymce[Configuring Content Security Policy (CSP) for TinyMCE]
+*** xref:security.adoc#general-security-risks-for-user-input-elements[General security risks for user input elements]
 ** xref:tinymce-and-csp.adoc[Content Security Policies (CSP)]
 ** xref:tinymce-and-cors.adoc[Cross-Origin Resource Sharing (CORS)]
 * Release information

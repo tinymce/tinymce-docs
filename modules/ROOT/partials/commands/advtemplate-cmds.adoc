@@ -1,0 +1,13 @@
+[cols="1,3",options="header"]
+|===
+|Command |Description
+|AdvTemplateAddDialog |Opens the `Add Template` dialog, allowing the current selection to be added as a template.
+|AdvTemplateInsertDialog |Opens the `Insert Template` dialog, allowing a template to be inserted at the current selection
+|===
+
+.Example
+[source,js]
+----
+tinymce.activeEditor.execCommand('AdvTemplateAddDialog');
+tinymce.activeEditor.execCommand('AdvTemplateInsertDialog');
+----

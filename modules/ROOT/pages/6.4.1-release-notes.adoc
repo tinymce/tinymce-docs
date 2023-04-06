@@ -941,11 +941,9 @@ As a result, when a root element is set to `contenteditable="false"`, any `conte
 === Creating a list in a table cell when the caret is in front of an anchor element would not properly include the anchor in the list.
 //#TINY-6853
 
-In previous versions of {productname}, a bug was causing issues with `links` while they were nested within table-cells. As a consequence, it was found that when creating a `num-list` or `bullet-list` to the left (node) of a `link` that was nested within a table cell the `list` would *not* include the created `link` within the `num or bullet-list` as expected. 
+In previous versions of {productname}, when the caret is to the left of an anchor element at the start of a line in a table cell, creating a `<ul>` or `<ol>` list would not include the anchor element. Instead, the line with the anchor element would be unexpectedly pushed below and an empty list would be created above.
 
-To fix this bug, the table cell now checks *If* the caret position is in front of an *anchor element*, `if` (true), then the table cell will include the anchor in the `list`.
-
-In {productname} 6.4.1, anchor elements are included inside `lists` while nested within table cells.
+To resolve this bug, in {productname} 6.4.1, when toggling a list in a table cell, inline nodes such as anchors to the left and right of the caret are traversed to ensure that they are included in the list as expected.
 
 === Dragging and dropping noneditable elements on table borders would remove the element on drop
 //#TINY-9021

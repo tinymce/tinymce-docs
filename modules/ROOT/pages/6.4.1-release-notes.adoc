@@ -1053,9 +1053,9 @@ In {productname} 6.4.1, pressing backspace after adding a Text Pattern, now form
 === Incorrect event target for dragend and drop events when dragging and dropping noneditable elements within editor
 //#TINY-9599
 
-A bug was discovered in previous version of {productname}, that would arise when dragging and dropping `contenteditable="false"` elements within the editor was that the target of the dragstart, dragend or drop events would be the editor instance itself, rather than the expected DOM target.
+In previous versions of {productname}, when dragging and dropping `contenteditable="false"` elements within the editor, the target of the `dragstart`, `dragend`, and `drop` events would be the editor instance itself, rather than the expected DOM target.
 
-In {productname} 6.4.1, the events are now simulated based on the mouse event that produced them, meaning that the target and other properties, such as mouse coordinates, are now properly produced for the simulated drag and drop events.
+In {productname} 6.4.1, the events are now simulated based on the mouse event that produced them, meaning that the target and other properties, such as mouse coordinates, are now properly produced for the simulated `dragstart`, `dragend`, and `drop` events.
 
 === Dialog getting cut offscreen when opened from toolbar button in Inline Mode
 //#TINY-9588

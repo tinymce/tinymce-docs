@@ -23,6 +23,7 @@ Open Source users: please report issues in the https://github.com/tinymce/tinymc
 * xref:plugins[Plugins]
 * xref:schema[Schema]
 * xref:ui-and-ux-elements-and-components[UI and UX elements and components]
+* xref:security[Security]
 
 == {productname} {productmajorversion} core changes
 
@@ -615,3 +616,8 @@ alignright: [
 ----
 
 Alternatively, the xref:apis/tinymce.formatter.adoc#register[Formatter API] can be used to register a custom format using `editor.formatter.register(<name>, <format>)`.
+
+[[security]]
+== Security
+
+include::partial$security/sanitizing-html-input-and-protecting-against-xss-attacks-dom-parser-and-dom-purify.adoc[]

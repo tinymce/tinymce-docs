@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-1910: `sanitizing-html-input-and-protecting-against-xss-attacks-dom-parser-and-dom-purify.adoc` added as new partial. `includes` to this added to `security.adoc` and `migration-from-5x.adoc`. This new partial outlines how TinyMCE 6.x uses the `DOMParser` and `DOMPurify` APIs, how to turn `DOMPurify` off, and why doing so is dangerous.
 - DOC-1914: added documentation of the new `tree` component to `dialog-components.adoc`.
 - DOC-1915: Updated supported versions table  in `supported-versions.adoc`. It now include support end dates for TinyMCE versions 6.2 and 6.3 and version 6.4’s release date and the TBD status of 6.4’s support end date. Also re-structured browser compatibility table in `browser-compatibility.adoc` and re-wrote the notes associated with said table.
 - DOC-1922: Added a new section, ‘Advanced Typography plugin rules’, to `advanced-typography.adoc`.

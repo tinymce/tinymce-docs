@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-1922: Added a new section, ‘Advanced Typography plugin rules’, to `advanced-typography.adoc`.
 - DOC-1927: copy-edits and typo corrections to `6.3.2-release-notes.adoc`, `invalid_styles.adoc`, `schema.adoc`, `spellchecker_dialog.adoc`, and `indentation.adoc`.
 - DOC-1929: added `admon-rtc-eol.adoc` to `/modules/partials/misc` and added `include::` statements pointing to this across the RTC documentation chapters.
 - DOC-1889: restructured `inline-css.adoc`.

@@ -37,75 +37,144 @@ tinymce.init({
 
 The {pluginname} plugin does not support
 
-. https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes[Pseudo-classes] (for example `button:hover { color: blue; }`).
-. https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements[Pseudo-elements] (for example `p::first-line { color: blue; }`)
-. https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule[@ rules] (for example `@media (screen)`)
+. https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes[Pseudo-classes].
++
+For example:
++
+[source,css]
+----
+button:hover {
+  color: blue;
+}
+----
+
+. https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-elements[Pseudo-elements].
++
+For example:
++
+[source,css]
+----
+p::first-line {
+  color: blue;
+}
+----
+
+. https://developer.mozilla.org/en-US/docs/Web/CSS/At-rule[@ rules].
++
+For example:
++
+[source,html]
+----
+@media (screen)
+----
+
 . The `!important` property.
 
-=== Iframe mode is fully supported with some notable limitations
 
-Since iframe is a sandbox, specifying CSS is reasonably constrained at this stage. 
+=== Classic or iframe mode support
 
-CSS styling information can be specified in several places for iframe mode:
+xref:use-tinymce-classic.adoc[Classic or iframe mode] is a sandbox. Consequently, specifying CSS is constrained. 
 
-* A CSS stylesheet that is specified in the `<head>` of the iframe document i.e. `<link rel="stylesheet" href="styles.css">`
-** The supported way to add a stylesheet in {productname} is using the `content_css` option which automatically creates the `<link>` tag and puts it in the `<head>` of the document.
-** The user can also manually insert a stylesheet link in the <head> of the `iframe`.
-* A `<style>` tag in the `<head>` of the `iframe` document i.e. `<style>p { color: red; }</style>`
-** The supported way to add a style tag in {productname}, is using the `content_style` option which automatically creates the `<style>` tag and puts in the head of the document
-** The user can manually insert a style tag in the <head> of the `iframe`.
-* A `style` attribute on an element within the content i.e. inline CSS
+CSS can be specified in classic mode in the following ways:
 
-It is worth noting that by default, {productname} does not support having a `<style>` tags as part of the body HTML content.
+. The `content_css` option
++
+Setting the xref:add-css-options.adoc#content_css[`content_css`] option automatically creates the `<link>` tag and puts it in the {productname} document’s `<head>`.
++
+NOTE: This is the only supported way of adding a stylesheet to {productname} in Classic mode. 
 
-=== Inline mode is supported with some notable limitations
+. The `content_style` option
++
+Setting the xref:add-css-options.adoc#content_style[`content_style`] option automatically creates the `<style>` tag and puts it in the {productname} document’s `<head>`.
++
+NOTE: This is the only supported way of adding a `<style>` tag to {productname} in Classic mode. 
 
-As `inline` mode for {productname} editor is not sandboxed and as a result, any CSS specified on the main page can have an effect on how the editor content looks. 
+. A CSS stylesheet specified in the `<head>` of the iframe with a `<link>` tag.
++
+For example:
++
+[source,html]
+----
+<link rel="stylesheet" href="styles.css">
+----
 
-CSS styling information can be specified in several places for inline mode:
+. A `<style>` tag in the `<head>` of the iframe.
++
+For example:
++
+[source,html]
+----
+<style>p { color: red; }</style>
+----
 
-* A CSS stylesheet that is specified in the `<head>` of the page i.e. `<link rel="stylesheet" href="styles.css">`
-** Adding a stylesheet in {productname}, can be done by using the `content_css` option which automatically creates the `<link>` tag in the <head> of the page.
-*** It is recommended to not use the `content_css` option though and just **manually** include the stylesheets.
-*** The user can also manually insert a stylesheet link in the <head> of the page.
-* A CSS stylesheet that is specified in the `<body>` of the page i.e. `<link rel="stylesheet" href="styles.css">`
-** This is not recommended by https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link[MDN], but some browsers do allow it
-* A `<style>` in the `<head>` of the page i.e. `<style>p { color: red; }</style>`
-** To add a `<style>` in {productname} is by using the `content_style` option which automatically creates the `<style>` tag in the <head> of the document
-** The user can also manually put a `<style>` tag in the <head> of the page.
-* A `<style>` in the `<body>` of the page
-** As noted in the `Classic iframe` section, this should not be done, but some browsers will still allow it.
-* A `style` attribute on an {productname} element within the content i.e. inline CSS
+. `style` attributes applied to specific elements within a document. That is, inline CSS
 
-=== Shadow DOM is supported but **not** officially, with some notable limitations
-
-Shadow DOM is **not** officially supported by {productname}, but the feature will work when an editor running in `inline` or `iframe` is contained within a shadow root. 
-
-When an `iframe` mode editor is contained with a shadow root, the editor content can be styled the same way, where the expected behavior for the `feature` is that it should not have to consider if the editor is in a shadow root. When an `inline` editor is contained within a shadow root, the stylesheet (`<link>` tags) and `<style>` tags are added directly as children of the shadow root and do not need to be contained within a `<head>` tag. 
-
-When in `inline mode`, the feature checks if the editor is inside a shadow root to ensure it does not try to get `<styles>` that are outside the shadow root.
-
-When an editor is in a shadow root, the feature should still support getting the stylesheets specified via the `content_css` option as well as the CSS styles specified via  the`content_style` option.
-
-// * some pseudo-class selectors. See the specification for more details
-// (https://notion.so/tinycloud/Technical-specification-7c16d4522d1241ba9e7364880eab3e51#94b1d13ff444492bbfce789f7876f39c)
-// 
-// 2. Vogue only supports `@import` @-rules at this stage.
-// 
-// See the Jira ticket: https://ephocks.atlassian.net/browse/TINY-9265
-// 
-// see the tech spec for @-rule support:
-// https://notion.so/tinycloud/Technical-specification-7c16d4522d1241ba9e7364880eab3e51#555fede3a4ff4a26ad5efdf72bc1af6f.
-
-// This plugin allows extracting the content of the editor with CSS inlined.
-// Support classic and inline modes. Can be used in shadow dom. 
-// Should be able to extract CSS from the stylesheets defined via
-// `content_css` and `font_css` options, and CSS styles defined via `style_css` option.
+NOTE: By default, {productname} does not support `<style>` tags in the document `<body>`.
 
 
-// There is only one API: `getContent()`.
-// Regarding to the events, it dispatches `InlineCSS` event.
-// I think it is OK to document this event even though its purpose isn’t really for the user’s usage.
+=== Inline mode support
+
+xref:use-tinymce-inline.adoc[Inline mode] is not sandboxed. Consequently, any specified CSS can effect how editor content presents. 
+
+CSS can be specified in inline mode in the following ways:
+
+. The `content_css` option
++
+Setting the xref:add-css-options.adoc#content_css[`content_css`] option automatically creates the `<link>` tag and puts it in the {productname} document’s `<head>`.
++
+NOTE: This is not recommended.
+
+. A CSS stylesheet specified in the `<head>` of the document with a `<link>` tag.
++
+For example:
++
+[source,html]
+----
+<head>
+<link rel="stylesheet" href="styles.css">
+</head>
+----
+
+. A CSS stylesheet specified in the `<body>` of the document.
++
+For example:
++
+[source,html]
+----
+<body>
+<link rel="stylesheet" href="styles.css">
+</body>
+----
++
+IMPORTANT: This is https://developer.mozilla.org/en-US/docs/Web/HTML/Element/link[not recommended]. Some browsers allow it, however, and it is, as a consequence, honored by {productname} when presented.
+
+. A `<style>` tag in the `<head>` of the document.
++
+For example:
++
+[source,html]
+----
+<style>p { color: red; }</style>
+----
+
+. A `<style>` tag can also be manually inserted in the document `<head>`.
+
+. `style` attributes applied to specific elements within a document. That is, inline CSS
+
+NOTE: By default, {productname} does not support `<style>` tags in the document `<body>`.
+
+
+=== Shadow DOM support
+
+IMPORTANT: Running a {productname} instance inside a Shadow DOM is xref:shadow-dom.adoc[not supported].
+
+Although running neither {productname} nor the {pluginname} plugin in a Shadow DOM is supported, when a {productname} instance _is_ in a shadow root, the {pluginname} will likely still present
+
+* CSS specified by the `xref:add-css-options.adoc#content_css[content_css]` option; and
+
+* CSS specified by the `xref:add-css-options.adoc#content_style[content_style]` option
+
+as expected, whether running in xref:use-tinymce-classic.adoc[Classic mode] or xref:use-tinymce-inline.adoc[Inline mode].
 
 
 == Options

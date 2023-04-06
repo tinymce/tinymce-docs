@@ -618,7 +618,7 @@ tinymce.init({
 });
 ----
 
-With this update, {productname} now checkes for the `resize` function going into a loop. And, if it does so, the function treats the margin bottom as always 0 instead of the `autoresize_bottom_margin` value. This changes the `min-height` of HTML and Body and prevents the infinite resizing.
+With this update, {productname} now checks for the `resize` function going into a loop. And, if it does so, the function treats the margin bottom as always 0 instead of the `autoresize_bottom_margin` value. This changes the `min-height` of HTML and Body and prevents the infinite resizing.
 
 
 [[security-fixes]]

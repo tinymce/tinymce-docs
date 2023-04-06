@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-1889: restructured `inline-css.adoc`.
 - DOC-1867: added notes regarding setting `autoresize_bottom_margin` in relation to values for `margin-bottom` to `autoresize_bottom_margin.adoc`.
 - DOC-1907: updated `advcode.adoc` and documentation related live-demo to cover new functionality.
 - DOC-1892: `fontsizeinput` documentation added to `core-toolbar-buttons.adoc`; `font_size_input_default_unit.adoc` added to `/modules/ROOT/partials/configuration/`' and xref to this new file added to `user-formatting-options.adoc`.

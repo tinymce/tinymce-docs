@@ -279,11 +279,21 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === Direct invalid child text nodes of list elements will be wrapped in list item elements.
 //#TINY-4818
 
-Invalid child nodes were throwing a `Uncaught TypeError:` when `<ol>` tags directly included a text node. This `TypeError` would not allow the user to `Tab` a text node while nested within `<ol>/<li>` HTML tags.
+In previous versions of {productname}, pressing `Tab` while the caret is in a `<ul>` or `<ol>` list containing direct child text nodes would unexpectedly cause an `Uncaught TypeError` console error to be thrown.
 
-Improvements were made to add a content filter for lists within {productname} 6.4.1. This improvement meant that any _invalid child nodes_ nested within `<li>` elements would be wrapped with this filter to avoid the `Uncaught TypeError:`.
+In the following example,
 
-In {productname} 6.4.1, direct _invalid child text nodes_ of list elements are now wrapped in list item elements, which allow the user to now `Tab` nested text nodes that are within `<ol>/<li>` tags.
+[source,html]
+----
+<ul>
+  item1
+  <li>item2</li>
+</ul>
+----
+
+if the caret is placed anywhere on either `item1` or `item2`, pressing `Tab` would throw an `Uncaught TypeError` to the console.
+
+In {productname} 6.4.1, a content filter for `<ul>` and `<ol>` lists was added to wrap any _direct child text nodes_ within an `<li>`. This transforms them into standard `<li>` child elements, preventing the `Uncaught TypeError` from being thrown.
 
 === Templates will be parsed before preview and insertion to make preview consistent with inserted template content and prevent XSS
 //#TINY-9244

@@ -1124,7 +1124,7 @@ In previous versions of {productname}, when the editor is within a scrollable co
 
 With the release of {productname} 6.4.1, the new `ui_mode` option provides improvements to editors within scrollable contexts, including hiding the toolbar when the editor is out of view when the `ui_mode` option is set to 'split'.
 
-=== `color_cols`: 0 Memory Leak
+=== `color_cols`: 0 caused the page to crash
 //#TINY-9649
 
 In previous versions of {productname}, the color swatch would attempt to display 0 columns of colors when the relevant `color_cols`, `color_cols_foreground` or `color_cols_background` options were set to 0. As a consequence, the tab would crash when opening that color swatch.

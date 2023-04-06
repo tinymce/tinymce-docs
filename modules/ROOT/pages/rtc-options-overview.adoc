@@ -5,6 +5,8 @@
 :pluginname: Real-Time Collaboration (RTC)
 :plugincode: rtc
 
+include::partial$/misc/admon-rtc-eol.adoc[]
+
 == Configuration style
 
 The {pluginname} plugin uses promise-based "provider" functions to support a variety of configuration scenarios including asynchronously fetching data from a server. Function input parameters are provided as an object, allowing unused fields to be omitted.

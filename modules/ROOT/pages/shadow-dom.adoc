@@ -1,0 +1,46 @@
+= Running TinyMCE in a Shadow DOM
+:navtitle: Shadow DOM
+:description: Running TinyMCE in a Shadow DOM
+:keywords: Shadow DOM Web Components
+
+== Running {productname} in a Shadow DOM
+
+IMPORTANT: Running a {productname} instance inside a Shadow DOM is not, currently, supported.
+
+Running a {productname} instance — whether in xref:use-tinymce-classic.adoc[classic mode] or xref:use-tinymce-inline.adoc[inline mode] — inside a Shadow DOM will, likely, work.
+
+For example:
+
+[source,html]
+----
+<div id="shadow-host"></div>
+
+<script type="text/javascript">
+
+  const shadowHost = document.getElementById('shadow-host');
+
+  // Note: Closed shadow roots are not currently, even experimentally supported.
+  const shadow = shadowHost.attachShadow({mode: 'open'}); 
+
+  const node = document.createElement('textarea');
+  node.value = 'Text added to the <em>TinyMCE</em> editor instance <strong>on loading.</strong>';
+  shadow.appendChild(node);
+
+  tinymce.init({
+    // Note: use ‘target’ to specify the node the TinyMCE editor instance replaces.
+    // Do not use ‘selector’.
+    target: node,
+    plugins: [
+        "advlist autolink lists link image charmap print preview anchor",
+        "searchreplace visualblocks code fullscreen",
+        "insertdatetime media table help"
+    ].join(' '),
+    toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+  });
+</script>
+----
+
+But {productname} does not, currently, check its host node for evidence it is inside a Shadow DOM (eg, checking for the `#shadow-root` string immediately before the host node’s opening tag).
+
+Consequently, while a {productname} instance will likely work as expected inside a Shadow DOM, {productname} instances are not, currently, supported inside Shadow DOMs.
+

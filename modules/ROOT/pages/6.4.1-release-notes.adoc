@@ -550,13 +550,9 @@ The docking behavior of UI elements is usually only triggered when the page is s
 === The Link plugin's context menu items will no longer appear for `contenteditable="false"` links
 //#TINY-9491
 
-In previous versions of {productname}, the link plugin would display the context menu items for `contenteditable="false"` links.
+In previous versions of {productname}, the context menu for `contenteditable="false"` anchor links would display items from the Link plugin, including "Link" and "Remove Link". This implies that editing or removing `contenteditable="false"` links are possible, which is not true. An example of an affected `contenteditable="false"` link is the Table of Contents links.
 
-As a consequence, links such as `table of contents` would open the context menu when `clicked`. The behavior for the `table of contents`, is not designed to allow links to be modified or removed as the `table of contents` plugin is considered as a `contenteditable="false"` element.
-
-To fix this bug, {productname} 6.4.1 introduced a new check that now verify if the link plugin is opened, which will now block the context menu on `table of contents` from opening upon when the `toc` is clicked. 
-
-As a result, the context menu for the `table of contents` now behaves as expected in {productname} 6.4.1.
+To resolve this undesired behavior, {productname} 6.4.1 introduced a new check that blocks the Link plugin from displaying its context menu items if the selection is on a `contenteditable="false"` anchor link.
 
 === The formatting of contenteditable="false" elements are no longer cloned to new cells while creating new table rows
 //#TINY-9449

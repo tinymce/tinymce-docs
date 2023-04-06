@@ -12,4 +12,6 @@ type: folder
   {% endif %}
 {% endfor %}
 
+{% include rtc/admon-rtc-eol.md %}
+
 {% include index.html links=links %}

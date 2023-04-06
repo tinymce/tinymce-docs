@@ -6,6 +6,8 @@ description: What is RTC and what can it do
 keywords: rtc introduction overview
 ---
 
+{% include rtc/admon-rtc-eol.md %}
+
 {{site.requires_5_9v}}
 
 {% include rtc/rtc-description.md %}

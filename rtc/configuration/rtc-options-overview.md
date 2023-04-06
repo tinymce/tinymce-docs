@@ -8,6 +8,8 @@ keywords: rtc configuration
 
 {% assign pluginname = "Real-time Collaboration (RTC)" %}
 {% assign plugincode = "rtc" %}
+{% include rtc/admon-rtc-eol.md %}
+
 
 ## Configuration style
 

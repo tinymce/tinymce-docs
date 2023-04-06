@@ -6,6 +6,8 @@ description: Useful information for troubleshooting issues with the RTC plugin.
 keywords: rtc faq trouble troubleshoot troubleshooting bug
 ---
 
+{% include rtc/admon-rtc-eol.md %}
+
 This documentation is in progress. Please contact us with any suggestions you think should be here.
 
 ## Common error messages

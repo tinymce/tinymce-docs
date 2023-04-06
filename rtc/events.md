@@ -6,6 +6,8 @@ description: List of all available RTC specific events.
 keywords: rtc events
 ---
 
+{% include rtc/admon-rtc-eol.md %}
+
 ## `RtcClientConnected`
 
 When a user joins a real-time collaboration session, the `RtcClientConnected` event is fired on existing {{site.productname}} instances in the session and provides the user information of the newly joined user to other editors in the session.

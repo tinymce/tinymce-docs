@@ -6,7 +6,7 @@ The **indentation** option defaults to 30px but can be any value.
 
 **Type:** `String`
 
-**Default Value:** `30px`
+**Default Value:** `40px`
 
 ### Example: Using `indentation`
 

@@ -50,17 +50,17 @@ The {productname} 6.4.1 release includes an accompanying release of the **Advanc
 
 **Advanced Code Editor** 3.2.1 includes the following improvements and additions.
 
-==== New button to copy the current dialog content.
+==== New button to copy the current **Advanced Code Editor** content.
 
-This update adds a new **Copy code** button to the **Advanced Code Editor** for editors. This new **Copy code** button allows users to copy the entire contents of the dialog.
+This update adds a new **Copy code** button to the **Advanced Code Editor** for editors. This new **Copy code** button allows users to copy the entire contents of the **Advanced Code Editor**.
 
-==== New buttons to increase and decrease the font size in the dialog.
+==== New buttons to increase and decrease the font size in the **Advanced Code Editor**.
 
-This update adds two new buttons for increasing and decreasing the font size of code displayed in the dialog.
+This update adds two new buttons for increasing and decreasing the font size of code displayed in the **Advanced Code Editor**.
 
 ==== New button to toggle dark mode.
 
-This update adds a new **Dark/light mode** button to toggle between either dark or light display modes for the dialog.
+This update adds a new **Dark/light mode** button to toggle between either dark or light display modes for the **Advanced Code Editor**.
 
 ==== New button to toggle fullscreen.
 
@@ -469,25 +469,6 @@ As a result, the toggle button can be found in the top left corner of the Advanc
 
 This option is now available in {productname} 6.4.1, as part of the core/ui API.
 
-=== New text-size-increase and text-size-decrease icons
-//#TINY-9530
-
-The {productname} package files have been updated with two new icons that enable users to increase or decrease the size of text in the Advanced Code Editor. The new icons are the `text-size-increase` and `text-size-decrease` icons. These new icons have been added to make it easier for users to adjust the size of the text within the code editor while making it easier to read and understand the code they are writing. 
-
-.Example of `textSizeIncrease` and `textSizeDecrease` integration within {productname}.
-[source, js]
-----
-tinymce.init({
-  selector: "textarea",
-  advcode_inline: true,
-  plugins: [
-    "code", "advcode", 
-  ],
-  toolbar: "textSizeIncrease textSizeDecrease"
-});
-----
-[NOTE]
-This plugin feature is only available for paid {productname} subscriptions.
 
 === New xss_sanitization option to allow for XSS sanitization to be disabled
 //#TINY-9600
@@ -538,7 +519,7 @@ In {productname} 6.4.1, these new additions/improvements are now available.
 
 A new `ui_mode: 'split'` option for scrollable containers has been introduced with the release of {productname} 6.4.1.
 
-This new option is designed to give users a better UX, by allowing them to navigate content within their editor easier with the use of the new ui_mode when integrated into their editors. This can be achieved by adding the `ui_mode: 'split'` option to the `tinymce.init()` within the `<script>` tags as below:
+This new option configures the UI of the editor to allow scrolling popup menus. This prevents unexpected non-scrolling behaviour when within a scrolling context. When the editor is within a scrollable element add the `ui_mode: 'split'` option to the `tinymce.init()` within the `<script>` tags as below:
 
 .Basic integration for new ui_mode option using `split`
 [source,js]
@@ -566,7 +547,7 @@ The docking behavior of UI elements is usually only triggered when the page is s
 
 {productname} 6.4.1 also incorporates the following changes:
 
-=== The link plugins context menu items will no longer appear for noneditable links
+=== The Link plugin's context menu items will no longer appear for `contenteditable="false"` links
 //#TINY-9491
 
 In previous versions of {productname}, the link plugin would display the context menu items for `contenteditable="false"` links.
@@ -600,13 +581,13 @@ As a result, the `help menu` is now styled to support a wider range of users, by
 === The sidebar element now has accessibility role region when visible and presentation when hidden
 //#TINY-9517
 
-In previous versions of {productname}, Axe-DevTools (web accessibility testing extension) identified that the sidebar element within {productname} was set to `role="complementary"` when the element was either in a visible or hidden state, which created issues with screen readers, as the general rule is that landmarks should not be contained within another landmark.
+In previous versions of {productname}, Axe-DevTools (web accessibility testing extension) identified that the sidebar element within {productname} was set to `role="complementary"` even when the element was hidden. This created issues with screen readers, as the general rule is that landmarks should not be contained within another landmark.
 
-As a consequence by having the sidebar set to `role="complementary"` for both states, tools such as screen readers in some situations would disable their functionality.
-
-This is important as when a sidebar element is visible, it has an accessibility role of `region`. This ensures the sidebar and its contents are accessible to screen readers and other accessibility tools. This role is important for screen readers to identify the sidebar as a meaningful part of the page. When the sidebar element is hidden, it has a role of presentation, which is used to inform the user that the element is not important and can be safely ignored. 
+As a consequence by having the sidebar set to `role="complementary"`, tools such as screen readers in some situations would disable their functionality.
 
 To fix this issue, changes were made to the role attribute of the sidebar element, which is now set to `role="region"` when it's active state is visible, otherwise it defaults to `role="presentation"` when hidden.
+
+This is important as the role of `region` ensures the sidebar and its contents are accessible to screen readers and other accessibility tools. When the sidebar element is hidden, it has a role of `presentation`, which is used to inform accessibility tools that the element can be safely ignored. 
 
 In {productname} 6.4.1, when the sidebar is either visible or hidden it now passes the accessibility test with Axe-DevTools.
 
@@ -626,9 +607,9 @@ With this update, these menus are now created using the equivalent {productname}
 === Sometimes the editor would finish initializing before the theme would have finished loading
 //#TINY-9556
 
-In earlier versions of {productname}, the properties set for the `renderUI`, caused conflicting issues with the theme rendering load times. As a consequence, the `renderUI` would finish rendering before the {productname} theme would finish loading.
+In earlier versions of {productname}, the properties set for the `renderUI` could cause conflicts with the theme load times. As a consequence, the `renderUI` would finish rendering before the {productname} theme it relied upon was initialized.
 
-To fix this bug, {productname}, made changes to the `renderUI` properties that allowed the theme type the to return a `Promise<RenderResult>` instead of `RenderResult`, which corrects the issues found previously. 
+To fix this bug, {productname}, made changes to the `renderUI` properties that allowed the theme to return a Promise, resolving the load ordering issues. 
 
 In {productname} 6.4.1, all `renderUI` property loading issues have been resolved.
 

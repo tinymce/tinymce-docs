@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-1893: new file, `/modules/ROOT/partials/configuration/highlight_on_focus.adoc`, added. Documentation of new option, `highlight_on_focus`, added to new file. `include::` statements pointing to new file added to `content-appearance.adoc` and `accessibility.adoc`.
 - DOC-1909: re-wrote the Supported Mobile Platforms section to match the Browser Compatibility section language, tying supported platforms to release recency rather than specific version numbers.
 - DOC-1910: `sanitizing-html-input-and-protecting-against-xss-attacks-dom-parser-and-dom-purify.adoc` added as new partial. `includes` to this added to `security.adoc` and `migration-from-5x.adoc`. This new partial outlines how TinyMCE 6.x uses the `DOMParser` and `DOMPurify` APIs, how to turn `DOMPurify` off, and why doing so is dangerous.
 - DOC-1914: added documentation of the new `tree` component to `dialog-components.adoc`.

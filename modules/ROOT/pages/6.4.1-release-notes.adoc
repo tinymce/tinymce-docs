@@ -646,9 +646,9 @@ As a result the when the instance occurs where **no <string> match** is triggere
 
 In {productname} 6.3, when the https://www.tiny.cloud/docs/tinymce/6/6.3-release-notes/#new-color_map_foreground-and-color_map_background-options-store-custom-colors-selected-using-the-text-color-and-background-color-menus[new color map] was introduced, a regression was found that affected the UI for *Color Swatch*.
 
-The regression meant the colors would not render inside the color palette to reflect the selected `color_map_foreground` and `color_map_background` stored. 
+The issue occurred when a user would select a `forecolor` or `backcolor` via the `*Formats*` drop down menu, the color displayed on the color swatch toolbar buttons would not reflect the selected `forecolor` or `backcolor` respectively.
 
-In {productname} 6.4.1, when the color picker in the `toolbar` is updated when changing either the `forecolor` or `backcolor` from the `menubar`.
+In {productname} 6.4.1, the color in the relevant toolbar button is updated when changing either the `forecolor` or `backcolor` via a menu item.
 
 === The onSetup api function would not run when defining custom group toolbar button
 //#TINY-9496

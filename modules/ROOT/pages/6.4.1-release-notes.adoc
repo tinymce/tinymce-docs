@@ -1083,9 +1083,9 @@ In {productname} 6.4.1, the events are now simulated based on the mouse event th
 === Dialog getting cut offscreen when opened from toolbar button in Inline Mode
 //#TINY-9588
 
-In previous versions of {productname}, inline dialogs would always open in the South West layout from the toolbar, or South East with RTL (Right-to-Left) directionality. However, this sometimes caused problems when the toolbar was shorter than the inline dialog, causing the dialog to open partially off screen.
+In previous versions of {productname}, inline dialogs would always open to the South West of the button used to open it from the toolbar, or South East with RTL (Right-to-Left) directionality. However, an issue was found where, when the toolbar was shorter than the inline dialog, inline dialogs would appear partially off screen when opened.
 
-To address this issue, improvements made allow inline dialogs the flexability to be opened in other South layouts when they would otherwise be outside of the viewable area. Moreover, inline dialogs now anchor to the toolbar in an appropriate direction with the entire dialog on screen when opened, ensuring a better user experience.
+To address this issue, inline dialogs now determine a more appropriate direction to open, that is, any direction which will not cause the dialog to appear offscreen.
 
 === Checkmark icons are added to every color in color swatch
 //#TINY-9567

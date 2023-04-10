@@ -984,9 +984,9 @@ As a result, formatting after pasting a link from `quickbars` is now preserved t
 === Inline dialog position was not correct when the editor wasn't inline and was contained in a fixed or absolute positioned element
 //#TINY-9554
 
-In previous versions of {productname}, a bug was found that affected the inline dialog position for elements set to either a `fixed` or `absolute` position.  As a consequence, this bug in particular, presented itself when the editor wasn't `inline`, which resulted in the dialog being rendered outside of the {productname} viewport `bounds`.
+In previous versions of {productname}, inline dialogs, such as the Search and Replace and Accessibility Checker dialogs, would be positioned incorrectly to overlap with the toolbar when the editor was in classic `iframe` mode and was contained in an parent element with a `fixed` or `absolute` position. Inline dialogs would be rendered out of the bounds of the editor's content area to overlap with the toolbar, causing a bug.
 
-A fix for this bugs was implemented in {productname} 6.4.1, that corrected this issue, resulting in the `inline` dialog working as expected with this release.
+In {productname} 6.4.1, the container of the editor is used as the positioning bounds of inline dialogs when the editor is in classic mode. This ensures that the inline dialogs are positioned correctly when a classic-mode editor is in a container with a `fixed` or `absolute` position.
 
 === Sticky toolbars would not have fade transition when undocking in classic iframe mode
 //#TINY-9408

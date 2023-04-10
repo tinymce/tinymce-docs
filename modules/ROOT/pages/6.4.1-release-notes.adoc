@@ -585,7 +585,7 @@ To fix this issue, changes were made to the role attribute of the sidebar elemen
 
 This is important as the role of `region` ensures the sidebar and its contents are accessible to screen readers and other accessibility tools. When the sidebar element is hidden, it has a role of `presentation`, which is used to inform accessibility tools that the element can be safely ignored. 
 
-In {productname} 6.4.1, when the sidebar is either visible or hidden it now passes the accessibility test with Axe-DevTools.
+In {productname} 6.4.1, when the sidebar is either visible or hidden it now passes all the identified accessibility requirements.
 
 === Updated the Code Sample and Template plugin dropdown menu styles to match the default {productname} styles
 //#TINY-9630

@@ -867,24 +867,14 @@ The fix now allows all three link-plugins (Link, Remove link and Open link) to w
 
 In {productname} 6.4.1, when the user executes right `mouse click` on the link selection immediately after attaching a link to a `<string>`, the link-plugins now work as expected.
 
-=== Editor commands ForwardDelete and Delete were deleting contents inside noneditable elements
+=== Content could be deleted inside `contenteditable="false"` elements
 //#TINY-9477
 
-Previously, when using the `ForwardDelete` or `Delete` commands in earlier versions of {productname}, the contents within `contenteditable="false"` elements were deleted. This meant that if there were nested elements within a `contenteditable="false"` root element that were also set to `contenteditable="false"`, they could be deleted from the root element.
+When content was deleted (either through the ForwardDelete/Delete commands, or the user pressing Backspace/Delete keys) in earlier versions of {productname}, the contents of a `contenteditable="false"` nested element would be deleted.
 
-To resolve this issue, {productname} 6.4.1 included several enhancements to prevent all commands and keyboard functions, including delete/forwarddelete, from affecting `contenteditable="false"` content.
+As a consequence, if a `contenteditable="false"` element was nested within a `contenteditable="false"` root element, the contents of the nested element would be deleted from the root element when the specified command or keys were executed.
 
-Consequently, in {productname} 6.4.1, using the forwarddelete or delete keys on `contenteditable="false"` elements within a `contenteditable="false"` element will no longer delete the contents within the `contenteditable="false"` elements.
-
-=== Backspace or delete keys was deleting contents inside noneditable elements
-//#TINY-9477
-
-In the previous versions of {productname}, when utilizing the backspace or delete keys, they would delete the contents inside `contenteditable="false"` elements.
-
-As a consequence, elements nested within a `contenteditable="false"` root element set to `contenteditable="false"`, were able to be removed/deleted from the `contenteditable="false"` root element. To fix this issue, {productname} 6.4.1 introduced various improvements to block all commands and keyboard functions such as `delete/backspace` from being applied to `contenteditable="false"` content. 
-
-
-As a result, in {productname} 6.4.1, when using the backspace or delete function keys on `contenteditable="false"` elements within a `contenteditable="false"` element, the contents within the `contenteditable="false"` elements will no longer be deleted. 
+To resolve this issue, {productname} 6.4.1 includes several enhancements to prevent all commands and keyboard functions from affecting `contenteditable="false"` content which includes the ForwardDelete/Delete commands and both the Backspace and Delete keys.
 
 === Inserting newlines inside an editable element inside a noneditable root would sometimes try to split the editable element
 //#TINY-9461

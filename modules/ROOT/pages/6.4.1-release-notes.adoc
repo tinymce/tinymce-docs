@@ -1015,12 +1015,12 @@ As a fix, {productname} 6.4.1, added a new condition which validates if the sour
 
 In {productname} 6.4.1, dragging and dropping elements that are `contenteditable="false"` out of they're parent blocks now correctly pad the parent block element.
 
-=== Nonbreaking space do not get highlighted when enabling show invisible characters
+=== Non breaking spaces were not highlighted within a nested editable section
 //#TINY-9685
 
-In previous versions of {productname}, it was discovered that nonbreaking spaces were not highlighting correctly when the "show invisible characters" plugin was enabled.
+In previous versions of {productname}, when using the "show invisible characters" feature of the `visualchars` plugin, non breaking spaces were not highlighting within an editable section that was nested inside a noneditable section.
 
-This issue caused not only confusion with the intended text layout, but impacted the overall user experience. To resolve this issue, {productname} introduced a fix to ensure that all invisible characters, including nonbreaking spaces, are accurately displayed when the plugin is enabled.
+To resolve this issue, {productname} 6.4.1 introduced a fix to ensure that all invisible characters, including nonbreaking spaces, are accurately displayed when the plugin is enabled.
 
 === Non breaking space is added after backspace below text pattern heading
 //#TINY-9603

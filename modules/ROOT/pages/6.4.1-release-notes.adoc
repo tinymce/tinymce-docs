@@ -557,7 +557,7 @@ In {productname} 6.4.1, the formatting of `contenteditable="false"` elements are
 An area for improvement was identified during an accessibility audit for the *help menu* within {productname}, which focuses on users that rely on **zoom orient** to help with visibility.
 
 The consequence of the previous UX, meant that adjustments needed to be made to the horizontal lines within the *help menu* table, that seperate each `row`.
-
+In previous versions of {productname}, contenteditable="false" elements such as a *merge tag* could clone the styling to a new table row. In some situations, this cloning would happen during the creation of new table row, where the merge tag prefix would unexpectedly clone the formatting from the previous cell to the new cell.
 To fix this accessibility issue, {productname} 6.4.1, increased the contrast ratio to `3:1` for each line divider for better visibility
 
 As a result, the `help menu` is now styled to support a wider range of users, by these new changes implemented.

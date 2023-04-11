@@ -773,16 +773,16 @@ As a result, in {productname} 6.4.1, *list* or *Advanced List*  plugins that are
 === Color picker dialog would not update the preview color if the hex input value was prefixed with # symbol
 //#TINY-9457
 
-In previous versions of {productname}, the preview sample box within the color picker dialog would not render. This issue could be replicated when a hex `value` was prefixed with a `#` symbol.
+In previous versions of {productname}, the preview sample box within the color picker dialog would not render. This issue could be replicated when a hex `value` was prefixed with a `+#+` symbol.
 
 Example of a `incorrect` vs `correct` value input:
 
 * `#BDE123`: Incorrect hex value input.
 * `BDE123`: Correct hex value input.
 
-In order to fix this bug, {productname} 6.4.1 now detects if the user inserts a `#` symbol before the hex `value`, and removes the leading `#` prefix before rendering to the color picker component.
+In order to fix this bug, {productname} 6.4.1 now detects if the user inserts a `+#+` symbol before the hex `value`, and removes the leading `+#+` prefix before rendering to the color picker component.
 
-In {productname} 6.4.1, the color picker works as expected when using hex `values` with the `#` prefix.
+In {productname} 6.4.1, the color picker works as expected when using hex `values` with the `+#+` prefix.
 
 === Table cell selection was possible even if the element was in a noneditable root element
 //#TINY-9459

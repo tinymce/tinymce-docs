@@ -588,15 +588,6 @@ With this update, these menus are now created using the equivalent {productname}
 
 {productname} 6.4.1 also includes the following bug fixes:
 
-=== Sometimes the editor would finish initializing before the theme would have finished loading
-//#TINY-9556
-
-In earlier versions of {productname}, the properties set for the `renderUI` could cause conflicts with the theme load times. As a consequence, the `renderUI` would finish rendering before the {productname} theme it relied upon was initialized.
-
-To fix this bug, {productname}, made changes to the `renderUI` properties that allowed the theme to return a Promise, resolving the load ordering issues. 
-
-In {productname} 6.4.1, all `renderUI` property loading issues have been resolved.
-
 === The searchreplace modal would close incorrectly when clicking outside of the alert that pops up when no match is found
 //#TINY-9443
 

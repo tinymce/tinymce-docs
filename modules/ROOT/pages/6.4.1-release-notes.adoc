@@ -1074,7 +1074,7 @@ In {productname} 6.4.1, the selector for applying the checkmark is updated so th
 === The colour picker reset to default when formatting pre element with addtional format options
 //#TINY-9342
 
-In previous versions of {productname}, formatting elements with a `pre-formatted` tag, and applying a background color from the color swatch would cause formatting issues when additional formatting options such as bold and italics were applied to the `pre-formatted` element. When these formatting conditions were combined, the color picker would reset the users defined color value, which would triggered the color picker to reset this value to default "000000".
+In previous versions of {productname}, formatting elements with a `pre-formatted` tag, and applying a background color from the color swatch would cause formatting issues when additional formatting options such as bold and italics were applied to the `pre-formatted` element. When these formatting conditions were combined, the color picker would reset the users defined color value, which would trigger the color picker to reset this value to default "000000".
 
 In {productname} 6.4.1, this issue has been resolved. Any pre-formatted elements what have additional formatting such as a color from the color picker no longer reset to its default color.
 

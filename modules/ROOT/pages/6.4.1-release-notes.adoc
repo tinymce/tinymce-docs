@@ -163,7 +163,7 @@ The {productname} 6.4.1 release includes an accompanying release of the **PowerP
 ==== White-space style property stripped from copied Excel content by word import
 //#TINY-9607
 
-The white-space style property, which determines how white space characters are handled in HTML, was causing issues when content was copied from Excel and pasted into the {productname} editor. The problem occurred in Chrome and Firefox, but was not visable in Safari. Upon import, the white-space style property was being stripped from the content, resulting in a loss of formatting.
+The white-space style property, which determines how white space characters are handled in HTML including word wrap, was causing issues when content with word wrap set was copied from Excel and pasted into the {productname} editor. The problem occurred in Chrome and Firefox, but was not visible in Safari. Upon import, the `white-space` style property was being stripped from the content, resulting in a loss of word wrap.
 
 With this release, the issue has been fixed. Copied content containing a valid white-space property now retains its original formatting when pasted in {productname}.
 

@@ -956,7 +956,7 @@ In previous versions of {productname}, inserting a link for a text selection fro
 
 As a consequence, when formatting the selection such as with `*bold*` or `_italic_`, then inserting the link via the `quickbars` plugin, the link would result in the applied formatting been removed from the text selection.
 
-To fix this issue, improvements were made to the conditional check that is responsible for returning `optionals` when the anchor is called to gather the text selection.
+To fix this issue, improvements were made to a conditional check that is responsible for locating anchors in text selection.
 
 As a result, formatting after pasting a link from `quickbars` is now preserved to the selection {productname} 6.4.1.
 

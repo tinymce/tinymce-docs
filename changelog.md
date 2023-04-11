@@ -6,7 +6,13 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+
+### 2023-04-11
+
 - DOC-1860: added `6.4.1-release-note.adoc`. Added outline to this file.
+
+### 2023-04-06
+
 - DOC-1912: Advanced Template documentation added.
 - DOC-1893: new file, `/modules/ROOT/partials/configuration/highlight_on_focus.adoc`, added. Documentation of new option, `highlight_on_focus`, added to new file. `include::` statements pointing to new file added to `content-appearance.adoc` and `accessibility.adoc`.
 - DOC-1909: re-wrote the Supported Mobile Platforms section to match the Browser Compatibility section language, tying supported platforms to release recency rather than specific version numbers.

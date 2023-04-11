@@ -20,7 +20,6 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:changes[Changes]
 * xref:bug-fixes[Bug fixes]
 * xref:known-issues[Known issues]
-// NB: edit the equivalent section of nav.adoc when the remove or make visible decision is made.
 
 NOTE: Although there was a Community release of {productname} 6.4, it was not released as a {enterpriseversion} or {cloudname} release. The first commercially supported release of {productname} post version 6.3.2 is {productname} 6.4.1.
 
@@ -417,7 +416,7 @@ tinymce.init({
 
 As a result of this addition, this new option makes it easier and faster for users using the 'new toolbar component' to customize their font size within {productname}, as they no longer need to worry about selecting the correct UOM.
 
-=== New group and togglebutton in view
+=== New group and toggle button in view
 //#TINY-9523
 
 The release of {productname} 6.4.1 provides users with new features, such as the improvements to the Advanced Code plugin dialog, which have introduced a group of new buttons to the view bar. A new togglable button has also been added, allowing users to change its icon and active status with the click of a button, and is available in both the modal footer and view header.
@@ -426,7 +425,7 @@ Furthermore, this button can differentiate between text and icon, making it much
 
 In {productname} 6.4.1, these new buttons are now available for the *Advanced Code* plugin dialog.
 
-=== New togglebutton in dialog footer buttons
+=== New toggle button in dialog footer buttons
 //#TINY-9523
 
 The {productname} modal footer and view header dialog have recently added a new improvement by introducing a new togglebutton. This togglebutton allows users to quickly and easily toggle between the footer buttons withing the dialog. This makes navigation easier and more efficient than having to manually search through menus and dropdowns. 
@@ -588,7 +587,7 @@ With this update, these menus are now created using the equivalent {productname}
 
 {productname} 6.4.1 also includes the following bug fixes:
 
-=== The searchreplace modal would close incorrectly when clicking outside of the alert that pops up when no match is found
+=== The search-replace modal would close incorrectly when clicking outside of the alert that pops up when no match is found
 //#TINY-9443
 
 In previous versions of {productname}, the searchreplace modal would close incorrectly when clicking outside of the alert dialog. The expected behavior in previous versions was that an error dialog would open when **no <string> match** was found within the {productname} editor viewport. The identifying issue found was when the user would `click` outside of the error dialog, resulting in the `Find and Replace` modal to closes incorrectly.
@@ -624,12 +623,12 @@ Fixes were made to ensure that `dragging or dropping` onto `contenteditable="fal
 
 {productname} 6.4.1, now prevents the user from having the ability to drag and drop any descendants of a `contenteditable=false element` within another `contenteditable="false"` element.
 
-=== Checkmark did not show in menu colorswatches
+=== Checkmark did not show in menu color swatches
 //#TINY-9395
 
 Previous versions of {productname} the known issue, (_https://www.tiny.cloud/docs/tinymce/6/6.3-release-notes/#checkmark-over-the-current-background-color-is-not-displayed-when-inline-formatting-is-applied-in-a-certain-order[checkmark-over-the-current-background-color-is-not-displayed-when-inline-formatting-is-applied-in-a-certain-order]_) was identified. As a consequence, when text was formatted in the following order, the *checkmark* over the currently active background color would not display in the Background color swatch menu:
 
-. When the user appled inline formatting, such as *bold* or _Italic_.
+. When the user applied inline formatting, such as *bold* or _Italic_.
 . After applying a foreground(text) color.
 . After applying a background color.
 
@@ -1050,7 +1049,7 @@ In previous versions of {productname}, when using certain configurations, the co
 
 In {productname} 6.4.1, the selector for applying the checkmark is updated so the checkmark will only be added and displayed for enabled colors.
 
-=== The colour picker reset to default when formatting pre element with addtional format options
+=== The colour picker reset to default when formatting pre element with additional format options
 //#TINY-9342
 
 In previous versions of {productname}, formatting elements with a `pre-formatted` tag, and applying a background color from the color swatch would cause formatting issues when additional formatting options such as bold and italics were applied to the `pre-formatted` element. When these formatting conditions were combined, the color picker would reset the users defined color value, which would trigger the color picker to reset this value to default "000000".

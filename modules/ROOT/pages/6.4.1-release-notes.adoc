@@ -802,7 +802,7 @@ Example of a `incorrect` vs `correct` value input:
 * `#BDE123`: Incorrect hex value input.
 * `BDE123`: Correct hex value input.
 
-In order to fix this bug, {productname} 6.4.1, not detects if the user inserts a `#` symbol before the hex `value`, which removes the leading `#` prefix before rendering to the color picker component.
+In order to fix this bug, {productname} 6.4.1 now detects if the user inserts a `#` symbol before the hex `value`, and removes the leading `#` prefix before rendering to the color picker component.
 
 In {productname} 6.4.1, the color picker works as expected when using hex `values` with the `#` prefix.
 

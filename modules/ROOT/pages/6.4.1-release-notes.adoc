@@ -400,7 +400,7 @@ tinymce.init({
 [NOTE]
 More details about this component and the possible values that can be used within the new `fontsizeinput` input field can be found in `xref:available-toolbar-buttons.adoc#the-core-toolbar-buttons[fontsizeinput]`.
 
-=== Added skipFocus option to the ToggleToolbarDrawer command to preserve focus
+=== Added `skip_focus` check to the ToggleToolbarDrawer command
 //#TINY-9337
 
 In previous versions of {productname}, the *ToggleToolbarDrawer* command contained an incorrect focus call. As a consequence, this meant that when the *ToggleToolbarDrawer* command option `skip_focus: true` was set the toolbar drawer would take focus when it was not meant to.

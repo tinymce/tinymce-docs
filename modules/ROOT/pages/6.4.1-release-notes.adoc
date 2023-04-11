@@ -1078,12 +1078,12 @@ In {productname} 6.4.1, this issue has been resolved.
 
 In previous versions of {productname}, when the editor is within a scrollable container, the toolbar would remain visible when the editor is scrolled out of view.
 
-With the release of {productname} 6.4.1, the new `ui_mode` option provides improvements to editors within scrollable contexts, including hiding the toolbar when the editor is out of view when the `ui_mode` option is set to 'split'.
+=== Editor increases the height indefinitely when using autoresize with `content_css: 'document'`
+//#TINY-8872
 
-=== `color_cols`: 0 caused the page to crash
-//#TINY-9649
+In previous versions of {productname}, it was discovered that the editor had some issues with the autoresize plugin when using `content_css: 'document'`, which caused the editor height to expand indefinitely.
 
-In previous versions of {productname}, the color swatch would attempt to display 0 columns of colors when the relevant `color_cols`, `color_cols_foreground` or `color_cols_background` options were set to 0. As a consequence, the tab would crash when opening that color swatch.
+To fix this issue, {productname} addressed the conflict between the document skin's CSS and the autoresize bottom margin setting. After this fix, the resize function now checks for loops and considers the margin bottom as always set to 0 instead of autoresize bottom margin, which ensutes that the editor's height is calculated correctly. 
 
 In  {productname} 6.4.1, the default number of columns, 5, are now used when any of these options is set to 0 or less, preventing this issue from occurring.
 

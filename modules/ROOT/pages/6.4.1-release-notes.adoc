@@ -520,7 +520,7 @@ tinymce.init({
 ----
 
 [TIP]
-Its worth noting that when setting the new `ui_mode: 'split'` option for scrollable containers, when setting the height for the `<div class="scrollable-container">` ensure that the height is set to be less than `<` the `min_height` set of the {productname} editor container and by applying the `overflow: scroll;` CSS bevaviour to the `<div class="scrollable-container">`.
+The new `ui_mode: 'split'` option alters the behaviour of editors within scrollable containers, where the `min_height` of the editor is greater than the height of the container element which has the `overflow="scroll"` style attribute.
 
 The docking behavior of UI elements is usually only triggered when the page is scrolled. This means that the UI element will stay in the same place relative to the page, no matter how much you scroll. However, with the introduction of the 'split' UI mode, it is now possible to dock the UI element on both page and container scroll. This means that the UI element will stay in the same place relative to the container, regardless of how much you scroll the page or the container itself.
 

@@ -946,7 +946,7 @@ In previous version of {productname}, dragging ``contenteditable="false"` elemen
 
 As this is not the expected behavior for a `contenteditable="false"` element or root, this bug in particular, created issues in situations such as: *(a)* when the editor body was set to `contenteditable="false"`, and *(b)* when a `contenteditable="false"` element is dragged and dropped into a table element that is within a `contenteditable="false"` root, which would result in the `contenteditable="false"` attributes blocks being deleted from the element that was dropped.
 
-To fix this issue, improvements were made to the drag and drop function that checks if the `dom` element `isEditable` to its `parentElement`.
+To fix this issue, improvements were made to the drag and drop function that checks if the source and target elements are within editable sections. This ensures the correct logic runs during a drop event and avoids the attribute removal.
 
 In {productname} 6.4.1, `contenteditable="false"` elements now preserve their `contenteditable="false"` attributes if they are dragged and dropped within a `contenteditable="false"` root.
 

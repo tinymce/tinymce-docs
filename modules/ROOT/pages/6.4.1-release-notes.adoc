@@ -620,7 +620,7 @@ As a result, the `onSetup` function for custom group toolbar buttons now runs co
 
 In {productname} 6.0, the drag and drop `config` did not check some conditions surrounding element placements using either a drag or drop action.  This affected users running {productname} 6.0, which would effectively allow descendants of `contenteditable="false"` element to be dropped into another `contenteditable="false"` element.
 
-Fixes were made to ensure that `dragging | dropping` onto `contenteditable="false"` element targets on all browsers is `disabled`. This also includes when the drop target cursor is inside the `contenteditable="true"` element, or just before it.
+Fixes were made to ensure that `dragging or dropping` onto `contenteditable="false"` element targets on all browsers is `disabled`. This also includes when the drop target cursor is inside the `contenteditable="true"` element, or just before it.
 
 {productname} 6.4.1, now prevents the user from having the ability to drag and drop any descendants of a `contenteditable=false element` within another `contenteditable="false"` element.
 

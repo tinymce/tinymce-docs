@@ -792,15 +792,11 @@ In {productname} 6.4.1, table is no longer selectable or editable by table UI an
 === Table commands were modifying tables in a noneditable root element
 //#TINY-9459
 
-In versions of {productname}, prior to 6.4.1, tables could be modified by using `execCommands` when tables are placed within a `contenteditable="false"` root element.
+In previous versions of {productname}, tables within a `contenteditable="false"` root element could unexpectedly be modified using commands.
 
-As a consequence, a bug was identified that by using the `execCommands`, which are provided by {productname}, the user could modify the table element regardless of it being nested within a `contenteditable="false"` root element.
+{productname} 6.4.1 now blocks all table commands when the selection is in a table in a `contenteditable="false"` root, thereby preventing unwanted modifications.
 
-To fix this bug, {productname} 6.4.1, made improvements to the DOM `Commands` API that now blocks all Table UI actions via the `execCommands` when a `contenteditable="false"` element selection is highlighted inside a `contenteditable="false"` root.
-
-As a result, `contenteditable="false"` elements such as tables cannot have their properties overridden by using the `execCommands`.
-
-_(Readmore about editorCommands xref:editor-command-identifiers.adoc[here])_
+_xref:editor-command-identifiers.adoc[Read more on editor commands]_
 
 === Fake carets were rendered for noneditable elements and tables in a noneditable root element
 //#TINY-9459

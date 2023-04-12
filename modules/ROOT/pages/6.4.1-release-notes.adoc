@@ -1049,9 +1049,22 @@ In {productname} 6.4.1, this issue has been resolved. Any pre-formatted elements
 === Editor increases the height indefinitely when using autoresize with content_css document
 //#TINY-8872
 
-In previous versions of {productname}, It was discovered that the editor had some issues with the autoresize function when using content_css documents, which caused the editor to have a indefinite height when content was being added.
+The `document` skin’s CSS aligns the bottom of the content area to the bottom of the editor, but does not set anything for `autoresize_bottom_margin`. As a consequence the {productname} editor takes the default value for this attribute: 50. Simultaneously, every time the `resize` function calculated the editor size it added this `autoresize_bottom_margin` value.
 
-To fix this issue, {productname} 6.4.1 fixed this issue by addressing the conflict between the document skin's CSS and the autoresize bottom margin setting. After this fix, the resize function now checks for loops and considers the margin bottom as always set to 0 instead of autoresize bottom margin, which ensutes that the editor's height is calculated correctly. 
+Since, the aligning CSS sets the bottom of the content area to a value incrementally less than the `autoresize_bottom_margin` value, the `resize` function went into a loop.
+
+Consequently, and as per the example below, if a {productname} instance was setup with the xref:autoresize.adoc[Autoresize] plugin active and `content_css` set to `document`, the editor increased its height indefinitely.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'autoresize',
+  content_css: 'document',
+});
+----
+
+{productname} 6.4.1 fixed this issue by addressing the conflict between the `document` skin's CSS and the `autoresize_bottom_margin` setting. With this update, TinyMCE now checks for the resize function going into a loop. And, if it does so, the function treats the margin bottom as always 0 instead of the `autoresize_bottom_margin` value. This changes the min-height of HTML and Body and prevents the infinite resizing.
 
 === Plugin - Search and Replace - Throws a JS console error if you search for a string that doesn't exist and try to click on the preferences button.
 //#TINY-9686

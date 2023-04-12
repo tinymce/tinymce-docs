@@ -617,11 +617,9 @@ As a result, the `onSetup` function for custom group toolbar buttons now runs co
 === An element could be dropped onto the descendants of an element with a `contenteditable="false"` attribute
 //#TINY-9364
 
-In {productname} 6.0, the drag and drop `config` did not check some conditions surrounding element placements using either a drag or drop action.  This affected users running {productname} 6.0, which would effectively allow descendants of `contenteditable="false"` element to be dropped into another `contenteditable="false"` element.
+In versions of {productname} since version 6.0, elements were allowed to be dropped onto descendants of `contenteditable="false"` elements.
 
-Fixes were made to ensure that `dragging or dropping` onto `contenteditable="false"` element targets on all browsers is `disabled`. This also includes when the drop target cursor is inside the `contenteditable="true"` element, or just before it.
-
-{productname} 6.4.1, now prevents the user from having the ability to drag and drop any descendants of a `contenteditable=false element` within another `contenteditable="false"` element.
+In {productname} 6.4.1, changes were made to prevent any descendant of a `contenteditable="false"` element from being a valid drop target. Now, elements are unable to be dropped onto any descendant of a `contenteditable="false"` element across all browsers.
 
 === Checkmark did not show in menu color swatches
 //#TINY-9395

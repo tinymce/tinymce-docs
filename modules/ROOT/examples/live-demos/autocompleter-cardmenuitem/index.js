@@ -27,7 +27,7 @@ tinymce.init({
      * Items are built using the CardMenuItem.
      */
     editor.ui.registry.addAutocompleter('specialchars_cardmenuitems', {
-      ch: '-',
+      trigger: '-',
       minChars: 1,
       columns: 1,
       highlightOn: ['char_name'],

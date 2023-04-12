@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-1948: Update entries for TINY-8872, TINY-9364, and TINY-9459 in 6.4.1 release notes.
 
 ### 2023-04-11
 

@@ -242,7 +242,7 @@ The following elements were previously deprecated and have, with this release, b
 
 | `non_empty_elements`                  | Schema option |
 
-| `padd_empty_with_br`                  | Option        |
+| `padd_empty_with_br`                  | Option        | Set the xref:content-behavior-options.adoc#newline_behavior[`newline_behavior`] option to `linebreak` for equivalent behavior.
 
 | `requestAnimationFrame`               | API           | From `Delay`.
 

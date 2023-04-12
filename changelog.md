@@ -6,6 +6,9 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+### 2023-04-13
+
+- DOC-1946: Replaced soft-deprecated `ch` option with supported `trigger` option in `…/live-demos/autocompleter-autocompleteitem/index.js` and `…/live-demos/autocompleter-cardmenuitem/index.js`.
 
 ### 2023-04-11
 

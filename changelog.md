@@ -6,6 +6,9 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+### 2023-04-13
+
+- DOC-1950: Added note `6.0-release-notes-summary.adoc` re setting `newline_behavior` to `linebreak` to get equivalent functionality to the, now-deprecated, `padd_empty_with_br` option.
 
 ### 2023-04-11
 

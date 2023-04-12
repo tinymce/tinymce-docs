@@ -24,7 +24,7 @@ tinymce.init({
 
     /* An autocompleter that allows you to insert special characters */
     editor.ui.registry.addAutocompleter('specialchars', {
-      ch: ':',
+      trigger: ':',
       minChars: 1,
       columns: 'auto',
       onAction: onAction,

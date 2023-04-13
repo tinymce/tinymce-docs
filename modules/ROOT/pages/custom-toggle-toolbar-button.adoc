@@ -29,7 +29,8 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 |setEnabled |`+(state: boolean) => void+` |Sets the button's enabled state.
 |isActive |`+() => boolean+` |Checks if the button is `+on+`.
 |setActive |`+(state: boolean) => void+` |Sets the button's toggle state.
-3+|include::partial$misc/admon-requires-6.4v.adoc[]
+3+|
+include::partial$misc/admon-requires-6.4v.adoc[]
 |setText |`+(text: string) => void+` |Sets the text label to display.
 |setIcon |`+(icon: string) => void+` |Sets the icon of the button.
 |===

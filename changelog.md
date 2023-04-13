@@ -6,6 +6,8 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+### 2023-04-14
+- DOC-1952: Moved the `include` statements to separate lines in the API sections of multiple custom UI component pages to display the admonition correctly.
 ### 2023-04-13
 
 - DOC-1946: Replaced soft-deprecated `ch` option with supported `trigger` option in `…/live-demos/autocompleter-autocompleteitem/index.js` and `…/live-demos/autocompleter-cardmenuitem/index.js`.
@@ -146,4 +148,3 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 - DOC-1824: updates to template files with no reader-visible changes. Typo correction in `nav.adoc`, the file that generates the TinyMCE documentation’s Table of Contents navigation sidebar. ID markup added to two files to prevent IDEs from complaining about their absence. Again, no reader-visible changes. And the [Accompanying Premium self-hosted server-side component changes](https://tiny.cloud/docs/tinymce/6/6.2-release-notes/#accompanying-premium-self-hosted-server-side-component-changes) and [Security fixes](https://tiny.cloud/docs/tinymce/6/6.2-release-notes/#security-fixes) sections were added back to the *6.2 Release Notes*.
 - DOC-1816: markup corrections to prevent asciidoctor warnings. No reader-visible changes.
-

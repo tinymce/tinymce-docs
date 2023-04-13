@@ -1058,7 +1058,7 @@ tinymce.init({
 });
 ----
 
-{productname} 6.4.1 fixed this issue by addressing the conflict between the `document` skin's CSS and the `autoresize_bottom_margin` setting. With this update, TinyMCE now checks for the resize function going into a loop. And, if it does so, the function treats the margin bottom as always 0 instead of the `autoresize_bottom_margin` value. This changes the min-height of HTML and Body and prevents the infinite resizing.
+{productname} 6.4.1 fixed this issue by addressing the conflict between the `document` skin's CSS and the `autoresize_bottom_margin` setting. With this update, TinyMCE now checks for the resize function going into a loop. And, if it does so, the function treats the margin bottom as always 0 instead of the `autoresize_bottom_margin` value. This changes the min-height of the editor and prevents the infinite resizing.
 
 === Plugin - Search and Replace - Throws a JS console error if you search for a string that doesn't exist and try to click on the preferences button.
 //#TINY-9686

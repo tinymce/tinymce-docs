@@ -96,7 +96,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Opening a menu button in the footer of a dialog after a redial threw an error.
 * After closing a view, the `more...` toolbar button disappeared if the editor had `toolbar_mode: 'sliding'` and the toolbar was opened.
 * Inline dialogs would open partially off screen when the toolbar had a small width.
-* The `autoresize` plugin used to cause infinite resizing when `content_css` is set to `document`.
+* The `autoresize` plugin would cause infinite resizing when `content_css` is set to `document`.
 
 == 6.3.2 - 2023-02-22
 

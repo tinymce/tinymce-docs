@@ -1,6 +1,6 @@
 The following formats are provided by {productname}.
 
-== General built-in formats
+==== General built-in formats
 
 The following formats will work on most content.
 
@@ -48,7 +48,7 @@ The `+mceToggleFormat+` and `+FormatBlock+` xref:editor-command-identifiers.adoc
 * `+fontsize_class+`
 ====
 
-== Definition list related formats
+==== Definition list related formats
 
 The following formats work within definition lists (`+<dl>+`).
 
@@ -59,7 +59,7 @@ The following formats work within definition lists (`+<dl>+`).
 |`+dd+` |Definition data (`+<dd>+`) elements.
 |===
 
-== Link related formats
+==== Link related formats
 
 The following formats will work on links (`+<a>+`).
 
@@ -69,7 +69,7 @@ The following formats will work on links (`+<a>+`).
 |`+link+` |Link (`+<a>+`) elements.
 |===
 
-== Table related formats
+==== Table related formats
 
 The following formats will work within tables on `+<td>+` and `+<th>+` elements.
 

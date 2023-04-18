@@ -30,7 +30,7 @@ Similar elements and styles are merged by default to reduce the output HTML size
 [[built-in-formats]]
 === Built-in formats
 
-include::partial$configuration/builtinformats.adoc[leveloffset=-1]
+include::partial$configuration/builtinformats.adoc[leveloffset=-2]
 
 Some built-in formats `+fontsize+`, `+fontname+`, `+forecolor+`, `+hilitecolor+` use a variable in their definition named `+%value+`. This gets replaced with the user selected item such as a `+color+` value. Check the variable substitution section below for details.
 

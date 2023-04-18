@@ -1043,7 +1043,7 @@ In {productname} 6.4.1, this issue has been resolved. Any pre-formatted elements
 === Editor increases the height indefinitely when using autoresize with content_css document
 //#TINY-8872
 
-The `document` skin’s CSS aligns the bottom of the content area to the bottom of the editor, but does not set anything for `autoresize_bottom_margin`. As a consequence the {productname} editor takes the default value for this attribute: 50. Simultaneously, every time the `resize` function calculated the editor size it added this `autoresize_bottom_margin` value.
+The document skin’s CSS aligns the bottom of the content area to the bottom of the editor, but does not set anything for `autoresize_bottom_margin`. As a consequence the {productname} editor takes the default value for this attribute: 50. Simultaneously, every time the `resize` function calculated the editor size it added this `autoresize_bottom_margin` value.
 
 Since, the aligning CSS sets the bottom of the content area to a value incrementally less than the `autoresize_bottom_margin` value, the `resize` function went into a loop.
 

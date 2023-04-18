@@ -6,6 +6,8 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-1947: typos, copy-edits and mark-up corrections across multiple files: `builtinformats.adoc`; `contextform.adoc`; `formats.adoc`; `supported-versions.adoc`; and `valid_children.adoc`.
+
 ### 2023-04-14
 - DOC-1952: Moved the `include` statements to separate lines in the API sections of multiple custom UI component pages to display the admonition correctly.
 ### 2023-04-13

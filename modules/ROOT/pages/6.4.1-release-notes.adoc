@@ -792,7 +792,7 @@ In {productname} 6.4.1, table is no longer selectable or editable by table UI an
 === Table commands were modifying tables in a noneditable root element
 //#TINY-9459
 
-In previous versions of {productname}, tables within a `contenteditable="false"` root element could unexpectedly be modified using commands.
+In previous {productname} versions, tables within a root element with a `contenteditable="false"` attribute could be unexpectedly modified using commands.
 
 {productname} 6.4.1 now blocks all table commands when the selection is in a table in a `contenteditable="false"` root, thereby preventing unwanted modifications.
 

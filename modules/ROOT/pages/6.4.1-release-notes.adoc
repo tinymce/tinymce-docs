@@ -617,7 +617,7 @@ As a result, the `onSetup` function for custom group toolbar buttons now runs co
 === An element could be dropped onto the descendants of an element with a `contenteditable="false"` attribute
 //#TINY-9364
 
-In versions of {productname} since version 6.0, elements were allowed to be dropped onto descendants of `contenteditable="false"` elements.
+In {productname} 6.0 and later, elements could be dropped onto descendants of an element with a `contenteditable=false` attribute.
 
 In {productname} 6.4.1, changes were made to prevent any descendant of a `contenteditable="false"` element from being a valid drop target. Now, elements are unable to be dropped onto any descendant of a `contenteditable="false"` element across all browsers.
 

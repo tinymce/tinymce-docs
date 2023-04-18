@@ -3,7 +3,7 @@
 
 When using the xref:ui-localization.adoc#language[`+language+`] option to set the user interface language you can place language pack(s) in a directory other than the default. If you do this, however, you must add the `language_url` option to your configuration and set this option to a path pointing to the language file(s) location.
 
-We recommend the path URL be relative to the web application’s root. That is, beginning with the absolute path reference character `+/+`. Avoid relying on application context for safe path resolution of language packs.
+We recommend the path URL be relative to the web application’s root. That is, begin with the absolute path reference character `+/+`. Avoid relying on application context for safe path resolution of language packs.
 
 Also, the `+language+` option must also be set and must be set to the name of the language pack file being loaded.
 

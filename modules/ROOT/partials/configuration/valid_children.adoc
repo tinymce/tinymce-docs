@@ -1,7 +1,7 @@
 [[valid_children]]
 == `+valid_children+`
 
-This option enables you to control what child elements can exists within specified parent elements.
+This option enables you to control what child elements can exist within specified parent elements.
 
 {productname} will remove/split any non HTML5 or HTML transitional contents by default. So for example a `+p+` can't be a child of another `+p+` element. The default value for this option is controlled by the current xref:content-filtering.adoc#schema[schema].
 

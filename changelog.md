@@ -6,7 +6,9 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+### 2023-04-19
 - DOC-1170: updated `language_url.adoc` to document the `language: '<language-file-pack-name>'` requirement and to make other language explicit where it was implicatory.
+- DOC-1947: typos, copy-edits and mark-up corrections across multiple files: `builtinformats.adoc`; `contextform.adoc`; `formats.adoc`; `supported-versions.adoc`; and `valid_children.adoc`.
 
 ### 2023-04-14
 - DOC-1952: Moved the `include` statements to separate lines in the API sections of multiple custom UI component pages to display the admonition correctly.
@@ -14,6 +16,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### 2023-04-13
 
 - DOC-1946: Replaced soft-deprecated `ch` option with supported `trigger` option in `…/live-demos/autocompleter-autocompleteitem/index.js` and `…/live-demos/autocompleter-cardmenuitem/index.js`.
+- DOC-1948: Update entries for TINY-8872, TINY-9364, and TINY-9459 in 6.4.1 release notes.
 
 ### 2023-04-11
 

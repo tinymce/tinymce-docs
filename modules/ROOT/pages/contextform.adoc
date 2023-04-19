@@ -30,7 +30,7 @@ If a registered context form has a `+launch+` setting, then it can be launched f
 
 ==== Launching a context form programmatically
 
-There is an `+editor+` event called `+contexttoolbar-show+` that can be fired to show a context form at the current selection. The event takes a parameter `+toolbarKey+` which specifies the name of the registered context form or context toolbar to show.
+There is an `+editor+` command, `+contexttoolbar-show+`, that can be dispatched to show a context form at the current selection. The command takes a parameter, `+toolbarKey+`, which specifies the name of the registered context form or context toolbar to show.
 
 === Form
 

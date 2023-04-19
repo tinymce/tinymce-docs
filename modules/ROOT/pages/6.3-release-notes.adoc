@@ -599,28 +599,6 @@ In previous versions of {productname}, when running on Firefox and after pressin
 
 This error has been corrected in {productname} 6.3. When running {productname} 6.3 on Firefox and creating a merge tag using `mceInsertContent`, pressing Enter or Return to generate the desired merge tag moves the insertion point to the end of said newly-created merge tag, as expected.
 
-=== The `autoresize` plugin caused the editor area to infinitely resize when `content_css` was set to `document`
-
-The `document` skin’s CSS aligns the bottom of the content area to the bottom of the editor, but does not set anything for `autoresize_bottom_margin`. As a consequence the {productname} editor takes the default value for this attribute: 50.
-
-Simulaneously, everytime the `resize` function calculated the editor size it added this `autoresize_bottom_margin` value.
-
-Since, however, the aligning CSS sets the bottom of the content area to a value incrementally less than the `autoresize_bottom_margin` value, the `resize` function went into a loop.
-
-Consequently, and as per the example below, if a {productname} instance was setup with the xref:autoresize.adoc[Autoresize] plugin active and `content_css` set to `document`, the editor increased its height indefinitely.
-
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'autoresize',
-  content_css: 'document',
-});
-----
-
-With this update, {productname} now checks for the `resize` function going into a loop. And, if it does so, the function treats the margin bottom as always 0 instead of the `autoresize_bottom_margin` value. This changes the `min-height` of HTML and Body and prevents the infinite resizing.
-
-
 [[security-fixes]]
 == Security fixes
 

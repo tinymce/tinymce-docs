@@ -6,7 +6,15 @@ NOTE: This is the {productname} Community version changelog. For information abo
 
 == 6.4.2 - 2023-04-26
 
-
+=== Fixed
+* The editor would display a notification error when it fails to retirieve a blob image uri.
+* Menu buttons would have the Tabstopping behaviour in toolbar.
+* The `urlinput` dialog component would not open the typeahead dropdown when the input value was reset to an empty string.
+* Fixed the mouse pointer style from a text cursor to a default arrow pointer when hovering over the tree dialog component items.
+* Enabled variant of togglable `tox-button` and `tox-button--secondary` now supports `hover/active/focus/disabled` states.
+* Setting an invalid unit in the `fontsizeinput` would change it do the default value instead of reverting it back to the previous valid value.
+* Selection was not correctly scrolled horizontally into view when using the `selection.scrollIntoView` API.
+* Context toolbars displayed the incorrect status for the `advlist` plugin buttons.
 
 == 6.4.1 - 2023-03-29
 

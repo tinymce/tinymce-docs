@@ -1,17 +1,23 @@
 [[language_url]]
 == `+language_url+`
 
-When using the xref:ui-localization.adoc#language[`+language+`] option to set the user interface language you may choose to place any language pack(s) in a directory other than the default. If you do this you need to provide a simple URL to where the language file is located. We recommend using a site absolute URL.
+When using the xref:ui-localization.adoc#language[`+language+`] option to set the user interface language you can place language pack(s) in a directory other than the default. If you do this, however, you must add the `language_url` option to your configuration and set this option to a path pointing to the language file(s) location.
+
+We recommend the path URL be relative to the web application’s root. That is, begin with the absolute path reference character `+/+`. Avoid relying on application context for safe path resolution of language packs.
+
+Also, the `+language+` option must also be set and must be set to the name of the language pack file being loaded.
 
 *Type:* `+String+`
 
 === Example: using `+language_url+`
 
+
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  language_url: '/languages/fi.js'  // site absolute URL
+  selector: 'textarea', // change this value according to your HTML
+  language_url: '/path/to/language/pack/fi.js', // path from the root of your web application — / — to the language pack(s)
+  language: 'fi'  // the name of the language pack file
 });
 ----
 

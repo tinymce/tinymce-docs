@@ -1,0 +1,117 @@
+= TinyMCE 6.4.2
+:navtitle: TinyMCE 6.4.2
+:description: Release notes for TinyMCE 6.4.2
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+[[overview]]
+== Overview
+
+{productname} 6.4.2 was released for {enterpriseversion} and {cloudname} on Tuesday, May 3^rd^, 2023. These release notes provide an overview of the changes for {productname} 6.4.2:
+
+//* xref:new-premium-plugin[New Premium Plugin]
+//* xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
+//* xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium Plugin end-of-life announcement]
+//* xref:accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
+//* xref:improvements[Improvements]
+//* xref:additions[Additions]
+//* xref:changes[Changes]
+* xref:bug-fixes[Bug fixes]
+//* xref:known-issues[Known issues]
+
+
+// [[new-premium-plugin]]
+// == New Premium Plugin
+
+
+// [[accompanying-premium-plugin-changes]]
+// == Accompanying Premium Plugin changes
+
+// The following premium plugin updates were released alongside {productname} 6.4.2.
+
+
+// [[accompanying-premium-plugin-end-of-life-announcement]]
+// == Accompanying Premium Plugin end-of-life announcement
+
+// The following premium plugin has been announced as reaching its end-of-life:
+
+
+// [[accompanying-premium-skins-and-icon-packs-changes]]
+// == Accompanying Premium Skins and Icon Packs changes
+
+// The {productname} 6.4.2 release includes an accompanying release of the **Premium Skins and Icon Packs**.
+
+// === Premium Skins and Icon Packs
+
+// The **Premium Skins and Icon Packs** release includes the following updates:
+
+// The **Premium Skins and Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} 6.4.2 skin, Oxide.
+
+// For information on using premium skins and icon packs, see: xref:premium-skins-and-icons.adoc[Premium Skins and Icon Packs].
+
+
+// [[improvements]]
+// == Improvements
+
+// {productname} 6.4.2 also includes the following improvements:
+
+
+// [[additions]]
+// == Additions
+
+// {productname} 6.4.2 also includes the following additions:
+
+
+// [[changes]]
+// == Changes
+
+// {productname} 6.4.2 also incorporates the following changes:
+
+
+[[bug-fixes]]
+== Bug fixes
+
+{productname} 6.4.2 also includes the following bug fixes:
+
+== The editor would display a notification error when it fails to retirieve a blob image uri.
+#TINY-9604
+// Cause, Consequence, Fix, Result
+
+== Menu buttons would have the Tabstopping behaviour in toolbar.
+#TINY-9723
+// Cause, Consequence, Fix, Result
+
+== The urlinput dialog component would not open the typeahead dropdown when the input value was reset to an empty string.
+#TINY-9717
+// Cause, Consequence, Fix, Result
+
+== Fixed the mouse pointer style from a text cursor to a default arrow pointer when hovering over the tree dialog component items.
+#TINY-9692
+// Cause, Consequence, Fix, Result
+
+== Enabled variant of togglable tox-button and tox-button--secondary now supports hover/active/focus/disabled states.
+#TINY-9713
+// Cause, Consequence, Fix, Result
+
+== Setting an invalid unit in the fontsizeinput would change it do the default value instead of reverting it back to the previous valid value.
+#TINY-9754
+// Cause, Consequence, Fix, Result
+
+== Selection was not correctly scrolled horizontally into view when using the selection.scrollIntoView API.
+#TINY-9747
+// Cause, Consequence, Fix, Result
+
+== Context toolbars displayed the incorrect status for the advlist plugin buttons.
+#TINY-9680
+// Cause, Consequence, Fix, Result
+
+
+
+// [[known-issues]]
+// == Known issues
+
+// This section describes issues that users of {productname} 6.4.2 may encounter and possible workarounds for these issues.
+
+// There are several known issues in {productname} 6.4.2.

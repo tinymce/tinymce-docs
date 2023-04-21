@@ -18,7 +18,8 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 //* xref:improvements[Improvements]
 //* xref:additions[Additions]
 //* xref:changes[Changes]
-* xref:bug-fixes[Bug fixes]
+//* xref:bug-fixes[Bug fixes]
+//* xref:security-fixes[Security fixes]
 //* xref:known-issues[Known issues]
 
 
@@ -70,43 +71,16 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 // {productname} 6.4.2 also incorporates the following changes:
 
 
-[[bug-fixes]]
-== Bug fixes
+// [[bug-fixes]]
+// == Bug fixes
 
-{productname} 6.4.2 also includes the following bug fixes:
+// {productname} 6.4.2 also includes the following bug fixes:
 
-== The editor would display a notification error when it fails to retirieve a blob image uri.
-#TINY-9604
-// Cause, Consequence, Fix, Result
 
-== Menu buttons would have the Tabstopping behaviour in toolbar.
-#TINY-9723
-// Cause, Consequence, Fix, Result
+// [[security-fixes]]
+// == Security fixes
 
-== The urlinput dialog component would not open the typeahead dropdown when the input value was reset to an empty string.
-#TINY-9717
-// Cause, Consequence, Fix, Result
-
-== Fixed the mouse pointer style from a text cursor to a default arrow pointer when hovering over the tree dialog component items.
-#TINY-9692
-// Cause, Consequence, Fix, Result
-
-== Enabled variant of togglable tox-button and tox-button--secondary now supports hover/active/focus/disabled states.
-#TINY-9713
-// Cause, Consequence, Fix, Result
-
-== Setting an invalid unit in the fontsizeinput would change it do the default value instead of reverting it back to the previous valid value.
-#TINY-9754
-// Cause, Consequence, Fix, Result
-
-== Selection was not correctly scrolled horizontally into view when using the selection.scrollIntoView API.
-#TINY-9747
-// Cause, Consequence, Fix, Result
-
-== Context toolbars displayed the incorrect status for the advlist plugin buttons.
-#TINY-9680
-// Cause, Consequence, Fix, Result
-
+// {productname} 6.4.2 includes a fix for the following security issue:
 
 
 // [[known-issues]]

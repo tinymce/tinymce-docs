@@ -93,7 +93,7 @@ In {productname} 6.4.1, the Smart Typography plugin no longer creates a space be
 === Added functionality to remove spaces between exclamation marks
 //#TINY-9398		
 
-An issue was discovered that affected the typography plugin in previous versions of {productname} when inserting content into the editor. Specifically, the issue involved exclamation marks and the spaces between them, such as in the example `“Hello! !“`. This issue prevented the editor from removing the spaces between the double *exclamation marks* `! !` after executing the typography plugin toolbar or menubar button.
+An issue was discovered that affected the typography plugin in previous versions of {productname} when inserting content into the editor. Specifically, the issue involved exclamation marks and the spaces between them, such as in the example `"Hello! !"`. This issue prevented the editor from removing the spaces between the double *exclamation marks* `! !` after executing the typography plugin toolbar or menubar button.
 
 In {productname} 6.4.1, spaces are now removed between exclamation marks `!!` for formatted HTML documents when the typography plugin is used. To learn more about Advanced Typography and how to add this new premium plugin to your project, please refer xref:advanced-typography.adoc[Advanced Typography].
 

@@ -91,7 +91,6 @@ As demonstrated in the example above, an unintentional or redundant space was in
 In {productname} 6.4.1, the Smart Typography plugin no longer creates a space between a comma and a closing double-quote mark.
 
 === Added functionality to remove spaces between exclamation marks
-//#TINY-9398		
 
 An issue was discovered that affected the typography plugin in previous versions of {productname} when inserting content into the editor. Specifically, the issue involved exclamation marks and the spaces between them, such as in the example `"Hello! !"`. This issue prevented the editor from removing the spaces between the double *exclamation marks* `! !` after executing the typography plugin toolbar or menubar button.
 

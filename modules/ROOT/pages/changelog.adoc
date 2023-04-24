@@ -7,6 +7,10 @@ NOTE: This is the {productname} Community version changelog. For information abo
 == 6.4.2 - 2023-04-26
 
 === Fixed
+
+* When dragging image elements and dropping the image in the editor the `dragend` event would sometimes not fire on firefox.
+* `deleteallconversations` menu item was enabled before any comments were added.
+* Menu buttons would have the Tabstopping behaviour in toolbar.
 * The editor would display a notification error when it fails to retirieve a blob image uri.
 * Menu buttons would have the Tabstopping behaviour in toolbar.
 * The `urlinput` dialog component would not open the typeahead dropdown when the input value was reset to an empty string.

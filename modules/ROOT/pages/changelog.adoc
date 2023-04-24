@@ -8,7 +8,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 
 === Fixed
 
-* Selection was not correctly scrolled horizontally into view when using the selection.scrollIntoView API.
+* Selection was not correctly scrolled horizontally into view when using the `selection.scrollIntoView` API.
 * Menu buttons would have the Tabstopping behaviour in toolbar.
 * The editor would display a notification error when it fails to retirieve a blob image uri.
 * Setting an invalid unit in the fontsizeinput would change it do the default value instead of reverting it back to the previous valid value.

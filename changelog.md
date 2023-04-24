@@ -6,6 +6,8 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-1955: added the TinyMCE 6.4.2 specific changes to changelog.adoc.
+
 ### 2023-04-19
 - DOC-1170: updated `language_url.adoc` to document the `language: '<language-file-pack-name>'` requirement and to make other language explicit where it was implicatory.
 - DOC-1947: typos, copy-edits and mark-up corrections across multiple files: `builtinformats.adoc`; `contextform.adoc`; `formats.adoc`; `supported-versions.adoc`; and `valid_children.adoc`.

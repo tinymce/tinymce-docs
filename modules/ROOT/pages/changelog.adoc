@@ -12,7 +12,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Menu buttons would have the Tabstopping behaviour in toolbar.
 * The editor would display a notification error when it fails to retirieve a blob image uri.
 * Setting an invalid unit in the `fontsizeinput` would change it do the default value instead of reverting it back to the previous valid value.
-* The urlinput dialog component would not open the typeahead dropdown when the input value was reset to an empty string.
+* The `urlinput` dialog component would not open the typeahead dropdown when the input value was reset to an empty string.
 * When dragging image elements and dropping the image in the editor the `dragend` event would sometimes not fire on firefox.
 * Context toolbars displayed the incorrect status for the advlist plugin buttons.
 

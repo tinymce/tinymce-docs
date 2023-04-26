@@ -4,6 +4,20 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+== 6.4.2 - 2023-04-26
+
+=== Fixed
+
+* The editor displayed a notification error when it failed to retrieve a blob image uri.
+* Tab navigation no longer incorrectly stops at menu buttons within toolbar groups.
+* The `urlinput` dialog component would not open the type-ahead dropdown when the input value was reset to an empty string.
+* Redial would, in some situations, cause select elements not to have an initial value selected when they should have.
+* Fixed the mouse pointer style from a text cursor to a default arrow pointer when hovering over the tree dialog component items.
+* Enabled variant of toggleable `tox-button` and `tox-button--secondary`: it now supports `hover`/`active`/`focus`/`disabled` states.
+* Setting an invalid unit in the `fontsizeinput` changed it to the default value instead of reverting it to the previous, and valid, value.
+* Selection was not correctly scrolled horizontally into view when using the `selection.scrollIntoView` API.
+* Context toolbars displayed the incorrect status for the `advlist` plugin buttons.
+* The image would not be inserted when the `quickimage` button was used on Chrome.
 
 == 6.4.1 - 2023-03-29
 

@@ -8,14 +8,14 @@ NOTE: This is the {productname} Community version changelog. For information abo
 
 === Fixed
 
-* Selection was not correctly scrolled horizontally into view when using the `selection.scrollIntoView` API.
-* Tab navigation no longer incorrectly stops at menu buttons within toolbar groups.
 * The editor displayed a notification error when it failed to retrieve a blob image uri.
-* Setting an invalid unit in the `fontsizeinput` changed it to the default value instead of reverting it to the previous, and valid, value.
+* Tab navigation no longer incorrectly stops at menu buttons within toolbar groups.
 * The `urlinput` dialog component would not open the type-ahead dropdown when the input value was reset to an empty string.
-* When dragging image elements and dropping the image in the editor the `dragend` event would sometimes not fire on Firefox.
+* Setting an invalid unit in the `fontsizeinput` changed it to the default value instead of reverting it to the previous, and valid, value.
+* Selection was not correctly scrolled horizontally into view when using the `selection.scrollIntoView` API.
 * Context toolbars displayed the incorrect status for the `advlist` plugin buttons.
 * The image would not be inserted when the `quickimage` button was used on Chrome.
+* When dragging image elements and dropping the image in the editor the `dragend` event would sometimes not fire on Firefox.
 
 == 6.4.1 - 2023-03-29
 

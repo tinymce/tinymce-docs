@@ -15,6 +15,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * The `urlinput` dialog component would not open the typeahead dropdown when the input value was reset to an empty string.
 * When dragging image elements and dropping the image in the editor the `dragend` event would sometimes not fire on firefox.
 * Context toolbars displayed the incorrect status for the advlist plugin buttons.
+* The image would not be inserted when using the `quickimage` button on Chrome.
 
 == 6.4.1 - 2023-03-29
 

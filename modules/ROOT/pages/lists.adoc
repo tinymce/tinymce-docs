@@ -5,20 +5,70 @@
 :pluginname: Lists
 :plugincode: lists
 
-The `+lists+` plugin allows you to add numbered and bulleted lists to {productname}. To enable advanced lists (e.g. alpha numbered lists, square bullets) you should also enable the xref:advlist.adoc[Advanced List] (`+advlist+`) plugin.
+The `+lists+` plugin enables numbered and bulleted lists in {productname}. To enable advanced lists (for example, lists ordered by letter or unordered lists presented with square bullets) enable the xref:advlist.adoc[Advanced List] (`+advlist+`) plugin.
 
-The plugin also normalizes list behavior between browsers. Enable it if you have problems with consistency making lists.
+The `+lists+` plugin also normalizes list behavior between browsers. Enable it if you have problems with consistency making lists.
 
-== Basic setup
+It is important to note that, by default, {productname} includes both implicit and explicit list-creation user-interfaces.
+
+Adding the `lists` plugin and the `bullist` and `numlist` toolbar items to a {productname} configuration enables the explicit list-creation user-interface (UI).
+
+And the implicit list-creation UI comes via xref:content-behavior-options.adoc#text_patterns[text patterns]. The default set of `text_patterns` enabled when {productname} is initialised include https://daringfireball.net/projects/markdown/syntax[Markdown]-based patterns that {productname} automatically turns into basic ordered and unordered lists.
+
+== Basic setup for implicit and explicit lists UI
 
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'lists',
-  toolbar: 'numlist bullist'
+  toolbar: 'bullist numlist',
 });
 ----
+
+
+== Basic setup for explicit lists UI but no implicit lists UI
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'lists',
+  toolbar: 'bullist numlist',
+  text_patterns: [] // a specified but empty `text_patterns` array turns the default `text_patterns` off.
+});
+----
+
+
+== Basic setup for explicit lists UI and a specifically defined implicit lists UI
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'lists',
+  toolbar: 'numlist bullist',
+  text_patterns: [
+    { start: '#', format: 'h1' },
+    { start: '##', format: 'h2' },
+    { start: '###', format: 'h3' },
+    { start: '####', format: 'h4' },
+    { start: '#####', format: 'h5' },
+    { start: '######', format: 'h6' },
+    { start: '* ', cmd: 'InsertUnorderedList' },
+    { start: '- ', cmd: 'InsertUnorderedList' },
+    { start: '1. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'decimal' } },
+    { start: '1) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'decimal' } },
+    { start: 'a. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-alpha' } },
+    { start: 'a) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-alpha' } },
+    { start: 'i. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-roman' } },
+    { start: 'i) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-roman' } }
+  ]
+});
+----
+
+The `text_patterns` array set out in the example above duplicates the default `text_patterns` available by default even if `text_patterns` is not explicitly specified in a {productname} configuration.
+
 
 == Options
 
@@ -27,6 +77,7 @@ These settings affect the execution of the `+lists+` plugin.
 include::partial$configuration/lists_indent_on_tab.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
 
 == Commands
 

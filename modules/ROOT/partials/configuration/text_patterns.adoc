@@ -1,13 +1,27 @@
 [[text_patterns]]
 == `+text_patterns+`
 
-This option allows configuring the text patterns that get matched while typing in the editor. Text patterns can be used to apply formats, replace text, or execute commands. By default, basic markdown patterns are enabled so the user can type `+# text+` to produce a header or `+**text**+` to make text *bold*. To disable text patterns getting replaced, set the option to `false`.
+This option allows configuring the text patterns that get matched while typing in the editor. Text patterns can be used to apply formats, replace text, or execute commands.
 
-There are three types of patterns: `+inline+`, `+block+`, and `+replacement+` patterns. Inline patterns have a `+start+` and an `+end+` text pattern whereas the block and replacement patterns only have a `+start+`. A user can specify the formats to be applied to the selection, commands to be executed, or text to be replaced.
+Basic https://daringfireball.net/projects/markdown/syntax[Markdown] patterns are enabled by default. A user can, for example, type `+# text+` to produce a header or `+**text**+` to make text *bold*.
+
+To disable all text patterns, set the `text_patterns` option to `false`.
+
+There are three pattern types:
+
+.`+inline+`;
+.`+block+`; and
+.`+replacement+`.
+
+Inline patterns have a `+start+` and an `+end+` text pattern.
+
+Block and replacement patterns only have a `+start+`.
+
+The formats to be applied to the selection, commands to be executed, or text to be replaced can all be specified in a {productname} configuration.
 
 [IMPORTANT]
 ====
-Any formats or commands used in text patterns need to be registered with the editor when it is initialized. This may include enabling relevant plugins, such as the `+lists+` plugin. For information on:
+Any formats or commands used in text patterns need to be registered with the editor when it is initialized. This may include enabling relevant plugins. For information on:
 
 * Registering formats for {productname}, see: xref:content-formatting.adoc#formats[Content formatting options - `+formats+`].
 * Registering commands for {productname}, see: xref:apis/tinymce.editor.adoc#addCommand[{productname} APIs - addCommand].
@@ -27,7 +41,6 @@ Any formats or commands used in text patterns need to be registered with the edi
   { start: '####', format: 'h4' },
   { start: '#####', format: 'h5' },
   { start: '######', format: 'h6' },
-  // The following text patterns require the `lists` plugin
   { start: '1. ', cmd: 'InsertOrderedList' },
   { start: '* ', cmd: 'InsertUnorderedList' },
   { start: '- ', cmd: 'InsertUnorderedList' }
@@ -44,7 +57,7 @@ Inline patterns must have the following:
 
 This allows for patterns to be used to either apply a format or execute a command, optionally with the given value.
 
-NOTE: Inline patterns are executed on either pressing the *spacebar* or the *Enter* key.
+NOTE: Inline patterns are executed on either pressing the *spacebar* or pressing the *Return* or *Enter* key.
 
 ==== Example: using inline patterns
 
@@ -52,8 +65,6 @@ NOTE: Inline patterns are executed on either pressing the *spacebar* or the *Ent
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  // The `link` plugin is required for the `createLink` command
-  plugin: 'link',
   text_patterns: [
     { start: '*', end: '*', format: 'italic' },
     { start: '**', end: '**', format: 'bold' },
@@ -64,9 +75,25 @@ tinymce.init({
 
 Using the configuration in this example:
 
-* `+{ start: '*', end: '*', format: 'italic' }+` - Entering text between`+*+` and then pressing the *spacebar* will result in the `+italic+` format being applied to the text between the `+*+` symbols.
-* `+{ start: '**', end: '**', format: 'bold' }+` - Entering text between`+**+` and then pressing the *spacebar* will result in the `+bold+` format being applied.
-* `+{ start: '~', end: '~', cmd: 'createLink', value: 'https://tiny.cloud' }+` - This executes `+editor.execCommand('createLink', false, 'https://tiny.cloud')+`, which will wrap the text between the `+~+` symbols in a link that points to `+https://tiny.cloud+`.
+* `+{ start: '*', end: '*', format: 'italic' }+`
++
+Enter text immediately after an initial `+*+` and end the entered string with a closing `+*+`; then press the *spacebar*.
++
+The text between the `+*+` characters is set in _italics_, and the `+*+` characters is removed.
+
+* `+{ start: '**', end: '**', format: 'bold' }+`
++
+Enter text immediately after an initial `+**+` and end the entered string with a closing `+**+`; then press the *spacebar*.
++
+The text between the `+**+` characters is set *bold*, and the `+**+` characters is removed.
+
+
+* `+{ start: '~', end: '~', cmd: 'createLink', value: 'https://tiny.cloud' }+`
++
+This text pattern executes `+editor.execCommand('createLink', false, 'https://tiny.cloud')+`.
++
+This commands takes a string delimited by `+~+` characters and, when the *spacebar* is pressed, wraps the string in an anchor tag pointing to `+https://tiny.cloud+`. It then removes the delimiting `+~+` characters.
+
 
 === Block patterns
 
@@ -76,18 +103,16 @@ Block patterns must have the following:
 * A `+format+` or a `+cmd+`
 ** If `+cmd+` is specified, an optional `+value+` property is allowed.
 
-The block patterns do not have an `+end+` property. This allows for patterns to be used to either apply a block format or execute a command, optionally, with the given value.
+Block patterns do not have an `+end+` property. This allows for patterns to be used to either apply a block format or execute a command, optionally, with the given value.
 
-NOTE: Block patterns are only executed on *Enter*, *not* on pressing the *spacebar*.
+NOTE: Block patterns are only executed on pressing *Return* or *Enter*, *not* on pressing the *spacebar*.
 
 ==== Example: using block patterns
 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea', // change this value according to your HTML
-  // The `lists` plugin is required for list-related text patterns
-  plugin: 'lists',
+  selector: 'textarea',  // change this value according to your HTML
   text_patterns: [
     { start: '#', format: 'h1' },
     { start: '##', format: 'h2' },
@@ -109,8 +134,19 @@ tinymce.init({
 
 Using the configuration in this example:
 
-* `+{ start: '#', format: 'h1' }+` - Typing `+#+`, some text, and then pressing `+Enter+` will convert the text to a `+h1+` heading.
-* Typing `+1.+` followed by a space, the desired text, and then pressing `+Enter+`; the editor will convert the text into an ordered list, with the original text as the first list item, and the new line as the second list item. Since we have specified `+value+`, this pattern will execute `+editor.execCommand('InsertOrderedList', false, { 'list-style-type': 'decimal'})+`.
+* `+{ start: '#', format: 'h1' }+`
++
+Type `+#+`, `+some text+`, and then press *Return* or *Enter*.
++
+The string, `+some text+`, is turned into an `+h1+` heading, and the `+#+` character is removed.
+
+* `+{ start: '1. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'decimal' } }+`
++
+Type `+1.+` followed by a space and `+some text+`. Then press *Return* pr *Enter*.
++
+The string, `+some text+`, is converted into the first item in an ordered list, and the new line becomes the second item in the list.
++
+Since `+value+` is specified, this pattern will execute `+editor.execCommand('InsertOrderedList', false, { 'list-style-type': 'decimal'})+`.
 
 === Replacements patterns
 
@@ -121,7 +157,7 @@ Replacement patterns must have the following:
 
 Whether a replacement pattern inserts a block or inline element depends on what the `+replacement+` string is.
 
-NOTE: Replacement patterns are executed on either pressing the *spacebar* or the *Enter* key.
+NOTE: Replacement patterns are executed on either pressing the *spacebar* or pressing the *ReTurn* or *Enter* key.
 
 ==== Example: using replacement patterns
 
@@ -142,7 +178,16 @@ tinymce.init({
 
 Using the configuration in this example:
 
-* Typing `+---+` and then either pressing the *spacebar* or the *Enter* key will insert a horizontal rule block.
-* Typing `+(c)+` and then either pressing the *spacebar* or the *Enter* key will insert an inline copyright symbol.
+* `+{ start: '---', replacement: '<hr/>' }+`
++
+Type `+---+` and then press the *spacebar* or press the *Return* or *Enter* key.
++
+The string of four hyphens is replaced by a horizontal rule block.
 
-This is useful for commonly used phrases or symbols and can be leveraged to create content templates. The last pattern is an example of this.
+* `+{ start: '(c)', replacement: '©' }+`
++
+Type `+(c)+` and then press the *spacebar* or press the *Return* or *Enter* key.
++
+The entered string, `+(c)+`, is replaced by a copyright symbol, set inline.
+
+Replacement patterns are useful for commonly used phrases or symbols and can be leveraged to create implicit content templates. The last example pattern above is an example of this.

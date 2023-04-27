@@ -205,8 +205,8 @@ NOTE: The `link_default_protocol` value is only applied to an edited or inserted
 
 As noted in the xref:6.0-release-notes-core-changes.adoc#removed-or-deprecated-options-textpattern[_{productname} 6.0 Release Notes_], the `textpattern_patterns` option:
 
-* Was renamed to `text_patterns`;
-* Had its functionality moved to the Core of {productname} 6.0.
+* Was renamed to `text_patterns`; and
+* Had its functionality moved to the core of {productname} 6.0.
 
 As well, the `textpattern` API has been removed.
 
@@ -218,6 +218,16 @@ After upgrading:
 
 * Rename any options in your {productname} init configuration to match the new name.
 * Remove `textpattern` from your plugins list.
+
+=== Text patterns and lists
+
+As a consequence of
+
+. `text_patterns` being moved to the core of {productname};
+. `text_patterns` being turned on by default; and
+. the set of `text_patterns` which are included by default
+
+{productname} now includes both implicit and explicit list creation user interfaces. See xref:lists.adoc[Lists] for details and basic configuration examples.
 
 [[plugins]]
 == Plugins

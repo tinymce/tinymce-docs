@@ -80,7 +80,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 In previous versions of {productname}, on MacOS Chrome, the editor `focusin` event would occur before the `change` event for a file input.
 
-As a consequence, images could not be inserted via `quickimage` button of quickbar plugin.
+As a consequence, images could not be inserted via `quickimage` button of `quickbar` plugin.
 
 To fix this, the handling of `focusin` events was delayed in order to give a time slot for the change event to be handled.
 

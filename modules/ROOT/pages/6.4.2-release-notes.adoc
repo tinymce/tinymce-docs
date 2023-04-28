@@ -84,7 +84,7 @@ As a consequence, the dropdown list with the URL suggestions would not expand.
 
 To fix this issue, {productname}, updated the code for the `urlinput` component that is responsible for gathering the correct dropdown items.
 
-As a result, the dropdown list with URL suggestions now expands even on the empty Source field and the browser console is cleaned out of errors.
+As a result, the dropdown list with URL suggestions now expands even on the empty `Source` field, and the browser console is cleaned out of errors.
 
 // [[security-fixes]]
 // == Security fixes

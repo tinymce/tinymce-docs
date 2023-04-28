@@ -76,6 +76,15 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 // {productname} 6.4.2 also includes the following bug fixes:
 
+=== The urlinput dialog component would not open the type-ahead dropdown when the input value was reset to an empty string.
+
+In previous versions of {productname}, a console error would be thrown when resetting the `Source` field of the **Insert Media** dialog.
+
+As a consequence, the dropdown list with the url suggestion would not expand.
+
+To fix this issue, {productname}, updated the code for the `urlinput` component that is responsible for gathering the correct dropdown items.
+
+As a result, the dropdown list with URL suggestions now expands even on the empty Source field and the browser console is cleaned out of errors.
 
 // [[security-fixes]]
 // == Security fixes

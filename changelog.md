@@ -6,7 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
-- DOC-1965: added `The image would not be inserted when the quickimage button was used on Chrome.` to staging.
+- DOC-1965: added `The editor displayed a notification error when it failed to retrieve a blob image uri.` to staging.
 - DOC-1935: added `6.4.2-release-notes.adoc`. Added outline to this file for staging.
 
 ### 2023-04-19

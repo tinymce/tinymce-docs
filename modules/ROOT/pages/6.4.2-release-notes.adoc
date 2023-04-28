@@ -76,7 +76,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 // {productname} 6.4.2 also includes the following bug fixes:
 
-=== The image would not be inserted when the quickimage button was used on Chrome.
+=== The editor displayed a notification error when it failed to retrieve a blob image uri.
 
 In previous versions of {productname}, a console error would be thrown when resetting the `Source` field of the **Insert Media** dialog.
 

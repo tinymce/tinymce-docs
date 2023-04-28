@@ -76,7 +76,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 // {productname} 6.4.2 also includes the following bug fixes:
 
-=== The image would not be inserted when the quickimage button was used on Chrome.
+=== The image would not be inserted when the `quickimage` button was used on Chrome.
 
 In previous versions of {productname}, on MacOS Chrome, the editor `focusin` event would occur before the change event for a file input.
 

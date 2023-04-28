@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-1964: added `deleteallconversations` menu item was enabled before any comments were added.` to staging.
 - DOC-1935: added `6.4.2-release-notes.adoc`. Added outline to this file for staging.
 
 ### 2023-04-19

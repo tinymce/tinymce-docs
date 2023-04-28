@@ -76,6 +76,11 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 // {productname} 6.4.2 also includes the following bug fixes:
 
+=== `deleteallconversations` menu item was enabled before any comments were added.
+
+In previous versions of {productname}, the menu button for `deleteallconversations` was not disabled when the comment dialog was empty.
+
+To fix this issue, the menu button will now be `disabled` if the comments section within the menu verifies no content is present.
 
 // [[security-fixes]]
 // == Security fixes

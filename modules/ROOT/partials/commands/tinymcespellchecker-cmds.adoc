@@ -5,6 +5,7 @@
 |mceSpellcheckDisable |Turns spellchecking off.
 |mceSpellcheckDialog |Opens the spellchecking dialog.
 |mceSpellcheckDialogClose |Closes the spellchecking dialog.
+|mceSpellcheckUpdate |Checks the editor content for new misspellings and spelling suggestions.
 |===
 
 .Example
@@ -14,4 +15,5 @@ tinymce.activeEditor.execCommand('mceSpellcheckEnable');
 tinymce.activeEditor.execCommand('mceSpellcheckDisable');
 tinymce.activeEditor.execCommand('mceSpellcheckDialog');
 tinymce.activeEditor.execCommand('mceSpellcheckDialogClose');
+tinymce.activeEditor.execCommand('mceSpellcheckUpdate');
 ----

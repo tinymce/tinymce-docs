@@ -76,7 +76,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 // {productname} 6.4.2 also includes the following bug fixes:
 
-=== The urlinput dialog component would not open the type-ahead dropdown when the input value was reset to an empty string.
+=== The `urlinput` dialog component would not open the type-ahead dropdown when the input value was reset to an empty string.
 
 In previous versions of {productname}, a console error would be thrown when resetting the `Source` field of the **Insert Media** dialog.
 

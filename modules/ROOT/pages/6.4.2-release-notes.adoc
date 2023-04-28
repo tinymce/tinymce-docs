@@ -80,7 +80,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 In previous versions of {productname}, a console error would be thrown when resetting the `Source` field of the **Insert Media** dialog.
 
-As a consequence, the dropdown list with the url suggestion would not expand.
+As a consequence, the dropdown list with the URL suggestions would not expand.
 
 To fix this issue, {productname}, updated the code for the `urlinput` component that is responsible for gathering the correct dropdown items.
 

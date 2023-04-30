@@ -76,6 +76,13 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 // {productname} 6.4.2 also includes the following bug fixes:
 
+=== Selection was not correctly scrolled horizontally into view when using the `selection.scrollIntoView` API.
+
+In previous versions of {productname}, the function `scrollToMarker` calculated how much should be scrolled vertically, but the calculation for for the horizontal scroll, was set to the position `left` of the marker.
+
+As a consequence of this, in some situations the horizontal scroll would not scroll to the correct position.
+
+To fix this, instead of manually calculating the vertical and horizontal position, {productname} 6.4.2 now uses a native `scrollIntoView` to move the scroll to the marker.
 
 // [[security-fixes]]
 // == Security fixes

@@ -76,6 +76,13 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 // {productname} 6.4.2 also includes the following bug fixes:
 
+=== Setting an invalid unit in the `fontsizeinput` changed it to the default value instead of reverting it to the previous, and valid, value.
+
+In previous versions of {productname}, when an invalid unit was inserted into the `fontsizeinput` component, the value would not parse resulting in both the value and unit been set to default (0 and pt). 
+
+As a consequence of this action, the invalid unit would set its value to `opt`.
+
+In {productname} 6.4.2, when inserting and invalid value into the `fontsizeinput`, the value will revert back to the previous valid value.
 
 // [[security-fixes]]
 // == Security fixes

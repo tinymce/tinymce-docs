@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-1963: added `Setting an invalid unit in the `fontsizeinput` changed it to the default value instead of reverting it to the previous, and valid, value.` to staging.
 - DOC-1935: added `6.4.2-release-notes.adoc`. Added outline to this file for staging.
 
 ### 2023-04-19

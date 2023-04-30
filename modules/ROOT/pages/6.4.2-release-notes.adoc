@@ -76,6 +76,16 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 // {productname} 6.4.2 also includes the following bug fixes:
 
+=== Tab navigation no longer incorrectly stops at menu buttons within toolbar groups.
+
+In previous versions of {productname}, having a menu button in the “more” floating toolbar, would cause issues with the navigation behaviour.
+
+As a consquence, Tabbing would stop at the menu button, rather than stopping at the toolbar groups **first** button.
+
+To fix this issue, {productname} removed `tabstopping` capability for menu buttons when they are rendered inside toolbar.
+
+As a result, Tabbing now correctly stops only at the **first** button within the toolbar group.
+
 
 // [[security-fixes]]
 // == Security fixes

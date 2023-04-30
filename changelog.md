@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-1959: added `Redial would, in some situations, cause select elements not to have an initial value selected when they should have.` to staging.
 - DOC-1935: added `6.4.2-release-notes.adoc`. Added outline to this file for staging.
 
 ### 2023-04-19

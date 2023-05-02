@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-1957: added `Selection was not correctly scrolled horizontally into view when using the `selection.scrollIntoView` API.` to staging.
 - DOC-1958: added `Tab navigation no longer incorrectly stops at menu buttons within toolbar groups.` to staging.
 - DOC-1935: added `6.4.2-release-notes.adoc`. Added outline to this file for staging.
 

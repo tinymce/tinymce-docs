@@ -84,7 +84,7 @@ As a consequence, Tabbing stopped at the menu button, rather than stopping at th
 
 To fix this issue, {productname} removed `tabstopping` capability for menu buttons when they are rendered inside toolbar.
 
-As a result, Tabbing now correctly stops only at the **first** button within the toolbar group.
+As a result, Tabbing now correctly stops at the first button within a toolbar group.
 
 
 // [[security-fixes]]

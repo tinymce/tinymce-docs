@@ -78,11 +78,11 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 === Setting an invalid unit in the `fontsizeinput` changed it to the default value instead of reverting it to the previous, and valid, value.
 
-In previous versions of {productname}, when an invalid unit was inserted into the `fontsizeinput` component, the value would not parse resulting in both the value and unit been set to default (0 and pt). 
+In previous versions of {productname}, when an invalid value was entered into the `fontsizeinput` toolbar component, the value was not parsed and both the value and unit were set to their default values: _0_ and _pt_ respectively. 
 
-As a consequence of this action, the invalid unit would set its value to `0pt`.
+As a consequence, entering an invalid value set selected text, or the insertion point, to _0pt_.
 
-In {productname} 6.4.2, when inserting and invalid value into the `fontsizeinput`, the value will revert back to the previous valid value.
+In {productname} 6.4.2, if an invalid string is entered in the `fontsizeinput` entry field, the `fontsizeinput` value reverts to the previous, valid, value.
 
 // [[security-fixes]]
 // == Security fixes

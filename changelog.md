@@ -6,7 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
-- DOC-1961: added `Enabled variant of toggleable `tox-button` and `tox-button—​secondary`: it now supports `hover/active/focus/disabled` states.` to staging.
+- DOC-1961: added Enabled variant of toggleable `tox-button` and `tox-button—​secondary`: it now supports `hover/active/focus/disabled` states. to staging.
 - DOC-1935: added `6.4.2-release-notes.adoc`. Added outline to this file for staging.
 
 ### 2023-04-19

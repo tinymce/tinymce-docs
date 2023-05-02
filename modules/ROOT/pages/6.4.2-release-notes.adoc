@@ -84,6 +84,8 @@ As a consequence, the dropdown menu in this dialog would, in some circumstances,
 
 To fix this issue {productname} now populates the element with a default value, unless this menu is explicitly configured as empty by the particular {productname} instance’s configuration.
 
+NOTE: this change also addresses xref:6.4.1-release-notes.adoc#known-issues[a known issue] in the xref:a11ychecker.adoc[Accessibility Checker Premium plugin].
+
 // [[security-fixes]]
 // == Security fixes
 

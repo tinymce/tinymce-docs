@@ -80,7 +80,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 In previous versions of {productname}, having a menu button in the “more” floating toolbar, would cause issues with the navigation behaviour.
 
-As a consquence, Tabbing would stop at the menu button, rather than stopping at the toolbar groups **first** button.
+As a consequence, Tabbing stopped at the menu button, rather than stopping at the toolbar group’s first button.
 
 To fix this issue, {productname} removed `tabstopping` capability for menu buttons when they are rendered inside toolbar.
 

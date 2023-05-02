@@ -82,7 +82,7 @@ In previous versions of {productname}, having a menu button in the “more” fl
 
 As a consequence, Tabbing stopped at the menu button, rather than stopping at the toolbar group’s first button.
 
-To fix this issue, {productname} removed `tabstopping` capability for menu buttons when they are rendered inside toolbar.
+To fix this issue, {productname} removed *tabstopping* capability for menu buttons when they are rendered inside toolbar.
 
 As a result, Tabbing now correctly stops at the first button within a toolbar group.
 

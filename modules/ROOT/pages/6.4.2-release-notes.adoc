@@ -81,7 +81,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 In previous versions of {productname}, the `advlist` quickbar button handler setup varied from the setup for the `list` handler.
 
-As a consequence the `advlist` quickbar button would not talk to the correct status.
+As a consequence the `advlist` quickbar button would not show the correct status.
 
 To fix this, changes were made to align the setup handler for the `advlist` to match the settings for the `list` handler, which now ensures the status is correctly rendered.
 

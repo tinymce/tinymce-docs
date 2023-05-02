@@ -76,13 +76,13 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 // {productname} 6.4.2 also includes the following bug fixes:
 
-=== Enabled variant of toggleable `tox-button` and `tox-button—​secondary`: it now supports `hover/active/focus/disabled` states.
+=== The `tox-button` and `tox-button-secondary` buttons now support the `hover`, `active`, `focus`, and `disabled` states.
 
-In previous versions of {productname}, the class `--enabled` for `tox-button--secondary` was not defined.
+In previous versions of {productname}, the `--enabled` css class for `tox-button` and `tox-button-secondary` was not defined.
 
-As a consequence, when the button was enabled it wasn't rendered correctly.
+As a consequence, some {productname} toolbar buttons did not render all their possible states as expected when they were selected so as to enable UI option the button represents.
 
-To fix this issue, the class `--enabled` for `tox-button--secondary` has now been defined in {productname} 6.4.2, which now allows the button to render correctly when enabled.
+With this update, the `--enabled` css class has been definded. And {productname} toolbar buttons render all their  possible states as expected when the UI option a button represents is activated.
 
 // [[security-fixes]]
 // == Security fixes

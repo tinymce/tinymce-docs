@@ -78,13 +78,13 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 === The `urlinput` dialog component would not open the type-ahead dropdown when the input value was reset to an empty string.
 
-In previous versions of {productname}, a console error would be thrown when resetting the `Source` field of the **Insert Media** dialog.
+In previous versions of {productname}, a console error was thrown when the _Source_ field of the *Insert Media* dialog was reset.
 
-As a consequence, the dropdown list with the URL suggestions would not expand.
+As a consequence, the dropdown list of suggested URLs did not expand.
 
-To fix this issue, {productname}, updated the code for the `urlinput` component that is responsible for gathering the correct dropdown items.
+To fix this issue, the code for the `urlinput` component that is responsible for gathering the correct dropdown items was updated.
 
-As a result, the dropdown list with URL suggestions now expands even on the empty `Source` field, and the browser console is cleaned out of errors.
+As a result, the URL suggestions dropdown list now expands even on the empty _Source_ field. As well, the host browser’s console no longer returns errors.
 
 // [[security-fixes]]
 // == Security fixes

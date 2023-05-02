@@ -76,13 +76,13 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 // {productname} 6.4.2 also includes the following bug fixes:
 
-=== Redial would, in some situations, cause select elements not to have an initial value selected when they should have.
+=== Redial would, in some circumstances, cause elements to not have an initial value selected when they should have.
 
-In previous versions of {productname}, the browser did not like switching child elements within the accessibility checker dropdown menu.
+In previous versions of {productname}, the host browser did not properly manage switching child elements when the Accessibility Checker dialog was visible.
 
-As a consequence, the dropdown menu would return without anything being selected by default in some situations.
+As a consequence, the dropdown menu in this dialog would, in some circumstances, present without one of the dropdown menu’s options being selected by default.
 
-To fix this issue, if not explicitly set as empty by the user, {productname} will now populate the element unless user decides otherwise.
+To fix this issue {productname} now populates the element with a default value, unless this menu is explicitly configured as empty by the particular {productname} instance’s configuration.
 
 // [[security-fixes]]
 // == Security fixes

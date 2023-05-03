@@ -18,7 +18,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 //* xref:improvements[Improvements]
 //* xref:additions[Additions]
 //* xref:changes[Changes]
-//* xref:bug-fixes[Bug fixes]
+* xref:bug-fixes[Bug fixes]
 //* xref:security-fixes[Security fixes]
 //* xref:known-issues[Known issues]
 
@@ -71,10 +71,37 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 // {productname} 6.4.2 also incorporates the following changes:
 
 
-// [[bug-fixes]]
-// == Bug fixes
+[[bug-fixes]]
+== Bug fixes
 
-// {productname} 6.4.2 also includes the following bug fixes:
+{productname} 6.4.2 also includes the following bug fixes:
+
+
+=== The `urlinput` dialog component would not open the type-ahead dropdown when the input value was reset to an empty string.
+
+In previous versions of {productname}, a console error was thrown when the _Source_ field of the *Insert Media* dialog was reset.
+
+As a consequence, the dropdown list of suggested URLs did not expand.
+
+To fix this issue, the code for the `urlinput` component that is responsible for gathering the correct dropdown items was updated.
+
+As a result, the URL suggestions dropdown list now expands even on the empty _Source_ field. As well, the host browser’s console no longer returns errors.
+
+=== Selection was not correctly scrolled horizontally into view when using the `selection.scrollIntoView` API.
+
+In previous versions of {productname}, the `scrollToMarker` function manually calculated how much should be scrolled vertically. The horizontal scroll amount, however, was set to a specific value: left of the marker.
+
+As a consequence, in some circumstances {productname} editor instances did not scroll to the correct horizontal position.
+
+To fix this, instead of manually calculating the vertical and horizontal marker position, {productname} 6.4.2 now uses a native `scrollIntoView` function to keep the marker in the viewport.
+
+=== Tab navigation no longer incorrectly stops at menu buttons within toolbar groups.
+
+In previous versions of {productname}, menu buttons were assigned an internal attribute.
+
+When the More toolbar button — … — was opened, and the, now-visible, floating toolbar contained a menu button, using the Tab key to navigate through the floating toolbar icons would, because of this attribute and in some circumstances, stop progressing through the toolbar and, sometimes, enter a selection loop.
+
+For this update this internal attribute has been removed and using the Tab key to activate floating toolbar icons progresses through these icons as expected.
 
 === Redial would, in some circumstances, cause elements to not have an initial value selected when they should have.
 

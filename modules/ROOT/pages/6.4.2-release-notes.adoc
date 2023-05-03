@@ -82,7 +82,7 @@ A regression was discovered in {productname} 6.4.0 when the macOS version of Goo
 
 As a consequence, although selecting the `quickimage` toolbar button presented the macOS-native *NSOpenPanel* dialogue box as expected, images selected from this dialogue box were not inserted into the {productname} document.
 
-For this upate, the regression has been correct. In {productname} 6.4.2, local images selected after the `quickimage` button is selected are added to the {productname} document, as expected.
+For this upate, the regression has been corrected. In {productname} 6.4.2, local images selected after the `quickimage` button is selected are added to the {productname} document, as expected.
 
 // [[security-fixes]]
 // == Security fixes

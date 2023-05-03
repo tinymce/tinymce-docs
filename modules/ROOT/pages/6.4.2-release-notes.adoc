@@ -77,6 +77,14 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 {productname} 6.4.2 also includes the following bug fixes:
 
 
+=== The `quickimage` toolbar button failed to insert images selected from the local computer when running on Google Chrome for macOS. 
+
+A regression was discovered in {productname} 6.4.0 when the macOS version of Google Chrome was the host browser: the `focusin` editor event occurred before the `change` event for a file input.
+
+As a consequence, although selecting the `quickimage` toolbar button presented the macOS-native *NSOpenPanel* dialogue box as expected, images selected from this dialogue box were not inserted into the {productname} document.
+
+For this update, the regression has been corrected. In {productname} 6.4.2, local images selected after the `quickimage` button is selected are added to the {productname} document, as expected.
+
 === When hovering over tree dialog components the mouse pointer rendered incorrectly.
 
 In previous versions of {productname}, when hovering over tree dialog component items, the mouse pointer style rendered incorrectly.
@@ -152,7 +160,6 @@ In previous versions of {productname}, if the Premium plugin, xref:introduction-
 Consequently, the _Comments > Delete all conversations_ menu item was not disabled even when the comments section was empty.
 
 With this update, if xref:introduction-to-tiny-comments.adoc[Tiny Comments] is running, {productname} now checks the comments section state and this menu item is now, as expected, disabled when the {productname} comments section contains no comments.
-
 
 == The contextual toolbar displayed the status of Advanced List Premium plugin icons incorrectly.
 

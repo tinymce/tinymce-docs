@@ -6,7 +6,17 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+
 - DOC-1968: Added `enabled buttons in the quickbar menu is not shown as active` to staging.
+- DOC-1967: added `Fixed the mouse pointer style from a text cursor to a default arrow pointer when hovering over the tree dialog component items.` to staging.
+- DOC-1965: added `The editor displayed a notification error when it failed to retrieve a blob image uri.` to staging 6.4.2.
+- DOC-1964: added `deleteallconversations` menu item was enabled before any comments were added.` to staging.
+- DOC-1963: added Setting an invalid unit in the `fontsizeinput` changed it to the default value instead of reverting it to the previous, and valid, value. to staging.
+- DOC-1961: added Enabled variant of toggleable `tox-button` and `tox-button—secondary`: it now supports `hover/active/focus/disabled` states. to staging.
+- DOC-1959: added `Redial would, in some situations, cause select elements not to have an initial value selected when they should have.` to staging.
+- DOC-1960: added `The urlinput dialog component would not open the type-ahead dropdown when the input value was reset to an empty string.` to staging.
+- DOC-1957: added `Selection was not correctly scrolled horizontally into view when using the `selection.scrollIntoView` API.` to staging.
+- DOC-1958: added `Tab navigation no longer incorrectly stops at menu buttons within toolbar groups.` to staging.
 - DOC-1935: added `6.4.2-release-notes.adoc`. Added outline to this file for staging.
 
 ### 2023-04-19

@@ -78,9 +78,9 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 === The editor displayed a notification error when it failed to retrieve a blob image uri.
 
-In previous versions of {productname}, when the editor contained an image with an invalid or unreachable blob url, it would display an error notification banner within the editor viewport which would impact on the user experience.
+In previous versions of {productname}, when the editor contained an image with an invalid or unreachable blob url, it displayed an error notification banner within the editor viewport which impacted the user experience.
 
-A fix was applied in {productname} 6.4.2, which saw the removal of the error notification banner as a broken image would be visibly apparent to the user.
+For {productname} 6.4.2 the error notification banner has been removed: the visible broken image icon is notification enough for the end-user.
 
 // [[security-fixes]]
 // == Security fixes

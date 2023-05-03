@@ -6,6 +6,8 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+### 2023-05-03
+
 - DOC-1971: Updates to `staging` prior to `release` 6.4.2.
 - DOC-1962: added `The image would not be inserted when the quickimage button was used on Chrome.` to staging.
 - DOC-1968: Added `enabled buttons in the quickbar menu is not shown as active` to staging.
@@ -19,6 +21,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 - DOC-1957: added `Selection was not correctly scrolled horizontally into view when using the `selection.scrollIntoView` API.` to staging.
 - DOC-1958: added `Tab navigation no longer incorrectly stops at menu buttons within toolbar groups.` to staging.
 - DOC-1935: added `6.4.2-release-notes.adoc`. Added outline to this file for staging.
+- DOC-1955: added the TinyMCE 6.4.2 specific changes to changelog.adoc.
 
 ### 2023-04-19
 - DOC-1170: updated `language_url.adoc` to document the `language: '<language-file-pack-name>'` requirement and to make other language explicit where it was implicatory.

@@ -43,7 +43,6 @@ node the parent element will be returned.|`xref:apis/tinymce.dom.selection.adoc[
 |xref:#getStart[getStart()]|Returns the start element of a selection range. If the start is in a text
 node the parent element will be returned.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
 |xref:#isCollapsed[isCollapsed()]|Returns true/false if the selection range is collapsed or not. Collapsed means if it's a caret or a larger selection.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
-|xref:#isEditable[isEditable()]|Checks if the current selection’s start and end containers are editable within their parent’s contexts.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
 |xref:#moveToBookmark[moveToBookmark()]|Restores the selection to the specified bookmark.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
 |xref:#select[select()]|Selects the specified element. This will place the start and end of the selection range around the element.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
 |xref:#selectorChanged[selectorChanged()]|Executes callback when the current selection starts/stops matching the specified selector. The current
@@ -265,20 +264,6 @@ Returns true/false if the selection range is collapsed or not. Collapsed means i
 
 * `Boolean` - true/false state if the selection range is collapsed or not.
 Collapsed means if it's a caret or a larger selection.
-
-'''
-
-[[isEditable]]
-=== isEditable()
-[source, javascript]
-----
-isEditable(): Boolean
-----
-Checks if the current selection’s start and end containers are editable within their parent’s contexts.
-
-==== Return value
-
-* `Boolean` - Will be true if the selection is editable and false if it's not editable.
 
 '''
 

@@ -7,6 +7,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### Unreleased
 
 
+- DOC-1967: added `Fixed the mouse pointer style from a text cursor to a default arrow pointer when hovering over the tree dialog component items.` to staging.
 - DOC-1965: added `The editor displayed a notification error when it failed to retrieve a blob image uri.` to staging 6.4.2.
 - DOC-1964: added `deleteallconversations` menu item was enabled before any comments were added.` to staging.
 - DOC-1963: added Setting an invalid unit in the `fontsizeinput` changed it to the default value instead of reverting it to the previous, and valid, value. to staging.

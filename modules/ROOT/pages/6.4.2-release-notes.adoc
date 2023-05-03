@@ -76,6 +76,17 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} 6.4.2 also includes the following bug fixes:
 
+
+=== When hovering over tree dialog components the mouse pointer rendered incorrectly.
+
+In previous versions of {productname}, when hovering over tree dialog component items, the mouse pointer style rendered incorrectly.
+
+Specifically, the mouse pointer rendered as an I-beam pointer rather than the default arrow pointer.
+
+In {productname} 6.4.2, the styles for tree component items have been updated to correct this issue.
+
+NOTE: as of {productname} 6.4.2, tree components are only used as part of the xref:advanced-templates.adoc[Advanced Templates] Premium plugin.
+
 === The editor displayed a notification error when it failed to retrieve a blob image uri.
 
 In previous versions of {productname}, when the editor contained an image with an invalid or unreachable blob url, it displayed an error notification banner within the editor viewport which impacted the user experience.
@@ -141,6 +152,7 @@ In previous versions of {productname}, if the Premium plugin, xref:introduction-
 Consequently, the _Comments > Delete all conversations_ menu item was not disabled even when the comments section was empty.
 
 With this update, if xref:introduction-to-tiny-comments.adoc[Tiny Comments] is running, {productname} now checks the comments section state and this menu item is now, as expected, disabled when the {productname} comments section contains no comments.
+
 
 // [[security-fixes]]
 // == Security fixes

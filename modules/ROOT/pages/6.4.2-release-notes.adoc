@@ -129,6 +129,13 @@ To fix this issue {productname} now populates the element with a default value, 
 
 NOTE: this change also addresses xref:6.4.1-release-notes.adoc#known-issues[a known issue] in the xref:a11ychecker.adoc[Accessibility Checker Premium plugin].
 
+=== The ‘Comments > Delete all conversations’ menu item was enabled even when no comments were added
+
+In previous versions of {productname}, if the Premium plugin, xref:introduction-to-tiny-comments.adoc[Tiny Comments] was also running, {productname} did not check the state of the comments section.
+
+Consequently, the _Comments > Delete all conversations_ menu item was not disabled even when the comments section was empty.
+
+With this update, if xref:introduction-to-tiny-comments.adoc[Tiny Comments] is running, {productname} now checks the comments section state and this menu item is now, as expected, disabled when the {productname} comments section contains no comments.
 
 // [[security-fixes]]
 // == Security fixes

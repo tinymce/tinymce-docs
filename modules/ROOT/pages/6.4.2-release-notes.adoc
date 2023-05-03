@@ -77,13 +77,13 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 // {productname} 6.4.2 also includes the following bug fixes:
 
 
-== Context toolbars displayed the incorrect status for the advlist plugin buttons.
+== The contextual toolbar displayed the status of Advanced List Premium plugin icons incorrectly.
 
-In previous versions of {productname}, the `advlist` quickbar button handler setup varied from the setup for the `list` handler.
+In previous versions of {productname}, the quickbar button handler setup for the Open Source plugin, xref:list.adoc[Lists], was different to the quickbar button handler setup for the Premium plugin, xref:advlist.adoc[Advanced Lists].
 
-As a consequence the `advlist` quickbar button would not show the correct status.
+As a consequence, when a {productname} instance included the Advanced Lists Premium plugin, the contextual toolbar did not display button status on the toolbar correctly.
 
-To fix this, changes were made to align the setup handler for the `advlist` to match the settings for the `list` handler, which now ensures the status is correctly rendered.
+With this update, the setup handler for the Advanced Lists Premium plugin now matches the setup handler settings for the Open Source Lists plugin. And toolbar icon state is now correctly rendered on the contextual toolbar.
 
 
 // [[security-fixes]]

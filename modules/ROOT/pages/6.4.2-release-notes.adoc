@@ -18,7 +18,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 //* xref:improvements[Improvements]
 //* xref:additions[Additions]
 //* xref:changes[Changes]
-//* xref:bug-fixes[Bug fixes]
+* xref:bug-fixes[Bug fixes]
 //* xref:security-fixes[Security fixes]
 //* xref:known-issues[Known issues]
 
@@ -71,10 +71,11 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 // {productname} 6.4.2 also incorporates the following changes:
 
 
-// [[bug-fixes]]
-// == Bug fixes
+[[bug-fixes]]
+== Bug fixes
 
-// {productname} 6.4.2 also includes the following bug fixes:
+{productname} 6.4.2 also includes the following bug fixes:
+
 
 === Setting an invalid unit in the `fontsizeinput` changed it to the default value instead of reverting it to the previous, and valid, value.
 
@@ -83,6 +84,51 @@ In previous versions of {productname}, when an invalid value was entered into th
 As a consequence, entering an invalid value set selected text, or the insertion point, to _0pt_.
 
 In {productname} 6.4.2, if an invalid string is entered in the `fontsizeinput` entry field, the `fontsizeinput` value reverts to the previous, valid, value.
+
+=== The `tox-button` and `tox-button-secondary` buttons now support the `hover`, `active`, `focus`, and `disabled` states.
+
+In previous versions of {productname}, the `--enabled` css class for `tox-button` and `tox-button-secondary` was not defined.
+
+As a consequence, some {productname} toolbar buttons did not render all their possible states as expected when they were selected so as to enable UI option the button represents.
+
+With this update, the `--enabled` css class has been defined. And {productname} toolbar buttons render all their  possible states as expected when the UI option a button represents is activated.
+
+=== The `urlinput` dialog component would not open the type-ahead dropdown when the input value was reset to an empty string.
+
+In previous versions of {productname}, a console error was thrown when the _Source_ field of the *Insert Media* dialog was reset.
+
+As a consequence, the dropdown list of suggested URLs did not expand.
+
+To fix this issue, the code for the `urlinput` component that is responsible for gathering the correct dropdown items was updated.
+
+As a result, the URL suggestions dropdown list now expands even on the empty _Source_ field. As well, the host browser’s console no longer returns errors.
+
+=== Selection was not correctly scrolled horizontally into view when using the `selection.scrollIntoView` API.
+
+In previous versions of {productname}, the `scrollToMarker` function manually calculated how much should be scrolled vertically. The horizontal scroll amount, however, was set to a specific value: left of the marker.
+
+As a consequence, in some circumstances {productname} editor instances did not scroll to the correct horizontal position.
+
+To fix this, instead of manually calculating the vertical and horizontal marker position, {productname} 6.4.2 now uses a native `scrollIntoView` function to keep the marker in the viewport.
+
+=== Tab navigation no longer incorrectly stops at menu buttons within toolbar groups.
+
+In previous versions of {productname}, menu buttons were assigned an internal attribute.
+
+When the More toolbar button — … — was opened, and the, now-visible, floating toolbar contained a menu button, using the Tab key to navigate through the floating toolbar icons would, because of this attribute and in some circumstances, stop progressing through the toolbar and, sometimes, enter a selection loop.
+
+For this update this internal attribute has been removed and using the Tab key to activate floating toolbar icons progresses through these icons as expected.
+
+=== Redial would, in some circumstances, cause elements to not have an initial value selected when they should have.
+
+In previous versions of {productname}, the host browser did not properly manage switching child elements when the Accessibility Checker dialog was visible.
+
+As a consequence, the dropdown menu in this dialog would, in some circumstances, present without one of the dropdown menu’s options being selected by default.
+
+To fix this issue {productname} now populates the element with a default value, unless this menu is explicitly configured as empty by the particular {productname} instance’s configuration.
+
+NOTE: this change also addresses xref:6.4.1-release-notes.adoc#known-issues[a known issue] in the xref:a11ychecker.adoc[Accessibility Checker Premium plugin].
+
 
 // [[security-fixes]]
 // == Security fixes

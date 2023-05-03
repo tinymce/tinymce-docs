@@ -76,15 +76,13 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 // {productname} 6.4.2 also includes the following bug fixes:
 
-=== The image would not be inserted when the `quickimage` button was used on Chrome.
+=== The `quickimage` toolbar button failed to insert images selected from the local computer when running on Google Chrome for macOS 
 
-In previous versions of {productname}, on MacOS Chrome, the editor `focusin` event would occur before the `change` event for a file input.
+A regression was discovered in {productname} 6.4.0 when the macOS version of Google Chrome was the host browser: the `focusin` editor event occurred before the `change` event for a file input.
 
-As a consequence, images could not be inserted via `quickimage` button of `quickbar` plugin.
+As a consequence, although selecting the `quickimage` toolbar button presented the macOS-native *NSOpenPanel* dialogue box as expected, images selected from this dialogue box were not inserted into the {productname} document.
 
-To fix this, the handling of `focusin` events was delayed in order to give a time slot for the `change` event to be handled.
-
-As a result, the `quickimage` button functionality in {productname} 6.4.2, has now been returned to its working state.
+For this upate, the regression has been correct. In {productname} 6.4.2, local images selected after the `quickimage` button is selected are added to the {productname} document, as expected.
 
 // [[security-fixes]]
 // == Security fixes

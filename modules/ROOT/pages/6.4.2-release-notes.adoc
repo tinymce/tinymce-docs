@@ -154,6 +154,15 @@ Consequently, the _Comments > Delete all conversations_ menu item was not disabl
 With this update, if xref:introduction-to-tiny-comments.adoc[Tiny Comments] is running, {productname} now checks the comments section state and this menu item is now, as expected, disabled when the {productname} comments section contains no comments.
 
 
+== The contextual toolbar displayed the status of Advanced List Premium plugin icons incorrectly.
+
+In previous versions of {productname}, the quickbar button handler setup for the Open Source plugin, xref:lists.adoc[Lists], was different to the quickbar button handler setup for the Premium plugin, xref:advlist.adoc[Advanced Lists].
+
+As a consequence, when a {productname} instance included the Advanced Lists Premium plugin, the contextual toolbar did not display button status on the toolbar correctly.
+
+With this update, the setup handler for the Advanced Lists Premium plugin now matches the setup handler settings for the Open Source Lists plugin. And toolbar icon state is now correctly rendered on the contextual toolbar.
+
+
 // [[security-fixes]]
 // == Security fixes
 

@@ -6,76 +6,55 @@
 
 include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
+
 [[overview]]
 == Overview
 
 {productname} 6.4.2 was released for {enterpriseversion} and {cloudname} on Wednesday, May 3^rd^, 2023. These release notes provide an overview of the changes for {productname} 6.4.2:
 
-//* xref:new-premium-plugin[New Premium Plugin]
-//* xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
-//* xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium Plugin end-of-life announcement]
-//* xref:accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
-//* xref:improvements[Improvements]
-//* xref:additions[Additions]
-//* xref:changes[Changes]
+* xref:accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
+* xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
 * xref:bug-fixes[Bug fixes]
-//* xref:security-fixes[Security fixes]
-//* xref:known-issues[Known issues]
 
 
-// [[new-premium-plugin]]
-// == New Premium Plugin
+[[accompanying-premium-skins-and-icon-packs-changes]]
+== Accompanying Premium Skins and Icon Packs changes
+
+The {productname} 6.4.2 release includes an accompanying release of the **Premium Skins and Icon Packs**.
+
+=== Premium Skins and Icon Packs
+
+The **Premium Skins and Icon Packs** release includes the following updates:
+
+The **Premium Skins and Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} 6.4.2 skin, Oxide.
+
+For information on using premium skins and icon packs, see: xref:premium-skins-and-icons.adoc[Premium Skins and Icon Packs].
 
 
-// [[accompanying-premium-plugin-changes]]
-// == Accompanying Premium Plugin changes
+[[accompanying-premium-plugin-changes]]
+== Accompanying Premium Plugin changes
 
-// The following premium plugin updates were released alongside {productname} 6.4.2.
+The following premium plugin updates were released alongside {productname} 6.4.2.
 
+=== TinyMCE Comments 3.3.2
 
-// [[accompanying-premium-plugin-end-of-life-announcement]]
-// == Accompanying Premium Plugin end-of-life announcement
+The {productname} 6.4.2 release includes an accompanying release of the **TinyMCE Comments** premium plugin.
 
-// The following premium plugin has been announced as reaching its end-of-life:
+**TinyMCE Comments** 3.3.2 includes the following bug fix:
 
+==== The ‘Comments > Delete all conversations’ menu item was enabled even when no comments were added
 
-// [[accompanying-premium-skins-and-icon-packs-changes]]
-// == Accompanying Premium Skins and Icon Packs changes
+In previous versions of {productname}, when the Premium plugin, xref:introduction-to-tiny-comments.adoc[Tiny Comments] was also running, {productname} did not check the state of the comments section.
 
-// The {productname} 6.4.2 release includes an accompanying release of the **Premium Skins and Icon Packs**.
+Consequently, the _Comments > Delete all conversations_ menu item was not disabled even when the comments section was empty.
 
-// === Premium Skins and Icon Packs
-
-// The **Premium Skins and Icon Packs** release includes the following updates:
-
-// The **Premium Skins and Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} 6.4.2 skin, Oxide.
-
-// For information on using premium skins and icon packs, see: xref:premium-skins-and-icons.adoc[Premium Skins and Icon Packs].
-
-
-// [[improvements]]
-// == Improvements
-
-// {productname} 6.4.2 also includes the following improvements:
-
-
-// [[additions]]
-// == Additions
-
-// {productname} 6.4.2 also includes the following additions:
-
-
-// [[changes]]
-// == Changes
-
-// {productname} 6.4.2 also incorporates the following changes:
+With this update, when xref:introduction-to-tiny-comments.adoc[Tiny Comments] is running, {productname} checks the comments section state and this menu item is, as expected, disabled when the {productname} comments section contains no comments.
 
 
 [[bug-fixes]]
 == Bug fixes
 
-{productname} 6.4.2 also includes the following bug fixes:
-
+{productname} 6.4.2 includes the following bug fixes:
 
 === The `quickimage` toolbar button failed to insert images selected from the local computer when running on Google Chrome for macOS. 
 
@@ -139,7 +118,7 @@ To fix this, instead of manually calculating the vertical and horizontal marker 
 
 In previous versions of {productname}, menu buttons were assigned an internal attribute.
 
-When the More toolbar button — … — was opened, and the, now-visible, floating toolbar contained a menu button, using the Tab key to navigate through the floating toolbar icons would, because of this attribute and in some circumstances, stop progressing through the toolbar and, sometimes, enter a selection loop.
+When the More toolbar button — *…* — was opened, and the, now-visible, floating toolbar contained a menu button, using the Tab key to navigate through the floating toolbar icons would, because of this attribute and in some circumstances, stop progressing through the toolbar and, sometimes, enter a selection loop.
 
 For this update this internal attribute has been removed and using the Tab key to activate floating toolbar icons progresses through these icons as expected.
 
@@ -153,32 +132,10 @@ To fix this issue {productname} now populates the element with a default value, 
 
 NOTE: this change also addresses xref:6.4.1-release-notes.adoc#known-issues[a known issue] in the xref:a11ychecker.adoc[Accessibility Checker Premium plugin].
 
-=== The ‘Comments > Delete all conversations’ menu item was enabled even when no comments were added
-
-In previous versions of {productname}, if the Premium plugin, xref:introduction-to-tiny-comments.adoc[Tiny Comments] was also running, {productname} did not check the state of the comments section.
-
-Consequently, the _Comments > Delete all conversations_ menu item was not disabled even when the comments section was empty.
-
-With this update, if xref:introduction-to-tiny-comments.adoc[Tiny Comments] is running, {productname} now checks the comments section state and this menu item is now, as expected, disabled when the {productname} comments section contains no comments.
-
-== The contextual toolbar displayed the status of Advanced List Premium plugin icons incorrectly.
+=== The contextual toolbar displayed the status of Advanced List Premium plugin icons incorrectly.
 
 In previous versions of {productname}, the quickbar button handler setup for the Open Source plugin, xref:lists.adoc[Lists], was different to the quickbar button handler setup for the Premium plugin, xref:advlist.adoc[Advanced Lists].
 
 As a consequence, when a {productname} instance included the Advanced Lists Premium plugin, the contextual toolbar did not display button status on the toolbar correctly.
 
 With this update, the setup handler for the Advanced Lists Premium plugin now matches the setup handler settings for the Open Source Lists plugin. And toolbar icon state is now correctly rendered on the contextual toolbar.
-
-
-// [[security-fixes]]
-// == Security fixes
-
-// {productname} 6.4.2 includes a fix for the following security issue:
-
-
-// [[known-issues]]
-// == Known issues
-
-// This section describes issues that users of {productname} 6.4.2 may encounter and possible workarounds for these issues.
-
-// There are several known issues in {productname} 6.4.2.

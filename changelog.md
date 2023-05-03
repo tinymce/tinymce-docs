@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-1963: added Setting an invalid unit in the `fontsizeinput` changed it to the default value instead of reverting it to the previous, and valid, value. to staging.
 - DOC-1961: added Enabled variant of toggleable `tox-button` and `tox-button—secondary`: it now supports `hover/active/focus/disabled` states. to staging.
 - DOC-1959: added `Redial would, in some situations, cause select elements not to have an initial value selected when they should have.` to staging.
 - DOC-1960: added `The urlinput dialog component would not open the type-ahead dropdown when the input value was reset to an empty string.` to staging.

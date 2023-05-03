@@ -76,11 +76,13 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 // {productname} 6.4.2 also includes the following bug fixes:
 
-=== `deleteallconversations` menu item was enabled before any comments were added.
+=== The ‘Comments > Delete all conversations’ menu item was enabled even when no comments were added
 
-In previous versions of {productname}, the menu button for `deleteallconversations` was not disabled when the comment dialog was empty.
+In previous versions of {productname}, if the Premium plugin, xref:introduction-to-tiny-comments.adoc[Tiny Comments] was also running, {productname} did not check the state of the comments section.
 
-To fix this issue, the menu button will now be `disabled` if the comments section within the menu verifies no content is present.
+Consequently, the _Comments > Delete all conversations_ menu item was not disabled even when the comments section was empty.
+
+With this update, if xref:introduction-to-tiny-comments.adoc[Tiny Comments] is running, {productname} now checks the comments section state and this menu item is now, as expected, disabled when the {productname} comments section contains no comments.
 
 // [[security-fixes]]
 // == Security fixes

@@ -76,13 +76,15 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 // {productname} 6.4.2 also includes the following bug fixes:
 
-=== Fixed the mouse pointer style from a text cursor to a default arrow pointer when hovering over the tree dialog component items.
+=== When hovering over tree dialog components the moust pointer rendered incorrectly.
 
-In previous versions of {productname}, while hovering over tree dialog component items, the mouse pointer style would render incorrectly.
+In previous versions of {productname}, when hovering over tree dialog component items, the mouse pointer style rendered incorrectly.
 
-As a consequence, the mouse pointer would render as a text cursor rather than the default arrow pointer.
+Specifically, the mouse pointer rendered as an I-beam pointer rather than the default arrow pointer.
 
 In {productname} 6.4.2, the styles for tree component items have been updated to correct this issue.
+
+NOTE: as of {productname} 6.4.2, tree components are only used as part of the xref:advanced-templates.adoc[Advanced Templates] Premium plugin.
 
 // [[security-fixes]]
 // == Security fixes

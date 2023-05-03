@@ -83,7 +83,31 @@ A regression was discovered in {productname} 6.4.0 when the macOS version of Goo
 
 As a consequence, although selecting the `quickimage` toolbar button presented the macOS-native *NSOpenPanel* dialogue box as expected, images selected from this dialogue box were not inserted into the {productname} document.
 
-For this upate, the regression has been corrected. In {productname} 6.4.2, local images selected after the `quickimage` button is selected are added to the {productname} document, as expected.
+For this update, the regression has been corrected. In {productname} 6.4.2, local images selected after the `quickimage` button is selected are added to the {productname} document, as expected.
+
+=== When hovering over tree dialog components the mouse pointer rendered incorrectly.
+
+In previous versions of {productname}, when hovering over tree dialog component items, the mouse pointer style rendered incorrectly.
+
+Specifically, the mouse pointer rendered as an I-beam pointer rather than the default arrow pointer.
+
+In {productname} 6.4.2, the styles for tree component items have been updated to correct this issue.
+
+NOTE: as of {productname} 6.4.2, tree components are only used as part of the xref:advanced-templates.adoc[Advanced Templates] Premium plugin.
+
+=== The editor displayed a notification error when it failed to retrieve a blob image uri.
+
+In previous versions of {productname}, when the editor contained an image with an invalid or unreachable blob url, it displayed an error notification banner within the editor viewport which impacted the user experience.
+
+For {productname} 6.4.2 the error notification banner has been removed: the visible broken image icon is notification enough for the end-user.
+
+=== Setting an invalid unit in the `fontsizeinput` changed it to the default value instead of reverting it to the previous, and valid, value.
+
+In previous versions of {productname}, when an invalid value was entered into the `fontsizeinput` toolbar component, the value was not parsed and both the value and unit were set to their default values: _0_ and _pt_ respectively. 
+
+As a consequence, entering an invalid value set selected text, or the insertion point, to _0pt_.
+
+In {productname} 6.4.2, if an invalid string is entered in the `fontsizeinput` entry field, the `fontsizeinput` value reverts to the previous, valid, value.
 
 === The `tox-button` and `tox-button-secondary` buttons now support the `hover`, `active`, `focus`, and `disabled` states.
 
@@ -128,6 +152,22 @@ As a consequence, the dropdown menu in this dialog would, in some circumstances,
 To fix this issue {productname} now populates the element with a default value, unless this menu is explicitly configured as empty by the particular {productname} instance’s configuration.
 
 NOTE: this change also addresses xref:6.4.1-release-notes.adoc#known-issues[a known issue] in the xref:a11ychecker.adoc[Accessibility Checker Premium plugin].
+
+=== The ‘Comments > Delete all conversations’ menu item was enabled even when no comments were added
+
+In previous versions of {productname}, if the Premium plugin, xref:introduction-to-tiny-comments.adoc[Tiny Comments] was also running, {productname} did not check the state of the comments section.
+
+Consequently, the _Comments > Delete all conversations_ menu item was not disabled even when the comments section was empty.
+
+With this update, if xref:introduction-to-tiny-comments.adoc[Tiny Comments] is running, {productname} now checks the comments section state and this menu item is now, as expected, disabled when the {productname} comments section contains no comments.
+
+== The contextual toolbar displayed the status of Advanced List Premium plugin icons incorrectly.
+
+In previous versions of {productname}, the quickbar button handler setup for the Open Source plugin, xref:lists.adoc[Lists], was different to the quickbar button handler setup for the Premium plugin, xref:advlist.adoc[Advanced Lists].
+
+As a consequence, when a {productname} instance included the Advanced Lists Premium plugin, the contextual toolbar did not display button status on the toolbar correctly.
+
+With this update, the setup handler for the Advanced Lists Premium plugin now matches the setup handler settings for the Open Source Lists plugin. And toolbar icon state is now correctly rendered on the contextual toolbar.
 
 
 // [[security-fixes]]

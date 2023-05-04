@@ -15,8 +15,12 @@ IMPORTANT: The xref:lists.adoc[Lists] (`+lists+`) plugin must be activated for t
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   plugins: 'lists advlist'
+  toolbar: 'bullist numlist',
 });
 ----
+
+include::partial$configuration/text_patterns-and-lists.adoc[]
+
 
 == Options
 

@@ -123,6 +123,7 @@ tinymce.init({
     { start: '* ', cmd: 'InsertUnorderedList' },
     { start: '- ', cmd: 'InsertUnorderedList' },
     { start: '1. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'decimal' } },
+    // the block patterns below require the Advanced Lists Premium plugin
     { start: '1) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'decimal' } },
     { start: 'a. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-alpha' } },
     { start: 'a) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-alpha' } },
@@ -188,6 +189,8 @@ The string of four hyphens is replaced by a horizontal rule block.
 +
 Type `+(c)+` and then press the *spacebar* or press the *Return* or *Enter* key.
 +
-The entered string, `+(c)+`, is replaced by a copyright symbol, set inline.
+The entered string, `+(c)+`, is replaced by the copyright symbol — © — set inline.
 
 Replacement patterns are useful for commonly used phrases or symbols and can be leveraged to create implicit content templates. The last example pattern above is an example of this.
+
+include::partial$configuration/text_patterns-and-lists.adoc[]

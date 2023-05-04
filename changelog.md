@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-1969: edits, corrections and added material to `text_patterns.adoc`, `lists.adoc`, `advlists.adoc`, and `migration-from-5x.adoc` re implicit and explicit list-creation UIs.
 - DOC-1955: added the TinyMCE 6.4.2 specific changes to changelog.adoc.
 
 ### 2023-04-19

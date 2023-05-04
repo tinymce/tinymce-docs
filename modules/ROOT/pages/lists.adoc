@@ -13,9 +13,11 @@ It is important to note that, by default, {productname} includes both implicit a
 
 Adding the `lists` plugin and the `bullist` and `numlist` toolbar items to a {productname} configuration enables the explicit list-creation user-interface (UI).
 
-And the implicit list-creation UI comes via xref:content-behavior-options.adoc#text_patterns[text patterns]. The default set of `text_patterns` enabled when {productname} is initialised include https://daringfireball.net/projects/markdown/syntax[Markdown]-based patterns that {productname} automatically turns into basic ordered and unordered lists.
+The implicit list-creation UI comes via xref:content-behavior-options.adoc#text_patterns[text patterns]. The default set of `text_patterns` enabled when {productname} is initialised include https://daringfireball.net/projects/markdown/syntax[Markdown]-based patterns that {productname} automatically turns into basic ordered and unordered lists.
 
-== Basic setup for implicit and explicit lists UI
+If the xref:advlist.adoc[Advanced Lists] Premium plugin is part of a {productname} configuration, the default `text_patterns` set also includes patterns that provide an implicit UI for generating the advanced ordered and unordered lists this plugin makes possible.
+
+== Basic lists UI: implicit and explicit
 
 [source,js]
 ----
@@ -27,7 +29,7 @@ tinymce.init({
 ----
 
 
-== Basic setup for explicit lists UI but no implicit lists UI
+== Basic lists UI: explicit lists UI but no implicit lists UI
 
 [source,js]
 ----
@@ -35,9 +37,11 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'lists',
   toolbar: 'bullist numlist',
-  text_patterns: [] // a specified but empty `text_patterns` array turns the default `text_patterns` off.
+  `text_patterns` off.
 });
 ----
+
+include:partial$misc/admon-turning-text_patterns-off.adoc[]
 
 
 == Basic setup for explicit lists UI and a specifically defined implicit lists UI
@@ -58,6 +62,7 @@ tinymce.init({
     { start: '* ', cmd: 'InsertUnorderedList' },
     { start: '- ', cmd: 'InsertUnorderedList' },
     { start: '1. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'decimal' } },
+    // the block patterns below require the Advanced Lists Premium plugin
     { start: '1) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'decimal' } },
     { start: 'a. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-alpha' } },
     { start: 'a) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-alpha' } },
@@ -67,7 +72,7 @@ tinymce.init({
 });
 ----
 
-The `text_patterns` array set out in the example above duplicates the default `text_patterns` available by default even if `text_patterns` is not explicitly specified in a {productname} configuration.
+The `text_patterns` array in the example above duplicates the default `text_patterns` set available even if `text_patterns` is not explicitly specified in a {productname} configuration.
 
 
 == Options

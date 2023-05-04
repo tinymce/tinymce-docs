@@ -212,22 +212,15 @@ As well, the `textpattern` API has been removed.
 
 Finally, and unlike in previous versions of {productname}, text patterns are now on by default. `text_patterns: false` turns the functionality off.
 
-NOTE: Using `text_patterns: []` to turn `text_patterns` off is not supported. It sets `text_patterns` to an empty array. Having, consequently, no patterns to match, it presents as if `text_patterns` is off. Appearance is not reality, however. Setting `text_patterns: false` is the only supported way of disabling `text_patterns`.
+include:partial$misc/admon-turning-text_patterns-off.adoc[]
 
 After upgrading:
 
 * Rename any options in your {productname} init configuration to match the new name.
 * Remove `textpattern` from your plugins list.
 
-=== Text patterns and lists
+include::partial$configuration/text_patterns-and-lists.adoc[]
 
-As a consequence of
-
-. `text_patterns` being moved to the core of {productname};
-. `text_patterns` being turned on by default; and
-. the set of `text_patterns` which are included by default
-
-{productname} now includes both implicit and explicit list creation user interfaces. See xref:lists.adoc[Lists] for details and basic configuration examples.
 
 [[plugins]]
 == Plugins

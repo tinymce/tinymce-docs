@@ -1,0 +1,1 @@
+NOTE: Using `text_patterns: []` to turn `text_patterns` off is not supported. It sets `text_patterns` to an empty array. Having, consequently, no patterns to match, it presents as if `text_patterns` is off. Appearance is not reality, however. Setting `text_patterns: false` is the only supported way of disabling `text_patterns`.

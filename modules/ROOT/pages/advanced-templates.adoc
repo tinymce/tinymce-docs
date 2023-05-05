@@ -17,6 +17,61 @@ They can also be added to a {productname} instance by end-users selecting conten
 
 IMPORTANT: This initial {pluginname} release does not support template editing. To update a particular template; insert the template into an editor; make edits; select the, now edited, content; and then create a new template (using, for example, the *Tools > Save as Template…* menu item).
 
+
+== Using the Advanced Template plugin
+=== Inserting a template
+To insert a template
+
+. Select *Template...* from the *Insert* menu or
+. Select the *Insert template* image:icons/template.svg[Insert template] toolbar button.
+. Select the template to add to the TinyMCE document from the _Templates_ dialog that presents.
+. Click *Insert* or press *Return*.
+
+=== Adding a new template
+To add a new template
+
+. Select the material in the TinyMCE document that is going to be the new template and
+
+. Save the template using one of the following methods:
+     * Select *Save as template…* from the *Tools* menu.
+     * Select *Save as template…* from the context menu.
+     * Select the *Save as template* image:icons/template-add.svg[Save as template] toolbar button.
+
+Then, in the _New template_ dialog that presents
+
+. Enter a name for the new template in the *Template* name field;
+. Select a category for the new template from the *Category* pop-up menu; and
+. Click *Save* or press *Return*.
+
+=== Adding a new category
+To add a new category
+
+. Select *Template...* from the *Insert* menu to open _Templates_ dialog.
+. Click on the *New category* button in the footer. This will pop up the *New category* form.
+. In the *New category* form, enter the name of the new category you want to add.
+. Click the *Save* button to submit the form.
+. After saving, the new category should appear in the Tree component of the _Templates_ dialog.
+
+=== Searching for templates
+To search for a template
+
+. Select *Template...* from the *Insert* menu to open _Templates_ dialog.
+. Enter the name of the template you are searching for in the *Search* field.
+. As you type, the dialog will update and display a list of matching templates in the Tree component of the dialog.
+
+=== Template list management
+To manage the template list
+
+. Select *Template...* from the *Insert* menu to open _Templates_ dialog.
+. Select the template or the category that you want to modify.
+. Click on the three dots menu for the selected item. This will open the actions menu.
+. From the actions menu, choose the appropriate operation based on your needs:
+  * Rename category/template.
+  * Move template to another category.
+  * Move all category items to another category.
+  * Delete template/category.
+
+== Interactive examples
 There are two approaches to using the Advanced Template Premium plugin:
 
 . _Fixed Template List._
@@ -25,7 +80,6 @@ For users who work with a fixed template list that does not require modification
 . _User-Modifiable Template List._
 If the template list is intended to be modified by the user, the plugin should be configured with functional options to enable communication with a remote template storage service. Please refer to this interactive xref:#remote-config-example[example] for guidance on configuring the plugin to support user-modifiable template lists.
 
-== Interactive examples
 [[remote-config-example]]
 === Configuring the Advanced Template plugin to interact with a remote backend service via REST API.
 liveDemo::{plugincode}[]

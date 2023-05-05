@@ -165,7 +165,7 @@ const create = (data = []) => {
   }
 
   const deleteTemplate = (id) => {
-    const [template, categoryId] = getTemplate(id)
+    const [, categoryId] = getTemplate(id)
     const parent = getParent(categoryId)
     parent.items = filterOut(parent.items, id)
     delete templateIndex[id]

@@ -254,7 +254,6 @@ const advtemplate_get_template = async (id) => {
   try {
     const [template ] = store.getTemplate(id)
     return template
-	console.log('template', template)
   } catch (e) {
     console.error(e)
   }

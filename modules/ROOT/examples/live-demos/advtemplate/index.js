@@ -1,58 +1,325 @@
-const advtemplate_templates = [
+const data = [
   {
-    id: '1',
     title: 'Quick replies',
     items: [
       {
-        id: '2',
         title: 'Message received',
-        content: '<p dir="ltr"></p>\n<p dir="ltr">Just a quick note to say we&rsquo;ve received your message, and will get back to you within 48 hours.</p>\n<p dir="ltr">For reference, your ticket number is: </p>\n<p dir="ltr">Should you have any questions in the meantime, just reply to this email and it will be attached to this ticket.</p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">Regards,</p>\n<p dir="ltr"></p>'
+        content: '<p dir="ltr">Hey {{Customer.FirstName}}!</p>\n<p dir="ltr">Just a quick note to say we&rsquo;ve received your message, and will get back to you within 48 hours.</p>\n<p dir="ltr">For reference, your ticket number is: {{Ticket.Number}}</p>\n<p dir="ltr">Should you have any questions in the meantime, just reply to this email and it will be attached to this ticket.</p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">Regards,</p>\n<p dir="ltr">{{Agent.FirstName}}</p>'
       },
       {
-        id: '3',
         title: 'Thanks for the feedback',
-        content: '<p dir="ltr">,</p>\n<p dir="ltr">We appreciate you taking the time to provide feedback on .</p>\n<p dir="ltr">It sounds like it wasn&rsquo;t able to fully meet your expectations, for which we apologize. Rest assured our team looks at each piece of feedback and uses it to decide what to focus on next with .</p>\n<p dir="ltr"><strong>&nbsp;</strong></p>\n<p dir="ltr">All the best, and let us know if there&rsquo;s anything else we can do to help.</p>\n<p dir="ltr">-</p>'
+        content: '<p dir="ltr">Hi {{Customer.FirstName}},</p>\n<p dir="ltr">We appreciate you taking the time to provide feedback on {{Product.Name}}.</p>\n<p dir="ltr">It sounds like it wasn&rsquo;t able to fully meet your expectations, for which we apologize. Rest assured our team looks at each piece of feedback and uses it to decide what to focus on next with {{Product.Name}}.</p>\n<p dir="ltr"><strong>&nbsp;</strong></p>\n<p dir="ltr">All the best, and let us know if there&rsquo;s anything else we can do to help.</p>\n<p dir="ltr">-{{Agent.FirstName}}</p>'
       },
       {
-        id: '6',
         title: 'Still working on case',
-        content: '<p dir="ltr"><img src="https://lh4.googleusercontent.com/-H7w_COxrsy2fVpjO6RRnoBsujhaLyg6AXux5zidqmQ_ik1mrE6BtnaTUdWYQuVbtKpviRqQiuPBOHNGUsEXvrRliEHc4-hKDrCLgQQ9Co-MI4uY2ehUvYtU1nn3EeS0WiUzST-7MQB2Z5YFXrMDwRk" width="320" height="240"></p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">,</p>\n<p dir="ltr">Just a quick note to let you know we&rsquo;re still working on your case. It&rsquo;s taking a bit longer than we hoped, but we&rsquo;re aiming to get you an answer in the next 48 hours.</p>\n<p dir="ltr">Stay tuned,</p>\n<p dir="ltr"></p>'
+        content: '<p dir="ltr"><img src="https://lh4.googleusercontent.com/-H7w_COxrsy2fVpjO6RRnoBsujhaLyg6AXux5zidqmQ_ik1mrE6BtnaTUdWYQuVbtKpviRqQiuPBOHNGUsEXvrRliEHc4-hKDrCLgQQ9Co-MI4uY2ehUvYtU1nn3EeS0WiUzST-7MQB2Z5YFXrMDwRk" width="320" height="240"></p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">Hi {{Customer.FirstName}},</p>\n<p dir="ltr">Just a quick note to let you know we&rsquo;re still working on your case. It&rsquo;s taking a bit longer than we hoped, but we&rsquo;re aiming to get you an answer in the next 48 hours.</p>\n<p dir="ltr">Stay tuned,</p>\n<p dir="ltr">{{Agent.FirstName}}</p>'
       }
     ]
   },
   {
-    id: '4',
     title: 'Closing tickets',
     items: [
       {
-        id: '7',
         title: 'Closing ticket',
-        content: '<p dir="ltr">Hi ,</p>\n<p dir="ltr">We haven&rsquo;t heard back from you in over a week, so we have gone ahead and closed your ticket, .</p>\n<p dir="ltr">If you&rsquo;re still running into issues, reply to this email and we will re-open the ticket.</p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">All the best,</p>\n<p dir="ltr"></p>'
+        content: '<p dir="ltr">Hi {{Customer.FirstName}},</p>\n<p dir="ltr">We haven&rsquo;t heard back from you in over a week, so we have gone ahead and closed your ticket number {{Ticket.Number}}.</p>\n<p dir="ltr">If you&rsquo;re still running into issues, not to worry, just reply to this email and we will re-open your ticket.</p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">All the best,</p>\n<p dir="ltr">{{Agent.FirstName}}</p>'
       },
       {
-        id: '8',
         title: 'Post-call survey',
-        content: '<p dir="ltr">Hey !</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr">How did we do?</p>\n<p dir="ltr">If you have a few moments, we&rsquo;d love you to fill out our post-support survey: </p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">Thanks in advance!<br> Customer Support</p>'
+        content: '<p dir="ltr">Hey {{Customer.FirstName}}!</p>\n<p dir="ltr">&nbsp;</p>\n<p dir="ltr">How did we do?</p>\n<p dir="ltr">If you have a few moments, we&rsquo;d love you to fill out our post-support survey: {{Survey.Link}}</p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">Thanks in advance!<br>{{Company.Name}} Customer Support</p>'
       }
     ]
   },
   {
-    id: '5',
     title: 'Product support',
     items: [
       {
-        id: '9',
-        title: 'How to find the model number',
-        content: '<p dir="ltr">,</p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">My name is  and I will be assisting you today.</p>\n<p dir="ltr">To troubleshoot your issue, we first need the model number</p>\n<p>This can be found on the underside of your product immediately below the safety warning label.&nbsp;</p>\n<p dir="ltr">It should look something like the following: XX.XXXXX.X</p>\n<p dir="ltr">Once you send it over, I will advise on the next steps.</p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">Thanks!</p>\n<p dir="ltr"></p>'
+        title: 'How to find model number',
+        content: '<p dir="ltr">Hi {{Customer.FirstName}},</p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">My name is {{Agent.FirstName}} and I will be glad to assist you today.</p>\n<p dir="ltr">To troubleshoot your issue, we first need your model number, which can be found on the underside of your product beneath the safety warning label.&nbsp;</p>\n<p dir="ltr">It should look something like the following: XX.XXXXX.X</p>\n<p dir="ltr">Once you send it over, I will advise on next steps.</p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">Thanks!</p>\n<p dir="ltr">{{Agent.FirstName}}</p>'
       },
       {
-        id: '10',
         title: 'Support escalation',
-        content: '<p dir="ltr"><img src="https://lh3.googleusercontent.com/z4hleIymnERrS9OQQMBwmkqVne8kYZA0Kly9Ny64pp4fi47CWWUy30Q0-UkjGf-K-50zrfR-wltHUTbExzZ7VUSUAUG60Fll5f2E0UZcKjKoa-ZVlIcuOoe-RRckFWqiihUOfVds7pXtM8Y59uy2hpw" width="295" height="295"></p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">,</p>\n<p dir="ltr">We have escalated your ticket  to second-level support.</p>\n<p dir="ltr">You should hear back from the new agent on your case, , shortly.</p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">Thanks,</p>\n<p dir="ltr"> Customer Support</p>'
+        content: '<p dir="ltr"><img src="https://lh3.googleusercontent.com/z4hleIymnERrS9OQQMBwmkqVne8kYZA0Kly9Ny64pp4fi47CWWUy30Q0-UkjGf-K-50zrfR-wltHUTbExzZ7VUSUAUG60Fll5f2E0UZcKjKoa-ZVlIcuOoe-RRckFWqiihUOfVds7pXtM8Y59uy2hpw" width="295" height="295"></p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">Hi {{Customer.FirstName}},</p>\n<p dir="ltr">We have escalated your ticket {{Ticket.Number}} to second-level support.</p>\n<p dir="ltr">You should hear back from the new agent on your case, {{NewAgent.FirstName}}, shortly.</p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">Thanks,</p>\n<p dir="ltr">{{Company.Name}} Customer Support</p>'
       }
     ]
   }
 ];
+
+
+class StoreError extends Error {
+  constructor(status, message) {
+    super(message);
+    this.name = "StoreError";
+    this.status = status
+  }
+}
+
+const isStoreError = (e) =>
+  e instanceof StoreError
+
+
+const create = (data = []) => {
+  const store = {
+    items: []
+  }
+
+  let id = 0;
+  const genId = () => (++id).toString()
+  const categoryIndex = {}
+  const templateIndex = {}
+
+  const isNonEmptyString = (value) =>
+    typeof value === 'string' && value.length > 0
+
+  const isPositiveInteger = (str) => {
+    const number = Number(str);
+    return Number.isInteger(number) && number > 0
+  }
+
+  const isValidId = (value) =>
+  isNonEmptyString(value) && isPositiveInteger(value)
+
+  const validate = (value, predicate, message) => {
+    if (predicate(value)) {
+      return
+    } else {
+      throw new StoreError(400, message)
+    }
+  }
+
+  const validateId = (id) =>
+    validate(id, isValidId, `Invalid "id" parameter: ${id}`)
+
+  const validateTitle = (title) =>
+    validate(title, isNonEmptyString, `Invalid "title" parameter: ${title}`)
+
+  const getParent = (id) =>
+    typeof id === 'undefined' ? store : getCategory(id);
+
+  const filterOut = (items, id) =>
+    items.filter((item) => item.id !== id)
+
+  const list = () => {
+    const resp = [...store.items]
+    return resp
+  }
+
+  const getCategory = (id) => {
+    validate(id, isValidId, `Invalid "id" parameter: ${id}`)
+    const category = categoryIndex[id]
+    if (typeof category !== 'undefined'){
+      return category
+    } else {
+      throw new StoreError(404, 'Category not found')
+    }
+  }
+
+  const getTemplate = (id) => {
+    validateId(id)
+    const res = templateIndex[id]
+    if (typeof res !== 'undefined'){
+      return res
+    } else {
+      throw new StoreError(404, 'Template not found')
+    }
+  }
+
+  const createCategory = (title) => {
+    validateTitle(title)
+
+    const id = genId()
+    const category = {
+      id,
+      title,
+      items: []
+    }
+    categoryIndex[id] = category;
+    store.items = [...store.items, category]
+    return category
+  }
+
+  const createTemplate = (title, content, categoryId) => {
+    validateTitle(title)
+    validate(content, isNonEmptyString, `Invalid "content" parameter: ${content}`)
+    const id = genId()
+    const template = {
+      id,
+      title,
+      content,
+    }
+    const parent = getParent(categoryId)
+    parent.items = [...parent.items, template]
+    templateIndex[id] = [template, categoryId];
+    return template
+  }
+
+  const renameCategory = (id, title) => {
+    validateTitle(title)
+    const category = getCategory(id)
+    category.title = title;
+  }
+
+  const renameTemplate = (id, title) => {
+    validateTitle(title)
+    const [template] = getTemplate(id)
+    template.title = title;
+  }
+
+  const deleteTemplate = (id) => {
+    const [template, categoryId] = getTemplate(id)
+    const parent = getParent(categoryId)
+    parent.items = filterOut(parent.items, id)
+    delete templateIndex[id]
+  }
+
+  const deleteCategory = (id) => {
+    const category = getCategory(id);
+    category.items.forEach((template) => deleteTemplate(template.id))
+    store.items = filterOut(store.items, id)
+    delete categoryIndex[category.id]
+  }
+
+  const moveTemplate = (id, newCategoryId) => {
+    const [template, categoryId] = getTemplate(id)
+    if (categoryId === newCategoryId) {
+      return
+    }
+    const oldParent = getParent(categoryId)
+    const newParent = getParent(newCategoryId)
+    newParent.items = [...newParent.items, template]
+    oldParent.items = filterOut(oldParent.items, id)
+    templateIndex[id] = [template, newCategoryId]
+  }
+
+  const moveCategoryItems = (id, newCategoryId) => {
+    const oldCategory = getCategory(id)
+    if (id === newCategoryId) {
+      return
+    }
+    oldCategory.items.forEach((item) => moveTemplate(item.id, newCategoryId))
+  }
+
+  const load = (items, id) => {
+    for (const item of items) {
+      if (item.items) {
+        const category = createCategory(item.title);
+        load(item.items, category.id );
+      } else {
+        createTemplate(item.title, item.content, id);
+      }
+    }
+  };
+
+  load(data);
+
+  return {
+    list,
+    getTemplate,
+    createCategory,
+    createTemplate,
+    renameCategory,
+    renameTemplate,
+    deleteTemplate,
+    deleteCategory,
+    moveTemplate,
+    moveCategoryItems,
+  }
+}
+
+
+const store = create(data);
+const advtemplate_list = async () => store.list()
+
+
+const advtemplate_create_category = async (title) => {
+  try {
+    return store.createCategory(title)
+  } catch (e) {
+    console.error(e)
+    throw new Error('Failed to create category')
+  }
+}
+  
+
+const advtemplate_create_template = async (title, content, categoryId) => {
+  try {
+    return store.createTemplate(title, content, categoryId)
+  } catch (e) {
+    console.error(e)
+    throw new Error('Failed to create template')
+  }
+}
+  
+
+const advtemplate_get_template = async (id) => {
+  try {
+    const [template ] = store.getTemplate(id)
+    return template
+	console.log('template', template)
+  } catch (e) {
+    console.error(e)
+  }
+}
+
+const advtemplate_rename_category = async (id, title) => {
+  try {
+    store.renameCategory(id, title)
+    return {}
+  } catch (e) {
+    console.error(e)
+    throw new Error('Failed to rename category')
+  }
+}
+  
+const advtemplate_rename_template = async (id, title) => {
+  try {
+    store.renameTemplate(id, title)
+    return {}
+  } catch (e) {
+    console.error(e)
+    throw new Error('Failed to rename template')
+  }
+}
+
+const advtemplate_delete_category = async (id) => {
+  try {
+    store.deleteCategory(id)
+    return {}
+  } catch (e) {
+    console.error(e)
+    throw new Error('Failed to delete category')
+  }
+}
+
+const advtemplate_delete_template = async (id) => {
+  try {
+    store.deleteTemplate(id)
+    return {}
+  } catch (e) {
+    console.error(e)
+    throw new Error('Failed to delete template')
+  }
+}
+
+
+const advtemplate_move_template = async (id, categoryId) => {
+  try {
+    store.moveTemplate(id, categoryId)
+    return {}
+  } catch (e) {
+    console.error(e)
+    throw new Error('Failed to move template')
+  }
+}
+
+const advtemplate_move_category_items = async (id, categoryId) => {
+  try {
+    store.moveCategoryItems(id, categoryId)
+    return {}
+  } catch (e) {
+    console.error(e)
+    throw new Error('Failed to move category items')
+  }
+}
 
 tinymce.init({
   selector: "textarea#advanced-template",
@@ -61,7 +328,19 @@ tinymce.init({
         "help", "image", "insertdatetime", "link", "lists", "media", 
         "preview", "searchreplace", "table", "visualblocks", "advtemplate"
     ],
-	advtemplate_templates,
   contextmenu: 'advtemplate',
-  toolbar: "addtemplate inserttemplate | undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image"
+  toolbar: "addtemplate inserttemplate | undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+  advtemplate_list,
+	advtemplate_get_template,
+	
+	advtemplate_create_category,
+	advtemplate_create_template,
+	
+	advtemplate_rename_category,
+	advtemplate_move_category_items,
+	advtemplate_delete_category,
+	
+	advtemplate_rename_template,
+	advtemplate_move_template,
+	advtemplate_delete_template,
 });

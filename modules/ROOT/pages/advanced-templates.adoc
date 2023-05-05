@@ -11,19 +11,28 @@ include::partial$misc/admon-premium-plugin.adoc[]
 
 include::partial$misc/admon-requires-6.4v.adoc[]
 
-NOTE: The documentation for this page is a work in progress. Further details on the {pluginname} plugin will be added to this page soon.
-
 The {pluginname} Premium plugin enables the creation of complex, interactive templates using {productname}.
 
 They can also be added to a {productname} instance by end-users selecting content in a {productname} document and saving the selection as a template via the {productname} user-interface.
 
 IMPORTANT: This initial {pluginname} release does not support template editing. To update a particular template; insert the template into an editor; make edits; select the, now edited, content; and then create a new template (using, for example, the *Tools > Save as Template…* menu item).
 
-////
-== Interactive example
+There are two approaches to using the Advanced Template Premium plugin:
 
+. _Fixed Template List._
+For users who work with a fixed template list that does not require modification, you can provide the list directly through the editor init configuration using the xref:advtemplate_templates[`+advtemplate_templates+` option]. Please refer to this interactive xref:#predifined-list-config-example[example] for guidance on this approach.
+
+. _User-Modifiable Template List._
+If the template list is intended to be modified by the user, the plugin should be configured with functional options to enable communication with a remote template storage service. Please refer to this interactive xref:#remote-config-example[example] for guidance on configuring the plugin to support user-modifiable template lists.
+
+== Interactive examples
+[[remote-config-example]]
+=== Configuring the Advanced Template plugin to interact with a remote backend service via REST API.
 liveDemo::{plugincode}[]
-////
+
+[[predifined-list-config-example]]
+=== Configuring the Advanced Template plugin to use a static list of predefined templates.
+liveDemo::{plugincode}-predefined[]
 
 == Basic setup
 
@@ -43,40 +52,28 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: "advtemplate",
   toolbar: "inserttemplate addtemplate",
-  advtemplate_list: () => {
-    return Promise.resolve([
-      {
-        id: '1',
-        title: 'Resolving tickets',
-        content: '<p>As we have not heard back from you in over a week, so we have gone ahead and resolved your ticket</p>'
-      },
-      {
-        id: '2',
-        title: 'Quick replies',
-        items: [
-          {
-            id: '3',
-            title: 'Message received',
-            content: '<p>Just a quick note to say we have received your message, and will get back to you within 48 hours.</p>'
-          },
-          {
-            id: '4',
-            title: 'Progress update',
-            content: '</p>Just a quick note to let you know we are still working on your case</p>'
-          }
-        ]
-      }
-    ]);
-  }
+  contextmenu: "advtemplate",
+  // Each of the following options should be defined as
+  // a function that returns a Promise.
+  // Please find the specific details for each option below.
+  advtemplate_list,
+  advtemplate_get_template,
+  advtemplate_create_category,
+  advtemplate_create_template,
+  advtemplate_rename_category,
+  advtemplate_rename_template,
+  advtemplate_delete_template,
+  advtemplate_delete_category,
+  advtemplate_move_template,
+  advtemplate_move_category_items
 });
 ----
-
-NOTE: The above example only demonstrates the {pluginname} user interface. An xref:#advtemplate_list[`advtemplate_list`] option has been added, with an included function returning a promise that contains a basic Template structure. This allows the {pluginname} user interface to load and present in a {productname} editor instance. This basic setup example cannot create, edit, or save new {pluginname} items. Nor can it preview Template items or insert Template items into a {productname} editor instance.
-
 
 == Options
 
 The following configuration options affect the behavior of the {pluginname} plugin.
+
+include::partial$configuration/advtemplate_templates.adoc[]
 
 include::partial$configuration/advtemplate_list.adoc[]
 

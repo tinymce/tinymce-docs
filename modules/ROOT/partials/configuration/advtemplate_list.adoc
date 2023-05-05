@@ -8,8 +8,39 @@ The plugin uses the `advtemplate_list` asynchronous function to retreive the tem
 *Input parameters:*
 None
 
-*Return data:*
-Look in the example below
+*Return data:* `+Array+`
+
+=== Example of `advtemplate_list` response
+
+[source,js]
+----
+[{
+    id: '1',
+    title: 'Resolving tickets',
+  },
+  {
+    id: '2',
+    title: 'Quick replies',
+    items: [{
+        id: '3',
+        title: 'Message received',
+      },
+      {
+        id: '4',
+        title: 'Progress update',
+      }
+    ]
+  }
+]
+----
+
+The data returned by `advtemplate_list` must adhere to the following requirements:
+
+. Each list item must have a unique `id` value.
+. Each list item must have a non-empty `title` value.
+. Each category item is required to include a `items` sublist, which can be empty.
+. Category items must not contain nested subcategories.
+. Template item is not required to include a `content` value.
 
 === Example: using `advtemplate_list`
 
@@ -27,35 +58,3 @@ tinymce.init({
     .catch((error) => console.log('Failed to get template list\n' + error)),
 });
 ----
-
-=== Example of `advtemplate_list` response
-
-[source,js]
-----
-const data = [{
-    id: '1',
-    title: 'Resolving tickets',
-  },
-  {
-    id: '2',
-    title: 'Quick replies',
-    items: [{
-        id: '3',
-        title: 'Message received',
-      },
-      {
-        id: '4',
-        title: 'Progress update',
-      }
-    ]
-  }
-];
-----
-
-The data returned by `advtemplate_list` must match the following requirements:
-
-. Each list item must have a unique `id` value.
-. Each list item must have a non-empty `title` value.
-. Category items in the list must not contain nested categories.
-. Category item may contain an empty `items` list.
-. Template item is not required to include a `content` value.

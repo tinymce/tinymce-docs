@@ -62,7 +62,7 @@ tinymce.init({
     { start: '* ', cmd: 'InsertUnorderedList' },
     { start: '- ', cmd: 'InsertUnorderedList' },
     { start: '1. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'decimal' } },
-    // the block patterns below require the Advanced Lists Premium plugin
+    // the block patterns below require the Advanced Lists plugin
     { start: '1) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'decimal' } },
     { start: 'a. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-alpha' } },
     { start: 'a) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-alpha' } },
@@ -73,6 +73,36 @@ tinymce.init({
 ----
 
 The `text_patterns` array in the example above duplicates the default `text_patterns` set available even if `text_patterns` is not explicitly specified in a {productname} configuration.
+
+== Basic setup for a specifically defined implicit lists UI but no explicit lists UI
+
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'lists',
+  text_patterns: [
+    { start: '#', format: 'h1' },
+    { start: '##', format: 'h2' },
+    { start: '###', format: 'h3' },
+    { start: '####', format: 'h4' },
+    { start: '#####', format: 'h5' },
+    { start: '######', format: 'h6' },
+    { start: '* ', cmd: 'InsertUnorderedList' },
+    { start: '- ', cmd: 'InsertUnorderedList' },
+    { start: '1. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'decimal' } },
+    // the block patterns below require the Advanced Lists plugin
+    { start: '1) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'decimal' } },
+    { start: 'a. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-alpha' } },
+    { start: 'a) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-alpha' } },
+    { start: 'i. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-roman' } },
+    { start: 'i) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-roman' } }
+  ]
+});
+----
+
+The `text_patterns` array in the example above also duplicates the default `text_patterns` set. This example, however, removes the ordered and unordered list toolbar items. The `list` plugin does not provide a menu item, so not loading the toolbar items removes the explicit lists UI.
 
 
 == Options

@@ -13,7 +13,7 @@ It is important to note that, by default, {productname} includes both implicit a
 
 Adding the `lists` plugin and the `bullist` and `numlist` toolbar items to a {productname} configuration enables the explicit list-creation user-interface (UI).
 
-The implicit list-creation UI comes via xref:content-behavior-options.adoc#text_patterns[text patterns]. The default set of `text_patterns` enabled when {productname} is initialised include https://daringfireball.net/projects/markdown/syntax[Markdown]-based patterns that {productname} automatically turns into basic ordered and unordered lists.
+The implicit list-creation UI comes via xref:content-behavior-options.adoc#text_patterns[text patterns]. The default set of `text_patterns` enabled when {productname} is initialized include https://daringfireball.net/projects/markdown/syntax[Markdown]-based patterns that {productname} automatically turns into basic ordered and unordered lists.
 
 If the xref:advlist.adoc[Advanced Lists] Premium plugin is part of a {productname} configuration, the default `text_patterns` set also includes patterns that provide an implicit UI for generating the advanced ordered and unordered lists this plugin makes possible.
 

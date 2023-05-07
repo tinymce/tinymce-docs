@@ -123,7 +123,7 @@ tinymce.init({
     { start: '* ', cmd: 'InsertUnorderedList' },
     { start: '- ', cmd: 'InsertUnorderedList' },
     { start: '1. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'decimal' } },
-    // the block patterns below require the Advanced Lists Premium plugin
+    // the block patterns below require the Advanced Lists plugin
     { start: '1) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'decimal' } },
     { start: 'a. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-alpha' } },
     { start: 'a) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-alpha' } },

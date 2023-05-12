@@ -6,6 +6,8 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-1980: Converted all mentions of Transifex to Crowdin as TinyMCE's community translations platform.
+
 ### 2023-05-03
 
 - DOC-1972: Updated `changelog.md` to be in sync with the release-notes 6.4.2.

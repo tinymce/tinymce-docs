@@ -6,6 +6,8 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2028: Add release-notes template to `staging` for 6.5.
+
 ### 2023-05-03
 
 - DOC-1972: Updated `changelog.md` to be in sync with the release-notes 6.4.2.

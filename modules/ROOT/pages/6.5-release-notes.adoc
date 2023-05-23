@@ -71,6 +71,14 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== Pressing arrow keys inside RTL elements would move the caret in an incorrect direction when moving over elements with the `contenteditable` attribute set to `false`.
+//#TINY-9565
+
+In previous versions of {productname}, when the document has a `contenteditable = "false"` element in between the `RTL` text in a `RTL` block element, the caret would incorrectly move to the wrong direction when moving over the `contenteditable = "false"` element.
+
+To fix this issue, updates were made that now flips the direction if the block element is `RTL`.
+
+As a result of this fix, the caret now moves in a reverse logical order when moving over a `contenteditable = "false"` elements similar to how the visual caret movement works when moving inside `RTL` text.
 
 [[security-fixes]]
 == Security fixes

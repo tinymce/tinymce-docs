@@ -71,6 +71,21 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== Command + backspace would not add an undo level on Mac.
+//#TINY-8910
+
+In previous versions of {productname}, specifically on MacOS systems, the `command + backspace` keyboard shortcut, would not create an undo level. When this shortcut is used, the entire line at the cursor's position is deleted as intended, but no undo level is registered.
+
+To address this issue, {productname} added updates that now register an undo level after the `command + backspace` shortcut is pressed.
+
+As a result, users can now undo the operation performed by pressing `command + backspace` in {productname} 6.5.
+
+=== Ctrl + backspace and Ctrl + delete would not restore correct caret position after redo.
+//#TINY-8910
+
+In previous versions of {productname} on Windows, when the `ctrl+delete` shortcut was used followed by the `undo` and `redo` operations, the caret would end up in an incorrect position.
+
+In {productname} 6.5, the issue has been resolved, resulting in the caret moves to the correct position.
 
 [[security-fixes]]
 == Security fixes

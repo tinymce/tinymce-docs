@@ -71,6 +71,12 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== It was possible to remove links in `contenteditable= "false"` contents with the 'unlink' editor command
+//#TINY-9739
+
+In previous versions of {productname}, when the `contenteditable` property was disabled on the editor's body element and the 'unlink' command was used while a link was selected, it made it possible to remove links within `contenteditable= "false"` elements.
+
+To fix this issue, the 'unlink' command was updated in {productname} 6.5, which ensures that no action is preformed when the current selection is in a `contenteditable= "false"` context.
 
 [[security-fixes]]
 == Security fixes

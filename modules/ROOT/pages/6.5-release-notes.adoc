@@ -30,6 +30,22 @@
 
 The following premium plugin updates were released alongside {productname} 6.5.
 
+=== Accessibility Checker 3.2.0
+
+The {productname} 6.5 release includes an accompanying release of the **Accessibility Checker** premium plugin.
+
+**Accessibility Checker** 3.2.0 includes the following fixes.
+
+=== contenteditable="false" elements were not properly ignored by `allychecker`.
+//#TINY-9464
+
+In previous versions of {productname}, elements with `contenteditable="false" attributes were not properly ignored by the Accessibility Checker Premium plugin.
+
+As a consequence, the Accessibility Checker would find matching rules inside `contenteditable="false"` content.
+
+A fix was applied to Accessibility Checker in {productname} 6.5, that now allows Accessibility Checker to ignore issues found inside `contenteditable="false"` content.
+
+
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement
 

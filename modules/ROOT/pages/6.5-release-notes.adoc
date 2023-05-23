@@ -59,6 +59,14 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 == Additions
 {productname} 6.5 also includes the following additions:
 
+=== Added `TinyState` module that contains transactional functions for editor states.
+//#TINY-9669
+
+In previous versions of {productname}, `TinyState` module was introduced, which includes transactional functions designed for editor states. This addition addressed an issue where toolbar items were not being disabled correctly when selecting `contenteditable= "false"` contents in a `contenteditable= "false"` root.
+
+As a consequence, toolbar buttons and menu items remained enabled even when they couldn't be applied to the current selection.
+
+In {productname} 6.5, a fix was implemented that ensures that toolbar buttons and menu items are now properly disabled based on the selection. As a result, when `contenteditable= "false"` content is selected in a `contenteditable= "false"` root, the toolbar and menu items are disabled. In addition, if `contenteditable= "true"` contents are selected, the toolbars and menu items are re-enabled.
 
 [[changes]]
 == Changes

@@ -71,6 +71,14 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== Table toolbar was visible even if the table was within a `contenteditable="false"` host element.
+//#TINY-9664
+
+In previous versions of {productname}, the table toolbar would remain visible even if the table was within a `contenteditable= "false"` host element.
+
+As a consequence, the table context toolbar was displayed, despite the buttons being unusable.
+
+In {productname} 6.5, this issue has been resolved. The editor no longer shows the table context toolbar when the selection is within a `contenteditable="false"` host element.
 
 [[security-fixes]]
 == Security fixes

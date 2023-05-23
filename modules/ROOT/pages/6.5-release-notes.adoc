@@ -71,6 +71,12 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== Inline alert in the "Search and Replace" dialog persisted when it wasn't necessary.
+//#TINY-9704
+
+In previous versions of {productname}, the search and replace dialog (UI) was not updated following a modification to the "Find in selection" option. Consequently, the "not found" alert would persist and not disappear as intended.
+
+To resolve this issue, the necessary (UI) updates were implemented after the change to the "Find in selection" option. As a result, the "not found" alert is now reset every time the "Find in selection" option is altered.
 
 [[security-fixes]]
 == Security fixes

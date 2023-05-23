@@ -59,6 +59,14 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 == Additions
 {productname} 6.5 also includes the following additions:
 
+=== New `table_merge_content_on_paste` option which disables the merging behaviour when pasting a table inside an existing table.
+//#TINY-9808
+
+In previous versions of {productname}, when a table was copied and pasted inside an existing table, the content of the copied table would fill the existing table instead of being pasted as a whole inside the table cell where the paste was performed. 
+
+To address this, a new option `table_merge_content_on_paste` has been introduced in {productname} 6.5, that gives users the ability to disable this merging behavior.
+
+As a result, table content can now be pasted without merging, ensuring that the entire table is inserted into the desired table cell during the paste operation.
 
 [[changes]]
 == Changes

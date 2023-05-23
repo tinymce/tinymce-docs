@@ -71,6 +71,12 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== Removing an image that failed to upload from an empty paragraph would leave the paragraph without a padding br.
+//#TINY-9696
+
+In previous versions of {productname}, images failed to upload within an empty paragraph, the absence of a successful upload would cause the paragraph to lack the expected padding. This occurs when the failed upload is removed, leaving the paragraph without the necessary spacing.
+
+Consequently, the affected paragraph may have appeared visually inconsistent or improperly formatted. To address this issue, it is recommended to add the appropriate padding to ensure the paragraph is visually balanced and displays as intended. By adding the required padding, the paragraph will regain its intended structure and avoid any unwanted visual disruptions.
 
 [[security-fixes]]
 == Security fixes

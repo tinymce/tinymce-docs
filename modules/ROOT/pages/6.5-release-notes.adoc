@@ -71,6 +71,12 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== Enabling or disabling checkboxes would not set the correct classes and attributes.
+//#TINY-4189
+
+In previous version of {productname}, the checkbox element's disabled state was not correctly applied to all elements. As a result, the state was neither properly removed nor added as intended.
+
+To rectify this issue, the control was adjusted and relocated to ensure that it functions as expected.
 
 [[security-fixes]]
 == Security fixes

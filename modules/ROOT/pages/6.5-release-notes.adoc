@@ -30,6 +30,21 @@
 
 The following premium plugin updates were released alongside {productname} 6.5.
 
+=== Link Checker 3.0.3
+
+The {productname} 6.5 release includes an accompanying release of the **Link Checker** premium plugin.
+
+**Link Checker** 3.0.3 includes one fix:
+
+=== Links contained within `contenteditable= "false"` elements were marked as invalid.
+//#TINY-9478
+
+In previous versions of {productname}, the `linkchecker` plugin would perform checks on `contenteditable= "false"` elements.
+
+As a consequence, the links would be marked as invalid, even though the user is unable to fix them.
+
+In {productname} 6.5, the link checker plugin has been updated and links contained within `contenteditable= "false"` elements are no longer checked by the `linkchecker` plugin.
+
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement
 

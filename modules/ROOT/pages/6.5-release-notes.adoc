@@ -71,6 +71,14 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== Whitespace between transparent elements would incorrectly be converted into empty paragraphs.
+//#TINY-9761
+
+In previous versions of {productname}, when transparent elements had whitespace between them, it would mistakenly convert it into an empty paragraph. This issue occurred when adding a document with multiple adjacent block anchors at the document's root.
+
+As a consequence, an extra paragraph would be inserted between each block.
+
+In {productname} 6.5, the extra paragraph is no longer inserted between the block elements.
 
 [[security-fixes]]
 == Security fixes

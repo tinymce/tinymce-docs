@@ -59,6 +59,16 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 == Additions
 {productname} 6.5 also includes the following additions:
 
+=== New `help_accessibility` option which displays the keyboard shortcut to access the help functionality in the statusbar.
+//#TINY-9379
+
+In previous versions of {productname}, keyboard users without screen readers had no indicator of how to access the help menu. However, users that used screen readers would get announcements on accessing the help menu. 
+
+As a consequence, keyboard users could only see the help button, but could not access it unless they were aware of the keyboard shortcuts such as `⌥+0`.
+
+To fix this, {productname} introduced a new option `help_accessibility`, which defaults to `true`, that adds a shortcut indicator in the status bar to indicate the keyboard shortcut for the help menu.
+
+In {productname} 6.5, keyboard users are now aware of the shortcut to access the help menu via the editor's statusbar.
 
 [[changes]]
 == Changes

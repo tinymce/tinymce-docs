@@ -35,6 +35,21 @@ The following premium plugin updates were released alongside {productname} 6.5.
 
 The following premium plugin has been announced as reaching its end-of-life:
 
+=== Format Painter 2.0.2
+
+The {productname} 6.5 release includes an accompanying release of the **Format Painter** premium plugin.
+
+**Format Painter** 2.0.2 includes one fix:
+
+=== It was possible to modify `contenteditable = "false"` text elements using formatpainter
+//#TINY-9472
+
+In previous versions of {productname}, the format painter tool previously allowed users to modify 'contenteditable = "false"' text elements.
+
+As a consequence, the format painter would apply formatting changes to the 'contenteditable = "false"' content.
+
+In {productname} 6.5, the format painter no longer affects 'contenteditable = "false"' text elements and the original formatting of the 'contenteditable = "false"' content remains intact.
+
 [[accompanying-premium-skins-and-icon-packs-changes]]
 == Accompanying Premium Skins and Icon Packs changes
 

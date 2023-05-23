@@ -71,6 +71,12 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== It was possible to apply case change to `contenteditable="false"` elements.
+//#TINY-9466
+
+In previous versions of {productname}, selecting content inside a `contenteditable="false"` section while having the casechange plugin active made it possible to apply the casechange features via the toolbar buttons and menu items.
+
+As a result in {productname} 6.5, the casechange toolbar button and menu items are will now be disabled when the selection is in `contenteditable="false"` section.
 
 [[security-fixes]]
 == Security fixes

@@ -30,6 +30,23 @@
 
 The following premium plugin updates were released alongside {productname} 6.5.
 
+=== Advanced Templates 1.2.0
+
+The {productname} 6.5 release includes an accompanying release of the **Advanced Templates** premium plugin.
+
+**Advanced Templates** 1.2.0 includes the following fix.
+
+=== Category items would not remain expanded after their template was renamed in the Templates dialog's tree component.
+//#TINY-9691
+
+In previous version of {productname}, a bug occurred when users renamed a template in the "Insert template" dialog of the {productname} editor. After renaming, the template list would be refreshed with collapsed content, making the renamed template invisible.
+
+This bug prevented users from seeing the renamed template in the list, causing confusion and difficulty in locating it. To address this issue, a fix was implemented using a new configuration property called `defaultExpandedIds` in the Tree component. This allows the expanded category items state to be passed for rerendering.
+
+The fix works by saving the expanded/collapsed state of category items before executing the renaming operation. Then, after renaming is complete, the `defaultExpandedIds` property is used to restore the previous state.
+
+With the fix in place, the template list is rerendered with the same expanded/collapsed state as before, ensuring the renamed template is visible in the tree and making it easy for users to find.
+
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement
 
@@ -71,16 +88,6 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
-=== Category items would not remain expanded after their template was renamed in the Templates dialog's tree component.
-//#TINY-9691
-
-In previous version of {productname}, a bug occurred when users renamed a template in the "Insert template" dialog of the {productname} editor. After renaming, the template list would be refreshed with collapsed content, making the renamed template invisible.
-
-This bug prevented users from seeing the renamed template in the list, causing confusion and difficulty in locating it. To address this issue, a fix was implemented using a new configuration property called `defaultExpandedIds` in the Tree component. This allows the expanded category items state to be passed for rerendering.
-
-The fix works by saving the expanded/collapsed state of category items before executing the renaming operation. Then, after renaming is complete, the `defaultExpandedIds` property is used to restore the previous state.
-
-With the fix in place, the template list is rerendered with the same expanded/collapsed state as before, ensuring the renamed template is visible in the tree and making it easy for users to find.
 
 [[security-fixes]]
 == Security fixes

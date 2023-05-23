@@ -59,6 +59,14 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 == Additions
 {productname} 6.5 also includes the following additions:
 
+=== New `init_content_sync` option that initializes the editor iframe using `document.write` instead of `srcdoc`. #TINY-9818
+
+In previous versions of {productname}, a toolbar flicker was identified when editor instances are re-initialized. 
+
+To reduce this flicker {productname} added a new option called `init_content_sync`.
+
+This option allows the editor iframe to be initialized using `document.write` instead of `srcdoc`, resulting in a synchronous initialization process. While this fix reduces the toolbar flicker, it is important to note that content flicker may still occur.
+
 
 [[changes]]
 == Changes

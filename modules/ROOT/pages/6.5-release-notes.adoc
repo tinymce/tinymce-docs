@@ -30,6 +30,23 @@
 
 The following premium plugin updates were released alongside {productname} 6.5.
 
+=== Checklist 2.0.5
+
+The {productname} 6.5 release includes an accompanying release of the **Checklist** premium plugin.
+
+**Checklist** 2.0.5 includes one fix:
+
+=== Checklist toggling was possible on `contenteditable = "false"` elements
+//#TINY-9469
+
+In earlier versions of {productname}, the Checklist plugin allowed toggling on elements with the `contenteditable = "false"` attribute.
+
+As a consequence, lists nested within a `contenteditable = "false"` section of the editor could be converted into a checklist.
+
+To address this issue, the Checklist button has now been disabled for `contenteditable = "false"` sections in the {productname} 6.5.
+
+As a result, it is no longer possible to apply the Checklist functionality to `contenteditable = "false"` sections.
+
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement
 

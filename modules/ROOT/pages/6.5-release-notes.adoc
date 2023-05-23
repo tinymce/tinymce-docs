@@ -30,6 +30,21 @@
 
 The following premium plugin updates were released alongside {productname} 6.5.
 
+
+=== Spell Checker Pro 3.3.0
+
+The {productname} 6.5 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
+
+Spell Checker Pro 3.3.0 adds one change:
+
+=== Words containing non-Latin characters were not sent in spelling requests.
+//#TINY-9654
+
+As of Spell Checker Pro 3.2.1, only languages using a Latin-based alphabet, including English, French, German, etc., have supported dictionaries. As a result, Spell Checker Pro's client side only sends words it “understands” in spelling requests to the server, omitting words containing non-Latin characters from languages like Greek, Arabic, and Korean. Specifically, the existing word identification logic uses the `\w` regular expression meta character, equivalent to `[a-zA-Z0-9_]`, to capture characters. This interferes with the usages of some customers pairing the Spell Checker Pro client side with a custom spellchecking service with support for languages with non-Latin alphabets, as words containing non-Latin characters would not be sent to the server.
+
+In {productname} 6.5, the word identification logic for Spell Checker Pro's client side has now been changed to the one used by the Word Count plugin. This allows words containing non-Latin characters to be captured and sent in requests to the spelling service.
+
+
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement
 

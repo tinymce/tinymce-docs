@@ -71,6 +71,14 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== Some toolbar items were not rendering the `not-allowed` mouse cursor.
+//#TINY-9758
+
+In previous versions of {productname}, a bug was discovered where certain toolbar items would not render the 'not-allowed' mouse cursor. This occurred when the text color and `fontsizeinput` controls were rendered in a disabled toolbar.
+
+As a result, the disabled state of these toolbar items was not correctly shown.
+
+In {productname} 6.5, the CSS was modified to provide clearer visual indications for disabled toolbar items. As a result, the toolbar items are now properly disabled, appearing grayed out and displaying a stop action mouse cursor.
 
 [[security-fixes]]
 == Security fixes

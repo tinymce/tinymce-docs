@@ -65,6 +65,14 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also incorporates the following changes:
 
+=== The `a` elements were allowed to have non-inline child elements when the editor schema was set to `html4`.
+//#TINY-9805
+
+In previous versions of {productname}, the HTML4 editor schema, links (a elements) were permitted to have non-inline child elements. This allowed for block child elements within the links.
+
+Consequently, applying heading formatting to a link within a table caption would affect the editor view, even though the caption tag was not included in the serialized content. To address this issue, an update was made to the HTML4 schema, which now disallows block child elements within links.
+
+As a result, applying block formatting to the link content in {productname} 6.5, should no longer have any impact.
 
 [[bug-fixes]]
 == Bug fixes

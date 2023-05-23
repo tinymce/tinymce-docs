@@ -30,6 +30,21 @@
 
 The following premium plugin updates were released alongside {productname} 6.5.
 
+=== Advanced Code Editor 3.3.0
+
+The {productname} 6.5 release includes an accompanying release of the **Advanced Code Editor** premium plugin.
+
+**Advanced Code Editor** 3.3.0 includes the following improvement.
+
+=== Inline code editor was not properly retaining selected font size.
+//#TINY-9701
+
+In previous versions of {productname}, `font size` changes in the Advanced Code Editor were not preserved when the user exited the inline mode. This caused an inconvenience to users as they had to readjust the `font size` each time they returned to the Advanced Code Editor.
+
+In {productname} 6.5, a fix has been implemented to address this issue. Now, when users change the `font size` in the Advanced Code Editor and the user navigates away, their selection is remembered.
+
+As a result, `font size` changes are now preserved when the user opens or closes the Advanced Code Editor, providing a smoother and more user-friendly experience.
+
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement
 

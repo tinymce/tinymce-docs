@@ -30,6 +30,23 @@
 
 The following premium plugin updates were released alongside {productname} 6.5.
 
+=== Advanced Templates 1.2.0
+
+The {productname} 6.5 release includes an accompanying release of the **Advanced Templates** premium plugin.
+
+**Advanced Templates** 1.2.0 includes one fix:
+
+=== The currently selected tree component template item would not stay highlighted after the Templates dialog redialing.
+//#TINY-9770
+
+In previous versions of {productname} a selected tree component template item would lose its highlight when the Advanced Template dialog was reopened.
+
+This would occur when a user renamed a selected template item in the tree component. As a consequence, the user was unable to identify the currently selected item in the tree.
+
+In {productname} 6.5, the problem was addressed by utilizing the `defaultSelectedId` configuration property from the new tree component API.
+
+As a result, the previewed template now accurately reflects the selection in the tree component.
+
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement
 

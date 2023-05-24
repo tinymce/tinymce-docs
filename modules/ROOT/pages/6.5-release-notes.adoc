@@ -30,6 +30,24 @@
 
 The following premium plugin updates were released alongside {productname} 6.5.
 
+=== Spellchecker Pro 3.3.0
+
+The {productname} 6.5 release includes an accompanying release of the **Spellchecker Pro** premium plugin.
+
+**Spellchecker Pro** 3.3.0 includes one addition:
+
+=== Enhancements to Spellchecking Functionality in Spellchecker Pro
+//#TINY-9632
+
+Spellchecker Pro introduces three new features with {productname} 6.5.
+
+* Firstly, the addition of the `mceSpellcheckUpdate` command which allows users to automatically check their editor content for misspelled words. This command not only identifies the errors but also offers suggestions for correcting them.
+* Secondly, the `SpellcheckerUpdated` event, along with the accompanying spelling object, is triggered when the editor undergoes a spell check. This event is currently supported when using the `mceSpellcheckUpdate` command or when opening the dialog, but not in real-time as-you-type mode.
+* Lastly, the `getSpellingErrors()` API has been incorporated, enabling users to obtain an array that contains each misspelled word found in the content.
+
+[NOTE]
+Read more about Spellchecker Pros new features xref:ROOT:introduction-to-tiny-spellchecker.adoc[here].
+
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement
 

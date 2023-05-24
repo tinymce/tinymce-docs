@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-1976: Added TINY-8122 to `staging`.
 - DOC-2028: Add release-notes template to `staging` for 6.5.
 
 ### 2023-05-03

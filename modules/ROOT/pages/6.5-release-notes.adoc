@@ -30,6 +30,21 @@
 
 The following premium plugin updates were released alongside {productname} 6.5.
 
+=== Accessibility Checker 3.2.0
+
+The {productname} 6.5 release includes an accompanying release of the **Accessibility Checker** premium plugin.
+
+**Accessibility Checker** 3.2.0 includes the following fixes, additions, and improvements.
+
+=== No longer allow attempting to fix a table's lack of headers if the table has no cells at all.
+//#TINY-9753
+
+In previous versions of {productname}, fixing a table's lack of headers is now **disabled** if the table is empty.
+
+Previously, attempting to fix this error without any cells resulted in an internal error, although the user didn't notice any difference.
+
+In {productname} 6.5, this fix now prevents users from attempting to fix the error when there are no rows in the table.
+
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement
 

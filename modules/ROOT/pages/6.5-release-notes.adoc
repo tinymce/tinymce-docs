@@ -71,6 +71,14 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== Links (a:link) were always using Times New Roman font-family ignoring the font family used in the original document.
+//#TINY-9812
+
+In previous versions of {productname}, an issue related to the "a:link" selector in the CSS received from Word was identified. The problem arose when content containing links was pasted from a Microsoft Word file into the editor while the powerpaste plugin was enabled.
+
+As a consequence, the links would consistently adopt the Times New Roman font family within the editor, which did not always match the font family used in the original Word document. To address this, {productname} added a fix by removing the default styling applied by Word during the paste operation.
+
+This change ensured that links copied from Word using powerpaste now correctly utilize the appropriate font family, matching the font used in the MS Word document.
 
 [[security-fixes]]
 == Security fixes

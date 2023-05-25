@@ -1,7 +1,7 @@
 [[advtemplate_templates]]
 == `advtemplate_templates`
 
-This option lets you specify a static list of predefined templates that can be inserted using the _Templates_ dialog. It is specifically designed for scenarios where the template list is intended to be unchangeable. In such cases, there is no need to set up a persistent template store and provide a more complex plugin configuration.
+This option lets you specify a static list of predefined templates that can be inserted using the _Templates_ dialog. It is for scenarios where the provided template list is unchangeable. In this use-case, there is no need to set up a persistent template store and provide a more complex plugin configuration.
 
 *Type:* `+Array+`
 
@@ -18,8 +18,8 @@ The template list assigned to the `advtemplate_templates` option must adhere to 
 ----
 tinymce.init({
   selector: 'textarea#advtemplate',  // change this value according to your html
-  plugins: ["advtemplate"],
-  toolbar: 'inserttemplate',
+  plugins: "advtemplate",
+  toolbar: "inserttemplate",
   advtemplate_templates: [
     {
       title: 'Template 1',

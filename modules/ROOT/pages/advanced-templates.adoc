@@ -22,8 +22,8 @@ IMPORTANT: This initial {pluginname} release does not support template editing. 
 === Inserting a template
 To insert a template
 
-. Select *Template...* from the *Insert* menu or
-. Select the *Insert template* image:icons/template.svg[Insert template] toolbar button.
+. Select *Template…* from the *Insert* menu or +
+  Select the *Insert template* image:icons/template.svg[Insert template] toolbar button.
 . Select the template to add to the TinyMCE document from the _Templates_ dialog that presents.
 . Click *Insert* or press *Return*.
 
@@ -46,51 +46,60 @@ Then, in the _New template_ dialog that presents
 === Adding a new category
 To add a new category
 
-. Select *Template...* from the *Insert* menu to open _Templates_ dialog.
-. Click on the *New category* button in the footer. This will pop up the *New category* form.
+. Select *Template…* from the *Insert* menu to open the _Templates_ dialog.
+. Click on the *New category* button in the dialog footer. +
+  The *New category* form will pop up.
 . In the *New category* form, enter the name of the new category you want to add.
 . Click the *Save* button to submit the form.
-. After saving, the new category should appear in the Tree component of the _Templates_ dialog.
+. After saving, the new category will appear in the Tree component of the _Templates_ dialog.
 
 === Searching for templates
 To search for a template
 
-. Select *Template...* from the *Insert* menu to open _Templates_ dialog.
+. Select *Template…* from the *Insert* menu to open the _Templates_ dialog.
 . Enter the name of the template you are searching for in the *Search* field.
-. As you type, the dialog will update and display a list of matching templates in the Tree component of the dialog.
+. As you type, the displayed list of matching templates updates in real-time in the dialog’s Tree component.
 
 === Template list management
 To manage the template list
 
-. Select *Template...* from the *Insert* menu to open _Templates_ dialog.
-. Select the template or the category that you want to modify.
-. Click on the three dots menu for the selected item. This will open the actions menu.
-. From the actions menu, choose the appropriate operation based on your needs:
+. Select *Template…* from the *Insert* menu to open the _Templates_ dialog.
+. Select the template or the category you want to modify.
+. Click on the three dots menu for the selected item. +
+  The *actions* menu will open.
+. From the *actions* menu, choose the appropriate operation based on your requirements:
   * Rename category/template.
   * Move template to another category.
   * Move all category items to another category.
   * Delete template/category.
 
 == Interactive examples
-There are two approaches to using the Advanced Template Premium plugin:
 
-. _Fixed Template List._
-For users who work with a fixed template list that does not require modification, you can provide the list directly through the editor init configuration using the xref:advtemplate_templates[`+advtemplate_templates+` option]. Please refer to this interactive xref:#predifined-list-config-example[example] for guidance on this approach.
+There are two approaches to using the Advanced Template Premium plugin: fixed template lists and user-modifiable template lists.
 
-. _User-Modifiable Template List._
-If the template list is intended to be modified by the user, the plugin should be configured with functional options to enable communication with a remote template storage service. Please refer to this interactive xref:#remote-config-example[example] for guidance on configuring the plugin to support user-modifiable template lists.
+=== Fixed template lists
+
+For users who work with a fixed template list that does not require modification, you can provide a list directly through the {productname} init configuration using the xref:advtemplate_templates[`+advtemplate_templates+` option].
+
+The interactive xref:#predefined-list-config-example[predefined list example] provides guidance for this approach.
+
+=== User-modifiable template lists
+
+If the intention is for the template list to be end-user modifiable, the {pluginname} plugin should be configured with options to enable communication with a remote Template storage service.
+
+The interactive xref:#remote-config-example[remote storage configuration example] provides guidance on configuring the {pluginname} plugin to support user-modifiable template lists.
 
 [[remote-config-example]]
 === Configuring the Advanced Template plugin to interact with a remote backend service via REST API.
 liveDemo::{plugincode}[]
 
-[[predifined-list-config-example]]
+[[predefined-list-config-example]]
 === Configuring the Advanced Template plugin to use a static list of predefined templates.
 liveDemo::{plugincode}-predefined[]
 
 == Basic setup
 
-To setup the {pluginname} plugin user-interface in the editor
+To setup the {pluginname} plugin user-interface in the editor:
 
 * add `{plugincode}` to the `plugins` option in the editor configuration;
 

@@ -38,7 +38,7 @@ The data returned by `advtemplate_list` must adhere to the following requirement
 
 . Each list item must have a unique `id` value.
 . Each list item must have a non-empty `title` value.
-. Each category item is required to include a `items` sublist, which can be empty.
+. Each category item is required to include an `items` sublist, which can be empty.
 . Category items must not contain nested subcategories.
 . Template item is not required to include a `content` value.
 

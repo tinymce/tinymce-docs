@@ -71,6 +71,16 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== The content of the dialog body could not be scrolled.
+//#TINY-9668
+
+In previous versions of {productname}, a bug was identified that affected certain dialogs, particularly those lacking tabs, which resulted in them being unable to handle height adjustments effectively.
+
+The problem arose because the dialog body content had a maximum height of (650px), causing scrolling to be enabled only when the content exceeded this limit. As a consequence, when dialogs were less than (650px) in height, the footer would occasionally extend beyond its bounds.
+
+In {productname} 6.5, a fix was implemented by setting the maximum height of the dialog body content to the minimum value between (650px) and (100vh - 110px). Here, 110px represents the combined height of the footer and header.
+
+As a result of this solution, the dialog body and footer are now consistently displayed correctly, resolving the previous display issue.
 
 [[security-fixes]]
 == Security fixes

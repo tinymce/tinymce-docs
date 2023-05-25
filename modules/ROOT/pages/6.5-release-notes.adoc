@@ -39,7 +39,7 @@ The {productname} 6.5 release includes an accompanying release of the **Enhanced
 === Allow a media embed element to be correctly resized when using the `media` plugin dialog by converting the responsive media embed to a standalone iframe.
 //#TINY-8714
 
-In previous versions of {productname}, the Mediaembed plugin and the media plugin encountered several issues when used together. The Mediaembed plugin would wrap `<iframes>` with a responsive wrapper that relies on large padding for the height. However, when content created with the Mediaembed plugin is inserted using the media plugin dialog, which targets `"ephox-embed-iri"` divs, the width and height are mapped to the wrapper's `max-width` and `max-height` properties. Unfortunately, the height is primarily determined by padding, rendering the `max-height` property ineffective.
+In previous versions of {productname}, the Enhanced Media Embed and the media plugin encountered several issues when used together. The Mediaembed plugin would wrap `<iframes>` with a responsive wrapper that relies on large padding for the height. However, when content created with the Mediaembed plugin is inserted using the media plugin dialog, which targets `"ephox-embed-iri"` divs, the width and height are mapped to the wrapper's `max-width` and `max-height` properties. Unfortunately, the height is primarily determined by padding, rendering the `max-height` property ineffective.
 
 For additional details, please see https://www.benmarshall.me/responsive-iframes[benmarshall.me/responsive-iframes].
 

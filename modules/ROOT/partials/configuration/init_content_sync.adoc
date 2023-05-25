@@ -1,0 +1,22 @@
+[[init_content_sync]]
+== `+init_content_sync+`
+
+This option enables you to change the way the iframe is initialized from using srcdoc and being async to using document.write and being sync. Setting
+this to `true` will reduce some initialization flicker. But some flicker like loading the content css in could still occur.
+
+*Type:* `+Boolean+`
+
+*Default value:* `+false+`
+
+=== Example: using `+init_content_sync+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  init_content_sync: true 
+});
+----
+
+include::partial$configuration/indent_use_margin.adoc[]
+

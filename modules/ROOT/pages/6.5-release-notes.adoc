@@ -65,6 +65,14 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also incorporates the following changes:
 
+=== `aria-activedescendant` attribute for `Typeahead` input component is updated to the menu item that is highlighted.
+//#TINY-9280
+
+In previous versions of {productname}, the Link Combobox screen reader feature lacked the capability to announce items within the dropdown. This meant that when users relied on screen readers to navigate through the dropdown list in the URL input combo box within the link dialog, there were no auditory notifications for the listed items.
+
+As a consequence, this significantly reduced the accessibility of the combo box for users that relying on screen readers.
+
+To address this issue, a fix was implemented to enable screen readers to announce the highlighted item within the dropdown. With this improvement, when users navigate through the dropdown, the screen reader will now audibly announce the value of the item currently highlighted.
 
 [[bug-fixes]]
 == Bug fixes

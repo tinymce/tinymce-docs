@@ -81,21 +81,21 @@ There are two approaches to using the Advanced Template Premium plugin: fixed te
 
 For users who work with a fixed template list that does not require modification, you can provide a list directly through the {productname} init configuration using the xref:advtemplate_templates[`+advtemplate_templates+` option].
 
-The interactive xref:#predefined-list-config-example[predefined list example] provides guidance for this approach.
+The following interactive predefined list example provides guidance for this approach.
+
+[[predefined-list-config-example]]
+==== Configuring the Advanced Template plugin to use a static list of predefined templates.
+liveDemo::{plugincode}-predefined[]
 
 === User-modifiable template lists
 
 If the intention is for the template list to be end-user modifiable, the {pluginname} plugin should be configured with options to enable communication with a remote Template storage service.
 
-The interactive xref:#remote-config-example[remote storage configuration example] provides guidance on configuring the {pluginname} plugin to support user-modifiable template lists.
+The following interactive remote storage configuration example provides guidance on configuring the {pluginname} plugin to support user-modifiable template lists.
 
 [[remote-config-example]]
-=== Configuring the Advanced Template plugin to interact with a remote backend service via REST API.
+==== Configuring the Advanced Template plugin to interact with a remote backend service via REST API.
 liveDemo::{plugincode}[]
-
-[[predefined-list-config-example]]
-=== Configuring the Advanced Template plugin to use a static list of predefined templates.
-liveDemo::{plugincode}-predefined[]
 
 == Basic setup
 

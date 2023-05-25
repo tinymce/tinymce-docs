@@ -74,9 +74,9 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === Invalid markup in Notification and Dialog close buttons.
 //#TINY-9849
 
-In previous versions of {productname}, an issue was identified in the close buttons where invalid markup was present. Specifically, a div element was being used within the buttons, which violated HTML standards. This caused problems when running Tiny's HTML code through markup checkers, resulting in the generation of errors.
+In previous versions of {productname}, an issue was identified in the close buttons: invalid markup was present. Specifically, a div element was being used within the buttons. This violates HTML standards and caused problems when running {productname} HTML through markup checkers: the checker, correctly, threw errors.
 
-In {productname} 6.5, the markup was fixed by replacing the div element with a `<span>` element, aligning it with proper HTML guidelines. As a result, the updated close buttons now pass HTML markup checkers without any errors. 
+In {productname} 6.5, the markup was fixed by replacing the div element with a `<span>` element, aligning it with HTML guidelines. As a result, the updated close buttons now pass HTML markup checkers without throwing errors.
 
 [[security-fixes]]
 == Security fixes

@@ -37,7 +37,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'lists',
   toolbar: 'bullist numlist',
-  `text_patterns` false,
+  text_patterns: false,
 });
 ----
 

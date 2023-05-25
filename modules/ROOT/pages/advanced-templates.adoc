@@ -73,6 +73,44 @@ To manage the template list
   * Move all category items to another category.
   * Delete template/category.
 
+== Basic setup
+
+To setup the {pluginname} plugin user-interface in the editor:
+
+* add `{plugincode}` to the `plugins` option in the editor configuration;
+
+* add `inserttemplate` and `addtemplate` to the `toolbar` option in the editor configuration;
+
+* add each {pluginname} option to the editor configuration;
+
+For example:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  plugins: "advtemplate",
+  toolbar: "inserttemplate addtemplate",
+  contextmenu: "advtemplate",
+  // Each of the following options must be defined as
+  // a function that returns a Promise.
+  // Please find the specific details for each option below.
+  advtemplate_list,
+  advtemplate_get_template,
+  advtemplate_create_category,
+  advtemplate_create_template,
+  advtemplate_rename_category,
+  advtemplate_rename_template,
+  advtemplate_delete_template,
+  advtemplate_delete_category,
+  advtemplate_move_template,
+  advtemplate_move_category_items
+});
+----
+
+NOTE: The undefined options in the above example must be defined. See the xref:options[Options] below for specific details on each function.
+
+
 == Interactive examples
 
 There are two approaches to using the Advanced Template Premium plugin: fixed template lists and user-modifiable template lists.
@@ -97,41 +135,7 @@ The following interactive remote storage configuration example provides guidance
 ==== Configuring the Advanced Template plugin to interact with a remote backend service via REST API.
 liveDemo::{plugincode}[]
 
-== Basic setup
-
-To setup the {pluginname} plugin user-interface in the editor:
-
-* add `{plugincode}` to the `plugins` option in the editor configuration;
-
-* add `inserttemplate` and `addtemplate` to the `toolbar` option in the editor configuration;
-
-* add each {pluginname} option to the editor configuration;
-
-For example:
-
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',  // change this value according to your html
-  plugins: "advtemplate",
-  toolbar: "inserttemplate addtemplate",
-  contextmenu: "advtemplate",
-  // Each of the following options should be defined as
-  // a function that returns a Promise.
-  // Please find the specific details for each option below.
-  advtemplate_list,
-  advtemplate_get_template,
-  advtemplate_create_category,
-  advtemplate_create_template,
-  advtemplate_rename_category,
-  advtemplate_rename_template,
-  advtemplate_delete_template,
-  advtemplate_delete_category,
-  advtemplate_move_template,
-  advtemplate_move_category_items
-});
-----
-
+[[options]]
 == Options
 
 The following configuration options affect the behavior of the {pluginname} plugin.

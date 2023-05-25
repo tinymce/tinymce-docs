@@ -8,6 +8,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 - DOC-1953: new file, `/modules/ROOT/partials/configuration/advtemplate_templates.adoc`, added. Documentation of new Advanced Template plugin option, `advtemplate_templates`, added to new file.
 - DOC-2028: Add release-notes template to `staging` for 6.5.
+- DOC-2029: Added new options `editable_root` and `newdocument_content`.
 
 ### 2023-05-03
 

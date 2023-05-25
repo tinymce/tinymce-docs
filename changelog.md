@@ -7,9 +7,11 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### Unreleased
 
 - DOC-1953: new file, `/modules/ROOT/partials/configuration/advtemplate_templates.adoc`, added. Documentation of new Advanced Template plugin option, `advtemplate_templates`, added to new file.
+- DOC-2028: Add release-notes template to `staging` for 6.5.
 
 ### 2023-05-03
 
+- DOC-1972: Updated `changelog.md` to be in sync with the release-notes 6.4.2.
 - DOC-1971: Updates to `staging` prior to `release` 6.4.2.
 - DOC-1962: added `The image would not be inserted when the quickimage button was used on Chrome.` to staging.
 - DOC-1968: Added `enabled buttons in the quickbar menu is not shown as active` to staging.

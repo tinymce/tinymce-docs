@@ -76,7 +76,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 In previous versions of {productname}, formatting issues caused incorrect application or removal of formats in relation to the closest `contenteditable= "true"` element when the selection was within a `contenteditable= "false"` context.
 
-This issue also affected the formatters API as well, as its `canApply` function failed to return `false` when the selection was in a `contenteditable= "false"` context.
+This issue also affected the formatter API as well, as its `canApply` function failed to return `false` when the selection was in a `contenteditable="false"` context.
 
 In {productname} 6.5, the issue has been resolved. Now, formats are correctly applied or removed only to and from `contenteditable= "true"` elements.
 

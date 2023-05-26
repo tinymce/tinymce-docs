@@ -82,6 +82,13 @@ To work around this, {productname} 6.5 removes the default CSS styling applied b
 
 With this change, link text copied from Microsoft Word using the PowerPaste plugin now uses the font-family matching that used in the source document.
 
+=== Invalid markup in Notification and Dialog close buttons.
+//#TINY-9849
+
+In previous versions of {productname}, an issue was identified in the close buttons: invalid markup was present. Specifically, a div element was being used within the buttons. This violates HTML standards and caused problems when running {productname} HTML through markup checkers: the checker, correctly, threw errors.
+
+In {productname} 6.5, the markup was fixed by replacing the div element with a `<span>` element, aligning it with HTML guidelines. As a result, the updated close buttons now pass HTML markup checkers without throwing errors.
+
 [[security-fixes]]
 == Security fixes
 

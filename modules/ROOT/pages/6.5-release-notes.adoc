@@ -36,7 +36,7 @@ The {productname} 6.5 release includes an accompanying release of the **Link Che
 
 **Link Checker** 3.0.3 includes one fix:
 
-=== Links contained within `contenteditable= "false"` elements were marked as invalid.
+=== Links contained within `contenteditable="false"` elements were marked as invalid.
 //#TINY-9478
 
 In previous versions of {productname}, the `linkchecker` plugin would perform checks on `contenteditable= "false"` elements.

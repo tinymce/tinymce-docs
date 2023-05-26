@@ -74,7 +74,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === Backspace would in some situations delete the image after the cursor instead of before it as expected.
 //#TINY-9807
 
-In previos versions of {productname}, after pressing backspace occasionally would deleted a image after the cursor instead of the expected deletion before it.
+In previous versions of {productname}, after pressing backspace occasionally would delete an image after the cursor instead of the expected deletion before it.
 
 This issue occurred when the cursor was positioned between two image elements and as a consequence, the wrong image was unexpectedly deleted.
 

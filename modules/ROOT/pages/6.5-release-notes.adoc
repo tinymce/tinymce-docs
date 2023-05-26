@@ -30,6 +30,25 @@
 
 The following premium plugin updates were released alongside {productname} 6.5.
 
+=== Merge Tags 1.3.0
+
+The {productname} 6.5 release includes an accompanying release of the **Merge Tags** premium plugin.
+
+**Merge Tags** 1.3.0 includes one fix:
+
+=== Right clicking on a merge tag instance presented different highlighting depending on the host browser.
+//#TINY-9848
+
+In previous versions of {productname}, when users right-clicked on a merge tag, the highlighting within the merge tag selection varied, depending on the host browser.
+
+This resulted in an inconsistent end-user experience.
+
+{productname} 6.5 no longer uses a browser’s default highlighting of the merge tag. Instead, {productname} 6.5 introduces {productname}-specific styles. These styles highlight the merge tag consistently across different browsers.
+
+{productname} now presents end-users with uniform merge tag highlighting across all supported browsers.
+
+For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
+
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement
 

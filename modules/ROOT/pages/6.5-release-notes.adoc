@@ -74,7 +74,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === Directionality commands was setting the `dir` attribute on `contenteditable="false"` elements within a `contenteditable="false"` root.
 //#TINY-9662
 
-In previous versions of {productname}, directionality commands applied the `dir` attribute to elements within a `contenteditable= "false"` root, which caused block elements that shouldn't be editable to be selected. 
+In previous versions of {productname}, directionality commands applied the `dir` attribute to elements within a `contenteditable="false"` root, which caused block elements that shouldn't be editable to be selected. 
 
 As a result, the `dir` attribute of these block elements would be updated with either `"ltr"` or `"rtl"` values. To address this issue, {productname} now checks if a element is set to `contenteditable= "false"` first, and if it is, the `dir` attribute is **not applied** to the selection.
 

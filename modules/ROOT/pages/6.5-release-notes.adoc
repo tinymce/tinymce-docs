@@ -36,7 +36,7 @@ The {productname} 6.5 release includes an accompanying release of the **Checklis
 
 **Checklist** 2.0.5 includes one fix:
 
-=== Checklist toggling was possible on `contenteditable = "false"` elements
+=== Checklist toggling was possible on `contenteditable="false"` elements
 //#TINY-9469
 
 In earlier versions of {productname}, the Checklist plugin allowed toggling on elements with the `contenteditable = "false"` attribute.

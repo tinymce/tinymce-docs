@@ -90,6 +90,23 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== Text within anchor tags, <a>, presented with the Times New Roman font-family, ignoring the font family used in the original document.
+//#TINY-9812
+
+In previous versions of {productname}, an issue related to the `a:link` selector in the CSS received from Microsoft Word was identified.
+
+When content containing links was pasted from a Microsoft Word file into a {productname} instance running the xref:introduction-to-powerpaste.adoc[PowerPaste] plugin, the pasted-in link text rendered using the Times New Roman font family. And it presented thus no matter the typeface set for this text in the original Microsoft Word document.
+
+To work around this, {productname} 6.5 removes the default CSS styling applied by Microsoft Word during the paste operation.
+
+With this change, link text copied from Microsoft Word using the PowerPaste plugin now uses the font-family matching that used in the source document.
+
+=== Invalid markup in Notification and Dialog close buttons.
+//#TINY-9849
+
+In previous versions of {productname}, an issue was identified in the close buttons: invalid markup was present. Specifically, a div element was being used within the buttons. This violates HTML standards and caused problems when running {productname} HTML through markup checkers: the checker, correctly, threw errors.
+
+In {productname} 6.5, the markup was fixed by replacing the div element with a `<span>` element, aligning it with HTML guidelines. As a result, the updated close buttons now pass HTML markup checkers without throwing errors.
 
 [[security-fixes]]
 == Security fixes

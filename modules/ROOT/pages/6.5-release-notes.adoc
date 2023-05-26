@@ -78,7 +78,7 @@ In previous versions of {productname}, specifically on MacOS systems, the `comma
 
 To address this issue, {productname} added updates that now register an undo level after the `command + backspace` shortcut is pressed.
 
-As a result, users can now undo the operation performed by pressing `command + backspace` in {productname} 6.5.
+As a result, users can now undo the operation performed by pressing `command + z` in {productname} 6.5.
 
 === Ctrl + backspace and Ctrl + delete would not restore correct caret position after redo.
 //#TINY-8910

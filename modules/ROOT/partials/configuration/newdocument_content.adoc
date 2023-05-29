@@ -1,8 +1,7 @@
 [[newdocument_content]]
 == `+newdocument_content+`
 
-This option enables you to set the content that the editor will contain if you use the New document menu item. This can
-be used together with xref:content-behavior-options.adoc#editable_root[editable_root] to make sure there is always a editable field within the non-editable root.
+This option sets the content a new editor contains when the xref:available-menu-items.adoc#the-core-menu-items[File -> New document] menu item is invoked.
 
 *Type:* `+String+`
 
@@ -10,12 +9,13 @@ be used together with xref:content-behavior-options.adoc#editable_root[editable_
 
 === Example: using `+newdocument_content+`
 
+This example shows `+newdocument_content+` being used with the xref:content-behavior-options.adoc#editable_root[`+editable_root+`] option to set an editable element within a non-editable root.
+
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  newdocument_content: '<p contenteditable="true">Editable content</p>' 
+  editable_root: false,
+  newdocument_content: '<div contenteditable="true">Editable content</div>' 
 });
 ----
-
-

@@ -1,8 +1,11 @@
 [[init_content_sync]]
 == `+init_content_sync+`
 
-This option enables you to change the way the iframe is initialized from using srcdoc and being async to using document.write and being sync. Setting
-this to `true` will reduce some initialization flicker. But some flicker like loading the content css in could still occur.
+This option determines whether the iframe is initialized synchronously or asynchronously.
+
+When disabled, the editor is initialized asynchronously using `srcdoc`, however this can occasionally cause the editor to flicker during initialization.
+
+When enabled, the editor will be initialized using `document.write`, which can reduce this flickering, but some flicker could still occur, such as loading the content css.
 
 *Type:* `+Boolean+`
 

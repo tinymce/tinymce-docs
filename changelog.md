@@ -6,6 +6,11 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2049: Added multiple `/partial/misc/admon-requires-6.<x>v.adoc` files for use as required by 6.5-and-later specific docs.
+- DOC-2047: Added TINY-9848 to `staging`.
+- DOC-2048: Added TINY-9812 to `staging`.
+- DOC-2044: Added TINY-9849 to `staging`.
+- DOC-1953: new file, `/modules/ROOT/partials/configuration/advtemplate_templates.adoc`, added. Documentation of new Advanced Template plugin option, `advtemplate_templates`, added to new file.
 - DOC-2028: Add release-notes template to `staging` for 6.5.
 
 ### 2023-05-03

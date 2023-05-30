@@ -38,7 +38,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * The `a` elements were allowed to have non-inline child elements when the editor schema was set to `html4`.
 
 === Fixed
-* Right-clicking on a merge tag resulted in different highlighting across browsers.
+* Right-clicking on a merge tag instance presented different highlighting depending on the host browser.
 * When macOS was the host operating system, pressing *Command+backspace* did not add an undo level.
 * *Ctrl+backspace* and *Ctrl+delete* did not restore the correct insertion point position after a redo operation.
 * In the `tree` component, a selected item in a directory would not stay selected after collapsing the directory.

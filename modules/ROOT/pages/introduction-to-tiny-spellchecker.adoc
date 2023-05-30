@@ -240,6 +240,7 @@ tinymce.init({
 });
 ----
 
+[[spelling-object]]
 ==== The `spelling` object
 
 The `+spelling+` object, provided by the `+SpellcheckerUpdated+` event, contains the result of the spellcheck by the spelling service. The keys of the outermost object represent the language code for each language. Under each language code, there is an object with keys representing misspelled words and values that are arrays of possible correct spellings.

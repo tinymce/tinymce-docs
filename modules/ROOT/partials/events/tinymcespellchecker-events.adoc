@@ -9,5 +9,7 @@ The following events are provided by the xref:introduction-to-tiny-spellchecker.
 |SpellcheckStart |N/A |Fired when spellchecking is enabled.
 |SpellcheckEnd |N/A |Fired when spellchecking is disabled.
 |SpellcheckerLanguageChanged |`+{ language: string, prevLanguage: string }+` |Fired when the spellchecking language is changed.
+3+|
+include::partial$misc/admon-requires-6.5v.adoc[]
 |SpellcheckerUpdated |`+{ spelling: SpellingUpdate }+` |Fired when the editor content is checked for misspellings and suggestions.
 |===

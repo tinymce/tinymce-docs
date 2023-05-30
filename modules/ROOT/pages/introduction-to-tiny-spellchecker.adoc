@@ -213,11 +213,11 @@ tinymce.init({
 
 === SpellcheckerUpdated Event
 
-NOTE: Requires 6.5.
+include::partial$misc/admon-requires-6.5v.adoc[]
 
-This event is fired when the editor is spellchecked either by opening the dialog or by executing the `+mceSpellcheckUpdate+` command.
+This event is fired when the editor content is checked for misspellings and suggestions, either by opening the dialog or by executing the `+mceSpellcheckUpdate+` command.
 
-NOTE: This event is not fired in As-You-Type mode.
+NOTE: This event is not fired when SpellChecker Pro is operating in As-You-Type mode.
 
 ==== Example: the SpellcheckerLanguageChanged event
 

@@ -11,6 +11,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 - DOC-2048: Added TINY-9812 to `staging`.
 - DOC-2044: Added TINY-9849 to `staging`.
 - DOC-1953: new file, `/modules/ROOT/partials/configuration/advtemplate_templates.adoc`, added. Documentation of new Advanced Template plugin option, `advtemplate_templates`, added to new file.
+- DOC-2030: document new Spell Checker Pro features: `mceSpellcheckUpdate` command; `SpellcheckerUpdated` event; and `getSpellingErrors()` API.
 - DOC-2028: Add release-notes template to `staging` for 6.5.
 
 ### 2023-05-03

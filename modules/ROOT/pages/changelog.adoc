@@ -60,7 +60,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * The content of the dialog body could not be scrolled.
 * Some toolbar items, when in a not-enabled state, did not render the `not-allowed` mouse pointer.
 * Formats were incorrectly applied to the closest editable element if the selection was in a `contenteditable="false"` context.
-* Formats were incorrectly removed to the closest editable element if the selection was in a `contenteditable="false"` context.
+* Formats were incorrectly removed from the closest editable element if the selection was in a `contenteditable="false"` context.
 * Formatter API, `canApply`, was not returning `false` when the selection was in a `contenteditable="false"` context.
 * When dragging image elements and dropping the image in the editor the `dragend` event would sometimes not fire when Firefox was the host browser.
 * It was possible to remove links in noneditable contents with the `unlink` editor command.

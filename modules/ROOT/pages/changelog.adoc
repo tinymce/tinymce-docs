@@ -26,11 +26,11 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Now `icon` field for dialog footer `togglebutton`s is not mandatory.
 * Toolbar buttons and menu items were not disabled when they couldn't be used on noneditable content.
 * Updated toolbar "More" button tooltip text from "More..." to "Reveal or hide additional toolbar items".
-* Help text displayed at **Help -> Help -> Keyboard Navigation** re-written.
-* These characters — *$*, *~*, *+*, *|*, *№*, and *`* — are now considered as punctuation marks. Therefore, they will not increase the word count.
-* Updated the `codesample` plugin dialog and `template` plugin dialog to use the 'listbox' component to match other dialogs.
-* Quickbar toolbars are now positioned in the middle of the selection horizontally, if the selection contains more than one table cell.
-* Exposed `dataTransfer` property of drag and drop events for elements with a `contenteditable="false"` attribute.
+* Help text displayed at *Help -> Help -> Keyboard Navigation* re-written.
+* For word count purposes these characters are now considered punctuation marks: *$*, *~*, *+*, *|*, *№*, and *`*. They no longer increase a document’s word count.
+* Updated the `codesample` plugin dialog and the `template` plugin dialog to use the `listbox` component to match other dialogs.
+* If the selection contains more than one table cell, Quickbar toolbars are now positioned in the middle of the selection horizontally.
+* The `dataTransfer` property of drag-and-drop events for elements with a `contenteditable="false"` attribute is now exposed.
 
 === Changed
 * The `caption`, `address` and `dt` elements no longer incorrectly allow non-inline child elements when the editor schema is set to _HTML 4_.

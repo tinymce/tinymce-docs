@@ -7,6 +7,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### Unreleased
 
 - DOC-1980: Converted all mentions of Transifex to Crowdin as TinyMCE's community translations platform.
+- DOC-2052: Correct default value of `language` option to `en`.
 
 ### 2023-05-03
 

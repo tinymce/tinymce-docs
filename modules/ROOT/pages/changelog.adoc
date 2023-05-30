@@ -43,6 +43,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * *Ctrl+backspace* and *Ctrl+delete* did not restore the correct insertion point position after a redo operation.
 * In the `tree` component, a selected item in a directory would not stay selected after collapsing the directory.
 * Enabling or Disabling checkboxes would not set the correct classes and attributes.
+* Entering a newline would, in some setups, place the insertion point in the wrong paragraph.
 * Redial would, in some situations, cause select elements not to have an initial value selected when they should have.
 * The Table toolbar was visible even if the table was within a host element with a `contenteditable="false"` attribute set.
 * Quickbar toolbars were incorrectly shown for elements with a `contenteditable="false"` attribute set in a root with a `contenteditable="false"` attribute set.

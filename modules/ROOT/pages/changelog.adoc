@@ -4,6 +4,78 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+== 6.5 - 2023-06-01
+
+=== Added
+* New `table_merge_content_on_paste` option which disables the merging behaviour when pasting a table inside an existing table.
+* New optional `defaultExpandedIds` and `onToggleExpand` options to the `tree` component config.
+* New optional `defaultSelectedId` option to the `tree` component config.
+* New `help_accessibility` option which displays the keyboard shortcut to access the help functionality in the statusbar.
+* New `accordion` plugin with the `InsertAccordion` command.
+* New `accordion` and `accordion-toggle` icons.
+* New `details_initial_state` and `details_serialized_state` options.
+* New `init_content_sync` option that initializes the editor iframe using `document.write` instead of `srcdoc`.
+* New `newdocument_content` option that changes the content that will be set when using the `New document` button.
+* New `editable_root` option that can be set to `false` to prevent editing of the editors root element.
+* New `editor.setEditableRoot` API that sets the editable state of the editor root element.
+* New `editor.hasEditableRoot` API that returns `true` or `false` depending on the editable state of the editor root element.
+* New `EditableRootStateChange` event that gets dispatched when the state of the editable root is changed.
+
+=== Improved
+* Screen readers are now able to announce the highlighted menu item of link comboboxes.
+* Now `icon` field for dialog footer `togglebutton`s is not mandatory.
+* Toolbar buttons and menu items were not disabled when they couldn't be used on noneditable content.
+* Updated toolbar "More" button tooltip text from "More..." to "Reveal or hide additional toolbar items".
+* Help text displayed at **Help -> Help -> Keyboard Navigation** re-written.
+* These characters — *$*, *~*, *+*, *|*, *№*, and *`* — are now considered as punctuation marks. Therefore, they will not increase the word count.
+* Updated the `codesample` plugin dialog and `template` plugin dialog to use the 'listbox' component to match other dialogs.
+* Quickbar toolbars are now positioned in the middle of the selection horizontally, if the selection contains more than one table cell.
+* Exposed `dataTransfer` property of drag and drop events for elements with a `contenteditable="false"` attribute.
+
+=== Changed
+* The `caption`, `address` and `dt` elements were allowed to have non-inline children elements when the editor schema was set to `html4`.
+* SVG icons for back and foreground colors now uses class instead of id to identify SVG elements that should change color.
+* The `a` elements were allowed to have non-inline child elements when the editor schema was set to `html4`.
+
+=== Fixed
+* Right clicking on a merge tag would result in different highlighting across browsers.
+* Command + backspace would not add an undo level on Mac.
+* Ctrl + backspace and Ctrl + delete would not restore correct caret position after redo.
+* In the tree component, a selected item in a directory would not stay selected after collapsing the directory.
+* Enabling or Disabling checkboxes would not set the correct classes and attributes.
+* Redial would in some situations cause select elements not to have an initial value selected when they should have.
+* Table toolbar was visible even if the table was within a noneditable host element.
+* Quickbar toolbars was shown for noneditable contents in a noneditable root.
+* Adding a newline in Chrome when the cursor was placed after a table could in some specific situations not generate the expected newline.
+* Show the calculated height and width of media embed elements in the `media` plugin dialog.
+* Removing an image that failed to upload from an empty paragraph would leave the paragraph without a padding br.
+* Allow a media embed element to be correctly resized when using the `media` plugin dialog by converting the media embed to a standalone iframe.
+* Inline alert in the "Search and Replace" dialog persisted when it wasn't necessary.
+* Context toolbars displayed the incorrect status for the `advlist` plugin buttons.
+* On iOS Safari, Korean characters were merging onto the previous line upon typing after inserting a newline by pressing Enter.
+* Initiating the editor with a table at the start would display resize handles even when the editor wasn't focused.
+* Backspace would in some situations delete the image after the cursor instead of before it as expected.
+* Directionality commands was setting the `dir` attribute on noneditable elements within a noneditable root.
+* The content of the dialog body could not be scrolled.
+* Some toolbar items were not rendering the `not-allowed` mouse cursor.
+* Formats were incorrectly applied to the closest editable element if the selection was in a noneditable context.
+* Formats were incorrectly removed to the closest editable element if the selection was in a noneditable context.
+* Formatter API `canApply` was not returning `false` when the selection was in a noneditable context.
+* When dragging image elements and dropping the image in the editor the `dragend` event would sometimes not fire on firefox.
+* It was possible to remove links in noneditable contents with the 'unlink' editor command.
+* Direction was not visually changing when using the Directionality plugin on an element which has the `direction` CSS property set.
+* Whitespace between transparent elements would incorrectly be converted into empty paragraphs.
+* Popups were not constrained within the scrollable container when in a shadow root.
+* Pressing arrow keys inside RTL elements would move the caret in an incorrect direction when moving over elements with the `contenteditable` attribute set to `false`.
+* Inserting table consecutively without focus in the editor would result in the table being inserted at the wrong position.
+* Pasting content into the editor would not fire `beforeinput` and `input` events.
+* In some cases, the exiting a `blockquote` element could fail when the cursor was positioned at the end of the `blockquote`.
+* Templates containing an `<html>` tag were not parsed before being rendered for preview.
+* Typing after deleting formatted content could remove a space at the start of the typing.
+* Invalid markup in Notification and Dialog close buttons.
+* In dialogs, an incorrect `aria-describedby` attribute caused the body of the dialog to be announced when using a screen reader.
+* The sticky toolbar would not be rendered correctly when transitioning from the custom editor view to the main view.
+
 == 6.4.2 - 2023-04-26
 
 === Fixed

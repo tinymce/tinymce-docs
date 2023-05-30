@@ -38,43 +38,43 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * The `a` elements were allowed to have non-inline child elements when the editor schema was set to `html4`.
 
 === Fixed
-* Right clicking on a merge tag would result in different highlighting across browsers.
-* Command + backspace would not add an undo level on Mac.
-* Ctrl + backspace and Ctrl + delete would not restore correct caret position after redo.
-* In the tree component, a selected item in a directory would not stay selected after collapsing the directory.
+* Right-clicking on a merge tag resulted in different highlighting across browsers.
+* When macOS was the host operating system, pressing *Command+backspace* did not add an undo level.
+* *Ctrl+backspace* and *Ctrl+delete* did not restore the correct insertion point position after a redo operation.
+* In the `tree` component, a selected item in a directory would not stay selected after collapsing the directory.
 * Enabling or Disabling checkboxes would not set the correct classes and attributes.
-* Redial would in some situations cause select elements not to have an initial value selected when they should have.
-* Table toolbar was visible even if the table was within a noneditable host element.
-* Quickbar toolbars was shown for noneditable contents in a noneditable root.
-* Adding a newline in Chrome when the cursor was placed after a table could in some specific situations not generate the expected newline.
-* Show the calculated height and width of media embed elements in the `media` plugin dialog.
-* Removing an image that failed to upload from an empty paragraph would leave the paragraph without a padding br.
-* Allow a media embed element to be correctly resized when using the `media` plugin dialog by converting the media embed to a standalone iframe.
-* Inline alert in the "Search and Replace" dialog persisted when it wasn't necessary.
+* Redial would, in some situations, cause select elements not to have an initial value selected when they should have.
+* The Table toolbar was visible even if the table was within a host element with a `contenteditable="false"` attribute set.
+* Quickbar toolbars were incorrectly shown for elements with a `contenteditable="false"` attribute set in a root with a `contenteditable="false"` attribute set.
+* When Chrome was the host browser, adding a newline when the insertion point was placed after a table could, in some specific situations, not generate the expected newline.
+* Show the calculated height and width of Media Embed elements in the `media` plugin dialog.
+* Removing an image that failed to upload from an empty paragraph left the paragraph without a padding `<br>` tag.
+* Allow a Media Embed element to be correctly resized when using the `media` plugin dialog by converting the Media Embed element to a standalone iframe.
+* In some circumstances, an inline alert in the _Search and Replace_ dialog persisted when it was not necessary.
 * Context toolbars displayed the incorrect status for the `advlist` plugin buttons.
-* On iOS Safari, Korean characters were merging onto the previous line upon typing after inserting a newline by pressing Enter.
-* Initiating the editor with a table at the start would display resize handles even when the editor wasn't focused.
-* Backspace would in some situations delete the image after the cursor instead of before it as expected.
-* Directionality commands was setting the `dir` attribute on noneditable elements within a noneditable root.
+* In Safari running on iOS, Korean characters merged onto the previous line upon typing after inserting a newline by pressing Enter.
+* Initiating the editor with a table as the first element resulted in resize handles being displayed around the table even when the editor did not have focus.
+* If the insertion point was between two images, pressing the Backspace key would, in some situations, delete the image after the insertion point instead of the image before the insertion point.
+* Directionality commands could set the `dir` attribute on elements with a `contenteditable="false"` attribute set when these elements were within a root with a `contenteditable="false"` attribute set.
 * The content of the dialog body could not be scrolled.
-* Some toolbar items were not rendering the `not-allowed` mouse cursor.
-* Formats were incorrectly applied to the closest editable element if the selection was in a noneditable context.
-* Formats were incorrectly removed to the closest editable element if the selection was in a noneditable context.
-* Formatter API `canApply` was not returning `false` when the selection was in a noneditable context.
-* When dragging image elements and dropping the image in the editor the `dragend` event would sometimes not fire on firefox.
-* It was possible to remove links in noneditable contents with the 'unlink' editor command.
-* Direction was not visually changing when using the Directionality plugin on an element which has the `direction` CSS property set.
-* Whitespace between transparent elements would incorrectly be converted into empty paragraphs.
+* Some toolbar items, when in a not-enabled state, did not render the `not-allowed` mouse pointer.
+* Formats were incorrectly applied to the closest editable element if the selection was in a `contenteditable="false"` context.
+* Formats were incorrectly removed to the closest editable element if the selection was in a `contenteditable="false"` context.
+* Formatter API, `canApply`, was not returning `false` when the selection was in a `contenteditable="false"` context.
+* When dragging image elements and dropping the image in the editor the `dragend` event would sometimes not fire when Firefox was the host browser.
+* It was possible to remove links in noneditable contents with the `unlink` editor command.
+* Direction was not visually changing when using the Directionality plugin on an element which had the `direction` CSS property set.
+* Whitespace between transparent elements was incorrectly converted into empty paragraphs.
 * Popups were not constrained within the scrollable container when in a shadow root.
-* Pressing arrow keys inside RTL elements would move the caret in an incorrect direction when moving over elements with the `contenteditable` attribute set to `false`.
-* Inserting table consecutively without focus in the editor would result in the table being inserted at the wrong position.
-* Pasting content into the editor would not fire `beforeinput` and `input` events.
-* In some cases, the exiting a `blockquote` element could fail when the cursor was positioned at the end of the `blockquote`.
+* Pressing arrow keys inside RTL elements would move the insertion point in an incorrect direction when moving over elements with the `contenteditable` attribute set to `false`.
+* Inserting two tables consecutively without focus in the editor resulted in the second table being inserted at the wrong position.
+* Pasting content into the editor did not fire `beforeinput` and `input` events.
+* In some cases, exiting a `blockquote` element could fail when the insertion point was positioned at the end of the `blockquote`.
 * Templates containing an `<html>` tag were not parsed before being rendered for preview.
 * Typing after deleting formatted content could remove a space at the start of the typing.
 * Invalid markup in Notification and Dialog close buttons.
-* In dialogs, an incorrect `aria-describedby` attribute caused the body of the dialog to be announced when using a screen reader.
-* The sticky toolbar would not be rendered correctly when transitioning from the custom editor view to the main view.
+* In dialogs, an incorrect `aria-describedby` attribute caused the dialog body to be announced when using a screen reader.
+* The sticky toolbar did not render correctly when transitioning from the custom editor view to the main view.
 
 == 6.4.2 - 2023-04-26
 

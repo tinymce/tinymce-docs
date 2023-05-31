@@ -11,7 +11,6 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * New `table_merge_content_on_paste` option which disables the merging behaviour when pasting a table inside an existing table.
 * New optional `defaultExpandedIds` and `onToggleExpand` options to the `tree` component config.
 * New optional `defaultSelectedId` option to the `tree` component config.
-* New `help_accessibility` option which displays the keyboard shortcut to access the help functionality in the statusbar.
 * New `accordion` plugin with the `InsertAccordion` command.
 * New `accordion` and `accordion-toggle` icons.
 * New `details_initial_state` and `details_serialized_state` options.
@@ -32,6 +31,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Updated the `codesample` plugin dialog and the `template` plugin dialog to use the `listbox` component to match other dialogs.
 * If the selection contains more than one table cell, Quickbar toolbars are now positioned in the middle of the selection horizontally.
 * Exposed `dataTransfer` property of drag and drop events for elements with a `contenteditable="false"` attribute.
+* Screen readers now announce instructions for resizing the editor using arrow keys, when the resize handle is focused.
 
 === Changed
 * The `caption`, `address` and `dt` elements no longer incorrectly allow non-inline child elements when the editor schema is set to _HTML 4_.

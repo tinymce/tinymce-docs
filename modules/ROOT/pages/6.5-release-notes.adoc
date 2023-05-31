@@ -66,7 +66,7 @@ Dragging and dropping `contenteditable="false"` elements within {productname} em
 
 As a consequence, integrators were unable to view and manipulate the HTML drag data in these drag events.
 
-In {productname} 6.5, dragstart, drop, and dragend events now have their `dataTransfer` property populated with a `DataTransfer` object whose text/html data holds the outerHTML of the `contenteditable="false"` element being dragged. Additionally, a custom mode module has been implemented to ensure that the `DataTransfer` object is in read/write mode in dragstart, read-only mode in drop, and protected mode in dragend, as per standard.
+In {productname} 6.5, dragstart, drop, and dragend events now have their `dataTransfer` property populated with a `DataTransfer` object whose `text/html` data holds the outerHTML of the `contenteditable="false"` element being dragged. Additionally, a custom mode module has been implemented to ensure that the `DataTransfer` object is in read-write mode in `dragstart` events, read-only mode in `drop` events, and protected mode in `dragend` events, as per https://html.spec.whatwg.org/dev/dnd.html#concept-dnd-rw[standard].
 
 [NOTE]
 Integrators who wish to manipulate the HTML drag data should do so in the dragstart event using the `DataTransfer.setData` method.

@@ -31,7 +31,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * For word count purposes these characters are now considered punctuation marks: *$*, *~*, *+*, *|*, *№*, and *`*. They no longer increase a document’s word count.
 * Updated the `codesample` plugin dialog and the `template` plugin dialog to use the `listbox` component to match other dialogs.
 * If the selection contains more than one table cell, Quickbar toolbars are now positioned in the middle of the selection horizontally.
-* The `dataTransfer` property of drag-and-drop events for elements with a `contenteditable="false"` attribute is now exposed.
+* Exposed `dataTransfer` property of drag and drop events for elements with a `contenteditable="false"` attribute.
 
 === Changed
 * The `caption`, `address` and `dt` elements no longer incorrectly allow non-inline child elements when the editor schema is set to _HTML 4_.

@@ -59,7 +59,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 == Additions
 {productname} 6.5 also includes the following additions:
 
-=== New `DataTransfer`, `DataTransferContent`, `DataTransferEvent`, and `DataTransferMode` APIs to handle creating and manipulating `DataTransfer` objects.
+=== Exposed `dataTransfer` property of drag and drop events for elements with a `contenteditable="false"` attribute.
 //#TINY-9601
 
 Dragging and dropping `contenteditable="false"` elements within {productname} emits dragstart, drop, and dragend events as expected. However, in previous versions of {productname}, these drag events had their `dataTransfer` property set to null, whereas according to web standards it should be set to a `DataTransfer` object holding the drag operation's data.

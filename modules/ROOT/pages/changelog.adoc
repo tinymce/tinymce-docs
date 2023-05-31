@@ -21,9 +21,9 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * New `EditableRootStateChange` event that gets dispatched when the state of the editable root is changed.
 
 === Improved
-* Screen readers are now able to announce the highlighted menu item of link comboboxes.
-* Now `icon` field for dialog footer `togglebutton`s is not mandatory.
-* Toolbar buttons and menu items were not disabled when they couldn't be used on noneditable content.
+* Screen readers can now announce highlighted items listed in the Link dialog’s link combobox.
+* The `icon` field for a dialog’s footer `togglebutton` is no longer mandatory.
+* Toolbar buttons and menu items now present as disabled when they cannot be used because a selected element has a `contenteditable="false"` attribute.
 * Help text displayed at *Help -> Help -> Keyboard Navigation* re-written.
 * Translations added for Help text displayed at *Help > Help > Keyboard Navigation*.
 * For word count purposes these characters are now considered punctuation marks: *$*, *~*, *+*, *|*, *№*, and *`*. They no longer increase a document’s word count.

@@ -1,0 +1,50 @@
+[[table_merge_content_on_paste]]
+== `+table_merge_content_on_paste+`
+
+This option sets the behavior of the editor when a table is pasted into another table.
+
+(If the insertion point is within a table or the current selection includes any part of a table, paste events happens into the table.)
+
+When set to `+true+`, pasting a table into another table replaces the extant table with the pasted table. It merges the pasted table into the extant table, replacing the extant table in the process.
+
+When set to `+false+`, pasting a table into another table creates a new table within the selected cell of the extant table.
+
+The specific behavior, when this option is set to `+false+`, depends on the nature of the current selection.
+
+. If there is no selection (ie the insertion point is within a cell), pasting a table in
+  * pastes the table at the insertion point;
+  * places material in the cell before the insertion point above the pasted-in table; and
+  * places material in the cell after the insertion point after the pasted-in table.
+
+. If the selection is the complete contents of a cell, pasting a table in
+  * replaces those contents; and
+  * puts the pasted-in table into the, now otherwise empty, table cell.
+
+. If the selection is the complete contents of more than one cell, pasting a table in
+  * replaces those contents;
+  * puts the pasted-in table into the first selected cell; and
+  * removes the other selected cells from the extant table.
+
+. If the selection is the complete contents of more than one cell and the partial contents of a final cell, pasting a table in
+  * replaces the contents of the completely selected cells;
+  * places the pasted-in table in the first selected cell;
+  * removes the other completely selected cells; and
+  * leaves the partially selected cell unchanged.
+
+This option is set to `+true+` by default.
+
+*Type:* `+Boolean+`
+
+*Default value:* `+true+`
+
+*Possible values:* `+true+`, `+false+`
+
+=== Example: using `+table_merge_content_on_paste+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  table_merge_content_on_paste: false
+});
+----

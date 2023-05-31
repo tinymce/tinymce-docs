@@ -77,6 +77,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Invalid markup in Notification and Dialog close buttons.
 * In dialogs, an incorrect `aria-describedby` attribute caused the dialog body to be announced when using a screen reader.
 * The sticky toolbar did not render correctly when transitioning from the custom editor view to the main view.
+* Fixed the constrained bounds calculation for dismissal of the toolbar when using `toolbar_location: 'bottom'`.
 
 == 6.4.2 - 2023-04-26
 

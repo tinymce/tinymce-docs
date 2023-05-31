@@ -76,7 +76,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 The `direction` style takes precendence over than the `dir` attribute in many cases when determining an element's direction. However, in previous versions of {productname}, the Directionality plugin only affected the `dir` attribute and did not consider any `direction` style, whether inline or from a stylesheet. Consequently, the Directionality plugin did not visually affect elements with a `direction` style.
 
-In the latest version, {productname} 6.5, the Directionality plugin has been improved. It now takes into account the `direction` style while still giving priority to the `dir` attribute. First, any inline `direction` style is removed if present. Then, the standard `dir` attribute logic is applied. Finally, it determines if an inline `direction` style is needed for the desired visual change in `direction`. The final addition of an inline `direction` style often occurs if the element derives a different style from a stylesheet.
+In the latest version, {productname} 6.5, the Directionality plugin has been improved. It now takes into account the `direction` style while still giving priority to the `dir` attribute. First, any inline `direction` style is removed if present. Then, the standard `dir` attribute logic is applied. Finally, it determines if an inline `direction` style is needed for the desired visual change in `direction`. The final addition of an inline `direction` style would often occur if the element derives a different `direction` style from a stylesheet. As a result, the Directionality plugin now functions as expected for elements with a `direction` style applied.
 
 [[security-fixes]]
 == Security fixes

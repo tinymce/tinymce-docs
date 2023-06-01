@@ -14,7 +14,7 @@ The specific behavior, when this option is set to `+false+`, depends on the natu
 . If there is no selection (ie the insertion point is within a cell), pasting a table in
   * pastes the table at the insertion point;
   * places material in the cell before the insertion point above the pasted-in table; and
-  * places material in the cell after the insertion point after the pasted-in table.
+  * places material in the cell after the insertion point below the pasted-in table.
 
 . If the selection is the complete contents of a cell, pasting a table in
   * replaces those contents; and

@@ -49,6 +49,21 @@ This resulted in an inconsistent end-user experience.
 
 For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
 
+=== Footnotes 1.0.1
+
+The {productname} 6.5 release includes an accompanying release of the **Footnotes** premium plugin.
+
+**Footnotes** 1.0.1 includes one fix:
+
+=== The insert template button and menu item was not disabled when the selection was in a non-editable context.
+//#TINY-9892
+
+In previous versions of {productname}, the insert template button and menu item remained enabled even in `contenteditable="false"` contexts.
+
+As a consequence, no action occured when attempting to insert a template into a `contenteditable="false"` root.
+
+In {productname} 6.5, the button and toolbar item will now be disabled when the selection is in a `contenteditable="false"` context.
+
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement
 

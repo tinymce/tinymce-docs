@@ -108,6 +108,15 @@ In previous versions of {productname}, an issue was identified in the close butt
 
 In {productname} 6.5, the markup was fixed by replacing the div element with a `<span>` element, aligning it with HTML guidelines. As a result, the updated close buttons now pass HTML markup checkers without throwing errors.
 
+=== Context menus and menu items were not constrained within the scrollable container if the parent is a Shadow Host
+//#TINY-9743
+
+In previous versions of {productname}, context menus and menu items would overflow beyond the editor's bounds. 
+
+To fix this issue {productname} 6.5 added support for the `ShadowDom` when the scrollable container is inside the `ShadowRoot` and is the parent of the Shadow Host.
+
+As a result context menus and menu items are now constrained within the scrollable container if the parent is a Shadow Host.
+
 [[security-fixes]]
 == Security fixes
 

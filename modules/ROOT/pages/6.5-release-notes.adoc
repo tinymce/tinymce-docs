@@ -73,6 +73,12 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following improvements:
 
+=== Screen readers now announce instructions for resizing the editor using arrow keys, when the resize handle is focused.
+//#TINY-9793
+
+In previous versions of {productname}, when using voice assistant software when focused on the editor's resize handle it would not announce any instructions to the user.
+
+In {productname} 6.5, the voice assistant software will now announce instructions  to the user for adjusting the size of the editor, by using directional arrow keys such as `↑` arrow up, `↓` arrow down ,  `→` arrow right,  and  `←` arrow left, when the editor resize handle is focused.
 
 [[additions]]
 == Additions

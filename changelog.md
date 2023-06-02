@@ -13,6 +13,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 - DOC-1953: new file, `/modules/ROOT/partials/configuration/advtemplate_templates.adoc`, added. Documentation of new Advanced Template plugin option, `advtemplate_templates`, added to new file.
 - DOC-2030: document new Spell Checker Pro features: `mceSpellcheckUpdate` command; `SpellcheckerUpdated` event; and `getSpellingErrors()` API.
 - DOC-2028: Add release-notes template to `staging` for 6.5.
+- DOC-2029: Added new partials, `editable_root.adoc` and `newdocument_content.adoc`, to `/configuration/`. Also added includes for both to `content-behavior-options.adoc`.
 
 ### 2023-05-03
 

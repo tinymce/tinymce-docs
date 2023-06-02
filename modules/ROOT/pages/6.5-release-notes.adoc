@@ -49,6 +49,26 @@ This resulted in an inconsistent end-user experience.
 
 For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
 
+=== Advanced Typography 1.1.2
+
+The {productname} 6.5 release includes an accompanying release of the **Advanced Typography** premium plugin.
+
+**Advanced Typography** 1.1.2 includes two fixes:
+
+=== Typography buttons are disabled in non-editable sections of the editor.
+//#TINY-9468
+
+In previous versions of {productname}, the Typography button was still enabled when the user selected a `contenteditable="false"` element within the editor.
+
+In version 6.5, an update was applied to the Advanced Typography plugin, that now disables the button and its function when the selection is in a `contenteditable="false"` selection.
+
+=== Typography command no longer applies fixes if the selection is non-editable.
+//#TINY-9468
+
+In previous versions of {productname}, applying the `mceTypography` execCommand while the selection was in a `contenteditable="false"` element would apply changes to the users selection.
+
+In version 6.5, an update was applied to the Advanced Typography plugin, that now disables the `mceTypography` execCommand if the users selection is within a `contenteditable="false"` element.
+
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement
 

@@ -108,6 +108,15 @@ In previous versions of {productname}, an issue was identified in the close butt
 
 In {productname} 6.5, the markup was fixed by replacing the div element with a `<span>` element, aligning it with HTML guidelines. As a result, the updated close buttons now pass HTML markup checkers without throwing errors.
 
+=== Fixed the constrained bounds calculation for dismissal of toolbar when using `toolbar_location: 'bottom'`.
+//#TINY-9718
+
+In previous versions of {productname}, a bug was identified that affected the constrained bound calculations for toolbar dismissals, when the `toolbar_location: 'bottom'` option was set.
+
+As a consequence, when this configuration was used within a scrollable container, scrolling downwards would result in the premature dismissal of the toolbar, before reaching the bottom of the editor.
+
+In {productname} 6.5, updates were made to the bounds calculation so the dismissal of the toolbar, only occurs after the user scrolls past the bottom of the editor.
+
 [[security-fixes]]
 == Security fixes
 

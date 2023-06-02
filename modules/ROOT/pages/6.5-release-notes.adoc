@@ -83,9 +83,9 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 In previous versions of {productname}, an issue was identified that affected unlisted Vimeo videos from been added to the editor when using the media plugin.
 
-As a consequence, the media plugin failed to correctly insert the video into the content due to the absence of the "h" parameter in the source URL, which was parsed by the {productname}.
+As a consequence, the media plugin failed to correctly insert the video into the content due to {productname} ignoring the "h" parameter when parsing the source URL.
 
-In {productname} 6.5, the "h" parameter in the source URL is now added by {productname}.
+In {productname} 6.5, the "h" parameter is now parsed and included in the source URL by {productname}.
 
 As a result, embedding Vimeo videos into a {productname} editor using the media plugin now works as expected.
 

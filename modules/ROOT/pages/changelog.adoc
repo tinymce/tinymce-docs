@@ -4,10 +4,10 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
-== 6.5 - 2023-06-01
+== 6.5 - 2023-06-05
 
 === Added
-* Support for `h` hash parameter in vimeo video url in the Media plugin.
+* Support for the `h` hash parameter in Vimeo video URLs in the Media plugin.
 * New `table_merge_content_on_paste` option which disables the merging behaviour when pasting a table inside an existing table.
 * New optional `defaultExpandedIds` and `onToggleExpand` options to the `tree` component config.
 * New optional `defaultSelectedId` option to the `tree` component config.
@@ -15,11 +15,12 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * New `accordion` and `accordion-toggle` icons.
 * New `details_initial_state` and `details_serialized_state` options.
 * New `init_content_sync` option that initializes the editor iframe using `document.write` instead of `srcdoc`.
-* New `newdocument_content` option that changes the content that will be set when using the `New document` button.
-* New `editable_root` option that can be set to `false` to prevent editing of the editors root element.
+* New `newdocument_content` option that sets the content presented in the editor on choosing *File -> New document* or pressing the *New document* toolbar button.
+* New `editable_root` option that can be set to `false` to prevent editing of the editor’s root element.
 * New `editor.setEditableRoot` API that sets the editable state of the editor root element.
 * New `editor.hasEditableRoot` API that returns `true` or `false` depending on the editable state of the editor root element.
 * New `EditableRootStateChange` event that gets dispatched when the state of the editable root is changed.
+* Added Oxide styles for `dl`, `dt`, `dd`, `ol`, and `strong` elements in dialog body content.
 
 === Improved
 * Screen readers can now announce highlighted items listed in the Link dialog’s link combobox.

@@ -78,7 +78,12 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Invalid markup in Notification and Dialog close buttons.
 * In dialogs, an incorrect `aria-describedby` attribute caused the dialog body to be announced when using a screen reader.
 * The sticky toolbar did not render correctly when transitioning from the custom editor view to the main view.
+* Saving the Table Properties dialog after changing properties unrelated to cells would overwrite cell properties set by the Cell Properties dialog.
 * Fixed the constrained bounds calculation for dismissal of the toolbar when using `toolbar_location: 'bottom'`.
+* The floating toolbar did not occupy the entire available space when the page used a CSS flexible box layout (aka a Flexbox layout).
+* Pressing the Backspace or Delete key when the insertion point was within a `details` element resulted in broken markup.
+* Making the selection into a list did not work if the selection included a block element with a `contenteditable=false` attribute.
+* Inserting elements in the middle of the summary caused two summaries to appear within `details` elements.
 
 == 6.4.2 - 2023-04-26
 

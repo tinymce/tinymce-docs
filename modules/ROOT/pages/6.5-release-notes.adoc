@@ -128,3 +128,13 @@ In {productname} 6.5, the markup was fixed by replacing the div element with a `
 This section describes issues that users of {productname} 6.5 may encounter and possible workarounds for these issues.
 
 There are several known issues in {productname} 6.5.
+
+=== Screen readers are currently only supported in English ('en') when announcing instructions for resizing the editor.
+//#TINY-9793
+
+
+In {productname} 6.5, introduced announcing instructions for adjusting the editor's size using arrow keys to support screen readers.
+
+However, there is a known issue where this new instruction is currently only available in English ('en') when resizing the editor. 
+
+NOTE: that future releases of {productname} will include additional translations to provide broader support.

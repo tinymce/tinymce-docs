@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2066: Added TINY-9823 to `staging`.
 - DOC-2049: Added multiple `/partial/misc/admon-requires-6.<x>v.adoc` files for use as required by 6.5-and-later specific docs.
 - DOC-2047: Added TINY-9848 to `staging`.
 - DOC-2048: Added TINY-9812 to `staging`.

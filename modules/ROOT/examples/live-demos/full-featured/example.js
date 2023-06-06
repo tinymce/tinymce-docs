@@ -3,13 +3,13 @@ const isSmallScreen = window.matchMedia('(max-width: 1023.5px)').matches;
 
 tinymce.init({
   selector: 'textarea#full-featured',
-  plugins: 'preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link media mediaembed template codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker editimage help formatpainter permanentpen pageembed charmap tinycomments mentions quickbars linkchecker emoticons advtable export footnotes mergetags autocorrect typography advtemplate',
+  plugins: 'preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker editimage help formatpainter permanentpen pageembed charmap tinycomments mentions quickbars linkchecker emoticons advtable export footnotes mergetags autocorrect typography advtemplate',
   tinydrive_token_provider: 'URL_TO_YOUR_TOKEN_PROVIDER',
   tinydrive_dropbox_app_key: 'YOUR_DROPBOX_APP_KEY',
   tinydrive_google_drive_key: 'YOUR_GOOGLE_DRIVE_KEY',
   tinydrive_google_drive_client_id: 'YOUR_GOOGLE_DRIVE_CLIENT_ID',
   mobile: {
-    plugins: 'preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link media mediaembed template codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker help formatpainter pageembed charmap mentions quickbars linkchecker emoticons advtable footnotes mergetags autocorrect typography advtemplate',
+    plugins: 'preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker help formatpainter pageembed charmap mentions quickbars linkchecker emoticons advtable footnotes mergetags autocorrect typography advtemplate',
   },
   menu: {
     tc: {
@@ -18,7 +18,7 @@ tinymce.init({
     }
   },
   menubar: 'file edit view insert format tools table tc help',
-  toolbar: 'undo redo | bold italic underline strikethrough | typography | fontfamily fontsize blocks | alignleft aligncenter alignright alignjustify | inserttemplate addtemplate | outdent indent | numlist bullist checklist | forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | a11ycheck ltr rtl | showcomments addcomment | footnotes | mergetags',
+  toolbar: 'undo redo | bold italic underline strikethrough | typography | fontfamily fontsize blocks | alignleft aligncenter alignright alignjustify | inserttemplate addtemplate | outdent indent | numlist bullist checklist | forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media pageembed link anchor codesample | a11ycheck ltr rtl | showcomments addcomment | footnotes | mergetags',
   toolbar_sticky: true,
   toolbar_sticky_offset: isSmallScreen ? 102 : 108,
   autosave_ask_before_unload: true,
@@ -95,13 +95,6 @@ tinymce.init({
     { title: 'Some class', value: 'class-name' }
   ],
   importcss_append: true,
-  templates: [
-    { title: 'New Table', description: 'creates a new table', content: '<div class="mceTmpl"><table width="98%%"  border="0" cellspacing="0" cellpadding="0"><tr><th scope="col"> </th><th scope="col"> </th></tr><tr><td> </td><td> </td></tr></table></div>' },
-    { title: 'Starting my story', description: 'A cure for writers block', content: 'Once upon a time...' },
-    { title: 'New list with dates', description: 'New List with dates', content: '<div class="mceTmpl"><span class="cdate">cdate</span><br><span class="mdate">mdate</span><h2>My List</h2><ul><li></li><li></li></ul></div>' }
-  ],
-  template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
-  template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
   height: 600,
   image_caption: true,
   quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',

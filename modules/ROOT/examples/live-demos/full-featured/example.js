@@ -81,7 +81,7 @@ tinymce.init({
         ]
       }
     ]);
-  }
+  },
   link_list: [
     { title: 'My page 1', value: 'https://www.tiny.cloud' },
     { title: 'My page 2', value: 'http://www.moxiecode.com' }

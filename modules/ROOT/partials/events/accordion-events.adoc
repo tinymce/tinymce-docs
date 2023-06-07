@@ -1,0 +1,8 @@
+The following events are provided by the xref:accordion.adoc[Accordion plugin].
+
+[cols="1,1,2",options="header"]
+|===
+|Name |Data |Description
+|ToggledAccordion |Fired when an accordion is toggled. Passes the actual state (`+true+` or `~+false+`) and the element.
+|ToggledAllAccordion |Fired when all accordions are toggled. Passes the actual state (`+true+` or `~+false+`, or undefined) and all the affected elements.
+|===

@@ -11,5 +11,5 @@ tinymce.init({
   'alignright alignjustify | bullist numlist outdent indent | ' +
   'removeformat | help',
   editable_root: false,
-  newdocument_content: '<div contenteditable="true">Editable content</div>'
+  newdocument_content: '<div id="template"; contenteditable="true">Editable content</div>'
 });

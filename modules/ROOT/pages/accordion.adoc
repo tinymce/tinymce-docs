@@ -1,13 +1,15 @@
 = Accordion plugin
 :navtitle: Accordion
-:description: <What does this plugin do? What is the benefit? (One sentence description)>.
-:description_short: <Like description, but shorter (if possible)>.
-:keywords: plugin, accordion, etc.
+:description: Creates sections that can be expanded or collapsed to show or hide content.
+:description_short: Creates expandable and collapsible sections.
+:keywords: plugin, accordion, collapse, expand, show, reveal, hide.
 :pluginname: Accordion
 :plugincode: accordion
 :plugincategory: opensource
 
-The Accordion plugin allows for the creation of collapsible sections in a document that can be expanded or collapsed to show or hide additional content.
+include::partial$misc/admon-requires-6.5v.adoc[]
+
+The Accordion plugin allows for the creation of sections in a document that can be expanded or collapsed to show or hide additional content.
 
 == Interactive example
 
@@ -52,6 +54,8 @@ The menu items are the same as another plugin, assign the other plugin's identif
 Don’t forget to add this to available-menu-items.adoc
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
+////
+
 == Commands
 
 The {pluginname} plugin provides the following {productname} commands.
@@ -64,10 +68,11 @@ The {{pluginname}} plugin provides the following events.
 
 include::partial$events/{plugincode}-events.adoc[]
 
+
+
 == APIs
 
 The {{pluginname}} plugin provides the following APIs.
 
 include::partial$plugin-apis/{plugincode}-apis.adoc[]
 
-////

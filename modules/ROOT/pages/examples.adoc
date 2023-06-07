@@ -1,0 +1,75 @@
+= {productname} {productmajorversion} Examples
+:description: {productname} {productmajorversion} Examples
+:keywords: examples, demos, working ideas,
+
+This table sets out the {productname} general working examples included in the {productname} documentation.
+
+[cols="1,1"]
+|===
+
+a|
+[.lead]
+xref:basic-example.adoc[Basic example]
+
+Basic working editor example.
+
+a|
+[.lead]
+xref:full-featured-open-source-demo.adoc[Full-featured demo including Open Source features]
+
+Fully-featured editor example including all Open Source plugins.
+
+a|
+[.lead]
+xref:full-featured-premium-demo.adoc[Full-featured demo Including Open Source and Premium features]
+
+Fully-featured editor example, including all Open Source plugins and almost all Premium plugins.
+
+a|
+[.lead]
+xref:classic-demo.adoc[Classic editor mode]
+
+Working {productname} editor in Classic editor mode.
+
+a|
+[.lead]
+xref:inline-demo.adoc[Inline editor]
+
+Working {productname} editor in Inline mode.
+
+a|
+[.lead]
+xref:distraction-free-demo.adoc[Distraction-free editor]
+
+Working {productname} editor in Distraction-free mode.
+
+// Dummy table cell.
+// 1. Remove the inline comment markup pre-pending this
+//    element when the number of cells in the table is
+//    odd.
+// 2. Prepend the inline comment markup to this element
+//    when the number of cells in the table is even.
+//a|
+
+|===
+
+This table sets out {productname} use-case–specific basic working examples included in the {productname} documentation.
+
+[cols="1,1"]
+|===
+
+a|
+[.lead]
+xref:example-template-creation.adoc[Template creation]
+
+Using {productname} to create re-usable and partially-editable templates.
+
+// Dummy table cell.
+// 1. Remove the inline comment markup pre-pending this
+//    element when the number of cells in the table is
+//    odd.
+// 2. Prepend the inline comment markup to this element
+//    when the number of cells in the table is even.
+a|
+
+|===

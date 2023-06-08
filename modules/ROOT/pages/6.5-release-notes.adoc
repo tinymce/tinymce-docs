@@ -115,7 +115,7 @@ In previous versions of {productname}, pasting content into the editor would not
 
 This is contrary to [web standards](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event), which states that an `input` event should be fired when the value of a `<textarea>` element is changed.
 
-In {productname} 6.5, a `beforeinput` event and an `input` event, both with an “insertFromPaste” inputType property, are now fired in order when content is pasted into  the {productname} <textarea> field. In addition, the `beforeinput` event will also hold a `DataTransfer` object which contains the text/html data being pasted.
+In {productname} 6.5, a `beforeinput` event and an `input` event, both with an “insertFromPaste” `inputType` property, are now fired in order when content is pasted into {productname}. In addition, the `beforeinput` event will also hold a `DataTransfer` object which contains the `text/html` data being pasted.
 
 [[security-fixes]]
 == Security fixes

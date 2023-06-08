@@ -80,7 +80,7 @@ In previous versions of {productname}, translations for the text on the “Keybo
 
 In {productname} 6.5, a new pipeline has been implemented for delivering translations of long strings. Professional translations of text within the “Keyboard Navigation” tab inside the Help dialog have also been procured.
 
-As a result, the text is now shown in the language specified by the language option.
+As a result, the text in the Help dialog's "Keyboard Navigation" tab is now shown in the language specified by the `language` option.
 
 [NOTE]
 Due to the large differences between this new pipeline and conventional methods of delivering translations, the professional translations for the text on the “Keyboard Navigation” tab have been made **open-source** in the `i18n` subdirectory in the Help plugin for _community users_.

@@ -113,7 +113,7 @@ In {productname} 6.5, the markup was fixed by replacing the div element with a `
 
 In previous versions of {productname}, when the user modified a field within the Table Properties dialog, upon saving, the modified change set in the Cell Properties dialog would be replaced by the corresponding properties from the Table Properties dialog, even if the latter properties were not actually changed.
 
-For example, if the user adjusted the border `width` and border `color` of a cell using the Cell Properties dialog, then made a modification in the Table Properties dialog unrelated to those properties, such as alignment, the modified border `width` and `color` of the cell would unexpectedly revert to the modified values from the Table Properties dialog upon saving.
+For example, if the user adjusted the border width and border color of a cell using the Cell Properties dialog, then made a modification in the Table Properties dialog unrelated to those properties, such as alignment, the modified border width and color of the cell would revert to the corresponding values from the Table Properties dialog upon saving, thereby unexpectedly undoing the initial modifications in the Cell Properties dialog.
 
 In {productname} 6.5, the Table Properties dialog will continue to be the "source-of-truth" and have the ability to overwrite cell and row properties like border width and color. However, the Table Properties dialog will only overwrite those properties if they were modified in the dialog.
 

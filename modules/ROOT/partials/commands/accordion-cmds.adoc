@@ -1,18 +1,24 @@
 [cols="1,3",options="header"]
 |===
-|Command |Description
-|
-|
-|
-|
-|
-|
-|
+|Name |Arguments |Description
+|InsertAccordion |none
+|ToggleAccordion |`+true+` `+false+` optional `+state+` |Toggles an accordion’s state. Uses the optional `+state+` variable to determine the current state.
+|ToggleAllAccordions |`+true+` `+false+` optional `+state?+` |Toggles the state of all accordions in the current document. Uses the optional `+state+` variable to determine the current state.
+|RemoveAccordion |none |Removes an accordion at the current position.
 |===
 
 .Examples
 [source,js]
 ----
+// inserts an accordion section at the current position
+tinymce.activeEditor.execCommand('InsertAccordion');
 
+// sets the accordion at the current position to open
+tinymce.activeEditor.execCommand(ToggleAccordion('true'));
+
+// sets all accordions in the current document to closed
+tinymce.activeEditor.execCommand(ToggleAllAccordions('false'));
+
+// removes the accordion at the current position
+tinymce.activeEditor.execCommand(RemoveAccordion());
 ----
-

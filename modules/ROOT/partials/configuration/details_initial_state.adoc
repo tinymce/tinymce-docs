@@ -1,0 +1,51 @@
+[[details_initial_state]]
+== `details_initial_state`
+
+This option sets the state of Accordion sections
+
+* when they are created; and
+* when they are already extant as an editor loads.
+
+When set to `+collapsed+`, all Accordions will present as closed on creation and on the editor loading.
+
+When set to `+expanded+`, all Accordions will present as open on creation and on the editor loading.
+
+When set to `+inherited+`, Accordions preserve their individual state and present as open when created.
+
+The default value for this option is `+inherited+`.
+
+*Type:* `+String+`
+
+*Possible values:* `+inherited+`, `+collapsed+`, `+expanded+`
+
+*Default value:* `+inherited+`
+
+=== Example: using `details_initial_state` to set all created Accordion sections to present as closed by default
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  plugins: accordion
+  details_initial_state: 'collapsed'
+});
+----
+
+=== Example: using `details_initial_state` to set pre-configured `<details>` content in new {productname} documents to present as open
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  newdocument_content: '<details><summary>Accordion summary...</summary><p>Accordion body...</p></details>',
+  details_initial_state: 'expanded',
+});
+----
+
+NOTE
+.Accordion plugin not required
+====
+The option does not require the xref:accordion.adoc[Accordion] plugin be loaded to come into effect.
+
+In the above example, when *File → New document* is selected, the xref:content-behavior-options#newdocument_content[`newdocument_content`] option puts a `<details>` element into the new editor instance and the `details_initial_state` option causes that element to present as open.
+====

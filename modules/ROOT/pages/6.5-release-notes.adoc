@@ -71,21 +71,23 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
-=== Command + backspace would not add an undo level on Mac.
+=== Pressing Command+Delete did not add an undo level on systems running macOS.
 //#TINY-8910
 
-In previous versions of {productname}, specifically on MacOS systems, the `command + backspace` keyboard shortcut, would not create an undo level. When this shortcut is used, the entire line at the cursor's position is deleted as intended, but no undo level is registered.
+On systems running macOS, the Command+Delete (⌘+Delete) keyboard shortcut deletes the material from the insertion point to the beginning of the line. Previously, however, when this shortcut was used in a {productname} instance, the expected undo level was not registered.
 
-To address this issue, {productname} added updates that now register an undo level after the `command + backspace` shortcut is pressed.
+A workaround did exist. If a further action was taken (eg text was entered or the Delete key was pressed to remove another character) the new action and the ⌘+Delete action were both added to the undo stack.
 
-As a result, users can now undo the operation performed by pressing `command + z` in {productname} 6.5.
+With this update, the {productname} editor now registers an undo level when the ⌘+Delete shortcut is used, allowing end-users to undo the action immediately (by, for example, pressing ⌘+Z) and without having to add a further action.
 
-=== Ctrl + backspace and Ctrl + delete would not restore correct caret position after redo.
+=== Ctrl+backspace and Ctrl+delete did not restore the insertion point position correctly on Windows after an undo or redo operation.
 //#TINY-8910
 
-In previous versions of {productname} on Windows, when the `ctrl+delete` shortcut was used followed by the `undo` and `redo` operations, the caret would end up in an incorrect position.
+On systems running Windows, the Ctrl+Delete keyboard shortcut deletes all characters to the left of the insertion point, up to the next word boundary and the Ctrl+Backspace keyboard shortcut deletes all characters to the right of the insertion point, up to the next word boundary.
 
-In {productname} 6.5, the issue has been resolved, resulting in the caret moving to the correct position.
+In previous versions of {productname}, however, if either the ctrl+delete or ctrl+backspace keyboard shortcut was used and immediately followed by an *undo* or *redo* operation, the insertion point was re-set incorrectly (often, but not always, at the beginning of the line affected by the operations).
+
+This issue was resolved for this release: using either the ctrl+delete or ctrl+backspace keyboard shortcut and an undo or redo operation in turn now sees the insertion point placed correctly, as expected.
 
 [[security-fixes]]
 == Security fixes

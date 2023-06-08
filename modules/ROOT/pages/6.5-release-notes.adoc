@@ -78,7 +78,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 In previous versions of {productname}, translations for the text on the “Keyboard Navigation” tab on the Help dialog were not available due to a flaw with the way translations were delivered. Conventionally, translations were parsed into JavaScript files containing objects which were keyed by the English string, with the value being the translated equivalent in a different language. This was unsuitable for very long strings such as the text on the “Keyboard Navigation” tab.
 
-In {productname} 6.5, a new pipeline has been implemented for delivering translations for both long strings and professional translations for text within the “Keyboard Navigation” tab inside the Help dialog.
+In {productname} 6.5, a new pipeline has been implemented for delivering translations of long strings. Professional translations of text within the “Keyboard Navigation” tab inside the Help dialog have also been procured.
 
 As a result, the text is now shown in the language specified by the language option.
 

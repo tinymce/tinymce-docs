@@ -30,23 +30,25 @@
 
 The following premium plugin updates were released alongside {productname} 6.5.
 
-=== Spellchecker Pro 3.3.0
+=== Spell Checker Pro 3.3.0
 
-The {productname} 6.5 release includes an accompanying release of the **Spellchecker Pro** premium plugin.
+The {productname} 6.5 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
 
-**Spellchecker Pro** 3.3.0 includes one addition:
+**Spell Checker Pro** 3.3.0 includes three additions:
 
-=== Enhancements to Spellchecking Functionality in Spellchecker Pro
-//#TINY-9632
+==== New `mceSpellcheckUpdate` command
 
-Spellchecker Pro introduces three new features with {productname} 6.5.
+The new `mceSpellcheckUpdate` command allows users to trigger a check for misspelled words in the editor content, and includes any spelling suggestions for the misspelt words. This allows users to verify their spelling all at once without the use of the Spellchecker dialog, with any suggestions available from a context menu.
 
-* Firstly, the addition of the `mceSpellcheckUpdate` command which allows users to automatically check their editor content for misspelled words. This command not only identifies the errors but also offers suggestions for correcting them.
-* Secondly, the `SpellcheckerUpdated` event, along with the accompanying spelling object, is triggered when the editor undergoes a spell check. This event is currently supported when using the `mceSpellcheckUpdate` command or when opening the dialog, but not in real-time as-you-type mode.
-* Lastly, the `getSpellingErrors()` API has been incorporated, enabling users to obtain an array that contains each misspelled word found in the content.
+==== New `SpellcheckerUpdated` event
+
+The new `SpellcheckerUpdated` event is triggered each time the editor content is updated to display any new misspelt words, once suggestions are provided for those misspelt words. This event is currently supported when using the `mceSpellcheckUpdate` command or when opening the dialog. This event is currently not supported in As-you-type mode.
+
+==== New `getSpellingErrors()` API
+The new `getSpellingErrors()` API allows users to retrieve a list of each misspelling in the editor content.
 
 [NOTE]
-Read more about Spellchecker Pros new features xref:ROOT:introduction-to-tiny-spellchecker.adoc[here].
+Read more about xref:ROOT:introduction-to-tiny-spellchecker.adoc[new Spell Checker Pro features here].
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement

@@ -66,6 +66,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 {productname} 6.5 also incorporates the following changes:
 
 === Elements in the Insert → Link… dialog did not allow screen readers to announce listed items.
+//#TINY-9280
 
 For example, the first UI element in the {productname} *Insert → Link…* dialog is a text-entry field labelled *URL*. When this element is navigated to using a screen reader, it is announced as a combobox and pressing the down arrow opens the combobox and presents available options.
 

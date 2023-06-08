@@ -17,9 +17,9 @@ liveDemo::{plugincode}[]
 
 == Basic setup
 
-To add the {pluginname} plugin to the editor, add `+{plugincode}+` to the `+plugins+` option in the editor configuration.
+To add the {pluginname} plugin to the editor, add `{plugincode}` to the `+plugins+` option in the editor configuration.
 
-To add the {pluginname} toolbar icon to the {productname} toolbar, add `+{plugincode}+` to the `+toolbar+` option in the editor configuration.
+To add the {pluginname} toolbar icon to the {productname} toolbar, add `{plugincode}` to the `+toolbar+` option in the editor configuration.
 
 For example:
 
@@ -27,8 +27,8 @@ For example:
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: '{plugincode}',
-  toolbar: '{plugincode}',
+  plugins: 'accordion',
+  toolbar: 'accordion',
 });
 ----
 

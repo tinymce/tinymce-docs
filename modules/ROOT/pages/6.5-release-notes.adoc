@@ -111,7 +111,7 @@ In {productname} 6.5, the markup was fixed by replacing the div element with a `
 === Pasting content into the editor would not fire an input event.
 //#TINY-9829
 
-In previous versions of {productname}, pasting content into the editor would not fire an input event.
+In previous versions of {productname}, pasting content into the editor would not fire an `input` event.
 
 This is contrary to [web standards](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event), which states that an `input` event should be fired when the value of a `<textarea>` element is changed.
 

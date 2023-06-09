@@ -78,12 +78,24 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 == Additions
 {productname} 6.5 also includes the following additions:
 
+=== Dialog `tabpanel` tab labels are now allowed to word wrap for better readability with long labels.
+//#TINY-9947
+
+In {productname} 6.5, improvements were made to the `tabpanel` dialogs, which now allows labels on the tabs to wrap to multiple lines if necessary. This improves the readability of the tab labels, particularly with languages that contain longer labels.
+
+As a result, the recently translated keyboard navigation text on the help dialog is now easily readable in all languages, without compromising the width of the dialog tab buttons.
 
 [[changes]]
 == Changes
 
 {productname} 6.5 also incorporates the following changes:
 
+=== Help dialog was restored to `medium` width for better readability.
+//#TINY-9947
+
+A change was made in {productname} 6.4 that unintentionally caused the help dialog to become narrower.
+
+As a result, users experienced difficulty in reading the content, especially in languages other than English. To address this issue, the width of the help dialog has now been restored to its previous size, ensuring better readability for all users.
 
 [[bug-fixes]]
 == Bug fixes

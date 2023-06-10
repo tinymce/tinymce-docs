@@ -1,11 +1,17 @@
 [[init_content_sync]]
 == `+init_content_sync+`
 
+include::partial$misc/admon-requires-6.5v.adoc[]
+
 This option determines whether the iframe is initialized synchronously or asynchronously.
 
-When disabled, the editor is initialized asynchronously using `srcdoc`, however this can occasionally cause the editor to flicker during initialization.
+When disabled, the editor is initialized asynchronously using `srcdoc`. This can, occasionally, cause the editor to flicker during initialization.
 
-When enabled, the editor will be initialized using `document.write`, which can reduce this flickering, but some flicker could still occur, such as loading the content css.
+When enabled, the editor is initialized synchronously, using `document.write`. This can reduce flickering.
+
+Flickering can still occur during synchronous initialization, however, such as when loading the content css.
+
+NOTE: using the https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#document.write()[`document.write`] method is https://developer.mozilla.org/en-US/docs/Web/API/Document/write[strongly discouraged].
 
 *Type:* `+Boolean+`
 
@@ -17,7 +23,8 @@ When enabled, the editor will be initialized using `document.write`, which can r
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  init_content_sync: true 
+  init_content_sync: 'true',
 });
 ----
 
+NOTE: When {productname} is running in xref:use-tinymce-inline.adoc[inline mode] (ie, when `+inline: true+` is set), setting `init_content_sync: true` has no effect.

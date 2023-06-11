@@ -34,6 +34,8 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Exposed `dataTransfer` property of drag and drop events for elements with a `contenteditable="false"` attribute.
 * Screen readers now announce instructions for resizing the editor using arrow keys, when the resize handle is focused.
 * Dialog `tabpanel` tab labels are now allowed to word wrap for better readability with long labels.
+* Added newlines before and after `details` elements in the output HTML.
+* Added padding for empty `summary` elements so they can be properly edited.
 
 === Changed
 * The `caption`, `address` and `dt` elements no longer incorrectly allow non-inline child elements when the editor schema is set to _HTML 4_.

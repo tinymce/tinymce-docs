@@ -206,7 +206,7 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
 			'common/punctuation/hellip'
 		],
 		typography_ignore: [ 'code' ],
-  	spellchecker_ignore_list: [ 'tm', 'TM' ], // temporary spellchecker bug workaround
+  	spellchecker_ignore_list: [ '(tm)', '(TM)' ], // temporary spellchecker bug workaround
 		advtemplate_list: () => {
 			return Promise.resolve([
 				{

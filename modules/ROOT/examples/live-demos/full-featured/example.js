@@ -57,6 +57,7 @@ tinymce.init({
 		'common/punctuation/hellip'
 	],
 	typography_ignore: [ 'code' ],
+	spellchecker_ignore_list: [ 'tm', 'TM' ], // temporary spellchecker bug workaround
 	advtemplate_list: () => {
     return Promise.resolve([
       {

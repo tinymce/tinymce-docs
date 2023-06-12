@@ -16,7 +16,7 @@ The plugin also normalizes list behavior between browsers. Enable it if you have
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'lists',
-  toolbar: 'numlist bullist listprops'
+  toolbar: 'numlist bullist'
 });
 ----
 
@@ -27,6 +27,8 @@ These settings affect the execution of the `+lists+` plugin.
 include::partial$configuration/lists_indent_on_tab.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 

@@ -4,6 +4,90 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+== 6.5 - 2023-06-13
+
+=== Added
+* Support for the `h` hash parameter in Vimeo video URLs in the Media plugin.
+* New `table_merge_content_on_paste` option which disables the merging behaviour when pasting a table inside an existing table.
+* New optional `defaultExpandedIds` and `onToggleExpand` options to the `tree` component config.
+* New optional `defaultSelectedId` option to the `tree` component config.
+* New `accordion` plugin with the `InsertAccordion` command.
+* New `accordion` and `accordion-toggle` icons.
+* New `details_initial_state` and `details_serialized_state` options.
+* New `init_content_sync` option that initializes the editor iframe using `document.write` instead of `srcdoc`.
+* New `newdocument_content` option that sets the content presented in the editor on choosing *File -> New document* or pressing the *New document* toolbar button.
+* New `editable_root` option that can be set to `false` to prevent editing of the editor’s root element.
+* New `editor.setEditableRoot` API that sets the editable state of the editor root element.
+* New `editor.hasEditableRoot` API that returns `true` or `false` depending on the editable state of the editor root element.
+* New `EditableRootStateChange` event that gets dispatched when the state of the editable root is changed.
+* Added Oxide styles for `dl`, `dt`, `dd`, `ol`, and `strong` elements in dialog body content.
+
+=== Improved
+* Screen readers can now announce highlighted items listed in the Link dialog’s link combobox.
+* The `icon` field for a dialog’s footer `togglebutton` is no longer mandatory.
+* Toolbar buttons and menu items now present as disabled when they cannot be used because a selected element has a `contenteditable="false"` attribute.
+* Help text displayed at *Help -> Help -> Keyboard Navigation* re-written.
+* Translations added for Help text displayed at *Help > Help > Keyboard Navigation*.
+* For word count purposes these characters are now considered punctuation marks: *$*, *~*, *+*, *|*, *№*, and *`*. They no longer increase a document’s word count.
+* Updated the `codesample` plugin dialog and the `template` plugin dialog to use the `listbox` component to match other dialogs.
+* If the selection contains more than one table cell, Quickbar toolbars are now positioned in the middle of the selection horizontally.
+* Exposed `dataTransfer` property of drag and drop events for elements with a `contenteditable="false"` attribute.
+* Screen readers now announce instructions for resizing the editor using arrow keys, when the resize handle is focused.
+* Dialog `tabpanel` tab labels are now allowed to word wrap for better readability with long labels.
+* Added newlines before and after `details` elements in the output HTML.
+* Added padding for empty `summary` elements so they can be properly edited.
+
+=== Changed
+* The `caption`, `address` and `dt` elements no longer incorrectly allow non-inline child elements when the editor schema is set to _HTML 4_.
+* SVG icons for back and foreground colors now use `class` instead of `id` to identify SVG elements that should change color.
+* Anchor tag elements — `<a>` — no longer incorrectly allow non-inline child elements when the editor schema is set to _HTML 4_.
+* Help dialog was restored to `medium` width for better readability.
+
+=== Fixed
+* Right-clicking on a merge tag instance presented different highlighting depending on the host browser.
+* When macOS was the host operating system, pressing *Command+backspace* did not add an undo level.
+* *Ctrl+backspace* and *Ctrl+delete* did not restore the correct insertion point position after a redo operation.
+* In the `tree` component, a selected item in a directory would not stay selected after collapsing the directory.
+* Enabling or Disabling checkboxes would not set the correct classes and attributes.
+* Entering a newline would, in some setups, place the insertion point in the wrong paragraph.
+* Redial would, in some situations, cause select elements not to have an initial value selected when they should have.
+* The Table toolbar was visible even if the table was within a host element with a `contenteditable="false"` attribute set.
+* Quickbar toolbars were incorrectly shown for elements with a `contenteditable="false"` attribute set in a root with a `contenteditable="false"` attribute set.
+* When Chrome was the host browser, adding a newline when the insertion point was placed after a table could, in some specific situations, not generate the expected newline.
+* Show the calculated height and width of Media Embed elements in the `media` plugin dialog.
+* Removing an image that failed to upload from an empty paragraph left the paragraph without a padding `<br>` tag.
+* Allow a Media Embed element to be correctly resized when using the `media` plugin dialog by converting the Media Embed element to a standalone iframe.
+* In some circumstances, an inline alert in the _Search and Replace_ dialog persisted when it was not necessary.
+* Context toolbars displayed the incorrect status for the `advlist` plugin buttons.
+* In Safari running on iOS, Korean characters merged onto the previous line upon typing after inserting a newline by pressing Enter.
+* Initiating the editor with a table as the first element resulted in resize handles being displayed around the table even when the editor did not have focus.
+* If the insertion point was between two images, pressing the Backspace key would, in some situations, delete the image after the insertion point instead of the image before the insertion point.
+* Directionality commands could set the `dir` attribute on elements with a `contenteditable="false"` attribute set when these elements were within a root with a `contenteditable="false"` attribute set.
+* The content of the dialog body could not be scrolled.
+* Some toolbar items, when in a not-enabled state, did not render the `not-allowed` mouse pointer.
+* Formats were incorrectly applied to the closest editable element if the selection was in a `contenteditable="false"` context.
+* Formats were incorrectly removed from the closest editable element if the selection was in a `contenteditable="false"` context.
+* Formatter API, `canApply`, was not returning `false` when the selection was in a `contenteditable="false"` context.
+* When dragging image elements and dropping the image in the editor the `dragend` event would sometimes not fire when Firefox was the host browser.
+* It was possible to remove links in noneditable contents with the `unlink` editor command.
+* Direction was not visually changing when using the Directionality plugin on an element which had the `direction` CSS property set.
+* Whitespace between transparent elements was incorrectly converted into empty paragraphs.
+* Popups were not constrained within the scrollable container when in a shadow root.
+* Pressing arrow keys inside RTL elements would move the insertion point in an incorrect direction when moving over elements with the `contenteditable` attribute set to `false`.
+* Inserting two tables consecutively without focus in the editor resulted in the second table being inserted at the wrong position.
+* Pasting content into the editor did not fire `beforeinput` and `input` events.
+* In some cases, exiting a `blockquote` element could fail when the insertion point was positioned at the end of the `blockquote`.
+* Templates containing an `<html>` tag were not parsed before being rendered for preview.
+* Typing after deleting formatted content could remove a space at the start of the typing.
+* Invalid markup in Notification and Dialog close buttons.
+* In dialogs, an incorrect `aria-describedby` attribute caused the dialog body to be announced when using a screen reader.
+* The sticky toolbar did not render correctly when transitioning from the custom editor view to the main view.
+* Saving the Table Properties dialog after changing properties unrelated to cells would overwrite cell properties set by the Cell Properties dialog.
+* Fixed the constrained bounds calculation for dismissal of the toolbar when using `toolbar_location: 'bottom'`.
+* Pressing the Backspace or Delete key when the insertion point was within a `details` element resulted in broken markup.
+* Making the selection into a list did not work if the selection included a block element with a `contenteditable="false"` attribute.
+* Inserting elements in the middle of the summary caused two summaries to appear within `details` elements.
+
 == 6.4.2 - 2023-04-26
 
 === Fixed

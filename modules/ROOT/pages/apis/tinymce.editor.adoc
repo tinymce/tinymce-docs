@@ -1,7 +1,7 @@
 = tinymce.Editor
 :navtitle: tinymce.Editor
 :description: This class contains the core logic for a TinyMCE editor.
-:keywords: Editor, addCommand, addCommandCallback, addQueryStateHandler, addQueryStateHandlerCallback, addQueryValueHandler, addQueryValueHandlerCallback, addShortcut, addVisual, baseURI, contentCSS, contentStyles, convertURL, destroy, dispatch, documentBaseURI, dom, execCommand, fire, focus, formatter, getBody, getContainer, getContent, getContentAreaContainer, getDoc, getElement, getParam, getWin, hasEventListeners, hasFocus, hasPlugin, hide, id, initialized, insertContent, isDirty, isHidden, load, mode, nodeChanged, notificationManager, off, on, once, options, parser, plugins, queryCommandState, queryCommandSupported, queryCommandValue, remove, render, resetContent, save, schema, selection, serializer, setContent, setDirty, setProgressState, show, theme, translate, ui, undoManager, uploadImages, windowManager
+:keywords: Editor, addCommand, addCommandCallback, addQueryStateHandler, addQueryStateHandlerCallback, addQueryValueHandler, addQueryValueHandlerCallback, addShortcut, addVisual, baseURI, contentCSS, contentStyles, convertURL, destroy, dispatch, documentBaseURI, dom, editorUpload, execCommand, fire, focus, formatter, getBody, getContainer, getContent, getContentAreaContainer, getDoc, getElement, getParam, getWin, hasEditableRoot, hasEventListeners, hasFocus, hasPlugin, hide, id, initialized, insertContent, isDirty, isHidden, load, mode, nodeChanged, notificationManager, off, on, once, options, parser, plugins, queryCommandState, queryCommandSupported, queryCommandValue, remove, render, resetContent, save, schema, selection, serializer, setContent, setDirty, setEditableRoot, setProgressState, show, theme, translate, ui, undoManager, uploadImages, windowManager
 :moxie-type: api
 
 This class contains the core logic for a TinyMCE editor.
@@ -37,6 +37,7 @@ ed.render();
 |contentStyles|`Array`|Array of CSS styles to add to head of document when the editor loads.|`xref:apis/tinymce.editor.adoc[Editor]`
 |documentBaseURI|`xref:apis/tinymce.util.uri.adoc[URI]`|URI object to document configured for the TinyMCE instance.|`xref:apis/tinymce.editor.adoc[Editor]`
 |dom|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`|DOM instance for the editor.|`xref:apis/tinymce.editor.adoc[Editor]`
+|editorUpload|`xref:apis/tinymce.editorupload.adoc[EditorUpload]`|Editor upload API|`xref:apis/tinymce.editor.adoc[Editor]`
 |formatter|`xref:apis/tinymce.formatter.adoc[Formatter]`|Formatter instance.|`xref:apis/tinymce.editor.adoc[Editor]`
 |id|`String`|Editor instance id, normally the same as the div/textarea that was replaced.|`xref:apis/tinymce.editor.adoc[Editor]`
 |initialized|`Boolean`|Is set to true after the editor instance has been initialized|`xref:apis/tinymce.editor.adoc[Editor]`
@@ -103,6 +104,7 @@ holds the iframe or the editable element.|`xref:apis/tinymce.editor.adoc[Editor]
 |xref:#getParam[getParam()]|Returns a configuration parameter by name.
 __Deprecated in TinyMCE 6.0 and has been marked for removal in TinyMCE 7.0. Use the `editor.options.get` API instead.__|`xref:apis/tinymce.editor.adoc[Editor]`
 |xref:#getWin[getWin()]|Returns the iframes window object.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#hasEditableRoot[hasEditableRoot()]|Returns the current editable state of the editor's root element.|`xref:apis/tinymce.editor.adoc[Editor]`
 |xref:#hasEventListeners[hasEventListeners()]|Returns true/false if the object has a event of the specified name.|`xref:apis/tinymce.util.observable.adoc[Observable]`
 |xref:#hasFocus[hasFocus()]|Returns true/false if the editor has real keyboard focus.|`xref:apis/tinymce.editor.adoc[Editor]`
 |xref:#hasPlugin[hasPlugin()]|Checks that the plugin is in the editor configuration and can optionally check if the plugin has been loaded.|`xref:apis/tinymce.editor.adoc[Editor]`
@@ -139,6 +141,7 @@ the different cleanup rules options.
 __Note: The content return value was deprecated in TinyMCE 6.0 and has been marked for removal in TinyMCE 7.0.__|`xref:apis/tinymce.editor.adoc[Editor]`
 |xref:#setDirty[setDirty()]|Explicitly sets the dirty state. This will fire the dirty event if the editor dirty state is changed from false to true
 by invoking this method.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#setEditableRoot[setEditableRoot()]|Changes the editable state of the editor's root element.|`xref:apis/tinymce.editor.adoc[Editor]`
 |xref:#setProgressState[setProgressState()]|Sets the progress state, this will display a throbber/progess for the editor.
 This is ideal for asynchronous operations like an AJAX save call.|`xref:apis/tinymce.editor.adoc[Editor]`
 |xref:#show[show()]|Shows the editor and hides any textarea/div that the editor is supposed to replace.|`xref:apis/tinymce.editor.adoc[Editor]`
@@ -568,6 +571,20 @@ Returns the iframes window object.
 
 '''
 
+[[hasEditableRoot]]
+=== hasEditableRoot()
+[source, javascript]
+----
+hasEditableRoot(): Boolean
+----
+Returns the current editable state of the editor's root element.
+
+==== Return value
+
+* `Boolean` - True if the root element is editable, false if it is not editable.
+
+'''
+
 [[hasEventListeners]]
 === hasEventListeners()
 [source, javascript]
@@ -977,6 +994,20 @@ const ajaxSave = () => {
 ==== Parameters
 
 * `state (Boolean)` - True/false if the editor is considered dirty.
+
+'''
+
+[[setEditableRoot]]
+=== setEditableRoot()
+[source, javascript]
+----
+setEditableRoot(state: Boolean)
+----
+Changes the editable state of the editor's root element.
+
+==== Parameters
+
+* `state (Boolean)` - State to set true for editable and false for non-editable.
 
 '''
 

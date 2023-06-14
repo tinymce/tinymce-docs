@@ -82,6 +82,16 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 == Additions
 {productname} 6.5 also includes the following additions:
 
+=== Support for the `h` hash parameter in vimeo video url in the Media plugin.
+//#TINY-9830
+
+In previous versions of {productname}, an issue was identified that prevented unlisted Vimeo videos from been added to the editor when using the media plugin.
+
+The media plugin failed to correctly insert the video into the content due to {productname} ignoring the `h` parameter when parsing the source URL.
+
+In {productname} 6.5, the `h` parameter is now parsed and included in the source URL by {productname}.
+
+As a result, embedding unlisted Vimeo videos into a {productname} editor using the media plugin now works as expected.
 
 [[changes]]
 == Changes

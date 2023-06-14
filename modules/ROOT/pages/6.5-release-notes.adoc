@@ -71,12 +71,16 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
-=== Closing a dialog would scroll down the document in Safari. 
+=== Closing a dialog would scroll down the document in Safari on macOS. 
 //#TINY-9148
 
-In Safari, when closing a dialog, a bug caused the browser to select the a element and scroll down. As a consequence, the editor would scroll to the bottom after the dialog was closed.
+In Safari running on macOS, when a dialog was closed by clicking outside the dialog, a bug caused the browser to scroll the active element and scroll down.
 
-To fix this issue, {productname} now forces the active element to blur in Safari. By doing so, no element will be selected after closing the dialog, preventing the unintended scrolling behavior.
+This caused the browser to scroll the viewport to the bottom of the dialog after the dialog closed.
+
+This scrolling did not occur if the dialog was closed by pressing the dialog close control or by typing the *Esc* key.
+
+To fix this issue, {productname} now forces the active element to blur when Safari is the host browser. By doing so, no element is selected after closing the dialog, preventing the unintended scrolling behavior.
 
 [[security-fixes]]
 == Security fixes

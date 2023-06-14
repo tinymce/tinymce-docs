@@ -71,14 +71,16 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
-=== The destination category list would include the template's own category in the "Move template" dialog.
+=== The destination category list would include the template’s own category in the *Move to…* dialog.
 //#TINY-9774
 
-In previous versions of {productname}, when users attempted to move a template to another category, they encountered a "Move to" dialog with a dropdown list of categories. However, this list included a redundant category that matched the parent category of the template being moved. If the selected destination category in the "Move to" dialog matched the original template category, the operation had no effect, resulting in wasted time.
+When users seek to move a template to another category, a *Move to…* dialog is presented, with a dropdown list of available categories.
+
+In previous versions of {productname}, this list included a redundant category: the current category of the template being moved. If the selected destination category in the *Move to…* dialog matched this original template category, the operation had no effect.
 
 In {productname} 6.5, the destination category list now filters out the category of the template being moved.
 
-With this fix, users will no longer see the parent category of the template in the destination category list.
+Consequently, users no longer see the parent category of the template in the *Move to…* dialog’s category list.
 
 [[security-fixes]]
 == Security fixes

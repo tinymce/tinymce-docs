@@ -30,11 +30,32 @@
 
 The following premium plugin updates were released alongside {productname} 6.5.
 
+
+=== Advanced Templates 1.2.0
+
+The {productname} 6.5 release includes an accompanying release of the **Advanced Templates** premium plugin.
+
+**Advanced Templates** 1.2.0 includes one fix:
+
+=== A selected tree component template item did not stay highlighted when the Templates dialog re-rendered.
+//#TINY-9770
+
+In previous versions of {productname}, a selected tree component template item would lose its highlight when the Advanced Template dialog was re-rendered after the template list updated.
+
+This occured when a user renamed a selected template item in the tree component. As a consequence, the user could not identify the currently selected item in the tree.
+
+In {productname} 6.5, the problem was addressed by utilizing the new `defaultSelectedId` configuration property from the xref:dialog-components.adoc#tree[tree component] API.
+
+As a result, the currently previewed template is now correctly highlighted in the tree component, as expected.
+
+For information on the **Advanced Templates** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
+
+
 === Merge Tags 1.3.0
 
 The {productname} 6.5 release includes an accompanying release of the **Merge Tags** premium plugin.
 
-**Merge Tags** 1.3.0 includes one fix:
+**Merge Tags** 1.3.0 includes three fixes:
 
 === The plugin now correctly manages prefixes and suffixes when they are the same.
 //#TINY-9566
@@ -61,11 +82,55 @@ As of this **Merge Tags** update, the plugin now splits the array of any matchin
 
 For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
 
+=== Right clicking on a merge tag instance presented different highlighting depending on the host browser.
+//#TINY-9848
+
+In previous versions of {productname}, when users right-clicked on a merge tag, the highlighting within the merge tag selection varied, depending on the host browser.
+
+This resulted in an inconsistent end-user experience.
+
+{productname} 6.5 no longer uses a browser’s default highlighting of the merge tag. Instead, {productname} 6.5 introduces {productname}-specific styles. These styles highlight the merge tag consistently across different browsers.
+
+{productname} now presents end-users with uniform merge tag highlighting across all supported browsers.
+
+=== *Insert → Merge tag* menu item, and equivalent toolbar button was not disabled when selection was inside an element with a `contenteditable="false"` attribute set
+//#TINY-9893
+
+In previous versions of {productname}, the *Insert → Merge tag* menu item, and equivalent toolbar button remained active when the user’s selection or insertion point was inside an element with a `contenteditable="false"` attribute set.
+
+As a consequence the *Merge tags* toolbar button and menu item appeared enabled, but clicking on them had no effect.
+
+A fix was implemented in {productname} 6.5. {productname} now checks if the user’s current selection is within an element with a `contenteditable="false"` attribute set. If it is, the *Merge tags* toolbar button and menu item are disabled, as expected.
+
+For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
+
+=== Format Painter 2.0.2
+
+The {productname} 6.5 release includes an accompanying release of the **Format Painter** Premium plugin.
+
+**Format Painter** 2.0.2 includes one fix:
+
+=== It was possible to modify text elements with the `contenteditable="false"` attribute set using formatpainter
+//#TINY-9472
+
+Users could use previous versions of the Format Painter plugin to modify text elements with the `contenteditable="false"` attribute set.
+
+That is, users could, contrary to the attribute setting, make formatting changes to text marked as Read Only using this plugin.
+
+With this update, the Format Painter plugin marks the `contenteditable="false"` attribute setting properly: text elements with this setting are no longer changed if this plugin is applied to them.
+
+For information on the **Format Painter** plugin, see: xref:formatpainter.adoc[Format Painter].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement
 
 The following premium plugin has been announced as reaching its end-of-life:
+
+=== Real-Time Collaboration
+
+{productname}'s xref:rtc-introduction.adoc[Real-time Collaboration (RTC)] plugin will be deactivated on December 31, 2023, and is no longer available for purchase.
+
 
 [[accompanying-premium-skins-and-icon-packs-changes]]
 == Accompanying Premium Skins and Icon Packs changes
@@ -91,6 +156,16 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 == Additions
 {productname} 6.5 also includes the following additions:
 
+=== Support for the `h` hash parameter in vimeo video url in the Media plugin.
+//#TINY-9830
+
+In previous versions of {productname}, an issue was identified that prevented unlisted Vimeo videos from been added to the editor when using the media plugin.
+
+The media plugin failed to correctly insert the video into the content due to {productname} ignoring the `h` parameter when parsing the source URL.
+
+In {productname} 6.5, the `h` parameter is now parsed and included in the source URL by {productname}.
+
+As a result, embedding unlisted Vimeo videos into a {productname} editor using the media plugin now works as expected.
 
 [[changes]]
 == Changes
@@ -102,6 +177,35 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 == Bug fixes
 
 {productname} 6.5 also includes the following bug fixes:
+
+=== Closing a dialog would scroll down the document in Safari on macOS. 
+//#TINY-9148
+
+In Safari running on macOS, when a dialog was closed by clicking outside the dialog, a bug caused the browser to select the active element and scroll down.
+
+This caused the browser to scroll the viewport to the bottom of the dialog after the dialog closed.
+
+This scrolling did not occur if the dialog was closed by pressing the dialog close control or by typing the *Esc* key.
+
+To fix this issue, {productname} now forces the active element to blur when Safari is the host browser. By doing so, no element is selected after closing the dialog, preventing the unintended scrolling behavior.
+
+=== Text within anchor tags, <a>, presented with the Times New Roman font-family, ignoring the font family used in the original document.
+//#TINY-9812
+
+In previous versions of {productname}, an issue related to the `a:link` selector in the CSS received from Microsoft Word was identified.
+
+When content containing links was pasted from a Microsoft Word file into a {productname} instance running the xref:introduction-to-powerpaste.adoc[PowerPaste] plugin, the pasted-in link text rendered using the Times New Roman font family. And it presented thus no matter the typeface set for this text in the original Microsoft Word document.
+
+To work around this, {productname} 6.5 removes the default CSS styling applied by Microsoft Word during the paste operation.
+
+With this change, link text copied from Microsoft Word using the PowerPaste plugin now uses the font-family matching that used in the source document.
+
+=== Invalid markup in Notification and Dialog close buttons.
+//#TINY-9849
+
+In previous versions of {productname}, an issue was identified in the close buttons: invalid markup was present. Specifically, a div element was being used within the buttons. This violates HTML standards and caused problems when running {productname} HTML through markup checkers: the checker, correctly, threw errors.
+
+In {productname} 6.5, the markup was fixed by replacing the div element with a `<span>` element, aligning it with HTML guidelines. As a result, the updated close buttons now pass HTML markup checkers without throwing errors.
 
 
 [[security-fixes]]

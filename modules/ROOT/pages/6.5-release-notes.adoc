@@ -49,20 +49,16 @@ This resulted in an inconsistent end-user experience.
 
 For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
 
-=== Advanced Templates 1.2.0
-
-The {productname} 6.5 release includes an accompanying release of the **Advanced Templates** premium plugin.
-
-**Advanced Templates** 1.2.0 includes one fix:
-
-=== The insert template button and menu item was not disabled when the selection was in a non-editable context.
+=== The *Insert → Template…* menu item and equivalent toolbar button was not disabled when the selection was inside an element with a `contenteditable="false"` attribute set
 //#TINY-9892
 
-In previous versions of {productname}, the insert template button and menu item remained enabled even in `contenteditable="false"` contexts.
+In previous versions of {productname}, the *Insert → Template…* menu item, and equivalent toolbar button remained active when the user’s selection or insertion point was inside an element with a `contenteditable="false"` attribute set.
 
-As a consequence, no action occured when attempting to insert a template into a `contenteditable="false"` root.
+As a consequence, the *Advanced Template* toolbar button and menu item appeared enabled, but clicking on them had no effect.
 
-In {productname} 6.5, the button and toolbar item will now be disabled when the selection is in a `contenteditable="false"` context.
+A fix was implemented in {productname} 6.5. {productname} now checks if the user’s current selection is within an element with a `contenteditable="false"` attribute set. If it is, the *Advanced Template* toolbar button and menu item are disabled, as expected.
+
+For information on the **Advanced Templates** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement

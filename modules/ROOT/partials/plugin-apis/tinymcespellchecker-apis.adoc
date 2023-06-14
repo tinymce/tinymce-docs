@@ -4,6 +4,9 @@
 |addIgnoredWords |words: `+string[]+`, lang?: `+string+` |Add an array of words to the `+spellchecker_ignore_list+` for a specific language. Add the array of words to all languages by omitting the `+lang+` parameter.
 |getLanguage |N/A |Get the current language enabled for spellchecking.
 |setLanguage |language: `+string+` |Set the current language for spellchecking. This must be a supported language code (case-sensitive). For a list of supported languages, see: xref:introduction-to-tiny-spellchecker.adoc#supported-languages[Spell Checker Pro - `+Supported languages+`].
+3+| 
+include::partial$misc/admon-requires-6.5v.adoc[]
+|getSpellingErrors |N/A |Returns an array of objects representing each existing misspelled word in the editor content, with each object using the keys `language` and `word`. 
 |===
 
 .Examples
@@ -20,4 +23,7 @@ tinymce.activeEditor.plugins.tinymcespellchecker.getLanguage();
 
 // set the current language to a specific language
 tinymce.activeEditor.plugins.tinymcespellchecker.setLanguage('sv');  // e.g. Swedish
+
+// retrieve all the misspelled words in the editor
+tinymce.activeEditor.plugins.tinymcespellchecker.getSpellingErrors();
 ----

@@ -47,7 +47,7 @@ This resulted in an inconsistent end-user experience.
 
 {productname} now presents end-users with uniform merge tag highlighting across all supported browsers.
 
-=== Insert merge tag button and menu item was not disabled when selection was inside a non-editable context.
+=== *Insert → Merge tag* menu item, and equivalent toolbar button was not disabled when selection was inside an element with a `contenteditable="false"` attribute set
 //#TINY-9893
 
 In previous versions of {productname}, the *Insert → Merge tag* menu item, and equivalent toolbar button remained active when the user’s selection or insertion point was inside an element with a `contenteditable="false"` attribute set.

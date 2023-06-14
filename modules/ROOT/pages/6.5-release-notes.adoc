@@ -172,6 +172,17 @@ As a result, embedding unlisted Vimeo videos into a {productname} editor using t
 
 {productname} 6.5 also incorporates the following changes:
 
+=== The anchor element (`a`) could contain block child elements when the editor schema was set to *HTML 4*.
+//#TINY-9805
+
+In previous versions of {productname}, the anchor element — `<a>` — could have block elements added as children when the schema was set to *HTML 4*.
+
+Consequently, applying a heading element (for example, an `<h1>` element) to a link within a table caption would affect the editor view, even though the table caption tag was not included in the serialized content.
+
+To address this issue, an update was made to the editor’s HTML4 schema: block child elements are now not allowed in anchor tags.
+
+As a result, applying block formatting to link content in {productname} 6.5, should no longer have any impact.
+
 === The `caption`, `address` and `dt` elements could contain block child elements when the editor schema was set to *HTML 4*.
 //#TINY-9768
 
@@ -180,6 +191,7 @@ In previous versions of {productname}, the `<caption>`, `<dt>` and `<address>` e
 The *HTML 4* schema does not support this and, as a consequence, {productname} documents containing such child elements did not validate against HTML 4-specific parsers and validators.
 
 In {productname} 6.5, the editor’s *HTML 4* schema has been corrected. Block elements are now, correctly, considered invalid inside such elements and are automatically unwrapped out of the elements noted above.
+
 
 [[bug-fixes]]
 == Bug fixes

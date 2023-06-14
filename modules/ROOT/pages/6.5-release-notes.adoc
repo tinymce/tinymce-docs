@@ -37,19 +37,20 @@ The following premium plugin has been announced as reaching its end-of-life:
 
 === Format Painter 2.0.2
 
-The {productname} 6.5 release includes an accompanying release of the **Format Painter** premium plugin.
+The {productname} 6.5 release includes an accompanying release of the **Format Painter** Premium plugin.
 
 **Format Painter** 2.0.2 includes one fix:
 
-=== It was possible to modify `contenteditable = "false"` text elements using formatpainter
+=== It was possible to modify text elements with the `contenteditable="false"` attribute set using formatpainter
 //#TINY-9472
 
-In previous versions of {productname}, the format painter tool previously allowed users to modify 'contenteditable = "false"' text elements.
+Users could use previous versions of the Format Painter plugin to modify text elements with the `contenteditable="false"` attribute set.
 
-As a consequence, the format painter would apply formatting changes to the 'contenteditable = "false"' content.
+That is, users could, contrary to the attribute setting, make formatting changes to text marked as Read Only using this plugin.
 
-In {productname} 6.5, the format painter no longer affects 'contenteditable = "false"' text elements and the original formatting of the 'contenteditable = "false"' content remains intact.
+With this update, the Format Painter plugin marks the `contenteditable="false"` attribute setting properly: text elements with this setting are no longer changed if this plugin is applied to them.
 
+For information on the **Format Painter** plugin, see: xref:formatpainter.adoc[Format Painter].
 [[accompanying-premium-skins-and-icon-packs-changes]]
 == Accompanying Premium Skins and Icon Packs changes
 

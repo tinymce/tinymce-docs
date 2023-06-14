@@ -35,7 +35,7 @@ The following premium plugin updates were released alongside {productname} 6.5.
 
 The {productname} 6.5 release includes an accompanying release of the **Advanced Templates** premium plugin.
 
-**Advanced Templates** 1.2.0 includes one fix:
+**Advanced Templates** 1.2.0 includes two fixes:
 
 === A selected tree component template item did not stay highlighted when the Templates dialog re-rendered.
 //#TINY-9770
@@ -50,6 +50,16 @@ As a result, the currently previewed template is now correctly highlighted in th
 
 For information on the **Advanced Templates** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
 
+=== The *Insert → Template…* menu item and equivalent toolbar button was not disabled when the selection was inside an element with a `contenteditable="false"` attribute set
+//#TINY-9892
+
+In previous versions of {productname}, the *Insert → Template…* menu item, and equivalent toolbar button remained active when the user’s selection or insertion point was inside an element with a `contenteditable="false"` attribute set.
+
+As a consequence, the *Advanced Template* toolbar button and menu item appeared enabled, but clicking on them had no effect.
+
+A fix was implemented in {productname} 6.5. {productname} now checks if the user’s current selection is within an element with a `contenteditable="false"` attribute set. If it is, the *Advanced Template* toolbar button and menu item are disabled, as expected.
+
+For information on the **Advanced Templates** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
 
 === Merge Tags 1.3.0
 

@@ -50,11 +50,11 @@ This resulted in an inconsistent end-user experience.
 === Insert merge tag button and menu item was not disabled when selection was inside a non-editable context.
 //#TINY-9893
 
-In previous versions of {productname}, the insert merge tag button and menu item remained active when the user's selection was inside a `contenteditable="false"` context.
+In previous versions of {productname}, the *Insert → Merge tag* menu item, and equivalent toolbar button remained active when the user’s selection or insertion point was inside an element with a `contenteditable="false"` attribute set.
 
-As a consequence the mergetags button and menu item would appear enabled, but clicking on them had no effect.
+As a consequence the *Merge tags* toolbar button and menu item appeared enabled, but clicking on them had no effect.
 
-A fix was implemented in {productname} 6.5 that now checks if the users content selection is within a `contenteditable="false"` context. If it is, the button and menu item will now be disabled.
+A fix was implemented in {productname} 6.5. {productname} now checks if the user’s current selection is within an element with a `contenteditable="false"` attribute set. If it is, the *Merge tags* toolbar button and menu item are disabled, as expected.
 
 For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
 

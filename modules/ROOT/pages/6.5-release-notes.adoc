@@ -65,12 +65,14 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also incorporates the following changes:
 
-=== The `caption`, `address` and `dt` elements were allowed to have non-inline children elements when the editor schema was set to `html4`.
+=== The `caption`, `address` and `dt` elements could contain block child elements when the editor schema was set to *HTML 4*.
 //#TINY-9768
 
-In previous versions of {productname}, the `<caption>`, `<dt>` and `<address>` elements could have child block elements when the schema was set to`html4`. As a consequence to this, the {productname} document would not pass through `html4` parsers and validators.
+In previous versions of {productname}, the `<caption>`, `<dt>` and `<address>` elements could have block elements added as children when the schema was set to *HTML 4*.
 
-In {productname} 6.5, the editor schema for html4 has been corrected. Block elements are now considered invalid and are automatically unwrapped out of the mentioned elements above.
+The *HTML 4* schema does not support this and, as a consequence, {productname} documents containing such child elements did not validate against HTML 4-specific parsers and validators.
+
+In {productname} 6.5, the editor’s *HTML 4* schema has been corrected. Block elements are now, correctly, considered invalid inside such elements and are automatically unwrapped out of the elements noted above.
 
 [[bug-fixes]]
 == Bug fixes

@@ -77,6 +77,23 @@ A fix was implemented in {productname} 6.5. {productname} now checks if the user
 
 For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
 
+=== Format Painter 2.0.2
+
+The {productname} 6.5 release includes an accompanying release of the **Format Painter** Premium plugin.
+
+**Format Painter** 2.0.2 includes one fix:
+
+=== It was possible to modify text elements with the `contenteditable="false"` attribute set using formatpainter
+//#TINY-9472
+
+Users could use previous versions of the Format Painter plugin to modify text elements with the `contenteditable="false"` attribute set.
+
+That is, users could, contrary to the attribute setting, make formatting changes to text marked as Read Only using this plugin.
+
+With this update, the Format Painter plugin marks the `contenteditable="false"` attribute setting properly: text elements with this setting are no longer changed if this plugin is applied to them.
+
+For information on the **Format Painter** plugin, see: xref:formatpainter.adoc[Format Painter].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement
@@ -86,6 +103,7 @@ The following premium plugin has been announced as reaching its end-of-life:
 === Real-Time Collaboration
 
 {productname}'s xref:rtc-introduction.adoc[Real-time Collaboration (RTC)] plugin will be deactivated on December 31, 2023, and is no longer available for purchase.
+
 
 [[accompanying-premium-skins-and-icon-packs-changes]]
 == Accompanying Premium Skins and Icon Packs changes

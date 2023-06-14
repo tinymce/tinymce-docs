@@ -74,9 +74,9 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === Fixed adding unnecessary space after a comma and before a quote in several scenarios.
 //#TINY-9510
 
-In previous versions of {productname}, the issue of adding an unnecessary space after a comma and before a quote in several scenarios was caused by an incorrectly written `regexp` rule in the typograf library for the Advanced Typography plugin. This led to the appearance of spaces between commas and quotes.
+In previous versions of {productname}, the issue of adding an unnecessary space after a comma and before a quote in several scenarios was caused by an incorrectly written Regular Expression rule in the https://github.com/typograf[Typograf] library used by the Advanced Typography plugin. This led to the appearance of spaces between commas and quotes.
 
-To fix this, {productname}, updated the `regexp` in the typograf library. As a result, spaces between commas and quotes no longer appear.
+To fix this, {productname} updated the Regular Expression rule in the Typograf library. As a result, spaces between commas and quotes no longer appear.
 
 [[security-fixes]]
 == Security fixes

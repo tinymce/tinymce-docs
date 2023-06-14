@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2009: Add TINY-9688 to `staging`.
 - DOC-2057: Added TINY-9830 to `staging`.
 - DOC-2065: Added `typography` and `advtemplate` plugin configurations to the _Full featured demo: including Premium Plugins_ page.
 - DOC-2049: Added multiple `/partial/misc/admon-requires-6.<x>v.adoc` files for use as required by 6.5-and-later specific docs.

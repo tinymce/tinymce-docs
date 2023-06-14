@@ -39,25 +39,27 @@ The {productname} 6.5 release includes an accompanying release of the **Merge Ta
 === The plugin now correctly manages prefixes and suffixes when they are the same.
 //#TINY-9566
 
-In previous versions of {productname}, a bug was discovered with the merge tags plugin. The issue arose when the plugin mishandled the prefix and suffix for merge tags in situations where the user placed multiple merge tags within either an inline or block element, which resulted in incorrect management of the prefixes and suffixes during the `setContent` operation.
+In previous versions of **Merge Tags** the plugin mishandled a merge tags’ prefix and suffix when the user placed multiple merge tags within either an inline or block element. This resulted in incorrect management of these prefixes and suffixes during the `setContent` operation.
 
-As a consequence, an unintended repetition of the prefix or suffix occurred, which lead to an undesired output.
+This mis-management resulted in an unintended repetition of the prefix or suffix occurred, which lead to undesired output.
 
-For instance, if the input was: 
+For example, if the input was: 
 
-[souce, html]
+[source, html]
 ----
 <div>%Tag1% this is a bug %Tag1%</div>
 ----
 
-the output would be:
+the output, after the `setContent` operation was:
 
 [source, html]
 ----
 %Tag1%%% this is a bug %%%Tag1%
 ----
 
-However, in the current version of {productname}, this issue has been addressed, which now properly handles this problem by splitting the array of any matching merge tags that are identified as `odd` prefixes or suffixes.
+As of this **Merge Tags** update, the plugin now splits the array of any matching merge tags that are identified as _odd_ prefixes or suffixes. As a consequence, merge tag prefixes and suffixes that are the same are output as expected.
+
+For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]

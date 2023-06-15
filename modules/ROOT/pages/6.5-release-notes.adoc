@@ -68,7 +68,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === List items in a combo box were not announced by screen readers.
 //#TINY-9280
 
-For example, the first UI element in the {productname} *Insert → Link…* dialog is a text-entry field labelled *URL*. When this element is navigated to using a screen reader, it is announced as a combobox and pressing the down arrow opens the combobox and presents available options.
+For example, the URL text-entry field in the Link dialog is a combobox. When this element is focused with a screen reader, it is announced as a combobox and pressing the down arrow shows the available list items.
 
 In previous versions of {productname}, however, none of these items were announced by the screen reader as they were selected, making these items effectively invisible to screen reader users.
 

@@ -30,12 +30,24 @@
 
 The following premium plugin updates were released alongside {productname} 6.5.
 
-
 === Advanced Templates 1.2.0
 
 The {productname} 6.5 release includes an accompanying release of the **Advanced Templates** premium plugin.
 
-**Advanced Templates** 1.2.0 includes two fixes:
+**Advanced Templates** 1.2.0 includes three fixes.
+
+=== Expanded category trees collapsed after any element in the tree was renamed in the Templates dialog’s tree component.
+//#TINY-9691
+
+In the previous version of {productname}, when users renamed a template or category in the *Insert → template…* dialog, the template list refreshed and expanded categories collapsed.
+
+Although cosmetic, this state loss hid the renamed template or category; a likely cause of user confusion. 
+
+This update addresses this using a new configuration property, `defaultExpandedIds`. The `defaultExpandedIDs` property allows the category tree’s state to be saved before executing the rename operation and then passed back for re-rendering the tree after the re-naming.
+
+With this update, after a template or category is re-named, the template list is re-rendered in the same state as it was prior to the re-naming. Consequently, if an object was in an expanded tree prior to being re-named, it will remain visible as a re-named object when the tree refreshes.
+
+For information on the **Advanced Templates** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
 
 === A selected tree component template item did not stay highlighted when the Templates dialog re-rendered.
 //#TINY-9770

@@ -36,16 +36,18 @@ The {productname} 6.5 release includes an accompanying release of the **Advanced
 
 **Advanced Templates** 1.2.0 includes the following fix.
 
-=== Category items would not remain expanded after their template was renamed in the Templates dialog's tree component.
+=== Expanded category trees collapsed after any element in the tree was renamed in the Templates dialog’s tree component.
 //#TINY-9691
 
-In previous version of {productname}, a bug occurred when users renamed a template in the "Insert template" dialog of the {productname} editor. After renaming, the template list would be refreshed with collapsed content, making the renamed template invisible.
+In the previous version of {productname}, when users renamed a template or category in the *Insert → template…* dialog, the template list refreshed and expanded categories collapsed.
 
-This bug prevented users from seeing the renamed template in the list, causing confusion and difficulty in locating it. To address this issue, a fix was implemented using a new configuration property called `defaultExpandedIds` in the Tree component. This allows the expanded category items state to be passed for rerendering.
+Although cosmetic, this state loss hid the renamed template or category; a likely cause of user confusion. 
 
-The fix works by saving the expanded/collapsed state of category items before executing the renaming operation. Then, after renaming is complete, the `defaultExpandedIds` property is used to restore the previous state.
+This update addresses this using a new configuration property, `defaultExpandedIds`. The `defaultExpandedIDs` property allows the category tree’s state to be saved before executing the rename operation and then passed back for re-rendering the tree after the re-naming.
 
-With the fix in place, the template list is rerendered with the same expanded/collapsed state as before, ensuring the renamed template is visible in the tree and making it easy for users to find.
+With this update, after a template or category is re-named, the template list is re-rendered in the same state as it was prior to the re-naming. Consequently, if an object was in an expanded tree prior to being re-named, it will remain visible as a re-named object when the tree refreshes.
+
+For information on the **Advanced Templates** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement

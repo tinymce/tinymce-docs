@@ -72,7 +72,7 @@ For example, the first UI element in the {productname} *Insert → Link…* dial
 
 In previous versions of {productname}, however, none of these items were announced by the screen reader as they were selected, making these items effectively invisible to screen reader users.
 
-With this update, the {productname} *Insert → Link…* dialog has been updated to properly support screen readers. When the URL combo box is opened, for example, all listed items are now announced by screen readers, as expected.
+With this update, listed items in a combobox can be announced by screen readers, as expected.
 
 [[bug-fixes]]
 == Bug fixes

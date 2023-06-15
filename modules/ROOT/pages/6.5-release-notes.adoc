@@ -70,7 +70,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 For example, the first UI element in the {productname} *Insert → Link…* dialog is a text-entry field labelled *URL*. When this element is navigated to using a screen reader, it is announced as a combobox and pressing the down arrow opens the combobox and presents available options.
 
-In previous versions of {productname}, however, none of these available items were announced by the screen reader as they were selected, making these items effectively invisible to screen reader users.
+In previous versions of {productname}, however, none of these items were announced by the screen reader as they were selected, making these items effectively invisible to screen reader users.
 
 With this update, the {productname} *Insert → Link…* dialog has been updated to properly support screen readers. When the URL combo box is opened, for example, all listed items are now announced by screen readers, as expected.
 

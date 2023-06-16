@@ -40,9 +40,15 @@ Spell Checker Pro 3.3.0 adds one change:
 === Words containing non-Latin characters were not sent in spelling requests.
 //#TINY-9654
 
-As of Spell Checker Pro 3.2.1, only languages using a Latin-based alphabet, including English, French, German, etc., had supported dictionaries. As a result, Spell Checker Pro's client side only sent words it “understands” in spelling requests to the server, omitting words containing non-Latin characters from languages like Greek, Arabic, and Korean. Specifically, the word identification logic used the regular expression `/[\w'\\-\u00AD\u0100-\u017F\u00C0-\u00FF\uFEFF\u2018\u2019]/` to capture characters including the extended Latin alphabet. This interfered with the usages of some customers pairing the Spell Checker Pro client side with a custom spellchecking service with support for languages with non-Latin alphabets, as words containing non-Latin characters would not be sent to the server.
+As of Spell Checker Pro 3.2.1, only languages using a Latin-based alphabet — for example; English, French, and German — had supported dictionaries.
 
-In {productname} 6.5, the word identification logic for Spell Checker Pro's client side has now been changed to the one used by the Word Count plugin. This allows words containing non-Latin characters to be captured and sent in requests to the spelling service.
+As a consequence, Spell Checker Pro’s client-side only sent strings containing Latin characters in spelling requests to the server, omitting words containing non-Latin characters from languages such as Greek, Arabic, and Korean.
+
+This interfered with some use-cases in which Spell Checker Pro client-side was paired with a custom spellchecking service which supports languages with non-Latin alphabets: words containing non-Latin characters were not sent to the server.
+
+In SpellChecker Pro 3.3.0, the word identification logic for the plugin’s client-side has been changed to the one used by the Word Count plugin. This allows words containing non-Latin characters to be captured and sent in requests to the spelling service.
+
+For information on the **SpellChecker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[SpellChecker Pro].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]

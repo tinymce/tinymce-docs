@@ -36,15 +36,16 @@ The {productname} 6.5 release includes an accompanying release of the **Accessib
 
 **Accessibility Checker** 3.2.0 includes the following fixes, additions, and improvements.
 
-=== No longer allow attempting to fix a table's lack of headers if the table has no cells at all.
+=== No longer allow attempting to fix a table’s lack of headers if the table has no cells.
 //#TINY-9753
 
-In previous versions of {productname}, fixing a table's lack of headers is now **disabled** if the table is empty.
+Previously, the Accessbility Checker plugin assumed a table had at least one row. As a consequence it would, consequent to attempting to produce a user-visible error regarding a table having no header rows, throw an internal error when it checked a table that had no cells at all.
 
-Previously, attempting to fix this error without any cells resulted in an internal error, although the user didn't notice any difference.
+NOTE: this error was sent to the Console but no errors or alerts were presented to end-users.
 
-In {productname} 6.5, this fix now prevents users from attempting to fix the error when there are no rows in the table.
+As of Accessibility Checker 3.2.0, the plugin no longer attempts to fix errors in tables with no rows. The user experience is unchanged, but Console errors are no longer generated in this circumstance.
 
+For information on the **Accessibility Checker** plugin, see: xref:accessibility.adoc[Accessibility Checker].
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement
 

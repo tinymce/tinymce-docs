@@ -71,14 +71,14 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
-=== Context toolbars would display the incorrect status for the `advlist` plugin buttons.
+=== Context toolbars would display the incorrect status for the Advanced List plugin buttons.
 //#TINY-9680
 
-In previous versions of {productname}, a issue was caused by a discrepancy between the setup handler for the `advlist` quickbar button in the `advlist` plugin compared to the one in the `list` plugin.
+In previous versions of {productname}, a presentation issue was caused by a discrepancy between the setup handler for the Advanced List — `advlist` — Quickbar button in the `advlist` Premium plugin and the setup handler for the List — `list` — Open Source plugin.
 
-Consequently, the status of the `advlist` quickbar button was not being updated correctly during the setup.
+Consequently, the status of the `advlist` Quickbar button was not updated correctly during setup.
 
-To resolve this, the setup handler for the `advlist` plugin was aligned with the one used in the `list` plugin. As a result of this fix, the status of the buttons is now accurately rendered.
+To resolve this, the setup handler for the `advlist` plugin was aligned with the one used in the `list` plugin. The status of the buttons is now accurately rendered, as expected.
 
 [[security-fixes]]
 == Security fixes

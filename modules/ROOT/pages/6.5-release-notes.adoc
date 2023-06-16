@@ -71,14 +71,14 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
-=== In some cases, the exiting a `blockquote` element could fail when the cursor was positioned at the end of the `blockquote`.
+=== In some cases, exiting a `blockquote` element could fail when the insertion point was positioned at the end of the `blockquote` element.
 //#TINY-9794
 
-In previous versions of {productname}, there was an issue with exiting a blockquote element when the cursor was at its end. This problem arose because when inserting a new block, the check to determine if the block is empty considered nodes with zero-width space (zwsp) as non-empty.
+There was an issue with exiting a blockquote element when the insertion point was positioned at the end of the element. this issue arose because, when inserting a new block, the check to determine if the block is empty treated nodes containing a zero-width space (ZWSP) as non-empty.
 
-Consequently, a block with only an empty format was mistakenly regarded as non-empty. To address this, the check has been updated to recognize (zwsp) as an empty block.
+As part of this update, {productname} 6.5 now correctly recognizes elements containing a ZWSP as empty blocks.
 
-As a result, blocks with empty formats in {productname} 6.5 are now correctly recognized as empty.
+As a consequence, exiting blockquote elements now happens even when the insertion point is at the end of the element, as expected.
 
 [[security-fixes]]
 == Security fixes

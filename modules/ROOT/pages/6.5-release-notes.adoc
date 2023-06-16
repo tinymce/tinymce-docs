@@ -71,16 +71,16 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
-=== Adding a newline in Chrome when the cursor was placed after a table could in some specific situations not generate the expected newline.
+=== In some specific circumstances when Google Chrome was the host browser, when the insertion point was placed after a table, adding a newline did not generate the expected newline.
 //#TINY-9813
 
-In previous versions of {productname}, specifically within Chrome, there was a specific issue where adding a newline after a table in certain cases didn't produce the intended outcome.
+Previously, when Google Chrome was the host browser, there were circumstances where adding a newline character after a table did not produce the expected outcome (that is, a new line).
 
-The cause of this problem was that when the cursor was positioned after a table, it was placed in the body at offset 1 instead of within any of its children.
+When the insertion point was positioned after a table, it was placed in the `<body>` at offset 1 instead of within any of its children.
 
-As a result, when the `contenteditable= "false"` element came after it, it was deemed invalid to insert a newline at that position, and thus, no newline was added.
+As a result, when an element with a `contenteditable= "false"` attribute came after it, it was deemed invalid to insert a newline at that position. Consequently, no newline was added.
 
-In {productname} 6.5, the position is now recognized as valid, and the expected root blocks are inserted.
+As of this release, {productname} now recognises this position as valid, and the expected root blocks are inserted.
 
 [[security-fixes]]
 == Security fixes

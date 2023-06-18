@@ -281,6 +281,17 @@ In {productname} 6.5, the editor’s *HTML 4* schema has been corrected. Block e
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== Removing an image that failed to upload from an empty paragraph would leave the paragraph without a padding `<br />` tag.
+//#TINY-9696
+
+Previously, when an image upload into an otherwise empty paragraph failed, the upload failure resulted in the empty paragraph not having the expected `<br />` tag to serve as padding.
+
+When the upload failure was noted by a {productname} editor instance, and the placeholder material for the expected image was removed by the editor, the expected padding was not set.
+
+The empty paragraph element was, in this circumstance, rendered inaccessible. And it presented to the end-user as the empty paragraph element being removed or improperly formatted.
+
+In {productname} 6.5, when the `images_uploade_handler` gets a `remove: true` callback, the parent element is checked and, if required padding is not present, it is added.
+
 === In some specific circumstances, if Google Chrome was the host browser, when the insertion point was placed after a table, adding a newline did not generate the expected newline.
 //#TINY-9813
 

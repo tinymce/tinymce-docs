@@ -246,6 +246,15 @@ In {productname} 6.5, the editor’s *HTML 4* schema has been corrected. Block e
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== Context toolbars would display the incorrect status for the Advanced List plugin buttons.
+//#TINY-9680
+
+In previous versions of {productname}, a presentation issue was caused by a discrepancy between the setup handler for the Advanced List — `advlist` — Quickbar button in the `advlist` Premium plugin and the setup handler for the List — `list` — Open Source plugin.
+
+Consequently, the status of the `advlist` Quickbar button was not updated correctly during setup.
+
+To resolve this, the setup handler for the `advlist` plugin was aligned with the one used in the `list` plugin. The status of the buttons is now accurately rendered, as expected.
+
 === Inserting two tables consecutively without focus in the editor resulted in the second table being inserted at the wrong position.
 //#TINY-3909
 

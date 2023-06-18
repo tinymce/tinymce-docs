@@ -281,6 +281,17 @@ In {productname} 6.5, the editor’s *HTML 4* schema has been corrected. Block e
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== In some specific circumstances, if Google Chrome was the host browser, when the insertion point was placed after a table, adding a newline did not generate the expected newline.
+//#TINY-9813
+
+Previously, when Google Chrome was the host browser, there were circumstances where adding a newline character after a table did not produce the expected outcome (that is, a new line).
+
+When the insertion point was positioned after a table, it was placed in the `<body>` at offset 1 instead of within any of its children.
+
+As a result, when an element with a `contenteditable= "false"` attribute came after it, it was deemed invalid to insert a newline at that position. Consequently, no newline was added.
+
+As of this release, {productname} now recognises this position as valid, and the expected root blocks are inserted.
+
 === In some cases, exiting a `blockquote` element could fail when the insertion point was positioned at the end of the `blockquote` element.
 //#TINY-9794
 

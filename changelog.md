@@ -7,7 +7,32 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### Unreleased
 
 - DOC-2008: Added TINY-9680 to `staging`.
+- DOC-2054: Added TINY-8297 to `staging`.
+- DOC-2031: Added TINY-3909 to `staging`.
+- DOC-2002: Added TINY-9510 to `staging`.
+- DOC-2046: Added TINY-9743 to `staging`.
+- DOC-2010: Added TINY-9691 to `staging`.
+- DOC-2056: Added TINY-9892 to `staging`.
+- DOC-2036: Added TINY-9805 to `staging`.
+- DOC-2019: Added TINY-9774 to `staging`.
+- DOC-2018: Added TINY-9768 to `staging`.
+- DOC-2005: Added TINY-9566 to `staging`.
+- DOC-1997: Added TINY-9472 to `staging`.
+- DOC-2041: Added TINY-9418 to `staging`.
+- DOC-1986: Added TINY-9770 to `staging`.
+- DOC-2053: Added TINY-9893 to `staging`.
+- DOC-2009: Add TINY-9688 to `staging`.
+- DOC-2057: Added TINY-9830 to `staging`.
+- DOC-2065: Added `typography` and `advtemplate` plugin configurations to the _Full featured demo: including Premium Plugins_ page.
+- DOC-2049: Added multiple `/partial/misc/admon-requires-6.<x>v.adoc` files for use as required by 6.5-and-later specific docs.
+- DOC-2047: Added TINY-9848 to `staging`.
+- DOC-2048: Added TINY-9812 to `staging`.
+- DOC-2044: Added TINY-9849 to `staging`.
+- DOC-1953: new file, `/modules/ROOT/partials/configuration/advtemplate_templates.adoc`, added. Documentation of new Advanced Template plugin option, `advtemplate_templates`, added to new file.
+- DOC-2030: document new Spell Checker Pro features: `mceSpellcheckUpdate` command; `SpellcheckerUpdated` event; and `getSpellingErrors()` API.
 - DOC-2028: Add release-notes template to `staging` for 6.5.
+- DOC-2004: Added docs for `init_content_sync` option.
+- DOC-2029: Added new partials, `editable_root.adoc` and `newdocument_content.adoc`, to `/configuration/`. Also added includes for both to `content-behavior-options.adoc`.
 
 ### 2023-05-03
 

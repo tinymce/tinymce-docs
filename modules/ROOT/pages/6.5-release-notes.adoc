@@ -220,6 +220,13 @@ As a result, embedding unlisted Vimeo videos into a {productname} editor using t
 
 {productname} 6.5 also incorporates the following changes:
 
+=== When dragging and dropping image elements within the editor the `dragend` event would sometimes not fire when Firefox was the host browser.
+//#TINY-9694
+
+Previously, when dragging and dropping image elements within the editor, the `dragend` event would, in some circumstances, not trigger when the host browser was Mozilla Firefox. 
+
+With this update, a fix for this was implemented. {productname} 6.5 now ensures that the `dragend` event consistently fires when an image is dropped in the editor, even when the host browser is Firefox.
+
 === The anchor element (`a`) could contain block child elements when the editor schema was set to *HTML 4*.
 //#TINY-9805
 

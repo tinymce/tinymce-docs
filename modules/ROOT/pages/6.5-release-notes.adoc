@@ -65,12 +65,12 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also incorporates the following changes:
 
-=== When dragging and dropping the image elements within the editor the `dragend` event would sometimes not fire on firefox.
+=== When dragging and dropping image elements within the editor the `dragend` event would sometimes not fire when Firefox was the host browser.
 //#TINY-9694
 
-In previous versions of {productname}, when dragging and dropping image elements within the editor, an issue was observed specifically on Firefox where the `dragend` event would occasionally fail to be triggered. 
+Previously, when dragging and dropping image elements within the editor, the `dragend` event would, in some circumstances, not trigger when the host browser was Mozilla Firefox. 
 
-To resolve this, a fix was implemented in {productname} 6.5 that ensures that the `dragend` event consistently fires when an image is dropped in the editor.
+With this update, a fix for this was implemented. {productname} 6.5 now ensures that the `dragend` event consistently fires when an image is dropped in the editor, even when the host browser is Firefox.
 
 [[bug-fixes]]
 == Bug fixes

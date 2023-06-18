@@ -189,6 +189,16 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following improvements:
 
+=== If the selection contains multiple table cells, Quickbar toolbars now present at the middle or beginning of the selection, horizontally.
+//#TINY-8297
+
+When multiple table cell elements are selected, by default, a blue background indicates their selection.
+
+In previous {productname} versions, however, once a cell selection was made, the Quickbar toolbar presented as pointing at the contents of the last cell in the selection. This gave the (incorrect) visual impression that formatting changes would only affect the contents of cell.
+
+In {productname} 6.5, when multiple table cells are selected, the Quickbar plugin calculates the bounding box of the selected cells. Using this information, the Quickbar now presents with the toolbar’s pointer directed at either the middle or the beginning of the selection, considered horizontally.
+
+This presentation makes it clearer that any Quickbar buttons will be applied to the entire selection.
 
 [[additions]]
 == Additions

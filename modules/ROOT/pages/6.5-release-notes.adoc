@@ -313,6 +313,17 @@ In {productname} 6.5, the editor’s *HTML 4* schema has been corrected. Block e
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== Enabling or disabling checkboxes did not set the correct classes and attributes
+//#TINY-4189
+
+In the previous version of {productname}, the checkbox element’s disabled state was not correctly applied to all elements. As a result, the state was neither properly removed nor added as intended.
+
+This error also left checkboxes potentially presenting as in a state that was not true (for example, presenting as enabled when they were not enabled).
+
+To rectify this issue, the control was adjusted and relocated to ensure that it functions as expected.
+
+With this update, enabling or disabling checkboxes sets the correct classes and attributes and presents the current state correctly to the end-user.
+
 === Inline alert in the "Search and Replace" dialog persisted when it was not necessary.
 //#TINY-9704
 

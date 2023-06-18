@@ -297,6 +297,13 @@ In {productname} 6.5, the editor’s *HTML 4* schema has been corrected. Block e
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== Inline alert in the "Search and Replace" dialog persisted when it was not necessary.
+//#TINY-9704
+
+Previously, the *Find and Replace* dialog was not updated following a modification to the “Find in selection” option. Consequently, the “not found” alert would persist and not disappear as intended.
+
+To resolve this issue, necessary UI updates were implemented after the change to the “Find in selection” option. As a result, the “not found” alert is now reset every time the “Find in selection” option is altered.
+
 === Removing an image that failed to upload from an empty paragraph would leave the paragraph without a padding `<br />` tag.
 //#TINY-9696
 

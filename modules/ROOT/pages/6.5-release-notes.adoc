@@ -30,6 +30,22 @@
 
 The following premium plugin updates were released alongside {productname} 6.5.
 
+=== Advanced Code Editor 3.3.0
+
+The {productname} 6.5 release includes an accompanying release of the **Advanced Code Editor** premium plugin.
+
+**Advanced Code Editor** 3.3.0 includes the following UX fix.
+
+=== The Code Editor now preserves selected font size.
+//#TINY-9701
+
+Previously, font size changes in the Advanced Code Editor were not preserved when the user exited the editor in inline mode.
+
+In **Advanced Code Editor** 3.3.0 a fix has been implemented to address this. Now, when users change the font size in the Advanced Code Editor and the user closes the Code Editor, the font size changes are preserved.
+
+The changed font size setting presents when the Advanced Code Editor is opened again.
+
+For information on the **Advanced Code Editor** plugin, see: xref:advcode.adoc[Advanced Code Editor].
 
 === Spell Checker Pro 3.3.0
 

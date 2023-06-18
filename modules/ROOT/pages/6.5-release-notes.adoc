@@ -90,12 +90,14 @@ In particular, the keyboard navigation text in the help dialog is now readable i
 
 {productname} 6.5 also incorporates the following changes:
 
-=== Help dialog was restored to `medium` width for better readability.
+=== The {productname} *Help* dialog was restored to medium width for better readability.
 //#TINY-9947
 
-A change was made in {productname} 6.4 that unintentionally caused the help dialog to become narrower.
+A change was made in {productname} 6.4 that caused the help dialog to become narrower.
 
-As a result, users experienced difficulty in reading the content, especially in languages other than English. To address this issue, the width of the help dialog has now been restored to its previous size, ensuring better readability for all users.
+As a result, users experienced difficulty in reading the content, especially in languages other than English.
+
+To address this issue, the width of the help dialog has been restored to its previous size, ensuring better readability for all users.
 
 [[bug-fixes]]
 == Bug fixes

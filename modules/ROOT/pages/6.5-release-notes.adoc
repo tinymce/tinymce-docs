@@ -50,11 +50,144 @@ In SpellChecker Pro 3.3.0, the word identification logic for the plugin’s clie
 
 For information on the **SpellChecker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[SpellChecker Pro].
 
+=== Advanced Typography 1.1.3
+
+The {productname} 6.5 release includes an accompanying release of the **Advanced Typography** premium plugin.
+
+**Advanced Typography** 1.1.3 includes one fix.
+
+=== Fixed adding unnecessary space after a comma and before a quote in several scenarios.
+//#TINY-9510
+
+In previous versions of {productname}, the issue of adding an unnecessary space after a comma and before a quote in several scenarios was caused by an incorrectly written Regular Expression rule in the https://github.com/typograf[Typograf] library used by the Advanced Typography plugin. This led to the appearance of spaces between commas and quotes.
+
+To fix this, {productname} updated the Regular Expression rule in the Typograf library. As a result, spaces between commas and quotes no longer appear.
+
+For information on the **Advanced Typography** plugin, see: xref:advanced-typography.adoc[Advanced Typography].
+
+=== Advanced Templates 1.2.0
+
+The {productname} 6.5 release includes an accompanying release of the **Advanced Templates** premium plugin.
+
+**Advanced Templates** 1.2.0 includes three fixes.
+
+=== Expanded category trees collapsed after any element in the tree was renamed in the Templates dialog’s tree component.
+//#TINY-9691
+
+In the previous version of {productname}, when users renamed a template or category in the *Insert → template…* dialog, the template list refreshed and expanded categories collapsed.
+
+Although cosmetic, this state loss hid the renamed template or category; a likely cause of user confusion. 
+
+This update addresses this using a new configuration property, `defaultExpandedIds`. The `defaultExpandedIDs` property allows the category tree’s state to be saved before executing the rename operation and then passed back for re-rendering the tree after the re-naming.
+
+With this update, after a template or category is re-named, the template list is re-rendered in the same state as it was prior to the re-naming. Consequently, if an object was in an expanded tree prior to being re-named, it will remain visible as a re-named object when the tree refreshes.
+
+For information on the **Advanced Templates** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
+
+=== A selected tree component template item did not stay highlighted when the Templates dialog re-rendered.
+//#TINY-9770
+
+In previous versions of {productname}, a selected tree component template item would lose its highlight when the Advanced Template dialog was re-rendered after the template list updated.
+
+This occured when a user renamed a selected template item in the tree component. As a consequence, the user could not identify the currently selected item in the tree.
+
+In {productname} 6.5, the problem was addressed by utilizing the new `defaultSelectedId` configuration property from the xref:dialog-components.adoc#tree[tree component] API.
+
+As a result, the currently previewed template is now correctly highlighted in the tree component, as expected.
+
+For information on the **Advanced Templates** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
+
+=== The *Insert → Template…* menu item and equivalent toolbar button was not disabled when the selection was inside an element with a `contenteditable="false"` attribute set
+//#TINY-9892
+
+In previous versions of {productname}, the *Insert → Template…* menu item, and equivalent toolbar button remained active when the user’s selection or insertion point was inside an element with a `contenteditable="false"` attribute set.
+
+As a consequence, the *Advanced Template* toolbar button and menu item appeared enabled, but clicking on them had no effect.
+
+A fix was implemented in {productname} 6.5. {productname} now checks if the user’s current selection is within an element with a `contenteditable="false"` attribute set. If it is, the *Advanced Template* toolbar button and menu item are disabled, as expected.
+
+For information on the **Advanced Templates** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
+
+=== Merge Tags 1.3.0
+
+The {productname} 6.5 release includes an accompanying release of the **Merge Tags** premium plugin.
+
+**Merge Tags** 1.3.0 includes three fixes:
+
+=== The plugin now correctly manages prefixes and suffixes when they are the same.
+//#TINY-9566
+
+In previous versions of **Merge Tags** the plugin mishandled a merge tags’ prefix and suffix when the user placed multiple merge tags within either an inline or block element. This resulted in incorrect management of these prefixes and suffixes during the `setContent` operation.
+
+This mis-management resulted in an unintended repetition of the prefix or suffix occurred, which lead to undesired output.
+
+For example, if the input was: 
+
+[source, html]
+----
+<div>%Tag1% this is a bug %Tag1%</div>
+----
+
+the output, after the `setContent` operation was:
+
+[source, html]
+----
+%Tag1%%% this is a bug %%%Tag1%
+----
+
+As of this **Merge Tags** update, the plugin now splits the array of any matching merge tags that are identified as _odd_ prefixes or suffixes. As a consequence, merge tag prefixes and suffixes that are the same are output as expected.
+
+For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
+
+=== Right clicking on a merge tag instance presented different highlighting depending on the host browser.
+//#TINY-9848
+
+In previous versions of {productname}, when users right-clicked on a merge tag, the highlighting within the merge tag selection varied, depending on the host browser.
+
+This resulted in an inconsistent end-user experience.
+
+{productname} 6.5 no longer uses a browser’s default highlighting of the merge tag. Instead, {productname} 6.5 introduces {productname}-specific styles. These styles highlight the merge tag consistently across different browsers.
+
+{productname} now presents end-users with uniform merge tag highlighting across all supported browsers.
+
+=== *Insert → Merge tag* menu item, and equivalent toolbar button was not disabled when selection was inside an element with a `contenteditable="false"` attribute set
+//#TINY-9893
+
+In previous versions of {productname}, the *Insert → Merge tag* menu item, and equivalent toolbar button remained active when the user’s selection or insertion point was inside an element with a `contenteditable="false"` attribute set.
+
+As a consequence the *Merge tags* toolbar button and menu item appeared enabled, but clicking on them had no effect.
+
+A fix was implemented in {productname} 6.5. {productname} now checks if the user’s current selection is within an element with a `contenteditable="false"` attribute set. If it is, the *Merge tags* toolbar button and menu item are disabled, as expected.
+
+For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
+
+=== Format Painter 2.0.2
+
+The {productname} 6.5 release includes an accompanying release of the **Format Painter** Premium plugin.
+
+**Format Painter** 2.0.2 includes one fix:
+
+=== It was possible to modify text elements with the `contenteditable="false"` attribute set using formatpainter
+//#TINY-9472
+
+Users could use previous versions of the Format Painter plugin to modify text elements with the `contenteditable="false"` attribute set.
+
+That is, users could, contrary to the attribute setting, make formatting changes to text marked as Read Only using this plugin.
+
+With this update, the Format Painter plugin marks the `contenteditable="false"` attribute setting properly: text elements with this setting are no longer changed if this plugin is applied to them.
+
+For information on the **Format Painter** plugin, see: xref:formatpainter.adoc[Format Painter].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement
 
 The following premium plugin has been announced as reaching its end-of-life:
+
+=== Real-Time Collaboration
+
+{productname}'s xref:rtc-introduction.adoc[Real-time Collaboration (RTC)] plugin will be deactivated on December 31, 2023, and is no longer available for purchase.
+
 
 [[accompanying-premium-skins-and-icon-packs-changes]]
 == Accompanying Premium Skins and Icon Packs changes
@@ -75,22 +208,158 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following improvements:
 
+=== If the selection contains multiple table cells, Quickbar toolbars now present at the middle or beginning of the selection, horizontally.
+//#TINY-8297
+
+When multiple table cell elements are selected, by default, a blue background indicates their selection.
+
+In previous {productname} versions, however, once a cell selection was made, the Quickbar toolbar presented as pointing at the contents of the last cell in the selection. This gave the (incorrect) visual impression that formatting changes would only affect the contents of cell.
+
+In {productname} 6.5, when multiple table cells are selected, the Quickbar plugin calculates the bounding box of the selected cells. Using this information, the Quickbar now presents with the toolbar’s pointer directed at either the middle or the beginning of the selection, considered horizontally.
+
+This presentation makes it clearer that any Quickbar buttons will be applied to the entire selection.
 
 [[additions]]
 == Additions
 {productname} 6.5 also includes the following additions:
 
+=== Support for the `h` hash parameter in vimeo video url in the Media plugin.
+//#TINY-9830
+
+In previous versions of {productname}, an issue was identified that prevented unlisted Vimeo videos from been added to the editor when using the media plugin.
+
+The media plugin failed to correctly insert the video into the content due to {productname} ignoring the `h` parameter when parsing the source URL.
+
+In {productname} 6.5, the `h` parameter is now parsed and included in the source URL by {productname}.
+
+As a result, embedding unlisted Vimeo videos into a {productname} editor using the media plugin now works as expected.
 
 [[changes]]
 == Changes
 
 {productname} 6.5 also incorporates the following changes:
 
+=== List items in a combo box were not announced by screen readers.
+//#TINY-9280
+
+For example, the URL text-entry field in the Link dialog is a combobox. When this element is focused with a screen reader, it is announced as a combobox and pressing the down arrow shows the available list items.
+
+In previous versions of {productname}, however, none of these items were announced by the screen reader as they were selected, making these items effectively invisible to screen reader users.
+
+With this update, listed items in a combobox can be announced by screen readers, as expected.
+
+=== When dragging and dropping image elements within the editor the `dragend` event would sometimes not fire when Firefox was the host browser.
+//#TINY-9694
+
+Previously, when dragging and dropping image elements within the editor, the `dragend` event would, in some circumstances, not trigger when the host browser was Mozilla Firefox. 
+
+With this update, a fix for this was implemented. {productname} 6.5 now ensures that the `dragend` event consistently fires when an image is dropped in the editor, even when the host browser is Firefox.
+
+=== The anchor element (`a`) could contain block child elements when the editor schema was set to *HTML 4*.
+//#TINY-9805
+
+In previous versions of {productname}, the anchor element — `<a>` — could have block elements added as children when the schema was set to *HTML 4*.
+
+Consequently, applying a heading element (for example, an `<h1>` element) to a link within a table caption would affect the editor view, even though the table caption tag was not included in the serialized content.
+
+To address this issue, an update was made to the editor’s HTML4 schema: block child elements are now not allowed in anchor tags.
+
+As a result, applying block formatting to link content in {productname} 6.5, should no longer have any impact.
+
+=== The `caption`, `address` and `dt` elements could contain block child elements when the editor schema was set to *HTML 4*.
+//#TINY-9768
+
+In previous versions of {productname}, the `<caption>`, `<dt>` and `<address>` elements could have block elements added as children when the schema was set to *HTML 4*.
+
+The *HTML 4* schema does not support this and, as a consequence, {productname} documents containing such child elements did not validate against HTML 4-specific parsers and validators.
+
+In {productname} 6.5, the editor’s *HTML 4* schema has been corrected. Block elements are now, correctly, considered invalid inside such elements and are automatically unwrapped out of the elements noted above.
+
 
 [[bug-fixes]]
 == Bug fixes
 
 {productname} 6.5 also includes the following bug fixes:
+
+=== In some cases, exiting a `blockquote` element could fail when the insertion point was positioned at the end of the `blockquote` element.
+//#TINY-9794
+
+There was an issue with exiting a blockquote element when the insertion point was positioned at the end of the element. this issue arose because, when inserting a new block, the check to determine if the block is empty treated nodes containing a zero-width space (ZWSP) as non-empty.
+
+As part of this update, {productname} 6.5 now correctly recognizes elements containing a ZWSP as empty blocks.
+
+As a consequence, exiting blockquote elements now happens even when the insertion point is at the end of the element, as expected.
+
+=== Context toolbars would display the incorrect status for the Advanced List plugin buttons.
+//#TINY-9680
+
+In previous versions of {productname}, a presentation issue was caused by a discrepancy between the setup handler for the Advanced List — `advlist` — Quickbar button in the `advlist` Premium plugin and the setup handler for the List — `list` — Open Source plugin.
+
+Consequently, the status of the `advlist` Quickbar button was not updated correctly during setup.
+
+To resolve this, the setup handler for the `advlist` plugin was aligned with the one used in the `list` plugin. The status of the buttons is now accurately rendered, as expected.
+
+=== Inserting two tables consecutively without focus in the editor resulted in the second table being inserted at the wrong position.
+//#TINY-3909
+
+In previous versions of {productname}, an issue was identified that resulted in the incorrect execution of the `remove_trailing_br` function by **DomParser**. This resulted in the insertion point focusing on the `<tr>` element instead of the `<td>` element.
+
+As a consequence, when inserting a table with the focus on `<tr>`, the table would be placed in the wrong location.
+
+To fix this, the `remove_trailing_br` function was extracted, with the default behavior now set to execute within the serializer. Although the function remains in the parser, its default setting has been modified to not execute by default, as removing it entirely could cause compatibility issues.
+
+NOTE: The configuration related to this issue will be deprecated in `DomParserSetting` in a future {productname} release.
+
+=== The destination category list would include the template’s own category in the *Move to…* dialog.
+//#TINY-9774
+
+When users seek to move a template to another category, a *Move to…* dialog is presented, with a dropdown list of available categories.
+
+In previous versions of {productname}, this list included a redundant category: the current category of the template being moved. If the selected destination category in the *Move to…* dialog matched this original template category, the operation had no effect.
+
+In {productname} 6.5, the destination category list now filters out the category of the template being moved.
+
+Consequently, users no longer see the parent category of the template in the *Move to…* dialog’s category list.
+
+=== Closing a dialog would scroll down the document in Safari on macOS. 
+//#TINY-9148
+
+In Safari running on macOS, when a dialog was closed by clicking outside the dialog, a bug caused the browser to select the active element and scroll down.
+
+This caused the browser to scroll the viewport to the bottom of the dialog after the dialog closed.
+
+This scrolling did not occur if the dialog was closed by pressing the dialog close control or by typing the *Esc* key.
+
+To fix this issue, {productname} now forces the active element to blur when Safari is the host browser. By doing so, no element is selected after closing the dialog, preventing the unintended scrolling behavior.
+
+=== Text within anchor tags, <a>, presented with the Times New Roman font-family, ignoring the font family used in the original document.
+//#TINY-9812
+
+In previous versions of {productname}, an issue related to the `a:link` selector in the CSS received from Microsoft Word was identified.
+
+When content containing links was pasted from a Microsoft Word file into a {productname} instance running the xref:introduction-to-powerpaste.adoc[PowerPaste] plugin, the pasted-in link text rendered using the Times New Roman font family. And it presented thus no matter the typeface set for this text in the original Microsoft Word document.
+
+To work around this, {productname} 6.5 removes the default CSS styling applied by Microsoft Word during the paste operation.
+
+With this change, link text copied from Microsoft Word using the PowerPaste plugin now uses the font-family matching that used in the source document.
+
+=== Invalid markup in Notification and Dialog close buttons.
+//#TINY-9849
+
+In previous versions of {productname}, an issue was identified in the close buttons: invalid markup was present. Specifically, a div element was being used within the buttons. This violates HTML standards and caused problems when running {productname} HTML through markup checkers: the checker, correctly, threw errors.
+
+In {productname} 6.5, the markup was fixed by replacing the div element with a `<span>` element, aligning it with HTML guidelines. As a result, the updated close buttons now pass HTML markup checkers without throwing errors.
+
+=== Context menus and menu items were not constrained within the scrollable container if the parent node was a Shadow root
+//#TINY-9743
+
+In previous versions of {productname}, context menus and menu items could overflow beyond the editor’s bounds when the parent node was a Shadow root.
+
+Prior to this update, {productname} only supported the Shadow DOM API if its container node was a child of the Shadow root. 
+
+To address this overflowing menu issue, {productname} 6.5 added support for the Shadow Dom API when the editor’s container node is a parent of the Shadow host node.
+
+Context menus and menu items are now constrained within the scrollable container if the editor’s root node is a parent of the Shadow host node.
 
 
 [[security-fixes]]

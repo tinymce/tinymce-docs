@@ -25,3 +25,10 @@ include::partial$misc/premium-upgrade-promotion-option.adoc[]
 To enable highlighting on focus for the editor,
 
 include::partial$configuration/highlight_on_focus.adoc[]
+
+== Reducing initialization flicker 
+
+To enable synchronous iframe initialization. 
+
+include::partial$configuration/init_content_sync.adoc[]
+

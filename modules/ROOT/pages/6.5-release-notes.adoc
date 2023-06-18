@@ -31,6 +31,25 @@
 The following premium plugin updates were released alongside {productname} 6.5.
 
 
+=== Spell Checker Pro 3.3.0
+
+The {productname} 6.5 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
+
+Spell Checker Pro 3.3.0 adds one change:
+
+=== Words containing non-Latin characters were not sent in spelling requests.
+//#TINY-9654
+
+As of Spell Checker Pro 3.2.1, only languages using a Latin-based alphabet — for example; English, French, and German — had supported dictionaries.
+
+As a consequence, Spell Checker Pro’s client-side only sent strings containing Latin characters in spelling requests to the server, omitting words containing non-Latin characters from languages such as Greek, Arabic, and Korean.
+
+This interfered with some use-cases in which Spell Checker Pro client-side was paired with a custom spellchecking service which supports languages with non-Latin alphabets: words containing non-Latin characters were not sent to the server.
+
+In SpellChecker Pro 3.3.0, the word identification logic for the plugin’s client-side has been changed to the one used by the Word Count plugin. This allows words containing non-Latin characters to be captured and sent in requests to the spelling service.
+
+For information on the **SpellChecker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[SpellChecker Pro].
+
 === Advanced Typography 1.1.3
 
 The {productname} 6.5 release includes an accompanying release of the **Advanced Typography** premium plugin.

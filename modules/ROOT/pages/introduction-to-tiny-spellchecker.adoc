@@ -211,6 +211,64 @@ tinymce.init({
 });
 ----
 
+=== SpellcheckerUpdated Event
+
+include::partial$misc/admon-requires-6.5v.adoc[]
+
+This event is fired when the editor content is checked for misspellings and suggestions, either by opening the Spell Checker Pro dialog, or by executing the `+mceSpellcheckUpdate+` command.
+
+NOTE: This event is not fired when SpellChecker Pro is operating in As-You-Type mode.
+
+==== Example: the SpellcheckerLanguageChanged event
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymcespellchecker',
+  toolbar: 'spellchecker',
+  init_instance_callback: (editor) => {
+    editor.on('SpellcheckerUpdated', (e) => {
+      const spelling = e.spelling;
+      for (const [ language, words ] of Object.entries(spelling)) {
+        for (const [ word, suggestions ] of Object.entries(words)) {
+          console.log(`${language} suggestions for ${word}:`, suggestions);
+        }
+      }
+    });
+  }
+});
+----
+
+[[spelling-object]]
+==== The `spelling` object
+
+The `+spelling+` object, which is provided by the `+SpellcheckerUpdated+` event, contains the result of the spelling service spellcheck.
+
+The keys of the outermost object are the language code for each checked language.
+
+Under each returned language code is an object with
+
+* keys representing misspelled words; and
+* arrays of values that are possible correct spellings.
+
+===== Example: the `spelling` object
+
+[source, json]
+----
+spelling: {
+  en: {
+    riddiculed: [ 'ridiculed', 'ridicule' ],
+    impossable: [ 'impossible', 'impassable', 'impassible' ]
+  },
+  es: {
+    impossible: [ 'impasible', 'imposible', 'imposibles', 'imposibilite' ],
+    designate: [ 'desnate', 'designativo', 'designa-te', 'designare' ],
+    moment: [ 'momento', 'momentito', 'omento', 'memento' ]
+  }
+}
+----
+
 == APIs
 
 The {pluginname} plugin provides the following APIs.

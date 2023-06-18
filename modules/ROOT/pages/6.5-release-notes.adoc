@@ -39,7 +39,7 @@ The {productname} 6.5 release includes an accompanying release of the **Advanced
 === A selected item within its parent directory in tree components, did not remain selected after closing the directory
 //#TINY-9715
 
-In previous versions of the **Advanced Templates** plugin, selecting a component in a leaf within its parent directory and then closing the directory caused the selection to be lost.
+This new release of the **Advanced Templates** plugin corrects this. It now tracks the selected leaf’s active state before and after collapsing or expanding the leaf’s parent directory. This ensures the selection state of a leaf is preserved when the leaf’s parent directory is collapsed or expanded.
 
 This new release of the **Advanced Templates** plugin corrects this. It now tracks the selected leaf’s active state before and after collapsing or expanding the leaf’s parent directory.
 

@@ -74,7 +74,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === Inserting two tables consecutively without focus in the editor resulted in the second table being inserted at the wrong position.
 //#TINY-3909
 
-In previous versions of {productname}, an issue was identified that resulted in the incorrect execution of the `remove_trailing_br` function by **DomParser**. This resulted in the insertion point focussing on the `<tr>` element instead of the `<td>` element.
+In previous versions of {productname}, an issue was identified that resulted in the incorrect execution of the `remove_trailing_br` function by **DomParser**. This resulted in the insertion point focusing on the `<tr>` element instead of the `<td>` element.
 
 As a consequence, when inserting a table with the focus on `<tr>`, the table would be placed in the wrong location.
 

@@ -31,8 +31,19 @@ The following new Open Source Plugin was released alongside {productname} 6.5.
 === Accordion 1.0.0
 //#TINY-9730
 
+The new Open Source plugin, **Accordion** allows for the creation of sections in a document that can be expanded or collapsed to show or hide additional content.
 
-// a few paragraphs of basic info about the plugin here.
+The Accordion plugin also provides integrators with four commands:
+
+* `InsertAccordion`;
+* `ToggleAccordion`;
+* ToggleAllAccordions`;
+* `RemoveAccordion`;
+
+and two initialization options
+
+* `details_initial_state`;
+* `details_serialized_state`.
 
 For information on the **Accordion** plugin see xref:accordion.adoc[Accordion].
 

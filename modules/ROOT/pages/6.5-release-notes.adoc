@@ -74,9 +74,13 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === Enabling or disabling checkboxes did not set the correct classes and attributes
 //#TINY-4189
 
-In previous version of {productname}, the checkbox element’s disabled state was not correctly applied to all elements. As a result, the state was neither properly removed nor added as intended.
+In the previous version of {productname}, the checkbox element’s disabled state was not correctly applied to all elements. As a result, the state was neither properly removed nor added as intended.
+
+This error also left checkboxes potentially presenting as in a state that was not true (for example, presenting as enabled when they were not enabled).
 
 To rectify this issue, the control was adjusted and relocated to ensure that it functions as expected.
+
+With this update, enabling or disabling checkboxes sets the correct classes and attributes and presents the current state correctly to the end-user.
 
 [[security-fixes]]
 == Security fixes

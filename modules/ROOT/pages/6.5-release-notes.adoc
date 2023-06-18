@@ -85,6 +85,16 @@ For information on the **Advanced Typography** plugin, see: xref:advanced-typogr
 
 The {productname} 6.5 release includes an accompanying release of the **Advanced Templates** premium plugin.
 
+**Advanced Templates** 1.2.0 includes the following fix.
+
+=== A selected item within its parent directory in tree components, did not remain selected after closing the directory
+//#TINY-9715
+
+This new release of the **Advanced Templates** plugin corrects this. It now tracks the selected leaf’s active state before and after collapsing or expanding the leaf’s parent directory. This ensures the selection state of a leaf is preserved when the leaf’s parent directory is collapsed or expanded.
+
+This new release of the **Advanced Templates** plugin corrects this. It now tracks the selected leaf’s active state before and after collapsing or expanding the leaf’s parent directory.
+
+For information on the **Advanced Templates** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
 **Advanced Templates** 1.2.0 includes three fixes.
 
 === Expanded category trees collapsed after any element in the tree was renamed in the Templates dialog’s tree component.
@@ -98,8 +108,6 @@ This update addresses this using a new configuration property, `defaultExpandedI
 
 With this update, after a template or category is re-named, the template list is re-rendered in the same state as it was prior to the re-naming. Consequently, if an object was in an expanded tree prior to being re-named, it will remain visible as a re-named object when the tree refreshes.
 
-For information on the **Advanced Templates** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
-
 === A selected tree component template item did not stay highlighted when the Templates dialog re-rendered.
 //#TINY-9770
 
@@ -110,8 +118,6 @@ This occured when a user renamed a selected template item in the tree component.
 In {productname} 6.5, the problem was addressed by utilizing the new `defaultSelectedId` configuration property from the xref:dialog-components.adoc#tree[tree component] API.
 
 As a result, the currently previewed template is now correctly highlighted in the tree component, as expected.
-
-For information on the **Advanced Templates** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
 
 === The *Insert → Template…* menu item and equivalent toolbar button was not disabled when the selection was inside an element with a `contenteditable="false"` attribute set
 //#TINY-9892

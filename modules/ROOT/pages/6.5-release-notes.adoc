@@ -71,7 +71,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
-=== In some specific circumstances when Google Chrome was the host browser, when the insertion point was placed after a table, adding a newline did not generate the expected newline.
+=== In some specific circumstances, if Google Chrome was the host browser, when the insertion point was placed after a table, adding a newline did not generate the expected newline.
 //#TINY-9813
 
 Previously, when Google Chrome was the host browser, there were circumstances where adding a newline character after a table did not produce the expected outcome (that is, a new line).

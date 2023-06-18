@@ -220,6 +220,15 @@ As a result, embedding unlisted Vimeo videos into a {productname} editor using t
 
 {productname} 6.5 also incorporates the following changes:
 
+=== List items in a combo box were not announced by screen readers.
+//#TINY-9280
+
+For example, the URL text-entry field in the Link dialog is a combobox. When this element is focused with a screen reader, it is announced as a combobox and pressing the down arrow shows the available list items.
+
+In previous versions of {productname}, however, none of these items were announced by the screen reader as they were selected, making these items effectively invisible to screen reader users.
+
+With this update, listed items in a combobox can be announced by screen readers, as expected.
+
 === When dragging and dropping image elements within the editor the `dragend` event would sometimes not fire when Firefox was the host browser.
 //#TINY-9694
 

@@ -108,12 +108,12 @@ In previous versions of {productname}, an issue was identified in the close butt
 
 In {productname} 6.5, the markup was fixed by replacing the div element with a `<span>` element, aligning it with HTML guidelines. As a result, the updated close buttons now pass HTML markup checkers without throwing errors.
 
-=== Applying lists did not work if the selection included a `contenteditable=false` block element.
+=== Applying lists did not work if the selection included a block element with a `contenteditable=false` attribute set.
 //#TINY-9823
 
-In previous versions of {productname}, applying lists would not work if the selection included a `contenteditable="false"` block element. This was due to the fact that if there was a non-editable element in the text-selection, inserting or applying a bullet or numbered list to the selection would fail. As a consequence, when the user pressed the insert list button while a non-editable element was included in the selection, nothing would happen.
+Previously, if there was a non-editable element in the text-selection, inserting or applying a bullet or numbered list to the selection failed. As a consequence, when the user pressed the insert list button while a non-editable element was included in the selection, nothing happened.
 
-To resolve this issue, the logic for inserting lists was updated in the latest version of {prouductname}. The new approach ensures that everything within the selection, except for the non-editable element, is turned into a list. With this fix in place, when the user presses the insert list button, all elements within the selection, excluding the non-editable one, will be transformed into a list.
+For {productname} 6.5 the logic for inserting lists was updated. With this update everything within the selection — except for the non-editable element — is turned into a list.
 
 [[security-fixes]]
 == Security fixes

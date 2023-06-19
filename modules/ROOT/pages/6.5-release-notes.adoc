@@ -307,6 +307,19 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following improvements:
 
+=== Translations added for Help text displayed at **Help > Help > Keyboard Navigation**.
+//#TINY-9633
+
+In previous versions of {productname}, translations for the text on the “Keyboard Navigation” tab in the Help dialog were not available due to a flaw with the way translations were delivered.
+
+Conventionally, translations were parsed into JavaScript files containing objects which were keyed by the English string, with the value being the translated equivalent in a different language. This was unsuitable for very long strings such as the text on the *Keyboard Navigation* tab.
+
+In {productname} 6.5, a new pipeline has been implemented for delivering translations of long strings. Professional translations of text within the *Keyboard Navigation* tab inside the **Help** dialog have also been procured.
+
+As a result, the text in the **Help** dialog’s *Keyboard Navigation* tab is now shown in the language specified by the current editor’s `language` option.
+
+NOTE: Due to the large differences between this new pipeline and conventional methods of delivering translations, the professional translations for the text on the *Keyboard Navigation* tab have been made open source for community users. These translations are in the `i18n` subdirectory of the **Help** plugin.
+
 === Screen readers now announce instructions for using arrow keys to resize the editor when the resize handle is focused
 //#TINY-9793
 
@@ -586,6 +599,12 @@ the modified border width and color of the cell reverted to the corresponding va
 This undid the initial modifications in the *Cell Properties* dialog.
 
 In {productname} 6.5, the Table Properties dialog will continue to be the *source of truth* and have the ability to overwrite cell and row properties like border width and color. However, the *Table Properties* dialog will only overwrite those properties if they were modified in the *Table Properties* dialog.
+=== Applying lists did not work if the selection included a block element with a `contenteditable="false"` attribute set.
+//#TINY-9823
+
+Previously, if there was a non-editable element in the text-selection, inserting or applying a bullet or numbered list to the selection failed. As a consequence, when the user pressed the insert list button while a non-editable element was included in the selection, nothing happened.
+
+For {productname} 6.5 the logic for inserting lists was updated. With this update everything within the selection — except for the block element with a `contenteditable="false"` attribute set — is turned into a list.
 
 === Pasting content into the editor did not fire `beforeinput` and `input` events.
 //#TINY-9829

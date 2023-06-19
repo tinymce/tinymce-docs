@@ -33,11 +33,19 @@ The following premium plugin updates were released alongside {productname} 6.5.
 === Word count was inaccurate for documents with specific characters.
 //#TINY-8122
 
-In previous versions of {productname}, the word count function in certain documents was inaccurate due to a bug. This bug occurred when specific characters, such as `+^, №, ~, +, |, `+` and `+` were treated as separate words instead of being recognized as part of the word they were attached to.
+Previously, xref:wordcount.adoc[Word Count] treated some characters as separate words rather than as part of the word they were connected to. The following characters specifically:
 
-As a consequence, the word count function provided incorrect counts, which may have resulted in errors regarding the final word count for the document.
+* **^**
+* **№**
+* **~**
+* **+**
+* **|**
+* **$**
+* **`**
 
-In {productname} 6.5, the word count function's Unicode punctuation string has now been updated to include these characters as exceptions. By doing so, the updated function now accurately count words, including the previously mishandled characters, ensuring a more reliable word count in the users final document.
+This resulted in innaccurate word counts.
+
+In {productname} 6.5, Word Count’s Unicode punctuation string has been updated to include these characters as exceptions. By doing so, the updated function more accurately count words, including the previously mishandled characters, providing a more reliable word count.
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement

@@ -417,6 +417,15 @@ As a result, embedding unlisted Vimeo videos into a {productname} editor using t
 
 {productname} 6.5 also incorporates the following changes:
 
+=== Updated the *font* and *font size* dropdown styles to match the default TinyMCE styles
+//#TINY-9630
+
+During the {productname} 5.x lifetime, browser-native select form elements were replaced by a {productname} native dropdown component. However, some browser-native select form elements were not replaced by the custom dropdown component.
+
+This caused inconsistent user interface as certain parts of the application continued to use the browser-native `selectbox`. Affected components include the Advanced Code, Template, Accessibility Checker, Page embed, Permanent Pen, and Advanced Table plugins.
+
+WIth the release of {productname} 6.5, all form select elements now use the {productname} native select component, `listbox`, instead of the browser-native `selectbox`. This change ensures a consistent user interface throughout {productname}.
+
 === The {productname} *Help* dialog was restored to medium width for better readability.
 //#TINY-9947
 

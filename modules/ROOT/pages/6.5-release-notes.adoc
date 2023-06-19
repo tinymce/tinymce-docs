@@ -71,14 +71,16 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
-=== Backspace would in some situations delete the image after the cursor instead of before it as expected.
+=== Pressing the Backspace key would, in some situations, delete the image after the insertion point instead of before it
 //#TINY-9807
 
-In previous versions of {productname}, after pressing backspace occasionally would delete an image after the cursor instead of the expected deletion before it.
+In previous versions of {productname}, if the insertion point was set between two image elements and the backspace key was pressed, the trailing image was mistakenly treated as an inline formatting element that should be deleted
 
-This issue occurred when the cursor was positioned between two image elements and as a consequence, the wrong image was unexpectedly deleted.
+Consequently, the image after the insertion point was deleted, not the image before the insertion point.
 
-As a result of the fix applied in {productname} 6.5, the expected image is now deleted as intended.
+With this update, {productname} now determines the element structure properly and no longer treats the trailing image incorrectly.
+
+Pressing the Backspace key in this circumstance now deletes the image before the insertion point, as expected.
 
 [[security-fixes]]
 == Security fixes

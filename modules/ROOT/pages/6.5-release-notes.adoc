@@ -382,6 +382,24 @@ In {productname} 6.5, the editor’s *HTML 4* schema has been corrected. Block e
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== Pressing Command+Delete did not add an undo level on systems running macOS.
+//#TINY-8910
+
+On systems running macOS, the Command+Delete (⌘+Delete) keyboard shortcut deletes the material from the insertion point to the beginning of the line. Previously, however, when this shortcut was used in a {productname} instance, the expected undo level was not registered.
+
+A workaround did exist. If a further action was taken (eg text was entered or the Delete key was pressed to remove another character) the new action and the ⌘+Delete action were both added to the undo stack.
+
+With this update, the {productname} editor now registers an undo level when the ⌘+Delete shortcut is used, allowing end-users to undo the action immediately (by, for example, pressing ⌘+Z) and without having to add a further action.
+
+=== Ctrl+backspace and Ctrl+delete did not restore the insertion point position correctly on Windows after an undo or redo operation.
+//#TINY-8910
+
+On systems running Windows, the Ctrl+Delete keyboard shortcut deletes all characters to the left of the insertion point, up to the next word boundary and the Ctrl+Backspace keyboard shortcut deletes all characters to the right of the insertion point, up to the next word boundary.
+
+In previous versions of {productname}, however, if either the ctrl+delete or ctrl+backspace keyboard shortcut was used and immediately followed by an *undo* or *redo* operation, the insertion point was re-set incorrectly (often, but not always, at the beginning of the line affected by the operations).
+
+This issue was resolved for this release: using either the ctrl+delete or ctrl+backspace keyboard shortcut and an undo or redo operation in turn now sees the insertion point placed correctly, as expected.
+
 === Pressing the Backspace key would, in some situations, delete the image after the insertion point instead of before it
 //#TINY-9807
 

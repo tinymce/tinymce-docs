@@ -44,17 +44,17 @@ This allows users to verify their spelling all at once without the use of the Sp
 
 ==== New `SpellcheckerUpdated` event
 
-The new `SpellcheckerUpdated` event is triggered each time the editor content is updated to display any new misspelt words, once suggestions are provided for those misspelt words.
+The new `SpellcheckerUpdated` event is triggered each time the editor content is updated to display new misspelt words once suggestions are provided for those misspelt words.
 
 This event is currently supported when using the `mceSpellcheckUpdate` command or when opening the dialog.
 
-NOTE: This event is currently not supported in As-you-type mode.
+NOTE: This event is not currently supported in As-you-type mode.
 
 ==== New `getSpellingErrors()` API
+
 The new `getSpellingErrors()` API allows users to retrieve a list of each misspelling in the editor content.
 
-[NOTE]
-Read more about xref:ROOT:introduction-to-tiny-spellchecker.adoc[new Spell Checker Pro features here].
+For information on the **Spell Checker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Introduction to Spell Checker Pro].
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement

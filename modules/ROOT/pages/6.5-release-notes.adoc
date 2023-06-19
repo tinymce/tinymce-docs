@@ -260,6 +260,28 @@ A fix was implemented in {productname} 6.5. {productname} now checks if the user
 
 For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
 
+=== Advanced Typography 1.1.2
+
+The {productname} 6.5 release includes an accompanying release of the **Advanced Typography** premium plugin.
+
+**Advanced Typography** 1.1.2 includes two fixes:
+
+=== Advanced Typography buttons are disabled in elements with a `contenteditable="false"` attribute set.
+//#TINY-9468
+
+Previously, the Typography toolbar button was still enabled when the user selected an element with a `contenteditable="false"` attribute set within the {productname} editor.
+
+With this release, the **Advanced Typography** plugin now correctly disables its toolbar button and its function when the selection is in an element with a `contenteditable="false"` attribute set.
+
+=== The Advanced Typography command, `mceTypography`, no longer applies fixes if the selection is an element with a `contenteditable="false"` attribute set.
+//#TINY-9468
+
+Previously, applying the `mceTypography` command when the selection was in an element with a `contenteditable="false"` attribute set still applied changes to the selection.
+
+With this release, the **Advanced Typography** plugin now correctly disables the `mceTypography` command when the selection is in an element with a `contenteditable="false"` attribute set
+
+For information on the **Advanced Typography** plugin, see: xref:advanced-typography.adoc[Advanced Typography].
+
 === PowerPaste 6.2.0
 
 The {productname} 6.5 release includes an accompanying release of the **Power Paste** premium plugin.

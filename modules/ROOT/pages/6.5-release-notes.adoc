@@ -71,14 +71,14 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
-=== The selected element would in some situations, when it was reused or otherwise reset not have an initial selected value when expected to.
+=== In some circumstances, the selected element would, when it was reused or otherwise reset, not have an initial selected value when it was expected to.
 //#TINY-9679
 
-In previous version of {productname}, the browser displayed difficulties while switching to a elements child, which lead to it defaulting to an empty state.
+Previously, issues between the host browser and the editor switching between an element’s children, lead to the element presenting an erroneous empty state when displayed.
 
-To resolve this issue, element such as this can no longer be empty unless the user explicitly sets it as such.
+To resolve this, such elements can no longer be empty unless the user explicitly sets them as such.
 
-In {productname}, these elements will now have a populated value unless the user specifically chooses an empty selection.
+In {productname} 6.5, these elements will now have a populated value unless the user specifically chooses an empty selection.
 
 [[security-fixes]]
 == Security fixes

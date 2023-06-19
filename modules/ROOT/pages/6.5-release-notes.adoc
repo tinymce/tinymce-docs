@@ -307,6 +307,19 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following improvements:
 
+=== Translations added for Help text displayed at **Help > Help > Keyboard Navigation**.
+//#TINY-9633
+
+In previous versions of {productname}, translations for the text on the “Keyboard Navigation” tab in the Help dialog were not available due to a flaw with the way translations were delivered.
+
+Conventionally, translations were parsed into JavaScript files containing objects which were keyed by the English string, with the value being the translated equivalent in a different language. This was unsuitable for very long strings such as the text on the *Keyboard Navigation* tab.
+
+In {productname} 6.5, a new pipeline has been implemented for delivering translations of long strings. Professional translations of text within the *Keyboard Navigation* tab inside the **Help** dialog have also been procured.
+
+As a result, the text in the **Help** dialog’s *Keyboard Navigation* tab is now shown in the language specified by the current editor’s `language` option.
+
+NOTE: Due to the large differences between this new pipeline and conventional methods of delivering translations, the professional translations for the text on the *Keyboard Navigation* tab have been made open source for community users. These translations are in the `i18n` subdirectory of the **Help** plugin.
+
 === Screen readers now announce instructions for using arrow keys to resize the editor when the resize handle is focused
 //#TINY-9793
 

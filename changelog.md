@@ -7,7 +7,11 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### Unreleased
 
 - DOC-1996: Added TINY-9478 to `staging`.
+- DOC-1988: Added TINY-9755 to `staging`.
+- DOC-1987: Added TINY-9756 to `staging`.
 - DOC-2028: Add release-notes template to `staging` for 6.5.
+- DOC-2004: Added docs for `init_content_sync` option.
+- DOC-2029: Added new partials, `editable_root.adoc` and `newdocument_content.adoc`, to `/configuration/`. Also added includes for both to `content-behavior-options.adoc`.
 
 ### 2023-05-03
 

@@ -65,12 +65,14 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also incorporates the following changes:
 
-=== Updated the `font` and `fontsize` dropdown styles to match the default TinyMCE styles
+=== Updated the *font* and *font size* dropdown styles to match the default TinyMCE styles
 //#TINY-9630
 
-In {productname} 5, a bug was found where some native select form elements were not replaced by the custom dropdown component in previous versions. This resulted in an inconsistent user interface as certain parts of the application continued to use the native `selectbox`. The affected areas include the Codesample, Template, Accessibility checker, Page embed, Permanent pen, and Powertable plugins.
+During the {productname} 5.x lifetime, browser-native select form elements were replaced by a {productname} native dropdown component. However, some browser-native select form elements were not replaced by the custom dropdown component.
 
-To address this issue, all select components in {productname} now use the custom Tiny select component `listbox` instead of the native HTML `selectbox`. This change ensures a consistent user interface throughout the application.
+This caused inconsistent user interface as certain parts of the application continued to use the browser-native `selectbox`. Affected components include the Advanced Code, Template, Accessibility Checker, Page embed, Permanent Pen, and Advanced Table plugins.
+
+WIth the release of {productname} 6.5, all form select elements now use the {productname} native select component, `listbox`, instead of the browser-native `selectbox`. This change ensures a consistent user interface throughout {productname}.
 
 [[bug-fixes]]
 == Bug fixes

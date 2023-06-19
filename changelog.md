@@ -7,12 +7,18 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### Unreleased
 
 - DOC-2035: Added TINY-9807 to `staging`.
+- DOC-1993: Added TINY-9669 to `staging`.
+- DOC-1979: Added TINY-9679 to `staging`.
+- DOC-1984: Added TINY-9698 to `staging`.
+- DOC-1978: Added TINY-9748 to `staging`.
+- DOC-1981: Added TINY-9632 to `staging`.
+- DOC-2059: Added TINY-9793 to `staging`.
 - DOC-1977: Added TINY-9753 to `staging`.
 - DOC-2014: Added TINY-9715 to `staging`.
 - DOC-1999: Added TINY-4189 to `staging`.
 - DOC-2012: Added TINY-9701 to `staging`.
 - DOC-2013: Added TINY-9704 to `staging`.
-- DOC-2073: Add TINY-9947 to `staging`.
+- DOC-2073: Added TINY-9947 to `staging`.
 - DOC-2040: Added TINY-9696 to `staging`.
 - DOC-2033: Added TINY-9813 to `staging`.
 - DOC-2020: Added TINY-9654 to `staging`.

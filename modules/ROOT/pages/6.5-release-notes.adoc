@@ -362,6 +362,13 @@ In {productname} 6.5, the editor’s *HTML 4* schema has been corrected. Block e
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== Initializing the editor with a pre-inserted table displayed resize handles even when the editor was not focused
+//#TINY-9748
+
+Previously, resize handles presented on tables in a newly-initialised editor even though the table did not have focus. This happened because the insertion point is automatically placed in the first valid element (in this case, a table cell) during editor initialization.
+
+In {productname} 6.5, the resize handles have been adjusted to prevent their display when the insertion point is inside a table element without the editor being focused.
+
 === Enabling or disabling checkboxes did not set the correct classes and attributes
 //#TINY-4189
 

@@ -39,9 +39,9 @@ The {productname} 6.5 release includes an accompanying release of the **Advanced
 === The `copy code` button wasn't correctly styled within the Advanced Code Editor.
 //#TINY-9698
 
-In previous versions of {productname}, the "Copy code" button had a grey background.
+In {productname}, implementation for the new "Copy code" button was styled incorrectly which meant it was missing the grey background similar to the other buttons.
 
-This issue was caused by the previous setting of `borderless: true` which should have been set to `false`. As a consequence, the button wasn't correctly styled. 
+This issue was a oversight which meant the setting for `borderless: true` should have been set to `false`. As a consequence, the button wasn't correctly styled. 
 
 In {productname} 6.5, the `borderless: true` setting has now been removed and the button is now correctly styled.
 

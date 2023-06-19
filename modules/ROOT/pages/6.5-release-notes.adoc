@@ -297,6 +297,17 @@ This presentation makes it clearer that any Quickbar buttons will be applied to 
 == Additions
 {productname} 6.5 also includes the following additions:
 
+=== Toolbar and menu items were not disabled correctly when selecting elements with a `contenteditable="false"` attribute inside an editor root with a `contenteditable="false"` attribute set.
+//#TINY-9669
+
+In previous versions of {productname}, an issue was identified where toolbar and menu items were not presenting as disabled when the contents of elements with a `contenteditable= "false"` attribute were selected from inside a editor root with a `contenteditable="false"` attribute set.
+
+In this circumstance, toolbar buttons and menu items appeared as enabled even though the buttons and menu items were in a disabled state based on the user’s current selection.
+
+{productname} 6.5 now explicitly disables toolbar buttons and menu items based on the user’s selection.
+
+In addition, if the contents of elements with a `contenteditable="true"` attribute are selected in the same circumstance, the toolbars and menu items are re-enabled.
+
 === `tabpanel` labels in {productname} dialogs can now word wrap for better readability with long labels.
 //#TINY-9947
 

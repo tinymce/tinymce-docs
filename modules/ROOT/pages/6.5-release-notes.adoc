@@ -50,9 +50,18 @@ For information on the **Accessibility Checker** plugin, see: xref:accessibility
 
 The {productname} 6.5 release includes an accompanying release of the **Advanced Code Editor** premium plugin.
 
-**Advanced Code Editor** 3.3.0 includes the following UX fix.
+**Advanced Code Editor** 3.3.0 includes two fixes:
 
-=== The Code Editor now preserves selected font size.
+=== The _Copy code_ button was incorrectly styled within the Advanced Code Editor.
+//#TINY-9698
+
+In previous versions of {productname}, the _Copy code_ button, presented as part of the Advanced Code Editor, was styled incorrectly. Specifically, it was missing the grey background used in other, equivalent, buttons.
+
+This was caused by an incorrect CSS setting. The setting, `borderless: true`, should not have been applied. As a consequence, the button wasn't correctly styled. 
+
+In {productname} 6.5, the `borderless: true` setting has been removed and the button is now correctly styled.
+
+=== The Advanced Code Editor now preserves selected font size.
 //#TINY-9701
 
 Previously, font size changes in the Advanced Code Editor were not preserved when the user exited the editor in inline mode.

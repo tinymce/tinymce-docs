@@ -67,7 +67,25 @@ For information on the **Advanced Code Editor** plugin, see: xref:advcode.adoc[A
 
 The {productname} 6.5 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
 
-Spell Checker Pro 3.3.0 adds one change:
+**Spell Checker Pro** 3.3.0 includes three additions and one change:
+
+==== New `mceSpellcheckUpdate` command
+
+The new `mceSpellcheckUpdate` command allows users to trigger a check for misspelled words in the editor content, and includes any spelling suggestions for the misspelt words.
+
+This allows users to verify their spelling all at once without the use of the Spellchecker dialog, with any suggestions available from a context menu.
+
+==== New `SpellcheckerUpdated` event
+
+The new `SpellcheckerUpdated` event is triggered each time the editor content is updated to display new misspelt words once suggestions are provided for those misspelt words.
+
+This event is currently supported when using the `mceSpellcheckUpdate` command or when opening the dialog.
+
+NOTE: This event is not currently supported in As-you-type mode.
+
+==== New `getSpellingErrors()` API
+
+The new `getSpellingErrors()` API allows users to retrieve a list of each misspelling in the editor content.
 
 === Words containing non-Latin characters were not sent in spelling requests.
 //#TINY-9654
@@ -80,7 +98,7 @@ This interfered with some use-cases in which Spell Checker Pro client-side was p
 
 In SpellChecker Pro 3.3.0, the word identification logic for the plugin’s client-side has been changed to the one used by the Word Count plugin. This allows words containing non-Latin characters to be captured and sent in requests to the spelling service.
 
-For information on the **SpellChecker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[SpellChecker Pro].
+For information on the **SpellChecker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro].
 
 === Advanced Typography 1.1.3
 

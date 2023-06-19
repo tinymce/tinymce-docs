@@ -36,14 +36,16 @@ The {productname} 6.5 release includes an accompanying release of the **Advanced
 
 **Advanced Code Editor** 3.3.0 includes the following fix.
 
-=== The `copy code` button wasn't correctly styled within the Advanced Code Editor.
+=== The _Copy code_ button was incorrectly styled within the Advanced Code Editor.
 //#TINY-9698
 
-In {productname}, implementation for the new "Copy code" button was styled incorrectly which meant it was missing the grey background similar to the other buttons.
+In previous versions of {productname}, the _Copy code_ button, presented as part of the Advanced Code Editor, was styled incorrectly. Specifically, it was missing the grey background used in other, equivalent, buttons.
 
-This issue was a oversight which meant the setting for `borderless: true` should have been set to `false`. As a consequence, the button wasn't correctly styled. 
+This was caused by an incorrect CSS setting. The setting, `borderless: true`, should not have been applied. As a consequence, the button wasn't correctly styled. 
 
-In {productname} 6.5, the `borderless: true` setting has now been removed and the button is now correctly styled.
+In {productname} 6.5, the `borderless: true` setting has been removed and the button is now correctly styled.
+
+For information on the **Advanced Code Editor** plugin, see: xref:advcode.adoc[Advanced Code Editor plugin].
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement

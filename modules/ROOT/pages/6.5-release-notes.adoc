@@ -382,6 +382,17 @@ In {productname} 6.5, the editor’s *HTML 4* schema has been corrected. Block e
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== Pressing the Backspace key would, in some situations, delete the image after the insertion point instead of before it
+//#TINY-9807
+
+In previous versions of {productname}, if the insertion point was set between two image elements and the backspace key was pressed, the trailing image was mistakenly treated as an inline formatting element that should be deleted
+
+Consequently, the image after the insertion point was deleted, not the image before the insertion point.
+
+With this update, {productname} now determines the element structure properly and no longer treats the trailing image incorrectly.
+
+Pressing the Backspace key in this circumstance now deletes the image before the insertion point, as expected.
+
 === In some circumstances, the selected element would, when it was reused or otherwise reset, not have an initial selected value when it was expected to.
 //#TINY-9679
 

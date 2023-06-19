@@ -55,19 +55,21 @@ The {productname} 6.5 release includes an accompanying release of the **Advanced
 
 **Advanced Typography** 1.1.2 includes two fixes:
 
-=== Typography buttons are disabled in non-editable sections of the editor.
+=== Advanced Typography buttons are disabled in elements with a `contenteditable="false"` attribute set.
 //#TINY-9468
 
-In previous versions of {productname}, the Typography button was still enabled when the user selected a `contenteditable="false"` element within the editor.
+Previously, the Typography toolbar button was still enabled when the user selected an element with a `contenteditable="false"` attribute set within the {productname} editor.
 
-In version 6.5, an update was applied to the Advanced Typography plugin, that now disables the button and its function when the selection is in a `contenteditable="false"` selection.
+With this release, the **Advanced Typography** plugin now correctly disables its toolbar button and its function when the selection is in an element with a `contenteditable="false"` attribute set.
 
-=== Typography command no longer applies fixes if the selection is non-editable.
+=== The Advanced Typography command, `mceTypography`, no longer applies fixes if the selection is an element with a `contenteditable="false"` attribute set.
 //#TINY-9468
 
-In previous versions of {productname}, applying the `mceTypography` execCommand while the selection was in a `contenteditable="false"` element would apply changes to the users selection.
+Previously, applying the `mceTypography` command when the selection was in an element with a `contenteditable="false"` attribute set still applied changes to the selection.
 
-In version 6.5, an update was applied to the Advanced Typography plugin, that now disables the `mceTypography` execCommand if the users selection is within a `contenteditable="false"` element.
+With this release, the **Advanced Typography** plugin now correctly disables the `mceTypography` command when the selection is in an element with a `contenteditable="false"` attribute set
+
+For information on the **Advanced Typography** plugin, see: xref:advanced-typography.adoc[Advanced Typography].
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement

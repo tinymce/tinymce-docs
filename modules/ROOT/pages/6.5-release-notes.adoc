@@ -50,9 +50,18 @@ For information on the **Accessibility Checker** plugin, see: xref:accessibility
 
 The {productname} 6.5 release includes an accompanying release of the **Advanced Code Editor** premium plugin.
 
-**Advanced Code Editor** 3.3.0 includes the following UX fix.
+**Advanced Code Editor** 3.3.0 includes two fixes:
 
-=== The Code Editor now preserves selected font size.
+=== The _Copy code_ button was incorrectly styled within the Advanced Code Editor.
+//#TINY-9698
+
+In previous versions of {productname}, the _Copy code_ button, presented as part of the Advanced Code Editor, was styled incorrectly. Specifically, it was missing the grey background used in other, equivalent, buttons.
+
+This was caused by an incorrect CSS setting. The setting, `borderless: true`, should not have been applied. As a consequence, the button wasn't correctly styled. 
+
+In {productname} 6.5, the `borderless: true` setting has been removed and the button is now correctly styled.
+
+=== The Advanced Code Editor now preserves selected font size.
 //#TINY-9701
 
 Previously, font size changes in the Advanced Code Editor were not preserved when the user exited the editor in inline mode.
@@ -67,7 +76,25 @@ For information on the **Advanced Code Editor** plugin, see: xref:advcode.adoc[A
 
 The {productname} 6.5 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
 
-Spell Checker Pro 3.3.0 adds one change:
+**Spell Checker Pro** 3.3.0 includes three additions and one change:
+
+==== New `mceSpellcheckUpdate` command
+
+The new `mceSpellcheckUpdate` command allows users to trigger a check for misspelled words in the editor content, and includes any spelling suggestions for the misspelt words.
+
+This allows users to verify their spelling all at once without the use of the Spellchecker dialog, with any suggestions available from a context menu.
+
+==== New `SpellcheckerUpdated` event
+
+The new `SpellcheckerUpdated` event is triggered each time the editor content is updated to display new misspelt words once suggestions are provided for those misspelt words.
+
+This event is currently supported when using the `mceSpellcheckUpdate` command or when opening the dialog.
+
+NOTE: This event is not currently supported in As-you-type mode.
+
+==== New `getSpellingErrors()` API
+
+The new `getSpellingErrors()` API allows users to retrieve a list of each misspelling in the editor content.
 
 === Words containing non-Latin characters were not sent in spelling requests.
 //#TINY-9654
@@ -80,7 +107,7 @@ This interfered with some use-cases in which Spell Checker Pro client-side was p
 
 In SpellChecker Pro 3.3.0, the word identification logic for the plugin’s client-side has been changed to the one used by the Word Count plugin. This allows words containing non-Latin characters to be captured and sent in requests to the spelling service.
 
-For information on the **SpellChecker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[SpellChecker Pro].
+For information on the **SpellChecker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro].
 
 === Advanced Typography 1.1.3
 
@@ -246,6 +273,15 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following improvements:
 
+=== Screen readers now announce instructions for using arrow keys to resize the editor when the resize handle is focused
+//#TINY-9793
+
+When using voice assistant software in previous versions of {productname}, focusing on the editor resize handle would not announce any instruction.
+
+In {productname} 6.5, instructions for using arrow keys to adjust the editor viewport’s size are now announced upon focusing the editor resize handle, while using voice assistant software.
+
+NOTE: In {productname} 6.5.1, this announcement is only available in English. Additional translations will be added in a future release.
+
 === If the selection contains multiple table cells, Quickbar toolbars now present at the middle or beginning of the selection, horizontally.
 //#TINY-8297
 
@@ -345,6 +381,22 @@ In {productname} 6.5, the editor’s *HTML 4* schema has been corrected. Block e
 == Bug fixes
 
 {productname} 6.5 also includes the following bug fixes:
+
+=== In some circumstances, the selected element would, when it was reused or otherwise reset, not have an initial selected value when it was expected to.
+//#TINY-9679
+
+Previously, issues between the host browser and the editor switching between an element’s children, lead to the element presenting an erroneous empty state when displayed.
+
+To resolve this, such elements can no longer be empty unless the user explicitly sets them as such.
+
+In {productname} 6.5, these elements will now have a populated value unless the user specifically chooses an empty selection.
+
+=== Initializing the editor with a pre-inserted table displayed resize handles even when the editor was not focused
+//#TINY-9748
+
+Previously, resize handles presented on tables in a newly-initialised editor even though the table did not have focus. This happened because the insertion point is automatically placed in the first valid element (in this case, a table cell) during editor initialization.
+
+In {productname} 6.5, the resize handles have been adjusted to prevent their display when the insertion point is inside a table element without the editor being focused.
 
 === Enabling or disabling checkboxes did not set the correct classes and attributes
 //#TINY-4189
@@ -479,3 +531,9 @@ Context menus and menu items are now constrained within the scrollable container
 This section describes issues that users of {productname} 6.5 may encounter and possible workarounds for these issues.
 
 There are several known issues in {productname} 6.5.
+
+=== Untranslated instructions for editor resize handle when using screen readers
+
+In {productname} 6.5, instructions for using the editor resize handle were introduced, however these instructions are only provided in English.
+
+Translations for these instructions will be added in a future enterprise release.

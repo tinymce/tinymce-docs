@@ -264,6 +264,15 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following improvements:
 
+=== Screen readers now announce instructions for using arrow keys to resize the editor when the resize handle is focused
+//#TINY-9793
+
+When using voice assistant software in previous versions of {productname}, focusing on the editor resize handle would not announce any instruction.
+
+In {productname} 6.5, instructions for using arrow keys to adjust the editor viewport’s size are now announced upon focusing the editor resize handle, while using voice assistant software.
+
+NOTE: In {productname} 6.5.1, this announcement is only available in English. Additional translations will be added in a future release.
+
 === If the selection contains multiple table cells, Quickbar toolbars now present at the middle or beginning of the selection, horizontally.
 //#TINY-8297
 
@@ -486,3 +495,9 @@ Context menus and menu items are now constrained within the scrollable container
 This section describes issues that users of {productname} 6.5 may encounter and possible workarounds for these issues.
 
 There are several known issues in {productname} 6.5.
+
+=== Untranslated instructions for editor resize handle when using screen readers
+
+In {productname} 6.5, instructions for using the editor resize handle were introduced, however these instructions are only provided in English.
+
+Translations for these instructions will be added in a future enterprise release.

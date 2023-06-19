@@ -4,6 +4,11 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+== 6.5.1 - 2023-06-19
+
+=== Fixed
+* Fixed a regression where pasting an image url would result in the url being inserted as plain text instead of the image being inserted.
+
 == 6.5.0 - 2023-06-13
 
 === Added

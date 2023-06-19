@@ -600,6 +600,29 @@ In previous versions of {productname}, an issue was identified in the close butt
 
 In {productname} 6.5, the markup was fixed by replacing the div element with a `<span>` element, aligning it with HTML guidelines. As a result, the updated close buttons now pass HTML markup checkers without throwing errors.
 
+=== Saving the Table Properties dialog after changing properties unrelated to cells would overwrite cell properties set by the Cell Properties dialog.
+//#TINY-9837
+
+Previously, when the user modified a field within the *Table Properties* dialog, upon saving, the modified change set in the *Cell Properties* dialog would be replaced by the corresponding properties from the *Table Properties* dialog, even if the latter properties were not actually changed.
+
+For example, if the user
+
+* adjusted the border width and border color of a cell using the *Cell Properties* dialog; then
+
+* made a modification in the *Table Properties* dialog unrelated to those properties, such as changing a row alignment;
+
+the modified border width and color of the cell reverted to the corresponding values from the *Table Properties* dialog upon saving.
+
+This undid the initial modifications in the *Cell Properties* dialog.
+
+In {productname} 6.5, the Table Properties dialog will continue to be the *source of truth* and have the ability to overwrite cell and row properties like border width and color. However, the *Table Properties* dialog will only overwrite those properties if they were modified in the *Table Properties* dialog.
+=== Applying lists did not work if the selection included a block element with a `contenteditable="false"` attribute set.
+//#TINY-9823
+
+Previously, if there was a non-editable element in the text-selection, inserting or applying a bullet or numbered list to the selection failed. As a consequence, when the user pressed the insert list button while a non-editable element was included in the selection, nothing happened.
+
+For {productname} 6.5 the logic for inserting lists was updated. With this update everything within the selection — except for the block element with a `contenteditable="false"` attribute set — is turned into a list.
+
 === Pasting content into the editor did not fire `beforeinput` and `input` events.
 //#TINY-9829
 

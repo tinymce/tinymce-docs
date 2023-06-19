@@ -30,22 +30,25 @@
 
 The following premium plugin updates were released alongside {productname} 6.5.
 
-=== Advanced Templates
+=== Link Checker 3.0.3
 
-The {productname} 6.5 release includes an accompanying release of the **Advanced Templates** premium plugin.
+The {productname} 6.5 release includes an accompanying release of the **Link Checker** Premium plugin.
 
-**Advanced Templates** 1.2.0 includes one addition:
+**Link Checker** 3.0.3 includes one fix:
 
-=== New `advtemplate_templates` configuration option to define an immutable list of predefined templates.
-//#TINY-9755
+=== Links contained within elements with the `contenteditable="false"` attribute set were marked as invalid.
+//#TINY-9478
 
-**Advanced Templates** 1.2.0 adds the new `advtemplate_templates` configuration option.
+Previously the **Link Checker** plugin performed checks on links contained in elements with the `contenteditable="false"` attribute set.
 
-This option can set up an unchangeable list of predefined templates. It is designed for situations where the template list should remain static.
+As a consequence, these links were marked as invalid, even though the end-user is unable to alter them.
 
-Instead of setting up a persistent template store and the consequent complex plugin configuration, the `advtemplate_templates` option specifies a static templates list that can be inserted using the Templates dialog.
+As of **Link Checker** 3.0.3, the plugin no longer checks links contained within elements with the `contenteditable="false"` attribute set.
 
-For information on the **Advanced Templates** plugin see: xref:advtemplate_templates.adoc[Advanced Templates].
+No such links, consequently, return invalid notices the end-user can do nothing about.
+
+For information on the **Link Checker** plugin, see: xref:linkchecker.adoc[Link Checker].
+
 === Accessibility Checker 3.2.0
 
 The {productname} 6.5 release includes an accompanying release of the **Accessibility Checker** premium plugin.
@@ -62,6 +65,7 @@ NOTE: this error was sent to the Console but no errors or alerts were presented 
 As of Accessibility Checker 3.2.0, the plugin no longer attempts to fix errors in tables with no rows. The user experience is unchanged, but Console errors are no longer generated in this circumstance.
 
 For information on the **Accessibility Checker** plugin, see: xref:accessibility.adoc[Accessibility Checker].
+
 === Advanced Code Editor 3.3.0
 
 The {productname} 6.5 release includes an accompanying release of the **Advanced Code Editor** premium plugin.
@@ -144,12 +148,21 @@ For information on the **Advanced Typography** plugin, see: xref:advanced-typogr
 
 The {productname} 6.5 release includes an accompanying release of the **Advanced Templates** premium plugin.
 
-**Advanced Templatess** 1.2.0 includes one improvement and five fixes:
+**Advanced Templatess** 1.2.0 includes one improvement, one addition, and five fixes:
 
 === The Advanced Template UI now provides controls for a preconfigured operations set.
 //#TINY-9756
 
 This **Advanced Templates** plugin update introduces a user interface that offers controls tailored for a predefined range of operations. This simplifies the user experience by only presenting the options relevant to the tasks at hand.
+
+=== New `advtemplate_templates` configuration option to define an immutable list of predefined templates.
+//#TINY-9755
+
+**Advanced Templates** 1.2.0 adds the new `advtemplate_templates` configuration option.
+
+This option can set up an unchangeable list of predefined templates. It is designed for situations where the template list should remain static.
+
+Instead of setting up a persistent template store and the consequent complex plugin configuration, the `advtemplate_templates` option specifies a static templates list that can be inserted using the Templates dialog.
 
 === A selected item within its parent directory in tree components, did not remain selected after closing the directory
 //#TINY-9715

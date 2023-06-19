@@ -49,20 +49,22 @@ This resulted in an inconsistent end-user experience.
 
 For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
 
-=== Powerpaste 6.1.5
+=== PowerPaste 6.2.0
 
 The {productname} 6.5 release includes an accompanying release of the **Power Paste** premium plugin.
 
-**Power Paste** 6.1.5 includes one fix:
+**PowerPaste** 6.2.0 includes one fix:
 
-=== Existing tables were not filled out when pasting tables from Word and Excel.
+=== Existing tables were not filled out when pasting tables from Microsoft Word or Microsoft Excel.
 //#TINY-9500
 
-In previous versions of {productname}, when the PowerPaste plugin was active and a table was copied from Microsoft Word or Excel into a {productname} editor, the copied table would be pasted as a whole table into one cell, rather than merging the content of the copied table into the cells of the existing table.
+Previously, when the PowerPaste plugin was active and a table was copied from Microsoft Word or Micrsoft Excel into a {productname} editor, the copied table pasted as a whole table into a single cell, rather than merging the content of the copied table into the cells of the existing table.
 
-In {productname} 6.5, this issue has been fixed.
+PowerPaste 6.2.0 addresses this.
 
-As a result, when a table is copied and pasted into an existing table within {productname} editor, it correctly fills the cells of the existing table.
+With this release, when a table is copied and pasted from Microsoft Word or Microsoft Excel into an existing {productname} table, it correctly fills the cells of the existing table.
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[Introduction to PowerPaste].
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement

@@ -71,12 +71,12 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
-=== Initializing the editor with a table at the start would display resize handles even when the editor wasn't focused.
+=== Initializing the editor with a pre-inserted table displayed resize handles even when the editor was not focused
 //#TINY-9748
 
-In previous versions of {productname}, resize handles would show up for tables in the editor even when they weren't focused. This happened because the cursor automatically landed in the table during the initialization process for the editor during startup.
+Previously, resize handles presented on tables in a newly-initialised editor even though the table did not have focus. This happened because the insertion point is automatically placed in the first valid element (in this case, a table cell) during editor initialization.
 
-In {productname} 6.5, the resize handles have been adjusted to prevent their display when the caret is inside a table without the editor being focused.
+In {productname} 6.5, the resize handles have been adjusted to prevent their display when the insertion point is inside a table element without the editor being focused.
 
 [[security-fixes]]
 == Security fixes

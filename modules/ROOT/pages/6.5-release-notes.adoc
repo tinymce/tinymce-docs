@@ -36,17 +36,18 @@ The {productname} 6.5 release includes an accompanying release of the **Checklis
 
 **Checklist** 2.0.5 includes one fix:
 
-=== Checklist toggling was possible on `contenteditable="false"` elements
+=== Checklist toggling was possible on elements with a `contenteditable="false"` attribute set
 //#TINY-9469
 
-In earlier versions of {productname}, the Checklist plugin allowed toggling on elements with the `contenteditable = "false"` attribute.
+In previous versions of {productname}, the Checklist plugin could toggle elements with a `contenteditable = "false"` attribute set.
 
-As a consequence, lists nested within a `contenteditable = "false"` section of the editor could be converted into a checklist.
+As a consequence, lists nested within an element with a `contenteditable="false"` attribute set could be converted into checklists.
 
-To address this issue, the Checklist button has now been disabled for `contenteditable = "false"` sections in the {productname} 6.5.
+To address this, as of {productname} 6.5, the Checklist button is disabled when the selection is within an element with a `contenteditable="false"` attribute set.
 
-As a result, it is no longer possible to apply the Checklist functionality to `contenteditable = "false"` sections.
+It is no longer possible to apply Checklist functionality to elements with a `contenteditable="false"` attribute set.
 
+For information on the **Checklist** plugin, see: xref:checklist.adoc[Checklist].
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement
 

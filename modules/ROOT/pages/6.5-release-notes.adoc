@@ -71,16 +71,16 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
-=== The content of the dialog body could not be scrolled.
+=== The content of {productname} dialogs could not be scrolled in some circumstances.
 //#TINY-9668
 
-In previous versions of {productname}, a bug was identified that affected certain dialogs, particularly those lacking tabs, which resulted in them being unable to handle height adjustments effectively.
+Previously, the dialog’s body content was setup with a maximum height of 650px (`max-height: 650px;`).
 
-The problem arose because the dialog body content had a maximum height of (650px), causing scrolling to be enabled only when the content exceeded this limit. As a consequence, when dialogs were less than (650px) in height, the footer would occasionally extend beyond its bounds.
+As a consequence, scrolling was only enabled in dialog’s when the dialog’s content exceeded this height. As a further consequence, when dialogs were less than 650px high, the dialog’s footer could extend below the dialog’s bounds, putting the controls in the footer out of view. This particularly presented in dialogs that do not have tabs.
 
-In {productname} 6.5, a fix was implemented by setting the maximum height of the dialog body content to the minimum value between (650px) and (100vh - 110px). Here, 110px represents the combined height of the footer and header.
+In {productname} 6.5, the dialog body’s max-height is set to a calculated value: the minimum value between 650px and the viewport height (`vh`) minus 110px. 110px, here, is the combined height of a {productname} dialog’s header and footer.
 
-As a result of this solution, the dialog body and footer are now consistently displayed correctly, resolving the previous display issue.
+{productname} dialogs now display consistently and correctly. And footer controls appear in view.
 
 [[security-fixes]]
 == Security fixes

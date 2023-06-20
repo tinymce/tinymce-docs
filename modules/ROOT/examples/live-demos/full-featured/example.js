@@ -3,13 +3,13 @@ const isSmallScreen = window.matchMedia('(max-width: 1023.5px)').matches;
 
 tinymce.init({
   selector: 'textarea#full-featured',
-  plugins: 'preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link media mediaembed template codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker editimage help formatpainter permanentpen pageembed charmap tinycomments mentions quickbars linkchecker emoticons advtable export footnotes mergetags autocorrect',
+  plugins: 'preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker editimage help formatpainter permanentpen pageembed charmap tinycomments mentions quickbars linkchecker emoticons advtable export footnotes mergetags autocorrect typography advtemplate',
   tinydrive_token_provider: 'URL_TO_YOUR_TOKEN_PROVIDER',
   tinydrive_dropbox_app_key: 'YOUR_DROPBOX_APP_KEY',
   tinydrive_google_drive_key: 'YOUR_GOOGLE_DRIVE_KEY',
   tinydrive_google_drive_client_id: 'YOUR_GOOGLE_DRIVE_CLIENT_ID',
   mobile: {
-    plugins: 'preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link media mediaembed template codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker help formatpainter pageembed charmap mentions quickbars linkchecker emoticons advtable footnotes mergetags autocorrect'
+    plugins: 'preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker help formatpainter pageembed charmap mentions quickbars linkchecker emoticons advtable footnotes mergetags autocorrect typography advtemplate',
   },
   menu: {
     tc: {
@@ -18,7 +18,7 @@ tinymce.init({
     }
   },
   menubar: 'file edit view insert format tools table tc help',
-  toolbar: 'undo redo | bold italic underline strikethrough | fontfamily fontsize blocks | alignleft aligncenter alignright alignjustify | outdent indent |  numlist bullist checklist | forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media pageembed template link anchor codesample | a11ycheck ltr rtl | showcomments addcomment | footnotes | mergetags',
+  toolbar: 'undo redo | bold italic underline strikethrough | typography | fontfamily fontsize blocks | alignleft aligncenter alignright alignjustify | inserttemplate addtemplate | outdent indent | numlist bullist checklist | forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media pageembed link anchor codesample | a11ycheck ltr rtl | showcomments addcomment | footnotes | mergetags',
   toolbar_sticky: true,
   toolbar_sticky_offset: isSmallScreen ? 102 : 108,
   autosave_ask_before_unload: true,
@@ -27,6 +27,61 @@ tinymce.init({
   autosave_restore_when_empty: false,
   autosave_retention: '2m',
   image_advtab: true,
+	typography_rules: [
+		'common/punctuation/quote',
+		'en-US/dash/main',
+		'common/nbsp/afterParagraphMark',
+		'common/nbsp/afterSectionMark',
+		'common/nbsp/afterShortWord',
+		'common/nbsp/beforeShortLastNumber',
+		'common/nbsp/beforeShortLastWord',
+		'common/nbsp/dpi',
+		'common/punctuation/apostrophe',
+		'common/space/delBeforePunctuation',
+		'common/space/afterComma',
+		'common/space/afterColon',
+		'common/space/afterExclamationMark',
+		'common/space/afterQuestionMark',
+		'common/space/afterSemicolon',
+		'common/space/beforeBracket',
+		'common/space/bracket',
+		'common/space/delBeforeDot',
+		'common/space/squareBracket',
+		'common/number/mathSigns',
+		'common/number/times',
+		'common/number/fraction',
+		'common/symbols/arrow',
+		'common/symbols/cf',
+		'common/symbols/copy',
+		'common/punctuation/delDoublePunctuation',
+		'common/punctuation/hellip'
+	],
+	typography_ignore: [ 'code' ],
+	advtemplate_list: () => {
+    return Promise.resolve([
+      {
+        id: '1',
+        title: 'Resolving tickets',
+        content: '<p>As we have not heard back from you in over a week, we have gone ahead and resolved your ticket.</p>'
+      },
+      {
+        id: '2',
+        title: 'Quick replies',
+        items: [
+          {
+            id: '3',
+            title: 'Message received',
+            content: '<p>Just a quick note to say we have received your message, and will get back to you within 48 hours.</p>'
+          },
+          {
+            id: '4',
+            title: 'Progress update',
+            content: '</p>Just a quick note to let you know we are still working on your case</p>'
+          }
+        ]
+      }
+    ]);
+  },
   link_list: [
     { title: 'My page 1', value: 'https://www.tiny.cloud' },
     { title: 'My page 2', value: 'http://www.moxiecode.com' }
@@ -40,19 +95,12 @@ tinymce.init({
     { title: 'Some class', value: 'class-name' }
   ],
   importcss_append: true,
-  templates: [
-    { title: 'New Table', description: 'creates a new table', content: '<div class="mceTmpl"><table width="98%%"  border="0" cellspacing="0" cellpadding="0"><tr><th scope="col"> </th><th scope="col"> </th></tr><tr><td> </td><td> </td></tr></table></div>' },
-    { title: 'Starting my story', description: 'A cure for writers block', content: 'Once upon a time...' },
-    { title: 'New list with dates', description: 'New List with dates', content: '<div class="mceTmpl"><span class="cdate">cdate</span><br><span class="mdate">mdate</span><h2>My List</h2><ul><li></li><li></li></ul></div>' }
-  ],
-  template_cdate_format: '[Date Created (CDATE): %m/%d/%Y : %H:%M:%S]',
-  template_mdate_format: '[Date Modified (MDATE): %m/%d/%Y : %H:%M:%S]',
   height: 600,
   image_caption: true,
   quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
   noneditable_class: 'mceNonEditable',
   toolbar_mode: 'sliding',
-  spellchecker_ignore_list: ['Ephox', 'Moxiecode'],
+  spellchecker_ignore_list: ['Ephox', 'Moxiecode', 'tinymce', 'TinyMCE', 'tm', 'TM'], // ‘tm’ and ‘TM’ are temporary spellchecker bug workarounds
   tinycomments_mode: 'embedded',
   content_style: '.mymention{ color: gray; }',
   contextmenu: 'link image editimage table configurepermanentpen',

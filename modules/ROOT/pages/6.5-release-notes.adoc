@@ -71,14 +71,14 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
-=== Pressing arrow keys inside RTL elements would move the caret in an incorrect direction when moving over elements with the `contenteditable` attribute set to `false`.
+=== The insertion point moved in the wrong direction when traversing an inline element with a `contenteditable="false"` attribute set within a block element with a right-to-left text direction set
 //#TINY-9565
 
-In previous versions of {productname}, when the document has a `contenteditable="false"` element in between the `RTL` text in a `RTL` block element, the caret would incorrectly move to the wrong direction when moving over the `contenteditable="false"` element.
+Previously, when a {productname} document had an inline element with a `contenteditable="false"` attribute set inside a block block element that had a text direction of right-to-left, the insertion point would move in the wrong direction when traversing the inline element using arrow keys.
 
-To fix this issue, updates were made that now flips the direction if the block element is `RTL`.
+As of this release, when such an inline element, inside a block element with a right-to-left text direction, is traversed, {productname} moves the insertion point in reverse logical order.
 
-As a result of this fix, the caret now moves in a reverse logical order when moving over a `contenteditable = "false"` elements similar to how the visual caret movement works when moving inside `RTL` text.
+This ensures the insertion point traverses the inline element as expected, moving over the element in the direction expected by the arrow-key being pressed.
 
 [[security-fixes]]
 == Security fixes

@@ -37,7 +37,7 @@ The Accordion plugin also provides integrators with four commands:
 
 * `InsertAccordion`;
 * `ToggleAccordion`;
-* ToggleAllAccordions`;
+* `ToggleAllAccordions`;
 * `RemoveAccordion`;
 
 and two initialization options
@@ -58,7 +58,7 @@ The {productname} 6.5 release includes an accompanying release of the **Enhanced
 
 **Enhanced Media Embed** 3.1.2 includes the following fix.
 
-=== Allow a media embed element to be correctly resized when using the media plugin dialog by converting the responsive media embed to a standalone iframe.
+==== Allow a media embed element to be correctly resized when using the media plugin dialog by converting the responsive media embed to a standalone iframe.
 //#TINY-8714
 
 Previously, the Enhanced Media Embed plugin and the Media plugin encountered issues when used together.
@@ -85,7 +85,7 @@ The {productname} 6.5 release includes an accompanying release of the **Checklis
 
 **Checklist** 2.0.5 includes one fix:
 
-=== Checklist toggling was possible on elements with a `contenteditable="false"` attribute set
+==== Checklist toggling was possible on elements with a `contenteditable="false"` attribute set
 //#TINY-9469
 
 In previous versions of {productname}, the Checklist plugin could toggle elements with a `contenteditable="false"` attribute set.
@@ -104,7 +104,7 @@ The {productname} 6.5 release includes an accompanying release of the **Link Che
 
 **Link Checker** 3.0.3 includes one fix:
 
-=== Links contained within elements with the `contenteditable="false"` attribute set were marked as invalid.
+==== Links contained within elements with the `contenteditable="false"` attribute set were marked as invalid.
 //#TINY-9478
 
 Previously the **Link Checker** plugin performed checks on links contained in elements with the `contenteditable="false"` attribute set.
@@ -121,9 +121,9 @@ For information on the **Link Checker** plugin, see: xref:linkchecker.adoc[Link 
 
 The {productname} 6.5 release includes an accompanying release of the **Accessibility Checker** premium plugin.
 
-**Accessibility Checker** 3.2.0 includes the following fixes.
+**Accessibility Checker** 3.2.0 includes the following fix, and improvement.
 
-=== Elements with `contenteditable="false"` attributes set were not properly ignored by the Accessibility Checker.
+==== Elements with `contenteditable="false"` attributes set were not properly ignored by the Accessibility Checker.
 //#TINY-9464
 
 Previously, elements with `contenteditable="false"` attributes set were not properly ignored by the Accessibility Checker Premium plugin.
@@ -133,9 +133,8 @@ As a consequence, the Accessibility Checker would, incorrectly, find and report 
 Accessibility Checker 3.2.0 correctly ignores elements with `contenteditable="false"` attributes set.
 
 For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
-**Accessibility Checker** 3.2.0 includes the following fixes, additions, and improvements.
 
-=== No longer allow attempting to fix a table’s lack of headers if the table has no cells.
+==== No longer allow attempting to fix a table’s lack of headers if the table has no cells.
 //#TINY-9753
 
 Previously, the Accessbility Checker plugin assumed a table had at least one row. As a consequence it would, consequent to attempting to produce a user-visible error regarding a table having no header rows, throw an internal error when it checked a table that had no cells at all.
@@ -150,9 +149,9 @@ For information on the **Accessibility Checker** plugin, see: xref:accessibility
 
 The {productname} 6.5 release includes an accompanying release of the **Advanced Code Editor** premium plugin.
 
-**Advanced Code Editor** 3.3.0 includes the following fix.
+**Advanced Code Editor** 3.3.0 includes the following three changes, and one fix:
 
-=== When switching to full-screen mode when the editor was set to inline view, focus was not returned to the code editor on iOS.
+==== When switching to full-screen mode when the editor was set to inline view, focus was not returned to the code editor on iOS.
 //#TINY-9735
 
 In previous versions of {productname}, the default behavior of `editor.execCommand` in inline mode on iOS was to hide the editor when the view is open. Although it should not be possible to focus on it, iOS allowed it.
@@ -160,9 +159,8 @@ In previous versions of {productname}, the default behavior of `editor.execComma
 As a consequence, when pressing the fullscreen button the editor used `editor.execCommand('mceFullScreen')`, which caused the insertion point to be positioned incorrectly on iOS.
 
 To resolve this issue, {productname} 6.5, includes `skip_focus: true` as a parameter for the `mceFullScreen` command. Consequently, the Full Screen button no longer attempts to focus back on the editor.
-**Advanced Code Editor** 3.3.0 includes the following three changes.
 
-=== Advanced Code Editor did not preserve changes to _font size_ or _dark/light mode_ state.
+==== Advanced Code Editor did not preserve changes to _font size_ or _dark/light mode_ state.
 //#TINY-9749
 
 In previous versions of the **Advanced Code Editor**, the _font size_ and _dark/light mode_ states were not preserved after closing the dialog.
@@ -173,7 +171,7 @@ In **Advanced Code Editor** 3.3.0, _font size_ and _dark/light mode_ states are 
 
 NOTE: This issue only affected the **Advanced Coded Editor** when it was opened in a dialog.
 
-=== The _Copy code_ button was incorrectly styled within the Advanced Code Editor.
+==== The _Copy code_ button was incorrectly styled within the Advanced Code Editor.
 //#TINY-9698
 
 In previous versions of **Advanced Code Editor**, the _Copy code_ button, was styled incorrectly. Specifically, it was missing the grey background used in other, equivalent, buttons.
@@ -182,7 +180,7 @@ This was caused by an incorrect CSS setting. The setting, `borderless: true`, sh
 
 In **Advanced Code Editor** 3.3.0, the `borderless: true` setting has been removed and the button is now correctly styled.
 
-=== The Advanced Code Editor now preserves selected font size.
+==== The Advanced Code Editor now preserves selected font size.
 //#TINY-9701
 
 Previously, font size changes in the Advanced Code Editor were not preserved when the user exited the editor in inline mode.
@@ -217,7 +215,7 @@ NOTE: This event is not currently supported in As-you-type mode.
 
 The new `getSpellingErrors()` API allows users to retrieve a list of each misspelling in the editor content.
 
-=== Words containing non-Latin characters were not sent in spelling requests.
+==== Words containing non-Latin characters were not sent in spelling requests.
 //#TINY-9654
 
 As of Spell Checker Pro 3.2.1, only languages using a Latin-based alphabet — for example; English, French, and German — had supported dictionaries.
@@ -230,33 +228,18 @@ In SpellChecker Pro 3.3.0, the word identification logic for the plugin’s clie
 
 For information on the **SpellChecker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro].
 
-=== Advanced Typography 1.1.3
-
-The {productname} 6.5 release includes an accompanying release of the **Advanced Typography** premium plugin.
-
-**Advanced Typography** 1.1.3 includes one fix.
-
-=== Fixed adding unnecessary space after a comma and before a quote in several scenarios.
-//#TINY-9510
-
-In previous versions of {productname}, the issue of adding an unnecessary space after a comma and before a quote in several scenarios was caused by an incorrectly written Regular Expression rule in the https://github.com/typograf[Typograf] library used by the Advanced Typography plugin. This led to the appearance of spaces between commas and quotes.
-
-To fix this, {productname} updated the Regular Expression rule in the Typograf library. As a result, spaces between commas and quotes no longer appear.
-
-For information on the **Advanced Typography** plugin, see: xref:advanced-typography.adoc[Advanced Typography].
-
 === Advanced Templates 1.2.0
 
 The {productname} 6.5 release includes an accompanying release of the **Advanced Templates** premium plugin.
 
 **Advanced Templatess** 1.2.0 includes one improvement, one addition, and five fixes:
 
-=== The Advanced Template UI now provides controls for a preconfigured operations set.
+==== The Advanced Template UI now provides controls for a preconfigured operations set.
 //#TINY-9756
 
 This **Advanced Templates** plugin update introduces a user interface that offers controls tailored for a predefined range of operations. This simplifies the user experience by only presenting the options relevant to the tasks at hand.
 
-=== New `advtemplate_templates` configuration option to define an immutable list of predefined templates.
+==== New `advtemplate_templates` configuration option to define an immutable list of predefined templates.
 //#TINY-9755
 
 **Advanced Templates** 1.2.0 adds the new `advtemplate_templates` configuration option.
@@ -265,7 +248,7 @@ This option can set up an unchangeable list of predefined templates. It is desig
 
 Instead of setting up a persistent template store and the consequent complex plugin configuration, the `advtemplate_templates` option specifies a static templates list that can be inserted using the Templates dialog.
 
-=== A selected item within its parent directory in tree components, did not remain selected after closing the directory
+==== A selected item within its parent directory in tree components, did not remain selected after closing the directory
 //#TINY-9715
 
 In previous versions of the **Advanced Templates** plugin, selecting a component in a leaf within its parent directory and then closing the directory caused the selection to be lost.
@@ -273,9 +256,8 @@ In previous versions of the **Advanced Templates** plugin, selecting a component
 This new release of the **Advanced Templates** plugin corrects this. It now tracks the selected leaf’s active state before and after collapsing or expanding the leaf’s parent directory.
 
 For information on the **Advanced Templates** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
-**Advanced Templates** 1.2.0 includes three fixes.
 
-=== Expanded category trees collapsed after any element in the tree was renamed in the Templates dialog’s tree component.
+==== Expanded category trees collapsed after any element in the tree was renamed in the Templates dialog’s tree component.
 //#TINY-9691
 
 In the previous version of {productname}, when users renamed a template or category in the *Insert → template…* dialog, the template list refreshed and expanded categories collapsed.
@@ -286,7 +268,7 @@ This update addresses this using a new configuration property, `defaultExpandedI
 
 With this update, after a template or category is re-named, the template list is re-rendered in the same state as it was prior to the re-naming. Consequently, if an object was in an expanded tree prior to being re-named, it will remain visible as a re-named object when the tree refreshes.
 
-=== A selected tree component template item did not stay highlighted when the Templates dialog re-rendered.
+==== A selected tree component template item did not stay highlighted when the Templates dialog re-rendered.
 //#TINY-9770
 
 In previous versions of {productname}, a selected tree component template item would lose its highlight when the Advanced Template dialog was re-rendered after the template list updated.
@@ -297,7 +279,7 @@ In {productname} 6.5, the problem was addressed by utilizing the new `defaultSel
 
 As a result, the currently previewed template is now correctly highlighted in the tree component, as expected.
 
-=== The *Insert → Template…* menu item and equivalent toolbar button was not disabled when the selection was inside an element with a `contenteditable="false"` attribute set
+==== The *Insert → Template…* menu item and equivalent toolbar button was not disabled when the selection was inside an element with a `contenteditable="false"` attribute set
 //#TINY-9892
 
 In previous versions of {productname}, the *Insert → Template…* menu item, and equivalent toolbar button remained active when the user’s selection or insertion point was inside an element with a `contenteditable="false"` attribute set.
@@ -314,7 +296,7 @@ The {productname} 6.5 release includes an accompanying release of the **Merge Ta
 
 **Merge Tags** 1.3.0 includes three fixes:
 
-=== The plugin now correctly manages prefixes and suffixes when they are the same.
+==== The plugin now correctly manages prefixes and suffixes when they are the same.
 //#TINY-9566
 
 In previous versions of **Merge Tags** the plugin mishandled a merge tags’ prefix and suffix when the user placed multiple merge tags within either an inline or block element. This resulted in incorrect management of these prefixes and suffixes during the `setContent` operation.
@@ -339,7 +321,7 @@ As of this **Merge Tags** update, the plugin now splits the array of any matchin
 
 For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
 
-=== Right clicking on a merge tag instance presented different highlighting depending on the host browser.
+==== Right clicking on a merge tag instance presented different highlighting depending on the host browser.
 //#TINY-9848
 
 In previous versions of {productname}, when users right-clicked on a merge tag, the highlighting within the merge tag selection varied, depending on the host browser.
@@ -350,7 +332,7 @@ This resulted in an inconsistent end-user experience.
 
 {productname} now presents end-users with uniform merge tag highlighting across all supported browsers.
 
-=== *Insert → Merge tag* menu item, and equivalent toolbar button was not disabled when selection was inside an element with a `contenteditable="false"` attribute set
+==== *Insert → Merge tag* menu item, and equivalent toolbar button was not disabled when selection was inside an element with a `contenteditable="false"` attribute set
 //#TINY-9893
 
 In previous versions of {productname}, the *Insert → Merge tag* menu item, and equivalent toolbar button remained active when the user’s selection or insertion point was inside an element with a `contenteditable="false"` attribute set.
@@ -365,21 +347,30 @@ For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tag
 
 The {productname} 6.5 release includes an accompanying release of the **Advanced Typography** premium plugin.
 
-**Advanced Typography** 1.1.2 includes two fixes:
+**Advanced Typography** 1.1.2 includes three fixes:
 
-=== Advanced Typography buttons are disabled in elements with a `contenteditable="false"` attribute set.
+==== Advanced Typography buttons are disabled in elements with a `contenteditable="false"` attribute set.
 //#TINY-9468
 
 Previously, the Typography toolbar button was still enabled when the user selected an element with a `contenteditable="false"` attribute set within the {productname} editor.
 
 With this release, the **Advanced Typography** plugin now correctly disables its toolbar button and its function when the selection is in an element with a `contenteditable="false"` attribute set.
 
-=== The Advanced Typography command, `mceTypography`, no longer applies fixes if the selection is an element with a `contenteditable="false"` attribute set.
+==== The Advanced Typography command, `mceTypography`, no longer applies fixes if the selection is an element with a `contenteditable="false"` attribute set.
 //#TINY-9468
 
 Previously, applying the `mceTypography` command when the selection was in an element with a `contenteditable="false"` attribute set still applied changes to the selection.
 
 With this release, the **Advanced Typography** plugin now correctly disables the `mceTypography` command when the selection is in an element with a `contenteditable="false"` attribute set
+
+For information on the **Advanced Typography** plugin, see: xref:advanced-typography.adoc[Advanced Typography].
+
+==== Fixed adding unnecessary space after a comma and before a quote in several scenarios.
+//#TINY-9510
+
+In previous versions of {productname}, the issue of adding an unnecessary space after a comma and before a quote in several scenarios was caused by an incorrectly written Regular Expression rule in the https://github.com/typograf[Typograf] library used by the Advanced Typography plugin. This led to the appearance of spaces between commas and quotes.
+
+To fix this, {productname} updated the Regular Expression rule in the Typograf library. As a result, spaces between commas and quotes no longer appear.
 
 For information on the **Advanced Typography** plugin, see: xref:advanced-typography.adoc[Advanced Typography].
 
@@ -389,7 +380,7 @@ The {productname} 6.5 release includes an accompanying release of the **Power Pa
 
 **PowerPaste** 6.2.0 includes one fix:
 
-=== Existing tables were not filled out when pasting tables from Microsoft Word or Microsoft Excel.
+==== Existing tables were not filled out when pasting tables from Microsoft Word or Microsoft Excel.
 //#TINY-9500
 
 Previously, when the PowerPaste plugin was active and a table was copied from Microsoft Word or Micrsoft Excel into a {productname} editor, the copied table pasted as a whole table into a single cell, rather than merging the content of the copied table into the cells of the existing table.
@@ -406,7 +397,7 @@ The {productname} 6.5 release includes an accompanying release of the **Format P
 
 **Format Painter** 2.0.2 includes one fix:
 
-=== It was possible to modify text elements with the `contenteditable="false"` attribute set using formatpainter
+==== It was possible to modify text elements with the `contenteditable="false"` attribute set using formatpainter
 //#TINY-9472
 
 Users could use previous versions of the Format Painter plugin to modify text elements with the `contenteditable="false"` attribute set.

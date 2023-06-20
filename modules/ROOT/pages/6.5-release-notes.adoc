@@ -34,18 +34,28 @@ The following premium plugin updates were released alongside {productname} 6.5.
 
 The {productname} 6.5 release includes an accompanying release of the **Enhanced Media Embed** premium plugin.
 
-**Enhanced Media Embed** 3.1.2 includes the following fixes, additions, and improvements.
+**Enhanced Media Embed** 3.1.2 includes the following fix.
 
-=== Allow a media embed element to be correctly resized when using the `media` plugin dialog by converting the responsive media embed to a standalone iframe.
+=== Allow a media embed element to be correctly resized when using the media plugin dialog by converting the responsive media embed to a standalone iframe.
 //#TINY-8714
 
-In previous versions of {productname}, the Enhanced Media Embed and the media plugin encountered several issues when used together. The Enhanced Media Embed plugin would wrap `<iframes>` with a responsive wrapper that relies on large padding for the height. However, when content created with the Enhanced Media Embed plugin is inserted using the media plugin dialog, which targets `"ephox-embed-iri"` divs, the width and height are mapped to the wrapper's `max-width` and `max-height` properties. Unfortunately, the height is primarily determined by padding, rendering the `max-height` property ineffective.
+Previously, the Enhanced Media Embed plugin and the Media plugin encountered issues when used together.
 
-For additional details, please see https://www.benmarshall.me/responsive-iframes[benmarshall.me/responsive-iframes].
+The Enhanced Media Embed plugin wraps `iframe` in a responsive wrapper that relies on large padding for the height.
 
-Another problem that arised when inserting embedded content via the Enhanced Media Embed plugin, was that the element may have appeared stretched while lacking proportional sizing. This occurred because the height was not explicitly set, which left it to be determined by the content within the `<iframe>`.
+The Media plugin dialog, however, targets the `"ephox-embed-iri"` div, and the width and height are mapped to the wrapper’s `max-width` and `max-height` properties.
 
-In {productname} 6.5, a fix has been implemented. The responsive embedded content is now wrapped in a div with the wrapper's `max-width` set. This ensures that the embedded content maintains proportional sizing when resizing the viewport. Moreover, when opening the media plugin dialog for content created using the Enhanced Media Embed plugin and identified with the `"ephox-embed-iri"` attribute, the width and height are now calculated and displayed in the editor. If any changes to the height or width are made within the dialog, the responsive media embed is converted into a standalone `<iframe>` with fixed a width and height to reflect the modifications.
+When content created with the Enhanced Media Embed plugin is inserted using the Media plugin dialog, the height is primarily determined by padding, rendering the `max-height` property ineffective.
+
+(For additional detail, see https://benmarshall.me/responsive-iframes[benmarshall.me/responsive-iframes].)
+
+As well, when inserting embedded content via the Enhanced Media Embed plugin, the element may be dis-proportionally sized. This occurred because height was not explicitly set, leaving it to be determined by the content within the `iframe`.
+
+In Enhanced Media Embed 3.1.2 the responsive embedded content is wrapped in a div with the wrapper’s `max-width` set. This ensures that the embedded content maintains proportional sizing when resizing the viewport.
+
+As well, when opening the media plugin dialog for content created using the Enhanced Media Embed plugin and identified with the `"ephox-embed-iri"` attribute, the width and height are now calculated and displayed in the editor. If any changes to the height or width are made within the dialog, the responsive media embed is converted into a standalone `iframe` with a fixed width and height to reflect the modifications.
+
+For information on the **Enhanced Media Embed** plugin, see: xref:introduction-to-mediaembed.adoc[Introduction to Enhanced Media Embed].
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement

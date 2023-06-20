@@ -707,6 +707,13 @@ In previous versions of {productname}, an issue was identified in the close butt
 
 In {productname} 6.5, the markup was fixed by replacing the div element with a `<span>` element, aligning it with HTML guidelines. As a result, the updated close buttons now pass HTML markup checkers without throwing errors.
 
+=== In dialogs, the `aria-describedby` element would be the body of the dialog.
+//#TINY-9816
+
+When using voice assistance software in previous versions of TinyMCE, whenever an interactive dialog was opened, the voice assistant would announce each label consecutively in the dialog.
+
+In TinyMCE 6.5, voice assistant software no longer announces the entire content of the dialog body, meaning only the focused interactive element will be announced when first opened.
+
 === Fixed the constrained bounds calculation for toolbar dismissal when using `toolbar_location: 'bottom'`.
 //#TINY-9718
 

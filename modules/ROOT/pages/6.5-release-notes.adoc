@@ -531,6 +531,13 @@ In {productname} 6.5, the editor’s *HTML 4* schema has been corrected. Block e
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== Whitespace between transparent elements could, incorrectly, be converted into empty paragraphs.
+//#TINY-9761
+
+Previously, when a file containing adjacent _anchor element around block element_ structures was added to the root of a {productname} editor instance, the whitespace between each anchor-block structure was, incorrectly, turned into an empty paragraph.
+
+This update corrects this. When such structures are inserted into a {productname} 6.5 instance, the extra paragraph is no longer inserted between the block elements.
+
 === It was possible to remove links in elements with a `contenteditable="false"` attribute set with the `unlink` editor command
 //#TINY-9739
 

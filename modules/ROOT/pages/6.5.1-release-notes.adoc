@@ -79,6 +79,22 @@ As well, when opening the media plugin dialog for content created using the Enha
 
 For information on the **Enhanced Media Embed** plugin, see: xref:introduction-to-mediaembed.adoc[Introduction to Enhanced Media Embed].
 
+=== Case Change 2.0.2
+
+The {productname} 6.5.1 release includes an accompanying release of the **Case Change** premium plugin.
+
+**Case Change** 2.0.2 includes the following change.
+
+=== It was possible to apply case change to elements with a `contenteditable="false"` attribute set.
+//#TINY-9466
+
+Previously, the **Case Change** plugin could change the case of a selection inside an element with a `contenteditable="false"` attribute set.
+
+In **Case Change** 2.0.2, the Case Change toolbar button and menu items are disabled when the selection is in an element with a `contenteditable="false"` attribute set.
+
+For information on the **Case Change** plugin, see: xref:casechange.adoc[Case Change].
+
+
 === Checklist 2.0.5
 
 The {productname} 6.5.1 release includes an accompanying release of the **Checklist** premium plugin.
@@ -963,21 +979,6 @@ To address this overflowing menu issue, {productname} 6.5.1 added support for th
 
 Context menus and menu items are now constrained within the scrollable container if the editor’s root node is a parent of the Shadow host node.
 
-
-=== Case Change 2.0.2
-
-The {productname} 6.5.1 release includes an accompanying release of the **Case Change** premium plugin.
-
-**Case Change** 2.0.2 includes the following change.
-
-=== It was possible to apply case change to elements with a `contenteditable="false"` attribute set.
-//#TINY-9466
-
-Previously, the **Case Change** plugin could change the case of a selection inside an element with a `contenteditable="false"` attribute set.
-
-In **Case Change** 2.0.2, the Case Change toolbar button and menu items are disabled when the selection is in an element with a `contenteditable="false"` attribute set.
-
-For information on the **Case Change** plugin, see: xref:casechange.adoc[Case Change].
 
 [[security-fixes]]
 == Security fixes

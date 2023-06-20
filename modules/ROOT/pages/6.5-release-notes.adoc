@@ -71,12 +71,12 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
-=== Quickbar toolbars was shown for non-editable contents in a non-editable root.
+=== Quickbar toolbars was shown for elements with a `contenteditable="false"` attribute set which were, in turn, in a root with a `contenteditable="false"` attribute set.
 //#TINY-9460
 
-In previous versions of {productname}, when the document root is set to `contenteditable="false"` the quickbars toolbar would appear when you select `contenteditable="false"` content.
+Previously, when the document root had a `contenteditable="false"` attibute set, the Quickbar toolbar appeared when an element with its own `contenteditable="false"` attribute was selected.
 
-A fix was applied to the quickbars toolbar in {productname} 6.5 which will set itself to `hidden` if the current selection is in a `contenteditable="false"` element such as the root.
+A fix was applied to the Quickbar toolbar in {productname} 6.5. The toolbar now sets itself to `hidden` if the current selection is within an element with a `contenteditable="false"` attribute set.
 
 [[security-fixes]]
 == Security fixes

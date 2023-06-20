@@ -492,6 +492,17 @@ In {productname} 6.5, the editor’s *HTML 4* schema has been corrected. Block e
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== Formatting issues with elements with a `contenteditable="false"` attribute set and the formatter API resolved
+//#TINY-9678
+
+If the selection is in an element with a `contenteditable="false"` attribute set, and spot-formatting is applied to the selection, the spot formatting is not applied to the selected content, as expected.
+
+However, In previous versions of {productname}, in such a circumstance, the spot formatting was erroneously applied to the nearest writeable element, if such an element existed.
+
+This incorrect application of spot-formatting also presented when the formatter API was used, because the API’s `canApply` function did not return `false` when the selection was in an element with a `contenteditable="false"` attribute set.
+
+In {productname} 6.5, the issue has been resolved. Spot formatting is no longer misapplied to not-selected elements.
+
 === Text directionality could be set on elements with a `contenteditable="false"` attribute set when within a root with a `contenteditable="false"` attribute set
 //#TINY-9662
 

@@ -36,7 +36,7 @@ The {productname} 6.5 release includes an accompanying release of the **Advanced
 
 **Advanced Code Editor** 3.3.0 includes the following fix.
 
-=== While switching to full-screen mode when the editor is set to inline view would not return the focus back to the code editor on iOS devices.
+=== When switching to full-screen mode when the editor was set to inline view, focus was not returned to the code editor on iOS devices.
 //#TINY-9735
 
 In previous versions of {productname}, the default behavior of `editor.execCommand` in inline mode on iOS was to hide the editor when the view is open. Although it shouldn't be possible to focus on it, iOS allowed it.

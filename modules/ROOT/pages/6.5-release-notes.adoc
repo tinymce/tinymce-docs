@@ -30,6 +30,25 @@
 
 The following premium plugin updates were released alongside {productname} 6.5.
 
+=== Checklist 2.0.5
+
+The {productname} 6.5 release includes an accompanying release of the **Checklist** premium plugin.
+
+**Checklist** 2.0.5 includes one fix:
+
+=== Checklist toggling was possible on elements with a `contenteditable="false"` attribute set
+//#TINY-9469
+
+In previous versions of {productname}, the Checklist plugin could toggle elements with a `contenteditable = "false"` attribute set.
+
+As a consequence, lists nested within an element with a `contenteditable="false"` attribute set could be converted into checklists.
+
+To address this, as of {productname} 6.5, the Checklist button is disabled when the selection is within an element with a `contenteditable="false"` attribute set.
+
+It is no longer possible to apply Checklist functionality to elements with a `contenteditable="false"` attribute set.
+
+For information on the **Checklist** plugin, see: xref:checklist.adoc[Checklist].
+
 === Link Checker 3.0.3
 
 The {productname} 6.5 release includes an accompanying release of the **Link Checker** Premium plugin.

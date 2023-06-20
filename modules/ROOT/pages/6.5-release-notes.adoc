@@ -477,6 +477,25 @@ In {productname} 6.5, the editor’s *HTML 4* schema has been corrected. Block e
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== Direction did not visually change when Directionality was applied to an element which had the CSS property, `direction`, set.
+//#TINY-9314
+
+When determining an element’s directionality, the `direction` style takes precendence over the `dir` attribute in many cases.
+
+However, in previous versions of {productname}, the Directionality plugin only affected the `dir` attribute and did not consider any `direction` style, whether inline or from a stylesheet. Consequently, the Directionality plugin did not visually affect elements with a CSS `direction` style applied.
+
+As of {productname} 6.5, the Directionality plugin takes into account the `direction` CSS style while still giving priority to the `dir` attribute.
+
+In {productname} 6.5, when Directionality is applied to an element:
+
+. any inline `direction` style is removed if present; then
+. the standard `dir` attribute logic is applied; and, finally;
+. the plugin determines if an inline `direction` CSS style is necessary for the desired visual change in direction.
+
+The final step above — the addition of an inline `direction` CSS style —  most often occurs if the element derives a different `direction` style from a stylesheet.
+
+As a consequence of these changes, the Directionality plugin now functions as expected for elements with a `direction` CSS style applied.
+
 === In Safari running on iOS, Hangul characters merged into the previous line upon typing after pressing Enter.
 //#TINY-9746
 

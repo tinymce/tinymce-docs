@@ -11,23 +11,71 @@ include::partial$misc/admon-premium-plugin.adoc[]
 
 include::partial$misc/admon-requires-6.4v.adoc[]
 
-NOTE: The documentation for this page is a work in progress. Further details on the {pluginname} plugin will be added to this page soon.
-
 The {pluginname} Premium plugin enables the creation of complex, interactive templates using {productname}.
 
 They can also be added to a {productname} instance by end-users selecting content in a {productname} document and saving the selection as a template via the {productname} user-interface.
 
 IMPORTANT: This initial {pluginname} release does not support template editing. To update a particular template; insert the template into an editor; make edits; select the, now edited, content; and then create a new template (using, for example, the *Tools > Save as Template…* menu item).
 
-////
-== Interactive example
 
-liveDemo::{plugincode}[]
-////
+== Using the Advanced Template plugin
+=== Inserting a template
+To insert a template
+
+. Select *Template…* from the *Insert* menu or +
+  Select the *Insert template* image:icons/template.svg[Insert template] toolbar button.
+. Select the template to add to the TinyMCE document from the _Templates_ dialog that presents.
+. Click *Insert* or press *Return*.
+
+=== Adding a new template
+To add a new template
+
+. Select the material in the TinyMCE document that is going to be the new template and
+
+. Save the template using one of the following methods:
+     * Select *Save as template…* from the *Tools* menu.
+     * Select *Save as template…* from the context menu.
+     * Select the *Save as template* image:icons/template-add.svg[Save as template] toolbar button.
+
+Then, in the _New template_ dialog that presents
+
+. Enter a name for the new template in the *Template* name field;
+. Select a category for the new template from the *Category* pop-up menu; and
+. Click *Save* or press *Return*.
+
+=== Adding a new category
+To add a new category
+
+. Select *Template…* from the *Insert* menu to open the _Templates_ dialog.
+. Click on the *New category* button in the dialog footer. +
+  The *New category* form will pop up.
+. In the *New category* form, enter the name of the new category you want to add.
+. Click the *Save* button to submit the form.
+. After saving, the new category will appear in the Tree component of the _Templates_ dialog.
+
+=== Searching for templates
+To search for a template
+
+. Select *Template…* from the *Insert* menu to open the _Templates_ dialog.
+. Enter the name of the template you are searching for in the *Search* field.
+. As you type, the displayed list of matching templates updates in real-time in the dialog’s Tree component.
+
+=== Template list management
+To manage the template list
+
+. Select *Template…* from the *Insert* menu to open the _Templates_ dialog.
+. Select the template or the category you want to modify.
+. Click on the three dots menu for the selected item. +
+  The *actions* menu will open.
+. From the *actions* menu, choose the appropriate operation based on your requirements:
+  * Rename category/template.
+  * Move template to another category.
+  * Move all category items to another category.
+  * Delete template/category.
 
 == Basic setup
 
-To setup the {pluginname} plugin user-interface in the editor
+To setup the {pluginname} plugin user-interface in the editor:
 
 * add `{plugincode}` to the `plugins` option in the editor configuration;
 
@@ -43,40 +91,56 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: "advtemplate",
   toolbar: "inserttemplate addtemplate",
-  advtemplate_list: () => {
-    return Promise.resolve([
-      {
-        id: '1',
-        title: 'Resolving tickets',
-        content: '<p>As we have not heard back from you in over a week, so we have gone ahead and resolved your ticket</p>'
-      },
-      {
-        id: '2',
-        title: 'Quick replies',
-        items: [
-          {
-            id: '3',
-            title: 'Message received',
-            content: '<p>Just a quick note to say we have received your message, and will get back to you within 48 hours.</p>'
-          },
-          {
-            id: '4',
-            title: 'Progress update',
-            content: '</p>Just a quick note to let you know we are still working on your case</p>'
-          }
-        ]
-      }
-    ]);
-  }
+  contextmenu: "advtemplate",
+  // Each of the following options must be defined as
+  // a function that returns a Promise.
+  // Please find the specific details for each option below.
+  advtemplate_list,
+  advtemplate_get_template,
+  advtemplate_create_category,
+  advtemplate_create_template,
+  advtemplate_rename_category,
+  advtemplate_rename_template,
+  advtemplate_delete_template,
+  advtemplate_delete_category,
+  advtemplate_move_template,
+  advtemplate_move_category_items
 });
 ----
 
-NOTE: The above example only demonstrates the {pluginname} user interface. An xref:#advtemplate_list[`advtemplate_list`] option has been added, with an included function returning a promise that contains a basic Template structure. This allows the {pluginname} user interface to load and present in a {productname} editor instance. This basic setup example cannot create, edit, or save new {pluginname} items. Nor can it preview Template items or insert Template items into a {productname} editor instance.
+NOTE: The undefined options in the above example must be defined. See the xref:options[Options] below for specific details on each function.
 
 
+== Interactive examples
+
+There are two approaches to using the Advanced Template Premium plugin: fixed template lists and user-modifiable template lists.
+
+=== Fixed template lists
+
+For users who work with a fixed template list that does not require modification, you can provide a list directly through the {productname} init configuration using the xref:advtemplate_templates[`+advtemplate_templates+`] option.
+
+The following interactive predefined list example provides guidance for this approach.
+
+[[predefined-list-config-example]]
+==== Configuring the Advanced Template plugin to use a static list of predefined templates.
+liveDemo::{plugincode}-predefined[]
+
+=== User-modifiable template lists
+
+If the intention is for the template list to be end-user modifiable, the {pluginname} plugin should be configured with options to enable communication with a remote Template storage service.
+
+The following interactive remote storage configuration example provides guidance on configuring the {pluginname} plugin to support user-modifiable template lists.
+
+[[remote-config-example]]
+==== Configuring the Advanced Template plugin to interact with a remote backend service via REST API.
+liveDemo::{plugincode}[]
+
+[[options]]
 == Options
 
 The following configuration options affect the behavior of the {pluginname} plugin.
+
+include::partial$configuration/advtemplate_templates.adoc[]
 
 include::partial$configuration/advtemplate_list.adoc[]
 

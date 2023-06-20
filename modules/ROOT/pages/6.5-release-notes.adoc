@@ -64,9 +64,11 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 In previous versions of {productname}, a toolbar flicker was identified when editor instances are re-initialized. 
 
-To reduce this flicker {productname} added a new option called `init_content_sync`.
+As an option to reduce this, {productname} 6.5 includes a new setting, `init_content_sync`.
 
-This option allows the editor iframe to be initialized using `document.write` instead of `srcdoc`, resulting in a synchronous initialization process. While this fix reduces the toolbar flicker, it is important to note that content flicker may still occur.
+This option allows the editor iframe to be initialized using `document.write` instead of `srcdoc`, resulting in a synchronous initialization process that reduces toolbar flicker.
+
+NOTE: This new option only reduces toolbar flicker. Content flicker may still occur.
 
 
 [[changes]]

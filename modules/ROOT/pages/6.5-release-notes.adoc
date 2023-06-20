@@ -94,6 +94,18 @@ For information on the **Link Checker** plugin, see: xref:linkchecker.adoc[Link 
 
 The {productname} 6.5 release includes an accompanying release of the **Accessibility Checker** premium plugin.
 
+**Accessibility Checker** 3.2.0 includes the following fixes.
+
+=== Elements with `contenteditable="false"` attributes set were not properly ignored by the Accessibility Checker.
+//#TINY-9464
+
+Previously, elements with `contenteditable="false"` attributes set were not properly ignored by the Accessibility Checker Premium plugin.
+
+As a consequence, the Accessibility Checker would, incorrectly, find and report accessibility errors concerning content within such elements.
+
+Accessibility Checker 3.2.0 correctly ignores elements with `contenteditable="false"` attributes set.
+
+For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
 **Accessibility Checker** 3.2.0 includes the following fixes, additions, and improvements.
 
 === No longer allow attempting to fix a table’s lack of headers if the table has no cells.

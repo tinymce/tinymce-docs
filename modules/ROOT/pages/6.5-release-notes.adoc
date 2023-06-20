@@ -88,7 +88,7 @@ The {productname} 6.5 release includes an accompanying release of the **Checklis
 === Checklist toggling was possible on elements with a `contenteditable="false"` attribute set
 //#TINY-9469
 
-In previous versions of {productname}, the Checklist plugin could toggle elements with a `contenteditable = "false"` attribute set.
+In previous versions of {productname}, the Checklist plugin could toggle elements with a `contenteditable="false"` attribute set.
 
 As a consequence, lists nested within an element with a `contenteditable="false"` attribute set could be converted into checklists.
 
@@ -531,7 +531,7 @@ NOTE: Integrators who wish to manipulate the HTML drag data should do so in the 
 === Toolbar and menu items were not disabled correctly when selecting elements with a `contenteditable="false"` attribute inside an editor root with a `contenteditable="false"` attribute set.
 //#TINY-9669
 
-In previous versions of {productname}, an issue was identified where toolbar and menu items were not presenting as disabled when the contents of elements with a `contenteditable= "false"` attribute were selected from inside a editor root with a `contenteditable="false"` attribute set.
+In previous versions of {productname}, an issue was identified where toolbar and menu items were not presenting as disabled when the contents of elements with a `contenteditable="false"` attribute were selected from inside a editor root with a `contenteditable="false"` attribute set.
 
 In this circumstance, toolbar buttons and menu items appeared as enabled even though the buttons and menu items were in a disabled state based on the user’s current selection.
 
@@ -839,7 +839,7 @@ Previously, when Google Chrome was the host browser, there were circumstances wh
 
 When the insertion point was positioned after a table, it was placed in the `<body>` at offset 1 instead of within any of its children.
 
-As a result, when an element with a `contenteditable= "false"` attribute came after it, it was deemed invalid to insert a newline at that position. Consequently, no newline was added.
+As a result, when an element with a `contenteditable="false"` attribute came after it, it was deemed invalid to insert a newline at that position. Consequently, no newline was added.
 
 As of this release, {productname} now recognises this position as valid, and the expected root blocks are inserted.
 

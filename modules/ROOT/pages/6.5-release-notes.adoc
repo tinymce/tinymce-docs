@@ -71,14 +71,29 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
-=== On iOS Safari, Korean characters were merging onto the previous line upon typing after inserting a newline by pressing Enter.
+=== In Safari running on iOS, Hangul characters merged into the previous line upon typing after pressing Enter.
 //#TINY-9746
 
-In previous versions of {productname}, in iOS Safari, a bug has been fixed regarding the handling of Korean characters.
+Previously, in Safari running on iOS, when a newline was inserted (by pressing the Enter key) and the user continued typing without moving the insertion point, the characters typed on the newline merged onto the previous line and the newline was removed.
 
-Previously, when a newline was inserted by pressing the Enter key and the user continued typing in Korean without moving the caret, Korean characters typed on the newline would merge onto the previous line and the newline would be removed. This occurred because iOS Safari composed Korean characters by deleting the previous partial character and inserting the composed character, continuing until a native Enter `keypress` event had been fired. However, {productname} has its own Enter key handler on `keydown`, so the native Enter `keypress` event was suppressed, preventing iOS Safari from stopping Korean character composition as needed and causing the bug.
+This occurred because Safari on iOS composes Hangul syllabic blocks by deleting the individual jaso glyphs and inserting the expected block glyph, continuing until a native Enter `keypress` event is fired.
 
-In {productname} 6.5,  a bookmark is saved and an undo level is added on the Enter `keydown` event when the user is on iOS Safari and the caret is detected to be positioned after a Korean character. This allows the native Enter `keypress` event to fire and end the composition session. Then, on the Enter `keyup` event, the effects of the native Enter keypress (ex: creating a newline) are undone, the original selection is restored via the bookmark, and {productname}'s own Enter key handler is called. As a result, iOS Safari no longer attempts to compose Korean characters across newlines, resolving the issue.
+However, {productname} has its own Enter key handler on `keydown`. In this circumstance, therefore, the native `keypress` event is suppressed. This causes Safari on iOS to continue composing the syllabic block across the newline by firing a `deleteContentBackward` input event to delete the newline and then inserting the block on the previous line.
+
+For {productname} 6.5, when the user is in Safari on iOS and the insertion point is detected as positioned after a Korean character, on Enter key keydown;
+
+. a bookmark is saved and an undo level is added; and
+. `preventDefault` is **not** executed to still allow the browser-native Enter key `keypress` event to fire.
+
+This prompts Safari on iOS to end the syllabic block creation session for the previous character.
+
+Then, on the Enter key `keyup` event;
+
+. the effects of the native Enter key `keypress` (usually the creation of a newline) is undone;
+. the original selection is restored via the saved bookmark; and
+. the {productname}-native Enter key handler is called.
+
+This ensures that, when running in Safari on iOS, Safari no longer attempts to compose syllabic blocks across newlines, preventing the unwanted behavior from occurring.
 
 [[security-fixes]]
 == Security fixes

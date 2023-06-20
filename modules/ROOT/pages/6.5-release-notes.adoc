@@ -402,6 +402,17 @@ This presentation makes it clearer that any Quickbar buttons will be applied to 
 == Additions
 {productname} 6.5 also includes the following additions:
 
+=== New `init_content_sync` option that initializes the editor iframe using `document.write` instead of `srcdoc`.
+//#TINY-9818
+
+In previous versions of {productname}, a toolbar flicker was identified when editor instances are re-initialized. 
+
+As an option to reduce this, {productname} 6.5 includes a new setting, `init_content_sync`.
+
+This option allows the editor iframe to be initialized using `document.write` instead of `srcdoc`, resulting in a synchronous initialization process that reduces toolbar flicker.
+
+NOTE: This new option only reduces toolbar flicker. Content flicker may still occur.
+
 === New `table_merge_content_on_paste` option which can disable the merging behaviour when pasting a table inside an existing table.
 //#TINY-9808
 

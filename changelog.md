@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2015: Added TINY-9735 to `staging`.
 - DOC-2017: Added TINY-9757 to `staging`.
 - DOC-2023: Added TINY-9466 to `staging`.
 - DOC-2016: Added TINY-9749 to `staging`.

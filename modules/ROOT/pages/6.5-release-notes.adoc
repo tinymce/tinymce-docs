@@ -150,6 +150,16 @@ For information on the **Accessibility Checker** plugin, see: xref:accessibility
 
 The {productname} 6.5 release includes an accompanying release of the **Advanced Code Editor** premium plugin.
 
+**Advanced Code Editor** 3.3.0 includes the following fix.
+
+=== When switching to full-screen mode when the editor was set to inline view, focus was not returned to the code editor on iOS.
+//#TINY-9735
+
+In previous versions of {productname}, the default behavior of `editor.execCommand` in inline mode on iOS was to hide the editor when the view is open. Although it should not be possible to focus on it, iOS allowed it.
+
+As a consequence, when pressing the fullscreen button the editor used `editor.execCommand('mceFullScreen')`, which caused the insertion point to be positioned incorrectly on iOS.
+
+To resolve this issue, {productname} 6.5, includes `skip_focus: true` as a parameter for the `mceFullScreen` command. Consequently, the Full Screen button no longer attempts to focus back on the editor.
 **Advanced Code Editor** 3.3.0 includes the following three changes.
 
 === Advanced Code Editor did not preserve changes to _font size_ or _dark/light mode_ state.

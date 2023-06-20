@@ -492,6 +492,17 @@ In {productname} 6.5, the editor’s *HTML 4* schema has been corrected. Block e
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== The content of {productname} dialogs could not be scrolled in some circumstances.
+//#TINY-9668
+
+Previously, the dialog’s body content was setup with a maximum height of 650px (`max-height: 650px;`).
+
+As a consequence, scrolling was only enabled in dialog’s when the dialog’s content exceeded this height. As a further consequence, when dialogs were less than 650px high, the dialog’s footer could extend below the dialog’s bounds, putting the controls in the footer out of view. This particularly presented in dialogs that do not have tabs.
+
+In {productname} 6.5, the dialog body’s max-height is set to a calculated value: the minimum value between 650px and the viewport height (`vh`) minus 110px. 110px, here, is the combined height of a {productname} dialog’s header and footer.
+
+{productname} dialogs now display consistently and correctly. And footer controls appear in view.
+
 === Direction did not visually change when Directionality was applied to an element which had the CSS property, `direction`, set.
 //#TINY-9314
 

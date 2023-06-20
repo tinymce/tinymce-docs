@@ -74,7 +74,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === The insertion point moved in the wrong direction when traversing an inline element with a `contenteditable="false"` attribute set within a block element with a right-to-left text direction set
 //#TINY-9565
 
-Previously, when a {productname} document had an inline element with a `contenteditable="false"` attribute set inside a block block element that had a text direction of right-to-left, the insertion point would move in the wrong direction when traversing the inline element using arrow keys.
+Previously, when a {productname} document had an inline element with a `contenteditable="false"` attribute set inside a block element that had a text direction of right-to-left, the insertion point would move in the wrong direction when traversing the inline element using arrow keys.
 
 As of this release, when such an inline element, inside a block element with a right-to-left text direction, is traversed, {productname} moves the insertion point in reverse logical order.
 

@@ -80,7 +80,7 @@ This occurred because Safari on iOS composes Hangul syllabic blocks by deleting 
 
 However, {productname} has its own Enter key handler on `keydown`. In this circumstance, therefore, the native `keypress` event was suppressed. This caused Safari on iOS to continue composing the syllabic block across the newline by firing a `deleteContentBackward` input event to delete the newline and then inserting the block on the previous line.
 
-For {productname} 6.5, when the user is in Safari on iOS and the insertion point is detected as positioned after a Korean character, on Enter key keydown;
+For {productname} 6.5, when the user is in Safari on iOS and the insertion point is detected as positioned after a Korean character, on Enter key `keydown`;
 
 . a bookmark is saved and an undo level is added; and
 . `preventDefault` is **not** executed to still allow the browser-native Enter key `keypress` event to fire.

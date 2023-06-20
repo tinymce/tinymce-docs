@@ -36,15 +36,16 @@ The {productname} 6.5 release includes an accompanying release of the **Accessib
 
 **Accessibility Checker** 3.2.0 includes the following fixes.
 
-=== contenteditable="false" elements were not properly ignored by `allychecker`.
+=== Elements with `contenteditable="false"` attributes set were not properly ignored by the Accessibility Checker.
 //#TINY-9464
 
-In previous versions of {productname}, elements with `contenteditable="false" attributes were not properly ignored by the Accessibility Checker Premium plugin.
+Previously, elements with `contenteditable="false"` attributes set were not properly ignored by the Accessibility Checker Premium plugin.
 
-As a consequence, the Accessibility Checker would find matching rules inside `contenteditable="false"` content.
+As a consequence, the Accessibility Checker would, incorrectly, find and report accessibility errors concerning content within such elements.
 
-A fix was applied to Accessibility Checker in {productname} 6.5, that now allows Accessibility Checker to ignore issues found inside `contenteditable="false"` content.
+Accessibility Checker 3.2.0 correctly ignores elements with `contenteditable="false"` attributes set.
 
+For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement

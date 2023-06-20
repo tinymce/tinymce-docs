@@ -36,17 +36,18 @@ The {productname} 6.5 release includes an accompanying release of the **Advanced
 
 **Advanced Code Editor** 3.3.0 includes the following change.
 
-=== Advanced Code Editor did not preserve either the `font size` and `dark mode` save state when closed.
+=== Advanced Code Editor did not preserve changes to _font size_ or _dark/light mode_ state.
 //#TINY-9749
 
-In previous versions of {productname}, the `font size` and `dark mode` state within the Advanced Code Editor was not preserved after closing the dialog.
+In previous versions of {productname}, the _font size_ and _dark/light mode_ states within the Advanced Code Editor were not preserved after closing the dialog.
 
-As a consequence, when the user closed the Advanced Code Editor the editor would reset the state back to its default settings.
+When the Advanced Code Editor was closed, these states reverted to their default values.
 
-In {productname} 6.5, the state for the `font size` and `dark mode` status is now preserved when the Advanced Code Editor is closed.
+In {productname} 6.5, _font size_ and _dark/light mode_ states are preserved when the Advanced Code Editor is closed.
 
-[NOTE]
-This issue only affected the Advanced Coded Editor when it was is in modal.
+NOTE: This issue only affected the Advanced Coded Editor when it was opened in a dialog.
+
+For information on the **Advanced Code Editor** plugin, see: xref:advcode.adoc[Advanced Code Editor].
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement

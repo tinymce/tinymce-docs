@@ -71,14 +71,16 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
-=== Resolving formatting issues with `contenteditable= "false"` contexts and the formatter API
+=== Formatting issues with elements with a `contenteditable="false"` attribute set and the formatter API resolved
 //#TINY-9678
 
-In previous versions of {productname}, formatting issues caused incorrect application or removal of formats in relation to the closest `contenteditable= "true"` element when the selection was within a `contenteditable= "false"` context.
+If the selection is in an element with a `contenteditable="false"` attribute set, and spot-formatting is applied to the selection, the spot formatting is not applied to the selected content, as expected.
 
-This issue also affected the formatter API as well, as its `canApply` function failed to return `false` when the selection was in a `contenteditable="false"` context.
+However, In previous versions of {productname}, in such a circumstance, the spot formatting was erroneously applied to the nearest writeable element, if such an element existed.
 
-In {productname} 6.5, the issue has been resolved. Now, formats are correctly applied or removed only to and from `contenteditable= "true"` elements.
+This incorrect application of spot-formatting also presented when the formatter API was used, because the API’s `canApply` function did not return `false` when the selection was in an element with a `contenteditable="false"` attribute set.
+
+In {productname} 6.5, the issue has been resolved. Spot formatting is no longer misapplied to not-selected elements.
 
 [[security-fixes]]
 == Security fixes

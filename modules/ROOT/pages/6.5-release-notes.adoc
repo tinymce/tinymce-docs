@@ -82,7 +82,8 @@ However, {productname} has its own Enter key handler on `keydown`. In this circu
 
 For {productname} 6.5, when the user is in Safari on iOS and the insertion point is detected as positioned after a Korean character, on Enter key `keydown`;
 
-. a bookmark is saved and an undo level is added; and
+. a bookmark is saved;
+. an undo level is added; and
 . `preventDefault` is **not** executed to still allow the browser-native Enter key `keypress` event to fire.
 
 This prompts Safari on iOS to end the syllabic block creation session for the previous character.

@@ -11,6 +11,7 @@
 
 {productname} 6.5 was released for {enterpriseversion} and {cloudname} on Wednesday, June 14^th^, 2023. These release notes provide an overview of the changes for {productname} 6.5:
 
+* xref:new-open-source-plugin[New Open Source Plugin]
 * xref:new-premium-plugin[New Premium Plugin]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
 * xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium Plugin end-of-life announcement]
@@ -22,18 +23,400 @@
 * xref:security-fixes[Security fixes]
 * xref:known-issues[Known issues]
 
-[[new-premium-plugin]]
-== New Premium Plugin
+[[new-open-source-plugin]]
+== New Open Source Plugin
+
+The following new Open Source Plugin was released alongside {productname} 6.5.
+
+=== Accordion 1.0.0
+//#TINY-9730
+
+The new Open Source plugin, **Accordion** allows for the creation of sections in a document that can be expanded or collapsed to show or hide additional content.
+
+The Accordion plugin also provides integrators with four commands:
+
+* `InsertAccordion`;
+* `ToggleAccordion`;
+* ToggleAllAccordions`;
+* `RemoveAccordion`;
+
+and two initialization options
+
+* `details_initial_state`;
+* `details_serialized_state`.
+
+For information on the **Accordion** plugin see xref:accordion.adoc[Accordion].
 
 [[accompanying-premium-plugin-changes]]
 == Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {productname} 6.5.
 
+=== Enhanced Media Embed 3.1.2
+
+The {productname} 6.5 release includes an accompanying release of the **Enhanced Media Embed** premium plugin.
+
+**Enhanced Media Embed** 3.1.2 includes the following fix.
+
+=== Allow a media embed element to be correctly resized when using the media plugin dialog by converting the responsive media embed to a standalone iframe.
+//#TINY-8714
+
+Previously, the Enhanced Media Embed plugin and the Media plugin encountered issues when used together.
+
+The Enhanced Media Embed plugin wraps `iframe` in a responsive wrapper that relies on large padding for the height.
+
+The Media plugin dialog, however, targets the `"ephox-embed-iri"` div, and the width and height are mapped to the wrapper’s `max-width` and `max-height` properties.
+
+When content created with the Enhanced Media Embed plugin is inserted using the Media plugin dialog, the height is primarily determined by padding, rendering the `max-height` property ineffective.
+
+(For additional detail, see https://benmarshall.me/responsive-iframes[benmarshall.me/responsive-iframes].)
+
+As well, when inserting embedded content via the Enhanced Media Embed plugin, the element may be dis-proportionally sized. This occurred because height was not explicitly set, leaving it to be determined by the content within the `iframe`.
+
+In Enhanced Media Embed 3.1.2 the responsive embedded content is wrapped in a div with the wrapper’s `max-width` set. This ensures that the embedded content maintains proportional sizing when resizing the viewport.
+
+As well, when opening the media plugin dialog for content created using the Enhanced Media Embed plugin and identified with the `"ephox-embed-iri"` attribute, the width and height are now calculated and displayed in the editor. If any changes to the height or width are made within the dialog, the responsive media embed is converted into a standalone `iframe` with a fixed width and height to reflect the modifications.
+
+For information on the **Enhanced Media Embed** plugin, see: xref:introduction-to-mediaembed.adoc[Introduction to Enhanced Media Embed].
+
+=== Checklist 2.0.5
+
+The {productname} 6.5 release includes an accompanying release of the **Checklist** premium plugin.
+
+**Checklist** 2.0.5 includes one fix:
+
+=== Checklist toggling was possible on elements with a `contenteditable="false"` attribute set
+//#TINY-9469
+
+In previous versions of {productname}, the Checklist plugin could toggle elements with a `contenteditable = "false"` attribute set.
+
+As a consequence, lists nested within an element with a `contenteditable="false"` attribute set could be converted into checklists.
+
+To address this, as of {productname} 6.5, the Checklist button is disabled when the selection is within an element with a `contenteditable="false"` attribute set.
+
+It is no longer possible to apply Checklist functionality to elements with a `contenteditable="false"` attribute set.
+
+For information on the **Checklist** plugin, see: xref:checklist.adoc[Checklist].
+
+=== Link Checker 3.0.3
+
+The {productname} 6.5 release includes an accompanying release of the **Link Checker** Premium plugin.
+
+**Link Checker** 3.0.3 includes one fix:
+
+=== Links contained within elements with the `contenteditable="false"` attribute set were marked as invalid.
+//#TINY-9478
+
+Previously the **Link Checker** plugin performed checks on links contained in elements with the `contenteditable="false"` attribute set.
+
+As a consequence, these links were marked as invalid, even though the end-user is unable to alter them.
+
+As of **Link Checker** 3.0.3, the plugin no longer checks links contained within elements with the `contenteditable="false"` attribute set.
+
+No such links, consequently, return invalid notices the end-user can do nothing about.
+
+For information on the **Link Checker** plugin, see: xref:linkchecker.adoc[Link Checker].
+
+=== Accessibility Checker 3.2.0
+
+The {productname} 6.5 release includes an accompanying release of the **Accessibility Checker** premium plugin.
+
+**Accessibility Checker** 3.2.0 includes the following fixes.
+
+=== Elements with `contenteditable="false"` attributes set were not properly ignored by the Accessibility Checker.
+//#TINY-9464
+
+Previously, elements with `contenteditable="false"` attributes set were not properly ignored by the Accessibility Checker Premium plugin.
+
+As a consequence, the Accessibility Checker would, incorrectly, find and report accessibility errors concerning content within such elements.
+
+Accessibility Checker 3.2.0 correctly ignores elements with `contenteditable="false"` attributes set.
+
+For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
+**Accessibility Checker** 3.2.0 includes the following fixes, additions, and improvements.
+
+=== No longer allow attempting to fix a table’s lack of headers if the table has no cells.
+//#TINY-9753
+
+Previously, the Accessbility Checker plugin assumed a table had at least one row. As a consequence it would, consequent to attempting to produce a user-visible error regarding a table having no header rows, throw an internal error when it checked a table that had no cells at all.
+
+NOTE: this error was sent to the Console but no errors or alerts were presented to end-users.
+
+As of Accessibility Checker 3.2.0, the plugin no longer attempts to fix errors in tables with no rows. The user experience is unchanged, but Console errors are no longer generated in this circumstance.
+
+For information on the **Accessibility Checker** plugin, see: xref:accessibility.adoc[Accessibility Checker].
+
+=== Advanced Code Editor 3.3.0
+
+The {productname} 6.5 release includes an accompanying release of the **Advanced Code Editor** premium plugin.
+
+**Advanced Code Editor** 3.3.0 includes the following three changes.
+
+=== Advanced Code Editor did not preserve changes to _font size_ or _dark/light mode_ state.
+//#TINY-9749
+
+In previous versions of the **Advanced Code Editor**, the _font size_ and _dark/light mode_ states were not preserved after closing the dialog.
+
+When the **Advanced Code Editor** was closed, these states reverted to their default values.
+
+In **Advanced Code Editor** 3.3.0, _font size_ and _dark/light mode_ states are preserved when the editor is closed.
+
+NOTE: This issue only affected the **Advanced Coded Editor** when it was opened in a dialog.
+
+=== The _Copy code_ button was incorrectly styled within the Advanced Code Editor.
+//#TINY-9698
+
+In previous versions of **Advanced Code Editor**, the _Copy code_ button, was styled incorrectly. Specifically, it was missing the grey background used in other, equivalent, buttons.
+
+This was caused by an incorrect CSS setting. The setting, `borderless: true`, should not have been applied. As a consequence, the button wasn't correctly styled. 
+
+In **Advanced Code Editor** 3.3.0, the `borderless: true` setting has been removed and the button is now correctly styled.
+
+=== The Advanced Code Editor now preserves selected font size.
+//#TINY-9701
+
+Previously, font size changes in the Advanced Code Editor were not preserved when the user exited the editor in inline mode.
+
+In **Advanced Code Editor** 3.3.0 a fix has been implemented to address this. Now, when users change the font size in the Advanced Code Editor and the user closes the Code Editor, the font size changes are preserved.
+
+The changed font size setting presents when the Advanced Code Editor is opened again.
+
+For information on the **Advanced Code Editor** plugin, see: xref:advcode.adoc[Advanced Code Editor].
+
+=== Spell Checker Pro 3.3.0
+
+The {productname} 6.5 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
+
+**Spell Checker Pro** 3.3.0 includes three additions and one change:
+
+==== New `mceSpellcheckUpdate` command
+
+The new `mceSpellcheckUpdate` command allows users to trigger a check for misspelled words in the editor content, and includes any spelling suggestions for the misspelt words.
+
+This allows users to verify their spelling all at once without the use of the Spellchecker dialog, with any suggestions available from a context menu.
+
+==== New `SpellcheckerUpdated` event
+
+The new `SpellcheckerUpdated` event is triggered each time the editor content is updated to display new misspelt words once suggestions are provided for those misspelt words.
+
+This event is currently supported when using the `mceSpellcheckUpdate` command or when opening the dialog.
+
+NOTE: This event is not currently supported in As-you-type mode.
+
+==== New `getSpellingErrors()` API
+
+The new `getSpellingErrors()` API allows users to retrieve a list of each misspelling in the editor content.
+
+=== Words containing non-Latin characters were not sent in spelling requests.
+//#TINY-9654
+
+As of Spell Checker Pro 3.2.1, only languages using a Latin-based alphabet — for example; English, French, and German — had supported dictionaries.
+
+As a consequence, Spell Checker Pro’s client-side only sent strings containing Latin characters in spelling requests to the server, omitting words containing non-Latin characters from languages such as Greek, Arabic, and Korean.
+
+This interfered with some use-cases in which Spell Checker Pro client-side was paired with a custom spellchecking service which supports languages with non-Latin alphabets: words containing non-Latin characters were not sent to the server.
+
+In SpellChecker Pro 3.3.0, the word identification logic for the plugin’s client-side has been changed to the one used by the Word Count plugin. This allows words containing non-Latin characters to be captured and sent in requests to the spelling service.
+
+For information on the **SpellChecker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro].
+
+=== Advanced Typography 1.1.3
+
+The {productname} 6.5 release includes an accompanying release of the **Advanced Typography** premium plugin.
+
+**Advanced Typography** 1.1.3 includes one fix.
+
+=== Fixed adding unnecessary space after a comma and before a quote in several scenarios.
+//#TINY-9510
+
+In previous versions of {productname}, the issue of adding an unnecessary space after a comma and before a quote in several scenarios was caused by an incorrectly written Regular Expression rule in the https://github.com/typograf[Typograf] library used by the Advanced Typography plugin. This led to the appearance of spaces between commas and quotes.
+
+To fix this, {productname} updated the Regular Expression rule in the Typograf library. As a result, spaces between commas and quotes no longer appear.
+
+For information on the **Advanced Typography** plugin, see: xref:advanced-typography.adoc[Advanced Typography].
+
+=== Advanced Templates 1.2.0
+
+The {productname} 6.5 release includes an accompanying release of the **Advanced Templates** premium plugin.
+
+**Advanced Templatess** 1.2.0 includes one improvement, one addition, and five fixes:
+
+=== The Advanced Template UI now provides controls for a preconfigured operations set.
+//#TINY-9756
+
+This **Advanced Templates** plugin update introduces a user interface that offers controls tailored for a predefined range of operations. This simplifies the user experience by only presenting the options relevant to the tasks at hand.
+
+=== New `advtemplate_templates` configuration option to define an immutable list of predefined templates.
+//#TINY-9755
+
+**Advanced Templates** 1.2.0 adds the new `advtemplate_templates` configuration option.
+
+This option can set up an unchangeable list of predefined templates. It is designed for situations where the template list should remain static.
+
+Instead of setting up a persistent template store and the consequent complex plugin configuration, the `advtemplate_templates` option specifies a static templates list that can be inserted using the Templates dialog.
+
+=== A selected item within its parent directory in tree components, did not remain selected after closing the directory
+//#TINY-9715
+
+In previous versions of the **Advanced Templates** plugin, selecting a component in a leaf within its parent directory and then closing the directory caused the selection to be lost.
+
+This new release of the **Advanced Templates** plugin corrects this. It now tracks the selected leaf’s active state before and after collapsing or expanding the leaf’s parent directory.
+
+For information on the **Advanced Templates** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
+**Advanced Templates** 1.2.0 includes three fixes.
+
+=== Expanded category trees collapsed after any element in the tree was renamed in the Templates dialog’s tree component.
+//#TINY-9691
+
+In the previous version of {productname}, when users renamed a template or category in the *Insert → template…* dialog, the template list refreshed and expanded categories collapsed.
+
+Although cosmetic, this state loss hid the renamed template or category; a likely cause of user confusion. 
+
+This update addresses this using a new configuration property, `defaultExpandedIds`. The `defaultExpandedIDs` property allows the category tree’s state to be saved before executing the rename operation and then passed back for re-rendering the tree after the re-naming.
+
+With this update, after a template or category is re-named, the template list is re-rendered in the same state as it was prior to the re-naming. Consequently, if an object was in an expanded tree prior to being re-named, it will remain visible as a re-named object when the tree refreshes.
+
+=== A selected tree component template item did not stay highlighted when the Templates dialog re-rendered.
+//#TINY-9770
+
+In previous versions of {productname}, a selected tree component template item would lose its highlight when the Advanced Template dialog was re-rendered after the template list updated.
+
+This occured when a user renamed a selected template item in the tree component. As a consequence, the user could not identify the currently selected item in the tree.
+
+In {productname} 6.5, the problem was addressed by utilizing the new `defaultSelectedId` configuration property from the xref:dialog-components.adoc#tree[tree component] API.
+
+As a result, the currently previewed template is now correctly highlighted in the tree component, as expected.
+
+=== The *Insert → Template…* menu item and equivalent toolbar button was not disabled when the selection was inside an element with a `contenteditable="false"` attribute set
+//#TINY-9892
+
+In previous versions of {productname}, the *Insert → Template…* menu item, and equivalent toolbar button remained active when the user’s selection or insertion point was inside an element with a `contenteditable="false"` attribute set.
+
+As a consequence, the *Advanced Template* toolbar button and menu item appeared enabled, but clicking on them had no effect.
+
+A fix was implemented in {productname} 6.5. {productname} now checks if the user’s current selection is within an element with a `contenteditable="false"` attribute set. If it is, the *Advanced Template* toolbar button and menu item are disabled, as expected.
+
+For information on the **Advanced Templates** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
+
+=== Merge Tags 1.3.0
+
+The {productname} 6.5 release includes an accompanying release of the **Merge Tags** premium plugin.
+
+**Merge Tags** 1.3.0 includes three fixes:
+
+=== The plugin now correctly manages prefixes and suffixes when they are the same.
+//#TINY-9566
+
+In previous versions of **Merge Tags** the plugin mishandled a merge tags’ prefix and suffix when the user placed multiple merge tags within either an inline or block element. This resulted in incorrect management of these prefixes and suffixes during the `setContent` operation.
+
+This mis-management resulted in an unintended repetition of the prefix or suffix occurred, which lead to undesired output.
+
+For example, if the input was: 
+
+[source, html]
+----
+<div>%Tag1% this is a bug %Tag1%</div>
+----
+
+the output, after the `setContent` operation was:
+
+[source, html]
+----
+%Tag1%%% this is a bug %%%Tag1%
+----
+
+As of this **Merge Tags** update, the plugin now splits the array of any matching merge tags that are identified as _odd_ prefixes or suffixes. As a consequence, merge tag prefixes and suffixes that are the same are output as expected.
+
+For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
+
+=== Right clicking on a merge tag instance presented different highlighting depending on the host browser.
+//#TINY-9848
+
+In previous versions of {productname}, when users right-clicked on a merge tag, the highlighting within the merge tag selection varied, depending on the host browser.
+
+This resulted in an inconsistent end-user experience.
+
+{productname} 6.5 no longer uses a browser’s default highlighting of the merge tag. Instead, {productname} 6.5 introduces {productname}-specific styles. These styles highlight the merge tag consistently across different browsers.
+
+{productname} now presents end-users with uniform merge tag highlighting across all supported browsers.
+
+=== *Insert → Merge tag* menu item, and equivalent toolbar button was not disabled when selection was inside an element with a `contenteditable="false"` attribute set
+//#TINY-9893
+
+In previous versions of {productname}, the *Insert → Merge tag* menu item, and equivalent toolbar button remained active when the user’s selection or insertion point was inside an element with a `contenteditable="false"` attribute set.
+
+As a consequence the *Merge tags* toolbar button and menu item appeared enabled, but clicking on them had no effect.
+
+A fix was implemented in {productname} 6.5. {productname} now checks if the user’s current selection is within an element with a `contenteditable="false"` attribute set. If it is, the *Merge tags* toolbar button and menu item are disabled, as expected.
+
+For information on the **Merge Tags** plugin, see: xref:mergetags.adoc[Merge Tags].
+
+=== Advanced Typography 1.1.2
+
+The {productname} 6.5 release includes an accompanying release of the **Advanced Typography** premium plugin.
+
+**Advanced Typography** 1.1.2 includes two fixes:
+
+=== Advanced Typography buttons are disabled in elements with a `contenteditable="false"` attribute set.
+//#TINY-9468
+
+Previously, the Typography toolbar button was still enabled when the user selected an element with a `contenteditable="false"` attribute set within the {productname} editor.
+
+With this release, the **Advanced Typography** plugin now correctly disables its toolbar button and its function when the selection is in an element with a `contenteditable="false"` attribute set.
+
+=== The Advanced Typography command, `mceTypography`, no longer applies fixes if the selection is an element with a `contenteditable="false"` attribute set.
+//#TINY-9468
+
+Previously, applying the `mceTypography` command when the selection was in an element with a `contenteditable="false"` attribute set still applied changes to the selection.
+
+With this release, the **Advanced Typography** plugin now correctly disables the `mceTypography` command when the selection is in an element with a `contenteditable="false"` attribute set
+
+For information on the **Advanced Typography** plugin, see: xref:advanced-typography.adoc[Advanced Typography].
+
+=== PowerPaste 6.2.0
+
+The {productname} 6.5 release includes an accompanying release of the **Power Paste** premium plugin.
+
+**PowerPaste** 6.2.0 includes one fix:
+
+=== Existing tables were not filled out when pasting tables from Microsoft Word or Microsoft Excel.
+//#TINY-9500
+
+Previously, when the PowerPaste plugin was active and a table was copied from Microsoft Word or Micrsoft Excel into a {productname} editor, the copied table pasted as a whole table into a single cell, rather than merging the content of the copied table into the cells of the existing table.
+
+PowerPaste 6.2.0 addresses this.
+
+With this release, when a table is copied and pasted from Microsoft Word or Microsoft Excel into an existing {productname} table, it correctly fills the cells of the existing table.
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[Introduction to PowerPaste].
+
+=== Format Painter 2.0.2
+
+The {productname} 6.5 release includes an accompanying release of the **Format Painter** Premium plugin.
+
+**Format Painter** 2.0.2 includes one fix:
+
+=== It was possible to modify text elements with the `contenteditable="false"` attribute set using formatpainter
+//#TINY-9472
+
+Users could use previous versions of the Format Painter plugin to modify text elements with the `contenteditable="false"` attribute set.
+
+That is, users could, contrary to the attribute setting, make formatting changes to text marked as Read Only using this plugin.
+
+With this update, the Format Painter plugin marks the `contenteditable="false"` attribute setting properly: text elements with this setting are no longer changed if this plugin is applied to them.
+
+For information on the **Format Painter** plugin, see: xref:formatpainter.adoc[Format Painter].
+
+
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement
 
 The following premium plugin has been announced as reaching its end-of-life:
+
+=== Real-Time Collaboration
+
+{productname}'s xref:rtc-introduction.adoc[Real-time Collaboration (RTC)] plugin will be deactivated on December 31, 2023, and is no longer available for purchase.
+
 
 [[accompanying-premium-skins-and-icon-packs-changes]]
 == Accompanying Premium Skins and Icon Packs changes
@@ -54,22 +437,522 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following improvements:
 
+=== Translations added for Help text displayed at **Help > Help > Keyboard Navigation**.
+//#TINY-9633
+
+In previous versions of {productname}, translations for the text on the “Keyboard Navigation” tab in the Help dialog were not available due to a flaw with the way translations were delivered.
+
+Conventionally, translations were parsed into JavaScript files containing objects which were keyed by the English string, with the value being the translated equivalent in a different language. This was unsuitable for very long strings such as the text on the *Keyboard Navigation* tab.
+
+In {productname} 6.5, a new pipeline has been implemented for delivering translations of long strings. Professional translations of text within the *Keyboard Navigation* tab inside the **Help** dialog have also been procured.
+
+As a result, the text in the **Help** dialog’s *Keyboard Navigation* tab is now shown in the language specified by the current editor’s `language` option.
+
+NOTE: Due to the large differences between this new pipeline and conventional methods of delivering translations, the professional translations for the text on the *Keyboard Navigation* tab have been made open source for community users. These translations are in the `i18n` subdirectory of the **Help** plugin.
+
+=== Screen readers now announce instructions for using arrow keys to resize the editor when the resize handle is focused
+//#TINY-9793
+
+When using voice assistant software in previous versions of {productname}, focusing on the editor resize handle would not announce any instruction.
+
+In {productname} 6.5, instructions for using arrow keys to adjust the editor viewport’s size are now announced upon focusing the editor resize handle, while using voice assistant software.
+
+NOTE: In {productname} 6.5.1, this announcement is only available in English. Additional translations will be added in a future release.
+
+=== If the selection contains multiple table cells, Quickbar toolbars now present at the middle or beginning of the selection, horizontally.
+//#TINY-8297
+
+When multiple table cell elements are selected, by default, a blue background indicates their selection.
+
+In previous {productname} versions, however, once a cell selection was made, the Quickbar toolbar presented as pointing at the contents of the last cell in the selection. This gave the (incorrect) visual impression that formatting changes would only affect the contents of cell.
+
+In {productname} 6.5, when multiple table cells are selected, the Quickbar plugin calculates the bounding box of the selected cells. Using this information, the Quickbar now presents with the toolbar’s pointer directed at either the middle or the beginning of the selection, considered horizontally.
+
+This presentation makes it clearer that any Quickbar buttons will be applied to the entire selection.
 
 [[additions]]
 == Additions
 {productname} 6.5 also includes the following additions:
 
+=== New `init_content_sync` option that initializes the editor iframe using `document.write` instead of `srcdoc`.
+//#TINY-9818
+
+In previous versions of {productname}, a toolbar flicker was identified when editor instances are re-initialized. 
+
+As an option to reduce this, {productname} 6.5 includes a new setting, `init_content_sync`.
+
+This option allows the editor iframe to be initialized using `document.write` instead of `srcdoc`, resulting in a synchronous initialization process that reduces toolbar flicker.
+
+NOTE: This new option only reduces toolbar flicker. Content flicker may still occur.
+
+=== New `table_merge_content_on_paste` option which can disable the merging behaviour when pasting a table inside an existing table.
+//#TINY-9808
+
+In previous versions of {productname}, when a table was copied and pasted inside an existing table, the content of the copied table would fill the existing table instead of being pasted as a whole inside the table cell where the paste was performed.
+
+{productname} 6.5 includes the new option, `table_merge_content_on_paste`, that allows for this behavior to be turned off.
+
+When this option is set to `false` table merging is disabled and the pasted-in table is inserted into the desired table cell during the paste operation instead.
+
+=== Exposed `dataTransfer` property of drag and drop events for elements with a `contenteditable="false"` attribute.
+//#TINY-9601
+
+Dragging and dropping elements with a `contenteditable="false"` attribute within {productname} emits `dragstart`, `drop`, and `dragend` events as expected.
+
+However, in previous versions of {productname}, these drag events had their `dataTransfer` property set to null. According to https://developer.mozilla.org/en-US/docs/Web/API/DragEvent/dataTransfer[web standards] it should be set to a `DataTransfer` object holding the drag operation’s data.
+
+As a consequence, integrators were unable to view and manipulate the HTML drag data in these drag events.
+
+In {productname} 6.5, dragstart, drop, and dragend events now have their `dataTransfer` property populated with a `DataTransfer` object whose `text/html` data holds the outerHTML of the `contenteditable="false"` element being dragged.
+
+Additionally, a custom mode module has been implemented to ensure that the `DataTransfer` object is in read-write mode in `dragstart` events, read-only mode in `drop` events, and protected mode in `dragend` events, as per https://html.spec.whatwg.org/dev/dnd.html#concept-dnd-rw[standard].
+
+NOTE: Integrators who wish to manipulate the HTML drag data should do so in the dragstart event using the `DataTransfer.setData` method.
+
+=== Toolbar and menu items were not disabled correctly when selecting elements with a `contenteditable="false"` attribute inside an editor root with a `contenteditable="false"` attribute set.
+//#TINY-9669
+
+In previous versions of {productname}, an issue was identified where toolbar and menu items were not presenting as disabled when the contents of elements with a `contenteditable= "false"` attribute were selected from inside a editor root with a `contenteditable="false"` attribute set.
+
+In this circumstance, toolbar buttons and menu items appeared as enabled even though the buttons and menu items were in a disabled state based on the user’s current selection.
+
+{productname} 6.5 now explicitly disables toolbar buttons and menu items based on the user’s selection.
+
+In addition, if the contents of elements with a `contenteditable="true"` attribute are selected in the same circumstance, the toolbars and menu items are re-enabled.
+
+=== `tabpanel` labels in {productname} dialogs can now word wrap for better readability with long labels.
+//#TINY-9947
+
+For {productname} 6.5, improvements were made to the `tabpanel` dialogs: labels on the tabs can now wrap to multiple lines. This improves the readability of the tab labels, particularly when longer labels are displayed.
+
+In particular, the keyboard navigation text in the help dialog is now readable in all languages, without compromising the width of the dialog tab buttons.
+
+=== Support for the `h` hash parameter in vimeo video url in the Media plugin.
+//#TINY-9830
+
+In previous versions of {productname}, an issue was identified that prevented unlisted Vimeo videos from been added to the editor when using the media plugin.
+
+The media plugin failed to correctly insert the video into the content due to {productname} ignoring the `h` parameter when parsing the source URL.
+
+In {productname} 6.5, the `h` parameter is now parsed and included in the source URL by {productname}.
+
+As a result, embedding unlisted Vimeo videos into a {productname} editor using the media plugin now works as expected.
 
 [[changes]]
 == Changes
 
 {productname} 6.5 also incorporates the following changes:
 
+=== Updated the *font* and *font size* dropdown styles to match the default TinyMCE styles
+//#TINY-9630
+
+During the {productname} 5.x lifetime, browser-native select form elements were replaced by a {productname} native dropdown component. However, some browser-native select form elements were not replaced by the custom dropdown component.
+
+This caused inconsistent user interface as certain parts of the application continued to use the browser-native `selectbox`. Affected components include the Advanced Code, Template, Accessibility Checker, Page embed, Permanent Pen, and Advanced Table plugins.
+
+WIth the release of {productname} 6.5, all form select elements now use the {productname} native select component, `listbox`, instead of the browser-native `selectbox`. This change ensures a consistent user interface throughout {productname}.
+
+=== The {productname} *Help* dialog was restored to medium width for better readability.
+//#TINY-9947
+
+A change was made in {productname} 6.4 that caused the help dialog to become narrower.
+
+As a result, users experienced difficulty in reading the content, especially in languages other than English.
+
+To address this issue, the width of the help dialog has been restored to its previous size, ensuring better readability for all users.
+
+=== List items in a combo box were not announced by screen readers.
+//#TINY-9280
+
+For example, the URL text-entry field in the Link dialog is a combobox. When this element is focused with a screen reader, it is announced as a combobox and pressing the down arrow shows the available list items.
+
+In previous versions of {productname}, however, none of these items were announced by the screen reader as they were selected, making these items effectively invisible to screen reader users.
+
+With this update, listed items in a combobox can be announced by screen readers, as expected.
+
+=== When dragging and dropping image elements within the editor the `dragend` event would sometimes not fire when Firefox was the host browser.
+//#TINY-9694
+
+Previously, when dragging and dropping image elements within the editor, the `dragend` event would, in some circumstances, not trigger when the host browser was Mozilla Firefox. 
+
+With this update, a fix for this was implemented. {productname} 6.5 now ensures that the `dragend` event consistently fires when an image is dropped in the editor, even when the host browser is Firefox.
+
+=== The anchor element (`a`) could contain block child elements when the editor schema was set to *HTML 4*.
+//#TINY-9805
+
+In previous versions of {productname}, the anchor element — `<a>` — could have block elements added as children when the schema was set to *HTML 4*.
+
+Consequently, applying a heading element (for example, an `<h1>` element) to a link within a table caption would affect the editor view, even though the table caption tag was not included in the serialized content.
+
+To address this issue, an update was made to the editor’s HTML4 schema: block child elements are now not allowed in anchor tags.
+
+As a result, applying block formatting to link content in {productname} 6.5, should no longer have any impact.
+
+=== The `caption`, `address` and `dt` elements could contain block child elements when the editor schema was set to *HTML 4*.
+//#TINY-9768
+
+In previous versions of {productname}, the `<caption>`, `<dt>` and `<address>` elements could have block elements added as children when the schema was set to *HTML 4*.
+
+The *HTML 4* schema does not support this and, as a consequence, {productname} documents containing such child elements did not validate against HTML 4-specific parsers and validators.
+
+In {productname} 6.5, the editor’s *HTML 4* schema has been corrected. Block elements are now, correctly, considered invalid inside such elements and are automatically unwrapped out of the elements noted above.
+
 
 [[bug-fixes]]
 == Bug fixes
 
 {productname} 6.5 also includes the following bug fixes:
+
+=== Whitespace between transparent elements could, incorrectly, be converted into empty paragraphs.
+//#TINY-9761
+
+Previously, when a file containing adjacent _anchor element around block element_ structures was added to the root of a {productname} editor instance, the whitespace between each anchor-block structure was, incorrectly, turned into an empty paragraph.
+
+This update corrects this. When such structures are inserted into a {productname} 6.5 instance, the extra paragraph is no longer inserted between the block elements.
+
+=== It was possible to remove links in elements with a `contenteditable="false"` attribute set with the `unlink` editor command
+//#TINY-9739
+
+Prevously, if the {productname} root element had a `contenteditable="false"` attribute set and the `unlink` editor command was used while a link was selected, the link was, incorrectly, removed.
+
+For this upate, the `unlink` command was updated. If the current selection is within an element with a `contenteditable="false"` attribute set, issuing an `unlink` command has no effect: the link remains in place as expected.
+
+=== Some toolbar items did not render the ‘unavailable’ mouse pointer when the toolbar item was unavailable.
+//#TINY-9758
+
+In previous versions of {productname}, certain toolbar items did not render the ‘unavailable’ mouse pointer when the toolbar item was unavailable. This occurred when the text color and `fontsizeinput` controls were rendered in a disabled toolbar.
+
+As a result, the disabled state of these toolbar items was not correctly shown.
+
+In {productname} 6.5, the CSS was modified to provide clearer visual indications for disabled toolbar items. As a result, the toolbar items are now properly disabled, appearing greyed out and displaying an unavailable mouse pointer.
+
+=== Formatting issues with elements with a `contenteditable="false"` attribute set and the formatter API resolved
+//#TINY-9678
+
+If the selection is in an element with a `contenteditable="false"` attribute set, and spot-formatting is applied to the selection, the spot formatting is not applied to the selected content, as expected.
+
+However, In previous versions of {productname}, in such a circumstance, the spot formatting was erroneously applied to the nearest writeable element, if such an element existed.
+
+This incorrect application of spot-formatting also presented when the formatter API was used, because the API’s `canApply` function did not return `false` when the selection was in an element with a `contenteditable="false"` attribute set.
+
+In {productname} 6.5, the issue has been resolved. Spot formatting is no longer misapplied to not-selected elements.
+
+=== Text directionality could be set on elements with a `contenteditable="false"` attribute set when within a root with a `contenteditable="false"` attribute set
+//#TINY-9662
+
+Previously, text directionality commands, which set the `dir` attribute, could be applied to elements with a `contenteditable="false"` attribute set when those elements were within a root with a `contenteditable="false"` attribute set.
+
+As of this release, {productname} now checks if a selected element has a `contenteditable="false"` attribute set. And, on elements with this attribute set, text directionality commands are not applied to the selection, as expected.
+
+=== The insertion point moved in the wrong direction when traversing an inline element with a `contenteditable="false"` attribute set within a block element with a right-to-left text direction set
+//#TINY-9565
+
+Previously, when a {productname} document had an inline element with a `contenteditable="false"` attribute set inside a block element that had a text direction of right-to-left, the insertion point would move in the wrong direction when traversing the inline element using arrow keys.
+
+As of this release, when such an inline element, inside a block element with a right-to-left text direction, is traversed, {productname} moves the insertion point in reverse logical order.
+
+This ensures the insertion point traverses the inline element as expected, moving over the element in the direction expected by the arrow-key being pressed.
+
+=== Quickbar toolbars was shown for elements with a `contenteditable="false"` attribute set which were, in turn, in a root with a `contenteditable="false"` attribute set.
+//#TINY-9460
+
+Previously, when the document root had a `contenteditable="false"` attibute set, the Quickbar toolbar appeared when an element with its own `contenteditable="false"` attribute was selected.
+
+A fix was applied to the Quickbar toolbar in {productname} 6.5. The toolbar now sets itself to `hidden` if the current selection is within an element with a `contenteditable="false"` attribute set.
+
+=== The Table toolbar was visible even if the table was within an element with a `contenteditable="false"` attribute.
+//#TINY-9664
+
+In previous versions of {productname}, the table toolbar remained visible even if the table was within a host element that had the `contenteditable="false"` attribute set, making the Table read-only, and making the visible Table toolbar unhelpful, at best.
+
+In {productname} 6.5, this issue has been resolved. The editor no longer shows the Table toolbar when the selection is within a host element that has the `contenteditable="false"` attribute set.
+
+=== The content of {productname} dialogs could not be scrolled in some circumstances.
+//#TINY-9668
+
+Previously, the dialog’s body content was setup with a maximum height of 650px (`max-height: 650px;`).
+
+As a consequence, scrolling was only enabled in dialog’s when the dialog’s content exceeded this height. As a further consequence, when dialogs were less than 650px high, the dialog’s footer could extend below the dialog’s bounds, putting the controls in the footer out of view. This particularly presented in dialogs that do not have tabs.
+
+In {productname} 6.5, the dialog body’s max-height is set to a calculated value: the minimum value between 650px and the viewport height (`vh`) minus 110px. 110px, here, is the combined height of a {productname} dialog’s header and footer.
+
+{productname} dialogs now display consistently and correctly. And footer controls appear in view.
+
+=== Direction did not visually change when Directionality was applied to an element which had the CSS property, `direction`, set.
+//#TINY-9314
+
+When determining an element’s directionality, the `direction` style takes precendence over the `dir` attribute in many cases.
+
+However, in previous versions of {productname}, the Directionality plugin only affected the `dir` attribute and did not consider any `direction` style, whether inline or from a stylesheet. Consequently, the Directionality plugin did not visually affect elements with a CSS `direction` style applied.
+
+As of {productname} 6.5, the Directionality plugin takes into account the `direction` CSS style while still giving priority to the `dir` attribute.
+
+In {productname} 6.5, when Directionality is applied to an element:
+
+. any inline `direction` style is removed if present; then
+. the standard `dir` attribute logic is applied; and, finally;
+. the plugin determines if an inline `direction` CSS style is necessary for the desired visual change in direction.
+
+The final step above — the addition of an inline `direction` CSS style —  most often occurs if the element derives a different `direction` style from a stylesheet.
+
+As a consequence of these changes, the Directionality plugin now functions as expected for elements with a `direction` CSS style applied.
+
+=== In Safari running on iOS, Hangul characters merged into the previous line upon typing after pressing Enter.
+//#TINY-9746
+
+Previously, in Safari running on iOS, when a newline was inserted (by pressing the Enter key) and the user continued typing without moving the insertion point, the characters typed on the newline merged onto the previous line and the newline was removed.
+
+This occurred because Safari on iOS composes Hangul syllabic blocks by deleting the individual jaso glyphs and inserting the expected block glyph, continuing until a browser-native Enter `keypress` event is fired.
+
+However, {productname} has its own Enter key handler on `keydown`. In this circumstance, therefore, the native `keypress` event was suppressed. This caused Safari on iOS to continue composing the syllabic block across the newline by firing a `deleteContentBackward` input event to delete the newline and then inserting the block on the previous line.
+
+For {productname} 6.5, when the user is in Safari on iOS and the insertion point is detected as positioned after a Korean character, on Enter key `keydown`;
+
+. a bookmark is saved;
+. an undo level is added; and
+. `preventDefault` is **not** executed to still allow the browser-native Enter key `keypress` event to fire.
+
+This prompts Safari on iOS to end the syllabic block creation session for the previous character.
+
+Then, on the Enter key `keyup` event;
+
+. the effects of the native Enter key `keypress` (usually the creation of a newline) is undone;
+. the original selection is restored via the saved bookmark; and
+. the {productname}-native Enter key handler is called.
+
+This ensures that, when running in Safari on iOS, Safari no longer attempts to compose syllabic blocks across newlines, preventing the unwanted behavior from occurring.
+
+=== Word count was inaccurate for documents with specific characters.
+//#TINY-8122
+
+Previously, xref:wordcount.adoc[Word Count] treated some characters as separate words rather than as part of the word they were connected to. The following characters specifically:
+
+* **^**
+* **№**
+* **~**
+* **+**
+* **|**
+* **$**
+* **`**
+
+This resulted in innaccurate word counts.
+
+In {productname} 6.5, Word Count’s Unicode punctuation string has been updated to include these characters as exceptions. By doing so, the updated function more accurately count words, including the previously mishandled characters, providing a more reliable word count.
+
+=== Pressing Command+Delete did not add an undo level on systems running macOS.
+//#TINY-8910
+
+On systems running macOS, the Command+Delete (⌘+Delete) keyboard shortcut deletes the material from the insertion point to the beginning of the line. Previously, however, when this shortcut was used in a {productname} instance, the expected undo level was not registered.
+
+A workaround did exist. If a further action was taken (eg text was entered or the Delete key was pressed to remove another character) the new action and the ⌘+Delete action were both added to the undo stack.
+
+With this update, the {productname} editor now registers an undo level when the ⌘+Delete shortcut is used, allowing end-users to undo the action immediately (by, for example, pressing ⌘+Z) and without having to add a further action.
+
+=== Ctrl+backspace and Ctrl+delete did not restore the insertion point position correctly on Windows after an undo or redo operation.
+//#TINY-8910
+
+On systems running Windows, the Ctrl+Delete keyboard shortcut deletes all characters to the left of the insertion point, up to the next word boundary and the Ctrl+Backspace keyboard shortcut deletes all characters to the right of the insertion point, up to the next word boundary.
+
+In previous versions of {productname}, however, if either the ctrl+delete or ctrl+backspace keyboard shortcut was used and immediately followed by an *undo* or *redo* operation, the insertion point was re-set incorrectly (often, but not always, at the beginning of the line affected by the operations).
+
+This issue was resolved for this release: using either the ctrl+delete or ctrl+backspace keyboard shortcut and an undo or redo operation in turn now sees the insertion point placed correctly, as expected.
+
+=== Pressing the Backspace key would, in some situations, delete the image after the insertion point instead of before it
+//#TINY-9807
+
+In previous versions of {productname}, if the insertion point was set between two image elements and the backspace key was pressed, the trailing image was mistakenly treated as an inline formatting element that should be deleted
+
+Consequently, the image after the insertion point was deleted, not the image before the insertion point.
+
+With this update, {productname} now determines the element structure properly and no longer treats the trailing image incorrectly.
+
+Pressing the Backspace key in this circumstance now deletes the image before the insertion point, as expected.
+
+=== In some circumstances, the selected element would, when it was reused or otherwise reset, not have an initial selected value when it was expected to.
+//#TINY-9679
+
+Previously, issues between the host browser and the editor switching between an element’s children, lead to the element presenting an erroneous empty state when displayed.
+
+To resolve this, such elements can no longer be empty unless the user explicitly sets them as such.
+
+In {productname} 6.5, these elements will now have a populated value unless the user specifically chooses an empty selection.
+
+=== Initializing the editor with a pre-inserted table displayed resize handles even when the editor was not focused
+//#TINY-9748
+
+Previously, resize handles presented on tables in a newly-initialised editor even though the table did not have focus. This happened because the insertion point is automatically placed in the first valid element (in this case, a table cell) during editor initialization.
+
+In {productname} 6.5, the resize handles have been adjusted to prevent their display when the insertion point is inside a table element without the editor being focused.
+
+=== Enabling or disabling checkboxes did not set the correct classes and attributes
+//#TINY-4189
+
+In the previous version of {productname}, the checkbox element’s disabled state was not correctly applied to all elements. As a result, the state was neither properly removed nor added as intended.
+
+This error also left checkboxes potentially presenting as in a state that was not true (for example, presenting as enabled when they were not enabled).
+
+To rectify this issue, the control was adjusted and relocated to ensure that it functions as expected.
+
+With this update, enabling or disabling checkboxes sets the correct classes and attributes and presents the current state correctly to the end-user.
+
+=== Inline alert in the "Search and Replace" dialog persisted when it was not necessary.
+//#TINY-9704
+
+Previously, the *Find and Replace* dialog was not updated following a modification to the “Find in selection” option. Consequently, the “not found” alert would persist and not disappear as intended.
+
+To resolve this issue, necessary UI updates were implemented after the change to the “Find in selection” option. As a result, the “not found” alert is now reset every time the “Find in selection” option is altered.
+
+=== Removing an image that failed to upload from an empty paragraph would leave the paragraph without a padding `<br />` tag.
+//#TINY-9696
+
+Previously, when an image upload into an otherwise empty paragraph failed, the upload failure resulted in the empty paragraph not having the expected `<br />` tag to serve as padding.
+
+When the upload failure was noted by a {productname} editor instance, and the placeholder material for the expected image was removed by the editor, the expected padding was not set.
+
+The empty paragraph element was, in this circumstance, rendered inaccessible. And it presented to the end-user as the empty paragraph element being removed or improperly formatted.
+
+In {productname} 6.5, when the `images_uploade_handler` gets a `remove: true` callback, the parent element is checked and, if required padding is not present, it is added.
+
+=== In some specific circumstances, if Google Chrome was the host browser, when the insertion point was placed after a table, adding a newline did not generate the expected newline.
+//#TINY-9813
+
+Previously, when Google Chrome was the host browser, there were circumstances where adding a newline character after a table did not produce the expected outcome (that is, a new line).
+
+When the insertion point was positioned after a table, it was placed in the `<body>` at offset 1 instead of within any of its children.
+
+As a result, when an element with a `contenteditable= "false"` attribute came after it, it was deemed invalid to insert a newline at that position. Consequently, no newline was added.
+
+As of this release, {productname} now recognises this position as valid, and the expected root blocks are inserted.
+
+=== In some cases, exiting a `blockquote` element could fail when the insertion point was positioned at the end of the `blockquote` element.
+//#TINY-9794
+
+There was an issue with exiting a blockquote element when the insertion point was positioned at the end of the element. this issue arose because, when inserting a new block, the check to determine if the block is empty treated nodes containing a zero-width space (ZWSP) as non-empty.
+
+As part of this update, {productname} 6.5 now correctly recognizes elements containing a ZWSP as empty blocks.
+
+As a consequence, exiting blockquote elements now happens even when the insertion point is at the end of the element, as expected.
+
+=== Context toolbars would display the incorrect status for the Advanced List plugin buttons.
+//#TINY-9680
+
+In previous versions of {productname}, a presentation issue was caused by a discrepancy between the setup handler for the Advanced List — `advlist` — Quickbar button in the `advlist` Premium plugin and the setup handler for the List — `list` — Open Source plugin.
+
+Consequently, the status of the `advlist` Quickbar button was not updated correctly during setup.
+
+To resolve this, the setup handler for the `advlist` plugin was aligned with the one used in the `list` plugin. The status of the buttons is now accurately rendered, as expected.
+
+=== Inserting two tables consecutively without focus in the editor resulted in the second table being inserted at the wrong position.
+//#TINY-3909
+
+In previous versions of {productname}, an issue was identified that resulted in the incorrect execution of the `remove_trailing_br` function by **DomParser**. This resulted in the insertion point focusing on the `<tr>` element instead of the `<td>` element.
+
+As a consequence, when inserting a table with the focus on `<tr>`, the table would be placed in the wrong location.
+
+To fix this, the `remove_trailing_br` function was extracted, with the default behavior now set to execute within the serializer. Although the function remains in the parser, its default setting has been modified to not execute by default, as removing it entirely could cause compatibility issues.
+
+NOTE: The configuration related to this issue will be deprecated in `DomParserSetting` in a future {productname} release.
+
+=== The destination category list would include the template’s own category in the *Move to…* dialog.
+//#TINY-9774
+
+When users seek to move a template to another category, a *Move to…* dialog is presented, with a dropdown list of available categories.
+
+In previous versions of {productname}, this list included a redundant category: the current category of the template being moved. If the selected destination category in the *Move to…* dialog matched this original template category, the operation had no effect.
+
+In {productname} 6.5, the destination category list now filters out the category of the template being moved.
+
+Consequently, users no longer see the parent category of the template in the *Move to…* dialog’s category list.
+
+=== Closing a dialog would scroll down the document in Safari on macOS. 
+//#TINY-9148
+
+In Safari running on macOS, when a dialog was closed by clicking outside the dialog, a bug caused the browser to select the active element and scroll down.
+
+This caused the browser to scroll the viewport to the bottom of the dialog after the dialog closed.
+
+This scrolling did not occur if the dialog was closed by pressing the dialog close control or by typing the *Esc* key.
+
+To fix this issue, {productname} now forces the active element to blur when Safari is the host browser. By doing so, no element is selected after closing the dialog, preventing the unintended scrolling behavior.
+
+=== Text within anchor tags, <a>, presented with the Times New Roman font-family, ignoring the font family used in the original document.
+//#TINY-9812
+
+In previous versions of {productname}, an issue related to the `a:link` selector in the CSS received from Microsoft Word was identified.
+
+When content containing links was pasted from a Microsoft Word file into a {productname} instance running the xref:introduction-to-powerpaste.adoc[PowerPaste] plugin, the pasted-in link text rendered using the Times New Roman font family. And it presented thus no matter the typeface set for this text in the original Microsoft Word document.
+
+To work around this, {productname} 6.5 removes the default CSS styling applied by Microsoft Word during the paste operation.
+
+With this change, link text copied from Microsoft Word using the PowerPaste plugin now uses the font-family matching that used in the source document.
+
+=== Invalid markup in Notification and Dialog close buttons.
+//#TINY-9849
+
+In previous versions of {productname}, an issue was identified in the close buttons: invalid markup was present. Specifically, a div element was being used within the buttons. This violates HTML standards and caused problems when running {productname} HTML through markup checkers: the checker, correctly, threw errors.
+
+In {productname} 6.5, the markup was fixed by replacing the div element with a `<span>` element, aligning it with HTML guidelines. As a result, the updated close buttons now pass HTML markup checkers without throwing errors.
+
+=== In dialogs, the `aria-describedby` element would be the body of the dialog.
+//#TINY-9816
+
+When using voice assistance software in previous versions of TinyMCE, whenever an interactive dialog was opened, the voice assistant would announce each label consecutively in the dialog.
+
+In TinyMCE 6.5, voice assistant software no longer announces the entire content of the dialog body, meaning only the focused interactive element will be announced when first opened.
+
+=== Fixed the constrained bounds calculation for toolbar dismissal when using `toolbar_location: 'bottom'`.
+//#TINY-9718
+
+In previous versions of {productname}, a bug was identified that affected the constrained bound calculations for toolbar dismissals, when the `toolbar_location: 'bottom'` option was set.
+
+As a consequence, when this configuration was used within a scrollable container, scrolling downwards would result in the premature dismissal of the toolbar, before reaching the bottom of the editor.
+
+In {productname} 6.5, updates were made to the bounds calculation so the dismissal of the toolbar only occurs after the user scrolls past the bottom of the editor.
+
+=== Saving the Table Properties dialog after changing properties unrelated to cells would overwrite cell properties set by the Cell Properties dialog.
+//#TINY-9837
+
+Previously, when the user modified a field within the *Table Properties* dialog, upon saving, the modified change set in the *Cell Properties* dialog would be replaced by the corresponding properties from the *Table Properties* dialog, even if the latter properties were not actually changed.
+
+For example, if the user
+
+* adjusted the border width and border color of a cell using the *Cell Properties* dialog; then
+
+* made a modification in the *Table Properties* dialog unrelated to those properties, such as changing a row alignment;
+
+the modified border width and color of the cell reverted to the corresponding values from the *Table Properties* dialog upon saving.
+
+This undid the initial modifications in the *Cell Properties* dialog.
+
+In {productname} 6.5, the Table Properties dialog will continue to be the *source of truth* and have the ability to overwrite cell and row properties like border width and color. However, the *Table Properties* dialog will only overwrite those properties if they were modified in the *Table Properties* dialog.
+=== Applying lists did not work if the selection included a block element with a `contenteditable="false"` attribute set.
+//#TINY-9823
+
+Previously, if there was a non-editable element in the text-selection, inserting or applying a bullet or numbered list to the selection failed. As a consequence, when the user pressed the insert list button while a non-editable element was included in the selection, nothing happened.
+
+For {productname} 6.5 the logic for inserting lists was updated. With this update everything within the selection — except for the block element with a `contenteditable="false"` attribute set — is turned into a list.
+
+=== Pasting content into the editor did not fire `beforeinput` and `input` events.
+//#TINY-9829
+
+In previous versions of {productname}, pasting content into the editor would not fire an `input` event.
+
+This is contrary to https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/input_event[web standards], which states that an `input` event should be fired when the value of a `<textarea>` element is changed.
+
+In {productname} 6.5, a `beforeinput` event and an `input` event, both with an _insertFromPaste_ `inputType` property, are now fired in order when content is pasted into {productname}.
+
+In addition, the `beforeinput` event will also hold a `DataTransfer` object which contains the `text/html` data being pasted.
+
+=== Context menus and menu items were not constrained within the scrollable container if the parent node was a Shadow root
+//#TINY-9743
+
+In previous versions of {productname}, context menus and menu items could overflow beyond the editor’s bounds when the parent node was a Shadow root.
+
+Prior to this update, {productname} only supported the Shadow DOM API if its container node was a child of the Shadow root. 
+
+To address this overflowing menu issue, {productname} 6.5 added support for the Shadow Dom API when the editor’s container node is a parent of the Shadow host node.
+
+Context menus and menu items are now constrained within the scrollable container if the editor’s root node is a parent of the Shadow host node.
 
 
 === Case Change 2.0.2
@@ -99,3 +982,9 @@ For information on the **Case Change** plugin, see: xref:casechange.adoc[Case Ch
 This section describes issues that users of {productname} 6.5 may encounter and possible workarounds for these issues.
 
 There are several known issues in {productname} 6.5.
+
+=== Untranslated instructions for editor resize handle when using screen readers
+
+In {productname} 6.5, instructions for using the editor resize handle were introduced, however these instructions are only provided in English.
+
+Translations for these instructions will be added in a future enterprise release.

@@ -71,12 +71,24 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
-=== Direction was not visually changing when using the Directionality plugin on an element which has the `direction` CSS property set.
+=== Direction did not visually change when Directionality was applied to an element which had the CSS property, `direction`, set.
 //#TINY-9314
 
-The `direction` style takes precendence over than the `dir` attribute in many cases when determining an element's direction. However, in previous versions of {productname}, the Directionality plugin only affected the `dir` attribute and did not consider any `direction` style, whether inline or from a stylesheet. Consequently, the Directionality plugin did not visually affect elements with a `direction` style.
+When determining an element’s directionality, the `direction` style takes precendence over the `dir` attribute in many cases.
 
-In the latest version, {productname} 6.5, the Directionality plugin has been improved. It now takes into account the `direction` style while still giving priority to the `dir` attribute. First, any inline `direction` style is removed if present. Then, the standard `dir` attribute logic is applied. Finally, it determines if an inline `direction` style is needed for the desired visual change in `direction`. The final addition of an inline `direction` style would often occur if the element derives a different `direction` style from a stylesheet. As a result, the Directionality plugin now functions as expected for elements with a `direction` style applied.
+However, in previous versions of {productname}, the Directionality plugin only affected the `dir` attribute and did not consider any `direction` style, whether inline or from a stylesheet. Consequently, the Directionality plugin did not visually affect elements with a CSS `direction` style applied.
+
+As of {productname} 6.5, the Directionality plugin takes into account the `direction` CSS style while still giving priority to the `dir` attribute.
+
+In {productname} 6.5, when Directionality is applied to an element:
+
+. any inline `direction` style is removed if present; then
+. the standard `dir` attribute logic is applied; and, finally;
+. the plugin determines if an inline `direction` CSS style is necessary for the desired visual change in direction.
+
+The final step above — the addition of an inline `direction` CSS style —  most often occurs if the element derives a different `direction` style from a stylesheet.
+
+As a consequence of these improvements, the Directionality plugin now functions as expected for elements with a `direction` CSS style applied.
 
 [[security-fixes]]
 == Security fixes

@@ -14,11 +14,11 @@
 tinymce.activeEditor.execCommand('InsertAccordion');
 
 // sets the accordion at the current position to open
-tinymce.activeEditor.execCommand(ToggleAccordion('true'));
+tinymce.activeEditor.execCommand('ToggleAccordion', false, true);
 
 // sets all accordions in the current document to closed
-tinymce.activeEditor.execCommand(ToggleAllAccordions('false'));
+tinymce.activeEditor.execCommand('ToggleAllAccordions', false, false);
 
 // removes the accordion at the current position
-tinymce.activeEditor.execCommand(RemoveAccordion());
+tinymce.activeEditor.execCommand('RemoveAccordion');
 ----

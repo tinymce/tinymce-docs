@@ -2,8 +2,8 @@
 |===
 |Name |Arguments |Description
 |InsertAccordion |none | Inserts an accordion element at the current position.
-|ToggleAccordion |`+true+` `+false+` optional `+state+` |Toggles an accordion’s state. Uses the optional `+state+` variable to determine the current state.
-|ToggleAllAccordions |`+true+` `+false+` optional `+state+` |Toggles the state of all accordions in the current document. Uses the optional `+state+` variable to determine the current state.
+|ToggleAccordion |`+true+` `+false+` optional `+state+` |Toggles an accordion’s state. Uses the optional `+value+` argument to set the desired state. Will set the accordion to an open state if `true` is specified and to a closed state of 'false' is specified.
+|ToggleAllAccordions |`+true+` `+false+` optional `+state+` |Toggles the state of all accordions in the current document. Uses the optional `+value+` argument to set the desired state. Will set the accordions to an open state if `true` is specified and to a closed state of 'false' is specified.
 |RemoveAccordion |none |Removes an accordion at the current position.
 |===
 

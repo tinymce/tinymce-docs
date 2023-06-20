@@ -402,6 +402,15 @@ This presentation makes it clearer that any Quickbar buttons will be applied to 
 == Additions
 {productname} 6.5 also includes the following additions:
 
+=== New `table_merge_content_on_paste` option which can disable the merging behaviour when pasting a table inside an existing table.
+//#TINY-9808
+
+In previous versions of {productname}, when a table was copied and pasted inside an existing table, the content of the copied table would fill the existing table instead of being pasted as a whole inside the table cell where the paste was performed.
+
+{productname} 6.5 includes the new option, `table_merge_content_on_paste`, that allows for this behavior to be turned off.
+
+When this option is set to `false` table merging is disabled and the pasted-in table is inserted into the desired table cell during the paste operation instead.
+
 === Exposed `dataTransfer` property of drag and drop events for elements with a `contenteditable="false"` attribute.
 //#TINY-9601
 

@@ -492,6 +492,15 @@ In {productname} 6.5, the editor’s *HTML 4* schema has been corrected. Block e
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== The insertion point moved in the wrong direction when traversing an inline element with a `contenteditable="false"` attribute set within a block element with a right-to-left text direction set
+//#TINY-9565
+
+Previously, when a {productname} document had an inline element with a `contenteditable="false"` attribute set inside a block element that had a text direction of right-to-left, the insertion point would move in the wrong direction when traversing the inline element using arrow keys.
+
+As of this release, when such an inline element, inside a block element with a right-to-left text direction, is traversed, {productname} moves the insertion point in reverse logical order.
+
+This ensures the insertion point traverses the inline element as expected, moving over the element in the direction expected by the arrow-key being pressed.
+
 === Quickbar toolbars was shown for elements with a `contenteditable="false"` attribute set which were, in turn, in a root with a `contenteditable="false"` attribute set.
 //#TINY-9460
 

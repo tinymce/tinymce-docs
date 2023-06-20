@@ -43,7 +43,7 @@ In previous versions of {productname}, the default behavior of `editor.execComma
 
 As a consequence, when pressing the fullscreen button the editor used `editor.execCommand('mceFullScreen')`, which caused the insertion point to be positioned incorrectly on iOS.
 
-To resolve this issue, {productname} 6.5, included `skip_focus: true` as a parameter for the `mceFullScreen` command. As a result, the fullscreen button no longer attempts to focus back on the editor.
+To resolve this issue, {productname} 6.5, includes `skip_focus: true` as a parameter for the `mceFullScreen` command. Consequently, the Full Screen button no longer attempts to focus back on the editor.
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium Plugin end-of-life announcement

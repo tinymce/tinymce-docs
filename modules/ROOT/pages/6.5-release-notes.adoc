@@ -437,6 +437,15 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following improvements:
 
+=== `DialogFooterToggleButton` icon prop is now optional
+//#TINY-9757
+
+Previously it was mandatory for the `DialogFooterToggleButton` to have an icon prop.
+
+Toggle buttons in dialog footers did not function without a displayed icon.
+
+As of {productname} 6.5 the icon prop is now optional and toggle buttons in dialog footers work with and without a displayed icon.
+
 === Translations added for Help text displayed at **Help > Help > Keyboard Navigation**.
 //#TINY-9633
 

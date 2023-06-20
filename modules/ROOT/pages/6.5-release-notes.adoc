@@ -76,7 +76,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 Previously, in Safari running on iOS, when a newline was inserted (by pressing the Enter key) and the user continued typing without moving the insertion point, the characters typed on the newline merged onto the previous line and the newline was removed.
 
-This occurred because Safari on iOS composes Hangul syllabic blocks by deleting the individual jaso glyphs and inserting the expected block glyph, continuing until a native Enter `keypress` event is fired.
+This occurred because Safari on iOS composes Hangul syllabic blocks by deleting the individual jaso glyphs and inserting the expected block glyph, continuing until a browser-native Enter `keypress` event is fired.
 
 However, {productname} has its own Enter key handler on `keydown`. In this circumstance, therefore, the native `keypress` event is suppressed. This causes Safari on iOS to continue composing the syllabic block across the newline by firing a `deleteContentBackward` input event to delete the newline and then inserting the block on the previous line.
 

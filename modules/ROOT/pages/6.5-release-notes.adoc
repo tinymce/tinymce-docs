@@ -39,7 +39,7 @@ The {productname} 6.5 release includes an accompanying release of the **Advanced
 === When switching to full-screen mode when the editor was set to inline view, focus was not returned to the code editor on iOS devices.
 //#TINY-9735
 
-In previous versions of {productname}, the default behavior of `editor.execCommand` in inline mode on iOS was to hide the editor when the view is open. Although it shouldn't be possible to focus on it, iOS allowed it.
+In previous versions of {productname}, the default behavior of `editor.execCommand` in inline mode on iOS was to hide the editor when the view is open. Although it should not be possible to focus on it, iOS allowed it.
 
 As a consequence, when pressing the fullscreen button the editor used `editor.execCommand('mceFullScreen')`, which caused the cursor to be positioned incorrectly on iOS.
 

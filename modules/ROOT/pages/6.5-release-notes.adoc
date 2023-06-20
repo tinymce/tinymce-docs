@@ -955,6 +955,21 @@ To address this overflowing menu issue, {productname} 6.5 added support for the 
 Context menus and menu items are now constrained within the scrollable container if the editor’s root node is a parent of the Shadow host node.
 
 
+=== Case Change 2.0.2
+
+The {productname} 6.5 release includes an accompanying release of the **Case Change** premium plugin.
+
+**Case Change** 2.0.2 includes the following change.
+
+=== It was possible to apply case change to elements with a `contenteditable="false"` attribute set.
+//#TINY-9466
+
+Previously, the **Case Change** plugin could change the case of a selection inside an element with a `contenteditable="false"` attribute set.
+
+In **Case Change** 2.0.2, the Case Change toolbar button and menu items are disabled when the selection is in an element with a `contenteditable="false"` attribute set.
+
+For information on the **Case Change** plugin, see: xref:casechange.adoc[Case Change].
+
 [[security-fixes]]
 == Security fixes
 

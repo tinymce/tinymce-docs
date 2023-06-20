@@ -71,12 +71,21 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
-=== It was possible to apply case change to `contenteditable="false"` elements.
+
+=== Case Change 2.0.2
+
+The {productname} 6.5 release includes an accompanying release of the **Case Change** premium plugin.
+
+**Case Change** 2.0.2 includes the following change.
+
+=== It was possible to apply case change to elements with a `contenteditable="false"` attribute set.
 //#TINY-9466
 
-In previous versions of {productname}, selecting content inside a `contenteditable="false"` section while having the casechange plugin active made it possible to apply the casechange features via the toolbar buttons and menu items.
+Previously, the **Case Change** plugin could change the case of a selection inside an element with a `contenteditable="false"` attribute set.
 
-As a result in {productname} 6.5, the casechange toolbar button and menu items will now be disabled when the selection is in `contenteditable="false"` section.
+In **Case Change** 2.0.2, the Case Change toolbar button and menu items are disabled when the selection is in an element with a `contenteditable="false"` attribute set.
+
+For information on the **Case Change** plugin, see: xref:casechange.adoc[Case Change].
 
 [[security-fixes]]
 == Security fixes

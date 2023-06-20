@@ -492,6 +492,13 @@ In {productname} 6.5, the editor’s *HTML 4* schema has been corrected. Block e
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== The Table toolbar was visible even if the table was within an element with a `contenteditable="false"` attribute.
+//#TINY-9664
+
+In previous versions of {productname}, the table toolbar remained visible even if the table was within a host element that had the `contenteditable="false"` attribute set, making the Table read-only, and making the visible Table toolbar unhelpful, at best.
+
+In {productname} 6.5, this issue has been resolved. The editor no longer shows the Table toolbar when the selection is within a host element that has the `contenteditable="false"` attribute set.
+
 === The content of {productname} dialogs could not be scrolled in some circumstances.
 //#TINY-9668
 

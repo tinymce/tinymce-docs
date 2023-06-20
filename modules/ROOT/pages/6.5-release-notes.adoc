@@ -531,6 +531,13 @@ In {productname} 6.5, the editor’s *HTML 4* schema has been corrected. Block e
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== It was possible to remove links in elements with a `contenteditable="false"` attribute set with the `unlink` editor command
+//#TINY-9739
+
+Prevously, if the {productname} root element had a `contenteditable="false"` attribute set and the `unlink` editor command was used while a link was selected, the link was, incorrectly, removed.
+
+For this upate, the `unlink` command was updated. If the current selection is within an element with a `contenteditable="false"` attribute set, issuing an `unlink` command has no effect: the link remains in place as expected.
+
 === Some toolbar items did not render the ‘unavailable’ mouse pointer when the toolbar item was unavailable.
 //#TINY-9758
 

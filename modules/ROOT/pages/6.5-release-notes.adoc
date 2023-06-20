@@ -520,6 +520,15 @@ In {productname} 6.5, the editor’s *HTML 4* schema has been corrected. Block e
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== Some toolbar items did not render the ‘unavailable’ mouse pointer when the toolbar item was unavailable.
+//#TINY-9758
+
+In previous versions of {productname}, certain toolbar items did not render the ‘unavailable’ mouse pointer when the toolbar item was unavailable. This occurred when the text color and `fontsizeinput` controls were rendered in a disabled toolbar.
+
+As a result, the disabled state of these toolbar items was not correctly shown.
+
+In {productname} 6.5, the CSS was modified to provide clearer visual indications for disabled toolbar items. As a result, the toolbar items are now properly disabled, appearing greyed out and displaying an unavailable mouse pointer.
+
 === Formatting issues with elements with a `contenteditable="false"` attribute set and the formatter API resolved
 //#TINY-9678
 

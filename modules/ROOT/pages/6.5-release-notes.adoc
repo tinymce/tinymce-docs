@@ -71,12 +71,12 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.5 also includes the following bug fixes:
 
-=== It was possible to remove links in `contenteditable= "false"` contents with the 'unlink' editor command
+=== It was possible to remove links in elements with a `contenteditable="false"` attribute set with the `unlink` editor command
 //#TINY-9739
 
-In previous versions of {productname}, when the `contenteditable` property was disabled on the editor's body element and the 'unlink' command was used while a link was selected, it made it possible to remove links within `contenteditable= "false"` elements.
+Prevously, if the {productname} root element had a `contenteditable="false"` attribute set and the `unlink` editor command was used while a link was selected, the link was, incorrectly, removed.
 
-To fix this issue, the 'unlink' command was updated in {productname} 6.5, which ensures that no action is preformed when the current selection is in a `contenteditable= "false"` context.
+For this upate, the `unlink` command was updated. If the current selection is within an element with a `contenteditable="false"` attribute set, issuing an `unlink` command has no effect: the link remains in place as expected.
 
 [[security-fixes]]
 == Security fixes

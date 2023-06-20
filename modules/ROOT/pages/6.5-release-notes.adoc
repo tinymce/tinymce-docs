@@ -492,6 +492,13 @@ In {productname} 6.5, the editor’s *HTML 4* schema has been corrected. Block e
 
 {productname} 6.5 also includes the following bug fixes:
 
+=== Text directionality could be set on elements with a `contenteditable="false"` attribute set when within a root with a `contenteditable="false"` attribute set
+//#TINY-9662
+
+Previously, text directionality commands, which set the `dir` attribute, could be applied to elements with a `contenteditable="false"` attribute set when those elements were within a root with a `contenteditable="false"` attribute set.
+
+As of this release, {productname} now checks if a selected element has a `contenteditable="false"` attribute set. And, on elements with this attribute set, text directionality commands are not applied to the selection, as expected.
+
 === The insertion point moved in the wrong direction when traversing an inline element with a `contenteditable="false"` attribute set within a block element with a right-to-left text direction set
 //#TINY-9565
 

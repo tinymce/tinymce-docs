@@ -41,7 +41,7 @@ The {productname} 6.5 release includes an accompanying release of the **Advanced
 
 In previous versions of {productname}, the default behavior of `editor.execCommand` in inline mode on iOS was to hide the editor when the view is open. Although it should not be possible to focus on it, iOS allowed it.
 
-As a consequence, when pressing the fullscreen button the editor used `editor.execCommand('mceFullScreen')`, which caused the cursor to be positioned incorrectly on iOS.
+As a consequence, when pressing the fullscreen button the editor used `editor.execCommand('mceFullScreen')`, which caused the insertion point to be positioned incorrectly on iOS.
 
 To resolve this issue, {productname} 6.5, included `skip_focus: true` as a parameter for the `mceFullScreen` command. As a result, the fullscreen button no longer attempts to focus back on the editor.
 

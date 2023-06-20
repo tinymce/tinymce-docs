@@ -383,6 +383,21 @@ This presentation makes it clearer that any Quickbar buttons will be applied to 
 == Additions
 {productname} 6.5 also includes the following additions:
 
+=== Exposed `dataTransfer` property of drag and drop events for elements with a `contenteditable="false"` attribute.
+//#TINY-9601
+
+Dragging and dropping elements with a `contenteditable="false"` attribute within {productname} emits `dragstart`, `drop`, and `dragend` events as expected.
+
+However, in previous versions of {productname}, these drag events had their `dataTransfer` property set to null. According to https://developer.mozilla.org/en-US/docs/Web/API/DragEvent/dataTransfer[web standards] it should be set to a `DataTransfer` object holding the drag operation’s data.
+
+As a consequence, integrators were unable to view and manipulate the HTML drag data in these drag events.
+
+In {productname} 6.5, dragstart, drop, and dragend events now have their `dataTransfer` property populated with a `DataTransfer` object whose `text/html` data holds the outerHTML of the `contenteditable="false"` element being dragged.
+
+Additionally, a custom mode module has been implemented to ensure that the `DataTransfer` object is in read-write mode in `dragstart` events, read-only mode in `drop` events, and protected mode in `dragend` events, as per https://html.spec.whatwg.org/dev/dnd.html#concept-dnd-rw[standard].
+
+NOTE: Integrators who wish to manipulate the HTML drag data should do so in the dragstart event using the `DataTransfer.setData` method.
+
 === Toolbar and menu items were not disabled correctly when selecting elements with a `contenteditable="false"` attribute inside an editor root with a `contenteditable="false"` attribute set.
 //#TINY-9669
 

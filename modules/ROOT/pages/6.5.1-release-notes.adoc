@@ -850,7 +850,7 @@ As of this release, {productname} now recognizes this position as valid, and the
 === In some cases, exiting a `blockquote` element could fail when the insertion point was positioned at the end of the `blockquote` element.
 //#TINY-9794
 
-There was an issue with exiting a blockquote element when the insertion point was positioned at the end of the element. this issue arose because, when inserting a new block, the check to determine if the block is empty treated nodes containing a zero-width space (ZWSP) as non-empty.
+There was an issue with exiting a blockquote element when the insertion point was positioned at the end of the element. This issue arose because, when inserting a new block, the check to determine if the block is empty treated nodes containing a zero-width space (ZWSP) as non-empty.
 
 As part of this update, {productname} 6.5.1 now correctly recognizes elements containing a ZWSP as empty blocks.
 

@@ -7,6 +7,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### Unreleased
 
 - DOC-1781: add List Properties menu item & two commands (mceListUpdate & mceListProps) to Lists Plugin documentation.
+- DOC-2072: Corrections and updates for 6.5.1 `staging`
 - DOC-2024: Added Accordion documentation. Accordion is an open source plugin.
 - DOC-2025: Added new partial`table_merge_content_on_paste.adoc`; documented new option — `table_merge_content_on_paste` — in this new file; added include statement pointing to this file to `table.adoc`.
 - DOC-2015: Added TINY-9735 to `staging`.

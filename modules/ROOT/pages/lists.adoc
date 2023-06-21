@@ -32,7 +32,7 @@ tinymce.init({
   selector: "textarea",  // change this value according to your HTML
   plugins: "lists",
   toolbar: "bullist numlist",
-  menu: {tools: { title: 'Tools', items: 'listprops' }},
+  menu: { tools: { title: 'Tools', items: 'listprops' }},
 });
 ----
 

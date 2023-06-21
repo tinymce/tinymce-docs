@@ -6,12 +6,13 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2025: Added new partial`table_merge_content_on_paste.adoc`; documented new option — `table_merge_content_on_paste` — in this new file; added include statement pointing to this file to `table.adoc`.
 - DOC-2015: Added TINY-9735 to `staging`.
 - DOC-2017: Added TINY-9757 to `staging`.
 - DOC-2023: Added TINY-9466 to `staging`.
 - DOC-2016: Added TINY-9749 to `staging`.
 - DOC-1975: Added TINY-8714 to `staging`.
-- DOC-2022: Add TINY-9464 to `staging`.
+- DOC-2022: Added TINY-9464 to `staging`.
 - DOC-2067: Added TINY-9730 to `staging`.
 - DOC-1989: Added TINY-9761 to `staging`.
 - DOC-1991: Added TINY-9739 to `staging`.
@@ -20,11 +21,11 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 - DOC-2034: Added TINY-9808 to `staging`.
 - DOC-1998: Added TINY-9469 to `staging`.
 - DOC-1992: Added TINY-9678 to `staging`.
-- DOC-1995: Add TINY-9662 to `staging`.
+- DOC-1995: Added TINY-9662 to `staging`.
 - DOC-2003: Added TINY-9565 to `staging`.
 - DOC-2021: Added TINY-9460 to `staging`.
 - DOC-1994: Added TINY-9664 to `staging`.
-- DOC-2038: Added TINY-9668 pto `staging`.
+- DOC-2038: Added TINY-9668 to `staging`.
 - DOC-2050: Added TINY-9816 to `staging`.
 - DOC-2039: Added TINY-9601 to `staging`.
 - DOC-1982: Added TINY-9314 to `staging`.

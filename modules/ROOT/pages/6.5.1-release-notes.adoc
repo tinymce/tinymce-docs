@@ -395,7 +395,7 @@ The {productname} 6.5.1 release includes an accompanying release of the **Power 
 ==== Existing tables were not filled out when pasting tables from Microsoft Word or Microsoft Excel.
 //#TINY-9500
 
-Previously, when the PowerPaste plugin was active and a table was copied from Microsoft Word or Micrsoft Excel into a {productname} editor, the copied table pasted as a whole table into a single cell, rather than merging the content of the copied table into the cells of the existing table.
+Previously, when the PowerPaste plugin was active and a table was copied from Microsoft Word or Microsoft Excel into a {productname} editor, the copied table pasted as a whole table into a single cell, rather than merging the content of the copied table into the cells of the existing table.
 
 PowerPaste 6.2.0 addresses this.
 

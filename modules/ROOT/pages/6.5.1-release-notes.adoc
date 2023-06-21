@@ -573,7 +573,7 @@ During the {productname} 5.x lifetime, browser-native select form elements were 
 
 This caused inconsistent user interface as certain parts of the application continued to use the browser-native `selectbox`. Affected components include the Advanced Code, Template, Accessibility Checker, Page embed, Permanent Pen, and Advanced Table plugins.
 
-WIth the release of {productname} 6.5.1, all form select elements now use the {productname} native select component, `listbox`, instead of the browser-native `selectbox`. This change ensures a consistent user interface throughout {productname}.
+With the release of {productname} 6.5.1, all form select elements now use the {productname} native select component, `listbox`, instead of the browser-native `selectbox`. This change ensures a consistent user interface throughout {productname}.
 
 === The {productname} *Help* dialog was restored to medium width for better readability.
 //#TINY-9947

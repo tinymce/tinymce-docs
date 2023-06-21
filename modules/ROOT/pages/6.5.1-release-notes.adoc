@@ -63,7 +63,7 @@ Previously, the Enhanced Media Embed plugin and the Media plugin encountered iss
 
 The Enhanced Media Embed plugin wraps `iframe` in a responsive wrapper that relies on large padding for the height.
 
-The Media plugin dialog, however, targets the `"ephox-embed-iri"` div, and the width and height are mapped to the wrapper’s `max-width` and `max-height` properties.
+The Media plugin dialog, however, targets the `"ephox-embed-iri"` div, and the width and height are mapped to the wrapper's `max-width` and `max-height` properties.
 
 When content created with the Enhanced Media Embed plugin is inserted using the Media plugin dialog, the height is primarily determined by padding, rendering the `max-height` property ineffective.
 
@@ -71,7 +71,7 @@ When content created with the Enhanced Media Embed plugin is inserted using the 
 
 As well, when inserting embedded content via the Enhanced Media Embed plugin, the element may be dis-proportionally sized. This occurred because height was not explicitly set, leaving it to be determined by the content within the `iframe`.
 
-In Enhanced Media Embed 3.1.2 the responsive embedded content is wrapped in a div with the wrapper’s `max-width` set. This ensures that the embedded content maintains proportional sizing when resizing the viewport.
+In Enhanced Media Embed 3.1.2 the responsive embedded content is wrapped in a div with the wrapper's `max-width` set. This ensures that the embedded content maintains proportional sizing when resizing the viewport.
 
 As well, when opening the media plugin dialog for content created using the Enhanced Media Embed plugin and identified with the `"ephox-embed-iri"` attribute, the width and height are now calculated and displayed in the editor. If any changes to the height or width are made within the dialog, the responsive media embed is converted into a standalone `iframe` with a fixed width and height to reflect the modifications.
 
@@ -508,7 +508,7 @@ This option allows the editor iframe to be initialized using `document.write` in
 
 NOTE: This new option only reduces toolbar flicker. Content flicker may still occur.
 
-=== New `table_merge_content_on_paste` option which can disable the merging behaviour when pasting a table inside an existing table.
+=== New `table_merge_content_on_paste` option which can disable the merging behavior when pasting a table inside an existing table.
 //#TINY-9808
 
 In previous versions of {productname}, when a table was copied and pasted inside an existing table, the content of the copied table would fill the existing table instead of being pasted as a whole inside the table cell where the paste was performed.
@@ -679,7 +679,7 @@ This ensures the insertion point traverses the inline element as expected, movin
 === Quickbar toolbars was shown for elements with a `contenteditable="false"` attribute set which were, in turn, in a root with a `contenteditable="false"` attribute set.
 //#TINY-9460
 
-Previously, when the document root had a `contenteditable="false"` attibute set, the Quickbar toolbar appeared when an element with its own `contenteditable="false"` attribute was selected.
+Previously, when the document root had a `contenteditable="false"` attribute set, the Quickbar toolbar appeared when an element with its own `contenteditable="false"` attribute was selected.
 
 A fix was applied to the Quickbar toolbar in {productname} 6.5.1. The toolbar now sets itself to `hidden` if the current selection is within an element with a `contenteditable="false"` attribute set.
 
@@ -704,7 +704,7 @@ In {productname} 6.5.1, the dialog body’s max-height is set to a calculated va
 === Direction did not visually change when Directionality was applied to an element which had the CSS property, `direction`, set.
 //#TINY-9314
 
-When determining an element’s directionality, the `direction` style takes precendence over the `dir` attribute in many cases.
+When determining an element’s directionality, the `direction` style takes precedence over the `dir` attribute in many cases.
 
 However, in previous versions of {productname}, the Directionality plugin only affected the `dir` attribute and did not consider any `direction` style, whether inline or from a stylesheet. Consequently, the Directionality plugin did not visually affect elements with a CSS `direction` style applied.
 
@@ -758,7 +758,7 @@ Previously, xref:wordcount.adoc[Word Count] treated some characters as separate 
 * **$**
 * **`**
 
-This resulted in innaccurate word counts.
+This resulted in inaccurate word counts.
 
 In {productname} 6.5.1, Word Count’s Unicode punctuation string has been updated to include these characters as exceptions. By doing so, the updated function more accurately count words, including the previously mishandled characters, providing a more reliable word count.
 
@@ -803,7 +803,7 @@ In {productname} 6.5.1, these elements will now have a populated value unless th
 === Initializing the editor with a pre-inserted table displayed resize handles even when the editor was not focused
 //#TINY-9748
 
-Previously, resize handles presented on tables in a newly-initialised editor even though the table did not have focus. This happened because the insertion point is automatically placed in the first valid element (in this case, a table cell) during editor initialization.
+Previously, resize handles presented on tables in a newly-initialized editor even though the table did not have focus. This happened because the insertion point is automatically placed in the first valid element (in this case, a table cell) during editor initialization.
 
 In {productname} 6.5.1, the resize handles have been adjusted to prevent their display when the insertion point is inside a table element without the editor being focused.
 
@@ -834,7 +834,7 @@ When the upload failure was noted by a {productname} editor instance, and the pl
 
 The empty paragraph element was, in this circumstance, rendered inaccessible. And it presented to the end-user as the empty paragraph element being removed or improperly formatted.
 
-In {productname} 6.5.1, when the `images_uploade_handler` gets a `remove: true` callback, the parent element is checked and, if required padding is not present, it is added.
+In {productname} 6.5.1, when the `images_upload_handler` gets a `remove: true` callback, the parent element is checked and, if required padding is not present, it is added.
 
 === In some specific circumstances, if Google Chrome was the host browser, when the insertion point was placed after a table, adding a newline did not generate the expected newline.
 //#TINY-9813
@@ -845,7 +845,7 @@ When the insertion point was positioned after a table, it was placed in the `<bo
 
 As a result, when an element with a `contenteditable="false"` attribute came after it, it was deemed invalid to insert a newline at that position. Consequently, no newline was added.
 
-As of this release, {productname} now recognises this position as valid, and the expected root blocks are inserted.
+As of this release, {productname} now recognizes this position as valid, and the expected root blocks are inserted.
 
 === In some cases, exiting a `blockquote` element could fail when the insertion point was positioned at the end of the `blockquote` element.
 //#TINY-9794

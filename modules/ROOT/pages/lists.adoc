@@ -29,9 +29,9 @@ This dialog only works with numbered lists. The menu item is inactive unless the
 [source,js]
 ----
 tinymce.init({
-  selector: "textarea",  // change this value according to your HTML
-  plugins: "lists",
-  toolbar: "bullist numlist",
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'lists',
+  toolbar: 'bullist numlist',
   menu: { tools: { title: 'Tools', items: 'listprops' }},
 });
 ----

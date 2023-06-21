@@ -948,6 +948,7 @@ the modified border width and color of the cell reverted to the corresponding va
 This undid the initial modifications in the *Cell Properties* dialog.
 
 In {productname} 6.5.1, the Table Properties dialog will continue to be the *source of truth* and have the ability to overwrite cell and row properties like border width and color. However, the *Table Properties* dialog will only overwrite those properties if they were modified in the *Table Properties* dialog.
+
 === Applying lists did not work if the selection included a block element with a `contenteditable="false"` attribute set.
 //#TINY-9823
 

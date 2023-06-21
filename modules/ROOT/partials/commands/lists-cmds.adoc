@@ -30,7 +30,7 @@ tinymce.activeEditor.execCommand('mceListUpdate', false, {
   styles: { 'background-color': 'powderblue' }
 });
 tinymce.activeEditor.execCommand('mceListUpdate', false, {
-  attrs: {contenteditable: 'false'}
+  attrs: { contenteditable: 'false' }
 });
 tinymce.activeEditor.execCommand('mceListProps');
 tinymce.activeEditor.execCommand('RemoveList');

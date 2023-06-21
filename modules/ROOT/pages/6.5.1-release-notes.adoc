@@ -380,7 +380,7 @@ For information on the **Advanced Typography** plugin, see: xref:advanced-typogr
 ==== Fixed adding unnecessary space after a comma and before a quote in several scenarios.
 //#TINY-9510
 
-In previous versions of {productname}, the issue of adding an unnecessary space after a comma and before a quote in several scenarios was caused by an incorrectly written Regular Expression rule in the https://github.com/typograf[Typograf] library used by the Advanced Typography plugin. This led to the appearance of spaces between commas and quotes.
+In previous versions of {productname}, the issue of adding an unnecessary space after a comma and before a quote in several scenarios was caused by an incorrectly written Regular Expression rule in the https://github.com/typograf/typograf[Typograf] library used by the Advanced Typography plugin. This led to the appearance of spaces between commas and quotes.
 
 To fix this, {productname} updated the Regular Expression rule in the Typograf library. As a result, spaces between commas and quotes no longer appear.
 

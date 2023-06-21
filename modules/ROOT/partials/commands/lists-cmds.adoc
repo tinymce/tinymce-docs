@@ -27,7 +27,7 @@ tinymce.activeEditor.execCommand('InsertUnorderedList', false, {
   'list-attributes': {id: 'mylist'}
 });
 tinymce.activeEditor.execCommand('mceListUpdate', false, { 
-  styles: {'background-color': 'powderblue'}
+  styles: { 'background-color': 'powderblue' }
 });
 tinymce.activeEditor.execCommand('mceListUpdate', false, {
   attrs: {contenteditable: 'false'}

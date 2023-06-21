@@ -20,6 +20,22 @@ tinymce.init({
 });
 ----
 
+== Example adding the `listprops` menu item to the Tools menu
+
+The `listprops` xref:#menu-items[menu item] opens the List Properties dialog.
+
+This dialog only works with numbered lists. The menu item is inactive unless the selection or insertion point is within a numbered list.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'lists',
+  toolbar: 'bullist numlist',
+  menu: { tools: { title: 'Tools', items: 'listprops' }},
+});
+----
+
 == Options
 
 These settings affect the execution of the `+lists+` plugin.
@@ -27,6 +43,8 @@ These settings affect the execution of the `+lists+` plugin.
 include::partial$configuration/lists_indent_on_tab.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 

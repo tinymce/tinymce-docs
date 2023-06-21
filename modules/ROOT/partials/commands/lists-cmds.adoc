@@ -4,6 +4,8 @@
 |InsertDefinitionList |Inserts a definition list into the editor.
 |InsertOrderedList |Inserts an ordered list into the editor.
 |InsertUnorderedList |Inserts an unordered list into the editor.
+|mceListUpdate |Updates list attributes or styles.
+|mceListProps |Opens the list properties dialog.
 |RemoveList |Removes the list elements from the selection.
 |===
 
@@ -24,5 +26,12 @@ tinymce.activeEditor.execCommand('InsertUnorderedList', false, {
   'list-item-attributes': {class: 'mylistitemclass'},
   'list-attributes': {id: 'mylist'}
 });
+tinymce.activeEditor.execCommand('mceListUpdate', false, { 
+  styles: { 'background-color': 'powderblue' }
+});
+tinymce.activeEditor.execCommand('mceListUpdate', false, {
+  attrs: { contenteditable: 'false' }
+});
+tinymce.activeEditor.execCommand('mceListProps');
 tinymce.activeEditor.execCommand('RemoveList');
 ----

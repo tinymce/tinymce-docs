@@ -285,7 +285,7 @@ With this update, after a template or category is re-named, the template list is
 
 In previous versions of {productname}, a selected tree component template item would lose its highlight when the Advanced Template dialog was re-rendered after the template list updated.
 
-This occured when a user renamed a selected template item in the tree component. As a consequence, the user could not identify the currently selected item in the tree.
+This occurred when a user renamed a selected template item in the tree component. As a consequence, the user could not identify the currently selected item in the tree.
 
 In {productname} 6.5.1, the problem was addressed by utilizing the new `defaultSelectedId` configuration property from the xref:dialog-components.adoc#tree[tree component] API.
 

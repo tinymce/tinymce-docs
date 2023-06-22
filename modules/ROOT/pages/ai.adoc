@@ -1,0 +1,71 @@
+= AI plugin
+:navtitle: AI
+:description: Sends queries to registered AI APIs and sets the results in the document or temporarily stores the results for later use.
+:description_short: Query AI APIs and accept results.
+:keywords: plugin, ai, artificial intelligence, query, search.
+:pluginname: AI
+:plugincode: ai
+:plugincategory: premium
+
+include::partial$misc/admon-premium-plugin.adoc[]
+
+include::partial$misc/admon-requires-6.6v.adoc[]
+
+// What does the plugin do?
+// Why use the plugin?
+
+== Interactive example
+
+liveDemo::{plugincode}[]
+
+== Basic setup
+
+To add the {pluginname} plugin to the editor, add `{plugincode}` to the `plugins` option in the editor configuration.
+
+For example:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: '{plugincode}',
+  toolbar: 'ai',
+  an_essential_option: false
+});
+----
+
+// Delete anything not required below.
+
+== Options
+
+The following configuration options affect the behavior of the {pluginname} plugin.
+
+include::partial$configuration/ai_config_1.adoc[][leveloffset=+1]
+
+include::partial$configuration/ai_config_2.adoc[][leveloffset=+1]
+
+include::partial$configuration/ai_config_3.adoc[][leveloffset=+1]
+
+include::partial$configuration/ai_config_4.adoc[][leveloffset=+1]
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+
+== Commands
+
+The {pluginname} plugin provides the following {productname} commands.
+
+include::partial$commands/{plugincode}-cmds.adoc[]
+
+== Events
+
+The {{pluginname}} plugin provides the following events.
+
+include::partial$events/{plugincode}-events.adoc[]
+
+== APIs
+
+The {{pluginname}} plugin provides the following APIs.
+
+include::partial$plugin-apis/{plugincode}-apis.adoc[]

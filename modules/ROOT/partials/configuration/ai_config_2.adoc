@@ -1,0 +1,69 @@
+[[ai_config_2]]
+== `ai_config_2`
+
+// Replace all instances of ai_config_2 with the
+// configuration option name then remove this comment.
+
+// Add explanatory material as per the comment block below then remove
+// the block and this comment.
+
+////
+What does the option do?
+Why use it?
+When use it?
+What values can it use?
+What do these values do?
+Are there risks?
+  - Explain without using ‘risk’ or similar words.
+  - Use NOTE or IMPORTANT admonitions if helpful.
+  - For longer or more complicated scenarios, use the limitations section below.
+////
+
+*Type:* `+String+`, `+Boolean+`, `+Number+`, `+Function+`, `+Object+`, `+Array+`, or `+Regexp+`
+
+// Remove "Possible values" if there is no discrete set of possible values 
+*Possible values:* `'string1'`, `'string2'`, `false`
+
+*Default value:* `false`, `1`, `'string1'`
+
+// Add a working and tested configuration.
+=== Example: using `ai_config_2`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  ai_config_2: '<value>'
+});
+----
+
+// Add a working and tested configuration (edit as required)
+// or remove if not applicable.
+=== Example: disabling the <feature>
+
+To disable <feature>, set `ai_config_2` to `false`.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  ai_config_2: 'false'
+});
+----
+
+// Remove if not applicable.
+// Edit the sub-head to singular or plural as required.
+=== Limitation(s) of the `ai_config_2` option
+
+The `ai_config_2` option has the following limitations.
+
+// Add explanatory material as per the comment block below then remove
+// the block and this comment.
+
+////
+Known limitations.
+Complicated scenarios.
+Anything that warrants a CAUTION or WARNING admonition.
+///
+
+// Remove all comment lines and comment blocks before publishing.

@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### 2023-06-23
+
+- DOC-2083: Added back standard sentence inadvertently removed from `accordion.adoc`.
+
 ### 2023-06-21
 
 - DOC-2082: Copy edits to TinyMCE 6.5.1 release-notes.

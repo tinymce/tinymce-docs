@@ -1,6 +1,6 @@
 <textarea id="template-creation">
 <div id="template">
-  {{logofordemoshtml}}
+  {*logofordemoshtml*}
   <h2 style="text-align: center;">Multi-root editing and creating document templates</h2>
 <p>&nbsp;</p><p>&nbsp;</p><p>&nbsp;</p>
 
@@ -11,8 +11,8 @@
   <main class="editable">
   <h1>Project proposal template</h1>
 
-  <p>{{client.givenname}} {{client.familyname}}</p>
-  <p>{{client.company}}</p>
+  <p>{*client.givenname*} {*client.familyname*}</p>
+  <p>{*client.company*}</p>
   </main>
 
   <footer>
@@ -24,7 +24,7 @@
 <section>
   <main class="editable">
   <h1>Executive summary</h1>
-    <p>{{client.company}} has requested assistance with asserting, building and implementing X which may include</p>
+    <p>{*client.company*} has requested assistance with asserting, building and implementing X which may include</p>
 
     <ul>
       <li>Deliverable 1</li>
@@ -34,7 +34,7 @@
 
 <p>Our team has significant experience in your industry and has a successful track record with similar clients and projects. We pride ourselves on delivering only the best results for our clients so that they see an increase in productivity that has lasting results for their business.</p>
 
-<p>{{submission.date}}</p>
+<p>{*submission.date*}</p>
   </main>
 </section>
 
@@ -42,9 +42,9 @@
   <main class="editable">
   <h1>Process</h1>
 
-    <p>We work closely with you to build and fulfill the project’s needs by {{completion.date}}.</p>
+    <p>We work closely with you to build and fulfill the project’s needs by {*completion.date*}.</p>
 
-    <p>We do this by establishing clear goals and a comprehensive solution based on {{client.company}}’s needs.</p>
+    <p>We do this by establishing clear goals and a comprehensive solution based on {*client.company*}’s needs.</p>
 
     <p>Our process is as follows.</p>
     
@@ -63,7 +63,7 @@
 
     <p>Working with your team we implement the selected solution.</p>
 
-    <p>This allows us to tailor the solution specifically for {{client.company}}’s needs, ensuring the solution does not include services you do not need and should not pay for.</p>
+    <p>This allows us to tailor the solution specifically for {*client.company*}’s needs, ensuring the solution does not include services you do not need and should not pay for.</p>
 
     <h2>Phase 3: implementation</h2>
 
@@ -107,9 +107,9 @@
 <h2>Got questions or need help?</h2>
 
   <ul>
-    <li>Our <a href="{{site-url}}/tinymce/6/">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
-    <li>Have a specific question? Try the <a href="{{communitysupporturl}}" target="_blank" rel="noopener"><code>{{prodnamecode}}</code> tag at Stack Overflow</a>.</li>
-    <li>We also offer enterprise grade support as part of <a href="{{pricingpage}}">TinyMCE premium plans</a>.</li>
+    <li>Our <a href="{*site-url*}/tinymce/6/">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
+    <li>Have a specific question? Try the <a href="{*communitysupporturl*}" target="_blank" rel="noopener"><code>{*prodnamecode*}</code> tag at Stack Overflow</a>.</li>
+    <li>We also offer enterprise grade support as part of <a href="{*pricingpage*}">TinyMCE premium plans</a>.</li>
   </ul>
 
   <h2>Found a bug?</h2>

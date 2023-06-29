@@ -29,24 +29,21 @@ For example:
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: '{plugincode}',
-  toolbar: 'ai',
-  an_essential_option: false
+  toolbar: 'aidialog aishortcuts',
+  ai_request: (request) => new Promise(),
+  ai_shortcuts: [],
 });
 ----
-
-// Delete anything not required below.
 
 == Options
 
 The following configuration options affect the behavior of the {pluginname} plugin.
 
-include::partial$configuration/ai_config_1.adoc[][leveloffset=+1]
+include::partial$configuration/ai_request.adoc[][leveloffset=+1]
 
-include::partial$configuration/ai_config_2.adoc[][leveloffset=+1]
+include::partial$configuration/ai_shortcuts.adoc[][leveloffset=+1]
 
-include::partial$configuration/ai_config_3.adoc[][leveloffset=+1]
-
-include::partial$configuration/ai_config_4.adoc[][leveloffset=+1]
+include::partial$configuration/ai_threadlog.adoc[][leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

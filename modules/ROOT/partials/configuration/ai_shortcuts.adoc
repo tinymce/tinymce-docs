@@ -1,7 +1,7 @@
-[[ai_config_4]]
-== `ai_config_4`
+[[ai_shortcuts]]
+== `ai_shortcuts`
 
-// Replace all instances of ai_config_4 with the
+// Replace all instances of ai_shortcuts with the
 // configuration option name then remove this comment.
 
 // Add explanatory material as per the comment block below then remove
@@ -19,7 +19,7 @@ Are there risks?
   - For longer or more complicated scenarios, use the limitations section below.
 ////
 
-*Type:* `+String+`, `+Boolean+`, `+Number+`, `+Function+`, `+Object+`, `+Array+`, or `+Regexp+`
+*Type:* `+Array+` of `+Objects+`
 
 // Remove "Possible values" if there is no discrete set of possible values 
 *Possible values:* `'string1'`, `'string2'`, `false`
@@ -27,13 +27,13 @@ Are there risks?
 *Default value:* `false`, `1`, `'string1'`
 
 // Add a working and tested configuration.
-=== Example: using `ai_config_4`
+=== Example: using `ai_shortcuts`
 
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
-  ai_config_4: '<value>'
+  ai_shortcuts: '<value>'
 });
 ----
 
@@ -41,21 +41,21 @@ tinymce.init({
 // or remove if not applicable.
 === Example: disabling the <feature>
 
-To disable <feature>, set `ai_config_4` to `false`.
+To disable <feature>, set `ai_shortcuts` to `false`.
 
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  ai_config_4: 'false'
+  ai_shortcuts: 'false'
 });
 ----
 
 // Remove if not applicable.
 // Edit the sub-head to singular or plural as required.
-=== Limitation(s) of the `ai_config_4` option
+=== Limitation(s) of the `ai_shortcuts` option
 
-The `ai_config_4` option has the following limitations.
+The `ai_shortcuts` option has the following limitations.
 
 // Add explanatory material as per the comment block below then remove
 // the block and this comment.

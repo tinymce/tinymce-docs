@@ -1,0 +1,58 @@
+= Interactive integration example
+:navtitle: Reusable template creation
+:description_short: Using TinyMCE to create reusable templates.
+:description: This example demonstrates TinyMCE being used to create reusable templates.
+:keywords: example, demo, custom, templates, reusable
+
+{logofordemoshtml}
+
+== Multi-root editing and document template creation
+
+This interactive example demonstrates a basic working example of {productname} being used as a reusable template creator and editor.
+
+It includes numerous plugins and configuration settings but highlights the following {productname} plugins and configuration options in particular:
+
+[cols="1,1"]
+|===
+
+a|
+[.lead]
+xref:advanced-templates.adoc[Advanced templates]
+
+Enables the creation of complex, interactive templates.
+
+a|
+[.lead]
+xref:mergetags.adoc[Merge Tags]
+
+Allows the insertion of merge tags (also known as personalization tokens, or mail merge fields). This demo includes selectable merge tag examples but they are not connected to a back-end service.
+
+a|
+[.lead]
+xref:content-behavior-options.adoc#newdocument_content[`newdocument_content`]
+
+Sets the content a new editor contains when the xref:available-menu-items.adoc#the-core-menu-items[File -> New document] menu item is invoked.
+
+a|
+[.lead]
+xref:content-behavior-options.adoc#editable_root[`editable_root`]
+
+Sets the initial editable state of a TinyMCE instance’s root.
+
+a|
+[.lead]
+xref:content-behavior-options.adoc#editable_class[`editable_class`]
+
+Specifies the class name that TinyMCE will use to determine which areas of content are editable
+
+// Dummy table cell.
+// 1. Remove the inline comment markup pre-pending this
+//    element when the number of cells in the table is
+//    odd.
+// 2. Prepend the inline comment markup to this element
+//    when the number of cells in the table is even.
+//a|
+
+|===
+
+liveDemo::ie-template-creation[]

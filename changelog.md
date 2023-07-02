@@ -6,7 +6,8 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
-- DOC-2069: Set up docs infrastructure for adding _basic working examples_ pages to documentation.
+- DOC-2069: added first _integration example_ — multi-root editing and template creation — to documentation.
+- DOC-2069: Set up docs infrastructure for adding _integration examples_ pages to documentation.
 - DOC-2049: Added multiple `/partial/misc/admon-requires-6.<x>v.adoc` files for use as required by 6.5-and-later specific docs.
 - DOC-2047: Added TINY-9848 to `staging`.
 - DOC-2048: Added TINY-9812 to `staging`.

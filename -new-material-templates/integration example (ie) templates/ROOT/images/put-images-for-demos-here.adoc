@@ -1,0 +1,5 @@
+The location of a given `index.html` file relative to this file’s parent directory is not pertinent to the `<img>` tags’ `src` attribute.
+
+When a file, `image.png`, is placed in the `images` folder, the `<img>` tag in a demo’s `index.html` file has the following structure:
+
+<img src="{{imagesdir}}/ie-<hyphen-delimited-descriptor>/image.png" alt="<alt text>">

@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### 2023-07-02
+
+- DOC-2068: Copy-edits and corrections to two files, `6.5.1-release-notes.adoc` and `opensource-plugins.adoc`.
+
 ### 2023-06-23
 
 - DOC-2083: Added back standard sentence inadvertently removed from `accordion.adoc`.

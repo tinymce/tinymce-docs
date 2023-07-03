@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### unreleased
+
+- DOC-2087: 42 files and folders added outlining new material templates for new plugins; new integration examples; and release notes.
+
 ### 2023-06-23
 
 - DOC-2083: Added back standard sentence inadvertently removed from `accordion.adoc`.

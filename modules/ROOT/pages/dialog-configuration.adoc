@@ -72,7 +72,7 @@ Any callback function that is not passed a `+details+` object assumes that the d
 
 By default a dialog is shown as a modal in the center of the editor viewport.
 
-This presented position can be changed by adding an `inline` argument to a dialog's configuration with an appropriate value applied to the argument.
+This presented position can be changed by providing a second argument, with an appropriate value, to `editor.windowManager.open()`.
 
 [[inline]]
 === `+inline+`

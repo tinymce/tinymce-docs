@@ -1,0 +1,24 @@
+[cols="1,1,4",options="header"]
+|===
+|Name |Arguments |Description
+|<api1> |<arguments1> |<What api1 does>
+|<api2> |<arguments2> |<What api2 does>
+|<api3> |<arguments3> |<What api3 does>
+|<api4> |<arguments3> |<What api3 does>
+|===
+
+
+.Examples
+[source,js]
+----
+// what this example does
+tinymce.activeEditor.plugins.accordion.<api1>(<arguments1>);
+
+// what this example does
+tinymce.activeEditor.plugins.accordion.<api2>(<arguments2>);
+
+// what this example does
+tinymce.activeEditor.plugins.accordion.<api3>(<arguments3>);
+// what this example does
+tinymce.activeEditor.plugins.accordion.<api4>(<arguments4>);
+----

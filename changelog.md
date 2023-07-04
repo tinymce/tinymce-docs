@@ -4,36 +4,93 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-### Unreleased
+### 2023-07-04
 
 - DOC-2069: added first _integration example_ — multi-root editing and template creation — to documentation.
 - DOC-2069: Set up docs infrastructure for adding _integration examples_ pages to documentation.
+
+### 2023-07-02
+
+- DOC-2068: Copy-edits and corrections to two files, `6.5.1-release-notes.adoc` and `opensource-plugins.adoc`.
+
+### 2023-06-23
+
+- DOC-2083: Added back standard sentence inadvertently removed from `accordion.adoc`.
+
+### 2023-06-21
+
+- DOC-2082: Copy edits to TinyMCE 6.5.1 release-notes.
+- DOC-2081: Updates to 6.5.1 release-notes accordion.adoc file.
+- DOC-1781: add List Properties menu item & two commands (mceListUpdate & mceListProps) to Lists Plugin documentation.
+- DOC-2072: Corrections and updates for 6.5.1 `staging`
+- DOC-2024: Added Accordion documentation. Accordion is an open source plugin.
+- DOC-2025: Added new partial`table_merge_content_on_paste.adoc`; documented new option — `table_merge_content_on_paste` — in this new file; added include statement pointing to this file to `table.adoc`.
+- DOC-2015: Added TINY-9735 to `staging`.
+- DOC-2017: Added TINY-9757 to `staging`.
+- DOC-2023: Added TINY-9466 to `staging`.
+- DOC-2016: Added TINY-9749 to `staging`.
+- DOC-1975: Added TINY-8714 to `staging`.
+- DOC-2022: Added TINY-9464 to `staging`.
+- DOC-2067: Added TINY-9730 to `staging`.
+- DOC-1989: Added TINY-9761 to `staging`.
+- DOC-1991: Added TINY-9739 to `staging`.
+- DOC-2032: Added TINY-9818 to `staging`.
+- DOC-1990: Added TINY-9758 to `staging`.
+- DOC-2034: Added TINY-9808 to `staging`.
+- DOC-1998: Added TINY-9469 to `staging`.
+- DOC-1992: Added TINY-9678 to `staging`.
+- DOC-1995: Added TINY-9662 to `staging`.
+- DOC-2003: Added TINY-9565 to `staging`.
+- DOC-2021: Added TINY-9460 to `staging`.
+- DOC-1994: Added TINY-9664 to `staging`.
+- DOC-2038: Added TINY-9668 to `staging`.
+- DOC-2050: Added TINY-9816 to `staging`.
+- DOC-2039: Added TINY-9601 to `staging`.
+- DOC-1982: Added TINY-9314 to `staging`.
+- DOC-1974: Added TINY-9746 to `staging`.
+- DOC-1976: Added TINY-8122 to `staging`.
+- DOC-2007: Added TINY-9630 to `staging`.
+- DOC-2060: Added TINY-9718 to `staging`.
+- DOC-2062: Added TINY-9468 to `staging`.
+- DOC-2055: Added TINY-9500 to `staging`.
+- DOC-2064: Added TINY-9837 to `staging`.
+- DOC-2066: Added TINY-9823 to `staging`.
+- DOC-2063: Added TINY-9633 to `staging`.
+- DOC-2058: Added TINY-9829 to `staging`.
 - DOC-2049: Added multiple `/partial/misc/admon-requires-6.<x>v.adoc` files for use as required by 6.5-and-later specific docs.
 - DOC-2047: Added TINY-9848 to `staging`.
 - DOC-2048: Added TINY-9812 to `staging`.
 - DOC-2044: Added TINY-9849 to `staging`.
 - DOC-1953: new file, `/modules/ROOT/partials/configuration/advtemplate_templates.adoc`, added. Documentation of new Advanced Template plugin option, `advtemplate_templates`, added to new file.
 - DOC-2030: document new Spell Checker Pro features: `mceSpellcheckUpdate` command; `SpellcheckerUpdated` event; and `getSpellingErrors()` API.
+- DOC-1996: Added TINY-9478 to `staging`.
+- DOC-1988: Added TINY-9755 to `staging`.
+- DOC-1987: Added TINY-9756 to `staging`.
 - DOC-2028: Add release-notes template to `staging` for 6.5.
+- DOC-2004: Added docs for `init_content_sync` option.
 - DOC-2029: Added new partials, `editable_root.adoc` and `newdocument_content.adoc`, to `/configuration/`. Also added includes for both to `content-behavior-options.adoc`.
 
 ### 2023-05-03
+- DOC-2051: Added the TinyMCE 6.5-specific changes to `changelog.adoc`.
+- DOC-1980: Converted all mentions of Transifex to Crowdin as TinyMCE's community translations platform.
+- DOC-2052: Correct default value of `language` option to `en`.
 
-- DOC-1972: Updated `changelog.md` to be in sync with the release-notes 6.4.2.
-- DOC-1971: Updates to `staging` prior to `release` 6.4.2.
-- DOC-1962: added `The image would not be inserted when the quickimage button was used on Chrome.` to staging.
-- DOC-1968: Added `enabled buttons in the quickbar menu is not shown as active` to staging.
-- DOC-1967: added `Fixed the mouse pointer style from a text cursor to a default arrow pointer when hovering over the tree dialog component items.` to staging.
-- DOC-1965: added `The editor displayed a notification error when it failed to retrieve a blob image uri.` to staging 6.4.2.
-- DOC-1964: added `deleteallconversations` menu item was enabled before any comments were added.` to staging.
-- DOC-1963: added Setting an invalid unit in the `fontsizeinput` changed it to the default value instead of reverting it to the previous, and valid, value. to staging.
-- DOC-1961: added Enabled variant of toggleable `tox-button` and `tox-button—secondary`: it now supports `hover/active/focus/disabled` states. to staging.
-- DOC-1959: added `Redial would, in some situations, cause select elements not to have an initial value selected when they should have.` to staging.
-- DOC-1960: added `The urlinput dialog component would not open the type-ahead dropdown when the input value was reset to an empty string.` to staging.
-- DOC-1957: added `Selection was not correctly scrolled horizontally into view when using the `selection.scrollIntoView` API.` to staging.
-- DOC-1958: added `Tab navigation no longer incorrectly stops at menu buttons within toolbar groups.` to staging.
-- DOC-1935: added `6.4.2-release-notes.adoc`. Added outline to this file for staging.
-- DOC-1955: added the TinyMCE 6.4.2 specific changes to changelog.adoc.
+### 2023-05-03
+- DOC-1972: Updated `changelog.md` to be in sync with the _6.4.2 Release Notes_.
+- DOC-1971: Updates to `staging` prior to 6.4.2 release.
+- DOC-1962: added ‘The image would not be inserted when the quickimage button was used on Chrome.’ to `staging`.
+- DOC-1968: Added ‘enabled buttons in the quickbar menu is not shown as active’ to `staging`.
+- DOC-1967: added ‘Fixed the mouse pointer style from a text cursor to a default arrow pointer when hovering over the tree dialog component items.’ to staging.
+- DOC-1965: added ‘The editor displayed a notification error when it failed to retrieve a blob image uri’ to `staging`.
+- DOC-1964: added ‘`deleteallconversations` menu item was enabled before any comments were added’ to `staging`.
+- DOC-1963: added ‘Setting an invalid unit in the `fontsizeinput` changed it to the default value instead of reverting it to the previous, and valid, value’ to `staging`.
+- DOC-1961: added ‘Enabled variant of toggleable `tox-button` and `tox-button—secondary`: it now supports `hover/active/focus/disabled` states’ to `staging`.
+- DOC-1959: added ‘Redial would, in some situations, cause select elements not to have an initial value selected when they should have.’ to staging.
+- DOC-1960: added ‘The urlinput dialog component would not open the type-ahead dropdown when the input value was reset to an empty string.’ to staging.
+- DOC-1957: added ‘Selection was not correctly scrolled horizontally into view when using the ‘selection.scrollIntoView’ API.’ to staging.
+- DOC-1958: added ‘Tab navigation no longer incorrectly stops at menu buttons within toolbar groups.’ to staging.
+- DOC-1935: added `6.4.2-release-notes.adoc` to project. Added outline to this file for staging.
+- DOC-1955: added the TinyMCE 6.4.2-specific changes to `changelog.adoc`.
 
 ### 2023-04-19
 - DOC-1170: updated `language_url.adoc` to document the `language: '<language-file-pack-name>'` requirement and to make other language explicit where it was implicatory.

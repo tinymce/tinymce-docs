@@ -1,7 +1,7 @@
 = tinymce.dom.DOMUtils
 :navtitle: tinymce.dom.DOMUtils
 :description: Utility class for various DOM manipulation and retrieval functions.
-:keywords: DOM, add, addClass, addStyle, bind, create, createFragment, createHTML, createRng, decode, destroy, dispatch, encode, findCommonAncestor, fire, get, getAttrib, getAttribs, getNext, getOuterHTML, getParent, getParents, getPos, getPrev, getRect, getRoot, getSize, getStyle, getViewPort, hasClass, hide, insertAfter, is, isBlock, isEmpty, isHidden, loadCSS, nodeIndex, parseStyle, remove, removeAllAttribs, removeClass, rename, replace, run, select, serializeStyle, setAttrib, setAttribs, setHTML, setOuterHTML, setStyle, setStyles, show, split, toggleClass, unbind, uniqueId
+:keywords: DOM, add, addClass, addStyle, bind, create, createFragment, createHTML, createRng, decode, destroy, dispatch, encode, findCommonAncestor, fire, get, getAttrib, getAttribs, getNext, getOuterHTML, getParent, getParents, getPos, getPrev, getRect, getRoot, getSize, getStyle, getViewPort, hasClass, hide, insertAfter, is, isBlock, isEditable, isEmpty, isHidden, loadCSS, nodeIndex, parseStyle, remove, removeAllAttribs, removeClass, rename, replace, run, select, serializeStyle, setAttrib, setAttribs, setHTML, setOuterHTML, setStyle, setStyles, show, split, toggleClass, unbind, uniqueId
 :moxie-type: api
 
 Utility class for various DOM manipulation and retrieval functions.
@@ -73,6 +73,7 @@ go above the point of this root node.|`xref:apis/tinymce.dom.domutils.adoc[DOMUt
 |xref:#insertAfter[insertAfter()]|Inserts an element after the reference element.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
 |xref:#is[is()]|Returns true/false if the specified element matches the specified css pattern.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
 |xref:#isBlock[isBlock()]|Returns true/false if the specified element is a block element or not.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
+|xref:#isEditable[isEditable()]|Checks if the specified node is editable within the given context of its parents.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
 |xref:#isEmpty[isEmpty()]|Returns true/false if the specified node is to be considered empty or not.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
 |xref:#isHidden[isHidden()]|Returns true/false if the element is hidden or not by checking the "display" style.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
 |xref:#loadCSS[loadCSS()]|Imports/loads the specified CSS file into the document bound to the class.|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`
@@ -770,6 +771,24 @@ Returns true/false if the specified element is a block element or not.
 ==== Return value
 
 * `Boolean` - True/False state if the node is a block element or not.
+
+'''
+
+[[isEditable]]
+=== isEditable()
+[source, javascript]
+----
+isEditable(node: Node): Boolean
+----
+Checks if the specified node is editable within the given context of its parents.
+
+==== Parameters
+
+* `node (Node)` - Node to check if it's editable.
+
+==== Return value
+
+* `Boolean` - Will be true if the node is editable and false if it's not editable.
 
 '''
 

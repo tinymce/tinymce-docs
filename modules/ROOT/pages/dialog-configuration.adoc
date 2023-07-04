@@ -70,7 +70,7 @@ Any callback function that is not passed a `+details+` object assumes that the d
 
 == Dialog position
 
-By default a dialog presents as a modal object in the center of the editor viewport.
+By default a dialog is shown as a modal in the center of the editor viewport.
 
 This presented position can be changed for a given dialog by adding an `inline` value to the dialog’s configuration.
 

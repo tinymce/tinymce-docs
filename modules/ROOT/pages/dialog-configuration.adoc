@@ -108,6 +108,5 @@ tinymce.activeEditor.windowManager.open({
       text: 'OK'
     }
   ]
-  { inline: 'toolbar' }
-});
+}, { inline: 'toolbar' });
 ----

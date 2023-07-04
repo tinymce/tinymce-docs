@@ -1,8 +1,8 @@
 = Interactive integration example
 :navtitle: Reusable template creation
-:description_short: Using TinyMCE to create reusable templates.
-:description: This example demonstrates TinyMCE being used to create reusable templates.
-:keywords: example, demo, custom, templates, reusable
+:description_short: Using TinyMCE to create a reusable template.
+:description: Using TinyMCE to create a reusable template with both read-only and editable sections, and with included mail merge tags.
+:keywords: example, demo, custom, templates, reusable, merge tags, mail merge
 
 == Multi-root editing and document template creation
 
@@ -12,12 +12,6 @@ It includes numerous plugins and configuration settings but highlights the follo
 
 [cols="1,1"]
 |===
-
-a|
-[.lead]
-xref:advanced-templates.adoc[Advanced templates]
-
-Enables the creation of complex, interactive templates.
 
 a|
 [.lead]
@@ -49,7 +43,7 @@ Specifies the class name that TinyMCE will use to determine which areas of conte
 //    odd.
 // 2. Prepend the inline comment markup to this element
 //    when the number of cells in the table is even.
-a|
+//a|
 
 |===
 

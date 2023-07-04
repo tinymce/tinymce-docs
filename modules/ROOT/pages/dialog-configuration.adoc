@@ -72,7 +72,7 @@ Any callback function that is not passed a `+details+` object assumes that the d
 
 By default a dialog is shown as a modal in the center of the editor viewport.
 
-This presented position can be changed for a given dialog by adding an `inline` value to the dialog’s configuration.
+This presented position can be changed by adding an `inline` argument to a dialog's configuration with an appropriate value applied to the argument.
 
 [[inline]]
 === `+inline+`
@@ -87,7 +87,7 @@ When added to a configuration with the value, `+bottom+`, it sets the dialog to 
 
 *Possible values:* `+toolbar+`, `+bottom+`
 
-=== Basic example with the inline value added and set to toolbar
+=== Basic example with the inline argument added and set to toolbar
 
 [source,js]
 ----

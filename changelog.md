@@ -4,6 +4,11 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### 2023-07-04
+
+- DOC-2069: added first _integration example_ — multi-root editing and template creation — to documentation.
+- DOC-2069: Set up docs infrastructure for adding _integration examples_ pages to documentation.
+
 ### 2023-07-02
 
 - DOC-2068: Copy-edits and corrections to two files, `6.5.1-release-notes.adoc` and `opensource-plugins.adoc`.

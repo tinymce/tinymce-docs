@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### 2023-07-04
 
+- DOC-2090: Added documentation of the options for setting a dialog’s displayed position to `dialog-configuration.adoc`.
 - DOC-2069: added first _integration example_ — multi-root editing and template creation — to documentation.
 - DOC-2069: Set up docs infrastructure for adding _integration examples_ pages to documentation.
 

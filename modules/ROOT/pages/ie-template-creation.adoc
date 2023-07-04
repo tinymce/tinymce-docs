@@ -17,7 +17,11 @@ a|
 [.lead]
 xref:mergetags.adoc[Merge Tags]
 
-Allows the insertion of merge tags (also known as personalization tokens, or mail merge fields). This demo includes selectable merge tag examples but they are not connected to a back-end service.
+Allows the insertion of merge tags (also known as personalization tokens, or mail merge fields).
+
+This demo includes merge tag placeholder examples in the demonstration document and equivalent merge tag placeholder strings available for adding to the editable portions of the document.
+
+These placeholders are not, of course, connected to any logic that merges them with a specific data set.
 
 a|
 [.lead]
@@ -25,17 +29,23 @@ xref:content-behavior-options.adoc#newdocument_content[`newdocument_content`]
 
 Sets the content a new editor contains when the xref:available-menu-items.adoc#the-core-menu-items[File -> New document] menu item is invoked.
 
+Used here to show a TinyMCE instance loading an entire almost-ready-to-send-out standard document.
+
 a|
 [.lead]
 xref:content-behavior-options.adoc#editable_root[`editable_root`]
 
 Sets the initial editable state of a TinyMCE instance’s root.
 
+Used here to show a TinyMCE being used to, in effect, present an almost-ready-to-send-out standard document that cannot, in the main, be changed by an end-user.
+
 a|
 [.lead]
 xref:content-behavior-options.adoc#editable_class[`editable_class`]
 
 Specifies the class name that TinyMCE will use to determine which areas of content are editable.
+
+Used here to setup the portions of an almost-ready-to-send-out standard document that end-users can (and should) edit.
 
 // Dummy table cell.
 // 1. Remove the inline comment markup pre-pending this

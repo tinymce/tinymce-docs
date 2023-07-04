@@ -7,6 +7,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### Unreleased
 
 - DOC-2094: Typo corrections in `/ie-template-creation/index.js`.
+- DOC-2095: Typo correction in `release-notes.adoc`.
 
 ### 2023-07-04
 

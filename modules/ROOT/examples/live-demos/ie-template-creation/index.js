@@ -108,7 +108,7 @@ section.end  a {
 tinymce.init({
   selector: 'textarea#template-creation',
   plugins: 'anchor autolink link lists image code advcode mergetags wordcount',
-  toolbar: 'undo redo | blocks | bold italic strikethrough backcolor | link image | align bullist numlist | code | mergetags',
+  toolbar: 'undo redo | blocks | bold italic strikethrough backcolor | mergetags | link image | align bullist numlist | code ',
   height: 900,
   editable_root: false,
   editable_class: 'editable',

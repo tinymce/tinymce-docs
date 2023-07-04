@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### Unreleased
+
+- DOC-2094: Typo corrections in `/ie-template-creation/index.js`.
+
 ### 2023-07-04
 
 - DOC-2090: Added documentation of the options for setting a dialog’s displayed position to `dialog-configuration.adoc`.

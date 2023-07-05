@@ -4,7 +4,7 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-### Unreleased
+### 2023-07-05
 
 - DOC-2094: Typo corrections in `/ie-template-creation/index.js`.
 - DOC-2095: Typo correction in `release-notes.adoc`.

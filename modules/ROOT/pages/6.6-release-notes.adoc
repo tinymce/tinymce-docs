@@ -97,4 +97,17 @@ With the property set to `true`, frame content will update with `document.write(
 === Fixed an issue that prevented setting the inline dialog `size` to _medium_ or _normal_.
 //#TINY-10015
 
-// CCFR here.
+Previously, although the inline dialog specification included a `size` option, the function was not implemented. As a consequence, no matter what value `size` was set to, an inline dialog’s size defaulted to `normal`.
+
+For this update the missing functionality, which applies the necessary CSS when a `size` value is set for an inline dialog, was added.
+
+Setting an inline dialog to any of the supported sizes — 
+
+[source,js]
+----
+size: 'normal', // or
+size: 'medium', // or
+size: 'large',
+----
+
+— now changes the dialog’s width, as expected.

@@ -4,6 +4,20 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+== 6.6.0 - 2023-07-12
+
+=== Fixed
+* Fixed an issue that prevented setting the inline dialog `size` to _medium_ or _normal_.
+
+=== Added
+* Added new `bottom` to inline dialog type. This new inline dialog option allows the inline dialog to be positioned at the bottom of the editor.
+* Added new `persistent` option to `WindowParams`. This new option allows the inline dialog to be persistent, meaning that it will not be closed when the user clicks outside of the dialog.
+* New `ai`, `ai-prompt` and `send` icons.
+* New `streamContent` property for the `iframe` dialog component which controls dialog `setData()` behavior. With the property set to `true`, frame content will update with `document.write()` to avoid reloading the frame, and end scroll positions will be maintained as new content streams in.
+
+=== Improved
+* When defining a modal or inline dialog, if the `buttons` property is `undefined` or an empty array, the footer will now no longer be rendered.
+
 == 6.5.1 - 2023-06-19
 
 === Fixed

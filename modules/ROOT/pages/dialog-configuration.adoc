@@ -62,3 +62,28 @@ For more information on the `+dialogApi+` object that is passed to some of the c
 Each of the event callback functions - `+onAction+`, `+onSubmit+`, `+onCancel+`, `+onChange+`, `+onClose+`, and `+onTabChange+` - are shared between all dialog components that may trigger them. For example, *Custom* type footer buttons and dialog panel buttons all trigger `+onAction+`. Therefore, callback functions that may be triggered by multiple components are passed an object (called `+details+` above) that contains the `+name+` of the component that triggered the event.
 
 Any callback function that is not passed a `+details+` object assumes that the dialog will only contain one component which can trigger it or that it does not matter if the function is triggered by multiple components. For example, `+onSubmit+` is only triggered when a user clicks on a *Submit* type footer button, and {productname} assumes that a dialog will only have one *Submit* type button. In comparison, `+onCancel+` and `+onClose+` are both triggered by clicking the `+X+` button in the top right of a dialog or by clicking a *Cancel* type footer button. These two buttons have the same functionality, and therefore {productname} does not differentiate between them.
+
+== Configure a dialog without a footer
+
+include::partial$misc/admon-requires-6.6v.adoc[]
+
+To configure a custom dialog so it does not render a footer section when displayed, set the `buttons` property to an empty array, `[]`, or to `undefined`.
+
+=== basic example of a dialog without buttons or a footer
+
+[source,js]
+----
+tinymce.activeEditor.windowManager.open({
+  title: 'Dialog Title', // The dialog's title - displayed in the dialog header
+  body: {
+    type: 'panel', // The root body type - a Panel or TabPanel
+    items: [ // A list of panel components
+      {
+        type: 'htmlpanel', // an HTML panel component
+        html: 'Panel content goes here.'
+      }
+    ]
+  },
+  buttons: []
+});
+----

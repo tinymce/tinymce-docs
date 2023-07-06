@@ -56,9 +56,9 @@ A {productname} dialog’s UI consist of three main sections: the title, body, a
 
 And, previously, it was a requirement that any {productname} dialog — built-in or custom — displayed all three parts.
 
-As of this update, it is possible to configure a custom dialog to not render the footer section.
+As of {productname} 6.6, it is possible to configure a custom dialog to not render the footer section.
 
-When defining a modal or inline dialog, setting the `buttons` property to `undefined` or to `[]` (an empty array), results in a dialog that displays without rendering the section.
+When defining a modal or inline dialog, set the `buttons` property to `undefined` or to `[]` (an empty array). The result is a dialog that displays without rendering the footer section.
 
 
 [[additions]]

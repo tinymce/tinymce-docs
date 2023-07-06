@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### 2023-07-06
+
+- DOC-2098: Typo in include statement in `table_merge_content_on_paste.adoc`.
+
 ### 2023-07-05
 
 - DOC-2094: Typo corrections in `/ie-template-creation/index.js`.

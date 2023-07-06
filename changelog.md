@@ -6,7 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### 2023-07-06
 
-- DOC-2098: Typo in include statement in `table_merge_content_on_paste.adoc`.
+- DOC-2098: Typo corrected in include statement in `table_merge_content_on_paste.adoc`.
 
 ### 2023-07-05
 

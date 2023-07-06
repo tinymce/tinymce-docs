@@ -49,18 +49,16 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.6 also includes the following improvement:
 
-=== When defining a modal or inline dialog, if the `buttons` property is `undefined` or an empty array, the footer will now no longer be rendered
+=== Displaying the footer section of a modal or inline dialog is now optional
 //#TINY-9996
 
-////
-The new AI plugin will feature a dialog without any footer buttons. This means it will rely on the name of the triggered component within the onAction callback, and does not implement the onSubmit or onClose callbacks.
+A {productname} dialog’s UI consist of three main sections: the title, body, and footer.
 
-To prevent any footer buttons from appearing, the buttons parameter in the dialog spec is set to an empty array. Since this is possible, and having no footer is supported, the buttons parameter should instead be made optional.
+And, previously, it was a requirement that any {productname} dialog — built-in or custom — displayed all three parts.
 
-Removing the footer buttons should also remove the element and reduce whitespace in the dialog.
+As of this update, it is possible to configure a custom dialog to not render the footer section.
 
-DoD: prevent footer from rendering for dialogs and inline dialogs if `buttons` is `undefined` or `[]`.
-////
+When defining a modal or inline dialog, setting the `buttons` property to `undefined` or to `[]` (an empty array), results in a dialog that displays without rendering the section.
 
 
 [[additions]]

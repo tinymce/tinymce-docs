@@ -66,12 +66,13 @@ When defining a modal or inline dialog, set the `buttons` property to `undefined
 
 {productname} 6.6 also includes the following additions:
 
-=== Added new `bottom` to inline dialog type
+=== Added new property — `bottom` — to inline dialog configurations
 //#TINY-9888
+
+We have added a new option that opens an inline dialog. This inline dialog will be positioned at the bottom of the editor, if the `toolbar_location` option is set to top. This option doesn’t have any impact on the modal dialog, only inline dialog are positioned at the bottom of the editor, if this setting was set to inline: 'bottom' 
 
 This new inline dialog option allows the inline dialog to be positioned at the bottom of the editor
 
-// more CCFR here.
 
 === Added new `persistent` option to `WindowParams`.
 //#TINY-9991

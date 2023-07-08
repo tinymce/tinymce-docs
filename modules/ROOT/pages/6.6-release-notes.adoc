@@ -15,6 +15,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
 * xref:improvement[Improvement]
 * xref:additions[Additions]
+* xref:change[Change]
 * xref:bug-fix[Bug fix]
 
 
@@ -73,6 +74,8 @@ We have added a new option that opens an inline dialog. This inline dialog will 
 
 This new inline dialog option allows the inline dialog to be positioned at the bottom of the editor
 
+// For further details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
+
 
 === Added new `persistent` option to `WindowParams`.
 //#TINY-9991
@@ -81,12 +84,7 @@ This new option allows the inline dialog to be persistent, meaning that it will 
 
 // more CCFR here.
 
-=== - New `ai`, `ai-prompt` and `send` icons.
-//#TINY-9942
-
-// CCFR here.
-
-// link out to ai premium plugin page here?
+// For further details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 
 === New `streamContent` property for the `iframe` dialog component which controls dialog `setData()` behavior. 
 //#TINY-10032
@@ -94,6 +92,45 @@ This new option allows the inline dialog to be persistent, meaning that it will 
 With the property set to `true`, frame content will update with `document.write()` to avoid reloading the frame, and end scroll positions will be maintained as new content streams in.
 
 // more CCFR here.
+
+// For further details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
+
+=== New `border` property for the `iframe` dialog component which controls the visibility of its border.
+//#TINY-10049
+
+// CCFR here
+
+// For further details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
+
+=== New `align` property for the label dialog component that controls text alignment.
+//#TINY-10058
+
+// CCFR here
+
+// For further details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
+
+=== - New `ai`, `ai-prompt` and `send` icons.
+//#TINY-9942
+
+// CCFR here.
+
+// link out to ai premium plugin page here?
+
+=== Add `ai` buttons to the default toolbar and menubar.
+//#TINY-9939
+
+// CCFR here
+
+// link out to ai premium plugin page here?
+
+
+[[change]]
+== Change
+
+=== The icon in `alertbanner` dialog component is not clickable if the _URL_ field is not specified.
+//#TINY-10013
+
+// CCFR here
 
 
 [[bug-fix]]

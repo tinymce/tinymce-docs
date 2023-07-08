@@ -14,6 +14,12 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Added new `persistent` option to `WindowParams`. This new option allows the inline dialog to be persistent, meaning that it will not be closed when the user clicks outside of the dialog.
 * New `ai`, `ai-prompt` and `send` icons.
 * New `streamContent` property for the `iframe` dialog component which controls dialog `setData()` behavior. With the property set to `true`, frame content will update with `document.write()` to avoid reloading the frame, and end scroll positions will be maintained as new content streams in.
+* Added `ai` buttons to the default toolbar and menubar.
+* New `border` property for the `iframe` dialog component which controls the visibility of its border.
+* New `align` property for the label dialog component that controls text alignment.
+
+=== Changed
+* The icon in an `alertbanner` dialog component is not clickable if the _URL_ field is not specified.
 
 === Improved
 * When defining a modal or inline dialog, if the `buttons` property is `undefined` or an empty array, the footer will now no longer be rendered.

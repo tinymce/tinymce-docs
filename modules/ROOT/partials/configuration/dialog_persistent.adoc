@@ -1,0 +1,39 @@
+[[persistent]]
+=== `persistent`
+
+////
+This new option allows the inline dialog to be persistent, meaning that it will not be closed when the user clicks outside of the dialog. Document this, including a sample code example.
+
+
+Currently inline dialogs will disappear when the editor content is focused. It also disappears when another UI element is focused (menubar or toolbar), though this may be an expected behaviour and should not be modified.
+
+In the AI plugin, we want to allow users to navigate the editor content and alter their selection without having to reopen the dialog each time. To do this, we will add an optional parameter to inline dialogs which allows them to be persistent when navigating the content.
+
+There should be a new keyboard shortcut for accessing an opened persistent dialog from the editor content, and should also be included in the help dialog shortcuts.
+
+Demonstration fiddle (sample code source): <https://fiddle.tiny.cloud/DBiaab>
+////
+
+*Type:* `+String+`
+
+*Possible values:* `+true+`, `+false+`
+
+*Default value:* `false`
+
+=== Example: using `persistent`
+
+// This should be a working configuration. Please test.
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  persistent: 'bottom'
+});
+----
+
+// Remove if not applicable
+=== Limitation of the `persistent` option
+
+The `persistent` option has the following limitations.
+
+<List the things we can't or wont fix, as well as complicated complications and risks>

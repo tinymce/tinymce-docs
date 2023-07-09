@@ -91,16 +91,23 @@ For details see the xref:dialog-configuration.adoc#configuration-parameters[Conf
 === Added a new `streamContent` property for the `iframe` dialog component which controls dialog `setData()` behavior. 
 //#TINY-10032
 
+////
 With the property set to `true`, frame content will update with `document.write()` to avoid reloading the frame, and end scroll positions will be maintained as new content streams in.
 
 // more CCFR here.
+
+////
 
 For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 
 === Added a new `border` property for the `iframe` dialog component which controls the visibility of its border.
 //#TINY-10049
 
-// CCFR here
+A new, and optional, property — `+border+` — is available for the dialog component, `+iframe+`.
+
+When this property is set to `true`, a border displays around the `+iframe+` component. As well, when the `+border+` property is set to `true`, the iframe component is highlighted when it is given focus.
+
+If the property is not explicitly set, it is set to `+false+`, matching the presentation norm prior to it being added to {productname}.
 
 For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 

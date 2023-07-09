@@ -107,7 +107,11 @@ For details see the xref:dialog-configuration.adoc#configuration-parameters[Conf
 === Added a new property — `align` — for the label dialog component that controls text alignment.
 //#TINY-10058
 
-// CCFR here
+A new, and optional, property — `+align+` — is available for the dialog component, `+label+`.
+
+This property allows text in this component be set left-, centre-, or right-aligned.
+
+If the property is not explicitly set, it uses a default value which sets label text to present as it has always been presented: left-aligned for LTR languages; and right-aligned for RTL languages.
 
 For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 

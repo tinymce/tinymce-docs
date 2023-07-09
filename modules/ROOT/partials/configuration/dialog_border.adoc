@@ -1,6 +1,8 @@
 [[border]]
 === `border`
 
+include::partial$misc/admon-requires-6.6v.adoc[]
+
 With the property set to true, a border displays around the iframe.
 
 This iframe is also highlighted when it takes focus (by, for example, using the Tab key to move focus to iframe).

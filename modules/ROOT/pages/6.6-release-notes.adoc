@@ -91,7 +91,7 @@ Also, setting the property to `+true+` does not over-ride normal mechanisms for 
 
 For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 
-=== Added a new `streamContent` property for the `iframe` dialog component which controls dialog `setData()` behavior
+=== Added a new property — `streamContent` — for the `iframe` dialog component which controls dialog `setData()` behavior
 //#TINY-10032
 
 A new, and optional, property, — `+streamContent+` — is avalable for `iframe` dialog components.
@@ -129,7 +129,7 @@ For details see the xref:dialog-configuration.adoc#configuration-parameters[Conf
 
 // CCFR here.
 
-// link out to ai premium plugin page here?
+For more information on **AI**, see xref:ai.adoc[AI].
 
 === AI plugin toolbar items added to the default toolbar and AI plugin menu items added to the default menu bar
 //#TINY-9939

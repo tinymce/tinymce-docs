@@ -1,17 +1,11 @@
 [[align]]
 == `align`
 
-////
-Add optional align property to labels to control text alignment
+`+align+` is an optional property to add to dialog labels to set the alignment of the label text.
 
-Right-text alignment would help align the disclaimer label to the right of the dialog:
-////
+The property has a default value of `+start+`.
 
-////
-What does the option do? Why/when use it?
-What is the values you can use and what do they do?
-Is there any risks? (But explain them without saying the word `risk` or similar. Use warnings if needed.) For longer, complicated 'risks' and issues, use the limitations section.
-////
+This is also the value applied if the property is not explicitly set.
 
 *Type:* `+String+`
 
@@ -19,9 +13,14 @@ Is there any risks? (But explain them without saying the word `risk` or similar.
 
 *Default value:* `+start+`
 
-=== Example: using `align` to set a dialog caption as end-aligned
+The values, `+start+` and `+end+`, refer to the beginning or end of a text line and are relative to the display language.
 
-NOTE: End-aligned is right-aligned when a left-to-right language is the display language. Equivalently, end-aligned is left-aligned when a right-to-left language is the display language.
+For left-to-right written languages (eg English or Vietnamese), `+start+` sets the dialog label as left-aligned and `+end+` sets the dialog label as right-aligned.
+
+For right-to-left written languages (eg Arabic or Persian), `+start+` sets the dialog label as right-aligned and `+end+` sets the dialog label as left-aligned.
+
+
+=== Example: using `align` to set a dialog caption as end-aligned
 
 [source,js]
 ----

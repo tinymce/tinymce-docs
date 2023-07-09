@@ -1,18 +1,15 @@
 [[persistent]]
 === `persistent`
 
-////
-This new option allows the inline dialog to be persistent, meaning that it will not be closed when the user clicks outside of the dialog. Document this, including a sample code example.
+include::partial$misc/admon-requires-6.6v.adoc[]
 
+the `+persistent+` property, when set to `+true+`, allows an inline dialog to stay open when the dialog no longer has focus.
 
-Currently inline dialogs will disappear when the editor content is focused. It also disappears when another UI element is focused (menubar or toolbar), though this may be an expected behaviour and should not be modified.
+If an end-user gives another part of the {productname} editor focus (for example, the document editor, or a menu), the inline dialog will stay open.
 
-In the AI plugin, we want to allow users to navigate the editor content and alter their selection without having to reopen the dialog each time. To do this, we will add an optional parameter to inline dialogs which allows them to be persistent when navigating the content.
+The property has a default value of `+false+`.
 
-There should be a new keyboard shortcut for accessing an opened persistent dialog from the editor content, and should also be included in the help dialog shortcuts.
-
-Demonstration fiddle (sample code source): <https://fiddle.tiny.cloud/DBiaab>
-////
+NOTE: if an inline dialog is open and focus is switched away from the {productname} editor entirely (by, for example, the end-user switching focus to an available host-browser UI element), an open inline dialog will remain open regardless of the `+persistent+` property’s value. This was the behavior prior to this property being available and continues to be the behavior.
 
 *Type:* `+String+`
 
@@ -27,13 +24,6 @@ Demonstration fiddle (sample code source): <https://fiddle.tiny.cloud/DBiaab>
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
-  persistent: 'bottom'
+  persistent: 'bottom'  // Demonstration fiddle for sample code: <https://fiddle.tiny.cloud/DBiaab>
 });
 ----
-
-// Remove if not applicable
-=== Limitation of the `persistent` option
-
-The `persistent` option has the following limitations.
-
-<List the things we can't or wont fix, as well as complicated complications and risks>

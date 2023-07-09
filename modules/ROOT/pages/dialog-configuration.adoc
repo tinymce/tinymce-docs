@@ -66,37 +66,13 @@ Any callback function that is not passed a `+details+` object assumes that the d
 [[configuration-parameters]]
 == Configuration parameters
 
-=== Configure a dialog without a footer
-
-include::partial$misc/admon-requires-6.6v.adoc[]
-
-To configure a custom dialog so it does not render a footer section when displayed, set the `buttons` property to an empty array, `[]`, or to `undefined`.
-
-=== basic example of a dialog without buttons or a footer
-
-[source,js]
-----
-tinymce.activeEditor.windowManager.open({
-  title: 'Dialog Title', // The dialog's title - displayed in the dialog header
-  body: {
-    type: 'panel', // The root body type - a Panel or TabPanel
-    items: [ // A list of panel components
-      {
-        type: 'htmlpanel', // an HTML panel component
-        html: 'Panel content goes here.'
-      }
-    ]
-  },
-  buttons: []
-});
-----
-
 include::partial$configuraton/dialog_align.adoc[]
 
 include::partial$configuraton/dialog_border.adoc[]
 
-include::partial$configuraton/dialog_button.adoc[]
+include::partial$configuration/dialog_buttons.adoc[]
 
 include::partial$configuraton/dialog_persistent.adoc[]
 
 include::partial$configuraton/dialog_streamContent.adoc[]
+

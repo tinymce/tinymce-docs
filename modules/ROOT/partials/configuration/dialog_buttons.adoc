@@ -1,0 +1,26 @@
+=== Using `+buttons+` to configure a dialog without a footer
+
+include::partial$misc/admon-requires-6.6v.adoc[]
+
+In addition to its usual functions, the `+buttons+` property can also be used to stop the footer section from displaying.
+
+To configure a custom dialog so it does not render a footer section when displayed, set the `buttons` property to an empty array, `[]`, or to `undefined`.
+
+=== basic example of a dialog without buttons or a footer
+
+[source,js]
+----
+tinymce.activeEditor.windowManager.open({
+  title: 'Dialog Title', // The dialog's title - displayed in the dialog header
+  body: {
+    type: 'panel', // The root body type - a Panel or TabPanel
+    items: [ // A list of panel components
+      {
+        type: 'htmlpanel', // an HTML panel component
+        html: 'Panel content goes here.'
+      }
+    ]
+  },
+  buttons: []
+});
+----

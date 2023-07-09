@@ -55,11 +55,13 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 A {productname} dialog’s UI consist of three main sections: the title, body, and footer.
 
-And, previously, it was a requirement that any {productname} dialog — built-in or custom — displayed all three parts.
+Previously, it was a requirement that any {productname} dialog — built-in or custom — displayed all three parts.
 
 As of {productname} 6.6, it is possible to configure a custom dialog to not render the footer section.
 
 When defining a modal or inline dialog, set the `buttons` property to `undefined` or to `[]` (an empty array). The result is a dialog that displays without rendering the footer section.
+
+For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 
 
 [[additions]]
@@ -67,47 +69,47 @@ When defining a modal or inline dialog, set the `buttons` property to `undefined
 
 {productname} 6.6 also includes the following additions:
 
-=== Added new property — `bottom` — to inline dialog configurations
+=== Added a new property — `bottom` — to inline dialog configurations
 //#TINY-9888
 
 We have added a new option that opens an inline dialog. This inline dialog will be positioned at the bottom of the editor, if the `toolbar_location` option is set to top. This option doesn’t have any impact on the modal dialog, only inline dialog are positioned at the bottom of the editor, if this setting was set to inline: 'bottom' 
 
 This new inline dialog option allows the inline dialog to be positioned at the bottom of the editor
 
-// For further details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
+For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 
 
-=== Added new `persistent` option to `WindowParams`.
+=== Added a new property — `persistent` to inline dialog configurations.
 //#TINY-9991
 
 This new option allows the inline dialog to be persistent, meaning that it will not be closed when the user clicks outside of the dialog
 
 // more CCFR here.
 
-// For further details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
+For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 
-=== New `streamContent` property for the `iframe` dialog component which controls dialog `setData()` behavior. 
+=== Added a new `streamContent` property for the `iframe` dialog component which controls dialog `setData()` behavior. 
 //#TINY-10032
 
 With the property set to `true`, frame content will update with `document.write()` to avoid reloading the frame, and end scroll positions will be maintained as new content streams in.
 
 // more CCFR here.
 
-// For further details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
+For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 
-=== New `border` property for the `iframe` dialog component which controls the visibility of its border.
+=== Added a new `border` property for the `iframe` dialog component which controls the visibility of its border.
 //#TINY-10049
 
 // CCFR here
 
-// For further details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
+For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 
-=== New `align` property for the label dialog component that controls text alignment.
+=== Added a new property — `align` — for the label dialog component that controls text alignment.
 //#TINY-10058
 
 // CCFR here
 
-// For further details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
+For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 
 === - New `ai`, `ai-prompt` and `send` icons.
 //#TINY-9942

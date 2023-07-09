@@ -6,23 +6,23 @@ NOTE: This is the {productname} Community version changelog. For information abo
 
 == 6.6.0 - 2023-07-12
 
-=== Fixed
-* Fixed an issue that prevented setting the inline dialog `size` to _medium_ or _normal_.
-
 === Added
-* Added new `bottom` to inline dialog type. This new inline dialog option allows the inline dialog to be positioned at the bottom of the editor.
-* Added new `persistent` option to `WindowParams`. This new option allows the inline dialog to be persistent, meaning that it will not be closed when the user clicks outside of the dialog.
+* Added a new property — `bottom` — for inline dialog configurations.
+* Added a new property — `persistent` — for inline dialog configurations that controls dialog persistence when not in focus.
 * New `ai`, `ai-prompt` and `send` icons.
-* New `streamContent` property for the `iframe` dialog component which controls dialog `setData()` behavior. With the property set to `true`, frame content will update with `document.write()` to avoid reloading the frame, and end scroll positions will be maintained as new content streams in.
-* Added `ai` buttons to the default toolbar and menubar.
-* New `border` property for the `iframe` dialog component which controls the visibility of its border.
-* New `align` property for the label dialog component that controls text alignment.
+* Added a new property — `streamContent` — for the `iframe` dialog component which controls dialog `setData()` behavior.
+* AI plugin toolbar items added to the default toolbar and AI plugin menu items added to the default menu bar.
+* Added a new property — `border` — for the `iframe` dialog component that controls border visibility.
+* Added a new property — `align` — for the label dialog component that controls text alignment.
+
+=== Improved
+* Displaying the footer section of a modal or inline dialog is now optional.
 
 === Changed
 * The icon in an `alertbanner` dialog component is not clickable if the _URL_ field is not specified.
 
-=== Improved
-* When defining a modal or inline dialog, if the `buttons` property is `undefined` or an empty array, the footer will now no longer be rendered.
+=== Fixed
+* Fixed an issue that prevented setting the inline dialog `size` to _medium_ or _normal_.
 
 == 6.5.1 - 2023-06-19
 

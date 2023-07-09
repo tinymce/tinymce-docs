@@ -3,15 +3,13 @@
 
 include::partial$misc/admon-requires-6.6v.adoc[]
 
-With the property set to true, a border displays around the iframe.
+`+border+` is an optional property, available to add to the `iframe` dialog component.
 
-This iframe is also highlighted when it takes focus (by, for example, using the Tab key to move focus to iframe).
+The property has a default value of `+false+`.
 
-////
-What does the option do? Why/when use it?
-What is the values you can use and what do they do?
-Is there any risks? (But explain them without saying the word `risk` or similar. Use warnings if needed.) For longer, complicated 'risks' and issues, use the limitations section.
-////
+When this property is set to true, a border displays around the `iframe` component.
+
+This componenet is also highlighted when it takes focus (by, for example, using the Tab key to move focus to iframe).
 
 *Type:* `+String+`
 

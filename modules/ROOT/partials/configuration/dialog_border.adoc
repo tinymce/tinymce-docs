@@ -1,0 +1,29 @@
+[[border]]
+=== `border`
+
+With the property set to true, a border displays around the iframe.
+
+This iframe is also highlighted when it takes focus (by, for example, using the Tab key to move focus to iframe).
+
+////
+What does the option do? Why/when use it?
+What is the values you can use and what do they do?
+Is there any risks? (But explain them without saying the word `risk` or similar. Use warnings if needed.) For longer, complicated 'risks' and issues, use the limitations section.
+////
+
+*Type:* `+String+`
+
+*Possible values:* `+true+`, `+false+`
+
+*Default value:* `+false+`
+
+=== Example: using `border`
+
+// This should be a working configuration. Please test.
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  border: 'bottom'
+});
+----

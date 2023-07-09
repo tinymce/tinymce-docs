@@ -1,6 +1,8 @@
 [[align]]
 === `align`
 
+include::partial$misc/admon-requires-6.6v.adoc[]
+
 `+align+` is an optional property to add to dialog labels to set the alignment of the label text.
 
 The property has a default value of `+start+`.

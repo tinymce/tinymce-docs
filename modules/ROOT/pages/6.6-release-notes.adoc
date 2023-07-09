@@ -78,13 +78,12 @@ This new inline dialog option allows the inline dialog to be positioned at the b
 
 For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 
-
 === Added a new property — `persistent` — for inline dialog configurations that controls dialog persistence when not in focus.
 //#TINY-9991
 
 A new, and optional, property, — `+persistent+` — is available for inline dialog configuration.
 
-When this property is set to `true`, an inline dialog will stay open when focus is switched away from the dialog and towards the {productname} editor, or elsewhere.
+When this property is set to `true`, an inline dialog will stay open when focus is switched away from the dialog and towards other parts of the {productname} editor (for example, the document editor, or a menu).
 
 If the property is not explicitly set, it is set to `+false+`, matching inline dialog behavior prior to this property being added to {productname}.
 

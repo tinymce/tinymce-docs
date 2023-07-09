@@ -1,0 +1,36 @@
+[[streamContent]]
+== `streamContent`
+
+////
+
+With the property set to true, frame content will update with document.write() to avoid reloading the frame, and end scroll positions will be maintained as new content streams in.
+
+
+
+What does the option do? Why/when use it?
+What is the values you can use and what do they do?
+Is there any risks? (But explain them without saying the word `risk` or similar. Use warnings if needed.) For longer, complicated 'risks' and issues, use the limitations section.
+
+*Type:* `+String+`
+
+*Possible values:* `+true+` `+false+`
+
+*Default value:* `false`
+
+=== Example: using `streamContent`
+
+// This should be a working configuration. Please test.
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  streamContent: 'bottom'
+});
+----
+
+// Remove if not applicable
+=== Limitation of the `streamContent` option
+
+The `streamContent` option has the following limitations.
+
+<List the things we can't or wont fix, as well as complicated complications and risks>

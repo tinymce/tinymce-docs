@@ -94,12 +94,11 @@ For details see the xref:dialog-configuration.adoc#configuration-parameters[Conf
 === Added a new `streamContent` property for the `iframe` dialog component which controls dialog `setData()` behavior. 
 //#TINY-10032
 
-////
-With the property set to `true`, frame content will update with `document.write()` to avoid reloading the frame, and end scroll positions will be maintained as new content streams in.
+A new, and optional, property, — `+streamContent+` — is avalable for `iframe` dialog components.
 
-// more CCFR here.
+When this property is set to `true`, content within the `iframe` component is updated using `document.write()` rather than `srcdoc`.
 
-////
+As a consequence, the component’s contents update without flickering. As well, if the `iframe` component is currently scrolled to the end of the extant content, this position will be maintained as new content is added.
 
 For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 

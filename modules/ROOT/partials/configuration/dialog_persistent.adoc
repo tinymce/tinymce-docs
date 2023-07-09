@@ -3,7 +3,7 @@
 
 include::partial$misc/admon-requires-6.6v.adoc[]
 
-the `+persistent+` property, when set to `+true+`, allows an inline dialog to stay open when the dialog no longer has focus.
+The `+persistent+` property, when set to `+true+`, allows an inline dialog to stay open when the dialog no longer has focus.
 
 If an end-user gives another part of the {productname} editor focus (for example, the document editor, or a menu), the inline dialog will stay open.
 

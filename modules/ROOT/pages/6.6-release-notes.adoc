@@ -78,7 +78,7 @@ This new inline dialog option allows the inline dialog to be positioned at the b
 
 For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 
-=== Added a new property — `persistent` — for inline dialog configurations that controls dialog persistence when not in focus.
+=== Added a new property — `persistent` — for inline dialog configurations that controls dialog persistence when not in focus
 //#TINY-9991
 
 A new, and optional, property, — `+persistent+` — is available for inline dialog configuration.
@@ -91,7 +91,7 @@ Also, setting the property to `+true+` does not over-ride normal mechanisms for 
 
 For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 
-=== Added a new `streamContent` property for the `iframe` dialog component which controls dialog `setData()` behavior. 
+=== Added a new `streamContent` property for the `iframe` dialog component which controls dialog `setData()` behavior
 //#TINY-10032
 
 A new, and optional, property, — `+streamContent+` — is avalable for `iframe` dialog components.
@@ -102,7 +102,7 @@ As a consequence, the component’s contents update without flickering. As well,
 
 For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 
-=== Added a new property — `border` — for the `iframe` dialog component that controls border visibility.
+=== Added a new property — `border` — for the `iframe` dialog component that controls border visibility
 //#TINY-10049
 
 A new, and optional, property — `+border+` — is available for the dialog component, `+iframe+`.
@@ -113,7 +113,7 @@ If the property is not explicitly set, it is set to `+false+`, matching the pres
 
 For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 
-=== Added a new property — `align` — for the label dialog component that controls text alignment.
+=== Added a new property — `align` — for the label dialog component that controls text alignment
 //#TINY-10058
 
 A new, and optional, property — `+align+` — is available for the dialog component, `+label+`.
@@ -131,7 +131,7 @@ For details see the xref:dialog-configuration.adoc#configuration-parameters[Conf
 
 // link out to ai premium plugin page here?
 
-=== AI plugin toolbar items added to the default toolbar and AI plugin menu items added to the default menu bar.
+=== AI plugin toolbar items added to the default toolbar and AI plugin menu items added to the default menu bar
 //#TINY-9939
 
 With the release of the new xref:new-premium-plugin[AI Premium plugin], {productname} defaults have been updated.
@@ -150,7 +150,7 @@ For more information on **AI**, see xref:ai.adoc[AI].
 [[change]]
 == Change
 
-=== The icon in `alertbanner` dialog component is not clickable if the _URL_ field is not specified.
+=== The icon in `alertbanner` dialog component is not clickable if the _URL_ field is not specified
 //#TINY-10013
 
 // CCFR here
@@ -161,7 +161,7 @@ For more information on **AI**, see xref:ai.adoc[AI].
 
 {productname} 6.6 also includes the following bug fix:
 
-=== Fixed an issue that prevented setting the inline dialog `size` to _medium_ or _normal_.
+=== Fixed an issue that prevented setting the inline dialog `size` to _medium_ or _normal_
 //#TINY-10015
 
 Previously, although the inline dialog specification included a `size` option, the function was not implemented. As a consequence, no matter what value `size` was set to, an inline dialog’s size defaulted to `normal`.

@@ -50,14 +50,20 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.6 also includes the following additions:
 
-=== Added a new property — `bottom` — for inline dialog configurations that anchors the dialog to the bottom of the editor
+=== Added a new property value — `bottom` — for inline dialog configurations that anchors the dialog to the bottom of the editor
 //#TINY-9888
 
-We have added a new option that opens an inline dialog. This inline dialog will be positioned at the bottom of the editor, if the `toolbar_location` option is set to top. This option doesn’t have any impact on the modal dialog, only inline dialog are positioned at the bottom of the editor, if this setting was set to inline: 'bottom' 
+A new property value — `+bottom+` — is available for inline dialog configuration.
 
-This new inline dialog option allows the inline dialog to be positioned at the bottom of the editor
+By default, {productname} dialogs present as modal and in the center of the editor viewport.
 
-For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
+Previously, adding a second argument — `{ inline: 'toolbar' }` to `editor.windowManager.open`, set the dialog to appear adjacent to the {productname} toolbar.
+
+With this update, a new value can be passed with this second argument: `{ inline: 'bottom' }`.
+
+This new inline dialog option sets the inline dialog to appear at the bottom of the editor viewport.
+
+For details see the xref:dialog-configuration.adoc#dialog-position[Dialog position section] of the Dialog configuration documentation.
 
 === Added a new property — `persistent` — for inline dialog configurations that will stop the dialog closing when clicking away from it
 //#TINY-9991

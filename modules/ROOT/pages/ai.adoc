@@ -51,6 +51,14 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
+[IMPORTANT]
+.Always send data with an AI API query
+----
+The {pluginname} should only be invoked when there is a selection in the {productname} editor to send to the registered AI API.
+
+Selecting an active {pluginname} toolbar button, or selecting an active {pluginname} menu item when there is no selection, or when the {productname} editor is empty, will result in a random — and almost certainly unhelpful — response from the AI API.
+----
+
 == Commands
 
 The {pluginname} plugin provides the following {productname} commands.

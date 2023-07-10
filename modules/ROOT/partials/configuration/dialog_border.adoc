@@ -9,7 +9,7 @@ The property has a default value of `+false+`.
 
 When this property is set to true, a border displays around the `iframe` component.
 
-This componenet is also highlighted when it takes focus (by, for example, using the Tab key to move focus to iframe).
+This component is also highlighted when it takes focus (by, for example, using the Tab key to move focus to iframe).
 
 *Type:* `+String+`
 
@@ -17,13 +17,26 @@ This componenet is also highlighted when it takes focus (by, for example, using 
 
 *Default value:* `+false+`
 
-=== Example: using `border`
+=== Example: using `border` to display a border around an `iframe` component
 
-// This should be a working configuration. Please test.
 [source,js]
 ----
-tinymce.init({
-  selector: 'textarea',  // change this value according to your html
-  border: 'bottom'
+tinymce.activeEditor.windowManager.open({
+  title: 'Dialog Title', // The dialog's title - displayed in the dialog header
+  body: {
+    type: 'panel', // The root body type - a Panel or TabPanel
+    items: [ // A list of panel components
+      {
+        type: 'htmlpanel', // an HTML panel component
+        html: 'Panel content goes here.'
+      }
+    ]
+  },
+  buttons: [ // A list of footer buttons
+    {
+      type: 'submit',
+      text: 'OK'
+    }
+  ]
 });
 ----

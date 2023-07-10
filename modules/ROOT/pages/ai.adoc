@@ -11,8 +11,10 @@ include::partial$misc/admon-premium-plugin.adoc[]
 
 include::partial$misc/admon-requires-6.6v.adoc[]
 
-// What does the plugin do?
-// Why use the plugin?
+The {pluginname} allows a {productname} document to send queries to registered AI APIs and either:
+
+. add the returned results to a document; or
+. temporarily store the returned results for later use.
 
 == Interactive example
 

@@ -116,11 +116,15 @@ For details see the xref:dialog-configuration.adoc#configuration-parameters[Conf
 
 With the release of the new xref:new-premium-plugin[AI Assistant Premium plugin], {productname}’s default available icon set has been updated.
 
-This update includes three new icons:
+This update includes three new icons.
 
-. `ai-prompt`
-. `ai`
-. `send`
+[cols="^,^,^",options="header"]
+|===
+|Identifier |Preview |Filename
+|`+ai+` |image:icons/ai.svg[ai.svg] |`+ai.svg+`
+|`+ai-prompt+` |image:icons/ai-prompt.svg[ai-prompt.svg] |`+ai-prompt.svg+`
+|`+send+` |image:icons/send.svg[send.svg] |`+send.svg+`
+|===
 
 For the full list of icons available with {productname} by default, see xref:editor-icon-identifiers.adoc[Icons available for {productname}].
 

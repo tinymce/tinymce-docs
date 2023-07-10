@@ -21,11 +21,25 @@ NOTE: if an inline dialog is open and focus is switched away from the {productna
 
 === Example: using `persistent`
 
-// This should be a working configuration. Please test.
 [source,js]
 ----
-tinymce.init({
-  selector: 'textarea',  // change this value according to your html
-  persistent: 'bottom'  // Demonstration fiddle for sample code: <https://fiddle.tiny.cloud/DBiaab>
+tinymce.activeEditor.windowManager.open({
+  title: 'Dialog Title', // The dialog's title - displayed in the dialog header
+  body: {
+    type: 'panel', // The root body type - a Panel or TabPanel
+    items: [ // A list of panel components
+      {
+        type: 'htmlpanel', // an HTML panel component
+        html: 'Panel content goes here.'
+      }
+    ]
+  },
+  buttons: [ // A list of footer buttons
+    {
+      type: 'submit',
+      text: 'OK'
+    }
+  ]
+  { inline, persistent: 'true' }
 });
 ----

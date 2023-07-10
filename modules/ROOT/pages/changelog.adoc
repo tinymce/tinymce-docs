@@ -11,7 +11,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Added a new property — `persistent` — for inline dialog configurations that will stop the dialog closing when clicking away from it.
 * New `ai`, `ai-prompt` and `send` icons.
 * Added a new property — `streamContent` — for the `iframe` dialog component. This causes `setData()` to update content without reloading the frame, and end scroll positions will be maintained as new content streams in.
-* AI plugin toolbar items added to the default toolbar and AI plugin menu items added to the default menu bar.
+* AI Assistant plugin toolbar items added to the default toolbar and AI Assistant plugin menu items added to the default menu bar.
 * Added a new property — `border` — for the `iframe` dialog component that allows a border to be added.
 * Added a new property — `align` — for the label dialog component that controls text alignment.
 

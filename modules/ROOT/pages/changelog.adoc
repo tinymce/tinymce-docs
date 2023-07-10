@@ -7,7 +7,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 == 6.6.0 - 2023-07-12
 
 === Added
-* Added a new property — `bottom` — for inline dialog configurations that anchors the dialog to the bottom of the editor.
+* Added a new property value — `bottom` — for inline dialog configurations that anchors the dialog to the bottom of the editor.
 * Added a new property — `persistent` — for inline dialog configurations that will stop the dialog closing when clicking away from it.
 * New `ai`, `ai-prompt` and `send` icons.
 * Added a new property — `streamContent` — for the `iframe` dialog component. This causes `setData()` to update content without reloading the frame, and end scroll positions will be maintained as new content streams in.

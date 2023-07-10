@@ -50,7 +50,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.6 also includes the following additions:
 
-=== Added a new property — `bottom` — to inline dialog configurations
+=== Added a new property — `bottom` — for inline dialog configurations that anchors the dialog to the bottom of the editor
 //#TINY-9888
 
 We have added a new option that opens an inline dialog. This inline dialog will be positioned at the bottom of the editor, if the `toolbar_location` option is set to top. This option doesn’t have any impact on the modal dialog, only inline dialog are positioned at the bottom of the editor, if this setting was set to inline: 'bottom' 
@@ -59,7 +59,7 @@ This new inline dialog option allows the inline dialog to be positioned at the b
 
 For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 
-=== Added a new property — `persistent` — for inline dialog configurations that controls dialog persistence when not in focus
+=== Added a new property — `persistent` — for inline dialog configurations that will stop the dialog closing when clicking away from it
 //#TINY-9991
 
 A new, and optional, property, — `+persistent+` — is available for inline dialog configuration.
@@ -72,18 +72,18 @@ Also, setting the property to `+true+` does not over-ride normal mechanisms for 
 
 For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 
-=== Added a new property — `streamContent` — for the `iframe` dialog component which controls dialog `setData()` behavior
+=== Added a new property — `streamContent` — for the `iframe` dialog component
 //#TINY-10032
 
-A new, and optional, property, — `+streamContent+` — is avalable for `iframe` dialog components.
+A new, and optional, property, — `+streamContent+` — is available for `iframe` dialog components.
 
-When this property is set to `true`, content within the `iframe` component is updated using `document.write()` rather than `srcdoc`.
+When this property is set to `true`, `setData()` updates content within the `iframe` component using `document.write()` rather than `srcdoc`. 
 
-As a consequence, the component’s contents update without flickering. As well, if the `iframe` component is currently scrolled to the end of the extant content, this position will be maintained as new content is added.
+As a consequence, the component’s contents update without reloading the frame and without flickering. As well, if the `iframe` component is currently scrolled to the end of the extant content, this position is maintained as new content is added.
 
 For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 
-=== Added a new property — `border` — for the `iframe` dialog component that controls border visibility
+=== Added a new property — `border` — for the `iframe` dialog component that allows a border to be added
 //#TINY-10049
 
 A new, and optional, property — `+border+` — is available for the dialog component, `+iframe+`.
@@ -94,7 +94,7 @@ If the property is not explicitly set, it is set to `+false+`, matching the pres
 
 For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 
-=== Added a new property — `align` — for the label dialog component that controls text alignment
+=== Added a new property — `align` — for the label dialog component that controls text alignment
 //#TINY-10058
 
 A new, and optional, property — `+align+` — is available for the dialog component, `+label+`.
@@ -105,7 +105,7 @@ If the property is not explicitly set, it uses a default value which sets label 
 
 For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 
-=== - New `ai`, `ai-prompt` and `send` icons.
+=== New `ai`, `ai-prompt` and `send` icons
 //#TINY-9942
 
 // CCFR here.
@@ -150,7 +150,7 @@ For details see the xref:dialog-configuration.adoc#configuration-parameters[Conf
 [[change]]
 == Change
 
-=== The icon in `alertbanner` dialog component is not clickable if the _URL_ field is not specified
+=== The icon in an `alertbanner` dialog component is no longer clickable if the _URL_ field is not specified
 //#TINY-10013
 
 // CCFR here
@@ -161,7 +161,7 @@ For details see the xref:dialog-configuration.adoc#configuration-parameters[Conf
 
 {productname} 6.6 also includes the following bug fix:
 
-=== Fixed an issue that prevented setting the inline dialog `size` to _medium_ or _normal_
+=== Fixed an issue that caused the inline dialog `size` setting to have no effect
 //#TINY-10015
 
 Previously, although the inline dialog specification included a `size` option, the function was not implemented. As a consequence, no matter what value `size` was set to, an inline dialog’s size defaulted to `normal`.

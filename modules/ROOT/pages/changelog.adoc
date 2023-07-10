@@ -7,22 +7,22 @@ NOTE: This is the {productname} Community version changelog. For information abo
 == 6.6.0 - 2023-07-12
 
 === Added
-* Added a new property — `bottom` — for inline dialog configurations.
-* Added a new property — `persistent` — for inline dialog configurations that controls dialog persistence when not in focus.
+* Added a new property — `bottom` — for inline dialog configurations that anchors the dialog to the bottom of the editor.
+* Added a new property — `persistent` — for inline dialog configurations that will stop the dialog closing when clicking away from it.
 * New `ai`, `ai-prompt` and `send` icons.
-* Added a new property — `streamContent` — for the `iframe` dialog component which controls dialog `setData()` behavior.
+* Added a new property — `streamContent` — for the `iframe` dialog component. This causes `setData()` to update content without reloading the frame, and end scroll positions will be maintained as new content streams in.
 * AI plugin toolbar items added to the default toolbar and AI plugin menu items added to the default menu bar.
-* Added a new property — `border` — for the `iframe` dialog component that controls border visibility.
-* Added a new property — `align` — for the label dialog component that controls text alignment.
+* Added a new property — `border` — for the `iframe` dialog component that allows a border to be added.
+* Added a new property — `align` — for the label dialog component that controls text alignment.
 
 === Improved
 * Displaying the footer section of a modal or inline dialog is now optional.
 
 === Changed
-* The icon in an `alertbanner` dialog component is not clickable if the _URL_ field is not specified.
+* The icon in an `alertbanner` dialog component is no longer clickable if the _URL_ field is not specified.
 
 === Fixed
-* Fixed an issue that prevented setting the inline dialog `size` to _medium_ or _normal_.
+* Fixed an issue that caused the inline dialog `size` setting to have no effect.
 
 == 6.5.1 - 2023-06-19
 

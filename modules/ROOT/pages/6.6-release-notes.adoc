@@ -174,7 +174,15 @@ For details see the xref:dialog-configuration.adoc#configuration-parameters[Conf
 === The icon in an `alertbanner` dialog component is no longer clickable if the _URL_ field is not specified
 //#TINY-10013
 
-// CCFR here
+The `url` argument in an `alertbanner` dialog component is optional. When it is specified, the value of the argument is passed to the `onAction` function when the dialog’s icon is activated by clicking or pressing.
+
+Previously, however, when the `url` argument was not specified, the dialog icon remained clickable or pressable, even though nothing happened on this user action.
+
+With this update, this has been changed.
+
+The icon in an `alertbanner` dialog remains visible, but it is no longer clickable if the `url` argument is not specified.
+
+For more information on `alertbanner` dialog components, see xref:dialog-components.adoc#alertbanner[Alert banner section] of the Dialog components documentation.
 
 
 [[bug-fix]]

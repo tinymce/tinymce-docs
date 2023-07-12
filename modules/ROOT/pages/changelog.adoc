@@ -16,9 +16,6 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Added a new property — `align` — for the label dialog component that controls text alignment.
 
 === Improved
-* Displaying the footer section of a modal or inline dialog is now optional.
-
-=== Improved
 * When defining a modal or inline dialog, if the buttons property is an empty array, or is not defined at all, the footer will now no longer be rendered.
 * The `iframe` dialog component now has a minimum height of 200px.
 

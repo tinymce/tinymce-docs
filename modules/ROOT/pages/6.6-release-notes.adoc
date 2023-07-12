@@ -213,7 +213,9 @@ size: 'large',
 
 — now changes the dialog’s width, as expected.
 
-=== Fixed an issue that prevented the close button from being clicked when the dialog was blocked.
+=== Fixed an issue that prevented the close button from being clicked when the dialog was blocked
 //#TINY-10056
 
-// CCFR
+Previously, when a dialog was blocking, the close button — *X* — became inactive. Pressing the *Esc* key still closed the dialog, but the close button was not available to a mouse pointer and could not be navigated to using keyboard navigation.
+
+As of {productname} 6.6 this has been corrected. A dialog’s close button now remains active and available as a tool for closing a dialog, even when the dialog is blocking.

@@ -167,6 +167,11 @@ When defining a modal or inline dialog, set the `buttons` property to `undefined
 
 For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 
+=== The `iframe` dialog component now has a minimum height of 200px
+//#TINY-10059
+
+//CCFR
+
 
 [[change]]
 == Change
@@ -207,3 +212,8 @@ size: 'large',
 ----
 
 — now changes the dialog’s width, as expected.
+
+=== Fixed an issue that prevented the close button from being clicked when the dialog was blocked.
+//#TINY-10056
+
+// CCFR

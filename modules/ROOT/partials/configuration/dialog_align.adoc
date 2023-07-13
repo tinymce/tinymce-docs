@@ -34,7 +34,7 @@ tinymce.activeEditor.windowManager.open({
         {
           type: 'label', // component type
           label: 'Caption', // text for the group label
-          align: `end`,
+          align: 'end',
           items: [
             {
               type: 'htmlpanel', // an HTML panel component
@@ -52,10 +52,3 @@ tinymce.activeEditor.windowManager.open({
   ]
 });
 ----
-
-// Remove if not applicable
-=== Limitation of the `align` option
-
-The `align` option has the following limitations.
-
-<List the things we can't or wont fix, as well as complicated complications and risks>

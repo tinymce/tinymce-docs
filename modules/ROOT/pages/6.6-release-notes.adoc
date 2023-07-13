@@ -66,7 +66,7 @@ With this update, a new value can be passed with this second argument: `{ inline
 
 This new inline dialog option sets the inline dialog to appear at the bottom of the editor viewport.
 
-For details see the xref:dialog-configuration.adoc#dialog-position[Dialog position section] of the Dialog configuration documentation.
+For details, see the xref:dialog-configuration.adoc#dialog-position[Dialog position section] of the Dialog configuration documentation.
 
 === Added a new property — `persistent` — for inline dialog configurations that will stop the dialog closing when clicking away from it
 //#TINY-9991
@@ -79,7 +79,7 @@ If the property is not explicitly set, it is set to `+false+`, matching inline d
 
 Also, setting the property to `+true+` does not over-ride normal mechanisms for closing a dialog, such as clicking the _Close_ button or pressing the *Esc* key.
 
-For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
+For details, see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 
 === Added a new property — `streamContent` — for the `iframe` dialog component
 //#TINY-10032
@@ -90,7 +90,7 @@ When this property is set to `true`, `setData()` updates content within the `ifr
 
 As a consequence, the component’s contents update without reloading the frame and without flickering. As well, if the `iframe` component is currently scrolled to the end of the extant content, this position is maintained as new content is added.
 
-For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
+For details, see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 
 === Added a new property — `border` — for the `iframe` dialog component that allows a border to be added
 //#TINY-10049
@@ -101,7 +101,7 @@ When this property is set to `true`, a border displays around the `+iframe+` com
 
 If the property is not explicitly set, it is set to `+false+`, matching the presentation norm prior to it being added to {productname}.
 
-For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
+For details, see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 
 === Added a new property — `align` — for the label dialog component that controls text alignment
 //#TINY-10058
@@ -112,7 +112,7 @@ This property allows text in this component be set left-, centre-, or right-alig
 
 If the property is not explicitly set, it uses a default value which sets label text to present as it has always been presented: left-aligned for LTR languages; and right-aligned for RTL languages.
 
-For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
+For details, see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 
 === New `ai`, `ai-prompt` and `send` icons
 //#TINY-9942
@@ -165,7 +165,7 @@ As of {productname} 6.6, it is possible to configure a custom dialog to not rend
 
 When defining a modal or inline dialog, set the `buttons` property to `[]` (an empty array) or do not define the property at all. The result is a dialog that displays without rendering the footer section.
 
-For details see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
+For details, see the xref:dialog-configuration.adoc#configuration-parameters[Configuration parameters section] of the Dialog configuration documentation.
 
 === The `iframe` dialog component now has a minimum height of 200px
 //#TINY-10059

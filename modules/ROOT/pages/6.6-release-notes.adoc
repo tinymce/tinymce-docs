@@ -95,7 +95,9 @@ For details, see the xref:dialog-configuration.adoc#configuration-parameters[Con
 === Added a new property — `border` — for the `iframe` dialog component that allows a border to be added
 //#TINY-10049
 
-A new, and optional, property — `+border+` — is available for the dialog component, `+iframe+`.
+Previously, {productname} provided no option to set a border around the `iframe` dialog component. This caused UX and accessibility issues since the `iframe` bounds were not visible and the iframe showed no highlight when it was made the current focus.
+
+With {productname} 6.6, a new, and optional, property — `+border+` — is now available for the dialog component, `+iframe+`.
 
 When this property is set to `true`, a border displays around the `+iframe+` component. As well, when the `+border+` property is set to `true`, the iframe component is highlighted when it is given focus.
 

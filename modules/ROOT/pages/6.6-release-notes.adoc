@@ -170,7 +170,13 @@ For details see the xref:dialog-configuration.adoc#configuration-parameters[Conf
 === The `iframe` dialog component now has a minimum height of 200px
 //#TINY-10059
 
-//CCFR
+The `iframe` dialog component is primarily used for display: it takes in html as a string and displays it within the dialog.
+
+Previously, however, the component had no required or default height.
+
+As of the {productname} 6.6 update, the component has a minimum height of 200px, improving its out-of-the-box utility as a display component.
+
+For more information about this component, see the xref:dialog-components.adoc#iframe[`iframe` section] of the Dialog components documentation.
 
 
 [[change]]

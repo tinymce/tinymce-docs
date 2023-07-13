@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### Unreleasd
+
+- DOC-2104: File, `dialog_align.adoc`, added to `/partials/configuration/`; documentation of `align`, a property available to the `label` dialog component, added to file.
+
 ### 2023-06-21
 
 - DOC-2081: Updates to 6.5.1 release-notes accordion.adoc file.

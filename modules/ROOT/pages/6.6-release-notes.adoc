@@ -13,10 +13,10 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 * xref:new-premium-plugin[New Premium plugin]
 * xref:accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
-* xref:improvement[Improvement]
+* xref:improvements[Improvements]
 * xref:additions[Additions]
 * xref:change[Change]
-* xref:bug-fix[Bug fix]
+* xref:bug-fixes[Bug fixes]
 
 
 [[new-premium-plugin]]
@@ -149,8 +149,8 @@ NOTE: further **AI Assistant**-specific menu items are generated based on the se
 For more information on **AI Assistant**, see xref:ai.adoc[AI Assistant].
 
 
-[[improvement]]
-== Improvement
+[[improvements]]
+== Improvements
 
 {productname} 6.6 also includes the following improvement:
 
@@ -190,10 +190,10 @@ The icon in an `alertbanner` dialog remains visible, but it is no longer clickab
 For more information on `alertbanner` dialog components, see xref:dialog-components.adoc#alertbanner[Alert banner section] of the Dialog components documentation.
 
 
-[[bug-fix]]
-== Bug fix
+[[bug-fixes]]
+== Bug fixes
 
-{productname} 6.6 also includes the following bug fix:
+{productname} 6.6 also includes the following bug fixes:
 
 === Fixed an issue that caused the inline dialog `size` setting to have no effect
 //#TINY-10015

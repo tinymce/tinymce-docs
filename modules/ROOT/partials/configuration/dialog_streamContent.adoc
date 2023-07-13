@@ -1,25 +1,26 @@
 [[streamContent]]
 == `streamContent`
 
-////
+`+streamContent+` is an optional property, available to add to the `+iframe+` dialog component.
 
-With the property set to true, frame content will update with document.write() to avoid reloading the frame, and end scroll positions will be maintained as new content streams in.
+The property has a default value of `+false+`.
 
+When `+streamContent+` is set to true, content presented within the `+iframe+` dialog component is updated using the `document.write()` method, rather than the by using the `+srcdoc+` attribute.
 
+The `+srcdoc+` attribute requires the `+iframe+` be reloaded each time the content changes. This results in a flickering effect.
 
-What does the option do? Why/when use it?
-What is the values you can use and what do they do?
-Is there any risks? (But explain them without saying the word `risk` or similar. Use warnings if needed.) For longer, complicated 'risks' and issues, use the limitations section.
+As well, performing updates via the `+srcdoc+` attribute means the contents of the `+iframe+` are not accessible. As a consequence, it is not possible to automatically scroll the `+iframe+` contents to the bottom as it gets updated.
 
-*Type:* `+String+`
+Setting `+streamContent+` to `+true+`, and switching the update mechanism to the `document.write()` method, stops the flickering and allows the `+iframe+` to constantly present the incoming content at an end-of-the-current data position.
+
+*Type:* `+Boolean+`
 
 *Possible values:* `+true+` `+false+`
 
 *Default value:* `false`
 
-=== Example: using `streamContent`
+=== Example: setting an `iframe` component to display updating content using the `streamContent` property
 
-// This should be a working configuration. Please test.
 [source,js]
 ----
 tinymce.activeEditor.windowManager.open({
@@ -28,8 +29,9 @@ tinymce.activeEditor.windowManager.open({
     type: 'panel', // The root body type - a Panel or TabPanel
     items: [ // A list of panel components
       {
-        type: 'htmlpanel', // an HTML panel component
-        html: 'Panel content goes here.'
+        name: 'preview',
+        type: 'iframe',
+        streamContent: true,
       }
     ]
   },
@@ -39,12 +41,14 @@ tinymce.activeEditor.windowManager.open({
       text: 'OK'
     }
   ]
-});
+}, { inline: 'bottom' } );
 ----
 
-// Remove if not applicable
-=== Limitation of the `streamContent` option
+[NOTE]
 
-The `streamContent` option has the following limitations.
+.Dialog position
+====
+The example above also adds a second argument — `{ inline: 'bottom' } — to the dialog. This argument changes the presented position of the dialog within the {productname} editor.
 
-<List the things we can't or wont fix, as well as complicated complications and risks>
+For information on using this property see the xref:dialog-configuration.adoc#dialog-position[Dialog position] section of the xref:dialog-configuration.adoc[Dialog configuration documentation].
+====

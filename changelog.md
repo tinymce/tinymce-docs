@@ -6,7 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
-- DOC-2093: added files and particularised boiler plate for the 6.6 Release notes.
+- DOC-2093: the TinyMCE 6.6 Release notes.
 
 ### 2023-06-21
 

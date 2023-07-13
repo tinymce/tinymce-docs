@@ -170,13 +170,25 @@ For details, see the xref:dialog-configuration.adoc#configuration-parameters[Con
 === The `iframe` dialog component now has a minimum height of 200px
 //#TINY-10059
 
-The `iframe` dialog component is primarily used for display: it takes in html as a string and displays it within the dialog.
+The `iframe` dialog component takes in html as a string and displays it within the dialog.
 
-Previously, however, the component had no required or default height.
+And, previously, the component’s height adjusted dynamically to take up the space remaining in a dialog once other components were rendered.
 
-As of the {productname} 6.6 update, the component has a minimum height of 200px, improving its out-of-the-box utility as a display component.
+Large dialogs have a purposefully large fixed height, creating substantial empty space for the `iframe` component to dynamically fill.
+
+Examples of large dialogs include the dialogs presented by choosing *View → Preview* or *View → Source code* from a default {productname} instance menu bar.
+
+Medium dialogs, however, do not have a static height. Instead, they render with the height needed to fit its components.
+
+As a consequence, `iframe` dialog components placed within medium dialogs acquired their height value from the host browser, taking said host browser’s minimum iframe height.
+
+In many circumstances, this produced a display area to small to usefully display the content added to the `iframe` component.
+
+As of the {productname} 6.6 update, the component has a minimum height of 200px, improving its out-of-the-box utility as a display component, particularly in medium dialogs.
 
 For more information about this component, see the xref:dialog-components.adoc#iframe[`iframe` section] of the Dialog components documentation.
+
+For more information about dialogs, see the xref:dialog-configuration.adoc[Dialog configuration] documentation.
 
 
 [[change]]

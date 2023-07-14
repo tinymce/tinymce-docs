@@ -230,10 +230,13 @@ Setting an inline dialog to any of the supported sizes —
 ----
 size: 'normal', // or
 size: 'medium', // or
-size: 'large',
 ----
 
 — now changes the dialog’s width, as expected.
+
+For more information see the xref:dialog-configuration.adoc#options[Options] table in the xref:dialog-configuration.adoc[Dialog configuration documentation].
+
+NOTE: `inline` dialogs do not support `size: 'large'`.
 
 === Fixed an issue that prevented the close button from being clicked when the dialog was blocked
 //#TINY-10056

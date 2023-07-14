@@ -25,22 +25,24 @@ Setting `+streamContent+` to `+true+`, and switching the update mechanism to the
 ----
 tinymce.activeEditor.windowManager.open({
   title: 'Dialog Title', // The dialog's title - displayed in the dialog header
+  size: 'normal',
   body: {
     type: 'panel', // The root body type - a Panel or TabPanel
     items: [ // A list of panel components
+    {
+      name: 'preview',
+      type: 'iframe',
+      streamContent: 'true',
+      border: 'true',
+    }
+    ]
+    },
+    buttons: [ // A list of footer buttons
       {
-        name: 'preview',
-        type: 'iframe',
-        streamContent: true,
+        type: 'submit',
+        text: 'OK'
       }
     ]
-  },
-  buttons: [ // A list of footer buttons
-    {
-      type: 'submit',
-      text: 'OK'
-    }
-  ]
 }, { inline: 'bottom' } );
 ----
 
@@ -51,3 +53,6 @@ The example above also adds a second argument — `{ inline: 'bottom' } — to 
 
 For information on using this property see the xref:dialog-configuration.adoc#dialog-position[Dialog position] section of the xref:dialog-configuration.adoc[Dialog configuration documentation].
 ====
+
+
+

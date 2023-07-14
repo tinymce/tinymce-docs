@@ -45,7 +45,7 @@ tinymce.activeEditor.windowManager.open({
 |title |string |required |The title of the dialog. This will display in the header of the dialog.
 |body |`+panel+` or `+tabpanel+` component |required |The specification for the xref:dialog-components.adoc[body component].
 |buttons |`+FooterButton[]+` |required |An array of xref:dialog-footer-buttons.adoc[footer buttons] to render in the footer of the dialog.
-|size |`+'normal'+`, `+'medium'+` or `+'large'+` |optional |default: `+normal+`. `+large+` sets the dialog to a large fixed height. `+medium+` sets the dialog to render with only the height required to fits its components. `+normal+` *[does what?]*
+|size |`+'normal'+`, `+'medium'+` or `+'large'+` |optional |default: `+normal+`. `+large+` sets the dialog to a large fixed height. `+medium+` sets the dialog to render with only the height required to fits its components. `+normal+` *[does what?]*. `inline` dialogs do not support `size: 'large'`.
 |initialData |object |optional |An object containing initial values for the dialog's panel components.
 |onAction |`+(dialogApi, details) => void+` |optional |Function invoked when a user interacts with a `+button+` type panel component, clicks a *Custom* type footer button, or clicks an item in a *Menu* type footer button.
 |onSubmit |`+(dialogApi) => void+` |optional |Function invoked when a *Submit* type footer button is clicked.

@@ -11,11 +11,23 @@ When set to `+false+`, the AI Assistant shortcuts menu and toolbar item do not p
 
 When configured with an instance-specific object array, the AI Assistant shortcuts menu and toolbar item present, and display the configured shortcuts when activated.
 
-Setting `+ai_shortcuts+` to an empty array is also possible. It is functionally equivalent to setting the option to `+false+`.
+Setting `+ai_shortcuts+` to an empty array — `+[]+` — is also possible. It is functionally equivalent to setting the option to `+false+`.
 
 *Type:* either `+true+`, or `+false+` *or* an `+array+`
 
 *Default value:* `+true+`
+
+[NOTE]
+.Setting `ai_shortcuts` to other values
+====
+If `ai_shortcuts` is set to a value other than
+
+- `+false+`;
+- `+[]+` (an empty array); or
+- a custom array
+
+the AI Assistant treats the value as `+true+`.
+====
 
 === The default set of shortcuts presented when `ai_shortcuts` is set to `+true+`.
 
@@ -36,14 +48,14 @@ Setting `+ai_shortcuts+` to an empty array is also possible. It is functionally 
     { title: 'Humour', prompt: 'Add humour to this.' },
     { title: 'Inspirational', prompt: 'Inspire reader with this.' },
     { title: 'Persuasive', prompt: 'Make this persuasive.' },
-    ] },
+  ] },
   { title: 'Change style', subprompts: [
     { title: 'Business', prompt: 'Make this business-like.' },
     { title: 'Legal', prompt: 'Legal style this.' },
     { title: 'Journalism', prompt: 'Journalistic style this.' },
     { title: 'Medical', prompt: 'Medical style this.' },
     { title: 'Poetic', prompt: 'Make this poetic.' },
-    ] },
+  ] },
 ]
 ----
 
@@ -59,13 +71,13 @@ tinymce.init({
     { title: 'Dialogue', prompt: 'Convert this to a Socratic dialogue.' },
     { title: 'Homeric', prompt: 'Convert this to a Classical Epic.' },
     ]
-  }
+  },
   { title: 'Celtic', subprompts:
     [
-    { title: 'Bardic', prompt: 'Convert this to Bardic verse.' }
-    { title: 'Filí', prompt: 'Convert this to Filí-an verse.' }
+    { title: 'Bardic', prompt: 'Convert this to Bardic verse.' },
+    { title: 'Filí', prompt: 'Convert this to Filí-an verse.' },
     ]
-  }
+  },
 ]'
 });
 ----
@@ -78,6 +90,6 @@ To disable the AI Assistant shortcuts meny and toolbar options, set `ai_shortcut
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  ai_shortcuts: 'false',
+  ai_shortcuts: false,
 });
 ----

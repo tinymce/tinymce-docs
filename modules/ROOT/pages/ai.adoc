@@ -28,7 +28,7 @@ When a solution that is both useful and workable is found, it will replace this 
 
 == Basic setup
 
-To add the {pluginname} plugin to the editor, add `{plugincode}` to the `plugins` option in the editor configuration.
+To add the {pluginname} plugin to the editor, add both `{plugincode}` to the `plugins` option in the editor configuration and the `ai_request` function to the editor configuration.
 
 For example:
 

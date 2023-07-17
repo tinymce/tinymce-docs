@@ -1,11 +1,5 @@
-[[ai_config_3]]
-== `ai_config_3`
-
-// Replace all instances of ai_config_3 with the
-// configuration option name then remove this comment.
-
-// Add explanatory material as per the comment block below then remove
-// the block and this comment.
+[[ai_threadlog]]
+== `ai_threadlog`
 
 ////
 What does the option do?
@@ -27,13 +21,13 @@ Are there risks?
 *Default value:* `false`, `1`, `'string1'`
 
 // Add a working and tested configuration.
-=== Example: using `ai_config_3`
+=== Example: using `ai_threadlog`
 
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
-  ai_config_3: '<value>'
+  ai_threadlog: '<value>'
 });
 ----
 
@@ -41,21 +35,21 @@ tinymce.init({
 // or remove if not applicable.
 === Example: disabling the <feature>
 
-To disable <feature>, set `ai_config_3` to `false`.
+To disable <feature>, set `ai_threadlog` to `false`.
 
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  ai_config_3: 'false'
+  ai_threadlog: 'false'
 });
 ----
 
 // Remove if not applicable.
 // Edit the sub-head to singular or plural as required.
-=== Limitation(s) of the `ai_config_3` option
+=== Limitation(s) of the `ai_threadlog` option
 
-The `ai_config_3` option has the following limitations.
+The `ai_threadlog` option has the following limitations.
 
 // Add explanatory material as per the comment block below then remove
 // the block and this comment.

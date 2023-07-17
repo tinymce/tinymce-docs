@@ -10,45 +10,51 @@
 include::partial$misc/admon-ai-pricing.adoc[]
 
 
-== What is an Ai proxy server?
+== What is an AI proxy server?
 
-A proxy is a server that sits between the browser containing the {productname} editor and the Ai LLM, eg: OpenAi server.  The browser does not communicate directly to the Ai LLM, instead goes through the proxy.  The ai enhanced responses from the LLM go back through the proxy then to the browser. The proxy adds a layer of flexibility by allowing extra processing before the request is sent to the LLM and before returning the response to the uses editing session in the browser.
+A proxy is a server that sits between the browser containing the {productname} editor and the AI Large Language Model (LLM), for example, the OpenAI server.
+
+With a proxy server in place, {productname} does not communicate directly with the AI LLM. Instead requests go through the proxy.
+
+The responses the LLM AI, in return, also go through the proxy and then to {productname}.
+
+The proxy adds a layer of flexibility by allowing extra processing before the request is sent to the LLM and before returning the response to the editing session in {productname}.
 
 == Why do I need a proxy service?
-* To hide my OpenAi key, as recommended by OpenAi
-* It allows many users on different browsers to work with 1 OpenAi key
-* [Optional] It can validate logged in users and reject unauthorised usage of the OpenAi service. Recommended for production systems
-* [Optional] It allows for extra processing before sending the request to OpenAi, eg: filtering for abusive content and rejecting before OpenAi proceses it.
-* [Optional] It allows for extra processing when the server responds to the browser, eg: modifying the response, or reformatting.
+* To hide my OpenAI key, as recommended by OpenAI
+* It allows many users on different browsers to work with one OpenAI key
+* [Optional] It can validate logged-in users and reject unauthorised usage of the OpenAI service. Recommended for production systems
+* [Optional] It allows for extra processing before sending the request to OpenAI. For example, filtering for and then rejecting abusive content before the OpenAI LLM proceses it.
+* [Optional] It allows for extra processing when the server responds to {productname}. For example, modifying the response, or reformatting.
 
 
 == What do I need to setup a proxy service with TinyMCE?
 .Sign up for the TinyMCE {pluginname}
 [%collapsible]
 ====
-The TinyMCE <Plugin Name> provides the end user Ui interaction components and workflows. This enables end users to make Ai requests, modify, fine tune results and insert enhanced content back into the editor.  The plugin also provides the server request component that sends user requests to the Ai LLM service.
+The TinyMCE {pluginname} provides the end user Ui interaction components and workflows. This enables end users to make AI requests, modify, fine tune results and insert enhanced content back into the editor. The plugin also provides the server request component that sends user requests to the AI LLM service.
 ====
 .Select a proxy server of your choice
 [%collapsible]
 ====
-Choose a proxy server that works for your implementation, for demonstration purposes, we will use XXXXYYY as a reference.  The proxy server can work with other services to pre-process requests before sending the final request with the OpenAI api key to the OpenAI server.  In addition, the proxy can also provide an extra layer of processing when receiving a response from the OpenAi server before delivering to the editing session in the browser.
+Choose a proxy server that works for your implementation, for demonstration purposes, we will use XXXXYYY as a reference. The proxy server can work with other services to pre-process requests before sending the final request with the OpenAI api key to the OpenAI server. In addition, the proxy can also provide an extra layer of processing when receiving a response from the OpenAI server before delivering to the editing session in the browser.
 ====
-.OpenAi chat completions API
+.OpenAI chat completions API
 [%collapsible]
 ====
-This is the Ai service that will return the enhanced Ai content, you will need to setup an account with OpenAi.  You will also recieve the OpenAi key, which we you will need to make Ai requests from the OpenAi service.
+This is the AI service that will return the enhanced AI content, you will need to setup an account with OpenAI. You will also recieve the OpenAI key, which we you will need to make AI requests from the OpenAI service.
 ====
 .Optional, An authentication endpoint, recommended for production systems
 [%collapsible]
 ====
-For production systems, before sending any requests to the OpenAi server, its recommended to check if the user is allowed to make these requests otherwise reject. An authentication service is needed to provide this mechanism.
+For production systems, before sending any requests to the OpenAI server, its recommended to check if the user is allowed to make these requests otherwise reject. An authentication service is needed to provide this mechanism.
 ====
-.Optional, OpenAi moderation Api
+.Optional, OpenAI moderation Api
 [%collapsible]
 ====
-OpenAi has an abuse policy, where frequent voilation may lead to account suspension.  To prevent this, a moderation service can pre-filter abusive content and reject the request.
+OpenAI has an abuse policy, where frequent voilation may lead to account suspension. To prevent this, a moderation service can pre-filter abusive content and reject the request.
 ====
 
 Below is a flow diagram that illustrates how the above components work together to provide the AI enhanced experience.
 
-image::{imagesdir}/ai-plugin/ai-proxy-call-flows.png[OpenAi Proxy Call Flows]
+image::{imagesdir}/ai-plugin/ai-proxy-call-flows.png[OpenAI Proxy Call Flows]

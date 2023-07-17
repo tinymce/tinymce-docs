@@ -1,37 +1,22 @@
 [[ai_shortcuts]]
 == `ai_shortcuts`
 
-The `+ai_shortcuts+` option controls whether or not the AI Assistant shortcuts menu and toolbar option presents.
+The `+ai_shortcuts+` option controls the list of AI Assistant shortcuts available in the `+AI Shortcuts+` toolbar button and menu item.
 
-As well, it can be configured with an array to present a customised set of AI Assistant shortcuts.
+This option can be configured with an array to present a customised set of AI Assistant shortcuts.
 
-When set to `+true+`, the AI Assistant shortcuts menu and toolbar item present and display the default set of shortcuts included with the AI Assistant.
+As well, it can be set to a `+Boolean+` value to control the use of the default list of AI Assistant shortcuts.
 
-When set to `+false+`, the AI Assistant shortcuts menu and toolbar item do not present in the {productname} instance.
+When not specified, or set to `+true+`, the AI Assistant shortcuts toolbar button and menu item present and display the default set of shortcuts included with the AI Assistant.
 
-When configured with an instance-specific object array, the AI Assistant shortcuts menu and toolbar item present, and display the configured shortcuts when activated.
+When set to `+[]+` (an empty array), or `+false+`, the AI Assistant shortcuts toolbar button and menu item do not present in the {productname} instance.
 
-Setting `+ai_shortcuts+` to an empty array — `+[]+` — is also possible. It is functionally equivalent to setting the option to `+false+`.
+When configured with an instance-specific object array, the AI Assistant shortcuts toolbar button and menu item present, and display the configured shortcuts when activated.
 
-*Type:* either `+true+`, or `+false+` *or* an `+array+`
+*Type:* `+Array+` of `+Objects+`, or `+Boolean+`
 
-*Default value:* `+true+`
-
-[NOTE]
-.Setting `ai_shortcuts` to other values
-====
-If `ai_shortcuts` is set to a value other than
-
-- `+false+`;
-- `+[]+` (an empty array); or
-- a custom array
-
-the AI Assistant treats the value as `+true+`.
-====
-
-=== The default set of shortcuts presented when `ai_shortcuts` is set to `+true+`.
-
-[source,js]
+*Default value:* 
+[source, js]
 ----
 [
   { title: 'Summarize', prompt: 'Briefly summarize this.' },
@@ -59,26 +44,29 @@ the AI Assistant treats the value as `+true+`.
 ]
 ----
 
+NOTE: The default shortcuts are subject to change in an upcoming release. If you intend to keep these shortcuts, include them within your integration.
+
+
 === Example: using `ai_shortcuts` to present a customised set of AI Assistant shortcuts
 
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
-  ai_shortcuts: '[
-  { title: 'Classical', subprompts: 
-    [
-    { title: 'Dialogue', prompt: 'Convert this to a Socratic dialogue.' },
-    { title: 'Homeric', prompt: 'Convert this to a Classical Epic.' },
-    ]
-  },
-  { title: 'Celtic', subprompts:
-    [
-    { title: 'Bardic', prompt: 'Convert this to Bardic verse.' },
-    { title: 'Filí', prompt: 'Convert this to Filí-an verse.' },
-    ]
-  },
-]'
+  ai_shortcuts: [
+    { title: 'Classical', subprompts: 
+      [
+      { title: 'Dialogue', prompt: 'Convert this to a Socratic dialogue.' },
+      { title: 'Homeric', prompt: 'Convert this to a Classical Epic.' },
+      ]
+    },
+    { title: 'Celtic', subprompts:
+      [
+      { title: 'Bardic', prompt: 'Convert this to Bardic verse.' },
+      { title: 'Filí', prompt: 'Convert this to Filí-an verse.' },
+      ]
+    },
+  ]
 });
 ----
 
@@ -90,6 +78,14 @@ To disable the AI Assistant shortcuts meny and toolbar options, set `ai_shortcut
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  ai_shortcuts: false,
+  ai_shortcuts: false
+});
+----
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  ai_shortcuts: []
 });
 ----

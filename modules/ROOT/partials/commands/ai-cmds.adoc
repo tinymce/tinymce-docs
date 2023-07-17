@@ -1,15 +1,16 @@
 [cols="1,3",options="header"]
 |===
 |Command         |Description
-|mceAiDialog   |Description two. For details, see xref:using-mcecommandtwo[Using `+mcecommandtwo+`].
+|mceAiDialog   |This command opens the AI Assistant dialog. For details, see xref:using-mceAiDialog[Using `+mceAiDialog +`].
+|mceAiDialogClose   |This command closes the AI dialog.
 |===
 
 .Examples
 [source,js]
 ----
 tinymce.activeEditor.execCommand('mceAiDialog');
-tinymce.activeEditor.execCommand('mceAiDialog', true|false, { prompt: '<value1>', generate: true, display: falsev});
-tinymce.activeEditor.execCommand('mceAiDialog', true|false, { thread: 'mce-aithread_1234567' });
+tinymce.activeEditor.execCommand('mceAiDialog', true|false, { prompt: '<value1>', generate: true, display: false });
+tinymce.activeEditor.execCommand('mceAiDialogClose');
 ----
 
 [[using-mceAiDialog]]
@@ -23,5 +24,4 @@ tinymce.activeEditor.execCommand('mceAiDialog', true|false, { thread: 'mce-aithr
 |prompt   |`+string+`   |Not required |The prompt to pre-fill the input field with when the dialog is first opened.
 |generate |`+boolean+`  |Not required |Whether a request should be sent when the dialog is first opened.
 |display  |`+boolean+`  |Not required |Whether to display the input field and generate button in the dialog when the dialog is first opened.
-|thread   |`+'mce-aithread_<thread number>'+`  |Not required |The id of an existing thread to be reopened within the dialog.
 |===

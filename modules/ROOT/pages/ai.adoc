@@ -38,21 +38,9 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'ai',
   toolbar: 'aidialog aishortcuts',
-  ai_request: (request) => new Promise(),
-  ai_shortcuts: true,
+  ai_request: (request) => new Promise()
 });
 ----
-
-[NOTE]
-.The `ai_shortucts` option
-====
-The above example includes both AI Assistant toolbar items and an explicitly configured xref:#aishortcuts[`ai_shortcuts`] option.
-
-This latter option is set to its default value, `true`.
-
-This is equivalent to not setting this option explicitly.
-====
-
 
 == Options
 
@@ -62,8 +50,6 @@ include::partial$configuration/ai_request.adoc[][leveloffset=+1]
 
 [ai_shortcuts]
 include::partial$configuration/ai_shortcuts.adoc[][leveloffset=+1]
-
-include::partial$configuration/ai_threadlog.adoc[][leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

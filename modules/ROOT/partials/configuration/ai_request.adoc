@@ -30,7 +30,7 @@ The `+ai_request+` function is given a request object as the first parameter, wh
 
 // `+thread+`:: The history of requests and responses within the dialog, provided as an array of objects. The xref:ai.adoc#thread[`+Thread+`] section describes the details of the fields in these objects.
 
-The `+ai_request+` function returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise] that will resolve with the response as a string provided by the AI endpoint, or reject with an error or string. Any resolved response or rejected error will be displayed in the AI dialog.
+The `+ai_request+` function returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise] that will resolve with the response as a string provided by the AI endpoint, or reject with an error or string. Any resolved response or rejected error is displayed in the AI dialog.
 
 // TODO: Update with the below 
 // The response provided to the `+resolve+` promise callback can be either a `+string+` or an object with the following properties: { streaming: boolean }

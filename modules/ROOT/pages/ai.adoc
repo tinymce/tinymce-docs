@@ -16,9 +16,15 @@ The {pluginname} allows a {productname} document to send queries to registered A
 . add the returned results to a document; or
 . temporarily store the returned results for later use.
 
-== Interactive example
+[IMPORTANT]
+.On the absence of an AI Assistant demo
+====
+This initial release of the AI Assistant developer documentation does not include an in-page working demo.
 
-liveDemo::{plugincode}[]
+The logistics of setting up such a demo are still being investigated.
+
+When a solution that is both useful and workable is found, it will replace this notice.
+====
 
 == Basic setup
 
@@ -33,9 +39,20 @@ tinymce.init({
   plugins: 'ai',
   toolbar: 'aidialog aishortcuts',
   ai_request: (request) => new Promise(),
-  ai_shortcuts: [],
+  ai_shortcuts: true,
 });
 ----
+
+[NOTE]
+.The `ai_shortucts_ option
+====
+The above example includes both AI Assistant toolbar items and an explicitly configured xref:#aishortcuts[`ai_shortcuts`] option.
+
+This latter option is set to its default value, `true`.
+
+This is equivalent to not setting this option explicitly.
+====
+
 
 == Options
 
@@ -43,6 +60,7 @@ The following configuration options affect the behavior of the {pluginname} plug
 
 include::partial$configuration/ai_request.adoc[][leveloffset=+1]
 
+[ai_shortcuts]
 include::partial$configuration/ai_shortcuts.adoc[][leveloffset=+1]
 
 include::partial$configuration/ai_threadlog.adoc[][leveloffset=+1]

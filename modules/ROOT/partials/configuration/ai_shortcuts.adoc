@@ -1,69 +1,83 @@
 [[ai_shortcuts]]
 == `ai_shortcuts`
 
-// Replace all instances of ai_shortcuts with the
-// configuration option name then remove this comment.
+The `+ai_shortcuts+` option controls whether or not the AI Assistant shortcuts menu and toolbar option presents.
 
-// Add explanatory material as per the comment block below then remove
-// the block and this comment.
+As well, it can be configured with an array to present a customised set of AI Assistant shortcuts.
 
-////
-What does the option do?
-Why use it?
-When use it?
-What values can it use?
-What do these values do?
-Are there risks?
-  - Explain without using ‘risk’ or similar words.
-  - Use NOTE or IMPORTANT admonitions if helpful.
-  - For longer or more complicated scenarios, use the limitations section below.
-////
+When set to `+true+`, the AI Assistant shortcuts menu and toolbar item present and display the default set of shortcuts included with the AI Assistant.
 
-*Type:* `+Array+` of `+Objects+`
+When set to `+false+`, the AI Assistant shortcuts menu and toolbar item do not present in the {productname} instance.
 
-// Remove "Possible values" if there is no discrete set of possible values 
-*Possible values:* `'string1'`, `'string2'`, `false`
+When configured with an instance-specific object array, the AI Assistant shortcuts menu and toolbar item present, and display the configured shortcuts when activated.
 
-*Default value:* `false`, `1`, `'string1'`
+Setting `+ai_shortcuts+` to an empty array is also possible. It is functionally equivalent to setting the option to `+false+`.
 
-// Add a working and tested configuration.
-=== Example: using `ai_shortcuts`
+*Type:* either `+true+`, or `+false+` *or* an `+array+`
+
+*Default value:* `+true+`
+
+=== The default set of shortcuts presented when `ai_shortcuts` is set to `+true+`.
+
+[source,js]
+----
+[
+  { title: 'Summarize', prompt: 'Briefly summarize this.' },
+  { title: 'Explain', prompt: 'Give a short explanation of this.' },
+  { title: 'Improve grammar', prompt: 'Correct grammar.' },
+  { title: 'Improve writing', prompt: 'Enhance this text.' },
+  { title: 'Simplify language', prompt: 'Simplify this.' },
+  { title: 'Make longer', prompt: 'Expand this.' },
+  { title: 'Make shorter', prompt: 'Condense this.' },
+  { title: 'Change tone', subprompts: [
+    { title: 'Descriptive', prompt: 'Make this descriptive.' },
+    { title: 'Formal', prompt: 'Make this formal.' },
+    { title: 'Casual', prompt: 'Make this casual.' },
+    { title: 'Humour', prompt: 'Add humour to this.' },
+    { title: 'Inspirational', prompt: 'Inspire reader with this.' },
+    { title: 'Persuasive', prompt: 'Make this persuasive.' },
+    ] },
+  { title: 'Change style', subprompts: [
+    { title: 'Business', prompt: 'Make this business-like.' },
+    { title: 'Legal', prompt: 'Legal style this.' },
+    { title: 'Journalism', prompt: 'Journalistic style this.' },
+    { title: 'Medical', prompt: 'Medical style this.' },
+    { title: 'Poetic', prompt: 'Make this poetic.' },
+    ] },
+]
+----
+
+=== Example: using `ai_shortcuts` to present a customised set of AI Assistant shortcuts
 
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
-  ai_shortcuts: '<value>'
+  ai_shortcuts: '[
+  { title: 'Classical', subprompts: 
+    [
+    { title: 'Dialogue', prompt: 'Convert this to a Socratic dialogue.' },
+    { title: 'Homeric', prompt: 'Convert this to a Classical Epic.' },
+    ]
+  }
+  { title: 'Celtic', subprompts:
+    [
+    { title: 'Bardic', prompt: 'Convert this to Bardic verse.' }
+    { title: 'Filí', prompt: 'Convert this to Filí-an verse.' }
+    ]
+  }
+]'
 });
 ----
 
-// Add a working and tested configuration (edit as required)
-// or remove if not applicable.
-=== Example: disabling the <feature>
+=== Example: disabling `ai_shortcuts`
 
-To disable <feature>, set `ai_shortcuts` to `false`.
+To disable the AI Assistant shortcuts meny and toolbar options, set `ai_shortcuts` to `false` (or to `+[]+`, an empty array).
 
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  ai_shortcuts: 'false'
+  ai_shortcuts: 'false',
 });
 ----
-
-// Remove if not applicable.
-// Edit the sub-head to singular or plural as required.
-=== Limitation(s) of the `ai_shortcuts` option
-
-The `ai_shortcuts` option has the following limitations.
-
-// Add explanatory material as per the comment block below then remove
-// the block and this comment.
-
-////
-Known limitations.
-Complicated scenarios.
-Anything that warrants a CAUTION or WARNING admonition.
-///
-
-// Remove all comment lines and comment blocks before publishing.

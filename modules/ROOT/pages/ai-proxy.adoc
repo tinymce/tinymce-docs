@@ -1,14 +1,10 @@
-= Ai Proxy Server reference guide
-:navtitle: Ai proxy server
-:description: <What does this plugin do? What is the benefit? (One sentence description)>.
-:description_short: <Like description, but shorter (if possible)>.
-:keywords: plugin, <plugincode>, etc.
-
-// Replace content in angled brackets (<>) and remove my comments before committing!!!
-// Official product name as a string. Can be used in content using the {pluginname} variable
-:pluginname: <Plugin Name>
-// The plugin identifier used to add the plugin to an editor using the `plugin` option. Provide as a string. Can be used in content using the {plugincode} variable
-:plugincode: <plugincode>
+= AI Proxy Server reference guide
+:navtitle: AI proxy server reference guide
+:description: A guide to adding a proxy server to a TinyMCE instance running the AI Assistant plugin.
+:description_short: Running a proxy server and the AI Assistant plugin.
+:keywords: plugin, ai, assistant, proxy server
+:pluginname: AI Assistant
+:plugincode: ai
 :plugincategory: premium
 
 include::partial$misc/admon-premium-plugin.adoc[]

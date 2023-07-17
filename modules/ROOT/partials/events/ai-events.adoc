@@ -5,5 +5,5 @@ The following events are provided by the xref:<plugincode>.adoc[<Plugin name> pl
 |Name       |Data                              |Description
 |AIRequest  |`+{ request: Request }+`          |Fired when a request is sent to the `+ai_request+` function.
 |AIResponse |`+{ response: `+string+` }+`      |Fired when a `+ai_request+` Promise is resolved.
-|AIError    |`+{ error: Error | `+string+` }+` |Fired when a `+ai_request+` Promise is rejected.
+|AIError    |`+{ error: Error \| `+string+` }+` |Fired when a `+ai_request+` Promise is rejected.
 |===

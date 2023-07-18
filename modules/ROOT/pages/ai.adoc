@@ -42,6 +42,25 @@ tinymce.init({
 });
 ----
 
+[IMPORTANT]
+.Default strings added to all prompts
+====
+The {pluginname} automatically appends default strings to all prompts.
+
+Depending on the prompt, the added string will be one of the following:
+
+[source,text]
+----
+Answer the question based on the context below.
+The response should be in HTML format.
+The response should preserve any HTML formatting…
+----
+
+This added string both improves the UX and increases the response accuracy.
+
+However, these added strings do increase overall token use.
+====
+
 == Using a proxy server with {pluginname}
 
 A proxy server can provide flexibility by allowing extra processing before the request is sent to an LLM AI endpoint and before returning the response to the user.
@@ -63,14 +82,6 @@ include::partial$configuration/ai_shortcuts.adoc[][leveloffset=+1]
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
-
-[IMPORTANT]
-.Always send data with an AI API query
-====
-The {pluginname} should only be invoked when there is a selection in the {productname} editor to send to the registered AI API.
-
-Selecting an active {pluginname} toolbar button, or selecting an active {pluginname} menu item, when there is no selection, or when the {productname} editor is empty, will result in a random — and almost certainly unhelpful — response.
-====
 
 == Commands
 

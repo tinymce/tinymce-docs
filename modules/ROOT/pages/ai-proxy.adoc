@@ -37,7 +37,7 @@ The TinyMCE {pluginname} provides the end user Ui interaction components and wor
 .Select a proxy server of your choice
 [%collapsible]
 ====
-Choose a proxy server that works for your implementation, for demonstration purposes, we will use XXXXYYY as a reference. The proxy server can work with other services to pre-process requests before sending the final request with the OpenAI api key to the OpenAI server. In addition, the proxy can also provide an extra layer of processing when receiving a response from the OpenAI server before delivering to the editing session in the browser.
+Choose a proxy server that works for your implementation, for demonstration purposes, we will use https://github.com/envoyproxy/envoy[Envoy,window=_blank] as a reference. The proxy server can work with other services to pre-process requests before sending the final request with the OpenAI api key to the OpenAI server. In addition, the proxy can also provide an extra layer of processing when receiving a response from the OpenAI server before delivering to the editing session in the browser.
 ====
 .OpenAI chat completions API
 [%collapsible]
@@ -58,3 +58,10 @@ OpenAI has an abuse policy, where frequent voilation may lead to account suspens
 Below is a flow diagram that illustrates how the above components work together to provide the AI enhanced experience.
 
 image::{imagesdir}/ai-plugin/ai-proxy-call-flows.png[OpenAI Proxy Call Flows]
+
+== Example Reference Application
+An https://github.com/tinymce/openai-proxy-reference-implementation/[example reference application,window=_blank] has been created to demonstrate the TinyMCE {pluginname}.
+The reference application provides a technical walkthrough of the source code, highlighting the key integration points between the required components described in the Proxy Call Flows diagram above.
+The technical walkthrough documentation can be found in the https://github.com/tinymce/openai-proxy-reference-implementation/[project docs,window=_blank].
+
+The reference application is packaged in a Docker container so you will need Docker to run the example Application.

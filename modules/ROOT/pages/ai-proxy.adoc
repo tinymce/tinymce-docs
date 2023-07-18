@@ -1,0 +1,67 @@
+= AI Proxy Server reference guide
+:navtitle: AI proxy server reference guide
+:description: A guide to adding a proxy server to a TinyMCE instance running the AI Assistant plugin.
+:description_short: Running a proxy server and the AI Assistant plugin.
+:keywords: plugin, ai, assistant, proxy server
+:pluginname: AI Assistant
+:plugincode: ai
+:plugincategory: premium
+
+include::partial$misc/admon-ai-pricing.adoc[]
+
+
+== What is an AI proxy server?
+
+A proxy is a server that sits between the browser containing the {productname} editor and the AI Large Language Model (LLM), for example, the OpenAI server.
+
+With a proxy server in place, {productname} does not communicate directly with the AI LLM. Instead requests go through the proxy.
+
+The responses the LLM AI, in return, also go through the proxy and then to {productname}.
+
+The proxy adds a layer of flexibility by allowing extra processing before the request is sent to the LLM and before returning the response to the editing session in {productname}.
+
+== Why do I need a proxy service?
+* To hide my OpenAI key, as recommended by OpenAI
+* It allows many users on different browsers to work with one OpenAI key
+* [Optional] It can validate logged-in users and reject unauthorised usage of the OpenAI service. Recommended for production systems
+* [Optional] It allows for extra processing before sending the request to OpenAI. For example, filtering for and then rejecting abusive content before the OpenAI LLM proceses it.
+* [Optional] It allows for extra processing when the server responds to {productname}. For example, modifying the response, or reformatting.
+
+
+== What do I need to setup a proxy service with TinyMCE?
+.Sign up for the TinyMCE {pluginname}
+[%collapsible]
+====
+The TinyMCE {pluginname} provides the end user Ui interaction components and workflows. This enables end users to make AI requests, modify, fine tune results and insert enhanced content back into the editor. The plugin also provides the server request component that sends user requests to the AI LLM service.
+====
+.Select a proxy server of your choice
+[%collapsible]
+====
+Choose a proxy server that works for your implementation, for demonstration purposes, we will use https://github.com/envoyproxy/envoy[Envoy,window=_blank] as a reference. The proxy server can work with other services to pre-process requests before sending the final request with the OpenAI api key to the OpenAI server. In addition, the proxy can also provide an extra layer of processing when receiving a response from the OpenAI server before delivering to the editing session in the browser.
+====
+.OpenAI chat completions API
+[%collapsible]
+====
+This is the AI service that will return the enhanced AI content, you will need to setup an account with OpenAI. You will also recieve the OpenAI key, which we you will need to make AI requests from the OpenAI service.
+====
+.Optional, An authentication endpoint, recommended for production systems
+[%collapsible]
+====
+For production systems, before sending any requests to the OpenAI server, its recommended to check if the user is allowed to make these requests otherwise reject. An authentication service is needed to provide this mechanism.
+====
+.Optional, OpenAI moderation Api
+[%collapsible]
+====
+OpenAI has an abuse policy, where frequent voilation may lead to account suspension. To prevent this, a moderation service can pre-filter abusive content and reject the request.
+====
+
+Below is a flow diagram that illustrates how the above components work together to provide the AI enhanced experience.
+
+image::{imagesdir}/ai-plugin/ai-proxy-call-flows.png[OpenAI Proxy Call Flows]
+
+== Example Reference Application
+An https://github.com/tinymce/openai-proxy-reference-implementation/[example reference application,window=_blank] has been created to demonstrate the TinyMCE {pluginname}.
+The reference application provides a technical walkthrough of the source code, highlighting the key integration points between the required components described in the Proxy Call Flows diagram above.
+The technical walkthrough documentation can be found in the https://github.com/tinymce/openai-proxy-reference-implementation/[project docs,window=_blank].
+
+The reference application is packaged in a Docker container so you will need Docker to run the example Application.

@@ -29,12 +29,12 @@ tinymce.activeEditor.windowManager.open({
   body: {
     type: 'panel', // The root body type - a Panel or TabPanel
     items: [ // A list of panel components
-    {
-      name: 'preview',
-      type: 'iframe',
-      streamContent: 'true',
-      border: 'true',
-    }
+      {
+        name: 'preview',
+        type: 'iframe',
+        streamContent: 'true',
+        border: 'true'
+      }
     ]
     },
     buttons: [ // A list of footer buttons

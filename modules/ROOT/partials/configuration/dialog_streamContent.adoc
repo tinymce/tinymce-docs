@@ -11,7 +11,7 @@ The `+srcdoc+` attribute requires the `+iframe+` be reloaded each time the conte
 
 As well, performing updates via the `+srcdoc+` attribute means the contents of the `+iframe+` are not accessible. As a consequence, it is not possible to automatically scroll the `+iframe+` contents to the bottom as it gets updated.
 
-Setting `+streamContent+` to `+true+`, and switching the update mechanism to the `document.write()` method, stops the flickering and allows the `+iframe+` to constantly present the incoming content at an end-of-the-current data position.
+Setting `+streamContent+` to `+true+` switches the update mechanism to the `document.write()` method and constantly presents the incoming content at an end-of-the-current data position.
 
 *Type:* `+Boolean+`
 

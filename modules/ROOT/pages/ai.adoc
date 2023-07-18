@@ -42,6 +42,15 @@ tinymce.init({
 });
 ----
 
+== Using a proxy server with {pluginname}
+
+A proxy server can provide flexibility by allowing extra processing before the request is sent to an LLM AI endpoint and before returning the response to the user.
+
+See the xref:ai-proxy.adoc[AI Proxy Server reference guide] for information on how to setup a proxy server for use with the {pluginname}.
+
+NOTE: The xref:ai-proxy.adoc[AI Proxy Server reference guide] is, as its name notes, a reference. There is no single proxy server setup that is right or correct for all circumstances and other setups may be better for your use-case.
+
+
 == Options
 
 The following configuration options affect the behavior of the {pluginname} plugin.

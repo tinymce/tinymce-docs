@@ -53,7 +53,7 @@ Depending on the prompt, the added string will be one of the following:
 ----
 Answer the question based on the context below.
 The response should be in HTML format.
-The response should preserve any HTML formatting…
+The response should preserve any HTML formatting, links, and styles in the context.
 ----
 
 These added strings both improve the UX and increase the response accuracy.

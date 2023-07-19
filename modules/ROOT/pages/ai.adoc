@@ -1,6 +1,6 @@
 = AI Assistant plugin
 :navtitle: AI Assistant
-:description: Sends queries to registered AI APIs and sets the results in the document or temporarily stores the results for later use.
+:description: Sends queries to registered AI APIs and sets the results in the document or temporarily stores the results.
 :description_short: Query AI APIs and accept results.
 :keywords: plugin, ai, artificial intelligence, query, search.
 :pluginname: AI Assistant
@@ -13,8 +13,10 @@ include::partial$misc/admon-requires-6.6v.adoc[]
 
 The {pluginname} allows a {productname} document to send queries to registered AI APIs and either:
 
-. add the returned results to a document; or
-. temporarily store the returned results for later use.
+. immediately add the returned results to a document; or
+. temporarily store the returned results for later use in the currently active {productname} instance.
+
+Once a {productname} instance is closed, any and all temporarily stored results are lost.
 
 [IMPORTANT]
 .On the absence of an {pluginname} demo

@@ -53,6 +53,9 @@ NOTE: The default shortcuts are subject to change in an upcoming release. If you
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
+  plugins: 'ai',
+  toolbar: 'aidialog aishortcuts',
+  ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
   ai_shortcuts: [
     { title: 'Screenplay', prompt: 'Convert this to screenplay format.' },
     { title: 'Stage play', prompt: 'Convert this to stage play format.' },

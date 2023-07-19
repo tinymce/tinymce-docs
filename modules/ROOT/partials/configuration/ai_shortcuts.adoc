@@ -58,14 +58,14 @@ tinymce.init({
     { title: 'Stage play', prompt: 'Convert this to stage play format.' },
     { title: 'Classical', subprompts: 
       [
-      { title: 'Dialogue', prompt: 'Convert this to a Socratic dialogue.' },
-      { title: 'Homeric', prompt: 'Convert this to a Classical Epic.' },
+        { title: 'Dialogue', prompt: 'Convert this to a Socratic dialogue.' },
+        { title: 'Homeric', prompt: 'Convert this to a Classical Epic.' }
       ]
     },
     { title: 'Celtic', subprompts:
       [
-      { title: 'Bardic', prompt: 'Convert this to Bardic verse.' },
-      { title: 'Filí', prompt: 'Convert this to Filí-an verse.' },
+        { title: 'Bardic', prompt: 'Convert this to Bardic verse.' },
+        { title: 'Filí', prompt: 'Convert this to Filí-an verse.' }
       ]
     },
   ]

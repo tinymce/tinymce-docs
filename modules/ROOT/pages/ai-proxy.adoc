@@ -25,7 +25,7 @@ The proxy adds a layer of flexibility by allowing extra processing before the re
 * To hide the OpenAI API key used for queries.
   - This is https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety[recommended by OpenAI].
 * It allows multiple queries from different {productname} sessions to work with one OpenAI key.
-* It can, optionally, validate logged-in users and reject unauthorised usage of the OpenAI service.
+* It can, optionally, validate logged-in users and reject unauthorized usage of the OpenAI service.
   - Recommended for production systems.
 * It can, optionally, allow for extra processing before sending the request to OpenAI.
   - For example, filtering for and then rejecting abusive content before the OpenAI LLM processes it.

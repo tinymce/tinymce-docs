@@ -114,15 +114,13 @@ The `+ai_request+` function is given a request object as the first parameter, wh
 
 `+context+`:: The current selection as a string, if any, or the current response displayed in the dialog. This can be combined with the `+query+`in a custom manner by the integrator to form a request.
 
-`+system+`:: An array of messages which provide instructions for handling the user prompts.
+`+system+`:: An array of messages which provide instructions for handling the user prompts. The `+system+` array:
 
 [source, js]
 ----
-[
-  'Answer the question based on the context below.',
+[ 'Answer the question based on the context below.',
   'The response should be in HTML format.',
-  'The response should preserve any HTML formatting, links, and styles in the context.'
-]
+  'The response should preserve any HTML formatting, links, and styles in the context.' ]
 ----
 
 `+thread+`:: The history of requests and responses within the dialog, provided as an array of objects.
@@ -151,6 +149,6 @@ The `respondWith.stream` callback provides functionality for displaying streamed
 
 This callback expects a `+Promise+` which resolves once the AI has finished streaming the response.
 
-This callback provides `+streamMessage+` callback as the second parameter. Each new message is displayed using the `+streamMessage+` callback.
+This callback provides `+streamMessage+` callback as the second parameter. Each new message is displayed in the dialog using the `+streamMessage+` callback.
 
 `+streamMessage+`:: Takes a string and appends it to the content displayed in the {pluginname} dialog.

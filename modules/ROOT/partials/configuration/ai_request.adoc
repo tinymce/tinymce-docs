@@ -1,94 +1,126 @@
 [[ai_request]]
 == `ai_request`
 
-// Add explanatory material as per the comment block below then remove
-// the block and this comment.
+The {pluginname} uses the `+ai_request+` function to send prompts to an AI endpoint, and display the responses.
 
-////
-What does the option do?
-Why use it?
-When use it?
-What values can it use?
-What do these values do?
-Are there risks?
-  - Explain without using ‘risk’ or similar words.
-  - Use NOTE or IMPORTANT admonitions if helpful.
-  - For longer or more complicated scenarios, use the limitations section below.
-////
+The `+ai_request+` function provides the {pluginname} with  will resolve with the response as a string provided by the AI endpoint, or reject with an error or string. 
 
+Any resolved response or rejected error is displayed in the AI dialog.
 
-The AI plugin uses the `+ai_request+` function to send prompts to an AI endpoint, and display the responses.
+NOTE: This option is required to use the {pluginname} plugin.
+
+*Type:* `+Function+`
+
+=== Example: using `ai_request` and the `stream` callback to interface with the OpenAI Completions API
+
+[source,js]
+----
+const fetchApi = import("https://unpkg.com/@microsoft/fetch-event-source@2.0.1/lib/esm/index.js").then(module => module.fetchEventSource);
+
+const api_key = '<INSERT_API_KEY_HERE>'
+
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  plugins: 'ai',
+  toolbar: 'aidialog aishortcuts',
+  ai_request: (request, respondWith) => {
+    respondWith.stream((signal, streamMessage) => {
+      const apiUrl = 'https://api.openai.com/v1/chat/completions';
+
+      // Adds each previous query and response as individual messages
+      const conversation = request.thread.flatMap((event) => {
+        if (event.response) {
+          return [
+            { role: 'user', content: event.request.query },
+            { role: 'assistant', content: event.response.data }
+          ];
+        } else {
+          return [];
+        }
+      });
+      
+      // Forms the new query sent to the API
+      const content = request.context.length === 0 || conversation.length > 0
+        ? request.query
+        : `Question: ${request.query} Context: """${request.context}"""`;
+
+      const messages = [
+        ...conversation,
+        { role: 'system', content: request.system.join('\n') },
+        { role: 'user', content }
+      ];
+
+      const requestBody = {
+        model: 'gpt-3.5-turbo',
+        temperature: 0.7,
+        max_tokens: 800,
+        messages,
+        stream: true
+      };
+
+      const openAiOptions = {
+        signal,
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${api_key}`
+        },
+        body: JSON.stringify(requestBody)
+      };
+      
+      // This function passes each new message into the plugin via the `streamMessage` callback.
+      const onMessage = (ev) => {
+        const data = ev.data;
+        if (data !== '[DONE]') {
+          const parsedData = JSON.parse(data);
+          const firstChoice = parsedData?.choices[0];
+          const message = firstChoice?.delta?.content;
+          if (message) {
+            streamMessage(message);
+          }
+        }
+      };
+      
+      const onError = (error) => {
+        // Stop operation and do not retry by the fetch-event-source
+        throw error;
+      };
+
+      // Use microsoft's fetch-event-source library to work around the 2000 character limit
+      // of the browser `EventSource` API, which requires query strings
+      return fetchApi
+      .then(fetchEventSource => 
+        fetchEventSource(apiUrl, {
+          ...openAiOptions,
+          openWhenHidden: true,
+          onmessage,
+          onerror
+        })
+      );
+    });
+  }
+});
+----
+
+=== The `request` object
 
 The `+ai_request+` function is given a request object as the first parameter, which has these fields:
 
 `+prompt+`:: The submitted prompt as a string, combined with any current selection (when first opening the dialog) or the previous response.
 
-// TODO: Update once implemented
-// `+query+`:: The submitted prompt as a string, without any context.
+`+query+`:: The submitted prompt as a string, without any context.
 
-// `+context+`:: The current selection as a string, if any, or the current response displayed in the dialog. This can be combined with the `+query+`in a custom manner by the integrator to form a request.
+`+context+`:: The current selection as a string, if any, or the current response displayed in the dialog. This can be combined with the `+query+`in a custom manner by the integrator to form a request.
 
-// `+thread+`:: The history of requests and responses within the dialog, provided as an array of objects. The xref:ai.adoc#thread[`+Thread+`] section describes the details of the fields in these objects.
+`+system+`:: An array of messages which provide instructions for handling the user prompts.
 
-The `+ai_request+` function returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise] that will resolve with the response as a string provided by the AI endpoint, or reject with an error or string. Any resolved response or rejected error is displayed in the AI dialog.
-
-// TODO: Update with the below 
-// The response provided to the `+resolve+` promise callback can be either a `+string+` or an object with the following properties: { streaming: boolean }
-
-This option is required to use the {pluginname}.
-
-*Type:* `+Function+`
-
-// Add a working and tested configuration.
-=== Example: using `ai_request`
-
-[source,js]
+[source, js]
 ----
-tinymce.init({
-  selector: 'textarea',  // change this value according to your html
-  plugins: 'ai',
-  toolbar: 'aidialog aishortcuts',
-  ai_request: (request) => new Promise((resolve, reject) => {
-    const apiUrl = 'https://api.openai.com/v1/chat/completions';
-
-    const prompt = request.prompt;
-
-    const requestBody = JSON.stringify({
-      model: 'gpt-3.5-turbo',
-      temperature: 0.7,
-      max_tokens: 800,
-      messages: [
-        {
-          role: 'user',
-          content: prompt
-        }
-      ],
-    });
-
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: requestBody
-    };
-
-    window.fetch(apiUrl, options)
-      .then((response) => {
-        if (!response.ok) {
-          reject('Failed to communicate with the ChatGPT API');
-        } else {
-          return response.json();
-        }
-      })
-      .then((data) => {
-        if (data.error) {
-          reject(`Failed to communicate with the ChatGPT API because of ${data.error.type} error: ${data.error.message}`);
-        } else {
-          resolve(data.choices[0].message.content.trim());
-        }
-      })
-      .catch(reject);
-  })
-});
+[
+  'Answer the question based on the context below.',
+  'The response should be in HTML format.',
+  'The response should preserve any HTML formatting, links, and styles in the context.'
+]
 ----
+
+`+thread+`:: The history of requests and responses within the dialog, provided as an array of objects. The xref:ai.adoc#thread[`+Thread+`] section describes the details of the fields in these objects.

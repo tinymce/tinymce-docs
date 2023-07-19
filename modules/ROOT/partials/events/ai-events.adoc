@@ -2,8 +2,10 @@ The following events are provided by the xref:<plugincode>.adoc[<Plugin name> pl
 
 [cols="1,1,2",options="header"]
 |===
-|Name       |Data                              |Description
-|AIRequest  |`+{ request: Request }+`          |Fired when a request is sent to the `+ai_request+` function.
-|AIResponse |`+{ response: `+string+` }+`      |Fired when a `+ai_request+` Promise is resolved.
-|AIError    |`+{ error: Error \| `+string+` }+` |Fired when a `+ai_request+` Promise is rejected.
+|Name          |Data   |Description
+|AIRequest     |`+{ request: Request }+`           |Fired when a request is sent to the `+ai_request+` function.
+|AIResponse    |`+{ response: `+string+` }+`       |Fired when a `+ai_request+` Promise is resolved.
+|AIError       |`+{ error: Error | `+string+` }+`  |Fired when a `+ai_request+` Promise is rejected.
+|AIDialogOpen  |N/A    |Fired when the AI Assistant dialog is opened.
+|AIDialogClose |N/A    |Fired when the AI Assistant dialog is closed.
 |===

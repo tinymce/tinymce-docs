@@ -171,6 +171,6 @@ The `respondWith.stream` callback provides functionality for displaying streamed
 
 This callback expects a `+Promise+` which resolves once the AI has finished streaming the response.
 
-This callback provides `+streamMessage+` callback as the second parameter. Each new message is displayed in the dialog using the `+streamMessage+` callback.
+This callback provides `+streamMessage+` callback as the second parameter, which should be called on each new partial message so the message can be displayed in the dialog immediately.
 
 `+streamMessage+`:: Takes a string and appends it to the content displayed in the {pluginname} dialog.

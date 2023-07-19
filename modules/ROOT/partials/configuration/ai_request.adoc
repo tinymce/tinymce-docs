@@ -162,7 +162,7 @@ Both callbacks provide a `signal` parameter.
 
 The `respondWith.string` callback provides functionality for displaying the entire response from the AI. 
 
-The final response is to be returned as a string using a `+Promise+` within the `+resolve+` callback. This string will be displayed within the {pluginname} dialog.
+The final response is to be returned as a string using `+Promise.resolve()+`. This string will be displayed within the {pluginname} dialog.
 
 
 ==== The `respondWith.stream` callback

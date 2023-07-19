@@ -38,7 +38,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'ai',
   toolbar: 'aidialog aishortcuts',
-  ai_request: (request) => new Promise()
+  ai_request: (request, respondWith) => { }
 });
 ----
 

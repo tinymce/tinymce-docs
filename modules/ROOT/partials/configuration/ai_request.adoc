@@ -27,8 +27,6 @@ tinymce.init({
   toolbar: 'aidialog aishortcuts',
   ai_request: (request, respondWith) => {
     respondWith.stream((signal, streamMessage) => {
-      const apiUrl = 'https://api.openai.com/v1/chat/completions';
-
       // Adds each previous query and response as individual messages
       const conversation = request.thread.flatMap((event) => {
         if (event.response) {
@@ -92,7 +90,7 @@ tinymce.init({
       // of the browser `EventSource` API, which requires query strings
       return fetchApi
       .then(fetchEventSource => 
-        fetchEventSource(apiUrl, {
+        fetchEventSource('https://api.openai.com/v1/chat/completions', {
           ...openAiOptions,
           openWhenHidden: true,
           onmessage,
@@ -104,6 +102,7 @@ tinymce.init({
 });
 ----
 
+[[request]]
 === The `request` object
 
 The `+ai_request+` function is given a request object as the first parameter, which has these fields:
@@ -112,7 +111,7 @@ The `+ai_request+` function is given a request object as the first parameter, wh
 
 `+context+`:: The current selection as a string, if any, or the current response displayed in the dialog. This can be combined with the `+query+`in a custom manner by the integrator to form a request. The current selection will be provided in HTML format, as will any displayed HTML response, and will increase token use.
 
-`+thread+`:: The history of requests and responses within the dialog, provided as an array of objects.
+`+thread+`:: An array containing the history of requests and responses within the dialog, provided as an array of objects. This thread array is the same as is recorded in the xref:#getThreadLog[`+getThreadLog+` API], for current instance of the {pluginname} dialog.
 
 `+system+`:: An array of messages which provide instructions for handling the user prompts. The `+system+` array:
 

@@ -44,9 +44,11 @@ The TinyMCE {pluginname} provides the end user Ui interaction components and wor
 ====
 Choose a proxy server that works for your implementation.
 
-For demonstration purposes, we will use https://github.com/envoyproxy/envoy[Envoy,window=_blank] as a reference.
+For demonstration purposes, we use https://github.com/envoyproxy/envoy[Envoy,window=_blank] as a reference.
 
-The proxy server can work with other services to pre-process requests before sending the final request with the OpenAI api key to the OpenAI server. In addition, the proxy can also provide an extra layer of processing when receiving a response from the OpenAI server before delivering to the editing session in the browser.
+The proxy server can work with other services to pre-process requests before sending the final request with the OpenAI API key to the OpenAI server.
+
+In addition, the proxy server can also provide an extra layer of processing when receiving a response from the OpenAI server before delivering to the {productname} editing session.
 ====
 .OpenAI chat completions API
 [%collapsible]
@@ -66,7 +68,7 @@ Before sending any requests to the OpenAI server, check if the user is allowed t
 
 An authentication service is needed to provide this mechanism.
 ====
-.OpenAI moderation Api
+.OpenAI moderation API
 [%collapsible]
 ====
 OpenAI has an abuse policy. Frequent violation of this policy can lead to account suspension.

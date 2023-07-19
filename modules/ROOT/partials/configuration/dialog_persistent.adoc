@@ -11,7 +11,7 @@ Setting the property to `+true+` does not over-ride normal mechanisms for closin
 
 The property has a default value of `+false+`.
 
-NOTE: if an inline dialog is open and focus is switched away from the {productname} editor entirely (by, for example, the end-user switching focus to an available host-browser UI element), an open inline dialog will remain open regardless of the `+persistent+` property’s value. This was the behavior prior to this property being available and continues to be the behavior.
+NOTE: If an inline dialog is open and focus is switched away from the {productname} editor entirely (by, for example, the end-user switching focus to an available host-browser UI element), an open inline dialog will remain open regardless of the `+persistent+` property’s value. This was the behavior prior to this property being available and continues to be the behavior.
 
 *Type:* `+String+`
 
@@ -20,6 +20,36 @@ NOTE: if an inline dialog is open and focus is switched away from the {productna
 *Default value:* `false`
 
 === Example: using `persistent`
+
+[source,js]
+----
+tinymce.activeEditor.windowManager.open({
+  title: 'Dialog Title', // The dialog's title - displayed in the dialog header
+  body: {
+    type: 'panel', // The root body type - a Panel or TabPanel
+    items: [ // A list of panel components
+      {
+        type: 'htmlpanel', // an HTML panel component
+        html: 'Panel content goes here.'
+      }
+    ]
+  },
+  buttons: [ // A list of footer buttons
+    {
+      type: 'submit',
+      text: 'OK'
+    }
+  ]
+  { inline, persistent: 'true' }
+});
+----
+
+=== Example: using `focus` to refocus an open but de-focused dialog
+
+Because a dialog with an `{ inline, persistent: 'true' }` property does not close when the dialog loses focus, it is possible for an end-user to open a further instance of the dialog.
+
+To prevent this, use the xref:apis/tinymce.editor/#focus[`focus`] method in the xref:apis/tinymce.windowmanager/#return-value[`DialogInstanceAPI`]. This transfers focus to the open dialog rather than creating a new instance of the same dialog.
+
 
 [source,js]
 ----

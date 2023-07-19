@@ -33,8 +33,8 @@ The proxy adds a layer of flexibility by allowing extra processing before the re
   - For example, modifying or re-formatting the response.
 
 
-== What do I need to setup a proxy service with TinyMCE?
-.Sign up for the TinyMCE {pluginname}
+== What do I need to setup a proxy service with {productname}?
+.Sign up for the {productname} {pluginname}
 [%collapsible]
 ====
 The {productname} {pluginname} provides the end user Ui interaction components and workflows. This enables end users to make AI requests, modify, fine tune results and insert enhanced content back into the editor. The plugin also provides the server request component that sends user requests to the AI LLM service.
@@ -82,7 +82,7 @@ image::{imagesdir}/ai-plugin/ai-proxy-call-flows.png[OpenAI Proxy Call Flows]
 
 == Example Reference Application
 
-An https://github.com/tinymce/openai-proxy-reference-implementation/[example reference application,window=_blank] has been created to demonstrate the TinyMCE {pluginname}.
+An https://github.com/tinymce/openai-proxy-reference-implementation/[example reference application,window=_blank] has been created to demonstrate the {productname} {pluginname}.
 
 The reference application provides a technical walkthrough of the source code, highlighting the key integration points between the required components described in the Proxy Call Flows diagram above.
 

@@ -78,7 +78,11 @@ tinymce.init({
 
 == Using a proxy server with {pluginname}
 
-A proxy server can provide flexibility by allowing extra processing before the request is sent to an LLM AI endpoint and before returning the response to the user.
+As per OpenAI’s https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety[best practices for API key safety], deployment of an API key in a client-side environment is specifically not recommended.
+
+Using a proxy server obviates this, reducing financial and service uptime risks.
+
+A proxy server can also provide flexibility by allowing extra processing before the request is sent to an LLM AI endpoint and before returning the response to the user.
 
 See the xref:ai-proxy.adoc[AI Proxy Server reference guide] for information on how to setup a proxy server for use with the {pluginname}.
 

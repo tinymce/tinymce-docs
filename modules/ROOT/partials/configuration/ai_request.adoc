@@ -19,7 +19,7 @@ NOTE: This option is required to use the {pluginname} plugin.
 ----
 const fetchApi = import("https://unpkg.com/@microsoft/fetch-event-source@2.0.1/lib/esm/index.js").then(module => module.fetchEventSource);
 
-const api_key = '<INSERT_API_KEY_HERE>'
+const api_key = '<INSERT_API_KEY_HERE>';
 
 tinymce.init({
   selector: 'textarea',  // change this value according to your html

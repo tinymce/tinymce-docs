@@ -108,11 +108,11 @@ tinymce.init({
 
 The `+ai_request+` function is given a request object as the first parameter, which has these fields:
 
-`+prompt+`:: The submitted prompt as a string, combined with any current selection (when first opening the dialog) or the previous response.
+`+prompt+`:: The submitted prompt as a string, combined with any current selection (when first opening the dialog) or the previous response. The {pluginname} plugin provides a customised format which combines these strings, though integrators are free to build their own with any of the other provided fields in the `+request+` object.
 
 `+query+`:: The submitted prompt as a string, without any context.
 
-`+context+`:: The current selection as a string, if any, or the current response displayed in the dialog. This can be combined with the `+query+`in a custom manner by the integrator to form a request.
+`+context+`:: The current selection as a string, if any, or the current response displayed in the dialog. This can be combined with the `+query+`in a custom manner by the integrator to form a request. The current selection will be provided in HTML format, as will any displayed HTML response, and will increase token use.
 
 `+system+`:: An array of messages which provide instructions for handling the user prompts. The `+system+` array:
 
@@ -124,6 +124,29 @@ The `+ai_request+` function is given a request object as the first parameter, wh
 ----
 
 `+thread+`:: The history of requests and responses within the dialog, provided as an array of objects.
+
+[IMPORTANT]
+.The default prompt and token use.
+====
+The {pluginname} automatically prepends the `+system+` value as a string to the `+prompt+` value. The prompt also combines the `+query+` and `+context+` values into a single string.
+
+[source,text]
+----
+Answer the question based on the context below.
+The response should be in HTML format.
+The response should preserve any HTML formatting, links, and styles in the context.
+
+Context: """<context>"""
+
+Question: """<query>"""
+
+Answer:
+----
+
+This string is intended to improve the UX and increases the response accuracy, and simplify the initial integration of the {pluginname} plugin.
+
+However, this string uses more tokens than the `+query+` and `+context+` combined.
+====
 
 
 === The `respondWith` object

@@ -25,10 +25,6 @@ Users can retrieve a history of their conversations with the AI using the xref:#
 .On the absence of an {pluginname} demo
 ====
 This initial release of the {pluginname} developer documentation does not include an in-page working demo.
-
-The logistics of setting up such a demo are still being investigated.
-
-When a solution that is both useful and workable is found, it will replace this notice.
 ====
 
 == Basic setup
@@ -43,28 +39,13 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'ai',
   toolbar: 'aidialog aishortcuts',
-  ai_request: (request, respondWith) => { }
+  ai_request: (request, respondWith) => {
+    respondWith.string((signal) => {
+      
+    });
+  }
 });
 ----
-
-[IMPORTANT]
-.Token use, default string added to prompts, and HTML formatting
-====
-The {pluginname} automatically prepends a default string to all prompts:
-
-[source,text]
-----
-Answer the question based on the context below.
-The response should be in HTML format.
-The response should preserve any HTML formatting, links, and styles in the context.
-----
-
-This added string improves the UX and increases the response accuracy.
-
-However, this added string increases token use.
-
-As well, responses sent in HTML format also increase token use.
-====
 
 == Using a proxy server with {pluginname}
 

@@ -3,9 +3,9 @@
 
 The {pluginname} uses the `+ai_request+` function to send prompts to an AI endpoint, and display the responses.
 
-The `+ai_request+` function provides the {pluginname} with  will resolve with the response as a string provided by the AI endpoint, or reject with an error or string. 
+The `+ai_request+` function provides the {pluginname} with either the resolved response or the error message provided by the AI endpoint.
 
-Any resolved response or rejected error is displayed in the AI dialog.
+The resolved response or error message is then displayed in the AI Assistant dialog.
 
 NOTE: This option is required to use the {pluginname} plugin.
 

@@ -1,12 +1,19 @@
 [cols="1,1,4",options="header"]
 |===
 |Name   |Arguments    |Description
-|getThreadLog |N/A |Retrieves the history of each thread generated while using the plugin.
+|getThreadLog |N/A |Retrieves the history of each conversation thread generated while using the plugin.
 |===
 
 .Examples
 [source,js]
 ----
-// Retrieves the history of each thread generated while using the plugin.
+// Retrieves the history of each conversation thread generated while using the plugin in the active editor.
 tinymce.activeEditor.plugins.ai.getThreadLog();
 ----
+
+[[getThreadLog]]
+=== The `getThreadLog` API
+
+A user or integrator can retrieve the history of each conversation thread by calling `+getThreadLog()+` on 
+
+Once a {productname} editor instance is closed, any and all temporarily stored results are lost.

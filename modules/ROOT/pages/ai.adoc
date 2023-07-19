@@ -43,7 +43,7 @@ tinymce.init({
 ----
 
 [IMPORTANT]
-.Default strings added to all prompts
+.Token use, default strings added to prompts, and HTML formatting
 ====
 The {pluginname} automatically appends default strings to all prompts.
 
@@ -58,7 +58,9 @@ The response should preserve any HTML formatting, links, and styles in the conte
 
 These added strings both improve the UX and increase the response accuracy.
 
-However, these added strings do increase token use.
+However, these added strings increase token use.
+
+As well, responses sent in HTML format also increase token use.
 ====
 
 == Using a proxy server with {pluginname}

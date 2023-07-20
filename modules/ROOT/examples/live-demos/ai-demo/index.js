@@ -8,6 +8,6 @@ tinymce.init({
     "preview", "searchreplace", "table", "visualblocks", "ai",
     ],
   height: 1200,
-  toolbar: "aidialog | undo redo |link image accordion | styles | bold italic underline strikethrough | align | bullist numlist"
+  toolbar: "aidialog | undo redo |link image accordion | styles | bold italic underline strikethrough | align | bullist numlist",
 });
 

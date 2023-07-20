@@ -48,7 +48,12 @@ tinymce.activeEditor.windowManager.open({
 
 Because a dialog with an `{ inline, persistent: 'true' }` property does not close when the dialog loses focus, it is possible for an end-user to open a further instance of the dialog.
 
-To prevent this, use the xref:apis/tinymce.editor/#focus[`focus`] method in the xref:apis/tinymce.windowmanager/#return-value[`DialogInstanceAPI`]. This transfers focus to the open dialog rather than creating a new instance of the same dialog.
+To prevent this
+
+* add a check that the dialog is already open; and
+
+* use the xref:apis/tinymce.editor/#focus[`focus`] method in the xref:apis/tinymce.windowmanager/#return-value[`DialogInstanceAPI`] to transfer focus to the open dialog rather than creating a new instance of the same dialog.
+
 
 [source,js]
 ----

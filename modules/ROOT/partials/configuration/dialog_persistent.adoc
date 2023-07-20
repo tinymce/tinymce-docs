@@ -90,7 +90,7 @@ const openDialog = () => {
 };
 
 const focusDialog = () => {
-  dialogInstanceApi.focus('name')
+  dialogInstanceApi.focus('name');
 }
 
 editor.ui.registry.addButton('example', {

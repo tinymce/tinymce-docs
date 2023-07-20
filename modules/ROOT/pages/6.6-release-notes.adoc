@@ -160,7 +160,7 @@ For more information on **AI Assistant**, see xref:ai.adoc[AI Assistant].
 === When defining a modal or inline dialog, if the buttons property is an empty array, or is not defined at all, the footer will now no longer be rendered
 //#TINY-9996
 
-A {productname} dialog’s UI consist of three main sections: the title, body, and footer.
+A {productname} dialog’s UI consists of three main sections: the title, body, and footer.
 
 Previously, it was a requirement that any {productname} dialog — built-in or custom — displayed all three parts.
 

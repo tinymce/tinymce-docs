@@ -109,7 +109,7 @@ tinymce.init({
 
 The `+ai_request+` function is given a request object as the first parameter, which has these fields:
 
-`+query+`:: The submitted prompt as a string, without any context.
+`+query+`:: The user-submitted prompt as a string, without any context. This is either the text as written by the user in the {pluginname} dialog, or the `+prompt+` as written in the shortcut object, when selected by the user from the shortcuts menu.
 
 `+context+`:: The current selection as a string, if any, or the current response displayed in the dialog. This can be combined with the `+query+`in a custom manner by the integrator to form a request. The current selection will be provided in HTML format, as will any displayed HTML response, and will increase token use.
 
@@ -173,6 +173,6 @@ The `respondWith.stream` callback provides functionality for displaying streamed
 
 This callback expects a `+Promise+` which resolves once the AI has finished streaming the response.
 
-This callback provides `+streamMessage+` callback as the second parameter, which should be called on each new partial message so the message can be displayed in the dialog immediately.
+This callback provides `+streamMessage+` callback as the second parameter, which should be called on each new partial message so the message can be displayed in the {pluginname} dialog immediately.
 
 `+streamMessage+`:: Takes a string and appends it to the content displayed in the {pluginname} dialog.

@@ -4,12 +4,36 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-### Unreleased
+### 2023-07-21
 
 - DOC-2106: Added entries for AI Assistant-specific icons to `icons_list.adoc`.
 
+### 2023-07-06
+
+- DOC-2098: Typo corrected in include statement in `table_merge_content_on_paste.adoc`.
+
+### 2023-07-05
+
+- DOC-2094: Typo corrections in `/ie-template-creation/index.js`.
+- DOC-2095: Typo correction in `release-notes.adoc`.
+
+### 2023-07-04
+
+- DOC-2090: Added documentation of the options for setting a dialog’s displayed position to `dialog-configuration.adoc`.
+- DOC-2069: added first _integration example_ — multi-root editing and template creation — to documentation.
+- DOC-2069: Set up docs infrastructure for adding _integration examples_ pages to documentation.
+
+### 2023-07-02
+
+- DOC-2068: Copy-edits and corrections to two files, `6.5.1-release-notes.adoc` and `opensource-plugins.adoc`.
+
+### 2023-06-23
+
+- DOC-2083: Added back standard sentence inadvertently removed from `accordion.adoc`.
+
 ### 2023-06-21
 
+- DOC-2082: Copy edits to TinyMCE 6.5.1 release-notes.
 - DOC-2081: Updates to 6.5.1 release-notes accordion.adoc file.
 - DOC-1781: add List Properties menu item & two commands (mceListUpdate & mceListProps) to Lists Plugin documentation.
 - DOC-2072: Corrections and updates for 6.5.1 `staging`

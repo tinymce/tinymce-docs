@@ -17,7 +17,6 @@ If the `+iframe+` component is already scrolled to the end, `streamContent: true
 
 A user can, however, scroll through the `+iframe+` component as updates are being added. If the view is scrolled back to the end while updates are still being added, the `streamContent: true` setting will, again, keep the view at this point.
 
-
 *Type:* `+Boolean+`
 
 *Possible values:* `+true+` `+false+`

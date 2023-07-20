@@ -19,6 +19,8 @@ NOTE: This option is required to use the {pluginname} plugin.
 ----
 const fetchApi = import("https://unpkg.com/@microsoft/fetch-event-source@2.0.1/lib/esm/index.js").then(module => module.fetchEventSource);
 
+// This example stores the API key in the client side integration. This is not recommended for any purpose.
+// Instead, an alternate method for retrieving the API key should be used.
 const api_key = '<INSERT_API_KEY_HERE>';
 
 tinymce.init({
@@ -69,7 +71,7 @@ tinymce.init({
       };
       
       // This function passes each new message into the plugin via the `streamMessage` callback.
-      const onMessage = (ev) => {
+      const onmessage = (ev) => {
         const data = ev.data;
         if (data !== '[DONE]') {
           const parsedData = JSON.parse(data);
@@ -81,7 +83,7 @@ tinymce.init({
         }
       };
       
-      const onError = (error) => {
+      const onerror = (error) => {
         // Stop operation and do not retry by the fetch-event-source
         throw error;
       };

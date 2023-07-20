@@ -1,0 +1,75 @@
+[[streamContent]]
+== `streamContent`
+
+`+streamContent+` is an optional property, available to add to the `+iframe+` dialog component.
+
+The property has a default value of `+false+`.
+
+When `+streamContent+` is set to `+true+`, content presented within the `+iframe+` dialog component is updated using the `document.write()` method, rather than by setting the `+srcdoc+` attribute.
+
+Setting the `+srcdoc+` attribute causes the `+iframe+` to reload. This results in a visually jarring flickering effect in most modern browsers, particularly when content is rapidly updating.
+
+As well, performing updates via the `+srcdoc+` attribute means the contents of the `+iframe+` are not accessible. As a consequence, it is not possible to automatically scroll the `+iframe+` contents to the bottom as it gets updated.
+
+Setting `+streamContent+` to `+true+` minimises the flickering effect.
+
+If the `+iframe+` component is already scrolled to the end, `streamContent: true` also keeps the view at this point. The UX is content being added to the `+iframe+` component as if it is being quickly typed in.
+
+A user can, however, scroll through the `+iframe+` component as updates are being added. If the view is scrolled back to the end while updates are still being added, the `streamContent: true` setting will, again, keep the view at this point.
+
+*Type:* `+Boolean+`
+
+*Possible values:* `+true+` `+false+`
+
+*Default value:* `false`
+
+=== Example: setting an `iframe` component to display updating content using the `streamContent` property
+
+[source,js]
+----
+tinymce.activeEditor.windowManager.open({
+  title: 'Dialog Title', // The dialog's title - displayed in the dialog header
+  size: 'normal',
+  body: {
+    type: 'panel', // The root body type - a Panel or TabPanel
+    items: [ // A list of panel components
+      {
+        name: 'preview',
+        type: 'iframe',
+        streamContent: true
+      }
+    ]
+    },
+    buttons: [ // A list of footer buttons
+      {
+        type: 'submit',
+        text: 'OK'
+      }
+    ]
+}, { inline: 'bottom' } );
+----
+
+[NOTE]
+.Dialog position
+====
+The example above also adds a second argument — `{ inline: 'bottom' } — to the dialog. This argument changes the presented position of the dialog within the {productname} editor.
+
+For information on using this property see the xref:dialog-configuration.adoc#dialog-position[Dialog position] section of the xref:dialog-configuration.adoc[Dialog configuration documentation].
+====
+
+
+=== Recommended method for updating content in an `+iframe+` component
+
+The recommended method for updating content in an `+iframe+` component is:
+
+[source,js]
+----
+`onAction: (api) => api.setData({ myiframe: 'new content' })`
+----
+
+. This updates the iframe to contain the string `'new content'`. This text can be any valid html.
+
+. `onAction` is a callback defined in the dialog spec. It is called when a button within the dialog `body` is triggered.
+
+. `myiframe` is the name of the `+iframe+` component in this spec.
+

@@ -50,7 +50,6 @@ Because a dialog with an `{ inline, persistent: 'true' }` property does not clos
 
 To prevent this, use the xref:apis/tinymce.editor/#focus[`focus`] method in the xref:apis/tinymce.windowmanager/#return-value[`DialogInstanceAPI`]. This transfers focus to the open dialog rather than creating a new instance of the same dialog.
 
-
 [source,js]
 ----
 let dialogOpened = false;

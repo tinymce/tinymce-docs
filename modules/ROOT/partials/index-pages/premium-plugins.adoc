@@ -13,7 +13,7 @@ a|
 [.lead]
 xref:advcode.adoc[Advanced Code Editor]
 
-How to setup {productname}'s Advanced Code Editor plugin.
+How to setup {productname}’s Advanced Code Editor plugin.
 
 a|
 [.lead]
@@ -32,6 +32,12 @@ a|
 xref:advanced-typography.adoc[Advanced Typography]
 
 Replace common typewriter-style characters with their professional typesetter equivalents.
+
+a|
+[.lead]
+xref:ai.adoc[AI Assistant]
+
+Send queries to registered AI APIs and set the results in the current document.
 
 a|
 [.lead]
@@ -85,7 +91,7 @@ a|
 [.lead]
 xref:inline-css.adoc[Inline CSS]
 
-Turn {productname} documents into single files with inline CSS, ready, in particular for sending as HTML-formatted emails.
+Turn {productname} documents into single files with inline CSS, ready, in particular, for sending as HTML-formatted emails.
 
 a|
 [.lead]
@@ -165,7 +171,7 @@ Cloud-based file and image management for {productname}.
 //    odd.
 // 2. Prepend the inline comment markup to this element
 //    when the number of cells in the table is even.
-// a|
+a|
 
 |===
 

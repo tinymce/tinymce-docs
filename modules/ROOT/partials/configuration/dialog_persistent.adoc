@@ -13,7 +13,7 @@ The property has a default value of `+false+`.
 
 NOTE: If an inline dialog is open and focus is switched away from the {productname} editor entirely (by, for example, the end-user switching focus to an available host-browser UI element), an open inline dialog will remain open regardless of the `+persistent+` property’s value. This was the behavior prior to this property being available and continues to be the behavior.
 
-*Type:* `+String+`
+*Type:* `+Boolean+`
 
 *Possible values:* `+true+`, `+false+`
 

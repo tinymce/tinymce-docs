@@ -50,7 +50,7 @@ tinymce.activeEditor.windowManager.open({
 |title |string |required |The title of the dialog. This will display in the header of the dialog.
 |body |`+panel+` or `+tabpanel+` component |required |The specification for the xref:dialog-components.adoc[body component].
 |buttons |`+FooterButton[]+` |required |An array of xref:dialog-footer-buttons.adoc[footer buttons] to render in the footer of the dialog.
-|size |`+'normal'+`, `+'medium'+` or `+'large'+` |optional |default: `+normal+` - Dialog size options.
+|size |`+'normal'+`, `+'medium'+` or `+'large'+` |optional |default: `+normal+`. `+normal+` sets the dialog to be responsive to the viewport size. `+medium+` sets the dialog to render with only the height required to fits its components. `+large+` sets the dialog to a large fixed height. `inline` dialogs do not support `size: 'large'`.
 |initialData |object |optional |An object containing initial values for the dialog's panel components.
 |onAction |`+(dialogApi, details) => void+` |optional |Function invoked when a user interacts with a `+button+` type panel component, clicks a *Custom* type footer button, or clicks an item in a *Menu* type footer button.
 |onSubmit |`+(dialogApi) => void+` |optional |Function invoked when a *Submit* type footer button is clicked.
@@ -67,6 +67,19 @@ For more information on the `+dialogApi+` object that is passed to some of the c
 Each of the event callback functions - `+onAction+`, `+onSubmit+`, `+onCancel+`, `+onChange+`, `+onClose+`, and `+onTabChange+` - are shared between all dialog components that may trigger them. For example, *Custom* type footer buttons and dialog panel buttons all trigger `+onAction+`. Therefore, callback functions that may be triggered by multiple components are passed an object (called `+details+` above) that contains the `+name+` of the component that triggered the event.
 
 Any callback function that is not passed a `+details+` object assumes that the dialog will only contain one component which can trigger it or that it does not matter if the function is triggered by multiple components. For example, `+onSubmit+` is only triggered when a user clicks on a *Submit* type footer button, and {productname} assumes that a dialog will only have one *Submit* type button. In comparison, `+onCancel+` and `+onClose+` are both triggered by clicking the `+X+` button in the top right of a dialog or by clicking a *Cancel* type footer button. These two buttons have the same functionality, and therefore {productname} does not differentiate between them.
+
+[[configuration-parameters]]
+== Configuration parameters
+
+include::partial$configuration/dialog_align.adoc[]
+
+include::partial$configuration/dialog_border.adoc[]
+
+include::partial$configuration/dialog_buttons.adoc[]
+
+include::partial$configuration/dialog_persistent.adoc[]
+
+include::partial$configuration/dialog_streamContent.adoc[]
 
 == Dialog position
 

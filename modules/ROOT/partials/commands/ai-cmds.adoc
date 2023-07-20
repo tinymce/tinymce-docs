@@ -1,0 +1,27 @@
+[cols="1,3",options="header"]
+|===
+|Command            |Description
+|mceAiDialog        |This command opens the {pluginname} dialog. For details, see xref:using-mceAiDialog[Using `+mceAiDialog+`].
+|mceAiDialogClose   |This command closes the {pluginname} dialog.
+|===
+
+.Examples
+[source,js]
+----
+tinymce.activeEditor.execCommand('mceAiDialog');
+tinymce.activeEditor.execCommand('mceAiDialog', true|false, { prompt: '<value1>', generate: true, display: false });
+tinymce.activeEditor.execCommand('mceAiDialogClose');
+----
+
+[[using-mceAiDialog]]
+=== Using `+mceAiDialog+`
+
+`+mceAiDialog+` accepts an object with any of the following key-value pairs:
+
+[cols="1,,1,2",options="header"]
+|===
+|Name     |Value        |Requirement  |Description
+|prompt   |`+string+`   |Not required |The prompt to pre-fill the input field with when the dialog is first opened.
+|generate |`+boolean+`  |Not required |Whether a request should be sent when the dialog is first opened.
+|display  |`+boolean+`  |Not required |Whether to display the input field and generate button in the dialog when the dialog is first opened.
+|===

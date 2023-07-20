@@ -29,7 +29,7 @@ tinymce.activeEditor.windowManager.open({
       {
         name: 'preview',
         type: 'iframe',
-        border: 'true',
+        border: true,
       }
     ]
   },

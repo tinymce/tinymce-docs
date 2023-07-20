@@ -3,11 +3,16 @@
 :description: How to create a basic dialog for TinyMCE.
 :keywords: dialog, dialogapi, api
 
-A dialog configuration has three main parts to match the three main parts of the dialog's UI:
+A dialog configuration has three main parts to match the three main parts of a dialog’s UI.
 
-* *Title:* The title of the dialog. This will display in the header of the dialog.
-* *Body:* The body of the dialog. The body component can be a xref:dialog-components.adoc#panel[panel] or a xref:dialog-components.adoc#tabpanel[tab panel], which can contain an array of xref:dialog-components.adoc#panel-components[panel components] such as buttons, inputs and text.
-* *Buttons:* An array of xref:dialog-footer-buttons.adoc[footer buttons] that are displayed in the dialog's footer.
+. *Title*
+  - the dialog’s title.
+  - It displays in the dialog’s header.
+. *Body*
+  - the dialog’s body.
+  - The body component can be a xref:dialog-components.adoc#panel[panel] or a xref:dialog-components.adoc#tabpanel[tab panel], which can contain an array of xref:dialog-components.adoc#panel-components[panel components] such as buttons, inputs and text.
+. *Buttons*
+  - An array of xref:dialog-footer-buttons.adoc[footer buttons] that are displayed in the dialog's footer.
 
 == Basic example
 
@@ -76,3 +81,45 @@ include::partial$configuraton/dialog_persistent.adoc[]
 
 include::partial$configuraton/dialog_streamContent.adoc[]
 
+== Dialog position
+
+By default a dialog is shown as a modal in the center of the editor viewport.
+
+This presented position can be changed by providing a second argument, with an appropriate value, to `editor.windowManager.open()`.
+
+[[inline]]
+=== `+inline+`
+
+The `+inline+` option, passed to `editor.windowManager.open()`, sets the dialog’s presented position to one of two possiblities.
+
+When added to a configuration with the value, `+toolbar+`, it sets the dialog to appear adjacent to the {productname} toolbar.
+
+When added to a configuration with the value, `+bottom+`, it sets the dialog to appear at the bottom of the editor viewport.
+
+*Type:* `+String+`
+
+*Possible values:* `+toolbar+`, `+bottom+`
+
+=== Basic example with the inline argument added and set to toolbar
+
+[source,js]
+----
+tinymce.activeEditor.windowManager.open({
+  title: 'Dialog Title', // The dialog's title - displayed in the dialog header
+  body: {
+    type: 'panel', // The root body type - a Panel or TabPanel
+    items: [ // A list of panel components
+      {
+        type: 'htmlpanel', // an HTML panel component
+        html: 'Panel content goes here.'
+      }
+    ]
+  },
+  buttons: [ // A list of footer buttons
+    {
+      type: 'submit',
+      text: 'OK'
+    }
+  ]
+}, { inline: 'toolbar' });
+----

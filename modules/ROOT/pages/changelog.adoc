@@ -4,6 +4,28 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+== 6.6.0 - 2023-07-12
+
+=== Added
+* Added a new property value — `bottom` — for inline dialog configurations that anchors the dialog to the bottom of the editor.
+* Added a new property — `persistent` — for inline dialog configurations that will stop the dialog closing when clicking away from it.
+* New `ai`, `ai-prompt` and `send` icons.
+* Added a new property — `streamContent` — for the `iframe` dialog component. This causes `setData()` to update content without reloading the frame, and end scroll positions will be maintained as new content streams in.
+* AI Assistant plugin toolbar items added to the default toolbar and AI Assistant plugin menu items added to the default menu bar.
+* Added a new property — `border` — for the `iframe` dialog component that allows a border to be added.
+* Added a new property — `align` — for the label dialog component that controls text alignment.
+
+=== Improved
+* When defining a modal or inline dialog, if the buttons property is an empty array, or is not defined at all, the footer will now no longer be rendered.
+* The `iframe` dialog component now has a minimum height of 200px.
+
+=== Changed
+* The icon in an `alertbanner` dialog component is no longer clickable if the _URL_ field is not specified.
+
+=== Fixed
+* Fixed an issue that caused the inline dialog `size` setting to have no effect.
+* Fixed an issue that prevented the close button from being clicked when the dialog was blocked.
+
 == 6.5.1 - 2023-06-19
 
 === Fixed

@@ -4,7 +4,7 @@
 :keywords: releasenotes, new, changes, bugfixes
 :page-toclevels: 1
 
-//include::partial$misc/admon-releasenotes-for-stable.adoc[]
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 [[overview]]
 == Overview
@@ -56,7 +56,7 @@ The {productname} 6.5.1 release includes an accompanying release of the **Enhanc
 
 **Enhanced Media Embed** 3.1.2 includes the following fix.
 
-==== Allow a media embed element to be correctly resized when using the media plugin dialog by converting the responsive media embed to a standalone iframe.
+==== Allow a media embed element to be correctly resized when using the Media plugin dialog by converting the responsive media embed to a standalone iframe.
 //#TINY-8714
 
 Previously, the Enhanced Media Embed plugin and the Media plugin encountered issues when used together.
@@ -73,7 +73,7 @@ As well, when inserting embedded content via the Enhanced Media Embed plugin, th
 
 In Enhanced Media Embed 3.1.2 the responsive embedded content is wrapped in a div with the wrapper's `max-width` set. This ensures that the embedded content maintains proportional sizing when resizing the viewport.
 
-As well, when opening the media plugin dialog for content created using the Enhanced Media Embed plugin and identified with the `"ephox-embed-iri"` attribute, the width and height are now calculated and displayed in the editor. If any changes to the height or width are made within the dialog, the responsive media embed is converted into a standalone `iframe` with a fixed width and height to reflect the modifications.
+As well, when opening the Media plugin dialog for content created using the Enhanced Media Embed plugin and identified with the `"ephox-embed-iri"` attribute, the width and height are now calculated and displayed in the editor. If any changes to the height or width are made within the dialog, the responsive media embed is converted into a standalone `iframe` with a fixed width and height to reflect the modifications.
 
 For information on the **Enhanced Media Embed** plugin, see: xref:introduction-to-mediaembed.adoc[Introduction to Enhanced Media Embed].
 
@@ -153,7 +153,7 @@ For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.a
 
 Previously, the Accessibility Checker plugin assumed a table had at least one row. As a consequence it would, consequent to attempting to produce a user-visible error regarding a table having no header rows, throw an internal error when it checked a table that had no cells at all.
 
-NOTE: this error was sent to the Console but no errors or alerts were presented to end-users.
+NOTE: This error was sent to the Console but no errors or alerts were presented to end-users.
 
 As of Accessibility Checker 3.2.0, the plugin no longer attempts to fix errors in tables with no rows. The user experience is unchanged, but Console errors are no longer generated in this circumstance.
 
@@ -215,7 +215,7 @@ The {productname} 6.5.1 release includes an accompanying release of the **Spell 
 
 The new `mceSpellcheckUpdate` command allows users to trigger a check for misspelled words in the editor content, and includes any spelling suggestions for the misspelt words.
 
-This allows users to verify their spelling all at once without the use of the Spellchecker dialog, with any suggestions available from a context menu.
+This allows users to verify their spelling all at once without the use of the Spell Checker Pro dialog, with any suggestions available from a context menu.
 
 ==== New `SpellcheckerUpdated` event
 
@@ -238,9 +238,9 @@ As a consequence, Spell Checker Pro’s client-side only sent strings containing
 
 This interfered with some use-cases in which Spell Checker Pro client-side was paired with a custom spellchecking service which supports languages with non-Latin alphabets: words containing non-Latin characters were not sent to the server.
 
-In SpellChecker Pro 3.3.0, the word identification logic for the plugin’s client-side has been changed to the one used by the Word Count plugin. This allows words containing non-Latin characters to be captured and sent in requests to the spelling service.
+In Spell Checker Pro 3.3.0, the word identification logic for the plugin’s client-side has been changed to the one used by the Word Count plugin. This allows words containing non-Latin characters to be captured and sent in requests to the spelling service.
 
-For information on the **SpellChecker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro].
+For information on the **Spell Checker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro].
 
 === Advanced Templates 1.2.0
 
@@ -390,7 +390,7 @@ For information on the **Advanced Typography** plugin, see: xref:advanced-typogr
 
 The {productname} 6.5.1 release includes an accompanying release of the **Power Paste** premium plugin.
 
-**PowerPaste** 6.2.0 includes one fix:
+**PowerPaste** 6.2.0 includes two fixes:
 
 ==== Existing tables were not filled out when pasting tables from Microsoft Word or Microsoft Excel.
 //#TINY-9500
@@ -400,6 +400,19 @@ Previously, when the PowerPaste plugin was active and a table was copied from Mi
 PowerPaste 6.2.0 addresses this.
 
 With this release, when a table is copied and pasted from Microsoft Word or Microsoft Excel into an existing {productname} table, it correctly fills the cells of the existing table.
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[Introduction to PowerPaste].
+
+=== Text within anchor tags, <a>, presented with the Times New Roman font-family, ignoring the font family used in the original document.
+//#TINY-9812
+
+In previous versions of {productname}, an issue related to the `a:link` selector in the CSS received from Microsoft Word was identified.
+
+When content containing links was pasted from a Microsoft Word file into a {productname} instance running the xref:introduction-to-powerpaste.adoc[PowerPaste] plugin, the pasted-in link text rendered using the Times New Roman font family. And it presented thus no matter the typeface set for this text in the original Microsoft Word document.
+
+To work around this, {productname} 6.5.1 removes the default CSS styling applied by Microsoft Word during the paste operation.
+
+With this change, link text copied from Microsoft Word using the PowerPaste plugin now uses the font-family matching that used in the source document.
 
 For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[Introduction to PowerPaste].
 
@@ -550,16 +563,16 @@ For {productname} 6.5.1, improvements were made to the `tabpanel` dialogs: label
 
 In particular, the keyboard navigation text in the help dialog is now readable in all languages, without compromising the width of the dialog tab buttons.
 
-=== Support for the `h` hash parameter in vimeo video url in the Media plugin.
+=== Support for the `h` hash parameter in Vimeo video url in the Media plugin.
 //#TINY-9830
 
-In previous versions of {productname}, an issue was identified that prevented unlisted Vimeo videos from been added to the editor when using the media plugin.
+In previous versions of {productname}, an issue was identified that prevented unlisted Vimeo videos from been added to the editor when using the Media plugin.
 
-The media plugin failed to correctly insert the video into the content due to {productname} ignoring the `h` parameter when parsing the source URL.
+The Media plugin failed to correctly insert the video into the content due to {productname} ignoring the `h` parameter when parsing the source URL.
 
 In {productname} 6.5.1, the `h` parameter is now parsed and included in the source URL by {productname}.
 
-As a result, embedding unlisted Vimeo videos into a {productname} editor using the media plugin now works as expected.
+As a result, embedding unlisted Vimeo videos into a {productname} editor using the Media plugin now works as expected.
 
 [[changes]]
 == Changes
@@ -780,7 +793,7 @@ In previous versions of {productname}, however, if either the ctrl+delete or ctr
 
 This issue was resolved for this release: using either the ctrl+delete or ctrl+backspace keyboard shortcut and an undo or redo operation in turn now sees the insertion point placed correctly, as expected.
 
-=== Pressing the Backspace key would, in some situations, delete the image after the insertion point instead of before it
+=== Pressing the Backspace key would, in some situations, delete the image after the insertion point instead of before it.
 //#TINY-9807
 
 In previous versions of {productname}, if the insertion point was set between two image elements and the backspace key was pressed, the trailing image was mistakenly treated as an inline formatting element that should be deleted
@@ -825,10 +838,10 @@ Previously, the *Find and Replace* dialog was not updated following a modificati
 
 To resolve this issue, necessary UI updates were implemented after the change to the “Find in selection” option. As a result, the “not found” alert is now reset every time the “Find in selection” option is altered.
 
-=== Removing an image that failed to upload from an empty paragraph would leave the paragraph without a padding `<br />` tag.
+=== Removing an image that failed to upload from an empty paragraph would leave the paragraph without a padding `<br>` tag.
 //#TINY-9696
 
-Previously, when an image upload into an otherwise empty paragraph failed, the upload failure resulted in the empty paragraph not having the expected `<br />` tag to serve as padding.
+Previously, when an image upload into an otherwise empty paragraph failed, the upload failure resulted in the empty paragraph not having the expected `<br>` tag to serve as padding.
 
 When the upload failure was noted by a {productname} editor instance, and the placeholder material for the expected image was removed by the editor, the expected padding was not set.
 
@@ -897,17 +910,6 @@ This caused the browser to scroll the viewport to the bottom of the dialog after
 This scrolling did not occur if the dialog was closed by pressing the dialog close control or by typing the *Esc* key.
 
 To fix this issue, {productname} now forces the active element to blur when Safari is the host browser. By doing so, no element is selected after closing the dialog, preventing the unintended scrolling behavior.
-
-=== Text within anchor tags, <a>, presented with the Times New Roman font-family, ignoring the font family used in the original document.
-//#TINY-9812
-
-In previous versions of {productname}, an issue related to the `a:link` selector in the CSS received from Microsoft Word was identified.
-
-When content containing links was pasted from a Microsoft Word file into a {productname} instance running the xref:introduction-to-powerpaste.adoc[PowerPaste] plugin, the pasted-in link text rendered using the Times New Roman font family. And it presented thus no matter the typeface set for this text in the original Microsoft Word document.
-
-To work around this, {productname} 6.5.1 removes the default CSS styling applied by Microsoft Word during the paste operation.
-
-With this change, link text copied from Microsoft Word using the PowerPaste plugin now uses the font-family matching that used in the source document.
 
 === Invalid markup in Notification and Dialog close buttons.
 //#TINY-9849

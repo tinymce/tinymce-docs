@@ -40,7 +40,7 @@ For example, interfacing with the OpenAI Completions API:
 const api_key = '<INSERT_API_KEY_HERE>';
 
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
+  selector: 'textarea',  // Change this value according to your HTML
   plugins: 'ai',
   toolbar: 'aidialog aishortcuts',
   ai_request: (request, respondWith) => {

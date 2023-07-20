@@ -46,7 +46,7 @@ tinymce.activeEditor.windowManager.open({
 
 === Example: using `focus` to refocus an open but de-focused dialog
 
-Because a dialog with an `{ persistent: 'true' }` property does not close when the dialog loses focus, it is possible for an end-user to open a further instance of the dialog.
+Because a dialog with an `{ persistent: true }` property does not close when the dialog loses focus, it is possible for an end-user to open a further instance of the dialog.
 
 To prevent this
 

@@ -6,7 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### 2023-07-21
 
-- DOC-2093: the TinyMCE 6.6 Release notes.
+- DOC-2093: The TinyMCE 6.6 Release notes.
 - DOC-2026: AI Assistant Premium plugin documentation.
 - DOC-2109: Added notes to Options table of `dialog-configuration.adoc` re behaviour of the three `size` options.
 - DOC-2102: File, `dialog_streamContent.adoc`, added to `/partials/configuration/`; documentation of `streamContent`, a property available to the `iframe` dialog component, added to file.

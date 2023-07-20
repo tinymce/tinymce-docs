@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### 2023-07-21
 
+- DOC-2102: File, `dialog_streamContent.adoc`, added to `/partials/configuration/`; documentation of `streamContent`, a property available to the `iframe` dialog component, added to file.
 - DOC-2103: File, `dialog_border.adoc`, added to `/partials/configuration/`; documentation of `border`, a property available to the `iframe` dialog component, added to file.
 - DOC-2101: File, `dialog_persistent.adoc`, added to `/partials/configuration/`; documentation of `persistent`, a property available to the `inline` dialog component, added to file.
 - DOC-2104: File, `dialog_align.adoc`, added to `/partials/configuration/`; documentation of `align`, a property available to the `label` dialog component, added to file.

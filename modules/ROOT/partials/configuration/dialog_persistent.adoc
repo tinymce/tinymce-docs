@@ -53,23 +53,53 @@ To prevent this, use the xref:apis/tinymce.editor/#focus[`focus`] method in the 
 
 [source,js]
 ----
-tinymce.activeEditor.windowManager.open({
-  title: 'Dialog Title', // The dialog's title - displayed in the dialog header
-  body: {
-    type: 'panel', // The root body type - a Panel or TabPanel
-    items: [ // A list of panel components
-      {
-        type: 'htmlpanel', // an HTML panel component
-        html: 'Panel content goes here.'
-      }
-    ]
-  },
-  buttons: [ // A list of footer buttons
-    {
-      type: 'submit',
-      text: 'OK'
+let dialogOpened = false;
+let dialogInstanceApi = null;
+
+const openDialog = () => {
+  dialogOpened = true;
+  dialogInstanceApi = editor.windowManager.open({
+    title: 'Test',
+    body: {
+      type: 'panel',
+      items: [{
+        type: 'bar',
+        items: [{
+            type: 'input',
+            name: 'name',
+            placeholder: 'Name',
+            maximized: true
+          }
+        ]
+      }]
+    },
+    onClose: () => {
+      dialogOpened = false;
+    },
+    buttons: [{
+      type: 'cancel',
+      name: 'cancel',
+      text: 'Cancel'
+    }],
+    initialData: {
+      name: ''
     }
-  ]
-  { inline, persistent: 'true' }
+  }, {
+    inline: 'bottom',
+    persistent: true
+  });
+};
+
+const focusDialog = () => {
+  dialogInstanceApi.focus('name')
+}
+
+editor.ui.registry.addButton('example', {
+  type: 'button',
+  text: 'example',
+  tooltip: 'example',
+  onAction: () => {
+    dialogOpened ? focusDialog() : openDialog();
+  }
 });
 ----

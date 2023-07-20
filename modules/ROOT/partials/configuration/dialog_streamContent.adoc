@@ -11,7 +11,12 @@ Setting the `+srcdoc+` attribute causes the `+iframe+` to reload. This results i
 
 As well, performing updates via the `+srcdoc+` attribute means the contents of the `+iframe+` are not accessible. As a consequence, it is not possible to automatically scroll the `+iframe+` contents to the bottom as it gets updated.
 
-Setting `+streamContent+` to `+true+` switches the update mechanism to the `document.write()` method and presents incoming content as a stream at an end-of-the-current data position.
+Setting `+streamContent+` to `+true+` minimises the flickering effect.
+
+If the `+iframe+` component is already scrolled to the end, `streamContent: true` also keeps the view at this point. The UX is content being added to the `+iframe+` component as if it is being quickly typed in.
+
+A user can, however, scroll through the `+iframe+` component as updates are being added. If the view is scrolled back to the end while updates are still being added, the `streamContent: true` setting will, again, keep the view at this point.
+
 
 *Type:* `+Boolean+`
 
@@ -54,4 +59,17 @@ For information on using this property see the xref:dialog-configuration.adoc#di
 ====
 
 
+=== Recommended method for updating content in an `+iframe+` component
 
+The recommended method for updating content in an `+iframe+` component is:
+
+[source,js]
+----
+`streamContent: false: api.redial(newSpec)`
+----
+
+. This targets the component to be updated.
+
+. `newSpec` contains the new data.
+
+. Use the `+iframe+` name as the key.

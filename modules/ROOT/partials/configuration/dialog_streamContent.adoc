@@ -5,7 +5,7 @@
 
 The property has a default value of `+false+`.
 
-When `+streamContent+` is set to true, content presented within the `+iframe+` dialog component is updated using the `document.write()` method, rather than the by using the `+srcdoc+` attribute.
+When `+streamContent+` is set to `+true+`, content presented within the `+iframe+` dialog component is updated using the `document.write()` method, rather than by setting the `+srcdoc+` attribute.
 
 The `+srcdoc+` attribute requires the `+iframe+` be reloaded each time the content changes. This results in a flickering effect.
 

@@ -39,8 +39,8 @@ tinymce.activeEditor.windowManager.open({
       type: 'submit',
       text: 'OK'
     }
-  ]
-  { inline, persistent: 'true' }
+  ]},
+  { inline: 'toolbar', persistent: 'true' }
 });
 ----
 

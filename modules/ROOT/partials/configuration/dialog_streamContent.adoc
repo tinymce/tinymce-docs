@@ -32,8 +32,7 @@ tinymce.activeEditor.windowManager.open({
       {
         name: 'preview',
         type: 'iframe',
-        streamContent: 'true',
-        border: 'true'
+        streamContent: true
       }
     ]
     },

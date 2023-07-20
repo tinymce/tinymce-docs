@@ -40,7 +40,7 @@ tinymce.activeEditor.windowManager.open({
       text: 'OK'
     }
   ]},
-  { inline: 'toolbar', persistent: 'true' }
+  { inline: 'toolbar', persistent: true }
 });
 ----
 

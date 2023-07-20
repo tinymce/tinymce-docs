@@ -68,6 +68,19 @@ Each of the event callback functions - `+onAction+`, `+onSubmit+`, `+onCancel+`,
 
 Any callback function that is not passed a `+details+` object assumes that the dialog will only contain one component which can trigger it or that it does not matter if the function is triggered by multiple components. For example, `+onSubmit+` is only triggered when a user clicks on a *Submit* type footer button, and {productname} assumes that a dialog will only have one *Submit* type button. In comparison, `+onCancel+` and `+onClose+` are both triggered by clicking the `+X+` button in the top right of a dialog or by clicking a *Cancel* type footer button. These two buttons have the same functionality, and therefore {productname} does not differentiate between them.
 
+[[configuration-parameters]]
+== Configuration parameters
+
+include::partial$configuraton/dialog_align.adoc[]
+
+include::partial$configuraton/dialog_border.adoc[]
+
+include::partial$configuration/dialog_buttons.adoc[]
+
+include::partial$configuraton/dialog_persistent.adoc[]
+
+include::partial$configuraton/dialog_streamContent.adoc[]
+
 == Dialog position
 
 By default a dialog is shown as a modal in the center of the editor viewport.

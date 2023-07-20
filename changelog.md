@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### 2023-07-21
 
+- DOC-2099: Section documenting how to configure a dialog that does not render its footer added to `/partials/configuration/dialog_buttons.adoc`. `include` statements pointing to this added to `dialog-footer-buttons.adoc` and `dialog-configuration.adoc`.
 - DOC-2106: Added entries for AI Assistant-specific icons to `icons_list.adoc`.
 
 ### 2023-07-06

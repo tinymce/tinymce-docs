@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### 2023-07-21
+
+- DOC-2106: Added entries for AI Assistant-specific icons to `icons_list.adoc`.
+
 ### 2023-07-06
 
 - DOC-2098: Typo corrected in include statement in `table_merge_content_on_paste.adoc`.

@@ -1,0 +1,60 @@
+= Interactive integration example
+:navtitle: Reusable template creation
+:description_short: Using TinyMCE to create a reusable template.
+:description: Using TinyMCE to create a reusable template with both read-only and editable sections, and with included mail merge tags.
+:keywords: example, demo, custom, templates, reusable, merge tags, mail merge
+
+== Multi-root editing and document template creation
+
+This interactive example demonstrates a basic working example of {productname} being used as a reusable template creator and editor.
+
+It includes numerous plugins and configuration settings but highlights the following {productname} plugins and configuration options in particular:
+
+[cols="1,1"]
+|===
+
+a|
+[.lead]
+xref:mergetags.adoc[Merge Tags]
+
+Allows the insertion of merge tags (also known as personalization tokens, or mail merge fields).
+
+This demo includes merge tag placeholder examples in the demonstration document and equivalent merge tag placeholder strings available for adding to the editable portions of the document.
+
+These placeholders are not, in this demonstration, connected to any logic that merges them with a specific data set.
+
+a|
+[.lead]
+xref:content-behavior-options.adoc#newdocument_content[`newdocument_content`]
+
+Sets the content a new editor contains when the xref:available-menu-items.adoc#the-core-menu-items[File -> New document] menu item is invoked.
+
+Used here to show a TinyMCE instance loading an entire almost-ready-to-send-out standard document.
+
+a|
+[.lead]
+xref:content-behavior-options.adoc#editable_root[`editable_root`]
+
+Sets the initial editable state of a TinyMCE instance’s root.
+
+Used here to show a TinyMCE being used to present an almost-ready-to-send-out standard document that cannot, in the main, be changed by an end-user.
+
+a|
+[.lead]
+xref:content-behavior-options.adoc#editable_class[`editable_class`]
+
+Specifies the class name that TinyMCE will use to determine which areas of content are editable.
+
+Used here to setup the portions of an almost-ready-to-send-out standard document that end-users can (and should) edit.
+
+// Dummy table cell.
+// 1. Remove the inline comment markup pre-pending this
+//    element when the number of cells in the table is
+//    odd.
+// 2. Prepend the inline comment markup to this element
+//    when the number of cells in the table is even.
+//a|
+
+|===
+
+liveDemo::ie-template-creation[]

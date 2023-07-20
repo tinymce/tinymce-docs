@@ -64,11 +64,12 @@ The recommended method for updating content in an `+iframe+` component is:
 
 [source,js]
 ----
-`streamContent: false: api.redial(newSpec)`
+`onAction: (api) => api.setData({ myiframe: 'new content' })`
 ----
 
-. This targets the component to be updated.
+. This updates the iframe to contain the string `'new content'`. This text can be any valid html.
 
-. `newSpec` contains the new data.
+. `onAction` is a callback defined in the dialog spec. It is called when a button within the dialog `body` is triggered.
 
-. Use the `+iframe+` name as the key.
+. `myiframe` is the name of the `+iframe+` component in this spec.
+

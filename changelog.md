@@ -6,7 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### 2023-07-26
 
-- DOC-2133: Added `:pluginpage:` variables to `code` and `codesample` entries in `available-toolbar-buttons.adoc`.
+- DOC-2133: Added required `:pluginpage:` variables to entries in `available-toolbar-buttons.adoc`.
 
 ### 2023-07-25
 

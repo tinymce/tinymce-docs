@@ -4,9 +4,13 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### 2023-07-26
+
+- DOC-2133: Added `:pluginpage:` variables to `code` and `codesample` entries in `available-toolbar-buttons.adoc`.
+
 ### 2023-07-25
 
-- DOC-2108: added links to *AI Assistant* sign-up page to `admon-ai-pricing.adoc` and `ai-proxy.adoc`.
+- DOC-2108: Added links to *AI Assistant* sign-up page to `admon-ai-pricing.adoc` and `ai-proxy.adoc`.
 
 ### 2023-07-21
 

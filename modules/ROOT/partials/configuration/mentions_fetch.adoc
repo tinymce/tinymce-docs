@@ -7,7 +7,7 @@ The success call should contain an array of users.
 
 NOTE: Only the first ten (10) users listed in the array are displayed in the Mentions UI presented to end-users.
 
-For information on the user properties to pass the success callback for the available mentions item types (`+mentions_item_type+`), see: xref:mentions.adoc#user-properties[User properties].
+For information on the user properties to pass to the success callback for the available mentions item types (`+mentions_item_type+`), see: xref:mentions.adoc#user-properties[User properties].
 
 *Type:* `+Function+`
 

@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### 2023-07-27
+
+- DOC-2138: Added admonition to `mentions_fetch.adoc`, documenting the *only ten users present to the end user* UI.
+
 ### 2023-07-26
 
 - DOC-2133: Added required `:pluginpage:` variables to entries in `available-toolbar-buttons.adoc`.

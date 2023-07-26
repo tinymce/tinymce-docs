@@ -36,7 +36,9 @@ The {productname} 6.6.1 release includes an accompanying release of the **AI Ass
 ==== Toolbar buttons and menu items were enabled while the dialog was waiting for a final response
 //#TINY-10077 #1
 
-// CCFR here.
+The **AI Assistant** toolbar buttons and menu items provide no functionality while a response is being generated in the AI Assistant dialog. Previously, however, these buttons and items continued to present as enabled during response generation.
+
+With the release of **AI Assistant** 1.0.1, this has been corrected. The plugin’s toolbar buttons and menu items are now disabled while a response is being generated.
 
 ==== Error events from streaming requests were included in threads separately to the corresponding response event
 //#TINY-10077 #2

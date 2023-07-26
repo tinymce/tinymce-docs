@@ -11,6 +11,12 @@ This section lists the releases for {productname} 6 and the changes made in each
 
 a|
 [.lead]
+xref:6.6.1-release-notes.adoc#overview[{productname} 6.6.1]
+
+Release notes for {productname} 6.6.1
+
+a|
+[.lead]
 xref:6.6-release-notes.adoc#overview[{productname} 6.6]
 
 Release notes for {productname} 6.6
@@ -82,11 +88,13 @@ xref:6.0-release-notes-overview.adoc[{productname} 6.0]
 Release notes for {productname} 6.0
 
 // Dummy table cell.
-// 1. Remove the inline comment markup pre-pending this
-//    element when the number of cells in the table is
-//    odd.
-// 2. Prepend the inline comment markup to this element
-//    when the number of cells in the table is even.
+// 1. When the number of cells in the table is odd:
+//    * remove the inline comment markup pre-pending this
+//      element.
+//
+// 2. When the number of cells in the table is even:
+//    * prepend the inline comment markup to this
+//      element.
 a|
 
 |===

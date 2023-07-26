@@ -33,17 +33,15 @@ The {productname} 6.6.1 release includes an accompanying release of the **AI Ass
 
 **AI Assistant** 1.0.1 includes the following fixes:
 
-==== Error events from streaming requests were included in threads separately to the corresponding response event
+==== Toolbar buttons and menu items were enabled while the dialog was waiting for a final response
 //#TINY-10077 #1
 
 // CCFR here.
 
-
-==== Toolbar buttons and menu items were enabled while the dialog was waiting for a final response
+==== Error events from streaming requests were included in threads separately to the corresponding response event
 //#TINY-10077 #2
 
 // CCFR here.
-
 
 ==== Preview content was removed when an error is encountered part way through a streaming response
 //#TINY-10096

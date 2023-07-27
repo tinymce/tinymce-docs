@@ -96,7 +96,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 When `iframe` dialog components have xref:dialog-configuration.adoc#dialog_streamContent[`streamContent: true`] set, content is updated using the `document.write()` method rather than by setting the `srcdoc` attribute to prevent the `iframe` from reloading.
 
-This setting stops the content from flickering as it updates when the host browser is Google Chrome or Mozila Firefox.
+This setting stops the iframe from flickering as it updates its contents when the host browser is Google Chrome or Mozilla Firefox.
 
 The flickering still occurred when the host browser was Apple Safari, however.
 

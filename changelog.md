@@ -6,7 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
-- DOC-2143: documentation of bug fix, _Context menu and context toolbar no longer show when the selected image is in a non-editable context_ added to **Enhanced Image Editing** section of `6.6.1-release-notes.adoc`..
+- DOC-2143: documentation of bug fix, _Context menu and context toolbar no longer show when the selected image is in a non-editable context_ added to **Enhanced Image Editing** section of `6.6.1-release-notes.adoc`.
 
 ### 2023-07-21
 

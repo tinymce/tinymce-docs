@@ -49,10 +49,20 @@ The {productname} 6.6.1 release includes an accompanying release of the **AI Ass
 // CCFR here.
 
 
-==== Using AI Assistant within OSX Safari, caused the editor to scroll to the bottom of the editor
+==== when Safari on macOS was the host environment and a returned response was inserted into the {productname} editor, the inserted content did not scroll into view
 //#TINY-10102
 
-// CCFR here.
+Previously when:
+
+. Safari running on macOS was the host browser; and
+. the **AI Assistant** dialog was open and contained a returned response; and
+. the *Insert* button was pressed
+
+The **AI Assistant** dialog closed but, if the inserted content was not visible, the {productname} editor instance did not scroll the material into view.
+
+**AI Assistant** 1.0.1 fixes this.
+
+With this release, after the *Insert* button is pressed and the **AI Assistant** dialog closes, if the inserted response is not visible, the {productname} editor scrolls it into view.
 
 For information on the **AI Assistant** plugin, see: xref:ai.adoc[AI Assistant].
 

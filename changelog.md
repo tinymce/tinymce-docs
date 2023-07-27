@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### Unreleased
+
+- DOC-2140: documentation of bug fix, _Preview content was removed when an error is encountered part way through a streaming response_, added to **AI Assistant** section of `6.6.1-release-notes.adoc`.
+
 ### 2023-07-21
 
 - DOC-2093: The TinyMCE 6.6 Release notes.

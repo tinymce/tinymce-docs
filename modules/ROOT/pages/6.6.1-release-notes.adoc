@@ -91,10 +91,18 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.6.1 also includes the following improvement:
 
-=== Content updates for streamContent: true iframe dialog components on Safari are now throttled to 500ms intervals to reduce the visual impact of flickering when rapidly updating iframe content
+=== When Safari is the host browser, content updates for iframe dialog components with `streamContent: true` set are now throttled to 500ms intervals
 //#TINY-10097
 
-// CCFR here.
+When `iframe` dialog components have xref:dialog-configuration.adoc#dialog_streamContent[`streamContent: true`] set, content is updated using the `document.write()` method rather than by setting the `srcdoc` attribute to prevent the `iframe` from reloading.
+
+This setting stops the content from flickering as it updates when the host browser is Google Chrome or Mozila Firefox.
+
+The flickering still occured when the host browser was Apple Safari, however.
+
+In {productname} 6.6.1, content updates for `iframe` dialog components with `streamContent: true` set are throttled to 500ms intervals when Safari is the host browser. This significantly reduces the apparent flickering.
+
+NOTE: This throttling is specific to Safari. It is not applied when any browser other than Safari is the host browser.
 
 
 [[addition]]

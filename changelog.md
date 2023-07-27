@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### Unreleased
+
+- DOC-2134: documentation of bug fix, _When Safari is the host browser, content updates for iframe dialog components with `streamContent: true` set are now throttled to 500ms intervals_, added to **Improvement** section of `6.6.1-release-notes.adoc`.
+
 ### 2023-07-21
 
 - DOC-2093: The TinyMCE 6.6 Release notes.

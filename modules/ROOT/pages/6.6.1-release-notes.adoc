@@ -98,7 +98,7 @@ When `iframe` dialog components have xref:dialog-configuration.adoc#dialog_strea
 
 This setting stops the content from flickering as it updates when the host browser is Google Chrome or Mozila Firefox.
 
-The flickering still occured when the host browser was Apple Safari, however.
+The flickering still occurred when the host browser was Apple Safari, however.
 
 In {productname} 6.6.1, content updates for `iframe` dialog components with `streamContent: true` set are throttled to 500ms intervals when Safari is the host browser. This significantly reduces the apparent flickering.
 

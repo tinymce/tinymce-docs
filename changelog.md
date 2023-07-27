@@ -6,7 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### 2023-07-27
 
-- DOC-2138: Added admonition to `mentions_fetch.adoc`, documenting the *only ten users present to the end user* UI.
+- DOC-2138: Added admonition to `mentions_fetch.adoc`, documenting the *only ten users present to the end user* UI. Also added paragraph to `examples/live-demos/mentions/index.html` noting the random nature of the photo-and-name pairing possible when using the *Mentions* live demo.
 
 ### 2023-07-26
 

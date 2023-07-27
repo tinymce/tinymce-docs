@@ -102,7 +102,7 @@ The flickering still occurred when the host browser was Apple Safari, however.
 
 In {productname} 6.6.1, content updates for `iframe` dialog components with `streamContent: true` set are throttled to 500ms intervals when Safari is the host browser. This significantly reduces the apparent flickering.
 
-NOTE: This throttling is specific to Safari. It is not applied when any browser other than Safari is the host browser.
+NOTE: This 500ms throttling is specific to Safari. It is not applied when any browser other than Safari is the host browser.
 
 
 [[addition]]

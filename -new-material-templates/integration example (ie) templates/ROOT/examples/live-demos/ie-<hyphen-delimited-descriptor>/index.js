@@ -22,5 +22,5 @@ tinymce.init({
   'alignright alignjustify | bullist numlist outdent indent | ' +
   'removeformat | help',
   content_style, // must be here if you have <css for the demo> above.
-  newdocument_content: // required — with actual material here — if your demo involves creating new documents.
+  newdocument_content // required — with actual material here — if your demo involves creating new documents.
 });

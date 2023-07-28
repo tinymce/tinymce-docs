@@ -1,4 +1,4 @@
-const content_styl= `
+const content_style= `
 
 // In a more typical environment this constant would be a file, style.css,
 // referenced in the tinymce.init configuration with the content_css option.

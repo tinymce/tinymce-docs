@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### Unreleased
+
+- DOC-2149: documentation of change, _API comments/documentation: a markup typo and run-on sentences both corrected_, added to **Change** section of `6.6.1-release-notes.adoc`.
+
 ### 2023-07-21
 
 - DOC-2093: The TinyMCE 6.6 Release notes.

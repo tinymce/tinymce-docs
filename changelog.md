@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### Unreleased
+
+- DOC-2152: documentation of bug fix, _On Safari, iframe dialog components did not consistently autoscroll to the end of the scrollable area when `streamContent: true` was set_, added to **Bug fix** section of `6.6.1-release-notes.adoc`.
+
 ### 2023-07-21
 
 - DOC-2093: The TinyMCE 6.6 Release notes.

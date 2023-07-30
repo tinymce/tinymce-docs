@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### Unreleased
+
+- DOC-2144: documentation of bug fix, _A warning message was sometimes printed to the browser console when closing a dialog that contained an iframe component_, added to **Bug fixes** section of `6.6.1-release-notes.adoc`.
+
 ### 2023-07-21
 
 - DOC-2093: The TinyMCE 6.6 Release notes.

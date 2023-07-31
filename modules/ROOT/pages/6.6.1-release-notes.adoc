@@ -102,8 +102,42 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.6.1 also includes the following addition:
 
-=== New `pad_empty_with_br` option that can be set to `true` to pad empty block elements with `<br>` tag instead of nbsp character
+=== New filtering option: `pad_empty_with_br`
 //#TINY-9861
+
+{productname} 6.6.1 includes a further content filtering option, `pad_empty_with_br`.
+
+COontent filtering options change the way {productname} manages input and output.
+
+The `pad_empty_with_br` option, when set to `true`, places a `+<br>+` tag within empty block elements rather than the default non-breaking space entity, `+&nbsp;+`.
+
+That is, when a {productname} instance includes the following setting
+
+[source,js]
+----
+pad_empty_with_br: true,
+----
+ 
+this input
+
+[source,html]
+----
+<p>&nbsp;</p>
+----
+
+is automatically stored and rendered as
+
+[source,html]
+----
+<p><br></p>
+----
+
+[NOTE]
+====
+An equivalent filtering option, `padd_empty_with_br` was xref:migration-from-5x/#previously-deprecated-items-now-removed[removed from {productname} 6.0.0].
+
+This new — and correctly spelled — option behaves in essentially identical fashion to the older option.
+====
 
 [[change]]
 == Change

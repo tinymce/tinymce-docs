@@ -119,7 +119,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.6.1 also includes the following bug fixes:
 
-=== On Safari and Firefox browsers, scroll positions were not always maintained when updating the content of a `streamContent: true` iframe dialog component
+=== On Safari and Firefox, scroll positions were not always maintained when updating the content of a `streamContent: true` iframe dialog component
 //#TINY-10078
 
 On each content update for iframe dialog components with `streamContent: true` set, the iframe is expected to automatically scroll to the bottom if the pre-update scrolled position is already at the end of the scrollable area. It is also expected, however, that the end-user can freely scroll through the iframe as content updates occur.

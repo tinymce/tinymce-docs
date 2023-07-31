@@ -1,0 +1,31 @@
+[[pad_empty_with_br]]
+== `+pad_empty_with_br+`
+
+include::partial#$misc/admon-requires-6.6.1v.adoc[]
+
+By default, {productname} places non-breaking space entities — `+&nbsp;+` — as placeholders inside empty block elements. For example, inside an otherwise empty `+<p></p>+` pair.
+
+The `+pad_empty_with_br+` option enables {productname} to change this default placeholder to a break tag: `+<br>+`.
+
+*Type:* `+Boolean+`
+
+*Possible values:* `true`, `false`
+
+*Default value:* `false`
+
+=== Example: using `pad_empty_with_br`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  pad_empty_with_br: true,
+});
+----
+
+[NOTE]
+====
+An equivalent filtering option, `padd_empty_with_br` was xref:migration-from-5x.adoc#previously-deprecated-items-now-removed[removed from {productname} 6.0.0].
+
+This new — and correctly spelled — option behaves in essentially identical fashion to the older option.
+====

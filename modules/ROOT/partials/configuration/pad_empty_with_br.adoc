@@ -1,7 +1,7 @@
 [[pad_empty_with_br]]
 == `+pad_empty_with_br+`
 
-include::partial#$misc/admon-requires-6.6.1v.adoc[]
+include::partial$misc/admon-requires-6.6.1v.adoc[]
 
 By default, {productname} places non-breaking space entities — `+&nbsp;+` — as placeholders inside empty block elements. For example, inside an otherwise empty `+<p></p>+` pair.
 

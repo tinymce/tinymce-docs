@@ -146,8 +146,13 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 // CCFR here.
 
-=== Safari and Firefox `focus` border missing from `iframe`
+=== On Safari and Firefox, the border around `iframe` dialog components did not highlight when focused
 //TINY-10101
-//2023-06-26: sub-head is ticket summary, not changelog entry.
 
-//CCFR here.
+{productname} 6.6, introduced a new dialog configuration property, xref:dialog-configuration.adoc#border[`border`].
+
+When set to `true`, this property adds a border around `iframe` dialog components that highlights when the compoment takes focus. By default, {productname} renders this as a blue border around the component.
+
+When either Safari or Firefox were the host browsers, however, the border did not render as expected when this component had focus.
+
+{productname} 6.6.1 corrects this. When either Safari or Firefox are the host browsers, `iframe` dialog components now highlight when taking focus, as expected.

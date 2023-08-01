@@ -49,7 +49,7 @@ The {productname} 6.6.1 release includes an accompanying release of the **AI Ass
 // CCFR here.
 
 
-==== When Safari on macOS was the host environment and a returned response was inserted into the {productname} editor, the inserted content did not scroll into view
+==== When a response from the AI Assistant dialog was inserted into a selection not in view, the content did not scroll into view
 //#TINY-10102
 
 Previously when inserting a response from the AI Assistant dialog at a selection which is above the current view, the inserted content would not be scrolled into view.

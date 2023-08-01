@@ -36,18 +36,25 @@ The {productname} 6.6.1 release includes an accompanying release of the **AI Ass
 ==== Toolbar buttons and menu items were enabled while the dialog was waiting for a final response
 //#TINY-10077 #1
 
-// CCFR here.
+The **AI Assistant** toolbar buttons and menu items provide no functionality while a response is being generated in the AI Assistant dialog. Previously, however, these buttons and items continued to present as enabled during response generation.
 
-==== Error events from streaming requests were included in threads separately to the corresponding response event
+With the release of **AI Assistant** 1.0.1, this has been corrected. The plugin’s toolbar buttons and menu items are now disabled while a response is being generated.
+
+==== Error events from streaming requests were included in separate threads to the corresponding response event
 //#TINY-10077 #2
 
-// CCFR here.
+Previously, when an error occurred while a streaming response was in progress, both an error and response event were added to the current thread.
+
+**AI Assistant 1.0.1** corrects this. Now, when an error occurs during an in-progress streaming response, a single event — containing both the error and the response — is added to the current thread.
 
 ==== Preview content was removed when an error is encountered part way through a streaming response
 //#TINY-10096
 
-// CCFR here.
+Previously, when an error was encountered while a streaming response was in progress, the **AI Assistant** dialog removed the partial response when displaying the error.
 
+With the release of **AI Assistant 1.0.1**, the partial response is left in place, displayed as a finished response.
+
+And the error message is displayed below this, left-in-place, response.
 
 ==== When a response from the AI Assistant dialog was inserted into a selection not in view, the content did not scroll into view
 //#TINY-10102
@@ -122,9 +129,16 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 {productname} 6.6.1 also includes the following bug fixes:
 
 === On Safari and Firefox browsers, scroll positions were not always maintained when updating the content of a `streamContent: true` iframe dialog component
-//#TINY-10078 #TINY-10109
+//#TINY-10078
 
 // CCFR here.
+
+
+=== [Safari] iframe not consistently autoscrolling to bottom when streamContent: true
+//#TINY-10109
+
+// CCFR here.
+
 
 === Scrolling behavior was inconsistent when updating a `streamContent: true` iframe dialog component with content lacking an HTML document type declaration.
 //#TINY-10110

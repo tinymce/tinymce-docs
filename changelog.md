@@ -7,6 +7,9 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### Unreleased
 
 - DOC-2148: documentation of bug fix, _When a response from the AI Assistant dialog was inserted into a selection not in view, the content did not scroll into view_, added to **AI Assistant** section of `6.6.1-release-notes.adoc`.
+- DOC-2140: documentation of bug fix, _Preview content was removed when an error is encountered part way through a streaming response_, added to **AI Assistant** section of `6.6.1-release-notes.adoc`.
+- DOC-2142: documentation of bug fix, _Error events from streaming requests were included in seperate threads to the corresponding response event_, added to **AI Assistant** section of `6.6.1-release-notes.adoc`.
+- DOC-2141: documentation of bug fix, _Toolbar buttons and menu items were enabled while the dialog was waiting for a final response_, added to **AI Assistant** section of `6.6.1-release-notes.adoc`.
 
 ### 2023-07-21
 

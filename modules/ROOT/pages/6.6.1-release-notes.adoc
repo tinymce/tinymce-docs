@@ -174,10 +174,20 @@ However, it was found that, when setting content without an HTML document type d
 
 {productname} 6.6.1 now checks whether the content contains an HTML doctype declaration and, if so, it chooses the iframe’s body as the scrolling element to determine scrolling conditions. This allows content updates for `streamContent: true` iframe dialog components to behave as expected for both content with and without an HTML doctype declaration.
 
-=== A warning message was sometimes printed to the browser console when closing a dialog that contains an iframe component
+=== A warning message was sometimes printed to the browser console when closing a dialog that contained an iframe component
 //#TINY-10070
 
-// CCFR here.
+In some circumstances, when a dialog that contained an iframe component was closed, the console warning message, *the component must be in a context to execute*, was generated.
+
+This happened because, while the dialog was closed, the currently focussed element was not within the {productname} instance. This caused the `onAction()` callback function to set the focus back to the (now closed) dialog element.
+
+In {productname} 6.6.1, a check has been implemented:
+
+* to see if the dialog still exists within the DOM; and
+* to ensure the element with focus is within the {productname} instance after a dialog is closed.
+
+As a consequence, the console warning is no longer generated when dialogs with iframe components are closed.
+
 
 === When an editable area was nested inside a non-editable area, creating lists was not possible
 //#TINY-10000

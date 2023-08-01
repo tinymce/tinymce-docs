@@ -6,7 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
-- DOC-2148: documentation of bug fix, _when Safari on macOS was the host environment and a returned response was inserted into the {productname} editor, the inserted content did not scroll into view_, added to **AI Assistant** section of `6.6.1-release-notes.adoc`.
+- DOC-2148: documentation of bug fix, _When a response from the AI Assistant dialog was inserted into a selection not in view, the content did not scroll into view_, added to **AI Assistant** section of `6.6.1-release-notes.adoc`.
 
 ### 2023-07-21
 

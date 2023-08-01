@@ -124,7 +124,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 On each content update for iframe dialog components with `streamContent: true` set, the iframe is expected to automatically scroll to the bottom if the pre-update scrolled position is already at the end of the scrollable area. It is also expected, however, that the end-user can freely scroll through the iframe as content updates occur.
 
-When Chrome is the host browser, scroll positions are natively maintained after `document.write()`, but this is not the case when either Safari or Firefox are the host browsers. Both these browsers reset the scroll positions to the top.
+When Chrome is the host browser, scroll positions are natively maintained after content updates via `document.write()`, but this is not the case when either Safari or Firefox are the host browsers. Both these browsers reset the scroll positions to the top.
 
 As a consequence, once the user scrolls up in the iframe as content updates occur, the programmatic scrolling to the bottom no longer occurs. Instead, the native behavior takes over and keeps the scroll at the top, even as content updates continue.
 

@@ -130,7 +130,7 @@ As a consequence, once the user scrolls up in the iframe as content updates occu
 
 This makes the {productname} dialog feel stuck when Safari or Firefox are the host browsers, which is both against expected behavior and poor UX.
 
-As of {productname} 6.6.1, the extant `scrollTop` value before any content updates happen is stored. After a content update, if the host browser is Firefox or Safari and the previous scroll position was not at the end of the scrollable area, {productname} now programmatically restore the previous scroll position using the stored `scrollTop` value.
+As of {productname} 6.6.1, after a content update to a `streamContent: true` iframe dialog component, if the host browser is Firefox or Safari and the previous scroll position was not at the end of the scrollable area, {productname} now programmatically restores the previous scroll position.
 
 === [Safari] iframe not consistently autoscrolling to bottom when streamContent: true
 //#TINY-10109

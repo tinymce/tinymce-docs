@@ -129,7 +129,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 When an iframe dialog has `streamContent: true` set and the scrolled position is already at the end of the scrollable area, the expected behavior is to maintain this end-of-scrollable-area position by automatically scrolling to the end of the area as content in the scrollable area updates
 
-However, it was found that, when setting content without an HTML document type declaration using `document.write()`, the scrolling element used to determine scrolling conditions is the iframe’s body, not its document element. And, previously, only the latter was handled. As a consequence updating the iframe with content without an HTML doctype declaration did not always maintain scroll positions as expected.
+However, it was found that, when setting content without an HTML document type declaration using `document.write()`, the scrolling element used to determine scrolling conditions is the iframe’s body, not its document element. And, previously, only the latter was handled. As a consequence, updating the iframe with content without an HTML doctype declaration did not always maintain scroll positions as expected.
 
 {productname} 6.6.1 now checks whether the content contains an HTML doctype declaration and, if so, it chooses the iframe’s body as the scrolling element to determine scrolling condition. This allows content updates for `streamContent: true` iframe dialog components to behave as expected for both content with and without an HTML doctype declaration.
 

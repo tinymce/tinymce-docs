@@ -130,7 +130,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.6.0 added support for a `streamContent` setting for iframe dialog components. One of the features of this setting allows the iframe to automatically scroll to the end of the scrollable area on each content update if the scrolled position is already at the end of this area before content updates begin.
 
-However, when Safari was the host browser, when attempting to scroll an ifram component with `streamContent: true` set before the load event has fired, the scroll unexpectedly jumped back to the top after the iframe loaded.
+However, when Safari was the host browser, when attempting to scroll an iframe component with `streamContent: true` set before its `load` event has fired, the scroll unexpectedly jumped back to the top after the iframe loaded.
 
 This made the autoscrolling feature inconsistent on Safari, as it depended on how quickly the iframe loaded after the content update.
 

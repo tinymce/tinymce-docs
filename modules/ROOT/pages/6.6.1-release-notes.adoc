@@ -134,7 +134,7 @@ However, when Safari was the host browser, when attempting to scroll an iframe c
 
 This made the autoscrolling feature inconsistent on Safari, as it depended on how quickly the iframe loaded after the content update.
 
-In {productname} 6.6.1, when Safari is the host browser, the autoscrolling behavior is attached to a one-time event listener that responds to the iframe’s load event on each content update.
+In {productname} 6.6.1, when Safari is the host browser, the autoscrolling behavior is attached to a one-time event listener that responds to the iframe’s `load` event on each content update.
 
 This allows iframe dialog components with `streamContent: true` set to consistently autoscroll to the end of the scrollable area when Safari is the host browser.
 

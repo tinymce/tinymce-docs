@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### 2023-08-02
+
+- DOC-2110: Added 6.6.1-specific entries to `changelog.adoc`.
+
 ### 2023-07-27
 
 - DOC-2138: Added admonition to `mentions_fetch.adoc`, documenting the *only ten users present to the end user* UI. Also added paragraph to `examples/live-demos/mentions/index.html` noting the random nature of the photo-and-name pairing possible when using the *Mentions* live demo.

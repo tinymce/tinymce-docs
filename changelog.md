@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2149: documentation of change, _API comments/documentation: a markup typo and run-on sentences both corrected_, added to **Change** section of `6.6.1-release-notes.adoc`.
 - DOC-2134: documentation of bug fix, _When Safari is the host browser, content updates for iframe dialog components with `streamContent: true` set are now throttled to 500ms intervals_, added to **Improvement** section of `6.6.1-release-notes.adoc`.
 - DOC-2148: documentation of bug fix, _When a response from the AI Assistant dialog was inserted into a selection not in view, the content did not scroll into view_, added to **AI Assistant** section of `6.6.1-release-notes.adoc`.
 - DOC-2140: documentation of bug fix, _Preview content was removed when an error is encountered part way through a streaming response_, added to **AI Assistant** section of `6.6.1-release-notes.adoc`.

@@ -127,9 +127,12 @@ NOTE: This 500ms throttling is specific to Safari. It is not applied when any br
 
 {productname} 6.6.1 also includes the following change:
 
-=== API comments/documentation corrected: a typo correction and run-on sentences fixed.
+=== API comments/documentation: a markup typo and run-on sentences both corrected
 //#TINY-10073
 
+A markup typo in `/tinymce/modules/tinymce/src/core/main/ts/api/WindowManager.ts` resulted in an extraneous html markup tag displaying in the xref:/apis/tinymce.windowmanager.adoc[tinymce.WindowManager()] documentation.
+
+As well, two run-on sentences in the same file were corrected.
 
 [[bug-fixes]]
 == Bug fixes

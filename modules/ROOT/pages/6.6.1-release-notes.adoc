@@ -50,8 +50,11 @@ Previously, when an error occurred while a streaming response was in progress, b
 ==== Preview content was removed when an error is encountered part way through a streaming response
 //#TINY-10096
 
-// CCFR here.
+Previously, when an error was encountered while a streaming response was in progress, the **AI Assistant** dialog removed the partial response when displaying the error.
 
+With the release of **AI Assistant 1.0.1**, the partial response is left in place, displayed as a finished response.
+
+And the error message is displayed below this, left-in-place, response.
 
 ==== Using AI Assistant within OSX Safari, caused the editor to scroll to the bottom of the editor
 //#TINY-10102

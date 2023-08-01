@@ -56,10 +56,12 @@ With the release of **AI Assistant 1.0.1**, the partial response is left in plac
 
 And the error message is displayed below this, left-in-place, response.
 
-==== Using AI Assistant within OSX Safari, caused the editor to scroll to the bottom of the editor
+==== When a response from the AI Assistant dialog was inserted into a selection not in view, the content did not scroll into view
 //#TINY-10102
 
-// CCFR here.
+Previously when inserting a response from the AI Assistant dialog at a selection which is above the current view, the inserted content would not be scrolled into view.
+
+In **AI Assistant** 1.0.1, the response is now inserted after the dialog is closed, allowing the content to be scrolled into view correctly.
 
 For information on the **AI Assistant** plugin, see: xref:ai.adoc[AI Assistant].
 

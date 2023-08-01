@@ -66,15 +66,17 @@ The {productname} 6.6.1 release includes an accompanying release of the **Enhanc
 ==== Context menu and context toolbar no longer show when the selected image is in a non-editable context
 //#TINY-10016
 
-When a {productname} instance is setup with `editable_root: false` set, the entire instance is, by default, a read-only instance. To allow editing of any portion, that portion must have a `contenteditable="true"` attribute set.
+When a {productname} instance is setup with `editable_root: false` set, the entire instance is, by default, a read-only instance.
 
-Previously, however, if an image was in a {productname} instance with an `editable_root: false` set, bringing up the {productname} context menu (eg by right-clicking on the image in a desktop setting or by long-pressing on the image in a mobile setting) allowed the {productname} context toolbar to be further presented, which allowed for image manipulation.
+To allow editing of any portion, that portion must be specifically set as writable (for example, by being within an element that has a `contenteditable="true"` attribute set).
 
-**Enhanced Image Editing** 1.1.1 addresses this. With this update, right-clicking on an image, or long-pressing on an image in a mobile setting, no longer brings up the {productname} context menu, obviating the path to, further, bringing up the {productname} toolbar.
+Previously, however, if an image was in a {productname} instance with both an `editable_root: false` set and the xref:editimage.adoc[Enhanced Image Editing] Premium plugin loaded, bringing up a {productname} context menu (eg by right-clicking on the image in a desktop setting or by long-pressing on the image in a mobile setting) allowed the Enhanced Image Editing plugin’s context toolbar to present, which allowed for image manipulation.
+
+**Enhanced Image Editing** 1.1.1 addresses this. With this update, invoking a context menu in non-editable area no longer brings up the plugin’s context toolbar.
 
 As a consequence, images presented within a {productname} instance setup with a `editable_root: false` set are properly read-only, as expected.
 
-NOTE: right-clicking on an image, or long-pressing on an image in a mobile instance, still invokes the host browser’s context menu in such a setup.
+NOTE: right-clicking on an image, or long-pressing on an image in a mobile instance, still invokes the host browser’s context menu in such a circumstance.
 
 For information on the **Enhanced Image Editing** plugin, see: xref:editimage.adoc[Enhanced Image Editing].
 

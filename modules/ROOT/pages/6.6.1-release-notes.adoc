@@ -40,10 +40,12 @@ The **AI Assistant** toolbar buttons and menu items provide no functionality whi
 
 With the release of **AI Assistant** 1.0.1, this has been corrected. The plugin’s toolbar buttons and menu items are now disabled while a response is being generated.
 
-==== Error events from streaming requests were included in threads separately to the corresponding response event
+==== Error events from streaming requests were included in separate threads to the corresponding response event
 //#TINY-10077 #2
 
-// CCFR here.
+Previously, when an error occurred while a streaming response was in progress, both an error and response event were added to the current thread.
+
+**AI Assistant 1.0.1** corrects this. Now, when an error occurs during an in-progress streaming response, a single event — containing both the error and the response — is added to the current thread.
 
 ==== Preview content was removed when an error is encountered part way through a streaming response
 //#TINY-10096

@@ -126,7 +126,7 @@ On each content update for iframe dialog components with `streamContent: true` s
 
 When Chrome is the host browser, scroll positions are natively maintained after content updates via `document.write()`, but this is not the case when either Safari or Firefox are the host browsers. Both these browsers reset the scroll positions to the top.
 
-As a consequence, once the user scrolls up in the iframe as content updates occur, the programmatic scrolling to the bottom no longer occurs. Instead, the native behavior takes over and keeps the scroll at the top, even as content updates continue.
+As a consequence, once the user scrolls up in the iframe as content updates occur and the programmatic scrolling to the bottom no longer occurs, the native behavior takes over. On Safari and Firefox, this results in the scroll being kept at the top even as the user attempts to scroll, which is both against expected behavior and poor UX.
 
 This makes the {productname} dialog feel stuck when Safari or Firefox are the host browsers, which is both against expected behavior and poor UX.
 

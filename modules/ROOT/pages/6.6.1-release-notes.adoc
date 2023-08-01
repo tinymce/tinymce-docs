@@ -151,10 +151,18 @@ As a consequence, once the user scrolls up in the iframe as content updates occu
 
 As of {productname} 6.6.1, after a content update to a `streamContent: true` iframe dialog component, if the host browser is Firefox or Safari and the previous scroll position was not at the end of the scrollable area, {productname} now programmatically restores the previous scroll position.
 
-=== [Safari] iframe not consistently autoscrolling to bottom when streamContent: true
+=== On Safari, iframe dialog components did not consistently autoscroll to the end of the scrollable area when `streamContent: true` was set
 //#TINY-10109
 
-// CCFR here.
+{productname} 6.6.0 added support for a `streamContent` setting for iframe dialog components. One of the features of this setting allows the iframe to automatically scroll to the end of the scrollable area on each content update if the scrolled position is already at the end of this area before content updates begin.
+
+However, when Safari was the host browser, when attempting to scroll an iframe component with `streamContent: true` set before its `load` event has fired, the scroll unexpectedly jumped back to the top after the iframe loaded.
+
+This made the autoscrolling feature inconsistent on Safari, as it depended on how quickly the iframe loaded after the content update.
+
+In {productname} 6.6.1, when Safari is the host browser, the autoscrolling behavior is attached to a one-time event listener that responds to the iframe’s `load` event on each content update.
+
+This allows iframe dialog components with `streamContent: true` set to consistently autoscroll to the end of the scrollable area when Safari is the host browser.
 
 
 === Scrolling behavior was inconsistent when updating a `streamContent: true` iframe dialog component with content lacking an HTML document type declaration.

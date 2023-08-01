@@ -4,9 +4,9 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-
 ### Unreleased
 
+- DOC-2152: documentation of bug fix, _On Safari, iframe dialog components did not consistently autoscroll to the end of the scrollable area when `streamContent: true` was set_, added to **Bug fix** section of `6.6.1-release-notes.adoc`.
 - DOC-2135: documentation of bug fix, _On Safari and Firefox browsers, scroll positions were not always maintained when updating the content of a `streamContent: true` iframe dialog component_, added to **Bug fixes** section of `6.6.1-release-notes.adoc`.
 - DOC-2149: documentation of change, _API comments/documentation: a markup typo and run-on sentences both corrected_, added to **Change** section of `6.6.1-release-notes.adoc`.
 - DOC-2134: documentation of bug fix, _When Safari is the host browser, content updates for iframe dialog components with `streamContent: true` set are now throttled to 500ms intervals_, added to **Improvement** section of `6.6.1-release-notes.adoc`.

@@ -204,3 +204,18 @@ When set to `true`, this property adds a border around `iframe` dialog component
 When either Safari or Firefox were the host browsers, however, the border did not render as expected when this component had focus.
 
 {productname} 6.6.1 corrects this. When either Safari or Firefox are the host browsers, `iframe` dialog components now highlight when taking focus, as expected.
+
+=== Right-clicking on an image that was in a non-editable area would open the image plugin’s context menu
+//#TINY-10016
+
+// CCFR here
+
+=== The `color_cols` option was not respected when a custom `color_map` was defined
+// #TINY-10098
+
+// CCFR here
+
+=== The `color_cols` options were were not rounded to the nearest number when set to a decimal number
+//#TINY-9737
+
+// CCFR here

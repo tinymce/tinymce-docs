@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2147: documentation of bug fix, _On Safari and Firefox, the border around `iframe` dialog components did not highlight when focused_, added to **Bug fixes** section of `6.6.1-release-notes.adoc`.
 - DOC-2144: documentation of bug fix, _A warning message was sometimes printed to the browser console when closing a dialog that contained an iframe component_, added to **Bug fixes** section of `6.6.1-release-notes.adoc`.
 - DOC-2139: documentation of bug fix, _Scrolling behavior was inconsistent when updating a `streamContent: true` iframe dialog component with content lacking an HTML document type declaration_, added to **Bug fixes** section of `6.6.1-release-notes.adoc`.
 - DOC-2152: documentation of bug fix, _On Safari, iframe dialog components did not consistently autoscroll to the end of the scrollable area when `streamContent: true` was set_, added to **Bug fix** section of `6.6.1-release-notes.adoc`.

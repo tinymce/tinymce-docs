@@ -36,23 +36,32 @@ The {productname} 6.6.1 release includes an accompanying release of the **AI Ass
 ==== Toolbar buttons and menu items were enabled while the dialog was waiting for a final response
 //#TINY-10077 #1
 
-// CCFR here.
+The **AI Assistant** toolbar buttons and menu items provide no functionality while a response is being generated in the AI Assistant dialog. Previously, however, these buttons and items continued to present as enabled during response generation.
 
-==== Error events from streaming requests were included in threads separately to the corresponding response event
+With the release of **AI Assistant** 1.0.1, this has been corrected. The plugin’s toolbar buttons and menu items are now disabled while a response is being generated.
+
+==== Error events from streaming requests were included in separate threads to the corresponding response event
 //#TINY-10077 #2
 
-// CCFR here.
+Previously, when an error occurred while a streaming response was in progress, both an error and response event were added to the current thread.
+
+**AI Assistant 1.0.1** corrects this. Now, when an error occurs during an in-progress streaming response, a single event — containing both the error and the response — is added to the current thread.
 
 ==== Preview content was removed when an error is encountered part way through a streaming response
 //#TINY-10096
 
-// CCFR here.
+Previously, when an error was encountered while a streaming response was in progress, the **AI Assistant** dialog removed the partial response when displaying the error.
 
+With the release of **AI Assistant 1.0.1**, the partial response is left in place, displayed as a finished response.
 
-==== Using AI Assistant within OSX Safari, caused the editor to scroll to the bottom of the editor
+And the error message is displayed below this, left-in-place, response.
+
+==== When a response from the AI Assistant dialog was inserted into a selection not in view, the content did not scroll into view
 //#TINY-10102
 
-// CCFR here.
+Previously when inserting a response from the AI Assistant dialog at a selection which is above the current view, the inserted content would not be scrolled into view.
+
+In **AI Assistant** 1.0.1, the response is now inserted after the dialog is closed, allowing the content to be scrolled into view correctly.
 
 For information on the **AI Assistant** plugin, see: xref:ai.adoc[AI Assistant].
 
@@ -91,10 +100,18 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.6.1 also includes the following improvement:
 
-=== Content updates for streamContent: true iframe dialog components on Safari are now throttled to 500ms intervals to reduce the visual impact of flickering when rapidly updating iframe content
+=== When Safari is the host browser, content updates for iframe dialog components with `streamContent: true` set are now throttled to 500ms intervals
 //#TINY-10097
 
-// CCFR here.
+When `iframe` dialog components have xref:dialog-configuration.adoc#dialog_streamContent[`streamContent: true`] set, content is updated using the `document.write()` method rather than by setting the `srcdoc` attribute to prevent the `iframe` from reloading.
+
+This setting stops the iframe from flickering as it updates its contents when the host browser is Google Chrome or Mozilla Firefox.
+
+The flickering still occurred when the host browser was Apple Safari, however.
+
+In {productname} 6.6.1, content updates for `iframe` dialog components with `streamContent: true` set are throttled to 500ms intervals when Safari is the host browser. This significantly reduces the apparent flickering.
+
+NOTE: This 500ms throttling is specific to Safari. It is not applied when any browser other than Safari is the host browser.
 
 
 [[addition]]
@@ -110,20 +127,29 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.6.1 also includes the following change:
 
-=== API comments/documentation corrected: a typo correction and run-on sentences fixed.
+=== API comments/documentation: a markup typo and run-on sentences both corrected
 //#TINY-10073
 
+A markup typo in `/tinymce/modules/tinymce/src/core/main/ts/api/WindowManager.ts` resulted in an extraneous html markup tag displaying in the xref:/apis/tinymce.windowmanager.adoc[tinymce.WindowManager()] documentation.
+
+As well, two run-on sentences in the same file were corrected.
 
 [[bug-fixes]]
 == Bug fixes
 
 {productname} 6.6.1 also includes the following bug fixes:
 
-=== On Safari and Firefox browsers, scroll positions were not always maintained when updating the content of a `streamContent: true` iframe dialog component
+=== On Safari and Firefox, scroll positions were not always maintained when updating the content of a `streamContent: true` iframe dialog component
 //#TINY-10078
 
-// CCFR here.
+On each content update for iframe dialog components with `streamContent: true` set, the iframe is expected to automatically scroll to the bottom if the pre-update scrolled position is already at the end of the scrollable area. It is also expected, however, that the end-user can freely scroll through the iframe as content updates occur.
 
+When Chrome is the host browser, scroll positions are natively maintained after content updates via `document.write()`, but this is not the case when either Safari or Firefox are the host browsers. Both these browsers reset the scroll positions to the top.
+
+As a consequence, once the user scrolls up in the iframe as content updates occur and the programmatic scrolling to the bottom no longer occurs, the native behavior takes over. On Safari and Firefox, this results in the scroll being kept at the top even as the user attempts to scroll, which is both against expected behavior and poor UX.
+
+
+As of {productname} 6.6.1, after a content update to a `streamContent: true` iframe dialog component, if the host browser is Firefox or Safari and the previous scroll position was not at the end of the scrollable area, {productname} now programmatically restores the previous scroll position.
 
 === On Safari, iframe dialog components did not consistently autoscroll to the end of the scrollable area when `streamContent: true` was set
 //#TINY-10109

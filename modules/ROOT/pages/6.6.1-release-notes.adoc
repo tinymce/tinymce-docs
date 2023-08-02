@@ -242,4 +242,14 @@ When `color_cols` is set to the default number of columns displayed by a {produc
 === The `color_cols` options were were not rounded to the nearest number when set to a decimal number
 //#TINY-9737
 
-// CCFR here
+Previously, if `color_cols` was set to a value which included a decimal, the resultant text color selection grid displayed incorrectly.
+
+{productname} 6.6.1 addresses this. As of this update, if `color_cols` is set to a decimal value, {productname} rounds the set value to the nearest integer and displays the color selection grid with that many columns.
+
+In this case, {productname} rounds using the *rounding half up* method.
+
+Values **x.1–x.4** are rounded to **x**.
+
+Values **x.5–x.9** are rounded to **x+1**.
+
+NOTE: if `color_cols` is set to a decimal value that would, after rounding, be an invalid value (for example, **0.1**), {productname} continues to act as it did previously. For invalid values, the `color_cols` option is treated as if it has not been set and reverts to displaying the color selection grid with the default five columns.

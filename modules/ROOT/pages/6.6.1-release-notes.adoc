@@ -213,7 +213,31 @@ When either Safari or Firefox were the host browsers, however, the border did no
 === The `color_cols` option was not respected when a custom `color_map` was defined
 // #TINY-10098
 
-// CCFR here
+The xref:user-formatting-options.adoc#color_cols[`color_cols`] option allows for specifying the number of columns for text color selection grids.
+
+If `color_cols` is not set, the number of columns displayed by a custom color swatch is, by default, the greater of the square root of the number of colors in the swatch and five (5).
+
+The square root is rounded up and five is the default number of columns a {productname} color swatch displays with the default `color_map`.
+
+For example, for a custom xref:user-formatting-options.adoc#color_map[`color_map`] containing 30 colors:
+
+√30 ≅ 5.4772 ≈ 6.
+
+And, since 6 > 5, this custom color selection grid displays six columns.
+
+Setting a `color_cols` value over-rides this default behavior.
+
+Previously, however, the `color_cols` option was not respected when a custom xref:user-formatting-options.adoc#color_map[`color_map`] was specified. In this circumstance the default method above still specified the number of columns displayed.
+
+{productname} 6.6.1 addresses this. As of this update, setting a `color_cols` value over-rides the default method of calculating the number of displayed columns, as expected.
+
+[NOTE]
+.Known issue
+====
+Setting `color_cols: 5` still results in the `color_cols` value not being used.
+
+When `color_cols` is set to the default number of columns displayed by a {productname} color selection grid (ie 5), the default method for calculating the number of displayed columns is used.
+====
 
 === The `color_cols` options were were not rounded to the nearest number when set to a decimal number
 //#TINY-9737

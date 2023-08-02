@@ -217,7 +217,7 @@ The xref:user-formatting-options.adoc#color_cols[`color_cols`] option allows for
 
 If `color_cols` is not set, the number of columns displayed by a custom color swatch is, by default, the greater of the square root of the number of colors in the swatch and five (5).
 
-The square root is rounded up and five is the default number of columns a {productname} color swatch displays.
+The square root is rounded up and five is the default number of columns a {productname} color swatch displays with the default `color_map`.
 
 For example, for a custom xref:user-formatting-options.adoc#color_map[`color_map`] containing 30 colors:
 

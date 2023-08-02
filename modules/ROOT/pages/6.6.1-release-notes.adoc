@@ -252,4 +252,4 @@ Values **x.1–x.4** are rounded to **x**.
 
 Values **x.5–x.9** are rounded to **x+1**.
 
-NOTE: if `color_cols` is set to a decimal value that would, after rounding, be an invalid value (for example, **0.1**), {productname} continues to act as it did previously. For invalid values, the `color_cols` option is treated as if it has not been set and reverts to displaying the color selection grid with the default five columns.
+NOTE: If `color_cols` is set to a decimal value that would, after rounding, be an invalid value (for example, **0.1**), {productname} continues to act as it did previously. For invalid values, the `color_cols` option is treated as if it has not been set and reverts to displaying the color selection grid with the default five columns.

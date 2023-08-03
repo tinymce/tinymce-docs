@@ -5,7 +5,7 @@ include::partial$misc/admon-requires-6.6.1v.adoc[]
 
 By default, {productname} places non-breaking space entities — `+&nbsp;+` — as placeholders inside empty block elements. For example,  the empty paragraph will be serialized to `<p>&nbsp;</p>`.
 
-The `+pad_empty_with_br+` option enables {productname} to change this default placeholder to a break tag: `+<br>+`.
+The `+pad_empty_with_br+` option enables {productname} to change this default placeholder to a break tag: `+<br>+`. For example,  the empty paragraph will be serialized to `<p><br></p>`.
 
 *Type:* `+Boolean+`
 

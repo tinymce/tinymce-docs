@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2143: documentation of bug fix, _Context menu and context toolbar no longer show when the selected image is in a non-editable context_ added to **Enhanced Image Editing** section of `6.6.1-release-notes.adoc`.
 - DOC-2155: documentation of bug fix, _Right-clicking on an image that was in a non-editable area would open the Image plugin’s context menu_, added to **Bug fixes** section of `6.6.1-release-notes.adoc`.
 - DOC-2146: documentation of addition, _New filtering option: `pad_empty_with_br`_, added to **Addition** section of `6.6.1-release-notes.adoc`.
 - DOC-2131: documentation of bug fix, _Lists could not be created within editable areas nested inside non-editable areas_, added to **Bug fixes** section of `6.6.1-release-notes.adoc`.

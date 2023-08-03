@@ -36,23 +36,32 @@ The {productname} 6.6.1 release includes an accompanying release of the **AI Ass
 ==== Toolbar buttons and menu items were enabled while the dialog was waiting for a final response
 //#TINY-10077 #1
 
-// CCFR here.
+The **AI Assistant** toolbar buttons and menu items provide no functionality while a response is being generated in the AI Assistant dialog. Previously, however, these buttons and items continued to present as enabled during response generation.
 
-==== Error events from streaming requests were included in threads separately to the corresponding response event
+With the release of **AI Assistant** 1.0.1, this has been corrected. The plugin’s toolbar buttons and menu items are now disabled while a response is being generated.
+
+==== Error events from streaming requests were included in separate threads to the corresponding response event
 //#TINY-10077 #2
 
-// CCFR here.
+Previously, when an error occurred while a streaming response was in progress, both an error and response event were added to the current thread.
+
+**AI Assistant 1.0.1** corrects this. Now, when an error occurs during an in-progress streaming response, a single event — containing both the error and the response — is added to the current thread.
 
 ==== Preview content was removed when an error is encountered part way through a streaming response
 //#TINY-10096
 
-// CCFR here.
+Previously, when an error was encountered while a streaming response was in progress, the **AI Assistant** dialog removed the partial response when displaying the error.
 
+With the release of **AI Assistant 1.0.1**, the partial response is left in place, displayed as a finished response.
 
-==== Using AI Assistant within OSX Safari, caused the editor to scroll to the bottom of the editor
+And the error message is displayed below this, left-in-place, response.
+
+==== When a response from the AI Assistant dialog was inserted into a selection not in view, the content did not scroll into view
 //#TINY-10102
 
-// CCFR here.
+Previously when inserting a response from the AI Assistant dialog at a selection which is above the current view, the inserted content would not be scrolled into view.
+
+In **AI Assistant** 1.0.1, the response is now inserted after the dialog is closed, allowing the content to be scrolled into view correctly.
 
 For information on the **AI Assistant** plugin, see: xref:ai.adoc[AI Assistant].
 
@@ -91,10 +100,18 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.6.1 also includes the following improvement:
 
-=== Content updates for streamContent: true iframe dialog components on Safari are now throttled to 500ms intervals to reduce the visual impact of flickering when rapidly updating iframe content
+=== When Safari is the host browser, content updates for iframe dialog components with `streamContent: true` set are now throttled to 500ms intervals
 //#TINY-10097
 
-// CCFR here.
+When `iframe` dialog components have xref:dialog-configuration.adoc#dialog_streamContent[`streamContent: true`] set, content is updated using the `document.write()` method rather than by setting the `srcdoc` attribute to prevent the `iframe` from reloading.
+
+This setting stops the iframe from flickering as it updates its contents when the host browser is Google Chrome or Mozilla Firefox.
+
+The flickering still occurred when the host browser was Apple Safari, however.
+
+In {productname} 6.6.1, content updates for `iframe` dialog components with `streamContent: true` set are throttled to 500ms intervals when Safari is the host browser. This significantly reduces the apparent flickering.
+
+NOTE: This 500ms throttling is specific to Safari. It is not applied when any browser other than Safari is the host browser.
 
 
 [[addition]]
@@ -144,44 +161,136 @@ This new — and correctly spelled — option behaves in essentially identical 
 
 {productname} 6.6.1 also includes the following change:
 
-=== API comments/documentation corrected: a typo correction and run-on sentences fixed.
+=== API comments/documentation: a markup typo and run-on sentences both corrected
 //#TINY-10073
 
+A markup typo in `/tinymce/modules/tinymce/src/core/main/ts/api/WindowManager.ts` resulted in an extraneous html markup tag displaying in the xref:/apis/tinymce.windowmanager.adoc[tinymce.WindowManager()] documentation.
+
+As well, two run-on sentences in the same file were corrected.
 
 [[bug-fixes]]
 == Bug fixes
 
 {productname} 6.6.1 also includes the following bug fixes:
 
-=== On Safari and Firefox browsers, scroll positions were not always maintained when updating the content of a `streamContent: true` iframe dialog component
+=== On Safari and Firefox, scroll positions were not always maintained when updating the content of a `streamContent: true` iframe dialog component
 //#TINY-10078
 
-// CCFR here.
+On each content update for iframe dialog components with `streamContent: true` set, the iframe is expected to automatically scroll to the bottom if the pre-update scrolled position is already at the end of the scrollable area. It is also expected, however, that the end-user can freely scroll through the iframe as content updates occur.
+
+When Chrome is the host browser, scroll positions are natively maintained after content updates via `document.write()`, but this is not the case when either Safari or Firefox are the host browsers. Both these browsers reset the scroll positions to the top.
+
+As a consequence, once the user scrolls up in the iframe as content updates occur and the programmatic scrolling to the bottom no longer occurs, the native behavior takes over. On Safari and Firefox, this results in the scroll being kept at the top even as the user attempts to scroll, which is both against expected behavior and poor UX.
 
 
-=== [Safari] iframe not consistently autoscrolling to bottom when streamContent: true
+As of {productname} 6.6.1, after a content update to a `streamContent: true` iframe dialog component, if the host browser is Firefox or Safari and the previous scroll position was not at the end of the scrollable area, {productname} now programmatically restores the previous scroll position.
+
+=== On Safari, iframe dialog components did not consistently autoscroll to the end of the scrollable area when `streamContent: true` was set
 //#TINY-10109
 
-// CCFR here.
+{productname} 6.6.0 added support for a `streamContent` setting for iframe dialog components. One of the features of this setting allows the iframe to automatically scroll to the end of the scrollable area on each content update if the scrolled position is already at the end of this area before content updates begin.
+
+However, when Safari was the host browser, when attempting to scroll an iframe component with `streamContent: true` set before its `load` event has fired, the scroll unexpectedly jumped back to the top after the iframe loaded.
+
+This made the autoscrolling feature inconsistent on Safari, as it depended on how quickly the iframe loaded after the content update.
+
+In {productname} 6.6.1, when Safari is the host browser, the autoscrolling behavior is attached to a one-time event listener that responds to the iframe’s `load` event on each content update.
+
+This allows iframe dialog components with `streamContent: true` set to consistently autoscroll to the end of the scrollable area when Safari is the host browser.
 
 
-=== Scrolling behavior was inconsistent when updating a `streamContent: true` iframe dialog component with content lacking an HTML document type declaration.
+=== Scrolling behavior was inconsistent when updating a `streamContent: true` iframe dialog component with content lacking an HTML document type declaration
 //#TINY-10110
 
-// CCFR here.
+When an iframe dialog has `streamContent: true` set and the scrolled position is already at the end of the scrollable area, the expected behavior is to maintain this end-of-scrollable-area position by automatically scrolling to the end of the area as content in the scrollable area updates
 
-=== A warning message was sometimes printed to the browser console when closing a dialog that contains an iframe component
+However, it was found that, when setting content without an HTML document type declaration using `document.write()`, the scrolling element used to determine scrolling conditions is the iframe’s body, not its document element. And, previously, only the latter was handled. As a consequence, updating the iframe with content without an HTML doctype declaration did not always maintain scroll positions as expected.
+
+{productname} 6.6.1 now checks whether the content contains an HTML doctype declaration and, if so, it chooses the iframe’s body as the scrolling element to determine scrolling conditions. This allows content updates for `streamContent: true` iframe dialog components to behave as expected for both content with and without an HTML doctype declaration.
+
+=== A warning message was sometimes printed to the browser console when closing a dialog that contained an iframe component
 //#TINY-10070
 
-// CCFR here.
+In some circumstances, when a dialog that contained an iframe component was closed, the console warning message, *the component must be in a context to execute*, was generated.
 
-=== When an editable area was nested inside a non-editable area, creating lists was not possible
+This happened because, while the dialog was closed, the currently focussed element was not within the {productname} instance. This caused the `onAction()` callback function to set the focus back to the (now closed) dialog element.
+
+In {productname} 6.6.1, a check has been implemented:
+
+* to see if the dialog still exists within the DOM; and
+* to ensure the element with focus is within the {productname} instance after a dialog is closed.
+
+As a consequence, the console warning is no longer generated when dialogs with iframe components are closed.
+
+
+=== Lists could not be created within editable areas nested inside non-editable areas
 //#TINY-10000
 
-// CCFR here.
+{productname} 6.5 introduced a check to establish if the current node was within a non-editable context.
 
-=== Safari and Firefox `focus` border missing from `iframe`
+As a consequence of this check, if an editable element was nested in a non-editable element, adding a list within the editable element did not work as expected.
+
+Other expected edits — such as changing the selected material’s block element type from paragraph to a heading — worked as expected. It was only adding a list, or making existing material into a list, that did not work as expected.
+
+In {productname} 6.6.1, this check has been removed. Adding or making lists within editable elements now works in all expected contexts, including when the editable element is within a non-editable element.
+
+
+=== On Safari and Firefox, the border around `iframe` dialog components did not highlight when focused
 //TINY-10101
-//2023-06-26: sub-head is ticket summary, not changelog entry.
 
-//CCFR here.
+{productname} 6.6, introduced a new dialog configuration property, xref:dialog-configuration.adoc#border[`border`].
+
+When set to `true`, this property adds a border around `iframe` dialog components that highlights when the component takes focus. By default, {productname} renders this as a blue border around the component.
+
+When either Safari or Firefox were the host browsers, however, the border did not render as expected when this component had focus.
+
+{productname} 6.6.1 corrects this. When either Safari or Firefox are the host browsers, `iframe` dialog components now highlight when taking focus, as expected.
+
+=== Right-clicking on an image that was in a non-editable area would open the Image plugin’s context menu
+//#TINY-10016
+
+// CCFR here
+
+=== The `color_cols` option was not respected when a custom `color_map` was defined
+// #TINY-10098
+
+The xref:user-formatting-options.adoc#color_cols[`color_cols`] option allows for specifying the number of columns for text color selection grids.
+
+If `color_cols` is not set, the number of columns displayed by a custom color swatch is, by default, the greater of the square root of the number of colors in the swatch and five (5).
+
+The square root is rounded up and five is the default number of columns a {productname} color swatch displays with the default `color_map`.
+
+For example, for a custom xref:user-formatting-options.adoc#color_map[`color_map`] containing 30 colors:
+
+√30 ≅ 5.4772 ≈ 6.
+
+And, since 6 > 5, this custom color selection grid displays six columns.
+
+Setting a `color_cols` value over-rides this default behavior.
+
+Previously, however, the `color_cols` option was not respected when a custom xref:user-formatting-options.adoc#color_map[`color_map`] was specified. In this circumstance the default method above still specified the number of columns displayed.
+
+{productname} 6.6.1 addresses this. As of this update, setting a `color_cols` value over-rides the default method of calculating the number of displayed columns, as expected.
+
+[NOTE]
+.Known issue
+====
+Setting `color_cols: 5` still results in the `color_cols` value not being used.
+
+When `color_cols` is set to the default number of columns displayed by a {productname} color selection grid (ie 5), the default method for calculating the number of displayed columns is used.
+====
+
+=== The `color_cols` options were were not rounded to the nearest number when set to a decimal number
+//#TINY-9737
+
+Previously, if `color_cols` was set to a value which included a decimal, the resultant text color selection grid displayed incorrectly.
+
+{productname} 6.6.1 addresses this. As of this update, if `color_cols` is set to a decimal value, {productname} rounds the set value to the nearest integer and displays the color selection grid with that many columns.
+
+In this case, {productname} rounds using the *rounding half up* method.
+
+Values **x.1–x.4** are rounded to **x**.
+
+Values **x.5–x.9** are rounded to **x+1**.
+
+NOTE: If `color_cols` is set to a decimal value that would, after rounding, be an invalid value (for example, **0.1**), {productname} continues to act as it did previously. For invalid values, the `color_cols` option is treated as if it has not been set and reverts to displaying the color selection grid with the default five columns.

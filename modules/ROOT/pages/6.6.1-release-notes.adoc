@@ -189,10 +189,17 @@ In {productname} 6.6.1, a check has been implemented:
 As a consequence, the console warning is no longer generated when dialogs with iframe components are closed.
 
 
-=== When an editable area was nested inside a non-editable area, creating lists was not possible
+=== Lists could not be created within editable areas nested inside non-editable areas
 //#TINY-10000
 
-// CCFR here.
+{productname} 6.5 introduced a check to establish if the current node was within a non-editable context.
+
+As a consequence of this check, if an editable element was nested in a non-editable element, adding a list within the editable element did not work as expected.
+
+Other expected edits — such as changing the selected material’s block element type from paragraph to a heading — worked as expected. It was only adding a list, or making existing material into a list, that did not work as expected.
+
+In {productname} 6.6.1, this check has been removed. Adding or making lists within editable elements now works in all expected contexts, including when the editable element is within a non-editable element.
+
 
 === On Safari and Firefox, the border around `iframe` dialog components did not highlight when focused
 //TINY-10101

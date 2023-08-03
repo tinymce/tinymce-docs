@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2131: documentation of bug fix, _Lists could not be created within editable areas nested inside non-editable areas_, added to **Bug fixes** section of `6.6.1-release-notes.adoc`.
 - DOC-2157: documentation of buf fix, _the `color_cols` options were were not rounded to the nearest number when set to a decimal number_ added to the **Bug fixes** section of `6.6.1-release-notes.adoc`.
 - DOC-2156: documentation of bug fix, _The `color_cols` option was not respected when a custom `color_map` was defined_, added to **Bug fixes** section of `6.6.1-release-notes.adoc`.
 - DOC-2147: documentation of bug fix, _On Safari and Firefox, the border around `iframe` dialog components did not highlight when focused_, added to **Bug fixes** section of `6.6.1-release-notes.adoc`.

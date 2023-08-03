@@ -119,8 +119,42 @@ NOTE: This 500ms throttling is specific to Safari. It is not applied when any br
 
 {productname} 6.6.1 also includes the following addition:
 
-=== New `pad_empty_with_br` option that can be set to `true` to pad empty block elements with `<br>` tag instead of nbsp character
+=== Restored filtering option: `pad_empty_with_br`
 //#TINY-9861
+
+{productname} 6.6.1 restores a further content filtering option, `pad_empty_with_br`.
+
+Content filtering options change the way {productname} manages input and output.
+
+The `pad_empty_with_br` option, when set to `true`, places a `+<br>+` tag within empty block elements rather than the default non-breaking space entity, `+&nbsp;+`.
+
+That is, when a {productname} instance includes the following setting
+
+[source,js]
+----
+pad_empty_with_br: true,
+----
+ 
+empty block elements within said instance
+
+[source,html]
+----
+<p></p>
+----
+
+are automatically stored and rendered as
+
+[source,html]
+----
+<p><br></p>
+----
+
+[NOTE]
+====
+An equivalent filtering option, `padd_empty_with_br` was xref:migration-from-5x.adoc#previously-deprecated-items-now-removed[removed from {productname} 6.0.0].
+
+This new — and correctly spelled — option behaves in essentially identical fashion to the older option.
+====
 
 [[change]]
 == Change

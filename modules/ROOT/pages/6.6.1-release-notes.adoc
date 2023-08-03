@@ -17,8 +17,6 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:addition[Addition]
 * xref:change[Change]
 * xref:bug-fixes[Bug fixes]
-//* xref:security-fixes[Security fixes]
-//* xref:known-issues[Known issues]
 
 
 
@@ -105,6 +103,7 @@ The **Premium Skins and Icon Packs** were rebuilt to pull in the changes also in
 For information on using premium skins and icon packs, see: xref:premium-skins-and-icons.adoc[Premium Skins and Icon Packs].
 
 
+
 [[improvement]]
 == Improvement
 
@@ -122,6 +121,7 @@ The flickering still occurred when the host browser was Apple Safari, however.
 In {productname} 6.6.1, content updates for `iframe` dialog components with `streamContent: true` set are throttled to 500ms intervals when Safari is the host browser. This significantly reduces the apparent flickering.
 
 NOTE: This 500ms throttling is specific to Safari. It is not applied when any browser other than Safari is the host browser.
+
 
 
 [[addition]]
@@ -166,6 +166,8 @@ An equivalent filtering option, `padd_empty_with_br` was xref:migration-from-5x.
 This new — and correctly spelled — option behaves in essentially identical fashion to the older option.
 ====
 
+
+
 [[change]]
 == Change
 
@@ -177,6 +179,8 @@ This new — and correctly spelled — option behaves in essentially identical 
 A markup typo in `/tinymce/modules/tinymce/src/core/main/ts/api/WindowManager.ts` resulted in an extraneous html markup tag displaying in the xref:/apis/tinymce.windowmanager.adoc[tinymce.WindowManager()] documentation.
 
 As well, two run-on sentences in the same file were corrected.
+
+
 
 [[bug-fixes]]
 == Bug fixes
@@ -194,6 +198,7 @@ As a consequence, once the user scrolls up in the iframe as content updates occu
 
 
 As of {productname} 6.6.1, after a content update to a `streamContent: true` iframe dialog component, if the host browser is Firefox or Safari and the previous scroll position was not at the end of the scrollable area, {productname} now programmatically restores the previous scroll position.
+
 
 === On Safari, iframe dialog components did not consistently autoscroll to the end of the scrollable area when `streamContent: true` was set
 //#TINY-10109
@@ -217,6 +222,7 @@ When an iframe dialog has `streamContent: true` set and the scrolled position is
 However, it was found that, when setting content without an HTML document type declaration using `document.write()`, the scrolling element used to determine scrolling conditions is the iframe’s body, not its document element. And, previously, only the latter was handled. As a consequence, updating the iframe with content without an HTML doctype declaration did not always maintain scroll positions as expected.
 
 {productname} 6.6.1 now checks whether the content contains an HTML doctype declaration and, if so, it chooses the iframe’s body as the scrolling element to determine scrolling conditions. This allows content updates for `streamContent: true` iframe dialog components to behave as expected for both content with and without an HTML doctype declaration.
+
 
 === A warning message was sometimes printed to the browser console when closing a dialog that contained an iframe component
 //#TINY-10070
@@ -256,6 +262,7 @@ When either Safari or Firefox were the host browsers, however, the border did no
 
 {productname} 6.6.1 corrects this. When either Safari or Firefox are the host browsers, `iframe` dialog components now highlight when taking focus, as expected.
 
+
 === Right-clicking on an image that was in a non-editable area would open the Image plugin’s context menu
 //#TINY-10016
 
@@ -270,6 +277,7 @@ Previously, however, if an image was in a {productname} instance with both an `e
 As a consequence, images presented within a {productname} instance setup with a `editable_root: false` set are properly read-only, as expected.
 
 NOTE: right-clicking on an image, or long-pressing on an image in a mobile instance, still invokes the host browser’s context menu in such a circumstance.
+
 
 === The `color_cols` option was not respected when a custom `color_map` was defined
 // #TINY-10098
@@ -299,6 +307,7 @@ Setting `color_cols: 5` still results in the `color_cols` value not being used.
 
 When `color_cols` is set to the default number of columns displayed by a {productname} color selection grid (ie 5), the default method for calculating the number of displayed columns is used.
 ====
+
 
 === The `color_cols` options were were not rounded to the nearest number when set to a decimal number
 //#TINY-9737

@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### Unreleased
+
+- DOC-2114: file, `pad_empty_with_br.adoc`, added to `/partials/configuration/`; documentation of option, `pad_empty_with_br`, added to file. `pad_empty_with_br.adoc` added to `content-filtering.adoc` with `include` statement. Also, notes re this option’s existence added to table in `6.0-release-notes-summary.adoc` noting the removal of equivalent previous option, `padd_empty_with_br`.
+
 ### 2023-07-21
 
 - DOC-2093: The TinyMCE 6.6 Release notes.

@@ -242,7 +242,7 @@ The following elements were previously deprecated and have, with this release, b
 
 | `non_empty_elements`                  | Schema option |
 
-| `padd_empty_with_br`                  | Option        |
+| `padd_empty_with_br`                  | Option        | Replaced, as of {productname} 6.6.1, by xref:content-filtering.adoc#pad_empty_with_br[`pad_empty_with_br`].
 
 | `requestAnimationFrame`               | API           | From `Delay`.
 

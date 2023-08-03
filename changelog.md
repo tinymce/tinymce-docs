@@ -24,6 +24,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 - DOC-2140: documentation of bug fix, _Preview content was removed when an error is encountered part way through a streaming response_, added to **AI Assistant** section of `6.6.1-release-notes.adoc`.
 - DOC-2142: documentation of bug fix, _Error events from streaming requests were included in seperate threads to the corresponding response event_, added to **AI Assistant** section of `6.6.1-release-notes.adoc`.
 - DOC-2141: documentation of bug fix, _Toolbar buttons and menu items were enabled while the dialog was waiting for a final response_, added to **AI Assistant** section of `6.6.1-release-notes.adoc`.
+- DOC-2114: file, `pad_empty_with_br.adoc`, added to `/partials/configuration/`; documentation of option, `pad_empty_with_br`, added to file. `pad_empty_with_br.adoc` added to `content-filtering.adoc` with `include` statement. Also, notes re this option’s existence added to table in `6.0-release-notes-summary.adoc` noting the removal of equivalent previous option, `padd_empty_with_br`.
 
 ### 2023-07-21
 

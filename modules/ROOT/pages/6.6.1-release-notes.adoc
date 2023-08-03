@@ -102,10 +102,10 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.6.1 also includes the following addition:
 
-=== New filtering option: `pad_empty_with_br`
+=== Restored filtering option: `pad_empty_with_br`
 //#TINY-9861
 
-{productname} 6.6.1 includes a further content filtering option, `pad_empty_with_br`.
+{productname} 6.6.1 restores a further content filtering option, `pad_empty_with_br`.
 
 Content filtering options change the way {productname} manages input and output.
 
@@ -118,14 +118,14 @@ That is, when a {productname} instance includes the following setting
 pad_empty_with_br: true,
 ----
  
-this input
+empty block elements within said instance
 
 [source,html]
 ----
-<p>&nbsp;</p>
+<p></p>
 ----
 
-is automatically stored and rendered as
+are automatically stored and rendered as
 
 [source,html]
 ----

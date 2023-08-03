@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### Unreleased
+
+- DOC_2150: Re-wrote `/live-demos/linkchecker/index.html`: it is now an actual interactive example, using canonically invalid domain names for the invalid domain-name strings and in-house domain names for the valid domain name strings.
+
 ### 2023-07-21
 
 - DOC-2093: The TinyMCE 6.6 Release notes.

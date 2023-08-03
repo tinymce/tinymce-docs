@@ -249,7 +249,17 @@ When either Safari or Firefox were the host browsers, however, the border did no
 === Right-clicking on an image that was in a non-editable area would open the Image plugin’s context menu
 //#TINY-10016
 
-// CCFR here
+When a {productname} instance is setup with `editable_root: false` set, the entire instance is, by default, a read-only instance.
+
+To allow editing of any portion, that portion must be specifically set as writable (for example, by being within an element that has a `contenteditable="true"` attribute set).
+
+Previously, however, if an image was in a {productname} instance with both an `editable_root: false` set and the xref:image.adoc[Image open source plugin] loaded, bringing up a {productname} context menu (eg by right-clicking on the image in a desktop setting or by long-pressing on the image in a mobile setting) allowed the Image plugin’s context menu to present, which allowed for image manipulation.
+
+{productname} 6.6.1 addresses this. With this update, invoking a context menu in non-editable area no longer brings up any {productname}-related context menus.
+
+As a consequence, images presented within a {productname} instance setup with a `editable_root: false` set are properly read-only, as expected.
+
+NOTE: right-clicking on an image, or long-pressing on an image in a mobile instance, still invokes the host browser’s context menu in such a circumstance.
 
 === The `color_cols` option was not respected when a custom `color_map` was defined
 // #TINY-10098

@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2155: documentation of bug fix, _Right-clicking on an image that was in a non-editable area would open the Image plugin’s context menu_, added to **Bug fixes** section of `6.6.1-release-notes.adoc`.
 - DOC-2146: documentation of addition, _New filtering option: `pad_empty_with_br`_, added to **Addition** section of `6.6.1-release-notes.adoc`.
 - DOC-2131: documentation of bug fix, _Lists could not be created within editable areas nested inside non-editable areas_, added to **Bug fixes** section of `6.6.1-release-notes.adoc`.
 - DOC-2157: documentation of buf fix, _the `color_cols` options were were not rounded to the nearest number when set to a decimal number_ added to the **Bug fixes** section of `6.6.1-release-notes.adoc`.

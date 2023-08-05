@@ -192,10 +192,16 @@ For more information about this component, see the xref:dialog-components.adoc#i
 
 For more information about dialogs, see the xref:dialog-configuration.adoc[Dialog configuration] documentation.
 
-=== Improved detection of scrollable containers when the `ui_mode: 'split'` option is set.
+=== Improved detection of scrollable containers when the `ui_mode: 'split'` option is set
 //#TINY-9385
 
-//CCFR
+When a {productname} instance has it’s xref:ui-mode-configuration-options.adoc[UI mode] set to `split`, support for setting the editor inside a scrollable container is enabled and {productname} editor elements — such as pop-ups, menus, and inline dialogs — are rendered in separate containers and inserted as sibling elements to the editor.
+
+Previously, howver, identifying all scrollable parent elements in such a setup was done with only a naive check. As a consequence, when other overflow properties — such as `overflow-x` — were introduced, the {productname} editor and the {productname} toolbar could behave unexpectedly in some circumstance.
+
+In {productname} 6.6.1, the naive check has been replaced with specific edge case coverage and a related test.
+
+As a consequence, the {productname} editor and the {productname} toolbar now behave as expected when overflow properties are introduced.
 
 
 

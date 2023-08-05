@@ -18,6 +18,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 === Improved
 * When defining a modal or inline dialog, if the buttons property is an empty array, or is not defined at all, the footer will now no longer be rendered.
 * The `iframe` dialog component now has a minimum height of 200px.
+* Improved detection of scrollable containers when the `ui_mode: 'split'` option is set.
 
 === Changed
 * The icon in an `alertbanner` dialog component is no longer clickable if the _URL_ field is not specified.

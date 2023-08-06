@@ -33,6 +33,17 @@ This ensures the HTML is valid while more closely matching the original document
 |Prompts the user to choose between the `+clean+` and `+merge+` options after attempting to paste HTML content.
 |===
 
+=== example: using `+powerpaste_html_import+` to require a prompt when pasting html
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  plugins: 'powerpaste',
+  powerpaste_html_import: 'prompt',
+});
+----
+
 [IMPORTANT]
 .Pasting from a {productname} instance to a {productname} instance
 ====

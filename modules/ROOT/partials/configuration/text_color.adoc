@@ -44,9 +44,9 @@ If neither `color_cols` nor `color_cols_background` options are set, background 
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
-  toolbar: 'backcolor',
+  toolbar: 'backcolor forecolor',
   color_cols: 10,
-  color_cols_background: '3'
+  color_cols_background: 3,
 });
 ----
 
@@ -71,9 +71,9 @@ If neither `color_cols` nor `color_cols_foreground` options are set, background 
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
-  toolbar: 'forecolor',
+  toolbar: 'backcolor forecolor',
   color_cols: 10,
-  color_cols_foreground: '3'
+  color_cols_foreground: 3
 });
 ----
 

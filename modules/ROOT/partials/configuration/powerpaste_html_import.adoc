@@ -33,6 +33,14 @@ This ensures the HTML is valid while more closely matching the original document
 |Prompts the user to choose between the `+clean+` and `+merge+` options after attempting to paste HTML content.
 |===
 
+[NOTE]
+.Pasting from a {productname} instance to a {productname} instance
+====
+Content copied or cut from a {productname} instance and then pasted into a {productname} instance (eg, copyied or cut from one part of a {productname} document and pasted into another place within the same document) is not processed by `+powerpaste_html_import+`.
+
+In this circumstance, whatever is copied or cut is exactly what is pasted.
+====
+
 === example: using `+powerpaste_html_import+` to require a prompt when pasting html
 
 [source,js]
@@ -43,11 +51,3 @@ tinymce.init({
   powerpaste_html_import: 'prompt',
 });
 ----
-
-[IMPORTANT]
-.Pasting from a {productname} instance to a {productname} instance
-====
-Content copied or cut from a {productname} instance and then pasted into a {productname} instance (eg, copyied or cut from one part of a {productname} document and pasted into another place within the same document) is not processed by `+powerpaste_html_import+`.
-
-In this circumstance, whatever is copied or cut is exactly what is pasted.
-====

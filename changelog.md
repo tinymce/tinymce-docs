@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2159: Documentation of four text color options — `color_cols_background`, `color_cols_foreground`, `color_map_background`, `color_map_foreground` — added to `text_color.adoc`. Also copy-edits.
 - DOC_2150: Re-wrote `/live-demos/linkchecker/index.html`: it is now an actual interactive example, using canonically invalid domain names for the invalid domain-name strings and in-house domain names for the valid domain name strings.
 - DOC-2114: file, `pad_empty_with_br.adoc`, added to `/partials/configuration/`; documentation of option, `pad_empty_with_br`, added to file. `pad_empty_with_br.adoc` added to `content-filtering.adoc` with `include` statement. Also, notes re this option’s existence added to table in `6.0-release-notes-summary.adoc` noting the removal of equivalent previous option, `padd_empty_with_br`.
 

@@ -65,7 +65,7 @@ Assuming a `color_map` is also set (and it is set by default) other colors in th
 [source,js]
 ----
 tinymce.init({
-  selector: "textarea",
+  selector: "textarea",  // change this value according to your html
   toolbar: 'forecolor backcolor',
   color_default_background: 'yellow',
 });
@@ -87,7 +87,7 @@ Assuming a `color_map` is also set (and it is set by default) other colors in th
 [source,js]
 ----
 tinymce.init({
-  selector: "textarea",
+  selector: "textarea",  // change this value according to your html
   toolbar: 'forecolor',
   color_default_foreground: 'red',
 });

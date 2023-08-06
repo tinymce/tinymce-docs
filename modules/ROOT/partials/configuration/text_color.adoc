@@ -23,6 +23,60 @@ tinymce.init({
 });
 ----
 
+[[color_cols_background]]
+=== `color_cols_background`
+
+This option specifies the number of columns for background text color grids.
+
+If `color_cols_background` is not set, the number of columns a background text color grid takes is set by the xref:#color_cols[`color_cols`] option.
+
+If both `color_cols` and `color_cols_background` options are set, the `color_cols_background` value is used.
+
+If neither `color_cols` nor `color_cols_background` options are set, background text color grids present with the default number of columns, **5**.
+
+*Type:* `+Integer+`
+
+*Default value:* 5
+
+==== Example: using `color_cols_background`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  toolbar: 'backcolor',
+  color_cols: 10,
+  color_cols_background: '3'
+});
+----
+
+[[color_cols_foreground]]
+=== `color_cols_foreground`
+
+This option specifies the number of columns for foreground text color grids.
+
+If `color_cols_foreground` is not set, the number of columns a background text color grid takes is set by the xref:#color_cols[`color_cols`] option.
+
+If both `color_cols` and `color_cols_foreground` options are set, the `color_cols_foreground` value is used.
+
+If neither `color_cols` nor `color_cols_foreground` options are set, background text color grids present with the default number of columns, **5**.
+
+*Type:* `+Integer+`
+
+*Default value:* 5
+
+==== Example: using `color_cols_foreground`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  toolbar: 'forecolor',
+  color_cols: 10,
+  color_cols_foreground: '3'
+});
+----
+
 [[color_map]]
 === `+color_map+`
 
@@ -45,6 +99,52 @@ tinymce.init({
     'FFFF00', 'Yellow',
     '008000', 'Green',
     '0000FF', 'Blue'
+  ]
+});
+----
+
+[[color_map_background]]
+=== `color_map_background`
+
+When custom colors are selected from the Background color menu, these colors are now stored in a separate color palette, `color_map_background`.
+
+When chosen, these custom colors are still added to the Background color menu. But they are now stored separately from the default color set.
+
+NOTE: When a user adds a custom color to the `color_map_background` palette, the editor does not replicate the new color in the `color_map_foreground` palette.
+
+*Type:* `+Array+`
+
+==== Example: using `color_map_background`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  toolbar: 'forecolor backcolor',
+  color_map_background: [
+    // custom values are stored here
+  ]
+});
+----
+
+[[color_map_foreground]]
+=== `color_map_foreground`
+
+When custom colors are selected from the Text color menus, these colors are now stored in the separate color palette, `color_map_foreground`.
+
+When chosen, these custom colors are still added to the Text color menu. But they are now stored separately from the default color sets.
+
+*Type:* `+Array+`
+
+= === Example: using `color_map_foreground`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  toolbar: 'forecolor backcolor',
+  color_map_foreground: [
+    // custom values are stored here
   ]
 });
 ----

@@ -1,4 +1,4 @@
-*Possible values:* `+'clean'+`, `+merge+`, `+prompt+`
+*Possible values:* `+'clean'+`, `+merge+`, `+prompt+` **or** a `+Function+`
 
 What the supported string-based values do:
 
@@ -24,6 +24,4 @@ This ensures the HTML is valid while more closely matching the original document
 |Prompts the user to choose between the `+clean+` and `+merge+` options after attempting to paste HTML content.
 |===
 
-ifndef::[powerpaste-import-control-without-function-option]
 Alternatively, this option can take an asynchronous function that returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise] which will resolve with the string `+clean+` or `+merge+`. This allows the paste mode to be dynamically set each time a user pastes relevant content. It can be used, for example, to replicate the `+prompt+` dialog with a custom dialog.
-ifndef::[]

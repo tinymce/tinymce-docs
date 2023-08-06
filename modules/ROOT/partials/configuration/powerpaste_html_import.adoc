@@ -1,3 +1,5 @@
+:powerpaste-import-control-without-function-option: powerpaste-html
+
 [[powerpaste_html_import]]
 == `+powerpaste_html_import+`
 
@@ -7,6 +9,9 @@ This option controls how content pasted from sources other than Microsoft Word a
 
 *Default value:* `+'clean'+`
 
+include::partial$plugins/powerpaste_import_types.adoc[]
+
+////
 *Possible values:* `+'clean'+`, `+merge+`, `+prompt+`
 
 What the supported string-based values do:
@@ -32,6 +37,7 @@ This ensures the HTML is valid while more closely matching the original document
 |`+prompt+`
 |Prompts the user to choose between the `+clean+` and `+merge+` options after attempting to paste HTML content.
 |===
+////
 
 === example: using `+powerpaste_html_import+` to require a prompt when pasting html
 

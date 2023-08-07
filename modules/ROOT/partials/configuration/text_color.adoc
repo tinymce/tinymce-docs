@@ -180,10 +180,6 @@ tinymce.init({
 });
 ----
 
-When end-users add a further custom color to the background text color grid, that color is added to the background text color grid and stored in the `color_map_background` palette.
-
-NOTE: When a user adds a custom color to the `color_map_background` palette, the editor does not replicate the new color in the `color_map_foreground` palette.
-
 [[color_map_foreground]]
 === `color_map_foreground`
 
@@ -218,9 +214,15 @@ tinymce.init({
 });
 ----
 
-When end-users add a further custom color to the foreground text color grid, that color is added to the background text color grid and stored in the `color_map_foreground` palette.
+[IMPORTANT]
+.End-user customisation of text color grids
+----
+When end-users add a new custom color via a text color grid, that color is added to the associated text color grid but the new custom color is only held in the host browser’s local storage.
 
-NOTE: When a user adds a custom color to the `color_map_foreground` palette, the editor does not replicate the new color in the `color_map_background` palette.
+If, for example, an end-user adds a custom color to the foreground text color grid, that new color is presented in the foreground text color grid in the end-user’s {productname} instance. The new custom color is not, however, stored in any of the instance’s color map arrays.
+
+Also, when a user adds a custom color to one palette (for example, the `color_map_background` palette), the {productname} editor instance does not replicate the new custom color in the complementary palette (for example, the `color_map_foreground` palette).
+----
 
 
 [[color_default_background]]

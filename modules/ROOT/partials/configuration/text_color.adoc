@@ -180,7 +180,7 @@ tinymce.init({
 });
 ----
 
-When end-users add a further custom color to the background text color grid, that color is added to teh background text color grid and stored in the `color_map_background` palette.
+When end-users add a further custom color to the background text color grid, that color is added to the background text color grid and stored in the `color_map_background` palette.
 
 NOTE: When a user adds a custom color to the `color_map_background` palette, the editor does not replicate the new color in the `color_map_foreground` palette.
 
@@ -199,7 +199,7 @@ That is, the foreground text color grid takes its values in the following priori
 
 *Type:* `+Array+`
 
-= === Example: using `color_map_foreground`
+==== Example: using `color_map_foreground`
 
 [source,js]
 ----
@@ -218,7 +218,7 @@ tinymce.init({
 });
 ----
 
-When end-users add a further custom color to the foreground text color grid, that color is added to teh background text color grid and stored in the `color_map_foreground` palette.
+When end-users add a further custom color to the foreground text color grid, that color is added to the background text color grid and stored in the `color_map_foreground` palette.
 
 NOTE: When a user adds a custom color to the `color_map_foreground` palette, the editor does not replicate the new color in the `color_map_background` palette.
 

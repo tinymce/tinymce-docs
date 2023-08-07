@@ -104,11 +104,43 @@ Note that space characters are word boundaries.
 
 Practically speaking, it is colons embedded between letters without a space either side that don’t function as word boundary characters.
 
-|Empty block elements.
+|Empty block elements
 |`+<p></p>+`
 
 Also, space characters inside otherwise empty elements — for example `+<p>&nbsp;</p>+` — do not change either the word or character count.
 |===
+
+== Character count logic
+
+The {pluginname} plugin counts glyphs.
+
+The {pluginname} plugin does not count characters added for document management purposes.
+
+Consider an end-user enters the following:
+
+[source,text]
+----
+1↵
+↵
+2↵
+↵
+----
+
+That is, they enter a numeric one, followed by two hard returns, and then a numeric two, followed by a further two hard returns.
+
+By default, {productname} stores this entered data as follows:
+
+[source,html]
+----
+<p>1</p>
+<p>&nbsp;</p>
+<p>2</p>
+<p>&nbsp;</p>
+----
+
+The character count for this data is **2**.
+
+The {pluginname} does not add either of the `+&nbsp;+` characters placed by {productname} to the document character count.
 
 == Basic setup
 

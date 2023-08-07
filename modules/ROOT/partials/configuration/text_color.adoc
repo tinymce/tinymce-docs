@@ -84,7 +84,7 @@ tinymce.init({
 [[color_map]]
 === `+color_map+`
 
-This option allows specifying a map of the text colors that will appear in the grid.
+This option allows for specifying a map of the text colors that will appear in the grid.
 
 *Type:* `+Array+`
 
@@ -107,14 +107,57 @@ tinymce.init({
 });
 ----
 
+If `+color_map+` is not explicitly set, {productname} populates the foreground and background text color grids with a default set of 22 colors.
+
+==== Example: explicitly setting `+color_map+` to the default {productname} color set
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: 'forecolor backcolor',
+  color_map: [
+    '#BFEDD2', 'Light Green',
+    '#FBEEB8', 'Light Yellow',
+    '#F8CAC6', 'Light Red',
+    '#ECCAFA', 'Light Purple',
+    '#C2E0F4', 'Light Blue',
+    '#2DC26B', 'Green',
+    '#F1C40F', 'Yellow',
+    '#E03E2D', 'Red',
+    '#B96AD9', 'Purple',
+    '#3598DB', 'Blue',
+    '#169179', 'Dark Turquoise',
+    '#E67E23', 'Orange',
+    '#BA372A', 'Dark Red',
+    '#843FA1', 'Dark Purple',
+    '#236FA1', 'Dark Blue',
+    '#ECF0F1', 'Light Gray',
+    '#CED4D9', 'Medium Gray',
+    '#95A5A6', 'Gray',
+    '#7E8C8D', 'Dark Gray',
+    '#34495E', 'Navy Blue',
+    '#000000', 'Black',
+    '#ffffff', 'White'
+  ]
+});
+----
+
+
 [[color_map_background]]
 === `color_map_background`
 
-When custom colors are selected from the Background color menu, these colors are now stored in a separate color palette, `color_map_background`.
+This option allows for specifying a map of the text colors that will appear in the background text color grid.
 
-When chosen, these custom colors are still added to the Background color menu. But they are now stored separately from the default color set.
+If it is not set, the background text color grid takes it values from the `+color_map+` array.
 
-NOTE: When a user adds a custom color to the `color_map_background` palette, the editor does not replicate the new color in the `color_map_foreground` palette.
+And, if the `+color_map+` array is, further, not set, the background text color grid takes it values from the {productname} default color set.
+
+That is, the background text color grid takes its values in the following priority order:
+
+. a set `color_map_background` color array is used in preference to
+. a set `color_map` color array, which is used in preference to
+. the default {productname} color array.
 
 *Type:* `+Array+`
 
@@ -126,10 +169,20 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your html
   toolbar: 'forecolor backcolor',
   color_map_background: [
-    // custom values are stored here
+    '000000', 'Black',
+    '808080', 'Gray',
+    'FFFFFF', 'White',
+    'FF0000', 'Red',
+    'FFFF00', 'Yellow',
+    '008000', 'Green',
+    '0000FF', 'Blue'
   ]
 });
 ----
+
+When end-users add a further custom color to the background text color grid, that color is added to teh background text color grid and stored in the `color_map_background` palette.
+
+NOTE: When a user adds a custom color to the `color_map_background` palette, the editor does not replicate the new color in the `color_map_foreground` palette.
 
 [[color_map_foreground]]
 === `color_map_foreground`
@@ -137,6 +190,12 @@ tinymce.init({
 When custom colors are selected from the Text color menus, these colors are now stored in the separate color palette, `color_map_foreground`.
 
 When chosen, these custom colors are still added to the Text color menu. But they are now stored separately from the default color sets.
+
+That is, the foreground text color grid takes its values in the following priority order:
+
+. a set `color_map_foreground` color array is used in preference to
+. a set `color_map` color array, which is used in preference to
+. the default {productname} color array.
 
 *Type:* `+Array+`
 
@@ -148,10 +207,21 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your html
   toolbar: 'forecolor backcolor',
   color_map_foreground: [
-    // custom values are stored here
+    '000000', 'Black',
+    '808080', 'Gray',
+    'FFFFFF', 'White',
+    'FF0000', 'Red',
+    'FFFF00', 'Yellow',
+    '008000', 'Green',
+    '0000FF', 'Blue'
   ]
 });
 ----
+
+When end-users add a further custom color to the foreground text color grid, that color is added to teh background text color grid and stored in the `color_map_foreground` palette.
+
+NOTE: When a user adds a custom color to the `color_map_foreground` palette, the editor does not replicate the new color in the `color_map_background` palette.
+
 
 [[color_default_background]]
 === `+color_default_background+`

@@ -1,4 +1,45 @@
 <textarea id="linkchecker">
-  <p><a href="http://www.gooogglge.com">www.gooogglge.com</a> &ne; <a href="http://www.google.com">www.google.com</a></p>
-  <p><a href="https://www.tinymce.cloud">https://www.tinymce.cloud</a> &ne; <a href="https://www.tiny.cloud/">https://www.tiny.cloud</a></p>
+
+<h3>Canonically invalid domain-name strings</h3>
+
+<p>The three domain-name strings below are all invalid, as per <a href="https://www.rfc-editor.org/rfc/rfc6761.html">RFC 6761</a> and <a href="https://www.rfc-editor.org/rfc/rfc2606.html">RFC 2606</a>.</p>
+
+<p>Type a space after each string.</p>
+
+<ol>
+<li>www.invalid.com</li>
+<li>www.site.example</li>
+<li>www.site.invalid</li>
+</ol>
+
+<p>Note each of them is:
+
+<ol>
+<li>turned into a clickable link by the <a href="https://tiny.cloud/docs/tinymce/6/autolink">Autolink</a> plugin; and then, after a short delay,
+<li>highlighted in red by the <strong>Link Checker</strong> plugin.</li>
+</ol>
+
+<p>Choose <strong>View → Source code</strong>, or click the <strong>Source code</strong> toolbar button, to see that each automatically created anchor tag has also had the <code>aria-invalid="true"</code> attribute added by the <strong>Link Checker</strong> plugin.</p>
+
+<h3>Valid domain-name strings</h3>
+
+<p>The three domain-name strings below are all valid</p>
+
+<p>Type a space after each string.</p>
+
+<ol>
+<li>www.tiny.cloud</li>
+<li>www.plupload.com</li>
+<li>www.ephox.com</li>
+</ol>
+
+<p>Note each of them is:</p>
+
+<ol>
+<li>turned into a clickable link by the <a href="https://tiny.cloud/docs/tinymce/6/autolink">Autolink</a> plugin; and then
+<li><strong>not</strong> highlighted in red by the <strong>Link Checker</strong> plugin.</li>
+</ol>
+
+<p>Choose <strong>View → Source code</strong>, or click the <strong>Source code</strong> toolbar button, to see that each automatically created anchor tag does <em>not</em> have the <code>aria-invalid="true"</code> attribute.</p>
+
 </textarea>

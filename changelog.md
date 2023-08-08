@@ -6,7 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### 2023-08-09
 
-- DOC-2161: Added 6.6.2-specific entries to `changelog.adoc`.
+- DOC-2161: Added 6.6.2-specific entry to `changelog.adoc`.
 
 ### 2023-08-02
 

@@ -317,13 +317,15 @@ Values **x.5–x.9** are rounded to **x+1**.
 NOTE: If `color_cols` is set to a decimal value that would, after rounding, be an invalid value (for example, **0.1**), {productname} continues to act as it did previously. For invalid values, the `color_cols` option is treated as if it has not been set and reverts to displaying the color selection grid with the default five columns.
 
 
+=== The `color_cols` option was not respected when set to the value 5 with a custom `color_map` specified
+//TINY-10126
+
+//CCFR
+
+
 === An "Uncaught TypeError: Cannot read properties of null" error would sometimes be thrown when updating the content of a `streamContent: true` iframe dialog component
 //TINY-10128
 
 //CCFR
 
 
-=== The `color_cols` option was not respected when set to the value 5 with a custom `color_map` specified
-//TINY-10126
-
-//CCFR

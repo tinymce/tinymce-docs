@@ -8,8 +8,6 @@ NOTE: This is the {productname} Community version changelog. For information abo
 
 === Fixed
 * An "Uncaught TypeError: Cannot read properties of null" error would sometimes be thrown when updating the content of a `streamContent: true` iframe dialog component.
-* The `color_cols` option was not respected when set to the value **5** with a custom `color_map` specified.
-
 == 6.6.1 - 2023-08-02
 
 === Added

@@ -300,14 +300,6 @@ Previously, however, the `color_cols` option was not respected when a custom xre
 
 {productname} 6.6.2 addresses this. As of this update, setting a `color_cols` value over-rides the default method of calculating the number of displayed columns, as expected.
 
-[NOTE]
-.Known issue
-====
-Setting `color_cols: 5` still results in the `color_cols` value not being used.
-
-When `color_cols` is set to the default number of columns displayed by a {productname} color selection grid (ie 5), the default method for calculating the number of displayed columns is used.
-====
-
 
 === The `color_cols` options were were not rounded to the nearest number when set to a decimal number
 //#TINY-9737

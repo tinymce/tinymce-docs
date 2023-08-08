@@ -320,7 +320,13 @@ NOTE: If `color_cols` is set to a decimal value that would, after rounding, be a
 === The `color_cols` option was not respected when set to the value 5 with a custom `color_map` specified
 //TINY-10126
 
-//CCFR
+Previously, when `color_cols: 5` was set, the assigned value was not used.
+
+Instead, when `color_cols` was set to the default number of columns displayed by a {productname} color selection grid (ie 5), the default method for calculating the number of displayed columns is used.
+
+For {productname} 6.6.2, the logic for calculating the default `color_cols` values was re-written. As of this release, {productname} now uses either the `color_cols` option, with its default calculated on the base color map, or the value calculated by custom color maps.
+
+This ensures a set `color_cols` value is always used, even when that value matches the default value.
 
 
 === An "Uncaught TypeError: Cannot read properties of null" error would sometimes be thrown when updating the content of a `streamContent: true` iframe dialog component

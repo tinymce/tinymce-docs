@@ -29,6 +29,27 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 - DOC-2150: Re-wrote `/live-demos/linkchecker/index.html`: it is now an actual interactive example, using canonically invalid domain names for the invalid domain-name strings and in-house domain names for the valid domain name strings.
 - DOC-2114: file, `pad_empty_with_br.adoc`, added to `/partials/configuration/`; documentation of option, `pad_empty_with_br`, added to file. `pad_empty_with_br.adoc` added to `content-filtering.adoc` with `include` statement. Also, notes re this option’s existence added to table in `6.0-release-notes-summary.adoc` noting the removal of equivalent previous option, `padd_empty_with_br`.
 
+### 2023-08-09
+
+- DOC-2161: Added 6.6.2-specific entry to `changelog.adoc`.
+
+### 2023-08-02
+
+- DOC-2110: Added 6.6.1-specific entries to `changelog.adoc`.
+
+### 2023-07-27
+
+- DOC-2138: Added admonition to `mentions_fetch.adoc`, documenting the *only ten users present to the end user* UI. Also added paragraph to `examples/live-demos/mentions/index.html` noting the random nature of the photo-and-name pairing possible when using the *Mentions* live demo.
+
+### 2023-07-26
+
+- DOC-2092: Added xref, pointing to `apis/tinymce.windowmanager.adoc`, in `dialog-configuration.adoc`.
+- DOC-2133: Added required `:pluginpage:` variables to entries in `available-toolbar-buttons.adoc`.
+
+### 2023-07-25
+
+- DOC-2108: Added links to *AI Assistant* sign-up page to `admon-ai-pricing.adoc` and `ai-proxy.adoc`.
+
 ### 2023-07-21
 
 - DOC-2093: The TinyMCE 6.6 Release notes.

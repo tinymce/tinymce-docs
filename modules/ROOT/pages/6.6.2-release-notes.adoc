@@ -332,6 +332,6 @@ During rapid, intermittent, content updates in an iframe dialog component with `
 
 This caused an error when trying to scroll to the bottom of the iframe component.
 
-In {productname} 6.6.2 two changes were made: using a numerical value for `Window.scrollTo` rather than setting it to `body.scrollHeight`; and waiting for `load` before attempting to scroll.
+{productname} 6.6.2 uses a numerical `y-coord` value for `Window.scrollTo` rather than the iframe body's scrollHeight.
 
 As a consequence the `null` errors are no longer thrown, and scrolling to the bottom of an iframe component works as expected.

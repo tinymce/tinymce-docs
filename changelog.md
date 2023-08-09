@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### 2023-08-09
+
+- DOC-2161: Added 6.6.2-specific entry to `changelog.adoc`.
+
 ### 2023-08-02
 
 - DOC-2110: Added 6.6.1-specific entries to `changelog.adoc`.

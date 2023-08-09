@@ -328,7 +328,9 @@ NOTE: If `color_cols` is set to a decimal value that would, after rounding, be a
 === An "Uncaught TypeError: Cannot read properties of null" error would sometimes be thrown when updating the content of a `streamContent: true` iframe dialog component
 //TINY-10128
 
-During rapid, intermittent, content updates in an iframe dialog component with `streamContent: true` set, an error — "Uncaught TypeError: Cannot read properties of null" — would sometimes be thrown when trying to maintain scroll at the bottom of the iframe component. This was due to the iframe body being inconsistently `null` depending on whether it has loaded when the programmatic scrolling occurs, which relies on the iframe body's scrollHeight as the scroll value.
+During rapid, intermittent, content updates in an iframe dialog component with `streamContent: true` set, an error — "Uncaught TypeError: Cannot read properties of null" — would sometimes be thrown when trying to maintain scroll at the bottom of the iframe component.
+
+This was due to the iframe body being inconsistently `null`, depending on whether it had loaded when the programmatic scrolling occured, which, in turn relied on the iframe body’s `scrollHeight` as the scroll value.
 
 {productname} 6.6.2 uses a numerical `y-coord` value for `Window.scrollTo` rather than the iframe body's scrollHeight.
 

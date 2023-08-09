@@ -1,6 +1,6 @@
-= TinyMCE 6.6.1
-:navtitle: TinyMCE 6.6.1
-:description: Release notes for TinyMCE 6.6.1
+= TinyMCE 6.6.2
+:navtitle: TinyMCE 6.6.2
+:description: Release notes for TinyMCE 6.6.2
 :keywords: releasenotes, new, changes, bugfixes
 :page-toclevels: 1
 
@@ -9,7 +9,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[overview]]
 == Overview
 
-{productname} 6.6.1 was released for {enterpriseversion} and {cloudname} on Wednesday, August 9^th^, 2023. These release notes provide an overview of the changes for {productname} 6.6.1, including:
+{productname} 6.6.2 was released for {enterpriseversion} and {cloudname} on Thursday, August 10^th^, 2023. These release notes provide an overview of the changes for {productname} 6.6.2, including:
 
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
@@ -23,11 +23,11 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[accompanying-premium-plugin-changes]]
 == Accompanying Premium plugin changes
 
-The following premium plugin updates were released alongside {productname} 6.6.1.
+The following premium plugin updates were released alongside {productname} 6.6.2.
 
 === AI Assistant 1.0.1
 
-The {productname} 6.6.1 release includes an accompanying release of the **AI Assistant** premium plugin.
+The {productname} 6.6.2 release includes an accompanying release of the **AI Assistant** premium plugin.
 
 **AI Assistant** 1.0.1 includes the following fixes:
 
@@ -66,7 +66,7 @@ For information on the **AI Assistant** plugin, see: xref:ai.adoc[AI Assistant].
 
 === Enhanced Image Editing
 
-The {productname} 6.6.1 release includes an accompanying release of the **Enhanced Image Editing** premium plugin.
+The {productname} 6.6.2 release includes an accompanying release of the **Enhanced Image Editing** premium plugin.
 
 **Enhanced Image Editing** 1.1.1 includes the following fix:
 
@@ -92,13 +92,13 @@ For information on the **Enhanced Image Editing** plugin, see: xref:editimage.ad
 [[accompanying-premium-skins-and-icon-packs-changes]]
 == Accompanying Premium Skins and Icon Packs changes
 
-The {productname} 6.6.1 release includes an accompanying release of the **Premium Skins and Icon Packs**.
+The {productname} 6.6.2 release includes an accompanying release of the **Premium Skins and Icon Packs**.
 
 === Premium Skins and Icon Packs
 
 The **Premium Skins and Icon Packs** release includes the following updates:
 
-The **Premium Skins and Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} 6.6.1 skin, Oxide.
+The **Premium Skins and Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} 6.6.2 skin, Oxide.
 
 For information on using premium skins and icon packs, see: xref:premium-skins-and-icons.adoc[Premium Skins and Icon Packs].
 
@@ -107,7 +107,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 [[improvement]]
 == Improvement
 
-{productname} 6.6.1 also includes the following improvement:
+{productname} 6.6.2 also includes the following improvement:
 
 === When Safari is the host browser, content updates for iframe dialog components with `streamContent: true` set are now throttled to 500ms intervals
 //#TINY-10097
@@ -118,7 +118,7 @@ This setting stops the iframe from flickering as it updates its contents when th
 
 The flickering still occurred when the host browser was Apple Safari, however.
 
-In {productname} 6.6.1, content updates for `iframe` dialog components with `streamContent: true` set are throttled to 500ms intervals when Safari is the host browser. This significantly reduces the apparent flickering.
+In {productname} 6.6.2, content updates for `iframe` dialog components with `streamContent: true` set are throttled to 500ms intervals when Safari is the host browser. This significantly reduces the apparent flickering.
 
 NOTE: This 500ms throttling is specific to Safari. It is not applied when any browser other than Safari is the host browser.
 
@@ -127,12 +127,12 @@ NOTE: This 500ms throttling is specific to Safari. It is not applied when any br
 [[addition]]
 == Addition
 
-{productname} 6.6.1 also includes the following addition:
+{productname} 6.6.2 also includes the following addition:
 
 === Restored filtering option: `pad_empty_with_br`
 //#TINY-9861
 
-{productname} 6.6.1 restores a further content filtering option, `pad_empty_with_br`.
+{productname} 6.6.2 restores a further content filtering option, `pad_empty_with_br`.
 
 Content filtering options change the way {productname} manages input and output.
 
@@ -171,7 +171,7 @@ This new — and correctly spelled — option behaves in essentially identical 
 [[change]]
 == Change
 
-{productname} 6.6.1 also includes the following change:
+{productname} 6.6.2 also includes the following change:
 
 === API comments/documentation: a markup typo and run-on sentences both corrected
 //#TINY-10073
@@ -185,7 +185,7 @@ As well, two run-on sentences in the same file were corrected.
 [[bug-fixes]]
 == Bug fixes
 
-{productname} 6.6.1 also includes the following bug fixes:
+{productname} 6.6.2 also includes the following bug fixes:
 
 === On Safari and Firefox, scroll positions were not always maintained when updating the content of a `streamContent: true` iframe dialog component
 //#TINY-10078
@@ -197,7 +197,7 @@ When Chrome is the host browser, scroll positions are natively maintained after 
 As a consequence, once the user scrolls up in the iframe as content updates occur and the programmatic scrolling to the bottom no longer occurs, the native behavior takes over. On Safari and Firefox, this results in the scroll being kept at the top even as the user attempts to scroll, which is both against expected behavior and poor UX.
 
 
-As of {productname} 6.6.1, after a content update to a `streamContent: true` iframe dialog component, if the host browser is Firefox or Safari and the previous scroll position was not at the end of the scrollable area, {productname} now programmatically restores the previous scroll position.
+As of {productname} 6.6.2, after a content update to a `streamContent: true` iframe dialog component, if the host browser is Firefox or Safari and the previous scroll position was not at the end of the scrollable area, {productname} now programmatically restores the previous scroll position.
 
 
 === On Safari, iframe dialog components did not consistently autoscroll to the end of the scrollable area when `streamContent: true` was set
@@ -209,7 +209,7 @@ However, when Safari was the host browser, when attempting to scroll an iframe c
 
 This made the autoscrolling feature inconsistent on Safari, as it depended on how quickly the iframe loaded after the content update.
 
-In {productname} 6.6.1, when Safari is the host browser, the autoscrolling behavior is attached to a one-time event listener that responds to the iframe’s `load` event on each content update.
+In {productname} 6.6.2, when Safari is the host browser, the autoscrolling behavior is attached to a one-time event listener that responds to the iframe’s `load` event on each content update.
 
 This allows iframe dialog components with `streamContent: true` set to consistently autoscroll to the end of the scrollable area when Safari is the host browser.
 
@@ -221,7 +221,7 @@ When an iframe dialog has `streamContent: true` set and the scrolled position is
 
 However, it was found that, when setting content without an HTML document type declaration using `document.write()`, the scrolling element used to determine scrolling conditions is the iframe’s body, not its document element. And, previously, only the latter was handled. As a consequence, updating the iframe with content without an HTML doctype declaration did not always maintain scroll positions as expected.
 
-{productname} 6.6.1 now checks whether the content contains an HTML doctype declaration and, if so, it chooses the iframe’s body as the scrolling element to determine scrolling conditions. This allows content updates for `streamContent: true` iframe dialog components to behave as expected for both content with and without an HTML doctype declaration.
+{productname} 6.6.2 now checks whether the content contains an HTML doctype declaration and, if so, it chooses the iframe’s body as the scrolling element to determine scrolling conditions. This allows content updates for `streamContent: true` iframe dialog components to behave as expected for both content with and without an HTML doctype declaration.
 
 
 === A warning message was sometimes printed to the browser console when closing a dialog that contained an iframe component
@@ -231,7 +231,7 @@ In some circumstances, when a dialog that contained an iframe component was clos
 
 This happened because, while the dialog was closed, the currently focussed element was not within the {productname} instance. This caused the `onAction()` callback function to set the focus back to the (now closed) dialog element.
 
-In {productname} 6.6.1, a check has been implemented:
+In {productname} 6.6.2, a check has been implemented:
 
 * to see if the dialog still exists within the DOM; and
 * to ensure the element with focus is within the {productname} instance after a dialog is closed.
@@ -248,7 +248,7 @@ As a consequence of this check, if an editable element was nested in a non-edita
 
 Other expected edits — such as changing the selected material’s block element type from paragraph to a heading — worked as expected. It was only adding a list, or making existing material into a list, that did not work as expected.
 
-In {productname} 6.6.1, this check has been removed. Adding or making lists within editable elements now works in all expected contexts, including when the editable element is within a non-editable element.
+In {productname} 6.6.2, this check has been removed. Adding or making lists within editable elements now works in all expected contexts, including when the editable element is within a non-editable element.
 
 
 === On Safari and Firefox, the border around `iframe` dialog components did not highlight when focused
@@ -260,7 +260,7 @@ When set to `true`, this property adds a border around `iframe` dialog component
 
 When either Safari or Firefox were the host browsers, however, the border did not render as expected when this component had focus.
 
-{productname} 6.6.1 corrects this. When either Safari or Firefox are the host browsers, `iframe` dialog components now highlight when taking focus, as expected.
+{productname} 6.6.2 corrects this. When either Safari or Firefox are the host browsers, `iframe` dialog components now highlight when taking focus, as expected.
 
 
 === Right-clicking on an image that was in a non-editable area would open the Image plugin’s context menu
@@ -272,7 +272,7 @@ To allow editing of any portion, that portion must be specifically set as writab
 
 Previously, however, if an image was in a {productname} instance with both an `editable_root: false` set and the xref:image.adoc[Image open source plugin] loaded, bringing up a {productname} context menu (eg by right-clicking on the image in a desktop setting or by long-pressing on the image in a mobile setting) allowed the Image plugin’s context menu to present, which allowed for image manipulation.
 
-{productname} 6.6.1 addresses this. With this update, invoking a context menu in non-editable area no longer brings up any {productname}-related context menus.
+{productname} 6.6.2 addresses this. With this update, invoking a context menu in non-editable area no longer brings up any {productname}-related context menus.
 
 As a consequence, images presented within a {productname} instance setup with a `editable_root: false` set are properly read-only, as expected.
 
@@ -298,7 +298,7 @@ Setting a `color_cols` value over-rides this default behavior.
 
 Previously, however, the `color_cols` option was not respected when a custom xref:user-formatting-options.adoc#color_map[`color_map`] was specified. In this circumstance the default method above still specified the number of columns displayed.
 
-{productname} 6.6.1 addresses this. As of this update, setting a `color_cols` value over-rides the default method of calculating the number of displayed columns, as expected.
+{productname} 6.6.2 addresses this. As of this update, setting a `color_cols` value over-rides the default method of calculating the number of displayed columns, as expected.
 
 [NOTE]
 .Known issue
@@ -314,7 +314,7 @@ When `color_cols` is set to the default number of columns displayed by a {produc
 
 Previously, if `color_cols` was set to a value which included a decimal, the resultant text color selection grid displayed incorrectly.
 
-{productname} 6.6.1 addresses this. As of this update, if `color_cols` is set to a decimal value, {productname} rounds the set value to the nearest integer and displays the color selection grid with that many columns.
+{productname} 6.6.2 addresses this. As of this update, if `color_cols` is set to a decimal value, {productname} rounds the set value to the nearest integer and displays the color selection grid with that many columns.
 
 In this case, {productname} rounds using the *rounding half up* method.
 
@@ -323,3 +323,15 @@ Values **x.1–x.4** are rounded to **x**.
 Values **x.5–x.9** are rounded to **x+1**.
 
 NOTE: If `color_cols` is set to a decimal value that would, after rounding, be an invalid value (for example, **0.1**), {productname} continues to act as it did previously. For invalid values, the `color_cols` option is treated as if it has not been set and reverts to displaying the color selection grid with the default five columns.
+
+
+=== An "Uncaught TypeError: Cannot read properties of null" error would sometimes be thrown when updating the content of a `streamContent: true` iframe dialog component
+//TINY-10128
+
+During rapid, intermittent, content updates in an iframe dialog component with `streamContent: true` set, an error — "Uncaught TypeError: Cannot read properties of null" — would sometimes be thrown when trying to maintain scroll at the bottom of the iframe component.
+
+This was due to the iframe body being inconsistently `null`, depending on whether it had loaded when the programmatic scrolling occured, which, in turn relied on the iframe body’s `scrollHeight` as the scroll value.
+
+{productname} 6.6.2 uses a numerical `y-coord` value for `Window.scrollTo` rather than the iframe body's scrollHeight.
+
+As a consequence, the "Uncaught TypeError: Cannot read properties of null" error is no longer thrown, and maintaining scroll at the bottom of a `streamContent: true` iframe component works as expected.

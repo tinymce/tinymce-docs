@@ -334,4 +334,4 @@ This caused an error when trying to scroll to the bottom of the iframe component
 
 {productname} 6.6.2 uses a numerical `y-coord` value for `Window.scrollTo` rather than the iframe body's scrollHeight.
 
-As a consequence the `null` errors are no longer thrown, and scrolling to the bottom of an iframe component works as expected.
+As a consequence, the "Uncaught TypeError: Cannot read properties of null" error is no longer thrown, and maintaining scroll at the bottom of a `streamContent: true` iframe component works as expected.

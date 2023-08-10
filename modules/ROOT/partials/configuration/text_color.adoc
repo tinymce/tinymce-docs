@@ -183,13 +183,13 @@ tinymce.init({
 [[color_map_foreground]]
 === `color_map_foreground`
 
-This option allows for specifying a map of the text colors that will appear in the foreground text color grid.
+This option allows for specifying a list of the text colors that will appear in the text color grid.
 
-If it is not set, the foreground text color grid takes it values from the `+color_map+` array.
+If it is not set, the text color grid takes it values from the set `+color_map+` array.
 
-And, if the `+color_map+` array is, further, not set, the background text color grid takes it values from the {productname} default color set.
+And, if the `+color_map+` array is, further, not set, the text color grid takes it values from the {productname} default color set.
 
-That is, the foreground text color grid takes its values in the following priority order:
+That is, the text color grid takes its values in the following priority order:
 
 . a set `color_map_foreground` color array is used in preference to
 . a set `color_map` color array, which is used in preference to

@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2159: Documentation of four text color options — `color_cols_background`, `color_cols_foreground`, `color_map_background`, `color_map_foreground` — added to `text_color.adoc`. Also copy-edits.
 - DOC-2112: Copy-edits to text and markup in `6.6.1-release-notes.adoc`.
 - DOC-2143: documentation of bug fix, _Context menu and context toolbar no longer show when the selected image is in a non-editable context_ added to **Enhanced Image Editing** section of `6.6.1-release-notes.adoc`.
 - DOC-2155: documentation of bug fix, _Right-clicking on an image that was in a non-editable area would open the Image plugin’s context menu_, added to **Bug fixes** section of `6.6.1-release-notes.adoc`.

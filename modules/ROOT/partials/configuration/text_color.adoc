@@ -86,6 +86,8 @@ tinymce.init({
 
 This option allows for specifying a map of the text colors that will appear in the grid.
 
+Colors are added to the array with a Hex or RGB color value, followed by the name of that color as it would appear in the color grid when hovered over. Both values are required for each color added to the color map.
+
 *Type:* `+Array+`
 
 ==== Example: using `+color_map+`

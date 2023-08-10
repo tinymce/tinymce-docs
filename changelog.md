@@ -7,6 +7,8 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### Unreleased
 
 - DOC-2160: Removed wercker status link from `README.md`. Also copy-edits.
+- DOC-2154: documentation of *Improved detection of scrollable containers when the `ui_mode: 'split'` option is set*, added to **Improvement** section of `6.6-release-notes.adoc`.
+- DOC-2159: Documentation of four text color options — `color_cols_background`, `color_cols_foreground`, `color_map_background`, `color_map_foreground` — added to `text_color.adoc`. Also copy-edits.
 - DOC-2112: Copy-edits to text and markup in `6.6.1-release-notes.adoc`.
 - DOC-2143: documentation of bug fix, _Context menu and context toolbar no longer show when the selected image is in a non-editable context_ added to **Enhanced Image Editing** section of `6.6.1-release-notes.adoc`.
 - DOC-2155: documentation of bug fix, _Right-clicking on an image that was in a non-editable area would open the Image plugin’s context menu_, added to **Bug fixes** section of `6.6.1-release-notes.adoc`.
@@ -29,6 +31,27 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 - DOC-2107: In `powerpaste_import_types.adoc`: removed misleading sentence from introductory paragraph in; re-structured value behaviour documentation from list to table for greater readability and pars-ability; copy-edited behaviour documentation to further improve readability and pars-ability; added NOTE admonition documenting what is done when pasting from a TinyMCE instance to a TinyMCE instance; edited `powerpaste_import_types.adoc` so the equivalent material in this partial presents in the *powerpaste_googledocs_import* and *powerpaste_word_import* sections equivalently to the presentation in the *powerpaste_html_import* section.
 - DOC-2150: Re-wrote `/live-demos/linkchecker/index.html`: it is now an actual interactive example, using canonically invalid domain names for the invalid domain-name strings and in-house domain names for the valid domain name strings.
 - DOC-2114: file, `pad_empty_with_br.adoc`, added to `/partials/configuration/`; documentation of option, `pad_empty_with_br`, added to file. `pad_empty_with_br.adoc` added to `content-filtering.adoc` with `include` statement. Also, notes re this option’s existence added to table in `6.0-release-notes-summary.adoc` noting the removal of equivalent previous option, `padd_empty_with_br`.
+
+### 2023-08-09
+
+- DOC-2161: Added 6.6.2-specific entry to `changelog.adoc`.
+
+### 2023-08-02
+
+- DOC-2110: Added 6.6.1-specific entries to `changelog.adoc`.
+
+### 2023-07-27
+
+- DOC-2138: Added admonition to `mentions_fetch.adoc`, documenting the *only ten users present to the end user* UI. Also added paragraph to `examples/live-demos/mentions/index.html` noting the random nature of the photo-and-name pairing possible when using the *Mentions* live demo.
+
+### 2023-07-26
+
+- DOC-2092: Added xref, pointing to `apis/tinymce.windowmanager.adoc`, in `dialog-configuration.adoc`.
+- DOC-2133: Added required `:pluginpage:` variables to entries in `available-toolbar-buttons.adoc`.
+
+### 2023-07-25
+
+- DOC-2108: Added links to *AI Assistant* sign-up page to `admon-ai-pricing.adoc` and `ai-proxy.adoc`.
 
 ### 2023-07-21
 

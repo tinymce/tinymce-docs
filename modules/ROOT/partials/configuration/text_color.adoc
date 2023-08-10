@@ -28,7 +28,7 @@ tinymce.init({
 
 This option specifies the number of columns for background text color grids.
 
-If `color_cols_background` is not set, the number of columns a background text color grid takes is set by the xref:#color_cols[`color_cols`] option.
+If `color_cols_background` is not set, the number of columns a highlight color grid takes is set by the xref:#color_cols[`color_cols`] option.
 
 If both `color_cols` and `color_cols_background` options are set, the `color_cols_background` value is used.
 

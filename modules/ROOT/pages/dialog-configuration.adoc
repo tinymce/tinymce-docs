@@ -85,7 +85,7 @@ include::partial$configuration/dialog_streamContent.adoc[]
 
 By default a dialog is shown as a modal in the center of the editor viewport.
 
-This presented position can be changed by providing a second argument, with an appropriate value, to `editor.windowManager.open()`.
+This presented position can be changed by providing a second argument, with an appropriate value, to xref:apis/tinymce.windowmanager.adoc#open[`editor.windowManager.open()`].
 
 [[inline]]
 === `+inline+`

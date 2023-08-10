@@ -5,7 +5,143 @@
 :pluginname: Word Count
 :plugincode: wordcount
 
-The Word Count plugin adds the functionality for counting words to the {productname} editor by placing a counter on the right edge of the status bar. Clicking *Word Count* in the status bar switches between counting words and characters. A dialog box with both word and character counts can be opened using the menu item situated in the *Tools* drop-down, or the toolbar button.
+The {pluginname} plugin adds functionality for counting words to the {productname} editor.
+
+When loaded, the {pluginname} plugin:
+
+* places a word and character counter in the status bar.
+** By default the counter appears adjacent the **Powered by Tiny** xref:statusbar-configuration-options.adoc#branding[product attribution logo].
+** Clicking the counter in the status bar switches the display between word count and character count.
+* adds a **Word count** command to the **Tools** menu.
+** choosing this command presents a **Word Count** dialog showing the word and character count for the current document. If there is a current selection, the word and character count for the selection is also shown.
+** if `wordcount` is also added to the toolbar configuration, a **Word Count** toolbar item presents that functions equivalently to the **Tools → Word count** menu command.
+
+== Word count logic
+
+The Word count plugin counts ‘words’ by delimiting strings at pre-defined word boundaries.
+
+=== Word boundary characers
+
+==== Some characters treated as word boundaries
+
+[cols'"1,1']
+|===
+|Name |Example and notes
+
+|Space
+|This includes space character entities such as `+&nbsp;+` (the non-breaking space character entity) and `+&thinsp;+` (the thin space character entity).
+|Em-dashes
+|**—**
+
+|En-dashes
+|**–**
+
+|Question marks
+|**?**
+
+|Commas
+|**,**
+
+|Semi-colons
+|**;**
+
+|Exclamation marks
+|**!**
+
+|Solidus (aka forward slash)
+|**/**
+
+2+|
+include::partial$misc/admon-requires-6.5v.adoc[]
+
+|Circumflex
+|**^**
+
+|Numero sign
+|**№**
+
+|Tilde
+|**~**
+
+|Plus sign
+|**+**
+
+|Vertical bar (aka pipe character)
+|**\|**
+
+|Dollar sign
+|**$**
+
+|Grave accent
+|**`**
+|===
+
+==== Some characters not treated as word boundaries
+
+[cols'"1,1']
+|===
+|Name |Example and notes
+
+|Hyphens
+|**-**
+
+|Fraction slash
+|**⁄**
+
+|Equals sign
+|**=**
+
+|Full-stops (aka periods)
+|**.**
+
+Note that space characters are word boundaries.
+
+Practically speaking, it is full-stops embedded between letters without a space either side that don’t function as word boundary characters.
+
+|Colons
+|**:**
+
+Note that space characters are word boundaries.
+
+Practically speaking, it is colons embedded between letters without a space either side that don’t function as word boundary characters.
+
+|Empty block elements
+|`+<p></p>+`
+
+Also, space characters inside otherwise empty elements — for example `+<p>&nbsp;</p>+` — do not change either the word or character count.
+|===
+
+== Character count logic
+
+The {pluginname} plugin counts glyphs.
+
+The {pluginname} plugin does not count characters added for document management purposes.
+
+Consider an end-user enters the following:
+
+[source,text]
+----
+1↵
+↵
+2↵
+↵
+----
+
+That is, they enter a numeric one, followed by two hard returns, and then a numeric two, followed by a further two hard returns.
+
+By default, {productname} stores this entered data as follows:
+
+[source,html]
+----
+<p>1</p>
+<p>&nbsp;</p>
+<p>2</p>
+<p>&nbsp;</p>
+----
+
+The character count for this data is **2**.
+
+The {pluginname} does not add either of the `+&nbsp;+` characters placed by {productname} to the document character count.
 
 == Basic setup
 

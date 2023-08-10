@@ -149,7 +149,7 @@ tinymce.init({
 
 This option allows for specifying a map of the text colors that will appear in the highlight color grid.
 
-If it is not set, the background text color grid takes it values from the `+color_map+` array.
+If it is not set, the highlight color grid takes it values from the `+color_map+` array.
 
 And, if the `+color_map+` array is, further, not set, the highlight color grid takes it values from the {productname} default color set.
 

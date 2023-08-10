@@ -4,7 +4,7 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-### Unreleased
+### 2023-08-10
 
 - DOC-2160: Removed wercker status link from `README.md`. Also copy-edits.
 - DOC-2154: documentation of *Improved detection of scrollable containers when the `ui_mode: 'split'` option is set*, added to **Improvement** section of `6.6-release-notes.adoc`.

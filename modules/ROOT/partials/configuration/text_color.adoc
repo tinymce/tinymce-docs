@@ -151,9 +151,9 @@ This option allows for specifying a map of the text colors that will appear in t
 
 If it is not set, the background text color grid takes it values from the `+color_map+` array.
 
-And, if the `+color_map+` array is, further, not set, the background text color grid takes it values from the {productname} default color set.
+And, if the `+color_map+` array is, further, not set, the highlight color grid takes it values from the {productname} default color set.
 
-That is, the background text color grid takes its values in the following priority order:
+That is, the highlight grid takes its values in the following priority order:
 
 . a set `color_map_background` color array is used in preference to
 . a set `color_map` color array, which is used in preference to

@@ -31,6 +31,11 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 :plugincategory: premium
+:pluginname: AI Assistant
+:plugincode: ai
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: premium
 :pluginname: Advanced Code Editor
 :plugincode: advcode
 :altplugincode: code
@@ -57,36 +62,43 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 :plugincategory: opensource
 :pluginname: Anchor
 :plugincode: anchor
+:pluginpage: anchor.adoc
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 :plugincategory: opensource
 :pluginname: Autosave
 :plugincode: autosave
+:pluginpage: autosave.adoc
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 :plugincategory: premium
 :pluginname: Case Change
 :plugincode: casechange
+:pluginpage: casechange.adoc
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 :plugincategory: opensource
 :pluginname: Character Map
 :plugincode: charmap
+:pluginpage: charmap.adoc
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 :plugincategory: premium
 :pluginname: Checklist
 :plugincode: checklist
+:pluginpage: checklist.adoc
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 :plugincategory: opensource
 :pluginname: Code
 :plugincode: code
+:pluginpage: code.adoc
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 :plugincategory: opensource
 :pluginname: Code Sample
 :plugincode: codesample
+:pluginpage: codesample.adoc
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 :plugincategory: premium

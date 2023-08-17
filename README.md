@@ -1,18 +1,16 @@
 # TinyMCE documentation
 
-[![wercker status](https://app.wercker.com/status/4d4c743635332430f9d25acae1be5218/s/main "wercker status")](https://app.wercker.com/project/bykey/4d4c743635332430f9d25acae1be5218)
-
 This project maintains the documentation for TinyMCE at
 [https://www.tiny.cloud/docs](https://www.tiny.cloud/docs). If you have any
 modifications you wish to contribute, fork this project, make the changes
-and submit a pull request. You will need to sign the contributors license
+and submit a pull request. You will need to sign the contributor’s license
 agreement, which will be emailed to you upon creating the pull request.
 
 This project is built using [Antora](https://antora.org/).
 
 ## Contributing to the TinyMCE Documentation
 
-If you would like to contribute to the TinyMCE project please read the TinyMCE Documentation Contributor's Guide at either:
+If you would like to contribute to the TinyMCE project please read the TinyMCE Documentation Contributor’s Guide at either:
 
 - [TinyMCE Documentation - Contributor's Guide](https://www.tiny.cloud/docs/configure/contributing-docs/).
 - [GitHub - Contributing to the TinyMCE developer documentation](https://github.com/tinymce/tinymce-docs/blob/develop/CONTRIBUTING.md#contributing-to-the-tinymce-developer-documentation).

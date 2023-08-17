@@ -1,0 +1,61 @@
+[cols="1,1,4",options="header"]
+|===
+|Name   |Arguments    |Description
+|getThreadLog |N/A |Retrieves the history of each conversation thread generated while using the plugin.
+|===
+
+.Examples
+[source,js]
+----
+// Retrieves the history of each conversation thread generated while using the plugin in the active editor.
+tinymce.activeEditor.plugins.ai.getThreadLog();
+----
+
+[[getThreadLog]]
+=== The `getThreadLog` API
+
+A user or integrator can retrieve the history of each conversation thread by calling `+editor.ai.getThreadLog()+` on an editor instance with the {pluginname} plugin enabled.
+
+A new thread is recorded into the thread log with a unique ID each time the AI dialog is opened. When a request returns either a response or an error, an event is recorded in the current thread containing the following fields:
+
+`+eventUid+`:: Unique identifier for the event.
+
+`+timestamp+`:: The time-stamp date at which the event is recorded in the thread, in the link:https://en.wikipedia.org/wiki/ISO_8601[ISO-8601] format.
+
+`+request+`:: The xref:#request[`+request+` object] as it was provided to the integration of the xref:#ai_request[`+ai_request+` function], excluding the current thread.
+
+and either:
+
+`+response+`:: The `+response+` object provided by the integration, with a `+type+` field denoting the `+ai_request+` callback used (either `+string+` or `+stream+`) and `+data+` field containing the entire response data; or
+
+`+error+`:: A string with any error returned by the integration.
+
+The thread log can contain any number of threads, with any number of events in each thread. The following example only shows a single thread containing a single event. The returned object is provided in the following format:
+
+[source,js]
+----
+{
+    "mce-aithread_123456": [
+        {
+            "eventUid": "mce-aithreadevent_654321",
+            "timestamp": "2023-03-15T09:00:00.000Z",
+            "request": {
+                "prompt": "Answer the question based on the context below.\nThe response should be in HTML format.\nThe response should preserve any HTML formatting, links, and styles in the context.\n\nContext: \"\"\"Some selection\"\"\"\n\nQuestion: \"\"\"A user query\"\"\"\n\nAnswer:",
+                "query": "A user query",
+                "context": "Some selection",
+                "system": [
+                    "Answer the question based on the context below.",
+                    "The response should be in HTML format.",
+                    "The response should preserve any HTML formatting, links, and styles in the context."
+                ]
+            },
+            "response": {
+                "type": "string",
+                "data": "Sorry, there is not enough information to provide an answer to your query,"
+            }
+        }
+    ]
+}
+----
+
+NOTE: Once a {productname} editor instance is closed, any and all temporarily stored results are lost, so use the `+getThreadLog()+` to retrieve and store any responses which should not be lost.

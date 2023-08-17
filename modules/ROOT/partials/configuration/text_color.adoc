@@ -23,10 +23,70 @@ tinymce.init({
 });
 ----
 
+[[color_cols_background]]
+=== `color_cols_background`
+
+This option specifies the number of columns for background text color grids.
+
+If `color_cols_background` is not set, the number of columns a highlight color grid takes is set by the xref:#color_cols[`color_cols`] option.
+
+If both `color_cols` and `color_cols_background` options are set, the `color_cols_background` value is used.
+
+If neither `color_cols` nor `color_cols_background` options are set, the highlight color grid presents with the default number of columns, **5**.
+
+*Type:* `+Number+`
+
+*Default value:* 5
+
+==== Example: using `color_cols_background`
+
+This example sets the number of columns in the default color grid to **10** then sets the background text color grid to display **3** columns.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  toolbar: 'backcolor forecolor',
+  color_cols: 10,
+  color_cols_background: 3,
+});
+----
+
+[[color_cols_foreground]]
+=== `color_cols_foreground`
+
+This option specifies the number of columns for foreground text color grids.
+
+If `color_cols_foreground` is not set, the number of columns a foreground text color grid takes is set by the xref:#color_cols[`color_cols`] option.
+
+If both `color_cols` and `color_cols_foreground` options are set, the `color_cols_foreground` value is used.
+
+If neither `color_cols` nor `color_cols_foreground` options are set, text color grid presents with the default number of columns, **5**.
+
+*Type:* `+Integer+`
+
+*Default value:* 5
+
+==== Example: using `color_cols_foreground`
+
+This example sets the number of columns in the default color grid to **10** then sets the foreground text color grid to display **3** columns.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  toolbar: 'backcolor forecolor',
+  color_cols: 10,
+  color_cols_foreground: 3,
+});
+----
+
 [[color_map]]
 === `+color_map+`
 
-This option allows specifying a map of the text colors that will appear in the grid.
+This option allows for specifying a map of the text colors that will appear in the grid.
+
+Colors are added to the array with a Hex or RGB color value, followed by the name of that color as it would appear in the color grid when hovered over. Both values are required for each color added to the color map.
 
 *Type:* `+Array+`
 
@@ -49,6 +109,126 @@ tinymce.init({
 });
 ----
 
+If `+color_map+` is not explicitly set, {productname} populates color grids with a default set of 22 colors.
+
+==== Example: explicitly setting `+color_map+` to the default {productname} color set
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: 'forecolor backcolor',
+  color_map: [
+    '#BFEDD2', 'Light Green',
+    '#FBEEB8', 'Light Yellow',
+    '#F8CAC6', 'Light Red',
+    '#ECCAFA', 'Light Purple',
+    '#C2E0F4', 'Light Blue',
+    '#2DC26B', 'Green',
+    '#F1C40F', 'Yellow',
+    '#E03E2D', 'Red',
+    '#B96AD9', 'Purple',
+    '#3598DB', 'Blue',
+    '#169179', 'Dark Turquoise',
+    '#E67E23', 'Orange',
+    '#BA372A', 'Dark Red',
+    '#843FA1', 'Dark Purple',
+    '#236FA1', 'Dark Blue',
+    '#ECF0F1', 'Light Gray',
+    '#CED4D9', 'Medium Gray',
+    '#95A5A6', 'Gray',
+    '#7E8C8D', 'Dark Gray',
+    '#34495E', 'Navy Blue',
+    '#000000', 'Black',
+    '#ffffff', 'White'
+  ]
+});
+----
+
+
+[[color_map_background]]
+=== `color_map_background`
+
+This option allows for specifying a map of the text colors that will appear in the highlight color grid.
+
+If it is not set, the highlight color grid takes it values from the `+color_map+` array.
+
+And, if the `+color_map+` array is, further, not set, the highlight color grid takes it values from the {productname} default color set.
+
+That is, the highlight grid takes its values in the following priority order:
+
+. a set `color_map_background` color array is used in preference to
+. a set `color_map` color array, which is used in preference to
+. the default {productname} color array.
+
+*Type:* `+Array+`
+
+==== Example: using `color_map_background`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  toolbar: 'forecolor backcolor',
+  color_map_background: [
+    '000000', 'Black',
+    '808080', 'Gray',
+    'FFFFFF', 'White',
+    'FF0000', 'Red',
+    'FFFF00', 'Yellow',
+    '008000', 'Green',
+    '0000FF', 'Blue'
+  ]
+});
+----
+
+[[color_map_foreground]]
+=== `color_map_foreground`
+
+This option allows for specifying a list of the text colors that will appear in the text color grid.
+
+If it is not set, the text color grid takes it values from the set `+color_map+` array.
+
+And, if the `+color_map+` array is, further, not set, the text color grid takes it values from the {productname} default color set.
+
+That is, the text color grid takes its values in the following priority order:
+
+. a set `color_map_foreground` color array is used in preference to
+. a set `color_map` color array, which is used in preference to
+. the default {productname} color array.
+
+*Type:* `+Array+`
+
+==== Example: using `color_map_foreground`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  toolbar: 'forecolor backcolor',
+  color_map_foreground: [
+    '000000', 'Black',
+    '808080', 'Gray',
+    'FFFFFF', 'White',
+    'FF0000', 'Red',
+    'FFFF00', 'Yellow',
+    '008000', 'Green',
+    '0000FF', 'Blue'
+  ]
+});
+----
+
+[IMPORTANT]
+.End-user customisation of text color grids
+----
+When end-users add a new custom color via a text color grid, that color is added to the associated text color grid but the new custom color is only held in the host browser’s local storage.
+
+If, for example, an end-user adds a custom color to the foreground text color grid, that new color is presented in the foreground text color grid in the end-user’s {productname} instance. The new custom color is not, however, stored in any of the instance’s color map arrays.
+
+Also, when a user adds a custom color to one palette (for example, the `color_map_background` palette), the {productname} editor instance does not replicate the new custom color in the complementary palette (for example, the `color_map_foreground` palette).
+----
+
+
 [[color_default_background]]
 === `+color_default_background+`
 
@@ -65,7 +245,7 @@ Assuming a `color_map` is also set (and it is set by default) other colors in th
 [source,js]
 ----
 tinymce.init({
-  selector: "textarea",
+  selector: "textarea",  // change this value according to your html
   toolbar: 'forecolor backcolor',
   color_default_background: 'yellow',
 });
@@ -87,7 +267,7 @@ Assuming a `color_map` is also set (and it is set by default) other colors in th
 [source,js]
 ----
 tinymce.init({
-  selector: "textarea",
+  selector: "textarea",  // change this value according to your html
   toolbar: 'forecolor',
   color_default_foreground: 'red',
 });

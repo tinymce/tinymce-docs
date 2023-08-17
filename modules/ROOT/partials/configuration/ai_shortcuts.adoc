@@ -1,0 +1,110 @@
+[[ai_shortcuts]]
+== `ai_shortcuts`
+
+The `+ai_shortcuts+` option controls the list of {pluginname} shortcuts available in the `+AI Shortcuts+` toolbar button and menu item.
+
+This option can be configured with an array to present a customised set of {pluginname} shortcuts.
+
+As well, it can be set to a `+Boolean+` value to control the use of the default list of {pluginname} shortcuts.
+
+When not specified, or set to `+true+`, the {pluginname} shortcuts toolbar button and menu item present and display the default set of shortcuts included with the {pluginname}.
+
+When set to `+[]+` (an empty array), or `+false+`, the {pluginname} shortcuts toolbar button and menu item do not present in the {productname} instance.
+
+When configured with an instance-specific object array, the {pluginname} shortcuts toolbar button and menu item present, and display the configured shortcuts when activated.
+
+*Type:* `+Array+` of `+Objects+`, or `+Boolean+`
+
+*Default value:* 
+[source, js]
+----
+[
+  { title: 'Summarize', prompt: 'Briefly summarize this.' },
+  { title: 'Explain', prompt: 'Give a short explanation of this.' },
+  { title: 'Improve grammar', prompt: 'Correct grammar.' },
+  { title: 'Improve writing', prompt: 'Enhance this text.' },
+  { title: 'Simplify language', prompt: 'Simplify this.' },
+  { title: 'Make longer', prompt: 'Expand this.' },
+  { title: 'Make shorter', prompt: 'Condense this.' },
+  { title: 'Change tone', subprompts: [
+    { title: 'Descriptive', prompt: 'Make this descriptive.' },
+    { title: 'Formal', prompt: 'Make this formal.' },
+    { title: 'Casual', prompt: 'Make this casual.' },
+    { title: 'Humour', prompt: 'Add humour to this.' },
+    { title: 'Inspirational', prompt: 'Inspire reader with this.' },
+    { title: 'Persuasive', prompt: 'Make this persuasive.' },
+  ] },
+  { title: 'Change style', subprompts: [
+    { title: 'Business', prompt: 'Make this business-like.' },
+    { title: 'Legal', prompt: 'Legal style this.' },
+    { title: 'Journalism', prompt: 'Journalistic style this.' },
+    { title: 'Medical', prompt: 'Medical style this.' },
+    { title: 'Poetic', prompt: 'Make this poetic.' },
+  ] },
+]
+----
+
+NOTE: The default shortcuts are subject to change in an upcoming release. If you intend to keep these shortcuts, include them within your integration.
+
+
+=== Example: using `ai_shortcuts` to present a customised set of {pluginname} shortcuts
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  plugins: 'ai',
+  toolbar: 'aidialog aishortcuts',
+  ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
+  ai_shortcuts: [
+    { title: 'Screenplay', prompt: 'Convert this to screenplay format.' },
+    { title: 'Stage play', prompt: 'Convert this to stage play format.' },
+    { title: 'Classical', subprompts: 
+      [
+        { title: 'Dialogue', prompt: 'Convert this to a Socratic dialogue.' },
+        { title: 'Homeric', prompt: 'Convert this to a Classical Epic.' }
+      ]
+    },
+    { title: 'Celtic', subprompts:
+      [
+        { title: 'Bardic', prompt: 'Convert this to Bardic verse.' },
+        { title: 'Filí', prompt: 'Convert this to Filí-an verse.' }
+      ]
+    },
+  ]
+});
+----
+
+=== Example: disabling `ai_shortcuts`
+
+To disable the {pluginname} shortcuts menu and toolbar options, set `ai_shortcuts` to `false` (or to `+[]+`, an empty array).
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  ai_shortcuts: false
+});
+----
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  ai_shortcuts: []
+});
+----
+
+=== Valid Shortcuts
+
+Valid shortcut objects contain the following fields.
+
+`+title+`:: A string which is displayed in the `+aishortcuts+` toolbar button and menu item. This will indicate which shortcut is used, or which category of shortcuts are in this menu.
+
+And either
+
+`+prompt+`:: A string containing the query which is given to the `+ai_request+` function when the shortcut is used.
+
+or
+
+`+subprompts+`:: An array containing more valid shortcut objects. This allows shortcuts to be grouped into categories within the {pluginname} shortcuts toolbar button and menu item.

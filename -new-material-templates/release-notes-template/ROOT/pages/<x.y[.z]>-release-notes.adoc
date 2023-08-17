@@ -1,0 +1,267 @@
+= TinyMCE <x.y[.z]>
+:navtitle: TinyMCE <x.y[.z]>
+:description: Release notes for TinyMCE <x.y[.z]>
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+[[overview]]
+== Overview
+
+{productname} <x.y[.z]> was released for {enterpriseversion} and {cloudname} on <weekday>, <month> <DD>^<st|nd|rd|th>^, <YYYY>. These release notes provide an overview of the changes for {productname} <x.y[.z]>, including:
+
+// Remove sections and section boilerplates as necessary.
+// Pluralise as necessary or remove the placeholder plural marker.
+* xref:new-premium-plugin<s>[New Premium plugin<s>]
+* xref:new-open-source-plugin<s>[New Open Source plugin<s>]
+* xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
+* xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
+* xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
+* xref:accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
+* xref:improvements[Improvements]
+* xref:additions[Additions]
+* xref:changes[Changes]
+* xref:bug-fixes[Bug fixes]
+* xref:security-fixes[Security fixes]
+* xref:known-issues[Known issues]
+
+
+[[new-premium-plugin<s>]]
+New Premium plugin<s>
+
+The following new Premium plugin was released alongside {productname} <x.y[.z]>.
+
+=== <Premium plugin name> 1.0.0
+
+The new Premium plugin, **<Premium plugin name>** // description here.
+
+For information on the **<Premium plugin name>** see xref:<plugincode>.adoc[<Premium plugin name>].
+
+
+[[new-open-source-plugin]]
+== New Open Source plugin
+
+The following new Open Source plugin was released alongside {productname} <x.y[.z]>.
+
+=== <Open source plugin name> 1.0.0
+
+The new open source plugin, **<Open source plugin name>** // description here.
+
+For information on the **<Open source plugin name>** plugin see xref:<plugincode>.adoc[<Open source plugin name>].
+
+
+[[accompanying-premium-plugin-changes]]
+== Accompanying Premium plugin changes
+
+The following premium plugin updates were released alongside {productname} <x.y[.z]>.
+
+=== <Premium plugin name 1> <Premium plugin name 1 version>
+
+The {productname} <x.y[.z]> release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+
+**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+
+==== <Premium plugin name 1 change 1>
+
+// CCFR here.
+
+==== <Premium plugin name 1 change 2>
+
+// CCFR here.
+
+==== <Premium plugin name 1 change n>
+
+// CCFR here.
+
+For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+
+=== <Premium plugin name 2> <Premium plugin name 2 version>
+
+The {productname} <x.y[.z]> release includes an accompanying release of the **<Premium plugin name 2>** premium plugin.
+
+**<Premium plugin name 2>** <Premium plugin name 2 version> includes the following <fixes, changes, improvements>.
+
+==== <Premium plugin name 2 change 1>
+
+// CCFR here.
+
+==== <Premium plugin name 2 change 2>
+
+// CCFR here.
+
+==== <Premium plugin name 2 change n>
+
+// CCFR here.
+
+For information on the **<Premium plugin name 2>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 2>].
+
+=== <Premium plugin name n> <Premium plugin name n version>
+
+The {productname} <x.y[.z]> release includes an accompanying release of the **<Premium plugin name n>** premium plugin.
+
+**<Premium plugin name n>** <Premium plugin name n version> includes the following <fixes, changes, improvements>.
+
+==== <Premium plugin name n change 1>
+
+// CCFR here.
+
+==== <Premium plugin name n change 2>
+
+// CCFR here.
+
+==== <Premium plugin name n change n>
+
+// CCFR here.
+
+For information on the **<Premium plugin name n>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name n>].
+
+
+
+[[accompanying-premium-plugin-end-of-life-announcement]]
+== Accompanying Premium plugin end-of-life announcement
+
+The following Premium plugin has been announced as reaching its end-of-life:
+
+=== <Premium plugin name eol>
+
+{productname}’s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
+
+
+[[accompanying-premium-skins-and-icon-packs-changes]]
+== Accompanying Premium Skins and Icon Packs changes
+
+The {productname} <x.y[.z]> release includes an accompanying release of the **Premium Skins and Icon Packs**.
+
+=== Premium Skins and Icon Packs
+
+The **Premium Skins and Icon Packs** release includes the following updates:
+
+The **Premium Skins and Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} <x.y[.z]> skin, Oxide.
+
+For information on using premium skins and icon packs, see: xref:premium-skins-and-icons.adoc[Premium Skins and Icon Packs].
+
+
+[[improvements]]
+== Improvements
+
+{productname} <x.y[.z]> also includes the following improvement<s>:
+
+=== <TINY-vwxyz 1 changelog entry>
+//#TINY-vwxyz1
+
+// CCFR here.
+
+=== <TINY-vwxyz 2 changelog entry>
+//#TINY-vwxyz2
+
+// CCFR here.
+
+=== <TINY-vwxyz n changelog entry>
+//#TINY-vwxyzn
+
+// CCFR here.
+
+
+[[additions]]
+== Additions
+
+{productname} <x.y[.z]> also includes the following additions:
+
+=== <TINY-vwxyz 1 changelog entry>
+//#TINY-vwxyz1
+
+// CCFR here.
+
+=== <TINY-vwxyz 2 changelog entry>
+//#TINY-vwxyz2
+
+// CCFR here.
+
+=== <TINY-vwxyz n changelog entry>
+//#TINY-vwxyzn
+
+// CCFR here.
+
+[[changes]]
+== Changes
+
+=== <TINY-vwxyz 1 changelog entry>
+//#TINY-vwxyz1
+
+// CCFR here.
+
+=== <TINY-vwxyz 2 changelog entry>
+//#TINY-vwxyz2
+
+// CCFR here.
+
+=== <TINY-vwxyz n changelog entry>
+//#TINY-vwxyzn
+
+// CCFR here.
+
+
+[[bug-fixes]]
+== Bug fixes
+
+{productname} <x.y[.z]> also includes the following bug fix<es>:
+
+=== <TINY-vwxyz 1 changelog entry>
+//#TINY-vwxyz1
+
+// CCFR here.
+
+=== <TINY-vwxyz 2 changelog entry>
+//#TINY-vwxyz2
+
+// CCFR here.
+
+=== <TINY-vwxyz n changelog entry>
+//#TINY-vwxyzn
+
+// CCFR here.
+
+
+[[known-issues]]
+== Known issues
+
+This section describes issues that users of {productname} <x.y[.z]> may encounter and possible workarounds for these issues.
+
+There <is one | are <number> known issue<s> in {productname} <x.y[.z]>.
+
+=== <TINY-vwxyz 1 changelog entry>
+//#TINY-vwxyz1
+
+// CCFR here.
+
+=== <TINY-vwxyz 2 changelog entry>
+//#TINY-vwxyz2
+
+// CCFR here.
+
+=== <TINY-vwxyz n changelog entry>
+//#TINY-vwxyzn
+
+// CCFR here.
+
+[[security-fixes]]
+== Security fixes
+
+{productname} <x.y[.z]> includes <a fix | fixes for the following security issue<s>:
+
+=== <TINY-vwxyz 1 changelog entry>
+//#TINY-vwxyz1
+
+// CCFR here.
+
+=== <TINY-vwxyz 2 changelog entry>
+//#TINY-vwxyz2
+
+// CCFR here.
+
+=== <TINY-vwxyz n changelog entry>
+//#TINY-vwxyzn
+
+// CCFR here.
+

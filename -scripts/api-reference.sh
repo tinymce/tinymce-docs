@@ -31,4 +31,4 @@ mv _data/moxiedoc_nav.adoc modules/ROOT/moxiedoc_nav.adoc
 # cleanup moxiedoc tmp _data folder
 rm -rf _data
 
-echo "donesky"
+echo "API reference updated."

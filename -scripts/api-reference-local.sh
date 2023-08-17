@@ -32,4 +32,4 @@ mv _data/moxiedoc_nav.adoc modules/ROOT/moxiedoc_nav.adoc
 # cleanup moxiedoc tmp _data folder
 rm -rf _data
 
-echo "donesky - using local build of tinymce"
+echo "API reference updated using local tinyMCE build."

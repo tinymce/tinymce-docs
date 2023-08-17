@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### 2023-08-17
+
+- DOC-2164: Corrected file-name: `s/intergration-examples.adoc/integration-examples.adoc/`.
+
 ### 2023-08-10
 
 - DOC-2160: Removed wercker status link from `README.md`. Also copy-edits.

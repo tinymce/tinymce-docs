@@ -4,9 +4,9 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-### unreleased
+### 2023-08-18
 
-- DOC-2087: 42 files and folders added outlining new material templates for new plugins; new integration examples; and release notes.
+- DOC-2087: new template infrastructure — 51 files and folders added outlining new material templates for new plugins; new integration examples; and release notes.
 
 ### 2023-06-23
 

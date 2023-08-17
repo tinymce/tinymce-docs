@@ -1,15 +1,18 @@
 // Replace <place-holder text> instances with material then remove this, and other comments.
 
-// <Plugin name>: the product name. Reference on this page with the {pluginname} variable
+// <Plugin name>: the product name. Reference on this page with the {pluginname} variable.
 = <Plugin name> plugin
 :navtitle: <Plugin name>
 :description: <What does this plugin do? What is the benefit? (One sentence description)>.
 :description_short: <Like description, but shorter>.
 :keywords: plugin, <plugincode>, etc.
 :pluginname: <Plugin name>
-// opensource plugin = tieroneplan; premium plugin = tiertwoplan or tierthreeplan or enterpriseplan
+// values for <tier>
+// opensource plugin = tieroneplan
+// premium plugin    = tiertwoplan or tierthreeplan or enterpriseplan
 :pluginminimumplan: <tier>
-// <plugincode>: adds the plugin to an editor configuration. Reference on this page with the {plugincode} variable
+// <plugincode>: adds the plugin to an editor configuration.
+// Reference on this page with the {plugincode} variable
 :plugincode: <plugincode>
 :plugincategory: premium|opensource
 
@@ -56,65 +59,50 @@ The following configuration options affect the behavior of the {pluginname} plug
 include::partial$configuration/<setting_name>.adoc[][leveloffset=+1]
 
 
-////
-If the plugin offers toolbar buttons
-1. Add an entry to /pages/available-toolbar-buttons.adoc
-   :plugincategory: premium | opensource
-   :pluginname: <Plugin name>
-   :plugincode: <plugincode>
-   :altplugincode: <alt-code> //  If the toolbar buttons are the same as another plugin,
+
+// If the plugin offers toolbar buttons
+// 1. Add an entry to /pages/available-toolbar-buttons.adoc
+//    :plugincategory: premium | opensource
+//    :pluginname: <Plugin name>
+//    :plugincode: <plugincode>
+//    :altplugincode: <alt-code>  If the toolbar buttons are the same as another plugin,
 //                                assign the other plugin’s identifier to `altplugincode`
 //                                [what does the above mean, specifically?]
-   :pluginpage: <plugincode.adoc> // not all extant entries have this. ??
-2. add a file, /partials/toolbar-button-ids/<plugincode>-toolbar-buttons.adoc
-   a. document the plugin’s toolbar buttons therein.
-      [cols="1,3",options="header"]
-      |===
-      |Toolbar button identifier |Description
-      |`+toolbar-button-identifier-1+` |Description one.
-      |`+toolbar-button-identifier-2+` |Description two.
-      |`+toolbar-button-identifier-3+` |Description three.
-      |`+toolbar-button-identifier-n+` |Description en.
-      |===
-
-// note from old template
-3.   Toolbar buttons content, uses the pluginname and plugincode variables.
-//   [what does this mean, specifically?]
-////
+//    :pluginpage: <plugincode.adoc> // not all extant entries have this. ??
+// 
+// 2. add a file, /partials/toolbar-button-ids/<plugincode>-toolbar-buttons.adoc
+//    a. document the plugin’s toolbar buttons therein.
+//       [cols="1,3",options="header"]
+//       |===
+//       |Toolbar button identifier |Description
+//       |`+toolbar-button-identifier-1+` |Description one.
+//       |`+toolbar-button-identifier-2+` |Description two.
+//       |`+toolbar-button-identifier-3+` |Description three.
+//       |`+toolbar-button-identifier-n+` |Description en.
+//       |===
+//
+// 3. Toolbar buttons content, uses the {pluginname} and {plugincode} variables.
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-////
-  Menu items content, uses the pluginname and plugincode variables.
-  The menu items are the same as another plugin, assign the other plugin's identifier to `altplugincode`
-  Don’t forget to add this to available-menu-items.adoc
-////
 
-
-////
-If the plugin offers menus
-1. Add an entry to /pages/available-menu-items.adoc
-   :plugincategory: premium | opensource
-   :pluginname: <Plugin name>
-   :plugincode: <plugincode>
-   :altplugincode: <alt-code>
-//  If the menu items are the same as another plugin,
-//  assign the other plugin’s identifier to `altplugincode`
-//  [what does the above mean, specifically?]
-   :pluginpage: <plugincode.adoc> // not all extant entries have this. ??
-2. add a file, /partials/menu-item-ids/<plugincode>-menu-items.adoc
-   a. document the plugin’s menu items herein.
-      [cols="1,1,2",options="header"]
-      |===
-      |Menu item identifier |xref:menus-configuration-options.adoc#example-the-tinymce-default-menu-items[Default Menu Location] |Description
-      |`+menu-identifier-1+` |<Menu Location 1> |Description one.
-      |`+menu-identifier-2+` |<Menu Location 2> |Description two.
-      |`+menu-identifier-n+` |<Menu Location n> |Description en.
-      |===
-
-// note from old template
-3. Toolbar buttons content, uses the pluginname and plugincode variables.
-// [what does this mean, specifically?]
-////
+// If the plugin offers menus
+// 1. Add an entry to /pages/available-menu-items.adoc
+//    :plugincategory: premium | opensource
+//    :pluginname: <Plugin name>
+//    :plugincode: <plugincode>
+//    :altplugincode: <alt-code>
+//    If the menu items are the same as another plugin, assign the other plugin’s identifier to `altplugincode`
+//    :pluginpage: <plugincode.adoc>
+// 2. add a file, /partials/menu-item-ids/<plugincode>-menu-items.adoc
+//    a. document the plugin’s menu items therein.
+//       [cols="1,1,2",options="header"]
+//       |===
+//       |Menu item identifier |xref:menus-configuration-options.adoc#example-the-tinymce-default-menu-items[Default Menu Location] |Description
+//       |`+menu-identifier-1+` |<Menu Location 1> |Description one.
+//       |`+menu-identifier-2+` |<Menu Location 2> |Description two.
+//       |`+menu-identifier-n+` |<Menu Location n> |Description en.
+//       |===
+// 3. Toolbar buttons content uses the {pluginname} and {plugincode} variables.
 
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 

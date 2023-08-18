@@ -9,8 +9,8 @@
   "homepage": "https://www.tiny.cloud/docs/",
   "scripts": {
     "nodemon-dev": "nodemon --exec antora ./antora-playbook-dev.yml",
-    "build": "./_scripts/api-reference.sh",
-    "build-local-ref": "./_scripts/api-reference-local.sh",
+    "build": "./-scripts/api-reference.sh",
+    "build-local-ref": "./-scripts/api-reference-local.sh",
     "server": "http-server build/site/ --port 4000",
     "serve": "npm-run-all -p nodemon-dev server"
   },

@@ -4,7 +4,7 @@ set -e
 
 if [[ -z $1 ]] ; then
   echo 'You need to specify the root tinymce directory to generate the source for'
-  echo './_scripts/api-reference-local ../tinymce'
+  echo './-scripts/api-reference-local ../tinymce'
   exit 1
 fi
 

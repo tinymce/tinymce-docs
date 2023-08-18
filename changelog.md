@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### 2023-08-18
 
+- DOC-2266: updated paths in `package.json` (& path documentation in `api-reference-local.sh` and `README.md`) to new script path: s/_scripts/-scripts/.
 - DOC-2087: new template infrastructure — 51 files and folders added outlining new material templates for new plugins; new integration examples; and release notes.
 
 ### 2023-08-17

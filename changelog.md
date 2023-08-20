@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### 2023-08-21
+
+- DOC-2165: `code-dialog-and-selection-state.adoc`, documentation of selection state behaviour when switching from rich-text to code-view dialog, added to `/partials/misc/`; include statements, pointing to `/partials/misc/code-dialog-and-selection-state.adoc`, added to `code.adoc` & `advcode.adoc`.
+
 ### 2023-08-18
 
 - DOC-2266: updated paths in `package.json` (& path documentation in `api-reference-local.sh` and `README.md`) to new script path: s/_scripts/-scripts/.

@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### 2023-08-21
+
+- DOC_2163: added release and end-of-support dates for TinyMCE versions 6.4, 6.5, and 6.6 to `supported-versions.adoc`; updated value of `productminorversion` variable in `antora.yml`; added annotated version of `antora.yml` to release-notes-template infrastructure; added annotated version of `supported-versions.adoc` to release-notes-template infrastructure; added include statement, pointing to `/modules/ROOT/partials/misc/admon-rtc-eol.adoc`, to `premium-plugin-list.adoc`.
+
 ### 2023-08-18
 
 - DOC-2266: updated paths in `package.json` (& path documentation in `api-reference-local.sh` and `README.md`) to new script path: s/_scripts/-scripts/.

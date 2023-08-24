@@ -1,0 +1,27 @@
+== Selection state when opening and closing the code editor
+
+The safest assumption is that selection state is not preserved when switching between the rich-text editor (ie, the default {productname} editor instance) to the code editor dialog view of a {productname} document.
+
+=== Switching from the rich-text editor view to the code editor
+
+If the current selection in the {productname} instance is collapsed (ie, is a flashing insertion point), the insertion point will be in the equivalent place when the code editor is opened.
+
+If the current selection in the rich-text editor is an actual selection, that state is not preserved when switching to the code editor.
+
+Instead, the insertion point in the code editor is placed at the beginning of what was the selection in the rich-text editor.
+
+=== Switching from the code editor back to the rich-text editor view
+
+When switching back from the code-view dialog to the rich-text editor, selection state is almost never preserved.
+
+If you have a selection or a collapsed selection in the rich-text editor and
+
+. open the code view dialog;
+. make no changes; and
+. exit the code view dialog by clicking **Cancel** (or pressing the **Esc** key);
+
+the selection or collapsed selection will likely be preserved in the rich-text editor.
+
+Otherwise, the selection state is not preserved on round-tripping from rich-text to code-view and back.
+
+Instead, the insertion point is placed at the beginning of the editable block closest to the beginning of the {productname} document.

@@ -1,5 +1,6 @@
 name: tinymce
 title: TinyMCE Documentation
+# update the version value if required. Almost certainly *not* required.
 version: '6'
 asciidoc:
   attributes:
@@ -18,6 +19,9 @@ asciidoc:
     # product variables
     productname: TinyMCE
     productmajorversion: 6
+    # update the productminorversion value if required. Likely required.
+    # Note: this value is not changed for .z updates.
+    # For example, an update from 6.6.0 to 6.6.1 does not require a change to this variable’s value.
     productminorversion: '6.6'
     ##### product name in codeblock
     prodnamecode: tinymce
@@ -71,3 +75,5 @@ asciidoc:
 nav:
 - modules/ROOT/nav.adoc
 - modules/ROOT/moxiedoc_nav.adoc
+
+# This file is instructional and is never included in the published name-space.

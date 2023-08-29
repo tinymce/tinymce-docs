@@ -4,6 +4,49 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+== 6.7.0 - 2023-08-30
+
+=== Added
+* New `help_accessibility` option displays the keyboard shortcut to open the in-application help in the status bar.
+* Added a new `InsertNewBlockBefore` command which inserts an empty block before the block containing the current selection.
+* Added a new `InsertNewBlockAfter` command which inserts an empty block after the block containing the current selection.
+
+=== Improved
+* Adding a newline after a table would, in some specific cases, not work.
+* Menus now have a slight margin at the top and bottom to more clearly separate them from the frame edge.
+* Updated **More** toolbar button tooltip text from *More...* to *Reveal or hide additional toolbar items*.
+* Where multiple case sensitive variants of a translation key are provided, they will now all be preserved in the translation object instead of just the lowercase variant.
+* Improved screen reader announcements of the column and row selection in the grid presented by the **Table** menu and toolbar item.
+* Improved the keyboard focus visibility for links inside dialogs.
+
+=== Changed
+* Change `UndoLevelType` from `enum` to union type so that it is easier to use.
+* The pattern replacement removed spaces if they were contained within a tag that only contained a space and the text to replace.
+* If loading content CSS takes more than 500ms, the editor will be set to an *in progress* state until the CSS is ready.
+
+=== Fixed
+* Applying an ordered or unordered list to a selected checklist incorrectly turned the list into paragraphs.
+* Returning an empty string in a custom context menu update function resulted in a small white line appearing on right-click and the browser-native context menu would not present.
+* For sufficiently long URLs and sufficiently wide windows, URL autocompletion hid middle portions of the URL from view.
+* Numeric input in toolbar items did not disable when a switching from edit to read-only mode.
+* The Quick Toolbars plugin showed text alignment buttons on pagebreaks.
+* Creating lists in empty blocks sometimes, and incorrectly, converted adjacent block elements into list items.
+* Creating a list from multiple `<div>` elements only created a partial list.
+* Tab navigation incorrectly stopped around `iframe` dialog components.
+* It was possible to delete the sole empty block immediately before a `<details>` element if it was nested within another `<details>` element.
+* Deleting `<li>` elements that only contained `<br>` tags sometimes caused a crash.
+* It was possible to remove the `<summary>` element from a `<details>` element by dragging and dropping.
+* It was possible to break `<summary>` elements if content containing block elements was dragged-and-dropped inside them.
+* Contents were not removed from the drag start source if dragging and dropping internally into a transparent block element.
+* Using the Media plugin unexpectedly changed `<script>` tags in the editor body to `<image>` tags.
+* In some circumstances, pressing the **Enter** key scrolled the entire page.
+* The border styles of a table were incorrectly split into a longhand form after table dialog updates.
+* Links in **Help → Help → Plugins** and **Help → Help → Version** were not navigable by keyboard.
+* Fixed the inability to insert content next to the `<details>` element when it is the first or last content element. Pressing the **Up** or **Down** arrow key now inserts a block element before or after the `<details>` element.
+* An empty element with a `contenteditable="true"` attribute within a noneditable root was deleted when the Backspace key was pressed.
+* The `color_cols` option was not respected when set to the value 5 with a custom `color_map` specified.
+* In Safari on macOS, deleting backwards within a `<summary>` element removed the entire `<details>` element if it had no other content.
+
 == 6.6.2 - 2023-08-09
 
 === Fixed

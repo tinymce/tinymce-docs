@@ -18,7 +18,7 @@ tinymce.init({
     }
   },
   menubar: 'file edit view insert format tools table tc help',
-  toolbar: 'undo redo | bold italic underline strikethrough | typography | fontfamily fontsize blocks | alignleft aligncenter alignright alignjustify | inserttemplate addtemplate | outdent indent | numlist bullist checklist | forecolor backcolor casechange permanentpen formatpainter removeformat | pagebreak | charmap emoticons | fullscreen  preview save print | insertfile image media pageembed link anchor codesample | a11ycheck ltr rtl | showcomments addcomment | footnotes | mergetags',
+  toolbar: "undo redo | aidialog aishortcuts | blocks fontsizeinput | bold italic | align numlist bullist | link image | table media pageembed | lineheight  outdent indent | strikethrough forecolor backcolor formatpainter removeformat | charmap emoticons checklist | code fullscreen preview | save print export | pagebreak anchor codesample footnotes mergetags | addtemplate inserttemplate | addcomment showcomments | ltr rtl casechange | spellcheckdialog a11ycheck," // Note: if a toolbar item requires a plugin, the item will not present in the toolbar if the plugin is not also loaded.
   toolbar_sticky: true,
   toolbar_sticky_offset: isSmallScreen ? 102 : 108,
   autosave_ask_before_unload: true,

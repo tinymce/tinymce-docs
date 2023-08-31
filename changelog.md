@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### Unreleased
+
+- DOC-2173: updated the default value code sample in `ai_shortcuts.adoc` to match the updated values included in the AI Assistant. Also re-wrote the **Note** admonition to call-out the absence of any translations or alternative language versions of these default values.
+
 
 ### 2023-08-30
 

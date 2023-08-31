@@ -19,33 +19,35 @@ When configured with an instance-specific object array, the {pluginname} shortcu
 [source, js]
 ----
 [
-  { title: 'Summarize', prompt: 'Briefly summarize this.' },
-  { title: 'Explain', prompt: 'Give a short explanation of this.' },
-  { title: 'Improve grammar', prompt: 'Correct grammar.' },
-  { title: 'Improve writing', prompt: 'Enhance this text.' },
-  { title: 'Simplify language', prompt: 'Simplify this.' },
-  { title: 'Make longer', prompt: 'Expand this.' },
-  { title: 'Make shorter', prompt: 'Condense this.' },
+  { title: 'Summarize content', prompt: 'Provide the key points and concepts in this content in a succinct summary.' },
+  { title: 'Improve writing', prompt: 'Rewrite this content with no spelling mistakes, proper grammar, and with more descriptive language, using best writing practices without losing the original meaning.' },
+  { title: 'Simplify language', prompt: 'Rewrite this content with simplified language and reduce the complexity of the writing, so that the content is easier to understand.' },
+  { title: 'Expand upon', prompt: 'Expand upon this content with descriptive language and more detailed explanations, to make the writing easier to understand and increase the length of the content.' },
+  { title: 'Trim content', prompt: 'Remove any repetitive, redundant, or non-essential writing in this content without changing the meaning or losing any key information.' },
   { title: 'Change tone', subprompts: [
-    { title: 'Descriptive', prompt: 'Make this descriptive.' },
-    { title: 'Formal', prompt: 'Make this formal.' },
-    { title: 'Casual', prompt: 'Make this casual.' },
-    { title: 'Humour', prompt: 'Add humour to this.' },
-    { title: 'Inspirational', prompt: 'Inspire reader with this.' },
-    { title: 'Persuasive', prompt: 'Make this persuasive.' },
+    { title: 'Professional', prompt: 'Rewrite this content using polished, formal, and respectful language to convey professional expertise and competence.' },
+    { title: 'Casual', prompt: 'Rewrite this content with casual, informal language to convey a casual conversation with a real person.' },
+    { title: 'Direct', prompt: 'Rewrite this content with direct language using only the essential information.' },
+    { title: 'Confident', prompt: 'Rewrite this content using compelling, optimistic language to convey confidence in the writing.' },
+    { title: 'Friendly', prompt: 'Rewrite this content using friendly, comforting language, to convey understanding and empathy.' },
   ] },
   { title: 'Change style', subprompts: [
-    { title: 'Business', prompt: 'Make this business-like.' },
-    { title: 'Legal', prompt: 'Legal style this.' },
-    { title: 'Journalism', prompt: 'Journalistic style this.' },
-    { title: 'Medical', prompt: 'Medical style this.' },
-    { title: 'Poetic', prompt: 'Make this poetic.' },
+    { title: 'Business', prompt: 'Rewrite this content as a business professional with formal language.' },
+    { title: 'Legal', prompt: 'Rewrite this content as a legal professional using valid legal terminology.' },
+    { title: 'Journalism', prompt: 'Rewrite this content as a journalist using engaging language to convey the importance of the information.' },
+    { title: 'Medical', prompt: 'Rewrite this content as a medical professional using valid medical terminology.' },
+    { title: 'Poetic', prompt: 'Rewrite this content as a poem using poetic techniques without losing the original meaning.' },
   ] },
 ]
 ----
 
-NOTE: The default shortcuts are subject to change in an upcoming release. If you intend to keep these shortcuts, include them within your integration.
+[NOTE]
+.Translations and changes
+====
+The default {pluginname} shortcuts are only available in English. They have not been translated into any other languages, and switching {productname} to a language other than English does not change the default {pluginname} shortcuts.
 
+Also, the default {pluginname} shortcuts are subject to change. If you prefer to keep these shortcuts, include them within your integration.
+====
 
 === Example: using `ai_shortcuts` to present a customised set of {pluginname} shortcuts
 

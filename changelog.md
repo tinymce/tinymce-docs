@@ -4,6 +4,9 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### 2023-09-04
+
+- DOC-2167: edited toolbar configurations in both the open-source–only and Premium-plugins–included full-featured demos; also added the Accordion plugin and toolbar items to the open-source–only full-featured demo.
 
 ### 2023-08-30
 

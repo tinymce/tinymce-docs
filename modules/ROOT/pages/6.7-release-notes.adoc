@@ -347,4 +347,6 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === In Safari on macOS, deleting backwards within a `<summary>` element removed the entire `<details>` element if it had no other content
 // TINY-10123
+Previously, when Safari was the host web browser, when pressing the Backspace key while the cursor was inside the `<summary>` element of an Accordion component, and there was no other content within the parent `<details>` element, the entire parent `<details>` element would be deleted, rather than just the character before the cursor within the `<summary>`.
 
+With the release of {productname} version 6.7, we have corrected Safari's backward delete behavior in the `<details>` command. As of this update, the Backspace key now functions as expected, deleting only the character before the cursor within the `<summary>` element.

@@ -344,6 +344,9 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === The `color_cols` option was not respected when set to the value 5 with a custom `color_map` specified
 // TINY-10126
+In {productname} 6.6.2, the `color_cols` option was not respected when the value was set to 5 while a custom color_map was also present in the same editor configuration.
+
+With the release of {productname} 6.7, when using a custom `color_map`, the `color_cols` option is now respected when set to 5.
 
 === In Safari on macOS, deleting backwards within a `<summary>` element removed the entire `<details>` element if it had no other content
 // TINY-10123

@@ -7,7 +7,9 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2171: fix documentation entry for TINY-10126 in the 6.7 Release Notes.
 - DOC-2171: fix documentation entry for TINY-10123 in the 6.7 Release Notes.
+
 ### 2023-08-30
 
 - DOC-2169: added 6.7-specific entries to `changelog.adoc`.

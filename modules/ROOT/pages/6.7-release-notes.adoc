@@ -329,6 +329,11 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === In some circumstances, pressing the **Enter** key scrolled the entire page
 // TINY-9828
+Previously, in {productname} 6.4.2, a bugfix was implemented to address a specific issue related to scrolling. The issue originated from the `scrollToMarker` function, which determined vertical scrolling while also calculating horizontal scrolling based on the marker's left position.
+
+Subsequently, in {productname} 6.7, further refinements were introduced to improve the previous logic applied. This update was prompted by the need to address a specific issue, where scrolling didn't reach the correct position in certain situations. The original `scrollToMarker` function had been altered to use `scrollIntoView`, affecting not only the content but also the editor container. This unintentionally caused pressing the "Enter" key to trigger scrolling of both the content and the container. To correct this, {productname} reverted to the previous logic and adjusted the calculation of the scroll left.
+
+This fix, now corrects the previous and new issues with the release of {productname} 6.7.
 
 === The border styles of a table were incorrectly split into a longhand form after table dialog updates
 // TINY-9843

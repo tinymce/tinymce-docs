@@ -349,7 +349,21 @@ As a result, empty `contenteditable="true"` elements are not deleted on Backspac
 
 === The `color_cols` option was not respected when set to the value 5 with a custom `color_map` specified
 // TINY-10126
+Previously, when `color_cols: 5` was set, the assigned value was not used.
+
+Instead, when `color_cols` was set to the default number of columns displayed by a {productname} color selection grid (ie 5), the default method for calculating the number of displayed columns is used.
+
+For {productname} 6.7, the logic for calculating the default `color_cols` values was re-written. As of this release, {productname} now uses either the `color_cols` option, with its default calculated on the base color map, or the value calculated by custom color maps.
+
+This ensures a set `color_cols` value is always used, even when that value matches the default value.
 
 === In Safari on macOS, deleting backwards within a `<summary>` element removed the entire `<details>` element if it had no other content
 // TINY-10123
+Previously, when Safari was the host browser, and
 
+* the insertion point was inside the `<summary>` element of an Accordion component; and
+* there was no other content within the parent `<details>` element;
+
+pressing Backspace deleted the entire `<details>` element rather than just the character immediately before the insertion point.
+
+{productname} 6.7 addresses this. With this release, the Backspace key functions as expected when Safari is the host browser: it deletes only the character immediately before when the insertion point is inside a `<summary>` element, as expected.

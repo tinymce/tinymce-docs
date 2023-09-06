@@ -326,6 +326,11 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Using the Media plugin unexpectedly changed `<script>` tags in the editor body to `<image>` tags
 // TINY-10007
+A regression was observed in {productname} version 5 that affected the behavior for the media plugin. The issue was identified from code responsible for handling script tags, even though it was no longer actively utilized.
+
+As a consequence of the presence of this lingering code, scripts were inadvertently being converted into images, causing unexpected behavior for users.
+
+Changes in {productname} 6.7 removed the redundant code entirely. As a result, the non-existing code no longer poses a risk of triggering the conversion of scripts into images.
 
 === In some circumstances, pressing the **Enter** key scrolled the entire page
 // TINY-9828

@@ -338,6 +338,11 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Fixed the inability to insert content next to the `<details>` element when it is the first or last content element. Pressing the **Up** or **Down** arrow key now inserts a block element before or after the `<details>` element
 // TINY-9827
+Previously, when a `<details>` element such as an Accordion component was positioned either as the first or last element within the editor, users were unable to move the cursor above or below the element, restricting them from inserting new content to the editor. 
+
+In {productname} 6.7, the `InsertNewBlockBefore` and `InsertNewBlockAfter` commands are now associated with `Up` and `Down` arrow key presses, which triggers when the cursor is in the relevant position.
+
+As a result, when the user presses either `Up` or `Down` keys, the cursor will now move either above or below the `<details>` element when it is at either edges of the editor's content.
 
 === An empty element with a `contenteditable="true"` attribute within a noneditable root was deleted when the Backspace key was pressed
 // TINY-10011

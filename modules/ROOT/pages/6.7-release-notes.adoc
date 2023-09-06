@@ -335,6 +335,11 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Links in **Help → Help → Plugins** and **Help → Help → Version** were not navigable by keyboard
 // TINY-10071
+Accessibility of links within the Plugins Tab of the Help Dialog could not be navigable to the user as these links lacked the essential attribute, `data-alloy-tabstop="true"` rendering them inaccessible via keyboard navigation.
+
+Consequently, users were unable to navigate through these links using the tab key.
+
+{productname} 6.7, implemented a fix which involved adding the missing `data-alloy-tabstop="true"` attribute to these links. As a result of this, users can now efficiently navigate through the links within the Plugins Tab of the Help Dialog using their keyboards.
 
 === Fixed the inability to insert content next to the `<details>` element when it is the first or last content element. Pressing the **Up** or **Down** arrow key now inserts a block element before or after the `<details>` element
 // TINY-9827

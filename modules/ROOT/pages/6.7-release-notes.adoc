@@ -332,9 +332,25 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === The border styles of a table were incorrectly split into a longhand form after table dialog updates
 // TINY-9843
-Previously, when applying border style updates using the table dialog, it would initially break down the border shorthand into individual components such as border-width, border-color, and border-style. However, upon reloading the content, the styles are automatically optimized and condensed into a shorthand format (border: <width> <style> <color>). This process resulted in a modification of the table HTML within the editor.
+Previously, when applying border style changes using the {productname} *Table Properties* dialog, changes were applied as individual properties. For example:
 
-To resolve this issue, {productname} 6.7, introduced a fix what involves converting the styles into shorthand format immediately after applying the border style updates through the table dialog. As a result of this fix, the table HTML remains unaltered even after it is loaded into the editor.
+[source,html]
+----
+style="border-width: 3px; border-style: solid; border-color: red;"
+----
+
+When the content was re-loaded, however, the styles were automatically condensed into the shorthand format:
+
+[source,html]
+----
+style="border: 3px solid red;"
+----
+
+This constitutes un-announced and un-asked-for modification of the table’s underlying HTML within the {productname} editor.
+
+{productname} 6.7 addresses by immediately applying border style changes made using the *Table Properties* dialog using the shorthand format.
+
+Table HTML is, as a consequence, unaltered when it is reloaded into the {productname} editor.
 
 === Links in **Help → Help → Plugins** and **Help → Help → Version** were not navigable by keyboard
 // TINY-10071

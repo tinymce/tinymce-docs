@@ -317,12 +317,71 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === It was possible to remove the `<summary>` element from a `<details>` element by dragging and dropping
 // TINY-9960
+Previously, dragging and dropping the `<summary>` element contained within the `<details>` parent container for the Accordion element, would inadvertently cause the element to be removed from the parent container.
+
+As a consequence, this would render the accordion element unusable as the `<details>` element requires the `<summary>` element for the title/heading for the specific accordion component.
+
+In {productname} 6.7, when the user attempts to drag the `<summary>` element out of the accordion, the editor will add a empty summary element back in order to normalize the `<details>` element back after a deletion occurs by the dragging event.
 
 === It was possible to break `<summary>` elements if content containing block elements was dragged-and-dropped inside them
 // TINY-9960
+In previous versions of the Accordion Plugin, dragging and dropping block elements within the `<summary>` element of an accordion component could unintentionally cause the `<summary>` element to break.
+
+As a consequence, the editor would duplicate the `<summary>` element.
+
+Example initial content:
+[source, html]
+——
+<details class="mce-accordion" open="open">
+<summary>Accordion summary...</summary>
+<p>Accordion body...</p>
+</details>
+<h1>block_element</h1>
+——
+
+Example of duplicated content after the drag and drop.
+[source, html]
+——
+<details class="mce-accordion" open="open">
+<summary>Accordion</summary>
+<h1>block_element</h1>
+<summary class="mce-accordion-summary">&nbsp;summary...</summary> // duplicated summary class
+<p>Accordion body...</p>
+</details>
+——
+
+{productname} 6.7, introduced a fix that now unwraps block elements after they are dragged from a block element.
+
+In {productname} 6.7, dragging and dropping content from within a block element can no longer produce duplicate summary elements by dragging in blocks into the summary element.
 
 === Contents were not removed from the drag start source if dragging and dropping internally into a transparent block element
 // TINY-9960
+Previously, when dragging and dropping a context selection from a transparent element into another transparent block element, the drag start source content would not properly be deleted after the drop event.
+
+Example: of the drag event before the drop
+[source,html]
+----
+<a href="../../undefined/">
+  <p>Transparent element</p>
+</a>
+<a href="../../undefined/">
+  <p>Transparent element</p>
+</a>
+----
+
+Example: of the drop source content remaining after the drop event
+[source,html]
+----
+<a href="../../undefined/">
+  <p>Transparent element</p> // original source not removed.
+</a>
+<a href="../../undefined/">
+  <p>Transparent element</p>
+  <p>Transparent element</p> // after the drop event.
+</a>
+----
+
+{productname} 6.7, introduced a fix that overrides this unintended behavior. Now, when dragging a content selection from one transparent element into another, removes the original source element as expected.
 
 === Using the Media plugin unexpectedly changed `<script>` tags in the editor body to `<image>` tags
 // TINY-10007

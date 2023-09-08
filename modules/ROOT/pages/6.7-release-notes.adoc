@@ -314,11 +314,11 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Deleting `<li>` elements that only contained `<br>` tags sometimes caused a crash
 // TINY-6888
-In previous version of {productname}, "Uncaught TypeError: Cannot read property 'nextSibling' of null" would be thrown in some specific use cases such as after the removal of a `<li>` element.
+In previous  {productname} versions, "Uncaught TypeError: Cannot read property 'nextSibling' of null" were thrown in some specific use cases. For example, after the removal of any `<li>` element.
 
-Previously, `<li>` elements used the same caret position as the parent of the new caret container, but after removal of the `<li>` element, the editor would try to use `ToggleList.mergeWithAdjacentLists` which is used on the `otherLi.parentNode`, which triggered the TypeError, as the editor had already removed the `otherLi`.
+Previously, `<li>` elements used the same caret position as the parent of the new caret container. After removal of the `<li>` element, however, the editor tred to use `ToggleList.mergeWithAdjacentLists` which is used on the `otherLi.parentNode`. This triggered the TypeError, as the editor had already removed the other `otherLi` element.
 
-To solve this, {productname} 6.7 now uses the `otherLi.parentNode` reference is stored in a `const` before the removal.
+{productname} 6.7 addresses this by using, for caret position, the `otherLi.parentNode` reference stored in a `const` before the removal.
 
 === It was possible to remove the `<summary>` element from a `<details>` element by dragging and dropping
 // TINY-9960

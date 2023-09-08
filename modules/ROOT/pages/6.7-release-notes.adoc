@@ -311,6 +311,13 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === It was possible to delete the sole empty block immediately before a `<details>` element if it was nested within another `<details>` element
 // TINY-9965
+In previous versions of the xref:accordion.adoc[Accordion Plugin], when inserting an accordion component inside the body of another accordion, it was possible to delete the summary block element of the nested accordion.
+
+{productname} 6.7 introduced a fix that now blocks the `delete` and `backspace` keys when pressed within a empty block before an nested accordion.
+
+As a result, using `delete` and `backspace` keys no longer allow the user to delete into the summary element of the accordion, and the caret remains in the empty block before the accordion.
+
+For information on the **Accordion** plugin see xref:accordion.adoc[Accordion]
 
 === Deleting `<li>` elements that only contained `<br>` tags sometimes caused a crash
 // TINY-6888

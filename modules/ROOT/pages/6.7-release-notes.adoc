@@ -305,6 +305,13 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Creating a list from multiple `<div>` elements only created a partial list
 // TINY-9872
+Previously, when selecting more than one div contained in a {productname} configuration with `forced_root_block: 'div'` set, and trying to convert the selected content into a list item, the first element was also mistakenly considered as the `root` of the list.
+
+As a consequence, only the first div is entered into the list, and the remaining `<div>` elements were not converted.
+
+{productname} 6.7, addresses this issue, which now looks higher in the DOM tree for a parent when looking for the parent for the list element.
+
+For more information on **forced_root_block: 'div'** options see xref:forced_root_block.adoc[forced_root_block].
 
 === Tab navigation incorrectly stopped around `iframe` dialog components
 // TINY-9815

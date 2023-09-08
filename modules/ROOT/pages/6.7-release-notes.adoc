@@ -308,6 +308,11 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Tab navigation incorrectly stopped around `iframe` dialog components
 // TINY-9815
+In previous implementations of iframe dialog components was to wrap the component into two tab stop `div` elements which are required for the tabbing cycle to remain within the dialog itself.  These fake tab stop `divs` should by default, immediately forward the focus to the next component, However, while one of the `div's` correctly achieved this functionality, the other one failed in the initial implementation. 
+
+As a consequence, It meant that it took one additional redundant tab stop to navigate over the iframe dialog component.
+
+{productname} 6.7, introduced a fix that now ensures that the Tab navigation now forwards the focus to the next component which now excludes redundant tab stops after the iframe dialog component.
 
 === It was possible to delete the sole empty block immediately before a `<details>` element if it was nested within another `<details>` element
 // TINY-9965

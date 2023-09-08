@@ -317,11 +317,11 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === It was possible to remove the `<summary>` element from a `<details>` element by dragging and dropping
 // TINY-9960
-Previously, dragging and dropping the `<summary>` element contained within the `<details>` parent container for the Accordion element, would inadvertently cause the element to be removed from the parent container.
+Previously, dragging and dropping the contents of a `<summary>` element contained within the `<details>` parent container of an xref:accordion.adoc[Accordion] component, caused the `<summary>` element to be removed from the parent container.
 
-As a consequence, this would render the accordion element unusable as the `<details>` element requires the `<summary>` element for the title/heading for the specific accordion component.
+As a consequence, the Accordion element was rendered unusable: the `<details>` element requires a `<summary>` element to act as the title or heading of a specific Accordion component.
 
-In {productname} 6.7, when the user attempts to drag the `<summary>` element out of the accordion, the editor will add a empty summary element back in order to normalize the `<details>` element back after a deletion occurs by the dragging event.
+In {productname} 6.7, when the user drags a `<summary>` element’s  contents out of an Accordion component, the editor puts an empty `<summary>` element back in place after the deletion consequent to the dragging event. This restores the Accordion component to its required form.
 
 === It was possible to break `<summary>` elements if content containing block elements was dragged-and-dropped inside them
 // TINY-9960

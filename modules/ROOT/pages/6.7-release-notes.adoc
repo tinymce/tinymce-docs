@@ -296,6 +296,11 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Numeric input in toolbar items did not disable when a switching from edit to read-only mode
 // TINY-10129
+In previous versions of {productname}, an issue related to the `fontsizeinput` was identified, when the Editor's configuration was set to **readonly** mode.
+
+This issue was due to the `Changenode` event not being fired when switching modes, which prevented the event listener responsible for disabling the `fontsizeinput` button from triggering. Consequently this caused the toolbar button to appear to be interactable even while the editor was set to **readonly** mode.
+
+{productname} 6.7, addresses this fix by listening to the "ChangeMode" event in addition to the previous event, ensuring that the missing event is now properly handled. As a result, the bug no longer exists, and the `fontsizeinput` button is correctly disabled when the Editor's configuration is set to **readonly** mode.
 
 === The Quick Toolbars plugin showed text alignment buttons on pagebreaks
 // TINY-10054

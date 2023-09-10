@@ -293,6 +293,11 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === For sufficiently long URLs and sufficiently wide windows, URL autocompletion hid middle portions of the URL from view
 // TINY-10017
+Previously, even when using sufficiently wide screens with {productname}, the insert link dialog that uses `overflow: hidden` as part of its default configuration was restrained by the width of the menu when a long URL link was pasted or manually entered into the source form field.
+
+As a consequence, the typehead preview menu item was not visible for the newly added URL once it was inside the form field.
+
+{productname} 6.7, addresses this issue which now restrict's the menu item width to the typehead preview menu popup, which now also adds scrollable functionality if the URL is considered to long to render within the width.
 
 === Numeric input in toolbar items did not disable when a switching from edit to read-only mode
 // TINY-10129

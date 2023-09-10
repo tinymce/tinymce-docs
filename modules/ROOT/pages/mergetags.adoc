@@ -101,6 +101,19 @@ Here is an example of the {pluginname} HTML structure.
 </span>
 ----
 
+== Merge Tags and the Insertion Point Marker
+
+include::partial$misc/admon-requires-6.7v.adoc[]
+
+The xref:advanced-templates.adoc[Advanced Templates] Premium plugin can use a fixed string — `+{{mce-cursor}}+` — to xref:advanced-templates.adoc#the-insertion-point-[set the insertion point] within a template as the template is added to a {productname} document.
+
+Even though this fixed string uses the same default delimiting characters as individual merge tags, the {pluginname} plugin knows to ignore this particular string.
+
+Consequently, `+{{mce-cursor}}+`, is not supported as an individual merge tag.
+
+This fixed string is always ignored by {pluginname}, even if the default delimiting characters for individual merge tags are changed for a given {productname} instance.
+
+
 == Options
 
 include::partial$configuration/mergetags_prefix.adoc[leveloffset=+1]

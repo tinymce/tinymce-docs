@@ -64,10 +64,17 @@ The {productname} 6.7.0 release includes an accompanying release of the **Advanc
 
 The {productname} 6.7.0 release includes an accompanying release of the **AI Assistant** premium plugin.
 
-**AI Assistant** 1.3.0 includes the following addition, improvements, and bug fix:
+**AI Assistant** 1.1.0 includes the following addition, improvements, and bug fix:
 
 ==== New UI string translations
 // TINY-9943
+
+
+The initial release of the **AI Assistant** plugin was an English-language–only release.
+
+**AI Assistant** 1.1.0 includes translations of all UI elements into all of {productname}’s xref:bundling-localization.adoc#supported-languages[supported languages].
+
+NOTE: The query prompts included by default with the `xref:ai.adoc#ai_shortcuts[ai_shortcuts]` option are not currently translated.
 
 
 ==== The generate button is now disabled when input field is empty, rather than displaying an alert

@@ -87,9 +87,12 @@ In **AI Assistant** 1.1.0, the generate button is now disabled when the prompt i
 Separately, an alert is displayed when the **AI Assistant** encounters an error. This alert still presents in **AI Assistant** 1.1.0. However, the spacing around this alert in the **AI Assistant** dialog has been improved: it is now properly balanced in the space between the dialog’s buttons and the dialog’s text input field.
 
 
-==== The default prompts in the ai_shortcuts option have been improved for better results
+==== The default prompts in the `ai_shortcuts` option have been improved for better results
 // TINY-10099
 
+By default, the `xref:ai.adoc#ai_shortcuts[ai_shortcuts]` option includes a set of queries provided as an array of objects.
+
+For **AI Assistant** 1.1.0, each prompt in this default set has been re-written so as to produce better and more immediately useful responses when sent to an AI API endpoint.
 
 ==== The dialog sometimes unblocked and showed the preview component too early when a response is streamed
 // TINY-10114

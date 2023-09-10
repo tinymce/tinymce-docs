@@ -8,7 +8,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### Unreleased
 
 
-- DOC-2171: added entry for TINY-9943, *new UI string translations*, to AI Assistant section of `6.7-release-notes.adoc`; added entry for TINY-10104, *the generate button is now disabled when input field is empty, rather than displaying an alert*, to AI Assistant section of `6.7-release-notes.adoc`; added entry for TINY-10099, *the default prompts in the `ai_shortcuts` option have been improved for better results*, to AI Assistant section of `6.7-release-notes.adoc`.
+- DOC-2171: added entry for TINY-9943, *new UI string translations*, to AI Assistant section of `6.7-release-notes.adoc`; added entry for TINY-10104, *the generate button is now disabled when input field is empty, rather than displaying an alert*, to AI Assistant section of `6.7-release-notes.adoc`; added entry for TINY-10099, *the default prompts in the `ai_shortcuts` option have been improved for better results*, to AI Assistant section of `6.7-release-notes.adoc`; added entry for TINY-10114, *the dialog sometimes unblocked and showed the preview component too early when a response is streamed*, to AI Assistant section of `6.7-release-notes.adoc`.
 - DOC-2171: fix documentation entry for TINY-10011 in the 6.7 Release Notes.
 - DOC-2171: fix documentation entry for TINY-9827 in the 6.7 Release Notes.
 - DOC-2171: fix documentation entry for TINY-10126 in the 6.7 Release Notes.

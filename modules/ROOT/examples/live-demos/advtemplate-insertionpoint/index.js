@@ -39,6 +39,7 @@ tinymce.init({
     ],
   contextmenu: 'advtemplate',
   toolbar: "inserttemplate mergetags | undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+  advtemplate_templates
     mergetags_list: [
     {
       value: 'Current.Date',
@@ -87,5 +88,4 @@ tinymce.init({
       ]
     }
   ]
-  advtemplate_templates
 });

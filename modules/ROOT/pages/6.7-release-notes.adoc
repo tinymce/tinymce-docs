@@ -302,13 +302,11 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Creating lists in empty blocks sometimes, and incorrectly, converted adjacent block elements into list items
 // TINY-10136
-A previous fix to lists within table cells was implemented, which included an adjustment to the DOM hierarchy traversal.
+{productname} 6.4.1 included a fix for when xref:6.4.1-release-notes.adoc#_creating_a_list_in_a_table_cell_when_the_caret_is_in_front_of_an_anchor_element_would_not_properly_include_the_anchor_in_the_list[creating a list in a table cell when the insertion point is in front of an anchor element did not properly include the anchor in the list]. This fix included an adjustment to DOM hierarchy traversal.
 
-Previously, when advancing to the next leaf element in the hierarchy, the process didn't take into account whether this leaf element was correctly nested under its parent, occasionally leading to it straying outside its intended parent.
+In the earlier fix’s implementation, when advancing to the next leaf element in the hierarchy, the process did not take into account whether this leaf element was correctly nested under its parent. This occasionally led to it straying outside its intended parent. And, as a consequence, unexpected elements could be (and sometimes were) added to a list when a list was created.
 
-As a consequence, one or more unexpected elements were added to the list.
-
-{productname} 6.7, addresses this fix by setting the expected block parent as the boundary for DOM tree traversal, ensuring that it doesn't extend beyond this defined limit. As a result, any extraneous elements are now effectively excluded from the list.
+{productname} 6.7, addresses this fix by setting the expected block parent as the boundary for DOM tree traversal, ensuring that it does not extend beyond this defined limit. As a result, any extraneous elements are now effectively excluded from the list.
 
 === Creating a list from multiple `<div>` elements only created a partial list
 // TINY-9872

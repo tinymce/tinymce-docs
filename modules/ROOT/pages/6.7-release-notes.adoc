@@ -80,6 +80,12 @@ NOTE: The query prompts included by default with the `xref:ai.adoc#ai_shortcuts[
 ==== The generate button is now disabled when input field is empty, rather than displaying an alert
 // TINY-10104
 
+Previously, when an empty prompt was submitted using the **AI Assistant** dialog, an alert would display. 
+
+In **AI Assistant** 1.1.0, the generate button is now disabled when the prompt input is empty and no alert is displayed when an empty prompt is submitted.
+
+Separately, an alert is displayed when the **AI Assistant** encounters an error. This alert still presents in **AI Assistant** 1.1.0. However, the spacing around this alert in the **AI Assistant** dialog has been improved: it is now properly balanced in the space between the dialog’s buttons and the dialog’s text input field.
+
 
 ==== The default prompts in the ai_shortcuts option have been improved for better results
 // TINY-10099

@@ -299,13 +299,13 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === The Quick Toolbars plugin showed text alignment buttons on pagebreaks
 // TINY-10054
-Previously in {productname}, and issue was identified where xref:quickbars.adoc[Quickbars], a feature for changing alignment, did not properly consider page breaks.
+When a {productname} instance includes the open source xref:pagebreak.adoc[Page Break] plugin, and a page break is inserted into a {productname} document, the break is represented in the document by a thin dotted-line rectangle _image_, complete with the expected `<img>` tag.
 
-As a consequence, when a page break was encountered, the context toolbar would display alignment options.
+Previously, the logic for displaying xref:quickbars.adoc[Quickbars] toolbars did not exclude page break images.
 
-{productname} 6.7, addresses this fix which involved adding a check to page breaks for the Quickbars functionality.
+As a consequence, when a page break was encountered, an incorrect context toolbar would display.
 
-As a result of this fix, the context menu no longer display's alignment options when a page break is encountered.
+{productname} 6.7 includes an added check for page breaks in the predicate logic that prevents Quickbars contextual menus from displaying for page breaks.
 
 For information on the **Quickbars** plugin, see: xref:quickbars.adoc[Quickbars].
 

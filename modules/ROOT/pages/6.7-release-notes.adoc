@@ -302,7 +302,7 @@ Previously, when a {productname} editor instance was set to *read-only* mode, be
 
 As a consequence, the `fontsizeinput` text-entry field presents as disabled when a {productname} editor instance is set to *read-only* mode, as expected.
 
-NOTE: this was a display error only. Previously, when the editor was set to *read-only* mode, text could be entered into the `fontsizeinput` text-entry field. Setting this field to a new value in this circumstance did not, however, have any effect on selected material in a {productname} document, nor on text added at an insertion point after the {productname} instance was switched away from *read-only* mode.
+NOTE: This was a display error only. Previously, when the editor was set to *read-only* mode, text could be entered into the `fontsizeinput` text-entry field. Setting this field to a new value in this circumstance did not, however, have any effect on selected material in a {productname} document, nor on text added at an insertion point after the {productname} instance was switched away from *read-only* mode.
 
 === The Quick Toolbars plugin showed text alignment buttons on pagebreaks
 // TINY-10054

@@ -144,7 +144,7 @@ The insertion point marker is a fixed string for adding to any template.
 
 The string to add is as follows: `+{{mce-cursor}}+`.
 
-Wherever this string is within a template, the insertion point appears when that template is added to a {productname} document.
+Wherever this string is within a template is where the insertion point appears when that template is added to a {productname} document.
 
 Also, and as shown in the interactive demonstration below, the xref:mergetags.adoc[Merge Tags] plugin knows to ignore this fixed string, making it possible to use the insertion point marker in conjunction with both plugins.
 

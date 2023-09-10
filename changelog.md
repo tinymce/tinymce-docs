@@ -7,6 +7,8 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+
+- DOC-2171: added entry for TINY-9943, *New UI string translations*, to AI Assistant section of `6.7-release-notes.adoc`.
 - DOC-2171: fix documentation entry for TINY-10011 in the 6.7 Release Notes.
 - DOC-2171: fix documentation entry for TINY-9827 in the 6.7 Release Notes.
 - DOC-2171: fix documentation entry for TINY-10126 in the 6.7 Release Notes.

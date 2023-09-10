@@ -1,11 +1,16 @@
-const advtemplate_templates = [
+tinymce.init({
+  selector: "textarea",
+  plugins: [ "advtemplate", "mergetags", ],
+  toolbar: "inserttemplate | mergetags",
+advtemplate_templates:
+[
   {
   title: 'Without an insertion point marker',
   items:
     [
       {
         title: 'Name entry prompt',
-        content: '<p><strong>Enter your name:&nbsp;</strong></p><p><em>Include both your given and family names, in your preferred order.</em></p>'
+        content: '<p><strong>Enter your name:</strong></p><p><em>Include both your given and family names, in your preferred order.</em></p>'
       },
       {
         title: 'Letter outline',
@@ -20,7 +25,7 @@ const advtemplate_templates = [
     [
       {
         title: 'Name entry prompt',
-        content: '<p><strong>Enter your name:&nbsp;</strong>{{mce-cursor}}</p><p><em>Include both your given and family names, in your preferred order.</em></p>'
+        content: '<p><strong>Enter your name:</strong>{{mce-cursor}}</p><p><em>Include both your given and family names, in your preferred order.</em></p>'
       },
       {
         title: 'Letter outline',
@@ -28,19 +33,8 @@ const advtemplate_templates = [
       },
     ],
   },
-];
-
-tinymce.init({
-  selector: "textarea#advanced-template-insertionpoint",
-    plugins: [
-        "advlist", "anchor", "autolink", "charmap", "code", "fullscreen", 
-        "help", "image", "insertdatetime", "link", "lists", "media", 
-        "preview", "searchreplace", "table", "visualblocks", "advtemplate", "mergetags",
-    ],
-  contextmenu: 'advtemplate',
-  toolbar: "inserttemplate mergetags | undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-  advtemplate_templates
-    mergetags_list: [
+],
+  mergetags_list: [
     {
       value: 'Current.Date',
       title: 'Current date in DD/MM/YYYY format'

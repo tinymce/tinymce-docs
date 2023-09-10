@@ -64,6 +64,13 @@ See the xref:advanced-templates.adoc#commands[Commands] section of the xref:adva
 ==== New {{mce-cursor}} marker to indicate the cursor position after the template is inserted
 // TINY-9973
 
+The new insertion point marker is a fixed string for adding to any template.
+
+The string to add is as follows: `+{{mce-cursor}}+`.
+
+Wherever this string is within a template is where the insertion point appears when that template is added to a {productname} document.
+
+For more information, and and an interactive demonstration, see the xref:advanced-templates.adoc#the-insertion-point-marker[The Insertion Point Marker] section of the xref:advanced-templates.adoc[Advanced Templates] documentation.
 
 
 === AI Assistant 1.1.0

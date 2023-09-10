@@ -105,7 +105,7 @@ Here is an example of the {pluginname} HTML structure.
 
 include::partial$misc/admon-requires-6.7v.adoc[]
 
-The xref:advanced-templates.adoc[Advanced Templates] Premium plugin can use a fixed string — `+{{mce-cursor}}+` — to xref:advanced-templates.adoc#the-insertion-point-[set the insertion point] within a template as the template is added to a {productname} document.
+The xref:advanced-templates.adoc[Advanced Templates] Premium plugin can use a fixed string — `+{{mce-cursor}}+` — to xref:advanced-templates.adoc#the-insertion-point-marker[set the insertion point] within a template as the template is added to a {productname} document.
 
 Even though this fixed string uses the same default delimiting characters as individual merge tags, the {pluginname} plugin knows to ignore this particular string.
 

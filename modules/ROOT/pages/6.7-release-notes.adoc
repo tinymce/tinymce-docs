@@ -97,6 +97,13 @@ For **AI Assistant** 1.1.0, each prompt in this default set has been re-written 
 ==== The dialog sometimes unblocked and showed the preview component too early when a response is streamed
 // TINY-10114
 
+Previously, after submitting a prompt, the dialog would unblock early, showing a blank preview component for some time, before rendering the first chunk of visible content.
+
+This was due to the first chunk of documents containing the `<!DOCTYPE html>` declaration returned by OpenAI’s endpoint being the characters `<!`.
+
+These characters are interpreted as comment nodes by the {productname} parser. And comment nodes are considered nonempty by our associated `isEmpty` method. This is unsuitable for previewing purposes, thereby triggering the early unblocking of the dialog.
+
+In {productname} 6.7, comment nodes are now excluded from the `isEmpty` logic, resulting in them being counted as empty nodes. This is more appropriate for the purposes of checking for nodes that are visible when rendered for preview, and prevents the dialog from being unblocked early.
 
 
 === Checklist 2.0.6

@@ -200,7 +200,11 @@ The {productname} 6.7.0 release includes an accompanying release of the **Table 
 
 ==== Empty headers would be included in table of content.
 // TINY-9862
+In previous versions of the xref:tableofcontents.adoc[Table of contents], the Table of Contents (TOC) was linked to all headers, regardless of whether they contained meaningful content or were empty.
 
+As a consequence of this oversight, the Table of Contents would display these empty headers, causing confusion to the user.
+
+**Table of Contents** 1.2.0, addresses this issue, which now filter's out empty headers from the Table of Contents. As a result of this action, the Table of Contents now functions as expected, and displays only headers that contain relevant content.
 
 ==== Changes to the ToC title were overwritten using the update button.
 // TINY-9971

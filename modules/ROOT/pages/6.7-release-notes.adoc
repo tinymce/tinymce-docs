@@ -325,34 +325,40 @@ In {productname} 6.7, when the user drags a `<summary>` element’s  contents ou
 
 === It was possible to break `<summary>` elements if content containing block elements was dragged-and-dropped inside them
 // TINY-9960
-In previous versions of the Accordion Plugin, dragging and dropping block elements within the `<summary>` element of an accordion component could unintentionally cause the `<summary>` element to break.
+In previous versions of the xref:accordion.adoc[Accordion] plugin, dragging and dropping block elements within the `<summary>` element of an Accordion component could break the `<summary>` element.
 
-As a consequence, the editor would duplicate the `<summary>` element.
+As a consequence, {productname} would duplicate the `<summary>` element.
 
-Example initial content:
+For example, if the initial state was as follows:
+
 [source, html]
-——
+----
 <details class="mce-accordion" open="open">
 <summary>Accordion summary...</summary>
 <p>Accordion body...</p>
 </details>
 <h1>block_element</h1>
-——
+----
 
-Example of duplicated content after the drag and drop.
+After a drag-and-drop event, the Accordion component would be thus:
+
 [source, html]
-——
+----
 <details class="mce-accordion" open="open">
 <summary>Accordion</summary>
 <h1>block_element</h1>
-<summary class="mce-accordion-summary">&nbsp;summary...</summary> // duplicated summary class
+<summary class="mce-accordion-summary">&nbsp;summary...</summary>
+<!-- Note the duplicated <summary> class. -->
+<!-- Also note, this comment was manually added to this example. -->
 <p>Accordion body...</p>
 </details>
-——
+----
 
-{productname} 6.7, introduced a fix that now unwraps block elements after they are dragged from a block element.
+Note the duplicated `<summary>` class in the post-drag Accordion component.
 
-In {productname} 6.7, dragging and dropping content from within a block element can no longer produce duplicate summary elements by dragging in blocks into the summary element.
+To address this, {productname} 6.7 now unwraps block elements after they are dragged from within another block element.
+
+As a consequence, dragging and dropping content from within a block element no longer produces duplicate summary elements.
 
 === Contents were not removed from the drag start source if dragging and dropping internally into a transparent block element
 // TINY-9960

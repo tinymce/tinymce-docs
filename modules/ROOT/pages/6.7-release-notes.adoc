@@ -259,6 +259,23 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === New `help_accessibility` option displays the keyboard shortcut to open the in-application help in the status bar
 // TINY-9379
+In previous versions of {productname}, keyboard users without screen readers had no indicator of how to access the help menu. However, users that used screen readers would get announcements on accessing the help menu. 
+
+As a consequence, keyboard users could only see the help button, but could not access it unless they were aware of the keyboard shortcuts such as **⌥+0**.
+
+{productname} 6.7 addressed this issue by introducing a new option `help_accessibility`, which defaults to `true`, that adds a shortcut indicator in the status bar to indicate the keyboard shortcut for the help menu. This new option when set, helps identify to keyboard users that the shortcut is available which will help them access the help menu via the editor's statusbar.
+
+[source, js]
+----
+tinymce.init({
+    selector: "textarea",
+    plugins: [
+        "help", 
+    ],
+    toolbar: "help",
+	help_accessibility: true, // default value is set to true.
+});
+----
 
 === Added a new `InsertNewBlockBefore` command which inserts an empty block before the block containing the current selection
 // TINY-10022

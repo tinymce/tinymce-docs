@@ -265,7 +265,17 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Added a new `InsertNewBlockAfter` command which inserts an empty block after the block containing the current selection
 // TINY-10022
+{productname} 6.7 introduced a new feature that adds two new commands.
 
+These commands were introduced to address scenarios when navigation encounters spatial constraints, but specifically when the constraint is at the {productname} document's edges. For example, if a user inserted a `<details>` element aka **accordion component** at the beginning of the {productname} document, there was no way for the user to move the cursor above or below this element. 
+
+New command inserts are:
+
+. `InsertNewBlockBefore`: command inserts an empty block before the one containing the current selection.
+. `InsertNewBlockAfter`: command inserts an empty block after the one containing the current selection.
+
+[IMPORTANT]
+It's important to note that the newly added empty block will be placed at the root level of the document, immediately `before` or `after` the top parent block encompassing the current selection. 
 
 
 [[changes]]

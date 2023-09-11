@@ -8,6 +8,11 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### Unreleased
 
 - DOC-2171: bug-fix documentation entry for TINY-10046, _Editing the data before switching theme would mean a loss of edited data_.
+- DOC-2171: fix documentation entry for TINY-9828 in the 6.7 Release Notes.
+- DOC-2171: addition documentation entry for TINY-10022 in the 6.7 Release Notes; added entries for two new commands, InsertNewBlockBefore and InsertNewBlockAfter to `editor-command-identifiers.adoc`; and organised Miscellaneous Core command and example tables into alphabetical order.
+- DOC-2171: fix documentation entry for TINY-6888 in the Release Notes.
+- DOC-2171: fix documentation entry for TINY-9965 in the 6.7 Release Notes.
+- DOC-2171: fix documentation entry for TINY-10071 in the 6.7 Release Notes.
 - DOC-2171: fix documentation entry for TINY-10011 in the 6.7 Release Notes.
 - DOC-2171: fix documentation entry for TINY-9827 in the 6.7 Release Notes.
 - DOC-2171: fix documentation entry for TINY-10126 in the 6.7 Release Notes.

@@ -293,11 +293,13 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === For sufficiently long URLs and sufficiently wide windows, URL autocompletion hid middle portions of the URL from view
 // TINY-10017
-Previously, even when using sufficiently wide screens with {productname}, the insert link dialog that uses `overflow: hidden` as part of its default configuration was restrained by the width of the menu when a long URL link was pasted or manually entered into the source form field.
+The **Insert/Edit Link** dialog uses `overflow:hidden` as part of its default configuration. When a sufficiently long URL is pasted in to the *URL* field, a preview window appears to display the entire pasted-in URL.
 
-As a consequence, the typehead preview menu item was not visible for the newly added URL once it was inside the form field.
+Previously, even when sufficiently wide viewports were available, a portion of the pasted-in URL was cut off at top-right of the preview window.
 
-{productname} 6.7, addresses this issue which now restrict's the menu item width to the typehead preview menu popup, which now also adds scrollable functionality if the URL is considered to long to render within the width.
+In {productname} 6.7, this preview window has been constrained to the width of the *URL* field. As well, a scroll bar will present if the pasted-in URL is too long to render in this constrained width.
+
+As a consequence, no part of pasted-in URL is cut off when the preview window now presents.
 
 === Numeric input in toolbar items did not disable when a switching from edit to read-only mode
 // TINY-10129

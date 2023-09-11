@@ -248,6 +248,9 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Improved screen reader announcements of the column and row selection in the grid presented by the **Table** menu and toolbar item
 // TINY-10140
+Previously, when using a screen reader, the table grid menu item would announce the current highlighted cells as "4x7" as an example, which provided minimal information to the user.
+
+{productname} 6.7 addresses this issue with the latest update. The screen reader now provides a more informative announcement to the user for the current selection when the user is interacting with a table grid such as "4 columns, 7 rows".
 
 === Improved the keyboard focus visibility for links inside dialogs
 // TINY-10124

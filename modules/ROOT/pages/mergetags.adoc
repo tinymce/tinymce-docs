@@ -101,17 +101,19 @@ Here is an example of the {pluginname} HTML structure.
 </span>
 ----
 
-== Merge Tags and the Insertion Point Marker
+== Merge Tags and the Advanced Templates Insertion Point Marker
 
 include::partial$misc/admon-requires-6.7v.adoc[]
 
 The xref:advanced-templates.adoc[Advanced Templates] Premium plugin can use a fixed string — `+{{mce-cursor}}+` — to xref:advanced-templates.adoc#the-insertion-point-marker[set the insertion point] within a template as the template is added to a {productname} document.
 
-Even though this fixed string uses the same default delimiting characters as individual merge tags, the {pluginname} plugin knows to ignore this particular string.
+Even though this fixed string uses the same default delimiting characters as individual merge tags, this fixed string does not interfere or otherwise interact with any {pluginname} configuration.
 
-Consequently, `+{{mce-cursor}}+`, is not supported as an individual merge tag.
+The Advanced Templates plugin replaces the Insertion Point Marker string with a hook element before inserting a template containing the string in to a {productname} instance.
 
-This fixed string is always ignored by {pluginname}, even if the default delimiting characters for individual merge tags are changed for a given {productname} instance.
+Consequently, the the Advanced Templates Insertion Point Marker string is never seen by the {pluginname} plugin.
+
+It is, therefore, possible to use the Insertion Point Marker string — `+{{mce-cursor}}+` — as a merge tag. It is not recommended, however. Aside from being an unlikely merge tag string, the potential for confusion is reason enough to avoid duplication across purposes.
 
 
 == Options

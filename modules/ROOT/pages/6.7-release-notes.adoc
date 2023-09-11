@@ -196,7 +196,13 @@ The {productname} 6.7.0 release includes an accompanying release of the **Table 
 
 ==== ToC toolbar button and menu item are now disabled when the selection is not editable
 // TINY-9890
+In previous versions of the xref:tableofcontents.adoc[Table of contents], a UI issue occurred when the Table of Contents plugin was active, and the user's cursor or selection was placed within a section of the editor that was set as `non-editable`.
 
+This lead to an unintended consequence, where the Table of Contents toolbar button remained visible to the user despite the users cursor or selection being within a `non-editable` element.
+
+**Table of Contents** 1.2.0, addresses this issue, which now disables of the Table of Contents toolbar button when the user's selection is within a `non-editable` element or when the editor is set to **readonly** mode.
+
+As a result of this fix, the Table of Contents toolbar button now correctly renders the button as either `enabled` or `disabled` based on the user's cursor position or context selection.
 
 ==== Empty headers would be included in table of content.
 // TINY-9862

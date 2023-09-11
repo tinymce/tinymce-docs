@@ -260,13 +260,18 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === New `help_accessibility` option displays the keyboard shortcut to open the in-application help in the status bar
 // TINY-9379
 
-=== Added a new `InsertNewBlockBefore` command which inserts an empty block before the block containing the current selection
+=== Added new `InsertNewBlockBefore` and `InsertNewBlockAfter` commands which insert an empty block before or after the block containing the current selection
 // TINY-10022
+{productname} 6.7 includes two new commands: `InsertNewBlockBefore` and `InsertNewBlockAfter`.
 
-=== Added a new `InsertNewBlockAfter` command which inserts an empty block after the block containing the current selection
-// TINY-10022
+These commands address scenarios where navigation encounters spatial constraints; most specifically when the constraint is at a {productname} document’s edges.
 
+For example, if a user inserts a `<details>` element (as part of an **Accordion component**) at the beginning of a {productname} document, the `InsertNewBlockBefore` command now provides a way to set the insertion point above this element. 
 
+[IMPORTANT]
+====
+Blocks added by either command are placed at the root level of the {productname} document, immediately before or after the top parent block encompassing the current selection.
+====
 
 [[changes]]
 == Changes

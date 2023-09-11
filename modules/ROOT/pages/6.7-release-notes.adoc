@@ -279,7 +279,13 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === If loading content CSS takes more than 500ms, the editor will be set to an *in progress* state until the CSS is ready
 // TINY-10008
+Previously, an issue was identified that was reproducible during the {productname} initialization process.
 
+If the `contentEditable: 'true'` property was set within the editors configuration, and the user host browser was affected by a slow internet connection such as "3G", and the `contentCss` was still loading, the user could interact with the editor before the `ContentCss` had finished its loading phase.
+
+As a consequence, after the `ContentCss` had completed its initial load, any content inserted into the editor before the `ContentCss` had completed loading was removed from the editor.
+
+{productname} 6.7 addresses this issues, which now blocks any interaction with the editor while the `contentCss` is loading. As a result of this fix, it is no longer possible to insert any text into the editor during the `contentCss` loading phase.
 
 
 [[bug-fixes]]

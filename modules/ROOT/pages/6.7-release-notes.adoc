@@ -362,32 +362,39 @@ As a consequence, dragging and dropping content from within a block element no l
 
 === Contents were not removed from the drag start source if dragging and dropping internally into a transparent block element
 // TINY-9960
-Previously, when dragging and dropping a context selection from a transparent element into another transparent block element, the drag start source content would not properly be deleted after the drop event.
+Previously, when dragging and dropping a context selection from a transparent element into another transparent block element, the source content (ie the content selected for dragging) was not properly deleted after the drop event.
 
-Example: of the drag event before the drop
+For example, if the initial selection for dragging was as follows:
+
 [source,html]
 ----
 <a href="../../undefined/">
-  <p>Transparent element</p>
+  <p>Selected content in transparent element to be dragged.</p>
 </a>
 <a href="../../undefined/">
-  <p>Transparent element</p>
+  <p>Content in another transparent element</p>
 </a>
 ----
 
-Example: of the drop source content remaining after the drop event
+After the drop event, the editor state was thus:
+
 [source,html]
 ----
 <a href="../../undefined/">
-  <p>Transparent element</p> // original source not removed.
+  <p>Selected content in transparent element to be dragged.</p>
+  <!-- Note the dragged content has remained in place. -->
 </a>
 <a href="../../undefined/">
-  <p>Transparent element</p>
-  <p>Transparent element</p> // after the drop event.
+  <p>Content in another transparent element</p>
+  <p>Selected content in transparent element to be dragged.</p>
+  <!-- Causing, in effect, the dragged content to be duplicated rather than moved. -->
+  <!-- Also note, these comments were manually added to this example. -->
 </a>
 ----
 
-{productname} 6.7, introduced a fix that overrides this unintended behavior. Now, when dragging a content selection from one transparent element into another, removes the original source element as expected.
+Note the duplicated material in the post-drag editor state example.
+
+{productname} 6.7 includes a fix that over-rides this unintended behavior. Now, when dragging a content selection from one transparent element into another, the drag’s source selection is moved rather than duplicated, as expected.
 
 === Using the Media plugin unexpectedly changed `<script>` tags in the editor body to `<image>` tags
 // TINY-10007

@@ -189,10 +189,34 @@ The {productname} 6.7.0 release includes an accompanying release of the **Table 
 ==== Added new boolean option tableofcontents_orderedlist to use ordered lists instead of unordered lists in the table of contents.
 // TINY-9968
 
-
 ==== Added new option tableofcontents_orderedlist_type to set a specific type of ordered list, defaulting to a numeric ordered list.
 // TINY-9969
+{productname} 6.7, introduced a new option in **Table of Contents 1.2.0**.
 
+This new option allows the user to change the visual appearance for the ordered list within the Table of Contents.
+
+.Example
+[source, js]
+----
+tinymce.init({
+    selector: "textarea",
+    plugins: [
+        "tableofcontents", "code",
+    ],
+    toolbar: "tableofcontents",
+	tableofcontents_orderedlist_type: 'I', // optional values are '1', 'A', 'a', 'I', 'i'
+});
+----
+
+Optional values to change the type attribute for the ordered list `<ol>`as per the below standards referenced from https://www.w3schools.com/html/html_lists_ordered.asp#:~:text=Ordered%20HTML%20List%20%2D%20The%20Type%20Attribute[Ordered_HTML_List-The_Type_Attribute]
+
+* **1**: The list items will be numbered with numbers (default).
+* **A**: The list items will be numbered with uppercase letters.
+* **a**: The list items will be numbered with lowercase letters.
+* **I**: The list items will be numbered with uppercase roman numbers.
+* **i**: The list items will be numbered with lowercase roman numbers.
+
+For information on the **Table of Contents** plugin, see: xref:tableofcontents.adoc[Table of Contents].
 
 ==== ToC toolbar button and menu item are now disabled when the selection is not editable
 // TINY-9890

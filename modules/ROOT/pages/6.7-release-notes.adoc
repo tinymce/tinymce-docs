@@ -290,13 +290,15 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Returning an empty string in a custom context menu update function resulted in a small white line appearing on right-click and the browser-native context menu would not present
 // TINY-9842
-In the previous version of {product name}, an issue was identified when the integrator had set multiple context menus that returned empty strings.
+Adding `browser_spellcheck: true` to a configuration tells {productname} to use the host browser’s native context menu for spell-checking.
 
-As a consequence, when the user executed a right-button mouse "click", on a text element, no context menu would pop up. This not only included any {product name} context menus but also any native browser menus, which should normally appear in this scenario.
+When this was set at the same time as multiple custom plugins were added to the `contextmenu` configuration, the browser-native context menu did not present as expected when invoked.
 
-In {product name} 6.7, we have addressed this problem by improving the handling of multiple empty strings in the context menu logic.
+Instead a short white line appeared.
 
-As a result of this fix, the native context menu now pops up as it should when right-clicking on text element.
+{productname} 6.7 addresses this by improving the handling of multiple empty strings in its context menu logic.
+
+Consequent to this improved handling, the browser-native context menu now presents as expected when invoked.
 
 === For sufficiently long URLs and sufficiently wide windows, URL autocompletion hid middle portions of the URL from view
 // TINY-10017

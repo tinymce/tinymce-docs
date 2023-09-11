@@ -293,13 +293,9 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Applying an ordered or unordered list to a selected checklist incorrectly turned the list into paragraphs
 // TINY-9975
-In previous versions of {productname}, an issue was identified that affected the functionality of the xref:checklist.adoc[Checklist] Plugin which would incorrectly convert a list into a paragraph when users attempted to apply an `ordered` or `unordered` list format to a selected checklist, particularly when they selected a bulleted list that included a sublist.
+Previously, when a xref:checklist.adoc[Checklist], particularly a checklist that contained a nested checklist, was selected and converted to a bulleted or numbered list, the selection was, incorrectly, converted into plain paragraphs.
 
-{productname} 6.7 addresses this issue so that when a user selects a bulleted list that contains a sublist and tries to convert it into a checklist, the entire list correctly transforms into a checklist as intended.
-
-As a result of this fix, lists will now longer convert into paragraphs when attempting to apply checklist formatting to them.
-
-For information on the **Checklist** plugin, see: xref:checklist.adoc[Checklist].
+{productname} 6.7 address this issue. With this update, nested checklists become nested bulleted lists, or nested numbered lists, when selected and converted, as expected.
 
 === Returning an empty string in a custom context menu update function resulted in a small white line appearing on right-click and the browser-native context menu would not present
 // TINY-9842

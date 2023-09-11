@@ -346,6 +346,15 @@ Previously, `<li>` elements used the same caret position as the parent of the ne
 
 === In some circumstances, pressing the **Enter** key scrolled the entire page
 // TINY-9828
+{productname} 6.4.2 addressed an issue in which xref:6.4.2-release-notes.adoc#_selection_was_not_correctly_scrolled_horizontally_into_view_when_using_the_selection.scrollIntoView_API[a selection was not correctly scrolled horizontally into view].
+
+{productname} 6.7 includes changes to the previously applied logic to address a further issue, in which scrolling did not reach the correct position in some circumstances.
+
+The fix applied in {productname} 6.4.2 altered the `scrollToMarker` function, affecting not only editor content, but also the editor container itself. This, unintentionally, caused an *Enter* key-press to trigger scrolling of both the content and the container.
+
+{productname} 6.7 makes two changes to address this. It reverts the logic applied in {productname} 6.4.2. And it adjusts the scroll left calculation.
+
+These changes correct both issues. Pressing the *Enter* key no longer triggers scrolling and the selection is (still) correctly scrolled into horizontal view.
 
 === The border styles of a table were incorrectly split into a longhand form after table dialog updates
 // TINY-9843

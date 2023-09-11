@@ -362,9 +362,23 @@ Likewise, going from the first link within a tab’s content pane having focus t
 
 === Fixed the inability to insert content next to the `<details>` element when it is the first or last content element. Pressing the **Up** or **Down** arrow key now inserts a block element before or after the `<details>` element
 // TINY-9827
+Previously, when a `<details>` element, such as is automatically part of an xref:accordion.adoc[Accordion] component, was either the first or last element within a {productname} editor instance, users were unable to move the insertion point above or below the element. This prevented them from adding new content to the editor instance.
+
+In {productname} 6.7, the `InsertNewBlockBefore` and `InsertNewBlockAfter` commands have been associated with the *Up Arrow* and *Down Arrow* keys, activating when the insertion point is in the relevant position.
+
+As a result, when the insertion point is in the relevant position and the user presses either of the *Up Arrow* or *Down Arrow* keys, the insertion point now moves either above or below the `<details>` element when it is at either the beginning or end of the current editor’s content.
 
 === An empty element with a `contenteditable="true"` attribute within a noneditable root was deleted when the Backspace key was pressed
 // TINY-10011
+Previously, when an empty element with a `contenteditable="true"` attribute was set within a read-only root (ie a root with a `contenteditable="false"` attribute), the empty element was deleted when the *Backspace* key was pressed.
+
+When the Backspace key was pressed in this circumstance, the {productname} editor removed elements that contained no content.
+
+In doing so the `dom.isEmpty(body)` call returned a value, `true`, even if the called `body` included an element that was empty but had a `contenteditable="true"` attribute set.
+
+As of {productname} 6.7, elements with a `contenteditable="true"` attribute set are no longer treated as empty and the `dom.isEmpty(body)` call no longer returns the value `true` with regards such elements.
+
+As a consequence, these elements are no longer deleted when they are immediately before the insertion point and the Backspace key is pressed.
 
 === The `color_cols` option was not respected when set to the value 5 with a custom `color_map` specified
 // TINY-10126

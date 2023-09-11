@@ -7,7 +7,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
-- DOC-2171: addition documentation entry for TINY-10022 in the 6.7 Release Notes; added entries for two new commands, InsertNewBlockBefore and InsertNewBlockAfter to `editor-command-identifiers.adoc`; and organised Miscellaneeous Core command and example tables into alphabetical order.
+- DOC-2171: addition documentation entry for TINY-10022 in the 6.7 Release Notes; added entries for two new commands, InsertNewBlockBefore and InsertNewBlockAfter to `editor-command-identifiers.adoc`; and organised Miscellaneous Core command and example tables into alphabetical order.
 - DOC-2171: fix documentation entry for TINY-10011 in the 6.7 Release Notes.
 - DOC-2171: fix documentation entry for TINY-9827 in the 6.7 Release Notes.
 - DOC-2171: fix documentation entry for TINY-10126 in the 6.7 Release Notes.

@@ -276,11 +276,11 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === The pattern replacement removed spaces if they were contained within a tag that only contained a space and the text to replace
 // TINY-9744
-An issue that affected {productname} 6.3.1, identified an problem that affected the `cleanEmptyNodes` function, that is responsible for removing nodes that contain whitespaces within it.
+Previously, a problem was identified with the `cleanEmptyNodes` function. This function is responsible for removing nodes that contain white space.
 
-As a consequence, in some specific cases, the pattern would remove the whitespace, if they were within a tag that contained only whitespace.
+An inadvertent consequence of an earlier fix to this problem was that, in some specific cases, the function would remove white space contained within tags that, themselves, only contained white space. This was white space it was not expected to remove.
 
-{productname} 6.7, addresses this issue by updating the `cleanEmptyNodes` function that now preserves cases of nodes in which that contain whitespace.
+{productname} 6.7 address this and the `cleanEmptyNodes` function now preserves these nodes, as expected.
 
 === If loading content CSS takes more than 500ms, the editor will be set to an *in progress* state until the CSS is ready
 // TINY-10008

@@ -2,7 +2,7 @@
 :navtitle: Available Commands
 :description_short: Complete list of editor commands.
 :description: The complete list of exposed editor commands.
-:keywords: editorcommands, editorcommand, execcommand, Bold, Italic, Underline, Strikethrough, Superscript, Subscript, Cut, Copy, Paste, Unlink, JustifyLeft, JustifyCenter, JustifyRight, JustifyFull, JustifyNone, InsertUnorderedList, InsertOrderedList, ForeColor, HiliteColor, FontName, FontSize, RemoveFormat, mceBlockQuote, FormatBlock, mceInsertContent, mceToggleFormat, mceSetContent, Indent, Outdent, InsertHorizontalRule, mceToggleVisualAid, mceInsertLink, selectAll, delete, mceNewDocument, Undo, Redo, mceAutoResize, mceShowCharmap, mceCodeEditor, mceDirectionLTR, mceDirectionRTL, mceFullscreen, mceImage, mceInsertDate, mceInsertTime, mceInsertDefinitionList, mceNonBreaking, mcePageBreak, mcePreview, mcePrint, mceSave, SearchReplace, mceInsertTemplate, mceVisualBlocks, mceVisualChars, mceMedia, mceAnchor, mceTableSplitCells, mceTableMergeCells, mceTableInsertRowBefore, mceTableInsertRowAfter, mceTableInsertColBefore, mceTableInsertColAfter, mceTableDeleteCol, mceTableDeleteRow, mceTableCutRow, mceTableCopyRow, mceTablePasteRowBefore, mceTablePasteRowAfter, mceTableDelete, mceInsertTable, mceTableRowProps, mceTableCellProps, mceEditImage, mceAddEditor, mceRemoveEditor, mceToggleEditor, mceAutocompleterClose, mceAutocompleterReload
+:keywords: editorcommands, editorcommand, execcommand, Bold, Italic, Underline, Strikethrough, Superscript, Subscript, Cut, Copy, Paste, Unlink, JustifyLeft, JustifyCenter, JustifyRight, JustifyFull, JustifyNone, InsertUnorderedList, InsertOrderedList, ForeColor, HiliteColor, FontName, FontSize, InsertNewBlockBefore, InsertNewBlockAfter, RemoveFormat, mceBlockQuote, FormatBlock, mceInsertContent, mceToggleFormat, mceSetContent, Indent, Outdent, InsertHorizontalRule, mceToggleVisualAid, mceInsertLink, selectAll, delete, mceNewDocument, Undo, Redo, mceAutoResize, mceShowCharmap, mceCodeEditor, mceDirectionLTR, mceDirectionRTL, mceFullscreen, mceImage, mceInsertDate, mceInsertTime, mceInsertDefinitionList, mceNonBreaking, mcePageBreak, mcePreview, mcePrint, mceSave, SearchReplace, mceInsertTemplate, mceVisualBlocks, mceVisualChars, mceMedia, mceAnchor, mceTableSplitCells, mceTableMergeCells, mceTableInsertRowBefore, mceTableInsertRowAfter, mceTableInsertColBefore, mceTableInsertColAfter, mceTableDeleteCol, mceTableDeleteRow, mceTableCutRow, mceTableCopyRow, mceTablePasteRowBefore, mceTablePasteRowAfter, mceTableDelete, mceInsertTable, mceTableRowProps, mceTableCellProps, mceEditImage, mceAddEditor, mceRemoveEditor, mceToggleEditor, mceAutocompleterClose, mceAutocompleterReload
 
 == Overview
 
@@ -124,78 +124,82 @@ The commands in the following table are provided by the {productname} editor and
 [cols="1,3",options="header"]
 |===
 |Command |Description
-|Lang |Sets the language of the current selection. The value passed in should be a language spec described in xref:content-localization.adoc#content_langs[Content appearance options - `+content_langs+`].
-|mceInsertLink |Inserts a link at the current selection. The value is the URL to add to the link(s). NOTE: This is an alias for the `CreateLink` command.
-|JustifyNone |Removes any alignment to the selected text.
 |HiliteColor |Changes the background color of the text. The value passed in should be the color. NOTE: This is an alias for the `BackColor` command.
-|LineHeight |Sets the line height of the text. The value passed in should be a valid CSS line height.
-|mceApplyTextcolor |Applies text color or background color to the current selection. Requires an argument of either `+'hilitecolor'+` or `+'forecolor'+`, and the value of the color.
-|mceRemoveTextcolor |Removes the text color or background color from the current selection. Requires an argument of either `+'hilitecolor'+` or `+'forecolor'+`.
-|mceBlockQuote |Wraps the selected text blocks into a block quote.
-|mceInsertContent |Inserts contents at the current selection. The value passed in should be the contents to be inserted.
-|mceReplaceContent |Replaces the current selection. The value passed in should be the new content.
-|mceSetContent |Sets the contents of the editor. The value is the contents to set as the editor contents.
-|mceToggleFormat |Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: xref:content-formatting.adoc#built-in-formats[Content formatting options - Built-in formats].
-|ToggleSidebar |Closes the current sidebar, or toggles the sidebar if the sidebar name is provided as a value (`_<sidebar-name>_`).
-|ToggleToolbarDrawer |Toggles the Toolbar Drawer. For information on toolbars, see: xref:toolbar-configuration-options.adoc#toolbar[User interface options - Toolbar].
 |InsertLineBreak |Adds a line break `+<br>+` at the current cursor or selection.
-|mceInsertNewLine |Adds a new line at the current cursor or selection, such as splitting the current paragraph element. The behavior of this setting can be controlled with the xref:content-behavior-options.adoc#newline_behavior[newline_behavior] option.
-|mceToggleVisualAid |Toggles the visual aids for: tables without borders and anchors.
-|mceNewDocument |Removes all contents of the editor.
+|InsertNewBlockAfter |inserts an empty block at the root level of the current {productname} document immediately after the block containing the current selection.
+|InsertNewBlockBefore |inserts an empty block at the root level of the current {productname} document immediately before the block containing the current selection.
+|JustifyNone |Removes any alignment to the selected text.
+|Lang |Sets the language of the current selection. The value passed in should be a language spec described in xref:content-localization.adoc#content_langs[Content appearance options - `+content_langs+`].
+|LineHeight |Sets the line height of the text. The value passed in should be a valid CSS line height.
 |mceAddUndoLevel |Adds an undo level.
-|mceEndUndoLevel |Adds an undo level.
-|mceCleanup |Copies the current editor content and sets the content using the copy.
-|mceSelectNode |Selects a node in the editor. The target node is passed as the value (`_<DOM_node>_`).
-|mceSelectNodeDepth |Selects the parent DOM node 'n' levels above the current node.
-|mceRemoveNode |Removes the current node or the target node passed as the value (`_<DOM_node>_`).
-|mceFocus |Focuses and activates the editor. Places DOM focus inside the editor and also sets the editor as the active editor instance on the page.
-|mcePrint |Opens the browser's print dialog for the current page.
-|mceInsertClipboardContent |Triggers a paste event at the cursor location or over the current selection. The command requires an object with: `+html+` containing the HTML content, or `+text+` containing plain text.
-|mceTogglePlainTextPaste |Toggles paste as plain text.
+|mceApplyTextcolor |Applies text color or background color to the current selection. Requires an argument of either `+'hilitecolor'+` or `+'forecolor'+`, and the value of the color.
 |mceAutocompleterClose |Closes any active autocompleter menu.
 |mceAutocompleterReload |Reloads the autocompleter menu with new items. For the data to provide, see the xref:autocompleter.adoc#api[Autocompleter reload API].
+|mceBlockQuote |Wraps the selected text blocks into a block quote.
+|mceCleanup |Copies the current editor content and sets the content using the copy.
+|mceEndUndoLevel |Adds an undo level.
+|mceFocus |Focuses and activates the editor. Places DOM focus inside the editor and also sets the editor as the active editor instance on the page.
+|mceInsertClipboardContent |Triggers a paste event at the cursor location or over the current selection. The command requires an object with: `+html+` containing the HTML content, or `+text+` containing plain text.
+|mceInsertContent |Inserts contents at the current selection. The value passed in should be the contents to be inserted.
+|mceInsertLink |Inserts a link at the current selection. The value is the URL to add to the link(s). NOTE: This is an alias for the `CreateLink` command.
+|mceInsertNewLine |Adds a new line at the current cursor or selection, such as splitting the current paragraph element. The behavior of this setting can be controlled with the xref:content-behavior-options.adoc#newline_behavior[newline_behavior] option.
+|mceNewDocument |Removes all contents of the editor.
+|mcePrint |Opens the browser's print dialog for the current page.
+|mceRemoveNode |Removes the current node or the target node passed as the value (`_<DOM_node>_`).
+|mceRemoveTextcolor |Removes the text color or background color from the current selection. Requires an argument of either `+'hilitecolor'+` or `+'forecolor'+`.
+|mceReplaceContent |Replaces the current selection. The value passed in should be the new content.
+|mceSelectNode |Selects a node in the editor. The target node is passed as the value (`_<DOM_node>_`).
+|mceSelectNodeDepth |Selects the parent DOM node 'n' levels above the current node.
+|mceSetContent |Sets the contents of the editor. The value is the contents to set as the editor contents.
+|mceToggleFormat |Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: xref:content-formatting.adoc#built-in-formats[Content formatting options - Built-in formats].
+|mceTogglePlainTextPaste |Toggles paste as plain text.
+|mceToggleVisualAid |Toggles the visual aids for: tables without borders and anchors.
+|ToggleSidebar |Closes the current sidebar, or toggles the sidebar if the sidebar name is provided as a value (`_<sidebar-name>_`).
+|ToggleToolbarDrawer |Toggles the Toolbar Drawer. For information on toolbars, see: xref:toolbar-configuration-options.adoc#toolbar[User interface options - Toolbar].
 |===
 
 .Examples
 [source,js]
 ----
+tinymce.activeEditor.execCommand('HiliteColor', false, '#FF0000');
+tinymce.activeEditor.execCommand('InsertLineBreak');
+tinymce.activeEditor.execCommand('InsertNewBlockAfter')
+tinymce.activeEditor.execCommand('InsertNewBlockBefore')
+tinymce.activeEditor.execCommand('JustifyNone');
 tinymce.activeEditor.execCommand('Lang', false, { code: 'en_US' });  /* OR */
 tinymce.activeEditor.execCommand('Lang', false, { code: 'en_US', customCode: 'en-us-medical' });
-tinymce.activeEditor.execCommand('mceInsertLink', false, 'https://www.tiny.cloud');
-tinymce.activeEditor.execCommand('JustifyNone');
-tinymce.activeEditor.execCommand('HiliteColor', false, '#FF0000');
 tinymce.activeEditor.execCommand('LineHeight', false, '1.4');
-tinymce.activeEditor.execCommand('mceApplyTextcolor', 'hilitecolor', '#FF0000');
-tinymce.activeEditor.execCommand('mceRemoveTextcolor', 'hilitecolor');
-tinymce.activeEditor.execCommand('mceBlockQuote');
-tinymce.activeEditor.execCommand('mceInsertContent', false, 'My new content');
-tinymce.activeEditor.execCommand('mceReplaceContent', false, 'My replacement content');
-tinymce.activeEditor.execCommand('mceSetContent', false, 'My content');
-tinymce.activeEditor.execCommand('mceToggleFormat', false, 'bold');
-tinymce.activeEditor.execCommand('ToggleSidebar');  /* OR */
-tinymce.activeEditor.execCommand('ToggleSidebar', false, '<sidebar-name>');
-tinymce.activeEditor.execCommand('ToggleToolbarDrawer');
-tinymce.activeEditor.execCommand('InsertLineBreak');
-tinymce.activeEditor.execCommand('mceInsertNewLine');
-tinymce.activeEditor.execCommand('mceToggleVisualAid');
-tinymce.activeEditor.execCommand('mceNewDocument');
 tinymce.activeEditor.execCommand('mceAddUndoLevel');
-tinymce.activeEditor.execCommand('mceEndUndoLevel');
-tinymce.activeEditor.execCommand('mceCleanup');
-tinymce.activeEditor.execCommand('mceSelectNode', false, '<DOM_node>');
-tinymce.activeEditor.execCommand('mceSelectNodeDepth', false, 2); // For two nodes up.
-tinymce.activeEditor.execCommand('mceRemoveNode'); /* OR */
-tinymce.activeEditor.execCommand('mceRemoveNode', false, '<DOM_node>');
-tinymce.activeEditor.execCommand('mceFocus');
-tinymce.activeEditor.execCommand('mcePrint');
-tinymce.activeEditor.execCommand('mceInsertClipboardContent', false, {
-  html: '<p>Hello, World!</p>'
-});
-tinymce.activeEditor.execCommand('mceTogglePlainTextPaste');
+tinymce.activeEditor.execCommand('mceApplyTextcolor', 'hilitecolor', '#FF0000');
 tinymce.activeEditor.execCommand('mceAutocompleterClose');
 tinymce.activeEditor.execCommand('mceAutocompleterReload', false, {
   fetchOptions: {}
 });
+tinymce.activeEditor.execCommand('mceBlockQuote');
+tinymce.activeEditor.execCommand('mceCleanup');
+tinymce.activeEditor.execCommand('mceEndUndoLevel');
+tinymce.activeEditor.execCommand('mceFocus');
+tinymce.activeEditor.execCommand('mceInsertClipboardContent', false, {
+  html: '<p>Hello, World!</p>'
+});
+tinymce.activeEditor.execCommand('mceInsertContent', false, 'My new content');
+tinymce.activeEditor.execCommand('mceInsertLink', false, 'https://www.tiny.cloud');
+tinymce.activeEditor.execCommand('mceInsertNewLine');
+tinymce.activeEditor.execCommand('mceNewDocument');
+tinymce.activeEditor.execCommand('mcePrint');
+tinymce.activeEditor.execCommand('mceRemoveNode'); /* OR */
+tinymce.activeEditor.execCommand('mceRemoveNode', false, '<DOM_node>');
+tinymce.activeEditor.execCommand('mceSelectNode', false, '<DOM_node>');
+tinymce.activeEditor.execCommand('mceSelectNodeDepth', false, 2); // For two nodes up.
+tinymce.activeEditor.execCommand('mceSetContent', false, 'My content');
+tinymce.activeEditor.execCommand('mceRemoveTextcolor', 'hilitecolor');
+tinymce.activeEditor.execCommand('mceReplaceContent', false, 'My replacement content');
+tinymce.activeEditor.execCommand('mceToggleFormat', false, 'bold');
+tinymce.activeEditor.execCommand('mceTogglePlainTextPaste');
+tinymce.activeEditor.execCommand('mceToggleVisualAid');
+tinymce.activeEditor.execCommand('ToggleSidebar');  /* OR */
+tinymce.activeEditor.execCommand('ToggleSidebar', false, '<sidebar-name>');
+tinymce.activeEditor.execCommand('ToggleToolbarDrawer');
 ----
 
 [[core-table-commands]]

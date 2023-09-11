@@ -321,6 +321,19 @@ Blocks added by either command are placed at the root level of the {productname}
 
 === Tab navigation incorrectly stopped around `iframe` dialog components
 // TINY-9815
+The previous implementation of the `iframe`-based dialog component wrapped the component inside two `<div>` elements.
+
+This was (and is) required for *Tab* key-based navigation through the dialog’s UI objects to remain within the dialog itself.
+
+The intended result was for the two `<div>` elements, by default, to switch focus to the next UI object of the `iframe` component for each press of the *Tab* key.
+
+As initially implemented, however, only one of the wrapping `<div>` elements produced this functionality.
+
+As a consequence, an additional, and redundant, pressing of the *Tab* key (or *Shift+Tab* keyboard chord if navigating backwards through the dialog) was required to navigate every addressable object within an `iframe`-based dialog component.
+
+{productname} 6.7 includes a fix that addresses this. When navigating through an `iframe`-based dialog component using the *Tab* key, {productname} now skips over the elements that keep Tab-key–based navigation within the dialog but which do not present as focussable UI elements.
+
+Navigating through an `iframe`-based dialog with the *Tab* key no longer requires a redundant key-press to exit an otherwise invisible component.
 
 === It was possible to delete the sole empty block immediately before a `<details>` element if it was nested within another `<details>` element
 // TINY-9965

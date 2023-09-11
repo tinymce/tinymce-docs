@@ -154,13 +154,9 @@ The {productname} 6.7.0 release includes an accompanying release of the **PowerP
 
 ==== Stopped pasting comments from word documents.
 // TINY-9975
-Previously, pasting content from a word document that contained comments were copied alongside the document's content, resulting in the unintended inclusion of comments when pasting it into a {productname} document.
+Previously, when a copied selection from a Microsoft Word document included comments, these comments were, added to the {productname} document as footnotes when the selection was pasted in to place.
 
-{productname} 6.7, introduced a solution for xref:introduction-to-powerpaste.adoc[PowerPaste] that now excludes comments when pasting data into a {productname} document.
-
-As a result of this fix, users can now paste content from Word documents without the inconvenience of comments being inadvertently included in the paste operation.
-
-For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
+**PowerPaste** 6.2.1 addresses this. Comments are still included in copied selections from Microsoft Word. With this upate, however, they are ignored by the plugin and, consequently, not added to {productname} documents when pasted.
 
 ==== Removed translations for an error which no longer occurs.
 // TINY-10045

@@ -158,8 +158,14 @@ Previously, when a copied selection from a Microsoft Word document included comm
 
 **PowerPaste** 6.2.1 addresses this. Comments are still included in copied selections from Microsoft Word. With this upate, however, they are ignored by the plugin and, consequently, not added to {productname} documents when pasted.
 
-==== Removed translations for an error which no longer occurs.
+==== Removed error condition, error message, and error message translations for an error which no longer occurs.
 // TINY-10045
+
+Previously, when **PowerPaste** was running with older versions of Safari as the host browser, an error condition presented, along with an associated error message, when direct image pasting was attempted.
+
+This error condition no longer presents and, for this release, the error catching logic, associated error message, and error message translations, have all been removed.
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
 
 
 

@@ -335,6 +335,30 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Links in **Help → Help → Plugins** and **Help → Help → Version** were not navigable by keyboard
 // TINY-10071
+The Help dialog built-in to {productname} includes four tabs:
+* *Handy Shortcuts*;
+* *Keyboard Navigation*;
+* *Plugins*; and
+* *Version*.
+
+Previously, keyboard navigation was supported across these four tabs, and into each tab’s contents. (When a tab’s contents have focus, the content can be scrolled through using Arrow keys.)
+
+However, keyboard-based navigation of links in the focussed content was not supported.
+
+{productname} 6.7 corrects this. The `data-alloy-tabstop="true"` attribute, which was previously not applied to these links, has been added.
+
+Users of {productname} 6.7 can navigate to and activate links in Help dialog contents entirely with keyboard navigation.
+
+[NOTE]
+====
+As of this release, only the *Plugins*, and *Version* tabs include links.
+
+Also, there is no visual feedback when a given tab’s contents pane takes focus.
+
+Consequently, the UX is such that it appears to take two presses of the *Tab* key to go from a tab label having the focus and the first link within a tab’s content pane having focus.
+
+Likewise, going from the first link within a tab’s content pane having focus to a tab label having focus appears to take two presses of the *Shift-Tab* keyboard chord.
+====
 
 === Fixed the inability to insert content next to the `<details>` element when it is the first or last content element. Pressing the **Up** or **Down** arrow key now inserts a block element before or after the `<details>` element
 // TINY-9827

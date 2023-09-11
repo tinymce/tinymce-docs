@@ -204,9 +204,13 @@ The {productname} 6.7.0 release includes an accompanying release of the **Table 
 
 ==== Changes to the ToC title were overwritten using the update button.
 // TINY-9971
+In previous versions of the xref:tableofcontents.adoc[Table of contents], an issue was identified that would see the table of contents title, overwritten when pressing the update "refresh" button.
 
+The cause of the problem was that whenever the "refresh" button was pressed, the entire Table of Contents would be regenerated, which included the title.
 
+As a consequence, any changes made to the Table of Contents prior would not be preserved.
 
+**Table of Contents** 1.2.0, addresses this issue, now, if there is already a title present in the Table of Contents, the plugin will use that existing title instead of re-generating it. As a result of this fix, the refresh button no longer overwrites the title, ensuring that changes to the Table of Contents are retained.
 
 
 === Tiny Drive 2.0.3

@@ -260,10 +260,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === New `help_accessibility` option displays the keyboard shortcut to open the in-application help in the status bar
 // TINY-9379
 
-=== Added a new `InsertNewBlockBefore` command which inserts an empty block before the block containing the current selection
-// TINY-10022
-
-=== Added a new `InsertNewBlockAfter` command which inserts an empty block after the block containing the current selection
+=== Added a new `InsertNewBlockBefore` and `InsertNewBlockAfter` command which inserts an empty block before and after the block containing the current selection
 // TINY-10022
 {productname} 6.7 introduced a new feature that adds two new commands.
 

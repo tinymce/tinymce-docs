@@ -273,9 +273,11 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Change `UndoLevelType` from `enum` to union type so that it is easier to use
 // TINY-9764
-Previously in {productname} 6.3, a TypeError for `type: "complete"` was triggering when trying to fire a change event, due to it not been assignable to the type 'UndoLevelType'.
+In {productname} 6.3, a TypeError for `type: "complete"` triggered when attempting to fire a change event. The TypeError was triggered due to it not being assignable to the `UndoLevelType` type.
 
-{productname} 6.7 addresses this issue, by updating the `UndoLevelType` from a `enum` type to a `union type`, resulting in the TypeError no longer presenting itself within the console, when the fire event is triggered.
+{productname} 6.7 has addressed this issue by updating the `UndoLevelType` from a `enum` type to a union type.
+
+As a consequence, when the change event is fired, the TypeError is no longer triggered.
 
 === The pattern replacement removed spaces if they were contained within a tag that only contained a space and the text to replace
 // TINY-9744

@@ -388,6 +388,6 @@ Previously, however, when `+remove_trailing_brs: false+` was set, and a table wa
 
 During serialization, this last tag was converted into a character by code in the parsing logic.
 
-In {productname} 6.7, the parsing code has been altered and the character conversion during serialization no longer occurs.
+In {productname} 6.7, this character conversion during serialization no longer occurs in table cells.
 
 As a consequence, when `+remove_trailing_brs: false+` is set and tables are added to a {productname} document, all newly-created and otherwise empty cells contain a `+<br>+` tag, as is expected in this circumstance.

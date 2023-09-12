@@ -349,6 +349,11 @@ Blocks added by either command are placed at the root level of the {productname}
 
 === Change `UndoLevelType` from `enum` to union type so that it is easier to use
 // TINY-9764
+In {productname} 6.3, a TypeError for `type: "complete"` triggered when attempting to fire a change event. The TypeError was triggered due to it not being assignable to the `UndoLevelType` type.
+
+{productname} 6.7 has addressed this issue by updating the `UndoLevelType` from a `enum` type to a union type.
+
+As a consequence, when the change event is fired, the TypeError is no longer triggered.
 
 === The pattern replacement removed spaces if they were contained within a tag that only contained a space and the text to replace
 // TINY-9744

@@ -468,6 +468,13 @@ Previously, when a xref:checklist.adoc[Checklist], particularly a checklist that
 
 === For sufficiently long URLs and sufficiently wide windows, URL autocompletion hid middle portions of the URL from view
 // TINY-10017
+The **Insert/Edit Link** dialog uses `overflow:hidden` as part of its default configuration. When a sufficiently long URL is pasted in to the *URL* field, a preview window appears to display the entire pasted-in URL.
+
+Previously, even when sufficiently wide viewports were available, a portion of the pasted-in URL was cut off at top-right of the preview window.
+
+In {productname} 6.7, this preview window has been constrained to the width of the *URL* field. As well, a scroll bar will present if the pasted-in URL is too long to render in this constrained width.
+
+As a consequence, no part of pasted-in URL is cut off when the preview window now presents.
 
 === Numeric input in toolbar items did not disable when a switching from edit to read-only mode
 // TINY-10129

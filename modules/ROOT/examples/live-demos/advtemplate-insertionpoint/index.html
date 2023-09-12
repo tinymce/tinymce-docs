@@ -39,7 +39,7 @@
 
 <p>The <strong>Merge Tags</strong> plugin knows nothing about the <code>{{mce-cursor}}</code> being a marker string for the <strong>Advanced Templates</strong> plugin. And, if this particular string was used in a Merge Tags configuration, the <strong>Merge Tags</strong> plugin would recognise it and substitute it with whatever contents it was set to substitute, as expected.
 
-<p>The <strong>Advanced Templates</strong> plugin replaces the marker string with a hook element before inserting a template containing the string in to a TinyMCE instance, however.</p>
+<p>The <strong>Advanced Templates</strong> plugin removes the Insertion Point Marker before inserting a template containing the string in to a TinyMCE instance, however.</p>
 
 <p>Consequently the <strong>Advanced Templates</strong> insertion point marker string is never seen by the <strong>Merge Tags</strong> plugin.</p>
 

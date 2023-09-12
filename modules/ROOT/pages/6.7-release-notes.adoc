@@ -508,6 +508,33 @@ In the earlier fix’s implementation, when advancing to the next leaf element i
 
 === Creating a list from multiple `<div>` elements only created a partial list
 // TINY-9872
+{productname} includes a content filtering option, `xref:content-filtering.adoc#forced_root_block[forced_root_block]`, which can change the default block element used to wrap inline elements and text nodes. The default value for this option is `'p'`.
+
+Previously, if the `forced_root_block` option was set to `'div'`:
+
+[source,js]
+----
+forced_root_block: 'div',
+----
+
+multiple lines of text
+
+[source,html]
+----
+<div>Text line one.</div>
+<div>Text line two.</div>
+<div>Text line three.</div>
+----
+
+were selected, and a list was applied to the text (for example, the *Bulleted List* toolbar icon was chosen), only the first selected item became a list. (That is, the line, *Text line one.*, in the example above.)
+
+This occured because the first selected `<div>` was mistakenly treated as the list element’s root.
+
+{productname} 6.7 addresses this by looking higher in the DOM tree when looking for the list element’s parent.
+
+In {productname} 6.7, when selections equivalent to the above example have a list option applied to them, the entire selection becomes a list, as expected.
+
+For more information on the **forced_root_block** option see xref:forced_root_block.adoc[forced_root_block].
 
 === Tab navigation incorrectly stopped around `iframe` dialog components
 // TINY-9815

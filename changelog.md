@@ -7,6 +7,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2171: fix documentation entry for TINY-10129 in the 6.7 Release Notes.
 - DOC-2171: bugfix documentation entry for TINY-10053, *Translation was missing for paragraph used as heading text*, added to `6.7-release-notes.adoc`.
 - DOC-2171: fix documentation entry for TINY-9843 in the 6.7 Release Notes.
 - DOC-2171: fix documentation entry for TINY-10054 in the 6.7 Release Notes.

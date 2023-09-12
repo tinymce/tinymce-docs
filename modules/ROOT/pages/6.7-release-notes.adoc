@@ -182,94 +182,98 @@ The {productname} 6.7.0 release includes an accompanying release of the **Table 
 
 **Table of Contents** 1.2.0 includes the following improvements and bug-fixes:
 
-==== Added new boolean option tableofcontents_includeheader to control whether a header is included in the table of contents. Defaults to true.
+
+==== Added new boolean option, `tableofcontents_includeheader`, to control whether a header is included
 // TINY-9970
 
-{productname} 6.7, added a new option `tableofcontents_includeheader`, to **Table of Contents 1.2.0**, that when set to `false`, removes the Table of Content header from the TOC.
+**Table of Contents** 1.2.0 includes a new option, `tableofcontents_includeheader`.
 
-.Basic configuration setup for new option `tableofcontents_includeheader: false`
-[source, js]
-----
-tinymce.init({
-    selector: "textarea",
-    plugins: [
-        "tableofcontents", "code",
-    ],
-    toolbar: "tableofcontents",
-	tableofcontents_includeheader: false, // default is set to true
-});
-----
+This option is set to `true` by default.
 
-For information on the **Table of Contents** plugin, see: xref:tableofcontents.adoc[Table of Contents].
+When set to `false`, this option removes the header string, **Table of Content**, from the rendered Table of Contents.
 
-==== Added new boolean option tableofcontents_orderedlist to use ordered lists instead of unordered lists in the table of contents.
+
+==== Added new boolean option, `tableofcontents_orderedlist`, to use ordered lists instead of unordered lists
 // TINY-9968
-{productname} 6.7, added a new option to the register for **Table of Contents 1.2.0**, that supports the additional new option `tableofcontents_orderedlist_type: 'true'.
 
-[NOTE]
-The `tableofcontents_orderedlist_type: 'true' option must be present in the same {productname} configuration, to support the secondary option `tableofcontents_orderedlist_type` , which takes one of five `string` values currently to modify the specific type for the ordered list.
+**Table of Contents 1.2.0** includes a new option, `tableofcontents_orderedlist`.
 
-.Basic configuration setup for `tableofcontents_orderedlist`
-[source, js]
-----
-tinymce.init({
-    selector: "textarea",
-    plugins: [
-        "tableofcontents", "code",
-    ],
-    toolbar: "tableofcontents",
-    tableofcontents_orderedlist: true, // option required to configure tableofcontents_orderedlist_type
-	tableofcontents_orderedlist_type: 'I', // optional values are '1', 'A', 'a', 'I', 'i'
-});
-----
+This option is set to `false` by default.
 
-For information on the **Table of Contents** plugin, see: xref:tableofcontents.adoc[Table of Contents].
+When set to `true`, this option renders a Table of Contents as an ordered list instead of the default unordered list.
 
-==== Added new option tableofcontents_orderedlist_type to set a specific type of ordered list, defaulting to a numeric ordered list.
+
+==== Added new option, `tableofcontents_orderedlist_type` to set a specific type of ordered list
 // TINY-9969
-{productname} 6.7, introduced a new option in **Table of Contents 1.2.0**.
 
-This new option allows the user to change the visual appearance for the ordered list within the Table of Contents.
+**Table of Contents 1.2.0** includes a new option, `tableofcontents_orderedlist_type`.
 
-.Basic configuration setup for `tableofcontents_orderedlist_type: 'I'`
-[source, js]
-----
-tinymce.init({
-    selector: "textarea",
-    plugins: [
-        "tableofcontents", "code",
-    ],
-    toolbar: "tableofcontents",
-    tableofcontents_orderedlist: true, // option required to configure tableofcontents_orderedlist_type
-	tableofcontents_orderedlist_type: 'I', // optional values are '1', 'A', 'a', 'I', 'i'
-});
-----
+When set to one of its available values, this option renders the table of contents as the specified type of ordered list rather than the default unordered list.
+
+This option takes one of the following values to set the type attribute of the ordered list, `<ol>`:
+
+[cols="10%,90%"]
+|===
+|Value | Ordered list type
+
+|`+'1'+`
+|A list sorted by Arabic/Hindu numerals.
+
+This is the default.
+
+|`+'A'+`
+|A list sorted alphabetically by capital letter.
+
+|`+'a'+`
+|A list sorted alphabetically by lowercase letter.
+
+|`+'I'+`
+|A list sorted by uppercase Roman numerals.
+
+|`+'i'+`
+|A list sorted by lowercase Roman numerals.
+|===
 
 [IMPORTANT]
-`tableofcontents_orderedlist_type` is dependant on `tableofcontents_orderedlist: true` to be within the same {productname} editor configuration in order to modify the visual appearance for the ordered list.
+====
+The `tableofcontents_orderedlist: true` option must be present in a {productname} configuration for whatever `tableofcontents_orderedlist_type` setting to come into effect.
+====
 
-Optional values to change the type attribute for the ordered list `<ol>`as per the below standards referenced from https://www.w3schools.com/html/html_lists_ordered.asp#:~:text=Ordered%20HTML%20List%20%2D%20The%20Type%20Attribute[Ordered_HTML_List-The_Type_Attribute]
 
-* **1**: The list items will be numbered with numbers (default).
-* **A**: The list items will be numbered with uppercase letters.
-* **a**: The list items will be numbered with lowercase letters.
-* **I**: The list items will be numbered with uppercase roman numbers.
-* **i**: The list items will be numbered with lowercase roman numbers.
-
-For information on the **Table of Contents** plugin, see: xref:tableofcontents.adoc[Table of Contents].
-
-==== ToC toolbar button and menu item are now disabled when the selection is not editable
+==== Table of Contents toolbar button and menu item are now disabled when the selection is not editable
 // TINY-9890
 
+Previously, the Table of Contents toolbar button and menu item were not disabled when the insertion point was within a read-only (ie, non-editable) section or when the selection was within a read-only section or included a read-only portion.
 
-==== Empty headers would be included in table of content.
+Clicking the enabled button, or choosing the enabled menu item did not generate a Table of Contents. The commands were disabled, as expected. The UI objects did not, however, present as disabled.
+
+**Table of Contents 1.2.0** addresses this. If the selection includes or is within a read-only section, or if the insertion point is within a read-only section, the Table of Contents UI objects now, correctly, present as disabled.
+
+
+==== Empty headers would be included in table of content
 // TINY-9862
 
+Previously, the **Table of Contents** plugin included all header blocks in a generated Table of Contents, including empty header blocks.
 
-==== Changes to the ToC title were overwritten using the update button.
+These empty header blocks were presented, in the generated Table of Contents, as an underline character.
+
+**Table of Contents 1.2.0** addresses this by filtering out empty header blocks when it generates a Table of Contents section.
+
+[IMPORTANT]
+====
+For filtering purposes, the plugin treats a header block which contains non-printing characters, such as spaces, as **not** empty.
+====
+
+==== Changes to the Table of Contents title were overwritten by the update button.
 // TINY-9971
 
+By default, a generated Table of Contents includes a title, **Table of Contents**. This title can be edited.
 
+Previously, however, if a particular Table of Contents was re-generated using the update button, the default title was restored and the edited title was lost.
+
+In **Table of Contents** 1.2.0, edits to the Table of Contents title are respected. When a given Table of Contents, which includes an edited title, is re-generated, the edited title is preserved.
+
+For information on the **Table of Contents** plugin, see: xref:tableofcontents.adoc[Table of Contents].
 
 
 

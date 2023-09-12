@@ -182,13 +182,13 @@ In this circumstance, the **Spell Checker Pro** plugin checked for spelling mist
 
 Spelling mistakes are, as a consequence, no longer highlighted within read-only block elements, even in cases where the {productname} editor’s mode is set to **read-only** or has a root with the `contenteditable="false"` attribute set.
 
-==== Text content with Unicode characters was causing the spellchecker to modify and duplicate the text.
+==== Text content with Unicode characters was causing the spellchecker to modify and duplicate the text
 // TINY-10062
-In previous versions of **Spell Checker Pro**, an issue was identified that, arose when the spellchecker attempted to annotate invalid characters within Dutch language text. During this process, text containing Unicode characters led to the generation of duplicated indices.
+In previous versions of **Spell Checker Pro**, an issue was identified that arose when the spellchecker attempted to annotate invalid characters within Dutch language text. During this process, text containing Unicode characters led to the generation of duplicated indices.
 
-As a consequence, this duplication had adverse consequences, primarily affecting the search functionality. When attempting to regenerate the text element using these indices, it resulted in unintended alterations and duplications within the text itself.
+This duplication had adverse consequences, primarily affecting the search functionality. When attempting to regenerate the text element using these indices, it resulted in unintended alterations and duplications within the text itself.
 
-**Spell Checker Pro** 3.3.1 addresses this issue, by removing and filtering out the duplicated indices during the annotation of invalid characters.
+**Spell Checker Pro** 3.3.1 addresses this issue. It removes and filters out the duplicated indices during the annotation of invalid characters.
 
 As a result, pasting text content with Unicode characters no longer triggers the alteration and duplication of the text.
 

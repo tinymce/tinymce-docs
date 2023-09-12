@@ -245,16 +245,20 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Where multiple case sensitive variants of a translation key are provided, they will now all be preserved in the translation object instead of just the lowercase variant
 // TINY-10115
-A issue was identified in {productname} 6.6, that occurred because the editor initially converted all translation keys to lowercase when adding them to its internal translations object.
+The {productname} editor is designed to support case-insensitive translations. It converts all translation keys to lowercase when adding them to the internal translations object, and then checks in the object for the lowercase version of whichever string is passed into the translations module.
 
-As a consequence, when providing multiple case-sensitive variants of a translation key, only one key-value pair was retained in the internal object. This meant that case-sensitive translations were not supported, and **"test"** and **"Test"** could not have different translation values.
+However, when provided multiple case-sensitive variants of a translation key, only one of the key-value pairs was kept in the internal object.
 
-{productname} 6.7 addressed these issues with the following changes:
+As a consequence, case-sensitive translations were not supported: the two strings, *test* and *Test* could not have different translation values.
 
-. When you specify a lowercase variant of a translation key, all case-sensitive variants are now preserved in the internal object.
-. If you don't specify a lowercase variant, a lowercase translation key is created using the value of the last encountered variant when checking through the user-defined translations object.
+In {productname} 6.7, and with regards case-sensitive variants of a translation key, the following scenarios now apply:
 
-This update effectively supports case-sensitive translations while ensuring that case insensitivity is maintained, as there is always a lowercase version of a translation key available.
+* when a lowercase variant is specified, all case-sensitive variants persist in the internal object; and
+* when a lowercase variant is not specified, a lowercase translation key is created using the value of whichever variant is encountered last when the user-defined translations object is checked.
+
+This approach means a lowercase translation key always exists.
+
+Consequently, this adds support for case-sensitive translations while ensuring case insensitivity is not affected.
 
 === Improved screen reader announcements of the column and row selection in the grid presented by the **Table** menu and toolbar item
 // TINY-10140

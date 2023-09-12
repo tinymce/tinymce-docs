@@ -338,6 +338,11 @@ Blocks added by either command are placed at the root level of the {productname}
 
 === The pattern replacement removed spaces if they were contained within a tag that only contained a space and the text to replace
 // TINY-9744
+Previously, a problem was identified with the `cleanEmptyNodes` function. This function is responsible for removing nodes that contain white space.
+
+An inadvertent consequence of an earlier fix to this problem was that, in some specific cases, the function would remove white space contained within tags that, themselves, only contained white space. This was white space it was not expected to remove.
+
+{productname} 6.7 address this and the `cleanEmptyNodes` function now preserves these nodes, as expected.
 
 === If loading content CSS takes more than 500ms, the editor will be set to an *in progress* state until the CSS is ready
 // TINY-10008

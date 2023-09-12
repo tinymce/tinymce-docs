@@ -312,6 +312,15 @@ Blocks added by either command are placed at the root level of the {productname}
 
 === The Quick Toolbars plugin showed text alignment buttons on pagebreaks
 // TINY-10054
+When a {productname} instance includes the open source xref:pagebreak.adoc[Page Break] plugin, and a page break is inserted into a {productname} document, the break is represented in the document by a thin dotted-line rectangle _image_, complete with the expected `<img>` tag.
+
+Previously, the logic for displaying xref:quickbars.adoc[Quickbars] toolbars did not exclude page break images.
+
+As a consequence, when a page break was encountered, an incorrect context toolbar would display.
+
+{productname} 6.7 includes an added check for page breaks in the predicate logic that prevents Quickbars contextual menus from displaying for page breaks.
+
+For information on the **Quickbars** plugin, see: xref:quickbars.adoc[Quickbars].
 
 === Creating lists in empty blocks sometimes, and incorrectly, converted adjacent block elements into list items
 // TINY-10136

@@ -203,12 +203,22 @@ The {productname} 6.7.0 release includes an accompanying release of the **Footno
 
 **Footnotes** 1.0.1 includes the following bug-fixes:
 
-==== The footnotes toolbar button and menu item is now disabled when the selection is non-editable
+==== The Footnotes toolbar button and menu item are now disabled when the selection is not editable
 //TINY-9891
 
+Previously, the **Footnotes** plugin’s toolbar button and menu item were not disabled when the insertion point was within a read-only (ie, non-editable) section or when the selection was within a read-only section or included a read-only portion.
 
-==== Calling the mceInsertFootnote command does nothing when the selection is non-editable
+**Footnotes** 1.0.1 addresses this. If the selection includes or is within a read-only section, or if the insertion point is within a read-only section, the Footnote UI components now, correctly, present as disabled.
+
+
+==== Calling the `mceInsertFootnote` command now does nothing when the selection is non-editable
 // TINY-9891
+
+Previously, the `mceInsertFootnote` command attempted to set a footnote when the insertion point was within a read-only (ie, non-editable) section or when the selection was within a read-only section or included a read-only portion.
+
+**Footnotes** 1.0.1 addresses this. If the selection includes or is within a read-only section, or if the insertion point is within a read-only section, the `mceInsertFootnote` command, correctly, does nothing.
+
+For information on the **Footnotes** plugin, see: xref:footnotes.adoc[Footnotes].
 
 
 

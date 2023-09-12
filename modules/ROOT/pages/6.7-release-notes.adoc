@@ -377,12 +377,17 @@ pressing Backspace deleted the entire `<details>` element rather than just the c
 
 {productname} 6.7 addresses this. With this release, the Backspace key functions as expected when Safari is the host browser: it deletes only the character immediately before when the insertion point is inside a `<summary>` element, as expected.
 
-=== Removed attribute from being added to `<br>` in empty table cells #TINY-9860.
+=== Removed attribute from being added to `<br>` in empty table cells
 // TINY-9860
-When a table was inserted to the last cell containing a bookmark `span`, moving the selection to the bookmark span would result in its deletion, and an empty table cell is filled with a new <br> tag.
 
-As a consequence during serialization, the `<br>` tag was converted into a character due to a particular line of code in the parsing step.
+By default, {productname} removes `+<br>+` tags at the end of block elements.
 
-{productname} 6.7 addresses this by, preserving of the <br> tag in the last cell of a table.
+Setting the `+xref:content-filtering.adoc#remove_trailing_brs[remove_trailing_brs]+` option to `+false+` turns this default behaviour off.
 
-As a result of this fix, when 'remove_trailing_brs' is set to 'false', all cells in a newly inserted table, including the last cell, will consistently maintain the <br> tag.
+Previously, however, when `+remove_trailing_brs: false+` was set, and a table was added to a {productname} document, the last cell of the newly-created table did not contain a `+<br+` tag, as expected.
+
+During serialization, this last tag was converted into a character by code in the parsing logic.
+
+In {productname} 6.7, the parsing code has been altered and the character conversion during serialization no longer occurs.
+
+As a consequence, when `+remove_trailing_brs: false+` is set and tables are added to a {productname} document, all newly-created and otherwise empty cells contain a `+<br>+` tag, as is expected in this circumstance.

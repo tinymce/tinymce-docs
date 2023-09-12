@@ -7,6 +7,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2171: Entry for TINY-9891, *The Footnotes toolbar button and menu item are now disabled when the selection is not editable*, and TINY-9891, *Calling the `mceInsertFootnote` command now does nothing when the selection is non-editable*, added to Footnotes section of `6.7-release-notes.adoc`.
 - DOC-2171: added entry for TINY-9889, *The Page Embed toolbar button and menu item are now disabled when the selection is not editable* to the Page Embed section of `6.7-release-notes.adoc`.
 - DOC-2171: Entry for TINY-9894, *Tiny Drive toolbar button and menu item are now disabled when the selection is not editable*, added to Tiny Drive section of `6.7-release-notes.adoc`.
 - DOC-2171: fix documentation entry for TINY-9842 in the 6.7 Release Notes.

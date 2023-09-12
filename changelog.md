@@ -7,6 +7,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2171: fix documentation entry for TINY-9842 in the 6.7 Release Notes.
 - DOC-2171: addition documentation entry for TINY-9379 in the 6.7 Release Notes.
 - DOC-2171: fix documentation for (2) TINY-9463 entries and TINY-10062 in the 6.7 Release Notes.
 - DOC-2171: added entry for TINY-10060, *Automatic media embed would not work as expected if the link was pasted into a `<div>` element*, to Enhanced Media Embed section of `6.7-release-notes.adoc`.

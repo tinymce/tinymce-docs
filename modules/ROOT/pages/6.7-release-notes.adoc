@@ -165,11 +165,11 @@ The {productname} 6.7.0 release includes an accompanying release of the **Spell 
 
 ==== Switching to readonly mode would not hide spelling mistakes.
 // TINY-9463
-In previous versions of **Spell Checker Pro**, an issue was identified when switching to readonly mode within a {productname} document.
+In previous versions of **Spell Checker Pro**, when switching to read-only mode within a {productname} document, the plugin failed to hide spelling mistakes as expected.
 
-As a consequence of this, the plugin failed to hide spelling mistakes as expected, even when users toggle to **readonly** mode, the presence of spelling errors remained visible.
+When in **read-only** mode, the plugin still marked words with the red underline denoting mis-spellings.
 
-**Spell Checker Pro** 3.3.1 addresses this issue, users can expect that when switching between these modes, the visibility of spelling mistakes will correctly align with their chosen editing state.
+**Spell Checker Pro** 3.3.1 addresses this. When switching between edit and read-only modes, spelling error visibility now correctly aligns with the current editor state.
 
 For information on the **Spell Checker Pro plugin** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
 

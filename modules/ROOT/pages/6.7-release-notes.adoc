@@ -388,6 +388,25 @@ These changes correct both issues. Pressing the *Enter* key no longer triggers s
 
 === The border styles of a table were incorrectly split into a longhand form after table dialog updates
 // TINY-9843
+Previously, when applying border style changes using the {productname} *Table Properties* dialog, changes were applied as individual properties. For example:
+
+[source,html]
+----
+style="border-width: 3px; border-style: solid; border-color: red;"
+----
+
+When the content was re-loaded, however, the styles were automatically condensed into the shorthand format:
+
+[source,html]
+----
+style="border: 3px solid red;"
+----
+
+This constitutes un-announced and un-asked-for modification of the table’s underlying HTML within the {productname} editor.
+
+{productname} 6.7 addresses this by immediately applying border style changes made using the *Table Properties* dialog in the shorthand format.
+
+Table HTML is, as a consequence, unaltered when it is reloaded into the {productname} editor.
 
 === Links in **Help → Help → Plugins** and **Help → Help → Version** were not navigable by keyboard
 // TINY-10071

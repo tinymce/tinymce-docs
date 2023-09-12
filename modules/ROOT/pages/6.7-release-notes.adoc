@@ -379,6 +379,9 @@ Consequently, this adds support for case-sensitive translations while ensuring c
 
 === Improved screen reader announcements of the column and row selection in the grid presented by the **Table** menu and toolbar item
 // TINY-10140
+Previously, when using a screen reader, the table grid menu item announced the currently highlighted cell grid with only the numbers. Reading out, for example, *4 x 7*.
+
+In {productname} 6.7 the screen reader now notes which number is the number of columns, and which is the number of rows. In the circumstance noted above, for example, the screen reader now announces, *4 columns, 7 rows*.
 
 === Improved the keyboard focus visibility for links inside dialogs
 // TINY-10124

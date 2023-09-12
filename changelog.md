@@ -8,6 +8,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### Unreleased
 
 - DOC-2171: added entry for TINY-9889, *The Page Embed toolbar button and menu item are now disabled when the selection is not editable* to the Page Embed section of `6.7-release-notes.adoc`.
+- DOC-2171: Entry for TINY-9894, *Tiny Drive toolbar button and menu item are now disabled when the selection is not editable*, added to Tiny Drive section of `6.7-release-notes.adoc`.
 - DOC-2171: fix documentation entry for TINY-9842 in the 6.7 Release Notes.
 - DOC-2171: addition documentation entry for TINY-9379 in the 6.7 Release Notes.
 - DOC-2171: fix documentation for (2) TINY-9463 entries and TINY-10062 in the 6.7 Release Notes.

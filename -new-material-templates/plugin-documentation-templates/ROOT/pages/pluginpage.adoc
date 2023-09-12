@@ -28,7 +28,13 @@ liveDemo::{plugincode}[]
 
 // Logic for customising what presents from this included file relies on
 // the :pluginminimumplan: attribute value above.
-include::partial$misc/purchase-premium-plugins.adoc[]
+//
+// 2023-09-06 addendum: the logic in purchase-premium-plugins.adoc needs
+// updating to match the available commercial plans.
+// 
+// Do not include this statement in new documentation until
+// this logic has been updated.
+// include::partial$misc/purchase-premium-plugins.adoc[]
 
 == Basic setup
 

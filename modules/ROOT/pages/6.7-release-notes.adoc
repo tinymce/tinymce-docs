@@ -386,7 +386,7 @@ Setting the `+xref:content-filtering.adoc#remove_trailing_brs[remove_trailing_br
 
 Previously, however, when `+remove_trailing_brs: false+` was set, and a table was added to a {productname} document, the last cell of the newly-created table did not contain a `+<br+` tag, as expected.
 
-During serialization, this last tag was converted into a character by code in the parsing logic.
+During serialization, this last tag was instead converted into a whitespace character.
 
 In {productname} 6.7, this character conversion during serialization no longer occurs in table cells.
 

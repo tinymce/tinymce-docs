@@ -294,6 +294,20 @@ To fix this, {productname} 6.7 updated the text label for the *More* option to *
 
 === Where multiple case sensitive variants of a translation key are provided, they will now all be preserved in the translation object instead of just the lowercase variant
 // TINY-10115
+The {productname} editor is designed to support case-insensitive translations. It converts all translation keys to lowercase when adding them to the internal translations object, and then checks in the object for the lowercase version of whichever string is passed into the translations module.
+
+However, when provided multiple case-sensitive variants of a translation key, only one of the key-value pairs was kept in the internal object.
+
+As a consequence, case-sensitive translations were not supported: the two strings, *test* and *Test* could not have different translation values.
+
+In {productname} 6.7, and with regards case-sensitive variants of a translation key, the following scenarios now apply:
+
+* when a lowercase variant is specified, all case-sensitive variants persist in the internal object; and
+* when a lowercase variant is not specified, a lowercase translation key is created using the value of whichever variant is encountered last when the user-defined translations object is checked.
+
+This approach means a lowercase translation key always exists.
+
+Consequently, this adds support for case-sensitive translations while ensuring case insensitivity is not affected.
 
 === Improved screen reader announcements of the column and row selection in the grid presented by the **Table** menu and toolbar item
 // TINY-10140

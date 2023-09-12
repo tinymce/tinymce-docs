@@ -299,7 +299,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Applying an ordered or unordered list to a selected checklist incorrectly turned the list into paragraphs
 // TINY-9975
-Previously, when a xref:checklist.adoc[Checklist], particularly a checklist that contained a nested checklist, was selected and converted to a bulleted or numbered list, the selection was, incorrectly, converted into plain paragraphs.
+Previously, when a xref:checklist.adoc[Checklist], particularly a checklist that contained a nested checklist, was selected and converted to a bulleted list  the selection was, incorrectly, converted into plain paragraphs.
 
 {productname} 6.7 address this issue. With this update, nested checklists become nested bulleted lists, or nested numbered lists, when selected and converted, as expected.
 

@@ -120,7 +120,11 @@ The {productname} 6.7.0 release includes an accompanying release of the **Checkl
 
 ==== Applying checklist on a list with nested lists turned only the outer list into a checklist
 // TINY-9998
+Previously, when a xref:checklist.adoc[Checklist] that contained a nested checklist was selected and converted to a bulleted or numbered list, only the outer checklist was converted: the nested checklist remained a checklist.
 
+**Checklist** 2.0.6 corrects this. With this update, nested checklists become nested bulleted lists, or nested numbered lists, when selected and converted, as expected.
+
+For information on the **Checklist** plugin, see: xref:checklist.adoc[Checklist].
 
 
 === Comments 3.3.3
@@ -180,12 +184,20 @@ The {productname} 6.7.0 release includes an accompanying release of the **PowerP
 
 **PowerPaste** 6.2.1 includes the following bug-fixes
 
-==== Stopped pasting comments from word documents.
+==== Stopped pasting comments from Microsoft Word documents.
 // TINY-9975
+Previously, when a copied selection from a Microsoft Word document included comments, these comments were, added to the {productname} document as footnotes when the selection was pasted in to place.
 
+**PowerPaste** 6.2.1 addresses this. Comments are still included in copied selections from Microsoft Word. With this update, however, they are ignored by the plugin and, consequently, not added to {productname} documents when pasted.
 
-==== Removed translations for an error which no longer occurs.
+==== Removed error condition, error message, and error message translations for an error which no longer occurs.
 // TINY-10045
+
+Previously, when **PowerPaste** was running with older versions of Safari as the host browser, an error condition presented, along with an associated error message, when direct image pasting was attempted.
+
+This error condition no longer presents and, for this release, the error catching logic, associated error message, and error message translations, have all been removed.
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
 
 
 
@@ -324,6 +336,9 @@ Blocks added by either command are placed at the root level of the {productname}
 
 === Applying an ordered or unordered list to a selected checklist incorrectly turned the list into paragraphs
 // TINY-9975
+Previously, when a xref:checklist.adoc[Checklist], particularly a checklist that contained a nested checklist, was selected and converted to a bulleted list the selection was, incorrectly, converted into plain paragraphs.
+
+{productname} 6.7 address this issue. With this update, nested checklists become nested bulleted lists when selected and converted, as expected.
 
 === Returning an empty string in a custom context menu update function resulted in a small white line appearing on right-click and the browser-native context menu would not present
 // TINY-9842

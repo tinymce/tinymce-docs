@@ -218,9 +218,14 @@ The {productname} 6.7.0 release includes an accompanying release of the **Page E
 
 **Page Embed** 2.2.1 includes the following bug-fix:
 
-==== The pageembed toolbar button and menu item was still enabled when the selection was non-editable
+==== The Page Embed toolbar button and menu item are now disabled when the selection is not editable
 // TINY-9889
 
+Previously, the **Page Embed** plugin’s toolbar button and menu item were not disabled when the insertion point was within a read-only (ie, non-editable) section or when the selection was within a read-only section or included a read-only portion.
+
+**Page Embed** 2.2.1 addresses this. If the selection includes or is within a read-only section, or if the insertion point is within a read-only section, the Page Embed UI components now, correctly, present as disabled.
+
+For information on the **Page Embed** plugin, see: xref:pageembed.adoc[Page Embed].
 
 
 

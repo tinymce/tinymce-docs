@@ -396,7 +396,7 @@ The {productname} 6.7.0 release includes an accompanying release of the **Tiny D
 
 Previously, the **Tiny Drive** plugin’s `insertfile` toolbar button and menu item were not disabled when the insertion point was within a read-only (ie, non-editable) section or when the selection was within a read-only section or included a read-only portion.
 
-**Tiny Drive** 2.0.3 addresses this. If the selection includes or is within a read-only section, or if the insertion point is within a read-only section, the Tiny Drive UI objects now, correctly, present as disabled.
+**Tiny Drive** 2.0.3 addresses this. If the selection includes or is within a read-only section, or if the insertion point is within a read-only section, the Tiny Drive UI components now, correctly, present as disabled.
 
 For information on the **Tiny Drive** plugin, see: xref:tinydrive-introduction.adoc[Tiny Drive Introduction].
 

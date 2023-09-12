@@ -263,7 +263,7 @@ This error condition no longer presents and, for this release, the error catchin
 
 Previously **PowerPaste** used an internal image management mechanism.
 
-This mechanism ignored `images_reuse_filename`, which prevented uploaded images from keeping and using their original filenames.
+This mechanism ignored `images_reuse_filename`, which is used to retain original image filenames when they are uploaded.
 
 With **PowerPaste** 6.2.2, the plugin has been switched to use core {productname} image management logic, which takes proper note of `images_reuse_filename`.
 

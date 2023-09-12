@@ -12,7 +12,7 @@ Table of contents has a header and by default it will be marked up with `+H2+` t
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'tableofcontents',
   toolbar: 'tableofcontents',
   tableofcontents_header: 'div' // case doesn't matter

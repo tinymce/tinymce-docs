@@ -33,17 +33,42 @@ The {productname} 6.7.0 release includes an accompanying release of the **Access
 ==== Translation was missing for paragraph used as heading text
 // TINY-10053
 
+The alert presented when the **Accessibility Checker** considers a string to likely be a heading includes an explanatory sentence to this effect.
+
+Previously, because of an inadvertent punctuation ommission, this string was not translated and presented in English regardless of {productname}’s `language` setting.
+
+For this update, the punctuation was restored, and the string — _This paragraph looks like a heading. If it is a heading, please select a heading level._ — has been translated.
+
+When this alert presents, if the currently set language is one of the xref:bundling-localization.adoc#supported-languages[supported languages], the entire alert now presents in the currently set language, as expected.
+
 
 
 === Advanced Code 3.3.1
 
 The {productname} 6.7.0 release includes an accompanying release of the **Advanced Code** premium plugin.
 
-**Advanced Code** 3.3.1 includes the following bug fix:
+**Advanced Code** 3.3.1 includes the following improvement and bugfix:
+
+==== Going back from a view to the editor in mobile caused an error.
+// TINY-10003
+In previous versions of {productname}, the toolbar implemented for mobile lacked the essential refresh API.
+
+Consequently, when switching from the **Advanced Code** view back to the editor, {productname} triggered an unintended refresh operation, leading to a TypeError to display within the console.
+
+**Advanced Code** 3.3.1 addresses this issue, by integrating an empty refresh API into the mobile toolbar.
+
+With this fix, the refresh API is now invoked, and the console no longer throws the TypeError when transitioning from the **Advanced Code** view back to editor mode on Android tablets.
 
 ==== Editing the data before switching theme would mean a loss of edited data
 // TINY-10046
 
+Previously, If the **Advanced Code** dialog was opened, and data was added to the dialog’s text entry, and then the *Dark/light mode* button was pressed, The plugin switched to the new theme using the data present when the dialog was opened.
+
+This resulted in the loss of any entered data.
+
+In **Advanced Code** 3.3.1, switching between themes now sets the data state to the current state before the theme switch is made.
+
+This ensures any data entered before switching themes is kept.
 
 
 === Advanced Templates 1.3.0
@@ -55,32 +80,68 @@ The {productname} 6.7.0 release includes an accompanying release of the **Advanc
 ==== New AdvTemplateInsertTemplateById command to insert the template specified by its id property value
 // TINY-9976
 
+**Advanced Templates** 1.3.0 includes a new command, `AdvTemplateInsertTemplateById`.
+
+This command enables the adding of a new template, specified by its ID, to a {productname} document.
+
+See the xref:advanced-templates.adoc#commands[Commands] section of the xref:advanced-templates.adoc[Advanced Templates] documentation for an example of the command in use.
+
 ==== New {{mce-cursor}} marker to indicate the cursor position after the template is inserted
 // TINY-9973
 
+The new insertion point marker is a fixed string for adding to any template.
+
+The string to add is as follows: `+{{mce-cursor}}+`.
+
+Wherever this string is within a template is where the insertion point appears when that template is added to a {productname} document.
+
+For more information, and an interactive demonstration, see the xref:advanced-templates.adoc#the-insertion-point-marker[The Insertion Point Marker] section of the xref:advanced-templates.adoc[Advanced Templates] documentation.
 
 
 === AI Assistant 1.1.0
 
 The {productname} 6.7.0 release includes an accompanying release of the **AI Assistant** premium plugin.
 
-**AI Assistant** 1.3.0 includes the following addition, improvements, and bug fix:
+**AI Assistant** 1.1.0 includes the following addition, improvements, and bug fix:
 
 ==== New UI string translations
 // TINY-9943
 
 
+The initial release of the **AI Assistant** plugin was an English-language–only release.
+
+**AI Assistant** 1.1.0 includes translations of all UI elements into all of {productname}’s xref:bundling-localization.adoc#supported-languages[supported languages].
+
+NOTE: The query prompts included by default with the `xref:ai.adoc#ai_shortcuts[ai_shortcuts]` option are not currently translated.
+
+
 ==== The generate button is now disabled when input field is empty, rather than displaying an alert
 // TINY-10104
 
+Previously, when an empty prompt was submitted using the **AI Assistant** dialog, an alert would display. 
 
-==== The default prompts in the ai_shortcuts option have been improved for better results
+In **AI Assistant** 1.1.0, the generate button is now disabled when the prompt input is empty and no alert is displayed when an empty prompt is submitted.
+
+Separately, an alert is displayed when the **AI Assistant** encounters an error. This alert still presents in **AI Assistant** 1.1.0. However, the spacing around this alert in the **AI Assistant** dialog has been improved: it is now properly balanced in the space between the dialog’s buttons and the dialog’s text input field.
+
+
+==== The default prompts in the `ai_shortcuts` option have been improved for better results
 // TINY-10099
 
+By default, the `xref:ai.adoc#ai_shortcuts[ai_shortcuts]` option includes a set of queries provided as an array of objects.
+
+For **AI Assistant** 1.1.0, each prompt in this default set has been re-written so as to produce better and more immediately useful responses when sent to an AI API endpoint.
 
 ==== The dialog sometimes unblocked and showed the preview component too early when a response is streamed
 // TINY-10114
 
+Previously, after submitting a prompt, the dialog would unblock early, showing a blank preview component for some time, before rendering the first chunk of visible content.
+
+This was due to the first chunk of documents containing the `<!DOCTYPE html>` declaration returned by OpenAI’s endpoint being the characters `<!`.
+
+These characters are interpreted as comment nodes by the {productname} parser. And comment nodes are considered nonempty by our associated `isEmpty` method. This is unsuitable for previewing purposes, thereby triggering the early unblocking of the dialog.
+
+In {productname} 6.7, comment nodes are now excluded from the `isEmpty` logic, resulting in them being counted as empty nodes. This is more appropriate for the purposes of checking for nodes that are visible when rendered for preview, and prevents the dialog from being unblocked early.
 
 
 === Checklist 2.0.6
@@ -91,7 +152,11 @@ The {productname} 6.7.0 release includes an accompanying release of the **Checkl
 
 ==== Applying checklist on a list with nested lists turned only the outer list into a checklist
 // TINY-9998
+Previously, when a xref:checklist.adoc[Checklist] that contained a nested checklist was selected and converted to a bulleted or numbered list, only the outer checklist was converted: the nested checklist remained a checklist.
 
+**Checklist** 2.0.6 corrects this. With this update, nested checklists become nested bulleted lists, or nested numbered lists, when selected and converted, as expected.
+
+For information on the **Checklist** plugin, see: xref:checklist.adoc[Checklist].
 
 
 === Comments 3.3.3
@@ -103,6 +168,9 @@ The {productname} 6.7.0 release includes an accompanying release of the **Commme
 ==== Change event did not fire upon adding a reply
 // TINY-10089
 
+Previously, when a comment was added to an existing comment thread in a {productname} document, an expected change event was not fired, and the expected *Editor changed* message was not sent to the console.
+
+**Comments** 3.3.3 corrects this. When comments are added to extant threads, the change event is now fired as expected, and the *Editor changed* message is sent to the console, also as expected.
 
 
 === Enhanced Media Embed 3.1.3
@@ -158,12 +226,20 @@ The {productname} 6.7.0 release includes an accompanying release of the **PowerP
 
 **PowerPaste** 6.2.1 includes the following bug-fixes
 
-==== Stopped pasting comments from word documents.
+==== Stopped pasting comments from Microsoft Word documents.
 // TINY-9975
+Previously, when a copied selection from a Microsoft Word document included comments, these comments were, added to the {productname} document as footnotes when the selection was pasted in to place.
 
+**PowerPaste** 6.2.1 addresses this. Comments are still included in copied selections from Microsoft Word. With this update, however, they are ignored by the plugin and, consequently, not added to {productname} documents when pasted.
 
-==== Removed translations for an error which no longer occurs.
+==== Removed error condition, error message, and error message translations for an error which no longer occurs.
 // TINY-10045
+
+Previously, when **PowerPaste** was running with older versions of Safari as the host browser, an error condition presented, along with an associated error message, when direct image pasting was attempted.
+
+This error condition no longer presents and, for this release, the error catching logic, associated error message, and error message translations, have all been removed.
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
 
 
 
@@ -192,30 +268,98 @@ The {productname} 6.7.0 release includes an accompanying release of the **Table 
 
 **Table of Contents** 1.2.0 includes the following improvements and bug-fixes:
 
-==== Added new boolean option tableofcontents_includeheader to control whether a header is included in the table of contents. Defaults to true.
+
+==== Added new boolean option, `tableofcontents_includeheader`, to control whether a header is included
 // TINY-9970
 
+**Table of Contents** 1.2.0 includes a new option, `tableofcontents_includeheader`.
 
-==== Added new boolean option tableofcontents_orderedlist to use ordered lists instead of unordered lists in the table of contents.
+This option is set to `true` by default.
+
+When set to `false`, this option removes the header string, **Table of Content**, from the rendered Table of Contents.
+
+
+==== Added new boolean option, `tableofcontents_orderedlist`, to use ordered lists instead of unordered lists
 // TINY-9968
 
+**Table of Contents 1.2.0** includes a new option, `tableofcontents_orderedlist`.
 
-==== Added new option tableofcontents_orderedlist_type to set a specific type of ordered list, defaulting to a numeric ordered list.
+This option is set to `false` by default.
+
+When set to `true`, this option renders a Table of Contents as an ordered list instead of the default unordered list.
+
+
+==== Added new option, `tableofcontents_orderedlist_type` to set a specific type of ordered list
 // TINY-9969
 
+**Table of Contents 1.2.0** includes a new option, `tableofcontents_orderedlist_type`.
 
-==== ToC toolbar button and menu item are now disabled when the selection is not editable
+When set to one of its available values, this option renders the table of contents as the specified type of ordered list rather than the default unordered list.
+
+This option takes one of the following values to set the type attribute of the ordered list, `<ol>`:
+
+[cols="10%,90%"]
+|===
+|Value | Ordered list type
+
+|`+'1'+`
+|A list sorted by Arabic/Hindu numerals.
+
+This is the default.
+
+|`+'A'+`
+|A list sorted alphabetically by capital letter.
+
+|`+'a'+`
+|A list sorted alphabetically by lowercase letter.
+
+|`+'I'+`
+|A list sorted by uppercase Roman numerals.
+
+|`+'i'+`
+|A list sorted by lowercase Roman numerals.
+|===
+
+[IMPORTANT]
+====
+The `tableofcontents_orderedlist: true` option must be present in a {productname} configuration for whatever `tableofcontents_orderedlist_type` setting to come into effect.
+====
+
+
+==== Table of Contents toolbar button and menu item are now disabled when the selection is not editable
 // TINY-9890
 
+Previously, the Table of Contents toolbar button and menu item were not disabled when the insertion point was within a read-only (ie, non-editable) section or when the selection was within a read-only section or included a read-only portion.
 
-==== Empty headers would be included in table of content.
+Clicking the enabled button, or choosing the enabled menu item did not generate a Table of Contents. The commands were disabled, as expected. The UI objects did not, however, present as disabled.
+
+**Table of Contents 1.2.0** addresses this. If the selection includes or is within a read-only section, or if the insertion point is within a read-only section, the Table of Contents UI objects now, correctly, present as disabled.
+
+
+==== Empty headers would be included in table of content
 // TINY-9862
 
+Previously, the **Table of Contents** plugin included all header blocks in a generated Table of Contents, including empty header blocks.
 
-==== Changes to the ToC title were overwritten using the update button.
+These empty header blocks were presented, in the generated Table of Contents, as an underline character.
+
+**Table of Contents 1.2.0** addresses this by filtering out empty header blocks when it generates a Table of Contents section.
+
+[IMPORTANT]
+====
+For filtering purposes, the plugin treats a header block which contains non-printing characters, such as spaces, as **not** empty.
+====
+
+==== Changes to the Table of Contents title were overwritten by the update button.
 // TINY-9971
 
+By default, a generated Table of Contents includes a title, **Table of Contents**. This title can be edited.
 
+Previously, however, if a particular Table of Contents was re-generated using the update button, the default title was restored and the edited title was lost.
+
+In **Table of Contents** 1.2.0, edits to the Table of Contents title are respected. When a given Table of Contents, which includes an edited title, is re-generated, the edited title is preserved.
+
+For information on the **Table of Contents** plugin, see: xref:tableofcontents.adoc[Table of Contents].
 
 
 
@@ -242,26 +386,70 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 
 [[improvements]]
-== Improvments
+== Improvements
 
 === Adding a newline after a table would, in some specific cases, not work
 // TINY-9863
+Previously, when the insertion point was between a table and an element with a `contenteditable="false"` attribute that was, itself, wrapped in a `<div>`, pressing the **Enter** or **Return** key did not add a new line to the document.
+
+{productname}, incorrectly, treated the insertion point’s location in this circumstance as not a valid place for adding a new line.
+
+{productname} 6.7 corrects this and treats such a location as the valid place for adding a new line that it is.
+
+As a result, new lines are added to {productname} documents, as expected, when the insertion point is between a table, and an `<div>`-wrapped element with a `contenteditable="false"` attribute.
 
 === Menus now have a slight margin at the top and bottom to more clearly separate them from the frame edge
 // TINY-9978
+Previously, the {productname} menu could reach the edge of the host browser’s window.
+
+As a consequence, it was not apparent if the menu stopped at the edge of the window or continued past its bounds. This led to user confusion, since it was unclear if the {productname} menu was showing everything.
+
+{productname} 6.7 addresses this issue, by adding a margin to the menu layout to separate it from the frame edge. This margin is placed at the top or bottom of the {productname} menu, depending on where the menu is displayed in a given {productname} instance.
+
+As a result, in {productname} 6.7, the menu is now more noticeably distinct from the frame edge.
 
 === Updated **More** toolbar button tooltip text from *More...* to *Reveal or hide additional toolbar items*
 // TINY-9629
+In previous versions of {productname}, a bug was discovered when using screen readers, but in particular the https://www.freedomscientific.com/products/software/jaws[JAWS] screen reader, within {productname}. The ellipsis icon representing the **More** option in the {productname} toolbar did not have a meaningful explanation for screen readers.
+
+As a consequence, screen readers would announce *More ellipsis* instead of providing a meaningful description that can be understood.
+
+To fix this, {productname} 6.7 updated the text label for the *More* option to *Reveal or hide more toolbar items*; a clear description for users who rely on this feature.
 
 === Where multiple case sensitive variants of a translation key are provided, they will now all be preserved in the translation object instead of just the lowercase variant
 // TINY-10115
+The {productname} editor is designed to support case-insensitive translations. It converts all translation keys to lowercase when adding them to the internal translations object, and then checks in the object for the lowercase version of whichever string is passed into the translations module.
+
+However, when provided multiple case-sensitive variants of a translation key, only one of the key-value pairs was kept in the internal object.
+
+As a consequence, case-sensitive translations were not supported: the two strings, *test* and *Test* could not have different translation values.
+
+In {productname} 6.7, and with regards case-sensitive variants of a translation key, the following scenarios now apply:
+
+* when a lowercase variant is specified, all case-sensitive variants persist in the internal object; and
+* when a lowercase variant is not specified, a lowercase translation key is created using the value of whichever variant is encountered last when the user-defined translations object is checked.
+
+This approach means a lowercase translation key always exists.
+
+Consequently, this adds support for case-sensitive translations while ensuring case insensitivity is not affected.
 
 === Improved screen reader announcements of the column and row selection in the grid presented by the **Table** menu and toolbar item
 // TINY-10140
+Previously, when using a screen reader, the table grid menu item announced the currently highlighted cell grid with only the numbers. Reading out, for example, *4 x 7*.
+
+In {productname} 6.7 the screen reader now notes which number is the number of columns, and which is the number of rows. In the circumstance noted above, for example, the screen reader now announces, *4 columns, 7 rows*.
 
 === Improved the keyboard focus visibility for links inside dialogs
 // TINY-10124
+Previously, when a link was rendered inside the body content of a {productname} dialog, such as the **Help** dialog, it was difficult for a user to identify the visual difference between the *normal*, *hovered* or *focused* states.
 
+As well, when a link’s state was changed via keyboard navigation, making a distinction between the states was difficult.
+
+{productname} 6.7 addresses this by
+. adding an underline to all links to increase the contrast between links and non-links by default; and 
+. adding an outline around the link when the link is given focus using keyboard navigation.
+
+When using {productname} 6.7, users now get greater visual distinction between link and non-links, and immediate feedback as to a link’s change of state when using keyboard navigation.
 
 
 [[additions]]
@@ -270,26 +458,47 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === New `help_accessibility` option displays the keyboard shortcut to open the in-application help in the status bar
 // TINY-9379
 
-=== Added a new `InsertNewBlockBefore` command which inserts an empty block before the block containing the current selection
+=== Added new `InsertNewBlockBefore` and `InsertNewBlockAfter` commands which insert an empty block before or after the block containing the current selection
 // TINY-10022
+{productname} 6.7 includes two new commands: `InsertNewBlockBefore` and `InsertNewBlockAfter`.
 
-=== Added a new `InsertNewBlockAfter` command which inserts an empty block after the block containing the current selection
-// TINY-10022
+These commands address scenarios where navigation encounters spatial constraints; most specifically when the constraint is at a {productname} document’s edges.
 
+For example, if a user inserts a `<details>` element (as part of an **Accordion component**) at the beginning of a {productname} document, the `InsertNewBlockBefore` command now provides a way to set the insertion point above this element. 
 
+[IMPORTANT]
+====
+Blocks added by either command are placed at the root level of the {productname} document, immediately before or after the top parent block encompassing the current selection.
+====
 
 [[changes]]
 == Changes
 
 === Change `UndoLevelType` from `enum` to union type so that it is easier to use
 // TINY-9764
+In {productname} 6.3, a TypeError for `type: "complete"` triggered when attempting to fire a change event. The TypeError was triggered due to it not being assignable to the `UndoLevelType` type.
+
+{productname} 6.7 has addressed this issue by updating the `UndoLevelType` from a `enum` type to a union type.
+
+As a consequence, when the change event is fired, the TypeError is no longer triggered.
 
 === The pattern replacement removed spaces if they were contained within a tag that only contained a space and the text to replace
 // TINY-9744
+Previously, a problem was identified with the `cleanEmptyNodes` function. This function is responsible for removing nodes that contain white space.
+
+An inadvertent consequence of an earlier fix to this problem was that, in some specific cases, the function would remove white space contained within tags that, themselves, only contained white space. This was white space it was not expected to remove.
+
+{productname} 6.7 address this and the `cleanEmptyNodes` function now preserves these nodes, as expected.
 
 === If loading content CSS takes more than 500ms, the editor will be set to an *in progress* state until the CSS is ready
 // TINY-10008
+If a {productname} configuration included a `contentEditable: 'true'` setting (or had no explicit global setting for `contentEditable`, and therefore defaulted this option to `'true'`) and the host browser was operating over a relatively slow connection, it was possible to add content to the editor before `ContentCss` finished loading.
 
+This could lead to data loss. After `ContentCSS` completed its initial load, any content added to the editor before the load had completed was removed from the editor.
+
+{productname} 6.7 addresses this by blocking interaction with the editor until `ContentCss` has completed loading, disallowing content insertion until initialisation is complete.
+
+A relatively slow network connection for this purpose is an ≅ 400 kb/sec connection with an ≅ 2000 ms latency; equivalent to a Slow 3G wireless connection. The potential UX change caused by this change will, therefore, be experienced by very few users.
 
 
 [[bug-fixes]]
@@ -297,54 +506,272 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Applying an ordered or unordered list to a selected checklist incorrectly turned the list into paragraphs
 // TINY-9975
+Previously, when a xref:checklist.adoc[Checklist], particularly a checklist that contained a nested checklist, was selected and converted to a bulleted list the selection was, incorrectly, converted into plain paragraphs.
+
+{productname} 6.7 address this issue. With this update, nested checklists become nested bulleted lists when selected and converted, as expected.
 
 === Returning an empty string in a custom context menu update function resulted in a small white line appearing on right-click and the browser-native context menu would not present
 // TINY-9842
 
 === For sufficiently long URLs and sufficiently wide windows, URL autocompletion hid middle portions of the URL from view
 // TINY-10017
+The **Insert/Edit Link** dialog uses `overflow:hidden` as part of its default configuration. When a sufficiently long URL is pasted in to the *URL* field, a preview window appears to display the entire pasted-in URL.
+
+Previously, even when sufficiently wide viewports were available, a portion of the pasted-in URL was cut off at top-right of the preview window.
+
+In {productname} 6.7, this preview window has been constrained to the width of the *URL* field. As well, a scroll bar will present if the pasted-in URL is too long to render in this constrained width.
+
+As a consequence, no part of pasted-in URL is cut off when the preview window now presents.
 
 === Numeric input in toolbar items did not disable when a switching from edit to read-only mode
 // TINY-10129
+Previously, when a {productname} editor instance was set to *read-only* mode, because a `Changenode` event was not fired when switching modes, the text-entry field in the `fontsizeinput` toolbar object did not present as disabled and the field’s value could be changed.
+
+{productname} 6.7, addresses this by listening to the `ChangeMode` event in addition to the previous event. This ensures the missing event is now properly handled.
+
+As a consequence, the `fontsizeinput` text-entry field presents as disabled when a {productname} editor instance is set to *read-only* mode, as expected.
+
+NOTE: This was a display error only. Previously, when the editor was set to *read-only* mode, text could be entered into the `fontsizeinput` text-entry field. Setting this field to a new value in this circumstance did not, however, have any effect on selected material in a {productname} document, nor on text added at an insertion point after the {productname} instance was switched away from *read-only* mode.
 
 === The Quick Toolbars plugin showed text alignment buttons on pagebreaks
 // TINY-10054
+When a {productname} instance includes the open source xref:pagebreak.adoc[Page Break] plugin, and a page break is inserted into a {productname} document, the break is represented in the document by a thin dotted-line rectangle _image_, complete with the expected `<img>` tag.
+
+Previously, the logic for displaying xref:quickbars.adoc[Quickbars] toolbars did not exclude page break images.
+
+As a consequence, when a page break was encountered, an incorrect context toolbar would display.
+
+{productname} 6.7 includes an added check for page breaks in the predicate logic that prevents Quickbars contextual menus from displaying for page breaks.
+
+For information on the **Quickbars** plugin, see: xref:quickbars.adoc[Quickbars].
 
 === Creating lists in empty blocks sometimes, and incorrectly, converted adjacent block elements into list items
 // TINY-10136
+{productname} 6.4.1 included a fix for when xref:6.4.1-release-notes.adoc#_creating_a_list_in_a_table_cell_when_the_caret_is_in_front_of_an_anchor_element_would_not_properly_include_the_anchor_in_the_list[creating a list in a table cell when the insertion point is in front of an anchor element did not properly include the anchor in the list]. This fix included an adjustment to DOM hierarchy traversal.
+
+In the earlier fix’s implementation, when advancing to the next leaf element in the hierarchy, the process did not take into account whether this leaf element was correctly nested under its parent. This occasionally led to it straying outside its intended parent. And, as a consequence, unexpected elements could be (and sometimes were) added to a list when a list was created.
+
+{productname} 6.7, addresses this fix by setting the expected block parent as the boundary for DOM tree traversal, ensuring that it does not extend beyond this defined limit. As a result, any extraneous elements are now effectively excluded from the list.
 
 === Creating a list from multiple `<div>` elements only created a partial list
 // TINY-9872
+{productname} includes a content filtering option, `xref:content-filtering.adoc#forced_root_block[forced_root_block]`, which can change the default block element used to wrap inline elements and text nodes. The default value for this option is `'p'`.
+
+Previously, if the `forced_root_block` option was set to `'div'`:
+
+[source,js]
+----
+forced_root_block: 'div',
+----
+
+multiple lines of text
+
+[source,html]
+----
+<div>Text line one.</div>
+<div>Text line two.</div>
+<div>Text line three.</div>
+----
+
+were selected, and a list was applied to the text (for example, the *Bulleted List* toolbar icon was chosen), only the first selected item became a list. (That is, the line, *Text line one.*, in the example above.)
+
+This occured because the first selected `<div>` was mistakenly treated as the list element’s root.
+
+{productname} 6.7 addresses this by looking higher in the DOM tree when looking for the list element’s parent.
+
+In {productname} 6.7, when selections equivalent to the above example have a list option applied to them, the entire selection becomes a list, as expected.
+
+For more information on the **forced_root_block** option see xref:forced_root_block.adoc[forced_root_block].
 
 === Tab navigation incorrectly stopped around `iframe` dialog components
 // TINY-9815
+The previous implementation of the `iframe`-based dialog component wrapped the component inside two `<div>` elements.
+
+This was (and is) required for *Tab* key-based navigation through the dialog’s UI objects to remain within the dialog itself.
+
+The intended result was for the two `<div>` elements, by default, to switch focus to the next UI object of the `iframe` component for each press of the *Tab* key.
+
+As initially implemented, however, only one of the wrapping `<div>` elements produced this functionality.
+
+As a consequence, an additional, and redundant, pressing of the *Tab* key (or *Shift+Tab* keyboard chord if navigating backwards through the dialog) was required to navigate every addressable object within an `iframe`-based dialog component.
+
+{productname} 6.7 includes a fix that addresses this. When navigating through an `iframe`-based dialog component using the *Tab* key, {productname} now skips over the elements that keep Tab-key–based navigation within the dialog but which do not present as focussable UI elements.
+
+Navigating through an `iframe`-based dialog with the *Tab* key no longer requires a redundant key-press to exit an otherwise invisible component.
 
 === It was possible to delete the sole empty block immediately before a `<details>` element if it was nested within another `<details>` element
 // TINY-9965
+In previous versions of the xref:accordion.adoc[Accordion Plugin], when inserting an accordion component inside the body of another accordion, it was possible to delete the summary block element of the nested accordion.
+
+{productname} 6.7 addresses this by blocking *Delete* and *Backspace* key presses when the insertion point is within an empty block before a nested Accordion component.
+
+As a result, using the *Delete* or *Backspace*` keys no longer allows a user to delete into the summary element of an Accordion component, and the insertion point remains in the empty block before the Accordion.
+
+For more information on the **Accordion** plugin see xref:accordion.adoc[Accordion].
 
 === Deleting `<li>` elements that only contained `<br>` tags sometimes caused a crash
 // TINY-6888
+In previous  {productname} versions, "Uncaught TypeError: Cannot read property 'nextSibling' of null" were thrown in some specific use cases. For example, after the removal of any `<li>` element.
+
+Previously, `<li>` elements used the same caret position as the parent of the new caret container. After removal of the `<li>` element, however, the editor tred to use `ToggleList.mergeWithAdjacentLists` which is used on the `otherLi.parentNode`. This triggered the TypeError, as the editor had already removed the other `otherLi` element.
+
+{productname} 6.7 addresses this by using, for caret position, the `otherLi.parentNode` reference stored in a `const` before the removal.
 
 === It was possible to remove the `<summary>` element from a `<details>` element by dragging and dropping
 // TINY-9960
+Previously, dragging and dropping the contents of a `<summary>` element contained within the `<details>` parent container of an xref:accordion.adoc[Accordion] component, caused the `<summary>` element to be removed from the parent container.
+
+As a consequence, the Accordion element was rendered unusable: the `<details>` element requires a `<summary>` element to act as the title or heading of a specific Accordion component.
+
+In {productname} 6.7, when the user drags a `<summary>` element’s  contents out of an Accordion component, the editor puts an empty `<summary>` element back in place after the deletion consequent to the dragging event. This restores the Accordion component to its required form.
 
 === It was possible to break `<summary>` elements if content containing block elements was dragged-and-dropped inside them
 // TINY-9960
+In previous versions of the xref:accordion.adoc[Accordion] plugin, dragging and dropping block elements within the `<summary>` element of an Accordion component could break the `<summary>` element.
+
+As a consequence, {productname} would duplicate the `<summary>` element.
+
+For example, if the initial state was as follows:
+
+[source, html]
+----
+<details class="mce-accordion" open="open">
+<summary>Accordion summary...</summary>
+<p>Accordion body...</p>
+</details>
+<h1>block_element</h1>
+----
+
+After a drag-and-drop event, the Accordion component would be thus:
+
+[source, html]
+----
+<details class="mce-accordion" open="open">
+<summary>Accordion</summary>
+<h1>block_element</h1>
+<summary class="mce-accordion-summary">&nbsp;summary...</summary>
+<!-- Note the duplicated <summary> class. -->
+<!-- Also note, this comment was manually added to this example. -->
+<p>Accordion body...</p>
+</details>
+----
+
+Note the duplicated `<summary>` class in the post-drag Accordion component.
+
+To address this, {productname} 6.7 now unwraps block elements after they are dragged from within another block element.
+
+As a consequence, dragging and dropping content from within a block element no longer produces duplicate summary elements.
 
 === Contents were not removed from the drag start source if dragging and dropping internally into a transparent block element
 // TINY-9960
+Previously, when dragging and dropping a context selection from a transparent element into another transparent block element, the source content (ie the content selected for dragging) was not properly deleted after the drop event.
+
+For example, if the initial selection for dragging was as follows:
+
+[source,html]
+----
+<a href="../../undefined/">
+  <p>Selected content in transparent element to be dragged.</p>
+</a>
+<a href="../../undefined/">
+  <p>Content in another transparent element</p>
+</a>
+----
+
+After the drop event, the editor state was thus:
+
+[source,html]
+----
+<a href="../../undefined/">
+  <p>Selected content in transparent element to be dragged.</p>
+  <!-- Note the dragged content has remained in place. -->
+</a>
+<a href="../../undefined/">
+  <p>Content in another transparent element</p>
+  <p>Selected content in transparent element to be dragged.</p>
+  <!-- Causing, in effect, the dragged content to be duplicated rather than moved. -->
+  <!-- Also note, these comments were manually added to this example. -->
+</a>
+----
+
+Note the duplicated material in the post-drag editor state example.
+
+{productname} 6.7 includes a fix that over-rides this unintended behavior. Now, when dragging a content selection from one transparent element into another, the drag’s source selection is moved rather than duplicated, as expected.
 
 === Using the Media plugin unexpectedly changed `<script>` tags in the editor body to `<image>` tags
 // TINY-10007
+As part of the {productname} 5.10 release, the `https://tiny.cloud/docs/plugins/opensource/media/#media_scripts)[media_scripts]` option was deprecated. And, as of the {productname} 6.0 release, this option was removed.
+
+When the setting was available, it was used to allow some script tags, with specified source URLs, to have some of their properties edited in the https://tiny.cloud/docs/plugins/opensource/media/[*Media*] plugin’s dialog.
+
+And, while the `media_scripts` option was removed, the logic that allowed the plugin to edit properties in some script tags was not.
+
+As a consequence, a regression presented. When the xref:introduction-to-mediaembed.adoc/[*Enhanced Media Embed*] Premium plugin was loaded, the plugin converts all script tags into placeholder images.
+
+For the {productname} 6.7 release the code that handled script tags was removed, which corrects this regression.
+
+In {productname} 6.7, when the *Enhanced Media Embed* is loaded, script tags are treated as script tags, and are no longer converted into placeholder images.
 
 === In some circumstances, pressing the **Enter** key scrolled the entire page
 // TINY-9828
+{productname} 6.4.2 addressed an issue in which xref:6.4.2-release-notes.adoc#_selection_was_not_correctly_scrolled_horizontally_into_view_when_using_the_selection.scrollIntoView_API[a selection was not correctly scrolled horizontally into view].
+
+{productname} 6.7 includes changes to the previously applied logic to address a further issue, in which scrolling did not reach the correct position in some circumstances.
+
+The fix applied in {productname} 6.4.2 altered the `scrollToMarker` function, affecting not only editor content, but also the editor container itself. This, unintentionally, caused an *Enter* key-press to trigger scrolling of both the content and the container.
+
+{productname} 6.7 makes two changes to address this. It reverts the logic applied in {productname} 6.4.2. And it adjusts the scroll left calculation.
+
+These changes correct both issues. Pressing the *Enter* key no longer triggers scrolling and the selection is (still) correctly scrolled into horizontal view.
 
 === The border styles of a table were incorrectly split into a longhand form after table dialog updates
 // TINY-9843
+Previously, when applying border style changes using the {productname} *Table Properties* dialog, changes were applied as individual properties. For example:
+
+[source,html]
+----
+style="border-width: 3px; border-style: solid; border-color: red;"
+----
+
+When the content was re-loaded, however, the styles were automatically condensed into the shorthand format:
+
+[source,html]
+----
+style="border: 3px solid red;"
+----
+
+This constitutes un-announced and un-asked-for modification of the table’s underlying HTML within the {productname} editor.
+
+{productname} 6.7 addresses this by immediately applying border style changes made using the *Table Properties* dialog in the shorthand format.
+
+Table HTML is, as a consequence, unaltered when it is reloaded into the {productname} editor.
 
 === Links in **Help → Help → Plugins** and **Help → Help → Version** were not navigable by keyboard
 // TINY-10071
+The Help dialog built-in to {productname} includes four tabs:
+* *Handy Shortcuts*;
+* *Keyboard Navigation*;
+* *Plugins*; and
+* *Version*.
+
+Previously, keyboard navigation was supported across these four tabs, and into each tab’s contents. (When a tab’s contents have focus, the content can be scrolled through using Arrow keys.)
+
+However, keyboard-based navigation of links in the focussed content was not supported.
+
+{productname} 6.7 corrects this. The `data-alloy-tabstop="true"` attribute, which was previously not applied to these links, has been added.
+
+Users of {productname} 6.7 can navigate to and activate links in Help dialog contents entirely with keyboard navigation.
+
+[NOTE]
+====
+As of this release, only the *Plugins*, and *Version* tabs include links.
+
+Also, there is no visual feedback when a given tab’s contents pane takes focus.
+
+Consequently, the UX is such that it appears to take two presses of the *Tab* key to go from a tab label having the focus and the first link within a tab’s content pane having focus.
+
+Likewise, going from the first link within a tab’s content pane having focus to a tab label having focus appears to take two presses of the *Shift-Tab* keyboard chord.
+====
 
 === Fixed the inability to insert content next to the `<details>` element when it is the first or last content element. Pressing the **Up** or **Down** arrow key now inserts a block element before or after the `<details>` element
 // TINY-9827

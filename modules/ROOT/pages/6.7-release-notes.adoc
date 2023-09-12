@@ -102,23 +102,46 @@ For more information, and an interactive demonstration, see the xref:advanced-te
 
 The {productname} 6.7.0 release includes an accompanying release of the **AI Assistant** premium plugin.
 
-**AI Assistant** 1.3.0 includes the following addition, improvements, and bug fix:
+**AI Assistant** 1.1.0 includes the following addition, improvements, and bug fix:
 
 ==== New UI string translations
 // TINY-9943
 
 
+The initial release of the **AI Assistant** plugin was an English-language–only release.
+
+**AI Assistant** 1.1.0 includes translations of all UI elements into all of {productname}’s xref:bundling-localization.adoc#supported-languages[supported languages].
+
+NOTE: The query prompts included by default with the `xref:ai.adoc#ai_shortcuts[ai_shortcuts]` option are not currently translated.
+
+
 ==== The generate button is now disabled when input field is empty, rather than displaying an alert
 // TINY-10104
 
+Previously, when an empty prompt was submitted using the **AI Assistant** dialog, an alert would display. 
 
-==== The default prompts in the ai_shortcuts option have been improved for better results
+In **AI Assistant** 1.1.0, the generate button is now disabled when the prompt input is empty and no alert is displayed when an empty prompt is submitted.
+
+Separately, an alert is displayed when the **AI Assistant** encounters an error. This alert still presents in **AI Assistant** 1.1.0. However, the spacing around this alert in the **AI Assistant** dialog has been improved: it is now properly balanced in the space between the dialog’s buttons and the dialog’s text input field.
+
+
+==== The default prompts in the `ai_shortcuts` option have been improved for better results
 // TINY-10099
 
+By default, the `xref:ai.adoc#ai_shortcuts[ai_shortcuts]` option includes a set of queries provided as an array of objects.
+
+For **AI Assistant** 1.1.0, each prompt in this default set has been re-written so as to produce better and more immediately useful responses when sent to an AI API endpoint.
 
 ==== The dialog sometimes unblocked and showed the preview component too early when a response is streamed
 // TINY-10114
 
+Previously, after submitting a prompt, the dialog would unblock early, showing a blank preview component for some time, before rendering the first chunk of visible content.
+
+This was due to the first chunk of documents containing the `<!DOCTYPE html>` declaration returned by OpenAI’s endpoint being the characters `<!`.
+
+These characters are interpreted as comment nodes by the {productname} parser. And comment nodes are considered nonempty by our associated `isEmpty` method. This is unsuitable for previewing purposes, thereby triggering the early unblocking of the dialog.
+
+In {productname} 6.7, comment nodes are now excluded from the `isEmpty` logic, resulting in them being counted as empty nodes. This is more appropriate for the purposes of checking for nodes that are visible when rendered for preview, and prevents the dialog from being unblocked early.
 
 
 === Checklist 2.0.6

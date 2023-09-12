@@ -239,11 +239,11 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Menus now have a slight margin at the top and bottom to more clearly separate them from the frame edge
 // TINY-9978
-In previous versions of {productname}, an issue was identified were the menu was reaching the edge of the host browser's window.
+Previously, the {productname} menu could reach the edge of the host browser’s window.
 
-As a consequence, it was not apparent to the user if the menu stopped at the edge of the window or continued past its bounds which led to confusion with users, as the were uncertain if the menu was showing everything.
+As a consequence, it was not apparent if the menu stopped at the edge of the window or continued past its bounds. This led to user confusion, since it was unclear if the {productname} menu was showing everything.
 
-{productname} 6.7 addressed this issue, by adding a margin to the bottom and/or top of the menu layout to separate it from the frame edge.
+{productname} 6.7 addresses this issue, by adding a margin to the menu layout to separate it from the frame edge. This margin is placed at the top or bottom of the {productname} menu, depending on where the menu is displayed in a given {productname} instance.
 
 As a result, in {productname} 6.7, the menu is now more noticeably distinct from the frame edge.
 

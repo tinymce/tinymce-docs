@@ -475,6 +475,25 @@ When using {productname} 6.7, users now get greater visual distinction between l
 
 === New `help_accessibility` option displays the keyboard shortcut to open the in-application help in the status bar
 // TINY-9379
+In previous versions of {productname}, keyboard-centric users without screen readers had no indicator of how to access the {productname} **Help → Help** command. (Users with screen readers got and continue to get announcements on accessing the **Help** menu and the **Help → Help** command.)
+
+By default, the **Help → Help** command is accessible using a keyboard chord. **Alt+0** on Windows or Linux and **⌥+0** on macOS. But this chord is not presented except when the **Help** menu is opened and the **Help → Help** command is displayed.
+
+{productname} 6.7 addresses this issue by introducing a new option `help_accessibility` option, which defaults to `true`
+
+When set to `true`, this option displays the **Help → Help** command keyboard shortcut in the {productname} status bar.
+
+[source, js]
+----
+tinymce.init({
+    selector: "textarea",
+    plugins: [
+        "help", 
+    ],
+    toolbar: "help",
+	help_accessibility: true, // default value is set to true.
+});
+----
 
 === Added new `InsertNewBlockBefore` and `InsertNewBlockAfter` commands which insert an empty block before or after the block containing the current selection
 // TINY-10022

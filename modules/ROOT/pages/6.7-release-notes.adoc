@@ -179,7 +179,7 @@ In previous versions of **Spell Checker Pro**, an issue was identified that affe
 
 As a consequence of the bug, the **Spell Checker Pro** would check for spelling mistakes within `non-editable` element. As a result, the spellchecker would incorrectly highlight these errors.
 
-**Spell Checker Pro** 3.3.1 addresses this issue, as it now checks if the users content selection or cursor position is an `editable` block element before proceeding to highlight any potential spelling mistakes. As of {productname} 6.7, spelling mistakes will no longer be highlighted within `non-editable` block element, even in cases when the {productname} editor's mode is set to either **readonly** or as a `non-editable` root.
+**Spell Checker Pro** 3.3.1 addresses this issue, as it now checks if the users content is an `editable` block element before proceeding to highlight any potential spelling mistakes. As of {productname} 6.7, spelling mistakes will no longer be highlighted within `non-editable` block element, even in cases when the {productname} editor's mode is set to either **readonly** or as a `non-editable` root.
 
 For information on the **Spell Checker Pro plugin** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
 

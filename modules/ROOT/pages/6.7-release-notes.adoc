@@ -526,12 +526,84 @@ Previously, `<li>` elements used the same caret position as the parent of the ne
 
 === It was possible to remove the `<summary>` element from a `<details>` element by dragging and dropping
 // TINY-9960
+Previously, dragging and dropping the contents of a `<summary>` element contained within the `<details>` parent container of an xref:accordion.adoc[Accordion] component, caused the `<summary>` element to be removed from the parent container.
+
+As a consequence, the Accordion element was rendered unusable: the `<details>` element requires a `<summary>` element to act as the title or heading of a specific Accordion component.
+
+In {productname} 6.7, when the user drags a `<summary>` element’s  contents out of an Accordion component, the editor puts an empty `<summary>` element back in place after the deletion consequent to the dragging event. This restores the Accordion component to its required form.
 
 === It was possible to break `<summary>` elements if content containing block elements was dragged-and-dropped inside them
 // TINY-9960
+In previous versions of the xref:accordion.adoc[Accordion] plugin, dragging and dropping block elements within the `<summary>` element of an Accordion component could break the `<summary>` element.
+
+As a consequence, {productname} would duplicate the `<summary>` element.
+
+For example, if the initial state was as follows:
+
+[source, html]
+----
+<details class="mce-accordion" open="open">
+<summary>Accordion summary...</summary>
+<p>Accordion body...</p>
+</details>
+<h1>block_element</h1>
+----
+
+After a drag-and-drop event, the Accordion component would be thus:
+
+[source, html]
+----
+<details class="mce-accordion" open="open">
+<summary>Accordion</summary>
+<h1>block_element</h1>
+<summary class="mce-accordion-summary">&nbsp;summary...</summary>
+<!-- Note the duplicated <summary> class. -->
+<!-- Also note, this comment was manually added to this example. -->
+<p>Accordion body...</p>
+</details>
+----
+
+Note the duplicated `<summary>` class in the post-drag Accordion component.
+
+To address this, {productname} 6.7 now unwraps block elements after they are dragged from within another block element.
+
+As a consequence, dragging and dropping content from within a block element no longer produces duplicate summary elements.
 
 === Contents were not removed from the drag start source if dragging and dropping internally into a transparent block element
 // TINY-9960
+Previously, when dragging and dropping a context selection from a transparent element into another transparent block element, the source content (ie the content selected for dragging) was not properly deleted after the drop event.
+
+For example, if the initial selection for dragging was as follows:
+
+[source,html]
+----
+<a href="../../undefined/">
+  <p>Selected content in transparent element to be dragged.</p>
+</a>
+<a href="../../undefined/">
+  <p>Content in another transparent element</p>
+</a>
+----
+
+After the drop event, the editor state was thus:
+
+[source,html]
+----
+<a href="../../undefined/">
+  <p>Selected content in transparent element to be dragged.</p>
+  <!-- Note the dragged content has remained in place. -->
+</a>
+<a href="../../undefined/">
+  <p>Content in another transparent element</p>
+  <p>Selected content in transparent element to be dragged.</p>
+  <!-- Causing, in effect, the dragged content to be duplicated rather than moved. -->
+  <!-- Also note, these comments were manually added to this example. -->
+</a>
+----
+
+Note the duplicated material in the post-drag editor state example.
+
+{productname} 6.7 includes a fix that over-rides this unintended behavior. Now, when dragging a content selection from one transparent element into another, the drag’s source selection is moved rather than duplicated, as expected.
 
 === Using the Media plugin unexpectedly changed `<script>` tags in the editor body to `<image>` tags
 // TINY-10007

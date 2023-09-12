@@ -175,13 +175,13 @@ For information on the **Spell Checker Pro plugin** plugin, see: xref:introducti
 
 ==== Switching the editable root state to false would not hide spelling mistakes in non-editable content.
 // TINY-9463
-In previous versions of **Spell Checker Pro**, an issue was identified that affected the spellchecker's behavior when the users cursor or content selection was within a `non-editable` block element.
+In previous versions of **Spell Checker Pro**, an issue was identified that affected the plugin’s behavior when the insertion point or content selection was within a block element with the `contenteditable="false"` attribute set.
 
-As a consequence of the bug, the **Spell Checker Pro** would check for spelling mistakes within `non-editable` element. As a result, the spellchecker would incorrectly highlight these errors.
+In this circumstance, the **Spell Checker Pro** plugin checked for spelling mistakes within read-only elements (that is, within elements with the `contenteditable="false"` attribute set). As a result, the plugin incorrectly highlighted any errors found in these elements.
 
-**Spell Checker Pro** 3.3.1 addresses this issue, as it now checks if the users content is an `editable` block element before proceeding to highlight any potential spelling mistakes. As of {productname} 6.7, spelling mistakes will no longer be highlighted within `non-editable` block element, even in cases when the {productname} editor's mode is set to either **readonly** or as a `non-editable` root.
+**Spell Checker Pro** 3.3.1 addresses this issue. It now checks if the content is in an editable block element before highlighting potential spelling errors.
 
-For information on the **Spell Checker Pro plugin** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
+Spelling mistakes are, as a consequence, no longer highlighted within read-only block elements, even in cases where the {productname} editor’s mode is set to **read-only** or has a root with the `contenteditable="false"` attribute set.
 
 ==== Text content with Unicode characters was causing the spellchecker to modify and duplicate the text.
 // TINY-10062

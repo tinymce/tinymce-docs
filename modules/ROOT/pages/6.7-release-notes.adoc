@@ -55,7 +55,7 @@ In previous versions of {productname}, the toolbar implemented for mobile lacked
 
 Consequently, when switching from the **Advanced Code** view back to the editor, {productname} triggered an unintended refresh operation, leading to a TypeError to display within the console.
 
-**Advanced Code** 3.3.1 addresses this issue, by integrating the refresh API into the mobile toolbar.
+**Advanced Code** 3.3.1 addresses this issue, by integrating an empty refresh API into the mobile toolbar.
 
 With this fix, the refresh API is now invoked, and the console no longer throws the TypeError when transitioning from the **Advanced Code** view back to editor mode on Android tablets.
 

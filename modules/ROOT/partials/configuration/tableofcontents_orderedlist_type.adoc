@@ -1,0 +1,57 @@
+[[tableofcontents_orderedlist_type]]
+== `+tableofcontents_orderedlist_type+`
+
+By default, Tables of Contents are rendered as unordered lists.
+
+Setting the option `+tableofcontents_orderedlist: true+`, switches this to a numeric ordered list.
+
+And setting the `+tableofcontents_orderedlist_type+` to one of its available values switches the rendered Table of Contents to the specified https://html.spec.whatwg.org/dev/grouping-content.html#the-ol-element[ordered list type].
+
+
+
+*Type:* `+String+`
+
+*Possible values:* `+'1'+`, `+'A'+`, `+'a'+`, `+'I'+`, `+'i'+`
+
+*Default value:* `+'1'+`
+
+The possible values set the type attribute of the ordered list, `<ol>` as follows:
+
+[cols="10%,90%"]
+|===
+|Value | Ordered list type
+
+|`+'1'+`
+|A list sorted by Arabic/Hindu numerals.
+
+This is the default.
+
+|`+'A'+`
+|A list sorted alphabetically by capital letter.
+
+|`+'a'+`
+|A list sorted alphabetically by lowercase letter.
+
+|`+'I'+`
+|A list sorted by uppercase Roman numerals.
+
+|`+'i'+`
+|A list sorted by lowercase Roman numerals.
+|===
+
+=== Example: using `tableofcontents_orderedlist` to render a Table of Contents as uppercase Roman numerals
+[source, js]
+----
+tinymce.init({
+  selector: "textarea", // change this value according to your HTML
+  plugins: "tableofcontents",
+  toolbar: "tableofcontents",
+  tableofcontents_orderedlist: true, // required to enable tableofcontents_orderedlist_type configuration.
+	tableofcontents_orderedlist_type: 'I',
+});
+----
+
+[IMPORTANT]
+====
+The `tableofcontents_orderedlist: true` option must be present in a {productname} configuration for whatever `tableofcontents_orderedlist_type` setting to come into effect.
+====

@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2176: Removed references to which commercial plans Premium plugins are or are not available with.
 - DOC-2175: Update CODEOWNERS automatic reviewers upon opening new DOC-PRs.
 - DOC-2173: updated the default value code sample in `ai_shortcuts.adoc` to match the updated values included in the AI Assistant. Also re-wrote the **Note** admonition to call-out the absence of any translations or alternative language versions of these default values.
 

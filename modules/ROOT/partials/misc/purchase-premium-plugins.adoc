@@ -1,3 +1,7 @@
+// 2023-09-06: the logic herein must be updated to cater to
+// extant commercial plan structures before this file can, once again
+// be added to Premium plugin pages via an `include::` statement.
+
 ifeval::["{extensionType}" != "Packs"]
 :extensionType: plugin
 endif::[]

@@ -7,6 +7,8 @@ The {prem_skins_icons} lets you quickly give {productname} a new look. Just choo
 
 == How to use a premium skin
 
+NOTE: premium skins are only available with a link:{pricingpage}/[paid TinyMCE subscriptions].
+
 Use the xref:editor-skin.adoc#skin[skin] option, in combination with the xref:add-css-options.adoc#content_css[content_css] option and the values listed below.
 
 Available values for xref:editor-skin.adoc#skin[skins]:
@@ -101,6 +103,7 @@ Below are some recommended combinations of skins and icon packs:
 * xref:outside-demo.adoc[Outside editor]
 * xref:snow-demo.adoc[Snow editor]
 
+////
 :pluginname: Tiny Skins and Icon
 :pluginminimumplan: tiertwo
 :extensionType: Packs
@@ -108,3 +111,4 @@ Below are some recommended combinations of skins and icon packs:
 include::partial$misc/purchase-premium-plugins.adoc[]
 :!extensionType:
 :!pluralExtensionType:
+////

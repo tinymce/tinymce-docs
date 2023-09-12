@@ -33,6 +33,14 @@ The {productname} 6.7.0 release includes an accompanying release of the **Access
 ==== Translation was missing for paragraph used as heading text
 // TINY-10053
 
+The alert presented when the **Accessibility Checker** considers a string to likely be a heading includes an explanatory sentence to this effect.
+
+Previously, because of an inadvertent punctuation ommission, this string was not translated and presented in English regardless of {productname}’s `language` setting.
+
+For this update, the punctuation was restored, and the string — _This paragraph looks like a heading. If it is a heading, please select a heading level._ — has been translated.
+
+When this alert presents, if the currently set language is one of the xref:bundling-localization.adoc#supported-languages[supported languages], the entire alert now presents in the currently set language, as expected.
+
 
 
 === Advanced Code 3.3.1

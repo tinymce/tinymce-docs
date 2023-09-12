@@ -135,6 +135,22 @@ The following interactive remote storage configuration example provides guidance
 ==== Configuring the Advanced Template plugin to interact with a remote backend service via REST API.
 liveDemo::{plugincode}[]
 
+[[the-insertion-point-marker]]
+==== The insertion point marker
+
+include::partial$misc/admon-requires-6.7v.adoc[]
+
+The insertion point marker is a fixed string for adding to any template.
+
+The string to add is as follows: `+{{mce-cursor}}+`.
+
+Wherever this string is within a template is where the insertion point appears when that template is added to a {productname} document.
+
+Also, and as shown in the interactive demonstration below, the xref:mergetags.adoc[Merge Tags] plugin knows to ignore this fixed string, making it possible to use the insertion point marker in conjunction with both plugins.
+
+liveDemo::{plugincode}-insertionpoint[]
+
+
 [[options]]
 == Options
 
@@ -167,6 +183,7 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
+[[commands]]
 == Commands
 
 The {pluginname} plugin provides the following {productname} commands.

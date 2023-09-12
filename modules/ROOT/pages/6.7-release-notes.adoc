@@ -258,6 +258,17 @@ Previously, when **PowerPaste** was running with older versions of Safari as the
 
 This error condition no longer presents and, for this release, the error catching logic, associated error message, and error message translations, have all been removed.
 
+==== PowerPaste prevented uploaded images from using their original file-name
+// TINY-9776
+
+Previously **PowerPaste** used an internal image management mechanism.
+
+This mechanism ignored `images_reuse_filename`, which prevented uploaded images from keeping and using their original filenames.
+
+With **PowerPaste** 6.2.1, the plugin has been switched to use core {productname} image management logic, which takes proper note of `images_reuse_filename`.
+
+Image filenames are now managed correctly, and as expected, when images are uploaded.
+
 For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
 
 

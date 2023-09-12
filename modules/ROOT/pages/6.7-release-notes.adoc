@@ -239,17 +239,17 @@ For information on the **Page Embed** plugin, see: xref:pageembed.adoc[Page Embe
 
 
 
-=== PowerPaste 6.2.1
+=== PowerPaste 6.2.2
 
 The {productname} 6.7.0 release includes an accompanying release of the **PowerPaste** premium plugin.
 
-**PowerPaste** 6.2.1 includes the following bug-fixes
+**PowerPaste** 6.2.2 includes the following bug-fixes
 
 ==== Stopped pasting comments from Microsoft Word documents.
 // TINY-9975
 Previously, when a copied selection from a Microsoft Word document included comments, these comments were, added to the {productname} document as footnotes when the selection was pasted in to place.
 
-**PowerPaste** 6.2.1 addresses this. Comments are still included in copied selections from Microsoft Word. With this update, however, they are ignored by the plugin and, consequently, not added to {productname} documents when pasted.
+**PowerPaste** 6.2.2 addresses this. Comments are still included in copied selections from Microsoft Word. With this update, however, they are ignored by the plugin and, consequently, not added to {productname} documents when pasted.
 
 ==== Removed error condition, error message, and error message translations for an error which no longer occurs.
 // TINY-10045

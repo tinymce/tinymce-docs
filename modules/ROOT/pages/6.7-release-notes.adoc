@@ -194,6 +194,8 @@ Supported media URLs now embed as expected when pasted inside `<div>` elements.
 
 NOTE: Although this was discovered in a {productname} instance running with the `xref:content-filtering.adoc#forced_root_block[forced_root_block: 'div']` configuration setting, the embed failure occurred in any circumstance where a media URL was pasted directly inside a `<div>` element.
 
+For information on the **Enhanced Media Embed** plugin, see: xref:introduction-to-mediaembed.adoc[Introduction to Enhanced Media Embed].
+
 
 === Footnotes 1.0.1
 

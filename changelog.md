@@ -7,6 +7,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2171: improvement documentation entry for TINY-9863 in the 6.7 Release Notes.
 - DOC-2171: improvement documentation entry for TINY-9978 in the Release Notes.
 - DOC-2171: fix documentation entry for TINY-9872 in the 6.7 Release Notes.
 - DOC-2171: fix documentation entry for TINY-10017 in the 6.7 Release Notes.

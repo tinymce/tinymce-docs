@@ -357,6 +357,13 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Adding a newline after a table would, in some specific cases, not work
 // TINY-9863
+Previously, when the insertion point was between a table and an element with a `contenteditable="false"` attribute that was, itself, wrapped in a `<div>`, pressing the **Enter** or **Return** key did not add a new line to the document.
+
+{productname}, incorrectly, treated the insertion point’s location in this circumstance as not a valid place for adding a new line.
+
+{productname} 6.7 corrects this and treats such a location as the valid place for adding a new line that it is.
+
+As a result, new lines are added to {productname} documents, as expected, when the insertion point is between a table, and an `<div>`-wrapped element with a `contenteditable="false"` attribute.
 
 === Menus now have a slight margin at the top and bottom to more clearly separate them from the frame edge
 // TINY-9978

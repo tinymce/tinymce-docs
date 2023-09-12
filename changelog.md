@@ -7,7 +7,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
-- DOC-2171: new option tableofcontents_orderedlist_type for TOC in the 6.7 Release Notes.
+- DOC-2171: new options for TOC for TINY-9970, TINY-9968 and TINY-9969 in the 6.7 Release Notes.
 - DOC-2171: fix documentation entry for TINY-10011 in the 6.7 Release Notes.
 - DOC-2171: fix documentation entry for TINY-9827 in the 6.7 Release Notes.
 - DOC-2171: fix documentation entry for TINY-10126 in the 6.7 Release Notes.

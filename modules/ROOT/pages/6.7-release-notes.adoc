@@ -185,17 +185,9 @@ The {productname} 6.7.0 release includes an accompanying release of the **Table 
 ==== Added new boolean option tableofcontents_includeheader to control whether a header is included in the table of contents. Defaults to true.
 // TINY-9970
 
+{productname} 6.7, added a new option `tableofcontents_includeheader`, to **Table of Contents 1.2.0**, that when set to `false`, removes the Table of Content header from the TOC.
 
-==== Added new boolean option tableofcontents_orderedlist to use ordered lists instead of unordered lists in the table of contents.
-// TINY-9968
-
-==== Added new option tableofcontents_orderedlist_type to set a specific type of ordered list, defaulting to a numeric ordered list.
-// TINY-9969
-{productname} 6.7, introduced a new option in **Table of Contents 1.2.0**.
-
-This new option allows the user to change the visual appearance for the ordered list within the Table of Contents.
-
-.Example
+.Basic configuration setup for new option `tableofcontents_includeheader: false`
 [source, js]
 ----
 tinymce.init({
@@ -204,9 +196,57 @@ tinymce.init({
         "tableofcontents", "code",
     ],
     toolbar: "tableofcontents",
+	tableofcontents_includeheader: false, // default is set to true
+});
+----
+
+For information on the **Table of Contents** plugin, see: xref:tableofcontents.adoc[Table of Contents].
+
+==== Added new boolean option tableofcontents_orderedlist to use ordered lists instead of unordered lists in the table of contents.
+// TINY-9968
+{productname} 6.7, added a new option to the register for **Table of Contents 1.2.0**, that supports the additional new option `tableofcontents_orderedlist_type: 'true'.
+
+[NOTE]
+The `tableofcontents_orderedlist_type: 'true' option must be present in the same {productname} configuration, to support the secondary option `tableofcontents_orderedlist_type` , which takes one of five `string` values currently to modify the specific type for the ordered list.
+
+.Basic configuration setup for `tableofcontents_orderedlist`
+[source, js]
+----
+tinymce.init({
+    selector: "textarea",
+    plugins: [
+        "tableofcontents", "code",
+    ],
+    toolbar: "tableofcontents",
+    tableofcontents_orderedlist: true, // option required to configure tableofcontents_orderedlist_type
 	tableofcontents_orderedlist_type: 'I', // optional values are '1', 'A', 'a', 'I', 'i'
 });
 ----
+
+For information on the **Table of Contents** plugin, see: xref:tableofcontents.adoc[Table of Contents].
+
+==== Added new option tableofcontents_orderedlist_type to set a specific type of ordered list, defaulting to a numeric ordered list.
+// TINY-9969
+{productname} 6.7, introduced a new option in **Table of Contents 1.2.0**.
+
+This new option allows the user to change the visual appearance for the ordered list within the Table of Contents.
+
+.Basic configuration setup for `tableofcontents_orderedlist_type: 'I'`
+[source, js]
+----
+tinymce.init({
+    selector: "textarea",
+    plugins: [
+        "tableofcontents", "code",
+    ],
+    toolbar: "tableofcontents",
+    tableofcontents_orderedlist: true, // option required to configure tableofcontents_orderedlist_type
+	tableofcontents_orderedlist_type: 'I', // optional values are '1', 'A', 'a', 'I', 'i'
+});
+----
+
+[IMPORTANT]
+`tableofcontents_orderedlist_type` is dependant on `tableofcontents_orderedlist: true` to be within the same {productname} editor configuration in order to modify the visual appearance for the ordered list.
 
 Optional values to change the type attribute for the ordered list `<ol>`as per the below standards referenced from https://www.w3schools.com/html/html_lists_ordered.asp#:~:text=Ordered%20HTML%20List%20%2D%20The%20Type%20Attribute[Ordered_HTML_List-The_Type_Attribute]
 

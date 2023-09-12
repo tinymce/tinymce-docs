@@ -922,3 +922,19 @@ Previously, when Safari was the host browser, and
 pressing Backspace deleted the entire `<details>` element rather than just the character immediately before the insertion point.
 
 {productname} 6.7 addresses this. With this release, the Backspace key functions as expected when Safari is the host browser: it deletes only the character immediately before when the insertion point is inside a `<summary>` element, as expected.
+
+=== Removed attribute from being added to `<br>` in empty table cells
+// TINY-9860
+
+By default, {productname} removes `+<br>+` tags at the end of block elements.
+
+Setting the `+xref:content-filtering.adoc#remove_trailing_brs[remove_trailing_brs]+` option to `+false+` turns this default behaviour off.
+
+Previously, however, when `+remove_trailing_brs: false+` was set, and a table was added to a {productname} document, the last cell of the newly-created table did not contain a `+<br+` tag, as expected.
+
+During serialization, this last tag was instead converted into a whitespace character.
+
+In {productname} 6.7, this character conversion during serialization no longer occurs in table cells.
+
+As a consequence, when `+remove_trailing_brs: false+` is set and tables are added to a {productname} document, all newly-created and otherwise empty cells contain a `+<br>+` tag, as is expected in this circumstance.
+{productname} 6.7 addresses this. With this release, the Backspace key functions as expected when Safari is the host browser: it deletes only the character immediately before when the insertion point is inside a `<summary>` element, as expected.

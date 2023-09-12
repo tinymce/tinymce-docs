@@ -7,6 +7,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2171: fix documentation entry for TINY-10136 in the 6.7 Release Notes.
 - DOC-2171: Added entry for TINY-10089, *Change event did not fire upon adding a reply*, to Comments section of `6.7-release-notes.adoc`.
 - DOC-2171: added entry for TINY-9976, *New AdvTemplateInsertTemplateById command to insert the template specified by its id property value*, to Advanced Templates section of `6.7-release-notes.adoc`; added entry for TINY-9973, *New `{{mce-cursor}}` marker to indicate the cursor position after the template is inserted*, to Advanced Templates section of `6.7-release-notes.adoc`; added `AdvTemplateInsertTemplateById` command, description, and example to `advtemplate-cmds.adoc`; added files and directories required for additional live demo, `advtempalte-insertionpoint`, added sample code and configuration and explanatory text to new files; new section, *The insertion point marker*, added to `advanced-templates.adoc`; and new section, *Merge Tags and the Insertion Point Marker* added to `mergetags.adoc`.
 - DOC-2171: fix documentation entry for TINY-10129 in the 6.7 Release Notes.

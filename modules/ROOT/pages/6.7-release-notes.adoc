@@ -355,7 +355,7 @@ Previously, the Table of Contents toolbar button and menu item were not disabled
 
 Clicking the enabled button, or choosing the enabled menu item did not generate a Table of Contents. The commands were disabled, as expected. The UI objects did not, however, present as disabled.
 
-**Table of Contents 1.2.0** addresses this. If the selection includes or is within a read-only section, or if the insertion point is within a read-only section, the Table of Contents UI objects now, correctly, present as disabled.
+**Table of Contents** 1.2.0 addresses this. If the selection includes or is within a read-only section, or if the insertion point is within a read-only section, the Table of Contents UI objects now, correctly, present as disabled.
 
 
 ==== Empty headers would be included in table of content
@@ -389,7 +389,17 @@ For information on the **Table of Contents** plugin, see: xref:tableofcontents.a
 
 The {productname} 6.7.0 release includes an accompanying release of the **Tiny Drive** premium plugin.
 
-**Tiny Drive** 2.0.3 includes the following
+**Tiny Drive** 2.0.3 includes the following fix:
+
+=== Tiny Drive toolbar button and menu item are now disabled when the selection is not editable
+// TINY-9894
+
+Previously, the **Tiny Drive** plugin’s `insertfile` toolbar button and menu item were not disabled when the insertion point was within a read-only (ie, non-editable) section or when the selection was within a read-only section or included a read-only portion.
+
+**Tiny Drive** 2.0.3 addresses this. If the selection includes or is within a read-only section, or if the insertion point is within a read-only section, the Tiny Drive UI objects now, correctly, present as disabled.
+
+For information on the **Tiny Drive** plugin, see: xref:tinydrive-introduction.adoc[Tiny Drive Introduction].
+
 
 
 

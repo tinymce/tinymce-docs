@@ -1,0 +1,23 @@
+[[tableofcontents_includeheader]]
+== `+tableofcontents_includeheader+`
+
+By default, Tables of Contents include a header string, *Table of Contents*.
+
+The `+tableofcontents_includeheader+` option allows this header to be turned off.
+
+*Type:* `+Boolean+`
+
+*Default value:* `+'true'+`
+
+*Possible values:* `+'true'+`, `+'false'+`
+
+=== Example: using `tableofcontents_includeheader` to turn the Table of Contents header string off
+[source, js]
+----
+tinymce.init({
+  selector: "textarea", // change this value according to your HTML
+  plugins: "tableofcontents",
+  toolbar: "tableofcontents",
+	tableofcontents_includeheader: false,
+});
+----

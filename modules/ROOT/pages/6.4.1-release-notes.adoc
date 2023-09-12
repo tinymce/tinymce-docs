@@ -886,7 +886,7 @@ Fixes were introduced with the release of {productname} 6.4.1, that:
 
 As a result, when a root element is set to `contenteditable="false"`, any `contenteditable="true"` elements inside that root element such as `<p>` tag will no longer try to split the `contenteditable="true"` element. 
 
-=== Creating a list in a table cell when the caret is in front of an anchor element would not properly include the anchor in the list.
+=== Creating a list in a table cell when the caret is in front of an anchor element would not properly include the anchor in the list
 //#TINY-6853
 
 In previous versions of {productname}, when the caret is to the left of an anchor element at the start of a line in a table cell, creating a `<ul>` or `<ol>` list would not include the anchor element. Instead, the line with the anchor element would be unexpectedly pushed below and an empty list would be created above.

@@ -276,7 +276,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 
 [[improvements]]
-== Improvments
+== Improvements
 
 === Adding a newline after a table would, in some specific cases, not work
 // TINY-9863
@@ -300,7 +300,15 @@ To fix this, {productname} 6.7 updated the text label for the *More* option to *
 
 === Improved the keyboard focus visibility for links inside dialogs
 // TINY-10124
+Previously, when a link was rendered inside the body content of a {productname} dialog, such as the **Help** dialog, it was difficult for a user to identify the visual difference between the *normal*, *hovered* or *focused* states.
 
+As well, when a link’s state was changed via keyboard navigation, making a distinction between the states was difficult.
+
+{productname} 6.7 addresses this by
+. adding an underline to all links to increase the contrast between links and non-links by default; and 
+. adding an outline around the link when the link is given focus using keyboard navigation.
+
+When using {productname} 6.7, users now get greater visual distinction between link and non-links, and immediate feedback as to a link’s change of state when using keyboard navigation.
 
 
 [[additions]]

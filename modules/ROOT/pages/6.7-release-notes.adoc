@@ -161,20 +161,39 @@ The {productname} 6.7.0 release includes an accompanying release of the **PowerP
 
 The {productname} 6.7.0 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
 
-**Spell Checker Pro** 3.3.3 includes the following bug-fixes:
+**Spell Checker Pro** 3.3.1 includes the following bug-fixes:
 
 ==== Switching to readonly mode would not hide spelling mistakes.
 // TINY-9463
+In previous versions of **Spell Checker Pro**, an issue was identified when switching to readonly mode within a {productname} document.
 
+As a consequence of this, the plugin failed to hide spelling mistakes as expected, even when users toggle to **readonly** mode, the presence of spelling errors remained visible.
+
+**Spell Checker Pro** 3.3.1 addresses this issue, users can expect that when switching between these modes, the visibility of spelling mistakes will correctly align with their chosen editing state.
+
+For information on the **Spell Checker Pro plugin** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
 
 ==== Switching the editable root state to false would not hide spelling mistakes in non-editable content.
 // TINY-9463
+In previous versions of **Spell Checker Pro**, an issue was identified that affected the spellchecker's behavior when the users cursor or content selection was within a `non-editable` block element.
 
+As a consequence of the bug, the **Spell Checker Pro** would check for spelling mistakes within `non-editable` element. As a result, the spellchecker would incorrectly highlight these errors.
+
+**Spell Checker Pro** 3.3.1 addresses this issue, as it now checks if the users content selection or cursor position is an `editable` block element before proceeding to highlight any potential spelling mistakes. As of {productname} 6.7, spelling mistakes will no longer be highlighted within `non-editable` block element, even in cases when the {productname} editor's mode is set to either **readonly** or as a `non-editable` root.
+
+For information on the **Spell Checker Pro plugin** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
 
 ==== Text content with Unicode characters was causing the spellchecker to modify and duplicate the text.
 // TINY-10062
+In previous versions of **Spell Checker Pro**, an issue was identified that, arose when the spellchecker attempted to annotate invalid characters within Dutch language text. During this process, text containing Unicode characters led to the generation of duplicated indices.
 
+As a consequence, this duplication had adverse consequences, primarily affecting the search functionality. When attempting to regenerate the text element using these indices, it resulted in unintended alterations and duplications within the text itself.
 
+**Spell Checker Pro** 3.3.1 addresses this issue, by removing and filtering out the duplicated indices during the annotation of invalid characters.
+
+As a result, pasting text content with Unicode characters no longer triggers the alteration and duplication of the text.
+
+For information on the **Spell Checker Pro plugin** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
 
 === Table of Contents 1.2.0
 

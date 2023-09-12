@@ -5,14 +5,28 @@
 :pluginname: Help
 :plugincode: help
 
-The help plugin adds a button and/or menu item that opens a dialog showing two tabs:
+The help plugin adds a button and/or menu item that opens a dialog showing four tabs:
 
-* Handy shortcuts that explains some nice-to-know keyboard shortcuts
-* Plugin list that shows which plugins that have been installed, with links to the relevant documentation pages if available, and a list of available premium plugins.
+[cols=",,",options="header"]
+|===
+|Tab display name |Tab configuration name |Purpose
+|Handy shortcuts |`shortcuts` |Presents keyboard shortcuts available in the {productname} editor.
+|Keyboard Navigation |`keyboardnav` |Documents the keyboard-based options for navigating and controlling the entire {productname} editor.
+|Plugins |`plugins` |Lists the installed plugins for the {productname} instance, with links to the relevant {productname} documentation.
 
-In the footer of the dialog you can also see which version of {productname} you are using.
+ Also presents a list of available {productname} Premium plugins.
+|Version |`versions` |Displays the {productname} version.
+|===
 
-The help dialog can also be shown by pressing the keyboard shortcut `+Alt + 0+`.
+The {productname} Help dialog can also be shown by pressing a keyboard shortcut.
+
+[cols=",,",options="header"]
+|===
+|Action |Windows or Linux |macOS
+|Open the {productname} Help dialog |Alt+0 |⌥+0
+|===
+
+As of {productname} 6.7, the keyboard shortcut that opens the {productname} Help dialog displays, by default, in the {productname} status bar.
 
 == Basic setup
 
@@ -26,6 +40,8 @@ tinymce.init({
 ----
 
 == Options
+
+include::partial$configuration/help_accessibility.adoc[leveloffset=+1]
 
 include::partial$configuration/help_tabs.adoc[leveloffset=+1]
 

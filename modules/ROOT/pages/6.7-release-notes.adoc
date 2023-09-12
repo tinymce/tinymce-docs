@@ -44,6 +44,14 @@ The {productname} 6.7.0 release includes an accompanying release of the **Advanc
 ==== Editing the data before switching theme would mean a loss of edited data
 // TINY-10046
 
+Previously, If the **Advanced Code** dialog was opened, and data was added to the dialog’s text entry, and then the *Dark/light mode* button was pressed, The plugin switched to the new theme using the data present when the dialog was opened.
+
+This resulted in the loss of any entered data.
+
+In **Advanced Code** 3.3.1, switching between themes now sets the data state to the current state before the theme switch is made.
+
+This ensures any data entered before switching themes is kept.
+
 
 
 === Advanced Templates 1.3.0
@@ -260,13 +268,18 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === New `help_accessibility` option displays the keyboard shortcut to open the in-application help in the status bar
 // TINY-9379
 
-=== Added a new `InsertNewBlockBefore` command which inserts an empty block before the block containing the current selection
+=== Added new `InsertNewBlockBefore` and `InsertNewBlockAfter` commands which insert an empty block before or after the block containing the current selection
 // TINY-10022
+{productname} 6.7 includes two new commands: `InsertNewBlockBefore` and `InsertNewBlockAfter`.
 
-=== Added a new `InsertNewBlockAfter` command which inserts an empty block after the block containing the current selection
-// TINY-10022
+These commands address scenarios where navigation encounters spatial constraints; most specifically when the constraint is at a {productname} document’s edges.
 
+For example, if a user inserts a `<details>` element (as part of an **Accordion component**) at the beginning of a {productname} document, the `InsertNewBlockBefore` command now provides a way to set the insertion point above this element. 
 
+[IMPORTANT]
+====
+Blocks added by either command are placed at the root level of the {productname} document, immediately before or after the top parent block encompassing the current selection.
+====
 
 [[changes]]
 == Changes
@@ -317,12 +330,37 @@ For information on the **Quickbars** plugin, see: xref:quickbars.adoc[Quickbars]
 
 === Tab navigation incorrectly stopped around `iframe` dialog components
 // TINY-9815
+The previous implementation of the `iframe`-based dialog component wrapped the component inside two `<div>` elements.
+
+This was (and is) required for *Tab* key-based navigation through the dialog’s UI objects to remain within the dialog itself.
+
+The intended result was for the two `<div>` elements, by default, to switch focus to the next UI object of the `iframe` component for each press of the *Tab* key.
+
+As initially implemented, however, only one of the wrapping `<div>` elements produced this functionality.
+
+As a consequence, an additional, and redundant, pressing of the *Tab* key (or *Shift+Tab* keyboard chord if navigating backwards through the dialog) was required to navigate every addressable object within an `iframe`-based dialog component.
+
+{productname} 6.7 includes a fix that addresses this. When navigating through an `iframe`-based dialog component using the *Tab* key, {productname} now skips over the elements that keep Tab-key–based navigation within the dialog but which do not present as focussable UI elements.
+
+Navigating through an `iframe`-based dialog with the *Tab* key no longer requires a redundant key-press to exit an otherwise invisible component.
 
 === It was possible to delete the sole empty block immediately before a `<details>` element if it was nested within another `<details>` element
 // TINY-9965
+In previous versions of the xref:accordion.adoc[Accordion Plugin], when inserting an accordion component inside the body of another accordion, it was possible to delete the summary block element of the nested accordion.
+
+{productname} 6.7 addresses this by blocking *Delete* and *Backspace* key presses when the insertion point is within an empty block before a nested Accordion component.
+
+As a result, using the *Delete* or *Backspace*` keys no longer allows a user to delete into the summary element of an Accordion component, and the insertion point remains in the empty block before the Accordion.
+
+For more information on the **Accordion** plugin see xref:accordion.adoc[Accordion].
 
 === Deleting `<li>` elements that only contained `<br>` tags sometimes caused a crash
 // TINY-6888
+In previous  {productname} versions, "Uncaught TypeError: Cannot read property 'nextSibling' of null" were thrown in some specific use cases. For example, after the removal of any `<li>` element.
+
+Previously, `<li>` elements used the same caret position as the parent of the new caret container. After removal of the `<li>` element, however, the editor tred to use `ToggleList.mergeWithAdjacentLists` which is used on the `otherLi.parentNode`. This triggered the TypeError, as the editor had already removed the other `otherLi` element.
+
+{productname} 6.7 addresses this by using, for caret position, the `otherLi.parentNode` reference stored in a `const` before the removal.
 
 === It was possible to remove the `<summary>` element from a `<details>` element by dragging and dropping
 // TINY-9960
@@ -338,18 +376,65 @@ For information on the **Quickbars** plugin, see: xref:quickbars.adoc[Quickbars]
 
 === In some circumstances, pressing the **Enter** key scrolled the entire page
 // TINY-9828
+{productname} 6.4.2 addressed an issue in which xref:6.4.2-release-notes.adoc#_selection_was_not_correctly_scrolled_horizontally_into_view_when_using_the_selection.scrollIntoView_API[a selection was not correctly scrolled horizontally into view].
+
+{productname} 6.7 includes changes to the previously applied logic to address a further issue, in which scrolling did not reach the correct position in some circumstances.
+
+The fix applied in {productname} 6.4.2 altered the `scrollToMarker` function, affecting not only editor content, but also the editor container itself. This, unintentionally, caused an *Enter* key-press to trigger scrolling of both the content and the container.
+
+{productname} 6.7 makes two changes to address this. It reverts the logic applied in {productname} 6.4.2. And it adjusts the scroll left calculation.
+
+These changes correct both issues. Pressing the *Enter* key no longer triggers scrolling and the selection is (still) correctly scrolled into horizontal view.
 
 === The border styles of a table were incorrectly split into a longhand form after table dialog updates
 // TINY-9843
 
 === Links in **Help → Help → Plugins** and **Help → Help → Version** were not navigable by keyboard
 // TINY-10071
+The Help dialog built-in to {productname} includes four tabs:
+* *Handy Shortcuts*;
+* *Keyboard Navigation*;
+* *Plugins*; and
+* *Version*.
+
+Previously, keyboard navigation was supported across these four tabs, and into each tab’s contents. (When a tab’s contents have focus, the content can be scrolled through using Arrow keys.)
+
+However, keyboard-based navigation of links in the focussed content was not supported.
+
+{productname} 6.7 corrects this. The `data-alloy-tabstop="true"` attribute, which was previously not applied to these links, has been added.
+
+Users of {productname} 6.7 can navigate to and activate links in Help dialog contents entirely with keyboard navigation.
+
+[NOTE]
+====
+As of this release, only the *Plugins*, and *Version* tabs include links.
+
+Also, there is no visual feedback when a given tab’s contents pane takes focus.
+
+Consequently, the UX is such that it appears to take two presses of the *Tab* key to go from a tab label having the focus and the first link within a tab’s content pane having focus.
+
+Likewise, going from the first link within a tab’s content pane having focus to a tab label having focus appears to take two presses of the *Shift-Tab* keyboard chord.
+====
 
 === Fixed the inability to insert content next to the `<details>` element when it is the first or last content element. Pressing the **Up** or **Down** arrow key now inserts a block element before or after the `<details>` element
 // TINY-9827
+Previously, when a `<details>` element, such as is automatically part of an xref:accordion.adoc[Accordion] component, was either the first or last element within a {productname} editor instance, users were unable to move the insertion point above or below the element. This prevented them from adding new content to the editor instance.
+
+In {productname} 6.7, the `InsertNewBlockBefore` and `InsertNewBlockAfter` commands have been associated with the *Up Arrow* and *Down Arrow* keys, activating when the insertion point is in the relevant position.
+
+As a result, when the insertion point is in the relevant position and the user presses either of the *Up Arrow* or *Down Arrow* keys, the insertion point now moves either above or below the `<details>` element when it is at either the beginning or end of the current editor’s content.
 
 === An empty element with a `contenteditable="true"` attribute within a noneditable root was deleted when the Backspace key was pressed
 // TINY-10011
+Previously, when an empty element with a `contenteditable="true"` attribute was set within a read-only root (ie a root with a `contenteditable="false"` attribute), the empty element was deleted when the *Backspace* key was pressed.
+
+When the Backspace key was pressed in this circumstance, the {productname} editor removed elements that contained no content.
+
+In doing so the `dom.isEmpty(body)` call returned a value, `true`, even if the called `body` included an element that was empty but had a `contenteditable="true"` attribute set.
+
+As of {productname} 6.7, elements with a `contenteditable="true"` attribute set are no longer treated as empty and the `dom.isEmpty(body)` call no longer returns the value `true` with regards such elements.
+
+As a consequence, these elements are no longer deleted when they are immediately before the insertion point and the Backspace key is pressed.
 
 === The `color_cols` option was not respected when set to the value 5 with a custom `color_map` specified
 // TINY-10126

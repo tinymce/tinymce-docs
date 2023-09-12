@@ -286,6 +286,11 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Updated **More** toolbar button tooltip text from *More...* to *Reveal or hide additional toolbar items*
 // TINY-9629
+In previous versions of {productname}, a bug was discovered when using screen readers, but in particular the https://www.freedomscientific.com/products/software/jaws[JAWS] screen reader, within {productname}. The ellipsis icon representing the **More** option in the {productname} toolbar did not have a meaningful explanation for screen readers.
+
+As a consequence, screen readers would announce *More ellipsis* instead of providing a meaningful description that can be understood.
+
+To fix this, {productname} 6.7 updated the text label for the *More* option to *Reveal or hide more toolbar items*; a clear description for users who rely on this feature.
 
 === Where multiple case sensitive variants of a translation key are provided, they will now all be preserved in the translation object instead of just the lowercase variant
 // TINY-10115

@@ -8,6 +8,22 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### Unreleased
 
 - DOC-2171: fix documentation entry for TINY-10007 in the 6.7 Release Notes.
+- DOC-2171: fix documentation entry for TINY-10136 in the 6.7 Release Notes.
+- DOC-2171: Added entry for TINY-10089, *Change event did not fire upon adding a reply*, to Comments section of `6.7-release-notes.adoc`.
+- DOC-2171: added entry for TINY-9976, *New AdvTemplateInsertTemplateById command to insert the template specified by its id property value*, to Advanced Templates section of `6.7-release-notes.adoc`; added entry for TINY-9973, *New `{{mce-cursor}}` marker to indicate the cursor position after the template is inserted*, to Advanced Templates section of `6.7-release-notes.adoc`; added `AdvTemplateInsertTemplateById` command, description, and example to `advtemplate-cmds.adoc`; added files and directories required for additional live demo, `advtempalte-insertionpoint`, added sample code and configuration and explanatory text to new files; new section, *The insertion point marker*, added to `advanced-templates.adoc`; and new section, *Merge Tags and the Insertion Point Marker* added to `mergetags.adoc`.
+- DOC-2171: fix documentation entry for TINY-10129 in the 6.7 Release Notes.
+- DOC-2171: bugfix documentation entry for TINY-10053, *Translation was missing for paragraph used as heading text*, added to `6.7-release-notes.adoc`.
+- DOC-2171: fix documentation entry for TINY-9843 in the 6.7 Release Notes.
+- DOC-2171: fix documentation entry for TINY-10054 in the 6.7 Release Notes.
+- DOC-2171: fix documentation entry for TINY-9815 in the 6.7 Release Notes.
+- DOC-2171: bug-fix documentation entry for TINY-10046, _Editing the data before switching theme would mean a loss of edited data_.
+- DOC-2171: fix documentation entry for TINY-9828 in the 6.7 Release Notes.
+- DOC-2171: addition documentation entry for TINY-10022 in the 6.7 Release Notes; added entries for two new commands, InsertNewBlockBefore and InsertNewBlockAfter to `editor-command-identifiers.adoc`; and organised Miscellaneous Core command and example tables into alphabetical order.
+- DOC-2171: fix documentation entry for TINY-6888 in the Release Notes.
+- DOC-2171: fix documentation entry for TINY-9965 in the 6.7 Release Notes.
+- DOC-2171: fix documentation entry for TINY-10071 in the 6.7 Release Notes.
+- DOC-2171: fix documentation entry for TINY-10011 in the 6.7 Release Notes.
+- DOC-2171: fix documentation entry for TINY-9827 in the 6.7 Release Notes.
 - DOC-2171: fix documentation entry for TINY-10126 in the 6.7 Release Notes.
 - DOC-2171: fix documentation entry for TINY-10123 in the 6.7 Release Notes.
 

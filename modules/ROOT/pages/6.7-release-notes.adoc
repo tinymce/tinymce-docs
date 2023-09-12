@@ -376,3 +376,13 @@ Previously, when Safari was the host browser, and
 pressing Backspace deleted the entire `<details>` element rather than just the character immediately before the insertion point.
 
 {productname} 6.7 addresses this. With this release, the Backspace key functions as expected when Safari is the host browser: it deletes only the character immediately before when the insertion point is inside a `<summary>` element, as expected.
+
+=== Removed attribute from being added to `<br>` in empty table cells #TINY-9860.
+// TINY-9860
+When a table was inserted to the last cell containing a bookmark `span`, moving the selection to the bookmark span would result in its deletion, and an empty table cell is filled with a new <br> tag.
+
+As a consequence during serialization, the `<br>` tag was converted into a character due to a particular line of code in the parsing step.
+
+{productname} 6.7 addresses this by, preserving of the <br> tag in the last cell of a table.
+
+As a result of this fix, when 'remove_trailing_brs' is set to 'false', all cells in a newly inserted table, including the last cell, will consistently maintain the <br> tag.

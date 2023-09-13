@@ -704,7 +704,7 @@ In previous versions of the xref:accordion.adoc[Accordion Plugin], when insertin
 
 {productname} 6.7 addresses this by blocking *Delete* and *Backspace* key presses when the insertion point is within an empty block before a nested Accordion component.
 
-As a result, using the *Delete* or *Backspace*` keys no longer allows a user to delete into the summary element of an Accordion component, and the insertion point remains in the empty block before the Accordion.
+As a result, using the *Delete* or *Backspace* keys no longer allows a user to delete into the summary element of an Accordion component, and the insertion point remains in the empty block before the Accordion.
 
 For more information on the **Accordion** plugin see xref:accordion.adoc[Accordion].
 

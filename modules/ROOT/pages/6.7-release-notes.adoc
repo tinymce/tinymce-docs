@@ -678,7 +678,7 @@ This occurred because the first selected `<div>` was mistakenly treated as the l
 
 In {productname} 6.7, when selections equivalent to the above example have a list option applied to them, the entire selection becomes a list, as expected.
 
-For more information on the **forced_root_block** option see xref:forced_root_block.adoc[forced_root_block].
+For more information on the **forced_root_block** option see xref:content-filtering.adoc#forced_root_block[forced_root_block].
 
 === Tab navigation incorrectly stopped around `iframe` dialog components
 // TINY-9815

@@ -48,7 +48,7 @@ The {productname} 6.7.0 release includes an accompanying release of the **Advanc
 
 **Advanced Code** 3.3.1 includes the following bugfixes:
 
-==== Going back from a view to the editor in mobile caused an error.
+==== Going back from a view to the editor in mobile caused an error
 // TINY-10003
 In previous versions of {productname}, the toolbar implemented for mobile lacked the essential refresh API.
 
@@ -242,13 +242,23 @@ The {productname} 6.7.0 release includes an accompanying release of the **PowerP
 
 **PowerPaste** 6.2.2 includes the following bug-fixes
 
-==== Stopped pasting comments from Microsoft Word documents.
+==== Stopped pasting comments from Microsoft Word documents
 // TINY-9975
 Previously, when a copied selection from a Microsoft Word document included comments, these comments were added to the {productname} document as footnotes when the selection was pasted in to place.
 
 **PowerPaste** 6.2.2 addresses this. Comments are still included in copied selections from Microsoft Word. With this update, however, they are ignored by the plugin and, consequently, not added to {productname} documents when pasted.
 
-==== Removed error condition, error message, and error message translations for an error which no longer occurs.
+[NOTE]
+.Known issue
+----
+Microsoft Word comments are still set as footnotes when pasted into a {productname} instance if the host browser is Safari.
+
+When Safari is the host browser, and a copied selection from a Microsoft Word document includes comments, when that selection is pasted (⌘-V) into a {productname} instance, the included comment or comments are still set as footnotes in the {productname} document.
+
+Such footnotes can be manually deleted but there is currently no other workaround.
+----
+
+==== Removed error condition, error message, and error message translations for an error which no longer occurs
 // TINY-10045
 
 Previously, when **PowerPaste** was running with older versions of Safari as the host browser, an error condition presented, along with an associated error message, when direct image pasting was attempted.
@@ -394,7 +404,7 @@ These empty header blocks were presented, in the generated Table of Contents, as
 For filtering purposes, the plugin treats a header block which contains non-printing characters, such as spaces, as **not** empty.
 ====
 
-==== Changes to the Table of Contents title were overwritten by the update button.
+==== Changes to the Table of Contents title were overwritten by the update button
 // TINY-9971
 
 By default, a generated Table of Contents includes a title, **Table of Contents**. This title can be edited.

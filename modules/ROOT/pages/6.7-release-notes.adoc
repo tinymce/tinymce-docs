@@ -592,7 +592,7 @@ Previously, when a xref:checklist.adoc[Checklist], particularly a checklist that
 
 {productname} 6.7 address this issue. With this update, nested checklists become nested bulleted lists when selected and converted, as expected.
 
-=== Returning an empty string in a custom context menu update function resulted in a small white line appearing on right-click and the browser-native context menu would not present
+=== Returning an empty string in a custom context menu update function resulted in a small white line appearing on right-click and the browser-native context menu not presenting
 // TINY-9842
 
 Adding `browser_spellcheck: true` to a configuration tells {productname} to use the host browser’s native context menu for spell-checking.

@@ -52,11 +52,11 @@ The {productname} 6.7.0 release includes an accompanying release of the **Advanc
 // TINY-10003
 In previous versions of {productname}, the toolbar implemented for mobile lacked the essential refresh API.
 
-Consequently, when switching from the **Advanced Code** view back to the editor, {productname} triggered an unintended refresh operation, leading to a TypeError to display within the console.
+Consequently, when switching from the **Advanced Code** view back to the editor, {productname} triggered an unintended refresh operation, resulting in a TypeError displaying in the console.
 
 **Advanced Code** 3.3.1 addresses this issue, by integrating an empty refresh API into the mobile toolbar.
 
-With this fix, the refresh API is now invoked, and the console no longer throws the TypeError when transitioning from the **Advanced Code** view back to editor mode on Android tablets.
+With this fix, the refresh API is now invoked, and the console no longer throws the TypeError when transitioning from the **Advanced Code** view back to editor mode on mobile devices running the Android operating system.
 
 ==== Editing the data before switching theme would mean a loss of edited data
 // TINY-10046

@@ -528,11 +528,9 @@ When set to `true`, this option displays the **Help → Help** command keyboard 
 [source, js]
 ----
 tinymce.init({
-    selector: "textarea",
-    plugins: [
-        "help", 
-    ],
-    toolbar: "help",
+  selector: "textarea",
+  plugins: [ "help", ],
+  toolbar: "help",
 	help_accessibility: true, // default value is set to true.
 });
 ----

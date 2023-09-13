@@ -521,7 +521,7 @@ In previous versions of {productname}, keyboard-centric users without screen rea
 
 By default, the **Help → Help** command is accessible using a keyboard chord. **Alt+0** on Windows or Linux and **⌥+0** on macOS. But this chord is not presented except when the **Help** menu is opened and the **Help → Help** command is displayed.
 
-{productname} 6.7 addresses this issue by introducing a new option `help_accessibility` option, which defaults to `true`.
+{productname} 6.7 addresses this issue by introducing a new `help_accessibility` option, which defaults to `true`.
 
 When set to `true`, this option displays the **Help → Help** command keyboard shortcut in the {productname} status bar.
 

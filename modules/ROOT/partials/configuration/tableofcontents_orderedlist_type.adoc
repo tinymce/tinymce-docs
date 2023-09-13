@@ -47,7 +47,7 @@ tinymce.init({
   plugins: "tableofcontents",
   toolbar: "tableofcontents",
   tableofcontents_orderedlist: true, // required to enable tableofcontents_orderedlist_type configuration.
-	tableofcontents_orderedlist_type: 'I',
+  tableofcontents_orderedlist_type: 'I',
 });
 ----
 

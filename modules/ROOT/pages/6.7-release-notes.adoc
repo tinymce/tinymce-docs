@@ -244,7 +244,7 @@ The {productname} 6.7.0 release includes an accompanying release of the **PowerP
 
 ==== Stopped pasting comments from Microsoft Word documents.
 // TINY-9975
-Previously, when a copied selection from a Microsoft Word document included comments, these comments were, added to the {productname} document as footnotes when the selection was pasted in to place.
+Previously, when a copied selection from a Microsoft Word document included comments, these comments were added to the {productname} document as footnotes when the selection was pasted in to place.
 
 **PowerPaste** 6.2.2 addresses this. Comments are still included in copied selections from Microsoft Word. With this update, however, they are ignored by the plugin and, consequently, not added to {productname} documents when pasted.
 

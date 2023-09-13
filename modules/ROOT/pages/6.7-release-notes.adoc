@@ -670,7 +670,7 @@ multiple lines of text
 <div>Text line three.</div>
 ----
 
-were selected, and a list was applied to the text (for example, the *Bulleted List* toolbar icon was chosen), only the first selected item became a list. (That is, the line, *Text line one.*, in the example above.)
+were selected, and a list was applied to the text (for example, the *Bulleted List* toolbar icon was chosen), only the first selected item became a list. (That is, the line *Text line one.*, in the example above.)
 
 This occurred because the first selected `<div>` was mistakenly treated as the list element’s root.
 

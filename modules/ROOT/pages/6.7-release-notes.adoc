@@ -647,7 +647,7 @@ For information on the **Quickbars** plugin, see: xref:quickbars.adoc[Quickbars]
 
 In the earlier fix’s implementation, when advancing to the next leaf element in the hierarchy, the process did not take into account whether this leaf element was correctly nested under its parent. This occasionally led to it straying outside its intended parent. And, as a consequence, unexpected elements could be (and sometimes were) added to a list when a list was created.
 
-{productname} 6.7, addresses this fix by setting the expected block parent as the boundary for DOM tree traversal, ensuring that it does not extend beyond this defined limit. As a result, any extraneous elements are now effectively excluded from the list.
+{productname} 6.7 addresses this by setting the expected block parent as the boundary for DOM tree traversal, ensuring that it does not extend beyond this defined limit. As a result, any extraneous elements are now effectively excluded from the list.
 
 === Creating a list from multiple `<div>` elements only created a partial list
 // TINY-9872

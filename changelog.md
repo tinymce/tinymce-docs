@@ -4,19 +4,12 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
-### Unreleased
+### 2023-09-13
 
 - DOC-2027: added `/modules/ROOT/partials/configuration/help_accessibility.adoc`, documenting the `help_accessibility` option; edits, re-writes and re-structuring of `help.adoc`; plus copy-edits to `keyboard-shortcuts.adoc`, `tinymce-and-screenreaders.adoc` & `accessibility.adoc`.
 - DOC-2176: Removed references to which commercial plans Premium plugins are or are not available with.
 - DOC-2175: Update CODEOWNERS automatic reviewers upon opening new DOC-PRs.
 - DOC-2173: updated the default value code sample in `ai_shortcuts.adoc` to match the updated values included in the AI Assistant. Also re-wrote the **Note** admonition to call-out the absence of any translations or alternative language versions of these default values.
-
-### 2023-09-04
-
-- DOC-2167: edited toolbar configurations in both the open-source–only and Premium-plugins–included full-featured demos; also added the Accordion plugin and toolbar items to the open-source–only full-featured demo.
-
-### Unreleased
-
 - DOC-2171: fix documentation entry for TINY-9860 in the 6.7 Release Notes.
 - DOC-2171: Entry for TINY-9776, *PowerPaste prevented uploaded images from using their original file-name*, added to PowerPaste section of `6.7-release-notes.adoc`.
 - DOC-2171: Entry for TINY-9891, *The Footnotes toolbar button and menu item are now disabled when the selection is not editable*, and TINY-9891, *Calling the `mceInsertFootnote` command now does nothing when the selection is non-editable*, added to Footnotes section of `6.7-release-notes.adoc`.
@@ -62,6 +55,10 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 - DOC-2171: fix documentation entry for TINY-10126 in the 6.7 Release Notes.
 - DOC-2171: fix documentation entry for TINY-10123 in the 6.7 Release Notes.
 
+### 2023-09-04
+
+- DOC-2167: edited toolbar configurations in both the open-source–only and Premium-plugins–included full-featured demos; also added the Accordion plugin and toolbar items to the open-source–only full-featured demo.
+
 ### 2023-08-30
 
 - DOC-2169: added 6.7-specific entries to `changelog.adoc`.
@@ -88,24 +85,24 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 - DOC-2160: Removed wercker status link from `README.md`. Also copy-edits.
 - DOC-2154: documentation of *Improved detection of scrollable containers when the `ui_mode: 'split'` option is set*, added to **Improvement** section of `6.6-release-notes.adoc`.
 - DOC-2159: Documentation of four text color options — `color_cols_background`, `color_cols_foreground`, `color_map_background`, `color_map_foreground` — added to `text_color.adoc`. Also copy-edits.
-- DOC-2112: Copy-edits to text and markup in `6.6.1-release-notes.adoc`.
-- DOC-2143: documentation of bug fix, _Context menu and context toolbar no longer show when the selected image is in a non-editable context_ added to **Enhanced Image Editing** section of `6.6.1-release-notes.adoc`.
-- DOC-2155: documentation of bug fix, _Right-clicking on an image that was in a non-editable area would open the Image plugin’s context menu_, added to **Bug fixes** section of `6.6.1-release-notes.adoc`.
-- DOC-2146: documentation of addition, _New filtering option: `pad_empty_with_br`_, added to **Addition** section of `6.6.1-release-notes.adoc`.
-- DOC-2131: documentation of bug fix, _Lists could not be created within editable areas nested inside non-editable areas_, added to **Bug fixes** section of `6.6.1-release-notes.adoc`.
-- DOC-2157: documentation of buf fix, _the `color_cols` options were were not rounded to the nearest number when set to a decimal number_ added to the **Bug fixes** section of `6.6.1-release-notes.adoc`.
-- DOC-2156: documentation of bug fix, _The `color_cols` option was not respected when a custom `color_map` was defined_, added to **Bug fixes** section of `6.6.1-release-notes.adoc`.
-- DOC-2147: documentation of bug fix, _On Safari and Firefox, the border around `iframe` dialog components did not highlight when focused_, added to **Bug fixes** section of `6.6.1-release-notes.adoc`.
-- DOC-2144: documentation of bug fix, _A warning message was sometimes printed to the browser console when closing a dialog that contained an iframe component_, added to **Bug fixes** section of `6.6.1-release-notes.adoc`.
-- DOC-2139: documentation of bug fix, _Scrolling behavior was inconsistent when updating a `streamContent: true` iframe dialog component with content lacking an HTML document type declaration_, added to **Bug fixes** section of `6.6.1-release-notes.adoc`.
-- DOC-2152: documentation of bug fix, _On Safari, iframe dialog components did not consistently autoscroll to the end of the scrollable area when `streamContent: true` was set_, added to **Bug fix** section of `6.6.1-release-notes.adoc`.
-- DOC-2135: documentation of bug fix, _On Safari and Firefox browsers, scroll positions were not always maintained when updating the content of a `streamContent: true` iframe dialog component_, added to **Bug fixes** section of `6.6.1-release-notes.adoc`.
-- DOC-2149: documentation of change, _API comments/documentation: a markup typo and run-on sentences both corrected_, added to **Change** section of `6.6.1-release-notes.adoc`.
-- DOC-2134: documentation of bug fix, _When Safari is the host browser, content updates for iframe dialog components with `streamContent: true` set are now throttled to 500ms intervals_, added to **Improvement** section of `6.6.1-release-notes.adoc`.
-- DOC-2148: documentation of bug fix, _When a response from the AI Assistant dialog was inserted into a selection not in view, the content did not scroll into view_, added to **AI Assistant** section of `6.6.1-release-notes.adoc`.
-- DOC-2140: documentation of bug fix, _Preview content was removed when an error is encountered part way through a streaming response_, added to **AI Assistant** section of `6.6.1-release-notes.adoc`.
-- DOC-2142: documentation of bug fix, _Error events from streaming requests were included in seperate threads to the corresponding response event_, added to **AI Assistant** section of `6.6.1-release-notes.adoc`.
-- DOC-2141: documentation of bug fix, _Toolbar buttons and menu items were enabled while the dialog was waiting for a final response_, added to **AI Assistant** section of `6.6.1-release-notes.adoc`.
+- DOC-2112: Copy-edits to text and markup in `6.6.2-release-notes.adoc`.
+- DOC-2143: documentation of bug fix, _Context menu and context toolbar no longer show when the selected image is in a non-editable context_ added to **Enhanced Image Editing** section of `6.6.2-release-notes.adoc`.
+- DOC-2155: documentation of bug fix, _Right-clicking on an image that was in a non-editable area would open the Image plugin’s context menu_, added to **Bug fixes** section of `6.6.2-release-notes.adoc`.
+- DOC-2146: documentation of addition, _New filtering option: `pad_empty_with_br`_, added to **Addition** section of `6.6.2-release-notes.adoc`.
+- DOC-2131: documentation of bug fix, _Lists could not be created within editable areas nested inside non-editable areas_, added to **Bug fixes** section of `6.6.2-release-notes.adoc`.
+- DOC-2157: documentation of buf fix, _the `color_cols` options were were not rounded to the nearest number when set to a decimal number_ added to the **Bug fixes** section of `6.6.2-release-notes.adoc`.
+- DOC-2156: documentation of bug fix, _The `color_cols` option was not respected when a custom `color_map` was defined_, added to **Bug fixes** section of `6.6.2-release-notes.adoc`.
+- DOC-2147: documentation of bug fix, _On Safari and Firefox, the border around `iframe` dialog components did not highlight when focused_, added to **Bug fixes** section of `6.6.2-release-notes.adoc`.
+- DOC-2144: documentation of bug fix, _A warning message was sometimes printed to the browser console when closing a dialog that contained an iframe component_, added to **Bug fixes** section of `6.6.2-release-notes.adoc`.
+- DOC-2139: documentation of bug fix, _Scrolling behavior was inconsistent when updating a `streamContent: true` iframe dialog component with content lacking an HTML document type declaration_, added to **Bug fixes** section of `6.6.2-release-notes.adoc`.
+- DOC-2152: documentation of bug fix, _On Safari, iframe dialog components did not consistently autoscroll to the end of the scrollable area when `streamContent: true` was set_, added to **Bug fix** section of `6.6.2-release-notes.adoc`.
+- DOC-2135: documentation of bug fix, _On Safari and Firefox browsers, scroll positions were not always maintained when updating the content of a `streamContent: true` iframe dialog component_, added to **Bug fixes** section of `6.6.2-release-notes.adoc`.
+- DOC-2149: documentation of change, _API comments/documentation: a markup typo and run-on sentences both corrected_, added to **Change** section of `6.6.2-release-notes.adoc`.
+- DOC-2134: documentation of bug fix, _When Safari is the host browser, content updates for iframe dialog components with `streamContent: true` set are now throttled to 500ms intervals_, added to **Improvement** section of `6.6.2-release-notes.adoc`.
+- DOC-2148: documentation of bug fix, _When a response from the AI Assistant dialog was inserted into a selection not in view, the content did not scroll into view_, added to **AI Assistant** section of `6.6.2-release-notes.adoc`.
+- DOC-2140: documentation of bug fix, _Preview content was removed when an error is encountered part way through a streaming response_, added to **AI Assistant** section of `6.6.2-release-notes.adoc`.
+- DOC-2142: documentation of bug fix, _Error events from streaming requests were included in seperate threads to the corresponding response event_, added to **AI Assistant** section of `6.6.2-release-notes.adoc`.
+- DOC-2141: documentation of bug fix, _Toolbar buttons and menu items were enabled while the dialog was waiting for a final response_, added to **AI Assistant** section of `6.6.2-release-notes.adoc`.
 - DOC-1956: Re-wrote introductory text; added tables of word boundary characters and not-word boundary characters; and added examples of character count logic to `wordcount.adoc`.
 - DOC-2107: In `powerpaste_import_types.adoc`: removed misleading sentence from introductory paragraph in; re-structured value behaviour documentation from list to table for greater readability and pars-ability; copy-edited behaviour documentation to further improve readability and pars-ability; added NOTE admonition documenting what is done when pasting from a TinyMCE instance to a TinyMCE instance; edited `powerpaste_import_types.adoc` so the equivalent material in this partial presents in the *powerpaste_googledocs_import* and *powerpaste_word_import* sections equivalently to the presentation in the *powerpaste_html_import* section.
 - DOC-2150: Re-wrote `/live-demos/linkchecker/index.html`: it is now an actual interactive example, using canonically invalid domain names for the invalid domain-name strings and in-house domain names for the valid domain name strings.

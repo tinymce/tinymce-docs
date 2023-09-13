@@ -579,7 +579,7 @@ This could lead to data loss. After `ContentCSS` completed its initial load, any
 
 {productname} 6.7 addresses this by blocking interaction with the editor until `ContentCss` has completed loading, disallowing content insertion until initialization is complete.
 
-A relatively slow network connection for this purpose is an ≅ 400 kb/sec connection with an ≅ 2000{nbsp}ms latency; equivalent to a Slow 3G wireless connection. The potential UX change caused by this change will, therefore, be experienced by very few users.
+A relatively slow network connection for this purpose is an ≅{nbsp}400{nbsp}kb/sec connection with an ≅{nbsp}2000{nbsp}ms latency; equivalent to a Slow 3G wireless connection. The potential UX change caused by this change will, therefore, be experienced by very few users.
 
 
 [[bug-fixes]]

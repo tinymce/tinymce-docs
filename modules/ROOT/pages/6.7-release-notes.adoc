@@ -139,6 +139,8 @@ These characters are interpreted as comment nodes by the {productname} parser. A
 
 In {productname} 6.7, comment nodes are now excluded from the `isEmpty` logic, resulting in them being counted as empty nodes. This is more appropriate for the purposes of checking for nodes that are visible when rendered for preview, and prevents the dialog from being unblocked early.
 
+For information on the **AI Assistant** plugin, see: xref:ai.adoc[AI Assistant].
+
 
 === Checklist 2.0.6
 

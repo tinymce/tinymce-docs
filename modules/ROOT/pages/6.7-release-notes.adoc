@@ -542,7 +542,7 @@ tinymce.init({
 
 These commands address scenarios where navigation encounters spatial constraints; most specifically when the constraint is at a {productname} document’s edges.
 
-For example, if a user inserts a `<details>` element (as part of an **Accordion component**) at the beginning of a {productname} document, the `InsertNewBlockBefore` command now provides a way to set the insertion point above this element. 
+For example, if a user inserts a `<details>` element (as part of an **xref:accordion.adoc[Accordion]** component) at the beginning of a {productname} document, the `InsertNewBlockBefore` command now provides a way to set the insertion point above this element. 
 
 [IMPORTANT]
 ====

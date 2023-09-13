@@ -107,6 +107,7 @@ To fix this issue, the code for the `urlinput` component that is responsible for
 
 As a result, the URL suggestions dropdown list now expands even on the empty _Source_ field. As well, the host browser’s console no longer returns errors.
 
+[[selection-was-not-correctly-scrolled-horizontally-into-view-when-using-the-selection.scrollIntoView-API]]
 === Selection was not correctly scrolled horizontally into view when using the `selection.scrollIntoView` API
 
 In previous versions of {productname}, the `scrollToMarker` function manually calculated how much should be scrolled vertically. The horizontal scroll amount, however, was set to a specific value: left of the marker.

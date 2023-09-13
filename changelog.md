@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### 2023-09-14
+
+- DOC-2008: cleanup and corrections in `changelog.md`; update version numbers string in `.api-version`.
+
 ### 2023-09-13
 
 - DOC-2027: added `/modules/ROOT/partials/configuration/help_accessibility.adoc`, documenting the `help_accessibility` option; edits, re-writes and re-structuring of `help.adoc`; plus copy-edits to `keyboard-shortcuts.adoc`, `tinymce-and-screenreaders.adoc` & `accessibility.adoc`.

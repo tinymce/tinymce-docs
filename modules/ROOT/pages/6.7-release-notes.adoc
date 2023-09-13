@@ -250,13 +250,13 @@ Previously, when a copied selection from a Microsoft Word document included comm
 
 [NOTE]
 .Known issue
-----
+====
 Microsoft Word comments are still set as footnotes when pasted into a {productname} instance if the host browser is Safari.
 
 When Safari is the host browser, and a copied selection from a Microsoft Word document includes comments, when that selection is pasted (⌘-V) into a {productname} instance, the included comment or comments are still set as footnotes in the {productname} document.
 
 Such footnotes can be manually deleted but there is currently no other workaround.
-----
+====
 
 ==== Removed error condition, error message, and error message translations for an error which no longer occurs
 // TINY-10045

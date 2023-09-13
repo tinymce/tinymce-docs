@@ -570,7 +570,7 @@ An inadvertent consequence of an earlier fix to this problem was that, in some s
 
 {productname} 6.7 address this and the `cleanEmptyNodes` function now preserves these nodes, as expected.
 
-=== If loading content CSS takes more than 500ms, the editor will be set to an *in progress* state until the CSS is ready
+=== If loading content CSS takes more than 500ms, the editor will be set to an in-progress state until the CSS is ready
 // TINY-10008
 
 If a {productname} configuration included a `contentEditable: 'true'` setting (or had no explicit global setting for `contentEditable`, and therefore defaulted this option to `'true'`) and the host browser was operating over a relatively slow connection, it was possible to add content to the editor before `ContentCss` finished loading.

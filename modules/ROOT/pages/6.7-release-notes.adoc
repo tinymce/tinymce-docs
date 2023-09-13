@@ -643,7 +643,7 @@ For information on the **Quickbars** plugin, see: xref:quickbars.adoc[Quickbars]
 === Creating lists in empty blocks sometimes, and incorrectly, converted adjacent block elements into list items
 // TINY-10136
 
-{productname} 6.4.1 included a fix for when xref:6.4.1-release-notes.adoc#_creating_a_list_in_a_table_cell_when_the_caret_is_in_front_of_an_anchor_element_would_not_properly_include_the_anchor_in_the_list[creating a list in a table cell when the insertion point is in front of an anchor element did not properly include the anchor in the list]. This fix included an adjustment to DOM hierarchy traversal.
+{productname} 6.4.1 included a fix for when xref:6.4.1-release-notes.adoc#creating-a-list-in-a-table-cell-when-the-caret-is-in-front-of-an-anchor-element-would-not-properly-include-the-anchor-in-the-list[creating a list in a table cell when the insertion point is in front of an anchor element did not properly include the anchor in the list]. This fix included an adjustment to DOM hierarchy traversal.
 
 In the earlier fix’s implementation, when advancing to the next leaf element in the hierarchy, the process did not take into account whether this leaf element was correctly nested under its parent. This occasionally led to it straying outside its intended parent. And, as a consequence, unexpected elements could be (and sometimes were) added to a list when a list was created.
 
@@ -817,7 +817,7 @@ In {productname} 6.7, when the *Enhanced Media Embed* is loaded, script tags are
 === In some circumstances, pressing the **Enter** key scrolled the entire page
 // TINY-9828
 
-{productname} 6.4.2 addressed an issue in which xref:6.4.2-release-notes.adoc#_selection_was_not_correctly_scrolled_horizontally_into_view_when_using_the_selection.scrollIntoView_API[a selection was not correctly scrolled horizontally into view].
+{productname} 6.4.2 addressed an issue in which xref:6.4.2-release-notes.adoc#selection-was-not-correctly-scrolled-horizontally-into-view-when-using-the-selection.scrollIntoView-API[a selection was not correctly scrolled horizontally into view].
 
 {productname} 6.7 includes changes to the previously applied logic to address a further issue, in which scrolling did not reach the correct position in some circumstances.
 

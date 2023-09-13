@@ -61,7 +61,7 @@ With this fix, the refresh API is now invoked, and the console no longer throws 
 ==== Editing the data before switching theme would mean a loss of edited data
 // TINY-10046
 
-Previously, If the **Advanced Code** dialog was opened, and data was added to the dialog's text entry, and then the *Dark/light mode* button was pressed, The plugin switched to the new theme using the data present when the dialog was opened.
+Previously, If the **Advanced Code** dialog was opened, and data was added to the dialog's text entry, and then the *Dark/light mode* button was pressed, the plugin switched to the new theme using the data present when the dialog was opened.
 
 This resulted in the loss of any entered data.
 

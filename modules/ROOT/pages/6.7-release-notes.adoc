@@ -756,7 +756,7 @@ After a drag-and-drop event, the Accordion component would be thus:
 </details>
 ----
 
-Note the duplicated `<summary>` class in the post-drag Accordion component.
+Note the duplicated `<summary>` in the post-drag Accordion component.
 
 To address this, {productname} 6.7 now unwraps block elements after they are dragged from within another block element.
 

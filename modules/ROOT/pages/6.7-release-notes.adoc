@@ -685,13 +685,13 @@ For more information on the **forced_root_block** option see xref:content-filter
 
 The previous implementation of the `iframe`-based dialog component wrapped the component inside two `<div>` elements.
 
-This was (and is) required for *Tab* key-based navigation through the dialog’s UI objects to remain within the dialog itself.
+This was (and is) required for *Tab* key based navigation through the dialog’s UI components to remain within the dialog itself.
 
 The intended result was for the two `<div>` elements, by default, to switch focus to the next UI object of the `iframe` component for each press of the *Tab* key.
 
-As initially implemented, however, only one of the wrapping `<div>` elements produced this functionality.
+As initially implemented, however, only one of the wrapping `<div>` elements provided this functionality.
 
-As a consequence, an additional, and redundant, pressing of the *Tab* key (or *Shift+Tab* keyboard chord if navigating backwards through the dialog) was required to navigate every addressable object within an `iframe`-based dialog component.
+As a consequence, an additional, and redundant, *Tab* key press (or *Shift+Tab* keyboard chord press, if navigating backwards through the dialog) was required to navigate every addressable component within an `iframe`-based dialog component.
 
 {productname} 6.7 includes a fix that addresses this. When navigating through an `iframe`-based dialog component using the *Tab* key, {productname} now skips over the elements that keep Tab-key–based navigation within the dialog but which do not present as focusable UI elements.
 

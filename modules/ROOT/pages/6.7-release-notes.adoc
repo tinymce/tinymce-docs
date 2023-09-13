@@ -531,7 +531,7 @@ tinymce.init({
   selector: "textarea",
   plugins: [ "help", ],
   toolbar: "help",
-	help_accessibility: true, // default value is set to true.
+  help_accessibility: true, // default value is set to true.
 });
 ----
 

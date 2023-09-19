@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### Unreleased
+
+- DOC-2189: added template files with instructions to `-new-material-templates/plugin-documentation-templates/ROOT/pages`. Also corrected markup typo in `modules/ROOT/pages/available-menu-items.adoc`.
+
 ### 2023-09-14
 
 - DOC-2008: cleanup and corrections in `changelog.md`; update version numbers string in `.api-version`.

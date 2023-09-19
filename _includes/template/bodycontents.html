@@ -85,6 +85,14 @@
         background-color: transparent;
     }
 
+    .notification-orange-bg {
+        background-color: orange;
+        color: #595959;
+        padding: 10px;
+        width: 850px;
+        margin-bottom: 10px;
+    }
+
     @media screen and (max-width: 1126px) {
         .modern-main {
             flex-direction: column;
@@ -97,6 +105,10 @@
 
         .modern-navigation {
             width: 100%;
+        }
+
+        .notification-orange-bg {
+            width: auto;
         }
     }
 
@@ -179,6 +191,9 @@
     </aside>
 
     <main class="modern-main-container">
+        <div>
+            <p class="notification-orange-bg"><strong>Note</strong>: placeholder for message</p>
+        </div>
         <div class="heading modern-heading">
             <h1 class="light">{{ page.title }}</h1>
             <h2 class="light">{{ page.description }}</h2>

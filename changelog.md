@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2191: updated both premium and non-premium full feature demo UI issues for both the menubar and toolbar when scrolling HTML/JS tab content.
 - DOC-2027: added `/modules/ROOT/partials/configuration/help_accessibility.adoc`, documenting the `help_accessibility` option; edits, re-writes and re-structuring of `help.adoc`; plus copy-edits to `keyboard-shortcuts.adoc`, `tinymce-and-screenreaders.adoc` & `accessibility.adoc`.
 - DOC-2176: Removed references to which commercial plans Premium plugins are or are not available with.
 - DOC-2175: Update CODEOWNERS automatic reviewers upon opening new DOC-PRs.

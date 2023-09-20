@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### Unreleased
+
+- DOC-2182: added file, `/modules/ROOT/partials/configuration/indent.adoc`, documenting the `indent` option. Added `include::` statement to `/modules/ROOT/pages/content-filtering.adoc` pointing to this file.
+
 ### 2023-09-14
 
 - DOC-2008: cleanup and corrections in `changelog.md`; update version numbers string in `.api-version`.

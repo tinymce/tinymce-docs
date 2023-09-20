@@ -48,7 +48,7 @@ const table2 = '<div> ' +
 
 const demoBaseConfig = {
   selector: 'textarea#classic',
-  width: 755,
+  width: "100%",
   height: 500,
   resize: false,
   autosave_ask_before_unload: false,

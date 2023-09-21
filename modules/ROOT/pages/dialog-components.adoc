@@ -446,6 +446,27 @@ A *listbox* is a composite component with a label and a dropdown list of options
 }
 ----
 
+[[picker_text]]
+=== picker_text
+
+////
+The optional picker_text property specifies a tooltip for the file picker button, which appears when file_picker_callback is configured. If picker_text is not specified, the tooltip for the button defaults to the label property.
+////
+
+
+////
+The image and link dialog can be configured to show a button next to the url input which is used to "browse" . This is as ambiguous as it sounds because depending on the config, different things can happen. For example, it can launch the system file browser, or Tiny Drive or do anything else the developer likes it to do.
+
+The issue here is that we do not enable the developer to configure the title attribute, which makes the tooltip and accessible name quite confusing. For images it just says "source", and for links "url". That doesn't make it very clear for an end-user what to expect when pushing it.
+
+The outcome of this improvement is to make the tooltip/accessible name make sense to an end-user.
+////
+
+
+[source,js]
+----
+----
+
 [[selectbox]]
 === selectbox
 

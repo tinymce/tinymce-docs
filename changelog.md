@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### Unreleased
+
+- DOC-2194: added file, `6.7.2-release-notes.adoc` to project; added 6.7.2-specific outline to file; edited known issue entry in `6.7-release-notes.adoc` addressed in the 6.7.2 release.; added 6.7.2-specific entries to `nav.adoc`.
+
 ### 2023-09-14
 
 - DOC-2008: cleanup and corrections in `changelog.md`; update version numbers string in `.api-version`.

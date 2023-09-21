@@ -446,23 +446,6 @@ A *listbox* is a composite component with a label and a dropdown list of options
 }
 ----
 
-[[picker_text]]
-=== picker_text
-
-////
-The optional picker_text property specifies a tooltip for the file picker button, which appears when file_picker_callback is configured. If picker_text is not specified, the tooltip for the button defaults to the label property.
-////
-
-
-////
-The image and link dialog can be configured to show a button next to the url input which is used to "browse" . This is as ambiguous as it sounds because depending on the config, different things can happen. For example, it can launch the system file browser, or Tiny Drive or do anything else the developer likes it to do.
-
-The issue here is that we do not enable the developer to configure the title attribute, which makes the tooltip and accessible name quite confusing. For images it just says "source", and for links "url". That doesn't make it very clear for an end-user what to expect when pushing it.
-
-The outcome of this improvement is to make the tooltip/accessible name make sense to an end-user.
-////
-
-
 [source,js]
 ----
 ----
@@ -690,23 +673,67 @@ A *urlinput* is a specialized composite component for URL input or file upload. 
 
 NOTE: The filepicker button will only appear if xref:file-image-upload.adoc#file_picker_callback[`+file_picker_callback+`] is configured.
 
-*Events:* Interacting with a *selectbox* component will fire the `+onChange+` function in the dialog's configuration *when the user clicks away from the component*.
+*Events:* Interacting with a *selectbox* component will fire the `+onChange+` function in the dialog’s configuration *when the user clicks away from the component*.
 
 [cols="1,1,1,3",options="header"]
 |===
 |Name |Type |Requirement |Description
-|type |`+'urlinput'+` |required |The component type. Must be `+'urlinput'+`.
-|name |string |required |A identifier for the urlinput.
-|label |string |optional |String to use for the label.
-|filetype |`+'file'+` or `+'image'+` or `+'media'+` |optional |default: `+'file'+` - Restrict the types of files that can be uploaded using the filepicker. `+file+` allows anything, including document links. *Requires `+file_picker_callback+` to be configured.*
-|enabled |boolean |optional |default: `+true+` - Whether the component should initially be disabled.
+
+|type
+|`+'urlinput'+`
+|required
+|The component type. Must be `+'urlinput'+`.
+
+|name
+|string
+|required
+|An identifier for the urlinput.
+
+|label
+|string
+|optional
+|String to use for the label.
+
+|filetype
+|`+'file'+` or
+
+`+'image'+` or
+
+`+'media'+`
+
+|optional
+|Default value: `+'file'+`.
+
+Restrict the types of files that can be uploaded using the filepicker.
+
+The default value — `+file+` — allows anything, including document links.
+
+This option *requires* `+file_picker_callback+` to be configured.
+
+|enabled
+|boolean
+|optional
+|default: `+true+`
+
+Whether the component should initially be disabled.
+
+|picker_text
+|string
+|optional
+|Sets an alternative tooltip for the file picker button.
+
+If `picker_text` is not specified, the tooltip defaults to the value provided by the `label` property.
+
+The `label` property supplies one of two default values for the tooltip: *Browse files* or *Browse links*.
+
+This option *requires* `+file_picker_callback+` to be configured.
 |===
 
 ==== urlinput examples
 
 *urlinput for links*
 
-The filepicker will accept any file type and the typeahead will include 5 previously entered URLs plus all anchor targets and headings in the document.
+The filepicker will accept any file type; the typeahead will include 5 previously entered URLs plus all anchor targets and headings in the document; and the file picker button will have a custom tooltip..
 
 [source,js]
 ----
@@ -716,6 +743,7 @@ The filepicker will accept any file type and the typeahead will include 5 previo
   filetype: 'file', // allow any file types
   label: 'Url', // text for component label
   enabled: false // enabled state
+  picker_text: 'Find local files', // set a custom tooltip for the filepicker button
 }
 ----
 

@@ -6,7 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
-- DOC-2177: Added documentation of the `picker_text` property for the `urlinput` dialog component to `dialog-components.adoc`.
+- DOC-2177: Added documentation of the `picker_text` property to the `urlinput` dialog component of `dialog-components.adoc`.
 
 ### 2023-09-14
 

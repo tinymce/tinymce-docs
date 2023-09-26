@@ -100,7 +100,7 @@ tinymce.init({
   quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
   noneditable_class: 'mceNonEditable',
   toolbar_mode: 'sliding',
-  spellchecker_ignore_list: ['Ephox', 'Moxiecode', 'tinymce', 'TinyMCE', 'tm', 'TM'], // ‘tm’ and ‘TM’ are temporary spellchecker bug workarounds
+  spellchecker_ignore_list: ['Ephox', 'Moxiecode', 'tinymce', 'TinyMCE'],
   tinycomments_mode: 'embedded',
   content_style: '.mymention{ color: gray; }',
   contextmenu: 'link image editimage table configurepermanentpen',

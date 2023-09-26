@@ -4,6 +4,10 @@ Changes to the TinyMCE documentation are documented in this file.
 
 The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
+### Unreleased
+
+- DOC-2075: remove `tinymcespellchecker` configuration workaround from full-featured-demo with Premium plugins examples: `/modules/ROOT/examples/live-demos/full-featured/example.js` and `/modules/ROOT/examples/live-demos/full-featured/index.js`.
+
 ### 2023-09-14
 
 - DOC-2008: cleanup and corrections in `changelog.md`; update version numbers string in `.api-version`.

@@ -742,7 +742,7 @@ The filepicker will accept any file type; the typeahead will include 5 previousl
   name: 'url', // identifier
   filetype: 'file', // allow any file types
   label: 'Url', // text for component label
-  enabled: false // enabled state
+  enabled: false, // enabled state
   picker_text: 'Find local files', // set a custom tooltip for the filepicker button
 }
 ----

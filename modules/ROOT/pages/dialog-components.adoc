@@ -724,7 +724,6 @@ Whether the component should initially be disabled.
 
 If `picker_text` is not specified, the tooltip defaults to the value provided by the `label` property.
 
-The `label` property supplies one of two default values for the tooltip: *Browse files* or *Browse links*.
 
 This option *requires* `+file_picker_callback+` to be configured.
 |===

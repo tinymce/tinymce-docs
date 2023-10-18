@@ -6,15 +6,26 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2192: added 6.7.2-specific entries to `changelog.adoc`.
+
+### 2023-10-04
+
+- DOC-2197: Fix broken formatting and update api version.
+
+### 2023-09-20
+
 - DOC-2191: updated both premium, non-premium and classic-mode feature demo UI issues.
+
+### 2023-09-12
+
 - DOC-2027: added `/modules/ROOT/partials/configuration/help_accessibility.adoc`, documenting the `help_accessibility` option; edits, re-writes and re-structuring of `help.adoc`; plus copy-edits to `keyboard-shortcuts.adoc`, `tinymce-and-screenreaders.adoc` & `accessibility.adoc`.
 - DOC-2176: Removed references to which commercial plans Premium plugins are or are not available with.
-- DOC-2175: Update CODEOWNERS automatic reviewers upon opening new DOC-PRs.
-- DOC-2173: updated the default value code sample in `ai_shortcuts.adoc` to match the updated values included in the AI Assistant. Also re-wrote the **Note** admonition to call-out the absence of any translations or alternative language versions of these default values.
 
 ### 2023-09-04
 
+- DOC-2175: Update CODEOWNERS automatic reviewers upon opening new DOC-PRs.
 - DOC-2167: edited toolbar configurations in both the open-source–only and Premium-plugins–included full-featured demos; also added the Accordion plugin and toolbar items to the open-source–only full-featured demo.
+- DOC-2173: updated the default value code sample in `ai_shortcuts.adoc` to match the updated values included in the AI Assistant. Also re-wrote the **Note** admonition to call-out the absence of any translations or alternative language versions of these default values.
 
 ### Unreleased
 

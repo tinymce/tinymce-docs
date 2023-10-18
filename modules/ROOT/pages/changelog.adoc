@@ -4,6 +4,14 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+
+== 6.7.2 - 2023-10-25
+
+=== Fixed
+* Removed use of `async` for editor rendering which caused visual blinking when reloading the editor in-place.
+* Toggling a list that contains an LI element having another list as its first child would remove the remaining content within that LI element.
+* Applying heading formatting to the content of the summary element extended its application to the content of the parent details element.
+
 == 6.7.0 - 2023-08-30
 
 === Added

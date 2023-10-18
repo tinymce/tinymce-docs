@@ -1,10 +1,9 @@
-[IMPORTANT]
-{productname} 5 reached end of support on April 20th, 2023. No more bug fixes, security updates, or new features will be introduced to {productname} 5.
-To ensure you are running the most secure, up-to-date version, upgrade to {productname} 6 or sign up for {productname} 5 Long Term Support (LTS) (available in late 2023).
-
 = Upgrading TinyMCE
 :navtitle: Upgrading TinyMCE
 :description: How to upgrade TinyMCE via Tiny Cloud, package manager options, and Self-hosted options.
 :keywords: npm, bower, composer, nuget, update, updating, upgrade, upgrading
+
+[IMPORTANT]
+https://www.tiny.cloud/long-term-support/[Learn more about TinyMCE 5 LTS] if you need to remain on TinyMCE 5 and continue to receive security updates.
 
 include::partial$install/upgrading-info.adoc[]

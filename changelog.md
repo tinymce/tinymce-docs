@@ -6,7 +6,9 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+
 - DOC-2194: added file, `6.7.2-release-notes.adoc` to project; added 6.7.2-specific outline to file; edited known issue entry in `6.7-release-notes.adoc` addressed in the 6.7.2 release.; added 6.7.2-specific entries to `nav.adoc`.
+- DOC-2177: Added documentation of the `picker_text` property to the `urlinput` dialog component of `dialog-components.adoc`.
 
 ### 2023-09-14
 

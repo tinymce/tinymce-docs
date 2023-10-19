@@ -1,0 +1,57 @@
+name: Staging > Legacy Tiny 5 Docs
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '**'
+    branches:
+      - 'develop'
+
+env:
+  JEKYLL_ENV: production
+
+jobs:
+  build:
+    name: Build Docs and Deploy
+    runs-on: ubuntu-18.04
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - uses: actions/setup-node@v2
+      with:
+        node-version: 14
+
+    - uses: ruby/setup-ruby@v1
+      env:
+        BUNDLE_DEPLOYMENT: true
+      with:
+        ruby-version: 2.6
+        bundler-cache: true
+
+    - name: (Staging - Legacy Docs 5) Install moxiedoc
+      run: npm i -g ephox/moxiedoc#feature/tinymcenext
+
+    - name: (Staging - Legacy Docs 5) Build API References
+      run: _scripts/api-reference.sh
+
+    - name: (Staging - Legacy Docs 5) Build Website
+      run: _scripts/build.sh
+
+    - name: (deploy) Prepare files
+      run: _scripts/deploy-staging.sh
+
+    - name: (deploy) Upload to S3
+      run: aws s3 sync --acl=public-read --delete ./_site s3://tiny-cloud-docs-staging/docs
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_LEGACY_AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_LEGACY_AWS_SECRET_ACCESS_KEY }}
+        AWS_EC2_METADATA_DISABLED: true
+
+    - name: (deploy) Invalidate Cache
+      run: aws cloudfront create-invalidation --distribution-id E7DUUPEI08HNW --paths "/docs/*"
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_LEGACY_AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_LEGACY_AWS_SECRET_ACCESS_KEY }}
+        AWS_EC2_METADATA_DISABLED: true

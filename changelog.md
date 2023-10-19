@@ -6,18 +6,25 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+### 2023-10-19
+
+- DOC-2185: added `6.7.1-release-notes.adoc` to project; updated `changelog.adoc`, `nav.adoc` and `release-notes.adoc` for the TinyMCE 6.7.1 release.
 - DOC-2191: updated both premium, non-premium and classic-mode feature demo UI issues.
 - DOC-2027: added `/modules/ROOT/partials/configuration/help_accessibility.adoc`, documenting the `help_accessibility` option; edits, re-writes and re-structuring of `help.adoc`; plus copy-edits to `keyboard-shortcuts.adoc`, `tinymce-and-screenreaders.adoc` & `accessibility.adoc`.
 - DOC-2176: Removed references to which commercial plans Premium plugins are or are not available with.
 - DOC-2175: Update CODEOWNERS automatic reviewers upon opening new DOC-PRs.
 - DOC-2173: updated the default value code sample in `ai_shortcuts.adoc` to match the updated values included in the AI Assistant. Also re-wrote the **Note** admonition to call-out the absence of any translations or alternative language versions of these default values.
 
-### 2023-09-04
+### 2023-09-14
 
-- DOC-2167: edited toolbar configurations in both the open-source–only and Premium-plugins–included full-featured demos; also added the Accordion plugin and toolbar items to the open-source–only full-featured demo.
+- DOC-2008: cleanup and corrections in `changelog.md`; update version numbers string in `.api-version`.
 
-### Unreleased
+### 2023-09-13
 
+- DOC-2027: added `/modules/ROOT/partials/configuration/help_accessibility.adoc`, documenting the `help_accessibility` option; edits, re-writes and re-structuring of `help.adoc`; plus copy-edits to `keyboard-shortcuts.adoc`, `tinymce-and-screenreaders.adoc` & `accessibility.adoc`.
+- DOC-2176: Removed references to which commercial plans Premium plugins are or are not available with.
+- DOC-2175: Update CODEOWNERS automatic reviewers upon opening new DOC-PRs.
+- DOC-2173: updated the default value code sample in `ai_shortcuts.adoc` to match the updated values included in the AI Assistant. Also re-wrote the **Note** admonition to call-out the absence of any translations or alternative language versions of these default values.
 - DOC-2171: fix documentation entry for TINY-9860 in the 6.7 Release Notes.
 - DOC-2171: Entry for TINY-9776, *PowerPaste prevented uploaded images from using their original file-name*, added to PowerPaste section of `6.7-release-notes.adoc`.
 - DOC-2171: Entry for TINY-9891, *The Footnotes toolbar button and menu item are now disabled when the selection is not editable*, and TINY-9891, *Calling the `mceInsertFootnote` command now does nothing when the selection is non-editable*, added to Footnotes section of `6.7-release-notes.adoc`.
@@ -62,6 +69,10 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 - DOC-2171: fix documentation entry for TINY-9827 in the 6.7 Release Notes.
 - DOC-2171: fix documentation entry for TINY-10126 in the 6.7 Release Notes.
 - DOC-2171: fix documentation entry for TINY-10123 in the 6.7 Release Notes.
+
+### 2023-09-04
+
+- DOC-2167: edited toolbar configurations in both the open-source–only and Premium-plugins–included full-featured demos; also added the Accordion plugin and toolbar items to the open-source–only full-featured demo.
 
 ### 2023-08-30
 

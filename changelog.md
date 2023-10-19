@@ -8,6 +8,13 @@ class: changelog
 
 > This is the {{site.productname}} Community version changelog. For information about the latest {{site.cloudname}} or {{site.enterpriseversion}} Release, see: [{{site.productname}} Release Notes]({{site.baseurl}}/release-notes/).
 
+## 5.10.8 - 2023-10-19
+
+### Fixed
+- Specific HTML content caused mXSS when using undo/redo.
+- Specific HTML content caused mXSS when using the `getContent` and `setContent` APIs with the `format: 'raw'` option, which also affected the `resetContent` API and the draft restoration feature of the Autosave plugin.
+- Notification messages containing HTML were not properly XSS sanitized before being displayed.
+
 ## 5.10.7 - 2022-12-06
 
 ### Fixed

@@ -36,7 +36,7 @@ This vulnerability also impacts these related TinyMCE APIs and plugins:
 
 This vulnerability has been patched in {productname} 6.7.1 by ensuring HTML is trimmed using node-level manipulation instead of string manipulation.
 
-CVE: Pending.
+https://www.cve.org/CVERecord?id=CVE-2023-45818[CVE-2023-45818]
 
 GHSA: https://github.com/tinymce/tinymce/security/advisories/GHSA-v65r-p3vv-jjfv[GitHub Advisory].
 
@@ -52,7 +52,7 @@ When a notification was opened, the HTML within the text argument was displayed 
 
 This vulnerability has been patched in {productname} 6.7.1 by ensuring that the HTML displayed in the notification is sanitized, preventing the exploit.
 
-CVE: Pending.
+https://www.cve.org/CVERecord?id=CVE-2023-45819[CVE-2023-45819]
 
 GHSA: https://github.com/tinymce/tinymce/security/advisories/GHSA-hgqx-r2hp-jr38[GitHub Advisory].
 

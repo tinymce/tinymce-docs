@@ -6,6 +6,9 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+### 2023-10-20
+
+- DOC-2200: Add CVE numbers and links to `6.7.1` release notes.
 
 ### 2023-10-19
 

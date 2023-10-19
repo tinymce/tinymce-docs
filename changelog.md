@@ -6,8 +6,10 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+
 ### 2023-10-19
 
+- DOC-2198: add 5x LTS important banner to the top of upgrading.adoc."
 - DOC-2185: added `6.7.1-release-notes.adoc` to project; updated `changelog.adoc`, `nav.adoc` and `release-notes.adoc` for the TinyMCE 6.7.1 release.
 - DOC-2191: updated both premium, non-premium and classic-mode feature demo UI issues.
 - DOC-2027: added `/modules/ROOT/partials/configuration/help_accessibility.adoc`, documenting the `help_accessibility` option; edits, re-writes and re-structuring of `help.adoc`; plus copy-edits to `keyboard-shortcuts.adoc`, `tinymce-and-screenreaders.adoc` & `accessibility.adoc`.

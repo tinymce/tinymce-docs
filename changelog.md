@@ -7,6 +7,26 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### Unreleased
 
 - DOC-2075: remove `tinymcespellchecker` configuration workaround from full-featured-demo with Premium plugins examples: `/modules/ROOT/examples/live-demos/full-featured/example.js` and `/modules/ROOT/examples/live-demos/full-featured/index.js`.
+- DOC-2182: added file, `/modules/ROOT/partials/configuration/indent.adoc`, documenting the `indent` option. Added `include::` statement to `/modules/ROOT/pages/content-filtering.adoc` pointing to this file.
+- DOC-2189: added template files with instructions to `-new-material-templates/plugin-documentation-templates/ROOT/pages`. Added further boilerplate — a generic version-required include statement — and instructions regarding this boilerplate to `pluginpage.adoc`. Added new template file-and-folder infrastructure, `/-new-material-templates/configuration-options-templates`. Added boilerplate and documentation to the files in this new infrastructure. Also corrected markup typo in `modules/ROOT/pages/available-menu-items.adoc`.
+- DOC-2177: Added documentation of the `picker_text` property to the `urlinput` dialog component of `dialog-components.adoc`.
+
+### 2023-10-20
+
+- DOC-2200: Add CVE numbers and links to `6.7.1` release notes.
+
+### 2023-10-19
+
+- DOC-2198: add 5x LTS important banner to the top of upgrading.adoc."
+- DOC-2185: added `6.7.1-release-notes.adoc` to project; updated `changelog.adoc`, `nav.adoc` and `release-notes.adoc` for the TinyMCE 6.7.1 release.
+
+### 2023-09-20
+
+- DOC-2191: updated both premium, non-premium and classic-mode feature demo UI issues.
+
+### 2023-09-17
+
+- DOC-2088: typos and other correction post-6.7 docs enterprise release.
 
 ### 2023-09-14
 
@@ -14,6 +34,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### 2023-09-13
 
+- DOC-2171: the TinyMCE 6.7 release notes plus 6.7-specific changes to the TinyMCE documentation.
 - DOC-2027: added `/modules/ROOT/partials/configuration/help_accessibility.adoc`, documenting the `help_accessibility` option; edits, re-writes and re-structuring of `help.adoc`; plus copy-edits to `keyboard-shortcuts.adoc`, `tinymce-and-screenreaders.adoc` & `accessibility.adoc`.
 - DOC-2176: Removed references to which commercial plans Premium plugins are or are not available with.
 - DOC-2175: Update CODEOWNERS automatic reviewers upon opening new DOC-PRs.

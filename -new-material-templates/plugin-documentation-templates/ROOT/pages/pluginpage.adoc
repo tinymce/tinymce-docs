@@ -19,6 +19,9 @@
 // Remove the line below (and this comment) for open source plugins
 include::partial$misc/admon-premium-plugin.adoc[]
 
+// Edit the line below to add the correct requires-<versionnumber> file from `/partials/misc`.
+include::partial$misc/admon-requires-<versionnumber>v.adoc
+
 // Add an introduction. What does the plugin do? Why would I use this plugin? Keep it concise.
 
 == Interactive example

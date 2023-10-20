@@ -1,0 +1,59 @@
+= TinyMCE 6.7.1
+:navtitle: TinyMCE 6.7.1
+:description: Release notes for TinyMCE 6.7.1
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+[[overview]]
+== Overview
+
+{productname} 6.7.1 was released for {enterpriseversion} and {cloudname} on Thursday, October 19^th^, 2023. These release notes provide an overview of the changes for {productname} 6.7.1, including:
+
+* xref:security-fixes[Security fixes]
+
+
+[[security-fixes]]
+== Security fixes
+
+{productname} 6.7.1 includes a fix for the following security issue:
+
+=== Specific HTML content caused mXSS when using undo/redo, the `getContent` API with the `format: 'raw'` option, the `resetContent` API, and the Autosave plugin
+//#TINY-10180
+
+A https://researchgate.net/publication/266654651_mXSS_attacks_Attacking_well-secured_web-applications_by_using_innerHTML_mutations[mutation cross-site scripting] (mXSS) vulnerability was discovered in {productname}’s core undo and redo functionality.
+
+When a carefully-crafted HTML snippet passes the XSS sanitization layer, it is manipulated as a string by internal trimming functions before being stored in the undo stack.
+
+If the HTML snippet was restored from the undo stack, the combination of the string manipulation and reparative parsing by the browser's native https://developer.mozilla.org/en-US/docs/Web/API/DOMParser[DomParser API] mutates the HTML maliciously, allowing an XSS payload to be executed.
+
+This vulnerability also impacts these related TinyMCE APIs and plugins:
+
+* xref:apis/tinymce.editor.adoc#getContent[`tinymce.Editor.getContent({ format: 'raw' })`].
+* xref:apis/tinymce.editor.adoc#resetContent[`tinymce.Editor.resetContent()`].
+* xref:autosave.adoc[Autosave] open source plugin.
+
+This vulnerability has been patched in {productname} 6.7.1 by ensuring HTML is trimmed using node-level manipulation instead of string manipulation.
+
+https://www.cve.org/CVERecord?id=CVE-2023-45818[CVE-2023-45818]
+
+GHSA: https://github.com/tinymce/tinymce/security/advisories/GHSA-v65r-p3vv-jjfv[GitHub Advisory].
+
+NOTE: Tiny Technologies would like to thank Masato Kinugawa of https://cure53.de/[Cure53] for discovering this vulnerability.
+
+
+### Notification messages containing HTML were not properly XSS sanitized before being displayed.
+//#TINY-10286
+
+A https://owasp.org/www-community/attacks/xss/[cross-site scripting] (XSS) vulnerability was discovered in {productname}'s Notification Manager API. The vulnerability exploits {productname}'s unfiltered notification system, which is used in error handling. The conditions for this exploit requires carefully crafted malicious content to have been inserted into the editor and a notification to have been triggered.
+
+When a notification was opened, the HTML within the text argument was displayed unfiltered in the notification. The vulnerability allowed arbitrary JavaScript execution when an notification presented in the {productname} UI for the current user. This issue could also be exploited by any integration which uses a {productname} notification to display unfiltered HTML content.
+
+This vulnerability has been patched in {productname} 6.7.1 by ensuring that the HTML displayed in the notification is sanitized, preventing the exploit.
+
+https://www.cve.org/CVERecord?id=CVE-2023-45819[CVE-2023-45819]
+
+GHSA: https://github.com/tinymce/tinymce/security/advisories/GHSA-hgqx-r2hp-jr38[GitHub Advisory].
+
+NOTE: Tiny Technologies would like to thank https://github.com/philipsinnott/[Phillp Sinnott] and https://github.com/mikkorantalainen/[Mikko Rantalainen] for discovering this vulnerability.

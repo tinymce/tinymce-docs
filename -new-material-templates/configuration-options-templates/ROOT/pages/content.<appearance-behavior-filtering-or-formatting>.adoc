@@ -1,0 +1,43 @@
+// *New configuration options in the TinyMCE core*
+//
+// Configuration options are generally added to the documentation as
+// part of documenting a new plugin.
+//
+// Occasionally, however, a new configuration option is added to the
+// TinyMCE core.
+//
+// In such a case, a new partial file
+// 
+// <configuration_option>.adoc
+// 
+// (containing the configuration option documentation) is added to
+//
+// /modules/ROOT/partials/configuration/
+//
+//
+//
+//
+//
+// *Where the option appears in the docs*
+//
+// The include statement that places the partial file into the docs
+// proper is added to one of four extant files:
+// 
+// 1. /modules/ROOT/pages/content-appearance.adoc
+// 2. /modules/ROOT/pages/content-behavior-options.adoc
+// 3. /modules/ROOT/pages/content-filtering.adoc
+// 4. /modules/ROOT/pages/content-formatting.adoc
+//
+// Which of these four depends on the configuration option’s properties.
+// 
+// This is an editorial/engineering decision.
+//
+// With the decision made
+//
+// 1. Replace <configuration_option> with the option’s name in the
+//    include:: statement, below
+// 2. Copy the edited include:: statement.
+// 3. Paste the statement into the chosen file in alphabetical order
+//    by <configuration_option>.
+
+include::partial$configuration/<configuration_option>.adoc[]

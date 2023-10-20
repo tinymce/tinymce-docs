@@ -8,12 +8,30 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 - DOC-2177: Added documentation of the `picker_text` property to the `urlinput` dialog component of `dialog-components.adoc`.
 
+### 2023-10-20
+
+- DOC-2200: Add CVE numbers and links to `6.7.1` release notes.
+
+### 2023-10-19
+
+- DOC-2198: add 5x LTS important banner to the top of upgrading.adoc."
+- DOC-2185: added `6.7.1-release-notes.adoc` to project; updated `changelog.adoc`, `nav.adoc` and `release-notes.adoc` for the TinyMCE 6.7.1 release.
+
+### 2023-09-20
+
+- DOC-2191: updated both premium, non-premium and classic-mode feature demo UI issues.
+
+### 2023-09-17
+
+- DOC-2088: typos and other correction post-6.7 docs enterprise release.
+
 ### 2023-09-14
 
 - DOC-2008: cleanup and corrections in `changelog.md`; update version numbers string in `.api-version`.
 
 ### 2023-09-13
 
+- DOC-2171: the TinyMCE 6.7 release notes plus 6.7-specific changes to the TinyMCE documentation.
 - DOC-2027: added `/modules/ROOT/partials/configuration/help_accessibility.adoc`, documenting the `help_accessibility` option; edits, re-writes and re-structuring of `help.adoc`; plus copy-edits to `keyboard-shortcuts.adoc`, `tinymce-and-screenreaders.adoc` & `accessibility.adoc`.
 - DOC-2176: Removed references to which commercial plans Premium plugins are or are not available with.
 - DOC-2175: Update CODEOWNERS automatic reviewers upon opening new DOC-PRs.

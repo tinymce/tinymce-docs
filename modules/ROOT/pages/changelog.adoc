@@ -9,11 +9,15 @@ NOTE: This is the {productname} Community version changelog. For information abo
 
 === Fixed
 * Applying heading formatting to the content of the `summary` element extended its application to the content of the parent `details` element.
-// TINY-10154
+//TINY-10154
+* The function `getModifierState` did not work on events passed through the editor as expected.
+//TINY-10263
+* List items containing a nested list between two text caused some list operations to fail.
+//TINY-10268
 * css loading in `toolbardrawertoggletest` flickering.
-// TINY-10249
+//TINY-10249
 * Toggling a list that contained a list item element — `<li>` — which, in turn, contained another list item element as its first child, removed other content within the first list item element.
-// TINY-10213
+//TINY-10213
 * If multiple inline formatting options were set at the insertion point, turning any one of these options off turned all the set options off.
 //TINY-10132
 == 6.7.0 - 2023-08-30

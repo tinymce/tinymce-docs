@@ -4,6 +4,14 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+
+== 6.7.1 - 2023-10-19
+
+=== Fixed
+* Specific HTML content caused mXSS when using undo/redo.
+* Specific HTML content caused mXSS when using the `getContent` and `setContent` APIs with the `format: 'raw'` option, which also affected the `resetContent` API and the draft restoration feature of the Autosave plugin.
+* Notification messages containing HTML were not properly XSS sanitized before being displayed.
+
 == 6.7.0 - 2023-08-30
 
 === Added

@@ -54,8 +54,13 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === css loading in `toolbardrawertoggletest` flickering.
 // TINY-10249
 
-// CCFR
+Previously, when a {productname} editor instance would load the content CSS for the `toolbardrawertoggletest` It would cause a noticeable flicker to the editor's UI.
 
+As a result, the CSS would take a few milliseconds to load, resulting in the UI flicker during a editor refresh.
+
+{productname} 6.7.2 addresses this, by adding a fix that now allows the render function to load the CSS in parallel with other necessary actions for displaying the editor.
+
+As a result, the editor no longer renders the flicker previously displayed when the editor is refreshed.
 
 === Toggling a list that contained a list item element — `<li>` — which, in turn, contained another list item element as its first child, removed other content within the first list item element.
 // TINY-10213

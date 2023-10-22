@@ -59,7 +59,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Toggling a list that contained a list item element — `<li>` — which, in turn, contained another list item element as its first child, removed other content within the first list item element.
 // TINY-10213
-Previously, when a user attempted to indent or outdent an element nested within a list, the list was converted into a model which resulted in it being recreated from that model.
+When a user attempted to indent or outdent a list element inside a nested list, the list was converted into a model which resulted in it being recreated from that model.
 
 As a consequence of this, the model would not handle comments at the `<li>` element level, which resulted in content deletion of comments nested within `<li>` structures like:
 

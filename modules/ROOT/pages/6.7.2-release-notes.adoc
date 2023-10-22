@@ -61,7 +61,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 // TINY-10213
 When a user attempted to indent or outdent a list element inside a nested list, the list was converted into a model which resulted in it being recreated from that model.
 
-As a consequence of this, the model would not handle comments at the `<li>` element level, which resulted in content deletion of comments nested within `<li>` structures like:
+As a consequence of this, the model would not handle a list and a not-list items inside a `<li>` element, which resulted in content deletion of the not-list item inside the `<li>` structures like:
 
 [source, html]
 ----

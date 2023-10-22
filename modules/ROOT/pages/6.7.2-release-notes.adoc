@@ -54,9 +54,9 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === css loading in `toolbardrawertoggletest` flickering.
 // TINY-10249
 
-Previously, when a {productname} editor instance would load the content CSS for the `toolbardrawertoggletest` It would cause a noticeable flicker to the editor's UI.
+Unlike {productname} version 5, when a {productname} version 6 editor instance was loaded it asynchronously waited for the editor styles and content to load.
 
-As a result, the CSS would take a few milliseconds to load, resulting in the UI flicker during a editor refresh.
+As a result the browser was able to render a partially complete editor, resulting in UI flicker if an editor was reloaded.
 
 {productname} 6.7.2 addresses this, by adding a fix that now allows the render function to load the CSS in parallel with other necessary actions for displaying the editor.
 

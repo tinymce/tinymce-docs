@@ -14,7 +14,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 //TINY-10263
 * List items containing a nested list between two text caused some list operations to fail.
 //TINY-10268
-* css loading in `toolbardrawertoggletest` flickering.
+* Removed use of async for editor rendering which caused visual blinking when reloading the editor in-place.
 //TINY-10249
 * Toggling a list that contained a list item element — `<li>` — which, in turn, contained another list item element as its first child, removed other content within the first list item element.
 //TINY-10213

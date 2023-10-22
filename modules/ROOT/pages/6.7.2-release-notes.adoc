@@ -73,7 +73,7 @@ As a consequence of this, the model would not handle a list and a not-list items
 
 In addition, when the editor would try to manage comments at the `<li>` element level, a console error would be thrown resulting in all other elements being ignored.
 
-{productname} 6.7.2 addresses this issue, now, our model correctly manages comments and other elements when they are preceded from a list, and the error is no longer present.
+{productname} 6.7.2 addresses this issue, now, our model correctly manages comments and other elements when they are preceded from a list inside an `li`, and the errors are no longer present.
 
 === If multiple inline formatting options were set at the insertion point, turning any one of these options off turned all the set options off.
 //TINY-10132

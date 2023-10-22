@@ -58,7 +58,7 @@ Unlike {productname} version 5, when a {productname} version 6 editor instance w
 
 As a result the browser was able to render a partially complete editor, resulting in UI flicker if an editor was reloaded.
 
-{productname} 6.7.2 addresses this, by adding a fix that now allows the render function to load the CSS in parallel with other necessary actions for displaying the editor.
+{productname} 6.7.2 addresses this, by once again blocking the render function from loading the CSS in parallel with other actions necessary for displaying the editor.
 
 As a result, the editor no longer renders the flicker previously displayed when the editor is refreshed.
 

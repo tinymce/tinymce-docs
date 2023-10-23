@@ -11,7 +11,6 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Applying heading formatting to the content of the `summary` element extended its application to the content of the parent `details` element.
 * The function `getModifierState` did not work on events passed through the editor as expected.
 * List items containing a nested list between two text caused some list operations to fail.
-//TINY-10268
 * Removed use of async for editor rendering which caused visual blinking when reloading the editor in-place.
 //TINY-10249
 * Toggling a list that contained a list item element — `<li>` — which, in turn, contained another list item element as its first child, removed other content within the first list item element.

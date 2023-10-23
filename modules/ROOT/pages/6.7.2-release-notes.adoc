@@ -37,7 +37,13 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === Applying heading formatting to the content of the `summary` element extended its application to the content of the parent `details` element.
 // TINY-10154
 
-// CCFR
+In previous versions of {productname}, the accordion summary was not functioning as expected.
+
+As a consequence, a structural inconsistency was identified in the editor schema, where heading elements were erroneously considered **invalid** children of a `<summary>` node and any attempts to apply heading formatting to content within the `<summary>` proved unsuccessful.
+
+{productname} 6.7.2 addresses this issue, now, the editor schema permits heading elements as **valid** children of the summary element.
+
+As a result, the `<summary>` element now accommodates phrasing content or a single heading element as expected.
 
 === The function `getModifierState` did not work on events passed through the editor as expected.
 // TINY-10263

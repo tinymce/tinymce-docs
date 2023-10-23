@@ -12,7 +12,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * The function `getModifierState` did not work on events passed through the editor as expected.
 * List items containing a nested list between two text caused some list operations to fail.
 * Removed use of async for editor rendering which caused visual blinking when reloading the editor in-place.
-* Toggling a list that contained a list item element — `<li>` — which, in turn, contained another list item element as its first child, removed other content within the first list item element.
+* Indenting or outdenting a list item that contained non list item siblings after it would result in those siblings being removed.
 * If multiple inline formatting options were set at the insertion point, turning any one of these options off turned all the set options off.
 
 == 6.7.1 - 2023-10-19

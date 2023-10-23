@@ -37,7 +37,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === Applying heading formatting to the content of the `summary` element extended its application to the content of the parent `details` element.
 // TINY-10154
 
-In previous versions of {productname}, the accordion summary wrapper was not functioning as expected.
+In previous versions of {productname}, the accordion summary was not functioning as expected.
 
 As a consequence, a structural inconsistency was identified in the editor schema, where heading elements were erroneously considered **invalid** children of a `<summary>` node and any attempts to apply heading formatting to content within the `<summary>` proved unsuccessful.
 

@@ -45,7 +45,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 // CCFR
 
 
-=== List items containing a nested list between two text caused some list operations to fail.
+=== Indenting or outdenting a list item that contained non list item siblings after it would result in those siblings being removed.
 // TINY-10268
 Previously, when the editor encounter's a list inside an `<li>` element, the editor would only account for scenarios where the list is either the first or last element within the `<li>`. In such cases, {productname} would treat the content contained within the `<li>` as plain HTML, disregarding any nested lists.
 

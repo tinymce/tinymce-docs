@@ -47,7 +47,7 @@ This error was introduced, when the function was re-used in a previous update to
 
 As a consequence, any attempts to invoke this function resulted in the TypeError being displayed in the users developer console.
 
-{productname} 6.7.2 addresses this issue, by updating the 'getModifierState' function to now consider the updated context introduced in a previous release.
+{productname} 6.7.2 addresses this, now, when a integrator uses the `getModifierState` on the event object a keydown event no longer triggers an error.
 
 As a result, the TypeError is no longer displayed when the editor calls the 'getModifierState' function on an event during a **keydown** action.
 

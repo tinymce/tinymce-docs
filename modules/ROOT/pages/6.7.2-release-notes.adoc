@@ -47,9 +47,29 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === List items containing a nested list between two text caused some list operations to fail.
 // TINY-10268
+Previously, when the editor encounter's a list inside an `<li>` element, the editor would only account for scenarios where the list is either the first or last element within the `<li>`. In such cases, {productname} would treat the content contained within the `<li>` as plain HTML, disregarding any nested lists.
 
-// CCFR
+Consequently, when dealing with a structure like the following:
 
+[source,html]
+----
+<ul>
+  <li>
+    <p>A</p>
+    <ul>
+      <li>L1</li>
+      <li>L2</li>
+    </ul>
+    <p>B</p>
+  </li>
+</ul>
+----
+
+the editor would encounter problems when attempting to apply list-related actions, such as indentation, to the inner list.
+
+{productname} 6.7.2 addresses this issue, now, when an `<li>` contains both non-list elements at its beginning and end, and also contains a nested list, the editor now will consider actions on the nested list independently, instead of treating the entire content as a single block.
+
+As a result, actions like indent and unindent a nested list works as expected.
 
 === css loading in `toolbardrawertoggletest` flickering.
 // TINY-10249

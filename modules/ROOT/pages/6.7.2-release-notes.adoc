@@ -43,7 +43,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 // TINY-10263
 The exception error "Uncaught TypeError: Illegal invocation" was displayed in the console, when an integrator called the 'getModifierState' function on a **keydown** event object.
 
-This error was introduced, when the function was re-used in a previous update to {productname}, but, the updated logic for the origional function was not changed to consider the newly introduced context.
+This error was introduced, when the function was re-used in a previous update to {productname}, but, the updated logic for the original function was not changed to consider the newly introduced context.
 
 As a consequence, any attempts to invoke this function resulted in the TypeError being displayed in the users developer console.
 

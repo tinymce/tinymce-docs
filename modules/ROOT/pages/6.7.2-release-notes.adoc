@@ -51,7 +51,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 // CCFR
 
 
-=== css loading in `toolbardrawertoggletest` flickering.
+=== Removed use of async for editor rendering which caused visual blinking when reloading the editor in-place.
 // TINY-10249
 
 // CCFR

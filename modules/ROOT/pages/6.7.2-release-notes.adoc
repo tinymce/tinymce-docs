@@ -69,7 +69,7 @@ the editor would encounter problems when attempting to apply list-related action
 
 {productname} 6.7.2 addresses this issue, now, when an `<li>` contains both non-list elements at its beginning and end, and also contains a nested list, the editor now will consider actions on the nested list independently, instead of treating the entire content as a single block.
 
-As a result, actions like indent and unindent a nested list works as expected.
+As a result, the actions of indenting and unindenting a nested list now work as expected.
 
 === css loading in `toolbardrawertoggletest` flickering.
 // TINY-10249

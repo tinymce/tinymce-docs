@@ -48,7 +48,6 @@ As a consequence, any attempts to invoke this function resulted in the TypeError
 
 {productname} 6.7.2 addresses this, now, when a integrator uses the `getModifierState` on the event object a keydown event no longer triggers an error.
 
-As a result, the TypeError is no longer displayed when the editor calls the 'getModifierState' function on an event during a **keydown** action.
 
 === List items containing a nested list between two text caused some list operations to fail.
 // TINY-10268

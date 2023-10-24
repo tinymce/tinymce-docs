@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2194: fix documentation for TINY-10263 to the 6.7.2 Release notes.
 - DOC-2194: fix documentation for TINY-10268 in the 6.7.2 Release notes.
 - DOC-2194: fix documentation for TINY-10154 in the 6.7.2 Release notes.
 - DOC-2194: fix documentation for TINY-10213 in the 6.7.2 Release notes.

@@ -47,8 +47,12 @@ As a result, the `<summary>` element now accommodates phrasing content or a sing
 
 === The function `getModifierState` did not work on events passed through the editor as expected.
 // TINY-10263
+The exception error "Uncaught TypeError: Illegal invocation" was displayed in the console, when an integrator called the 'getModifierState' function on a **keydown** event object.
 
-// CCFR
+
+As a consequence, any attempts to invoke this function resulted in the TypeError being displayed in the console.
+
+{productname} 6.7.2 addresses this, now, when a integrator uses the `getModifierState` on the event object a keydown event no longer triggers an error.
 
 
 === Indenting or outdenting a list item that contained non list item siblings after it would result in those siblings being removed.

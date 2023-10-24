@@ -37,7 +37,13 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === Applying heading formatting to the content of the `summary` element extended its application to the content of the parent `details` element.
 // TINY-10154
 
-// CCFR
+In previous versions of {productname}, the accordion summary was not functioning as expected.
+
+As a consequence, a structural inconsistency was identified in the editor schema, where heading elements were erroneously considered **invalid** children of a `<summary>` node and any attempts to apply heading formatting to content within the `<summary>` proved unsuccessful.
+
+{productname} 6.7.2 addresses this issue, now, the editor schema permits heading elements as **valid** children of the summary element.
+
+As a result, the `<summary>` element now accommodates phrasing content or a single heading element as expected.
 
 === The function `getModifierState` did not work on events passed through the editor as expected.
 // TINY-10263
@@ -45,11 +51,31 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 // CCFR
 
 
-=== List items containing a nested list between two text caused some list operations to fail.
+=== Indenting or outdenting a list item that contained non list item siblings after it would result in those siblings being removed.
 // TINY-10268
+Previously, when the editor encounter's a list inside an `<li>` element, the editor would only account for scenarios where the list is either the first or last element within the `<li>`. In such cases, {productname} would treat the content contained within the `<li>` as plain HTML, disregarding any nested lists.
 
-// CCFR
+Consequently, when dealing with a structure like the following:
 
+[source,html]
+----
+<ul>
+  <li>
+    <p>A</p>
+    <ul>
+      <li>L1</li>
+      <li>L2</li>
+    </ul>
+    <p>B</p>
+  </li>
+</ul>
+----
+
+the editor would encounter problems when attempting to apply list-related actions, such as indentation, to the inner list.
+
+{productname} 6.7.2 addresses this issue, now, when an `<li>` contains both non-list elements at its beginning and end, and also contains a nested list, the editor now will consider actions on the nested list independently, instead of treating the entire content as a single block.
+
+As a result, the actions of indenting and unindenting a nested list now work as expected.
 
 === Removed use of async for editor rendering which caused visual blinking when reloading the editor in-place.
 // TINY-10249
@@ -62,9 +88,21 @@ As a result, the editor no longer renders the flicker previously displayed when 
 
 === Toggling a list that contained a list item element — `<li>` — which, in turn, contained another list item element as its first child, removed other content within the first list item element.
 // TINY-10213
+When a user attempted to indent or outdent a list element inside a nested list, the list was converted into a model which resulted in it being recreated from that model.
 
-// CCFR
+As a consequence of this, the model would not handle a list and a not-list items inside a `<li>` element, which resulted in content deletion of the not-list item inside the `<li>` structures like:
 
+[source, html]
+----
+<li>
+  [some_list]
+  [some_other_element]
+</li>
+----
+
+In addition, when the editor would try to manage comments at the `<li>` element level, a console error would be thrown resulting in all other elements being ignored.
+
+{productname} 6.7.2 addresses this issue, now, our model correctly manages comments and other elements when they are preceded from a list inside an `li`, and the errors are no longer present.
 
 === If multiple inline formatting options were set at the insertion point, turning any one of these options off turned all the set options off.
 //TINY-10132

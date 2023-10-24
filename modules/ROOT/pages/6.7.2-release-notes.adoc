@@ -54,9 +54,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === Removed use of async for editor rendering which caused visual blinking when reloading the editor in-place.
 // TINY-10249
 
-In contrast to {productname} version 5, where the editor would initiate rendering without waiting for the completion of CSS loading, in version 6, the editor instance now deliberately synchronizes with the loading of CSS. This modification aims to prevent flickering by ensuring that the necessary styles are fully loaded before proceeding with the rendering process.
-
-As a result the browser was able to render a partially complete editor, resulting in UI flicker if an editor was reloaded.
+In contrast to {productname} version 5, where the editor would initiate rendering without waiting for the completion of CSS loading, in version 6, the editor instance now deliberately synchronizes with the loading of CSS. This modification aims to prevent flickering by ensuring that the necessary styles have finished loading before proceeding with the rendering process.
 
 {productname} 6.7.2 addresses this, by once again blocking the render function from loading the CSS in parallel with other actions necessary for displaying the editor.
 

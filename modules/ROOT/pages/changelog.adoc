@@ -8,7 +8,6 @@ NOTE: This is the {productname} Community version changelog. For information abo
 == 6.7.2 - 2023-10-25
 
 === Fixed
-* Applying heading formatting to the content of the `summary` element extended its application to the content of the parent `details` element.
 * The function `getModifierState` did not work on events passed through the editor as expected.
 * Indenting or outdenting a list item that contained non list item siblings after it would result in those siblings being removed.
 * Removed use of async for editor rendering which caused visual blinking when reloading the editor in-place.

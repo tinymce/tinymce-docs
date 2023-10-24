@@ -84,8 +84,11 @@ As a result, the actions of indenting and unindenting a nested list now work as 
 === Removed use of async for editor rendering which caused visual blinking when reloading the editor in-place.
 // TINY-10249
 
-// CCFR
+In contrast to {productname} version 5, where the editor would initiate rendering without waiting for the completion of CSS loading, in version 6, the editor instance now deliberately synchronizes with the loading of CSS. This modification aims to prevent flickering by ensuring that the necessary styles have finished loading before proceeding with the rendering process.
 
+{productname} 6.7.2 addresses this, by once again blocking the render function from loading the CSS in parallel with other actions necessary for displaying the editor.
+
+As a result, the editor no longer renders the flicker previously displayed when the editor is refreshed.
 
 === Toggling a list that contained a list item element — `<li>` — which, in turn, contained another list item element as its first child, removed other content within the first list item element.
 // TINY-10213

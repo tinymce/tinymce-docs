@@ -6,6 +6,8 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2180: Added 6.8-specific entry to `changelog.adoc`.
+
 ### 2023-10-20
 
 - DOC-2200: Add CVE numbers and links to `6.7.1` release notes.

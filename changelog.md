@@ -9,7 +9,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### 2023-10-25
 
-- DOC-2192: added 6.7.2-specific entries to `changelog.adoc`.
+- DOC-2192: added 6.7.2-specific entries to `changelog.adoc`, and api-version bump for 6.7.2.
 
 ### 2023-10-20
 

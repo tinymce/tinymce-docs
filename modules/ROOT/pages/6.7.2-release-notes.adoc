@@ -13,6 +13,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 * xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
 * xref:bug-fixes[Bug fixes]
+* xref:security-fixes[Security fixes]
 
 
 [[accompanying-premium-self-hosted-server-side-component-changes]]
@@ -20,18 +21,15 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The {productname} 6.7.3 release includes accompanying changes affecting the {productname} **self-hosted** services for the following plugins:
 
-* Enhanced Media Embed plugin (`mediaembed`)
-* Export plugin (`export`)
-** FIXED: https://www.cve.org/CVERecord?id=CVE-2023-44487[CVE-2023-44487] for Netty. Upgrading to version 4.1.100.Final
+* For **Enhanced Media Embed** plugin `mediaembed` and the **Export** plugin `export`.
+** FIXED: https://nvd.nist.gov/vuln/detail/CVE-2023-44487[CVE-2023-44487] for Netty. Upgrading to version 4.1.100.Final
 ** Service codebase now it's based on Scala 2.13.12 (instead of Scala 2.12.16).
-* Enhanced Image Editing plugin (`editimage`)
-* Link Checker plugin (`linkchecker`)
-** FIXED: https://www.cve.org/CVERecord?id=CVE-2023-44487[CVE-2023-44487] for Netty. Upgrading to version 4.1.100.Final
+* For **Enhanced Image Editing** plugin `editimage` and the **Link Checker** plugin `linkchecker`.
+** FIXED: https://nvd.nist.gov/vuln/detail/CVE-2023-44487[CVE-2023-44487] for Netty. Upgrading to version 4.1.100.Final
 ** Service codebase now it's based on Scala 2.13.12 (instead of Scala 2.12.16)
 ** Server side cache implementation was refactored to use Scaffeine, a thin Scala wrapper for Caffeine which is very well known and stable Java caching library offering a great performance and support
 ** Include code refactors to improve code abstraction and encapsulation
-* Spell Checker Pro plugin (`tinymcespellchecker`)
-* Spelling Autocorrect plugin (`autocorrect`)
+* For **Spell Checker Pro** plugin `tinymcespellchecker` and the **Spelling Autocorrect** plugin `autocorrect`.
 ** Service codebase now it's based on Scala 2.13.12 (instead of Scala 2.12.16).
 ** Major code refactors to improve maintainability and performance.
 ** Server side cache implementation was refactored to use Scaffeine, a thin Scala wrapper for Caffeine which is very well known and stable Java caching library offering a great performance and support.
@@ -39,13 +37,13 @@ The {productname} 6.7.3 release includes accompanying changes affecting the {pro
 
 For information on:
 
-* The Enhanced Media Embed plugin, see: xref:introduction-to-mediaembed.adoc[Enhanced Media Embed plugin].
-* The Export plugin, see: xref:export.adoc[Export plugin].
-* The Enhanced Image Editing plugin, see: xref:editimage.adoc[Enhanced Image Editing plugin].
-* The Link Checker plugin, see: xref:linkchecker.adoc[Link Checker plugin].
-* The Spell Checker Pro plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
-* The Spelling Autocorrect plugin, see: xref:autocorrect.adoc[Spelling Autocorrect plugin].
-* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+* The **Enhanced Media Embed** plugin, see: xref:introduction-to-mediaembed.adoc[Enhanced Media Embed plugin].
+* The **Export** plugin, see: xref:export.adoc[Export plugin].
+* The **Enhanced Image Editing** plugin, see: xref:editimage.adoc[Enhanced Image Editing plugin].
+* The **Link Checker** plugin, see: xref:linkchecker.adoc[Link Checker plugin].
+* The **Spell Checker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
+* The **Spelling Autocorrect** plugin, see: xref:autocorrect.adoc[Spelling Autocorrect plugin].
+* Deploying the **server-side** components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
 
 The Java server-side components have been updated to the following versions:
 
@@ -137,3 +135,19 @@ As a consequence of this, the model would not handle a list and a not-list items
 In addition, when the editor would try to manage comments at the `<li>` element level, a console error would be thrown resulting in all other elements being ignored.
 
 {productname} 6.7.2 addresses this issue, now, our model correctly manages comments and other elements when they are preceded from a list inside an `li`, and the errors are no longer present.
+
+
+[[security-fixes]]
+== Security fixes
+
+{productname} 6.7.2 includes one fix for the following security issue:
+
+The following server-side component has been updated to include dependency updates addressing the following security issues. 
+
+* https://nvd.nist.gov/vuln/detail/CVE-2023-44487[CVE-2023-44487]
+
+This update is considered as a High severity vulnerability fix.
+
+For information on the server-side components updates, see: xref:#accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes].
+
+include::partial$misc/admon-no-functionality-changes-in-updated-server-side-components.adoc[]

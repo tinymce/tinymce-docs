@@ -15,6 +15,48 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:bug-fixes[Bug fixes]
 
 
+[[accompanying-premium-self-hosted-server-side-component-changes]]
+== Accompanying Premium self-hosted server-side component changes
+
+The {productname} 6.7.2 release includes accompanying changes affecting the {productname} **self-hosted** services for the following plugins:
+
+* 
+*
+*
+*
+////
+Example ONLY
+The Java server-side components have been updated to the following versions:
+
+* `ephox-hyperlinking.war`: 2.105.13
+* `ephox-image-proxy.war`: 2.106.4
+* `ephox-spelling.war`: 2.118.6
+////
+For information on:
+
+////
+Example ONLY 
+* The Enhanced Media Embed plugin, see: xref:introduction-to-mediaembed.adoc[Enhanced Media Embed plugin].
+*
+*
+*
+////
+=== Updating the self-hosted server-side components
+////
+The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
+
+. Update your Java Application Server to the minimum required version:
+
+include::partial$misc/supported-application-servers.adoc[]
+
+. Replace the existing server-side `.war` files with the `.war` files bundled with {productname} 6.2 or later.
+
+For information on:
+
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+* Deploying the server-side components using Docker, see: xref:bundle-intro-setup.adoc[Containerized service deployments].
+////
+
 [[bug-fixes]]
 == Bug fixes
 

@@ -18,44 +18,57 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[accompanying-premium-self-hosted-server-side-component-changes]]
 == Accompanying Premium self-hosted server-side component changes
 
-The {productname} 6.7.2 release includes accompanying changes affecting the {productname} **self-hosted** services for the following plugins:
+The {productname} 6.7.3 release includes accompanying changes affecting the {productname} **self-hosted** services for the following plugins:
 
-* 
-*
-*
-*
-////
-Example ONLY
-The Java server-side components have been updated to the following versions:
+* Enhanced Media Embed plugin (`mediaembed`)
+* Export plugin (`export`)
+** FIXED: https://www.cve.org/CVERecord?id=CVE-2023-44487[CVE-2023-44487] for Netty. Upgrading to version 4.1.100.Final
+** Service codebase now it's based on Scala 2.13.12 (instead of Scala 2.12.16).
+* Enhanced Image Editing plugin (`editimage`)
+* Link Checker plugin (`linkchecker`)
+** FIXED: https://www.cve.org/CVERecord?id=CVE-2023-44487[CVE-2023-44487] for Netty. Upgrading to version 4.1.100.Final
+** Service codebase now it's based on Scala 2.13.12 (instead of Scala 2.12.16)
+** Server side cache implementation was refactored to use Scaffeine, a thin Scala wrapper for Caffeine which is very well known and stable Java caching library offering a great performance and support
+** Include code refactors to improve code abstraction and encapsulation
+* Spell Checker Pro plugin (`tinymcespellchecker`)
+* Spelling Autocorrect plugin (`autocorrect`)
+** Service codebase now it's based on Scala 2.13.12 (instead of Scala 2.12.16).
+** Major code refactors to improve maintainability and performance.
+** Server side cache implementation was refactored to use Scaffeine, a thin Scala wrapper for Caffeine which is very well known and stable Java caching library offering a great performance and support.
+** Service log level was changed from DEBUG to INFO, to reduce logs verbosity and gain more clarity.
 
-* `ephox-hyperlinking.war`: 2.105.13
-* `ephox-image-proxy.war`: 2.106.4
-* `ephox-spelling.war`: 2.118.6
-////
 For information on:
 
-////
-Example ONLY 
 * The Enhanced Media Embed plugin, see: xref:introduction-to-mediaembed.adoc[Enhanced Media Embed plugin].
-*
-*
-*
-////
+* The Export plugin, see: xref:export.adoc[Export plugin].
+* The Enhanced Image Editing plugin, see: xref:editimage.adoc[Enhanced Image Editing plugin].
+* The Link Checker plugin, see: xref:linkchecker.adoc[Link Checker plugin].
+* The Spell Checker Pro plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
+* The Spelling Autocorrect plugin, see: xref:autocorrect.adoc[Spelling Autocorrect plugin].
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+
+The Java server-side components have been updated to the following versions:
+
+* `ephox-hyperlinking.war`: 2.105.20
+* `ephox-image-proxy.war`: 2.106.8
+* `ephox-spelling.war`: 2.118.15
+
 === Updating the self-hosted server-side components
-////
+
 The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
 
 . Update your Java Application Server to the minimum required version:
 
 include::partial$misc/supported-application-servers.adoc[]
 
-. Replace the existing server-side `.war` files with the `.war` files bundled with {productname} 6.2 or later.
+. Replace the existing server-side `.war` files with the `.war` files bundled with {productname} 6.7.2 or later.
 
 For information on:
 
 * Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
 * Deploying the server-side components using Docker, see: xref:bundle-intro-setup.adoc[Containerized service deployments].
-////
+
+include::partial$misc/admon-no-functionality-changes-in-updated-server-side-components.adoc[]
 
 [[bug-fixes]]
 == Bug fixes

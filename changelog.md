@@ -6,6 +6,11 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+
+### 2023-10-25
+
+- DOC-2192: added 6.7.2-specific entries to `changelog.adoc`, and api-version bump for 6.7.2.
+
 ### 2023-10-20
 
 - DOC-2200: Add CVE numbers and links to `6.7.1` release notes.
@@ -15,10 +20,11 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 - DOC-2198: add 5x LTS important banner to the top of upgrading.adoc."
 - DOC-2185: added `6.7.1-release-notes.adoc` to project; updated `changelog.adoc`, `nav.adoc` and `release-notes.adoc` for the TinyMCE 6.7.1 release.
 - DOC-2191: updated both premium, non-premium and classic-mode feature demo UI issues.
+
+### 2023-09-12
+
 - DOC-2027: added `/modules/ROOT/partials/configuration/help_accessibility.adoc`, documenting the `help_accessibility` option; edits, re-writes and re-structuring of `help.adoc`; plus copy-edits to `keyboard-shortcuts.adoc`, `tinymce-and-screenreaders.adoc` & `accessibility.adoc`.
 - DOC-2176: Removed references to which commercial plans Premium plugins are or are not available with.
-- DOC-2175: Update CODEOWNERS automatic reviewers upon opening new DOC-PRs.
-- DOC-2173: updated the default value code sample in `ai_shortcuts.adoc` to match the updated values included in the AI Assistant. Also re-wrote the **Note** admonition to call-out the absence of any translations or alternative language versions of these default values.
 
 ### 2023-09-14
 

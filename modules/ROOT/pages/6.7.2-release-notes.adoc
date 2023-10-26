@@ -21,19 +21,12 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The {productname} 6.7.3 release includes accompanying changes affecting the {productname} **self-hosted** services for the following plugins:
 
-* For **Enhanced Media Embed** plugin `mediaembed` and the **Export** plugin `export`.
-** FIXED: https://nvd.nist.gov/vuln/detail/CVE-2023-44487[CVE-2023-44487] for Netty. Upgrading to version 4.1.100.Final
-** Service codebase now it's based on Scala 2.13.12 (instead of Scala 2.12.16).
-* For **Enhanced Image Editing** plugin `editimage` and the **Link Checker** plugin `linkchecker`.
-** FIXED: https://nvd.nist.gov/vuln/detail/CVE-2023-44487[CVE-2023-44487] for Netty. Upgrading to version 4.1.100.Final
-** Service codebase now it's based on Scala 2.13.12 (instead of Scala 2.12.16)
-** Server side cache implementation was refactored to use Scaffeine, a thin Scala wrapper for Caffeine which is very well known and stable Java caching library offering a great performance and support
-** Include code refactors to improve code abstraction and encapsulation
-* For **Spell Checker Pro** plugin `tinymcespellchecker` and the **Spelling Autocorrect** plugin `autocorrect`.
-** Service codebase now it's based on Scala 2.13.12 (instead of Scala 2.12.16).
-** Major code refactors to improve maintainability and performance.
-** Server side cache implementation was refactored to use Scaffeine, a thin Scala wrapper for Caffeine which is very well known and stable Java caching library offering a great performance and support.
-** Service log level was changed from DEBUG to INFO, to reduce logs verbosity and gain more clarity.
+* **Enhanced Media Embed** plugin `mediaembed`.
+* **Export** plugin `export`.
+* **Enhanced Image Editing** plugin `editimage`.
+* **Link Checker** plugin `linkchecker`.
+* **Spell Checker Pro** plugin `tinymcespellchecker`.
+* **Spelling Autocorrect** plugin `autocorrect`.
 
 For information on:
 
@@ -50,6 +43,8 @@ The Java server-side components have been updated to the following versions:
 * `ephox-hyperlinking.war`: 2.105.20
 * `ephox-image-proxy.war`: 2.106.8
 * `ephox-spelling.war`: 2.118.15
+
+NOTE: Service log level was changed from DEBUG to INFO, to reduce logs verbosity and gain more clarity.
 
 === Updating the self-hosted server-side components
 

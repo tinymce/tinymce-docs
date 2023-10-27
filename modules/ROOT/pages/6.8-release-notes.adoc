@@ -1,0 +1,316 @@
+= TinyMCE 6.8
+:navtitle: TinyMCE 6.8
+:description: Release notes for TinyMCE 6.8
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+[[overview]]
+== Overview
+
+{productname} 6.8 was released for {enterpriseversion} and {cloudname} on <weekday>, <month> <DD>^<st|nd|rd|th>^, <YYYY>. These release notes provide an overview of the changes for {productname} 6.8, including:
+
+// Remove sections and section boilerplates as necessary.
+// Pluralise as necessary or remove the placeholder plural marker.
+* xref:new-premium-plugin<s>[New Premium plugin<s>]
+* xref:new-open-source-plugin<s>[New Open Source plugin<s>]
+* xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
+* xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
+* xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
+* xref:accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
+* xref:improvements[Improvements]
+* xref:additions[Additions]
+* xref:changes[Changes]
+* xref:bug-fixes[Bug fixes]
+* xref:known-issues[Known issues]
+* xref:security-fixes[Security fixes]
+
+
+[[new-premium-plugin<s>]]
+New Premium plugin<s>
+
+The following new Premium plugin was released alongside {productname} 6.8.
+
+=== <Premium plugin name> 1.0.0
+
+The new Premium plugin, **<Premium plugin name>** // description here.
+
+For information on the **<Premium plugin name>** see xref:<plugincode>.adoc[<Premium plugin name>].
+
+
+[[new-open-source-plugin]]
+== New Open Source plugin
+
+The following new Open Source plugin was released alongside {productname} 6.8.
+
+=== <Open source plugin name> 1.0.0
+
+The new open source plugin, **<Open source plugin name>** // description here.
+
+For information on the **<Open source plugin name>** plugin see xref:<plugincode>.adoc[<Open source plugin name>].
+
+
+[[accompanying-premium-plugin-changes]]
+== Accompanying Premium plugin changes
+
+The following premium plugin updates were released alongside {productname} 6.8.
+
+=== Accessibility Checker 3.2.2
+
+The {productname} 6.8 release includes an accompanying release of the **Accessibility Checker** premium plugin.
+
+**Accessibility Checker** 3.2.2 includes the following fix.
+
+==== Safari focus visible not applying a blue outline to all buttons
+// #TINY-9330
+
+// CCFR here.
+
+
+For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
+
+=== Advanced Templates 1.4.0
+
+The {productname} 6.8 release includes an accompanying release of the **Advanced Templates** premium plugin.
+
+**Advanced Templates** 1.4.0 includes the following addition.
+
+==== AdvTemplate add fixed {{clipboard}} marker
+// #TINY-9974
+
+// CCFR here.
+
+
+For information on the **Accessibility Checker** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
+
+=== AI Assistant 1.1.1
+
+The {productname} 6.8 release includes an accompanying release of the **AI Assistant** premium plugin.
+
+**AI Assistant** 1.1.1 includes the following addition, improvement, and bug fix:
+
+=== AI Chat History Skin CSS
+//#TINY-10214
+
+==== Add selection-based option to ai shortcuts to restrict shortcut misuse
+//#TINY-10159
+
+
+==== AI is functional when in a `editable_root: false` root.
+// TINY-10100
+//CCFR
+
+For information on the **AI Assistant** plugin, see: xref:ai.adoc[AI Assistant].
+
+==== Tabbing/Shift-tabbing and `focus` issues with AI Assistant in OSX Safari
+// TINY-10105
+//CCFR
+
+For information on the **AI Assistant** plugin, see: xref:ai.adoc[AI Assistant].
+
+=== PowerPaste 6.2.3
+
+The {productname} 6.8 release includes an accompanying release of the **PowerPaste** premium plugin.
+
+**PowerPaste** 6.2.3 includes the following bug-fixes:
+
+=== Safari - Improve pasting content with sidebar comments from the Word document
+// TINY-10229
+//CCFR
+
+=== Pasting underlined content from MS Word with PowerPaste results in empty rows being underlined
+// TINY-10178
+//CCFR
+
+=== Powerpaste pasting causes window to be scrolled when editor isn't fully visible
+// TINY-10172
+//CCFR
+
+=== Spell Checker Pro 3.3.1
+
+The {productname} 6.7.0 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
+
+**Spell Checker Pro** 3.3.1 includes the following bug-fixes:
+
+=== Spellchecker does not trigger on shift+enter
+// TINY-10285
+//CCFR
+
+For information on the **Spell Checker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin]
+
+=== Advanced Typography 1.1.3
+
+The {productname} 6.8 release includes an accompanying release of the **Advanced Typography** premium plugin.
+
+**Advanced Typography** 1.1.3 includes one fix:
+
+==== If tinymcespellchecker and typography are both loaded, tinymcespellchecker prevents typography from transforming the string, (tm) into the character ‚Ñ¢.
+//#TINY-9963
+
+
+For information on the **Advanced Typography** plugin, see: xref:advanced-typography.adoc[Advanced Typography].
+
+
+[[accompanying-premium-plugin-end-of-life-announcement]]
+== Accompanying Premium plugin end-of-life announcement
+
+The following Premium plugin has been announced as reaching its end-of-life:
+
+=== <Premium plugin name eol>
+
+{productname}’s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
+
+
+[[accompanying-premium-skins-and-icon-packs-changes]]
+== Accompanying Premium Skins and Icon Packs changes
+
+The {productname} 6.8 release includes an accompanying release of the **Premium Skins and Icon Packs**.
+
+=== Premium Skins and Icon Packs
+
+The **Premium Skins and Icon Packs** release includes the following updates:
+
+The **Premium Skins and Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} 6.8 skin, Oxide.
+
+For information on using premium skins and icon packs, see: xref:premium-skins-and-icons.adoc[Premium Skins and Icon Packs].
+
+
+[[improvements]]
+== Improvements
+
+{productname} 6.8 also includes the following improvement<s>:
+
+
+=== Colorpicker now includes the Brightness/Saturation selector and hue slider in the keyboard navigable items.
+// #TINY-9287
+
+=== Improved the tooltips of picker buttons for the urlinput components in the "Insert/Edit Image" and "Insert/Edit Link" dialogs.
+// #TINY-10155
+
+=== Inline dialog will now respect size: 'large' argument in the dialog spec.
+// #TINY-10209
+
+=== SVG elements and their children are now retained when configured as valid elements.
+// #TINY-10237
+
+=== Bespoke dropdown toolbar buttons including align, fontfamily, fontsize, blocks, and styles did not include their visible text labels in their accessible names.
+// #TINY-10147
+
+
+[[additions]]
+== Additions
+
+{productname} 6.8 also includes the following additions:
+
+////
+waiting for confirmation on these new feature tickets.
+=== Detect markdown on paste, and convert to HTML
+// #TINY-10199
+
+=== Wrap markdown lib with API calls
+// #TINY-10198
+
+////
+
+=== <TINY-vwxyz 1 changelog entry>
+//#TINY-vwxyz1
+
+// CCFR here.
+
+
+[[changes]]
+== Changes
+
+=== <TINY-vwxyz 1 changelog entry>
+//#TINY-vwxyz1
+
+
+[[bug-fixes]]
+== Bug fixes
+
+{productname} 6.8 also includes the following bug fix<es>:
+
+=== Pressing Enter when focusing on the `details` component for an Accordion deletes its structure.
+// #TINY-10177
+
+=== Adjacent SVG block level elements adds extra paragraph
+// #TINY-10273
+
+=== Anchor elements inside SVG elements gets the `data-mce-block`
+// #TINY-10272
+
+=== Backspace/delete can be performed on selected SVG elements in Firefox
+// #TINY-10271
+
+=== Floating toolbar rendering issue with flexbox layout on page body element
+// #TINY-9847
+
+=== A closing notification brings focus to the editor even when focus is outside of the editor
+// #TINY-10282
+
+=== Selecting a cell with only `&nbsp;` in a table inside a `td` and then press `backspace` the entire table is deleted
+// #TINY-10254
+
+=== All applied inline formats are lost when format is removed.
+// #TINY-10132
+
+=== Editor would convert urls that are not http/s or relative resulting in broken links.
+// #TINY-10153
+
+=== Calling the setProgressState API would cause the window to be scrolled when the editor wasn't fully visible.
+// #TINY-10172
+
+=== Applying heading formatting to the content of the summary element extended its application to the content of the parent details element.
+// #TINY-10154
+
+=== Setting the content with an attribute that contains a self-closing HTML tag did not preserve the tag.
+// #TINY-10088
+
+=== Screen readers now announce the selected color of forecolor and backcolor buttons.
+// #TINY-9796
+
+=== Resize handles would not appear on editable images in a non-editable context.
+// #TINY-10118
+
+=== The dialog size was not updated when the size argument was changed when redialling a dialog.
+// #TINY-10209
+
+=== Custom block element wasn't considered block element in some cases.
+// #TINY-10139
+
+=== An empty element with a contenteditable="true" attribute within a table cell would not be treated as content and get removed if backspace or delete was being pressed.
+// #TINY-10010
+
+=== Removing an LI element containing a details element would incorrectly merge its content.
+// #TINY-10133
+
+=== Search and replace plugin would incorrectly find matching text inside non-editable root elements.
+// #TINY-10162
+
+=== Search and replace plugin would incorrectly find matching text inside SVG elements.
+// #TINY-10162
+
+
+[[known-issues]]
+== Known issues
+
+This section describes issues that users of {productname} 6.8 may encounter and possible workarounds for these issues.
+
+There <is one | are <number> known issue<s> in {productname} 6.8.
+
+=== <TINY-vwxyz 1 changelog entry>
+//#TINY-vwxyz1
+
+// CCFR here.
+
+
+[[security-fixes]]
+== Security fixes
+
+{productname} 6.8 includes <a fix | fixes for the following security issue<s>:
+
+=== <TINY-vwxyz 1 changelog entry>
+//#TINY-vwxyz1
+
+// CCFR here.

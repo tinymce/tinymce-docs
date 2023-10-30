@@ -286,8 +286,7 @@ waiting for confirmation on these new feature tickets.
 // #TINY-10133
 Previously, when a caret was positioned at the start of a list item containing only one block element, pressing the Backspace key caused the block content to unwrap.
 
-As a consequence, the child details content was unwrapped and appended to the content of the previous list item. However, this action left the summary element without the required parent details element, and rendered it invalid.
-
+This had the unintended consequence of detaching the child `details` element content and appending it to the content of the preceding list item. Unfortunately, this action left the `summary` element devoid of its requisite parent `details` element, rendering it structurally invalid.
 {productname} 6.8 addresses this issue. now, the details content is no longer unwrapped and moved to the upper list item, which preserves the component's expected structure.
 
 === Search and replace plugin would incorrectly find matching text inside non-editable root elements.

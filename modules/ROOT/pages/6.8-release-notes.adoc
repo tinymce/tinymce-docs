@@ -78,11 +78,35 @@ The {productname} 6.8 release includes an accompanying release of the **Advanced
 
 ==== AdvTemplate add fixed {{clipboard}} marker
 // #TINY-9974
+**Advanced Template** 1.4.0 introduces a new feature that allows templates to now include special markers, denoted as `+{{mce-clipboard}}+`. These markers serve as placeholders that indicate where clipboard content should be inserted once the template is added to the editor's content.
 
-// CCFR here.
+The string to add is as follows: `+{{mce-clipboard}}+`.
 
+.Example
+[source, javascript]
+----
+tinymce.init({
+  selector: "textarea",
+  plugins: [ "code", "advtemplate", "undo", "redo", "mergetags", ],
+  toolbar: "inserttemplate | undo redo | mergetags",
+  advtemplate_templates: [
+    {
+      title: 'mce-clipboard template',
+      items: [
+        {
+          id: '1',
+		      title: 'clipboard',
+          content: '{{mce-clipboard}}'
+        },
+      ],
+    },
+  ],
+});
+----
 
-For information on the **Accessibility Checker** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
+As a result, when a user inserts a template containing the `+{{mce-clipboard}}+` marker, the editor will replace these markers with the actual content from the clipboard. This dynamic replacement ensures that users can effortlessly integrate clipboard content into their templates without the need for additional copy-pasting steps.
+
+For information on the **Advanced Templates** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
 
 === AI Assistant 1.1.1
 

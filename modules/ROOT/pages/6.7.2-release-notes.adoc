@@ -76,7 +76,6 @@ As a consequence, any attempts to invoke this function resulted in the TypeError
 
 {productname} 6.7.2 addresses this, now, when a integrator uses the `getModifierState` on the event object a keydown event no longer triggers an error.
 
-
 === Indenting or outdenting a list item that contained non list item siblings after it would result in those siblings being removed.
 // TINY-10268
 Previously, when the editor encounter's a list inside an `<li>` element, the editor would only account for scenarios where the list is either the first or last element within the `<li>`. In such cases, {productname} would treat the content contained within the `<li>` as plain HTML, disregarding any nested lists.

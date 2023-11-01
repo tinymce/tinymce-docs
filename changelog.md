@@ -6,6 +6,20 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+
+### 2023-11-01
+
+- DOC-2194: fix heading lvl in 6.7.2 release notes for fixes.
+- DOC-2194: fix documentation for TINY-10249 in the 6.7.2 Release notes.
+- DOC-2194: fix documentation for TINY-10263 to the 6.7.2 Release notes.
+- DOC-2194: fix documentation for TINY-10268 in the 6.7.2 Release notes.
+- DOC-2194: fix documentation for TINY-10213 in the 6.7.2 Release notes.
+- DOC-2194: added file, `6.7.2-release-notes.adoc` to project; added 6.7.2-specific outline to file; edited known issue entry in `6.7-release-notes.adoc` addressed in the 6.7.2 release.; added 6.7.2-specific entries to `nav.adoc`.
+
+### 2023-10-25
+
+- DOC-2192: added 6.7.2-specific entries to `changelog.adoc`, and api-version bump for 6.7.2.
+
 - DOC-2075: remove `tinymcespellchecker` configuration workaround from full-featured-demo with Premium plugins examples: `/modules/ROOT/examples/live-demos/full-featured/example.js` and `/modules/ROOT/examples/live-demos/full-featured/index.js`.
 - DOC-2182: added file, `/modules/ROOT/partials/configuration/indent.adoc`, documenting the `indent` option. Added `include::` statement to `/modules/ROOT/pages/content-filtering.adoc` pointing to this file.
 - DOC-2189: added template files with instructions to `-new-material-templates/plugin-documentation-templates/ROOT/pages`. Added further boilerplate — a generic version-required include statement — and instructions regarding this boilerplate to `pluginpage.adoc`. Added new template file-and-folder infrastructure, `/-new-material-templates/configuration-options-templates`. Added boilerplate and documentation to the files in this new infrastructure. Also corrected markup typo in `modules/ROOT/pages/available-menu-items.adoc`.
@@ -23,6 +37,11 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### 2023-09-20
 
 - DOC-2191: updated both premium, non-premium and classic-mode feature demo UI issues.
+
+### 2023-09-12
+
+- DOC-2027: added `/modules/ROOT/partials/configuration/help_accessibility.adoc`, documenting the `help_accessibility` option; edits, re-writes and re-structuring of `help.adoc`; plus copy-edits to `keyboard-shortcuts.adoc`, `tinymce-and-screenreaders.adoc` & `accessibility.adoc`.
+- DOC-2176: Removed references to which commercial plans Premium plugins are or are not available with.
 
 ### 2023-09-17
 

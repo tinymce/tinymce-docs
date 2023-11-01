@@ -236,26 +236,29 @@ Previously, the **Page Embed** plugin’s toolbar button and menu item were not 
 For information on the **Page Embed** plugin, see: xref:pageembed.adoc[Page Embed].
 
 
-=== PowerPaste 6.2.2
+[[powerpaste-621]]
+=== PowerPaste 6.2.1
 
 The {productname} 6.7.0 release includes an accompanying release of the **PowerPaste** premium plugin.
 
-**PowerPaste** 6.2.2 includes the following bug-fixes
+**PowerPaste** 6.2.1 includes the following bug-fixes
 
 ==== Stopped pasting comments from Microsoft Word documents
 // TINY-9975
 Previously, when a copied selection from a Microsoft Word document included comments, these comments were added to the {productname} document as footnotes when the selection was pasted in to place.
 
-**PowerPaste** 6.2.2 addresses this. Comments are still included in copied selections from Microsoft Word. With this update, however, they are ignored by the plugin and, consequently, not added to {productname} documents when pasted.
+**PowerPaste** 6.2.1 addresses this. Comments are still included in copied selections from Microsoft Word. With this update, however, they are ignored by the plugin and, consequently, not added to {productname} documents when pasted.
 
 [NOTE]
 .Known issue
 ====
-Microsoft Word comments are still set as footnotes when pasted into a {productname} instance if the host browser is Safari.
+With **PowerPaste** 6.2.1, Microsoft Word comments are still set as footnotes when pasted into a {productname} instance if the host browser is Safari.
 
 When Safari is the host browser, and a copied selection from a Microsoft Word document includes comments, when that selection is pasted (⌘-V) into a {productname} instance, the included comment or comments are still set as footnotes in the {productname} document.
 
-Such footnotes can be manually deleted but there is currently no other workaround.
+**PowerPaste 6.2.2, released in conjunction with {productname} 6.7.2, addresses this.
+
+Upgrading to {productname} 6.7.2 and the accompanying xref:6.7.2-release-notes.adoc#powerpaste-622[PowerPaste 6.2.2] release fixes this problem.
 ====
 
 ==== Removed error condition, error message, and error message translations for an error which no longer occurs

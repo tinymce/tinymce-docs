@@ -68,7 +68,7 @@ include::partial$misc/admon-no-functionality-changes-in-updated-server-side-comp
 
 {productname} 6.7.2 also includes the following bug fixes:
 
-=== The function `getModifierState` did not work on events passed through the editor as expected.
+==== The function `getModifierState` did not work on events passed through the editor as expected.
 // TINY-10263
 The exception error "Uncaught TypeError: Illegal invocation" was displayed in the console, when an integrator called the 'getModifierState' function on a **keydown** event object.
 
@@ -76,7 +76,7 @@ As a consequence, any attempts to invoke this function resulted in the TypeError
 
 {productname} 6.7.2 addresses this, now, when a integrator uses the `getModifierState` on the event object a keydown event no longer triggers an error.
 
-=== Indenting or outdenting a list item that contained non list item siblings after it would result in those siblings being removed.
+==== Indenting or outdenting a list item that contained non list item siblings after it would result in those siblings being removed.
 // TINY-10268
 Previously, when the editor encounter's a list inside an `<li>` element, the editor would only account for scenarios where the list is either the first or last element within the `<li>`. In such cases, {productname} would treat the content contained within the `<li>` as plain HTML, disregarding any nested lists.
 
@@ -102,7 +102,7 @@ the editor would encounter problems when attempting to apply list-related action
 
 As a result, the actions of indenting and unindenting a nested list now work as expected.
 
-=== Removed use of async for editor rendering which caused visual blinking when reloading the editor in-place.
+==== Removed use of async for editor rendering which caused visual blinking when reloading the editor in-place.
 // TINY-10249
 
 In contrast to {productname} version 5, where the editor would initiate rendering without waiting for the completion of CSS loading, in version 6, the editor instance now deliberately synchronizes with the loading of CSS. This modification aims to prevent flickering by ensuring that the necessary styles have finished loading before proceeding with the rendering process.
@@ -111,7 +111,7 @@ In contrast to {productname} version 5, where the editor would initiate renderin
 
 As a result, the editor no longer renders the flicker previously displayed when the editor is refreshed.
 
-=== Toggling a list that contained a list item element — `<li>` — which, in turn, contained another list item element as its first child, removed other content within the first list item element.
+==== Toggling a list that contained a list item element — `<li>` — which, in turn, contained another list item element as its first child, removed other content within the first list item element.
 // TINY-10213
 When a user attempted to indent or outdent a list element inside a nested list, the list was converted into a model which resulted in it being recreated from that model.
 

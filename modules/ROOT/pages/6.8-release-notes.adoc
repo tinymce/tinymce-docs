@@ -187,6 +187,18 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Improved the tooltips of picker buttons for the urlinput components in the "Insert/Edit Image" and "Insert/Edit Link" dialogs.
 // #TINY-10155
+In previous versions of {productname}, the tooltips of file picker buttons of `urlinput` dialog components assumed the label of the component.
+
+Consequently, the tooltip does not always clearly indicate the functionality of the file picker button. This affected the `urlinput` dialog components in the **Insert/Edit Link**, **Insert/Edit Image**, and **Insert/Edit Media** dialogs.
+
+In {productname} 6.8, the tooltips of `urlinput` file picker buttons on affected dialogs have been improved as follows:
+
+[options="header"]
+|===============================================================
+|     | Insert/Edit Link | Insert/Edit Image | Insert/Edit Image
+| Old | "URL"            | "Source"          | "Source"         
+| New | "Browse links"   | "Browse files"    | "Browse files"   
+|===============================================================
 
 === Inline dialog will now respect size: 'large' argument in the dialog spec.
 // #TINY-10209

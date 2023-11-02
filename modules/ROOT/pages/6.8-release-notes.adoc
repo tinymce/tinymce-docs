@@ -265,7 +265,7 @@ waiting for confirmation on these new feature tickets.
 // #TINY-10154
 
 === Setting the content with an attribute that contains a self-closing HTML tag did not preserve the tag.
-// #TINY-
+// #TINY-10088
 In previous versions of **DOMPurify**, a critical issue was identified where attributes containing the self-closing `+/>+` tags were erroneously removed during the sanitization process.
 
 This issue stemmed from a older version of DOMPurify was inadvertently truncating attributes associated with self-closing tags.

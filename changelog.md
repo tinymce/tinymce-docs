@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2181: add improvement documentation for TINY-9963 to the release notes.
 - DOC-2181: the TinyMCE 6.8 release notes plus 6.8-specific changes to the TinyMCE documentation.
 - DOC-2075: remove `tinymcespellchecker` configuration workaround from full-featured-demo with Premium plugins examples: `/modules/ROOT/examples/live-demos/full-featured/example.js` and `/modules/ROOT/examples/live-demos/full-featured/index.js`.
 - DOC-2182: added file, `/modules/ROOT/partials/configuration/indent.adoc`, documenting the `indent` option. Added `include::` statement to `/modules/ROOT/pages/content-filtering.adoc` pointing to this file.

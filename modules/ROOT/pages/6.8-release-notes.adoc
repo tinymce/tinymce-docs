@@ -266,6 +266,11 @@ waiting for confirmation on these new feature tickets.
 
 === Setting the content with an attribute that contains a self-closing HTML tag did not preserve the tag.
 // #TINY-10088
+In previous versions of {productname}, a regression was identified that affected images nested within a `NonEditable` section.
+
+As a consequence, the editor would only check the parent element within a nested editable section, which neglected to inspect the image itself and treated the image as a readonly element, rendering it uneditable.
+
+{productname} 6.8 addresses this issue, now, the editor checks the **"readonly"** attribute on images, rather than just the parent element.
 
 === Screen readers now announce the selected color of forecolor and backcolor buttons.
 // #TINY-9796

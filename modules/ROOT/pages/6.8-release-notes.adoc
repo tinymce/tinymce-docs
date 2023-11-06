@@ -193,6 +193,11 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === SVG elements and their children are now retained when configured as valid elements.
 // #TINY-10237
+Previously, when a user attempted to insert an SVG element using the code editor or any other method of content insertion, the SVG would not be properly retained inside the editor, even if the integrator had enabled SVG support.
+
+With the release of {productname} 6.8, a new code has been introduced to skip the normal processing of SVG elements, treating them as foreign objects.
+
+As a result, SVG and its sub-elements are now retained as-is if they were configured as extended_valid_elements to include SVG elements.
 
 === Bespoke dropdown toolbar buttons including align, fontfamily, fontsize, blocks, and styles did not include their visible text labels in their accessible names.
 // #TINY-10147

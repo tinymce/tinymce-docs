@@ -295,7 +295,7 @@ waiting for confirmation on these new feature tickets.
 // #TINY-10289
 Previously, when pressing backspace or delete on a paragraph, and while its also nested inside a `<li>` element, would move the paragraph element inside the child element, rather than merging the context into the `<li>` child element context.
 
-.Example (issue)
+.Example
 [source, html]
 ----
 <ol>

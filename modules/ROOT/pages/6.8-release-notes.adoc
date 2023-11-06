@@ -293,7 +293,12 @@ waiting for confirmation on these new feature tickets.
 
 === Merging an external p inside a list via delete or backspace would incorrectly try to move a parent element inside a child element.
 // #TINY-10289
-Previously, when pressing backspace or delete on a paragraph, and while its also nested inside a `<li>` element, would move the paragraph element inside the child element, rather than merging the context into the `<li>` child element context.
+Previously, when the caret was positioned at either the,
+
+. **beginning** of the `<p>` and the `backspace` key is pressed; or
+. **end** of the `<li>` with **id child** and the `delete` key is pressed.
+
+the `<p>` tag element would be moved inside the child element, rather than the context being merged with the `<li>` child element context.
 
 .Example
 [source, html]

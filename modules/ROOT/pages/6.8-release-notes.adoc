@@ -312,7 +312,7 @@ Previously, when pressing backspace or delete on a paragraph, and while its also
 
 As a consequence, a console error `"Uncaught DOMException: Failed to execute 'appendChild' on 'Node': The new child element contains the parent"`, would be displayed in the developer console.
 
-{productname} 6.8 addresses this issue, now, after pressing backspace or delete, the parent element no longer tried to merge into the child element, but rather unwraps the parent element and merges the context into the child element, resulting in:
+{productname} 6.8 addresses this issue, now, after pressing the backspace or delete key, the parent element no longer attempts to merge into the child element, but rather unwraps the parent element and merges the context into the child element, resulting in:
 
 .Example (result)
 [source, html]

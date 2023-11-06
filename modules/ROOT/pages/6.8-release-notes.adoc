@@ -291,6 +291,45 @@ waiting for confirmation on these new feature tickets.
 === Search and replace plugin would incorrectly find matching text inside SVG elements.
 // #TINY-10162
 
+=== Merging an external p inside a list via delete or backspace would incorrectly try to move a parent element inside a child element.
+// #TINY-10289
+Previously, when pressing backspace or delete on a paragraph, and while its also nested inside a `<li>` element, would move the paragraph element inside the child element, rather than merging the context into the `<li>` child element context.
+
+.Example (issue)
+[source, html]
+----
+<ol>
+  <li>List 1</li>
+  <li id="parent">
+    <p>p1</p>
+    <ol>
+      <li id="child">List 1-1 </li>
+    </ol>
+    <p>Place cursor at the start of this line and hit backspace.</p>
+  </li>
+</ol>
+----
+
+As a consequence, a console error would be displayed in the developer console.
+
+{productname} 6.8 addresses this issue, now, after pressing backspace or delete, the parent element no longer tried to merge into the child element, but rather unwraps the parent element and merges the context into the child element, resulting in:
+
+.Example (result)
+[source, html]
+----
+<ol>
+  <li>List 1</li>
+  <li id="parent">
+    <p>p1</p>
+    <ol>
+      <li id="child">List 1-1 Place cursor at the start of this line and hit backspace.</li>
+    </ol>
+  </li>
+</ol>
+----
+
+As a result, the developer console, no longer displays the console error and the merge between the two elements behaves as expected.
+
 
 [[known-issues]]
 == Known issues

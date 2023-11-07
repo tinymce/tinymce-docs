@@ -196,6 +196,11 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Bespoke dropdown toolbar buttons including align, fontfamily, fontsize, blocks, and styles did not include their visible text labels in their accessible names.
 // #TINY-10147
+Prior to {productname} 6.8, accessibility labels of bespoke dropdown buttons only announced the name of the button, and not the visible text label of the selected option.
+
+For example, when the `fontfamily` dropdown button selection was set to “Verdana”, the accessibility name was set as “Fonts”. However, it should have been set as “Fonts Verdana” as the selected option is also visible on the button.
+
+In {productname} 6.8, the visible text label _(or icon name where icons are present instead)_ of selected options of bespoke dropdown buttons are appended to the accessible name. This ensures that the accessible name of the above scenario is announced as “Fonts Verdana”, improving accessibility.
 
 
 [[additions]]

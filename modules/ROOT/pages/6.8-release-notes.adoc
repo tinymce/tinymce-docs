@@ -233,11 +233,11 @@ waiting for confirmation on these new feature tickets.
 
 === Pressing Enter when focusing on the `details` component for an Accordion deletes its structure.
 // #TINY-10177
-Previously, clicking on the expand arrow of a details element would result in the editor selection to be external of the summary element when the host browser was Safari.
+Previously, clicking on the expand arrow of a `details` element would result in the editor selection to be external of the `summary` element when the host browser was Safari.
 
-As a consequence, the `isInSummary` predicate could not detect the selection at the beginning of the details element and would fail to toggle the Accordion component on **Enter** key press.
+As a consequence, the `isInSummary` predicate could not detect the selection at the beginning of the `details` element and would fail to toggle the Accordion component on **Enter** key press.
 
-{productname} 6.8 addresses this issue, now, the predicate considers that the selection can be right before the summary element, so the Accordion toggling can works as expected on Safari.
+{productname} 6.8 addresses this issue, now, the predicate considers that the selection can be right before the `summary` element, so the Accordion toggling can work as expected on Safari.
 
 === Adjacent SVG block level elements adds extra paragraph
 // #TINY-10273

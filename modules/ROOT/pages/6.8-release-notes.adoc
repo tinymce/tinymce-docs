@@ -251,6 +251,11 @@ waiting for confirmation on these new feature tickets.
 
 === Selecting a cell with only `&nbsp;` in a table inside a `td` and then press `backspace` the entire table is deleted
 // #TINY-10254
+Previously, the editor checked the number of tables included in a selection by identifying the closest parent to the selected elements within the table. However, when selecting part of a nested table along with some other element, two different tables were detected: the nested one and the one containing both the nested table and the additional element.
+
+The consequence of this issue was that deleting the selection emptied the main table containing the additional element because it was the last part of the selection, and the selection also included another table (the nested one). Since the entire nested table was contained in the main table, it was completely deleted as well.
+
+{productname} 6.8 addresses this issue, now the editor recognizes this scenario and manages it as if the additional element was not contained in any table. As a result, the deletion now behaves as if it were outside a table, and it functions as expected.
 
 === All applied inline formats are lost when format is removed.
 // #TINY-10132

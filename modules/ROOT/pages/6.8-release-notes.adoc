@@ -276,6 +276,25 @@ As a consequence of this, any attempt to apply a heading format to the `<summary
 
 === Setting the content with an attribute that contains a self-closing HTML tag did not preserve the tag.
 // #TINY-10088
+In previous versions of **DOMPurify**, a critical issue was identified where attributes containing the self-closing `+/>+` tags were erroneously removed during the sanitization process.
+
+This issue stemmed from a older version of DOMPurify was inadvertently truncating attributes associated with self-closing tags.
+
+.Truncated attributes
+[source, html]
+----
+<div>Attribute with empty element (&lt;br/&gt;)</div>
+----
+
+.Expected attributes
+[source, html]
+----
+<div data-macro-parameters="title=<br/>">Attribute with empty element (&lt;br/&gt;)</div>
+----
+
+As a consequence, the removal of these attributes by **DOMPurify** would cause significant problems in the users web applications.
+
+{productname} 6.8 addresses this issue by updating **DOMPurify** to the latest version. By doing so, these attributes are no longer removed, which preserves the integrity of their content.
 
 === Screen readers now announce the selected color of forecolor and backcolor buttons.
 // #TINY-9796

@@ -263,6 +263,11 @@ waiting for confirmation on these new feature tickets.
 
 === Applying heading formatting to the content of the summary element extended its application to the content of the parent details element.
 // #TINY-10154
+Previously, editor schema heading elements were **invalid** children of a `<summary>` node within the Accordion component.
+
+As a consequence of this, any attempt to apply a heading format to the `<summary>` content within the Accordion component was unsuccessful.
+
+{productname} 6.8 addresses this issue, updates have been applied to the editor schema for heading elements, so they can now be converted as **valid** children of the `<summary>` element.
 
 === Setting the content with an attribute that contains a self-closing HTML tag did not preserve the tag.
 // #TINY-10088

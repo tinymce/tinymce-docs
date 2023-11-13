@@ -353,9 +353,13 @@ This had the unintended consequence of detaching the child `details` element con
 
 === Search and replace plugin would incorrectly find matching text inside non-editable root elements.
 // #TINY-10162
+Previously, the **Search and Replace** plugin would replace text inside non-editable elements when contained within a `non-editable` root or within a SVG.
 
-=== Search and replace plugin would incorrectly find matching text inside SVG elements.
-// #TINY-10162
+As a consequence, users could inadvertently modify content that was meant to be static, as the search function could not distinguish the difference between editable and non-editable contexts.
+
+{productname} 6.8, now, checks if the text is inside a editable context such as non-editable root elements and SVGs.
+
+As a result, users can no longer modify content that is contained within a non-editable element when using the **Search and Replace** plugin.
 
 
 [[known-issues]]

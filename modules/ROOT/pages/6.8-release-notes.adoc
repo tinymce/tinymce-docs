@@ -300,6 +300,9 @@ The consequence of this issue was that deleting the selection emptied the main t
 
 === Editor would convert urls that are not http/s or relative resulting in broken links.
 // #TINY-10153
+In previous versions of {productname}, when using the **Link Plugin**, and inserting a link that is not http/s or relative (such as onenote link), the editor would modify/update the link by adding a new hostname to the url.
+
+{productname} 6.8 addresses this issue, now, the editor no longer changes links that are not http/s or relative.
 
 === Calling the setProgressState API would cause the window to be scrolled when the editor wasn't fully visible.
 // #TINY-10172

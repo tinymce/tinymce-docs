@@ -287,6 +287,11 @@ waiting for confirmation on these new feature tickets.
 
 === Applying heading formatting to the content of the summary element extended its application to the content of the parent details element.
 // #TINY-10154
+Previously, editor schema heading elements were **invalid** children of a `<summary>` node within the Accordion component.
+
+As a consequence of this, any attempt to apply a heading format to the `<summary>` content within the Accordion component was unsuccessful.
+
+{productname} 6.8 addresses this issue, updates have been applied to the editor schema for heading elements, so they can now be converted as **valid** children of the `<summary>` element.
 
 === Setting the content with an attribute that contains a self-closing HTML tag did not preserve the tag.
 // #TINY-10088
@@ -308,6 +313,10 @@ waiting for confirmation on these new feature tickets.
 
 === Removing an LI element containing a details element would incorrectly merge its content.
 // #TINY-10133
+Previously, when a caret was positioned at the start of a list item containing only one block element, pressing the Backspace key caused the block content to unwrap.
+
+This had the unintended consequence of detaching the child `details` element content and appending it to the content of the preceding list item. Unfortunately, this action left the `summary` element devoid of its requisite parent `details` element, rendering it structurally invalid.
+{productname} 6.8 addresses this issue. now, the details content is no longer unwrapped and moved to the upper list item, which preserves the component's expected structure.
 
 === Search and replace plugin would incorrectly find matching text inside non-editable root elements.
 // #TINY-10162

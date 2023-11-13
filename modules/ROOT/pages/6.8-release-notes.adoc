@@ -220,6 +220,9 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Inline dialog will now respect size: 'large' argument in the dialog spec.
 // #TINY-10209
+In previous versions of {productname}, when a dialog was redialed with a new `size` value, that value would have no effect on the size of the dialog. 
+
+In {productname} 6.8, now, the size of the dialog is updated when the dialog is redialed with a spec containing a new `size` that is different from the current size.
 
 === SVG elements and their children are now retained when configured as valid elements.
 // #TINY-10237

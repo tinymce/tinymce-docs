@@ -121,17 +121,33 @@ The {productname} 6.8 release includes an accompanying release of the **PowerPas
 
 === Pasting underlined content from MS Word with PowerPaste results in empty rows being underlined
 // TINY-10178
-Previously, when running **Powerpaste 6.2.3** and copying content from Microsoft Word that contains text content such as the below:
+Previously, when a user pasted content from Word, the pasted content would be converted to: 
 
 [source, html]
 ----
 <p><s>Sold out on tickets.</s></p>
-<p>&nbsp;</p>
+<p><s>&nbsp;</s></p>
 <p>Sorry!</p>
 ----
 
-after pasting the content into the {productname} editor, the editor would **insert** a unexpected `<s>` tags around the `+&nbsp;+` such as `<p><s>&nbsp;</s></p>` which would render a visual `-` "strikethough" between the two paragraph's.
+As  a consequence, two distinct behaviours were apparent.
 
+. Firstly, the content displayed in Word did **not** render an underline for the second line, but only as an empty line.
+. In {productname} the same content renders an underline in the second line.
+
+To fix this , when a paragraph contains no content except for a `+&nbsp;+`, then PowerPaste would unwrap that specific paragraph so that it becomes: 
+
+[source, html]
+----
+<p>&nbsp;</p>
+----
+
+Instead of: 
+
+[source, html]
+----
+<p><s><u>&nbsp;</u></s></p>
+----
 **Powerpaste 6.4.2** addresses this issue, now, when a paragraph contains a `+&nbsp;+` within the copied text content, the inner `s` tags, `u` tags and `spans` are removed on paste.
 
 === Powerpaste pasting causes window to be scrolled when editor isn't fully visible

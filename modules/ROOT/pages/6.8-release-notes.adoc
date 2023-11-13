@@ -78,11 +78,35 @@ The {productname} 6.8 release includes an accompanying release of the **Advanced
 
 ==== AdvTemplate add fixed {{clipboard}} marker
 // #TINY-9974
+**Advanced Template** 1.4.0 introduces a new feature that allows templates to now include special markers, denoted as `+{{mce-clipboard}}+`. These markers serve as placeholders that indicate where clipboard content should be inserted once the template is added to the editor's content.
 
-// CCFR here.
+The string to add is as follows: `+{{mce-clipboard}}+`.
 
+.Example
+[source, javascript]
+----
+tinymce.init({
+  selector: "textarea",
+  plugins: [ "code", "advtemplate", "undo", "redo", "mergetags", ],
+  toolbar: "inserttemplate | undo redo | mergetags",
+  advtemplate_templates: [
+    {
+      title: 'mce-clipboard template',
+      items: [
+        {
+          id: '1',
+	  title: 'clipboard',
+          content: '{{mce-clipboard}}'
+        },
+      ],
+    },
+  ],
+});
+----
 
-For information on the **Accessibility Checker** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
+As a result, when a user inserts a template containing the `+{{mce-clipboard}}+` marker, the editor will replace these markers with the actual content from the clipboard. This dynamic replacement ensures that users can effortlessly integrate clipboard content into their templates without the need for additional copy-pasting steps.
+
+For information on the **Advanced Templates** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
 
 === AI Assistant 1.1.1
 
@@ -147,7 +171,13 @@ The {productname} 6.8 release includes an accompanying release of the **Advanced
 
 ==== If tinymcespellchecker and typography are both loaded, tinymcespellchecker prevents typography from transforming the string, (tm) into the character ‚Ñ¢.
 //#TINY-9963
+Previously when the {productname} **Spell Checker Pro** plugin and the **Advanced Typography** plugin where both loaded, the **Spell Checker Pro** plugin would prevent the **Advanced Typography** plugin from transforming the string, `(tm)` into the character `™`.
 
+The **Spell Checker Pro** originally would wrap elements with a fake element to underline misspelled words, and as the **Advanced Typography** plugin is designed to detect wrapped elements from the spellchecker, this resulted in it parsing 'tm' instead of `(tm)`.
+
+{productname} 6.8 addresses this issue, now, the **Advanced Typography** parser utilizes functionality provided by internal library, which enables it to identify both the prefix and suffix of an element.
+
+As a result when the **Advanced Typography**  plugin encounters a string 'tm' the system also checks for the presence of parentheses before and after, to ensure it correctly transform's any instance of `(tm)` to `™`.
 
 For information on the **Advanced Typography** plugin, see: xref:advanced-typography.adoc[Advanced Typography].
 
@@ -190,6 +220,9 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Inline dialog will now respect size: 'large' argument in the dialog spec.
 // #TINY-10209
+In previous versions of {productname}, when a dialog was redialed with a new `size` value, that value would have no effect on the size of the dialog. 
+
+In {productname} 6.8, now, the size of the dialog is updated when the dialog is redialed with a spec containing a new `size` that is different from the current size.
 
 === SVG elements and their children are now retained when configured as valid elements.
 // #TINY-10237
@@ -251,6 +284,11 @@ waiting for confirmation on these new feature tickets.
 
 === Selecting a cell with only `&nbsp;` in a table inside a `td` and then press `backspace` the entire table is deleted
 // #TINY-10254
+Previously, the editor checked the number of tables included in a selection by identifying the closest parent to the selected elements within the table. However, when selecting part of a nested table along with some other element, two different tables were detected: the nested one and the one containing both the nested table and the additional element.
+
+The consequence of this issue was that deleting the selection emptied the main table containing the additional element because it was the last part of the selection, and the selection also included another table (the nested one). Since the entire nested table was contained in the main table, it was completely deleted as well.
+
+{productname} 6.8 addresses this issue, now the editor recognizes this scenario and manages it as if the additional element was not contained in any table. As a result, the deletion now behaves as if it were outside a table, and it functions as expected.
 
 === All applied inline formats are lost when format is removed.
 // #TINY-10132
@@ -263,9 +301,33 @@ waiting for confirmation on these new feature tickets.
 
 === Applying heading formatting to the content of the summary element extended its application to the content of the parent details element.
 // #TINY-10154
+Previously, editor schema heading elements were **invalid** children of a `<summary>` node within the Accordion component.
+
+As a consequence of this, any attempt to apply a heading format to the `<summary>` content within the Accordion component was unsuccessful.
+
+{productname} 6.8 addresses this issue, updates have been applied to the editor schema for heading elements, so they can now be converted as **valid** children of the `<summary>` element.
 
 === Setting the content with an attribute that contains a self-closing HTML tag did not preserve the tag.
 // #TINY-10088
+In previous versions of **DOMPurify**, a critical issue was identified where attributes containing the self-closing `+/>+` tags were erroneously removed during the sanitization process.
+
+This issue stemmed from a older version of DOMPurify was inadvertently truncating attributes associated with self-closing tags.
+
+.Truncated attributes
+[source, html]
+----
+<div>Attribute with empty element (&lt;br/&gt;)</div>
+----
+
+.Expected attributes
+[source, html]
+----
+<div data-macro-parameters="title=<br/>">Attribute with empty element (&lt;br/&gt;)</div>
+----
+
+As a consequence, the removal of these attributes by **DOMPurify** would cause significant problems in the users web applications.
+
+{productname} 6.8 addresses this issue by updating **DOMPurify** to the latest version. By doing so, these attributes are no longer removed, which preserves the integrity of their content.
 
 === Screen readers now announce the selected color of forecolor and backcolor buttons.
 // #TINY-9796
@@ -284,6 +346,10 @@ waiting for confirmation on these new feature tickets.
 
 === Removing an LI element containing a details element would incorrectly merge its content.
 // #TINY-10133
+Previously, when a caret was positioned at the start of a list item containing only one block element, pressing the Backspace key caused the block content to unwrap.
+
+This had the unintended consequence of detaching the child `details` element content and appending it to the content of the preceding list item. Unfortunately, this action left the `summary` element devoid of its requisite parent `details` element, rendering it structurally invalid.
+{productname} 6.8 addresses this issue. now, the details content is no longer unwrapped and moved to the upper list item, which preserves the component's expected structure.
 
 === Search and replace plugin would incorrectly find matching text inside non-editable root elements.
 // #TINY-10162

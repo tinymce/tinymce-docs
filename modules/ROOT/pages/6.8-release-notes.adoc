@@ -235,7 +235,7 @@ waiting for confirmation on these new feature tickets.
 // #TINY-10177
 Previously, clicking on the expand arrow of a `details` element would result in the editor selection to be external of the `summary` element when the host browser was Safari.
 
-As a consequence, the `isInSummary` predicate could not detect the selection at the beginning of the `details` element and would fail to toggle the Accordion component on **Enter** key press.
+As a consequence, the plugin failed to detect if the selection was at the beginning of the `details` element, which resulted in a unsuccessful attempt to toggle the Accordion component when the **Enter** key is pressed
 
 {productname} 6.8 addresses this issue, now, the predicate considers that the selection can be right before the `summary` element, so the Accordion toggling can work as expected on Safari.
 

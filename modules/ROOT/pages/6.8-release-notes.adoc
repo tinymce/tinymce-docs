@@ -395,8 +395,20 @@ As a consequence, the removal of these attributes by **DOMPurify** would cause s
 === The dialog size was not updated when the size argument was changed when redialling a dialog.
 // #TINY-10209
 
-=== Custom block element wasn't considered block element in some cases.
+=== Custom block element's where not considered block elements in some cases.
 // #TINY-10139
+Before, if a user copied and pasted a block element that was inside a custom element like the example config below, the editor would make an duplicate copy of the outer wrapper for the custom block element when pasting the content back. This happened because the function didn't check if the element is a wrapper element.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  extended_valid_elements: 'mycustomblock[id],mycustominline',
+  custom_elements: 'mycustomblock,~mycustominline' // Notice the ~ prefix to force a span element for the element
+});
+----
+
+{productname} 6.8, now also considers **custom elements** as part of its process when checking if the element is a wrapper element.
 
 === An empty element with a contenteditable="true" attribute within a table cell would not be treated as content and get removed if backspace or delete was being pressed.
 // #TINY-10010

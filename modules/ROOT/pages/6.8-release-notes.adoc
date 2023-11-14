@@ -289,7 +289,7 @@ tinymce.init({
 });
 ----
 
-{productname} 6.8, now, checks if the element is a wrapper element, so it is also considers elements contained in custom element tags.
+{productname} 6.8, now also considers **custom elements** as part of its process when checking if the element is a wrapper element.
 
 === An empty element with a contenteditable="true" attribute within a table cell would not be treated as content and get removed if backspace or delete was being pressed.
 // #TINY-10010

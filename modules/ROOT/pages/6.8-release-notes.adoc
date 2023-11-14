@@ -146,7 +146,7 @@ Instead of:
 
 [source, html]
 ----
-<p><s><u>&nbsp;</u></s></p>
+<p><u>&nbsp;</u></p>
 ----
 **Powerpaste 6.4.2** addresses this issue, now, when a paragraph contains a `+&nbsp;+` within the copied text content, the inner `s` tags, `u` tags and `spans` are removed on paste.
 

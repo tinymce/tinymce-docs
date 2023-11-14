@@ -40,7 +40,7 @@ tinymce.init({
           return [];
         }
       });
-      
+
       // Forms the new query sent to the API
       const content = request.context.length === 0 || conversation.length > 0
         ? request.query
@@ -69,7 +69,23 @@ tinymce.init({
         },
         body: JSON.stringify(requestBody)
       };
-      
+	  
+      const onopen = async (response) => {
+        if (response) {
+          const contentType = response.headers.get('content-type');
+          if (response.ok && contentType?.includes('text/event-stream')) {
+            return;
+          } else if (contentType?.includes('application/json')) {
+            const data = await response.json();
+            if (data.error) {
+              throw new Error(`${data.error.type}: ${data.error.message}`);
+            }
+          }
+        } else {
+          throw new Error('Failed to communicate with the ChatGPT API');
+        }
+      };
+
       // This function passes each new message into the plugin via the `streamMessage` callback.
       const onmessage = (ev) => {
         const data = ev.data;
@@ -82,7 +98,7 @@ tinymce.init({
           }
         }
       };
-      
+
       const onerror = (error) => {
         // Stop operation and do not retry by the fetch-event-source
         throw error;
@@ -91,14 +107,24 @@ tinymce.init({
       // Use microsoft's fetch-event-source library to work around the 2000 character limit
       // of the browser `EventSource` API, which requires query strings
       return fetchApi
-      .then(fetchEventSource => 
+      .then(fetchEventSource =>
         fetchEventSource('https://api.openai.com/v1/chat/completions', {
           ...openAiOptions,
           openWhenHidden: true,
+		      onopen,
           onmessage,
           onerror
         })
-      );
+      )
+      .then((response) => {
+        if (response && !response.ok) {
+          const data = await response.json();
+          if (data.error) {
+            throw new Error(`${data.error.type}: ${data.error.message}`);
+          }
+        }
+      })
+      .catch(onerror);
     });
   }
 });

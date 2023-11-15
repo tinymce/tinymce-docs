@@ -8,6 +8,16 @@ class: changelog
 
 > This is the {{site.productname}} Community version changelog. For information about the latest {{site.cloudname}} or {{site.enterpriseversion}} Release, see: [{{site.productname}} Release Notes]({{site.baseurl}}/release-notes/).
 
+## 5.10.9 - 2023-11-15
+
+### Changed
+- Zero width no-break space (U+FEFF) characters are removed from content passed to `setContent`, `insertContent`, and `resetContent` APIs.
+- Zero width no-break space (U+FEFF) characters in initial content are not loaded into the editor upon initialization.
+
+### Fixed
+- Specific HTML content containing unescaped text nodes caused mXSS when using undo/redo.
+- Specific HTML content containing unescaped text nodes caused mXSS when using the `getContent` and `setContent` APIs with the `format: 'raw'` option, which also affected the `resetContent` API and the draft restoration feature of the Autosave plugin.
+
 ## 5.10.8 - 2023-10-19
 
 ### Fixed

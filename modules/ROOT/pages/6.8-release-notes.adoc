@@ -346,6 +346,14 @@ The consequence of this issue was that deleting the selection emptied the main t
 
 === All applied inline formats are lost when format is removed.
 // #TINY-10132
+Previously, a formatted caret was mistakenly perceived as an empty element, which resulted in,
+
+* a unintended consequence which forced the editor to clear the entire editor DOM when toggling the formatted node, and;
+* the de-formatting logic which iterates from the **innermost** to the **outermost** formatted node until a match is found, **failed** to execute the expected behavior as it did not account for parent formatted nodes.
+
+However, with the recent fix in {productname} 6.8, the caret is now disregarded when clearing the editor, and before removing the caret format, the system now checks if the matching format node is **non-nullable** and retrieves the parent nodes when necessary.
+
+As a result, formatting can now be correctly removed in both empty and non-empty editors.
 
 === Editor would convert urls that are not http/s or relative resulting in broken links.
 // #TINY-10153

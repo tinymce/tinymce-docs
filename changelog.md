@@ -7,6 +7,10 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### Unreleased
 
 
+### 2023-11-15
+
+- DOC-2204: added `6.7.3-release-notes.adoc` to project; updated `changelog.adoc`, `nav.adoc` and `release-notes.adoc` for the TinyMCE 6.7.3 release, and api-version bump for 6.7.3.
+
 ### 2023-11-01
 
 - DOC-2194: fix heading lvl in 6.7.2 release notes for fixes.

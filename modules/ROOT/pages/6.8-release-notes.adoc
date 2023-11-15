@@ -78,11 +78,35 @@ The {productname} 6.8 release includes an accompanying release of the **Advanced
 
 ==== AdvTemplate add fixed {{clipboard}} marker
 // #TINY-9974
+**Advanced Template** 1.4.0 introduces a new feature that allows templates to now include special markers, denoted as `+{{mce-clipboard}}+`. These markers serve as placeholders that indicate where clipboard content should be inserted once the template is added to the editor's content.
 
-// CCFR here.
+The string to add is as follows: `+{{mce-clipboard}}+`.
 
+.Example
+[source, javascript]
+----
+tinymce.init({
+  selector: "textarea",
+  plugins: [ "code", "advtemplate", "undo", "redo", "mergetags", ],
+  toolbar: "inserttemplate | undo redo | mergetags",
+  advtemplate_templates: [
+    {
+      title: 'mce-clipboard template',
+      items: [
+        {
+          id: '1',
+	  title: 'clipboard',
+          content: '{{mce-clipboard}}'
+        },
+      ],
+    },
+  ],
+});
+----
 
-For information on the **Accessibility Checker** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
+As a result, when a user inserts a template containing the `+{{mce-clipboard}}+` marker, the editor will replace these markers with the actual content from the clipboard. This dynamic replacement ensures that users can effortlessly integrate clipboard content into their templates without the need for additional copy-pasting steps.
+
+For information on the **Advanced Templates** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
 
 === AI Assistant 1.1.1
 
@@ -121,7 +145,34 @@ The {productname} 6.8 release includes an accompanying release of the **PowerPas
 
 === Pasting underlined content from MS Word with PowerPaste results in empty rows being underlined
 // TINY-10178
-//CCFR
+Previously, when a user pasted content from Word, the pasted content would be converted to: 
+
+[source, html]
+----
+<p><s>Sold out on tickets.</s></p>
+<p><u>&nbsp;</u></p>
+<p>Sorry!</p>
+----
+
+As  a consequence, two distinct behaviours were apparent.
+
+. Firstly, the content displayed in Word did **not** render an underline for the second line, but only as an empty line.
+. In {productname} the same content renders an underline in the second line.
+
+To fix this , when a paragraph contains no content except for a `+&nbsp;+`, then PowerPaste would unwrap that specific paragraph so that it becomes: 
+
+[source, html]
+----
+<p>&nbsp;</p>
+----
+
+Instead of: 
+
+[source, html]
+----
+<p><u>&nbsp;</u></p>
+----
+**Powerpaste 6.4.2** addresses this issue, now, when a paragraph contains a `+&nbsp;+` within the copied text content, the inner `s` tags, `u` tags and `spans` are removed on paste.
 
 === Powerpaste pasting causes window to be scrolled when editor isn't fully visible
 // TINY-10172
@@ -147,7 +198,13 @@ The {productname} 6.8 release includes an accompanying release of the **Advanced
 
 ==== If tinymcespellchecker and typography are both loaded, tinymcespellchecker prevents typography from transforming the string, (tm) into the character ‚Ñ¢.
 //#TINY-9963
+Previously when the {productname} **Spell Checker Pro** plugin and the **Advanced Typography** plugin where both loaded, the **Spell Checker Pro** plugin would prevent the **Advanced Typography** plugin from transforming the string, `(tm)` into the character `™`.
 
+The **Spell Checker Pro** originally would wrap elements with a fake element to underline misspelled words, and as the **Advanced Typography** plugin is designed to detect wrapped elements from the spellchecker, this resulted in it parsing 'tm' instead of `(tm)`.
+
+{productname} 6.8 addresses this issue, now, the **Advanced Typography** parser utilizes functionality provided by internal library, which enables it to identify both the prefix and suffix of an element.
+
+As a result when the **Advanced Typography**  plugin encounters a string 'tm' the system also checks for the presence of parentheses before and after, to ensure it correctly transform's any instance of `(tm)` to `™`.
 
 For information on the **Advanced Typography** plugin, see: xref:advanced-typography.adoc[Advanced Typography].
 
@@ -187,15 +244,40 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Improved the tooltips of picker buttons for the urlinput components in the "Insert/Edit Image" and "Insert/Edit Link" dialogs.
 // #TINY-10155
+In previous versions of {productname}, the tooltips of file picker buttons of `urlinput` dialog components assumed the label of the component.
+
+Consequently, the tooltip does not always clearly indicate the functionality of the file picker button. This affected the `urlinput` dialog components in the **Insert/Edit Link**, **Insert/Edit Image**, and **Insert/Edit Media** dialogs.
+
+In {productname} 6.8, the tooltips of `urlinput` file picker buttons on affected dialogs have been improved as follows:
+
+[cols="h,1,1,1",options="header"]
+|===============================================================
+|     | Insert/Edit Link | Insert/Edit Image | Insert/Edit Media
+| Old | "URL"            | "Source"          | "Source"         
+| New | "Browse links"   | "Browse files"    | "Browse files"   
+|===============================================================
 
 === Inline dialog will now respect size: 'large' argument in the dialog spec.
 // #TINY-10209
+In previous versions of {productname}, when a dialog was redialed with a new `size` value, that value would have no effect on the size of the dialog. 
+
+In {productname} 6.8, now, the size of the dialog is updated when the dialog is redialed with a spec containing a new `size` that is different from the current size.
 
 === SVG elements and their children are now retained when configured as valid elements.
 // #TINY-10237
+Previously, when a user attempted to insert an SVG element using the code editor or any other method of content insertion, the SVG would not be properly retained inside the editor, even if the integrator had enabled SVG support.
+
+With the release of {productname} 6.8, a new code has been introduced to skip the normal processing of SVG elements, treating them as foreign objects.
+
+As a result, SVG and its sub-elements are now retained as-is if they were configured as extended_valid_elements to include SVG elements.
 
 === Bespoke dropdown toolbar buttons including align, fontfamily, fontsize, blocks, and styles did not include their visible text labels in their accessible names.
 // #TINY-10147
+Prior to {productname} 6.8, accessibility labels of bespoke dropdown buttons only announced the name of the button, and not the visible text label of the selected option.
+
+For example, when the `fontfamily` dropdown button selection was set to “Verdana”, the accessibility name was set as “Fonts”. However, it should have been set as “Fonts Verdana” as the selected option is also visible on the button.
+
+In {productname} 6.8, the visible text label _(or icon name where icons are present instead)_ of selected options of bespoke dropdown buttons are appended to the accessible name. This ensures that the accessible name of the above scenario is announced as “Fonts Verdana”, improving accessibility.
 
 
 [[additions]]
@@ -233,6 +315,11 @@ waiting for confirmation on these new feature tickets.
 
 === Pressing Enter when focusing on the `details` component for an Accordion deletes its structure.
 // #TINY-10177
+Previously, clicking on the expand arrow of a `details` element would result in the editor selection to be external of the `summary` element when the host browser was Safari.
+
+As a consequence, the plugin failed to detect if the selection was at the beginning of the `details` element, which resulted in a unsuccessful attempt to toggle the Accordion component when the **Enter** key is pressed
+
+{productname} 6.8 addresses this issue, now, the predicate considers that the selection can be right before the `summary` element, so the Accordion toggling can work as expected on Safari.
 
 === Adjacent SVG block level elements adds extra paragraph
 // #TINY-10273
@@ -251,6 +338,11 @@ waiting for confirmation on these new feature tickets.
 
 === Selecting a cell with only `&nbsp;` in a table inside a `td` and then press `backspace` the entire table is deleted
 // #TINY-10254
+Previously, the editor checked the number of tables included in a selection by identifying the closest parent to the selected elements within the table. However, when selecting part of a nested table along with some other element, two different tables were detected: the nested one and the one containing both the nested table and the additional element.
+
+The consequence of this issue was that deleting the selection emptied the main table containing the additional element because it was the last part of the selection, and the selection also included another table (the nested one). Since the entire nested table was contained in the main table, it was completely deleted as well.
+
+{productname} 6.8 addresses this issue, now the editor recognizes this scenario and manages it as if the additional element was not contained in any table. As a result, the deletion now behaves as if it were outside a table, and it functions as expected.
 
 === All applied inline formats are lost when format is removed.
 // #TINY-10132
@@ -265,15 +357,42 @@ As a result, formatting can now be correctly removed in both empty and non-empty
 
 === Editor would convert urls that are not http/s or relative resulting in broken links.
 // #TINY-10153
+In previous versions of {productname}, when using the **Link Plugin**, and inserting a link that is not http/s or relative (such as onenote link), the editor would modify/update the link by adding a new hostname to the url.
+
+{productname} 6.8 addresses this issue, now, the editor no longer changes links that are not http/s or relative.
 
 === Calling the setProgressState API would cause the window to be scrolled when the editor wasn't fully visible.
 // #TINY-10172
 
 === Applying heading formatting to the content of the summary element extended its application to the content of the parent details element.
 // #TINY-10154
+Previously, editor schema heading elements were **invalid** children of a `<summary>` node within the Accordion component.
+
+As a consequence of this, any attempt to apply a heading format to the `<summary>` content within the Accordion component was unsuccessful.
+
+{productname} 6.8 addresses this issue, updates have been applied to the editor schema for heading elements, so they can now be converted as **valid** children of the `<summary>` element.
 
 === Setting the content with an attribute that contains a self-closing HTML tag did not preserve the tag.
 // #TINY-10088
+In previous versions of **DOMPurify**, a critical issue was identified where attributes containing the self-closing `+/>+` tags were erroneously removed during the sanitization process.
+
+This issue stemmed from a older version of DOMPurify was inadvertently truncating attributes associated with self-closing tags.
+
+.Truncated attributes
+[source, html]
+----
+<div>Attribute with empty element (&lt;br/&gt;)</div>
+----
+
+.Expected attributes
+[source, html]
+----
+<div data-macro-parameters="title=<br/>">Attribute with empty element (&lt;br/&gt;)</div>
+----
+
+As a consequence, the removal of these attributes by **DOMPurify** would cause significant problems in the users web applications.
+
+{productname} 6.8 addresses this issue by updating **DOMPurify** to the latest version. By doing so, these attributes are no longer removed, which preserves the integrity of their content.
 
 === Screen readers now announce the selected color of forecolor and backcolor buttons.
 // #TINY-9796
@@ -284,20 +403,84 @@ As a result, formatting can now be correctly removed in both empty and non-empty
 === The dialog size was not updated when the size argument was changed when redialling a dialog.
 // #TINY-10209
 
-=== Custom block element wasn't considered block element in some cases.
+=== Custom block element's where not considered block elements in some cases.
 // #TINY-10139
+Before, if a user copied and pasted a block element that was inside a custom element like the example config below, the editor would make an duplicate copy of the outer wrapper for the custom block element when pasting the content back. This happened because the function didn't check if the element is a wrapper element.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  extended_valid_elements: 'mycustomblock[id],mycustominline',
+  custom_elements: 'mycustomblock,~mycustominline' // Notice the ~ prefix to force a span element for the element
+});
+----
+
+{productname} 6.8, now also considers **custom elements** as part of its process when checking if the element is a wrapper element.
 
 === An empty element with a contenteditable="true" attribute within a table cell would not be treated as content and get removed if backspace or delete was being pressed.
 // #TINY-10010
 
 === Removing an LI element containing a details element would incorrectly merge its content.
 // #TINY-10133
+Previously, when a caret was positioned at the start of a list item containing only one block element, pressing the Backspace key caused the block content to unwrap.
+
+This had the unintended consequence of detaching the child `details` element content and appending it to the content of the preceding list item. Unfortunately, this action left the `summary` element devoid of its requisite parent `details` element, rendering it structurally invalid.
+{productname} 6.8 addresses this issue. now, the details content is no longer unwrapped and moved to the upper list item, which preserves the component's expected structure.
 
 === Search and replace plugin would incorrectly find matching text inside non-editable root elements.
 // #TINY-10162
+Previously, the **Search and Replace** plugin would replace text inside non-editable elements when contained within a `non-editable` root or within a SVG.
 
-=== Search and replace plugin would incorrectly find matching text inside SVG elements.
-// #TINY-10162
+As a consequence, users could inadvertently modify content that was meant to be static, as the search function could not distinguish the difference between editable and non-editable contexts.
+
+{productname} 6.8, now, checks if the text is inside a editable context such as non-editable root elements and SVGs.
+
+As a result, users can no longer modify content that is contained within a non-editable element when using the **Search and Replace** plugin.
+
+=== Merging an external p inside a list via delete or backspace would incorrectly try to move a parent element inside a child element.
+// #TINY-10289
+Previously, when the caret was positioned at either the,
+
+. **beginning** of the `<p>` and the `backspace` key is pressed; or
+. **end** of the `<li>` with **id child** and the `delete` key is pressed.
+
+the `<p>` tag element would be moved inside the child element, rather than the context being merged with the `<li>` child element context.
+
+.Example
+[source, html]
+----
+<ol>
+  <li>List 1</li>
+  <li id="parent">
+    <p>p1</p>
+    <ol>
+      <li id="child">List 1-1 </li>
+    </ol>
+    <p>Place cursor at the start of this line and hit backspace.</p>
+  </li>
+</ol>
+----
+
+As a consequence, a console error `"Uncaught DOMException: Failed to execute 'appendChild' on 'Node': The new child element contains the parent"`, would be displayed in the developer console.
+
+{productname} 6.8 addresses this issue, now, after pressing the backspace or delete key, the parent element no longer attempts to merge into the child element, but rather unwraps the parent element and merges the context into the child element, resulting in:
+
+.Example (result)
+[source, html]
+----
+<ol>
+  <li>List 1</li>
+  <li id="parent">
+    <p>p1</p>
+    <ol>
+      <li id="child">List 1-1 Place cursor at the start of this line and hit backspace.</li>
+    </ol>
+  </li>
+</ol>
+----
+
+As a result, the developer console, no longer displays the console error and the merge between the two elements behaves as expected.
 
 
 [[known-issues]]

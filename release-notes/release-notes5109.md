@@ -36,7 +36,7 @@ This vulnerability has been patched in {{site.productname}} 5.10.9 by:
 * ensuring that any unescaped text nodes which contain the special internal marker are emptied before removing the marker from the rest of the HTML, and;
 * removing the special internal marker from content strings passed to `Editor.setContent`, `Editor.insertContent`, and `Editor.resetContent` APIs to prevent them from being loaded into the editor as user-provided content.
 
-CVE: Pending.
+CVE: [CVE-2023-48219](https://www.cve.org/CVERecord?id=CVE-2023-48219).
 
 GHSA: [GitHub Advisories](https://github.com/tinymce/tinymce/security/advisories/GHSA-v626-r774-j7f8).
 > **NOTE**: Tiny Technologies would like to thank Masato Kinugawa of [Cure53](https://cure53.de/) for discovering this vulnerability.

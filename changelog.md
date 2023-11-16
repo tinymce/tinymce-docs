@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2215: add new feature `mce-clipboard` to 6.8 release project for AdvTemplate.
 
 ### 2023-11-15
 

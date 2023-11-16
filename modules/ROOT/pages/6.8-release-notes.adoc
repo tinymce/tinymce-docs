@@ -137,7 +137,7 @@ The {productname} 6.7.0 release includes an accompanying release of the **Spell 
 // TINY-10285
 Previously, while pressing **Enter**, **Spacebar** or changing context within the editor after a incorrectly spelled word would trigger the **Spell Checker Pro** plugin. Although it was discovered that after pressing **Shift+Enter**, the plugin failed to trigger, as the initial implementation did not consider this keypress as a space, or as a change to the context.
 
-{productname} 6.8 addresses this issue, now, the **Spell Checker Pro** mechanism is activated on keypress **Enter**, **Spacebar**, **Shift+Enter** or changing context.
+{productname} 6.8 addresses this issue, now, the **Spell Checker Pro** mechanism is triggered by either **Space**, **Enter** or **Shift+Enter**.
 
 For information on the **Spell Checker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin]
 

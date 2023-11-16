@@ -372,6 +372,14 @@ As a consequence of this, any attempt to apply a heading format to the `<summary
 
 {productname} 6.8 addresses this issue, updates have been applied to the editor schema for heading elements, so they can now be converted as **valid** children of the `<summary>` element.
 
+=== Resize handles would not appear on editable images in a non-editable context.
+// #TINY-10118
+In previous versions of {productname}, a regression was identified that affected images nested within a `NonEditable` section.
+
+As a consequence, the editor would only check the parent element within a nested editable section, which neglected to inspect the image itself and treated the image as a readonly element, rendering it uneditable.
+
+{productname} 6.8 addresses this issue, now, the editor checks the **"readonly"** attribute on images, rather than just the parent element.
+
 === Setting the content with an attribute that contains a self-closing HTML tag did not preserve the tag.
 // #TINY-10088
 In previous versions of **DOMPurify**, a critical issue was identified where attributes containing the self-closing `+/>+` tags were erroneously removed during the sanitization process.

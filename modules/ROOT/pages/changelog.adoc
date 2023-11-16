@@ -4,6 +4,23 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+== 6.7.3 - 2023-11-15
+
+### Changed
+* Zero width no-break space (U+FEFF) characters are removed from content passed to `setContent`, `insertContent`, and `resetContent` APIs.
+* Zero width no-break space (U+FEFF) characters in initial content are not loaded into the editor upon initialization.
+
+### Fixed
+* Specific HTML content containing unescaped text nodes caused mXSS when using undo/redo.
+* Specific HTML content containing unescaped text nodes caused mXSS when using the `getContent` and `setContent` APIs with the `format: 'raw'` option, which also affected the `resetContent` API and the draft restoration feature of the Autosave plugin.
+
+== 6.7.2 - 2023-10-25
+
+=== Fixed
+* The function `getModifierState` did not work on events passed through the editor as expected.
+* Indenting or outdenting a list item that contained non list item siblings after it would result in those siblings being removed.
+* Removed use of async for editor rendering which caused visual blinking when reloading the editor in-place.
+* Toggling a list that contained a list item element — <li> — which, in turn, contained another list item element as its first child, removed other content within the first list item element.
 
 == 6.7.2 - 2023-10-25
 

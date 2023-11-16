@@ -1,0 +1,39 @@
+= TinyMCE 6.7.3
+:navtitle: TinyMCE 6.7.3
+:description: Release notes for TinyMCE 6.7.3
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+[[overview]]
+== Overview
+
+{productname} 6.7.3 was released for {enterpriseversion} and {cloudname} on Wednesday, November 15^th^, 2023. These release notes provide an overview of the changes for {productname} 6.7.3, including:
+
+* xref:security-fixes[Security fixes]
+
+
+[[security-fixes]]
+== Security fixes
+
+{productname} 6.7.3 includes a fix for the following security issue:
+
+=== Special characters in unescaped text nodes can trigger mXSS when using TinyMCE undo/redo, getContentAPI, resetContentAPI, and Autosave plugin
+
+A https://researchgate.net/publication/266654651_mXSS_attacks_Attacking_well-secured_web-applications_by_using_innerHTML_mutations[mutation cross-site scripting] (mXSS) vulnerability was discovered in {productname}’s core undo/redo functionality and other APIs and plugins. Text nodes within specific parents are not escaped upon serialization according to the https://html.spec.whatwg.org/multipage/parsing.html#serialising-html-fragments[HTML standard]. If such text nodes contain a special character reserved as an internal marker, they can be combined with other HTML patterns to form malicious snippets. These snippets pass the initial sanitization layer when the content is parsed into the editor body, but can trigger XSS when the special internal marker is removed from the content and re-parsed. Such mutations occur when serialized HTML content is processed before being stored in the undo stack, or when the following APIs and plugins are used:
+
+* https://tiny.cloud/docs/tinymce/6/apis/tinymce.editor/#getContent[tinymce.Editor.getContent({ format: 'raw' })]
+* https://tiny.cloud/docs/tinymce/6/apis/tinymce.editor/#resetContent[tinymce.Editor.resetContent()]
+* https://tiny.cloud/docs/tinymce/6/autosave/[Autosave Plugin]
+
+This vulnerability has been patched in {productname} 6.7.3 by:
+
+* ensuring that any unescaped text nodes which contain the special internal marker are emptied before removing the marker from the rest of the HTML, and;
+* removing the special internal marker from content strings passed to `Editor.setContent`, `Editor.insertContent`, and `Editor.resetContent` APIs to prevent them from being loaded into the editor as user-provided content.
+
+CVE: pending.
+
+GHSA: https://github.com/tinymce/tinymce/security/advisories/GHSA-v626-r774-j7f8[GitHub Advisory].
+
+NOTE: Tiny Technologies would like to thank Masato Kinugawa of https://cure53.de/[Cure53] for discovering this vulnerability.

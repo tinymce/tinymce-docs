@@ -21,6 +21,8 @@ The mobile experience allows most of the {productname} plugins to work on mobile
 
 NOTE: iPads do not use the `+mobile+` part of the {productname} init configuration. This is due to a constraint added by Apple to return the environment as a "desktop environment" for iPads. iPad users will receive the other changes to touch functionality, such as context toolbars and context menus.
 
+include::partial$misc/admon-mobile-context-menus.adoc[]
+
 include::partial$misc/mobile-platform-compatibility.adoc[]
 
 == Configuring mobile

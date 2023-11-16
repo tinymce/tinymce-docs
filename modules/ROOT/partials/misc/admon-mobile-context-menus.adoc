@@ -1,0 +1,3 @@
+NOTE: When a {productname} context menu is configured, a user on a mobile device can access the {productname} context menu by a _long press_. However, when a {productname} context menu is not configured but a {productname} context toolbar is, _long press_ will instead open the context toolbar. 
+
+IMPORTANT: The native context menu on a mobile device can still be accessed with a {productname} context menu configured, either by a _single tap_ on iOS, or by a _double tap_ on Android. However if the `+contextmenu_never_use_native+` option is enabled, neither _single_ nor _double tap_ will have any effect.

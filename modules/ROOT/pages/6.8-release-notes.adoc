@@ -243,6 +243,11 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Colorpicker now includes the Brightness/Saturation selector and hue slider in the keyboard navigable items.
 // #TINY-9287
+As a result of an accessibility report for {productname}, it was discovered that the color picker dialog scored lower than expected, specifically when the user attempted to interact with the brightness/saturation selector and the hue slider when selecting a foreground or background color.
+
+As a consequence, it was noted that the color picker was not fully accessible via keyboard.
+
+{productname} 6.8 addresses this issue, now, when navigating through the dialog using the keyboard, the focus will be on the brightness/saturation pane, this allows the user to use the arrow keys to navigate in all four directions when selection a color. In addition when holding the "shift" key down, the navigation speed will be increased. This functionality has also been applied to the hue slider for added benefit for accessibility.
 
 === Improved the tooltips of picker buttons for the urlinput components in the "Insert/Edit Image" and "Insert/Edit Link" dialogs.
 // #TINY-10155

@@ -42,8 +42,7 @@ GHSA: https://github.com/tinymce/tinymce/security/advisories/GHSA-v65r-p3vv-jjfv
 
 NOTE: Tiny Technologies would like to thank Masato Kinugawa of https://cure53.de/[Cure53] for discovering this vulnerability.
 
-
-### Notification messages containing HTML were not properly XSS sanitized before being displayed.
+=== Notification messages containing HTML were not properly XSS sanitized before being displayed.
 //#TINY-10286
 
 A https://owasp.org/www-community/attacks/xss/[cross-site scripting] (XSS) vulnerability was discovered in {productname}'s Notification Manager API. The vulnerability exploits {productname}'s unfiltered notification system, which is used in error handling. The conditions for this exploit requires carefully crafted malicious content to have been inserted into the editor and a notification to have been triggered.

@@ -176,7 +176,13 @@ Instead of:
 
 === Powerpaste pasting causes window to be scrolled when editor isn't fully visible
 // TINY-10172
-//CCFR
+Previously, when the `setProgressState(true)` API was invoked while the editor is **not** completely visible, it would trigger the editor to `focus`.
+
+As a consequence, the page automatically scrolls until the editor is fully visible.
+
+{productname} 6.8 addresses this issue, now, the editor retains the focus functionality whilst eliminating the need for the automatic scrolling behavior.
+
+As a result, the editor will still receive `focus` as intended, but the page will no longer scroll unnecessarily when pasted content is inserted.
 
 === Spell Checker Pro 3.3.1
 
@@ -373,6 +379,8 @@ Previously, editor schema heading elements were **invalid** children of a `<summ
 As a consequence of this, any attempt to apply a heading format to the `<summary>` content within the Accordion component was unsuccessful.
 
 {productname} 6.8 addresses this issue, updates have been applied to the editor schema for heading elements, so they can now be converted as **valid** children of the `<summary>` element.
+
+NOTE: To remove the heading format applied to a <summary> element, click on the same applied heading format in the dropdown to "unset" the format.
 
 === Resize handles would not appear on editable images in a non-editable context.
 // #TINY-10118

@@ -143,7 +143,7 @@ In previous versions of {productname}, occasionally the sidebar would unexpected
 
 As a consequence, when the user moved the cursor from an empty element to a commented text selection, the sidebar and comments section would change to be readonly.
 
-{productname} 6.8 addresses this issue, now, when the sidebar state is set as readonly, or when the editor verifiys the current cursor selection is on a invalid selection, the sidebar value is updated to `false` so both states do not affect the sidebar state.
+{productname} 6.8 addresses this issue, now, when the editor verifiys that the sidebar state should set as readonly `false`, it also update invalid selection to `false`, so both states do not affect the sidebar state.
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments plugin].
 

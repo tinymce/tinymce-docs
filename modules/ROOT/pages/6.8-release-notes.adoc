@@ -431,6 +431,14 @@ tinymce.init({
 === An empty element with a contenteditable="true" attribute within a table cell would not be treated as content and get removed if backspace or delete was being pressed.
 // #TINY-10010
 
+=== Creating a new li via enter inside a nested list would not inherit styles from the source li.
+// #TINY-10316
+Previously, when the user created a new `li` from a nested list within its parent by keypress **Enter** the editor would ignore the styles applied to the nested list.
+
+As a consequence, the new `li` did not **inherit** the nested list styles.
+
+{productname} 6.8 addresses this issue, now, when the user creates a new `li` item within a nested list, the styles are copied over from the “source” to the newly created `li` as expected.
+
 === Removing an LI element containing a details element would incorrectly merge its content.
 // #TINY-10133
 Previously, when a caret was positioned at the start of a list item containing only one block element, pressing the Backspace key caused the block content to unwrap.

@@ -141,7 +141,9 @@ The {productname} 6.8 release includes an accompanying release of the **PowerPas
 
 === Safari - Improve pasting content with sidebar comments from the Word document
 // TINY-10229
-//CCFR
+Previously, when copying content, including comments, and subsequently pasting it into a {productname} document, the comments where also unintentionally included in the pasted data.
+
+{productname} 6.8 addresses this issue, now, when a user copy's and paste's content from word with the inclusion of comments, the **Powerpaste** plugin now exclude these comments from the pasted content.
 
 === Pasting underlined content from MS Word with PowerPaste results in empty rows being underlined
 // TINY-10178

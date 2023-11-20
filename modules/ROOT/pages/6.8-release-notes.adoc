@@ -323,6 +323,16 @@ As a consequence, the plugin failed to detect if the selection was at the beginn
 
 {productname} 6.8 addresses this issue, now, the predicate considers that the selection can be right before the `summary` element, so the Accordion toggling can work as expected on Safari.
 
+=== Directionality would not be consistently applied to the entire accordion block.
+// #TINY-10291
+Previously, when applying directionality to the accordion, the `dir` attribute was modified in both the `summary` and auxiliary accordion body `div` element. However, the auxiliary accordion body `div` element disappeared during the editor serialization process, resulting in the loss of the applied `dir` value for the accordion content.
+
+As a consequence, when selecting the accordion block and applying **RTL** directionality, the alignment was only applied to the `summary`, not the entire accordion.
+
+{productname} 6.8 addresses this issue, now, when the {productname} editor is **focused**, a selection normalization process refines the editor selection directly to the element contents.
+
+As a result, when selecting an accordion component, the selection now encompasses the entire details element. This ensures that alignment is applied to the entire accordion block when applying directionality, such as **RTL**, to the component.
+
 === Adjacent SVG block level elements adds extra paragraph
 // #TINY-10273
 

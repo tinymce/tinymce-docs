@@ -445,22 +445,20 @@ tinymce.init({
 === An empty element with a contenteditable="true" attribute within a table cell would not be treated as content and get removed if backspace or delete was being pressed.
 // #TINY-10010
 
+=== Creating a new li via enter inside a nested list would not inherit styles from the source li.
+// #TINY-10316
+Previously, when the user created a new `li` from a nested list within its parent by keypress **Enter** the editor would ignore the styles applied to the nested list.
+
+As a consequence, the new `li` did not **inherit** the nested list styles.
+
+{productname} 6.8 addresses this issue, now, when the user creates a new `li` item within a nested list, the styles are copied over from the “source” to the newly created `li` as expected.
+
 === Removing an LI element containing a details element would incorrectly merge its content.
 // #TINY-10133
 Previously, when a caret was positioned at the start of a list item containing only one block element, pressing the Backspace key caused the block content to unwrap.
 
 This had the unintended consequence of detaching the child `details` element content and appending it to the content of the preceding list item. Unfortunately, this action left the `summary` element devoid of its requisite parent `details` element, rendering it structurally invalid.
 {productname} 6.8 addresses this issue. now, the details content is no longer unwrapped and moved to the upper list item, which preserves the component's expected structure.
-
-=== Search and replace plugin would incorrectly find matching text inside non-editable root elements.
-// #TINY-10162
-Previously, the **Search and Replace** plugin would replace text inside non-editable elements when contained within a `non-editable` root or within a SVG.
-
-As a consequence, users could inadvertently modify content that was meant to be static, as the search function could not distinguish the difference between editable and non-editable contexts.
-
-{productname} 6.8, now, checks if the text is inside a editable context such as non-editable root elements and SVGs.
-
-As a result, users can no longer modify content that is contained within a non-editable element when using the **Search and Replace** plugin.
 
 === Merging an external p inside a list via delete or backspace would incorrectly try to move a parent element inside a child element.
 // #TINY-10289

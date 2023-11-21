@@ -133,6 +133,20 @@ For information on the **AI Assistant** plugin, see: xref:ai.adoc[AI Assistant].
 
 For information on the **AI Assistant** plugin, see: xref:ai.adoc[AI Assistant].
 
+=== Comments 3.3.4
+
+The {productname} 6.8 release includes an accompanying release of the **Comments** premium plugin.
+
+=== Switching from an empty paragraph to a section with a comment didn't enable `Add comment...` textarea.
+//#TINY-10173
+In previous versions of {productname}, occasionally the sidebar would unexpectedly be set as readonly due to a invalid selection state.
+
+As a consequence, when the user moved the cursor from an empty element to a commented text selection, the sidebar and comments section would change to be readonly.
+
+{productname} 6.8 addresses this issue, now, when the editor verifiys that the sidebar state should set as readonly `false`, it also update invalid selection to `false`, so both states do not affect the sidebar state.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments plugin].
+
 === PowerPaste 6.2.3
 
 The {productname} 6.8 release includes an accompanying release of the **PowerPaste** premium plugin.

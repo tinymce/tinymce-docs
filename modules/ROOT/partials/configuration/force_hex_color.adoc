@@ -1,0 +1,21 @@
+[[force_hex_color]]
+== `+force_hex_color+`
+
+This option allows the integrator to optionally force the conversion of either RGB or HEX colors.
+
+*Type:* `+String+`
+
+*Default value:* `+'off'+`
+
+*Possible values:* `+'always'+`, `+'rgb_only'+`, `+'off'+`
+
+=== Example: using `+force_hex_color+`
+
+[source,js]
+----
+// Output elements in XHTML style
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  force_hex_color: 'off' // default
+});
+----

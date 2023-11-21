@@ -287,20 +287,17 @@ In {productname} 6.8, the visible text label _(or icon name where icons are pres
 
 {productname} 6.8 also includes the following additions:
 
-////
-waiting for confirmation on these new feature tickets.
-=== Detect markdown on paste, and convert to HTML
-// #TINY-10199
+=== Added `force_hex_color` editor option. Option `'always'` converts all RGB & RGBA colours to hex, `'rgb_only'` will only convert RGB and *not* RGBA colours to hex, `'off'` won't convert any colours to hex.
+// #TINY-9819
+Previously, when applying colors to content within the editor via the `forecolor` and `backcolor`, only colors applied with RGB values were excepted.
 
-=== Wrap markdown lib with API calls
-// #TINY-10198
+As a consequence HEX colors were ignored by default in {productname}.
 
-////
+{productname} 6.8 addresses this issue, by adding the new editor option `force_hex_color: 'off'` which is set as **default**, can now be added to the {productname} config by;
 
-=== <TINY-vwxyz 1 changelog entry>
-//#TINY-vwxyz1
-
-// CCFR here.
+* **force_hex_color: 'always'**: all colors are converted and applied as HEX format.
+* **force_hex_color: 'rgb_only'**: only RGB and not RGBA colors are converted and applied as HEX.
+* **force_hex_color: 'off'**: (default option) no conversion to hex is applied, and they are left as their input format.
 
 
 [[changes]]

@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2209: add new default_font_stack `user-formatting-option.adoc` file.
 
 ### 2023-11-15
 

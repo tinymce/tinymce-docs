@@ -504,6 +504,17 @@ As a consequence, a console error `"Uncaught DOMException: Failed to execute 'ap
 
 As a result, the developer console, no longer displays the console error and the merge between the two elements behaves as expected.
 
+=== The `fontsizeinput` toolbar item was causing console warnings when toolbar items were clicked.
+// #TINY-10330
+The console error warning "The component must be in a context to execute: triggerEvent" stemmed from two distinct causes.
+
+. Firstly, the toolbar was unintentionally initialized twice during the rendering process.
+. Secondly, the 'fontsizeinput' exhibited a flaw in its 'destroy' action, as it was applied only to one of its three components (namely, the `+` button, input, and `-` button).
+
+As a consequence, these issues manifested between the first and second initialization of the toolbar resulting in the input of the first 'fontsizeinput' not been entirely unmounted, leading to attempts to update a **non-existent** input.
+
+{productname} 6.8 addresses this issue, now the editor removes the redundant second initialization of the toolbar, and fix the 'fontsizeinput' 'destroy' action, so all its components are now properly unmounted. This fix ensures that updates are only applied to components that genuinely exist.
+
 
 [[known-issues]]
 == Known issues

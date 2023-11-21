@@ -7,6 +7,8 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### Unreleased
 
 - DOC-2181: add fix documentation for TINY-10330 to the 6.8 release notes.
+- DOC-2181: add fix documentation for TINY-10173 to the 6.8 release notes.
+- DOC-2181: add fix documentation for TINY-10316 to the 6.8 release notes.
 - DOC-2181: add fix documentation for TINY-10285 to the 6.8 release notes.
 - DOC-2181: add fix documentation for TINY-10118 to the release notes.
 - DOC-2181: add fix documentation for TINY-10132 to the 6.8 release notes.
@@ -18,7 +20,6 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 - DOC-2181: fix documentation for TINY-10153 to the 6.8 release notes.
 - DOC-2181: add fix documentation for TINY-10289 in the 6.8 release notes.
 - DOC-2181: add change documentation for TINY-10237 to the 6.8 release notes.
-- DOC-2181: add fix documentation for TINY-10162 to the 6.8 release notes.
 - DOC-2181: fix documentation for TINY-10209 in the 6.8 release notes.
 - DOC-2181: add improvement documentation for TINY-9963 to the release notes.
 - DOC-2181: add addition `new feature` documentation for TINY-9974 in the 6.8 release notes.

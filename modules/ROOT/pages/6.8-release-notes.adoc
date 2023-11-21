@@ -501,7 +501,7 @@ The console error warning "The component must be in a context to execute: trigge
 
 As a consequence, these issues manifested between the first and second initialization of the toolbar resulting in the input of the first 'fontsizeinput' not been entirely unmounted, leading to attempts to update a **non-existent** input.
 
-{productname} 6.8 addresses this issue, now the editor removes the redundant second initialization of the toolbar, and consequently when the 'fontsizeinput' is removed, all its components are now properly unmounted. This fix ensures that updates are only applied to components that genuinely exist.
+{productname} 6.8 addresses this issue, now the editor removes the redundant second initialization of the toolbar, and fix the 'fontsizeinput' 'destroy' action, so all its components are now properly unmounted. This fix ensures that updates are only applied to components that genuinely exist.
 
 
 [[known-issues]]

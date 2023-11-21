@@ -107,6 +107,7 @@ tinymce.init({
 As a result, when a user inserts a template containing the `+{{mce-clipboard}}+` marker, the editor will replace these markers with the actual content from the clipboard. This dynamic replacement ensures that users can effortlessly integrate clipboard content into their templates without the need for additional copy-pasting steps.
 
 NOTE: when the host browser is **FireFox**, the user will be prompted with a notification error, as it currently does not support clipboard reading.
+
 For information on the **Advanced Templates** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
 
 === AI Assistant 1.1.1

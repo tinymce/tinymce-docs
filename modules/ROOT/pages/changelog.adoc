@@ -7,16 +7,15 @@ NOTE: This is the {productname} Community version changelog. For information abo
 == 6.8 - 2023-11-22
 
 == Added
-* CSS files are now also generated as separate JS files to improve bundling of all resources. #TINY-10352
-* Added new StylesheetLoader.loadRawCss API that can be used to load CSS into a style element. #TINY-10352
-* Added new StylesheetLoader.unloadRawCss API that can be used to unload CSS that was loaded into a style element. #TINY-10352
+* CSS files are now also generated as separate JS files to improve bundling of all resources.
+* Added new StylesheetLoader.loadRawCss API that can be used to load CSS into a style element.
+* Added new StylesheetLoader.unloadRawCss API that can be used to unload CSS that was loaded into a style element.
 * Added force_hex_color editor option. Option 'always' converts all RGB & RGBA colours to hex, 'rgb_only' will only convert RGB and not RGBA colours to hex, 'off' won't convert any colours to hex.
 * Added default_font_stack editor option that makes it possible to define what is considered a system font stack.
-* New `sandbox_iframes` option that controls whether iframe elements will be added a `sandbox=""` attribute to mitigate malicious intent. #TINY-10348
-* New `convert_unsafe_embeds` option that controls whether `<object>` and `<embed>` elements will be converted to more restrictive alternatives, namely `<img>` for image MIME types, `<video>` for video MIME types, `<audio>` audio MIME types, or `<iframe>` for other or unspecified MIME types. #TINY-10349
+* New `sandbox_iframes` option that controls whether iframe elements will be added a `sandbox=""` attribute to mitigate malicious intent.
+* New `convert_unsafe_embeds` option that controls whether `<object>` and `<embed>` elements will be converted to more restrictive alternatives, namely `<img>` for image MIME types, `<video>` for video MIME types, `<audio>` audio MIME types, or `<iframe>` for other or unspecified MIME types.
 
 == Improved
-* Color picker now includes the Brightness/Saturation selector and hue slider in the keyboard navigable items.
 * Improved the tooltips of picker buttons for the urlinput components in the "Insert/Edit Image" and "Insert/Edit Link" dialogs.
 * Inline dialog will now respect `size: 'large'` argument in the dialog spec.
 * SVG elements and their children are now retained when configured as valid elements.
@@ -43,10 +42,10 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Merging an external `p` inside a `list` via delete or backspace would incorrectly try to move a parent element inside a child element.
 * Directionality would not be consistently applied to the entire accordion block.
 * The `fontsizeinput` toolbar item was causing console warnings when toolbar items were clicked.
-// * Menubar buttons with more than one word would sometimes wrap into two lines. #TINY-10343
+* Menubar buttons with more than one word would sometimes wrap into two lines.
 * Creating a new `li` via enter inside a nested list would not inherit styles from the source `li`.
-// * Screen readers now announce the active autocompleter item. #TINY-9393
-// * Dialog collection items would not display any icons chosen from icon pack. #TINY-10174
+* Screen readers now announce the active autocompleter item.
+* Dialog collection items would not display any icons chosen from icon pack.
 
 == 6.7.3 - 2023-11-15
 

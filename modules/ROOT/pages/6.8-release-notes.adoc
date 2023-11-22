@@ -315,7 +315,7 @@ NOTE: `sandbox_iframes`: is set to `false` by default, which is the existing beh
 // #TINY-10349
 Previously the `<object>` and `<embed>` elements, similar to `<iframe>` elements, could embed external resources. However, unlike `<iframe>`, `<object>` and `<embed>` elements did not have a sandboxing mechanism to neutralize resources which have potentially nefarious effects such as malicious scripting, automatic downloads of dangerous files, among others.
 
-{productname} 6.8 addresses this by introducing a new `convert_unsafe_embeds` boolean option. When set to `true`, `<object>` and `<embed>` elements will be converted to different safer alternatives based on their embedded content's MIME type, set via the type attribute:
+{productname} 6.8 addresses this by introducing a new `convert_unsafe_embeds` boolean option. When set to `true`, `<object>` and `<embed>` elements will be converted to different safer alternatives based on their embedded content's MIME type, set via the `type` attribute:
 
 * an image MIME type (starts with `image/`) will be converted to the `<img>` element; and
 * a video MIME type (starts with `video/`) will be converted to the `<video>` element; and

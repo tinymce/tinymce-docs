@@ -6,6 +6,9 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+
+### 2023-11-22
+
 - DOC-2180: Added 6.8-specific entry to `changelog.adoc`.
 
 ### 2023-11-15

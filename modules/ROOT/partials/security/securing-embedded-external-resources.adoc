@@ -1,7 +1,7 @@
 [[sandbox-iframes-option]]
 ==== `sandbox_iframes` option
 
-This option controls whether iframe elements will be updated with the `sandbox=""` attribute to mitigate malicious intent from being inserted into the editor.
+This option controls whether the editor will add a `sandbox=""` attribute to all `<iframe>` elements. This will restrict the iframe’s embedded resource from performing potentially malicious actions including scripting, file downloads, browser popups, passing the same-origin policy, among others. Reference: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox[MDN].
 
 *Type:* `+Boolean+`
 

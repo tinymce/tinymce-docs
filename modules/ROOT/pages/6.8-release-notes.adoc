@@ -324,7 +324,7 @@ Previously the `<object>` and `<embed>` elements, similar to `<iframe>` elements
 
 The first three types of conversions will prevent scripting and other potentially malicious actions by the embedded resource. 
 
-To ensure any embeds converted to `<iframe>` elements are also neutralized, it is recommended to enable the new `sandbox_iframes` option. This will add a `sandbox=""` attribute to the converted iframe and prevent the embedded resource from potentially malicious effects such as executing scripts, triggering downloads, passing the same-origin policy, etc.
+To ensure any embeds converted to `<iframe>` elements are also neutralized, it is recommended to enable the new `sandbox_iframes` option. This will add a `sandbox=""` attribute to the converted iframe and prevent the embedded resource from performing potentially malicious actions such as executing scripts, triggering downloads, passing the same-origin policy, etc.
 
 NOTE: `convert_unsafe_embeds`: is set to `false` by default to prevent breaking changes to content output.
 

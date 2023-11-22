@@ -15,7 +15,7 @@ This option controls whether the editor will add a `sandbox=""` attribute to all
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
-  sandbox_iframes: 'false' // default
+  sandbox_iframes: false // default
 });
 ----
 

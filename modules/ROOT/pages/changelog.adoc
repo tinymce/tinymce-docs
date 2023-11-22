@@ -4,6 +4,48 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+== 6.8 - 2023-11-22
+
+== Added
+* CSS files are now also generated as separate JS files to improve bundling of all resources.
+* Added new StylesheetLoader.loadRawCss API that can be used to load CSS into a style element.
+* Added new StylesheetLoader.unloadRawCss API that can be used to unload CSS that was loaded into a style element.
+* Added force_hex_color editor option. Option 'always' converts all RGB & RGBA colours to hex, 'rgb_only' will only convert RGB and not RGBA colours to hex, 'off' won't convert any colours to hex.
+* Added default_font_stack editor option that makes it possible to define what is considered a system font stack.
+* New `sandbox_iframes` option that controls whether iframe elements will be added a `sandbox=""` attribute to mitigate malicious intent.
+* New `convert_unsafe_embeds` option that controls whether `<object>` and `<embed>` elements will be converted to more restrictive alternatives, namely `<img>` for image MIME types, `<video>` for video MIME types, `<audio>` audio MIME types, or `<iframe>` for other or unspecified MIME types.
+
+== Improved
+* Improved the tooltips of picker buttons for the urlinput components in the "Insert/Edit Image" and "Insert/Edit Link" dialogs.
+* Inline dialog will now respect `size: 'large'` argument in the dialog spec.
+* Bespoke dropdown toolbar buttons including `align`, `fontfamily`, `fontsize`, `blocks`, and `styles` did not include their visible text labels in their accessible names.
+
+== Fixed
+* Editor would convert urls that are not http/s or relative resulting in broken links.
+* Calling the `setProgressState` API would cause the window to be scrolled when the editor wasn't fully visible.
+* Applying heading formatting to the content of the `summary` element extended its application to the content of the parent details element.
+* Setting the content with an attribute that contains a self-closing HTML tag did not preserve the tag.
+* Screen readers now announce the selected color of `forecolor` and `backcolor` buttons.
+* Resize handles would not appear on editable images in a non-editable context.
+* Corrections and copy-edits to the `addIcon` API documentation.
+* The dialog size was not updated when the `size` argument was changed when redialing a dialog.
+* Toggling a list that contains an LI element having another list as its first child would remove the remaining content within that LI element.
+* Custom block element wasn't considered block element in some cases.
+* The editor no longer forcefully takes focus when a notification closes while the focus is outside of the editor.
+* An empty element with a `contenteditable="true"` attribute within a table cell would not be treated as content and get removed if backspace or delete was being pressed.
+* Removing an LI element containing a `details` element would incorrectly merge its content.
+* The function `getModifierState` did not work on events passed through the editor as expected.
+* Search and replace plugin would incorrectly find matching text inside non-editable root elements.
+* Removed use of `async` for editor rendering which caused visual blinking when reloading the editor in-place.
+* Toggling off one format on the caret when multiple formats was toggled on would toggle all of them off.
+* Merging an external `p` inside a `list` via delete or backspace would incorrectly try to move a parent element inside a child element.
+* Directionality would not be consistently applied to the entire accordion block.
+* The `fontsizeinput` toolbar item was causing console warnings when toolbar items were clicked.
+* Menubar buttons with more than one word would sometimes wrap into two lines.
+* Creating a new `li` via enter inside a nested list would not inherit styles from the source `li`.
+* Screen readers now announce the active autocompleter item.
+* Dialog collection items would not display any icons chosen from icon pack.
+
 == 6.7.3 - 2023-11-15
 
 ### Changed

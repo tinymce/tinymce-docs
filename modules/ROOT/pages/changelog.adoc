@@ -18,7 +18,6 @@ NOTE: This is the {productname} Community version changelog. For information abo
 == Improved
 * Improved the tooltips of picker buttons for the urlinput components in the "Insert/Edit Image" and "Insert/Edit Link" dialogs.
 * Inline dialog will now respect `size: 'large'` argument in the dialog spec.
-* SVG elements and their children are now retained when configured as valid elements.
 * Bespoke dropdown toolbar buttons including `align`, `fontfamily`, `fontsize`, `blocks`, and `styles` did not include their visible text labels in their accessible names.
 
 == Fixed

@@ -106,6 +106,8 @@ tinymce.init({
 
 As a result, when a user inserts a template containing the `+{{mce-clipboard}}+` marker, the editor will replace these markers with the actual content from the clipboard. This dynamic replacement ensures that users can effortlessly integrate clipboard content into their templates without the need for additional copy-pasting steps.
 
+NOTE: when the host browser is **FireFox**, the user will be prompted with a notification error, as it currently does not support clipboard reading.
+
 For information on the **Advanced Templates** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
 
 === AI Assistant 1.1.1
@@ -132,6 +134,20 @@ For information on the **AI Assistant** plugin, see: xref:ai.adoc[AI Assistant].
 //CCFR
 
 For information on the **AI Assistant** plugin, see: xref:ai.adoc[AI Assistant].
+
+=== Comments 3.3.4
+
+The {productname} 6.8 release includes an accompanying release of the **Comments** premium plugin.
+
+=== Switching from an empty paragraph to a section with a comment didn't enable `Add comment...` textarea.
+//#TINY-10173
+In previous versions of {productname}, occasionally the sidebar would unexpectedly be set as readonly due to a invalid selection state.
+
+As a consequence, when the user moved the cursor from an empty element to a commented text selection, the sidebar and comments section would change to be readonly.
+
+{productname} 6.8 addresses this issue, now, when the editor verifiys that the sidebar state should set as readonly `false`, it also update invalid selection to `false`, so both states do not affect the sidebar state.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments plugin].
 
 === PowerPaste 6.2.3
 
@@ -441,6 +457,14 @@ tinymce.init({
 === An empty element with a contenteditable="true" attribute within a table cell would not be treated as content and get removed if backspace or delete was being pressed.
 // #TINY-10010
 
+=== Creating a new li via enter inside a nested list would not inherit styles from the source li.
+// #TINY-10316
+Previously, when the user created a new `li` from a nested list within its parent by keypress **Enter** the editor would ignore the styles applied to the nested list.
+
+As a consequence, the new `li` did not **inherit** the nested list styles.
+
+{productname} 6.8 addresses this issue, now, when the user creates a new `li` item within a nested list, the styles are copied over from the “source” to the newly created `li` as expected.
+
 === Removing an LI element containing a details element would incorrectly merge its content.
 // #TINY-10133
 Previously, when a caret was positioned at the start of a list item containing only one block element, pressing the Backspace key caused the block content to unwrap.
@@ -491,6 +515,17 @@ As a consequence, a console error `"Uncaught DOMException: Failed to execute 'ap
 ----
 
 As a result, the developer console, no longer displays the console error and the merge between the two elements behaves as expected.
+
+=== The `fontsizeinput` toolbar item was causing console warnings when toolbar items were clicked.
+// #TINY-10330
+The console error warning "The component must be in a context to execute: triggerEvent" stemmed from two distinct causes.
+
+. Firstly, the toolbar was unintentionally initialized twice during the rendering process.
+. Secondly, the 'fontsizeinput' exhibited a flaw in its 'destroy' action, as it was applied only to one of its three components (namely, the `+` button, input, and `-` button).
+
+As a consequence, these issues manifested between the first and second initialization of the toolbar resulting in the input of the first 'fontsizeinput' not been entirely unmounted, leading to attempts to update a **non-existent** input.
+
+{productname} 6.8 addresses this issue, now the editor removes the redundant second initialization of the toolbar, and fix the 'fontsizeinput' 'destroy' action, so all its components are now properly unmounted. This fix ensures that updates are only applied to components that genuinely exist.
 
 
 [[known-issues]]

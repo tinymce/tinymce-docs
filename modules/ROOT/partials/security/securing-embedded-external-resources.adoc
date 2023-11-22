@@ -1,0 +1,41 @@
+[[sandbox-iframes-option]]
+==== `sandbox_iframes` option
+
+This option controls whether iframe elements will be updated with the `sandbox=""` attribute to mitigate malicious intent from being inserted into the editor.
+
+*Type:* `+Boolean+`
+
+*Possible values:* `true`, `false`
+
+*Default value:* `false`
+
+===== Example: using `sandbox_iframes` option
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  sandbox_iframes: 'false' // default
+});
+----
+
+[[convert-unsafe-embeds]]
+==== `convert_unsafe_embeds` option
+
+This option controls whether an `<object>` and `<embed>` elements will be converted to more restrictive alternatives, namely `<img>` for image MIME types, `<video>` for video MIME types, `<audio>` audio MIME types, or `<iframe>` for other or unspecified MIME types.
+
+*Type:* `+Boolean+`
+
+*Possible values:* `true`, `false`
+
+*Default value:* `false`
+
+===== Example: using `convert_unsafe_embeds` option
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  convert_unsafe_embeds: 'false' // default
+});
+----

@@ -287,20 +287,30 @@ In {productname} 6.8, the visible text label _(or icon name where icons are pres
 
 {productname} 6.8 also includes the following additions:
 
-////
-waiting for confirmation on these new feature tickets.
-=== Detect markdown on paste, and convert to HTML
-// #TINY-10199
+=== New `sandbox_iframes` option that controls whether iframe elements will be added a `sandbox=""` attribute to mitigate malicious intent.
+// #TINY-10348
+Recently it was discovered that iframes could embed resources that can cause nefarious effects when inserted into the editor via scripting and other mechanisms. This was especially problematic if the iframe had scripts that triggered automatic downloads of malicious files, or if the iframe resource is hosted on the same origin as the editor, which could lead to highly impactful scripting in the same context. In addition, since iframes can be modified to have very small, near-invisible dimensions, they could be unintentionally copied and pasted by users into the editor.
 
-=== Wrap markdown lib with API calls
-// #TINY-10198
+{productname} 6.8 addresses this, by introducing a new `sandbox_iframes` boolean option. When set to `true`, it will add a `sandbox=""` attribute to all iframes inserted into the editor. According to MDN docs, this will restrict the iframe's embedded resource from performing potentially malicious actions including scripting, file downloads, browser popups, passing the same-origin policy, among others.
 
-////
+NOTE: `sandbox_iframes`: is set to `false` by default, which is the existing behavior. This is because enabling `sandbox_iframes` may break **existing media embeds** such as YouTube, Vimeo, and Codepen, as actions such as scripting and same-origin access are prevented.
 
-=== <TINY-vwxyz 1 changelog entry>
-//#TINY-vwxyz1
+=== New `convert_unsafe_embeds` option that controls whether `<object>` and `<embed>` elements will be converted to more restrictive alternatives, namely `<img>` for image MIME types, `<video>` for video MIME types, `<audio>` audio MIME types, or `<iframe>` for other or unspecified MIME types.
+// #TINY-10349
+Previously the `<object>` and `<embed>` elements, similar to `<iframe>` elements, could embed external resources. However, unlike `<iframe>`, `<object>` and `<embed>` elements did not have a sandboxing mechanism to neutralize resources which have potentially nefarious effects such as malicious scripting, automatic downloads of dangerous files, among others.
 
-// CCFR here.
+{productname} 6.8 addresses this by introducing a new `convert_unsafe_embeds` boolean option. When set to `true`, `<object>` and `<embed>` elements will be converted to different safer alternatives based on their embedded content's MIME type, set via the type attribute:
+
+* an image MIME type (starts with `image/`) will be converted to the `<img>` element; and
+* a video MIME type (starts with `video/`) will be converted to the `<video>` element; and
+* an audio MIME type (starts with `audio/`) will be converted to the `<audio>` element; and
+* any other MIME type or if it is unspecified will be converted to the `<iframe>` element.
+
+The first three types of conversions will prevent scripting and other potentially malicious actions by the embedded resource. 
+
+To ensure any embeds converted to `<iframe>` elements are also neutralized, it is recommended to enable the new `sandbox_iframes` option. This will add a `sandbox=""` attribute to the converted iframe and prevent the embedded resource from potentially malicious effects such as executing scripts, triggering downloads, passing the same-origin policy, etc.
+
+NOTE: `convert_unsafe_embeds`: is set to `false` by default to prevent breaking changes to content output.
 
 
 [[changes]]

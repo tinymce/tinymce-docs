@@ -17,6 +17,7 @@ NOTE: The following is _general_ security advice that may be relevant to a websi
 ** xref:cross-site-scripting-xss[Cross-Site Scripting (XSS)]
 ** xref:injection[Injection]
 ** xref:sanitizing-html-input-to-protect-against-xss-attacks[Sanitizing HTML input to protect against XSS attacks]
+** xref:securing-embedded-external-resources[Securing embedded external resources]
 ** xref:insecure-transmission-and-storage-of-data[Insecure Transmission and Storage of data]
 ** xref:broken-authentication-and-session-management[Broken Authentication and Session Management]
 ** xref:using-components-with-known-vulnerabilities[Using Components with Known Vulnerabilities]
@@ -87,6 +88,11 @@ If user inputs are not properly sanitized server-side, host devices and user dat
 For information on Injection-related security issues and how to reduce the risk of an attack, see: https://owasp.org/www-project-top-ten/OWASP_Top_Ten_2017/Top_10-2017_A1-Injection[OWASP Top Ten 2017 -- Injection].
 
 include::partial$security/sanitizing-html-input-and-protecting-against-xss-attacks-dom-parser-and-dom-purify.adoc[]
+
+[[securing-embedded-external-resources]]
+=== Securing-embedded-external-resources
+
+include::partial$security/securing-embedded-external-resources.adoc[]
 
 [[insecure-transmission-and-storage-of-data]]
 === Insecure Transmission and Storage of data

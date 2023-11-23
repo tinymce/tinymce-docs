@@ -126,4 +126,4 @@ Shortcut objects with the `+prompt+` property may also contain the following opt
 
 * `+undefined+`, or _not set_: The shortcut will always be enabled.
 
-This property allows you to define shortcuts with `+selection: true+` which should only operate on context, when the user has selected content. Alternatively, shortcuts with `+selection: false+` will only be used with no selection, allowing you to define shortcuts for generating content from a specific prompt, without any context.
+This property allows the definition of shortcuts which should only operate when the user has selected content, requiring the selection as context to the AI when the property is `+true+`. Additionally, shortcuts which are intended to generate specific content will not be enabled with any selection when the property if `+false+`.

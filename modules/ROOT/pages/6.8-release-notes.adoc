@@ -527,6 +527,17 @@ As a consequence, these issues manifested between the first and second initializ
 
 {productname} 6.8 addresses this issue, now the editor removes the redundant second initialization of the toolbar, and fix the 'fontsizeinput' 'destroy' action, so all its components are now properly unmounted. This fix ensures that updates are only applied to components that genuinely exist.
 
+=== Screen readers now announce the active autocompleter item.
+// #TINY-9393
+As focus is required to be in the editor when interacting with the autocompleter or mentions plugins, a issue was identified when the user would navigate through the autocompleter menu.
+
+As a consequence, this may have cause difficulty navigating through the autocompleter menu for users relying on screen readers.
+
+{productname} 6.8 addresses this, now, by adding `aria-owns` and `aria-activedescendant` attributes into the editor body. This will now ensure that the screen reader can announce the current active autocomplete item when the user navigates through the menu.
+
+NOTE: Closing the autocompleter will remove the attributes.
+
+As a result, these modifications significantly enhance the accessibility of autocompleter and mentions plugins for users relying on screen readers.
 
 [[known-issues]]
 == Known issues

@@ -168,7 +168,7 @@ The following events are provided by the {productname} editor.
 |NewCell |N/A |Fired when a new table cell is created.
 |TableModified |`+{ table: HTMLTableElement, structure: boolean, style: boolean }+` |Fired when style or structural changes are made to a table.
 |TableSelectionClear |N/A |Fired when the table selection is cleared.
-|StylesTextUpdate |`+{ value: string }+` |Fired after the visible text label of the `styles` bespoke toolbar button is updated. `“value refers to the updated visible text label.”`
+|StylesTextUpdate |`+{ value: string }+` |Fired after the visible text label of the `styles` bespoke toolbar button is updated. `value` refers to the updated visible text label.
 |BlocksTextUpdate |`+{ value: string }+` |Fired after the visible text label of the `blocks` bespoke toolbar button is updated. `“value refers to the updated visible text label.”`
 |AlignTextUpdate |`+{ value: string }+` |Fired after the visible icon of the `align` bespoke toolbar button is updated. `“value refers to the updated visible icon.”`
 |FontSizeTextUpdate |`+{ value: string }+` |Fired after the visible text label of the `fontsize` bespoke toolbar button is updated. `“value refers to the updated visible text label.”`

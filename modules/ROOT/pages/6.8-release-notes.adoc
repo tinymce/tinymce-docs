@@ -74,9 +74,9 @@ For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.a
 
 The {productname} 6.8 release includes an accompanying release of the **Advanced Templates** premium plugin.
 
-**Advanced Templates** 1.4.0 includes the following addition.
+**Advanced Templates** 1.4.0 includes the following addition and fix.
 
-==== AdvTemplate add fixed {{clipboard}} marker
+==== AdvTemplate add fixed `{{clipboard}}` marker
 // #TINY-9974
 **Advanced Template** 1.4.0 introduces a new feature that allows templates to now include special markers, denoted as `+{{mce-clipboard}}+`. These markers serve as placeholders that indicate where clipboard content should be inserted once the template is added to the editor's content.
 
@@ -107,6 +107,16 @@ tinymce.init({
 As a result, when a user inserts a template containing the `+{{mce-clipboard}}+` marker, the editor will replace these markers with the actual content from the clipboard. This dynamic replacement ensures that users can effortlessly integrate clipboard content into their templates without the need for additional copy-pasting steps.
 
 NOTE: when the host browser is **FireFox**, the user will be prompted with a notification error, as it currently does not support clipboard reading.
+
+==== The functionality of the `{{mce-cursor}}` marker feature was broken after the upgrade to {productname} 6.7.3
+// #TINY-10367
+Security patch for {productname} 6.7.3, made changes to **ZWNBSP** characters so they are now removed from any content passed via the `insertContent` API. **ZWNBSP** characters where used to add padding to the marker to avoid it cleaning out the empty content.
+
+As a consequence, the `+{{mce-cursor}}+` marker functionality for the Advanced Templates plugin stopped working.
+
+{productname} 6.8 addresses this issue, by replacing the **ZWNBSP** character with a `data-mce-bookmark` attribute to marker, thus preserving them in the inserted template content.
+
+As a result, the `+{{mce-cursor}}+` marker functionality is now working as expected.
 
 For information on the **Advanced Templates** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
 

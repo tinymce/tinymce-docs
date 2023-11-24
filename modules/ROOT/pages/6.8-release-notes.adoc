@@ -110,7 +110,7 @@ NOTE: when the host browser is **FireFox**, the user will be prompted with a not
 
 For information on the **Advanced Templates** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
 
-=== AI Assistant 1.1.1
+=== AI Assistant 1.2.0
 
 The {productname} 6.8 release includes an accompanying release of the **AI Assistant** premium plugin.
 
@@ -121,6 +121,17 @@ The {productname} 6.8 release includes an accompanying release of the **AI Assis
 
 ==== Add selection-based option to ai shortcuts to restrict shortcut misuse
 //#TINY-10159
+In **AI Assistant 1.2.0**, the new selection property is available for shortcuts with prompts in the xref:ai.adoc#ai_shortcuts[`+ai_shortcuts+` option]. This `+boolean+` property controls when that shortcut is enabled based on the current selection within the editor. 
+
+For a shortcut with a prompt, when the property is:
+
+* `+true+`: this shortcut will _only_ be enabled when user _has_ made a selection in the editor;
+* `+false+`: this shortcut will _only_ be enabled when the user _has not_ made a selection in the editor;
+* `+undefined+`: or _not set_, this shortcut will _always_ be enabled.
+
+This property allows the definition of shortcuts which should only operate when the user has selected content, requiring the selection as context to the AI when the property is `+true+`. Additionally, shortcuts which are intended to generate specific content will not be enabled with any selection when the property if `+false+`.
+
+As part of this update, all of the default shortcuts available in **AI Assistant 1.2.0** now have the property `+selection: false+`, as they are all shortcuts which require a selection context to generate content correctly.
 
 
 ==== AI is functional when in a `editable_root: false` root.

@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2181: add fix documentation for TINY-10174 to the 6.8 release notes.
 - DOC-2181: add improvement documentation for TINY-10348 & TINY-10349 to the 6.8 release notes, & added new `options` to `security/securing-embedded-external-resources.adoc` file.
 - DOC-2181: add fix documentation for TINY-10330 to the 6.8 release notes.
 - DOC-2181: add fix documentation for TINY-10173 to the 6.8 release notes.

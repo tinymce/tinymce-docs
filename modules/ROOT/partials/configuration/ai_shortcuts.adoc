@@ -19,25 +19,25 @@ When configured with an instance-specific object array, the {pluginname} shortcu
 [source, js]
 ----
 [
-  { title: 'Summarize content', prompt: 'Provide the key points and concepts in this content in a succinct summary.' },
-  { title: 'Improve writing', prompt: 'Rewrite this content with no spelling mistakes, proper grammar, and with more descriptive language, using best writing practices without losing the original meaning.' },
-  { title: 'Simplify language', prompt: 'Rewrite this content with simplified language and reduce the complexity of the writing, so that the content is easier to understand.' },
-  { title: 'Expand upon', prompt: 'Expand upon this content with descriptive language and more detailed explanations, to make the writing easier to understand and increase the length of the content.' },
-  { title: 'Trim content', prompt: 'Remove any repetitive, redundant, or non-essential writing in this content without changing the meaning or losing any key information.' },
+  { title: 'Summarize content', prompt: 'Provide the key points and concepts in this content in a succinct summary.', selection: true },
+  { title: 'Improve writing', prompt: 'Rewrite this content with no spelling mistakes, proper grammar, and with more descriptive language, using best writing practices without losing the original meaning.', selection: true },
+  { title: 'Simplify language', prompt: 'Rewrite this content with simplified language and reduce the complexity of the writing, so that the content is easier to understand.', selection: true },
+  { title: 'Expand upon', prompt: 'Expand upon this content with descriptive language and more detailed explanations, to make the writing easier to understand and increase the length of the content.', selection: true },
+  { title: 'Trim content', prompt: 'Remove any repetitive, redundant, or non-essential writing in this content without changing the meaning or losing any key information.', selection: true },
   { title: 'Change tone', subprompts: [
-    { title: 'Professional', prompt: 'Rewrite this content using polished, formal, and respectful language to convey professional expertise and competence.' },
-    { title: 'Casual', prompt: 'Rewrite this content with casual, informal language to convey a casual conversation with a real person.' },
-    { title: 'Direct', prompt: 'Rewrite this content with direct language using only the essential information.' },
-    { title: 'Confident', prompt: 'Rewrite this content using compelling, optimistic language to convey confidence in the writing.' },
-    { title: 'Friendly', prompt: 'Rewrite this content using friendly, comforting language, to convey understanding and empathy.' },
+    { title: 'Professional', prompt: 'Rewrite this content using polished, formal, and respectful language to convey professional expertise and competence.', selection: true },
+    { title: 'Casual', prompt: 'Rewrite this content with casual, informal language to convey a casual conversation with a real person.', selection: true },
+    { title: 'Direct', prompt: 'Rewrite this content with direct language using only the essential information.', selection: true },
+    { title: 'Confident', prompt: 'Rewrite this content using compelling, optimistic language to convey confidence in the writing.', selection: true },
+    { title: 'Friendly', prompt: 'Rewrite this content using friendly, comforting language, to convey understanding and empathy.', selection: true },
   ] },
   { title: 'Change style', subprompts: [
-    { title: 'Business', prompt: 'Rewrite this content as a business professional with formal language.' },
-    { title: 'Legal', prompt: 'Rewrite this content as a legal professional using valid legal terminology.' },
-    { title: 'Journalism', prompt: 'Rewrite this content as a journalist using engaging language to convey the importance of the information.' },
-    { title: 'Medical', prompt: 'Rewrite this content as a medical professional using valid medical terminology.' },
-    { title: 'Poetic', prompt: 'Rewrite this content as a poem using poetic techniques without losing the original meaning.' },
-  ] },
+    { title: 'Business', prompt: 'Rewrite this content as a business professional with formal language.', selection: true },
+    { title: 'Legal', prompt: 'Rewrite this content as a legal professional using valid legal terminology.', selection: true },
+    { title: 'Journalism', prompt: 'Rewrite this content as a journalist using engaging language to convey the importance of the information.', selection: true },
+    { title: 'Medical', prompt: 'Rewrite this content as a medical professional using valid medical terminology.', selection: true },
+    { title: 'Poetic', prompt: 'Rewrite this content as a poem using poetic techniques without losing the original meaning.', selection: true },
+  ] }
 ]
 ----
 
@@ -59,18 +59,18 @@ tinymce.init({
   toolbar: 'aidialog aishortcuts',
   ai_request: (request, respondWith) => respondWith.string(() => Promise.reject("See docs to implement AI Assistant")),
   ai_shortcuts: [
-    { title: 'Screenplay', prompt: 'Convert this to screenplay format.' },
-    { title: 'Stage play', prompt: 'Convert this to stage play format.' },
+    { title: 'Screenplay', prompt: 'Convert this to screenplay format.', selection: true },
+    { title: 'Stage play', prompt: 'Convert this to stage play format.', selection: true },
     { title: 'Classical', subprompts: 
       [
-        { title: 'Dialogue', prompt: 'Convert this to a Socratic dialogue.' },
-        { title: 'Homeric', prompt: 'Convert this to a Classical Epic.' }
+        { title: 'Dialogue', prompt: 'Convert this to a Socratic dialogue.', selection: true },
+        { title: 'Homeric', prompt: 'Convert this to a Classical Epic.', selection: true }
       ]
     },
     { title: 'Celtic', subprompts:
       [
-        { title: 'Bardic', prompt: 'Convert this to Bardic verse.' },
-        { title: 'Filí', prompt: 'Convert this to Filí-an verse.' }
+        { title: 'Bardic', prompt: 'Convert this to Bardic verse.', selection: true },
+        { title: 'Filí', prompt: 'Convert this to Filí-an verse.', selection: true }
       ]
     },
   ]
@@ -99,14 +99,31 @@ tinymce.init({
 
 === Valid Shortcuts
 
-Valid shortcut objects contain the following fields.
+Valid shortcut objects contain the following properties.
 
 `+title+`:: A string which is displayed in the `+aishortcuts+` toolbar button and menu item. This will indicate which shortcut is used, or which category of shortcuts are in this menu.
 
 And either
 
-`+prompt+`:: A string containing the query which is given to the `+ai_request+` function when the shortcut is used.
+`+subprompts+`:: An array containing more valid shortcut objects. This allows shortcuts to be grouped into categories within the {pluginname} shortcuts toolbar button and menu item.
 
 or
 
-`+subprompts+`:: An array containing more valid shortcut objects. This allows shortcuts to be grouped into categories within the {pluginname} shortcuts toolbar button and menu item.
+`+prompt+`:: A string containing the query which is given to the `+ai_request+` function when the shortcut is used.
+
+
+==== The `+selection+` property
+
+include::partial$misc/admon-requires-6.8v.adoc[]
+
+Shortcut objects with the `+prompt+` property may also contain the following optional property.
+
+`+selection+`:: A boolean value which will match to the current selection and set the enabled state of the shortcut. When `+selection+` is:
+
+* `+true+`: The shortcut will _only_ be enabled when the user _has_ made a selection in the editor.
+
+* `+false+`: The shortcut will _only_ be enabled when the user _has not_ made a selection in the editor.
+
+* `+undefined+`, or _not set_: The shortcut will always be enabled.
+
+This property allows the definition of shortcuts which should only operate when the user has selected content, requiring the selection as context to the AI when the property is `+true+`. Additionally, shortcuts which are intended to generate specific content will not be enabled with any selection when the property if `+false+`.

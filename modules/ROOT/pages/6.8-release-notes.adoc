@@ -443,6 +443,9 @@ As a consequence, the removal of these attributes by **DOMPurify** would cause s
 
 === Screen readers now announce the selected color of forecolor and backcolor buttons.
 // #TINY-9796
+Previously, when changing the color for either `forecolor` and `backcolor`, screen readers didn't announce the last selected color for that button.
+
+{productname} 6.8 addresses this issue, now, the last selected color for Text/Background color are read aloud by the screen reader as expected.
 
 === Resize handles would not appear on editable images in a non-editable context.
 // #TINY-10118

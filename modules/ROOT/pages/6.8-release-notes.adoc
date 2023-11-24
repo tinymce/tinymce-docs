@@ -553,7 +553,7 @@ As a consequence, these issues manifested between the first and second initializ
 
 === Dialog collection items would not display any icons chosen from icon pack.
 // #TINY-10174
-In earlier versions of {productname}, the collections dialog component encountered an issue where items added to the collections would not display any icon as set in the `+icon+` property, instead only displaying the `+string+` itself.
+In earlier versions of {productname}, collection items set in a xref:dialog-components.adoc#collection[collection dialog component] would not display any icon as set in the `+icon+` property, instead only displaying the `+string+` itself.
 
 In {productname} 6.8, dialog collection items will now use any specified `+icon+` from the xref:icons.adoc#icons[icon pack], with the `+string+` itself used in the case where no such icon exists. This is the current behaviour, as in most uses of dialog collections in {productname}, the `+icon+` property is set as an individual character, such as in the xref:emoticons.adoc[Emoticons] and xref:charmap.adoc[Charmap] plugins.
 

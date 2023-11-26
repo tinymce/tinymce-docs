@@ -551,6 +551,14 @@ As a consequence, these issues manifested between the first and second initializ
 
 {productname} 6.8 addresses this issue, now the editor removes the redundant second initialization of the toolbar, and fix the 'fontsizeinput' 'destroy' action, so all its components are now properly unmounted. This fix ensures that updates are only applied to components that genuinely exist.
 
+=== Dialog collection items would not display any icons chosen from icon pack.
+// #TINY-10174
+In earlier versions of {productname}, collection items set in a xref:dialog-components.adoc#collection[collection dialog component] would not display any icon as set in the `+icon+` property, instead only displaying the `+string+` itself.
+
+In {productname} 6.8, dialog collection items will now use any specified `+icon+` from the xref:icons.adoc#icons[icon pack], with the `+string+` itself used in the case where no such icon exists. This is the current behaviour, as in most uses of dialog collections in {productname}, the `+icon+` property is set as an individual character, such as in the xref:emoticons.adoc[Emoticons] and xref:charmap.adoc[Charmap] plugins.
+
+For information on the **Dialog layout components for collections** plugin see xref:dialog-components.adoc#collection[dialog components].
+
 === Screen readers now announce the active autocompleter item.
 // #TINY-9393
 As focus is required to be in the editor when interacting with the autocompleter or mentions plugins, a issue was identified when the user would navigate through the autocompleter menu.
@@ -562,6 +570,7 @@ As a consequence, this may have cause difficulty navigating through the autocomp
 NOTE: Closing the autocompleter will remove the attributes.
 
 As a result, these modifications significantly enhance the accessibility of autocompleter and mentions plugins for users relying on screen readers.
+
 
 [[known-issues]]
 == Known issues

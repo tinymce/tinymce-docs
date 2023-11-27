@@ -74,9 +74,9 @@ For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.a
 
 The {productname} 6.8 release includes an accompanying release of the **Advanced Templates** premium plugin.
 
-**Advanced Templates** 1.4.0 includes the following addition.
+**Advanced Templates** 1.4.0 includes the following addition and fix.
 
-==== AdvTemplate add fixed {{clipboard}} marker
+==== AdvTemplate fixed `{{mce-cursor}}` marker
 // #TINY-9974
 **Advanced Template** 1.4.0 introduces a new feature that allows templates to now include special markers, denoted as `+{{mce-clipboard}}+`. These markers serve as placeholders that indicate where clipboard content should be inserted once the template is added to the editor's content.
 
@@ -107,6 +107,16 @@ tinymce.init({
 As a result, when a user inserts a template containing the `+{{mce-clipboard}}+` marker, the editor will replace these markers with the actual content from the clipboard. This dynamic replacement ensures that users can effortlessly integrate clipboard content into their templates without the need for additional copy-pasting steps.
 
 NOTE: when the host browser is **FireFox**, the user will be prompted with a notification error, as it currently does not support clipboard reading.
+
+==== The functionality of the `{{mce-cursor}}` marker feature was broken after the upgrade to {productname} 6.7.3
+// #TINY-10367
+Security patch for {productname} 6.7.3, made changes to **ZWNBSP** characters so they are now removed from any content passed via the `insertContent` API. **ZWNBSP** characters where used to add padding to the marker to avoid it cleaning out the empty content.
+
+As a consequence, the `+{{mce-cursor}}+` marker functionality for the Advanced Templates plugin stopped working.
+
+{productname} 6.8 addresses this issue, by replacing the **ZWNBSP** character with a `data-mce-bookmark` attribute to marker, thus preserving them in the inserted template content.
+
+As a result, the `+{{mce-cursor}}+` marker functionality is now working as expected.
 
 For information on the **Advanced Templates** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
 
@@ -213,6 +223,14 @@ As a consequence, the page automatically scrolls until the editor is fully visib
 
 As a result, the editor will still receive `focus` as intended, but the page will no longer scroll unnecessarily when pasted content is inserted.
 
+=== Reset table border width when the paste source is Excel from .5pt to 1px
+// #TINY-10241
+Previously, when pasting a table from a Microsoft Excel document that had a solid thin border of (.5pt) such as `border: 0.5px solid #000;` into the editor when powerpaste was enabled would result in the table rendering as a `dashed` border instead of the solid border.
+
+{productname} 6.8 addresses this by updating the default table border width for tables within {productname} from `.5pt` to `1px`.
+
+As a result, pasting tables now retains its original solid border on paste.
+
 === Spell Checker Pro 3.3.1
 
 The {productname} 6.7.0 release includes an accompanying release of the **Spell Checker Pro** premium plugin.
@@ -224,6 +242,16 @@ The {productname} 6.7.0 release includes an accompanying release of the **Spell 
 Previously, while pressing **Enter**, **Spacebar** or changing context within the editor after a incorrectly spelled word would trigger the **Spell Checker Pro** plugin. Although it was discovered that after pressing **Shift+Enter**, the plugin failed to trigger, as the initial implementation did not consider this keypress as a space, or as a change to the context.
 
 {productname} 6.8 addresses this issue, now, the **Spell Checker Pro** mechanism is triggered by either **Space**, **Enter** or **Shift+Enter**.
+
+=== As-you-type spellechecking would sometimes interrupt composing in certain languages.
+// #TINY-10292
+Spell Checker Pro would in some situations be interrupted while composing when the user selects a suggestion with a `space`.
+
+As a consequence, issues such as duplication or other unintended outcomes would occur.
+
+{productname} 6.8 addresses this issue, by introducing a new check that prevents **as-you-type** checks from being performed if composing is already in progress.
+
+As a result, composing can now be done safely.
 
 For information on the **Spell Checker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin]
 
@@ -367,6 +395,16 @@ Previously, clicking on the expand arrow of a `details` element would result in 
 As a consequence, the plugin failed to detect if the selection was at the beginning of the `details` element, which resulted in a unsuccessful attempt to toggle the Accordion component when the **Enter** key is pressed
 
 {productname} 6.8 addresses this issue, now, the predicate considers that the selection can be right before the `summary` element, so the Accordion toggling can work as expected on Safari.
+
+=== Directionality would not be consistently applied to the entire accordion block.
+// #TINY-10291
+Previously, when applying directionality to the accordion, the `dir` attribute was modified in both the `summary` and auxiliary accordion body `div` element. However, the auxiliary accordion body `div` element disappeared during the editor serialization process, resulting in the loss of the applied `dir` value for the accordion content.
+
+As a consequence, when selecting the accordion block and applying **RTL** directionality, the alignment was only applied to the `summary`, not the entire accordion.
+
+{productname} 6.8 addresses this issue, now, when the {productname} editor is **focused**, a selection normalization process refines the editor selection directly to the element contents.
+
+As a result, when selecting an accordion component, the selection now encompasses the entire details element. This ensures that alignment is applied to the entire accordion block when applying directionality, such as **RTL**, to the component.
 
 === Adjacent SVG block level elements adds extra paragraph
 // #TINY-10273
@@ -550,6 +588,16 @@ The console error warning "The component must be in a context to execute: trigge
 As a consequence, these issues manifested between the first and second initialization of the toolbar resulting in the input of the first 'fontsizeinput' not been entirely unmounted, leading to attempts to update a **non-existent** input.
 
 {productname} 6.8 addresses this issue, now the editor removes the redundant second initialization of the toolbar, and fix the 'fontsizeinput' 'destroy' action, so all its components are now properly unmounted. This fix ensures that updates are only applied to components that genuinely exist.
+
+=== Menubar buttons with more than one word would sometimes wrap into two lines.
+// #TINY-10343
+Previously when rendering the menubar in sync with the fetch of the styles, it was possible in some situations that the styles would render after the menubar.
+
+As a consequence, the menubar would not correctly render such as the `width` of a button, as a result the button width would force the button to wrap vertically rather then display the button content as intended.
+
+{productname} 6.8 addresses this issue, now, the rendering for the toolbar is done after the styles have been fetched.
+
+As a result, the `width` of the buttons now display correctly.
 
 === Dialog collection items would not display any icons chosen from icon pack.
 // #TINY-10174

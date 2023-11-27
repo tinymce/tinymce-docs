@@ -65,7 +65,12 @@ npm run build
 ----
 +
 . If vite runs successfully, check that it generated.
-
++
+[source,sh]
+----
+npm run preview
+----
++
 :!is_zip_install:
 
 include::partial$module-loading/bundling-next-steps.adoc[]

@@ -337,7 +337,14 @@ As a consequence, the plugin failed to detect if the selection was at the beginn
 
 === A closing notification brings focus to the editor even when focus is outside of the editor
 // #TINY-10282
-Previously {productname}'s notification system would return focus back to the editor UI even in situations when the user "clicked" on the close button, and in situations when the `focus` was external to the editor UI.
+Previously {productname}'s notification system would bring the focus to the editors content after the user;
+
+* inserted new content by typing;
+* was then displayed a notification;
+* closed it; then
+* immediately resumed typing without having to click again
+
+As a consequence, the notification would appear and then time out, which shifted the focus from any location (including when the user was focused external to the editor UI) back to the content when the notification closed.
 
 As a consequence, the `focus` would consistently shift back to the editor, irrespective of its current location.
 

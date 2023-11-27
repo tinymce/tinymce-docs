@@ -51,7 +51,7 @@ include::partial$module-loading/bundling-vite-es6-npm.config.adoc[]
 +
 [source,sh]
 ----
-npm run vite
+npm run
 ----
 +
 . If Vite
@@ -61,7 +61,7 @@ npm run vite
 +
 [source,sh]
 ----
-npm run vite build
+npm run build
 ----
 +
 . If vite runs successfully, check that it generated.

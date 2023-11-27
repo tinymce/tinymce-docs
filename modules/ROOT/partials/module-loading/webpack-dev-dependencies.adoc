@@ -42,20 +42,19 @@ npm install --save-dev \
 
 endif::[]
 ifeval::[{is_zip_install} == vite]
-. Add `+tinymce+` and the following development dependencies to the project.
+. Create scaffolding for your project.
++
+[source,sh]
+----
+npm create vite@5 app && cd app && npm install tinymce && npm install --save-dev vite
+----
++
+. Or add `+tinymce+` and the following development dependencies to your existing project.
 * https://vitejs.dev[`+Vite+`]
 +
 For example:
 +
 [source,sh]
 ----
-npm install tinymce &&
-npm install --save-dev vite
-----
-+
-Or example:
-+
-[source,sh]
-----
-npm create vite@5 app && cd app && npm install tinymce
+npm install tinymce && npm install --save-dev vite
 ----

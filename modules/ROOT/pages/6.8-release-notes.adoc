@@ -378,6 +378,16 @@ As a consequence, the plugin failed to detect if the selection was at the beginn
 
 {productname} 6.8 addresses this issue, now, the predicate considers that the selection can be right before the `summary` element, so the Accordion toggling can work as expected on Safari.
 
+=== Directionality would not be consistently applied to the entire accordion block.
+// #TINY-10291
+Previously, when applying directionality to the accordion, the `dir` attribute was modified in both the `summary` and auxiliary accordion body `div` element. However, the auxiliary accordion body `div` element disappeared during the editor serialization process, resulting in the loss of the applied `dir` value for the accordion content.
+
+As a consequence, when selecting the accordion block and applying **RTL** directionality, the alignment was only applied to the `summary`, not the entire accordion.
+
+{productname} 6.8 addresses this issue, now, when the {productname} editor is **focused**, a selection normalization process refines the editor selection directly to the element contents.
+
+As a result, when selecting an accordion component, the selection now encompasses the entire details element. This ensures that alignment is applied to the entire accordion block when applying directionality, such as **RTL**, to the component.
+
 === Adjacent SVG block level elements adds extra paragraph
 // #TINY-10273
 
@@ -560,6 +570,16 @@ The console error warning "The component must be in a context to execute: trigge
 As a consequence, these issues manifested between the first and second initialization of the toolbar resulting in the input of the first 'fontsizeinput' not been entirely unmounted, leading to attempts to update a **non-existent** input.
 
 {productname} 6.8 addresses this issue, now the editor removes the redundant second initialization of the toolbar, and fix the 'fontsizeinput' 'destroy' action, so all its components are now properly unmounted. This fix ensures that updates are only applied to components that genuinely exist.
+
+=== Menubar buttons with more than one word would sometimes wrap into two lines.
+// #TINY-10343
+Previously when rendering the menubar in sync with the fetch of the styles, it was possible in some situations that the styles would render after the menubar.
+
+As a consequence, the menubar would not correctly render such as the `width` of a button, as a result the button width would force the button to wrap vertically rather then display the button content as intended.
+
+{productname} 6.8 addresses this issue, now, the rendering for the toolbar is done after the styles have been fetched.
+
+As a result, the `width` of the buttons now display correctly.
 
 === Dialog collection items would not display any icons chosen from icon pack.
 // #TINY-10174

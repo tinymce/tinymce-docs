@@ -561,6 +561,16 @@ As a consequence, these issues manifested between the first and second initializ
 
 {productname} 6.8 addresses this issue, now the editor removes the redundant second initialization of the toolbar, and fix the 'fontsizeinput' 'destroy' action, so all its components are now properly unmounted. This fix ensures that updates are only applied to components that genuinely exist.
 
+=== Menubar buttons with more than one word would sometimes wrap into two lines.
+// #TINY-10343
+Previously when rendering the menubar in sync with the fetch of the styles, it was possible in some situations that the styles would render after the menubar.
+
+As a consequence, the menubar would not correctly render such as the `width` of a button, as a result the button width would force the button to wrap vertically rather then display the button content as intended.
+
+{productname} 6.8 addresses this issue, now, the rendering for the toolbar is done after the styles have been fetched.
+
+As a result, the `width` of the buttons now display correctly.
+
 === Dialog collection items would not display any icons chosen from icon pack.
 // #TINY-10174
 In earlier versions of {productname}, collection items set in a xref:dialog-components.adoc#collection[collection dialog component] would not display any icon as set in the `+icon+` property, instead only displaying the `+string+` itself.

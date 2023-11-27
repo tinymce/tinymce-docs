@@ -557,7 +557,7 @@ Previously when rendering the menubar in sync with the fetch of the styles, it w
 
 As a consequence, the menubar would not correctly render such as the `width` of a button, as a result the button width would force the button to wrap vertically rather then display the button content as intended.
 
-{productname} 6.8 addresses this issue, now, the rendering for the toolbar is done after the styles have been completed.
+{productname} 6.8 addresses this issue, now, the rendering for the toolbar is done after the styles have been fetched.
 
 As a result, the `width` of the buttons now display correctly.
 

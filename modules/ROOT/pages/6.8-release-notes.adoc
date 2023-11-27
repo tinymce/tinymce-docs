@@ -420,6 +420,16 @@ As a result, when selecting an accordion component, the selection now encompasse
 
 === A closing notification brings focus to the editor even when focus is outside of the editor
 // #TINY-10282
+Previously {productname}'s notification system would bring the focus to the editors content after the user;
+
+* inserted new content by typing;
+* was then displayed a notification;
+* closed it; then
+* immediately resumed typing without having to click again
+
+As a consequence, the `focus` would consistently shift back to the editor, irrespective of its current location when the notification closed.
+
+{productname} 6.8 addresses this issue, now, the focus is only retained within the editor if the notification closure was initiated by user interaction.
 
 === Selecting a cell with only `&nbsp;` in a table inside a `td` and then press `backspace` the entire table is deleted
 // #TINY-10254

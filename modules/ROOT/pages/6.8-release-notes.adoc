@@ -344,9 +344,7 @@ Previously {productname}'s notification system would bring the focus to the edit
 * closed it; then
 * immediately resumed typing without having to click again
 
-As a consequence, the notification would appear and then time out, which shifted the focus from any location (including when the user was focused external to the editor UI) back to the content when the notification closed.
-
-As a consequence, the `focus` would consistently shift back to the editor, irrespective of its current location.
+As a consequence, the `focus` would consistently shift back to the editor, irrespective of its current location when the notification closed.
 
 {productname} 6.8 addresses this issue, now, the focus is only retained within the editor if the notification closure was initiated by user interaction.
 

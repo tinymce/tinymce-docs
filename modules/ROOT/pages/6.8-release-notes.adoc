@@ -213,6 +213,14 @@ As a consequence, the page automatically scrolls until the editor is fully visib
 
 As a result, the editor will still receive `focus` as intended, but the page will no longer scroll unnecessarily when pasted content is inserted.
 
+=== Reset table border width when the paste source is Excel from .5pt to 1px
+// #TINY-10241
+Previously, when pasting a table from a Microsoft Excel document that had a solid thin border of (.5pt) such as `border: 0.5px solid #000;` into the editor when powerpaste was enabled would result in the table rendering as a `dashed` border instead of the solid border.
+
+{productname} 6.8 addresses this by updating the default table border width for tables within {productname} from `.5pt` to `1px`.
+
+As a result, pasting tables now retains its original solid border on paste.
+
 === Spell Checker Pro 3.3.1
 
 The {productname} 6.7.0 release includes an accompanying release of the **Spell Checker Pro** premium plugin.

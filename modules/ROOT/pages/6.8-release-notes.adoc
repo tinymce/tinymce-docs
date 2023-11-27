@@ -235,6 +235,16 @@ Previously, while pressing **Enter**, **Spacebar** or changing context within th
 
 {productname} 6.8 addresses this issue, now, the **Spell Checker Pro** mechanism is triggered by either **Space**, **Enter** or **Shift+Enter**.
 
+=== As-you-type spellechecking would sometimes interrupt composing in certain languages.
+// #TINY-10292
+Spell Checker Pro would in some situations be interrupted while composing when the user selects a suggestion with a `space`.
+
+As a consequence, issues such as duplication or other unintended outcomes would occur.
+
+{productname} 6.8 addresses this issue, by introducing a new check that prevents **as-you-type** checks from being performed if composing is already in progress.
+
+As a result, composing can now be done safely.
+
 For information on the **Spell Checker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin]
 
 === Advanced Typography 1.1.3

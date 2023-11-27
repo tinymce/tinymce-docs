@@ -571,6 +571,14 @@ NOTE: Closing the autocompleter will remove the attributes.
 
 As a result, these modifications significantly enhance the accessibility of autocompleter and mentions plugins for users relying on screen readers.
 
+=== Translation syntax for announcement text in the table grid was incorrectly formatted.
+// #TINY-10141
+In {productname} 6.7.0, each cell in the table grid menu item was updated so that it would announce the number of columns and rows currently selected.
+
+In {productname} 6.8.0 translations were added for this text, though this announcement was still only available in English as the syntax used for the table grid announcement text in detecting strings which are to be translated was invalid.
+
+In {productname} 6.8.1 the syntax has been corrected and each cell in the table grid now announces the current selected columns and rows in the correct language, _not only_ in English.
+
 
 [[known-issues]]
 == Known issues

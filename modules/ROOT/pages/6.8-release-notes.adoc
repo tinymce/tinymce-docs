@@ -74,9 +74,9 @@ For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.a
 
 The {productname} 6.8 release includes an accompanying release of the **Advanced Templates** premium plugin.
 
-**Advanced Templates** 1.4.0 includes the following addition.
+**Advanced Templates** 1.4.0 includes the following addition and fix.
 
-==== AdvTemplate add fixed {{clipboard}} marker
+==== AdvTemplate fixed `{{mce-cursor}}` marker
 // #TINY-9974
 **Advanced Template** 1.4.0 introduces a new feature that allows templates to now include special markers, denoted as `+{{mce-clipboard}}+`. These markers serve as placeholders that indicate where clipboard content should be inserted once the template is added to the editor's content.
 
@@ -106,9 +106,21 @@ tinymce.init({
 
 As a result, when a user inserts a template containing the `+{{mce-clipboard}}+` marker, the editor will replace these markers with the actual content from the clipboard. This dynamic replacement ensures that users can effortlessly integrate clipboard content into their templates without the need for additional copy-pasting steps.
 
+NOTE: when the host browser is **FireFox**, the user will be prompted with a notification error, as it currently does not support clipboard reading.
+
+==== The functionality of the `{{mce-cursor}}` marker feature was broken after the upgrade to {productname} 6.7.3
+// #TINY-10367
+Security patch for {productname} 6.7.3, made changes to **ZWNBSP** characters so they are now removed from any content passed via the `insertContent` API. **ZWNBSP** characters where used to add padding to the marker to avoid it cleaning out the empty content.
+
+As a consequence, the `+{{mce-cursor}}+` marker functionality for the Advanced Templates plugin stopped working.
+
+{productname} 6.8 addresses this issue, by replacing the **ZWNBSP** character with a `data-mce-bookmark` attribute to marker, thus preserving them in the inserted template content.
+
+As a result, the `+{{mce-cursor}}+` marker functionality is now working as expected.
+
 For information on the **Advanced Templates** plugin, see: xref:advanced-templates.adoc[Advanced Templates].
 
-=== AI Assistant 1.1.1
+=== AI Assistant 1.2.0
 
 The {productname} 6.8 release includes an accompanying release of the **AI Assistant** premium plugin.
 
@@ -119,6 +131,17 @@ The {productname} 6.8 release includes an accompanying release of the **AI Assis
 
 ==== Add selection-based option to ai shortcuts to restrict shortcut misuse
 //#TINY-10159
+In **AI Assistant 1.2.0**, the new selection property is available for shortcuts with prompts in the xref:ai.adoc#ai_shortcuts[`+ai_shortcuts+` option]. This `+boolean+` property controls when that shortcut is enabled based on the current selection within the editor. 
+
+For a shortcut with a prompt, when the property is:
+
+* `+true+`: this shortcut will _only_ be enabled when user _has_ made a selection in the editor;
+* `+false+`: this shortcut will _only_ be enabled when the user _has not_ made a selection in the editor;
+* `+undefined+`: or _not set_, this shortcut will _always_ be enabled.
+
+This property allows the definition of shortcuts which should only operate when the user has selected content, requiring the selection as context to the AI when the property is `+true+`. Additionally, shortcuts which are intended to generate specific content will not be enabled with any selection when the property if `+false+`.
+
+As part of this update, all of the default shortcuts available in **AI Assistant 1.2.0** now have the property `+selection: false+`, as they are all shortcuts which require a selection context to generate content correctly.
 
 
 ==== AI is functional when in a `editable_root: false` root.
@@ -133,6 +156,20 @@ For information on the **AI Assistant** plugin, see: xref:ai.adoc[AI Assistant].
 
 For information on the **AI Assistant** plugin, see: xref:ai.adoc[AI Assistant].
 
+=== Comments 3.3.4
+
+The {productname} 6.8 release includes an accompanying release of the **Comments** premium plugin.
+
+=== Switching from an empty paragraph to a section with a comment didn't enable `Add comment...` textarea.
+//#TINY-10173
+In previous versions of {productname}, occasionally the sidebar would unexpectedly be set as readonly due to a invalid selection state.
+
+As a consequence, when the user moved the cursor from an empty element to a commented text selection, the sidebar and comments section would change to be readonly.
+
+{productname} 6.8 addresses this issue, now, when the editor verifiys that the sidebar state should set as readonly `false`, it also update invalid selection to `false`, so both states do not affect the sidebar state.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments plugin].
+
 === PowerPaste 6.2.3
 
 The {productname} 6.8 release includes an accompanying release of the **PowerPaste** premium plugin.
@@ -141,7 +178,9 @@ The {productname} 6.8 release includes an accompanying release of the **PowerPas
 
 === Safari - Improve pasting content with sidebar comments from the Word document
 // TINY-10229
-//CCFR
+Previously, when copying content, including comments, and subsequently pasting it into a {productname} document, the comments were also unintentionally included in the pasted data.
+
+{productname} 6.8 addresses this issue, now, when a user copy's and paste's content from word with the inclusion of comments, the **Powerpaste** plugin now exclude these comments from the pasted content.
 
 === Pasting underlined content from MS Word with PowerPaste results in empty rows being underlined
 // TINY-10178
@@ -176,7 +215,21 @@ Instead of:
 
 === Powerpaste pasting causes window to be scrolled when editor isn't fully visible
 // TINY-10172
-//CCFR
+Previously, when the `setProgressState(true)` API was invoked while the editor is **not** completely visible, it would trigger the editor to `focus`.
+
+As a consequence, the page automatically scrolls until the editor is fully visible.
+
+{productname} 6.8 addresses this issue, now, the editor retains the focus functionality whilst eliminating the need for the automatic scrolling behavior.
+
+As a result, the editor will still receive `focus` as intended, but the page will no longer scroll unnecessarily when pasted content is inserted.
+
+=== Reset table border width when the paste source is Excel from .5pt to 1px
+// #TINY-10241
+Previously, when pasting a table from a Microsoft Excel document that had a solid thin border of (.5pt) such as `border: 0.5px solid #000;` into the editor when powerpaste was enabled would result in the table rendering as a `dashed` border instead of the solid border.
+
+{productname} 6.8 addresses this by updating the default table border width for tables within {productname} from `.5pt` to `1px`.
+
+As a result, pasting tables now retains its original solid border on paste.
 
 === Spell Checker Pro 3.3.1
 
@@ -189,6 +242,16 @@ The {productname} 6.7.0 release includes an accompanying release of the **Spell 
 Previously, while pressing **Enter**, **Spacebar** or changing context within the editor after a incorrectly spelled word would trigger the **Spell Checker Pro** plugin. Although it was discovered that after pressing **Shift+Enter**, the plugin failed to trigger, as the initial implementation did not consider this keypress as a space, or as a change to the context.
 
 {productname} 6.8 addresses this issue, now, the **Spell Checker Pro** mechanism is triggered by either **Space**, **Enter** or **Shift+Enter**.
+
+=== As-you-type spellechecking would sometimes interrupt composing in certain languages.
+// #TINY-10292
+Spell Checker Pro would in some situations be interrupted while composing when the user selects a suggestion with a `space`.
+
+As a consequence, issues such as duplication or other unintended outcomes would occur.
+
+{productname} 6.8 addresses this issue, by introducing a new check that prevents **as-you-type** checks from being performed if composing is already in progress.
+
+As a result, composing can now be done safely.
 
 For information on the **Spell Checker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin]
 
@@ -299,6 +362,31 @@ As a consequence HEX colors were ignored by default in {productname}.
 * **force_hex_color: 'rgb_only'**: only RGB and not RGBA colors are converted and applied as HEX.
 * **force_hex_color: 'off'**: (default option) no conversion to hex is applied, and they are left as their input format.
 
+=== New `sandbox_iframes` option that controls whether iframe elements will be added a `sandbox=""` attribute to mitigate malicious intent.
+// #TINY-10348
+Recently it was discovered that iframes could embed resources that can cause nefarious effects when inserted into the editor via scripting and other mechanisms. This was especially problematic if the iframe had scripts that triggered automatic downloads of malicious files, or if the iframe resource is hosted on the same origin as the editor, which could lead to highly impactful scripting in the same context. In addition, since iframes can be modified to have very small, near-invisible dimensions, they could be unintentionally copied and pasted by users into the editor.
+
+{productname} 6.8 addresses this, by introducing a new `sandbox_iframes` boolean option. When set to `true`, it will add a `sandbox=""` attribute to all iframes inserted into the editor. According to https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox[MDN docs], this will restrict the iframe's embedded resource from performing potentially malicious actions including scripting, file downloads, browser popups, passing the same-origin policy, among others.
+
+NOTE: `sandbox_iframes`: is set to `false` by default, which is the existing behavior. This is because enabling `sandbox_iframes` may break **existing media embeds** such as YouTube, Vimeo, and Codepen, as actions such as scripting and same-origin access are prevented.
+
+=== New `convert_unsafe_embeds` option that controls whether `<object>` and `<embed>` elements will be converted to more restrictive alternatives, namely `<img>` for image MIME types, `<video>` for video MIME types, `<audio>` audio MIME types, or `<iframe>` for other or unspecified MIME types.
+// #TINY-10349
+Previously the `<object>` and `<embed>` elements, similar to `<iframe>` elements, could embed external resources. However, unlike `<iframe>`, `<object>` and `<embed>` elements did not have a sandboxing mechanism to neutralize resources which have potentially nefarious effects such as malicious scripting, automatic downloads of dangerous files, among others.
+
+{productname} 6.8 addresses this by introducing a new `convert_unsafe_embeds` boolean option. When set to `true`, `<object>` and `<embed>` elements will be converted to different safer alternatives based on their embedded content's MIME type, set via the `type` attribute:
+
+* an image MIME type (starts with `image/`) will be converted to the `<img>` element;
+* a video MIME type (starts with `video/`) will be converted to the `<video>` element;
+* an audio MIME type (starts with `audio/`) will be converted to the `<audio>` element; and
+* any other MIME type or if it is unspecified will be converted to the `<iframe>` element.
+
+The first three types of conversions will prevent scripting and other potentially malicious actions by the embedded resource. 
+
+To ensure any embeds converted to `<iframe>` elements are also neutralized, it is recommended to enable the new `sandbox_iframes` option. This will add a `sandbox=""` attribute to the converted iframe and prevent the embedded resource from performing potentially malicious actions such as executing scripts, triggering downloads, passing the same-origin policy, etc.
+
+NOTE: `convert_unsafe_embeds`: is set to `false` by default to prevent breaking changes to content output.
+
 
 [[changes]]
 == Changes
@@ -320,6 +408,16 @@ As a consequence, the plugin failed to detect if the selection was at the beginn
 
 {productname} 6.8 addresses this issue, now, the predicate considers that the selection can be right before the `summary` element, so the Accordion toggling can work as expected on Safari.
 
+=== Directionality would not be consistently applied to the entire accordion block.
+// #TINY-10291
+Previously, when applying directionality to the accordion, the `dir` attribute was modified in both the `summary` and auxiliary accordion body `div` element. However, the auxiliary accordion body `div` element disappeared during the editor serialization process, resulting in the loss of the applied `dir` value for the accordion content.
+
+As a consequence, when selecting the accordion block and applying **RTL** directionality, the alignment was only applied to the `summary`, not the entire accordion.
+
+{productname} 6.8 addresses this issue, now, when the {productname} editor is **focused**, a selection normalization process refines the editor selection directly to the element contents.
+
+As a result, when selecting an accordion component, the selection now encompasses the entire details element. This ensures that alignment is applied to the entire accordion block when applying directionality, such as **RTL**, to the component.
+
 === Adjacent SVG block level elements adds extra paragraph
 // #TINY-10273
 
@@ -334,6 +432,16 @@ As a consequence, the plugin failed to detect if the selection was at the beginn
 
 === A closing notification brings focus to the editor even when focus is outside of the editor
 // #TINY-10282
+Previously {productname}'s notification system would bring the focus to the editors content after the user;
+
+* inserted new content by typing;
+* was then displayed a notification;
+* closed it; then
+* immediately resumed typing without having to click again
+
+As a consequence, the `focus` would consistently shift back to the editor, irrespective of its current location when the notification closed.
+
+{productname} 6.8 addresses this issue, now, the focus is only retained within the editor if the notification closure was initiated by user interaction.
 
 === Selecting a cell with only `&nbsp;` in a table inside a `td` and then press `backspace` the entire table is deleted
 // #TINY-10254
@@ -371,6 +479,8 @@ As a consequence of this, any attempt to apply a heading format to the `<summary
 
 {productname} 6.8 addresses this issue, updates have been applied to the editor schema for heading elements, so they can now be converted as **valid** children of the `<summary>` element.
 
+NOTE: To remove the heading format applied to a <summary> element, click on the same applied heading format in the dropdown to "unset" the format.
+
 === Resize handles would not appear on editable images in a non-editable context.
 // #TINY-10118
 In previous versions of {productname}, a regression was identified that affected images nested within a `NonEditable` section.
@@ -403,6 +513,9 @@ As a consequence, the removal of these attributes by **DOMPurify** would cause s
 
 === Screen readers now announce the selected color of forecolor and backcolor buttons.
 // #TINY-9796
+Previously, when changing the color for either `forecolor` and `backcolor`, screen readers didn't announce the last selected color for that button.
+
+{productname} 6.8 addresses this issue, now, the last selected color for Text/Background color are read aloud by the screen reader as expected.
 
 === Resize handles would not appear on editable images in a non-editable context.
 // #TINY-10118
@@ -427,6 +540,14 @@ tinymce.init({
 
 === An empty element with a contenteditable="true" attribute within a table cell would not be treated as content and get removed if backspace or delete was being pressed.
 // #TINY-10010
+
+=== Creating a new li via enter inside a nested list would not inherit styles from the source li.
+// #TINY-10316
+Previously, when the user created a new `li` from a nested list within its parent by keypress **Enter** the editor would ignore the styles applied to the nested list.
+
+As a consequence, the new `li` did not **inherit** the nested list styles.
+
+{productname} 6.8 addresses this issue, now, when the user creates a new `li` item within a nested list, the styles are copied over from the “source” to the newly created `li` as expected.
 
 === Removing an LI element containing a details element would incorrectly merge its content.
 // #TINY-10133
@@ -478,6 +599,47 @@ As a consequence, a console error `"Uncaught DOMException: Failed to execute 'ap
 ----
 
 As a result, the developer console, no longer displays the console error and the merge between the two elements behaves as expected.
+
+=== The `fontsizeinput` toolbar item was causing console warnings when toolbar items were clicked.
+// #TINY-10330
+The console error warning "The component must be in a context to execute: triggerEvent" stemmed from two distinct causes.
+
+. Firstly, the toolbar was unintentionally initialized twice during the rendering process.
+. Secondly, the 'fontsizeinput' exhibited a flaw in its 'destroy' action, as it was applied only to one of its three components (namely, the `+` button, input, and `-` button).
+
+As a consequence, these issues manifested between the first and second initialization of the toolbar resulting in the input of the first 'fontsizeinput' not been entirely unmounted, leading to attempts to update a **non-existent** input.
+
+{productname} 6.8 addresses this issue, now the editor removes the redundant second initialization of the toolbar, and fix the 'fontsizeinput' 'destroy' action, so all its components are now properly unmounted. This fix ensures that updates are only applied to components that genuinely exist.
+
+=== Menubar buttons with more than one word would sometimes wrap into two lines.
+// #TINY-10343
+Previously when rendering the menubar in sync with the fetch of the styles, it was possible in some situations that the styles would render after the menubar.
+
+As a consequence, the menubar would not correctly render such as the `width` of a button, as a result the button width would force the button to wrap vertically rather then display the button content as intended.
+
+{productname} 6.8 addresses this issue, now, the rendering for the toolbar is done after the styles have been fetched.
+
+As a result, the `width` of the buttons now display correctly.
+
+=== Dialog collection items would not display any icons chosen from icon pack.
+// #TINY-10174
+In earlier versions of {productname}, collection items set in a xref:dialog-components.adoc#collection[collection dialog component] would not display any icon as set in the `+icon+` property, instead only displaying the `+string+` itself.
+
+In {productname} 6.8, dialog collection items will now use any specified `+icon+` from the xref:icons.adoc#icons[icon pack], with the `+string+` itself used in the case where no such icon exists. This is the current behaviour, as in most uses of dialog collections in {productname}, the `+icon+` property is set as an individual character, such as in the xref:emoticons.adoc[Emoticons] and xref:charmap.adoc[Charmap] plugins.
+
+For information on the **Dialog layout components for collections** plugin see xref:dialog-components.adoc#collection[dialog components].
+
+=== Screen readers now announce the active autocompleter item.
+// #TINY-9393
+As focus is required to be in the editor when interacting with the autocompleter or mentions plugins, a issue was identified when the user would navigate through the autocompleter menu.
+
+As a consequence, this may have cause difficulty navigating through the autocompleter menu for users relying on screen readers.
+
+{productname} 6.8 addresses this, now, by adding `aria-owns` and `aria-activedescendant` attributes into the editor body. This will now ensure that the screen reader can announce the current active autocomplete item when the user navigates through the menu.
+
+NOTE: Closing the autocompleter will remove the attributes.
+
+As a result, these modifications significantly enhance the accessibility of autocompleter and mentions plugins for users relying on screen readers.
 
 
 [[known-issues]]

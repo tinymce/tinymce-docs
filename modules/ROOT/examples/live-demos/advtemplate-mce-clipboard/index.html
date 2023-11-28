@@ -1,29 +1,27 @@
 <textarea id="advanced-template-mce-clipboard">
-  <h3>Using the {{mce-clipboard}} Marker with Advanced Templates<h3>
-  <h4>Before inserting the example templates, copy some content using <strong>Ctrl+C</strong> for Windows users, or <strong>⌘+C</strong> for Mac users</h4>
+  <h3>Using the {{mce-clipboard}} Marker with Advanced Templates</h3>
+  <h4>Before inserting the example template, <strong>type in your name</strong> to the editor, select and copy it to your clipboard by using <strong>Ctrl+C</strong> for Windows users, or <strong>⌘+C</strong> for Mac users</h4>
   <div>
     <ol>
       <li>
-        Select <strong>Template…</strong> from the <strong>Insert</strong> menu or<br />
-        select the <strong>Insert template</strong> toolbar button.
+        Select <strong>Template…</strong> from the <strong>Insert</strong> menu or by selecting the <strong>Insert template</strong> toolbar button.
       </li>
       <li>
-      Select the template to add to the TinyMCE document from the <strong>Templates</strong> dialog that presents.
+        Select a template to add to the TinyMCE document from the <strong>Templates</strong> dialog that presents.
         <ol>
           <li>
-          Click the <strong>Without an <code>{{mce-clipboard}}</code> marker</strong> template that <strong>does not</strong> use the <code>{{mce-clipboard}}</code> marker.
+            <p>Click the <strong>without an <code>{{mce-clipboard}}</code> marker</strong> marker.</p>
+            <p><em>when a template <strong>does not</strong> contain a valid {{mce-clipboard}} marker, the content within the users clipboard will <strong>not</strong> replace the marker when the user inserts the template.</em></p>
           </li>
           <li>
-          Click the <strong>With an <code>{{mce-clipboard}}</code> marker</strong> template that <strong>does</strong> use the <code>{{mce-clipboard}}</code> marker.
+            <p>Click the <strong>with a <code>{{mce-clipboard}}</code> marker.</strong></p>
+            <p><em>when a template <strong>does</strong> contain a valid {{mce-clipboard}} marker, the current content saved in the users clipboard will <strong>replace</strong> the marker when the user inserts the template.</em></p>
           </li>
         </ol>
       </li>
       <li>
-        click <strong>Insert</strong> or press <strong>Return</strong>.
+        Click <strong>Insert</strong> or press <strong>Return</strong>.
       </li>
     </ol>
   </div>
-  <h4>Noting the difference</h4>
-  <p>The <em>Without an mce-clipboard marker</em> template does not replace the and content marker within the template text.</p>
-  <p>By contrast, the <em>With an mce-clipboard marker</em> template replaces the marker with content copied to the users native clipboard.</p>
 </textarea>

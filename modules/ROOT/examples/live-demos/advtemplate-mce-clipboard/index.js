@@ -1,15 +1,15 @@
 tinymce.init({
   selector: "textarea#advanced-template-mce-clipboard",
-  plugins: [ "advtemplate", ],
+  plugins: [ "advtemplate", "code", "help"],
   toolbar: "undo redo | inserttemplate",
   advtemplate_templates: [
     {
       title: 'Without an mce-clipboard marker',
-      content: '<p>Your clipboard content will <strong>not be inserted</strong> after this marker</p><p><em> or before this marker when using mce-clipboard new advanced template paste feature.</em></p>'
+      content: '<p>Hi , Thank you for visiting this page. We truly appreciate and value your feedback and any feature requests you may have While you are here, take a moment to explore mce-cursor, its another powerful tool designed for Advanced Templates</p>'
     },
     {
       title: 'With an mce-clipboard marker',
-      content: '<p>Your clipboard content will <strong>be inserted</strong> after this marker {{mce-clipboard}} </p><p><em> and, before this marker when using mce-clipboard new advanced template paste feature.</em></p>'
+      content: '<p>Hi {{mce-clipboard}}, Thank you for visiting this page. We truly appreciate and value your feedback and any feature requests you may have While you are here, take a moment to explore mce-cursor {{mce-clipboard}}, its another powerful tool designed for Advanced Templates</p>'
     }
   ],
 });

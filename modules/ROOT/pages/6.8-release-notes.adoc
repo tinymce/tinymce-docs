@@ -350,6 +350,18 @@ In {productname} 6.8, the visible text label _(or icon name where icons are pres
 
 {productname} 6.8 also includes the following additions:
 
+=== Added `force_hex_color` editor option. Option `'always'` converts all RGB & RGBA colours to hex, `'rgb_only'` will only convert RGB and *not* RGBA colours to hex, `'off'` won't convert any colours to hex.
+// #TINY-9819
+Previously, when applying colors to content within the editor via the `forecolor` and `backcolor`, only colors applied with RGB values were excepted.
+
+As a consequence HEX colors were ignored by default in {productname}.
+
+{productname} 6.8 addresses this issue, by adding the new editor option `force_hex_color: 'off'` which is set as **default**, can now be added to the {productname} config by;
+
+* **force_hex_color: 'always'**: all colors are converted and applied as HEX format.
+* **force_hex_color: 'rgb_only'**: only RGB and not RGBA colors are converted and applied as HEX.
+* **force_hex_color: 'off'**: (default option) no conversion to hex is applied, and they are left as their input format.
+
 === New `sandbox_iframes` option that controls whether iframe elements will be added a `sandbox=""` attribute to mitigate malicious intent.
 // #TINY-10348
 Recently it was discovered that iframes could embed resources that can cause nefarious effects when inserted into the editor via scripting and other mechanisms. This was especially problematic if the iframe had scripts that triggered automatic downloads of malicious files, or if the iframe resource is hosted on the same origin as the editor, which could lead to highly impactful scripting in the same context. In addition, since iframes can be modified to have very small, near-invisible dimensions, they could be unintentionally copied and pasted by users into the editor.

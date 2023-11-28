@@ -12,7 +12,7 @@ tinymce.init({
         },
         {
           title: 'Letter outline',
-          content: '<p>{{Current.Date}}</p><p>{{Honorific}} {{Person.Name.Last}},</p><p></p><p>&nbsp;</p><p>Regards,</p><p>{{staff.digital.signature}}</p><p>{{Staff.Name}}</p><p>{{Staff.Email}}</p>'
+          content: '<p>{\{Current.Date\}}</p><p>{\{Honorific\}} {\{Person.Name.Last\}},</p><p></p><p>&nbsp;</p><p>Regards,</p><p>{\{staff.digital.signature\}}</p><p>{\{Staff.Name\}}</p><p>{\{Staff.Email\}}</p>'
         },
       ],
     },
@@ -21,11 +21,11 @@ tinymce.init({
       items: [
         {
           title: 'Name entry prompt',
-          content: '<p><strong>Enter your name:</strong>{{mce-cursor}}</p><p><em>Include both your given and family names, in your preferred order.</em></p>'
+          content: '<p><strong>Enter your name:</strong>{\{mce-cursor\}}</p><p><em>Include both your given and family names, in your preferred order.</em></p>'
         },
         {
           title: 'Letter outline',
-          content: '<p>{{Current.Date}}</p><p>{{Honorific}} {{Person.Name.Last}},</p><p>{{mce-cursor}}&nbsp;</p><p>Regards,</p><p>{{staff.digital.signature}}</p><p>{{Staff.Name}}</p><p>{{Staff.Email}}</p>'
+          content: '<p>{\{Current.Date\}}</p><p>{\{Honorific\}} {\{Person.Name.Last\}},</p><p>{\{mce-cursor\}}&nbsp;</p><p>Regards,</p><p>{\{staff.digital.signature\}}</p><p>{\{Staff.Name\}}</p><p>{\{Staff.Email\}}</p>'
         },
       ],
     },

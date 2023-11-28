@@ -40,14 +40,19 @@ import contentUiSkinCss from 'tinymce/skins/ui/oxide/content.js';
 /* The default content CSS can be changed or replaced with appropriate CSS for the editor content. */
 import contentCss from 'tinymce/skins/content/default/content.js';
 
+/* Import Premium Skins can be changes by uncommenting the below example and updating the skin_url and content_css values */
+/* import '@tiny-premium/oxide-premium-skins/build/skins/ui/material-outline/skin.js' */
+/* import '@tiny-premium/oxide-premium-skins/build/skins/ui/material-outline/content.js' */
+/* import '@tiny-premium/oxide-premium-skins/build/skins/content/material-outline/content.js' */
+
 /* Initialize TinyMCE */
 export function render () {
   tinymce.init({
     selector: 'textarea#editor',
     plugins: 'advlist code emoticons link lists table',
     toolbar: 'bold italic | bullist numlist | link emoticons',
-    skin_url: 'default',
-    content_css: 'default',
+    skin_url: 'default', /* material-outline */
+    content_css: 'default', /* material-outline */
   });
 };
 ----

@@ -46,7 +46,7 @@ ifeval::[{is_zip_install} == vite]
 +
 [source,sh]
 ----
-npm create vite@5 app && cd app && npm install tinymce && npm install --save-dev vite
+npm create vite@5 . && npm install tinymce
 ----
 +
 . Or add `+tinymce+` and the following development dependencies to your existing project.

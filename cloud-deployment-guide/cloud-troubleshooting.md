@@ -10,7 +10,7 @@ When {{site.cloudname}} detects a problem, it will show an editor notification c
 
 > **NOTE**: The wording of the notifications shown here may differ from the actual notifications from {{site.cloudname}}.
 
-## "This domain is not registered with Tiny Cloud. Please see the quick start guide or create an account."
+## "A valid API key is required, starting 2024, to continue using TinyMCE. Please alert your admin to check the current API key."
 
 ### Cause
 
@@ -35,7 +35,7 @@ Update the `src` URL to include your (website or application developer's) {{site
 
 To retrieve your API key, or to sign up for an API key, visit: [{{site.cloudname}}]({{site.accountsignup}}).
 
-## "The API key you have entered is invalid. Please review your API key."
+## "A valid API key is required, starting 2024, to continue using TinyMCE. Please alert your admin to check the current API key."
 
 ### Cause
 
@@ -55,7 +55,7 @@ Check the `apiKey` provided in the script tag:
 - Any other characters that are not in your API key. If you are using variable substitution, ensure that the variable is substituting properly.
 - Matches the API key shown at {{site.accountpageurl}}.
 
-## "This domain is not registered with Tiny Cloud. Please review your approved domains."
+## "This domain is not registered with Tiny Cloud. To continue using TinyMCE, a registered domain is required, starting 2024. Please alert your admin to review the approved domains and add this one if required."
 
 ### Cause
 

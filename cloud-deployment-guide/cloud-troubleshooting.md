@@ -10,7 +10,7 @@ When {{site.cloudname}} detects a problem, it will show an editor notification c
 
 > **NOTE**: The wording of the notifications shown here may differ from the actual notifications from {{site.cloudname}}.
 
-## "A valid API key is required, starting 2024, to continue using TinyMCE. Please alert your admin to check the current API key."
+## "A valid API key is required, starting 2024, to continue using TinyMCE. Please alert your admin to sign-up to get your free API key."
 
 ### Cause
 

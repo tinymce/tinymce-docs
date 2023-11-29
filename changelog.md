@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2221: add new notification messages to `cloud-troubleshooting.adoc` file.
 
 ### 2023-11-22
 

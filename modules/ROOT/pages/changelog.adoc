@@ -10,7 +10,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Colorpicker now includes the Brightness/Saturation selector and hue slider in the keyboard navigable items.
 
 === Fixed
-* The functions `schema.isWrapper` and `schema.isInline` didn't exclude element names that started with `#` those should not be considered elements.
+* The functions `schema.isWrapper` and `schema.isInline` did not exclude node names that started with `#` which should not be considered as elements. 
 * Translation syntax for announcement text in the table grid was incorrectly formatted.
 
 == 6.8.0 - 2023-11-22

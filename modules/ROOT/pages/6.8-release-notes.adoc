@@ -306,6 +306,11 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 === Colorpicker now includes the Brightness/Saturation selector and hue slider in the keyboard navigable items.
 // #TINY-9287
+As a result of an accessibility report for {productname}, it was discovered that the color picker dialog scored lower than expected, specifically when the user attempted to interact with the brightness/saturation selector and the hue slider when selecting a foreground or background color.
+
+As a consequence, it was noted that the color picker was not fully accessible via keyboard.
+
+{productname} 6.8.1 addresses this issue, now, when navigating through the dialog using the keyboard, the focus will be on the brightness/saturation pane, this allows the user to use the arrow keys to navigate in all four directions when selection a color. In addition when holding the "shift" key down, the navigation speed will be increased. This functionality has also been applied to the hue slider for added benefit for accessibility.
 
 === Improved the tooltips of picker buttons for the urlinput components in the "Insert/Edit Image" and "Insert/Edit Link" dialogs.
 // #TINY-10155
@@ -349,6 +354,18 @@ In {productname} 6.8, the visible text label _(or icon name where icons are pres
 == Additions
 
 {productname} 6.8 also includes the following additions:
+
+=== Added `force_hex_color` editor option. Option `'always'` converts all RGB & RGBA colours to hex, `'rgb_only'` will only convert RGB and *not* RGBA colours to hex, `'off'` won't convert any colours to hex.
+// #TINY-9819
+Previously, when applying colors to content within the editor via the `forecolor` and `backcolor`, only colors applied with RGB values were excepted.
+
+As a consequence HEX colors were ignored by default in {productname}.
+
+{productname} 6.8 addresses this issue, by adding the new editor option `force_hex_color: 'off'` which is set as **default**, can now be added to the {productname} config by;
+
+* **force_hex_color: 'always'**: all colors are converted and applied as HEX format.
+* **force_hex_color: 'rgb_only'**: only RGB and not RGBA colors are converted and applied as HEX.
+* **force_hex_color: 'off'**: (default option) no conversion to hex is applied, and they are left as their input format.
 
 === New `sandbox_iframes` option that controls whether iframe elements will be added a `sandbox=""` attribute to mitigate malicious intent.
 // #TINY-10348
@@ -420,6 +437,16 @@ As a result, when selecting an accordion component, the selection now encompasse
 
 === A closing notification brings focus to the editor even when focus is outside of the editor
 // #TINY-10282
+Previously {productname}'s notification system would bring the focus to the editors content after the user;
+
+* inserted new content by typing;
+* was then displayed a notification;
+* closed it; then
+* immediately resumed typing without having to click again
+
+As a consequence, the `focus` would consistently shift back to the editor, irrespective of its current location when the notification closed.
+
+{productname} 6.8 addresses this issue, now, the focus is only retained within the editor if the notification closure was initiated by user interaction.
 
 === Selecting a cell with only `&nbsp;` in a table inside a `td` and then press `backspace` the entire table is deleted
 // #TINY-10254

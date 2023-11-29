@@ -48,6 +48,25 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 - DOC-2182: added file, `/modules/ROOT/partials/configuration/indent.adoc`, documenting the `indent` option. Added `include::` statement to `/modules/ROOT/pages/content-filtering.adoc` pointing to this file.
 - DOC-2189: added template files with instructions to `-new-material-templates/plugin-documentation-templates/ROOT/pages`. Added further boilerplate — a generic version-required include statement — and instructions regarding this boilerplate to `pluginpage.adoc`. Added new template file-and-folder infrastructure, `/-new-material-templates/configuration-options-templates`. Added boilerplate and documentation to the files in this new infrastructure. Also corrected markup typo in `modules/ROOT/pages/available-menu-items.adoc`.
 - DOC-2177: Added documentation of the `picker_text` property to the `urlinput` dialog component of `dialog-components.adoc`.
+- DOC-2202: add new `bespoke` button text updates to `events.adoc` file.
+- DOC-2209: add new default_font_stack `user-formatting-option.adoc` file.
+
+### 2023-11-15
+
+- DOC-2204: added `6.7.3-release-notes.adoc` to project; updated `changelog.adoc`, `nav.adoc` and `release-notes.adoc` for the TinyMCE 6.7.3 release, and api-version bump for 6.7.3.
+
+### 2023-11-01
+
+- DOC-2194: fix heading lvl in 6.7.2 release notes for fixes.
+- DOC-2194: fix documentation for TINY-10249 in the 6.7.2 Release notes.
+- DOC-2194: fix documentation for TINY-10263 to the 6.7.2 Release notes.
+- DOC-2194: fix documentation for TINY-10268 in the 6.7.2 Release notes.
+- DOC-2194: fix documentation for TINY-10213 in the 6.7.2 Release notes.
+- DOC-2194: added file, `6.7.2-release-notes.adoc` to project; added 6.7.2-specific outline to file; edited known issue entry in `6.7-release-notes.adoc` addressed in the 6.7.2 release.; added 6.7.2-specific entries to `nav.adoc`.
+
+### 2023-10-25
+
+- DOC-2192: added 6.7.2-specific entries to `changelog.adoc`, and api-version bump for 6.7.2.
 
 ### 2023-10-20
 
@@ -62,9 +81,10 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 - DOC-2191: updated both premium, non-premium and classic-mode feature demo UI issues.
 
-### 2023-09-17
+### 2023-09-12
 
-- DOC-2088: typos and other correction post-6.7 docs enterprise release.
+- DOC-2027: added `/modules/ROOT/partials/configuration/help_accessibility.adoc`, documenting the `help_accessibility` option; edits, re-writes and re-structuring of `help.adoc`; plus copy-edits to `keyboard-shortcuts.adoc`, `tinymce-and-screenreaders.adoc` & `accessibility.adoc`.
+- DOC-2176: Removed references to which commercial plans Premium plugins are or are not available with.
 
 ### 2023-09-14
 

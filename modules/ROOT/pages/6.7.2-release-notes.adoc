@@ -1,0 +1,146 @@
+= TinyMCE 6.7.2
+:navtitle: TinyMCE 6.7.2
+:description: Release notes for TinyMCE 6.7.2
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+[[overview]]
+== Overview
+
+{productname} 6.7.2 was released for {enterpriseversion} and {cloudname} on Wednesday, November 1^st^, 2023. These release notes provide an overview of the changes for {productname} 6.7.2, including:
+
+* xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
+* xref:bug-fixes[Bug fixes]
+* xref:security-fixes[Security fixes]
+
+
+[[accompanying-premium-self-hosted-server-side-component-changes]]
+== Accompanying Premium self-hosted server-side component changes
+
+The {productname} 6.7.2 release includes accompanying changes affecting the {productname} **self-hosted** services for the following plugins:
+
+* **Enhanced Media Embed** plugin `mediaembed`.
+* **Export** plugin `export`.
+* **Enhanced Image Editing** plugin `editimage`.
+* **Link Checker** plugin `linkchecker`.
+* **Spell Checker Pro** plugin `tinymcespellchecker`.
+* **Spelling Autocorrect** plugin `autocorrect`.
+
+For information on:
+
+* The **Enhanced Media Embed** plugin, see: xref:introduction-to-mediaembed.adoc[Enhanced Media Embed plugin].
+* The **Export** plugin, see: xref:export.adoc[Export plugin].
+* The **Enhanced Image Editing** plugin, see: xref:editimage.adoc[Enhanced Image Editing plugin].
+* The **Link Checker** plugin, see: xref:linkchecker.adoc[Link Checker plugin].
+* The **Spell Checker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
+* The **Spelling Autocorrect** plugin, see: xref:autocorrect.adoc[Spelling Autocorrect plugin].
+* Deploying the **server-side** components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+
+The Java server-side components have been updated to the following versions:
+
+* `ephox-hyperlinking.war`: 2.105.20
+* `ephox-image-proxy.war`: 2.106.8
+* `ephox-spelling.war`: 2.118.15
+
+NOTE: Service log level was changed from DEBUG to INFO, to reduce logs verbosity and gain more clarity.
+
+=== Updating the self-hosted server-side components
+
+The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
+
+. Update your Java Application Server to the minimum required version:
+
+include::partial$misc/supported-application-servers.adoc[]
+
+. Replace the existing server-side `.war` files with the `.war` files bundled with {productname} 6.7.2 or later.
+
+For information on:
+
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+* Deploying the server-side components using Docker, see: xref:bundle-intro-setup.adoc[Containerized service deployments].
+
+include::partial$misc/admon-no-functionality-changes-in-updated-server-side-components.adoc[]
+
+[[bug-fixes]]
+== Bug fixes
+
+{productname} 6.7.2 also includes the following bug fixes:
+
+==== The function `getModifierState` did not work on events passed through the editor as expected.
+// TINY-10263
+The exception error "Uncaught TypeError: Illegal invocation" was displayed in the console, when an integrator called the 'getModifierState' function on a **keydown** event object.
+
+As a consequence, any attempts to invoke this function resulted in the TypeError being displayed in the console.
+
+{productname} 6.7.2 addresses this, now, when a integrator uses the `getModifierState` on the event object a keydown event no longer triggers an error.
+
+==== Indenting or outdenting a list item that contained non list item siblings after it would result in those siblings being removed.
+// TINY-10268
+Previously, when the editor encounter's a list inside an `<li>` element, the editor would only account for scenarios where the list is either the first or last element within the `<li>`. In such cases, {productname} would treat the content contained within the `<li>` as plain HTML, disregarding any nested lists.
+
+Consequently, when dealing with a structure like the following:
+
+[source,html]
+----
+<ul>
+  <li>
+    <p>A</p>
+    <ul>
+      <li>L1</li>
+      <li>L2</li>
+    </ul>
+    <p>B</p>
+  </li>
+</ul>
+----
+
+the editor would encounter problems when attempting to apply list-related actions, such as indentation, to the inner list.
+
+{productname} 6.7.2 addresses this issue, now, when an `<li>` contains both non-list elements at its beginning and end, and also contains a nested list, the editor now will consider actions on the nested list independently, instead of treating the entire content as a single block.
+
+As a result, the actions of indenting and unindenting a nested list now work as expected.
+
+==== Removed use of async for editor rendering which caused visual blinking when reloading the editor in-place.
+// TINY-10249
+
+In contrast to {productname} version 5, where the editor would initiate rendering without waiting for the completion of CSS loading, in version 6, the editor instance now deliberately synchronizes with the loading of CSS. This modification aims to prevent flickering by ensuring that the necessary styles have finished loading before proceeding with the rendering process.
+
+{productname} 6.7.2 addresses this, by once again blocking the render function from loading the CSS in parallel with other actions necessary for displaying the editor.
+
+As a result, the editor no longer renders the flicker previously displayed when the editor is refreshed.
+
+==== Toggling a list that contained a list item element — `<li>` — which, in turn, contained another list item element as its first child, removed other content within the first list item element.
+// TINY-10213
+When a user attempted to indent or outdent a list element inside a nested list, the list was converted into a model which resulted in it being recreated from that model.
+
+As a consequence of this, the model would not handle a list and a not-list items inside a `<li>` element, which resulted in content deletion of the not-list item inside the `<li>` structures like:
+
+[source, html]
+----
+<li>
+  [some_list]
+  [some_other_element]
+</li>
+----
+
+In addition, when the editor would try to manage comments at the `<li>` element level, a console error would be thrown resulting in all other elements being ignored.
+
+{productname} 6.7.2 addresses this issue, now, our model correctly manages comments and other elements when they are preceded from a list inside an `li`, and the errors are no longer present.
+
+
+[[security-fixes]]
+== Security fixes
+
+{productname} 6.7.2 includes one fix for the following security issue:
+
+The following server-side component has been updated to include dependency updates addressing the following security issues. 
+
+* https://nvd.nist.gov/vuln/detail/CVE-2023-44487[CVE-2023-44487]
+
+This update is considered as a High severity vulnerability fix.
+
+For information on the server-side components updates, see: xref:#accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes].
+
+include::partial$misc/admon-no-functionality-changes-in-updated-server-side-components.adoc[]

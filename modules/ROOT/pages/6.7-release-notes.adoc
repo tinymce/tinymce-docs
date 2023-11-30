@@ -85,7 +85,7 @@ This command enables the adding of a new template, specified by its ID, to a {pr
 
 See the xref:advanced-templates.adoc#commands[Commands] section of the xref:advanced-templates.adoc[Advanced Templates] documentation for an example of the command in use.
 
-==== New {{mce-cursor}} marker to indicate the cursor position after the template is inserted
+==== New {\{mce-cursor\}} marker to indicate the cursor position after the template is inserted
 // TINY-9973
 
 The new insertion point marker is a fixed string for adding to any template.

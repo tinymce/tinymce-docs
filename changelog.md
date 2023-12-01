@@ -6,44 +6,44 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
-- DOC-2181: add improvement documentation for TINY-10141 to the 6.8.1 release notes.
-- DOC-2181: add improvement documentation for TINY-9287 to the 6.8 release notes.
-- DOC-2181: add fix documentation for TINY-9819 to the 6.8 release notes.
-- DOC-2181: add fix documentation for TINY-10282 to the 6.8 release notes.
-- DOC-2181: add fix documentation for TINY-10241 to the 6.8 release notes.
-- DOC-2181: add fix documentation for TINY-10292 to the 6.8 release notes.
-- DOC-2181: add fix documentation for TINY-10367 to the 6.8 release notes.
-- DOC-2181: add fix documentation for TINY-10291 to the 6.8 release notes.
-- DOC-2181: add fix documentation for TINY-10343 to the 6.8 release notes.
-- DOC-2181: add fix documentation for TINY-10174 to the 6.8 release notes.
-- DOC-2181: added fix documentation for TINY-10229 to the 6.8 release notes.
-- DOC-2181: add fix documentation for TINY-10172 to the 6.8 release notes.
-- DOC-2181: add fix documentation for TINY-9796 to the 6.8 release notes.
-- DOC-2181: add `new feature` documentation for TINY-10159 to the 6.8 release notes.
-- DOC-2181: add fix documentation for TINY-9393 to the 6.8 release notes.
-- DOC-2181: add improvement documentation for TINY-10348 & TINY-10349 to the 6.8 release notes, & added new `options` to `security/securing-embedded-external-resources.adoc` file.
-- DOC-2181: add fix documentation for TINY-10330 to the 6.8 release notes.
-- DOC-2181: add fix documentation for TINY-10173 to the 6.8 release notes.
-- DOC-2181: add fix documentation for TINY-10316 to the 6.8 release notes.
-- DOC-2181: add fix documentation for TINY-10285 to the 6.8 release notes.
+- DOC-2181: add improvement documentation for TINY-10141 to the 6.8.1.1 release notes.
+- DOC-2181: add improvement documentation for TINY-9287 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-9819 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10282 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10241 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10292 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10367 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10291 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10343 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10174 to the 6.8.1 release notes.
+- DOC-2181: added fix documentation for TINY-10229 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10172 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-9796 to the 6.8.1 release notes.
+- DOC-2181: add `new feature` documentation for TINY-10159 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-9393 to the 6.8.1 release notes.
+- DOC-2181: add improvement documentation for TINY-10348 & TINY-10349 to the 6.8.1 release notes, & added new `options` to `security/securing-embedded-external-resources.adoc` file.
+- DOC-2181: add fix documentation for TINY-10330 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10173 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10316 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10285 to the 6.8.1 release notes.
 - DOC-2181: add fix documentation for TINY-10118 to the release notes.
-- DOC-2181: add fix documentation for TINY-10132 to the 6.8 release notes.
+- DOC-2181: add fix documentation for TINY-10132 to the 6.8.1 release notes.
 - DOC-2181: add fix documentation for TINY-10139 to the release notes.
 - DOC-2181: fix documentation for TINY-10178 to the release notes.
-- DOC-2181: add fix documentation for TINY-10177 to the 6.8 release notes.
-- DOC-2181: add improvement documentation for TINY-10155 in the 6.8 release notes.
-- DOC-2181: add improvement documentation for TINY-10147 to the 6.8 release notes.
-- DOC-2181: fix documentation for TINY-10153 to the 6.8 release notes.
-- DOC-2181: add fix documentation for TINY-10289 in the 6.8 release notes.
-- DOC-2181: add change documentation for TINY-10237 to the 6.8 release notes.
-- DOC-2181: fix documentation for TINY-10209 in the 6.8 release notes.
+- DOC-2181: add fix documentation for TINY-10177 to the 6.8.1 release notes.
+- DOC-2181: add improvement documentation for TINY-10155 in the 6.8.1 release notes.
+- DOC-2181: add improvement documentation for TINY-10147 to the 6.8.1 release notes.
+- DOC-2181: fix documentation for TINY-10153 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10289 in the 6.8.1 release notes.
+- DOC-2181: add change documentation for TINY-10237 to the 6.8.1 release notes.
+- DOC-2181: fix documentation for TINY-10209 in the 6.8.1 release notes.
 - DOC-2181: add improvement documentation for TINY-9963 to the release notes.
-- DOC-2181: add addition `new feature` documentation for TINY-9974 in the 6.8 release notes.
-- DOC-2181: add fix documentation for TINY-10088 to the 6.8 release notes.
-- DOC-2181: add fix documentation for TINY-10254 to the 6.8 release notes.
-- DOC-2181: add fix documentation for TINY-10133 to the 6.8 release notes.
-- DOC-2181: add fix documentation for TINY-10154 to the 6.8 release notes.
-- DOC-2181: the TinyMCE 6.8 release notes plus 6.8-specific changes to the TinyMCE documentation.
+- DOC-2181: add addition `new feature` documentation for TINY-9974 in the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10088 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10254 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10133 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10154 to the 6.8.1 release notes.
+- DOC-2181: the TinyMCE 6.8.1 release notes plus 6.8.1-specific changes to the TinyMCE documentation.
 - DOC-2075: remove `tinymcespellchecker` configuration workaround from full-featured-demo with Premium plugins examples: `/modules/ROOT/examples/live-demos/full-featured/example.js` and `/modules/ROOT/examples/live-demos/full-featured/index.js`.
 - DOC-2182: added file, `/modules/ROOT/partials/configuration/indent.adoc`, documenting the `indent` option. Added `include::` statement to `/modules/ROOT/pages/content-filtering.adoc` pointing to this file.
 - DOC-2189: added template files with instructions to `-new-material-templates/plugin-documentation-templates/ROOT/pages`. Added further boilerplate — a generic version-required include statement — and instructions regarding this boilerplate to `pluginpage.adoc`. Added new template file-and-folder infrastructure, `/-new-material-templates/configuration-options-templates`. Added boilerplate and documentation to the files in this new infrastructure. Also corrected markup typo in `modules/ROOT/pages/available-menu-items.adoc`.
@@ -59,7 +59,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### 2023-11-22
 
-- DOC-2180: Added 6.8-specific entry to `changelog.adoc`.
+- DOC-2180: Added 6.8.0-specific entry to `changelog.adoc`.
 
 ### 2023-11-15
 

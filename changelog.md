@@ -48,8 +48,18 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 - DOC-2182: added file, `/modules/ROOT/partials/configuration/indent.adoc`, documenting the `indent` option. Added `include::` statement to `/modules/ROOT/pages/content-filtering.adoc` pointing to this file.
 - DOC-2189: added template files with instructions to `-new-material-templates/plugin-documentation-templates/ROOT/pages`. Added further boilerplate — a generic version-required include statement — and instructions regarding this boilerplate to `pluginpage.adoc`. Added new template file-and-folder infrastructure, `/-new-material-templates/configuration-options-templates`. Added boilerplate and documentation to the files in this new infrastructure. Also corrected markup typo in `modules/ROOT/pages/available-menu-items.adoc`.
 - DOC-2177: Added documentation of the `picker_text` property to the `urlinput` dialog component of `dialog-components.adoc`.
+- DOC-2216: add new single `js` bundling feature example for `Bundling an npm version of TinyMCE with ES6 and Vite`.
 - DOC-2202: add new `bespoke` button text updates to `events.adoc` file.
 - DOC-2209: add new default_font_stack `user-formatting-option.adoc` file.
+
+### 2023-11-29
+
+- DOC-2223: Added 6.8.1-specific entry to `changelog.adoc`.
+- DOC-2221: add new notification messages to `cloud-troubleshooting.adoc` file.
+
+### 2023-11-22
+
+- DOC-2180: Added 6.8-specific entry to `changelog.adoc`.
 
 ### 2023-11-15
 

@@ -226,7 +226,7 @@ tinymce.init({
 });
 ----
 
-In this example, typing `{{string}}` followed by a word boundary character (such as a space, full-stop, question mark or comma) will result in the _string_ being turned into an active merge tag.
+In this example, typing `{\{string\}}` followed by a word boundary character (such as a space, full-stop, question mark or comma) will result in the _string_ being turned into an active merge tag.
 
 ==== Merge tags cannot exceed 255 characters in length
 
@@ -691,4 +691,3 @@ This presentation issue does not affect functionality. Selecting a new *Backgrou
 A workaround is to apply inline formatting after applying the Text and Background color. When the inline formatting is applied after the Text and Background colors are applied, the presentation error does not occur.
 
 NOTE: This checkmark presentation issue occurs in conjunction with the similar checkmark presentation issue documented above. When this presentation issue occurs, the checkmark does denote the current background color in either the *Background color* menu or toolbar item.
-

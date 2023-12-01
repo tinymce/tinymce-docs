@@ -19,7 +19,7 @@ npm install --save-dev \
 ----
 
 endif::[]
-ifeval::[{is_zip_install} != true]
+ifeval::[{is_zip_install} != true && != vite]
 . Add `+tinymce+` and the following development dependencies to the project.
 * https://www.npmjs.com/package/webpack[`+webpack+`]
 * https://www.npmjs.com/package/webpack-cli[`+webpack-cli+`]
@@ -41,3 +41,20 @@ npm install --save-dev \
 ----
 
 endif::[]
+ifeval::[{is_zip_install} == vite]
+. Create scaffolding for your project.
++
+[source,sh]
+----
+npm create vite@5 . && npm install tinymce
+----
++
+. Or add `+tinymce+` and the following development dependencies to your existing project.
+* https://vitejs.dev[`+Vite+`]
++
+For example:
++
+[source,sh]
+----
+npm install tinymce && npm install --save-dev vite
+----

@@ -1,7 +1,7 @@
 = tinymce.dom.StyleSheetLoader
 :navtitle: tinymce.dom.StyleSheetLoader
 :description: This class handles loading of external stylesheets and fires events when these are loaded.
-:keywords: load, loadAll, unload, unloadAll
+:keywords: load, loadAll, loadRawCss, unload, unloadAll, unloadRawCss
 :moxie-type: api
 
 This class handles loading of external stylesheets and fires events when these are loaded.
@@ -16,8 +16,10 @@ This class handles loading of external stylesheets and fires events when these a
 |Name|Summary|Defined by
 |xref:#load[load()]|Loads the specified CSS file and returns a Promise that will resolve when the stylesheet is loaded successfully or reject if it failed to load.|`xref:apis/tinymce.dom.stylesheetloader.adoc[StyleSheetLoader]`
 |xref:#loadAll[loadAll()]|Loads the specified CSS files and returns a Promise that is resolved when all stylesheets are loaded or rejected if any failed to load.|`xref:apis/tinymce.dom.stylesheetloader.adoc[StyleSheetLoader]`
+|xref:#loadRawCss[loadRawCss()]|Loads the specified css string in as a style element with an unique key.|`xref:apis/tinymce.dom.stylesheetloader.adoc[StyleSheetLoader]`
 |xref:#unload[unload()]|Unloads the specified CSS file if no resources currently depend on it.|`xref:apis/tinymce.dom.stylesheetloader.adoc[StyleSheetLoader]`
 |xref:#unloadAll[unloadAll()]|Unloads each specified CSS file if no resources currently depend on it.|`xref:apis/tinymce.dom.stylesheetloader.adoc[StyleSheetLoader]`
+|xref:#unloadRawCss[unloadRawCss()]|Unloads the specified CSS style element by key.|`xref:apis/tinymce.dom.stylesheetloader.adoc[StyleSheetLoader]`
 |===
 
 [[methods]]
@@ -59,6 +61,21 @@ Loads the specified CSS files and returns a Promise that is resolved when all st
 
 '''
 
+[[loadRawCss]]
+=== loadRawCss()
+[source, javascript]
+----
+loadRawCss(key: String, css: String)
+----
+Loads the specified css string in as a style element with an unique key.
+
+==== Parameters
+
+* `key (String)` - Unique key for the style element.
+* `css (String)` - Css style content to add.
+
+'''
+
 [[unload]]
 === unload()
 [source, javascript]
@@ -84,5 +101,19 @@ Unloads each specified CSS file if no resources currently depend on it.
 ==== Parameters
 
 * `urls (Array)` - URLs to unload or remove.
+
+'''
+
+[[unloadRawCss]]
+=== unloadRawCss()
+[source, javascript]
+----
+unloadRawCss(key: String)
+----
+Unloads the specified CSS style element by key.
+
+==== Parameters
+
+* `key (String)` - Key of CSS style resource to unload.
 
 '''

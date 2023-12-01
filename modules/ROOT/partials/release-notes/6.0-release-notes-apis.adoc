@@ -45,7 +45,7 @@ The new `FakeClipboard` API provides a means for storing state that can be set a
 
 The new `Resource.unload` API makes it possible to unload resources in the resource loader.
 
-[[setdata]]
+[[setdata-api]]
 === `setData` method in the Dialog API
 
 The dialog API’s `setData` method now uses a deep merge algorithm.

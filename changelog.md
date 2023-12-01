@@ -10,6 +10,15 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 - DOC-2202: add new `bespoke` button text updates to `events.adoc` file.
 - DOC-2209: add new default_font_stack `user-formatting-option.adoc` file.
 
+### 2023-11-29
+
+- DOC-2223: Added 6.8.1-specific entry to `changelog.adoc`.
+- DOC-2221: add new notification messages to `cloud-troubleshooting.adoc` file.
+
+### 2023-11-22
+
+- DOC-2180: Added 6.8-specific entry to `changelog.adoc`.
+
 ### 2023-11-15
 
 - DOC-2204: added `6.7.3-release-notes.adoc` to project; updated `changelog.adoc`, `nav.adoc` and `release-notes.adoc` for the TinyMCE 6.7.3 release, and api-version bump for 6.7.3.

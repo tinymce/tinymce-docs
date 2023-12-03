@@ -40,6 +40,18 @@ tinymce.init({
           return [];
         }
       });
+	  
+      // System messages provided by the plugin to format the output as HTML content.
+      const pluginSystemMessages = request.system.map((content) => ({
+        role: 'system',
+        content
+      }));
+      
+      const systemMessages = [
+        ...pluginSystemMessages,
+        // Additional system messages to control the output of the AI
+        { role: 'system', content: 'Remove lines with ``` from the response start and response end.' }
+      ]
 
       // Forms the new query sent to the API
       const content = request.context.length === 0 || conversation.length > 0
@@ -48,7 +60,7 @@ tinymce.init({
 
       const messages = [
         ...conversation,
-        { role: 'system', content: request.system.join('\n') },
+        ...systemMessages,
         { role: 'user', content }
       ];
 
@@ -116,7 +128,7 @@ tinymce.init({
           onerror
         })
       )
-      .then((response) => {
+      .then(async (response) => {
         if (response && !response.ok) {
           const data = await response.json();
           if (data.error) {

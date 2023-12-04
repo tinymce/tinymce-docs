@@ -89,7 +89,7 @@ For a shortcut with a prompt, when the property is:
 * `+false+`: this shortcut will _only_ be enabled when the user _has not_ made a selection in the editor;
 * `+undefined+`: or _not set_, this shortcut will _always_ be enabled.
 
-This property allows the definition of shortcuts which should only operate when the user has selected content, requiring the selection as context to the AI when the property is `+true+`. Additionally, shortcuts which are intended to generate specific content will not be enabled with any selection when the property if `+false+`.
+This property allows the definition of shortcuts which should only operate when the user has selected content, requiring the selection as context to the AI when the property is `+true+`. Additionally, shortcuts that are intended to generate specific content will not be enabled with any selection when the property if `+false+`.
 
 As part of this update, all of the default shortcuts available in **AI Assistant 1.2.0** now have the property `+selection: false+`, as they are all shortcuts which require a selection context to generate content correctly.
 

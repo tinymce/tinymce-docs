@@ -547,10 +547,10 @@ In {productname} 6.8.1.0 translations were added for this text, though this anno
 
 === The functions schema.isWrapper and schema.isInline didn't exclude element names that started with # those should not be considered elements.
 // #TINY-10385
-Previously the `schema.isInline` and `schema.isWrapper`, would also consider elements such as `#text` as `valid_elements`.
+Previously the `isInline` and `isWrapper` functions in the Schema module would incorrectly output `true` for non-element nodes such as `#text` and `#comment`.
 
-As a consequence, in some cases the editor would try to append an element inside a `#text` element, which is forbidden.
+As a consequence, in certain cases the editor would attempt to append a child node inside such a non-element node, which is forbidden and results in an error being thrown.
 
-{productname} 6.8.1 addresses this issue, now, the `schema.isInline` and schema.isWrapper exclude elements when there name starts with `#` such as: `#text` and `#comment`.
+In {productname} 6.8.1, `Schema.isInline` and `Schema.isWrapper` exclude non-element nodes whose names starts with `#`, such as `#text` and `#comment`.
 
-As a result, these elements are no longer considered as a valid wrapper, and can no longer append an element inside of elements such as these.
+As a result, these elements are no longer considered as valid inline or wrapper elements, preventing errors caused by element methods being called on non-element nodes.

@@ -29,7 +29,7 @@ The {productname} 6.8.1 release includes an accompanying release of the **Advanc
 
 **Advanced Templates** 1.4.0 includes the following improvement and fix.
 
-==== AdvTemplate fixed `{{mce-cursor}}` marker
+==== New `{{mce-clipboard}}` marker as a placeholder within template content, indicating the location where clipboard content will be inserted
 // #TINY-9974
 **Advanced Template** 1.4.0 introduces a new feature that allows templates to now include special markers, denoted as `+{{mce-clipboard}}+`. These markers serve as placeholders that indicate where clipboard content should be inserted once the template is added to the editor's content.
 
@@ -101,13 +101,13 @@ The {productname} 6.8.1 release includes an accompanying release of the **Commen
 
 **Comments** 3.3.4 includes the following fix:
 
-=== Switching from an empty paragraph to a section with a comment didn't enable `Add comment...` textarea.
+=== Switching from an empty paragraph to a section with a comment didn't enable `Add comment...` textarea
 //#TINY-10173
 In previous versions of {productname}, occasionally the sidebar would unexpectedly be set as readonly due to a invalid selection state.
 
 As a consequence, when the user moved the cursor from an empty element to a commented text selection, the sidebar and comments section would change to be readonly.
 
-{productname} 6.8.1 addresses this issue, now, when the editor verifiys that the sidebar state should set as readonly `false`, it also update invalid selection to `false`, so both states do not affect the sidebar state.
+{productname} 6.8.1 addresses this issue, now, when the editor verifies that the sidebar state should set as readonly `false`, it also update invalid selection to `false`, so both states do not affect the sidebar state.
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments plugin].
 
@@ -184,7 +184,7 @@ Previously, while pressing **Enter**, **Spacebar** or changing context within th
 
 {productname} 6.8.1 addresses this issue, now, the **Spell Checker Pro** mechanism is triggered by either **Space**, **Enter** or **Shift+Enter**.
 
-=== As-you-type spellechecking would sometimes interrupt composing in certain languages.
+=== As-you-type spellechecking would sometimes interrupt composing in certain languages
 // #TINY-10292
 Spell Checker Pro would in some situations be interrupted while composing when the user selects a suggestion with a `space`.
 
@@ -202,7 +202,7 @@ The {productname} 6.8.1 release includes an accompanying release of the **Advanc
 
 **Advanced Typography** 1.1.3 includes one fix:
 
-==== If tinymcespellchecker and typography are both loaded, tinymcespellchecker prevents typography from transforming the string, (tm) into the character ‚Ñ¢.
+==== If tinymcespellchecker and typography are both loaded, tinymcespellchecker prevents typography from transforming the string, (tm) into the character ‚Ñ¢
 //#TINY-9963
 Previously when the {productname} **Spell Checker Pro** plugin and the **Advanced Typography** plugin where both loaded, the **Spell Checker Pro** plugin would prevent the **Advanced Typography** plugin from transforming the string, `(tm)` into the character `™`.
 
@@ -234,7 +234,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 6.8.1 also includes the following improvements:
 
-=== Colorpicker now includes the Brightness/Saturation selector and hue slider in the keyboard navigable items.
+=== Colorpicker now includes the Brightness/Saturation selector and hue slider in the keyboard navigable items
 // #TINY-9287
 As a result of an accessibility report for {productname}, it was discovered that the color picker dialog scored lower than expected, specifically when the user attempted to interact with the brightness/saturation selector and the hue slider when selecting a foreground or background color.
 
@@ -242,7 +242,7 @@ As a consequence, it was noted that the color picker was not fully accessible vi
 
 {productname} 6.8.1.1 addresses this issue, now, when navigating through the dialog using the keyboard, the focus will be on the brightness/saturation pane, this allows the user to use the arrow keys to navigate in all four directions when selection a color. In addition when holding the "shift" key down, the navigation speed will be increased. This functionality has also been applied to the hue slider for added benefit for accessibility.
 
-=== Improved the tooltips of picker buttons for the urlinput components in the "Insert/Edit Image" and "Insert/Edit Link" dialogs.
+=== Improved the tooltips of picker buttons for the urlinput components in the "Insert/Edit Image" and "Insert/Edit Link" dialogs
 // #TINY-10155
 In previous versions of {productname}, the tooltips of file picker buttons of `urlinput` dialog components assumed the label of the component.
 
@@ -257,13 +257,13 @@ In {productname} 6.8.1, the tooltips of `urlinput` file picker buttons on affect
 | New | "Browse links"   | "Browse files"    | "Browse files"   
 |===============================================================
 
-=== Inline dialog will now respect size: 'large' argument in the dialog spec.
+=== Inline dialog will now respect size: 'large' argument in the dialog spec
 // #TINY-10209
 In previous versions of {productname}, when a dialog was redialed with a new `size` value, that value would have no effect on the size of the dialog. 
 
 In {productname} 6.8.1, now, the size of the dialog is updated when the dialog is redialed with a spec containing a new `size` that is different from the current size.
 
-=== Bespoke dropdown toolbar buttons including align, fontfamily, fontsize, blocks, and styles did not include their visible text labels in their accessible names.
+=== Bespoke dropdown toolbar buttons including align, fontfamily, fontsize, blocks, and styles did not include their visible text labels in their accessible names
 // #TINY-10147
 Prior to {productname} 6.8.1, accessibility labels of bespoke dropdown buttons only announced the name of the button, and not the visible text label of the selected option.
 
@@ -277,7 +277,7 @@ In {productname} 6.8.1, the visible text label _(or icon name where icons are pr
 
 {productname} 6.8.1 also includes the following additions:
 
-=== Added `force_hex_color` editor option. Option `'always'` converts all RGB & RGBA colours to hex, `'rgb_only'` will only convert RGB and *not* RGBA colours to hex, `'off'` won't convert any colours to hex.
+=== Added `force_hex_color` editor option. Option `'always'` converts all RGB & RGBA colours to hex, `'rgb_only'` will only convert RGB and *not* RGBA colours to hex, `'off'` won't convert any colours to hex
 // #TINY-9819
 Previously, when applying colors to content within the editor via the `forecolor` and `backcolor`, only colors applied with RGB values were excepted.
 
@@ -289,7 +289,7 @@ As a consequence HEX colors were ignored by default in {productname}.
 * **force_hex_color: 'rgb_only'**: only RGB and not RGBA colors are converted and applied as HEX.
 * **force_hex_color: 'off'**: (default option) no conversion to hex is applied, and they are left as their input format.
 
-=== New `sandbox_iframes` option that controls whether iframe elements will be added a `sandbox=""` attribute to mitigate malicious intent.
+=== New `sandbox_iframes` option that controls whether iframe elements will be added a `sandbox=""` attribute to mitigate malicious intent
 // #TINY-10348
 Recently it was discovered that iframes could embed resources that can cause nefarious effects when inserted into the editor via scripting and other mechanisms. This was especially problematic if the iframe had scripts that triggered automatic downloads of malicious files, or if the iframe resource is hosted on the same origin as the editor, which could lead to highly impactful scripting in the same context. In addition, since iframes can be modified to have very small, near-invisible dimensions, they could be unintentionally copied and pasted by users into the editor.
 
@@ -297,7 +297,7 @@ Recently it was discovered that iframes could embed resources that can cause nef
 
 NOTE: `sandbox_iframes`: is set to `false` by default, which is the existing behavior. This is because enabling `sandbox_iframes` may break **existing media embeds** such as YouTube, Vimeo, and Codepen, as actions such as scripting and same-origin access are prevented.
 
-=== New `convert_unsafe_embeds` option that controls whether `<object>` and `<embed>` elements will be converted to more restrictive alternatives, namely `<img>` for image MIME types, `<video>` for video MIME types, `<audio>` audio MIME types, or `<iframe>` for other or unspecified MIME types.
+=== New `convert_unsafe_embeds` option that controls whether `<object>` and `<embed>` elements will be converted to more restrictive alternatives, namely `<img>` for image MIME types, `<video>` for video MIME types, `<audio>` audio MIME types, or `<iframe>` for other or unspecified MIME types
 // #TINY-10349
 Previously the `<object>` and `<embed>` elements, similar to `<iframe>` elements, could embed external resources. However, unlike `<iframe>`, `<object>` and `<embed>` elements did not have a sandboxing mechanism to neutralize resources which have potentially nefarious effects such as malicious scripting, automatic downloads of dangerous files, among others.
 
@@ -320,7 +320,7 @@ NOTE: `convert_unsafe_embeds`: is set to `false` by default to prevent breaking 
 
 {productname} 6.8.1 also includes the following bug fixes:
 
-=== Pressing Enter when focusing on the `details` component for an Accordion deletes its structure.
+=== Pressing Enter when focusing on the `details` component for an Accordion deletes its structure
 // #TINY-10177
 Previously, clicking on the expand arrow of a `details` element would result in the editor selection to be external of the `summary` element when the host browser was Safari.
 
@@ -328,7 +328,7 @@ As a consequence, the plugin failed to detect if the selection was at the beginn
 
 {productname} 6.8.1 addresses this issue, now, the predicate considers that the selection can be right before the `summary` element, so the Accordion toggling can work as expected on Safari.
 
-=== Directionality would not be consistently applied to the entire accordion block.
+=== Directionality would not be consistently applied to the entire accordion block
 // #TINY-10291
 Previously, when applying directionality to the accordion, the `dir` attribute was modified in both the `summary` and auxiliary accordion body `div` element. However, the auxiliary accordion body `div` element disappeared during the editor serialization process, resulting in the loss of the applied `dir` value for the accordion content.
 
@@ -359,7 +359,7 @@ The consequence of this issue was that deleting the selection emptied the main t
 
 {productname} 6.8.1 addresses this issue, now the editor recognizes this scenario and manages it as if the additional element was not contained in any table. As a result, the deletion now behaves as if it were outside a table, and it functions as expected.
 
-=== All applied inline formats are lost when format is removed.
+=== All applied inline formats are lost when format is removed
 // #TINY-10132
 Previously, a formatted caret was mistakenly perceived as an empty element, which resulted in,
 
@@ -370,13 +370,13 @@ However, with the recent fix in {productname} 6.8.1, the caret is now disregarde
 
 As a result, formatting can now be correctly removed in both empty and non-empty editors.
 
-=== Editor would convert urls that are not http/s or relative resulting in broken links.
+=== Editor would convert urls that are not http/s or relative resulting in broken links
 // #TINY-10153
 In previous versions of {productname}, when using the **Link Plugin**, and inserting a link that is not http/s or relative (such as onenote link), the editor would modify/update the link by adding a new hostname to the url.
 
 {productname} 6.8.1 addresses this issue, now, the editor no longer changes links that are not http/s or relative.
 
-=== Applying heading formatting to the content of the summary element extended its application to the content of the parent details element.
+=== Applying heading formatting to the content of the summary element extended its application to the content of the parent details element
 // #TINY-10154
 Previously, editor schema heading elements were **invalid** children of a `<summary>` node within the Accordion component.
 
@@ -386,7 +386,7 @@ As a consequence of this, any attempt to apply a heading format to the `<summary
 
 NOTE: To remove the heading format applied to a <summary> element, click on the same applied heading format in the dropdown to "unset" the format.
 
-=== Resize handles would not appear on editable images in a non-editable context.
+=== Resize handles would not appear on editable images in a non-editable context
 // #TINY-10118
 In previous versions of {productname}, a regression was identified that affected images nested within a `NonEditable` section.
 
@@ -394,7 +394,7 @@ As a consequence, the editor would only check the parent element within a nested
 
 {productname} 6.8.1 addresses this issue, now, the editor checks the **"readonly"** attribute on images, rather than just the parent element.
 
-=== Setting the content with an attribute that contains a self-closing HTML tag did not preserve the tag.
+=== Setting the content with an attribute that contains a self-closing HTML tag did not preserve the tag
 // #TINY-10088
 In previous versions of **DOMPurify**, a critical issue was identified where attributes containing the self-closing `+/>+` tags were erroneously removed during the sanitization process.
 
@@ -416,13 +416,13 @@ As a consequence, the removal of these attributes by **DOMPurify** would cause s
 
 {productname} 6.8.1 addresses this issue by updating **DOMPurify** to the latest version. By doing so, these attributes are no longer removed, which preserves the integrity of their content.
 
-=== Screen readers now announce the selected color of forecolor and backcolor buttons.
+=== Screen readers now announce the selected color of forecolor and backcolor buttons
 // #TINY-9796
 Previously, when changing the color for either `forecolor` and `backcolor`, screen readers didn't announce the last selected color for that button.
 
 {productname} 6.8.1 addresses this issue, now, the last selected color for Text/Background color are read aloud by the screen reader as expected.
 
-=== Custom block element's where not considered block elements in some cases.
+=== Custom block element's where not considered block elements in some cases
 // #TINY-10139
 Before, if a user copied and pasted a block element that was inside a custom element like the example config below, the editor would make an duplicate copy of the outer wrapper for the custom block element when pasting the content back. This happened because the function didn't check if the element is a wrapper element.
 
@@ -437,7 +437,7 @@ tinymce.init({
 
 {productname} 6.8.1, now also considers **custom elements** as part of its process when checking if the element is a wrapper element.
 
-=== Creating a new li via enter inside a nested list would not inherit styles from the source li.
+=== Creating a new li via enter inside a nested list would not inherit styles from the source li
 // #TINY-10316
 Previously, when the user created a new `li` from a nested list within its parent by keypress **Enter** the editor would ignore the styles applied to the nested list.
 
@@ -445,14 +445,14 @@ As a consequence, the new `li` did not **inherit** the nested list styles.
 
 {productname} 6.8.1 addresses this issue, now, when the user creates a new `li` item within a nested list, the styles are copied over from the “source” to the newly created `li` as expected.
 
-=== Removing an LI element containing a details element would incorrectly merge its content.
+=== Removing an LI element containing a details element would incorrectly merge its content
 // #TINY-10133
 Previously, when a caret was positioned at the start of a list item containing only one block element, pressing the Backspace key caused the block content to unwrap.
 
 This had the unintended consequence of detaching the child `details` element content and appending it to the content of the preceding list item. Unfortunately, this action left the `summary` element devoid of its requisite parent `details` element, rendering it structurally invalid.
 {productname} 6.8.1 addresses this issue. now, the details content is no longer unwrapped and moved to the upper list item, which preserves the component's expected structure.
 
-=== Merging an external p inside a list via delete or backspace would incorrectly try to move a parent element inside a child element.
+=== Merging an external p inside a list via delete or backspace would incorrectly try to move a parent element inside a child element
 // #TINY-10289
 Previously, when the caret was positioned at either the,
 
@@ -496,7 +496,7 @@ As a consequence, a console error `"Uncaught DOMException: Failed to execute 'ap
 
 As a result, the developer console, no longer displays the console error and the merge between the two elements behaves as expected.
 
-=== The `fontsizeinput` toolbar item was causing console warnings when toolbar items were clicked.
+=== The `fontsizeinput` toolbar item was causing console warnings when toolbar items were clicked
 // #TINY-10330
 The console error warning "The component must be in a context to execute: triggerEvent" stemmed from two distinct causes.
 
@@ -507,7 +507,7 @@ As a consequence, these issues manifested between the first and second initializ
 
 {productname} 6.8.1 addresses this issue, now the editor removes the redundant second initialization of the toolbar, and fix the 'fontsizeinput' 'destroy' action, so all its components are now properly unmounted. This fix ensures that updates are only applied to components that genuinely exist.
 
-=== Menubar buttons with more than one word would sometimes wrap into two lines.
+=== Menubar buttons with more than one word would sometimes wrap into two lines
 // #TINY-10343
 Previously when rendering the menubar in sync with the fetch of the styles, it was possible in some situations that the styles would render after the menubar.
 
@@ -517,7 +517,7 @@ As a consequence, the menubar would not correctly render such as the `width` of 
 
 As a result, the `width` of the buttons now display correctly.
 
-=== Dialog collection items would not display any icons chosen from icon pack.
+=== Dialog collection items would not display any icons chosen from icon pack
 // #TINY-10174
 In earlier versions of {productname}, collection items set in a xref:dialog-components.adoc#collection[collection dialog component] would not display any icon as set in the `+icon+` property, instead only displaying the `+string+` itself.
 
@@ -525,7 +525,7 @@ In {productname} 6.8.1, dialog collection items will now use any specified `+ico
 
 For information on the **Dialog layout components for collections** plugin see xref:dialog-components.adoc#collection[dialog components].
 
-=== Screen readers now announce the active autocompleter item.
+=== Screen readers now announce the active autocompleter item
 // #TINY-9393
 As focus is required to be in the editor when interacting with the autocompleter or mentions plugins, a issue was identified when the user would navigate through the autocompleter menu.
 
@@ -537,7 +537,7 @@ NOTE: Closing the autocompleter will remove the attributes.
 
 As a result, these modifications significantly enhance the accessibility of autocompleter and mentions plugins for users relying on screen readers.
 
-=== Translation syntax for announcement text in the table grid was incorrectly formatted.
+=== Translation syntax for announcement text in the table grid was incorrectly formatted
 // #TINY-10141
 In {productname} 6.7.0, each cell in the table grid menu item was updated so that it would announce the number of columns and rows currently selected.
 

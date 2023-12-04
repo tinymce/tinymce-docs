@@ -67,7 +67,7 @@ Security patch for {productname} 6.7.3, made changes to **ZWNBSP** characters so
 
 As a consequence, the `+{{mce-cursor}}+` marker functionality for the Advanced Templates plugin stopped working.
 
-{productname} 6.8.1 addresses this issue, by replacing the **ZWNBSP** character with a `data-mce-bookmark` attribute to marker, thus preserving them in the inserted template content.
+{productname} 6.8.1 addresses this issue, by replacing the **ZWNBSP** character with a `data-mce-bookmark` attribute to the marker, thus preserving them in the inserted template content.
 
 As a result, the `+{{mce-cursor}}+` marker functionality is now working as expected.
 
@@ -91,7 +91,7 @@ For a shortcut with a prompt, when the property is:
 
 This property allows the definition of shortcuts which should only operate when the user has selected content, requiring the selection as context to the AI when the property is `+true+`. Additionally, shortcuts that are intended to generate specific content will not be enabled with any selection when the property if `+false+`.
 
-As part of this update, all of the default shortcuts available in **AI Assistant 1.2.0** now have the property `+selection: false+`, as they are all shortcuts which require a selection context to generate content correctly.
+As part of this update, all of the default shortcuts available in **AI Assistant 1.2.0** now have the property `+selection: false+`, as they are all shortcuts that require a selection context to generate content correctly.
 
 For information on the **AI Assistant** plugin, see: xref:ai.adoc[AI Assistant].
 
@@ -103,7 +103,7 @@ The {productname} 6.8.1 release includes an accompanying release of the **Commen
 
 === Switching from an empty paragraph to a section with a comment didn't enable `Add comment...` textarea
 //#TINY-10173
-In previous versions of {productname}, occasionally the sidebar would unexpectedly be set as readonly due to a invalid selection state.
+In previous versions of {productname}, occasionally the sidebar would unexpectedly be set as readonly due to an invalid selection state.
 
 As a consequence, when the user moved the cursor from an empty element to a commented text selection, the sidebar and comments section would change to be readonly.
 
@@ -121,7 +121,7 @@ The {productname} 6.8.1 release includes an accompanying release of the **PowerP
 // TINY-10229
 Previously, when copying content, including comments, and subsequently pasting it into a {productname} document, the comments were also unintentionally included in the pasted data.
 
-{productname} 6.8.1 addresses this issue, now, when a user copy's and paste's content from word with the inclusion of comments, the **Powerpaste** plugin now exclude these comments from the pasted content.
+{productname} 6.8.1 addresses this issue, now, when a user copies and pastes content from Word with the inclusion of comments, the **Powerpaste** plugin now excludes these comments from the pasted content.
 
 === Pasting underlined content from MS Word with PowerPaste results in empty rows being underlined
 // TINY-10178
@@ -180,7 +180,7 @@ The {productname} 6.7.0 release includes an accompanying release of the **Spell 
 
 === Spellchecker does not trigger on shift+enter
 // TINY-10285
-Previously, while pressing **Enter**, **Spacebar** or changing context within the editor after a incorrectly spelled word would trigger the **Spell Checker Pro** plugin. Although it was discovered that after pressing **Shift+Enter**, the plugin failed to trigger, as the initial implementation did not consider this keypress as a space, or as a change to the context.
+Previously, while pressing **Enter**, **Spacebar** or changing context within the editor after an incorrectly spelled word would trigger the **Spell Checker Pro** plugin. Although it was discovered that after pressing **Shift+Enter**, the plugin failed to trigger, as the initial implementation did not consider this keypress as a space, or as a change to the context.
 
 {productname} 6.8.1 addresses this issue, now, the **Spell Checker Pro** mechanism is triggered by either **Space**, **Enter** or **Shift+Enter**.
 
@@ -204,7 +204,7 @@ The {productname} 6.8.1 release includes an accompanying release of the **Advanc
 
 ==== If tinymcespellchecker and typography are both loaded, tinymcespellchecker prevents typography from transforming the string, (tm) into the character ‚Ñ¢
 //#TINY-9963
-Previously when the {productname} **Spell Checker Pro** plugin and the **Advanced Typography** plugin where both loaded, the **Spell Checker Pro** plugin would prevent the **Advanced Typography** plugin from transforming the string, `(tm)` into the character `™`.
+Previously when the {productname} **Spell Checker Pro** plugin and the **Advanced Typography** plugin were both loaded, the **Spell Checker Pro** plugin would prevent the **Advanced Typography** plugin from transforming the string, `(tm)` into the character `™`.
 
 The **Spell Checker Pro** originally would wrap elements with a fake element to underline misspelled words, and as the **Advanced Typography** plugin is designed to detect wrapped elements from the spellchecker, this resulted in it parsing 'tm' instead of `(tm)`.
 

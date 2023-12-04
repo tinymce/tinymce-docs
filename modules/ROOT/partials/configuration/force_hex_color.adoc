@@ -16,6 +16,6 @@ This option allows the integrator to optionally force the conversion of either R
 // Output elements in XHTML style
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  force_hex_color: 'off' // default
+  force_hex_color: 'always'
 });
 ----

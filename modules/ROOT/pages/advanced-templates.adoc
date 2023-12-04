@@ -151,6 +151,19 @@ Also, and as shown in the interactive demonstration below, the xref:mergetags.ad
 liveDemo::{plugincode}-insertionpoint[]
 
 
+[[the-mce-clipboard-marker]]
+=== The mce-clipboard marker
+
+include::partial$misc/admon-requires-6.8v.adoc[]
+
+The `+{{mce-clipboard}}+` marker is a fixed string for adding to any template.
+
+The string to add is as follows: `+{{mce-clipboard}}+`.
+
+Whenever a user inserts a template containing the `+{{mce-clipboard}}+` marker, the editor will replace those markers with the actual content from the clipboard.
+
+liveDemo::{plugincode}-mce-clipboard[]
+
 [[options]]
 == Options
 

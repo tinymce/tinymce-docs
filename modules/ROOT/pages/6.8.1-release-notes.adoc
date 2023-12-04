@@ -63,7 +63,7 @@ NOTE: when the host browser is **FireFox**, the user will be prompted with a not
 
 ==== The functionality of the `{{mce-cursor}}` marker feature was broken after the upgrade to {productname} 6.7.3
 // #TINY-10367
-Security patch for {productname} 6.7.3, made changes to **ZWNBSP** characters so they are now removed from any content passed via the `insertContent` API. **ZWNBSP** characters where used to add padding to the marker to avoid it cleaning out the empty content.
+Security patch for {productname} 6.7.3, made changes to **ZWNBSP** characters so they are now removed from any content passed via the `insertContent` API. **ZWNBSP** characters were used to add padding to the marker to avoid it cleaning out the empty content.
 
 As a consequence, the `+{{mce-cursor}}+` marker functionality for the Advanced Templates plugin stopped working.
 

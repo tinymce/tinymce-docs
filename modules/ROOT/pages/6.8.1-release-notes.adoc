@@ -277,6 +277,27 @@ In {productname} 6.8.1, the visible text label _(or icon name where icons are pr
 
 {productname} 6.8.1 also includes the following additions:
 
+=== Added `default_font_stack` editor option that makes it possible to define what is considered a system font stack.
+// #TINY-10290
+
+include::partial$misc/admon-requires-6.8v.adoc[]
+
+{productname} 6.8.1 introduces a new option `default_font_stack`, that allows integrators to define the default font stack for the "System Font" stack in the fontfamily toolbar and menu items.
+
+The array should contain a font family name that matches the default fonts configured in the `content_css` CSS file.
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: 'fontsize',
+  default_font_stack: [ '-apple-system', 'Arial' ]
+});
+----
+
+For information on the **user formatting options**, see: xref:user-formatting-options.adoc#default_font_stack[user formatting options].
+
 === Added `force_hex_color` editor option. Option `'always'` converts all RGB & RGBA colours to hex, `'rgb_only'` will only convert RGB and *not* RGBA colours to hex, `'off'` won't convert any colours to hex
 // #TINY-9819
 Previously, when applying colors to content within the editor via the `forecolor` and `backcolor`, HEX colors were always converted to RGB.

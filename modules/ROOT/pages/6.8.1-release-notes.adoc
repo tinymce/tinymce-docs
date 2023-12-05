@@ -279,9 +279,7 @@ In {productname} 6.8.1, the visible text label _(or icon name where icons are pr
 
 === Added `force_hex_color` editor option. Option `'always'` converts all RGB & RGBA colours to hex, `'rgb_only'` will only convert RGB and *not* RGBA colours to hex, `'off'` won't convert any colours to hex
 // #TINY-9819
-Previously, when applying colors to content within the editor via the `forecolor` and `backcolor`, only colors applied with RGB values were excepted.
-
-As a consequence HEX colors were ignored by default in {productname}.
+Previously, when applying colors to content within the editor via the `forecolor` and `backcolor`, HEX colors were always converted to RGB.
 
 {productname} 6.8.1 addresses this issue, by adding the new editor option `force_hex_color: 'off'` which is set as **default**, can now be added to the {productname} config by;
 

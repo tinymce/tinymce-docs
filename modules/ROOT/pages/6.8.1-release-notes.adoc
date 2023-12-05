@@ -332,7 +332,7 @@ Previously, when applying directionality to the accordion, the `dir` attribute w
 
 As a consequence, when selecting the accordion block and applying **RTL** directionality, the alignment was only applied to the `summary`, not the entire accordion.
 
-{productname} 6.8.1 addresses this issue, now, when the {productname} editor is **focused**, a selection normalization process refines the editor selection directly to the element contents.
+{productname} 6.8.1 addresses this issue.
 
 As a result, when selecting an accordion component, the selection now encompasses the entire details element. This ensures that alignment is applied to the entire accordion block when applying directionality, such as **RTL**, to the component.
 

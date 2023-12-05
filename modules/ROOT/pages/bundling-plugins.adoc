@@ -7,76 +7,17 @@
 include::partial$module-loading/bundling-ref-example.adoc[]
 :!editorcomponent:
 
-== Example 1
-
 The following table shows examples of the syntax used to bundle the following plugin.
 
 Required files for an example plugin:
 
-.when using `content.css`
-[source, js]
-----
-./plugins/example/content.css
-./plugins/example/plugin.js
-----
-
-Example syntax for including the example "plugin" in a bundle for styling:
-
-[cols='1,1,4']
-|===
-|Module Syntax |Source |Example
-
-.2+|ES6+
-|npm
-a|
-[source, js]
-----
-import pluginCss from 'tinymce/plugins/example/content.css';
-import 'tinymce/plugins/example';
-----
-
-|`.zip`
-a|
-[source, js]
-----
-import pluginCss from '../tinymce/plugins/example/content.css';
-import '../tinymce/plugins/example/plugin';
-----
-
-.2+|Common JS
-|npm
-a|
-[source, js]
-----
-const pluginCss = require('tinymce/plugins/example/content.css');
-require('tinymce/plugins/example');
-----
-
-|`.zip`
-a|
-[source, js]
-----
-const pluginCss = require('../tinymce/plugins/example/content.css');
-require('../tinymce/plugins/example/plugin.js');
-----
-|===
-
-IMPORTANT: The handling of content CSS files (such as `+content.css+` or `+content.min.css+`) varies between bundling tools. View the relevant guide for the required syntax at xref:introduction-to-bundling-tinymce.adoc[Bundling {productname} with a module loader].
-
-== Example 2
-
-The following table shows examples of the syntax used to bundle the following plugin.
-
-Required files for an example plugin:
-
-.when using `content.js` or `content_css.js`
 [source, js]
 ----
 ./plugins/example/content.js // or './plugins/example/content_css.js'
 ./plugins/example/plugin.js
 ----
 
-Example syntax for including the example 2 "plugin" in a bundle using `content.js` or `content_css.js` files for styling:
+Example syntax for including the example "plugin" in a bundle using `content.js` or `content_css.js` files for bundling:
 
 [cols='1,1,4']
 |===

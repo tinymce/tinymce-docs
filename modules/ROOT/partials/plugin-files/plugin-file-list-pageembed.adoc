@@ -4,14 +4,9 @@
 ./plugins/pageembed/plugin.js
 ----
 
-.css
+.css or bundled css
 [source, js]
 ----
-./plugins/pageembed/css/empa30.css
-----
-
-.js
-[source, js]
-----
+./plugins/pageembed/css/empa30.css //or
 ./plugins/pageembed/css/empa30.js  // bundling requires v6.8.0 or later.
 ----

@@ -4,14 +4,9 @@
 ./plugins/linkchecker/plugin.js
 ----
 
-.css
+.css or bundled css
 [source, js]
 ----
-./plugins/linkchecker/content.min.css
-----
-
-.js
-[source, js]
-----
+./plugins/linkchecker/content.min.css //or
 ./plugins/linkchecker/content_css.js // bundling requires v6.8.0 or later.
 ----

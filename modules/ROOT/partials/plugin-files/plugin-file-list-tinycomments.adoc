@@ -4,15 +4,15 @@
 ./plugins/tinycomments/plugin.js
 ----
 
-.css
+.css or bundled css
 [source, js]
 ----
-./plugins/tinycomments/css/tinycomments.css
-./plugins/tinycomments/js/tinycomments-sidebar.js
+./plugins/tinycomments/css/tinycomments.css //or
+./plugins/tinycomments/css/tinycomments.js // bundling requires v6.8.0 or later.
 ----
 
-.js
+.other js files
 [source, js]
 ----
-./plugins/tinycomments/css/tinycomments.js // bundling requires v6.8.0 or later.
+./plugins/tinycomments/js/tinycomments-sidebar.js
 ----

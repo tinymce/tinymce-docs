@@ -37,8 +37,8 @@ import 'tinymce/plugins/example';
 a|
 [source, js]
 ----
-import pluginCss from '../tinymce/plugins/example/content.js';
-//import pluginCss from '../tinymce/plugins/example/content_css.js';
+import '../tinymce/plugins/example/content.js';
+//import '../tinymce/plugins/example/content_css.js';
 import '../tinymce/plugins/example/plugin';
 ----
 

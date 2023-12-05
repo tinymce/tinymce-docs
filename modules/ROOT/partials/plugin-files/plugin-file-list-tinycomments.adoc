@@ -1,43 +1,18 @@
-....
+.Base js file
+[source, js]
+----
+./plugins/tinycomments/plugin.js
+----
+
+.css
+[source, js]
+----
 ./plugins/tinycomments/css/tinycomments.css
 ./plugins/tinycomments/js/tinycomments-sidebar.js
-./plugins/tinycomments/langs/ar.js
-./plugins/tinycomments/langs/bg_BG.js
-./plugins/tinycomments/langs/ca.js
-./plugins/tinycomments/langs/cs.js
-./plugins/tinycomments/langs/da.js
-./plugins/tinycomments/langs/de.js
-./plugins/tinycomments/langs/el.js
-./plugins/tinycomments/langs/es.js
-./plugins/tinycomments/langs/eu.js
-./plugins/tinycomments/langs/fa.js
-./plugins/tinycomments/langs/fi.js
-./plugins/tinycomments/langs/fr_FR.js
-./plugins/tinycomments/langs/he_IL.js
-./plugins/tinycomments/langs/hi.js
-./plugins/tinycomments/langs/hr.js
-./plugins/tinycomments/langs/hu_HU.js
-./plugins/tinycomments/langs/id.js
-./plugins/tinycomments/langs/it.js
-./plugins/tinycomments/langs/ja.js
-./plugins/tinycomments/langs/kk.js
-./plugins/tinycomments/langs/ko_KR.js
-./plugins/tinycomments/langs/ms.js
-./plugins/tinycomments/langs/nb_NO.js
-./plugins/tinycomments/langs/nl.js
-./plugins/tinycomments/langs/pl.js
-./plugins/tinycomments/langs/pt_BR.js
-./plugins/tinycomments/langs/pt_PT.js
-./plugins/tinycomments/langs/ro.js
-./plugins/tinycomments/langs/ru.js
-./plugins/tinycomments/langs/sk.js
-./plugins/tinycomments/langs/sl_SI.js
-./plugins/tinycomments/langs/sv_SE.js
-./plugins/tinycomments/langs/th_TH.js
-./plugins/tinycomments/langs/tr.js
-./plugins/tinycomments/langs/uk.js
-./plugins/tinycomments/langs/vi.js
-./plugins/tinycomments/langs/zh_CN.js
-./plugins/tinycomments/langs/zh_TW.js
-./plugins/tinycomments/plugin.js
-....
+----
+
+.js
+[source, js]
+----
+./plugins/tinycomments/css/tinycomments_css.js // bundling requires v6.8.0 or later.
+----

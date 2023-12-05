@@ -1,4 +1,17 @@
-....
-./plugins/mediaembed/content.min.css
+.Base js file
+[source, js]
+----
 ./plugins/mediaembed/plugin.js
-....
+----
+
+.css
+[source, js]
+----
+./plugins/mediaembed/content.min.css
+----
+
+.js
+[source, js]
+----
+./plugins/mediaembed/content_css.js // bundling requires v6.8.0 or later.
+----

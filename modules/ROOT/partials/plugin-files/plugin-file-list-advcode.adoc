@@ -1,6 +1,19 @@
-....
+.Base js file
+[source, js]
+----
+./plugins/advcode/plugin.js
+----
+
+.css
+[source, js]
+----
 ./plugins/advcode/codemirror.min.css
 ./plugins/advcode/codemirror.min.js
 ./plugins/advcode/customeditor.js
-./plugins/advcode/plugin.js
-....
+----
+
+.js
+[source, js]
+----
+./plugins/advcode/codemirror_css.js // bundling requires v6.8.0 or later.
+----

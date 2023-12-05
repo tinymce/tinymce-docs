@@ -1,42 +1,17 @@
-....
-./plugins/a11ychecker/css/annotations.css
-./plugins/a11ychecker/langs/ar.js
-./plugins/a11ychecker/langs/bg_BG.js
-./plugins/a11ychecker/langs/ca.js
-./plugins/a11ychecker/langs/cs.js
-./plugins/a11ychecker/langs/da.js
-./plugins/a11ychecker/langs/de.js
-./plugins/a11ychecker/langs/el.js
-./plugins/a11ychecker/langs/es.js
-./plugins/a11ychecker/langs/eu.js
-./plugins/a11ychecker/langs/fa.js
-./plugins/a11ychecker/langs/fi.js
-./plugins/a11ychecker/langs/fr_FR.js
-./plugins/a11ychecker/langs/he_IL.js
-./plugins/a11ychecker/langs/hi.js
-./plugins/a11ychecker/langs/hr.js
-./plugins/a11ychecker/langs/hu_HU.js
-./plugins/a11ychecker/langs/id.js
-./plugins/a11ychecker/langs/it.js
-./plugins/a11ychecker/langs/ja.js
-./plugins/a11ychecker/langs/kk.js
-./plugins/a11ychecker/langs/ko_KR.js
-./plugins/a11ychecker/langs/ms.js
-./plugins/a11ychecker/langs/nb_NO.js
-./plugins/a11ychecker/langs/nl.js
-./plugins/a11ychecker/langs/pl.js
-./plugins/a11ychecker/langs/pt_BR.js
-./plugins/a11ychecker/langs/pt_PT.js
-./plugins/a11ychecker/langs/ro.js
-./plugins/a11ychecker/langs/ru.js
-./plugins/a11ychecker/langs/sk.js
-./plugins/a11ychecker/langs/sl_SI.js
-./plugins/a11ychecker/langs/sv_SE.js
-./plugins/a11ychecker/langs/th_TH.js
-./plugins/a11ychecker/langs/tr.js
-./plugins/a11ychecker/langs/uk.js
-./plugins/a11ychecker/langs/vi.js
-./plugins/a11ychecker/langs/zh_CN.js
-./plugins/a11ychecker/langs/zh_TW.js
+.Base js file.
+[source, js]
+----
 ./plugins/a11ychecker/plugin.js
-....
+----
+
+.css
+[source, js]
+----
+./plugins/a11ychecker/css/annotations.css
+----
+
+.js
+[source, js]
+----
+./plugins/a11ychecker/css/annotations_css.js // bundling requires v6.8.0 or later.
+----

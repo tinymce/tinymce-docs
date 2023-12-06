@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2228: Updates new bundling with `js` feature, `additional` copy edits to bundling with es6 vite documentation.
 - DOC-2215: add new feature `mce-clipboard` to 6.8.1 release project for AdvTemplate.
 - DOC-2216: add new single `js` bundling feature example for `Bundling an npm version of TinyMCE with ES6 and Vite`.
 - DOC-2202: add new `bespoke` button text updates to `events.adoc` file.

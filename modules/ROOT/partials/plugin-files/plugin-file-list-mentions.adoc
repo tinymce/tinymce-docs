@@ -1,4 +1,12 @@
-....
-./plugins/mentions/css/mentions.css
+.Base js file
+[source, js]
+----
 ./plugins/mentions/plugin.js
-....
+----
+
+.css or bundled css
+[source, js]
+----
+./plugins/mentions/css/mentions.css //or
+./plugins/mentions/css/mentions.js // bundling requires v6.8.0 or later.
+----

@@ -4,6 +4,13 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+== 6.8.2 - 2023-12-07
+
+=== Fixed
+* Clicking inside table cells with heavily nested content could cause the browser to hang.
+* Toggling a list that contains an LI element having another list as its first child would remove the remaining content within that LI element.
+* Bespoke dropdown toolbar buttons including `fontfamily`, `fontsize`, `blocks`, and `styles` incorrectly used plural words in their accessible names.
+
 == 6.8.1 - 2023-11-29
 
 === Improved

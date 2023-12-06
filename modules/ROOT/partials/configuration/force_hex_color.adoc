@@ -1,0 +1,25 @@
+[[force_hex_color]]
+== `+force_hex_color+`
+
+This option allows the integrator to optionally force the conversion of either RGB or RGBA colors into HEX colors.
+
+*Type:* `+String+`
+
+*Default value:* `+'off'+`
+
+*Possible values:* `+'always'+`, `+'rgb_only'+`, `+'off'+`
+
+=== Example: using `+force_hex_color+`
+
+[source,js]
+----
+// Output elements in XHTML style
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  force_hex_color: 'always'
+});
+----
+
+* **force_hex_color: 'always'**: all colors are converted and applied as HEX format.
+* **force_hex_color: 'rgb_only'**: only RGB and not RGBA colors are converted and applied as HEX.
+* **force_hex_color: 'off'**: (default option) no conversion to hex is applied, and they are left as their input format.

@@ -58,15 +58,17 @@ tinymce.init({
       })
     };
     respondWith.string((signal) => window.fetch('https://api.openai.com/v1/chat/completions', { signal, ...openAiOptions })
-      .then((response) => response.ok ? response.json() : response.text())
-      .then((data) => {
-        if (typeof data === 'string') {
-          Promise.reject(`Failed to communicate with the ChatGPT API. ${data}`);
-        } else if (data.error) {
-          Promise.reject(`Failed to communicate with the ChatGPT API because of ${data.error.type} error: ${data.error.message}`);
+      .then(async (response) => {
+        if (response) {
+          const data = await response.json();
+          if (data.error) {
+            throw new Error(`${data.error.type}: ${data.error.message}`);
+          } else if (response.ok) {
+            // Extract the response content from the data returned by the API
+            return data?.choices[0]?.message?.content?.trim();
+          }
         } else {
-          // Extract the response content from the data returned by the API
-          return data?.choices[0]?.message?.content?.trim();
+          throw new Error('Failed to communicate with the ChatGPT API');
         }
       })
     );

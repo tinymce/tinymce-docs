@@ -7,6 +7,58 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### Unreleased
 
 
+### 2023-12-06
+
+- DOC-2181: add `new feature` documentation for TINY-10290 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10385 to the 6.8.1 release notes.
+- DOC-2181: add improvement documentation for TINY-10141 to the 6.8.1 release notes.
+- DOC-2181: add improvement documentation for TINY-9287 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-9819 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10282 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10241 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10292 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10367 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10291 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10343 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10174 to the 6.8.1 release notes.
+- DOC-2181: added fix documentation for TINY-10229 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10172 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-9796 to the 6.8.1 release notes.
+- DOC-2181: add `new feature` documentation for TINY-10159 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-9393 to the 6.8.1 release notes.
+- DOC-2181: add improvement documentation for TINY-10348 & TINY-10349 to the 6.8.1 release notes, & added new `options` to `security/securing-embedded-external-resources.adoc` file.
+- DOC-2181: add fix documentation for TINY-10330 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10173 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10316 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10285 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10118 to the release notes.
+- DOC-2181: add fix documentation for TINY-10132 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10139 to the release notes.
+- DOC-2181: fix documentation for TINY-10178 to the release notes.
+- DOC-2181: add fix documentation for TINY-10177 to the 6.8.1 release notes.
+- DOC-2181: add improvement documentation for TINY-10155 in the 6.8.1 release notes.
+- DOC-2181: add improvement documentation for TINY-10147 to the 6.8.1 release notes.
+- DOC-2181: fix documentation for TINY-10153 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10289 in the 6.8.1 release notes.
+- DOC-2181: add change documentation for TINY-10237 to the 6.8.1 release notes.
+- DOC-2181: fix documentation for TINY-10209 in the 6.8.1 release notes.
+- DOC-2181: add improvement documentation for TINY-9963 to the release notes.
+- DOC-2181: add addition `new feature` documentation for TINY-9974 in the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10088 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10254 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10133 to the 6.8.1 release notes.
+- DOC-2181: add fix documentation for TINY-10154 to the 6.8.1 release notes.
+- DOC-2181: the TinyMCE 6.8.1 release notes plus 6.8.1-specific changes to the TinyMCE documentation.
+- DOC-2075: remove `tinymcespellchecker` configuration workaround from full-featured-demo with Premium plugins examples: `/modules/ROOT/examples/live-demos/full-featured/example.js` and `/modules/ROOT/examples/live-demos/full-featured/index.js`.
+- DOC-2182: added file, `/modules/ROOT/partials/configuration/indent.adoc`, documenting the `indent` option. Added `include::` statement to `/modules/ROOT/pages/content-filtering.adoc` pointing to this file.
+- DOC-2189: added template files with instructions to `-new-material-templates/plugin-documentation-templates/ROOT/pages`. Added further boilerplate — a generic version-required include statement — and instructions regarding this boilerplate to `pluginpage.adoc`. Added new template file-and-folder infrastructure, `/-new-material-templates/configuration-options-templates`. Added boilerplate and documentation to the files in this new infrastructure. Also corrected markup typo in `modules/ROOT/pages/available-menu-items.adoc`.
+- DOC-2177: Added documentation of the `picker_text` property to the `urlinput` dialog component of `dialog-components.adoc`.
+- DOC-2228: Updates new bundling with `js` feature, `additional` copy edits to bundling with es6 vite documentation.
+- DOC-2215: add new feature `mce-clipboard` to 6.8.1 release project for AdvTemplate.
+- DOC-2216: add new single `js` bundling feature example for `Bundling an npm version of TinyMCE with ES6 and Vite`.
+- DOC-2202: add new `bespoke` button text updates to `events.adoc` file.
+- DOC-2209: add new default_font_stack `user-formatting-option.adoc` file.
+
 ### 2023-11-29
 
 - DOC-2223: Added 6.8.1-specific entry to `changelog.adoc`.
@@ -14,7 +66,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### 2023-11-22
 
-- DOC-2180: Added 6.8-specific entry to `changelog.adoc`.
+- DOC-2180: Added 6.8.0-specific entry to `changelog.adoc`.
 
 ### 2023-11-15
 
@@ -41,6 +93,9 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 - DOC-2198: add 5x LTS important banner to the top of upgrading.adoc."
 - DOC-2185: added `6.7.1-release-notes.adoc` to project; updated `changelog.adoc`, `nav.adoc` and `release-notes.adoc` for the TinyMCE 6.7.1 release.
+
+### 2023-09-20
+
 - DOC-2191: updated both premium, non-premium and classic-mode feature demo UI issues.
 
 ### 2023-09-12
@@ -54,6 +109,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### 2023-09-13
 
+- DOC-2171: the TinyMCE 6.7 release notes plus 6.7-specific changes to the TinyMCE documentation.
 - DOC-2027: added `/modules/ROOT/partials/configuration/help_accessibility.adoc`, documenting the `help_accessibility` option; edits, re-writes and re-structuring of `help.adoc`; plus copy-edits to `keyboard-shortcuts.adoc`, `tinymce-and-screenreaders.adoc` & `accessibility.adoc`.
 - DOC-2176: Removed references to which commercial plans Premium plugins are or are not available with.
 - DOC-2175: Update CODEOWNERS automatic reviewers upon opening new DOC-PRs.

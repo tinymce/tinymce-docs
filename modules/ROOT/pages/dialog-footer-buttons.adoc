@@ -16,7 +16,8 @@ NOTE: Dialog footer buttons are different to xref:dialog-components.adoc#button[
 |text |string |required |Text to display in the button if `+icon+` is not specified. Also used for the button's `+title+` attribute.
 |name |string |optional |An identifier for the button. If not specified, the button will be assigned a randomly generated `+name+`.
 |icon |string |optional |
-include::partial$misc/admon-predefined-icons-only.adoc[] *When configured, the button will display the icon instead of text.*
+include::partial$misc/admon-predefined-icons-only.adoc[]
+*When configured, the button will display the icon instead of text.*
 |buttonType |`+'primary'+`, or `+'secondary'+` |optional |default: `+'secondary'+` - Whether to style the button as a primary, or secondary button.
 |enabled |boolean |optional |default: `+true+` - When `+false+`, the button will be disabled when the dialog loads.
 |align |`+'end'+` or `+'start'+` |optional |default: `+'end'+` - When set to `+'end'+` the button will display on the right-hand side of the dialog. When set to `+'start'+` the button will display on the left-hand side.

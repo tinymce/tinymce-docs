@@ -25,8 +25,6 @@ include::partial$module-loading/webpack-dev-dependencies.adoc[]
 
 include::partial$module-loading/bundling-vite-es6-npm_editor.adoc[]
 
-NOTE: If using {productname} premium skins, run **`@tiny-premium/oxide-premium-skins`** to install the dependency's.
-
 include::partial$module-loading/bundling-vite-es6-npm_config.adoc[]
 
 . Import the index.js file in the index.html page, such as:

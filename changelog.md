@@ -6,7 +6,9 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+
 ### 2023-12-06
+
 - DOC-2181: add `new feature` documentation for TINY-10290 to the 6.8.1 release notes.
 - DOC-2181: add fix documentation for TINY-10385 to the 6.8.1 release notes.
 - DOC-2181: add improvement documentation for TINY-10141 to the 6.8.1 release notes.
@@ -51,6 +53,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 - DOC-2182: added file, `/modules/ROOT/partials/configuration/indent.adoc`, documenting the `indent` option. Added `include::` statement to `/modules/ROOT/pages/content-filtering.adoc` pointing to this file.
 - DOC-2189: added template files with instructions to `-new-material-templates/plugin-documentation-templates/ROOT/pages`. Added further boilerplate — a generic version-required include statement — and instructions regarding this boilerplate to `pluginpage.adoc`. Added new template file-and-folder infrastructure, `/-new-material-templates/configuration-options-templates`. Added boilerplate and documentation to the files in this new infrastructure. Also corrected markup typo in `modules/ROOT/pages/available-menu-items.adoc`.
 - DOC-2177: Added documentation of the `picker_text` property to the `urlinput` dialog component of `dialog-components.adoc`.
+- DOC-2228: Updates new bundling with `js` feature, `additional` copy edits to bundling with es6 vite documentation.
 - DOC-2215: add new feature `mce-clipboard` to 6.8.1 release project for AdvTemplate.
 - DOC-2216: add new single `js` bundling feature example for `Bundling an npm version of TinyMCE with ES6 and Vite`.
 - DOC-2202: add new `bespoke` button text updates to `events.adoc` file.

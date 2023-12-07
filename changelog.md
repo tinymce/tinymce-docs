@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2230: add new `How to fix invalid API key in TinyMCE` page to `tinymce/docs` project.
 
 ### 2023-12-06
 

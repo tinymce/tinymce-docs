@@ -34,13 +34,13 @@ In order to maintain the quality of our service, ensure reliable security, and k
 
 {productname} Cloud offerings are available under commercial license, as described https://www.tiny.cloud/legal/cloud-use-subscription-agreement/[here]. There is a free Cloud plan called “Core”, that is completely free but is limited to 1,000 editor loads per month. There are also 2 Cloud plans called “Essential” and “Professional” with increased editor load limits, and additional premium features. You can find more information on editor load limits, feature breakdowns, and pricing of our Cloud plans https://www.tiny.cloud/pricing/[here].
 
-All of our Cloud plans require an active API key, so if you’re seeing this error message you need to either migrate to the self-hosted open source version under the MIT license, or you need to acquire an active API key by https://www.tiny.cloud/pricing/[signing up] for a cloud plan here. 
+All of our Cloud plans require an active API key, so if you’re seeing this error message you need to either migrate to the self-hosted open source version under the MIT license, or you need to acquire an active API key by https://www.tiny.cloud/pricing/[signing up] for a cloud plan. 
 
 == I installed the npm package, which I assumed would be self-hosted. Why do I get a notification that an API key is required? 
 
 Our integrations default to using the {productname} Cloud service. If you see a notification that an API key is required, it means that you’re using Tiny Cloud service that now requires a valid API key and lets you have 1,000 editor loads per month for free. 
 
-Please xref:installation.adoc[read our docs] to learn how to self-host {productname} or https://www.tiny.cloud/pricing/[sign up here] to continue keep using {productname} Cloud.
+Please xref:installation.adoc[read our docs] to learn how to self-host {productname} or https://www.tiny.cloud/pricing/[sign up here] to continue using {productname} Cloud.
 
 == I used {productname} for years. Why am I now getting warnings saying an API key is required?
 

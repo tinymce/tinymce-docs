@@ -1,0 +1,22 @@
+[[language_load]]
+== `+language_load+`
+
+// This option configures whether additional plugin/theme languages are loaded.
+
+// When bundling, plugins that support multiple languages its a good recommended to load the additional language packs in addition.
+
+*Type:* `+boolean+`
+
+*Default value:* `+true+`
+
+=== Example: using `+language_load+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  language_load: true,
+});
+----
+
+You can find and download languages link:{gettiny}/language-packages/[here].

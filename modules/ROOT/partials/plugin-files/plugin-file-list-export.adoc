@@ -1,42 +1,11 @@
-....
-./plugins/export/exporters/clientpdf.js
-./plugins/export/langs/ar.js
-./plugins/export/langs/bg_BG.js
-./plugins/export/langs/ca.js
-./plugins/export/langs/cs.js
-./plugins/export/langs/da.js
-./plugins/export/langs/de.js
-./plugins/export/langs/el.js
-./plugins/export/langs/es.js
-./plugins/export/langs/eu.js
-./plugins/export/langs/fa.js
-./plugins/export/langs/fi.js
-./plugins/export/langs/fr_FR.js
-./plugins/export/langs/he_IL.js
-./plugins/export/langs/hi.js
-./plugins/export/langs/hr.js
-./plugins/export/langs/hu_HU.js
-./plugins/export/langs/id.js
-./plugins/export/langs/it.js
-./plugins/export/langs/ja.js
-./plugins/export/langs/kk.js
-./plugins/export/langs/ko_KR.js
-./plugins/export/langs/ms.js
-./plugins/export/langs/nb_NO.js
-./plugins/export/langs/nl.js
-./plugins/export/langs/pl.js
-./plugins/export/langs/pt_BR.js
-./plugins/export/langs/pt_PT.js
-./plugins/export/langs/ro.js
-./plugins/export/langs/ru.js
-./plugins/export/langs/sk.js
-./plugins/export/langs/sl_SI.js
-./plugins/export/langs/sv_SE.js
-./plugins/export/langs/th_TH.js
-./plugins/export/langs/tr.js
-./plugins/export/langs/uk.js
-./plugins/export/langs/vi.js
-./plugins/export/langs/zh_CN.js
-./plugins/export/langs/zh_TW.js
+.Base js file
+[source, js]
+----
 ./plugins/export/plugin.js
-....
+----
+
+.other js files
+[source, js]
+----
+./plugins/export/exporters/clientpdf.js
+----

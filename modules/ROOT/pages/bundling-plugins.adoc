@@ -11,12 +11,13 @@ The following table shows examples of the syntax used to bundle the following pl
 
 Required files for an example plugin:
 
-....
-./plugins/example/content.css
+[source, js]
+----
+./plugins/example/content.js // or './plugins/example/content_css.js'
 ./plugins/example/plugin.js
-....
+----
 
-Example syntax for including the example "plugin" in a bundle:
+Example syntax for including the example "plugin" in a bundle using `content.js` or `content_css.js` files for bundling:
 
 [cols='1,1,4']
 |===
@@ -27,7 +28,8 @@ Example syntax for including the example "plugin" in a bundle:
 a|
 [source, js]
 ----
-import pluginCss from 'tinymce/plugins/example/content.css';
+import pluginCss from 'tinymce/plugins/example/content.js';
+//import pluginCss from 'tinymce/plugins/example/content_css.js';
 import 'tinymce/plugins/example';
 ----
 
@@ -35,7 +37,8 @@ import 'tinymce/plugins/example';
 a|
 [source, js]
 ----
-import pluginCss from '../tinymce/plugins/example/content.css';
+import '../tinymce/plugins/example/content.js';
+//import '../tinymce/plugins/example/content_css.js';
 import '../tinymce/plugins/example/plugin';
 ----
 
@@ -44,7 +47,8 @@ import '../tinymce/plugins/example/plugin';
 a|
 [source, js]
 ----
-const pluginCss = require('tinymce/plugins/example/content.css');
+const pluginCss = require('tinymce/plugins/example/content.js');
+//require('tinymce/plugins/example/content_css.js'); 
 require('tinymce/plugins/example');
 ----
 
@@ -52,11 +56,10 @@ require('tinymce/plugins/example');
 a|
 [source, js]
 ----
-const pluginCss = require('../tinymce/plugins/example/content.css');
+const pluginCss = require('../tinymce/plugins/example/content.js');
+//require('../tinymce/plugins/example/content_css.js');
 require('../tinymce/plugins/example/plugin.js');
 ----
 |===
-
-IMPORTANT: The handling of content CSS files (such as `+content.css+` or `+content.min.css+`) varies between bundling tools. View the relevant guide for the required syntax at xref:introduction-to-bundling-tinymce.adoc[Bundling {productname} with a module loader].
 
 include::partial$module-loading/bundling-plugin-files.adoc[]

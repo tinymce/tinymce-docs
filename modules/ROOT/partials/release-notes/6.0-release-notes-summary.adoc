@@ -1,5 +1,3 @@
-// tag::contents[]
-[[contents]]
 = Contents
 
 * xref:core-changes[Core changes]
@@ -12,12 +10,12 @@
 
 
 [[summary]]
-= Summary
+== Summary
 This section documents the four core changes made to {productname} 6.0.
 
 // tag::core-changes[]
 [[core-changes]]
-== Core changes
+=== Core changes
 
 . Browsers supported by {productname} 6.0 have changed. {productname} 6.0 supports the current and previous major versions of Google Chrome, Mozilla Firefox, Microsoft Edge, and Apple Safari. {productname} 6.0 also supports the current Long Term Release of each of the above browsers (eg, Mozilla Firefox ESR and Google Chrome ESR).
 
@@ -48,7 +46,7 @@ This section also includes four tables that set out the:
 
 // tag::things-we-renamed[]
 [[things-we-renamed]]
-== Things we renamed
+=== Things we renamed
 
 [cols="2,2,1,2"]
 |===
@@ -143,7 +141,7 @@ Where an Option name has changed, configurations using that option must be chang
 
 // tag::default-value-changes[]
 [[default-value-changes]]
-== Default value changes
+=== Default value changes
 
 [cols="1,1,1,1"]
 |===
@@ -170,7 +168,7 @@ Where an Option name has changed, configurations using that option must be chang
 
 // tag::previously-deprecated-items-now-removed[]
 [[previously-deprecated-items-now-removed]]
-== Previously deprecated items now removed
+=== Previously deprecated items now removed
 
 The following elements were previously deprecated and have, with this release, been removed entirely from {productname}.
 
@@ -283,7 +281,7 @@ The following elements were previously deprecated and have, with this release, b
 
 // tag::previously-undocumented-items-removed-without-prior-deprecation[]
 [[previously-undocumented-items-removed-without-prior-deprecation]]
-== Previously undocumented items removed without prior deprecation
+=== Previously undocumented items removed without prior deprecation
 
 The following elements were never documented and have never been formally supported.
 

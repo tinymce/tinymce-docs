@@ -7,7 +7,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### Unreleased
 
 
-### 2023-12-07
+### 2023-12-11
 
 - DOC-2180: Added 6.8.2-specific entry to `changelog.adoc`.
 

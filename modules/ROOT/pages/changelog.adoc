@@ -4,6 +4,15 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+== 6.8.2 - 2023-12-11
+
+=== Fixed
+* Bespoke select toolbar buttons including `fontfamily`, `fontsize`, `blocks`, and `styles` incorrectly used plural words in their accessible names.
+* The `align` bespoke select toolbar button had an accessible name that was misleading and grammatically incorrect in certain cases.
+* Accessible names of bespoke select toolbar buttons including `align`,`fontfamily`, `fontsize`, `blocks`, and `styles` were incorrectly translated.
+* Clicking inside table cells with heavily nested content could cause the browser to hang.
+* Toggling a list that contains an LI element having another list as its first child would remove the remaining content within that LI element.
+
 == 6.8.1 - 2023-11-29
 
 === Improved

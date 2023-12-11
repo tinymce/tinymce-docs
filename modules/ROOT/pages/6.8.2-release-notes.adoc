@@ -82,7 +82,7 @@ In a previous xref:6.7.2-release-notes.adoc#toggling-a-list-that-contained-a-lis
 </li>
 ----
 
-As a consequence, any tags nested within the `li` would be deleted from the {productname} document, resulting in content loss for the user.
+As a consequence, any tags nested within the `<li>` would be deleted from the {productname} document, resulting in content loss for the user.
 
 {productname} 6.8.2 addresses this by improving the representation of the list to manage this case.
 

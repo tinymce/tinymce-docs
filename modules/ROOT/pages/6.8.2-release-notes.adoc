@@ -65,7 +65,7 @@ In {productname} 6.8.2, new translation strings were added to ensure names of th
 // #TINY-10380
 Previously when clicking below content that is heavily nested inside a block such as a table cell, would cause the browser to hang.
 
-{productname} 6.8.2 addresses this, by optimizing the code responsible for the hang while updating the algorithm.
+{productname} 6.8.2 addresses this, by optimizing algorithm that was causing the browser to hang.
 
 As a result, the browser no longer hangs, when clicking inside table cells with heavily nested content.
 

@@ -1,0 +1,66 @@
+= TinyMCE 6.8.2
+:navtitle: TinyMCE 6.8.2
+:description: Release notes for TinyMCE 6.8.2
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+[[overview]]
+== Overview
+
+{productname} 6.8.2 was released for {enterpriseversion} and {cloudname} on Wednesday, December 13^th^, 2023. These release notes provide an overview of the changes for {productname} 6.8.2, including:
+
+* xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
+* xref:bug-fixes[Bug fixes]
+
+
+[[accompanying-premium-plugin-changes]]
+== Accompanying Premium plugin changes
+
+The following premium plugin updates were released alongside {productname} 6.8.2.
+
+=== PowerPaste 6.2.4
+
+The {productname} 6.8.2 release includes an accompanying release of the **PowerPaste** premium plugin.
+
+**PowerPaste** 6.2.4 includes the following fix.
+
+==== `white-space-collapse` CSS property was not correctly supported when pasting from Google Docs.
+// #TINY-9967
+
+// CCFR here.
+
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
+
+
+[[bug-fixes]]
+== Bug fixes
+
+{productname} 6.8.2 also includes the following bug fix<es>:
+
+=== Bespoke select toolbar buttons including `fontfamily`, `fontsize`, `blocks`, and `styles` incorrectly used plural words in their accessible names.
+// #TINY-10426
+
+// CCFR here.
+
+=== The `align` bespoke select toolbar button had an accessible name that was misleading and grammatically incorrect in certain cases.
+// #TINY-10435
+
+// CCFR here.
+
+=== Accessible names of bespoke select toolbar buttons including `align`, `fontfamily`, `fontsize`, `blocks`, and `styles` were incorrectly translated.
+// #TINY-10426 #TINY-10435
+
+// CCFR here.
+
+=== Clicking inside table cells with heavily nested content could cause the browser to hang.
+// #TINY-10380
+
+// CCFR here.
+
+=== Toggling a list that contains an LI element having another list as its first child would remove the remaining content within that LI element.
+// #TINY-10414
+
+// CCFR here.

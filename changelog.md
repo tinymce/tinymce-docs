@@ -6,6 +6,12 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+### 2023-12-13
+
+- DOC-2225: added `6.8.2-release-notes.adoc` to project; updated `changelog.adoc`, `nav.adoc` and `release-notes.adoc` for the TinyMCE 6.8.2 release.
+
+### 2023-12-08
+
 - DOC-2230: add new `How to fix invalid API key in TinyMCE` page to `tinymce/docs` project.
 
 ### 2023-12-06

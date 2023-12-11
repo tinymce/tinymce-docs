@@ -71,7 +71,7 @@ As a result, the browser no longer hangs, when clicking inside table cells with 
 
 === Toggling a list that contains an LI element having another list as its first child would remove the remaining content within that LI element.
 // #TINY-10414
-In a previous xref:6.7.2-release-notes.adoc#toggling-a-list-that-contained-a-list-item-element-li-which-in-turn-contained-another-list-item-element-as-its-first-child-removed-other-content-within-the-first-list-item-element[fix] _(toggling-a-list-that-contained-a-list-item-element-li-which-in-turn-contained-another-list-item-element-as-its-first-child-removed-other-content-within-the-first-list-item-element)_ for lists, some element structures would not recreate the `<li>` tags when a list element was toggled using the `bullist` button in the toolbar.
+In a previous xref:6.7.2-release-notes.adoc#toggling-a-list-that-contained-a-list-item-element-li-which-in-turn-contained-another-list-item-element-as-its-first-child-removed-other-content-within-the-first-list-item-element[bugfix] for lists, some element structures would not recreate the `<li>` tags when a list element was toggled using the `bullist` button in the toolbar.
 
 .Example structure 
 [source, html]

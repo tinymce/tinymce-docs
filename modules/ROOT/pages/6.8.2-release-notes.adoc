@@ -52,7 +52,7 @@ As of {productname} 6.8.2, the accessible labels of `fontfamily`, `fontsize`, `b
 
 As of {productname} 6.8.1, the accessible label of the `align` bespoke select toolbar button announced both the name of the button, “Align”, and the currently selected value. This would result in the accessible label of the select button to be “Align left”, “Align right”, “Align center”, or “Align justify” depending on the value selected. However, the problem with the first three labels is that they are the same as the normal align toolbar buttons. This is misleading as unlike the normal align buttons, the bespoke button does not result in the aligning action, and instead opens a dropdown. The problem with “Align justify” is that the two verbs do not make grammatical sense in terms of describing the text alignment.
 
-As of {productname} 6.8.2, the name of the `align` bespoke select button is changed to “Alignment”, followed by the currently selected value. This results in the accessible labels being “Alignment left”, “Alignment right”, “Alignment center”, or “Alignment justify” depending on the values selected, which more clearly indicates the currently selected text alignment.
+As of {productname} 6.8.2, the name of the `align` bespoke select button is changed to “Alignment”, followed by the currently selected value. This results in the accessible labels being “Alignment left”, “Alignment right”, “Alignment center”, or “Alignment justify” depending on the value selected, which more clearly indicates the currently selected text alignment.
 
 === Accessible names of bespoke select toolbar buttons including `align`, `fontfamily`, `fontsize`, `blocks`, and `styles` were incorrectly translated.
 // #TINY-10426 #TINY-10435

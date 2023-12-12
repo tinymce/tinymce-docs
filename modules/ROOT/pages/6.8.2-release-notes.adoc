@@ -59,7 +59,7 @@ As of {productname} 6.8.2, the name of the `align` bespoke select button is chan
 
 As of {productname} 6.8.1, the accessible label of the `align` bespoke select toolbar button announced both the name of the button and the currently selected value, for example “Block Paragraph”. However, corresponding translation strings with placeholders were not added. This resulted in the current value being translated as expected, but not the name of the button. 
 
-In {productname} 6.8.2, new translation strings were added to ensure names of the bespoke select toolbar buttons are translated as well, making their accessible labels appropriately translated.
+In {productname} 6.8.2, new translation strings were added to ensure names of the bespoke select toolbar buttons are translated as well, making their accessible labels appropriately internationalized.
 
 === Clicking inside table cells with heavily nested content could cause the browser to hang.
 // #TINY-10380

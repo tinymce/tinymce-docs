@@ -15,6 +15,15 @@
     <link href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" rel="stylesheet" media="print" onload="this.media='all'; this.onload=null;"/>
     <link href="{{ site.shared_baseurl }}{{ site.baseurl }}/css/common.min.css" rel="stylesheet">
 
+    <!-- Temporary test: https://ephocks.atlassian.net/browse/WSRF-1310 -->
+    {% if page.url == "/plugins/premium/linkchecker/" %}
+      <link rel="canonical" href="https://www.tiny.cloud/docs/tinymce/6/linkchecker/"/>
+    {% endif %}
+
+    {% if page.url == "/plugins/opensource/toc/" %}
+      <link rel="canonical" href="https://www.tiny.cloud/docs/tinymce/6/tableofcontents/"/>
+    {% endif %}
+
     {% include_remote {{ site.origin }}/_docs/head.html %}
 
     {% assign tinymce_script_tag_included = false %}

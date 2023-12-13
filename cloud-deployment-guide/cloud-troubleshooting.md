@@ -106,4 +106,4 @@ You may also be seeing this notification if you are using the wrong API key. Ens
 
 Either remove the premium plugin from your {{site.productname}} configuration, or upgrade your subscription to provide access to that premium plugin.
 
-> **NOTE**: Visit our [Invalid API key](https://www.tiny.cloud/docs/tinymce/6/invalid-api-key/) page for more information on how to fix a invalid API key with TinyMCE.
+> **NOTE**: Visit our [Invalid API key](https://www.tiny.cloud/docs/tinymce/6/invalid-api-key/) page for more information on how to fix an invalid API key with TinyMCE.

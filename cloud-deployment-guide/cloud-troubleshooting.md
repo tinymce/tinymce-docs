@@ -35,7 +35,7 @@ Update the `src` URL to include your (website or application developer's) {{site
 
 To retrieve your API key, or to sign up for an API key, visit: [{{site.cloudname}}]({{site.accountsignup}}).
 
-> **NOTE**: Visit our [Invalid API key](https://www.tiny.cloud/docs/tinymce/6/invalid-api-key/) page for more information on how to fix a invalid API key with TinyMCE.
+> **NOTE**: Visit our [Invalid API key](https://www.tiny.cloud/docs/tinymce/6/invalid-api-key/) page for more information on how to fix an invalid API key with TinyMCE.
 
 ## "A valid API key is required, starting 2024, to continue using TinyMCE. Please alert your admin to check the current API key."
 

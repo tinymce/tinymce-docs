@@ -57,7 +57,7 @@ Check the `apiKey` provided in the script tag:
 - Any other characters that are not in your API key. If you are using variable substitution, ensure that the variable is substituting properly.
 - Matches the API key shown at {{site.accountpageurl}}.
 
-> **NOTE**: Visit our [Invalid API key](https://www.tiny.cloud/docs/tinymce/6/invalid-api-key/) page for more information on how to fix a invalid API key with TinyMCE.
+> **NOTE**: Visit our [Invalid API key](https://www.tiny.cloud/docs/tinymce/6/invalid-api-key/) page for more information on how to fix an invalid API key with TinyMCE.
 
 ## "This domain is not registered with Tiny Cloud. To continue using TinyMCE, a registered domain is required, starting 2024. Please alert your admin to review the approved domains and add this one if required."
 

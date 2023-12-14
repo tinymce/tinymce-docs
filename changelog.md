@@ -14,6 +14,10 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 - DOC-2230: add new `How to fix invalid API key in TinyMCE` page to `tinymce/docs` project.
 
+### 2023-12-11
+
+- DOC-2180: Added 6.8.2-specific entry to `changelog.adoc`.
+
 ### 2023-12-06
 
 - DOC-2181: add `new feature` documentation for TINY-10290 to the 6.8.1 release notes.

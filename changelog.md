@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2220: add generation of `latest` and `6` documentation in parallel.
 
 ### 2023-12-06
 

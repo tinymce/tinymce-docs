@@ -10,13 +10,14 @@ SOURCE_DIR="$BUILD_DIR/$SOURCE_VERSION/"
 DEST_VERSION=6
 DEST_DIR="$BUILD_DIR/$DEST_VERSION/"
 
+echo -e "\nRemoving existing $BUILD_DIR directory."
 rm -rf "$BUILD_DIR"
+
+echo -e "\nGenerating antora documentation."
 antora "$PLAYBOOK"
 
-echo -e "\nCopying $SOURCE_VERSION build to $DEST_VERSION directory."
-
+echo -e "\nCopying all $SOURCE_VERSION content to $DEST_VERSION directory."
 mkdir "$DEST_DIR"
-
 cp -a "$SOURCE_DIR." "$DEST_DIR"
 
 echo "$DEST_VERSION site now in sync with $SOURCE_VERSION."

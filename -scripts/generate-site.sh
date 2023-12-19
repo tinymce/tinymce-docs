@@ -19,6 +19,8 @@ antora "$PLAYBOOK"
 
 echo -e "\nCopying all $SOURCE_VERSION content to $DEST_VERSION directory."
 mkdir "$DEST_DIR"
-cp -a "$SOURCE_DIR." "$DEST_DIR"
+# cp -a "$SOURCE_DIR." "$DEST_DIR"
+
+cp -a "$SOURCE_DIR" "$DEST_DIR"
 
 echo "$DEST_VERSION site now in sync with $SOURCE_VERSION."

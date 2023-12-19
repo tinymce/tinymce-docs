@@ -35,6 +35,8 @@ Update the `+src+` URL to include your (website or application developer's) {clo
 
 To retrieve your API key, or to sign up for an API key, visit: link:{accountsignup}/[{cloudname}].
 
+NOTE: Visit our xref:invalid-api-key.adoc[Invalid API key] page for more information on how to fix a `invalid API key` with {productname}.
+
 [[A-valid-API-key-is-required-starting-2024-to-continue-using-TinyMCE.-Please-alert-your-admin-to-check-the-current-API-key]]
 == "A valid API key is required, starting 2024, to continue using TinyMCE. Please alert your admin to check the current API key."
 
@@ -55,6 +57,8 @@ Check the `+apiKey+` provided in the script tag:
 * Remove any leading or trailing spaces.
 * Any other characters that are not in your API key. If you are using variable substitution, ensure that the variable is substituting properly.
 * Matches the API key shown at {accountpageurl}.
+
+NOTE: Visit our xref:invalid-api-key.adoc[Invalid API key] page for more information on how to fix a `invalid API key` with {productname}.
 
 [[This-domain-is-not-registered-with-Tiny-Cloud.-To-continue-using-TinyMCE-a-registered-domain-is-required-starting-2024.-Please-alert-your-admin-to-review-the-approved-domains-and-add-this-one-if-required.]]
 == "This domain is not registered with Tiny Cloud. To continue using TinyMCE, a registered domain is required, starting 2024. Please alert your admin to review the approved domains and add this one if required."
@@ -106,3 +110,5 @@ You may also be seeing this notification if you are using the wrong API key. Ens
 === Solution
 
 Either remove the premium plugin from your {productname} configuration, or upgrade your subscription to provide access to that premium plugin.
+
+NOTE: Visit our xref:invalid-api-key.adoc[Invalid API key] page for more information on how to fix a `invalid API key` with {productname}.

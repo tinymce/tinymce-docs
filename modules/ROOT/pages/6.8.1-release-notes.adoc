@@ -370,7 +370,7 @@ As a consequence, the `focus` would consistently shift back to the editor, irres
 
 {productname} 6.8.1 addresses this issue, now, the focus is only retained within the editor if the notification closure was initiated by user interaction.
 
-=== Selecting a cell with only `&nbsp;` in a table inside a `td` and then press `backspace` the entire table is deleted
+=== Selecting a cell with only `+&nbsp;+` in a table inside a `td` and then press `backspace` the entire table is deleted
 // #TINY-10254
 Previously, the editor checked the number of tables included in a selection by identifying the closest parent to the selected elements within the table. However, when selecting part of a nested table along with some other element, two different tables were detected: the nested one and the one containing both the nested table and the additional element.
 

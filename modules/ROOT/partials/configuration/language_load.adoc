@@ -24,6 +24,6 @@ tinymce.init({
 ----
 
 [TIP]
-When bundling, it is advisable for plugins that support multiple languages to load the additional language packs separately. This ensures that all required languages are available for the editor.
+When bundling, it is advisable for plugins that support multiple languages to load the additional language packs locally, and to set this option to `+false+`. This will ensure that all required languages are available for the editor, and that no additional language packs will be retrieved by the plugins.
 
 You can find and download languages link:{gettiny}/language-packages/[here].

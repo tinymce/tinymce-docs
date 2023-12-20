@@ -6,6 +6,10 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+### 2023-12-19
+
+- DOC-2220: add generation of `latest` and `6` documentation in parallel.
+
 ### 2023-12-13
 
 - DOC-2225: added `6.8.2-release-notes.adoc` to project; updated `changelog.adoc`, `nav.adoc` and `release-notes.adoc` for the TinyMCE 6.8.2 release.

@@ -6,6 +6,10 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+### 2023-12-20
+
+- DOC-1020: add `language_load` option to `ui-localization.adoc` page that configures whether additional plugin/theme languages are loaded when bundling.
+
 ### 2023-12-19
 
 - DOC-2220: add generation of `latest` and `6` documentation in parallel.

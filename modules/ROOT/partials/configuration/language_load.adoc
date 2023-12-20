@@ -1,0 +1,29 @@
+[[language_load]]
+== `+language_load+`
+
+This option determines whether additional plugin or theme languages are loaded during {productname} editor initialization. By default, plugins which have support for languages other than English will automatically load the additional language packs.
+
+*Type:* `+boolean+`
+
+*Default value:* `+true+`
+
+* When the `+language_load+` option is set to `+true+`, any available language packs can be loaded and used by {productname} and plugins that support multiple-languages.
+* When set to `+false+`, only explicitly configured language packs will load.
+
+[IMPORTANT]
+Setting `+language_load+` option to `+false+` is not recommended unless loading local language packs.
+
+=== Example: using `+language_load+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea', // Change this value according to your HTML
+  language_load: true, // Disables the automatic loading of additional plugin and theme language files.
+});
+----
+
+[TIP]
+When bundling, it is advisable for plugins that support multiple languages to load the additional language packs locally, and to set this option to `+false+`. This will ensure that all required languages are available for the editor, and that no additional language packs will be retrieved by the plugins.
+
+You can find and download languages link:{gettiny}/language-packages/[here].

@@ -11,7 +11,7 @@ This option determines whether additional plugin or theme languages are loaded d
 * When set to `+false+`, only explicitly configured language packs will load.
 
 [IMPORTANT]
-Setting `+language_load+` option to `+false+` is not recommended unless the integrator has their own custom `pot` files to add to their integration.
+Setting `+language_load+` option to `+false+` is not recommended unless loading local language packs.
 
 === Example: using `+language_load+`
 

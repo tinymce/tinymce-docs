@@ -1,14 +1,17 @@
 [[language_load]]
 == `+language_load+`
 
-This option configures whether additional plugin or theme languages are loaded when a {productname} editor initialization is executed.
+This option determines whether additional plugin or theme languages are loaded during {productname} editor initialization when bundling. The default behavior for plugins that support multiple languages is to automatically load the additional language packs, unless specified otherwise in the configuration.
 
 *Type:* `+boolean+`
 
 *Default value:* `+true+`
 
+* When the `+language_load+` option is set to `+true+`, any available language packs can be loaded and used by {productname} and plugins that support multiple-languages.
+* When set to `+false+`, only explicitly configured language packs will load.
+
 [IMPORTANT]
-When the `+language_load+` option is set to `true`, the {productname} editor will not automatically load any of the plugin or theme languages during initialization. Instead, it relies on the integrator to manually add their own custom `pot` files to their integration. This gives integrators more control over language file management, but is not recommended.
+Setting `+language_load+` option to `+false+` is not recommended unless the integrator has their own custom `pot` files to add to their integration.
 
 === Example: using `+language_load+`
 

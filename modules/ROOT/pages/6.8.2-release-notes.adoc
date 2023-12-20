@@ -1,0 +1,89 @@
+= {productname} 6.8.2
+:navtitle: {productname} 6.8.2
+:description: Release notes for {productname} 6.8.2
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+[[overview]]
+== Overview
+
+{productname} 6.8.2 was released for {enterpriseversion} and {cloudname} on Wednesday, December 13^th^, 2023. These release notes provide an overview of the changes for {productname} 6.8.2, including:
+
+* xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
+* xref:bug-fixes[Bug fixes]
+
+
+[[accompanying-premium-plugin-changes]]
+== Accompanying Premium plugin changes
+
+The following premium plugin updates were released alongside {productname} 6.8.2.
+
+=== PowerPaste 6.2.4
+
+The {productname} 6.8.2 release includes an accompanying release of the **PowerPaste** premium plugin.
+
+**PowerPaste** 6.2.4 includes the following fix.
+
+==== `white-space-collapse` CSS property was not correctly supported when pasting from Google Docs.
+// #TINY-9967
+From major version 114, Google Chrome and Microsoft Edge added support for the CSS4 shorthand `white-space` property. The shorthand `white-space` property would be expanded into the `white-space-collapse` and `text-wrap` properties. This resulted in PowerPaste not being able to remove the `white-space-collapse` and `text-wrap` properties from the emitted content even after `white-space: pre` is removed. This issue was particularly noticeable when copying content from Google Docs.
+
+As of {productname} 6.8.2, PowerPaste now supports working with the shorthand `white-space` property by removing the expanded `white-space-collapse` and `text-wrap` properties when present from Google Docs content.
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
+
+
+[[bug-fixes]]
+== Bug fixes
+
+{productname} 6.8.2 also includes the following bug fixes:
+
+=== Bespoke select toolbar buttons including `fontfamily`, `fontsize`, `blocks`, and `styles` incorrectly used plural words in their accessible names.
+// #TINY-10426
+
+As of {productname} 6.8.1, the accessible labels of bespoke select toolbar buttons announced both the name of the button and the current value of the visible selected option. However, some bespoke button names, including `fontfamily`, `fontsize`, `blocks`, and `styles` have plural names, such as “Fonts”. This resulted in incorrect grammar when combined with the current value, an example being "Fonts Arial".
+
+As of {productname} 6.8.2, the accessible labels of `fontfamily`, `fontsize`, `blocks`, and `styles` bespoke buttons use singular words for the names. This results in grammatically correct labels such as “Font Arial”.
+
+=== The `align` bespoke select toolbar button had an accessible name that was misleading and grammatically incorrect in certain cases.
+// #TINY-10435
+
+As of {productname} 6.8.1, the accessible label of the `align` bespoke select toolbar button announced both the name of the button, “Align”, and the currently selected value. This would result in the accessible label of the select button to be “Align left”, “Align right”, “Align center”, or “Align justify” depending on the value selected. However, the problem with the first three labels is that they are the same as the normal align toolbar buttons. This is misleading as unlike the normal align buttons, the bespoke button does not result in the aligning action, and instead opens a dropdown. The problem with “Align justify” is that the two verbs do not make grammatical sense in terms of describing the text alignment.
+
+As of {productname} 6.8.2, the name of the `align` bespoke select button is changed to “Alignment”, followed by the currently selected value. This results in the accessible labels being “Alignment left”, “Alignment right”, “Alignment center”, or “Alignment justify” depending on the value selected, which more clearly indicates the currently selected text alignment.
+
+=== Accessible names of bespoke select toolbar buttons including `align`, `fontfamily`, `fontsize`, `blocks`, and `styles` were incorrectly translated.
+// #TINY-10426 #TINY-10435
+
+As of {productname} 6.8.1, the accessible labels of the bespoke select toolbar buttons announced both the name of the button and the currently selected value, for example “Block Paragraph”. However, corresponding translation strings with placeholders were not added. This resulted in the current value being translated as expected, but not the name of the button. 
+
+In {productname} 6.8.2, new translation strings were added to ensure names of the bespoke select toolbar buttons are translated as well, making their accessible labels appropriately internationalized.
+
+=== Clicking inside table cells with heavily nested content could cause the browser to hang.
+// #TINY-10380
+Previously when clicking below content that is heavily nested inside a block such as a table cell, would cause the browser to hang.
+
+{productname} 6.8.2 addresses this, by optimizing algorithm that was causing the browser to hang.
+
+As a result, the browser no longer hangs, when clicking inside table cells with heavily nested content.
+
+=== Toggling a list that contains an LI element having another list as its first child would remove the remaining content within that LI element.
+// #TINY-10414
+In a previous xref:6.7.2-release-notes.adoc#toggling-a-list-that-contained-a-list-item-element-li-which-in-turn-contained-another-list-item-element-as-its-first-child-removed-other-content-within-the-first-list-item-element[bugfix] for lists, some element structures would not recreate the `<li>` tags when a list element was toggled using the `bullist` button in the toolbar.
+
+.Example structure 
+[source, html]
+----
+<li>
+  <ul>...</ul>
+  <something-else/>
+</li>
+----
+
+As a consequence, any tags nested within the `<li>` would be deleted from the {productname} document, resulting in content loss for the user.
+
+{productname} 6.8.2 addresses this by improving the representation of the list to manage this case.
+
+As a result, now, when toggling `<li>` elements using the `bullist` button, content within a list is now correctly recreated the content is retained as expected.

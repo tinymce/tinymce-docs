@@ -1,0 +1,49 @@
+= Invalid API key
+:description_short: Fixing with invalid API key error | {productname}
+:description: Learn what you need to do when getting a message about invalid {productname} API key. Find out the reasons for this error as well as how to fix it.
+:keywords: {productname}, cloud, script, textarea, apiKey, faq, invalid api key, frequently asked questions,
+
+[IMPORTANT]
+====
+All editors on our cloud platform are required (from early 2024) to have a valid API key. Without a valid API key, your editor will transition to **read-only** mode, limiting your ability to make changes.
+
+* This change will only affect users who do not have a valid API key and use Tiny Cloud.
+* Affected users should see a xref:cloud-troubleshooting.adoc[notification in their editor]. If you see it, please contact the  Administrator for your application/site. Admins need to https://www.tiny.cloud/my-account/integrate/[get a valid API key] and paste it into the code to continue using {productname}.
+====
+
+== How can I verify this change will affect me?
+
+If {productname} detects an invalid API key, it will display a notification. If you know or suspect you have been actively hiding or suppressing this notification, please remove these overrides. If you then see a notification, please follow the instructions to resolve the issue. If no notification pops up, everything's fine. 
+
+== How to get your API key:
+
+The Admin who owns this {productname} implementation needs to log in https://www.tiny.cloud/my-account/integrate/[here] to get the account’s API key. If you do not have an account yet, you can https://www.tiny.cloud/pricing/[sign up for a free API key]. If you need help, please https://www.tiny.cloud/contact/[contact our Customer Success Team]. 
+
+== What will happen if I don't provide a valid API key?
+
+All editors without valid API keys on Tiny Cloud will be set to read-only mode in the beginning of 2024. You will not be impacted if you self-host {productname}.
+
+== Why do I need the API key?
+ 
+In order to maintain the quality of our service, ensure reliable security, and keep up with industry best practices, all {productname} Cloud editors will require an active and valid API key beginning in early 2024. 
+
+== If {productname} is free and open source, why am I now getting warnings saying an API key is required?
+
+{productname} can be accessed through a variety of licensing and hosting methods, including both free and paid options. 
+{productname} is available under an MIT license explained https://www.tiny.cloud/legal/tiny-self-hosted-oem-saas-agreement/[here]. Users must self-host {productname} to take advantage of the MIT license. 
+
+{productname} Cloud offerings are available under commercial license, as described https://www.tiny.cloud/legal/cloud-use-subscription-agreement/[here]. There is a free Cloud plan called “Core”, that is completely free but is limited to 1,000 editor loads per month. There are also 2 Cloud plans called “Essential” and “Professional” with increased editor load limits, and additional premium features. You can find more information on editor load limits, feature breakdowns, and pricing of our Cloud plans https://www.tiny.cloud/pricing/[here].
+
+All of our Cloud plans require an active API key, so if you’re seeing this error message you need to either migrate to the self-hosted open source version under the MIT license, or you need to acquire an active API key by https://www.tiny.cloud/pricing/[signing up] for a cloud plan. 
+
+== I installed the npm package, which I assumed would be self-hosted. Why do I get a notification that an API key is required? 
+
+Our integrations default to using the {productname} Cloud service. If you see a notification that an API key is required, it means that you’re using Tiny Cloud service that now requires a valid API key and lets you have 1,000 editor loads per month for free. 
+
+Please xref:installation.adoc[read our docs] to learn how to self-host {productname} or https://www.tiny.cloud/pricing/[sign up here] to continue using {productname} Cloud.
+
+== I used {productname} for years. Why am I now getting warnings saying an API key is required?
+
+Thank you for your long-time use of {productname} and for selecting it for your projects. If you're suddenly seeing this message, it means that previous versions of this notification were hidden within your {productname} editor. We are working to ensure that all active users of {productname} are aware of this API key requirement, including those that may have hidden these warnings in the past. If action is not taken before early 2024, these editors will stop functioning. 
+
+TIP: For additional information on Troubleshooting Tiny Cloud visit: xref:cloud-troubleshooting.adoc[Cloud Troubleshooting].

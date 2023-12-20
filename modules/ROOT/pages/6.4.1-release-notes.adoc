@@ -598,7 +598,7 @@ As a result the when the instance occurs where **no <string> match** is triggere
 === Color picker on toolbar would not update when changing forecolor or backcolor from menu
 //#TINY-9439
 
-In {productname} 6.3, when the https://www.tiny.cloud/docs/tinymce/6/6.3-release-notes/#new-color_map_foreground-and-color_map_background-options-store-custom-colors-selected-using-the-text-color-and-background-color-menus[new color map] was introduced, a regression was found that affected the UI for *Color Swatch*.
+In {productname} 6.3, when the xref:6.3-release-notes.adoc#new-color_map_foreground-and-color_map_background-options-store-custom-colors-selected-using-the-text-color-and-background-color-menus[new color map] was introduced, a regression was found that affected the UI for *Color Swatch*.
 
 The issue occurred when a user would select a `forecolor` or `backcolor` via the `*Formats*` drop down menu, the color displayed on the color swatch toolbar buttons would not reflect the selected `forecolor` or `backcolor` respectively.
 
@@ -623,7 +623,7 @@ In {productname} 6.4.1, changes were made to prevent descendants of an element w
 === Checkmark did not show in menu color swatches
 //#TINY-9395
 
-Previous versions of {productname} the known issue, (_https://www.tiny.cloud/docs/tinymce/6/6.3-release-notes/#checkmark-over-the-current-background-color-is-not-displayed-when-inline-formatting-is-applied-in-a-certain-order[checkmark-over-the-current-background-color-is-not-displayed-when-inline-formatting-is-applied-in-a-certain-order]_) was identified. As a consequence, when text was formatted in the following order, the *checkmark* over the currently active background color would not display in the Background color swatch menu:
+Previous versions of {productname} the known issue, xref:6.3-release-notes.adoc#checkmark-over-the-current-background-color-is-not-displayed-when-inline-formatting-is-applied-in-a-certain-order[_checkmark over the current background color is not displayed when inline formatting is applied in a certain order_] was identified. As a consequence, when text was formatted in the following order, the *checkmark* over the currently active background color would not display in the Background color swatch menu:
 
 . When the user applied inline formatting, such as *bold* or _Italic_.
 . After applying a foreground(text) color.

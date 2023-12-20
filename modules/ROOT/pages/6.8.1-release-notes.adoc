@@ -29,7 +29,7 @@ The {productname} 6.8.1 release includes an accompanying release of the **Advanc
 
 **Advanced Templates** 1.4.0 includes the following improvement and fix.
 
-==== New `{{mce-clipboard}}` marker as a placeholder within template content, indicating the location where clipboard content will be inserted
+==== New `{\{mce-clipboard\}}` marker as a placeholder within template content, indicating the location where clipboard content will be inserted
 // #TINY-9974
 **Advanced Template** 1.4.0 introduces a new feature that allows templates to now include special markers, denoted as `+{{mce-clipboard}}+`. These markers serve as placeholders that indicate where clipboard content should be inserted once the template is added to the editor's content.
 
@@ -61,7 +61,7 @@ As a result, when a user inserts a template containing the `+{{mce-clipboard}}+`
 
 NOTE: when the host browser is **FireFox**, the user will be prompted with a notification error, as it currently does not support clipboard reading.
 
-==== The functionality of the `{{mce-cursor}}` marker feature was broken after the upgrade to {productname} 6.7.3
+==== The functionality of the `{\{mce-cursor\}}` marker feature was broken after the upgrade to {productname} 6.7.3
 // #TINY-10367
 Security patch for {productname} 6.7.3, made changes to **ZWNBSP** characters so they are now removed from any content passed via the `insertContent` API. **ZWNBSP** characters were used to add padding to the marker to avoid it cleaning out the empty content.
 
@@ -370,7 +370,7 @@ As a consequence, the `focus` would consistently shift back to the editor, irres
 
 {productname} 6.8.1 addresses this issue, now, the focus is only retained within the editor if the notification closure was initiated by user interaction.
 
-=== Selecting a cell with only `&nbsp;` in a table inside a `td` and then press `backspace` the entire table is deleted
+=== Selecting a cell with only `+&nbsp;+` in a table inside a `td` and then press `backspace` the entire table is deleted
 // #TINY-10254
 Previously, the editor checked the number of tables included in a selection by identifying the closest parent to the selected elements within the table. However, when selecting part of a nested table along with some other element, two different tables were detected: the nested one and the one containing both the nested table and the additional element.
 
@@ -540,7 +540,7 @@ As a result, the `width` of the buttons now display correctly.
 // #TINY-10174
 In earlier versions of {productname}, collection items set in a xref:dialog-components.adoc#collection[collection dialog component] would not display any icon as set in the `+icon+` property, instead only displaying the `+string+` itself.
 
-In {productname} 6.8.1, dialog collection items will now use any specified `+icon+` from the xref:icons.adoc#icons[icon pack], with the `+string+` itself used in the case where no such icon exists. This is the current behaviour, as in most uses of dialog collections in {productname}, the `+icon+` property is set as an individual character, such as in the xref:emoticons.adoc[Emoticons] and xref:charmap.adoc[Charmap] plugins.
+In {productname} 6.8.1, dialog collection items will now use any specified `+icon+` from the xref:editor-icons.adoc#icons[icon pack], with the `+string+` itself used in the case where no such icon exists. This is the current behaviour, as in most uses of dialog collections in {productname}, the `+icon+` property is set as an individual character, such as in the xref:emoticons.adoc[Emoticons] and xref:charmap.adoc[Charmap] plugins.
 
 For information on the **Dialog layout components for collections** plugin see xref:dialog-components.adoc#collection[dialog components].
 

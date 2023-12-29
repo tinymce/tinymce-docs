@@ -22,7 +22,8 @@ To add Hunspell dictionaries to a self-hosted {productname}:
 
 `+hunspell-dictionaries-all.zip+`:: This package contains all the Hunspell dictionaries that the spelling service supports. You will need to ensure that their license matches your requirements.
 
-Hunspell dictionaries can be downloaded from other sources, but will need to be stored in the structure shown in xref:hunspell-dictionary-storage-for-spell-checker-pro[Hunspell dictionary storage for Spell Checker Pro]. Not all Hunspell dictionary languages work with Spell Checker Pro, for a list of supported languages, see: xref:introduction-to-tiny-spellchecker.adoc#supported-languages[Spell Checker Pro plugin - Supported languages].
+You can remove unwanted dictionaries and their associated directories, but the file structure must be respected.
+Hunspell dictionaries can be downloaded from other sources, but will need to be stored in the structure shown in xref:hunspell-dictionary-storage-for-spell-checker-pro[Hunspell dictionary storage for Spell Checker Pro]. 
 
 == Configuring the spelling service to use Hunspell dictionaries
 
@@ -31,7 +32,81 @@ include::partial$misc/hunspell-dictionaries-path.adoc[]
 [[hunspell-dictionary-storage-for-spell-checker-pro]]
 == Hunspell dictionary storage for Spell Checker Pro
 
-You can remove unwanted dictionaries and their associated directories, but the file structure must be as follows (including filenames):
+Each Hunspell dictionary comes in two files. The .dic file which is the list of words, and the .aff file which is a list of rules and other options.  These rules tell Hunspell, for example, how to convert a word into its plural or possessive forms.
+These files should be named following the language tag definition described in RFC 5646, using "-" or "_" as separator.
+ 
+There are two file structures available for storing Hunspell dictionaries.
+
+=== Flat structure
+
+[source,pre]
+----
+├── af_ZA.aff
+├── af_ZA.dic
+├── af_ZA.license
+├── da.aff
+├── da.dic
+├── da.license
+├── de_DE.aff
+├── de_DE.dic
+├── de_DE.license
+├── en_AU.aff
+├── en_AU.dic
+├── en_AU.license
+├── en_CA.aff
+├── en_CA.dic
+├── en_CA.license
+├── en_GB.aff
+├── en_GB.dic
+├── en_GB.license
+├── en_medical.aff
+├── en_medical.dic
+├── en_medical.license
+├── en_US.aff
+├── en_US.dic
+├── en_US.license
+├── es.aff
+├── es.dic
+├── es.license
+├── fr.aff
+├── fr.dic
+├── fr.license
+├── hu.aff
+├── hu.dic
+├── hu.license
+├── it_IT.aff
+├── it_IT.dic
+├── it_IT.license
+├── mi_NZ.aff
+├── mi_NZ.dic
+├── mi_NZ.license
+├── nb_NO.aff
+├── nb_NO.dic
+├── nb_NO.license
+├── nl_NL.aff
+├── nl_NL.dic
+├── nl_NL.license
+├── nn.aff
+├── nn.dic
+├── nn.license
+├── pl.aff
+├── pl.dic
+├── pl.license
+├── pt_BR.aff
+├── pt_BR.dic
+├── pt_BR.license
+├── pt_PT.aff
+├── pt_PT.dic
+├── pt_PT.license
+├── sv_FI.aff
+│── sv_FI.dic
+├── sv_FI.license
+├── sv_SE.aff
+├── sv_SE.dic
+└── sv_SE.license
+----
+
+=== Nested structure
 
 [source,pre]
 ----
@@ -120,6 +195,9 @@ You can remove unwanted dictionaries and their associated directories, but the f
     ├── sv_SE.aff
     └── sv_SE.dic
 ----
+
+Both structures may be used at the same time. If you provide dictionary files for the same language tag in both ways, Spell Checker Pro will try to load the nested dictionary files first. If they're not correct, then flat structured files will be loaded.
+
 
 === Missing Dictionaries
 

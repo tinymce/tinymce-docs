@@ -41,7 +41,7 @@ jobs:
         mv ./build/site/sitemap.xml ./build/site/antora-5-sitemap.xml
 
     - name: (deploy) Upload to S3
-      run: aws s3 sync --acl=public-read --delete ./build/site/tinymce/5 s3://tiny-cloud-antora-docs-staging/docs/tinymce/5
+      run: aws s3 sync --acl=public-read --delete ./build/site s3://tiny-cloud-antora-docs-staging/docs --exclude '*' --include 'tinymce/5/*'
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}

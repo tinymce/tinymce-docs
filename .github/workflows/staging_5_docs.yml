@@ -1,0 +1,55 @@
+name: Staging > Tiny 5 Docs
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '**'
+    branches:
+      - 'staging/docs-5'
+
+jobs:
+  build:
+    name: Build Docs and Deploy
+    runs-on: ubuntu-20.04
+
+    strategy:
+      matrix:
+        node-version: [14]
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        cache: 'yarn'
+        node-version: ${{ matrix.node-version }}
+
+    - name: (Staging - Docs 5) Install dependencies
+      run: yarn install
+
+    - name: (Staging - Docs 5) Build API References
+      run: yarn build
+
+    - name: (Staging - Docs 5) Build Website
+      run: yarn antora ./antora-playbook-staging.yml
+
+    - name: (Staging - Docs 6) Rename sitemap.xml
+      shell: bash
+      run: |
+        mv ./build/site/sitemap.xml ./build/site/antora-5-sitemap.xml
+
+    - name: (deploy) Upload to S3
+      run: aws s3 sync --acl=public-read --delete ./build/site s3://tiny-cloud-antora-docs-staging/docs --exclude '*' --include 'tinymce/5/*'
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}
+        AWS_EC2_METADATA_DISABLED: true
+
+    - name: (deploy) Invalidate Cache
+      run: aws cloudfront create-invalidation --distribution-id E7DUUPEI08HNW --paths "/docs/*"
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}
+        AWS_EC2_METADATA_DISABLED: true

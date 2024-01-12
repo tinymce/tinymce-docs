@@ -6,6 +6,10 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+### TBA
+
+- DOC-1925: Add `Skins and Icons examples` to examples.adoc index page
+
 ### 2023-12-19
 
 - DOC-2220: add generation of `latest` and `6` documentation in parallel.

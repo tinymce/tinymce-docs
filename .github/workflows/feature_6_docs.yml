@@ -56,7 +56,7 @@ jobs:
         echo $S3_BUCKET > S3_BUCKET
 
     - name: (deploy) Upload website to S3
-      run: aws s3 sync --acl=public-read --delete ./build/site $(cat S3_BUCKET)/docs --exclude 'tinymce/*' --include 'tinymce/latest' --include 'tinymce/6'
+      run: aws s3 sync --acl=public-read --delete ./build/site $(cat S3_BUCKET)/docs --exclude 'tinymce/*' --include 'tinymce/latest/*' --include 'tinymce/6/*'
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}

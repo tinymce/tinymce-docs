@@ -6,6 +6,13 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+
+### 2023-01-15
+
+- DOC-2235: changes and updates to `invalid-api-key.adoc` page.
+
+### 2023-01-11
+
 - DOC-2201: Added link to `ai.adoc` to direct users to the AI Assistant demo.
 
 ### 2023-01-10

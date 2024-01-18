@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2241: added `6.8.3-release-notes.adoc` to project; updated `changelog.adoc`, `nav.adoc` and `release-notes.adoc` for the TinyMCE 6.8.3 release.
 
 ### 2023-01-15
 

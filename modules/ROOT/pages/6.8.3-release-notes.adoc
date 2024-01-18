@@ -1,0 +1,49 @@
+= TinyMCE 6.8.3
+:navtitle: TinyMCE 6.8.3
+:description: Release notes for TinyMCE 6.8.3
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+[[overview]]
+== Overview
+
+{productname} 6.8.3 was released for {enterpriseversion} and {cloudname} on <weekday>, <month> <DD>^<st|nd|rd|th>^, <YYYY>. These release notes provide an overview of the changes for {productname} 6.8.3, including:
+
+* xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
+* xref:bug-fixes[Bug fixes]
+
+
+[[accompanying-premium-plugin-changes]]
+== Accompanying Premium plugin changes
+
+The following premium plugin updates were released alongside {productname} 6.8.3.
+
+=== <Premium plugin name 1> <Premium plugin name 1 version>
+
+The {productname} 6.8.3 release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+
+**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+
+==== <Premium plugin name 1 change n>
+
+// CCFR here.
+
+For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+
+
+[[bug-fixes]]
+== Bug fixes
+
+{productname} 6.8.3 also includes the following bug fixes:
+
+=== ShadowDOM skin was not loaded properly when used with js bundling feature.
+//#TINY-10451
+
+// CCFR here.
+
+=== The floating toolbar would not be fully visible when the editor was placed inside a scrollable container.
+//#TINY-10335
+
+// CCFR here.

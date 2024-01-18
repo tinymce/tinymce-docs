@@ -1,0 +1,65 @@
+= Understanding editor loads
+:navtitle: Understanding editor loads
+:description: Relevant information for Tiny Cloud users to help understand editor loads for {productname}.
+:keywords: invalid-api-key, API, {productname}, cloud, frequently asked questions
+
+== Understanding editor loads for {productname}
+
+[IMPORTANT]
+This information is only relevant to Tiny Cloud users. Users who self-host the open source version of {productname} are not subject to editor load restrictions, but must comply with the ////<Insert link>[open source license].//// 
+
+An editor load is the event that occurs each time {productname} is initialized in your application. The editor dispatches the 'init' event to indicate a successful load. For example, if 100 users load {productname} 10 times each, the result would be 1,000 editor loads. 
+
+The process of initializing an editor involves several steps.
+
+. The integrator initializes one or more editors on the webpage, commonly accomplished through the `tinymce.init({ ... })` method. 
++
+Regardless of the method used, the following pattern is adhered to when adding an editor to a webpage:
++
+.. Create a new editor instance object.
+.. Add the editor instance to the editor manager.
+.. Call `editor.render()`.
+
+. Calling `editor.render()` triggers a sequence of functions that prepare the editor for user interaction. Notably:
++
+.. All required scripts, including theme, model, language, icons, skin, and plugins, are loaded and initialized.
+.. The editor UI is rendered.
+.. The target element on the webpage is transformed into an editor instance.
+.. Content CSS is loaded onto the page.
+.. Initial content is loaded into the editor from the target element.
+
+. If all these steps are successful, the final initialization steps are completed, including:
++
+.. Setting the `editor.initialized` property to `true`.
+.. Dispatching the `init` event.
+.. Marking the editor as the active editor in the editor manager.
+.. Setting the selection to a valid position in the editor and making it focused so the user can interact with it.
+
+**The 'init' event serves as the conclusive indicator that the editor has completed its loading process**. At this point, the editor has been successfully initialized and is ready for user interaction. 
+
+== How are editor loads counted?
+
+An editor load is counted **each time {productname} is initialized on the page**. 
+
+== What happens if I have multiple editors on a page?
+
+Each individual editor instance on a page is counted as one editor load. For example, if a page has ten editors, a single refresh of that page results in ten editor loads.
+
+== What can contribute to a high number of editor loads?
+
+The most obvious scenario is using multiple editors on a single page (see above). For example:
+
+* An email building app that has a {productname} editor embedded in multiple sections
+* A publicly available page on a high traffic website with multiple editor instances
+
+== How can I get unlimited editor loads?
+
+You can get unlimited editors loads one of three ways:
+
+* The open-source version of {productname} can be self hosted, and is not subject to editor load restrictions.
+* The open-source version of {productname} is also available via third party-hosted CDNs and is not subject to editor load restrictions.
+* For the Enterprise version of Tiny MCE with Premium features, https://www.tiny.cloud/contact/[get in touch with our Sales team] for a custom quote.
+
+== I have an annual plan. Are my editor loads calculated monthly or over the entire year?
+
+If you have an annual plan, your editor loads are calculated on a monthly basis within the structure of your annual plan. Similar to our monthly plans, you have a set monthly editor load limit and are automatically charged $40 USD per every block of 1,000 editor loads over the plan limit. Learn more about ////<Insert link>[Tiny Cloud’s Usage-Based Billing model]////.

@@ -1,0 +1,86 @@
+= TinyMCE 5.10.5
+:description: Release notes for TinyMCE 5.10.5
+:keywords: releasenotes bugfixes
+:title_nav: TinyMCE 5.10.5
+
+== Overview
+
+{productname} 5.10.5 was released for {enterpriseversion} and {cloudname} on Wednesday, June 1^st^, 2022. It includes {productname} 5.10.5. These release notes provide an overview of the changes for {productname} 5.10.5, including:
+
+* xref:generalbugfixes[General bug fixes]
+* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
+
+include::partial$misc/releasenotes_for_stable.adoc[]
+
+[[generalbugfixes]]
+== General bug fixes
+
+{productname} 5.10.5 provides fixes for the following bugs:
+
+=== base64 encoded images were corrupted and not displayed when added immediately following the string `data:`
+
+When the string `data:` immediately preceded the insertion point, or was only separated from the insertion point by a Return character (ie, was on the line above the insertion point), adding an image in to a {productname} 5.x document caused the added image data to be parsed incorrectly.
+
+Rather than displaying the encoded image, the mis-parsing caused the image to corrupt and present as a raw string of base64 text within html tags, which also displayed as text.
+
+With this update, the code responsible for the mis-parsing now engages in more comprehensive sanity checking. These further sanity checks prevent the function from mis-parsing a user-entered `data:` string.
+
+Consequently, adding images to a {productname} 5.x document now works in this circumstance: the image is not corrupted and displays at the insertion point as expected.
+
+
+=== `format_empty_lines` did not work as documented
+
+Previously, when `format_empty_lines` was set to `true`, lines that included no text (ie, a line consisting of just a Return) did not preserve inline formatting when saved.
+
+So, for example, a line
+
+[source,html]
+----
+<p> 
+<em> 
+<strong> 
+<span style="font-family: arial, helvetica, sans-serif;" ><br /></span> 
+</strong> 
+</em> 
+</p> 
+----
+
+when saved, became
+
+[source,html]
+----
+<p> 
+&nbsp; 
+</p> 
+----
+
+That is, the line was preserved, but the formatting was not.
+
+With this update, `format_empty_lines: true` behaves as it should (and as advertised), and formatting added to an otherwise empty line is preserved when saved.
+
+NOTE: By default `format_empty_lines` is set to `false`.
+
+
+=== Some inline elements specified by the {productname} schema were not removed by default when empty
+
+By default, the {productname} schema removes empty inline `html` elements.
+
+Previously, however, some inline `html` elements — including `s`, `u`, `var`, `cite`, `dfn`, `code`, `mark`, `q`, `sup`, `sub`, and `samp` — were not removed when they were present but empty.
+
+With this update, inline `html` elements such as those noted above will have the `removeEmpty` schema flag set, as expected.
+
+
+=== The default {productname} schema did not include the <s> element
+
+Previously, the default {productname} schema did not include the `<s>` element in the text inline elements section of the schema. The element was included in the full element list, however.
+
+Consequently, although `strike-through` elements rendered as expected, anything that relied on the `schema.getTextInlineElements()` API may not have handled the `<s>` element correctly.
+
+This update corrects the omission in the {productname} schema and `<s>` element is now correctly returned by the `schema.getTextInlineElements()` API.
+
+
+:enterprise: true
+
+include::partial$install/upgrading-info.adoc[]
+
+:enterprise: false

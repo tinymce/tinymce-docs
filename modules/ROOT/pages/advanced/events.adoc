@@ -296,7 +296,7 @@ include::partial$misc/requires_5_7v.adoc[]
 
 | ResizeEditor
 | N/A
-| Fired when the editor is resized, either by the resize handles or the auto-resize plugin.
+| Fired when the editor is resized, either by the resize handles or the auto-resize plugin. As of {productname} 5.10.6, this event is also fired when fullscreen mode is toggled. Toggling fullscreen mode requires the `fullscreen` plugin to be enabled.
 
 | SkinLoaded
 | N/A

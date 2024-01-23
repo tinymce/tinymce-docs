@@ -124,6 +124,7 @@ move_caret_before_on_enter_elements:: The `move_caret_before_on_enter_elements` 
 non_empty_elements:: The `non_empty_elements` option allowed developers to override the built-in HTML schema to specify which elements should always be treated as not being empty. Using this option can break the editor and requires the default to be repeated with any desired changes.
 
 padd_empty_with_br:: The `padd_empty_with_br` option would replace non-breaking spaces (`+&nbsp;+`) with `<br>` elements. This option however was misspelled, provided no functional difference to a non-breaking space and is incompatible with Real-time Collaboration.
+NOTE: {productname} 6.6.2 includes a new option, [`pad_empty_with_br`](https://tiny.cloud/docs/tinymce/6/content-filtering#pad_empty_with_br) that provides equivalent functionality.
 
 self_closing_elements:: The `self_closing_elements` option allowed developers to override the built-in HTML schema to specify which elements should be closed if a new element is started without a similar closing tag. Using this option can break the editor and requires the default to be repeated with any desired changes. Additionally, browsers can't be changed to parse the customizations, so this option was not useful for customization.
 

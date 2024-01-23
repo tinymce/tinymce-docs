@@ -6,6 +6,8 @@
 :pluginname: Real-time Collaboration (RTC)
 :plugincode: rtc
 
+include::partial$rtc/admon-rtc-eol.adoc[]
+
 This section covers the recommended and optional configuration options for the RTC plugin. None of these options are required but assist with creating a consistent user experience between your application and {productname} {pluginname}.
 
 == Recommended configuration options

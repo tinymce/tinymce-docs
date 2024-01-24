@@ -20,17 +20,27 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} 6.8.3.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== PowerPaste 6.2.5
 
-The {productname} 6.8.3 release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} 6.8.3 release includes an accompanying release of the **PowerPaste** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**PowerPaste** 6.2.5 includes the following fix.
 
-==== <Premium plugin name 1 change n>
+==== PowerPaste would sometimes consider a shape or a picture to be an equation when it is not.
+//#TINY-10449
 
-// CCFR here.
+In previous versions of **PowerPaste**, users encountered an issue while copying/pasting content from a Microsoft Word document when **PowerPaste** Plugin was enabled in the editors configuration.
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+As a consequence, if the copied content contained images and equations, the images would not appear in the expected locations on paste.
+
+**PowerPaste** 6.2.5 addresses this issue, by enhancing the image and equation detection logic.
+
+As a result, images now appear in their correct locations as expected.
+
+[NOTE]
+The current version of **PowerPaste** does not currently support equations within {productname}.
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
 
 
 [[bug-fixes]]
@@ -38,12 +48,24 @@ For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode
 
 {productname} 6.8.3 also includes the following bug fixes:
 
-=== ShadowDOM skin was not loaded properly when used with js bundling feature.
+=== `ShadowDOM` skin was not loaded properly when used with js bundling feature.
 //#TINY-10451
 
-// CCFR here.
+When using the js bundling feature with the `ShadowDom` skin, the editor would not load the skin properly.
+
+As a consequence, any editor bundled with this specific setup would result in the editor loading without displaying the toolbar.
+
+{productname} 6.8.3 addresses this issue, now, during the loading process the `ShadowDOM` skin is correctly used when using the js bundling feature.
+
+As a result, the editor loads properly and the toolbar appears as expected.
 
 === The floating toolbar would not be fully visible when the editor was placed inside a scrollable container.
 //#TINY-10335
 
-// CCFR here.
+Previously, when the editor was configured to be set within a scrollable container, and the `ui_mode: 'split'` is set, the floating toolbar was obscured when the user switched to fullscreen.
+
+As a consequence, the floating toolbar UI was not completely visible when switching to fullscreen.
+
+{productname} 6.8.3 addresses this, now, when the container containing the editor UI elements are set to a `fixed` css position when the editor is switched to fullscreen.
+
+As a result, the toolbar is now no longer obscured when switching to fullscreen.

@@ -4,7 +4,7 @@ Changes:
 * <placeholder-text>
 
 Pre-checks:
-- [ ] Branch prefixed with `feature/6/` or `hotfix/6/`
+- [ ] Branch prefixed with `feature/7/` or `hotfix/7/`
 - [ ] Changelog entry added
 - [ ] `modules/ROOT/nav.adoc` has been updated (if applicable)
 - [ ] Files has been included where required (if applicable)

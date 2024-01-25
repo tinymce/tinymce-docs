@@ -395,7 +395,7 @@ The following plugins provide events.
 [[advancedtablesevents]]
 === Advanced Tables events
 
-For events applicable to the Advanced Tables plugin, see: <<tableevents,Table events>>.
+For events applicable to the Advanced Tables plugin, see: xref:tableevents[Table events].
 
 [[autosaveevents]]
 === Autosave events
@@ -656,7 +656,7 @@ The following event is provided by the xref:plugins/opensource/wordcount.adoc[Wo
 
 == Editor Manager events
 
-The following events are used for editor management. These events are handled using `tinymce.on`, rather than `editor.on` or `editor.fire`, as shown in <<exampleshandlingeditormanagerevents,Examples: Handling Editor Manager events>>.
+The following events are used for editor management. These events are handled using `tinymce.on`, rather than `editor.on` or `editor.fire`, as shown in xref:exampleshandlingeditormanagerevents[Examples: Handling Editor Manager events].
 
 |===
 | Name | Data | Description

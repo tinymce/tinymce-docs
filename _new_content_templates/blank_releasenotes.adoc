@@ -25,19 +25,19 @@ The following "list" should be added to `data/nav.yml`
 
 == Overview
 
-{productname} vnumtxt was released for {enterpriseversion} and {cloudname} on <<`WEEKDAY`, `MMM` `D`^`st|nd|th`^, `YYYY`>>. It includes {productname} vnumtxt and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} vnumtxt, including:
+{productname} vnumtxt was released for {enterpriseversion} and {cloudname} on +`WEEKDAY`, `MMM` `D`^`st|nd|th`^, `YYYY`+ It includes {productname} vnumtxt and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} vnumtxt, including:
 
-* <<newfeatures,New features>>
-* <<enhancements,Enhancements>>
-* <<functionalitychanges,Functionality changes>>
-* <<accompanying-premium-self-hosted-server-side-component-changes,Accompanying Premium Plugin changes>>
-* <<accompanyingpremiumskinsandiconpackschanges,Accompanying Premium Skins and Icon Packs changes>>
-* <<accompanying-premium-self-hosted-server-side-component-changes,Accompanying Premium self-hosted server-side component changes>>
-* <<general-bug-fixes,General bug fixes>>
-* <<security-fixes,Security fixes>>
-* <<deprecatedfeatures,Deprecated features>>
-* <<knownissues,Known issues>>
-* <<upgrading-to-the-latest-version-of-tinymce-5,Upgrading to the latest version of TinyMCE 5>>
+* xref:newfeatures[New features]
+* xref:enhancements[Enhancements]
+* xref:functionalitychanges[Functionality changes]
+* xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium Plugin changes]
+* xref:accompanyingpremiumskinsandiconpackschanges[Accompanying Premium Skins and Icon Packs changes]
+* xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
+* xref:general-bug-fixes[General bug fixes]
+* xref:security-fixes[Security fixes]
+* xref:deprecatedfeatures[Deprecated features]
+* xref:knownissues[Known issues]
+* xref:upgrading-to-the-latest-version-of-tinymce-5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
@@ -77,21 +77,21 @@ The following premium plugin updates were released alongside {productname} vnumt
 
 === Premium Plugin Name X.Y.Z
 
-The {productname} vnumtxt release includes an accompanying release of the *<<Premium Plugin Name>>* premium plugin.
+The {productname} vnumtxt release includes an accompanying release of the *Premium Plugin Name* premium plugin.
 
-*<<Premium Plugin Name>>* X.Y.Z adds the following new features:
-
-* {blank}+++<Description>++++++</Description>+++
-
-*<<Premium Plugin Name>>* X.Y.Z introduces the following enhancements:
+*Premium Plugin Name* X.Y.Z adds the following new features:
 
 * {blank}+++<Description>++++++</Description>+++
 
-*<<Premium Plugin Name>>* X.Y.Z provides the following bug fixes:
+*Premium Plugin Name* X.Y.Z introduces the following enhancements:
 
 * {blank}+++<Description>++++++</Description>+++
 
-For information on the <<Premium Plugin Name>> plugin, see: xref:plugins/<<Premium Plugin Name>>/[<<Premium Plugin Name>> plugin].
+*Premium Plugin Name* X.Y.Z provides the following bug fixes:
+
+* {blank}+++<Description>++++++</Description>+++
+
+For information on the Premium Plugin Name plugin, see: xref:plugins/pluginname.adoc[Premium Plugin Name plugin].
 
 == Accompanying Premium Skins and Icon Packs changes
 
@@ -176,7 +176,7 @@ For information on:
 
 The following features have been deprecated with the release of {productname} vnumtxt:
 
-* <<,>>.
+* xref:placeholder[placeholder].
 
 === The...
 
@@ -184,9 +184,9 @@ The following features have been deprecated with the release of {productname} vn
 
 This section describes issues that users of {productname} vnumtxt may encounter and possible workarounds for these issues.
 
-* <<,>>
+* xref:placeholder[placeholder].
 
-=== ,
+=== placeholder
 
 Issue:: This issue affects ....
 

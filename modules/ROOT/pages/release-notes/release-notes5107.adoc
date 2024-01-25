@@ -7,11 +7,12 @@
 
 {productname} 5.10.7 was released for {enterpriseversion} and {cloudname} on Wednesday, December 7^th^, 2022. It includes {productname} 5.10.7. These release notes provide an overview of the changes for {productname} 5.10.7, including:
 
-* xref:securityfixes[Security fixes]
-* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
+* xref:security-fixes[Security fixes]
+* xref:upgrading-to-the-latest-version-of-tinymce-5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
+[[security-fixes]]
 == Security fixes
 
 {productname} 5.10.7 provides a fix for the following security issue:

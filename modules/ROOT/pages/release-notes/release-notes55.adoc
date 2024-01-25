@@ -8,13 +8,13 @@
 {productname} 5.5 was released for {enterpriseversion} and {cloudname} on Wednesday, October 21^st^, 2020. It includes {productname} 5.5.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.5, including:
 
 * xref:tinymce54newfeaturesandenhancements[TinyMCE 5.5 new features and enhancements]
-* xref:accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
+* xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
 * xref:minorchangesfortinymce54[Minor changes for TinyMCE 5.5]
-* xref:generalbugfixes[General bug fixes]
-* xref:securityfixes[Security fixes]
-* xref:deprecatedfeatures[Deprecated features]
-* xref:knownissues[Known issues]
-* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
+* xref:general-bug-fixes[General bug fixes]
+* xref:security-fixes[Security fixes]
+* xref:deprecated-features[Deprecated features]
+* xref:known-issues[Known issues]
+* xref:upgrading-to-the-latest-version-of-tinymce-5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
@@ -43,7 +43,7 @@ For information on:
 
 * Creating custom {productname} user interface components; such as toolbar buttons, menu items, and dialogs; see: xref:ui-components/index.adoc[User interface components].
 * Creating a plugin for {productname}, see: xref:advanced/creating-a-plugin.adoc[Create a plugin for {productname}].
-* The {productname} APIs, see: link:{baseurl}/api/[The {productname} API Reference].
+* The {productname} APIs, see: xref:apis/[The {productname} API Reference].
 
 === New line height support in the editor
 
@@ -211,7 +211,7 @@ For a list of available:
 
 For information on the `media` plugin, see: xref:plugins/opensource/media.adoc[Media plugin].
 
-[[accompanyingpremiumpluginchanges]]
+[[accompanying-premium-plugin-changes]]
 == Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {productname} 5.5.
@@ -328,7 +328,7 @@ For information on using the {productname} premium icon packs, see: xref:enterpr
 * Changed how CSS manipulates table cells when selecting multiple cells to achieve a semi-transparent selection.
 * Deprecated the `Env.experimentalShadowDom` flag.
 
-[[generalbugfixes]]
+[[general-bug-fixes]]
 == General bug fixes
 
 {productname} 5.5 provides fixes for the following bugs:
@@ -352,14 +352,14 @@ For information on using the {productname} premium icon packs, see: xref:enterpr
 * Fixed `editor.selection.setCursorLocation` incorrectly placing the cursor outside `pre` elements in some circumstances.
 * Fixed an exception being thrown when pressing the enter key inside pre elements while `br_in_pre` setting is false.
 
-[[securityfixes]]
+[[security-fixes]]
 == Security fixes
 
 Accessibility Checker 2.3.0 provides fixes for the following security issues:
 
 * Fixed a Cross-Site Scripting (XSS) vulnerability in the accessibility issue repair function.
 
-[[deprecatedfeatures]]
+[[deprecated-features]]
 == Deprecated features
 
 The following features have been deprecated with the release of {productname} 5.5:
@@ -373,7 +373,7 @@ With the release of {productname} 5.5, the premium Spanish (Mexico) language pac
 
 For information on the community maintained language packs, see: xref:configure/localization.adoc#language[Localization options - `language`].
 
-[[knownissues]]
+[[known-issues]]
 == Known issues
 
 This section describes issues that users of {productname} 5.5 may encounter, as well as possible workarounds for these issues.

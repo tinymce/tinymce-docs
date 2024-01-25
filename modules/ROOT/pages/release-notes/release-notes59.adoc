@@ -7,21 +7,21 @@
 
 {productname} 5.9 was released for {enterpriseversion} and {cloudname} on Wednesday, September 15^th^, 2021. It includes {productname} 5.9.2 and changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.9, including:
 
-* xref:newfeatures[New features]
+* xref:new-features[New features]
 * xref:enhancements[Enhancements]
-* xref:functionalitychanges[Functionality changes]
-* xref:accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
-* xref:accompanyingpremiumskinsandiconpackschanges[Accompanying Premium Skins and Icon Packs changes]
-* xref:accompanyingpremiumself-hostedserver-sidecomponentchanges[Accompanying Premium self-hosted server-side component changes]
-* xref:generalbugfixes[General bug fixes]
-* xref:securityfixes[Security fixes]
-* xref:deprecatedfeatures[Deprecated features]
-* xref:knownissues[Known issues]
-* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
+* xref:functionality-changes[Functionality changes]
+* xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
+* xref:accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
+* xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
+* xref:general-bug-fixes[General bug fixes]
+* xref:security-fixes[Security fixes]
+* xref:deprecated-features[Deprecated features]
+* xref:known-issues[Known issues]
+* xref:upgrading-to-the-latest-version-of-tinymce-5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
-[[newfeatures]]
+[[new-features]]
 == New features
 
 The following new features were added for the {productname} 5.9 release.
@@ -146,7 +146,7 @@ The User Interface has been profiled to find performance bottlenecks and a numbe
 * The `autolink` plugin link detection now permits custom protocols.
 * The `autolink` plugin valid link detection has been improved.
 
-[[functionalitychanges]]
+[[functionality-changes]]
 == Functionality changes
 
 The following functionality changes were made for the {productname} 5.9 release:
@@ -156,7 +156,7 @@ The following functionality changes were made for the {productname} 5.9 release:
 * The context toolbar will no longer show an arrow when it overlaps the content, such as in table cells.
 * The context toolbar will no longer overlap the statusbar for toolbars using `node` or `selection` positions.
 
-[[accompanyingpremiumpluginchanges]]
+[[accompanying-premium-plugin-changes]]
 == Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {productname} 5.9.
@@ -215,7 +215,7 @@ The RTC plugin features:
 * A user presence API to assist with showing a list of connected collaborators.
 * JSON Web Token based authentication.
 
-For information on using the Real-time Collaboration (RTC) plugin, see: xref:rtc/index.adoc[Real-time Collaboration plugin].
+For information on using the Real-time Collaboration (RTC) plugin, see: xref:plugins/premium/rtc.adoc[Real-time Collaboration plugin].
 For sales information, visit: link:{plugindirectory}real-time-collaboration[TinyMCE Features - Real-time Collaboration].
 
 === Spell Checker Pro 2.4.1
@@ -245,7 +245,7 @@ The {productname} 5.9 release includes an accompanying release of the *Spell Che
 
 For information on the Spell Checker Pro plugin, see: xref:plugins/premium/tinymcespellchecker.adoc[Spell Checker Pro plugin].
 
-[[accompanyingpremiumskinsandiconpackschanges]]
+[[accompanying-premium-skins-and-icon-packs-changes]]
 == Accompanying Premium Skins and Icon Packs changes
 
 The {productname} 5.9 release includes an accompanying release of the *Premium Skins and Icon Packs*.
@@ -264,7 +264,7 @@ The *Material*, *Small*, and *Thin* icon packs have been updated to include impr
 
 For information on using premium skins and icon packs, see: xref:enterprise/premium-skins-and-icon-packs/index.adoc[Premium Skins and Icon Packs].
 
-[[accompanyingpremiumself-hostedserver-sidecomponentchanges]]
+[[accompanying-premium-self-hosted-server-side-component-changes]]
 == Accompanying Premium self-hosted server-side component changes
 
 The {productname} 5.9 release includes accompanying changes affecting the {productname} *self-hosted* services for the following plugins:
@@ -328,7 +328,7 @@ For information on:
 * Deploying the server-side components, see: xref:enterprise/server/index.adoc[Server-side component installation].
 * Deploying the server-side components using Docker, see: xref:enterprise/server/dockerservices.adoc[Containerized service deployments].
 
-[[generalbugfixes]]
+[[general-bug-fixes]]
 == General bug fixes
 
 {productname} 5.9 provides fixes for the following bugs:
@@ -373,7 +373,7 @@ For information on:
 * The `formatter.formatChanged` API would sometimes not run the callback the first time the format was removed.
 * Base64 encoded images with spaces or line breaks in the data URI were not displayed correctly. Patch contributed by RoboBurned
 
-[[securityfixes]]
+[[security-fixes]]
 == Security fixes
 
 {productname} 5.9 provides fixes for the following security issues:
@@ -381,7 +381,7 @@ For information on:
 * Inserting certain HTML content into the editor could result in invalid HTML once parsed. This caused a medium severity Cross Site Scripting (XSS) vulnerability. Tiny Technologies would like to thank William Bowling for discovering this vulnerability.
 * The `.war` files for the premium self-hosted server-side components have been updated to address various high and medium severity security issues.
 
-[[deprecatedfeatures]]
+[[deprecated-features]]
 == Deprecated features
 
 The following features have been deprecated with the release of {productname} 5.9:
@@ -427,7 +427,7 @@ The free TinyMCE Spell Checker plugin (`spellchecker`) was deprecated with the r
 
 For information on the deprecation of the free TinyMCE Spell Checker plugin, see: xref:release-notes/release-notes54.adoc#thefreetinymcespellcheckerplugin[TinyMCE 5.4 Release notes - Deprecated features].
 
-[[knownissues]]
+[[known-issues]]
 == Known issues
 
 This section describes issues that users of {productname} 5.9 may encounter and possible workarounds for these issues.

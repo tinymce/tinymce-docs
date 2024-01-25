@@ -7,14 +7,14 @@
 
 {productname} 5.8.1 was released for {enterpriseversion} and {cloudname} on Wednesday, May 26^th^, 2021. It includes {productname} 5.8.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.8.1, including:
 
-* xref:accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
-* xref:generalbugfixes[General bug fixes]
-* xref:securityfixes[Security fixes]
-* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
+* xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
+* xref:general-bug-fixes[General bug fixes]
+* xref:security-fixes[Security fixes]
+* xref:upgrading-to-the-latest-version-of-tinymce-5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
-[[accompanyingpremiumpluginchanges]]
+[[accompanying-premium-plugin-changes]]
 == Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {productname} 5.8.1.
@@ -43,7 +43,7 @@ The {productname} 5.8.1 release includes an accompanying release of *Tiny Drive*
 
 For information on Tiny Drive, see: xref:tinydrive/index.adoc[Tiny Drive].
 
-[[generalbugfixes]]
+[[general-bug-fixes]]
 == General bug fixes
 
 {productname} 5.8.1 provides fixes for the following bugs:
@@ -54,7 +54,7 @@ For information on Tiny Drive, see: xref:tinydrive/index.adoc[Tiny Drive].
 * URLs were not always detected when pasting over a selection. Patch contributed by jwcooper.
 * Properties on the `OpenNotification` event were incorrectly namespaced.
 
-[[securityfixes]]
+[[security-fixes]]
 == Security fixes
 
 {productname} 5.8.1 provides fixes for the following security issues:

@@ -7,13 +7,13 @@
 
 {productname} 5.1.6 was released for {enterpriseversion} and {cloudname} on Wednesday, February 5^th^, 2020. It includes {productname} 5.1.6 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.1.6, including:
 
-* xref:generalbugfixes[General bug fixes]
-* xref:securityfixes[Security fixes]
+* xref:general-bug-fixes[General bug fixes]
+* xref:security-fixes[Security fixes]
 * xref:premiumpluginchanges[Premium Plugin changes]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
-[[generalbugfixes]]
+[[general-bug-fixes]]
 == General bug fixes
 
 {productname} 5.1.6 provides the following bug fixes:
@@ -25,7 +25,7 @@ include::partial$misc/releasenotes_for_stable.adoc[]
 * Context menus no longer open in the wrong location when the target was the editor body.
 * The `image` plugin now respects the xref:configure/file-image-upload.adoc#automatic_uploads[`automatic_uploads`] setting when uploading local images.
 
-[[securityfixes]]
+[[security-fixes]]
 == Security fixes
 
 {productname} 5.1.6 provides fixes for the following security issues:

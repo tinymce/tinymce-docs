@@ -7,11 +7,12 @@
 
 {productname} 5.10.8 was released for {enterpriseversion} and {cloudname} on Thursday, October 19^th^, 2023. It includes {productname} 5.10.8. These release notes provide an overview of the changes for {productname} 5.10.8, including:
 
-* xref:securityfixes[Security fixes]
-* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
+* xref:security-fixes[Security fixes]
+* xref:upgrading-to-the-latest-version-of-tinymce-5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
+[[security-fixes]]
 == Security fixes
 
 {productname} 5.10.8 provides a fix for the following security issue:
@@ -22,13 +23,13 @@ A https://researchgate.net/publication/266654651_mXSS_attacks_Attacking_well-sec
 
 When a carefully-crafted HTML snippet passes the XSS sanitization layer, it is manipulated as a string by internal trimming functions before being stored in the undo stack.
 
-If the HTML snippet is restored from the undo stack, the combination of the string manipulation and reparative parsing by the xref:apis/tinymce.html/tinymce.html.saxparser.adoc[SaxParser API] mutates the HTML maliciously, allowing an XSS payload to be executed.
+If the HTML snippet is restored from the undo stack, the combination of the string manipulation and reparative parsing by the xref:apis/tinymce.html.saxparser.adoc[SaxParser API] mutates the HTML maliciously, allowing an XSS payload to be executed.
 
 This vulnerability also impacts these related TinyMCE APIs and plugins:
 
-* xref:api/tinymce/tinymce.editor.adoc#getcontent[`tinymce.Editor.getContent({ format: 'raw' })`].
-* xref:api/tinymce.editor.adoc#resetcontent[`tinymce.Editor.resetContent()`].
-* xref:plugins/autosave.adoc[Autosave] open source plugin.
+* xref:apis/tinymce.editor.adoc#getcontent[`tinymce.Editor.getContent({ format: 'raw' })`].
+* xref:apis/tinymce.editor.adoc#resetcontent[`tinymce.Editor.resetContent()`].
+* xref:plugins/opensource/autosave.adoc[Autosave] open source plugin.
 
 This vulnerability has been patched in TinyMCE 5.10.8 by ensuring HTML is trimmed using node-level manipulation instead of string manipulation.
 

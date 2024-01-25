@@ -7,13 +7,13 @@
 
 {productname} 5.10.6 was released for {enterpriseversion} and {cloudname} on Wednesday, October 26^th^, 2022. It includes {productname} 5.10.6 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.10.6, including:
 
-* xref:accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
-* xref:generalbugfixes[General bug fixes]
-* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
+* xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
+* xref:general-bug-fixes[General bug fixes]
+* xref:upgrading-to-the-latest-version-of-tinymce-5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
-[[accompanyingpremiumpluginchanges]]
+[[accompanying-premium-plugin-changes]]
 == Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {productname} 5.10.6.
@@ -32,9 +32,11 @@ For example, pasting the string
 
 resulted in the following, incomplete, link and trailing text
 
-```html
+[source, html]
+----
 <a href="https://example.com/">https://example.com/</a>!exclamation-point
-```
+----
+
 Equivalent results occurred when URL paths contained the colon character (for example, `https://example.com/:colon`).
 
 With this update, the link detection logic has been improved to capture and present such URLs correctly.
@@ -45,11 +47,12 @@ Now, pasting the string
 
 results in the following, complete, link and no trailing text
 
-```html
+[source, html]
+----
 <a href="https://example.com/!exclamation-point">https://example.com/!exclamation-point</a>
-```
+----
 
-> **NOTE**: Exclamation points and colons are still boundary characters for URL detection and delimiting. If the string `https://example.com/colon:` is pasted or typed into a {productname} document, automatic link detection will produce a link that does not include the trailing colon character.
+NOTE: Exclamation points and colons are still boundary characters for URL detection and delimiting. If the string `https://example.com/colon:` is pasted or typed into a {productname} document, automatic link detection will produce a link that does not include the trailing colon character.
 For information on the PowerPaste plugin, see: xref:plugins/premium/powerpaste.adoc[PowerPaste plugin].
 
 
@@ -76,7 +79,7 @@ For information on:
 - The Link Checker plugin, see: xref:plugins/premium/linkchecker.adoc[Link Checker plugin].
 - The Image Tools plugin, see: xref:plugins/opensource/imagetools.adoc[Image Tools plugin].
 - The Enhanced Media Embed plugin, see: xref:plugins/premium/mediaembed.adoc[Enhanced Media Embed plugin].
-- Deploying the server-side components, see: xref:enterprise/server.adoc[Server-side component installation].
+- Deploying the server-side components, see: xref:enterprise/server/index.adoc[Server-side component installation].
 
 === Updating the self-hosted server-side components
 
@@ -95,10 +98,10 @@ The new versions of the server-side services provide updates for the Java-based 
 
 For information on:
 
-- Deploying the server-side components, see: xref:enterprise/server.adoc[Server-side component installation].
+- Deploying the server-side components, see: xref:enterprise/server/index.adoc[Server-side component installation].
 - Deploying the server-side components using Docker, see: xref:enterprise/server/dockerservices.adoc[Containerized service deployments].
 
-
+[[general-bug-fixes]]
 == General bug fixes
 
 {productname} 5.10.6 provides fixes for the following bugs:
@@ -113,7 +116,7 @@ The displayed source code did not include the `id` and `name` attributes.
 
 With this update, {productname} includes a change in the filtering that prevents the attribute stripping. Consequently, serialization no longer strips attributes from elements.
 
-> **NOTE**: The {productname} 5.10.6 SaxParser method now works the same way as it does in {productname} 6.
+NOTE: The {productname} 5.10.6 SaxParser method now works the same way as it does in {productname} 6.
 === Notifications did not properly reposition when toggling fullscreen mode
 
 A {productname} toolbar option, *Fullscreen*, toggles the {productname} editor between the size it takes by default and, as the toolbar’s name suggests, fullscreen. Fullscreen is the largest size available to the editor (ie, taking up all the space available to {productname} in the browser).

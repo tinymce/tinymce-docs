@@ -9,13 +9,13 @@
 
 * xref:newfeatures[New features]
 * xref:enhancements[Enhancements]
-* xref:accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
+* xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
 * xref:accompanyingpremiumskinsandiconpackschanges[Accompanying Premium Skins and Icon Packs changes]
-* xref:accompanyingpremiumself-hostedserver-sidecomponentchanges[Accompanying Premium self-hosted server-side component changes]
-* xref:generalbugfixes[General bug fixes]
+* xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
+* xref:general-bug-fixes[General bug fixes]
 * xref:deprecatedfeatures[Deprecated features]
 * xref:knownissues[Known issues]
-* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
+* xref:upgrading-to-the-latest-version-of-tinymce-5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
@@ -95,7 +95,7 @@ For information on the `URI` API, see: xref:apis/tinymce.util.uri.adoc[URI].
 * Changed the type signature for `editor.selection.getRng()` incorrectly returning `null`.
 * Changed some `SaxParser` regular expressions to improve performance.
 
-[[accompanyingpremiumpluginchanges]]
+[[accompanying-premium-plugin-changes]]
 == Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {productname} 5.7.
@@ -202,7 +202,7 @@ The *Premium Skins and Icon Packs* release includes the following bug fixes:
 
 For information on using premium skins and icon packs, see: xref:enterprise/premium-skins-and-icon-packs/index.adoc[Premium Skins and Icon Packs].
 
-[[accompanyingpremiumself-hostedserver-sidecomponentchanges]]
+[[accompanying-premium-self-hosted-server-side-component-changes]]
 == Accompanying Premium self-hosted server-side component changes
 
 The {productname} 5.7 release includes accompanying changes affecting the {productname} *self-hosted* services for the following plugins:
@@ -224,7 +224,7 @@ For information on:
 * The Enhanced Media Embed plugin, see: xref:plugins/premium/mediaembed.adoc[Enhanced Media Embed plugin].
 * Deploying the server-side components, see: xref:enterprise/server/index.adoc[Server-side component installation].
 
-[[generalbugfixes]]
+[[general-bug-fixes]]
 == General bug fixes
 
 {productname} 5.7 provides fixes for the following bugs:

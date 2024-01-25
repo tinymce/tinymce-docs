@@ -1,12 +1,14 @@
 site:
-  title: TinyMCE Documentation
-  url: https://tiny.cloud/docs
+  title: TinyMCE 5 Documentation
+  url: https://www.tiny.cloud/docs
   start_page: tinymce::index.adoc
 content:
   sources:
   - url: ./
     branches: HEAD
     start_path: ./
+urls:
+  html_extension_style: indexify
 ui:
   bundle:
     url: https://tiny-cloud-docs-antora-themes-staging.s3.amazonaws.com/ui-bundle.zip

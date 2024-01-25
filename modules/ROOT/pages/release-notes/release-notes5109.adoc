@@ -7,11 +7,12 @@
 
 {productname} 5.10.9 was released for {enterpriseversion} and {cloudname} on Wednesday, November 15^th^, 2023. It includes {productname} 5.10.9. These release notes provide an overview of the changes for {productname} 5.10.9, including:
 
-* xref:securityfixes[Security fixes]
-* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
+* xref:security-fixes[Security fixes]
+* xref:upgrading-to-the-latest-version-of-tinymce-5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
+[[security-fixes]]
 == Security fixes
 
 {productname} 5.10.9 provides a fix for the following security issue:
@@ -22,9 +23,9 @@ A https://researchgate.net/publication/266654651_mXSS_attacks_Attacking_well-sec
 
 This vulnerability also impacts these related TinyMCE APIs and plugins:
 
-* xref:api/tinymce/tinymce.editor.adoc#getcontent[`tinymce.Editor.getContent({ format: 'raw' })`].
-* xref:api/tinymce/tinymce.editor.adoc#resetcontent[`tinymce.Editor.resetContent()`].
-* xref:plugins/autosave.adoc[Autosave] open source plugin.
+* xref:apis/tinymce.editor.adoc#getcontent[`tinymce.Editor.getContent({ format: 'raw' })`].
+* xref:apis/tinymce.editor.adoc#resetcontent[`tinymce.Editor.resetContent()`].
+* xref:plugins/opensource/autosave.adoc[Autosave] open source plugin.
 
 This vulnerability has been patched in {productname} 5.10.9 by:
 

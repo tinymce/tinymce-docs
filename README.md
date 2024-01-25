@@ -13,7 +13,7 @@ This project is built using [Antora](https://antora.org/).
 If you would like to contribute to the TinyMCE project please read the TinyMCE Documentation Contributor’s Guide at either:
 
 - [TinyMCE Documentation - Contributor's Guide](https://www.tiny.cloud/docs/configure/contributing-docs/).
-- [GitHub - How to contribute to TinyMCE’s documentation](https://github.com/tinymce/tinymce-docs/blob/staging/docs-6/CONTRIBUTING.md#how-to-contribute-to-tinymces-documentation).
+- [GitHub - How to contribute to TinyMCE’s documentation](https://github.com/tinymce/tinymce-docs/blob/release/docs-6/CONTRIBUTING.md#how-to-contribute-to-tinymces-documentation).
 
 ## Working on TinyMCE documentation
 

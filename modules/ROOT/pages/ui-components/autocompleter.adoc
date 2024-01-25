@@ -96,7 +96,7 @@ This is the standard item for the autocompleter. If no type is specified, autoco
 | icon
 | string
 | optional
-| Name of the icon to be displayed. Must be a either single unicode character or an icon from: the xref:advanced/editor-icon-identifiers.adoc[icon pack], a xref:advanced/creating-an-icon-pack.adoc[custom icon pack], or an icon added using the xref:apis/tinymce.editor.ui.registry.adoc#addIcon[`addIcon` API].
+| Name of the icon to be displayed. Must be a either single unicode character or an icon from: the xref:advanced/editor-icon-identifiers.adoc[icon pack], a xref:advanced/creating-an-icon-pack.adoc[custom icon pack], or an icon added using the xref:api/tinymce.editor.ui/tinymce.editor.ui.registry.adoc#addIcon[`addIcon` API].
 |===
 
 [source, js]

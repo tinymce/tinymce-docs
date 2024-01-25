@@ -3,7 +3,7 @@
 
 include::partial$misc/requires_5_2v.adoc[]
 
-The *quickbars_image_toolbar* option configures the Quick Image toolbar provided by the link:{baseurl}/plugins/opensource/quickbars[quickbars plugin]. To change the buttons on the Quick Image toolbar, provide a space-separated string of link:{baseurl}/advanced/available-toolbar-buttons/[toolbar button names]. The Quick Image toolbar is intended for image-related buttons, but any link:{baseurl}/advanced/available-toolbar-buttons/[{productname} toolbar buttons] or link:{baseurl}/ui-components/toolbarbuttons[custom toolbar buttons] are allowed.
+The *quickbars_image_toolbar* option configures the Quick Image toolbar provided by the xref:plugins/opensource/quickbars[quickbars plugin]. To change the buttons on the Quick Image toolbar, provide a space-separated string of xref:advanced/available-toolbar-buttons/[toolbar button names]. The Quick Image toolbar is intended for image-related buttons, but any xref:advanced/available-toolbar-buttons/[{productname} toolbar buttons] or xref:ui-components/toolbarbuttons[custom toolbar buttons] are allowed.
 
 To disable the Quick Image toolbar, set `quickbars_image_toolbar` to `false`.
 

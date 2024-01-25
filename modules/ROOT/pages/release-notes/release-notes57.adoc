@@ -50,7 +50,7 @@ Notifications opened with the Notifications API will now remain visible when the
 
 For information on:
 
-* The {productname} `setProgress()` API, see xref:apis/tinymce.editor.adoc#setProgressState[Editor API - `setProgressState`].
+* The {productname} `setProgress()` API, see xref:api/tinymce/tinymce.editor.adoc#setProgressState[Editor API - `setProgressState`].
 * The Notifications API, see xref:advanced/creating-custom-notifications.adoc[Create custom notifications].
 
 === Table widths are now retained when copying and pasting tables
@@ -80,7 +80,7 @@ For information on the `TableModified` event, see: xref:plugins/opensource/table
 
 The {productname} `URI` API now supports parsing IPv6 URLs. This enhancement was a community contribution by dev7355608.
 
-For information on the `URI` API, see: xref:apis/tinymce.util.uri.adoc[URI].
+For information on the `URI` API, see: xref:api/tinymce.util/tinymce.util.uri.adoc[URI].
 
 === Additional enhancements
 

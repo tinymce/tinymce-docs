@@ -1,7 +1,7 @@
 [[menu]]
 == `menu`
 
-This option allows you to specify which menus should appear on {productname}'s menu bar and the link:{baseurl}/advanced/available-menu-items/[items] that should appear within the menus themselves.
+This option allows you to specify which menus should appear on {productname}'s menu bar and the xref:advanced/available-menu-items/[items] that should appear within the menus themselves.
 
 To specify the menus that should appear on {productname}'s menu bar, the menu option should be provided with a JavaScript object containing a property for each menu. These properties should contain a JavaScript object themselves with properties `title` and `items`.
 

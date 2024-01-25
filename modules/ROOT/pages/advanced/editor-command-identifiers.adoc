@@ -22,7 +22,7 @@
 [[executablecommands]]
 == Executable commands
 
-The following tables show the existing editor commands. These commands are provided by `tinymce` and not by the browser's internal commands. These commands can be executed using the xref:apis/tinymce.editor.adoc#execCommand[execCommand] function.
+The following tables show the existing editor commands. These commands are provided by `tinymce` and not by the browser's internal commands. These commands can be executed using the xref:api/tinymce/tinymce.editor.adoc#execCommand[execCommand] function.
 
 [[listingcoreandplugineditorcommands]]
 === Listing core and plugin editor commands
@@ -379,7 +379,7 @@ include::partial$commands/codesample-cmds.adoc[]
 
 The following commands require the xref:plugins/premium/comments/index.adoc[Comments (`tinycomments`)] plugin.
 
-include::partial$commands/comments-cmds.adoc[]
+include::partial$commands/tinycomments-cmds.adoc[]
 
 [[directionality]]
 ==== Directionality
@@ -619,7 +619,7 @@ tinymce.execCommand('mceToggleEditor', false, '<editor_id>');
 | Removes an editor instance with the specified ID.
 
 | mceToggleEditor
-| Runs mceAddEditor if an editor is not detected for the specified ID, otherwise it runs either xref:apis/tinymce.editor.adoc#hide[hide] if the editor is visible or xref:apis/tinymce.editor.adoc#show[show] if it is not visible.
+| Runs mceAddEditor if an editor is not detected for the specified ID, otherwise it runs either xref:api/tinymce/tinymce.editor.adoc#hide[hide] if the editor is visible or xref:api/tinymce/tinymce.editor.adoc#show[show] if it is not visible.
 |===
 
 [[querycommandstates]]
@@ -640,7 +640,7 @@ tinymce.activeEditor.editorCommands.commands.state;
 [[availablequerycommandstates]]
 === Available query command states
 
-The following command states can be queried using the xref:apis/tinymce.editor.adoc#queryCommandState[queryCommandState] API.
+The following command states can be queried using the xref:api/tinymce/tinymce.editor.adoc#queryCommandState[queryCommandState] API.
 
 |===
 | Command | Description
@@ -735,7 +735,7 @@ tinymce.activeEditor.editorCommands.commands.value;
 [[availablequerycommandvalues]]
 === Available query command values
 
-The following command values can be queried using the xref:apis/tinymce.editor.adoc#queryCommandValue[queryCommandValue] API.
+The following command values can be queried using the xref:api/tinymce/tinymce.editor.adoc#queryCommandValue[queryCommandValue] API.
 
 |===
 | Command | Description

@@ -129,7 +129,7 @@ include::partial$misc/requires_5_2v.adoc[]
 
 | SwitchMode
 | `{ mode: string }`
-| Fired when the editor mode is changed. The available modes are "design" and "readonly". Additional modes can be registered using {productname} API xref:apis/tinymce.editormode.adoc#register['tinymce.activeEditor.mode.register()'].
+| Fired when the editor mode is changed. The available modes are "design" and "readonly". Additional modes can be registered using {productname} API xref:api/tinymce/tinymce.editormode.adoc#register['tinymce.activeEditor.mode.register()'].
 
 | ScrollWindow
 | (Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll_event[scroll event])
@@ -263,7 +263,7 @@ include::partial$misc/requires_5_9v.adoc[]
 
 | Dirty
 | N/A
-| Fired when the editor transitions from a "pristine" state to a "dirty" state. The editor is "dirty" when xref:apis/tinymce.undomanager.adoc[an undo level] has been _created_ since initialization or the last saved state. To check if the editor is "dirty", use the xref:apis/tinymce.editor.adoc#isDirty[`editor.isDirty` API].
+| Fired when the editor transitions from a "pristine" state to a "dirty" state. The editor is "dirty" when xref:api/tinymce/tinymce.undomanager.adoc[an undo level] has been _created_ since initialization or the last saved state. To check if the editor is "dirty", use the xref:api/tinymce/tinymce.editor.adoc#isDirty[`editor.isDirty` API].
 
 | CloseWindow
 | `{ dialog: DialogApi }`
@@ -275,7 +275,7 @@ include::partial$misc/requires_5_9v.adoc[]
 
 | ProgressState
 | `{ state: boolean, time?: number }`
-| Fired when a change to the editor progress state is scheduled using the {productname} API xref:apis/tinymce.editor.adoc#setProgressState[`tinymce.activeEditor.setProgressState()`].
+| Fired when a change to the editor progress state is scheduled using the {productname} API xref:api/tinymce/tinymce.editor.adoc#setProgressState[`tinymce.activeEditor.setProgressState()`].
 
 | AfterProgressState
 | `{ state: boolean }`
@@ -292,7 +292,7 @@ include::partial$misc/requires_5_7v.adoc[]
 
 | SetAttrib
 | `{ attrElm: Element, attrName: string, attrValue: string }`
-| Fired when an attribute is updated using the editor xref:apis/tinymce.dom.domutils.adoc[DOMUtils API].
+| Fired when an attribute is updated using the editor xref:api/tinymce.dom/tinymce.dom.domutils.adoc[DOMUtils API].
 
 | ResizeEditor
 | N/A

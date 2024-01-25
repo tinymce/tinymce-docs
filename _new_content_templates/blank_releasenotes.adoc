@@ -91,7 +91,7 @@ The {productname} vnumtxt release includes an accompanying release of the *<<Pre
 
 * {blank}+++<Description>++++++</Description>+++
 
-For information on the <<Premium Plugin Name>> plugin, see: link:{baseurl}/plugins/<<Premium Plugin Name>>/[<<Premium Plugin Name>> plugin].
+For information on the <<Premium Plugin Name>> plugin, see: xref:plugins/<<Premium Plugin Name>>/[<<Premium Plugin Name>> plugin].
 
 == Accompanying Premium Skins and Icon Packs changes
 
@@ -103,7 +103,7 @@ The {productname} vnumtxt release includes an accompanying release of the *Premi
 Add description here.
 ////
 
-For information on using premium skins and icon packs, see: link:{baseurl}/enterprise/premium-skins-and-icon-packs/[Premium Skins and Icon Packs].
+For information on using premium skins and icon packs, see: xref:enterprise/premium-skins-and-icon-packs/[Premium Skins and Icon Packs].
 
 === Premium Skins and Icon Packs - Bug fixes
 
@@ -113,7 +113,7 @@ The *Premium Skins and Icon Packs* release includes the following bug fixes:
 Add description here.
 ////
 
-For information on using premium skins and icon packs, see: link:{baseurl}/enterprise/premium-skins-and-icon-packs/[Premium Skins and Icon Packs].
+For information on using premium skins and icon packs, see: xref:enterprise/premium-skins-and-icon-packs/[Premium Skins and Icon Packs].
 
 [[accompanying-premium-self-hosted-server-side-component-changes]]
 == Accompanying Premium self-hosted server-side component changes
@@ -132,15 +132,15 @@ The Java server-side components have been updated to the following versions:
 * `ephox-hyperlinking.war`: X.Y.Z
 * `ephox-image-proxy.war`: X.Y.Z
 
-This version requires Java 8 or higher. For information on the removal of Java 7 support, see: link:{baseurl}/release-notes/release-notes53/#removalofjava7support[Removal of Java 7 support for TinyMCE 5.3 and later].
+This version requires Java 8 or higher. For information on the removal of Java 7 support, see: xref:release-notes/release-notes53/#removalofjava7support[Removal of Java 7 support for TinyMCE 5.3 and later].
 
 For information on:
 
-* The Spell Checker Pro plugin, see: link:{baseurl}/plugins/premium/tinymcespellchecker/[Spell Checker Pro plugin].
-* The Link Checker plugin, see: link:{baseurl}/plugins/premium/linkchecker/[Link Checker plugin].
-* The Image Tools plugin, see: link:{baseurl}/plugins/opensource/imagetools/[Image Tools plugin].
-* The Enhanced Media Embed plugin, see: link:{baseurl}/plugins/premium/mediaembed/[Enhanced Media Embed plugin].
-* Deploying the server-side components, see: link:{baseurl}/enterprise/server/[Server-side component installation].
+* The Spell Checker Pro plugin, see: xref:plugins/premium/tinymcespellchecker/[Spell Checker Pro plugin].
+* The Link Checker plugin, see: xref:plugins/premium/linkchecker/[Link Checker plugin].
+* The Image Tools plugin, see: xref:plugins/opensource/imagetools/[Image Tools plugin].
+* The Enhanced Media Embed plugin, see: xref:plugins/premium/mediaembed/[Enhanced Media Embed plugin].
+* Deploying the server-side components, see: xref:enterprise/server/[Server-side component installation].
 
 === Updating the self-hosted server-side components
 
@@ -157,8 +157,8 @@ The new versions of the server-side services provide updates for the Java-based 
 
 For information on:
 
-* Deploying the server-side components, see: link:{baseurl}/enterprise/server/[Server-side component installation].
-* Deploying the server-side components using Docker, see: link:{baseurl}/enterprise/server/dockerservices/[Containerized service deployments].
+* Deploying the server-side components, see: xref:enterprise/server/[Server-side component installation].
+* Deploying the server-side components using Docker, see: xref:enterprise/server/dockerservices/[Containerized service deployments].
 
 == General bug fixes
 

@@ -7,7 +7,7 @@ The `toolbar_groups` option creates a toolbar button that displays a collection 
 
 NOTE: The `toolbar_groups` feature is _only_ supported when using the `floating` toolbar mode. If the `toolbar_groups` option is used with other toolbar modes, the toolbar group button will not be displayed and a warning message will be printed in the console.
 
-This option accepts an object, mapping the button name to the group configuration. For details on configuring toolbar groups, see: link:{baseurl}/ui-components/typesoftoolbarbuttons/#grouptoolbarbutton[`group toolbar button configuration`].
+This option accepts an object, mapping the button name to the group configuration. For details on configuring toolbar groups, see: xref:ui-components/typesoftoolbarbuttons.adoc#grouptoolbarbutton[`group toolbar button configuration`].
 
 *Type:* `Object`
 

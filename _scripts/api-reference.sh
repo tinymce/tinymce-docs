@@ -13,17 +13,17 @@ rm -rf _data
 rm -rf "$API_TMPDIR"
 mkdir "$API_TMPDIR"
 curl -s "$TARBALL_URL" | tar xzf - -C "$API_TMPDIR" --strip-components 1
-npx moxiedoc "$API_TMPDIR/modules/tinymce/src/core/main/ts" -t antora -o "$API_TMPDIR/tinymce-api-reference.zip"
+npx moxiedoc "$API_TMPDIR/modules/tinymce/src/core/main/ts" -t antora -s "legacy" -o "$API_TMPDIR/tinymce-api-reference.zip"
 unzip -o "$API_TMPDIR/tinymce-api-reference.zip"
 
 # remove old api adoc pages
-rm -rf modules/ROOT/pages/apis/
+rm -rf modules/ROOT/pages/api/
 
 # removed old static api html pages (clear cache), it can corrupt the build
-rm -rf build/site/_/tinymce/6.0/apis/
+rm -rf build/site/_/tinymce/5/api/
 
 # move newly generated adoc pages, antora will then generate new static html pages
-mv _data/antora modules/ROOT/pages/apis
+mv _data/antora/api modules/ROOT/pages/
 
 # move api navigation
 mv _data/moxiedoc_nav.adoc modules/ROOT/moxiedoc_nav.adoc

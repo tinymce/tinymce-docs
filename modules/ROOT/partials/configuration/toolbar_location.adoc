@@ -3,7 +3,7 @@
 
 include::partial$misc/requires_5_2v.adoc[]
 
-The `toolbar_location` option is used to position the link:{baseurl}/configure/editor-appearance/#toolbar[toolbar] and link:{baseurl}/configure/editor-appearance/#menubar[menubar]. The default behavior is to position the toolbar and menu bar above the content area. Setting this option to `bottom` positions the toolbar and menu bar below the content area. This option works in link:{baseurl}/general-configuration-guide/use-tinymce-classic/[classic editor] (Iframe) mode and inline mode.
+The `toolbar_location` option is used to position the xref:configure/editor-appearance.adoc#toolbar[toolbar] and xref:configure/editor-appearance.adoc#menubar[menubar]. The default behavior is to position the toolbar and menu bar above the content area. Setting this option to `bottom` positions the toolbar and menu bar below the content area. This option works in xref:general-configuration-guide/use-tinymce-classic/[classic editor] (Iframe) mode and inline mode.
 
 Setting this option to `auto`, positions the toolbar and menu bar either:
 * Above the content area by default.

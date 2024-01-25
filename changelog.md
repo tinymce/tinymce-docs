@@ -6,6 +6,9 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+### 2024-01-18
+
+- DOC-1925: Add `Skins and Icons examples` to examples.adoc index page
 
 ### 2023-01-15
 

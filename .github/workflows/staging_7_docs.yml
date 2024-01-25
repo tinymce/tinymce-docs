@@ -1,4 +1,4 @@
-name: Staging > Tiny 6 Docs
+name: Staging > Tiny 7 Docs
 
 on:
   workflow_dispatch:
@@ -6,16 +6,16 @@ on:
     paths:
       - '**'
     branches:
-      - 'staging/docs-6'
+      - 'staging/docs-7'
 
 jobs:
   build:
     name: Build Docs and Deploy
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     strategy:
       matrix:
-        node-version: [14]
+        node-version: [16]
 
     steps:
     - uses: actions/checkout@v1
@@ -26,22 +26,22 @@ jobs:
         cache: 'yarn'
         node-version: ${{ matrix.node-version }}
 
-    - name: (Staging - Docs 6) Install dependencies
+    - name: (Staging - Docs 7) Install dependencies
       run: yarn install
 
-    - name: (Staging - Docs 6) Build API References
+    - name: (Staging - Docs 7) Build API References
       run: yarn build
 
-    - name: (Staging - Docs 6) Build Website
+    - name: (Staging - Docs 7) Build Website
       run: yarn generate-site ./antora-playbook-staging.yml
 
-    - name: (Staging - Docs 6) Rename sitemap.xml (Temporary solution - Amit)
+    - name: (Staging - Docs 7) Rename sitemap.xml (Temporary solution - Amit)
       shell: bash
       run: |
         mv ./build/site/sitemap.xml ./build/site/antora-sitemap.xml
 
-    - name: (deploy) Upload to S3
-      run: aws s3 sync --acl=public-read --delete ./build/site s3://tiny-cloud-antora-docs-staging/docs
+    - name: (deploy) Upload website to S3
+      run: aws s3 sync --acl=public-read --delete ./build/site s3://tiny-cloud-antora-docs-staging/docs --exclude 'tinymce/*' --include 'tinymce/latest/*' --include 'tinymce/7/*'
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}

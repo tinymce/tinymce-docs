@@ -14,11 +14,11 @@ The process of initializing an editor involves several steps.
 
 . The integrator initializes one or more editors on the webpage, commonly accomplished through the `tinymce.init({ ... })` method. 
 +
-The `selector` property of the `init` method determines which elements should be replaced with editor instances. For example if the selector is `textarea` and there are 5 textarea elements on the page, 5 editor instances will be created.
-
+. The `selector` property of the `init` method determines which elements should be replaced with editor instances. For example: if the selector is `textarea` and there are 5 textarea elements on the page, 5 editor instances will be created.
++
 Each editor instance performs the same initialization sequence and then dispatches an `init` event. This event is dispatched even if the the editor is not visible.
-
-**The 'init' event serves as the conclusive indicator that the editor has completed its loading process**. At this point, the editor has been successfully initialized and is ready for user interaction. 
++
+. **The 'init' event serves as the conclusive indicator that the editor has completed its loading process**. At this point, the editor has been successfully initialized and is ready for user interaction. 
 
 == How are editor loads counted?
 

@@ -7,6 +7,10 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### Unreleased
 
 
+### 2024-01-30
+
+- DOC-2240: add new `understanding-editor-loads.adoc` to `how-to-guide` section.
+
 ### 2023-01-15
 
 - DOC-2235: changes and updates to `invalid-api-key.adoc` page.

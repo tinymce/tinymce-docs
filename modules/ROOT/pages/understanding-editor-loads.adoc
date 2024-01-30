@@ -6,7 +6,7 @@
 == Understanding editor loads for {productname}
 
 [IMPORTANT]
-This information is only relevant to Tiny Cloud users. Users who self-host the open source version of {productname} are not subject to editor load restrictions, but must comply with the ////<Insert link>[open source license].//// 
+This information is only relevant to Tiny Cloud users. Users who self-host the open source version of {productname} are not subject to editor load restrictions, but must comply with the https://github.com/tinymce/tinymce/blob/master/LICENSE.TXT[open source license]. 
 
 An editor load is the event that occurs each time {productname} is initialized in your application. The editor dispatches the 'init' event to indicate a successful load. For example, if 100 users load {productname} 10 times each, the result would be 1,000 editor loads. 
 

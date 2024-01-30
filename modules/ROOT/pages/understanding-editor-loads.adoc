@@ -22,7 +22,7 @@ Each editor instance performs the same initialization sequence and then dispatch
 
 == How are editor loads counted?
 
-An editor load is counted **each time {productname} is initialized on the page**. 
+An editor load is counted each time a new {productname} editor instance completes the initialization sequence and dispatches an `init` event.
 
 == What happens if I have multiple editors on a page?
 

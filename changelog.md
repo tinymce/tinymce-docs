@@ -7,6 +7,10 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 ### Unreleased
 
 
+### 2024-01-31
+
+- DOC-2275: updates to `cloud-troubleshooting.adoc` with new links to `invalid-api-key.adoc` page.
+
 ### 2024-01-30
 
 - DOC-2240: add new `understanding-editor-loads.adoc` to `how-to-guide` section.

@@ -7,10 +7,10 @@ When {cloudname} detects a problem, it will show an editor notification containi
 
 NOTE: The wording of the notifications shown here may differ from the actual notifications from {cloudname}.
 
-[[A-valid-API-key-is-required-starting-2024-to-continue-using-TinyMCE.-Please-alert-your-admin-to-sign-up-to-get-your-free-API-key.]]
-== "A valid API key is required, starting 2024, to continue using TinyMCE. Please alert your admin to sign-up to get your free API key."
+[[A-valid-API-key-is-required-to-continue-using-TinyMCE.-Please-alert-the-admin-to-check-the-current-API-key]]
+== "A valid API key is required to continue using {productname}. **Please alert the admin** to check the current API key. xref:invalid-api-key.adoc[Click here to learn more.]"
 
-=== Cause
+=== Cause (1)
 
 This notification is *only shown* when either:
 
@@ -24,7 +24,7 @@ Such as:
 <script src="{cdnurl}" referrerpolicy="origin"></script>
 ----
 
-=== Solution
+=== Solution (1)
 
 Update the `+src+` URL to include your (website or application developer's) {cloudname} API Key. Your API key should replace the string `+no-api-key+`. For example, if your API is `+abcd1234+`:
 
@@ -37,10 +37,9 @@ To retrieve your API key, or to sign up for an API key, visit: link:{accountsign
 
 NOTE: Visit our xref:invalid-api-key.adoc[Invalid API key] page for more information on how to fix a `invalid API key` with {productname}.
 
-[[A-valid-API-key-is-required-starting-2024-to-continue-using-TinyMCE.-Please-alert-your-admin-to-check-the-current-API-key]]
-== "A valid API key is required, starting 2024, to continue using TinyMCE. Please alert your admin to check the current API key."
+'''
 
-=== Cause
+=== Cause (2)
 
 This notification is shown when the API key provided cannot be found on the {cloudname} server.
 
@@ -50,7 +49,7 @@ The `+apiKey+` must be:
 * comprised of certain characters, and
 * created with a {cloudname} account on the link:{accountsignup}/[{accountpage} page].
 
-=== Solution
+=== Solution (2)
 
 Check the `+apiKey+` provided in the script tag:
 
@@ -60,8 +59,10 @@ Check the `+apiKey+` provided in the script tag:
 
 NOTE: Visit our xref:invalid-api-key.adoc[Invalid API key] page for more information on how to fix a `invalid API key` with {productname}.
 
-[[This-domain-is-not-registered-with-Tiny-Cloud.-To-continue-using-TinyMCE-a-registered-domain-is-required-starting-2024.-Please-alert-your-admin-to-review-the-approved-domains-and-add-this-one-if-required.]]
-== "This domain is not registered with Tiny Cloud. To continue using TinyMCE, a registered domain is required, starting 2024. Please alert your admin to review the approved domains and add this one if required."
+'''
+
+[[This-domain-is-not-registered-in-the-TinyMCE-Customer-Portal.-Please-alert-the-admin-to-add-it-to-the-approved-domains-to-continue-using-TinyMCE.]]
+== "This domain is not registered in the {productname} Customer Portal. **Please alert the admin** to add it to the approved domains to continue using {productname}. xref:invalid-api-key.adoc[Click here to learn more.]"
 
 === Cause
 
@@ -80,6 +81,8 @@ In the section called *Request Headers* there should be a field for *Referer*. T
 
 If the `+Referer+` is correct for the site, ensure that the domain is included in your list of approved domains on link:{accountpageurl}/[{accountpage}]. If the `+Referer+` is not what you are expecting, you may need to adjust your application's https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer[*Referer* header] settings.
 
+'''
+
 [[were-unable-to-check-your-domain-because-the-referer-header-is-missing-please-read-the-guide-on-how-to-ensure-your-referer-header-is-present-so-we-can-then-customize-your-editor-experience]]
 == "We’re unable to check your domain because the referer header is missing. Please read the Guide on how to ensure your referer header is present, so we can then customize your editor experience."
 
@@ -97,6 +100,8 @@ Identify which browser setting or extension is responsible for blocking the *Ref
 * https://addons.mozilla.org/en-US/firefox/addon/referercontrol/[Firefox]
 
 Once you have identified the setting or extension, modify it to allow just the `+Origin+` of the `+Referer+` to be sent. Alternatively, disable the extension or setting for any pages using {cloudname}.
+
+'''
 
 [[the-___-premium-plugin-is-not-enabled-on-your-api-key-upgrade-your-account]]
 == "The ___ premium plugin is not enabled on your API key. Upgrade your account."

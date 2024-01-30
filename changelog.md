@@ -6,6 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+- DOC-2275: updates to `cloud-troubleshooting.adoc` with new links to `invalid-api-key.adoc` page.
 
 ### 2024-01-30
 

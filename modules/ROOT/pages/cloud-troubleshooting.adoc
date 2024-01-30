@@ -3,7 +3,7 @@
 :description: Causes and solutions to common issues when using Tiny Cloud
 :keywords: tinymce, cloud, script, textarea, apiKey, troubleshooting, banners, domain, referer
 
-When {cloudname} detects a problem, it will display an editor notification providing information about the issue. This page describes the common {cloudname} error notifications along with their causes and solutions.
+When {cloudname} detects a problem, it will show an editor notification containing information about the problem. This page describes the cause and solution for common {cloudname} error notifications.
 
 NOTE: The wording of the notifications shown here may differ from the actual notifications from {cloudname}.
 
@@ -12,12 +12,12 @@ NOTE: The wording of the notifications shown here may differ from the actual not
 
 === Cause (1)
 
-This notification can be shown when:
+This notification is *only shown* when either:
 
 * An `+apiKey+` is not provided in the script tag.
 * `+no-api-key+` is provided as the API key.
 
-For example:
+Such as:
 
 [source,html,subs="attributes+"]
 ----
@@ -41,7 +41,7 @@ NOTE: Visit our xref:invalid-api-key.adoc[Invalid API key] page for more informa
 
 === Cause (2)
 
-Additionally, this notification can be shown when the provided API key cannot be found on the {cloudname} server.
+This notification is shown when the API key provided cannot be found on the {cloudname} server.
 
 The `+apiKey+` must be:
 

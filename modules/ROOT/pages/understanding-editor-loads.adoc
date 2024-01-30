@@ -14,26 +14,9 @@ The process of initializing an editor involves several steps.
 
 . The integrator initializes one or more editors on the webpage, commonly accomplished through the `tinymce.init({ ... })` method. 
 +
-Regardless of the method used, the following pattern is adhered to when adding an editor to a webpage:
-+
-.. Create a new editor instance object.
-.. Add the editor instance to the editor manager.
-.. Call `editor.render()`.
+The `selector` property of the `init` method determines which elements should be replaced with editor instances. For example if the selector is `textarea` and there are 5 textarea elements on the page, 5 editor instances will be created.
 
-. Calling `editor.render()` triggers a sequence of functions that prepare the editor for user interaction. Notably:
-+
-.. All required scripts, including theme, model, language, icons, skin, and plugins, are loaded and initialized.
-.. The editor UI is rendered.
-.. The target element on the webpage is transformed into an editor instance.
-.. Content CSS is loaded onto the page.
-.. Initial content is loaded into the editor from the target element.
-
-. If all these steps are successful, the final initialization steps are completed, including:
-+
-.. Setting the `editor.initialized` property to `true`.
-.. Dispatching the `init` event.
-.. Marking the editor as the active editor in the editor manager.
-.. Setting the selection to a valid position in the editor and making it focused so the user can interact with it.
+Each editor instance performs the same initialization sequence and then dispatches an `init` event. This event is dispatched even if the the editor is not visible.
 
 **The 'init' event serves as the conclusive indicator that the editor has completed its loading process**. At this point, the editor has been successfully initialized and is ready for user interaction. 
 

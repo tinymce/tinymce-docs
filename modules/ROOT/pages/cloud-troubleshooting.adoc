@@ -56,10 +56,11 @@ The `+apiKey+` must be:
 
 ==== Solution
 
-* Check the `apiKey` provided in the script tag:
-** Remove any leading or trailing spaces
-** Remove any other characters that are not in your `apiKey`. If you are using variable substitution, ensure that the variable is substituting properly
-** Ensure the `apiKey` matches the API key shown at {accountpageurl}.
+Check the `apiKey` provided in the script tag:
+
+* Remove any leading or trailing spaces
+* Remove any other characters that are not in your `apiKey`. If you are using variable substitution, ensure that the variable is substituting properly
+* Ensure the `apiKey` matches the API key shown at {accountpageurl}.
 
 NOTE: Visit our xref:invalid-api-key.adoc[Invalid API key] page for more information on how to fix a `invalid API key` with {productname}.
 

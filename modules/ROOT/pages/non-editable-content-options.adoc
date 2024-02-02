@@ -1,0 +1,20 @@
+= Non-editable content
+:navtitle: Non-editable content
+:description: Options for creating non-editable content.
+:keywords: noneditable, non-editable, editable, multi-root, multiroot
+
+include::partial$configuration/editable_class.adoc[]
+
+include::partial$configuration/editable_root.adoc[]
+
+// TODO: Add demo for editable_class and editable_root
+
+// TODO: Add admonition back to ie-template-creation.adoc for a practical example of multi-root editing
+
+include::partial$configuration/noneditable_class.adoc[]
+
+// TODO: Add demo for noneditable_class
+
+include::partial$configuration/noneditable_regexp.adoc[]
+
+// TODO: Add demo for noneditable_regexp

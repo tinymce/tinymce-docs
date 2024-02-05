@@ -3,6 +3,7 @@
 :description: Options for creating non-editable content.
 :keywords: noneditable, non-editable, editable, multi-root, multiroot
 
+// editable_class and editable_root
 include::partial$configuration/editable_class.adoc[]
 
 include::partial$configuration/editable_root.adoc[]
@@ -12,10 +13,12 @@ include::partial$configuration/editable_root.adoc[]
 [NOTE]
 Visit xref:ie-template-creation.adoc[Template creation example] for a practical example of multi-root editing.
 
+// noneditable_class
 include::partial$configuration/noneditable_class.adoc[]
 
-// TODO: Add demo for noneditable_class
+liveDemo::noneditable-class[]
 
+// noneditable_regexp
 include::partial$configuration/noneditable_regexp.adoc[]
 
 // TODO: improve example to show more practical use case

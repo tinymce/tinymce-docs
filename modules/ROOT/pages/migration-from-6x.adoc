@@ -1,0 +1,64 @@
+= Migrating from TinyMCE 6 to TinyMCE 7
+:navtitle: Migrating from TinyMCE 6
+:description: Guidance for migrating from TinyMCE 6 to TinyMCE 7
+:keywords: migration, considerations, premigration, pre-migration
+
+The process for setting up a basic TinyMCE 7 instance is the same as TinyMCE 6.
+
+Most configuration changes in {productname} 7.0 only affect complex use cases, such as custom plugins and customized user interface components.
+
+This chapter describes the settings that require updating prior to migration; and workaround procedures for deprecated, deleted, and updated features.
+
+It set outs the {productname} 7.0 changes that customers using TinyMCE 6 should be aware of as part of upgrading.
+
+NOTE: For support related to migration, please contact https://support.tiny.cloud/hc/en-us/requests/new[Tiny support].  +
+Open Source users: please report issues in the https://github.com/tinymce/tinymce/[TinyMCE GitHub Repository].
+
+== Contents
+
+* xref:apis[APIs]
+* xref:commands-and-queries[Commands and queries]
+* xref:options[Options]
+* xref:plugins[Plugins]
+* xref:schema[Schema]
+* xref:ui-and-ux-elements-and-components[UI and UX elements and components]
+* xref:security[Security]
+
+== {productname} {productmajorversion} core changes
+
+For additional details on {productname} 7.0 changes, see xref:7.0-release-notes.adoc[{productname} 7.0 release notes].
+
+[[apis]]
+== APIs
+
+...
+
+[[commands-and-queries]]
+== Commands and queries
+
+...
+
+[[options]]
+== Options
+
+...
+
+[[plugins]]
+== Plugins
+
+...
+
+[[schema]]
+== Schema
+
+...
+
+[[ui-and-ux-elements-and-components]]
+== UI and UX elements and components
+
+...
+
+[[security]]
+== Security
+
+...

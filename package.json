@@ -10,8 +10,7 @@
   "scripts": {
     "build": "./-scripts/api-reference.sh",
     "build-local-ref": "./-scripts/api-reference-local.sh",
-    "generate-site": "./-scripts/generate-site.sh",
-    "nodemon-dev": "nodemon --exec yarn generate-site ./antora-playbook-dev.yml",
+    "nodemon-dev": "nodemon --exec yarn antora ./antora-playbook-dev.yml",
     "server": "http-server build/site/ --port 4000",
     "serve": "npm-run-all -p nodemon-dev server"
   },

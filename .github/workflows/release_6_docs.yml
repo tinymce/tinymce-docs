@@ -35,11 +35,6 @@ jobs:
     - name: (Release - Docs 6) Build Website
       run: yarn antora ./antora-playbook-prod.yml
 
-    - name: (Release - Docs 6) Rename sitemap.xml
-      shell: bash
-      run: |
-        mv ./build/site/sitemap.xml ./build/site/antora-sitemap.xml
-
     - name: (deploy) Upload site to S3
       run: aws s3 sync --acl=public-read --delete ./build/site s3://tiny-cloud-antora-docs-production/docs --exclude '*' --include 'tinymce/6/*'
       env:

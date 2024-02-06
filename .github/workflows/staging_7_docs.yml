@@ -35,7 +35,7 @@ jobs:
     - name: (Staging - Docs 7) Build Website
       run: yarn generate-site ./antora-playbook-staging.yml
 
-    - name: (Staging - Docs 7) Rename sitemap.xml (Temporary solution - Amit)
+    - name: (Staging - Docs 7) Rename sitemap.xml
       shell: bash
       run: |
         mv ./build/site/sitemap.xml ./build/site/antora-sitemap.xml

@@ -11,11 +11,11 @@ on:
 jobs:
   build:
     name: Build Docs and Deploy
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     strategy:
       matrix:
-        node-version: [14]
+        node-version: [21]
 
     steps:
     - uses: actions/checkout@v1
@@ -35,13 +35,15 @@ jobs:
     - name: (Staging - Docs 5) Build Website
       run: yarn antora ./antora-playbook-staging.yml
 
-    - name: (Staging - Docs 6) Rename sitemap.xml
-      shell: bash
-      run: |
-        mv ./build/site/sitemap.xml ./build/site/antora-5-sitemap.xml
-
     - name: (deploy) Upload to S3
       run: aws s3 sync --acl=public-read --delete ./build/site s3://tiny-cloud-antora-docs-staging/docs --exclude '*' --include 'tinymce/5/*'
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}
+        AWS_EC2_METADATA_DISABLED: true
+      
+    - name: (deploy) Upload images to S3
+      run: aws s3 sync --acl=public-read ./build/site/_ s3://tiny-cloud-antora-docs-staging/docs/_ --exclude '*' --include 'img'
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}

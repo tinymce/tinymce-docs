@@ -7,15 +7,15 @@
 
 {productname} 5.10.2 was released for {enterpriseversion} and {cloudname} on Monday, November 22^nd^, 2021. It includes {productname} 5.10.2 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.10.2, including:
 
-* xref:accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
-* xref:accompanyingpremiumself-hostedserver-sidecomponentchanges[Accompanying Premium self-hosted server-side component changes]
-* xref:generalbugfixes[General bug fixes]
-* xref:securityfixes[Security fixes]
-* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
+* xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
+* xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
+* xref:general-bug-fixes[General bug fixes]
+* xref:security-fixes[Security fixes]
+* xref:upgrading-to-the-latest-version-of-tinymce-5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
-[[accompanyingpremiumpluginchanges]]
+[[accompanying-premium-plugin-changes]]
 == Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {productname} 5.10.2.
@@ -36,7 +36,7 @@ The {productname} 5.10.2 release includes an accompanying release of the *Page E
 
 For information on the Page Embed plugin, see: xref:plugins/premium/pageembed.adoc[Page Embed plugin].
 
-[[accompanyingpremiumself-hostedserver-sidecomponentchanges]]
+[[accompanying-premium-self-hosted-server-side-component-changes]]
 == Accompanying Premium self-hosted server-side component changes
 
 The {productname} 5.10.2 release includes accompanying changes affecting the {productname} *self-hosted* services for the following plugins:
@@ -85,21 +85,21 @@ For information on:
 * Deploying the server-side components, see: xref:enterprise/server/index.adoc[Server-side component installation].
 * Deploying the server-side components using Docker, see: xref:enterprise/server/dockerservices.adoc[Containerized service deployments].
 
-[[generalbugfixes]]
+[[general-bug-fixes]]
 == General bug fixes
 
 {productname} 5.10.2 provides fixes for the following bugs:
 
 * Internal selectors were appearing in the style list when using the `importcss` plugin.
 
-[[securityfixes]]
+[[security-fixes]]
 == Security fixes
 
 {productname} 5.10.2 provides fixes for the following security issues:
 
 All 3 server-side components have been updated to include dependency updates addressing security issues. This includes _High_ severity vulnerability fixes.
 
-For information on the server-side components updates, see: xref:accompanyingpremiumself-hostedserver-sidecomponentchanges[Accompanying Premium self-hosted server-side component changes].
+For information on the server-side components updates, see: xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes].
 
 :enterprise: true
 

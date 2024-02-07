@@ -9,10 +9,10 @@
 
 * xref:newfeatures[New features]
 * xref:enhancements[Enhancements]
-* xref:accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
-* xref:generalbugfixes[General bug fixes]
-* xref:securityfixes[Security fixes]
-* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
+* xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
+* xref:general-bug-fixes[General bug fixes]
+* xref:security-fixes[Security fixes]
+* xref:upgrading-to-the-latest-version-of-tinymce-5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
@@ -92,7 +92,7 @@ A new optional `name` field that sets a specific name to the format when it's be
 
 For information on the `name` field, see: xref:configure/editor-appearance.adoc#style_formats[User interface - `style_formats`].
 
-[[accompanyingpremiumpluginchanges]]
+[[accompanying-premium-plugin-changes]]
 == Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {productname} 5.6.
@@ -163,7 +163,7 @@ The {productname} 5.6 release includes an accompanying release of the *PowerPast
 *PowerPaste* 5.4.0 also provides the following bug fixes:
 
 * Fixed the `Cut` menu item not working in the latest version of Firefox.
-* Fixed two Cross-Site Scripting (XSS) vulnerability issues. For more information, see: xref:securityfixes[Security fixes].
+* Fixed two Cross-Site Scripting (XSS) vulnerability issues. For more information, see: xref:security-fixes[Security fixes].
 
 For information on the PowerPaste plugin, see: xref:plugins/premium/powerpaste.adoc[PowerPaste plugin].
 
@@ -184,7 +184,7 @@ The {productname} 5.6 release includes an accompanying release of the *Spell Che
 
 For information on the Spell Checker Pro plugin, see: xref:plugins/premium/tinymcespellchecker.adoc[Spell Checker Pro plugin].
 
-[[generalbugfixes]]
+[[general-bug-fixes]]
 == General bug fixes
 
 {productname} 5.6 provides fixes for the following bugs:
@@ -220,7 +220,7 @@ For information on the Spell Checker Pro plugin, see: xref:plugins/premium/tinym
 * Fixed the `mceTableRowType` and `mceTableCellType` commands were not firing the `newCell` event.
 * Fixed the HTML5 `s` element was not recognized when editing or clearing text formatting.
 
-[[securityfixes]]
+[[security-fixes]]
 == Security fixes
 
 {productname} 5.6 provides fixes for the following security issues:

@@ -8,14 +8,14 @@
 {productname} 5.4 was released for {enterpriseversion} and {cloudname} on Thursday, July 23^rd^, 2020. It includes {productname} 5.4.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.4, including:
 
 * xref:tinymce54newfeaturesandenhancements[TinyMCE 5.4 new features and enhancements]
-* xref:accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
-* xref:accompanyingpremiumself-hostedserver-sidecomponentchanges[Accompanying Premium self-hosted server-side component changes]
+* xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
+* xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
 * xref:minorchangesfortinymce54[Minor changes for TinyMCE 5.4]
-* xref:generalbugfixes[General bug fixes]
-* xref:securityfixes[Security fixes]
+* xref:general-bug-fixes[General bug fixes]
+* xref:security-fixes[Security fixes]
 * xref:deprecatedfeatures[Deprecated features]
 * xref:knownissues[Known issues]
-* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
+* xref:upgrading-to-the-latest-version-of-tinymce-5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
@@ -62,7 +62,7 @@ The `block_unsupported_drop` option blocks unsupported images and files from bei
 
 For information on the `block_unsupported_drop` option, see: xref:configure/file-image-upload.adoc#block_unsupported_drop[Image & file options - `block_unsupported_drop`].
 
-[[accompanyingpremiumpluginchanges]]
+[[accompanying-premium-plugin-changes]]
 == Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {productname} 5.4.
@@ -89,7 +89,7 @@ The {productname} 5.4 release includes an accompanying release of the *PowerPast
 
 For information on the PowerPaste plugin, see: xref:plugins/premium/powerpaste.adoc[PowerPaste plugin].
 
-[[accompanyingpremiumself-hostedserver-sidecomponentchanges]]
+[[accompanying-premium-self-hosted-server-side-component-changes]]
 == Accompanying Premium self-hosted server-side component changes
 
 The {productname} 5.4 release includes accompanying changes affecting the {productname} *self-hosted* services for the following plugins:
@@ -145,7 +145,7 @@ For information on:
 * Changed the DOM location of menus so that they display correctly when the editor is in a ShadowRoot.
 * Changed the table plugin to correctly detect all valid header row structures.
 
-[[generalbugfixes]]
+[[general-bug-fixes]]
 == General bug fixes
 
 {productname} 5.4 provides fixes for the following bugs:
@@ -171,7 +171,7 @@ For information on:
 * Fixed Oxide checklist styles not showing when printing.
 * Fixed bug with `scope` attribute not being added to the cells of header rows.
 
-[[securityfixes]]
+[[security-fixes]]
 == Security fixes
 
 {productname} 5.4 provides fixes for the following security issues:

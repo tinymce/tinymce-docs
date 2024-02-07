@@ -1,9 +1,9 @@
 [[extended_valid_elements]]
 == `extended_valid_elements`
 
-This option is very similar to link:{baseurl}/configure/content-filtering/#valid_elements[`valid_elements`]. The only difference between this option and `valid_elements` is that this one gets added to the existing rule set. This can be very useful if the existing rule set is fine but you want to add some specific elements that also should be valid. The default rule set is controlled by the link:{baseurl}/configure/content-filtering/#schema[`schema`] option.
+This option is very similar to xref:configure/content-filtering.adoc#valid_elements[`valid_elements`]. The only difference between this option and `valid_elements` is that this one gets added to the existing rule set. This can be very useful if the existing rule set is fine but you want to add some specific elements that also should be valid. The default rule set is controlled by the xref:configure/content-filtering.adoc#schema[`schema`] option.
 
-When adding a new attribute by specifying an existing element rule (e.g. `img`), the entire rule for that element is over-ridden so be sure to include all valid attributes not just the one you wish to add. See link:{baseurl}/configure/content-filtering/#valid_elements[`valid_elements`] for default rules.
+When adding a new attribute by specifying an existing element rule (e.g. `img`), the entire rule for that element is over-ridden so be sure to include all valid attributes not just the one you wish to add. See xref:configure/content-filtering.adoc#valid_elements[`valid_elements`] for default rules.
 
 The below example replaces the current `img` rule (including the global element rules).
 
@@ -19,7 +19,7 @@ tinymce.init({
 });
 ----
 
-Also see link:{baseurl}/configure/content-filtering/#valid_elements[valid_elements] and link:{baseurl}/configure/content-filtering/#invalid_elements[invalid_elements] for more configuration options.
+Also see xref:configure/content-filtering.adoc#valid_elements[valid_elements] and xref:configure/content-filtering.adoc#invalid_elements[invalid_elements] for more configuration options.
 
 === Using extended_valid_elements to allow script elements
 
@@ -33,6 +33,6 @@ extended_valid_elements : 'script[src|async|defer|type|charset]'
 
 === Interactive example
 
-This example shows you how to use the link:{baseurl}/configure/content-filtering/#extended_valid_elements[extended_valid_elements] option. This option is used to add additional valid elements and attributes.
+This example shows you how to use the xref:configure/content-filtering.adoc#extended_valid_elements[extended_valid_elements] option. This option is used to add additional valid elements and attributes.
 
 liveDemo::valid-elements[]

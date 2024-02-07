@@ -5,6 +5,44 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes/index.adoc[{productname} Release Notes].
 
+== 5.10.9 - 2023-11-15
+
+=== Changed
+* Zero width no-break space (U+FEFF) characters are removed from content passed to `setContent`, `insertContent`, and `resetContent` APIs.
+* Zero width no-break space (U+FEFF) characters in initial content are not loaded into the editor upon initialization.
+
+=== Fixed
+* Specific HTML content containing unescaped text nodes caused mXSS when using undo/redo.
+* Specific HTML content containing unescaped text nodes caused mXSS when using the `getContent` and `setContent` APIs with the `format: 'raw'` option, which also affected the `resetContent` API and the draft restoration feature of the Autosave plugin.
+
+== 5.10.8 - 2023-10-19
+
+=== Fixed
+* Specific HTML content caused mXSS when using undo/redo.
+* Specific HTML content caused mXSS when using the `getContent` and `setContent` APIs with the `format: 'raw'` option, which also affected the `resetContent` API and the draft restoration feature of the Autosave plugin.
+- Notification messages containing HTML were not properly XSS sanitized before being displayed.
+
+== 5.10.7 - 2022-12-06
+
+=== Fixed
+* A cross-site scripting (XSS) vulnerability in TinyMCE alerts which allowed arbitrary JavaScript execution was found and fixed.
+
+== 5.10.6 - 2022-10-19
+
+=== Fixed
+* The `name` and `id` attributes of some elements were incorrectly removed during serialization.
+* Notifications would not properly reposition when toggling fullscreen mode.
+* Toggling fullscreen mode with the `fullscreen` plugin now also fires the `ResizeEditor` event.
+* The URL detection used for `autolink` and smart paste didn't work if a path segment contained valid characters such as `!` and `:`.
+
+== 5.10.5 - 2022-05-25
+
+=== Fixed
+* Base64 data URIs were not extracted correctly during parsing when proceeded by `data:` text.
+* Empty lines that were formatted in a ranged selection using the `format_empty_lines` option were not kept in the serialized content.
+* The `s` element was missing from the default schema text inline elements.
+* Some text inline elements specified via the schema were not removed when empty by default.
+
 == 5.10.4 - 2022-04-27
 
 === Fixed

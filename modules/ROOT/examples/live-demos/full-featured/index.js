@@ -204,15 +204,14 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
 			'common/punctuation/hellip'
 		],
 		typography_ignore: [ 'code' ],
-		advtemplate_list: () => {
-			return Promise.resolve([
-				{
-					id: '1',
-					title: 'Resolving tickets',
-					content: '<p>As we have not heard back from you in over a week, we have gone ahead and resolved your ticket.</p>'
-				},
-				{
-					id: '2',
+    advtemplate_templates: [
+      {
+        id: '1',
+        title: 'Resolving tickets',
+        content: '<p>As we have not heard back from you in over a week, we have gone ahead and resolved your ticket.</p>'
+      },
+      {
+        id: '2',
 					title: 'Quick replies',
 					items: [
 						{
@@ -223,12 +222,11 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
 						{
 							id: '4',
 							title: 'Progress update',
-							content: '</p>Just a quick note to let you know we are still working on your case</p>'
+							content: '<p>Just a quick note to let you know we are still working on your case</p>'
 						}
 					]
-				}
-			]);
-		},
+      }
+    ],
     link_list: [
       { title: 'My page 1', value: 'https://www.tiny.cloud' },
       { title: 'My page 2', value: 'http://www.moxiecode.com' }

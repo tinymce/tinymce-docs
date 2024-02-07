@@ -10,6 +10,22 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 - DOC-1925: Add `Skins and Icons examples` to examples.adoc index page
 
+### 2023-01-15
+
+- DOC-2235: changes and updates to `invalid-api-key.adoc` page.
+
+### 2023-01-11
+
+- DOC-2201: Added link to `ai.adoc` to direct users to the AI Assistant demo.
+
+### 2023-01-10
+
+- DOC-2178: add fix to `live-demos/full-featured/index.js` for `advtemplate` when inserting template.
+
+### 2023-12-20
+
+- DOC-1020: add `language_load` option to `ui-localization.adoc` page that configures whether additional plugin/theme languages are loaded when bundling.
+
 ### 2023-12-19
 
 - DOC-2220: add generation of `latest` and `6` documentation in parallel.

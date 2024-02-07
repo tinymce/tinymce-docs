@@ -26,10 +26,3 @@ tinymce.init({
   pad_empty_with_br: true,
 });
 ----
-
-[NOTE]
-====
-An equivalent filtering option, `padd_empty_with_br` was xref:migration-from-5x.adoc#previously-deprecated-items-now-removed[removed from {productname} 6.0.0].
-
-This new — and correctly spelled — option behaves in essentially identical fashion to the older option.
-====

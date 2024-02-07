@@ -8,7 +8,7 @@ SITE_DIR="$BUILD_DIR/site/tinymce"
 
 SOURCE_VERSION="latest"
 SOURCE_DIR="$SITE_DIR/$SOURCE_VERSION/"
-DEST_VERSION=6
+DEST_VERSION=7
 DEST_DIR="$SITE_DIR/$DEST_VERSION/"
 
 echo -e "\nRemoving existing $SITE_DIR directory."

@@ -16,11 +16,11 @@ tinymce.init({
 });
 ----
 
-As of version 6.3, {productname} checks for the {productname} resize function entering a loop.
+As of version 6.4.1, {productname} checks for the {productname} resize function entering a loop.
 
 If the function is detected as doing so, the document’s `+margin-bottom+` value is set to 0, instead of whatever value is assigned to `autoresize_bottom_margin`.
 
-This prevents an xref:6.3-release-notes.adoc#the-autoresize-plugin-caused-the-editor-area-to-infinitely-resize-when-content_css-was-set-to-document[infinite resizing bug from presenting].
+This prevents an xref:6.4.1-release-notes.adoc#infinite-resize[infinite resizing bug from presenting].
 
 To prevent the resize function from even entering this loop, `+autoresize_bottom_margin+` must be set to a value less than any `+margin-bottom+` value set for the document.
 

@@ -6,6 +6,10 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+### TBA
+
+- DOC-2281: updates to `cloud-troubleshooting.adoc` with new `link` directs to `domain-not-registered`.
+
 ### 2024-02-05
 
 - DOC-2276: updates to `cloud-troubleshooting.adoc` with new `read-only` ref and links to `invalid-api-key.adoc` page.

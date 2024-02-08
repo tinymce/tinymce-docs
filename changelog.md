@@ -6,6 +6,10 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+### TBA
+
+- DOC-2174: added documentation for Mentions plugin's `getUsers` API deprecation to `6.0-release-notes-premium-changes.adoc` and `migration-from-5x.adoc`.
+
 ### 2024-02-05
 
 - DOC-2276: updates to `cloud-troubleshooting.adoc` with new `read-only` ref and links to `invalid-api-key.adoc` page.

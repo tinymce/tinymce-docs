@@ -10,6 +10,18 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 - DOC-2242: Added 6.8.3-specific entry to `changelog.adoc`.
 
+### 2024-02-05
+
+- DOC-2276: updates to `cloud-troubleshooting.adoc` with new `read-only` ref and links to `invalid-api-key.adoc` page.
+
+### 2024-01-31
+
+- DOC-2275: updates to `cloud-troubleshooting.adoc` with new links to `invalid-api-key.adoc` page.
+
+### 2024-01-30
+
+- DOC-2240: add new `understanding-editor-loads.adoc` to `how-to-guide` section.
+
 ### 2023-01-15
 
 - DOC-2235: changes and updates to `invalid-api-key.adoc` page.

@@ -1,7 +1,7 @@
 const users = [
   { id: 'user-1', name: 'John Doe' },
   { id: 'user-2', name: 'Jane Doe' },
-  { id: 'user-3', name: 'Abraham Lincoln' }
+  { id: 'user-3', name: 'Alice Smith' }
 ];
 
 const fetchMentions = (query, success) => {
@@ -30,7 +30,6 @@ const getUsers = (editor) => {
 tinymce.init({
   selector: "textarea#getusers-api-alternative",
   plugins: "mentions code",
-  toolbar: "undo redo | styles | bold italic underline strikethrough | code",
   mentions_fetch: fetchMentions,
   mentions_menu_complete: mentionsInsert,
 

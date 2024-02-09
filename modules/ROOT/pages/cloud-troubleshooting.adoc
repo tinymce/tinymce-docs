@@ -167,7 +167,7 @@ This message is shown when the API key is not correct, perhaps because of a typo
 [[read-only-mode-invalid-origin]]
 == Read-only mode - Invalid Origin
 
-=== “{productname} is in read-only mode. **Please request that the admin** add this domain to the approved domains in the Customer Portal. xref:invalid-api-key.adoc[Learn more]”
+=== “{productname} is in read-only mode. **Please request that the admin** add this domain to the approved domains in the Customer Portal. For more information see xref:cloud-troubleshooting.adoc#domain-not-registered[Domain not registered]”
 
 ==== Cause "Invalid Origin (Read only mode)"
 
@@ -175,4 +175,4 @@ This message is shown when {productname} is loaded from a domain that has not be
 
 ==== Solution
 
-Please request that your admin add this domain to the approved domains in the Customer Portal xref:invalid-api-key.adoc[Learn more]
+Please request that your admin add this domain to the approved domains in the Customer Portal. For more information see xref:cloud-troubleshooting.adoc#domain-not-registered[Domain not registered]

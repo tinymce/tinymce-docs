@@ -1,0 +1,134 @@
+= TinyMCE 6.8.3
+:navtitle: TinyMCE 6.8.3
+:description: Release notes for TinyMCE 6.8.3
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+[[overview]]
+== Overview
+
+{productname} 6.8.3 was released for {enterpriseversion} and {cloudname} on Wednesday, February 08^th^, 2024. These release notes provide an overview of the changes for {productname} 6.8.3, including:
+
+* xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
+* xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
+* xref:bug-fixes[Bug fixes]
+* xref:security-fixes[Security fixes]
+
+[[accompanying-premium-self-hosted-server-side-component-changes]]
+== Accompanying Premium self-hosted server-side component changes
+
+The {productname} 6.8.3 release includes accompanying changes affecting the {productname} **self-hosted** services for the following plugins:
+
+* **Enhanced Media Embed** plugin `mediaembed`.
+* **Export** plugin `export`.
+* **Enhanced Image Editing** plugin `editimage`.
+* **Link Checker** plugin `linkchecker`.
+* **Spell Checker Pro** plugin `tinymcespellchecker`.
+* **Spelling Autocorrect** plugin `autocorrect`.
+
+For information on:
+
+* The **Enhanced Media Embed** plugin, see: xref:introduction-to-mediaembed.adoc[Enhanced Media Embed plugin].
+* The **Export** plugin, see: xref:export.adoc[Export plugin].
+* The **Enhanced Image Editing** plugin, see: xref:editimage.adoc[Enhanced Image Editing plugin].
+* The **Link Checker** plugin, see: xref:linkchecker.adoc[Link Checker plugin].
+* The **Spell Checker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
+* The **Spelling Autocorrect** plugin, see: xref:autocorrect.adoc[Spelling Autocorrect plugin].
+* Deploying the **server-side** components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+
+The Java server-side components have been updated to the following versions:
+
+* `ephox-hyperlinking.war`: 2.105.24
+* `ephox-image-proxy.war`: 2.106.11
+* `ephox-spelling.war`: 2.118.19
+
+
+=== Updating the self-hosted server-side components
+
+The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
+
+. Update your Java Application Server to the minimum required version:
+
+include::partial$misc/supported-application-servers.adoc[]
+
+. Replace the existing server-side `.war` files with the `.war` files bundled with {productname} 6.8.3 or later.
+
+For information on:
+
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+* Deploying the server-side components using Docker, see: xref:bundle-intro-setup.adoc[Containerized service deployments].
+
+include::partial$misc/admon-no-functionality-changes-in-updated-server-side-components.adoc[]
+
+
+[[accompanying-premium-plugin-changes]]
+== Accompanying Premium plugin changes
+
+The following premium plugin updates were released alongside {productname} 6.8.3.
+
+=== PowerPaste 6.2.5
+
+The {productname} 6.8.3 release includes an accompanying release of the **PowerPaste** premium plugin.
+
+**PowerPaste** 6.2.5 includes the following fix.
+
+==== PowerPaste would sometimes consider a shape or a picture to be an equation when it is not.
+//#TINY-10449
+
+In previous versions of **PowerPaste**, users encountered an issue while copying/pasting content from a Microsoft Word document when **PowerPaste** Plugin was enabled in the editors configuration.
+
+As a consequence, if the copied content contained images and equations, the images would not appear in the expected locations on paste.
+
+**PowerPaste** 6.2.5 addresses this issue, by enhancing the image and equation detection logic.
+
+As a result, images now appear in their correct locations as expected.
+
+[NOTE]
+The current version of **PowerPaste** does not currently support equations within {productname}.
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
+
+
+[[bug-fixes]]
+== Bug fixes
+
+{productname} 6.8.3 also includes the following bug fixes:
+
+=== `ShadowDOM` skin was not loaded properly when used with js bundling feature.
+//#TINY-10451
+
+When using the js bundling feature with the `ShadowDom` skin, the editor would not load the skin properly.
+
+As a consequence, any editor bundled with this specific setup would result in the editor loading without displaying the toolbar.
+
+{productname} 6.8.3 addresses this issue, now, during the loading process the `ShadowDOM` skin is correctly used when using the js bundling feature.
+
+As a result, the editor loads properly and the toolbar appears as expected.
+
+=== The floating toolbar would not be fully visible when the editor was placed inside a scrollable container.
+//#TINY-10335
+
+Previously, when the editor was configured to be set within a scrollable container, and the `ui_mode: 'split'` is set, the floating toolbar was obscured when the user switched to fullscreen.
+
+As a consequence, the floating toolbar UI was not completely visible when switching to fullscreen.
+
+{productname} 6.8.3 addresses this, now, when the container containing the editor UI elements are set to a `fixed` css position when the editor is switched to fullscreen.
+
+As a result, the toolbar is now no longer obscured when switching to fullscreen.
+
+[[security-fixes]]
+== Security fixes
+
+{productname} 6.8.3 includes one fix for the following security issue:
+
+The following server-side component has been updated to include dependency updates addressing the following security issues. 
+
+* https://nvd.nist.gov/vuln/detail/CVE-2023-6378[CVE-2023-6378]
+
+This update is considered as a High severity vulnerability fix.
+
+For information on the server-side components updates, see: xref:#accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes].
+
+include::partial$misc/admon-no-functionality-changes-in-updated-server-side-components.adoc[]

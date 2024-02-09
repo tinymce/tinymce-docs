@@ -6,7 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
-### TBA
+### 2024-02-09
 
 - DOC-2281: updates to `cloud-troubleshooting.adoc` with new `link` directs to `domain-not-registered`.
 

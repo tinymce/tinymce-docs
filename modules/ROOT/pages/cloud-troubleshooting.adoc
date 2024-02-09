@@ -7,12 +7,15 @@ When {cloudname} detects a problem, it will show an editor notification containi
 
 NOTE: The wording of the notifications shown here may differ from the actual notifications from {cloudname}.
 
+'''
+
+[[invalid-api-key-cloud-troubleshooting]]
+== Invalid API Key
+
 [[A-valid-API-key-is-required-to-continue-using-TinyMCE.-Please-alert-the-admin-to-check-the-current-API-key]]
-== "A valid API key is required to continue using {productname}. **Please alert the admin** to check the current API key. xref:invalid-api-key.adoc[Click here to learn more.]"
+=== "A valid API key is required to continue using {productname}. **Please alert the admin** to check the current API key. xref:invalid-api-key.adoc[Click here to learn more.]"
 
-=== Scenario (one)
-
-==== Cause
+==== Cause "No API Key"
 
 This notification is *only shown* when either:
 
@@ -41,9 +44,7 @@ To retrieve your API key, or to sign up for an API key, visit: link:{accountsign
 
 NOTE: Visit our xref:invalid-api-key.adoc[Invalid API key] page for more information on how to fix a `invalid API key` with {productname}.
 
-=== Scenario (two)
-
-==== Cause
+==== Cause "Invalid API Key"
 
 This notification is shown when the API key provided cannot be found on the {cloudname} server.
 
@@ -55,20 +56,21 @@ The `+apiKey+` must be:
 
 ==== Solution
 
-Check the `+apiKey+` provided in the script tag:
+Check the `apiKey` provided in the script tag:
 
-* Remove any leading or trailing spaces.
-* Any other characters that are not in your API key. If you are using variable substitution, ensure that the variable is substituting properly.
-* Matches the API key shown at {accountpageurl}.
+* Remove any leading or trailing spaces
+* Remove any other characters that are not in your `apiKey`. If you are using variable substitution, ensure that the variable is substituting properly
+* Ensure the `apiKey` matches the API key shown at {accountpageurl}.
 
 NOTE: Visit our xref:invalid-api-key.adoc[Invalid API key] page for more information on how to fix a `invalid API key` with {productname}.
 
 '''
 
-[[This-domain-is-not-registered-in-the-TinyMCE-Customer-Portal.-Please-alert-the-admin-to-add-it-to-the-approved-domains-to-continue-using-TinyMCE.]]
-== "This domain is not registered in the {productname} Customer Portal. **Please alert the admin** to add it to the approved domains to continue using {productname}. xref:invalid-api-key.adoc[Click here to learn more.]"
+[[domain-not-registered]]
+== Domain Not Registered
 
-=== Scenario
+[[This-domain-is-not-registered-in-the-TinyMCE-Customer-Portal.-Please-alert-the-admin-to-add-it-to-the-approved-domains-to-continue-using-TinyMCE.]]
+=== "This domain is not registered in the {productname} Customer Portal. **Please alert the admin** to add it to the approved domains to continue using {productname}. xref:invalid-api-key.adoc[Click here to learn more.]"
 
 ==== Cause
 
@@ -76,10 +78,10 @@ This notification is shown when the https://developer.mozilla.org/en-US/docs/Web
 
 Sometimes the domain in the *Referer* header does not match with the URL in the browser's address bar. To check the *Referer* header:
 
-. Open your browser's _Developer's Tools_.
-. Open the _Network_ tab.
-. Find and select the request being made to load {productname} from {cloudname} with your API key.
-. Click on the *Headers* tab.
+* Open your browser's _Developer's Tools_.
+* Open the _Network_ tab.
+* Find and select the request being made to load {productname} from {cloudname} with your API key.
+* Click on the *Headers* tab.
 
 In the section called *Request Headers* there should be a field for *Referer*. This is the value that {productname} is checking against your approved domains. It must match one of your approved domains listed on your link:{accountpageurl}/[{accountpage}].
 
@@ -89,16 +91,16 @@ If the `+Referer+` is correct for the site, ensure that the domain is included i
 
 '''
 
-[[were-unable-to-check-your-domain-because-the-referer-header-is-missing-please-read-the-guide-on-how-to-ensure-your-referer-header-is-present-so-we-can-then-customize-your-editor-experience]]
-== "We’re unable to check your domain because the referer header is missing. Please read the Guide on how to ensure your referer header is present, so we can then customize your editor experience."
+[[referer-heading-missing]]
+== Referer Heading Missing
 
-=== Scenario
+[[were-unable-to-check-your-domain-because-the-referer-header-is-missing-please-read-the-guide-on-how-to-ensure-your-referer-header-is-present-so-we-can-then-customize-your-editor-experience]]
+=== "We’re unable to check your domain because the referer header is missing. Please read the Guide on how to ensure your referer header is present, so we can then customize your editor experience."
 
 ==== Cause
 
-This notification is shown if the https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer[*Referer* header] is absent for the network request when loading {productname} from {cloudname}. {cloudname} verifies the domain {productname} is loading from by checking the domain of the *Referer* header in the network request.
-
-_Referer_ headers are sometimes removed by browser settings or browser extensions. {cloudname} only needs the domain in the *Referer* header, so for improved performance and privacy {companyname} recommends setting the `+referrerpolicy+` to `+origin+` when requesting {cloudname} resources.
+* This notification is shown if the https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referer[*Referer* header] is absent for the network request when loading {productname} from {cloudname}. {cloudname} verifies the domain {productname} is loading from by checking the domain of the *Referer* header in the network request.
+* _Referer_ headers are sometimes removed by browser settings or browser extensions. {cloudname} only needs the domain in the *Referer* header, so for improved performance and privacy {companyname} recommends setting the `+referrerpolicy+` to `+origin+` when requesting {cloudname} resources.
 
 ==== Solution
 
@@ -111,10 +113,11 @@ Once you have identified the setting or extension, modify it to allow just the `
 
 '''
 
-[[the-___-premium-plugin-is-not-enabled-on-your-api-key-upgrade-your-account]]
-== "The ___ premium plugin is not enabled on your API key. Upgrade your account."
+[[troubleshooting-premium-plugins]]
+== Troubleshooting Premium Plugins
 
-=== Scenario
+[[the-___-premium-plugin-is-not-enabled-on-your-api-key-upgrade-your-account]]
+=== "The ___ premium plugin is not enabled on your API key. Upgrade your account."
 
 ==== Cause
 
@@ -127,3 +130,49 @@ You may also be seeing this notification if you are using the wrong API key. Ens
 Either remove the premium plugin from your {productname} configuration, or upgrade your subscription to provide access to that premium plugin.
 
 NOTE: Visit our xref:invalid-api-key.adoc[Invalid API key] page for more information on how to fix a `invalid API key` with {productname}.
+
+'''
+
+[[read-only-mode-no-api-key]]
+== Read-only mode - No API Key
+
+=== “{productname} is in read-only mode. **Please alert the admin** that an API key is required for continued use. xref:invalid-api-key.adoc[Learn more] 
+
+==== Cause "No API Key (Read only mode)"
+
+This message is sent when the developer has not supplied an API key, typically because they've copied a getting-started script and have not completed the official https://www.tiny.cloud/auth/signup/[signup] process to get an API key.
+
+==== Solution
+
+* **Please alert your Admin** that an API key is required for continued use. xref:invalid-api-key.adoc[Learn more], or
+* Sign up for a API key by visiting https://www.tiny.cloud/auth/signup/[www.tiny.cloud/auth/signup], and
+* Update your {productname} configuration.
+
+NOTE: Visit our xref:invalid-api-key.adoc[Invalid API key] page for more information on how to fix a `invalid API key` with {productname}.
+
+[[read-only-mode-invalid-api-key]]
+== Read-only mode - Invalid API Key
+
+=== “{productname} is in read-only mode. **Please alert the admin** to provide a valid API key to continue use. xref:invalid-api-key.adoc[Learn more] Your {productname} editor state has been set to read-only mode.”
+
+==== Cause "Invalid API Key (Read only-mode)"
+
+This message is shown when the API key is not correct, perhaps because of a typo.
+
+==== Solution
+
+* Login to your {productname} account and confirm that your API key matches your unique key by visiting https://www.tiny.cloud/auth/login/[www.tiny.cloud/auth/login/].
+* or to sign up for an API key, visit: link:{accountsignup}/[{cloudname}].
+
+[[read-only-mode-invalid-origin]]
+== Read-only mode - Invalid Origin
+
+=== “{productname} is in read-only mode. **Please request that the admin** add this domain to the approved domains in the Customer Portal. For more information see xref:cloud-troubleshooting.adoc#domain-not-registered[Domain not registered]”
+
+==== Cause "Invalid Origin (Read only mode)"
+
+This message is shown when {productname} is loaded from a domain that has not been added to the approved domains in our account portal.
+
+==== Solution
+
+Please request that your admin add this domain to the approved domains in the Customer Portal. For more information see xref:cloud-troubleshooting.adoc#domain-not-registered[Domain not registered]

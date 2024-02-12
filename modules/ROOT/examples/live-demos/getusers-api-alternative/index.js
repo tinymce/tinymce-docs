@@ -42,10 +42,8 @@ tinymce.init({
 		var mentionedUsers = getUsers(editor);
     // Insert mentioned users as a bullet list
 		if (mentionedUsers.length > 0) {
-		  var userList = mentionedUsers.map(function (user) {
-			return '<li>' + user.name + '</li>';
-		  }).join('');
-		  editor.execCommand('mceInsertContent', false, '<p>Mentioned Users:</p><ul>' + userList + '</ul>');
+		  var userList = mentionedUsers.map((user) => '<li>' + user.name + '</li>').join('');
+		  editor.execCommand('mceInsertContent', false, '<ul>' + userList + '</ul>');
 		}
 	  }
 	});

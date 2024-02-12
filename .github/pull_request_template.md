@@ -1,5 +1,7 @@
 Ticket: DOC-<num>
 
+Site: http://docs-<hotfix/feature>-7-doc-<num>.staging.tiny.cloud/docs/tinymce/latest/
+
 Changes:
 * <placeholder-text>
 

@@ -1,0 +1,80 @@
+= Markdown plugin
+:navtitle: Markdown
+:description: The Markdown Premium plugin detects pure markdown from a paste event within a TinyMCE editor instance.
+:description_short: Convert pure markdown on paste.
+:keywords: plugin, Markdown.
+:pluginname: Markdown
+:plugincode: markdown
+:plugincategory: premium
+
+include::partial$misc/admon-premium-plugin.adoc[]
+
+include::partial$misc/admon-requires-7.0v.adoc[]
+
+The {pluginname} Premium plugin detects pure markdown from a paste event within a {productname} editor instance.
+
+== Using the {pluginname} plugin
+
+
+=== Setup
+
+// what do we need to cover here
+
+=== How it works
+
+The **Markdown** Premium Plugin allows the editor to detect if pure markdown is pasted into the {productname} editor instance.
+
+During this paste event, If the editor detects markdown has been pasted it will:
+
+* attempt to convert the markdown to HTML, while
+* add a undo level before the conversion to allow for undo of plain-text.
+
+=== What {pluginname} handles
+
+
+== Basic setup
+
+To setup the {pluginname} plugin user-interface in the editor:
+
+* add `{plugincode}` to the `plugins` option in the editor configuration;
+
+For example:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  plugins: "markdown",
+});
+----
+
+NOTE: The undefined options in the above example must be defined. See the xref:options[Options] below for specific details on each function.
+
+
+== Interactive examples
+
+There are <num> approaches to using the {pluginname} Premium plugin: <options examples are?>.
+
+
+[[placeholder-anchor]]
+=== <insert-name>
+
+include::partial$misc/admon-requires-7.0v.adoc[]
+
+liveDemo::{plugincode}[]
+
+[[options]]
+== Options
+
+The following configuration options affect the behavior of the {pluginname} plugin.
+
+////
+include partials placeholder for options
+////
+
+[[commands]]
+== Commands
+
+The {pluginname} plugin provides the following {productname} commands.
+
+include::partial$commands/{plugincode}-cmds.adoc[]

@@ -1,7 +1,14 @@
 const users = [
-  { id: 'user-1', name: 'John Doe' },
-  { id: 'user-2', name: 'Jane Doe' },
-  { id: 'user-3', name: 'Alice Smith' }
+  { id: 'user-1', name: 'Angelina Winn' },
+  { id: 'user-2', name: 'Rodrigo Hawkins' },
+  { id: 'user-3', name: 'Dianna Smiley' },
+  { id: 'user-4', name: 'Eliana Stout' },
+  { id: 'user-5', name: 'Oscar Khan' },
+  { id: 'user-6', name: 'Mariana Dickey' },
+  { id: 'user-7', name: 'Jakoby Roman' },
+  { id: 'user-8', name: 'Grace Gross' },
+  { id: 'user-9', name: 'Muhammed Sizemore' },
+  { id: 'user-10', name: 'Kathryn Mcgee' },
 ];
 
 const fetchMentions = (query, success) => {

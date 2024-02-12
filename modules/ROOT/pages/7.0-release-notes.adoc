@@ -147,9 +147,16 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 [[deprecated]]
 == Deprecated
 
-=== The `<plugin>` configuration property, `<name>`, has been deprecated
+=== The `remove_trailing_brs` option from DomParser has been deprecated.
 
-// placeholder here.
+Previously, the xref:content-filtering.adoc#remove_trailing_brs[remove_trailing_brs] option allowed you to disable {productname}'s default behavior of removing `+<br>+` tags at the end of block elements.
+
+[source, js]
+----
+remove_trailing_brs: false
+----
+
+This property has been deprecated and was removed in {productname} 7.0.
 
 
 [[known-issues]]

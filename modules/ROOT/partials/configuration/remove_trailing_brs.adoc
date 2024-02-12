@@ -1,6 +1,9 @@
 [[remove_trailing_brs]]
 == `+remove_trailing_brs+`
 
+[IMPORTANT]
+This option has been deprecated in {productname} 7.0.
+
 This option allows you to disable {productname}'s default behavior of removing `+<br>+` tags at the end of block elements.
 
 https://en.wikipedia.org/wiki/Gecko_(software)[Gecko] and https://en.wikipedia.org/wiki/WebKit[WebKit] browsers inject these elements to make it possible to place the caret in empty blocks. This logic attempts to remove these elements while also keeping tags that were intentionally placed by the user.

@@ -1,0 +1,51 @@
+[cols="1,3",options="header"]
+|===
+|Command         |Description
+
+|exportWord   |Generates word file from calling `editor.getContent()` and exports it to new file `document.docx`.
+|===
+
+.Examples
+[source,js]
+----
+tinymce.activeEditor.execCommand('exportWord');
+----
+
+// Boilerplate for further documentation of commands that require it.
+[[export-word]]
+== Using `+exportWord+`
+
+`+exportWord+` accepts an object with the following key-value pairs:
+
+[cols="1,,1,2",options="header"]
+|===
+|Name      |Value                                                      |Requirement       |Description
+
+|fileName   |`document.word`                                           |Required |File name that will be created on `exportWord` command.
+|converterURL |`<value>`            |Required |Endpoint URL that the editor will connect to for convertion service.
+|===
+
+
+[[using-fileName]]
+== Using `+fileName+`
+
+`+fileName+` accepts an object with the following key-value pair:
+
+[cols="1,1,1,2",options="header"]
+|===
+|Name |Value      |Requirement       |Description
+
+|fileName |`+string+` |Required |File name that will be created on `exportWord` command.
+|===
+
+[[using-converterURL]]
+== Using `+converterURL+`
+
+`+converterURL+` accepts an object with the following key-value pair:
+
+[cols="1,1,1,2",options="header"]
+|===
+|Name |Value      |Requirement       |Description
+
+|converterURL |`+string+` |Required |Endpoint URL that the editor will connect to for conversion service.
+|===

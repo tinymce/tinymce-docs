@@ -6,7 +6,7 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
-### TBA
+### 2024-02-13
 
 - DOC-2162: Improve documentation for `noneditable` options and multi-root editing.
 

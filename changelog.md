@@ -6,6 +6,10 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+### 2024-02-13
+
+- DOC-2162: Improve documentation for `noneditable` options and multi-root editing.
+
 ### 2024-02-09
 
 - DOC-2281: updates to `cloud-troubleshooting.adoc` with new `link` directs to `domain-not-registered`.

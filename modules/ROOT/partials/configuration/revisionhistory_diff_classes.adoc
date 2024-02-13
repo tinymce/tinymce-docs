@@ -1,0 +1,80 @@
+[[revisionhistory_diff_classes]]
+== `revisionhistory_diff_classes`
+
+This option configures what css classes should be applied to the change annotations. Note that the CSS class names must exist in the `revisionhistory_css_url` file for this option to work.
+
+// Add explanatory material as per the comment block below then remove
+// the block and this comment.
+
+////
+What does the option do?
+Why use it?
+When use it?
+What values can it use?
+What do these values do?
+Are there risks?
+  - Explain without using ‘risk’ or similar words.
+  - Use NOTE or IMPORTANT admonitions if helpful.
+  - For longer or more complicated scenarios, use the limitations section below.
+////
+
+*Type:* `+Object+`
+
+*Default value:* `addition`, `removal`, `modification`
+[source,js]
+----
+{
+  addition: 'tox-revisionhistory__annotation--added',
+  removal: 'tox-revisionhistory__annotation--removed',
+  modification: 'tox-revisionhistory__annotation--modified'
+}
+----
+
+=== Example: using `revisionhistory_diff_classes`
+
+// Add a working and tested configuration.
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+	plugins: 'revisionhistory',
+  toolbar: 'revisionhistory',
+	revisionhistory_css_url: './revisionhistory.css',
+  revisionhistory_diff_classes: {
+	  addition: 'added',
+	  removal: 'removed',
+	  modification: 'modified'
+	},
+});
+----
+
+// Add a working and tested configuration (edit as required)
+// or remove if not applicable.
+=== Example: disabling the <feature>
+
+To disable <feature>, set `revisionhistory_diff_classes` to `false`.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  revisionhistory_diff_classes: 'false'
+});
+----
+
+// Remove if not applicable.
+// Edit the sub-head to singular or plural as required.
+=== Limitation(s) of the `revisionhistory_diff_classes` option
+
+The `revisionhistory_diff_classes` option has the following limitations.
+
+// Add explanatory material as per the comment block below then remove
+// the block and this comment.
+
+////
+Known limitations.
+Complicated scenarios.
+Anything that warrants a CAUTION or WARNING admonition.
+///
+
+// Remove all comment lines and comment blocks before publishing.

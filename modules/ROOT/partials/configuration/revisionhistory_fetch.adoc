@@ -1,0 +1,113 @@
+[[revisionhistory_fetch]]
+== `revisionhistory_fetch`
+
+// Add explanatory material as per the comment block below then remove
+// the block and this comment.
+
+The plugin uses the `revisionhistory_fetch` asynchronous function to retreive the revision history list.
+
+////
+What does the option do?
+Why use it?
+When use it?
+What values can it use?
+What do these values do?
+Are there risks?
+  - Explain without using ‘risk’ or similar words.
+  - Use NOTE or IMPORTANT admonitions if helpful.
+  - For longer or more complicated scenarios, use the limitations section below.
+////
+
+
+*Type:* `+Function+` (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
+
+*Input parameters:*
+None
+
+*Return data:* `+Array+`
+
+=== Example of `revisionhistory_fetch` response
+
+[source,js]
+----
+[
+  {
+    revisionId: '3',
+    createdAt: '2023-11-29T10:11:21.578Z',
+    content: `
+      <h2>Welcome to TinyMCE Docs!</h2>
+      <p>Here is some content that is <strong>bold</strong> and <em>italic</em>.</p>
+    `,
+  },
+  {
+    revisionId: '2',
+    createdAt: '2023-11-25T08:30:21.578Z',
+    content: `
+      <p>Welcome to TinyMCE Docs!</p>
+      <p>Here is some content that is bold and italic.</p>
+    `,
+  },
+  {
+    revisionId: '1',
+    createdAt: '2023-11-24T22:26:21.578Z',
+    content: `
+      <p>Welcome to Tinymce!</p>
+    `,
+  },
+]
+----
+
+The data returned by `revisionhistory_fetch` must adhere to the following requirements:
+
+. Each list item must have a unique `revisionId` string value.
+. Each list item must have a `createdAt` string value representing a datetime in ISO-8061 format.
+. Each list item must have a `content` string value representing the HTML content of the revision.
+
+=== Example: using `revisionhistory_fetch`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+	plugins: 'revisionhistory',
+  toolbar: 'revisionhistory',
+  revisionhistory_fetch: () =>
+    fetch('/revisions', {
+      method: 'GET',
+    })
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((error) => console.log('Failed to get revision history\n' + error)),
+});
+----
+
+// Add a working and tested configuration (edit as required)
+// or remove if not applicable.
+=== Example: disabling the <feature>
+
+To disable <feature>, set `revisionhistory_fetch` to `false`.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  revisionhistory_fetch: 'false'
+});
+----
+
+// Remove if not applicable.
+// Edit the sub-head to singular or plural as required.
+=== Limitation(s) of the `revisionhistory_fetch` option
+
+The `revisionhistory_fetch` option has the following limitations.
+
+// Add explanatory material as per the comment block below then remove
+// the block and this comment.
+
+////
+Known limitations.
+Complicated scenarios.
+Anything that warrants a CAUTION or WARNING admonition.
+///
+
+// Remove all comment lines and comment blocks before publishing.

@@ -1,0 +1,66 @@
+[[revisionhistory_css_url]]
+== `revisionhistory_css_url`
+
+This option provides the default location to load the change annotations css styling from. This option can be used along with `revisionhistory_diff_classes` to provide custom diff classes from a css file.
+
+// Add explanatory material as per the comment block below then remove
+// the block and this comment.
+
+////
+What does the option do?
+Why use it?
+When use it?
+What values can it use?
+What do these values do?
+Are there risks?
+  - Explain without using ‘risk’ or similar words.
+  - Use NOTE or IMPORTANT admonitions if helpful.
+  - For longer or more complicated scenarios, use the limitations section below.
+////
+
+*Type:* `+String+`
+
+*Default value:* `'${pluginUrl}/css/revisionhistory.css'`
+
+=== Example: using `revisionhistory_css_url`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+	plugins: 'revisionhistory',
+  toolbar: 'revisionhistory',
+  revisionhistory_css_url: './revisionhistory.css'
+});
+----
+
+// Add a working and tested configuration (edit as required)
+// or remove if not applicable.
+=== Example: disabling the <feature>
+
+To disable <feature>, set `revisionhistory_css_url` to `false`.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  revisionhistory_css_url: 'false'
+});
+----
+
+// Remove if not applicable.
+// Edit the sub-head to singular or plural as required.
+=== Limitation(s) of the `revisionhistory_css_url` option
+
+The `revisionhistory_css_url` option has the following limitations.
+
+// Add explanatory material as per the comment block below then remove
+// the block and this comment.
+
+////
+Known limitations.
+Complicated scenarios.
+Anything that warrants a CAUTION or WARNING admonition.
+///
+
+// Remove all comment lines and comment blocks before publishing.

@@ -1,21 +1,18 @@
+= Revision History Plugin
 :navtitle: Revision History
 :description: A view that allows {productname} users to view historical snapshots of saved revisions of the document, giving them the option to select a previous version to replace the editors content.
 :description_short: View containing historial snapshots of previous editor states.
-:keywords: plugin, Revision History.
+:keywords: plugin, Revision History, changes, history, track, restore.
 :pluginname: Revision History
 :plugincode: revisionhistory
 :plugincategory: premium
 
 include::partial$misc/admon-premium-plugin.adoc[]
 
-include::partial$misc/admon-requires-6.4v.adoc[]
+include::partial$misc/admon-requires-6.8v.adoc[]
+// TODO: change to 7.0v when admonition is available
 
-The {pluginname} Premium plugin enables the creation of complex, interactive templates using {productname}.
-
-They can also be added to a {productname} instance by end-users selecting content in a {productname} document and saving the selection as a template via the {productname} user-interface.
-
-IMPORTANT: This initial {pluginname} release does not support <insert-any-currently-not-supported-content-or-options>. To update a particular template; insert the template into an editor; make edits; select the, now edited, content; and then create a new template (using, for example, the *Tools > Save as Template…* menu item).
-
+// TODO: Add an introduction. What does the plugin do? Why would I use this plugin? Keep it concise.
 
 == Using the Revision History plugin
 
@@ -23,15 +20,15 @@ IMPORTANT: This initial {pluginname} release does not support <insert-any-curren
 
 === Setup
 
-// @ben what do we need to cover here
+// TODO: @ben what do we need to cover here
 
 === How it works
 
-// @ben placeholder to outline all the details.
+// TODO: @ben placeholder to outline all the details.
 
 === What revision history handles
 
-// Insert template that clearly identifies what is and what is not handled when using the plugin.
+// TODO: Insert template that clearly identifies what is and what is not handled when using the plugin.
 
 == Basic setup
 
@@ -39,7 +36,7 @@ To setup the {pluginname} plugin user-interface in the editor:
 
 * add `{plugincode}` to the `plugins` option in the editor configuration;
 
-* add `revisionhistory` to the `toolbar` option in the editor configuration;
+* add `{plugincode}` to the `toolbar` option in the editor configuration;
 
 For example:
 
@@ -49,45 +46,39 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'revisionhistory',
   toolbar: 'revisionhistory',
+  revisionhistory_fetch: fetch('/revisionhistory'), // change this value to your endpoint for fetching the revision history
 });
 ----
 
 NOTE: The undefined options in the above example must be defined. See the xref:options[Options] below for specific details on each function.
 
 
-== Interactive examples
-
-There are <num> approaches to using the Revision History Premium plugin: <options examples are?>.
-
-
-[[insert-name]]
-=== <insert-name>
-
-////
-include::partial$misc/admon-requires-6.8v.adoc[]
-include::partial$misc/admon-requires-7.0v.adoc[] // @ben to confirm if we need to state 7.0 as its backward compatible.
-////
-
-// What is it?
-// What does it do
+== Interactive example
 
 liveDemo::{plugincode}[]
 
-[[options]]
 == Options
 
 The following configuration options affect the behavior of the {pluginname} plugin.
 
-include::partial$configuration/revisionhistory_fetch.adoc[leveloffset=+1]
+// include::partial$configuration/revisionhistory_fetch.adoc[][leveloffset=+1]
 
-include::partial$configuration/revisionhistory_css_url.adoc[leveloffset=+1]
+// include::partial$configuration/revisionhistory_css_url.adoc[][leveloffset=+1]
 
-include::partial$configuration/revisionhistory_diff_classes.adoc[leveloffset=+1]
+// include::partial$configuration/revisionhistory_diff_classes.adoc[][leveloffset=+1]
 
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-[[commands]]
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+
 == Commands
 
 The {pluginname} plugin provides the following {productname} commands.
 
 include::partial$commands/{plugincode}-cmds.adoc[]
+
+== Events
+
+The {pluginname} plugin provides the following events.
+
+include::partial$events/{plugincode}-events.adoc[]

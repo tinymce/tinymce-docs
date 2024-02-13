@@ -625,6 +625,7 @@ The following command values can be queried using the xref:apis/tinymce.editor.a
 |FontSize |Returns the font size of the current selection.
 |LineHeight |Returns the line height of the current selection.
 |ToggleSidebar |Returns the current state of sidebar (open or closed).
+|ToggleView |Returns the current state of the view, for example: `+"code"+`, or `+"revision"+`.
 |===
 
 .Examples
@@ -634,6 +635,7 @@ tinymce.activeEditor.queryCommandValue('FontName');
 tinymce.activeEditor.queryCommandValue('FontSize');
 tinymce.activeEditor.queryCommandValue('LineHeight');
 tinymce.activeEditor.queryCommandValue('ToggleSidebar');
+tinymce.activeEditor.queryCommandValue('ToggleView');
 ----
 
 [[query-command-values-tables]]

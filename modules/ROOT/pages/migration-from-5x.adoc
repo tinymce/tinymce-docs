@@ -309,6 +309,14 @@ The schema must, therefore, be configured to allow usage of the media elements, 
 
 NOTE: As of this release, there are no known cases of this change causing media objects to not work as expected. But, also as of this release, not every potential or possible use-case has been tested.
 
+=== Mentions
+
+The `getUsers` API was a part of the `mentions` plugin and was used to retrieve a list of mentioned users in the current editor session.
+
+This API has been _deprecated_ in {productname} 6.0.
+
+Refer to the xref:6.0-release-notes-premium-changes.adoc#mentions[_{productname} 6.0 Release Notes_] for an alternative to the `getUsers` API.
+
 [[plugins-paste]]
 === Paste
 

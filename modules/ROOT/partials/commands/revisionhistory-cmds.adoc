@@ -1,0 +1,12 @@
+[cols="1,3",options="header"]
+|===
+|Command         |Description
+
+|mceRevisionHistory   |Toggle the revision mode
+|===
+
+.Examples
+[source,js]
+----
+tinymce.activeEditor.execCommand('mceRevisionHistory');
+----

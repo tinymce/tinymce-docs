@@ -240,6 +240,7 @@ Commands are available for the following plugins:
 * xref:permanentpen[Permanent Pen]
 * xref:powerpaste[PowerPaste]
 * xref:preview[Preview]
+* xref:revisionhistory[Revision History]
 * xref:save[Save]
 * xref:searchandreplace[Search and Replace]
 * xref:spellchecker[Spell Checker]
@@ -446,6 +447,13 @@ include::partial$commands/powerpaste-cmds.adoc[leveloffset=+3]
 The following command requires the xref:preview.adoc[Preview (`+preview+`)] plugin.
 
 include::partial$commands/preview-cmds.adoc[leveloffset=+3]
+
+[[revisionhistory]]
+==== Revision History
+
+The following commands require the xref:revisionhistory.adoc[Revision History (`+revisionhistory+`)] plugin.
+
+include::partial$commands/revisionhistory-cmds.adoc[leveloffset=+3]
 
 [[save]]
 ==== Save

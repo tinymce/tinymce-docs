@@ -522,14 +522,6 @@ To configure any {productname} option that does not have a corresponding attribu
 <script>
 window.myConfig = {
   height: 500,
-  template_selected_content_classes: 'selcontent',
-  templates: [
-    {
-      title: 'My Template',
-      description: 'This is my template.',
-      content: '<p>Hello, <span class="selcontent">this statement will be replaced.</span></p>'
-    }
-  ],
   spellchecker_dialog: true,
   spellchecker_ignore_list: ['Ephox', 'Moxiecode']
 };
@@ -537,8 +529,8 @@ window.myConfig = {
 <tinymce-editor
   config="myConfig"
   width="50%"
-  toolbar="undo redo | bold italic | forecolor backcolor | template | alignleft aligncenter alignright alignjustify | bullist numlist | link | spellchecker"
-  plugins="lists link searchreplace table template tinymcespellchecker wordcount"
+  toolbar="undo redo | bold italic | forecolor backcolor | alignleft aligncenter alignright alignjustify | bullist numlist | link | spellchecker"
+  plugins="lists link searchreplace table tinymcespellchecker wordcount"
 ></tinymce-editor>
 ----
 

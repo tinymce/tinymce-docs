@@ -226,6 +226,7 @@ Commands are available for the following plugins:
 * xref:editimage[Enhanced Image Editing]
 * xref:emoticons[Emoticons]
 * xref:export[Export]
+* xref:exportword[Export Word]
 * xref:footnotes[Footnotes]
 * xref:formatpainter[Format Painter]
 * xref:fullscreen[Full Screen]
@@ -348,6 +349,13 @@ include::partial$commands/emoticons-cmds.adoc[leveloffset=+3]
 The following commands require the xref:export.adoc[Export (`+export+`)] plugin.
 
 include::partial$commands/export-cmds.adoc[leveloffset=+3]
+
+[[export-word]]
+==== Export Word
+
+The following commands require the xref:exportword.adoc[Export Word (`+exportword+`)] plugin.
+
+include::partial$commands/exportword-cmds.adoc[leveloffset=+3]
 
 [[footnotes]]
 ==== Footnotes

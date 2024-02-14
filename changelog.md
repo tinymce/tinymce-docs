@@ -6,9 +6,52 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+### 2024-02-13
+
+- DOC-2174: added documentation for Mentions plugin's `getUsers` API deprecation to `6.0-release-notes-premium-changes.adoc` and `migration-from-5x.adoc`.
+- DOC-2162: Improve documentation for `noneditable` options and multi-root editing.
+
+### 2024-02-09
+
+- DOC-2281: updates to `cloud-troubleshooting.adoc` with new `link` directs to `domain-not-registered`.
+
+### 2024-02-08
+
+- DOC-2242: Added 6.8.3-specific entry to `changelog.adoc`.
+
+- DOC-2241: added `6.8.3-release-notes.adoc` to project; updated `changelog.adoc`, `nav.adoc` and `release-notes.adoc` for the TinyMCE 6.8.3 release.
+
+### 2024-02-05
+
+- DOC-2276: updates to `cloud-troubleshooting.adoc` with new `read-only` ref and links to `invalid-api-key.adoc` page.
+
+### 2024-01-31
+
+- DOC-2275: updates to `cloud-troubleshooting.adoc` with new links to `invalid-api-key.adoc` page.
+
+### 2024-01-30
+
+- DOC-2240: add new `understanding-editor-loads.adoc` to `how-to-guide` section.
+
 ### 2024-01-18
 
 - DOC-1925: Add `Skins and Icons examples` to examples.adoc index page
+
+### 2023-01-15
+
+- DOC-2235: changes and updates to `invalid-api-key.adoc` page.
+
+### 2023-01-11
+
+- DOC-2201: Added link to `ai.adoc` to direct users to the AI Assistant demo.
+
+### 2023-01-10
+
+- DOC-2178: add fix to `live-demos/full-featured/index.js` for `advtemplate` when inserting template.
+
+### 2023-12-20
+
+- DOC-1020: add `language_load` option to `ui-localization.adoc` page that configures whether additional plugin/theme languages are loaded when bundling.
 
 ### 2023-12-19
 

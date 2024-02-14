@@ -1074,15 +1074,13 @@ In {productname} 6.4.1, this issue has been resolved.
 
 In previous versions of {productname}, when the editor is within a scrollable container, the toolbar would remain visible when the editor is scrolled out of view.
 
+[[infinite-resize]]
 === Editor increases the height indefinitely when using autoresize with `content_css: 'document'`
 //#TINY-8872
 
 In previous versions of {productname}, it was discovered that the editor had some issues with the autoresize plugin when using `content_css: 'document'`, which caused the editor height to expand indefinitely.
 
-To fix this issue, {productname} addressed the conflict between the document skin's CSS and the autoresize bottom margin setting. After this fix, the resize function now checks for loops and considers the margin bottom as always set to 0 instead of autoresize bottom margin, which ensutes that the editor's height is calculated correctly. 
-
-In  {productname} 6.4.1, the default number of columns, 5, are now used when any of these options is set to 0 or less, preventing this issue from occurring.
-
+To fix this issue, {productname} addressed the conflict between the document skin's CSS and the autoresize bottom margin setting. After this fix, the resize function now checks for loops and considers the margin bottom as always set to 0 instead of autoresize bottom margin, which ensutes that the editor's height is calculated correctly.
 
 [[known-issues]]
 == Known issues

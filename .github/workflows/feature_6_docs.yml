@@ -12,11 +12,11 @@ on:
 jobs:
   build:
     name: Build Docs and Deploy
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     strategy:
       matrix:
-        node-version: [14]
+        node-version: [21]
 
     steps:
     - uses: actions/checkout@v1
@@ -34,7 +34,7 @@ jobs:
       run: yarn build
 
     - name: (Feature - Docs 6) Build Website
-      run: yarn generate-site ./antora-playbook-dev.yml
+      run: yarn antora ./antora-playbook-dev.yml
 
     - name: (deploy) Prepare for branch deployments
       shell: bash

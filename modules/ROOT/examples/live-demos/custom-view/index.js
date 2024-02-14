@@ -33,7 +33,7 @@ tinymce.init({
             <textarea class="tox-view__pane_panel" style="width: 100%; height: 100%; resize: none; padding: 0.5em">
               ${editorContent}
             </textarea>
-          </div>`;
+          </div>`.replace(/\s+/g, '');
       },
       onHide: (api) => {
         console.log('Deactivate code', api.getContainer());

@@ -1,0 +1,81 @@
+= Custom View
+:navtitle: Custom View
+:description: How to create a custom view in TinyMCE.
+:keywords: view, UI, addView
+
+{productname} allows developers to create custom views and attach them to the main editor view. This feature enables the creation of additional UI components that can be toggled on or off. When toggled on, the custom view replaces the editor, providing a distinct visual space for specialized functionality.
+
+include::partial$misc/admon-iframe-only.adoc[]
+
+== Editor View API
+
+The `addView` API in the editor's UI registry allows developers to register new view containers. These containers are initially hidden (off) and attached next to the main view. The visibility of these custom views can be toggled using the `ToggleView` command. The state of the custom view can be queried using the `queryCommandValue` method.
+
+This is the syntax for the `addView` function: `+editor.ui.registry.addView(name: String, obj: View.ViewSpec)+`
+
+=== Parameters
+
+[[name]]
+==== `+name+`
+
+The `+name+` parameter is a unique identifier for the new view.
+
+*Type:* `+String+`
+
+[[obj]]
+==== `+obj+`
+
+The `+obj+` parameter is the view specification object.
+
+*Type:* `+View.ViewSpec+`
+
+=== View Specification Object
+
+The view specification object can have various properties:
+
+[[buttons]]
+==== `+buttons+`
+
+The `+buttons+` property specifies an array of buttons to be displayed in the top right corner of the view.
+
+*Type:* `+Array+`
+
+[[onShow]]
+==== `+onShow+`
+
+The `+onShow+` property specifies a function to be called when the view is displayed. It receives an API object.
+
+*Type:* `+Function+`
+
+[[onHide]]
+==== `+onHide+`
+
+The `+onHide+` property specifies a function to be called when the view is hidden. It receives an API object.
+
+*Type:* `+Function+`
+
+=== Toggling the Custom View
+
+To toggle the custom view, you can use the `+ToggleView+` command. Here is an example of how to use it:
+
+[source,js]
+----
+// Assuming 'myCustomView' is the name of your custom view
+editor.execCommand('ToggleView', false, 'myCustomView');
+----
+
+=== Querying the State of the Custom View
+
+To query the state of the custom view (whether it is currently visible or hidden), you can use the `+queryCommandValue+` method:
+
+[source,js]
+----
+// Assuming 'myCustomView' is the name of your custom view
+editor.queryCommandValue('ToggleView') == 'myCustomView';
+----
+
+== Interactive example
+
+This example shows how to integrate a custom view using the `addView` API.
+
+liveDemo::custom-view[]

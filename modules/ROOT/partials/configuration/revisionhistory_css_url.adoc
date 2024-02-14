@@ -1,10 +1,7 @@
 [[revisionhistory_css_url]]
 == `revisionhistory_css_url`
 
-This option provides the default location to load the change annotations css styling from. This option can be used along with `revisionhistory_diff_classes` to provide custom diff classes from a css file.
-
-// Add explanatory material as per the comment block below then remove
-// the block and this comment.
+This option provides the default location to load the change annotations css styling from. This option can be used along with `+revisionhistory_diff_classes+` to provide custom diff classes from a css file.
 
 ////
 What does the option do?
@@ -20,31 +17,17 @@ Are there risks?
 
 *Type:* `+String+`
 
-*Default value:* `'${pluginUrl}/css/revisionhistory.css'`
+*Default value:* `+'${pluginUrl}/css/revisionhistory.css'+`
 
 === Example: using `revisionhistory_css_url`
 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
-	plugins: 'revisionhistory',
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'revisionhistory',
   toolbar: 'revisionhistory',
   revisionhistory_css_url: './revisionhistory.css'
-});
-----
-
-// Add a working and tested configuration (edit as required)
-// or remove if not applicable.
-=== Example: disabling the <feature>
-
-To disable <feature>, set `revisionhistory_css_url` to `false`.
-
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  revisionhistory_css_url: 'false'
 });
 ----
 
@@ -52,7 +35,7 @@ tinymce.init({
 // Edit the sub-head to singular or plural as required.
 === Limitation(s) of the `revisionhistory_css_url` option
 
-The `revisionhistory_css_url` option has the following limitations.
+The `+revisionhistory_css_url+` option has the following limitations.
 
 // Add explanatory material as per the comment block below then remove
 // the block and this comment.
@@ -61,6 +44,6 @@ The `revisionhistory_css_url` option has the following limitations.
 Known limitations.
 Complicated scenarios.
 Anything that warrants a CAUTION or WARNING admonition.
-///
+////
 
 // Remove all comment lines and comment blocks before publishing.

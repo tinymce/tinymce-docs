@@ -1,10 +1,7 @@
 [[revisionhistory_diff_classes]]
 == `revisionhistory_diff_classes`
 
-This option configures what css classes should be applied to the change annotations. Note that the CSS class names must exist in the `revisionhistory_css_url` file for this option to work.
-
-// Add explanatory material as per the comment block below then remove
-// the block and this comment.
+This option configures what css classes should be applied to the change annotations. Note that the CSS class names must exist in the `revisionhistory_css_url` file for this option to work. This option can be used along with the `revisionhistory_css_url` to provide custom diff classes from a css file.
 
 ////
 What does the option do?
@@ -32,11 +29,10 @@ Are there risks?
 
 === Example: using `revisionhistory_diff_classes`
 
-// Add a working and tested configuration.
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
 	plugins: 'revisionhistory',
   toolbar: 'revisionhistory',
 	revisionhistory_css_url: './revisionhistory.css',
@@ -45,20 +41,6 @@ tinymce.init({
 	  removal: 'removed',
 	  modification: 'modified'
 	},
-});
-----
-
-// Add a working and tested configuration (edit as required)
-// or remove if not applicable.
-=== Example: disabling the <feature>
-
-To disable <feature>, set `revisionhistory_diff_classes` to `false`.
-
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  revisionhistory_diff_classes: 'false'
 });
 ----
 
@@ -75,6 +57,6 @@ The `revisionhistory_diff_classes` option has the following limitations.
 Known limitations.
 Complicated scenarios.
 Anything that warrants a CAUTION or WARNING admonition.
-///
+////
 
 // Remove all comment lines and comment blocks before publishing.

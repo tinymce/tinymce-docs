@@ -1,10 +1,12 @@
 [[revisionhistory_fetch]]
 == `revisionhistory_fetch`
 
-// Add explanatory material as per the comment block below then remove
-// the block and this comment.
-
 The plugin uses the `revisionhistory_fetch` asynchronous function to retreive the revision history list.
+
+The `revisionhistory_fetch` option is a function that returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise] that resolves to an array of objects representing the revision history.
+
+[NOTE]
+The revision history plugin does not automatically sort results before displaying. It is the responsibility of the user to sort the results according to their preferences, such as sorting them in reverse chronological order based on the `createdAt` date.
 
 ////
 What does the option do?
@@ -68,7 +70,7 @@ The data returned by `revisionhistory_fetch` must adhere to the following requir
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
 	plugins: 'revisionhistory',
   toolbar: 'revisionhistory',
   revisionhistory_fetch: () =>
@@ -78,20 +80,6 @@ tinymce.init({
     .then((response) => response.json())
     .then((data) => data)
     .catch((error) => console.log('Failed to get revision history\n' + error)),
-});
-----
-
-// Add a working and tested configuration (edit as required)
-// or remove if not applicable.
-=== Example: disabling the <feature>
-
-To disable <feature>, set `revisionhistory_fetch` to `false`.
-
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  revisionhistory_fetch: 'false'
 });
 ----
 
@@ -108,6 +96,6 @@ The `revisionhistory_fetch` option has the following limitations.
 Known limitations.
 Complicated scenarios.
 Anything that warrants a CAUTION or WARNING admonition.
-///
+////
 
 // Remove all comment lines and comment blocks before publishing.

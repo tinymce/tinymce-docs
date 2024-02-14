@@ -18,7 +18,7 @@ The {pluginname} Premium plugin detects pure markdown from a paste event within 
 
 === Setup
 
-// what do we need to cover here
+// TODO
 
 === How it works
 
@@ -31,6 +31,7 @@ During this paste event, If the editor detects markdown has been pasted it will:
 
 === What {pluginname} handles
 
+//TODO
 
 == Basic setup
 
@@ -50,16 +51,7 @@ tinymce.init({
 
 NOTE: The undefined options in the above example must be defined. See the xref:options[Options] below for specific details on each function.
 
-
 == Interactive examples
-
-There are <num> approaches to using the {pluginname} Premium plugin: <options examples are?>.
-
-
-[[placeholder-anchor]]
-=== <insert-name>
-
-include::partial$misc/admon-requires-7.0v.adoc[]
 
 liveDemo::{plugincode}[]
 
@@ -68,13 +60,32 @@ liveDemo::{plugincode}[]
 
 The following configuration options affect the behavior of the {pluginname} plugin.
 
+include::partial$configuration/markdown.adoc[][leveloffset=+1]
+
 ////
-include partials placeholder for options
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 ////
 
-[[commands]]
 == Commands
 
 The {pluginname} plugin provides the following {productname} commands.
 
 include::partial$commands/{plugincode}-cmds.adoc[]
+
+// Note to remove if not required.
+////
+== Events
+
+The {pluginname} plugin provides the following events.
+
+include::partial$events/{plugincode}-events.adoc[]
+
+== APIs
+
+The {pluginname} plugin provides the following APIs.
+
+include::partial$plugin-apis/{plugincode}-apis.adoc[]
+
+////

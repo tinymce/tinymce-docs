@@ -15,6 +15,7 @@ include::partial$module-loading/bundling-plugins-that-cant-bundle.adoc[]
 ** xref:footnotes[Footnotes (footnotes)]
 ** xref:format-painter[Format Painter (formatpainter)]
 ** xref:link-checker[Link Checker (linkchecker)]
+** xref:markdown[Markdown (markdown)]
 ** xref:mentions[Mentions (mentions)]
 ** xref:mergetags[Merge Tags]
 ** xref:page-embed[Page Embed (pageembed)]
@@ -128,6 +129,11 @@ include::partial$plugin-files/plugin-file-list-formatpainter.adoc[]
 === Link Checker (`+linkchecker+`)
 
 include::partial$plugin-files/plugin-file-list-linkchecker.adoc[]
+
+[[markdown]]
+=== Markdown (`+markdown+`)
+
+include::partial$plugin-files/plugin-file-list-markdown.adoc[]
 
 [[mentions]]
 === Mentions (`+mentions+`)

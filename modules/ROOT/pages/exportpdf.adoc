@@ -1,0 +1,81 @@
+= Export to PDF plugin
+:navtitle: Export to PDF
+:description: The export to PDF feature lets you generate a PDF file directly from the editor.
+:description_short: Generate a PDF file directly from the editor.
+:keywords: plugin, exportpdf
+:pluginname: Export PDF
+// values for <tier>
+// opensource plugin = tieroneplan
+// premium plugin    = tiertwoplan or tierthreeplan or enterpriseplan
+:pluginminimumplan: <tier>
+:plugincode: exportpdf
+:plugincategory: premium
+
+
+include::partial$misc/admon-premium-plugin.adoc[]
+
+//uncomment this once we have merged the PR with the admon for 7.0
+////
+include::partial$misc/admon-requires-7.0v.adoc[]
+////
+
+The Export to PDF functionality gathers the HTML produced using the `editor.getcontent()` method and the default editor content styles, along with the styles specified in the configuration. This data is transmitted to the {productname} Cloud Services HTML to PDF converter service. The service processes this information to create a PDF file, which is then sent back to the user's browser for saving to their local disk.
+
+== Interactive example
+
+liveDemo::{plugincode}[]
+
+== Basic setup
+
+To add the {pluginname} plugin to the editor, add `{plugincode}` to the `plugins` option in the editor configuration.
+
+For example:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'exportpdf',
+  toolbar: 'exportpdf',
+});
+----
+
+== Options
+
+The following configuration options affect the behavior of the {pluginname} plugin.
+
+include::partial$configuration/{plugincode}.adoc[][leveloffset=+1]
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+
+== Commands
+
+The {pluginname} plugin provides the following {productname} commands.
+
+include::partial$commands/{plugincode}-cmds.adoc[]
+
+[cols="1,3",options="header"]
+|===
+|Command         |Description
+|exportpdf_service_url   |triggers a function that converts the content of the editor into a PDF format using a specified or default converter URL.
+|===
+
+.Examples
+[source,js]
+----
+tinymce.activeEditor.execCommand('exportpdf');
+----
+
+== Events
+
+The {pluginname} plugin provides the following events.
+
+include::partial$events/{plugincode}-events.adoc[]
+
+== APIs
+
+The {pluginname} plugin provides the following APIs.
+
+include::partial$plugin-apis/{plugincode}-apis.adoc[]

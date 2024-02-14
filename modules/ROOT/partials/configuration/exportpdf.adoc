@@ -1,0 +1,24 @@
+[[exportpdf-service-url]]
+== `exportpdf_service_url`
+
+By default, the Export to PDF feature uses the {productname} Cloud Services HTML to DOCX converter service to generate the `document-name.pdf` files. You can use this option to provide the URL to an on-premises converter. https://www.tiny.cloud/contact/[Contact us] if you require this feature.
+
+*Type:* `+String+`
+
+*Default value:* `true`
+
+=== Example: using `exportpdf_service_url`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'exportpdf',
+  toolbar: 'exportpdf',
+  exportpdf_service_url: '<value>'
+});
+----
+
+=== Limitation(s) of the `exportpdf_service_url` option
+
+The `exportpdf_service_url` option has the following limitations.

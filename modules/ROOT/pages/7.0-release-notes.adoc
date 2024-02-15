@@ -127,12 +127,23 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 [[bug-fixes]]
 == Bug fixes
 
-{productname} <x.y[.z]> also includes the following bug fix<es>:
+{productname} 7.0 also includes the following bug fix<es>:
 
 === <TINY-vwxyz 1 changelog entry>
 //#TINY-vwxyz1
 
 // CCFR here.
+
+== `TableOperations.opPasteColsAfter` & `TableOperations.opPasteRowsAfter` now place the cursor in the newly pasted row/column to be consistent with the other pasting operations.
+// #TINY-6460
+
+Previously, the cursor position in `opPasteRowsAfter` and `opPasteColsAfter` was calculated incorrectly after pasting a new rol or column.
+
+As a result, after pasting, the cursor remained in the same position instead of moving to the newly pasted row or column.
+
+{productname} 7.0 addresses this, fixing the cursor calculation in `opPasteRowsAfter` and `opPasteColsAfter` to use the 'index' variable.
+
+Now, when using "Paste row/column after," the cursor is correctly positioned in the newly pasted row or column.
 
 [[security-fixes]]
 == Security fixes

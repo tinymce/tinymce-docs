@@ -134,6 +134,17 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 // CCFR here.
 
+=== When inline editor toolbar wrapped to multiple lines the top wasn't always calculated.
+// #TINY-10580
+
+Previously when shrinking the inline editor, the top position of the toolbar was calculated before wrapping the toolbar into multiple rows.
+
+As a consequence, the additional rows in the wrapped toolbar would cover the editor content.
+
+{productname} 7.0 addresses this issue, now, the editor shrinking is applied before calculating the top position of the toolbar.
+
+As a result, the truncated toolbar is correctly displayed above the editor content.
+
 [[security-fixes]]
 == Security fixes
 

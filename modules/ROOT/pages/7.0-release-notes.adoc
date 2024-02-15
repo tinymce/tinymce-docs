@@ -134,6 +134,21 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 // CCFR here.
 
+=== Directly right clicking on a `<ol>`/ `<li>` in FireFox didn't enable the button `List Properties...` in the context menu
+// #TINY-10490
+
+In previous versions of {productname}, two issues where identified that affected `list properties`;
+
+. in old versions of Firefox (prior to version 121), the caret was not moved to the target position, and;
+
+. as {productname} creates a bookmark when there is no selection for Firefox, when a user opened a context menu the editor would jump back to the newly created bookmark.
+
+As a consequence, since the selection is still on the first element, the menu voiceover was `disabled`.
+
+{productname} 7.0 addresses this issue, now when the user opens a context menu, {productname} creates a new bookmark to avoid the jump back.
+
+As a result, the selection is in the correct place and the context menu voice over is `enabled`.
+
 [[security-fixes]]
 == Security fixes
 

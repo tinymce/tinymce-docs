@@ -134,7 +134,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 // CCFR here.
 
-== `TableOperations.opPasteColsAfter` & `TableOperations.opPasteRowsAfter` now place the cursor in the newly pasted row/column to be consistent with the other pasting operations.
+=== `TableOperations.opPasteColsAfter` & `TableOperations.opPasteRowsAfter` now place the cursor in the newly pasted row/column to be consistent with the other pasting operations.
 // #TINY-6460
 
 Previously, the cursor position in `opPasteRowsAfter` and `opPasteColsAfter` was calculated incorrectly after pasting a new rol or column.

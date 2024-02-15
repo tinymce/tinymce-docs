@@ -134,6 +134,25 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 // CCFR here.
 
+=== Inline mode with persisted toolbar would show regardless of the skin being loaded, causing css issues.
+// #TINY-10482
+
+Previously when `toolbar_persist` and `inline` mode was set to `true`, the toolbar could set itself prior to the skin even though the skin may not have been loaded yet.
+
+.example setup
+[source, js]
+----
+tinymce.init({
+  selector: "div",
+  inline: true,
+  toolbar_persist: true
+});
+----
+
+As a consequence, this would result in the menubar and/or the toolbar to be squashed when the host browser was operating over a relatively slow connection.
+
+{productname} 7.0 addresses this issue, now, the toolbar is no longer squashed in `inline` mode with `toolbar_persist` enabled, when the page takes longer to load the skin.
+
 [[security-fixes]]
 == Security fixes
 

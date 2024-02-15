@@ -1,0 +1,63 @@
+name: Develop > Tiny 5 Docs
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '**'
+    branches:
+      - 'feature/5**'
+      - 'hotfix/5**'
+
+jobs:
+  build:
+    name: Build Docs and Deploy
+    runs-on: ubuntu-22.04
+
+    strategy:
+      matrix:
+        node-version: [21]
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        cache: 'yarn'
+        node-version: ${{ matrix.node-version }}
+
+    - name: (Feature - Docs 5) Install dependencies
+      run: yarn install
+
+    - name: (Feature - Docs 5) Build API References
+      run: yarn build
+
+    - name: (Feature - Docs 5) Build Website
+      run: yarn antora ./antora-playbook-dev.yml
+
+    - name: (deploy) Prepare for branch deployments
+      shell: bash
+      run: |
+        printf "User-agent: * \nDisallow: /\n" > ./build/site/robots.txt
+        S3_BUCKET=$(node -e 'console.log(`s3://docs-${process.env.GITHUB_REF.replace("refs/heads/","").replace(/[/\s]/g, "-").replace(/[^0-9a-zA-Z-]/g, "").replace(/-$/g, "").toLowerCase()}.staging.tiny.cloud`)')
+        printf "S3_BUCKET: ${S3_BUCKET} (${#S3_BUCKET})\n"
+
+        if [ ${#S3_BUCKET} -lt 3 ]
+        then
+          echo "WARNING! S3_BUCKET name is too short"
+        fi
+
+        if [ ${#S3_BUCKET} -gt 63 ]
+        then
+          echo "WARNING! S3_BUCKET name is too long"
+        fi
+
+        echo $S3_BUCKET > S3_BUCKET
+
+    - name: (deploy) Upload website to S3
+      run: aws s3 sync --acl=public-read --delete ./build/site $(cat S3_BUCKET)/docs
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}
+        AWS_EC2_METADATA_DISABLED: true

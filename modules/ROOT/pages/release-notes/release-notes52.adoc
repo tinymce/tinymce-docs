@@ -8,12 +8,12 @@
 {productname} 5.2 was released for {enterpriseversion} and {cloudname} on Monday, March 9^th^, 2020. It includes {productname} 5.2.0 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.2, including:
 
 * xref:tinymce52newfeaturesandenhancements[TinyMCE 5.2 new features and enhancements]
-* xref:accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
+* xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
 * xref:minorchangesfortinymce52[Minor changes for TinyMCE 5.2]
-* xref:generalbugfixes[General bug fixes]
+* xref:general-bug-fixes[General bug fixes]
 * xref:deprecatedfeatures[Deprecated features]
 * xref:knownissues[Known issues]
-* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
+* xref:upgrading-to-the-latest-version-of-tinymce-5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
@@ -86,7 +86,7 @@ For information on using the `codesample_global_prismjs` setting, see: xref:plug
 
 The TextSeeker class is used for walking across text nodes to match a predicate.
 
-For information on using the `TextSeeker` API, see: xref:apis/tinymce.dom.textseeker.adoc[{productname} APIs - tinymce.dom.TextSeeker].
+For information on using the `TextSeeker` API, see: xref:api/tinymce.dom/tinymce.dom.textseeker.adoc[{productname} APIs - tinymce.dom.TextSeeker].
 
 === Updated the default TinyMCE table icons
 
@@ -103,7 +103,7 @@ A new `link_default_protocol` option has been added to the Autolink and Link plu
 * For information on using this setting with the Autolink plugin, see: xref:plugins/opensource/autolink.adoc#link_default_protocol[Autolink plugin - `link_default_protocol`].
 * For information on using this setting with the Link plugin, see: xref:plugins/opensource/link.adoc#link_default_protocol[Link plugin - `link_default_protocol`].
 
-[[accompanyingpremiumpluginchanges]]
+[[accompanying-premium-plugin-changes]]
 == Accompanying Premium Plugin changes
 
 The following premium plugins updates were released alongside {productname} 5.2.
@@ -203,7 +203,7 @@ For information on the Spell Checker Pro plugin, see: xref:plugins/premium/tinym
 * Changes media plugin to use `https` protocol for media urls by default.
 * Improves security by changing the editor parser to treat CDATA nodes as bogus HTML comments to match the HTML parsing specification. A new `preserve_cdata` setting has been added to preserve CDATA nodes if required.
 
-[[generalbugfixes]]
+[[general-bug-fixes]]
 == General bug fixes
 
 {productname} 5.2 provides fixes for the following bugs:

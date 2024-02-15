@@ -7,14 +7,14 @@
 
 {productname} 5.10.3 was released for {enterpriseversion} and {cloudname} on Tuesday, February 15^th^, 2022. It includes {productname} 5.10.3 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.10.3, including:
 
-* xref:accompanyingpremiumself-hostedserver-sidecomponentchanges[Accompanying Premium self-hosted server-side component changes]
-* xref:generalbugfixes[General bug fixes]
-* xref:securityfixes[Security fixes]
-* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
+* xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
+* xref:general-bug-fixes[General bug fixes]
+* xref:security-fixes[Security fixes]
+* xref:upgrading-to-the-latest-version-of-tinymce-5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
-[[accompanyingpremiumself-hostedserver-sidecomponentchanges]]
+[[accompanying-premium-self-hosted-server-side-component-changes]]
 == Accompanying Premium self-hosted server-side component changes
 
 The {productname} 5.10.3 release includes changes affecting the {productname} *self-hosted* services for the following plugins:
@@ -58,7 +58,7 @@ For information on:
 * Deploying the server-side components, see: xref:enterprise/server/index.adoc[Server-side component installation].
 * Deploying the server-side components using Docker, see: xref:enterprise/server/dockerservices.adoc[Containerized service deployments].
 
-[[generalbugfixes]]
+[[general-bug-fixes]]
 == General bug fixes
 
 {productname} 5.10.3 provides fixes for the following bugs:
@@ -66,14 +66,14 @@ For information on:
 * Alignment would sometimes be removed on parent elements when changing alignment on certain inline nodes, such as images.
 * The `fullscreen` plugin would incorrectly reset the scroll position when exiting fullscreen mode.
 
-[[securityfixes]]
+[[security-fixes]]
 == Security fixes
 
 {productname} 5.10.3 fixes the following security issues:
 
 All 3 server-side components updates include dependency updates that address security issues. This includes _Low_ severity vulnerability fixes.
 
-For information on the server-side components updates, see: xref:accompanyingpremiumself-hostedserver-sidecomponentchanges[Accompanying Premium self-hosted server-side component changes].
+For information on the server-side components updates, see: xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes].
 
 :enterprise: true
 

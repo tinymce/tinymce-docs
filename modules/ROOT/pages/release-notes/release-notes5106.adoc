@@ -1,0 +1,140 @@
+= TinyMCE 5.10.6
+:description: Release notes for TinyMCE 5.10.6
+:keywords: releasenotes bugfixes
+:title_nav: TinyMCE 5.10.6
+
+== Overview
+
+{productname} 5.10.6 was released for {enterpriseversion} and {cloudname} on Wednesday, October 26^th^, 2022. It includes {productname} 5.10.6 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.10.6, including:
+
+* xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
+* xref:general-bug-fixes[General bug fixes]
+* xref:upgrading-to-the-latest-version-of-tinymce-5[Upgrading to the latest version of TinyMCE 5]
+
+include::partial$misc/releasenotes_for_stable.adoc[]
+
+[[accompanying-premium-plugin-changes]]
+== Accompanying Premium Plugin changes
+
+The following premium plugin updates were released alongside {productname} 5.10.6.
+
+=== PowerPaste 5.6.2
+
+The {productname} 5.10.6 release includes an accompanying release of the **PowerPaste** premium plugin.
+
+===# If URL paths contained either a colon or an exclamation point (or both) PowerPaste’s link detection logic failed
+
+If a colon or an exclamation point — `:` or `!` — was present in the path portion of a URL, PowerPaste’s link detection logic treated the characters as, in effect, end-of-path boundaries. As a consequence, while the string was pasted into {productname}, the expected link was incomplete and incorrect.
+
+For example, pasting the string
+
+`https://example.com/!exclamation-point`
+
+resulted in the following, incomplete, link and trailing text
+
+[source, html]
+----
+<a href="https://example.com/">https://example.com/</a>!exclamation-point
+----
+
+Equivalent results occurred when URL paths contained the colon character (for example, `https://example.com/:colon`).
+
+With this update, the link detection logic has been improved to capture and present such URLs correctly.
+
+Now, pasting the string 
+
+`https://example.com/!exclamation-point`
+
+results in the following, complete, link and no trailing text
+
+[source, html]
+----
+<a href="https://example.com/!exclamation-point">https://example.com/!exclamation-point</a>
+----
+
+NOTE: Exclamation points and colons are still boundary characters for URL detection and delimiting. If the string `https://example.com/colon:` is pasted or typed into a {productname} document, automatic link detection will produce a link that does not include the trailing colon character.
+For information on the PowerPaste plugin, see: xref:plugins/premium/powerpaste.adoc[PowerPaste plugin].
+
+
+== Accompanying Premium self-hosted server-side component changes
+
+The {productname} 5.10.6 release includes changes affecting the {productname} **self-hosted** services for the following plugins:
+
+- The Enhanced Media Embed plugin (`mediaembed`)
+- The Image Tools plugin (`imagetools`)
+- The Link Checker plugin (`linkchecker`)
+- The Spell Checker Pro plugin (`tinymcespellchecker`)
+
+The Java server-side components have been updated to the following versions:
+
+- `ephox-spelling.war`: 2.118.6
+- `ephox-hyperlinking.war`: 2.105.13
+- `ephox-image-proxy.war`: 2.106.4
+
+This version requires Java 8 or higher. For information on the removal of Java 7 support, see: xref:release-notes/release-notes53.adoc#removalofjava7support[Removal of Java 7 support for TinyMCE 5.3 and later].
+
+For information on:
+
+- The Spell Checker Pro plugin, see: xref:plugins/premium/tinymcespellchecker.adoc[Spell Checker Pro plugin].
+- The Link Checker plugin, see: xref:plugins/premium/linkchecker.adoc[Link Checker plugin].
+- The Image Tools plugin, see: xref:plugins/opensource/imagetools.adoc[Image Tools plugin].
+- The Enhanced Media Embed plugin, see: xref:plugins/premium/mediaembed.adoc[Enhanced Media Embed plugin].
+- Deploying the server-side components, see: xref:enterprise/server/index.adoc[Server-side component installation].
+
+=== Updating the self-hosted server-side components
+
+The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
+
+1. Update your Java Application Server to the minimum required version:
+
+    - Eclipse Jetty 9.4 or later
+    - Apache Tomcat:
+        - 9 or later
+        - 8.5.12+
+        - 8.0.42+
+        - 7.0.76+
+
+2. Replace the existing server-side `.war` files with the `.war` files bundled with {productname} 5.10.6 or later.
+
+For information on:
+
+- Deploying the server-side components, see: xref:enterprise/server/index.adoc[Server-side component installation].
+- Deploying the server-side components using Docker, see: xref:enterprise/server/dockerservices.adoc[Containerized service deployments].
+
+[[general-bug-fixes]]
+== General bug fixes
+
+{productname} 5.10.6 provides fixes for the following bugs:
+
+=== The name and id attributes of some elements were incorrectly removed during serialization
+
+Previously, when {productname} serialized editor content, a bug in the SaxParser incorrectly removed `name` and `id` attributes from some elements (for example, `img` and `iframe` elements, among others).
+
+This occurred in several circumstances but could be demonstrated by adding, for example, an image with `id` and `name` attributes to a {productname} instance and then choosing **Tools > Source code** from the menu bar.
+
+The displayed source code did not include the `id` and `name` attributes.
+
+With this update, {productname} includes a change in the filtering that prevents the attribute stripping. Consequently, serialization no longer strips attributes from elements.
+
+NOTE: The {productname} 5.10.6 SaxParser method now works the same way as it does in {productname} 6.
+=== Notifications did not properly reposition when toggling fullscreen mode
+
+A {productname} toolbar option, *Fullscreen*, toggles the {productname} editor between the size it takes by default and, as the toolbar’s name suggests, fullscreen. Fullscreen is the largest size available to the editor (ie, taking up all the space available to {productname} in the browser).
+
+If a {productname} instance had a custom notification, `+editor.notificationManager.open()+`, set to display when the *Fullscreen* button was used, toggling from Fullscreen back to default resulted in the notification displaying outside the {productname} editor.
+
+{productname} 5.10.6 corrects this. When toggling between the two *Fullscreen* states, custom notifications now display immediately below the toolbar in either state, as expected.
+
+=== Toggling fullscreen mode with the `fullscreen` plugin now also fires the `ResizeEditor` event
+
+A bug in fullscreen mode toggling, in which notifications did not properly reposition, was addressed for this {productname} release.
+
+As part of that fix, a change was made to the `fullscreen` plugin.
+
+As of {productname} 5.10.6, toggling fullscreen mode with the `fullscreen` plugin also fires the `ResizeEditor` event.
+
+:enterprise: true
+
+include::partial$install/upgrading-info.adoc[]
+
+:enterprise: false

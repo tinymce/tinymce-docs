@@ -4,7 +4,7 @@ The `schema` option enables you to switch between the HTML4 and HTML5 schema. Th
 
 The html5 schema is the full HTML5 specification including the older HTML4 elements for compatibility. The html5-strict will only allow the elements that are in the current HTML5 specification excluding things that where removed. The html4 schema includes the full html4 transitional specification.
 
-Also note that all event attributes are excluded by default since it's a bad practice to use inline script handles like "onclick". You can manually add extra elements and attributes using the <<extended_valid_elements,extended_valid_elements>> option.
+Also note that all event attributes are excluded by default since it's a bad practice to use inline script handles like "onclick". You can manually add extra elements and attributes using the xref:extended_valid_elements[extended_valid_elements] option.
 
 *Type:* `String`
 

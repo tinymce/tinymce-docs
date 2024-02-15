@@ -1,0 +1,57 @@
+name: Release > Tiny 5 Docs
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - '**'
+    branches:
+      - 'release/docs-5'
+
+jobs:
+  build:
+    name: Build Docs and Deploy
+    runs-on: ubuntu-22.04
+
+    strategy:
+      matrix:
+        node-version: [21]
+
+    steps:
+    - uses: actions/checkout@v1
+
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        cache: 'yarn'
+        node-version: ${{ matrix.node-version }}
+
+    - name: (Release - Docs 5) Install dependencies
+      run: yarn install
+
+    - name: (Release - Docs 5) Build API References
+      run: yarn build
+
+    - name: (Release - Docs 5) Build Website
+      run: yarn antora ./antora-playbook-prod.yml
+
+    - name: (deploy) Upload to S3
+      run: aws s3 sync --acl=public-read --delete ./build/site s3://tiny-cloud-antora-docs-production/docs --exclude '*' --include 'tinymce/5/*'
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.PRODUCTION_AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.PRODUCTION_AWS_SECRET_ACCESS_KEY }}
+        AWS_EC2_METADATA_DISABLED: true
+      
+    - name: (deploy) Upload images to S3
+      run: aws s3 sync --acl=public-read ./build/site/_ s3://tiny-cloud-antora-docs-production/docs/_ --exclude '*' --include 'img'
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.PRODUCTION_AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.PRODUCTION_AWS_SECRET_ACCESS_KEY }}
+        AWS_EC2_METADATA_DISABLED: true
+
+    - name: (deploy) Invalidate Cache
+      run: aws cloudfront create-invalidation --distribution-id E3LFU502SQ5UR --paths "/docs/*"
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.PRODUCTION_AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.PRODUCTION_AWS_SECRET_ACCESS_KEY }}
+        AWS_EC2_METADATA_DISABLED: true

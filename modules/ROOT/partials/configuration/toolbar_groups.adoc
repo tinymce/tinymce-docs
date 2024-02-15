@@ -3,11 +3,11 @@
 
 include::partial$misc/requires_5_2v.adoc[]
 
-The `toolbar_groups` option creates a toolbar button that displays a collection of other toolbar buttons as a pop-up toolbar. The style of toolbar shown is based on the current <<toolbarmode,toolbar mode>>. For example, if `toolbar_mode` is set to `floating`, the toolbar group pop-up will appear in a floating shelf.
+The `toolbar_groups` option creates a toolbar button that displays a collection of other toolbar buttons as a pop-up toolbar. The style of toolbar shown is based on the current xref:toolbarmode[toolbar mode]. For example, if `toolbar_mode` is set to `floating`, the toolbar group pop-up will appear in a floating shelf.
 
 NOTE: The `toolbar_groups` feature is _only_ supported when using the `floating` toolbar mode. If the `toolbar_groups` option is used with other toolbar modes, the toolbar group button will not be displayed and a warning message will be printed in the console.
 
-This option accepts an object, mapping the button name to the group configuration. For details on configuring toolbar groups, see: link:{baseurl}/ui-components/typesoftoolbarbuttons/#grouptoolbarbutton[`group toolbar button configuration`].
+This option accepts an object, mapping the button name to the group configuration. For details on configuring toolbar groups, see: xref:ui-components/typesoftoolbarbuttons.adoc#grouptoolbarbutton[`group toolbar button configuration`].
 
 *Type:* `Object`
 

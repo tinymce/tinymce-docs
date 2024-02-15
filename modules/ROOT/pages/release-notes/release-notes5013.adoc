@@ -125,7 +125,7 @@ bottom of the document.
 
 === Tiny Comments
 
-*Tiny Comments* 2.1.1 addresses an issue where users could add, edit, and remove comments when the editor mode is set to xref:apis/tinymce.editormode.adoc#isReadOnly[read-only]. Comments now correctly listens to the editor mode change and disables comments when the editor is in read-only mode and re-enable when in design mode.
+*Tiny Comments* 2.1.1 addresses an issue where users could add, edit, and remove comments when the editor mode is set to xref:api/tinymce/tinymce.editormode.adoc#isReadOnly[read-only]. Comments now correctly listens to the editor mode change and disables comments when the editor is in read-only mode and re-enable when in design mode.
 
 For information on *Tiny Comments* refer to the full xref:plugins/premium/comments/index.adoc[documentation].
 

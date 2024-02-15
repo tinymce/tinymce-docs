@@ -3,7 +3,7 @@
 
 include::partial$misc/requires_5_8v.adoc[]
 
-Use this option to render the inline toolbar into a fixed-positioned HTML element by passing a `HTMLElement` directly to the option. This option is similar to the link:{baseurl}/configure/editor-appearance/#fixed_toolbar_container[`fixed_toolbar_container` option], which accepts a CSS selector.
+Use this option to render the inline toolbar into a fixed-positioned HTML element by passing a `HTMLElement` directly to the option. This option is similar to the xref:configure/editor-appearance.adoc#fixed_toolbar_container[`fixed_toolbar_container` option], which accepts a CSS selector.
 
 IMPORTANT: `fixed_toolbar_container` has precedence over `fixed_toolbar_container_target`, so in order for `fixed_toolbar_container_target` to work, do not use the `fixed_toolbar_container` option.
 

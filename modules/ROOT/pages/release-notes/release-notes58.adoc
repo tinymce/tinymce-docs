@@ -10,12 +10,12 @@
 * xref:newfeatures[New features]
 * xref:enhancements[Enhancements]
 * xref:functionalitychanges[Functionality changes]
-* xref:accompanyingpremiumpluginchanges[Accompanying Premium Plugin changes]
+* xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
 * xref:accompanyingpremiumskinsandiconpackschanges[Accompanying Premium Skins and Icon Packs changes]
-* xref:generalbugfixes[General bug fixes]
+* xref:general-bug-fixes[General bug fixes]
 * xref:deprecatedfeatures[Deprecated features]
 * xref:knownissues[Known issues]
-* xref:upgradingtothelatestversionoftinymce5[Upgrading to the latest version of TinyMCE 5]
+* xref:upgrading-to-the-latest-version-of-tinymce-5[Upgrading to the latest version of TinyMCE 5]
 
 include::partial$misc/releasenotes_for_stable.adoc[]
 
@@ -69,7 +69,7 @@ The following functionality changes were made for the {productname} 5.8 release:
 * Updated the `image` dialog to display the class list dropdown as full-width if the caption checkbox is not present.
 * Renamed the "H Align" and "V Align" input labels in the Table Cell Properties dialog to "Horizontal align" and "Vertical align" respectively.
 
-[[accompanyingpremiumpluginchanges]]
+[[accompanying-premium-plugin-changes]]
 == Accompanying Premium Plugin changes
 
 The following premium plugin updates were released alongside {productname} 5.8.
@@ -185,7 +185,7 @@ A new Fluent skin and accompanying content css, which follows the Microsoft desi
 
 For information on using premium skins and icon packs, see: xref:enterprise/premium-skins-and-icon-packs/index.adoc[Premium Skins and Icon Packs].
 
-[[generalbugfixes]]
+[[general-bug-fixes]]
 == General bug fixes
 
 {productname} 5.8 provides fixes for the following bugs:

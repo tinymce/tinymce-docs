@@ -231,6 +231,7 @@ Commands are available for the following plugins:
 * xref:fullscreen[Full Screen]
 * xref:help[Help]
 * xref:image[Image]
+* xref:importword[Import Word]
 * xref:insertdatetime[Insert Date/Time]
 * xref:link[Link]
 * xref:lists[Lists]
@@ -383,6 +384,13 @@ include::partial$commands/help-cmds.adoc[leveloffset=+3]
 The following command requires the xref:image.adoc[Image (`+image+`)] plugin.
 
 include::partial$commands/image-cmds.adoc[leveloffset=+3]
+
+[[import-word]]
+==== Import Word
+
+The following command requires the xref:importword.adoc[Import Word (`+importword+`)] plugin.
+
+include::partial$commands/importword-cmds.adoc[leveloffset=+3]
 
 [[insertdatetime]]
 ==== Insert Date/Time

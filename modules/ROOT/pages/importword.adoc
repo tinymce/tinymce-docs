@@ -1,0 +1,74 @@
+= Import from Word plugin
+:navtitle: Import from Word
+:description: Provides a way to import .docx (Word documents) or .dotx (Word templates) files into the editor.
+:description_short: Import .docx or .dotx files into the editor.
+:keywords: plugin, importword
+:pluginname: Import from Word
+// values for <tier>
+// opensource plugin = tieroneplan
+// premium plugin    = tiertwoplan or tierthreeplan or enterpriseplan
+:pluginminimumplan: <tier>
+:plugincode: importword
+:plugincategory: premium
+
+include::partial$misc/admon-premium-plugin.adoc[]
+
+// uncomment this before merging.
+////
+include::partial$misc/admon-requires-7.0v.adoc[]
+////
+
+The {pluginname} plugin lets you import `.docx` (Word document) or `.dotx` (Word template) files into the editor. The process preserves formatting and rich media.
+
+== Interactive example
+
+liveDemo::{plugincode}[]
+
+== Basic setup
+
+To add the {pluginname} plugin to the editor, add `{plugincode}` to the `plugins` option in the editor configuration.
+
+For example:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'code importword',
+  toolbar: 'importword code',
+  importword_service_url: '<replace_with_service_url>'
+});
+----
+
+== Options
+
+The following configuration options affect the behavior of the {pluginname} plugin.
+
+include::partial$configuration/{plugincode}.adoc[][leveloffset=+1]
+
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+
+== Commands
+
+The {pluginname} plugin provides the following {productname} commands.
+
+include::partial$commands/{plugincode}-cmds.adoc[]
+
+// Remove is not required before merging
+////
+== Events
+
+The {pluginname} plugin provides the following events.
+
+include::partial$events/{plugincode}-events.adoc[]
+
+== APIs
+
+The {pluginname} plugin provides the following APIs.
+
+include::partial$plugin-apis/{plugincode}-apis.adoc[]
+////

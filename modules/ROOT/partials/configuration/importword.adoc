@@ -1,0 +1,36 @@
+[[importword-service-url-option]]
+== `importword_service_url` option
+
+This option is used for setting the URL endpoint for the conversion service.
+
+[IMPORTANT]
+If this string value is **not configured** it will return a console.error:
+_The {pluginname} plugin requires the `importword_service_url` to be configured_.
+
+If the editor detects an `invalid_URL`, it will return a console.error:
+_The value provided in `importword_service_url` is not a valid URL_.
+
+*Type:* `+String+`
+
+=== Example: using `importword_service_url`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'code importword',
+  toolbar: 'importword code',
+  importword_service_url: '<replace-with-service-url>'
+});
+----
+
+=== Limitation(s) of the `importword_service_url` option
+
+The `importword_service_url` option has the following limitations.
+
+TODO//
+////
+Known limitations.
+Complicated scenarios.
+Anything that warrants a CAUTION or WARNING admonition.
+////

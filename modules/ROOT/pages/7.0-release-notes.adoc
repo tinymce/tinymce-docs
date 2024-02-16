@@ -137,7 +137,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === Inline mode with persisted toolbar would show regardless of the skin being loaded, causing css issues.
 // #TINY-10482
 
-Previously when `toolbar_persist` and `inline` mode was set to `true`, the toolbar could set itself prior to the skin even though the skin may not have been loaded yet.
+Previously when `toolbar_persist` and `inline` mode was set to `true`, the toolbar could be shown before the skin was loaded. Whereas now it will always wait for the skin to load first.
 
 .example setup
 [source, js]

@@ -99,10 +99,68 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} <x.y[.z]> also includes the following improvement<s>:
 
-=== <TINY-vwxyz 1 changelog entry>
-//#TINY-vwxyz1
+[[a-new-trigger-property-for-block-text-pattern-configurations-allowing-pattern-activation-with-either-space-or-enter-keys]]
+=== A new `trigger` property for block text pattern configurations, allowing pattern activation with either Space or Enter keys
+//#TINY-10324
 
-// CCFR here.
+This release introduces a new `trigger` property for block text pattern configurations, allowing pattern activation with either `Space` or `Enter` keys.
+
+In {productname} 7.0 the default preconfigured text patterns **was changed from**:
+
+[source, js]
+----
+[     
+  { start: '*', end: '*', format: 'italic' },
+  { start: '**', end: '**', format: 'bold' },
+  { start: '#', format: 'h1', trigger: 'enter' },
+  { start: '##', format: 'h2', trigger: 'enter' },
+  { start: '###', format: 'h3', trigger: 'enter' },
+  { start: '####', format: 'h4', trigger: 'enter' },
+  { start: '#####', format: 'h5', trigger: 'enter' },
+  { start: '######', format: 'h6', trigger: 'enter' },
+  { start: '1. ', cmd: 'InsertOrderedList', trigger: 'enter' },
+  { start: '* ', cmd: 'InsertUnorderedList', trigger: 'enter' },
+  { start: '- ', cmd: 'InsertUnorderedList', trigger: 'enter' },
+]
+----
+
+**to the following**:
+
+[source, js]
+----
+[     
+  { start: '*', end: '*', format: 'italic' },
+  { start: '**', end: '**', format: 'bold' },
+  { start: '#', format: 'h1', trigger: 'space' },
+  { start: '##', format: 'h2', trigger: 'space' },
+  { start: '###', format: 'h3', trigger: 'space' },
+  { start: '####', format: 'h4', trigger: 'space' },
+  { start: '#####', format: 'h5', trigger: 'space' },
+  { start: '######', format: 'h6', trigger: 'space' },
+  { start: '1.', cmd: 'InsertOrderedList', trigger: 'space' },
+  { start: '*', cmd: 'InsertUnorderedList', trigger: 'space' },
+  { start: '-', cmd: 'InsertUnorderedList', trigger: 'space' },
+  { start: '>', cmd: 'mceBlockQuote', trigger: 'space' },
+  { start: '---', cmd: 'InsertHorizontalRule', trigger: 'space' },
+]
+----
+
+Notice that new configuration of start prefixes for inserting lists doesn’t contain space character.
+
+[source, js]
+----
+{
+  { start: '*', cmd: 'InsertUnorderedList', trigger: 'space' },
+  { start: '-', cmd: 'InsertUnorderedList', trigger: 'space' },
+}
+----
+
+[IMPORTANT]
+Customers that wish to revert back to the previous default block `text_patterns` settings will be required to replace `trigger: 'space'` with `trigger: 'enter'` for the trigger value.
+
+[NOTE]
+The trigger property is exclusively applicable to the configuration of block text patterns. It is not recognized in the configurations for inline and replacement text patterns.
+Incorporating new text patterns into the preconfigured set requires the inclusion of default values. This is essential because the entire `text_patterns` option will be overwritten, and without the default values, the original configuration will not be preserved.
 
 
 [[additions]]

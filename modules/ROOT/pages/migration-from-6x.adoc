@@ -181,6 +181,28 @@ default: [
 [[plugins]]
 == Plugins
 
+=== List Plugin (The list plugin is now required to be added to {productname} config, in order to execute list commands)
+
+A breaking change has been introduced regarding the insertion of **lists** using the `InsertOrderedList` and `InsertUnorderedList` commands.
+
+Despite the presence of these commands, they have been functional even without the `list` plugin being added to the {productname} init configuration.
+
+{productname} 7.0, now **requires** that the `list` plugin is present in the `init` configuration for executing these insert list commands.
+
+As a result, and users that notice styling issues with their existing documents will be required to add the `list` plugin to their `init` config, as executing the `InsertOrderedList` and `InsertUnorderedList` commands will have longer effect the editor content.
+
+.Example adding list plugin
+[source, js]
+----
+tinymce.init({
+  selector: "textarea",
+  plugins: [
+    "lists"
+  ],
+  toolbar: "bullist numlist",
+});
+----
+
 
 [[plugins-paste]]
 === Paste
@@ -194,7 +216,22 @@ In {productname} 7.0 the below list is a list of deprecated plugins, config opti
 
 The open-source `Template` plugin and associated config options have been removed in {productname} 7.0.
 
-However, this plugin was replaced with the **Advanced Template** plugin, see: xref:advanced-templates.adoc[Advanced Template] for more details.
+Customers using the `template` plugin need to migrate to the premium `advtemplate` which contains all the functionality except some esoteric options that was created very long ago. Instead of simply porting over these options, we will listen to customer feedback and quickly add the ones customer’s are relying on. 
+
+This plugin has been replaced with the **Advanced Template** plugin, see: xref:advanced-templates.adoc[Advanced Template] for more details.
+
+[IMPORTANT]
+For customers using the `template` plugin and are looking to migrate to the premium `advtemplate` plugin which contains all the functionality except some specific options which are noted below.
+
+Options not available in **Advanced Template** plugin
+    
+* `template_cdate_classes`
+* `template_cdate_format`
+* `template_mdate_classes`
+* `template_mdate_format`
+* `template_replace_values`
+* `template_preview_replace_values`
+* `template_selected_content_classes`
 
 === Export plugin
 
@@ -224,6 +261,33 @@ Previously added numerous style elements when resizing table rows and columns su
 
 [NOTE]
 {productname} 7.0 does not provide any fallback to revert to the old behavior.
+
+
+=== Fixing the `table_style_by_css` option
+
+Previously, tables were styled using CSS rather than attributes, aligning with modern web development practices.
+
+However, due to {productname}'s legacy predating this shift, a default option called `table_style_by_css` was introduced in {productname} 6 to accommodate this transition. Unfortunately, the implementation of this feature resulted in an unexpected behavior where the older border attribute was not updated alongside CSS changes, causing issues such as the disappearance of dashed outlines around tables with no borders.
+
+As a consequence, a breaking change has been initiated to address this issue, and the below changes are:
+
+* when a table's border `width` is set to `zero`, the **border attribute** will also be set to `zero`.
+
+=== `Force` notifications to have a close button
+
+Currently, {productname} has the option to modify default notifications so that they do not have display a `X` (close button).
+
+{productname} is committed to enhance accessibility for all users, and aim to create consistency across all notifications and establish a standard tabbing flow for keyboard users.
+
+As of {productname} 7.0, the option `closeButton` has been removed and it will be defaulted to `true`.
+
+### How this will be addressed
+
+The  `closeButton` option will be removed and have it will always be `true`
+
+
+[IMPORTANT]
+If customers in-counter table styling issues, they will need to update their CSS to match the **new pattern** produced by {productname}.
 
 [[security]]
 == Security

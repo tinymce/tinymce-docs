@@ -143,11 +143,11 @@ In previous versions of {productname}, two issues where identified that affected
 
 . as {productname} creates a bookmark when there is no selection for Firefox, when a user opened a context menu the editor would jump back to the newly created bookmark.
 
-As a consequence, since the selection is still on the first element, the menu voiceover was `disabled`.
+As a consequence, since the selection is still on the first element, the `List Properties...` context menu item was `disabled`.
 
 {productname} 7.0 addresses this issue, now when the user opens a context menu, {productname} creates a new bookmark to avoid the jump back.
 
-As a result, the selection is in the correct place and the context menu voice over is `enabled`.
+As a result, the selection is in the correct place and the `List Properties...` context menu item is `enabled`.
 
 [[security-fixes]]
 == Security fixes

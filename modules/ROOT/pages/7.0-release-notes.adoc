@@ -137,9 +137,9 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === Directly right clicking on a `<ol>`/ `<li>` in FireFox didn't enable the button `List Properties...` in the context menu
 // #TINY-10490
 
-In previous versions of {productname}, two issues where identified that affected `list properties`;
+In previous versions of {productname}, two issues where identified that affected `list properties` for `<ol><li>` tags:
 
-. in old versions of Firefox (prior to version 121), the caret was not moved to the target position, and;
+. in old versions of Firefox (prior to version 121), the caret was not moved to the target position when using the right click, and;
 
 . as {productname} creates a bookmark when there is no selection for Firefox, when a user opened a context menu the editor would jump back to the newly created bookmark.
 

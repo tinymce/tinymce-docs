@@ -137,7 +137,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === The toolbar width was miscalculated for the inline editor positioned inside a scrollable container.
 // #TINY-10581
 
-Previously in {productname}, the toolbar's width was calculated using the `outerContainer` width.
+Previously in {productname}, the inline editor's toolbar width was calculated using the `outerContainer` width.
 
 Consequently, the toolbar was given a width of `0`, resulting in the toolbar collapsing to the minimum width.
 

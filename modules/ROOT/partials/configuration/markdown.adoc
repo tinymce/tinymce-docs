@@ -1,69 +1,34 @@
-[[configuration-option]]
-== `<configuration_option>`
+[[markdown_symbols]]
+== `markdown_symbols` option
 
-// Replace all instances of <configuration_option> with the
-// configuration option name then remove this comment.
+The `markdown_symbols` option allows you to define `key/value` pairs where the `key` represents a symbol in your content and the `value` represents the replacement for that symbol.
 
-// Add explanatory material as per the comment block below then remove
-// the block and this comment.
+*Type:* `+Object+`
 
-////
-What does the option do?
-Why use it?
-When use it?
-What values can it use?
-What do these values do?
-Are there risks?
-  - Explain without using ‘risk’ or similar words.
-  - Use NOTE or IMPORTANT admonitions if helpful.
-  - For longer or more complicated scenarios, use the limitations section below.
-////
+*Default value:* The `+markdown_symbols+` object excepts the following key-value pairs by default currently:
 
-*Type:* `+String+`, `+Boolean+`, `+Number+`, `+Function+`, `+Object+`, `+Array+`, or `+Regexp+`
-
-// Remove the *Possible values* line if there is no discrete set of possible values.
-*Possible values:* `'string1'`, `'string2'`, `false`
-
-*Default value:* `false`, `1`, `'string1'`
-
-=== Example: using `<configuration_option>`
-
-// Add a working and tested configuration.
-[source,js]
+[source, js]
 ----
-tinymce.init({
-  selector: 'textarea',  // change this value according to your html
-  <configuration_option>: '<value>'
-});
+{
+  C: '©',
+  TM: '™',
+  R: '®'
+}
 ----
 
-// Add a working and tested configuration (edit as required)
-// or remove if not applicable.
-=== Example: disabling the <feature>
-
-To disable <feature>, set `<configuration_option>` to `false`.
+=== Example: using `markdown_symbols`
 
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  <configuration_option>: 'false'
+  markdown_symbols: {
+    C: '©',
+    TM: '™',
+    R: '®'
+  }
 });
 ----
 
-// Remove if not applicable.
-// Edit the sub-head to singular or plural as required.
-=== Limitation(s) of the `<configuration_option>` option
-
-The `<configuration_option>` option has the following limitations.
-
-// Add explanatory material as per the comment block below then remove
-// the block and this comment.
-
-////
-Known limitations.
-Complicated scenarios.
-Anything that warrants a CAUTION or WARNING admonition.
-////
-
-// Remove all comment lines and comment blocks before publishing.
+[NOTE]
+Additionally, if the **Emoticons** plugin is enabled and properly set up, emojis surrounded by colons (:) will also be replaced. This feature allows for a broader range of replacements, including emojis represented by image files. For example, `:smile:` will be translated to the corresponding emoji, if configured.

@@ -26,6 +26,7 @@ Open Source users: please report issues in the https://github.com/tinymce/tinymc
 * xref:ui-and-ux-elements-and-components[UI and UX elements and components]
 * xref:security[Security]
 
+[[tinymce-70-core-changes]]
 == {productname} {productmajorversion} core changes
 
 For additional details on {productname} 7.0 changes, see xref:7.0-release-notes.adoc[{productname} 7.0 release notes].
@@ -34,38 +35,43 @@ For additional details on {productname} 7.0 changes, see xref:7.0-release-notes.
 [[breaking-changes]]
 == Breaking Changes
 
-=== Renaming of inconsistent CSS file name changes for `bundling` {productname}
+// === Renaming of inconsistent CSS file name changes for `bundling` {productname}
 
-In {productname} 6.8, a new feature was introduced that allowed bundling of multiple CSS files together into a single `js` file.
+// In {productname} 6.8, a new feature was introduced that allowed bundling of multiple CSS files together into a single `js` file.
 
-{productname} 7.0 addresses the issues by updating the below inconsistent file names from {productname}'s Premium Plugins.
+// {productname} 7.0 addresses the issues by updating the below inconsistent file names from {productname}'s Premium Plugins.
 
-[cols="1,1", options="header"]
-|===
-| Old File Path Name | New File Path Name
-| `a11ychecker/css/annotations.css` | `a11ychecker/css/annotations.min.css`
-| `advcode/codemirror.min.css` | `advcode/css/codemirror.min.css`
-| `linkchecker/content.min.css` | `linkchecker/css/content.min.css`
-| `mediaembed/content.min.css` | `mediaembed/css/content.min.css`
-| `mentions/css/mentions.css` | `mentions/css/mentions.min.css`
-| `pageembed/css/empa30.css` | `pageembed/css/empa30.min.css`
-| `revisionhistory/css/revisionhistory.css` | `revisionhistory/css/revisionhistory.min.css`
-| `tinycomments/css/tinycomments.css` | `tinycomments/css/tinycomments.min.css`
-|===
+// [cols="1,1", options="header"]
+// |===
+// | Old File Path Name | New File Path Name
+// | `a11ychecker/css/annotations.css` | `a11ychecker/css/annotations.min.css`
+// | `advcode/codemirror.min.css` | `advcode/css/codemirror.min.css`
+// | `linkchecker/content.min.css` | `linkchecker/css/content.min.css`
+// | `mediaembed/content.min.css` | `mediaembed/css/content.min.css`
+// | `mentions/css/mentions.css` | `mentions/css/mentions.min.css`
+// | `pageembed/css/empa30.css` | `pageembed/css/empa30.min.css`
+// | `revisionhistory/css/revisionhistory.css` | `revisionhistory/css/revisionhistory.min.css`
+// | `tinycomments/css/tinycomments.css` | `tinycomments/css/tinycomments.min.css`
+// |===
 
-[NOTE]
-Customers that updated their `bundling` code after the release of {productname} 6.8, should update their file name paths for the above specific plugins if set in their init configuration.
+// [NOTE]
+// Customers that updated their `bundling` code after the release of {productname} 6.8, should update their file name paths for the above specific plugins if set in their init configuration.
 
 
 [[apis]]
 == APIs
 
+TODO//
+
 [[commands-and-queries]]
 == Commands and queries
+
+TODO//
 
 [[options]]
 == Options
 
+[[sandbox-iframes-option]]
 === `sandbox_iframes`
 
 Previous Security penetration testing surfaced a security issue with {productname} loading iframes `unsandboxed` which asa. result could allow arbitrary code execution inside {productname} content.
@@ -77,9 +83,7 @@ The config option is currently set to `opt in`.
 {productname} 7.0, the default value of the `sandbox_iframes` configuration option will be changed from `false` to `true`, making it `opt out` instead of `opt in` for their editors.
 
 [IMPORTANT]
-The premium **Enhanced Media Embed** plugin uses `iframes` extensively and are currently no workarounds available except to keep a record of allowed sources.
-
-Customers who want to continue to use **Enhanced Media Embed** plugin in {productname} 7.0 will be required to add the option `sandbox_iframes: false` to their {productname} init configuration.
+The premium **Enhanced Media Embed** plugin uses `iframes` extensively and are currently no workarounds available except to keep a record of allowed sources. Customers who want to continue to use **Enhanced Media Embed** plugin in {productname} 7.0 will be required to add the option `sandbox_iframes: false` to their {productname} init configuration.
 
 .Example
 [source, js]
@@ -92,6 +96,7 @@ tinymce.init({
 
 This follows our policy that we ship the most secure version of {productname} possible, while giving our customers the opportunity to make informed decisions on dialing back protections to a level that fits their use-case.
 
+[[convert-unsafe-embeds-option]]
 === `convert_unsafe_embeds`
 
 A previous Security penetration test surfaced a security issue with {productname} regarding object tags, which was a legacy method of inserting an external resource, such as a video, a PDF.
@@ -160,7 +165,7 @@ Applying basic formats such as headings, lists, bold and italic while typing are
 [NOTE]
 Customers who want to keep the old behavior need to update their config with the text pattern option using enter as trigger key.
 
-.new text patterns
+.Updated default text patterns
 [source, ts]
 ----
 default: [
@@ -181,7 +186,11 @@ default: [
 [[plugins]]
 == Plugins
 
-=== List Plugin (The list plugin is now required to be added to {productname} config, in order to execute list commands)
+[[plugins-list-plugin]]
+=== List Plugin
+
+[[The-list-plugin-is-now-required-to-be-added-to-TinyMCE-config-in-order-to-execute-list-commands]]
+==== The list plugin is now required to be added to {productname} config, in order to execute list commands
 
 A breaking change has been introduced regarding the insertion of **lists** using the `InsertOrderedList` and `InsertUnorderedList` commands.
 
@@ -204,14 +213,12 @@ tinymce.init({
 ----
 
 
-[[plugins-paste]]
-=== Paste
-
 [[deprecated-plugins]]
 == Deprecated Plugins
 
 In {productname} 7.0 the below list is a list of deprecated plugins, config options and APIs according to the following list:
 
+[[deprecated-plugins-template-plugin]]
 === Template plugin
 
 The open-source `Template` plugin and associated config options have been removed in {productname} 7.0.
@@ -233,26 +240,28 @@ Options not available in **Advanced Template** plugin
 * `template_preview_replace_values`
 * `template_selected_content_classes`
 
-=== Export plugin
 
 [[deprecated-options]]
 == Deprecated Options
 
+[[deprecated-options-remove-trailing-brs-option-removed-from-our-DomParser-API]]
 === `remove_trailing_brs` option removed from our `DomParser` API
 
 The `remove_trailing_brs` option was moved to the serializer and the existing option is no longer the best way to remove the relevant tags.
 
-[NOTE]
-We’re not deleting anything, the capability still exists for users that have added this option to their {productname} configuration.
+[TIP]
+While the capability still exists for users that have added this option to their {productname} configuration, it is recommended that customers using our `DomParser` API directly, should migrate to use our `DomSerializer` setting instead.
 
 
 [[schema]]
 == Schema
 
+TODO//
 
 [[ui-and-ux-elements-and-components]]
 == UI and UX elements and components
 
+[[ui-and-ux-elements-and-components-improved-how-styles-are-applied-when-resizing-rows-and-columns-for-tables]]
 === Improved how styles are applied when resizing rows and columns for Tables.
 
 Previously added numerous style elements when resizing table rows and columns such as on the `table element`, `tr elements`, and `td elements`. This resulted in unappealing HTML output.
@@ -262,7 +271,7 @@ Previously added numerous style elements when resizing table rows and columns su
 [NOTE]
 {productname} 7.0 does not provide any fallback to revert to the old behavior.
 
-
+[[ui-and-ux-elements-and-components-fixing-the-table-style-by-css-option]]
 === Fixing the `table_style_by_css` option
 
 Previously, tables were styled using CSS rather than attributes, aligning with modern web development practices.
@@ -273,6 +282,7 @@ As a consequence, a breaking change has been initiated to address this issue, an
 
 * when a table's border `width` is set to `zero`, the **border attribute** will also be set to `zero`.
 
+[[ui-and-ux-elements-and-components-force-notifications-to-have-a-close-button]]
 === `Force` notifications to have a close button
 
 Currently, {productname} has the option to modify default notifications so that they do not have display a `X` (close button).
@@ -281,11 +291,11 @@ Currently, {productname} has the option to modify default notifications so that 
 
 As of {productname} 7.0, the option `closeButton` has been removed and it will be defaulted to `true`.
 
-
 [IMPORTANT]
 If customers in-counter table styling issues, they will need to update their CSS to match the **new pattern** produced by {productname}.
 
 [[security]]
 == Security
 
-include::partial$security/sanitizing-html-input-and-protecting-against-xss-attacks-dom-parser-and-dom-purify.adoc[]
+TODO//
+// include::partial$security/sanitizing-html-input-and-protecting-against-xss-attacks-dom-parser-and-dom-purify.adoc[]

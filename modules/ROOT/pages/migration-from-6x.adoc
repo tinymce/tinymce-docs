@@ -35,28 +35,7 @@ For additional details on {productname} 7.0 changes, see xref:7.0-release-notes.
 [[breaking-changes]]
 == Breaking Changes
 
-// === Renaming of inconsistent CSS file name changes for `bundling` {productname}
-
-// In {productname} 6.8, a new feature was introduced that allowed bundling of multiple CSS files together into a single `js` file.
-
-// {productname} 7.0 addresses the issues by updating the below inconsistent file names from {productname}'s Premium Plugins.
-
-// [cols="1,1", options="header"]
-// |===
-// | Old File Path Name | New File Path Name
-// | `a11ychecker/css/annotations.css` | `a11ychecker/css/annotations.min.css`
-// | `advcode/codemirror.min.css` | `advcode/css/codemirror.min.css`
-// | `linkchecker/content.min.css` | `linkchecker/css/content.min.css`
-// | `mediaembed/content.min.css` | `mediaembed/css/content.min.css`
-// | `mentions/css/mentions.css` | `mentions/css/mentions.min.css`
-// | `pageembed/css/empa30.css` | `pageembed/css/empa30.min.css`
-// | `revisionhistory/css/revisionhistory.css` | `revisionhistory/css/revisionhistory.min.css`
-// | `tinycomments/css/tinycomments.css` | `tinycomments/css/tinycomments.min.css`
-// |===
-
-// [NOTE]
-// Customers that updated their `bundling` code after the release of {productname} 6.8, should update their file name paths for the above specific plugins if set in their init configuration.
-
+TODO//
 
 [[apis]]
 == APIs

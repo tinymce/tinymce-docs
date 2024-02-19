@@ -137,7 +137,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === Clicking to the left or right of a non-editable `div` in Firefox would show two cursors.
 // #TINY-10314
 
-Previously in Firefox, the editor would render the `FakeCaret` that is used by {productname} to insert the real caret in the editor container.
+Previously in Firefox, when the `FakeCaret` was rendered, in some cases the real caret was incorrectly rendered too
 
 As a consequence, the `FakeCaret` was visible at the same time as the real caret which should have been `hidden`.
 

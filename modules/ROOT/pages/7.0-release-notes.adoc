@@ -137,10 +137,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === Heading formatting would be partially applied to the content within the `summary` element when the caret was positioned between words.
 // #TINY-10312
 
-With the release of {productname} 6.8, applying heading formatting to the content within the `<summary>` element was introduced. However, an issue was identified: 
-
-- if the caret was positioned between words, and;
-- before or after a **`+&nbsp;+`** space character.
+With the release of {productname} 6.8, applying heading formatting to the content within the `<summary>` element was introduced. However, an issue was identified: if the caret was positioned between words, the editor's selection expand range functionality would not expand the selection to include the entire content within the `<summary>` element.
 
 As a consequence, the heading formatting was partially applied to some of the content within the `<summary>` element.
 

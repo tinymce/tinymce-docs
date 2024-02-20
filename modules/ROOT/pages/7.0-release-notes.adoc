@@ -104,6 +104,19 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 // CCFR here.
 
+=== <TINY-9638 changelog entry name>
+// #TINY-9638
+
+Previously when using xref:autocompleter.adoc[Autocompleter], the native browser tooltip would be shown on mouse hover, but not on keyboard focus.
+
+This means that keyboard only users would not be able to see the tooltip, as it would only be shown on mouse hover.
+
+To address this in {productname} 7.0, custom tooltips have been implemented for `autocompleter`.
+
+Now, tooltips will now be shown on `autocompleter` items, on mouse over and keyboard focus, providing visual indication for keyboard only users.
+
+Note: Tooltip will only be shown when the autocompleter columns is not set to 1, as there will be a visible label, so tooltip functionality is omitted.
+
 [[additions]]
 == Additions
 

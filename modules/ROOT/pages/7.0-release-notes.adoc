@@ -134,6 +134,17 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 // CCFR here.
 
+=== Moving focus to the outside of the editor after having clicked a menu would not fire a `blur` event as expected.
+// #TINY-10310
+
+Previously in {productname}, some UI events were not detected by the focus controller when clicking outside the editor while a menu was open.
+
+Consequently, the `blur` event was not fired when switching focus to outside the editor.
+
+{productname} 7.0 addresses this, now, events from the UI are considered as part of the normal editor UI.
+
+As a result, the `blur` event is now fired when switching focus to outside the editor.
+
 [[security-fixes]]
 == Security fixes
 

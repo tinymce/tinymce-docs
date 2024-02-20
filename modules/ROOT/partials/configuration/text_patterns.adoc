@@ -85,7 +85,7 @@ Block patterns must have the following:
 * A `+start+`.
 * A `+format+` or a `+cmd+`.
 ** If `+cmd+` is specified, an optional `+value+` property is allowed.
-* A `+trigger+`, which takes a string that can be 'space' or 'enter', and specifies the activation key.
+* A `+trigger+`, which takes a string that can be `+'space'+` or `+'enter'+`, and specifies the activation key.
 
 The block patterns do not have an `+end+` property. This allows for patterns to be used to either apply a block format or execute a command, optionally, with the given value.
 

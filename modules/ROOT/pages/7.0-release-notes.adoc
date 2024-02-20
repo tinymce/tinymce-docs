@@ -150,7 +150,7 @@ to the following new preconfigured defaults:
 ----
 
 [IMPORTANT]
-Customers that wish to revert back to the previous default block `text_patterns` execution on `Enter` key pressing will be required to replace the preconfigured text_patterns with following array:
+Customers that wish to revert back to the previous default block `text_patterns` execution on `Enter` key pressing will be required to replace the preconfigured `text_patterns` with following array:
 
 [source, js]
 ----
@@ -170,7 +170,7 @@ Customers that wish to revert back to the previous default block `text_patterns`
 ----
 
 [TIP]
-The trigger property is exclusively applicable to the configuration of block text patterns. It is not recognized in the configurations for inline and replacement text patterns.
+The `trigger` property is exclusively applicable to the configuration of block text patterns. It is not recognized in the configurations for inline and replacement text patterns.
 
 For information on the **text_patterns**, see xref:content-behavior-options.adoc#text_patterns[Text Patterns]
 

@@ -149,23 +149,28 @@ to the following new preconfigured defaults:
 ]
 ----
 
-[NOTE]
-The new pre configuration for the `start` prefixes for inserting lists no longer contains a `space` character.
+[IMPORTANT]
+Customers that wish to revert back to the previous default block `text_patterns` execution on `Enter` key pressing will be required to replace the preconfigured text_patterns with following array:
 
 [source, js]
 ----
-{
-  { start: '*', cmd: 'InsertUnorderedList', trigger: 'space' },
-  { start: '-', cmd: 'InsertUnorderedList', trigger: 'space' },
-}
+[     
+    { start: '*', end: '*', format: 'italic' },
+    { start: '**', end: '**', format: 'bold' },
+    { start: '#', format: 'h1', trigger: 'enter' },
+    { start: '##', format: 'h2', trigger: 'enter' },
+    { start: '###', format: 'h3', trigger: 'enter' },
+    { start: '####', format: 'h4', trigger: 'enter' },
+    { start: '#####', format: 'h5', trigger: 'enter' },
+    { start: '######', format: 'h6', trigger: 'enter' },
+    { start: '1. ', cmd: 'InsertOrderedList', trigger: 'enter' },
+    { start: '* ', cmd: 'InsertUnorderedList', trigger: 'enter' },
+    { start: '- ', cmd: 'InsertUnorderedList', trigger: 'enter' },
+]
 ----
-
-[IMPORTANT]
-Customers that wish to revert back to the previous default block `text_patterns` settings will be required to replace the preconfigured text_patterns with the xref:7.0-release-notes.adoc#example-preconfigured-text-patterns-prior-to-TinyMCE-7.0[old defaults].
 
 [TIP]
 The trigger property is exclusively applicable to the configuration of block text patterns. It is not recognized in the configurations for inline and replacement text patterns.
-Incorporating new text patterns into the preconfigured set requires the inclusion of default values. This is essential because the entire `text_patterns` option will be overwritten, and without the default values, the original configuration will not be preserved.
 
 For information on the **text_patterns**, see xref:content-behavior-options.adoc#text_patterns[Text Patterns]
 

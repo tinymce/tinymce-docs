@@ -134,6 +134,17 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 // CCFR here.
 
+=== Autocomplete would sometimes cause corrupt data when starting during text composition. Autocomplete no longer starts during composition.
+// #TINY-10317
+
+Previously in {productname}, the autocomplete feature did not properly interrupt or consider composing mode for keyboards such as `Korean`, leading to visual issues and data integrity problems.
+
+As a consequence, typing in composing mode could result in corrupted text when autocomplete triggered, causing unexpected characters and potential data corruption.
+
+{productname} 7.0 addresses this issue by preventing autocomplete from starting while in composing mode, ensuring that the initial moving into a new element no longer causes problems.
+
+As a result, with the new behavior, the user must first exit composing mode before autocomplete can start, ensuring that the user's text is not corrupted.
+
 [[security-fixes]]
 == Security fixes
 

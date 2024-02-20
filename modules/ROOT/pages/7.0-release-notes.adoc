@@ -132,6 +132,17 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === <TINY-vwxyz 1 changelog entry>
 //#TINY-vwxyz1
 
+=== Fixed incorrect object processor for `event_root` option.
+// #TINY-10433
+
+Previously in {productname}, the `inline` mode `event_root` option incorrectly used an `object` processor.
+
+This caused the option to be unregistered when passing a `string` value, resulting in the option being unusable.
+
+{productname} 7.0 addresses this, now, the `event_root` option uses the correctly uses the `string` processor.
+
+As the result, the `event_root` option can now be correctly used to specify a CSS selector for an element.
+
 // CCFR here.
 
 [[security-fixes]]

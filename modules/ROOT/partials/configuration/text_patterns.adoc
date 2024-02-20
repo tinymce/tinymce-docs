@@ -82,11 +82,12 @@ Block patterns must have the following:
 
 * A `+start+`
 * A `+format+` or a `+cmd+`
+* A `+trigger+`
 ** If `+cmd+` is specified, an optional `+value+` property is allowed.
 
 The block patterns do not have an `+end+` property. This allows for patterns to be used to either apply a block format or execute a command, optionally, with the given value.
 
-NOTE: Block patterns are only executed on *Enter*, *not* on pressing the *spacebar*.
+NOTE: Block patterns can be configured to be executed on either *Enter*, or by pressing *Space*.
 
 ==== Example: using block patterns
 
@@ -95,30 +96,33 @@ NOTE: Block patterns are only executed on *Enter*, *not* on pressing the *spaceb
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   // The `lists` plugin is required for list-related text patterns
+  // The trigger property can be configured to use either space or enter.
   plugin: 'lists',
   text_patterns: [
-    { start: '#', format: 'h1' },
-    { start: '##', format: 'h2' },
-    { start: '###', format: 'h3' },
-    { start: '####', format: 'h4' },
-    { start: '#####', format: 'h5' },
-    { start: '######', format: 'h6' },
-    { start: '* ', cmd: 'InsertUnorderedList' },
-    { start: '- ', cmd: 'InsertUnorderedList' },
-    { start: '1. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'decimal' } },
-    { start: '1) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'decimal' } },
-    { start: 'a. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-alpha' } },
-    { start: 'a) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-alpha' } },
-    { start: 'i. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-roman' } },
-    { start: 'i) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-roman' } }
+    { start: '*', end: '*', format: 'italic', trigger: 'space' },
+    { start: '**', end: '**', format: 'bold', trigger: 'space' },
+    { start: '#', format: 'h1', trigger: 'space' },
+    { start: '##', format: 'h2', trigger: 'space' },
+    { start: '###', format: 'h3', trigger: 'space' },
+    { start: '####', format: 'h4', trigger: 'space' },
+    { start: '#####', format: 'h5', trigger: 'space' },
+    { start: '######', format: 'h6', trigger: 'space' },
+    { start: '* ', cmd: 'InsertUnorderedList', trigger: 'space' },
+    { start: '- ', cmd: 'InsertUnorderedList', trigger: 'space' },
+    { start: '1. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'decimal' }, trigger: 'space' },
+    { start: '1) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'decimal' }, trigger: 'space' },
+    { start: 'a. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-alpha' }, trigger: 'space' },
+    { start: 'a) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-alpha' }, trigger: 'space' },
+    { start: 'i. ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-roman' }, trigger: 'space' },
+    { start: 'i) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-roman' }, trigger: 'space' }
   ]
 });
 ----
 
 Using the configuration in this example:
 
-* `+{ start: '#', format: 'h1' }+` - Typing `+#+`, some text, and then pressing `+Enter+` will convert the text to a `+h1+` heading.
-* Typing `+1.+` followed by a space, the desired text, and then pressing `+Enter+`; the editor will convert the text into an ordered list, with the original text as the first list item, and the new line as the second list item. Since we have specified `+value+`, this pattern will execute `+editor.execCommand('InsertOrderedList', false, { 'list-style-type': 'decimal'})+`.
+* `+{ start: '#', format: 'h1' }+` - Typing `+#+`, some text, and then pressing `+Space+` or `+Enter+` depending on your configuration set will convert the text to a `+h1+` heading.
+* Typing `+1.+` followed by a `+Space+`, the desired text, and then pressing `+Space+` or `+Enter+`; the editor will convert the text into an ordered list, with the original text as the first list item, and the new line as the second list item. Since we have specified `+value+`, this pattern will execute `+editor.execCommand('InsertOrderedList', false, { 'list-style-type': 'decimal'})+`.
 
 === Replacements patterns
 

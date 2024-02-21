@@ -159,6 +159,15 @@ As a consequence, since the selection is still on the first element, the `List P
 
 As a result, the selection is in the correct place and the `List Properties...` context menu item is `enabled`.
 
+=== `TableOperations.opEraseRows` did not calculate the correct row index for colgroup tables.
+// #TINY-6309
+
+Previously, when deleting a row or column in a table within {productname}, the caret or cursor position would relocate to the first cell of the table.
+
+As a consequence, users expected it to be repositioned much closer, such as to an adjacent cell in the previous row or column.
+
+In {productname} 7.0, this issue is addressed, now, when a user deletes a row or column in a table, the caret/cursor position is now relocated to the adjacent cell in the previous row or column.
+
 [[security-fixes]]
 == Security fixes
 

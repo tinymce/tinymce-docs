@@ -169,6 +169,17 @@ As a consequence, since the selection is still on the first element, the `List P
 As a result, the selection is in the correct place and the `List Properties...` context menu item is `enabled`.
 
 
+=== The toolbar width was miscalculated for the inline editor positioned inside a scrollable container.
+// #TINY-10581
+
+Previously in {productname}, the inline editor's toolbar width was calculated using the `outerContainer` width.
+
+Consequently, the toolbar was given a width of `0`, resulting in the toolbar collapsing to the minimum width.
+
+{productname} 7.0 addresses this issue, now, a check has been introduced to prevent the adjustment of the toolbar's width if the calculated value is `0`.
+
+As a result, the inline editor now correctly displays the toolbar's width when positioned inside a scrollable container.
+
 [[security-fixes]]
 == Security fixes
 

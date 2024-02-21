@@ -15,6 +15,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 // Pluralise as necessary or remove the placeholder plural marker.
 * xref:new-premium-plugin<s>[New Premium plugin<s>]
 * xref:new-open-source-plugin<s>[New Open Source plugin<s>]
+* xref:new-non-open-source-plugin[New Non Open Source plugin]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
 * xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
@@ -50,6 +51,20 @@ The following new Open Source plugin was released alongside {productname} <x.y[.
 The new open source plugin, **<Open source plugin name>** // description here.
 
 For information on the **<Open source plugin name>** plugin see xref:<plugincode>.adoc[<Open source plugin name>].
+
+[[new-non-open-source-plugin]]
+== New Non Open Source plugin
+
+The following new non-open-source plugin was released alongside {productname} 7.0.
+
+include::partial$misc/admon-non-open-source-plugin-statement.adoc[]
+
+[[non-open-source-plugin-<plugin-name>]]
+=== <Plugin-name>
+
+The new non-open-source plugin, **<pluginname>** plugin // description.
+
+For information on the **<pluginname>** plugin see xref:<plugin-name>.adoc[plugin-name].
 
 
 [[accompanying-premium-plugin-changes]]

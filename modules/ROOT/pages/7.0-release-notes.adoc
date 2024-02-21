@@ -142,7 +142,16 @@ This caused the option to be unregistered when passing a `string` value, resulti
 
 As the result, the `event_root` option can now be correctly used to specify a CSS selector for an element.
 
-// CCFR here.
+=== Clicking to the left or right of a non-editable `div` in Firefox would show two cursors.
+// #TINY-10314
+
+Previously in Firefox, when the `FakeCaret` was rendered, in some cases the real caret was incorrectly rendered too.
+
+As a consequence, the `FakeCaret` was visible at the same time as the real caret which should have been `hidden`.
+
+{productname} 7.0 addresses this issue, now, the container containing the real caret, when we render the `FakeCaret`, is styled with `'caret-color': 'transparent'`.
+
+As a result, the real caret is now hidden when {productname} renders the `FakeCaret`.
 
 === Directly right clicking on a `<ol>`/ `<li>` in FireFox didn't enable the button `List Properties...` in the context menu
 // #TINY-10490
@@ -158,6 +167,7 @@ As a consequence, since the selection is still on the first element, the `List P
 {productname} 7.0 addresses this issue, now when the user opens a context menu, {productname} creates a new bookmark to avoid the jump back.
 
 As a result, the selection is in the correct place and the `List Properties...` context menu item is `enabled`.
+
 
 [[security-fixes]]
 == Security fixes

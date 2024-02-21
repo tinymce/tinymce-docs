@@ -104,7 +104,6 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 // CCFR here.
 
-
 [[additions]]
 == Additions
 
@@ -132,7 +131,16 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 === <TINY-vwxyz 1 changelog entry>
 //#TINY-vwxyz1
 
-// CCFR here.
+=== Fixed incorrect object processor for `event_root` option.
+// #TINY-10433
+
+Previously in {productname}, the `inline` mode `event_root` option incorrectly used an `object` processor.
+
+This caused the option to be unregistered when passing a `string` value, resulting in the option being unusable.
+
+{productname} 7.0 addresses this, now, the `event_root` option uses the correctly uses the `string` processor.
+
+As the result, the `event_root` option can now be correctly used to specify a CSS selector for an element.
 
 === Clicking to the left or right of a non-editable `div` in Firefox would show two cursors.
 // #TINY-10314
@@ -144,6 +152,22 @@ As a consequence, the `FakeCaret` was visible at the same time as the real caret
 {productname} 7.0 addresses this issue, now, the container containing the real caret, when we render the `FakeCaret`, is styled with `'caret-color': 'transparent'`.
 
 As a result, the real caret is now hidden when {productname} renders the `FakeCaret`.
+
+=== Directly right clicking on a `<ol>`/ `<li>` in FireFox didn't enable the button `List Properties...` in the context menu
+// #TINY-10490
+
+In previous versions of {productname}, two issues where identified that affected `list properties` for `<ol><li>` tags:
+
+. in old versions of Firefox (prior to version 121), the caret was not moved to the target position when using the right click, and;
+
+. as {productname} creates a bookmark when there is no selection for Firefox, when a user opened a context menu the editor would jump back to the newly created bookmark.
+
+As a consequence, since the selection is still on the first element, the `List Properties...` context menu item was `disabled`.
+
+{productname} 7.0 addresses this issue, now when the user opens a context menu, {productname} creates a new bookmark to avoid the jump back.
+
+As a result, the selection is in the correct place and the `List Properties...` context menu item is `enabled`.
+
 
 [[security-fixes]]
 == Security fixes
@@ -157,10 +181,6 @@ As a result, the real caret is now hidden when {productname} renders the `FakeCa
 
 [[deprecated]]
 == Deprecated
-
-=== The `<plugin>` configuration property, `<name>`, has been deprecated
-
-// placeholder here.
 
 
 [[known-issues]]

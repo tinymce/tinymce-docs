@@ -159,6 +159,20 @@ As a consequence, since the selection is still on the first element, the `List P
 
 As a result, the selection is in the correct place and the `List Properties...` context menu item is `enabled`.
 
+=== Table classes couldn't be removed via setting an empty value in `table_class_list`.
+// #TINY-6653
+
+Previously user did not have the flexibility to remove classes from tables, cells, and row properties within the dialog box.
+
+{productname} 7.0 introduces a new way to deal with tables that have no class, such as:
+
+* Within the table dialog box, the default option in the class dropdown is now set to "None".
+* For tables with a class that isn't in the predefined list, "Select..." becomes the default choice. (This selection maintains the existing class upon saving).
+* Conversely, if the table has a class from the predefined list, it's automatically selected.
+
+[NOTE]
+Opting for "None" in the class dropdown during table saving effectively eliminates the class attribute from the selected table. Additionally, class dropdowns within the `Cell`, `Row`, and `Table` property dialogs offer a "Select..." option for scenarios where the selected class attribute isn't in the list, represented by the value `"mce-no-match"`. This choice ensures that the class attribute remains unchanged upon selection.
+
 [[security-fixes]]
 == Security fixes
 

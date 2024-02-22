@@ -104,8 +104,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 // CCFR here.
 
-=== Added custom tooltip for `autocompleter`, now visible on both mouse hover and
-  keyboard focus, except single column cases.
+=== Added custom tooltip for `autocompleter`, now visible on both mouse hover and keyboard focus, except single column cases.
 // #TINY-9638
 
 Previously when using xref:autocompleter.adoc[Autocompleter], the native browser tooltip was only shown on mouse hover, but not on keyboard focus.

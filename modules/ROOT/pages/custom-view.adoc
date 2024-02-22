@@ -15,26 +15,26 @@ This is the syntax for the `addView` function: `+editor.ui.registry.addView(name
 
 === Parameters
 
-[cols="1,1,1"]
+[cols="1,1,2"]
 |===
-| Parameter | Description | Type
+| Parameter | Type | Description
 
-| `+name+` | The `+name+` parameter is a unique identifier for the new view. | `+String+`
+| `+name+` | `+String+` | The `+name+` parameter is a unique identifier for the new view.
 
-| `+obj+` | The `+obj+` parameter is the view specification object. | `+View.ViewSpec+`
+| `+obj+` | `+View.ViewSpec+` | The `+obj+` parameter is the view specification object.
 |===
 
 === View Specification Object
 
-[cols="1,1,1"]
+[cols="1,1,2"]
 |===
-| Property | Description | Type
+| Property | Type | Description
 
-| `+buttons+` | The `+buttons+` property specifies an array of buttons to be displayed in the top right corner of the view. | `+Array+`
+| `+buttons+` | `+Array+` | The `+buttons+` property specifies an array of buttons to be displayed in the top right corner of the view.
 
-| `+onShow+` | The `+onShow+` property specifies a function to be called when the view is displayed. It receives an API object. | `+Function+`
+| `+onShow+` | `+Function+` | The `+onShow+` property specifies a function to be called when the view is displayed. It receives an API object.
 
-| `+onHide+` | The `+onHide+` property specifies a function to be called when the view is hidden. It receives an API object. | `+Function+`
+| `+onHide+` | `+Function+` | The `+onHide+` property specifies a function to be called when the view is hidden. It receives an API object.
 |===
 
 === Toggling the Custom View

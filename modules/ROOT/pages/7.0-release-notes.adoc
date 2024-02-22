@@ -138,7 +138,7 @@ Any editors using this `highlight_on_focus: true` option, can remove this option
 [[bug-fixes]]
 == Bug fixes
 
-{productname} <x.y[.z]> also includes the following bug fix<es>:
+{productname} <x.y[.z]> also includes the following bug fixes:
 
 === <TINY-vwxyz 1 changelog entry>
 //#TINY-vwxyz1
@@ -202,6 +202,17 @@ As a consequence, the heading formatting was partially applied to some of the co
 {productname} 7.0 addresses this issue, now, updates were made to the editor's selection expand range functionality.
 
 As a result, the heading format is applied to the entire content within the `<summary>` element, regardless of the carets location.
+
+=== The `link_default_target` option wasn't considered when inserting a link via `quicklink` toolbar.
+// #TINY-10439
+
+Previously when using `quicklink`, the `link_default_target` value was not being considered.
+
+As a consequence, the `target` attribute would not be applied to links created using `quicklink`.
+
+{productname} 7.0 addresses this issue, now, the `quicklink` has been enhanced to consider the `link_default_target` value.
+
+As a result, if a `link_default_target` is specified, `quicklink` will appropriately incorporate it when creating a link.
 
 [[security-fixes]]
 == Security fixes

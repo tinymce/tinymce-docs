@@ -244,6 +244,20 @@ As a consequence, this would result in the menubar and/or the toolbar to be squa
 
 {productname} 7.0 addresses this issue, now, the toolbar is no longer squashed in `inline` mode with `toolbar_persist` enabled, when the page takes longer to load the skin.
 
+=== The `DOMUtils.isEmpty` API function has been modified to consider nodes containing only comments as empty.
+// #TINY-10459
+
+In previous versions of {productname} (prior to version 7.0), the function `DomUtils.isEmpty` behaved inconsistently, considering elements with only comment nodes as non-empty.
+
+As a consequence, elements visually appearing empty due to containing only comment nodes could lead to inconsistent behavior in caret placement and selection handling.
+
+{productname} 7.0 addresses this issue, now, when using `DomUtils.isEmpty`, elements containing only comment nodes are correctly recognized as empty.
+
+As a result, caret placement and selection handling within elements containing only comment nodes now behave consistently.
+
+[NOTE]
+Users who relied on `DOMUtils.isEmpty` returning `false` for elements with only comments should update their implementation. Elements with only comment nodes are now recognized as empty in {productname} 7.0.
+
 [[security-fixes]]
 == Security fixes
 

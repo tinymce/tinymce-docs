@@ -62,7 +62,7 @@ include::partial$misc/admon-non-open-source-plugin-statement.adoc[]
 [[non-open-source-plugin-markdown]]
 === Markdown
 
-The new non-open-source plugin, **Markdown** plugin detects pure markdown from a paste event within a {productname} editor instance.
+The new non-open-source plugin, **Markdown**, detects pure markdown from a paste event within a {productname} editor instance and converts it to HTML.
 
 For information on the **Markdown** plugin see xref:markdown.adoc[Markdown].
 

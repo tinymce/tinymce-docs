@@ -97,12 +97,24 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 [[improvements]]
 == Improvements
 
-{productname} <x.y[.z]> also includes the following improvement<s>:
+{productname} 7.0 also includes the following improvement<s>:
 
 === <TINY-vwxyz 1 changelog entry>
 //#TINY-vwxyz1
 
 // CCFR here.
+
+=== The `highlight_on_focus` option now defaults to true, adding a focus outline to every editor.
+//#TINY-10574
+
+In {productname} 6.4, the option `highlight_on_focus` was introduced, that provides a blue outline to an instantiated {productname} editor when the editor is in `focus`.
+
+As of {productname} 7.0, the `default` value of this has now been set to `true`.
+
+For more information about `highlight_on_focus` see the xref:accessibility.adoc#highlight_on_focus[highlight_on_focus] option.
+
+[NOTE]
+Any editors using this `highlight_on_focus: true` option, can remove this option from their {productname} init configuration when upgrading to {productname} 7.0.
 
 [[additions]]
 == Additions

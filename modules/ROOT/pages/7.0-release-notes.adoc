@@ -104,6 +104,20 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 // CCFR here.
 
+=== Added custom tooltip for `autocompleter`, now visible on both mouse hover and keyboard focus, except single column cases.
+// #TINY-9638
+
+Previously when using xref:autocompleter.adoc[Autocompleter], the native browser tooltip was only shown on mouse hover, but not on keyboard focus.
+
+This means that keyboard-only users were not able to see the tooltip, as it was only shown on mouse hover.
+
+To address this in {productname} 7.0, custom tooltips have been implemented for `autocompleter` items.
+
+Now, tooltips are now shown on `autocompleter` items both on mouse over and keyboard focus, providing visual indication for keyboard-only users.
+
+[NOTE]
+The tooltip will only be displayed when the `autocompleter` columns are set to a value greater than `1`. This is because when there is a visible label, the tooltip functionality is not needed and therefore omitted.
+
 === The `highlight_on_focus` option now defaults to true, adding a focus outline to every editor.
 //#TINY-10574
 

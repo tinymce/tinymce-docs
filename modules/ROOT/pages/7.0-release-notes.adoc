@@ -78,13 +78,13 @@ The {productname} 7.0 release includes an accompanying release of the **PowerPas
 ==== Removed manually dispatching `dragend` event on drop in Firefox.
 // #TINY-10389
 
-Dragging and dropping an image between two cells in a `table` with PowerPaste enabled triggered the manual dispatching of the `dragend` event on Firefox.
+Dragging and dropping an image between two cells in a table with the **PowerPaste** plugin enabled triggered the manual dispatching of the `dragend` event when the host browser was Firefox.
 
-The image was duplicated into the new cell instead of being moved from the old cell to the new one.
+As a consequence, the image was duplicated into the new cell instead of being moved from the old cell to the new one.
 
-The manual dispatching of the `dragend` event on Firefox has been removed.
+In {productname} 7.0, this manual dispatching of the `dragend` event in Firefox has been removed.
 
-As a result, the image now correctly moves from one cell to another without duplicating.
+As a result, when an image is `dragged` and `dropped` from one cell to another, it now correctly moves without duplicating itself.
 
 For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
 

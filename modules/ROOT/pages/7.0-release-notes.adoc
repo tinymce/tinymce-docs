@@ -28,17 +28,23 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:known-issues[Known issues]
 
 
-[[new-premium-plugin<s>]]
-New Premium plugin<s>
+[[new-premium-plugin]]
+== New Premium plugin
 
-The following new Premium plugin was released alongside {productname} <x.y[.z]>.
+The following new Premium plugin was released alongside {productname} 7.0.
 
 === <Premium plugin name> 1.0.0
 
 The new Premium plugin, **<Premium plugin name>** // description here.
 
-For information on the **<Premium plugin name>** see xref:<plugincode>.adoc[<Premium plugin name>].
+For information on the **<Premium plugin name>** plugin, see xref:<plugincode>.adoc[<Premium plugin name>].
 
+[[premium-plugin-revision-history]]
+=== Revision History
+
+The new Premium plugin, **Revision History**, allows you to track changes made to content in the TinyMCE editor and restore previous versions of the content.
+
+For information on the **Revision History** plugin, see xref:revisionhistory.adoc[Revision History].
 
 [[new-open-source-plugin]]
 == New Open Source plugin
@@ -49,7 +55,7 @@ The following new Open Source plugin was released alongside {productname} <x.y[.
 
 The new open source plugin, **<Open source plugin name>** // description here.
 
-For information on the **<Open source plugin name>** plugin see xref:<plugincode>.adoc[<Open source plugin name>].
+For information on the **<Open source plugin name>** plugin, see xref:<plugincode>.adoc[<Open source plugin name>].
 
 
 [[accompanying-premium-plugin-changes]]

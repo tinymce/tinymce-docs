@@ -114,7 +114,7 @@ tinymce.init({
     { start: '1.', cmd: 'InsertOrderedList', value: { 'list-style-type': 'decimal' }, trigger: 'space' },
     { start: '1) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'decimal' }, trigger: 'enter' },
     { start: 'a.', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-alpha' }, trigger: 'space' },
-    { start: 'a) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-alpha' }, trigger: 'space' },
+    { start: 'a) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-alpha' }, trigger: 'enter' },
     { start: 'i.', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-roman' }, trigger: 'space' },
     { start: 'i) ', cmd: 'InsertOrderedList', value: { 'list-style-type': 'lower-roman' }, trigger: 'enter' }
   ]

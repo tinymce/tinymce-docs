@@ -214,6 +214,17 @@ As a consequence, the `target` attribute would not be applied to links created u
 
 As a result, if a `link_default_target` is specified, `quicklink` will appropriately incorporate it when creating a link.
 
+=== When inline editor toolbar wrapped to multiple lines the top wasn't always calculated.
+// #TINY-10580
+
+Previously when shrinking the inline editor, the top position of the toolbar was calculated before wrapping the toolbar into multiple rows.
+
+As a consequence, the additional rows in the wrapped toolbar would cover the editor content.
+
+{productname} 7.0 addresses this issue, now, the editor shrinking is applied before calculating the top position of the toolbar.
+
+As a result, the truncated toolbar is correctly displayed above the editor content.
+
 [[security-fixes]]
 == Security fixes
 

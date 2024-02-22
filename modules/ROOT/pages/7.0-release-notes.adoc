@@ -180,6 +180,17 @@ Consequently, the toolbar was given a width of `0`, resulting in the toolbar col
 
 As a result, the inline editor now correctly displays the toolbar's width when positioned inside a scrollable container.
 
+=== Heading formatting would be partially applied to the content within the `summary` element when the caret was positioned between words.
+// #TINY-10312
+
+With the release of {productname} 6.8, applying heading formatting to the content within the `<summary>` element was introduced. However, an issue was identified: if the caret was positioned between words, the editor's selection expand range functionality would not expand the selection to include the entire content within the `<summary>` element.
+
+As a consequence, the heading formatting was partially applied to some of the content within the `<summary>` element.
+
+{productname} 7.0 addresses this issue, now, updates were made to the editor's selection expand range functionality.
+
+As a result, the heading format is applied to the entire content within the `<summary>` element, regardless of the carets location.
+
 [[security-fixes]]
 == Security fixes
 

@@ -258,6 +258,17 @@ As a result, caret placement and selection handling within elements containing o
 [NOTE]
 Users who relied on `DOMUtils.isEmpty` returning `false` for elements with only comments should update their implementation. Elements with only comment nodes are now recognized as empty in {productname} 7.0.
 
+=== Pressing Backspace at the start of an empty `summary` element within a `details` element nested in a list item no longer removes the `summary` element.
+// #TINY-10303
+
+Previously in {productname}, when a details element was placed inside a list item and contained an empty summary, pressing the Backspace key (with the cursor at the beginning of the summary) resulted in the summary being deleted.
+
+This caused the unexpected behavior of replacing the summary contents with the default summary placeholder.
+
+To address this, the summary element has been included in the list of non-empty elements within the editor's schema.
+
+With this adjustment, the summary element will no longer be deleted under the previously mentioned conditions.
+
 [[security-fixes]]
 == Security fixes
 

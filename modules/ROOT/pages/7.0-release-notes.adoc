@@ -97,13 +97,38 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 [[improvements]]
 == Improvements
 
-{productname} <x.y[.z]> also includes the following improvement<s>:
+{productname} 7.0 also includes the following improvement<s>:
 
 === <TINY-vwxyz 1 changelog entry>
 //#TINY-vwxyz1
 
 // CCFR here.
 
+=== Added custom tooltip for `autocompleter`, now visible on both mouse hover and keyboard focus, except single column cases.
+// #TINY-9638
+
+Previously when using xref:autocompleter.adoc[Autocompleter], the native browser tooltip was only shown on mouse hover, but not on keyboard focus.
+
+This means that keyboard-only users were not able to see the tooltip, as it was only shown on mouse hover.
+
+To address this in {productname} 7.0, custom tooltips have been implemented for `autocompleter` items.
+
+Now, tooltips are now shown on `autocompleter` items both on mouse over and keyboard focus, providing visual indication for keyboard-only users.
+
+[NOTE]
+The tooltip will only be displayed when the `autocompleter` columns are set to a value greater than `1`. This is because when there is a visible label, the tooltip functionality is not needed and therefore omitted.
+
+=== The `highlight_on_focus` option now defaults to true, adding a focus outline to every editor.
+//#TINY-10574
+
+In {productname} 6.4, the option `highlight_on_focus` was introduced, that provides a blue outline to an instantiated {productname} editor when the editor is in `focus`.
+
+As of {productname} 7.0, the `default` value of this has now been set to `true`.
+
+For more information about `highlight_on_focus` see the xref:accessibility.adoc#highlight_on_focus[highlight_on_focus] option.
+
+[NOTE]
+Any editors using this `highlight_on_focus: true` option, can remove this option from their {productname} init configuration when upgrading to {productname} 7.0.
 
 [[additions]]
 == Additions
@@ -127,12 +152,135 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 [[bug-fixes]]
 == Bug fixes
 
-{productname} 7.0 also includes the following bug fix<es>:
+{productname} 7.0 also includes the following bug fixes:
 
 === <TINY-vwxyz 1 changelog entry>
 //#TINY-vwxyz1
 
-// CCFR here.
+=== Fixed incorrect object processor for `event_root` option.
+// #TINY-10433
+
+Previously in {productname}, the `inline` mode `event_root` option incorrectly used an `object` processor.
+
+This caused the option to be unregistered when passing a `string` value, resulting in the option being unusable.
+
+{productname} 7.0 addresses this, now, the `event_root` option uses the correctly uses the `string` processor.
+
+As the result, the `event_root` option can now be correctly used to specify a CSS selector for an element.
+
+=== Clicking to the left or right of a non-editable `div` in Firefox would show two cursors.
+// #TINY-10314
+
+Previously in Firefox, when the `FakeCaret` was rendered, in some cases the real caret was incorrectly rendered too.
+
+As a consequence, the `FakeCaret` was visible at the same time as the real caret which should have been `hidden`.
+
+{productname} 7.0 addresses this issue, now, the container containing the real caret, when we render the `FakeCaret`, is styled with `'caret-color': 'transparent'`.
+
+As a result, the real caret is now hidden when {productname} renders the `FakeCaret`.
+
+=== Directly right clicking on a `<ol>`/ `<li>` in FireFox didn't enable the button `List Properties...` in the context menu
+// #TINY-10490
+
+In previous versions of {productname}, two issues where identified that affected `list properties` for `<ol><li>` tags:
+
+. in old versions of Firefox (prior to version 121), the caret was not moved to the target position when using the right click, and;
+
+. as {productname} creates a bookmark when there is no selection for Firefox, when a user opened a context menu the editor would jump back to the newly created bookmark.
+
+As a consequence, since the selection is still on the first element, the `List Properties...` context menu item was `disabled`.
+
+{productname} 7.0 addresses this issue, now when the user opens a context menu, {productname} creates a new bookmark to avoid the jump back.
+
+As a result, the selection is in the correct place and the `List Properties...` context menu item is `enabled`.
+
+=== The toolbar width was miscalculated for the inline editor positioned inside a scrollable container.
+// #TINY-10581
+
+Previously in {productname}, the inline editor's toolbar width was calculated using the `outerContainer` width.
+
+Consequently, the toolbar was given a width of `0`, resulting in the toolbar collapsing to the minimum width.
+
+{productname} 7.0 addresses this issue, now, a check has been introduced to prevent the adjustment of the toolbar's width if the calculated value is `0`.
+
+As a result, the inline editor now correctly displays the toolbar's width when positioned inside a scrollable container.
+
+=== Heading formatting would be partially applied to the content within the `summary` element when the caret was positioned between words.
+// #TINY-10312
+
+With the release of {productname} 6.8, applying heading formatting to the content within the `<summary>` element was introduced. However, an issue was identified: if the caret was positioned between words, the editor's selection expand range functionality would not expand the selection to include the entire content within the `<summary>` element.
+
+As a consequence, the heading formatting was partially applied to some of the content within the `<summary>` element.
+
+{productname} 7.0 addresses this issue, now, updates were made to the editor's selection expand range functionality.
+
+As a result, the heading format is applied to the entire content within the `<summary>` element, regardless of the carets location.
+
+=== The `link_default_target` option wasn't considered when inserting a link via `quicklink` toolbar.
+// #TINY-10439
+
+Previously when using `quicklink`, the `link_default_target` value was not being considered.
+
+As a consequence, the `target` attribute would not be applied to links created using `quicklink`.
+
+{productname} 7.0 addresses this issue, now, the `quicklink` has been enhanced to consider the `link_default_target` value.
+
+As a result, if a `link_default_target` is specified, `quicklink` will appropriately incorporate it when creating a link.
+
+=== When inline editor toolbar wrapped to multiple lines the top wasn't always calculated.
+// #TINY-10580
+
+Previously when shrinking the inline editor, the top position of the toolbar was calculated before wrapping the toolbar into multiple rows.
+
+As a consequence, the additional rows in the wrapped toolbar would cover the editor content.
+
+{productname} 7.0 addresses this issue, now, the editor shrinking is applied before calculating the top position of the toolbar.
+
+As a result, the truncated toolbar is correctly displayed above the editor content.
+
+=== Inline mode with persisted toolbar would show regardless of the skin being loaded, causing css issues.
+// #TINY-10482
+
+Previously when `toolbar_persist` and `inline` mode was set to `true`, the toolbar could be shown before the skin was loaded. Whereas now it will always wait for the skin to load first.
+
+.example setup
+[source, js]
+----
+tinymce.init({
+  selector: "div",
+  inline: true,
+  toolbar_persist: true
+});
+----
+
+As a consequence, this would result in the menubar and/or the toolbar to be squashed when the host browser was operating over a relatively slow connection.
+
+{productname} 7.0 addresses this issue, now, the toolbar is no longer squashed in `inline` mode with `toolbar_persist` enabled, when the page takes longer to load the skin.
+
+=== The `DOMUtils.isEmpty` API function has been modified to consider nodes containing only comments as empty.
+// #TINY-10459
+
+In previous versions of {productname} (prior to version 7.0), the function `DomUtils.isEmpty` behaved inconsistently, considering elements with only comment nodes as non-empty.
+
+As a consequence, elements visually appearing empty due to containing only comment nodes could lead to inconsistent behavior in caret placement and selection handling.
+
+{productname} 7.0 addresses this issue, now, when using `DomUtils.isEmpty`, elements containing only comment nodes are correctly recognized as empty.
+
+As a result, caret placement and selection handling within elements containing only comment nodes now behave consistently.
+
+[NOTE]
+Users who relied on `DOMUtils.isEmpty` returning `false` for elements with only comments should update their implementation. Elements with only comment nodes are now recognized as empty in {productname} 7.0.
+
+=== Pressing Backspace at the start of an empty `summary` element within a `details` element nested in a list item no longer removes the `summary` element.
+// #TINY-10303
+
+Previously in {productname}, when a details element was placed inside a list item and contained an empty summary, pressing the Backspace key (with the cursor at the beginning of the summary) resulted in the summary being deleted.
+
+This caused the unexpected behavior of replacing the summary contents with the default summary placeholder.
+
+To address this, the summary element has been included in the list of non-empty elements within the editor's schema.
+
+With this adjustment, the summary element will no longer be deleted under the previously mentioned conditions.
 
 === `TableOperations.opPasteColsAfter` & `TableOperations.opPasteRowsAfter` now place the cursor in the newly pasted row/column to be consistent with the other pasting operations.
 // #TINY-6460
@@ -157,10 +305,6 @@ Now, when using `opPasteRowsAfter` and `opPasteColsAfter`, the cursor is correct
 
 [[deprecated]]
 == Deprecated
-
-=== The `<plugin>` configuration property, `<name>`, has been deprecated
-
-// placeholder here.
 
 
 [[known-issues]]

@@ -194,7 +194,7 @@ As a consequence, since the selection is still on the first element, the `List P
 
 As a result, the selection is in the correct place and the `List Properties...` context menu item is `enabled`.
 
-=== `TableOperations.opEraseRows` did not calculate the correct row index for colgroup tables.
+=== `mceTableDeleteRow` did not calculate the correct row index for colgroup tables.
 // #TINY-6309
 
 Previously, when deleting a row or column in a table within {productname}, the caret or cursor position would relocate to the first cell of the table.

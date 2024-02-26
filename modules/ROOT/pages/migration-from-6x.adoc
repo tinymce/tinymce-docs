@@ -132,7 +132,7 @@ Previously in {productname} 6, all colors in the content HTML where set to use `
 In {productname} 7.0, the default will be reverted back to using `hex` values by default.
 
 [IMPORTANT]
-The option `force_hex_color` will be deprecated and removed in a later version of {productname}.
+The option `force_hex_color` will be removed altogether in {productname} 7.0.
 
 [[Changes-to-text-pattern-defaults-to-trigger-on-Space-key-press]]
 === Changes to `text-pattern` defaults to trigger on `Space` key press.

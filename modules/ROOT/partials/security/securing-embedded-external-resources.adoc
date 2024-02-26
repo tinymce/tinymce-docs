@@ -7,7 +7,7 @@ This option controls whether the editor will add a `sandbox=""` attribute to all
 
 *Possible values:* `true`, `false`
 
-*Default value:* `false`
+*Default value:* `true`
 
 ===== Example: using `sandbox_iframes` option
 
@@ -15,7 +15,7 @@ This option controls whether the editor will add a `sandbox=""` attribute to all
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
-  sandbox_iframes: true
+  sandbox_iframes: false
 });
 ----
 

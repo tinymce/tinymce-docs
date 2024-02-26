@@ -99,10 +99,80 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 {productname} 7.0 also includes the following improvement<s>:
 
-=== <TINY-vwxyz 1 changelog entry>
-//#TINY-vwxyz1
+[[a-new-trigger-property-for-block-text-pattern-configurations-allowing-pattern-activation-with-either-space-or-enter-keys]]
+=== A new `trigger` property for block text pattern configurations, allowing pattern activation with either Space or Enter keys
+//#TINY-10324
 
-// CCFR here.
+This release introduces a new `trigger` property for block text pattern configurations, allowing pattern activation with either `Space` or `Enter` keys.
+
+In {productname} 7.0 the default preconfigured text patterns **was changed from**:
+
+[[example-preconfigured-text-patterns-prior-to-TinyMCE-7.0]]
+.Example preconfigured text_patterns prior to {productname} 7.0
+[source, js]
+----
+[
+  { start: '*', end: '*', format: 'italic' },
+  { start: '**', end: '**', format: 'bold' },
+  { start: '#', format: 'h1' },
+  { start: '##', format: 'h2' },
+  { start: '###', format: 'h3' },
+  { start: '####', format: 'h4' },
+  { start: '#####', format: 'h5' },
+  { start: '######', format: 'h6' },
+  // The following text patterns require the `lists` plugin
+  { start: '1. ', cmd: 'InsertOrderedList' },
+  { start: '* ', cmd: 'InsertUnorderedList' },
+  { start: '- ', cmd: 'InsertUnorderedList' }
+]
+----
+
+to the following new preconfigured defaults:
+
+.Example preconfigured text_patterns for {productname} 7.0+
+[source, js]
+----
+[     
+  { start: '*', end: '*', format: 'italic' },
+  { start: '**', end: '**', format: 'bold' },
+  { start: '#', format: 'h1', trigger: 'space' },
+  { start: '##', format: 'h2', trigger: 'space' },
+  { start: '###', format: 'h3', trigger: 'space' },
+  { start: '####', format: 'h4', trigger: 'space' },
+  { start: '#####', format: 'h5', trigger: 'space' },
+  { start: '######', format: 'h6', trigger: 'space' },
+  { start: '1.', cmd: 'InsertOrderedList', trigger: 'space' },
+  { start: '*', cmd: 'InsertUnorderedList', trigger: 'space' },
+  { start: '-', cmd: 'InsertUnorderedList', trigger: 'space' },
+  { start: '>', cmd: 'mceBlockQuote', trigger: 'space' },
+  { start: '---', cmd: 'InsertHorizontalRule', trigger: 'space' },
+]
+----
+
+[IMPORTANT]
+Customers that wish to revert back to the previous default block `text_patterns` execution on `Enter` key pressing will be required to replace the preconfigured `text_patterns` with following array:
+
+[source, js]
+----
+[     
+    { start: '*', end: '*', format: 'italic' },
+    { start: '**', end: '**', format: 'bold' },
+    { start: '#', format: 'h1', trigger: 'enter' },
+    { start: '##', format: 'h2', trigger: 'enter' },
+    { start: '###', format: 'h3', trigger: 'enter' },
+    { start: '####', format: 'h4', trigger: 'enter' },
+    { start: '#####', format: 'h5', trigger: 'enter' },
+    { start: '######', format: 'h6', trigger: 'enter' },
+    { start: '1. ', cmd: 'InsertOrderedList', trigger: 'enter' },
+    { start: '* ', cmd: 'InsertUnorderedList', trigger: 'enter' },
+    { start: '- ', cmd: 'InsertUnorderedList', trigger: 'enter' },
+]
+----
+
+[TIP]
+The `trigger` property is exclusively applicable to the configuration of block text patterns. It is not recognized in the configurations for inline and replacement text patterns.
+
+For information on the **text_patterns**, see xref:content-behavior-options.adoc#text_patterns[Text Patterns]
 
 === Added custom tooltip for `autocompleter`, now visible on both mouse hover and keyboard focus, except single column cases.
 // #TINY-9638
@@ -193,6 +263,15 @@ As a consequence, since the selection is still on the first element, the `List P
 {productname} 7.0 addresses this issue, now when the user opens a context menu, {productname} creates a new bookmark to avoid the jump back.
 
 As a result, the selection is in the correct place and the `List Properties...` context menu item is `enabled`.
+
+=== `mceTableDeleteRow` did not calculate the correct row index for colgroup tables.
+// #TINY-6309
+
+Previously, when deleting a row or column in a table within {productname}, the caret or cursor position would relocate to the first cell of the table.
+
+As a consequence, users expected it to be repositioned much closer, such as to an adjacent cell in the previous row or column.
+
+In {productname} 7.0, this issue is addressed, now, when a user deletes a row or column in a table, the caret/cursor position is now relocated to the adjacent cell in the previous row or column.
 
 === The toolbar width was miscalculated for the inline editor positioned inside a scrollable container.
 // #TINY-10581

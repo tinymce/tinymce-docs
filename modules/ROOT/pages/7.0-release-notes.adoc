@@ -229,7 +229,7 @@ This means that starting from version {productname} 7.0, all object tags will be
 [NOTE]
 To prevent automatic conversion of content, users are advised to include convert_unsafe_embeds: false in their {productname} initialization configuration.
 
-For further details on this option, refer to the xref:content-filtering.adoc#content-unsafe-embeds[convert_unsafe_embeds] option, or see xref:migration-from-6x.adoc#convert-unsafe-embeds-option[migration from 6x guide].
+For further details on this option, refer to the xref:security.adoc#convert-unsafe-embeds[convert_unsafe_embeds] option, or see xref:migration-from-6x.adoc#convert-unsafe-embeds-option[migration from 6x guide].
 
 
 [[bug-fixes]]

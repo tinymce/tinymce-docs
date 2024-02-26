@@ -282,16 +282,16 @@ To address this, the summary element has been included in the list of non-empty 
 
 With this adjustment, the summary element will no longer be deleted under the previously mentioned conditions.
 
-=== `TableOperations.opPasteColsAfter` & `TableOperations.opPasteRowsAfter` now place the cursor in the newly pasted row/column to be consistent with the other pasting operations.
+=== The `mceTablePasteRowAfter` command, `mceTablePasteColAfter` command, `"Paste row after"` menu item and `"Paste column after"` menu item now place the cursor in the newly pasted row/column to be consistent with the other pasting operations.
 // #TINY-6460
 
-Previously, the cursor position in `opPasteRowsAfter` and `opPasteColsAfter` was calculated incorrectly after pasting a new row or column.
+Previously, the cursor position was incorrectly calculated after pasting a new row or column when using the `mceTablePasteRowAfter` command, `mceTablePasteColAfter` command, or `"Paste row after"` and `"Paste column after"` UI menu items.
 
 As a consequence, after pasting, the cursor remained in the same position instead of moving to the newly pasted row or column.
 
-{productname} 7.0 addresses this, fixing the cursor calculation in `opPasteRowsAfter` and `opPasteColsAfter` to use the `index` variable.
+{productname} 7.0 addresses this, fixing the cursor calculation.
 
-Now, when using `opPasteRowsAfter` and `opPasteColsAfter`, the cursor is correctly positioned in the newly pasted row or column as expected.
+Now, when using the `mceTablePasteRowAfter` command, `mceTablePasteColAfter` command, or `"Paste row after"` and `"Paste column after"` UI menu items, the cursor is correctly positioned in the newly pasted row or column as expected.
 
 [[security-fixes]]
 == Security fixes

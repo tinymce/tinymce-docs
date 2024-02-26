@@ -29,7 +29,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 
 [[new-premium-plugin<s>]]
-New Premium plugin<s>
+== New Premium plugin<s>
 
 The following new Premium plugin was released alongside {productname} <x.y[.z]>.
 
@@ -57,17 +57,22 @@ For information on the **<Open source plugin name>** plugin see xref:<plugincode
 
 The following premium plugin updates were released alongside {productname} <x.y[.z]>.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== Mentions
 
-The {productname} <x.y[.z]> release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} 7.0 release includes an accompanying release of the **Mentions** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Mentions** Premium plugin includes the following improvement.
 
-==== <Premium plugin name 1 change 1>
+==== Autocompleter did not work when attempting to insert a `mention` or `emoji` when using an `IME`.
+//# TINY-10637
 
-// CCFR here.
+Previously when attempting to insert a **mention** or **emoji** using an `IME` on Android and using Korean, users encountered an obstacle where it wasn't possible to complete the insertion.
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+{productname} 7.0 addresses this issue, by rewriting the handler for `autocompleter`, ensuring that it no longer interferes with the DOM during composition with an IME.
+
+As a result, users can now insert **mentions** and **emojis** using the `autocompleter`.
+
+For information on the **Mentions** plugin, see: xref:mentions.adoc[Mentions].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]

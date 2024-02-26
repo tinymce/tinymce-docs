@@ -218,6 +218,19 @@ Any editors using this `highlight_on_focus: true` option, can remove this option
 
 // CCFR here.
 
+=== `convert_unsafe_embeds` editor option is now defaulted to `true`.
+
+In {productname} 6.8.1, https://www.tiny.cloud/docs/tinymce/latest/6.8.1-release-notes/#new-convert_unsafe_embeds-option-that-controls-whether-object-and-embed-elements-will-be-converted-to-more-restrictive-alternatives-namely-img-for-image-mime-types-video-for-video-mime-types-audio-audio-mime-types-or-iframe-for-other-or-unspecified-mime-types[convert_unsafe_embeds] editor option was introduced to support a security issue regarding object tags, which was a legacy method of inserting an external resource, such as a video, a PDF.
+
+{productname} has determined that the object tag is regarded as unsafe and with this, {productname} 7.0 will change the default value from `false` to `true`, constituting a breaking change for users whose editor version is below 7.0.
+
+This means that starting from version {productname} 7.0, all object tags will be automatically converted when loading the editor.
+
+[NOTE]
+To prevent automatic conversion of content, users are advised to include convert_unsafe_embeds: false in their {productname} initialization configuration.
+
+For further details on this option, refer to the xref:content-filtering.adoc#content-unsafe-embeds[convert_unsafe_embeds] option, or see xref:migration-from-6x.adoc#convert-unsafe-embeds-option[migration from 6x guide].
+
 
 [[bug-fixes]]
 == Bug fixes

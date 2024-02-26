@@ -30,7 +30,7 @@ When converted to `<img>`, `<video>`, or `<audio>`, this prevents the embedded r
 
 *Possible values:* `true`, `false`
 
-*Default value:* `false`
+*Default value:* `true`
 
 ===== Example: using `convert_unsafe_embeds` option
 
@@ -38,6 +38,6 @@ When converted to `<img>`, `<video>`, or `<audio>`, this prevents the embedded r
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
-  convert_unsafe_embeds: true
+  convert_unsafe_embeds: false
 });
 ----

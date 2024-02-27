@@ -1,11 +1,11 @@
 = Adding custom dictionaries
-:description: Custom dictionaries can be added to Spell Checker Pro
-:keywords: enterprise, tinymcespellchecker, spell check, spell checker pro
+:description: Custom dictionaries can be added to Spell Checker
+:keywords: enterprise, tinymcespellchecker, spell check, Spell Checker
 
 [[creating-custom-dictionary-files]]
 == Creating custom dictionary files
 
-One custom dictionary can be created for each language already supported by the spell checker (see xref:introduction-to-tiny-spellchecker.adoc#supported-languages[supported languages]) or any arbitrary language added by additional Hunspell dictionary files included in Hunspell Dictionary Path (See xref:self-hosting-hunspell.adoc[Add Hunspell dictionaries to Spell Checker Pro]). It's also possible to define an additional "global" dictionary that contains words that are valid across all languages, such as trademarks.
+One custom dictionary can be created for each language already supported by the spell checker (see xref:introduction-to-tiny-spellchecker.adoc#supported-languages[supported languages]) or any arbitrary language added by additional Hunspell dictionary files included in Hunspell Dictionary Path (See xref:self-hosting-hunspell.adoc[Add Hunspell dictionaries to Spell Checker]). It's also possible to define an additional "global" dictionary that contains words that are valid across all languages, such as trademarks.
 
 A custom dictionary file for a particular language must be named with the language code of the language (see xref:introduction-to-tiny-spellchecker.adoc#supported-languages[supported languages] for language code examples), plus the suffix `+.txt+`: E.g. `+en.txt+`, `+en_gb.txt+`, `+fr.txt+`, `+de.txt+` etc.
 

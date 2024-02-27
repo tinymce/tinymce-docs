@@ -242,7 +242,7 @@ Commands are available for the following plugins:
 * xref:preview[Preview]
 * xref:save[Save]
 * xref:searchandreplace[Search and Replace]
-* xref:spellcheckerpro[Spell Checker Pro]
+* xref:spellchecker[Spell Checker]
 * xref:table[Table]
 * xref:tableofcontents[Table of Content]
 * xref:visualblocks[Visual Blocks]
@@ -460,10 +460,10 @@ The following command requires the xref:searchreplace.adoc[Search and Replace (`
 
 include::partial$commands/searchreplace-cmds.adoc[leveloffset=+3]
 
-[[spellcheckerpro]]
-==== Spell Checker Pro
+[[spellchecker]]
+==== Spell Checker
 
-The following commands require the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro (`+tinymcespellchecker+`)] plugin.
+The following commands require the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker (`+tinymcespellchecker+`)] plugin.
 
 include::partial$commands/tinymcespellchecker-cmds.adoc[leveloffset=+3]
 

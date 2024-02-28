@@ -213,7 +213,6 @@ include::partial$commands/core-table-cmds.adoc[]
 Commands are available for the following plugins:
 
 * xref:advancedcode[Advanced Code]
-* xref:advancedlists[Advanced Lists]
 * xref:advancedtables[Advanced Tables]
 * xref:anchor[Anchor]
 * xref:autoresize[Autoresize]
@@ -234,6 +233,7 @@ Commands are available for the following plugins:
 * xref:insertdatetime[Insert Date/Time]
 * xref:link[Link]
 * xref:lists[Lists]
+* xref:advancedlists[List Styles]
 * xref:media[Media]
 * xref:nonbreakingspace[Nonbreaking Space]
 * xref:pagebreak[Page Break]
@@ -255,13 +255,6 @@ Commands are available for the following plugins:
 The following command requires the xref:advcode.adoc[Advanced Code (`+advcode+`)] plugin.
 
 include::partial$commands/code-cmds.adoc[leveloffset=+3]
-
-[[advancedlists]]
-==== Advanced Lists
-
-The following commands require the xref:advlist.adoc[Advanced Lists (`+advlist+`)] plugin.
-
-include::partial$commands/advlist-cmds.adoc[leveloffset=+3]
 
 [[advancedtables]]
 ==== Advanced Tables
@@ -403,6 +396,13 @@ include::partial$commands/link-cmds.adoc[leveloffset=+3]
 The following commands require the xref:lists.adoc[Lists (`+lists+`)] plugin.
 
 include::partial$commands/lists-cmds.adoc[leveloffset=+3]
+
+[[liststyles]]
+==== List Styles
+
+The following commands require the xref:advlist.adoc[List Styles (`+advlist+`)] plugin.
+
+include::partial$commands/advlist-cmds.adoc[leveloffset=+3]
 
 [[media]]
 ==== Media

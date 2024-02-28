@@ -1,28 +1,31 @@
-= Advanced Tables plugin
-:navtitle: Advanced Tables
+= Enhanced Tables plugin
+:navtitle: Enhanced Tables
 :description: Add advanced functionality to tables.
 :keywords: sort, rownumbering, series, tables, advanced, advtable, premium
-:pluginname: Advanced Tables
+:pluginname: Enhanced Tables
 :plugincode: advtable
 :plugincategory: premium
 :pluginminimumplan: tierthree
 
 include::partial$misc/admon-premium-plugin.adoc[]
 
+[TIP]
+As of {productname} 7.0, the Advanced tables plugin has been renamed to {pluginname}. When adding {pluginname} in your editor, continue to use {plugincode}.
+
 The `+advtable+` plugin is a premium plugin that extends the core xref:table.adoc[`+table+` plugin] by adding the following advanced functionality:
 
 * Sort options for rows and columns.
 * Row numbering column for tables.
 
-== Try our Advanced Tables Demo
+== Try our Enhanced Tables Demo
 
 liveDemo::advtable[]
 
 // include::partial$misc/purchase-premium-plugins.adoc[]
 
-== Enabling the Advanced Tables plugin
+== Enabling the Enhanced Tables plugin
 
-To enable the Advanced Tables plugin, add `+advtable+` to the list of plugins. For example:
+To enable the Enhanced Tables plugin, add `+advtable+` to the list of plugins. For example:
 
 [source,js]
 ----
@@ -45,7 +48,7 @@ Tables can be sorted by row or column values using:
 [cols=",",options="header"]
 |===
 |Sort rows based on the selected column |Advanced Sort Dialog
-|image:advtable-context-menu-sort.png[Advanced Tables enhanced contextual menu for sorting rows based on the selected Column (Sort > Sort table by column ascending/descending).] |image:advtable-dialog-sort.png[Advanced Tables sort dialog (Sort > Advanced Sort{ellps}).]
+|image:advtable-context-menu-sort.png[Enhanced Tables enhanced contextual menu for sorting rows based on the selected Column (Sort > Sort table by column ascending/descending).] |image:advtable-dialog-sort.png[Enhanced Tables sort dialog (Sort > Advanced Sort{ellps}).]
 |===
 
 The plugin is capable of sorting:
@@ -80,6 +83,6 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
-The Advanced Tables plugin provides the following {productname} commands.
+The Enhanced Tables plugin provides the following {productname} commands.
 
 include::partial$commands/advtable-cmds.adoc[leveloffset=+1]

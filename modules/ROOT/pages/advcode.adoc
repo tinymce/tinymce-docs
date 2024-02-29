@@ -1,15 +1,18 @@
-= Advanced Code Editor plugin
-:navtitle: Advanced Code Editor
-:description: How to setup TinyMCE's Advanced Code Editor plugin.
+= Enhanced Code Editor plugin
+:navtitle: Enhanced Code Editor
+:description: How to setup TinyMCE's Enhanced Code Editor plugin.
 :keywords: code, advcode, codemirror
-:pluginname: Advanced Code Editor
+:pluginname: Enhanced Code Editor
 :plugincode: advcode
 :altplugincode: code
 :pluginminimumplan: tiertwo
 
 include::partial$misc/admon-premium-plugin.adoc[]
 
-The xref:advcode.adoc[Advanced Code Editor] plugin (`+advcode+`) brings a more advanced code editor to {productname}. This code editor makes it easier to modify the HTML, and is a useful add-on for power users. It comes with features often found in IDEs, all enabled by default:
+[TIP]
+As of {productname} 7.0, the Advanced Code Editor plugin has been renamed to {pluginname}. When adding {pluginname} in your editor, continue to use {plugincode}.
+
+The xref:advcode.adoc[Enhanced Code Editor] plugin (`+advcode+`) brings a more Enhanced Code Editor to {productname}. This code editor makes it easier to modify the HTML, and is a useful add-on for power users. It comes with features often found in IDEs, all enabled by default:
 
 * Syntax color highlighting.
 * Bracket matching.
@@ -22,7 +25,7 @@ The xref:advcode.adoc[Advanced Code Editor] plugin (`+advcode+`) brings a more a
 
 NOTE: For the {pluginname} to offer a full-screen mode requires the xref:fullscreen.adoc[Full screen] plugin and requires {pluginname} to be running in xref:advcode.adoc#advcode_inline[inline mode].
 
-== The difference between the Code and Advanced Code Editor plugins
+== The difference between the Code and Enhanced Code Editor plugins
 
 liveDemo::advcode[]
 
@@ -65,6 +68,6 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
-The Advanced Code plugin provides the following {productname} command.
+The {pluginname} plugin provides the following {productname} command.
 
 include::partial$commands/code-cmds.adoc[]

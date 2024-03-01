@@ -162,16 +162,14 @@ As a result, the selection is in the correct place and the `List Properties...` 
 === Table classes couldn't be removed via setting an empty value in `table_class_list`.
 // #TINY-6653
 
-Previously user did not have the flexibility to remove classes from tables, cells, and row properties within the dialog box.
+Previously, it was not possible to remove all classes on a table when setting an empty value in the `table_class_list` option and using the "Class" listbox field in the "Table Properties" dialog. 
 
-{productname} 7.0 introduces a new way to deal with tables that have no class, such as:
+{productname} 7.0 introduces improvements for handling and removing classes on table, row and cell elements, including:
 
-* Within the table dialog box, the default option in the class dropdown is now set to "None".
-* For tables with a class that isn't in the predefined list, "Select..." becomes the default choice. (This selection maintains the existing class upon saving).
-* Conversely, if the table has a class from the predefined list, it's automatically selected.
-
-[NOTE]
-Opting for "None" in the class dropdown during table saving effectively eliminates the class attribute from the selected table. Additionally, class dropdowns within the `Cell`, `Row`, and `Table` property dialogs offer a "Select..." option for scenarios where the selected class attribute isn't in the list, represented by the value `"mce-no-match"`. This choice ensures that the class attribute remains unchanged upon selection.
+* An empty value in the `table_class_list` option, `table_row_class_list` option, and `table_cell_class_list` option will allow all classes to be removed on the selected table for the "Table Properties" dialog, selected rows for the "Row Properties" dialog, or selected cells for the "Cell Properties" dialog respectively.
+* For a table with a class that does not match any of the values set in the  `table_class_list` option, a "Select..." item becomes the default choice in the "Class" listbox field in the "Table Properties" dialog. (This selection maintains the existing class upon saving). Conversely, if the table has a class that does match one of the values set in the  `table_class_list` option, it is automatically selected.
+* For selected rows with classes that do not match any of the values set in the  `table_row_class_list`, a "Select..." item becomes the default choice in the "Class" listbox field in the "Row Properties" dialog. (This selection maintains the existing classes upon saving). Conversely, if the selected row classes do match one of the values set in the  `table_row_class_list`, it is automatically selected.
+* For selected cells with classes that do not match any of the values set in the  `table_cell_class_list`, a "Select..." item becomes the default choice in the "Class" listbox field in the "Cell Properties" dialog. (This selection maintains the existing classes upon saving). Conversely, if the selected cell classes do match one of the values set in the  `table_cell_class_list`, it is automatically selected.
 
 [[security-fixes]]
 == Security fixes

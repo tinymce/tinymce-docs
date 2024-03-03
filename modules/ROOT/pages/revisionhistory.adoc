@@ -61,6 +61,9 @@ NOTE: The undefined options in the above example must be defined. See the xref:o
 
 liveDemo::{plugincode}[]
 
+[NOTE]
+The {pluginname} plugin treats commented HTML as actual content in the {productname} editor. This means that if the initial content is in the form of commented HTML and no revisions are fetched, the commented HTML automatically becomes the latest revision. However, if some revisions are present, the commented HTML will be compared to the first configured revision.
+
 == Options
 
 The following configuration options affect the behavior of the {pluginname} plugin.

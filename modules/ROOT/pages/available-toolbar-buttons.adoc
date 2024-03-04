@@ -113,11 +113,6 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 :plugincode: directionality
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-:plugincategory: premium
-:pluginname: Enhanced Image Editing
-:plugincode: editimage
-include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
-
 :plugincategory: opensource
 :pluginname: Emoticons
 :plugincode: emoticons
@@ -146,6 +141,11 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 :plugincategory: opensource
 :pluginname: Image
 :plugincode: image
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: premium
+:pluginname: Image Editing
+:plugincode: editimage
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 :plugincategory: opensource

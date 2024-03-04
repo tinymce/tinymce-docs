@@ -218,6 +218,15 @@ Any editors using this `highlight_on_focus: true` option, can remove this option
 
 // CCFR here.
 
+=== Removed incorrect `aria-placeholder` attribute from editor body when `placeholder` option is set.
+// #TINY-10452
+
+Previously, when the `placeholder` option was set, the editor would automatically append an `aria-placeholder` attribute to the editor body.
+
+However, the `aria-placeholder` attribute is not a valid attribute for the body element according to accessibility guidelines. As a result, certain screen readers and assistive technologies encountered difficulties in correctly interpreting the content.
+
+In {productname} 7.0 addresses this, by removing the `aria-placeholder` attribute from the editor body. This solution ensures that the editor is accessible to all users.
+
 
 [[bug-fixes]]
 == Bug fixes

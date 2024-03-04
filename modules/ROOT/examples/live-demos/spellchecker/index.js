@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: 'textarea#spellcheckerpro',
+  selector: 'textarea#spellchecker',
   plugins: 'code tinymcespellchecker link',
   toolbar: 'spellchecker language spellcheckdialog',
   height: 500,

@@ -5,7 +5,7 @@ include::partial$module-loading/bundling-plugins-that-cant-bundle.adoc[]
 * xref:premium-plugins[Premium plugins]
 ** xref:accessibility-checker[Accessibility Checker (a11ychecker)]
 ** xref:advanced-code[Advanced Code (advcode)]
-** xref:advanced-tables[Advanced Tables (advtable)]
+** xref:advanced-tables[Enhanced Tables (advtable)]
 ** xref:case-change[Case Change (casechange)]
 ** xref:checklist[Checklist (checklist)]
 ** xref:comments[Comments (tinycomments)]
@@ -18,7 +18,7 @@ include::partial$module-loading/bundling-plugins-that-cant-bundle.adoc[]
 ** xref:page-embed[Page Embed (pageembed)]
 ** xref:permanent-pen[Permanent Pen (permanentpen)]
 ** xref:powerpaste[PowerPaste (powerpaste)]
-** xref:spell-checker-pro[Spell Checker Pro (tinymcespellchecker)]
+** xref:spell-checker[Spell Checker (tinymcespellchecker)]
 ** xref:autocorrect[Spelling Autocorrect]
 ** xref:table-of-contents[Table of Contents (tableofcontents)]
 * xref:community-plugins[Community plugins]
@@ -68,7 +68,7 @@ include::partial$plugin-files/plugin-file-list-a11ychecker.adoc[]
 include::partial$plugin-files/plugin-file-list-advcode.adoc[]
 
 [[advanced-tables]]
-=== Advanced Tables (`+advtable+`)
+=== Enhanced Tables (`+advtable+`)
 
 include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
@@ -149,8 +149,8 @@ include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
 include::partial$plugin-files/plugin-file-list-powerpaste.adoc[]
 
-[[spell-checker-pro]]
-=== Spell Checker Pro (`+tinymcespellchecker+`)
+[[spell-checker]]
+=== Spell Checker (`+tinymcespellchecker+`)
 
 include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 

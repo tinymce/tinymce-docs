@@ -1,9 +1,9 @@
-= Add Hunspell dictionaries to Spell Checker Pro
+= Add Hunspell dictionaries to Spell Checker
 :navtitle: Spelling service - Using Hunspell dictionaries
-:description: Instructions for adding Hunspell dictionaries to TinyMCE Spell Checker Pro.
-:keywords: enterprise, tinymcespellchecker, hunspell, spell check, spell checker pro, server, configuration, configure
+:description: Instructions for adding Hunspell dictionaries to TinyMCE Spell Checker.
+:keywords: enterprise, tinymcespellchecker, hunspell, spell check, Spell Checker, server, configuration, configure
 
-Spell Checker Pro for {productname} includes support for Hunspell dictionaries. Hunspell dictionaries can be obtained from various sources, but the files must be stored in a specific structure to work with {productname} Spell Checker Pro. {companyname} provides downloadable bundles that have the required structure.
+Spell Checker for {productname} includes support for Hunspell dictionaries. Hunspell dictionaries can be obtained from various sources, but the files must be stored in a specific structure to work with {productname} Spell Checker. {companyname} provides downloadable bundles that have the required structure.
 
 To add Hunspell dictionaries to a self-hosted {productname}:
 
@@ -23,14 +23,14 @@ To add Hunspell dictionaries to a self-hosted {productname}:
 `+hunspell-dictionaries-all.zip+`:: This package contains all the Hunspell dictionaries that the spelling service supports. You will need to ensure that their license matches your requirements.
 
 You can remove unwanted dictionaries and their associated directories, but the file structure must be respected.
-Hunspell dictionaries can be downloaded from other sources, but will need to be stored in the structure shown in xref:hunspell-dictionary-storage-for-spell-checker-pro[Hunspell dictionary storage for Spell Checker Pro]. 
+Hunspell dictionaries can be downloaded from other sources, but will need to be stored in the structure shown in xref:hunspell-dictionary-storage-for-spell-checker[Hunspell dictionary storage for Spell Checker]. 
 
 == Configuring the spelling service to use Hunspell dictionaries
 
 include::partial$misc/hunspell-dictionaries-path.adoc[]
 
-[[hunspell-dictionary-storage-for-spell-checker-pro]]
-== Hunspell dictionary storage for Spell Checker Pro
+[[hunspell-dictionary-storage-for-spell-checker]]
+== Hunspell dictionary storage for Spell Checker
 
 Each Hunspell dictionary comes in two files. The .dic file which is the list of words, and the .aff file which is a list of rules and other options.  These rules tell Hunspell, for example, how to convert a word into its plural or possessive forms.
 These files should be named following the language tag definition described in RFC 5646, using "-" or "_" as separator.
@@ -196,9 +196,9 @@ There are two file structures available for storing Hunspell dictionaries.
     └── sv_SE.dic
 ----
 
-Both structures may be used at the same time. If you provide dictionary files for the same language tag in both ways, Spell Checker Pro will try to load the nested dictionary files first. If they're not correct, then flat structured files will be loaded.
+Both structures may be used at the same time. If you provide dictionary files for the same language tag in both ways, Spell Checker will try to load the nested dictionary files first. If they're not correct, then flat structured files will be loaded.
 
 
 === Missing Dictionaries
 
-Where a Hunspell dictionary has not been provided, the spelling service will fallback to the built-in dictionaries for supported languages. For a list of supported Spell Checker languages, see: xref:introduction-to-tiny-spellchecker.adoc#spellchecker_languages[Spell Checker Pro plugin - Supported languages].
+Where a Hunspell dictionary has not been provided, the spelling service will fallback to the built-in dictionaries for supported languages. For a list of supported Spell Checker languages, see: xref:introduction-to-tiny-spellchecker.adoc#spellchecker_languages[Spell Checker plugin - Supported languages].

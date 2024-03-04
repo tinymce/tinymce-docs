@@ -11,11 +11,9 @@
 :plugincode: exportword
 :plugincategory: premium
 
-include::partial$misc/admon-premium-plugin.adoc[]
+include::partial$misc/admon-paid-addon-pricing.adoc[]
 
-////
 include::partial$misc/admon-requires-7.0v.adoc[]
-////
 
 The export to Microsoft Word feature collects the HTML generated with the `tinymce.editor.getContent()` method and the default editor content styles combined with the styles provided by you in the configuration. It then sends them to the {productname} Cloud Services HTML to DOCX converter service. The service generates a Word file and returns it to the user’s browser so they can save it in the Word format on their disk.
 
@@ -39,9 +37,8 @@ For example:
 ----
 tinymce.init({
   selector: 'textarea',
-  plugins: 'code exportword',
-  toolbar: 'exportword code',
-  content_css: '../css/demo.css'
+  plugins: 'exportword',
+  toolbar: 'exportword',
 });
 ----
 
@@ -57,14 +54,12 @@ The {pluginname} plugin provides the following {productname} commands.
 
 include::partial$commands/{plugincode}-cmds.adoc[][leveloffset=+1]
 
-// == Events
+== Events
 
-// The {{pluginname}} plugin provides the following events.
+The {pluginname} plugin provides the following events.
 
-// include::partial$events/{plugincode}-events.adoc[]
+include::partial$events/{plugincode}-events.adoc[][leveloffset=+1]
 
-// == APIs
+== APIs
 
-// The {{pluginname}} plugin provides the following APIs.
-
-// include::partial$plugin-apis/{plugincode}-apis.adoc[]
+include::partial$plugin-apis/{plugincode}-apis.adoc[]

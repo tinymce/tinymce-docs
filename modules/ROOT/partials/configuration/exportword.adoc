@@ -12,16 +12,74 @@ By default, the Word export feature uses the {productname} Cloud Services HTML t
 ----
 tinymce.init({
   selector: 'textarea',
-  plugins: 'code exportword',
-  toolbar: 'exportword code',
-  exportword_service_url: '<value>'
+  plugins: 'exportword',
+  toolbar: 'exportword',
+  exportword_service_url: '<service_URL>'
 });
 ----
 
-=== Limitation(s) of the `exportword_service_url` option
+[[exportword-converter-options]]
+== `exportword_converter_options`
 
-The `exportword_service_url` option has the following limitations.
+The `exportword_converter_options` option, is used to specify and configure various options related to the process of converting and exporting content from the editor to `.docx` Word file.
 
-<placeholder-to-be-removed-if-none>
-// Add explanatory material as per the comment block below then remove
-// the block and this comment.
+*Type:* `+Object+`
+
+*Default value:* `{}`
+
+=== Example: using `exportword_converter_options`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'exportword',
+  toolbar: 'exportword',
+  exportword_service_url: '<service_URL>',
+  exportword_converter_options: {
+    header: [
+      {
+        html: '<h1>First page header.</h1>',
+        css: 'h1 { font-size: 30px; }',
+      }
+    ],
+  },
+});
+----
+
+[NOTE]
+To use this option, the Export to Word plugin requires the `exportword_service_url` option to be configured.
+
+[[exportword-converter-style]]
+== `exportword_converter_style`
+
+The `exportword_converter_style` option allow for customization of the styles applied to the exported Word document, providing flexibility in controlling its appearance.
+
+*Type:* `+String+`
+
+*Default value:* `''`
+
+=== Example: using `exportword_converter_style`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea.tinymce',
+  plugins: 'exportword',
+  toolbar: 'exportword',
+  exportword_service_url: '<service_URL>', // required
+  exportword_converter_options: { // required to support "exportword_converter_style"
+    header: [
+      {
+        html: '<h1>First page header.</h1>',
+        css: 'h1 { font-size: 30px; }',
+      }
+    ],
+  },
+  exportword_converter_style: 'p { color: cyan !important }' // requires both "exportword_converter_style" and "exportword_service_url" to be set.
+});
+----
+
+=== Limitation(s) of the `<value>` option
+
+The `<placeholder>` option has the following limitations.

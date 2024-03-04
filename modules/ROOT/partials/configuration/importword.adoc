@@ -17,7 +17,7 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'code importword',
   toolbar: 'importword code',
-  importword_service_url: '<replace-with-service-url>'
+  importword_service_url: '<service-URL>'
 });
 ----
 

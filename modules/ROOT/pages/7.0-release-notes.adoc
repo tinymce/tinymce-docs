@@ -264,6 +264,18 @@ As a consequence, since the selection is still on the first element, the `List P
 
 As a result, the selection is in the correct place and the `List Properties...` context menu item is `enabled`.
 
+=== Table classes couldn't be removed via setting an empty value in `table_class_list`.
+// #TINY-6653
+
+Previously, it was not possible to remove all classes on a table when setting an empty value in the `table_class_list` option and using the "Class" listbox field in the "Table Properties" dialog. 
+
+{productname} 7.0 introduces improvements for handling and removing classes on table, row and cell elements, including:
+
+* An empty value in the `table_class_list` option, `table_row_class_list` option, and `table_cell_class_list` option will allow all classes to be removed on the selected table for the "Table Properties" dialog, selected rows for the "Row Properties" dialog, or selected cells for the "Cell Properties" dialog respectively.
+* For a table with a class that does not match any of the values set in the  `table_class_list` option, a "Select..." item becomes the default choice in the "Class" listbox field in the "Table Properties" dialog. (This selection maintains the existing class upon saving). Conversely, if the table has a class that does match one of the values set in the  `table_class_list` option, it is automatically selected.
+* For selected rows with classes that do not match any of the values set in the  `table_row_class_list`, a "Select..." item becomes the default choice in the "Class" listbox field in the "Row Properties" dialog. (This selection maintains the existing classes upon saving). Conversely, if the selected row classes do match one of the values set in the  `table_row_class_list`, it is automatically selected.
+* For selected cells with classes that do not match any of the values set in the  `table_cell_class_list`, a "Select..." item becomes the default choice in the "Class" listbox field in the "Cell Properties" dialog. (This selection maintains the existing classes upon saving). Conversely, if the selected cell classes do match one of the values set in the  `table_cell_class_list`, it is automatically selected.
+
 === `mceTableDeleteRow` did not calculate the correct row index for colgroup tables.
 // #TINY-6309
 

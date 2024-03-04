@@ -67,7 +67,7 @@ cd spelling-service-dockerfile
 +
 endif::[]
 ifeval::[{shbundledockerfiles} != true]
-. Go to *link:{accountpageurl}/[{accountpage}] > My Downloads* and download _Tiny Spell Checker Pro_.
+. Go to *link:{accountpageurl}/[{accountpage}] > My Downloads* and download _Tiny Spell Checker_.
 . Open a command line and navigate to the directory containing `+ephox-spelling_<version>.zip+`. Windows Users should open a Bash command line as the Administrator User.
 . Extract the contents of `+ephox-spelling_<version>.zip+`, such as:
 +

@@ -18,7 +18,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
 * xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
-* xref:accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
+* xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
 * xref:improvements[Improvements]
 * xref:additions[Additions]
 * xref:changes[Changes]
@@ -80,18 +80,18 @@ The following Premium plugin has been announced as reaching its end-of-life:
 {productname}’s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
 
 
-[[accompanying-premium-skins-and-icon-packs-changes]]
-== Accompanying Premium Skins and Icon Packs changes
+[[accompanying-enhanced-skins-and-icon-packs-changes]]
+== Accompanying Enhanced Skins & Icon Packs changes
 
-The {productname} <x.y[.z]> release includes an accompanying release of the **Premium Skins and Icon Packs**.
+The {productname} <x.y[.z]> release includes an accompanying release of the **Enhanced Skins & Icon Packs**.
 
-=== Premium Skins and Icon Packs
+=== Enhanced Skins & Icon Packs
 
-The **Premium Skins and Icon Packs** release includes the following updates:
+The **Enhanced Skins & Icon Packs** release includes the following updates:
 
-The **Premium Skins and Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} <x.y[.z]> skin, Oxide.
+The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} <x.y[.z]> skin, Oxide.
 
-For information on using premium skins and icon packs, see: xref:premium-skins-and-icons.adoc[Premium Skins and Icon Packs].
+For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
 
 
 [[improvements]]
@@ -263,6 +263,18 @@ As a consequence, since the selection is still on the first element, the `List P
 {productname} 7.0 addresses this issue, now when the user opens a context menu, {productname} creates a new bookmark to avoid the jump back.
 
 As a result, the selection is in the correct place and the `List Properties...` context menu item is `enabled`.
+
+=== Table classes couldn't be removed via setting an empty value in `table_class_list`.
+// #TINY-6653
+
+Previously, it was not possible to remove all classes on a table when setting an empty value in the `table_class_list` option and using the "Class" listbox field in the "Table Properties" dialog. 
+
+{productname} 7.0 introduces improvements for handling and removing classes on table, row and cell elements, including:
+
+* An empty value in the `table_class_list` option, `table_row_class_list` option, and `table_cell_class_list` option will allow all classes to be removed on the selected table for the "Table Properties" dialog, selected rows for the "Row Properties" dialog, or selected cells for the "Cell Properties" dialog respectively.
+* For a table with a class that does not match any of the values set in the  `table_class_list` option, a "Select..." item becomes the default choice in the "Class" listbox field in the "Table Properties" dialog. (This selection maintains the existing class upon saving). Conversely, if the table has a class that does match one of the values set in the  `table_class_list` option, it is automatically selected.
+* For selected rows with classes that do not match any of the values set in the  `table_row_class_list`, a "Select..." item becomes the default choice in the "Class" listbox field in the "Row Properties" dialog. (This selection maintains the existing classes upon saving). Conversely, if the selected row classes do match one of the values set in the  `table_row_class_list`, it is automatically selected.
+* For selected cells with classes that do not match any of the values set in the  `table_cell_class_list`, a "Select..." item becomes the default choice in the "Class" listbox field in the "Cell Properties" dialog. (This selection maintains the existing classes upon saving). Conversely, if the selected cell classes do match one of the values set in the  `table_cell_class_list`, it is automatically selected.
 
 === `mceTableDeleteRow` did not calculate the correct row index for colgroup tables.
 // #TINY-6309

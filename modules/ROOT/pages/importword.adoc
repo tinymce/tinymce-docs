@@ -11,15 +11,10 @@
 :plugincode: importword
 :plugincategory: premium
 
-include::partial$misc/admon-premium-plugin.adoc[]
+include::partial$misc/admon-paid-addon-pricing.adoc[]
 
-[NOTE]
-This feature is currently **only available** for sales managed `self-hosted` customers. A cloud-based option for self-served customers will be available in 2024.
-
-// uncomment this before merging.
-////
 include::partial$misc/admon-requires-7.0v.adoc[]
-////
+
 
 The {pluginname} plugin lets you import `.docx` (Word document) or `.dotx` (Word template) files into the editor. The process preserves formatting and rich media.
 
@@ -68,10 +63,8 @@ include::partial$commands/{plugincode}-cmds.adoc[]
 The {pluginname} plugin provides the following events.
 
 include::partial$events/{plugincode}-events.adoc[]
+////
 
 == APIs
 
-The {pluginname} plugin provides the following APIs.
-
 include::partial$plugin-apis/{plugincode}-apis.adoc[]
-////

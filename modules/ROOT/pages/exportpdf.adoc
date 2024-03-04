@@ -12,12 +12,9 @@
 :plugincategory: premium
 
 
-include::partial$misc/admon-premium-plugin.adoc[]
+include::partial$misc/admon-paid-addon-pricing.adoc[]
 
-//uncomment this once we have merged the PR with the admon for 7.0
-////
 include::partial$misc/admon-requires-7.0v.adoc[]
-////
 
 The Export to PDF functionality gathers the HTML produced using the `editor.getcontent()` method and the default editor content styles, along with the styles specified in the configuration. This data is transmitted to the {productname} Cloud Services HTML to PDF converter service. The service processes this information to create a PDF file, which is then sent back to the user's browser for saving to their local disk.
 
@@ -67,15 +64,14 @@ include::partial$commands/{plugincode}-cmds.adoc[]
 ----
 tinymce.activeEditor.execCommand('exportpdf');
 ----
-
+////
 == Events
 
 The {pluginname} plugin provides the following events.
 
 include::partial$events/{plugincode}-events.adoc[]
+////
 
 == APIs
-
-The {pluginname} plugin provides the following APIs.
 
 include::partial$plugin-apis/{plugincode}-apis.adoc[]

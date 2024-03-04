@@ -15,10 +15,37 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'exportpdf',
   toolbar: 'exportpdf',
-  exportpdf_service_url: '<value>'
+  exportpdf_service_url: '<service_url>'
 });
 ----
 
-=== Limitation(s) of the `exportpdf_service_url` option
+[[exportpdf-converter-options]]
+== `exportpdf_converter_options`
 
-The `exportpdf_service_url` option has the following limitations.
+This option allows the editor to download a PDF document containing its content, along with the specified header defined in the `exportpdf_converter_options`.
+
+*Type:* `+Object+`
+
+*Default value:* `{}`
+
+=== Example: using `exportpdf_converter_options`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'exportpdf',
+  toolbar: 'exportpdf',
+  exportpdf_service_url: '<service_url>',
+  exportpdf_converter_options: {
+   	header_html: '<p>HEADER</p>', // example
+   	header_and_footer_css: 'p { color: blue }', // example
+  },
+})
+----
+
+[NOTE]
+To use this option, the Export PDF plugin requires the `exportpdf_service_url` option to be configured.
+
+
+=== Limitations of the `<placeholder>` option

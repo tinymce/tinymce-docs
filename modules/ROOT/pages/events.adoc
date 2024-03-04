@@ -191,7 +191,7 @@ The following plugins provide events.
 * xref:media-embed-events[Media Embed events]
 * xref:permanent-pen-events[Permanent Pen events]
 * xref:powerpaste-events[PowerPaste events]
-* xref:spell-checker-pro-events[Spell Checker Pro events]
+* xref:spell-checker-events[Spell Checker events]
 * xref:autocorrect-events[Spelling Autocorrect events]
 * xref:visual-blocks-events[Visual Blocks events]
 * xref:visual-characters-events[Visual Characters events]
@@ -317,8 +317,8 @@ The following events are provided by the xref:introduction-to-powerpaste.adoc[Po
 |PastePlainTextToggle |`+{ state: boolean }+` |Fired when the plain text paste mode state changes.
 |===
 
-[[spell-checker-pro-events]]
-=== Spell Checker Pro events
+[[spell-checker-events]]
+=== Spell Checker events
 
 include::partial$events/tinymcespellchecker-events.adoc[]
 

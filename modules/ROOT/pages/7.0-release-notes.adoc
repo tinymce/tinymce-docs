@@ -220,7 +220,7 @@ Any editors using this `highlight_on_focus: true` option, can remove this option
 
 === `sandbox_iframes` editor option is now defaulted to `true`.
 
-In {productname} 6.8.1, `sandbox_iframes` editor option was introduced to support a security vulnerability issue with {productname} loading iframes `unsandboxed` which as a result could allow arbitrary code execution inside {productname} content.
+In {productname} 6.8.1, `sandbox_iframes` editor option was introduced to allow iframes to be sandboxed by default when inserted into the editor.
 
 With the release of {productname} 7.0, the default for `sandbox_iframes` editor option has been changed to `true`, constituting a breaking change for users whose editor version is below 7.0.
 

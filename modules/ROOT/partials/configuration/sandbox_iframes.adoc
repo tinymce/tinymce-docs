@@ -1,0 +1,20 @@
+[[sandbox-iframes-option]]
+== `sandbox_iframes` option
+
+This option controls whether the editor will add a `sandbox=""` attribute to all `<iframe>` elements. This will restrict the iframe’s embedded resource from performing potentially malicious actions including scripting, file downloads, browser popups, passing the same-origin policy, among others. Reference: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox[MDN].
+
+*Type:* `+Boolean+`
+
+*Possible values:* `true`, `false`
+
+*Default value:* `true`
+
+=== Example: using `sandbox_iframes` option
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  sandbox_iframes: false
+});
+----

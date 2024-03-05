@@ -13,7 +13,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 // Remove sections and section boilerplates as necessary.
 // Pluralise as necessary or remove the placeholder plural marker.
-* xref:new-premium-plugin<s>[New Premium plugin<s>]
+* xref:new-premium-plugin<s>[New Premium plugins]
 * xref:new-open-source-plugin<s>[New Open Source plugin<s>]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
@@ -28,16 +28,33 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:known-issues[Known issues]
 
 
-[[new-premium-plugin<s>]]
-New Premium plugin<s>
+[[new-premium-plugins]]
+== New Premium plugins
 
-The following new Premium plugin was released alongside {productname} <x.y[.z]>.
+The following new Premium plugins were released alongside {productname} 7.0.
 
-=== <Premium plugin name> 1.0.0
+=== Import from Word
 
-The new Premium plugin, **<Premium plugin name>** // description here.
+The new Premium plugin, **Import from Word** provides a way to import `.docx` (Word documents) or `.dotx` (Word templates) files into the editor.
 
-For information on the **<Premium plugin name>** see xref:<plugincode>.adoc[<Premium plugin name>].
+include::partial$misc/admon-paid-addon-pricing.adoc[]
+For information on the **Import from Word Premium Plugin** see xref:importword.adoc[Import from Word docs].
+
+=== Export to Word
+
+The new Premium plugin, **Export to Word** feature lets you generate a `.docx` file directly from the editor.
+
+include::partial$misc/admon-paid-addon-pricing.adoc[]
+
+For information on the **Export to Word Premium Plugin** see xref:exportword.adoc[Export to Word docs].
+
+=== Export to PDF
+
+The new Premium plugin, **Export to PDF** feature lets you generate a `.pdf` file directly from the editor.
+
+include::partial$misc/admon-paid-addon-pricing.adoc[]
+
+For information on the **Export to PDF Premium Plugin** see xref:exportpdf.adoc[Export to PDF docs].
 
 
 [[new-open-source-plugin]]

@@ -213,6 +213,8 @@ include::partial$commands/core-table-cmds.adoc[]
 Commands are available for the following plugins:
 
 * xref:advancedcode[Advanced Code]
+* xref:advancedlists[Advanced Lists]
+* xref:Enhanced Tables[Enhanced Tables]
 * xref:advancedtables[Advanced Tables]
 * xref:anchor[Anchor]
 * xref:autoresize[Autoresize]
@@ -241,7 +243,7 @@ Commands are available for the following plugins:
 * xref:preview[Preview]
 * xref:save[Save]
 * xref:searchandreplace[Search and Replace]
-* xref:spellcheckerpro[Spell Checker Pro]
+* xref:spellchecker[Spell Checker]
 * xref:table[Table]
 * xref:tableofcontents[Table of Content]
 * xref:visualblocks[Visual Blocks]
@@ -255,10 +257,18 @@ The following command requires the xref:advcode.adoc[Advanced Code (`+advcode+`)
 
 include::partial$commands/code-cmds.adoc[leveloffset=+3]
 
-[[advancedtables]]
-==== Advanced Tables
 
-The following commands require the xref:advtable.adoc[Advanced Tables (`+advtable+`)] plugin.
+[[advancedlists]]
+==== Advanced Lists
+
+The following commands require the xref:advlist.adoc[Advanced Lists (`+advlist+`)] plugin.
+
+include::partial$commands/advlist-cmds.adoc[leveloffset=+3]
+
+[[Enhanced Tables]]
+==== Enhanced Tables
+
+The following commands require the xref:advtable.adoc[Enhanced Tables (`+advtable+`)] plugin.
 
 include::partial$commands/advtable-cmds.adoc[leveloffset=+3]
 
@@ -452,10 +462,10 @@ The following command requires the xref:searchreplace.adoc[Search and Replace (`
 
 include::partial$commands/searchreplace-cmds.adoc[leveloffset=+3]
 
-[[spellcheckerpro]]
-==== Spell Checker Pro
+[[spellchecker]]
+==== Spell Checker
 
-The following commands require the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro (`+tinymcespellchecker+`)] plugin.
+The following commands require the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker (`+tinymcespellchecker+`)] plugin.
 
 include::partial$commands/tinymcespellchecker-cmds.adoc[leveloffset=+3]
 

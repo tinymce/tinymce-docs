@@ -13,12 +13,12 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 // Remove sections and section boilerplates as necessary.
 // Pluralise as necessary or remove the placeholder plural marker.
-* xref:new-premium-plugin<s>[New Premium plugin<s>]
+* xref:new-premium-plugin<s>[New Premium plugins]
 * xref:new-open-source-plugin<s>[New Open Source plugin<s>]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
 * xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
-* xref:accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
+* xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
 * xref:improvements[Improvements]
 * xref:additions[Additions]
 * xref:changes[Changes]
@@ -28,16 +28,33 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:known-issues[Known issues]
 
 
-[[new-premium-plugin<s>]]
-New Premium plugin<s>
+[[new-premium-plugins]]
+== New Premium plugins
 
-The following new Premium plugin was released alongside {productname} <x.y[.z]>.
+The following new Premium plugins were released alongside {productname} 7.0.
 
-=== <Premium plugin name> 1.0.0
+=== Import from Word
 
-The new Premium plugin, **<Premium plugin name>** // description here.
+The new Premium plugin, **Import from Word** provides a way to import `.docx` (Word documents) or `.dotx` (Word templates) files into the editor.
 
-For information on the **<Premium plugin name>** see xref:<plugincode>.adoc[<Premium plugin name>].
+include::partial$misc/admon-paid-addon-pricing.adoc[]
+For information on the **Import from Word Premium Plugin** see xref:importword.adoc[Import from Word docs].
+
+=== Export to Word
+
+The new Premium plugin, **Export to Word** feature lets you generate a `.docx` file directly from the editor.
+
+include::partial$misc/admon-paid-addon-pricing.adoc[]
+
+For information on the **Export to Word Premium Plugin** see xref:exportword.adoc[Export to Word docs].
+
+=== Export to PDF
+
+The new Premium plugin, **Export to PDF** feature lets you generate a `.pdf` file directly from the editor.
+
+include::partial$misc/admon-paid-addon-pricing.adoc[]
+
+For information on the **Export to PDF Premium Plugin** see xref:exportpdf.adoc[Export to PDF docs].
 
 
 [[new-open-source-plugin]]
@@ -80,18 +97,18 @@ The following Premium plugin has been announced as reaching its end-of-life:
 {productname}’s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
 
 
-[[accompanying-premium-skins-and-icon-packs-changes]]
-== Accompanying Premium Skins and Icon Packs changes
+[[accompanying-enhanced-skins-and-icon-packs-changes]]
+== Accompanying Enhanced Skins & Icon Packs changes
 
-The {productname} <x.y[.z]> release includes an accompanying release of the **Premium Skins and Icon Packs**.
+The {productname} <x.y[.z]> release includes an accompanying release of the **Enhanced Skins & Icon Packs**.
 
-=== Premium Skins and Icon Packs
+=== Enhanced Skins & Icon Packs
 
-The **Premium Skins and Icon Packs** release includes the following updates:
+The **Enhanced Skins & Icon Packs** release includes the following updates:
 
-The **Premium Skins and Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} <x.y[.z]> skin, Oxide.
+The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} <x.y[.z]> skin, Oxide.
 
-For information on using premium skins and icon packs, see: xref:premium-skins-and-icons.adoc[Premium Skins and Icon Packs].
+For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
 
 
 [[improvements]]
@@ -217,6 +234,33 @@ Any editors using this `highlight_on_focus: true` option, can remove this option
 //#TINY-vwxyz1
 
 // CCFR here.
+
+=== Removed incorrect `aria-placeholder` attribute from editor body when `placeholder` option is set.
+// #TINY-10452
+
+Previously, when the `placeholder` option was set, the editor would automatically append an `aria-placeholder` attribute to the editor body.
+
+However, the `aria-placeholder` attribute is not a valid attribute for the body element according to accessibility guidelines. As a result, certain screen readers and assistive technologies encountered difficulties in correctly interpreting the content.
+
+In {productname} 7.0 addresses this, by removing the `aria-placeholder` attribute from the editor body. This solution ensures that the editor is accessible to all users.
+
+=== `convert_unsafe_embeds` editor option is now defaulted to `true`.
+
+In {productname} 6.8.1, xref:content-filtering.adoc#convert-unsafe-embeds[convert_unsafe_embeds] editor option was introduced to allow `+object+` and `+embed+` elements to be converted by default to the correct element, respective of the MIME type, automatically when inserted into the editor.
+
+In {productname} 7.0, the default value for `+convert_unsafe_embeds+` will change from `false` to `true`, meaning that all `+object+` and `+embed+` tags will automatically be converted to different elements when inserted to the editor. If this behaviour is undesirable, set `+convert_unsafe_embeds+` to `+false+` in your editor configuration.
+
+For further details on the `+convert_unsafe_embeds+` option, see the xref:content-filtering.adoc#convert-unsafe-embeds[content filtering options], or refer to the xref:security.adoc#convert-unsafe-embeds[security guide], or the link:https://www.tiny.cloud/docs/tinymce/6/6.8.1-release-notes/#new-convert_unsafe_embeds-option-that-controls-whether-object-and-embed-elements-will-be-converted-to-more-restrictive-alternatives-namely-img-for-image-mime-types-video-for-video-mime-types-audio-audio-mime-types-or-iframe-for-other-or-unspecified-mime-types[{productname} 6.8.1 release notes].
+
+=== `sandbox_iframes` editor option is now defaulted to `true`.
+
+In {productname} 6.8.1, the xref:content-filtering.adoc#sandbox-iframes[sandbox iframes] editor option was introduced to allow iframes to be sandboxed by default when inserted into the editor.
+
+In {productname} 7.0, the default for `+sandbox_iframes+` will change from `false` to `true`, meaning that all `+iframe+` elements inserted into the editor will be given the `sandbox=""` attribute by default, preventing most actions, including scripting and same-origin access, which may break existing editor content or produce undesirable effects.
+
+To prevent any expected iframes from being sandboxed, we recommend adding the source domains of such iframes to the new xref:content-filtering.adoc#sandbox-iframes-exclusions[`+sandbox_iframes_exclusions+`] option list, and including the domains in the default list where necessary. To prevent all iframes from being sandboxed, set the option `+sandbox_iframes+` to `+false+` in your editor configuration.
+
+For further details on the `+sandbox_iframes+` option, see the xref:content-filtering.adoc#sandbox-iframes[the content filtering options], or refer to the xref:security.adoc#sandbox-iframes[security guide], or the link:https://www.tiny.cloud/docs/tinymce/6/6.8.1-release-notes/#new-sandbox_iframes-option-that-controls-whether-iframe-elements-will-be-added-a-sandbox-attribute-to-mitigate-malicious-intent[{productname} 6.8.1 release notes].
 
 
 [[bug-fixes]]

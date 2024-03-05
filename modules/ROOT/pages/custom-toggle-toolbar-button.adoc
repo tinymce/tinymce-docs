@@ -18,6 +18,9 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 |active |boolean |optional |default: `false` - Represents the button's state. When `true`, the button is highlighted. Toggled by the button's API.
 |onSetup |`+(api) => (api) => void+` |optional |default: `+() => () => {}+` - Function invoked when the button is rendered. For details, see: xref:using-onsetup[Using `+onSetup+`].
 |onAction |`+(api) => void+` |required |Function invoked when the button is clicked.
+4+|
+include::partial$misc/admon-requires-7.0v.adoc[]
+|shortcut |string |optional |Shortcut to display in the tooltip. To register a shortcut, see: To register a shortcut, see: xref:shortcuts.adoc[Add custom shortcuts to TinyMCE].
 |===
 
 == API

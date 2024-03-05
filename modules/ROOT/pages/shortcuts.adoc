@@ -21,3 +21,9 @@ liveDemo::custom-shortcut[tab="js"]
 When adding a shortcut for a custom menu item, add both a custom shortcut and a custom menu item. To display the shortcut on a custom menu item, add the `+shortcut+` configuration option when creating the menu item.
 
 liveDemo::custom-shortcut-2[tab="js"]
+
+== Example: adding a custom shortcut for a toolbar button
+
+When adding a shortcut for a custom basic toolbar or toggle button, add both a custom shortcut and a custom toolbar button. To include the keyboard shortcut information in the tooltip for a custom toolbar button, add the +shortcut+ configuration option when creating the toolbar button.
+
+liveDemo::custom-shortcut-3[tab="js"]

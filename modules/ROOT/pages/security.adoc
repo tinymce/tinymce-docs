@@ -92,7 +92,9 @@ include::partial$security/sanitizing-html-input-and-protecting-against-xss-attac
 [[securing-embedded-external-resources]]
 === Securing embedded external resources
 
-include::partial$security/securing-embedded-external-resources.adoc[]
+include::partial$configuration/sandbox_iframes_options.adoc[]
+
+include::partial$configuration/convert_unsafe_embeds_options.adoc[]
 
 [[insecure-transmission-and-storage-of-data]]
 === Insecure Transmission and Storage of data

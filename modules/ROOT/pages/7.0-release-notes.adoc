@@ -224,10 +224,7 @@ In {productname} 6.8.1, link:https://www.tiny.cloud/docs/tinymce/6/6.8.1-release
 
 In {productname} 7.0, the default value for `+convert_unsafe_embeds+` will change from `false` to `true`, meaning that all `+object+` and `+embed+` tags will automatically be converted to different elements when inserted to the editor. If this behaviour is undesirable, set `+convert_unsafe_embeds+` to `+false+` in your editor configuration.
 
-[NOTE]
-To prevent automatic conversion of content, users are advised to include convert_unsafe_embeds: false in their {productname} initialization configuration.
-
-For further details on this option, refer to the xref:security.adoc#convert-unsafe-embeds[convert_unsafe_embeds] option, or see xref:migration-from-6x.adoc#convert-unsafe-embeds-option[migration from 6x guide].
+For further details on the `+convert_unsafe_embeds+` option, see the xref:content-filtering.adoc#convert-unsafe-embeds[content filtering options], or refer to the xref:security.adoc#convert-unsafe-embeds[security guide].
 
 
 [[bug-fixes]]

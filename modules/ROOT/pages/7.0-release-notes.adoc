@@ -220,12 +220,11 @@ Any editors using this `highlight_on_focus: true` option, can remove this option
 
 === `sandbox_iframes` editor option is now defaulted to `true`.
 
-In {productname} 6.8.1, `sandbox_iframes` editor option was introduced to allow iframes to be sandboxed by default when inserted into the editor.
+In {productname} 6.8.1, xref:content-filtering.adoc#sandbox-iframes[sandbox iframes] editor option was introduced to allow iframes to be sandboxed by default when inserted into the editor.
 
-With the release of {productname} 7.0, the default for `sandbox_iframes` editor option has been changed to `true`, constituting a breaking change for users whose editor version is below 7.0.
+With the release of {productname} 7.0, the default for `+sandbox_iframes+` editor option has been changed to `true`, constituting a breaking change for users whose editor version is below 7.0.
 
-
-For further details on this option, refer to the xref:security.adoc#sandbox-iframes-option[sandbox_iframes] option, or see xref:migration-from-6x.adoc#sandbox-iframes[migration from 6x guide].
+For further details on this option, refer to the xref:content-filtering.adoc#sandbox-iframes[sandbox iframes], or see link:https://www.tiny.cloud/docs/tinymce/6/6.8.1-release-notes/#new-sandbox_iframes-option-that-controls-whether-iframe-elements-will-be-added-a-sandbox-attribute-to-mitigate-malicious-intent[{productname} 6.8.1 release notes].
 
 
 [[bug-fixes]]

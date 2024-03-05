@@ -53,18 +53,6 @@ The {pluginname} plugin provides the following {productname} commands.
 
 include::partial$commands/{plugincode}-cmds.adoc[]
 
-[cols="1,3",options="header"]
-|===
-|Command         |Description
-|exportpdf_service_url   |triggers a function that converts the content of the editor into a PDF format using a specified or default converter URL.
-|===
-
-.Examples
-[source,js]
-----
-tinymce.activeEditor.execCommand('exportpdf');
-----
-////
 == Events
 
 The {pluginname} plugin provides the following events.

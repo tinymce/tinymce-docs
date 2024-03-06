@@ -21,8 +21,42 @@ tinymce.init({
 [[exportpdf-converter-options]]
 == `exportpdf_converter_options`
 
-This option allows the editor to download a PDF document containing its content, along with the specified header defined in the `exportpdf_converter_options`.
+This option allows the editor to download a PDF document containing its content, along with the specified options defined in the `exportpdf_converter_options`.
 
+=== Available options
+
+[cols="1,3",options="header"]
+|===
+| Option | Description
+
+| link:https://exportpdf.converter.tiny.cloud/docs#section/PDF-options/Margins[margin_top^] | Sets the top margin of the output file.
+
+| link:https://exportpdf.converter.tiny.cloud/docs#section/PDF-options/Margins[margin_bottom^] | Sets the bottom margin of the output file.
+
+| link:https://exportpdf.converter.tiny.cloud/docs#section/PDF-options/Margins[margin_left^] | Sets the left margin of the output file.
+
+| link:https://exportpdf.converter.tiny.cloud/docs#section/PDF-options/Margins[margin_right^] | Sets the right margin of the output file.
+
+| link:https://exportpdf.converter.tiny.cloud/docs#section/PDF-options/Page-format[format^] | Sets the page format of the output file.
+
+| link:https://exportpdf.converter.tiny.cloud/docs#section/PDF-options/Header-and-footer[footer_html^] | HTML content to be used as the footer in the output file.
+
+| link:https://exportpdf.converter.tiny.cloud/docs#section/PDF-options/Header-and-footer[header_html^] | HTML content to be used as the header in the output file.
+
+| link:https://exportpdf.converter.tiny.cloud/docs#section/PDF-options/Header-and-footer[header_and_footer_css^] | CSS styles to be applied to the header and footer in the output file.
+
+| link:https://exportpdf.converter.tiny.cloud/docs#section/PDF-options/Page-orientation[page_orientation^] | Sets the orientation of the page in the output file.
+
+| link:https://exportpdf.converter.tiny.cloud/docs#section/PDF-options/Wait-for-selector[wait_for_selector^] | Waits for the specified selector before generating the output file.
+
+| link:https://exportpdf.converter.tiny.cloud/docs#section/PDF-options/Wait-for-network[wait_for_network^] | Waits for network requests to finish before generating the output file.
+
+| link:https://exportpdf.converter.tiny.cloud/docs#section/PDF-options/Wait-time[wait_time^] | Sets the time to wait before generating the output file.
+
+| link:https://exportpdf.converter.tiny.cloud/docs#section/PDF-options/Extra-HTTP-headers[extra_http_headers^] | Additional HTTP headers to be included in the requests.
+
+| link:https://exportpdf.converter.tiny.cloud/docs#section/PDF-options/Base-URL[base_url^] | Sets the base URL to resolve relative URLs in the input HTML.
+|===
 *Type:* `+Object+`
 
 *Default value:* `{}`

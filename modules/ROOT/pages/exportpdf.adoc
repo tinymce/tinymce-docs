@@ -34,6 +34,7 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'exportpdf',
   toolbar: 'exportpdf',
+  exportpdf_service_url: '<service url>'
 });
 ----
 

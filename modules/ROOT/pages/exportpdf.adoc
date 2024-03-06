@@ -1,8 +1,8 @@
 = Export to PDF plugin
 :navtitle: Export to PDF
-:description: The export to PDF feature lets you generate a PDF file directly from the editor.
+:description: The Export to PDF feature lets you generate a PDF file directly from the editor.
 :description_short: Generate a PDF file directly from the editor.
-:keywords: plugin, exportpdf
+:keywords: plugin, exportpdf, export to pdf
 :pluginname: Export to PDF
 // values for <tier>
 // opensource plugin = tieroneplan
@@ -20,7 +20,11 @@ The Export to PDF functionality gathers the HTML produced using the `editor.getc
 
 == Interactive example
 
-liveDemo::{plugincode}[]
+[NOTE]
+.{pluginname} demo
+====
+Demos containing the {pluginname} plugin are currently only available on our main website. Check out https://www.tiny.cloud/tinymce/features/exportpdf/[the {pluginname} demo], or the https://www.tiny.cloud/[demo on our home page], to try it out today.
+====
 
 == Basic setup
 
@@ -53,7 +57,6 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 The {pluginname} plugin provides the following {productname} commands.
 
 include::partial$commands/{plugincode}-cmds.adoc[]
-
 
 == APIs
 

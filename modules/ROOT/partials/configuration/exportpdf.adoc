@@ -5,7 +5,6 @@ By default, the Export to PDF feature uses the {productname} Cloud Services HTML
 
 *Type:* `+String+`
 
-
 === Example: using `exportpdf_service_url`
 
 [source,js]
@@ -79,6 +78,3 @@ tinymce.init({
 
 [NOTE]
 The `exportpdf_service_url` option must be configured for the {pluginname} plugin to work.
-
-
-=== Limitations of the `<placeholder>` option

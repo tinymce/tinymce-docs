@@ -1,6 +1,6 @@
 = Server-side component installation
 :description: Server-side components for premium plugins like spelling as-you-type.
-:keywords: enterprise, tinymcespellchecker, spell check, spell checker pro, editimage, server
+:keywords: enterprise, tinymcespellchecker, spell check, Spell Checker, editimage, server
 
 Some {productname} Enterprise features require a server-side component. If you're using the {cloudname} solution, we've done all the hard work for you and you can skip this page. Alternatively, if you've purchased our Self-hosted solution then please read on.
 
@@ -12,7 +12,7 @@ The following server-side components are included in the {productname} Self-host
 |===
 |Component |File |Description
 |xref:introduction-to-tiny-spellchecker.adoc[Spellchecking], xref:autocorrect.adoc[Spelling Autocorrect] |ephox-spelling.war |Spell checking and Autocorrect service for {productname} Enterprise.
-|xref:export.adoc[Export], xref:editimage.adoc[Enhanced Image Editing] |ephox-image-proxy.war |Image proxy service for the Export and Enhanced Image Editing plugins.
+|xref:editimage.adoc[Enhanced Image Editing] |ephox-image-proxy.war |Image proxy service for the Export and Enhanced Image Editing plugins.
 |xref:introduction-to-mediaembed.adoc[Enhanced Media Embed], xref:linkchecker.adoc[Link Checker] |ephox-hyperlinking.war |Link Checker and Enhanced Media Embed service for {productname} Enterprise.
 |===
 

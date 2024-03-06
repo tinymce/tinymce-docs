@@ -52,19 +52,6 @@ editor.notificationManager.open({
 });
 ----
 
-== Close Button
-
-Disable the close button to the right of the notification by setting the `+closeButton+` property to *false*. It is recommended to use this in conjunction with a `+timeout+` property that is *not* zero, however it can be used without including a `+timeout+`.
-
-[source,js]
-----
-editor.notificationManager.open({
-  text: 'A test notification that will close automatically after 5 seconds and has the close button disabled.',
-  timeout: 5000,
-  closeButton: false
-});
-----
-
 == Icon
 
 Set the `+icon+` property to display an icon to the left of the text.

@@ -15,6 +15,8 @@ include::partial$configuration/convert_fonts_to_spans.adoc[]
 
 include::partial$configuration/custom_elements.adoc[]
 
+include::partial$configuration/convert_unsafe_embeds.adoc[]
+
 include::partial$configuration/doctype.adoc[]
 
 include::partial$configuration/element_format.adoc[]
@@ -43,7 +45,7 @@ include::partial$configuration/pad_empty_with_br.adoc[]
 
 include::partial$configuration/protect.adoc[]
 
-include::partial$configuration/remove_trailing_brs.adoc[]
+include::partial$configuration/sandbox_iframes.adoc[]
 
 include::partial$configuration/schema.adoc[]
 

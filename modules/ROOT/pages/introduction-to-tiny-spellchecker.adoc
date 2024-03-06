@@ -1,18 +1,18 @@
-= Spell Checker Pro plugin
-:navtitle: Spell Checker Pro
+= Spell Checker plugin
+:navtitle: Spell Checker
 :description: Check spelling as-you-type in TinyMCE.
 :keywords: tinymcespellchecker, spellchecker_language, spellchecker_languages, spellchecker_rpc_url, spellchecker_dialog, ephox
-:pluginname: Spell Checker Pro
+:pluginname: Spell Checker
 :plugincode: tinymcespellchecker
 :pluginminimumplan: tierthree
 
 include::partial$misc/admon-premium-plugin.adoc[]
 
-*Spell Checker Pro* adds spell checking as-you-type capabilities to {productname}. For information on the supported languages, refer to xref:spellchecker_language[this] section.
+*Spell Checker* adds spell checking as-you-type capabilities to {productname}. For information on the supported languages, refer to xref:spellchecker_language[this] section.
 
 == Interactive example
 
-liveDemo::spellcheckerpro[]
+liveDemo::spellchecker[]
 
 // include::partial$misc/purchase-premium-plugins.adoc[]
 
@@ -83,7 +83,7 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 
-The Spell Checker Pro plugin provides the following commands.
+The Spell Checker plugin provides the following commands.
 
 include::partial$commands/tinymcespellchecker-cmds.adoc[]
 
@@ -173,7 +173,7 @@ tinymce.init({
 
 === SpellcheckError event
 
-This event triggers when a spellchecker error occurs, such as the Spell Checker Pro service can’t be reached.
+This event triggers when a spellchecker error occurs, such as the Spell Checker service can’t be reached.
 
 ==== Example: the SpellcheckError event
 
@@ -215,9 +215,9 @@ tinymce.init({
 
 include::partial$misc/admon-requires-6.5v.adoc[]
 
-This event is fired when the editor content is checked for misspellings and suggestions, either by opening the Spell Checker Pro dialog, or by executing the `+mceSpellcheckUpdate+` command.
+This event is fired when the editor content is checked for misspellings and suggestions, either by opening the Spell Checker dialog, or by executing the `+mceSpellcheckUpdate+` command.
 
-NOTE: This event is not fired when SpellChecker Pro is operating in As-You-Type mode.
+NOTE: This event is not fired when Spell Checker is operating in As-You-Type mode.
 
 ==== Example: the SpellcheckerLanguageChanged event
 

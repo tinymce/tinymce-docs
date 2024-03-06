@@ -23,9 +23,6 @@ The two arguments this method take are:
 [cols="1,2,1,4",options="header"]
 |===
 |Name |Value |Requirement |Description
-|ch |`+string+` (of one character) |Required |The character to trigger the autocompleter.
-include::partial$misc/admon-deprecated-6.2v.adoc[]
-It has been replaced with the `+trigger+` option, which should be used instead.
 |trigger |`+string+` |Required |The string to trigger the autocompleter.
 include::partial$misc/admon-requires-6.2v.adoc[]
 |fetch |`+(pattern: string, maxResults: number, fetchOptions: Record<string, any>) => Promise<AutocompleteItem[] \| CardMenuItem[]+` |Required |A function that is passed the current matched text pattern, the maximum number of expected results and any additional fetch options. The function should return a Promise containing matching results.

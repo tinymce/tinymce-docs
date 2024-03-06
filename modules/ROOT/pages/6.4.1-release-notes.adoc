@@ -395,6 +395,8 @@ In {productname} 6.4.1, an improvement was made to the focusing code which now c
 
 As a result of the fix, when using the *ToggleToolbarDrawer* command, the toolbar is now not focused when `skipFocus: true` is set.
 
+NOTE: As of {productname} 6.8.3, when using `+skipFocus: true+`, the *ToggleToolbarDrawer* command does not toggle the toolbar drawer when the `+toolbar_mode+` option is set to `+'sliding'+`.
+
 === New font_size_input_default_unit option allows to use of numbers without a unit in `fontsizeinput` and have them parsed with the default unit, if it is not defined the default is `pt`
 //#TINY-9585
 

@@ -226,7 +226,7 @@ This update fixes this bug. When the Comments plugin loads, the comment model da
 
 ==== Opening the comments sidebar via an editor command did not respect the `skipFocus` argument
 
-If the Comments sidebar was opened with an editor command and `skipFocus` was set to true — `editor.execCommand("ToggleSidebar", false, "showcomments", { skipFocus: true });` — the sidebar still stole focus.
+If the Comments sidebar was opened with an editor command and `grabFocus` was set to true — `editor.execCommand("'tc-open-comment'", false, "showcomments", { grabFocus: true });` — the sidebar still stole focus.
 
 This update corrects this: `skipFocus: true` is honored, as expected, and the sidebar does not steal focus.
 

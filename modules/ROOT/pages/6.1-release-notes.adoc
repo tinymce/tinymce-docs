@@ -224,11 +224,11 @@ This caused {productname} to present as if an undo option was available when the
 This update fixes this bug. When the Comments plugin loads, the comment model data is no longer placed into an undo level and no Undo actions will present as available until there are actual changes available to undo.
 
 
-==== Opening the comments sidebar via an editor command did not respect the `skip_focus` argument
+==== Opening the comments sidebar via an editor command did not respect the `skipFocus` argument
 
-If the Comments sidebar was opened with an editor command and `skip_focus` was set to true — `editor.execCommand("ToggleSidebar", false, "showcomments", { skip_focus: true });` — the sidebar still stole focus.
+If the Comments sidebar was opened with an editor command and `skipFocus` was set to true — `editor.execCommand("ToggleSidebar", false, "showcomments", { skipFocus: true });` — the sidebar still stole focus.
 
-This update corrects this: `skip_focus: true` is honored, as expected, and the sidebar does not steal focus.
+This update corrects this: `skipFocus: true` is honored, as expected, and the sidebar does not steal focus.
 
 
 ==== Comments did not block the sidebar UI while saving the data in callback mode

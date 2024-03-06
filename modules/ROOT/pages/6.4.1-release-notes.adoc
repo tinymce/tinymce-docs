@@ -386,6 +386,15 @@ tinymce.init({
 [NOTE]
 More details about this component and the possible values that can be used within the new `fontsizeinput` input field can be found in `xref:available-toolbar-buttons.adoc#the-core-toolbar-buttons[fontsizeinput]`.
 
+=== Added `skipFocus` check to the ToggleToolbarDrawer command
+//#TINY-9337
+
+In previous versions of {productname}, the *ToggleToolbarDrawer* command contained an incorrect focus call. As a consequence, this meant that when the *ToggleToolbarDrawer* command option `skipFocus: true` was set the toolbar drawer would take focus when it was not meant to.
+
+In {productname} 6.4.1, an improvement was made to the focusing code which now checks for `skipFocus`.
+
+As a result of the fix, when using the *ToggleToolbarDrawer* command, the toolbar is now not focused when `skipFocus: true` is set.
+
 === New font_size_input_default_unit option allows to use of numbers without a unit in `fontsizeinput` and have them parsed with the default unit, if it is not defined the default is `pt`
 //#TINY-9585
 

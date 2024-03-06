@@ -25,7 +25,7 @@ tinymce.init({
   /* The following setup callback opens the comments sidebar when the editor loads */
   setup: (editor) => {
     editor.on('SkinLoaded', () => {
-      editor.execCommand('ToggleSidebar', false, 'showcomments', { skip_focus: true });
+      editor.execCommand('ToggleSidebar', false, 'showcomments', { skipFocus: true });
     });
   }
 });

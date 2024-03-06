@@ -313,7 +313,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * New `setText` and `setIcon` methods added to menu button and toolbar button APIs.
 * New `highlight_on_focus` option which enables highlighting the content area on focus.
 * New `fontsizeinput` toolbar item which allows the user to set the size via input and also increase and decrease it with `+` and `-` buttons.
-* Added `skip_focus` check to the ToggleToolbarDrawer command.
+* Added `skipFocus` check to the ToggleToolbarDrawer command.
 * New `font_size_input_default_unit` option allows to use of numbers without a unit in `fontsizeinput` and have them parsed with the default unit, if it is not defined the default is `pt`.
 * New `group` and `togglebutton` in view.
 * New `togglebutton` in dialog footer buttons.

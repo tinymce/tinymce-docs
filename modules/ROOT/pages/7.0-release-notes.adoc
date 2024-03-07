@@ -271,6 +271,17 @@ For further details on the `+sandbox_iframes+` option, see the xref:content-filt
 === <TINY-vwxyz 1 changelog entry>
 //#TINY-vwxyz1
 
+=== Floating toolbar buttons in inline editor incorrectly wrapped into multiple rows on window resizing or zooming.
+//# TINY-10570
+
+An issue was identified where the floating toolbar's functionality, specifically regarding the incorrect rendering of the overflow button on a second row when the window was resized or the browser was zoomed.
+
+Previously, when the toolbar contained more buttons than could be displayed within the available space, an overflow button (depicted by three dots) `...` would appear at the toolbar's end, enabling users to access the remaining buttons. However, due to a bug, this overflow button would occasionally shift to a second row, disrupting the layout, especially during window resizing.
+
+{productname} 7.0 addresses this issue, by adding improvements to the resizing behavior of the toolbar to ensure it consistently fits within one row.
+
+As a result, the toolbar now adjusts its size appropriately and maintains a single-row layout, effectively preventing the overflow button from erroneously moving to a second row under any circumstances.
+
 === Fixed incorrect object processor for `event_root` option.
 // #TINY-10433
 

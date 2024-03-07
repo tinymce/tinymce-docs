@@ -1,8 +1,9 @@
+
 = Import from Word plugin
 :navtitle: Import from Word
 :description: Provides a way to import .docx (Word documents) or .dotx (Word templates) files into the editor.
 :description_short: Import .docx or .dotx files into the editor.
-:keywords: plugin, importword
+:keywords: plugin, importword, import from word
 :pluginname: Import from Word
 // values for <tier>
 // opensource plugin = tieroneplan
@@ -20,7 +21,11 @@ The {pluginname} plugin lets you import `.docx` (Word document) or `.dotx` (Word
 
 == Interactive example
 
-liveDemo::{plugincode}[]
+[NOTE]
+.{pluginname} demo
+====
+Demos containing the {pluginname} plugin are currently only available on our main website. Check out https://www.tiny.cloud/tinymce/features/importword/[the {pluginname} demo], or the https://www.tiny.cloud/[demo on our home page], to try it out today.
+====
 
 == Basic setup
 
@@ -44,9 +49,7 @@ The following configuration options affect the behavior of the {pluginname} plug
 
 include::partial$configuration/{plugincode}.adoc[][leveloffset=+1]
 
-
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
-
 
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
@@ -55,15 +58,6 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 The {pluginname} plugin provides the following {productname} commands.
 
 include::partial$commands/{plugincode}-cmds.adoc[]
-
-// Remove is not required before merging
-////
-== Events
-
-The {pluginname} plugin provides the following events.
-
-include::partial$events/{plugincode}-events.adoc[]
-////
 
 == APIs
 

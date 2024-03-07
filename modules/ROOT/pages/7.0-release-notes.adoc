@@ -263,6 +263,16 @@ To prevent any expected iframes from being sandboxed, we recommend adding the so
 
 For further details on the `+sandbox_iframes+` option, see the xref:content-filtering.adoc#sandbox-iframes[the content filtering options], or refer to the xref:security.adoc#sandbox-iframes[security guide], or the link:https://www.tiny.cloud/docs/tinymce/6/6.8.1-release-notes/#new-sandbox_iframes-option-that-controls-whether-iframe-elements-will-be-added-a-sandbox-attribute-to-mitigate-malicious-intent[{productname} 6.8.1 release notes].
 
+=== Remove the height field from the `table` plugin cell dialog. The `table` plugin row dialog now controls the row height by setting the height on the `tr` element, not the `td` elements.
+//# TINY-10617
+
+The height field within the table plugin cell dialog has been removed, thereby restricting the ability to adjust individual cell heights `td/th`.
+
+However, this modification directs users to utilize the table plugin row dialog to alter the height of entire rows along with all enclosed cells.
+
+[NOTE]
+When adjusting row height through the row dialog, any height styles previously applied to `td/th` elements will be automatically removed.
+
 
 [[removed]]
 == Removed

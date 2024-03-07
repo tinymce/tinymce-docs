@@ -22,6 +22,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:improvements[Improvements]
 * xref:additions[Additions]
 * xref:changes[Changes]
+* xref:removed[Removed]
 * xref:bug-fixes[Bug fixes]
 * xref:security-fixes[Security fixes]
 * xref:deprecated[Deprecated]
@@ -218,10 +219,21 @@ For more information about `highlight_on_focus` see the xref:accessibility.adoc#
 Any editors using this `highlight_on_focus: true` option, can remove this option from their {productname} init configuration when upgrading to {productname} 7.0.
 
 === Change table height resizing handling to remove heights from `td`/`th` elements and only apply to `tr` elements.
+//# TINY-10589
 
 When resizing a table using either the row resize bars or corner resize handles, any existing `height` styles are removed from the `td`/`th` elements and only apply to `tr` elements and `table` element. Additionally, the heights calculated and applied for the `tr` elements and `table` element more accurately represent the actual visual height in the editor.
 
 As part of the changes to table height resizing handling, resizing via the corner resize handles is more consistent. If the table *does not* have any height styles and the table is resized using one of the corner resize handles, each row has its height increased evenly. If the table *does have* existing height styles, corner resizes will only change the height of the first row (if using top corner handles) or last row  (if using bottom corner handles) equivalent to `table_column_resizing: 'resizetable'` option for columns xref:table-options.adoc#table_column_resizing[Table options: table_column_resizing]
+
+=== Make table ghost element better reflect height changes when resizing.
+//# TINY-10658
+
+Previously, the table ghost element did not accurately reflect changes in table height when resized using the corner resize handles.
+
+In {productname} 7.0, this problem has been addressed.
+
+As a result, the table ghost element now accurately mirrors adjustments in table height when resized using the corner resize handles.
+
 
 [[additions]]
 == Additions
@@ -268,6 +280,30 @@ To prevent any expected iframes from being sandboxed, we recommend adding the so
 
 For further details on the `+sandbox_iframes+` option, see the xref:content-filtering.adoc#sandbox-iframes[the content filtering options], or refer to the xref:security.adoc#sandbox-iframes[security guide], or the link:https://www.tiny.cloud/docs/tinymce/6/6.8.1-release-notes/#new-sandbox_iframes-option-that-controls-whether-iframe-elements-will-be-added-a-sandbox-attribute-to-mitigate-malicious-intent[{productname} 6.8.1 release notes].
 
+=== Remove the height field from the `table` plugin cell dialog. The `table` plugin row dialog now controls the row height by setting the height on the `tr` element, not the `td` elements.
+//# TINY-10617
+
+The height field within the table plugin cell dialog has been removed, thereby restricting the ability to adjust individual cell heights `td/th`.
+
+However, this modification directs users to utilize the table plugin row dialog to alter the height of entire rows along with all enclosed cells.
+
+[NOTE]
+When adjusting row height through the row dialog, any height styles previously applied to `td/th` elements will be automatically removed.
+
+
+[[removed]]
+== Removed
+
+=== Removed InsertOrderedList and InsertUnorderedList commands from core.
+// #TINY-10644
+
+Previously, native list commands could be executed by various text patterns.
+
+This resulted in undefined browser behavior due to the inherent list code within it.
+
+{productname} 7.0 addresses this, by removing the core list commands, effectively eliminating the insertion of lists into the content.
+
+As a result, users no longer experience unexpected list insertions.
 
 [[bug-fixes]]
 == Bug fixes

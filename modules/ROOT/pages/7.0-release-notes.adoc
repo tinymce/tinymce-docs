@@ -257,7 +257,7 @@ Any editors using this `highlight_on_focus: true` option, can remove this option
 
 Previously, the `DialogFooterToggleButton` component required a tooltip property. This meant including a tooltip for all toggle buttons displayed in dialog footers, even if the information wasn't necessary.
 
-As of {productname} 7.0, the tooltip property is now optional for DialogFooterToggleButton. This flexibility allows developers to omit the tooltip for buttons where it's not required, providing a cleaner and more focused user experience.
+As of {productname} 7.0, the tooltip property is now optional for `DialogFooterToggleButton`. This flexibility allows developers to omit the tooltip for buttons where it's not required, providing a cleaner and more focused user experience.
 
 === Change table height resizing handling to remove heights from `td`/`th` elements and only apply to `tr` elements.
 //# TINY-10589

@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: "textarea#advanced-template-insertionpoint",
+  selector: "textarea#template-insertionpoint",
   plugins: [ "advtemplate", "mergetags", ],
   toolbar: "inserttemplate | mergetags",
   advtemplate_templates: [

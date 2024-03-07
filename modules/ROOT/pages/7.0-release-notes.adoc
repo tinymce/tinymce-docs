@@ -206,6 +206,15 @@ Now, tooltips are now shown on `autocompleter` items both on mouse over and keyb
 [NOTE]
 The tooltip will only be displayed when the `autocompleter` columns are set to a value greater than `1`. This is because when there is a visible label, the tooltip functionality is not needed and therefore omitted.
 
+=== Added custom tooltip for dialog collection items, now visible on both mouse hover and keyboard focus.
+//#TINY-9637
+
+Previously, collection items set in a xref:dialog-components.adoc#collection[collection dialog component] would not display a tooltip on keyboard focus.
+
+This means that keyboard-only users were not able to see the tooltip, as it was only shown on mouse hover.
+
+In {productname} 7.0, dialog collection items with `data-mce-tooltip` attribute, such as those used in xref:emoticons.adoc[Emoticons] and xref:charmap.adoc[Charmap] plugins, now display relevant tooltips on both mouse hover and keyboard focus. This ensures all users, including those relying solely on keyboard navigation, can access helpful information about these items.
+
 === The `highlight_on_focus` option now defaults to true, adding a focus outline to every editor.
 //#TINY-10574
 

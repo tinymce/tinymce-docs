@@ -320,13 +320,12 @@ Previously, it was not possible to remove all classes on a table when setting an
 * For selected rows with classes that do not match any of the values set in the  `table_row_class_list`, a "Select..." item becomes the default choice in the "Class" listbox field in the "Row Properties" dialog. (This selection maintains the existing classes upon saving). Conversely, if the selected row classes do match one of the values set in the  `table_row_class_list`, it is automatically selected.
 * For selected cells with classes that do not match any of the values set in the  `table_cell_class_list`, a "Select..." item becomes the default choice in the "Class" listbox field in the "Cell Properties" dialog. (This selection maintains the existing classes upon saving). Conversely, if the selected cell classes do match one of the values set in the  `table_cell_class_list`, it is automatically selected.
 
-=== When setting table border width and `table_style_by_css` is true, only the border attribute is set to 0 and border-width styling is no longer used.
+=== When setting table border width to 0 and `table_style_by_css` is `true`, only the border attribute is set to 0 and border-width styling is no longer used.
+// TINY-10308
 
-{productname} addressed an issue where adjusting the table border width with `table_style_by_css` set to `true` resulted in only the border attribute being set to 0, while border-width styling was disregarded.
+Previously in {productname} 6, when the `table_style_by_css` option was `true` and the table border width was set to `0px` within the "Table Properties" dialog, the table's border attribute would be set to 1 and `border-width: 0px` would be applied to all cells in the table. This behaviour was unintentional and differed from setting the `table_style_by_css` option to `true` in {productname} 5.
 
-Previously, setting the border width to 0px within the table properties dialog under this configuration caused the table's border attribute to be set to 1, followed by styling with `border-width: 0px`, affecting all cells in the table. As a result, editor versions post v6 that use the default setting of `table_style_by_css` differed from v5 editors.
-
-In {productname} 7.0 addressed this issue. Now, setting the border width to 0 consistently sets the table border attribute to 0, removing border-width styles from all table cells, aligning the behavior of the "Border width" property with v5.
+In {productname} 7.0 addressed this issue. Now, setting the border width to 0 consistently sets the table border attribute to 0, removing `border-width` styles from all table cells, and aligning the behavior of the "Border width" property with {productname} 5.
 
 === `mceTableDeleteRow` did not calculate the correct row index for colgroup tables.
 // #TINY-6309

@@ -218,6 +218,15 @@ For more information about `highlight_on_focus` see the xref:accessibility.adoc#
 [NOTE]
 Any editors using this `highlight_on_focus: true` option, can remove this option from their {productname} init configuration when upgrading to {productname} 7.0.
 
+=== Make table ghost element better reflect height changes when resizing.
+//# TINY-10658
+
+Previously, the table ghost element did not accurately reflect changes in table height when resized using the corner resize handles.
+
+In {productname} 7.0, this problem has been addressed.
+
+As a result, the table ghost element now accurately mirrors adjustments in table height when resized using the corner resize handles.
+
 [[additions]]
 == Additions
 

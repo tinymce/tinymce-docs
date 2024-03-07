@@ -33,7 +33,7 @@ Used here to show a TinyMCE instance loading an entire almost-ready-to-send-out 
 
 a|
 [.lead]
-xref:content-behavior-options.adoc#editable_root[`editable_root`]
+xref:non-editable-content-options.adoc#editable_root[`editable_root`]
 
 Sets the initial editable state of a TinyMCE instance’s root.
 
@@ -41,7 +41,7 @@ Used here to show a TinyMCE being used to present an almost-ready-to-send-out st
 
 a|
 [.lead]
-xref:content-behavior-options.adoc#editable_class[`editable_class`]
+xref:non-editable-content-options#editable_class[`editable_class`]
 
 Specifies the class name that TinyMCE will use to determine which areas of content are editable.
 
@@ -56,5 +56,8 @@ Used here to setup the portions of an almost-ready-to-send-out standard document
 //a|
 
 |===
+
+[NOTE]
+Refer to xref:non-editable-content-options.adoc[Non-editable content options] for more detailed `noneditable` configuration information.
 
 liveDemo::ie-template-creation[]

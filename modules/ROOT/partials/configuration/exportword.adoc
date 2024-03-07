@@ -41,8 +41,8 @@ tinymce.init({
   exportword_converter_options: {
     header: [
       {
-        html: '<h1>First page header.</h1>',
-        css: 'h1 { font-size: 30px; }',
+        html: '<h1>First page header.</h1>', //example
+        css: 'h1 { font-size: 30px; }', //example
       }
     ],
   },

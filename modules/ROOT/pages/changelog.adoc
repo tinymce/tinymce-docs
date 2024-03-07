@@ -10,6 +10,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 {productname} 7.0 is licensed under GPL Version 2 or later. This version introduces a new `license_key`  configuration setting that gives self-hosted users the ability to select a usage under the GPL or to authenticate their paid license with Tiny. 
 
 === Added
+* Added new license_key option that can be set to gpl or a valid license key.
 * New custom tooltip functionality, tooltip will be shown when hovering with a mouse or with keyboard focus.
 * New `sandbox_iframes_exclusions` option that holds a list of URL host names to be excluded from iframe sandboxing when `sandbox_iframes` is set to true.
 * Added `getAllEmojis` api function to the emoticons plugin.
@@ -20,7 +21,6 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Added `data` to Schema as a valid element.
 * More advanced schema config for custom elements.
 * Added custom tooltip for `autocompleter`, now visible on both mouse hover and keyboard focus, except single column cases.
-* Added new license_key option that can be set to gpl or a valid license key.
 * Added importword, exportpdf and exportword menu items to default file menu.
 
 === Improved
@@ -31,6 +31,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Make table ghost element better reflect height changes when resizing.
 
 === Changed
+* TinyMCE is now GPL Version 2 or later licensed.
 * `convert_unsafe_embeds` editor option is now defaulted to `true`.
 * `sandbox_iframes` editor option is now defaulted to `true`.
 * The DOMUtils.isEmpty API function has been modified to consider nodes containing only comments as empty.
@@ -42,7 +43,6 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Change table height resizing handling to remove heights from `td/th` elements and only apply to `tr` elements.
 * Removed incorrect `aria-placeholder` attribute from editor body when placeholder option is set.
 * The tooltip property for dialog's footer `togglebutton` is now optional.
-* TinyMCE is now GPL Version 2 or later licensed.
 * Changed the `media_url_resolver` option to use promises.
 * `Styles` bespoke toolbar button fallback changed to `Formats` if `Paragraph` is not configured in `style_formats` option.
 * Updated deprecation/removed console message.

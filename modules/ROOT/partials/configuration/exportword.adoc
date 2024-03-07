@@ -1,7 +1,9 @@
 [[exportword-service-url]]
 == `exportword_service_url`
 
-By default, the Word export feature uses the {productname} Cloud Services HTML to DOCX converter service to generate the Word files. You can use this option to provide the URL to an on-premises converter.
+The {pluginname} uses the {productname} Cloud Services HTML to DOCX converter service to generate the Word files.
+
+NOTE: The {pluginname} feature is currently only available `on-premise` and requires the `exportword_service_url` option to be configured. https://www.tiny.cloud/contact/[Contact us] if you require this feature.
 
 *Type:* `+String+`
 
@@ -79,7 +81,3 @@ tinymce.init({
   exportword_converter_style: 'p { color: cyan !important }' // requires both "exportword_converter_style" and "exportword_service_url" to be set.
 });
 ----
-
-=== Limitation(s) of the `<value>` option
-
-The `<placeholder>` option has the following limitations.

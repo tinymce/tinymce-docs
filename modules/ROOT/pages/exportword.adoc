@@ -1,4 +1,4 @@
-= Export Word
+= Export to Word
 :navtitle: exportword
 :description: The export to Word feature lets you generate a .docx file directly from the editor.
 :description_short: Generate a .docx file directly from the editor.
@@ -24,8 +24,11 @@ The complementary pagination feature allows you to see where page breaks would b
 
 == Interactive example
 
-liveDemo::{plugincode}[]
-
+[NOTE]
+.{pluginname} demo
+====
+Demos containing the {pluginname} plugin are currently only available on our main website. Check out https://www.tiny.cloud/tinymce/features/exportword/[the {pluginname} demo], or the https://www.tiny.cloud/[demo on our home page], to try it out today.
+====
 
 == Basic setup
 
@@ -39,6 +42,7 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'exportword',
   toolbar: 'exportword',
+  exportword_service_url: '<service_URL>'
 });
 ----
 
@@ -53,7 +57,6 @@ include::partial$configuration/{plugincode}.adoc[][leveloffset=+1]
 The {pluginname} plugin provides the following {productname} commands.
 
 include::partial$commands/{plugincode}-cmds.adoc[][leveloffset=+1]
-
 
 == APIs
 

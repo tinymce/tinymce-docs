@@ -205,6 +205,23 @@ The `trigger` property is exclusively applicable to the configuration of block t
 
 For information on the **text_patterns**, see xref:content-behavior-options.adoc#text_patterns[Text Patterns]
 
+=== Improved accessibility for interactive elements with custom tooltips
+// #TINY-10453
+
+In previous versions of {productname}, buttons without visible labels displayed browser native tooltips which only shows on mouse hover, not keyboard focus. This meant keyboard-only users couldn't access these tooltips, hindering their understanding of button functionality.
+
+To address this, {productname} 7.0 introduces custom tooltips for various elements:
+
+* Toolbar buttons
+* Resize handle
+* Buttons in a dialog
+* Buttons in a view container
+
+These custom tooltips appear on both mouse hover and keyboard focus, ensuring all users, including those relying solely on keyboard navigation, can access essential information about interactive elements.
+
+[NOTE]
+Interactive elements with visible labels do not display custom tooltips, and the browser native tooltips have been removed, as the visible label provides sufficient information.
+
 === Added custom tooltip for `autocompleter`, now visible on both mouse hover and keyboard focus, except single column cases.
 // #TINY-9638
 

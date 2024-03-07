@@ -13,31 +13,49 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 // Remove sections and section boilerplates as necessary.
 // Pluralise as necessary or remove the placeholder plural marker.
-* xref:new-premium-plugin<s>[New Premium plugin<s>]
+* xref:new-premium-plugin<s>[New Premium plugins]
 * xref:new-open-source-plugin<s>[New Open Source plugin<s>]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
 * xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
-* xref:accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
+* xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
 * xref:improvements[Improvements]
 * xref:additions[Additions]
 * xref:changes[Changes]
+* xref:removed[Removed]
 * xref:bug-fixes[Bug fixes]
 * xref:security-fixes[Security fixes]
 * xref:deprecated[Deprecated]
 * xref:known-issues[Known issues]
 
 
-[[new-premium-plugin<s>]]
-New Premium plugin<s>
+[[new-premium-plugins]]
+== New Premium plugins
 
-The following new Premium plugin was released alongside {productname} <x.y[.z]>.
+The following new Premium plugins were released alongside {productname} 7.0.
 
-=== <Premium plugin name> 1.0.0
+=== Import from Word
 
-The new Premium plugin, **<Premium plugin name>** // description here.
+The new Premium plugin, **Import from Word** provides a way to import `.docx` (Word documents) or `.dotx` (Word templates) files into the editor.
 
-For information on the **<Premium plugin name>** see xref:<plugincode>.adoc[<Premium plugin name>].
+include::partial$misc/admon-paid-addon-pricing.adoc[]
+For information on the **Import from Word Premium Plugin** see xref:importword.adoc[Import from Word docs].
+
+=== Export to Word
+
+The new Premium plugin, **Export to Word** feature lets you generate a `.docx` file directly from the editor.
+
+include::partial$misc/admon-paid-addon-pricing.adoc[]
+
+For information on the **Export to Word Premium Plugin** see xref:exportword.adoc[Export to Word docs].
+
+=== Export to PDF
+
+The new Premium plugin, **Export to PDF** feature lets you generate a `.pdf` file directly from the editor.
+
+include::partial$misc/admon-paid-addon-pricing.adoc[]
+
+For information on the **Export to PDF Premium Plugin** see xref:exportpdf.adoc[Export to PDF docs].
 
 
 [[new-open-source-plugin]]
@@ -80,18 +98,18 @@ The following Premium plugin has been announced as reaching its end-of-life:
 {productname}’s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
 
 
-[[accompanying-premium-skins-and-icon-packs-changes]]
-== Accompanying Premium Skins and Icon Packs changes
+[[accompanying-enhanced-skins-and-icon-packs-changes]]
+== Accompanying Enhanced Skins & Icon Packs changes
 
-The {productname} <x.y[.z]> release includes an accompanying release of the **Premium Skins and Icon Packs**.
+The {productname} <x.y[.z]> release includes an accompanying release of the **Enhanced Skins & Icon Packs**.
 
-=== Premium Skins and Icon Packs
+=== Enhanced Skins & Icon Packs
 
-The **Premium Skins and Icon Packs** release includes the following updates:
+The **Enhanced Skins & Icon Packs** release includes the following updates:
 
-The **Premium Skins and Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} <x.y[.z]> skin, Oxide.
+The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} <x.y[.z]> skin, Oxide.
 
-For information on using premium skins and icon packs, see: xref:premium-skins-and-icons.adoc[Premium Skins and Icon Packs].
+For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
 
 
 [[improvements]]
@@ -188,6 +206,15 @@ Now, tooltips are now shown on `autocompleter` items both on mouse over and keyb
 [NOTE]
 The tooltip will only be displayed when the `autocompleter` columns are set to a value greater than `1`. This is because when there is a visible label, the tooltip functionality is not needed and therefore omitted.
 
+=== Added custom tooltip for dialog collection items, now visible on both mouse hover and keyboard focus.
+//#TINY-9637
+
+Previously, collection items set in a xref:dialog-components.adoc#collection[collection dialog component] would not display a tooltip on keyboard focus.
+
+This means that keyboard-only users were not able to see the tooltip, as it was only shown on mouse hover.
+
+In {productname} 7.0, dialog collection items with `data-mce-tooltip` attribute, such as those used in xref:emoticons.adoc[Emoticons] and xref:charmap.adoc[Charmap] plugins, now display relevant tooltips on both mouse hover and keyboard focus. This ensures all users, including those relying solely on keyboard navigation, can access helpful information about these items.
+
 === The `highlight_on_focus` option now defaults to true, adding a focus outline to every editor.
 //#TINY-10574
 
@@ -199,6 +226,23 @@ For more information about `highlight_on_focus` see the xref:accessibility.adoc#
 
 [NOTE]
 Any editors using this `highlight_on_focus: true` option, can remove this option from their {productname} init configuration when upgrading to {productname} 7.0.
+
+=== Change table height resizing handling to remove heights from `td`/`th` elements and only apply to `tr` elements.
+//# TINY-10589
+
+When resizing a table using either the row resize bars or corner resize handles, any existing `height` styles are removed from the `td`/`th` elements and only apply to `tr` elements and `table` element. Additionally, the heights calculated and applied for the `tr` elements and `table` element more accurately represent the actual visual height in the editor.
+
+As part of the changes to table height resizing handling, resizing via the corner resize handles is more consistent. If the table *does not* have any height styles and the table is resized using one of the corner resize handles, each row has its height increased evenly. If the table *does have* existing height styles, corner resizes will only change the height of the first row (if using top corner handles) or last row  (if using bottom corner handles) equivalent to `table_column_resizing: 'resizetable'` option for columns xref:table-options.adoc#table_column_resizing[Table options: table_column_resizing]
+
+=== Make table ghost element better reflect height changes when resizing.
+//# TINY-10658
+
+Previously, the table ghost element did not accurately reflect changes in table height when resized using the corner resize handles.
+
+In {productname} 7.0, this problem has been addressed.
+
+As a result, the table ghost element now accurately mirrors adjustments in table height when resized using the corner resize handles.
+
 
 [[additions]]
 == Additions
@@ -218,6 +262,57 @@ Any editors using this `highlight_on_focus: true` option, can remove this option
 
 // CCFR here.
 
+=== Removed incorrect `aria-placeholder` attribute from editor body when `placeholder` option is set.
+// #TINY-10452
+
+Previously, when the `placeholder` option was set, the editor would automatically append an `aria-placeholder` attribute to the editor body.
+
+However, the `aria-placeholder` attribute is not a valid attribute for the body element according to accessibility guidelines. As a result, certain screen readers and assistive technologies encountered difficulties in correctly interpreting the content.
+
+In {productname} 7.0 addresses this, by removing the `aria-placeholder` attribute from the editor body. This solution ensures that the editor is accessible to all users.
+
+=== `convert_unsafe_embeds` editor option is now defaulted to `true`.
+
+In {productname} 6.8.1, xref:content-filtering.adoc#convert-unsafe-embeds[convert_unsafe_embeds] editor option was introduced to allow `+object+` and `+embed+` elements to be converted by default to the correct element, respective of the MIME type, automatically when inserted into the editor.
+
+In {productname} 7.0, the default value for `+convert_unsafe_embeds+` will change from `false` to `true`, meaning that all `+object+` and `+embed+` tags will automatically be converted to different elements when inserted to the editor. If this behaviour is undesirable, set `+convert_unsafe_embeds+` to `+false+` in your editor configuration.
+
+For further details on the `+convert_unsafe_embeds+` option, see the xref:content-filtering.adoc#convert-unsafe-embeds[content filtering options], or refer to the xref:security.adoc#convert-unsafe-embeds[security guide], or the link:https://www.tiny.cloud/docs/tinymce/6/6.8.1-release-notes/#new-convert_unsafe_embeds-option-that-controls-whether-object-and-embed-elements-will-be-converted-to-more-restrictive-alternatives-namely-img-for-image-mime-types-video-for-video-mime-types-audio-audio-mime-types-or-iframe-for-other-or-unspecified-mime-types[{productname} 6.8.1 release notes].
+
+=== `sandbox_iframes` editor option is now defaulted to `true`.
+
+In {productname} 6.8.1, the xref:content-filtering.adoc#sandbox-iframes[sandbox iframes] editor option was introduced to allow iframes to be sandboxed by default when inserted into the editor.
+
+In {productname} 7.0, the default for `+sandbox_iframes+` will change from `false` to `true`, meaning that all `+iframe+` elements inserted into the editor will be given the `sandbox=""` attribute by default, preventing most actions, including scripting and same-origin access, which may break existing editor content or produce undesirable effects.
+
+To prevent any expected iframes from being sandboxed, we recommend adding the source domains of such iframes to the new xref:content-filtering.adoc#sandbox-iframes-exclusions[`+sandbox_iframes_exclusions+`] option list, and including the domains in the default list where necessary. To prevent all iframes from being sandboxed, set the option `+sandbox_iframes+` to `+false+` in your editor configuration.
+
+For further details on the `+sandbox_iframes+` option, see the xref:content-filtering.adoc#sandbox-iframes[the content filtering options], or refer to the xref:security.adoc#sandbox-iframes[security guide], or the link:https://www.tiny.cloud/docs/tinymce/6/6.8.1-release-notes/#new-sandbox_iframes-option-that-controls-whether-iframe-elements-will-be-added-a-sandbox-attribute-to-mitigate-malicious-intent[{productname} 6.8.1 release notes].
+
+=== Remove the height field from the `table` plugin cell dialog. The `table` plugin row dialog now controls the row height by setting the height on the `tr` element, not the `td` elements.
+//# TINY-10617
+
+The height field within the table plugin cell dialog has been removed, thereby restricting the ability to adjust individual cell heights `td/th`.
+
+However, this modification directs users to utilize the table plugin row dialog to alter the height of entire rows along with all enclosed cells.
+
+[NOTE]
+When adjusting row height through the row dialog, any height styles previously applied to `td/th` elements will be automatically removed.
+
+
+[[removed]]
+== Removed
+
+=== Removed InsertOrderedList and InsertUnorderedList commands from core.
+// #TINY-10644
+
+Previously, native list commands could be executed by various text patterns.
+
+This resulted in undefined browser behavior due to the inherent list code within it.
+
+{productname} 7.0 addresses this, by removing the core list commands, effectively eliminating the insertion of lists into the content.
+
+As a result, users no longer experience unexpected list insertions.
 
 [[bug-fixes]]
 == Bug fixes
@@ -263,6 +358,18 @@ As a consequence, since the selection is still on the first element, the `List P
 {productname} 7.0 addresses this issue, now when the user opens a context menu, {productname} creates a new bookmark to avoid the jump back.
 
 As a result, the selection is in the correct place and the `List Properties...` context menu item is `enabled`.
+
+=== Table classes couldn't be removed via setting an empty value in `table_class_list`.
+// #TINY-6653
+
+Previously, it was not possible to remove all classes on a table when setting an empty value in the `table_class_list` option and using the "Class" listbox field in the "Table Properties" dialog. 
+
+{productname} 7.0 introduces improvements for handling and removing classes on table, row and cell elements, including:
+
+* An empty value in the `table_class_list` option, `table_row_class_list` option, and `table_cell_class_list` option will allow all classes to be removed on the selected table for the "Table Properties" dialog, selected rows for the "Row Properties" dialog, or selected cells for the "Cell Properties" dialog respectively.
+* For a table with a class that does not match any of the values set in the  `table_class_list` option, a "Select..." item becomes the default choice in the "Class" listbox field in the "Table Properties" dialog. (This selection maintains the existing class upon saving). Conversely, if the table has a class that does match one of the values set in the  `table_class_list` option, it is automatically selected.
+* For selected rows with classes that do not match any of the values set in the  `table_row_class_list`, a "Select..." item becomes the default choice in the "Class" listbox field in the "Row Properties" dialog. (This selection maintains the existing classes upon saving). Conversely, if the selected row classes do match one of the values set in the  `table_row_class_list`, it is automatically selected.
+* For selected cells with classes that do not match any of the values set in the  `table_cell_class_list`, a "Select..." item becomes the default choice in the "Class" listbox field in the "Cell Properties" dialog. (This selection maintains the existing classes upon saving). Conversely, if the selected cell classes do match one of the values set in the  `table_cell_class_list`, it is automatically selected.
 
 === `mceTableDeleteRow` did not calculate the correct row index for colgroup tables.
 // #TINY-6309

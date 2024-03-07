@@ -111,7 +111,7 @@ This fixed string uses the same default delimiting characters as individual merg
 
 The Templates plugin removes the Insertion Point Marker string before inserting a template containing the string in to a {productname} instance.
 
-Consequently, the Template Insertion Point Marker string is never seen by the {pluginname} plugin.
+Consequently, the Templates Insertion Point Marker string is never seen by the {pluginname} plugin.
 
 It is, therefore, possible to use the Insertion Point Marker string — `+{{mce-cursor}}+` — as a merge tag. It is not recommended, however. Aside from being an unlikely merge tag string, the potential for confusion is reason enough to avoid duplication across purposes.
 

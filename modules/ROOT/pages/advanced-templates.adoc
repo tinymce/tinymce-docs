@@ -3,7 +3,7 @@
 :description: Create and edit complex templates in {productname} for use with {productname}.
 :description_short: Create templates.
 :keywords: plugin, Template, templates, advtemplate.
-:pluginname: Template
+:pluginname: Templates
 :plugincode: advtemplate
 :plugincategory: premium
 
@@ -20,7 +20,7 @@ They can also be added to a {productname} instance by end-users selecting conten
 
 IMPORTANT: {pluginname} does not support template editing. To update a particular template; insert the template into an editor; make edits; select the, now edited, content; and then create a new template (using, for example, the *Tools > Save as Template…* menu item).
 
-== Using the Template plugin
+== Using the {pluginname} plugin
 
 === Inserting a template
 
@@ -116,7 +116,7 @@ NOTE: The undefined options in the above example must be defined. See the xref:o
 
 == Interactive examples
 
-There are two approaches to using the Template Premium plugin: fixed template lists and user-modifiable template lists.
+There are two approaches to using the {pluginname} Premium plugin: fixed template lists and user-modifiable template lists.
 
 === Fixed template lists
 
@@ -125,7 +125,7 @@ For users who work with a fixed template list that does not require modification
 The following interactive predefined list example provides guidance for this approach.
 
 [[predefined-list-config-example]]
-==== Configuring the Templates plugin to use a static list of predefined templates.
+==== Configuring the {pluginname} plugin to use a static list of predefined templates.
 
 liveDemo::{plugincode}-predefined[]
 

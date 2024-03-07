@@ -109,7 +109,7 @@ The xref:advanced-templates.adoc[Templates] Premium plugin can use a fixed strin
 
 This fixed string uses the same default delimiting characters as individual merge tags use by default. It does not, however, interfere or otherwise interact with any {pluginname} configuration.
 
-The Template plugin removes the Insertion Point Marker string before inserting a template containing the string in to a {productname} instance.
+The Templates plugin removes the Insertion Point Marker string before inserting a template containing the string in to a {productname} instance.
 
 Consequently, the Template Insertion Point Marker string is never seen by the {pluginname} plugin.
 

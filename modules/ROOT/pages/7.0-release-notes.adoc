@@ -218,9 +218,9 @@ In {productname} 7.0, dialog collection items with `data-mce-tooltip` attribute,
 === Shortcut included in tooltips for basic and toggle toolbar buttons
 // #TINY-10487
 
-Previously, basic and toggle toolbar buttons lacked keyboard shortcut information in the native browser tooltip.This could leave users unware of available shortcuts, and therefore unable to use them.
+Previously, basic and toggle toolbar buttons lacked keyboard shortcut information in the native browser tooltip. This could leave users unaware of available shortcuts and, therefore unable to use them.
 
-To address this, {productname} 7.0, introduces custom tooltips for these buttons. These tooltips now clearly display the keyboard shortcut alongside the button's descriptive as follows:
+To address this, {productname} 7.0, introduces custom tooltips for these buttons. These tooltips now clearly display the keyboard shortcut alongside the button's description as follows:
 
 * Default buttons: This includes commonly used functions like `bold`, `italic`, `underline`, `selectall`, `redo`, `undo`, heading levels (`h1-h6`), `help`, `link`, `save`, `searchreplace`, and `fullscreen`.
 * Custom buttons: Any custom toolbar button registered with a keyboard shortcut will also display the shortcut in its tooltip.

@@ -22,6 +22,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:improvements[Improvements]
 * xref:additions[Additions]
 * xref:changes[Changes]
+* xref:removed[Removed]
 * xref:bug-fixes[Bug fixes]
 * xref:security-fixes[Security fixes]
 * xref:deprecated[Deprecated]
@@ -262,6 +263,20 @@ To prevent any expected iframes from being sandboxed, we recommend adding the so
 
 For further details on the `+sandbox_iframes+` option, see the xref:content-filtering.adoc#sandbox-iframes[the content filtering options], or refer to the xref:security.adoc#sandbox-iframes[security guide], or the link:https://www.tiny.cloud/docs/tinymce/6/6.8.1-release-notes/#new-sandbox_iframes-option-that-controls-whether-iframe-elements-will-be-added-a-sandbox-attribute-to-mitigate-malicious-intent[{productname} 6.8.1 release notes].
 
+
+[[removed]]
+== Removed
+
+=== Removed InsertOrderedList and InsertUnorderedList commands from core.
+// #TINY-10644
+
+Previously, native list commands could be executed by various text patterns.
+
+This resulted in undefined browser behavior due to the inherent list code within it.
+
+{productname} 7.0 addresses this, by removing the core list commands, effectively eliminating the insertion of lists into the content.
+
+As a result, users no longer experience unexpected list insertions.
 
 [[bug-fixes]]
 == Bug fixes

@@ -6,6 +6,9 @@ NOTE: This is the {productname} Community version changelog. For information abo
 
 == 7.0.0 - 2024-03-20
 
+[NOTE]
+{productname} 7.0 is licensed under GPL Version 2 or later. This version introduces a new `license_key`  configuration setting that gives self-hosted users the ability to select a usage under the GPL or to authenticate their paid license with Tiny. 
+
 === Added
 * New custom tooltip functionality, tooltip will be shown when hovering with a mouse or with keyboard focus.
 * New `sandbox_iframes_exclusions` option that holds a list of URL host names to be excluded from iframe sandboxing when `sandbox_iframes` is set to true.

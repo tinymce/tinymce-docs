@@ -220,9 +220,9 @@ Any editors using this `highlight_on_focus: true` option, can remove this option
 === Make table ghost element better reflect height changes when resizing.
 //# TINY-10658
 
-Previously, the height styles applied to the `tr` and `td` elements within the table did not accurately reflect changes in table height when resized using the corner resize handles.
+Previously, the table ghost element did not accurately reflect changes in table height when resized using the corner resize handles.
 
-In {productname} 7.0, this problem has been addressed. Now, the height styles have been eliminated from the last row of the table ghost element, allowing it to adjust its height appropriately during resizing.
+In {productname} 7.0, this problem has been addressed.
 
 As a result, the table ghost element now accurately mirrors adjustments in table height when resized using the corner resize handles.
 

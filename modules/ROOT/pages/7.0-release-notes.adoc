@@ -216,6 +216,18 @@ This means that keyboard-only users were not able to see the tooltip, as it was 
 
 In {productname} 7.0, dialog collection items with `data-mce-tooltip` attribute, such as those used in xref:emoticons.adoc[Emoticons] and xref:charmap.adoc[Charmap] plugins, now display relevant tooltips on both mouse hover and keyboard focus. This ensures all users, including those relying solely on keyboard navigation, can access helpful information about these items.
 
+=== Shortcut included in tooltips for basic and toggle toolbar buttons
+// #TINY-10487
+
+Previously, basic and toggle toolbar buttons lacked keyboard shortcut information in the native browser tooltip. This could leave users unaware of available shortcuts and, therefore unable to use them.
+
+To address this, {productname} 7.0, introduces custom tooltips for these buttons. These tooltips now clearly display the keyboard shortcut alongside the button's description as follows:
+
+* Default buttons: This includes commonly used functions like `bold`, `italic`, `underline`, `selectall`, `redo`, `undo`, heading levels (`h1-h6`), `help`, `link`, `save`, `searchreplace`, and `fullscreen`.
+* Custom buttons: Any custom toolbar button registered with a keyboard shortcut will also display the shortcut in its tooltip.
+
+See the xref:custom-basic-toolbar-button.adoc[Basic toolbar button], xref:custom-toggle-toolbar-button.adoc[Toggle toolbar button] and xref:shortcuts.adoc[Keyboard Shortcuts] documentation for more information.
+
 === The `highlight_on_focus` option now defaults to true, adding a focus outline to every editor.
 //#TINY-10574
 

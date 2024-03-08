@@ -101,6 +101,70 @@ Previously, the three dots menu button for category and template in the **Templa
 
 In {productname} 7.0, the three dot menu buttons for categories and templates in the Templates dialog now have informative tooltips. This clarifies their purpose for all users, enhancing discoverability and improving the overall experience, especially for those relying on assistive technologies.
 
+=== Enhanced Code Editor
+
+The {productname} 7.0 release includes an accompanying release of the **Enhanced Code Editor** premium plugin.
+
+**Enhanced Code Editor** includes the following fixes, additions, and improvements.
+
+==== Updated CodeMirror to version 6.
+// #TINY-9205
+
+{productname} 7.0 introduces CodeMirror 6.
+
+With this update, users have gained access to improved features "to be expanded on in future releases" and a more responsive editing experience.
+
+During the integration process, {productname} made necessary adjustments to ensure compatibility between {productname} 7.0 and CodeMirror 6. Specifically, refining our CSS reset rules to accommodate the dynamically generated styles of CodeMirror 6.
+
+More information about CodeMirror 6 will be included in future patch releases.
+
+=== Moved CodeMirror 6 inside ShadowDom.
+// #TINY-10561
+
+With the release of {productname} 7.0, CodeMirror 6 has been integrated into the shadow DOM. This update from CodeMirror 5 to v6 should have no impact on customers utilizing the Enhanced Code Editor feature.
+
+==== Tab and shift + tab didn't not navigate to the next tab stop inside the code dialog.
+// #TINY-10596
+
+Previous versions of the Enhanced Code Editor (formally known as Advanced Code Editor), in the code dialog, the `tab` and `shift + tab` functionalities failed to navigate to the next tab stop.
+
+As the Enhanced Code Editor serves as the container for `Codemirror`, this absence resulted in ineffective tab navigation.
+
+{productname} 7.0 addresses this issue, by implementing the new tab behavior for the Enhanced Code Editor, thereby resolving the problem.
+
+As a result, both the Enhanced Code Editor and `Codemirror` now exhibit managed tabbing behavior's, ensuring smoother navigation within the code dialog.
+
+==== Add `Cmd+g`/`Ctrl+g` shortcut for `gotoLine` command.
+// #TINY-10649
+
+Enhanced Code Editor introduces a new shortcut: `ctrl+g` for Linux and Windows, and `cmd+g` for Mac users with {productname} 7.0.
+
+The shortcut allows the user to:
+
+* quickly jump to any line in your code.
+* specify line numbers
+* use relative offsets like + or -
+* document percentages with %, and;
+* even add a column position with a colon and a number after the line.
+
+Find more details in the documentation here: link:https://codemirror.net/docs/ref/#search.gotoLine[gotoLine]
+
+==== Add `aria-label` to Enhanced Code Editor.
+// #TINY-10651
+
+During an internal audit, it was discoverd that the `<textarea>` element within the "Source Code" dialog, which allows users to input code, was missing an accessible name.
+
+This meant that screen reader users could not read the proper information about the purpose of the input field when navigating it.
+
+{productname} 7.0 addresses this issue, by adding an `aria-label` attribute to the `<textarea>` element with the value "Source code".
+
+As a result, screen readers now announce the input field as "Source code" when users navigate into it.
+
+==== Pressing the Escape key while having the autocompleter open will no longer close the code dialog.
+// #TINY-9205
+
+<placeholder>
+
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement
 

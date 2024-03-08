@@ -222,6 +222,9 @@ These custom tooltips appear on both mouse hover and keyboard focus, ensuring al
 [NOTE]
 Interactive elements with visible labels do not display custom tooltips, and the browser native tooltips have been removed, as the visible label provides sufficient information.
 
+[TIP]
+The `max-width` of the tooltips is set to `15em`, to overwrite the default `max-width` of the tooltips, use the `@tooltip-max-width` oxide variable.
+
 === Added custom tooltip for `autocompleter`, now visible on both mouse hover and keyboard focus, except single column cases.
 // #TINY-9638
 
@@ -275,6 +278,16 @@ Any editors using this `highlight_on_focus: true` option, can remove this option
 Previously, the `DialogFooterToggleButton` component required a tooltip property. This meant including a tooltip for all toggle buttons displayed in dialog footers, even if the information wasn't necessary.
 
 As of {productname} 7.0, the tooltip property is now optional for `DialogFooterToggleButton`. This flexibility allows developers to omit the tooltip for buttons where it's not required, providing a cleaner and more focused user experience.
+
+=== Custom tooltips for `forecolor`, `backcolor` buttons and bespoke select toolbar buttons including `align`, `fontfamily`, `fontsize`, `blocks`, and `styles`
+// #TINY-10474
+
+As of {productname} 6.8.2, tooltips for several text formatting buttons in {productname} displayed information based on the following behavior:
+
+* `forecolor` and `backcolor`: The last used color was shown in the tooltip.
+* `align, `fontfamily`, `fontsize`, `blocks`, and `styles`: The currently selected value was displayed.
+
+{productname} 7.0, introduces custom tooltips for these buttons. These tooltips dynamically adapt based on the button's current state and the currently selected value. They are now visible on both mouse hover and keyboard focus, improving accessibility.
 
 === Change table height resizing handling to remove heights from `td`/`th` elements and only apply to `tr` elements.
 //# TINY-10589

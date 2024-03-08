@@ -370,7 +370,7 @@ Previously, the `ch` configuration property was used to specify the character th
 
 This property was deprecated in link:https://www.tiny.cloud/docs/tinymce/6/6.2-release-notes/#deprecated[{productname} 6.2] and has been removed in {productname} 7.0. Instead, use the `trigger` property to specify the `string` that will trigger the autocompleter.
 
-If `+editor.ui.registry.addAutocompleter(name, options)+` was used  in your configuration, updating your configuration from `ch: '<string>',` to `trigger: '<string>',` is required.
+If `+editor.ui.registry.addAutocompleter(name, options)+` was used in your configuration, updating your configuration from `ch: '<string>',` to `trigger: '<string>',` is required.
 
 NOTE: The new `trigger` option can handle multiple character strings as the trigger.
 

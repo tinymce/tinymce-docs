@@ -290,7 +290,7 @@ As a result, the table ghost element now accurately mirrors adjustments in table
 
 Previously, the bespoke `styles` select toolbar button in {productname} defaulted to "Paragraph" as the selected option even when there was no actual "Paragraph" style configured.
 
-{productname} 7.0 addresses this, the fallback option for the bespoke `styles` toolbar button has been reverted to "Formats" in situations where the "Paragraph" style is not defined in the style_formats option. This ensures a more accurate reflection of available styles.
+{productname} 7.0 addresses this, the fallback option for the bespoke `styles` toolbar button has been reverted to "Formats" in situations where the "Paragraph" style is not defined in the `style_formats` option. This ensures a more accurate reflection of available styles.
 
 [[additions]]
 == Additions

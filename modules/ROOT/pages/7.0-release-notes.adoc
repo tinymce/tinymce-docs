@@ -279,16 +279,6 @@ Previously, the `DialogFooterToggleButton` component required a tooltip property
 
 As of {productname} 7.0, the tooltip property is now optional for `DialogFooterToggleButton`. This flexibility allows developers to omit the tooltip for buttons where it's not required, providing a cleaner and more focused user experience.
 
-=== Custom tooltips for `forecolor`, `backcolor` buttons and bespoke select toolbar buttons including `align`, `fontfamily`, `fontsize`, `blocks`, and `styles`
-// #TINY-10474
-
-As of {productname} 6.8.2, tooltips for several text formatting buttons in {productname} displayed information based on the following behavior:
-
-* `forecolor` and `backcolor`: The last used color was shown in the tooltip.
-* `align, `fontfamily`, `fontsize`, `blocks`, and `styles`: The currently selected value was displayed.
-
-{productname} 7.0, introduces custom tooltips for these buttons. These tooltips dynamically adapt based on the button's current state and the currently selected value. They are now visible on both mouse hover and keyboard focus, improving accessibility.
-
 === Change table height resizing handling to remove heights from `td`/`th` elements and only apply to `tr` elements.
 //# TINY-10589
 

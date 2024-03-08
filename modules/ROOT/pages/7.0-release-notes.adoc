@@ -257,6 +257,13 @@ To address this, {productname} 7.0, introduces custom tooltips for these buttons
 
 See the xref:custom-basic-toolbar-button.adoc[Basic toolbar button], xref:custom-toggle-toolbar-button.adoc[Toggle toolbar button] and xref:shortcuts.adoc[Keyboard Shortcuts] documentation for more information.
 
+=== Added tooltips to `Click for more info` button in the accessibility checker dialog.
+//# TINY-9641
+
+The absence of a tooltip on the "Click for more info" button within the `accessibility` dialog rendered it inaccessible for keyboard-only users, affecting their ability to fully engage with the functionality.
+
+{productname} 7.0 addresses this issue, by adding the tooltip to the button, ensuring its visibility both on mouse hover and keyboard focus.
+
 === The `highlight_on_focus` option now defaults to true, adding a focus outline to every editor.
 //#TINY-10574
 

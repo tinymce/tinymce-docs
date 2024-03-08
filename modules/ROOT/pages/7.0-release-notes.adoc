@@ -223,7 +223,7 @@ These custom tooltips appear on both mouse hover and keyboard focus, ensuring al
 Interactive elements with visible labels do not display custom tooltips, and the browser native tooltips have been removed, as the visible label provides sufficient information.
 
 [TIP]
-The `max-width` of the tooltips is set to `15em`, to overwrite the default `max-width` of the tooltips, use the `@tooltip-max-width` oxide variable.
+The `max-width` of the tooltips is set to `15em`, to overwrite the default `max-width` of the tooltips, update the `@tooltip-max-width` variable in your custom skin.
 
 === Added custom tooltip for `autocompleter`, now visible on both mouse hover and keyboard focus, except single column cases.
 // #TINY-9638

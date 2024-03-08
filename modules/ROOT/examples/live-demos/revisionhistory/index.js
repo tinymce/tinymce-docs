@@ -61,13 +61,11 @@ const revisions = [
   },
 ];
 
-const get_revisions = () => {
-  return new Promise((resolve) => {
+const get_revisions = () => new Promise((resolve) => {
     setTimeout(() => {
-      resolve(revisions.sort((a, b) => new Date(a.createdAt) - new Date(b.createdAt)));
+      resolve(revisions.sort((a, b) => a.createdAt - b.createAt));
     }, 1000);
   });
-}
 
 
 tinymce.init({

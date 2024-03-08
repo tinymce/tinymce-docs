@@ -285,6 +285,14 @@ In {productname} 7.0, this problem has been addressed.
 
 As a result, the table ghost element now accurately mirrors adjustments in table height when resized using the corner resize handles.
 
+=== Improved support of `data` elements
+//# TINY-10611
+
+Previously, when inserting a `data` element within the editor, the `data` element would be removed.
+
+In {productname} 7.0, this problem has been addressed.
+
+As a result, the `data` elements are recognized as valid elements within the editor, ensuring they are properly retained along with their value attributes.
 
 [[additions]]
 == Additions

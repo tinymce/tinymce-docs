@@ -8,7 +8,7 @@
 .Examples
 [source,js]
 ----
-tinymce.activeEditor.execCommand('markdownInsert', false, 'paragraph');
-tinymce.activeEditor.execCommand('markdownInsert', false, '**bold**');
-tinymce.activeEditor.execCommand('markdownInsert', false, '# Header');
+tinymce.activeEditor.execCommand('MarkdownInsert', false, 'paragraph');
+tinymce.activeEditor.execCommand('MarkdownInsert', false, '**bold**');
+tinymce.activeEditor.execCommand('MarkdownInsert', false, '# Header');
 ----

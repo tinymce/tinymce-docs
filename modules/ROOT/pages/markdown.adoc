@@ -15,9 +15,6 @@ The {pluginname} Premium plugin detects pure markdown from a paste event within 
 
 == Using the {pluginname} plugin
 
-
-
-
 === How it works
 
 The **Markdown** Premium Plugin allows the editor to detect if pure markdown is pasted into the {productname} editor instance.
@@ -26,7 +23,6 @@ During this paste event, If the editor detects markdown has been pasted it will:
 
 * attempt to convert the markdown to HTML, while
 * add a undo level before the conversion to allow for undo of plain-text.
-
 
 == Basic setup
 
@@ -43,7 +39,6 @@ tinymce.init({
   plugins: 'markdown',
 });
 ----
-
 
 == Interactive examples
 

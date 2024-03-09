@@ -32,3 +32,6 @@ tinymce.init({
 
 [NOTE]
 Additionally, if the **Emoticons** plugin is enabled and properly set up, emojis surrounded by colons (:) will also be replaced. This feature allows for a broader range of replacements, including emojis represented by image files. For example, `:smile:` will be translated to the corresponding emoji, if configured.
+
+[NOTE]
+In {pluginname} content, it's important to enclose key symbols like `+"C"+` within parentheses, as in `+"(C)"+`, to ensure proper conversion; note that they are **case-sensitive**, so `+"(c)"+` _will not be transformed_.

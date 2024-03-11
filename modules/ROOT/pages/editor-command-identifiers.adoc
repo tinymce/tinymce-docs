@@ -213,6 +213,7 @@ include::partial$commands/core-table-cmds.adoc[]
 Commands are available for the following plugins:
 
 * xref:advancedlists[Advanced Lists]
+* xref:Enhanced Tables[Enhanced Tables]
 * xref:advancedtables[Advanced Tables]
 * xref:anchor[Anchor]
 * xref:autoresize[Autoresize]
@@ -225,15 +226,16 @@ Commands are available for the following plugins:
 * xref:enhancedcodeeditor[Enhanced Code Editor]
 * xref:editimage[Enhanced Image Editing]
 * xref:emoticons[Emoticons]
-* xref:export[Export]
 * xref:footnotes[Footnotes]
 * xref:formatpainter[Format Painter]
 * xref:fullscreen[Full Screen]
 * xref:help[Help]
 * xref:image[Image]
+* xref:editimage[Image Editing]
 * xref:insertdatetime[Insert Date/Time]
 * xref:link[Link]
 * xref:lists[Lists]
+* xref:advancedlists[List Styles]
 * xref:media[Media]
 * xref:nonbreakingspace[Nonbreaking Space]
 * xref:pagebreak[Page Break]
@@ -242,12 +244,13 @@ Commands are available for the following plugins:
 * xref:preview[Preview]
 * xref:save[Save]
 * xref:searchandreplace[Search and Replace]
-* xref:spellcheckerpro[Spell Checker Pro]
+* xref:spellchecker[Spell Checker]
 * xref:table[Table]
 * xref:tableofcontents[Table of Content]
 * xref:visualblocks[Visual Blocks]
 * xref:visualcharacters[Visual Characters]
 * xref:wordcount[Word Count]
+
 
 
 [[advancedlists]]
@@ -257,10 +260,10 @@ The following commands require the xref:advlist.adoc[Advanced Lists (`+advlist+`
 
 include::partial$commands/advlist-cmds.adoc[leveloffset=+3]
 
-[[advancedtables]]
-==== Advanced Tables
+[[Enhanced Tables]]
+==== Enhanced Tables
 
-The following commands require the xref:advtable.adoc[Advanced Tables (`+advtable+`)] plugin.
+The following commands require the xref:advtable.adoc[Enhanced Tables (`+advtable+`)] plugin.
 
 include::partial$commands/advtable-cmds.adoc[leveloffset=+3]
 
@@ -341,13 +344,6 @@ The following commands require the xref:emoticons.adoc[Emoticons (`+emoticons+`)
 
 include::partial$commands/emoticons-cmds.adoc[leveloffset=+3]
 
-[[export]]
-==== Export
-
-The following commands require the xref:export.adoc[Export (`+export+`)] plugin.
-
-include::partial$commands/export-cmds.adoc[leveloffset=+3]
-
 [[footnotes]]
 ==== Footnotes
 
@@ -383,6 +379,13 @@ The following command requires the xref:image.adoc[Image (`+image+`)] plugin.
 
 include::partial$commands/image-cmds.adoc[leveloffset=+3]
 
+[[editimage]]
+==== Image Editing
+
+The following commands require the xref:editimage.adoc[Image Editing (`+editimage+`)] plugin.
+
+include::partial$commands/editimage-cmds.adoc[leveloffset=+3]
+
 [[insertdatetime]]
 ==== Insert Date/Time
 
@@ -403,6 +406,13 @@ include::partial$commands/link-cmds.adoc[leveloffset=+3]
 The following commands require the xref:lists.adoc[Lists (`+lists+`)] plugin.
 
 include::partial$commands/lists-cmds.adoc[leveloffset=+3]
+
+[[liststyles]]
+==== List Styles
+
+The following commands require the xref:advlist.adoc[List Styles (`+advlist+`)] plugin.
+
+include::partial$commands/advlist-cmds.adoc[leveloffset=+3]
 
 [[media]]
 ==== Media
@@ -460,10 +470,10 @@ The following command requires the xref:searchreplace.adoc[Search and Replace (`
 
 include::partial$commands/searchreplace-cmds.adoc[leveloffset=+3]
 
-[[spellcheckerpro]]
-==== Spell Checker Pro
+[[spellchecker]]
+==== Spell Checker
 
-The following commands require the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro (`+tinymcespellchecker+`)] plugin.
+The following commands require the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker (`+tinymcespellchecker+`)] plugin.
 
 include::partial$commands/tinymcespellchecker-cmds.adoc[leveloffset=+3]
 

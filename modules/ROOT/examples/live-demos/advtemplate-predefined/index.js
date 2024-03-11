@@ -45,7 +45,7 @@ const advtemplate_templates = [
 ];
 
 tinymce.init({
-  selector: "textarea#advanced-template-predefined",
+  selector: "textarea#template-predefined",
     plugins: [
         "advlist", "anchor", "autolink", "charmap", "code", "fullscreen", 
         "help", "image", "insertdatetime", "link", "lists", "media", 

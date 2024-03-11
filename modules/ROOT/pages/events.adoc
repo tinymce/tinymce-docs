@@ -183,7 +183,6 @@ The following plugins provide events.
 * xref:autosave-events[Autosave events]
 * xref:character-map-events[Character Map events]
 * xref:comments-events[Comments events]
-* xref:export-events[Export events]
 * xref:format-painter-events[Format Painter events]
 * xref:fullscreen-events[Fullscreen events]
 * xref:import-css-events[Import CSS events]
@@ -192,7 +191,7 @@ The following plugins provide events.
 * xref:media-embed-events[Media Embed events]
 * xref:permanent-pen-events[Permanent Pen events]
 * xref:powerpaste-events[PowerPaste events]
-* xref:spell-checker-pro-events[Spell Checker Pro events]
+* xref:spell-checker-events[Spell Checker events]
 * xref:autocorrect-events[Spelling Autocorrect events]
 * xref:visual-blocks-events[Visual Blocks events]
 * xref:visual-characters-events[Visual Characters events]
@@ -226,11 +225,6 @@ The following event is provided by the xref:charmap.adoc[Character Map plugin].
 === Comments events
 
 include::partial$events/tinycomments-events.adoc[]
-
-[[export-events]]
-=== Export events
-
-include::partial$events/export-events.adoc[]
 
 [[format-painter-events]]
 === Format Painter events
@@ -323,8 +317,8 @@ The following events are provided by the xref:introduction-to-powerpaste.adoc[Po
 |PastePlainTextToggle |`+{ state: boolean }+` |Fired when the plain text paste mode state changes.
 |===
 
-[[spell-checker-pro-events]]
-=== Spell Checker Pro events
+[[spell-checker-events]]
+=== Spell Checker events
 
 include::partial$events/tinymcespellchecker-events.adoc[]
 

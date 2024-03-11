@@ -63,7 +63,7 @@ const revisions = [
 
 const get_revisions = () => new Promise((resolve) => {
     setTimeout(() => {
-      resolve(revisions.sort((a, b) => a.createdAt - b.createAt));
+      resolve(revisions.sort((a, b) => a.createdAt - b.createdAt));
     }, 1000);
   });
 

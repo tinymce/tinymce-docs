@@ -5,7 +5,7 @@ Enhancements have been made to the existing custom_elements option with the intr
 
 * **New Custom Element Structure:** The custom_elements option and the `addCustomElements` API now support a more complex structure. This structure is defined by a record where the key represents the name of the element, and the value corresponds to a detailed specification.
 * **Attributes and Inheritance:** Elements can now inherit attributes and children from other specified elements using the extends property in the Custom Element Spec.
-* **Attribute and Children Specifications:** The Custom Element Spec includes properties such as attributes, which lists attribute names or presets like `@global`, and `children`, which lists child element names or presets like `block`, `phrasing`, or `flow`.
+* **Attribute and Children Specifications:** The Custom Element Spec includes properties such as `attributes` which lists attribute names, or `children` which lists valid child element names. The `children` property includes presets like `@global`, `@blocks`, `@phrasing`, and `@flow`.
 
 HTML Element Sets: The exact element sets for each preset, depending on the schema set (html4, html5, or html5-strict), can be found in the below tables.
 
@@ -15,9 +15,9 @@ HTML Element Sets: The exact element sets for each preset, depending on the sche
 [cols="1,3",options="header"]
 |===
 | Type | Expected
-| blockContent | address, blockquote, div, dl, fieldset, form, h1, h2, h3, h4, h5, h6, hr, menu, ol, p, pre, table, ul, center, dir, isindex, noframes
-| phrasingContent | a, abbr, b, bdo, br, button, cite, code, del, dfn, em, embed, i, iframe, img, input, ins, kbd, label, map, noscript, object, q, s, samp, script, select, small, span, strong, sub, sup, textarea, u, var, #text, #comment, acronym, applet, basefont, big, font, strike, tt
-| flowContent | Same as block content + Same as phrasing content
+| @blocks | address, blockquote, div, dl, fieldset, form, h1, h2, h3, h4, h5, h6, hr, menu, ol, p, pre, table, ul, center, dir, isindex, noframes
+| @phrasing | a, abbr, b, bdo, br, button, cite, code, del, dfn, em, embed, i, iframe, img, input, ins, kbd, label, map, noscript, object, q, s, samp, script, select, small, span, strong, sub, sup, textarea, u, var, #text, #comment, acronym, applet, basefont, big, font, strike, tt
+| @flow | Same as @blocks + @phrasing
 |===
 
 [[html5]]
@@ -26,9 +26,9 @@ HTML Element Sets: The exact element sets for each preset, depending on the sche
 [cols="1,3",options="header"]
 |===
 | Type | Expected
-| blockContent | address, blockquote, div, dl, fieldset, form, h1, h2, h3, h4, h5, h6, hr, menu, ol, p, pre, table, ul, article, aside, details, dialog, figure, main, header, footer, hgroup, section, nav, a, ins, del, canvas, map, center, dir, isindex, noframes
-| phrasingContent | a, abbr, b, bdo, br, button, cite, code, del, dfn, em, embed, i, iframe, img, input, ins, kbd, label, map, noscript, object, q, s, samp, script, select, small, span, strong, sub, sup, textarea, u, var, #text, #comment, audio, canvas, command, data, datalist, mark, meter, output, picture, progress, time, wbr, video, ruby, bdi, keygen, svg, acronym, applet, basefont, big, font, strike, tt
-| flowContent | Same as block content + Same as phrasing content
+| @blocks | address, blockquote, div, dl, fieldset, form, h1, h2, h3, h4, h5, h6, hr, menu, ol, p, pre, table, ul, article, aside, details, dialog, figure, main, header, footer, hgroup, section, nav, a, ins, del, canvas, map, center, dir, isindex, noframes
+| @phrasing | a, abbr, b, bdo, br, button, cite, code, del, dfn, em, embed, i, iframe, img, input, ins, kbd, label, map, noscript, object, q, s, samp, script, select, small, span, strong, sub, sup, textarea, u, var, #text, #comment, audio, canvas, command, data, datalist, mark, meter, output, picture, progress, time, wbr, video, ruby, bdi, keygen, svg, acronym, applet, basefont, big, font, strike, tt
+| @flow | Same as @blocks + @phrasing
 |===
 
 [[html5-strict]]
@@ -37,9 +37,9 @@ HTML Element Sets: The exact element sets for each preset, depending on the sche
 [cols="1,3",options="header"]
 |===
 | Type | Expected
-| blockContent | address, blockquote, div, dl, fieldset, form, h1, h2, h3, h4, h5, h6, hr, menu, ol, p, pre, table, ul, article, aside, details, dialog, figure, main, header, footer, hgroup, section, nav, a, ins, del, canvas, map
-| phrasingContent | a, abbr, b, bdo, br, button, cite, code, del, dfn, em, embed, i, iframe, img, input, ins, kbd, label, map, noscript, object, q, s, samp, script, select, small, span, strong, sub, sup, textarea, u, var, #text, #comment, audio, canvas, command, data, datalist, mark, meter, output, picture, progress, time, wbr, video, ruby, bdi, keygen, svg
-| flowContent | Same as block content + Same as phrasing content
+| @blocks | address, blockquote, div, dl, fieldset, form, h1, h2, h3, h4, h5, h6, hr, menu, ol, p, pre, table, ul, article, aside, details, dialog, figure, main, header, footer, hgroup, section, nav, a, ins, del, canvas, map
+| @phrasing | a, abbr, b, bdo, br, button, cite, code, del, dfn, em, embed, i, iframe, img, input, ins, kbd, label, map, noscript, object, q, s, samp, script, select, small, span, strong, sub, sup, textarea, u, var, #text, #comment, audio, canvas, command, data, datalist, mark, meter, output, picture, progress, time, wbr, video, ruby, bdi, keygen, svg
+| @flow | Same as @blocks + @phrasing
 |===
 
 === Example using new improved `+custom_elements+`

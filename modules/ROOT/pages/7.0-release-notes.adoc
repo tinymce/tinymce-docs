@@ -636,6 +636,13 @@ To address this, the summary element has been included in the list of non-empty 
 
 With this adjustment, the summary element will no longer be deleted under the previously mentioned conditions.
 
+=== Adding newline after using `selection.setContent` to insert a block element would throw an unhandled exception.
+// #TINY-10560
+
+Previously in {productname}, there was an issue with `selection.setContent` when using certain tags (such as `pre`) as the parent element. The selection would not recognize that it was at the end of the line, resulting in an error when trying to insert a new line afterwards.
+
+{productname} 7.0 addresses this issue. The selection now correctly recognizes that it is at the end of the line when using `selection.setContent`. As a result, the insertion of a new line behaves as expected.
+
 === The `mceTablePasteRowAfter` command, `mceTablePasteColAfter` command, `"Paste row after"` menu item and `"Paste column after"` menu item now place the cursor in the newly pasted row/column to be consistent with the other pasting operations.
 // #TINY-6460
 

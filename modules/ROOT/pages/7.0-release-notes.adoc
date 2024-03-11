@@ -57,23 +57,6 @@ For information on the **<Open source plugin name>** plugin see xref:<plugincode
 
 The following premium plugin updates were released alongside {productname} <x.y[.z]>.
 
-=== Mentions
-
-The {productname} 7.0 release includes an accompanying release of the **Mentions** premium plugin.
-
-**Mentions** Premium plugin includes the following improvement.
-
-==== Autocompleter did not work when attempting to insert a `mention` or `emoji` when using an `IME`.
-//# TINY-10637
-
-Previously when attempting to insert a **mention** or **emoji** using an `IME` on Android and using Korean, users encountered an obstacle where it wasn't possible to complete the insertion.
-
-{productname} 7.0 addresses this issue, by rewriting the handler for `autocompleter`, ensuring that it no longer interferes with the DOM during composition with an IME.
-
-As a result, users can now insert **mentions** and **emojis** using the `autocompleter`.
-
-For information on the **Mentions** plugin, see: xref:mentions.adoc[Mentions].
-
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement
@@ -231,6 +214,17 @@ Any editors using this `highlight_on_focus: true` option, can remove this option
 
 === <TINY-vwxyz 1 changelog entry>
 //#TINY-vwxyz1
+
+==== Autocompleter did not work when attempting to insert a `mention` or `emoji` when using an `IME`.
+//# TINY-10637
+
+Previously when attempting to insert a **mention** or **emoji** using an `IME` on Android and using Korean, users encountered an obstacle where it wasn't possible to complete the insertion.
+
+{productname} 7.0 addresses this issue, by rewriting the handler for `autocompleter`, ensuring that it no longer interferes with the DOM during composition with an IME.
+
+As a result, users can now insert **mentions** and **emojis** using the `autocompleter`.
+
+For information on the **Autocompleter** plugin, see: xref:autocompleter.adoc[Autocompleter].
 
 === Fixed incorrect object processor for `event_root` option.
 // #TINY-10433

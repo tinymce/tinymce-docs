@@ -9,7 +9,6 @@ include::partial$module-loading/bundling-plugins-that-cant-bundle.adoc[]
 ** xref:case-change[Case Change (casechange)]
 ** xref:checklist[Checklist (checklist)]
 ** xref:comments[Comments (tinycomments)]
-** xref:enhanced-image-editing[Enhanced Image Editing (editimage)]
 ** xref:enhanced-media-embed[Enhanced Media Embed (mediaembed)]
 ** xref:footnotes[Footnotes (footnotes)]
 ** xref:format-painter[Format Painter (formatpainter)]
@@ -36,6 +35,7 @@ include::partial$module-loading/bundling-plugins-that-cant-bundle.adoc[]
 ** xref:full-screen[Full Screen (fullscreen)]
 ** xref:help[Help (help)]
 ** xref:image[Image (image)]
+** xref:image-editing[Image Editing (editimage)]
 ** xref:import-css[Import CSS (importcss)]
 ** xref:insert-datetime[Insert Date/Time (insertdatetime)]
 ** xref:link[Link (link)]
@@ -91,13 +91,6 @@ include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
 include::partial$plugin-files/plugin-file-list-tinycomments.adoc[]
 
-[[enhanced-image-editing]]
-=== Enhanced Image Editing (`+editimage+`)
-
-include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
-
-include::partial$plugin-files/plugin-file-list-editimage.adoc[]
-
 [[enhanced-media-embed]]
 === Enhanced Media Embed (`+mediaembed+`)
 
@@ -114,6 +107,13 @@ include::partial$plugin-files/plugin-file-list-footnotes.adoc[]
 === Format Painter (`+formatpainter+`)
 
 include::partial$plugin-files/plugin-file-list-formatpainter.adoc[]
+
+[[image-editing]]
+=== Image Editing (`+editimage+`)
+
+include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
+
+include::partial$plugin-files/plugin-file-list-editimage.adoc[]
 
 [[link-checker]]
 === Link Checker (`+linkchecker+`)

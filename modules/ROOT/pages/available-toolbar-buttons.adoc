@@ -48,12 +48,6 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 :plugincategory: premium
-:pluginname: Advanced Templates
-:plugincode: advtemplate
-:pluginpage: advanced-templates.adoc
-include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
-
-:plugincategory: premium
 :pluginname: Advanced Typography
 :plugincode: typography
 :pluginpage: advanced-typography.adoc
@@ -113,11 +107,6 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 :plugincode: directionality
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-:plugincategory: premium
-:pluginname: Enhanced Image Editing
-:plugincode: editimage
-include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
-
 :plugincategory: opensource
 :pluginname: Emoticons
 :plugincode: emoticons
@@ -146,6 +135,11 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 :plugincategory: opensource
 :pluginname: Image
 :plugincode: image
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: premium
+:pluginname: Image Editing
+:plugincode: editimage
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 :plugincategory: opensource
@@ -223,6 +217,12 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 :plugincategory: opensource
 :pluginname: Table
 :plugincode: table
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: premium
+:pluginname: Templates
+:plugincode: advtemplate
+:pluginpage: advanced-templates.adoc
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 :plugincategory: premium

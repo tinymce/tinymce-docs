@@ -406,6 +406,17 @@ For more information, visit the updated xref:autocompleter.adoc[Autocompleter] d
 === <TINY-vwxyz 1 changelog entry>
 //#TINY-vwxyz1
 
+==== Autocompleter did not work when attempting to insert a `mention` or `emoji` when using an `IME`.
+//# TINY-10637
+
+Previously when attempting to insert a **mention** or **emoji** using an `IME` on Android and using Korean, users encountered an obstacle where it wasn't possible to complete the insertion.
+
+{productname} 7.0 addresses this issue, by rewriting the handler for `autocompleter`, ensuring that it no longer interferes with the DOM during composition with an IME.
+
+As a result, users can now insert **mentions** and **emojis** using the `autocompleter`.
+
+For information on the **Autocompleter** plugin, see: xref:autocompleter.adoc[Autocompleter].
+
 === Floating toolbar buttons in inline editor incorrectly wrapped into multiple rows on window resizing or zooming.
 //# TINY-10570
 

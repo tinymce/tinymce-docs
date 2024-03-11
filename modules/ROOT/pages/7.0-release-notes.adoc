@@ -257,6 +257,13 @@ To address this, {productname} 7.0, introduces custom tooltips for these buttons
 
 See the xref:custom-basic-toolbar-button.adoc[Basic toolbar button], xref:custom-toggle-toolbar-button.adoc[Toggle toolbar button] and xref:shortcuts.adoc[Keyboard Shortcuts] documentation for more information.
 
+=== Added tooltips to `Click for more info` button in the accessibility checker dialog.
+//# TINY-9641
+
+The absence of a tooltip on the "Click for more info" button within the `accessibility` dialog rendered it inaccessible for keyboard-only users, affecting their ability to fully engage with the functionality.
+
+{productname} 7.0 addresses this issue, by adding the tooltip to the button, ensuring its visibility both on mouse hover and keyboard focus.
+
 === The `highlight_on_focus` option now defaults to true, adding a focus outline to every editor.
 //#TINY-10574
 
@@ -268,6 +275,13 @@ For more information about `highlight_on_focus` see the xref:accessibility.adoc#
 
 [NOTE]
 Any editors using this `highlight_on_focus: true` option, can remove this option from their {productname} init configuration when upgrading to {productname} 7.0.
+
+=== Optional Tooltip for Dialog Footer Toggle Buttons
+//#TINY-10672
+
+Previously, the `DialogFooterToggleButton` component required a tooltip property. This meant including a tooltip for all toggle buttons displayed in dialog footers, even if the information wasn't necessary.
+
+As of {productname} 7.0, the tooltip property is now optional for `DialogFooterToggleButton`. This flexibility allows developers to omit the tooltip for buttons where it's not required, providing a cleaner and more focused user experience.
 
 === Change table height resizing handling to remove heights from `td`/`th` elements and only apply to `tr` elements.
 //# TINY-10589
@@ -291,6 +305,15 @@ As a result, the table ghost element now accurately mirrors adjustments in table
 Previously, the bespoke `styles` select toolbar button in {productname} defaulted to "Paragraph" as the selected option even when there was no actual "Paragraph" style configured.
 
 {productname} 7.0 addresses this, the fallback option for the bespoke `styles` toolbar button has been reverted to "Formats" in situations where the "Paragraph" style is not defined in the `style_formats` option. This ensures a more accurate reflection of available styles.
+
+=== Improved support of `data` elements
+//# TINY-10611
+
+Previously, when inserting a `data` element within the editor, the `data` element would be removed.
+
+In {productname} 7.0, this problem has been addressed.
+
+As a result, the `data` elements are recognized as valid elements within the editor, ensuring they are properly retained along with their value attributes.
 
 [[additions]]
 == Additions
@@ -361,6 +384,19 @@ This resulted in undefined browser behavior due to the inherent list code within
 {productname} 7.0 addresses this, by removing the core list commands, effectively eliminating the insertion of lists into the content.
 
 As a result, users no longer experience unexpected list insertions.
+
+=== The autocompleter `ch` configuration property has been removed. Use the `trigger` property instead.
+// #TINY-8929
+
+Previously, the `ch` configuration property was used to specify the character that would trigger the autocompleter.
+
+This property was deprecated in link:https://www.tiny.cloud/docs/tinymce/6/6.2-release-notes/#deprecated[{productname} 6.2] and has been removed in {productname} 7.0. Instead, use the `trigger` property to specify the `string` that will trigger the autocompleter.
+
+If `+editor.ui.registry.addAutocompleter(name, options)+` was used in your configuration, updating your configuration from `ch: '<string>',` to `trigger: '<string>',` is required.
+
+NOTE: The new `trigger` option can handle multiple character strings as the trigger.
+
+For more information, visit the updated xref:autocompleter.adoc[Autocompleter] documentation.
 
 [[bug-fixes]]
 == Bug fixes

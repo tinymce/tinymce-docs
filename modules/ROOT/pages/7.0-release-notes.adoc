@@ -114,14 +114,9 @@ The {productname} 7.0 release includes an accompanying release of the **Enhanced
 
 With this update, users have gained access to improved features "to be expanded on in future releases" and a more responsive editing experience.
 
-During the integration process, {productname} made necessary adjustments to ensure compatibility between {productname} 7.0 and CodeMirror 6. Specifically, refining our CSS reset rules to accommodate the dynamically generated styles of CodeMirror 6.
+During the integration process, {productname} made necessary adjustments to ensure compatibility between {productname} 7.0 and CodeMirror 6. Specifically, our CSS reset rules were refined to accommodate the dynamically generated styles of CodeMirror 6 and as a result the `codemirror.css` file was removed from the plugin deployment.
 
-More information about CodeMirror 6 will be included in future patch releases.
-
-=== Moved CodeMirror 6 inside ShadowDom.
-// #TINY-10561
-
-With the release of {productname} 7.0, CodeMirror 6 has been integrated into the shadow DOM. This update from CodeMirror 5 to v6 should have no impact on customers utilizing the Enhanced Code Editor feature.
+This update from CodeMirror 5 to 6 should have no impact on customers utilizing the Enhanced Code Editor feature. More information about CodeMirror 6 will be included in future patch releases.
 
 ==== Tab and shift + tab didn't not navigate to the next tab stop inside the code dialog.
 // #TINY-10596

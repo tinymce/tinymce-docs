@@ -48,19 +48,39 @@ HTML Element Sets: The exact element sets for each preset, depending on the sche
 ----
 tinymce.init({
   selector: "textarea",
+  // Add custom elements using the custom_elements option
   custom_elements: {
     // Custom element 'foo-bar' extends 'div' with attributes 'attr1' and 'attr2'
-    'foo-bar': {
-    extends: 'div',
-    attributes: [ 'attr1', 'attr2' ]
+    "foo-bar": {
+      extends: "div",
+      attributes: ["attr1", "attr2"],
     },
     // Custom element 'foo-baz' extends 'span' allowing children '@phrasing' and 'foo-child'
-    'foo-baz': {
-      extends: 'span',
-      children: [ '@phrasing', 'foo-child' ]
+    "foo-baz": {
+      extends: "span",
+      children: ["@phrasing", "foo-child"],
     },
     // Custom element 'foo-child' has no specific configuration
-    'foo-child': {}
+    "foo-child": {},
+  },
+  // You can also use the addCustomElements API to add custom elements
+  setup: (editor) => {
+    editor.on("preinit", () => {
+      editor.schema.addCustomElements({
+        // Custom element 'hey-bar' extends 'div' with attributes 'attr1' and 'attr2' as well as all global attributes
+        "hey-bar": {
+          extends: "div",
+          attributes: ["@global", "attr1", "attr2"],
+        },
+        // Custom element 'hey-baz' extends 'span' allowing children 'hey-child' as well as all phrasing content
+        "hey-baz": {
+          extends: "span",
+          children: ["@phrasing", "hey-child"],
+        },
+        // Custom element 'hey-child' has no specific configuration
+        "hey-child": {},
+      });
+    });
   },
 });
 ----

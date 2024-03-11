@@ -43,14 +43,8 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 :!altplugincode:
 
 :plugincategory: premium
-:pluginname: Advanced Tables
+:pluginname: Enhanced Tables
 :plugincode: advtable
-include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
-
-:plugincategory: premium
-:pluginname: Advanced Templates
-:plugincode: advtemplate
-:pluginpage: advanced-templates.adoc
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 :plugincategory: premium
@@ -113,19 +107,9 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 :plugincode: directionality
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-:plugincategory: premium
-:pluginname: Enhanced Image Editing
-:plugincode: editimage
-include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
-
 :plugincategory: opensource
 :pluginname: Emoticons
 :plugincode: emoticons
-include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
-
-:plugincategory: premium
-:pluginname: Export
-:plugincode: export
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 :plugincategory: premium
@@ -151,6 +135,11 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 :plugincategory: opensource
 :pluginname: Image
 :plugincode: image
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: premium
+:pluginname: Image Editing
+:plugincode: editimage
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 :plugincategory: opensource
@@ -219,7 +208,7 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 :plugincategory: premium
-:pluginname: Spell Checker Pro
+:pluginname: Spell Checker
 :plugincode: tinymcespellchecker
 :pluginpage: introduction-to-tiny-spellchecker.adoc
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
@@ -231,13 +220,14 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 :plugincategory: premium
-:pluginname: Table of Contents
-:plugincode: tableofcontents
+:pluginname: Templates
+:plugincode: advtemplate
+:pluginpage: advanced-templates.adoc
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-:plugincategory: opensource
-:pluginname: Template
-:plugincode: template
+:plugincategory: premium
+:pluginname: Table of Contents
+:plugincode: tableofcontents
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 :plugincategory: premium

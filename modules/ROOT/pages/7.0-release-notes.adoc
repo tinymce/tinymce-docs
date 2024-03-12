@@ -148,7 +148,7 @@ For example, when typing 'neko' with `Korean` keyboard the following states will
 
 As a consequence, the autocomplete feature triggers as the composition mode changes from `ㅜ` to `ㅜㄷ`, with `ㄷ` being in composing mode. While it copies the text into a new element, it disrupts the composing mode. As a result, when typing `k`, nothing appeared to happen, although in the background, the composing mode actually changes to `다`. Then, when `o` is pressed, the content of the composing mode is added, and the new character is put into composing mode instead, resulting in the text `ㅜㄷ다ㅐ`.
 
-{productname} 7.0 addresses this issue by preventing autocomplete from starting while in composing mode. This ensures that the initial movement into a new element no longer causes problems and prevents data corruption. With the new behavior, users must first exit composing mode before autocomplete can start, thereby safeguarding against text corruption and maintaining data integrity.
+{productname} 7.0 addresses this issue by, now avoiding `DOM` mutation during IME composition, ensuring uninterrupted composition sessions without introducing new elements to the DOM.
 
 [[security-fixes]]
 == Security fixes

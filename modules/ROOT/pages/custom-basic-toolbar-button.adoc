@@ -19,7 +19,7 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 |onAction |`+(api) => void+` |required |Function invoked when the button is clicked.
 4+|
 include::partial$misc/admon-requires-7.0v.adoc[]
-|shortcut |string |optional |Shortcut to display in the tooltip. To register a shortcut, see: To register a shortcut, see: xref:shortcuts.adoc[Add custom shortcuts to TinyMCE].
+|shortcut |string |optional |Shortcut to display in the tooltip. To register a shortcut, see: xref:shortcuts.adoc[Add custom shortcuts to TinyMCE].
 |===
 
 == API

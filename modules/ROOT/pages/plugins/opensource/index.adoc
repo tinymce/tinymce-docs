@@ -1,5 +1,262 @@
-= Open source for TinyMCE
+= Open source plugins for TinyMCE
 :description: This section lists the open source plugins provided with TinyMCE.
 :description_short: TinyMCE open source plugins
 :title_nav: Open source plugins
 :type: folder
+
+
+
+// 2 Columns, both asciidoc
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:plugins/opensource/advlist.adoc[Advanced List]
+
+Create styled number and bulleted lists.
+
+|
+[.lead]
+xref:plugins/opensource/anchor.adoc[Anchor]
+
+Insert anchors (sometimes referred to as a bookmarks).
+
+|
+[.lead]
+xref:plugins/opensource/autolink.adoc[Autolink]
+
+Automatically create hyperlinks.
+
+|
+[.lead]
+xref:plugins/opensource/autoresize.adoc[Autoresize]
+
+Automatically resize TinyMCE to fit content.
+
+|
+[.lead]
+xref:plugins/opensource/autosave.adoc[Autosave]
+
+Automatically save content in your local browser.
+
+|
+[.lead]
+xref:plugins/opensource/bbcode.adoc[BBCode]
+
+Add basic BBCode input/output to TinyMCE.
+
+|
+[.lead]
+xref:plugins/opensource/charmap.adoc[Character Map]
+
+Insert special characters into TinyMCE.
+
+|
+[.lead]
+xref:plugins/opensource/code.adoc[Code]
+
+Edit your content's HTML source.
+
+|
+[.lead]
+xref:plugins/opensource/codesample.adoc[Code Sample]
+
+Insert and embed syntax highlighted code snippets.
+
+|
+[.lead]
+xref:plugins/opensource/directionality.adoc[Directionality]
+
+Toolbar buttons for setting the left-to-right or right-to-left direction of content.
+
+|
+[.lead]
+xref:plugins/opensource/emoticons.adoc[Emoticons]
+
+Bring a smiley to your content.
+
+|
+[.lead]
+xref:plugins/opensource/fullpage.adoc[Full Page]
+
+Edit all metadata and document properties such as title, keywords and description.
+
+|
+[.lead]
+xref:plugins/opensource/fullscreen.adoc[Full Screen]
+
+Zoom TinyMCE up to the whole screen.
+
+|
+[.lead]
+xref:plugins/opensource/help.adoc[Help]
+
+Shows the help dialog.
+
+|
+[.lead]
+xref:plugins/opensource/hr.adoc[Horizontal Rule]
+
+Insert a horizontal line.
+
+|
+[.lead]
+xref:plugins/opensource/image.adoc[Image]
+
+Insert an image into TinyMCE.
+
+|
+[.lead]
+xref:plugins/opensource/imagetools.adoc[Image Tools]
+
+Image editing features for TinyMCE.
+
+|
+[.lead]
+xref:plugins/opensource/importcss.adoc[Import CSS]
+
+Automatically populate CSS class names into the Format dropdown.
+
+|
+[.lead]
+xref:plugins/opensource/insertdatetime.adoc[Insert Date/Time]
+
+Insert the current date and/or time into TinyMCE.
+
+|
+[.lead]
+xref:plugins/opensource/legacyoutput.adoc[Legacy Output]
+
+Changes HTML output to old HTML syntax such as font, b and i
+
+|
+[.lead]
+xref:plugins/opensource/link.adoc[Link]
+
+Add hyperlinks to content.
+
+|
+[.lead]
+xref:plugins/opensource/lists.adoc[Lists]
+
+Normalizes list behavior between browsers.
+
+|
+[.lead]
+xref:plugins/opensource/media.adoc[Media]
+
+Add HTML5 video and audio elements.
+
+|
+[.lead]
+xref:plugins/opensource/nonbreaking.adoc[Nonbreaking Space]
+
+Insert a nonbreaking space.
+
+|
+[.lead]
+xref:plugins/opensource/noneditable.adoc[Noneditable]
+
+Prevent users from changing content within elements. Ideal for templates.
+
+|
+[.lead]
+xref:plugins/opensource/pagebreak.adoc[Page Break]
+
+Add a page break.
+
+|
+[.lead]
+xref:plugins/opensource/paste.adoc[Paste]
+
+Standard version of features for copying-and-pasting content from Microsoft Word.
+
+|
+[.lead]
+xref:plugins/opensource/preview.adoc[Preview]
+
+Shows a popup of the current content in read-only format.
+
+|
+[.lead]
+xref:plugins/opensource/print.adoc[Print]
+
+Print the content in TinyMCE.
+
+|
+[.lead]
+xref:plugins/opensource/quickbars.adoc[Quick Toolbars]
+
+User interface controls to create content faster.
+
+|
+[.lead]
+xref:plugins/opensource/save.adoc[Save]
+
+Adds a save button to the TinyMCE toolbar.
+
+|
+[.lead]
+xref:plugins/opensource/searchreplace.adoc[Search and Replace]
+
+Find and replace content in TinyMCE.
+
+|
+[.lead]
+xref:plugins/opensource/spellchecker.adoc[Spell Checker]
+
+Enables TinyMCE's spellcheck functionality.
+
+|
+[.lead]
+xref:plugins/opensource/tabfocus.adoc[Tab Focus]
+
+Tab into and out of the TinyMCE control in your web form.
+
+|
+[.lead]
+xref:plugins/opensource/table.adoc[Table]
+
+Table editing features.
+
+|
+[.lead]
+xref:plugins/opensource/template.adoc[Template]
+
+Custom templates for your content.
+
+|
+[.lead]
+xref:plugins/opensource/textpattern.adoc[Text Pattern]
+
+Matches special patterns in the text and applies formats or executed commands on these patterns.
+
+|
+[.lead]
+xref:plugins/opensource/toc.adoc[Table of Contents]
+
+Insert a simple Table of Contents into TinyMCE editor
+
+|
+[.lead]
+xref:plugins/opensource/visualblocks.adoc[Visual Blocks]
+
+Allows a user to see block level elements such as paragraphs.
+
+|
+[.lead]
+xref:plugins/opensource/visualchars.adoc[Visual Characters]
+
+See invisible characters like non-breaking spaces.
+
+|
+[.lead]
+xref:plugins/opensource/wordcount.adoc[Word Count]
+
+Show a word count in the TinyMCE status bar.
+
+// Empty cell to even out rows
+| 
+
+|===

@@ -12,7 +12,7 @@ include::partial$misc/admon-paid-addon-pricing.adoc[]
 
 include::partial$misc/admon-requires-7.0v.adoc[]
 
-The Export to PDF functionality gathers the HTML produced using the `editor.getcontent()` method and the default editor content styles, along with the styles specified in the configuration. This data is transmitted to the {productname} Cloud Services HTML to PDF converter service. The service processes this information to create a PDF file, which is then sent back to the user's browser for saving to their local disk.
+The Export to PDF functionality gathers the HTML produced using the `editor.getcontent()` method and the default editor content styles, along with the styles specified in the configuration options for the plugin. This data is transmitted to the {productname} Cloud Services HTML to PDF converter service. The service processes this information to create a PDF file, which is then sent back to the user's browser for saving to their local disk.
 
 == Interactive example
 

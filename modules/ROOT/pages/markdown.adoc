@@ -24,15 +24,17 @@ During this paste event, If the editor detects markdown has been pasted it will:
 * attempt to convert the markdown to HTML, while
 * add a undo level before the conversion to allow for undo of plain-text.
 
-
 [TIP]
-Below is a list of handy shortcuts for copying and pasting in `plain-text` format when using the {pluginname} plugin within {productname}.
+====
+Below is a list of handy shortcuts for pasting in `plain-text` format when using the {pluginname} plugin within {productname}.
 
-[cols="1,3",options="header"]
-|===
-| Description | Windows | MacOS
-| example | `placeholder` | `placeholder` 
-|===
+To paste text in plain form using keyboard shortcuts, use:
+
+* *Windows*: `Ctrl+Shift+V`.
+* *Mac*: `Cmd+Shift+V`.
+
+These shortcuts allow pasting of `plain-text` without formatting, particularly when copying markdown syntax (text) from websites or documents. If the user copied text from one source with certain formatting (such as bold, italics, or different fonts), using this command will paste the text into the new location without carrying over the original formatting.
+====
 
 == Basic setup
 
@@ -61,25 +63,14 @@ The following configuration options affect the behavior of the {pluginname} plug
 
 include::partial$configuration/markdown.adoc[][leveloffset=+1]
 
-
 == Commands
 
 The {pluginname} plugin provides the following {productname} commands.
 
 include::partial$commands/{plugincode}-cmds.adoc[]
 
-// Note to remove if not required.
-////
-== Events
-
-The {pluginname} plugin provides the following events.
-
-include::partial$events/{plugincode}-events.adoc[]
-
 == APIs
 
 The {pluginname} plugin provides the following APIs.
 
 include::partial$plugin-apis/{plugincode}-apis.adoc[]
-
-////

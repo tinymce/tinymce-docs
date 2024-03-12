@@ -214,7 +214,6 @@ Commands are available for the following plugins:
 
 * xref:advancedlists[Advanced Lists]
 * xref:Enhanced Tables[Enhanced Tables]
-* xref:advancedtables[Advanced Tables]
 * xref:anchor[Anchor]
 * xref:autoresize[Autoresize]
 * xref:casechange[Case Change]
@@ -224,7 +223,6 @@ Commands are available for the following plugins:
 * xref:comments[Comments]
 * xref:directionality[Directionality]
 * xref:enhancedcodeeditor[Enhanced Code Editor]
-* xref:editimage[Enhanced Image Editing]
 * xref:emoticons[Emoticons]
 * xref:footnotes[Footnotes]
 * xref:formatpainter[Format Painter]
@@ -329,13 +327,6 @@ include::partial$commands/directionality-cmds.adoc[leveloffset=+3]
 The following command requires the xref:advcode.adoc[Enhanced Code Editor (`+advcode+`)] plugin.
 
 include::partial$commands/code-cmds.adoc[leveloffset=+3]
-
-[[editimage]]
-==== Enhanced Image Editing
-
-The following commands require the xref:editimage.adoc[Enhanced Image Editing (`+editimage+`)] plugin.
-
-include::partial$commands/editimage-cmds.adoc[leveloffset=+3]
 
 [[emoticons]]
 ==== Emoticons

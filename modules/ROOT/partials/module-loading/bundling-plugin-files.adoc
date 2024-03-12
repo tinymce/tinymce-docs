@@ -8,7 +8,6 @@ include::partial$module-loading/bundling-plugins-that-cant-bundle.adoc[]
 ** xref:checklist[Checklist (checklist)]
 ** xref:comments[Comments (tinycomments)]
 ** xref:advanced-code[Enhanced Code Editor (advcode)]
-** xref:enhanced-image-editing[Enhanced Image Editing (editimage)]
 ** xref:advanced-code[Advanced Code (advcode)]
 ** xref:advanced-tables[Enhanced Tables (advtable)]
 ** xref:case-change[Case Change (casechange)]
@@ -96,13 +95,6 @@ include::partial$plugin-files/plugin-file-list-tinycomments.adoc[]
 === Enhanced Code Editor (`+advcode+`)
 
 include::partial$plugin-files/plugin-file-list-advcode.adoc[]
-
-[[enhanced-image-editing]]
-=== Enhanced Image Editing (`+editimage+`)
-
-include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
-
-include::partial$plugin-files/plugin-file-list-editimage.adoc[]
 
 [[enhanced-media-embed]]
 === Enhanced Media Embed (`+mediaembed+`)

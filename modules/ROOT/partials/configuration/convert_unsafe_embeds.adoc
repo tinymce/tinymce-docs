@@ -1,0 +1,22 @@
+[[convert-unsafe-embeds]]
+== `convert_unsafe_embeds` option
+
+This option controls whether an `<object>` and `<embed>` elements will be converted to more restrictive alternatives, namely `<img>` for image MIME types, `<video>` for video MIME types, `<audio>` for audio MIME types, or `<iframe>` for other or unspecified MIME types. 
+
+When converted to `<img>`, `<video>`, or `<audio>`, this prevents the embedded resource from performing potentially malicious actions including scripting, file downloads, browser popups, passing the same-origin policy, among others. Enable the `sandbox_iframes` option in addition to ensure <iframe> conversions are also neutralised.
+
+*Type:* `+Boolean+`
+
+*Possible values:* `true`, `false`
+
+*Default value:* `true`
+
+=== Example: using `convert_unsafe_embeds` option
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  convert_unsafe_embeds: false
+});
+----

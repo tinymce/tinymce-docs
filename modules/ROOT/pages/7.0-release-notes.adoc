@@ -190,13 +190,24 @@ The following Premium plugin has been announced as reaching its end-of-life:
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes
 
-The {productname} <x.y[.z]> release includes an accompanying release of the **Enhanced Skins & Icon Packs**.
+The {productname} 7.0 release includes an accompanying release of the **Enhanced Skins & Icon Packs**.
 
 === Enhanced Skins & Icon Packs
 
 The **Enhanced Skins & Icon Packs** release includes the following updates:
 
-The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} <x.y[.z]> skin, Oxide.
+The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} 7.0 skin, Oxide.
+
+==== Fixed some focus issues related to {productname} 5 skin and Enhanced skins.
+//# TINY-9176
+
+The current colors for various UI buttons didn’t provide suitable contrast against the background/neighboring components.
+
+As a consequence, users with accessibility requirements had difficulty determining the current `active/focused/hovered/enabled` component in the UI.
+
+{productname} 7.0 addresses this issue, now, the colors for many of these UI components have been updated for each of these states.
+
+As a result, these components now have appropriate levels of contrast for ease of use by users with accessibility requirements.
 
 For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
 

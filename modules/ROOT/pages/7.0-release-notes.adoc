@@ -74,7 +74,7 @@ For information on the **<Open source plugin name>** plugin see xref:<plugincode
 [[accompanying-premium-plugin-changes]]
 == Accompanying Premium plugin changes
 
-The following premium plugin updates were released alongside {productname} <x.y[.z]>.
+The following premium plugin updates were released alongside {productname} 7.0.
 
 === <Premium plugin name 1> <Premium plugin name 1 version>
 
@@ -87,6 +87,25 @@ The {productname} <x.y[.z]> release includes an accompanying release of the **<P
 // CCFR here.
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+
+=== PowerPaste
+
+The {productname} 7.0 release includes an accompanying release of the **PowerPaste** premium plugin.
+
+**PowerPaste** includes the following fix.
+
+==== Removed manually dispatching `dragend` event on drop in Firefox.
+// #TINY-10389
+
+Dragging and dropping an image between two cells in a table with the **PowerPaste** plugin enabled triggered the manual dispatching of the `dragend` event when the host browser was Firefox.
+
+As a consequence, the image was duplicated into the new cell instead of being moved from the old cell to the new one.
+
+In {productname} 7.0, this manual dispatching of the `dragend` event in Firefox has been removed.
+
+As a result, when an image is `dragged` and `dropped` from one cell to another, it now correctly moves without duplicating itself.
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
 
 === Templates
 

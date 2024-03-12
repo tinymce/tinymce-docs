@@ -4,6 +4,11 @@ include::partial$module-loading/bundling-plugins-that-cant-bundle.adoc[]
 
 * xref:premium-plugins[Premium plugins]
 ** xref:accessibility-checker[Accessibility Checker (a11ychecker)]
+** xref:case-change[Case Change (casechange)]
+** xref:checklist[Checklist (checklist)]
+** xref:comments[Comments (tinycomments)]
+** xref:advanced-code[Enhanced Code Editor (advcode)]
+** xref:enhanced-image-editing[Enhanced Image Editing (editimage)]
 ** xref:advanced-code[Advanced Code (advcode)]
 ** xref:advanced-tables[Enhanced Tables (advtable)]
 ** xref:case-change[Case Change (casechange)]
@@ -62,10 +67,6 @@ include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
 include::partial$plugin-files/plugin-file-list-a11ychecker.adoc[]
 
-[[advanced-code]]
-=== Advanced Code (`+advcode+`)
-
-include::partial$plugin-files/plugin-file-list-advcode.adoc[]
 
 [[advanced-tables]]
 === Enhanced Tables (`+advtable+`)
@@ -90,6 +91,18 @@ include::partial$plugin-files/plugin-file-list-checklist.adoc[]
 include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
 include::partial$plugin-files/plugin-file-list-tinycomments.adoc[]
+
+[[enhanced-code-editor]]
+=== Enhanced Code Editor (`+advcode+`)
+
+include::partial$plugin-files/plugin-file-list-advcode.adoc[]
+
+[[enhanced-image-editing]]
+=== Enhanced Image Editing (`+editimage+`)
+
+include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
+
+include::partial$plugin-files/plugin-file-list-editimage.adoc[]
 
 [[enhanced-media-embed]]
 === Enhanced Media Embed (`+mediaembed+`)

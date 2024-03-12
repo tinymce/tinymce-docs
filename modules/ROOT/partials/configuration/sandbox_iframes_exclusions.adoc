@@ -1,0 +1,35 @@
+[[sandbox-iframes-exclusions]]
+== `sandbox_iframes_exclusions`
+
+This option holds a list of URL host names to be excluded from iframe sandboxing when sandbox_iframes is set to true.
+
+[NOTE]
+`sandbox_iframes` option is required to be set in the editor configuration for this option to affect the  is not enabled, this option will have no effect.
+
+*Type:* `+String+`, `+Array+`
+
+*Possible values:* `true`, `false`
+
+*Default value:* `true`
+
+=== Example: using `sandbox_iframes_exclusions` option
+
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  sandbox_iframes: false,
+  sandbox_iframes_exclusions: [
+    'youtube.com',
+    'youtu.be',
+    'vimeo.com',
+    'player.vimeo.com',
+    'dailymotion.com',
+    'embed.music.apple.com',
+    'open.spotify.com',
+    'giphy.com',
+    'dai.ly',
+    'codepen.io'
+  ],
+});
+----

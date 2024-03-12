@@ -684,6 +684,17 @@ As a consequence, after pasting, the cursor remained in the same position instea
 
 Now, when using the `mceTablePasteRowAfter` command, `mceTablePasteColAfter` command, or `"Paste row after"` and `"Paste column after"` UI menu items, the cursor is correctly positioned in the newly pasted row or column as expected.
 
+=== Moving focus to the outside of the editor after having clicked a menu would not dispatch a `blur` event as expected.
+// #TINY-10310
+
+In {productname}, an issue was identified where clicking outside the editor while a menu was in either the opened or closed state resulted in the blur event not being triggered as expected.
+
+Consequently, the `blur` event was not dispatched when switching focus outside the editor, as the UI was still considered part of the editor.
+
+{productname} 7.0 addresses this by now considering UI events as part of the normal editor events.
+
+As a result, the `blur` event is now properly dispatched when switching focus outside the editor.
+
 [[security-fixes]]
 == Security fixes
 

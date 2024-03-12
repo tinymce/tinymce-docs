@@ -118,6 +118,14 @@ During the integration process, {productname} made necessary adjustments to ensu
 
 This update from CodeMirror 5 to 6 should have no impact on customers utilizing the Enhanced Code Editor feature. More information about CodeMirror 6 will be included in future patch releases.
 
+==== Updated keyboard shortcuts for Enhanced Code Editor.
+
+With the update to CodeMirror 6 with {productname} 7.0, brings the below updated keyboard shortcuts for Enhanced Code Editor.
+
+include::partial$misc/advcode-shortcuts.adoc[leveloffset=+1]
+
+For information on the Enhanced Code Editor plugin, see: xref:advcode.adoc[Enhanced Code Editor].
+
 ==== Tab and shift + tab didn't not navigate to the next tab stop inside the code dialog.
 // #TINY-10596
 

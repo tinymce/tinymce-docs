@@ -695,6 +695,22 @@ Consequently, the `blur` event was not dispatched when switching focus outside t
 
 As a result, the `blur` event is now properly dispatched when switching focus outside the editor.
 
+=== Autocomplete would sometimes cause corrupt data when starting during text composition.
+// #TINY-10317
+
+Previously in {productname}, the autocomplete feature did not properly interrupt or consider composing mode for keyboards when typing in `Korean`.
+
+For example, when typing 'neko' with `Korean` keyboard the following states will be passed through:
+
+* `ㅜ`
+* `ㅜㄷ`
+* `ㅜ다`
+* `ㅜ다ㅐ`
+
+As a consequence, the autocomplete feature triggers as the composition mode changes from `ㅜ` to `ㅜㄷ`, with `ㄷ` being in composing mode. While it copies the text into a new element, it disrupts the composing mode. As a result, when typing `k`, nothing appeared to happen, although in the background, the composing mode actually changes to `다`. Then, when `o` is pressed, the content of the composing mode is added, and the new character is put into composing mode instead, resulting in the text `ㅜㄷ다ㅐ`.
+
+{productname} 7.0 addresses this issue by, now avoiding `DOM` mutation during IME composition, ensuring uninterrupted composition sessions without introducing new elements to the DOM.
+
 [[security-fixes]]
 == Security fixes
 

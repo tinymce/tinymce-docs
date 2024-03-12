@@ -48,6 +48,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Updated deprecation/removed console message.
 
 === Removed
+* Removed `force_hex_color` option, with the default now being all colors are forced to HEX format and as lower case
 * Removed the deprecated `remove_trailing_brs` option from DomParser.
 * Removed `title` attribute for buttons with visible label.
 * Removed `InsertOrderedList` and `InsertUnorderedList` commands from core.

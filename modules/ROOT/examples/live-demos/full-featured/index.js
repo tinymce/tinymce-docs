@@ -420,7 +420,6 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
         title: 'Salutation'
       }
     ],
-    // Revision fetch
     revisionhistory_fetch: fetchRevisions
   });
 });

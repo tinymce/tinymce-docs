@@ -1,6 +1,6 @@
 = Revision History Plugin
 :navtitle: Revision History
-:description: A view that allows {productname} users to see historical snapshots of a document with differences being highlighted and ability to revert the current content to a version
+:description: A view that allows {productname} users to see historical snapshots of a document with differences being highlighted and ability to restore a snapshot
 :description_short: View containing historical snapshots of a document.
 :keywords: plugin, Revision History, changes, history, track, revert
 :pluginname: Revision History
@@ -14,60 +14,32 @@ include::partial$misc/admon-requires-7.0v.adoc[]
 include::partial$misc/admon-iframe-only.adoc[]
 // TODO: move to a more appropriate location
 
-
-
 // TODO: Add an introduction. What does the plugin do? Why would I use this plugin? Keep it concise.
-The plugin helps you to see how your document has changes over time. You can also restore an earlier version.
+The {pluginname} plugin provides users an ability to see how a document has changed over time and to restore a version.
 
-== Using the Revision History plugin
+== Interactive example
 
-=== Interactive example
-
-=== How it works
-
-The revision history view can be accessed by clicking on the `revisionhistory` toolbar or menu button which locates under `View` menu.
-
-The revision history view composes of these UI components:
-- Header toolbar shows the date of the selected revision and contains `Restore this version` and `Close` buttons. Clicking `Restore this version` will set the editor's content to the selected version and close the view. `Close` button will close brings the user's back to the editor.
-- Diff view is readonly view to show the differences between two versions. These differences are highlighted with colors to indicate the types of changes being applied: red: removed, green: added and blue: modified
-- Revisions list renders the fetched revisions as selectable cards. When a card/revision is selected, the diff view is updated to show the difference between the selected version and the closest one, which is below the selected version. There are additional revisions added to this list depending on the scenarios, which is detailed in this section: <How initial content and current content are listed>
-
-=== Understanding versions
-A new document, that has no saved versions, always has at max two versions: the initial version and current version. 
-
-- Initial version is created on {productname} `Loaded` event to capture the content initialized with the editor
-- Current version is added on opening the {pluginname} with the editor's current content. If included, it is always be the latest version and put at the top
-
-If both versions are the same, {pluginname} only shows the current version.
-
-When a document has saved versions, its initial version is discarded as the {pluginname} assumes it is in the saved versions. The current version is always discarded if it matches to the closest version or the latest saved version.
-
-The below table summaries how the initial and current versions are handled in the {pluginname}:
-[cols="1,,1,2",options="header"]
-|===
-|Initial version |Diff current version |Has saved versions |Expect
-|No |No |No |No revisions is shown |
-|Yes |No |No |Only shows current version |
-|Yes |Yes |No |Both initial and current version are shown |
-|Yes |Yes |Yes |Shows the saved versions including the current version |
-|Yes |No |Yes |As above if the current version doesn't exist. Otherwise, only shows saved versions |
-|No |Yes |Yes |As above |
-|No |No |Yes |Only show the saved versions|
-|===
+liveDemo::{plugincode}[]
 
 [NOTE]
-`Diff current version` means whether the current version is different than the initial version. When the editor is loaded with content, the two versions are the same.
+The {pluginname} plugin treats commented HTML as actual content in the {productname} editor. This means that if the initial content is in the form of commented HTML and no revisions are fetched, the commented HTML automatically becomes the latest revision. However, if some revisions are present, the commented HTML will be compared to the first configured revision.
 
-== What content is supported and not supported
-// TODO: Insert template that clearly identifies what is and what is not handled when using the plugin.
-- Content that is annotated by plugins: ie: comments
-- Code in code block is not well diff. However it should annotate attributes changes. ie styles
-- Custom elements
-- Content or custom elements that their visual presentation are provided by a plugin or custom handling. ie: pagebreak, comments, etc.. If the visual presentation can be addressed by CSS then it is up to the integrators to provide that via `revisionhistory_css_url` option
+=== How it works
+// TODO: Attach image of revision history
 
+The {pluginname} view is opened when clicking on the `revisionhistory` toolbar or menu button which locates under `View` menu.
 
+The view consists of these main UI components:
 
-== Basic setup
+- In the toolbar header, there are `Restore this version` and `Close` buttons. Clicking `Restore this version` will set the editor's content to the selected version and close the view. The `Close` button will close the view and bring the user back to the editor.
+- The readonly diff content UI shows the differences between the selected version and the closest one, which is below the selected version. The differences are highlighted indicating the types of change being applied:
+  - Red: Content being removed
+  - Green: New content
+  - Yellow: Content being modified. Modifications to HTML content implies attribute or format changes (bold, italic, etc)
+
+- The revisions sidebar renders the versions of a document. When a card/version is selected, the diff content UI is updated
+
+=== Basic setup
 
 To setup the {pluginname} plugin user-interface in the editor:
 
@@ -76,11 +48,6 @@ To setup the {pluginname} plugin user-interface in the editor:
 * add `{plugincode}` to the `toolbar` option in the editor configuration;
 
 * add `{plugincode}_fetch` option to the editor configuration;
-
-// option that must return a promise which resolved to a list of  revisions. It is **recommended** that the revisions should be sorted by chronological order since the users could only identify a revision by its date. A revision object is expected to have the following structure this <LInk to data structure>.
-// {
-
-// }
 
 For example:
 
@@ -92,22 +59,79 @@ tinymce.init({
   toolbar: 'revisionhistory',
   // Required
   revisionhistory_fetch: () => new Promise((resolve) => {
-    // Make an API request to fetch revisions
-    const revisions = [];
+    const revisions = [];  // Replace this with an API request to get saved versions
     resolve(revisions);
-  });
+  })
 });
 ----
 
-// NOTE: The undefined options in the above example must be defined. See the xref:options[Options] below for specific details on each function.
+== Understanding versions
 
+A new document, that has no saved versions, always has at max two versions: the initial version and current version. 
 
-== Interactive example
+- Initial version is created on {productname} `Loaded` event with the content initialized with the editor
+- Current version is added on opening the {pluginname} with the editor's current content. If included, it is always be the latest version and placed at the top
 
-liveDemo::{plugincode}[]
+If both versions are the same, the {pluginname} only shows the current version.
+
+When a document has saved versions, its initial version is discarded as the {pluginname} assumes it is in the saved versions. The current version is discarded if it matches to the closest version.
+
+The below table summaries how the initial and current versions are handled in the {pluginname}:
+[cols=",,,1",options="header"]
+|===
+|Initial version | Different current version | Has saved versions | Expect
+|No |No |No |No revisions is shown
+|Yes |No |No |Only shows the current version
+|Yes |Yes |No |Both initial and current version are shown
+|Yes |Yes |Yes |Shows the saved versions including the current version
+|Yes |No |Yes |Only shows the saved versions
+|No |Yes |Yes |Shows the saved versions including the current version
+|No |No |Yes |Only shows the saved versions
+|===
 
 [NOTE]
-The {pluginname} plugin treats commented HTML as actual content in the {productname} editor. This means that if the initial content is in the form of commented HTML and no revisions are fetched, the commented HTML automatically becomes the latest revision. However, if some revisions are present, the commented HTML will be compared to the first configured revision.
+`Different current version` implies whether the current version is different than the initial version. When the editor is loaded with content, the two versions are the same.
+
+== Limitations
+
+1. Although, the {pluginname} plugin can diff most content supported by {productname}, there are several known limitations when it comes to the plugin's content diffing capability.
+
+- For the listed content below, the {pluginname} might not be able to render them as how they are rendered in the editor and the diff might not correctly reflects the changes on them:
+  - Content that is annotated or its visual representation provided by a plugin: ie: comments, pagebreak, etc.
+  - Custom content. If its visual representation can be addressed by CSS then it is up the integrators to provide the styling via `revisionhistory_css_url` option.
+
+- Shows `table` elements with `colgroup` as new even though no change is made.
+- Only shows differences for newlines inside `code` block.
+
+
+2. There is no integration for saving a version yet. However, the integrators can make a custom `Save current content` button by following the below example:
+
+[source,js]
+----
+const revisions = [];
+
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'revisionhistory',
+  toolbar: 'revisionhistory saveversion',
+  setup: (editor) => {
+    editor.ui.registry.addButton('saveversion', {
+      text: 'Save a version',
+      onAction: () => {
+        // Change this according to your setup
+        const revision = {
+          content: editor.getContent({ format: 'raw' }),
+          revisionId: (revisions.length + 1).toString(),
+          createdAt: new Date().toISOString()
+        };
+        revisions.unshift(revision);
+      }
+    });
+  },
+  revisionhistory_fetch: () => Promise.resolve(revisions)
+});
+----
+
 
 == Options
 

@@ -1,19 +1,7 @@
 [[revisionhistory_diff_classes]]
 == `revisionhistory_diff_classes`
 
-This option configures what css classes should be applied to the change annotations. Note that the CSS class names must exist in the `revisionhistory_css_url` file for this option to work. This option can be used along with the `revisionhistory_css_url` to provide custom diff classes from a css file.
-
-////
-What does the option do?
-Why use it?
-When use it?
-What values can it use?
-What do these values do?
-Are there risks?
-  - Explain without using ‘risk’ or similar words.
-  - Use NOTE or IMPORTANT admonitions if helpful.
-  - For longer or more complicated scenarios, use the limitations section below.
-////
+This option configures what CSS classes should be applied to the change annotations. Note that the CSS class names must exist in the `revisionhistory_css_url` file. This option can be used along with the `revisionhistory_css_url` to provide custom diff classes from a CSS file.
 
 *Type:* `+Object+`
 
@@ -43,20 +31,3 @@ tinymce.init({
 	},
 });
 ----
-
-// Remove if not applicable.
-// Edit the sub-head to singular or plural as required.
-=== Limitation(s) of the `revisionhistory_diff_classes` option
-
-The `revisionhistory_diff_classes` option has the following limitations.
-
-// Add explanatory material as per the comment block below then remove
-// the block and this comment.
-
-////
-Known limitations.
-Complicated scenarios.
-Anything that warrants a CAUTION or WARNING admonition.
-////
-
-// Remove all comment lines and comment blocks before publishing.

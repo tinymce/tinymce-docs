@@ -1,19 +1,10 @@
 [[revisionhistory_css_url]]
 == `revisionhistory_css_url`
 
-This option provides the default location to load the change annotations css styling from. This option can be used along with `+revisionhistory_diff_classes+` to provide custom diff classes from a css file.
+Use this option to provide a custom style file for change annotations. It can be used along with `+revisionhistory_diff_classes+` if the CSS class names have changed. 
 
-////
-What does the option do?
-Why use it?
-When use it?
-What values can it use?
-What do these values do?
-Are there risks?
-  - Explain without using ‘risk’ or similar words.
-  - Use NOTE or IMPORTANT admonitions if helpful.
-  - For longer or more complicated scenarios, use the limitations section below.
-////
+[NOTE]
+Make sure that the new CSS file contains styles for all diff classes which are expected by `+revisionhistory_diff_classes+`
 
 *Type:* `+String+`
 
@@ -30,20 +21,3 @@ tinymce.init({
   revisionhistory_css_url: './revisionhistory.css'
 });
 ----
-
-// Remove if not applicable.
-// Edit the sub-head to singular or plural as required.
-=== Limitation(s) of the `revisionhistory_css_url` option
-
-The `+revisionhistory_css_url+` option has the following limitations.
-
-// Add explanatory material as per the comment block below then remove
-// the block and this comment.
-
-////
-Known limitations.
-Complicated scenarios.
-Anything that warrants a CAUTION or WARNING admonition.
-////
-
-// Remove all comment lines and comment blocks before publishing.

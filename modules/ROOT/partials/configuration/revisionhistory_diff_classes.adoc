@@ -1,7 +1,10 @@
 [[revisionhistory_diff_classes]]
 == `revisionhistory_diff_classes`
 
-This option configures what CSS classes should be applied to the change annotations. Note that the CSS class names must exist in the `revisionhistory_css_url` file. This option can be used along with the `revisionhistory_css_url` to provide custom diff classes from a CSS file.
+This option configures the CSS classes being applied to the change annotations. This option can be used in combination with the `revisionhistory_css_url` to provide custom styles to the change annotations.
+
+[NOTE]
+The CSS class names must exist in the xref:revisionhistory_css_url.adoc[`+revisionhistory_css_url+`]
 
 *Type:* `+Object+`
 

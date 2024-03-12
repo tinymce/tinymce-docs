@@ -1,12 +1,12 @@
 [[revisionhistory_fetch]]
 == `revisionhistory_fetch`
 
-The plugin uses the `revisionhistory_fetch` function to retrieve the saved versions for a document.
+The plugin uses the `revisionhistory_fetch` function to retrieve the saved versions.
 
 The `revisionhistory_fetch` option is an asynchronous function that returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise] which resolves to an array of revisions.
 
 [NOTE]
-The {pluginname} plugin does not sort the result before displaying. This allows the integrators to sort the result according to their preference. It is recommended that the result should be sorted in reverse chronological order as it is more intuitive for the users when they can only identify a version by its date.
+The {pluginname} plugin does not sort the result before displaying. This allows the integrators to sort the result according to their preference. It is recommended that the result should be sorted in reverse chronological order because it is more intuitive for the users when they can only identify a version by its date.
 
 *Type:* `+Function+` (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
 
@@ -42,13 +42,13 @@ const revisions = [
     content: `
       <p>Welcome to Tinymce!</p>
     `,
-  },
+  }
 ]
 ----
 
 The data returned by `revisionhistory_fetch` must have the following fields for the {pluginname} to work properly:
 
-. `revisionId`: Unique string.
+. `revisionId`: Unique string Id.
 . `createdAt`: A UTC datetime string in ISO-8061 format. For example: `2019-11-14T10:55:31.820Z`.
 . `content`: HTML string.
 
@@ -61,11 +61,8 @@ tinymce.init({
 	plugins: 'revisionhistory',
   toolbar: 'revisionhistory',
   revisionhistory_fetch: () =>
-    fetch('/revisions', {
-      method: 'GET',
-    })
+    fetch('<API URL>')
     .then((response) => response.json())
-    .then((data) => data)
-    .catch((error) => console.log('Failed to get versions\n' + error)),
+    .catch((error) => console.log('Failed to get versions\n' + error))
 });
 ----

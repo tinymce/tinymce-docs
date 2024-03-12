@@ -1,10 +1,10 @@
 [[revisionhistory_css_url]]
 == `revisionhistory_css_url`
 
-Use this option to provide a custom style file for change annotations. It can be used along with `+revisionhistory_diff_classes+` if the CSS class names have changed. 
+This option sets the location where a CSS file containing the styles for change annotations should be loaded from. It can be used along with `+revisionhistory_diff_classes+` to override the default CSS classes.
 
 [NOTE]
-Make sure that the new CSS file contains styles for all diff classes which are expected by `+revisionhistory_diff_classes+`
+Make sure that the file contains for all the CSS classes which are expected by xref:revisionhistory_diff_classes.adoc[`+revisionhistory_diff_classes+`]
 
 *Type:* `+String+`
 

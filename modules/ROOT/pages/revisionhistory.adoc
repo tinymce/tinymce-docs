@@ -1,8 +1,8 @@
 = Revision History Plugin
 :navtitle: Revision History
-:description: A view that allows {productname} users to see historical snapshots of a document with differences being highlighted and ability to restore a snapshot
+:description: A view that allows {productname} users to see historical snapshots of a document and an ability to restore from a snapshot
 :description_short: View containing historical snapshots of a document.
-:keywords: plugin, Revision History, changes, history, track, revert
+:keywords: plugin, Revision History, history, version, snapshots, restore, changes
 :pluginname: Revision History
 :plugincode: revisionhistory
 :plugincategory: premium
@@ -12,10 +12,8 @@ include::partial$misc/admon-premium-plugin.adoc[]
 include::partial$misc/admon-requires-7.0v.adoc[]
 
 include::partial$misc/admon-iframe-only.adoc[]
-// TODO: move to a more appropriate location
 
-// TODO: Add an introduction. What does the plugin do? Why would I use this plugin? Keep it concise.
-The {pluginname} plugin provides users an ability to see how a document has changed over time and to restore a version.
+The {pluginname} plugin provides users an ability to see how a document has changed over time and to restore from a saved version.
 
 == Interactive example
 
@@ -31,13 +29,15 @@ The {pluginname} view is opened when clicking on the `revisionhistory` toolbar o
 
 The view consists of these main UI components:
 
-- In the toolbar header, there are `Restore this version` and `Close` buttons. Clicking `Restore this version` will set the editor's content to the selected version and close the view. The `Close` button will close the view and bring the user back to the editor.
-- The readonly diff content UI shows the differences between the selected version and the closest one, which is below the selected version. The differences are highlighted indicating the types of change being applied:
-  - Red: Content being removed
-  - Green: New content
-  - Yellow: Content being modified. Modifications to HTML content implies attribute or format changes (bold, italic, etc)
+* In the toolbar header, there are `Restore this version` and `Close` buttons. Clicking `Restore this version` will set the editor's content to the selected version and close the view. Pressing `Close` button will exit the view.
 
-- The revisions sidebar renders the versions of a document. When a card/version is selected, the diff content UI is updated
+* The readonly diff content UI shows the changes between the selected version and the closest one, which is below the selected version. The changes are highlighted for easy recognition of the types of change being applied:
+
+** Red: Removed content
+** Green: New content
+** Yellow: Content being modified. Modifications to HTML content implies attribute or format changes (bold, italic, etc)
+
+* The revisions sidebar renders the versions of a document. When a new version is selected, the diff content UI is updated accordingly.
 
 === Basic setup
 
@@ -65,16 +65,16 @@ tinymce.init({
 });
 ----
 
-== Understanding versions
+== Understanding initial and current versions
 
 A new document, that has no saved versions, always has at max two versions: the initial version and current version. 
 
-- Initial version is created on {productname} `Loaded` event with the content initialized with the editor
-- Current version is added on opening the {pluginname} with the editor's current content. If included, it is always be the latest version and placed at the top
+* Initial version is created on {productname} `Loaded` event with the content initialized with the editor.
+* Current version is added on opening the {pluginname} with the editor's current content. If included, it is always be the latest version and placed at the top.
 
-If both versions are the same, the {pluginname} only shows the current version.
+If both versions are the same, only the current version is kept.
 
-When a document has saved versions, its initial version is discarded as the {pluginname} assumes it is in the saved versions. The current version is discarded if it matches to the closest version.
+When a document has saved versions, its initial version is discarded as the {pluginname} assumes it already a part of versions. The current version is only discarded if it matches to the closest version.
 
 The below table summaries how the initial and current versions are handled in the {pluginname}:
 [cols=",,,1",options="header"]
@@ -94,17 +94,14 @@ The below table summaries how the initial and current versions are handled in th
 
 == Limitations
 
-1. Although, the {pluginname} plugin can diff most content supported by {productname}, there are several known limitations when it comes to the plugin's content diffing capability.
+1. There are several known limitations when it comes to the plugin's content diffing capability.
 
-- For the listed content below, the {pluginname} might not be able to render them as how they are rendered in the editor and the diff might not correctly reflects the changes on them:
-  - Content that is annotated or its visual representation provided by a plugin: ie: comments, pagebreak, etc.
-  - Custom content. If its visual representation can be addressed by CSS then it is up the integrators to provide the styling via `revisionhistory_css_url` option.
+* For the listed content below, the {pluginname} might not be able to render them as how they are rendered in the editor and the diffing might not correctly reflects the changes on them:
+** Content that is annotated or its visual representation provided by a plugin: ie: comments, pagebreak, etc.
+** Custom content. Note: If its visual representation can be addressed by CSS then it is up the integrators to provide the styling via xref:revisionhistory_css_url.adoc[`+revisionhistory_css_url+`] option.
+* Code inside `code` block except for the newlines.
 
-- Shows `table` elements with `colgroup` as new even though no change is made.
-- Only shows differences for newlines inside `code` block.
-
-
-2. There is no integration for saving a version yet. However, the integrators can make a custom `Save current content` button by following the below example:
+2. There is no integration for saving a version yet. For now, the integrators can make a custom `Save current content` button by following the below example:
 
 [source,js]
 ----
@@ -131,6 +128,12 @@ tinymce.init({
   revisionhistory_fetch: () => Promise.resolve(revisions)
 });
 ----
+
+
+== Known issues
+This section describes issues that users of {productname} may encounter:
+
+* `table` elements with `colgroup` are highlighted as new even though there is no change.
 
 
 == Options

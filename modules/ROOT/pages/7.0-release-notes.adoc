@@ -134,7 +134,7 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 // CCFR here.
 
-=== Autocomplete would sometimes cause corrupt data when starting during text composition. Autocomplete no longer starts during composition.
+=== Autocomplete would sometimes cause corrupt data when starting during text composition.
 // #TINY-10317
 
 Previously in {productname}, the autocomplete feature did not properly interrupt or consider composing mode for keyboards when typing in `Korean`.

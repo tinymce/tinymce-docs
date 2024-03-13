@@ -13,14 +13,12 @@ include::partial$misc/admon-requires-7.0v.adoc[]
 
 include::partial$misc/admon-iframe-only.adoc[]
 
-The {pluginname} plugin provides users an ability to see how a document has changed over time and to restore from a saved version.
+The {pluginname} plugin provides users an ability to see how a document has changed over time and a simply to way to restore a saved version.
 
 == Interactive example
 
 liveDemo::{plugincode}[]
 
-[NOTE]
-The {pluginname} plugin treats commented HTML as actual content in the {productname} editor. This means that if the initial content is in the form of commented HTML and no revisions are fetched, the commented HTML automatically becomes the latest revision. However, if some revisions are present, the commented HTML will be compared to the first configured revision.
 
 === How it works
 // TODO: Attach image of revision history
@@ -33,11 +31,14 @@ The view consists of these main UI components:
 
 * The readonly diff content UI shows the changes between the selected version and the closest one, which is below the selected version. The changes are highlighted for easy recognition of the types of change being applied:
 
-** Red: Removed content
-** Green: New content
-** Yellow: Content being modified. Modifications to HTML content implies attribute or format changes (bold, italic, etc)
+  ** Red: Removed content
+  ** Green: New content
+  ** Yellow: Content being modified. Modifications to HTML content implies attribute or format changes (bold, italic, etc)
 
-* The revisions sidebar renders the versions of a document. When a new version is selected, the diff content UI is updated accordingly.
+* The revisions sidebar renders the available versions for a document. When a new version is selected, the diff content UI is updated accordingly.
+
+[NOTE]
+The {pluginname} plugin treats commented HTML as actual content but the content is ignored in the diffing process. This means that a version with all its content commented appears empty in the diff content UI.
 
 === Basic setup
 
@@ -77,10 +78,10 @@ If both versions are the same, only the current version is kept.
 When a document has saved versions, its initial version is discarded as the {pluginname} assumes it already a part of versions. The current version is only discarded if it matches to the closest version.
 
 The below table summaries how the initial and current versions are handled in the {pluginname}:
-[cols=",,,1",options="header"]
+[cols="1,1,1,2",options="header"]
 |===
 |Initial version | Different current version | Has saved versions | Expect
-|No |No |No |No revisions is shown
+|No |No |No |No versions is shown
 |Yes |No |No |Only shows the current version
 |Yes |Yes |No |Both initial and current version are shown
 |Yes |Yes |Yes |Shows the saved versions including the current version
@@ -101,7 +102,7 @@ The below table summaries how the initial and current versions are handled in th
 ** Custom content. Note: If its visual representation can be addressed by CSS then it is up the integrators to provide the styling via xref:revisionhistory_css_url.adoc[`+revisionhistory_css_url+`] option.
 * Code inside `code` block except for the newlines.
 
-2. There is no integration for saving a version yet. For now, the integrators can make a custom `Save current content` button by following the below example:
+2. There is no integration for saving a version yet. For now, a workaround is to add a custom toolbar button. For example:
 
 [source,js]
 ----
@@ -112,6 +113,7 @@ tinymce.init({
   plugins: 'revisionhistory',
   toolbar: 'revisionhistory saveversion',
   setup: (editor) => {
+    // Save the current content of the editor as a new version
     editor.ui.registry.addButton('saveversion', {
       text: 'Save a version',
       onAction: () => {

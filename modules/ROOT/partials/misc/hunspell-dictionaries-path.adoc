@@ -2,7 +2,7 @@ The `+ephox.spelling.hunspell-dictionaries-path+` setting is used to define the 
 
 Requirements:
 
-* The directory containing the Hunspell dictionaries must conform to the file structure defined in xref:self-hosting-hunspell.adoc#hunspell-dictionary-storage-for-spell-checker-pro[Hunspell dictionary storage for Spell Checker Pro].
+* The directory containing the Hunspell dictionaries must conform to the file structure defined in xref:self-hosting-hunspell.adoc#hunspell-dictionary-storage-for-spell-checker[Hunspell dictionary storage for Spell Checker].
 * The directory containing the Hunspell dictionaries must be on the same server machine (or docker container) as the java service.
 
 {companyname} recommends storing the Hunspell dictionaries in a similar location to the `+application.conf+` file. For example, if `+application.conf+` is in a directory called `+/opt/ephox+`, the Hunspell dictionaries should be stored in the subdirectory `+/opt/ephox/hunspell-dictionaries+`.

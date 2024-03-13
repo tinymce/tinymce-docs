@@ -4,14 +4,16 @@ include::partial$module-loading/bundling-plugins-that-cant-bundle.adoc[]
 
 * xref:premium-plugins[Premium plugins]
 ** xref:accessibility-checker[Accessibility Checker (a11ychecker)]
-** xref:advanced-code[Advanced Code (advcode)]
-** xref:advanced-tables[Advanced Tables (advtable)]
 ** xref:case-change[Case Change (casechange)]
 ** xref:checklist[Checklist (checklist)]
 ** xref:comments[Comments (tinycomments)]
-** xref:enhanced-image-editing[Enhanced Image Editing (editimage)]
+** xref:advanced-code[Enhanced Code Editor (advcode)]
+** xref:advanced-code[Advanced Code (advcode)]
+** xref:advanced-tables[Enhanced Tables (advtable)]
+** xref:case-change[Case Change (casechange)]
+** xref:checklist[Checklist (checklist)]
+** xref:comments[Comments (tinycomments)]
 ** xref:enhanced-media-embed[Enhanced Media Embed (mediaembed)]
-** xref:export[Export (export)]
 ** xref:footnotes[Footnotes (footnotes)]
 ** xref:format-painter[Format Painter (formatpainter)]
 ** xref:link-checker[Link Checker (linkchecker)]
@@ -20,11 +22,11 @@ include::partial$module-loading/bundling-plugins-that-cant-bundle.adoc[]
 ** xref:page-embed[Page Embed (pageembed)]
 ** xref:permanent-pen[Permanent Pen (permanentpen)]
 ** xref:powerpaste[PowerPaste (powerpaste)]
-** xref:spell-checker-pro[Spell Checker Pro (tinymcespellchecker)]
+** xref:spell-checker[Spell Checker (tinymcespellchecker)]
 ** xref:autocorrect[Spelling Autocorrect]
 ** xref:table-of-contents[Table of Contents (tableofcontents)]
 * xref:community-plugins[Community plugins]
-** xref:advanced-list[Advanced List (advlist)]
+** xref:advanced-list[List Styles (advlist)]
 ** xref:anchor[Anchor (anchor)]
 ** xref:autolink[Autolink (autolink)]
 ** xref:autoresize[Autoresize (autoresize)]
@@ -37,6 +39,7 @@ include::partial$module-loading/bundling-plugins-that-cant-bundle.adoc[]
 ** xref:full-screen[Full Screen (fullscreen)]
 ** xref:help[Help (help)]
 ** xref:image[Image (image)]
+** xref:image-editing[Image Editing (editimage)]
 ** xref:import-css[Import CSS (importcss)]
 ** xref:insert-datetime[Insert Date/Time (insertdatetime)]
 ** xref:link[Link (link)]
@@ -49,7 +52,6 @@ include::partial$module-loading/bundling-plugins-that-cant-bundle.adoc[]
 ** xref:save[Save (save)]
 ** xref:search-and-replace[Search and Replace (searchreplace)]
 ** xref:table[Table (table)]
-** xref:template[Template (template)]
 ** xref:visual-blocks[Visual Blocks (visualblocks)]
 ** xref:visual-characters[Visual Characters (visualchars)]
 ** xref:word-count[Word Count (wordcount)]
@@ -64,13 +66,9 @@ include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
 include::partial$plugin-files/plugin-file-list-a11ychecker.adoc[]
 
-[[advanced-code]]
-=== Advanced Code (`+advcode+`)
-
-include::partial$plugin-files/plugin-file-list-advcode.adoc[]
 
 [[advanced-tables]]
-=== Advanced Tables (`+advtable+`)
+=== Enhanced Tables (`+advtable+`)
 
 include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
@@ -93,24 +91,15 @@ include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
 include::partial$plugin-files/plugin-file-list-tinycomments.adoc[]
 
-[[enhanced-image-editing]]
-=== Enhanced Image Editing (`+editimage+`)
+[[enhanced-code-editor]]
+=== Enhanced Code Editor (`+advcode+`)
 
-include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
-
-include::partial$plugin-files/plugin-file-list-editimage.adoc[]
+include::partial$plugin-files/plugin-file-list-advcode.adoc[]
 
 [[enhanced-media-embed]]
 === Enhanced Media Embed (`+mediaembed+`)
 
 include::partial$plugin-files/plugin-file-list-mediaembed.adoc[]
-
-[[export]]
-=== Export (`+export+`)
-
-include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
-
-include::partial$plugin-files/plugin-file-list-export.adoc[]
 
 [[footnotes]]
 === Footnotes (`+footnotes+`)
@@ -123,6 +112,13 @@ include::partial$plugin-files/plugin-file-list-footnotes.adoc[]
 === Format Painter (`+formatpainter+`)
 
 include::partial$plugin-files/plugin-file-list-formatpainter.adoc[]
+
+[[image-editing]]
+=== Image Editing (`+editimage+`)
+
+include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
+
+include::partial$plugin-files/plugin-file-list-editimage.adoc[]
 
 [[link-checker]]
 === Link Checker (`+linkchecker+`)
@@ -158,8 +154,8 @@ include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
 include::partial$plugin-files/plugin-file-list-powerpaste.adoc[]
 
-[[spell-checker-pro]]
-=== Spell Checker Pro (`+tinymcespellchecker+`)
+[[spell-checker]]
+=== Spell Checker (`+tinymcespellchecker+`)
 
 include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
@@ -182,8 +178,8 @@ include::partial$plugin-files/plugin-file-list-tableofcontents.adoc[]
 [[community-plugins]]
 == Community plugins
 
-[[advanced-list]]
-=== Advanced List (`+advlist+`)
+[[list-styles]]
+=== List Styles (`+advlist+`)
 
 include::partial$plugin-files/plugin-file-list-advlist.adoc[]
 
@@ -306,11 +302,6 @@ include::partial$plugin-files/plugin-file-list-searchreplace.adoc[]
 === Table (`+table+`)
 
 include::partial$plugin-files/plugin-file-list-table.adoc[]
-
-[[template]]
-=== Template (`+template+`)
-
-include::partial$plugin-files/plugin-file-list-template.adoc[]
 
 [[visual-blocks]]
 === Visual Blocks (`+visualblocks+`)

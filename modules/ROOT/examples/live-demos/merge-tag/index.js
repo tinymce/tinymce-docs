@@ -1,6 +1,6 @@
 tinymce.init({
   selector: "textarea#mergetags",
-  plugins: "powerpaste a11ychecker linkchecker wordcount table advtable editimage autosave advlist anchor advcode image link lists media mediaembed searchreplace visualblocks template mergetags",
+  plugins: "powerpaste a11ychecker linkchecker wordcount table advtable editimage autosave advlist anchor advcode image link lists media mediaembed searchreplace visualblocks mergetags",
   toolbar: "mergetags | undo redo | styles | bold italic underline | link | align bullist numlist",
   mergetags_prefix: '{*',
   mergetags_suffix: '*}',

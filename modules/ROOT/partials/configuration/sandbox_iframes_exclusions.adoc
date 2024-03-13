@@ -6,11 +6,24 @@ This option holds a list of URL host names to be excluded from iframe sandboxing
 [NOTE]
 `sandbox_iframes` option is required to be set in the editor configuration for this option to affect the  is not enabled, this option will have no effect.
 
-*Type:* `+String+`, `+Array+`
+*Type:* `+Array+`
 
-*Possible values:* `true`, `false`
-
-*Default value:* `true`
+*Default value:*
+[source,js]
+----
+[
+  'youtube.com',
+  'youtu.be',
+  'vimeo.com',
+  'player.vimeo.com',
+  'dailymotion.com',
+  'embed.music.apple.com',
+  'open.spotify.com',
+  'giphy.com',
+  'dai.ly',
+  'codepen.io'
+]
+----
 
 === Example: using `sandbox_iframes_exclusions` option
 

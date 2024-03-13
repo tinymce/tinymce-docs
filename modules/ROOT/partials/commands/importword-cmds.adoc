@@ -13,5 +13,4 @@ document.querySelector('button').addEventListener('click',
 ----
 
 [NOTE]
-
 The `ImportWord` command cannot be directly invoked through a script at the top level or from the browser console. Instead, it necessitates a specific user action within the user interface, such as clicking a toolbar button. To ensure correct execution, the command should be called within the scope of an event handler tied to a specific user interaction, as shown in the example.

@@ -7,7 +7,9 @@
 .Example
 [source,js]
 ----
-tinymce.activeEditor.execCommand('ImportWord');
+document.querySelector('button').addEventListener('click',
+  () => tinymce.activeEditor.execCommand('ImportWord')
+);
 ----
 
 [NOTE]

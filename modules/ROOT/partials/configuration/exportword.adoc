@@ -111,6 +111,6 @@ tinymce.init({
       }
     ],
   },
-  exportword_converter_style: 'p { color: cyan !important }' // requires both "exportword_converter_style" and "exportword_service_url" to be set.
+  exportword_converter_style: 'p { color: cyan !important }'
 });
 ----

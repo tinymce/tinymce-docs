@@ -482,6 +482,13 @@ When adjusting row height through the row dialog, any height styles previously a
 [[removed]]
 == Removed
 
+=== Removed `force_hex_color` option, with the default now being all colors are forced to HEX format and as lower case.
+// #TINY-10436
+
+Previously in {productname} 6, all colors in the content HTML where set to use `RGB` values by default. As the common practice is using `hex` values this change will be **reverted**.
+
+For more information, see xref:migration-from-6x.adoc#force-hex-color[Migrating from {productname} 6 to {productname} 7: "force_hex_color"].
+
 === Removed InsertOrderedList and InsertUnorderedList commands from core.
 // #TINY-10644
 

@@ -27,14 +27,12 @@ The {pluginname} view is opened when clicking on the `revisionhistory` toolbar o
 
 The view consists of these main UI components:
 
-* In the toolbar header, there are `Restore this version` and `Close` buttons. Clicking `Restore this version` will set the editor's content to the selected version and close the view. Pressing `Close` button will exit the view.
-
+* In the toolbar header, there are `Restore this version` and `Close` buttons.
+** Clicking `Restore this version` will set the editor's content to the selected version and close the view. ** Pressing `Close` button will exit the view.
 * The readonly diff content UI shows the changes between the selected version and the closest one, which is below the selected version. The changes are highlighted for easy recognition of the types of change being applied:
-
-  ** Red: Removed content
-  ** Green: New content
-  ** Yellow: Content being modified. Modifications to HTML content implies attribute or format changes (bold, italic, etc)
-
+** Red: Removed content
+** Green: New content
+** Yellow: Content being modified. Modifications to HTML content implies attribute or format changes (bold, italic, etc)
 * The revisions sidebar renders the available versions for a document. When a new version is selected, the diff content UI is updated accordingly.
 
 [NOTE]

@@ -1,7 +1,7 @@
 [[sandbox-iframes-exclusions]]
 == `sandbox_iframes_exclusions`
 
-This option allows you to specify a list of domains to exclude from having the `sandbox=""` attribute applied, when the `sandbox_iframes` option is enabled. This option takes an array of strings, each denoting at least the top and second level of a domain to be excluded. By default this option is set to an array of domains which are provided in embed code by popular websites. To enable [sandboxing](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox) on all iframes, set this option to an empty array `[]`.
+This option allows a list of domains to be specified that should be excluded from having the `sandbox=""` attribute applied when the `sandbox_iframes` option is enabled. This option takes an array of strings, each denoting at least the top and second level of a domain to be excluded. By default, this option is set to an array of domains that are provided in embed code by popular websites. To enable [sandboxing](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox) on all iframes, set this option to an empty array `[]`.
 
 [NOTE]
 When the `sandbox_iframes` option is set to `false`, all domains will be excluded from sandboxing.

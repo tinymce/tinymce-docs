@@ -429,7 +429,7 @@ As a result, the `data` elements are recognized as valid elements within the edi
 
 {productname} 7.0 updates the xref:content-filtering.adoc#valid_elements[`+valid_elements+`] option and `schema.addValidChildren` function, which now support preset names such as `@blocks`, `@phrasing`, and `@flow`. These presets will be automatically expanded into corresponding lists of valid elements, simplifying the definition process.
 
-For instance, specifying valid_children: `+'custom-elm[@flow]'+` will configure the `custom-elm` element to allow containing all elements considered as flow elements according to the schema. This streamlines the process of defining valid elements and eliminates the need to manually list all elements from the schema spec.
+For instance, specifying valid_children: `+'custom-elm[@flow]'+` will configure the `custom-elm` element to accept any child element classified as a flow element. This streamlines the process of defining valid elements and eliminates the need to manually list all elements from the schema spec.
 
 .Example
 [source, js]

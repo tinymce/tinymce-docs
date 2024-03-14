@@ -46,7 +46,7 @@ const revisions = [
 ]
 ----
 
-The data returned by `revisionhistory_fetch` must have the following fields for the {pluginname} to work properly:
+The data returned by `revisionhistory_fetch` requires the following fields for the {pluginname} to work:
 
 . `revisionId`: Unique string Id.
 . `createdAt`: A UTC datetime string in ISO-8061 format. For example: `2019-11-14T10:55:31.820Z`.

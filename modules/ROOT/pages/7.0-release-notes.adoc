@@ -446,6 +446,24 @@ As a result, the `data` elements are recognized as valid elements within the edi
 
 // CCFR here.
 
+=== Element preset support for the `valid_children` option and `Schema.addValidChildren` API.
+
+{productname} 7.0 updates the xref:content-filtering.adoc#valid_elements[`+valid_elements+`] option and `schema.addValidChildren` function, which now support preset names such as `@blocks`, `@phrasing`, and `@flow`. These presets will be automatically expanded into corresponding lists of valid elements, simplifying the definition process.
+
+For instance, specifying valid_children: `+'custom-elm[@flow]'+` will configure the `custom-elm` element to accept any child element classified as a flow element. This streamlines the process of defining valid elements and eliminates the need to manually list all elements from the schema spec.
+
+.Example
+[source, js]
+----
+tinymce.init({
+    selector: "textarea",
+	custom_elements: 'block-container,phrasing-container,flow-container',
+	valid_children: 'block-container[@blocks],phrasing-container[@phrasing],flow-container[@flow]'
+});
+----
+
+For more information on content filtering for custom elements, see xref:content-filtering.adoc#custom_elements.adoc[`custom_elements`]
+
 [[changes]]
 == Changes
 

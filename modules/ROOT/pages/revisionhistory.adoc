@@ -96,9 +96,9 @@ The below table summaries how the initial and current versions are handled in th
 1. There are several known limitations when it comes to the plugin's content diffing capability.
 
 * For the listed content below, the {pluginname} might not be able to render them as how they are rendered in the editor and the diffing might not correctly reflects the changes on them:
-** Content that is annotated or its visual representation provided by a plugin: ie: comments, pagebreak, etc.
-** Custom content. Note: If its visual representation can be addressed by CSS then it is up the integrators to provide the styling via xref:revisionhistory_css_url.adoc[`+revisionhistory_css_url+`] option.
-* Code inside `code` block except for the newlines.
+** Annotated content or content whose visual representation is provided by a plugin, such as comments or page breaks.
+** Custom content if its visual representation can be adjusted using CSS, integrators can address this by providing styling via the xref:revisionhistory_css_url.adoc[`+revisionhistory_css_url+`] option.
+* Code within code blocks may not be accurately differentiated, excluding changes in newlines.
 
 2. There is no integration for saving a version yet. For now, a workaround is to add a custom toolbar button. For example:
 

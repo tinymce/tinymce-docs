@@ -4,7 +4,6 @@
 :description_short: Generate a .docx file directly from the editor.
 :keywords: plugin, exportword.
 :pluginname: Export to Word
-:pluginminimumplan: <tier>
 :plugincode: exportword
 :plugincategory: premium
 
@@ -14,10 +13,6 @@ include::partial$misc/admon-requires-7.0v.adoc[]
 
 The export to Microsoft Word feature collects the HTML generated with the `tinymce.editor.getContent()` method and combines it with the default editor content styles along with the styles provided in the configuration. The combined content and styles are then transmitted to the {productname} Cloud Services HTML to DOCX converter service. Following this, the service generates a Word file, which is subsequently returned to the user’s browser, enabling them to save it in the Word format onto their disk.
 
-[NOTE]
-The generated `.docx` file may not be fully compatible with older versions of Word.
-
-
 == Interactive example
 
 [NOTE]
@@ -25,6 +20,9 @@ The generated `.docx` file may not be fully compatible with older versions of Wo
 ====
 Demos containing the {pluginname} plugin are currently only available on our main website. Check out https://www.tiny.cloud/tinymce/features/exportword/[the {pluginname} demo], or the https://www.tiny.cloud/[demo on our home page], to try it out today.
 ====
+
+[NOTE]
+The generated `.docx` file may not be fully compatible with older versions of Word.
 
 == Basic setup
 
@@ -54,6 +52,6 @@ The {pluginname} plugin provides the following {productname} commands.
 
 include::partial$commands/{plugincode}-cmds.adoc[][leveloffset=+1]
 
-== APIs
+== API Reference
 
-include::partial$plugin-apis/{plugincode}-apis.adoc[]
+> Explore the comprehensive API documentation for the {pluginname} Premium plugin at https://exportdocx.converter.tiny.cloud/docs#section/Export-to-Word[Export to Word.^]

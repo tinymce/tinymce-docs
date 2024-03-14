@@ -506,6 +506,15 @@ NOTE: The new `trigger` option can handle multiple character strings as the trig
 
 For more information, visit the updated xref:autocompleter.adoc[Autocompleter] documentation.
 
+=== The open-source `Template` plugin has been removed.
+// #TINY-10654
+
+The open-source `Template` plugin and associated config options have been removed in {productname} 7.0.
+
+Customers using the `template` plugin will need to migrate to the premium `advtemplate` which was renamed `Templates` in {productname} 7.0, which contains all the functionality except some esoteric options.
+
+For more information, see xref:migration-from-6x.adoc#deprecated-plugins-template-plugin[Migrating from {productname} 6 to {productname} 7].
+
 [[bug-fixes]]
 == Bug fixes
 

@@ -277,8 +277,9 @@ For more information about `highlight_on_focus` see the xref:accessibility.adoc#
 Any editors using this `highlight_on_focus: true` option, can remove this option from their {productname} init configuration when upgrading to {productname} 7.0.
 
 === Improved Custom Elements
+// #TINY-9980 / TINY-9979
 
-{productname} 7.0 introduces enhancements to the existing xref:content-filtering.adoc#custom_elements.adoc[`custom_elements`] option and `addCustomElements` API. This update allows the structure of custom elements to be refined, offering users more flexibility and customization options.
+{productname} 7.0 introduces enhancements to the existing xref:content-filtering.adoc#custom_elements.adoc[custom_elements] option and xref:apis/tinymce.html.schema.adoc#addCustomElements[addCustomElements] API. This update allows the structure of custom elements to be refined, offering users more flexibility and customization options.
 
 Key Improvements:
 

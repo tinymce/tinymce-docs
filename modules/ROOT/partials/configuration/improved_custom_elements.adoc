@@ -1,7 +1,6 @@
 [[improved-custom-elements]]
 == Improved Custom Elements
 
-Enhancements have been made to the existing custom_elements option and `addCustomElements` API in {productname}. This improvement refines the structure of custom elements to accommodate more complex configurations, enabling better customization for users.
 
 * **New Custom Element Structure:** The custom_elements option and the `addCustomElements` API now support a more complex structure. This structure is defined by a record where the key represents the name of the element, and the value corresponds to a detailed specification.
 * **Attributes and Inheritance:** Elements can now inherit attributes and children from other specified elements using the extends property in the Custom Element Spec.

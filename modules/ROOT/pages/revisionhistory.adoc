@@ -66,14 +66,15 @@ tinymce.init({
 
 == Understanding initial and current versions
 
-A new document, that has no saved versions, always has at max two versions: the initial version and current version. 
+When dealing with a new document, that has no saved versions, {pluginname} plugin will always typically maintain two versions: the `initial` and `current` version.
 
-* Initial version is created on {productname} `Loaded` event with the content initialized with the editor.
-* Current version is added on opening the {pluginname} with the editor's current content. If included, it is always be the latest version and placed at the top.
+* Initial Version: this version is generated during the {productname} `Loaded` event, with the editor's content initialized.
+* Current Version: is added on opening the {pluginname} with the editor's current content. If included, it will become the `latest version` and placed at the top of the revisions list.
 
-If both versions are the same, only the current version is kept.
+[TIP]
+If both versions are the same, only the `current version` is kept.
 
-When a document has saved versions, its initial version is discarded as the {pluginname} assumes it already a part of versions. The current version is only discarded if it matches to the closest version.
+For documents with saved versions, the `initial version` is disregarded by the {pluginname} assuming it's already part of the version history. The current version is only discarded if it matches the closest saved version.
 
 The below table summaries how the initial and current versions are handled in the {pluginname}:
 

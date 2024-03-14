@@ -34,7 +34,7 @@ The view consists of these main UI components:
 * The revisions sidebar renders the available versions for a document. When a new version is selected, the diff content UI is updated accordingly.
 
 [NOTE]
-The {pluginname} plugin treats commented HTML as actual content but the content is ignored in the diffing process. This means that a version with all its content commented appears empty in the diff content UI.
+The {pluginname} plugin interprets commented HTML as valid content, yet it disregards this content during the version comparison process. Consequently, a version containing solely commented content appears as empty in the user interface displaying the differential content.
 
 === Basic setup
 

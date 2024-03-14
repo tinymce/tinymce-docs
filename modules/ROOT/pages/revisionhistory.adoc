@@ -45,9 +45,7 @@ The {pluginname} plugin treats commented HTML as actual content but the content 
 To setup the {pluginname} plugin user-interface in the editor:
 
 * add `{plugincode}` to the `plugins` option in the editor configuration;
-
 * add `{plugincode}` to the `toolbar` option in the editor configuration;
-
 * add `{plugincode}_fetch` option to the editor configuration;
 
 For example:

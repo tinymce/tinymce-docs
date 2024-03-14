@@ -321,7 +321,7 @@ const advtemplate_move_category_items = async (id, categoryId) => {
 }
 
 tinymce.init({
-  selector: "textarea#advanced-template",
+  selector: "textarea#template",
     plugins: [
         "advlist", "anchor", "autolink", "charmap", "code", "fullscreen", 
         "help", "image", "insertdatetime", "link", "lists", "media", 

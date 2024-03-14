@@ -1,8 +1,8 @@
-= Enhanced Image Editing (formerly Image Tools)
-:navtitle: Enhanced Image Editing
-:description: Enhanced image editing features for TinyMCE.
-:keywords: edit, image, rotate, rotateleft, rotateright, flip, flipv, fliph, editimage, imageoptions
-:pluginname: Enhanced Image Editing
+= Image Editing
+:navtitle: Image Editing
+:description: Image Editing features for TinyMCE.
+:keywords: edit, image, rotate, rotateleft, rotateright, flip, flipv, fliph, editimage, imageoption, imageediting
+:pluginname: Image Editing
 :plugincode: editimage
 :pluginminimumplan: tiertwo
 
@@ -24,7 +24,7 @@ include::partial$misc/admon-svg-not-supported.adoc[]
 
 == Cloud Installation
 
-The Enhanced Image Editing plugin is provided with all subscriptions to xref:editor-and-features.adoc[{cloudname}], including an automatically configured image proxy. Simply add `+image+` to the `+toolbar+` list and `+image editimage+` to the `+plugins+` list.
+The Image Editing plugin is provided with all subscriptions to xref:editor-and-features.adoc[{cloudname}], including an automatically configured image proxy. Simply add `+image+` to the `+toolbar+` list and `+image editimage+` to the `+plugins+` list.
 
 === Basic setup using Tiny Cloud
 
@@ -39,7 +39,7 @@ tinymce.init({
 
 == Self-hosted Installation
 
-To enable the {productname} Enhanced Image Editing plugin:
+To enable the {productname} Image Editing plugin:
 
 . Add `image` to the `toolbar` list and `image editimage` to the `plugins` list.
 . Enable xref:editimage_cors_hosts[`+editimage_cors_hosts+`] and xref:editimage_proxy_service_url[`+editimage_proxy_service_url+`] options as required.
@@ -77,6 +77,6 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[leveloffset=+1]
 
 == Commands
 
-The Enhanced Image Editing plugin provides the following {productname} commands.
+The Image Editing plugin provides the following {productname} commands.
 
 include::partial$commands/editimage-cmds.adoc[]

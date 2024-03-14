@@ -26,12 +26,13 @@ The {pluginname} view is opened when clicking on the `revisionhistory` toolbar o
 The view consists of these main UI components:
 
 * In the toolbar header, there are `Restore this version` and `Close` buttons.
-** Clicking `Restore this version` will set the editor's content to the selected version and close the view. ** Pressing `Close` button will exit the view.
-* The readonly diff content UI shows the changes between the selected version and the closest one, which is below the selected version. The changes are highlighted for easy recognition of the types of change being applied:
+** Clicking `Restore this version` will set the editor's content to the selected version and close the view.
+** Pressing `Close` button will exit the view.
+* The readonly versions comparison shows the changes between the selected version and the closest one, which is below the selected version. The changes are highlighted for easy recognition of the types of change being applied:
 ** Red: Removed content
 ** Green: New content
 ** Yellow: Content being modified. Modifications to HTML content implies attribute or format changes (bold, italic, etc)
-* The revisions sidebar renders the available versions for a document. When a new version is selected, the diff content UI is updated accordingly.
+* The revisions sidebar renders the available versions for a document. When a new version is selected, the versions comparison is updated accordingly.
 
 [NOTE]
 The {pluginname} plugin interprets commented HTML as valid content, yet it disregards this content during the version comparison process. Consequently, a version containing solely commented content appears as empty in the user interface displaying the differential content.
@@ -78,12 +79,12 @@ The below table summaries how the initial and current versions are handled in th
 |===
 |Initial Version |Different Current Version |Has Saved Versions |Expect
 |No |No |No |No versions are shown
-|Yes |No |No |Only the `current` version is shown
-|Yes |Yes |No |Both the `initial` and `current` versions are shown
-|Yes |Yes |Yes |Shows the `saved` versions, including the `current` version
-|Yes |No |Yes |Only the `saved` versions are shown
-|No |Yes |Yes |Shows the `saved` versions, including the `current` version
-|No |No |Yes |Only the `saved` versions are shown
+|Yes |No |No |Only the current version is shown
+|Yes |Yes |No |Both the initial and current versions are shown
+|Yes |Yes |Yes |The saved versions and the current version are shown
+|Yes |No |Yes |Only the saved versions are shown
+|No |Yes |Yes |The saved versions and the current version are shown
+|No |No |Yes |Only the saved versions are shown
 |===
 
 [NOTE]

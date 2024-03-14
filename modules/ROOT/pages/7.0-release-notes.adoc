@@ -384,6 +384,19 @@ For more information about `highlight_on_focus` see the xref:accessibility.adoc#
 [NOTE]
 Any editors using this `highlight_on_focus: true` option, can remove this option from their {productname} init configuration when upgrading to {productname} 7.0.
 
+=== Improved Custom Elements
+// #TINY-9980 / TINY-9979
+
+{productname} 7.0 introduces enhancements to the existing xref:content-filtering.adoc#custom_elements.adoc[custom_elements] option and xref:apis/tinymce.html.schema.adoc#addCustomElements[addCustomElements] API. This update allows the structure of custom elements to be refined, offering users more flexibility and customization options.
+
+Key Improvements:
+
+* **New Custom Element Structure:** The custom_elements option and `addCustomElements` API now support a more complex structure. Each element is defined by a key-value pair, allowing for detailed specifications.
+* **Attributes and Inheritance:** Elements can inherit attributes and children from other specified elements using the extends property in the Custom Element Spec.
+* **Attribute and Children Specifications:** The Custom Element Spec includes properties such as attributes and children, enabling precise customization of element behavior.
+
+For more information and details for `addCustomElements` see xref:content-filtering.adoc#custom-elements[custom_elements].
+
 === Optional Tooltip for Dialog Footer Toggle Buttons
 //#TINY-10672
 

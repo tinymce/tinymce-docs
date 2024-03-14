@@ -2,7 +2,7 @@
 |===
 |Command         |Description
 
-|ExportWord   |Generates word file from calling `editor.getContent()` and exports it to new file `document.docx`.
+|ExportWord   |Uses `editor.getContent()` and generates a new `document.docx` Word file that can be saved to local disk.
 |===
 
 .Examples

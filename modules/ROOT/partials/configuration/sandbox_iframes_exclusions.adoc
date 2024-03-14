@@ -31,7 +31,7 @@ When the `sandbox_iframes` option is set to `false`, all domains will be exclude
 ----
 tinymce.init({
   selector: "textarea",
-  sandbox_iframes: false,
+  sandbox_iframes: true,
   sandbox_iframes_exclusions: [
     'youtube.com',
     'youtu.be',

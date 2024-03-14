@@ -24,13 +24,13 @@ The CSS class names must exist in the xref:revisionhistory_css_url.adoc[`+revisi
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-	plugins: 'revisionhistory',
+  plugins: 'revisionhistory',
   toolbar: 'revisionhistory',
-	revisionhistory_css_url: './revisionhistory.css',
+  revisionhistory_css_url: './revisionhistory.css',
   revisionhistory_diff_classes: {
-	  addition: 'added',
-	  removal: 'removed',
-	  modification: 'modified'
-	},
+    addition: 'added',
+    removal: 'removed',
+    modification: 'modified'
+  },
 });
 ----

@@ -76,6 +76,7 @@ If both versions are the same, only the current version is kept.
 When a document has saved versions, its initial version is discarded as the {pluginname} assumes it already a part of versions. The current version is only discarded if it matches to the closest version.
 
 The below table summaries how the initial and current versions are handled in the {pluginname}:
+
 [cols="1,1,1,2",options="header"]
 |===
 |Initial version | Different current version | Has saved versions | Expect

@@ -83,7 +83,7 @@ For information on the differences between the classic and inline editing modes,
 
 The functionality of {productname} is extended by using plugins, which are enabled using the `+plugins+` option.
 
-The following example enables the lists (`+lists+`), Advanced Lists (`+advlist+`), Link (`+link+`), and Image (`+image+`) plugins.
+The following example enables the lists (`+lists+`), List Styles (`+advlist+`), Link (`+link+`), and Image (`+image+`) plugins.
 
 [source,js]
 ----
@@ -208,7 +208,7 @@ The following example is a basic {productname} configuration.
     plugins: [
       'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
       'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen', 'insertdatetime',
-      'media', 'table', 'emoticons', 'template', 'help'
+      'media', 'table', 'emoticons', 'help'
     ],
     toolbar: 'undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | ' +
       'bullist numlist outdent indent | link image | print preview media fullscreen | ' +
@@ -254,7 +254,7 @@ Selects the plugins to be included on load.
 plugins: [
   'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
   'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen', 'insertdatetime',
-  'media', 'table', 'emoticons', 'template', 'help'
+  'media', 'table', 'emoticons', 'help'
 ],
 ----
 

@@ -12,7 +12,7 @@ include::partial$misc/admon-paid-addon-pricing.adoc[]
 
 include::partial$misc/admon-requires-7.0v.adoc[]
 
-The export to Microsoft Word feature collects the HTML generated with the `tinymce.editor.getContent()` method and the default editor content styles combined with the styles provided by you in the configuration. It then sends them to the {productname} Cloud Services HTML to DOCX converter service. The service generates a Word file and returns it to the user’s browser so they can save it in the Word format on their disk.
+The export to Microsoft Word feature collects the HTML generated with the `tinymce.editor.getContent()` method and combines it with the default editor content styles along with the styles provided in the configuration. The combined content and styles are then transmitted to the {productname} Cloud Services HTML to DOCX converter service. Following this, the service generates a Word file, which is subsequently returned to the user’s browser, enabling them to save it in the Word format onto their disk.
 
 [NOTE]
 The generated `.docx` file may not be fully compatible with older versions of Word.

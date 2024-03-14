@@ -74,16 +74,16 @@ For documents with saved versions, the `initial version` is disregarded by the {
 
 The below table summaries how the initial and current versions are handled in the {pluginname}:
 
-[cols="1,1,1,2",options="header"]
+[cols="1,1,1,3", options="header"]
 |===
-|Initial version | Different current version | Has saved versions | Expect
-|No |No |No |No versions is shown
-|Yes |No |No |Only shows the current version
-|Yes |Yes |No |Both initial and current version are shown
-|Yes |Yes |Yes |Shows the saved versions including the current version
-|Yes |No |Yes |Only shows the saved versions
-|No |Yes |Yes |Shows the saved versions including the current version
-|No |No |Yes |Only shows the saved versions
+|Initial Version |Different Current Version |Has Saved Versions |Expect
+|No |No |No |No versions are shown
+|Yes |No |No |Only the `current` version is shown
+|Yes |Yes |No |Both the `initial` and `current` versions are shown
+|Yes |Yes |Yes |Shows the `saved` versions, including the `current` version
+|Yes |No |Yes |Only the `saved` versions are shown
+|No |Yes |Yes |Shows the `saved` versions, including the `current` version
+|No |No |Yes |Only the `saved` versions are shown
 |===
 
 [NOTE]

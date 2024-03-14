@@ -13,7 +13,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 * xref:new-premium-plugin<s>[New Premium plugins]
 * xref:new-open-source-plugin<s>[New Open Source plugin]
-* xref:new-premium-plugin<s>[New Premium plugins]
+* xref:new-premium-plugins[New Premium plugins]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
 * xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
@@ -31,7 +31,15 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[new-premium-plugins]]
 == New Premium plugins
 
-The following new Premium plugins were released alongside {productname} 7.0.
+The following new Premium plugins was released alongside {productname} 7.0.
+
+
+[[premium-plugin-revision-history]]
+=== Revision History
+
+The new Premium plugin, **Revision History**, allows you to track changes made to content in the {productname} editor and restore previous versions of the content.
+
+For information on the **Revision History** plugin, see xref:revisionhistory.adoc[Revision History].
 
 === Import from Word
 

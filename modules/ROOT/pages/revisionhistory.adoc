@@ -19,7 +19,7 @@ liveDemo::{plugincode}[]
 
 include::partial$misc/admon-iframe-only.adoc[]
 
-=== How it works
+== How it works
 
 The {pluginname} view is opened when clicking on the `revisionhistory` toolbar button or menu button which locates under `View` menu.
 
@@ -40,7 +40,7 @@ The default highlighting colors can be customized using the xref:revisionhistory
 [NOTE]
 The {pluginname} plugin interprets commented HTML as valid content, yet it disregards this content during the version comparison process. Consequently, a version containing solely commented content appears as empty in the user interface displaying the differential content.
 
-=== Basic setup
+== Basic setup
 
 To setup the {pluginname} plugin user-interface in the editor:
 

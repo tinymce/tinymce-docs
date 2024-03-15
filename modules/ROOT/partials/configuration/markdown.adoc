@@ -22,6 +22,7 @@ The `markdown_symbols` option allows you to define `key/value` pairs where the `
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
+  plugins: 'markdown',
   markdown_symbols: {
     C: '©',
     TM: '™',

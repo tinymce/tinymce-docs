@@ -3,7 +3,7 @@ const isSmallScreen = window.matchMedia('(max-width: 1023.5px)').matches;
 
 tinymce.init({
   selector: 'textarea#full-featured',
-  plugins: 'preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker editimage help formatpainter permanentpen pageembed charmap tinycomments mentions quickbars linkchecker emoticons advtable footnotes mergetags autocorrect typography advtemplate markdown revisionhistory exportword importword exportpdf',
+  plugins: 'preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker editimage help formatpainter permanentpen pageembed charmap tinycomments mentions quickbars linkchecker emoticons advtable footnotes mergetags autocorrect typography advtemplate markdown revisionhistory',
   tinydrive_token_provider: 'URL_TO_YOUR_TOKEN_PROVIDER',
   tinydrive_dropbox_app_key: 'YOUR_DROPBOX_APP_KEY',
   tinydrive_google_drive_key: 'YOUR_GOOGLE_DRIVE_KEY',
@@ -111,6 +111,7 @@ tinymce.init({
   https://www.tiny.cloud/docs/tinymce/6/mentions/.
   */
   mentions_selector: '.mymention',
+  // These mentions functions should be implemented by you.
   mentions_fetch: mentions_fetch,
   mentions_menu_hover: mentions_menu_hover,
   mentions_menu_complete: mentions_menu_complete,
@@ -149,5 +150,5 @@ tinymce.init({
       title: 'Salutation'
     }
   ],
-  revisionhistory_fetch: fetch_revisions,
+  revisionhistory_fetch: fetch_revisions, // This function should be implemented by you.
 });

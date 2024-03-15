@@ -6,10 +6,21 @@
 
 include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
+[NOTE]
+{productname} 7.0 is _licensed under GPL Version 2 or later_. This version introduces a new `license_key`  configuration setting that gives self-hosted users the ability to select a usage under the GPL or to authenticate their paid license with Tiny.
+
 [[overview]]
 == Overview
 
-{productname} 7.0 was released for {enterpriseversion} and {cloudname} on Wednesday, March 20^th^, 2024. These release notes provide an overview of the changes for {productname} 7.0, including:
+{productname} 7.0 was released for {enterpriseversion} and {cloudname} on Wednesday, March 20^th^, 2024. 
+
+The release brings new features essential for content producers and managers in the modern workplace. These features improve efficiency through simplified sharing of content and providing improved tools for the asynchronous collaboration needs of remote teams.
+
+* **Revision History**: View changes from one content version to another.
+* **Document Converters**: Import content from Microsoft Word. Export content to Microsoft Word or PDF documents.
+* **Markdown**: Paste markdown from other platforms into the editor for instant rich-text conversion.
+
+These release notes provide an overview of the changes for {productname} 7.0, including the following:
 
 * xref:new-premium-plugin<s>[New Premium plugins]
 * xref:new-open-source-plugin<s>[New Open Source plugin]

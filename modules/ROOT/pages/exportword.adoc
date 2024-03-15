@@ -24,6 +24,8 @@ Demos containing the {pluginname} plugin are currently only available on our mai
 [NOTE]
 The generated `.docx` file may not be fully compatible with older versions of Word.
 
+[NOTE]
+xref:introduction-to-mediaembed.adoc[Enhanced Media Embed] will not be included in the exported document.
 == Basic setup
 
 To add the {pluginname} plugin to the editor, add `{plugincode}` to the `plugins` option in the editor configuration.

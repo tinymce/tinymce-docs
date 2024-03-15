@@ -104,12 +104,28 @@ tinymce.init({
     editor.ui.registry.addButton('saveversion', {
       text: 'Save a version',
       onAction: () => {
+        const content = editor.getContent({ format: 'raw' });
+        // Check if the content has changed
+        if (content === revisions[0].content) {
+          editor.notificationManager.open({
+            text: 'No changes to save!',
+            type: 'info',
+            timeout: 2000
+          });
+          return;
+        };
+        // Save the new version
         const revision = {
-          content: editor.getContent({ format: 'raw' }),
+          content: content,
           revisionId: (revisions.length + 1).toString(),
           createdAt: new Date().toISOString()
         };
         revisions.unshift(revision);
+        editor.notificationManager.open({
+          text: 'Version saved successfully!',
+          type: 'success',
+          timeout: 2000
+        });
       }
     });
   },

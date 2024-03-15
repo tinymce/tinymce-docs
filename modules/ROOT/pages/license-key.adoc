@@ -1,0 +1,83 @@
+= License key
+:description_short: {productname} License Configuration Guide | {productname}
+:description: Learn how to configure license key and stop {productname} from running in the evaluation mode.
+:keywords: {productname}, cloud, script, textarea, apiKey, faq, license key, frequently asked questions,
+
+[IMPORTANT]
+====
+{productname} 7 is licensed under the GNU General Public License Version 2 or later. A new configuration option called 'license_key' requires developers to make a conscious decision to use {productname} with the GPLv2+ license or with a commercial license.
+
+If you are using {productname} in a self-hosted environment, a console log warning message will display if the license key config option is missing or invalid. This message aims to ensure compliance with licensing requirements and provide transparency during the evaluation period.
+
+This message will not be shown when loading {productname} from the Tiny Cloud, as it is already under a commercial license.
+====
+
+== Setting the license
+
+=== Use TinyMCE with the GPLv2+ license:
+
+If the developer intends to self-host {productname} under the GPL license, they can set the 'license_key' config option to 'gpl'. Case sensitivity does not matter.
+
+==== Example
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  license_key: 'gpl'
+});
+----
+
+=== Use TinyMCE with a commercial license:
+
+If the developer intends to self-host {productname} under a commercial license, they must provide a valid license key. Customers who have purchased a self-hosted-eligible license for {productname} will find their license key in the account portal. To purchase a commercial license, see available options on the link:{pricingpage}/[pricing page]. 
+
+==== Example
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  license_key: '<your-license-key>'
+});
+----
+
+== FAQ
+
+=== What does the GPL license mean?
+
+TinyMCE 7 is licensed under the GNU General Public License Version 2 or later, often abbreviated to GPLv2+. Read more about the license terms here.
+
+The GPLv2+ license was chosen to provide the best compatibility with existing GPL licensed open source projects.
+
+=== What is the difference between a license key and the API key?
+
+The API key is used when loading TinyMCE from the Tiny Cloud. The license key is used to declare the license terms when self-hosting TinyMCE.
+
+=== Who needs to get a license key?
+
+Anyone who intends to self-host TinyMCE will need to provide a valid commercial license key or declare their intention to use TinyMCE under the GPLv2+ license.
+
+=== How will I know if this change affects me?
+
+If TinyMCE detects that the 'license_key' configuration is missing or invalid, it will display a console log warning. If you have actively suppressed or hidden this message, please remove those overrides. If no notification appears, you are not affected.
+
+=== Should I be using both an API key and a license key?
+
+No, an API key and a license key should not be used simultaneously. The API key should only be used if TinyMCE is loaded from the Tiny Cloud. If TinyMCE is being self-hosted, the license key option should be used instead.
+
+=== Will TinyMCE “phone home” to check the license key?
+
+No. TinyMCE does not contact any server to validate the license key.
+
+=== What happens if I don't provide a valid license key?
+
+The console log message or notification will persist until a valid license key or 'gpl' is provided. 
+
+=== Why is a license key required?
+
+The 'license_key' ensures compliance with TinyMCE licensing terms. It's part of our efforts to refine the license key system and may have additional functionalities in the future.
+
+=== How can I get further assistance?
+
+For any licensing or technical support questions, feel free to contact our link:{supporturl}[support team].

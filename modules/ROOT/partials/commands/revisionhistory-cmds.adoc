@@ -2,11 +2,11 @@
 |===
 |Command         |Description
 
-|mceRevisionHistory   |Toggle the Revision History view
+|revisionHistory   |Toggle the Revision History view
 |===
 
 .Examples
 [source,js]
 ----
-tinymce.activeEditor.execCommand('mceRevisionHistory');
+tinymce.activeEditor.execCommand('revisionHistory');
 ----

@@ -57,7 +57,7 @@ The data returned by `revisionhistory_fetch` requires the following fields for t
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-	plugins: 'revisionhistory',
+  plugins: 'revisionhistory',
   toolbar: 'revisionhistory',
   revisionhistory_fetch: () =>
     fetch('<API URL>')

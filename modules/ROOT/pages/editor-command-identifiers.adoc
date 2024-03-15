@@ -212,10 +212,8 @@ include::partial$commands/core-table-cmds.adoc[]
 
 Commands are available for the following plugins:
 
-* xref:advancedcode[Advanced Code]
 * xref:advancedlists[Advanced Lists]
 * xref:Enhanced Tables[Enhanced Tables]
-* xref:advancedtables[Advanced Tables]
 * xref:anchor[Anchor]
 * xref:autoresize[Autoresize]
 * xref:casechange[Case Change]
@@ -224,6 +222,7 @@ Commands are available for the following plugins:
 * xref:codesample[Code Sample]
 * xref:comments[Comments]
 * xref:directionality[Directionality]
+* xref:enhancedcodeeditor[Enhanced Code Editor]
 * xref:emoticons[Emoticons]
 * xref:footnotes[Footnotes]
 * xref:formatpainter[Format Painter]
@@ -250,12 +249,6 @@ Commands are available for the following plugins:
 * xref:visualcharacters[Visual Characters]
 * xref:wordcount[Word Count]
 
-[[advancedcode]]
-==== Advanced Code
-
-The following command requires the xref:advcode.adoc[Advanced Code (`+advcode+`)] plugin.
-
-include::partial$commands/code-cmds.adoc[leveloffset=+3]
 
 
 [[advancedlists]]
@@ -327,6 +320,13 @@ include::partial$commands/comments-cmds.adoc[leveloffset=+3]
 The following commands require the xref:directionality.adoc[Directionality (`+directionality+`)] plugin.
 
 include::partial$commands/directionality-cmds.adoc[leveloffset=+3]
+
+[[enhancedcodeeditor]]
+==== Enhanced Code Editor
+
+The following command requires the xref:advcode.adoc[Enhanced Code Editor (`+advcode+`)] plugin.
+
+include::partial$commands/code-cmds.adoc[leveloffset=+3]
 
 [[emoticons]]
 ==== Emoticons

@@ -3,3 +3,74 @@
 :keywords: changelog
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
+
+== 7.0.0 - 2024-03-20
+
+[NOTE]
+{productname} 7.0 is licensed under GPL Version 2 or later. This version introduces a new `license_key`  configuration setting that gives self-hosted users the ability to select a usage under the GPL or to authenticate their paid license with Tiny. 
+
+=== Added
+* Added new license_key option that can be set to gpl or a valid license key.
+* New custom tooltip functionality, tooltip will be shown when hovering with a mouse or with keyboard focus.
+* New `sandbox_iframes_exclusions` option that holds a list of URL host names to be excluded from iframe sandboxing when `sandbox_iframes` is set to true.
+* Added `getAllEmojis` api function to the emoticons plugin.
+* Element preset support for the `valid_children` option and `Schema.addValidChildren` API.
+* A new `trigger` property for block text pattern configurations, allowing pattern activation with either `Space` or `Enter` keys.
+* Added `onFocus` callback for `CustomEditor` dialog component.
+* Added icons for the import from Word, export to Word and export to PDF premium plugins.
+* Added `data` to Schema as a valid element.
+* More advanced schema config for custom elements.
+* Added custom tooltip for `autocompleter`, now visible on both mouse hover and keyboard focus, except single column cases.
+* Added importword, exportpdf and exportword menu items to default file menu.
+
+=== Improved
+* Included keyboard shortcut in custom tooltip for `ToolbarButton` and `ToolbarToggleButton`.
+* Improved showing which element has focus for keyboard navigation.
+* Custom tooltips will now show for items in `collection` which is rendered inside a dialog, on mouse hover and keyboard focus.
+* Autocompleter will now work with IMEs.
+* Make table ghost element better reflect height changes when resizing.
+
+=== Changed
+* TinyMCE is now GPL Version 2 or later licensed.
+* `convert_unsafe_embeds` editor option is now defaulted to `true`.
+* `sandbox_iframes` editor option is now defaulted to `true`.
+* The DOMUtils.isEmpty API function has been modified to consider nodes containing only comments as empty.
+* The `highlight_on_focus` option now defaults to `true`, adding a focus outline to every editor.
+* Delay before the tooltip to show up, from 800ms to 300ms.
+* Now `tox-view__pane` has `position: relative` instead of `static`.
+* Update outbound link for statusbar Tiny logo
+* Remove the height field from the `table` plugin cell dialog. The `table` plugin row dialog now controls the row height by setting the height on the `tr` element, not the `td` elements.
+* Change table height resizing handling to remove heights from `td/th` elements and only apply to `tr` elements.
+* Removed incorrect `aria-placeholder` attribute from editor body when placeholder option is set.
+* The tooltip property for dialog's footer `togglebutton` is now optional.
+* Changed the `media_url_resolver` option to use promises.
+* `Styles` bespoke toolbar button fallback changed to `Formats` if `Paragraph` is not configured in `style_formats` option.
+* Updated deprecation/removed console message.
+
+=== Removed
+* Removed `force_hex_color` option, with the default now being all colors are forced to HEX format and as lower case
+* Removed the deprecated `remove_trailing_brs` option from DomParser.
+* Removed `title` attribute for buttons with visible label.
+* Removed `InsertOrderedList` and `InsertUnorderedList` commands from core.
+* Removed `closeButton` from `NotificationSpec`, close button in notification is now rendered by default.
+* The autocompleter `ch` configuration property has been removed. Use the `trigger` property instead.
+* Removed deprecated `template` plugin.
+
+=== Fixed
+* When deleting the last row in a table, the cursor would jump to the first cell (top left), instead of moving to the next adjacent cell in some cases.
+* Heading formatting would be partially applied to the content within the `summary` element when the caret was positioned between words.
+* Moving focus to the outside of the editor after having clicked a menu would not fire a `blur` event as expected.
+* Autocomplete would sometimes cause corrupt data when starting during text composition.
+* Inline mode with persisted toolbar would show regardless of the skin being loaded, causing css issues.
+* Table classes couldn't be removed via setting an empty value in `table_class_list`. Also fixed being forced to pick the first class option.
+* Directly right clicking on a ol's li in FireFox didn't enable the button `List Properties...` in the context menu.
+* The `link_default_target` option wasn't considered when inserting a link via `quicklink` toolbar.
+* When inline editor toolbar wrapped to multiple lines the top wasn't always calculated correctly.
+* Removed manually dispatching `dragend` event on drop in Firefox.
+* Slovenian help dialog content had a dot in the wrong place.
+* Pressing Backspace at the start of an empty `summary` element within a details element nested in a list item no longer removes the `summary` element.
+* The toolbar width was miscalculated for the inline editor positioned inside a scrollable container.
+* Fixed incorrect object processor for `event_root` option.
+* Adding newline after using `selection.setContent` to insert a block element would throw an unhandled exception.
+* Floating toolbar buttons in inline editor incorrectly wrapped into multiple rows on window resizing or zooming.
+* When setting table border width and `table_style_by_css` is true, only the border attribute is set to 0 and border-width styling is no longer used.

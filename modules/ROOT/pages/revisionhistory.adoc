@@ -23,16 +23,19 @@ include::partial$misc/admon-iframe-only.adoc[]
 
 The {pluginname} view is opened when clicking on the `revisionhistory` toolbar or menu button which locates under `View` menu.
 
-The view consists of these main UI components:
+The view has the followings:
 
 * In the toolbar header, there are `Restore this version` and `Close` buttons.
 ** Clicking `Restore this version` will set the editor's content to the selected version and close the view.
 ** Pressing `Close` button will exit the view.
-* The readonly versions comparison shows the changes between the selected version and the closest one, which is below the selected version. The changes are highlighted for easy recognition of the types of change being applied:
+* The readonly diff view shows the changes between the selected version and the closest one, which is below the selected version. The changes are highlighted for easy recognition. The colors indicate the types of change as follow:
 ** Red: Removed content
 ** Green: New content
 ** Yellow: Content being modified. Modifications to HTML content implies attribute or format changes (bold, italic, etc)
-* The revisions sidebar renders the available versions for a document. When a new version is selected, the versions comparison is updated accordingly.
+* The revisions sidebar renders the available versions for a document. When a new version is selected, the diff view is updated accordingly.
+
+[NOTE]
+The default highlighting colors can be customized using xref:revisionhistory_css_url[`+revisionhistory_css_url+`] option
 
 [NOTE]
 The {pluginname} plugin interprets commented HTML as valid content, yet it disregards this content during the version comparison process. Consequently, a version containing solely commented content appears as empty in the user interface displaying the differential content.
@@ -96,7 +99,7 @@ The below table summaries how the initial and current versions are handled in th
 
 * For the listed content below, the {pluginname} might not be able to render them as how they are rendered in the editor and the diffing might not correctly reflects the changes on them:
 ** Annotated content or content whose visual representation is provided by a plugin, such as comments or page breaks.
-** Custom content if its visual representation can be adjusted using CSS, integrators can address this by providing styling via the xref:revisionhistory_css_url.adoc[`+revisionhistory_css_url+`] option.
+** Custom content if its visual representation can be adjusted using CSS, integrators can address this by providing styling via the xref:revisionhistory_css_url[`+revisionhistory_css_url+`] option.
 * Code within code blocks may not be accurately differentiated, excluding changes in newlines.
 
 2. There is no integration for saving a version yet. For now, a workaround is to add a custom toolbar button. For example:

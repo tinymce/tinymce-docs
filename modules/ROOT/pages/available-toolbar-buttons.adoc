@@ -36,7 +36,7 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 :plugincategory: premium
-:pluginname: Advanced Code Editor
+:pluginname: Enhanced Code Editor
 :plugincode: advcode
 :altplugincode: code
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
@@ -45,12 +45,6 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 :plugincategory: premium
 :pluginname: Enhanced Tables
 :plugincode: advtable
-include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
-
-:plugincategory: premium
-:pluginname: Advanced Templates
-:plugincode: advtemplate
-:pluginpage: advanced-templates.adoc
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 :plugincategory: premium
@@ -113,11 +107,6 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 :plugincode: directionality
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-:plugincategory: premium
-:pluginname: Enhanced Image Editing
-:plugincode: editimage
-include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
-
 :plugincategory: opensource
 :pluginname: Emoticons
 :plugincode: emoticons
@@ -151,6 +140,11 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 :plugincategory: opensource
 :pluginname: Image
 :plugincode: image
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: premium
+:pluginname: Image Editing
+:plugincode: editimage
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 :plugincategory: opensource
@@ -228,6 +222,12 @@ include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 :plugincategory: opensource
 :pluginname: Table
 :plugincode: table
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+:plugincategory: premium
+:pluginname: Templates
+:plugincode: advtemplate
+:pluginpage: advanced-templates.adoc
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 :plugincategory: premium

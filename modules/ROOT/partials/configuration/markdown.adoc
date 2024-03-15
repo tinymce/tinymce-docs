@@ -1,0 +1,38 @@
+[[markdown_symbols]]
+== `markdown_symbols` option
+
+The `markdown_symbols` option allows you to define `key/value` pairs where the `key` represents a symbol in your content and the `value` represents the replacement for that symbol.
+
+*Type:* `+Object+`
+
+*Default value:* The `+markdown_symbols+` object accepts the following key-value pairs by default currently:
+
+[source, js]
+----
+{
+  C: '©',
+  TM: '™',
+  R: '®'
+}
+----
+
+=== Example: using `markdown_symbols`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'markdown',
+  markdown_symbols: {
+    C: '©',
+    TM: '™',
+    R: '®'
+  }
+});
+----
+
+[NOTE]
+Additionally, if the **Emoticons** plugin is enabled and properly set up, emojis surrounded by colons (:) will also be replaced. This feature allows for a broader range of replacements, including emojis represented by image files. For example, `:smile:` will be translated to the corresponding emoji, if configured.
+
+[NOTE]
+In {pluginname} content, it's important to enclose key symbols like `+"C"+` within parentheses, as in `+"(C)"+`, to ensure proper conversion; note that they are **case-sensitive**, so `+"(c)"+` _will not be transformed_.

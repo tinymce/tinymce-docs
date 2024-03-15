@@ -112,7 +112,7 @@ const headers = {
   } 
 
   tinymce.init({
-    selector: "textarea#advanced-template",
+    selector: "textarea#template",
       plugins: [
           "advlist", "anchor", "autolink", "charmap", "code", "fullscreen", 
           "help", "image", "insertdatetime", "link", "lists", "media", 

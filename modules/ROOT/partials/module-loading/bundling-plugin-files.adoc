@@ -4,17 +4,21 @@ include::partial$module-loading/bundling-plugins-that-cant-bundle.adoc[]
 
 * xref:premium-plugins[Premium plugins]
 ** xref:accessibility-checker[Accessibility Checker (a11ychecker)]
+** xref:case-change[Case Change (casechange)]
+** xref:checklist[Checklist (checklist)]
+** xref:comments[Comments (tinycomments)]
+** xref:advanced-code[Enhanced Code Editor (advcode)]
 ** xref:advanced-code[Advanced Code (advcode)]
 ** xref:advanced-tables[Enhanced Tables (advtable)]
 ** xref:case-change[Case Change (casechange)]
 ** xref:checklist[Checklist (checklist)]
 ** xref:comments[Comments (tinycomments)]
-** xref:enhanced-image-editing[Enhanced Image Editing (editimage)]
 ** xref:enhanced-media-embed[Enhanced Media Embed (mediaembed)]
 ** xref:exportword[Export to Word (exportword)]
 ** xref:footnotes[Footnotes (footnotes)]
 ** xref:format-painter[Format Painter (formatpainter)]
 ** xref:link-checker[Link Checker (linkchecker)]
+** xref:markdown[Markdown (markdown)]
 ** xref:mentions[Mentions (mentions)]
 ** xref:mergetags[Merge Tags]
 ** xref:page-embed[Page Embed (pageembed)]
@@ -37,6 +41,7 @@ include::partial$module-loading/bundling-plugins-that-cant-bundle.adoc[]
 ** xref:full-screen[Full Screen (fullscreen)]
 ** xref:help[Help (help)]
 ** xref:image[Image (image)]
+** xref:image-editing[Image Editing (editimage)]
 ** xref:import-css[Import CSS (importcss)]
 ** xref:insert-datetime[Insert Date/Time (insertdatetime)]
 ** xref:link[Link (link)]
@@ -63,10 +68,6 @@ include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
 include::partial$plugin-files/plugin-file-list-a11ychecker.adoc[]
 
-[[advanced-code]]
-=== Advanced Code (`+advcode+`)
-
-include::partial$plugin-files/plugin-file-list-advcode.adoc[]
 
 [[advanced-tables]]
 === Enhanced Tables (`+advtable+`)
@@ -92,12 +93,10 @@ include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 
 include::partial$plugin-files/plugin-file-list-tinycomments.adoc[]
 
-[[enhanced-image-editing]]
-=== Enhanced Image Editing (`+editimage+`)
+[[enhanced-code-editor]]
+=== Enhanced Code Editor (`+advcode+`)
 
-include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
-
-include::partial$plugin-files/plugin-file-list-editimage.adoc[]
+include::partial$plugin-files/plugin-file-list-advcode.adoc[]
 
 [[enhanced-media-embed]]
 === Enhanced Media Embed (`+mediaembed+`)
@@ -123,10 +122,22 @@ include::partial$plugin-files/plugin-file-list-footnotes.adoc[]
 
 include::partial$plugin-files/plugin-file-list-formatpainter.adoc[]
 
+[[image-editing]]
+=== Image Editing (`+editimage+`)
+
+include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
+
+include::partial$plugin-files/plugin-file-list-editimage.adoc[]
+
 [[link-checker]]
 === Link Checker (`+linkchecker+`)
 
 include::partial$plugin-files/plugin-file-list-linkchecker.adoc[]
+
+[[markdown]]
+=== Markdown (`+markdown+`)
+
+include::partial$plugin-files/plugin-file-list-markdown.adoc[]
 
 [[mentions]]
 === Mentions (`+mentions+`)

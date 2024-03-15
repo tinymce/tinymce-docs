@@ -212,10 +212,8 @@ include::partial$commands/core-table-cmds.adoc[]
 
 Commands are available for the following plugins:
 
-* xref:advancedcode[Advanced Code]
 * xref:advancedlists[Advanced Lists]
 * xref:Enhanced Tables[Enhanced Tables]
-* xref:advancedtables[Advanced Tables]
 * xref:anchor[Anchor]
 * xref:autoresize[Autoresize]
 * xref:casechange[Case Change]
@@ -224,7 +222,7 @@ Commands are available for the following plugins:
 * xref:codesample[Code Sample]
 * xref:comments[Comments]
 * xref:directionality[Directionality]
-* xref:editimage[Enhanced Image Editing]
+* xref:enhancedcodeeditor[Enhanced Code Editor]
 * xref:emoticons[Emoticons]
 * xref:exportword[Export to Word]
 * xref:footnotes[Footnotes]
@@ -232,6 +230,7 @@ Commands are available for the following plugins:
 * xref:fullscreen[Full Screen]
 * xref:help[Help]
 * xref:image[Image]
+* xref:editimage[Image Editing]
 * xref:insertdatetime[Insert Date/Time]
 * xref:link[Link]
 * xref:lists[Lists]
@@ -251,12 +250,6 @@ Commands are available for the following plugins:
 * xref:visualcharacters[Visual Characters]
 * xref:wordcount[Word Count]
 
-[[advancedcode]]
-==== Advanced Code
-
-The following command requires the xref:advcode.adoc[Advanced Code (`+advcode+`)] plugin.
-
-include::partial$commands/code-cmds.adoc[leveloffset=+3]
 
 
 [[advancedlists]]
@@ -329,13 +322,12 @@ The following commands require the xref:directionality.adoc[Directionality (`+di
 
 include::partial$commands/directionality-cmds.adoc[leveloffset=+3]
 
+[[enhancedcodeeditor]]
+==== Enhanced Code Editor
 
-[[editimage]]
-==== Enhanced Image Editing
+The following command requires the xref:advcode.adoc[Enhanced Code Editor (`+advcode+`)] plugin.
 
-The following commands require the xref:editimage.adoc[Enhanced Image Editing (`+editimage+`)] plugin.
-
-include::partial$commands/editimage-cmds.adoc[leveloffset=+3]
+include::partial$commands/code-cmds.adoc[leveloffset=+3]
 
 [[emoticons]]
 ==== Emoticons
@@ -385,6 +377,13 @@ include::partial$commands/help-cmds.adoc[leveloffset=+3]
 The following command requires the xref:image.adoc[Image (`+image+`)] plugin.
 
 include::partial$commands/image-cmds.adoc[leveloffset=+3]
+
+[[editimage]]
+==== Image Editing
+
+The following commands require the xref:editimage.adoc[Image Editing (`+editimage+`)] plugin.
+
+include::partial$commands/editimage-cmds.adoc[leveloffset=+3]
 
 [[insertdatetime]]
 ==== Insert Date/Time

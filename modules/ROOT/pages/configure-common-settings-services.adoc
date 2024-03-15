@@ -44,7 +44,7 @@ ephox {
 [[http]]
 == `+http+` (optional)
 
-Some server-side components make outbound HTTP and HTTPS connections. These include Link Checker, Enhanced Image Editing and Enhanced Media Embed. In an evaluation or pre-production environment, you might want to test these features against resources with untrusted SSL certificates such as in-house servers with self-signed SSL certificates. In these circumstances, it is possible to bypass all SSL security.
+Some server-side components make outbound HTTP and HTTPS connections. These include Link Checker, Image Editing and Enhanced Media Embed. In an evaluation or pre-production environment, you might want to test these features against resources with untrusted SSL certificates such as in-house servers with self-signed SSL certificates. In these circumstances, it is possible to bypass all SSL security.
 
 This is not recommended for production environments.
 

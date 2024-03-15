@@ -111,11 +111,10 @@ tinymce.init({
   https://www.tiny.cloud/docs/tinymce/6/mentions/.
   */
   mentions_selector: '.mymention',
-  // These mentions functions should be implemented by you.
-  mentions_fetch: mentions_fetch,
-  mentions_menu_hover: mentions_menu_hover,
-  mentions_menu_complete: mentions_menu_complete,
-  mentions_select: mentions_select,
+  mentions_fetch: mentions_fetch, // TODO: Implement mentions_fetch
+  mentions_menu_hover: mentions_menu_hover, // TODO: Implement mentions_menu_hover
+  mentions_menu_complete: mentions_menu_complete, // TODO: Implement mentions_menu_complete
+  mentions_select: mentions_select, // TODO: Implement mentions_select
   mentions_item_type: 'profile',
   autocorrect_capitalize: true,
   mergetags_list: [
@@ -150,5 +149,13 @@ tinymce.init({
       title: 'Salutation'
     }
   ],
-  revisionhistory_fetch: fetch_revisions, // This function should be implemented by you.
+  revisionhistory_fetch: () => { // Implement the fetch function for the revision history plugin
+    return Promise.resolve([
+      {
+        revisionId: '1',
+        createdAt: '2023-11-24T22:26:21.578Z',
+        content: '<p>Initial content</p>'
+      },
+    ]);
+  }
 });

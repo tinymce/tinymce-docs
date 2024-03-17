@@ -32,5 +32,6 @@ tinymce.init({
     removal: 'removed',
     modification: 'modified'
   },
+  revisionhistory_fetch: () => Promise.resolve([])
 });
 ----

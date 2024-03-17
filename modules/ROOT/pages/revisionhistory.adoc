@@ -94,51 +94,6 @@ The below table summaries how the initial and current versions are handled in th
 [NOTE]
 `Different current version` implies whether the current version is different than the initial version. When the editor is initialized with content, the two versions are the same.
 
-== Limitations
-
-1. There are several known limitations when it comes to the plugin's content diffing capability.
-
-* For the listed content below, the {pluginname} might not be able to render them as how they are rendered in the editor and the diffing might not correctly reflects the changes on them:
-** Annotated content or content whose visual representation is provided by a plugin, such as comments or page breaks.
-** Custom content if its visual representation can be adjusted using CSS, integrators can address this by providing styling via the xref:revisionhistory_css_url[`+revisionhistory_css_url+`] option.
-* Code within code blocks may not be accurately differentiated, excluding changes in newlines.
-
-2. There is no integration for saving a version yet. For now, a workaround is to add a custom toolbar button. For example:
-
-[source,js]
-----
-const revisions = [];
-
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'revisionhistory',
-  toolbar: 'revisionhistory saveversion',
-  setup: (editor) => {
-    // Save the current content of the editor as a new version
-    editor.ui.registry.addButton('saveversion', {
-      text: 'Save a version',
-      onAction: () => {
-        // Change this according to your setup
-        const revision = {
-          content: editor.getContent({ format: 'raw' }),
-          revisionId: (revisions.length + 1).toString(),
-          createdAt: new Date().toISOString()
-        };
-        revisions.unshift(revision);
-      }
-    });
-  },
-  revisionhistory_fetch: () => Promise.resolve(revisions)
-});
-----
-
-
-== Known issues
-
-This section describes issues that users of {productname} may encounter:
-
-* `table` elements with `colgroup` are highlighted as new even though there is no change.
-
 == Options
 
 The following configuration options affect the behavior of the {pluginname} plugin.

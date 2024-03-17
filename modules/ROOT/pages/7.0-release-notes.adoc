@@ -795,6 +795,39 @@ This section describes issues that users of {productname} <x.y[.z]> may encounte
 
 There <is one | are <number> known issue<s> in {productname} <x.y[.z]>.
 
+=== Revision history
+
+* Code within code blocks may not be accurately differentiated, excluding changes in newlines.
+* `table` elements with `colgroup` are highlighted as new even though there is no change.
+* There is no integration for saving a version yet. For now, a workaround is to add a custom toolbar button. For example:
+
+[source,js]
+----
+const revisions = [];
+
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'revisionhistory',
+  toolbar: 'revisionhistory saveversion',
+  setup: (editor) => {
+    // Save the current content of the editor as a new version
+    editor.ui.registry.addButton('saveversion', {
+      text: 'Save a version',
+      onAction: () => {
+        // Change this according to your setup
+        const revision = {
+          content: editor.getContent({ format: 'raw' }),
+          revisionId: (revisions.length + 1).toString(),
+          createdAt: new Date().toISOString()
+        };
+        revisions.unshift(revision);
+      }
+    });
+  },
+  revisionhistory_fetch: () => Promise.resolve(revisions)
+});
+----
+
 === <TINY-vwxyz 1 changelog entry>
 //#TINY-vwxyz1
 

@@ -21,18 +21,19 @@ include::partial$misc/admon-iframe-only.adoc[]
 
 == How it works
 
-The {pluginname} view is opened when clicking on the `revisionhistory` toolbar button or menu button which locates under `View` menu.
+The {pluginname} view is accessible via either the `revisionhistory` toolbar button or menu button within the `View` menu.
 
-The view has the following:
+The key components are:
 
-* In the toolbar header, there are `Restore this version` and `Close` buttons.
-** Clicking `Restore this version` will set the editor's content to the selected version and close the view.
-** Pressing `Close` button will exit the view.
-* The readonly diff view shows the changes between the selected version and the closest one, which is below the selected version. The changes are highlighted for easy recognition. The colors indicate the types of change as follow:
-** Red: Removed content
-** Green: New content
-** Yellow: Content being modified. Modifications to HTML content implies attribute or format changes (bold, italic, etc)
-* The revisions sidebar renders the available versions for a document. When a new version is selected, the diff view is updated accordingly.
+1. In the toolbar header, there are two buttons.
+* `Restore this version`: Set the selected version's content to the editor and close the view.
+* `Close`: Exit the view.
+
+2. The readonly diff view presents the changes between the selected version and its immediate predecessor, clearly highlighting for easy recognition. The changes are also color-coded for clarity:
+* Red: Removed content
+* Green: New content
+* Yellow: Content being modified. Modifications to HTML content implies attribute or format changes (bold, italic, etc)
+3. The revisions sidebar displays all available document versions. When a new version is selected, the diff view is updated accordingly.
 
 [NOTE]
 The default highlighting colors can be customized using the xref:revisionhistory_css_url[`+revisionhistory_css_url+`] option.
@@ -91,7 +92,7 @@ The below table summaries how the initial and current versions are handled in th
 |===
 
 [NOTE]
-`Different current version` implies whether the current version is different than the initial version. When the editor is loaded with content, the two versions are the same.
+`Different current version` implies whether the current version is different than the initial version. When the editor is initialized with content, the two versions are the same.
 
 == Limitations
 

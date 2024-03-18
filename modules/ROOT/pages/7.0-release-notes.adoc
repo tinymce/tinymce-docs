@@ -518,7 +518,9 @@ As of {productname} 7.0, the tooltip property is now optional for `DialogFooterT
 === Changed the `media_url_resolver` option to use promises.
 // #TINY-9154
 
-// TODO
+In {productname} 7.0, the `media_url_resolver` has been refactored to use promises instead of callbacks. This change brings standardization to the code base and improves error handling.
+
+// TODO: demo to show the function changing from `(data, resolve, reject) => void` to `(data) => Promise<result>`
 
 === Accurate default options in the `styles` bespoke select toolbar button
 // #TINY-10603

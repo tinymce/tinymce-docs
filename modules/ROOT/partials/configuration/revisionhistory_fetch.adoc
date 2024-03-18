@@ -60,8 +60,9 @@ tinymce.init({
   plugins: 'revisionhistory',
   toolbar: 'revisionhistory',
   revisionhistory_fetch: () =>
-    fetch('<API URL>')
+    fetch('<API URL>')  // Update the URL and response handling code according to your API
     .then((response) => response.json())
+    .then((data) => data)
     .catch((error) => console.log('Failed to get versions\n' + error))
 });
 ----

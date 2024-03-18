@@ -240,9 +240,105 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} 7.0 also includes the following improvements:
 
+=== Shortcut included in tooltips for basic and toggle toolbar buttons
+// #TINY-10487
+
+Previously, basic and toggle toolbar buttons lacked keyboard shortcut information in the native browser tooltip. This could leave users unaware of available shortcuts and, therefore unable to use them.
+
+To address this, {productname} 7.0, introduces custom tooltips for these buttons. These tooltips now clearly display the keyboard shortcut alongside the button's description as follows:
+
+* Default buttons: This includes commonly used functions like `bold`, `italic`, `underline`, `selectall`, `redo`, `undo`, heading levels (`h1-h6`), `help`, `link`, `save`, `searchreplace`, and `fullscreen`.
+* Custom buttons: Any custom toolbar button registered with a keyboard shortcut will also display the shortcut in its tooltip.
+
+See the xref:custom-basic-toolbar-button.adoc[Basic toolbar button], xref:custom-toggle-toolbar-button.adoc[Toggle toolbar button] and xref:shortcuts.adoc[Keyboard Shortcuts] documentation for more information.
+
+=== Added custom tooltip for dialog collection items, now visible on both mouse hover and keyboard focus.
+// #TINY-9637
+
+Previously, collection items set in a xref:dialog-components.adoc#collection[collection dialog component] would not display a tooltip on keyboard focus.
+
+This means that keyboard-only users were not able to see the tooltip, as it was only shown on mouse hover.
+
+In {productname} 7.0, dialog collection items with `data-mce-tooltip` attribute, such as those used in xref:emoticons.adoc[Emoticons] and xref:charmap.adoc[Charmap] plugins, now display relevant tooltips on both mouse hover and keyboard focus. This ensures all users, including those relying solely on keyboard navigation, can access helpful information about these items.
+
+=== Make table ghost element better reflect height changes when resizing.
+// #TINY-10658
+
+Previously, the table ghost element did not accurately reflect changes in table height when resized using the corner resize handles.
+
+In {productname} 7.0, this problem has been addressed.
+
+As a result, the table ghost element now accurately mirrors adjustments in table height when resized using the corner resize handles.
+
+=== Autocompleter did not work when attempting to insert a `mention` or `emoji` when using an `IME`.
+// #TINY-10637
+
+Previously when attempting to insert a **mention** or **emoji** using an `IME` on Android and using Korean, users encountered an obstacle where it wasn't possible to complete the insertion.
+
+{productname} 7.0 addresses this issue, by rewriting the handler for `autocompleter`, ensuring that it no longer interferes with the DOM during composition with an IME.
+
+As a result, users can now insert **mentions** and **emojis** using the `autocompleter`.
+
+For information on the **Autocompleter** plugin, see: xref:autocompleter.adoc[Autocompleter].
+
+=== Improved accessibility for interactive elements with custom tooltips
+// #TINY-10453
+
+In previous versions of {productname}, buttons without visible labels displayed browser native tooltips which only shows on mouse hover, not keyboard focus. This meant keyboard-only users couldn't access these tooltips, hindering their understanding of button functionality.
+
+To address this, {productname} 7.0 introduces custom tooltips for various elements:
+
+* Toolbar buttons
+* Resize handle
+* Buttons in a dialog
+* Buttons in a view container
+
+These custom tooltips appear on both mouse hover and keyboard focus, ensuring all users, including those relying solely on keyboard navigation, can access essential information about interactive elements.
+
+[NOTE]
+Interactive elements with visible labels do not display custom tooltips, and the browser native tooltips have been removed, as the visible label provides sufficient information.
+
+[TIP]
+The `max-width` of the tooltips is set to `15em`, to overwrite the default `max-width` of the tooltips, update the `@tooltip-max-width` variable in your custom skin.
+
+=== Added tooltips to `Click for more info` button in the accessibility checker dialog.
+// #TINY-9641
+
+The absence of a tooltip on the "Click for more info" button within the `accessibility` dialog rendered it inaccessible for keyboard-only users, affecting their ability to fully engage with the functionality.
+
+{productname} 7.0 addresses this issue, by adding the tooltip to the button, ensuring its visibility both on mouse hover and keyboard focus.
+
+=== Improved Custom Elements
+// #TINY-9980 / #TINY-9979
+
+{productname} 7.0 introduces enhancements to the existing xref:content-filtering.adoc#custom_elements[custom_elements] option and xref:apis/tinymce.html.schema.adoc#addCustomElements[addCustomElements] API. This update allows the structure of custom elements to be refined, offering users more flexibility and customization options.
+
+Key Improvements:
+
+* **New Custom Element Structure:** The custom_elements option and `addCustomElements` API now support a more complex structure. Each element is defined by a key-value pair, allowing for detailed specifications.
+* **Attributes and Inheritance:** Elements can inherit attributes and children from other specified elements using the extends property in the Custom Element Spec.
+* **Attribute and Children Specifications:** The Custom Element Spec includes properties such as attributes and children, enabling precise customization of element behavior.
+
+For more information and details for `addCustomElements` see xref:content-filtering.adoc#custom_elements[custom_elements].
+
+=== Improved support of `data` elements
+// #TINY-10611
+
+Previously, when inserting a `data` element within the editor, the `data` element would be removed.
+
+In {productname} 7.0, this problem has been addressed.
+
+As a result, the `data` elements are recognized as valid elements within the editor, ensuring they are properly retained along with their value attributes.
+
+
+[[additions]]
+== Additions
+
+{productname} 7.0 also includes the following addition:
+
 [[a-new-trigger-property-for-block-text-pattern-configurations-allowing-pattern-activation-with-either-space-or-enter-keys]]
 === A new `trigger` property for block text pattern configurations, allowing pattern activation with either Space or Enter keys
-//#TINY-10324
+// #TINY-10324
 
 This release introduces a new `trigger` property for block text pattern configurations, allowing pattern activation with either `Space` or `Enter` keys.
 
@@ -315,26 +411,6 @@ The `trigger` property is exclusively applicable to the configuration of block t
 
 For information on the **text_patterns**, see xref:content-behavior-options.adoc#text_patterns[Text Patterns]
 
-=== Improved accessibility for interactive elements with custom tooltips
-// #TINY-10453
-
-In previous versions of {productname}, buttons without visible labels displayed browser native tooltips which only shows on mouse hover, not keyboard focus. This meant keyboard-only users couldn't access these tooltips, hindering their understanding of button functionality.
-
-To address this, {productname} 7.0 introduces custom tooltips for various elements:
-
-* Toolbar buttons
-* Resize handle
-* Buttons in a dialog
-* Buttons in a view container
-
-These custom tooltips appear on both mouse hover and keyboard focus, ensuring all users, including those relying solely on keyboard navigation, can access essential information about interactive elements.
-
-[NOTE]
-Interactive elements with visible labels do not display custom tooltips, and the browser native tooltips have been removed, as the visible label provides sufficient information.
-
-[TIP]
-The `max-width` of the tooltips is set to `15em`, to overwrite the default `max-width` of the tooltips, update the `@tooltip-max-width` variable in your custom skin.
-
 === Added custom tooltip for `autocompleter`, now visible on both mouse hover and keyboard focus, except single column cases.
 // #TINY-9638
 
@@ -349,105 +425,8 @@ Now, tooltips are now shown on `autocompleter` items both on mouse over and keyb
 [NOTE]
 The tooltip will only be displayed when the `autocompleter` columns are set to a value greater than `1`. This is because when there is a visible label, the tooltip functionality is not needed and therefore omitted.
 
-=== Added custom tooltip for dialog collection items, now visible on both mouse hover and keyboard focus.
-//#TINY-9637
-
-Previously, collection items set in a xref:dialog-components.adoc#collection[collection dialog component] would not display a tooltip on keyboard focus.
-
-This means that keyboard-only users were not able to see the tooltip, as it was only shown on mouse hover.
-
-In {productname} 7.0, dialog collection items with `data-mce-tooltip` attribute, such as those used in xref:emoticons.adoc[Emoticons] and xref:charmap.adoc[Charmap] plugins, now display relevant tooltips on both mouse hover and keyboard focus. This ensures all users, including those relying solely on keyboard navigation, can access helpful information about these items.
-
-=== Shortcut included in tooltips for basic and toggle toolbar buttons
-// #TINY-10487
-
-Previously, basic and toggle toolbar buttons lacked keyboard shortcut information in the native browser tooltip. This could leave users unaware of available shortcuts and, therefore unable to use them.
-
-To address this, {productname} 7.0, introduces custom tooltips for these buttons. These tooltips now clearly display the keyboard shortcut alongside the button's description as follows:
-
-* Default buttons: This includes commonly used functions like `bold`, `italic`, `underline`, `selectall`, `redo`, `undo`, heading levels (`h1-h6`), `help`, `link`, `save`, `searchreplace`, and `fullscreen`.
-* Custom buttons: Any custom toolbar button registered with a keyboard shortcut will also display the shortcut in its tooltip.
-
-See the xref:custom-basic-toolbar-button.adoc[Basic toolbar button], xref:custom-toggle-toolbar-button.adoc[Toggle toolbar button] and xref:shortcuts.adoc[Keyboard Shortcuts] documentation for more information.
-
-=== Added tooltips to `Click for more info` button in the accessibility checker dialog.
-//# TINY-9641
-
-The absence of a tooltip on the "Click for more info" button within the `accessibility` dialog rendered it inaccessible for keyboard-only users, affecting their ability to fully engage with the functionality.
-
-{productname} 7.0 addresses this issue, by adding the tooltip to the button, ensuring its visibility both on mouse hover and keyboard focus.
-
-=== The `highlight_on_focus` option now defaults to true, adding a focus outline to every editor.
-//#TINY-10574
-
-In {productname} 6.4, the option `highlight_on_focus` was introduced, that provides a blue outline to an instantiated {productname} editor when the editor is in `focus`.
-
-As of {productname} 7.0, the `default` value of this has now been set to `true`.
-
-For more information about `highlight_on_focus` see the xref:accessibility.adoc#highlight_on_focus[highlight_on_focus] option.
-
-[NOTE]
-Any editors using this `highlight_on_focus: true` option, can remove this option from their {productname} init configuration when upgrading to {productname} 7.0.
-
-=== Improved Custom Elements
-// #TINY-9980 / TINY-9979
-
-{productname} 7.0 introduces enhancements to the existing xref:content-filtering.adoc#custom_elements[custom_elements] option and xref:apis/tinymce.html.schema.adoc#addCustomElements[addCustomElements] API. This update allows the structure of custom elements to be refined, offering users more flexibility and customization options.
-
-Key Improvements:
-
-* **New Custom Element Structure:** The custom_elements option and `addCustomElements` API now support a more complex structure. Each element is defined by a key-value pair, allowing for detailed specifications.
-* **Attributes and Inheritance:** Elements can inherit attributes and children from other specified elements using the extends property in the Custom Element Spec.
-* **Attribute and Children Specifications:** The Custom Element Spec includes properties such as attributes and children, enabling precise customization of element behavior.
-
-For more information and details for `addCustomElements` see xref:content-filtering.adoc#custom_elements[custom_elements].
-
-=== Optional Tooltip for Dialog Footer Toggle Buttons
-//#TINY-10672
-
-Previously, the `DialogFooterToggleButton` component required a tooltip property. This meant including a tooltip for all toggle buttons displayed in dialog footers, even if the information wasn't necessary.
-
-As of {productname} 7.0, the tooltip property is now optional for `DialogFooterToggleButton`. This flexibility allows developers to omit the tooltip for buttons where it's not required, providing a cleaner and more focused user experience.
-
-=== Change table height resizing handling to remove heights from `td`/`th` elements and only apply to `tr` elements.
-//# TINY-10589
-
-When resizing a table using either the row resize bars or corner resize handles, any existing `height` styles are removed from the `td`/`th` elements and only apply to `tr` elements and `table` element. Additionally, the heights calculated and applied for the `tr` elements and `table` element more accurately represent the actual visual height in the editor.
-
-As part of the changes to table height resizing handling, resizing via the corner resize handles is more consistent. If the table *does not* have any height styles and the table is resized using one of the corner resize handles, each row has its height increased evenly. If the table *does have* existing height styles, corner resizes will only change the height of the first row (if using top corner handles) or last row  (if using bottom corner handles) equivalent to `table_column_resizing: 'resizetable'` option for columns xref:table-options.adoc#table_column_resizing[Table options: table_column_resizing]
-
-=== Make table ghost element better reflect height changes when resizing.
-//# TINY-10658
-
-Previously, the table ghost element did not accurately reflect changes in table height when resized using the corner resize handles.
-
-In {productname} 7.0, this problem has been addressed.
-
-As a result, the table ghost element now accurately mirrors adjustments in table height when resized using the corner resize handles.
-
-=== Accurate default options in the `styles` bespoke select toolbar button
-//# TINY-10603
-
-Previously, the bespoke `styles` select toolbar button in {productname} defaulted to "Paragraph" as the selected option even when there was no actual "Paragraph" style configured.
-
-{productname} 7.0 addresses this, the fallback option for the bespoke `styles` toolbar button has been reverted to "Formats" in situations where the "Paragraph" style is not defined in the `style_formats` option. This ensures a more accurate reflection of available styles.
-
-=== Improved support of `data` elements
-//# TINY-10611
-
-Previously, when inserting a `data` element within the editor, the `data` element would be removed.
-
-In {productname} 7.0, this problem has been addressed.
-
-As a result, the `data` elements are recognized as valid elements within the editor, ensuring they are properly retained along with their value attributes.
-
-
-[[additions]]
-== Additions
-
-{productname} 7.0 also includes the following addition:
-
 === Element preset support for the `valid_children` option and `Schema.addValidChildren` API.
+// #TINY-9979
 
 {productname} 7.0 updates the xref:content-filtering.adoc#valid_elements[`+valid_elements+`] option and `schema.addValidChildren` function, which now support preset names such as `@blocks`, `@phrasing`, and `@flow`. These presets will be automatically expanded into corresponding lists of valid elements, simplifying the definition process.
 
@@ -471,16 +450,8 @@ For more information on content filtering for custom elements, see xref:content-
 
 {productname} 7.0 also includes the following changes:
 
-=== Removed incorrect `aria-placeholder` attribute from editor body when `placeholder` option is set.
-// #TINY-10452
-
-Previously, when the `placeholder` option was set, the editor would automatically append an `aria-placeholder` attribute to the editor body.
-
-However, the `aria-placeholder` attribute is not a valid attribute for the body element according to accessibility guidelines. As a result, certain screen readers and assistive technologies encountered difficulties in correctly interpreting the content.
-
-In {productname} 7.0 addresses this, by removing the `aria-placeholder` attribute from the editor body. This solution ensures that the editor is accessible to all users.
-
 === `convert_unsafe_embeds` editor option is now defaulted to `true`.
+// #TINY-10351
 
 In {productname} 6.8.1, xref:content-filtering.adoc#convert-unsafe-embeds[convert_unsafe_embeds] editor option was introduced to allow `+object+` and `+embed+` elements to be converted by default to the correct element, respective of the MIME type, automatically when inserted into the editor.
 
@@ -489,6 +460,7 @@ In {productname} 7.0, the default value for `+convert_unsafe_embeds+` will chang
 For further details on the `+convert_unsafe_embeds+` option, see the xref:content-filtering.adoc#convert-unsafe-embeds[content filtering options], or refer to the xref:security.adoc#convert-unsafe-embeds[security guide], or the link:https://www.tiny.cloud/docs/tinymce/6/6.8.1-release-notes/#new-convert_unsafe_embeds-option-that-controls-whether-object-and-embed-elements-will-be-converted-to-more-restrictive-alternatives-namely-img-for-image-mime-types-video-for-video-mime-types-audio-audio-mime-types-or-iframe-for-other-or-unspecified-mime-types[{productname} 6.8.1 release notes].
 
 === `sandbox_iframes` editor option is now defaulted to `true`.
+// #TINY-10350
 
 In {productname} 6.8.1, the xref:content-filtering.adoc#sandbox-iframes[sandbox iframes] editor option was introduced to allow iframes to be sandboxed by default when inserted into the editor.
 
@@ -498,8 +470,34 @@ To prevent any expected iframes from being sandboxed, we recommend adding the so
 
 For further details on the `+sandbox_iframes+` option, see the xref:content-filtering.adoc#sandbox-iframes[the content filtering options], or refer to the xref:security.adoc#sandbox-iframes[security guide], or the link:https://www.tiny.cloud/docs/tinymce/6/6.8.1-release-notes/#new-sandbox_iframes-option-that-controls-whether-iframe-elements-will-be-added-a-sandbox-attribute-to-mitigate-malicious-intent[{productname} 6.8.1 release notes].
 
+=== The `DOMUtils.isEmpty` API function has been modified to consider nodes containing only comments as empty.
+// #TINY-10459
+
+In previous versions of {productname} (prior to version 7.0), the function `DomUtils.isEmpty` behaved inconsistently, considering elements with only comment nodes as non-empty.
+
+As a consequence, elements visually appearing empty due to containing only comment nodes could lead to inconsistent behavior in caret placement and selection handling.
+
+{productname} 7.0 addresses this issue, now, when using `DomUtils.isEmpty`, elements containing only comment nodes are correctly recognized as empty.
+
+As a result, caret placement and selection handling within elements containing only comment nodes now behave consistently.
+
+[NOTE]
+Users who relied on `DOMUtils.isEmpty` returning `false` for elements with only comments should update their implementation. Elements with only comment nodes are now recognized as empty in {productname} 7.0.
+
+=== The `highlight_on_focus` option now defaults to true, adding a focus outline to every editor.
+// #TINY-10574
+
+In {productname} 6.4, the option `highlight_on_focus` was introduced, that provides a blue outline to an instantiated {productname} editor when the editor is in `focus`.
+
+As of {productname} 7.0, the `default` value of this has now been set to `true`.
+
+For more information about `highlight_on_focus` see the xref:accessibility.adoc#highlight_on_focus[highlight_on_focus] option.
+
+[NOTE]
+Any editors using this `highlight_on_focus: true` option, can remove this option from their {productname} init configuration when upgrading to {productname} 7.0.
+
 === Remove the height field from the `table` plugin cell dialog. The `table` plugin row dialog now controls the row height by setting the height on the `tr` element, not the `td` elements.
-//# TINY-10617
+// #TINY-10617
 
 The height field within the table plugin cell dialog has been removed, thereby restricting the ability to adjust individual cell heights `td/th`.
 
@@ -507,6 +505,36 @@ However, this modification directs users to utilize the table plugin row dialog 
 
 [NOTE]
 When adjusting row height through the row dialog, any height styles previously applied to `td/th` elements will be automatically removed.
+
+=== Change table height resizing handling to remove heights from `td`/`th` elements and only apply to `tr` elements.
+// #TINY-10589
+
+When resizing a table using either the row resize bars or corner resize handles, any existing `height` styles are removed from the `td`/`th` elements and only apply to `tr` elements and `table` element. Additionally, the heights calculated and applied for the `tr` elements and `table` element more accurately represent the actual visual height in the editor.
+
+As part of the changes to table height resizing handling, resizing via the corner resize handles is more consistent. If the table *does not* have any height styles and the table is resized using one of the corner resize handles, each row has its height increased evenly. If the table *does have* existing height styles, corner resizes will only change the height of the first row (if using top corner handles) or last row  (if using bottom corner handles) equivalent to `table_column_resizing: 'resizetable'` option for columns xref:table-options.adoc#table_column_resizing[Table options: table_column_resizing]
+
+=== Removed incorrect `aria-placeholder` attribute from editor body when `placeholder` option is set.
+// #TINY-10452
+
+Previously, when the `placeholder` option was set, the editor would automatically append an `aria-placeholder` attribute to the editor body.
+
+However, the `aria-placeholder` attribute is not a valid attribute for the body element according to accessibility guidelines. As a result, certain screen readers and assistive technologies encountered difficulties in correctly interpreting the content.
+
+In {productname} 7.0 addresses this, by removing the `aria-placeholder` attribute from the editor body. This solution ensures that the editor is accessible to all users.
+
+=== Optional Tooltip for Dialog Footer Toggle Buttons
+// #TINY-10672
+
+Previously, the `DialogFooterToggleButton` component required a tooltip property. This meant including a tooltip for all toggle buttons displayed in dialog footers, even if the information wasn't necessary.
+
+As of {productname} 7.0, the tooltip property is now optional for `DialogFooterToggleButton`. This flexibility allows developers to omit the tooltip for buttons where it's not required, providing a cleaner and more focused user experience.
+
+=== Accurate default options in the `styles` bespoke select toolbar button
+// #TINY-10603
+
+Previously, the bespoke `styles` select toolbar button in {productname} defaulted to "Paragraph" as the selected option even when there was no actual "Paragraph" style configured.
+
+{productname} 7.0 addresses this, the fallback option for the bespoke `styles` toolbar button has been reverted to "Formats" in situations where the "Paragraph" style is not defined in the `style_formats` option. This ensures a more accurate reflection of available styles.
 
 
 [[removed]]
@@ -553,84 +581,6 @@ For more information, visit the updated xref:autocompleter.adoc[Autocompleter] d
 
 {productname} 7.0 also includes the following bug fixes:
 
-==== Autocompleter did not work when attempting to insert a `mention` or `emoji` when using an `IME`.
-//# TINY-10637
-
-Previously when attempting to insert a **mention** or **emoji** using an `IME` on Android and using Korean, users encountered an obstacle where it wasn't possible to complete the insertion.
-
-{productname} 7.0 addresses this issue, by rewriting the handler for `autocompleter`, ensuring that it no longer interferes with the DOM during composition with an IME.
-
-As a result, users can now insert **mentions** and **emojis** using the `autocompleter`.
-
-For information on the **Autocompleter** plugin, see: xref:autocompleter.adoc[Autocompleter].
-
-=== Floating toolbar buttons in inline editor incorrectly wrapped into multiple rows on window resizing or zooming.
-//# TINY-10570
-
-An issue was identified where the floating toolbar's functionality, specifically regarding the incorrect rendering of the overflow button on a second row when the window was resized or the browser was zoomed.
-
-Previously, when the toolbar contained more buttons than could be displayed within the available space, an overflow button (depicted by three dots) `...` would appear at the toolbar's end, enabling users to access the remaining buttons. However, due to a bug, this overflow button would occasionally shift to a second row, disrupting the layout, especially during window resizing.
-
-{productname} 7.0 addresses this issue, by adding improvements to the resizing behavior of the toolbar to ensure it consistently fits within one row.
-
-As a result, the toolbar now adjusts its size appropriately and maintains a single-row layout, effectively preventing the overflow button from erroneously moving to a second row under any circumstances.
-
-=== Fixed incorrect object processor for `event_root` option.
-// #TINY-10433
-
-Previously in {productname}, the `inline` mode `event_root` option incorrectly used an `object` processor.
-
-This caused the option to be unregistered when passing a `string` value, resulting in the option being unusable.
-
-{productname} 7.0 addresses this, now, the `event_root` option uses the correctly uses the `string` processor.
-
-As the result, the `event_root` option can now be correctly used to specify a CSS selector for an element.
-
-=== Clicking to the left or right of a non-editable `div` in Firefox would show two cursors.
-// #TINY-10314
-
-Previously in Firefox, when the `FakeCaret` was rendered, in some cases the real caret was incorrectly rendered too.
-
-As a consequence, the `FakeCaret` was visible at the same time as the real caret which should have been `hidden`.
-
-{productname} 7.0 addresses this issue, now, the container containing the real caret, when we render the `FakeCaret`, is styled with `'caret-color': 'transparent'`.
-
-As a result, the real caret is now hidden when {productname} renders the `FakeCaret`.
-
-=== Directly right clicking on a `<ol>`/ `<li>` in FireFox didn't enable the button `List Properties...` in the context menu
-// #TINY-10490
-
-In previous versions of {productname}, two issues where identified that affected `list properties` for `<ol><li>` tags:
-
-. in old versions of Firefox (prior to version 121), the caret was not moved to the target position when using the right click, and;
-
-. as {productname} creates a bookmark when there is no selection for Firefox, when a user opened a context menu the editor would jump back to the newly created bookmark.
-
-As a consequence, since the selection is still on the first element, the `List Properties...` context menu item was `disabled`.
-
-{productname} 7.0 addresses this issue, now when the user opens a context menu, {productname} creates a new bookmark to avoid the jump back.
-
-As a result, the selection is in the correct place and the `List Properties...` context menu item is `enabled`.
-
-=== Table classes couldn't be removed via setting an empty value in `table_class_list`.
-// #TINY-6653
-
-Previously, it was not possible to remove all classes on a table when setting an empty value in the `table_class_list` option and using the "Class" listbox field in the "Table Properties" dialog. 
-
-{productname} 7.0 introduces improvements for handling and removing classes on table, row and cell elements, including:
-
-* An empty value in the `table_class_list` option, `table_row_class_list` option, and `table_cell_class_list` option will allow all classes to be removed on the selected table for the "Table Properties" dialog, selected rows for the "Row Properties" dialog, or selected cells for the "Cell Properties" dialog respectively.
-* For a table with a class that does not match any of the values set in the  `table_class_list` option, a "Select..." item becomes the default choice in the "Class" listbox field in the "Table Properties" dialog. (This selection maintains the existing class upon saving). Conversely, if the table has a class that does match one of the values set in the  `table_class_list` option, it is automatically selected.
-* For selected rows with classes that do not match any of the values set in the  `table_row_class_list`, a "Select..." item becomes the default choice in the "Class" listbox field in the "Row Properties" dialog. (This selection maintains the existing classes upon saving). Conversely, if the selected row classes do match one of the values set in the  `table_row_class_list`, it is automatically selected.
-* For selected cells with classes that do not match any of the values set in the  `table_cell_class_list`, a "Select..." item becomes the default choice in the "Class" listbox field in the "Cell Properties" dialog. (This selection maintains the existing classes upon saving). Conversely, if the selected cell classes do match one of the values set in the  `table_cell_class_list`, it is automatically selected.
-
-=== When setting table border width to 0 and `table_style_by_css` is `true`, only the border attribute is set to 0 and border-width styling is no longer used.
-// TINY-10308
-
-Previously in {productname} 6, when the `table_style_by_css` option was `true` and the table border width was set to `0px` within the "Table Properties" dialog, the table's border attribute would be set to 1 and `border-width: 0px` would be applied to all cells in the table. This behaviour was unintentional and differed from setting the `table_style_by_css` option to `true` in {productname} 5.
-
-In {productname} 7.0 addressed this issue. Now, setting the border width to 0 consistently sets the table border attribute to 0, removing `border-width` styles from all table cells, and aligning the behavior of the "Border width" property with {productname} 5.
-
 === `mceTableDeleteRow` did not calculate the correct row index for colgroup tables.
 // #TINY-6309
 
@@ -639,17 +589,6 @@ Previously, when deleting a row or column in a table within {productname}, the c
 As a consequence, users expected it to be repositioned much closer, such as to an adjacent cell in the previous row or column.
 
 In {productname} 7.0, this issue is addressed, now, when a user deletes a row or column in a table, the caret/cursor position is now relocated to the adjacent cell in the previous row or column.
-
-=== The toolbar width was miscalculated for the inline editor positioned inside a scrollable container.
-// #TINY-10581
-
-Previously in {productname}, the inline editor's toolbar width was calculated using the `outerContainer` width.
-
-Consequently, the toolbar was given a width of `0`, resulting in the toolbar collapsing to the minimum width.
-
-{productname} 7.0 addresses this issue, now, a check has been introduced to prevent the adjustment of the toolbar's width if the calculated value is `0`.
-
-As a result, the inline editor now correctly displays the toolbar's width when positioned inside a scrollable container.
 
 === Heading formatting would be partially applied to the content within the `summary` element when the caret was positioned between words.
 // #TINY-10312
@@ -661,90 +600,6 @@ As a consequence, the heading formatting was partially applied to some of the co
 {productname} 7.0 addresses this issue, now, updates were made to the editor's selection expand range functionality.
 
 As a result, the heading format is applied to the entire content within the `<summary>` element, regardless of the carets location.
-
-=== The `link_default_target` option wasn't considered when inserting a link via `quicklink` toolbar.
-// #TINY-10439
-
-Previously when using `quicklink`, the `link_default_target` value was not being considered.
-
-As a consequence, the `target` attribute would not be applied to links created using `quicklink`.
-
-{productname} 7.0 addresses this issue, now, the `quicklink` has been enhanced to consider the `link_default_target` value.
-
-As a result, if a `link_default_target` is specified, `quicklink` will appropriately incorporate it when creating a link.
-
-=== When inline editor toolbar wrapped to multiple lines the top wasn't always calculated.
-// #TINY-10580
-
-Previously when shrinking the inline editor, the top position of the toolbar was calculated before wrapping the toolbar into multiple rows.
-
-As a consequence, the additional rows in the wrapped toolbar would cover the editor content.
-
-{productname} 7.0 addresses this issue, now, the editor shrinking is applied before calculating the top position of the toolbar.
-
-As a result, the truncated toolbar is correctly displayed above the editor content.
-
-=== Inline mode with persisted toolbar would show regardless of the skin being loaded, causing css issues.
-// #TINY-10482
-
-Previously when `toolbar_persist` and `inline` mode was set to `true`, the toolbar could be shown before the skin was loaded. Whereas now it will always wait for the skin to load first.
-
-.example setup
-[source, js]
-----
-tinymce.init({
-  selector: "div",
-  inline: true,
-  toolbar_persist: true
-});
-----
-
-As a consequence, this would result in the menubar and/or the toolbar to be squashed when the host browser was operating over a relatively slow connection.
-
-{productname} 7.0 addresses this issue, now, the toolbar is no longer squashed in `inline` mode with `toolbar_persist` enabled, when the page takes longer to load the skin.
-
-=== The `DOMUtils.isEmpty` API function has been modified to consider nodes containing only comments as empty.
-// #TINY-10459
-
-In previous versions of {productname} (prior to version 7.0), the function `DomUtils.isEmpty` behaved inconsistently, considering elements with only comment nodes as non-empty.
-
-As a consequence, elements visually appearing empty due to containing only comment nodes could lead to inconsistent behavior in caret placement and selection handling.
-
-{productname} 7.0 addresses this issue, now, when using `DomUtils.isEmpty`, elements containing only comment nodes are correctly recognized as empty.
-
-As a result, caret placement and selection handling within elements containing only comment nodes now behave consistently.
-
-[NOTE]
-Users who relied on `DOMUtils.isEmpty` returning `false` for elements with only comments should update their implementation. Elements with only comment nodes are now recognized as empty in {productname} 7.0.
-
-=== Pressing Backspace at the start of an empty `summary` element within a `details` element nested in a list item no longer removes the `summary` element.
-// #TINY-10303
-
-Previously in {productname}, when a details element was placed inside a list item and contained an empty summary, pressing the Backspace key (with the cursor at the beginning of the summary) resulted in the summary being deleted.
-
-This caused the unexpected behavior of replacing the summary contents with the default summary placeholder.
-
-To address this, the summary element has been included in the list of non-empty elements within the editor's schema.
-
-With this adjustment, the summary element will no longer be deleted under the previously mentioned conditions.
-
-=== Adding newline after using `selection.setContent` to insert a block element would throw an unhandled exception.
-// #TINY-10560
-
-Previously in {productname}, there was an issue with `selection.setContent` when using certain tags (such as `pre`) as the parent element. The selection would not recognize that it was at the end of the line, resulting in an error when trying to insert a new line afterwards.
-
-{productname} 7.0 addresses this issue. The selection now correctly recognizes that it is at the end of the line when using `selection.setContent`. As a result, the insertion of a new line behaves as expected.
-
-=== The `mceTablePasteRowAfter` command, `mceTablePasteColAfter` command, `"Paste row after"` menu item and `"Paste column after"` menu item now place the cursor in the newly pasted row/column to be consistent with the other pasting operations.
-// #TINY-6460
-
-Previously, the cursor position was incorrectly calculated after pasting a new row or column when using the `mceTablePasteRowAfter` command, `mceTablePasteColAfter` command, or `"Paste row after"` and `"Paste column after"` UI menu items.
-
-As a consequence, after pasting, the cursor remained in the same position instead of moving to the newly pasted row or column.
-
-{productname} 7.0 addresses this, fixing the cursor calculation.
-
-Now, when using the `mceTablePasteRowAfter` command, `mceTablePasteColAfter` command, or `"Paste row after"` and `"Paste column after"` UI menu items, the cursor is correctly positioned in the newly pasted row or column as expected.
 
 === Moving focus to the outside of the editor after having clicked a menu would not dispatch a `blur` event as expected.
 // #TINY-10310
@@ -773,6 +628,154 @@ As a consequence, the autocomplete feature triggers as the composition mode chan
 
 {productname} 7.0 addresses this issue by, now avoiding `DOM` mutation during IME composition, ensuring uninterrupted composition sessions without introducing new elements to the DOM.
 
+=== Inline mode with persisted toolbar would show regardless of the skin being loaded, causing css issues.
+// #TINY-10482
+
+Previously when `toolbar_persist` and `inline` mode was set to `true`, the toolbar could be shown before the skin was loaded. Whereas now it will always wait for the skin to load first.
+
+=== Table classes couldn't be removed via setting an empty value in `table_class_list`.
+// #TINY-6653
+
+Previously, it was not possible to remove all classes on a table when setting an empty value in the `table_class_list` option and using the "Class" listbox field in the "Table Properties" dialog. 
+
+{productname} 7.0 introduces improvements for handling and removing classes on table, row and cell elements, including:
+
+* An empty value in the `table_class_list` option, `table_row_class_list` option, and `table_cell_class_list` option will allow all classes to be removed on the selected table for the "Table Properties" dialog, selected rows for the "Row Properties" dialog, or selected cells for the "Cell Properties" dialog respectively.
+* For a table with a class that does not match any of the values set in the  `table_class_list` option, a "Select..." item becomes the default choice in the "Class" listbox field in the "Table Properties" dialog. (This selection maintains the existing class upon saving). Conversely, if the table has a class that does match one of the values set in the  `table_class_list` option, it is automatically selected.
+* For selected rows with classes that do not match any of the values set in the  `table_row_class_list`, a "Select..." item becomes the default choice in the "Class" listbox field in the "Row Properties" dialog. (This selection maintains the existing classes upon saving). Conversely, if the selected row classes do match one of the values set in the  `table_row_class_list`, it is automatically selected.
+* For selected cells with classes that do not match any of the values set in the  `table_cell_class_list`, a "Select..." item becomes the default choice in the "Class" listbox field in the "Cell Properties" dialog. (This selection maintains the existing classes upon saving). Conversely, if the selected cell classes do match one of the values set in the  `table_cell_class_list`, it is automatically selected.
+
+=== Directly right clicking on a `<ol>`/ `<li>` in FireFox didn't enable the button `List Properties...` in the context menu
+// #TINY-10490
+
+In previous versions of {productname}, two issues where identified that affected `list properties` for `<ol><li>` tags:
+
+. in old versions of Firefox (prior to version 121), the caret was not moved to the target position when using the right click, and;
+
+. as {productname} creates a bookmark when there is no selection for Firefox, when a user opened a context menu the editor would jump back to the newly created bookmark.
+
+As a consequence, since the selection is still on the first element, the `List Properties...` context menu item was `disabled`.
+
+{productname} 7.0 addresses this issue, now when the user opens a context menu, {productname} creates a new bookmark to avoid the jump back.
+
+As a result, the selection is in the correct place and the `List Properties...` context menu item is `enabled`.
+
+=== The `link_default_target` option wasn't considered when inserting a link via `quicklink` toolbar.
+// #TINY-10439
+
+Previously when using `quicklink`, the `link_default_target` value was not being considered.
+
+As a consequence, the `target` attribute would not be applied to links created using `quicklink`.
+
+{productname} 7.0 addresses this issue, now, the `quicklink` has been enhanced to consider the `link_default_target` value.
+
+As a result, if a `link_default_target` is specified, `quicklink` will appropriately incorporate it when creating a link.
+
+=== When inline editor toolbar wrapped to multiple lines the top wasn't always calculated.
+// #TINY-10580
+
+Previously when shrinking the inline editor, the top position of the toolbar was calculated before wrapping the toolbar into multiple rows.
+
+As a consequence, the additional rows in the wrapped toolbar would cover the editor content.
+
+{productname} 7.0 addresses this issue, now, the editor shrinking is applied before calculating the top position of the toolbar.
+
+As a result, the truncated toolbar is correctly displayed above the editor content.
+
+=== Pressing Backspace at the start of an empty `summary` element within a `details` element nested in a list item no longer removes the `summary` element.
+// #TINY-10303
+
+Previously in {productname}, when a details element was placed inside a list item and contained an empty summary, pressing the Backspace key (with the cursor at the beginning of the summary) resulted in the summary being deleted.
+
+This caused the unexpected behavior of replacing the summary contents with the default summary placeholder.
+
+To address this, the summary element has been included in the list of non-empty elements within the editor's schema.
+
+With this adjustment, the summary element will no longer be deleted under the previously mentioned conditions.
+
+=== The toolbar width was miscalculated for the inline editor positioned inside a scrollable container.
+// #TINY-10581
+
+Previously in {productname}, the inline editor's toolbar width was calculated using the `outerContainer` width.
+
+Consequently, the toolbar was given a width of `0`, resulting in the toolbar collapsing to the minimum width.
+
+{productname} 7.0 addresses this issue, now, a check has been introduced to prevent the adjustment of the toolbar's width if the calculated value is `0`.
+
+As a result, the inline editor now correctly displays the toolbar's width when positioned inside a scrollable container.
+
+.example setup
+[source, js]
+----
+tinymce.init({
+  selector: "div",
+  inline: true,
+  toolbar_persist: true
+});
+----
+
+As a consequence, this would result in the menubar and/or the toolbar to be squashed when the host browser was operating over a relatively slow connection.
+
+{productname} 7.0 addresses this issue, now, the toolbar is no longer squashed in `inline` mode with `toolbar_persist` enabled, when the page takes longer to load the skin.
+
+=== Fixed incorrect object processor for `event_root` option.
+// #TINY-10433
+
+Previously in {productname}, the `inline` mode `event_root` option incorrectly used an `object` processor.
+
+This caused the option to be unregistered when passing a `string` value, resulting in the option being unusable.
+
+{productname} 7.0 addresses this, now, the `event_root` option uses the correctly uses the `string` processor.
+
+As the result, the `event_root` option can now be correctly used to specify a CSS selector for an element.
+
+=== Adding newline after using `selection.setContent` to insert a block element would throw an unhandled exception.
+// #TINY-10560
+
+Previously in {productname}, there was an issue with `selection.setContent` when using certain tags (such as `pre`) as the parent element. The selection would not recognize that it was at the end of the line, resulting in an error when trying to insert a new line afterwards.
+
+{productname} 7.0 addresses this issue. The selection now correctly recognizes that it is at the end of the line when using `selection.setContent`. As a result, the insertion of a new line behaves as expected.
+
+=== Floating toolbar buttons in inline editor incorrectly wrapped into multiple rows on window resizing or zooming.
+// #TINY-10570
+
+An issue was identified where the floating toolbar's functionality, specifically regarding the incorrect rendering of the overflow button on a second row when the window was resized or the browser was zoomed.
+
+Previously, when the toolbar contained more buttons than could be displayed within the available space, an overflow button (depicted by three dots) `...` would appear at the toolbar's end, enabling users to access the remaining buttons. However, due to a bug, this overflow button would occasionally shift to a second row, disrupting the layout, especially during window resizing.
+
+{productname} 7.0 addresses this issue, by adding improvements to the resizing behavior of the toolbar to ensure it consistently fits within one row.
+
+As a result, the toolbar now adjusts its size appropriately and maintains a single-row layout, effectively preventing the overflow button from erroneously moving to a second row under any circumstances.
+
+=== When setting table border width to 0 and `table_style_by_css` is `true`, only the border attribute is set to 0 and border-width styling is no longer used.
+// #TINY-10308
+
+Previously in {productname} 6, when the `table_style_by_css` option was `true` and the table border width was set to `0px` within the "Table Properties" dialog, the table's border attribute would be set to 1 and `border-width: 0px` would be applied to all cells in the table. This behaviour was unintentional and differed from setting the `table_style_by_css` option to `true` in {productname} 5.
+
+In {productname} 7.0 addressed this issue. Now, setting the border width to 0 consistently sets the table border attribute to 0, removing `border-width` styles from all table cells, and aligning the behavior of the "Border width" property with {productname} 5.
+
+=== Clicking to the left or right of a non-editable `div` in Firefox would show two cursors.
+// #TINY-10314
+
+Previously in Firefox, when the `FakeCaret` was rendered, in some cases the real caret was incorrectly rendered too.
+
+As a consequence, the `FakeCaret` was visible at the same time as the real caret which should have been `hidden`.
+
+{productname} 7.0 addresses this issue, now, the container containing the real caret, when we render the `FakeCaret`, is styled with `'caret-color': 'transparent'`.
+
+As a result, the real caret is now hidden when {productname} renders the `FakeCaret`.
+
+=== The `mceTablePasteRowAfter` command, `mceTablePasteColAfter` command, `"Paste row after"` menu item and `"Paste column after"` menu item now place the cursor in the newly pasted row/column to be consistent with the other pasting operations.
+// #TINY-6460
+
+Previously, the cursor position was incorrectly calculated after pasting a new row or column when using the `mceTablePasteRowAfter` command, `mceTablePasteColAfter` command, or `"Paste row after"` and `"Paste column after"` UI menu items.
+
+As a consequence, after pasting, the cursor remained in the same position instead of moving to the newly pasted row or column.
+
+{productname} 7.0 addresses this, fixing the cursor calculation.
+
+Now, when using the `mceTablePasteRowAfter` command, `mceTablePasteColAfter` command, or `"Paste row after"` and `"Paste column after"` UI menu items, the cursor is correctly positioned in the newly pasted row or column as expected.
+
 
 [[security-fixes]]
 == Security fixes
@@ -780,7 +783,7 @@ As a consequence, the autocomplete feature triggers as the composition mode chan
 {productname} <x.y[.z]> includes <a fix | fixes for the following security issue<s>:
 
 === <TINY-vwxyz 1 changelog entry>
-//#TINY-vwxyz1
+// #TINY-vwxyz1
 
 // CCFR here.
 
@@ -797,6 +800,6 @@ This section describes issues that users of {productname} <x.y[.z]> may encounte
 There <is one | are <number> known issue<s> in {productname} <x.y[.z]>.
 
 === <TINY-vwxyz 1 changelog entry>
-//#TINY-vwxyz1
+// #TINY-vwxyz1
 
 // CCFR here.

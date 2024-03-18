@@ -6,10 +6,21 @@
 
 include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
+[NOTE]
+{productname} 7.0 is _licensed under GPL Version 2 or later_. This version introduces a new `license_key`  configuration setting that gives self-hosted users the ability to select a usage under the GPL or to authenticate their paid license with Tiny.
+
 [[overview]]
 == Overview
 
-{productname} 7.0 was released for {enterpriseversion} and {cloudname} on Wednesday, March 20^th^, 2024. These release notes provide an overview of the changes for {productname} 7.0, including:
+{productname} 7.0 was released for {enterpriseversion} and {cloudname} on Wednesday, March 20^th^, 2024. 
+
+The release brings new features essential for content producers and managers in the modern workplace. These features improve efficiency through simplified sharing of content and providing improved tools for the asynchronous collaboration needs of remote teams.
+
+* **Revision History**: View changes from one content version to another.
+* **Document Converters**: Import content from Microsoft Word. Export content to Microsoft Word or PDF documents.
+* **Markdown**: Paste markdown from other platforms into the editor for instant rich-text conversion.
+
+These release notes provide an overview of the changes for {productname} 7.0, including the following:
 
 * xref:new-premium-plugin<s>[New Premium plugins]
 * xref:new-open-source-plugin<s>[New Open Source plugin]
@@ -43,35 +54,27 @@ For information on the **Revision History** plugin, see xref:revisionhistory.ado
 
 === Import from Word
 
-The new Premium plugin, **Import from Word** provides a way to import `.docx` (Word documents) or `.dotx` (Word templates) files into the editor.
+The new Premium plugin, **Import from Word**, provides a way to import `.docx` (Word documents) or `.dotx` (Word templates) files into the editor.
 
-include::partial$misc/admon-paid-addon-pricing.adoc[]
-
-For information on the **Import from Word Premium Plugin** see xref:importword.adoc[Import from Word docs].
+For information on the **Import from Word** plugin, see xref:importword.adoc[Import from Word].
 
 === Export to Word
 
-The new Premium plugin, **Export to Word** feature lets you generate a `.docx` file directly from the editor.
+The new Premium plugin, **Export to Word**, provides a way to generate a `.docx` file directly from the editor.
 
-include::partial$misc/admon-paid-addon-pricing.adoc[]
-
-For information on the **Export to Word Premium Plugin** see xref:exportword.adoc[Export to Word docs].
+For information on the **Export to Word** plugin, see xref:exportword.adoc[Export to Word].
 
 === Export to PDF
 
-The new Premium plugin, **Export to PDF** feature lets you generate a `.pdf` file directly from the editor.
+The new Premium plugin, **Export to PDF**, provides a way to generate a `.pdf` file directly from the editor.
 
-include::partial$misc/admon-paid-addon-pricing.adoc[]
-
-For information on the **Export to PDF Premium Plugin** see xref:exportpdf.adoc[Export to PDF docs].
+For information on the **Export to PDF** plugin, see xref:exportpdf.adoc[Export to PDF].
 
 === Markdown
 
 The new Premium plugin, **Markdown**, detects pure markdown from a paste event within a {productname} editor instance and converts it to HTML.
 
-include::partial$misc/admon-premium-plugin.adoc[]
-
-For information on the **Markdown** plugin see xref:markdown.adoc[Markdown].
+For information on the **Markdown** plugin, see xref:markdown.adoc[Markdown].
 
 
 [[accompanying-premium-plugin-changes]]
@@ -387,7 +390,7 @@ Any editors using this `highlight_on_focus: true` option, can remove this option
 === Improved Custom Elements
 // #TINY-9980 / TINY-9979
 
-{productname} 7.0 introduces enhancements to the existing xref:content-filtering.adoc#custom_elements.adoc[custom_elements] option and xref:apis/tinymce.html.schema.adoc#addCustomElements[addCustomElements] API. This update allows the structure of custom elements to be refined, offering users more flexibility and customization options.
+{productname} 7.0 introduces enhancements to the existing xref:content-filtering.adoc#custom_elements[custom_elements] option and xref:apis/tinymce.html.schema.adoc#addCustomElements[addCustomElements] API. This update allows the structure of custom elements to be refined, offering users more flexibility and customization options.
 
 Key Improvements:
 
@@ -395,7 +398,7 @@ Key Improvements:
 * **Attributes and Inheritance:** Elements can inherit attributes and children from other specified elements using the extends property in the Custom Element Spec.
 * **Attribute and Children Specifications:** The Custom Element Spec includes properties such as attributes and children, enabling precise customization of element behavior.
 
-For more information and details for `addCustomElements` see xref:content-filtering.adoc#custom-elements[custom_elements].
+For more information and details for `addCustomElements` see xref:content-filtering.adoc#custom_elements[custom_elements].
 
 === Optional Tooltip for Dialog Footer Toggle Buttons
 //#TINY-10672
@@ -512,6 +515,15 @@ When adjusting row height through the row dialog, any height styles previously a
 
 [[removed]]
 == Removed
+
+=== Removed `force_hex_color` option, with the default now being all colors are forced to HEX format and as lower case.
+// #TINY-10436
+
+Previously in {productname} 6, all colors in the content HTML were set to use `rgb` values by default. As the common practice is using `hex` values this change has been **reverted**.
+
+As a result, in {productname} 7, all colors are converted to use `hex` values and the `forced_hex_color` option is removed. The exception being `rgba` color values, they are left as is.
+
+For more information, see xref:migration-from-6x.adoc#force-hex-color[Migrating from {productname} 6 to {productname} 7: "force_hex_color"].
 
 === Removed InsertOrderedList and InsertUnorderedList commands from core.
 // #TINY-10644

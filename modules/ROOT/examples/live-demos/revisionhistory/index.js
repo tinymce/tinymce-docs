@@ -96,37 +96,7 @@ tinymce.init({
   selector: 'textarea#revisionhistory',
   height: 800,
   plugins: 'revisionhistory',
-  toolbar: 'revisionhistory saveversion',
+  toolbar: 'revisionhistory',
   revisionhistory_fetch: get_revisions,
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
-  setup: (editor) => {
-    // Save the current content of the editor as a new version
-    editor.ui.registry.addButton('saveversion', {
-      text: 'Save a version',
-      onAction: () => {
-        const content = editor.getContent({ format: 'raw' });
-        // Check if the content has changed
-        if (content === revisions[0].content) {
-          editor.notificationManager.open({
-            text: 'No changes to save!',
-            type: 'info',
-            timeout: 2000
-          });
-          return;
-        };
-        // Save the new version
-        const revision = {
-          content: content,
-          revisionId: (revisions.length + 1).toString(),
-          createdAt: new Date().toISOString()
-        };
-        revisions.unshift(revision);
-        editor.notificationManager.open({
-          text: 'Version saved successfully!',
-          type: 'success',
-          timeout: 2000
-        });
-      }
-    });
-  },
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
 });

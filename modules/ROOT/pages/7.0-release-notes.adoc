@@ -19,7 +19,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 The release brings new features essential for content producers and managers in the modern workplace. These features improve efficiency through simplified sharing of content and providing improved tools for the asynchronous collaboration needs of remote teams.
 
 * **Revision History**: View changes from one content version to another.
-* **Document Converters**: Import content from Microsoft Word. Export content to Microsoft Word or PDF documents.
+* **Document Converters**: Effortlessly import content from Microsoft Word and export it to either Microsoft Word or PDF documents.
 * **Markdown**: Paste markdown from other platforms into the editor for instant rich-text conversion.
 
 These release notes provide an overview of the changes for {productname} 7.0, including the following:
@@ -81,14 +81,10 @@ For information on the **Markdown** plugin, see xref:markdown.adoc[Markdown].
 
 The following premium plugin updates were released alongside {productname} 7.0.
 
+[[tinymce-7-0-plugin-naming-unification]]
 === TinyMCE 7.0 plugin naming unification
 
 With the release of {productname} 7.0, the below plugins are adopting the following name changes.
-
-[NOTE]
-That while these changes are to update the plugin names used in documentation and communication materials, this does not alter the plugin identifiers themselves at this time. This means that existing integrations and configurations will remain unaffected by this change.
-
-Below is a table outlining the renaming of certain plugins:
 
 [options="header"]
 |===
@@ -101,6 +97,9 @@ Below is a table outlining the renaming of certain plugins:
 | Skins & Icons Packs | Enhanced Skins & Icons Packs
 | Spell Checker Pro | Spell Checker
 |===
+
+[NOTE]
+That while these changes are to update the plugin names used in documentation and communication materials, this does not alter the plugin identifiers themselves at this time. This means that existing integrations and configurations will remain unaffected by this change.
 
 === Templates
 
@@ -193,7 +192,7 @@ The open-source `template` plugin and associated config options have been remove
 
 Customers using the `template` plugin will need to migrate to the premium xref:advanced-templates.adoc['advtemplate'] plugin in {productname} 7.0, which contains all the functionality except some esoteric options.
 
-For more information, see xref:migration-from-6x.adoc#deprecated-plugins-template-plugin[Migrating from {productname} 6 to {productname} 7].
+For more information, see xref:migration-from-6x.adoc#removed-plugins-template-plugin[Migrating from {productname} 6 to {productname} 7].
 
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
@@ -422,7 +421,7 @@ For instance, specifying valid_children: `+'custom-elm[@flow]'+` will configure 
 [source, js]
 ----
 tinymce.init({
-    selector: "textarea",
+  selector: "textarea",
 	custom_elements: 'block-container,phrasing-container,flow-container',
 	valid_children: 'block-container[@blocks],phrasing-container[@phrasing],flow-container[@flow]'
 });
@@ -518,9 +517,13 @@ As of {productname} 7.0, the tooltip property is now optional for `DialogFooterT
 === Changed the `media_url_resolver` option to use promises.
 // #TINY-9154
 
-In {productname} 7.0, the `media_url_resolver` has been refactored to use promises instead of callbacks. This change brings standardization to the code base and improves error handling.
+In {productname} 6, the `media_url_resolver` option used a callback rather than a promise, which lead to unforeseen consequences.
 
-// TODO: demo to show the function changing from `(data, resolve, reject) => void` to `(data) => Promise<result>`
+To rectify this, all instances of `media_url_resolver` were refactored to utilize promises.
+
+As a result, this fix not only standardized the codebase but also significantly enhanced error handling.
+
+For more information on using `+media_url_resolver+`, see xref:media.adoc#media_url_resolver[media_url_resolver]
 
 === Accurate default options in the `styles` bespoke select toolbar button
 // #TINY-10603

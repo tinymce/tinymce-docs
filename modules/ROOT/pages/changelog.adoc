@@ -74,3 +74,4 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Adding newline after using `selection.setContent` to insert a block element would throw an unhandled exception.
 * Floating toolbar buttons in inline editor incorrectly wrapped into multiple rows on window resizing or zooming.
 * When setting table border width and `table_style_by_css` is true, only the border attribute is set to 0 and border-width styling is no longer used.
+* Clicking to the left or right of a non-editable `div` in Firefox would show two cursors.

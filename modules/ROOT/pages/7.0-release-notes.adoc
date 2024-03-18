@@ -7,7 +7,9 @@
 include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 [NOTE]
-{productname} 7.0 is _licensed under GPL Version 2 or later_. This version introduces a new `license_key`  configuration setting that gives self-hosted users the ability to select a usage under the GPL or to authenticate their paid license with Tiny.
+{productname} 7.0 is _licensed under GPL Version 2 or later_. This version introduces a new xref:license-key.adoc[licence_key]  configuration setting that gives self-hosted users the ability to select a usage under the GPL or to authenticate their paid license with Tiny.
+
+// #TINY-10681 / #TINY-10578
 
 [[overview]]
 == Overview
@@ -100,25 +102,6 @@ Below is a table outlining the renaming of certain plugins:
 | Spell Checker Pro | Spell Checker
 |===
 
-=== PowerPaste
-
-The {productname} 7.0 release includes an accompanying release of the **PowerPaste** premium plugin.
-
-**PowerPaste** includes the following fix.
-
-==== Removed manually dispatching `dragend` event on drop in Firefox.
-// #TINY-10389
-
-Dragging and dropping an image between two cells in a table with the **PowerPaste** plugin enabled triggered the manual dispatching of the `dragend` event when the host browser was Firefox.
-
-As a consequence, the image was duplicated into the new cell instead of being moved from the old cell to the new one.
-
-In {productname} 7.0, this manual dispatching of the `dragend` event in Firefox has been removed.
-
-As a result, when an image is `dragged` and `dropped` from one cell to another, it now correctly moves without duplicating itself.
-
-For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
-
 === Templates
 
 The {productname} 7.0 release includes an accompanying release of the **Templates** premium plugin.
@@ -126,7 +109,7 @@ The {productname} 7.0 release includes an accompanying release of the **Template
 **Templates** includes the following improvement.
 
 ==== Missing tooltip for category and template three dots menu button in the **Templates** dialog
-//# TINY-10615
+// #TINY-10615
 
 Previously, the three dots menu button for category and template in the **Templates** dialog were missing a tooltip, making them inaccessible.
 
@@ -135,6 +118,7 @@ In {productname} 7.0, the three dot menu buttons for categories and templates in
 NOTE: The **Templates** plugin mentioned here refers to the premium plugin that has been renamed, not the open-source plugin. See xref:tinymce-7-0-plugin-naming-unification[TinyMCE 7.0 plugin naming unification] for more information.
 
 === Enhanced Code Editor
+// TINY-10561
 
 The {productname} 7.0 release includes an accompanying release of the **Enhanced Code Editor** premium plugin.
 
@@ -224,7 +208,7 @@ The **Enhanced Skins & Icon Packs** release includes the following updates:
 The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} 7.0 skin, Oxide.
 
 ==== Fixed some focus issues related to {productname} 5 skin and Enhanced skins.
-//# TINY-9176
+// #TINY-9176
 
 The current colors for various UI buttons didn’t provide suitable contrast against the background/neighboring components.
 
@@ -284,7 +268,7 @@ As a result, users can now insert **mentions** and **emojis** using the `autocom
 For information on the **Autocompleter** plugin, see: xref:autocompleter.adoc[Autocompleter].
 
 === Improved accessibility for interactive elements with custom tooltips
-// #TINY-10453
+// #TINY-10453 / #TINY-9275
 
 In previous versions of {productname}, buttons without visible labels displayed browser native tooltips which only shows on mouse hover, not keyboard focus. This meant keyboard-only users couldn't access these tooltips, hindering their understanding of button functionality.
 
@@ -444,7 +428,7 @@ tinymce.init({
 });
 ----
 
-For more information on content filtering for custom elements, see xref:content-filtering.adoc#custom_elements.adoc[`custom_elements`]
+For more information on content filtering for custom elements, see xref:content-filtering.adoc#custom_elements.adoc[custom_elements].
 
 
 [[changes]]
@@ -531,6 +515,11 @@ Previously, the `DialogFooterToggleButton` component required a tooltip property
 
 As of {productname} 7.0, the tooltip property is now optional for `DialogFooterToggleButton`. This flexibility allows developers to omit the tooltip for buttons where it's not required, providing a cleaner and more focused user experience.
 
+=== Changed the `media_url_resolver` option to use promises.
+// #TINY-9154
+
+// TODO
+
 === Accurate default options in the `styles` bespoke select toolbar button
 // #TINY-10603
 
@@ -576,6 +565,11 @@ If `+editor.ui.registry.addAutocompleter(name, options)+` was used in your confi
 NOTE: The new `trigger` option can handle multiple character strings as the trigger.
 
 For more information, visit the updated xref:autocompleter.adoc[Autocompleter] documentation.
+
+=== Removed `closeButton` from `NotificationSpec`, close button in notification is now rendered by default.
+// #TINY-10646
+
+// TODO
 
 
 [[bug-fixes]]
@@ -683,6 +677,17 @@ As a consequence, the additional rows in the wrapped toolbar would cover the edi
 {productname} 7.0 addresses this issue, now, the editor shrinking is applied before calculating the top position of the toolbar.
 
 As a result, the truncated toolbar is correctly displayed above the editor content.
+
+==== Removed manually dispatching `dragend` event on drop in Firefox.
+// #TINY-10389
+
+Dragging and dropping an image between two cells in a table with the **PowerPaste** plugin enabled triggered the manual dispatching of the `dragend` event when the host browser was Firefox.
+
+As a consequence, the image was duplicated into the new cell instead of being moved from the old cell to the new one.
+
+In {productname} 7.0, this manual dispatching of the `dragend` event in Firefox has been removed.
+
+As a result, when an image is `dragged` and `dropped` from one cell to another, it now correctly moves without duplicating itself.
 
 === Pressing Backspace at the start of an empty `summary` element within a `details` element nested in a list item no longer removes the `summary` element.
 // #TINY-10303

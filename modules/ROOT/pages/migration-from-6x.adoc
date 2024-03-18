@@ -83,7 +83,7 @@ The premium **Enhanced Media Embed** plugin uses `iframes` extensively and are c
 ----
 tinymce.init({
   selector: "textarea",
-	sandbox_iframes: false,
+  sandbox_iframes: false,
 });
 ----
 

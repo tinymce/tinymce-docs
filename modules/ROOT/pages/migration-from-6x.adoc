@@ -154,11 +154,8 @@ While the capability still exists for users that have added this option to their
 
 === Changed
 
-[[plugins-list-plugin]]
-==== List Plugin
-
 [[The-list-plugin-is-now-required-to-be-added-to-TinyMCE-config-in-order-to-execute-list-commands]]
-===== The list plugin is now required to be added to {productname} config, in order to execute list commands
+==== The list plugin is now required to be added to {productname} config, in order to execute list commands
 
 A breaking change has been introduced regarding the insertion of **lists** using the `InsertOrderedList` and `InsertUnorderedList` commands.
 
@@ -187,7 +184,7 @@ tinymce.init({
 In {productname} 7.0 the below plugin has been removed.
 
 [[removed-plugins-template-plugin]]
-==== Template plugin
+==== Removed open-source `Template` plugin
 
 The open-source `Template` plugin and associated config options have been removed in {productname} 7.0.
 

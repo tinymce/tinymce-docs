@@ -797,7 +797,6 @@ There <is one | are <number> known issue<s> in {productname} <x.y[.z]>.
 
 === Revision history
 
-* Code within code blocks may not be accurately differentiated, excluding changes in newlines.
 * `table` elements with `colgroup` are highlighted as new even though there is no change.
 * There is no integration for saving a version yet. For now, a workaround is to add a custom toolbar button. For example:
 

@@ -67,7 +67,7 @@ TODO//
 [[sandbox-iframes-option]]
 === `sandbox_iframes`
 
-Previous Security penetration testing surfaced a security issue with {productname} loading iframes `unsandboxed` which asa. result could allow arbitrary code execution inside {productname} content.
+Previous Security penetration testing surfaced a security issue with {productname} loading iframes `unsandboxed` which as a result could allow arbitrary code execution inside {productname} content.
 
 As a result, a configuration option was introduced in {productname} 6.8 to sandbox `(to isolate)` iframes and prevent javascript from executing code inside {productname} documents.
 

@@ -18,16 +18,14 @@ Open Source users: please report issues in the https://github.com/tinymce/tinymc
 == Overview
 
 * xref:breaking-changes[Breaking changes]
-* xref:apis[APIs]
 * xref:commands-and-queries[Commands and queries]
 * xref:options[Options]
 * xref:plugins[Plugins]
-* xref:schema[Schema]
 * xref:ui-and-ux-elements-and-components[UI and UX elements and components]
 * xref:security[Security]
 
 [[tinymce-70-core-changes]]
-== {productname} {productmajorversion} core changes
+== {productname} {productmajorversion} core changes.
 
 For additional details on {productname} 7.0 changes, see xref:7.0-release-notes.adoc[{productname} 7.0 release notes].
 
@@ -35,9 +33,43 @@ For additional details on {productname} 7.0 changes, see xref:7.0-release-notes.
 [[breaking-changes]]
 == Breaking Changes
 
-TODO//
+This section documents the core changes made to {productname} 7.0.
 
-=== The autocompleter `ch` configuration property has been removed. Use the `trigger` property instead.
+=== Changed
+
+[[Changes-to-text-pattern-defaults-to-trigger-on-Space-key-press]]
+==== Changes to `text-pattern` defaults to trigger on `Space` key press.
+
+Applying basic formats such as headings, lists, bold and italic while typing are considered core functionality for WYSIWYG Editor's. {productname}'s default behavior for applying these format styles was applied on `Enter`, not `Space`.
+
+{productname} 7 introduces changes to the default behavior for `text-patterns` so that on **Space** key the editor triggers a xref:content-behavior-options.adoc#block-patterns[block patterns] rather then on `Enter` key press.
+
+[NOTE]
+Customers that wish to revert back to the previous default block `text_patterns` execution on `Enter` key pressing will be required to replace the preconfigured text_patterns. Learn more about how you can configure `text_patterns` in the xref:7.0-release-notes.adoc#a-new-trigger-property-for-block-text-pattern-configurations-allowing-pattern-activation-with-either-space-or-enter-keys[7.0 Release notes]
+
+.Updated default text patterns
+[source, ts]
+----
+default: [
+  { start: '#', format: 'h1', trigger: 'space' },
+  { start: '##', format: 'h2', trigger: 'space' },
+  { start: '###', format: 'h3', trigger: 'space' },
+  { start: '####', format: 'h4', trigger: 'space' },
+  { start: '#####', format: 'h5', trigger: 'space' },
+  { start: '######', format: 'h6', trigger: 'space' },
+  { start: '1.', cmd: 'InsertOrderedList', trigger: 'space' },
+  { start: '*', cmd: 'InsertUnorderedList', trigger: 'space' },
+  { start: '-', cmd: 'InsertUnorderedList', trigger: 'space' },
+  { start: '>', cmd: 'mceBlockQuote', trigger: 'space' },
+  { start: '---', cmd: 'InsertHorizontalRule', trigger: 'space' },
+]
+----
+
+For information on the **text_patterns**, see xref:content-behavior-options.adoc#text_patterns[Text Patterns].
+
+=== Removed
+
+==== The autocompleter `ch` configuration property has been removed. Use the `trigger` property instead.
 // #TINY-8929
 
 Previously, the `ch` configuration property was used to specify the character that would trigger the autocompleter.
@@ -51,21 +83,181 @@ NOTE: The new `trigger` option can handle multiple character strings as the trig
 For more information, visit the updated xref:autocompleter.adoc[Autocompleter] documentation.
 
 
-[[apis]]
-== APIs
-
-TODO//
-
 [[commands-and-queries]]
 == Commands and queries
 
-TODO//
+=== Changed
+
+==== Removed `InsertOrderedList` and `InsertUnorderedList` commands from the core.
+
+Previously, native list commands were executable through various text patterns, leading to undefined browser behavior due to the embedded list code.
+
+As of {productname} 7.0, these commands have been extracted from the core list commands.
+
+[NOTE]
+To utilize these commands, include `plugins: [ 'lists' ]` in the configuration. This action enables the commands previously removed from the core, providing access through the `lists` plugin.
 
 [[options]]
 == Options
 
+=== Changed
+
+[[highlight-on-focus]]
+==== `highlight_on_focus`
+
+Previously, the default value for the editor configuration option `highlight_on_focus` was set to `false` by default. In {productname} 7.0 this option is now by default set to `true`
+
+As a result, the focus outline for the editor will by default be displayed when the focus is on the editor.
+
+Customers who have created their own custom skins, or have implemented their own outline and wish to not to use the default one will need to add the `highlight_on_focus: false` option to their {productname} configuration.
+
+[NOTE]
+This change does not impact editors using inline mode.
+
+=== Removed
+
+[[force-hex-color]]
+==== `force_hex_color`
+
+Previously in {productname} 6, all colors in the content HTML where set to use `RGB` values by default. As the common practice is using `hex` values this change will be **reverted**.
+
+.Example
+[source, html]
+----
+<!-- example using RGB values -->
+<p>Hello <span style="color: rgb(255, 0, 0);">red</span> color</p>
+
+<!-- example using HEX values -->
+<p>Hello <span style="color: #ff0000">red</span> color</p>
+----
+
+In {productname} 7.0, the default will be reverted back to using `hex` values by default.
+
+[IMPORTANT]
+The option `force_hex_color` will be removed altogether in {productname} 7.0.
+
+[[deprecated-options]]
+== Deprecated Options
+
+=== Changed
+
+[[deprecated-options-remove-trailing-brs-option-removed-from-our-DomParser-API]]
+==== `remove_trailing_brs` option removed from our `DomParser` API
+
+The `remove_trailing_brs` option was moved to the serializer and the existing option is no longer the best way to remove the relevant tags.
+
+[TIP]
+While the capability still exists for users that have added this option to their {productname} configuration, it is recommended that customers using our `DomParser` API directly, should migrate to use our `DomSerializer` setting instead.
+
+[[plugins]]
+== Plugins
+
+=== Changed
+
+[[plugins-list-plugin]]
+==== List Plugin
+
+[[The-list-plugin-is-now-required-to-be-added-to-TinyMCE-config-in-order-to-execute-list-commands]]
+===== The list plugin is now required to be added to {productname} config, in order to execute list commands
+
+A breaking change has been introduced regarding the insertion of **lists** using the `InsertOrderedList` and `InsertUnorderedList` commands.
+
+Despite the presence of these commands, they have been functional even without the `list` plugin being added to the {productname} init configuration.
+
+{productname} 7.0, now **requires** that the `list` plugin is present in the `init` configuration for executing these insert list commands.
+
+As a result, and users that notice styling issues with their existing documents will be required to add the `list` plugin to their `init` config, as executing the `InsertOrderedList` and `InsertUnorderedList` commands will have longer effect the editor content.
+
+.Example adding list plugin
+[source, js]
+----
+tinymce.init({
+  selector: "textarea",
+  plugins: [
+    "lists"
+  ],
+  toolbar: "bullist numlist",
+});
+----
+
+
+[[removed-plugins]]
+=== Removed Plugins
+
+In {productname} 7.0 the below plugin has been removed.
+
+[[removed-plugins-template-plugin]]
+==== Template plugin
+
+The open-source `Template` plugin and associated config options have been removed in {productname} 7.0.
+
+Customers using the `template` plugin need to migrate to the premium `advtemplate` which contains all the functionality except some esoteric options that was created very long ago. Instead of simply porting over these options, we will listen to customer feedback and quickly add the ones customer’s are relying on. 
+
+This plugin has been replaced with the **Advanced Template** plugin, see: xref:advanced-templates.adoc[Advanced Template] for more details.
+
+[IMPORTANT]
+For customers using the `template` plugin and are looking to migrate to the premium `advtemplate` plugin which contains all the functionality except some specific options which are noted below.
+
+Options not available in **Advanced Template** plugin
+    
+* `template_cdate_classes`
+* `template_cdate_format`
+* `template_mdate_classes`
+* `template_mdate_format`
+* `template_replace_values`
+* `template_preview_replace_values`
+* `template_selected_content_classes`
+
+
+[[ui-and-ux-elements-and-components]]
+== UI and UX elements and components
+
+=== Improved
+
+[[ui-and-ux-elements-and-components-improved-how-styles-are-applied-when-resizing-rows-and-columns-for-tables]]
+==== Improved how styles are applied when resizing rows and columns for Tables.
+
+Previously added numerous style elements when resizing table rows and columns such as on the `table element`, `tr elements`, and `td elements`. This resulted in unappealing HTML output.
+
+{productname} 7.0 addresses this, now, the height input field has been moved from the `cell` properties dialog to the `row` properties dialog. Now, when an existing table is resized using the drag handles or the row properties dialog, inline css height declarations will be be stripped from cells and table elements and only applied on rows.
+
+[NOTE]
+{productname} 7.0 does not provide any fallback to revert to the old behavior.
+
+=== Fixed
+
+[[ui-and-ux-elements-and-components-fixing-the-table-style-by-css-option]]
+==== Fixing the `table_style_by_css` option
+
+Previously, tables were styled using CSS rather than attributes, aligning with modern web development practices.
+
+However, due to {productname}'s legacy predating this shift, a default option called `table_style_by_css` was introduced in {productname} 6 to accommodate this transition. Unfortunately, the implementation of this feature resulted in an unexpected behavior where the older border attribute was not updated alongside CSS changes, causing issues such as the disappearance of dashed outlines around tables with no borders.
+
+As a consequence, a breaking change has been initiated to address this issue, and the below changes are:
+
+* when a table's border `width` is set to `zero`, the **border attribute** will also be set to `zero`.
+
+=== Removed
+
+[[ui-and-ux-elements-and-components-force-notifications-to-have-a-close-button]]
+==== `Force` notifications to have a close button
+
+Currently, {productname} has the option to modify default notifications so that they do not have display a `X` (close button).
+
+{productname} is committed to enhance accessibility for all users, and aim to create consistency across all notifications and establish a standard tabbing flow for keyboard users.
+
+As of {productname} 7.0, the option `closeButton` has been removed and it will be defaulted to `true`.
+
+[IMPORTANT]
+If customers in-counter table styling issues, they will need to update their CSS to match the **new pattern** produced by {productname}.
+
+[[security]]
+== Security
+
+=== Changed
+
 [[sandbox-iframes-option]]
-=== `sandbox_iframes`
+==== `sandbox_iframes`
 
 Previous Security penetration testing surfaced a security issue with {productname} loading iframes `unsandboxed` which as a result could allow arbitrary code execution inside {productname} content.
 
@@ -89,8 +281,10 @@ tinymce.init({
 
 This follows our policy that we ship the most secure version of {productname} possible, while giving our customers the opportunity to make informed decisions on dialing back protections to a level that fits their use-case.
 
+For more information on the `sandbox_iframes` option see xref:security.adoc#sandbox-iframes[sandbox_iframes].
+
 [[convert-unsafe-embeds-option]]
-=== `convert_unsafe_embeds`
+==== `convert_unsafe_embeds`
 
 A previous Security penetration test surfaced a security issue with {productname} regarding object tags, which was a legacy method of inserting an external resource, such as a video, a PDF.
 
@@ -116,181 +310,6 @@ In {productname} 7.0 by default;
 [NOTE]
 To prevent automatic conversion of content, customers are advised to add `convert_unsafe_embeds: false` to their {productname} init configuration.
 
-[[highlight-on-focus]]
-=== `highlight_on_focus`
+For more information on the `convert_unsafe_embeds` option see xref:security.adoc#convert-unsafe-embeds[convert_unsafe_embeds].
 
-Previously, the default value for the editor configuration option `highlight_on_focus` was set to `false` by default. In {productname} 7.0 this option is now by default set to `true`
-
-As a result, the focus outline for the editor will by default be displayed when the focus is on the editor.
-
-Customers who have created their own custom skins, or have implemented their own outline and wish to not to use the default one will need to add the `highlight_on_focus: false` option to their {productname} configuration.
-
-[NOTE]
-This change does not impact editors using inline mode.
-
-[[force-hex-color]]
-=== `force_hex_color`
-
-Previously in {productname} 6, all colors in the content HTML where set to use `RGB` values by default. As the common practice is using `hex` values this change will be **reverted**.
-
-.Example
-[source, html]
-----
-<!-- example using RGB values -->
-<p>Hello <span style="color: rgb(255, 0, 0);">red</span> color</p>
-
-<!-- example using HEX values -->
-<p>Hello <span style="color: #ff0000">red</span> color</p>
-----
-
-In {productname} 7.0, the default will be reverted back to using `hex` values by default.
-
-[IMPORTANT]
-The option `force_hex_color` will be removed altogether in {productname} 7.0.
-
-[[Changes-to-text-pattern-defaults-to-trigger-on-Space-key-press]]
-=== Changes to `text-pattern` defaults to trigger on `Space` key press.
-
-Applying basic formats such as headings, lists, bold and italic while typing are considered core functionality for WYSIWYG Editor's. {productname}'s default behavior for applying these format styles was applied on `Enter`, not `Space`.
-
-{productname} 7 introduces changes to the default behavior for `text-patterns` so that on **Space** key the editor triggers a xref:modules/ROOT/partials/configuration/text_patterns.adoc#block-patterns[block pattern] rather then on `Enter` key press.
-
-[NOTE]
-Customers that wish to revert back to the previous default block `text_patterns` execution on `Enter` key pressing will be required to replace the preconfigured text_patterns. Learn more about how you can configure `text_patterns` in the xref:7.0-release-notes.adoc#a-new-trigger-property-for-block-text-pattern-configurations-allowing-pattern-activation-with-either-space-or-enter-keys[7.0 Release notes]
-
-.Updated default text patterns
-[source, ts]
-----
-default: [
-  { start: '#', format: 'h1', trigger: 'space' },
-  { start: '##', format: 'h2', trigger: 'space' },
-  { start: '###', format: 'h3', trigger: 'space' },
-  { start: '####', format: 'h4', trigger: 'space' },
-  { start: '#####', format: 'h5', trigger: 'space' },
-  { start: '######', format: 'h6', trigger: 'space' },
-  { start: '1.', cmd: 'InsertOrderedList', trigger: 'space' },
-  { start: '*', cmd: 'InsertUnorderedList', trigger: 'space' },
-  { start: '-', cmd: 'InsertUnorderedList', trigger: 'space' },
-  { start: '>', cmd: 'mceBlockQuote', trigger: 'space' },
-  { start: '---', cmd: 'InsertHorizontalRule', trigger: 'space' },
-]
-----
-
-For information on the **text_patterns**, see xref:content-behavior-options.adoc#text_patterns[Text Patterns]
-
-[[plugins]]
-== Plugins
-
-[[plugins-list-plugin]]
-=== List Plugin
-
-[[The-list-plugin-is-now-required-to-be-added-to-TinyMCE-config-in-order-to-execute-list-commands]]
-==== The list plugin is now required to be added to {productname} config, in order to execute list commands
-
-A breaking change has been introduced regarding the insertion of **lists** using the `InsertOrderedList` and `InsertUnorderedList` commands.
-
-Despite the presence of these commands, they have been functional even without the `list` plugin being added to the {productname} init configuration.
-
-{productname} 7.0, now **requires** that the `list` plugin is present in the `init` configuration for executing these insert list commands.
-
-As a result, and users that notice styling issues with their existing documents will be required to add the `list` plugin to their `init` config, as executing the `InsertOrderedList` and `InsertUnorderedList` commands will have longer effect the editor content.
-
-.Example adding list plugin
-[source, js]
-----
-tinymce.init({
-  selector: "textarea",
-  plugins: [
-    "lists"
-  ],
-  toolbar: "bullist numlist",
-});
-----
-
-
-[[removed-plugins]]
-== Removed Plugins
-
-In {productname} 7.0 the below list is a list of deprecated plugins, config options and APIs according to the following list:
-
-[[removed-plugins-template-plugin]]
-=== Template plugin
-
-The open-source `Template` plugin and associated config options have been removed in {productname} 7.0.
-
-Customers using the `template` plugin need to migrate to the premium `advtemplate` which contains all the functionality except some esoteric options that was created very long ago. Instead of simply porting over these options, we will listen to customer feedback and quickly add the ones customer’s are relying on. 
-
-This plugin has been replaced with the **Advanced Template** plugin, see: xref:advanced-templates.adoc[Advanced Template] for more details.
-
-[IMPORTANT]
-For customers using the `template` plugin and are looking to migrate to the premium `advtemplate` plugin which contains all the functionality except some specific options which are noted below.
-
-Options not available in **Advanced Template** plugin
-    
-* `template_cdate_classes`
-* `template_cdate_format`
-* `template_mdate_classes`
-* `template_mdate_format`
-* `template_replace_values`
-* `template_preview_replace_values`
-* `template_selected_content_classes`
-
-
-[[deprecated-options]]
-== Deprecated Options
-
-[[deprecated-options-remove-trailing-brs-option-removed-from-our-DomParser-API]]
-=== `remove_trailing_brs` option removed from our `DomParser` API
-
-The `remove_trailing_brs` option was moved to the serializer and the existing option is no longer the best way to remove the relevant tags.
-
-[TIP]
-While the capability still exists for users that have added this option to their {productname} configuration, it is recommended that customers using our `DomParser` API directly, should migrate to use our `DomSerializer` setting instead.
-
-
-[[schema]]
-== Schema
-
-TODO//
-
-[[ui-and-ux-elements-and-components]]
-== UI and UX elements and components
-
-[[ui-and-ux-elements-and-components-improved-how-styles-are-applied-when-resizing-rows-and-columns-for-tables]]
-=== Improved how styles are applied when resizing rows and columns for Tables.
-
-Previously added numerous style elements when resizing table rows and columns such as on the `table element`, `tr elements`, and `td elements`. This resulted in unappealing HTML output.
-
-{productname} 7.0 addresses this, now, the height input field has been moved from the `cell` properties dialog to the `row` properties dialog. Now, when an existing table is resized using the drag handles or the row properties dialog, inline css height declarations will be be stripped from cells and table elements and only applied on rows.
-
-[NOTE]
-{productname} 7.0 does not provide any fallback to revert to the old behavior.
-
-[[ui-and-ux-elements-and-components-fixing-the-table-style-by-css-option]]
-=== Fixing the `table_style_by_css` option
-
-Previously, tables were styled using CSS rather than attributes, aligning with modern web development practices.
-
-However, due to {productname}'s legacy predating this shift, a default option called `table_style_by_css` was introduced in {productname} 6 to accommodate this transition. Unfortunately, the implementation of this feature resulted in an unexpected behavior where the older border attribute was not updated alongside CSS changes, causing issues such as the disappearance of dashed outlines around tables with no borders.
-
-As a consequence, a breaking change has been initiated to address this issue, and the below changes are:
-
-* when a table's border `width` is set to `zero`, the **border attribute** will also be set to `zero`.
-
-[[ui-and-ux-elements-and-components-force-notifications-to-have-a-close-button]]
-=== `Force` notifications to have a close button
-
-Currently, {productname} has the option to modify default notifications so that they do not have display a `X` (close button).
-
-{productname} is committed to enhance accessibility for all users, and aim to create consistency across all notifications and establish a standard tabbing flow for keyboard users.
-
-As of {productname} 7.0, the option `closeButton` has been removed and it will be defaulted to `true`.
-
-[IMPORTANT]
-If customers in-counter table styling issues, they will need to update their CSS to match the **new pattern** produced by {productname}.
-
-[[security]]
-== Security
-
-TODO//
 // include::partial$security/sanitizing-html-input-and-protecting-against-xss-attacks-dom-parser-and-dom-purify.adoc[]

@@ -22,11 +22,8 @@ The release brings new features essential for content producers and managers in 
 
 These release notes provide an overview of the changes for {productname} 7.0, including the following:
 
-* xref:new-premium-plugin<s>[New Premium plugins]
-* xref:new-open-source-plugin<s>[New Open Source plugin]
 * xref:new-premium-plugins[New Premium plugins]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
-* xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
 * xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
 * xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
 * xref:improvements[Improvements]
@@ -198,14 +195,14 @@ This meant that screen reader users could not read the proper information about 
 As a result, screen readers now announce the input field as "Source code" when users navigate into it.
 
 
-[[accompanying-premium-plugin-end-of-life-announcement]]
-== Accompanying Premium plugin end-of-life announcement
+[[accompanying-open-source-plugin-end-of-life-announcement]]
+== Accompanying open source plugin end-of-life announcement
 
-The following Premium plugin has been announced as reaching its end-of-life:
+The following open source plugin has been announced as reaching its end-of-life:
 
-=== <Premium plugin name eol>
+=== <Open source plugin name eol>
 
-{productname}’s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
+{productname}’s xref:<plugincode>.adoc[<Open source plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
 
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
@@ -236,7 +233,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[improvements]]
 == Improvements
 
-{productname} 7.0 also includes the following improvement<s>:
+{productname} 7.0 also includes the following improvements:
 
 [[a-new-trigger-property-for-block-text-pattern-configurations-allowing-pattern-activation-with-either-space-or-enter-keys]]
 === A new `trigger` property for block text pattern configurations, allowing pattern activation with either Space or Enter keys
@@ -439,15 +436,11 @@ In {productname} 7.0, this problem has been addressed.
 
 As a result, the `data` elements are recognized as valid elements within the editor, ensuring they are properly retained along with their value attributes.
 
+
 [[additions]]
 == Additions
 
-{productname} <x.y[.z]> also includes the following additions:
-
-=== <TINY-vwxyz 1 changelog entry>
-//#TINY-vwxyz1
-
-// CCFR here.
+{productname} 7.0 also includes the following addition:
 
 === Element preset support for the `valid_children` option and `Schema.addValidChildren` API.
 
@@ -467,13 +460,11 @@ tinymce.init({
 
 For more information on content filtering for custom elements, see xref:content-filtering.adoc#custom_elements.adoc[`custom_elements`]
 
+
 [[changes]]
 == Changes
 
-=== <TINY-vwxyz 1 changelog entry>
-//#TINY-vwxyz1
-
-// CCFR here.
+{productname} 7.0 also includes the following changes:
 
 === Removed incorrect `aria-placeholder` attribute from editor body when `placeholder` option is set.
 // #TINY-10452
@@ -516,6 +507,8 @@ When adjusting row height through the row dialog, any height styles previously a
 [[removed]]
 == Removed
 
+{productname} 7.0 also includes the following removals:
+
 === Removed `force_hex_color` option, with the default now being all colors are forced to HEX format and as lower case.
 // #TINY-10436
 
@@ -525,7 +518,7 @@ As a result, in {productname} 7, all colors are converted to use `hex` values an
 
 For more information, see xref:migration-from-6x.adoc#force-hex-color[Migrating from {productname} 6 to {productname} 7: "force_hex_color"].
 
-=== Removed InsertOrderedList and InsertUnorderedList commands from core.
+=== Removed `InsertOrderedList` and `InsertUnorderedList` commands from core.
 // #TINY-10644
 
 Previously, native list commands could be executed by various text patterns.
@@ -558,13 +551,11 @@ Customers using the `template` plugin will need to migrate to the premium xref:
 
 For more information, see xref:migration-from-6x.adoc#deprecated-plugins-template-plugin[Migrating from {productname} 6 to {productname} 7].
 
+
 [[bug-fixes]]
 == Bug fixes
 
 {productname} 7.0 also includes the following bug fixes:
-
-=== <TINY-vwxyz 1 changelog entry>
-//#TINY-vwxyz1
 
 ==== Autocompleter did not work when attempting to insert a `mention` or `emoji` when using an `IME`.
 //# TINY-10637
@@ -786,6 +777,7 @@ As a consequence, the autocomplete feature triggers as the composition mode chan
 
 {productname} 7.0 addresses this issue by, now avoiding `DOM` mutation during IME composition, ensuring uninterrupted composition sessions without introducing new elements to the DOM.
 
+
 [[security-fixes]]
 == Security fixes
 
@@ -795,6 +787,7 @@ As a consequence, the autocomplete feature triggers as the composition mode chan
 //#TINY-vwxyz1
 
 // CCFR here.
+
 
 [[deprecated]]
 == Deprecated

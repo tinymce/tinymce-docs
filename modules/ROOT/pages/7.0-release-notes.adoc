@@ -123,7 +123,7 @@ For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpas
 
 The {productname} 7.0 release includes an accompanying release of the **Templates** premium plugin.
 
-**Templates** includes the following fixes, additions, and improvements.
+**Templates** includes the following improvement.
 
 ==== Missing tooltip for category and template three dots menu button in the **Templates** dialog
 //# TINY-10615
@@ -131,6 +131,8 @@ The {productname} 7.0 release includes an accompanying release of the **Template
 Previously, the three dots menu button for category and template in the **Templates** dialog were missing a tooltip, making them inaccessible.
 
 In {productname} 7.0, the three dot menu buttons for categories and templates in the Templates dialog now have informative tooltips. This clarifies their purpose for all users, enhancing discoverability and improving the overall experience, especially for those relying on assistive technologies.
+
+NOTE: The **Templates** plugin mentioned here refers to the premium plugin that has been renamed, not the open-source plugin. See xref:tinymce-7-0-plugin-naming-unification[TinyMCE 7.0 plugin naming unification] for more information.
 
 === Enhanced Code Editor
 

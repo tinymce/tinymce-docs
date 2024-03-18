@@ -140,9 +140,137 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
   const useDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const isSmallScreen = window.matchMedia('(max-width: 1023.5px)').matches;
 
+  // revisionhistory_fetch
+  const fetchRevisions = () => {
+  return new Promise((resolve, _reject) => {
+    /* Simulate fetching revisions from a server */
+    setTimeout(() => {
+      resolve([
+        {
+          revisionId: '3',
+          createdAt: '2023-11-24T22:26:21.578Z',
+          content: `
+            <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>
+            <h2 style="text-align: center;">Welcome to the TinyMCE editor demo!</h2>
+            <h2>A simple table to play with</h2>
+            <table style="border-collapse: collapse; width: 100%;" border="1">
+            <thead>
+            <tr>
+            <th>Product</th>
+            <th>Cost</th>
+            <th>Really?</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>TinyMCE</td>
+            <td>Free</td>
+            <td>YES!</td>
+            </tr>
+            <tr>
+            <td>Plupload</td>
+            <td>Free</td>
+            <td>YES!</td>
+            </tr>
+            </tbody>
+            </table>
+            <h2>Found a bug?</h2>
+            <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
+            <h2>Finally ...</h2>
+            <p><s>Don't forget to check out our other product <a href="http://www.plupload.com" target="_blank" rel="noopener">Plupload</a>, your ultimate upload solution featuring HTML5 upload support.</s></p>
+            <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>
+          `,
+        },
+        {
+          revisionId: '2',
+          createdAt: '2023-11-25T08:30:21.578Z',
+          content: `
+            <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>
+            <h2 style="text-align: center;">Welcome to the TinyMCE editor demo!</h2>
+            <h2>Got questions or need help?</span></h2>
+            <ol>
+            <li>Our <a href="../">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
+            <li>Have a specific question? Try the <a href="https://stackoverflow.com/questions/tagged/tinymce" target="_blank" rel="noopener"><code>tinymce</code> tag at Stack Overflow</a>.</li>
+            <li>We also offer enterprise grade support as part of <a href="../../../../pricing">TinyMCE premium plans</a>.</li>
+            </ol>
+            <h2>A simple table to play with</h2>
+            <table style="border-collapse: collapse; width: 100%;" border="1">
+            <thead>
+            <tr>
+            <th>Product</th>
+            <th>Cost</th>
+            <th>Really?</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>TinyMCE</td>
+            <td>Free</td>
+            <td>YES!</td>
+            </tr>
+            <tr>
+            <td>Plupload</td>
+            <td>Free</td>
+            <td>YES!</td>
+            </tr>
+            </tbody>
+            </table>
+            <h2>Found a bug?</h2>
+            <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
+            <h2>Finally ...</h2>
+            <p>Don't forget to check out our other product <a href="http://www.plupload.com" target="_blank" rel="noopener">Plupload</a>, your ultimate upload solution featuring HTML5 upload support.</p>
+            <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>
+          `,
+        },
+        {
+          revisionId: '1',
+          createdAt: '2023-11-29T10:11:21.578Z',
+          content: `
+            <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>
+            <h2 style="text-align: center;">Welcome to the TinyMCE editor demo!</h2>
+            <h2>Got questions or need help?</h2>
+            <ul>
+            <li>Our <a href="../">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
+            <li>Have a specific question? Try the <a href="https://stackoverflow.com/questions/tagged/tinymce" target="_blank" rel="noopener"><code>tinymce</code> tag at Stack Overflow</a>.</li>
+            <li>We also offer enterprise grade support as part of <a href="../../../../pricing">TinyMCE premium plans</a>.</li>
+            </ul>
+            <h2>A simple table to play with</h2>
+            <table style="border-collapse: collapse; width: 100%;" border="1">
+            <thead>
+            <tr>
+            <th>Product</th>
+            <th>Cost</th>
+            <th>Really?</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+            <td>TinyMCE</td>
+            <td>Free</td>
+            <td>YES!</td>
+            </tr>
+            <tr>
+            <td>Plupload</td>
+            <td>Free</td>
+            <td>YES!</td>
+            </tr>
+            </tbody>
+            </table>
+            <h2>Found a bug?</h2>
+            <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
+            <h2>Finally ...</h2>
+            <p>Don't forget to check out our other product <a href="http://www.plupload.com" target="_blank" rel="noopener">Plupload</a>, your ultimate upload solution featuring HTML5 upload support.</p>
+            <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>
+          `,
+        },
+      ]);
+    }, 500);
+  });
+  };
+
   tinymce.init({
     selector: 'textarea#full-featured',
-    plugins: 'preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker editimage help formatpainter permanentpen pageembed charmap tinycomments mentions quickbars linkchecker emoticons advtable footnotes mergetags autocorrect typography advtemplate',
+    plugins: 'preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker editimage help formatpainter permanentpen pageembed charmap tinycomments mentions quickbars linkchecker emoticons advtable footnotes mergetags autocorrect typography advtemplate markdown revisionhistory',
     editimage_cors_hosts: ['picsum.photos'],
     tinydrive_token_provider: (success, failure) => {
       success({ token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.Ks_BdfH4CWilyzLNk8S2gDARFhuxIauLa8PwhdEQhEo' });
@@ -161,7 +289,7 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
       }
     },
     menubar: 'file edit view insert format tools table tc help',
-      toolbar: "undo redo | aidialog aishortcuts | blocks fontsizeinput | bold italic | align numlist bullist | link image | table media pageembed | lineheight  outdent indent | strikethrough forecolor backcolor formatpainter removeformat | charmap emoticons checklist | code fullscreen preview | save print | pagebreak anchor codesample footnotes mergetags | addtemplate inserttemplate | addcomment showcomments | ltr rtl casechange | spellcheckdialog a11ycheck", // Note: if a toolbar item requires a plugin, the item will not present in the toolbar if the plugin is not also loaded.
+      toolbar: "undo redo | revisionhistory | aidialog aishortcuts | blocks fontsizeinput | bold italic | align numlist bullist | link image | table media pageembed | lineheight  outdent indent | strikethrough forecolor backcolor formatpainter removeformat | charmap emoticons checklist | code fullscreen preview | save print | pagebreak anchor codesample footnotes mergetags | addtemplate inserttemplate | addcomment showcomments | ltr rtl casechange | spellcheckdialog a11ycheck", // Note: if a toolbar item requires a plugin, the item will not present in the toolbar if the plugin is not also loaded.
     autosave_ask_before_unload: true,
     autosave_interval: '30s',
     autosave_prefix: '{path}{query}-{id}-',
@@ -291,6 +419,7 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
         value: 'Salutation',
         title: 'Salutation'
       }
-    ]
+    ],
+    revisionhistory_fetch: fetchRevisions,
   });
 });

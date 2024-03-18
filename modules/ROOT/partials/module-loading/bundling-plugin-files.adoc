@@ -14,6 +14,7 @@ include::partial$module-loading/bundling-plugins-that-cant-bundle.adoc[]
 ** xref:checklist[Checklist (checklist)]
 ** xref:comments[Comments (tinycomments)]
 ** xref:enhanced-media-embed[Enhanced Media Embed (mediaembed)]
+** xref:exportword[Export to Word (exportword)]
 ** xref:footnotes[Footnotes (footnotes)]
 ** xref:format-painter[Format Painter (formatpainter)]
 ** xref:link-checker[Link Checker (linkchecker)]
@@ -101,6 +102,13 @@ include::partial$plugin-files/plugin-file-list-advcode.adoc[]
 === Enhanced Media Embed (`+mediaembed+`)
 
 include::partial$plugin-files/plugin-file-list-mediaembed.adoc[]
+
+[[export-word]]
+=== ExportWord (`+exportword+`)
+
+include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
+
+include::partial$plugin-files/plugin-file-list-exportword.adoc[]
 
 [[footnotes]]
 === Footnotes (`+footnotes+`)

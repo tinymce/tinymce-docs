@@ -569,7 +569,9 @@ For more information, visit the updated xref:autocompleter.adoc[Autocompleter] d
 === Removed `closeButton` from `NotificationSpec`, close button in notification is now rendered by default.
 // #TINY-10646
 
-// TODO
+To improve keyboard navigation and accessibility in {productname} 7.0, notifications have been standardized by removing the ability to customize the presence of a close button. This change ensures a consistent tabbing order across different notifications.
+
+As a result, the close button is now a standard feature in all notifications. Any customizations or configurations related to the `closeButton` setting will no longer affect the functionality of notifications.
 
 
 [[bug-fixes]]

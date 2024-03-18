@@ -67,32 +67,27 @@ tinymce.init({
 
 == Understanding initial and current versions
 
-When dealing with a new document, that has no saved versions, {pluginname} plugin will always typically maintain two versions: the `initial` and `current` version.
+When dealing with a new document, that has no saved versions, {pluginname} plugin will always typically maintain two versions: the `initial` and `current` versions.
 
 * Initial Version: this version is generated during the {productname} `Loaded` event, with the editor's content initialized.
-* Current Version: is added on opening the {pluginname} with the editor's current content. If included, it will become the `latest version` and placed at the top of the revisions list.
+* Current Version: is created on opening the {pluginname} with the editor's current content. If included, it will become the `latest version` and placed at the top of the revisions list.
 
 [TIP]
-If both versions are the same, only the `current version` is kept.
+When the editor is initialized with content, both versions' content are the same. In that case, the {pluginname} only keeps the `current version`.
 
-For documents with saved versions, the `initial version` is disregarded by the {pluginname} assuming it's already part of the version history. The current version is only discarded if it matches the closest saved version.
+For documents with saved versions, the `initial version` is disregarded by the {pluginname} assuming it's already part of the version history. The current version is discarded if its content matches the closest saved version.
 
-The below table summaries how the initial and current versions are handled in the {pluginname}:
+The below table summaries how versions are handled in {pluginname}:
 
 [cols="1,1,1,3", options="header"]
 |===
-|Initial Version |Different Current Version |Has Saved Versions |Expect
-|No |No |No |No versions are shown
-|Yes |No |No |Only the current version is shown
-|Yes |Yes |No |Both the initial and current versions are shown
-|Yes |Yes |Yes |The saved versions and the current version are shown
-|Yes |No |Yes |The saved versions and the current version are shown
-|No |Yes |Yes |The saved versions and the current version are shown
-|No |No |Yes |Only the saved versions are shown
+|Initial Version |Current Version |Has Saved Versions |Expectation
+|No |N/A |No |No versions are shown
+|No |N/A |Yes |Only the saved versions are shown
+|Yes |Same |No |Only the current version is shown
+|Yes |Different |No |Both the initial and current versions are shown
+|Yes |Either |Yes |The saved versions and the current version are shown
 |===
-
-[NOTE]
-`Different current version` implies whether the current version is different than the initial version. When the editor is initialized with content, the two versions are the same.
 
 == Options
 

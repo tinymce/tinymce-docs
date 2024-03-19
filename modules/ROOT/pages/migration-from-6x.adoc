@@ -146,6 +146,59 @@ In {productname} 7.0, all colors (excluding `rgba` values) are converted to use 
 [[plugins]]
 == Plugins
 
+=== Changed
+
+==== Changed the `media_url_resolver` option to use promises.
+// #TINY-9154
+
+In {productname} 6, the `media_url_resolver` option used a callback rather than a promise, which lead to unforeseen consequences.
+
+To rectify this, all instances of `media_url_resolver` were refactored to utilize promises in {productname} 7.
+
+.Before refactor when using callbacks
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'media',
+  toolbar: 'media',
+  media_url_resolver: (data, resolve/*, reject*/) => {
+    if (data.url.indexOf('YOUR_SPECIAL_VIDEO_URL') !== -1) {
+      const embedHtml = `<iframe src="${data.url}" width="400" height="400" ></iframe>`;
+      resolve({ html: embedHtml });
+    } else {
+      resolve({ html: '' });
+    }
+  }
+});
+----
+
+.After refactor using promises
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'media',
+  toolbar: 'media',
+  media_url_resolver: (data) => {
+    return new Promise((resolve) => {
+      if (data.url.indexOf('YOUR_SPECIAL_VIDEO_URL') !== -1) {
+        const embedHtml = `<iframe src="${data.url}" width="400" height="400" ></iframe>`;
+        resolve({ html: embedHtml });
+      } else {
+        resolve({ html: '' });
+      }
+    });
+  }
+});
+----
+
+[NOTE]
+Integrators will be required to update there configuration to the reflect the new `media_url_resolver` changes.
+
+For more information on using `+media_url_resolver+`, see xref:media.adoc#media_url_resolver[media_url_resolver]
+
+
 [[removed-plugins]]
 === Removed Plugins
 
@@ -177,10 +230,10 @@ Options not available in **Advanced Template** plugin
 [[ui-and-ux]]
 == UI and UX
 
-=== Improved
+=== Changed
 
 [[ui-and-ux-improved-how-styles-are-applied-when-resizing-rows-and-columns-for-tables]]
-==== Improved how cell and row heights are applied to tables.
+==== Changed how cell and row heights are applied to tables.
 
 Previously, {productname} added numerous `height` styles when resizing table rows such as on the `table` element, `tr` elements, and `td` elements. This resulted in unnecessarily verbose HTML output.
 

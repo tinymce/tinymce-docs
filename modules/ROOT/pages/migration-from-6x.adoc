@@ -67,7 +67,7 @@ While the capability still exists for users that have added this option to their
 
 Applying basic formats such as headings, lists, bold and italic while typing are considered core functionality for WYSIWYG Editor's. {productname}'s default behavior for applying these format styles was applied on `Enter`, not `Space`.
 
-{productname} 7 introduces changes to the default behavior for `text-patterns` so that on **Space** key the editor triggers a xref:content-behavior-options.adoc#block-patterns[block patterns] rather then on `Enter` key press.
+{productname} 7 introduces changes to the default behavior for `text-patterns` so that on **Space** key the editor triggers a xref:content-behavior-options.adoc#block-patterns[block patterns] rather than on `Enter` key press.
 
 [NOTE]
 Customers that wish to revert back to the previous default block `text_patterns` execution on `Enter` key pressing will be required to replace the preconfigured text_patterns. Learn more about how you can configure `text_patterns` in the xref:7.0-release-notes.adoc#a-new-trigger-property-for-block-text-pattern-configurations-allowing-pattern-activation-with-either-space-or-enter-keys[7.0 Release notes]

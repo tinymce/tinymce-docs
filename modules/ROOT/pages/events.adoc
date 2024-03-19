@@ -192,6 +192,7 @@ The following plugins provide events.
 * xref:permanent-pen-events[Permanent Pen events]
 * xref:powerpaste-events[PowerPaste events]
 * xref:spell-checker-events[Spell Checker events]
+* xref:revisionhistory-events[Revision History events]
 * xref:autocorrect-events[Spelling Autocorrect events]
 * xref:visual-blocks-events[Visual Blocks events]
 * xref:visual-characters-events[Visual Characters events]
@@ -316,6 +317,11 @@ The following events are provided by the xref:introduction-to-powerpaste.adoc[Po
 |PastePostProcess |`+{ node: Element, mode: string, source: string }+` |Fired after the content has been parsed from the clipboard, but before it's added to the editor.
 |PastePlainTextToggle |`+{ state: boolean }+` |Fired when the plain text paste mode state changes.
 |===
+
+[[revisionhistory-events]]
+=== Revision History events
+
+include::partial$events/revisionhistory-events.adoc[]
 
 [[spell-checker-events]]
 === Spell Checker events

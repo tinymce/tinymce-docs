@@ -829,3 +829,35 @@ tinymce.init({
 ----
 
 Currently, there is no workaround for this issue.
+
+=== Revision History
+
+* `table` elements with `colgroup` are highlighted as new even though there is no change.
+* There is no integration for saving a version yet. For now, a workaround is to add a custom toolbar button. For example:
+
+[source,js]
+----
+const revisions = [];
+
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'revisionhistory',
+  toolbar: 'revisionhistory saveversion',
+  setup: (editor) => {
+    // Save the current content of the editor as a new version
+    editor.ui.registry.addButton('saveversion', {
+      text: 'Save a version',
+      onAction: () => {
+        // Change this according to your setup
+        const revision = {
+          content: editor.getContent({ format: 'raw' }),
+          revisionId: (revisions.length + 1).toString(),
+          createdAt: new Date().toISOString()
+        };
+        revisions.unshift(revision);
+      }
+    });
+  },
+  revisionhistory_fetch: () => Promise.resolve(revisions)
+});
+----

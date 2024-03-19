@@ -212,11 +212,14 @@ Options not available in **Advanced Template** plugin
 === Improved
 
 [[ui-and-ux-elements-and-components-improved-how-styles-are-applied-when-resizing-rows-and-columns-for-tables]]
-==== Improved how styles are applied when resizing rows and columns for Tables.
+==== Improved how cell and row heights are applied to tables.
 
-Previously added numerous style elements when resizing table rows and columns such as on the `table element`, `tr elements`, and `td elements`. This resulted in unappealing HTML output.
+Previously, {productname} added numerous `height` styles when resizing table rows such as on the `table` element, `tr` elements, and `td` elements. This resulted in unnecessarily verbose HTML output.
 
-{productname} 7.0 addresses this, now, the height input field has been moved from the `cell` properties dialog to the `row` properties dialog. Now, when an existing table is resized using the drag handles or the row properties dialog, inline css height declarations will be be stripped from cells and table elements and only applied on rows.
+{productname} 7.0 addresses this by making a couple of changes:
+
+* The height input field has been removed from the "Cell Properties" dialog. Now, the "Row Properties" dialog is the only way to update row heights. 
+* When a table is resized using the resize handles or the "Row properties" dialog, existing `height` styles will be stripped from `td/th` elements where applicable and only applied to the `table` element` and `tr` elements.
 
 [NOTE]
 {productname} 7.0 does not provide any fallback to revert to the old behavior.

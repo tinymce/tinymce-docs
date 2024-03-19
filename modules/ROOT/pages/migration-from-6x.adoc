@@ -20,7 +20,7 @@ Open Source users: please report issues in the https://github.com/tinymce/tinymc
 * xref:commands-and-apis[Commands and APIs]
 * xref:options[Options]
 * xref:plugins[Plugins]
-* xref:ui-and-ux-elements-and-components[UI and UX elements and components]
+* xref:ui-and-ux[UI and UX]
 * xref:security[Security]
 
 [[tinymce-70-core-changes]]
@@ -40,9 +40,20 @@ This section documents the core changes made to {productname} 7.0.
 
 Previously, native list commands were executable through various text patterns, leading to undefined browser behavior due to the embedded list code.
 
-
 [NOTE]
 To utilize these commands, include `plugins: [ 'lists' ]` in the configuration. This action enables the commands previously removed from the core, providing access through the `lists` plugin.
+
+.Example adding list plugin
+[source, js]
+----
+tinymce.init({
+  selector: "textarea",
+  plugins: [
+    "lists"
+  ],
+  toolbar: "bullist numlist",
+});
+----
 
 [[remove-trailing-brs-configuration-property-was-removed-from-our-DomParser-API]]
 ==== `remove_trailing_brs` configuration property was removed from our `DomParser` API
@@ -136,32 +147,6 @@ In {productname} 7.0, all colors (excluding `rgba` values) are converted to use 
 [[plugins]]
 == Plugins
 
-=== Changed
-
-[[The-list-plugin-is-now-required-to-be-added-to-TinyMCE-config-in-order-to-execute-list-commands]]
-==== The list plugin is now required to be added to {productname} config, in order to execute list commands
-
-A breaking change has been introduced regarding the insertion of **lists** using the `InsertOrderedList` and `InsertUnorderedList` commands.
-
-Despite the presence of these commands, they have been functional even without the `list` plugin being added to the {productname} init configuration.
-
-{productname} 7.0, now **requires** that the `list` plugin is present in the `init` configuration for executing these insert list commands.
-
-As a result, and users that notice styling issues with their existing documents will be required to add the `list` plugin to their `init` config, as executing the `InsertOrderedList` and `InsertUnorderedList` commands will have longer effect the editor content.
-
-.Example adding list plugin
-[source, js]
-----
-tinymce.init({
-  selector: "textarea",
-  plugins: [
-    "lists"
-  ],
-  toolbar: "bullist numlist",
-});
-----
-
-
 [[removed-plugins]]
 === Removed Plugins
 
@@ -191,11 +176,11 @@ Options not available in **Advanced Template** plugin
 
 
 [[ui-and-ux-elements-and-components]]
-== UI and UX elements and components
+== UI and UX
 
 === Improved
 
-[[ui-and-ux-elements-and-components-improved-how-styles-are-applied-when-resizing-rows-and-columns-for-tables]]
+[[ui-and-ux-improved-how-styles-are-applied-when-resizing-rows-and-columns-for-tables]]
 ==== Improved how cell and row heights are applied to tables.
 
 Previously, {productname} added numerous `height` styles when resizing table rows such as on the `table` element, `tr` elements, and `td` elements. This resulted in unnecessarily verbose HTML output.
@@ -208,32 +193,16 @@ Previously, {productname} added numerous `height` styles when resizing table row
 [NOTE]
 {productname} 7.0 does not provide any fallback to revert to the old behavior.
 
-=== Fixed
-
-[[ui-and-ux-elements-and-components-fixing-the-table-style-by-css-option]]
-==== Fixing the `table_style_by_css` option
-
-Previously, tables were styled using CSS rather than attributes, aligning with modern web development practices.
-
-However, due to {productname}'s legacy predating this shift, a default option called `table_style_by_css` was introduced in {productname} 6 to accommodate this transition. Unfortunately, the implementation of this feature resulted in an unexpected behavior where the older border attribute was not updated alongside CSS changes, causing issues such as the disappearance of dashed outlines around tables with no borders.
-
-As a consequence, a breaking change has been initiated to address this issue, and the below changes are:
-
-* when a table's border `width` is set to `zero`, the **border attribute** will also be set to `zero`.
-
 === Removed
 
 [[ui-and-ux-elements-and-components-force-notifications-to-have-a-close-button]]
-==== `Force` notifications to have a close button
+==== Force notifications to have a close button
 
-Currently, {productname} has the option to modify default notifications so that they do not have display a `X` (close button).
+Previously, {productname} had the option to modify default notifications so that they do not have display a `X` (close button).
 
 {productname} is committed to enhance accessibility for all users, and aim to create consistency across all notifications and establish a standard tabbing flow for keyboard users.
 
-As of {productname} 7.0, the option `closeButton` has been removed and it will be defaulted to `true`.
-
-[IMPORTANT]
-If customers in-counter table styling issues, they will need to update their CSS to match the **new pattern** produced by {productname}.
+As of {productname} 7.0, the `closeButton` property has been removed from xref:creating-custom-notifications.adoc[notification API], as a result the `closeButton` will always be visible.
 
 [[security]]
 == Security

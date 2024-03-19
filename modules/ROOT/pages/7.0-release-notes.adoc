@@ -810,23 +810,32 @@ Currently, Non-breaking spaces `+&nbsp;+` may be inadvertently inserted around c
 <p>&nbsp;</p> // unexpected
 ----
 
-=== Tab navigation inside the Enhanced Code Editor currently does not function as expected when the host browser is Safari.
+=== Tab navigation inside the Enhanced Code Editor function as expected when the host browser is Safari.
 // #TINY-10596
 
-Currently, tab navigation within the Enhanced Code Editor is not working as expected when Safari is the host browser, resulting in a loss of tab functionality.
+Tab navigation inside the Enhanced Code Editor does not function as expected when the host browser is Safari, as tab-key navigation through browser elements is not enabled by default on MacOS.
 
-Currently, there is no workaround for this issue.
+[TIP]
+====
+Keyboard navigation is essential for accessibility. While tab-key navigation is supported by default on Windows, MacOS requires users to manually enable it within their browser or system settings.
+
+. Launch your Safari browser.
+. Navigate to the Safari menu on the menu bar and select Preferences.
+. Click on the Advanced tab.
+. Enable the accessibility option: "Press Tab to highlight each item on a web page"
+
+Setting this checkbox will ensure Safari functions properly with tab-key navigation through browser elements.
+====
 
 === Table that has `colgroup` attribute is highlighted as new in Revision History.
 
 When a `table` element has `colgroup` attribute, Revision History highlights it as new even though it has no change.
 
-Currently, there is no workaround for this issue.
+Currently, there is no current workaround for this issue.
 
 === Revision History has no integration for saving a version.
 
-
-For now, a workaround is to add a custom toolbar button.
+For now, the current workaround is to add a custom toolbar button.
 
 .Example
 [source,js]

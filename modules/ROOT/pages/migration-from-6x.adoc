@@ -69,7 +69,7 @@ Applying basic formats such as headings, lists, bold and italic from typing them
 {productname} 7 updates the default behavior of the `text-patterns` option to apply these formats when the user presses the `Space` key.
 
 [NOTE]
-Customers that wish to revert back to the previous default block `text_patterns` execution on `Enter` key pressing will be required to replace the preconfigured text_patterns. Learn more about how you can configure `text_patterns` in the xref:7.0-release-notes.adoc#a-new-trigger-property-for-block-text-pattern-configurations-allowing-pattern-activation-with-either-space-or-enter-keys[7.0 Release notes]
+The previous default `text_patterns` behavior, applying the format on an `Enter` key press, can be configured by replacing the `trigger` property with the value `'space'`. Learn more about how you can configure `text_patterns` in the xref:7.0-release-notes.adoc#a-new-trigger-property-for-block-text-pattern-configurations-allowing-pattern-activation-with-either-space-or-enter-keys[7.0 Release notes]
 
 .Updated default text patterns
 [source, ts]

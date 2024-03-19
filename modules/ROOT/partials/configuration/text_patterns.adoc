@@ -85,7 +85,7 @@ Block patterns must have the following:
 
 The block patterns do not have an `+end+` property. This allows for patterns to be used to either apply a block format or execute a command, optionally, with the given value.
 
-NOTE: Block patterns are executed on *Spacebar*, but can be configured to be *Enter*.
+NOTE: Block patterns are executed on *Spacebar* by default, but can be configured to be executed on *Enter*.
 
 ==== Example: using block patterns
 

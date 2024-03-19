@@ -118,7 +118,7 @@ Previously, the default value for the editor configuration option `highlight_on_
 
 As a result, the focus outline for the editor will by default be displayed when the focus is on the editor.
 
-Customers who have created their own custom skins, or have implemented their own outline and wish to not to use the default one will need to add the `highlight_on_focus: false` option to their {productname} configuration.
+Customers who have created their own custom skins, or have implemented their own outline and do not intend to use the default will need to add `highlight_on_focus: false` to their {productname} configuration.
 
 [NOTE]
 This change does not impact editors using inline mode.

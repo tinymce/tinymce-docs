@@ -39,8 +39,7 @@ This section documents the core changes made to {productname} 7.0.
 
 Previously, native list commands were executable through various text patterns, leading to undefined browser behavior due to the embedded list code.
 
-[NOTE]
-To utilize these commands, include `plugins: [ 'lists' ]` in the configuration. This action enables the commands previously removed from the core, providing access through the `lists` plugin.
+In {productname} 7.0, these commands are only available in the xref:lists.adoc[*Lists plugin*].
 
 .Example adding list plugin
 [source, js]

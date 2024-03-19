@@ -119,7 +119,7 @@ This change does not impact editors using inline mode.
 [[force-hex-color]]
 ==== `force_hex_color`
 
-Previously in {productname} 6, all colors in the content HTML where set to use `RGB` values by default. As the common practice is using `hex` values this change will be **reverted**.
+Previously in {productname} 6, all colors in the content HTML were set to use `rgb` values by default. As the common practice is using `hex` values this change has been reverted.
 
 .Example
 [source, html]
@@ -131,10 +131,7 @@ Previously in {productname} 6, all colors in the content HTML where set to use `
 <p>Hello <span style="color: #ff0000">red</span> color</p>
 ----
 
-In {productname} 7.0, the default will be reverted back to using `hex` values by default.
-
-[IMPORTANT]
-The option `force_hex_color` will be removed altogether in {productname} 7.0.
+In {productname} 7.0, all colors (excluding `rgba` values) are converted to use `hex` values and the `forced_hex_color` option has been removed.
 
 [[deprecated-options]]
 == Deprecated Options

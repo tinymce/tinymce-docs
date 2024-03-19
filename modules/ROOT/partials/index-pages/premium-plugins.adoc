@@ -11,24 +11,6 @@ Checks the contents of the editor for WCAG & Section 508 accessibility problems.
 
 a|
 [.lead]
-xref:advcode.adoc[Advanced Code Editor]
-
-How to setup {productname}’s Advanced Code Editor plugin.
-
-a|
-[.lead]
-xref:advtable.adoc[Advanced Tables]
-
-Add advanced functionality to tables.
-
-a|
-[.lead]
-xref:advanced-templates.adoc[Advanced Templates]
-
-Create and edit complex templates in {productname} for use with {productname}.
-
-a|
-[.lead]
 xref:advanced-typography.adoc[Advanced Typography]
 
 Replace common typewriter-style characters with their professional typesetter equivalents.
@@ -59,9 +41,9 @@ The {productname} Comments plugin.
 
 a|
 [.lead]
-xref:editimage.adoc[Enhanced Image Editing]
+xref:advcode.adoc[Enhanced Code Editor]
 
-Enhanced image editing features for {productname}.
+How to setup {productname}’s Enhanced Code Editor plugin.
 
 a|
 [.lead]
@@ -71,9 +53,21 @@ Add rich media previews inside {productname}.
 
 a|
 [.lead]
-xref:export.adoc[Export]
+xref:advtable.adoc[Enhanced Tables]
 
-Export content from {productname} into various formats.
+Add enhanced functionality to tables.
+
+a|
+[.lead]
+xref:exportword.adoc[Export to Word]
+
+Exports editor content into `.docx` file format and saves to local disk.
+
+a|
+[.lead]
+xref:exportpdf.adoc[Export to PDF]
+
+Export and generate content from {productname} into `document.pdf` format.
 
 a|
 [.lead]
@@ -95,9 +89,27 @@ Turn {productname} documents into single files with inline CSS, ready, in partic
 
 a|
 [.lead]
+xref:importword.adoc[Import from Word]
+
+Import `.docx` (Word documents) or `.dotx` (Word templates) files into the editor.
+
+a|
+[.lead]
+xref:editimage.adoc[Image Editing]
+
+Image Editing features for {productname}.
+
+a|
+[.lead]
 xref:linkchecker.adoc[Link Checker]
 
 Validate links, as they are typed.
+
+a|
+[.lead]
+xref:markdown.adoc[Markdown]
+
+Enable conversion of pure markdown on paste.
 
 a|
 [.lead]
@@ -137,13 +149,7 @@ Copy and paste content from Microsoft Word, Microsoft Excel, Google Docs, and HT
 
 a|
 [.lead]
-xref:rtc-introduction.adoc[Real-time collaboration]
-
-The Real-time Collaboration plugin for {productname}.
-
-a|
-[.lead]
-xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro]
+xref:introduction-to-tiny-spellchecker.adoc[Spell Checker]
 
 Check spelling as-you-type in {productname}.
 
@@ -152,6 +158,12 @@ a|
 xref:autocorrect.adoc[Spelling Autocorrect]
 
 Add autocorrection of common typos and spelling errors as well as capitalization correction to {productname}.
+
+a|
+[.lead]
+xref:advanced-templates.adoc[Templates]
+
+Create and edit complex templates in {productname}.
 
 a|
 [.lead]

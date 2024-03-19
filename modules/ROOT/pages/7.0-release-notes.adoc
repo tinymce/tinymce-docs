@@ -6,68 +6,196 @@
 
 include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
+[NOTE]
+{productname} 7.0 is _licensed under GPL Version 2 or later_. This version introduces a new `license_key`  configuration setting that gives self-hosted users the ability to select a usage under the GPL or to authenticate their paid license with Tiny.
+
 [[overview]]
 == Overview
 
-{productname} 7.0 was released for {enterpriseversion} and {cloudname} on Wednesday, March 20^th^, 2024. These release notes provide an overview of the changes for {productname} 7.0, including:
+{productname} 7.0 was released for {enterpriseversion} and {cloudname} on Wednesday, March 20^th^, 2024. 
 
-// Remove sections and section boilerplates as necessary.
-// Pluralise as necessary or remove the placeholder plural marker.
-* xref:new-premium-plugin<s>[New Premium plugin<s>]
-* xref:new-open-source-plugin<s>[New Open Source plugin<s>]
+The release brings new features essential for content producers and managers in the modern workplace. These features improve efficiency through simplified sharing of content and providing improved tools for the asynchronous collaboration needs of remote teams.
+
+* **Revision History**: View changes from one content version to another.
+* **Document Converters**: Import content from Microsoft Word. Export content to Microsoft Word or PDF documents.
+* **Markdown**: Paste markdown from other platforms into the editor for instant rich-text conversion.
+
+These release notes provide an overview of the changes for {productname} 7.0, including the following:
+
+* xref:new-premium-plugin<s>[New Premium plugins]
+* xref:new-open-source-plugin<s>[New Open Source plugin]
+* xref:new-premium-plugins[New Premium plugins]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
 * xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
-* xref:accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
+* xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
 * xref:improvements[Improvements]
 * xref:additions[Additions]
 * xref:changes[Changes]
+* xref:removed[Removed]
 * xref:bug-fixes[Bug fixes]
 * xref:security-fixes[Security fixes]
 * xref:deprecated[Deprecated]
 * xref:known-issues[Known issues]
 
 
-[[new-premium-plugin<s>]]
-New Premium plugin<s>
+[[new-premium-plugins]]
+== New Premium plugins
 
-The following new Premium plugin was released alongside {productname} <x.y[.z]>.
-
-=== <Premium plugin name> 1.0.0
-
-The new Premium plugin, **<Premium plugin name>** // description here.
-
-For information on the **<Premium plugin name>** see xref:<plugincode>.adoc[<Premium plugin name>].
+The following new Premium plugins was released alongside {productname} 7.0.
 
 
-[[new-open-source-plugin]]
-== New Open Source plugin
+[[premium-plugin-revision-history]]
+=== Revision History
 
-The following new Open Source plugin was released alongside {productname} <x.y[.z]>.
+The new Premium plugin, **Revision History**, allows you to track changes made to content in the {productname} editor and restore previous versions of the content.
 
-=== <Open source plugin name> 1.0.0
+For information on the **Revision History** plugin, see xref:revisionhistory.adoc[Revision History].
 
-The new open source plugin, **<Open source plugin name>** // description here.
+=== Import from Word
 
-For information on the **<Open source plugin name>** plugin see xref:<plugincode>.adoc[<Open source plugin name>].
+The new Premium plugin, **Import from Word**, provides a way to import `.docx` (Word documents) or `.dotx` (Word templates) files into the editor.
+
+For information on the **Import from Word** plugin, see xref:importword.adoc[Import from Word].
+
+=== Export to Word
+
+The new Premium plugin, **Export to Word**, provides a way to generate a `.docx` file directly from the editor.
+
+For information on the **Export to Word** plugin, see xref:exportword.adoc[Export to Word].
+
+=== Export to PDF
+
+The new Premium plugin, **Export to PDF**, provides a way to generate a `.pdf` file directly from the editor.
+
+For information on the **Export to PDF** plugin, see xref:exportpdf.adoc[Export to PDF].
+
+=== Markdown
+
+The new Premium plugin, **Markdown**, detects pure markdown from a paste event within a {productname} editor instance and converts it to HTML.
+
+For information on the **Markdown** plugin, see xref:markdown.adoc[Markdown].
 
 
 [[accompanying-premium-plugin-changes]]
 == Accompanying Premium plugin changes
 
-The following premium plugin updates were released alongside {productname} <x.y[.z]>.
+The following premium plugin updates were released alongside {productname} 7.0.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== TinyMCE 7.0 plugin naming unification
 
-The {productname} <x.y[.z]> release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+With the release of {productname} 7.0, the below plugins are adopting the following name changes.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+[NOTE]
+That while these changes are to update the plugin names used in documentation and communication materials, this does not alter the plugin identifiers themselves at this time. This means that existing integrations and configurations will remain unaffected by this change.
 
-==== <Premium plugin name 1 change 1>
+Below is a table outlining the renaming of certain plugins:
 
-// CCFR here.
+[options="header"]
+|===
+| Old Name | New Name
+| Advanced Code Editor | Enhanced Code Editor
+| Advanced Lists | List Styles
+| Advanced Tables | Enhanced Tables
+| Advanced Templates | Templates
+| Enhanced Image Editing | Image Editing
+| Skins & Icons Packs | Enhanced Skins & Icons Packs
+| Spell Checker Pro | Spell Checker
+|===
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+=== PowerPaste
+
+The {productname} 7.0 release includes an accompanying release of the **PowerPaste** premium plugin.
+
+**PowerPaste** includes the following fix.
+
+==== Removed manually dispatching `dragend` event on drop in Firefox.
+// #TINY-10389
+
+Dragging and dropping an image between two cells in a table with the **PowerPaste** plugin enabled triggered the manual dispatching of the `dragend` event when the host browser was Firefox.
+
+As a consequence, the image was duplicated into the new cell instead of being moved from the old cell to the new one.
+
+In {productname} 7.0, this manual dispatching of the `dragend` event in Firefox has been removed.
+
+As a result, when an image is `dragged` and `dropped` from one cell to another, it now correctly moves without duplicating itself.
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
+
+=== Templates
+
+The {productname} 7.0 release includes an accompanying release of the **Templates** premium plugin.
+
+**Templates** includes the following fixes, additions, and improvements.
+
+==== Missing tooltip for category and template three dots menu button in the **Templates** dialog
+//# TINY-10615
+
+Previously, the three dots menu button for category and template in the **Templates** dialog were missing a tooltip, making them inaccessible.
+
+In {productname} 7.0, the three dot menu buttons for categories and templates in the Templates dialog now have informative tooltips. This clarifies their purpose for all users, enhancing discoverability and improving the overall experience, especially for those relying on assistive technologies.
+
+=== Enhanced Code Editor
+
+The {productname} 7.0 release includes an accompanying release of the **Enhanced Code Editor** premium plugin.
+
+**Enhanced Code Editor** includes the following fixes, additions, and improvements.
+
+==== Updated CodeMirror to version 6.
+// #TINY-9205
+
+{productname} 7.0 introduces CodeMirror 6.
+
+With this update, users have gained access to improved features "to be expanded on in future releases" and a more responsive editing experience.
+
+During the integration process, {productname} made necessary adjustments to ensure compatibility between {productname} 7.0 and CodeMirror 6. Specifically, our CSS reset rules were refined to accommodate the dynamically generated styles of CodeMirror 6 and as a result the `codemirror.css` file was removed from the plugin deployment.
+
+This update from CodeMirror 5 to 6 should have no impact on customers utilizing the Enhanced Code Editor feature. More information about CodeMirror 6 will be included in future patch releases.
+
+==== Updated keyboard shortcuts for Enhanced Code Editor.
+
+With the update to CodeMirror 6 with {productname} 7.0, brings the below updated keyboard shortcuts for Enhanced Code Editor.
+
+include::partial$misc/advcode-shortcuts.adoc[leveloffset=+1]
+
+For information on the Enhanced Code Editor plugin, see: xref:advcode.adoc[Enhanced Code Editor].
+
+==== Tab and shift + tab didn't not navigate to the next tab stop inside the code dialog.
+// #TINY-10596
+
+Previous versions of the Enhanced Code Editor (formally known as Advanced Code Editor), in the code dialog, the `tab` and `shift + tab` functionalities failed to navigate to the next tab stop.
+
+As the Enhanced Code Editor serves as the container for `Codemirror`, this absence resulted in ineffective tab navigation.
+
+{productname} 7.0 addresses this issue, by implementing the new tab behavior for the Enhanced Code Editor, thereby resolving the problem.
+
+As a result, both the Enhanced Code Editor and `Codemirror` now exhibit managed tabbing behavior's, ensuring smoother navigation within the code dialog.
+
+==== Add `Cmd+g`/`Ctrl+g` shortcut for `gotoLine` command.
+// #TINY-10649
+
+Enhanced Code Editor introduces a new shortcut: `ctrl+g` for Linux and Windows, and `cmd+g` for Mac users with {productname} 7.0.
+
+The shortcut allows the user to:
+
+* quickly jump to any line in your code.
+* specify line numbers
+* use relative offsets like + or -
+* document percentages with %, and;
+* even add a column position with a colon and a number after the line.
+
+Find more details in the documentation here: link:https://codemirror.net/docs/ref/#search.gotoLine[gotoLine]
+
+==== Add `aria-label` to Enhanced Code Editor.
+// #TINY-10651
+
+During an internal audit, it was discoverd that the `<textarea>` element within the "Source Code" dialog, which allows users to input code, was missing an accessible name.
+
+This meant that screen reader users could not read the proper information about the purpose of the input field when navigating it.
+
+{productname} 7.0 addresses this issue, by adding an `aria-label` attribute to the `<textarea>` element with the value "Source code".
+
+As a result, screen readers now announce the input field as "Source code" when users navigate into it.
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
@@ -80,30 +208,236 @@ The following Premium plugin has been announced as reaching its end-of-life:
 {productname}’s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
 
 
-[[accompanying-premium-skins-and-icon-packs-changes]]
-== Accompanying Premium Skins and Icon Packs changes
+[[accompanying-enhanced-skins-and-icon-packs-changes]]
+== Accompanying Enhanced Skins & Icon Packs changes
 
-The {productname} <x.y[.z]> release includes an accompanying release of the **Premium Skins and Icon Packs**.
+The {productname} 7.0 release includes an accompanying release of the **Enhanced Skins & Icon Packs**.
 
-=== Premium Skins and Icon Packs
+=== Enhanced Skins & Icon Packs
 
-The **Premium Skins and Icon Packs** release includes the following updates:
+The **Enhanced Skins & Icon Packs** release includes the following updates:
 
-The **Premium Skins and Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} <x.y[.z]> skin, Oxide.
+The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} 7.0 skin, Oxide.
 
-For information on using premium skins and icon packs, see: xref:premium-skins-and-icons.adoc[Premium Skins and Icon Packs].
+==== Fixed some focus issues related to {productname} 5 skin and Enhanced skins.
+//# TINY-9176
+
+The current colors for various UI buttons didn’t provide suitable contrast against the background/neighboring components.
+
+As a consequence, users with accessibility requirements had difficulty determining the current `active/focused/hovered/enabled` component in the UI.
+
+{productname} 7.0 addresses this issue, now, the colors for many of these UI components have been updated for each of these states.
+
+As a result, these components now have appropriate levels of contrast for ease of use by users with accessibility requirements.
+
+For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
 
 
 [[improvements]]
 == Improvements
 
-{productname} <x.y[.z]> also includes the following improvement<s>:
+{productname} 7.0 also includes the following improvement<s>:
 
-=== <TINY-vwxyz 1 changelog entry>
-//#TINY-vwxyz1
+[[a-new-trigger-property-for-block-text-pattern-configurations-allowing-pattern-activation-with-either-space-or-enter-keys]]
+=== A new `trigger` property for block text pattern configurations, allowing pattern activation with either Space or Enter keys
+//#TINY-10324
 
-// CCFR here.
+This release introduces a new `trigger` property for block text pattern configurations, allowing pattern activation with either `Space` or `Enter` keys.
 
+In {productname} 7.0 the default preconfigured text patterns **was changed from**:
+
+[[example-preconfigured-text-patterns-prior-to-TinyMCE-7.0]]
+.Example preconfigured text_patterns prior to {productname} 7.0
+[source, js]
+----
+[
+  { start: '*', end: '*', format: 'italic' },
+  { start: '**', end: '**', format: 'bold' },
+  { start: '#', format: 'h1' },
+  { start: '##', format: 'h2' },
+  { start: '###', format: 'h3' },
+  { start: '####', format: 'h4' },
+  { start: '#####', format: 'h5' },
+  { start: '######', format: 'h6' },
+  // The following text patterns require the `lists` plugin
+  { start: '1. ', cmd: 'InsertOrderedList' },
+  { start: '* ', cmd: 'InsertUnorderedList' },
+  { start: '- ', cmd: 'InsertUnorderedList' }
+]
+----
+
+to the following new preconfigured defaults:
+
+.Example preconfigured text_patterns for {productname} 7.0+
+[source, js]
+----
+[     
+  { start: '*', end: '*', format: 'italic' },
+  { start: '**', end: '**', format: 'bold' },
+  { start: '#', format: 'h1', trigger: 'space' },
+  { start: '##', format: 'h2', trigger: 'space' },
+  { start: '###', format: 'h3', trigger: 'space' },
+  { start: '####', format: 'h4', trigger: 'space' },
+  { start: '#####', format: 'h5', trigger: 'space' },
+  { start: '######', format: 'h6', trigger: 'space' },
+  { start: '1.', cmd: 'InsertOrderedList', trigger: 'space' },
+  { start: '*', cmd: 'InsertUnorderedList', trigger: 'space' },
+  { start: '-', cmd: 'InsertUnorderedList', trigger: 'space' },
+  { start: '>', cmd: 'mceBlockQuote', trigger: 'space' },
+  { start: '---', cmd: 'InsertHorizontalRule', trigger: 'space' },
+]
+----
+
+[IMPORTANT]
+Customers that wish to revert back to the previous default block `text_patterns` execution on `Enter` key pressing will be required to replace the preconfigured `text_patterns` with following array:
+
+[source, js]
+----
+[     
+    { start: '*', end: '*', format: 'italic' },
+    { start: '**', end: '**', format: 'bold' },
+    { start: '#', format: 'h1', trigger: 'enter' },
+    { start: '##', format: 'h2', trigger: 'enter' },
+    { start: '###', format: 'h3', trigger: 'enter' },
+    { start: '####', format: 'h4', trigger: 'enter' },
+    { start: '#####', format: 'h5', trigger: 'enter' },
+    { start: '######', format: 'h6', trigger: 'enter' },
+    { start: '1. ', cmd: 'InsertOrderedList', trigger: 'enter' },
+    { start: '* ', cmd: 'InsertUnorderedList', trigger: 'enter' },
+    { start: '- ', cmd: 'InsertUnorderedList', trigger: 'enter' },
+]
+----
+
+[TIP]
+The `trigger` property is exclusively applicable to the configuration of block text patterns. It is not recognized in the configurations for inline and replacement text patterns.
+
+For information on the **text_patterns**, see xref:content-behavior-options.adoc#text_patterns[Text Patterns]
+
+=== Improved accessibility for interactive elements with custom tooltips
+// #TINY-10453
+
+In previous versions of {productname}, buttons without visible labels displayed browser native tooltips which only shows on mouse hover, not keyboard focus. This meant keyboard-only users couldn't access these tooltips, hindering their understanding of button functionality.
+
+To address this, {productname} 7.0 introduces custom tooltips for various elements:
+
+* Toolbar buttons
+* Resize handle
+* Buttons in a dialog
+* Buttons in a view container
+
+These custom tooltips appear on both mouse hover and keyboard focus, ensuring all users, including those relying solely on keyboard navigation, can access essential information about interactive elements.
+
+[NOTE]
+Interactive elements with visible labels do not display custom tooltips, and the browser native tooltips have been removed, as the visible label provides sufficient information.
+
+[TIP]
+The `max-width` of the tooltips is set to `15em`, to overwrite the default `max-width` of the tooltips, update the `@tooltip-max-width` variable in your custom skin.
+
+=== Added custom tooltip for `autocompleter`, now visible on both mouse hover and keyboard focus, except single column cases.
+// #TINY-9638
+
+Previously when using xref:autocompleter.adoc[Autocompleter], the native browser tooltip was only shown on mouse hover, but not on keyboard focus.
+
+This means that keyboard-only users were not able to see the tooltip, as it was only shown on mouse hover.
+
+To address this in {productname} 7.0, custom tooltips have been implemented for `autocompleter` items.
+
+Now, tooltips are now shown on `autocompleter` items both on mouse over and keyboard focus, providing visual indication for keyboard-only users.
+
+[NOTE]
+The tooltip will only be displayed when the `autocompleter` columns are set to a value greater than `1`. This is because when there is a visible label, the tooltip functionality is not needed and therefore omitted.
+
+=== Added custom tooltip for dialog collection items, now visible on both mouse hover and keyboard focus.
+//#TINY-9637
+
+Previously, collection items set in a xref:dialog-components.adoc#collection[collection dialog component] would not display a tooltip on keyboard focus.
+
+This means that keyboard-only users were not able to see the tooltip, as it was only shown on mouse hover.
+
+In {productname} 7.0, dialog collection items with `data-mce-tooltip` attribute, such as those used in xref:emoticons.adoc[Emoticons] and xref:charmap.adoc[Charmap] plugins, now display relevant tooltips on both mouse hover and keyboard focus. This ensures all users, including those relying solely on keyboard navigation, can access helpful information about these items.
+
+=== Shortcut included in tooltips for basic and toggle toolbar buttons
+// #TINY-10487
+
+Previously, basic and toggle toolbar buttons lacked keyboard shortcut information in the native browser tooltip. This could leave users unaware of available shortcuts and, therefore unable to use them.
+
+To address this, {productname} 7.0, introduces custom tooltips for these buttons. These tooltips now clearly display the keyboard shortcut alongside the button's description as follows:
+
+* Default buttons: This includes commonly used functions like `bold`, `italic`, `underline`, `selectall`, `redo`, `undo`, heading levels (`h1-h6`), `help`, `link`, `save`, `searchreplace`, and `fullscreen`.
+* Custom buttons: Any custom toolbar button registered with a keyboard shortcut will also display the shortcut in its tooltip.
+
+See the xref:custom-basic-toolbar-button.adoc[Basic toolbar button], xref:custom-toggle-toolbar-button.adoc[Toggle toolbar button] and xref:shortcuts.adoc[Keyboard Shortcuts] documentation for more information.
+
+=== Added tooltips to `Click for more info` button in the accessibility checker dialog.
+//# TINY-9641
+
+The absence of a tooltip on the "Click for more info" button within the `accessibility` dialog rendered it inaccessible for keyboard-only users, affecting their ability to fully engage with the functionality.
+
+{productname} 7.0 addresses this issue, by adding the tooltip to the button, ensuring its visibility both on mouse hover and keyboard focus.
+
+=== The `highlight_on_focus` option now defaults to true, adding a focus outline to every editor.
+//#TINY-10574
+
+In {productname} 6.4, the option `highlight_on_focus` was introduced, that provides a blue outline to an instantiated {productname} editor when the editor is in `focus`.
+
+As of {productname} 7.0, the `default` value of this has now been set to `true`.
+
+For more information about `highlight_on_focus` see the xref:accessibility.adoc#highlight_on_focus[highlight_on_focus] option.
+
+[NOTE]
+Any editors using this `highlight_on_focus: true` option, can remove this option from their {productname} init configuration when upgrading to {productname} 7.0.
+
+=== Improved Custom Elements
+// #TINY-9980 / TINY-9979
+
+{productname} 7.0 introduces enhancements to the existing xref:content-filtering.adoc#custom_elements[custom_elements] option and xref:apis/tinymce.html.schema.adoc#addCustomElements[addCustomElements] API. This update allows the structure of custom elements to be refined, offering users more flexibility and customization options.
+
+Key Improvements:
+
+* **New Custom Element Structure:** The custom_elements option and `addCustomElements` API now support a more complex structure. Each element is defined by a key-value pair, allowing for detailed specifications.
+* **Attributes and Inheritance:** Elements can inherit attributes and children from other specified elements using the extends property in the Custom Element Spec.
+* **Attribute and Children Specifications:** The Custom Element Spec includes properties such as attributes and children, enabling precise customization of element behavior.
+
+For more information and details for `addCustomElements` see xref:content-filtering.adoc#custom_elements[custom_elements].
+
+=== Optional Tooltip for Dialog Footer Toggle Buttons
+//#TINY-10672
+
+Previously, the `DialogFooterToggleButton` component required a tooltip property. This meant including a tooltip for all toggle buttons displayed in dialog footers, even if the information wasn't necessary.
+
+As of {productname} 7.0, the tooltip property is now optional for `DialogFooterToggleButton`. This flexibility allows developers to omit the tooltip for buttons where it's not required, providing a cleaner and more focused user experience.
+
+=== Change table height resizing handling to remove heights from `td`/`th` elements and only apply to `tr` elements.
+//# TINY-10589
+
+When resizing a table using either the row resize bars or corner resize handles, any existing `height` styles are removed from the `td`/`th` elements and only apply to `tr` elements and `table` element. Additionally, the heights calculated and applied for the `tr` elements and `table` element more accurately represent the actual visual height in the editor.
+
+As part of the changes to table height resizing handling, resizing via the corner resize handles is more consistent. If the table *does not* have any height styles and the table is resized using one of the corner resize handles, each row has its height increased evenly. If the table *does have* existing height styles, corner resizes will only change the height of the first row (if using top corner handles) or last row  (if using bottom corner handles) equivalent to `table_column_resizing: 'resizetable'` option for columns xref:table-options.adoc#table_column_resizing[Table options: table_column_resizing]
+
+=== Make table ghost element better reflect height changes when resizing.
+//# TINY-10658
+
+Previously, the table ghost element did not accurately reflect changes in table height when resized using the corner resize handles.
+
+In {productname} 7.0, this problem has been addressed.
+
+As a result, the table ghost element now accurately mirrors adjustments in table height when resized using the corner resize handles.
+
+=== Accurate default options in the `styles` bespoke select toolbar button
+//# TINY-10603
+
+Previously, the bespoke `styles` select toolbar button in {productname} defaulted to "Paragraph" as the selected option even when there was no actual "Paragraph" style configured.
+
+{productname} 7.0 addresses this, the fallback option for the bespoke `styles` toolbar button has been reverted to "Formats" in situations where the "Paragraph" style is not defined in the `style_formats` option. This ensures a more accurate reflection of available styles.
+
+=== Improved support of `data` elements
+//# TINY-10611
+
+Previously, when inserting a `data` element within the editor, the `data` element would be removed.
+
+In {productname} 7.0, this problem has been addressed.
+
+As a result, the `data` elements are recognized as valid elements within the editor, ensuring they are properly retained along with their value attributes.
 
 [[additions]]
 == Additions
@@ -115,6 +449,24 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 // CCFR here.
 
+=== Element preset support for the `valid_children` option and `Schema.addValidChildren` API.
+
+{productname} 7.0 updates the xref:content-filtering.adoc#valid_elements[`+valid_elements+`] option and `schema.addValidChildren` function, which now support preset names such as `@blocks`, `@phrasing`, and `@flow`. These presets will be automatically expanded into corresponding lists of valid elements, simplifying the definition process.
+
+For instance, specifying valid_children: `+'custom-elm[@flow]'+` will configure the `custom-elm` element to accept any child element classified as a flow element. This streamlines the process of defining valid elements and eliminates the need to manually list all elements from the schema spec.
+
+.Example
+[source, js]
+----
+tinymce.init({
+    selector: "textarea",
+	custom_elements: 'block-container,phrasing-container,flow-container',
+	valid_children: 'block-container[@blocks],phrasing-container[@phrasing],flow-container[@flow]'
+});
+----
+
+For more information on content filtering for custom elements, see xref:content-filtering.adoc#custom_elements.adoc[`custom_elements`]
+
 [[changes]]
 == Changes
 
@@ -123,16 +475,316 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 // CCFR here.
 
+=== Removed incorrect `aria-placeholder` attribute from editor body when `placeholder` option is set.
+// #TINY-10452
+
+Previously, when the `placeholder` option was set, the editor would automatically append an `aria-placeholder` attribute to the editor body.
+
+However, the `aria-placeholder` attribute is not a valid attribute for the body element according to accessibility guidelines. As a result, certain screen readers and assistive technologies encountered difficulties in correctly interpreting the content.
+
+In {productname} 7.0 addresses this, by removing the `aria-placeholder` attribute from the editor body. This solution ensures that the editor is accessible to all users.
+
+=== `convert_unsafe_embeds` editor option is now defaulted to `true`.
+
+In {productname} 6.8.1, xref:content-filtering.adoc#convert-unsafe-embeds[convert_unsafe_embeds] editor option was introduced to allow `+object+` and `+embed+` elements to be converted by default to the correct element, respective of the MIME type, automatically when inserted into the editor.
+
+In {productname} 7.0, the default value for `+convert_unsafe_embeds+` will change from `false` to `true`, meaning that all `+object+` and `+embed+` tags will automatically be converted to different elements when inserted to the editor. If this behaviour is undesirable, set `+convert_unsafe_embeds+` to `+false+` in your editor configuration.
+
+For further details on the `+convert_unsafe_embeds+` option, see the xref:content-filtering.adoc#convert-unsafe-embeds[content filtering options], or refer to the xref:security.adoc#convert-unsafe-embeds[security guide], or the link:https://www.tiny.cloud/docs/tinymce/6/6.8.1-release-notes/#new-convert_unsafe_embeds-option-that-controls-whether-object-and-embed-elements-will-be-converted-to-more-restrictive-alternatives-namely-img-for-image-mime-types-video-for-video-mime-types-audio-audio-mime-types-or-iframe-for-other-or-unspecified-mime-types[{productname} 6.8.1 release notes].
+
+=== `sandbox_iframes` editor option is now defaulted to `true`.
+
+In {productname} 6.8.1, the xref:content-filtering.adoc#sandbox-iframes[sandbox iframes] editor option was introduced to allow iframes to be sandboxed by default when inserted into the editor.
+
+In {productname} 7.0, the default for `+sandbox_iframes+` will change from `false` to `true`, meaning that all `+iframe+` elements inserted into the editor will be given the `sandbox=""` attribute by default, preventing most actions, including scripting and same-origin access, which may break existing editor content or produce undesirable effects.
+
+To prevent any expected iframes from being sandboxed, we recommend adding the source domains of such iframes to the new xref:content-filtering.adoc#sandbox-iframes-exclusions[`+sandbox_iframes_exclusions+`] option list, and including the domains in the default list where necessary. To prevent all iframes from being sandboxed, set the option `+sandbox_iframes+` to `+false+` in your editor configuration.
+
+For further details on the `+sandbox_iframes+` option, see the xref:content-filtering.adoc#sandbox-iframes[the content filtering options], or refer to the xref:security.adoc#sandbox-iframes[security guide], or the link:https://www.tiny.cloud/docs/tinymce/6/6.8.1-release-notes/#new-sandbox_iframes-option-that-controls-whether-iframe-elements-will-be-added-a-sandbox-attribute-to-mitigate-malicious-intent[{productname} 6.8.1 release notes].
+
+=== Remove the height field from the `table` plugin cell dialog. The `table` plugin row dialog now controls the row height by setting the height on the `tr` element, not the `td` elements.
+//# TINY-10617
+
+The height field within the table plugin cell dialog has been removed, thereby restricting the ability to adjust individual cell heights `td/th`.
+
+However, this modification directs users to utilize the table plugin row dialog to alter the height of entire rows along with all enclosed cells.
+
+[NOTE]
+When adjusting row height through the row dialog, any height styles previously applied to `td/th` elements will be automatically removed.
+
+
+[[removed]]
+== Removed
+
+=== Removed `force_hex_color` option, with the default now being all colors are forced to HEX format and as lower case.
+// #TINY-10436
+
+Previously in {productname} 6, all colors in the content HTML were set to use `rgb` values by default. As the common practice is using `hex` values this change has been **reverted**.
+
+As a result, in {productname} 7, all colors are converted to use `hex` values and the `forced_hex_color` option is removed. The exception being `rgba` color values, they are left as is.
+
+For more information, see xref:migration-from-6x.adoc#force-hex-color[Migrating from {productname} 6 to {productname} 7: "force_hex_color"].
+
+=== Removed InsertOrderedList and InsertUnorderedList commands from core.
+// #TINY-10644
+
+Previously, native list commands could be executed by various text patterns.
+
+This resulted in undefined browser behavior due to the inherent list code within it.
+
+{productname} 7.0 addresses this, by removing the core list commands, effectively eliminating the insertion of lists into the content.
+
+As a result, users no longer experience unexpected list insertions.
+
+=== The autocompleter `ch` configuration property has been removed. Use the `trigger` property instead.
+// #TINY-8929
+
+Previously, the `ch` configuration property was used to specify the character that would trigger the autocompleter.
+
+This property was deprecated in link:https://www.tiny.cloud/docs/tinymce/6/6.2-release-notes/#deprecated[{productname} 6.2] and has been removed in {productname} 7.0. Instead, use the `trigger` property to specify the `string` that will trigger the autocompleter.
+
+If `+editor.ui.registry.addAutocompleter(name, options)+` was used in your configuration, updating your configuration from `ch: '<string>',` to `trigger: '<string>',` is required.
+
+NOTE: The new `trigger` option can handle multiple character strings as the trigger.
+
+For more information, visit the updated xref:autocompleter.adoc[Autocompleter] documentation.
+
+=== The open-source `template` plugin has been removed.
+// #TINY-10654
+
+The open-source `template` plugin and associated config options have been removed in {productname} 7.0.
+
+Customers using the `template` plugin will need to migrate to the premium xref:advanced-templates.adoc['advtemplate'] plugin in {productname} 7.0, which contains all the functionality except some esoteric options.
+
+For more information, see xref:migration-from-6x.adoc#deprecated-plugins-template-plugin[Migrating from {productname} 6 to {productname} 7].
 
 [[bug-fixes]]
 == Bug fixes
 
-{productname} <x.y[.z]> also includes the following bug fix<es>:
+{productname} 7.0 also includes the following bug fixes:
 
 === <TINY-vwxyz 1 changelog entry>
 //#TINY-vwxyz1
 
-// CCFR here.
+==== Autocompleter did not work when attempting to insert a `mention` or `emoji` when using an `IME`.
+//# TINY-10637
+
+Previously when attempting to insert a **mention** or **emoji** using an `IME` on Android and using Korean, users encountered an obstacle where it wasn't possible to complete the insertion.
+
+{productname} 7.0 addresses this issue, by rewriting the handler for `autocompleter`, ensuring that it no longer interferes with the DOM during composition with an IME.
+
+As a result, users can now insert **mentions** and **emojis** using the `autocompleter`.
+
+For information on the **Autocompleter** plugin, see: xref:autocompleter.adoc[Autocompleter].
+
+=== Floating toolbar buttons in inline editor incorrectly wrapped into multiple rows on window resizing or zooming.
+//# TINY-10570
+
+An issue was identified where the floating toolbar's functionality, specifically regarding the incorrect rendering of the overflow button on a second row when the window was resized or the browser was zoomed.
+
+Previously, when the toolbar contained more buttons than could be displayed within the available space, an overflow button (depicted by three dots) `...` would appear at the toolbar's end, enabling users to access the remaining buttons. However, due to a bug, this overflow button would occasionally shift to a second row, disrupting the layout, especially during window resizing.
+
+{productname} 7.0 addresses this issue, by adding improvements to the resizing behavior of the toolbar to ensure it consistently fits within one row.
+
+As a result, the toolbar now adjusts its size appropriately and maintains a single-row layout, effectively preventing the overflow button from erroneously moving to a second row under any circumstances.
+
+=== Fixed incorrect object processor for `event_root` option.
+// #TINY-10433
+
+Previously in {productname}, the `inline` mode `event_root` option incorrectly used an `object` processor.
+
+This caused the option to be unregistered when passing a `string` value, resulting in the option being unusable.
+
+{productname} 7.0 addresses this, now, the `event_root` option uses the correctly uses the `string` processor.
+
+As the result, the `event_root` option can now be correctly used to specify a CSS selector for an element.
+
+=== Clicking to the left or right of a non-editable `div` in Firefox would show two cursors.
+// #TINY-10314
+
+Previously in Firefox, when the `FakeCaret` was rendered, in some cases the real caret was incorrectly rendered too.
+
+As a consequence, the `FakeCaret` was visible at the same time as the real caret which should have been `hidden`.
+
+{productname} 7.0 addresses this issue, now, the container containing the real caret, when we render the `FakeCaret`, is styled with `'caret-color': 'transparent'`.
+
+As a result, the real caret is now hidden when {productname} renders the `FakeCaret`.
+
+=== Directly right clicking on a `<ol>`/ `<li>` in FireFox didn't enable the button `List Properties...` in the context menu
+// #TINY-10490
+
+In previous versions of {productname}, two issues where identified that affected `list properties` for `<ol><li>` tags:
+
+. in old versions of Firefox (prior to version 121), the caret was not moved to the target position when using the right click, and;
+
+. as {productname} creates a bookmark when there is no selection for Firefox, when a user opened a context menu the editor would jump back to the newly created bookmark.
+
+As a consequence, since the selection is still on the first element, the `List Properties...` context menu item was `disabled`.
+
+{productname} 7.0 addresses this issue, now when the user opens a context menu, {productname} creates a new bookmark to avoid the jump back.
+
+As a result, the selection is in the correct place and the `List Properties...` context menu item is `enabled`.
+
+=== Table classes couldn't be removed via setting an empty value in `table_class_list`.
+// #TINY-6653
+
+Previously, it was not possible to remove all classes on a table when setting an empty value in the `table_class_list` option and using the "Class" listbox field in the "Table Properties" dialog. 
+
+{productname} 7.0 introduces improvements for handling and removing classes on table, row and cell elements, including:
+
+* An empty value in the `table_class_list` option, `table_row_class_list` option, and `table_cell_class_list` option will allow all classes to be removed on the selected table for the "Table Properties" dialog, selected rows for the "Row Properties" dialog, or selected cells for the "Cell Properties" dialog respectively.
+* For a table with a class that does not match any of the values set in the  `table_class_list` option, a "Select..." item becomes the default choice in the "Class" listbox field in the "Table Properties" dialog. (This selection maintains the existing class upon saving). Conversely, if the table has a class that does match one of the values set in the  `table_class_list` option, it is automatically selected.
+* For selected rows with classes that do not match any of the values set in the  `table_row_class_list`, a "Select..." item becomes the default choice in the "Class" listbox field in the "Row Properties" dialog. (This selection maintains the existing classes upon saving). Conversely, if the selected row classes do match one of the values set in the  `table_row_class_list`, it is automatically selected.
+* For selected cells with classes that do not match any of the values set in the  `table_cell_class_list`, a "Select..." item becomes the default choice in the "Class" listbox field in the "Cell Properties" dialog. (This selection maintains the existing classes upon saving). Conversely, if the selected cell classes do match one of the values set in the  `table_cell_class_list`, it is automatically selected.
+
+=== When setting table border width to 0 and `table_style_by_css` is `true`, only the border attribute is set to 0 and border-width styling is no longer used.
+// TINY-10308
+
+Previously in {productname} 6, when the `table_style_by_css` option was `true` and the table border width was set to `0px` within the "Table Properties" dialog, the table's border attribute would be set to 1 and `border-width: 0px` would be applied to all cells in the table. This behaviour was unintentional and differed from setting the `table_style_by_css` option to `true` in {productname} 5.
+
+In {productname} 7.0 addressed this issue. Now, setting the border width to 0 consistently sets the table border attribute to 0, removing `border-width` styles from all table cells, and aligning the behavior of the "Border width" property with {productname} 5.
+
+=== `mceTableDeleteRow` did not calculate the correct row index for colgroup tables.
+// #TINY-6309
+
+Previously, when deleting a row or column in a table within {productname}, the caret or cursor position would relocate to the first cell of the table.
+
+As a consequence, users expected it to be repositioned much closer, such as to an adjacent cell in the previous row or column.
+
+In {productname} 7.0, this issue is addressed, now, when a user deletes a row or column in a table, the caret/cursor position is now relocated to the adjacent cell in the previous row or column.
+
+=== The toolbar width was miscalculated for the inline editor positioned inside a scrollable container.
+// #TINY-10581
+
+Previously in {productname}, the inline editor's toolbar width was calculated using the `outerContainer` width.
+
+Consequently, the toolbar was given a width of `0`, resulting in the toolbar collapsing to the minimum width.
+
+{productname} 7.0 addresses this issue, now, a check has been introduced to prevent the adjustment of the toolbar's width if the calculated value is `0`.
+
+As a result, the inline editor now correctly displays the toolbar's width when positioned inside a scrollable container.
+
+=== Heading formatting would be partially applied to the content within the `summary` element when the caret was positioned between words.
+// #TINY-10312
+
+With the release of {productname} 6.8, applying heading formatting to the content within the `<summary>` element was introduced. However, an issue was identified: if the caret was positioned between words, the editor's selection expand range functionality would not expand the selection to include the entire content within the `<summary>` element.
+
+As a consequence, the heading formatting was partially applied to some of the content within the `<summary>` element.
+
+{productname} 7.0 addresses this issue, now, updates were made to the editor's selection expand range functionality.
+
+As a result, the heading format is applied to the entire content within the `<summary>` element, regardless of the carets location.
+
+=== The `link_default_target` option wasn't considered when inserting a link via `quicklink` toolbar.
+// #TINY-10439
+
+Previously when using `quicklink`, the `link_default_target` value was not being considered.
+
+As a consequence, the `target` attribute would not be applied to links created using `quicklink`.
+
+{productname} 7.0 addresses this issue, now, the `quicklink` has been enhanced to consider the `link_default_target` value.
+
+As a result, if a `link_default_target` is specified, `quicklink` will appropriately incorporate it when creating a link.
+
+=== When inline editor toolbar wrapped to multiple lines the top wasn't always calculated.
+// #TINY-10580
+
+Previously when shrinking the inline editor, the top position of the toolbar was calculated before wrapping the toolbar into multiple rows.
+
+As a consequence, the additional rows in the wrapped toolbar would cover the editor content.
+
+{productname} 7.0 addresses this issue, now, the editor shrinking is applied before calculating the top position of the toolbar.
+
+As a result, the truncated toolbar is correctly displayed above the editor content.
+
+=== Inline mode with persisted toolbar would show regardless of the skin being loaded, causing css issues.
+// #TINY-10482
+
+Previously when `toolbar_persist` and `inline` mode was set to `true`, the toolbar could be shown before the skin was loaded. Whereas now it will always wait for the skin to load first.
+
+.example setup
+[source, js]
+----
+tinymce.init({
+  selector: "div",
+  inline: true,
+  toolbar_persist: true
+});
+----
+
+As a consequence, this would result in the menubar and/or the toolbar to be squashed when the host browser was operating over a relatively slow connection.
+
+{productname} 7.0 addresses this issue, now, the toolbar is no longer squashed in `inline` mode with `toolbar_persist` enabled, when the page takes longer to load the skin.
+
+=== The `DOMUtils.isEmpty` API function has been modified to consider nodes containing only comments as empty.
+// #TINY-10459
+
+In previous versions of {productname} (prior to version 7.0), the function `DomUtils.isEmpty` behaved inconsistently, considering elements with only comment nodes as non-empty.
+
+As a consequence, elements visually appearing empty due to containing only comment nodes could lead to inconsistent behavior in caret placement and selection handling.
+
+{productname} 7.0 addresses this issue, now, when using `DomUtils.isEmpty`, elements containing only comment nodes are correctly recognized as empty.
+
+As a result, caret placement and selection handling within elements containing only comment nodes now behave consistently.
+
+[NOTE]
+Users who relied on `DOMUtils.isEmpty` returning `false` for elements with only comments should update their implementation. Elements with only comment nodes are now recognized as empty in {productname} 7.0.
+
+=== Pressing Backspace at the start of an empty `summary` element within a `details` element nested in a list item no longer removes the `summary` element.
+// #TINY-10303
+
+Previously in {productname}, when a details element was placed inside a list item and contained an empty summary, pressing the Backspace key (with the cursor at the beginning of the summary) resulted in the summary being deleted.
+
+This caused the unexpected behavior of replacing the summary contents with the default summary placeholder.
+
+To address this, the summary element has been included in the list of non-empty elements within the editor's schema.
+
+With this adjustment, the summary element will no longer be deleted under the previously mentioned conditions.
+
+=== Adding newline after using `selection.setContent` to insert a block element would throw an unhandled exception.
+// #TINY-10560
+
+Previously in {productname}, there was an issue with `selection.setContent` when using certain tags (such as `pre`) as the parent element. The selection would not recognize that it was at the end of the line, resulting in an error when trying to insert a new line afterwards.
+
+{productname} 7.0 addresses this issue. The selection now correctly recognizes that it is at the end of the line when using `selection.setContent`. As a result, the insertion of a new line behaves as expected.
+
+=== The `mceTablePasteRowAfter` command, `mceTablePasteColAfter` command, `"Paste row after"` menu item and `"Paste column after"` menu item now place the cursor in the newly pasted row/column to be consistent with the other pasting operations.
+// #TINY-6460
+
+Previously, the cursor position was incorrectly calculated after pasting a new row or column when using the `mceTablePasteRowAfter` command, `mceTablePasteColAfter` command, or `"Paste row after"` and `"Paste column after"` UI menu items.
+
+As a consequence, after pasting, the cursor remained in the same position instead of moving to the newly pasted row or column.
+
+{productname} 7.0 addresses this, fixing the cursor calculation.
+
+Now, when using the `mceTablePasteRowAfter` command, `mceTablePasteColAfter` command, or `"Paste row after"` and `"Paste column after"` UI menu items, the cursor is correctly positioned in the newly pasted row or column as expected.
+
+=== Moving focus to the outside of the editor after having clicked a menu would not dispatch a `blur` event as expected.
+// #TINY-10310
+
+In {productname}, an issue was identified where clicking outside the editor while a menu was in either the opened or closed state resulted in the blur event not being triggered as expected.
+
+Consequently, the `blur` event was not dispatched when switching focus outside the editor, as the UI was still considered part of the editor.
+
+{productname} 7.0 addresses this by now considering UI events as part of the normal editor events.
+
+As a result, the `blur` event is now properly dispatched when switching focus outside the editor.
+
+=== Autocomplete would sometimes cause corrupt data when starting during text composition.
+// #TINY-10317
+
+Previously in {productname}, the autocomplete feature did not properly interrupt or consider composing mode for keyboards when typing in `Korean`.
+
+For example, when typing 'neko' with `Korean` keyboard the following states will be passed through:
+
+* `ㅜ`
+* `ㅜㄷ`
+* `ㅜ다`
+* `ㅜ다ㅐ`
+
+As a consequence, the autocomplete feature triggers as the composition mode changes from `ㅜ` to `ㅜㄷ`, with `ㄷ` being in composing mode. While it copies the text into a new element, it disrupts the composing mode. As a result, when typing `k`, nothing appeared to happen, although in the background, the composing mode actually changes to `다`. Then, when `o` is pressed, the content of the composing mode is added, and the new character is put into composing mode instead, resulting in the text `ㅜㄷ다ㅐ`.
+
+{productname} 7.0 addresses this issue by, now avoiding `DOM` mutation during IME composition, ensuring uninterrupted composition sessions without introducing new elements to the DOM.
 
 [[security-fixes]]
 == Security fixes
@@ -146,10 +798,6 @@ For information on using premium skins and icon packs, see: xref:premium-skins-a
 
 [[deprecated]]
 == Deprecated
-
-=== The `<plugin>` configuration property, `<name>`, has been deprecated
-
-// placeholder here.
 
 
 [[known-issues]]

@@ -33,8 +33,6 @@ These release notes provide an overview of the changes for {productname} 7.0, in
 * xref:changes[Changes]
 * xref:removed[Removed]
 * xref:bug-fixes[Bug fixes]
-* xref:security-fixes[Security fixes]
-* xref:deprecated[Deprecated]
 * xref:known-issues[Known issues]
 
 
@@ -790,30 +788,31 @@ As a consequence, after pasting, the cursor remained in the same position instea
 
 Now, when using the `mceTablePasteRowAfter` command, `mceTablePasteColAfter` command, or `"Paste row after"` and `"Paste column after"` UI menu items, the cursor is correctly positioned in the newly pasted row or column as expected.
 
-
-[[security-fixes]]
-== Security fixes
-
-{productname} <x.y[.z]> includes <a fix | fixes for the following security issue<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[deprecated]]
-== Deprecated
-
-
 [[known-issues]]
 == Known issues
 
-This section describes issues that users of {productname} <x.y[.z]> may encounter and possible workarounds for these issues.
+This section describes issues that users of {productname} 7.0 may encounter and possible workarounds for these issues.
 
-There <is one | are <number> known issue<s> in {productname} <x.y[.z]>.
+There are two known issues in {productname} 7.0.
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Non-breaking spaces `+&nbsp;+` may be inadvertently inserted around content during Markdown conversion
 
-// CCFR here.
+Currently, Non-breaking spaces `+&nbsp;+` may be inadvertently inserted around content inside `<p>&nbsp;</p>` during Markdown conversion, requiring users to manually remove them post-conversion as the current workaround.
+
+=== Tab navigation inside the Enhanced Code Editor currently does not function as expected when the host browser is Safari.
+// #TINY-10596
+
+Currently, tab navigation within the Enhanced Code Editor is not working as expected when Safari is the host browser and the editor configuration is set to `advcode_inline: true`, resulting in a loss of tab functionality.
+
+.Example of configuration affected.
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'advcode',
+  advcode_inline: true,
+  toolbar: 'code',
+});
+----
+
+Currently, there is no workaround for this issue.

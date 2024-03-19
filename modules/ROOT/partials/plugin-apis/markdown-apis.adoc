@@ -17,7 +17,7 @@ interface PluginAPI {
 
 [source,html]
 ----
-<h1>Heading</h1>
+<h3>Heading</h3>
 <p>This is a paragraph.</p>
 <ul>
   <li>Item 1</li>
@@ -29,10 +29,10 @@ API output:
 
 [source,js]
 ----
-# Heading
+### Heading
 
 This is a paragraph.
 
-- Item 1
-- Item 2
+* Item 1
+* Item 2
 ----

@@ -24,39 +24,6 @@ tinymce.init({
 
 The `exportword_converter_options` option, is used to specify and configure various options related to the process of converting and exporting content from the editor to `.docx` Word file.
 
-=== Available options
-
-[cols="1,3",options="header"]
-|===
-| Option | Description
-
-| link:https://exportdocx.converter.tiny.cloud/docs#section/Export-to-Word/Request-body:~:text=requiring%20additional%20authorization.-,Margins,-The%20page%20margins[margin_top^] | Changes top document margin.
-
-| link:https://exportdocx.converter.tiny.cloud/docs#section/Export-to-Word/Request-body:~:text=requiring%20additional%20authorization.-,Margins,-The%20page%20margins[margin_bottom^] | Changes bottom document margin.
-
-| link:https://exportdocx.converter.tiny.cloud/docs#section/Export-to-Word/Request-body:~:text=requiring%20additional%20authorization.-,Margins,-The%20page%20margins[margin_left^] | Changes left document margin.
-
-| link:https://exportdocx.converter.tiny.cloud/docs#section/Export-to-Word/Request-body:~:text=requiring%20additional%20authorization.-,Margins,-The%20page%20margins[margin_right^] | Changes right document margin.
-
-| link:https://exportdocx.converter.tiny.cloud/docs#section/Export-to-Word/Request-body:~:text=75px%22%0A%20%20%7D%0A%7D-,Auto%20pagination,-Support%20for%20auto[auto_pagination^] | Enable/disable auto pagination feature (defaults to true).
-
-| link:https://exportdocx.converter.tiny.cloud/docs#section/Export-to-Word/Request-body:~:text=false%0A%20%20%7D%0A%7D-,Page%20format,-Accepted%20page%20formats[format^] | Allows specifying page format e.g. Letter.
-
-| link:https://exportdocx.converter.tiny.cloud/docs#section/Export-to-Word/Request-body:~:text=landscape%22%0A%20%20%7D%0A%7D-,Headers%20and%20footers,-You%20can%20add[header^] | Allows adding various headers to the generated Word document.
-
-| link:https://exportdocx.converter.tiny.cloud/docs#section/Export-to-Word/Request-body:~:text=landscape%22%0A%20%20%7D%0A%7D-,Headers%20and%20footers,-You%20can%20add[footer^] | Allows adding various footers to the generated Word document.
-
-| link:https://exportdocx.converter.tiny.cloud/docs#section/Export-to-Word/Request-body:~:text=%5D%0A%20%20%7D%0A%7D-,Comments%20and%20suggestions,-If%20you%20are[comments^] | Provides comments for the document.
-
-| link:https://exportdocx.converter.tiny.cloud/docs#section/Export-to-Word/Request-body:~:text=%5D%0A%20%20%7D%0A%7D-,Comments%20and%20suggestions,-If%20you%20are[suggestions^] | Provides suggestions for the document.
-
-| link:https://exportdocx.converter.tiny.cloud/docs#section/Export-to-Word/Request-body:~:text=A5%22%0A%20%20%7D%0A%7D-,Document%20orientation,-Document%20orientation%20can[orientation^] | Allows specifying page orientation portrait(default) or landscape.
-
-| link:https://exportdocx.converter.tiny.cloud/docs#section/Export-to-Word/Request-body:~:text=America/Los_Angeles%22%0A%7D-,Base%20URL,-To%20enable%20correct[base_url^] | Allows specifying base URL for relative URLs in images and links.
-
-| link:https://exportdocx.converter.tiny.cloud/docs#section/Export-to-Word/Request-body:~:text=cloud/logo.svg-,Extra%20HTTP%20headers,-If%20fetching%20some[extra_http_headers^] | Allows setting extra headers for resources requiring additional authorization.
-|===
-
 *Type:* `+Object+`
 
 *Default value:* `{}`
@@ -83,6 +50,8 @@ tinymce.init({
 
 [NOTE]
 To use this option, the Export to Word plugin requires the `exportword_service_url` option to be configured.
+
+> For comprehensive details regarding the `exportword_converter_options`, please refer to the https://exportdocx.converter.tiny.cloud/docs#section/Export-to-Word[API documentation^] available for the {pluginname} Premium plugin.
 
 [[exportword-converter-style]]
 == `exportword_converter_style`

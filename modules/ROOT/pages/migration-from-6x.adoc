@@ -238,9 +238,9 @@ For more information on the `sandbox_iframes` option see xref:security.adoc#sand
 [[convert-unsafe-embeds-option]]
 ==== `convert_unsafe_embeds`
 
-A previous Security penetration test surfaced a security issue with {productname} regarding object tags, which was a legacy method of inserting an external resource, such as a video, a PDF.
+In {productname} 6.8.1, xref:content-filtering.adoc#convert-unsafe-embeds[convert_unsafe_embeds] editor option was introduced to allow `+object+` and `+embed+` elements to be converted by default to the correct element, respective of the MIME type, automatically when inserted into the editor.
 
-{productname} has determined that the object tag is regarded as unsafe, as it may execute javascript inside the {productname} content.
+In {productname} 7.0, the default value for `+convert_unsafe_embeds+` will change from `false` to `true`, meaning that all `+object+` and `+embed+` tags will automatically be converted to different elements when inserted to the editor.
 
 {productname} has a configuration option that converts object tags to modern equivalents such as `<img>, <video>` and `<audio>` tags, such as;
 
@@ -253,14 +253,10 @@ A previous Security penetration test surfaced a security issue with {productname
 <!-- After Conversion -->
 <video src="https://sneak-preview.tiny.cloud/3adc27b5-bb2f-49f0-9ccc-72b7c48313b0/bad.mov" controls="controls"></video>
 ----
-
-In {productname} 7.0 by default;
-
-* all object tags will be converted by default by loading the editor.
-* the `convert_unsafe_embeds` option default value will change from `false` to `true` making it opt out instead of opt in.
-
 [NOTE]
-To prevent automatic conversion of content, customers are advised to add `convert_unsafe_embeds: false` to their {productname} init configuration.
+If this behaviour is undesirable, set `+convert_unsafe_embeds+` to `+false+` in your editor configuration.
+
+For further details on the `+convert_unsafe_embeds+` option, see the xref:content-filtering.adoc#convert-unsafe-embeds[content filtering options], or refer to the xref:security.adoc#convert-unsafe-embeds[security guide], or the link:https://www.tiny.cloud/docs/tinymce/6/6.8.1-release-notes/#new-convert_unsafe_embeds-option-that-controls-whether-object-and-embed-elements-will-be-converted-to-more-restrictive-alternatives-namely-img-for-image-mime-types-video-for-video-mime-types-audio-audio-mime-types-or-iframe-for-other-or-unspecified-mime-types[{productname} 6.8.1 release notes].
 
 For more information on the `convert_unsafe_embeds` option see xref:security.adoc#convert-unsafe-embeds[convert_unsafe_embeds].
 

@@ -77,16 +77,16 @@ When the editor is initialized with content and both versions contain the same c
 
 For documents with saved versions, the `initial version` is disregarded by the {pluginname} assuming it's already part of the version history. The current version is discarded if its content matches the closest saved version.
 
-The below table summaries how versions are handled in {pluginname}:
+The table below summarizes how versions are handled in the {pluginname}:
 
 [cols="1,1,1,3", options="header"]
 |===
 |Has Initial Version |Current Version |Has Saved Versions |Expectation
 |No |N/A |No |No versions are shown
 |No |N/A |Yes |Only the saved versions are shown
-|Yes |Same |No |Only the current version is shown
+|Yes |N/A |No |Only the current version is shown
 |Yes |Different |No |Both the initial and current versions are shown
-|Yes |Either |Yes |The saved versions and the current version are shown
+|Yes |N/A |Yes |The saved versions and the current version are shown
 |===
 
 == Options

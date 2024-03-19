@@ -1,0 +1,37 @@
+[[revisionhistory_diff_classes]]
+== `revisionhistory_diff_classes`
+
+This option configures the CSS classes being applied to the change annotations. This option can be used in combination with the `revisionhistory_css_url` to provide custom styles to the change annotations.
+
+[NOTE]
+The CSS class names must exist in the xref:revisionhistory_css_url[`+revisionhistory_css_url+`].
+
+*Type:* `+Object+`
+
+*Default value:* `addition`, `removal`, `modification`
+[source,js]
+----
+{
+  addition: 'tox-revisionhistory__annotation--added',
+  removal: 'tox-revisionhistory__annotation--removed',
+  modification: 'tox-revisionhistory__annotation--modified'
+}
+----
+
+=== Example: using `revisionhistory_diff_classes`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'revisionhistory',
+  toolbar: 'revisionhistory',
+  revisionhistory_css_url: './revisionhistory.css',
+  revisionhistory_diff_classes: {
+    addition: 'added',
+    removal: 'removed',
+    modification: 'modified'
+  },
+  revisionhistory_fetch: () => Promise.resolve([])
+});
+----

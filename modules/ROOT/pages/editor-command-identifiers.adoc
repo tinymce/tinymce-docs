@@ -243,6 +243,7 @@ Commands are available for the following plugins:
 * xref:permanentpen[Permanent Pen]
 * xref:powerpaste[PowerPaste]
 * xref:preview[Preview]
+* xref:revisionhistory[Revision History]
 * xref:save[Save]
 * xref:searchandreplace[Search and Replace]
 * xref:spellchecker[Spell Checker]
@@ -471,6 +472,13 @@ The following command requires the xref:preview.adoc[Preview (`+preview+`)] plug
 
 include::partial$commands/preview-cmds.adoc[leveloffset=+3]
 
+[[revisionhistory]]
+==== Revision History
+
+The following commands require the xref:revisionhistory.adoc[Revision History (`+revisionhistory+`)] plugin.
+
+include::partial$commands/revisionhistory-cmds.adoc[leveloffset=+3]
+
 [[save]]
 ==== Save
 
@@ -641,6 +649,7 @@ The following command values can be queried using the xref:apis/tinymce.editor.a
 |FontSize |Returns the font size of the current selection.
 |LineHeight |Returns the line height of the current selection.
 |ToggleSidebar |Returns the current state of sidebar (open or closed).
+|ToggleView |Returns the current state of the view, for example: `+"code"+`, or `+"revision"+`.
 |===
 
 .Examples
@@ -650,6 +659,7 @@ tinymce.activeEditor.queryCommandValue('FontName');
 tinymce.activeEditor.queryCommandValue('FontSize');
 tinymce.activeEditor.queryCommandValue('LineHeight');
 tinymce.activeEditor.queryCommandValue('ToggleSidebar');
+tinymce.activeEditor.queryCommandValue('ToggleView');
 ----
 
 [[query-command-values-tables]]

@@ -62,7 +62,7 @@ The `remove_trailing_brs` configuration property was moved to the serializer.
 [TIP]
 While the capability still exists for users that have added this option to their {productname} configuration, it is recommended that customers using our `DomParser` API directly, should migrate to use our `DomSerializer` setting instead.
 
-[[Changes-to-text-pattern-defaults-to-trigger-on-Space-key-press]]
+[[changes-to-text-pattern-defaults-to-trigger-on-space-key-press]]
 ==== Changes to `text-pattern` defaults to trigger on `Space` key press.
 
 Applying basic formats such as headings, lists, bold and italic while typing are considered core functionality for WYSIWYG Editor's. {productname}'s default behavior for applying these format styles was applied on `Enter`, not `Space`.

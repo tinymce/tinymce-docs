@@ -211,27 +211,13 @@ As of {productname} 7.0, the `closeButton` property has been removed from xref:c
 [[sandbox-iframes-option]]
 ==== `sandbox_iframes`
 
-Previous Security penetration testing surfaced a security issue with {productname} loading iframes `unsandboxed` which as a result could allow arbitrary code execution inside {productname} content.
+In {productname} 6.8.1, the xref:content-filtering.adoc#sandbox-iframes[sandbox iframes] editor option was introduced to allow iframes to be sandboxed by default when inserted into the editor.
 
-As a result, a configuration option was introduced in {productname} 6.8 to sandbox `(to isolate)` iframes and prevent javascript from executing code inside {productname} documents.
+In {productname} 7.0, the default for `+sandbox_iframes+` will change from `false` to `true`, meaning that all `+iframe+` elements inserted into the editor will be given the `sandbox=""` attribute by default, preventing most actions, including scripting and same-origin access, which may break existing editor content or produce undesirable effects.
 
-The config option is currently set to `opt in`.
+To prevent any expected iframes from being sandboxed, we recommend adding the source domains of such iframes to the new xref:content-filtering.adoc#sandbox-iframes-exclusions[`+sandbox_iframes_exclusions+`] option list, and including the domains in the default list where necessary. To prevent all iframes from being sandboxed, set the option `+sandbox_iframes+` to `+false+` in your editor configuration.
 
-{productname} 7.0, the default value of the `sandbox_iframes` configuration option will be changed from `false` to `true`, making it `opt out` instead of `opt in` for their editors.
-
-[IMPORTANT]
-The premium **Enhanced Media Embed** plugin uses `iframes` extensively and are currently no workarounds available except to keep a record of allowed sources. Customers who want to continue to use **Enhanced Media Embed** plugin in {productname} 7.0 will be required to add the option `sandbox_iframes: false` to their {productname} init configuration.
-
-.Example
-[source, js]
-----
-tinymce.init({
-  selector: "textarea",
-  sandbox_iframes: false,
-});
-----
-
-This follows our policy that we ship the most secure version of {productname} possible, while giving our customers the opportunity to make informed decisions on dialing back protections to a level that fits their use-case.
+For further details on the `+sandbox_iframes+` option, see the xref:content-filtering.adoc#sandbox-iframes[the content filtering options], or refer to the xref:security.adoc#sandbox-iframes[security guide], or the link:https://www.tiny.cloud/docs/tinymce/6/6.8.1-release-notes/#new-sandbox_iframes-option-that-controls-whether-iframe-elements-will-be-added-a-sandbox-attribute-to-mitigate-malicious-intent[{productname} 6.8.1 release notes].
 
 For more information on the `sandbox_iframes` option see xref:security.adoc#sandbox-iframes[sandbox_iframes].
 

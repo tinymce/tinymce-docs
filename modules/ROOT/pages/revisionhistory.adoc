@@ -69,8 +69,8 @@ tinymce.init({
 
 When dealing with a new document, that has no saved versions, {pluginname} plugin will always typically maintain two versions: the `initial` and `current` versions.
 
-* Initial Version: this version is generated during the {productname} `Loaded` event, with the editor's content initialized.
-* Current Version: is created on opening the {pluginname} with the editor's current content. If included, it will become the `latest version` and placed at the top of the revisions list.
+* Initial Version: This version is generated during the {productname} `Loaded` event, with the editor's initial content.
+* Current Version: This is generated upon accessing the {pluginname}, reflecting the editor's current content. When included, it becomes the `latest version` and is placed at the top of the revisions list.
 
 [TIP]
 When the editor is initialized with content, both versions' content are the same. In that case, the {pluginname} only keeps the `current version`.

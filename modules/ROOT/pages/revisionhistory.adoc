@@ -73,7 +73,7 @@ When dealing with a new document, that has no saved versions, {pluginname} plugi
 * Current Version: This is generated upon accessing the {pluginname}, reflecting the editor's current content. When included, it becomes the `latest version` and is placed at the top of the revisions list.
 
 [TIP]
-When the editor is initialized with content, both versions' content are the same. In that case, the {pluginname} only keeps the `current version`.
+When the editor is initialized with content and both versions contain the same content, the {pluginname} retains only the `current version`.
 
 For documents with saved versions, the `initial version` is disregarded by the {pluginname} assuming it's already part of the version history. The current version is discarded if its content matches the closest saved version.
 

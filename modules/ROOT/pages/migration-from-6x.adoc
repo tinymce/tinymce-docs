@@ -105,7 +105,7 @@ To utilize these commands, include `plugins: [ 'lists' ]` in the configuration. 
 [[highlight-on-focus]]
 ==== `highlight_on_focus`
 
-Previously, the default value for the editor configuration option `highlight_on_focus` was set to `false` by default. In {productname} 7.0 this option is now by default set to `true`
+Previously, the default value for the editor configuration option `highlight_on_focus` was set to `false` by default. In {productname} 7.0 this option is now by default set to `true`.
 
 As a result, the focus outline for the editor will by default be displayed when the focus is on the editor.
 

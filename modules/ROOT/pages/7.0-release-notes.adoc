@@ -799,6 +799,19 @@ There are two known issues in {productname} 7.0.
 
 Currently, Non-breaking spaces `+&nbsp;+` may be inadvertently inserted around content inside `<p>&nbsp;</p>` during Markdown conversion, requiring users to manually remove them post-conversion as the current workaround.
 
+.Example of unexpected insertion of `+&nbsp;+`
+[source, html]
+----
+<p>&nbsp;</p> // unexpected
+<h3>Heading</h3>
+<p>This is a paragraph.</p>
+<ul>
+<li>Item 1</li>
+<li>Item 2</li>
+</ul>
+<p>&nbsp;</p> // unexpected
+----
+
 === Tab navigation inside the Enhanced Code Editor currently does not function as expected when the host browser is Safari.
 // #TINY-10596
 

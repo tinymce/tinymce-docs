@@ -187,7 +187,7 @@ Previously, {productname} added numerous `height` styles when resizing table row
 {productname} 7.0 addresses this by making a couple of changes:
 
 * The height input field has been removed from the "Cell Properties" dialog. Now, the "Row Properties" dialog is the only way to update row heights. 
-* When a table is resized using the resize handles or the "Row properties" dialog, existing `height` styles will be stripped from `td/th` elements where applicable and only applied to the `table` element` and `tr` elements.
+* When a table is resized using the resize handles or the "Row properties" dialog, existing `height` styles will be stripped from `td/th` elements where applicable and only applied to the `table` element and `tr` elements.
 
 [NOTE]
 {productname} 7.0 does not provide any fallback to revert to the old behavior.

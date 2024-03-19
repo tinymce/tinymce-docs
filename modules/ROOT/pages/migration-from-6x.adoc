@@ -17,8 +17,7 @@ Open Source users: please report issues in the https://github.com/tinymce/tinymc
 [[overview]]
 == Overview
 
-* xref:breaking-changes[Breaking changes]
-* xref:commands-and-queries[Commands and queries]
+* xref:commands-and-apis[Commands and APIs]
 * xref:options[Options]
 * xref:plugins[Plugins]
 * xref:ui-and-ux-elements-and-components[UI and UX elements and components]
@@ -30,12 +29,28 @@ Open Source users: please report issues in the https://github.com/tinymce/tinymc
 For additional details on {productname} 7.0 changes, see xref:7.0-release-notes.adoc[{productname} 7.0 release notes].
 
 
-[[breaking-changes]]
-== Breaking Changes
+[[commands-and-apis]]
+== Commands and APIs 
 
 This section documents the core changes made to {productname} 7.0.
 
 === Changed
+
+==== Removed `InsertOrderedList` and `InsertUnorderedList` commands from {productname} core.
+
+Previously, native list commands were executable through various text patterns, leading to undefined browser behavior due to the embedded list code.
+
+
+[NOTE]
+To utilize these commands, include `plugins: [ 'lists' ]` in the configuration. This action enables the commands previously removed from the core, providing access through the `lists` plugin.
+
+[[remove-trailing-brs-configuration-property-was-removed-from-our-DomParser-API]]
+==== `remove_trailing_brs` configuration property was removed from our `DomParser` API
+
+The `remove_trailing_brs` configuration property was moved to the serializer.
+
+[TIP]
+While the capability still exists for users that have added this option to their {productname} configuration, it is recommended that customers using our `DomParser` API directly, should migrate to use our `DomSerializer` setting instead.
 
 [[Changes-to-text-pattern-defaults-to-trigger-on-Space-key-press]]
 ==== Changes to `text-pattern` defaults to trigger on `Space` key press.
@@ -82,20 +97,6 @@ NOTE: The new `trigger` option can handle multiple character strings as the trig
 
 For more information, visit the updated xref:autocompleter.adoc[Autocompleter] documentation.
 
-
-[[commands-and-queries]]
-== Commands and Queries
-
-=== Changed
-
-==== Removed `InsertOrderedList` and `InsertUnorderedList` commands from {productname} core.
-
-Previously, native list commands were executable through various text patterns, leading to undefined browser behavior due to the embedded list code.
-
-
-[NOTE]
-To utilize these commands, include `plugins: [ 'lists' ]` in the configuration. This action enables the commands previously removed from the core, providing access through the `lists` plugin.
-
 [[options]]
 == Options
 
@@ -131,19 +132,6 @@ Previously in {productname} 6, all colors in the content HTML were set to use `r
 ----
 
 In {productname} 7.0, all colors (excluding `rgba` values) are converted to use `hex` values and the `forced_hex_color` option has been removed.
-
-[[deprecated-options]]
-== Deprecated Options
-
-=== Changed
-
-[[deprecated-options-remove-trailing-brs-option-removed-from-our-DomParser-API]]
-==== `remove_trailing_brs` option removed from our `DomParser` API
-
-The `remove_trailing_brs` option was moved to the serializer and the existing option is no longer the best way to remove the relevant tags.
-
-[TIP]
-While the capability still exists for users that have added this option to their {productname} configuration, it is recommended that customers using our `DomParser` API directly, should migrate to use our `DomSerializer` setting instead.
 
 [[plugins]]
 == Plugins

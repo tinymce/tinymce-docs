@@ -92,7 +92,6 @@ For more information, visit the updated xref:autocompleter.adoc[Autocompleter] d
 
 Previously, native list commands were executable through various text patterns, leading to undefined browser behavior due to the embedded list code.
 
-As of {productname} 7.0, these commands have been extracted from the core list commands.
 
 [NOTE]
 To utilize these commands, include `plugins: [ 'lists' ]` in the configuration. This action enables the commands previously removed from the core, providing access through the `lists` plugin.

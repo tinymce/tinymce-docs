@@ -27,7 +27,8 @@ if (tinymce.activeEditor.schema.getElementRule('p')) {
 [cols="2,5,1",options="header"]
 |===
 |Name|Summary|Defined by
-|xref:#addCustomElements[addCustomElements()]|Adds custom non-HTML elements to the schema.|`xref:apis/tinymce.html.schema.adoc[Schema]`
+|xref:#addCustomElements[addCustomElements()]|Adds custom non-HTML elements to the schema. For more information about adding custom elements see:
+link:https://www.tiny.cloud/docs/tinymce/latest/content-filtering/#custom_elements[custom_elements]|`xref:apis/tinymce.html.schema.adoc[Schema]`
 |xref:#addValidChildren[addValidChildren()]|Parses a valid children string and adds them to the schema structure. The valid children
 format is for example `element[child1{vbar}child2]`.|`xref:apis/tinymce.html.schema.adoc[Schema]`
 |xref:#addValidElements[addValidElements()]|Parses a valid elements string and adds it to the schema. The valid elements
@@ -70,13 +71,14 @@ Existing rules will be replaced with the ones specified, so this extends the sch
 === addCustomElements()
 [source, javascript]
 ----
-addCustomElements(custom_elements: String)
+addCustomElements(custom_elements: String | Object)
 ----
-Adds custom non-HTML elements to the schema.
+Adds custom non-HTML elements to the schema. For more information about adding custom elements see:
+link:https://www.tiny.cloud/docs/tinymce/latest/content-filtering/#custom_elements[custom_elements]
 
 ==== Parameters
 
-* `custom_elements (String)` - Comma separated list of custom elements to add.
+* `custom_elements (String | Object)` - Comma separated list or record of custom elements to add.
 
 '''
 

@@ -25,8 +25,6 @@ This editor ui instance.
 |Name|Summary|Defined by
 |xref:#tinymce.editor.ui.hide[tinymce.editor.ui.hide()]|Hides the editor user interface for inline editors. This method affects all user
 interface elements, including: menu bar, toolbar, notifications, and dialogs.
-
-
 If the `toolbar_persist` option is set to `true` and this method is used,
 the user interface will remain hidden, regardless of focus.|`xref:apis/tinymce.editor.ui.ui.adoc[Ui]`
 |xref:#tinymce.editor.ui.isEnabled[tinymce.editor.ui.isEnabled()]|Determines if the editor user interface is `enabled` (`true`) or `disabled` (`false`).|`xref:apis/tinymce.editor.ui.ui.adoc[Ui]`
@@ -35,8 +33,6 @@ This method affects all user interface elements, including: menu bar,
 toolbar, notifications, and dialogs. Can not be set to 'true' when in readonly mode.|`xref:apis/tinymce.editor.ui.ui.adoc[Ui]`
 |xref:#tinymce.editor.ui.show[tinymce.editor.ui.show()]|Reveals the editor user interface for inline editors. This method affects all user
 interface elements, including: menu bar, toolbar, notifications, and dialogs.
-
-
 If the `toolbar_persist` option is set to `true` and this method is used,
 the user interface will remain visible, regardless of focus.|`xref:apis/tinymce.editor.ui.ui.adoc[Ui]`
 |===
@@ -52,8 +48,6 @@ tinymce.editor.ui.hide()
 ----
 Hides the editor user interface for inline editors. This method affects all user
 interface elements, including: menu bar, toolbar, notifications, and dialogs.
-
-
 If the `toolbar_persist` option is set to `true` and this method is used,
 the user interface will remain hidden, regardless of focus.
 
@@ -97,8 +91,6 @@ tinymce.editor.ui.show()
 ----
 Reveals the editor user interface for inline editors. This method affects all user
 interface elements, including: menu bar, toolbar, notifications, and dialogs.
-
-
 If the `toolbar_persist` option is set to `true` and this method is used,
 the user interface will remain visible, regardless of focus.
 

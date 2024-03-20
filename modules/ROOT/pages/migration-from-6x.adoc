@@ -151,7 +151,7 @@ In {productname} 6 and earlier, the `media_url_resolver` option provided `resolv
 
 In {productname} 7, the `media_url_resolver` option now requires a Promise to be returned.
 
-.Before refactor when using callbacks
+.Old expected value implementing callbacks
 [source,js]
 ----
 tinymce.init({

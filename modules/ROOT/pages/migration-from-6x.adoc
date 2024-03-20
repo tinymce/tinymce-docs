@@ -241,11 +241,9 @@ Previously, {productname} added numerous `height` styles when resizing table row
 [[ui-and-ux-force-notifications-to-have-a-close-button]]
 ==== Force notifications to have a close button
 
-Previously, {productname} had the option to modify default notifications so that they do not have display a `X` (close button).
+In previous versions of {productname}, xref:creating-custom-notifications.adoc[notifications] were able to be displayed without a close button (`X`). Accessibility is an important component of the editor, and when this button is not in a notification, that notification cannot be closed via keyboard navigation.
 
-{productname} is committed to enhance accessibility for all users, and aim to create consistency across all notifications and establish a standard tabbing flow for keyboard users.
-
-As of {productname} 7.0, the `closeButton` property has been removed from xref:creating-custom-notifications.adoc[notification API], as a result the `closeButton` will always be visible.
+As of {productname} 7.0, the `closeButton` property has been removed from the xref:creating-custom-notifications.adoc[notification API], with all notifications now displaying a visible `closeButton`. This is to allow notifications to be closed using the `Tab` key. 
 
 [[security]]
 == Security

@@ -7,7 +7,7 @@
 include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 [NOTE]
-{productname} 7.0 is _licensed under GPL Version 2 or later_. This version introduces a new xref:license-key.adoc[licence_key]  configuration setting that gives self-hosted users the ability to select a usage under the GPL or to authenticate their paid license with Tiny.
+{productname} 7.0 is _licensed under GPL Version 2 or later_. This version introduces a new xref:license-key.adoc[license_key] configuration setting that gives self-hosted users the ability to select a usage under the GPL or to authenticate their paid license with Tiny.
 
 // #TINY-10681 / #TINY-10578
 
@@ -34,6 +34,9 @@ These release notes provide an overview of the changes for {productname} 7.0, in
 * xref:removed[Removed]
 * xref:bug-fixes[Bug fixes]
 * xref:known-issues[Known issues]
+
+[NOTE]
+For additional details on {productname} 7.0 breaking changes when considering upgrading, see xref:migration-from-6x.adoc[Migrating from TinyMCE 6 to TinyMCE 7].
 
 
 [[new-premium-plugins]]
@@ -105,7 +108,7 @@ The {productname} 7.0 release includes an accompanying release of the **Template
 
 **Templates** includes the following improvement.
 
-==== Missing tooltip for category and template three dots menu button in the **Templates** dialog
+==== Missing tooltip for category and template three dots menu button in the **Templates** dialog.
 // #TINY-10615
 
 Previously, the three dots menu button for category and template in the **Templates** dialog were missing a tooltip, making them inaccessible.
@@ -223,7 +226,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} 7.0 also includes the following improvements:
 
-=== Shortcut included in tooltips for basic and toggle toolbar buttons
+=== Shortcut included in tooltips for basic and toggle toolbar buttons.
 // #TINY-10487
 
 Previously, basic and toggle toolbar buttons lacked keyboard shortcut information in the native browser tooltip. This could leave users unaware of available shortcuts and, therefore unable to use them.
@@ -264,7 +267,7 @@ As a result, users can now insert **mentions** and **emojis** using the `autocom
 
 For information on the **Autocompleter** plugin, see: xref:autocompleter.adoc[Autocompleter].
 
-=== Improved accessibility for interactive elements with custom tooltips
+=== Improved accessibility for interactive elements with custom tooltips.
 // #TINY-10453 / #TINY-9275
 
 In previous versions of {productname}, buttons without visible labels displayed browser native tooltips which only shows on mouse hover, not keyboard focus. This meant keyboard-only users couldn't access these tooltips, hindering their understanding of button functionality.
@@ -291,7 +294,7 @@ The absence of a tooltip on the "Click for more info" button within the `accessi
 
 {productname} 7.0 addresses this issue, by adding the tooltip to the button, ensuring its visibility both on mouse hover and keyboard focus.
 
-=== Improved Custom Elements
+=== Improved Custom Elements.
 // #TINY-9980 / #TINY-9979
 
 {productname} 7.0 introduces enhancements to the existing xref:content-filtering.adoc#custom_elements[custom_elements] option and xref:apis/tinymce.html.schema.adoc#addCustomElements[addCustomElements] API. This update allows the structure of custom elements to be refined, offering users more flexibility and customization options.
@@ -304,7 +307,7 @@ Key Improvements:
 
 For more information and details for `addCustomElements` see xref:content-filtering.adoc#custom_elements[custom_elements].
 
-=== Improved support of `data` elements
+=== Improved support of `data` elements.
 // #TINY-10611
 
 Previously, when inserting a `data` element within the editor, the `data` element would be removed.
@@ -320,7 +323,7 @@ As a result, the `data` elements are recognized as valid elements within the edi
 {productname} 7.0 also includes the following addition:
 
 [[a-new-trigger-property-for-block-text-pattern-configurations-allowing-pattern-activation-with-either-space-or-enter-keys]]
-=== A new `trigger` property for block text pattern configurations, allowing pattern activation with either Space or Enter keys
+=== A new `trigger` property for block text pattern configurations, allowing pattern activation with either Space or Enter keys.
 // #TINY-10324
 
 This release introduces a new `trigger` property for block text pattern configurations, allowing pattern activation with either `Space` or `Enter` keys.
@@ -352,7 +355,7 @@ to the following new preconfigured defaults:
 .Example preconfigured text_patterns for {productname} 7.0+
 [source, js]
 ----
-[     
+[ 
   { start: '*', end: '*', format: 'italic' },
   { start: '**', end: '**', format: 'bold' },
   { start: '#', format: 'h1', trigger: 'space' },
@@ -374,18 +377,18 @@ Customers that wish to revert back to the previous default block `text_patterns`
 
 [source, js]
 ----
-[     
-    { start: '*', end: '*', format: 'italic' },
-    { start: '**', end: '**', format: 'bold' },
-    { start: '#', format: 'h1', trigger: 'enter' },
-    { start: '##', format: 'h2', trigger: 'enter' },
-    { start: '###', format: 'h3', trigger: 'enter' },
-    { start: '####', format: 'h4', trigger: 'enter' },
-    { start: '#####', format: 'h5', trigger: 'enter' },
-    { start: '######', format: 'h6', trigger: 'enter' },
-    { start: '1. ', cmd: 'InsertOrderedList', trigger: 'enter' },
-    { start: '* ', cmd: 'InsertUnorderedList', trigger: 'enter' },
-    { start: '- ', cmd: 'InsertUnorderedList', trigger: 'enter' },
+[
+  { start: '*', end: '*', format: 'italic' },
+  { start: '**', end: '**', format: 'bold' },
+  { start: '#', format: 'h1', trigger: 'enter' },
+  { start: '##', format: 'h2', trigger: 'enter' },
+  { start: '###', format: 'h3', trigger: 'enter' },
+  { start: '####', format: 'h4', trigger: 'enter' },
+  { start: '#####', format: 'h5', trigger: 'enter' },
+  { start: '######', format: 'h6', trigger: 'enter' },
+  { start: '1. ', cmd: 'InsertOrderedList', trigger: 'enter' },
+  { start: '* ', cmd: 'InsertUnorderedList', trigger: 'enter' },
+  { start: '- ', cmd: 'InsertUnorderedList', trigger: 'enter' },
 ]
 ----
 
@@ -494,7 +497,7 @@ When adjusting row height through the row dialog, any height styles previously a
 
 When resizing a table using either the row resize bars or corner resize handles, any existing `height` styles are removed from the `td`/`th` elements and only apply to `tr` elements and `table` element. Additionally, the heights calculated and applied for the `tr` elements and `table` element more accurately represent the actual visual height in the editor.
 
-As part of the changes to table height resizing handling, resizing via the corner resize handles is more consistent. If the table *does not* have any height styles and the table is resized using one of the corner resize handles, each row has its height increased evenly. If the table *does have* existing height styles, corner resizes will only change the height of the first row (if using top corner handles) or last row  (if using bottom corner handles) equivalent to `table_column_resizing: 'resizetable'` option for columns xref:table-options.adoc#table_column_resizing[Table options: table_column_resizing]
+As part of the changes to table height resizing handling, resizing via the corner resize handles is more consistent. If the table *does not* have any height styles and the table is resized using one of the corner resize handles, each row has its height increased evenly. If the table *does have* existing height styles, corner resizes will only change the height of the first row (if using top corner handles) or last row (if using bottom corner handles) equivalent to `table_column_resizing: 'resizetable'` option for columns xref:table-options.adoc#table_column_resizing[Table options: table_column_resizing]
 
 === Removed incorrect `aria-placeholder` attribute from editor body when `placeholder` option is set.
 // #TINY-10452
@@ -505,7 +508,7 @@ However, the `aria-placeholder` attribute is not a valid attribute for the body 
 
 In {productname} 7.0 addresses this, by removing the `aria-placeholder` attribute from the editor body. This solution ensures that the editor is accessible to all users.
 
-=== Optional Tooltip for Dialog Footer Toggle Buttons
+=== Optional Tooltip for Dialog Footer Toggle Buttons.
 // #TINY-10672
 
 Previously, the `DialogFooterToggleButton` component required a tooltip property. This meant including a tooltip for all toggle buttons displayed in dialog footers, even if the information wasn't necessary.
@@ -523,7 +526,7 @@ As a result, this fix not only standardized the codebase but also significantly 
 
 For more information on using `+media_url_resolver+`, see xref:media.adoc#media_url_resolver[media_url_resolver]
 
-=== Accurate default options in the `styles` bespoke select toolbar button
+=== Accurate default options in the `styles` bespoke select toolbar button.
 // #TINY-10603
 
 Previously, the bespoke `styles` select toolbar button in {productname} defaulted to "Paragraph" as the selected option even when there was no actual "Paragraph" style configured.
@@ -543,7 +546,7 @@ Previously in {productname} 6, all colors in the content HTML were set to use `r
 
 As a result, in {productname} 7, all colors are converted to use `hex` values and the `forced_hex_color` option is removed. The exception being `rgba` color values, they are left as is.
 
-For more information, see xref:migration-from-6x.adoc#force-hex-color[Migrating from {productname} 6 to {productname} 7: "force_hex_color"].
+For more information, see xref:migration-from-6x.adoc#force-hex-color[Migrating from {productname} 6 to {productname} 7].
 
 === Removed `InsertOrderedList` and `InsertUnorderedList` commands from core.
 // #TINY-10644
@@ -642,11 +645,11 @@ Previously, it was not possible to remove all classes on a table when setting an
 {productname} 7.0 introduces improvements for handling and removing classes on table, row and cell elements, including:
 
 * An empty value in the `table_class_list` option, `table_row_class_list` option, and `table_cell_class_list` option will allow all classes to be removed on the selected table for the "Table Properties" dialog, selected rows for the "Row Properties" dialog, or selected cells for the "Cell Properties" dialog respectively.
-* For a table with a class that does not match any of the values set in the  `table_class_list` option, a "Select..." item becomes the default choice in the "Class" listbox field in the "Table Properties" dialog. (This selection maintains the existing class upon saving). Conversely, if the table has a class that does match one of the values set in the  `table_class_list` option, it is automatically selected.
-* For selected rows with classes that do not match any of the values set in the  `table_row_class_list`, a "Select..." item becomes the default choice in the "Class" listbox field in the "Row Properties" dialog. (This selection maintains the existing classes upon saving). Conversely, if the selected row classes do match one of the values set in the  `table_row_class_list`, it is automatically selected.
-* For selected cells with classes that do not match any of the values set in the  `table_cell_class_list`, a "Select..." item becomes the default choice in the "Class" listbox field in the "Cell Properties" dialog. (This selection maintains the existing classes upon saving). Conversely, if the selected cell classes do match one of the values set in the  `table_cell_class_list`, it is automatically selected.
+* For a table with a class that does not match any of the values set in the `table_class_list` option, a "Select..." item becomes the default choice in the "Class" listbox field in the "Table Properties" dialog. (This selection maintains the existing class upon saving). Conversely, if the table has a class that does match one of the values set in the `table_class_list` option, it is automatically selected.
+* For selected rows with classes that do not match any of the values set in the `table_row_class_list`, a "Select..." item becomes the default choice in the "Class" listbox field in the "Row Properties" dialog. (This selection maintains the existing classes upon saving). Conversely, if the selected row classes do match one of the values set in the `table_row_class_list`, it is automatically selected.
+* For selected cells with classes that do not match any of the values set in the `table_cell_class_list`, a "Select..." item becomes the default choice in the "Class" listbox field in the "Cell Properties" dialog. (This selection maintains the existing classes upon saving). Conversely, if the selected cell classes do match one of the values set in the `table_cell_class_list`, it is automatically selected.
 
-=== Directly right clicking on a `<ol>`/ `<li>` in FireFox didn't enable the button `List Properties...` in the context menu
+=== Directly right clicking on a `<ol>`/ `<li>` in FireFox didn't enable the button `List Properties...` in the context menu.
 // #TINY-10490
 
 In previous versions of {productname}, two issues where identified that affected `list properties` for `<ol><li>` tags:
@@ -793,7 +796,7 @@ Now, when using the `mceTablePasteRowAfter` command, `mceTablePasteColAfter` com
 
 This section describes issues that users of {productname} 7.0 may encounter and possible workarounds for these issues.
 
-=== Non-breaking spaces `+&nbsp;+` may be inadvertently inserted around content during Markdown conversion
+=== Non-breaking spaces `+&nbsp;+` may be inadvertently inserted around content during Markdown conversion.
 
 Currently, Non-breaking spaces `+&nbsp;+` may be inadvertently inserted around content inside `<p>&nbsp;</p>` during Markdown conversion, requiring users to manually remove them post-conversion as the current workaround.
 
@@ -843,7 +846,7 @@ For now, the current workaround is to add a custom toolbar button.
 const revisions = [];
 
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
+  selector: 'textarea', // change this value according to your HTML
   plugins: 'revisionhistory',
   toolbar: 'revisionhistory saveversion',
   setup: (editor) => {

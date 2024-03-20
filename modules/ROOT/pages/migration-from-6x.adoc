@@ -147,9 +147,9 @@ In {productname} 7.0, all colors (excluding `rgba` values) are converted to use 
 ==== Changed the `media_url_resolver` option to use promises.
 // #TINY-9154
 
-In {productname} 6, the `media_url_resolver` option used a callback rather than a promise, which lead to unforeseen consequences.
+In {productname} 6 and earlier, the `media_url_resolver` option provided `resolve` and `reject` callbacks, rather than a Promise. In certain circumstances this implementation resulted in unexpected behavior.
 
-To rectify this, all instances of `media_url_resolver` were refactored to utilize promises in {productname} 7.
+In {productname} 7, the `media_url_resolver` option now requires a Promise to be returned.
 
 .Before refactor when using callbacks
 [source,js]

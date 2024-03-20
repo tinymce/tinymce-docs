@@ -284,7 +284,3 @@ In {productname} 7.0, the default value for `+convert_unsafe_embeds+` will chang
 If this behaviour is undesirable, set `+convert_unsafe_embeds+` to `+false+` in your editor configuration.
 
 For further details on the `+convert_unsafe_embeds+` option, see the xref:content-filtering.adoc#convert-unsafe-embeds[content filtering options], or refer to the xref:security.adoc#convert-unsafe-embeds[security guide], or the link:https://www.tiny.cloud/docs/tinymce/6/6.8.1-release-notes/#new-convert_unsafe_embeds-option-that-controls-whether-object-and-embed-elements-will-be-converted-to-more-restrictive-alternatives-namely-img-for-image-mime-types-video-for-video-mime-types-audio-audio-mime-types-or-iframe-for-other-or-unspecified-mime-types[{productname} 6.8.1 release notes].
-
-For more information on the `convert_unsafe_embeds` option see xref:security.adoc#convert-unsafe-embeds[convert_unsafe_embeds].
-
-// include::partial$security/sanitizing-html-input-and-protecting-against-xss-attacks-dom-parser-and-dom-purify.adoc[]

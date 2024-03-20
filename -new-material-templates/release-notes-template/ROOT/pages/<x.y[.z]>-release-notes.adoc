@@ -79,6 +79,16 @@ The following Premium plugin has been announced as reaching its end-of-life:
 {productname}’s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
 
 
+[[accompanying-open-source-plugin-end-of-life-announcement]]
+== Accompanying open source plugin end-of-life announcement
+
+The following open source plugin has been announced as reaching its end-of-life:
+
+=== <Open source plugin name eol>
+
+{productname}’s xref:<plugincode>.adoc[<Open source plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
+
+
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes
 
@@ -99,7 +109,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 {productname} <x.y[.z]> also includes the following improvement<s>:
 
 === <TINY-vwxyz 1 changelog entry>
-//#TINY-vwxyz1
+// #TINY-vwxyz1
 
 // CCFR here.
 
@@ -107,18 +117,32 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[additions]]
 == Additions
 
-{productname} <x.y[.z]> also includes the following additions:
+{productname} <x.y[.z]> also includes the following addition<s>:
 
 === <TINY-vwxyz 1 changelog entry>
-//#TINY-vwxyz1
+// #TINY-vwxyz1
 
 // CCFR here.
+
 
 [[changes]]
 == Changes
 
+{productname} <x.y[.z]> also includes the following change<s>:
+
 === <TINY-vwxyz 1 changelog entry>
-//#TINY-vwxyz1
+// #TINY-vwxyz1
+
+// CCFR here.
+
+
+[[removed]]
+== Removed
+
+{productname} <x.y[.z]> also includes the following removal<s>:
+
+=== <TINY-vwxyz 1 changelog entry>
+// #TINY-vwxyz1
 
 // CCFR here.
 
@@ -129,9 +153,10 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 {productname} <x.y[.z]> also includes the following bug fix<es>:
 
 === <TINY-vwxyz 1 changelog entry>
-//#TINY-vwxyz1
+// #TINY-vwxyz1
 
 // CCFR here.
+
 
 [[security-fixes]]
 == Security fixes
@@ -139,12 +164,15 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 {productname} <x.y[.z]> includes <a fix | fixes for the following security issue<s>:
 
 === <TINY-vwxyz 1 changelog entry>
-//#TINY-vwxyz1
+// #TINY-vwxyz1
 
 // CCFR here.
 
+
 [[deprecated]]
 == Deprecated
+
+{productname} <x.y[.z]> includes the following deprecation<s>:
 
 === The `<plugin>` configuration property, `<name>`, has been deprecated
 
@@ -159,6 +187,6 @@ This section describes issues that users of {productname} <x.y[.z]> may encounte
 There <is one | are <number> known issue<s> in {productname} <x.y[.z]>.
 
 === <TINY-vwxyz 1 changelog entry>
-//#TINY-vwxyz1
+// #TINY-vwxyz1
 
 // CCFR here.

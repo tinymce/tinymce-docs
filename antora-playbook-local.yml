@@ -1,12 +1,18 @@
 site:
-  title: TinyMCE Documentation (Dev)
-  url: https://www.tiny.cloud/docs
+  title: TinyMCE Documentation
+  url: localhost:4000
   start_page: tinymce::index.adoc
 content:
   sources:
   - url: ./
     branches: HEAD
     start_path: ./
+  - url: https://github.com/MitchC1999/tinymce-docs.git
+    branches:
+      - 5
+      - 7
+      - staging/docs-5
+      - staging/docs-7
 urls:
   html_extension_style: indexify
 ui:
@@ -15,5 +21,3 @@ ui:
 asciidoc:
   attributes:
     tinymce_live_demo_url: https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/6-dev/tinymce.min.js
-  extensions:
-    - '@tinymce/antora-extension-livedemos'

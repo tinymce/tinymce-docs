@@ -10,7 +10,7 @@
   "scripts": {
     "build": "./-scripts/api-reference.sh",
     "build-local-ref": "./-scripts/api-reference-local.sh",
-    "nodemon-dev": "nodemon --exec yarn antora ./antora-playbook-dev.yml",
+    "nodemon-dev": "nodemon --exec yarn antora ./antora-playbook-local.yml",
     "server": "http-server build/site/ --port 4000",
     "serve": "npm-run-all -p nodemon-dev server"
   },
@@ -18,7 +18,7 @@
   "license": "CC-BY-NC-SA-3.0",
   "nodemonConfig": {
     "execMap": {
-      "build": "antora ./antora-playbook-dev.yml"
+      "build": "antora ./antora-playbook-local.yml"
     },
     "watch": [
       "modules/*"

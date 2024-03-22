@@ -6,7 +6,7 @@ on:
     paths:
       - '**'
     branches:
-      - 'feature/5/DOC-1640'
+      - 'feature/5**'
 
 env:
   JEKYLL_ENV: production

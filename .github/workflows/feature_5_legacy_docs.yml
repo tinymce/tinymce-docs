@@ -7,6 +7,7 @@ on:
       - '**'
     branches:
       - 'feature/5**'
+      - 'hotfix/5**'
 
 env:
   JEKYLL_ENV: production

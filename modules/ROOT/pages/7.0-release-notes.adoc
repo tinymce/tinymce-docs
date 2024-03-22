@@ -830,6 +830,19 @@ Keyboard navigation is essential for accessibility. While tab-key navigation is 
 Setting this checkbox will ensure Safari functions properly with tab-key navigation through browser elements.
 ====
 
+=== Incorrect text color display with {productname} `+skin: 'oxide-dark'+`.
+
+Enhanced Code Editor currently has an issue with the display of text color when {productname} is set to `+skin: 'oxide-dark'+`. When this setting is applied, the text color inside the Enhanced Code Editor does not display correctly.
+
+Workaround:
+
+. Open the Advanced Code (advcode) dialog.
+. Click on the `Dark/light mode` button within the dialog.
+.. This action will set the text color to white on a black background, resolving the display issue temporarily.
+
+[NOTE]
+This workaround serves as a temporary solution until a permanent fix is implemented.
+
 === Table that has `colgroup` attribute is highlighted as new in Revision History.
 
 When a `table` element has `colgroup` attribute, Revision History highlights it as new even though it has no change.

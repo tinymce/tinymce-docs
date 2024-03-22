@@ -34,7 +34,7 @@ jobs:
       run: yarn build
 
     - name: (Feature - Docs 5) Build Website
-      run: yarn antora ./antora-playbook-dev.yml
+      run: yarn antora ./antora-playbook.yml
 
     - name: (deploy) Prepare for branch deployments
       shell: bash

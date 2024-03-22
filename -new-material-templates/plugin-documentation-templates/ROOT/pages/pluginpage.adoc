@@ -65,7 +65,7 @@ The following configuration options affect the behavior of the {pluginname} plug
 // The template file for each such file is
 // -new-material-templates/partials/commands/<configuration_option>.adoc
 // Add one include:: statement for each added file as per the example immediately below.
-include::partial$configuration/<setting_name>.adoc[][leveloffset=+1]
+include::partial$configuration/<setting_name>.adoc[leveloffset=+1]
 
 
 

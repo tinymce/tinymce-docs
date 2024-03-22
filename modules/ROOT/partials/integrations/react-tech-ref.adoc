@@ -5,6 +5,7 @@
 * xref:configuring-the-editor[Configuring the editor]
 * xref:available-props[Available props]
 ** xref:apikey[`+apiKey+`]
+** xref:licenseKey[`+licenseKey+`]
 ** xref:cloudchannel[`+cloudChannel+`]
 ** xref:disabled[`+disabled+`]
 ** xref:id[`+id+`]
@@ -104,6 +105,8 @@ These props are used to configure how the editor is sourced:
 
 xref:apikey[`+apiKey+`]:: The {cloudname} API key. When loading from {cloudname}, use this prop to remove the "This domain is not registered..." warning message.
 
+xref:licenseKey[`+licenseKey+`]:: The {cloudname} License key. Use this when self-hosting {productname} instead of loading from {cloudname}.
+
 xref:cloudchannel[`+cloudChannel+`]:: The channel of {productname} used when loading from {cloudname}.
 
 xref:scriptloading[`+scriptLoading+`]:: The script loading behavior prop. Allows setting of the `+async+` and `+defer+` attributes, as well as adding an additional delay in milliseconds.
@@ -175,6 +178,28 @@ include::partial$misc/get-an-api-key.adoc[]
 ----
 <Editor
   apiKey='your-api-key'
+/>
+----
+
+[[licenseKey]]
+=== `+licenseKey+`
+
+{cloudname} License key.
+
+Use this when self-hosting {productname} instead of loading from {cloudname}. For more information, see: xref:license-key.adoc[License Key].
+
+*Type:* `+String+`
+
+*Default value:* `+undefined+`
+
+*Possible values:* `undefined`, `'gpl'` or a valid {productname} license key
+
+==== Example: using `+apiKey+`
+
+[source,jsx]
+----
+<Editor
+  licenseKey='your-license-key'
 />
 ----
 
@@ -257,7 +282,7 @@ For information on the {productname} `+tinymce.init({...})+` method, see: xref:b
 When using `+tinymce-react+`:
 
 * The `+init+` prop does not require the `+selector+` or `+target+` options
-* If the `+selector+`, `+target+`, or `+readonly+` options are set using the `+init+` prop, they will be _overridden_ by the integration.
+* If the `+selector+`, `+target+`, `+readonly+`, or `+license_key+` options are set using the `+init+` prop, they will be _overridden_ by the integration.
 
 *Type:* `+Object+`
 
@@ -756,6 +781,9 @@ The following events are available:
 * `+onClearUndos+`
 * `+onClick+`
 * `+onContextMenu+`
+* `+onCompositionEnd+`
+* `+onCompositionStart+`
+* `+onCompositionUpdate+`
 * `+onCopy+`
 * `+onCut+`
 * `+onDblclick+`
@@ -774,6 +802,7 @@ The following events are available:
 * `+onGetContent+`
 * `+onHide+`
 * `+onInit+`
+* `+onInput+`
 * `+onKeyDown+`
 * `+onKeyPress+`
 * `+onKeyUp+`

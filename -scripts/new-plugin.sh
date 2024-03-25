@@ -223,13 +223,13 @@ if [[ $has_demo == "y" ]]; then
 fi
 
 # Add configuration options to plugin file
-# target_line_number=$(grep -n "include::partial\$configuration/<setting_name>.adoc[leveloffset=+1]" "$plugin_file" | cut -d ":" -f 1)
+target_line_number=$(grep -n -F "include::partial\$configuration/<setting_name>.adoc[leveloffset=+1]" "$plugin_file" | cut -d ":" -f 1)
 
-# for option in "${config_options[@]}"; do
-#   new_line="include::partial\$configuration/$option.adoc[leveloffset=+1]"
-#   sed -i "" "$target_line_number a\\
-# $new_line" "$plugin_file"
-#   ((target_line_number++))
-# done
+for option in "${config_options[@]}"; do
+  new_line="include::partial\$configuration/$option.adoc[leveloffset=+1]"
+  sed -i "" "$target_line_number a\\
+$new_line" "$plugin_file"
+  ((target_line_number++))
+done
 
-# sed -i "" "/include::partial\$configuration\/<setting_name>.adoc[leveloffset=+1]/d" "$plugin_file"
+sed -i "" "/include::partial\$configuration\/<setting_name>.adoc\[leveloffset=+1\]/d" "$plugin_file"

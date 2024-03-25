@@ -1,0 +1,40 @@
+[[api-usage]]
+== API Usage
+
+The {pluginname} On-Premises converter provides the ability to convert an HTML document to a PDF file via Restful API.
+
+The API is available on `http://localhost:[port]` (by default the `port` is `8080`).
+
+> The REST API documentation is available at `http://localhost:[port]/docs`.
+Alternatively, you can check the specifications in our public resources link:https://exportpdf.converter.tiny.cloud/docs[https://exportpdf.converter.tiny.cloud/docs^].
+
+If you have the authorization for the API enabled, you should provide an authorization token. More instructions you can find in the xref:individual-export-to-pdf-on-premises.adoc#authorization[authorization] section.
+
+=== Using additional HTTP headers
+
+If fetching some resources (e.g. images) used in a generated PDF requires passing an additional authorization factor in the form of additional HTTP headers:
+
+. It can be defined on the application startup by setting `EXTRA_HTTP_HEADERS` environmental variable where the value is a stringified JSON object with required headers.
+. It can be defined in a request sent to the PDF Converter API in `options`:
+
+[source, js, subs="attributes+"]
+----
+const data = {
+  html: '<p>I am a teapot</p><img src="https://secured-example-website.com/image.jpg">',
+  css: 'p { color: red; }',
+  options: {
+    extra_http_headers: {
+      authorization: 'Bearer auth_key'
+    }
+  }
+};
+
+axios.post( '{exportpdf_service_url}', data, config )
+  .then( response => {
+    fs.writeFileSync('./file.pdf', response.data, 'binary')
+  }).catch( error => {
+    console.log( error );
+  });
+----
+
+Headers defined in the application config and from the request are merged. If the same header is defined in both places, a header value from PDF options is prioritized over the value from the application config.

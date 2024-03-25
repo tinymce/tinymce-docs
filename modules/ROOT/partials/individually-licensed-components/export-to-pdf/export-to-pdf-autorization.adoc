@@ -1,0 +1,97 @@
+[[authorization]]
+== Authorization
+
+To enable authorization, set the `SECRET_KEY` environment variable during the xref:individual-export-to-pdf-on-premises.adoc#installation[installation].
+
+If the `SECRET_KEY` variable is set, then all requests must have a header with a JWT (JSON Web Token) signed with this key. The token should be passed as a value of the `Authorization` header for each request sent to the {pluginname} REST API.
+
+> If you do not set up any `SECRET_KEY` during the installation, then {pluginname} On-Premises will not require any headers with tokens when sending requests to the {pluginname} REST API. However, we do not recommend skipping authorization when running {pluginname} On-Premises in a public network.
+
+=== Generating the token
+
+We highly recommend using the libraries listed on link:http://jwt.io/[jwt.io] to generate the token. The token is considered valid, when:
+
+* it is signed with the same `SECRET_KEY` as passed to the {pluginname} On-Premises instance,
+* it was created within the last 24 hours,
+* it is not issued in the future (e.i. the iat timestamp cannot be newer than the current time),
+* it has not expired yet.
+
+Tokens for the {pluginname} On-Premises do not require any additional claims such as the environment ID (which is specific for Collaboration Server On-Premises), so you can create the token with an empty payload.
+
+If your use case involves sending requests from your backend server, then you can generate JWT tokens locally, as it is done in our request example.
+
+In the case of editor plugins or other frontend usages, you should create a token endpoint, that returns a valid JWT token for authorized users.
+
+.example of a endpoint implementation.
+[source, js]
+----
+const express = require( 'express' );
+const jwt = require( 'jsonwebtoken' );
+
+const SECRET_KEY = 'secret_key';
+
+const app = express();
+
+app.use( ( req, res, next ) => {
+  res.setHeader( 'Access-Control-Allow-Origin', '*' );
+  res.setHeader( 'Access-Control-Allow-Methods', 'GET' );
+
+  next();
+});
+
+app.get( '/', ( req, res ) => {
+  const result = jwt.sign( {}, SECRET_KEY, { algorithm: 'HS256' } );
+
+  res.send( result );
+});
+
+app.listen( 8080, () => console.log( 'Listening on port 8080' ) );
+----
+
+=== Using editor plugins
+
+Plugins for {productname} will automatically request the token from the given `tokenUrl` variable and set the `Authorization` header when making an export request.
+
+[NOTE]
+Refer to the xref:exportpdf.adoc[{pluginname}] plugin documentation for details on adding the {pluginname} feature to your editor.
+
+=== Request example with an Authorization header
+
+The following example presents a request that generates valid JWT token and sets it as `Authorization` header:
+
+[source, js]
+----
+const fs = require( 'fs' );
+const jwt = require( 'jsonwebtoken' );
+const axios = require( 'axios' );
+
+const SECRET_KEY = 'secret';
+
+const token = jwt.sign( {}, SECRET_KEY, { algorithm: 'HS256' } );
+
+const data = {
+  html: "<p>I am a teapot</p>",
+  css: "p { color: red; }",
+};
+
+const config = {
+  headers: {
+    'Authorization': token
+  },
+  responseType: 'arraybuffer',
+};
+
+axios.post( 'http://localhost:8080/v1/convert', data, config )
+  .then( response => {
+    fs.writeFileSync('./file.pdf', response.data, 'binary');
+  }).catch( error => {
+    console.log( error );
+   });
+----
+
+`SECRET_KEY` it’s the key which has been passed to the {pluginname} On-Premises instance
+
+Please refer to the link:https://exportpdf.converter.tiny.cloud/docs[{pluginname} REST API documentation] to start using the service.
+
+[NOTE]
+If you use API clients like Postman or Insomnia, then set the JWT token as an `Authorization` header in the `Headers` tab. Do not use the built-in token authorization as this will generate invalid header with a `Bearer` prefix added to the token.

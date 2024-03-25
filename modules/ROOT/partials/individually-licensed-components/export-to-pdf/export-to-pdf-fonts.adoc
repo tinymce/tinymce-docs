@@ -1,0 +1,63 @@
+[[fonts]]
+== Fonts
+
+During document writing, the possibility of using many different fonts can be very important to users.
+
+Using the appropriate font can change the appearance of the document and emphasize its style.
+
+{pluginname} Converter allows you to use link:https://exportpdf.converter.tiny.cloud/docs#section/Web-Fonts[Web Fonts^], gives you the ability to use standard operating system fonts or use your custom fonts without the need to import them using CSS.
+
+Below is a list of the basic fonts included in the image:
+
+[source]
+----
+OpenSans-Bold.ttf
+OpenSans-BoldItalic.ttf
+OpenSans-ExtraBold.ttf
+OpenSans-ExtraBoldItalic.ttf
+OpenSans-Italic.ttf
+OpenSans-Light.ttf
+OpenSans-LightItalic.ttf
+OpenSans-Regular.ttf
+OpenSans-Semibold.ttf
+OpenSans-SemiboldItalic.ttf
+----
+
+However, you can add additional fonts to PDF Converter in two ways:
+
+* Use Unix-like PDF-Converter image `{dockerimageexporttopdf}` and mount your fonts directory to it.
+** See xref:individual-export-to-pdf-on-premises.adoc#add-custom-fonts-to-pdf-converter[Add custom fonts to PDF Converter] section.
+* Use Windows PDF-Converter image `{dockerimagewindowsexporttopdf}` and mount to it fonts directory from the Windows operating system on which the container is running.
+** See Use Windows fonts in PDF Converter section.
+
+> The fonts inside the mounted volume will be installed on the docker image operating system. Only the `.ttf` and `.otf` font formats are supported. If you want to use other font formats, you need to convert them to the supported format or use these fonts as link:https://exportpdf.converter.tiny.cloud/docs#section/Web-Fonts[Web Fonts^].
++
+Make sure that you can install and use converted fonts on your local machine first, before installing them on the docker container.
+
+[[add-custom-fonts-to-pdf-converter]]
+=== Add custom fonts to PDF Converter
+
+If you want to use your custom fonts in your PDF files, you can use the `pdf-converter` Docker image and mount the directory with your custom fonts for the PDF Converter application running on a machine with a Unix-like system (this includes Docker on Windows with a WSL backend).
+
+You just need to run the `{dockerimageexporttopdf}` Docker image on a Unix-like operating system and mount the `~/your_fonts_dir:/usr/share/fonts/your_fonts_dir` volume.
+
+Launch the Docker container on Unix-like operating system example:
+
+[source, bash, subs="attributes+"]
+----
+docker run --init -v ~/your_fonts_dir:/usr/share/fonts/your_fonts_dir -p 8080:8080 -e LICENSE_KEY=[your_license_key] {dockerimageexporttopdf}:[version]
+----
+
+[[use-windows-fonts-in-pdf-converter]]
+=== Use Windows fonts in PDF Converter
+
+If you want to use Windows fonts like Arial, Verdana, etc. in your PDF files, you can use `pdf-converter-windows` Docker image that allows you to run the application on a machine with Windows operating system and mount fonts from the system.
+
+You just need to run `docker.cke-cs.com/pdf-converter-windows` Docker image on Windows operating system and mount `C:\Windows\Fonts:C:\Windows\Fonts` volume.
+
+Launch the Docker container on Windows operating system example:
+
+[source, bash, subs="attributes+"]
+----
+docker run -v C:\Windows\Fonts:C:\Windows\Fonts -p 8080:8080 --env LICENSE_KEY=[your_license_key] {dockerimagewindowsexporttopdf}:[version]
+----

@@ -228,7 +228,7 @@ This update fixes this bug. When the Comments plugin loads, the comment model da
 
 If the Comments sidebar was opened with an editor command and `grabFocus` was set to true — `editor.execCommand("'tc-open-comment'", false, "showcomments", { grabFocus: true });` — the sidebar still stole focus.
 
-This update corrects this: `grabFocus: true` is honored, as expected, and the sidebar does not steal focus.
+This update corrects this: `grabFocus: true` is honored, as expected, and the sidebar does not have the focus.
 
 
 ==== Comments did not block the sidebar UI while saving the data in callback mode

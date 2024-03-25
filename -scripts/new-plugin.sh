@@ -286,3 +286,11 @@ echo "Please create or update the following files manually:"
 for file in "${files_to_create[@]}"; do
   echo "- $file"
 done
+
+# generate a markdown file containing a checklist of files to be created/updated manually
+checklist_file="new-$plugin_code-plugin-checklist.md"
+echo -e "# Files to be created/updated manually\n" > "$checklist_file"
+for file in "${files_to_create[@]}"; do
+  echo "- [ ] $file" >> "$checklist_file"
+done
+echo -e "Checklist file created: $checklist_file\n"

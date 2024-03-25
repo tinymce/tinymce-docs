@@ -75,6 +75,14 @@ while [[ -z "$(echo "$plugin_name" | tr -d '[:space:]')" ]]; do
   read -p "Please enter a different plugin name: " plugin_name
 done
 
+# Open-source or premium plugin
+read -p "Is this a premium plugin? (y/n): " is_premium
+if [[ $is_premium == "y" ]]; then
+  category="premium"
+else
+  category="opensource"
+fi
+
 # Configuration options
 config_options=()
 while true; do
@@ -108,6 +116,9 @@ read -p "Does the plugin have a demo? (y/n): " has_demo
 ################################################################################
 
 # List all files to be created
+echo "Plugin Code: $plugin_code"
+echo "Plugin Name: $plugin_name"
+echo "Plugin Category: $category"
 echo "Files to be created:"
 printf "%-30s %s\n" "Plugin File:" "$plugin_file"
 
@@ -176,6 +187,7 @@ fi
 cp "$plugin_template" "$plugin_file"
 sed -i "" "s/<plugincode>/$plugin_code/g" "$plugin_file"
 sed -i "" "s/<Plugin name>/$plugin_name/g" "$plugin_file"
+sed -i "" "s/<premium|opensource>/$category/g" "$plugin_file"
 
 # Create configuration option files
 for option in "${config_options[@]}"; do

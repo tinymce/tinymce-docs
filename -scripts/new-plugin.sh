@@ -245,3 +245,33 @@ $new_line" "$plugin_file"
 done
 
 sed -i "" "/include::partial\$configuration\/<setting_name>.adoc\[leveloffset=+1\]/d" "$plugin_file"
+
+################################################################################
+############################### Success Message ###############################
+################################################################################
+
+echo -e "\nPlugin documentation created successfully!\n"
+
+################################################################################
+############################### Manual Creation ################################
+################################################################################
+
+# Print all files that need to be created/updated manually
+files_to_create=(
+  "$icon_list"
+  "$demo_example"
+  "$nav"
+  "$full_featured_html"
+  "$full_featured_js"
+  "$available_menu_items"
+  "$available_toolbar_buttons"
+  "$editor_command_identifiers"
+  "$events"
+  "$opensource_plugins"
+  "$premium_plugins"
+)
+
+echo "Please create or update the following files manually:"
+for file in "${files_to_create[@]}"; do
+  echo "- $file"
+done

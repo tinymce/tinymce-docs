@@ -23,9 +23,10 @@ demo_js_template="$TEMPLATE_DIR/examples/live-demos/<plugincode>/index.js"
 configuration_option_template="$TEMPLATE_DIR/partials/configuration/<configuration_option>.adoc"
 commands_template="$TEMPLATE_DIR/partials/commands/<plugincode>-cmds.adoc"
 events_template="$TEMPLATE_DIR/partials/events/<plugincode>-events.adoc"
+menu_items_template="$TEMPLATE_DIR/partials/menu-item-ids/<plugincode>-menu-items.adoc"
 
 # Verify that all template files exist
-if [[ ! -e "$plugin_template" || ! -e "$configuration_option_template" || ! -e "$commands_template" || ! -e "$demo_html_template" || ! -e "$demo_js_template" || ! -e "$events_template" ]]; then
+if [[ ! -e "$plugin_template" || ! -e "$configuration_option_template" || ! -e "$commands_template" || ! -e "$demo_html_template" || ! -e "$demo_js_template" || ! -e "$events_template" || ! -e "$menu_items_template" ]]; then
   echo "Error: One or more template files are missing"
   exit 1
 fi
@@ -42,6 +43,8 @@ available_menu_items="./-new-material-templates/plugin-documentation-templates/R
 available_toolbar_buttons="./-new-material-templates/plugin-documentation-templates/ROOT/pages/available-toolbar-buttons.adoc"
 editor_command_identifiers="./-new-material-templates/plugin-documentation-templates/ROOT/pages/editor-command-identifiers.adoc"
 events="./-new-material-templates/plugin-documentation-templates/ROOT/pages/events.adoc"
+opensource_plugins="./-new-material-templates/plugin-documentation-templates/ROOT/partials/index-pages/opensource-plugins.adoc"
+premium_plugins="./-new-material-templates/plugin-documentation-templates/ROOT/partials/index-pages/premium-plugins.adoc"
 
 ################################################################################
 ################################# User Input ###################################
@@ -86,6 +89,9 @@ read -p "Does the plugin have any commands? (y/n): " has_commands
 # Events
 read -p "Does the plugin have any events? (y/n): " has_events
 
+# Menu items
+read -p "Does the plugin have any menu items? (y/n): " has_menu_items
+
 # Demo
 read -p "Does the plugin have a demo? (y/n): " has_demo
 
@@ -113,6 +119,12 @@ fi
 if [[ $has_events == "y" ]]; then
   events_file="./modules/ROOT/partials/events/$plugin_code-events.adoc"
   printf "%-30s %s\n" "Events File:" "$events_file"
+fi
+
+# Menu items
+if [[ $has_menu_items == "y" ]]; then
+  menu_items_file="./modules/ROOT/partials/menu-item-ids/$plugin_code-menu-items.adoc"
+  printf "%-30s %s\n" "Menu Items File:" "$menu_items_file"
 fi
 
 # Demo
@@ -163,6 +175,11 @@ if [[ $has_events == "y" ]]; then
   cp "$events_template" "$events_file"
   sed -i "" "s/<plugincode>/$plugin_code/g" "$events_file"
   sed -i "" "s/<Plugin name>/$plugin_name/g" "$events_file"
+fi
+
+# Create menu items file
+if [[ $has_menu_items == "y" ]]; then
+  cp "$menu_items_template" "$menu_items_file"
 fi
 
 # Create demo files

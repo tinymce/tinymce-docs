@@ -18,11 +18,11 @@ TEMPLATE_DIR="./-new-material-templates/plugin-documentation-templates/ROOT"
 plugin_template="$TEMPLATE_DIR/pages/pluginpage.adoc"
 configuration_option_template="$TEMPLATE_DIR/partials/configuration/<configuration_option>.adoc"
 commands_template="$TEMPLATE_DIR/partials/commands/<plugincode>-cmds.adoc"
-demo_html_demplate="$TEMPLATE_DIR/examples/live-demos/<plugincode>/index.html"
+demo_html_template="$TEMPLATE_DIR/examples/live-demos/<plugincode>/index.html"
 demo_js_template="$TEMPLATE_DIR/examples/live-demos/<plugincode>/index.js"
 
 # Verify that all template files exist
-if [[ ! -e "$plugin_template" || ! -e "$configuration_option_template" || ! -e "$commands_template" || ! -e "$demo_html_demplate" || ! -e "$demo_js_template" ]]; then
+if [[ ! -e "$plugin_template" || ! -e "$configuration_option_template" || ! -e "$commands_template" || ! -e "$demo_html_template" || ! -e "$demo_js_template" ]]; then
   echo "Error: One or more template files are missing"
   exit 1
 fi
@@ -75,6 +75,14 @@ while [[ $has_commands != "y" && $has_commands != "n" ]]; do
   read -p "Does the plugin have any commands? (y/n): " has_commands
 done
 
+# Demo
+read -p "Does the plugin have a demo? (y/n): " has_demo
+
+while [[ $has_demo != "y" && $has_demo != "n" ]]; do
+  echo "Error: Please enter 'y' or 'n'"
+  read -p "Does the plugin have a demo? (y/n): " has_demo
+done
+
 ################################################################################
 ############################### Confirm Creation ###############################
 ################################################################################
@@ -90,6 +98,13 @@ done
 if [[ $has_commands == "y" ]]; then
   commands_file="./modules/ROOT/partials/commands/$plugin_code-cmds.adoc"
   echo "Commands File: $commands_file"
+fi
+
+if [[ $has_demo == "y" ]]; then
+  demo_html_file="./modules/ROOT/examples/live-demos/$plugin_code/index.html"
+  demo_js_file="./modules/ROOT/examples/live-demos/$plugin_code/index.js"
+  echo "Demo HTML File: $demo_html_file"
+  echo "Demo JS File: $demo_js_file"
 fi
 
 # Prompt the user to confirm before creating files
@@ -125,6 +140,15 @@ done
 # Create commands file
 if [[ $has_commands == "y" ]]; then
   cp "$commands_template" "$commands_file"
+fi
+
+# Create demo files
+if [[ $has_demo == "y" ]]; then
+  mkdir -p "./modules/ROOT/examples/live-demos/$plugin_code"
+  cp "$demo_html_template" "$demo_html_file"
+  cp "$demo_js_template" "$demo_js_file"
+  sed -i "" "s/<plugincode>/$plugin_code/g" "$demo_html_file"
+  sed -i "" "s/<plugincode>/$plugin_code/g" "$demo_js_file"
 fi
 
 # Add configuration options to plugin file

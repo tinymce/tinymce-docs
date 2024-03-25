@@ -25,9 +25,10 @@ commands_template="$TEMPLATE_DIR/partials/commands/<plugincode>-cmds.adoc"
 events_template="$TEMPLATE_DIR/partials/events/<plugincode>-events.adoc"
 menu_items_template="$TEMPLATE_DIR/partials/menu-item-ids/<plugincode>-menu-items.adoc"
 apis_template="$TEMPLATE_DIR/partials/plugin-apis/<plugincode>-apis.adoc"
+toolbar_buttons_template="$TEMPLATE_DIR/partials/toolbar-button-ids/<plugincode>-toolbar-buttons.adoc"
 
 # Verify that all template files exist
-if [[ ! -e "$plugin_template" || ! -e "$configuration_option_template" || ! -e "$commands_template" || ! -e "$demo_html_template" || ! -e "$demo_js_template" || ! -e "$events_template" || ! -e "$menu_items_template" || ! -e "$apis_template" ]]; then
+if [[ ! -e "$plugin_template" || ! -e "$configuration_option_template" || ! -e "$commands_template" || ! -e "$demo_html_template" || ! -e "$demo_js_template" || ! -e "$events_template" || ! -e "$menu_items_template" || ! -e "$apis_template" || ! -e "$toolbar_buttons_template" ]]; then
   echo "Error: One or more template files are missing"
   exit 1
 fi
@@ -96,6 +97,9 @@ read -p "Does the plugin have any menu items? (y/n): " has_menu_items
 # APIs
 read -p "Does the plugin have any APIs? (y/n): " has_apis
 
+# Toolbar buttons
+read -p "Does the plugin have any toolbar buttons? (y/n): " has_toolbar_buttons
+
 # Demo
 read -p "Does the plugin have a demo? (y/n): " has_demo
 
@@ -135,6 +139,12 @@ fi
 if [[ $has_apis == "y" ]]; then
   apis_file="./modules/ROOT/partials/plugin-apis/$plugin_code-apis.adoc"
   printf "%-30s %s\n" "APIs File:" "$apis_file"
+fi
+
+# Toolbar buttons
+if [[ $has_toolbar_buttons == "y" ]]; then
+  toolbar_buttons_file="./modules/ROOT/partials/toolbar-button-ids/$plugin_code-toolbar-buttons.adoc"
+  printf "%-30s %s\n" "Toolbar Buttons File:" "$toolbar_buttons_file"
 fi
 
 # Demo
@@ -196,6 +206,11 @@ fi
 if [[ $has_apis == "y" ]]; then
   cp "$apis_template" "$apis_file"
   sed -i "" "s/<plugincode>/$plugin_code/g" "$apis_file"
+fi
+
+# Create toolbar buttons file
+if [[ $has_toolbar_buttons == "y" ]]; then
+  cp "$toolbar_buttons_template" "$toolbar_buttons_file"
 fi
 
 # Create demo files

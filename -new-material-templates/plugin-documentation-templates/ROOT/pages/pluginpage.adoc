@@ -1,6 +1,3 @@
-// Replace <place-holder text> instances with material then remove this, and other comments.
-
-// <Plugin name>: the product name. Reference on this page with the {pluginname} variable.
 = <Plugin name> plugin
 :navtitle: <Plugin name>
 :description: <What does this plugin do? What is the benefit? (One sentence description)>.
@@ -11,8 +8,6 @@
 // opensource plugin = tieroneplan
 // premium plugin    = tiertwoplan or tierthreeplan or enterpriseplan
 :pluginminimumplan: <tier>
-// <plugincode>: adds the plugin to an editor configuration.
-// Reference on this page with the {plugincode} variable
 :plugincode: <plugincode>
 :plugincategory: <premium|opensource>
 
@@ -26,7 +21,6 @@ include::partial$misc/admon-requires-<versionnumber>v.adoc
 
 == Interactive example
 
-// No Lorem Ipsum. Add test material, or, at least, a description of how end-users use the feature.
 liveDemo::{plugincode}[]
 
 // Logic for customising what presents from this included file relies on
@@ -51,7 +45,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: '{{plugincode}}',
   toolbar: '<toolbar-button(s)>',
-  an_essential_option: false
+  <an_essential_option>: false
 });
 ----
 
@@ -61,13 +55,7 @@ tinymce.init({
 
 The following configuration options affect the behavior of the {pluginname} plugin.
 
-// Add one file for each configuration to /modules/ROOT/partials/configuration/
-// The template file for each such file is
-// -new-material-templates/partials/commands/<configuration_option>.adoc
-// Add one include:: statement for each added file as per the example immediately below.
 include::partial$configuration/<setting_name>.adoc[leveloffset=+1]
-
-
 
 // If the plugin offers toolbar buttons
 // 1. Add an entry to /pages/available-toolbar-buttons.adoc
@@ -132,5 +120,3 @@ include::partial$events/{plugincode}-events.adoc[]
 The {pluginname} plugin provides the following APIs.
 
 include::partial$plugin-apis/{plugincode}-apis.adoc[]
-
-// Remove all comment lines and comment blocks before publishing.

@@ -1,0 +1,25 @@
+site:
+  title: TinyMCE Documentation
+  url: https://localhost:4000
+  start_page: tinymce::index.adoc
+content:
+  sources:
+  - url: ./
+    branches: HEAD
+    start_path: ./
+  - url: https://github.com/MitchC1999/tinymce-docs.git
+    branches: [ 5, 6 ]
+urls:
+  html_extension_style: indexify
+  latest_version_segment_strategy: redirect:to
+  latest_version_segment: latest
+ui:
+  bundle:
+    url: https://tiny-cloud-docs-antora-themes-staging.s3.amazonaws.com/ui-bundle.zip
+asciidoc:
+  attributes:
+    tinymce_live_demo_url: https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/7-dev/tinymce.min.js
+  extensions:
+    - '@tinymce/antora-extension-livedemos'
+runtime:
+  fetch: true

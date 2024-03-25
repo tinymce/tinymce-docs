@@ -24,9 +24,10 @@ configuration_option_template="$TEMPLATE_DIR/partials/configuration/<configurati
 commands_template="$TEMPLATE_DIR/partials/commands/<plugincode>-cmds.adoc"
 events_template="$TEMPLATE_DIR/partials/events/<plugincode>-events.adoc"
 menu_items_template="$TEMPLATE_DIR/partials/menu-item-ids/<plugincode>-menu-items.adoc"
+apis_template="$TEMPLATE_DIR/partials/plugin-apis/<plugincode>-apis.adoc"
 
 # Verify that all template files exist
-if [[ ! -e "$plugin_template" || ! -e "$configuration_option_template" || ! -e "$commands_template" || ! -e "$demo_html_template" || ! -e "$demo_js_template" || ! -e "$events_template" || ! -e "$menu_items_template" ]]; then
+if [[ ! -e "$plugin_template" || ! -e "$configuration_option_template" || ! -e "$commands_template" || ! -e "$demo_html_template" || ! -e "$demo_js_template" || ! -e "$events_template" || ! -e "$menu_items_template" || ! -e "$apis_template" ]]; then
   echo "Error: One or more template files are missing"
   exit 1
 fi
@@ -92,6 +93,9 @@ read -p "Does the plugin have any events? (y/n): " has_events
 # Menu items
 read -p "Does the plugin have any menu items? (y/n): " has_menu_items
 
+# APIs
+read -p "Does the plugin have any APIs? (y/n): " has_apis
+
 # Demo
 read -p "Does the plugin have a demo? (y/n): " has_demo
 
@@ -125,6 +129,12 @@ fi
 if [[ $has_menu_items == "y" ]]; then
   menu_items_file="./modules/ROOT/partials/menu-item-ids/$plugin_code-menu-items.adoc"
   printf "%-30s %s\n" "Menu Items File:" "$menu_items_file"
+fi
+
+# APIs
+if [[ $has_apis == "y" ]]; then
+  apis_file="./modules/ROOT/partials/plugin-apis/$plugin_code-apis.adoc"
+  printf "%-30s %s\n" "APIs File:" "$apis_file"
 fi
 
 # Demo
@@ -180,6 +190,12 @@ fi
 # Create menu items file
 if [[ $has_menu_items == "y" ]]; then
   cp "$menu_items_template" "$menu_items_file"
+fi
+
+# Create APIs file
+if [[ $has_apis == "y" ]]; then
+  cp "$apis_template" "$apis_file"
+  sed -i "" "s/<plugincode>/$plugin_code/g" "$apis_file"
 fi
 
 # Create demo files

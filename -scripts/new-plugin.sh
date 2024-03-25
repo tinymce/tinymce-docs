@@ -246,6 +246,17 @@ done
 
 sed -i "" "/include::partial\$configuration\/<setting_name>.adoc\[leveloffset=+1\]/d" "$plugin_file"
 
+# Update nav file
+nav_file="./modules/ROOT/nav.adoc"
+if [[ $category == "premium" ]]; then
+  target_line_number=$(grep -n -F "** Premium plugins" "$nav_file" | cut -d ":" -f 1)
+else
+  target_line_number=$(grep -n -F "** Open source plugins" "$nav_file" | cut -d ":" -f 1)
+fi
+sed -i "" "$target_line_number a\\
+*** xref:$plugin_code.adoc[$plugin_name] // TODO: Move this to the correct alphabetical position
+" "$nav_file"
+
 ################################################################################
 ############################### Success Message ###############################
 ################################################################################

@@ -24,7 +24,7 @@ const data = {
   css: 'p { color: red; }',
   options: {
     extra_http_headers: {
-      authorization: 'Bearer auth_key'
+      authorization: 'Bearer <replace_with_your_auth_key>'
     }
   }
 };

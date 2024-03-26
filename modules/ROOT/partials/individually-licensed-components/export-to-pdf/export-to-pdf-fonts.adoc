@@ -27,7 +27,7 @@ However, you can add additional fonts to PDF Converter in two ways:
 
 * Use Unix-like PDF-Converter image `{dockerimageexporttopdf}` and mount your fonts directory to it.
 ** See xref:individual-export-to-pdf-on-premises.adoc#add-custom-fonts-to-pdf-converter[Add custom fonts to PDF Converter] section.
-* Use Windows PDF-Converter image `{dockerimagewindowsexporttopdf}` and mount to it fonts directory from the Windows operating system on which the container is running.
+* Use Windows PDF-Converter image `{dockerimageexporttopdf}` and mount to it fonts directory from the Windows operating system on which the container is running.
 ** See Use Windows fonts in PDF Converter section.
 
 > The fonts inside the mounted volume will be installed on the docker image operating system. Only the `.ttf` and `.otf` font formats are supported. If you want to use other font formats, you need to convert them to the supported format or use these fonts as link:https://exportpdf.converter.tiny.cloud/docs#section/Web-Fonts[Web Fonts^].
@@ -53,11 +53,11 @@ docker run --init -v ~/your_fonts_dir:/usr/share/fonts/your_fonts_dir -p 8080:80
 
 If you want to use Windows fonts like Arial, Verdana, etc. in your PDF files, you can use `pdf-converter-windows` Docker image that allows you to run the application on a machine with Windows operating system and mount fonts from the system.
 
-You just need to run `{dockerimagewindowsexporttopdf}` Docker image on Windows operating system and mount `C:\Windows\Fonts:C:\Windows\Fonts` volume.
+You just need to run `{dockerimageexporttopdf}` Docker image on Windows operating system and mount `C:\Windows\Fonts:C:\Windows\Fonts` volume.
 
 Launch the Docker container on Windows operating system example:
 
 [source, bash, subs="attributes+"]
 ----
-docker run -v C:\Windows\Fonts:C:\Windows\Fonts -p 8080:8080 --env LICENSE_KEY=[your_license_key] {dockerimagewindowsexporttopdf}:[version]
+docker run -v C:\Windows\Fonts:C:\Windows\Fonts -p 8080:8080 --env LICENSE_KEY=[your_license_key] {dockerimageexporttopdf}:[version]
 ----

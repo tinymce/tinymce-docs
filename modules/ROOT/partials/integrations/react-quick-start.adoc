@@ -169,11 +169,11 @@ export default function App() {
 ----
 endif::[]
 ifeval::["{productUse}" == "bundle"]
-. Install the `+tinymce+`, `+@tinymce/tinymce-react+` and `+raw-loader+` packages and save them to your `+package.json+` with `+--save+`.
+. Install the `+tinymce+` and `+@tinymce/tinymce-react+` packages and save them to your `+package.json+` with `+--save+`.
 +
 [source,sh]
 ----
-npm install --save tinymce @tinymce/tinymce-react raw-loader
+npm install --save tinymce @tinymce/tinymce-react
 ----
 
 . Using a text editor, create `+./src/BundledEditor.jsx+` and set the contents to:
@@ -228,9 +228,8 @@ import 'tinymce/plugins/wordcount';
 import 'tinymce/plugins/emoticons/js/emojis';
 
 // Content styles, including inline UI like fake cursors
-/* eslint import/no-webpack-loader-syntax: off */
-import contentCss from '!!raw-loader!tinymce/skins/content/default/content.min.css';
-import contentUiCss from '!!raw-loader!tinymce/skins/ui/oxide/content.min.css';
+import contentCss from 'tinymce/skins/content/default/content.min.css?inline';
+import contentUiCss from 'tinymce/skins/ui/oxide/content.min.css?inline';
 
 export default function BundledEditor(props) {
   const {init, ...rest} = props;
@@ -374,11 +373,11 @@ npm run eject
 +
 Press 'y' when prompted.
 
-. Install the `+@tinymce/tinymce-react+`, `+raw-loader+` and `+script-loader+` packages and save them to your `+package.json+` with `+--save+`.
+. Install the `+@tinymce/tinymce-react+` and `+script-loader+` packages and save them to your `+package.json+` with `+--save+`.
 +
 [source,sh]
 ----
-npm install --save @tinymce/tinymce-react raw-loader script-loader
+npm install --save @tinymce/tinymce-react script-loader
 ----
 
 . Unzip the content of the `+tinymce/js+` folder from the link:{download-enterprise}[{productname} zip] into the `+src+` folder. Afterwards the directory listing should be similar to below:
@@ -537,9 +536,8 @@ import './tinymce/plugins/wordcount/plugin.min.js';
 import './tinymce/plugins/emoticons/js/emojis.js';
 
 // Content styles, including inline UI like fake cursors
-/* eslint import/no-webpack-loader-syntax: off */
-import contentCss from '!!raw-loader!./tinymce/skins/content/default/content.min.css';
-import contentUiCss from '!!raw-loader!./tinymce/skins/ui/oxide/content.min.css';
+import contentCss from './tinymce/skins/content/default/content.min.css?inline';
+import contentUiCss from './tinymce/skins/ui/oxide/content.min.css?inline';
 
 export default function BundledEditor(props) {
   const {init, ...rest} = props;

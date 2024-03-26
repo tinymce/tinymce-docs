@@ -386,14 +386,14 @@ tinymce.init({
 [NOTE]
 More details about this component and the possible values that can be used within the new `fontsizeinput` input field can be found in `xref:available-toolbar-buttons.adoc#the-core-toolbar-buttons[fontsizeinput]`.
 
-=== Added `skip_focus` check to the ToggleToolbarDrawer command
+=== Added `skipFocus` check to the ToggleToolbarDrawer command
 //#TINY-9337
 
-In previous versions of {productname}, the *ToggleToolbarDrawer* command contained an incorrect focus call. As a consequence, this meant that when the *ToggleToolbarDrawer* command option `skip_focus: true` was set the toolbar drawer would take focus when it was not meant to.
+In previous versions of {productname}, the *ToggleToolbarDrawer* command contained an incorrect focus call. As a consequence, when the *ToggleToolbarDrawer* command option `skipFocus: true` was set, the toolbar drawer would take focus when it was not meant to.
 
-In {productname} 6.4.1, an improvement was made to the focusing code which now checks for `skip_focus`.
+In {productname} 6.4.1, an improvement was made to the focusing code which now checks for `skipFocus`.
 
-As a result of the fix, when using the *ToggleToolbarDrawer* command, the toolbar now avoids stealing focus when `skip_focus: true` is set.
+As a result of the fix, when using the *ToggleToolbarDrawer* command, the toolbar is now not focused when `skipFocus: true` is set.
 
 === New font_size_input_default_unit option allows to use of numbers without a unit in `fontsizeinput` and have them parsed with the default unit, if it is not defined the default is `pt`
 //#TINY-9585
@@ -1111,3 +1111,9 @@ After conducting a thorough investigation into the new **Advanced Template** plu
 We have identified that the "Insert link" dialog is an example of a dialog that does **not work** correctly in this regard, while the "Insert image" dialog functions as expected. These issues were discovered while examining mobile performance within the new **Advanced Template** plugin, and we are working to address them in order to provide a smoother and more user-friendly experience.
 
 Unfortunately, at this time there is no known workaround for the issue with dialogs.
+
+=== The *ToggleToolbarDrawer* command does not toggle the toolbar drawer in some situations
+
+It has been identified that as of {productname} 6.8.3, when using `+skipFocus: true+`, the *ToggleToolbarDrawer* command does not toggle the toolbar drawer when the `+toolbar_mode+` option is set to `+'sliding'+`.
+
+Unfortunately, at this time there is no known workaround for the issue.

@@ -649,7 +649,7 @@ tinymce.ScriptLoader.loadScripts(
     setup: (editor) => {
       editor.on('SkinLoaded', () => {
         editor.execCommand('ToggleSidebar', false, 'showcomments', {
-          skip_focus: true,
+          skipFocus: true,
         });
       });
     },

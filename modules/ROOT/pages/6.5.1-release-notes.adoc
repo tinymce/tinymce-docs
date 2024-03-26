@@ -172,7 +172,7 @@ In previous versions of {productname}, the default behavior of `editor.execComma
 
 As a consequence, when pressing the fullscreen button the editor used `editor.execCommand('mceFullScreen')`, which caused the insertion point to be positioned incorrectly on iOS.
 
-To resolve this issue, {productname} 6.5.1, includes `skip_focus: true` as a parameter for the `mceFullScreen` command. Consequently, the Full Screen button no longer attempts to focus back on the editor.
+To resolve this issue, {productname} 6.5.1, includes `skipFocus: true` as a parameter for the `mceFullScreen` command. Consequently, the Full Screen button no longer attempts to focus back on the editor.
 
 ==== Advanced Code Editor did not preserve changes to _font size_ or _dark/light mode_ state.
 //#TINY-9749

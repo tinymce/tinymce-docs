@@ -5,7 +5,7 @@ include::partial$DEPRECATED/generic-5_10.adoc[]
 
 This option enables you to configure the `valid_elements` specific to MS Office. Word produces a lot of junk HTML, so when users paste things from Word we do extra restrictive filtering on it to remove as much of this as possible. This option enables you to specify which elements and attributes you want to include when Word contents are intercepted.
 
-NOTE: To access this feature, you need to set the value of xref:plugins/opensource/paste.adoc#paste_enable_default_filters[paste_enable_default_filters] to `"false"` in your configuration.
+NOTE: To access this feature, you need to set the value of xref:paste.adoc#paste_enable_default_filters[paste_enable_default_filters] to `"false"` in your configuration.
 
 *Type:* `String`
 

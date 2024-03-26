@@ -2,10 +2,10 @@ ifeval::[{customIconPack} != true]
 [[icons_url]]
 == `icons_url`
 
-The *icons_url* option allows the editor icons to be extended or replaced using an icon pack. For information on creating icon packs, see: xref:advanced/creating-an-icon-pack.adoc[Create an icon pack for {productname}].
+The *icons_url* option allows the editor icons to be extended or replaced using an icon pack. For information on creating icon packs, see: xref:creating-an-icon-pack.adoc[Create an icon pack for {productname}].
 endif::[]
 
-On initialization, {productname} will try to load any icon pack specified by the *icons_url* option. The icons in the icon pack will be merged with xref:advanced/editor-icon-identifiers.adoc[{productname}'s default icons] and icons in the icon pack will overwrite the default icons with the same identifier.
+On initialization, {productname} will try to load any icon pack specified by the *icons_url* option. The icons in the icon pack will be merged with xref:editor-icon-identifiers.adoc[{productname}'s default icons] and icons in the icon pack will overwrite the default icons with the same identifier.
 
 `icons_url` is used to specify the location of an icon pack when {productname} and the icon pack are loaded from different locations. For example: When loading {productname} from {cloudname}, the icon pack can be loaded from a different web server.
 ifeval::[{customIconPack} == true]

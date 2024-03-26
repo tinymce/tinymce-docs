@@ -32,7 +32,7 @@ Below is an example of the HTML created when a user selects the caption checkbox
 </figure>
 ----
 
-Note that the `figure` element needs some custom CSS added to render properly. This is what we use in the internal `content.css` within {productname}, and can be overridden with your own custom xref:configure/content-appearance.adoc#content_css[`content_css`] stylesheet.
+Note that the `figure` element needs some custom CSS added to render properly. This is what we use in the internal `content.css` within {productname}, and can be overridden with your own custom xref:content-appearance.adoc#content_css[`content_css`] stylesheet.
 
 [source, css]
 ----

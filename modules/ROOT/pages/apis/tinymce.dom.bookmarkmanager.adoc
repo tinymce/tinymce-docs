@@ -1,0 +1,123 @@
+= tinymce.dom.BookmarkManager
+:navtitle: tinymce.dom.BookmarkManager
+:description: This class handles selection bookmarks.
+:keywords: BookmarkManager, getBookmark, isBookmarkNode, moveToBookmark
+:moxie-type: api
+
+This class handles selection bookmarks.
+
+[[summary]]
+== Summary
+
+[[constructors-summary]]
+=== Constructors
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#BookmarkManager[BookmarkManager()]|Constructs a new BookmarkManager instance for a specific selection instance.|`xref:apis/tinymce.dom.bookmarkmanager.adoc[BookmarkManager]`
+|===
+
+[[methods-summary]]
+=== Methods
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#getBookmark[getBookmark()]|Returns a bookmark location for the current selection. This bookmark object
+can then be used to restore the selection after some content modification to the document.|`xref:apis/tinymce.dom.bookmarkmanager.adoc[BookmarkManager]`
+|xref:#isBookmarkNode[isBookmarkNode()]|Returns true/false if the specified node is a bookmark node or not.|`xref:apis/tinymce.dom.bookmarkmanager.adoc[BookmarkManager]`
+|xref:#moveToBookmark[moveToBookmark()]|Restores the selection to the specified bookmark.|`xref:apis/tinymce.dom.bookmarkmanager.adoc[BookmarkManager]`
+|===
+
+[[constructors]]
+== Constructors
+
+[[BookmarkManager]]
+=== BookmarkManager
+[source, javascript]
+----
+public constructor function BookmarkManager(selection: tinymce.dom.Selection)
+----
+Constructs a new BookmarkManager instance for a specific selection instance.
+
+==== Parameters
+
+* `selection (xref:apis/tinymce.dom.selection.adoc[Selection])` - Selection instance to handle bookmarks for.
+
+[[methods]]
+== Methods
+
+[[getBookmark]]
+=== getBookmark()
+[source, javascript]
+----
+getBookmark(type: Number, normalized: Boolean): Object
+----
+Returns a bookmark location for the current selection. This bookmark object
+can then be used to restore the selection after some content modification to the document.
+
+==== Examples
+[source, javascript]
+----
+// Stores a bookmark of the current selection
+var bm = tinymce.activeEditor.selection.getBookmark();
+
+tinymce.activeEditor.setContent(tinymce.activeEditor.getContent() + 'Some new content');
+
+// Restore the selection bookmark
+tinymce.activeEditor.selection.moveToBookmark(bm);
+----
+
+==== Parameters
+
+* `type (Number)` - Optional state if the bookmark should be simple or not. Default is complex.
+* `normalized (Boolean)` - Optional state that enables you to get a position that it would be after normalization.
+
+==== Return value
+
+* `Object` - Bookmark object, use moveToBookmark with this object to restore the selection.
+
+'''
+
+[[isBookmarkNode]]
+=== isBookmarkNode()
+[source, javascript]
+----
+isBookmarkNode(node: DOMNode): Boolean
+----
+Returns true/false if the specified node is a bookmark node or not.
+
+==== Parameters
+
+* `node (DOMNode)` - DOM Node to check if it's a bookmark node or not.
+
+==== Return value
+
+* `Boolean` - true/false if the node is a bookmark node or not.
+
+'''
+
+[[moveToBookmark]]
+=== moveToBookmark()
+[source, javascript]
+----
+moveToBookmark(bookmark: Object)
+----
+Restores the selection to the specified bookmark.
+
+==== Examples
+[source, javascript]
+----
+// Stores a bookmark of the current selection
+var bm = tinymce.activeEditor.selection.getBookmark();
+
+tinymce.activeEditor.setContent(tinymce.activeEditor.getContent() + 'Some new content');
+
+// Restore the selection bookmark
+tinymce.activeEditor.selection.moveToBookmark(bm);
+----
+
+==== Parameters
+
+* `bookmark (Object)` - Bookmark to restore selection from.
+
+'''

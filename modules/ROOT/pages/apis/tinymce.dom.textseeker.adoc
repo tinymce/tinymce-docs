@@ -1,0 +1,115 @@
+= tinymce.dom.TextSeeker
+:navtitle: tinymce.dom.TextSeeker
+:description: The TextSeeker class enables you to seek for a specific point in text across the DOM.
+:keywords: TextSeeker, backwards, forwards
+:moxie-type: api
+
+The TextSeeker class enables you to seek for a specific point in text across the DOM.
+
+[[examples]]
+== Examples
+[source, javascript]
+----
+var startOfWord = TextSeeker(editor.dom).backwards(startNode, startOffset, function(textNode, offset, text) {
+  var lastSpaceCharIndex = text.lastIndexOf(' ');
+  if (lastSpaceCharIndex !== -1) {
+    return lastSpaceCharIndex + 1;
+  } else {
+    // No space found so continue searching
+    return -1;
+  }
+});
+----
+
+[[summary]]
+== Summary
+
+[[constructors-summary]]
+=== Constructors
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#TextSeeker[TextSeeker()]|Constructs a new TextSeeker instance.|`xref:apis/tinymce.dom.textseeker.adoc[TextSeeker]`
+|===
+
+[[methods-summary]]
+=== Methods
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#backwards[backwards()]|Search backwards through text nodes until a match, boundary, or root node has been found.
+
+
+__Added in TinyMCE 5.2__|`xref:apis/tinymce.dom.textseeker.adoc[TextSeeker]`
+|xref:#forwards[forwards()]|Search forwards through text nodes until a match, boundary, or root node has been found.
+
+
+__Added in TinyMCE 5.2__|`xref:apis/tinymce.dom.textseeker.adoc[TextSeeker]`
+|===
+
+[[constructors]]
+== Constructors
+
+[[TextSeeker]]
+=== TextSeeker
+[source, javascript]
+----
+public constructor function TextSeeker(dom: tinymce.dom.DOMUtils, isBoundary: Function)
+----
+Constructs a new TextSeeker instance.
+
+==== Parameters
+
+* `dom (xref:apis/tinymce.dom.domutils.adoc[DOMUtils])` - DOMUtils object reference.
+* `isBoundary (Function)` - Optional function to determine if the seeker should continue to walk past the node provided. The default is to search until a block or `br` element is found.
+
+[[methods]]
+== Methods
+
+[[backwards]]
+=== backwards()
+[source, javascript]
+----
+backwards(node: Node, offset: Number, process: Function, root: Node): Object
+----
+Search backwards through text nodes until a match, boundary, or root node has been found.
+
+
+__Added in TinyMCE 5.2__
+
+==== Parameters
+
+* `node (Node)` - The node to start searching from.
+* `offset (Number)` - The offset of the node to start searching from.
+* `process (Function)` - A function that's passed the current text node, the current offset and the text content of the node. It should return the offset of the match or -1 to continue searching.
+* `root (Node)` - An optional root node to constrain the search to.
+
+==== Return value
+
+* `Object` - An object containing the matched text node and offset. If no match is found, null will be returned.
+
+'''
+
+[[forwards]]
+=== forwards()
+[source, javascript]
+----
+forwards(node: Node, offset: Number, process: Function, root: Node): Object
+----
+Search forwards through text nodes until a match, boundary, or root node has been found.
+
+
+__Added in TinyMCE 5.2__
+
+==== Parameters
+
+* `node (Node)` - The node to start searching from.
+* `offset (Number)` - The offset of the node to start searching from.
+* `process (Function)` - A function that's passed the current text node, the current offset and the text content of the node. It should return the offset of the match or -1 to continue searching.
+* `root (Node)` - An optional root node to constrain the search to.
+
+==== Return value
+
+* `Object` - An object containing the matched text node and offset. If no match is found, null will be returned.
+
+'''

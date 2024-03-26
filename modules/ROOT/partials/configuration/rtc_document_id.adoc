@@ -14,7 +14,7 @@ WARNING: If the content is changed outside of an RTC session, a new document ID 
 ifeval::[{plugincode} != "rtc"]
 
 Required plugin::
-xref:plugins/premium/rtc.adoc[Real-time Collaboration (`rtc`)]
+xref:rtc-plugin.adoc[Real-time Collaboration (`rtc`)]
 endif::[]
 
 Type:: String

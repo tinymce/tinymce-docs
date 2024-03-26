@@ -1,0 +1,108 @@
+= TinyMCE 5.10.2
+:description: Release notes for TinyMCE 5.10.2
+:keywords: releasenotes bugfixes
+:title_nav: TinyMCE 5.10.2
+
+== Overview
+
+{productname} 5.10.2 was released for {enterpriseversion} and {cloudname} on Monday, November 22^nd^, 2021. It includes {productname} 5.10.2 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.10.2, including:
+
+* xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
+* xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
+* xref:general-bug-fixes[General bug fixes]
+* xref:security-fixes[Security fixes]
+* xref:upgrading-to-the-latest-version-of-tinymce-5[Upgrading to the latest version of TinyMCE 5]
+
+include::partial$misc/releasenotes_for_stable.adoc[]
+
+[[accompanying-premium-plugin-changes]]
+== Accompanying Premium Plugin changes
+
+The following premium plugin updates were released alongside {productname} 5.10.2.
+
+=== Enhanced Media Embed 2.2.6
+
+The {productname} 5.10.2 release includes an accompanying release of the *Enhanced Media Embed* premium plugin.
+
+*Enhanced Media Embed* 2.2.6 fixes the `mediaembed` content CSS loading incorrectly, which caused it to not display in previews.
+
+For information on the Enhanced Media Embed plugin, see: xref:mediaembed.adoc[Enhanced Media Embed plugin].
+
+=== Page Embed 1.1.1
+
+The {productname} 5.10.2 release includes an accompanying release of the *Page Embed* premium plugin.
+
+*Page Embed* 1.1.1 fixes a bug where the wrong media type was used in the source URL dialog field.
+
+For information on the Page Embed plugin, see: xref:premium-pageembed.adoc[Page Embed plugin].
+
+[[accompanying-premium-self-hosted-server-side-component-changes]]
+== Accompanying Premium self-hosted server-side component changes
+
+The {productname} 5.10.2 release includes accompanying changes affecting the {productname} *self-hosted* services for the following plugins:
+
+* The Enhanced Media Embed plugin (`mediaembed`)
+* The Export plugin (`export`)
+* The Image Tools plugin (`imagetools`)
+* The Link Checker plugin (`linkchecker`)
+* The Spell Checker Pro plugin (`tinymcespellchecker`)
+
+The Java server-side components have been updated to the following versions:
+
+* `ephox-spelling.war`: 2.118.2
+* `ephox-hyperlinking.war`: 2.105.7
+* `ephox-image-proxy.war`: 2.105.6
+
+This version requires Java 8 or higher. For information on the removal of Java 7 support, see: xref:release-notes53.adoc#removalofjava7support[Removal of Java 7 support for TinyMCE 5.3 and later].
+
+For information on:
+
+* The Spell Checker Pro plugin, see: xref:tinymcespellchecker.adoc[Spell Checker Pro plugin].
+* The Link Checker plugin, see: xref:linkchecker.adoc[Link Checker plugin].
+* The Image Tools plugin, see: xref:imagetools.adoc[Image Tools plugin].
+* The Enhanced Media Embed plugin, see: xref:mediaembed.adoc[Enhanced Media Embed plugin].
+* Deploying the server-side components, see: xref:server.adoc[Server-side component installation].
+
+=== Security related dependency update for all 3 server-side services
+
+All 3 server-side components have been updated to include dependency updates addressing security issues. This includes _High_ severity vulnerability fixes.
+
+=== Updating the self-hosted server-side components
+
+The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
+
+. Update your Java Application Server to the minimum required version:
+ ** Eclipse Jetty 9.4 or later
+ ** Apache Tomcat:
+  *** 9 or later
+  *** 8.5.12+
+  *** 8.0.42+
+  *** 7.0.76+
+. Replace the existing server-side `.war` files with the `.war` files bundled with {productname} 5.10.2 or later.
+
+For information on:
+
+* Deploying the server-side components, see: xref:server.adoc[Server-side component installation].
+* Deploying the server-side components using Docker, see: xref:dockerservices.adoc[Containerized service deployments].
+
+[[general-bug-fixes]]
+== General bug fixes
+
+{productname} 5.10.2 provides fixes for the following bugs:
+
+* Internal selectors were appearing in the style list when using the `importcss` plugin.
+
+[[security-fixes]]
+== Security fixes
+
+{productname} 5.10.2 provides fixes for the following security issues:
+
+All 3 server-side components have been updated to include dependency updates addressing security issues. This includes _High_ severity vulnerability fixes.
+
+For information on the server-side components updates, see: xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes].
+
+:enterprise: true
+
+include::partial$install/upgrading-info.adoc[]
+
+:enterprise: false

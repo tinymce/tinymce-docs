@@ -1,0 +1,207 @@
+= List of upcoming changes for TinyMCE 6
+:description: List of upcoming changes for TinyMCE 6, including deprecated features.
+:keywords: releasenotes changes deprecated deprecation removal breaking
+:title_nav: Upcoming changes for TinyMCE 6
+
+This page lists the upcoming changes planned and announced for {productname} 6.0, including features that are deprecated and marked for removal. {productname} 6.0 will aim to clean up a large amount of legacy functionality that has accumulated during previous versions and is no longer applicable to modern web development or standards. This allows us to keep {productname} light, and fast loading in your applications.
+
+Contents:
+
+* xref:disablingthedeprecationwarning[Disabling the deprecation warning]
+* xref:themes[Themes]
+* xref:plugins[Plugins]
+* xref:options[Options]
+* xref:apis[APIs]
+
+[[disablingthedeprecationwarning]]
+== Disabling the deprecation warning
+
+To disable the {productname} 6.0 deprecation warning, set the `deprecation_warnings` option to `false`.
+
+NOTE: {companyname} recommends switching to a newer option or API where possible, instead of disabling this warning. This will ease the migration to {productname} 6.0.
+
+=== Example: Using `deprecation_warnings`
+
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  deprecation_warnings: false
+});
+----
+
+[[themes]]
+== Themes
+
+The `mobile` theme:: The dedicated `mobile` theme, sometimes referred to as the *legacy mobile theme* was deprecated with the release of {productname} 5.1 and will be removed in {productname} 6.0. The `silver` theme was updated in {productname} 5.1 to provide an improved mobile experience.
+
+[[plugins]]
+== Plugins
+
+The following plugins will be removed in {productname} 6.0 and will need to be removed from the `plugins` option when upgrading:
+
+BBCode (`bbcode`):: The BBCode plugin (`bbcode`) was deprecated with the release of {productname} 5.9. For details, see xref:release-notes59.adoc#thebbcodebbcodeplugin[the BBCode plugin deprecation notice]. The BBCode plugin will be removed in {productname} 6.0.
+
+Full Page (`fullpage`):: The Full Page plugin (`fullpage`) was deprecated with the release of {productname} 5.9. For details, see xref:release-notes59.adoc#thefullpagefullpageplugin[the Full Page plugin deprecation notice]. The Full Page plugin will be removed in {productname} 6.0.
+
+Image Tools (`imagetools`):: {productname} {productminorversion} will include the final release of the Image Tools plugin (`imagetools`) as an open source plugin. The Image Tools plugin will be removed from the open source bundle and be available as a premium plugin for {productname} 6.0.
+
+Legacy Output (`legacyoutput`):: The Legacy Output plugin (`legacyoutput`) was deprecated with the release of {productname} 5.9. For details, see xref:release-notes59.adoc#thelegacyoutputlegacyoutputplugin[the Legacy Output plugin deprecation notice]. The Legacy Output plugin will be removed in {productname} 6.0.
+
+Spell Checker (`spellchecker`):: The *free* {productname} Spell Checker plugin (`spellchecker`) was deprecated with the release of {productname} 5.4. For details, see xref:release-notes54.adoc#thefreetinymcespellcheckerplugin[the free {productname} Spell Checker plugin deprecation notice]. The free Spell Checker plugin will be removed in {productname} 6.0.
+
+Table of Contents (`toc`):: {productname} {productminorversion} will include the final release of the Table of Contents (`toc`) as an open source plugin. The Table of Contents plugin will be removed from the open source bundle and be available as a premium plugin for {productname} 6.0.
+
+The functionality of following plugins was moved to the {productname} core in {productname} 5.0 and must be removed from the plugin list in {productname} 6.0:
+
+* Color Picker
+* Context Menu
+* Text Color
+
+[[options]]
+== Options
+
+The following options will be changed in {productname} 6.0:
+
+toolbar_mode:: The xref:editor-appearance.adoc#toolbar_mode[`toolbar_mode`] option will no-longer accept the `false` value in {productname} 6.0, which was retained for backwards compatibility with the `toolbar_drawer` option. Use `'wrap'` instead to keep the same functionality as `false`.
+
+forced_root_block:: The xref:content-filtering.adoc#forced_root_block[`forced_root_block`] option will no-longer accept the `false` value or an empty string value in {productname} 6.0. Setting `forced_root_block` to `false` is not compatible with Real-time Collaboration. It also blocks various editor functions from working correctly and causes non-semantic HTML to be generated.
+
+The following options have been deprecated in {productname} 5.10 or earlier and will be removed in {productname} 6.0.
+
+autoresize_on_init:: The xref:autoresize.adoc#autoresize_on_init[`autoresize_on_init`] option does not affect the autoresize behavior in {productname} 5, as the editor will always resize regardless of this option. This option would only forcibly resize at short intervals after the editor has initialized, which is no longer required and as such will be removed.
+
+convert_fonts_to_spans:: The xref:content-filtering.adoc#convert_fonts_to_spans[`convert_fonts_to_spans`] option would convert `font` elements to `span` styles to assist with the migration to newer HTML standards. Font elements were included in HTML 3 or earlier standards and have since been deprecated or removed.
+
+gecko_spellcheck:: The xref:spelling.adoc#gecko_spellcheck[`gecko_spellcheck`] option was deprecated and replaced by the xref:spelling.adoc#browser_spellcheck[`browser_spellcheck`] option in {productname} 4.3.
+
+images_dataimg_filter:: The xref:file-image-upload.adoc#images_dataimg_filter[`images_dataimg_filter`] option was deprecated in {productname} 5.3. This option can be used for an unintended use-case and is not compatible with Real-time Collaboration.
+
+media_scripts:: The xref:media.adoc#media_scripts[`media_scripts`] option is no longer useful in the modern web and did not work in most cases. As such it has been deprecated in {productname} 5.10.
+
+paste_convert_word_fake_lists:: The Microsoft Word specific paste handling functionality will be removed from the `paste` plugin. As a result, the xref:paste.adoc#paste_convert_word_fake_lists[`paste_convert_word_fake_lists`] option will be removed in {productname} 6.0.
+
+paste_retain_style_properties:: The Microsoft Word specific paste handling functionality will be removed from the `paste` plugin. As a result, the xref:paste.adoc#paste_retain_style_properties[`paste_retain_style_properties`] option will be removed in {productname} 6.0.
+
+paste_word_valid_elements:: The Microsoft Word specific paste handling functionality will be removed from the `paste` plugin. As a result, the xref:paste.adoc#paste_word_valid_elements[`paste_word_valid_elements`] option will be removed in {productname} 6.0.
+
+spellchecker_select_languages:: The xref:tinymcespellchecker.adoc#spellchecker_select_languages[`spellchecker_select_languages`] option was deprecated and replaced by the xref:configure-localization.adoc#content_langs[`content_langs`] option in {productname} 5.9. The new option provides better support for the BCP47 standard used for `lang` attributes and increased configuration capabilities.
+
+spellchecker_whitelist:: The `spellchecker_whitelist` option was deprecated and replaced by the xref:tinymcespellchecker.adoc#spellchecker_ignore_list[`spellchecker_ignore_list`] option in {productname} 5.7. The new option provides additional functionality and avoids insensitive naming.
+
+table_responsive_width:: The `table_responsive_width` option was deprecated and replaced by the xref:table.adoc#table_sizing_mode[`table_sizing_mode`] option in {productname} 5.4. Use the `'relative'` or `'fixed'` sizing modes to keep the same functionality.
+
+toolbar_drawer:: The `toolbar_drawer` option was deprecated and replaced by the xref:editor-appearance.adoc#toolbar_mode[`toolbar_mode`] option in {productname} 5.2. This change was made to reflect the range of settings available for this option.
+
+The following undocumented or unsupported legacy options will be removed in {productname} 6.0.
+
+block_elements:: The `block_elements` option could overide the built-in HTML schema to specify which elements should be treated as blocks. Using this option can break the editor and requires the default to be repeated with any desired changes. Additionally, browsers can't be changed to render any of the customizations, so this was only useful for adding custom elements.
+
+boolean_attributes:: The `boolean_attributes` option could override the built-in HTML schema to specify which attributes should be treated as boolean attributes, whereby the value is irrelevant. Using this option can break the editor and requires the default to be repeated with any desired changes. Additionally, browsers can't be changed to render or parse any of the customizations, so this was only useful for adding custom attributes.
+
+content_editable_state:: The `content_editable_state` option controlled the initial state of the `contenteditable` attribute on the editor body. This caused issues. Once set, there was no way to change the state back later using the editor APIs and left the editor in an half-broken state.
+
+editor_deselector:: The `editor_deselector` option is a legacy initialization option from {productname} 3 that allowed developers to specify a class to control which textareas should not be initialized as an editor. It was deprecated and replaced by the xref:integration-and-setup.adoc#selector[`selector`] or xref:integration-and-setup.adoc#target[`target`] options in {productname} 4.
+
+editor_selector:: The `editor_selector` option is a legacy initialization option from {productname} 3 that allowed developers to specify a class to control which textareas should be initialized as an editor. It was deprecated and replaced by the xref:integration-and-setup.adoc#selector[`selector`] or xref:integration-and-setup.adoc#target[`target`] options in {productname} 4.
+
+elements:: The `elements` option is a legacy initialization option from {productname} 3 that allowed specifying a list of element ids for elements that should be initialized as an editor. It was deprecated and replaced by the xref:integration-and-setup.adoc#selector[`selector`] or xref:integration-and-setup.adoc#target[`target`] options in {productname} 4.
+
+file_browser_callback_types:: The `file_browser_callback_types` option was deprecated and replaced by the xref:file-image-upload.adoc#file_picker_types[`file_picker_types`] option in {productname} 5.0.
+
+filepicker_validator_handler:: The `filepicker_validator_handler` option was deprecated and replaced by the `file_picker_validator_handler` option in {productname} 5.0.15 due to inconsistent naming.
+
+force_hex_style_colors:: The `force_hex_style_colors` option was deprecated in {productname} 5.0. This option was used to force color styles stored as hexadecimal values instead of RGB strings.
+
+force_p_newlines:: The `force_p_newlines` option was deprecated and replaced by the xref:content-filtering.adoc#forced_root_block[`forced_root_block`] option in {productname} 3.5. This option had been kept as an undocumented fallback.
+
+inline_styles:: The `inline_styles` option was primarily used for assisting with the migration to newer HTML standards. It enabled converting some deprecated HTML 3 or earlier elements to inline styles, such as `font` and `strike`.
+
+mode:: The `mode` option is a legacy initialization option from {productname} 3 that allowed controlling which mode was used to initialize the editor (`exact` or `textareas`). It was deprecated and replaced by the xref:integration-and-setup.adoc#selector[`selector`] or xref:integration-and-setup.adoc#target[`target`] options in {productname} 4.
+
+move_caret_before_on_enter_elements:: The `move_caret_before_on_enter_elements` option allowed developers to override the built-in HTML schema to specify which elements the selection should be moved "in front of" when pressing enter on the keyboard. Using this option can break the editor and requires the default to be repeated with any desired changes.
+
+non_empty_elements:: The `non_empty_elements` option allowed developers to override the built-in HTML schema to specify which elements should always be treated as not being empty. Using this option can break the editor and requires the default to be repeated with any desired changes.
+
+padd_empty_with_br:: The `padd_empty_with_br` option would replace non-breaking spaces (`+&nbsp;+`) with `<br>` elements. This option however was misspelled, provided no functional difference to a non-breaking space and is incompatible with Real-time Collaboration.
+NOTE: {productname} 6.6.2 includes a new option, link:https://tiny.cloud/docs/tinymce/6/content-filtering#pad_empty_with_br[`pad_empty_with_br`] that provides equivalent functionality.
+
+self_closing_elements:: The `self_closing_elements` option allowed developers to override the built-in HTML schema to specify which elements should be closed if a new element is started without a similar closing tag. Using this option can break the editor and requires the default to be repeated with any desired changes. Additionally, browsers can't be changed to parse the customizations, so this option was not useful for customization.
+
+short_ended_elements:: The `short_ended_elements` option allowed developers to override the built-in HTML schema to specify which elements should be treated as void elements. Using this option can break the editor and requires the default to be repeated with any desired changes. Additionally, browsers can't be changed to parse the customizations, so this was only useful for adding custom elements.
+
+special:: The `special` option allowed developers to override the built-in HTML schema to specify which elements should be treated as special and content inside should be treated as text when parsing HTML. Using this option can break the editor and requires the default to be repeated with any desired changes. Additionally, browsers can't be changed to parse differently, so this setting was not useful.
+
+tab_focus:: The `tab_focus` option was deprecated and replaced by the xref:tabfocus.adoc#tabfocus_elements[`tabfocus_elements`] option in {productname} 3.2. This option had been kept as an undocumented fallback.
+
+text_block_elements:: The `text_block_elements` option allowed developers to override the built-in HTML schema to specify which elements should be treated as block text elements (such as those used for formatting). Using this option can break the editor and requires the default to be repeated with any desired changes.
+
+text_inline_elements:: The `text_inline_elements` option allowed developers to override the built-in HTML schema to specify which elements should be treated as inline text elements (such as those used for formatting). Using this option can break the editor and requires the default to be repeated with any desired changes.
+
+types:: The `types` option is a legacy initialization option from {productname} 3 that allowed developers to specify which type of elements should be initialized as an editor. It was deprecated and replaced by the xref:integration-and-setup.adoc#selector[`selector`] or xref:integration-and-setup.adoc#target[`target`] options in {productname} 4.
+
+whitespace_elements:: The `whitespace_elements` option allowed developers to override the built-in HTML schema to specify which elements should be treated as rendering content as verbatim content. Using this option can break the editor and requires the default to be repeated with any desired changes. Additionally, browsers can't be changed to parse differently, so this was only useful to add custom elements.
+
+[[apis]]
+== APIs
+
+The following API classes, methods, or properties have been deprecated in {productname} 5.10 or earlier and will be removed in {productname} 6.0.
+
+Split Toolbar Button APIs:: The `setIconStroke` API (undocumented) was deprecated in {productname} 5.8.
+
+tinymce.Env API properties:: The following legacy properties were deprecated in {productname} 5.1 (or later):
+
+* `android`
+* `caretAfter`
+* `ceFalse`
+* `contentEditable`
+* `desktop`
+* `experimentalShadowDom` (deprecated in {productname} 5.5)
+* `fileApi` (deprecated in {productname} 5.10)
+* `gecko`
+* `ie`
+* `iOS`
+* `mac`
+* `opera`
+* `range`
+* `webKit`
+
++
+For information on these properties, see: xref:apis/tinymce.env.adoc#properties[tinymce.Env - properties].
+
+The tinymce.dom.DomQuery API class:: The `tinymce.dom.DomQuery` class has been deprecated in {productname} 5.10. For information on the deprecated class, see: xref:apis/tinymce.dom.domquery.adoc[tinymce.dom.DomQuery].
+
+The tinymce.dom.Sizzle API class:: The `tinymce.dom.Sizzle` class has been deprecated in {productname} 5.10. This API class is undocumented and can be found in the {productname} source code: https://github.com/tinymce/tinymce/blob/5.9.2/modules/tinymce/src/core/main/ts/api/dom/Sizzle.ts[GitHub - `tinymce/tinymce` - Sizzle.ts].
+
+tinymce.html.Schema API methods:: The `getSpecialElements` method has been deprecated in {productname} 5.10. For information on the `getSpecialElements` method, see: xref:apis/tinymce.html.schema.adoc#getSpecialElements[tinymce.html.Schema - getSpecialElements].
+
+tinymce.html.Styles API methods:: The `toHex` method has been deprecated in {productname} 5.10. For information on the `toHex` method, see: xref:apis/tinymce.html.styles.adoc#toHex[tinymce.html.Styles - tohex].
+
+tinymce API properties:: The `editors` and `settings` (undocumented) properties have been deprecated in {productname} 5.10. For information on the deprecated properties, see: xref:api/tinymce/root_tinymce.adoc#properties[tinymce - properties].
+
+tinymce.AddOnManager API methods:: The `addComponents` and `dependencies` (undocumented) methods have been deprecated in {productname} 5.10. For information on the deprecated methods, see: xref:apis/tinymce.addonmanager.adoc[tinymce.AddOnManager].
+
+tinymce.Editor API methods:: The `execCallback` and `setMode` methods and `validate` (undocumented) property have been deprecated in {productname} 5.10. For information on the deprecated methods, see: xref:apis/tinymce.editor.adoc#methods[tinymce.Editor - methods].
+
+The tinymce.util.Color API class:: The undocumented `tinymce.util.Color` API class has been deprecated in {productname} 5.10. Details of this class can be found in the https://github.com/tinymce/tinymce/blob/5.9.2/modules/tinymce/src/core/main/ts/api/util/Color.ts[tinymce.util.Color source code].
+
+tinymce.util.Delay API methods:: The following API methods were deprecated in {productname} 5.10:
+
+* `clearInterval`
+* `clearTimeout`
+* `debounce`
+* `requestAnimationFrame`
+* `setInterval`
+* `setTimeout`
+* `throttle`
+
++
+For all methods except `debounce` and `throttle`, use the native APIs instead. For information on these methods, see: xref:apis/tinymce.util.delay.adoc#methods[tinymce.util.Delay - methods].
+
+The tinymce.util.JSON API class:: The `tinymce.util.JSON` class has been deprecated in {productname} 5.10. Use the native https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON[`JSON` API] instead. For information on the deprecated class, see: xref:apis/tinymce.util.json.adoc[tinymce.util.JSON].
+
+The tinymce.util.JSONRequest API class:: The `tinymce.util.JSONRequest` class has been deprecated in {productname} 5.10. For information on the deprecated class, see: xref:apis/tinymce.util.jsonrequest.adoc[tinymce.util.JSONRequest].
+
+tinymce.util.Tools API methods:: The `create` and `createNS` methods have been deprecated in {productname} 5.10. For information on the deprecated methods, see: xref:apis/tinymce.util.tools.adoc[tinymce.util.Tools method]
+
+The tinymce.util.XHR API class:: The `tinymce.util.XHR` class has been deprecated in {productname} 5.10. Use the native https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API[Fetch API] instead. For information on the deprecated class, see: xref:apis/tinymce.util.xhr.adoc[tinymce.util.XHR].

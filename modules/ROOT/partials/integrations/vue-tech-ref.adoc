@@ -150,7 +150,7 @@ Such as:
   :init="{ /* your other settings */ }"
 />
 ----
-For information {productname} development channels, see: xref:cloud-deployment-guide/editor-plugin-version.adoc#55-testingand5-devreleasechannels[Specifying the {productname} editor version deployed from Cloud - dev, testing, and stable releases].
+For information {productname} development channels, see: xref:editor-plugin-version.adoc#55-testingand5-devreleasechannels[Specifying the {productname} editor version deployed from Cloud - dev, testing, and stable releases].
 
 [[disabled]]
 ==== `disabled`
@@ -191,7 +191,7 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 
 Object sent to the `tinymce.init` method used to initialize the editor.
 
-For information on the {productname} selector (`tinymce.init`), see: xref:general-configuration-guide/basic-setup.adoc[Basic setup].
+For information on the {productname} selector (`tinymce.init`), see: xref:basic-setup.adoc[Basic setup].
 
 *Default value:* pass:[{ }]
 
@@ -232,7 +232,7 @@ Initial content of the editor when the editor is initialized.
 
 Used to set the editor to inline mode. Using `<editor :inline=true />` is the same as setting `{inline: true}` in the {productname} selector (`tinymce.init`).
 
-For information on inline mode, see: xref:configure/editor-appearance.adoc#inline[User interface options - `inline`] and xref:general-configuration-guide/use-tinymce-inline.adoc[Setup inline editing mode].
+For information on inline mode, see: xref:editor-appearance.adoc#inline[User interface options - `inline`] and xref:use-tinymce-inline.adoc[Setup inline editing mode].
 
 *Default value:* `false`
 
@@ -252,7 +252,7 @@ For information on inline mode, see: xref:configure/editor-appearance.adoc#inlin
 
 Sets the trigger events for xref:forminputbindingsv-model[v-model events].
 
-For a list of available {productname} events, see: xref:advanced/events.adoc#editorcoreevents[Available Events - Editor events].
+For a list of available {productname} events, see: xref:advanced-events.adoc#editorcoreevents[Available Events - Editor events].
 
 *Default value:* `"change keyup undo redo"`.
 
@@ -288,7 +288,7 @@ Used to specify the format of the content emitted via the `input` event. This af
 
 Used to include plugins for the editor. Using `<editor plugins="lists code" />` is the same as setting `{plugins: 'lists code'}` in the {productname} selector (`tinymce.init`).
 
-For information on adding plugins to {productname}, see: xref:plugins/index.adoc[Add plugins to {productname}].
+For information on adding plugins to {productname}, see: xref:plugins.adoc[Add plugins to {productname}].
 
 *Type:* String or Array
 
@@ -323,9 +323,9 @@ Only valid when xref:inline[`<editor :inline=true />`]. Used to define the HTML 
 
 Used to set the toolbar for the editor. Using `<editor toolbar="bold italic" />` is the same as setting `{toolbar: 'bold italic'}` in the {productname} selector (`tinymce.init`).
 
-For information setting the toolbar for {productname}, see: xref:configure/editor-appearance.adoc#toolbar[User interface options - toolbar].
+For information setting the toolbar for {productname}, see: xref:editor-appearance.adoc#toolbar[User interface options - toolbar].
 
-*Possible values:*  See xref:advanced/available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
+*Possible values:*  See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
 *Type:* String
 

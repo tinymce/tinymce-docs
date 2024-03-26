@@ -1,0 +1,85 @@
+= Cloud deployment of plugins Only
+:description: Connect to Tiny Cloud within a hybrid deployment.
+:description_short: Learn how to setup TinyMCE Plugins via the Tiny Cloud.
+:keywords: tinymce cloud script textarea apiKey hybrid
+
+A hybrid deployment of {cloudname} allows the loading of premium plugins in a self-hosted environment. Download and install the link:{gettiny}[{productname} Community edition] to get started.
+
+Sign up for a free API key provides entitlements to premium xref:imagetools.adoc[Image Tools] plugin. A {cloudname} image proxy server must already be configured. Premium plugins can be purchased at any time once the API key has been set up.
+
+== Step 1: Insert the custom script tag into the webpage
+
+Add the following script in the webpage once the script tag to load {productname} has been specified. Be sure to substitute 'no-api-key' with your api key.
+
+[source, js]
+----
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js" referrerpolicy="origin"></script>
+----
+
+== Step 2: Specify purchased TinyMCE plugins and toolbar buttons
+
+Extend the xref:configure.adoc[{productname} configuration] to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
+
+* xref:premium-mentions.adoc[Mentions]
+* xref:premium-tinydrive.adoc[{cloudfilemanager}]
+* xref:comments.adoc[Comments]
+* xref:premium-pageembed.adoc[Page Embed]
+* xref:premium-permanentpen.adoc[Permanent Pen]
+* xref:premium-formatpainter.adoc[Format Painter]
+* xref:powerpaste.adoc[PowerPaste]
+* xref:tinymcespellchecker.adoc[Spell Checker Pro]
+
+NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via xref:cloud-deployment-guide.adoc[{cloudname}].
+
+* xref:imagetools.adoc[Image Tools (with configured image proxy)]
+
+NOTE: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurrs automatically.
+
+* xref:premium-moxiemanager.adoc[Moxie Manager]
+* xref:a11ychecker.adoc[Accessibility Checker]
+* xref:premium-advcode.adoc[Advanced Code Editor]
+* xref:mediaembed.adoc[Enhanced Media Embed]
+* xref:linkchecker.adoc[Link Checker]
+
+NOTE: It may take up to 30 minutes for the purchased plugin to be available to {productname}. Clear the browser's cache.
+
+The following is a complete example:
+
+The example below has the following:
+
+* The {cloudname} `API key` has the value `no-api-key`.
+* The {cloudname} has the xref:tinymcespellchecker.adoc[Spell Checker Pro] plugin enabled.
+
+[source, html]
+----
+<html>
+   <head>
+      <script src="https://your_server/tinymce.min.js"></script>
+      <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/plugins.min.js" referrerpolicy="origin"></script>
+   </head>
+   <body>
+      <textarea><p>test textarea</p></textarea>
+      <script>
+         tinymce.init({
+            selector: 'textarea',
+            height: 500,
+            plugins: [
+               'advlist autolink lists link image charmap print preview hr anchor pagebreak',
+               'tinymcespellchecker']
+         });
+      </script>
+   </body>
+<html>
+----
+
+== Step 3: Forward proxy configuration
+
+Ensure that the following URLs are accessible via this proxy if the network has a forward proxy that controls access to the internet.
+
+* All URLs where the editor is deployed.
+* All URLs where the plugins are deployed.
+* \https://imageproxy.tiny.cloud
+* \https://hyperlinking.tiny.cloud
+* \https://spelling.tiny.cloud
+
+Ensure the `tiny-api-key` and `tinymce-api-key` headers are retained while requesting the list of above URLs.

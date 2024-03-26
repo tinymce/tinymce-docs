@@ -5,7 +5,7 @@ NOTE: Table row and table column cut, copy, and paste commands work with
 | Command | Description
 
 | mceTableSizingMode
-| When `table_sizing_mode` is set to `'auto'`, this command sets the sizing mode of the currently selected table. For information on table sizing modes, see: xref:plugins/opensource/table.adoc#table_sizing_mode[Table plugin - `table_sizing_mode`].
+| When `table_sizing_mode` is set to `'auto'`, this command sets the sizing mode of the currently selected table. For information on table sizing modes, see: xref:table.adoc#table_sizing_mode[Table plugin - `table_sizing_mode`].
 include::partial$misc/requires_5_4v.adoc[]
 
 | mceTableApplyCellStyle
@@ -92,7 +92,7 @@ include::partial$misc/requires_5_9v.adoc[]
 | Opens the table cell properties dialog.
 
 | mceTableRowType
-| Changes the current row or rows to the specified type, either: `'header'`, `'body'`, or `'footer'`. The structure of header rows is dependent on the xref:plugins/opensource/table.adoc#table_header_type[`table_header_type` option]. 
+| Changes the current row or rows to the specified type, either: `'header'`, `'body'`, or `'footer'`. The structure of header rows is dependent on the xref:table.adoc#table_header_type[`table_header_type` option]. 
 include::partial$misc/requires_5_4v.adoc[]
 
 | mceTableColType

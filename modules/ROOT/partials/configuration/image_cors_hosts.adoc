@@ -13,7 +13,7 @@ An array of supported domains for the images (with CORS enabled on them) can be 
 
 NOTE: Each string in the array _must_ be in the format of `mydomain.com`. Do not include protocols (`http://, https://`) or any trailing slashes in your domains.
 
-NOTE: `{plugincode}_cors_hosts` is *not* required when enabling this plugin via xref:cloud-deployment-guide/editor-and-features.adoc[{cloudname}].
+NOTE: `{plugincode}_cors_hosts` is *not* required when enabling this plugin via xref:editor-and-features.adoc[{cloudname}].
 
 *Type:* `String[]`
 

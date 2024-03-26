@@ -3,7 +3,7 @@
 
 This hook can be used to add custom file picker to those dialogs that have it. Internally we support this in _Image_, _Media_ and _Link_ dialogs. This replaces the link:{url}/docs-4x/configure/file-image-upload/#file_browser_callback[`file_browser_callback`] (removed in version {productname} 5) option. The new `file_picker_callback` provides a way to update values of other fields in the dialog.
 
-Once you define `file_picker_callback`, small browse button will appear along the fields of supported file types (see xref:plugins/opensource/image.adoc#file_picker_types[file_picker_types]). When user clicks the button, {productname} will automatically call the callback with three arguments:
+Once you define `file_picker_callback`, small browse button will appear along the fields of supported file types (see xref:image.adoc#file_picker_types[file_picker_types]). When user clicks the button, {productname} will automatically call the callback with three arguments:
 
 * *callback* - _a callback to call, once you have hold of the file; it expects new value for the field as the first argument and optionally meta information for other fields in the dialog as the second one_
 * *value* - _current value of the affected field_
@@ -13,7 +13,7 @@ It should be noted, that we only provide a hook. It is up to you to implement sp
 
 *Type:* `JavaScript Function`
 
-NOTE: The following example demonstrates how you can use `file_picker_callback` API, but doesn't pick any real files. Check xref:demo/file-picker.adoc[Basic Local File Picker] demo for a more functional example.
+NOTE: The following example demonstrates how you can use `file_picker_callback` API, but doesn't pick any real files. Check xref:file-picker.adoc[Basic Local File Picker] demo for a more functional example.
 
 === Example: Using `file_picker_callback`
 

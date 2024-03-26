@@ -1,0 +1,401 @@
+= tinymce.dom.Selection
+:navtitle: tinymce.dom.Selection
+:description: This class handles text and control selection it&#x27;s an crossbrowser utility class. Consult the TinyMCE API Documentation for more details and examples on how to use this class.
+:keywords: Selection, collapse, getBookmark, getContent, getEnd, getNode, getRng, getSel, getStart, isCollapsed, moveToBookmark, select, selectorChanged, setContent, setCursorLocation, setNode, setRng
+:moxie-type: api
+
+This class handles text and control selection it's an crossbrowser utility class. Consult the TinyMCE API Documentation for more details and examples on how to use this class.
+
+[[examples]]
+== Examples
+[source, javascript]
+----
+// Getting the currently selected node for the active editor
+alert(tinymce.activeEditor.selection.getNode().nodeName);
+----
+
+[[summary]]
+== Summary
+
+[[constructors-summary]]
+=== Constructors
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#Selection[Selection()]|Constructs a new selection instance.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
+|===
+
+[[methods-summary]]
+=== Methods
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#collapse[collapse()]|Collapse the selection to start or end of range.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
+|xref:#getBookmark[getBookmark()]|Returns a bookmark location for the current selection. This bookmark object
+can then be used to restore the selection after some content modification to the document.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
+|xref:#getContent[getContent()]|Returns the selected contents using the DOM serializer passed in to this class.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
+|xref:#getEnd[getEnd()]|Returns the end element of a selection range. If the end is in a text
+node the parent element will be returned.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
+|xref:#getNode[getNode()]|Returns the currently selected element or the common ancestor element for both start and end of the selection.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
+|xref:#getRng[getRng()]|Returns the browsers internal range object.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
+|xref:#getSel[getSel()]|Returns the browsers internal selection object.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
+|xref:#getStart[getStart()]|Returns the start element of a selection range. If the start is in a text
+node the parent element will be returned.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
+|xref:#isCollapsed[isCollapsed()]|Returns true/false if the selection range is collapsed or not. Collapsed means if it's a caret or a larger selection.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
+|xref:#moveToBookmark[moveToBookmark()]|Restores the selection to the specified bookmark.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
+|xref:#select[select()]|Selects the specified element. This will place the start and end of the selection range around the element.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
+|xref:#selectorChanged[selectorChanged()]|Executes callback when the current selection starts/stops matching the specified selector. The current
+state will be passed to the callback as it's first argument.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
+|xref:#setContent[setContent()]|Sets the current selection to the specified content. If any contents is selected it will be replaced
+with the contents passed in to this function. If there is no selection the contents will be inserted
+where the caret is placed in the editor/page.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
+|xref:#setCursorLocation[setCursorLocation()]|Move the selection cursor range to the specified node and offset.
+If there is no node specified it will move it to the first suitable location within the body.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
+|xref:#setNode[setNode()]|Sets the current selection to the specified DOM element.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
+|xref:#setRng[setRng()]|Changes the selection to the specified DOM range.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
+|===
+
+[[constructors]]
+== Constructors
+
+[[Selection]]
+=== Selection
+[source, javascript]
+----
+public constructor function Selection(dom: tinymce.dom.DOMUtils, win: Window, serializer: tinymce.dom.Serializer, editor: tinymce.Editor)
+----
+Constructs a new selection instance.
+
+==== Parameters
+
+* `dom (xref:apis/tinymce.dom.domutils.adoc[DOMUtils])` - DOMUtils object reference.
+* `win (Window)` - Window to bind the selection object to.
+* `serializer (xref:apis/tinymce.dom.serializer.adoc[Serializer])` - DOM serialization class to use for getContent.
+* `editor (xref:apis/tinymce.editor.adoc[Editor])` - Editor instance of the selection.
+
+[[methods]]
+== Methods
+
+[[collapse]]
+=== collapse()
+[source, javascript]
+----
+collapse(toStart: Boolean)
+----
+Collapse the selection to start or end of range.
+
+==== Parameters
+
+* `toStart (Boolean)` - Optional boolean state if to collapse to end or not. Defaults to false.
+
+'''
+
+[[getBookmark]]
+=== getBookmark()
+[source, javascript]
+----
+getBookmark(type: Number, normalized: Boolean): Object
+----
+Returns a bookmark location for the current selection. This bookmark object
+can then be used to restore the selection after some content modification to the document.
+
+==== Examples
+[source, javascript]
+----
+// Stores a bookmark of the current selection
+var bm = tinymce.activeEditor.selection.getBookmark();
+
+tinymce.activeEditor.setContent(tinymce.activeEditor.getContent() + 'Some new content');
+
+// Restore the selection bookmark
+tinymce.activeEditor.selection.moveToBookmark(bm);
+----
+
+==== Parameters
+
+* `type (Number)` - Optional state if the bookmark should be simple or not. Default is complex.
+* `normalized (Boolean)` - Optional state that enables you to get a position that it would be after normalization.
+
+==== Return value
+
+* `Object` - Bookmark object, use moveToBookmark with this object to restore the selection.
+
+'''
+
+[[getContent]]
+=== getContent()
+[source, javascript]
+----
+getContent(args: Object): String
+----
+Returns the selected contents using the DOM serializer passed in to this class.
+
+==== Examples
+[source, javascript]
+----
+// Alerts the currently selected contents
+alert(tinymce.activeEditor.selection.getContent());
+
+// Alerts the currently selected contents as plain text
+alert(tinymce.activeEditor.selection.getContent({format: 'text'}));
+----
+
+==== Parameters
+
+* `args (Object)` - Optional settings class with for example output format text or html.
+
+==== Return value
+
+* `String` - Selected contents in for example HTML format.
+
+'''
+
+[[getEnd]]
+=== getEnd()
+[source, javascript]
+----
+getEnd(real: Boolean): Element
+----
+Returns the end element of a selection range. If the end is in a text
+node the parent element will be returned.
+
+==== Parameters
+
+* `real (Boolean)` - Optional state to get the real parent when the selection is collapsed not the closest element.
+
+==== Return value
+
+* `Element` - End element of selection range.
+
+'''
+
+[[getNode]]
+=== getNode()
+[source, javascript]
+----
+getNode(): Element
+----
+Returns the currently selected element or the common ancestor element for both start and end of the selection.
+
+==== Examples
+[source, javascript]
+----
+// Alerts the currently selected elements node name
+alert(tinymce.activeEditor.selection.getNode().nodeName);
+----
+
+==== Return value
+
+* `Element` - Currently selected element or common ancestor element.
+
+'''
+
+[[getRng]]
+=== getRng()
+[source, javascript]
+----
+getRng(): Range
+----
+Returns the browsers internal range object.
+
+==== Return value
+
+* `Range` - Internal browser range object.
+
+'''
+
+[[getSel]]
+=== getSel()
+[source, javascript]
+----
+getSel(): Selection
+----
+Returns the browsers internal selection object.
+
+==== Return value
+
+* `Selection` - Internal browser selection object.
+
+'''
+
+[[getStart]]
+=== getStart()
+[source, javascript]
+----
+getStart(real: Boolean): Element
+----
+Returns the start element of a selection range. If the start is in a text
+node the parent element will be returned.
+
+==== Parameters
+
+* `real (Boolean)` - Optional state to get the real parent when the selection is collapsed not the closest element.
+
+==== Return value
+
+* `Element` - Start element of selection range.
+
+'''
+
+[[isCollapsed]]
+=== isCollapsed()
+[source, javascript]
+----
+isCollapsed(): Boolean
+----
+Returns true/false if the selection range is collapsed or not. Collapsed means if it's a caret or a larger selection.
+
+==== Return value
+
+* `Boolean` - true/false state if the selection range is collapsed or not.
+Collapsed means if it's a caret or a larger selection.
+
+'''
+
+[[moveToBookmark]]
+=== moveToBookmark()
+[source, javascript]
+----
+moveToBookmark(bookmark: Object)
+----
+Restores the selection to the specified bookmark.
+
+==== Examples
+[source, javascript]
+----
+// Stores a bookmark of the current selection
+var bm = tinymce.activeEditor.selection.getBookmark();
+
+tinymce.activeEditor.setContent(tinymce.activeEditor.getContent() + 'Some new content');
+
+// Restore the selection bookmark
+tinymce.activeEditor.selection.moveToBookmark(bm);
+----
+
+==== Parameters
+
+* `bookmark (Object)` - Bookmark to restore selection from.
+
+'''
+
+[[select]]
+=== select()
+[source, javascript]
+----
+select(node: Element, content: Boolean): Element
+----
+Selects the specified element. This will place the start and end of the selection range around the element.
+
+==== Examples
+[source, javascript]
+----
+// Select the first paragraph in the active editor
+tinymce.activeEditor.selection.select(tinymce.activeEditor.dom.select('p')[0]);
+----
+
+==== Parameters
+
+* `node (Element)` - HTML DOM element to select.
+* `content (Boolean)` - Optional bool state if the contents should be selected or not on non IE browser.
+
+==== Return value
+
+* `Element` - Selected element the same element as the one that got passed in.
+
+'''
+
+[[selectorChanged]]
+=== selectorChanged()
+[source, javascript]
+----
+selectorChanged(selector: String, callback: function)
+----
+Executes callback when the current selection starts/stops matching the specified selector. The current
+state will be passed to the callback as it's first argument.
+
+==== Parameters
+
+* `selector (String)` - CSS selector to check for.
+* `callback (function)` - Callback with state and args when the selector is matches or not.
+
+'''
+
+[[setContent]]
+=== setContent()
+[source, javascript]
+----
+setContent(content: String, args: Object)
+----
+Sets the current selection to the specified content. If any contents is selected it will be replaced
+with the contents passed in to this function. If there is no selection the contents will be inserted
+where the caret is placed in the editor/page.
+
+==== Examples
+[source, javascript]
+----
+// Inserts some HTML contents at the current selection
+tinymce.activeEditor.selection.setContent('<strong>Some contents</strong>');
+----
+
+==== Parameters
+
+* `content (String)` - HTML contents to set could also be other formats depending on settings.
+* `args (Object)` - Optional settings object with for example data format.
+
+'''
+
+[[setCursorLocation]]
+=== setCursorLocation()
+[source, javascript]
+----
+setCursorLocation(node: Node, offset: Number)
+----
+Move the selection cursor range to the specified node and offset.
+If there is no node specified it will move it to the first suitable location within the body.
+
+==== Parameters
+
+* `node (Node)` - Optional node to put the cursor in.
+* `offset (Number)` - Optional offset from the start of the node to put the cursor at.
+
+'''
+
+[[setNode]]
+=== setNode()
+[source, javascript]
+----
+setNode(elm: Element): Element
+----
+Sets the current selection to the specified DOM element.
+
+==== Examples
+[source, javascript]
+----
+// Inserts a DOM node at current selection/caret location
+tinymce.activeEditor.selection.setNode(tinymce.activeEditor.dom.create('img', {src: 'some.gif', title: 'some title'}));
+----
+
+==== Parameters
+
+* `elm (Element)` - Element to set as the contents of the selection.
+
+==== Return value
+
+* `Element` - Returns the element that got passed in.
+
+'''
+
+[[setRng]]
+=== setRng()
+[source, javascript]
+----
+setRng(rng: Range, forward: Boolean)
+----
+Changes the selection to the specified DOM range.
+
+==== Parameters
+
+* `rng (Range)` - Range to select.
+* `forward (Boolean)` - Optional boolean if the selection is forwards or backwards.
+
+'''

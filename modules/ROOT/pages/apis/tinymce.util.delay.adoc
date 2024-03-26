@@ -1,0 +1,207 @@
+= tinymce.util.Delay
+:navtitle: tinymce.util.Delay
+:description: Utility class for working with delayed actions like setTimeout.
+:keywords: clearInterval, clearTimeout, debounce, requestAnimationFrame, setEditorInterval, setEditorTimeout, setInterval, setTimeout
+:moxie-type: api
+
+Utility class for working with delayed actions like setTimeout.
+
+[[summary]]
+== Summary
+
+[[methods-summary]]
+=== Methods
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#clearInterval[clearInterval()]|Clears an interval timer so it won't execute.
+
+
+__Deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0__ - use the native browser `clearInterval` API instead.|`xref:apis/tinymce.util.delay.adoc[Delay]`
+|xref:#clearTimeout[clearTimeout()]|Clears an timeout timer so it won't execute.
+
+
+__Deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0__ - use the native browser `clearTimeout` API instead.|`xref:apis/tinymce.util.delay.adoc[Delay]`
+|xref:#debounce[debounce()]|Creates debounced callback function that only gets executed once within the specified time.
+
+
+__Deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0.__|`xref:apis/tinymce.util.delay.adoc[Delay]`
+|xref:#requestAnimationFrame[requestAnimationFrame()]|Requests an animation frame and fallbacks to a timeout on older browsers.
+
+
+__Deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0__ - use the native browser `requestAnimationFrame` API instead.|`xref:apis/tinymce.util.delay.adoc[Delay]`
+|xref:#setEditorInterval[setEditorInterval()]|Sets an interval timer it's similar to setInterval except that it checks if the editor instance is
+still alive when the callback gets executed.|`xref:apis/tinymce.util.delay.adoc[Delay]`
+|xref:#setEditorTimeout[setEditorTimeout()]|Sets an editor timeout it's similar to setTimeout except that it checks if the editor instance is
+still alive when the callback gets executed.|`xref:apis/tinymce.util.delay.adoc[Delay]`
+|xref:#setInterval[setInterval()]|Sets an interval timer in ms and executes the specified callback at every interval of that time.
+
+
+__Deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0__ - use the native browser `setInterval` API instead.|`xref:apis/tinymce.util.delay.adoc[Delay]`
+|xref:#setTimeout[setTimeout()]|Sets a timer in ms and executes the specified callback when the timer runs out.
+
+
+__Deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0__ - use the native browser `setTimeout` API instead.|`xref:apis/tinymce.util.delay.adoc[Delay]`
+|===
+
+[[methods]]
+== Methods
+
+[[clearInterval]]
+=== clearInterval()
+[source, javascript]
+----
+clearInterval(Interval: Number)
+----
+Clears an interval timer so it won't execute.
+
+
+__Deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0__ - use the native browser `clearInterval` API instead.
+
+==== Parameters
+
+* `Interval (Number)` - timer id number.
+
+'''
+
+[[clearTimeout]]
+=== clearTimeout()
+[source, javascript]
+----
+clearTimeout(Timeout: Number)
+----
+Clears an timeout timer so it won't execute.
+
+
+__Deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0__ - use the native browser `clearTimeout` API instead.
+
+==== Parameters
+
+* `Timeout (Number)` - timer id number.
+
+'''
+
+[[debounce]]
+=== debounce()
+[source, javascript]
+----
+debounce(callback: function, time: Number): Function
+----
+Creates debounced callback function that only gets executed once within the specified time.
+
+
+__Deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0.__
+
+==== Parameters
+
+* `callback (function)` - Callback to execute when timer finishes.
+* `time (Number)` - Optional time to wait before the callback is executed, defaults to 0.
+
+==== Return value
+
+* `Function` - debounced function callback.
+
+'''
+
+[[requestAnimationFrame]]
+=== requestAnimationFrame()
+[source, javascript]
+----
+requestAnimationFrame(callback: function, element: DOMElement)
+----
+Requests an animation frame and fallbacks to a timeout on older browsers.
+
+
+__Deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0__ - use the native browser `requestAnimationFrame` API instead.
+
+==== Parameters
+
+* `callback (function)` - Callback to execute when a new frame is available.
+* `element (DOMElement)` - Optional element to scope it to.
+
+'''
+
+[[setEditorInterval]]
+=== setEditorInterval()
+[source, javascript]
+----
+setEditorInterval(callback: function, time: Number): Number
+----
+Sets an interval timer it's similar to setInterval except that it checks if the editor instance is
+still alive when the callback gets executed.
+
+==== Parameters
+
+* `callback (function)` - Callback to execute when interval time runs out.
+* `time (Number)` - Optional time to wait before the callback is executed, defaults to 0.
+
+==== Return value
+
+* `Number` - Timeout id number.
+
+'''
+
+[[setEditorTimeout]]
+=== setEditorTimeout()
+[source, javascript]
+----
+setEditorTimeout(editor: tinymce.Editor, callback: function, time: Number): Number
+----
+Sets an editor timeout it's similar to setTimeout except that it checks if the editor instance is
+still alive when the callback gets executed.
+
+==== Parameters
+
+* `editor (xref:apis/tinymce.editor.adoc[Editor])` - Editor instance to check the removed state on.
+* `callback (function)` - Callback to execute when timer runs out.
+* `time (Number)` - Optional time to wait before the callback is executed, defaults to 0.
+
+==== Return value
+
+* `Number` - Timeout id number.
+
+'''
+
+[[setInterval]]
+=== setInterval()
+[source, javascript]
+----
+setInterval(callback: function, time: Number): Number
+----
+Sets an interval timer in ms and executes the specified callback at every interval of that time.
+
+
+__Deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0__ - use the native browser `setInterval` API instead.
+
+==== Parameters
+
+* `callback (function)` - Callback to execute when interval time runs out.
+* `time (Number)` - Optional time to wait before the callback is executed, defaults to 0.
+
+==== Return value
+
+* `Number` - Timeout id number.
+
+'''
+
+[[setTimeout]]
+=== setTimeout()
+[source, javascript]
+----
+setTimeout(callback: function, time: Number): Number
+----
+Sets a timer in ms and executes the specified callback when the timer runs out.
+
+
+__Deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0__ - use the native browser `setTimeout` API instead.
+
+==== Parameters
+
+* `callback (function)` - Callback to execute when timer runs out.
+* `time (Number)` - Optional time to wait before the callback is executed, defaults to 0.
+
+==== Return value
+
+* `Number` - Timeout id number.
+
+'''

@@ -1,0 +1,25 @@
+= Required Real-time Collaboration configuration options
+:description: List of all required RTC configuration options.
+:keywords: rtc configuration
+:title_nav: Required configuration options
+
+:pluginname: Real-time Collaboration (RTC)
+:plugincode: rtc
+
+include::partial$rtc/admon-rtc-eol.adoc[]
+
+== Required configuration options
+
+The following options are required to use the Real-time Collaboration (RTC) plugin:
+
+* xref:rtc_document_id[`rtc_document_id`]
+* xref:rtc_encryption_provider[`rtc_encryption_provider`]
+* xref:rtc_token_provider[`rtc_token_provider`]
+
+For an example showing the minimum required configuration for RTC, see: xref:rtc-getting-started.adoc#configuretherequiredtinymcertcoptions[Getting started with RTC - Configure the required TinyMCE RTC options].
+
+include::partial$configuration/rtc_document_id.adoc[]
+
+include::partial$configuration/rtc_encryption_provider.adoc[]
+
+include::partial$configuration/rtc_token_provider.adoc[]

@@ -1,0 +1,80 @@
+= AngularJS integration
+:description: This directive allows you to add a TinyMCE editor to your form elements.
+:keywords: integration integrate angular angularjs angular1
+:title_nav: AngularJS
+
+Integration with AngularJS is currently done through https://github.com/angular-ui/ui-tinymce[angular-ui-tinymce] a third party module. This how-to shows you how to setup a project using https://angularjs.org/[AngularJS] and xref:basic-example.adoc[{productname}].
+
+== 1. Setting up the project directory
+
+First, we create a directory for the project called "tinymce-angular-demo". After that, we run "bower init"in the new directory, this will set up a new empty bower project.
+
+----
+$ mkdir tinymce-angular-demo
+$ cd tinymce-angular-demo
+$ bower init
+----
+
+== 2. Installation of angular, ui-tinymce and tinymce
+
+We now install the angular-ui-tinymce package this will automatically install angular and {productname}.
+
+----
+$ bower install angular-ui-tinymce --save
+----
+
+== 3. Creating the demo.html file
+
+This *demo.html* file has angular properties and two calls to the controller.
+
+[source, html]
+----
+<!DOCTYPE html>
+<head>
+  <script type="text/javascript" src="bower_components/tinymce/tinymce.js"></script>
+  <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="bower_components/angular-ui-tinymce/src/tinymce.js"></script>
+  <script type="text/javascript" src="app.js"></script>
+</head>
+<body ng-app="myApp">
+  <form method="post" ng-controller="TinyMceController">
+    <textarea ui-tinymce="tinymceOptions" ng-model="tinymceModel"></textarea>
+    <button ng-click="getContent()">Get content</button>
+    <button ng-click="setContent()">Set content</button>
+  </form>
+</body>
+----
+
+== 4. Creating the app.js file
+
+The *app.js* file shows you how to work with the model that automatically updates {productname}.
+
+[source, js]
+----
+var myAppModule = angular.module('myApp', ['ui.tinymce']);
+
+myAppModule.controller('TinyMceController', function($scope) {
+  $scope.tinymceModel = 'Initial content';
+
+$scope.getContent = function() {
+    console.log('Editor content:', $scope.tinymceModel);
+  };
+
+$scope.setContent = function() {
+    $scope.tinymceModel = 'Time: ' + (new Date());
+  };
+
+$scope.tinymceOptions = {
+    plugins: 'link image code',
+    toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | code'
+  };
+});
+----
+
+== 5. Testing the application
+
+You can now test the application by running the demo.html page in your favorite browser.
+
+== A note about integrations
+
+include::partial$misc/thirdPartyInteg.adoc[]

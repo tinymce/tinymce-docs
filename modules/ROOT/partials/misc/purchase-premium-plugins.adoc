@@ -62,8 +62,8 @@ For information on:
 
 * {cloudname} plans, see: link:{pricingpage}[{companyname} Pricing Plans].
 ifeval::["{extensionType}" == "Packs"]
-* Enabling premium skins, see: xref:configure/editor-appearance.adoc#skin[The `skin` setting].
-* Enabling premium icon packs, see: xref:configure/editor-appearance.adoc#icons[The `icons` setting].
+* Enabling premium skins, see: xref:editor-appearance.adoc#skin[The `skin` setting].
+* Enabling premium icon packs, see: xref:editor-appearance.adoc#icons[The `icons` setting].
 endif::[]
 ifeval::["{extensionType}" != "Packs"]
 * Configuring the *{pluginname} {extensionType}*, see: xref:plugins/premium/{plugindocspage}[The {pluginname} {extensionType} documentation].

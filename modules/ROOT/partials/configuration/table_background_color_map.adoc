@@ -3,13 +3,13 @@
 
 include::partial$misc/requires_5_9v.adoc[]
 
-This option is used to specify the default values for the table cell background color picker, which can be opened with the `tablecellbackgroundcolor` toolbar button or menu item. If no values are defined, the toolbar button and menu item will use the values or default values of the xref:configure/content-appearance.adoc#color_map[`color_map` option]. This option does not modify the background color picker in the table dialogs. This option accepts Hex, RGB and HSL color values.
+This option is used to specify the default values for the table cell background color picker, which can be opened with the `tablecellbackgroundcolor` toolbar button or menu item. If no values are defined, the toolbar button and menu item will use the values or default values of the xref:content-appearance.adoc#color_map[`color_map` option]. This option does not modify the background color picker in the table dialogs. This option accepts Hex, RGB and HSL color values.
 
-The xref:configure/content-appearance.adoc#custom_colors[custom color picker] is not available for the `tablecellbackgroundcolor` toolbar button or menu item.
+The xref:content-appearance.adoc#custom_colors[custom color picker] is not available for the `tablecellbackgroundcolor` toolbar button or menu item.
 
 *Type:* `Array`
 
-*Default Value:* See xref:configure/content-appearance.adoc#color_map[`color_map` option]
+*Default Value:* See xref:content-appearance.adoc#color_map[`color_map` option]
 
 ==== Example: Using `table_background_color_map`
 

@@ -1,0 +1,102 @@
+= Export plugin
+:description: Export content from TinyMCE, into various formats.
+:keywords: plugin export pdf
+:title_nav: Export
+
+:pluginname: Export
+:plugincode: export
+
+include::partial$misc/requires_5_5v.adoc[]
+
+include::partial$misc/premiumplugin.adoc[]
+
+The {pluginname} plugin adds the ability to export content from the editor to a user's local machine in various formats. For a list of available exporters and information on what they support, see the xref:exporters[Exporters section].
+
+== Interactive example
+
+To export the editor content, either:
+
+* From the _File_ menu, click _Export_ and select _PDF_.
+* Click the Export toolbar button (image:icons/export.svg[Export icon: A page with an arrow from the center of the page to the right of the page]) and select _PDF_.
+
+liveDemo::export[]
+
+== Basic setup
+
+To add the {pluginname} plugin to the editor, add `{plugincode}` to the `plugins` option in the editor configuration.
+
+For example:
+
+[source, js, subs="attributes+"]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: '{plugincode}',
+  toolbar: 'export',
+  export_image_proxy: 'proxy.php' // Required for rendering remote images
+});
+----
+
+[[exporters]]
+== Exporters
+
+The {pluginname} plugin provides the following exporters:
+
+* xref:client-side-pdf[Client-side PDF (`clientpdf`)]
+
+[[client-side-pdf]]
+=== Client-side PDF (`clientpdf`)
+
+The client-side PDF exporter converts the editor content to a PDF without the need for server-side components. This exporter will resize the content to fit on A4 pages, add page breaks, take a snapshot of the HTML, and embed the snapshot image within the exported PDF.
+
+This exporter has a few limitations or known issues that should be noted:
+
+* The text content in the PDF cannot be selected or copied.
+* A single line of content sliced horizontally and distributed across separate pages.
+* Due to browser limitations, there is a limit on the number of pages that can be rendered. The number of pages varies between browsers.
+* Remote images require an image proxy to render due to browser limitations. For information on proxying remote images, see the xref:export_image_proxy[export_image_proxy] option.
+* Right-to-left languages that use cursive scripts (such as Arabic) may not render correctly due to an issue with how the image of the HTML content is rendered.
+* The xref:premium-checklist.adoc[Checklist plugin] icons will not render for Internet Explorer 11 users due to browser limitations.
+
+The following plugins are not supported:
+
+* xref:bbcode.adoc[BBCode]
+* xref:comments.adoc[Comments]
+* xref:mediaembed.adoc[Enhanced Media Embed]
+* xref:fullpage.adoc[Fullpage]
+* xref:legacyoutput.adoc[Legacy Output]
+* xref:media.adoc[Media]
+* xref:premium-pageembed.adoc[Page Embed]
+* xref:toc.adoc[Table of Contents]
+
+== Configuration Options
+
+The following configuration options affect the behavior of the {pluginname} plugin.
+
+include::partial$configuration/image_cors_hosts.adoc[]
+
+include::partial$configuration/export_ignore_elements.adoc[]
+
+include::partial$configuration/image_proxy.adoc[]
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+
+== Commands
+
+The {pluginname} plugin provides the following JavaScript commands.
+
+include::partial$commands/{plugincode}-cmds.adoc[]
+
+== Events
+
+The {pluginname} plugin provides the following events.
+
+include::partial$events/{plugincode}-events.adoc[]
+
+== APIs
+
+The {pluginname} plugin provides the following APIs.
+
+include::partial$plugin-apis/{plugincode}-apis.adoc[]

@@ -204,7 +204,7 @@ Such as:
 />
 ----
 
-For information {productname} development channels, see: xref:cloud-deployment-guide/editor-plugin-version.adoc#55-testingand5-devreleasechannels[Specifying the {productname} editor version deployed from Cloud - dev, testing, and stable releases].
+For information {productname} development channels, see: xref:editor-plugin-version.adoc#55-testingand5-devreleasechannels[Specifying the {productname} editor version deployed from Cloud - dev, testing, and stable releases].
 
 [[disabled]]
 ==== `disabled`
@@ -245,7 +245,7 @@ An id for the editor. Used for retrieving the editor instance using the `tinymce
 
 Additional settings passed to the `+tinymce.init({...})+` method used to initialize the editor.
 
-For information on the {productname} `+tinymce.init({...})+` method, see: xref:general-configuration-guide/basic-setup.adoc[Basic setup].
+For information on the {productname} `+tinymce.init({...})+` method, see: xref:basic-setup.adoc[Basic setup].
 
 When using `tinymce-react`:
 - The `init` prop does not require the `selector` or `target` options
@@ -312,7 +312,7 @@ return (
 
 Used to set the editor to inline mode. Using `+<Editor inline={true} />+` is the same as setting `{inline: true}` in the {productname} `+tinymce.init({...})+` method.
 
-For information on inline mode, see: xref:configure/editor-appearance.adoc#inline[User interface options - `inline`] and xref:general-configuration-guide/use-tinymce-inline.adoc[Setup inline editing mode].
+For information on inline mode, see: xref:editor-appearance.adoc#inline[User interface options - `inline`] and xref:use-tinymce-inline.adoc[Setup inline editing mode].
 
 *Default value:* `false`
 
@@ -418,7 +418,7 @@ return (
 
 Used to include plugins for the editor. Using `<Editor plugins='lists' />` is the same as setting `{plugins: 'lists'}` in the {productname} `+tinymce.init({...})+` method.
 
-For information on adding plugins to {productname}, see: xref:plugins/index.adoc[Add plugins to {productname}].
+For information on adding plugins to {productname}, see: xref:plugins.adoc[Add plugins to {productname}].
 
 *Type:* String or Array
 
@@ -520,9 +520,9 @@ Only valid when the editor is in classic (iframe) mode. Sets the `name` attribut
 
 Used to set the toolbar for the editor. Using `<Editor toolbar='bold' />` is the same as setting `{toolbar: 'bold'}` in the {productname} method `+tinymce.init({...})+`.
 
-For information setting the toolbar for {productname}, see: xref:configure/editor-appearance.adoc#toolbar[User interface options - toolbar].
+For information setting the toolbar for {productname}, see: xref:editor-appearance.adoc#toolbar[User interface options - toolbar].
 
-*Possible values:*  See xref:advanced/available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
+*Possible values:*  See xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
 *Type:* String
 

@@ -1,0 +1,152 @@
+= tinymce.html.Writer
+:navtitle: tinymce.html.Writer
+:description: This class is used to write HTML tags out it can be used with the Serializer or the SaxParser.
+:keywords: cdata, doctype, end, getContent, pi, reset, start, text
+:moxie-type: api
+
+This class is used to write HTML tags out it can be used with the Serializer or the SaxParser.
+
+[[examples]]
+== Examples
+[source, javascript]
+----
+var writer = new tinymce.html.Writer({indent: true});
+var parser = new tinymce.html.SaxParser(writer).parse('<p><br></p>');
+console.log(writer.getContent());
+----
+
+[[summary]]
+== Summary
+
+[[methods-summary]]
+=== Methods
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#cdata[cdata()]|Writes a comment node such as &lt;!-- Comment --&gt;.|`xref:apis/tinymce.html.writer.adoc[Writer]`
+|xref:#doctype[doctype()]|Writes a doctype node such as <!DOCTYPE data>.|`xref:apis/tinymce.html.writer.adoc[Writer]`
+|xref:#end[end()]|Writes the a end element such as </p>.|`xref:apis/tinymce.html.writer.adoc[Writer]`
+|xref:#getContent[getContent()]|Returns the contents that got serialized.|`xref:apis/tinymce.html.writer.adoc[Writer]`
+|xref:#pi[pi()]|Writes a PI node such as <?xml attr="value" ?>.|`xref:apis/tinymce.html.writer.adoc[Writer]`
+|xref:#reset[reset()]|Resets the internal buffer if one wants to reuse the writer.|`xref:apis/tinymce.html.writer.adoc[Writer]`
+|xref:#start[start()]|Writes the a start element such as <p id="a">.|`xref:apis/tinymce.html.writer.adoc[Writer]`
+|xref:#text[text()]|Writes a text node.|`xref:apis/tinymce.html.writer.adoc[Writer]`
+|===
+
+[[methods]]
+== Methods
+
+[[cdata]]
+=== cdata()
+[source, javascript]
+----
+cdata(text: String)
+----
+Writes a comment node such as &lt;!-- Comment --&gt;.
+
+==== Parameters
+
+* `text (String)` - String to write out inside the comment.
+
+'''
+
+[[doctype]]
+=== doctype()
+[source, javascript]
+----
+doctype(text: String)
+----
+Writes a doctype node such as <!DOCTYPE data>.
+
+==== Parameters
+
+* `text (String)` - String to write out inside the doctype.
+
+'''
+
+[[end]]
+=== end()
+[source, javascript]
+----
+end(name: String)
+----
+Writes the a end element such as </p>.
+
+==== Parameters
+
+* `name (String)` - Name of the element.
+
+'''
+
+[[getContent]]
+=== getContent()
+[source, javascript]
+----
+getContent(): String
+----
+Returns the contents that got serialized.
+
+==== Return value
+
+* `String` - HTML contents that got written down.
+
+'''
+
+[[pi]]
+=== pi()
+[source, javascript]
+----
+pi(name: String, text: String)
+----
+Writes a PI node such as <?xml attr="value" ?>.
+
+==== Parameters
+
+* `name (String)` - Name of the pi.
+* `text (String)` - String to write out inside the pi.
+
+'''
+
+[[reset]]
+=== reset()
+[source, javascript]
+----
+reset()
+----
+Resets the internal buffer if one wants to reuse the writer.
+
+'''
+
+[[start]]
+=== start()
+[source, javascript]
+----
+start(name: String, attrs: Array, empty: Boolean)
+----
+Writes the a start element such as <p id="a">.
+
+==== Parameters
+
+* `name (String)` - Name of the element.
+* `attrs (Array)` - Optional attribute array or undefined if it hasn't any.
+* `empty (Boolean)` - Optional empty state if the tag should end like
+
+
+.
+
+'''
+
+[[text]]
+=== text()
+[source, javascript]
+----
+text(text: String, raw: Boolean)
+----
+Writes a text node.
+
+==== Parameters
+
+* `text (String)` - String to write out.
+* `raw (Boolean)` - Optional raw state if true the contents wont get encoded.
+
+'''

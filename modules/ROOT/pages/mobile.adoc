@@ -12,16 +12,16 @@ The mobile experience comes with a number of user interface changes in addition 
 * Mobile devices now use the `silver` theme.
 * Horizontal contextual menus on mobile.
 * Side-scrolling toolbars  and contextual menus on mobile.
-* Contextual keyboard settings for dialogs using xref:ui-components/dialogcomponents.adoc#inputmode[`inputMode`].
+* Contextual keyboard settings for dialogs using xref:dialogcomponents.adoc#inputmode[`inputMode`].
 * xref:mobiledefaultsforselectedsettings[Mobile defaults for selected settings].
 * Table cell selection on mobile.
 
 The mobile experience allows most of the {productname} plugins to work on mobile devices, except for:
 
-* xref:plugins/premium/comments/index.adoc[Comments].
-* xref:plugins/opensource/imagetools.adoc[Image tools].
-* xref:plugins/premium/moxiemanager.adoc[MoxieManager].
-* xref:plugins/premium/permanentpen.adoc[Permanent Pen].
+* xref:comments.adoc[Comments].
+* xref:imagetools.adoc[Image tools].
+* xref:premium-moxiemanager.adoc[MoxieManager].
+* xref:premium-permanentpen.adoc[Permanent Pen].
 
 {productname} will detect the platform and show an optimal UI experience based on the device type and screen size.
 
@@ -38,7 +38,7 @@ Add the following `meta` tag to the `head` of pages using {productname} to ensur
 <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
 ----
 
-To set mobile specific settings, add the setting to the xref:configure/editor-appearance.adoc#mobile[`mobile`] configuration, such as:
+To set mobile specific settings, add the setting to the xref:editor-appearance.adoc#mobile[`mobile`] configuration, such as:
 
 [source, js]
 ----
@@ -57,24 +57,24 @@ These mobile-specific default values have been set to disable unsupported settin
 
 The following settings have mobile-specific default values:
 
-* xref:configure/editor-appearance.adoc#menubar[`menubar`] - defaults to `false` on mobile phones.
-* xref:configure/editor-appearance.adoc#toolbar_mode[`toolbar_mode`] - defaults to `scrolling` on mobile devices. The toolbar will xref:configure/editor-appearance.adoc#scrolling[side-scroll by default].
-* xref:configure/editor-appearance.adoc#toolbar_sticky[`toolbar_sticky`] - Sticky Toolbar is not supported on mobile devices and defaults to `false`.
-* xref:plugins/opensource/table.adoc#table_grid[`table_grid`] - Table grid is not supported on mobile devices and defaults to `false`. When creating tables on mobile, a dialog is shown instead of the table grid.
-* xref:configure/editor-appearance.adoc#resize[`resize`] - Resizing is not supported on mobile devices and defaults to `false`.
-* xref:configure/advanced-editing-behavior.adoc#object_resizing[`object_resizing`] - Object resizing is not supported on mobile devices and defaults to `false`.
+* xref:editor-appearance.adoc#menubar[`menubar`] - defaults to `false` on mobile phones.
+* xref:editor-appearance.adoc#toolbar_mode[`toolbar_mode`] - defaults to `scrolling` on mobile devices. The toolbar will xref:editor-appearance.adoc#scrolling[side-scroll by default].
+* xref:editor-appearance.adoc#toolbar_sticky[`toolbar_sticky`] - Sticky Toolbar is not supported on mobile devices and defaults to `false`.
+* xref:table.adoc#table_grid[`table_grid`] - Table grid is not supported on mobile devices and defaults to `false`. When creating tables on mobile, a dialog is shown instead of the table grid.
+* xref:editor-appearance.adoc#resize[`resize`] - Resizing is not supported on mobile devices and defaults to `false`.
+* xref:advanced-editing-behavior.adoc#object_resizing[`object_resizing`] - Object resizing is not supported on mobile devices and defaults to `false`.
 
 === Unsupported settings for mobile
 
 The following settings are not supported on mobile devices:
 
-* xref:general-configuration-guide/use-tinymce-inline.adoc[Inline editing mode].
-* xref:general-configuration-guide/use-tinymce-distraction-free.adoc[Distraction-free editing mode].
-* xref:configure/editor-appearance.adoc#inline[`inline`].
-* xref:configure/editor-appearance.adoc#toolbar_sticky[`toolbar_sticky`].
-* xref:plugins/opensource/table.adoc#table_grid[`table_grid`].
-* xref:configure/editor-appearance.adoc#resize[`resize`].
-* xref:configure/advanced-editing-behavior.adoc#object_resizing[`object_resizing`].
+* xref:use-tinymce-inline.adoc[Inline editing mode].
+* xref:use-tinymce-distraction-free.adoc[Distraction-free editing mode].
+* xref:editor-appearance.adoc#inline[`inline`].
+* xref:editor-appearance.adoc#toolbar_sticky[`toolbar_sticky`].
+* xref:table.adoc#table_grid[`table_grid`].
+* xref:editor-appearance.adoc#resize[`resize`].
+* xref:advanced-editing-behavior.adoc#object_resizing[`object_resizing`].
 
 [[thelegacymobiletheme]]
 == The legacy mobile theme
@@ -96,7 +96,7 @@ tinymce.init({
 
 === Legacy mobile theme - configuring the plugins
 
-The plugins supported by legacy mobile theme are limited to the xref:plugins/opensource/autosave.adoc[autosave], xref:plugins/opensource/autolink.adoc[autolink], and xref:plugins/opensource/lists.adoc[lists] plugins.
+The plugins supported by legacy mobile theme are limited to the xref:autosave.adoc[autosave], xref:autolink.adoc[autolink], and xref:lists.adoc[lists] plugins.
 
 To add these plugins to the legacy mobile theme, add a plugin entry to the mobile section. For example:
 
@@ -131,7 +131,7 @@ tinymce.init({
 
 Below are the toolbar items supported for the legacy mobile theme, and the plugins/configuration required.
 
-NOTE: The `list` functions require the xref:plugins/opensource/lists.adoc[lists] plugin and `styleselect` requires configuring xref:configure/editor-appearance.adoc#style_formats[style_formats].
+NOTE: The `list` functions require the xref:lists.adoc[lists] plugin and `styleselect` requires configuring xref:editor-appearance.adoc#style_formats[style_formats].
 
 |===
 | Name | Function | Plugins Required | Configuration
@@ -178,12 +178,12 @@ NOTE: The `list` functions require the xref:plugins/opensource/lists.adoc[lists]
 
 | bullist
 | Insert an unordered list
-| xref:plugins/opensource/lists.adoc[lists]
+| xref:lists.adoc[lists]
 |
 
 | numlist
 | Insert an ordered list
-| xref:plugins/opensource/lists.adoc[lists]
+| xref:lists.adoc[lists]
 |
 
 | fontsizeselect
@@ -199,7 +199,7 @@ NOTE: The `list` functions require the xref:plugins/opensource/lists.adoc[lists]
 | styleselect
 | Apply a custom style
 |
-| xref:configure/editor-appearance.adoc#style_formats[style_formats]
+| xref:editor-appearance.adoc#style_formats[style_formats]
 
 | removeformat
 | Removes any inline formatting

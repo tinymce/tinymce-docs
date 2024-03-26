@@ -3,7 +3,7 @@
 
 This option is used to specify a regular expression or array of regular expressions that {productname} will use to determine which areas of content are non-editable when using the `noneditable` plugin. The regular expressions needs to be global so that all instances within the document are matched. The text content of the matches will be wrapped in spans, hiding the structure and styling while editing.
 
-NOTE: If elements are matched by the regular expression, the elements will be replaced with spans. Use xref:plugins/opensource/noneditable.adoc#noneditable_noneditable_class[`noneditable_noneditable_class`] for elements.
+NOTE: If elements are matched by the regular expression, the elements will be replaced with spans. Use xref:noneditable.adoc#noneditable_noneditable_class[`noneditable_noneditable_class`] for elements.
 
 *Type:* `String`
 

@@ -7,12 +7,12 @@ A key is required when the client needs to:
 1. Encrypt new data in the collaboration session.
 2. Read previously written data from the collaboration session.
 
-For information on encryption for RTC, including suggestions on how to generate a secure encryption key and use key rotation, see: xref:rtc/encryption.adoc[Real-time Collaboration (RTC) Encryption Setup].
+For information on encryption for RTC, including suggestions on how to generate a secure encryption key and use key rotation, see: xref:encryption.adoc[Real-time Collaboration (RTC) Encryption Setup].
 
 ifeval::[{plugincode} != "rtc"]
 
 Required plugin::
-xref:plugins/premium/rtc.adoc[Real-time Collaboration (`rtc`)]
+xref:rtc-plugin.adoc[Real-time Collaboration (`rtc`)]
 endif::[]
 
 Type:: Function (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])

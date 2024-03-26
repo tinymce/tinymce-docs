@@ -1,11 +1,11 @@
 [[logs]]
 == Logs
 
-The logs from {pluginname} On-Premises are written to `stdout` and `stderr`. Most of them are formatted in JSON. They can be used for monitoring or debugging purposes. In production environments, we recommend storing the logs to files or using a distributed logging system (like ELK or CloudWatch).
+The logs from {pluginname} On-Premises are written to `stdout` and `stderr`. Most of them are formatted in JSON. They can be used for monitoring or debugging purposes. In production environments, It is recommend storing the logs to files or using a distributed logging system (like ELK or CloudWatch).
 
 === Monitoring {pluginname} with logs
 
-To get more insight into how the {pluginname} On-Premises is performing, we built logs that can be used for monitoring. To enable these, just add the `ENABLE_METRIC_LOGS=true` environment variable.
+To get more insight into how the {pluginname} On-Premises is performing, logs can be used for monitoring. To enable these, add the `ENABLE_METRIC_LOGS=true` environment variable.
 
 === Log structure
 
@@ -57,17 +57,17 @@ See example charts to check how to use logs for monitoring purposes.
 
 The docker has built-in logging mechanisms that capture logs from the output of the containers. The default logging driver writes the logs to files.
 
-When using this driver, you can use the `docker logs` command to show logs from a container. You can add the `-f` flag to view logs in real time. Refer to the link:https://docs.docker.com/engine/reference/commandline/logs/[official Docker documentation^] for more information about the logs command.
+When using this driver, use the `docker logs` command to show logs from a container. The `-f` flag can be added to view logs in real time. Refer to the link:https://docs.docker.com/engine/reference/commandline/logs/[official Docker documentation^] for more information about the logs command.
 
-> When a container is running for a long period of time, the logs can take up a lot of space. To avoid this problem, you should make sure that the log rotation is enabled. This can be set with the `max-size` option.
+> When a container is running for a long period of time, the logs can take up a lot of space. To avoid this problem, make sure that the log rotation is enabled. This can be set with the `max-size` option.
 
 === Distributed logging
 
-If you are running more than one instance of {pluginname} On-Premises, we recommend using a distributed logging system. It allows you to view and analyze logs from all instances in one place.
+If running more than one instance of {pluginname} On-Premises, It is recommend using a distributed logging system. It allows for viewing and analyzing logs from all instances in one place.
 
 ==== AWS CloudWatch and other cloud solutions
 
-If you are running {pluginname} On-Premises in the cloud, the simplest and recommended way is to use a service that is available at the selected provider.
+If running {pluginname} On-Premises in the cloud, the simplest and recommended way is to use a service that is available at the selected provider.
 
 Here are some of the available services:
 
@@ -75,7 +75,7 @@ Here are some of the available services:
 * Google Cloud: link:https://cloud.google.com/logging[Cloud Logging^]
 * Azure: link:https://azure.microsoft.com/en-us/services/monitor/[Azure Monitor^]
 
-To use CloudWatch with AWS ECS, you have to create a log group before and change the log driver to `awslogs`. When the log driver is configured properly, logs will be streamed directly to CloudWatch.
+To use CloudWatch with AWS ECS, a log group must be created before, and the log driver must be changed to `awslogs`. When the log driver is configured properly, logs will be streamed directly to CloudWatch.
 
 The `logConfiguration` may look similar to this:
 
@@ -95,7 +95,7 @@ Refer to the link:https://docs.aws.amazon.com/AmazonECS/latest/developerguide/us
 
 === On-Premises solutions
 
-If you are using your own infrastructure or for some reason cannot use the service offered by your provider, you can always use some on-premises distributed logging system.
+If using a specific infrastructure such as your own or for some reason cannot use the service offered by a provider, some on-premises distributed logging system can be used.
 
 There are a lot of solutions available, including:
 
@@ -115,7 +115,7 @@ It uses a dedicated link:https://docs.docker.com/config/containers/logging/gelf[
 
 The example configuration uses Fluentd, Elasticsearch, and Kibana to capture logs from Docker.
 
-Before running {pluginname} On-Premises, you have to prepare the logging services. For the purposes of this example, Docker Compose is used. Create the fluentd, elasticsearch and kibana services inside the docker-compose.yml file:
+Before running {pluginname} On-Premises, prepare the logging services. For the purposes of this example, Docker Compose is used. Create the fluentd, elasticsearch and kibana services inside the docker-compose.yml file:
 
 [source, yaml]
 ----
@@ -144,7 +144,7 @@ services:
       - "5601:5601"
 ----
 
-To integrate Fluentd with Elasticsearch, you first need to install `fluent-plugin-elasticsearch` in the Fluentd image. To do this, create a `fluentd/Dockerfile` with the following content:
+To integrate Fluentd with Elasticsearch, first install `fluent-plugin-elasticsearch` in the Fluentd image. To do this, create a `fluentd/Dockerfile` with the following content:
 
 [source, dockerfile]
 ----
@@ -186,14 +186,14 @@ Next, configure the input server and connection to Elasticsearch in the `fluentd
 </match>
 ----
 
-Now you are ready to run the services:
+The services are now ready to run:
 
 [source, bash]
 ----
 docker-compose up --build
 ----
 
-When the services are ready, you can finally start {pluginname} On-Premises.
+When the services are ready, start {pluginname} On-Premises.
 
 [source, bash, subs="attributes+"]
 ----
@@ -204,8 +204,8 @@ docker run --init -p 8080:8080 \
 {dockerimageexporttopdf}:[version]
 ----
 
-* Now open Kibana in your browser.
+* Open Kibana in your browser.
 ** It is available at link:http://localhost:5601/[http://localhost:5601/].
-* In the first run, you may be asked about creating an index.
+* During the first run, you may be asked about creating an index.
 * Use the `fluentd-*` pattern and press the “Create” button.
-* After this step, your logs should appear in the “Discover” tab.
+* After this step, the logs should appear in the “Discover” tab.

@@ -1,7 +1,7 @@
 [[requirements]]
 == Requirements
 
-To run {pluginname} On-Premises a Docker environment is required. Alternatively, you can use CaaS available from your cloud provider, like AWS ECS, Google GKE, or Azure ACS.
+To run {pluginname} On-Premises a Docker environment is required. Alternatively, use CaaS available from your cloud provider, like AWS ECS, Google GKE, or Azure ACS.
 
 There are many factors affecting {pluginname} On-Premises performance. The most influential are the size of exported content, the size of images, and the number of concurrent requests. Also, because your application can prioritize fast response times, or it should handle high load, it is impossible to provide one recommended server specification, that will fit all use cases.
 
@@ -15,7 +15,7 @@ Assuming response time below 10 seconds, one server (2CPU 2GB RAM) with 1 docker
 
 === High availability
 
-One docker container with {pluginname} On-Premises benefits from additional CPUs on the machine. To scale your app on a single machine, you can increase the number of CPUs, however, we recommend scaling on at least three hosts to ensure the reliability of the system.
+One docker container with {pluginname} On-Premises benefits from additional CPUs on the machine. To scale your app on a single machine, increase the number of CPUs, however, {productname} recommends scaling on at least three hosts to ensure the reliability of the system.
 
 A load balancer, like HAProxy or NGINX (see the load balancer configuration examples in the SSL communication guide), is required for scaling on several machines. Of course, it is possible to use any cloud provider for scaling, like Amazon ECS, Azure Container Instances, or Kubernetes.
 

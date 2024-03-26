@@ -6,9 +6,9 @@ The {pluginname} On-Premises converter provides the ability to convert an HTML d
 The API is available on `http://localhost:[port]` (by default the `port` is `8080`).
 
 > The REST API documentation is available at `http://localhost:[port]/docs`.
-Alternatively, you can check the specifications in our public resources link:https://exportpdf.converter.tiny.cloud/docs[https://exportpdf.converter.tiny.cloud/docs^].
+Alternatively, refer to the specifications in link:https://exportpdf.converter.tiny.cloud/docs[https://exportpdf.converter.tiny.cloud/docs^].
 
-If you have the authorization for the API enabled, you should provide an authorization token. More instructions you can find in the xref:individual-export-to-pdf-on-premises.adoc#authorization[authorization] section.
+If the authorization for the API is enabled, provided an authorization token. More instructions can be found in the xref:individual-export-to-pdf-on-premises.adoc#authorization[authorization] section.
 
 === Using additional HTTP headers
 
@@ -37,4 +37,5 @@ axios.post( '{exportpdf_service_url}', data, config )
   });
 ----
 
+[TIP]
 Headers defined in the application config and from the request are merged. If the same header is defined in both places, a header value from PDF options is prioritized over the value from the application config.

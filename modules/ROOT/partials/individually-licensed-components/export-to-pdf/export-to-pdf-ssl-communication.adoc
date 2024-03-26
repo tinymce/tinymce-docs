@@ -1,9 +1,9 @@
 [[ssl-communication]]
 == SSL Communication
 
-You can communicate with {pluginname} On-Premises using secure connections. To achieve this, you need to set up a load balancer like `NGINX` or `HAProxy` with your SSL certificate.
+Its possible to communicate with {pluginname} On-Premises using secure connections. To achieve this, the load balancer like `NGINX` or `HAProxy` needs to be setup with your SSL certificate.
 
-You can find `HAProxy` and `NGINX` configuration examples below.
+`HAProxy` and `NGINX` configuration examples below.
 
 === HAProxy example
 

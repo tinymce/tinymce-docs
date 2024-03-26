@@ -183,8 +183,7 @@ npm install --save tinymce @tinymce/tinymce-react raw-loader
 import { Editor } from '@tinymce/tinymce-react';
 
 // TinyMCE so the global var exists
-// eslint-disable-next-line no-unused-vars
-import tinymce from 'tinymce/tinymce';
+import 'tinymce/tinymce';
 // DOM model
 import 'tinymce/models/dom/model'
 // Theme

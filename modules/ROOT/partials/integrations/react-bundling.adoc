@@ -5,8 +5,7 @@
 import { Editor } from '@tinymce/tinymce-react';
 
 // TinyMCE so the global var exists
-// eslint-disable-next-line no-unused-vars
-import tinymce from 'tinymce/tinymce';
+import 'tinymce/tinymce';
 
 // Theme
 import 'tinymce/themes/silver';

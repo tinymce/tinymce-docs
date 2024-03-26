@@ -4,7 +4,7 @@ ifeval::["{productUse}" == "bundle"]
 IMPORTANT: {companyname} does not recommend bundling the `tinymce` package. Bundling {productname} can be complex and error prone.
 
 endif::[]
-The https://github.com/tinymce/tinymce-react[Official {productname} React component] integrates {productname} into React projects. This procedure creates a https://github.com/facebook/create-react-app[basic React application] containing a {productname} editor.
+The https://github.com/tinymce/tinymce-react[Official {productname} React component] integrates {productname} into React projects. This procedure creates a https://github.com/vitejs/vite-plugin-react-swc[basic React application] containing a {productname} editor.
 
 For examples of the {productname} integration, visit https://tinymce.github.io/tinymce-react/[the tinymce-react storybook].
 
@@ -14,11 +14,11 @@ This procedure requires https://nodejs.org/[Node.js (and npm)].
 
 == Procedure
 
-. Use the https://github.com/facebook/create-react-app[Create React App] package to create a new React project named `+tinymce-react-demo+`.
+. Use the https://github.com/vitejs/vite[Vite] package and the https://github.com/vitejs/vite-plugin-react-swc[React SWC plugin] to create a new React + Typescript project named `+tinymce-react-demo+`. You can also use the `react-swc` template, if you don't wish to use Typescript.
 +
 [source,sh]
 ----
-npx create-react-app tinymce-react-demo
+npm create vite@5 tinymce-react-demo -- --template react-swc-ts
 ----
 . Change to the newly created directory.
 +
@@ -28,16 +28,16 @@ cd tinymce-react-demo
 ----
 
 ifeval::["{productSource}" == "cloud"]
-. Install the `+tinymce-react+` package and save it to your `+package.json+` with `+--save+`.
+. Install the `+@tinymce/tinymce-react+` package and save it to your `+package.json+` with `+--save+`.
 +
 [source,sh]
 ----
 npm install --save @tinymce/tinymce-react
 ----
 
-. Using a text editor, open `+./src/App.js+` and replace the contents with:
+. Using a text editor, open `+./src/App.tsx+` and replace the contents with:
 +
-[source,jsx]
+[source,tsx]
 ----
 import React, { useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';

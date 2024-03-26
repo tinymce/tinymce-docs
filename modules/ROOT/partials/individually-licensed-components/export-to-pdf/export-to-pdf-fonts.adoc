@@ -53,7 +53,7 @@ docker run --init -v ~/your_fonts_dir:/usr/share/fonts/your_fonts_dir -p 8080:80
 
 If you want to use Windows fonts like Arial, Verdana, etc. in your PDF files, you can use `pdf-converter-windows` Docker image that allows you to run the application on a machine with Windows operating system and mount fonts from the system.
 
-You just need to run `docker.cke-cs.com/pdf-converter-windows` Docker image on Windows operating system and mount `C:\Windows\Fonts:C:\Windows\Fonts` volume.
+You just need to run `{dockerimagewindowsexporttopdf}` Docker image on Windows operating system and mount `C:\Windows\Fonts:C:\Windows\Fonts` volume.
 
 Launch the Docker container on Windows operating system example:
 

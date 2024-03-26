@@ -39,7 +39,7 @@ npm install --save @tinymce/tinymce-react
 +
 [source,jsx]
 ----
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 
 export default function App() {
@@ -53,7 +53,7 @@ export default function App() {
     <>
       <Editor
         apiKey='your-api-key'
-        onInit={(evt, editor) => editorRef.current = editor}
+        onInit={(_evt, editor) => editorRef.current = editor}
         initialValue="<p>This is the initial content of the editor.</p>"
         init={{
           height: 500,
@@ -82,7 +82,7 @@ This JavaScript file will create a component "`+App+`" containing a {productname
 endif::[]
 ifeval::["{productSource}" == "package-manager"]
 ifeval::["{productUse}" == "host"]
-. Install the `+tinymce+`, `+tinymce-react+` and `+fs-extra+` packages and save them to your `+package.json+` with `+--save+`.
+. Install the `+tinymce+`, `+@tinymce/tinymce-react+` and `+fs-extra+` packages and save them to your `+package.json+` with `+--save+`.
 +
 [source,sh]
 ----
@@ -127,11 +127,11 @@ fse.copySync(path.join(topDir, 'node_modules', 'tinymce'), path.join(topDir, 'pu
 npm run postinstall
 ----
 
-. Using a text editor, open `+./src/App.js+` and replace the contents with:
+. Using a text editor, open `+./src/App.jsx+` and replace the contents with:
 +
 [source,jsx]
 ----
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 
 export default function App() {
@@ -145,7 +145,7 @@ export default function App() {
     <>
       <Editor
         tinymceScriptSrc={process.env.PUBLIC_URL + '/tinymce/tinymce.min.js'}
-        onInit={(evt, editor) => editorRef.current = editor}
+        onInit={(_evt, editor) => editorRef.current = editor}
         initialValue='<p>This is the initial content of the editor.</p>'
         init={{
           height: 500,
@@ -169,14 +169,14 @@ export default function App() {
 ----
 endif::[]
 ifeval::["{productUse}" == "bundle"]
-. Install the `+tinymce+`, `+tinymce-react+` and `+raw-loader+` packages and save them to your `+package.json+` with `+--save+`.
+. Install the `+tinymce+`, `+@tinymce/tinymce-react+` and `+raw-loader+` packages and save them to your `+package.json+` with `+--save+`.
 +
 [source,sh]
 ----
 npm install --save tinymce @tinymce/tinymce-react raw-loader
 ----
 
-. Using a text editor, create `+./src/BundledEditor.js+` and set the contents to:
+. Using a text editor, create `+./src/BundledEditor.jsx+` and set the contents to:
 +
 [source,jsx]
 ----
@@ -251,11 +251,11 @@ export default function BundledEditor(props) {
 }
 ----
 
-. Using a text editor, open `+./src/App.js+` and replace the contents with:
+. Using a text editor, open `+./src/App.jsx+` and replace the contents with:
 +
 [source,jsx]
 ----
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import BundledEditor from './BundledEditor'
 
 export default function App() {
@@ -268,7 +268,7 @@ export default function App() {
   return (
     <>
       <BundledEditor
-        onInit={(evt, editor) => editorRef.current = editor}
+        onInit={(_evt, editor) => editorRef.current = editor}
         initialValue='<p>This is the initial content of the editor.</p>'
         init={{
           height: 500,
@@ -293,7 +293,7 @@ endif::[]
 endif::[]
 ifeval::["{productSource}" == "zip"]
 ifeval::["{productUse}" == "host"]
-. Install the `+tinymce-react+` package and save it to your `+package.json+` with `+--save+`.
+. Install the `+@tinymce/tinymce-react+` package and save it to your `+package.json+` with `+--save+`.
 +
 [source,sh]
 ----
@@ -342,7 +342,7 @@ export default function App() {
     <>
       <Editor
         tinymceScriptSrc={process.env.PUBLIC_URL + '/tinymce/tinymce.min.js'}
-        onInit={(evt, editor) => editorRef.current = editor}
+        onInit={(_evt, editor) => editorRef.current = editor}
         initialValue='<p>This is the initial content of the editor.</p>'
         init={{
           height: 500,
@@ -375,7 +375,7 @@ npm run eject
 +
 Press 'y' when prompted.
 
-. Install the `+tinymce-react+`, `+raw-loader+` and `+script-loader+` packages and save them to your `+package.json+` with `+--save+`.
+. Install the `+@tinymce/tinymce-react+`, `+raw-loader+` and `+script-loader+` packages and save them to your `+package.json+` with `+--save+`.
 +
 [source,sh]
 ----
@@ -577,7 +577,7 @@ export default function App() {
   return (
     <>
       <BundledEditor
-        onInit={(evt, editor) => editorRef.current = editor}
+        onInit={(_evt, editor) => editorRef.current = editor}
         initialValue='<p>This is the initial content of the editor.</p>'
         init={{
           height: 500,

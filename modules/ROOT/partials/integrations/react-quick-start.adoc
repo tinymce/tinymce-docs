@@ -14,11 +14,11 @@ This procedure requires https://nodejs.org/[Node.js (and npm)].
 
 == Procedure
 
-. Use the https://github.com/vitejs/vite[Vite] package and the https://github.com/vitejs/vite-plugin-react-swc[React SWC plugin] to create a new React + Typescript project named `+tinymce-react-demo+`. You can also use the `react-swc` template, if you don't wish to use Typescript.
+. Use the https://github.com/vitejs/vite[Vite] package and the https://github.com/vitejs/vite-plugin-react-swc[React SWC plugin] to create a new React project named `+tinymce-react-demo+`.
 +
 [source,sh]
 ----
-npm create vite@5 tinymce-react-demo -- --template react-swc-ts
+npm create vite@5 tinymce-react-demo -- --template react-swc
 ----
 . Change to the newly created directory.
 +
@@ -35,9 +35,9 @@ ifeval::["{productSource}" == "cloud"]
 npm install --save @tinymce/tinymce-react
 ----
 
-. Using a text editor, open `+./src/App.tsx+` and replace the contents with:
+. Using a text editor, open `+./src/App.jsx+` and replace the contents with:
 +
-[source,tsx]
+[source,jsx]
 ----
 import React, { useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';

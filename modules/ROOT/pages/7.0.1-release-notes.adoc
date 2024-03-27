@@ -72,6 +72,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+==== Encoding header of Table of Contents causing HTML source to be revealed on refresh.
+// #TINY-10682
+
+Previously in {productname}, the table of contents header was encoded, resulting in an incorrect display. The header should render as HTML, not as the underlying code.
+
+To address this issue, the HTML encoding has been removed. As a result, the table of contents header now renders correctly as HTML, displaying as intended.
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

@@ -33,6 +33,7 @@ These release notes provide an overview of the changes for {productname} 7.0, in
 * xref:changes[Changes]
 * xref:removed[Removed]
 * xref:bug-fixes[Bug fixes]
+* xref:security-fixes[Security fixes]
 * xref:known-issues[Known issues]
 
 [NOTE]
@@ -791,6 +792,43 @@ As a consequence, after pasting, the cursor remained in the same position instea
 
 Now, when using the `mceTablePasteRowAfter` command, `mceTablePasteColAfter` command, or `"Paste row after"` and `"Paste column after"` UI menu items, the cursor is correctly positioned in the newly pasted row or column as expected.
 
+[[security-fixes]]
+== Security fixes
+
+{productname} 7.0.0 includes two fixes for the following security issues:
+
+=== {productname} Cross-Site Scripting (XSS) vulnerability in handling iframes
+
+A cross-site scripting (XSS) vulnerability was discovered in {productname}'s content insertion code. This allowed `iframe` elements containing malicious code to execute when inserted into the editor. These `iframe` elements are restricted in their permissions by same-origin browser protections, but could still trigger operations such as downloading of malicious assets.
+
+{productname} 6.8.1 introduced a new xref:content-filtering.adoc#sandbox-iframes[sandbox iframes] boolean option which adds the `sandbox=""` attribute to every `iframe` element by default when enabled. This will prevent cross-origin, and in special cases same-origin, XSS by embedded resources in `iframe` elements. From {productname} 7.0.0 onwards the default value of this option is `true`.
+
+In {productname} 7.0.0 a new xref:content-filtering.adoc#sandbox-iframes-exclusions[`+sandbox_iframes_exclusions+`] option was also added, allowing a list of domains to be specified that should be excluded from having the `sandbox=""` attribute applied when the `sandbox_iframes` option is enabled. By default, this option is set to an array of domains that are provided in embed code by popular websites. To sandbox iframe elements from every domain, set this option to [].
+
+CVE: link:https://nvd.nist.gov/vuln/detail/CVE-2024-29203[CVE-2024-29203]
+
+GHSA: https://github.com/tinymce/tinymce/security/advisories/GHSA-438c-3975-5x3f[GitHub Advisory].
+ 
+
+[NOTE]
+The HTTP Content-Security-Policy (CSP) `frame-src` or `object-src` can be configured to restrict or block the loading of unauthorized URLS. Refer to the xref:tinymce-and-csp.adoc[TinyMCE Content Security Policy Guide].
+
+=== {productname} Cross-Site Scripting (XSS) vulnerability in handling external SVG files through Object or Embed elements
+
+A link:https://owasp.org/www-community/attacks/xss/[cross-site scripting (XSS)] vulnerability was discovered in {productname}'s content loading and content inserting code. A SVG image could be loaded though an `object` or `embed` element and that image could potentially contain a XSS payload.
+
+{productname} 6.8.1 introduced a new xref:content-filtering.adoc#convert-unsafe-embeds[convert_unsafe_embeds] option to automatically convert `object` and `embed` elements respective of their type attribute. From {productname} 7.0.0 onwards, the `convert_unsafe_embeds` option is enabled by default.
+
+[NOTE]
+If you are using {productname} 6.8.1 or higher, set `convert_unsafe_embeds` to `true`. For any earlier versions, a custom NodeFilter is recommended to remove or modify any `object` or `embed` elements. This can be added using the `editor.parser.addNodeFilter` and `editor.serializer.addNodeFilter` APIs.
+
+CVE: link:https://nvd.nist.gov/vuln/detail/CVE-2024-29881[CVE-2024-29881]
+
+GHSA: https://github.com/tinymce/tinymce/security/advisories/GHSA-5359-pvf2-pw78[GitHub Advisory].
+ 
+NOTE: Tiny Technologies would like to thank Toni Huttunen of link:https://www.fraktal.fi/[Fraktal Oy] for discovering this vulnerability.
+
+
 [[known-issues]]
 == Known issues
 
@@ -829,6 +867,19 @@ Keyboard navigation is essential for accessibility. While tab-key navigation is 
 
 Setting this checkbox will ensure Safari functions properly with tab-key navigation through browser elements.
 ====
+
+=== Incorrect text color display with {productname} `+skin: 'oxide-dark'+`.
+
+Enhanced Code Editor currently has an issue with the display of text color when {productname} is set to `+skin: 'oxide-dark'+`. When this setting is applied, the text color inside the Enhanced Code Editor does not display correctly.
+
+Workaround:
+
+. Open the Advanced Code (advcode) dialog.
+. Click on the `Dark/light mode` button within the dialog.
+.. This action will set the text color to white on a black background, resolving the display issue temporarily.
+
+[NOTE]
+This workaround serves as a temporary solution until a permanent fix is implemented.
 
 === Table that has `colgroup` attribute is highlighted as new in Revision History.
 

@@ -1,7 +1,7 @@
 [[sandbox-iframes]]
 == `sandbox_iframes`
 
-This option allows control of whether `<iframe>` elements are [sandboxed](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox) when inserted into the editor. When enabled, all `<iframe>` elements will be given the `sandbox=""` attribute, applying all restrictions.
+This option allows control of whether `<iframe>` elements are link:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox[sandboxed] when inserted into the editor. When enabled, all `<iframe>` elements will be given the `sandbox=""` attribute, applying all restrictions.
 
 *Type:* `+Boolean+`
 

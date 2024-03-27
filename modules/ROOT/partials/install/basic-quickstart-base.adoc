@@ -30,7 +30,7 @@ ifeval::["{productSource}" != "cloud"]
 :scriptsource: /path/or/uri/to/tinymce.min.js
 endif::[]
 
-== Install TinyMCE using {sourcename}
+== Install {productname} using {sourcename}
 
 {productname} {productmajorversion} is a powerful and flexible rich text editor that can be embedded in web applications. This quick start covers how to add a {productname} editor to a web page using {sourcename}.
 
@@ -91,14 +91,14 @@ To add {productname} to a .NET project, run the following on a command line:
 +
 [source,sh]
 ----
-Install-Package TinyMCE
+Install-Package {productname}
 ----
 
 * Using the `+dotnet+` CLI, run the following:
 +
 [source,sh]
 ----
-dotnet add package TinyMCE
+dotnet add package {productname}
 ----
 
 Ensure the `+tinymce+` directory containing the `+tinymce.min.js+` file is accessible for the target page or application by either:
@@ -123,7 +123,7 @@ The location of the main {productname} script will be: `+/path/to/webserver/publ
 
 endif::[]
 
-== Include the TinyMCE script
+== Include the {productname} script
 
 Include the following line of code in the `+<head>+` of an HTML page.
 
@@ -132,7 +132,7 @@ Include the following line of code in the `+<head>+` of an HTML page.
 <script src="{scriptsource}" referrerpolicy="origin"></script>
 ----
 
-== Initialize TinyMCE as part of a web form
+== Initialize {productname} as part of a web form
 
 Initialize {productname} {productmajorversion} on any element (or elements) on the web page by passing an object containing a `+selector+` value to `+tinymce.init()+`. The `+selector+` value can be any valid https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors[CSS selector].
 
@@ -140,6 +140,7 @@ For example: To replace `+<textarea id="mytextarea">+` with a {productname} {pro
 
 For example:
 
+ifeval::["{productSource}" == "cloud"]
 [source,html,subs="attributes+"]
 ----
 <!DOCTYPE html>
@@ -164,12 +165,41 @@ For example:
   </body>
 </html>
 ----
+endif::[]
 
-Adding this content to an HTML file and opening it in a web browser will load a TinyMCE editor, such as:
+ifeval::["{productSource}" != "cloud"]
+[source,html,subs="attributes+"]
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="{scriptsource}" referrerpolicy="origin"></script>
+    <script>
+      tinymce.init({
+        selector: '#mytextarea',
+        license_key: 'gpl|<your-license-key>'
+      });
+    </script>
+  </head>
+
+  <body>
+    <h1>{productname} Quick Start Guide</h1>
+    <form method="post">
+      <textarea id="mytextarea">Hello, World!</textarea>
+    </form>
+  </body>
+</html>
+----
+endif::[]
+
+Adding this content to an HTML file and opening it in a web browser will load a {productname} editor, such as:
 
 liveDemo::default[]
-ifeval::["{productSource}" == "cloud"]
 
+ifeval::["{productSource}" == "cloud"]
 == Add your API key
 
 To remove the notice:
@@ -179,6 +209,12 @@ To remove the notice:
 Replace `+no-api-key+` in the source script (`+<script src=...+`) with a {cloudname} API key, which is created when signing up to the link:{accountsignup}/[{cloudname}].
 
 Signing up for a {cloudname} API key will also provide a trial of the xref:plugins.adoc#premium-plugins[Premium Plugins].
+endif::[]
+
+ifeval::["{productSource}" != "cloud"]
+include::partial$misc/setting-the-license.adoc[]
+
+For more information on licensing, see the xref:license-key.adoc[License Key] guide.
 endif::[]
 
 == Save the content from the editor

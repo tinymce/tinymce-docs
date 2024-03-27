@@ -1,0 +1,19 @@
+== Setting the license
+
+=== Use {productname} with the GPLv2+ license:
+
+If the developer intends to self-host {productname} under the GPL license, they can set the `license_key` config option to 'gpl'. Case sensitivity does not matter.
+
+==== Example
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  license_key: 'gpl'
+});
+----
+
+=== Use {productname} with a commercial license:
+
+If the developer intends to self-host {productname} under a commercial license, they must provide a valid license key. Customers who have purchased a self-hosted-eligible license for {productname} will find their license key in the account portal. To purchase a commercial license, see available options on the link:{pricingpage}/[pricing page].

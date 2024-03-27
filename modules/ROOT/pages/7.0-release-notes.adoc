@@ -822,7 +822,7 @@ A link:https://owasp.org/www-community/attacks/xss/[cross-site scripting (XSS)] 
 [NOTE]
 If you are using {productname} 6.8.1 or higher, set `convert_unsafe_embeds` to `true`. For any earlier versions, a custom NodeFilter is recommended to remove or modify any `object` or `embed` elements. This can be added using the `editor.parser.addNodeFilter` and `editor.serializer.addNodeFilter` APIs.
 
-CVE: TBA.
+CVE: link:https://nvd.nist.gov/vuln/detail/CVE-2024-29881[CVE-2024-29881]
 
 GHSA: https://github.com/tinymce/tinymce/security/advisories/GHSA-5359-pvf2-pw78[GitHub Advisory].
  

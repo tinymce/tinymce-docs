@@ -18,7 +18,7 @@ If the `SECRET_KEY` variable is set, then all requests must have a header with a
 
 Tokens for the {pluginname} On-Premises do not require any additional claims such as the environment ID (which is specific for Collaboration Server On-Premises), the token can be created with an empty payload.
 
-If the specific use case involves sending requests from a backend server, then JWT tokens can be generated locally, as showm in the below request example.
+If the specific use case involves sending requests from a backend server, then JWT tokens can be generated locally, as shown in the below request example.
 
 In the case of editor plugins or other frontend usages, a token endpoint should be created, that returns a valid JWT token for authorized users.
 

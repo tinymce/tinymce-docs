@@ -154,13 +154,14 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Encode header title for literal display in table of contents.
+// #TINY-10789
 
-// CCFR here.
+Previously in {productname}, during Table of Contents (ToC) generation, heading elements containing HTML tags such as `<i>` for italics were incorrectly rendered within the ToC itself.
 
+{productname} {release-version} addresses this issue by encoding the heading element during ToC generation. This ensures that any HTML tags present within the heading element are treated as plain text and displayed literally.
 
 [[security-fixes]]
 == Security fixes

@@ -1,9 +1,9 @@
 = {productname} {release-version}
+:release-version: <x.y[.z]>
 :navtitle: {productname} {release-version}
 :description: Release notes for {productname} {release-version}
 :keywords: releasenotes, new, changes, bugfixes
 :page-toclevels: 1
-:release-version: <x.y[.z]>
 
 include::partial$misc/admon-releasenotes-for-stable.adoc[]
 

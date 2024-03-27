@@ -805,7 +805,7 @@ A cross-site scripting (XSS) vulnerability was discovered in {productname}'s con
 
 In {productname} 7.0.0 a new xref:content-filtering.adoc#sandbox-iframes-exclusions[`+sandbox_iframes_exclusions+`] option was also added, allowing a list of domains to be specified that should be excluded from having the `sandbox=""` attribute applied when the `sandbox_iframes` option is enabled. By default, this option is set to an array of domains that are provided in embed code by popular websites. To sandbox iframe elements from every domain, set this option to [].
 
-CVE: TBA.
+CVE: link:https://nvd.nist.gov/vuln/detail/CVE-2024-29203[CVE-2024-29203]
 
 GHSA: https://github.com/tinymce/tinymce/security/advisories/GHSA-438c-3975-5x3f[GitHub Advisory].
  

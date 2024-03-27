@@ -13,7 +13,8 @@
     "generate-site": "./-scripts/generate-site.sh",
     "nodemon-dev": "nodemon --exec yarn generate-site ./antora-playbook-dev.yml",
     "server": "http-server build/site/ --port 4000",
-    "serve": "npm-run-all -p nodemon-dev server"
+    "serve": "npm-run-all -p nodemon-dev server",
+    "new-plugin": "./-scripts/new-plugin.sh"
   },
   "author": "Tiny Technologies Inc",
   "license": "CC-BY-NC-SA-3.0",

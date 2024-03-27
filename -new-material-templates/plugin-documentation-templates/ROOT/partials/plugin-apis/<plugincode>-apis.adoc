@@ -2,18 +2,14 @@
 |===
 |Name   |Arguments    |Description
 
-// Four boilerplate rows.
 |<api1> |<arguments1> |<What api1 does>
-|<api2> |<arguments2> |<What api2 does>
-|<api3> |<arguments3> |<What api3 does>
 // Markup to add a ‘requires this version of TinyMCE’ admonition into its own row
 // immediately above the event requiring such a notice.
 // If not needed, remove the markup and this comment.
 // If needed, edit the file-name and remove this comment.
 3+|
 include::partial$misc/admon-requires-<version.version>v.adoc[]
-|<api4> |<arguments4> |<What api4 does>
-|<apin> |<argumentsn> |<What apin does>
+|<api2> |<arguments2> |<What api2 does>
 |===
 
 .Examples
@@ -24,15 +20,4 @@ tinymce.activeEditor.plugins.<plugincode>.<api1>(<arguments1>);
 
 // what this example does
 tinymce.activeEditor.plugins.<plugincode>.<api2>(<arguments2>);
-
-// what this example does
-tinymce.activeEditor.plugins.<plugincode>.<api3>(<arguments3>);
-
-// what this example does
-tinymce.activeEditor.plugins.<plugincode>.<api4>(<arguments4>);
-
-// what this example does
-tinymce.activeEditor.plugins.<plugincode>.<apin>(<argumentsn>);
 ----
-
-// Remove all comment lines and comment blocks before publishing.

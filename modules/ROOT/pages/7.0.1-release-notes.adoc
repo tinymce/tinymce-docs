@@ -60,6 +60,23 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== Revision History
+
+The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
+
+This **Revision History** release includes the following fix.
+
+==== Reduce the chance of diff stylings being overridden by inline stylings.
+// #TINY-10785
+
+Previously in {productname}, the inline CSS styles of content took precedence over the diff annotation styles. As a consequence, the changes highlighted were not distinguishable to the users.
+
+{productname} {release-version} addresses this issue by adding  an `!important` declaration to the default annotation styles. As a result, the annotation styling properties will take precedence over the inline styles, ensuring that the changes are clearly visible to the users.
+
+NOTE: This fix assumes that the inline styles are not using `!important` declarations. If the inline styles are using `!important` declarations, the annotation styles will be overridden.
+
+For information on the **Revision History** plugin, see: xref:revisionhistory.adoc[Revision History].
+
 === <Premium plugin name 1> <Premium plugin name 1 version>
 
 The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

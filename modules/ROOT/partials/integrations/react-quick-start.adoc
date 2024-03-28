@@ -95,9 +95,9 @@ npm install --save tinymce @tinymce/tinymce-react fs-extra
 .postinstall.js
 [source,js]
 ----
-const fse = require('fs-extra');
-const path = require('path');
-const topDir = __dirname;
+import fse from 'fs-extra';
+import path from 'path';
+const topDir = import.meta.dirname;
 fse.emptyDirSync(path.join(topDir, 'public', 'tinymce'));
 fse.copySync(path.join(topDir, 'node_modules', 'tinymce'), path.join(topDir, 'public', 'tinymce'), { overwrite: true });
 ----
@@ -146,7 +146,8 @@ export default function App() {
   return (
     <>
       <Editor
-        tinymceScriptSrc={process.env.PUBLIC_URL + '/tinymce/tinymce.min.js'}
+        tinymceScriptSrc='/tinymce/tinymce.min.js'
+        licenseKey='your-license-key'
         onInit={(_evt, editor) => editorRef.current = editor}
         initialValue='<p>This is the initial content of the editor.</p>'
         init={{
@@ -169,6 +170,9 @@ export default function App() {
   );
 }
 ----
+
+. Update the `+licenseKey+` option in the editor element and include your xref:license-key.adoc[License Key].
+
 endif::[]
 ifeval::["{productUse}" == "bundle"]
 . Install the `+tinymce+` and `+@tinymce/tinymce-react+` packages and save them to your `+package.json+` with `+--save+`.

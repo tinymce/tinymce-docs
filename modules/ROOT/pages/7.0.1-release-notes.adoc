@@ -60,6 +60,21 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== Markdown
+
+The {productname} {release-version} release includes an accompanying release of the **Markdown** premium plugin.
+
+This **Markdown** release includes the following fixes and improvements.
+
+==== Pasting markdown into some situations would cause the pasted data to be placed in unexpected places.
+// #TINY-10766
+
+Previously in the **Markdown** plugin, the "markdown-on-paste" feature used the `editor.selection.setContent` function to insert content into the {productname} editor. However, this approach resulted in unexpected cursor behavior, undo levels, and formatting issues.
+
+{productname} {release-version} addresses this issue by changing the "markdown-on-paste" feature to use the `editor.insertContent` function instead. As a result, pasted markdown content is now properly formatted as intended and placed in the correct location.
+
+For information on the **Markdown** plugin, see: xref:markdown.adoc[Markdown].
+
 === <Premium plugin name 1> <Premium plugin name 1 version>
 
 The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

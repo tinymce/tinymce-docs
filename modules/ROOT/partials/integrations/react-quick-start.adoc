@@ -243,6 +243,7 @@ export default function BundledEditor(props) {
   // loading process and is instead loaded as a string via content_style
   return (
     <Editor
+      licenseKey="your-license-key"
       init={{
         ...init,
         skin: false,
@@ -254,6 +255,8 @@ export default function BundledEditor(props) {
   );
 }
 ----
+
+. Update the `+licenseKey+` option in the editor element and include your xref:license-key.adoc[License Key].
 
 . Using a text editor, open `+./src/App.jsx+` and replace the contents with:
 +

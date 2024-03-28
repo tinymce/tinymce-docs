@@ -41,6 +41,7 @@ npm install --save @tinymce/tinymce-react
 ----
 import { useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
+import './App.css';
 
 export default function App() {
   const editorRef = useRef(null);
@@ -133,6 +134,7 @@ npm run postinstall
 ----
 import { useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
+import './App.css';
 
 export default function App() {
   const editorRef = useRef(null);
@@ -328,6 +330,7 @@ public
 ----
 import React, { useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
+import './App.css';
 
 export default function App() {
   const editorRef = useRef(null);

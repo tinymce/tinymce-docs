@@ -75,9 +75,21 @@ For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode
 ==== Encoding header of Table of Contents causing HTML source to be revealed on refresh.
 // #TINY-10682
 
-Previously in {productname}, the table of contents header was encoded, resulting in an incorrect display. The header should render as HTML, not as the underlying code.
+Previously in {productname}, the **Table of Contents** (ToC) header was encoded on refresh before being displayed in the editor. This resulted in the header being incorrectly shown as the underlying code literally, instead of being rendered as HTML.
 
-To address this issue, the HTML encoding has been removed. As a result, the table of contents header now renders correctly as HTML, displaying as intended.
+To address this issue, the HTML encoding has been removed. As a result, the ToC header now renders correctly as HTML even after refreshing, displaying as intended.
+
+For example, if the **Table of Contents** (ToC) header contained the following HTML code with "_Contents_" emphasized as follows:
+
+*`Table of _Contents_`*
+
+Upon refreshing the ToC, the header would change to display the HTML tags literally, as follows:
+
+*`Table of <em>Contents</em>`*
+
+Now, the header maintains the intended HTML rendering even after refreshing:
+
+*`Table of _Contents_`*
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]

@@ -154,12 +154,14 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== The status bar was invisible when the editor's height was set to the minimum.
+// #TINY-10705
 
-// CCFR here.
+In a previous {productname} release, the status bar was moved inside the editor container. Consequently, when the editor's height was set to the minimum and the toolbar contained many buttons, the status bar would be hidden under the toolbar buttons.
+
+In {productname} {release-version}, this change is reverted by moving the status bar outside the editor. As a result, the status bar is now visible even when the editor's height is resized to the minimum.
 
 
 [[security-fixes]]

@@ -611,7 +611,7 @@ npm run dev
 
 == Deploying the application to a HTTP server
 
-The application will require further configuration before it can be deployed to a production environment. For information on configuring the application for deployment, see: https://create-react-app.dev/docs/deployment[Create React App - Deployment].
+The application will require further configuration before it can be deployed to a production environment. For information on configuring the application for deployment, see: https://vitejs.dev/guide/build[Building for Production] or https://vitejs.dev/guide/static-deploy.html[Deploying a Static Site].
 
 To deploy the application to a local HTTP Server:
 
@@ -621,7 +621,7 @@ To deploy the application to a local HTTP Server:
 ----
 npm run build
 ----
-. Copy the contents of the `+tinymce-react-demo/build+` directory to the root directory of the web server.
+. Copy the contents of the `+tinymce-react-demo/dist+` directory to the root directory of the web server.
 
 The application has now been deployed on the web server.
 
@@ -636,4 +636,4 @@ endif::[]
 * For information on customizing:
 ** {productname} integration, see: xref:react-ref.adoc[].
 ** {productname}, see: xref:basic-setup.adoc[].
-** The React application, see: https://create-react-app.dev/docs/getting-started[Create React App] or https://reactjs.org/docs/getting-started.html[the React documentation].
+** The React application, see: https://vitejs.dev/guide/#getting-started[Getting Started with Vite] or https://reactjs.org/docs/getting-started.html[the React documentation].

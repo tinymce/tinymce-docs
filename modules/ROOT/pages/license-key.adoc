@@ -14,16 +14,6 @@ This message will not be shown when loading {productname} from {cloudname}, as i
 
 include::partial$misc/setting-the-license.adoc[]
 
-==== Example
-
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  license_key: '<your-license-key>'
-});
-----
-
 == FAQ
 
 === What does the GPL license mean?

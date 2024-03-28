@@ -69,7 +69,7 @@ This **Revision History** release includes the following fix.
 ==== Reduce the chance of diff stylings being overridden by inline stylings.
 // #TINY-10785
 
-Previously in {productname}, the inline CSS styles of content took precedence over the diff annotation styles. As a consequence, the changes highlighted were not distinguishable to the users.
+Previously in **Revision History**, the inline CSS styles of content took precedence over the diff annotation styles. As a consequence, the changes highlighted were not distinguishable to the users.
 
 {productname} {release-version} addresses this issue by adding  an `!important` declaration to the default annotation styles. As a result, the annotation styling properties will take precedence over the inline styles, ensuring that the changes are clearly visible to the users.
 

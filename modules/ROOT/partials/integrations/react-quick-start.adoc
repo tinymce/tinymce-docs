@@ -630,6 +630,12 @@ To deploy the application to a local HTTP Server:
 ----
 npm run build
 ----
+. You can optionally preview the production build by running:
++
+[source,sh]
+----
+npm run preview
+----
 . Copy the contents of the `+tinymce-react-demo/dist+` directory to the root directory of the web server.
 
 The application has now been deployed on the web server.

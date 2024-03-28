@@ -336,7 +336,7 @@ public
 +
 [source,jsx]
 ----
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
 import './App.css';
 
@@ -572,7 +572,7 @@ export default function BundledEditor(props) {
 +
 [source,jsx]
 ----
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import BundledEditor from './BundledEditor'
 import './App.css';
 

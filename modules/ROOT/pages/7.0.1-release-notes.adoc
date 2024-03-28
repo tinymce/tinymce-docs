@@ -60,6 +60,21 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== Enhanced Code Editor
+
+The {productname} {release-version} release includes an accompanying release of the **Enhanced Code Editor** premium plugin.
+
+This **Enhanced Code Editor** release includes the following fixes.
+
+==== Light mode background with `advcode_inline: true` had the wrong color when {productname} was used with a dark skin.
+// #TINY-10760
+
+Previously in the **Enhanced Code Editor**, the `advcode` background color depended on the skin of the {productname} editor when `advcode_inline` was set to `true`. As a result, when {productname} was used with a dark skin, the `advcode` light mode would display dark text on a dark background.
+
+In {productname} {release-version}, this issue has been fixed. Now, when `advcode_inline` is set to `true`, the background for `advcode` light mode is set to white. As a result, the `advcode` light mode correctly displays dark text on a light background when {productname} is used with a dark skin.
+
+For information on the **Enhanced Code Editor** plugin, see: xref:advcode.adoc[Enhanced Code Editor].
+
 === <Premium plugin name 1> <Premium plugin name 1 version>
 
 The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

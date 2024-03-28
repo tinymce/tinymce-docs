@@ -261,6 +261,7 @@ export default function BundledEditor(props) {
 ----
 import { useRef } from 'react';
 import BundledEditor from './BundledEditor'
+import './App.css';
 
 export default function App() {
   const editorRef = useRef(null);
@@ -570,6 +571,7 @@ export default function BundledEditor(props) {
 ----
 import React, { useRef } from 'react';
 import BundledEditor from './BundledEditor'
+import './App.css';
 
 export default function App() {
   const editorRef = useRef(null);

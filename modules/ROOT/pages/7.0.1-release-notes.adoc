@@ -100,21 +100,17 @@ Now, the header maintains the intended HTML rendering even after refreshing:
 ==== Encode header title for literal display in Table of Contents.
 // #TINY-10789
 
-Previously in {productname}, during Table of Contents (ToC) generation, heading elements containing HTML tags such as `<i>` for italics were incorrectly rendered within the ToC itself.
+Previously in {productname}, during Table of Contents (ToC) generation, heading elements containing HTML tags such as `<em>` for italics were incorrectly rendered within the ToC itself.
 
 {productname} {release-version} addresses this issue by encoding the heading element during ToC generation. This ensures that any HTML tags present within the heading element are treated as plain text and displayed literally.
 
-For example, if a heading element contained the following content:
+For example, if your document contained a heading element with HTML tags as string in the heading content, the ToC would previously render the heading element as follows:
 
-*`My <em>Heading</em>`*
-
-Upon inserting or refreshing the ToC, the heading element within the ToC would be rendered as HTML, resulting in the following entry:
-
-*`Table of _Contents_`*
+liveDemo::tiny-10789-before[]
 
 Now, the ToC maintains the HTML tags within the heading element as plain text, matching the heading element itself:
 
-*`My <em>Heading</em>`*
+liveDemo::tiny-10789-after[]
 
 For information on the **Table of Contents** plugin, see: xref:tableofcontents.adoc[Table of Contents].
 

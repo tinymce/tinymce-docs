@@ -87,15 +87,15 @@ To address this issue, the HTML encoding has been removed. As a result, the ToC 
 
 For example, if the **Table of Contents** (ToC) header contained the following content with "_Contents_" emphasized as follows:
 
-*`Table of _Contents_`*
+liveDemo::tiny-10682-initial[]
 
-Upon refreshing the ToC, the header would change to display the HTML tags literally, as follows:
+Upon refreshing the ToC, the header would change to display the HTML tags literally, exposing the underlying HTML:
 
-*`Table of <em>Contents</em>`*
+liveDemo::tiny-10682-before[]
 
 Now, the header maintains the intended HTML rendering even after refreshing:
 
-*`Table of _Contents_`*
+liveDemo::tiny-10682-after[]
 
 ==== Encode header title for literal display in Table of Contents.
 // #TINY-10789

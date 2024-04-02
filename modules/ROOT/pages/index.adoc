@@ -1,7 +1,9 @@
-= TinyMCE 5 Documentation
+= {productname} {productmajorversion} Documentation
 :meta_description: Official documentation for the most advanced and widely deployed rich text editor platform.
 :meta_title: Documentation
 :type: index
+
+include::partial$misc/5x-end-of-support.adoc[]
 
 // 2 Columns, both asciidoc
 [cols=2*a]
@@ -11,31 +13,31 @@
 [.lead]
 xref:quick-start.adoc[Quick start]
 
-Setup a basic TinyMCE 5 editor using the Tiny Cloud.
+Setup a basic {productname} {productmajorversion} editor using the {cloudname}.
 
 |
 [.lead]
 xref:general-configuration-guide/basic-setup.adoc[Introduction & getting started]
 
-New to self-hosting TinyMCE? Start here.
+New to self-hosting {productname}? Start here.
 
 |
 [.lead]
 xref:cloud-deployment-guide/editor-and-features.adoc[Cloud deployment guide]
 
-Start here for Tiny Cloud.
+Start here for {cloudname}.
 
 |
 [.lead]
 xref:demo/basic-example.adoc[Examples]
 
-Working examples of TinyMCE's popular functionality.
+Working examples of {productname}'s popular functionality.
 
 |
 [.lead]
 xref:mobile.adoc[Mobile]
 
-The TinyMCE rich text editing experience for mobile devices.
+The {productname} rich text editing experience for mobile devices.
 
 |
 [.lead]
@@ -59,59 +61,61 @@ The configurable UI components available for customization.
 [.lead]
 xref:enterprise/index.adoc[Premium features]
 
-Premium features from the makers of TinyMCE.
+Premium features from the makers of {productname}.
 
 |
 [.lead]
-xref:tinydrive/introduction.adoc[Tiny Drive]
+xref:tinydrive/introduction.adoc[{cloudfilemanager}]
 
-Tiny Drive
+The {productname} file manager.
 
 |
 [.lead]
 xref:rtc/introduction.adoc[Real-time Collaboration (RTC)]
 
-The TinyMCE Real-time Collaboration plugin
+The {productname} Real-time Collaboration plugin.
 
 |
 [.lead]
 xref:advanced/index.adoc[Advanced topics]
 
-Information and guides for developers wanting to build advanced capabilities into TinyMCE.
+Information and guides for developers wanting to build advanced capabilities into {productname}.
 
 |
 [.lead]
 xref:integrations/index.adoc[Integrations]
 
-Faster development with integrations of TinyMCE into your favorite framework or CMS.
+Faster development with integrations of {productname} into your favorite framework or CMS.
 
 |
 [.lead]
-xref:migration-from-4x.adoc[Migrating from TinyMCE 4]
+xref:migration-from-4x.adoc[Migrating from {productname} 4]
 
-Guidance for migrating from TinyMCE 4 to TinyMCE 5.
+Guidance for migrating from {productname} 4 to {productname} {productmajorversion}.
 
 |
 [.lead]
 xref:migration-from-froala.adoc[Migrating from Froala]
 
-Upgrading your rich text editor from Froala Editor v3 to TinyMCE 5.
+Upgrading your rich text editor from Froala Editor v3 to {productname} {productmajorversion}.
 
 |
 [.lead]
-xref:release-notes/index.adoc[Release notes for TinyMCE 5]
+xref:release-notes/index.adoc[Release notes for {productname} {productmajorversion}]
+
+List of all release notes for {productname} {productmajorversion}.
 
 |
 [.lead]
 xref:changelog.adoc[Changelog]
 
-The history of TinyMCE releases.
+The history of {productname} releases.
 
 |
 [.lead]
 xref:api/tinymce/index.adoc[API Reference]
 
-JavaScript API reference for TinyMCE
+JavaScript API reference for {productname}.
 
 // Empty cell to even out rows
 // | 

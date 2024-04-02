@@ -81,7 +81,7 @@ This **Table of Contents** release includes the following fixes.
 ==== Encoding header of Table of Contents causing HTML source to be revealed on refresh.
 // #TINY-10682
 
-Previously in {productname}, the **Table of Contents** (ToC) header was encoded on refresh before being displayed in the editor. This resulted in the header being incorrectly shown as the underlying code literally, instead of being rendered as HTML.
+Previously in {productname}, the **Table of Contents** (ToC) header encoding caused special characters to be incorrectly displayed as code instead of their HTML representation.
 
 To address this issue, the HTML encoding has been removed. As a result, the ToC header now renders correctly as HTML even after refreshing, displaying as intended.
 
@@ -108,7 +108,7 @@ For example, if a heading element contained the following content:
 
 *`My <em>Heading</em>`*
 
-Upon inserting or refreshing the ToC, the heading element would be rendered as HTML, resulting in the following entry:
+Upon inserting or refreshing the ToC, the heading element within the ToC would be rendered as HTML, resulting in the following entry:
 
 *`Table of _Contents_`*
 

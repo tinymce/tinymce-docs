@@ -9,38 +9,10 @@
 
 If you are using {productname} in a self-hosted environment, a console log warning message will display if the license key config option is missing or invalid. This message aims to ensure compliance with licensing requirements and provide transparency during the evaluation period.
 
-This message will not be shown when loading {productname} from the Tiny Cloud, as it is already under a commercial license.
+This message will not be shown when loading {productname} from {cloudname}, as it is already under a commercial license.
 ====
 
-== Setting the license
-
-=== Use {productname} with the GPLv2+ license:
-
-If the developer intends to self-host {productname} under the GPL license, they can set the `license_key` config option to 'gpl'. Case sensitivity does not matter.
-
-==== Example
-
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  license_key: 'gpl'
-});
-----
-
-=== Use {productname} with a commercial license:
-
-If the developer intends to self-host {productname} under a commercial license, they must provide a valid license key. Customers who have purchased a self-hosted-eligible license for {productname} will find their license key in the account portal. To purchase a commercial license, see available options on the link:{pricingpage}/[pricing page]. 
-
-==== Example
-
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  license_key: '<your-license-key>'
-});
-----
+include::partial$misc/setting-the-license.adoc[]
 
 == FAQ
 
@@ -52,7 +24,7 @@ The GPLv2+ license was chosen to provide the best compatibility with existing GP
 
 === What is the difference between a license key and the API key?
 
-The **API key** is used when loading {productname} from the Tiny Cloud. The **license key** is used to declare the license terms when self-hosting {productname}.
+The **API key** is used when loading {productname} from the {cloudname}. The **license key** is used to declare the license terms when self-hosting {productname}.
 
 === Who needs to get a license key?
 
@@ -64,7 +36,7 @@ If {productname} detects that the `license_key` configuration is missing or inva
 
 === Should I be using both an API key and a license key?
 
-No, an API key and a license key should not be used simultaneously. The API key should only be used if {productname} is loaded from the Tiny Cloud. If {productname} is being self-hosted, the license key option should be used instead.
+No, an API key and a license key should not be used simultaneously. The API key should only be used if {productname} is loaded from the {cloudname}. If {productname} is being self-hosted, the license key option should be used instead.
 
 === Will {productname} “phone home” to check the license key?
 

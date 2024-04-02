@@ -93,12 +93,39 @@ The {productname} {release-version} release includes an accompanying release of 
 
 This **Table of Contents** release includes the following fixes.
 
-==== Encode header title for literal display in table of contents.
+==== Encoding header of Table of Contents causing HTML source to be revealed on refresh.
+// #TINY-10682
+
+Previously in {productname}, the **Table of Contents** (ToC) header encoding caused special characters to be incorrectly displayed as code instead of their HTML representation.
+
+To address this issue, the HTML encoding has been removed. As a result, the ToC header now renders correctly as HTML even after refreshing, displaying as intended.
+
+For example, if the **Table of Contents** (ToC) header contained the following content with "_Contents_" emphasized as follows:
+
+liveDemo::tiny-10682-initial[]
+
+Upon refreshing the ToC, the header would change to display the HTML tags literally, exposing the underlying HTML:
+
+liveDemo::tiny-10682-before[]
+
+Now, the header maintains the intended HTML rendering even after refreshing:
+
+liveDemo::tiny-10682-after[]
+
+==== Encode header title for literal display in Table of Contents.
 // #TINY-10789
 
-Previously in {productname}, during Table of Contents (ToC) generation, heading elements containing HTML tags such as `<i>` for italics were incorrectly rendered within the ToC itself.
+Previously in {productname}, during Table of Contents (ToC) generation, heading elements containing HTML tags such as `<em>` for italics were incorrectly rendered within the ToC itself.
 
 {productname} {release-version} addresses this issue by encoding the heading element during ToC generation. This ensures that any HTML tags present within the heading element are treated as plain text and displayed literally.
+
+For example, if your document contained a heading element with HTML tags as string in the heading content, the ToC would previously render the heading element as follows:
+
+liveDemo::tiny-10789-before[]
+
+Now, the ToC maintains the HTML tags within the heading element as plain text, matching the heading element itself:
+
+liveDemo::tiny-10789-after[]
 
 For information on the **Table of Contents** plugin, see: xref:tableofcontents.adoc[Table of Contents].
 

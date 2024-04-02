@@ -33,20 +33,26 @@ if [[ ! -e "$plugin_template" || ! -e "$configuration_option_template" || ! -e "
   exit 1
 fi
 
-# Files the user needs to created or updated manually
-icon_list="./-new-material-templates/plugin-documentation-templates/ROOT/partials/configuration/icon_list.adoc"
-demo_example="./-new-material-templates/plugin-documentation-templates/ROOT/examples/live-demos/<plugincode>/example.js"
-nav="./-new-material-templates/plugin-documentation-templates/ROOT/nav.adoc"
+# Files the user needs to create or update manually
+icon_list="$TEMPLATE_DIR/partials/configuration/icon_list.adoc"
+demo_example="$TEMPLATE_DIR/examples/live-demos/<plugincode>/example.js"
+nav="$TEMPLATE_DIR/nav.adoc"
 # demos
-full_featured_html="./-new-material-templates/plugin-documentation-templates/ROOT/examples/live-demos/full-featured/index.html"
-full_featured_js="./-new-material-templates/plugin-documentation-templates/ROOT/examples/live-demos/full-featured/index.js"
+full_featured_html="$TEMPLATE_DIR/examples/live-demos/full-featured/index.html"
+full_featured_js="$TEMPLATE_DIR/examples/live-demos/full-featured/index.js"
 # pages
-available_menu_items="./-new-material-templates/plugin-documentation-templates/ROOT/pages/available-menu-items.adoc"
-available_toolbar_buttons="./-new-material-templates/plugin-documentation-templates/ROOT/pages/available-toolbar-buttons.adoc"
-editor_command_identifiers="./-new-material-templates/plugin-documentation-templates/ROOT/pages/editor-command-identifiers.adoc"
-events="./-new-material-templates/plugin-documentation-templates/ROOT/pages/events.adoc"
-opensource_plugins="./-new-material-templates/plugin-documentation-templates/ROOT/partials/index-pages/opensource-plugins.adoc"
-premium_plugins="./-new-material-templates/plugin-documentation-templates/ROOT/partials/index-pages/premium-plugins.adoc"
+available_menu_items="$TEMPLATE_DIR/pages/available-menu-items.adoc"
+available_toolbar_buttons="$TEMPLATE_DIR/pages/available-toolbar-buttons.adoc"
+editor_command_identifiers="$TEMPLATE_DIR/pages/editor-command-identifiers.adoc"
+events="$TEMPLATE_DIR/pages/events.adoc"
+opensource_plugins="$TEMPLATE_DIR/partials/index-pages/opensource-plugins.adoc"
+premium_plugins="$TEMPLATE_DIR/partials/index-pages/premium-plugins.adoc"
+
+# Verify that all manual files exist
+if [[ ! -e "$icon_list" || ! -e "$demo_example" || ! -e "$nav" || ! -e "$full_featured_html" || ! -e "$full_featured_js" || ! -e "$available_menu_items" || ! -e "$available_toolbar_buttons" || ! -e "$editor_command_identifiers" || ! -e "$events" || ! -e "$opensource_plugins" || ! -e "$premium_plugins" ]]; then
+  echo "Error: One or more manual files are missing"
+  exit 1
+fi
 
 ################################################################################
 ################################# User Input ###################################
@@ -267,6 +273,9 @@ echo -e "\nPlugin documentation created successfully!\n"
 ############################### Manual Creation ################################
 ################################################################################
 
+new_plugin_folder="$plugin_code"
+mkdir -p "$new_plugin_folder"
+
 # Print all files that need to be created/updated manually
 files_to_create=(
   "$icon_list"
@@ -282,15 +291,25 @@ files_to_create=(
   "$premium_plugins"
 )
 
-echo "Please create or update the following files manually:"
-for file in "${files_to_create[@]}"; do
-  echo "- $file"
-done
-
 # generate a markdown file containing a checklist of files to be created/updated manually
-checklist_file="new-$plugin_code-plugin-checklist.md"
+checklist_file="$new_plugin_folder/checklist.md"
 echo -e "# Files to be created/updated manually\n" > "$checklist_file"
 for file in "${files_to_create[@]}"; do
   echo "- [ ] $file" >> "$checklist_file"
 done
-echo -e "Checklist file created: $checklist_file\n"
+echo -e "Checklist file created: ./$checklist_file\n"
+
+# Copy each file in files_to_create into the new_plugin_folder
+for file in "${files_to_create[@]}"; do
+  # Remove the TEMPLATE_DIR prefix from the file path
+  file_path="${file#"$TEMPLATE_DIR"/}"
+  # Create the necessary directories in the new_plugin_folder
+  mkdir -p "$new_plugin_folder/$(dirname "$file_path")"
+  # Copy the file contents to the corresponding location in the new_plugin_folder
+  cp "$file" "$new_plugin_folder/$file_path"
+
+  # Replace plugin name and plugin code and category in the copied files
+  sed -i "" "s/<plugincode>/$plugin_code/g" "$new_plugin_folder/$file_path"
+  sed -i "" "s/<Plugin name>/$plugin_name/g" "$new_plugin_folder/$file_path"
+  sed -i "" "s/<premium|opensource>/$category/g" "$new_plugin_folder/$file_path"
+done

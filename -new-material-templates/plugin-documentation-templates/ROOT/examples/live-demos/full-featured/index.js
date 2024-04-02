@@ -1,6 +1,6 @@
 /*
 
-Add new plugin to this file’s extant configuration
+Update ./modules/ROOT/examples/live-demos/full-featured/index.js to include the new plugin.
 
 */
 

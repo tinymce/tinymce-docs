@@ -291,14 +291,7 @@ files_to_create=(
   "$premium_plugins"
 )
 
-# generate a markdown file containing a checklist of files to be created/updated manually
 checklist_file="$new_plugin_folder/checklist.md"
-echo -e "# Files to be created/updated manually\n" > "$checklist_file"
-for file in "${files_to_create[@]}"; do
-  echo "- [ ] $file" >> "$checklist_file"
-done
-echo -e "Checklist file created: ./$checklist_file\n"
-
 # Copy each file in files_to_create into the new_plugin_folder
 for file in "${files_to_create[@]}"; do
   # Remove the TEMPLATE_DIR prefix from the file path
@@ -312,4 +305,9 @@ for file in "${files_to_create[@]}"; do
   sed -i "" "s/<plugincode>/$plugin_code/g" "$new_plugin_folder/$file_path"
   sed -i "" "s/<Plugin name>/$plugin_name/g" "$new_plugin_folder/$file_path"
   sed -i "" "s/<premium|opensource>/$category/g" "$new_plugin_folder/$file_path"
+
+  # Add file to the checklist
+  echo "- [ ] $new_plugin_folder/$file_path" >>"$checklist_file"
 done
+
+echo -e "Checklist file created: ./$checklist_file\n"

@@ -69,9 +69,9 @@ This **Enhanced Code Editor** release includes the following fixes.
 ==== Text inside code editor was not properly rendered when using a dark {productname} skin.
 // #TINY-10784
 
-With the release of {productname} 7.0, a bug was introduced when using the Enhanced Code Editor with a dark skin, such as `oxide-dark`. The code editor inherited its background color from the {productname} skin, resulting in dark text on a dark background.
+In previous versions of the **Enhanced Code Editor**, the text color of the code editor was inherited from the {productname} skin. This caused the light theme of the code editor to display white text on a white background when using a dark skin, such as `oxide-dark`.
 
-In {productname} {release-version}, this issue has been addressed. Now, the light theme of the Enhanced Code Editor will always use a light background color, regardless of the skin being used. As a result, the light mode will render correctly and be legible when using a dark skin.
+In {productname} {release-version}, this issue has been resolved. Now, the light theme of the Enhanced Code Editor will always use a dark text color, regardless of the skin being used. As a result, the light mode will render correctly and be easily readable when using a dark skin.
 
 ==== Light mode background with `advcode_inline: true` had the wrong color when {productname} was used with a dark skin.
 // #TINY-10760

@@ -3,3 +3,24 @@
 :description_short: This section will help you configure and extend your editor instance.
 :title_nav: Plugins
 :type: folder
+
+// 2 Columns, both asciidoc
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:plugins/premium/index.adoc[Premium plugins]
+
+TinyMCE premium plugins
+
+|
+[.lead]
+xref:plugins/opensource/index.adoc[Open source plugins]
+
+TinyMCE open source plugins
+
+// Empty cell to even out rows
+// | 
+
+|===

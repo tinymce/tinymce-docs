@@ -213,6 +213,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
+=== Toggle list behavior generated wrong HTML when the `forced_root_block` option was set to `div`.
+// #TINY-10488
+
+Previously in {productname}, when creating a new list item, the editor only considered default root nodes. This caused the caret to be placed incorrectly and resulted in the editor generating a new list instead of adding a list item to the existing list.
+
+In {productname} {release-version}, this issue has been fixed. The editor now checks for non-default root nodes, such as `forced_root_block: div`, when creating new list items. As a result, the caret is placed correctly after the creation of the new list item, allowing the editor to add a list item instead of generating a new list.
+
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
 

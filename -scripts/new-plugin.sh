@@ -1,6 +1,13 @@
 #!/bin/bash
 # CREATE NEW PLUGIN DOCUMENTATION
 
+# This script is used to create a new plugin for TinyMCE.
+#
+# The script prompts the user for the plugin code, plugin name, and various plugin features such as configuration options, commands, events, menu items, APIs, toolbar buttons, and demo. It generates the necessary files for the plugin documentation using the template files in the -new-material-templates repository. Most of the files are automatically placed in the correct directory, while some files need to be manually relocated. The manual files are organized in nested directories at the root of the repository, and a checklist file is created to track the manual files that require updates. The automatically generated files still need to be customized with relevant details about the plugin.
+#
+# For example, if you create a plugin called `test`, a directory named `test` will be created with the required files inside it. The checklist file will be located at `test/checklist.md`.
+# Usage: npm run new-plugin
+
 ################################################################################
 ################################# Constants ####################################
 ################################################################################

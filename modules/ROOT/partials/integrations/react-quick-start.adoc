@@ -350,7 +350,8 @@ export default function App() {
   return (
     <>
       <Editor
-        tinymceScriptSrc={process.env.PUBLIC_URL + '/tinymce/tinymce.min.js'}
+        tinymceScriptSrc='/tinymce/tinymce.min.js'
+        licenseKey='your-license-key'
         onInit={(_evt, editor) => editorRef.current = editor}
         initialValue='<p>This is the initial content of the editor.</p>'
         init={{

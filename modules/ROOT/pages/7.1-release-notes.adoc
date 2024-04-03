@@ -60,6 +60,21 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== Mentions
+
+The {productname} {release-version} release includes an accompanying release of the **Mentions** premium plugin.
+
+This **Mentions** release includes the following fix.
+
+==== Inline editor no longer grabs focus when it has a mention in it.
+// #TINY-10725
+
+Previously in **Mentions**, when using an inline editor where the initial content included a mention, the editor automatically grabbed input focus. This unexpected behavior occurred due to the adjustment of the selection range upon initialization.
+
+{productname} {release-version} resolves this issue, now, the selection range is only adjusted if the editor has focus. As a result, the inline editor no longer grabs focus on initialization when it has a mention in it.
+
+For information on the **Mentions** plugin, see: xref:mentions.adoc[Mentions].
+
 === <Premium plugin name 1> <Premium plugin name 1 version>
 
 The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

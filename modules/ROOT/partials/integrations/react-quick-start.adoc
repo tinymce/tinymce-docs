@@ -332,7 +332,27 @@ public
     └── tinymce.min.js
 ----
 
-. Using a text editor, open `+./src/App.js+` and replace the contents with:
+. Using a text editor, open `+./eslintrc.cjs+` and add `+'src/tinymce'+` to the `+ignorePatterns+` array.
++
+.Diff of `.eslintrc.js`
+[source,patch]
+----
+diff --git a/.eslintrc.cjs b/.eslintrc.cjs
+index 3b3b3b3..4b4b4b4 100644
+--- a/.eslintrc.cjs
++++ b/.eslintrc.cjs
+@@ -7,7 +7,7 @@ modules.exports = {
+   'plugin:react/jsx-runtime',
+     'plugin:react-hooks/recommended',
+   ],
+-  ignorePatterns: ['dist', '.eslintrc.cjs'],
++  ignorePatterns: ['dist', '.eslintrc.cjs', 'src/tinymce'],
+   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+   settings: { react: { version: '18.2' } },
+   plugins: ['react-refresh'],
+----
+
+. Using a text editor, open `+./src/App.jsx+` and replace the contents with:
 +
 [source,jsx]
 ----
@@ -374,16 +394,9 @@ export default function App() {
   );
 }
 ----
+. Update the `+licenseKey+` option in the editor element and include your xref:license-key.adoc[License Key].
 endif::[]
 ifeval::["{productUse}" == "bundle"]
-. Eject the create-react-app so it is possible to modify the Webpack configuration.
-+
-[source,sh]
-----
-npm run eject
-----
-+
-Press 'y' when prompted.
 
 . Install the `+@tinymce/tinymce-react+` and `+script-loader+` packages and save them to your `+package.json+` with `+--save+`.
 +
@@ -418,91 +431,33 @@ src
     └── tinymce.min.js
 ----
 
-. Using a text editor, open `+./config/paths.js+`, after the line with `+appSrc+` add the line:
+. Using a text editor, open `+./eslintrc.cjs+` and add `+'src/tinymce'+` to the `+ignorePatterns+` array.
 +
-[source,js]
-----
- appTinymce: resolveApp('src/tinymce'),
-----
-+
-.Diff of `./config/paths.js`
+.Diff of `.eslintrc.js`
 [source,patch]
 ----
-diff --git a/config/paths.js b/config/paths.js
-index f0a6cd9..a0d2f50 100644
---- a/config/paths.js
-+++ b/config/paths.js
-@@ -60,6 +60,7 @@ module.exports = {
-   appIndexJs: resolveModule(resolveApp, 'src/index'),
-   appPackageJson: resolveApp('package.json'),
-   appSrc: resolveApp('src'),
-+  appTinymce: resolveApp('src/tinymce'),
-   appTsConfig: resolveApp('tsconfig.json'),
-   appJsConfig: resolveApp('jsconfig.json'),
-   yarnLockFile: resolveApp('yarn.lock'),
+diff --git a/.eslintrc.cjs b/.eslintrc.cjs
+index 3b3b3b3..4b4b4b4 100644
+--- a/.eslintrc.cjs
++++ b/.eslintrc.cjs
+@@ -7,7 +7,7 @@ modules.exports = {
+   'plugin:react/jsx-runtime',
+     'plugin:react-hooks/recommended',
+   ],
+-  ignorePatterns: ['dist', '.eslintrc.cjs'],
++  ignorePatterns: ['dist', '.eslintrc.cjs', 'src/tinymce'],
+   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+   settings: { react: { version: '18.2' } },
+   plugins: ['react-refresh'],
 ----
 
-. Using a text editor, open `+./config/webpack.config.js+` and make the following edits:
-+
-** Find the `ModuleScopePlugin` and add `require.resolve('script-loader'),` to its array of exceptions.
-** Find the rule for processing javascript in the `src` directory and add the new rule above it:
-+
-[source,js]
-----
-{
-  test: /\.(js)$/,
-  include: paths.appTinymce,
-  loader: require.resolve('script-loader'),
-},
----- 
-** Find the `ESLintPlugin` and add `exclude: ["tinymce"],` to its options.
-
-+
-.Diff of `./config/webpack.config.js`
-[source,patch]
-----
-diff --git a/config/webpack.config.js b/config/webpack.config.js
-index 6b4a4cd..e0d1952 100644
---- a/config/webpack.config.js
-+++ b/config/webpack.config.js
-@@ -331,6 +331,7 @@ module.exports = function (webpackEnv) {
-           babelRuntimeEntry,
-           babelRuntimeEntryHelpers,
-           babelRuntimeRegenerator,
-+          require.resolve('script-loader'),
-         ]),
-       ],
-     },
-@@ -399,6 +400,11 @@ module.exports = function (webpackEnv) {
-                 and: [/\.(ts|tsx|js|jsx|md|mdx)$/],
-               },
-             },
-+            {
-+              test: /\.(js)$/,
-+              include: paths.appTinymce,
-+              loader: require.resolve('script-loader'),
-+            },
-             // Process application JS with Babel.
-             // The preset includes JSX, Flow, TypeScript, and some ESnext features.
-             {
-@@ -724,6 +730,7 @@ module.exports = function (webpackEnv) {
-         new ESLintPlugin({
-           // Plugin options
-           extensions: ['js', 'mjs', 'jsx', 'ts', 'tsx'],
-+          exclude: ["tinymce"],
-           formatter: require.resolve('react-dev-utils/eslintFormatter'),
-           eslintPath: require.resolve('eslint'),
-           failOnError: !(isEnvDevelopment && emitErrorsAsWarnings),
-----
-
-. Using a text editor, create `+./src/BundledEditor.js+` and set the contents to:
+. Using a text editor, create `+./src/BundledEditor.jsx+` and set the contents to:
 +
 [source,jsx]
 ----
 import { Editor } from '@tinymce/tinymce-react';
 
 // TinyMCE so the global var exists
-// eslint-disable-next-line no-unused-vars
 import './tinymce/tinymce.min.js';
 // DOM model
 import './tinymce/models/dom/model.min.js'
@@ -557,6 +512,7 @@ export default function BundledEditor(props) {
   // loading process and is instead loaded as a string via content_style
   return (
     <Editor
+      licenseKey='your-license-key'
       init={{
         ...init,
         skin: false,
@@ -569,7 +525,9 @@ export default function BundledEditor(props) {
 }
 ----
 
-. Using a text editor, open `+./src/App.js+` and replace the contents with:
+. Update the `+licenseKey+` option in the editor element and include your xref:license-key.adoc[License Key].
+
+. Using a text editor, open `+./src/App.jsx+` and replace the contents with:
 +
 [source,jsx]
 ----

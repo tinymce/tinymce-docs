@@ -10,15 +10,17 @@
   "scripts": {
     "build": "./-scripts/api-reference.sh",
     "build-local-ref": "./-scripts/api-reference-local.sh",
-    "nodemon-dev": "nodemon --exec yarn antora ./antora-playbook-dev.yml",
+    "clean": "rm -rf ./build",
+    "nodemon-dev": "nodemon --exec yarn antora ./antora-playbook.yml",
     "server": "http-server build/site/ --port 4000",
-    "serve": "npm-run-all -p nodemon-dev server"
+    "serve": "npm-run-all -p nodemon-dev server",
+    "start": "yarn clean && yarn serve"
   },
   "author": "Tiny Technologies Inc",
   "license": "CC-BY-NC-SA-3.0",
   "nodemonConfig": {
     "execMap": {
-      "build": "antora ./antora-playbook-dev.yml"
+      "build": "antora ./antora-playbook.yml"
     },
     "watch": [
       "modules/*"
@@ -30,7 +32,7 @@
     "@antora/cli": "^3.0.1",
     "@antora/site-generator-default": "^3.0.1",
     "@tinymce/antora-extension-livedemos": "^0.1.0",
-    "@tinymce/moxiedoc": "^0.2.1",
+    "@tinymce/moxiedoc": "^0.3.0",
     "dotenv": "^16.0.0",
     "ecstatic": "^4.1.4",
     "http-server": "^0.12.3",

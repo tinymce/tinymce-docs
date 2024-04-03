@@ -1,7 +1,7 @@
 [[choicemenuitems]]
 === Choice menu items
 
-Choice menu items are a special type of menu item used for split toolbar button menu items. For information on split buttons, see: xref:ui-components/typesoftoolbarbuttons.adoc#splitbutton[Split toolbar buttons].
+Choice menu items are a special type of menu item used for split toolbar button menu items. For information on split buttons, see: xref:typesoftoolbarbuttons.adoc#splitbutton[Split toolbar buttons].
 
 ==== Config options
 
@@ -32,9 +32,9 @@ include::partial$misc/predefinedIconsOnly.adoc[]
 | shortcut
 | string
 | optional
-| Text to display in the shortcut label. To register a shortcut, see: xref:advanced/keyboard-shortcuts.adoc#addcustomshortcutstotinymce[Add custom shortcuts to TinyMCE].
+| Text to display in the shortcut label. To register a shortcut, see: xref:keyboard-shortcuts.adoc#addcustomshortcutstotinymce[Add custom shortcuts to TinyMCE].
 |===
 
 NOTE: The `icon` option for choice menu items was added in {productname} 5.3.
 
-For an example of how choice menu items are used in split toolbar buttons, see: xref:ui-components/typesoftoolbarbuttons.adoc#splitbuttonexampleandexplanation[Split button example and explanation].
+For an example of how choice menu items are used in split toolbar buttons, see: xref:typesoftoolbarbuttons.adoc#splitbuttonexampleandexplanation[Split button example and explanation].

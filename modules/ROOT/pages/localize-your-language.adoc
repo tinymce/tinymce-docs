@@ -1,0 +1,62 @@
+= Localize TinyMCE
+:description: Localize TinyMCE with global language capabilities.
+:keywords: internationalization localization languages
+:title_nav: Localization
+
+{productname} makes your project accessible to the world through its simple localization framework.
+
+This section demonstrates how to change {productname}'s user interface to the user's language preference. These settings change the language in the toolbar, menu items, buttons, and tooltips.
+
+NOTE: Language settings can be controlled in these configuration options: xref:configure-localization.adoc#directionality[directionality], xref:configure-localization.adoc#language[language] and  xref:configure-localization.adoc#language_url[language_url]. There is also a xref:directionality.adoc[Directionality plugin] that adds a toolbar button to control `ltr-rtl` behavior.
+
+== Step 1
+
+Go to the link:{gettiny}/language-packages/[language download page] to review a list of language packs available for {productname}.
+
+Click the download link on the far right of the table for a single language. Check the box beside each language and then click the download button at the bottom of the table for multiple languages.
+
+IMPORTANT: The {productname} community translation project provides the language packs on our language download page.
+
+== Step 2
+
+Unpack the language `js` file(s) into the `path/to/tinymce/langs/` folder.
+
+IMPORTANT: The language settings will not work unless the language pack is placed in `langs/` directory. The xref:configure-localization.adoc#language_url[language_url] configuration option is another method to enable additional language settings.
+
+== Step 3
+
+Set the language option in {productname}'s configuration to the language code in the list on xref:configure-localization.adoc#language[this page].
+
+== Step 4
+
+Load {productname} to confirm that the language is set correctly.
+
+== A working example
+
+The following code snippet sets {productname}'s language to Chinese and the text directionality from right to left.
+
+link:{gettiny}/language-packages/[Download the Chinese language] pack to test this functionality. Install a _local instance_ of {productname} from the link:{gettiny}[downloads page]. Follow the xref:advanced-install.adoc#self-hostedinstall[self-hosted install instructions].
+
+[source,html]
+----
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="js/tinymce.min.js"></script>
+  <script type="text/javascript">
+  tinymce.init({
+    selector: 'textarea',
+    language: 'zh_CN',
+    directionality: 'rtl'
+  });
+  </script>
+</head>
+
+<body>
+  <form method="post">
+    <textarea>你好，世界!</textarea>
+  </form>
+</body>
+</html>
+----
+

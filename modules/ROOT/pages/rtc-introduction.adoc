@@ -1,0 +1,60 @@
+= Introduction to Real-time Collaboration (RTC)
+:description: What is RTC and what can it do
+:keywords: rtc introduction overview
+:title_nav: Introduction
+
+include::partial$rtc/admon-rtc-eol.adoc[]
+
+include::partial$misc/requires_5_9v.adoc[]
+
+include::partial$rtc/rtc-description.adoc[]
+
+== Interactive example
+
+The following example shows two editors that are collaborating using the {productname} Real-time Collaboration plugin. All network requests made by these editors, real or simulated, are being logged to the browser console. To view the network requests, open the browser console using the *F12* keyboard key and navigate to the _Console_ tab.
+
+liveDemo::rtc[]
+
+== Features of TinyMCE Real-time Collaboration
+
+=== End-to-end encryption
+
+The Real-time Collaboration (RTC) plugin encrypts all content sent between clients. Clients are assigned a random presence ID when they connect, which is used to transmit their cursor position, along with their _JWT user ID_. This means the {productname} cloud services can not read any data transferred or know who is editing. Content and user data is only available to the page running {productname}.
+
+=== JSON Web Token based authentication
+
+Some cloud services for {productname} require setting up JSON Web Token (JWT) authentication. JWTs are a common solution for communicating user authorization with web services. JWTs are used to communicate to {productname} that the user has been authorized to access {cloudname} services.
+
+For general information on JWTs, visit: https://jwt.io/[https://jwt.io/].
+
+For information on using JWT authentication with the Real-time Collaboration (RTC) plugin, see: xref:rtc-jwt-authentication.adoc[JWT authentication].
+
+=== User Presence API
+
+The Real-time Collaboration (RTC) plugin exports a presence API to enable tracking when users enter and leave the collaboration session. The only user information shared through the RTC server is the user id stored in the JWT `sub` claim. Other details such as the user's full name are resolved locally so the {cloudname} will never see who is actually connecting. User resolution is performed through the xref:rtc-options-optional.adoc#rtc_user_details_provider[`rtc_user_details_provider` option]. Presence events can be received through either xref:rtc-options-optional.adoc#rtc_client_connected[configuration callbacks] or xref:rtc-events.adoc#rtcclientconnected[editor events].
+
+== Overview of how TinyMCE Real-time Collaboration works
+
+image::RTC_conceptual_diagram.svg[Conceptual diagram showing how {productname} RTC works, description below image]
+
+=== When a new document is created
+
+. The initial content is set using the HTML within the element replaced by the editor, or using the xref:rtc-options-optional.adoc#rtc_initial_content_provider[initial content option].
+. The editor requests and receives the following on behalf of the user:
+ ** A JSON Web Token (JWT) from your server.
+ ** The encryption details from your server.
+
+The JWT and encryption details are stored in the browser until required.
+
+=== When the editor content is changed by a user
+
+. The editor encrypts the content using the encryption details.
+. The encrypted content and the JWT (but not the encryption details) are sent to the RTC server.
+. The RTC server verifies that the JWT was signed by the same private key as _the public key stored on the RTC server_.
+. Once verified, the content is sent to collaborating editors where the editor will decrypt the content using the encryption details provided when the user opened the editor.
+. Once decrypted, the plugin will merge the local content and the content from the server.
+. When the content is submitted, it will be sent to your server. If snapshotting option is configured, no submission is needed as snapshots of the content will be sent to your server from the editors automatically.
+
+== Getting started with Real-time Collaboration
+
+For instructions for getting started with {productname} Real-time Collaboration, see: xref:rtc-getting-started.adoc[Getting started with Real-time Collaboration (RTC)].

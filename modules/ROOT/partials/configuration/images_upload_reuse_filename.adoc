@@ -1,9 +1,9 @@
 [[images_reuse_filename]]
 == `images_reuse_filename`
 
-By default {productname} will generate unique filename for each uploaded file (for details refer to xref:general-configuration-guide/upload-images.adoc#imageuploaderrequirements[Upload Images]). Sometimes this might have undesirable side-effects. For example, when `automatic_uploads` is enabled, every manipulation on the image done with xref:plugins/opensource/imagetools.adoc[Image Tools] plugin, results in file upload and each time under a different filename, despite the fact that the image stays the same.
+By default {productname} will generate unique filename for each uploaded file (for details refer to xref:upload-images.adoc#imageuploaderrequirements[Upload Images]). Sometimes this might have undesirable side-effects. For example, when `automatic_uploads` is enabled, every manipulation on the image done with xref:imagetools.adoc[Image Tools] plugin, results in file upload and each time under a different filename, despite the fact that the image stays the same.
 
-Setting `images_reuse_filename` to _true_ tells {productname} to use the actual filename of the image, instead of generating a new one each time. Take into account that `src` attribute of the corresponding `<img>` tag gets replaced with whatever filename you send back from the server (see xref:configure/file-image-upload.adoc#images_upload_url[images_upload_url]). It can be the same filename or something else, but the next time that filename is used for the upload.
+Setting `images_reuse_filename` to _true_ tells {productname} to use the actual filename of the image, instead of generating a new one each time. Take into account that `src` attribute of the corresponding `<img>` tag gets replaced with whatever filename you send back from the server (see xref:file-image-upload.adoc#images_upload_url[images_upload_url]). It can be the same filename or something else, but the next time that filename is used for the upload.
 
 *Type:* `Boolean`
 

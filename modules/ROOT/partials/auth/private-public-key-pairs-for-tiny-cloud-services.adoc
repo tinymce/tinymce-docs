@@ -14,6 +14,6 @@ The link:{accountpageurl}/jwt/[{accountpage} - JWT Keys] page provides a private
 When generating a key pair locally, use one of the supported algorithms.
 include::partial$auth/jwt-supported-algorithms.adoc[]
 
-For instructions on generating a key pair locally, see: xref:advanced/generate-rsa-key-pairs.adoc[Creating a private/public key pair for Tiny Cloud].
+For instructions on generating a key pair locally, see: xref:generate-rsa-key-pairs.adoc[Creating a private/public key pair for Tiny Cloud].
 
 Once a public key has been generated, add the public key to the {cloudname} API key at: link:{accountpageurl}/jwt/[{accountpage} - JWT Keys].

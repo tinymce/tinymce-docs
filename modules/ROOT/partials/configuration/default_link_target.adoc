@@ -1,9 +1,9 @@
 [[default_link_target]]
 === `default_link_target`
 
-This option allows you to set a default `target` value for links when inserting/editing a link via the link dialog. If the value of `default_link_target` matches a value specified by the xref:plugins/opensource/link.adoc#target_list[`target_list`] option, that item will be set as the default item for the targets dropdown in the link dialog.
+This option allows you to set a default `target` value for links when inserting/editing a link via the link dialog. If the value of `default_link_target` matches a value specified by the xref:link.adoc#target_list[`target_list`] option, that item will be set as the default item for the targets dropdown in the link dialog.
 
-NOTE: This option also applies to the xref:plugins/opensource/autolink.adoc[autolink] plugin.
+NOTE: This option also applies to the xref:autolink.adoc[autolink] plugin.
 
 *Type:* `String`
 

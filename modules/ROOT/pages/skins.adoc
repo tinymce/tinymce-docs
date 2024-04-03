@@ -1,0 +1,83 @@
+= Bundling TinyMCE skins using module loading
+:description: Information on bundling TinyMCE skins using module loading
+:description_short: Information on bundling TinyMCE skins
+:title_nav: Skins
+
+:editorcomponent: skin
+include::partial$module-loading/bundling-ref-example.adoc[]
+:editorcomponent: nil
+
+The following table shows examples of the syntax used to bundle the following skin:
+
+Required files for the example skin:
+
+[source, js]
+----
+./skins/ui/example/content.css
+./skins/ui/example/skin.css
+----
+
+Optional files for the example skin:
+
+[source, js]
+----
+/* Only required for inline editors */
+./skins/ui/example/content.inline.css
+/* Only required when using the deprecated mobile theme */
+./skins/ui/example/skin.mobile.css
+./skins/ui/example/content.mobile.css
+./skins/ui/example/fonts/tinymce-mobile.woff
+----
+
+Example syntax for including the example skin in a bundle:
+
+[cols='1,1,4']
+|===
+|Module Syntax |Source |Example
+
+.2+|ES6+
+|npm
+a|
+[source, js]
+----
+import contentUiCss from 'tinymce/skins/ui/example/content.css';
+import 'tinymce/skins/ui/example/skin.css';
+/* Only required for inline editors */
+import contentUiInlineCss from 'tinymce/skins/ui/example/content.inline.css';
+----
+
+|`.zip`
+a|
+[source, js]
+----
+import contentUiCss from '../tinymce/skins/ui/example/content.css';
+import '../tinymce/skins/ui/example/skin.css';
+/* Only required for inline editors */
+import contentUiInlineCss from '../tinymce/skins/ui/example/content.inline.css'
+----
+
+.2+|Common JS
+|npm
+a|
+[source, js]
+----
+var contentUiCss = require('tinymce/skins/ui/example/content.css');
+require('tinymce/skins/ui/example/skin.css');
+/* Only required for inline editors */
+var contentUiInlineCss = require('tinymce/skins/ui/example/content.inline.css');
+----
+
+|`.zip`
+a|
+[source, js]
+----
+var contentUiCss = require('../tinymce/skins/ui/example/content.css');
+require('../tinymce/skins/ui/example/skin.css');
+/* Only required for inline editors */
+var contentUiInlineCss = require('../tinymce/skins/ui/example/content.inline.css');
+----
+|===
+
+IMPORTANT: The handling of content CSS files (such as `content.css` or `content.min.css`) varies between bundling tools. View the relevant guide for the required syntax at xref:usage-with-module-loaders.adoc[Bundling {productname} with a module loader].
+
+include::partial$module-loading/bundling-skin-files.adoc[]

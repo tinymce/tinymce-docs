@@ -3,7 +3,7 @@
 
 For URLs with the same domain as the page containing the {productname} editor. If set to:
 
-* `true` -- All URLs created in {productname} will be converted to a link relative to the xref:configure/url-handling.adoc#document_base_url[`document_base_url`].
+* `true` -- All URLs created in {productname} will be converted to a link relative to the xref:url-handling.adoc#document_base_url[`document_base_url`].
 * `false` -- All URLs will be converted to absolute URLs.
 
 *Type:* `Boolean`

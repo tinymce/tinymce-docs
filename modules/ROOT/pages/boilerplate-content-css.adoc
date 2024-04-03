@@ -1,0 +1,54 @@
+= Boilerplate content CSS
+:description: Learn how to set up CSS for your site to integrate TinyMCE.
+:description_short: Learn how to set up CSS for your site to integrate TinyMCE.
+:keywords: css content_css
+:title_nav: Boilerplate content CSS
+
+Some elements in {productname} require additional CSS to be added to the page that displays the content produced by the editor. The following CSS styles can be used to style these elements. Add this CSS file to the editor using the xref:content-appearance.adoc#content_css[content_css] option and add the styles the page where the saved content is presented.
+
+[source, css]
+----
+/*
+ Removes margins on paragraphs,
+ might be useful for mail clients
+*/
+/*p { margin: 0 }*/
+
+/*
+* For rendering images inserted using the image plugin.
+* Includes image captions using the HTML5 figure element.
+*/
+
+include::partial$css-codeblock/image-plugin-css.adoc[]
+
+/*
+ Alignment using classes rather than inline styles
+ check out the "formats" option
+*/
+
+img.align-left {
+  float: left;
+}
+
+img.align-right {
+  float: right;
+}
+
+include::partial$css-codeblock/toc-plugin-css.adoc[]
+
+/*
+* Premium Plugins CSS
+*/
+
+/* The Checklist Plugin */
+
+include::partial$css-codeblock/checklist-plugin-css.adoc[]
+
+/* The Page Embed plugin */
+
+include::partial$css-codeblock/pageembed-plugin-css.adoc[]
+
+/* The Media Embed plugin */
+
+include::partial$css-codeblock/mediaembed-plugin-css.adoc[]
+----

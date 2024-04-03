@@ -1,0 +1,106 @@
+= tinymce.Event
+:navtitle: tinymce.Event
+:description: This is the base class for all TinyMCE events.
+:keywords: isDefaultPrevented, isImmediatePropagationStopped, isPropagationStopped, preventDefault, stopImmediatePropagation, stopPropagation, type
+:moxie-type: api
+
+This is the base class for all TinyMCE events.
+
+[[summary]]
+== Summary
+
+[[properties]]
+=== Properties
+[cols="2,1,4,1",options="header"]
+|===
+|Name|Type|Summary|Defined by
+|type|`String`|The event type name for example "click".|`xref:apis/tinymce.event.adoc[Event]`
+|===
+
+[[methods-summary]]
+=== Methods
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#isDefaultPrevented[isDefaultPrevented()]|Returns true/false if the default action is to be prevented or not.|`xref:apis/tinymce.event.adoc[Event]`
+|xref:#isImmediatePropagationStopped[isImmediatePropagationStopped()]|Returns true/false if the event immediate propagation is stopped or not.|`xref:apis/tinymce.event.adoc[Event]`
+|xref:#isPropagationStopped[isPropagationStopped()]|Returns true/false if the event propagation is stopped or not.|`xref:apis/tinymce.event.adoc[Event]`
+|xref:#preventDefault[preventDefault()]|Prevents the default action of an event to be executed.|`xref:apis/tinymce.event.adoc[Event]`
+|xref:#stopImmediatePropagation[stopImmediatePropagation()]|Prevents the event from propagating to listeners on the same object.|`xref:apis/tinymce.event.adoc[Event]`
+|xref:#stopPropagation[stopPropagation()]|Stops the event from propagating up to listeners on parent objects.|`xref:apis/tinymce.event.adoc[Event]`
+|===
+
+[[methods]]
+== Methods
+
+[[isDefaultPrevented]]
+=== isDefaultPrevented()
+[source, javascript]
+----
+isDefaultPrevented(): Boolean
+----
+Returns true/false if the default action is to be prevented or not.
+
+==== Return value
+
+* `Boolean` - True/false if the event is to be execured or not.
+
+'''
+
+[[isImmediatePropagationStopped]]
+=== isImmediatePropagationStopped()
+[source, javascript]
+----
+isImmediatePropagationStopped(): Boolean
+----
+Returns true/false if the event immediate propagation is stopped or not.
+
+==== Return value
+
+* `Boolean` - True/false if the event immediate propagation is stopped or not.
+
+'''
+
+[[isPropagationStopped]]
+=== isPropagationStopped()
+[source, javascript]
+----
+isPropagationStopped(): Boolean
+----
+Returns true/false if the event propagation is stopped or not.
+
+==== Return value
+
+* `Boolean` - True/false if the event propagation is stopped or not.
+
+'''
+
+[[preventDefault]]
+=== preventDefault()
+[source, javascript]
+----
+preventDefault()
+----
+Prevents the default action of an event to be executed.
+
+'''
+
+[[stopImmediatePropagation]]
+=== stopImmediatePropagation()
+[source, javascript]
+----
+stopImmediatePropagation()
+----
+Prevents the event from propagating to listeners on the same object.
+
+'''
+
+[[stopPropagation]]
+=== stopPropagation()
+[source, javascript]
+----
+stopPropagation()
+----
+Stops the event from propagating up to listeners on parent objects.
+
+'''

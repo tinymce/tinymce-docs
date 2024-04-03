@@ -77,7 +77,7 @@ tinymce.activeEditor.execCommand('mceTableToggleSeries', false, { name: 'numeric
 | name
 | `string`
 | Required
-| Specifies the series to toggle. Series and their associated names are configured using the xref:plugins/premium/advtable.adoc#advtable_value_series[`advtable_value_series` option].
+| Specifies the series to toggle. Series and their associated names are configured using the xref:premium-advtable.adoc#advtable_value_series[`advtable_value_series` option].
 |===
 
 If the table already has a series column that uses the series specified in `name`, the series column will be removed from the table. Otherwise, a new series column will be created, replacing any other series column that may already be in the table.

@@ -1,0 +1,168 @@
+= Table plugin
+:controls: toolbar button, menu item
+:description: Table editing features.
+:keywords: row cell column table_appearance_options table_clone_elements table_grid table_tab_navigation table_default_attributes table_default_styles table_class_list table_cell_class_list table_row_class_list table_advtab table_cell_advtab table_row_advtab
+:title_nav: Table
+
+:pluginname: Table
+:plugincode: table
+
+The `table` plugin adds table management functionality to {productname}. It also adds a new menubar item `Table` with various options in its dropdown including `Insert table` and options to modify cells, rows and columns, and a toolbar button with the same functionality.
+
+== Basic setup
+
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  menubar: 'table',
+  toolbar: 'table tabledelete | tableprops tablerowprops tablecellprops | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol'
+});
+----
+
+== Config Options
+
+These settings affect the execution of the `table` plugin and let you modify the default styles and attributes for tables, preset class lists, and table behavior.
+
+include::partial$configuration/table_toolbar.adoc[]
+
+include::partial$configuration/table_appearance_options.adoc[]
+
+include::partial$configuration/table_use_colgroups.adoc[]
+
+include::partial$configuration/table_clone_elements.adoc[]
+
+include::partial$configuration/table_grid.adoc[]
+
+include::partial$configuration/table_tab_navigation.adoc[]
+
+include::partial$configuration/table_default_attributes.adoc[]
+
+include::partial$configuration/table_default_styles.adoc[]
+
+include::partial$configuration/table_responsive_width.adoc[]
+
+include::partial$configuration/table_sizing_mode.adoc[]
+
+include::partial$configuration/table_column_resizing.adoc[]
+
+include::partial$configuration/table_class_list.adoc[]
+
+include::partial$configuration/table_cell_class_list.adoc[]
+
+include::partial$configuration/table_row_class_list.adoc[]
+
+include::partial$configuration/table_border_widths.adoc[]
+
+include::partial$configuration/table_border_styles.adoc[]
+
+include::partial$configuration/table_background_color_map.adoc[]
+
+include::partial$configuration/table_border_color_map.adoc[]
+
+include::partial$configuration/table_advtab.adoc[]
+
+include::partial$configuration/table_cell_advtab.adoc[]
+
+include::partial$configuration/table_row_advtab.adoc[]
+
+include::partial$configuration/table_resize_bars.adoc[]
+
+include::partial$configuration/table_style_by_css.adoc[]
+
+include::partial$configuration/table_header_type.adoc[]
+
+== Examples of various table setups
+
+Here are some examples of configuration for common setups.
+
+=== No default attributes or styles on tables
+
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  table_default_attributes: {},
+  table_default_styles: {}
+});
+----
+
+=== Pixel based resizing
+
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  table_sizing_mode: 'fixed'
+});
+----
+
+=== Percentage based resizing
+
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'table',
+  table_sizing_mode: 'relative'
+});
+----
+
+NOTE: The advanced tabs of the table, row, and cell properties dialogs use the `colorpicker` to allow for border and background colors to be applied. See docs to use and configure a custom xref:content-appearance.adoc#textcoloroptions[colorpicker].
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+
+[[api]]
+== API
+
+|===
+| Name | Arguments | Description
+
+| insertTable
+| columns: number, rows: number
+| Insert a table with the given number of columns and rows at the current cursor location
+
+| getClipboardCols
+|
+| Returns the data for any columns cut or copied using `mceTableCutCol` or `mceTableCopyCol`. include::partial$misc/requires_5_4v.adoc[]
+
+| setClipboardCols
+| cols: HTMLTableRowElement[]
+| Set the data to be used by `mceTablePasteColBefore` or `mceTablePasteColAfter` for pasting columns into a table. (A column as a series of cells. One or more cells from each row in the selection). include::partial$misc/requires_5_4v.adoc[]
+
+| getClipboardRows
+|
+| Returns the data for any rows cut or copied using `mceTableCutRow` or `mceTableCopyRow`
+
+| setClipboardRows
+| rows: HTMLTableRowElement[]
+| Set the data to be used by `mceTablePasteRowBefore` or `mceTablePasteRowAfter` for pasting rows into a table.
+|===
+
+=== Example: Using `table` plugin APIs
+
+[source, js]
+----
+tinymce.activeEditor.plugins.table.insertTable(2, 3);
+----
+
+[[events]]
+== Events
+
+include::partial$events/table-events.adoc[]
+
+[[commands]]
+== Commands
+
+The Table plugin provides the following JavaScript commands.
+
+include::partial$commands/table-cmds.adoc[]
+
+== Query command values
+
+include::partial$commands/table-query-cmd-values.adoc[]

@@ -1,0 +1,139 @@
+= tinymce.WindowManager
+:navtitle: tinymce.WindowManager
+:description: This class handles the creation of native windows and dialogs. This class can be extended to provide for example inline dialogs.
+:keywords: alert, close, confirm, open, openUrl
+:moxie-type: api
+
+This class handles the creation of native windows and dialogs. This class can be extended to provide for example inline dialogs.
+
+[[examples]]
+== Examples
+[source, javascript]
+----
+// Opens a new dialog with the file.htm file and the size 320x240
+// It also adds a custom parameter this can be retrieved by using tinyMCEPopup.getWindowArg inside the dialog.
+tinymce.activeEditor.windowManager.open({
+   url: 'file.htm',
+   width: 320,
+   height: 240
+}, {
+   custom_param: 1
+});
+
+// Displays an alert box using the active editors window manager instance
+tinymce.activeEditor.windowManager.alert('Hello world!');
+
+// Displays an confirm box and an alert message will be displayed depending on what you choose in the confirm
+});
+----
+
+[[summary]]
+== Summary
+
+[[methods-summary]]
+=== Methods
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#alert[alert()]|Creates an alert dialog. Please don't use the blocking behavior of this
+native version use the callback method instead then it can be extended.|`xref:apis/tinymce.windowmanager.adoc[WindowManager]`
+|xref:#close[close()]|Closes the top most window.|`xref:apis/tinymce.windowmanager.adoc[WindowManager]`
+|xref:#confirm[confirm()]|Creates a confirm dialog. Please don't use the blocking behavior of this
+native version use the callback method instead then it can be extended.|`xref:apis/tinymce.windowmanager.adoc[WindowManager]`
+|xref:#open[open()]|Opens a new window.|`xref:apis/tinymce.windowmanager.adoc[WindowManager]`
+|xref:#openUrl[openUrl()]|Opens a new window for the specified url.|`xref:apis/tinymce.windowmanager.adoc[WindowManager]`
+|===
+
+[[methods]]
+== Methods
+
+[[alert]]
+=== alert()
+[source, javascript]
+----
+alert(message: String, callback: function, scope: Object)
+----
+Creates an alert dialog. Please don't use the blocking behavior of this
+native version use the callback method instead then it can be extended.
+
+==== Examples
+[source, javascript]
+----
+// Displays an alert box using the active editors window manager instance
+tinymce.activeEditor.windowManager.alert('Hello world!');
+----
+
+==== Parameters
+
+* `message (String)` - Text to display in the new alert dialog.
+* `callback (function)` - (Optional) Callback function to be executed after the user has selected ok.
+* `scope (Object)` - (Optional) Scope to execute the callback in.
+
+'''
+
+[[close]]
+=== close()
+[source, javascript]
+----
+close()
+----
+Closes the top most window.
+
+'''
+
+[[confirm]]
+=== confirm()
+[source, javascript]
+----
+confirm(message: String, callback: function, scope: Object)
+----
+Creates a confirm dialog. Please don't use the blocking behavior of this
+native version use the callback method instead then it can be extended.
+
+==== Examples
+[source, javascript]
+----
+// Displays an confirm box and an alert message will be displayed depending on what you choose in the confirm
+tinymce.activeEditor.windowManager.confirm("Do you want to do something", function(s) {
+   if (s)
+      tinymce.activeEditor.windowManager.alert("Ok");
+   else
+      tinymce.activeEditor.windowManager.alert("Cancel");
+});
+----
+
+==== Parameters
+
+* `message (String)` - Text to display in the new confirm dialog.
+* `callback (function)` - (Optional) Callback function to be executed after the user has selected ok or cancel.
+* `scope (Object)` - (Optional) Scope to execute the callback in.
+
+'''
+
+[[open]]
+=== open()
+[source, javascript]
+----
+open(args: Object)
+----
+Opens a new window.
+
+==== Parameters
+
+* `args (Object)` - For a list of options, see: link:https://www.tiny.cloud/docs/ui-components/dialog/#configurationoptions[Dialog - Configuration options].
+
+'''
+
+[[openUrl]]
+=== openUrl()
+[source, javascript]
+----
+openUrl(args: Object)
+----
+Opens a new window for the specified url.
+
+==== Parameters
+
+* `args (Object)` - For a list of options, see: link:https://www.tiny.cloud/docs/ui-components/urldialog/#urldialogconfiguration[URL dialog configuration].
+
+'''

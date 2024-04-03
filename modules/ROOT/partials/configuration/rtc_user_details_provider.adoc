@@ -1,7 +1,7 @@
 [[rtc_user_details_provider]]
 === `rtc_user_details_provider`
 
-By default, a user's unique ID (`userId`, the `sub` field from their xref:rtc/jwt-authentication.adoc#requiredjwtclaimsforreal-timecollaboration[JWT]) will be displayed as the username in remote caret tooltips.
+By default, a user's unique ID (`userId`, the `sub` field from their xref:rtc-jwt-authentication.adoc#requiredjwtclaimsforreal-timecollaboration[JWT]) will be displayed as the username in remote caret tooltips.
 
 To display a descriptive name on the caret, the `userId` needs to be resolved into user details that include the user's display name (`fullName`). This resolution is done on each client to avoid sending any personal information through the RTC server.
 
@@ -12,7 +12,7 @@ This provider function is called once for each connecting client. Clients that r
 ifeval::[{plugincode} != "rtc"]
 
 Required plugin::
-xref:plugins/premium/rtc.adoc[Real-time Collaboration (`rtc`)]
+xref:rtc-plugin.adoc[Real-time Collaboration (`rtc`)]
 endif::[]
 
 Type:: Function (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])

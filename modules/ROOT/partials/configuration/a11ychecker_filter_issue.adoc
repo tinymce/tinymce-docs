@@ -3,7 +3,7 @@
 
 The `a11ychecker_filter_issue` option allows Accessibility Checker issues to be removed from the Accessibility Checker report using a callback function. This option is a flexible alternative to the `a11ychecker_ignored_rules` option. This option can remove issues from the results shown in the dialog and the `getReport` API.
 
-The function will be passed the results of the xref:plugins/premium/a11ychecker.adoc#getreport[`getReport()` API]. To filter an issue from the Accessibility Checker report, the callback needs to return `false` for that particular issue.
+The function will be passed the results of the xref:premium-a11ychecker.adoc#getreport[`getReport()` API]. To filter an issue from the Accessibility Checker report, the callback needs to return `false` for that particular issue.
 
 *Type:* `Function`
 

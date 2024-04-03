@@ -10,8 +10,8 @@ There are three types of patterns: `inline`, `block`, and `replacement` patterns
 Any formats or commands used by `textpatterns` need to be registered with the editor when it is initialized. This may include enabling relevant plugins, such as the `lists` plugin.
 For information on:
 
-* Registering formats for {productname}, see: xref:configure/content-formatting.adoc#formats[Content formatting options - `formats`].
-* Registering commands for {productname}, see: xref:api/tinymce/tinymce.editor.adoc#addCommand[{productname} APIs - EditorCommands].
+* Registering formats for {productname}, see: xref:content-formatting.adoc#formats[Content formatting options - `formats`].
+* Registering commands for {productname}, see: xref:apis/tinymce.editor.adoc#addCommand[{productname} APIs - EditorCommands].
 ====
 
 ==== The default patterns for the `textpattern` plugin

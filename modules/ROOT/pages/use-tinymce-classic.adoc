@@ -1,0 +1,39 @@
+= TinyMCE classic editing mode
+:description: The Theme that renders iframe or inline modes using the TinyMCE core UI framework.
+:keywords: theme classic
+:title_nav: Classic editing mode
+
+{productname} has three main integration modes:
+
+* "classic" full editor mode
+* inline editing mode
+* distraction-free mode
+
+There are a few important differences between these modes:
+
+* Classic mode embeds an iframe in the page, which sandboxes the content and styles used in the content area.
+* Inline mode does not use an iframe; the editor is run on the selected HTML element.
+* The lack of sandboxing for the inline editor allows page scripts and styles to be used in the editor.
+* Distraction-free mode is an inline editor with additional configuration to provide greater functionality.
+
+*Classic* mode refers to the standard {productname} integration. Such as:
+
+liveDemo::default[]
+
+== Example: Replacing a textarea with the default editor
+
+A basic TinyMCE editor can be added to a `textarea` element with the id `mytextarea` using:
+
+[source, js]
+----
+tinymce.init({
+    selector: 'textarea#mytextarea'
+});
+----
+
+=== Related configuration options
+
+* For information on using editor customization options, see: xref:customize-ui.adoc[Customizing the editor UI].
+* For information on localizing {productname}, see: xref:localize-your-language.adoc[Localize TinyMCE].
+* For information on all {productname} configuration settings, see: xref:configure.adoc[Configuration options reference].
+

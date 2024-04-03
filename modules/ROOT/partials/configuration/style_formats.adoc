@@ -5,12 +5,12 @@ This option allows you to define custom items for the `styleselect` dropdown too
 
 There are four types of items the array can contain:
 
-* *Style:* The item must have a `title` and the necessary fields to xref:configure/content-formatting.adoc#formattype[specify a new format]. An optional `name` can be provided for the style, which will be prefixed with `custom-` to ensure that it does not override the default editor formats. If given a unique `name`, the style can be used with the formatting API. The item will be rendered in the UI as a clickable item that applies the given format.
-* *Style reference:* The item must have a `title` and a `format` which refers to a pre-registered editor xref:configure/content-formatting.adoc#formats[format]. The item will be rendered in the UI as a clickable item that applies the given format.
+* *Style:* The item must have a `title` and the necessary fields to xref:content-formatting.adoc#formattype[specify a new format]. An optional `name` can be provided for the style, which will be prefixed with `custom-` to ensure that it does not override the default editor formats. If given a unique `name`, the style can be used with the formatting API. The item will be rendered in the UI as a clickable item that applies the given format.
+* *Style reference:* The item must have a `title` and a `format` which refers to a pre-registered editor xref:content-formatting.adoc#formats[format]. The item will be rendered in the UI as a clickable item that applies the given format.
 * *Nested menu:* The item must have a `title` and an `items` array that contains other items that will be rendered as a sub-menu.
 * *Group heading:* The item must only have a `title` and will be rendered as a non-clickable heading within the menu. This is useful for grouping items without using nested menus.
 
-To merge custom styles with the default `styles_format` values, set xref:configure/editor-appearance.adoc#style_formats_merge[`style_formats_merge`] to `true`.
+To merge custom styles with the default `styles_format` values, set xref:editor-appearance.adoc#style_formats_merge[`style_formats_merge`] to `true`.
 
 *Type:* `Array`
 
@@ -75,8 +75,8 @@ tinymce.init({
 
 This example shows you how to:
 
-* Override the built-in xref:configure/content-formatting.adoc#formats[formats].
-* Add some custom styles to the `styleselect` dropdown toolbar button and the `formats` menu item using the xref:configure/editor-appearance.adoc#style_formats[style_formats] configuration option.
+* Override the built-in xref:content-formatting.adoc#formats[formats].
+* Add some custom styles to the `styleselect` dropdown toolbar button and the `formats` menu item using the xref:editor-appearance.adoc#style_formats[style_formats] configuration option.
 
 liveDemo::format-custom[tab="js" ]
 

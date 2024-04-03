@@ -110,7 +110,7 @@ To add plugins and extend the functionality of the editor, add a string of plugi
 <tinymce-editor plugins="advlist autolink link image lists charmap print preview"></tinymce-editor>
 ----
 
-For a list of available plugins, see: xref:plugins/index.adoc[Add plugins to {productname}].
+For a list of available plugins, see: xref:plugins.adoc[Add plugins to {productname}].
 
 [[settingtheeditorwidth]]
 ==== Setting the editor width
@@ -160,7 +160,7 @@ To set the editor toolbar buttons, use the `toolbar` attribute. For example:
 <tinymce-editor toolbar="undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent"></tinymce-editor>
 ----
 
-The `toolbar` attribute accepts a space-separated string of toolbar buttons with pipe characters (`|`) for grouping buttons. For a list of available toolbar buttons, see: xref:advanced/available-toolbar-buttons.adoc[Toolbar Buttons Available for TinyMCE].
+The `toolbar` attribute accepts a space-separated string of toolbar buttons with pipe characters (`|`) for grouping buttons. For a list of available toolbar buttons, see: xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for TinyMCE].
 
 ===== Disabling the toolbar
 
@@ -181,7 +181,7 @@ To control the behavior of the toolbar, set the `toolbar_mode` attribute. For ex
 <tinymce-editor toolbar_mode="floating"></tinymce-editor>
 ----
 
-For information on the available toolbar modes, see: xref:configure/editor-appearance.adoc#toolbar_mode[User interface options - `toolbar_mode`].
+For information on the available toolbar modes, see: xref:editor-appearance.adoc#toolbar_mode[User interface options - `toolbar_mode`].
 
 [[settingthemenubar]]
 ==== Setting the menu bar
@@ -204,8 +204,8 @@ To change the menu items shown in the menus, or define custom menus, set the `me
 
 For information on:
 
-* The `menubar` configuration option, see: xref:configure/editor-appearance.adoc#menubar[User interface options - `menubar`].
-* The `menu` configuration option, see: xref:configure/editor-appearance.adoc#menu[User interface options - `menu`].
+* The `menubar` configuration option, see: xref:editor-appearance.adoc#menubar[User interface options - `menubar`].
+* The `menu` configuration option, see: xref:editor-appearance.adoc#menu[User interface options - `menu`].
 * The `config` attribute, see: xref:settingadditionalconfigurationoptions[Setting additional configuration options].
 
 [[settingcontextmenu]]
@@ -225,8 +225,8 @@ To disable the context menu, set the `contextmenu` attribute to `"false"`. For e
 <tinymce-editor contextmenu="false"></tinymce-editor>
 ----
 
-For a list of available context menu sections, see: xref:advanced/editor-context-menu-identifiers.adoc[Available context menu sections].
-For information on context menus, see: xref:configure/editor-appearance.adoc#contextmenu[User interface options - `contextmenu`].
+For a list of available context menu sections, see: xref:editor-context-menu-identifiers.adoc[Available context menu sections].
+For information on context menus, see: xref:editor-appearance.adoc#contextmenu[User interface options - `contextmenu`].
 
 [[settingthequick-inserttoolbar]]
 ==== Setting the quick-insert toolbar
@@ -240,7 +240,7 @@ To add a quick-insert toolbar, add `"quickbars"` to the `plugins` attribute. To 
 <tinymce-editor plugins="quickbars hr pagebreak" quickbars_insert_toolbar="quickimage quicktable quicklink | hr pagebreak"></tinymce-editor>
 ----
 
-The `quickbars_insert_toolbar` attribute accepts a space-separated string of toolbar buttons with pipe characters (`|`) for grouping buttons. For a list of available toolbar buttons, see: xref:advanced/available-toolbar-buttons.adoc[Toolbar Buttons Available for TinyMCE].
+The `quickbars_insert_toolbar` attribute accepts a space-separated string of toolbar buttons with pipe characters (`|`) for grouping buttons. For a list of available toolbar buttons, see: xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for TinyMCE].
 
 To disable the quick-insert toolbar, set the `quickbars_insert_toolbar` attribute to `"false"`. For example:
 
@@ -261,7 +261,7 @@ To add a quick-selection toolbar, add `"quickbars"` to the `plugins` attribute. 
 <tinymce-editor plugins="quickbars" quickbars_selection_toolbar="bold italic | formatselect | quicklink blockquote"></tinymce-editor>
 ----
 
-The `quickbars_selection_toolbar` attribute accepts a space-separated string of toolbar buttons with pipe characters (`|`) for grouping buttons. For a list of available toolbar buttons, see: xref:advanced/available-toolbar-buttons.adoc[Toolbar Buttons Available for TinyMCE].
+The `quickbars_selection_toolbar` attribute accepts a space-separated string of toolbar buttons with pipe characters (`|`) for grouping buttons. For a list of available toolbar buttons, see: xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for TinyMCE].
 
 To disable the quick-selection toolbar, set the `quickbars_selection_toolbar` attribute to `"false"`. For example:
 
@@ -294,7 +294,7 @@ To use a custom CSS file, provide a relative or abolute path to the css file, su
 * The `content_style` option to apply a small set of CSS styles.
 * The `content_css` option for applying large or complex CSS configurations.
 
-For information on the `content_css` option, see: xref:configure/content-appearance.adoc#content_css[Content appearance options - `content_css`].
+For information on the `content_css` option, see: xref:content-appearance.adoc#content_css[Content appearance options - `content_css`].
 
 [[settingcontentstyling]]
 ==== Setting content styling
@@ -311,7 +311,7 @@ To apply a small set of CSS styles to the editor, use the `content_style` attrib
 * The `content_style` option to apply a small set of CSS styles.
 * The `content_css` option for applying large or complex CSS configurations.
 
-For information on the `content_style` option, see: xref:configure/content-appearance.adoc#content_style[Content appearance options - `content_style`].
+For information on the `content_style` option, see: xref:content-appearance.adoc#content_style[Content appearance options - `content_style`].
 
 [[settingpowerpasteswordimportmethod]]
 ==== Setting PowerPaste's word import method
@@ -325,7 +325,7 @@ To control how content pasted from Microsoft Word is filtered, use the `powerpas
 <tinymce-editor powerpaste_word_import="merge"></tinymce-editor>
 ----
 
-For information on the `powerpaste_word_import` option, including supported values, see: xref:plugins/premium/powerpaste.adoc#powerpaste_word_import[The PowerPaste plugin - `powerpaste_word_import`].
+For information on the `powerpaste_word_import` option, including supported values, see: xref:premium-powerpaste.adoc#powerpaste_word_import[The PowerPaste plugin - `powerpaste_word_import`].
 
 [[settingpowerpasteshtmlimportmethod]]
 ==== Setting PowerPaste's html import method
@@ -339,7 +339,7 @@ To control how content pasted from sources other than Microsoft Word is filtered
 <tinymce-editor powerpaste_html_import="prompt"></tinymce-editor>
 ----
 
-For information on the `powerpaste_html_import` option, including supported values, see: xref:plugins/premium/powerpaste.adoc#powerpaste_html_import[The PowerPaste plugin - `powerpaste_html_import`].
+For information on the `powerpaste_html_import` option, including supported values, see: xref:premium-powerpaste.adoc#powerpaste_html_import[The PowerPaste plugin - `powerpaste_html_import`].
 
 [[settingpowerpastetoallowlocalimages]]
 ==== Setting PowerPaste to allow local images
@@ -353,7 +353,7 @@ To prevent Base64 encoded images with a data URI from being pasted into the edit
 <tinymce-editor powerpaste_allow_local_images="false"></tinymce-editor>
 ----
 
-For information on the `powerpaste_allow_local_images` option, including supported values, see: xref:plugins/premium/powerpaste.adoc#powerpaste_allow_local_images[The PowerPaste plugin - `powerpaste_allow_local_images`].
+For information on the `powerpaste_allow_local_images` option, including supported values, see: xref:premium-powerpaste.adoc#powerpaste_allow_local_images[The PowerPaste plugin - `powerpaste_allow_local_images`].
 
 [[showingresizehandles]]
 ==== Showing resize handles
@@ -374,7 +374,7 @@ To allow the user to resize the editor both horizontally and vertically, set the
 <tinymce-editor resize="both"></tinymce-editor>
 ----
 
-For information on the `resize` option, see: xref:configure/editor-appearance.adoc#resize[User interface options - `resize`].
+For information on the `resize` option, see: xref:editor-appearance.adoc#resize[User interface options - `resize`].
 
 [[settingtheeditorsetupfunction]]
 ==== Setting the editor setup function
@@ -393,7 +393,7 @@ To execute a javascript callback before the editor instance is rendered, use the
 <tinymce-editor setup="setupEditor"></tinymce-editor>
 ----
 
-For information on the `setup` option, see: xref:configure/integration-and-setup.adoc#setup[Integration and setup options - `setup`].
+For information on the `setup` option, see: xref:integration-and-setup.adoc#setup[Integration and setup options - `setup`].
 
 [[settingtheeditorskin]]
 ==== Setting the editor skin
@@ -407,9 +407,9 @@ To apply a custom skin to the editor, use the `skin` attribute. For example:
 
 For information on:
 
-* Using the `skin` option, see: xref:configure/editor-appearance.adoc#skin[User interface options - `skin`].
-* {companyname} premium skins, see: xref:enterprise/premium-skins-and-icon-packs/index.adoc[Tiny Skins and Icon Packs].
-* Creating a custom skin for {productname}, see: xref:advanced/creating-a-skin.adoc[Create a skin for {productname}].
+* Using the `skin` option, see: xref:editor-appearance.adoc#skin[User interface options - `skin`].
+* {companyname} premium skins, see: xref:premium-skins-and-icon-packs.adoc[Tiny Skins and Icon Packs].
+* Creating a custom skin for {productname}, see: xref:creating-a-skin.adoc[Create a skin for {productname}].
 
 [[settingtheimagesuploadurl]]
 ==== Setting the images upload URL
@@ -428,7 +428,7 @@ The upload handler should return the location of the uploaded file in the follow
 { "location": "folder/sub-folder/new-location.png" }
 ----
 
-For information on using the `images_upload_url`, see: xref:configure/file-image-upload.adoc#images_upload_url[Image & file options - `images_upload_url`].
+For information on using the `images_upload_url`, see: xref:file-image-upload.adoc#images_upload_url[Image & file options - `images_upload_url`].
 
 [[settingtheimagesuploadhandler]]
 ==== Setting the images upload handler
@@ -445,7 +445,7 @@ include::partial$misc/images-upload-handler-function.adoc[]
 --
 
 
-For information on using the `images_upload_handler` option, see: xref:configure/file-image-upload.adoc#images_upload_handler[Image & file options - `images_upload_handler`].
+For information on using the `images_upload_handler` option, see: xref:file-image-upload.adoc#images_upload_handler[Image & file options - `images_upload_handler`].
 
 [[settingtheimagesuploadbasepath]]
 ==== Setting the images upload base path
@@ -457,7 +457,7 @@ To specify the basepath to prepend to URLs returned from the configured `images_
 <tinymce-editor images_upload_url="postAcceptor.php" images_upload_base_path="/some/basepath"></tinymce-editor>
 ----
 
-For information on using the `images_upload_base_path` option, see: xref:configure/file-image-upload.adoc#images_upload_base_path[Image & file options - `images_upload_base_path`].
+For information on using the `images_upload_base_path` option, see: xref:file-image-upload.adoc#images_upload_base_path[Image & file options - `images_upload_base_path`].
 
 [[settingtheimagesuploadtohavecredentials]]
 ==== Setting the images upload to have credentials
@@ -469,7 +469,7 @@ To receive credentials (such as cookies, authorization headers, or TLS client ce
 <tinymce-editor images_upload_url="postAcceptor.php" images_upload_credentials="true"></tinymce-editor>
 ----
 
-For information on using the `images_upload_credentials` option, see: xref:configure/file-image-upload.adoc#images_upload_credentials[Image & file options - `images_upload_credentials`].
+For information on using the `images_upload_credentials` option, see: xref:file-image-upload.adoc#images_upload_credentials[Image & file options - `images_upload_credentials`].
 
 [[settingtheimagesuploadtoreusefilenames]]
 ==== Setting the images upload to reuse filenames
@@ -481,7 +481,7 @@ To force the editor to use the same filename for a given image, regardless of th
 <tinymce-editor images_upload_url="postAcceptor.php" images_reuse_filename="true"></tinymce-editor>
 ----
 
-For information on using the `images_reuse_filename` option, see: xref:configure/file-image-upload.adoc#images_reuse_filename[Image & file options - `images_reuse_filename`].
+For information on using the `images_reuse_filename` option, see: xref:file-image-upload.adoc#images_reuse_filename[Image & file options - `images_reuse_filename`].
 
 [[settingtheiconpack]]
 ==== Setting the icon pack
@@ -497,9 +497,9 @@ Use this attribute if the icon pack is bundled with {productname} (including cus
 
 For information on:
 
-* Using the `icons` option, see: xref:configure/editor-appearance.adoc#icons[User interface options - `icons`].
-* {companyname} premium icon packs, see: xref:enterprise/premium-skins-and-icon-packs/index.adoc[Tiny Skins and Icon Packs].
-* Creating a custom icon pack for {productname}, see: xref:advanced/creating-an-icon-pack.adoc[Create an icon pack for {productname}].
+* Using the `icons` option, see: xref:editor-appearance.adoc#icons[User interface options - `icons`].
+* {companyname} premium icon packs, see: xref:premium-skins-and-icon-packs.adoc[Tiny Skins and Icon Packs].
+* Creating a custom icon pack for {productname}, see: xref:creating-an-icon-pack.adoc[Create an icon pack for {productname}].
 
 [[settingtheiconpackurl]]
 ==== Setting the icon pack URL
@@ -515,9 +515,9 @@ Use this attribute if the icon pack is hosted on a web site. If the icon pack is
 
 For information on:
 
-* Using the `icons_url` option, see: xref:configure/editor-appearance.adoc#icons_url[User interface options - `icons_url`].
-* {companyname} premium icon packs, see: xref:enterprise/premium-skins-and-icon-packs/index.adoc[Tiny Skins and Icon Packs].
-* Creating a custom icon pack for {productname}, see: xref:advanced/creating-an-icon-pack.adoc[Create an icon pack for {productname}].
+* Using the `icons_url` option, see: xref:editor-appearance.adoc#icons_url[User interface options - `icons_url`].
+* {companyname} premium icon packs, see: xref:premium-skins-and-icon-packs.adoc[Tiny Skins and Icon Packs].
+* Creating a custom icon pack for {productname}, see: xref:creating-an-icon-pack.adoc[Create an icon pack for {productname}].
 
 [[settingadditionalconfigurationoptions]]
 ==== Setting additional configuration options

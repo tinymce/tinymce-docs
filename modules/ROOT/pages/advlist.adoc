@@ -1,0 +1,32 @@
+= Advanced List plugin
+:description: Create styled number and bulleted lists.
+:keywords: advlist advlist_bullet_styles advlist_number_styles
+:title_nav: Advanced List
+
+The `advlist` plugin extends the core `bullist` and `numlist` toolbar controls by adding CSS `list-style-type` styled number formats and bullet types to the controls.
+
+IMPORTANT: The xref:lists.adoc[Lists] (`lists`) plugin must be activated for the `advlist` plugin to work.
+
+== Basic setup
+
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'lists advlist'
+});
+----
+
+== Options
+
+These settings affect the execution of the `advlist` plugin by providing more granular control of list styles.
+
+include::partial$configuration/advlist_bullet_styles.adoc[]
+
+include::partial$configuration/advlist_number_styles.adoc[]
+
+== Commands
+
+The Advanced Lists plugin provides the following JavaScript commands.
+
+include::partial$commands/advlist-cmds.adoc[]

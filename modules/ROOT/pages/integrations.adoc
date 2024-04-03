@@ -1,0 +1,103 @@
+= Integrate with other projects
+:description: Faster development with integrations of TinyMCE into your favorite framework or CMS.
+:title_nav: Integrations
+:type: folder
+
+// 2 Columns, both asciidoc
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:angularjs.adoc[AngularJS]
+
+This directive allows you to add a TinyMCE editor to your form elements.
+
+|
+[.lead]
+xref:angular.adoc[Angular 5+]
+
+Using TinyMCE together with Angular with the @tinymce/tinymce-angular component
+
+|
+[.lead]
+xref:blazor.adoc[Blazor]
+
+Blazor TinyMCE component.
+
+|
+[.lead]
+xref:bootstrap.adoc[Bootstrap]
+
+How to override the built-in block on `focusin` in Bootstrap dialogs when using TinyMCE.
+
+|
+[.lead]
+xref:django.adoc[Django]
+
+Django TinyMCE component.
+
+|
+[.lead]
+xref:jquery.adoc[jQuery]
+
+Documentation for the official TinyMCE jQuery integration.
+
+|
+[.lead]
+xref:laravel-introduction.adoc[Laravel]
+
+A guide to using TinyMCE with the PHP-based Laravel framework.
+
+|
+[.lead]
+xref:expressjs.adoc[Node.js + Express]
+
+A quick start guide on integrating TinyMCE into an Express JS Application
+
+|
+[.lead]
+xref:rails.adoc[Rails]
+
+Seamlessly integrates TinyMCE into the Rails asset pipeline.
+
+|
+[.lead]
+xref:react.adoc[React]
+
+React TinyMCE component.
+
+|
+[.lead]
+xref:svelte.adoc[Svelte]
+
+Svelte TinyMCE component.
+
+|
+[.lead]
+xref:swing.adoc[Swing]
+
+Seamlessly integrates TinyMCE into Swing applications.
+
+|
+[.lead]
+xref:vue.adoc[Vue]
+
+The Official TinyMCE Vue.js component
+
+|
+[.lead]
+xref:webcomponent.adoc[Web Components]
+
+The TinyMCE Web Component integration guide
+
+|
+[.lead]
+xref:wordpress.adoc[WordPress]
+
+WordPress TinyMCE component
+
+// Empty cell to even out rows
+| 
+
+|===

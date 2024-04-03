@@ -47,4 +47,4 @@ In this example, let's replace `<textarea id='mytextarea'>` with a {productname}
 
 When the `<form>` is submitted the {productname} editor mimics the behavior of a normal HTML `<textarea>` during the `post`. In your form handler you can process the content submitted as if it had come from a regular `<textarea>`.
 
-NOTE: If you decided to use the Self-hosted package, move on to the next step xref:general-configuration-guide/work-with-plugins.adoc[working with plugins], where you'll start customizing {productname}. If you'd like to learn about other install options please keep reading.
+NOTE: If you decided to use the Self-hosted package, move on to the next step xref:work-with-plugins.adoc[working with plugins], where you'll start customizing {productname}. If you'd like to learn about other install options please keep reading.

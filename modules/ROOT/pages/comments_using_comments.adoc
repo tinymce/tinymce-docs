@@ -1,0 +1,105 @@
+= Using TinyMCE Comments
+:description: How to add, edit, resolve, and remove comments in TinyMCE
+:keywords: comments commenting tinycomments
+:title_nav: Using Comments
+
+:pluginname: Comments
+:plugincode: comments
+
+I'm trying to:
+
+* xref:addacomment[Add a comment].
+* xref:editacomment[Edit a comment].
+* xref:deleteacomment[Delete a comment].
+* xref:deleteacommentthreadconversation[Delete a comment thread (conversation)].
+* xref:resolveacommentthreadconversation[Resolve a comment thread (conversation)].
+* xref:showorviewacomment[Show or view a comment].
+* xref:deleteallcommentthreads[Delete all comment threads].
+
+[[addacomment]]
+== Add a comment
+
+. Select the text from the desired location in the editor body.
+. From the navigation menu, choose *Insert* -> *Add Comment* or click on the *Add comment* image:icons/comment-add.svg[Add comment] toolbar button to add the comment.
+. The Comment box appears in the sidebar of the editor instance.
+. Type a comment in the comment box, the "_Say something..._" placeholder text will disappear.
+. Press *Clear* to discard or *Save* to store the input comment.
+
+*Result*: The selected text will be highlighted as per the configured options. The following screen with the option for editing, deleting, and replying to the comment, will appear.
+
+image::comments-edit.png[Delete Conversation]
+
+NOTE: The above procedure can be followed for adding multiple comments to the document.
+
+[[editacomment]]
+== Edit a comment
+
+Follow this procedure to edit a comment.
+
+. Click on the ellipsis image:icons/image-options.svg[(ellipsis - 3 horizontal dots)] icon above the comments box to expand the menu.
+. Select *Edit* from the menu items.
+. The comment field becomes editable. Make the required changes.
+. Click *Cancel* to discard or *Save* to store the changes.
+
+[[deleteacomment]]
+== Delete a comment
+
+Follow this procedure to delete a comment. This option is not available for the first comment in a conversation.
+
+. Click on the ellipsis image:icons/image-options.svg[(ellipsis - 3 horizontal dots)] icon above the comments box to expand the menu.
+. Select *Delete* from the menu items.
+. The following options appear in the comments sidebar: +
+image:comments-delete-comment.png[delete comment]
+. Click *Cancel* to cancel the action or *Delete* to remove the comment from the conversation.
+
+[[deleteacommentthreadconversation]]
+== Delete a comment thread (conversation)
+
+This option is only available for the first comment in a conversation. Once the comment is saved, follow this procedure to delete a conversation.
+
+. Click on the ellipsis image:icons/image-options.svg[(ellipsis - 3 horizontal dots)] icon above the comments box to expand the menu.
+. Select *Delete conversation* from the menu items.
+. The following decision dialog box will appear: +
+image:comments-delete-conversation.png[delete conversation]
+. Click *Cancel* to cancel the action or *Delete* to remove the conversation.
+
+*Result*: The conversation and all its subsequent comments will be deleted.
+
+[[resolveacommentthreadconversation]]
+== Resolve a comment thread (conversation)
+
+include::partial$misc/requires_5_8v.adoc[]
+
+NOTE: This feature requires the xref:comments_callback_mode.adoc#tinycomments_resolve[`tinycomments_resolve`] or xref:comments_embedded_mode.adoc#tinycomments_can_resolve[`tinycomments_can_resolve`] setting to be configured.
+
+This option is only available for the first comment in a conversation. Once a comment is saved, follow this procedure to resolve a conversation.
+
+. Click on the ellipsis image:icons/image-options.svg[(ellipsis - 3 horizontal dots)] icon above the comments box to expand the menu.
+. Select *Resolve conversation* from the menu items.
+. The following decision dialog box will appear: +
+image:comments-resolve-conversation.png[resolve conversation]
+. Click *Cancel* to cancel the action or *Resolve* to resolve the conversation.
+
+*Result*: The conversation will be resolved.
+
+[[showorviewacomment]]
+== Show or view a comment
+
+Follow this procedure to display the comments sidebar:
+
+. Place the cursor on the desired text in the editor body:
+. From the navigation menu, choose *View* -> *Show Comment* or click on the *Show Comments* image:comments-toolbar-button.png[Comments] toggle toolbar button to display the comment.
+
+*Result*: The comments sidebar will appear and display the corresponding conversation for the highlighted text.
+
+[[deleteallcommentthreads]]
+== Delete all comment threads
+
+Follow this procedure to delete all conversations in the document:
+
+. From the navigation menu, choose *File* -> *Delete all conversations* option to delete all the comments in a document.
+. The following decision dialog box will appear: +
+image:comments-delete-conversations.png[Delete all conversations]
+. Click *Ok* to remove the all the comments or *Cancel* to dismiss the action.
+
+*Result*: All the comments for the selected document will be deleted.

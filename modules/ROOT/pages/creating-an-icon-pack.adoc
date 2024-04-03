@@ -1,0 +1,141 @@
+= Create an icon pack for TinyMCE
+:description: How to make your own icon pack.
+:description_short: Introducing icon pack creation.
+:keywords: create creator skin icon
+:title_nav: Create an icon pack
+
+TinyMCE 5 introduced icon packs for customizing the editor icons.
+
+== Prerequisites
+
+This guide assumes:
+
+* Familiarity with the command line and running commands.
+* https://nodejs.org/en/[Node.js] and https://www.npmjs.com[NPM] are already installed.
+* Optional: https://git-scm.com/[`git`] is already installed.
+
+== How icons work in TinyMCE
+
+A {productname} icon pack is a `.js` file containing strings of https://developer.mozilla.org/en-US/docs/Web/SVG[SVG's]. An icon pack can be used: to include one or more custom icons; or to replace some or all of the default {productname} icons.
+
+An icon pack only requires the custom icons to be included; the default {productname} icons are used as a fallback for icons missing from the custom icon pack.
+
+NOTE: Don't forget to explore our ready-to-use Premium Icon Packs such as 'Material' icons, and a smaller version of our default icons at link:{plugindirectory}skins-and-icon-packs[{prem_skins_icons}].
+
+== Creating a TinyMCE icon pack
+
+To create a custom icon pack:
+
+* xref:downloadandsetuptheiconpacktemplate[Download and setup the icon pack template]
+* xref:addthesvgfiles[Add the SVG files]
+* xref:buildtheiconpack[Build the icon pack]
+
+[[downloadandsetuptheiconpacktemplate]]
+=== Download and setup the icon pack template
+
+To use the {productname} icon pack template project:
+
+. Download the https://github.com/tinymce/oxide-icon-pack-template[{productname} Oxide Icon Pack Template] by either:
+ ** Downloading the `.zip` file from the https://github.com/tinymce/oxide-icon-pack-template[Oxide Icon Pack Template GitHub page] and extract the contents.
+ ** From a terminal or command prompt, use git to clone the GitHub repository, such as:
++
+[source, sh]
+----
+$ git clone https://github.com/tinymce/oxide-icon-pack-template.git
+----
+. Open a terminal or command prompt, navigate to the `oxide-icon-pack-template` directory.
+. Install the project dependencies by executing:
++
+[source, sh]
+----
+$ npm install
+----
+
+. When prompted, enter a name for the icon pack. The icon pack name should only contain:
+ ** Numbers.
+ ** Letters.
+ ** Hyphens ( `-` ).
+ ** Underscores ( `_` ).
+
+The icon pack name will be used with the xref:editor-appearance.adoc#icons[icons] option to apply the icons in {productname}.
+
+[[addthesvgfiles]]
+=== Add the SVG files
+
+Each SVG files placed in `/src/svg` will be converted to an icon. The file names of the SVG files are used to set the icon identifier used by {productname}.
+
+For example: `bold.svg` will have the identifier `bold`. Such as:
+
+[source, js]
+----
+tinymce.init({
+  selector: '#tiny_custom_button',
+  toolbar: 'myButton',
+  icons: 'my_icon_pack',
+  setup: function (editor) {
+    editor.ui.registry.addButton('myButton', {
+      icon: 'bold',    // the 'bold' icon  created from 'bold.svg'
+      onAction: function (_) {
+        editor.insertContent('&nbsp;<strong>It\'s my icon button!</strong>&nbsp;');
+      }
+    });
+  }
+});
+----
+
+For a list of the icon identifiers, see: xref:editor-icon-identifiers.adoc[Available icons].
+
+{productname} does not resize the SVGs provided, relying on the size defined in the SVG. This allows icons of different sizes to be used in the editor. The Toolbar button sizes are independent of the icon sizes. To change button sizes, a xref:creating-a-skin.adoc[custom skin] is required.
+
+NOTE: Input SVGs must be shapes, not strokes. SVG files containing strokes will not render correctly. If the input files contain strokes, use a graphics program to convert the strokes into shapes.
+
+[[buildtheiconpack]]
+=== Build the icon pack
+
+To build the icon pack using Gulp:
+
+. Open a terminal or command prompt and navigate to the root directory of the icon pack (such as: `oxide-icon-pack-template/`).
+. Build the icon pack by executing the `npx gulp` command:
++
+[source, sh]
+----
+$ npx gulp
+----
+A `dist/` directory containing the icon pack will be created.
+
+. Using a web browser, open `dist/html/icons.html` to preview the icons.
+
+==== Troubleshooting information for building icon packs
+
+The SVG files are optimized during the build process with https://github.com/svg/svgo[SVGO]. The optimization can result in distorted graphics due to rounding errors. The graphics may be fixed by providing new SVGO options. To change the SVGO options used:
+
+. Using a text editor, open `gulpfile.js`.
+. Add the `svgo` option to the `iconPackager` function, such as:
++
+[source, js]
+----
+iconPackager({
+  name: 'my-icon-pack',
+  svgo: { floatPrecision: 3 } //Increase the rounding precision
+})
+----
+All user defined options, including SVGO options, will merge with the default options. For information on SVGO options, see: https://github.com/svg/svgo[SVGO on GitHub].
+
+== Deploying an icon pack
+
+An icon pack can be served either:
+
+* xref:deploytheiconpackwithtinymce[With {productname}]
+* xref:deploytheiconpackandtinymceseparately[Separate from {productname}]
+
+[[deploytheiconpackwithtinymce]]
+=== Deploy the icon pack with TinyMCE
+
+:customIconPack: true
+include::partial$configuration/icons.adoc[]
+
+[[deploytheiconpackandtinymceseparately]]
+=== Deploy the icon pack and TinyMCE separately
+
+include::partial$configuration/icons_url.adoc[]
+:customIconPack: false

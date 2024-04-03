@@ -1,0 +1,176 @@
+= tinymce.AddOnManager
+:navtitle: tinymce.AddOnManager
+:description: This class handles the loading of add-ons and their language packs. ThemeManager and PluginManager are instances of AddOnManager, and manage themes and plugins.
+:keywords: add, addComponents, dependencies, get, load, requireLangPack
+:moxie-type: api
+
+This class handles the loading of add-ons and their language packs. ThemeManager and PluginManager are instances of AddOnManager, and manage themes and plugins.
+
+[[summary]]
+== Summary
+
+[[methods-summary]]
+=== Methods
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#add[add()]|Adds a instance of the add-on by it's short name.|`xref:apis/tinymce.addonmanager.adoc[AddOnManager]`
+|xref:#addComponents[addComponents()]|Add a set of components that will make up the add-on. Using the url of the add-on name as the base url.
+This should be used in development mode.  A new compressor/javascript munger process will ensure that the
+components are put together into the plugin.js file and compressed correctly.
+
+
+__Deprecated in TinyMCE 5.7 and has been marked for removal in TinyMCE 6.0.__|`xref:apis/tinymce.addonmanager.adoc[AddOnManager]`
+|xref:#dependencies[dependencies()]|__Deprecated in TinyMCE 5.7 and has been marked for removal in TinyMCE 6.0.__|`xref:apis/tinymce.addonmanager.adoc[AddOnManager]`
+|xref:#get[get()]|Returns the specified add on by the short name.|`xref:apis/tinymce.addonmanager.adoc[AddOnManager]`
+|xref:#load[load()]|Loads an add-on from a specific url.|`xref:apis/tinymce.addonmanager.adoc[AddOnManager]`
+|xref:#requireLangPack[requireLangPack()]|Loads a language pack for the specified add-on.|`xref:apis/tinymce.addonmanager.adoc[AddOnManager]`
+|===
+
+[[methods]]
+== Methods
+
+[[add]]
+=== add()
+[source, javascript]
+----
+add(id: String, addOn: tinymce.Theme | tinymce.Plugin): tinymce.Theme | tinymce.Plugin
+----
+Adds a instance of the add-on by it's short name.
+
+==== Examples
+[source, javascript]
+----
+// Create a simple plugin
+tinymce.create('tinymce.plugins.TestPlugin', {
+  TestPlugin: function(ed, url) {
+  ed.on('click', function(e) {
+     ed.windowManager.alert('Hello World!');
+  });
+  }
+});
+
+// Register plugin using the add method
+tinymce.PluginManager.add('test', tinymce.plugins.TestPlugin);
+
+// Initialize TinyMCE
+tinymce.init({
+ ...
+ plugins: '-test' // Init the plugin but don't try to load it
+});
+----
+
+==== Parameters
+
+* `id (String)` - Short name/id for the add-on.
+* `addOn (xref:apis/tinymce.theme.adoc[Theme] | xref:apis/tinymce.plugin.adoc[Plugin])` - Theme or plugin to add.
+
+==== Return value
+
+* `xref:apis/tinymce.theme.adoc[Theme]` - The same theme or plugin instance that got passed in.
+* `xref:apis/tinymce.plugin.adoc[Plugin]` - The same theme or plugin instance that got passed in.
+
+'''
+
+[[addComponents]]
+=== addComponents()
+[source, javascript]
+----
+addComponents(pluginName: String, scripts: Array)
+----
+Add a set of components that will make up the add-on. Using the url of the add-on name as the base url.
+This should be used in development mode.  A new compressor/javascript munger process will ensure that the
+components are put together into the plugin.js file and compressed correctly.
+
+
+__Deprecated in TinyMCE 5.7 and has been marked for removal in TinyMCE 6.0.__
+
+==== Parameters
+
+* `pluginName (String)` - name of the plugin to load scripts from (will be used to get the base url for the plugins).
+* `scripts (Array)` - Array containing the names of the scripts to load.
+
+'''
+
+[[dependencies]]
+=== dependencies()
+[source, javascript]
+----
+dependencies(pluginName: String): Array
+----
+__Deprecated in TinyMCE 5.7 and has been marked for removal in TinyMCE 6.0.__
+
+==== Parameters
+
+* `pluginName (String)` - Name of the plugin to lookup dependencies for.
+
+==== Return value
+
+* `Array` - An array of dependencies for the specified plugin.
+
+'''
+
+[[get]]
+=== get()
+[source, javascript]
+----
+get(name: String): tinymce.Theme | tinymce.Plugin
+----
+Returns the specified add on by the short name.
+
+==== Parameters
+
+* `name (String)` - Add-on to look for.
+
+==== Return value
+
+* `xref:apis/tinymce.theme.adoc[Theme]` - Theme or plugin add-on instance or undefined.
+* `xref:apis/tinymce.plugin.adoc[Plugin]` - Theme or plugin add-on instance or undefined.
+
+'''
+
+[[load]]
+=== load()
+[source, javascript]
+----
+load(name: String, addOnUrl: String, success: function, scope: Object, failure: function)
+----
+Loads an add-on from a specific url.
+
+==== Examples
+[source, javascript]
+----
+// Loads a plugin from an external URL
+tinymce.PluginManager.load('myplugin', '/some/dir/someplugin/plugin.js');
+
+// Initialize TinyMCE
+tinymce.init({
+ ...
+ plugins: '-myplugin' // Don't try to load it again
+});
+----
+
+==== Parameters
+
+* `name (String)` - Short name of the add-on that gets loaded.
+* `addOnUrl (String)` - URL to the add-on that will get loaded.
+* `success (function)` - Optional success callback to execute when an add-on is loaded.
+* `scope (Object)` - Optional scope to execute the callback in.
+* `failure (function)` - Optional failure callback to execute when an add-on failed to load.
+
+'''
+
+[[requireLangPack]]
+=== requireLangPack()
+[source, javascript]
+----
+requireLangPack(name: String, languages: String)
+----
+Loads a language pack for the specified add-on.
+
+==== Parameters
+
+* `name (String)` - Short name of the add-on.
+* `languages (String)` - Optional comma or space separated list of languages to check if it matches the name.
+
+'''

@@ -1,0 +1,49 @@
+= Link Checker plugin
+:description: Validate links, as you type.
+:keywords: url urls link linkchecker_service_url linkchecker_content_css
+:title_nav: Link Checker
+
+include::partial$misc/premiumplugin.adoc[]
+
+The `linkchecker` plugin does what it says &ndash; validates URLs, as you type them. URLs considered invalid will be highlighted with red and will have a dedicated context menu with options to either edit the link, try and open it in a separate tab, remove the link, or ignore it.
+
+The Link Checker plugin relies on HTTP response status codes to determine if a link is valid. Web pages that return incorrect or invalid HTTP responses are highlighted as invalid or "broken". For information on valid HTTP response status codes, see: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status[MDN Web Docs - HTTP response status codes].
+
+== Cloud Instructions
+
+If you are using xref:editor-and-features.adoc[{cloudname}], simply add `"linkchecker"` to your plugins list, and the service will be automatically configured.
+
+=== Basic setup using Tiny Cloud
+
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'linkchecker'
+});
+----
+
+== Self-hosted Instructions
+
+Customers using a Self-hosted environment will need to provide a URL to their deployment of the link checking service via the `linkchecker_service_url` parameter
+
+=== Basic self-hosted setup
+
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'linkchecker',
+  linkchecker_service_url: 'http://mydomain.com/linkchecker'
+});
+----
+
+== Options
+
+Link Checker has the following settings.
+
+include::partial$configuration/linkchecker_content_css.adoc[]
+
+include::partial$configuration/linkchecker_preprocess.adoc[]
+
+include::partial$configuration/linkchecker_service_url.adoc[]

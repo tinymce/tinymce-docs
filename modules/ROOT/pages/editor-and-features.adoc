@@ -1,0 +1,140 @@
+= Cloud deployment of editor & plugins
+:description: Learn how to set up the TinyMCE editor via the Cloud or migrate from a self-hosted environment.
+:description_short: Learn how to set up the TinyMCE editor via the Cloud or migrate from a self-hosted environment.
+:keywords: tinymce cloud script textarea apiKey
+
+{cloudname} is the easiest way to integrate {productname} and upgrade to premium plugins.
+
+{cloudname} can be used without an API key. Refer to the xref:general-configuration-guide.adoc[Introduction & getting started] guide for more information. Sign up for an API key and update the script tag to use premium plugins or avoid the in-editor developer warning.
+
+All {cloudname} accounts include a free, pre-configured {cloudname} image proxy service. This setup uses the xref:imagetools.adoc[Image tools] plugin.
+
+== Integrating TinyMCE for the first time
+
+=== Step 1: Insert the Tiny Cloud script tag into the webpage
+
+Insert the {productname} editor code into the application to load {productname} for the first time. The code inserting is done by adding the following script tag into your app, or in the case of a web page the `<head>` of the page:
+
+The following example adds a script tag into the application that inserts the code. Use the `<head>` of the page on a web page. Be sure to substitute 'no-api-key' with your api key.
+
+[source, html, subs="attributes+"]
+----
+<script src="{cdnurl}" referrerpolicy="origin"></script>
+----
+
+|===
+|  | Value | Description
+
+| 1
+| no-api-key
+| Replace with your api key
+
+| 2
+| origin=
+| A `referrerpolicy` specifies how much of the current page's URL is sent in the `Referer` header when the browser fetches page resources (for example, the {productname} editor). The use of the `Referer` header ensures API keys are only used on domains registered to their owners. We only care about the domain portion however (similar to the operation of `Origin` header), so for improved performance and privacy always set the `referrerpolicy` to `origin` when requesting {cloudname} resources.
+|===
+
+image::scripttag.png[Script Tag Description]
+
+
+[IMPORTANT, id="referer-troubleshooting"]
+====
+{cloudname} verifies the domain {productname} is loading from by checking the *Referer* header in the network request. Sometimes the domains in the *Referer* header does not match with the URL in the browser's address bar.
+
+To check the *Referer* header, open your browser's _Developer's Tools_ and open the _Network_ tab. From there, find the request being made to load {productname} with your API key, and click on the *Headers* tab.  In the section called *Request Headers* there should be a field for *Referer*. If the value there is different from one of your registered URLs, you may need to adjust either your registered URLs, or your application's *Refer* header settings.
+====
+
+=== Step 2: Load, customize and interact with TinyMCE
+
+There are more than 40 open source plugins that enhance the editing experience in addition to the advanced content create solutions on {cloudname}. A range of xref:basic-example.adoc[simple examples] are available. Refer to the xref:quick-start.adoc[Quick start] section for more information.
+
+=== Step 3: Specifying purchased TinyMCE plugins and toolbar/menu items
+
+Extend the xref:configure.adoc[{productname} configuration] to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
+
+* xref:premium-mentions.adoc[Mentions]
+* xref:premium-tinydrive.adoc[{cloudfilemanager}]
+* xref:comments.adoc[Comments]
+* xref:premium-pageembed.adoc[Page Embed]
+* xref:premium-permanentpen.adoc[Permanent Pen]
+* xref:premium-formatpainter.adoc[Format Painter]
+* xref:premium-powerpaste.adoc[PowerPaste]
+* xref:premium-tinymcespellchecker.adoc[Spell Checker Pro]
+
+NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via xref:cloud-deployment-guide.adoc[{cloudname}].
+
+* xref:imagetools.adoc[Image Tools (with configured image proxy)]
+
+NOTE: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurs automatically.
+
+* xref:premium-moxiemanager.adoc[Moxie Manager]
+* xref:premium-a11ychecker.adoc[Accessibility Checker]
+* xref:premium-advcode.adoc[Advanced Code Editor]
+* xref:premium-mediaembed.adoc[Enhanced Media Embed]
+* xref:premium-linkchecker.adoc[Link Checker]
+
+NOTE: It may take up to 30 minutes for the purchased plugin to be available to {productname}. Clear the browser's cache.
+
+=== Step 4: Forward proxy configuration
+
+Ensure that the following URLs are accessible via this proxy if the network has a forward proxy that controls access to the internet.
+
+* All URLs where the editor is deployed.
+* All URLs where the plugins are deployed.
+* \https://imageproxy.tiny.cloud
+* \https://hyperlinking.tiny.cloud
+* \https://spelling.tiny.cloud
+
+Ensure the `tiny-api-key` and `tinymce-api-key` headers are retained while requesting the list of above URLs.
+
+=== Step 5: Specifying a translation
+
+To change the user interface language with a language pack, use the xref:configure-localization.adoc#language[language configuration option].
+
+Alternatively, link:{gettiny}/language-packages/[download a language pack] to enable a language other than English (US). xref:configure-localization.adoc#language_url[Specify its location] with the `language_url` configuration option.
+
+== Migrating from a self-hosted environment to Tiny Cloud
+
+=== Step 1: Replace existing reference to tinymce.min.js
+
+Migrating from a self-hosted environment to {cloudname} is easy. Remove the existing script tag that loads {productname}`'s JavaScript.
+
+NOTE: The script tag typically references `tinymce.min.js` hosted within the application or available at a legacy CDN.
+
+Replace the script tag with the following:
+
+[source, html, subs="attributes+"]
+----
+<script src="{cdnurl}" referrerpolicy="origin"></script>
+----
+
+=== Step 2: Update custom plugin paths
+
+Reference xref:integration-and-setup.adoc#external_plugins[external_plugins] to ensure custom plugins or modified plugins continue to function in the {cloudname} deployment.
+
+WARNING: Do not use the regular xref:work-with-plugins.adoc[plugins] configuration element.
+
+=== Step 3: Specify purchased TinyMCE plugins and toolbar buttons
+
+Extend the xref:configure.adoc[{productname} configuration] to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
+
+* xref:premium-mentions.adoc[Mentions]
+* xref:premium-tinydrive.adoc[{cloudfilemanager}]
+* xref:comments.adoc[Comments]
+* xref:premium-pageembed.adoc[Page Embed]
+* xref:premium-permanentpen.adoc[Permanent Pen]
+* xref:premium-formatpainter.adoc[Format Painter]
+* xref:premium-powerpaste.adoc[Powerpaste]
+* xref:premium-tinymcespellchecker.adoc[Spell Checker Pro]
+
+NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via xref:cloud-deployment-guide.adoc[{cloudname}].
+
+* xref:imagetools.adoc[Image tools (with configured image proxy)]
+
+NOTE: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurs automatically.
+
+* xref:premium-moxiemanager.adoc[Moxie Manager]
+* xref:premium-a11ychecker.adoc[Accessibility Checker]
+* xref:premium-advcode.adoc[Advanced Code Editor]
+* xref:premium-mediaembed.adoc[Enhanced Media Embed]
+* xref:premium-linkchecker.adoc[Link Checker]

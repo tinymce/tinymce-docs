@@ -10,7 +10,7 @@ The snapshot callback will be executed in response to local changes, with access
 ifeval::[{plugincode} != "rtc"]
 
 Required plugin::
-xref:plugins/premium/rtc.adoc[Real-time Collaboration (`rtc`)]
+xref:rtc-plugin.adoc[Real-time Collaboration (`rtc`)]
 endif::[]
 
 Type:: Function
@@ -23,7 +23,7 @@ Input parameters::
 
 | `documentId`
 | `string`
-| The document ID from the xref:rtc/configuration/rtc-options-required.adoc#rtc_document_id[`rtc_document_id`] option.
+| The document ID from the xref:rtc-options-required.adoc#rtc_document_id[`rtc_document_id`] option.
 
 | `version`
 | `integer`

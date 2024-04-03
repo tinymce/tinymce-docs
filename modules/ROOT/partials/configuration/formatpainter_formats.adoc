@@ -1,8 +1,8 @@
 === `formats`
 
-The format painter plugin will register many formats upon initialization. To override these formats, use the xref:configure/content-formatting.adoc#exampleofusageoftheformatsoption[`formats`] option.
+The format painter plugin will register many formats upon initialization. To override these formats, use the xref:content-formatting.adoc#exampleofusageoftheformatsoption[`formats`] option.
 
-The example below showcases the formats registered automatically by the plugin upon initialization. The `formatpainter_removeformat` is used to clear any existing formats before applying the new ones. It is similar to the xref:configure/content-formatting.adoc#removingaformat[`removeformat`] format.
+The example below showcases the formats registered automatically by the plugin upon initialization. The `formatpainter_removeformat` is used to clear any existing formats before applying the new ones. It is similar to the xref:content-formatting.adoc#removingaformat[`removeformat`] format.
 
 *Type:* `Object`
 

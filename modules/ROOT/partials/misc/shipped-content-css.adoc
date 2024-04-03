@@ -5,7 +5,7 @@
 * `document`
 * `writer`
 
-These content CSS files can be enabled in the editor using the xref:configure/content-appearance.adoc#content_css[`content_css` configuration option].
+These content CSS files can be enabled in the editor using the xref:content-appearance.adoc#content_css[`content_css` configuration option].
 
 For example:
 
@@ -20,6 +20,6 @@ tinymce.init({
 These content CSS files can also be used as a template for creating a custom content CSS file for the editor. For the CSS files, see: https://github.com/tinymce/tinymce-dist/tree/master/skins/content[{prodnamecode}-dist GitHub Repository - Content CSS files].
 
 {companyname} also provides content CSS files with the premium skins, for a list of premium content CSS files, see:
-xref:enterprise/premium-skins-and-icon-packs/index.adoc[{prem_skins_icons}].
+xref:premium-skins-and-icon-packs.adoc[{prem_skins_icons}].
 
 {companyname} recommends using the same CSS for both the editor and the page where the editor content will be rendered.

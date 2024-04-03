@@ -1,4 +1,4 @@
-ifeval::["{docname}" == "advanced/available-menu-items"]
+ifeval::["{docname}" == "available-menu-items"]
 [#{plugincode}plugin]
 == {pluginname} plugin
 
@@ -12,15 +12,23 @@ include::partial$menu-item-ids/{plugincode}-menu-items.adoc[]
 endif::[]
 
 ifeval::["{plugincode}" == "comments"]
-For information on the {pluginname} plugin, see: xref:plugins/{plugincategory}/{plugincode}/introduction_to_tiny_comments.adoc[Plugins - The {pluginname} plugin]
+For information on the {pluginname} plugin, see: xref:introduction_to_tiny_comments.adoc[Plugins - The {pluginname} plugin]
 endif::[]
 
 ifeval::["{plugincode}" != "comments"]
-For information on the {pluginname} plugin, see: xref:plugins/{plugincategory}/{plugincode}.adoc[Plugins - The {pluginname} plugin]
+
+ifeval::["{plugincategory}" == "premium"]
+For information on the {pluginname} plugin, see: xref:{plugincategory}-{plugincode}.adoc[Plugins - The {pluginname} plugin]
+endif::[]
+
+ifeval::["{plugincategory}" != "premium"]
+For information on the {pluginname} plugin, see: xref:{plugincode}.adoc[Plugins - The {pluginname} plugin]
 endif::[]
 
 endif::[]
-ifeval::["{docname}" != "advanced/available-menu-items"]
+
+endif::[]
+ifeval::["{docname}" != "available-menu-items"]
 [[menuitems]]
 == Menu items
 

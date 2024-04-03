@@ -5,7 +5,7 @@ This option is used to override default {productname} *formats* or add custom *f
 
 {productname} is equipped with a formatting engine that allows you to register a set of styles and attributes as a named *format*. For example, the `bold` format is the style that is applied to text when the bold button is clicked.
 
-Check out the xref:demo/format-custom.adoc[custom formats example] for a demonstration of this option.
+Check out the xref:format-custom.adoc[custom formats example] for a demonstration of this option.
 
 The `formats` configuration option takes an object of format name and format specification pairs. Each format specification must be defined as an object where the value is either an object of format options or an array of such objects.
 
@@ -41,7 +41,7 @@ There are three types of formats:
 * Inline format
 * Selector format
 
-All three format types can be used with the `formats` configuration option. They can also be used to specify a new format item in the xref:configure/editor-appearance.adoc#style_formats[`style_formats`] configuration option. However, a format that is specified using `formats` is then registered with the editor, and can be referred to by name in `style_formats` rather than needing to specify the format again.
+All three format types can be used with the `formats` configuration option. They can also be used to specify a new format item in the xref:editor-appearance.adoc#style_formats[`style_formats`] configuration option. However, a format that is specified using `formats` is then registered with the editor, and can be referred to by name in `style_formats` rather than needing to specify the format again.
 
 For example, these two configurations are equivalent:
 
@@ -71,7 +71,7 @@ tinymce.init({
 });
 ----
 
-A registered format can also be used by name with the built-in xref:api/tinymce/tinymce.formatter.adoc[formatter] methods. See xref:configure/content-formatting.adoc#usingcustomformats[Using custom formats] for an example.
+A registered format can also be used by name with the built-in xref:apis/tinymce.formatter.adoc[formatter] methods. See xref:content-formatting.adoc#usingcustomformats[Using custom formats] for an example.
 
 ==== `block`
 

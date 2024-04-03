@@ -1,0 +1,296 @@
+= TinyMCE 5.3
+:description: Release notes for TinyMCE 5.3
+:keywords: releasenotes bugfixes
+:title_nav: TinyMCE 5.3
+
+== Overview
+
+{productname} 5.3 was released for {enterpriseversion} and {cloudname} on Thursday, June 11^th^, 2020. It includes {productname} 5.3.2 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.3, including:
+
+* xref:tinymce53newfeaturesandenhancements[TinyMCE 5.3 new features and enhancements]
+* xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
+* xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying premium self-hosted server-side component changes]
+* xref:minorchangesfortinymce53[Minor changes for TinyMCE 5.3]
+* xref:general-bug-fixes[General bug fixes]
+* xref:deprecatedfeatures[Deprecated features]
+* xref:knownissues[Known issues]
+* xref:upgrading-to-the-latest-version-of-tinymce-5[Upgrading to the latest version of TinyMCE 5]
+
+include::partial$misc/releasenotes_for_stable.adoc[]
+
+[[tinymce53newfeaturesandenhancements]]
+== TinyMCE 5.3 new features and enhancements
+
+The following new features and enhancements were added for the {productname} 5.3 release.
+
+=== New toolbar location default setting
+
+{productname} 5.3 includes a new default, `auto`, for the `toolbar_location` option. The `auto` option positions the toolbar and menu bar either:
+
+* Above the content area by default.
+* Below the content area if there is not enough space to display the toolbar and menu bar above.
+
+This new default setting has been added to improve the user experience for the editor in inline mode.
+
+For information on:
+
+* The `toolbar_location` option, see: xref:editor-appearance.adoc#toolbar_location[User interface options - toolbar_location].
+* {productname} in inline mode, see: xref:use-tinymce-inline.adoc#enablinginlineeditingmode[Setup inline editing mode].
+
+=== Moved the 'enabled' checkmark on toggle menu items to the right-hand side
+
+The checkmark on toggle menu items that indicates that an option is enabled, has been moved. The checkmark will now appear to the right of the menu label. This change provides clearer feedback to users and allows icons to be added to toggle menu items.
+For example:
+
+[cols="^,^"]
+|===
+| {productname} 5.2 toggle menu item checkmark behavior | {productname} 5.3 toggle menu item checkmark behavior
+
+| image:old_togglemenuitemchecked.png[Custom toggle menu item with checkmark on the left-hand side of the item label (pre-5.3 behavior)]
+| image:53_togglemenuitemchecked.png[Custom toggle menu item with checkmark on the right-hand side of the item label (5.3+ behavior)]
+|===
+
+For information on toggle menu items, see: xref:menuitems.adoc#togglemenuitems[Custom menu items - Toggle menu items].
+
+=== New find and replace in selection functionality
+
+A new "Find in selection" option has been added to the Find and Replace dialog provided by the Search and Replace plugin.
+
+For example:
+
+image::find-replace-in-selection.png[Find and Replace dialog with new "Find in selection" option highlighted]
+
+For information on enabling the Find and Replace dialog, see: xref:searchreplace.adoc[the Search and Replace plugin].
+
+=== Multiple context toolbars can now be concatenated
+
+In situations where more than one context toolbar could be shown, they will be concatenated instead of prioritizing one of the context toolbars. This includes context toolbars provided by the Quick Toolbars plugin.
+
+For information on:
+
+* The Quick Toolbars plugin, see: xref:quickbars.adoc[The Quick Toolbars plugin].
+* Creating custom context toolbars, see: xref:contexttoolbar.adoc[Context toolbars].
+
+=== New Greek premium language pack
+
+A Greek (`el`) language pack is now provided for the {productname} user interface. This language pack is available for {cloudname} and premium self-hosted deployments.
+
+For information on using the language setting and a list of supported languages for {cloudname} and premium self-hosted deployments, see: xref:configure-localization.adoc#language[Localization options - language].
+
+[[accompanying-premium-plugin-changes]]
+== Accompanying Premium Plugin changes
+
+The following premium plugin updates were released alongside {productname} 5.3.
+
+=== Accessibility Checker 2.2.1
+
+The {productname} 5.3 release includes an accompanying release of the *Accessibility Checker* premium plugin.
+
+*Accessibility Checker* 2.2.1 adds translations for features added in *Accessibility Checker* 2.2.0.
+
+For information on the Accessibility Checker plugin, see: xref:premium-a11ychecker.adoc[Accessibility Checker plugin].
+
+=== Comments 2.1.4
+
+The {productname} 5.3 release includes an accompanying release of the *Comments* premium plugin.
+
+*Comments* 2.1.4 adds icons for the *Add Comment* (`addcomment`) and *Show Comments* (`showcomments`) menu items.
+
+For information on the Comments plugin, see: xref:comments.adoc[Comments plugin].
+
+For a list of Comments plugin menu items, see: xref:comments_toolbars_menus.adoc#menuitems[Comments plugin - Menu items].
+
+=== Enhanced Media Embed
+
+The {productname} 5.3 release includes accompanying changes affecting the {productname} *self-hosted* *Enhanced Media Embed* service. {cloudname} users are unaffected. For details, see: xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying premium self-hosted server-side component changes].
+
+=== Image Tools Proxy
+
+The {productname} 5.3 release includes accompanying changes affecting the {productname} *self-hosted* *Image Tools Proxy* service. {cloudname} users are unaffected. For details, see: xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying premium self-hosted server-side component changes].
+
+=== Link Checker
+
+The {productname} 5.3 release includes accompanying changes affecting the {productname} *self-hosted* *Link Checker* service. {cloudname} users are unaffected. For details, see: xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying premium self-hosted server-side component changes].
+
+=== PowerPaste 5.3.0
+
+The {productname} 5.3 release includes an accompanying release of the *PowerPaste* premium plugin.
+
+*PowerPaste* 5.3.0 adds a new `imagedrop` `source` which fires an event when dropping an image file into the editor. This `source` can be used with the PowerPaste `paste_preprocess` and `paste_postprocess` options.
+
+For information on:
+
+* The PowerPaste plugin, see: xref:premium-powerpaste.adoc[PowerPaste plugin].
+* The PowerPaste `paste_preprocess` option, see: xref:premium-powerpaste.adoc#paste_preprocess[PowerPaste plugin - `paste_preprocess`].
+* The PowerPaste `paste_postprocess` option, see: xref:premium-powerpaste.adoc#paste_postprocess[PowerPaste plugin - `paste_postprocess`].
+
+=== Spell Checker Pro 2.0.2
+
+The {productname} 5.3 release includes an accompanying release of the *Spell Checker Pro* premium plugin.
+
+*Spell Checker Pro* 2.0.2 includes fixes for the following issues:
+
+* Performance issues in large documents with lots of tables.
+* Spellchecking not running while scrolling in inline mode.
+* Spellchecking performance issues when using the `autoresize` plugin.
+* Missing `spell-check` icons on Spell Checker Pro menu items.
+* Spellchecking incorrectly moving the editor selection into non-editable elements.
+
+The {productname} *self-hosted* *Spell Checker Pro* service has also been updated. {cloudname} users are unaffected. For details, see: xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying premium self-hosted server-side component changes].
+
+For information on Spell Checker Pro plugin, see: xref:premium-tinymcespellchecker.adoc[Spell Checker Pro plugin].
+
+[[accompanying-premium-self-hosted-server-side-component-changes]]
+== Accompanying premium self-hosted server-side component changes
+
+The {productname} 5.3 release includes accompanying changes affecting the {productname} *self-hosted* services for the following plugins:
+
+* The Enhanced Media Embed plugin (`mediaembed`)
+* The Image Tools plugin (`imagetools`)
+* The Link Checker plugin (`linkchecker`)
+* The Spell Checker Pro plugin (`tinymcespellchecker`)
+
+The Java server-side components (`ephox-spelling.war`, `ephox-hyperlinking.war`, and `ephox-image-proxy.war`) have been updated to *version 2.3.0*.
+
+This version requires Java 8 or higher. For information on the removal of Java 7 support, see: xref:removalofjava7support[Removal of Java 7 support].
+
+For information on:
+
+* The Spell Checker Pro plugin, see: xref:premium-tinymcespellchecker.adoc[Spell Checker Pro plugin].
+* The Link Checker plugin, see: xref:premium-linkchecker.adoc[Link Checker plugin].
+* The Image Tools plugin, see: xref:imagetools.adoc[Image Tools plugin].
+* The Enhanced Media Embed plugin, see: xref:premium-mediaembed.adoc[Enhanced Media Embed plugin].
+* Deploying the server-side components, see: xref:server.adoc[Server-side component installation].
+
+[[removalofjava7support]]
+=== Removal of Java 7 support
+
+Java 7 support has been removed with this release. The {productname} Java server-side components now require a minimum of Java 8. From the {productname} 5.3 release, the `.war` files provided in the self-hosted bundles will not be compatible with Java 7. This change resolves security issues present in the older versions of these services. The following plugins are affected by this change:
+
+* SpellChecker Pro (`tinymcespellchecker`) - `ephox-spelling.war` has been updated to version `2.3.0`.
+* Image Tools (`imagetools`) - `ephox-image-proxy.war` has been updated to version `2.3.0`.
+* Enhanced Media Embed (`mediaembed`) - `ephox-hyperlinking.war` has been updated to version `2.3.0`.
+* Link Checker (`linkchecker`) - `ephox-hyperlinking.war` has been updated to version `2.3.0`.
+
+=== Pre-configured Dockerfiles for containerizing the server-side components
+
+From {productname} 5.3, premium self-hosted bundles include the files required to build and deploy the server-side components as Docker containers. For information on Docker deployments of the server-side components, see: xref:dockerservices.adoc[Containerized service deployments].
+
+For information on deploying the server-side components using Docker, see: xref:dockerservices.adoc[Containerized service deployments].
+
+=== Regular Expression support for allowed-origins
+
+Version 2.3.0 of the {productname} server-side components adds support for using regular expressions to specify `allowed-origins`. For information on using regular expressions for specifying allowed origins, see: xref:server-configure.adoc#regularexpressionssupport[Configure server-side components - Regular Expressions support].
+
+=== New configuration option for simplifying same-origin deployments
+
+The new `same-origin` option allows all cross-origin requests to be blocked by the server while allowing all same-origin requests.
+
+For information on configuring the same-origin option, see: xref:server-configure.adoc#allowed-originssame-originoptional[Configure server-side components - allowed-origins.same-origin (optional)].
+
+=== New alternative http timeout settings
+
+Three new http timeout settings have been added to the server-side components. These new settings provide greater control over the timeout length of requests that the existing `request-timeout-seconds` configuration setting.
+
+For information on configuring the alternative http timeout settings, see: xref:server-configure.adoc#alternativehttptimeoutsettings[Configure server-side components - Alternative http timeout settings].
+
+=== New `fallback-to-get` setting for the Link Checker service
+
+The new `fallback-to-get` configuration setting allows the Link checker can correctly identify working URLs that return non-standard `HEAD` replies.
+
+For information on configuring the Link Checker service, see: xref:server-configure.adoc#link-checkingoptional[Configure server-side components - `link-checking`]
+
+[[minorchangesfortinymce53]]
+== Minor changes for TinyMCE 5.3
+
+{productname} 5.3 introduces the following minor changes:
+
+* Added `uploadUri` and `blobInfo` to the data returned by `editor.uploadImages()`.
+* Added a new function to the `BlobCache` API to lookup a blob based on the base64 data and mime type.
+* Added `icon` as an optional config option to the toggle menu item API.
+* Changed the `link`, `image`, and `paste` plugins to use Promises to reduce the bundle size.
+* Changed the default icons to be lazy loaded during initialization.
+* Changed the parsing of content so base64 encoded urls are converted to blob urls.
+* Changed context toolbars so they concatenate when more than one is suitable for the current selection.
+* Changed inline style element formats (strong, b, em, i, u, strike) to convert to a span on format removal if a `style` or `class` attribute is present.
+
+[[general-bug-fixes]]
+== General bug fixes
+
+{productname} 5.3 provides fixes for the following bugs:
+
+* Fixed the image upload error alert also incorrectly closing the image dialog.
+* Fixed the `selection.setContent()` API not running parser filters.
+* Fixed formats incorrectly applied or removed when table cells were selected.
+* Fixed the `quickimage` button not restricting the file types to images.
+* Fixed search and replace ignoring text in nested contenteditable elements.
+* Fixed resize handlers displaying in the wrong location sometimes for remote images.
+* Fixed table picker breaking in Firefox on low zoom levels.
+* Fixed issue with loading or pasting contents with large base64 encoded images on Safari.
+* Fixed supplementary special characters being truncated when inserted into the editor. Patch contributed by mlitwin.
+* Fixed toolbar buttons not set to disabled when the editor is in readonly mode.
+* Fixed the editor selection incorrectly changing when removing caret format containers.
+* Fixed bug where title, width, and height would be set to empty string values when updating an image and removing those attributes using the image dialog.
+* Fixed `ObjectResized` event firing when an object wasn't resized.
+* Fixed `ObjectResized` and `ObjectResizeStart` events incorrectly fired when adding or removing table rows and columns.
+* Fixed the placeholder not hiding when pasting content into the editor.
+* Fixed an issue where the editor would fail to load if local storage was disabled.
+* Fixed an issue where an uploaded image would reuse a cached image with a different mime type.
+* Fixed bug where toolbars and dialogs would not show if the body element was replaced (e.g. with Turbolinks). Patch contributed by spohlenz.
+* Fixed an issue where multiple formats would be removed when removing a single format at the end of lines or on empty lines.
+* Fixed zero-width spaces incorrectly included in the `wordcount` plugin character count.
+* Fixed a regression introduced in 5.2.0 whereby the desktop `toolbar_mode` setting would incorrectly override the mobile default setting.
+* Fixed an issue where deleting all content in a single cell table would delete the entire table.
+
+[[deprecatedfeatures]]
+== Deprecated features
+
+The `images_dataimg_filter` option has been deprecated with the release of {productname} 5.3 and may be removed in a future release of {productname}. This option can be used for an unintended use-case that will likely be incompatible with the future introduction of real-time collaboration support.
+
+For information on:
+
+* The `images_dataimg_filter` option, see: xref:file-image-upload.adoc#images_dataimg_filter[Image & file options - images_dataimg_filter].
+* The future introduction of real-time collaboration, see: link:{url}/blog/real-time-collaborative-editing-slate-js/[Tiny Blueprint - Collaboration needs a clean Slate].
+
+[[knownissues]]
+== Known issues
+
+This section describes issues that users of {productname} 5.3 may encounter, as well as possible workarounds for these issues.
+
+*Outline*
+
+* xref:spanishmexicouitexttranslationsmissingforfeaturesaddedin52and53[Spanish (Mexico) UI text translations missing for features added in 5.2 and 5.3]
+* xref:findandreplaceinselectionfeaturemissingcontentselectionforinlineeditorsandie11[Find and replace in selection feature missing content selection for inline editors and IE 11]
+
+[[spanishmexicouitexttranslationsmissingforfeaturesaddedin52and53]]
+=== Spanish (Mexico) UI text translations missing for features added in 5.2 and 5.3
+
+==== Issue
+
+The Spanish (Mexico) language pack (`es_MX`) provided for {cloudname} and {productname} premium self-hosted customers is missing translations for new and changed user interface features added in {productname} 5.2 and {productname} 5.3.
+
+==== Workaround
+
+No known workaround at the time of release.
+
+[[findandreplaceinselectionfeaturemissingcontentselectionforinlineeditorsandie11]]
+=== Find and replace in selection feature missing content selection for inline editors and IE 11
+
+==== Issue
+
+The new find (and replace) in selection feature does not show the content selection when the dialog is open. The find and replace in selection functions will still work, but the selection is not shown.
+
+This issue affects:
+
+* Inline editors (`inline: true`).
+* Any {productname} 5.3 editor when used on Microsoft Internet Explorer 11.
+
+==== Workaround
+
+No known workaround at the time of release.
+
+:enterprise: true
+
+include::partial$install/upgrading-info.adoc[]
+
+:enterprise: false

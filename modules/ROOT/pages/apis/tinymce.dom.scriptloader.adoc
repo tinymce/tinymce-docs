@@ -1,0 +1,152 @@
+= tinymce.dom.ScriptLoader
+:navtitle: tinymce.dom.ScriptLoader
+:description: This class handles asynchronous/synchronous loading of JavaScript files it will execute callbacks when various items gets loaded. This class is useful to load external JavaScript files.
+:keywords: add, isDone, load, loadQueue, loadScripts, markDone
+:moxie-type: api
+
+This class handles asynchronous/synchronous loading of JavaScript files it will execute callbacks when various items gets loaded. This class is useful to load external JavaScript files.
+
+[[examples]]
+== Examples
+[source, javascript]
+----
+// Load a script from a specific URL using the global script loader
+tinymce.ScriptLoader.load('somescript.js');
+
+// Load a script using a unique instance of the script loader
+var scriptLoader = new tinymce.dom.ScriptLoader();
+
+scriptLoader.load('somescript.js');
+
+// Load multiple scripts
+var scriptLoader = new tinymce.dom.ScriptLoader();
+
+scriptLoader.add('somescript1.js');
+scriptLoader.add('somescript2.js');
+scriptLoader.add('somescript3.js');
+
+scriptLoader.loadQueue(function() {
+   alert('All scripts are now loaded.');
+});
+----
+
+[[summary]]
+== Summary
+
+[[methods-summary]]
+=== Methods
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#add[add()]|Adds a specific script to the load queue of the script loader.|`xref:apis/tinymce.dom.scriptloader.adoc[ScriptLoader]`
+|xref:#isDone[isDone()]|Returns true/false if a script has been loaded or not.|`xref:apis/tinymce.dom.scriptloader.adoc[ScriptLoader]`
+|xref:#load[load()]|Loads a specific script directly without adding it to the load queue.|`xref:apis/tinymce.dom.scriptloader.adoc[ScriptLoader]`
+|xref:#loadQueue[loadQueue()]|Starts the loading of the queue.|`xref:apis/tinymce.dom.scriptloader.adoc[ScriptLoader]`
+|xref:#loadScripts[loadScripts()]|Loads the specified queue of files and executes the callback ones they are loaded.
+This method is generally not used outside this class but it might be useful in some scenarios.|`xref:apis/tinymce.dom.scriptloader.adoc[ScriptLoader]`
+|xref:#markDone[markDone()]|Marks a specific script to be loaded. This can be useful if a script got loaded outside
+the script loader or to skip it from loading some script.|`xref:apis/tinymce.dom.scriptloader.adoc[ScriptLoader]`
+|===
+
+[[methods]]
+== Methods
+
+[[add]]
+=== add()
+[source, javascript]
+----
+add(url: String, success: function, scope: Object, failure: function)
+----
+Adds a specific script to the load queue of the script loader.
+
+==== Parameters
+
+* `url (String)` - Absolute URL to script to add.
+* `success (function)` - Optional success callback function to execute when the script loades successfully.
+* `scope (Object)` - Optional scope to execute callback in.
+* `failure (function)` - Optional failure callback function to execute when the script failed to load.
+
+'''
+
+[[isDone]]
+=== isDone()
+[source, javascript]
+----
+isDone(url: String): Boolean
+----
+Returns true/false if a script has been loaded or not.
+
+==== Parameters
+
+* `url (String)` - URL to check for.
+
+==== Return value
+
+* `Boolean` - true/false if the URL is loaded.
+
+'''
+
+[[load]]
+=== load()
+[source, javascript]
+----
+load(url: String, success: function, failure: function)
+----
+Loads a specific script directly without adding it to the load queue.
+
+==== Parameters
+
+* `url (String)` - Absolute URL to script to add.
+* `success (function)` - Optional success callback function when the script loaded successfully.
+* `failure (function)` - Optional failure callback function when the script failed to load.
+
+'''
+
+[[loadQueue]]
+=== loadQueue()
+[source, javascript]
+----
+loadQueue(success: function, failure: function, scope: Object)
+----
+Starts the loading of the queue.
+
+==== Parameters
+
+* `success (function)` - Optional callback to execute when all queued items are loaded.
+* `failure (function)` - Optional callback to execute when queued items failed to load.
+* `scope (Object)` - Optional scope to execute the callback in.
+
+'''
+
+[[loadScripts]]
+=== loadScripts()
+[source, javascript]
+----
+loadScripts(scripts: Array, success: function, scope: Object, failure: function)
+----
+Loads the specified queue of files and executes the callback ones they are loaded.
+This method is generally not used outside this class but it might be useful in some scenarios.
+
+==== Parameters
+
+* `scripts (Array)` - Array of queue items to load.
+* `success (function)` - Optional callback to execute when scripts is loaded successfully.
+* `scope (Object)` - Optional scope to execute callback in.
+* `failure (function)` - Optional callback to execute if scripts failed to load.
+
+'''
+
+[[markDone]]
+=== markDone()
+[source, javascript]
+----
+markDone(url: string)
+----
+Marks a specific script to be loaded. This can be useful if a script got loaded outside
+the script loader or to skip it from loading some script.
+
+==== Parameters
+
+* `url (string)` - Absolute URL to the script to mark as loaded.
+
+'''

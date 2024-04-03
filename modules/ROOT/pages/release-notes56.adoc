@@ -1,0 +1,240 @@
+= TinyMCE 5.6
+:description: Release notes for TinyMCE 5.6
+:keywords: releasenotes bugfixes
+:title_nav: TinyMCE 5.6
+
+== Overview
+
+{productname} 5.6 was released for {enterpriseversion} and {cloudname} on Tuesday, December 8^th^, 2020. It includes {productname} 5.6.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.6, including:
+
+* xref:newfeatures[New features]
+* xref:enhancements[Enhancements]
+* xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
+* xref:general-bug-fixes[General bug fixes]
+* xref:security-fixes[Security fixes]
+* xref:upgrading-to-the-latest-version-of-tinymce-5[Upgrading to the latest version of TinyMCE 5]
+
+include::partial$misc/releasenotes_for_stable.adoc[]
+
+[[newfeatures]]
+== New features
+
+The following new features were added for the {productname} 5.6 release.
+
+=== New `images_file_types` option for customizing recognized image file extensions
+
+The new `images_file_types` option allows different image file extensions to be recognized by:
+
+* Smart Paste's image URL to embedded image functionality.
+* Allowed file extensions for the Image plugin.
+
+For information on the `images_file_types` option, see: xref:file-image-upload.adoc#images_file_types[Image & file options - images_file_types].
+
+=== New image emoji database for the Emoticons plugin
+
+A new `emojiimages` database has been added to the Emoticons plugin. This database uses images provided by the Twitter Emoji (twemoji) project to render emojis in the content.
+
+:feature: pass:q[``emojiimages`` database]
+:third_party_product: Twitter Emoji (Twemoji) graphics
+:license_agreement_name: CC-BY 4.0
+include::partial$misc/under-license.adoc[]
+
+A new `emoticons_database` option has been added to specify which built-in emoji database to use in the editor. Additionally, a new `emoticons_images_url` option has been added to configure the base URL for images used in the `emojiimages` database.
+
+For information on:
+
+* The `emojiimages` database and `emoticons_database` option, see: xref:emoticons.adoc#emoticons_database[Emoticons plugin - `emoticons_database`].
+* The `emoticons_images_url` option, see: xref:emoticons.adoc#emoticons_images_url[Emoticons plugin - `emoticons_images_url`].
+
+=== New `format_empty_lines` option for content formatting
+
+A new `format_empty_lines` option allows empty lines to be formatted for multi-line selections when applying an "inline" format such as bold (`<strong>`).
+
+For information on the `format_empty_lines` option, see: xref:content-formatting.adoc#format_empty_lines[Content Formatting - `format_empty_lines`].
+
+=== New editor events
+
+{productname} 5.6 introduces several new events that integrators can use for custom functionality:
+
+* A new `TableModified` event which is fired when a style or structural change is made to a table.
+* Two new core events which are fired before and after displaying notifications.
+
+For information on:
+
+* The `TableModified` event, see: xref:table.adoc#events[Table plugin - `events`].
+* Core editor events, see: xref:advanced-events.adoc#editorcoreevents[Editor core events].
+
+=== New card menu item for the autocompleter
+
+A new card menu item has been added to the autocompleter, allowing for greater customization of the autocompleter results displayed to the user.
+
+For information on customizing autocompleter results with `CardMenuItem`, see: xref:autocompleter.adoc#cardmenuitem[UI components - Autocompleter - `CardMenuItem`].
+
+=== Additional new features
+
+{productname} 5.6 introduces the following minor new features:
+
+* Added new user interface `enable`, `disable`, and `isDisabled` methods.
+* Added new `closest` formatter API to get the closest matching selection format from a set of formats.
+
+[[enhancements]]
+== Enhancements
+
+The following enhancements were made for the {productname} 5.6 release.
+
+=== Clicking a link in `readonly` mode now opens the URL
+
+Clicking links when the editor is in `readonly` mode will open the URL in a new tab or window (depending on browser preferences).
+
+=== New optional `name` field for the `style_formats` option
+
+A new optional `name` field that sets a specific name to the format when it's being registered using the `style_formats` option.
+
+For information on the `name` field, see: xref:editor-appearance.adoc#style_formats[User interface - `style_formats`].
+
+[[accompanying-premium-plugin-changes]]
+== Accompanying Premium Plugin changes
+
+The following premium plugin updates were released alongside {productname} 5.6.
+
+=== Accessibility Checker 2.3.1
+
+The {productname} 5.6 release includes an accompanying release of the *Accessibility Checker* premium plugin.
+
+*Accessibility Checker* 2.3.1 fixes an issue where internal {productname} elements were not ignored.
+
+For information on the Accessibility Checker plugin, see: xref:premium-a11ychecker.adoc[Accessibility Checker plugin].
+
+=== Advanced Code Editor 2.3.0
+
+The {productname} 5.6 release includes an accompanying release of the *Advanced Code Editor* premium plugin.
+
+*Advanced Code Editor* 2.3.0 adds the following new feature:
+
+* Added the ability to maintain the cursor position when opening the code dialog.
+
+*Advanced Code Editor* 2.3.0 also provides the following bug fixes:
+
+* Fixed the code view not using monospace fonts.
+* Fixed an issue where non-breaking spaces were inserted instead of regular spaces on Safari.
+
+For information on the Advanced Code Editor plugin, see: xref:premium-advcode.adoc[Advanced Code Editor plugin].
+
+=== Comments 2.3.0
+
+The {productname} 5.6 release includes an accompanying release of the *Comments* premium plugin.
+
+*Comments* 2.3.0 provides the following enhancement:
+
+* Introduces the `onError` and `onSuccess` callbacks for the `tinycomments_create` "done" function.
+
+*Comments* 2.3.0 also provides the following bug fixes:
+
+* Fixed nested and overlapping comments breaking the content.
+* Fixed long comments getting cut off.
+* Fixed a scrollbar appearing in the textarea when writing a comment.
+
+For information on the Comments plugin, see: xref:comments.adoc[Comments plugin].
+
+=== Mentions 2.2.0
+
+The {productname} 5.6 release includes an accompanying release of the *Mentions* premium plugin.
+
+*Mentions* 2.2.0 provides the following new features:
+
+* Added a new `mentions_item_type` option for specifying which mentions user interface item to use when displaying the list of users.
+* Added a new `mentions_min_chars` option for specifying the number of characters required after the "`@`" symbol before the list of users will be displayed in the editor.
+* Added a new `profile` hover card for usage with the `mentions_select` option.
+
+*Mentions* 2.2.0 also provides the following bug fix:
+
+* Fixed mentions not converted to `contenteditable=false` elements when set using `editor.setContent()`
+
+For information on the Mentions plugin, see: xref:premium-mentions.adoc[Mentions plugin].
+
+=== PowerPaste 5.4.0
+
+The {productname} 5.6 release includes an accompanying release of the *PowerPaste* premium plugin.
+
+*PowerPaste* 5.4.0 provides the following enhancement:
+
+* Added a new `images_file_types` option to determine which image file types will automatically be converted into `img` tags by the `smart_paste` feature.
+
+*PowerPaste* 5.4.0 also provides the following bug fixes:
+
+* Fixed the `Cut` menu item not working in the latest version of Firefox.
+* Fixed two Cross-Site Scripting (XSS) vulnerability issues. For more information, see: xref:security-fixes[Security fixes].
+
+For information on the PowerPaste plugin, see: xref:premium-powerpaste.adoc[PowerPaste plugin].
+
+=== Spell Checker Pro 2.2.0
+
+The {productname} 5.6 release includes an accompanying release of the *Spell Checker Pro* premium plugin.
+
+*Spell Checker Pro* 2.2.0 provides the following enhancements:
+
+* The spellchecker dialog now opens faster when checking large documents.
+* The spellchecker dialog can now be moved around and does not block access to editor content.
+
+*Spell Checker Pro* 2.2.0 also provides the following bug fixes:
+
+* Fixed the "Ignore All" action throwing an exception on words containing certain characters.
+* Fixed the spellchecker dialog not checking incorrect words outside of the window viewport.
+* Fixed the spellchecker as-you-type functionality interfering with the dialog.
+
+For information on the Spell Checker Pro plugin, see: xref:premium-tinymcespellchecker.adoc[Spell Checker Pro plugin].
+
+[[general-bug-fixes]]
+== General bug fixes
+
+{productname} 5.6 provides fixes for the following bugs:
+
+* Fixed the `block` and `unblock` dialog APIs not working for inline dialogs.
+* Fixed the `change` event not firing after a successful image upload.
+* Fixed the type signature for the `entity_encoding` setting not accepting delimited lists.
+* Fixed layout issues when empty `tr` elements were incorrectly removed from tables.
+* Fixed image file extensions lost when uploading an image with an alternative extension, such as `.jfif`.
+* Fixed `DOMUtils.getParents` incorrectly including the shadow root in the array of elements returned.
+* Fixed an issue where the root document could be scrolled while an editor dialog was open inside a shadow root.
+* Fixed `getContent` with text format returning a new line when the editor is empty.
+* Fixed table column and row resizers not respecting the `data-mce-resize` attribute.
+* Fixed inserting a table via the `mceInsertTable` command incorrectly creating 2 undo levels.
+* Fixed nested tables with `colgroup` elements incorrectly always resizing the inner table.
+* Fixed the `visualchars` plugin causing the editor to steal focus when initialized.
+* Fixed `fullpage` plugin altering text content in `editor.getContent()`.
+* Fixed `fullscreen` plugin not working correctly with multiple editors and shadow DOM.
+* Fixed font size keywords such as `medium` not displaying correctly in font size menus.
+* Fixed an issue where some attributes in table cells were not copied over to new rows or columns.
+* Fixed incorrectly removing formatting on adjacent spaces when removing formatting on a ranged selection.
+* Fixed the `Cut` menu item not working in the latest version of Mozilla Firefox.
+* Fixed some incorrect types in the new TypeScript declaration file.
+* Fixed a regression where a fake offscreen selection element was incorrectly created for the editor root node.
+* Fixed an issue where menus would incorrectly collapse in small containers.
+* Fixed an issue where only one table column at a time could be converted to a header.
+* Fixed some minor memory leaks that prevented garbage collection for editor instances.
+* Fixed resizing a `responsive` table not working when using the column resize handles.
+* Fixed incorrectly calculating table `col` widths when resizing responsive tables.
+* Fixed an issue where spaces were not preserved in pre-blocks when getting text content.
+* Fixed a regression that caused the selection to be difficult to see in tables with backgrounds.
+* Fixed content pasted multiple times in the editor when using Microsoft Internet Explorer 11. Patch contributed by mattford.
+* Fixed the `mceTableRowType` and `mceTableCellType` commands were not firing the `newCell` event.
+* Fixed the HTML5 `s` element was not recognized when editing or clearing text formatting.
+
+[[security-fixes]]
+== Security fixes
+
+{productname} 5.6 provides fixes for the following security issues:
+
+* Fixed a security issue where URLs in attributes weren't correctly sanitized.
+* Fixed a security issue in the `codesample` plugin by upgrading dependencies.
+
+PowerPaste 5.4.0 provides fixes for the following security issues:
+
+* Fixed a Cross-Site Scripting (XSS) vulnerability where internal HTML content wasn't sanitized in some cases.
+* Fixed a Cross-Site Scripting (XSS) vulnerability where specific HTML comments weren't sanitized in some cases.
+
+:enterprise: true
+
+include::partial$install/upgrading-info.adoc[]
+
+:enterprise: false

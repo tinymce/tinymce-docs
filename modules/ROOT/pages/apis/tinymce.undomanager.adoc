@@ -1,0 +1,199 @@
+= tinymce.UndoManager
+:navtitle: tinymce.UndoManager
+:description: This class handles the undo/redo history levels for the editor. Since the built-in undo/redo has major drawbacks a custom one was needed.
+:keywords: add, beforeChange, clear, extra, hasRedo, hasUndo, ignore, redo, reset, transact, typing, undo
+:moxie-type: api
+
+This class handles the undo/redo history levels for the editor. Since the built-in undo/redo has major drawbacks a custom one was needed.
+
+[[summary]]
+== Summary
+
+[[methods-summary]]
+=== Methods
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#add[add()]|Adds a new undo level/snapshot to the undo list.|`xref:apis/tinymce.undomanager.adoc[UndoManager]`
+|xref:#beforeChange[beforeChange()]|Stores away a bookmark to be used when performing an undo action so that the selection is before
+the change has been made.|`xref:apis/tinymce.undomanager.adoc[UndoManager]`
+|xref:#clear[clear()]|Removes all undo levels.|`xref:apis/tinymce.undomanager.adoc[UndoManager]`
+|xref:#extra[extra()]|Adds an extra "hidden" undo level by first applying the first mutation and store that to the undo stack
+then roll back that change and do the second mutation on top of the stack. This will produce an extra
+undo level that the user doesn't see until they undo.|`xref:apis/tinymce.undomanager.adoc[UndoManager]`
+|xref:#hasRedo[hasRedo()]|Returns true/false if the undo manager has any redo levels.|`xref:apis/tinymce.undomanager.adoc[UndoManager]`
+|xref:#hasUndo[hasUndo()]|Returns true/false if the undo manager has any undo levels.|`xref:apis/tinymce.undomanager.adoc[UndoManager]`
+|xref:#ignore[ignore()]|Executes the specified mutator function as an undo transaction. But without adding an undo level.
+Any logic within the translation that adds undo levels will be ignored. So a translation can
+include calls to execCommand or editor.insertContent.|`xref:apis/tinymce.undomanager.adoc[UndoManager]`
+|xref:#redo[redo()]|Redoes the last action.|`xref:apis/tinymce.undomanager.adoc[UndoManager]`
+|xref:#reset[reset()]|Resets the undo manager levels by clearing all levels and then adding an initial level.|`xref:apis/tinymce.undomanager.adoc[UndoManager]`
+|xref:#transact[transact()]|Executes the specified mutator function as an undo transaction. The selection
+before the modification will be stored to the undo stack and if the DOM changes
+it will add a new undo level. Any logic within the translation that adds undo levels will
+be ignored. So a translation can include calls to execCommand or editor.insertContent.|`xref:apis/tinymce.undomanager.adoc[UndoManager]`
+|xref:#undo[undo()]|Undoes the last action.|`xref:apis/tinymce.undomanager.adoc[UndoManager]`
+|===
+
+[[methods]]
+== Methods
+
+[[add]]
+=== add()
+[source, javascript]
+----
+add(level: Object, event: DOMEvent): Object
+----
+Adds a new undo level/snapshot to the undo list.
+
+==== Parameters
+
+* `level (Object)` - Optional undo level object to add.
+* `event (DOMEvent)` - Optional event responsible for the creation of the undo level.
+
+==== Return value
+
+* `Object` - Undo level that got added or null it a level wasn't needed.
+
+'''
+
+[[beforeChange]]
+=== beforeChange()
+[source, javascript]
+----
+beforeChange()
+----
+Stores away a bookmark to be used when performing an undo action so that the selection is before
+the change has been made.
+
+'''
+
+[[clear]]
+=== clear()
+[source, javascript]
+----
+clear()
+----
+Removes all undo levels.
+
+'''
+
+[[extra]]
+=== extra()
+[source, javascript]
+----
+extra(callback1: function, callback2: function)
+----
+Adds an extra "hidden" undo level by first applying the first mutation and store that to the undo stack
+then roll back that change and do the second mutation on top of the stack. This will produce an extra
+undo level that the user doesn't see until they undo.
+
+==== Parameters
+
+* `callback1 (function)` - Function that does mutation but gets stored as a "hidden" extra undo level.
+* `callback2 (function)` - Function that does mutation but gets displayed to the user.
+
+'''
+
+[[hasRedo]]
+=== hasRedo()
+[source, javascript]
+----
+hasRedo(): Boolean
+----
+Returns true/false if the undo manager has any redo levels.
+
+==== Return value
+
+* `Boolean` - true/false if the undo manager has any redo levels.
+
+'''
+
+[[hasUndo]]
+=== hasUndo()
+[source, javascript]
+----
+hasUndo(): Boolean
+----
+Returns true/false if the undo manager has any undo levels.
+
+==== Return value
+
+* `Boolean` - true/false if the undo manager has any undo levels.
+
+'''
+
+[[ignore]]
+=== ignore()
+[source, javascript]
+----
+ignore(callback: function)
+----
+Executes the specified mutator function as an undo transaction. But without adding an undo level.
+Any logic within the translation that adds undo levels will be ignored. So a translation can
+include calls to execCommand or editor.insertContent.
+
+==== Parameters
+
+* `callback (function)` - Function that gets executed and has dom manipulation logic in it.
+
+'''
+
+[[redo]]
+=== redo()
+[source, javascript]
+----
+redo(): Object
+----
+Redoes the last action.
+
+==== Return value
+
+* `Object` - Redo level or null if no redo was performed.
+
+'''
+
+[[reset]]
+=== reset()
+[source, javascript]
+----
+reset()
+----
+Resets the undo manager levels by clearing all levels and then adding an initial level.
+
+'''
+
+[[transact]]
+=== transact()
+[source, javascript]
+----
+transact(callback: function): Object
+----
+Executes the specified mutator function as an undo transaction. The selection
+before the modification will be stored to the undo stack and if the DOM changes
+it will add a new undo level. Any logic within the translation that adds undo levels will
+be ignored. So a translation can include calls to execCommand or editor.insertContent.
+
+==== Parameters
+
+* `callback (function)` - Function that gets executed and has dom manipulation logic in it.
+
+==== Return value
+
+* `Object` - Undo level that got added or null it a level wasn't needed.
+
+'''
+
+[[undo]]
+=== undo()
+[source, javascript]
+----
+undo(): Object
+----
+Undoes the last action.
+
+==== Return value
+
+* `Object` - Undo level or null if no undo was performed.
+
+'''

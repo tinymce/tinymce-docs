@@ -12,7 +12,7 @@ endif::[]
 [[upgradingtinycloud]]
 === Upgrading Tiny Cloud
 
-{cloudname} provides the latest enterprise version of {productname}. For information on configuring {cloudname}, see: xref:cloud-deployment-guide/index.adoc[the Cloud deployment guide].
+{cloudname} provides the latest enterprise version of {productname}. For information on configuring {cloudname}, see: xref:cloud-deployment-guide.adoc[the Cloud deployment guide].
 
 ifeval::[{enterprise} != true]
 
@@ -113,10 +113,10 @@ To simplify the upgrade process to future versions of {productname}:
 
 . Host the {productname} customizations outside of the `{prodnamecode}/` directory.
 . Update your {productname} configuration as required:
- ** Set the location of content CSS customizations using xref:configure/content-appearance.adoc#content_css[`content_css`].
- ** Set the location of custom plugins using xref:configure/integration-and-setup.adoc#external_plugins[`external_plugins`].
- ** Set the location of custom icon packages using xref:configure/editor-appearance.adoc#icons_url[`icons_url`] instead of `icons`.
- ** Set the location of custom localization packages using xref:configure/localization.adoc#language_url[`language_url`] instead of `language`.
- ** Set the location of custom skin packages using xref:configure/editor-appearance.adoc#skin_url[`skin_url`] instead of `skin`.
- ** Set the location of custom themes using xref:configure/editor-appearance.adoc#theme_url[`theme_url`] instead of `theme`.
+ ** Set the location of content CSS customizations using xref:content-appearance.adoc#content_css[`content_css`].
+ ** Set the location of custom plugins using xref:integration-and-setup.adoc#external_plugins[`external_plugins`].
+ ** Set the location of custom icon packages using xref:editor-appearance.adoc#icons_url[`icons_url`] instead of `icons`.
+ ** Set the location of custom localization packages using xref:configure-localization.adoc#language_url[`language_url`] instead of `language`.
+ ** Set the location of custom skin packages using xref:editor-appearance.adoc#skin_url[`skin_url`] instead of `skin`.
+ ** Set the location of custom themes using xref:editor-appearance.adoc#theme_url[`theme_url`] instead of `theme`.
 ====

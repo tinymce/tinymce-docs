@@ -1,0 +1,104 @@
+= tinymce.html.Styles
+:navtitle: tinymce.html.Styles
+:description: This class is used to parse CSS styles it also compresses styles to reduce the output size.
+:keywords: parse, serialize, toHex
+:moxie-type: api
+
+This class is used to parse CSS styles it also compresses styles to reduce the output size.
+
+[[examples]]
+== Examples
+[source, javascript]
+----
+var Styles = new tinymce.html.Styles({
+   url_converter: function(url) {
+      return url;
+   }
+});
+
+styles = Styles.parse('border: 1px solid red');
+styles.color = 'red';
+
+console.log(new tinymce.html.Styles().serialize(styles));
+----
+
+[[summary]]
+== Summary
+
+[[methods-summary]]
+=== Methods
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#parse[parse()]|Parses the specified style value into an object collection. This parser will also
+merge and remove any redundant items that browsers might have added. It will also convert non hex
+colors to hex values. Urls inside the styles will also be converted to absolute/relative based on settings.|`xref:apis/tinymce.html.styles.adoc[Styles]`
+|xref:#serialize[serialize()]|Serializes the specified style object into a string.|`xref:apis/tinymce.html.styles.adoc[Styles]`
+|xref:#toHex[toHex()]|Parses the specified RGB color value and returns a hex version of that color.
+
+
+__Deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0.__|`xref:apis/tinymce.html.styles.adoc[Styles]`
+|===
+
+[[methods]]
+== Methods
+
+[[parse]]
+=== parse()
+[source, javascript]
+----
+parse(css: String): Object
+----
+Parses the specified style value into an object collection. This parser will also
+merge and remove any redundant items that browsers might have added. It will also convert non hex
+colors to hex values. Urls inside the styles will also be converted to absolute/relative based on settings.
+
+==== Parameters
+
+* `css (String)` - Style value to parse for example: border:1px solid red;.
+
+==== Return value
+
+* `Object` - Object representation of that style like {border: '1px solid red'}
+
+'''
+
+[[serialize]]
+=== serialize()
+[source, javascript]
+----
+serialize(styles: Object, elementName: String): String
+----
+Serializes the specified style object into a string.
+
+==== Parameters
+
+* `styles (Object)` - Object to serialize as string for example: {border: '1px solid red'}
+* `elementName (String)` - Optional element name, if specified only the styles that matches the schema will be serialized.
+
+==== Return value
+
+* `String` - String representation of the style object for example: border: 1px solid red.
+
+'''
+
+[[toHex]]
+=== toHex()
+[source, javascript]
+----
+toHex(color: String): String
+----
+Parses the specified RGB color value and returns a hex version of that color.
+
+
+__Deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0.__
+
+==== Parameters
+
+* `color (String)` - RGB string value like rgb(1,2,3)
+
+==== Return value
+
+* `String` - Hex version of that RGB value like #FF00FF.
+
+'''

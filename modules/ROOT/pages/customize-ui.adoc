@@ -1,0 +1,162 @@
+= Customizing the editor UI
+:description: Learn how to change the appearance of TinyMCE.
+:keywords: themes skins statusbar
+:title_nav: Customizing the UI
+
+This section is about customizing {productname}'s user interface with skins, toolbar buttons, and manipulating the status bar.
+
+== Themes
+
+*Silver* is {productname}'s default theme. Users can easily customize the menu or toolbar without having to edit the theme. Theme creation requires a more in depth-knowledge of {productname}'s API and is beyond the scope of this guide. {productname} skins, however, are easier to make.
+
+[[skins]]
+== Skins
+
+Skins control the appearance of {productname} such as colors and spacing. The default skin is called *Oxide* (`oxide`) and has a `light` and a `dark` version. To initialize the editor with the dark version of the default skin, use the following configuration:
+
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  skin: 'oxide-dark',
+  content_css: 'dark'  // include::partial$misc/requires_5_1v.adoc[]
+});
+----
+
+To base the skin version on the user's preference as specified in their operating system, use:
+
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  skin: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'oxide-dark' : 'oxide'),
+  content_css: (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'default')
+});
+----
+
+To create a skin interactively, visit http://skin.tiny.cloud/t5/[the {productname} 5 Skin Tool]. For information on manually creating skins for {productname}, see xref:creating-a-skin.adoc[Creating a skin].
+
+NOTE: Developers often confuse the difference between {productname} "themes" and "skins". A *Skin* in {productname} is used to make changes to the appearance of the editor, for example, colors, margins, padding, fonts, icons, etc. A *Theme* creates the editor construction (left, top, bottom, or right of the editing area - vertical or horizontal, inline or outside, etc.). A skin usually changes the color scheme of a button, dialog, etc. while the theme applies to the whole editor including its functionality and has child skins to change the appearance.
+
+== Changing editor height and width
+
+A common UI customization used by developers is changing the height and width of the editable area. The following examples are code snippets that change {productname}'s height and width.
+
+NOTE: The links below contain specific details of these customization options.
+
+=== Set the editable area height
+
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  height : 300
+});
+----
+
+See the xref:editor-appearance.adoc#height[height option] for customization details.
+
+=== Set the editable area width
+
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  width : 300
+});
+----
+
+See the xref:editor-appearance.adoc#width[width option] for customization details.
+
+=== Set maximum and minimum heights and widths
+
+The following code snippets use several options for the maximum and minimum values for heights and widths of the editable area.
+
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  max_height: 500,
+  max_width: 500,
+  min_height: 100,
+  min_width: 400
+});
+----
+
+See the xref:editor-appearance.adoc#max_height[max_height], xref:editor-appearance.adoc#max_width[max_width], xref:editor-appearance.adoc#min_height[min_height], and xref:editor-appearance.adoc#min_width[min_width] documentation pages to learn more about these customization options.
+
+The editable area can also automatically resize itself as the user enters content into the iframe with the xref:autoresize.adoc[Autoresize plugin]. Users can resize the editor on both the horizontal and vertical access by dragging the status bar handle with the xref:editor-appearance.adoc#resize[resize] configuration option.
+
+[[customizingtheeditableareawithcontent_css]]
+== Customizing the editable area with content_css
+
+Use the xref:content-appearance.adoc#content_css[`content_css`] customization option to ensure that {productname}'s editable area has the same styling as the surrounding content.
+
+include::partial$misc/shipped-content-css.adoc[]
+
+The following example includes the file `mycontent.css` in all of the pages to control the site's global appearance. This example ensures the content in the editable area contains the same style as the site.
+
+=== Example using an absolute path
+
+[source, js]
+----
+// File: http://domain.mine/mysite/index.html
+
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  content_css : '/mycontent.css'  // resolved to http://domain.mine/mycontent.css
+});
+----
+
+See the xref:content-appearance.adoc#content_css[content_css] customization page for more information about the use of absolute and relative paths as well as and how to use multiple stylesheets.
+
+== Hiding the status bar
+
+The status bar is the gray bar aligned to the bottom of the editor's editable area. The status bar contains the path information and the resize handle. Removing the status bar disables the ability for users to change the size of the editable area.
+
+=== Example: Hiding the status bar
+
+The following example disables the status bar.
+
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  statusbar: false
+});
+----
+
+NOTE: Refer to the plugins and advanced configuration options documentation for more information on how to restrict whether the resize handle can be dragged.
+
+== Adding the code button plugin
+
+One popular toolbar button that is _not_ loaded with the "Silver" theme is the `code` button. Clicking the `code` button displays a dialog box containing the raw HTML hidden behind {productname}'s interface.
+
+NOTE: Additional functionality may require the inclusion of a plugin
+
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'code',
+  toolbar: 'code'
+});
+----
+
+All of the buttons disappear after the `code` button is added to the toolbar and a new menu called `Tools` with the menu item `Source code` is created. (See xref:quick-start.adoc[this page] for a basic HTML code block.)
+
+=== Example: Adding the code toolbar button
+
+The following example displays the default toolbar in addition to the `code` functionality:
+
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',
+  toolbar: 'undo redo styleselect bold italic alignleft aligncenter alignright bullist numlist outdent indent code',
+  plugins: 'code'
+  });
+----
+
+The ability to customize the user interface is an integral part of ensuring an integrated and complete user experience.
+

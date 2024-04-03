@@ -14,7 +14,7 @@ If a service does not appear to be working, this is generally caused by one of t
 
 . The `application.conf` file is incorrect. Please go back and follow the steps listed in the xref:server.adoc#step3createaconfigurationfile[installation guide]. This is the most common problem - often the origins are specified without the port numbers and this can cause things to fail, eg: use `+http://localhost:8080+` instead of `+http://localhost+`. After making changes to the `application.conf` file, please restart your Java web server (e.g. Jetty or Tomcat).
 . The `application.conf` file is correct, but something is wrong with one of the services. See the section below to debug the services.
-. The `application.conf` file is correct, and the services are working, but the server-side component URLs that the editor uses are not quite right. Refer to the xref:tinymcespellchecker.adoc[Spell Checker Pro], xref:imagetools.adoc[Image Tools], xref:mediaembed.adoc[Enhanced Media Embed] and xref:linkchecker.adoc[Link Checker] plugin pages for help.
+. The `application.conf` file is correct, and the services are working, but the server-side component URLs that the editor uses are not quite right. Refer to the xref:premium-tinymcespellchecker.adoc[Spell Checker Pro], xref:imagetools.adoc[Image Tools], xref:premium-mediaembed.adoc[Enhanced Media Embed] and xref:premium-linkchecker.adoc[Link Checker] plugin pages for help.
 . The browser is sending a different origin than expected (and configured in `application.conf`). Refer to step 6 of xref:troubleshoot.adoc#usingbrowsertoolingtoinvestigateservicesissues[Using browser tooling to investigate services issues]
 
 == Browser-specific issues

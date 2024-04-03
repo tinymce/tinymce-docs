@@ -67,7 +67,7 @@ The `a11y_advanced_options` setting adds an option to set an image as decorative
 
 For information on the `a11y_advanced_options`, including the impact on the `a11ychecker_allow_decorative_images` setting, see:
 
-* xref:a11ychecker.adoc#a11y_advanced_options[The Accessibility Checker plugin - `a11y_advanced_options`].
+* xref:premium-a11ychecker.adoc#a11y_advanced_options[The Accessibility Checker plugin - `a11y_advanced_options`].
 * xref:image.adoc#a11y_advanced_options[The Image plugin - `a11y_advanced_options`].
 
 === Modify the Quick Image toolbar using the `quickbars_image_toolbar` setting
@@ -118,7 +118,7 @@ The {productname} 5.2 release includes an accompanying release of the *Accessibi
 * To improve decorative image checks.
 * To accommodate the `a11y_advanced_options` setting added in {productname} 5.2.
 
-For information on the `a11y_advanced_options` setting, see: xref:a11ychecker.adoc#a11y_advanced_options[Accessibility Checker plugin].
+For information on the `a11y_advanced_options` setting, see: xref:premium-a11ychecker.adoc#a11y_advanced_options[Accessibility Checker plugin].
 
 [[checklist110]]
 === Checklist 1.1.0
@@ -135,7 +135,7 @@ The {productname} 5.2 release includes an accompanying release of the *Link Chec
 
 *Link Checker* 2.1.0 adds a new `linkchecker_preprocess` function for adjusting links before link checking.
 
-For information on the `linkchecker_preprocess` option, see: xref:linkchecker.adoc#linkchecker_preprocess[Link Checker plugin - `linkchecker_preprocess`].
+For information on the `linkchecker_preprocess` option, see: xref:premium-linkchecker.adoc#linkchecker_preprocess[Link Checker plugin - `linkchecker_preprocess`].
 
 === Page Embed 1.1.0
 
@@ -180,7 +180,7 @@ The {productname} 5.2 release includes an accompanying release of the *Spellchec
 * Includes a new internal engine to improve the document scanning speed.
 * Removes the `spellchecker_on_load` setting.
 
-For information on the Spell Checker Pro plugin, see: xref:tinymcespellchecker.adoc[Spell Checker Pro plugin].
+For information on the Spell Checker Pro plugin, see: xref:premium-tinymcespellchecker.adoc[Spell Checker Pro plugin].
 
 [[minorchangesfortinymce52]]
 == Minor changes for TinyMCE 5.2

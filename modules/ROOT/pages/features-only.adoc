@@ -26,8 +26,8 @@ Extend the xref:configure.adoc[{productname} configuration] to include any addit
 * xref:premium-pageembed.adoc[Page Embed]
 * xref:premium-permanentpen.adoc[Permanent Pen]
 * xref:premium-formatpainter.adoc[Format Painter]
-* xref:powerpaste.adoc[PowerPaste]
-* xref:tinymcespellchecker.adoc[Spell Checker Pro]
+* xref:premium-powerpaste.adoc[PowerPaste]
+* xref:premium-tinymcespellchecker.adoc[Spell Checker Pro]
 
 NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via xref:cloud-deployment-guide.adoc[{cloudname}].
 
@@ -36,10 +36,10 @@ NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via xre
 NOTE: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurrs automatically.
 
 * xref:premium-moxiemanager.adoc[Moxie Manager]
-* xref:a11ychecker.adoc[Accessibility Checker]
+* xref:premium-a11ychecker.adoc[Accessibility Checker]
 * xref:premium-advcode.adoc[Advanced Code Editor]
-* xref:mediaembed.adoc[Enhanced Media Embed]
-* xref:linkchecker.adoc[Link Checker]
+* xref:premium-mediaembed.adoc[Enhanced Media Embed]
+* xref:premium-linkchecker.adoc[Link Checker]
 
 NOTE: It may take up to 30 minutes for the purchased plugin to be available to {productname}. Clear the browser's cache.
 
@@ -48,7 +48,7 @@ The following is a complete example:
 The example below has the following:
 
 * The {cloudname} `API key` has the value `no-api-key`.
-* The {cloudname} has the xref:tinymcespellchecker.adoc[Spell Checker Pro] plugin enabled.
+* The {cloudname} has the xref:premium-tinymcespellchecker.adoc[Spell Checker Pro] plugin enabled.
 
 [source, html]
 ----

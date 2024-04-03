@@ -66,7 +66,14 @@ ifeval::["{extensionType}" == "Packs"]
 * Enabling premium icon packs, see: xref:editor-appearance.adoc#icons[The `icons` setting].
 endif::[]
 ifeval::["{extensionType}" != "Packs"]
-* Configuring the *{pluginname} {extensionType}*, see: xref:plugins/premium/{plugindocspage}[The {pluginname} {extensionType} documentation].
+
+ifeval::["{pluginname}" == "Comments"]
+* Configuring the *{pluginname} {extensionType}*, see: xref:{plugindocspage}[The {pluginname} {extensionType} documentation].
+endif::[]
+ifeval::["{pluginname}" != "Comments"]
+* Configuring the *{pluginname} {extensionType}*, see: xref:premium-{plugindocspage}[The {pluginname} {extensionType} documentation].
+endif::[]
+
 endif::[]
 
 :!isAre:

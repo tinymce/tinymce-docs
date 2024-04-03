@@ -222,10 +222,10 @@ The {productname} 5.5 release includes an accompanying release of the *Accessibi
 
 *Accessibility Checker* 2.3.0 adds the following features:
 
-* A new `a11ychecker_ignored_rules` option for filtering Accessibility Checker rules using the rule identifiers. For information on the `a11ychecker_ignored_rules` option, see: xref:a11ychecker.adoc#a11ychecker_ignored_rules[Accessibility Checker plugin - `a11ychecker_ignored_rules`].
-* A new `a11ychecker_issue_url_callback` option to allow custom URLs to be used for the "more info" links on accessibility checks. For information on the `a11ychecker_issue_url_callback` option, see: xref:a11ychecker.adoc#a11ychecker_issue_url_callback[Accessibility Checker plugin - `a11ychecker_issue_url_callback`].
-* Adds the rule identifier (`id`) to the data returned by the `getReport()` API method. For information on the `getReport()` API method, see: xref:a11ychecker.adoc#getreport[Accessibility Checker plugin - `getReport()` API method].
-* A new `a11ychecker_filter_issues` option for filtering Accessibility Checker report results. For information on the `a11ychecker_filter_issues` option, see: xref:a11ychecker.adoc#a11ychecker_filter_issue[Accessibility Checker plugin - `a11ychecker_filter_issues`].
+* A new `a11ychecker_ignored_rules` option for filtering Accessibility Checker rules using the rule identifiers. For information on the `a11ychecker_ignored_rules` option, see: xref:premium-a11ychecker.adoc#a11ychecker_ignored_rules[Accessibility Checker plugin - `a11ychecker_ignored_rules`].
+* A new `a11ychecker_issue_url_callback` option to allow custom URLs to be used for the "more info" links on accessibility checks. For information on the `a11ychecker_issue_url_callback` option, see: xref:premium-a11ychecker.adoc#a11ychecker_issue_url_callback[Accessibility Checker plugin - `a11ychecker_issue_url_callback`].
+* Adds the rule identifier (`id`) to the data returned by the `getReport()` API method. For information on the `getReport()` API method, see: xref:premium-a11ychecker.adoc#getreport[Accessibility Checker plugin - `getReport()` API method].
+* A new `a11ychecker_filter_issues` option for filtering Accessibility Checker report results. For information on the `a11ychecker_filter_issues` option, see: xref:premium-a11ychecker.adoc#a11ychecker_filter_issue[Accessibility Checker plugin - `a11ychecker_filter_issues`].
 
 *Accessibility Checker* 2.3.0 also provides the following bug fixes:
 
@@ -235,7 +235,7 @@ The {productname} 5.5 release includes an accompanying release of the *Accessibi
 * Fixed the editor content scrolling when calling the `getReport` API.
 * Fixed incorrect strings used for the next/previous button tooltips.
 
-For information on the Accessibility Checker plugin, see: xref:a11ychecker.adoc[Accessibility Checker plugin].
+For information on the Accessibility Checker plugin, see: xref:premium-a11ychecker.adoc[Accessibility Checker plugin].
 
 === Advanced Code Editor 2.2.0
 
@@ -253,7 +253,7 @@ The {productname} 5.5 release includes an accompanying release of the *Advanced 
 
 *Advanced Tables* 1.0.1 is required for TinyMCE 5.5 or higher.
 
-For information on the Advanced Tables plugin, see: xref:advtable.adoc[Advanced Tables plugin].
+For information on the Advanced Tables plugin, see: xref:premium-advtable.adoc[Advanced Tables plugin].
 
 === Comments 2.2.0
 
@@ -288,7 +288,7 @@ The {productname} 5.5 release includes an accompanying release of the *PowerPast
 
 *PowerPaste* 5.3.3 fixes missing `bg_BG`, `eu`, and `id` translations.
 
-For information on the PowerPaste plugin, see: xref:powerpaste.adoc[PowerPaste plugin].
+For information on the PowerPaste plugin, see: xref:premium-powerpaste.adoc[PowerPaste plugin].
 
 === Spell Checker Pro 2.1.0
 
@@ -299,7 +299,7 @@ The {productname} 5.5 release includes an accompanying release of the *Spell Che
 * An updated the dialog to allow wider buttons for languages with longer strings by removing the _Close_ button (_Cancel_ button in TinyMCE 4).
 * Fixed the `spellcheck_dialog` button incorrectly rendering as a split button in TinyMCE 4.
 
-For information on the Spell Checker Pro plugin, see: xref:tinymcespellchecker.adoc[Spell Checker Pro plugin].
+For information on the Spell Checker Pro plugin, see: xref:premium-tinymcespellchecker.adoc[Spell Checker Pro plugin].
 
 === Tiny Skins and Icon Packs
 

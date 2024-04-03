@@ -168,13 +168,13 @@ The {productname} 5.9 release includes an accompanying release of the *Advanced 
 
 *Advanced Tables* 1.1.0 provides the following new features:
 
-This release adds row numbering functionality, allowing users to add (and remove) row numbering columns on tables. For details, see: xref:advtable.adoc#addingrownumberingtoatable[Advanced Tables plugin - Adding row numbering to a table]. This includes:
+This release adds row numbering functionality, allowing users to add (and remove) row numbering columns on tables. For details, see: xref:premium-advtable.adoc#addingrownumberingtoatable[Advanced Tables plugin - Adding row numbering to a table]. This includes:
 
 * Added a new `advtablerownumbering` toolbar button and menu item.
 * Added a new `advtable_value_series` option.
 * Added a new `mceTableToggleSeries` command.
 
-For information on the Advanced Tables plugin, see: xref:advtable.adoc[Advanced Tables plugin].
+For information on the Advanced Tables plugin, see: xref:premium-advtable.adoc[Advanced Tables plugin].
 
 === Mentions 2.3.0
 
@@ -200,7 +200,7 @@ The {productname} 5.9 release includes an accompanying release of the *PowerPast
 * Word content was incorrectly parsed when copied from a German user interface.
 * Paste incorrectly inserted content when the editor was in readonly mode.
 
-For information on the PowerPaste plugin, see: xref:powerpaste.adoc[PowerPaste plugin].
+For information on the PowerPaste plugin, see: xref:premium-powerpaste.adoc[PowerPaste plugin].
 
 === Real-time Collaboration 1.0.1
 
@@ -236,14 +236,14 @@ The {productname} 5.9 release includes an accompanying release of the *Spell Che
 
 *Spell Checker Pro* 2.4.1 introduces the following improvements:
 
-* Improved the error messages shown in the developer console for the `SpellcheckError` event, see: xref:tinymcespellchecker.adoc#events[Spell Checker Pro - `Events`].
+* Improved the error messages shown in the developer console for the `SpellcheckError` event, see: xref:premium-tinymcespellchecker.adoc#events[Spell Checker Pro - `Events`].
 
 *Spell Checker Pro* 2.4.1 provides the following bug fixes:
 
 * Links with a URL as the text content were incorrectly spellchecked.
 * Resizing the editor with as-you-type mode enabled wouldn't spellcheck words that came into view.
 
-For information on the Spell Checker Pro plugin, see: xref:tinymcespellchecker.adoc[Spell Checker Pro plugin].
+For information on the Spell Checker Pro plugin, see: xref:premium-tinymcespellchecker.adoc[Spell Checker Pro plugin].
 
 [[accompanying-premium-skins-and-icon-packs-changes]]
 == Accompanying Premium Skins and Icon Packs changes
@@ -289,7 +289,7 @@ These versions require Java 8 or higher. For information on the removal of Java 
 The Spelling service now supports a broader range of dictionaries by introducing support for https://hunspell.github.io/[Hunspell dictionaries].
 
 * For details on enabling Hunspell support, see: xref:self-hosting-hunspell.adoc[Add Hunspell dictionaries to Spell Checker Pro].
-* For a list of supported Spell Checker Pro languages, see: xref:tinymcespellchecker.adoc#supportedlanguages[Spell Checker Pro plugin - Supported languages].
+* For a list of supported Spell Checker Pro languages, see: xref:premium-tinymcespellchecker.adoc#supportedlanguages[Spell Checker Pro plugin - Supported languages].
 
 The Spelling service now includes a new configuration option, allowing custom dictionaries to periodically deploy changes. For details, see: xref:server-configure.adoc#dynamic-custom-dictionariesoptional[Configure server-side components: `dynamic-custom-dictionaries`].
 
@@ -297,7 +297,7 @@ All the services now include an `ignore-port` port option to allow ports specifi
 
 For information on:
 
-* The Spell Checker Pro plugin, see: xref:tinymcespellchecker.adoc[Spell Checker Pro plugin].
+* The Spell Checker Pro plugin, see: xref:premium-tinymcespellchecker.adoc[Spell Checker Pro plugin].
 * Deploying the server-side components, see: xref:server.adoc[Server-side component installation].
 
 === Server-side component security fixes
@@ -397,7 +397,7 @@ The following features have been deprecated with the release of {productname} 5.
 
 With the release of {productname} 5.9, the `spellchecker_select_languages` option has been deprecated and has been replaced by the `content_langs` option.
 
-For information on the `content_langs` option, see: xref:tinymcespellchecker.adoc#content_langs[Spell Checker Pro - `content_langs`].
+For information on the `content_langs` option, see: xref:premium-tinymcespellchecker.adoc#content_langs[Spell Checker Pro - `content_langs`].
 
 [[thebbcodebbcodeplugin]]
 === The BBCode (`bbcode`) plugin

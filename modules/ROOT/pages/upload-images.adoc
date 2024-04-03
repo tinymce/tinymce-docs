@@ -6,7 +6,7 @@
 
 {productname} uploads edited images with the image uploader. This complements {productname}'s image editing functionality.
 
-Local images that are added through other means are also uploaded using this function, such as images added by drag and drop when using the xref:paste.adoc#paste_data_images[`paste_data_images`] configuration property, or using the {companyname} xref:powerpaste.adoc[*PowerPaste* plugin].
+Local images that are added through other means are also uploaded using this function, such as images added by drag and drop when using the xref:paste.adoc#paste_data_images[`paste_data_images`] configuration property, or using the {companyname} xref:premium-powerpaste.adoc[*PowerPaste* plugin].
 
 {productname} automatically updates the `<img>` src attribute with the new path to the remote image.
 

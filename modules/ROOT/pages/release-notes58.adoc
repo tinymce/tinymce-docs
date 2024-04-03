@@ -86,7 +86,7 @@ The {productname} 5.8 release includes an accompanying release of the *Accessibi
 * Fixed help documentation URLs pointing to old website locations.
 * Fixed dialog button text incorrectly using title-style capitalization.
 
-For information on the Accessibility Checker plugin, see: xref:a11ychecker.adoc[Accessibility Checker plugin].
+For information on the Accessibility Checker plugin, see: xref:premium-a11ychecker.adoc[Accessibility Checker plugin].
 
 === Comments 2.4.0
 
@@ -124,7 +124,7 @@ This release adds support for copying and pasting content from Google Docs, maki
 
 *PowerPaste* 5.5.0 provides the following new features:
 
-* Added Google Docs paste support which can be controlled using the new xref:powerpaste.adoc#powerpaste_googledocs_import[`powerpaste_googledocs_import` option].
+* Added Google Docs paste support which can be controlled using the new xref:premium-powerpaste.adoc#powerpaste_googledocs_import[`powerpaste_googledocs_import` option].
 
 *PowerPaste* 5.5.0 provides the following improvements:
 
@@ -139,7 +139,7 @@ This release adds support for copying and pasting content from Google Docs, maki
 
 For information on:
 
-* The PowerPaste plugin, see: xref:powerpaste.adoc[PowerPaste plugin].
+* The PowerPaste plugin, see: xref:premium-powerpaste.adoc[PowerPaste plugin].
 * PowerPaste support and compatibility, including Google Docs support, see: xref:enterprise-system-requirements.adoc#powerpastesupportcopyandpaste[Supported Premium Versions and Platforms - PowerPaste support].
 
 === Spell Checker Pro 2.3.1
@@ -153,7 +153,7 @@ The {productname} 5.8 release includes an accompanying release of the *Spell Che
 * Fixed `en_UK` and `en_BR` incorrectly spellchecking as US English instead of UK English.
 * Fixed menu items sometimes not rendering as toggled due to language codes using a case sensitive comparison.
 
-For information on the Spell Checker Pro plugin, see: xref:tinymcespellchecker.adoc[Spell Checker Pro plugin].
+For information on the Spell Checker Pro plugin, see: xref:premium-tinymcespellchecker.adoc[Spell Checker Pro plugin].
 
 === Tiny Drive 1.4.0
 
@@ -243,7 +243,7 @@ This section describes issues that users of {productname} 5.8 may encounter and 
 [[contentpastedfromgoogledocscannotbeoutdented]]
 === Content pasted from Google Docs cannot be outdented
 
-*Issue*: This issue affects content pasted in from Google Docs using the xref:powerpaste.adoc[PowerPaste plugin]. When content is pasted into the editor that contains indentation, it then cannot be outdented using the available toolbar buttons.
+*Issue*: This issue affects content pasted in from Google Docs using the xref:premium-powerpaste.adoc[PowerPaste plugin]. When content is pasted into the editor that contains indentation, it then cannot be outdented using the available toolbar buttons.
 
 *Workaround*: The only known workaround is to configure TinyMCE to use margins instead of padding for indentation. This can be enabled by configuring the xref:content-formatting.adoc#indent_use_margin[`indent_use_margin` option].
 

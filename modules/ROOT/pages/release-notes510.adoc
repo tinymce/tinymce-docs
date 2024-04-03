@@ -54,13 +54,13 @@ The {productname} 5.10 release includes an accompanying release of the *Advanced
 
 *Advanced Tables* 1.2.0 introduces the following enhancements:
 
-* Added `getRowType` property to the series generator `info` argument. For details, see xref:advtable.adoc#generatorinfo[`GeneratorInfo`].
+* Added `getRowType` property to the series generator `info` argument. For details, see xref:premium-advtable.adoc#generatorinfo[`GeneratorInfo`].
 
 *Advanced Tables* 1.2.0 provides the following bug fixes:
 
 * The selection could be placed in an invalid location when a row numbering column was updated.
 
-For information on the Advanced Tables plugin, see: xref:advtable.adoc[Advanced Tables plugin].
+For information on the Advanced Tables plugin, see: xref:premium-advtable.adoc[Advanced Tables plugin].
 
 === Real-time Collaboration 1.1.1
 
@@ -95,13 +95,13 @@ The {productname} 5.10 release includes an accompanying release of the *Spell Ch
 
 *Spell Checker Pro* 2.5.0 introduces the following enhancements:
 
-* The `SpellcheckerIgnoreAll` event now includes a `language` property. For details, see xref:tinymcespellchecker.adoc#spellcheckerignoreallevent[Spell Checker Pro - SpellcheckerIgnoreAll Event].
+* The `SpellcheckerIgnoreAll` event now includes a `language` property. For details, see xref:premium-tinymcespellchecker.adoc#spellcheckerignoreallevent[Spell Checker Pro - SpellcheckerIgnoreAll Event].
 
 *Spell Checker Pro* 2.5.0 provides the following bug fixes:
 
 * The "Ignore all" action would incorrectly affect words that were in a different language to the selected word, if they were spelled the same.
 
-For information on the Spell Checker Pro plugin, see: xref:tinymcespellchecker.adoc[Spell Checker Pro plugin].
+For information on the Spell Checker Pro plugin, see: xref:premium-tinymcespellchecker.adoc[Spell Checker Pro plugin].
 
 [[accompanying-premium-self-hosted-server-side-component-changes]]
 == Accompanying Premium self-hosted server-side component changes
@@ -136,10 +136,10 @@ Version 2.105.5 of the hyperlinking service includes a fix to send `Accept` head
 
 For information on:
 
-* The Spell Checker Pro plugin, see: xref:tinymcespellchecker.adoc[Spell Checker Pro plugin].
-* The Link Checker plugin, see: xref:linkchecker.adoc[Link Checker plugin].
+* The Spell Checker Pro plugin, see: xref:premium-tinymcespellchecker.adoc[Spell Checker Pro plugin].
+* The Link Checker plugin, see: xref:premium-linkchecker.adoc[Link Checker plugin].
 * The Image Tools plugin, see: xref:imagetools.adoc[Image Tools plugin].
-* The Enhanced Media Embed plugin, see: xref:mediaembed.adoc[Enhanced Media Embed plugin].
+* The Enhanced Media Embed plugin, see: xref:premium-mediaembed.adoc[Enhanced Media Embed plugin].
 * Deploying the server-side components, see: xref:server.adoc[Server-side component installation].
 
 === Updating the self-hosted server-side components
@@ -253,7 +253,7 @@ tinymce.html.Schema API methods:: The `getSpecialElements` method has been depre
 
 tinymce.html.Styles API methods:: The `toHex` method has been deprecated in {productname} 5.10. For information on the `toHex` method, see: xref:apis/tinymce.html.styles.adoc#toHex[tinymce.html.Styles - tohex].
 
-tinymce API properties:: The `editors` and `settings` (undocumented) properties have been deprecated in {productname} 5.10. For information on the deprecated properties, see: xref:api/tinymce/root_tinymce.adoc#properties[tinymce - properties].
+tinymce API properties:: The `editors` and `settings` (undocumented) properties have been deprecated in {productname} 5.10. For information on the deprecated properties, see: xref:apis/tinymce.root.adoc#properties[tinymce - properties].
 
 tinymce.AddOnManager API methods:: The `addComponents` and `dependencies` (undocumented) methods have been deprecated in {productname} 5.10. For information on the deprecated methods, see: xref:apis/tinymce.addonmanager.adoc[tinymce.AddOnManager].
 

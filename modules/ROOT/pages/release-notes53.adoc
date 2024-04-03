@@ -88,7 +88,7 @@ The {productname} 5.3 release includes an accompanying release of the *Accessibi
 
 *Accessibility Checker* 2.2.1 adds translations for features added in *Accessibility Checker* 2.2.0.
 
-For information on the Accessibility Checker plugin, see: xref:a11ychecker.adoc[Accessibility Checker plugin].
+For information on the Accessibility Checker plugin, see: xref:premium-a11ychecker.adoc[Accessibility Checker plugin].
 
 === Comments 2.1.4
 
@@ -120,9 +120,9 @@ The {productname} 5.3 release includes an accompanying release of the *PowerPast
 
 For information on:
 
-* The PowerPaste plugin, see: xref:powerpaste.adoc[PowerPaste plugin].
-* The PowerPaste `paste_preprocess` option, see: xref:powerpaste.adoc#paste_preprocess[PowerPaste plugin - `paste_preprocess`].
-* The PowerPaste `paste_postprocess` option, see: xref:powerpaste.adoc#paste_postprocess[PowerPaste plugin - `paste_postprocess`].
+* The PowerPaste plugin, see: xref:premium-powerpaste.adoc[PowerPaste plugin].
+* The PowerPaste `paste_preprocess` option, see: xref:premium-powerpaste.adoc#paste_preprocess[PowerPaste plugin - `paste_preprocess`].
+* The PowerPaste `paste_postprocess` option, see: xref:premium-powerpaste.adoc#paste_postprocess[PowerPaste plugin - `paste_postprocess`].
 
 === Spell Checker Pro 2.0.2
 
@@ -138,7 +138,7 @@ The {productname} 5.3 release includes an accompanying release of the *Spell Che
 
 The {productname} *self-hosted* *Spell Checker Pro* service has also been updated. {cloudname} users are unaffected. For details, see: xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying premium self-hosted server-side component changes].
 
-For information on Spell Checker Pro plugin, see: xref:tinymcespellchecker.adoc[Spell Checker Pro plugin].
+For information on Spell Checker Pro plugin, see: xref:premium-tinymcespellchecker.adoc[Spell Checker Pro plugin].
 
 [[accompanying-premium-self-hosted-server-side-component-changes]]
 == Accompanying premium self-hosted server-side component changes
@@ -156,10 +156,10 @@ This version requires Java 8 or higher. For information on the removal of Java 7
 
 For information on:
 
-* The Spell Checker Pro plugin, see: xref:tinymcespellchecker.adoc[Spell Checker Pro plugin].
-* The Link Checker plugin, see: xref:linkchecker.adoc[Link Checker plugin].
+* The Spell Checker Pro plugin, see: xref:premium-tinymcespellchecker.adoc[Spell Checker Pro plugin].
+* The Link Checker plugin, see: xref:premium-linkchecker.adoc[Link Checker plugin].
 * The Image Tools plugin, see: xref:imagetools.adoc[Image Tools plugin].
-* The Enhanced Media Embed plugin, see: xref:mediaembed.adoc[Enhanced Media Embed plugin].
+* The Enhanced Media Embed plugin, see: xref:premium-mediaembed.adoc[Enhanced Media Embed plugin].
 * Deploying the server-side components, see: xref:server.adoc[Server-side component installation].
 
 [[removalofjava7support]]

@@ -128,13 +128,13 @@ Constructs a new DomQuery instance with the specified selector or context.
 === add()
 [source, javascript]
 ----
-add(items: Array | tinymce.dom.DomQuery, sort: Boolean): tinymce.dom.DomQuery
+add(items: Array | tinymce.core.dom.DomQuery, sort: Boolean): tinymce.dom.DomQuery
 ----
 Adds new nodes to the set.
 
 ==== Parameters
 
-* `items (Array | xref:apis/tinymce.dom.domquery.adoc[DomQuery])` - Array of all nodes to add to set.
+* `items (Array | xref:apis/tinymce.core.dom.domquery.adoc[DomQuery])` - Array of all nodes to add to set.
 * `sort (Boolean)` - Optional sort flag that enables sorting of elements.
 
 ==== Return value

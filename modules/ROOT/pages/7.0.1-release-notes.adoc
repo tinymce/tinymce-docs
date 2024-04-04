@@ -211,7 +211,14 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
+
+=== Backspacing in certain html setups resulted in data moving around unexpectedly.
+// #TINY-10590
+
+Previously in {productname}, when backspacing with a block inside of another block and the caret was placed on the line after the inner block, the editor mistakenly merged the two blocks instead of merging the inner block with just the line after it. This resulted in unexpected behavior where the text in the inner block would be moved to the top of the outer block.
+
+To address this issue, a check was added to prevent the editor from assuming that two blocks are merging if they have a parent-child relationship or any other ancestor-descendant relationship. As a result, the editor no longer tries to merge two blocks unexpectedly.
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1

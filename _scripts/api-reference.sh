@@ -20,7 +20,7 @@ unzip -o "$API_TMPDIR/tinymce-api-reference.zip"
 rm -rf modules/ROOT/pages/apis/
 
 # removed old static api html pages (clear cache), it can corrupt the build
-rm -rf build/site/_/tinymce/5/apis/
+rm -rf build/site/tinymce/5/apis/
 
 # move newly generated adoc pages, antora will then generate new static html pages
 mv _data/antora modules/ROOT/pages/apis

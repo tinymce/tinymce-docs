@@ -60,5 +60,5 @@ Launch the Docker container on Windows operating system example:
 
 [source, bash, subs="attributes+"]
 ----
-docker run -v C:\Windows\Fonts:C:\Windows\Fonts -p 8080:8080 --env LICENSE_KEY=[your_license_key] {dockerimageexporttopdf}:[version]
+docker run -v C:\Windows\Fonts:C:\Windows\Fonts -p 8080:8080 --env LICENSE_KEY=[your_license_key] {dockerimageexporttopdfwindows}:[version]
 ----

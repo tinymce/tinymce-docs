@@ -13,46 +13,14 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, April 10^th^, 2024. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
-// Remove sections and section boilerplates as necessary.
-// Pluralise as necessary or remove the placeholder plural marker.
-* xref:new-premium-plugin<s>[New Premium plugin<s>]
-* xref:new-open-source-plugin<s>[New Open Source plugin<s>]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
-* xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
-* xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
-* xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
 * xref:improvements[Improvements]
-* xref:additions[Additions]
 * xref:changes[Changes]
 * xref:removed[Removed]
 * xref:bug-fixes[Bug fixes]
 * xref:security-fixes[Security fixes]
 * xref:deprecated[Deprecated]
 * xref:known-issues[Known issues]
-
-
-[[new-premium-plugin<s>]]
-New Premium plugin<s>
-
-The following new Premium plugin was released alongside {productname} {release-version}.
-
-=== <Premium plugin name>
-
-The new Premium plugin, **<Premium plugin name>** // description here.
-
-For information on the **<Premium plugin name>** plugin, see xref:<plugincode>.adoc[<Premium plugin name>].
-
-
-[[new-open-source-plugin]]
-== New Open Source plugin
-
-The following new Open Source plugin was released alongside {productname} {release-version}.
-
-=== <Open source plugin name>
-
-The new open source plugin, **<Open source plugin name>** // description here.
-
-For information on the **<Open source plugin name>** plugin, see xref:<plugincode>.adoc[<Open source plugin name>].
 
 
 [[accompanying-premium-plugin-changes]]
@@ -130,55 +98,10 @@ liveDemo::tiny-10789-after[]
 For information on the **Table of Contents** plugin, see: xref:tableofcontents.adoc[Table of Contents].
 
 
-[[accompanying-premium-plugin-end-of-life-announcement]]
-== Accompanying Premium plugin end-of-life announcement
-
-The following Premium plugin has been announced as reaching its end-of-life:
-
-=== <Premium plugin name eol>
-
-{productname}’s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
-
-
-[[accompanying-open-source-plugin-end-of-life-announcement]]
-== Accompanying open source plugin end-of-life announcement
-
-The following open source plugin has been announced as reaching its end-of-life:
-
-=== <Open source plugin name eol>
-
-{productname}’s xref:<plugincode>.adoc[<Open source plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
-
-
-[[accompanying-enhanced-skins-and-icon-packs-changes]]
-== Accompanying Enhanced Skins & Icon Packs changes
-
-The {productname} {release-version} release includes an accompanying release of the **Enhanced Skins & Icon Packs**.
-
-=== Enhanced Skins & Icon Packs
-
-The **Enhanced Skins & Icon Packs** release includes the following updates:
-
-The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} {release-version} skin, Oxide.
-
-For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
-
-
 [[improvements]]
 == Improvements
 
 {productname} {release-version} also includes the following improvement<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[additions]]
-== Additions
-
-{productname} {release-version} also includes the following addition<s>:
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1

@@ -213,6 +213,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
+=== An inline editor toolbar now behaves correctly in horizontally scrolled containers.
+// #TINY-10684
+
+Previously in {productname}, when using an inline editor within a horizontally scrollable container, the calculation of the inline toolbar's width was incorrect. This resulted in the toolbar's maximum width being set too small or the toolbar displaying unexpected overflow behavior.
+
+{productname} {release-version} resolves this issue, now, the toolbar's maximum width calculation has been fixed to span the available viewport space. As a result, the inline toolbar will now behave correctly, displaying all items when there's enough space, or hiding them behind the overflow toolbar button when necessary.
+
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
 

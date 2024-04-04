@@ -20,6 +20,13 @@ Refer to the xref:individual-export-to-pdf-on-premises.adoc#requirements[Require
 
 ==== Containerize example using docker
 
+Login to Docker registry:
+
+[source, sh, subs="attributes+"]
+----
+docker login -u [username] -p [password] registry.containers.tiny.cloud
+----
+
 Launch the Docker container:
 
 [source, sh, subs="attributes+"]

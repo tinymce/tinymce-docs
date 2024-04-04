@@ -28,6 +28,13 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+==== Pasting markdown then pressing undo resulted in incorrect text layout.
+// #TINY-10747
+
+Previously in **Markdown**, the markdown paste feature performed a direct content insertion for creating the intermediary undo level between the raw pasted content and the markdown conversion. As a consequence, the editor would lose the newline formatting of the original text when pasting markdown and then pressing undo.
+
+In {productname} {release-version}, the markdown paste feature has been updated to use the clipboard insert command for creating the undo level. This ensures that the editor retains the newline formatting of the original text when pasting markdown and then pressing undo.
+
 === Enhanced Code Editor
 
 The {productname} {release-version} release includes an accompanying release of the **Enhanced Code Editor** premium plugin.

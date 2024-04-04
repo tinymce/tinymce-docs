@@ -66,7 +66,7 @@ The {productname} {release-version} release includes an accompanying release of 
 
 This **Revision History** release includes the following fix.
 
-==== Reduce the chance of diff stylings being overridden by inline stylings.
+==== Reduce the chance of diff annotation styles being overridden by inline styles.
 // #TINY-10785
 
 Previously in **Revision History**, the inline CSS styles of content took precedence over the diff annotation styles. As a consequence, the changes highlighted were not distinguishable to the users.

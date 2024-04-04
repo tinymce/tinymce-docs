@@ -34,19 +34,14 @@ import 'tinymce/plugins/table';
 import 'tinymce/plugins/help';
 
 // Content styles, including inline UI like fake cursors
-import contentCss from 'tinymce/skins/content/default/content.min.css?inline';
-import contentUiCss from 'tinymce/skins/ui/oxide/content.min.css?inline';
+import 'tinymce/skins/content/default/content.js';
+import 'tinymce/skins/ui/oxide/content.js';
 
 export default function TinyEditorComponent(props) {
-  // note that skin and content_css is disabled to avoid the normal
-  // loading process and is instead loaded as a string via content_style
   return (
     <Editor
-      init={{
-        skin: false,
-        content_css: false,
-        content_style: [contentCss, contentUiCss].join('\n'),
-      }}
+      licenseKey='your-license-key'
+      {...props}
     />
   );
 }

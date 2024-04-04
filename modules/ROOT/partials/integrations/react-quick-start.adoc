@@ -234,23 +234,14 @@ import 'tinymce/plugins/wordcount';
 import 'tinymce/plugins/emoticons/js/emojis';
 
 // Content styles, including inline UI like fake cursors
-import contentCss from 'tinymce/skins/content/default/content.min.css?inline';
-import contentUiCss from 'tinymce/skins/ui/oxide/content.min.css?inline';
+import 'tinymce/skins/content/default/content';
+import 'tinymce/skins/ui/oxide/content';
 
 export default function BundledEditor(props) {
-  const {init, ...rest} = props;
-  // note that skin and content_css is disabled to avoid the normal
-  // loading process and is instead loaded as a string via content_style
   return (
     <Editor
-      licenseKey="your-license-key"
-      init={{
-        ...init,
-        skin: false,
-        content_css: false,
-        content_style: [contentCss, contentUiCss, init.content_style || ''].join('\n'),
-      }}
-      {...rest}
+      licenseKey='gpl'
+      {...props}
     />
   );
 }
@@ -503,23 +494,14 @@ import './tinymce/plugins/wordcount/plugin.min.js';
 import './tinymce/plugins/emoticons/js/emojis.js';
 
 // Content styles, including inline UI like fake cursors
-import contentCss from './tinymce/skins/content/default/content.min.css?inline';
-import contentUiCss from './tinymce/skins/ui/oxide/content.min.css?inline';
+import './tinymce/skins/content/default/content.js';
+import './tinymce/skins/ui/oxide/content.js';
 
 export default function BundledEditor(props) {
-  const {init, ...rest} = props;
-  // note that skin and content_css is disabled to avoid the normal
-  // loading process and is instead loaded as a string via content_style
   return (
     <Editor
-      licenseKey='your-license-key'
-      init={{
-        ...init,
-        skin: false,
-        content_css: false,
-        content_style: [contentCss, contentUiCss, init.content_style || ''].join('\n'),
-      }}
-      {...rest}
+      licenseKey='gpl'
+      {...props}
     />
   );
 }

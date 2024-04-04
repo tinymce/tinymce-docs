@@ -43,6 +43,23 @@ In {productname} {release-version}, this issue has been fixed. Now, when `advcod
 
 For information on the **Enhanced Code Editor** plugin, see: xref:advcode.adoc[Enhanced Code Editor].
 
+=== Revision History
+
+The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
+
+This **Revision History** release includes the following fix.
+
+==== Reduce the chance of diff annotation styles being overridden by inline styles.
+// #TINY-10785
+
+Previously in **Revision History**, the inline CSS styles of content took precedence over the diff annotation styles. As a consequence, the changes highlighted were not distinguishable to the users.
+
+{productname} {release-version} addresses this issue by adding  an `!important` declaration to the default annotation styles. As a result, the annotation styling properties will take precedence over the inline styles, ensuring that the changes are clearly visible to the users.
+
+NOTE: This fix assumes that the inline styles are not using `!important` declarations. If the inline styles are using `!important` declarations, the annotation styles will be overridden.
+
+For information on the **Revision History** plugin, see: xref:revisionhistory.adoc[Revision History].
+
 === <Premium plugin name 1> <Premium plugin name 1 version>
 
 The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

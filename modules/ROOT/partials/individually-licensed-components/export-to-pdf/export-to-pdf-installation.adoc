@@ -50,18 +50,19 @@ Read more about using authorization in the xref:individual-export-to-pdf-on-prem
 [source, yml, subs="attributes+"]
 ----
 version: "3.8"
-  services:
+services:
+  pdf-converter:
     image: {dockerimageexporttopdf}:[version]
-      ports:
-        - "8080:8080"
-      restart: always
-      init: true
-      environment:
-        LICENSE_KEY: your_license_key
-        # Secret Key is optional
-        SECRET_KEY: secret_key
-        # Custom request origin is optional
-        CUSTOM_REQUEST_ORIGIN: https://your_custom_origin
+    ports:
+      - "8080:8080"
+    restart: always
+    init: true
+    environment:
+      LICENSE_KEY: "<license_key>"
+      # Secret Key is optional
+      SECRET_KEY: "secret_key"
+      # Custom request origin is optional
+      CUSTOM_REQUEST_ORIGIN: "https://your_custom_origin"
 ----
 +
 For details on `SECRET_KEY` usage check the xref:individual-export-to-pdf-on-premises.adoc#authorization[authorization] section.

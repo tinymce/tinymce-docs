@@ -20,6 +20,13 @@ Refer to the xref:individual-import-from-word-and-export-to-word-on-premises.ado
 
 ==== Containerize example using docker
 
+Login to Docker registry:
+
+[source, sh, subs="attributes+"]
+----
+docker login -u [username] -p [password] registry.containers.tiny.cloud
+----
+
 Launch the Docker container:
 
 [source, sh, subs="attributes+"]
@@ -43,16 +50,17 @@ Read more about using authorization in the xref:individual-import-from-word-and-
 [source, yml, subs="attributes+"]
 ----
 version: "3.8"
-  services:
+services:
+  doc-converter:
     image: {dockerimageimportfromwordexporttoword}:[version]
-      ports:
-        - "8080:8080"
-      restart: always
-      init: true
-      environment:
-        LICENSE_KEY: your_license_key
-        # Secret Key is optional
-        SECRET_KEY: secret_key
+    ports:
+      - "8080:8080"
+    restart: always
+    init: true
+    environment:
+      LICENSE_KEY: "licensekey"
+      # Secret Key is optional
+      SECRET_KEY: "secret_key"
 ----
 +
 For details on `SECRET_KEY` usage check the xref:individual-import-from-word-and-export-to-word-on-premises.adoc#authorization[authorization] section.

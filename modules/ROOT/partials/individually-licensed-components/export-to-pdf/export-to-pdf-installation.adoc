@@ -58,7 +58,7 @@ services:
     restart: always
     init: true
     environment:
-      LICENSE_KEY: "<license_key>"
+      LICENSE_KEY: "license_key"
       # Secret Key is optional
       SECRET_KEY: "secret_key"
       # Custom request origin is optional

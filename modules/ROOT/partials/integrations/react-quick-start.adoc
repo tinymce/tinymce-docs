@@ -197,7 +197,7 @@ import 'tinymce/themes/silver';
 // Toolbar icons
 import 'tinymce/icons/default';
 // Editor styles
-import 'tinymce/skins/ui/oxide/skin.min.css';
+import 'tinymce/skins/ui/oxide/skin';
 
 // importing the plugin js.
 // if you use a plugin that is not listed here the editor will fail to load
@@ -458,7 +458,7 @@ import './tinymce/themes/silver/theme.min.js';
 // Toolbar icons
 import './tinymce/icons/default/icons.min.js';
 // Editor styles
-import './tinymce/skins/ui/oxide/skin.min.css';
+import './tinymce/skins/ui/oxide/skin.min.js';
 
 // importing the plugin js.
 // if you use a plugin that is not listed here the editor will fail to load

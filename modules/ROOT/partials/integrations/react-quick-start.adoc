@@ -241,7 +241,7 @@ import 'tinymce/skins/ui/oxide/content';
 export default function BundledEditor(props) {
   return (
     <Editor
-      licenseKey='gpl'
+      licenseKey='your-license-key'
       {...props}
     />
   );
@@ -502,7 +502,7 @@ import './tinymce/skins/ui/oxide/content.js';
 export default function BundledEditor(props) {
   return (
     <Editor
-      licenseKey='gpl'
+      licenseKey='your-lisense-key'
       {...props}
     />
   );

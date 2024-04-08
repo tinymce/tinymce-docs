@@ -159,9 +159,9 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === Tooltips unintended shrinking and incorrectly positioned when shown in horizontally scrollable container.
 // #TINY-10797
 
-Previously in {productname}, the toolbar tooltips within the editor were positioned absolutely. This caused tooltips to shrink and become misplaced when the editor was placed inside a container with horizontal scrolling.
+Previously in {productname}, toolbar tooltips within the editor were positioned as `absolute`. This caused tooltips to shrink and become misplaced when the editor was placed inside a container with horizontal scrolling.
 
-To resolve this issue, the tooltip element is now styled with a "max-content" width. As a result, the tooltips within the editor toolbar will display with the intended size and remain anchored to the corresponding button regardless of the presence of horizontal scrolling.
+To resolve this issue, the tooltip element is now styled with a "max-content" width. As a result, tooltips within the editor's toolbar will display as intended and remain anchored to the corresponding button regardless of the presence of horizontal scrolling.
 
 
 [[security-fixes]]

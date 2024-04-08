@@ -173,7 +173,7 @@ For information on the **Table of Contents** plugin, see: xref:tableofcontents.a
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
 
 === Toggle list behavior generated wrong HTML when the `forced_root_block` option was set to `div`.
 // #TINY-10488
@@ -189,10 +189,12 @@ Previously in {productname}, when using an inline editor within a horizontally s
 
 {productname} {release-version} resolves this issue, now, the toolbar's maximum width calculation has been fixed to span the available viewport space. As a result, the inline toolbar will now behave correctly, displaying all items when there's enough space, or hiding them behind the overflow toolbar button when necessary.
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Tooltips unintended shrinking and incorrectly positioned when shown in horizontally scrollable container.
+// #TINY-10797
 
-// CCFR here.
+Previously in {productname}, toolbar tooltips within the editor were positioned as `absolute`. This caused tooltips to shrink and become misplaced when the editor was placed inside a container with horizontal scrolling.
+
+To resolve this issue, the tooltip element is now styled with a "max-content" width. As a result, tooltips within the editor's toolbar will display as intended and remain anchored to the corresponding button regardless of the presence of horizontal scrolling.
 
 
 [[security-fixes]]

@@ -73,7 +73,7 @@ Previously in the **Markdown** plugin, the "markdown-on-paste" feature used the 
 
 {productname} {release-version} addresses this issue by changing the paste feature to use the `editor.insertContent` function instead. As a result, pasting markdown no longer adds unnecessary `+&nbsp;+` and the pasted content is placed correctly and does not duplicate.
 
-NOTE: This fix addresses xref:7.0-release-notes.adoc#known-issues[a known issue] in the xref:markdown.adoc[Markdown premium plugin].
+NOTE: This fix addresses xref:7.0-release-notes.adoc#non-breaking-spaces-nbsp-may-be-inadvertently-inserted-around-content-during-markdown-conversion[a known issue] in the xref:markdown.adoc[Markdown premium plugin].
 
 For information on the **Markdown** plugin, see: xref:markdown.adoc[Markdown].
 

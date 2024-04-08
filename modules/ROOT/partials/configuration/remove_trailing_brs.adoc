@@ -1,0 +1,22 @@
+[[remove_trailing_brs]]
+== `+remove_trailing_brs+`
+
+This option allows you to disable {productname}'s default behavior of removing `+<br>+` tags at the end of block elements.
+
+https://en.wikipedia.org/wiki/Gecko_(software)[Gecko] and https://en.wikipedia.org/wiki/WebKit[WebKit] browsers inject these elements to make it possible to place the caret in empty blocks. This logic attempts to remove these elements while also keeping tags that were intentionally placed by the user.
+
+*Type:* `+Boolean+`
+
+*Default value:* `+true+`
+
+*Possible values:* `+true+`, `+false+`
+
+=== Example: using `+remove_trailing_brs+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  remove_trailing_brs: false
+});
+----

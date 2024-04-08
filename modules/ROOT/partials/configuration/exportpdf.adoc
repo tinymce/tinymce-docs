@@ -1,0 +1,80 @@
+[[exportpdf-service-url]]
+== `exportpdf_service_url`
+
+The {pluginname} uses the {productname} Cloud Services HTML to PDF converter service to generate the `document-name.pdf` files.
+
+NOTE: The {pluginname} feature is currently only available `on-premise` and requires the `exportpdf_service_url` option to be configured. https://www.tiny.cloud/contact/[Contact us] if you require this feature.
+
+*Type:* `+String+`
+
+=== Example: using `exportpdf_service_url`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'exportpdf',
+  toolbar: 'exportpdf',
+  exportpdf_service_url: '<service_url>'
+});
+----
+
+[[exportpdf-converter-options]]
+== `exportpdf_converter_options`
+
+This option allows the editor to download a PDF document containing its content, along with the specified options defined in the `exportpdf_converter_options`.
+
+*Type:* `+Object+`
+
+*Default value:* `{}`
+
+=== Example: using `exportpdf_converter_options`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'exportpdf',
+  toolbar: 'exportpdf',
+  exportpdf_service_url: '<service_url>',
+  exportpdf_converter_options: {
+   	header_html: '<p>HEADER</p>', // example
+   	header_and_footer_css: 'p { color: blue }', // example
+  },
+})
+----
+
+[NOTE]
+The `exportpdf_service_url` option must be configured for the {pluginname} plugin to work.
+
+> For comprehensive details regarding the `exportpdf_converter_options`, please refer to the https://exportpdf.converter.tiny.cloud/docs[API documentation^] available for the {pluginname} Premium plugin.
+
+[[exportpdf-converter-style]]
+== `exportpdf_converter_style`
+
+The `exportpdf_converter_style` option allow for customization of the styles applied to the exported PDF document, providing flexibility in controlling its appearance.
+
+*Type:* `+String+`
+
+*Default value:* `''`
+
+=== Example: using `exportpdf_converter_style`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea.tinymce',
+  plugins: 'exportpdf',
+  toolbar: 'exportpdf',
+  exportpdf_service_url: '<service_URL>', // required
+  exportpdf_converter_options: { // required to support "exportpdf_converter_style"
+    header: [
+      {
+        html: '<h1>First page header.</h1>', //example
+        css: 'h1 { font-size: 30px; }', //example
+      }
+    ],
+  },
+  exportpdf_converter_style: 'p { color: cyan !important }' // requires both "exportpdf_converter_style" and "exportpdf_service_url" to be set.
+});
+----

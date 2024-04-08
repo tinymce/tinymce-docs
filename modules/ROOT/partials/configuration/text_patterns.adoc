@@ -21,24 +21,20 @@ The default value for this option was changed with {productname} 7.0, see more x
 *Default value:*
 [source,js]
 ----
-[
-  // Inline text patterns
+default: [
   { start: '*', end: '*', format: 'italic' },
   { start: '**', end: '**', format: 'bold' },
-  // Headings
   { start: '#', format: 'h1', trigger: 'space' },
   { start: '##', format: 'h2', trigger: 'space' },
   { start: '###', format: 'h3', trigger: 'space' },
   { start: '####', format: 'h4', trigger: 'space' },
   { start: '#####', format: 'h5', trigger: 'space' },
   { start: '######', format: 'h6', trigger: 'space' },
-  // The following text patterns require the `lists` plugin
   { start: '1.', cmd: 'InsertOrderedList', trigger: 'space' },
   { start: '*', cmd: 'InsertUnorderedList', trigger: 'space' },
   { start: '-', cmd: 'InsertUnorderedList', trigger: 'space' },
-  // Other
   { start: '>', cmd: 'mceBlockQuote', trigger: 'space' },
-  { start: '---', cmd: 'InsertHorizontalRule', trigger: 'space' },
+  { start: '---', cmd: 'InsertHorizontalRule', trigger: 'space' }
 ]
 ----
 [TIP]
@@ -89,7 +85,7 @@ Block patterns must have the following:
 
 The block patterns do not have an `+end+` property. This allows for patterns to be used to either apply a block format or execute a command, optionally, with the given value.
 
-NOTE: Block patterns can be configured to be executed on either *Enter*, or by pressing *Space*.
+NOTE: Block patterns are executed on *Spacebar* by default, but can be configured to be executed on *Enter*.
 
 ==== Example: using block patterns
 

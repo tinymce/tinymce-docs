@@ -1,7 +1,7 @@
-[[sandbox-iframes-option]]
-== `sandbox_iframes` option
+[[sandbox-iframes]]
+== `sandbox_iframes`
 
-This option controls whether the editor will add a `sandbox=""` attribute to all `<iframe>` elements. This will restrict the iframe’s embedded resource from performing potentially malicious actions including scripting, file downloads, browser popups, passing the same-origin policy, among others. Reference: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox[MDN].
+This option allows control of whether `<iframe>` elements are link:https://developer.mozilla.org/en-US/docs/Web/HTML/Element/iframe#sandbox[sandboxed] when inserted into the editor. When enabled, all `<iframe>` elements will be given the `sandbox=""` attribute, applying all restrictions.
 
 *Type:* `+Boolean+`
 

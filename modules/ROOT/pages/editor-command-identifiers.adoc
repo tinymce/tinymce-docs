@@ -212,10 +212,8 @@ include::partial$commands/core-table-cmds.adoc[]
 
 Commands are available for the following plugins:
 
-* xref:advancedcode[Advanced Code]
 * xref:advancedlists[Advanced Lists]
 * xref:Enhanced Tables[Enhanced Tables]
-* xref:advancedtables[Advanced Tables]
 * xref:anchor[Anchor]
 * xref:autoresize[Autoresize]
 * xref:casechange[Case Change]
@@ -224,12 +222,16 @@ Commands are available for the following plugins:
 * xref:codesample[Code Sample]
 * xref:comments[Comments]
 * xref:directionality[Directionality]
+* xref:enhancedcodeeditor[Enhanced Code Editor]
 * xref:emoticons[Emoticons]
+* xref:exportpdf[Export to PDF]
+* xref:exportword[Export to Word]
 * xref:footnotes[Footnotes]
 * xref:formatpainter[Format Painter]
 * xref:fullscreen[Full Screen]
 * xref:help[Help]
 * xref:image[Image]
+* xref:importword[Import from Word]
 * xref:editimage[Image Editing]
 * xref:insertdatetime[Insert Date/Time]
 * xref:link[Link]
@@ -241,6 +243,7 @@ Commands are available for the following plugins:
 * xref:permanentpen[Permanent Pen]
 * xref:powerpaste[PowerPaste]
 * xref:preview[Preview]
+* xref:revisionhistory[Revision History]
 * xref:save[Save]
 * xref:searchandreplace[Search and Replace]
 * xref:spellchecker[Spell Checker]
@@ -250,12 +253,6 @@ Commands are available for the following plugins:
 * xref:visualcharacters[Visual Characters]
 * xref:wordcount[Word Count]
 
-[[advancedcode]]
-==== Advanced Code
-
-The following command requires the xref:advcode.adoc[Advanced Code (`+advcode+`)] plugin.
-
-include::partial$commands/code-cmds.adoc[leveloffset=+3]
 
 
 [[advancedlists]]
@@ -328,12 +325,33 @@ The following commands require the xref:directionality.adoc[Directionality (`+di
 
 include::partial$commands/directionality-cmds.adoc[leveloffset=+3]
 
+[[enhancedcodeeditor]]
+==== Enhanced Code Editor
+
+The following command requires the xref:advcode.adoc[Enhanced Code Editor (`+advcode+`)] plugin.
+
+include::partial$commands/code-cmds.adoc[leveloffset=+3]
+
 [[emoticons]]
 ==== Emoticons
 
 The following commands require the xref:emoticons.adoc[Emoticons (`+emoticons+`)] plugin.
 
 include::partial$commands/emoticons-cmds.adoc[leveloffset=+3]
+
+[[export-pdf]]
+==== Export to PDF
+
+The following commands require the xref:exportpdf.adoc[Export to PDF (`+exportpdf+`)] plugin.
+
+include::partial$commands/exportpdf-cmds.adoc[leveloffset=+3]
+
+[[export-word]]
+==== Export to Word
+
+The following commands require the xref:exportword.adoc[Export to Word (`+exportword+`)] plugin.
+
+include::partial$commands/exportword-cmds.adoc[leveloffset=+3]
 
 [[footnotes]]
 ==== Footnotes
@@ -369,6 +387,13 @@ include::partial$commands/help-cmds.adoc[leveloffset=+3]
 The following command requires the xref:image.adoc[Image (`+image+`)] plugin.
 
 include::partial$commands/image-cmds.adoc[leveloffset=+3]
+
+[[import-word]]
+==== Import from Word
+
+The following command requires the xref:importword.adoc[Import from Word (`+importword+`)] plugin.
+
+include::partial$commands/importword-cmds.adoc[leveloffset=+3]
 
 [[editimage]]
 ==== Image Editing
@@ -446,6 +471,13 @@ include::partial$commands/powerpaste-cmds.adoc[leveloffset=+3]
 The following command requires the xref:preview.adoc[Preview (`+preview+`)] plugin.
 
 include::partial$commands/preview-cmds.adoc[leveloffset=+3]
+
+[[revisionhistory]]
+==== Revision History
+
+The following commands require the xref:revisionhistory.adoc[Revision History (`+revisionhistory+`)] plugin.
+
+include::partial$commands/revisionhistory-cmds.adoc[leveloffset=+3]
 
 [[save]]
 ==== Save
@@ -617,6 +649,7 @@ The following command values can be queried using the xref:apis/tinymce.editor.a
 |FontSize |Returns the font size of the current selection.
 |LineHeight |Returns the line height of the current selection.
 |ToggleSidebar |Returns the current state of sidebar (open or closed).
+|ToggleView |Returns the current state of the view, for example: `+"code"+`, or `+"revision"+`.
 |===
 
 .Examples
@@ -626,6 +659,7 @@ tinymce.activeEditor.queryCommandValue('FontName');
 tinymce.activeEditor.queryCommandValue('FontSize');
 tinymce.activeEditor.queryCommandValue('LineHeight');
 tinymce.activeEditor.queryCommandValue('ToggleSidebar');
+tinymce.activeEditor.queryCommandValue('ToggleView');
 ----
 
 [[query-command-values-tables]]

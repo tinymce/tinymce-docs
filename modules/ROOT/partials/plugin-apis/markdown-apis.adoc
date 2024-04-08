@@ -1,0 +1,38 @@
+A new API, `editor.plugins.markdown.getContent();` has been added to support the new {pluginname} plugin
+
+The API's function is to take a {productname} document, and processes it such that the previously HTML content is converted into content with valid {pluginname} syntax.
+
+The `editor.plugins.markdown.getContent();` API does not require configuration from the user
+
+[source,ts]
+----
+interface PluginAPI {
+  getContent: () => Promise<string>
+}
+----
+
+== Example
+
+{productname} document content:
+
+[source,html]
+----
+<h3>Heading</h3>
+<p>This is a paragraph.</p>
+<ul>
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+----
+
+API output:
+
+[source,js]
+----
+### Heading
+
+This is a paragraph.
+
+* Item 1
+* Item 2
+----

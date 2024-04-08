@@ -11,24 +11,6 @@ Checks the contents of the editor for WCAG & Section 508 accessibility problems.
 
 a|
 [.lead]
-xref:advcode.adoc[Advanced Code Editor]
-
-How to setup {productname}’s Advanced Code Editor plugin.
-
-a|
-[.lead]
-xref:advtable.adoc[Advanced Tables]
-
-Add advanced functionality to tables.
-
-a|
-[.lead]
-xref:advanced-templates.adoc[Templates]
-
-Create and edit complex templates in {productname} for use with {productname}.
-
-a|
-[.lead]
 xref:advanced-typography.adoc[Advanced Typography]
 
 Replace common typewriter-style characters with their professional typesetter equivalents.
@@ -59,6 +41,12 @@ The {productname} Comments plugin.
 
 a|
 [.lead]
+xref:advcode.adoc[Enhanced Code Editor]
+
+How to setup {productname}’s Enhanced Code Editor plugin.
+
+a|
+[.lead]
 xref:introduction-to-mediaembed.adoc[Enhanced Media Embed]
 
 Add rich media previews inside {productname}.
@@ -71,9 +59,15 @@ Add enhanced functionality to tables.
 
 a|
 [.lead]
-xref:export.adoc[Export]
+xref:exportword.adoc[Export to Word]
 
-Export content from {productname} into various formats.
+Exports editor content into `.docx` file format and saves to local disk.
+
+a|
+[.lead]
+xref:exportpdf.adoc[Export to PDF]
+
+Export and generate content from {productname} into `document.pdf` format.
 
 a|
 [.lead]
@@ -95,6 +89,12 @@ Turn {productname} documents into single files with inline CSS, ready, in partic
 
 a|
 [.lead]
+xref:importword.adoc[Import from Word]
+
+Import `.docx` (Word documents) or `.dotx` (Word templates) files into the editor.
+
+a|
+[.lead]
 xref:editimage.adoc[Image Editing]
 
 Image Editing features for {productname}.
@@ -104,6 +104,12 @@ a|
 xref:linkchecker.adoc[Link Checker]
 
 Validate links, as they are typed.
+
+a|
+[.lead]
+xref:markdown.adoc[Markdown]
+
+Enable conversion of pure markdown on paste.
 
 a|
 [.lead]
@@ -143,6 +149,12 @@ Copy and paste content from Microsoft Word, Microsoft Excel, Google Docs, and HT
 
 a|
 [.lead]
+xref:revisionhistory.adoc[Revision History]
+
+Easily view document changes and restore previous versions.
+
+a|
+[.lead]
 xref:introduction-to-tiny-spellchecker.adoc[Spell Checker]
 
 Check spelling as-you-type in {productname}.
@@ -177,7 +189,7 @@ Cloud-based file and image management for {productname}.
 //    odd.
 // 2. Prepend the inline comment markup to this element
 //    when the number of cells in the table is even.
-a|
+// a|
 
 |===
 

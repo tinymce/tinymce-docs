@@ -45,7 +45,11 @@ include::partial$configuration/pad_empty_with_br.adoc[]
 
 include::partial$configuration/protect.adoc[]
 
+include::partial$configuration/remove_trailing_brs.adoc[]
+
 include::partial$configuration/sandbox_iframes.adoc[]
+
+include::partial$configuration/sandbox_iframes_exclusions.adoc[]
 
 include::partial$configuration/schema.adoc[]
 

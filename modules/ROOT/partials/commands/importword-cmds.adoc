@@ -1,0 +1,16 @@
+[cols="1,3",options="header"]
+|===
+|Command |Description
+|ImportWord |Opens a file picker, that allows content from either a `.docx` or `.dotx` file to be imported into the editor.
+|===
+
+.Example
+[source,js]
+----
+document.querySelector('button').addEventListener('click',
+  () => tinymce.activeEditor.execCommand('ImportWord')
+);
+----
+
+[NOTE]
+The `ImportWord` command cannot be directly invoked through a script at the top level or from the browser console. Instead, it necessitates a specific user action within the user interface, such as clicking a toolbar button. To ensure correct execution, the command should be called within the scope of an event handler tied to a specific user interaction, as shown in the example.

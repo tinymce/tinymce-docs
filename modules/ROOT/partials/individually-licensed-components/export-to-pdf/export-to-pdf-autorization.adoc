@@ -5,7 +5,8 @@ To enable authorization, set the `SECRET_KEY` environment variable during the xr
 
 If the `SECRET_KEY` variable is set, then all requests must have a header with a JWT (JSON Web Token) signed with this key. The token should be passed as a value of the `Authorization` header for each request sent to the {pluginname} REST API.
 
-> If the `SECRET_KEY` is not setup during the installation, then {pluginname} On-Premises will not require any headers with tokens when sending requests to the {pluginname} REST API. However, this it is not recommend to skip the authorization when running {pluginname} On-Premises in a public network.
+[NOTE]
+If the `SECRET_KEY` is not setup during the installation, then {pluginname} On-Premises will not require any headers with tokens when sending requests to the {pluginname} REST API. However, this it is not recommend to skip the authorization when running {pluginname} On-Premises in a public network.
 
 === Generating the token
 

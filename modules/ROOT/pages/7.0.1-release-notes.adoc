@@ -159,7 +159,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === The status bar was invisible when the editor's height was set to the minimum.
 // #TINY-10705
 
-In a previous {productname} release, the status bar was moved inside the editor container. Consequently, when the editor's height was set to the minimum and the toolbar contained many buttons, the status bar would be hidden under the toolbar buttons.
+As a part of the change to add link:https://www.tiny.cloud/docs/tinymce/6/6.3-release-notes/#a-new-addview-api-was-added-to-editor-ui-registry[_addView API_], the status bar was moved inside the editor container. Consequently, when the editor's height was set to the minimum and the toolbar contained many buttons, the status bar would be hidden under the toolbar buttons.
 
 In {productname} {release-version}, this change is reverted by moving the status bar outside the editor. As a result, the status bar is now visible even when the editor's height is resized to the minimum.
 

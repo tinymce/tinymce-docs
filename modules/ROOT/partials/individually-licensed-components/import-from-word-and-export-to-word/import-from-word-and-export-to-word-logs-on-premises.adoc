@@ -84,8 +84,8 @@ The `logConfiguration` may look similar to this:
   "logDriver": "awslogs",
   "options": {
     "awslogs-region": "us-west-2",
-    "awslogs-group": "cksource",
-    "awslogs-stream-prefix": "ck-docx-converter-logs"
+    "awslogs-group": "tinysource",
+    "awslogs-stream-prefix": "tiny-docx-converter-logs"
   }
 }
 ----

@@ -23,7 +23,7 @@ If the specific use case involves sending requests from a backend server, then J
 
 In the case of editor plugins or other frontend usages, a token endpoint should be created, that returns a valid JWT token for authorized users.
 
-.example of a endpoint implementation.
+.Example of a endpoint implementation.
 [source, js]
 ----
 const express = require( 'express' );

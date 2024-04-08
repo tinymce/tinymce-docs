@@ -58,7 +58,8 @@ The docker has built-in logging mechanisms that capture logs from the output of 
 
 When using this driver, use the `docker logs` command to show logs from a container. Use the `-f` flag to view logs in real time. Refer to the link:https://docs.docker.com/engine/reference/commandline/logs/[official Docker documentation] for more information about the logs command.
 
-> When a container is running for a long period of time, the logs can take up a lot of space. To avoid this problem, you should make sure that the log rotation is enabled. This can be set with the `max-size` option.
+[NOTE]
+When a container is running for a long period of time, the logs can take up a lot of space. To avoid this problem, you should make sure that the log rotation is enabled. This can be set with the `max-size` option.
 
 === Distributed logging
 

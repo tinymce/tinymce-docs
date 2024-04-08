@@ -30,7 +30,8 @@ However, additional fonts can be added to {pluginname} Converter in two ways:
 * Use Windows PDF-Converter image `{dockerimageexporttopdf}` and mount to it fonts directory from the Windows operating system on which the container is running.
 ** See Use Windows fonts in PDF Converter section.
 
-> The fonts inside the mounted volume will be installed on the docker image operating system. Only the `.ttf` and `.otf` font formats are supported. If other font formats are used, these will need to be converted to the supported format prior or use fonts such as link:https://exportpdf.converter.tiny.cloud/docs#section/Web-Fonts[Web Fonts^].
+[NOTE]
+The fonts inside the mounted volume will be installed on the docker image operating system. Only the `.ttf` and `.otf` font formats are supported. If other font formats are used, these will need to be converted to the supported format prior or use fonts such as link:https://exportpdf.converter.tiny.cloud/docs#section/Web-Fonts[Web Fonts^].
 
 [TIP]
 Ensure that the converted fonts can be installed and used on your local machine first, before installing them on the docker container.

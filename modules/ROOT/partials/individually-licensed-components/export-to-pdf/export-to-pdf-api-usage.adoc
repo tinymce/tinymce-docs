@@ -5,7 +5,8 @@ The {pluginname} On-Premises converter provides the ability to convert an HTML d
 
 The API is available on `http://localhost:[port]` (by default the `port` is `8080`).
 
-> The REST API documentation is available at `http://localhost:[port]/docs`.
+[NOTE]
+The REST API documentation is available at `http://localhost:[port]/docs`.
 Alternatively, refer to the specifications in link:https://exportpdf.converter.tiny.cloud/docs[https://exportpdf.converter.tiny.cloud/docs^].
 
 If the authorization for the API is enabled, provided an authorization token. More instructions can be found in the xref:individual-export-to-pdf-on-premises.adoc#authorization[authorization] section.

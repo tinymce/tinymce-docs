@@ -15,8 +15,7 @@ Refer to the xref:individual-export-to-pdf-on-premises.adoc#requirements[Require
 
 === Setting up the application using a Docker container
 
-The username and password credentials supplied by Tiny are utilized for logging into the Docker registry and retrieving the Docker image.
-
+. The username and password credentials supplied by Tiny are utilized for logging into the Docker registry and retrieving the Docker image.
 . Containerize the application using `docker` or `docker-compose`.
 . Use a demo page to verify if the application works properly.
 

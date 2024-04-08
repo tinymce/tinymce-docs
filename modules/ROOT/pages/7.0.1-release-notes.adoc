@@ -13,16 +13,8 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, April 10^th^, 2024. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
-// Remove sections and section boilerplates as necessary.
-// Pluralise as necessary or remove the placeholder plural marker.
-* xref:new-premium-plugin<s>[New Premium plugin<s>]
-* xref:new-open-source-plugin<s>[New Open Source plugin<s>]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
-* xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
-* xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
-* xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
 * xref:improvements[Improvements]
-* xref:additions[Additions]
 * xref:changes[Changes]
 * xref:removed[Removed]
 * xref:bug-fixes[Bug fixes]
@@ -31,34 +23,64 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:known-issues[Known issues]
 
 
-[[new-premium-plugin<s>]]
-New Premium plugin<s>
-
-The following new Premium plugin was released alongside {productname} {release-version}.
-
-=== <Premium plugin name>
-
-The new Premium plugin, **<Premium plugin name>** // description here.
-
-For information on the **<Premium plugin name>** plugin, see xref:<plugincode>.adoc[<Premium plugin name>].
-
-
-[[new-open-source-plugin]]
-== New Open Source plugin
-
-The following new Open Source plugin was released alongside {productname} {release-version}.
-
-=== <Open source plugin name>
-
-The new open source plugin, **<Open source plugin name>** // description here.
-
-For information on the **<Open source plugin name>** plugin, see xref:<plugincode>.adoc[<Open source plugin name>].
-
-
 [[accompanying-premium-plugin-changes]]
 == Accompanying Premium plugin changes
 
 The following premium plugin updates were released alongside {productname} {release-version}.
+
+=== Enhanced Code Editor
+
+The {productname} {release-version} release includes an accompanying release of the **Enhanced Code Editor** premium plugin.
+
+This **Enhanced Code Editor** release includes the following fixes.
+
+==== Text inside code editor was not properly rendered when using a dark {productname} skin.
+// #TINY-10784
+
+In previous versions of the **Enhanced Code Editor**, the text color of the code editor was inherited from the {productname} skin. This caused the light theme of the code editor to display white text on a white background when using a dark skin, such as `oxide-dark`.
+
+In {productname} {release-version}, this issue has been resolved. Now, the light theme of the Enhanced Code Editor will always use a dark text color, regardless of the skin being used. As a result, the light mode will render correctly and be easily readable when using a dark skin.
+
+==== Light mode background with `advcode_inline: true` had the wrong color when {productname} was used with a dark skin.
+// #TINY-10760
+
+Previously in the **Enhanced Code Editor**, the `advcode` background color depended on the skin of the {productname} editor when `advcode_inline` was set to `true`. As a result, when {productname} was used with a dark skin, the `advcode` light mode would display dark text on a dark background.
+
+In {productname} {release-version}, this issue has been fixed. Now, when `advcode_inline` is set to `true`, the background for `advcode` light mode is set to white. As a result, the `advcode` light mode correctly displays dark text on a light background when {productname} is used with a dark skin.
+
+For information on the **Enhanced Code Editor** plugin, see: xref:advcode.adoc[Enhanced Code Editor].
+
+=== Revision History
+
+The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
+
+This **Revision History** release includes the following fix.
+
+==== Reduce the chance of diff annotation styles being overridden by inline styles.
+// #TINY-10785
+
+Previously in **Revision History**, the inline CSS styles of content took precedence over the diff annotation styles. As a consequence, the changes highlighted were not distinguishable to the users.
+
+{productname} {release-version} addresses this issue by adding  an `!important` declaration to the default annotation styles. As a result, the annotation styling properties will take precedence over the inline styles, ensuring that the changes are clearly visible to the users.
+
+NOTE: This fix assumes that the inline styles are not using `!important` declarations. If the inline styles are using `!important` declarations, the annotation styles will be overridden.
+
+For information on the **Revision History** plugin, see: xref:revisionhistory.adoc[Revision History].
+
+=== Mentions
+
+The {productname} {release-version} release includes an accompanying release of the **Mentions** premium plugin.
+
+This **Mentions** release includes the following fix.
+
+=== Tapping inside a composed text on Firefox Android would not close the autocompleter.
+// #TINY-10715
+
+Previously in **Mentions**, when typing Korean on Firefox Android and moving the caret inside the word being typed, the auto completer menu did not close. This issue was caused by Gboard triggering an extra input even after the composition had ended. As a result, the autocompleter mistakenly interpreted it as the user starting to type again.
+
+In {productname} {release-version}, this issue has been fixed. Now, the autocompleter menu is properly closed when tapping inside the word being typed on Firefox Android.
+
+For information on the **Mentions** plugin, see: xref:mentions.adoc[Mentions].
 
 === <Premium plugin name 1> <Premium plugin name 1 version>
 
@@ -72,56 +94,53 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Table of Contents
 
-[[accompanying-premium-plugin-end-of-life-announcement]]
-== Accompanying Premium plugin end-of-life announcement
+The {productname} {release-version} release includes an accompanying release of the **Table of Contents** premium plugin.
 
-The following Premium plugin has been announced as reaching its end-of-life:
+This **Table of Contents** release includes the following fixes.
 
-=== <Premium plugin name eol>
+==== Encoding header of Table of Contents causing HTML source to be revealed on refresh.
+// #TINY-10682
 
-{productname}’s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
+Previously in {productname}, the **Table of Contents** (ToC) header encoding caused special characters to be incorrectly displayed as code instead of their HTML representation.
 
+To address this issue, the HTML encoding has been removed. As a result, the ToC header now renders correctly as HTML even after refreshing, displaying as intended.
 
-[[accompanying-open-source-plugin-end-of-life-announcement]]
-== Accompanying open source plugin end-of-life announcement
+For example, if the **Table of Contents** (ToC) header contained the following content with "_Contents_" emphasized as follows:
 
-The following open source plugin has been announced as reaching its end-of-life:
+liveDemo::tiny-10682-initial[]
 
-=== <Open source plugin name eol>
+Upon refreshing the ToC, the header would change to display the HTML tags literally, exposing the underlying HTML:
 
-{productname}’s xref:<plugincode>.adoc[<Open source plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
+liveDemo::tiny-10682-before[]
 
+Now, the header maintains the intended HTML rendering even after refreshing:
 
-[[accompanying-enhanced-skins-and-icon-packs-changes]]
-== Accompanying Enhanced Skins & Icon Packs changes
+liveDemo::tiny-10682-after[]
 
-The {productname} {release-version} release includes an accompanying release of the **Enhanced Skins & Icon Packs**.
+==== Encode header title for literal display in Table of Contents.
+// #TINY-10789
 
-=== Enhanced Skins & Icon Packs
+Previously in {productname}, during Table of Contents (ToC) generation, heading elements containing HTML tags such as `<em>` for italics were incorrectly rendered within the ToC itself.
 
-The **Enhanced Skins & Icon Packs** release includes the following updates:
+{productname} {release-version} addresses this issue by encoding the heading element during ToC generation. This ensures that any HTML tags present within the heading element are treated as plain text and displayed literally.
 
-The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} {release-version} skin, Oxide.
+For example, if your document contained a heading element with HTML tags as string in the heading content, the ToC would previously render the heading element as follows:
 
-For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
+liveDemo::tiny-10789-before[]
+
+Now, the ToC maintains the HTML tags within the heading element as plain text, matching the heading element itself:
+
+liveDemo::tiny-10789-after[]
+
+For information on the **Table of Contents** plugin, see: xref:tableofcontents.adoc[Table of Contents].
 
 
 [[improvements]]
 == Improvements
 
 {productname} {release-version} also includes the following improvement<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[additions]]
-== Additions
-
-{productname} {release-version} also includes the following addition<s>:
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
@@ -156,12 +175,34 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fixes:
 
+
 === The status bar was invisible when the editor's height was set to the minimum.
 // #TINY-10705
 
 As a part of the change to add link:https://www.tiny.cloud/docs/tinymce/6/6.3-release-notes/#a-new-addview-api-was-added-to-editor-ui-registry[_addView API_], the status bar was moved inside the editor container. Consequently, when the editor's height was set to the minimum and the toolbar contained many buttons, the status bar would be hidden under the toolbar buttons.
 
 In {productname} {release-version}, this change is reverted by moving the status bar outside the editor. As a result, the status bar is now visible even when the editor's height is resized to the minimum.
+
+=== Toggle list behavior generated wrong HTML when the `forced_root_block` option was set to `div`.
+// #TINY-10488
+
+Previously in {productname}, when creating a new list item, the editor only considered default root nodes. This caused the caret to be placed incorrectly and resulted in the editor generating a new list instead of adding a list item to the existing list.
+
+In {productname} {release-version}, this issue has been fixed. The editor now checks for non-default root nodes, such as when `forced_root_block` is set to `div`, when creating new list items. As a result, the caret is placed correctly after the creation of the new list item, allowing the editor to add a list item instead of generating a new list.
+
+=== An inline editor toolbar now behaves correctly in horizontally scrolled containers.
+// #TINY-10684
+
+Previously in {productname}, when using an inline editor within a horizontally scrollable container, the calculation of the inline toolbar's width was incorrect. This resulted in the toolbar's maximum width being set too small or the toolbar displaying unexpected overflow behavior.
+
+{productname} {release-version} resolves this issue, now, the toolbar's maximum width calculation has been fixed to span the available viewport space. As a result, the inline toolbar will now behave correctly, displaying all items when there's enough space, or hiding them behind the overflow toolbar button when necessary.
+
+=== Tooltips unintended shrinking and incorrectly positioned when shown in horizontally scrollable container.
+// #TINY-10797
+
+Previously in {productname}, toolbar tooltips within the editor were positioned as `absolute`. This caused tooltips to shrink and become misplaced when the editor was placed inside a container with horizontal scrolling.
+
+To resolve this issue, the tooltip element is now styled with a "max-content" width. As a result, tooltips within the editor's toolbar will display as intended and remain anchored to the corresponding button regardless of the presence of horizontal scrolling.
 
 
 [[security-fixes]]

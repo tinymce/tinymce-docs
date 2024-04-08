@@ -175,6 +175,14 @@ For information on the **Table of Contents** plugin, see: xref:tableofcontents.a
 
 {productname} {release-version} also includes the following bug fixes:
 
+
+=== The status bar was invisible when the editor's height was set to the minimum.
+// #TINY-10705
+
+As a part of the change to add link:https://www.tiny.cloud/docs/tinymce/6/6.3-release-notes/#a-new-addview-api-was-added-to-editor-ui-registry[_addView API_], the status bar was moved inside the editor container. Consequently, when the editor's height was set to the minimum and the toolbar contained many buttons, the status bar would be hidden under the toolbar buttons.
+
+In {productname} {release-version}, this change is reverted by moving the status bar outside the editor. As a result, the status bar is now visible even when the editor's height is resized to the minimum.
+
 === Toggle list behavior generated wrong HTML when the `forced_root_block` option was set to `div`.
 // #TINY-10488
 

@@ -67,11 +67,13 @@ The {productname} {release-version} release includes an accompanying release of 
 This **Markdown** release includes the following fixes and improvements.
 
 ==== Pasting markdown into some situations would cause the pasted data to be placed in unexpected places.
-// #TINY-10766
+// #TINY-10766 / TINY-10788 / #TINY-10749
 
-Previously in the **Markdown** plugin, the "markdown-on-paste" feature used the `editor.selection.setContent` function to insert content into the {productname} editor. However, this approach resulted in unexpected cursor behavior, undo levels, and formatting issues.
+Previously in the **Markdown** plugin, the "markdown-on-paste" feature used the `editor.selection.setContent` function to insert content into the {productname} editor. This approach resulted in some unnecessary `+&nbsp;+` characters being appended before and after the pasted text. As a result, the editor experienced some unexpected content placement behavior.
 
-{productname} {release-version} addresses this issue by changing the "markdown-on-paste" feature to use the `editor.insertContent` function instead. As a result, pasted markdown content is now properly formatted as intended and placed in the correct location.
+{productname} {release-version} addresses this issue by changing the paste feature to use the `editor.insertContent` function instead. As a result, pasting markdown no longer adds unnecessary `+&nbsp;+` and the pasted content is placed in the correct location.
+
+NOTE: This fix addresses xref:7.0-release-notes.adoc#known-issues[a known issue] in the xref:markdown.adoc[Markdown premium plugin].
 
 For information on the **Markdown** plugin, see: xref:markdown.adoc[Markdown].
 

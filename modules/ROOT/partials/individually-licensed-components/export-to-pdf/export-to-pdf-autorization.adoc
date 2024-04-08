@@ -10,7 +10,7 @@ If the `SECRET_KEY` is not setup during the installation, then {pluginname} On-P
 
 === Generating the token
 
-{productname} recommends using the libraries listed on link:http://jwt.io/[jwt.io] to generate the token. The token is considered valid, when:
+{companyname} recommends using the libraries listed on link:http://jwt.io/[jwt.io] to generate the token. The token is considered valid, when:
 
 * it is signed with the same `SECRET_KEY` as passed to the {pluginname} On-Premises instance,
 * it was created within the last 24 hours,

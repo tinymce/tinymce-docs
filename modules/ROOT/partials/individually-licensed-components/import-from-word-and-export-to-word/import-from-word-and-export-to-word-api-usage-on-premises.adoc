@@ -6,7 +6,7 @@
 * xref:exportword.adoc[Export to Word] provides conversion from an HTML document to a `.docx` file via Restful API.
 * xref:importword.adoc[Import from Word] allows importing `.docx` file and converting it into a styled HTML document with comments and suggestions attached.
 
-The API is available on `http://localhost:[port]` (by default the port is 8080).
+The API is available on `+http://localhost:[port]+` (by default the port is 8080).
 
 [NOTE]
 The REST API documentation is available at `+http://localhost:[port]/docs+`.

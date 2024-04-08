@@ -11,7 +11,8 @@ Assuming response time below 10 seconds, one server (2CPU 2GB RAM) with 1 docker
 * up to 25 concurrent requests with an average content of 5 A4 pages (~7,5k characters and 5 images)
 * up to 10 concurrent requests with an average content of 20 A4 pages (~30k characters and 20 images)
 
-> The above concurrent requests numbers are not a hard limit of {pluginname} On-Premises instance. It can handle more concurrent requests, but the response time will be longer.
+[NOTE]
+The above concurrent requests numbers are not a hard limit of {pluginname} On-Premises instance. It can handle more concurrent requests, but the response time will be longer.
 
 === High availability
 

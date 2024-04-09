@@ -14,13 +14,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 {productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, April 10^th^, 2024. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
-* xref:improvements[Improvements]
-* xref:changes[Changes]
-* xref:removed[Removed]
 * xref:bug-fixes[Bug fixes]
-* xref:security-fixes[Security fixes]
-* xref:deprecated[Deprecated]
-* xref:known-issues[Known issues]
 
 
 [[accompanying-premium-plugin-changes]]
@@ -149,39 +143,6 @@ liveDemo::tiny-10789-after[]
 For information on the **Table of Contents** plugin, see: xref:tableofcontents.adoc[Table of Contents].
 
 
-[[improvements]]
-== Improvements
-
-{productname} {release-version} also includes the following improvement<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[changes]]
-== Changes
-
-{productname} {release-version} also includes the following change<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[removed]]
-== Removed
-
-{productname} {release-version} also includes the following removal<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
 [[bug-fixes]]
 == Bug fixes
 
@@ -214,37 +175,3 @@ Previously in {productname}, when using an inline editor within a horizontally s
 Previously in {productname}, toolbar tooltips within the editor were positioned as `absolute`. This caused tooltips to shrink and become misplaced when the editor was placed inside a container with horizontal scrolling.
 
 To resolve this issue, the tooltip element is now styled with a "max-content" width. As a result, tooltips within the editor's toolbar will display as intended and remain anchored to the corresponding button regardless of the presence of horizontal scrolling.
-
-
-[[security-fixes]]
-== Security fixes
-
-{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[deprecated]]
-== Deprecated
-
-{productname} {release-version} includes the following deprecation<s>:
-
-=== The `<plugin>` configuration property, `<name>`, has been deprecated
-
-// placeholder here.
-
-
-[[known-issues]]
-== Known issues
-
-This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
-
-There <is one | are <number> known issue<s> in {productname} {release-version}.
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.

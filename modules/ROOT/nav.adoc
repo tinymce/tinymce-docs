@@ -1,5 +1,5 @@
-* Getting started
-** xref:introduction-to-tinymce.adoc[What is TinyMCE?]
+* xref:getting-started.adoc[Getting started]
+** xref:introduction-to-tinymce.adoc[What is {productname}?]
 ** xref:installation.adoc[Installation]
 *** Cloud
 **** xref:cloud-quick-start.adoc[Quick start]
@@ -52,12 +52,12 @@
 **** xref:php-projects.adoc[PHP projects]
 **** xref:dotnet-projects.adoc[.NET projects]
 **** xref:bower-projects.adoc[Bower projects]
-**** xref:zip-install.adoc[TinyMCE .zip deployments]
-** xref:upgrading.adoc[Upgrading TinyMCE]
-* How-to guides
+**** xref:zip-install.adoc[{productname} .zip deployments]
+** xref:upgrading.adoc[Upgrading {productname}]
+* xref:how-to-guides.adoc[How-to guides]
 ** Learn the basics
 *** xref:basic-setup.adoc[Basic setup]
-*** xref:work-with-plugins.adoc[Using plugins to extend TinyMCE]
+*** xref:work-with-plugins.adoc[Using plugins to extend {productname}]
 *** xref:filter-content.adoc[Content filtering]
 *** xref:localize-your-language.adoc[Localization]
 *** xref:spell-checking.adoc[Spell checking]
@@ -119,8 +119,8 @@
 *** xref:php-projects.adoc[PHP projects]
 *** xref:dotnet-projects.adoc[.NET projects]
 *** xref:bower-projects.adoc[Bower projects]
-*** xref:zip-install.adoc[TinyMCE .zip deployments]
-** Cloud deployment guide
+*** xref:zip-install.adoc[{productname} .zip deployments]
+** xref:cloud-deployment-guide.adoc[Cloud deployment guide]
 *** xref:editor-and-features.adoc[Cloud deployment of editor & plugins]
 *** xref:features-only.adoc[Cloud deployment of plugins Only]
 *** xref:editor-plugin-version.adoc[Specify editor & plugin versions]
@@ -153,7 +153,7 @@
 ** Images Guide
 *** xref:upload-images.adoc[Image uploads]
 *** xref:php-upload-handler.adoc[PHP image upload handler]
-** Creating custom UI components
+** xref:ui-components.adoc[Creating custom UI components]
 *** Toolbar Buttons
 **** xref:custom-toolbarbuttons.adoc[Toolbar buttons]
 **** xref:custom-basic-toolbar-button.adoc[Basic toolbar button]
@@ -189,7 +189,7 @@
 *** xref:events.adoc[Available Events]
 *** xref:editor-icon-identifiers.adoc[Available Icons]
 *** xref:annotations.adoc[Using the Annotations API]
-** Bundling TinyMCE
+** Bundling {productname}
 *** xref:introduction-to-bundling-tinymce.adoc[Introduction]
 *** Webpack
 **** xref:webpack-es6-npm.adoc[ES6 and npm]
@@ -212,8 +212,8 @@
 **** xref:bundling-models.adoc[Models]
 **** xref:bundling-localization.adoc[UI localizations]
 **** xref:bundling-themes.adoc[Themes]
-** xref:upgrading.adoc[Upgrading TinyMCE]
-** xref:migration-from-6x.adoc[Migrating from TinyMCE 6]
+** xref:upgrading.adoc[Upgrading {productname}]
+** xref:migration-from-6x.adoc[Migrating from {productname} 6]
 ** xref:migration-from-froala.adoc[Migrating from Froala]
 ** xref:generate-rsa-key-pairs.adoc[Generate public key pairs]
 ** xref:understanding-editor-loads.adoc[Understanding editor loads]
@@ -239,7 +239,7 @@
 *** xref:outside-demo.adoc[Outside Demo]
 *** xref:small-demo.adoc[Small Icons Demo]
 *** xref:snow-demo.adoc[Snow Demo]
-* Initial configuration
+* xref:initial-configuration.adoc[Initial configuration]
 ** xref:editor-important-options.adoc[Integration options]
 ** xref:editor-size-options.adoc[Size]
 ** xref:editor-save-and-submit.adoc[Save and submit]
@@ -251,7 +251,7 @@
 *** xref:use-tinymce-distraction-free.adoc[Distraction-free editing mode]
 *** xref:inline-editor-options.adoc[Inline editor options]
 *** xref:multiple-editors.adoc[Multiple editors in a page]
-*** xref:tinymce-for-mobile.adoc[TinyMCE for mobile]
+*** xref:tinymce-for-mobile.adoc[{productname} for mobile]
 ** Editor appearance
 *** xref:editor-skin.adoc[Skins]
 *** xref:editor-icons.adoc[Icons]
@@ -387,18 +387,18 @@
 *** xref:wordcount.adoc[Word Count]
 * Accessibility
 ** xref:tinymce-and-screenreaders.adoc[Accessibility Guide]
-** xref:keyboard-shortcuts.adoc[TinyMCE Keyboard shortcuts]
+** xref:keyboard-shortcuts.adoc[{productname} Keyboard shortcuts]
 * Security
 ** xref:security.adoc[Security guide]
-*** xref:security.adoc#reporting-tinymce-security-issues[Reporting TinyMCE security issues]
-*** xref:security.adoc#xref:what-we-do-to-maintain-security-for-tinymce[What we do to maintain security for TinyMCE]
-*** xref:security.adoc#configuring-content-security-policy-csp-for-tinymce[Configuring Content Security Policy (CSP) for TinyMCE]
+*** xref:security.adoc#reporting-tinymce-security-issues[Reporting {productname} security issues]
+*** xref:security.adoc#xref:what-we-do-to-maintain-security-for-tinymce[What we do to maintain security for {productname}]
+*** xref:security.adoc#configuring-content-security-policy-csp-for-tinymce[Configuring Content Security Policy (CSP) for {productname}]
 *** xref:security.adoc#general-security-risks-for-user-input-elements[General security risks for user input elements]
 ** xref:tinymce-and-csp.adoc[Content Security Policies (CSP)]
 ** xref:tinymce-and-cors.adoc[Cross-Origin Resource Sharing (CORS)]
 * Release information
-** xref:release-notes.adoc[Release notes for TinyMCE 7]
-*** TinyMCE 7.0
+** xref:release-notes.adoc[Release notes for {productname} {productmajorversion}]
+*** {productname} 7.0
 **** xref:7.0-release-notes.adoc#overview[Overview]
 **** xref:7.0-release-notes.adoc#new-premium-plugins[New Premium plugins]
 **** xref:7.0-release-notes.adoc#accompanying-premium-plugin-changes[Accompanying Premium plugin changes]

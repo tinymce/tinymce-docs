@@ -2,7 +2,7 @@
 :description: Instructions for getting the Enhanced Media Embed server configured.
 :keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film link linkchecking linkchecker mediaembed media
 
-Once you have the xref:server.adoc[server-side component] installed, additional configuration to your `application.conf` file is required. (Don't forget to restart the Java application server after updating the configuration.)
+Once you have the xref:introduction-to-premium-selfhosted-services.adoc[server-side component] installed, additional configuration to your `application.conf` file is required. (Don't forget to restart the Java application server after updating the configuration.)
 
 The Enhanced Media Embed service allows you to choose between using your own https://iframely.com/[Iframely] account, configuring custom http://oembed.com/[oEmbed] endpoints or using a combination of both.
 

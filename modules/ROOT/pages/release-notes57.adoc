@@ -117,7 +117,7 @@ The {productname} 5.7 release includes an accompanying release of the *Mentions*
 * Fixed hover cards not being visible in fullscreen mode.
 * Fixed hover card not positioned correctly if the editor has scrolled.
 
-For information on the Mentions plugin, see: xref:premium-mentions.adoc[Mentions plugin].
+For information on the Mentions plugin, see: xref:mentions.adoc[Mentions plugin].
 
 === PowerPaste 5.4.1
 
@@ -125,7 +125,7 @@ The {productname} 5.7 release includes an accompanying release of the *PowerPast
 
 *PowerPaste* 5.4.1 fixes an issue where file extensions with uppercase characters were treated as invalid.
 
-For information on the PowerPaste plugin, see: xref:premium-powerpaste.adoc[PowerPaste plugin].
+For information on the PowerPaste plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste plugin].
 
 === Spell Checker Pro 2.3.0
 
@@ -143,7 +143,7 @@ The {productname} 5.7 release includes an accompanying release of the *Spell Che
 * `getLanguage`
 * `setLanguage`
 
-For information on the Spell Checker Pro API, see: xref:premium-tinymcespellchecker.adoc#apis[Spell Checker Pro - APIs].
+For information on the Spell Checker Pro API, see: xref:introduction-to-tiny-spellchecker.adoc#apis[Spell Checker Pro - APIs].
 
 ===== New Spell Checker Pro Commands
 
@@ -154,13 +154,13 @@ For information on the Spell Checker Pro API, see: xref:premium-tinymcespellchec
 * `mceSpellcheckDialog`
 * `mceSpellcheckDialogClose`
 
-For information on the Spell Checker Pro Commands, see: xref:premium-tinymcespellchecker.adoc#commands[Spell Checker Pro - Commands].
+For information on the Spell Checker Pro Commands, see: xref:introduction-to-tiny-spellchecker.adoc#commands[Spell Checker Pro - Commands].
 
 ===== New Spell Checker Pro Event
 
 *Spell Checker Pro* introduces a new `SpellcheckerLanguageChanged` event which is fired when the active language is changed.
 
-For information on the Spell Checker Pro Events, see: xref:premium-tinymcespellchecker.adoc#events[Spell Checker Pro - `Events`].
+For information on the Spell Checker Pro Events, see: xref:introduction-to-tiny-spellchecker.adoc#events[Spell Checker Pro - `Events`].
 
 ==== Spell Checker Pro - Enhancements
 
@@ -170,7 +170,7 @@ For information on the Spell Checker Pro Events, see: xref:premium-tinymcespellc
 
 *Spell Checker Pro* 2.3.0 introduces enhancements to the `spellchecker_ignore_list` (formerly `spellchecker_whitelist`, see: xref:thespellchecker_whitelistoptionhasbeenrenamed[The `spellchecker_whitelist` option has been renamed]).
 
-It is now possible to specify arrays of words for specific languages to be ignored by the Spell Checker Pro plugin using the `spellchecker_ignore_list` option, see: xref:premium-tinymcespellchecker.adoc#spellchecker_ignore_list[Spell Checker Pro - `spellchecker_ignore_list`].
+It is now possible to specify arrays of words for specific languages to be ignored by the Spell Checker Pro plugin using the `spellchecker_ignore_list` option, see: xref:introduction-to-tiny-spellchecker.adoc#spellchecker_ignore_list[Spell Checker Pro - `spellchecker_ignore_list`].
 
 ==== Spell Checker Pro - Bug fixes
 
@@ -180,7 +180,7 @@ It is now possible to specify arrays of words for specific languages to be ignor
 * Fixed a regression that caused errors to be thrown if the editor was destroyed while spellchecking.
 * Fixed an issue where the spellchecker would incorrectly check content inside of special elements such as `style`.
 
-For information on the Spell Checker Pro plugin, see: xref:premium-tinymcespellchecker.adoc[Spell Checker Pro].
+For information on the Spell Checker Pro plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro].
 
 [[accompanyingpremiumskinsandiconpackschanges]]
 == Accompanying Premium Skins and Icon Packs changes
@@ -191,7 +191,7 @@ The {productname} 5.7 release includes an accompanying release of the *Premium S
 
 A new `bootstrap` icon pack is now available that provides https://icons.getbootstrap.com/[Bootstrap icons] for {productname}.
 
-For information on using premium skins and icon packs, see: xref:premium-skins-and-icon-packs.adoc[Premium Skins and Icon Packs].
+For information on using premium skins and icon packs, see: xref:enhanced-skins-and-icon-packs.adoc[Premium Skins and Icon Packs].
 
 === Premium Skins and Icon Packs - Bug fixes
 
@@ -200,7 +200,7 @@ The *Premium Skins and Icon Packs* release includes the following bug fixes:
 * Fixes an issue where the Snow skin had a transparent inline and sticky toolbar, as well as a transparent toolbar in fullscreen mode.
 * Fixes an issue where the Snow skin special characters and emoticons dialog icons disappeared on hover.
 
-For information on using premium skins and icon packs, see: xref:premium-skins-and-icon-packs.adoc[Premium Skins and Icon Packs].
+For information on using premium skins and icon packs, see: xref:enhanced-skins-and-icon-packs.adoc[Premium Skins and Icon Packs].
 
 [[accompanying-premium-self-hosted-server-side-component-changes]]
 == Accompanying Premium self-hosted server-side component changes
@@ -218,11 +218,11 @@ This version upgraded and replaced internal dependencies to provide upstream bug
 
 For information on:
 
-* The Spell Checker Pro plugin, see: xref:premium-tinymcespellchecker.adoc[Spell Checker Pro plugin].
-* The Link Checker plugin, see: xref:premium-linkchecker.adoc[Link Checker plugin].
-* The Image Tools plugin, see: xref:imagetools.adoc[Image Tools plugin].
-* The Enhanced Media Embed plugin, see: xref:premium-mediaembed.adoc[Enhanced Media Embed plugin].
-* Deploying the server-side components, see: xref:server.adoc[Server-side component installation].
+* The Spell Checker Pro plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
+* The Link Checker plugin, see: xref:linkchecker.adoc[Link Checker plugin].
+* The Image Tools plugin, see: xref:editimage.adoc[Image Tools plugin].
+* The Enhanced Media Embed plugin, see: xref:introduction-to-mediaembed.adoc[Enhanced Media Embed plugin].
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
 
 [[general-bug-fixes]]
 == General bug fixes
@@ -267,7 +267,7 @@ The following features have been deprecated with the release of {productname} 5.
 
 With the release of {productname} 5.7, the `spellchecker_whitelist` option has been renamed to `spellchecker_ignore_list`.
 
-For information on the `spellchecker_ignore_list` option, see: xref:premium-tinymcespellchecker.adoc#spellchecker_ignore_list[Spell Checker Pro - `spellchecker_ignore_list`].
+For information on the `spellchecker_ignore_list` option, see: xref:introduction-to-tiny-spellchecker.adoc#spellchecker_ignore_list[Spell Checker Pro - `spellchecker_ignore_list`].
 
 [[knownissues]]
 == Known issues

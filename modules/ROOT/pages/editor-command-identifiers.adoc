@@ -67,7 +67,7 @@ The commands on the following table are provided by the {productname} editor and
 | Copies the selected contents and puts in into users clipboard.
 
 | Lang
-| Sets the language of the current selection. The value passed in should be a language spec described in xref:configure-localization.adoc#content_langs[Content appearance options - `content_langs`].
+| Sets the language of the current selection. The value passed in should be a language spec described in xref:content-localization.adoc#content_langs[Content appearance options - `content_langs`].
 
 | Paste
 | Pastes the current clipboard contents into the editor.
@@ -314,7 +314,7 @@ Commands are available for the following plugins:
 [[advancedcode]]
 ==== Advanced Code
 
-The following command requires the xref:premium-advcode.adoc[Advanced Code (`advcode`)] plugin.
+The following command requires the xref:advcode.adoc[Advanced Code (`advcode`)] plugin.
 
 include::partial$commands/code-cmds.adoc[]
 
@@ -328,7 +328,7 @@ include::partial$commands/advlist-cmds.adoc[]
 [[advancedtables]]
 ==== Advanced Tables
 
-The following commands require the xref:premium-advtable.adoc[Advanced Tables (`advtable`)] plugin.
+The following commands require the xref:advtable.adoc[Advanced Tables (`advtable`)] plugin.
 
 include::partial$commands/advtable-cmds.adoc[]
 
@@ -349,7 +349,7 @@ include::partial$commands/autoresize-cmds.adoc[]
 [[casechange]]
 ==== Case Change
 
-The following commands require the xref:premium-casechange.adoc[Case Change (`casechange`)] plugin.
+The following commands require the xref:casechange.adoc[Case Change (`casechange`)] plugin.
 
 include::partial$commands/casechange-cmds.adoc[]
 
@@ -398,14 +398,14 @@ include::partial$commands/emoticons-cmds.adoc[]
 [[export]]
 ==== Export
 
-The following commands require the xref:premium-export.adoc[Export (`export`)] plugin.
+The following commands require the xref:export.adoc[Export (`export`)] plugin.
 
 include::partial$commands/export-cmds.adoc[]
 
 [[formatpainter]]
 ==== Format Painter
 
-The following commands require the xref:premium-formatpainter.adoc[Format Painter (`formatpainter`)] plugin.
+The following commands require the xref:formatpainter.adoc[Format Painter (`formatpainter`)] plugin.
 
 include::partial$commands/formatpainter-cmds.adoc[]
 
@@ -442,7 +442,7 @@ include::partial$commands/image-cmds.adoc[]
 [[imagetools]]
 ==== Image Tools
 
-The following commands require the xref:imagetools.adoc[Image Tools (`imagetools`)] plugin.
+The following commands require the xref:editimage.adoc[Image Tools (`imagetools`)] plugin.
 
 include::partial$commands/imagetools-cmds.adoc[]
 
@@ -498,14 +498,14 @@ include::partial$commands/paste-cmds.adoc[]
 [[permanentpen]]
 ==== Permanent Pen
 
-The following commands require the xref:premium-permanentpen.adoc[Permanent Pen (`permanentpen`)] plugin.
+The following commands require the xref:permanentpen.adoc[Permanent Pen (`permanentpen`)] plugin.
 
 include::partial$commands/permanentpen-cmds.adoc[]
 
 [[powerpaste]]
 ==== PowerPaste
 
-The following command requires the xref:premium-powerpaste.adoc[PowerPaste (`powerpaste`)] plugin.
+The following command requires the xref:introduction-to-powerpaste.adoc[PowerPaste (`powerpaste`)] plugin.
 
 include::partial$commands/powerpaste-cmds.adoc[]
 
@@ -549,7 +549,7 @@ include::partial$commands/spellchecker-cmds.adoc[]
 [[spellcheckerpro]]
 ==== Spell Checker Pro
 
-The following commands require the xref:premium-tinymcespellchecker.adoc[Spell Checker Pro (`tinymcespellchecker`)] plugin.
+The following commands require the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro (`tinymcespellchecker`)] plugin.
 
 include::partial$commands/tinymcespellchecker-cmds.adoc[]
 
@@ -570,7 +570,7 @@ include::partial$commands/template-cmds.adoc[]
 [[tableofcontents]]
 ==== Table of Contents
 
-The following commands require the xref:toc.adoc[Table of Contents (`toc`)] plugin.
+The following commands require the xref:tableofcontents.adoc[Table of Contents (`toc`)] plugin.
 
 include::partial$commands/toc-cmds.adoc[]
 

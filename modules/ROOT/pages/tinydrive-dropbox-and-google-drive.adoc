@@ -58,7 +58,7 @@ image::tinydrive-googledrive-dump5.png[]
 
 === 6. Configure tinydrive to use the new Google Drive credentials
 
-The Google Drive API key can be configured by setting the xref:tinydrive-configuration.adoc#tinydrive_google_drive_key[tinydrive_google_drive_key]. The Google OAuth client ID can be configured by setting the xref:tinydrive-configuration.adoc#tinydrive_google_drive_client_id[tinydrive_google_drive_client_id].
+The Google Drive API key can be configured by setting the xref:tinydrive-setup-options.adoc#tinydrive_google_drive_key[tinydrive_google_drive_key]. The Google OAuth client ID can be configured by setting the xref:tinydrive-setup-options.adoc#tinydrive_google_drive_client_id[tinydrive_google_drive_client_id].
 
 [source, js]
 ----
@@ -70,7 +70,7 @@ tinymce.init({
 });
 ----
 
-For more information on other {cloudfilemanager} config options refer to the xref:tinydrive-configuration.adoc[configuration] section of this document.
+For more information on other {cloudfilemanager} config options refer to the xref:tinydrive-setup-options.adoc[configuration] section of this document.
 
 === 7. Tiny Drive UI
 

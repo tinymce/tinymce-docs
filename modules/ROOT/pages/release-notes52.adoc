@@ -49,7 +49,7 @@ For information on using the `addGroupToolbarButton` API, see: xref:typesoftoolb
 
 {cloudname} deployments now have access to professionally translated language packs for localizing the {productname} user interface.
 
-For a list of the available user interface languages, see: xref:configure-localization.adoc#language[Localization options - `language`].
+For a list of the available user interface languages, see: xref:content-localization.adoc#language[Localization options - `language`].
 
 === A new placeholder setting
 
@@ -67,7 +67,7 @@ The `a11y_advanced_options` setting adds an option to set an image as decorative
 
 For information on the `a11y_advanced_options`, including the impact on the `a11ychecker_allow_decorative_images` setting, see:
 
-* xref:premium-a11ychecker.adoc#a11y_advanced_options[The Accessibility Checker plugin - `a11y_advanced_options`].
+* xref:a11ychecker.adoc#a11y_advanced_options[The Accessibility Checker plugin - `a11y_advanced_options`].
 * xref:image.adoc#a11y_advanced_options[The Image plugin - `a11y_advanced_options`].
 
 === Modify the Quick Image toolbar using the `quickbars_image_toolbar` setting
@@ -118,7 +118,7 @@ The {productname} 5.2 release includes an accompanying release of the *Accessibi
 * To improve decorative image checks.
 * To accommodate the `a11y_advanced_options` setting added in {productname} 5.2.
 
-For information on the `a11y_advanced_options` setting, see: xref:premium-a11ychecker.adoc#a11y_advanced_options[Accessibility Checker plugin].
+For information on the `a11y_advanced_options` setting, see: xref:a11ychecker.adoc#a11y_advanced_options[Accessibility Checker plugin].
 
 [[checklist110]]
 === Checklist 1.1.0
@@ -127,7 +127,7 @@ The {productname} 5.2 release includes an accompanying release of the *Checklist
 
 *Checklist* 1.1.0 adds a new optional checklist menu item.
 
-For information on the checklist plugin, see: xref:premium-checklist.adoc[Checklist plugin].
+For information on the checklist plugin, see: xref:checklist.adoc[Checklist plugin].
 
 === Link Checker 2.1.0
 
@@ -135,7 +135,7 @@ The {productname} 5.2 release includes an accompanying release of the *Link Chec
 
 *Link Checker* 2.1.0 adds a new `linkchecker_preprocess` function for adjusting links before link checking.
 
-For information on the `linkchecker_preprocess` option, see: xref:premium-linkchecker.adoc#linkchecker_preprocess[Link Checker plugin - `linkchecker_preprocess`].
+For information on the `linkchecker_preprocess` option, see: xref:linkchecker.adoc#linkchecker_preprocess[Link Checker plugin - `linkchecker_preprocess`].
 
 === Page Embed 1.1.0
 
@@ -143,7 +143,7 @@ The {productname} 5.2 release includes an accompanying release of the *Page Embe
 
 *Page Embed* 1.1.0 adds a new `tiny_pageembed_inline_styles` setting which inlines all styles, while also keeping CSS classes, when rendering the embed content. This is useful when the additional CSS classes can't be added to your site.
 
-For information on inlining page embed styles, see: xref:premium-pageembed.adoc#tiny_pageembed_inline_styles[Page Embed plugin - Inline styles for page embeds].
+For information on inlining page embed styles, see: xref:pageembed.adoc#tiny_pageembed_inline_styles[Page Embed plugin - Inline styles for page embeds].
 
 === Permanent Pen 1.1.0
 
@@ -166,7 +166,7 @@ The {productname} 5.2 release includes an accompanying release of the *Premium S
 * 3 new skins: xref:naked-demo.adoc['naked'], xref:outside-demo.adoc['outside'], and xref:snow-demo.adoc['snow'].
 * 1 new icon pack: 'thin'.
 
-For information on using premium skins and icon packs, see: xref:premium-skins-and-icon-packs.adoc[Premium Skins and Icon Packs].
+For information on using premium skins and icon packs, see: xref:enhanced-skins-and-icon-packs.adoc[Premium Skins and Icon Packs].
 
 === Spellchecker Pro 2.0
 
@@ -180,7 +180,7 @@ The {productname} 5.2 release includes an accompanying release of the *Spellchec
 * Includes a new internal engine to improve the document scanning speed.
 * Removes the `spellchecker_on_load` setting.
 
-For information on the Spell Checker Pro plugin, see: xref:premium-tinymcespellchecker.adoc[Spell Checker Pro plugin].
+For information on the Spell Checker Pro plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
 
 [[minorchangesfortinymce52]]
 == Minor changes for TinyMCE 5.2

@@ -17,13 +17,13 @@ image::sourcecode.png[Source Code]
 
 === Display complex information
 
-More complex dialogs can use xref:dialogcomponents.adoc#tabpanel[tab panels] and various xref:dialogcomponents.adoc#layoutcomponents[layouts] to categorise and organise information displayed to the user. For example, the xref:help.adoc[`help`] and xref:charmap.adoc[`character map`] plugins use dialogs with tabbed panels to categorise and separate information.
+More complex dialogs can use xref:dialog-components.adoc#tabpanel[tab panels] and various xref:dialog-components.adoc#layoutcomponents[layouts] to categorise and organise information displayed to the user. For example, the xref:help.adoc[`help`] and xref:charmap.adoc[`character map`] plugins use dialogs with tabbed panels to categorise and separate information.
 
 image::specialchars.png[Special Characters]
 
 === Interactive dialogs
 
-{productname} dialogs can also contain xref:dialogcomponents.adoc#basiccomponents[interactive components] such as buttons, checkboxes and input fields.
+{productname} dialogs can also contain xref:dialog-components.adoc#basiccomponents[interactive components] such as buttons, checkboxes and input fields.
 
 For example, the xref:image.adoc[`image`] plugin's dialog allows for users to link to or upload an image, input a description, title, class, caption, height and width, then insert it into the editor.
 
@@ -34,7 +34,7 @@ image::interactive.png[Insert/Edit images]
 A dialog configuration has three main parts to match the three main parts of the dialog's UI:
 
 * *Title:* The title of the dialog. This will display in the header of the dialog.
-* *Body:* The body of the dialog. The body component can be a xref:panel[panel] or a xref:tabpanel[tab panel], which can contain an array of xref:dialogcomponents.adoc#panelcomponents[panel components] such as buttons, inputs and text.
+* *Body:* The body of the dialog. The body component can be a xref:panel[panel] or a xref:tabpanel[tab panel], which can contain an array of xref:dialog-components.adoc#panelcomponents[panel components] such as buttons, inputs and text.
 * *Buttons:* An array of xref:footerbuttons[footer buttons] that are displayed in the dialog's footer.
 
 === Basic example
@@ -122,7 +122,7 @@ tinymce.activeEditor.windowManager.open({
 | onTabChange
 | `+(dialogApi, details) => void+`
 | optional
-| *This method only applies to xref:dialogcomponents.adoc#tabpanel[tab panel] dialogs.* Function invoked when the user changes tabs. `details` is an object that contains `newTabName` and `oldTabName`.
+| *This method only applies to xref:dialog-components.adoc#tabpanel[tab panel] dialogs.* Function invoked when the user changes tabs. `details` is an object that contains `newTabName` and `oldTabName`.
 |===
 
 For more information on the `dialogApi` object that is passed to some of the configuration options, see the xref:dialoginstanceapi[dialog instance API] documentation.
@@ -136,14 +136,14 @@ Any callback function that is not passed a `details` object assumes that the dia
 [[bodycomponents]]
 === Body components
 
-The body of a dialog must be either a xref:dialogcomponents.adoc#panel[`panel`] (a single panel) or a xref:dialogcomponents.adoc#tabpanel[`tabpanel`] (a collection of panels). Each panel can contain xref:dialogcomponents.adoc#panelcomponents[panel components] such as inputs, buttons and text.
+The body of a dialog must be either a xref:dialog-components.adoc#panel[`panel`] (a single panel) or a xref:dialog-components.adoc#tabpanel[`tabpanel`] (a collection of panels). Each panel can contain xref:dialog-components.adoc#panelcomponents[panel components] such as inputs, buttons and text.
 
 NOTE: {productname} also supports xref:urldialog.adoc[URL dialogs]. Configuring a URL dialog is quite different to configuring a standard {productname} dialog.
 
 [[panel]]
 ==== Panel
 
-The basic dialog type is a *panel* dialog. A panel is a container for xref:dialogcomponents.adoc#panelcomponents[panel components]. A panel type dialog only has one panel.
+The basic dialog type is a *panel* dialog. A panel is a container for xref:dialog-components.adoc#panelcomponents[panel components]. A panel type dialog only has one panel.
 
 [source, js]
 ----
@@ -156,9 +156,9 @@ The basic dialog type is a *panel* dialog. A panel is a container for xref:dialo
 [[tabpanel]]
 ==== TabPanel
 
-A *tabpanel* dialog contains multiple panels, and a tab navigation menu on the left-hand side of the dialog to allow for switching between panels. Each panel can contain different xref:dialogcomponents.adoc#panelcomponents[panel components], allowing for complex dialogs.
+A *tabpanel* dialog contains multiple panels, and a tab navigation menu on the left-hand side of the dialog to allow for switching between panels. Each panel can contain different xref:dialog-components.adoc#panelcomponents[panel components], allowing for complex dialogs.
 
-See the xref:dialogcomponents.adoc#tabpanel[tab panel component reference] for tab panel configuration options.
+See the xref:dialog-components.adoc#tabpanel[tab panel component reference] for tab panel configuration options.
 
 [source, js]
 ----
@@ -188,7 +188,7 @@ image::help.png[Help Button]
 
 A *button* is a clickable component that can contain text or an icon. There are three types of buttons (primary, secondary and menu buttons). Primary and secondary buttons will perform an action when clicked, however they are styled differently. Primary buttons are intended to stand out. The color will depend on the chosen xref:customize-ui.adoc#skins[skin]. Menu buttons will open a menu with more options when clicked, instead of performing an action.
 
-NOTE: Dialog footer buttons are different to xref:dialogcomponents.adoc#button[dialog panel buttons].
+NOTE: Dialog footer buttons are different to xref:dialog-components.adoc#button[dialog panel buttons].
 
 ==== Configuration
 
@@ -403,7 +403,7 @@ The instance API is a JavaScript object containing methods attached to the dialo
 | Calling `redial()` and passing a dialog body configuration will destroy and recreate the body of the dialog. See the xref:redial[Redial] documentation.
 
 | `+showTab(name: string) => void+`
-| *This method only applies to xref:dialogcomponents.adoc#tabpanel[tab panel] dialogs.* Calling `showTab()` and passing the `name` of a tab will make the dialog switch to the named tab.
+| *This method only applies to xref:dialog-components.adoc#tabpanel[tab panel] dialogs.* Calling `showTab()` and passing the `name` of a tab will make the dialog switch to the named tab.
 |===
 
 [[dialogdataandstate]]
@@ -411,7 +411,7 @@ The instance API is a JavaScript object containing methods attached to the dialo
 
 All dialogs have an internal data store, which is used to track the value and/or state of the dialog's panel components.
 
-This data store takes the form of a JavaScript object, where the object's keys are the ``name``s of the configured panel components. For example, if a dialog contains a xref:dialogcomponents.adoc#checkbox[checkbox] component configured with `name: myCheckbox` and the checkbox is not checked then the dialog's data object will contain `{ myCheckbox: false }`.
+This data store takes the form of a JavaScript object, where the object's keys are the ``name``s of the configured panel components. For example, if a dialog contains a xref:dialog-components.adoc#checkbox[checkbox] component configured with `name: myCheckbox` and the checkbox is not checked then the dialog's data object will contain `{ myCheckbox: false }`.
 
 The current value of a dialog's data store can be accessed using the dialog instance API's `getData()` function. It can also be set using `setData()` which will automatically update the relevant components. For example, if you call `setData({ myCheckbox: true })` with the previous example, the checkbox would be toggled to checked.
 

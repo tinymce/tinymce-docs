@@ -8,7 +8,7 @@
 
 include::partial$misc/premiumplugin.adoc[]
 
-*Spell Checker Pro* adds spell checking as-you-type capabilities to {productname}. For information on the supported languages, refer to xref:premium-tinymcespellchecker.adoc#spellchecker_language[this] section.
+*Spell Checker Pro* adds spell checking as-you-type capabilities to {productname}. For information on the supported languages, refer to xref:introduction-to-tiny-spellchecker.adoc#spellchecker_language[this] section.
 
 liveDemo::spellcheckerpro[]
 
@@ -39,7 +39,7 @@ To enable the {productname} Enterprise Spellchecking plugin:
 . If configured, disable the `spellchecker` plugin provided with {productname}, by removing it from the `plugins` list.
 . Add `tinymcespellchecker` to the `plugins` list.
 
-For information on installing the server-side component for spell checking, please see the xref:server.adoc[server-side component installation guide].
+For information on installing the server-side component for spell checking, please see the xref:introduction-to-premium-selfhosted-services.adoc[server-side component installation guide].
 
 === Example: TinyMCE Self-hosted Installation
 

@@ -54,13 +54,13 @@ The {productname} 5.10 release includes an accompanying release of the *Advanced
 
 *Advanced Tables* 1.2.0 introduces the following enhancements:
 
-* Added `getRowType` property to the series generator `info` argument. For details, see xref:premium-advtable.adoc#generatorinfo[`GeneratorInfo`].
+* Added `getRowType` property to the series generator `info` argument. For details, see xref:advtable.adoc#generatorinfo[`GeneratorInfo`].
 
 *Advanced Tables* 1.2.0 provides the following bug fixes:
 
 * The selection could be placed in an invalid location when a row numbering column was updated.
 
-For information on the Advanced Tables plugin, see: xref:premium-advtable.adoc[Advanced Tables plugin].
+For information on the Advanced Tables plugin, see: xref:advtable.adoc[Advanced Tables plugin].
 
 === Real-time Collaboration 1.1.1
 
@@ -95,13 +95,13 @@ The {productname} 5.10 release includes an accompanying release of the *Spell Ch
 
 *Spell Checker Pro* 2.5.0 introduces the following enhancements:
 
-* The `SpellcheckerIgnoreAll` event now includes a `language` property. For details, see xref:premium-tinymcespellchecker.adoc#spellcheckerignoreallevent[Spell Checker Pro - SpellcheckerIgnoreAll Event].
+* The `SpellcheckerIgnoreAll` event now includes a `language` property. For details, see xref:introduction-to-tiny-spellchecker.adoc#spellcheckerignoreallevent[Spell Checker Pro - SpellcheckerIgnoreAll Event].
 
 *Spell Checker Pro* 2.5.0 provides the following bug fixes:
 
 * The "Ignore all" action would incorrectly affect words that were in a different language to the selected word, if they were spelled the same.
 
-For information on the Spell Checker Pro plugin, see: xref:premium-tinymcespellchecker.adoc[Spell Checker Pro plugin].
+For information on the Spell Checker Pro plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
 
 [[accompanying-premium-self-hosted-server-side-component-changes]]
 == Accompanying Premium self-hosted server-side component changes
@@ -124,7 +124,7 @@ These versions require Java 8 or higher. For information on the removal of Java 
 
 === New Server-side component features
 
-The Spelling service now includes a new configuration option, allowing the server to reject spelling requests that contain too many incorrect words. For details, see: xref:server-configure.adoc#num-incorrect-words-in-suggestions-request-limitoptional[Configure server-side components: `num-incorrect-words-in-suggestions-request-limit`].
+The Spelling service now includes a new configuration option, allowing the server to reject spelling requests that contain too many incorrect words. For details, see: xref:configure-required-services.adoc#num-incorrect-words-in-suggestions-request-limitoptional[Configure server-side components: `num-incorrect-words-in-suggestions-request-limit`].
 
 === Image Proxy service patch release
 
@@ -136,11 +136,11 @@ Version 2.105.5 of the hyperlinking service includes a fix to send `Accept` head
 
 For information on:
 
-* The Spell Checker Pro plugin, see: xref:premium-tinymcespellchecker.adoc[Spell Checker Pro plugin].
-* The Link Checker plugin, see: xref:premium-linkchecker.adoc[Link Checker plugin].
-* The Image Tools plugin, see: xref:imagetools.adoc[Image Tools plugin].
-* The Enhanced Media Embed plugin, see: xref:premium-mediaembed.adoc[Enhanced Media Embed plugin].
-* Deploying the server-side components, see: xref:server.adoc[Server-side component installation].
+* The Spell Checker Pro plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
+* The Link Checker plugin, see: xref:linkchecker.adoc[Link Checker plugin].
+* The Image Tools plugin, see: xref:editimage.adoc[Image Tools plugin].
+* The Enhanced Media Embed plugin, see: xref:introduction-to-mediaembed.adoc[Enhanced Media Embed plugin].
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
 
 === Updating the self-hosted server-side components
 
@@ -157,8 +157,8 @@ The new versions of the server-side services provide updates for the Java-based 
 
 For information on:
 
-* Deploying the server-side components, see: xref:server.adoc[Server-side component installation].
-* Deploying the server-side components using Docker, see: xref:dockerservices.adoc[Containerized service deployments].
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+* Deploying the server-side components using Docker, see: xref:bundle-intro-setup.adoc[Containerized service deployments].
 
 [[general-bug-fixes]]
 == General bug fixes

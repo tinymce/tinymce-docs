@@ -5,7 +5,7 @@
 
 A hybrid deployment of {cloudname} allows the loading of premium plugins in a self-hosted environment. Download and install the link:{gettiny}[{productname} Community edition] to get started.
 
-Sign up for a free API key provides entitlements to premium xref:imagetools.adoc[Image Tools] plugin. A {cloudname} image proxy server must already be configured. Premium plugins can be purchased at any time once the API key has been set up.
+Sign up for a free API key provides entitlements to premium xref:editimage.adoc[Image Tools] plugin. A {cloudname} image proxy server must already be configured. Premium plugins can be purchased at any time once the API key has been set up.
 
 == Step 1: Insert the custom script tag into the webpage
 
@@ -20,26 +20,26 @@ Add the following script in the webpage once the script tag to load {productname
 
 Extend the xref:configure.adoc[{productname} configuration] to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
-* xref:premium-mentions.adoc[Mentions]
-* xref:premium-tinydrive.adoc[{cloudfilemanager}]
+* xref:mentions.adoc[Mentions]
+* xref:tinydrive-plugin.adoc[{cloudfilemanager}]
 * xref:comments.adoc[Comments]
-* xref:premium-pageembed.adoc[Page Embed]
-* xref:premium-permanentpen.adoc[Permanent Pen]
-* xref:premium-formatpainter.adoc[Format Painter]
-* xref:premium-powerpaste.adoc[PowerPaste]
-* xref:premium-tinymcespellchecker.adoc[Spell Checker Pro]
+* xref:pageembed.adoc[Page Embed]
+* xref:permanentpen.adoc[Permanent Pen]
+* xref:formatpainter.adoc[Format Painter]
+* xref:introduction-to-powerpaste.adoc[PowerPaste]
+* xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro]
 
 NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via xref:cloud-deployment-guide.adoc[{cloudname}].
 
-* xref:imagetools.adoc[Image Tools (with configured image proxy)]
+* xref:editimage.adoc[Image Tools (with configured image proxy)]
 
 NOTE: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurrs automatically.
 
-* xref:premium-moxiemanager.adoc[Moxie Manager]
-* xref:premium-a11ychecker.adoc[Accessibility Checker]
-* xref:premium-advcode.adoc[Advanced Code Editor]
-* xref:premium-mediaembed.adoc[Enhanced Media Embed]
-* xref:premium-linkchecker.adoc[Link Checker]
+* xref:moxiemanager.adoc[Moxie Manager]
+* xref:a11ychecker.adoc[Accessibility Checker]
+* xref:advcode.adoc[Advanced Code Editor]
+* xref:introduction-to-mediaembed.adoc[Enhanced Media Embed]
+* xref:linkchecker.adoc[Link Checker]
 
 NOTE: It may take up to 30 minutes for the purchased plugin to be available to {productname}. Clear the browser's cache.
 
@@ -48,7 +48,7 @@ The following is a complete example:
 The example below has the following:
 
 * The {cloudname} `API key` has the value `no-api-key`.
-* The {cloudname} has the xref:premium-tinymcespellchecker.adoc[Spell Checker Pro] plugin enabled.
+* The {cloudname} has the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro] plugin enabled.
 
 [source, html]
 ----

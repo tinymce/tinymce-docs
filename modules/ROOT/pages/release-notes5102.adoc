@@ -26,7 +26,7 @@ The {productname} 5.10.2 release includes an accompanying release of the *Enhanc
 
 *Enhanced Media Embed* 2.2.6 fixes the `mediaembed` content CSS loading incorrectly, which caused it to not display in previews.
 
-For information on the Enhanced Media Embed plugin, see: xref:premium-mediaembed.adoc[Enhanced Media Embed plugin].
+For information on the Enhanced Media Embed plugin, see: xref:introduction-to-mediaembed.adoc[Enhanced Media Embed plugin].
 
 === Page Embed 1.1.1
 
@@ -34,7 +34,7 @@ The {productname} 5.10.2 release includes an accompanying release of the *Page E
 
 *Page Embed* 1.1.1 fixes a bug where the wrong media type was used in the source URL dialog field.
 
-For information on the Page Embed plugin, see: xref:premium-pageembed.adoc[Page Embed plugin].
+For information on the Page Embed plugin, see: xref:pageembed.adoc[Page Embed plugin].
 
 [[accompanying-premium-self-hosted-server-side-component-changes]]
 == Accompanying Premium self-hosted server-side component changes
@@ -57,11 +57,11 @@ This version requires Java 8 or higher. For information on the removal of Java 7
 
 For information on:
 
-* The Spell Checker Pro plugin, see: xref:premium-tinymcespellchecker.adoc[Spell Checker Pro plugin].
-* The Link Checker plugin, see: xref:premium-linkchecker.adoc[Link Checker plugin].
-* The Image Tools plugin, see: xref:imagetools.adoc[Image Tools plugin].
-* The Enhanced Media Embed plugin, see: xref:premium-mediaembed.adoc[Enhanced Media Embed plugin].
-* Deploying the server-side components, see: xref:server.adoc[Server-side component installation].
+* The Spell Checker Pro plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
+* The Link Checker plugin, see: xref:linkchecker.adoc[Link Checker plugin].
+* The Image Tools plugin, see: xref:editimage.adoc[Image Tools plugin].
+* The Enhanced Media Embed plugin, see: xref:introduction-to-mediaembed.adoc[Enhanced Media Embed plugin].
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
 
 === Security related dependency update for all 3 server-side services
 
@@ -82,8 +82,8 @@ The new versions of the server-side services provide updates for the Java-based 
 
 For information on:
 
-* Deploying the server-side components, see: xref:server.adoc[Server-side component installation].
-* Deploying the server-side components using Docker, see: xref:dockerservices.adoc[Containerized service deployments].
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+* Deploying the server-side components using Docker, see: xref:bundle-intro-setup.adoc[Containerized service deployments].
 
 [[general-bug-fixes]]
 == General bug fixes

@@ -22,7 +22,7 @@ For more information on the new `help_tabs` setting and API refer to the xref:he
 
 The *Image Tools* plugin includes a new `imagetools_fetch_image` setting, which allows a custom function to be used to fetch the image content in complex environments, where extra customization is required, such as authentication.
 
-For more information on `imagetools_fetch_image` refer to the xref:imagetools.adoc#imagetools_fetch_image[documentation].
+For more information on `imagetools_fetch_image` refer to the xref:editimage.adoc#imagetools_fetch_image[documentation].
 
 ==== Insert table dialog
 
@@ -36,7 +36,7 @@ The new *Premium Skins and Icon Packs* adds an easy way to quickly give TinyMCE 
 
 To try out the *Premium Skins and Icon Packs* start with this link:{plugindirectory}skins-and-icon-packs[dedicated product page] or check out the https://www.tiny.cloud/pricing[pricing page] to see all the flexible pricing options.
 
-For more information and demos on the new *Premium Skins and Icon Packs* refer to the full xref:premium-skins-and-icon-packs.adoc[documentation].
+For more information and demos on the new *Premium Skins and Icon Packs* refer to the full xref:enhanced-skins-and-icon-packs.adoc[documentation].
 
 === Tiny Drive
 
@@ -52,7 +52,7 @@ There is also a demo provided to explore the *Tiny Drive* capabilities xref:tiny
 
 *Enhanced Media Embed* 2.2.0 adds a new `mediaembed_inline_styles` setting allowing styles to be embedded inline, instead of requiring additional content css to be added to your site.
 
-For more information on *Enhanced Media Embed* refer to the full xref:premium-mediaembed.adoc#mediaembed_inline_styles[documentation].
+For more information on *Enhanced Media Embed* refer to the full xref:introduction-to-mediaembed.adoc#mediaembed_inline_styles[documentation].
 
 == Updates and enhancements
 
@@ -62,7 +62,7 @@ The new TinyMCE 5.0.7 editor comes with significant changes to the previous vers
 
 ==== Autocompleter
 
-The autocompleter functionality builtin to TinyMCE and used by the xref:premium-mentions.adoc[*Mentions*], xref:charmap.adoc[*Charmap*] and xref:emoticons.adoc[*Emoticons*] plugins, has been improved to highlight matched text results, search across fragmented text nodes and support matching results that contain one or more spaces.
+The autocompleter functionality builtin to TinyMCE and used by the xref:mentions.adoc[*Mentions*], xref:charmap.adoc[*Charmap*] and xref:emoticons.adoc[*Emoticons*] plugins, has been improved to highlight matched text results, search across fragmented text nodes and support matching results that contain one or more spaces.
 
 For more information on the autocompleter refer to the xref:autocompleter.adoc[documentation].
 

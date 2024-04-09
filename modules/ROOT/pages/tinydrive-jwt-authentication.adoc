@@ -134,7 +134,7 @@ tinymce.init({
 [[nodejstokenproviderendpointexample]]
 === Node.js token provider endpoint example
 
-This example shows you how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `jsonwebtoken` Node modules. For instructions on setting up a basic Node.js Express server and adding {productname}, see: xref:expressjs.adoc[Integrating TinyMCE into an Express JS App].
+This example shows you how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `jsonwebtoken` Node modules. For instructions on setting up a basic Node.js Express server and adding {productname}, see: xref:expressjs-pm.adoc[Integrating TinyMCE into an Express JS App].
 
 `privateKey` should be the _private_ key that pairs with the _public_ key generated at (or provided to) link:{accountpageurl}/jwt/[{accountpage} - JWT Keys].
 
@@ -197,4 +197,4 @@ tinymce.init({
 
 === More configuration
 
-If you managed to set this up, you should be good to go with checking out the various xref:tinydrive-configuration.adoc[configuration options] for {cloudfilemanager} and how you can customize it. Don't forget to change the JWT Claim's (user id, user name) to get those from your system.
+If you managed to set this up, you should be good to go with checking out the various xref:tinydrive-setup-options.adoc[configuration options] for {cloudfilemanager} and how you can customize it. Don't forget to change the JWT Claim's (user id, user name) to get those from your system.

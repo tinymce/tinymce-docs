@@ -86,7 +86,7 @@ The {productname} 5.8 release includes an accompanying release of the *Accessibi
 * Fixed help documentation URLs pointing to old website locations.
 * Fixed dialog button text incorrectly using title-style capitalization.
 
-For information on the Accessibility Checker plugin, see: xref:premium-a11ychecker.adoc[Accessibility Checker plugin].
+For information on the Accessibility Checker plugin, see: xref:a11ychecker.adoc[Accessibility Checker plugin].
 
 === Comments 2.4.0
 
@@ -96,8 +96,8 @@ This release adds new resolve conversation functionality, making it is possible 
 
 *Comments* 2.4.0 provides the following new features:
 
-* Added a new `tinycomments_resolve` option for adding and configuring resolve conversation functionality for Comments in callback mode. For details, see: xref:comments_callback_mode.adoc#tinycomments_resolve[Configuring comments callbacks - `tinycomments_resolve`].
-* Added a new `tinycomments_can_resolve` option for adding and configuring resolve conversation functionality for Comments in embedded mode. For details, see: xref:comments_embedded_mode.adoc#tinycomments_can_resolve[Comments plugin - `tinycomments_can_resolve`].
+* Added a new `tinycomments_resolve` option for adding and configuring resolve conversation functionality for Comments in callback mode. For details, see: xref:comments-callback-mode.adoc#tinycomments_resolve[Configuring comments callbacks - `tinycomments_resolve`].
+* Added a new `tinycomments_can_resolve` option for adding and configuring resolve conversation functionality for Comments in embedded mode. For details, see: xref:comments-embedded-mode.adoc#tinycomments_can_resolve[Comments plugin - `tinycomments_can_resolve`].
 
 For information on the Comments plugin, see: xref:comments.adoc[Comments plugin].
 
@@ -114,7 +114,7 @@ The {productname} 5.8 release includes an accompanying release of the *Export* p
 
 * Fixed an issue where internal document links did not navigate within the client-side PDF exporter output.
 
-For information on the Export plugin, see: xref:premium-export.adoc[Export plugin].
+For information on the Export plugin, see: xref:export.adoc[Export plugin].
 
 === PowerPaste 5.5.0
 
@@ -124,7 +124,7 @@ This release adds support for copying and pasting content from Google Docs, maki
 
 *PowerPaste* 5.5.0 provides the following new features:
 
-* Added Google Docs paste support which can be controlled using the new xref:premium-powerpaste.adoc#powerpaste_googledocs_import[`powerpaste_googledocs_import` option].
+* Added Google Docs paste support which can be controlled using the new xref:introduction-to-powerpaste.adoc#powerpaste_googledocs_import[`powerpaste_googledocs_import` option].
 
 *PowerPaste* 5.5.0 provides the following improvements:
 
@@ -139,7 +139,7 @@ This release adds support for copying and pasting content from Google Docs, maki
 
 For information on:
 
-* The PowerPaste plugin, see: xref:premium-powerpaste.adoc[PowerPaste plugin].
+* The PowerPaste plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste plugin].
 * PowerPaste support and compatibility, including Google Docs support, see: xref:enterprise-system-requirements.adoc#powerpastesupportcopyandpaste[Supported Premium Versions and Platforms - PowerPaste support].
 
 === Spell Checker Pro 2.3.1
@@ -153,7 +153,7 @@ The {productname} 5.8 release includes an accompanying release of the *Spell Che
 * Fixed `en_UK` and `en_BR` incorrectly spellchecking as US English instead of UK English.
 * Fixed menu items sometimes not rendering as toggled due to language codes using a case sensitive comparison.
 
-For information on the Spell Checker Pro plugin, see: xref:premium-tinymcespellchecker.adoc[Spell Checker Pro plugin].
+For information on the Spell Checker Pro plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
 
 === Tiny Drive 1.4.0
 
@@ -161,7 +161,7 @@ The {productname} 5.8 release includes an accompanying release of *Tiny Drive*.
 
 *Tiny Drive* 1.4.0 provides the following new features:
 
-* Added a new xref:tinydrive-configuration.adoc#tinydrive_skin[`tinydrive_skin`] option for applying a skin to the {productname} {cloudfilemanager} plugin.
+* Added a new xref:tinydrive-setup-options.adoc#tinydrive_skin[`tinydrive_skin`] option for applying a skin to the {productname} {cloudfilemanager} plugin.
 * Added a new xref:standalone.adoc#skin[`skin`] option for applying a skin to standalone instances of {cloudfilemanager}. Before using this setting with {cloudfilemanager} 1.4.0, see: xref:theconfiguredskinisignoredfortinydriveinstandalonemode[Known issues - The configured skin is ignored for Tiny Drive in standalone mode].
 * Added a new `oxide-dark` skin for standalone and plugin mode.
 * Added a new PDF viewer to add previews for PDF files.
@@ -183,7 +183,7 @@ The {productname} 5.8 release includes an accompanying release of the *Premium S
 
 A new Fluent skin and accompanying content css, which follows the Microsoft design language, is now available for {productname}.
 
-For information on using premium skins and icon packs, see: xref:premium-skins-and-icon-packs.adoc[Premium Skins and Icon Packs].
+For information on using premium skins and icon packs, see: xref:enhanced-skins-and-icon-packs.adoc[Premium Skins and Icon Packs].
 
 [[general-bug-fixes]]
 == General bug fixes
@@ -243,7 +243,7 @@ This section describes issues that users of {productname} 5.8 may encounter and 
 [[contentpastedfromgoogledocscannotbeoutdented]]
 === Content pasted from Google Docs cannot be outdented
 
-*Issue*: This issue affects content pasted in from Google Docs using the xref:premium-powerpaste.adoc[PowerPaste plugin]. When content is pasted into the editor that contains indentation, it then cannot be outdented using the available toolbar buttons.
+*Issue*: This issue affects content pasted in from Google Docs using the xref:introduction-to-powerpaste.adoc[PowerPaste plugin]. When content is pasted into the editor that contains indentation, it then cannot be outdented using the available toolbar buttons.
 
 *Workaround*: The only known workaround is to configure TinyMCE to use margins instead of padding for indentation. This can be enabled by configuring the xref:content-formatting.adoc#indent_use_margin[`indent_use_margin` option].
 

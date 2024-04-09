@@ -70,7 +70,7 @@ image:comments-delete-conversation.png[delete conversation]
 
 include::partial$misc/requires_5_8v.adoc[]
 
-NOTE: This feature requires the xref:comments_callback_mode.adoc#tinycomments_resolve[`tinycomments_resolve`] or xref:comments_embedded_mode.adoc#tinycomments_can_resolve[`tinycomments_can_resolve`] setting to be configured.
+NOTE: This feature requires the xref:comments-callback-mode.adoc#tinycomments_resolve[`tinycomments_resolve`] or xref:comments-embedded-mode.adoc#tinycomments_can_resolve[`tinycomments_can_resolve`] setting to be configured.
 
 This option is only available for the first comment in a conversation. Once a comment is saved, follow this procedure to resolve a conversation.
 

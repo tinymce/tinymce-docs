@@ -85,9 +85,9 @@ paste_retain_style_properties:: The Microsoft Word specific paste handling funct
 
 paste_word_valid_elements:: The Microsoft Word specific paste handling functionality will be removed from the `paste` plugin. As a result, the xref:paste.adoc#paste_word_valid_elements[`paste_word_valid_elements`] option will be removed in {productname} 6.0.
 
-spellchecker_select_languages:: The xref:premium-tinymcespellchecker.adoc#spellchecker_select_languages[`spellchecker_select_languages`] option was deprecated and replaced by the xref:configure-localization.adoc#content_langs[`content_langs`] option in {productname} 5.9. The new option provides better support for the BCP47 standard used for `lang` attributes and increased configuration capabilities.
+spellchecker_select_languages:: The xref:introduction-to-tiny-spellchecker.adoc#spellchecker_select_languages[`spellchecker_select_languages`] option was deprecated and replaced by the xref:content-localization.adoc#content_langs[`content_langs`] option in {productname} 5.9. The new option provides better support for the BCP47 standard used for `lang` attributes and increased configuration capabilities.
 
-spellchecker_whitelist:: The `spellchecker_whitelist` option was deprecated and replaced by the xref:premium-tinymcespellchecker.adoc#spellchecker_ignore_list[`spellchecker_ignore_list`] option in {productname} 5.7. The new option provides additional functionality and avoids insensitive naming.
+spellchecker_whitelist:: The `spellchecker_whitelist` option was deprecated and replaced by the xref:introduction-to-tiny-spellchecker.adoc#spellchecker_ignore_list[`spellchecker_ignore_list`] option in {productname} 5.7. The new option provides additional functionality and avoids insensitive naming.
 
 table_responsive_width:: The `table_responsive_width` option was deprecated and replaced by the xref:table.adoc#table_sizing_mode[`table_sizing_mode`] option in {productname} 5.4. Use the `'relative'` or `'fixed'` sizing modes to keep the same functionality.
 

@@ -12,16 +12,16 @@ The mobile experience comes with a number of user interface changes in addition 
 * Mobile devices now use the `silver` theme.
 * Horizontal contextual menus on mobile.
 * Side-scrolling toolbars  and contextual menus on mobile.
-* Contextual keyboard settings for dialogs using xref:dialogcomponents.adoc#inputmode[`inputMode`].
+* Contextual keyboard settings for dialogs using xref:dialog-components.adoc#inputmode[`inputMode`].
 * xref:mobiledefaultsforselectedsettings[Mobile defaults for selected settings].
 * Table cell selection on mobile.
 
 The mobile experience allows most of the {productname} plugins to work on mobile devices, except for:
 
 * xref:comments.adoc[Comments].
-* xref:imagetools.adoc[Image tools].
-* xref:premium-moxiemanager.adoc[MoxieManager].
-* xref:premium-permanentpen.adoc[Permanent Pen].
+* xref:editimage.adoc[Image tools].
+* xref:moxiemanager.adoc[MoxieManager].
+* xref:permanentpen.adoc[Permanent Pen].
 
 {productname} will detect the platform and show an optimal UI experience based on the device type and screen size.
 
@@ -62,7 +62,7 @@ The following settings have mobile-specific default values:
 * xref:editor-appearance.adoc#toolbar_sticky[`toolbar_sticky`] - Sticky Toolbar is not supported on mobile devices and defaults to `false`.
 * xref:table.adoc#table_grid[`table_grid`] - Table grid is not supported on mobile devices and defaults to `false`. When creating tables on mobile, a dialog is shown instead of the table grid.
 * xref:editor-appearance.adoc#resize[`resize`] - Resizing is not supported on mobile devices and defaults to `false`.
-* xref:advanced-editing-behavior.adoc#object_resizing[`object_resizing`] - Object resizing is not supported on mobile devices and defaults to `false`.
+* xref:content-behavior-options.adoc#object_resizing[`object_resizing`] - Object resizing is not supported on mobile devices and defaults to `false`.
 
 === Unsupported settings for mobile
 
@@ -74,7 +74,7 @@ The following settings are not supported on mobile devices:
 * xref:editor-appearance.adoc#toolbar_sticky[`toolbar_sticky`].
 * xref:table.adoc#table_grid[`table_grid`].
 * xref:editor-appearance.adoc#resize[`resize`].
-* xref:advanced-editing-behavior.adoc#object_resizing[`object_resizing`].
+* xref:content-behavior-options.adoc#object_resizing[`object_resizing`].
 
 [[thelegacymobiletheme]]
 == The legacy mobile theme

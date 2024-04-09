@@ -96,7 +96,7 @@ If a custom plugin includes any custom UI created using {productname}'s xref:ui-
 . Create a "[.code]``langs``" directory in the custom plugin's root directory for custom translations.
 . For each language that the plugin supports, create a translation file.
 +
-The files should be JavaScript files and use the relevant language code as the file name. For example: {productname} will search for a Spanish translation file at `'<your plugin>/langs/es_ES.js'`, where `<your plugin>` is to the directory that contains the plugin's entry point file. For a list of supported languages, see: xref:configure-localization.adoc#supportedlanguages[Supported languages].
+The files should be JavaScript files and use the relevant language code as the file name. For example: {productname} will search for a Spanish translation file at `'<your plugin>/langs/es_ES.js'`, where `<your plugin>` is to the directory that contains the plugin's entry point file. For a list of supported languages, see: xref:content-localization.adoc#supportedlanguages[Supported languages].
 
 . In each translation file, add translation strings by passing an object containing key-value pairs of source strings and translation strings to the xref:apis/tinymce.root.adoc#addI18n[`tinymce.addI18n()` API].
 . In the plugin's entry point file, call `tinymce.PluginManager.requireLangPack()` and pass it the plugin identifier and a comma-delimitated string of the language codes to load.

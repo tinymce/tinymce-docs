@@ -162,7 +162,7 @@ The CSS files bundled with {productname} have been updated to better support the
 
 The new listbox component for custom dialogs is a composite component with a label and a dropdown list of options for users to select from. This component displays a menu-like dropdown and allows nested options to be shown to users.
 
-For information on the listbox dialog component, see: xref:dialogcomponents.adoc#listbox[Dialog components - listbox].
+For information on the listbox dialog component, see: xref:dialog-components.adoc#listbox[Dialog components - listbox].
 
 === New `hasPlugin` for detecting the availability of plugins
 
@@ -197,12 +197,12 @@ The icon for the Image Tools _image options_ toolbar button has changed from an 
 
 For information on:
 
-* The Image Tools plugin, see: xref:imagetools.adoc[Image Tools plugin].
-* The Image Tools context toolbar, see: xref:imagetools.adoc#imagetools_toolbar[Image Tools plugin - `imagetools_toolbar`].
+* The Image Tools plugin, see: xref:editimage.adoc[Image Tools plugin].
+* The Image Tools context toolbar, see: xref:editimage.adoc#imagetools_toolbar[Image Tools plugin - `imagetools_toolbar`].
 
 For a list of available:
 
-* Image Tools toolbar buttons, see: xref:imagetools.adoc#toolbarbuttons[Image Tools plugin - Toolbar buttons].
+* Image Tools toolbar buttons, see: xref:editimage.adoc#toolbarbuttons[Image Tools plugin - Toolbar buttons].
 * {productname} icons, see: xref:editor-icon-identifiers.adoc[Icons Available for TinyMCE].
 
 === Improved navigation and deletion for media elements without the `media` plugin
@@ -222,10 +222,10 @@ The {productname} 5.5 release includes an accompanying release of the *Accessibi
 
 *Accessibility Checker* 2.3.0 adds the following features:
 
-* A new `a11ychecker_ignored_rules` option for filtering Accessibility Checker rules using the rule identifiers. For information on the `a11ychecker_ignored_rules` option, see: xref:premium-a11ychecker.adoc#a11ychecker_ignored_rules[Accessibility Checker plugin - `a11ychecker_ignored_rules`].
-* A new `a11ychecker_issue_url_callback` option to allow custom URLs to be used for the "more info" links on accessibility checks. For information on the `a11ychecker_issue_url_callback` option, see: xref:premium-a11ychecker.adoc#a11ychecker_issue_url_callback[Accessibility Checker plugin - `a11ychecker_issue_url_callback`].
-* Adds the rule identifier (`id`) to the data returned by the `getReport()` API method. For information on the `getReport()` API method, see: xref:premium-a11ychecker.adoc#getreport[Accessibility Checker plugin - `getReport()` API method].
-* A new `a11ychecker_filter_issues` option for filtering Accessibility Checker report results. For information on the `a11ychecker_filter_issues` option, see: xref:premium-a11ychecker.adoc#a11ychecker_filter_issue[Accessibility Checker plugin - `a11ychecker_filter_issues`].
+* A new `a11ychecker_ignored_rules` option for filtering Accessibility Checker rules using the rule identifiers. For information on the `a11ychecker_ignored_rules` option, see: xref:a11ychecker.adoc#a11ychecker_ignored_rules[Accessibility Checker plugin - `a11ychecker_ignored_rules`].
+* A new `a11ychecker_issue_url_callback` option to allow custom URLs to be used for the "more info" links on accessibility checks. For information on the `a11ychecker_issue_url_callback` option, see: xref:a11ychecker.adoc#a11ychecker_issue_url_callback[Accessibility Checker plugin - `a11ychecker_issue_url_callback`].
+* Adds the rule identifier (`id`) to the data returned by the `getReport()` API method. For information on the `getReport()` API method, see: xref:a11ychecker.adoc#getreport[Accessibility Checker plugin - `getReport()` API method].
+* A new `a11ychecker_filter_issues` option for filtering Accessibility Checker report results. For information on the `a11ychecker_filter_issues` option, see: xref:a11ychecker.adoc#a11ychecker_filter_issue[Accessibility Checker plugin - `a11ychecker_filter_issues`].
 
 *Accessibility Checker* 2.3.0 also provides the following bug fixes:
 
@@ -235,7 +235,7 @@ The {productname} 5.5 release includes an accompanying release of the *Accessibi
 * Fixed the editor content scrolling when calling the `getReport` API.
 * Fixed incorrect strings used for the next/previous button tooltips.
 
-For information on the Accessibility Checker plugin, see: xref:premium-a11ychecker.adoc[Accessibility Checker plugin].
+For information on the Accessibility Checker plugin, see: xref:a11ychecker.adoc[Accessibility Checker plugin].
 
 === Advanced Code Editor 2.2.0
 
@@ -243,7 +243,7 @@ The {productname} 5.5 release includes an accompanying release of the *Advanced 
 
 *Advanced Code Editor* 2.2.0 adds support for loading the Advanced Code Editor user interface components when the editor is in a ShadowRoot.
 
-For information on the Advanced Code Editor plugin, see: xref:premium-advcode.adoc[Advanced Code Editor plugin].
+For information on the Advanced Code Editor plugin, see: xref:advcode.adoc[Advanced Code Editor plugin].
 
 === Advanced Tables 1.0.1
 
@@ -253,7 +253,7 @@ The {productname} 5.5 release includes an accompanying release of the *Advanced 
 
 *Advanced Tables* 1.0.1 is required for TinyMCE 5.5 or higher.
 
-For information on the Advanced Tables plugin, see: xref:premium-advtable.adoc[Advanced Tables plugin].
+For information on the Advanced Tables plugin, see: xref:advtable.adoc[Advanced Tables plugin].
 
 === Comments 2.2.0
 
@@ -266,7 +266,7 @@ The {productname} 5.5 release includes an accompanying release of the *Comments*
 * Fixed the editor's `referrer_policy` setting not working when loading additional resources to improve bundling of the plugin and improving load times.
 * Fixed elements incorrectly left in the DOM when the editor was removed.
 
-For a list of supported languages, including professionally translated language packs, see: xref:configure-localization.adoc#language[Localization options - `language`].
+For a list of supported languages, including professionally translated language packs, see: xref:content-localization.adoc#language[Localization options - `language`].
 
 For information on the Comments plugin, see: xref:comments.adoc[Comments plugin].
 
@@ -280,7 +280,7 @@ A new *Export* plugin is available for beta testing and allows users to export c
 
 This plugin will be available to all new and existing customers who have purchased a {tiertwoplan}, {tierthreeplan}, or {enterpriseplan}.
 
-For information on the Export plugin, see: xref:premium-export.adoc[Export plugin].
+For information on the Export plugin, see: xref:export.adoc[Export plugin].
 
 === PowerPaste 5.3.3
 
@@ -288,7 +288,7 @@ The {productname} 5.5 release includes an accompanying release of the *PowerPast
 
 *PowerPaste* 5.3.3 fixes missing `bg_BG`, `eu`, and `id` translations.
 
-For information on the PowerPaste plugin, see: xref:premium-powerpaste.adoc[PowerPaste plugin].
+For information on the PowerPaste plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste plugin].
 
 === Spell Checker Pro 2.1.0
 
@@ -299,7 +299,7 @@ The {productname} 5.5 release includes an accompanying release of the *Spell Che
 * An updated the dialog to allow wider buttons for languages with longer strings by removing the _Close_ button (_Cancel_ button in TinyMCE 4).
 * Fixed the `spellcheck_dialog` button incorrectly rendering as a split button in TinyMCE 4.
 
-For information on the Spell Checker Pro plugin, see: xref:premium-tinymcespellchecker.adoc[Spell Checker Pro plugin].
+For information on the Spell Checker Pro plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
 
 === Tiny Skins and Icon Packs
 
@@ -312,7 +312,7 @@ The following icon packs have been updated to include new icons for the line hei
 * Jam
 * Thin
 
-For information on using the {productname} premium icon packs, see: xref:premium-skins-and-icon-packs.adoc#howtouseaniconpack[Tiny Skins and Icon Packs - How to use an icon pack].
+For information on using the {productname} premium icon packs, see: xref:enhanced-skins-and-icon-packs.adoc#howtouseaniconpack[Tiny Skins and Icon Packs - How to use an icon pack].
 
 [[minorchangesfortinymce54]]
 == Minor changes for TinyMCE 5.5
@@ -371,7 +371,7 @@ The following features have been deprecated with the release of {productname} 5.
 
 With the release of {productname} 5.5, the premium Spanish (Mexico) language pack (`es_MX`) has been deprecated and will not be updated in the future. The community-translated Spanish (Mexico) language pack is unaffected.
 
-For information on the community maintained language packs, see: xref:configure-localization.adoc#language[Localization options - `language`].
+For information on the community maintained language packs, see: xref:content-localization.adoc#language[Localization options - `language`].
 
 [[known-issues]]
 == Known issues

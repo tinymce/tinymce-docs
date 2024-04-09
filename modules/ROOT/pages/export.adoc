@@ -56,18 +56,18 @@ This exporter has a few limitations or known issues that should be noted:
 * Due to browser limitations, there is a limit on the number of pages that can be rendered. The number of pages varies between browsers.
 * Remote images require an image proxy to render due to browser limitations. For information on proxying remote images, see the xref:export_image_proxy[export_image_proxy] option.
 * Right-to-left languages that use cursive scripts (such as Arabic) may not render correctly due to an issue with how the image of the HTML content is rendered.
-* The xref:premium-checklist.adoc[Checklist plugin] icons will not render for Internet Explorer 11 users due to browser limitations.
+* The xref:checklist.adoc[Checklist plugin] icons will not render for Internet Explorer 11 users due to browser limitations.
 
 The following plugins are not supported:
 
 * xref:bbcode.adoc[BBCode]
 * xref:comments.adoc[Comments]
-* xref:premium-mediaembed.adoc[Enhanced Media Embed]
+* xref:introduction-to-mediaembed.adoc[Enhanced Media Embed]
 * xref:fullpage.adoc[Fullpage]
 * xref:legacyoutput.adoc[Legacy Output]
 * xref:media.adoc[Media]
-* xref:premium-pageembed.adoc[Page Embed]
-* xref:toc.adoc[Table of Contents]
+* xref:pageembed.adoc[Page Embed]
+* xref:tableofcontents.adoc[Table of Contents]
 
 == Configuration Options
 

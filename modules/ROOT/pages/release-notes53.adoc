@@ -50,7 +50,7 @@ For example:
 | image:53_togglemenuitemchecked.png[Custom toggle menu item with checkmark on the right-hand side of the item label (5.3+ behavior)]
 |===
 
-For information on toggle menu items, see: xref:menuitems.adoc#togglemenuitems[Custom menu items - Toggle menu items].
+For information on toggle menu items, see: xref:creating-custom-menu-items.adoc#togglemenuitems[Custom menu items - Toggle menu items].
 
 === New find and replace in selection functionality
 
@@ -75,7 +75,7 @@ For information on:
 
 A Greek (`el`) language pack is now provided for the {productname} user interface. This language pack is available for {cloudname} and premium self-hosted deployments.
 
-For information on using the language setting and a list of supported languages for {cloudname} and premium self-hosted deployments, see: xref:configure-localization.adoc#language[Localization options - language].
+For information on using the language setting and a list of supported languages for {cloudname} and premium self-hosted deployments, see: xref:content-localization.adoc#language[Localization options - language].
 
 [[accompanying-premium-plugin-changes]]
 == Accompanying Premium Plugin changes
@@ -88,7 +88,7 @@ The {productname} 5.3 release includes an accompanying release of the *Accessibi
 
 *Accessibility Checker* 2.2.1 adds translations for features added in *Accessibility Checker* 2.2.0.
 
-For information on the Accessibility Checker plugin, see: xref:premium-a11ychecker.adoc[Accessibility Checker plugin].
+For information on the Accessibility Checker plugin, see: xref:a11ychecker.adoc[Accessibility Checker plugin].
 
 === Comments 2.1.4
 
@@ -98,7 +98,7 @@ The {productname} 5.3 release includes an accompanying release of the *Comments*
 
 For information on the Comments plugin, see: xref:comments.adoc[Comments plugin].
 
-For a list of Comments plugin menu items, see: xref:comments_toolbars_menus.adoc#menuitems[Comments plugin - Menu items].
+For a list of Comments plugin menu items, see: xref:comments-toolbars-menus.adoc#menuitems[Comments plugin - Menu items].
 
 === Enhanced Media Embed
 
@@ -120,9 +120,9 @@ The {productname} 5.3 release includes an accompanying release of the *PowerPast
 
 For information on:
 
-* The PowerPaste plugin, see: xref:premium-powerpaste.adoc[PowerPaste plugin].
-* The PowerPaste `paste_preprocess` option, see: xref:premium-powerpaste.adoc#paste_preprocess[PowerPaste plugin - `paste_preprocess`].
-* The PowerPaste `paste_postprocess` option, see: xref:premium-powerpaste.adoc#paste_postprocess[PowerPaste plugin - `paste_postprocess`].
+* The PowerPaste plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste plugin].
+* The PowerPaste `paste_preprocess` option, see: xref:introduction-to-powerpaste.adoc#paste_preprocess[PowerPaste plugin - `paste_preprocess`].
+* The PowerPaste `paste_postprocess` option, see: xref:introduction-to-powerpaste.adoc#paste_postprocess[PowerPaste plugin - `paste_postprocess`].
 
 === Spell Checker Pro 2.0.2
 
@@ -138,7 +138,7 @@ The {productname} 5.3 release includes an accompanying release of the *Spell Che
 
 The {productname} *self-hosted* *Spell Checker Pro* service has also been updated. {cloudname} users are unaffected. For details, see: xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying premium self-hosted server-side component changes].
 
-For information on Spell Checker Pro plugin, see: xref:premium-tinymcespellchecker.adoc[Spell Checker Pro plugin].
+For information on Spell Checker Pro plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
 
 [[accompanying-premium-self-hosted-server-side-component-changes]]
 == Accompanying premium self-hosted server-side component changes
@@ -156,11 +156,11 @@ This version requires Java 8 or higher. For information on the removal of Java 7
 
 For information on:
 
-* The Spell Checker Pro plugin, see: xref:premium-tinymcespellchecker.adoc[Spell Checker Pro plugin].
-* The Link Checker plugin, see: xref:premium-linkchecker.adoc[Link Checker plugin].
-* The Image Tools plugin, see: xref:imagetools.adoc[Image Tools plugin].
-* The Enhanced Media Embed plugin, see: xref:premium-mediaembed.adoc[Enhanced Media Embed plugin].
-* Deploying the server-side components, see: xref:server.adoc[Server-side component installation].
+* The Spell Checker Pro plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
+* The Link Checker plugin, see: xref:linkchecker.adoc[Link Checker plugin].
+* The Image Tools plugin, see: xref:editimage.adoc[Image Tools plugin].
+* The Enhanced Media Embed plugin, see: xref:introduction-to-mediaembed.adoc[Enhanced Media Embed plugin].
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
 
 [[removalofjava7support]]
 === Removal of Java 7 support
@@ -174,31 +174,31 @@ Java 7 support has been removed with this release. The {productname} Java server
 
 === Pre-configured Dockerfiles for containerizing the server-side components
 
-From {productname} 5.3, premium self-hosted bundles include the files required to build and deploy the server-side components as Docker containers. For information on Docker deployments of the server-side components, see: xref:dockerservices.adoc[Containerized service deployments].
+From {productname} 5.3, premium self-hosted bundles include the files required to build and deploy the server-side components as Docker containers. For information on Docker deployments of the server-side components, see: xref:bundle-intro-setup.adoc[Containerized service deployments].
 
-For information on deploying the server-side components using Docker, see: xref:dockerservices.adoc[Containerized service deployments].
+For information on deploying the server-side components using Docker, see: xref:bundle-intro-setup.adoc[Containerized service deployments].
 
 === Regular Expression support for allowed-origins
 
-Version 2.3.0 of the {productname} server-side components adds support for using regular expressions to specify `allowed-origins`. For information on using regular expressions for specifying allowed origins, see: xref:server-configure.adoc#regularexpressionssupport[Configure server-side components - Regular Expressions support].
+Version 2.3.0 of the {productname} server-side components adds support for using regular expressions to specify `allowed-origins`. For information on using regular expressions for specifying allowed origins, see: xref:configure-required-services.adoc#regularexpressionssupport[Configure server-side components - Regular Expressions support].
 
 === New configuration option for simplifying same-origin deployments
 
 The new `same-origin` option allows all cross-origin requests to be blocked by the server while allowing all same-origin requests.
 
-For information on configuring the same-origin option, see: xref:server-configure.adoc#allowed-originssame-originoptional[Configure server-side components - allowed-origins.same-origin (optional)].
+For information on configuring the same-origin option, see: xref:configure-required-services.adoc#allowed-originssame-originoptional[Configure server-side components - allowed-origins.same-origin (optional)].
 
 === New alternative http timeout settings
 
 Three new http timeout settings have been added to the server-side components. These new settings provide greater control over the timeout length of requests that the existing `request-timeout-seconds` configuration setting.
 
-For information on configuring the alternative http timeout settings, see: xref:server-configure.adoc#alternativehttptimeoutsettings[Configure server-side components - Alternative http timeout settings].
+For information on configuring the alternative http timeout settings, see: xref:configure-required-services.adoc#alternativehttptimeoutsettings[Configure server-side components - Alternative http timeout settings].
 
 === New `fallback-to-get` setting for the Link Checker service
 
 The new `fallback-to-get` configuration setting allows the Link checker can correctly identify working URLs that return non-standard `HEAD` replies.
 
-For information on configuring the Link Checker service, see: xref:server-configure.adoc#link-checkingoptional[Configure server-side components - `link-checking`]
+For information on configuring the Link Checker service, see: xref:configure-required-services.adoc#link-checkingoptional[Configure server-side components - `link-checking`]
 
 [[minorchangesfortinymce53]]
 == Minor changes for TinyMCE 5.3

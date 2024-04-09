@@ -7,7 +7,7 @@
 
 This section demonstrates how to change {productname}'s user interface to the user's language preference. These settings change the language in the toolbar, menu items, buttons, and tooltips.
 
-NOTE: Language settings can be controlled in these configuration options: xref:configure-localization.adoc#directionality[directionality], xref:configure-localization.adoc#language[language] and  xref:configure-localization.adoc#language_url[language_url]. There is also a xref:directionality.adoc[Directionality plugin] that adds a toolbar button to control `ltr-rtl` behavior.
+NOTE: Language settings can be controlled in these configuration options: xref:content-localization.adoc#directionality[directionality], xref:content-localization.adoc#language[language] and  xref:content-localization.adoc#language_url[language_url]. There is also a xref:directionality.adoc[Directionality plugin] that adds a toolbar button to control `ltr-rtl` behavior.
 
 == Step 1
 
@@ -21,11 +21,11 @@ IMPORTANT: The {productname} community translation project provides the language
 
 Unpack the language `js` file(s) into the `path/to/tinymce/langs/` folder.
 
-IMPORTANT: The language settings will not work unless the language pack is placed in `langs/` directory. The xref:configure-localization.adoc#language_url[language_url] configuration option is another method to enable additional language settings.
+IMPORTANT: The language settings will not work unless the language pack is placed in `langs/` directory. The xref:content-localization.adoc#language_url[language_url] configuration option is another method to enable additional language settings.
 
 == Step 3
 
-Set the language option in {productname}'s configuration to the language code in the list on xref:configure-localization.adoc#language[this page].
+Set the language option in {productname}'s configuration to the language code in the list on xref:content-localization.adoc#language[this page].
 
 == Step 4
 
@@ -35,7 +35,7 @@ Load {productname} to confirm that the language is set correctly.
 
 The following code snippet sets {productname}'s language to Chinese and the text directionality from right to left.
 
-link:{gettiny}/language-packages/[Download the Chinese language] pack to test this functionality. Install a _local instance_ of {productname} from the link:{gettiny}[downloads page]. Follow the xref:advanced-install.adoc#self-hostedinstall[self-hosted install instructions].
+link:{gettiny}/language-packages/[Download the Chinese language] pack to test this functionality. Install a _local instance_ of {productname} from the link:{gettiny}[downloads page]. Follow the xref:installation.adoc#self-hostedinstall[self-hosted install instructions].
 
 [source,html]
 ----

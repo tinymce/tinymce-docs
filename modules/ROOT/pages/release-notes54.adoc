@@ -76,7 +76,7 @@ The {productname} 5.4 release includes an accompanying release of the *Advanced 
 * Added search/replace support.
 * Fixed the editor `referrer_policy` option not working when loading additional resources.
 
-For information on the Advanced Code Editor plugin, see: xref:premium-advcode.adoc[Advanced Code Editor plugin].
+For information on the Advanced Code Editor plugin, see: xref:advcode.adoc[Advanced Code Editor plugin].
 
 === PowerPaste 5.3.1
 
@@ -87,7 +87,7 @@ The {productname} 5.4 release includes an accompanying release of the *PowerPast
 * Fixed PowerPaste not able to load the `wordimport.js` resource when bundled.
 * Fixed the editor `referrer_policy` option not working when loading additional resources.
 
-For information on the PowerPaste plugin, see: xref:premium-powerpaste.adoc[PowerPaste plugin].
+For information on the PowerPaste plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste plugin].
 
 [[accompanying-premium-self-hosted-server-side-component-changes]]
 == Accompanying Premium self-hosted server-side component changes
@@ -105,11 +105,11 @@ This version requires Java 8 or higher. For information on the removal of Java 7
 
 For information on:
 
-* The Spell Checker Pro plugin, see: xref:premium-tinymcespellchecker.adoc[Spell Checker Pro plugin].
-* The Link Checker plugin, see: xref:premium-linkchecker.adoc[Link Checker plugin].
-* The Image Tools plugin, see: xref:imagetools.adoc[Image Tools plugin].
-* The Enhanced Media Embed plugin, see: xref:premium-mediaembed.adoc[Enhanced Media Embed plugin].
-* Deploying the server-side components, see: xref:server.adoc[Server-side component installation].
+* The Spell Checker Pro plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
+* The Link Checker plugin, see: xref:linkchecker.adoc[Link Checker plugin].
+* The Image Tools plugin, see: xref:editimage.adoc[Image Tools plugin].
+* The Enhanced Media Embed plugin, see: xref:introduction-to-mediaembed.adoc[Enhanced Media Embed plugin].
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
 
 === Security update for self-hosted server-side components
 
@@ -126,8 +126,8 @@ Version 2.5.0 provides security updates for the Java-based server-side component
 
 For information on:
 
-* Deploying the server-side components, see: xref:server.adoc[Server-side component installation].
-* Deploying the server-side components using Docker, see: xref:dockerservices.adoc[Containerized service deployments].
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+* Deploying the server-side components using Docker, see: xref:bundle-intro-setup.adoc[Containerized service deployments].
 
 [[minorchangesfortinymce54]]
 == Minor changes for TinyMCE 5.4
@@ -193,7 +193,7 @@ The *free* {productname} Spell Checker plugin (`spellchecker`) has been deprecat
 
 This change *_does not_* affect:
 
-* xref:premium-tinymcespellchecker.adoc[The Spellchecker Pro premium plugin].
+* xref:introduction-to-tiny-spellchecker.adoc[The Spellchecker Pro premium plugin].
 * xref:spell-checking.adoc#browser-basedspellchecking[Browser-based spell checking in {productname}].
 
 To develop and maintain a new spellchecking plugin based on the free {productname} Spell Checker plugin:
@@ -246,7 +246,7 @@ tinymce.init({
 });
 ----
 
-For information on the `typeahead_urls` option, see: xref:advanced-editing-behavior.adoc#typeahead_urls[Advanced editing behaviors - `typeahead_urls`].
+For information on the `typeahead_urls` option, see: xref:content-behavior-options.adoc#typeahead_urls[Advanced editing behaviors - `typeahead_urls`].
 
 :enterprise: true
 

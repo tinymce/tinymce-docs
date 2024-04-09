@@ -236,7 +236,7 @@ Most themes provided with TinyMCE 4 have been removed from TinyMCE 5 and are now
 | Silver (xref:use-tinymce-distraction-free.adoc[distraction-free] configuration)
 
 | link:{url}/docs-4x/themes/mobile/[Mobile]
-| Silver (xref:mobile.adoc[responsive to small screen touch devices])
+| Silver (xref:tinymce-for-mobile.adoc[responsive to small screen touch devices])
 |===
 
 [[inlitethemeremoved]]
@@ -275,7 +275,7 @@ The link:{url}/docs-4x/themes/modern/[Modern] theme has been removed from TinyMC
 
 === Mobile theme
 
-The {productname} 4 xref:mobile.adoc#thelegacymobiletheme[Mobile theme] was deprecated in {productname} 5.1. The mobile-optimized editor is loaded on mobile devices. For information on the new mobile experience, see: xref:mobile.adoc[{productname} mobile].
+The {productname} 4 xref:tinymce-for-mobile.adoc#thelegacymobiletheme[Mobile theme] was deprecated in {productname} 5.1. The mobile-optimized editor is loaded on mobile devices. For information on the new mobile experience, see: xref:tinymce-for-mobile.adoc[{productname} mobile].
 
 [[userinterfacecomponents]]
 == User Interface components
@@ -329,7 +329,7 @@ The following methods have changed for TinyMCE 5:
 
 | link:{url}/docs-4x/api/tinymce/tinymce.editor/#addmenuitem[`editor.addMenuItem: (name, spec)`]
 | xref:apis/tinymce.editor.ui.registry.adoc#addMenuItem[`editor.ui.registry.addMenuItem`]
-| xref:menuitems.adoc#basicmenuitems[Menu item]
+| xref:creating-custom-menu-items.adoc#basicmenuitems[Menu item]
 
 | link:{url}/docs-4x/api/tinymce/tinymce.editor/#addsidebar[`editor.addSidebar: (name, spec)`]
 | xref:apis/tinymce.editor.ui.registry.adoc#addSidebar[`editor.ui.registry.addSidebar: (name, spec)`]
@@ -357,7 +357,7 @@ The following new methods have been added for creating and using new components:
 | xref:typesoftoolbarbuttons.adoc#menubutton[Menu Button]
 
 | `editor.ui.registry.addNestedMenuItem: (name, spec)`
-| xref:menuitems.adoc#nestedmenuitems[Nested menu item]
+| xref:creating-custom-menu-items.adoc#nestedmenuitems[Nested menu item]
 
 | `editor.ui.registry.addSplitButton: (name, spec)`
 | xref:typesoftoolbarbuttons.adoc#splitbutton[Split Button]
@@ -366,7 +366,7 @@ The following new methods have been added for creating and using new components:
 | xref:typesoftoolbarbuttons.adoc#togglebutton[Toggle Button]
 
 | `editor.ui.registry.addToggleMenuItem: (name, spec)`
-| xref:menuitems.adoc#togglemenuitems[Toggle menu item]
+| xref:creating-custom-menu-items.adoc#togglemenuitems[Toggle menu item]
 
 | `editor.ui.registry.addIcon: (name, svgData)`
 | xref:apis/tinymce.editor.ui.registry.adoc#addIcon[Registers an SVG as an icon]
@@ -378,7 +378,7 @@ The following new methods have been added for creating and using new components:
 [[customtoolbarbuttons]]
 === Custom toolbar buttons
 
-The API methods for adding xref:toolbarbuttons.adoc#howtocreatecustomtoolbarbuttons[Custom toolbar buttons] have changed for TinyMCE 5. The methods have been moved from link:{url}/docs-4x/api/tinymce/tinymce.editor/[`+editor.*+`] to xref:apis/tinymce.editor.ui.registry.adoc[`+editor.ui.registry.*+`]. The toolbar button type `listbox` has been removed and a toggle button type has been added. The button types available in TinyMCE 5 are:
+The API methods for adding xref:custom-toolbarbuttons.adoc#howtocreatecustomtoolbarbuttons[Custom toolbar buttons] have changed for TinyMCE 5. The methods have been moved from link:{url}/docs-4x/api/tinymce/tinymce.editor/[`+editor.*+`] to xref:apis/tinymce.editor.ui.registry.adoc[`+editor.ui.registry.*+`]. The toolbar button type `listbox` has been removed and a toggle button type has been added. The button types available in TinyMCE 5 are:
 
 * xref:typesoftoolbarbuttons.adoc#basicbutton[Basic button]
 * xref:typesoftoolbarbuttons.adoc#togglebutton[Toggle button]
@@ -389,7 +389,7 @@ link:{url}/docs-4x/demo/custom-toolbar-listbox/[Listbox] toolbar buttons are not
 
 ==== Changed toolbar button API methods
 
-The following methods for creating custom toolbar buttons have been moved for TinyMCE 5. For information on how to use the new methods, see: xref:toolbarbuttons.adoc[Toolbar buttons].
+The following methods for creating custom toolbar buttons have been moved for TinyMCE 5. For information on how to use the new methods, see: xref:custom-toolbarbuttons.adoc[Toolbar buttons].
 
 |===
 | *Old method* | *New method*
@@ -409,7 +409,7 @@ New methods have been added for creating common types of toolbar buttons.
 | *New method* | *Description*
 
 | `editor.ui.registry.addToggleButton()`
-| xref:menuitems.adoc#togglemenuitems[Adds a custom toolbar toggle button].
+| xref:creating-custom-menu-items.adoc#togglemenuitems[Adds a custom toolbar toggle button].
 
 | `editor.ui.registry.addSplitButton()`
 | xref:typesoftoolbarbuttons.adoc#splitbutton[Adds a custom toolbar split button].
@@ -657,7 +657,7 @@ editor.ui.registry.addMenuItem('example', {
 });
 ----
 
-For information on how to use these methods, see: xref:menuitems.adoc[Custom menu items].
+For information on how to use these methods, see: xref:creating-custom-menu-items.adoc[Custom menu items].
 
 [[customdialogs]]
 === Custom dialogs
@@ -697,7 +697,7 @@ Dialogs are still opened using the `editor.windowManager.open(config)` api, howe
 | A callback that is called when the dialog is cancelled without submitting any changes.
 
 | xref:dialog.adoc#configurationoptions[`onTabChange`]
-| A callback that is called when switching tabs in a xref:dialogcomponents.adoc#tabpanel[TabPanel].
+| A callback that is called when switching tabs in a xref:dialog-components.adoc#tabpanel[TabPanel].
 |===
 
 ==== Changed dialog settings
@@ -756,7 +756,7 @@ const config = {
 };
 ----
 
-For information about the new dialog configuration, see the xref:dialog.adoc[Dialog] and xref:dialogcomponents.adoc[Dialog components] documentation.
+For information about the new dialog configuration, see the xref:dialog.adoc[Dialog] and xref:dialog-components.adoc[Dialog components] documentation.
 
 ==== Changes to the Custom dialog API
 

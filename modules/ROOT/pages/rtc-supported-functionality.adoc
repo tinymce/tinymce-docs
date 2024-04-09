@@ -39,12 +39,12 @@ The following plugins are currently supported:
 * xref:link.adoc[Link (`link`)]
  ** The xref:link.adoc#rel_list[`rel_list`] option is not supported.
 * xref:lists.adoc[Lists (`lists`)]
-* xref:premium-moxiemanager.adoc[MoxieManager (`moxiemanager`)]
-* xref:premium-powerpaste.adoc[PowerPaste (`powerpaste`)]
+* xref:moxiemanager.adoc[MoxieManager (`moxiemanager`)]
+* xref:introduction-to-powerpaste.adoc[PowerPaste (`powerpaste`)]
 * xref:print.adoc[Print (`print`)]
 * xref:save.adoc[Save (`save`)]
 * xref:tabfocus.adoc[Tab Focus (`tabfocus`)]
-* xref:premium-tinydrive.adoc[Tiny Drive (`tinydrive`)]
+* xref:tinydrive-plugin.adoc[Tiny Drive (`tinydrive`)]
 * xref:visualblocks.adoc[Visual Blocks (`visualblocks`)]
 * xref:wordcount.adoc[Word Count (`wordcount`)]
 
@@ -59,9 +59,9 @@ When planning to integrate Real-time Collaboration into your application or webs
 == Options that are not available when RTC is enabled
 
 * xref:content-filtering.adoc#allow_unsafe_link_target[`allow_unsafe_link_target`]
-* xref:advanced-editing-behavior.adoc#br_in_pre[`br_in_pre`]
+* xref:content-behavior-options.adoc#br_in_pre[`br_in_pre`]
 * xref:content-filtering.adoc#custom_elements[`custom_elements`]
-* xref:advanced-editing-behavior.adoc#end_container_on_empty_block[`end_container_on_empty_block`]
+* xref:content-behavior-options.adoc#end_container_on_empty_block[`end_container_on_empty_block`]
 * xref:content-filtering.adoc#extended_valid_elements[`extended_valid_elements`]
 * xref:content-filtering.adoc#forced_root_block[`forced_root_block`]
 * xref:content-filtering.adoc#forced_root_block_attrs[`forced_root_block_attrs`]

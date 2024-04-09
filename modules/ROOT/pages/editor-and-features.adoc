@@ -7,7 +7,7 @@
 
 {cloudname} can be used without an API key. Refer to the xref:general-configuration-guide.adoc[Introduction & getting started] guide for more information. Sign up for an API key and update the script tag to use premium plugins or avoid the in-editor developer warning.
 
-All {cloudname} accounts include a free, pre-configured {cloudname} image proxy service. This setup uses the xref:imagetools.adoc[Image tools] plugin.
+All {cloudname} accounts include a free, pre-configured {cloudname} image proxy service. This setup uses the xref:editimage.adoc[Image tools] plugin.
 
 == Integrating TinyMCE for the first time
 
@@ -52,26 +52,26 @@ There are more than 40 open source plugins that enhance the editing experience i
 
 Extend the xref:configure.adoc[{productname} configuration] to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
-* xref:premium-mentions.adoc[Mentions]
-* xref:premium-tinydrive.adoc[{cloudfilemanager}]
+* xref:mentions.adoc[Mentions]
+* xref:tinydrive-plugin.adoc[{cloudfilemanager}]
 * xref:comments.adoc[Comments]
-* xref:premium-pageembed.adoc[Page Embed]
-* xref:premium-permanentpen.adoc[Permanent Pen]
-* xref:premium-formatpainter.adoc[Format Painter]
-* xref:premium-powerpaste.adoc[PowerPaste]
-* xref:premium-tinymcespellchecker.adoc[Spell Checker Pro]
+* xref:pageembed.adoc[Page Embed]
+* xref:permanentpen.adoc[Permanent Pen]
+* xref:formatpainter.adoc[Format Painter]
+* xref:introduction-to-powerpaste.adoc[PowerPaste]
+* xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro]
 
 NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via xref:cloud-deployment-guide.adoc[{cloudname}].
 
-* xref:imagetools.adoc[Image Tools (with configured image proxy)]
+* xref:editimage.adoc[Image Tools (with configured image proxy)]
 
 NOTE: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurs automatically.
 
-* xref:premium-moxiemanager.adoc[Moxie Manager]
-* xref:premium-a11ychecker.adoc[Accessibility Checker]
-* xref:premium-advcode.adoc[Advanced Code Editor]
-* xref:premium-mediaembed.adoc[Enhanced Media Embed]
-* xref:premium-linkchecker.adoc[Link Checker]
+* xref:moxiemanager.adoc[Moxie Manager]
+* xref:a11ychecker.adoc[Accessibility Checker]
+* xref:advcode.adoc[Advanced Code Editor]
+* xref:introduction-to-mediaembed.adoc[Enhanced Media Embed]
+* xref:linkchecker.adoc[Link Checker]
 
 NOTE: It may take up to 30 minutes for the purchased plugin to be available to {productname}. Clear the browser's cache.
 
@@ -89,9 +89,9 @@ Ensure the `tiny-api-key` and `tinymce-api-key` headers are retained while reque
 
 === Step 5: Specifying a translation
 
-To change the user interface language with a language pack, use the xref:configure-localization.adoc#language[language configuration option].
+To change the user interface language with a language pack, use the xref:content-localization.adoc#language[language configuration option].
 
-Alternatively, link:{gettiny}/language-packages/[download a language pack] to enable a language other than English (US). xref:configure-localization.adoc#language_url[Specify its location] with the `language_url` configuration option.
+Alternatively, link:{gettiny}/language-packages/[download a language pack] to enable a language other than English (US). xref:content-localization.adoc#language_url[Specify its location] with the `language_url` configuration option.
 
 == Migrating from a self-hosted environment to Tiny Cloud
 
@@ -118,23 +118,23 @@ WARNING: Do not use the regular xref:work-with-plugins.adoc[plugins] configurati
 
 Extend the xref:configure.adoc[{productname} configuration] to include any additional purchased plugins and associated toolbar and menu items. Refer to the following enablement guides for more information:
 
-* xref:premium-mentions.adoc[Mentions]
-* xref:premium-tinydrive.adoc[{cloudfilemanager}]
+* xref:mentions.adoc[Mentions]
+* xref:tinydrive-plugin.adoc[{cloudfilemanager}]
 * xref:comments.adoc[Comments]
-* xref:premium-pageembed.adoc[Page Embed]
-* xref:premium-permanentpen.adoc[Permanent Pen]
-* xref:premium-formatpainter.adoc[Format Painter]
-* xref:premium-powerpaste.adoc[Powerpaste]
-* xref:premium-tinymcespellchecker.adoc[Spell Checker Pro]
+* xref:pageembed.adoc[Page Embed]
+* xref:permanentpen.adoc[Permanent Pen]
+* xref:formatpainter.adoc[Format Painter]
+* xref:introduction-to-powerpaste.adoc[Powerpaste]
+* xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro]
 
 NOTE: `spellchecker_rpc_url` is *not* required when enabling this plugin via xref:cloud-deployment-guide.adoc[{cloudname}].
 
-* xref:imagetools.adoc[Image tools (with configured image proxy)]
+* xref:editimage.adoc[Image tools (with configured image proxy)]
 
 NOTE: Configuration of the `imagetools_cors_hosts` and `imagetools_proxy` properties occurs automatically.
 
-* xref:premium-moxiemanager.adoc[Moxie Manager]
-* xref:premium-a11ychecker.adoc[Accessibility Checker]
-* xref:premium-advcode.adoc[Advanced Code Editor]
-* xref:premium-mediaembed.adoc[Enhanced Media Embed]
-* xref:premium-linkchecker.adoc[Link Checker]
+* xref:moxiemanager.adoc[Moxie Manager]
+* xref:a11ychecker.adoc[Accessibility Checker]
+* xref:advcode.adoc[Advanced Code Editor]
+* xref:introduction-to-mediaembed.adoc[Enhanced Media Embed]
+* xref:linkchecker.adoc[Link Checker]

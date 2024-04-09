@@ -3,20 +3,20 @@
 :keywords: enterprise pricing video youtube vimeo mp3 mp4 mov movie clip film link linkchecking linkchecker mediaembed media
 :title_nav: Hyperlink checking
 
-The xref:premium-linkchecker.adoc[Link Checker plugin] provides a link checking service right within the {productname} editor.
+The xref:linkchecker.adoc[Link Checker plugin] provides a link checking service right within the {productname} editor.
 
 Think of Link Checker as "spell-checking for URLs". But instead of checking spelling, it will let you know if a URL in the editor is valid, invalid or questionable. This is a huge time-saver for anyone who creates content -- no more having to double-check URLs, especially in imported content. Not to mention the benefit of no longer frustrating readers with broken hyperlinks.
 
-Your have two deployment options. One is super easy with {cloudname}, the other is to go the more traditional Self-hosted route, requiring an additional xref:server.adoc[server-side component] to be installed and configured.
+Your have two deployment options. One is super easy with {cloudname}, the other is to go the more traditional Self-hosted route, requiring an additional xref:introduction-to-premium-selfhosted-services.adoc[server-side component] to be installed and configured.
 
 [[linkcheckerself-hostedquicksetup]]
 == Link Checker self-hosted setup
 
 Once you have the server-side component installed, additional configuration to your `application.conf` file is required. (Don't forget to restart the Java application server after updating the configuration.)
 
-For information on configuring the server-side component, see: xref:server.adoc[Configure server-side components].
+For information on configuring the server-side component, see: xref:introduction-to-premium-selfhosted-services.adoc[Configure server-side components].
 
-You will also find more Self-hosted setup information on the xref:premium-linkchecker.adoc[Link Checker plugin page].
+You will also find more Self-hosted setup information on the xref:linkchecker.adoc[Link Checker plugin page].
 
 == Link Checker cloud setup
 

@@ -64,13 +64,13 @@ For more information on *Legacy Output* refer to the xref:legacyoutput.adoc[docu
 
 *Enhanced Media Embed* 2.2.1 has addressed an issue where pressing the enter key after multiple links, separated by `<br>` elements, could cause the links to disappear.
 
-For more information on *Enhanced Media Embed* refer to the xref:premium-mediaembed.adoc[documentation].
+For more information on *Enhanced Media Embed* refer to the xref:introduction-to-mediaembed.adoc[documentation].
 
 === LinkChecker
 
 *LinkChecker* 2.0.3 has addressed an issue where empty or blank links were incorrectly sent for validation and marked as invalid.
 
-For more information on *Link Checker* refer to the xref:premium-linkchecker.adoc[documentation].
+For more information on *Link Checker* refer to the xref:linkchecker.adoc[documentation].
 
 [[erratatinymce509premiumplugins]]
 == Errata&#58; TinyMCE 5.0.9 Premium Plugins
@@ -105,4 +105,4 @@ The new version of PowerPaste 5.0.1 includes bug fixes. Refer to the changelog b
 * Fixed: issue where the wrong error notification was displayed when images failed to import.
 * Fixed: leading, trailing and sequential spaces being lost when pasting plain text.
 
-For information on *PowerPaste*, refer to the xref:premium-powerpaste.adoc[*PowerPaste* documentation].
+For information on *PowerPaste*, refer to the xref:introduction-to-powerpaste.adoc[*PowerPaste* documentation].

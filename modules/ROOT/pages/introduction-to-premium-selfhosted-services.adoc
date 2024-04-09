@@ -17,11 +17,11 @@ The following server-side components are included in the {productname} Self-host
 | ephox-spelling.war
 | Spell checking service for {productname} Enterprise.
 
-| xref:premium-export.adoc[Export], xref:imagetools.adoc[Image Tools Proxy]
+| xref:export.adoc[Export], xref:editimage.adoc[Image Tools Proxy]
 | ephox-image-proxy.war
 | Image proxy service for the Export and Image Tools plugins.
 
-| xref:embed-media.adoc[Enhanced Media Embed], xref:check-links.adoc[Link Checker]
+| xref:introduction-to-mediaembed.adoc[Enhanced Media Embed], xref:check-links.adoc[Link Checker]
 | ephox-hyperlinking.war
 | Link Checker and Enhanced Media Embed service for {productname} Enterprise.
 |===
@@ -36,7 +36,7 @@ If you've already got a Java application server like Jetty or Tomcat installed, 
 
 If you don't, pick either http://tomcat.apache.org/[Tomcat] or https://www.eclipse.org/jetty/[Jetty] and install one of these with their default settings using the instructions on their website.
 
-IMPORTANT: *Memory requirement:* Please ensure that you configure your Java Server (Tomcat/Jetty etc) with a minimum of 4GB. Please refer to xref:troubleshoot.adoc#outofmemoryerrors[Out of memory errors] section of the Troubleshoot page if you require instructions on how to explicitly define how much RAM will be allocated to your Java server.
+IMPORTANT: *Memory requirement:* Please ensure that you configure your Java Server (Tomcat/Jetty etc) with a minimum of 4GB. Please refer to xref:troubleshoot-server.adoc#outofmemoryerrors[Out of memory errors] section of the Troubleshoot page if you require instructions on how to explicitly define how much RAM will be allocated to your Java server.
 
 [[step2deployserver-sidecomponents]]
 === Step 2. Deploy server-side components
@@ -59,12 +59,12 @@ More information can be found in the documentation of your chosen application se
 [[step3createaconfigurationfile]]
 === Step 3. Create a configuration file
 
-Refer to the xref:server-configure.adoc[Configure] page for the details and come back here when you're done.
+Refer to the xref:configure-required-services.adoc[Configure] page for the details and come back here when you're done.
 
 [[step4passtheconfigurationfiletothejavaapplicationserver]]
 === Step 4. Pass the configuration file to the Java application server
 
-NOTE: *HTTP proxy:* If you are relying on an HTTP proxy for outgoing HTTP/HTTPS connections to the Internet, consider configuring use of the proxy by the application server by setting JVM system properties at this point. These can be set in the same manner as `ephox.config.file` using the instructions below (using the `-D` option to the `java` command). Please refer to http://docs.oracle.com/javase/8/docs/api/java/net/doc-files/net-properties.html[Networking Properties for Java] for details on the relevant proxy system properties. The system properties `http.proxyHost`, `http.proxyPort`, `http.nonProxyHosts`, `https.proxyHost`, `https.proxyPort` are recognized as well as `http.proxyUser` and `http.proxyPassword` to support authenticating proxies. Alternatively, use of a proxy for server-side components can be set directly in their configuration file as discussed on the xref:server-configure.adoc#proxyoptional[Configure] page.
+NOTE: *HTTP proxy:* If you are relying on an HTTP proxy for outgoing HTTP/HTTPS connections to the Internet, consider configuring use of the proxy by the application server by setting JVM system properties at this point. These can be set in the same manner as `ephox.config.file` using the instructions below (using the `-D` option to the `java` command). Please refer to http://docs.oracle.com/javase/8/docs/api/java/net/doc-files/net-properties.html[Networking Properties for Java] for details on the relevant proxy system properties. The system properties `http.proxyHost`, `http.proxyPort`, `http.nonProxyHosts`, `https.proxyHost`, `https.proxyPort` are recognized as well as `http.proxyUser` and `http.proxyPassword` to support authenticating proxies. Alternatively, use of a proxy for server-side components can be set directly in their configuration file as discussed on the xref:configure-required-services.adoc#proxyoptional[Configure] page.
 
 Tell the services about the configuration file by setting the `ephox.config.file` JVM system property to the absolute path of the configuration file. The exact method for doing this varies depending on your operating system, application server and whether the application server is being run as a system service. The authoritative reference for configuring any application server is the vendor documentation, but we'll do our best to get you started below.
 
@@ -203,7 +203,7 @@ There should only be a single line in this file defining the `JETTY_ARGS` variab
 [[step5restartthejavaapplicationserver]]
 === Step 5: Restart the Java application server
 
-After you've completed the steps on this page to xref:server.adoc#step2deployserver-sidecomponents[Deploy server-side components], xref:server.adoc#step3createaconfigurationfile[Create a configuration file] and xref:server.adoc#step4passtheconfigurationfiletothejavaapplicationserver[Pass the configuration file to the Java application server], the application server may need to be restarted to pick up all your changes. Turn it off and on again now, just to be safe.
+After you've completed the steps on this page to xref:introduction-to-premium-selfhosted-services.adoc#step2deployserver-sidecomponents[Deploy server-side components], xref:introduction-to-premium-selfhosted-services.adoc#step3createaconfigurationfile[Create a configuration file] and xref:introduction-to-premium-selfhosted-services.adoc#step4passtheconfigurationfiletothejavaapplicationserver[Pass the configuration file to the Java application server], the application server may need to be restarted to pick up all your changes. Turn it off and on again now, just to be safe.
 
 === Step 6: Set up editor client instances to use the server-side functionality
 

@@ -80,7 +80,7 @@ The first button inserts "It's my button!" into the editor when clicked. The sec
 
 In this example an icon from the `insertdatetime` plugin is used to demonstrate how to use a registered icon. `disabled` is set to `true` so that the button is disabled when it is first rendered.
 
-`onSetup` is used to listen to the editor's xref:advanced-events.adoc#editorcoreevents[`NodeChange` event] to disable the button when the cursor is inside a `time` element (or "node"). This ensures it is not possible to insert a `time` element into another `time` element.
+`onSetup` is used to listen to the editor's xref:events.adoc#editorcoreevents[`NodeChange` event] to disable the button when the cursor is inside a `time` element (or "node"). This ensures it is not possible to insert a `time` element into another `time` element.
 
 [[togglebutton]]
 == Toggle button
@@ -240,7 +240,7 @@ This example configures a toolbar menu button with the label `My Button` that op
 
 The `fetch` function is called when the toolbar menu button's menu is opened. It is a function that takes a callback and passes it an array of menu items to be rendered in the drop-down menu. This allows for asynchronous fetching of the menu items.
 
-Use the following demo xref:custom-toolbar-menu-button.adoc[here] for help using the menu toolbar button.
+Use the following demo xref:custom-menu-toolbar-button.adoc[here] for help using the menu toolbar button.
 
 [[splitbutton]]
 == Split button

@@ -201,7 +201,7 @@ ephox {
 [[troubleshootingorigins]]
 ==== Troubleshooting Origins
 
-If you missed an Origin or specified an Origin incorrectly, {productname} features that rely on the server-side components will not work from that Origin. If you observe that requests to the server-side components are failing or features are unavailable and you're not sure why, refer to the troubleshooting information about xref:troubleshoot.adoc#usingbrowsertoolingtoinvestigateservicesissues[Using browser tooling to investigate services issues].
+If you missed an Origin or specified an Origin incorrectly, {productname} features that rely on the server-side components will not work from that Origin. If you observe that requests to the server-side components are failing or features are unavailable and you're not sure why, refer to the troubleshooting information about xref:troubleshoot-server.adoc#usingbrowsertoolingtoinvestigateservicesissues[Using browser tooling to investigate services issues].
 
 [[proxyoptional]]
 === `proxy` (optional)
@@ -340,7 +340,7 @@ ephox {
 [[image-proxyoptional]]
 === `image-proxy` (optional)
 
-The xref:imagetools.adoc[image proxy service] has some optional configuration to set a maximum size for images proxied. Images beyond this size it will not be proxied. Please note that the `http.request-timeout-seconds` above also applies to requests made by the image proxy service.
+The xref:editimage.adoc[image proxy service] has some optional configuration to set a maximum size for images proxied. Images beyond this size it will not be proxied. Please note that the `http.request-timeout-seconds` above also applies to requests made by the image proxy service.
 
 [cols="^,,"]
 |===
@@ -456,7 +456,7 @@ include::partial$misc/hunspell-dictionaries-path.adoc[]
 [[custom-dictionaries-pathoptional]]
 ==== `custom-dictionaries-path` (optional)
 
-For information on creating custom dictionaries, see: xref:custom.adoc#creatingcustomdictionaryfiles[Adding custom dictionaries - Creating custom dictionary files].
+For information on creating custom dictionaries, see: xref:custom-dictionaries-for-tiny-spellchecker.adoc#creatingcustomdictionaryfiles[Adding custom dictionaries - Creating custom dictionary files].
 
 include::partial$misc/custom-dictionaries-path.adoc[]
 
@@ -511,7 +511,7 @@ To write the logs to a specific file:
 </configuration>
 ----
 
-. [[step2passtheconfigurationfiletothejavaapplicationserver]] Pass the configuration file to the Java application server. Assuming you've saved your `logback.xml` file in `/etc/opt/tinymce`, follow xref:server.adoc#step4passtheconfigurationfiletothejavaapplicationserver[`step 4`] and xref:server.adoc#step5restartthejavaapplicationserver[`step 5`] on the *Install Server-side Components* page to set the following JVM system property on your Java application server:
+. [[step2passtheconfigurationfiletothejavaapplicationserver]] Pass the configuration file to the Java application server. Assuming you've saved your `logback.xml` file in `/etc/opt/tinymce`, follow xref:introduction-to-premium-selfhosted-services.adoc#step4passtheconfigurationfiletothejavaapplicationserver[`step 4`] and xref:introduction-to-premium-selfhosted-services.adoc#step5restartthejavaapplicationserver[`step 5`] on the *Install Server-side Components* page to set the following JVM system property on your Java application server:
 +
 [source]
 ----

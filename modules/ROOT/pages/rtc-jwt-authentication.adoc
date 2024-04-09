@@ -148,7 +148,7 @@ tinymce.init({
 [[nodejstokenproviderendpointexample]]
 === Node.js token provider endpoint example
 
-This example shows how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `jsonwebtoken` Node module. For instructions on setting up a basic Node.js Express server and adding {productname}, see: xref:expressjs.adoc[Integrating TinyMCE into an Express JS App].
+This example shows how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `jsonwebtoken` Node module. For instructions on setting up a basic Node.js Express server and adding {productname}, see: xref:expressjs-pm.adoc[Integrating TinyMCE into an Express JS App].
 
 `privateKey` should be the _private_ key that pairs with the _public_ key generated at (or provided to) link:{accountpageurl}/jwt/[{accountpage} - JWT Keys].
 

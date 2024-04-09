@@ -54,7 +54,7 @@ Replace `your-api-key` with your link:{accountpageurl}[{cloudname} API key].
 +
 Replace `/path/to/tinymce/base/directory` with the relative path of the `tinymce/` directory containing `tinymce.min.js`.
 
-For information on {productname} deployment types, see: xref:advanced-install.adoc[Installing {productname}].
+For information on {productname} deployment types, see: xref:installation.adoc[Installing {productname}].
 
 === Replace the Froala editor variable assignment with the tinymce.init function
 
@@ -140,7 +140,7 @@ The following examples show an initial Froala configuration and the migrated {pr
 For information on:
 
 * Getting started with {productname}, see: xref:quick-start.adoc[{productname} Quick Start].
-* Installing {productname}, see: xref:advanced-install.adoc[Installing {productname}].
+* Installing {productname}, see: xref:installation.adoc[Installing {productname}].
 
 [[updatingthelistofplugins]]
 == Updating the list of Plugins
@@ -367,7 +367,7 @@ For information on:
 
 The {productname} `addButton` option is used in place of the Froala `RegisterCommand` option.
 
-For information on getting started with the `addButton` option, see: xref:toolbarbuttons.adoc#howtocreatecustomtoolbarbuttons[Toolbar buttons].
+For information on getting started with the `addButton` option, see: xref:custom-toolbarbuttons.adoc#howtocreatecustomtoolbarbuttons[Toolbar buttons].
 
 === Examples: Custom Toolbar Buttons
 
@@ -442,7 +442,7 @@ The following examples show a Froala editor and a {productname} editor with a ba
 
 === Additional Information on Custom Toolbar Buttons
 
-* For an overview on creating custom toolbar buttons, see: xref:toolbarbuttons.adoc#howtocreatecustomtoolbarbuttons[Toolbar buttons].
+* For an overview on creating custom toolbar buttons, see: xref:custom-toolbarbuttons.adoc#howtocreatecustomtoolbarbuttons[Toolbar buttons].
 * For information on the available types of toolbar buttons and examples of custom toolbar buttons, see: xref:typesoftoolbarbuttons.adoc[Types of toolbar buttons].
 
 [[migratingcustomdrop-downtoolbarbuttons]]
@@ -450,7 +450,7 @@ The following examples show a Froala editor and a {productname} editor with a ba
 
 The {productname} `addMenuButton` option is used in place of the Froala `RegisterCommand` `type: dropdown` option.
 
-For information on getting started with the `addMenuButton` option, see: xref:toolbarbuttons.adoc#howtocreatecustomtoolbarbuttons[Toolbar buttons] and xref:typesoftoolbarbuttons.adoc#menubutton[Types of toolbar buttons: Menu button].
+For information on getting started with the `addMenuButton` option, see: xref:custom-toolbarbuttons.adoc#howtocreatecustomtoolbarbuttons[Toolbar buttons] and xref:typesoftoolbarbuttons.adoc#menubutton[Types of toolbar buttons: Menu button].
 
 === Examples: Custom Drop-down Buttons
 

@@ -143,7 +143,7 @@ In {productname} {release-version}, this issue has been fixed. The editor now ch
 === Tapping inside a composed text on Firefox Android would not close the autocompleter.
 // #TINY-10715
 
-Previously in {productname}, when typing Korean on Firefox Android and moving the caret inside the word being typed, the autocompleter menu did not close. This issue was caused by the mobile keyboard triggering an extra input even after the composition had ended. As a result, the autocompleter mistakenly interpreted it as the user starting to type again.
+Previously in {productname}, when typing Korean on Firefox Android and moving the caret inside the word being typed, the autocompleter menu did not close. This issue was caused by Gboard triggering an extra input even after the composition had ended. As a result, the autocompleter mistakenly interpreted it as the user starting to type again.
 
 In {productname} {release-version}, this issue has been fixed. Now, the autocompleter menu is properly closed when tapping inside the word being typed on Firefox Android.
 

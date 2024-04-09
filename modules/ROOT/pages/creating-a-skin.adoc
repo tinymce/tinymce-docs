@@ -1,4 +1,4 @@
-= Create a skin for TinyMCE
+= Create a skin for {productname}
 :navtitle: Create a skin
 :description_short: Introducing skin creation.
 :description: Introducing skin creation, less and icon modification.
@@ -105,7 +105,7 @@ To update the appearance of the content within the editor, such as headings, quo
 . Start the development server using the terminal command yarn oxide-start. If you already have the server running, you need to restart it to make it recognize your new skin using ctrl-c and then start it again.
 . Add the relevant element selectors for the desired use case such as `+h1+` to `+h6+`, `+a+`, `+blockquote+`, `+code+`, `+table+`, etc...
 
-== Moving the skin into TinyMCE
+== Moving the skin into {productname}
 
 . Copy the skin and/or content CSS from `+modules/oxide/build/skins/+` to the corresponding folders in your production {productname} folder.
 . Update the {productname} init function with the xref:editor-skin.adoc#skin[skin] option and/or the xref:add-css-options.adoc#content_css[content_css] option.

@@ -1,7 +1,7 @@
 [[quickbars_selection_toolbar]]
 === quickbars_selection_toolbar
 
-The *quickbars_selection_toolbar* option configures the Quick Selection toolbar provided by the xref:quickbars.adoc[quickbars plugin]. To change the buttons on the Quick Selection toolbar, provide a space-separated string of xref:available-toolbar-buttons.adoc[toolbar button names]. The Quick Selection toolbar is intended for buttons related to formatting content, but any xref:available-toolbar-buttons.adoc[{productname} toolbar buttons] or xref:toolbarbuttons.adoc[custom toolbar buttons] are allowed.
+The *quickbars_selection_toolbar* option configures the Quick Selection toolbar provided by the xref:quickbars.adoc[quickbars plugin]. To change the buttons on the Quick Selection toolbar, provide a space-separated string of xref:available-toolbar-buttons.adoc[toolbar button names]. The Quick Selection toolbar is intended for buttons related to formatting content, but any xref:available-toolbar-buttons.adoc[{productname} toolbar buttons] or xref:custom-toolbarbuttons.adoc[custom toolbar buttons] are allowed.
 
 To disable the Quick Selection toolbar, set `quickbars_selection_toolbar` to `false`.
 

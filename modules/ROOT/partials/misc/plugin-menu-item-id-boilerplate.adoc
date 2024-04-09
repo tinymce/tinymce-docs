@@ -11,20 +11,40 @@ ifndef::altplugincode[]
 include::partial$menu-item-ids/{plugincode}-menu-items.adoc[]
 endif::[]
 
+
 ifeval::["{plugincode}" == "comments"]
 For information on the {pluginname} plugin, see: xref:introduction_to_tiny_comments.adoc[Plugins - The {pluginname} plugin]
 endif::[]
 
 ifeval::["{plugincode}" != "comments"]
-
-ifeval::["{plugincategory}" == "premium"]
-For information on the {pluginname} plugin, see: xref:{plugincategory}-{plugincode}.adoc[Plugins - The {pluginname} plugin]
+ifeval::["{plugincode}" == "powerpaste"]
+For information on the {pluginname} plugin, see: xref:introduction-to-powerpaste.adoc[Plugins - The {pluginname} plugin]
 endif::[]
 
-ifeval::["{plugincategory}" != "premium"]
+ifeval::["{plugincode}" != "powerpaste"]
+
+ifeval::["{plugincode}" == "tinymcespellchecker"]
+For information on the {pluginname} plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Plugins - The {pluginname} plugin]
+endif::[]
+
+ifeval::["{plugincode}" != "tinymcespellchecker"]
+
+ifeval::["{plugincode}" == "toc"]
+For information on the {pluginname} plugin, see: xref:tableofcontents.adoc[Plugins - The {pluginname} plugin]
+endif::[]
+
+ifeval::["{plugincode}" != "toc"]
+
+ifeval::["{plugincode}" == "imagetools"]
+For information on the {pluginname} plugin, see: xref:editimage.adoc[Plugins - The {pluginname} plugin]
+endif::[]
+
+ifeval::["{plugincode}" != "imagetools"]
 For information on the {pluginname} plugin, see: xref:{plugincode}.adoc[Plugins - The {pluginname} plugin]
 endif::[]
-
+endif::[]
+endif::[]
+endif::[]
 endif::[]
 
 endif::[]

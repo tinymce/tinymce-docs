@@ -67,12 +67,7 @@ ifeval::["{extensionType}" == "Packs"]
 endif::[]
 ifeval::["{extensionType}" != "Packs"]
 
-ifeval::["{pluginname}" == "Comments"]
 * Configuring the *{pluginname} {extensionType}*, see: xref:{plugindocspage}[The {pluginname} {extensionType} documentation].
-endif::[]
-ifeval::["{pluginname}" != "Comments"]
-* Configuring the *{pluginname} {extensionType}*, see: xref:premium-{plugindocspage}[The {pluginname} {extensionType} documentation].
-endif::[]
 
 endif::[]
 

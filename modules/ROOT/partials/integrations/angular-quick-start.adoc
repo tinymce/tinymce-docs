@@ -15,8 +15,8 @@ This procedure requires:
 * Access to `tinymce.min.js` on either:
  ** xref:editor-and-features.adoc[{cloudname}].
  ** {productname} Self-hosted. See:
-  *** xref:advanced-install.adoc#packagemanagerinstalloptions[Installing {productname} - Package Managers].
-  *** xref:advanced-install.adoc#self-hostedinstall[Installing {productname} - Self-Hosted Download / Install].
+  *** xref:installation.adoc#packagemanagerinstalloptions[Installing {productname} - Package Managers].
+  *** xref:installation.adoc#self-hostedinstall[Installing {productname} - Self-Hosted Download / Install].
 
 === Procedure
 
@@ -180,7 +180,7 @@ To use an independent deployment of {productname}, add a script to either the `<
 +
 To use an independent deployment of {productname} with the create a Angular application, add the script to `/path/to/tinymce-angular-demo/src/app/app.component.html`.
 +
-For information on self-hosting {productname}, see: xref:advanced-install.adoc[Installing {productname}].
+For information on self-hosting {productname}, see: xref:installation.adoc[Installing {productname}].
 
   *** *Bundling {productname} with the Angular application using a module loader*
 +

@@ -18,9 +18,9 @@ The new mobile experience comes with a number of user interface changes, buildin
 The new mobile experience allows most of the {productname} plugins to work on mobile devices, except for:
 
 * xref:comments.adoc[Comments]
-* xref:imagetools.adoc[Image tools]
-* xref:premium-moxiemanager.adoc[MoxieManager]
-* xref:premium-permanentpen.adoc[Permanent Pen]
+* xref:editimage.adoc[Image tools]
+* xref:moxiemanager.adoc[MoxieManager]
+* xref:permanentpen.adoc[Permanent Pen]
 
 ==== Enabling the mobile editor
 
@@ -60,8 +60,8 @@ NOTE: No enhancements have been made to the legacy mobile theme. All the changes
 
 For information on:
 
-* Using the `silver` theme for mobile, see: xref:mobile.adoc[{productname} Mobile].
-* Using the legacy `mobile` theme, see: xref:mobile.adoc#thelegacymobiletheme[{productname} Mobile - The legacy mobile theme].
+* Using the `silver` theme for mobile, see: xref:tinymce-for-mobile.adoc[{productname} Mobile].
+* Using the legacy `mobile` theme, see: xref:tinymce-for-mobile.adoc#thelegacymobiletheme[{productname} Mobile - The legacy mobile theme].
 
 [[horizontalcontextualmenusonmobile]]
 ==== Horizontal contextual menus on mobile
@@ -82,7 +82,7 @@ Toolbars and xref:horizontalcontextualmenusonmobile[horizontal menus] side-scrol
 
 A new `inputMode` configuration setting for dialog input components has been added to provide contextual onscreen keyboards on mobile devices. Dialogs in {productname}, the core {productname} plugins, and the premium {productname} plugins have been updated to use `inputMode`.
 
-For information on using `inputMode`, see: xref:dialogcomponents.adoc#inputmode[Dialog components - `inputMode`].
+For information on using `inputMode`, see: xref:dialog-components.adoc#inputmode[Dialog components - `inputMode`].
 
 [[newmobiledefaultsforselectedsettings]]
 ==== New mobile defaults for selected settings
@@ -96,7 +96,7 @@ The following settings have mobile-specific default values:
 * xref:editor-appearance.adoc#toolbar_sticky[`toolbar_sticky`] - Sticky Toolbar is not supported on mobile devices and defaults to `false`.
 * xref:table.adoc#table_grid[`table_grid`] - Table grid is not supported on mobile devices and defaults to `false`. When creating tables on mobile, a dialog is shown instead of the table grid.
 * xref:editor-appearance.adoc#resize[`resize`] - Resizing is not supported on mobile devices and defaults to `false`.
-* xref:advanced-editing-behavior.adoc#object_resizing[`object_resizing`] - Object resizing is not supported on mobile devices and defaults to `false`.
+* xref:content-behavior-options.adoc#object_resizing[`object_resizing`] - Object resizing is not supported on mobile devices and defaults to `false`.
 
 [[tablecellselectiononmobile]]
 ==== Table cell selection on mobile
@@ -123,7 +123,7 @@ The following settings are not supported on mobile devices:
 * xref:editor-appearance.adoc#toolbar_sticky[`toolbar_sticky`].
 * xref:table.adoc#table_grid[`table_grid`].
 * xref:editor-appearance.adoc#resize[`resize`].
-* xref:advanced-editing-behavior.adoc#object_resizing[`object_resizing`].
+* xref:content-behavior-options.adoc#object_resizing[`object_resizing`].
 
 === Sticky Toolbar
 

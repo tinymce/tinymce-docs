@@ -325,7 +325,7 @@ To control how content pasted from Microsoft Word is filtered, use the `powerpas
 <tinymce-editor powerpaste_word_import="merge"></tinymce-editor>
 ----
 
-For information on the `powerpaste_word_import` option, including supported values, see: xref:premium-powerpaste.adoc#powerpaste_word_import[The PowerPaste plugin - `powerpaste_word_import`].
+For information on the `powerpaste_word_import` option, including supported values, see: xref:introduction-to-powerpaste.adoc#powerpaste_word_import[The PowerPaste plugin - `powerpaste_word_import`].
 
 [[settingpowerpasteshtmlimportmethod]]
 ==== Setting PowerPaste's html import method
@@ -339,7 +339,7 @@ To control how content pasted from sources other than Microsoft Word is filtered
 <tinymce-editor powerpaste_html_import="prompt"></tinymce-editor>
 ----
 
-For information on the `powerpaste_html_import` option, including supported values, see: xref:premium-powerpaste.adoc#powerpaste_html_import[The PowerPaste plugin - `powerpaste_html_import`].
+For information on the `powerpaste_html_import` option, including supported values, see: xref:introduction-to-powerpaste.adoc#powerpaste_html_import[The PowerPaste plugin - `powerpaste_html_import`].
 
 [[settingpowerpastetoallowlocalimages]]
 ==== Setting PowerPaste to allow local images
@@ -353,7 +353,7 @@ To prevent Base64 encoded images with a data URI from being pasted into the edit
 <tinymce-editor powerpaste_allow_local_images="false"></tinymce-editor>
 ----
 
-For information on the `powerpaste_allow_local_images` option, including supported values, see: xref:premium-powerpaste.adoc#powerpaste_allow_local_images[The PowerPaste plugin - `powerpaste_allow_local_images`].
+For information on the `powerpaste_allow_local_images` option, including supported values, see: xref:introduction-to-powerpaste.adoc#powerpaste_allow_local_images[The PowerPaste plugin - `powerpaste_allow_local_images`].
 
 [[showingresizehandles]]
 ==== Showing resize handles
@@ -408,7 +408,7 @@ To apply a custom skin to the editor, use the `skin` attribute. For example:
 For information on:
 
 * Using the `skin` option, see: xref:editor-appearance.adoc#skin[User interface options - `skin`].
-* {companyname} premium skins, see: xref:premium-skins-and-icon-packs.adoc[Tiny Skins and Icon Packs].
+* {companyname} premium skins, see: xref:enhanced-skins-and-icon-packs.adoc[Tiny Skins and Icon Packs].
 * Creating a custom skin for {productname}, see: xref:creating-a-skin.adoc[Create a skin for {productname}].
 
 [[settingtheimagesuploadurl]]
@@ -498,7 +498,7 @@ Use this attribute if the icon pack is bundled with {productname} (including cus
 For information on:
 
 * Using the `icons` option, see: xref:editor-appearance.adoc#icons[User interface options - `icons`].
-* {companyname} premium icon packs, see: xref:premium-skins-and-icon-packs.adoc[Tiny Skins and Icon Packs].
+* {companyname} premium icon packs, see: xref:enhanced-skins-and-icon-packs.adoc[Tiny Skins and Icon Packs].
 * Creating a custom icon pack for {productname}, see: xref:creating-an-icon-pack.adoc[Create an icon pack for {productname}].
 
 [[settingtheiconpackurl]]
@@ -516,7 +516,7 @@ Use this attribute if the icon pack is hosted on a web site. If the icon pack is
 For information on:
 
 * Using the `icons_url` option, see: xref:editor-appearance.adoc#icons_url[User interface options - `icons_url`].
-* {companyname} premium icon packs, see: xref:premium-skins-and-icon-packs.adoc[Tiny Skins and Icon Packs].
+* {companyname} premium icon packs, see: xref:enhanced-skins-and-icon-packs.adoc[Tiny Skins and Icon Packs].
 * Creating a custom icon pack for {productname}, see: xref:creating-an-icon-pack.adoc[Create an icon pack for {productname}].
 
 [[settingadditionalconfigurationoptions]]

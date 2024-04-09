@@ -18,8 +18,8 @@ NOTE: Currently, the sort function will treat cells with Alphanumeric data as Te
 For information on this plugin, see:
 
 * link:{plugindirectory}advanced-tables[The Advanced Tables product page].
-* xref:advanced-tables.adoc[The Advanced Tables Premium features page (including demo)].
-* xref:premium-advtable.adoc[The Advanced Tables plugin documentation page].
+* xref:advtable.adoc[The Advanced Tables Premium features page (including demo)].
+* xref:advtable.adoc[The Advanced Tables plugin documentation page].
 
 === Checklist
 
@@ -47,7 +47,7 @@ This version of *Format Painter* includes a fix to work with the xref:legacyoutp
 
 The {productname} 5.1 release includes *Mentions* 2.1.0.
 
-*Mentions* 2.1.0 has been updated to allow for the inclusion of "extra" menu items, such as additional results or search items. For details, see: xref:premium-mentions.adoc#mentions_fetch[Mentions - `mentions_fetch`].
+*Mentions* 2.1.0 has been updated to allow for the inclusion of "extra" menu items, such as additional results or search items. For details, see: xref:mentions.adoc#mentions_fetch[Mentions - `mentions_fetch`].
 
 === Page Embed
 
@@ -71,10 +71,10 @@ To retain the _5.0_ default inline style element filter, add the following setti
 powerpaste_clean_filtered_inline_elements: 'strong,em,b,i,u,strike,sup,sub,font'
 ----
 
-For information on `powerpaste_clean_filtered_inline_elements`, see: xref:premium-powerpaste.adoc#powerpaste_clean_filtered_inline_elements[PowerPaste - `powerpaste_clean_filtered_inline_elements`].
+For information on `powerpaste_clean_filtered_inline_elements`, see: xref:introduction-to-powerpaste.adoc#powerpaste_clean_filtered_inline_elements[PowerPaste - `powerpaste_clean_filtered_inline_elements`].
 
 ==== Pre-filtering and post-filtering callbacks
 
 *PowerPaste* 5.2 modifies the _pre-filtering_ and _post-filtering_ callbacks. The callbacks now contain additional data regarding the paste `mode` and the `source` of the content.
 
-For information on using the Pre-filtering and Post-filtering callbacks, see: xref:premium-powerpaste.adoc#pre-filtering-and-post-filtering-callbacks[PowerPaste Plugin - Pre-filtering and post-filtering callbacks]
+For information on using the Pre-filtering and Post-filtering callbacks, see: xref:introduction-to-powerpaste.adoc#pre-filtering-and-post-filtering-callbacks[PowerPaste Plugin - Pre-filtering and post-filtering callbacks]

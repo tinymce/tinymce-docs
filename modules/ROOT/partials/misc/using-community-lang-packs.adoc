@@ -14,7 +14,7 @@ endif::[]
 ifeval::[{forModuleLoaders} != true]
 . Unpack the language file into the `tinymce/langs` folder.
 endif::[]
-. Set the xref:configure-localization.adoc#language[`language`] option in your {productname} configuration to the language code, matching the filename on the language pack. For example: If the language pack has the filename `sv_SE.js`, then set `language: 'sv_SE'`,
+. Set the xref:content-localization.adoc#language[`language`] option in your {productname} configuration to the language code, matching the filename on the language pack. For example: If the language pack has the filename `sv_SE.js`, then set `language: 'sv_SE'`,
 . Confirm that the language has been set successfully by loading {productname}.
 
 NOTE: The language code set in the {productname} configuration must match the filename of the language file. If the language file is not found, {productname} will not load.

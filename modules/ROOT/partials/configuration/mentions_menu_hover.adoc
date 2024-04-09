@@ -39,7 +39,7 @@ tinymce.init({
 
 include::partial$misc/requires_5_9v.adoc[]
 
-If `mentions_menu_hover` is resolved with an object specifying the type and user details, a predefined hover card template will be used. To use the predefined template, set `type` to `'profile'`. For details on the user properties required for the `profile` template, see: xref:premium-mentions.adoc#userproperties[User properties].
+If `mentions_menu_hover` is resolved with an object specifying the type and user details, a predefined hover card template will be used. To use the predefined template, set `type` to `'profile'`. For details on the user properties required for the `profile` template, see: xref:mentions.adoc#userproperties[User properties].
 
 ===== Example: Using the `'profile'` template with `mentions_menu_hover`
 

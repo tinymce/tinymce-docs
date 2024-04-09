@@ -11,7 +11,9 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[overview]]
 == Overview
 
-{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, April 10^th^, 2024. These release notes provide an overview of the changes for {productname} {release-version}, including:
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, April 10^th^, 2024.
+
+These release notes provide an overview of the changes for {productname} {release-version}, including:
 
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:bug-fixes[Bug fixes]
@@ -31,7 +33,7 @@ This **Enhanced Code Editor** release includes the following fixes.
 ==== Text inside code editor was not properly rendered when using a dark {productname} skin.
 // #TINY-10784
 
-In previous versions of the **Enhanced Code Editor**, the text color of the code editor was inherited from the {productname} skin. This caused the light theme of the code editor to display white text on a white background when using a dark skin, such as `oxide-dark`.
+In previous versions of the **Enhanced Code Editor**, the text color of the code editor was inherited from the {productname} skin. This caused the light theme of the code editor to display white text on a white background when using xref:customize-ui.adoc#skins[a dark skin], such as `oxide-dark`.
 
 In {productname} {release-version}, this issue has been resolved. Now, the light theme of the Enhanced Code Editor will always use a dark text color, regardless of the skin being used. As a result, the light mode will render correctly and be easily readable when using a dark skin.
 

@@ -61,6 +61,7 @@ jobs:
 
     - name: Add redirect for current major version pages to latest
       run: |
+        S3_BUCKET=$(node -e 'console.log(`s3://docs-${process.env.GITHUB_REF.replace("refs/heads/","").replace(/[/\s]/g, "-").replace(/[^0-9a-zA-Z-]/g, "").replace(/-$/g, "").toLowerCase()}.staging.tiny.cloud`)')
         touch index.html
         aws s3api put-object --bucket ${S3_BUCKET} --key '/docs/tinymce/7/(.*)' --body index.html --website-redirect '/docs/tinymce/latest/$1' --acl public-read
       env:

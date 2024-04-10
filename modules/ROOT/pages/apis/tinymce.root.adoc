@@ -52,7 +52,7 @@ Checks if the input object `obj` has the property `prop`.|`xref:apis/tinymce.roo
 |xref:#inArray[inArray()]|Returns an index of the item or -1 if item is not present in the array.|`xref:apis/tinymce.root.adoc[tinymce]`
 |xref:#init[init()]|Initializes a set of editors. This method will create editors based on various settings.
 
-For information on basic usage of `init`, see: link:https://www.tiny.cloud/docs/tinymce/6/basic-setup/[Basic setup].|`xref:apis/tinymce.root.adoc[tinymce]`
+For information on basic usage of `init`, see: link:https://www.tiny.cloud/docs/tinymce/7/basic-setup/[Basic setup].|`xref:apis/tinymce.root.adoc[tinymce]`
 |xref:#is[is()]|Checks if a object is of a specific type for example an array.|`xref:apis/tinymce.root.adoc[tinymce]`
 |xref:#isArray[isArray()]|Returns true/false if the object is an array or not.|`xref:apis/tinymce.root.adoc[tinymce]`
 |xref:#makeMap[makeMap()]|Makes a name/object map out of an array with names.|`xref:apis/tinymce.root.adoc[tinymce]`
@@ -315,7 +315,7 @@ init(options: Object): Promise
 ----
 Initializes a set of editors. This method will create editors based on various settings.
 
-For information on basic usage of `init`, see: link:https://www.tiny.cloud/docs/tinymce/6/basic-setup/[Basic setup].
+For information on basic usage of `init`, see: link:https://www.tiny.cloud/docs/tinymce/7/basic-setup/[Basic setup].
 
 ==== Examples
 [source, javascript]

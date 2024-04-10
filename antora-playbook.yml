@@ -7,8 +7,8 @@ content:
   - url: ./
     branches: HEAD
     start_path: ./
-  - url: https://github.com/MitchC1999/tinymce-docs.git
-    branches: [ 6, 7 ]
+  - url: https://github.com/tinymce/tinymce-docs.git
+    branches: [ tinymce/6, tinymce/7 ]
 urls:
   html_extension_style: indexify
   latest_version_segment: latest

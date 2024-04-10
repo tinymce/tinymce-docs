@@ -16,7 +16,7 @@ The above concurrent requests numbers are not a hard limit of {pluginname} On-Pr
 
 === High availability
 
-One docker container with {pluginname} On-Premises benefits from additional CPUs on the machine. To scale your app on a single machine, increase the number of CPUs, however, {productname} recommends scaling on at least three hosts to ensure the reliability of the system.
+One docker container with {pluginname} On-Premises benefits from additional CPUs on the machine. To scale your app on a single machine, increase the number of CPUs, however, {companyname} recommends scaling on at least three hosts to ensure the reliability of the system.
 
 A load balancer, like HAProxy or NGINX (see the load balancer configuration examples in the SSL communication guide), is required for scaling on several machines. Of course, it is possible to use any cloud provider for scaling, like Amazon ECS, Azure Container Instances, or Kubernetes.
 

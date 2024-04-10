@@ -3,7 +3,7 @@
 
 This option specifies the base URL for all relative URLs in the document. The default value is the directory of the current document. If a value is provided, it must specify a directory (not a document) and must end with a `/`.
 
-This option also interacts with the xref:configure/url-handling.adoc#relative_urls[relative_urls], xref:configure/url-handling.adoc#remove_script_host[remove_script_host], and xref:configure/url-handling.adoc#convert_urls[convert_urls] options to determine whether {productname} returns relative or absolute URLs. The xref:general-configuration-guide/get-support.adoc[FAQ] contains a thorough description and examples of working with relative and absolute URLs.
+This option also interacts with the xref:url-handling.adoc#relative_urls[relative_urls], xref:url-handling.adoc#remove_script_host[remove_script_host], and xref:url-handling.adoc#convert_urls[convert_urls] options to determine whether {productname} returns relative or absolute URLs. The xref:get-support.adoc[FAQ] contains a thorough description and examples of working with relative and absolute URLs.
 
 *Type:* `String`
 

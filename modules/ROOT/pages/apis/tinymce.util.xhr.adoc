@@ -1,0 +1,385 @@
+= tinymce.util.XHR
+:navtitle: tinymce.util.XHR
+:description: This API allows you to send XMLHTTPRequests cross browser. Extends the Observable class.
+:keywords: fire, hasEventListeners, off, on, once, send
+:moxie-type: api
+
+This API allows you to send XMLHTTPRequests cross browser. Extends the Observable class.
+
+XHR has been deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0.
+
+[[examples]]
+== Examples
+[source, javascript]
+----
+// Sends a low level Ajax request
+tinymce.util.XHR.send({
+   url: 'someurl',
+   success: function(text) {
+      console.debug(text);
+   }
+});
+
+// Add custom header to XHR request
+tinymce.util.XHR.on('beforeSend', function(e) {
+    e.xhr.setRequestHeader('X-Requested-With', 'Something');
+});
+----
+
+[[summary]]
+== Summary
+
+[[methods-summary]]
+=== Methods
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#fire[fire()]|Fires the specified event by name. Consult the
+link:/docs/advanced/events[event reference] for more details on each event.|`xref:apis/tinymce.util.observable.adoc[Observable]`
+|xref:#hasEventListeners[hasEventListeners()]|Returns true/false if the object has a event of the specified name.|`xref:apis/tinymce.util.observable.adoc[Observable]`
+|xref:#off[off()]|Unbinds an event listener to a specific event by name. Consult the
+link:/docs/advanced/events[event reference] for more details on each event.|`xref:apis/tinymce.util.observable.adoc[Observable]`
+|xref:#on[on()]|Binds an event listener to a specific event by name. Consult the
+link:/docs/advanced/events[event reference] for more details on each event.|`xref:apis/tinymce.util.observable.adoc[Observable]`
+|xref:#once[once()]|Bind the event callback and once it fires the callback is removed. Consult the
+link:/docs/advanced/events[event reference] for more details on each event.|`xref:apis/tinymce.util.observable.adoc[Observable]`
+|xref:#send[send()]|Sends a XMLHTTPRequest.|`xref:apis/tinymce.util.xhr.adoc[XHR]`
+|===
+
+[[methods]]
+== Methods
+
+[[fire]]
+=== fire()
+[source, javascript]
+----
+fire(name: String, args: Object?, bubble: Boolean?): Object
+----
+Fires the specified event by name. Consult the
+link:/docs/advanced/events[event reference] for more details on each event.
+
+==== Examples
+[source, javascript]
+----
+instance.fire('event', {...});
+----
+
+==== Parameters
+
+* `name (String)` - Name of the event to fire.
+* `args (Object?)` - Event arguments.
+* `bubble (Boolean?)` - True/false if the event is to be bubbled.
+
+==== Return value
+
+* `Object` - Event args instance passed in.
+
+'''
+
+[[hasEventListeners]]
+=== hasEventListeners()
+[source, javascript]
+----
+hasEventListeners(name: String): Boolean
+----
+Returns true/false if the object has a event of the specified name.
+
+==== Parameters
+
+* `name (String)` - Name of the event to check for.
+
+==== Return value
+
+* `Boolean` - true/false if the event exists or not.
+
+'''
+
+[[off]]
+=== off()
+[source, javascript]
+----
+off(name: String?, callback: callback?): Object
+----
+Unbinds an event listener to a specific event by name. Consult the
+link:/docs/advanced/events[event reference] for more details on each event.
+
+==== Examples
+[source, javascript]
+----
+// Unbind specific callback
+instance.off('event', handler);
+
+// Unbind all listeners by name
+instance.off('event');
+
+// Unbind all events
+instance.off();
+----
+
+==== Parameters
+
+* `name (String?)` - Name of the event to unbind.
+* `callback (callback?)` - Callback to unbind.
+
+==== Return value
+
+* `Object` - Current class instance.
+
+'''
+
+[[on]]
+=== on()
+[source, javascript]
+----
+on(name: String, callback: callback, prepend: Boolean): Object
+----
+Binds an event listener to a specific event by name. Consult the
+link:/docs/advanced/events[event reference] for more details on each event.
+
+==== Examples
+[source, javascript]
+----
+instance.on('event', function(e) {
+    // Callback logic
+});
+----
+
+==== Parameters
+
+* `name (String)` - Event name or space separated list of events to bind.
+* `callback (callback)` - Callback to be executed when the event occurs.
+* `prepend (Boolean)` - Optional flag if the event should be prepended. Use this with care.
+
+==== Return value
+
+* `Object` - Current class instance.
+
+'''
+
+[[once]]
+=== once()
+[source, javascript]
+----
+once(name: String, callback: callback): Object
+----
+Bind the event callback and once it fires the callback is removed. Consult the
+link:/docs/advanced/events[event reference] for more details on each event.
+
+==== Parameters
+
+* `name (String)` - Name of the event to bind.
+* `callback (callback)` - Callback to bind only once.
+
+==== Return value
+
+* `Object` - Current class instance.
+
+'''
+
+[[send]]
+=== send()
+[source, javascript]
+----
+send(settings: Object)
+----
+Sends a XMLHTTPRequest.
+
+==== Parameters
+
+* `settings (Object)` - An object containing the target URL,
+callbacks, and other information needed to make the request.
+For information on valid settings, see the table below.
+
+
+
+
+
+<div>
+<table>
+<thead>
+<tr style="text-align: center;">
+<th>Setting</th>
+<th>Required/
+
+
+Optional</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>
+<p>`url`</p>
+</td>
+<td>Required</td>
+<td>
+<p>`string`</p>
+</td>
+<td>Address to send the request to, such as the back-end server.</td>
+</tr>
+<tr>
+<td>
+<p><code>async
+
+
+</code></p>
+</td>
+<td>Optional</td>
+<td>
+<p>`boolean`</p>
+</td>
+<td>When `false`, the request will be synchronous.
+Set to `true` by default.
+**NOTE**: Synchronous requests have been deprecated on some browsers.
+For details, see: link:https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/open#Syntax[
+MDN Web Docs - XMLHttpRequest.open() Syntax].</td>
+</tr>
+<tr>
+<td>
+<p><code>content_type
+
+
+</code></p>
+</td>
+<td>Optional</td>
+<td>
+<p>`string`</p>
+</td>
+<td>Used to define the mime-type of the data. Similar to
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/overrideMimeType">
+the XMLHttpRequest.overrideMimeType method</a>.</td>
+</tr>
+<tr>
+<td>
+<p><code>crossDomain
+
+
+</code></p>
+</td>
+<td>Optional</td>
+<td>
+<p>`boolean`</p>
+</td>
+<td>When `true`, the withCredentials property will be set to `true`.
+For information on the withCredentials property, see:
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/withCredentials">
+MDN Web Docs - XMLHttpRequest.withCredentials</a>.</td>
+</tr>
+<tr>
+<td>
+<p><code>data
+
+
+</code></p>
+</td>
+<td>Optional</td>
+<td>
+<p>`Document {vbar} Blob {vbar} FormData {vbar} string`</p>
+</td>
+<td>The data to be sent to the specified URL (`url`). For information on valid data inputs,
+ see: <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/send#Syntax">
+ MDN Web Docs - XMLHttpRequest.send() Syntax</a></td>
+</tr>
+<tr>
+<td>
+<p>`requestheaders`</p>
+</td>
+<td>Optional</td>
+<td>
+<p>`Record&lt;string, { key: string; value: string }&gt;`</p>
+</td>
+<td>Allows for the definition of additional
+ <a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/setRequestHeader">
+ header-values for the request header</a>.</td>
+</tr>
+<tr>
+<td>
+<p>`type`</p>
+</td>
+<td>Optional</td>
+<td>
+<p>`string`</p>
+</td>
+<td>
+<p>The <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods">HTTP request method</a>,
+ such as: `'GET'`, `'POST'`, `'PUT'` and `'DELETE'`.
+By default:</p>
+<ul>
+<li>If no data is provided with the request, the `'GET'` method will be used.</li>
+<li>If data is provided with the request, the `'POST'` method will be used.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<p>`error_scope`</p>
+</td>
+<td>Optional</td>
+<td>
+<p>`object`</p>
+</td>
+<td>Sets the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this">
+'`this`'</a> value of the error callback function.</td>
+</tr>
+<tr>
+<td>
+<p><code>success_scope
+
+
+</code></p>
+</td>
+<td>Optional</td>
+<td>
+<p>`object`</p>
+</td>
+<td>Sets the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this">
+'`this`'</a> value of the success callback function.</td>
+</tr>
+<tr>
+<td>
+<p><code>error
+
+
+</code></p>
+</td>
+<td>Optional</td>
+<td>
+<p>`callback function`</p>
+</td>
+<td>
+<p>The callback function called when an error occurs.
+The callback function will be passed the following arguments:</p>
+<ul>
+<li>`message`: Passed either `'TIMED_OUT'` or `'GENERAL'`.</li>
+<li>`xhr`: Passed the XMLHttpRequest.</li>
+<li>`setting`: Passed the XMLHttpRequest settings.</li>
+</ul>
+</td>
+</tr>
+<tr>
+<td>
+<p>`success`</p>
+</td>
+<td>Optional</td>
+<td>
+<p>`callback function`</p>
+</td>
+<td>
+<p>The callback function called when the request is successful.
+The callback function will be passed the following arguments:</p>
+<ul>
+<li>`text`: The text response from the server.
+For information on the response text, see:
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/responseText">
+MDN Web Docs - XMLHttpRequest.responseText</a>.</li>
+<li>`xhr`: Passed the XMLHttpRequest.</li>
+<li>`setting`: Passed the XMLHttpRequest settings.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+'''

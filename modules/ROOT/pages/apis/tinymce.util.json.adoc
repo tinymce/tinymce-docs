@@ -1,0 +1,71 @@
+= tinymce.util.JSON
+:navtitle: tinymce.util.JSON
+:description: JSON parser and serializer class.
+:keywords: parse, serialize
+:moxie-type: api
+
+JSON parser and serializer class.
+
+JSON has been deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0. Use the native browser JSON API instead.
+
+[[examples]]
+== Examples
+[source, javascript]
+----
+// JSON parse a string into an object
+var obj = tinymce.util.JSON.parse(somestring);
+
+// JSON serialize a object into an string
+var str = tinymce.util.JSON.serialize(obj);
+----
+
+[[summary]]
+== Summary
+
+[[methods-summary]]
+=== Methods
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#parse[parse()]|Unserializes/parses the specified JSON string into a object.|`xref:apis/tinymce.util.json.adoc[JSON]`
+|xref:#serialize[serialize()]|Serializes the specified object as a JSON string.|`xref:apis/tinymce.util.json.adoc[JSON]`
+|===
+
+[[methods]]
+== Methods
+
+[[parse]]
+=== parse()
+[source, javascript]
+----
+parse(text: string): Object
+----
+Unserializes/parses the specified JSON string into a object.
+
+==== Parameters
+
+* `text (string)` - JSON String to parse into a JavaScript object.
+
+==== Return value
+
+* `Object` - Object from input JSON string or undefined if it failed.
+
+'''
+
+[[serialize]]
+=== serialize()
+[source, javascript]
+----
+serialize(obj: Object): string
+----
+Serializes the specified object as a JSON string.
+
+==== Parameters
+
+* `obj (Object)` - Object to serialize as a JSON string.
+
+==== Return value
+
+* `string` - JSON string serialized from input.
+
+'''

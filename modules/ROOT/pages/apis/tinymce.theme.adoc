@@ -1,0 +1,52 @@
+= tinymce.Theme
+:navtitle: tinymce.Theme
+:description: TinyMCE theme pseudo class. Allows for a custom theme to be used with TinyMCE when registered using the ThemeManager.
+:keywords: 
+:moxie-type: api
+
+TinyMCE theme pseudo class. Allows for a custom theme to be used with TinyMCE when registered using the ThemeManager.
+
+This is a pseudo class that describes how to create a custom theme for TinyMCE.
+
+
+
+
+
+See AddOnManager for more information about the methods available on the ThemeManager instance.
+
+
+
+
+
+**Warning**: Much of TinyMCE's functionality is provided by the default Silver theme. Creating a custom theme may require the re-implementation of this functionality. To change TinyMCE's appearance, Tiny recommends changing the Skin instead.
+
+[[examples]]
+== Examples
+[source, javascript]
+----
+tinymce.ThemeManager.add('MyTheme', function(editor) {
+    // Setup up custom UI elements in the dom
+    var div = document.createElement('div');
+    var iframe = document.createElement('iframe');
+    document.body.appendChild(div);
+    document.body.appendChild(iframe);
+
+    // Themes should fire the SkinLoaded event once the UI has been created and all StyleSheets have been loaded.
+    editor.on('init', function() {
+        editor.fire('SkinLoaded');
+    });
+
+    // Themes must return a renderUI function that returns the editorContainer. If the editor is not running in inline mode, an iframeContainer should also be returned.
+    var renderUI = function() {
+        return {
+            editorContainer: div,
+            iframeContainer: iframe
+        };
+    };
+
+    // Return the renderUI function
+    return {
+        renderUI: renderUI
+    };
+});
+----

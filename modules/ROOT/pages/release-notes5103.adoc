@@ -1,0 +1,82 @@
+= TinyMCE 5.10.3
+:description: Release notes for TinyMCE 5.10.3
+:keywords: releasenotes bugfixes
+:title_nav: TinyMCE 5.10.3
+
+== Overview
+
+{productname} 5.10.3 was released for {enterpriseversion} and {cloudname} on Tuesday, February 15^th^, 2022. It includes {productname} 5.10.3 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.10.3, including:
+
+* xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
+* xref:general-bug-fixes[General bug fixes]
+* xref:security-fixes[Security fixes]
+* xref:upgrading-to-the-latest-version-of-tinymce-5[Upgrading to the latest version of TinyMCE 5]
+
+include::partial$misc/releasenotes_for_stable.adoc[]
+
+[[accompanying-premium-self-hosted-server-side-component-changes]]
+== Accompanying Premium self-hosted server-side component changes
+
+The {productname} 5.10.3 release includes changes affecting the {productname} *self-hosted* services for the following plugins:
+
+* The Enhanced Media Embed plugin (`mediaembed`)
+* The Image Tools plugin (`imagetools`)
+* The Link Checker plugin (`linkchecker`)
+* The Spell Checker Pro plugin (`tinymcespellchecker`)
+
+The Java server-side components have been updated to the following versions:
+
+* `ephox-spelling.war`: 2.118.4
+* `ephox-hyperlinking.war`: 2.105.9
+* `ephox-image-proxy.war`: 2.106.1
+
+This version requires Java 8 or higher. For information on the removal of Java 7 support, see: xref:release-notes53.adoc#removalofjava7support[Removal of Java 7 support for TinyMCE 5.3 and later].
+
+For information on:
+
+* The Spell Checker Pro plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
+* The Link Checker plugin, see: xref:linkchecker.adoc[Link Checker plugin].
+* The Image Tools plugin, see: xref:editimage.adoc[Image Tools plugin].
+* The Enhanced Media Embed plugin, see: xref:introduction-to-mediaembed.adoc[Enhanced Media Embed plugin].
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+
+=== Updating the self-hosted server-side components
+
+The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
+
+. Update your Java Application Server to the minimum required version:
+ ** Eclipse Jetty 9.4 or later
+ ** Apache Tomcat:
+  *** 9 or later
+  *** 8.5.12+
+  *** 8.0.42+
+  *** 7.0.76+
+. Replace the existing server-side `.war` files with the `.war` files bundled with {productname} 5.10.3 or later.
+
+For information on:
+
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+* Deploying the server-side components using Docker, see: xref:bundle-intro-setup.adoc[Containerized service deployments].
+
+[[general-bug-fixes]]
+== General bug fixes
+
+{productname} 5.10.3 provides fixes for the following bugs:
+
+* Alignment would sometimes be removed on parent elements when changing alignment on certain inline nodes, such as images.
+* The `fullscreen` plugin would incorrectly reset the scroll position when exiting fullscreen mode.
+
+[[security-fixes]]
+== Security fixes
+
+{productname} 5.10.3 fixes the following security issues:
+
+All 3 server-side components updates include dependency updates that address security issues. This includes _Low_ severity vulnerability fixes.
+
+For information on the server-side components updates, see: xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes].
+
+:enterprise: true
+
+include::partial$install/upgrading-info.adoc[]
+
+:enterprise: false

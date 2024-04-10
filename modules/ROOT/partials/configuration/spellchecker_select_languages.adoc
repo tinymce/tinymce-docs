@@ -5,7 +5,7 @@ IMPORTANT: This option will be removed in {productname} 6.0.
 
 NOTE: The `spellchecker_select_languages` option was deprecated with the release of {productname} 5.9. The `content_langs` option should be used instead. This change was made to allow more control over the way languages are specified, and to reflect that the option can be used outside of spell checking.
 
-This option specifies the languages that can be set for content when working with multi-language content. The specified languages will be available from the xref:plugins/premium/tinymcespellchecker.adoc#toolbarbuttons[`language` toolbar drop-down menu button].  For a list of available languages, see: xref:plugins/premium/tinymcespellchecker.adoc#supportedlanguages[Supported languages].
+This option specifies the languages that can be set for content when working with multi-language content. The specified languages will be available from the xref:introduction-to-tiny-spellchecker.adoc#toolbarbuttons[`language` toolbar drop-down menu button].  For a list of available languages, see: xref:introduction-to-tiny-spellchecker.adoc#supportedlanguages[Supported languages].
 
 *Type:* comma-separated `String`
 

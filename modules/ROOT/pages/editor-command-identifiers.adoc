@@ -1,0 +1,770 @@
+= Commands Available for TinyMCE
+:description: The complete list of exposed editor commands.
+:description_short: Complete list of editor commands.
+:keywords: editorcommands editorcommand execcommand Bold Italic Underline Strikethrough Superscript Subscript Cut Copy Paste Unlink JustifyLeft JustifyCenter JustifyRight JustifyFull JustifyNone InsertUnorderedList InsertOrderedList ForeColor HiliteColor FontName FontSize RemoveFormat mceBlockQuote FormatBlock mceInsertContent mceToggleFormat mceSetContent Indent Outdent InsertHorizontalRule mceToggleVisualAid mceInsertLink selectAll delete mceNewDocument Undo Redo mceAutoResize mceShowCharmap mceCodeEditor mceDirectionLTR mceDirectionRTL mceFullPageProperties mceFullscreen mceImage mceInsertDate mceInsertTime mceInsertDefinitionList mceNonBreaking mcePageBreak mcePreview mcePrint mceSave SearchReplace mceSpellcheck mceInsertTemplate mceVisualBlocks mceVisualChars mceMedia mceAnchor mceTableSplitCells mceTableMergeCells mceTableInsertRowBefore mceTableInsertRowAfter mceTableInsertColBefore mceTableInsertColAfter mceTableDeleteCol mceTableDeleteRow mceTableCutRow mceTableCopyRow mceTablePasteRowBefore mceTablePasteRowAfter mceTableDelete mceInsertTable mceTableRowProps mceTableCellProps mceEditImage mceAddEditor mceRemoveEditor mceToggleEditor
+:title_nav: Available Commands
+
+== Overview
+
+* xref:executablecommands[Executable commands]
+ ** xref:listingcoreandplugineditorcommands[Listing core and plugin editor commands]
+ ** xref:coreeditorcommands[Core Editor commands]
+ ** xref:plugincommands[Plugin Commands]
+ ** xref:editormanagementcommands[Editor Management Commands]
+* xref:querycommandstates[Query command states]
+ ** xref:listingcoreandpluginquerycommandstates[Listing core and plugin query command states]
+ ** xref:availablequerycommandstates[Available query command states]
+* xref:querycommandvalues[Query command values]
+ ** xref:listingcoreandpluginquerycommandvalues[Listing core and plugin Query command values]
+ ** xref:availablequerycommandvalues[Available Query command values]
+ ** xref:querycommandvaluestableplugin[Query command values: Table plugin]
+
+[[executablecommands]]
+== Executable commands
+
+The following tables show the existing editor commands. These commands are provided by `tinymce` and not by the browser's internal commands. These commands can be executed using the xref:apis/tinymce.editor.adoc#execCommand[execCommand] function.
+
+[[listingcoreandplugineditorcommands]]
+=== Listing core and plugin editor commands
+
+To retrieve a list of avaliable commands from the active editor, run the following command from the browser console:
+
+[source, js]
+----
+tinymce.activeEditor.editorCommands.commands.exec;
+----
+
+[[coreeditorcommands]]
+=== Core Editor commands
+
+The commands on the following table are provided by the {productname} editor and do not require any plugins to be enabled.
+
+|===
+| Command | Description
+
+| Bold
+| Toggles bold formatting to selection.
+
+| Italic
+| Toggles italic formatting to selection.
+
+| Underline
+| Toggles underline formatting to selection.
+
+| Strikethrough
+| Toggles strikethough formatting to selection.
+
+| Superscript
+| Toggles superscript formatting to selection.
+
+| Subscript
+| Toggles subscript formatting to selection.
+
+| Cut
+| Cuts the selected contents and puts in into users clipboard.
+
+| Copy
+| Copies the selected contents and puts in into users clipboard.
+
+| Lang
+| Sets the language of the current selection. The value passed in should be a language spec described in xref:content-localization.adoc#content_langs[Content appearance options - `content_langs`].
+
+| Paste
+| Pastes the current clipboard contents into the editor.
+
+| mceInsertLink
+| Inserts a link at the current selection. The value is the URL to add to the link(s).
+
+| Unlink
+| Removes any links from the current selection.
+
+| JustifyLeft
+| Left aligns the current text block/image.
+
+| JustifyCenter
+| Center aligns the current text block/image.
+
+| JustifyRight
+| Right aligns the current text block/image.
+
+| JustifyFull
+| Full aligns the current text block/image.
+
+| JustifyNone
+| Removes any alignment to the selected text.
+
+| ForeColor
+| Changes the text color of the text. The value passed in should be the color.
+
+| HiliteColor
+| Changes the background color of the text. The value passed in should be the color.
+
+| FontName
+| Font name to apply to the text. The value passed in should be the font family name.
+
+| FontSize
+| Font size of the text. The value passed in should be a valid CSS font size.
+
+| LineHeight
+| Sets the line height of the text. The value passed in should be a valid CSS line height.
+include::partial$misc/requires_5_5v.adoc[]
+
+| mceApplyTextcolor
+| Applies text color or background color to the current selection. Requires an argument of either `'hilitecolor'` or `'forecolor'`, and the value of the color.
+
+| mceRemoveTextcolor
+| Removes the text color or background color from the current selection. Requires an argument of either `'hilitecolor'` or `'forecolor'`.
+
+| RemoveFormat
+| Removes any formats from the current selection.
+
+| mceBlockQuote
+| Wraps the selected text blocks into a block quote.
+
+| FormatBlock
+| Toggles the format of the current selection. The value passed in should be the format name. If no format is specified, the paragraph (`<p>`) format will be toggled. For a list of options, see: xref:content-formatting.adoc#built-informats[Content formatting options - Built-in formats].
+
+| mceInsertContent
+| Inserts contents at the current selection. The value passed in should be the contents to be inserted.
+
+| mceReplaceContent
+| Replaces the current selection. The value passed in should be the new content.
+
+| mceSetContent
+| Sets the contents of the editor. The value is the contents to set as the editor contents.
+
+| mceToggleFormat
+| Toggles a specified format by name. The value is the name of the format to toggle. For a list of options, see: xref:content-formatting.adoc#built-informats[Content formatting options - Built-in formats].
+
+| ToggleSidebar
+| Closes the currrent sidebar, or toogles the sidebar if the sidebar name is provided as a value (`_<sidebar-name>_`).
+
+| ToggleToolbarDrawer
+| Toggles the Toolbar Drawer. For information on toolbars, see: xref:editor-appearance.adoc#toolbar[User interface options - Toolbar].
+include::partial$misc/requires_5_5v.adoc[]
+
+| Indent
+| Indents the current selection.
+
+| Outdent
+| Outdents the current selection.
+
+| InsertHorizontalRule
+| Inserts a horizontal rule at the cursor location or inplace of the current selection.
+
+| InsertLineBreak
+| Adds a line break `<br/>` at the current cursor or selection.
+
+| mceInsertNewLine
+| Adds a new line at the current cursor or selection, such as splitting the current paragraph element.
+
+| mceInsertRawHTML
+| Inserts the RAW HTML passed as a value, overwriting the current selection or at the cursor position. *Warning*: This command allows dangerous `<script>` elements to be added to and executed in the editor.
+
+| mceToggleVisualAid
+| Toggles the visual aids for: tables without borders and anchors.
+
+| SelectAll
+| Selects all content in the editor.
+
+| Delete
+| Deletes the current selection from the editor.
+
+| ForwardDelete
+| Deletes the current selection or the character to the right of the cursor for a collapsed selection.
+
+| mceNewDocument
+| Removes all contents of the editor.
+
+| Redo
+| Redoes the last change to the editor.
+
+| Undo
+| Undoes the last change to the editor.
+
+| mceAddUndoLevel
+| Adds an undo level.
+
+| mceEndUndoLevel
+| Adds an undo level.
+
+| mceCleanup
+| Copies the current editor content and sets the content using the copy.
+
+| mceSelectNode
+| Selects a node in the editor. The target node is passed as the value (`_<DOM_node>_`).
+
+| mceSelectNodeDepth
+| Selects the parent DOM node 'n' levels above the current node.
+
+| mceRemoveNode
+| Removes the current node or the target node passed as the value (`_<DOM_node>_`).
+
+| mceFocus
+| Focuses and activates the editor. Places DOM focus inside the editor and also sets the editor as the active editor instance on the page.
+include::partial$misc/requires_5_9v.adoc[]
+|===
+
+*Examples*
+
+[source, js]
+----
+tinymce.activeEditor.execCommand('Bold');
+tinymce.activeEditor.execCommand('Italic');
+tinymce.activeEditor.execCommand('Underline');
+tinymce.activeEditor.execCommand('Strikethrough');
+tinymce.activeEditor.execCommand('Superscript');
+tinymce.activeEditor.execCommand('Subscript');
+tinymce.activeEditor.execCommand('Cut');
+tinymce.activeEditor.execCommand('Copy');
+tinymce.activeEditor.execCommand('Paste');
+tinymce.activeEditor.execCommand('mceInsertLink', false, 'https://www.tiny.cloud');
+tinymce.activeEditor.execCommand('Unlink');
+tinymce.activeEditor.execCommand('JustifyLeft');
+tinymce.activeEditor.execCommand('JustifyCenter');
+tinymce.activeEditor.execCommand('JustifyRight');
+tinymce.activeEditor.execCommand('JustifyFull');
+tinymce.activeEditor.execCommand('JustifyNone');
+tinymce.activeEditor.execCommand('ForeColor', false, '#FF0000');
+tinymce.activeEditor.execCommand('HiliteColor', false, '#FF0000');
+tinymce.activeEditor.execCommand('FontName', false, 'courier new');
+tinymce.activeEditor.execCommand('FontSize', false, '30px');
+tinymce.activeEditor.execCommand('LineHeight', false, '1.4');
+tinymce.activeEditor.execCommand('mceApplyTextcolor', 'hilitecolor', '#FF0000');
+tinymce.activeEditor.execCommand('mceRemoveTextcolor', 'hilitecolor');
+tinymce.activeEditor.execCommand('RemoveFormat');
+tinymce.activeEditor.execCommand('mceBlockQuote');
+tinymce.activeEditor.execCommand('FormatBlock', false, 'bold');
+tinymce.activeEditor.execCommand('mceInsertContent', false, 'My new content');
+tinymce.activeEditor.execCommand('mceReplaceContent', false, 'My replacement content');
+tinymce.activeEditor.execCommand('mceSetContent', false, 'My content');
+tinymce.activeEditor.execCommand('mceToggleFormat', false, 'bold');
+tinymce.activeEditor.execCommand('ToggleSidebar');  /* OR */
+tinymce.activeEditor.execCommand('ToggleSidebar', false, '<sidebar-name>');
+tinymce.activeEditor.execCommand('ToggleToolbarDrawer');
+tinymce.activeEditor.execCommand('Indent');
+tinymce.activeEditor.execCommand('Outdent');
+tinymce.activeEditor.execCommand('InsertHorizontalRule');
+tinymce.activeEditor.execCommand('InsertLineBreak');
+tinymce.activeEditor.execCommand('mceInsertNewLine');
+tinymce.activeEditor.execCommand('mceInsertRawHTML', false, '<p>Hello, World!</p>');
+tinymce.activeEditor.execCommand('mceToggleVisualAid');
+tinymce.activeEditor.execCommand('SelectAll');
+tinymce.activeEditor.execCommand('Delete');
+tinymce.activeEditor.execCommand('ForwardDelete');
+tinymce.activeEditor.execCommand('mceNewDocument');
+tinymce.activeEditor.execCommand('Redo');
+tinymce.activeEditor.execCommand('Undo');
+tinymce.activeEditor.execCommand('mceAddUndoLevel');
+tinymce.activeEditor.execCommand('mceEndUndoLevel');
+tinymce.activeEditor.execCommand('mceCleanup');
+tinymce.activeEditor.execCommand('mceSelectNode', false, '<DOM_node>');
+tinymce.activeEditor.execCommand('mceSelectNodeDepth', false, 2); // For two nodes up.
+tinymce.activeEditor.execCommand('mceRemoveNode'); /* OR */
+tinymce.activeEditor.execCommand('mceRemoveNode', false, '<DOM_node>');
+tinymce.activeEditor.execCommand('mceFocus');
+----
+
+[[plugincommands]]
+=== Plugin Commands
+
+Commands are available for the following plugins:
+
+* xref:advancedcode[Advanced Code]
+* xref:advancedlists[Advanced Lists]
+* xref:advancedtables[Advanced Tables]
+* xref:anchor[Anchor]
+* xref:autoresize[Autoresize]
+* xref:casechange[Case Change]
+* xref:charactermap[Character Map]
+* xref:code[Code]
+* xref:codesample[Code Sample]
+* xref:comments[Comments]
+* xref:directionality[Directionality]
+* xref:emoticons[Emoticons]
+* xref:export[Export]
+* xref:formatpainter[Format Painter]
+* xref:fullpage[Full Page]
+* xref:fullscreen[Full Screen]
+* xref:help[Help]
+* xref:image[Image]
+* xref:imagetools[Image Tools]
+* xref:insertdatetime[Insert Date/Time]
+* xref:link[Link]
+* xref:lists[Lists]
+* xref:media[Media]
+* xref:nonbreakingspace[Nonbreaking Space]
+* xref:pagebreak[Page Break]
+* xref:pasteorpowerpaste[Paste]
+* xref:permanentpen[Permanent Pen]
+* xref:powerpaste[PowerPaste]
+* xref:preview[Preview]
+* xref:print[Print]
+* xref:save[Save]
+* xref:searchandreplace[Search and Replace]
+* xref:spellchecker[Spell Checker]
+* xref:spellcheckerpro[Spell Checker Pro]
+* xref:table[Table]
+* xref:template[Template]
+* xref:tableofcontents[Table of Contents]
+* xref:visualblocks[Visual Blocks]
+* xref:visualcharacters[Visual Characters]
+* xref:wordcount[Word Count]
+
+[[advancedcode]]
+==== Advanced Code
+
+The following command requires the xref:advcode.adoc[Advanced Code (`advcode`)] plugin.
+
+include::partial$commands/code-cmds.adoc[]
+
+[[advancedlists]]
+==== Advanced Lists
+
+The following commands require the xref:advlist.adoc[Advanced Lists (`advlist`)] plugin.
+
+include::partial$commands/advlist-cmds.adoc[]
+
+[[advancedtables]]
+==== Advanced Tables
+
+The following commands require the xref:advtable.adoc[Advanced Tables (`advtable`)] plugin.
+
+include::partial$commands/advtable-cmds.adoc[]
+
+[[anchor]]
+==== Anchor
+
+The following command requires the xref:anchor.adoc[Anchor (`anchor`)] plugin.
+
+include::partial$commands/anchor-cmds.adoc[]
+
+[[autoresize]]
+==== Autoresize
+
+The following command requires the xref:autoresize.adoc[Autoresize (`autoresize`)] plugin.
+
+include::partial$commands/autoresize-cmds.adoc[]
+
+[[casechange]]
+==== Case Change
+
+The following commands require the xref:casechange.adoc[Case Change (`casechange`)] plugin.
+
+include::partial$commands/casechange-cmds.adoc[]
+
+[[charactermap]]
+==== Character Map
+
+The following command requires the xref:charmap.adoc[Character Map (`charmap`)] plugin.
+
+include::partial$commands/charmap-cmds.adoc[]
+
+[[code]]
+==== Code
+
+The following command requires the xref:code.adoc[Code (`code`)] plugin.
+
+include::partial$commands/code-cmds.adoc[]
+
+[[codesample]]
+==== Code Sample
+
+The following command requires the xref:codesample.adoc[Code Sample (`codesample`)] plugin.
+
+include::partial$commands/codesample-cmds.adoc[]
+
+[[comments]]
+==== Comments
+
+The following commands require the xref:comments.adoc[Comments (`tinycomments`)] plugin.
+
+include::partial$commands/tinycomments-cmds.adoc[]
+
+[[directionality]]
+==== Directionality
+
+The following commands require the xref:directionality.adoc[Directionality (`directionality`)] plugin.
+
+include::partial$commands/directionality-cmds.adoc[]
+
+[[emoticons]]
+==== Emoticons
+
+The following commands require the xref:emoticons.adoc[Emoticons (`emoticons`)] plugin.
+
+include::partial$commands/emoticons-cmds.adoc[]
+
+[[export]]
+==== Export
+
+The following commands require the xref:export.adoc[Export (`export`)] plugin.
+
+include::partial$commands/export-cmds.adoc[]
+
+[[formatpainter]]
+==== Format Painter
+
+The following commands require the xref:formatpainter.adoc[Format Painter (`formatpainter`)] plugin.
+
+include::partial$commands/formatpainter-cmds.adoc[]
+
+[[fullpage]]
+==== Full Page
+
+include::partial$DEPRECATED/fullpage.adoc[]
+
+The following command requires the xref:fullpage.adoc[Full Page (`fullpage`)] plugin.
+
+include::partial$commands/fullpage-cmds.adoc[]
+
+[[fullscreen]]
+==== Full Screen
+
+The following command requires the xref:fullscreen.adoc[Full Screen (`fullscreen`)] plugin.
+
+include::partial$commands/fullscreen-cmds.adoc[]
+
+[[help]]
+==== Help
+
+The following command requires the xref:help.adoc[Help (`help`)] plugin.
+
+include::partial$commands/help-cmds.adoc[]
+
+[[image]]
+==== Image
+
+The following command requires the xref:image.adoc[Image (`image`)] plugin.
+
+include::partial$commands/image-cmds.adoc[]
+
+[[imagetools]]
+==== Image Tools
+
+The following commands require the xref:editimage.adoc[Image Tools (`imagetools`)] plugin.
+
+include::partial$commands/imagetools-cmds.adoc[]
+
+[[insertdatetime]]
+==== Insert Date/Time
+
+The following commands require the xref:insertdatetime.adoc[Insert Date/Time (`insertdatetime`)] plugin.
+
+include::partial$commands/insertdatetime-cmds.adoc[]
+
+[[link]]
+==== Link
+
+The following command requires the xref:link.adoc[Link (`link`)] plugin.
+
+include::partial$commands/link-cmds.adoc[]
+
+[[lists]]
+==== Lists
+
+The following commands require the xref:lists.adoc[Lists (`lists`)] plugin.
+
+include::partial$commands/lists-cmds.adoc[]
+
+[[media]]
+==== Media
+
+The following command requires the xref:media.adoc[Media (`media`)] plugin.
+
+include::partial$commands/media-cmds.adoc[]
+
+[[nonbreakingspace]]
+==== Nonbreaking Space
+
+The following command requires the xref:nonbreaking.adoc[Nonbreaking Space (`nonbreaking`)] plugin.
+
+include::partial$commands/nbsp-cmds.adoc[]
+
+[[pagebreak]]
+==== Page Break
+
+The following command requires the xref:pagebreak.adoc[Page Break (`pagebreak`)] plugin.
+
+include::partial$commands/pagebreak-cmds.adoc[]
+
+[[pasteorpowerpaste]]
+==== Paste
+
+The following commands require the xref:paste.adoc[Paste (`paste`)] plugin.
+
+include::partial$commands/paste-cmds.adoc[]
+
+[[permanentpen]]
+==== Permanent Pen
+
+The following commands require the xref:permanentpen.adoc[Permanent Pen (`permanentpen`)] plugin.
+
+include::partial$commands/permanentpen-cmds.adoc[]
+
+[[powerpaste]]
+==== PowerPaste
+
+The following command requires the xref:introduction-to-powerpaste.adoc[PowerPaste (`powerpaste`)] plugin.
+
+include::partial$commands/powerpaste-cmds.adoc[]
+
+[[preview]]
+==== Preview
+
+The following command requires the xref:preview.adoc[Preview (`preview`)] plugin.
+
+include::partial$commands/preview-cmds.adoc[]
+
+[[print]]
+==== Print
+
+The following command requires the xref:print.adoc[Print (`print`)] plugin.
+
+include::partial$commands/print-cmds.adoc[]
+
+[[save]]
+==== Save
+
+The following commands require the xref:save.adoc[Save (`save`)] plugin.
+
+include::partial$commands/save-cmds.adoc[]
+
+[[searchandreplace]]
+==== Search and Replace
+
+The following command requires the xref:searchreplace.adoc[Search and Replace (`searchreplace`)] plugin.
+
+include::partial$commands/searchreplace-cmds.adoc[]
+
+[[spellchecker]]
+==== Spell Checker
+
+The following command requires the xref:spellchecker.adoc[Spell Checker (`spellchecker`)] plugin.
+
+include::partial$DEPRECATED/spellchecker.adoc[]
+
+include::partial$commands/spellchecker-cmds.adoc[]
+
+[[spellcheckerpro]]
+==== Spell Checker Pro
+
+The following commands require the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro (`tinymcespellchecker`)] plugin.
+
+include::partial$commands/tinymcespellchecker-cmds.adoc[]
+
+[[table]]
+==== Table
+
+The following commands require the xref:table.adoc[Table (`table`)] plugin.
+
+include::partial$commands/table-cmds.adoc[]
+
+[[template]]
+==== Template
+
+The following command requires the xref:template.adoc[Template (`template`)] plugin.
+
+include::partial$commands/template-cmds.adoc[]
+
+[[tableofcontents]]
+==== Table of Contents
+
+The following commands require the xref:tableofcontents.adoc[Table of Contents (`toc`)] plugin.
+
+include::partial$commands/toc-cmds.adoc[]
+
+[[visualblocks]]
+==== Visual Blocks
+
+The following command requires the xref:visualblocks.adoc[Visual Blocks (`visualblocks`)] plugin.
+
+include::partial$commands/visualblocks-cmds.adoc[]
+
+[[visualcharacters]]
+==== Visual Characters
+
+The following command requires the xref:visualchars.adoc[Visual Characters (`visualchars`)] plugin.
+
+include::partial$commands/visualchars-cmds.adoc[]
+
+[[wordcount]]
+==== Word Count
+
+The following command requires the xref:visualchars.adoc[Word Count (`wordcount`)] plugin.
+
+include::partial$commands/wordcount-cmds.adoc[]
+
+[[editormanagementcommands]]
+=== Editor Management Commands
+
+The following commands are used to manage editor instances.
+
+For example:
+
+[source, js]
+----
+tinymce.execCommand('mceAddEditor', false, '<editor_id>');
+tinymce.execCommand('mceRemoveEditor', false, '<editor_id>');
+tinymce.execCommand('mceToggleEditor', false, '<editor_id>');
+----
+
+|===
+| Command | Description
+
+| mceAddEditor
+| Converts the specified HTML or DOM element into an editor instance with the specified ID.
+
+| mceRemoveEditor
+| Removes an editor instance with the specified ID.
+
+| mceToggleEditor
+| Runs mceAddEditor if an editor is not detected for the specified ID, otherwise it runs either xref:apis/tinymce.editor.adoc#hide[hide] if the editor is visible or xref:apis/tinymce.editor.adoc#show[show] if it is not visible.
+|===
+
+[[querycommandstates]]
+== Query command states
+
+{productname} provides the `queryCommandState` API to allow developers to determine the current state of selected content. The query will return `true` if the content is formatted using the same CSS styles and elements used by the corresponding command.
+
+[[listingcoreandpluginquerycommandstates]]
+=== Listing core and plugin query command states
+
+To retrieve a list of avaliable queryable states from the active editor, run the following command from the browser console:
+
+[source, js]
+----
+tinymce.activeEditor.editorCommands.commands.state;
+----
+
+[[availablequerycommandstates]]
+=== Available query command states
+
+The following command states can be queried using the xref:apis/tinymce.editor.adoc#queryCommandState[queryCommandState] API.
+
+|===
+| Command | Description
+
+| Bold
+| Returns `true` if the content is formatted using the same markup as the {productname} `Bold` command.
+
+| InsertDefinitionList
+| Returns `true` if the content is formatted using the same markup as the {productname} `InsertDefinitionList` command.
+
+| InsertOrderedList
+| Returns `true` if the content is formatted using the same markup as the {productname} `InsertOrderedList` command.
+
+| InsertUnorderedList
+| Returns `true` if the content is formatted using the same markup as the {productname} `InsertUnorderedList` command.
+
+| Italic
+| Returns `true` if the content is formatted using the same markup as the {productname} `Italic` command.
+
+| JustifyCenter
+| Returns `true` if the content is formatted using the same markup as the {productname} `JustifyCenter` command.
+
+| JustifyFull
+| Returns `true` if the content is formatted using the same markup as the {productname} `JustifyFull` command.
+
+| JustifyLeft
+| Returns `true` if the content is formatted using the same markup as the {productname} `JustifyLeft` command.
+
+| JustifyRight
+| Returns `true` if the content is formatted using the same markup as the {productname} `JustifyRight` command.
+
+| mceBlockQuote
+| Returns `true` if the content is formatted using the same markup as the {productname} `mceBlockQuote` command.
+
+| Outdent
+| Returns `true` if the content is formatted using the same markup as the {productname} `Outdent` command.
+
+| Strikethrough
+| Returns `true` if the content is formatted using the same markup as the {productname} `Strikethrough` command.
+
+| Subscript
+| Returns `true` if the content is formatted using the same markup as the {productname} `Subscript` command.
+
+| Superscript
+| Returns `true` if the content is formatted using the same markup as the {productname} `Superscript` command.
+
+| ToggleToolbarDrawer
+| Returns `true` if the Toolbar Drawer is open. The state can be controlled by the {productname} `ToggleToolbarDrawer` command.
+include::partial$misc/requires_5_5v.adoc[]
+
+| Underline
+| Returns `true` if the content is formatted using the same markup as the {productname} `Underline` command.
+|===
+
+*Examples*
+
+[source, js]
+----
+tinymce.activeEditor.queryCommandState('Bold');
+tinymce.activeEditor.queryCommandState('InsertDefinitionList');
+tinymce.activeEditor.queryCommandState('InsertOrderedList');
+tinymce.activeEditor.queryCommandState('InsertUnorderedList');
+tinymce.activeEditor.queryCommandState('Italic');
+tinymce.activeEditor.queryCommandState('JustifyCenter');
+tinymce.activeEditor.queryCommandState('JustifyFull');
+tinymce.activeEditor.queryCommandState('JustifyLeft');
+tinymce.activeEditor.queryCommandState('JustifyRight');
+tinymce.activeEditor.queryCommandState('mceBlockQuote');
+tinymce.activeEditor.queryCommandState('Outdent');
+tinymce.activeEditor.queryCommandState('Strikethrough');
+tinymce.activeEditor.queryCommandState('Subscript');
+tinymce.activeEditor.queryCommandState('Superscript');
+tinymce.activeEditor.queryCommandState('ToggleToolbarDrawer');
+tinymce.activeEditor.queryCommandState('Underline');
+----
+
+[[querycommandvalues]]
+== Query command values
+
+{productname} provides the `queryCommandValue` API to allow developers to determine the current state of selected content. The query will return an object containing the relevant value.
+
+[[listingcoreandpluginquerycommandvalues]]
+=== Listing core and plugin query command values
+
+To retrieve a list of avaliable queryable command values from the active editor, run the following command from the browser console:
+
+[source, js]
+----
+tinymce.activeEditor.editorCommands.commands.value;
+----
+
+[[availablequerycommandvalues]]
+=== Available query command values
+
+The following command values can be queried using the xref:apis/tinymce.editor.adoc#queryCommandValue[queryCommandValue] API.
+
+|===
+| Command | Description
+
+| FontName
+| Returns the font name of the current selection.
+
+| FontSize
+| Returns the font size of the current selection.
+
+| LineHeight
+| Returns the line height of the current selection.
+include::partial$misc/requires_5_5v.adoc[]
+
+| ToggleSidebar
+| Returns the current state of sidebar (open or closed).
+|===
+
+*Examples*
+
+[source, js]
+----
+tinymce.activeEditor.queryCommandValue('FontName');
+tinymce.activeEditor.queryCommandValue('FontSize');
+tinymce.activeEditor.queryCommandValue('LineHeight');
+tinymce.activeEditor.queryCommandValue('ToggleSidebar');
+----
+
+[[querycommandvaluestableplugin]]
+=== Query command values: Table plugin
+
+include::partial$commands/table-query-cmd-values.adoc[]

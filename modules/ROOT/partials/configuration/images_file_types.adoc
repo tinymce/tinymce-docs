@@ -5,8 +5,8 @@ include::partial$misc/requires_5_6v.adoc[]
 
 This option configures which image file formats are accepted by the editor. Changing this option will adjust the following editor behaviour:
 
-* Which image file formats are allowed to be uploaded in the xref:plugins/opensource/image.adoc[Image] dialog.
-* Which image file formats are recognized and placed in an `img` element by the xref:plugins/opensource/paste.adoc[Paste] and xref:plugins/premium/powerpaste.adoc[PowerPaste] `smart_paste` functionality.
+* Which image file formats are allowed to be uploaded in the xref:image.adoc[Image] dialog.
+* Which image file formats are recognized and placed in an `img` element by the xref:paste.adoc[Paste] and xref:introduction-to-powerpaste.adoc[PowerPaste] `smart_paste` functionality.
 
 *Type:* `String`
 

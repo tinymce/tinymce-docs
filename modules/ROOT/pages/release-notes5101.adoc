@@ -1,0 +1,128 @@
+= TinyMCE 5.10.1
+:description: Release notes for TinyMCE 5.10.1
+:keywords: releasenotes bugfixes
+:title_nav: TinyMCE 5.10.1
+
+== Overview
+
+{productname} 5.10.1 was released for {enterpriseversion} and {cloudname} on Wednesday, November 10^th^, 2021. It includes {productname} 5.10.1 and additional changes to premium plugins. These release notes provide an overview of the changes for {productname} 5.10.1, including:
+
+* xref:accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
+* xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
+* xref:general-bug-fixes[General bug fixes]
+* xref:security-fixes[Security fixes]
+* xref:upgrading-to-the-latest-version-of-tinymce-5[Upgrading to the latest version of TinyMCE 5]
+
+include::partial$misc/releasenotes_for_stable.adoc[]
+
+[[accompanying-premium-plugin-changes]]
+== Accompanying Premium Plugin changes
+
+The following premium plugin updates were released alongside {productname} 5.10.1.
+
+=== Advanced Code 2.3.2
+
+The {productname} 5.10.1 release includes an accompanying release of the *Advanced Code* premium plugin.
+
+*Advanced Code* 2.3.2 fixes an exception getting thrown for hints when the editor was rendered in a shadow root.
+
+For information on the Advanced Code plugin, see: xref:advcode.adoc[Advanced Code plugin].
+
+=== PowerPaste 5.6.1
+
+The {productname} 5.10.1 release includes an accompanying release of the *PowerPaste* premium plugin.
+
+*PowerPaste* 5.6.1 fixes a bug where pasting text content with multiple items on the clipboard did not work.
+
+For information on the PowerPaste plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste plugin].
+
+[[accompanying-premium-self-hosted-server-side-component-changes]]
+== Accompanying Premium self-hosted server-side component changes
+
+The {productname} 5.10.1 release includes accompanying changes affecting the {productname} *self-hosted* services for the following plugins:
+
+* The Enhanced Media Embed plugin (`mediaembed`)
+* The Export plugin (`export`)
+* The Image Tools plugin (`imagetools`)
+* The Link Checker plugin (`linkchecker`)
+* The Spell Checker Pro plugin (`tinymcespellchecker`)
+
+The Java server-side components have been updated to the following versions:
+
+* `ephox-spelling.war`: 2.118.1
+* `ephox-hyperlinking.war`: 2.105.6
+* `ephox-image-proxy.war`: 2.105.5
+
+This version requires Java 8 or higher. For information on the removal of Java 7 support, see: xref:release-notes53.adoc#removalofjava7support[Removal of Java 7 support for TinyMCE 5.3 and later].
+
+For information on:
+
+* The Spell Checker Pro plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin].
+* The Link Checker plugin, see: xref:linkchecker.adoc[Link Checker plugin].
+* The Image Tools plugin, see: xref:editimage.adoc[Image Tools plugin].
+* The Enhanced Media Embed plugin, see: xref:introduction-to-mediaembed.adoc[Enhanced Media Embed plugin].
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+
+=== Security related dependency update for all 3 server-side services
+
+IMPORTANT: During further scans, some vulnerable dependencies were missed in this release. As such, these security issues have not been resolved in the 5.10.1 release and will be resolved in an upcoming release. Note that no details of the security vulnerabilities have been publicly disclosed at the time of release.
+
+[.line-through]
+All 3 server-side components have been updated to include dependency updates addressing security issues. This includes _High_ severity vulnerability fixes.
+
+=== Fixed Link Checker highlighting for unresolvable hosts
+
+Invalid links for unresolvable (non-existent) hosts are correctly identified and highlighted in the editor.
+
+=== Updating the self-hosted server-side components
+
+The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
+
+. Update your Java Application Server to the minimum required version:
+ ** Eclipse Jetty 9.4 or later
+ ** Apache Tomcat:
+  *** 9 or later
+  *** 8.5.12+
+  *** 8.0.42+
+  *** 7.0.76+
+. Replace the existing server-side `.war` files with the `.war` files bundled with {productname} 5.10.1 or later.
+
+For information on:
+
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+* Deploying the server-side components using Docker, see: xref:bundle-intro-setup.adoc[Containerized service deployments].
+
+[[general-bug-fixes]]
+== General bug fixes
+
+{productname} 5.10.1 provides fixes for the following bugs:
+
+* The iframe aria help text was not read by some screen readers.
+* Clicking the `forecolor` or `backcolor` toolbar buttons would do nothing until selecting a color.
+* Crop functionality did not work in the `imagetools` plugin when the editor was rendered in a shadow root.
+* Fixed an exception thrown on Safari when closing the `searchreplace` plugin dialog.
+* The `autolink` plugin did not convert URLs to links when starting with a bracket.
+* The `autolink` plugin incorrectly created nested links in some cases.
+* Tables could have an incorrect height set on rows when rendered outside of the editor.
+* In certain circumstances, the table of contents plugin would incorrectly add an extra empty list item.
+* The insert table grid menu displayed an incorrect size when re-opening the grid.
+* The word count plugin was treating the zero width space character (`+&#8203;+`) as a word.
+
+[[security-fixes]]
+== Security fixes
+
+{productname} 5.10.1 provides fixes for the following security issues:
+
+IMPORTANT: During further scans, some vulnerable dependencies were missed in this release. As such, these security issues have not been resolved in the 5.10.1 release and will be resolved in an upcoming release. Note that no details of the security vulnerabilities have been publicly disclosed at the time of release.
+
+[.line-through]
+All 3 server-side components have been updated to include dependency updates addressing security issues. This includes _High_ severity vulnerability fixes.
+
+[.line-through]
+For information on the server-side components updates, see: xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes].
+
+:enterprise: true
+
+include::partial$install/upgrading-info.adoc[]
+
+:enterprise: false

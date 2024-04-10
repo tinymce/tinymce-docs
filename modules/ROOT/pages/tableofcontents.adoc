@@ -1,0 +1,51 @@
+= Table of Contents plugin
+:controls: toolbar button, menu item
+:description: Insert a simple Table of Contents into TinyMCE editor
+:keywords: toc toc_depth toc_class toc_header
+:title_nav: Table of Contents
+
+:pluginname: Table of Contents
+:plugincode: toc
+
+include::partial$DEPRECATED/toc.adoc[]
+
+The `toc` plugin will generate basic _Table of Contents_ and insert it into the editor at the current cursor position. Items for the table will be taken from the headers found in the content.
+
+== Basic setup
+
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'toc',
+  toolbar: 'toc',
+  menubar: 'insert'
+});
+----
+
+The _Table of Contents_ will have a simple HTML structure - a wrapper `div` element, a header with _editable_ title and unordered nested list with navigation links. Nesting depth is customizable.
+
+Internally plugin doesn't apply any inline styles. Basic formatting can be added via xref:editor-content-css.adoc[Boilerplate Content CSS], that can be customized to your needs.
+
+[source, css]
+----
+include::partial$css-codeblock/toc-plugin-css.adoc[]
+----
+
+== Options
+
+include::partial$configuration/toc_depth.adoc[]
+
+include::partial$configuration/toc_header.adoc[]
+
+include::partial$configuration/toc_class.adoc[]
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+
+== Commands
+
+The Table of Contents plugin provides the following JavaScript commands.
+
+include::partial$commands/toc-cmds.adoc[]

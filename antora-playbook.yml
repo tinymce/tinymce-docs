@@ -1,5 +1,5 @@
 site:
-  title: TinyMCE 5 Documentation
+  title: TinyMCE Documentation
   url: https://www.tiny.cloud/docs
   start_page: tinymce::index.adoc
 content:
@@ -7,11 +7,16 @@ content:
   - url: ./
     branches: HEAD
     start_path: ./
+  - url: https://github.com/MitchC1999/tinymce-docs.git
+    branches: [ 6, 7 ]
 urls:
   html_extension_style: indexify
+  latest_version_segment: latest
 ui:
   bundle:
     url: https://tiny-cloud-docs-antora-themes-staging.s3.amazonaws.com/ui-bundle.zip
 asciidoc:
   extensions:
     - '@tinymce/antora-extension-livedemos'
+runtime:
+  fetch: true

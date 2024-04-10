@@ -1,0 +1,38 @@
+= TinyMCE distraction-free editing mode
+:description: Mode that renders a lightweight UI for inline editing.
+:keywords: Mode inlite distraction-free
+:title_nav: Distraction-free editing mode
+
+The *Distraction-free* mode renders the editor in inline mode without the menu bar or toolbar. Most of the editor functionality is accessed using: keyboard shortcuts, contextual menus, contextual toolbars, and toolbar functions provided by the `quickbars` plugin.
+
+include::partial$misc/notonmobile.adoc[]
+
+== Enabling distraction-free mode
+
+To enable a basic distraction-free editor, use the following configuration.
+
+[source, js]
+----
+tinymce.init({
+    selector: 'div.tinymce',
+    plugins: [ 'quickbars' ],
+    toolbar: false,
+    menubar: false,
+    inline: true
+});
+----
+
+The demonstration editor below is a distraction-free editor with some customizations.
+
+liveDemo::editor-dfree[]
+
+== Related configuration options
+
+For information on:
+
+* Configuring a Quick Toolbar; including `quicklink`, `quickimage`, and `quicktable`; see: xref:quickbars.adoc[Quick Toolbar plugin].
+* Configuring a contextual toolbar, see: xref:contexttoolbar.adoc[Context Toolbar].
+* Configuring a contextual menu, see: xref:contextmenu.adoc[Context Menu].
+* Disabling the {productname} menubar, see: xref:editor-appearance.adoc#menubar[Menubar].
+* The `inline` setting, see: xref:editor-appearance.adoc#inline[inline].
+

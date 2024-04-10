@@ -43,10 +43,10 @@ When the `<form>` is submitted the {productname} editor mimics the behavior of a
 
 === Additional information about using TinyMCE Cloud
 
-There are a few things you need to consider when using {cloudname}. If you wish to use any local plugins (like http://www.moxiemanager.com[MoxieManager] for example) you need to load them using the new xref:configure/integration-and-setup.adoc#external_plugins[`external_plugins`] option.
+There are a few things you need to consider when using {cloudname}. If you wish to use any local plugins (like http://www.moxiemanager.com[MoxieManager] for example) you need to load them using the new xref:integration-and-setup.adoc#external_plugins[`external_plugins`] option.
 
-Also, if you wish to use a custom language, you need to enter the location of the language file into the new xref:configure/localization.adoc#language_url[`language_url`] option.
+Also, if you wish to use a custom language, you need to enter the location of the language file into the new xref:content-localization.adoc#language_url[`language_url`] option.
 
-You may also want to select a specific version of the editor from {cloudname} and you should head on over to xref:cloud-deployment-guide/editor-plugin-version.adoc[Specify editor & plugin versions] for details on that.
+You may also want to select a specific version of the editor from {cloudname} and you should head on over to xref:editor-plugin-version.adoc[Specify editor & plugin versions] for details on that.
 
-NOTE: If you have decided to use {cloudname}, please move on to the next step xref:general-configuration-guide/work-with-plugins.adoc[working with plugins] where you'll start customizing {productname}. If you'd like to learn about other install options please keep reading.
+NOTE: If you have decided to use {cloudname}, please move on to the next step xref:work-with-plugins.adoc[working with plugins] where you'll start customizing {productname}. If you'd like to learn about other install options please keep reading.

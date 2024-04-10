@@ -1,0 +1,215 @@
+= Real-time Collaboration (RTC) JWT Authentication Setup
+:description: Guide on how to setup JWT Authentication for RTC
+:keywords: jwt authentication
+:title_nav: JWT Authentication Setup
+
+:pluginname: Real-time Collaboration (RTC)
+:plugincode: rtc
+
+include::partial$rtc/admon-rtc-eol.adoc[]
+
+== Introduction
+
+Real-time Collaboration (RTC) requires setting up JSON Web Token (JWT) authentication. This is to ensure that only authenticated users will be able to access and collaborate on documents.
+
+A JSON Web Token (JWT) endpoint is a service for generating and providing authorization tokens to users. These tokens are used to verify that submitted content was sent by an authorized user and to prevent submissions by unauthorized collaborators.
+
+JWT is a standard authorization solution for web services and is documented in detail at https://jwt.io/[https://jwt.io/]. This guide aims to show how to setup JWT authentication for RTC.
+
+== Overview
+
+* xref:settingupjwtauthenticationforreal-timecollaboration[Setting up JWT authentication for Real-time Collaboration]
+* xref:setupajsonwebtokenjwtendpoint[Set up a JSON Web Token (JWT) endpoint]
+* xref:jwtendpointexamples[JWT endpoint examples]
+
+[[settingupjwtauthenticationforreal-timecollaboration]]
+== Setting up JWT authentication for Real-time Collaboration
+
+To set up JSON Web Token (JWT) authentication for {productname} {pluginname}:
+
+. Add a public key to your {accountpage}.
+. Set up a JSON Web Token (JWT) Provider endpoint.
+. Configure {productname} to use the JWT endpoint.
+
+include::partial$auth/private-public-key-pairs-for-tiny-cloud-services.adoc[]
+
+[[setupajsonwebtokenjwtendpoint]]
+== Set up a JSON Web Token (JWT) endpoint
+
+include::partial$auth/how-jwts-are-used.adoc[]
+
+[[jwtendpointrequirements]]
+=== JWT endpoint requirements
+
+A JSON Web Token (JWT) endpoint for {pluginname} requires:
+
+* The endpoint or server accepts a JSON HTTP POST request.
+* User authentication - A method of verifying the user, and that they should have access to the document.
+* The JWTs are generated (signed) using the _private_ key that pairs with the _public_ key generated at (or provided to) link:{accountpageurl}/jwt/[{accountpage} - JWT Keys].
+* The endpoint or server produces a JSON response with the token. The RTC plugin will submit the token with requests to the RTC Server.
+
+[[requiredjwtclaimsforreal-timecollaboration]]
+=== Required JWT claims for Real-time Collaboration
+
+JSON Web Tokens produced by the JWT endpoint must include the following claims:
+
+[cols=",^,^,"]
+|===
+| Data | Optional or required | Type | Description
+
+| `sub`
+| required
+| `string` or `URI`
+| The _unique_ user ID string or URI.
+
+| `exp`
+| required
+| `number`
+| The unix timestamp for when the token expires.
+|===
+
+The `sub` field is used to identify users to avoid sending sensitive or identity information to {companyname} in plain text. By minimizing the information in JWT claims and relying on the client-side resolution of user IDs, no private data will be transmitted through the RTC server without encryption.
+
+CAUTION: The RTC plugin does not request a new JWT if user's JWT expires during a session. To avoid user disconnections from expired JWTs, ensure the `exp` claim allows for a reasonable
+
+[[jwtendpointexamples]]
+== JWT endpoint examples
+
+The following examples show a minimal JWT endpoint and how to configure {productname} to use them.
+
+* xref:phptokenproviderendpointexample[PHP token provider endpoint example]
+* xref:nodejstokenproviderendpointexample[Node.js token provider endpoint example]
+
+[[phptokenproviderendpointexample]]
+=== PHP token provider endpoint example
+
+This example uses the https://github.com/firebase/php-jwt[Firebase JWT library] provided through the Composer dependency manager.
+
+`$privateKey` should be the _private_ key that pairs with the _public_ key generated at (or provided to) link:{accountpageurl}/jwt/[{accountpage} - JWT Keys].
+
+==== jwt.php
+
+[source,php]
+----
+<?php
+require 'vendor/autoload.php';
+use \Firebase\JWT\JWT;
+
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+
+$privateKey = <<<EOD
+-----BEGIN PRIVATE KEY-----
+...
+-----END PRIVATE KEY-----
+EOD;
+
+// NOTE: Before you proceed with the TOKEN, verify your users session or access.
+
+$payload = array(
+  "sub" => "123", // unique user ID string
+  "exp" => time() + 60 * 10 // 10 minute expiration
+);
+
+try {
+  $token = JWT::encode($payload, $privateKey, 'RS256');
+  http_response_code(200);
+  header('Content-Type: application/json');
+  echo json_encode(array("token" => $token));
+} catch (Exception $e) {
+  http_response_code(500);
+  header('Content-Type: application/json');
+  echo $e->getMessage();
+}
+?>
+----
+
+==== TinyMCE example using the jwt.php endpoint
+
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'rtc',
+  rtc_document_id: 'unique-document-id',
+  rtc_encryption_provider: () => Promise.resolve({ key: 'a secret key' }),
+  rtc_token_provider: ({ documentId }) =>
+    fetch('jwt.php', {
+      method: 'POST',
+      credentials: 'include',
+      body: JSON.stringify({ documentId }),
+    })
+    .then((response) => response.json())
+    .then(({ jwt })) => ({ token: jwt })
+    .catch((error) => console.log('Failed to return a JWT\n' + error))
+});
+----
+
+[[nodejstokenproviderendpointexample]]
+=== Node.js token provider endpoint example
+
+This example shows how to set up a Node.js express handler that produces the tokens. It requires you to install the Express web framework and the `jsonwebtoken` Node module. For instructions on setting up a basic Node.js Express server and adding {productname}, see: xref:expressjs-pm.adoc[Integrating TinyMCE into an Express JS App].
+
+`privateKey` should be the _private_ key that pairs with the _public_ key generated at (or provided to) link:{accountpageurl}/jwt/[{accountpage} - JWT Keys].
+
+==== /jwt
+
+[source,js]
+----
+const express = require('express');
+const jwt = require('jsonwebtoken');
+const cors = require('cors');
+
+const app = express();
+app.use(cors());
+
+const privateKey = `
+----BEGIN PRIVATE KEY----
+...
+----END PRIVATE KEY----
+`;
+
+app.post('/jwt', function (req, res) {
+  // NOTE: Before you proceed with the TOKEN, verify your users' session or access.
+  const payload = {
+    sub: '123', // Unique user ID string
+    exp: Math.floor(Date.now() / 1000) + (60 * 10) // 10 minutes expiration
+  };
+
+try {
+    const token = jwt.sign(payload, privateKey, { algorithm: 'RS256'});
+    res.set('content-type', 'application/json');
+    res.status(200);
+    res.send(JSON.stringify({
+      token: token
+    }));
+  } catch (e) {
+    res.status(500);
+    res.send(e.message);
+  }
+});
+
+app.listen(3000);
+----
+
+==== TinyMCE example using the /jwt endpoint
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'rtc',
+  rtc_document_id: 'unique-document-id',
+  rtc_encryption_provider: () => Promise.resolve({ key: 'a secret key' }),
+
+rtc_token_provider: ({ documentId }) =>
+    fetch('/jwt', {
+      method: 'POST',
+      credentials: 'include',
+      body: JSON.stringify({ documentId }),
+    })
+    .then((response) => response.json())
+    .then(({ jwt }) => ({ token: jwt }))
+    .catch((error) => console.log('Failed to return a JWT\n' + error))
+});
+----

@@ -1,0 +1,54 @@
+= Getting started
+:description: Getting started with Tiny Drive
+:keywords: tinydrive starter projects
+:title_nav: Getting started
+
+== Prerequisites
+
+* A {cloudname} API key from link:{accountsignup}[{accountpage}].
+* A JWT key generated at link:{accountpageurl}[{accountpageurl}]. Temporarily store the generated keys for use in the following procedure.
+
+{cloudfilemanager} allows trouble free management of assets such as images and files in the cloud. {cloudfilemanager} is only available in link:{accountsignup}[{cloudname}] and requires registering for an API key.
+
+To enable this functionality in the {productname} editor, add `tinydrive` to the list of plugins in the `tinymce.init` call. The user also needs to be authenticated using a xref:tinydrive-jwt-authentication.adoc[JSON Web Token (JWT)].
+
+Once {cloudfilemanager} is enabled, it integrates as the default file picker for the Image, Link, and Media dialogs and as the default upload handler for local images being pasted or inserted into the document.
+
+[[starterprojects]]
+== Starter projects
+
+To get started quickly and understand how {cloudfilemanager} works, we highly recommend trying one of the starter projects on Github, should get you up and running in no time.
+
+The starter projects have their own procedures to get {cloudfilemanager} up and running. Choose a starter project of a familiar language and follow the steps to setup {cloudfilemanager}. The links will take you to the Github page for the starter project of your choice, where the source code is available for you to view.
+
+[discrete]
+==== Choose a familiar language
+
+[cols="4*"]
+|===
+^.^| image:netcore.svg[,120,link=https://github.com/tinymce/tinydrive-dotnet-mvc-starter]
+^.^| image:nodejs.svg[,120,link=https://github.com/tinymce/tinydrive-nodejs-starter]
+^.^| image:php.svg[,120,link=https://github.com/tinymce/tinydrive-php-starter]
+^.^| image:java.png[,65,120,link=https://github.com/tinymce/tinydrive-java-spring-starter]
+
+^| https://github.com/tinymce/tinydrive-dotnet-mvc-starter[.NET Core]
+^| https://github.com/tinymce/tinydrive-nodejs-starter[Node.js]
+^| https://github.com/tinymce/tinydrive-php-starter[PHP]
+^| https://github.com/tinymce/tinydrive-java-spring-starter[Java Spring]
+|===
+
+=== Implementing with your system
+
+The next step, after seeing how {cloudfilemanager} works in these starter projects, is trying to implement it with your own system, the xref:tinydrive-jwt-authentication.adoc[JSON Web Token] authentication solution would have to be tied to the login authentication of your system. This usually means integrating the JWT authentication to the existing session authentication so that users automatically login to {cloudfilemanager} and your system at the same time.
+
+==== Additional resources
+
+Go through the following additional resources to figure out how to configure {cloudfilemanager} with a specific system.
+
+* We recommend reading up and trying to understand how xref:tinydrive-jwt-authentication.adoc[JWT authentication] works.
+* xref:tinydrive-setup-options.adoc[Configuration Options]
+* xref:tinydrive-integrations.adoc[Integrations]
+
+== Need help?
+
+{companyname} is striving to make {cloudfilemanager} as useful and simple as possible. For support related issues such as problems with JWT authentication and implementing {cloudfilemanager}, check the xref:get-help.adoc[help page] or please contact link:{supporturl}[{supportname}].

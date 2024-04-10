@@ -1,0 +1,96 @@
+= tinymce.dom.StyleSheetLoader
+:navtitle: tinymce.dom.StyleSheetLoader
+:description: This class handles loading of external stylesheets and fires events when these are loaded.
+:keywords: load, loadAll, unload, unloadAll
+:moxie-type: api
+
+This class handles loading of external stylesheets and fires events when these are loaded.
+
+[[summary]]
+== Summary
+
+[[methods-summary]]
+=== Methods
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#load[load()]|Loads the specified CSS file and calls the `success` callback if successfully loaded, otherwise calls `failure`.|`xref:apis/tinymce.dom.stylesheetloader.adoc[StyleSheetLoader]`
+|xref:#loadAll[loadAll()]|Loads the specified CSS files and calls the `success` callback if successfully loaded, otherwise calls `failure`.|`xref:apis/tinymce.dom.stylesheetloader.adoc[StyleSheetLoader]`
+|xref:#unload[unload()]|Unloads the specified CSS file if no resources currently depend on it.
+
+
+__Added in TinyMCE 5.5__|`xref:apis/tinymce.dom.stylesheetloader.adoc[StyleSheetLoader]`
+|xref:#unloadAll[unloadAll()]|Unloads each specified CSS file if no resources currently depend on it.
+
+
+__Added in TinyMCE 5.5__|`xref:apis/tinymce.dom.stylesheetloader.adoc[StyleSheetLoader]`
+|===
+
+[[methods]]
+== Methods
+
+[[load]]
+=== load()
+[source, javascript]
+----
+load(url: String, success: Function, failure: Function)
+----
+Loads the specified CSS file and calls the `success` callback if successfully loaded, otherwise calls `failure`.
+
+==== Parameters
+
+* `url (String)` - Url to be loaded.
+* `success (Function)` - Callback to be executed when loaded.
+* `failure (Function)` - Callback to be executed when failed loading.
+
+'''
+
+[[loadAll]]
+=== loadAll()
+[source, javascript]
+----
+loadAll(urls: Array, success: Function, failure: Function)
+----
+Loads the specified CSS files and calls the `success` callback if successfully loaded, otherwise calls `failure`.
+
+==== Parameters
+
+* `urls (Array)` - URLs to be loaded.
+* `success (Function)` - Callback to be executed when the style sheets have been successfully loaded.
+* `failure (Function)` - Callback to be executed when the style sheets fail to load.
+
+'''
+
+[[unload]]
+=== unload()
+[source, javascript]
+----
+unload(url: String)
+----
+Unloads the specified CSS file if no resources currently depend on it.
+
+
+__Added in TinyMCE 5.5__
+
+==== Parameters
+
+* `url (String)` - URL to unload or remove.
+
+'''
+
+[[unloadAll]]
+=== unloadAll()
+[source, javascript]
+----
+unloadAll(urls: Array)
+----
+Unloads each specified CSS file if no resources currently depend on it.
+
+
+__Added in TinyMCE 5.5__
+
+==== Parameters
+
+* `urls (Array)` - URLs to unload or remove.
+
+'''

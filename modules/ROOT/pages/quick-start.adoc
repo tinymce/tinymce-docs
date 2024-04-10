@@ -62,7 +62,7 @@ image:icons/warning.svg[warning icon]*This domain is not registered with {cloudn
 
 Replace `no-api-key` in the source script (`+<script src=...+`) with a {cloudname} API key, which is created when signing up to the link:{accountsignup}[{cloudname}].
 
-Signing up for a {cloudname} API key will also provide a trial of the xref:enterprise/index.adoc[Premium Plugins].
+Signing up for a {cloudname} API key will also provide a trial of the xref:enterprise.adoc[Premium Plugins].
 
 == Step 4: Save the content with a form POST
 
@@ -72,4 +72,4 @@ When the `<form>` is submitted, {productname} {productmajorversion} will `POST` 
 
 include::partial$misc/quickstart-next-steps.adoc[]
 
-* Self-hosting {productname}, see: xref:general-configuration-guide/advanced-install.adoc[Installing {productname}].
+* Self-hosting {productname}, see: xref:installation.adoc[Installing {productname}].

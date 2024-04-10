@@ -13,8 +13,8 @@ include::partial$configuration/content_langs_base.adoc[]
 The Spell Checker Pro plugin will use the `code` property to determine which dictionary to use on the content, unless the `customCode` property is available. The language tag specified by `customCode` overrides the spelling dictionary, to allow for non-standard languages such as the medical dictionaries provided with Spell Checker Pro. For all languages, ensure that:
 
 * The `code` property is valid language tag, according to https://www.ietf.org/rfc/bcp/bcp47.txt[Tags for Identifying Languages (BCP47)]
-* Either the `code` property is one of the xref:plugins/premium/tinymcespellchecker.adoc#supportedlanguages[Supported Languages] or the `customCode` override property is defined.
-* The `customCode` property is one of the xref:plugins/premium/tinymcespellchecker.adoc#supportedlanguages[Supported Languages] if it is defined.
+* Either the `code` property is one of the xref:introduction-to-tiny-spellchecker.adoc#supportedlanguages[Supported Languages] or the `customCode` override property is defined.
+* The `customCode` property is one of the xref:introduction-to-tiny-spellchecker.adoc#supportedlanguages[Supported Languages] if it is defined.
 
 For example:
 

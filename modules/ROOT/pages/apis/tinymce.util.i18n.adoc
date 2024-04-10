@@ -1,0 +1,131 @@
+= tinymce.util.I18n
+:navtitle: tinymce.util.I18n
+:description: I18n class that handles translation of TinyMCE UI. Uses po style with csharp style parameters.
+:keywords: add, getCode, hasCode, isRtl, setCode, translate
+:moxie-type: api
+
+I18n class that handles translation of TinyMCE UI. Uses po style with csharp style parameters.
+
+[[summary]]
+== Summary
+
+[[methods-summary]]
+=== Methods
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#add[add()]|Adds translations for a specific language code.
+Translation keys are set to be case insensitive.|`xref:apis/tinymce.util.i18n.adoc[I18n]`
+|xref:#getCode[getCode()]|Returns the current language code.|`xref:apis/tinymce.util.i18n.adoc[I18n]`
+|xref:#hasCode[hasCode()]|Returns true/false if specified language pack exists.|`xref:apis/tinymce.util.i18n.adoc[I18n]`
+|xref:#isRtl[isRtl()]|Returns true/false if the currently active language pack is rtl or not.|`xref:apis/tinymce.util.i18n.adoc[I18n]`
+|xref:#setCode[setCode()]|Sets the current language code.|`xref:apis/tinymce.util.i18n.adoc[I18n]`
+|xref:#translate[translate()]|Translates the specified text.
+
+It has a few formats:
+I18n.translate("Text");
+I18n.translate(["Text +{0}+/+{1}+", 0, 1]);
+I18n.translate({raw: "Raw string"});|`xref:apis/tinymce.util.i18n.adoc[I18n]`
+|===
+
+[[methods]]
+== Methods
+
+[[add]]
+=== add()
+[source, javascript]
+----
+add(code: String, items: Object)
+----
+Adds translations for a specific language code.
+Translation keys are set to be case insensitive.
+
+==== Parameters
+
+* `code (String)` - Language code like sv_SE.
+* `items (Object)` - Name/value object where key is english and value is the translation.
+
+'''
+
+[[getCode]]
+=== getCode()
+[source, javascript]
+----
+getCode(): String
+----
+Returns the current language code.
+
+==== Return value
+
+* `String` - Current language code.
+
+'''
+
+[[hasCode]]
+=== hasCode()
+[source, javascript]
+----
+hasCode(code: String): Boolean
+----
+Returns true/false if specified language pack exists.
+
+==== Parameters
+
+* `code (String)` - Code to check for.
+
+==== Return value
+
+* `Boolean` - True if the current language pack for the specified code exists.
+
+'''
+
+[[isRtl]]
+=== isRtl()
+[source, javascript]
+----
+isRtl(): Boolean
+----
+Returns true/false if the currently active language pack is rtl or not.
+
+==== Return value
+
+* `Boolean` - True if the current language pack is rtl.
+
+'''
+
+[[setCode]]
+=== setCode()
+[source, javascript]
+----
+setCode(newCode: String)
+----
+Sets the current language code.
+
+==== Parameters
+
+* `newCode (String)` - Current language code.
+
+'''
+
+[[translate]]
+=== translate()
+[source, javascript]
+----
+translate(text: String | Object | Array): String
+----
+Translates the specified text.
+
+It has a few formats:
+I18n.translate("Text");
+I18n.translate(["Text +{0}+/+{1}+", 0, 1]);
+I18n.translate({raw: "Raw string"});
+
+==== Parameters
+
+* `text (String | Object | Array)` - Text to translate.
+
+==== Return value
+
+* `String` - String that got translated.
+
+'''

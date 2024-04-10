@@ -1,0 +1,712 @@
+= tinymce
+:navtitle: tinymce
+:description: TinyMCE core class.
+:keywords: $, DOM, PluginManager, ScriptLoader, ThemeManager, activeEditor, add, addI18n, baseURI, baseURL, create, createEditor, createNS, documentBaseURL, each, editors, execCommand, explode, get, grep, hasOwnProperty, i18n, inArray, init, is, isArray, majorVersion, makeMap, map, minorVersion, overrideDefaults, releaseDate, remove, resolve, setActive, suffix, toArray, translate, triggerSave, trim, walk
+:moxie-type: api
+
+TinyMCE core class.
+
+[[summary]]
+== Summary
+
+[[properties]]
+=== Properties
+[cols="2,1,4,1",options="header"]
+|===
+|Name|Type|Summary|Defined by
+|$|`xref:apis/tinymce.dom.domquery.adoc[DomQuery]`|Dom query instance.
+
+
+__Deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0.__|`xref:apis/tinymce.root.adoc[tinymce]`
+|DOM|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`| Global DOM instance.|`xref:apis/tinymce.root.adoc[tinymce]`
+|PluginManager|`xref:apis/tinymce.addonmanager.adoc[AddOnManager]`| Global PluginManager instance. Instance of AddOnManager.|`xref:apis/tinymce.root.adoc[tinymce]`
+|ScriptLoader|`xref:apis/tinymce.dom.scriptloader.adoc[ScriptLoader]`| Global ScriptLoader instance.|`xref:apis/tinymce.root.adoc[tinymce]`
+|ThemeManager|`xref:apis/tinymce.addonmanager.adoc[AddOnManager]`||`xref:apis/tinymce.root.adoc[tinymce]`
+|activeEditor|`xref:apis/tinymce.editor.adoc[Editor]`|Currently active editor instance.|`xref:apis/tinymce.root.adoc[tinymce]`
+|baseURI|`xref:apis/tinymce.util.uri.adoc[URI]`|Absolute baseURI for the installation path of TinyMCE.|`xref:apis/tinymce.root.adoc[tinymce]`
+|baseURL|`String`|Base URL where the root directory if TinyMCE is located.|`xref:apis/tinymce.root.adoc[tinymce]`
+|documentBaseURL|`String`|Document base URL where the current document is located.|`xref:apis/tinymce.root.adoc[tinymce]`
+|editors|`Object`|Collection of editor instances.
+
+
+__Deprecated in TinyMCE 4.7 and has been marked for removal in TinyMCE 6.0__ - Use tinymce.get() instead.|`xref:apis/tinymce.root.adoc[tinymce]`
+|i18n|`Object`|Collection of language pack data.|`xref:apis/tinymce.root.adoc[tinymce]`
+|majorVersion|`String`|Major version of TinyMCE build.|`xref:apis/tinymce.root.adoc[tinymce]`
+|minorVersion|`String`|Minor version of TinyMCE build.|`xref:apis/tinymce.root.adoc[tinymce]`
+|releaseDate|`String`|Release date of TinyMCE build.|`xref:apis/tinymce.root.adoc[tinymce]`
+|suffix|`String`|Current suffix to add to each plugin/theme that gets loaded for example ".min".|`xref:apis/tinymce.root.adoc[tinymce]`
+|===
+
+[[methods-summary]]
+=== Methods
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#add[add()]|Adds an editor instance to the editor collection. This will also set it as the active editor.|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#addI18n[addI18n()]|Adds a language pack, this gets called by the loaded language files like en.js.|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#create[create()]|Creates a class, subclass or static singleton.
+
+
+__Deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0.__|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#createEditor[createEditor()]|Creates an editor instance and adds it to the EditorManager collection.|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#createNS[createNS()]|Creates a namespace on a specific object.
+
+
+__Deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0.__|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#each[each()]|Performs an iteration of all items in a collection such as an object or array. This method will execure the
+callback function for each item in the collection, if the callback returns false the iteration will terminate.
+The callback has the following format: cb(value, key_or_index).|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#execCommand[execCommand()]|Executes a specific command on the currently active editor.|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#explode[explode()]|Splits a string but removes the whitespace before and after each value.|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#get[get()]|Returns an editor instance for a given id.|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#grep[grep()]|Filters out items from the input array by calling the specified function for each item.
+If the function returns false the item will be excluded if it returns true it will be included.|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#hasOwnProperty[hasOwnProperty()]|JavaScript does not protect hasOwnProperty method, so it is possible to overwrite it. This is
+an object independent version.
+Checks if the input object `obj` has the property `prop`.|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#inArray[inArray()]|Returns an index of the item or -1 if item is not present in the array.|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#init[init()]|Initializes a set of editors. This method will create editors based on various settings.
+
+
+
+
+
+For information on basic usage of `init`, see: link:https://www.tiny.cloud/docs/general-configuration-guide/basic-setup/[Basic setup].|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#is[is()]|Checks if a object is of a specific type for example an array.|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#isArray[isArray()]|Returns true/false if the object is an array or not.|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#makeMap[makeMap()]|Makes a name/object map out of an array with names.|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#map[map()]|Creates a new array by the return value of each iteration function call. This enables you to convert
+one array list into another.|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#overrideDefaults[overrideDefaults()]|Overrides the default settings for editor instances.|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#remove[remove()]|Removes a editor or editors form page.|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#resolve[resolve()]|Resolves a string and returns the object from a specific structure.|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#setActive[setActive()]|Sets the active editor instance and fires the deactivate/activate events.|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#toArray[toArray()]|Converts the specified object into a real JavaScript array.|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#translate[translate()]|Translates the specified string using the language pack items.|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#triggerSave[triggerSave()]|Calls the save method on all editor instances in the collection. This can be useful when a form is to be submitted.|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#trim[trim()]|Removes whitespace from the beginning and end of a string.|`xref:apis/tinymce.root.adoc[tinymce]`
+|xref:#walk[walk()]|Executed the specified function for each item in a object tree.|`xref:apis/tinymce.root.adoc[tinymce]`
+|===
+
+[[methods]]
+== Methods
+
+[[add]]
+=== add()
+[source, javascript]
+----
+add(editor: tinymce.Editor): tinymce.Editor
+----
+Adds an editor instance to the editor collection. This will also set it as the active editor.
+
+==== Parameters
+
+* `editor (xref:apis/tinymce.editor.adoc[Editor])` - Editor instance to add to the collection.
+
+==== Return value
+
+* `xref:apis/tinymce.editor.adoc[Editor]` - The same instance that got passed in.
+
+'''
+
+[[addI18n]]
+=== addI18n()
+[source, javascript]
+----
+addI18n(code: String, items: Object)
+----
+Adds a language pack, this gets called by the loaded language files like en.js.
+
+==== Parameters
+
+* `code (String)` - Optional language code.
+* `items (Object)` - Name/value object with translations.
+
+'''
+
+[[create]]
+=== create()
+[source, javascript]
+----
+create(s: String, p: Object, root: Object)
+----
+Creates a class, subclass or static singleton.
+
+
+__Deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0.__
+
+==== Examples
+[source, javascript]
+----
+// Creates a basic class
+tinymce.create('tinymce.somepackage.SomeClass', {
+    SomeClass: function() {
+        // Class constructor
+    },
+
+    method: function() {
+        // Some method
+    }
+});
+
+// Creates a basic subclass class
+tinymce.create('tinymce.somepackage.SomeSubClass:tinymce.somepackage.SomeClass', {
+    SomeSubClass: function() {
+        // Class constructor
+        this.parent(); // Call parent constructor
+    },
+
+    method: function() {
+        // Some method
+        this.parent(); // Call parent method
+    },
+
+    'static': {
+        staticMethod: function() {
+            // Static method
+        }
+    }
+});
+
+// Creates a singleton/static class
+tinymce.create('static tinymce.somepackage.SomeSingletonClass', {
+    method: function() {
+        // Some method
+    }
+});
+----
+
+==== Parameters
+
+* `s (String)` - Class name, inheritance and prefix.
+* `p (Object)` - Collection of methods to add to the class.
+* `root (Object)` - Optional root object defaults to the global window object.
+
+'''
+
+[[createEditor]]
+=== createEditor()
+[source, javascript]
+----
+createEditor(id: String, settings: Object): tinymce.Editor
+----
+Creates an editor instance and adds it to the EditorManager collection.
+
+==== Parameters
+
+* `id (String)` - Instance id to use for editor.
+* `settings (Object)` - Editor instance settings.
+
+==== Return value
+
+* `xref:apis/tinymce.editor.adoc[Editor]` - Editor instance that got created.
+
+'''
+
+[[createNS]]
+=== createNS()
+[source, javascript]
+----
+createNS(n: String, o: Object): Object
+----
+Creates a namespace on a specific object.
+
+
+__Deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0.__
+
+==== Examples
+[source, javascript]
+----
+// Create some namespace
+tinymce.createNS('tinymce.somepackage.subpackage');
+
+// Add a singleton
+var tinymce.somepackage.subpackage.SomeSingleton = {
+    method: function() {
+        // Some method
+    }
+};
+----
+
+==== Parameters
+
+* `n (String)` - Namespace to create for example a.b.c.d.
+* `o (Object)` - Optional object to add namespace to, defaults to window.
+
+==== Return value
+
+* `Object` - New namespace object the last item in path.
+
+'''
+
+[[each]]
+=== each()
+[source, javascript]
+----
+each(o: Object, cb: function, s: Object)
+----
+Performs an iteration of all items in a collection such as an object or array. This method will execure the
+callback function for each item in the collection, if the callback returns false the iteration will terminate.
+The callback has the following format: cb(value, key_or_index).
+
+==== Examples
+[source, javascript]
+----
+// Iterate an array
+tinymce.each([1,2,3], function(v, i) {
+    console.debug("Value: " + v + ", Index: " + i);
+});
+
+// Iterate an object
+tinymce.each({a: 1, b: 2, c: 3], function(v, k) {
+    console.debug("Value: " + v + ", Key: " + k);
+});
+----
+
+==== Parameters
+
+* `o (Object)` - Collection to iterate.
+* `cb (function)` - Callback function to execute for each item.
+* `s (Object)` - Optional scope to execute the callback in.
+
+'''
+
+[[execCommand]]
+=== execCommand()
+[source, javascript]
+----
+execCommand(cmd: String, ui: Boolean, value: String): Boolean
+----
+Executes a specific command on the currently active editor.
+
+==== Parameters
+
+* `cmd (String)` - Command to perform for example Bold.
+* `ui (Boolean)` - Optional boolean state if a UI should be presented for the command or not.
+* `value (String)` - Optional value parameter like for example an URL to a link.
+
+==== Return value
+
+* `Boolean` - true/false if the command was executed or not.
+
+'''
+
+[[explode]]
+=== explode()
+[source, javascript]
+----
+explode(s: string, d: string)
+----
+Splits a string but removes the whitespace before and after each value.
+
+==== Examples
+[source, javascript]
+----
+// Split a string into an array with a,b,c
+var arr = tinymce.explode('a, b,   c');
+----
+
+==== Parameters
+
+* `s (string)` - String to split.
+* `d (string)` - Delimiter to split by.
+
+'''
+
+[[get]]
+=== get()
+[source, javascript]
+----
+get(id: String | Number): tinymce.Editor | Array
+----
+Returns an editor instance for a given id.
+
+==== Examples
+[source, javascript]
+----
+// Adds an onclick event to an editor by id
+tinymce.get('mytextbox').on('click', function(e) {
+   ed.windowManager.alert('Hello world!');
+});
+
+// Adds an onclick event to an editor by index
+tinymce.get(0).on('click', function(e) {
+   ed.windowManager.alert('Hello world!');
+});
+
+// Adds an onclick event to an editor by id (longer version)
+tinymce.EditorManager.get('mytextbox').on('click', function(e) {
+   ed.windowManager.alert('Hello world!');
+});
+----
+
+==== Parameters
+
+* `id (String | Number)` - The id or index of the editor instance to return.
+
+==== Return value
+
+* `xref:apis/tinymce.editor.adoc[Editor]` - Editor instance or an array of editor instances.
+* `Array` - Editor instance or an array of editor instances.
+
+'''
+
+[[grep]]
+=== grep()
+[source, javascript]
+----
+grep(a: Array, f: function): Array
+----
+Filters out items from the input array by calling the specified function for each item.
+If the function returns false the item will be excluded if it returns true it will be included.
+
+==== Examples
+[source, javascript]
+----
+// Filter out some items, this will return an array with 4 and 5
+var items = tinymce.grep([1,2,3,4,5], function(v) {return v > 3;});
+----
+
+==== Parameters
+
+* `a (Array)` - Array of items to loop though.
+* `f (function)` - Function to call for each item. Include/exclude depends on it's return value.
+
+==== Return value
+
+* `Array` - New array with values imported and filtered based in input.
+
+'''
+
+[[hasOwnProperty]]
+=== hasOwnProperty()
+[source, javascript]
+----
+hasOwnProperty(obj: Object, prop: String): Boolean
+----
+JavaScript does not protect hasOwnProperty method, so it is possible to overwrite it. This is
+an object independent version.
+Checks if the input object `obj` has the property `prop`.
+
+==== Parameters
+
+* `obj (Object)` - Object to check if the property exists.
+* `prop (String)` - Name of a property on the object.
+
+==== Return value
+
+* `Boolean` - true if the object has the specified property.
+
+'''
+
+[[inArray]]
+=== inArray()
+[source, javascript]
+----
+inArray(item: any, arr: Array): Number
+----
+Returns an index of the item or -1 if item is not present in the array.
+
+==== Parameters
+
+* `item (any)` - Item to search for.
+* `arr (Array)` - Array to search in.
+
+==== Return value
+
+* `Number` - index of the item or -1 if item was not found.
+
+'''
+
+[[init]]
+=== init()
+[source, javascript]
+----
+init(settings: Object): Promise
+----
+Initializes a set of editors. This method will create editors based on various settings.
+
+
+
+
+
+For information on basic usage of `init`, see: link:https://www.tiny.cloud/docs/general-configuration-guide/basic-setup/[Basic setup].
+
+==== Examples
+[source, javascript]
+----
+// Initializes a editor using the longer method
+tinymce.EditorManager.init({
+   some_settings : 'some value'
+});
+
+// Initializes a editor instance using the shorter version and with a promise
+tinymce.init({
+   some_settings : 'some value'
+}).then(function(editors) {
+   ...
+});
+----
+
+==== Parameters
+
+* `settings (Object)` - Settings object to be passed to each editor instance.
+
+==== Return value
+
+* `Promise` - Promise that gets resolved with an array of editors when all editor instances are initialized.
+
+'''
+
+[[is]]
+=== is()
+[source, javascript]
+----
+is(obj: Object, type: string): Boolean
+----
+Checks if a object is of a specific type for example an array.
+
+==== Parameters
+
+* `obj (Object)` - Object to check type of.
+* `type (string)` - Optional type to check for.
+
+==== Return value
+
+* `Boolean` - true/false if the object is of the specified type.
+
+'''
+
+[[isArray]]
+=== isArray()
+[source, javascript]
+----
+isArray(obj: Object): boolean
+----
+Returns true/false if the object is an array or not.
+
+==== Parameters
+
+* `obj (Object)` - Object to check.
+
+==== Return value
+
+* `boolean` - true/false state if the object is an array or not.
+
+'''
+
+[[makeMap]]
+=== makeMap()
+[source, javascript]
+----
+makeMap(items: Array | String, delim: String, map: Object): Object
+----
+Makes a name/object map out of an array with names.
+
+==== Parameters
+
+* `items (Array | String)` - Items to make map out of.
+* `delim (String)` - Optional delimiter to split string by.
+* `map (Object)` - Optional map to add items to.
+
+==== Return value
+
+* `Object` - Name/value map of items.
+
+'''
+
+[[map]]
+=== map()
+[source, javascript]
+----
+map(array: Array, callback: function): Array
+----
+Creates a new array by the return value of each iteration function call. This enables you to convert
+one array list into another.
+
+==== Parameters
+
+* `array (Array)` - Array of items to iterate.
+* `callback (function)` - Function to call for each item. It's return value will be the new value.
+
+==== Return value
+
+* `Array` - Array with new values based on function return values.
+
+'''
+
+[[overrideDefaults]]
+=== overrideDefaults()
+[source, javascript]
+----
+overrideDefaults(defaultSettings: Object)
+----
+Overrides the default settings for editor instances.
+
+==== Parameters
+
+* `defaultSettings (Object)` - Defaults settings object.
+
+'''
+
+[[remove]]
+=== remove()
+[source, javascript]
+----
+remove(selector: tinymce.Editor | String | Object): tinymce.Editor
+----
+Removes a editor or editors form page.
+
+==== Examples
+[source, javascript]
+----
+// Remove all editors bound to divs
+tinymce.remove('div');
+
+// Remove all editors bound to textareas
+tinymce.remove('textarea');
+
+// Remove all editors
+tinymce.remove();
+
+// Remove specific instance by id
+tinymce.remove('#id');
+----
+
+==== Parameters
+
+* `selector (xref:apis/tinymce.editor.adoc[Editor] | String | Object)` - CSS selector or editor instance to remove.
+
+==== Return value
+
+* `xref:apis/tinymce.editor.adoc[Editor]` - The editor that got passed in will be return if it was found otherwise null.
+
+'''
+
+[[resolve]]
+=== resolve()
+[source, javascript]
+----
+resolve(n: String, o: Object): Object
+----
+Resolves a string and returns the object from a specific structure.
+
+==== Examples
+[source, javascript]
+----
+// Resolve a path into an object reference
+var obj = tinymce.resolve('a.b.c.d');
+----
+
+==== Parameters
+
+* `n (String)` - Path to resolve for example a.b.c.d.
+* `o (Object)` - Optional object to search though, defaults to window.
+
+==== Return value
+
+* `Object` - Last object in path or null if it couldn't be resolved.
+
+'''
+
+[[setActive]]
+=== setActive()
+[source, javascript]
+----
+setActive(editor: tinymce.Editor)
+----
+Sets the active editor instance and fires the deactivate/activate events.
+
+==== Parameters
+
+* `editor (xref:apis/tinymce.editor.adoc[Editor])` - Editor instance to set as the active instance.
+
+'''
+
+[[toArray]]
+=== toArray()
+[source, javascript]
+----
+toArray(obj: Object): Array
+----
+Converts the specified object into a real JavaScript array.
+
+==== Parameters
+
+* `obj (Object)` - Object to convert into array.
+
+==== Return value
+
+* `Array` - Array object based in input.
+
+'''
+
+[[translate]]
+=== translate()
+[source, javascript]
+----
+translate(text: String | Array | Object): String
+----
+Translates the specified string using the language pack items.
+
+==== Parameters
+
+* `text (String | Array | Object)` - String to translate
+
+==== Return value
+
+* `String` - Translated string.
+
+'''
+
+[[triggerSave]]
+=== triggerSave()
+[source, javascript]
+----
+triggerSave()
+----
+Calls the save method on all editor instances in the collection. This can be useful when a form is to be submitted.
+
+==== Examples
+[source, javascript]
+----
+// Saves all contents
+tinyMCE.triggerSave();
+----
+
+'''
+
+[[trim]]
+=== trim()
+[source, javascript]
+----
+trim(s: String): String
+----
+Removes whitespace from the beginning and end of a string.
+
+==== Parameters
+
+* `s (String)` - String to remove whitespace from.
+
+==== Return value
+
+* `String` - New string with removed whitespace.
+
+'''
+
+[[walk]]
+=== walk()
+[source, javascript]
+----
+walk(o: Object, f: function, n: String, s: String)
+----
+Executed the specified function for each item in a object tree.
+
+==== Parameters
+
+* `o (Object)` - Object tree to walk though.
+* `f (function)` - Function to call for each item.
+* `n (String)` - Optional name of collection inside the objects to walk for example childNodes.
+* `s (String)` - Optional scope to execute the function in.
+
+'''

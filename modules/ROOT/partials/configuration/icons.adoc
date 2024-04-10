@@ -2,12 +2,12 @@ ifeval::[{customIconPack} != true]
 [[icons]]
 == `icons`
 
-The *icons* option allows the editor icons to be extended or replaced using an icon pack. For information on creating icon packs, see: xref:advanced/creating-an-icon-pack.adoc[Create an icon pack for {productname}].
+The *icons* option allows the editor icons to be extended or replaced using an icon pack. For information on creating icon packs, see: xref:creating-an-icon-pack.adoc[Create an icon pack for {productname}].
 
 *Type:*  `String`
 endif::[]
 
-On initialization, {productname} will try to load any icon pack specified by the *icons* option. The icons in the icon pack will be merged with xref:advanced/editor-icon-identifiers.adoc[{productname}'s default icons] and icons in the icon pack will overwrite the default icons with the same identifier.
+On initialization, {productname} will try to load any icon pack specified by the *icons* option. The icons in the icon pack will be merged with xref:editor-icon-identifiers.adoc[{productname}'s default icons] and icons in the icon pack will overwrite the default icons with the same identifier.
 
 {productname} loads icon packs from the path `+TINYMCE_BASE/icons/${iconPackName}/icons.js+`;
 where:

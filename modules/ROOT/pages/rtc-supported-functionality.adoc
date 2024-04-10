@@ -1,0 +1,80 @@
+= Supported TinyMCE functionality for Real-time Collaboration
+:description: Information on what TinyMCE functionality is, and is not, supported in Real-time Collaboration
+:keywords: rtc support functionality
+:title_nav: Supported Functionality
+
+include::partial$rtc/admon-rtc-eol.adoc[]
+
+== Browser support
+
+The Real-time Collaboration (RTC) plugin supports the latest desktop versions of:
+
+* Google Chrome
+* Mozilla Firefox
+* Microsoft Edge
+* Apple Safari
+
+== Mobile support
+
+Real-time Collaboration is currently not supported on mobile devices.
+
+== TinyMCE features (plugins) support when using RTC
+
+The Real-time Collaboration (RTC) plugin supports a subset of the features that {productname} provides.
+
+WARNING: Enabling plugins not shown here is not supported and may lead to unexpected behavior.
+
+The following plugins are currently supported:
+
+* xref:advlist.adoc[Advanced List (`advlist`)]
+* xref:autoresize.adoc[Autoresize (`autoresize`)]
+* xref:charmap.adoc[Character Map (`charmap`)]
+* xref:emoticons.adoc[Emoticons (`emoticons`)]
+* xref:help.adoc[Help (`help`)]
+* xref:hr.adoc[Horizontal Rule (`hr`)]
+* xref:image.adoc[Image (`image`)]
+ ** Captioned images are not yet supported.
+ ** The xref:image.adoc#image_caption[`image_caption`] option is not supported.
+* xref:insertdatetime.adoc[Insert Date/Time (`insertdatetime`)]
+* xref:link.adoc[Link (`link`)]
+ ** The xref:link.adoc#rel_list[`rel_list`] option is not supported.
+* xref:lists.adoc[Lists (`lists`)]
+* xref:moxiemanager.adoc[MoxieManager (`moxiemanager`)]
+* xref:introduction-to-powerpaste.adoc[PowerPaste (`powerpaste`)]
+* xref:print.adoc[Print (`print`)]
+* xref:save.adoc[Save (`save`)]
+* xref:tabfocus.adoc[Tab Focus (`tabfocus`)]
+* xref:tinydrive-plugin.adoc[Tiny Drive (`tinydrive`)]
+* xref:visualblocks.adoc[Visual Blocks (`visualblocks`)]
+* xref:wordcount.adoc[Word Count (`wordcount`)]
+
+== Integration considerations
+
+When planning to integrate Real-time Collaboration into your application or website, consider the following details and how they impact your use-case. If you are in doubt, don't hesitate to link:{contactpage}[contact us] and discuss your requirements.
+
+* Do not load content into {productname} that was created using a plugin not yet supported in RTC, such as: Tables, Media embed, Checklist, or Table of contents. Without the plugin enabled to protect the relevant content, you risk making changes to the HTML in a way it's no longer recognized by the plugin.
+* If content is created in an RTC session, then updated outside of an _RTC-enabled_ {productname} editor, a new document ID (`documentId`) is needed for subsequent RTC sessions. The RTC plugin does not currently provide APIs for updating the content programmatically. If your use-case requires you to update the content outside of the RTC clients, your server will need to generate a new document ID and distribute it to all collaborators and block or otherwise prevent editing or collaborating with the old document ID.
+* Using the RTC plugin in hybrid mode is not supported and not recommended. Self-hosted versions of {productname} should not be used with the cloud version of the RTC plugin. The RTC plugin is dependent on the {productname} version it is released with. When using {productname} for the {cloudname}, {productname} will use the linked version of the RTC plugin.
+
+== Options that are not available when RTC is enabled
+
+* xref:content-filtering.adoc#allow_unsafe_link_target[`allow_unsafe_link_target`]
+* xref:content-behavior-options.adoc#br_in_pre[`br_in_pre`]
+* xref:content-filtering.adoc#custom_elements[`custom_elements`]
+* xref:content-behavior-options.adoc#end_container_on_empty_block[`end_container_on_empty_block`]
+* xref:content-filtering.adoc#extended_valid_elements[`extended_valid_elements`]
+* xref:content-filtering.adoc#forced_root_block[`forced_root_block`]
+* xref:content-filtering.adoc#forced_root_block_attrs[`forced_root_block_attrs`]
+* xref:content-formatting.adoc#format_empty_lines[`format_empty_lines`]
+* xref:spelling.adoc#gecko_spellcheck[`gecko_spellcheck`]
+* xref:image.adoc#image_caption[`image_caption`]
+* xref:file-image-upload.adoc#images_dataimg_filter[`images_dataimg_filter`]
+* xref:content-formatting.adoc#indent_use_margin[`indent_use_margin`]
+* xref:content-appearance.adoc#inline_boundaries[`inline_boundaries`]
+* xref:content-appearance.adoc#inline_boundaries_selector[`inline_boundaries_selector`]
+* xref:content-filtering.adoc#keep_styles[`keep_styles`]
+* xref:editor-appearance.adoc#placeholder[`placeholder`]
+* xref:content-filtering.adoc#protect[`protect`]
+* xref:link.adoc#rel_list[`rel_list`]
+* xref:content-filtering.adoc#valid_children[`valid_children`]
+* xref:content-filtering.adoc#valid_elements[`valid_elements`]

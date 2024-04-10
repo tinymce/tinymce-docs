@@ -8,7 +8,7 @@ This option sets which user interface item type to use when displaying the list 
 * The `name` item will only display the user's name.
 * The `profile` item will display the user's name and can display an optional image and description.
 
-For information on the properties required for the user object provided to xref:plugins/premium/mentions.adoc#mentions_fetch[`mentions_fetch`], see: xref:userproperties[User properties].
+For information on the properties required for the user object provided to xref:mentions.adoc#mentions_fetch[`mentions_fetch`], see: xref:userproperties[User properties].
 
 *Type:* `String`
 
@@ -30,7 +30,7 @@ tinymce.init({
 [[userproperties]]
 ==== User properties
 
-The following table describes the properties available for user objects provided to the xref:plugins/premium/mentions.adoc#mentions_fetch[`mentions_fetch` callback]. Properties may be required, optional, or not available; depending on the xref:mentions_item_type[`mentions_item_type`] and xref:plugins/premium/mentions.adoc#mentions_select[`mentions_select`] options.
+The following table describes the properties available for user objects provided to the xref:mentions.adoc#mentions_fetch[`mentions_fetch` callback]. Properties may be required, optional, or not available; depending on the xref:mentions_item_type[`mentions_item_type`] and xref:mentions.adoc#mentions_select[`mentions_select`] options.
 
 |===
 | Name | Value | `name` | `profile` | Description

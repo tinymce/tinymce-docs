@@ -3,9 +3,9 @@
 
 include::partial$misc/requires_5_9v.adoc[]
 
-This option allows the toolbar to stick or dock at the specified offset from the top or bottom of the https://developer.mozilla.org/en-US/docs/Glossary/Viewport[viewport] depending on the xref:configure/editor-appearance.adoc#toolbar_location}}[toolbar location (`toolbar_location`)]. This can be useful when a site has a sticky header navigation bar, allowing the {productname} toolbar to "stick" below the site's navigation bar. This option accepts a height in pixels.
+This option allows the toolbar to stick or dock at the specified offset from the top or bottom of the https://developer.mozilla.org/en-US/docs/Glossary/Viewport[viewport] depending on the xref:editor-appearance.adoc#toolbar_location}}[toolbar location (`toolbar_location`)]. This can be useful when a site has a sticky header navigation bar, allowing the {productname} toolbar to "stick" below the site's navigation bar. This option accepts a height in pixels.
 
-NOTE: This option requires the xref:configure/editor-appearance.adoc#toolbar_sticky}}[`toolbar_sticky`] option be set to `true` to take effect.
+NOTE: This option requires the xref:editor-appearance.adoc#toolbar_sticky}}[`toolbar_sticky`] option be set to `true` to take effect.
 
 *Type:* `Number`
 

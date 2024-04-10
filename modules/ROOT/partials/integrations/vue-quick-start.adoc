@@ -1,7 +1,7 @@
 == TinyMCE Vue.js integration quick start guide
 
 The https://github.com/tinymce/tinymce-vue[Official {productname} Vue.js component] integrates {productname} into Vue.js projects.
-This procedure creates a https://cli.vuejs.org/guide/creating-a-project.html#vue-create[basic Vue.js application] containing a {productname} editor based on our xref:demo/basic-example.adoc[Basic example].
+This procedure creates a https://cli.vuejs.org/guide/creating-a-project.html#vue-create[basic Vue.js application] containing a {productname} editor based on our xref:basic-example.adoc[Basic example].
 
 Version 4 of the `tinymce-vue` package supports Vue.js 3.x, but does not support Vue.js 2.x. For Vue.js 2.x applications, use `tinymce-vue` version 3.
 
@@ -40,10 +40,10 @@ This procedure requires:
 
 * https://nodejs.org/[Node.js (and npm)].
 * Access to `tinymce.min.js` on either:
- ** xref:cloud-deployment-guide/editor-and-features.adoc[{cloudname}].
+ ** xref:editor-and-features.adoc[{cloudname}].
  ** {productname} Self-hosted. See:
-  *** xref:general-configuration-guide/advanced-install.adoc#packagemanagerinstalloptions[Installing {productname} - Package Managers].
-  *** xref:general-configuration-guide/advanced-install.adoc#self-hostedinstall[Installing {productname} - Self-Hosted Download / Install].
+  *** xref:installation.adoc#packagemanagerinstalloptions[Installing {productname} - Package Managers].
+  *** xref:installation.adoc#self-hostedinstall[Installing {productname} - Self-Hosted Download / Install].
 
 === Procedure
 
@@ -140,7 +140,7 @@ For example:
 </script>
 ----
 +
-This {productname} editor configuration should replicate the example on the xref:demo/basic-example.adoc[Basic example page].
+This {productname} editor configuration should replicate the example on the xref:basic-example.adoc[Basic example page].
 . Provide access to {productname} using either {cloudname} or by self-hosting {productname}.
  ** *{cloudname}*
 +
@@ -168,11 +168,11 @@ To use an independent deployment of {productname}, add a script to either the `<
 +
 To use an independent deployment of {productname} with the create a Vue.js application, add the script to `/path/to/tinymce-vue-demo/public/index.html`.
 +
-For information on self-hosting {productname}, see: xref:general-configuration-guide/advanced-install.adoc[Installing {productname}].
+For information on self-hosting {productname}, see: xref:installation.adoc[Installing {productname}].
 
   *** *Bundling {productname} with the Vue.js application using a module loader*
 +
-To bundle {productname} using a module loader (such as Webpack and Browserify), see: xref:advanced/usage-with-module-loaders/index.adoc[Usage with module loaders].
+To bundle {productname} using a module loader (such as Webpack and Browserify), see: xref:usage-with-module-loaders.adoc[Usage with module loaders].
 . Test the application using the Node.js development server.
  ** To start the development server, navigate to the `tinymce-vue-demo` directory and run:
 +
@@ -191,5 +191,5 @@ The application will require further configuration before it can be deployed to 
 
 * For examples of the {productname} integration, see: https://tinymce.github.io/tinymce-vue/[the tinymce-vue storybook].
 * For information on customizing:
- ** {productname}, see: xref:general-configuration-guide/basic-setup.adoc[Basic setup].
+ ** {productname}, see: xref:basic-setup.adoc[Basic setup].
  ** The Vue.js application, see: https://vuejs.org/v2/guide/[Vue.js Documentation].

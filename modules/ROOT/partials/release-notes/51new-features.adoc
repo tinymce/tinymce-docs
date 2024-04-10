@@ -17,10 +17,10 @@ The new mobile experience comes with a number of user interface changes, buildin
 
 The new mobile experience allows most of the {productname} plugins to work on mobile devices, except for:
 
-* xref:plugins/premium/comments/index.adoc[Comments]
-* xref:plugins/opensource/imagetools.adoc[Image tools]
-* xref:plugins/premium/moxiemanager.adoc[MoxieManager]
-* xref:plugins/premium/permanentpen.adoc[Permanent Pen]
+* xref:comments.adoc[Comments]
+* xref:editimage.adoc[Image tools]
+* xref:moxiemanager.adoc[MoxieManager]
+* xref:permanentpen.adoc[Permanent Pen]
 
 ==== Enabling the mobile editor
 
@@ -60,8 +60,8 @@ NOTE: No enhancements have been made to the legacy mobile theme. All the changes
 
 For information on:
 
-* Using the `silver` theme for mobile, see: xref:mobile.adoc[{productname} Mobile].
-* Using the legacy `mobile` theme, see: xref:mobile.adoc#thelegacymobiletheme[{productname} Mobile - The legacy mobile theme].
+* Using the `silver` theme for mobile, see: xref:tinymce-for-mobile.adoc[{productname} Mobile].
+* Using the legacy `mobile` theme, see: xref:tinymce-for-mobile.adoc#thelegacymobiletheme[{productname} Mobile - The legacy mobile theme].
 
 [[horizontalcontextualmenusonmobile]]
 ==== Horizontal contextual menus on mobile
@@ -82,7 +82,7 @@ Toolbars and xref:horizontalcontextualmenusonmobile[horizontal menus] side-scrol
 
 A new `inputMode` configuration setting for dialog input components has been added to provide contextual onscreen keyboards on mobile devices. Dialogs in {productname}, the core {productname} plugins, and the premium {productname} plugins have been updated to use `inputMode`.
 
-For information on using `inputMode`, see: xref:ui-components/dialogcomponents.adoc#inputmode[Dialog components - `inputMode`].
+For information on using `inputMode`, see: xref:dialog-components.adoc#inputmode[Dialog components - `inputMode`].
 
 [[newmobiledefaultsforselectedsettings]]
 ==== New mobile defaults for selected settings
@@ -91,17 +91,17 @@ These mobile-specific default values have been set to disable unsupported settin
 
 The following settings have mobile-specific default values:
 
-* xref:configure/editor-appearance.adoc#menubar[`menubar`] - defaults to `false` on mobile phones.
-* xref:configure/editor-appearance.adoc#toolbar_drawer[`toolbar_drawer`] - defaults to `false` on mobile devices. The toolbar will xref:side-scrollingtoolbarsonmobile[side-scroll by default].
-* xref:configure/editor-appearance.adoc#toolbar_sticky[`toolbar_sticky`] - Sticky Toolbar is not supported on mobile devices and defaults to `false`.
-* xref:plugins/opensource/table.adoc#table_grid[`table_grid`] - Table grid is not supported on mobile devices and defaults to `false`. When creating tables on mobile, a dialog is shown instead of the table grid.
-* xref:configure/editor-appearance.adoc#resize[`resize`] - Resizing is not supported on mobile devices and defaults to `false`.
-* xref:configure/advanced-editing-behavior.adoc#object_resizing[`object_resizing`] - Object resizing is not supported on mobile devices and defaults to `false`.
+* xref:editor-appearance.adoc#menubar[`menubar`] - defaults to `false` on mobile phones.
+* xref:editor-appearance.adoc#toolbar_drawer[`toolbar_drawer`] - defaults to `false` on mobile devices. The toolbar will xref:side-scrollingtoolbarsonmobile[side-scroll by default].
+* xref:editor-appearance.adoc#toolbar_sticky[`toolbar_sticky`] - Sticky Toolbar is not supported on mobile devices and defaults to `false`.
+* xref:table.adoc#table_grid[`table_grid`] - Table grid is not supported on mobile devices and defaults to `false`. When creating tables on mobile, a dialog is shown instead of the table grid.
+* xref:editor-appearance.adoc#resize[`resize`] - Resizing is not supported on mobile devices and defaults to `false`.
+* xref:content-behavior-options.adoc#object_resizing[`object_resizing`] - Object resizing is not supported on mobile devices and defaults to `false`.
 
 [[tablecellselectiononmobile]]
 ==== Table cell selection on mobile
 
-The xref:plugins/opensource/table.adoc[table plugin] has been updated to provide _touch selection handles_ on touch devices. The touch selection handles appear when users double-tap a table cell, and allow users to select a range of table cells on touch devices.
+The xref:table.adoc[table plugin] has been updated to provide _touch selection handles_ on touch devices. The touch selection handles appear when users double-tap a table cell, and allow users to select a range of table cells on touch devices.
 
 For example:
 
@@ -110,20 +110,20 @@ image::table_cell_touch_selector_handles.png[Touch selector handles for selectin
 [[touch-friendlysplitbuttons]]
 ==== Touch-friendly split buttons
 
-The styling on xref:ui-components/typesoftoolbarbuttons.adoc#splitbutton[split buttons] has been updated to include more padding so they are easier to interact with on touch devices.
+The styling on xref:typesoftoolbarbuttons.adoc#splitbutton[split buttons] has been updated to include more padding so they are easier to interact with on touch devices.
 
 [[unsupportedsettingsformobile]]
 ==== Unsupported settings for mobile
 
 The following settings are not supported on mobile devices:
 
-* xref:general-configuration-guide/use-tinymce-inline.adoc[Inline editing mode].
-* xref:general-configuration-guide/use-tinymce-distraction-free.adoc[Distraction-free editing mode].
-* xref:configure/editor-appearance.adoc#inline[`inline`].
-* xref:configure/editor-appearance.adoc#toolbar_sticky[`toolbar_sticky`].
-* xref:plugins/opensource/table.adoc#table_grid[`table_grid`].
-* xref:configure/editor-appearance.adoc#resize[`resize`].
-* xref:configure/advanced-editing-behavior.adoc#object_resizing[`object_resizing`].
+* xref:use-tinymce-inline.adoc[Inline editing mode].
+* xref:use-tinymce-distraction-free.adoc[Distraction-free editing mode].
+* xref:editor-appearance.adoc#inline[`inline`].
+* xref:editor-appearance.adoc#toolbar_sticky[`toolbar_sticky`].
+* xref:table.adoc#table_grid[`table_grid`].
+* xref:editor-appearance.adoc#resize[`resize`].
+* xref:content-behavior-options.adoc#object_resizing[`object_resizing`].
 
 === Sticky Toolbar
 
@@ -131,11 +131,11 @@ The Sticky Toolbar (or Docking Toolbar) docks the toolbar and the menu to the to
 
 image::sticky-toolbar.gif[Sticky Toolbar animation]
 
-For information on the Sticky Toolbars, see: xref:configure/editor-appearance.adoc#toolbar_sticky[Enabling Sticky Toolbars].
+For information on the Sticky Toolbars, see: xref:editor-appearance.adoc#toolbar_sticky[Enabling Sticky Toolbars].
 
 === Changes to the Env API for platform detection
 
-New platform detection functions have been added to the xref:api/tinymce/tinymce.env.adoc[`Env` API], allowing for some older detection properties to be deprecated.
+New platform detection functions have been added to the xref:apis/tinymce.env.adoc[`Env` API], allowing for some older detection properties to be deprecated.
 
 ==== New Env API properties
 
@@ -254,7 +254,7 @@ Used for setting the level of referrer information sent when loading plugins and
 * Improve the privacy of end-users.
 * Assist with server-side filtering of cross-origin requests for {productname} resources.
 
-For information on using the `referrer_policy` setting, see: xref:configure/integration-and-setup.adoc#referrer_policy[Integration and setup options - `referrer_policy`].
+For information on using the `referrer_policy` setting, see: xref:integration-and-setup.adoc#referrer_policy[Integration and setup options - `referrer_policy`].
 
 === Added a dark content css skin
 
@@ -264,7 +264,7 @@ For example:
 
 liveDemo::dark-mode[]
 
-For information on using the dark version of the default skin, see: xref:general-configuration-guide/customize-ui.adoc#skins[Customizing the editor UI - Skins].
+For information on using the dark version of the default skin, see: xref:customize-ui.adoc#skins[Customizing the editor UI - Skins].
 
 === Added border width to Table cell dialog
 
@@ -288,7 +288,7 @@ tinymce.init({
 });
 ----
 
-For information on the `toolbar_drawer` setting, see: xref:configure/editor-appearance.adoc#toolbar_drawer[User interface options - `toolbar_drawer`].
+For information on the `toolbar_drawer` setting, see: xref:editor-appearance.adoc#toolbar_drawer[User interface options - `toolbar_drawer`].
 
 === Icon changes
 
@@ -299,7 +299,7 @@ To improve the user experience:
 * The `paragraph` icon has been renamed `visualchars` and is used for the `visualchars` toolbar button: image:icons/visualchars.svg[`paragraph` renamed to `visualchars`]
 * A new `visualblocks` icon is used for the `visualblocks` toolbar button: image:icons/visualblocks.svg[New visualblocks icon]
 
-For the list of icons included in {productname}, see: xref:advanced/editor-icon-identifiers.adoc[Available icons].
+For the list of icons included in {productname}, see: xref:editor-icon-identifiers.adoc[Available icons].
 
 === Fixes to the positioning of inline dialogs and menus
 

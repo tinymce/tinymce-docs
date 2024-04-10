@@ -1,0 +1,52 @@
+= tinymce.Plugin
+:navtitle: tinymce.Plugin
+:description: TinyMCE plugin psuedo class. Allows for custom plugins to be added to TinyMCE when registered using the PluginManager.
+:keywords: 
+:moxie-type: api
+
+TinyMCE plugin psuedo class. Allows for custom plugins to be added to TinyMCE when registered using the PluginManager.
+
+This is a pseudo class that describes how to create a custom plugin for TinyMCE.
+
+
+
+
+
+A custom plugin registered using `PluginManager.add` should either not return any value or return plugin metadata as an object that contains the plugin's name and a URL. The URL is intended to link to help documentation.
+
+
+
+
+
+See AddOnManager for more information about the methods available on the PluginManager instance.
+
+[[examples]]
+== Examples
+[source, javascript]
+----
+tinymce.PluginManager.add('MyPlugin', function(editor, url) {
+    // Register a toolbar button that triggers an alert when clicked
+    // To show this button in the editor, include it in the toolbar setting
+    editor.ui.registry.addButton('myCustomToolbarButton', {
+        text: 'My Custom Button',
+        onAction: function() {
+            alert('Button clicked!');
+        }
+    });
+
+    // Register a menu item that triggers an alert when clicked
+    // To show this menu item in the editor, include it in the menu setting
+    editor.ui.registry.addMenuItem('myCustomMenuItem', {
+        text: 'My Custom Menu Item',
+        onAction: function() {
+            alert('Menu item clicked');
+        }
+    });
+
+    // Either return plugin metadata or do not return
+    return {
+        name: 'MyPlugin',
+        url: 'https://mydocs.com/myplugin'
+    };
+});
+----

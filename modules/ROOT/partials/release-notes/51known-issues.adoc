@@ -22,12 +22,12 @@ This section describes issues that users of {productname} 5.1 may encounter, as 
 ====
 This issue affects the following plugins:
 
-* xref:plugins/premium/mentions.adoc[Mentions].
-* xref:plugins/opensource/emoticons.adoc[Emoticons].
-* xref:plugins/opensource/charmap.adoc[Character Map].
+* xref:mentions.adoc[Mentions].
+* xref:emoticons.adoc[Emoticons].
+* xref:charmap.adoc[Character Map].
 ====
 
-Plugins relying on the xref:ui-components/autocompleter.adoc[autocompleter API] or keypress events do not work on Android. Android intercepts content and processes content prior to insertion into the editor.
+Plugins relying on the xref:autocompleter.adoc[autocompleter API] or keypress events do not work on Android. Android intercepts content and processes content prior to insertion into the editor.
 
 ==== Workaround
 
@@ -82,7 +82,7 @@ To workaround this issue, users can either:
 
 ==== Issue
 
-NOTE: This issue affects the xref:plugins/premium/comments/index.adoc[Comments plugin].
+NOTE: This issue affects the xref:comments.adoc[Comments plugin].
 
 When opening sidebars on small screens (such as mobile phones), the sidebar may occupy most or all of the text area of the editor.
 

@@ -1,0 +1,519 @@
+= Configure server-side components
+:description: Configuration options for premium server-side components.
+:keywords: enterprise tinymcespellchecker spell check checker pro pricing imagetools server configuration configure
+
+== Overview
+
+* xref:creatingaconfigurationfile[Creating a configuration file]
+* xref:generalservicesettings[General service settings]
+ ** xref:allowed-originsrequired[allowed-origins (required)]
+  *** xref:wildcardsupport[Wildcard support]
+  *** xref:regularexpressionssupport[Regular Expressions support]
+  *** xref:allowed-originssame-originoptional[allowed-origins.same-origin (optional)]
+  *** xref:allowed-originsignore-portoptional[allowed-origins.ignore-port (optional)]
+  *** xref:troubleshootingorigins[Troubleshooting Origins]
+ ** xref:proxyoptional[proxy (optional)]
+ ** xref:httpoptional[http (optional)]
+  *** xref:alternativehttptimeoutsettings[Alternative http timeout settings]
+* xref:imageproxyservicesettings[Image proxy service settings]
+ ** xref:image-proxyoptional[image-proxy (optional)]
+* xref:hyperlinkingservicesettings[Hyperlinking service settings]
+ ** xref:link-checkingoptional[link-checking (optional)]
+  *** xref:enabledoptional[enabled (optional)]
+  *** xref:fallback-to-getoptional[fallback-to-get (optional)]
+  *** xref:cacheoptional[cache (optional)]
+* xref:spellingservicesettings[Spelling service settings]
+ ** xref:spellingoptional[spelling (optional)]
+  *** xref:hunspell-dictionaries-pathoptional[hunspell-dictionaries-path (optional)]
+  *** xref:custom-dictionaries-pathoptional[custom-dictionaries-path (optional)]
+  *** xref:dynamic-custom-dictionariesoptional[dynamic-custom-dictionaries (optional)]
+  *** xref:num-incorrect-words-in-suggestions-request-limitoptional[num-incorrect-words-in-suggestions-request-limit (optional)]
+* xref:loggingserviceactivity[Logging service activity]
+
+[[creatingaconfigurationfile]]
+== Creating a configuration file
+
+NOTE: Use a plain text editor (such as gedit, vim, emacs or notepad) when creating or editing the `application.conf` file. Do not use word processors like Microsoft Word or Evernote as these can insert extra characters which make the file unreadable to the server-side components.
+
+The {productname} server-side components require a configuration file to function correctly. By convention, this file is named `application.conf`.
+
+This configuration file will require you to enter _at least_ the following  information:
+
+* `allowed-origins` - the domains allowed to communicate with the server-side editor features. This is required by all server-side components.
+
+The Enhanced Media Embed server-side component require additional configuration, which can be found on the xref:mediaembed-server-config.adoc[Enhanced Media Embed page].
+
+[[generalservicesettings]]
+== General service settings
+
+[[allowed-originsrequired]]
+=== `allowed-origins` (required)
+
+{productname} editor instances make use of the server-side components by performing a cross-origin HTTP request. These requests are subject to a form of HTTP access control called Cross-Origin Resource Sharing (CORS). CORS is built into web browsers and is not a feature of {productname}'s server side components. A detailed explanation of CORS can be found on the https://developer.mozilla.org/en-US/docs/Web/HTTP/Access_control_CORS[Mozilla Developer Network].
+
+The `allowed-origins` element configures a list of *all* values that can be expected by the server-side components in a HTTP Origin header from your {productname} instances (see the https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Origin[Mozilla Developer Network] for more information on the HTTP Origin header). In short, you'll need to supply a list of all the URLs that your {productname} instances will be served from without the path information.
+
+IMPORTANT: When the services are matching against the `allowed-origins` list, the `scheme` (e.g. http) and the `port` (e.g. 800) are *ignored* by default. Customize this using xref:allowed-originsignore-portoptional[`ephox.allowed-origins.ignore-port`] option.
+
+This is best illustrated with some examples:
+
+If users load {productname} from the following URLs:
+
+* `+http://server.example.com/editor.php+`
+* `+http://server.example.com/subpage/editor.php+`
+
+Add `server.example.com` to the `allowed-origins` list.
+
+If users load {productname} from the following URLs:
+
+* `+https://server.example.com/editor.php+`
+* `+http://server.example.com/subpage/editor.php+`
+
+Add `server.example.com` to the `allowed-origins` list because the scheme is ignored.
+
+If users load {productname} from the following URLs:
+
+* `+https://server.example.com/editor.php+`
+* `+https://server.example.com/+`
+
+Add `server.example.com` to the `allowed-origins` list.
+
+If users load {productname} from the following URLs:
+
+* `+http://oneserver.example.com/editor.php+`
+* `+http://twoserver.example.com/subpage/editor.php+`
+
+Add `oneserver.example.com` and `twoserver.example.com` to the``allowed-origins`` list.
+
+If users load {productname} from the following URLs:
+
+* `+http://server.example.com:8080/editor.php+`
+
+Add `server.example.com` to the `allowed-origins` list because the port is ignored.
+
+If users load {productname} from the following URLs:
+
+* `+https://server.example.com:9000/editor.php+`
+
+Add `server.example.com` to the `allowed-origins` list because the scheme and the port are ignored.
+
+[cols="^,,"]
+|===
+| Type | Setting | Description
+
+| *element*
+| `allowed-origins`
+| Stores CORS setup information
+
+| *attribute*
+| `origins`
+| An array of strings containing all possible values of the HTTP Origin header the server-side components can expect.
+|===
+
+Example:
+
+----
+ephox {
+  allowed-origins {
+    origins = [ "myserver", "myserver.example.com", "myotherserver", "mysecureserver" ]
+  }
+}
+----
+
+[[wildcardsupport]]
+==== Wildcard support
+
+The `*` wildcard character matches any value. Wildcards are supported in the following parts of entries in the `allowed-origin` list:
+
+. As a prefix of the domain (e.g. `*.mydomain.com`).
+. As the only character (e.g. `+*+`). This will allow *any* Origin to access the server-side components.
+
+NOTE: Option 2 allows a broad set of origins access to the server-side components and is NOT recommended for production deployments.
+
+----
+ephox {
+  allowed-origins {
+    origins = [ "myserver", "*.mydomain.example.com" ]
+  }
+}
+----
+
+[[regularexpressionssupport]]
+==== Regular Expressions support
+
+include::partial$misc/requires_jsscwar_230v.adoc[]
+
+Regular expressions can be used alongside xref:wildcardsupport[wildcards] for specifying `allowed-origins.origins`. To use a regular expression, start and end the expression with the forward-slash `'/'` character.
+
+For example:
+
+----
+ephox {
+  allowed-origins {
+    origins = [ "myserver", "/(myserver|myotherserver\.)?example\.com/" ]
+  }
+}
+----
+
+For a list of valid constructs, see: https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html#sum[Java 8: `java.util.regex` - Summary of regular-expression constructs].
+
+[[allowed-originssame-originoptional]]
+==== `allowed-origins.same-origin` (optional)
+
+include::partial$misc/requires_jsscwar_230v.adoc[]
+
+Enabling `same-origin` removes the need to specify the domain origin accessing the service if the service is deployed from the same server.
+
+The `allowed-origins` `same-origin` option can be used to block all cross-origin requests. This option is set to `false` by default.
+
+Setting the `same-origin` setting to `true` will block all HTTP `OPTIONS` requests and allow all other HTTP methods. When set to `true`, all `origins` specified in `allowed-origins` will be ignored.
+
+For example:
+
+----
+ephox {
+  allowed-origins {
+    same-origin: true
+  }
+}
+----
+
+[[allowed-originsignore-portoptional]]
+==== `allowed-origins.ignore-port` (optional)
+
+include::partial$misc/list_ignore_port_service_versions.adoc[]
+
+To enforce a port check for the service's `allowed-origins`, set `ignore-port` to `false`. When `ignore-port` is set to false, all `allowed-origins` *must* include the port of the origin.
+
+This option is set to `true` by default, so ports specified in `allowed-origins` are ignored.
+
+For example:
+
+----
+ephox {
+  allowed-origins {
+    origins = ["myserver:8000", "myserver:8001"]
+    ignore-port = false
+  }
+}
+----
+
+[[troubleshootingorigins]]
+==== Troubleshooting Origins
+
+If you missed an Origin or specified an Origin incorrectly, {productname} features that rely on the server-side components will not work from that Origin. If you observe that requests to the server-side components are failing or features are unavailable and you're not sure why, refer to the troubleshooting information about xref:troubleshoot-server.adoc#usingbrowsertoolingtoinvestigateservicesissues[Using browser tooling to investigate services issues].
+
+[[proxyoptional]]
+=== `proxy` (optional)
+
+This element configures use of an HTTP proxy for outgoing HTTP/HTTPS requests made by the server-side components.
+
+Default proxy settings are picked up from JVM system properties, usually provided on the command line, as defined in http://docs.oracle.com/javase/8/docs/api/java/net/doc-files/net-properties.html[Networking Properties for Java]. The system properties `http.proxyHost`, `http.proxyPort`, `http.nonProxyHosts`, `https.proxyHost`, `https.proxyPort` are recognized as well as `http.proxyUser` and `http.proxyPassword` to support authenticating proxies.
+
+This optional proxy element provides an alternative to providing proxy settings as JVM system properties, or to override system properties.
+
+[cols="^,,"]
+|===
+| Type | Setting | Description
+
+| *element*
+| `proxy`
+| Stores HTTP outgoing proxy settings for the server-side components.
+
+| *attribute*
+| `http.proxyHost`
+| A string defining the host name of the proxy for plain HTTP (not HTTPS) connections. (Mandatory)
+
+| *attribute*
+| `http.proxyPort`
+| An integer defining the port number of the proxy for plain HTTP (not HTTPS) connections. (Mandatory)
+
+| *attribute*
+| `http.nonProxyHosts`
+| A list of strings separated by vertical lines ("\|") listing hosts and domains to be excluded from proxying, for *both* plain HTTP and HTTPS connections. The strings can contain asterisks ("\*") as wildcards. (Optional, defaults to "localhost\|127.*\|[::1]" if not set.)
+
+| *attribute*
+| `https.proxyHost`
+| A string defining the host name of the proxy for HTTPS connections. (Optional)
+
+| *attribute*
+| `https.proxyPort`
+| An integer defining the port number of the proxy for HTTPS connections. (Optional)
+
+| *attribute*
+| `http.proxyUser`
+| Username for authenticating to *both* the HTTP and HTTPS proxy. (Optional)
+
+| *attribute*
+| `http.proxyPassword`
+| Password for authenticating to *both* the HTTP and HTTPS proxy. (Optional)
+|===
+
+In the following example, both HTTP and HTTPS connections (except to localhost and the example.com domain) are proxied through someproxy.example.com on port 8080 and someproxy.example.com does not require authentication.
+
+----
+ephox {
+    proxy {
+        http.proxyHost = "someproxy.example.com"
+        http.proxyPort = "8080"
+        https.proxyHost = "someproxy.example.com"
+        https.proxyPort = "8080"
+        http.nonProxyHosts = "localhost|*.example.com"
+    }
+}
+----
+
+[[httpoptional]]
+=== `http` (optional)
+
+Some server-side components make outbound HTTP and HTTPS connections. These include Link Checker, Enhanced Media Embed and Image Tools Proxy. In an evaluation or pre-production environment, you might want to test these features against resources with untrusted SSL certificates such as in-house servers with self-signed SSL certificates. In these circumstances, it is possible to bypass all SSL security.
+
+This is not recommended for production environments.
+
+[cols="^,,"]
+|===
+| Type | Setting | Description
+
+| *element*
+| `http`
+| Configures HTTP client behavior.
+
+| *attribute*
+| `trust-all-cert`
+| A boolean indicating whether to bypass SSL security and indiscriminately trusts all SSL certificates. Default: false
+
+| *attribute*
+| `request-timeout-seconds`
+| An integer defining the number of seconds to allow HTTP requests to take. Default: 10
+|===
+
+Example:
+
+----
+ephox {
+    http {
+        trust-all-cert = true
+    }
+}
+----
+
+The request timeout on outbound HTTP and HTTPS connections can be set. Setting this to a larger value will allow larger files through, but they may take a long time. An example might be if you expect to fetch very large files with the image proxy service.
+
+Example:
+
+----
+ephox {
+    http {
+        request-timeout-seconds = 15
+    }
+}
+----
+
+[[alternativehttptimeoutsettings]]
+==== Alternative http timeout settings
+
+include::partial$misc/requires_jsscwar_230v.adoc[]
+
+When greater control over timeout settings is needed, the following three settings can be used instead of the `request-timeout-seconds` setting:
+
+* `connection-request-timeout-seconds`: The amount of time to wait for a connection from the connection pool.
+* `connect-timeout-seconds`: The amount of time to wait for a connection to be established.
+* `socket-timeout-seconds`: The amount of time to wait in between packets after a connection is established.
+
+If one of these settings are required, remove `request-timeout-seconds` and specify values for all three of these settings.
+
+For example:
+
+----
+ephox {
+    http {
+        connection-request-timeout-seconds = 10
+        connect-timeout-seconds = 5
+        socket-timeout-seconds = 4
+    }
+}
+----
+
+[[imageproxyservicesettings]]
+== Image proxy service settings
+
+[[image-proxyoptional]]
+=== `image-proxy` (optional)
+
+The xref:editimage.adoc[image proxy service] has some optional configuration to set a maximum size for images proxied. Images beyond this size it will not be proxied. Please note that the `http.request-timeout-seconds` above also applies to requests made by the image proxy service.
+
+[cols="^,,"]
+|===
+| Type | Setting | Description
+
+| *element*
+| `image-proxy`
+| Configures image proxy behavior.
+
+| *attribute*
+| `size-limit`
+| An integer defining the maximum allowed image size in bytes. Default: `10000000`
+|===
+
+Example:
+
+----
+ephox {
+    image-proxy {
+        size-limit = 10000000 // 10MB in bytes
+    }
+}
+----
+
+[[hyperlinkingservicesettings]]
+== Hyperlinking service settings
+
+[[link-checkingoptional]]
+=== `link-checking` (optional)
+
+The Link checker has three configurable settings:
+
+* `enabled`
+* `fallback-to-get`
+* `link-checking.cache`
+
+[[enabledoptional]]
+==== `enabled` (optional)
+
+Used to enable (`true`) or disable (`false`) the Link-checking service. This setting is `true` by default.
+
+For example:
+
+----
+ephox {
+  link-checking {
+    enabled = true
+  }
+}
+----
+
+[[fallback-to-getoptional]]
+==== `fallback-to-get` (optional)
+
+include::partial$misc/requires_jsscwar_230v.adoc[]
+
+The Link-checker normally relies on the `HEAD` response. If `fallback-to-get` is `true`, the link-checker may issue a `GET` request after receiving a non-standard `HEAD` response to verify a link. When `true`, the Link checker can correctly identify working URLs that return non-standard `HEAD` replies. Enabling the `fallback-to-get` setting can lead to server performance issues and is set to `false` by default.
+
+For example:
+
+----
+ephox {
+  link-checking {
+    fallback-to-get = true
+  }
+}
+----
+
+[[cacheoptional]]
+==== `cache` (optional)
+
+This element configures the Link Checker service's built-in cache. When a hyperlink is checked and confirmed valid, the result is cached to save unnecessary network traffic in the future.
+
+Default settings are automatically configured, meaning these settings are optional.
+
+* `capacity` - sets the capacity of the cache. The default setting is `500`.
+* `timeToLiveInSeconds` - sets the time-to-live of elements of the cache, measured in seconds. This is the maximum total amount of time that an element is allowed to remain in the cache. The default setting is `86400` seconds, which is one day.
+* `timeToIdleInSeconds` - sets the time-to-idle of elements of the cache, measured in seconds. This is the maximum amount of time that an element will remain in the cache if it is not being accessed. The default setting is `3600` seconds, which is one hour.
+
+Example:
+
+----
+ephox {
+  link-checking {
+    cache {
+      capacity = 500
+      timeToLiveInSeconds = 86400
+      timeToIdleInSeconds = 3600
+    }
+  }
+}
+----
+
+[[spellingservicesettings]]
+== Spelling service settings
+
+[[spellingoptional]]
+=== `spelling` (optional)
+
+The Spelling service has these configurable settings:
+
+* `hunspell-dictionaries-path`
+* `custom-dictionaries-path`
+* `dynamic-custom-dictionaries`
+
+[[hunspell-dictionaries-pathoptional]]
+==== `hunspell-dictionaries-path` (optional)
+
+include::partial$misc/requires_5_9v.adoc[]
+
+include::partial$misc/hunspell-dictionaries-path.adoc[]
+
+[[custom-dictionaries-pathoptional]]
+==== `custom-dictionaries-path` (optional)
+
+For information on creating custom dictionaries, see: xref:custom-dictionaries-for-tiny-spellchecker.adoc#creatingcustomdictionaryfiles[Adding custom dictionaries - Creating custom dictionary files].
+
+include::partial$misc/custom-dictionaries-path.adoc[]
+
+[[dynamic-custom-dictionariesoptional]]
+==== `dynamic-custom-dictionaries` (optional)
+
+include::partial$misc/dynamic-custom-dictionaries.adoc[]
+
+[[num-incorrect-words-in-suggestions-request-limitoptional]]
+==== `num-incorrect-words-in-suggestions-request-limit` (optional)
+
+include::partial$misc/num-incorrect-words-in-suggestions-request-limit.adoc[]
+
+[[loggingserviceactivity]]
+== [[logging]] Logging service activity
+
+It may be useful to make the {productname} server-side components write to their own log file. This can assist in troubleshooting and make it easier to provide logs as part of a support ticket.
+
+The {productname} server-side components use the http://logback.qos.ch/manual/configuration.html[Logback] logging format.
+
+To write the logs to a specific file:
+
+. [[step1createaloggingconfigurationxmlfile]] Create a logging configuration XML file. Save the snippet below as `logback.xml` after replacing pass:[{$LOG_LOCATION}] with the full path to the destination log file (e.g. /var/log/tinymce_server_components.log).
++
+[source, xml, subs="attributes+"]
+----
+<configuration>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger\{36\} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <appender name="FILE" class="ch.qos.logback.core.FileAppender">
+    <file>{$LOG_LOCATION}</file>
+    <encoder>
+      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger\{36\} - %msg%n</pattern>
+    </encoder>
+  </appender>
+
+  <!-- The name "com.ephox" refers to all {productname} server-side components. -->
+  <logger name="com.ephox" level="INFO"/>
+
+  <root level="INFO">
+    <appender-ref ref="FILE" />
+    <!-- If you want logging to go to the container as well uncomment
+    the following line -->
+    <!-- <appender-ref ref="STDOUT" /> -->
+  </root>
+
+</configuration>
+----
+
+. [[step2passtheconfigurationfiletothejavaapplicationserver]] Pass the configuration file to the Java application server. Assuming you've saved your `logback.xml` file in `/etc/opt/tinymce`, follow xref:introduction-to-premium-selfhosted-services.adoc#step4passtheconfigurationfiletothejavaapplicationserver[`step 4`] and xref:introduction-to-premium-selfhosted-services.adoc#step5restartthejavaapplicationserver[`step 5`] on the *Install Server-side Components* page to set the following JVM system property on your Java application server:
++
+[source]
+----
+-Dlogback.configurationFile=/etc/opt/tinymce/logback.xml
+----

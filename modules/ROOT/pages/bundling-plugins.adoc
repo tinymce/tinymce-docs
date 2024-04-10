@@ -1,0 +1,62 @@
+= Bundling TinyMCE plugins using module loading
+:description: Information on bundling TinyMCE plugins using module loading
+:description_short: Information on bundling plugins
+:title_nav: Plugins
+
+:editorcomponent: plugin
+include::partial$module-loading/bundling-ref-example.adoc[]
+:editorcomponent: nil
+
+The following table shows examples of the syntax used to bundle the following plugin.
+
+Required files for an example plugin:
+
+----
+./plugins/example/content.css
+./plugins/example/plugin.js
+----
+
+Example syntax for including the example "plugin" in a bundle:
+
+[cols='1,1,4']
+|===
+|Module Syntax |Source |Example
+
+.2+|ES6+
+|npm
+a|
+[source, js]
+----
+import pluginCss from 'tinymce/plugins/example/content.css';
+import 'tinymce/plugins/example';
+----
+
+|`.zip`
+a|
+[source, js]
+----
+import pluginCss from '../tinymce/plugins/example/content.css';
+import '../tinymce/plugins/example/plugin';
+----
+
+.2+|Common JS
+|npm
+a|
+[source, js]
+----
+var pluginCss = require('tinymce/plugins/example/content.css');
+require('tinymce/plugins/example');
+----
+
+|`.zip`
+a|
+[source, js]
+----
+var pluginCss = require('../tinymce/plugins/example/content.css');
+require('../tinymce/plugins/example/plugin.js');
+----
+|===
+
+IMPORTANT: The handling of content CSS files (such as `content.css` or `content.min.css`) varies between bundling tools. View the relevant guide for the required syntax at xref:usage-with-module-loaders.adoc[Bundling {productname} with a module loader].
+
+include::partial$module-loading/bundling-plugin-files.adoc[]

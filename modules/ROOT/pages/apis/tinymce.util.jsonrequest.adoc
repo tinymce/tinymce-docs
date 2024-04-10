@@ -1,0 +1,81 @@
+= tinymce.util.JSONRequest
+:navtitle: tinymce.util.JSONRequest
+:description: This class enables you to use JSON-RPC to call backend methods.
+:keywords: send, sendRPC
+:moxie-type: api
+
+This class enables you to use JSON-RPC to call backend methods.
+
+JSONRequest has been deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0.
+
+[[examples]]
+== Examples
+[source, javascript]
+----
+var json = new tinymce.util.JSONRequest({
+    url: 'somebackend.php'
+});
+
+// Send RPC call 1
+json.send({
+    method: 'someMethod1',
+    params: ['a', 'b'],
+    success: function(result) {
+        console.dir(result);
+    }
+});
+
+// Send RPC call 2
+json.send({
+    method: 'someMethod2',
+    params: ['a', 'b'],
+    success: function(result) {
+        console.dir(result);
+    }
+});
+----
+
+[[summary]]
+== Summary
+
+[[methods-summary]]
+=== Methods
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#send[send()]|Sends a JSON-RPC call. Consult the TinyMCE API Documentation for more details on what you can pass to this function.|`xref:apis/tinymce.util.jsonrequest.adoc[JSONRequest]`
+|xref:#sendRPC[sendRPC()]|Simple helper function to send a JSON-RPC request without the need to initialize an object.
+Consult the TinyMCE API Documentation for more details on what you can pass to this function.|`xref:apis/tinymce.util.jsonrequest.adoc[JSONRequest]`
+|===
+
+[[methods]]
+== Methods
+
+[[send]]
+=== send()
+[source, javascript]
+----
+send(args: Object)
+----
+Sends a JSON-RPC call. Consult the TinyMCE API Documentation for more details on what you can pass to this function.
+
+==== Parameters
+
+* `args (Object)` - Call object where there are three field id, method and params this object should also contain callbacks etc.
+
+'''
+
+[[sendRPC]]
+=== sendRPC()
+[source, javascript]
+----
+sendRPC(o: Object)
+----
+Simple helper function to send a JSON-RPC request without the need to initialize an object.
+Consult the TinyMCE API Documentation for more details on what you can pass to this function.
+
+==== Parameters
+
+* `o (Object)` - Call object where there are three field id, method and params this object should also contain callbacks etc.
+
+'''

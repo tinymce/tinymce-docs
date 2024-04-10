@@ -1,0 +1,73 @@
+= Image Tools plugin
+:description: Image editing features for TinyMCE.
+:keywords: imagetools rotate rotateleft rotateright flip flipv fliph editimage imageoptions
+:title_nav: Image Tools
+
+:pluginname: Image Tools
+:plugincode: imagetools
+
+include::partial$DEPRECATED/imagetools.adoc[]
+
+Image Tools (`imagetools`) plugin adds a contextual editing toolbar to the images in the editor. If toolbar is not appearing on image click, it might be that you need to enable `imagetools_cors_hosts` or `imagetools_proxy` (see below).
+
+== Interactive example
+
+liveDemo::image-tools[]
+
+include::partial$misc/svgsNotSupported.adoc[]
+
+== Cloud Installation
+
+The Image Tools plugin is provided with all subscriptions to xref:editor-and-features.adoc[{cloudname}], including an automatically configured image proxy.
+Simply add `image` to the `toolbar` list and `image imagetools` to the `plugins` list.
+
+=== Basic setup using Tiny Cloud
+
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: 'image',
+  plugins: 'image imagetools'
+});
+----
+
+== Self-hosted Installation
+
+To enable the {productname} Image Tools plugin:
+
+. Add 'image' to the 'toolbar' list and 'image imagetools' to the 'plugins' list
+. Enable `imagetools_cors_hosts` and `imagetools_proxy` options as needed
+
+=== Basic self-hosted setup
+
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: 'image',
+  plugins: 'image imagetools',
+  imagetools_cors_hosts: ['mydomain.com', 'otherdomain.com'],
+  imagetools_proxy: 'proxy.php'
+});
+----
+
+== Options
+
+include::partial$configuration/image_cors_hosts.adoc[]
+
+include::partial$configuration/imagetools_credentials_hosts.adoc[]
+
+include::partial$configuration/imagetools_fetch_image.adoc[]
+
+include::partial$configuration/image_proxy.adoc[]
+
+include::partial$configuration/imagetools_toolbar.adoc[]
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+== Commands
+
+The Image Tools plugin provides the following JavaScript commands.
+
+include::partial$commands/imagetools-cmds.adoc[]

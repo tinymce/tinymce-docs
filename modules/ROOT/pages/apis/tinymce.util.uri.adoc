@@ -1,0 +1,205 @@
+= tinymce.util.URI
+:navtitle: tinymce.util.URI
+:description: This class handles parsing, modification and serialization of URI/URL strings.
+:keywords: URI, getURI, isDomSafe, isSameOrigin, setPath, toAbsPath, toAbsolute, toRelPath, toRelative
+:moxie-type: api
+
+This class handles parsing, modification and serialization of URI/URL strings.
+
+[[summary]]
+== Summary
+
+[[constructors-summary]]
+=== Constructors
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#URI[URI()]|Constructs a new URI instance.|`xref:apis/tinymce.util.uri.adoc[URI]`
+|===
+
+[[methods-summary]]
+=== Methods
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#getURI[getURI()]|Returns the full URI of the internal structure.|`xref:apis/tinymce.util.uri.adoc[URI]`
+|xref:#isDomSafe[isDomSafe()]|Check to see if a URI is safe to use in the Document Object Model (DOM). This will return
+true if the URI can be used in the DOM without potentially triggering a security issue.|`xref:apis/tinymce.util.uri.adoc[URI]`
+|xref:#isSameOrigin[isSameOrigin()]|Determine whether the given URI has the same origin as this URI.  Based on RFC-6454.
+Supports default ports for protocols listed in DEFAULT_PORTS.  Unsupported protocols will fail safe: they
+won't match, if the port specifications differ.|`xref:apis/tinymce.util.uri.adoc[URI]`
+|xref:#setPath[setPath()]|Sets the internal path part of the URI.|`xref:apis/tinymce.util.uri.adoc[URI]`
+|xref:#toAbsPath[toAbsPath()]|Converts a relative path into a absolute path.|`xref:apis/tinymce.util.uri.adoc[URI]`
+|xref:#toAbsolute[toAbsolute()]|Converts the specified URI into a absolute URI based on the current URI instance location.|`xref:apis/tinymce.util.uri.adoc[URI]`
+|xref:#toRelPath[toRelPath()]|Converts a absolute path into a relative path.|`xref:apis/tinymce.util.uri.adoc[URI]`
+|xref:#toRelative[toRelative()]|Converts the specified URI into a relative URI based on the current URI instance location.|`xref:apis/tinymce.util.uri.adoc[URI]`
+|===
+
+[[constructors]]
+== Constructors
+
+[[URI]]
+=== URI
+[source, javascript]
+----
+public constructor function URI(url: String, settings: Object)
+----
+Constructs a new URI instance.
+
+==== Parameters
+
+* `url (String)` - URI string to parse.
+* `settings (Object)` - Optional settings object.
+
+[[methods]]
+== Methods
+
+[[getURI]]
+=== getURI()
+[source, javascript]
+----
+getURI(noProtoHost: Boolean)
+----
+Returns the full URI of the internal structure.
+
+==== Parameters
+
+* `noProtoHost (Boolean)` - Optional no host and protocol part. Defaults to false.
+
+'''
+
+[[isDomSafe]]
+=== isDomSafe()
+[source, javascript]
+----
+isDomSafe(uri: String, context: Object, options: Object): Boolean
+----
+Check to see if a URI is safe to use in the Document Object Model (DOM). This will return
+true if the URI can be used in the DOM without potentially triggering a security issue.
+
+==== Parameters
+
+* `uri (String)` - The URI to be validated.
+* `context (Object)` - An optional HTML tag name where the element is being used.
+* `options (Object)` - An optional set of options to use when determining if the URI is safe.
+
+==== Return value
+
+* `Boolean` - True if the URI is safe, otherwise false.
+
+'''
+
+[[isSameOrigin]]
+=== isSameOrigin()
+[source, javascript]
+----
+isSameOrigin(uri: tinymce.util.URI): Boolean
+----
+Determine whether the given URI has the same origin as this URI.  Based on RFC-6454.
+Supports default ports for protocols listed in DEFAULT_PORTS.  Unsupported protocols will fail safe: they
+won't match, if the port specifications differ.
+
+==== Parameters
+
+* `uri (xref:apis/tinymce.util.uri.adoc[URI])` - Uri instance to compare.
+
+==== Return value
+
+* `Boolean` - True if the origins are the same.
+
+'''
+
+[[setPath]]
+=== setPath()
+[source, javascript]
+----
+setPath(path: string)
+----
+Sets the internal path part of the URI.
+
+==== Parameters
+
+* `path (string)` - Path string to set.
+
+'''
+
+[[toAbsPath]]
+=== toAbsPath()
+[source, javascript]
+----
+toAbsPath(base: String, path: String)
+----
+Converts a relative path into a absolute path.
+
+==== Parameters
+
+* `base (String)` - Base point to convert the path from.
+* `path (String)` - Relative path to convert into an absolute path.
+
+'''
+
+[[toAbsolute]]
+=== toAbsolute()
+[source, javascript]
+----
+toAbsolute(uri: String, noHost: Boolean): String
+----
+Converts the specified URI into a absolute URI based on the current URI instance location.
+
+==== Examples
+[source, javascript]
+----
+// Converts an relative URL to an absolute URL url will be http://www.site.com/dir/somedir/somefile.htm
+var url = new tinymce.util.URI('http://www.site.com/dir/').toAbsolute('somedir/somefile.htm');
+----
+
+==== Parameters
+
+* `uri (String)` - URI to convert into a relative path/URI.
+* `noHost (Boolean)` - No host and protocol prefix.
+
+==== Return value
+
+* `String` - Absolute URI from the point specified in the current URI instance.
+
+'''
+
+[[toRelPath]]
+=== toRelPath()
+[source, javascript]
+----
+toRelPath(base: String, path: String)
+----
+Converts a absolute path into a relative path.
+
+==== Parameters
+
+* `base (String)` - Base point to convert the path from.
+* `path (String)` - Absolute path to convert into a relative path.
+
+'''
+
+[[toRelative]]
+=== toRelative()
+[source, javascript]
+----
+toRelative(uri: String): String
+----
+Converts the specified URI into a relative URI based on the current URI instance location.
+
+==== Examples
+[source, javascript]
+----
+// Converts an absolute URL to an relative URL url will be somedir/somefile.htm
+var url = new tinymce.util.URI('http://www.site.com/dir/').toRelative('http://www.site.com/dir/somedir/somefile.htm');
+----
+
+==== Parameters
+
+* `uri (String)` - URI to convert into a relative path/URI.
+
+==== Return value
+
+* `String` - Relative URI from the point specified in the current URI instance.
+
+'''

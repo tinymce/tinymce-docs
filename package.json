@@ -1,6 +1,6 @@
 {
   "name": "tinymce-docs",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "description": "TinyMCE documentation",
   "repository": "git@github.com:tinymce/tinymce-docs.git",
   "bugs": {
@@ -11,8 +11,10 @@
     "watch": "nodemon --exec antora antora-playbook.yml",
     "server": "http-server build/site/ --port 4000",
     "serve": "npm-run-all -p watch server",
-    "build": "./_scripts/api-reference.sh",
-    "build-local": "./_scripts/api-reference-local.sh"
+    "build": "./-scripts/api-reference.sh",
+    "build-local": "./-scripts/api-reference-local.sh",
+    "clean": "rm -rf ./build",
+    "start": "yarn clean && yarn serve"
   },
   "author": "Tiny Technologies Inc",
   "license": "CC-BY-NC-SA-3.0",

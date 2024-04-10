@@ -1,7 +1,7 @@
 [[remove_script_host]]
 == `remove_script_host`
 
-This option is used if the xref:configure/url-handling.adoc#relative_urls[`relative_urls`] option is set to `false` and only applies to links with the same domain as the xref:configure/url-handling.adoc#document_base_url[`document_base_url`].
+This option is used if the xref:url-handling.adoc#relative_urls[`relative_urls`] option is set to `false` and only applies to links with the same domain as the xref:url-handling.adoc#document_base_url[`document_base_url`].
 
 If this option is set to `true`, the protocol and host of the `document_base_url` is _excluded_ for relative links.
 

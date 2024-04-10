@@ -1,0 +1,378 @@
+= tinymce.html.Schema
+:navtitle: tinymce.html.Schema
+:description: Schema validator class.
+:keywords: addCustomElements, addValidChildren, addValidElements, children, getBlockElements, getBoolAttrs, getCustomElements, getElementRule, getInvalidStyles, getMoveCaretBeforeOnEnterElements, getNonEmptyElements, getSelfClosingElements, getShortEndedElements, getSpecialElements, getTextBlockElements, getTextInlineElements, getValidClasses, getValidStyles, getWhiteSpaceElements, isValid, isValidChild, setValidElements
+:moxie-type: api
+
+Schema validator class.
+
+[[examples]]
+== Examples
+[source, javascript]
+----
+if (tinymce.activeEditor.schema.isValidChild('p', 'span'))
+   alert('span is valid child of p.');
+
+ if (tinymce.activeEditor.schema.getElementRule('p'))
+   alert('P is a valid element.');
+----
+
+[[summary]]
+== Summary
+
+[[methods-summary]]
+=== Methods
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#addCustomElements[addCustomElements()]|Adds custom non-HTML elements to the schema.|`xref:apis/tinymce.html.schema.adoc[Schema]`
+|xref:#addValidChildren[addValidChildren()]|Parses a valid children string and adds them to the schema structure. The valid children
+format is for example `element[child1{vbar}child2]`.|`xref:apis/tinymce.html.schema.adoc[Schema]`
+|xref:#addValidElements[addValidElements()]|Parses a valid elements string and adds it to the schema. The valid elements
+format is for example `element[attr=default{vbar}otherattr]`.
+Existing rules will be replaced with the ones specified, so this extends the schema.|`xref:apis/tinymce.html.schema.adoc[Schema]`
+|xref:#getBlockElements[getBlockElements()]|Returns a map with block elements.|`xref:apis/tinymce.html.schema.adoc[Schema]`
+|xref:#getBoolAttrs[getBoolAttrs()]|Returns a map with boolean attributes.|`xref:apis/tinymce.html.schema.adoc[Schema]`
+|xref:#getCustomElements[getCustomElements()]|Returns an map object of all custom elements.|`xref:apis/tinymce.html.schema.adoc[Schema]`
+|xref:#getElementRule[getElementRule()]|Returns true/false if the specified element is valid or not
+according to the schema.|`xref:apis/tinymce.html.schema.adoc[Schema]`
+|xref:#getInvalidStyles[getInvalidStyles()]|Name/value map object with valid styles for each element.|`xref:apis/tinymce.html.schema.adoc[Schema]`
+|xref:#getMoveCaretBeforeOnEnterElements[getMoveCaretBeforeOnEnterElements()]|Returns a map with elements that the caret should be moved in front of after enter is
+pressed.|`xref:apis/tinymce.html.schema.adoc[Schema]`
+|xref:#getNonEmptyElements[getNonEmptyElements()]|Returns a map with elements that should be treated as contents regardless if it has text
+content in them or not. For example: `&#60;td&#62;`, `&#60;video&#62;` or `&#60;img&#62;`.|`xref:apis/tinymce.html.schema.adoc[Schema]`
+|xref:#getSelfClosingElements[getSelfClosingElements()]|Returns a map with self closing tags. For example: `&#60;li&#62;`.|`xref:apis/tinymce.html.schema.adoc[Schema]`
+|xref:#getShortEndedElements[getShortEndedElements()]|Returns a map with short ended elements. For example: `&#60;br&#62;` or `&#60;img&#62;`.|`xref:apis/tinymce.html.schema.adoc[Schema]`
+|xref:#getSpecialElements[getSpecialElements()]|Returns a map with special elements. These are elements that needs to be parsed
+in a special way such as script, style, textarea etc. The map object values
+are regexps used to find the end of the element.
+
+
+__Deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0__.|`xref:apis/tinymce.html.schema.adoc[Schema]`
+|xref:#getTextBlockElements[getTextBlockElements()]|Returns a map with text block elements. For example: `&#60;p&#62;`, `&#60;h1&#62;` to `&#60;h6&#62;`, `&#60;div&#62;` or `&#60;address&#62;`.|`xref:apis/tinymce.html.schema.adoc[Schema]`
+|xref:#getTextInlineElements[getTextInlineElements()]|Returns a map of inline text format nodes. For example: `&#60;strong&#62;`, `&#60;span&#62;` or `&#60;ins&#62;`.|`xref:apis/tinymce.html.schema.adoc[Schema]`
+|xref:#getValidClasses[getValidClasses()]|Name/value map object with valid classes for each element.|`xref:apis/tinymce.html.schema.adoc[Schema]`
+|xref:#getValidStyles[getValidStyles()]|Name/value map object with valid styles for each element.|`xref:apis/tinymce.html.schema.adoc[Schema]`
+|xref:#getWhiteSpaceElements[getWhiteSpaceElements()]|Returns a map with elements where white space is to be preserved. For example: `&#60;pre&#62;` or `&#60;script&#62;`.|`xref:apis/tinymce.html.schema.adoc[Schema]`
+|xref:#isValid[isValid()]|Returns true/false if the specified element name and optional attribute is
+valid according to the schema.|`xref:apis/tinymce.html.schema.adoc[Schema]`
+|xref:#isValidChild[isValidChild()]|Returns true/false if the specified element and it's child is valid or not
+according to the schema.|`xref:apis/tinymce.html.schema.adoc[Schema]`
+|xref:#setValidElements[setValidElements()]|Parses a valid elements string and sets it to the schema. The valid elements
+format is for example `element[attr=default{vbar}otherattr]`.
+Existing rules will be replaced with the ones specified, so this extends the schema.|`xref:apis/tinymce.html.schema.adoc[Schema]`
+|===
+
+[[methods]]
+== Methods
+
+[[addCustomElements]]
+=== addCustomElements()
+[source, javascript]
+----
+addCustomElements(custom_elements: String)
+----
+Adds custom non-HTML elements to the schema.
+
+==== Parameters
+
+* `custom_elements (String)` - Comma separated list of custom elements to add.
+
+'''
+
+[[addValidChildren]]
+=== addValidChildren()
+[source, javascript]
+----
+addValidChildren(valid_children: String)
+----
+Parses a valid children string and adds them to the schema structure. The valid children
+format is for example `element[child1{vbar}child2]`.
+
+==== Parameters
+
+* `valid_children (String)` - Valid children elements string to parse
+
+'''
+
+[[addValidElements]]
+=== addValidElements()
+[source, javascript]
+----
+addValidElements(valid_elements: String)
+----
+Parses a valid elements string and adds it to the schema. The valid elements
+format is for example `element[attr=default{vbar}otherattr]`.
+Existing rules will be replaced with the ones specified, so this extends the schema.
+
+==== Parameters
+
+* `valid_elements (String)` - String in the valid elements format to be parsed.
+
+'''
+
+[[getBlockElements]]
+=== getBlockElements()
+[source, javascript]
+----
+getBlockElements(): Object
+----
+Returns a map with block elements.
+
+==== Return value
+
+* `Object` - Name/value lookup map for block elements.
+
+'''
+
+[[getBoolAttrs]]
+=== getBoolAttrs()
+[source, javascript]
+----
+getBoolAttrs(): Object
+----
+Returns a map with boolean attributes.
+
+==== Return value
+
+* `Object` - Name/value lookup map for boolean attributes.
+
+'''
+
+[[getCustomElements]]
+=== getCustomElements()
+[source, javascript]
+----
+getCustomElements(): Object
+----
+Returns an map object of all custom elements.
+
+==== Return value
+
+* `Object` - Name/value map object of all custom elements.
+
+'''
+
+[[getElementRule]]
+=== getElementRule()
+[source, javascript]
+----
+getElementRule(name: String): Object
+----
+Returns true/false if the specified element is valid or not
+according to the schema.
+
+==== Parameters
+
+* `name (String)` - Element name to check for.
+
+==== Return value
+
+* `Object` - Element object or undefined if the element isn't valid.
+
+'''
+
+[[getInvalidStyles]]
+=== getInvalidStyles()
+[source, javascript]
+----
+getInvalidStyles()
+----
+Name/value map object with valid styles for each element.
+
+'''
+
+[[getMoveCaretBeforeOnEnterElements]]
+=== getMoveCaretBeforeOnEnterElements()
+[source, javascript]
+----
+getMoveCaretBeforeOnEnterElements(): Object
+----
+Returns a map with elements that the caret should be moved in front of after enter is
+pressed.
+
+==== Return value
+
+* `Object` - Name/value lookup map for elements to place the caret in front of.
+
+'''
+
+[[getNonEmptyElements]]
+=== getNonEmptyElements()
+[source, javascript]
+----
+getNonEmptyElements(): Object
+----
+Returns a map with elements that should be treated as contents regardless if it has text
+content in them or not. For example: `&#60;td&#62;`, `&#60;video&#62;` or `&#60;img&#62;`.
+
+==== Return value
+
+* `Object` - Name/value lookup map for non empty elements.
+
+'''
+
+[[getSelfClosingElements]]
+=== getSelfClosingElements()
+[source, javascript]
+----
+getSelfClosingElements(): Object
+----
+Returns a map with self closing tags. For example: `&#60;li&#62;`.
+
+==== Return value
+
+* `Object` - Name/value lookup map for self closing tags elements.
+
+'''
+
+[[getShortEndedElements]]
+=== getShortEndedElements()
+[source, javascript]
+----
+getShortEndedElements(): Object
+----
+Returns a map with short ended elements. For example: `&#60;br&#62;` or `&#60;img&#62;`.
+
+==== Return value
+
+* `Object` - Name/value lookup map for short ended elements.
+
+'''
+
+[[getSpecialElements]]
+=== getSpecialElements()
+[source, javascript]
+----
+getSpecialElements(): Object
+----
+Returns a map with special elements. These are elements that needs to be parsed
+in a special way such as script, style, textarea etc. The map object values
+are regexps used to find the end of the element.
+
+
+__Deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0__.
+
+==== Return value
+
+* `Object` - Name/value lookup map for special elements.
+
+'''
+
+[[getTextBlockElements]]
+=== getTextBlockElements()
+[source, javascript]
+----
+getTextBlockElements(): Object
+----
+Returns a map with text block elements. For example: `&#60;p&#62;`, `&#60;h1&#62;` to `&#60;h6&#62;`, `&#60;div&#62;` or `&#60;address&#62;`.
+
+==== Return value
+
+* `Object` - Name/value lookup map for block elements.
+
+'''
+
+[[getTextInlineElements]]
+=== getTextInlineElements()
+[source, javascript]
+----
+getTextInlineElements(): Object
+----
+Returns a map of inline text format nodes. For example: `&#60;strong&#62;`, `&#60;span&#62;` or `&#60;ins&#62;`.
+
+==== Return value
+
+* `Object` - Name/value lookup map for text format elements.
+
+'''
+
+[[getValidClasses]]
+=== getValidClasses()
+[source, javascript]
+----
+getValidClasses()
+----
+Name/value map object with valid classes for each element.
+
+'''
+
+[[getValidStyles]]
+=== getValidStyles()
+[source, javascript]
+----
+getValidStyles()
+----
+Name/value map object with valid styles for each element.
+
+'''
+
+[[getWhiteSpaceElements]]
+=== getWhiteSpaceElements()
+[source, javascript]
+----
+getWhiteSpaceElements(): Object
+----
+Returns a map with elements where white space is to be preserved. For example: `&#60;pre&#62;` or `&#60;script&#62;`.
+
+==== Return value
+
+* `Object` - Name/value lookup map for white space elements.
+
+'''
+
+[[isValid]]
+=== isValid()
+[source, javascript]
+----
+isValid(name: String, attr: String): Boolean
+----
+Returns true/false if the specified element name and optional attribute is
+valid according to the schema.
+
+==== Parameters
+
+* `name (String)` - Name of element to check.
+* `attr (String)` - Optional attribute name to check for.
+
+==== Return value
+
+* `Boolean` - True/false if the element and attribute is valid.
+
+'''
+
+[[isValidChild]]
+=== isValidChild()
+[source, javascript]
+----
+isValidChild(name: String, child: String): Boolean
+----
+Returns true/false if the specified element and it's child is valid or not
+according to the schema.
+
+==== Parameters
+
+* `name (String)` - Element name to check for.
+* `child (String)` - Element child to verify.
+
+==== Return value
+
+* `Boolean` - True/false if the element is a valid child of the specified parent.
+
+'''
+
+[[setValidElements]]
+=== setValidElements()
+[source, javascript]
+----
+setValidElements(valid_elements: String)
+----
+Parses a valid elements string and sets it to the schema. The valid elements
+format is for example `element[attr=default{vbar}otherattr]`.
+Existing rules will be replaced with the ones specified, so this extends the schema.
+
+==== Parameters
+
+* `valid_elements (String)` - String in the valid elements format to be parsed.
+
+'''

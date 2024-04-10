@@ -3,9 +3,9 @@
 
 The valid_elements option defines which elements will remain in the edited text when the editor saves. You can use this to limit the returned HTML to a subset.
 
-This option contains a comma separated list of element conversion chunks. Each chunk contains information about how one element and its attributes should be treated. The default rule set for this option is a mixture of the full https://html.spec.whatwg.org/[HTML5] and http://www.w3.org/TR/REC-html40/[HTML4] specification or the HTML5 or HTML4 specification depending on the configured xref:configure/content-filtering.adoc#schema[schema].
+This option contains a comma separated list of element conversion chunks. Each chunk contains information about how one element and its attributes should be treated. The default rule set for this option is a mixture of the full https://html.spec.whatwg.org/[HTML5] and http://www.w3.org/TR/REC-html40/[HTML4] specification or the HTML5 or HTML4 specification depending on the configured xref:content-filtering.adoc#schema[schema].
 
-If you just want to add or change some behavior for a few items, use the xref:configure/content-filtering.adoc#extended_valid_elements[extended_valid_elements] option
+If you just want to add or change some behavior for a few items, use the xref:content-filtering.adoc#extended_valid_elements[extended_valid_elements] option
 
 === Control characters
 
@@ -13,7 +13,7 @@ If you just want to add or change some behavior for a few items, use the xref:co
 | Name | Summary
 
 | @
-| Rules with this name will be applied to all elements defined after this rule. So `+@[attr1&#124;attr2]+` will enable `attr1` and `attr2` for all elements, but `+element1,@[attr1&#124;attr2],element2,element3+` will enable `attr1` and `attr2` only for `element2` and `element3`. If applied in xref:configure/content-filtering.adoc#extended_valid_elements[extended_valid_elements], it is only effective for the elements in the extended_valid_elements list.
+| Rules with this name will be applied to all elements defined after this rule. So `+@[attr1&#124;attr2]+` will enable `attr1` and `attr2` for all elements, but `+element1,@[attr1&#124;attr2],element2,element3+` will enable `attr1` and `attr2` only for `element2` and `element3`. If applied in xref:content-filtering.adoc#extended_valid_elements[extended_valid_elements], it is only effective for the elements in the extended_valid_elements list.
 
 | ,
 | Separates element chunk definitions.
@@ -69,7 +69,7 @@ Wildcards such as `*`,`+`,`?` may be used in element or attribute name matching.
 | Results in a unique ID. For example, `'p[id:{$uid}]'`.
 |===
 
-Use `*[*]` to include all elements and all attributes. This can be very useful when used with the xref:configure/content-filtering.adoc#invalid_elements[invalid_elements] option.
+Use `*[*]` to include all elements and all attributes. This can be very useful when used with the xref:content-filtering.adoc#invalid_elements[invalid_elements] option.
 
 *Type:* `String`
 

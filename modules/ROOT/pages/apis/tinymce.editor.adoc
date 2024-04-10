@@ -1,0 +1,1085 @@
+= tinymce.Editor
+:navtitle: tinymce.Editor
+:description: This class contains the core logic for a TinyMCE editor.
+:keywords: $, Editor, addCommand, addCommandCallback, addQueryStateHandler, addQueryStateHandlerCallback, addQueryValueHandler, addQueryValueHandlerCallback, addShortcut, addVisual, baseURI, contentCSS, contentStyles, convertURL, destroy, documentBaseURI, dom, execCallback, execCommand, fire, focus, formatter, getBody, getContainer, getContent, getContentAreaContainer, getDoc, getElement, getParam, getWin, hasEventListeners, hasFocus, hasPlugin, hide, id, initialized, insertContent, isDirty, isHidden, load, mode, nodeChanged, notificationManager, off, on, once, parser, plugins, queryCommandState, queryCommandSupported, queryCommandValue, remove, render, resetContent, save, schema, selection, serializer, setContent, setDirty, setMode, setProgressState, settings, show, theme, translate, ui, undoManager, uploadImages, windowManager
+:moxie-type: api
+
+This class contains the core logic for a TinyMCE editor.
+
+[[examples]]
+== Examples
+[source, javascript]
+----
+// Add a class to all paragraphs in the editor.
+tinymce.activeEditor.dom.addClass(tinymce.activeEditor.dom.select('p'), 'someclass');
+
+// Gets the current editors selection as text
+tinymce.activeEditor.selection.getContent({format: 'text'});
+
+// Creates a new editor instance
+var ed = new tinymce.Editor('textareaid', {
+    some_setting: 1
+}, tinymce.EditorManager);
+
+ed.render();
+----
+
+[[summary]]
+== Summary
+
+[[properties]]
+=== Properties
+[cols="2,1,4,1",options="header"]
+|===
+|Name|Type|Summary|Defined by
+|$|`xref:apis/tinymce.dom.domquery.adoc[DomQuery]`|Dom query instance with default scope to the editor document and default element is the body of the editor.
+
+
+__Deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0.__|`xref:apis/tinymce.editor.adoc[Editor]`
+|baseURI|`xref:apis/tinymce.util.uri.adoc[URI]`|URI object to current document that holds the TinyMCE editor instance.|`xref:apis/tinymce.editor.adoc[Editor]`
+|contentCSS|`Array`|Array with CSS files to load into the iframe.|`xref:apis/tinymce.editor.adoc[Editor]`
+|contentStyles|`Array`|Array of CSS styles to add to head of document when the editor loads.|`xref:apis/tinymce.editor.adoc[Editor]`
+|documentBaseURI|`xref:apis/tinymce.util.uri.adoc[URI]`|URI object to document configured for the TinyMCE instance.|`xref:apis/tinymce.editor.adoc[Editor]`
+|dom|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`|DOM instance for the editor.|`xref:apis/tinymce.editor.adoc[Editor]`
+|formatter|`xref:apis/tinymce.formatter.adoc[Formatter]`|Formatter instance.|`xref:apis/tinymce.editor.adoc[Editor]`
+|id|`String`|Editor instance id, normally the same as the div/textarea that was replaced.|`xref:apis/tinymce.editor.adoc[Editor]`
+|initialized|`Boolean`|Is set to true after the editor instance has been initialized|`xref:apis/tinymce.editor.adoc[Editor]`
+|mode|`xref:apis/tinymce.editormode.adoc[EditorMode]`|Editor mode API|`xref:apis/tinymce.editor.adoc[Editor]`
+|notificationManager|`xref:apis/tinymce.notificationmanager.adoc[NotificationManager]`|Notification manager reference, use this to open new windows and dialogs.|`xref:apis/tinymce.editor.adoc[Editor]`
+|parser|`xref:apis/tinymce.html.domparser.adoc[DomParser]`|HTML parser will be used when contents is inserted into the editor.|`xref:apis/tinymce.editor.adoc[Editor]`
+|plugins|`Object`|Name/Value object containing plugin instances.|`xref:apis/tinymce.editor.adoc[Editor]`
+|schema|`xref:apis/tinymce.html.schema.adoc[Schema]`|Schema instance, enables you to validate elements and its children.|`xref:apis/tinymce.editor.adoc[Editor]`
+|selection|`xref:apis/tinymce.dom.selection.adoc[Selection]`|Selection instance for the editor.|`xref:apis/tinymce.editor.adoc[Editor]`
+|serializer|`xref:apis/tinymce.dom.serializer.adoc[Serializer]`|DOM serializer for the editor. Will be used when contents is extracted from the editor.|`xref:apis/tinymce.editor.adoc[Editor]`
+|settings|`Object`|Name/value collection with editor settings.|`xref:apis/tinymce.editor.adoc[Editor]`
+|theme|`xref:apis/tinymce.theme.adoc[Theme]`|Reference to the theme instance that was used to generate the UI.|`xref:apis/tinymce.editor.adoc[Editor]`
+|ui|`xref:apis/tinymce.editor.ui.ui.adoc[Ui]`|Editor ui components|`xref:apis/tinymce.editor.adoc[Editor]`
+|undoManager|`xref:apis/tinymce.undomanager.adoc[UndoManager]`|Undo manager instance, responsible for handling undo levels.|`xref:apis/tinymce.editor.adoc[Editor]`
+|windowManager|`xref:apis/tinymce.windowmanager.adoc[WindowManager]`|Window manager reference, use this to open new windows and dialogs.|`xref:apis/tinymce.editor.adoc[Editor]`
+|===
+
+[[constructors-summary]]
+=== Constructors
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#Editor[Editor()]|Constructs a editor instance by id.|`xref:apis/tinymce.editor.adoc[Editor]`
+|===
+
+[[methods-summary]]
+=== Methods
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#addCommand[addCommand()]|Adds a custom command to the editor, you can also override existing commands with this method.
+The command that you add can be executed with execCommand.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#addQueryStateHandler[addQueryStateHandler()]|Adds a custom query state command to the editor, you can also override existing commands with this method.
+The command that you add can be executed with queryCommandState function.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#addQueryValueHandler[addQueryValueHandler()]|Adds a custom query value command to the editor, you can also override existing commands with this method.
+The command that you add can be executed with queryCommandValue function.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#addShortcut[addShortcut()]|Adds a keyboard shortcut for some command or function.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#addVisual[addVisual()]|Adds visual aid for tables, anchors etc so they can be more easily edited inside the editor.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#convertURL[convertURL()]|URL converter function this gets executed each time a user adds an img, a or
+any other element that has a URL in it. This will be called both by the DOM and HTML
+manipulation functions.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#destroy[destroy()]|Destroys the editor instance by removing all events, element references or other resources
+that could leak memory. This method will be called automatically when the page is unloaded
+but you can also call it directly if you know what you are doing.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#execCallback[execCallback()]|Executes a legacy callback. This method is useful to call old 2.x option callbacks.
+There new event model is a better way to add callback so this method might be removed in the future.
+
+
+__Deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0.__|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#execCommand[execCommand()]|Executes a command on the current instance. These commands can be TinyMCE internal commands prefixed with "mce" or
+they can be build in browser commands such as "Bold". A compleate list of browser commands is available on MSDN or Mozilla.org.
+This function will dispatch the execCommand function on each plugin, theme or the execcommand_callback option if none of these
+return true it will handle the command as a internal browser command.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#fire[fire()]|Fires the specified event by name. Consult the
+link:/docs/advanced/events[event reference] for more details on each event.|`xref:apis/tinymce.util.observable.adoc[Observable]`
+|xref:#focus[focus()]|Focuses/activates the editor. This will set this editor as the activeEditor in the tinymce collection
+it will also place DOM focus inside the editor.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#getBody[getBody()]|Returns the root element of the editable area.
+For a non-inline iframe-based editor, returns the iframe's body element.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#getContainer[getContainer()]|Returns the container element of the editor. The container element includes
+all the elements added to the page for the editor. Such as UI, iframe, etc.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#getContent[getContent()]|Gets the content from the editor instance, this will cleanup the content before it gets returned using
+the different cleanup rules options.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#getContentAreaContainer[getContentAreaContainer()]|Returns the content area container element of the editor. This element
+holds the iframe or the editable element.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#getDoc[getDoc()]|Returns the iframes document object.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#getElement[getElement()]|Returns the target element/textarea that got replaced with a TinyMCE editor instance.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#getParam[getParam()]|Returns a configuration parameter by name.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#getWin[getWin()]|Returns the iframes window object.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#hasEventListeners[hasEventListeners()]|Returns true/false if the object has a event of the specified name.|`xref:apis/tinymce.util.observable.adoc[Observable]`
+|xref:#hasFocus[hasFocus()]|Returns true/false if the editor has real keyboard focus.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#hasPlugin[hasPlugin()]|Checks that the plugin is in the editor configuration and can optionally check if the plugin has been loaded.
+
+
+__Added in TinyMCE 5.5__|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#hide[hide()]|Hides the editor and shows any textarea/div that the editor is supposed to replace.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#insertContent[insertContent()]|Inserts content at caret position.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#isDirty[isDirty()]|Returns true/false if the editor is dirty or not. It will get dirty if the user has made modifications to the contents.
+
+The dirty state is automatically set to `true` when the user modifies editor content after initialization or the
+last `editor.save()` call. This includes changes made using undo or redo.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#isHidden[isHidden()]|Returns true/false if the editor is hidden or not.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#load[load()]|Loads contents from the textarea, input or other element that got converted into an editor instance.
+This method will move the contents from that textarea, input or other element into the editor by using setContent
+so all events etc that method has will get dispatched as well.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#nodeChanged[nodeChanged()]|Dispatches out a onNodeChange event to all observers. This method should be called when you
+need to update the UI states or element path etc.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#off[off()]|Unbinds an event listener to a specific event by name. Consult the
+link:/docs/advanced/events[event reference] for more details on each event.|`xref:apis/tinymce.util.observable.adoc[Observable]`
+|xref:#on[on()]|Binds an event listener to a specific event by name. Consult the
+link:/docs/advanced/events[event reference] for more details on each event.|`xref:apis/tinymce.util.observable.adoc[Observable]`
+|xref:#once[once()]|Bind the event callback and once it fires the callback is removed. Consult the
+link:/docs/advanced/events[event reference] for more details on each event.|`xref:apis/tinymce.util.observable.adoc[Observable]`
+|xref:#queryCommandState[queryCommandState()]|Returns a command specific state, for example if bold is enabled or not.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#queryCommandSupported[queryCommandSupported()]|Returns true/false if the command is supported or not.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#queryCommandValue[queryCommandValue()]|Returns a command specific value, for example the current font size.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#remove[remove()]|Removes the editor from the dom and tinymce collection.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#render[render()]|Renders the editor/adds it to the page.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#resetContent[resetContent()]|Resets the editors content, undo/redo history and dirty state. If `initialContent` isn't specified, then
+the editor is reset back to the initial start content.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#save[save()]|Saves the contents from an editor out to the textarea or div element that got converted into an editor instance.
+This method will move the HTML contents from the editor into that textarea or div by getContent
+so all events etc that method has will get dispatched as well.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#setContent[setContent()]|Sets the specified content to the editor instance, this will cleanup the content before it gets set using
+the different cleanup rules options.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#setDirty[setDirty()]|Explicitly sets the dirty state. This will fire the dirty event if the editor dirty state is changed from false to true
+by invoking this method.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#setMode[setMode()]|Sets the editor mode. For example: "design", "code" or "readonly".
+
+
+__Deprecated in TinyMCE 5.0.4 and has been marked for removal in TinyMCE 6.0__ - Use `editor.mode.set(mode)` instead.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#setProgressState[setProgressState()]|Sets the progress state, this will display a throbber/progess for the editor.
+This is ideal for asynchronous operations like an AJAX save call.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#show[show()]|Shows the editor and hides any textarea/div that the editor is supposed to replace.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#translate[translate()]|Translates the specified string by replacing variables with language pack items it will also check if there is
+a key matching the input.|`xref:apis/tinymce.editor.adoc[Editor]`
+|xref:#uploadImages[uploadImages()]|Uploads all data uri/blob uri images in the editor contents to server.|`xref:apis/tinymce.editor.adoc[Editor]`
+|===
+
+[[constructors]]
+== Constructors
+
+[[Editor]]
+=== Editor
+[source, javascript]
+----
+public constructor function Editor(id: String, settings: Object, editorManager: tinymce.EditorManager)
+----
+Constructs a editor instance by id.
+
+==== Parameters
+
+* `id (String)` - Unique id for the editor.
+* `settings (Object)` - Settings for the editor.
+* `editorManager (xref:apis/tinymce.editormanager.adoc[EditorManager])` - EditorManager instance.
+
+[[methods]]
+== Methods
+
+[[addCommand]]
+=== addCommand()
+[source, javascript]
+----
+addCommand(name: String, callback: addCommandCallback, scope: Object)
+----
+Adds a custom command to the editor, you can also override existing commands with this method.
+The command that you add can be executed with execCommand.
+
+==== Examples
+[source, javascript]
+----
+// Adds a custom command that later can be executed using execCommand
+tinymce.init({
+   ...
+
+   setup: function(ed) {
+      // Register example command
+      ed.addCommand('mycommand', function(ui, v) {
+         ed.windowManager.alert('Hello world!! Selection: ' + ed.selection.getContent({format: 'text'}));
+      });
+   }
+});
+----
+
+==== Parameters
+
+* `name (String)` - Command name to add/override.
+* `callback (addCommandCallback)` - Function to execute when the command occurs.
+* `scope (Object)` - Optional scope to execute the function in.
+
+'''
+
+[[addQueryStateHandler]]
+=== addQueryStateHandler()
+[source, javascript]
+----
+addQueryStateHandler(name: String, callback: addQueryStateHandlerCallback, scope: Object)
+----
+Adds a custom query state command to the editor, you can also override existing commands with this method.
+The command that you add can be executed with queryCommandState function.
+
+==== Parameters
+
+* `name (String)` - Command name to add/override.
+* `callback (addQueryStateHandlerCallback)` - Function to execute when the command state retrieval occurs.
+* `scope (Object)` - Optional scope to execute the function in.
+
+'''
+
+[[addQueryValueHandler]]
+=== addQueryValueHandler()
+[source, javascript]
+----
+addQueryValueHandler(name: String, callback: addQueryValueHandlerCallback, scope: Object)
+----
+Adds a custom query value command to the editor, you can also override existing commands with this method.
+The command that you add can be executed with queryCommandValue function.
+
+==== Parameters
+
+* `name (String)` - Command name to add/override.
+* `callback (addQueryValueHandlerCallback)` - Function to execute when the command value retrieval occurs.
+* `scope (Object)` - Optional scope to execute the function in.
+
+'''
+
+[[addShortcut]]
+=== addShortcut()
+[source, javascript]
+----
+addShortcut(pattern: String, desc: String, cmdFunc: String | Function, scope: Object): Boolean
+----
+Adds a keyboard shortcut for some command or function.
+
+==== Examples
+[source, javascript]
+----
+editor.addShortcut('ctrl+a', "description of the shortcut", function() {});
+editor.addShortcut('ctrl+alt+a', "description of the shortcut", function() {});
+// "meta" maps to Command on Mac and Ctrl on PC
+editor.addShortcut('meta+a', "description of the shortcut", function() {});
+// "access" maps to Control+Option on Mac and shift+alt on PC
+editor.addShortcut('access+a', "description of the shortcut", function() {});
+
+editor.addShortcut(
+ 'meta+access+c', 'Opens the code editor dialog.', function () {
+   editor.execCommand('mceCodeEditor');
+});
+
+editor.addShortcut(
+ 'meta+shift+32', 'Inserts "Hello, World!" for meta+shift+space', function () {
+   editor.execCommand('mceInsertContent', false, 'Hello, World!');
+});
+----
+
+==== Parameters
+
+* `pattern (String)` - Shortcut pattern. Like for example: ctrl{plus}alt{plus}o.
+* `desc (String)` - Text description for the command.
+* `cmdFunc (String | Function)` - Command name string or function to execute when the key is pressed.
+* `scope (Object)` - Optional scope to execute the function in.
+
+==== Return value
+
+* `Boolean` - true/false state if the shortcut was added or not.
+
+'''
+
+[[addVisual]]
+=== addVisual()
+[source, javascript]
+----
+addVisual(elm: Element)
+----
+Adds visual aid for tables, anchors etc so they can be more easily edited inside the editor.
+
+==== Parameters
+
+* `elm (Element)` - Optional root element to loop though to find tables etc that needs the visual aid.
+
+'''
+
+[[convertURL]]
+=== convertURL()
+[source, javascript]
+----
+convertURL(url: string, name: string, elm: string | HTMLElement): string
+----
+URL converter function this gets executed each time a user adds an img, a or
+any other element that has a URL in it. This will be called both by the DOM and HTML
+manipulation functions.
+
+==== Parameters
+
+* `url (string)` - URL to convert.
+* `name (string)` - Attribute name src, href etc.
+* `elm (string | HTMLElement)` - Tag name or HTML DOM element depending on HTML or DOM insert.
+
+==== Return value
+
+* `string` - Converted URL string.
+
+'''
+
+[[destroy]]
+=== destroy()
+[source, javascript]
+----
+destroy(automatic: Boolean)
+----
+Destroys the editor instance by removing all events, element references or other resources
+that could leak memory. This method will be called automatically when the page is unloaded
+but you can also call it directly if you know what you are doing.
+
+==== Parameters
+
+* `automatic (Boolean)` - Optional state if the destroy is an automatic destroy or user called one.
+
+'''
+
+[[execCallback]]
+=== execCallback()
+[source, javascript]
+----
+execCallback(name: String): Object
+----
+Executes a legacy callback. This method is useful to call old 2.x option callbacks.
+There new event model is a better way to add callback so this method might be removed in the future.
+
+
+__Deprecated in TinyMCE 5.10 and has been marked for removal in TinyMCE 6.0.__
+
+==== Parameters
+
+* `name (String)` - Name of the callback to execute.
+
+==== Return value
+
+* `Object` - Return value passed from callback function.
+
+'''
+
+[[execCommand]]
+=== execCommand()
+[source, javascript]
+----
+execCommand(cmd: String, ui: Boolean, value: mixed, args: Object)
+----
+Executes a command on the current instance. These commands can be TinyMCE internal commands prefixed with "mce" or
+they can be build in browser commands such as "Bold". A compleate list of browser commands is available on MSDN or Mozilla.org.
+This function will dispatch the execCommand function on each plugin, theme or the execcommand_callback option if none of these
+return true it will handle the command as a internal browser command.
+
+==== Parameters
+
+* `cmd (String)` - Command name to execute, for example mceLink or Bold.
+* `ui (Boolean)` - True/false state if a UI (dialog) should be presented or not.
+* `value (mixed)` - Optional command value, this can be anything.
+* `args (Object)` - Optional arguments object.
+
+'''
+
+[[fire]]
+=== fire()
+[source, javascript]
+----
+fire(name: String, args: Object?, bubble: Boolean?): Object
+----
+Fires the specified event by name. Consult the
+link:/docs/advanced/events[event reference] for more details on each event.
+
+==== Examples
+[source, javascript]
+----
+instance.fire('event', {...});
+----
+
+==== Parameters
+
+* `name (String)` - Name of the event to fire.
+* `args (Object?)` - Event arguments.
+* `bubble (Boolean?)` - True/false if the event is to be bubbled.
+
+==== Return value
+
+* `Object` - Event args instance passed in.
+
+'''
+
+[[focus]]
+=== focus()
+[source, javascript]
+----
+focus(skipFocus: Boolean)
+----
+Focuses/activates the editor. This will set this editor as the activeEditor in the tinymce collection
+it will also place DOM focus inside the editor.
+
+==== Parameters
+
+* `skipFocus (Boolean)` - Skip DOM focus. Just set is as the active editor.
+
+'''
+
+[[getBody]]
+=== getBody()
+[source, javascript]
+----
+getBody(): Element
+----
+Returns the root element of the editable area.
+For a non-inline iframe-based editor, returns the iframe's body element.
+
+==== Return value
+
+* `Element` - The root element of the editable area.
+
+'''
+
+[[getContainer]]
+=== getContainer()
+[source, javascript]
+----
+getContainer(): Element
+----
+Returns the container element of the editor. The container element includes
+all the elements added to the page for the editor. Such as UI, iframe, etc.
+
+==== Return value
+
+* `Element` - HTML DOM element for the editor container.
+
+'''
+
+[[getContent]]
+=== getContent()
+[source, javascript]
+----
+getContent(args: Object): String
+----
+Gets the content from the editor instance, this will cleanup the content before it gets returned using
+the different cleanup rules options.
+
+==== Examples
+[source, javascript]
+----
+// Get the HTML contents of the currently active editor
+console.debug(tinymce.activeEditor.getContent());
+
+// Get the contents of the currently active editor as plain text
+tinymce.activeEditor.getContent({format: 'text'});
+
+// Get content of a specific editor:
+tinymce.get('content id').getContent()
+----
+
+==== Parameters
+
+* `args (Object)` - Optional content object, this gets passed around through the whole get process.
+
+==== Return value
+
+* `String` - Cleaned content string, normally HTML contents.
+
+'''
+
+[[getContentAreaContainer]]
+=== getContentAreaContainer()
+[source, javascript]
+----
+getContentAreaContainer(): Element
+----
+Returns the content area container element of the editor. This element
+holds the iframe or the editable element.
+
+==== Return value
+
+* `Element` - HTML DOM element for the editor area container.
+
+'''
+
+[[getDoc]]
+=== getDoc()
+[source, javascript]
+----
+getDoc(): Document
+----
+Returns the iframes document object.
+
+==== Return value
+
+* `Document` - Iframe DOM document object.
+
+'''
+
+[[getElement]]
+=== getElement()
+[source, javascript]
+----
+getElement(): Element
+----
+Returns the target element/textarea that got replaced with a TinyMCE editor instance.
+
+==== Return value
+
+* `Element` - HTML DOM element for the replaced element.
+
+'''
+
+[[getParam]]
+=== getParam()
+[source, javascript]
+----
+getParam(name: String, defaultVal: String, type: String): String
+----
+Returns a configuration parameter by name.
+
+==== Examples
+[source, javascript]
+----
+// Returns a specific config value from the currently active editor
+var someval = tinymce.activeEditor.getParam('myvalue');
+
+// Returns a specific config value from a specific editor instance by id
+var someval2 = tinymce.get('my_editor').getParam('myvalue');
+----
+
+==== Parameters
+
+* `name (String)` - Configruation parameter to retrieve.
+* `defaultVal (String)` - Optional default value to return.
+* `type (String)` - Optional type parameter.
+
+==== Return value
+
+* `String` - Configuration parameter value or default value.
+
+'''
+
+[[getWin]]
+=== getWin()
+[source, javascript]
+----
+getWin(): Window
+----
+Returns the iframes window object.
+
+==== Return value
+
+* `Window` - Iframe DOM window object.
+
+'''
+
+[[hasEventListeners]]
+=== hasEventListeners()
+[source, javascript]
+----
+hasEventListeners(name: String): Boolean
+----
+Returns true/false if the object has a event of the specified name.
+
+==== Parameters
+
+* `name (String)` - Name of the event to check for.
+
+==== Return value
+
+* `Boolean` - true/false if the event exists or not.
+
+'''
+
+[[hasFocus]]
+=== hasFocus()
+[source, javascript]
+----
+hasFocus(): Boolean
+----
+Returns true/false if the editor has real keyboard focus.
+
+==== Return value
+
+* `Boolean` - Current focus state of the editor.
+
+'''
+
+[[hasPlugin]]
+=== hasPlugin()
+[source, javascript]
+----
+hasPlugin(name: String, loaded: Boolean): Boolean
+----
+Checks that the plugin is in the editor configuration and can optionally check if the plugin has been loaded.
+
+
+__Added in TinyMCE 5.5__
+
+==== Examples
+[source, javascript]
+----
+// Returns `true` if the Comments plugin is in the editor configuration and has loaded successfully:
+tinymce.activeEditor.hasPlugin('tinycomments', true);
+// Returns `true` if the Table plugin is in the editor configuration, regardless of whether or not it loads:
+tinymce.activeEditor.hasPlugin('table');
+----
+
+==== Parameters
+
+* `name (String)` - The name of the plugin, as specified for the TinyMCE `plugins` option.
+* `loaded (Boolean)` - If `true`, will also check that the plugin has been loaded.
+
+==== Return value
+
+* `Boolean` - If `loaded` is `true`, returns `true` if the plugin is in the configuration and has been loaded. If `loaded` is `false`, returns `true` if the plugin is in the configuration, regardless of plugin load status.
+
+'''
+
+[[hide]]
+=== hide()
+[source, javascript]
+----
+hide()
+----
+Hides the editor and shows any textarea/div that the editor is supposed to replace.
+
+'''
+
+[[insertContent]]
+=== insertContent()
+[source, javascript]
+----
+insertContent(content: String, args: Object)
+----
+Inserts content at caret position.
+
+==== Parameters
+
+* `content (String)` - Content to insert.
+* `args (Object)` - Optional args to pass to insert call.
+
+'''
+
+[[isDirty]]
+=== isDirty()
+[source, javascript]
+----
+isDirty(): Boolean
+----
+Returns true/false if the editor is dirty or not. It will get dirty if the user has made modifications to the contents.
+
+The dirty state is automatically set to `true` when the user modifies editor content after initialization or the
+last `editor.save()` call. This includes changes made using undo or redo.
+
+==== Examples
+[source, javascript]
+----
+if (tinymce.activeEditor.isDirty())
+    alert("You must save your contents.");
+----
+
+==== Return value
+
+* `Boolean` - True/false if the editor is dirty or not. It will get dirty if the user has made modifications to the contents.
+
+'''
+
+[[isHidden]]
+=== isHidden()
+[source, javascript]
+----
+isHidden(): Boolean
+----
+Returns true/false if the editor is hidden or not.
+
+==== Return value
+
+* `Boolean` - True/false if the editor is hidden or not.
+
+'''
+
+[[load]]
+=== load()
+[source, javascript]
+----
+load(args: Object): String
+----
+Loads contents from the textarea, input or other element that got converted into an editor instance.
+This method will move the contents from that textarea, input or other element into the editor by using setContent
+so all events etc that method has will get dispatched as well.
+
+==== Parameters
+
+* `args (Object)` - Optional content object, this gets passed around through the whole load process.
+
+==== Return value
+
+* `String` - HTML string that got set into the editor.
+
+'''
+
+[[nodeChanged]]
+=== nodeChanged()
+[source, javascript]
+----
+nodeChanged(args: Object)
+----
+Dispatches out a onNodeChange event to all observers. This method should be called when you
+need to update the UI states or element path etc.
+
+==== Parameters
+
+* `args (Object)` - Optional args to pass to NodeChange event handlers.
+
+'''
+
+[[off]]
+=== off()
+[source, javascript]
+----
+off(name: String?, callback: callback?): Object
+----
+Unbinds an event listener to a specific event by name. Consult the
+link:/docs/advanced/events[event reference] for more details on each event.
+
+==== Examples
+[source, javascript]
+----
+// Unbind specific callback
+instance.off('event', handler);
+
+// Unbind all listeners by name
+instance.off('event');
+
+// Unbind all events
+instance.off();
+----
+
+==== Parameters
+
+* `name (String?)` - Name of the event to unbind.
+* `callback (callback?)` - Callback to unbind.
+
+==== Return value
+
+* `Object` - Current class instance.
+
+'''
+
+[[on]]
+=== on()
+[source, javascript]
+----
+on(name: String, callback: callback, prepend: Boolean): Object
+----
+Binds an event listener to a specific event by name. Consult the
+link:/docs/advanced/events[event reference] for more details on each event.
+
+==== Examples
+[source, javascript]
+----
+instance.on('event', function(e) {
+    // Callback logic
+});
+----
+
+==== Parameters
+
+* `name (String)` - Event name or space separated list of events to bind.
+* `callback (callback)` - Callback to be executed when the event occurs.
+* `prepend (Boolean)` - Optional flag if the event should be prepended. Use this with care.
+
+==== Return value
+
+* `Object` - Current class instance.
+
+'''
+
+[[once]]
+=== once()
+[source, javascript]
+----
+once(name: String, callback: callback): Object
+----
+Bind the event callback and once it fires the callback is removed. Consult the
+link:/docs/advanced/events[event reference] for more details on each event.
+
+==== Parameters
+
+* `name (String)` - Name of the event to bind.
+* `callback (callback)` - Callback to bind only once.
+
+==== Return value
+
+* `Object` - Current class instance.
+
+'''
+
+[[queryCommandState]]
+=== queryCommandState()
+[source, javascript]
+----
+queryCommandState(cmd: string): Boolean
+----
+Returns a command specific state, for example if bold is enabled or not.
+
+==== Parameters
+
+* `cmd (string)` - Command to query state from.
+
+==== Return value
+
+* `Boolean` - Command specific state, for example if bold is enabled or not.
+
+'''
+
+[[queryCommandSupported]]
+=== queryCommandSupported()
+[source, javascript]
+----
+queryCommandSupported(cmd: String): Boolean
+----
+Returns true/false if the command is supported or not.
+
+==== Parameters
+
+* `cmd (String)` - Command that we check support for.
+
+==== Return value
+
+* `Boolean` - true/false if the command is supported or not.
+
+'''
+
+[[queryCommandValue]]
+=== queryCommandValue()
+[source, javascript]
+----
+queryCommandValue(cmd: string): Object
+----
+Returns a command specific value, for example the current font size.
+
+==== Parameters
+
+* `cmd (string)` - Command to query value from.
+
+==== Return value
+
+* `Object` - Command specific value, for example the current font size.
+
+'''
+
+[[remove]]
+=== remove()
+[source, javascript]
+----
+remove()
+----
+Removes the editor from the dom and tinymce collection.
+
+'''
+
+[[render]]
+=== render()
+[source, javascript]
+----
+render()
+----
+Renders the editor/adds it to the page.
+
+'''
+
+[[resetContent]]
+=== resetContent()
+[source, javascript]
+----
+resetContent(initialContent: String)
+----
+Resets the editors content, undo/redo history and dirty state. If `initialContent` isn't specified, then
+the editor is reset back to the initial start content.
+
+==== Parameters
+
+* `initialContent (String)` - An optional string to use as the initial content of the editor.
+
+'''
+
+[[save]]
+=== save()
+[source, javascript]
+----
+save(args: Object): String
+----
+Saves the contents from an editor out to the textarea or div element that got converted into an editor instance.
+This method will move the HTML contents from the editor into that textarea or div by getContent
+so all events etc that method has will get dispatched as well.
+
+==== Parameters
+
+* `args (Object)` - Optional content object, this gets passed around through the whole save process.
+
+==== Return value
+
+* `String` - HTML string that got set into the textarea/div.
+
+'''
+
+[[setContent]]
+=== setContent()
+[source, javascript]
+----
+setContent(content: String, args: Object): String
+----
+Sets the specified content to the editor instance, this will cleanup the content before it gets set using
+the different cleanup rules options.
+
+==== Examples
+[source, javascript]
+----
+// Sets the HTML contents of the activeEditor editor
+tinymce.activeEditor.setContent('<span>some</span> html');
+
+// Sets the content of a specific editor (my_editor in this example)
+tinymce.get('my_editor').setContent(data);
+
+// Sets the content of the activeEditor editor using the specified format
+tinymce.activeEditor.setContent('<p>Some html</p>', {format: 'html'});
+----
+
+==== Parameters
+
+* `content (String)` - Content to set to editor, normally HTML contents but can be other formats as well.
+* `args (Object)` - Optional content object, this gets passed around through the whole set process.
+
+==== Return value
+
+* `String` - HTML string that got set into the editor.
+
+'''
+
+[[setDirty]]
+=== setDirty()
+[source, javascript]
+----
+setDirty(state: Boolean)
+----
+Explicitly sets the dirty state. This will fire the dirty event if the editor dirty state is changed from false to true
+by invoking this method.
+
+==== Examples
+[source, javascript]
+----
+function ajaxSave() {
+    var editor = tinymce.get('elm1');
+
+    // Save contents using some XHR call
+    alert(editor.getContent());
+
+    editor.setDirty(false); // Force not dirty state
+}
+----
+
+==== Parameters
+
+* `state (Boolean)` - True/false if the editor is considered dirty.
+
+'''
+
+[[setMode]]
+=== setMode()
+[source, javascript]
+----
+setMode(mode: String)
+----
+Sets the editor mode. For example: "design", "code" or "readonly".
+
+
+__Deprecated in TinyMCE 5.0.4 and has been marked for removal in TinyMCE 6.0__ - Use `editor.mode.set(mode)` instead.
+
+==== Parameters
+
+* `mode (String)` - Mode to set the editor in.
+
+'''
+
+[[setProgressState]]
+=== setProgressState()
+[source, javascript]
+----
+setProgressState(state: Boolean, time: Number): Boolean
+----
+Sets the progress state, this will display a throbber/progess for the editor.
+This is ideal for asynchronous operations like an AJAX save call.
+
+==== Examples
+[source, javascript]
+----
+// Show progress for the active editor
+tinymce.activeEditor.setProgressState(true);
+
+// Hide progress for the active editor
+tinymce.activeEditor.setProgressState(false);
+
+// Show progress after 3 seconds
+tinymce.activeEditor.setProgressState(true, 3000);
+----
+
+==== Parameters
+
+* `state (Boolean)` - Boolean state if the progress should be shown or hidden.
+* `time (Number)` - Optional time to wait before the progress gets shown.
+
+==== Return value
+
+* `Boolean` - Same as the input state.
+
+'''
+
+[[show]]
+=== show()
+[source, javascript]
+----
+show()
+----
+Shows the editor and hides any textarea/div that the editor is supposed to replace.
+
+'''
+
+[[translate]]
+=== translate()
+[source, javascript]
+----
+translate(text: String): String
+----
+Translates the specified string by replacing variables with language pack items it will also check if there is
+a key matching the input.
+
+==== Parameters
+
+* `text (String)` - String to translate by the language pack data.
+
+==== Return value
+
+* `String` - Translated string.
+
+'''
+
+[[uploadImages]]
+=== uploadImages()
+[source, javascript]
+----
+uploadImages(callback: function): Promise
+----
+Uploads all data uri/blob uri images in the editor contents to server.
+
+==== Parameters
+
+* `callback (function)` - Optional callback with images and status for each image.
+
+==== Return value
+
+* `Promise` - Promise instance.
+
+'''

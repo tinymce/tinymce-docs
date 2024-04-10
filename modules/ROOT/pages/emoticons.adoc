@@ -1,0 +1,72 @@
+= Emoticons plugin
+:controls: toolbar button
+:description: Bring a smiley to your content.
+:keywords: smiley happy smiling emoji
+:title_nav: Emoticons
+
+:pluginname: Emoticons
+:plugincode: emoticons
+
+This plugin adds a dialog to the editor lets users insert emoji into {productname}'s editable area. The dialog can be invoked via a toolbar button - `emoticons` - or a dedicated menu item added as `Insert > Emoticons`.
+
+The emoticons plugin provides an autocompleter for adding emoji without using the toolbar button or menu item. Adding a colon `:`, followed by at least two characters will open the emoticon picker showing matching emoji.
+
+NOTE: The emoticons plugin does not automatically convert text emoticons into graphical emoji.
+
+== Basic setup
+
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'emoticons',
+  toolbar: 'emoticons'
+});
+----
+
+== Browser emoji support
+
+By default, the emoticon plugin inserts Unicode character codes, such as `\ud83d\ude03` for the smiley emoji. How emoji are rendered is dependent on the web browser and operating system of the user. As a result of this, some emoji may be rendered in black and white, or may not render.
+To ensure emoji render consistently across browsers and operating systems, {companyname} recommends adding an emoji-compatible web font to the default font-family using xref:content-appearance.adoc#content_css[`content_css`].
+
+liveDemo::emoticons[]
+
+== Options
+
+The default database of emoji can be overridden or extended through the options below.
+
+Internally, emoticons is defined by an object mapping emoticon names to additional details, whereby each entry represents a single emoji. The additional details should contain a unicode character representing the emoji, any keywords that can be used to search for the emoji and a category to place the emoji in. Options are expected to be provided in the same format.
+
+[source, js]
+----
+{
+  robot: {
+    keywords: ['computer', 'machine', 'bot'],
+    char: '🤖',
+    category: 'people'
+  },
+  dog: {
+    keywords: ['animal', 'friend', 'nature', 'woof', 'puppy', 'pet', 'faithful'],
+    char: '🐶',
+    category: 'animals_and_nature'
+  }
+}
+----
+
+include::partial$configuration/emoticons_append.adoc[]
+
+include::partial$configuration/emoticons_database.adoc[]
+
+include::partial$configuration/emoticons_database_url.adoc[]
+
+include::partial$configuration/emoticons_images_url.adoc[]
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+
+== Commands
+
+The {pluginname} plugin provides the following JavaScript command.
+
+include::partial$commands/{plugincode}-cmds.adoc[]

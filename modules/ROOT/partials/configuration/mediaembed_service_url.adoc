@@ -1,6 +1,6 @@
 === `mediaembed_service_url`
 
-This option specifies the URL to the service that will handle your requests and return the embeddable snippets used by the *Media Embed* plugin. Please follow these xref:enterprise/server/index.adoc#step6setupeditorclientinstancestousetheserver-sidefunctionality[instructions] to configure the *WAR* file that you will get as a part of your link:{pricingpage}[{enterpriseversion} subscription].
-This option is not required for xref:cloud-deployment-guide/editor-and-features.adoc[{cloudname}].
+This option specifies the URL to the service that will handle your requests and return the embeddable snippets used by the *Media Embed* plugin. Please follow these xref:introduction-to-premium-selfhosted-services.adoc#step6setupeditorclientinstancestousetheserver-sidefunctionality[instructions] to configure the *WAR* file that you will get as a part of your link:{pricingpage}[{enterpriseversion} subscription].
+This option is not required for xref:editor-and-features.adoc[{cloudname}].
 
 *Type:* `String`

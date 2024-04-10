@@ -8,40 +8,16 @@ TinyMCE Editor Options API. The options API provides the ability to register, lo
 
 All options need to be registered before they can be used in the editor. This is done by using the `register()` API which requires a name and an option specification. The specification should contain a `processor` and an optional `default` value. The processor is used to parse and validate the option value either passed in the initial configuration or via the `set()` API.
 
-
-
-
-
 The processor can either be a custom function that returns if the option value is valid, or one of the following built-in processors:
 
-
-
-
-
 - `string`
-
-
 - `number`
-
-
 - `boolean`
-
-
 - `array`
-
-
 - `function`
-
-
 - `object`
-
-
 - `string[]`
-
-
 - `object[]`
-
-
 - `regexp`
 
 [[examples]]

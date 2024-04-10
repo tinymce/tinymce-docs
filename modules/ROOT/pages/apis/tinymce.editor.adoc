@@ -88,8 +88,6 @@ link:https://www.tiny.cloud/docs/tinymce/6/events/[event reference] for more det
 the tinymce command identifiers documentation.|`xref:apis/tinymce.editor.adoc[Editor]`
 |xref:#fire[fire()]|Fires the specified event by name. Consult the
 link:https://www.tiny.cloud/docs/tinymce/6/events/[event reference] for more details on each event.
-
-
 __Deprecated in TinyMCE 6.0 and has been marked for removal in TinyMCE 7.0. Use `dispatch` instead.__|`xref:apis/tinymce.util.observable.adoc[Observable]`
 |xref:#focus[focus()]|Focuses/activates the editor. This will set this editor as the activeEditor in the tinymce collection
 it will also place DOM focus inside the editor.|`xref:apis/tinymce.editor.adoc[Editor]`
@@ -104,8 +102,6 @@ holds the iframe or the editable element.|`xref:apis/tinymce.editor.adoc[Editor]
 |xref:#getDoc[getDoc()]|Returns the iframes document object.|`xref:apis/tinymce.editor.adoc[Editor]`
 |xref:#getElement[getElement()]|Returns the target element/textarea that got replaced with a TinyMCE editor instance.|`xref:apis/tinymce.editor.adoc[Editor]`
 |xref:#getParam[getParam()]|Returns a configuration parameter by name.
-
-
 __Deprecated in TinyMCE 6.0 and has been marked for removal in TinyMCE 7.0. Use the `editor.options.get` API instead.__|`xref:apis/tinymce.editor.adoc[Editor]`
 |xref:#getWin[getWin()]|Returns the iframes window object.|`xref:apis/tinymce.editor.adoc[Editor]`
 |xref:#hasEditableRoot[hasEditableRoot()]|Returns the current editable state of the editor's root element.|`xref:apis/tinymce.editor.adoc[Editor]`
@@ -142,8 +138,6 @@ This method will move the HTML contents from the editor into that textarea or di
 so all events etc that method has will get dispatched as well.|`xref:apis/tinymce.editor.adoc[Editor]`
 |xref:#setContent[setContent()]|Sets the specified content to the editor instance, this will cleanup the content before it gets set using
 the different cleanup rules options.
-
-
 __Note: The content return value was deprecated in TinyMCE 6.0 and has been marked for removal in TinyMCE 7.0.__|`xref:apis/tinymce.editor.adoc[Editor]`
 |xref:#setDirty[setDirty()]|Explicitly sets the dirty state. This will fire the dirty event if the editor dirty state is changed from false to true
 by invoking this method.|`xref:apis/tinymce.editor.adoc[Editor]`
@@ -392,8 +386,6 @@ fire(name: String, args: Object?, bubble: Boolean?): Object
 ----
 Fires the specified event by name. Consult the
 link:https://www.tiny.cloud/docs/tinymce/6/events/[event reference] for more details on each event.
-
-
 __Deprecated in TinyMCE 6.0 and has been marked for removal in TinyMCE 7.0. Use `dispatch` instead.__
 
 ==== Examples
@@ -541,8 +533,6 @@ Returns the target element/textarea that got replaced with a TinyMCE editor inst
 getParam(name: String, defaultVal: String, type: String): String
 ----
 Returns a configuration parameter by name.
-
-
 __Deprecated in TinyMCE 6.0 and has been marked for removal in TinyMCE 7.0. Use the `editor.options.get` API instead.__
 
 ==== Examples
@@ -953,8 +943,6 @@ setContent(content: String, args: Object): String
 ----
 Sets the specified content to the editor instance, this will cleanup the content before it gets set using
 the different cleanup rules options.
-
-
 __Note: The content return value was deprecated in TinyMCE 6.0 and has been marked for removal in TinyMCE 7.0.__
 
 ==== Examples

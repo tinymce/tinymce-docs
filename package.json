@@ -11,8 +11,8 @@
     "watch": "nodemon --exec antora antora-playbook.yml",
     "server": "http-server build/site/ --port 4000",
     "serve": "npm-run-all -p watch server",
-    "build": "./_scripts/api-reference.sh",
-    "build-local": "./_scripts/api-reference-local.sh",
+    "build": "./-scripts/api-reference.sh",
+    "build-local": "./-scripts/api-reference-local.sh",
     "clean": "rm -rf ./build",
     "start": "yarn clean && yarn serve"
   },

@@ -25,7 +25,7 @@ if [ -e $list_file ]
   then
     echo ""
   else
-    echo "please execute from the TinyMCE documentation root directory (such as './_scripts/icon_list_refresh.sh') and ensure '$list_file' exists"
+    echo "please execute from the TinyMCE documentation root directory (such as './-scripts/icon_list_refresh.sh') and ensure '$list_file' exists"
     exit 1
 fi
 

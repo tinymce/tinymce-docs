@@ -1,5 +1,5 @@
 * xref:quick-start.adoc[Quick start]
-* Introduction & getting started
+* xref:general-configuration-guide.adoc[Introduction & getting started]
 ** xref:basic-setup.adoc[Basic setup]
 ** xref:use-tinymce-classic.adoc[Classic editing mode]
 ** xref:use-tinymce-inline.adoc[Inline editing mode]
@@ -17,13 +17,13 @@
 ** xref:attribution-requirements.adoc[Logo attribution]
 ** xref:system-requirements.adoc[Supported Versions and Platforms]
 ** xref:get-support.adoc[Support & FAQ]
-* Cloud deployment guide
+* xref:cloud-deployment-guide.adoc[Cloud deployment guide]
 ** xref:editor-and-features.adoc[Cloud deployment of editor & plugins]
 ** xref:features-only.adoc[Cloud deployment of plugins Only]
 ** xref:editor-plugin-version.adoc[Specify editor & plugin versions]
 ** xref:plugin-editor-version-compatibility.adoc[Version compatibility reference]
 ** xref:cloud-troubleshooting.adoc[Cloud Troubleshooting]
-* Examples
+* xref:examples.adoc[Examples]
 ** xref:basic-example.adoc[Basic example]
 ** xref:full-featured.adoc[Full featured]
 ** xref:demo-casechange.adoc[Case Change]
@@ -48,7 +48,7 @@
 ** xref:file-picker.adoc[Basic local file picker]
 ** xref:local-upload.adoc[Local file upload]
 * xref:tinymce-for-mobile.adoc[Mobile]
-* Configuration reference
+* xref:configure[Configuration reference]
 ** xref:integration-and-setup.adoc[Integration options]
 ** xref:editor-appearance.adoc[User interface options]
 ** xref:content-appearance.adoc[Content appearance options]
@@ -62,14 +62,14 @@
 ** xref:content-behavior-options.adoc[Advanced editing options]
 ** xref:contributing-to-open-source.adoc[Contribute to TinyMCE]
 ** xref:contributing-docs.adoc[Contribute to documentation]
-* Plugins
-** Premium plugins
+* xref:plugins.adoc[Plugins]
+** xref:premium.adoc[Premium plugins]
 *** xref:a11ychecker.adoc[Accessibility Checker]
 *** xref:advcode.adoc[Advanced Code Editor]
 *** xref:advtable.adoc[Advanced Tables]
 *** xref:casechange.adoc[Case Change]
 *** xref:checklist.adoc[Checklist]
-*** Comments
+*** xref:comments.adoc[Comments]
 **** xref:introduction_to_tiny_comments.adoc[Introduction]
 **** xref:comments-using-comments.adoc[Using Comments]
 **** xref:comments-callback-mode.adoc[Callback mode]
@@ -88,7 +88,7 @@
 *** xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro]
 *** xref:tinydrive-plugin.adoc[Tiny Drive]
 *** xref:rtc-plugin.adoc[Real-time Collaboration]
-** Open source plugins
+** xref:opensource.adoc[Open source plugins]
 *** xref:advlist.adoc[Advanced List]
 *** xref:anchor.adoc[Anchor]
 *** xref:autolink.adoc[Autolink]
@@ -130,7 +130,7 @@
 *** xref:visualblocks.adoc[Visual Blocks]
 *** xref:visualchars.adoc[Visual Characters]
 *** xref:wordcount.adoc[Word Count]
-* UI components
+* xref:ui-components.adoc[UI components]
 ** xref:autocompleter.adoc[Autocompleter]
 ** xref:contextform.adoc[Context forms]
 ** xref:contextmenu.adoc[Context menu]
@@ -142,7 +142,7 @@
 ** xref:urldialog.adoc[URL dialog]
 ** xref:custom-toolbarbuttons.adoc[Toolbar buttons]
 ** xref:typesoftoolbarbuttons.adoc[Types of toolbar buttons]
-* Premium features
+* xref:enterprise.adoc[Premium features]
 ** xref:introduction-to-tiny-comments.adoc[Commenting & collaboration]
 ** xref:enterprise-tinydrive.adoc[Cloud-based file management]
 ** xref:enterprise-moxiemanager.adoc[Self-hosted file management]
@@ -182,38 +182,38 @@
 ** xref:enterprise-export.adoc[Export]
 ** xref:support.adoc[Professional support]
 ** xref:enterprise-system-requirements.adoc[Supported Premium Versions and Platforms]
-* Tiny Drive
+* xref:tinydrive.adoc[Tiny Drive]
 ** xref:tinydrive-introduction.adoc[Introduction]
 ** xref:tinydrive-getting-started.adoc[Getting started]
 ** xref:tinydrive-jwt-authentication.adoc[JWT Authentication]
 ** xref:tinydrive-setup-options.adoc[Configuration options]
-** Starter projects
+** xref:tinydrive-libraries[Starter projects]
 *** xref:dotnet-projects.adoc[.Net Core]
 *** xref:tinydrive-java.adoc[Java Spring]
 *** xref:tinydrive-nodejs.adoc[Node.js]
 *** xref:tinydrive-php.adoc[PHP]
-** Integrations
+** xref:tinydrive-integrations.adoc[Integrations]
 *** xref:tinydrive-dropbox-integration.adoc[Dropbox]
 *** xref:tinydrive-dropbox-and-google-drive.adoc[Google Drive]
-** API
+** xref:tinydrive-api.adoc[API]
 *** xref:standalone.adoc[Standalone API]
 *** xref:introduction-to-tinydrive-apis.adoc[Plugin API]
 ** xref:tinydrive-changelog.adoc[Changelog]
 ** xref:get-help.adoc[Get help]
-* Real-time Collaboration (RTC)
+* xref:rtc.adoc[Real-time Collaboration (RTC)]
 ** xref:rtc-introduction.adoc[Introduction]
 ** xref:rtc-supported-functionality.adoc[Supported Functionality]
 ** xref:rtc-getting-started.adoc[Getting started with RTC]
 ** xref:encryption.adoc[Encryption Setup]
 ** xref:rtc-jwt-authentication.adoc[JWT Authentication Setup]
-** Configuration options
+** xref:rtc-configuration.adoc[Configuration options]
 *** xref:rtc-options-overview.adoc[Configuration options overview]
 *** xref:rtc-options-required.adoc[Required configuration options]
 *** xref:rtc-options-optional.adoc[Recommended and optional configuration options]
 ** xref:rtc-events.adoc[RTC Events]
 ** xref:how-the-rtc-plugin-encrypts-content.adoc[How RTC encrypts content]
 ** xref:rtc-troubleshooting.adoc[RTC Troubleshooting]
-* Advanced topics
+* xref:advanced.adoc[Advanced topics]
 ** xref:tinymce-and-screenreaders.adoc[Accessibility]
 ** xref:security.adoc[Security]
 ** xref:creating-a-skin.adoc[Create a skin]
@@ -230,20 +230,20 @@
 ** xref:editor-context-menu-identifiers.adoc[Available Context Menu Items]
 ** xref:events.adoc[Available Events]
 ** xref:keyboard-shortcuts.adoc[Keyboard shortcuts]
-** Bundling TinyMCE
+** xref:usage-with-module-loaders.adoc[Bundling TinyMCE]
 *** xref:introduction_to_bundling_tinymce.adoc[Introduction]
-*** Webpack
+*** xref:webpack.adoc[Webpack]
 **** xref:webpack-cjs-npm.adoc[ES6 and npm]
 **** xref:webpack-cjs-npm.adoc[CommonJS and npm]
 **** xref:webpack-cjs-npm.adoc[ES6 and a .zip archive]
 **** xref:webpack-cjs-download.adoc[CommonJS and a .zip archive]
-*** Rollup.js
+*** xref:rollup.adoc[Rollup.js]
 **** xref:rollup-es6-npm.adoc[ES6 and npm]
 **** xref:rollup-es6-download.adoc[ES6 and a .zip archive]
-*** Browserify
+*** xref:browserify.adoc[Browserify]
 **** xref:browserify-cjs-npm.adoc[CommonJS and npm]
 **** xref:browserify-cjs-download.adoc[CommonJS and a .zip archive]
-*** Reference
+*** xref:reference.adoc[Reference]
 **** xref:bundling-plugins.adoc[Plugins]
 **** xref:content-css.adoc[Content CSS]
 **** xref:bundling-skins.adoc[Skins]
@@ -251,14 +251,14 @@
 **** xref:bundling-localization.adoc[UI localizations]
 **** xref:bundling-themes.adoc[Themes]
 ** xref:generate-rsa-key-pairs.adoc[Generate public key pairs]
-* Integrations
+* xref:integrations.adoc[Integrations]
 ** xref:angularjs.adoc[AngularJS]
 ** xref:angular-pm.adoc[Angular 5+]
 ** xref:blazor-pm.adoc[Blazor]
 ** xref:bootstrap.adoc[Bootstrap]
 ** xref:django.adoc[Django]
 ** xref:jquery-pm.adoc[jQuery]
-** Laravel
+** xref:laravel.adoc[Laravel]
 *** xref:laravel-introduction.adoc[Introduction]
 *** xref:laravel-tiny-cloud.adoc[Using Tiny Cloud]
 *** xref:laravel-composer-install.adoc[Using the Composer package]

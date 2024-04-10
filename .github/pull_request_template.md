@@ -1,6 +1,6 @@
 Ticket: DOC-<num>
 
-Site: [DOC-<num> site](http://docs-<hotfix/feature>-70-doc-<num>.staging.tiny.cloud/docs/tinymce/latest/)
+Site: [Staging branch](http://docs-<hotfix|feature>-7-doc-<num>.staging.tiny.cloud/docs/tinymce/latest/)
 
 Changes:
 * <placeholder-text>

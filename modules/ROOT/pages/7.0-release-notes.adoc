@@ -851,6 +851,8 @@ Currently, Non-breaking spaces `+&nbsp;+` may be inadvertently inserted around c
 <p>&nbsp;</p> // unexpected
 ----
 
+NOTE: This issue xref:7.0.1-release-notes.adoc#pasting-markdown-into-some-situations-would-cause-the-pasted-data-to-be-placed-in-unexpected-places[is addressed] in {productname} 7.0.1.
+
 === Tab navigation inside the Enhanced Code Editor function as expected when the host browser is Safari.
 // #TINY-10596
 

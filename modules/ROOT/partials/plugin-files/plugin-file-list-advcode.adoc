@@ -1,17 +1,11 @@
-.Base js file
-[source, js]
-----
-./plugins/advcode/plugin.js
-----
-
-.css or bundled css
+.Requires css or bundled css
 [source, js]
 ----
 ./plugins/advcode/codemirror.min.css //or
 ./plugins/advcode/codemirror_css.js // bundling requires v6.8.0 or later.
 ----
 
-.other js files
+.other js files required
 [source, js]
 ----
 ./plugins/advcode/codemirror.min.js

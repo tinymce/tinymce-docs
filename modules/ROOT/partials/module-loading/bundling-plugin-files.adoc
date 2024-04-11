@@ -11,25 +11,53 @@ include::partial$plugin-files/plugin-file-bundling-message.adoc[]
 include::partial$plugin-files/plugin-file-index.js.adoc[]
 
 [NOTE]
-====
 include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
-====
 
-[[accessibility-checker]]
+'''
+
+include::partial$plugin-files/plugin-file-bundling-also-requires.adoc[]
+
+[[a11ychecker]]
 === Accessibility Checker (`+a11ychecker+`)
 
 include::partial$plugin-files/plugin-file-list-a11ychecker.adoc[]
 
-[[comments]]
+[[tinycomments]]
 === Comments (`+tinycomments+`)
 
 include::partial$plugin-files/plugin-file-list-tinycomments.adoc[]
+
+[[advcode]]
+=== Enhanced Code Editor (`+advcode+`)
+
+include::partial$plugin-files/plugin-file-list-advcode.adoc[]
+
+[[linkchecker]]
+=== Link Checker (`+linkchecker+`)
+
+include::partial$plugin-files/plugin-file-list-linkchecker.adoc[]
+
+[[mediaembed]]
+=== Media Embed (`+mediaembed+`)
+
+include::partial$plugin-files/plugin-file-list-mediaembed.adoc[]
+
+[[mentions]]
+=== Mentions (`+mentions+`)
+
+include::partial$plugin-files/plugin-file-list-mentions.adoc[]
+
+[[pageembed]]
+=== Pageembed (`+pageembed+`)
+
+include::partial$plugin-files/plugin-file-list-pageembed.adoc[]
 
 [[powerpaste]]
 === PowerPaste (`+powerpaste+`)
 
 include::partial$plugin-files/plugin-file-list-powerpaste.adoc[]
 
+'''
 
 [[community-plugins]]
 == Community plugins
@@ -38,11 +66,16 @@ include::partial$plugin-files/plugin-file-bundling-message.adoc[]
 
 include::partial$plugin-files/plugin-file-index.js.adoc[]
 
+'''
+
+include::partial$plugin-files/plugin-file-bundling-also-requires.adoc[]
+
 [[emoticons]]
 === Emoticons (`+emoticons+`)
 
 include::partial$plugin-files/plugin-file-list-emoticons.adoc[]
 
+'''
 
 [[plugin-language-files]]
 == Plugin language files

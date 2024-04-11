@@ -14,7 +14,7 @@ Required files for an example plugin:
 [source, js]
 ----
 ./plugins/example/content.js // or './plugins/example/content_css.js'
-./plugins/example/plugin.js
+./plugins/plugincode // the plugincode placeholder must be replaced with the specific plugincode
 ----
 
 Example syntax for including the example "plugin" in a bundle using `content.js` or `content_css.js` files for bundling:
@@ -28,8 +28,7 @@ Example syntax for including the example "plugin" in a bundle using `content.js`
 a|
 [source, js]
 ----
-import pluginCss from 'tinymce/plugins/example/content.js';
-//import pluginCss from 'tinymce/plugins/example/content_css.js';
+import pluginCss from 'tinymce/plugins/example/content.js'; // or import pluginCss from 'tinymce/plugins/example/content_css.js';
 import 'tinymce/plugins/example';
 ----
 
@@ -37,8 +36,7 @@ import 'tinymce/plugins/example';
 a|
 [source, js]
 ----
-import '../tinymce/plugins/example/content.js';
-//import '../tinymce/plugins/example/content_css.js';
+import '../tinymce/plugins/example/content.js'; // or import '../tinymce/plugins/example/content_css.js';
 import '../tinymce/plugins/example/plugin';
 ----
 
@@ -47,8 +45,7 @@ import '../tinymce/plugins/example/plugin';
 a|
 [source, js]
 ----
-const pluginCss = require('tinymce/plugins/example/content.js');
-//require('tinymce/plugins/example/content_css.js'); 
+const pluginCss = require('tinymce/plugins/example/content.js'); // or require('tinymce/plugins/example/content_css.js'); 
 require('tinymce/plugins/example');
 ----
 
@@ -56,8 +53,7 @@ require('tinymce/plugins/example');
 a|
 [source, js]
 ----
-const pluginCss = require('../tinymce/plugins/example/content.js');
-//require('../tinymce/plugins/example/content_css.js');
+const pluginCss = require('../tinymce/plugins/example/content.js'); //or require('../tinymce/plugins/example/content_css.js');
 require('../tinymce/plugins/example/plugin.js');
 ----
 |===

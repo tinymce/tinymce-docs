@@ -1,3 +1,0 @@
-/*
-No Javascript is required for this configuration.
-*/

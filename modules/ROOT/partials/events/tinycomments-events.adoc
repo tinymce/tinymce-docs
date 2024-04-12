@@ -1,8 +1,0 @@
-The following events are provided by the xref:introduction-to-tiny-comments.adoc[Tiny Comments plugin].
-
-[cols="1,1,2",options="header"]
-|===
-|Name |Data |Description
-|mce-tinycomments-update |N/A |Fired when the comments sidebar is opened or closed.
-|CommentChange |`{ getEventLog: () => EventLog[] }` |Fired when a comment is added, resolved, deleted, edited, or replied to.
-|===

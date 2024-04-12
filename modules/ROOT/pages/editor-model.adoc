@@ -1,9 +1,0 @@
-= TinyMCE Model options
-:navtitle: Editor content models
-:description: Configure the editor's content model.
-
-WARNING: {productname} model configuration is a future feature. The only supported model is the default (`+dom+`) feature. This option exist only for use in scenarios where the `dom` model cannot load automatically.
-
-include::partial$configuration/model.adoc[]
-
-include::partial$configuration/model_url.adoc[]

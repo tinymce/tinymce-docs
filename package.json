@@ -8,7 +8,6 @@
   },
   "homepage": "https://www.tiny.cloud/docs/",
   "scripts": {
-    "build": "./-scripts/api-reference.sh",
     "build-local-ref": "./-scripts/api-reference-local.sh",
     "clean": "rm -rf ./build",
     "nodemon-dev": "nodemon --exec yarn antora ./antora-playbook.yml",

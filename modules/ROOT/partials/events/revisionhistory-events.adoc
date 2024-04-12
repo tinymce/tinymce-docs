@@ -1,8 +1,0 @@
-The following events are provided by the xref:revisionhistory.adoc[Revision History plugin].
-
-[cols="1,1,2",options="header"]
-|===
-|Name |Data |Description
-
-|VersionRestored |`+{ revisionId: string }+` |Fired when a version is restored.
-|===

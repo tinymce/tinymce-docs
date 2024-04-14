@@ -22,6 +22,7 @@
 ** xref:toolbar[`+toolbar+`]
 ** xref:tinymcescriptsrc[`+tinymceScriptSrc+`]
 ** xref:value[`+value+`]
+** xref:tabIndex[`+tabIndex+`]
 * xref:using-the-tinymce-react-component-as-a-uncontrolled-component[Using the TinyMCE React component as a uncontrolled component]
 * xref:using-the-tinymce-react-component-as-a-controlled-component[Using the TinyMCE React component as a controlled component]
 * xref:event-binding[Event binding]
@@ -153,6 +154,8 @@ xref:oneditorchange[`+onEditorChange+`]:: An event handler for detecting editor 
 xref:event-binding[`+onInit+`]:: An event handler for notifying when the editor has initialized. Useful for getting the initial value of the editor or obtaining a reference to the editor that can be used for a uncontrolled component.
 
 xref:value[`+value+`]:: Sets and enforces the value of the editor. Only used for a controlled component.
+
+xref:tabIndex[`+value+`]:: Sets the tabindex of the target element that the editor wraps.
 
 [[available-props]]
 == Available props
@@ -596,6 +599,22 @@ This prop allows the editor to be used as a controlled component by setting the 
 For detailed information on using the `+value+` prop, see: xref:using-the-tinymce-react-component-as-a-controlled-component[Using the {productname} React component as a controlled component].
 
 *Type:* `+String+`
+
+[[tabIndex]]
+=== `+tabIndex+`
+
+Use the `+tabIndex+` prop to set the https://developer.mozilla.org/en-US/docs/Web/HTML/Global_attributes/tabindex[tabindex] on the target element that the editor wraps.
+
+*Type:* `+Number+`
+
+==== Example: using `+tabIndex+`
+
+[source,jsx]
+----
+<Editor
+  tabIndex={-1}
+/>
+----
 
 [[using-the-tinymce-react-component-as-a-uncontrolled-component]]
 == Using the {productname} React component as a uncontrolled component

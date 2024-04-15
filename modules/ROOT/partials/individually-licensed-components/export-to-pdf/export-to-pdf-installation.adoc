@@ -52,7 +52,7 @@ Read more about using authorization in the xref:individual-export-to-pdf-on-prem
 ----
 version: "3.8"
 services:
-  pdf-converter:
+  pdf-converter-tiny:
     image: {dockerimageexporttopdf}:[version]
     ports:
       - "8080:8080"

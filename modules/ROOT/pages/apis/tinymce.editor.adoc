@@ -83,11 +83,12 @@ manipulation functions.|`xref:apis/tinymce.editor.adoc[Editor]`
 that could leak memory. This method will be called automatically when the page is unloaded
 but you can also call it directly if you know what you are doing.|`xref:apis/tinymce.editor.adoc[Editor]`
 |xref:#dispatch[dispatch()]|Dispatches the specified event by name. Consult the
-link:https://www.tiny.cloud/docs/tinymce/6/events/[event reference] for more details on each event.|`xref:apis/tinymce.util.observable.adoc[Observable]`
+
+link:https://www.tiny.cloud/docs/tinymce/7/events/[event reference] for more details on each event.|`xref:apis/tinymce.util.observable.adoc[Observable]`
 |xref:#execCommand[execCommand()]|Executes a registered command on the current instance. A list of available commands can be found in
 the tinymce command identifiers documentation.|`xref:apis/tinymce.editor.adoc[Editor]`
 |xref:#fire[fire()]|Fires the specified event by name. Consult the
-link:https://www.tiny.cloud/docs/tinymce/6/events/[event reference] for more details on each event.
+link:https://www.tiny.cloud/docs/tinymce/7/events/[event reference] for more details on each event.
 __Deprecated in TinyMCE 6.0 and has been marked for removal in TinyMCE 7.0. Use `dispatch` instead.__|`xref:apis/tinymce.util.observable.adoc[Observable]`
 |xref:#focus[focus()]|Focuses/activates the editor. This will set this editor as the activeEditor in the tinymce collection
 it will also place DOM focus inside the editor.|`xref:apis/tinymce.editor.adoc[Editor]`
@@ -121,11 +122,11 @@ so all events etc that method has will get dispatched as well.|`xref:apis/tinymc
 |xref:#nodeChanged[nodeChanged()]|Dispatches out a onNodeChange event to all observers. This method should be called when you
 need to update the UI states or element path etc.|`xref:apis/tinymce.editor.adoc[Editor]`
 |xref:#off[off()]|Unbinds an event listener to a specific event by name. Consult the
-link:https://www.tiny.cloud/docs/tinymce/6/events/[event reference] for more details on each event.|`xref:apis/tinymce.util.observable.adoc[Observable]`
+link:https://www.tiny.cloud/docs/tinymce/7/events/[event reference] for more details on each event.|`xref:apis/tinymce.util.observable.adoc[Observable]`
 |xref:#on[on()]|Binds an event listener to a specific event by name. Consult the
-link:https://www.tiny.cloud/docs/tinymce/6/events/[event reference] for more details on each event.|`xref:apis/tinymce.util.observable.adoc[Observable]`
+link:https://www.tiny.cloud/docs/tinymce/7/events/[event reference] for more details on each event.|`xref:apis/tinymce.util.observable.adoc[Observable]`
 |xref:#once[once()]|Bind the event callback and once it fires the callback is removed. Consult the
-link:https://www.tiny.cloud/docs/tinymce/6/events/[event reference] for more details on each event.|`xref:apis/tinymce.util.observable.adoc[Observable]`
+link:https://www.tiny.cloud/docs/tinymce/7/events/[event reference] for more details on each event.|`xref:apis/tinymce.util.observable.adoc[Observable]`
 |xref:#queryCommandState[queryCommandState()]|Returns a command specific state, for example if bold is enabled or not.|`xref:apis/tinymce.editor.adoc[Editor]`
 |xref:#queryCommandSupported[queryCommandSupported()]|Returns true/false if the command is supported or not.|`xref:apis/tinymce.editor.adoc[Editor]`
 |xref:#queryCommandValue[queryCommandValue()]|Returns a command specific value, for example the current font size.|`xref:apis/tinymce.editor.adoc[Editor]`
@@ -336,7 +337,7 @@ but you can also call it directly if you know what you are doing.
 dispatch(name: String, args: Object?, bubble: Boolean?): Object
 ----
 Dispatches the specified event by name. Consult the
-link:https://www.tiny.cloud/docs/tinymce/6/events/[event reference] for more details on each event.
+link:https://www.tiny.cloud/docs/tinymce/7/events/[event reference] for more details on each event.
 
 ==== Examples
 [source, javascript]
@@ -385,7 +386,7 @@ the tinymce command identifiers documentation.
 fire(name: String, args: Object?, bubble: Boolean?): Object
 ----
 Fires the specified event by name. Consult the
-link:https://www.tiny.cloud/docs/tinymce/6/events/[event reference] for more details on each event.
+link:https://www.tiny.cloud/docs/tinymce/7/events/[event reference] for more details on each event.
 __Deprecated in TinyMCE 6.0 and has been marked for removal in TinyMCE 7.0. Use `dispatch` instead.__
 
 ==== Examples
@@ -751,7 +752,7 @@ need to update the UI states or element path etc.
 off(name: String?, callback: Function?): Object
 ----
 Unbinds an event listener to a specific event by name. Consult the
-link:https://www.tiny.cloud/docs/tinymce/6/events/[event reference] for more details on each event.
+link:https://www.tiny.cloud/docs/tinymce/7/events/[event reference] for more details on each event.
 
 ==== Examples
 [source, javascript]
@@ -784,7 +785,7 @@ instance.off();
 on(name: String, callback: Function, prepend: Boolean): Object
 ----
 Binds an event listener to a specific event by name. Consult the
-link:https://www.tiny.cloud/docs/tinymce/6/events/[event reference] for more details on each event.
+link:https://www.tiny.cloud/docs/tinymce/7/events/[event reference] for more details on each event.
 
 ==== Examples
 [source, javascript]
@@ -813,7 +814,7 @@ instance.on('event', (e) => {
 once(name: String, callback: Function): Object
 ----
 Bind the event callback and once it fires the callback is removed. Consult the
-link:https://www.tiny.cloud/docs/tinymce/6/events/[event reference] for more details on each event.
+link:https://www.tiny.cloud/docs/tinymce/7/events/[event reference] for more details on each event.
 
 ==== Parameters
 

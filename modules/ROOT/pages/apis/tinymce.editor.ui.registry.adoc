@@ -42,7 +42,7 @@ UI Components - Context Menu].|`xref:apis/tinymce.editor.ui.registry.adoc[Regist
 |xref:#addContextToolbar[addContextToolbar()]|Registers a new context toolbar that only appears when a content predicate is matched for example
 the cursor is on an image element.
 For information on creating context toolbars, see:
-link:https://www.tiny.cloud/docs/tinymce/6/contexttoolbar/[
+link:https://www.tiny.cloud/docs/tinymce/7/contexttoolbar/[
 UI Components - Context Toolbar].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
 |xref:#addGroupToolbarButton[addGroupToolbarButton()]|Registers a new group toolbar button for the toolbar. Renders a toolbar button that opens a floating toolbar when
 clicked.
@@ -201,7 +201,7 @@ addContextToolbar(name: String, obj: Toolbar.ContextToolbarSpec)
 Registers a new context toolbar that only appears when a content predicate is matched for example
 the cursor is on an image element.
 For information on creating context toolbars, see:
-link:https://www.tiny.cloud/docs/tinymce/6/contexttoolbar/[
+link:https://www.tiny.cloud/docs/tinymce/7/contexttoolbar/[
 UI Components - Context Toolbar].
 
 ==== Parameters

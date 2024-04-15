@@ -15,6 +15,12 @@ asciidoc:
     webcomponent_url: https://cdn.jsdelivr.net/npm/@tinymce/tinymce-webcomponent@2/dist/tinymce-webcomponent.min.js
     jquery_url: https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@2/dist/tinymce-jquery.min.js
     default_meta_keywords: tinymce, documentation, docs, plugins, customizable skins, configuration, examples, html, php, java, javascript, image editor, inline editor, distraction-free editor, classic editor, wysiwyg
+    # product docker variables
+    dockerimageimportfromwordexporttoword: registry.containers.tiny.cloud/docx-converter-tiny
+    dockerimageexporttopdf: registry.containers.tiny.cloud/pdf-converter-tiny
+    dockerimageexporttopdfwindows: registry.containers.tiny.cloud/pdf-converter-windows-tiny
+    # document converter placeholder variables
+    exportpdf_service_url: exportpdf_service_url placeholder 
     # product variables
     productname: TinyMCE
     productmajorversion: 7

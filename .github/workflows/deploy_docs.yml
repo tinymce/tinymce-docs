@@ -44,21 +44,21 @@ jobs:
       run: |
         mv ./build/site/sitemap.xml ./build/site/antora-sitemap.xml
   
-    - name: Upload website to S3 and Invalidate Cache
+    - name: Upload website to Staging S3 and Invalidate Cache
       if: inputs.environment == 'staging'
       run: |
-        aws s3 sync --acl=public-read --delete ./build/site s3://docs-feature-6-doc-2324.staging.tiny.cloud/docs
+        aws s3 sync --acl=public-read --delete ./build/site s3://tiny-cloud-antora-docs-staging/docs
         aws cloudfront create-invalidation --distribution-id E7DUUPEI08HNW --paths "/docs/*"
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.STAGING_AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.STAGING_AWS_SECRET_ACCESS_KEY }}
         AWS_EC2_METADATA_DISABLED: true
   
-    - name: Upload website to S3 and Invalidate Cache
+    - name: Upload website to Production S3 and Invalidate Cache
       if: inputs.environment == 'production'
       run: |
+        aws s3 sync --acl=public-read --delete ./build/site s3://tiny-cloud-antora-docs-production/docs
         aws cloudfront create-invalidation --distribution-id E3LFU502SQ5UR --paths "/docs/*"
-        aws s3 sync --acl=public-read --delete ./build/site s3://docs-feature-7-doc-2324.staging.tiny.cloud/docs
       env:
         AWS_ACCESS_KEY_ID: ${{ secrets.PRODUCTION_AWS_ACCESS_KEY_ID }}
         AWS_SECRET_ACCESS_KEY: ${{ secrets.PRODUCTION_AWS_SECRET_ACCESS_KEY }}

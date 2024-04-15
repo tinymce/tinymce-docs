@@ -1,5 +1,5 @@
-* Getting started
-** xref:introduction-to-tinymce.adoc[What is TinyMCE?]
+* xref:getting-started.adoc[Getting started]
+** xref:introduction-to-tinymce.adoc[What is {productname}?]
 ** xref:installation.adoc[Installation]
 *** Cloud
 **** xref:cloud-quick-start.adoc[Quick start]
@@ -52,12 +52,12 @@
 **** xref:php-projects.adoc[PHP projects]
 **** xref:dotnet-projects.adoc[.NET projects]
 **** xref:bower-projects.adoc[Bower projects]
-**** xref:zip-install.adoc[TinyMCE .zip deployments]
-** xref:upgrading.adoc[Upgrading TinyMCE]
-* How-to guides
+**** xref:zip-install.adoc[{productname} .zip deployments]
+** xref:upgrading.adoc[Upgrading {productname}]
+* xref:how-to-guides.adoc[How-to guides]
 ** Learn the basics
 *** xref:basic-setup.adoc[Basic setup]
-*** xref:work-with-plugins.adoc[Using plugins to extend TinyMCE]
+*** xref:work-with-plugins.adoc[Using plugins to extend {productname}]
 *** xref:filter-content.adoc[Content filtering]
 *** xref:localize-your-language.adoc[Localization]
 *** xref:spell-checking.adoc[Spell checking]
@@ -119,8 +119,8 @@
 *** xref:php-projects.adoc[PHP projects]
 *** xref:dotnet-projects.adoc[.NET projects]
 *** xref:bower-projects.adoc[Bower projects]
-*** xref:zip-install.adoc[TinyMCE .zip deployments]
-** Cloud deployment guide
+*** xref:zip-install.adoc[{productname} .zip deployments]
+** xref:cloud-deployment-guide.adoc[Cloud deployment guide]
 *** xref:editor-and-features.adoc[Cloud deployment of editor & plugins]
 *** xref:features-only.adoc[Cloud deployment of plugins Only]
 *** xref:editor-plugin-version.adoc[Specify editor & plugin versions]
@@ -153,7 +153,7 @@
 ** Images Guide
 *** xref:upload-images.adoc[Image uploads]
 *** xref:php-upload-handler.adoc[PHP image upload handler]
-** Creating custom UI components
+** xref:ui-components.adoc[Creating custom UI components]
 *** Toolbar Buttons
 **** xref:custom-toolbarbuttons.adoc[Toolbar buttons]
 **** xref:custom-basic-toolbar-button.adoc[Basic toolbar button]
@@ -188,7 +188,7 @@
 *** xref:events.adoc[Available Events]
 *** xref:editor-icon-identifiers.adoc[Available Icons]
 *** xref:annotations.adoc[Using the Annotations API]
-** Bundling TinyMCE
+** Bundling {productname}
 *** xref:introduction-to-bundling-tinymce.adoc[Introduction]
 *** Webpack
 **** xref:webpack-es6-npm.adoc[ES6 and npm]
@@ -211,8 +211,8 @@
 **** xref:bundling-models.adoc[Models]
 **** xref:bundling-localization.adoc[UI localizations]
 **** xref:bundling-themes.adoc[Themes]
-** xref:upgrading.adoc[Upgrading TinyMCE]
-** xref:migration-from-5x.adoc[Migrating from TinyMCE 5]
+** xref:upgrading.adoc[Upgrading {productname}]
+** xref:migration-from-5x.adoc[Migrating from {productname} 5]
 ** xref:migration-from-froala.adoc[Migrating from Froala]
 ** xref:generate-rsa-key-pairs.adoc[Generate public key pairs]
 ** xref:understanding-editor-loads.adoc[Understanding editor loads]
@@ -238,7 +238,7 @@
 *** xref:outside-demo.adoc[Outside Demo]
 *** xref:small-demo.adoc[Small Icons Demo]
 *** xref:snow-demo.adoc[Snow Demo]
-* Initial configuration
+* xref:initial-configuration.adoc[Initial configuration]
 ** xref:editor-important-options.adoc[Integration options]
 ** xref:editor-size-options.adoc[Size]
 ** xref:editor-save-and-submit.adoc[Save and submit]
@@ -250,11 +250,11 @@
 *** xref:use-tinymce-distraction-free.adoc[Distraction-free editing mode]
 *** xref:inline-editor-options.adoc[Inline editor options]
 *** xref:multiple-editors.adoc[Multiple editors in a page]
-*** xref:tinymce-for-mobile.adoc[TinyMCE for mobile]
+*** xref:tinymce-for-mobile.adoc[{productname} for mobile]
 ** Editor appearance
 *** xref:editor-skin.adoc[Skins]
 *** xref:editor-icons.adoc[Icons]
-*** xref:premium-skins-and-icons.adoc[Tiny Skins and Icon Packs]
+*** xref:enhanced-skins-and-icon-packs.adoc[Tiny Skins and Icon Packs]
 *** xref:editor-theme.adoc[Themes]
 ** Menus
 *** xref:menus-configuration-options.adoc[Options]
@@ -396,46 +396,46 @@
 *** xref:wordcount.adoc[Word Count]
 * Accessibility
 ** xref:tinymce-and-screenreaders.adoc[Accessibility Guide]
-** xref:keyboard-shortcuts.adoc[TinyMCE Keyboard shortcuts]
+** xref:keyboard-shortcuts.adoc[{productname} Keyboard shortcuts]
 * Security
 ** xref:security.adoc[Security guide]
-*** xref:security.adoc#reporting-tinymce-security-issues[Reporting TinyMCE security issues]
-*** xref:security.adoc#xref:what-we-do-to-maintain-security-for-tinymce[What we do to maintain security for TinyMCE]
-*** xref:security.adoc#configuring-content-security-policy-csp-for-tinymce[Configuring Content Security Policy (CSP) for TinyMCE]
+*** xref:security.adoc#reporting-tinymce-security-issues[Reporting {productname} security issues]
+*** xref:security.adoc#xref:what-we-do-to-maintain-security-for-tinymce[What we do to maintain security for {productname}]
+*** xref:security.adoc#configuring-content-security-policy-csp-for-tinymce[Configuring Content Security Policy (CSP) for {productname}]
 *** xref:security.adoc#general-security-risks-for-user-input-elements[General security risks for user input elements]
 ** xref:tinymce-and-csp.adoc[Content Security Policies (CSP)]
 ** xref:tinymce-and-cors.adoc[Cross-Origin Resource Sharing (CORS)]
 * Release information
-** xref:release-notes.adoc[Release notes for TinyMCE 6]
-*** TinyMCE 6.8.3
+** xref:release-notes.adoc[Release notes for {productname} 6]
+*** {productname} 6.8.3
 **** xref:6.8.3-release-notes.adoc#overview[Overview]
 **** xref:6.8.3-release-notes.adoc#accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
 **** xref:6.8.3-release-notes.adoc#accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 **** xref:6.8.3-release-notes.adoc#bug-fixes[Bug fixes]
 **** xref:6.8.3-release-notes.adoc#security-fix[Security fix]
-*** TinyMCE 6.8.2
+*** {productname} 6.8.2
 **** xref:6.8.2-release-notes.adoc#overview[Overview]
 **** xref:6.8.2-release-notes.adoc#accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
 **** xref:6.8.2-release-notes.adoc#bug-fixes[Bug fixes]
-*** TinyMCE 6.8.1
+*** {productname} 6.8.1
 **** xref:6.8.1-release-notes.adoc#overview[Overview]
 **** xref:6.8.1-release-notes.adoc#accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
 **** xref:6.8.1-release-notes.adoc#accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
 **** xref:6.8.1-release-notes.adoc#improvements[Improvements]
 **** xref:6.8.1-release-notes.adoc#additions[Additions]
 **** xref:6.8.1-release-notes.adoc#bug-fixes[Bug fixes]
-*** TinyMCE 6.7.3
+*** {productname} 6.7.3
 **** xref:6.7.3-release-notes.adoc#overview[Overview]
 **** xref:6.7.3-release-notes.adoc#security-fix[Security fix]
-*** TinyMCE 6.7.2
+*** {productname} 6.7.2
 **** xref:6.7.2-release-notes.adoc#overview[Overview]
 **** xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
 **** xref:6.7.2-release-notes.adoc#bug-fixes[Bug fixes]
 **** * xref:6.7.2-release-notes.adoc#security-fixes[Security fixes]
-*** TinyMCE 6.7.1
+*** {productname} 6.7.1
 **** xref:6.7.1-release-notes.adoc#overview[Overview]
 **** xref:6.7.1-release-notes.adoc#security-fix[Security fix]
-*** TinyMCE 6.7
+*** {productname} 6.7
 **** xref:6.7-release-notes.adoc#overview[Overview]
 **** xref:6.7-release-notes.adoc#accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 **** xref:6.7-release-notes.adoc#accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
@@ -443,7 +443,7 @@
 **** xref:6.7-release-notes.adoc#additions[Additions]
 **** xref:6.7-release-notes.adoc#changes[Changes]
 **** xref:6.7-release-notes.adoc#bug-fixes[Bug fixes]
-*** TinyMCE 6.6.2
+*** {productname} 6.6.2
 **** xref:6.6.2-release-notes.adoc#overview[Overview]
 **** xref:6.6.2-release-notes.adoc#accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
 **** xref:6.6.2-release-notes.adoc#accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
@@ -451,7 +451,7 @@
 **** xref:6.6.2-release-notes.adoc#addition[Addition]
 **** xref:6.6.2-release-notes.adoc#change[Change]
 **** xref:6.6.2-release-notes.adoc#bug-fixes[Bug fixes]
-*** TinyMCE 6.6
+*** {productname} 6.6
 **** xref:6.6-release-notes.adoc#overview[Overview]
 **** xref:6.6-release-notes.adoc#new-premium-plugin[New Premium Plugin]
 **** xref:6.6-release-notes.adoc#accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
@@ -460,7 +460,7 @@
 **** xref:6.6-release-notes.adoc#changes[Changes]
 **** xref:6.6-release-notes.adoc#bug-fixes[Bug fixes]
 **** xref:6.6-release-notes.adoc#known-issue[Known issue]
-*** TinyMCE 6.5.1
+*** {productname} 6.5.1
 **** xref:6.5.1-release-notes.adoc#overview[Overview]
 **** xref:6.5.1-release-notes.adoc#new-open-source-plugin[New Open Source Plugin]
 **** xref:6.5.1-release-notes.adoc#accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
@@ -471,12 +471,12 @@
 **** xref:6.5.1-release-notes.adoc#changes[Changes]
 **** xref:6.5.1-release-notes.adoc#bug-fixes[Bug fixes]
 **** xref:6.5.1-release-notes.adoc#known-issues[Known issues]
-*** TinyMCE 6.4.2
+*** {productname} 6.4.2
 **** xref:6.4.2-release-notes.adoc#overview[Overview]
 **** xref:6.4.2-release-notes.adoc#accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
 **** xref:6.4.2-release-notes.adoc#accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
 **** xref:6.4.2-release-notes.adoc#bug-fixes[Bug fixes]
-*** TinyMCE 6.4.1
+*** {productname} 6.4.1
 **** xref:6.4.1-release-notes.adoc#overview[Overview]
 **** xref:6.4.1-release-notes.adoc#accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
 **** xref:6.4.1-release-notes.adoc#accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium Plugin end-of-life announcement]
@@ -486,12 +486,12 @@
 **** xref:6.4.1-release-notes.adoc#changes[Changes]
 **** xref:6.4.1-release-notes.adoc#bug-fixes[Bug fixes]
 **** xref:6.4.1-release-notes.adoc#known-issues[Known issues]
-*** TinyMCE 6.3.2
+*** {productname} 6.3.2
 **** xref:6.3.2-release-notes.adoc#overview[Overview]
 **** xref:6.3.2-release-notes.adoc#accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
 **** xref:6.3.2-release-notes.adoc#bug-fix[Bug fix]
 **** xref:6.3.2-release-notes.adoc#security-fixes[Security fixes]
-*** TinyMCE 6.3
+*** {productname} 6.3
 **** xref:6.3-release-notes.adoc#overview[Overview]
 **** xref:6.3-release-notes.adoc#accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
 **** xref:6.3-release-notes.adoc#accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
@@ -501,7 +501,7 @@
 **** xref:6.3-release-notes.adoc#bug-fixes[Bug fixes]
 **** xref:6.3-release-notes.adoc#security-fixes[Security fixes]
 **** xref:6.3-release-notes.adoc#known-issues[Known issues]
-*** TinyMCE 6.2
+*** {productname} 6.2
 **** xref:6.2-release-notes.adoc#overview[Overview]
 **** xref:6.2-release-notes.adoc#accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
 **** xref:6.2-release-notes.adoc#accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
@@ -513,11 +513,11 @@
 **** xref:6.2-release-notes.adoc#security-fixes[Security fixes]
 **** xref:6.2-release-notes.adoc#deprecated[Deprecated]
 **** xref:6.2-release-notes.adoc#known-issues[Known issues]
-*** TinyMCE 6.1.2
+*** {productname} 6.1.2
 **** xref:6.1.2-release-notes.adoc#overview[Overview]
 **** xref:6.1.2-release-notes.adoc#bug-fixes[Bug fixes]
 **** xref:6.1.2-release-notes.adoc#known-issues[Known issues]
-*** TinyMCE 6.1
+*** {productname} 6.1
 **** xref:6.1-release-notes.adoc#overview[Overview]
 **** xref:6.1-release-notes.adoc#accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
 **** xref:6.1-release-notes.adoc#accompanying-premium-skins-and-icon-packs-changes[Accompanying Premium Skins and Icon Packs changes]
@@ -526,16 +526,16 @@
 **** xref:6.1-release-notes.adoc#changes[Changes]
 **** xref:6.1-release-notes.adoc#bug-fixes[Bug fixes]
 **** xref:6.1-release-notes.adoc#known-issues[Known issues]
-*** TinyMCE 6.0.3
+*** {productname} 6.0.3
 **** xref:6.0.3-release-notes.adoc#overview[Overview]
 **** xref:6.0.3-release-notes.adoc#general-bug-fixes[Core changes]
 **** xref:6.0.3-release-notes.adoc#known-issues[Known issues]
-*** TinyMCE 6.0.2
+*** {productname} 6.0.2
 **** xref:6.0.2-release-notes.adoc#overview[Overview]
 **** xref:6.0.2-release-notes.adoc#general-bug-fixes[Core changes]
 **** xref:6.0.2-release-notes.adoc#accompanying-premium-plugin-changes[Premium changes]
 **** xref:6.0.2-release-notes.adoc#known-issues[Known issues]
-*** TinyMCE 6.0
+*** {productname} 6.0
 **** xref:6.0-release-notes-overview.adoc[Overview]
 **** xref:6.0-release-notes-core-changes.adoc[Core changes]
 **** xref:6.0-release-notes-premium-changes.adoc[Premium changes]

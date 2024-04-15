@@ -1,0 +1,26 @@
+= Getting Started
+:description: New to self-hosting {productname}? Start here.
+:title_nav: Getting Started
+:type: folder
+
+
+// 2 Columns, both asciidoc
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:introduction-to-tinymce.adoc[What is {productname}?]
+
+What is TinyMCE and how do I add it to my project.
+
+|
+[.lead]
+xref:installation.adoc[Installation]
+
+Learn how to install {productname} via {cloudname}, package managers, self-hosted zips for various integration options.
+
+// Empty cell to even out rows
+// | 
+
+|===

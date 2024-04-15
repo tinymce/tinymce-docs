@@ -1,0 +1,69 @@
+[[authorization]]
+== Authorization
+
+To enable authorization, set the `SECRET_KEY` environment variable during the xref:individual-import-from-word-and-export-to-word-on-premises.adoc#installation[installation].
+
+If the `SECRET_KEY` variable is set, then all requests must have a header with a JWT (JSON Web Token) signed with this key. The token should be passed as a value of the `Authorization` header for each request sent to the {pluginname} REST API.
+
+[NOTE]
+If the `SECRET_KEY` is not setup during the installation, then {pluginname} On-Premises will not require any headers with tokens when sending requests to the {pluginname} REST API. However, this it is not recommend to skip the authorization when running {pluginname} On-Premises in a public network.
+
+=== Generating the token
+
+{companyname} recommends using the libraries listed on link:http://jwt.io/[jwt.io] to generate the token. The token is considered valid, when:
+
+* it is signed with the same `SECRET_KEY` as passed to the {pluginname} On-Premises instance,
+* it was created within the last 24 hours,
+* it is not issued in the future (e.i. the `iat` timestamp cannot be newer than the current time),
+* it has not expired yet.
+
+Tokens for the {pluginname} On-Premises do not require any additional claims such as the environment ID (which is specific for Collaboration Server On-Premises), the token can be created with an empty payload.
+
+If the specific use case involves sending requests from a backend server, then JWT tokens can be generated locally, as shown in the below request example.
+
+In the case of editor plugins or other frontend usages, a token endpoint should be created, that returns a valid JWT token for authorized users.
+
+=== Using editor plugins
+
+The are are two plugins available for {productname}: the xref:importword.adoc[Import from Word] and the xref:exportword.adoc[Export to Word] plugins. The plugins will automatically request the token from the given `tokenUrl` variable and will set the `Authorization` header when making an export request. Refer to the respective guides for details on adding the {pluginname} features to your WYSIWYG editor!
+
+=== Request example with an Authorization header
+
+The following example presents a request that generates a valid JWT token and sets it as an `Authorization` header:
+
+[source, js]
+----
+const fs = require( 'fs' );
+const jwt = require( 'jsonwebtoken' );
+const axios = require( 'axios' );
+
+const SECRET_KEY = 'secret';
+
+const token = jwt.sign( {}, SECRET_KEY, { algorithm: 'HS256' } );
+
+const data = {
+   html: "<p>I am a teapot</p>",
+   css: "p { color: red; }",
+};
+
+const config = {
+   headers: {
+      Authorization: token
+   },
+   responseType: 'arraybuffer',
+};
+
+axios.post( 'http://localhost:8080/v1/convert', data, config )
+   .then( response => {
+      fs.writeFileSync('./file.docx', response.data, 'binary');
+   } ).catch( error => {
+      console.log( error );
+   } );
+----
+
+`SECRET_KEY`: This is the key what has been passed to the {pluginname} On-Premises instance.
+
+Please refer to the link:https://importdocx.converter.tiny.cloud/docs#section/Import-from-Word[Import from Word^] and the link:https://exportdocx.converter.tiny.cloud/docs#section/Export-to-Word[Export to Word^] REST API documentation to start using the service.
+
+[NOTE]
+If API clients like Postman or Insomnia are used, then set the JWT token as an `Authorization` header in the `Headers` tab. Do not use the built-in token authorization as this will generate invalid header with a `Bearer` prefix added to the token.

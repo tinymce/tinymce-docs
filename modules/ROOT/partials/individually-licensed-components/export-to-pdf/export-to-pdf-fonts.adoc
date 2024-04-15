@@ -39,7 +39,7 @@ Ensure that the converted fonts can be installed and used on your local machine 
 [[add-custom-fonts-to-pdf-converter]]
 === Add custom fonts to PDF Converter
 
-If custom fonts are being used in PDF files, use the `pdf-converter` Docker image and mount the directory with the custom fonts for the PDF Converter application running on a machine with a Unix-like system (this includes Docker on Windows with a WSL backend).
+If custom fonts are being used in PDF files, use the `pdf-converter-tiny` Docker image and mount the directory with the custom fonts for the PDF Converter application running on a machine with a Unix-like system (this includes Docker on Windows with a WSL backend).
 
 The `{dockerimageexporttopdf}` Docker image need to be run on a Unix-like operating system and mount the `~/your_fonts_dir:/usr/share/fonts/your_fonts_dir` volume.
 

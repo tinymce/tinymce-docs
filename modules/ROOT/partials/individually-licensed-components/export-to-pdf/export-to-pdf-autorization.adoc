@@ -17,7 +17,6 @@ If the `SECRET_KEY` is not setup during the installation, then {pluginname} On-P
 * it is not issued in the future (e.i. the iat timestamp cannot be newer than the current time),
 * it has not expired yet.
 
-Tokens for the {pluginname} On-Premises do not require any additional claims such as the environment ID (which is specific for Collaboration Server On-Premises), the token can be created with an empty payload.
 
 If the specific use case involves sending requests from a backend server, then JWT tokens can be generated locally, as shown in the below request example.
 

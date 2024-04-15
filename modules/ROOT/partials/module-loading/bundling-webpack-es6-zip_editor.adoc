@@ -20,19 +20,17 @@ import '../tinymce/js/tinymce/models/dom/model';
 import '../tinymce/js/tinymce/skins/ui/oxide/skin.css';
 
 /* Import plugins */
-import '../tinymce/js/tinymce/plugins/advlist/plugin';
-import '../tinymce/js/tinymce/plugins/code/plugin';
-import '../tinymce/js/tinymce/plugins/emoticons/plugin';
+import '../tinymce/js/tinymce/plugins/advlist';
+import '../tinymce/js/tinymce/plugins/code';
+import '../tinymce/js/tinymce/plugins/emoticons';
 import '../tinymce/js/tinymce/plugins/emoticons/js/emojis';
-import '../tinymce/js/tinymce/plugins/link/plugin';
-import '../tinymce/js/tinymce/plugins/lists/plugin';
-import '../tinymce/js/tinymce/plugins/table/plugin';
+import '../tinymce/js/tinymce/plugins/link';
+import '../tinymce/js/tinymce/plugins/lists';
+import '../tinymce/js/tinymce/plugins/table';
 
 /* Import premium plugins */
 /* NOTE: Download separately and add these to /src/plugins */
-/* import './plugins/checklist/plugin'; */
-/* import './plugins/powerpaste/plugin'; */
-/* import './plugins/powerpaste/js/wordimport'; */
+/* import './plugins/<plugincode>'; */
 
 /* content UI CSS is required */
 import contentUiSkinCss from '../tinymce/js/tinymce/skins/ui/oxide/content.css';

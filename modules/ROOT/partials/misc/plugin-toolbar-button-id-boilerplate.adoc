@@ -39,11 +39,12 @@ For information on the {pluginname} plugin, see: xref:editimage.adoc[Plugins - T
 endif::[]
 
 ifeval::["{plugincode}" != "imagetools"]
+ifeval::["{plugincode}" == "tinydrive"]
+For information on the {pluginname} plugin, see: xref:tinydrive-introduction.adoc[Plugins - The {pluginname} plugin]
+endif::[]
+
+ifeval::["{plugincode}" != "tinydrive"]
 For information on the {pluginname} plugin, see: xref:{plugincode}.adoc[Plugins - The {pluginname} plugin]
-endif::[]
-endif::[]
-endif::[]
-endif::[]
 endif::[]
 
 endif::[]

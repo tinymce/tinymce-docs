@@ -22,14 +22,14 @@ Example syntax for including the example "plugin" in a bundle using `content.js`
 a|
 [source, js]
 ----
-import 'tinymce/plugins/plugincode';
+import 'tinymce/plugins/<plugincode>';
 ----
 
 |`.zip`
 a|
 [source, js]
 ----
-import '../tinymce/plugins/plugincode';
+import '../tinymce/plugins/<plugincode>';
 ----
 
 .2+|Common JS
@@ -37,14 +37,14 @@ import '../tinymce/plugins/plugincode';
 a|
 [source, js]
 ----
-require('tinymce/plugins/plugincode');
+require('tinymce/plugins/<plugincode>');
 ----
 
 |`.zip`
 a|
 [source, js]
 ----
-require('../tinymce/plugins/plugincode');
+require('../tinymce/plugins/<plugincode>');
 ----
 |===
 

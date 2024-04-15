@@ -2,9 +2,9 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ "feature/**", "hotfix/**", "staging/**", "release/**"  ]
+    branches: [ "feature/**", "hotfix/**", "tinymce/**" ]
   pull_request:
-    branches: [ "staging/**", "release/**" ]
+    branches: [ "tinymce/**" ]
 ## Add schedule if needed
 #  schedule:
 #    - cron: "17 23 * * 5"

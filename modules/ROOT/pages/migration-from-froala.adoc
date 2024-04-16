@@ -1,6 +1,6 @@
 = Migrating from Froala to TinyMCE
 :navtitle: Migrating from Froala
-:description: Upgrading your rich text editor from Froala Editor v3 to TinyMCE 6.
+:description: Upgrading your rich text editor from Froala Editor v3 to {productname} {productmajorversion}.
 :keywords: migration, considerations, premigration, pre-migration, froala
 
 This page covers the basic steps for migrating from Froala Editor 3 to {productname} {productmajorversion}. Procedures and links to our documentation have been included to assist with your migration to {productname}.
@@ -111,7 +111,7 @@ The following examples show an initial Froala configuration and the migrated {pr
 </html>
 ----
 
-==== TinyMCE 6 - A Basic Configuration
+==== {productname} {productmajorversion} - A Basic Configuration
 
 [source,html]
 ----
@@ -181,7 +181,7 @@ The following examples show how plugins are included or enabled in the Froala an
 </head>
 ----
 
-==== TinyMCE 6 - Enabling Plugins
+==== {productname} {productmajorversion} - Enabling Plugins
 
 [source,html]
 ----
@@ -269,7 +269,7 @@ The following examples show a custom toolbar layout in Froala and the same layou
 </script>
 ----
 
-==== TinyMCE 6 - Creating a Custom Toolbar Layout
+==== {productname} {productmajorversion} - Creating a Custom Toolbar Layout
 
 [source,html,subs="attributes+"]
 ----
@@ -323,7 +323,7 @@ The following examples show Froala and {productname} configured for inline mode.
 </script>
 ----
 
-==== TinyMCE 6 - Configuring Inline Mode
+==== {productname} {productmajorversion} - Configuring Inline Mode
 
 [source,html]
 ----
@@ -397,7 +397,7 @@ The following examples show a Froala editor and a {productname} editor with a ba
 </script>
 ----
 
-==== TinyMCE 6 - Creating a Custom Toolbar Button
+==== {productname} {productmajorversion} - Creating a Custom Toolbar Button
 
 [source,html,subs="attributes+"]
 ----
@@ -478,7 +478,7 @@ The following examples show a Froala editor and a {productname} editor with a ba
 </script>
 ----
 
-==== TinyMCE 6 - Creating a Custom Drop-down Button
+==== {productname} {productmajorversion} - Creating a Custom Drop-down Button
 
 [source,html,subs="attributes+"]
 ----

@@ -1,0 +1,87 @@
+= User interface components
+:description: The configurable UI components available for customization.
+:keywords: toolbar toolbarbuttons buttons toolbarbuttonsapi
+:title_nav: UI components
+:type: folder
+
+
+// 2 Columns, both asciidoc
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:custom-toolbarbuttons.adoc[Toolbar buttons]
+
+Add a custom buttons to the {productname} toolbar.
+
+|
+[.lead]
+xref:creating-custom-menu-items.adoc[Custom menu items]
+
+This section demonstrates different types of menu items.
+
+|
+[.lead]
+xref:dialog.adoc[Dialog]
+
+An overview of {productname} dialogs and how to create custom dialogs.
+
+|
+[.lead]
+xref:dialog-components.adoc[Dialog components]
+
+A reference list of all {productname} dialog components.
+
+|
+[.lead]
+xref:urldialog.adoc[URL dialog]
+
+URL dialogs are a {productname} UI component used to display an external page.
+
+|
+[.lead]
+xref:autocompleter.adoc[Autocompleter]
+
+Add a custom autocompleter to {productname} {productmajorversion}.
+
+|
+[.lead]
+xref:creating-custom-notifications.adoc[Notifications]
+
+Learn how to make custom notifications.
+
+|
+[.lead]
+xref:customsidebar.adoc[Sidebars]
+
+Introducing sidebar panel creation.
+
+|
+[.lead]
+xref:custom-view.adoc[Views]
+
+How to create a custom view in TinyMCE.
+
+|
+[.lead]
+xref:contextform.adoc[Context forms]
+
+Creating custom context forms for {productname} {productmajorversion}.
+
+|
+[.lead]
+xref:contextmenu.adoc[Context menus]
+
+Creating custom context menus for {productname} {productmajorversion}.
+
+|
+[.lead]
+xref:contexttoolbar.adoc[Context toolbars]
+
+Creating custom context toolbars for {productname} {productmajorversion}.
+
+// Empty cell to even out rows
+// | 
+
+|===

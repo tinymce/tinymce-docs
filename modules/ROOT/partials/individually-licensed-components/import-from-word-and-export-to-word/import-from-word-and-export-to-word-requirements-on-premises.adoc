@@ -1,0 +1,23 @@
+[[requirements]]
+== Requirements
+
+To run {pluginname} On-Premises, a Docker environment is required. Alternatively, use a CaaS available from your cloud provider, such as AWS ECS, Google GKE or Azure ACS.
+
+There are many factors that may affect Export to Word On-Premises performance. The most influential are: the size of exported content, the size of images, and the number of concurrent requests. Also, because your application can prioritize fast response times, or it should handle high load, it is impossible to provide one recommended server specification, that will fit all use cases.
+
+Assuming response time below 10 seconds, one server (2CPU 2GB RAM) with 1 docker container can handle:
+
+* up to 45 concurrent requests with an average content of 1 A4 page (~1k characters)
+* up to 30 concurrent requests with an average content of 5 A4 pages (~7,5k characters)
+* up to 10 concurrent requests with an average content of 20 A4 pages (~30k characters)
+
+[NOTE]
+The listed concurrent requests numbers are not a hard limit of a {pluginname} On-Premises instance. It can handle more concurrent requests, but the response time will be longer.
+
+=== High availability
+
+One docker container with {pluginname} On-Premises benefits from additional CPUs on the machine. It is recommended that 2 CPUs are allocated for every docker container. To scale your app on a single machine, increase the number of CPUs and docker containers, however, {productname} recommends scaling on at least three hosts to ensure the reliability of the system.
+
+A load balancer, like HAProxy or NGINX (see the load balancer configuration examples in the SSL communication guide), is required for scaling on several machines. Of course, it is possible to use any cloud provider for scaling, like Amazon ECS, Azure Container Instances or Kubernetes.
+
+link:https://www.tiny.cloud/contact/[Contact us] if you have any questions about server resources needed for your use case of {pluginname} On-Premises.

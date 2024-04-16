@@ -2,7 +2,7 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ "feature/**", "hotfix/**", "tinymce/**" ]
+    branches: [ "feature/**", "hotfix/**", "release/**", "staging/**", "tinymce/**" ]
   pull_request:
     branches: [ "tinymce/**" ]
 

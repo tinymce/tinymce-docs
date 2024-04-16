@@ -2,12 +2,9 @@ name: "CodeQL"
 
 on:
   push:
-    branches: [ "feature/**", "hotfix/**", "staging/**", "release/**"  ]
+    branches: [ "feature/**", "hotfix/**", "staging/**", "release/**", "tinymce/**", "main"  ]
   pull_request:
-    branches: [ "staging/**", "release/**" ]
-## Add schedule if needed
-#  schedule:
-#    - cron: "17 23 * * 5"
+    branches: [ "main", "tinymce/**" ]
 
 jobs:
   analyze:
@@ -25,7 +22,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2

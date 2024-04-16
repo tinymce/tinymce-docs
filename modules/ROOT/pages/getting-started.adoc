@@ -1,0 +1,115 @@
+= Introduction & getting started
+:description: New to self-hosting {productname}? Start here.
+:title_nav: Introduction &amp; getting started
+:type: folder
+
+// 2 Columns, both asciidoc
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:basic-setup.adoc[Basic setup]
+
+How to get up and running with {productname}
+
+|
+[.lead]
+xref:use-tinymce-classic.adoc[Classic editing mode]
+
+The Theme that renders iframe or inline modes using the {productname} core UI framework.
+
+|
+[.lead]
+xref:use-tinymce-inline.adoc[Inline editing mode]
+
+Learn about forms-based editing v. inline editing.
+
+|
+[.lead]
+xref:use-tinymce-distraction-free.adoc[Distraction-free editing mode]
+
+Mode that renders a lightweight UI for inline editing.
+
+|
+[.lead]
+xref:multiple-editors.adoc[Multiple editors in a page]
+
+Use multiple {productname} instances in a single page
+
+|
+[.lead]
+xref:installation.adoc[Options for installing {productname}]
+
+Learn how to install {productname} via {cloudname}, package manager options, Self-hosted, jQuery and custom build options.
+
+|
+[.lead]
+xref:upgrading.adoc[Upgrading {productname}]
+
+How to upgrade {productname} via {cloudname}, package manager options, Self-hosted, and custom build options.
+
+|
+[.lead]
+xref:work-with-plugins.adoc[Using plugins to extend {productname}]
+
+Learn about {productname}'s plugin functionality and discover our Top 10 plugins.
+
+|
+[.lead]
+xref:customize-ui.adoc[Customizing the UI]
+
+Learn how to change the appearance of {productname}.
+
+|
+[.lead]
+xref:editor-content-css.adoc[Boilerplate content CSS]
+
+Learn how to set up CSS for your site to integrate {productname}.
+
+|
+[.lead]
+xref:upload-images.adoc[Image uploads]
+
+How to manage asynchronous image uploads.
+
+|
+[.lead]
+xref:spell-checking.adoc[Spell checking]
+
+Check spelling in {productname}
+
+|
+[.lead]
+xref:filter-content.adoc[Content filtering]
+
+Learn how to create clean, maintainable and readable content.
+
+|
+[.lead]
+xref:localize-your-language.adoc[Localization]
+
+Localize {productname} with global language capabilities.
+
+|
+[.lead]
+xref:attribution-requirements.adoc[Logo attribution]
+
+{productname} Terms of Service.
+
+|
+[.lead]
+xref:system-requirements.adoc[Supported Versions and Platforms]
+
+Supported versions and platforms for {productname}.
+
+|
+[.lead]
+xref:get-support.adoc[Support & FAQ]
+
+Community and pro-grade support options.
+
+// Empty cell to even out rows
+| 
+
+|===

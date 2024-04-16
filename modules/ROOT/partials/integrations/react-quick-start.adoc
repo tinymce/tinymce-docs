@@ -4,7 +4,7 @@ ifeval::["{productUse}" == "bundle"]
 IMPORTANT: {companyname} does not recommend bundling the `tinymce` package. Bundling {productname} can be complex and error prone.
 
 endif::[]
-The https://github.com/tinymce/tinymce-react[Official {productname} React component] integrates {productname} into React projects. This procedure creates a https://github.com/facebook/create-react-app[basic React application] containing a {productname} editor.
+The https://github.com/tinymce/tinymce-react[Official {productname} React component] integrates {productname} into React projects. This procedure creates a https://github.com/vitejs/vite-plugin-react-swc[basic React application] containing a {productname} editor.
 
 For examples of the {productname} integration, visit https://tinymce.github.io/tinymce-react/[the tinymce-react storybook].
 
@@ -14,11 +14,11 @@ This procedure requires https://nodejs.org/[Node.js (and npm)].
 
 == Procedure
 
-. Use the https://github.com/facebook/create-react-app[Create React App] package to create a new React project named `+tinymce-react-demo+`.
+. Use the https://github.com/vitejs/vite[Vite] package and the https://github.com/vitejs/vite-plugin-react-swc[React SWC plugin] to create a new React project named `+tinymce-react-demo+`.
 +
 [source,sh]
 ----
-npx create-react-app tinymce-react-demo
+npm create vite@5 tinymce-react-demo -- --template react-swc
 ----
 . Change to the newly created directory.
 +
@@ -28,19 +28,20 @@ cd tinymce-react-demo
 ----
 
 ifeval::["{productSource}" == "cloud"]
-. Install the `+tinymce-react+` package and save it to your `+package.json+` with `+--save+`.
+. Install the `+@tinymce/tinymce-react+` package and save it to your `+package.json+` with `+--save+`.
 +
 [source,sh]
 ----
 npm install --save @tinymce/tinymce-react
 ----
 
-. Using a text editor, open `+./src/App.js+` and replace the contents with:
+. Using a text editor, open `+./src/App.jsx+` and replace the contents with:
 +
 [source,jsx]
 ----
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
+import './App.css';
 
 export default function App() {
   const editorRef = useRef(null);
@@ -53,7 +54,7 @@ export default function App() {
     <>
       <Editor
         apiKey='your-api-key'
-        onInit={(evt, editor) => editorRef.current = editor}
+        onInit={(_evt, editor) => editorRef.current = editor}
         initialValue="<p>This is the initial content of the editor.</p>"
         init={{
           height: 500,
@@ -82,7 +83,7 @@ This JavaScript file will create a component "`+App+`" containing a {productname
 endif::[]
 ifeval::["{productSource}" == "package-manager"]
 ifeval::["{productUse}" == "host"]
-. Install the `+tinymce+`, `+tinymce-react+` and `+fs-extra+` packages and save them to your `+package.json+` with `+--save+`.
+. Install the `+tinymce+`, `+@tinymce/tinymce-react+` and `+fs-extra+` packages and save them to your `+package.json+` with `+--save+`.
 +
 [source,sh]
 ----
@@ -94,9 +95,9 @@ npm install --save tinymce @tinymce/tinymce-react fs-extra
 .postinstall.js
 [source,js]
 ----
-const fse = require('fs-extra');
-const path = require('path');
-const topDir = __dirname;
+import fse from 'fs-extra';
+import path from 'path';
+const topDir = import.meta.dirname;
 fse.emptyDirSync(path.join(topDir, 'public', 'tinymce'));
 fse.copySync(path.join(topDir, 'node_modules', 'tinymce'), path.join(topDir, 'public', 'tinymce'), { overwrite: true });
 ----
@@ -127,12 +128,13 @@ fse.copySync(path.join(topDir, 'node_modules', 'tinymce'), path.join(topDir, 'pu
 npm run postinstall
 ----
 
-. Using a text editor, open `+./src/App.js+` and replace the contents with:
+. Using a text editor, open `+./src/App.jsx+` and replace the contents with:
 +
 [source,jsx]
 ----
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
+import './App.css';
 
 export default function App() {
   const editorRef = useRef(null);
@@ -144,8 +146,9 @@ export default function App() {
   return (
     <>
       <Editor
-        tinymceScriptSrc={process.env.PUBLIC_URL + '/tinymce/tinymce.min.js'}
-        onInit={(evt, editor) => editorRef.current = editor}
+        tinymceScriptSrc='/tinymce/tinymce.min.js'
+        licenseKey='your-license-key'
+        onInit={(_evt, editor) => editorRef.current = editor}
         initialValue='<p>This is the initial content of the editor.</p>'
         init={{
           height: 500,
@@ -167,24 +170,26 @@ export default function App() {
   );
 }
 ----
+
+. Update the `+licenseKey+` option in the editor element and include your xref:license-key.adoc[License Key].
+
 endif::[]
 ifeval::["{productUse}" == "bundle"]
-. Install the `+tinymce+`, `+tinymce-react+` and `+raw-loader+` packages and save them to your `+package.json+` with `+--save+`.
+. Install the `+tinymce+` and `+@tinymce/tinymce-react+` packages and save them to your `+package.json+` with `+--save+`.
 +
 [source,sh]
 ----
-npm install --save tinymce @tinymce/tinymce-react raw-loader
+npm install --save tinymce @tinymce/tinymce-react
 ----
 
-. Using a text editor, create `+./src/BundledEditor.js+` and set the contents to:
+. Using a text editor, create `+./src/BundledEditor.jsx+` and set the contents to:
 +
 [source,jsx]
 ----
 import { Editor } from '@tinymce/tinymce-react';
 
 // TinyMCE so the global var exists
-// eslint-disable-next-line no-unused-vars
-import tinymce from 'tinymce/tinymce';
+import 'tinymce/tinymce';
 // DOM model
 import 'tinymce/models/dom/model'
 // Theme
@@ -192,7 +197,7 @@ import 'tinymce/themes/silver';
 // Toolbar icons
 import 'tinymce/icons/default';
 // Editor styles
-import 'tinymce/skins/ui/oxide/skin.min.css';
+import 'tinymce/skins/ui/oxide/skin';
 
 // importing the plugin js.
 // if you use a plugin that is not listed here the editor will fail to load
@@ -208,6 +213,7 @@ import 'tinymce/plugins/directionality';
 import 'tinymce/plugins/emoticons';
 import 'tinymce/plugins/fullscreen';
 import 'tinymce/plugins/help';
+import 'tinymce/plugins/help/js/i18n/keynav/en';
 import 'tinymce/plugins/image';
 import 'tinymce/plugins/importcss';
 import 'tinymce/plugins/insertdatetime';
@@ -229,34 +235,28 @@ import 'tinymce/plugins/wordcount';
 import 'tinymce/plugins/emoticons/js/emojis';
 
 // Content styles, including inline UI like fake cursors
-/* eslint import/no-webpack-loader-syntax: off */
-import contentCss from '!!raw-loader!tinymce/skins/content/default/content.min.css';
-import contentUiCss from '!!raw-loader!tinymce/skins/ui/oxide/content.min.css';
+import 'tinymce/skins/content/default/content';
+import 'tinymce/skins/ui/oxide/content';
 
 export default function BundledEditor(props) {
-  const {init, ...rest} = props;
-  // note that skin and content_css is disabled to avoid the normal
-  // loading process and is instead loaded as a string via content_style
   return (
     <Editor
-      init={{
-        ...init,
-        skin: false,
-        content_css: false,
-        content_style: [contentCss, contentUiCss, init.content_style || ''].join('\n'),
-      }}
-      {...rest}
+      licenseKey='your-license-key'
+      {...props}
     />
   );
 }
 ----
 
-. Using a text editor, open `+./src/App.js+` and replace the contents with:
+. Update the `+licenseKey+` option in the editor element and include your xref:license-key.adoc[License Key].
+
+. Using a text editor, open `+./src/App.jsx+` and replace the contents with:
 +
 [source,jsx]
 ----
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import BundledEditor from './BundledEditor'
+import './App.css';
 
 export default function App() {
   const editorRef = useRef(null);
@@ -268,7 +268,7 @@ export default function App() {
   return (
     <>
       <BundledEditor
-        onInit={(evt, editor) => editorRef.current = editor}
+        onInit={(_evt, editor) => editorRef.current = editor}
         initialValue='<p>This is the initial content of the editor.</p>'
         init={{
           height: 500,
@@ -293,7 +293,7 @@ endif::[]
 endif::[]
 ifeval::["{productSource}" == "zip"]
 ifeval::["{productUse}" == "host"]
-. Install the `+tinymce-react+` package and save it to your `+package.json+` with `+--save+`.
+. Install the `+@tinymce/tinymce-react+` package and save it to your `+package.json+` with `+--save+`.
 +
 [source,sh]
 ----
@@ -324,12 +324,33 @@ public
     └── tinymce.min.js
 ----
 
-. Using a text editor, open `+./src/App.js+` and replace the contents with:
+. Using a text editor, open `+./eslintrc.cjs+` and add `+'src/tinymce'+` to the `+ignorePatterns+` array.
++
+.Diff of `.eslintrc.js`
+[source,patch]
+----
+diff --git a/.eslintrc.cjs b/.eslintrc.cjs
+index 3b3b3b3..4b4b4b4 100644
+--- a/.eslintrc.cjs
++++ b/.eslintrc.cjs
+@@ -7,7 +7,7 @@ modules.exports = {
+   'plugin:react/jsx-runtime',
+     'plugin:react-hooks/recommended',
+   ],
+-  ignorePatterns: ['dist', '.eslintrc.cjs'],
++  ignorePatterns: ['dist', '.eslintrc.cjs', 'src/tinymce'],
+   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+   settings: { react: { version: '18.2' } },
+   plugins: ['react-refresh'],
+----
+
+. Using a text editor, open `+./src/App.jsx+` and replace the contents with:
 +
 [source,jsx]
 ----
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import { Editor } from '@tinymce/tinymce-react';
+import './App.css';
 
 export default function App() {
   const editorRef = useRef(null);
@@ -341,8 +362,9 @@ export default function App() {
   return (
     <>
       <Editor
-        tinymceScriptSrc={process.env.PUBLIC_URL + '/tinymce/tinymce.min.js'}
-        onInit={(evt, editor) => editorRef.current = editor}
+        tinymceScriptSrc='/tinymce/tinymce.min.js'
+        licenseKey='your-license-key'
+        onInit={(_evt, editor) => editorRef.current = editor}
         initialValue='<p>This is the initial content of the editor.</p>'
         init={{
           height: 500,
@@ -364,22 +386,15 @@ export default function App() {
   );
 }
 ----
+. Update the `+licenseKey+` option in the editor element and include your xref:license-key.adoc[License Key].
 endif::[]
 ifeval::["{productUse}" == "bundle"]
-. Eject the create-react-app so it is possible to modify the Webpack configuration.
-+
-[source,sh]
-----
-npm run eject
-----
-+
-Press 'y' when prompted.
 
-. Install the `+tinymce-react+`, `+raw-loader+` and `+script-loader+` packages and save them to your `+package.json+` with `+--save+`.
+. Install the `+@tinymce/tinymce-react+` and `+script-loader+` packages and save them to your `+package.json+` with `+--save+`.
 +
 [source,sh]
 ----
-npm install --save @tinymce/tinymce-react raw-loader script-loader
+npm install --save @tinymce/tinymce-react script-loader
 ----
 
 . Unzip the content of the `+tinymce/js+` folder from the link:{download-enterprise}[{productname} zip] into the `+src+` folder. Afterwards the directory listing should be similar to below:
@@ -408,91 +423,33 @@ src
     └── tinymce.min.js
 ----
 
-. Using a text editor, open `+./config/paths.js+`, after the line with `+appSrc+` add the line:
+. Using a text editor, open `+./eslintrc.cjs+` and add `+'src/tinymce'+` to the `+ignorePatterns+` array.
 +
-[source,js]
-----
- appTinymce: resolveApp('src/tinymce'),
-----
-+
-.Diff of `./config/paths.js`
+.Diff of `.eslintrc.js`
 [source,patch]
 ----
-diff --git a/config/paths.js b/config/paths.js
-index f0a6cd9..a0d2f50 100644
---- a/config/paths.js
-+++ b/config/paths.js
-@@ -60,6 +60,7 @@ module.exports = {
-   appIndexJs: resolveModule(resolveApp, 'src/index'),
-   appPackageJson: resolveApp('package.json'),
-   appSrc: resolveApp('src'),
-+  appTinymce: resolveApp('src/tinymce'),
-   appTsConfig: resolveApp('tsconfig.json'),
-   appJsConfig: resolveApp('jsconfig.json'),
-   yarnLockFile: resolveApp('yarn.lock'),
+diff --git a/.eslintrc.cjs b/.eslintrc.cjs
+index 3b3b3b3..4b4b4b4 100644
+--- a/.eslintrc.cjs
++++ b/.eslintrc.cjs
+@@ -7,7 +7,7 @@ modules.exports = {
+   'plugin:react/jsx-runtime',
+     'plugin:react-hooks/recommended',
+   ],
+-  ignorePatterns: ['dist', '.eslintrc.cjs'],
++  ignorePatterns: ['dist', '.eslintrc.cjs', 'src/tinymce'],
+   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+   settings: { react: { version: '18.2' } },
+   plugins: ['react-refresh'],
 ----
 
-. Using a text editor, open `+./config/webpack.config.js+` and make the following edits:
-+
-** Find the `ModuleScopePlugin` and add `require.resolve('script-loader'),` to its array of exceptions.
-** Find the rule for processing javascript in the `src` directory and add the new rule above it:
-+
-[source,js]
-----
-{
-  test: /\.(js)$/,
-  include: paths.appTinymce,
-  loader: require.resolve('script-loader'),
-},
----- 
-** Find the `ESLintPlugin` and add `exclude: ["tinymce"],` to its options.
-
-+
-.Diff of `./config/webpack.config.js`
-[source,patch]
-----
-diff --git a/config/webpack.config.js b/config/webpack.config.js
-index 6b4a4cd..e0d1952 100644
---- a/config/webpack.config.js
-+++ b/config/webpack.config.js
-@@ -331,6 +331,7 @@ module.exports = function (webpackEnv) {
-           babelRuntimeEntry,
-           babelRuntimeEntryHelpers,
-           babelRuntimeRegenerator,
-+          require.resolve('script-loader'),
-         ]),
-       ],
-     },
-@@ -399,6 +400,11 @@ module.exports = function (webpackEnv) {
-                 and: [/\.(ts|tsx|js|jsx|md|mdx)$/],
-               },
-             },
-+            {
-+              test: /\.(js)$/,
-+              include: paths.appTinymce,
-+              loader: require.resolve('script-loader'),
-+            },
-             // Process application JS with Babel.
-             // The preset includes JSX, Flow, TypeScript, and some ESnext features.
-             {
-@@ -724,6 +730,7 @@ module.exports = function (webpackEnv) {
-         new ESLintPlugin({
-           // Plugin options
-           extensions: ['js', 'mjs', 'jsx', 'ts', 'tsx'],
-+          exclude: ["tinymce"],
-           formatter: require.resolve('react-dev-utils/eslintFormatter'),
-           eslintPath: require.resolve('eslint'),
-           failOnError: !(isEnvDevelopment && emitErrorsAsWarnings),
-----
-
-. Using a text editor, create `+./src/BundledEditor.js+` and set the contents to:
+. Using a text editor, create `+./src/BundledEditor.jsx+` and set the contents to:
 +
 [source,jsx]
 ----
 import { Editor } from '@tinymce/tinymce-react';
 
 // TinyMCE so the global var exists
-// eslint-disable-next-line no-unused-vars
 import './tinymce/tinymce.min.js';
 // DOM model
 import './tinymce/models/dom/model.min.js'
@@ -501,7 +458,7 @@ import './tinymce/themes/silver/theme.min.js';
 // Toolbar icons
 import './tinymce/icons/default/icons.min.js';
 // Editor styles
-import './tinymce/skins/ui/oxide/skin.min.css';
+import './tinymce/skins/ui/oxide/skin.min.js';
 
 // importing the plugin index.js file.
 // if you use a plugin that is not listed here the editor will fail to load
@@ -538,34 +495,28 @@ import './tinymce/plugins/wordcount';
 import './tinymce/plugins/emoticons/js/emojis.js';
 
 // Content styles, including inline UI like fake cursors
-/* eslint import/no-webpack-loader-syntax: off */
-import contentCss from '!!raw-loader!./tinymce/skins/content/default/content.min.css';
-import contentUiCss from '!!raw-loader!./tinymce/skins/ui/oxide/content.min.css';
+import './tinymce/skins/content/default/content.js';
+import './tinymce/skins/ui/oxide/content.js';
 
 export default function BundledEditor(props) {
-  const {init, ...rest} = props;
-  // note that skin and content_css is disabled to avoid the normal
-  // loading process and is instead loaded as a string via content_style
   return (
     <Editor
-      init={{
-        ...init,
-        skin: false,
-        content_css: false,
-        content_style: [contentCss, contentUiCss, init.content_style || ''].join('\n'),
-      }}
-      {...rest}
+      licenseKey='your-lisense-key'
+      {...props}
     />
   );
 }
 ----
 
-. Using a text editor, open `+./src/App.js+` and replace the contents with:
+. Update the `+licenseKey+` option in the editor element and include your xref:license-key.adoc[License Key].
+
+. Using a text editor, open `+./src/App.jsx+` and replace the contents with:
 +
 [source,jsx]
 ----
-import React, { useRef } from 'react';
+import { useRef } from 'react';
 import BundledEditor from './BundledEditor'
+import './App.css';
 
 export default function App() {
   const editorRef = useRef(null);
@@ -577,7 +528,7 @@ export default function App() {
   return (
     <>
       <BundledEditor
-        onInit={(evt, editor) => editorRef.current = editor}
+        onInit={(_evt, editor) => editorRef.current = editor}
         initialValue='<p>This is the initial content of the editor.</p>'
         init={{
           height: 500,
@@ -607,14 +558,14 @@ endif::[]
 +
 [source,sh]
 ----
-npm run start
+npm run dev
 ----
 
 * To stop the development server, select on the command line or command prompt and press _Ctrl+C_.
 
 == Deploying the application to a HTTP server
 
-The application will require further configuration before it can be deployed to a production environment. For information on configuring the application for deployment, see: https://create-react-app.dev/docs/deployment[Create React App - Deployment].
+The application will require further configuration before it can be deployed to a production environment. For information on configuring the application for deployment, see: https://vitejs.dev/guide/build[Building for Production] or https://vitejs.dev/guide/static-deploy.html[Deploying a Static Site].
 
 To deploy the application to a local HTTP Server:
 
@@ -624,7 +575,13 @@ To deploy the application to a local HTTP Server:
 ----
 npm run build
 ----
-. Copy the contents of the `+tinymce-react-demo/build+` directory to the root directory of the web server.
+. You can optionally preview the production build by running:
++
+[source,sh]
+----
+npm run preview
+----
+. Copy the contents of the `+tinymce-react-demo/dist+` directory to the root directory of the web server.
 
 The application has now been deployed on the web server.
 
@@ -639,4 +596,4 @@ endif::[]
 * For information on customizing:
 ** {productname} integration, see: xref:react-ref.adoc[].
 ** {productname}, see: xref:basic-setup.adoc[].
-** The React application, see: https://create-react-app.dev/docs/getting-started[Create React App] or https://reactjs.org/docs/getting-started.html[the React documentation].
+** The React application, see: https://vitejs.dev/guide/#getting-started[Getting Started with Vite] or https://reactjs.org/docs/getting-started.html[the React documentation].

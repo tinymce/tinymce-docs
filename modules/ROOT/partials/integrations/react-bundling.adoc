@@ -5,8 +5,7 @@
 import { Editor } from '@tinymce/tinymce-react';
 
 // TinyMCE so the global var exists
-// eslint-disable-next-line no-unused-vars
-import tinymce from 'tinymce/tinymce';
+import 'tinymce/tinymce';
 
 // Theme
 import 'tinymce/themes/silver';
@@ -33,22 +32,17 @@ import 'tinymce/plugins/media';
 import 'tinymce/plugins/nonbreaking';
 import 'tinymce/plugins/table';
 import 'tinymce/plugins/help';
+import 'tinymce/plugins/help/js/i18n/keynav/en';
 
 // Content styles, including inline UI like fake cursors
-/* eslint import/no-webpack-loader-syntax: off */
-import contentCss from '!!raw-loader!tinymce/skins/content/default/content.min.css';
-import contentUiCss from '!!raw-loader!tinymce/skins/ui/oxide/content.min.css';
+import 'tinymce/skins/content/default/content.js';
+import 'tinymce/skins/ui/oxide/content.js';
 
 export default function TinyEditorComponent(props) {
-  // note that skin and content_css is disabled to avoid the normal
-  // loading process and is instead loaded as a string via content_style
   return (
     <Editor
-      init={{
-        skin: false,
-        content_css: false,
-        content_style: [contentCss, contentUiCss].join('\n'),
-      }}
+      licenseKey='your-license-key'
+      {...props}
     />
   );
 }

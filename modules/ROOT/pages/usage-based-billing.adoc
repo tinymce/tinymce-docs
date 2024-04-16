@@ -1,0 +1,70 @@
+
+= About Tiny Cloud's Usage-Based Billing (UBB)
+:description_short: About Tiny Cloud's Usage-Based Billing (UBB) | {productname}
+:description: Learn more about what Tiny Cloud's Usage-Based Billing (UBB) is, and how it affects your application.
+:keywords: {productname}, cloud, script, textarea, ubb, faq, usage-based billing, frequently asked questions, usage, billing
+
+
+[NOTE]
+The below information is only relevant to Tiny Cloud users. Users who self-host the open source version of {productname} are not subject to Usage-Based Billing terms, but are required to comply with the open source license terms. 
+
+== Definitions
+
+Understanding the following terms related to Usage-Based Billing can assist you in making an informed decision when selecting the appropriate link:https://www.tiny.cloud/pricing[pricing plan] to best suit your needs:
+
+== Tiny Cloud
+
+Tiny Cloud is our user-friendly cloud-based editor service that hosts {productname} in the cloud. It provides access to the link:https://www.tiny.cloud/tinymce/features/[premium features] of our rich text editor. With link:https://www.tiny.cloud/solutions/on-premise-or-cloud-based-text-editor/[Tiny Cloud], you can enjoy the benefits of automatic updates, ensuring your {productname} editor is always equipped with the latest features, enhancements, and security patches.
+
+Alternatively, if you prefer to utilize only the free open-source version of {productname} and your project aligns with our open-source software license, you can self-host {productname} in the cloud using any CDN service of your choice, bypassing the need for Tiny Cloud.
+If you want to self-host {productname} and still access our Premium features like link:https://www.tiny.cloud/tinymce/features/powerpaste/[PowerPaste], link:https://www.tiny.cloud/tinymce/features/accessibility-checker/[Accessibility Checker], link:https://www.tiny.cloud/tinymce/features/templates/[Templates], link:https://www.tiny.cloud/tinymce/features/ai-integration/[AI Assistant], and many more, link:https://www.tiny.cloud/contact/[contact our sales team] for a quote.
+
+=== Editor Load
+
+An xref:understanding-editor-loads.adoc[editor load] is the event that occurs each time {productname} is initialized in your application. The editor dispatches the 'init' event to indicate a successful load. For example, if 100 users load {productname} 10 times each, the result would be 1,000 editor loads. 
+
+Learn more about xref:understanding-editor-loads.adoc#how-are-editor-loads-counted[how we count editor loads].
+
+=== How Usage-Based Billing works
+
+Usage-Based Billing means the cost you incur depends on how much you use the {productname} editor.
+
+Each of our pricing plans includes a specific number of editor loads. If you require additional editor loads, you have the option to upgrade to a more suitable plan or pay for every block of 1,000 editor loads over your allocated plan limit.
+
+=== When does my billing month start?
+
+Your billing month starts the day after your trial ends. 
+
+For example, if the last day of your trial is May 15^th^, we start counting your monthly editor loads on May 16^th^, and then reset that count to 0 every 16^th^ day of each subsequent month. 
+
+[IMPORTANT]
+Unused editor loads do not carry over to the next month. 
+
+=== What happens if I exceed my monthly limit?
+
+If you exceed your monthly limit, you will automatically be charged $40 USD for every block of 1,000 editor loads over your allocated plan limit.
+
+=== What if I’m using the free {productname} Core plan? 
+
+If you use our free {productname} Core plan without providing a valid payment method and exceed your allocated editor loads, your editor will transition to read-only mode until the next month. If you provide a valid payment method, you will automatically be charged $40 USD for every block of 1,000 editor loads over our allocated plan limit.
+
+=== How can I ensure I don’t go over my monthly limit?
+
+All Admin users can check their usage data for the past six months in the {productname} Usage section of the Customer Portal. Usage data for the current billing cycle can be found in the Customer Portal > Settings > Billing Portal. We recommend monitoring your editor loads and choosing a plan that will both meet your needs and minimize your costs. Additionally, we will send an email notification to the address associated with your plan when you reach 70% of your monthly editor loads.
+
+If your editor loads are consistently exceeding your plan limit, we suggest upgrading your plan to minimize costs. You can review the cost of link:https://www.tiny.cloud/pricing/[upgrading to a higher plan] at any time and can upgrade in the Billing Portal to immediately receive a higher editor load limit and new capabilities.
+
+[NOTE]
+We recommend that the email address associated with your plan is linked to either a group alias, IT, or administrator address that will remain valid over time (e.g.  link:http://example.com/[http://example.com/]. By doing so, you'll avoid any disruption of {productname} in your project or application in the event of organizational or staff changes.
+
+=== How are editor loads counted during the free 14-day trial period? 
+
+During the trial, you can enjoy unlimited editor loads.
+
+=== I have an annual plan. Are my editor loads calculated monthly or over the entire year?
+
+If you have an annual plan, your editor loads are calculated on a monthly basis within the structure of your annual plan. Similar to our monthly plans, you have a set monthly editor load limit and are automatically charged $40 USD per every block of 1,000 editor loads over your allocated plan limit. Learn more about Tiny Cloud’s Usage-Based Billing model.
+
+=== If I’m on the Essential plan and reach 5,000 editor loads, will I automatically be upgraded to the Professional plan?
+
+You will not automatically be upgraded. You will remain on your current plan and will automatically be charged $40 USD for each additional block of 1,000 editor loads over your plan limit. To avoid these charges, we encourage you to periodically review your editor load count to ensure you’re on the most appropriate pricing plan. You can always upgrade your plan in our Customer Portal > Settings > Billing Portal > Change Plans.

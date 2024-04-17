@@ -114,6 +114,25 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Included itemprop, itemscope, itemtype as valid HTML5 attributes in the core schema.
+// #TINY-9932
+
+Previously, using `itemprop`, `itemscope` and `itemtype` as valid HTML5 attributes within the editor was not supported as they were not included in the update in v6.
+
+As a consequence, users faced difficulties in effectively working with content that used these attributes resulting in compatibility issues or data misrepresentation.
+
+{productname} {product-version} addresses this issue, now, the missed attributes have been added to the HTML5 schema, ensuring that users can now use content containing these attributes such as;
+
+[source, html]
+----
+<div itemscope="" itemtype="http://schema.org/Movie">
+  <h1 itemprop="name">Avatar</h1>
+  Director: <span itemprop="director">James Cameron</span> (born August 16, 1954) <span itemprop="genre">Science fiction</span> <a itemprop="trailer" href="movies/avatar-theatrical-trailer.html"> Trailer </a>
+</div>
+----
+
+As a result, `itemprop`, `itemscope` and `itemtype` are now considered valid HTML5 attributes within {productname}.
+
 
 [[additions]]
 == Additions

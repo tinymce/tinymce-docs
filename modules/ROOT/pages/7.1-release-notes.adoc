@@ -57,11 +57,33 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} 7.1.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== Accessibility Checker
 
-The {productname} 7.1 release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} 7.1 release includes an accompanying release of the **Accessibility Checker** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Accessibility Checker** includes the following improvement.
+
+==== Added new `A11ycheckStart`, `A11ycheckStop`, `A11ycheckIgnore`, `A11ycheckRepair` and `A11ycheckShowDetails` events.
+// #TINY-10777
+
+{productname} introduces five new events within the **Accessibility Checker** premium plugin. These events capture usage statistics, offering valuable insights into the tool's internal usage for customers.
+
+The events include:
+
+[cols="1,2",options="header"]
+|===
+|Name |Description
+|A11ycheckStart |Fired when the Accessibility Checker is `opened`
+|A11ycheckStop |Fired when the Accessibility Checker is `closed`
+|A11ycheckIgnore |Fired when the `Ignore` button is toggled
+|A11ycheckRepair |Fired when the `Repair` button is toggled
+|A11ycheckShowDetails |Fired when the `Click for more info` button is toggled
+|===
+
+[NOTE]
+These events will only be visible within the developer console when each `event` is triggered.
+
+For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
 
 ==== <Premium plugin name 1 change 1>
 

@@ -1,0 +1,205 @@
+= Amazon Bedrock integration guide
+:pluginname: AI Assistant
+:plugincode: ai
+:plugincategory: premium
+:navtitle: Amazon Bedrock integration guide
+:description_short: {pluginname} with Amazon Bedrock
+:description: A guide for integrating {pluginname} plugin using Amazon Bedrock.
+:keywords: example, demo, custom, plugin, ai, assistant, guide, amazon, bedrock, aws
+
+include::partial$misc/admon-ai-pricing.adoc[]
+
+== Introduction
+
+This guide provides instructions for integrating the {pluginname} plugin using https://docs.aws.amazon.com/bedrock/latest/userguide/setting-up.html[Amazon Bedrock] in {productname}. Amazon Bedrock is a managed service for building generative AI applications on AWS. The advantage of using Amazon Bedrock is that it provides a wide range of foundation models that can be used interchangeably with little to no modification.
+
+The following examples load the AWS credentials directly on the client side. For security reasons, it is recommended to use an alternate method for retrieving these credentials. It is recommended to hide the API calls behind a server-side proxy to avoid exposing the AWS credentials to the client side.
+
+These examples use Node.js and https://docs.aws.amazon.com/sdk-for-javascript/v3/developer-guide/welcome.html[AWS SDK for JavaScript] through the `@aws-sdk/client-bedrock-runtime` package to interact with the Amazon Bedrock API. However, you can use any development environment that the https://aws.amazon.com/developer/tools[AWS SDKs] support.
+
+Here, the Anthropic Claude-3 Haiku model is used as an example. You can replace `modelId` with the model you want to use. See https://docs.aws.amazon.com/bedrock/latest/userguide/models-supported.html[Supported models] for more information. Note that each foundation model comes with its own set of parameters.
+
+To learn more about the difference between string and streaming responses, see xref:ai.adoc#the-respondwith-object[The `respondWith` object] on the plugin page.
+
+== Prerequisites
+
+Before you begin, you need the following:
+
+1. An AWS account with access to Amazon Bedrock.
+2. The AWS credentials for the account.
+3. A Node.js environment with the `@aws-sdk/client-bedrock-runtime` package installed.
+
+== String response
+
+This example demonstrates how to integrate the {pluginname} plugin with the https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html[InvokeModel command] to generate string responses.
+
+[source,js]
+----
+import { BedrockRuntimeClient, InvokeModelCommand } from "@aws-sdk/client-bedrock-runtime";
+
+// This example stores the AWS credentials in the client side integration. This is not recommended for any purpose.
+// Instead, an alternate method for retrieving these credentials should be used.
+const AWS_ACCESS_KEY_ID = "<YOUR_ACCESS_KEY_ID>";
+const AWS_SECRET_ACCESS_KEY = "<YOUR_SECRET_ACCESS_KEY>";
+const AWS_SESSION_TOKEN = "<YOUR_SESSION_TOKEN>";
+
+const config = {
+  region: "us-east-1",
+  credentials: {
+    accessKeyId: AWS_ACCESS_KEY_ID,
+    secretAccessKey: AWS_SECRET_ACCESS_KEY,
+    sessionToken: AWS_SESSION_TOKEN,
+  },
+};
+const client = new BedrockRuntimeClient(config);
+
+const ai_request = (request, respondWith) => {
+  const payload = {
+    anthropic_version: "bedrock-2023-05-31",
+    max_tokens: 1000,
+    messages: [{
+      role: "user",
+      content: request.prompt
+    }],
+  };
+
+  const input = {
+    body: JSON.stringify(payload),
+    contentType: "application/json",
+    accept: "application/json",
+    modelId: "anthropic.claude-3-haiku-20240307-v1:0"
+  };
+
+  respondWith.string(async (_signal) => {
+    const command = new InvokeModelCommand(input);
+    const response = await client.send(command);
+    const decodedResponseBody = new TextDecoder().decode(response.body);
+    const responseBody = JSON.parse(decodedResponseBody);
+    const output = responseBody.content[0].text;
+    return await output;
+  });
+};
+
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'ai code help',
+  toolbar: 'aidialog aishortcuts code help',
+  ai_request
+});
+----
+
+== Streaming response
+
+This example demonstrates how to integrate the {pluginname} plugin with the https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html[InvokeModelWithResponseStream command] to generate streaming responses.
+
+[source,js]
+----
+import { BedrockRuntimeClient, InvokeModelWithResponseStreamCommand } from "@aws-sdk/client-bedrock-runtime";
+
+// This example stores the Access Token and Project ID in the client side integration. This is not recommended for any purpose.
+// Instead, an alternate method for retrieving these credentials should be used.
+const AWS_ACCESS_KEY_ID = "<YOUR_ACCESS_KEY_ID>";
+const AWS_SECRET_ACCESS_KEY = "<YOUR_SECRET_ACCESS_KEY>";
+const AWS_SESSION_TOKEN = "<YOUR_SESSION_TOKEN>";
+
+const config = {
+  region: "us-east-1",
+  credentials: {
+    accessKeyId: AWS_ACCESS_KEY_ID,
+    secretAccessKey: AWS_SECRET_ACCESS_KEY,
+    sessionToken: AWS_SESSION_TOKEN,
+  },
+};
+const client = new BedrockRuntimeClient(config);
+
+const ai_request = (request, respondWith) => {
+  // Adds each previous query and response as individual messages
+  const conversation = request.thread.flatMap((event) => {
+    if (event.response) {
+      return [
+        { role: 'user', content: event.request.query },
+        { role: 'assistant', content: event.response.data }
+      ];
+    } else {
+      return [];
+    }
+  });
+
+  // System messages provided by the plugin to format the output as HTML content.
+  const pluginSystemMessages = request.system.map((text) => ({
+    text
+  }));
+
+  const systemMessages = [
+    ...pluginSystemMessages,
+    // Additional system messages to control the output of the AI
+    { text: 'Do not include html\`\`\` at the start or \`\`\` at the end.' },
+    { text: 'No explanation or boilerplate, just give the HTML response.' }
+  ]
+
+  const system = systemMessages.map((message) => message.text).join('\n');
+
+  // Forms the new query sent to the API
+  const text = request.context.length === 0 || conversation.length > 0
+    ? request.query
+    : `Question: ${request.query} Context: """${request.context}"""`;
+
+  const messages = [
+    ...conversation,
+    {
+      role: "user",
+      content: text
+    }
+  ];
+
+  const payload = {
+    anthropic_version: "bedrock-2023-05-31",
+    max_tokens: 1000,
+    system,
+    messages,
+  };
+  
+  const input = {
+    body: JSON.stringify(payload),
+    contentType: "application/json",
+    accept: "application/json",
+    modelId: "anthropic.claude-3-haiku-20240307-v1:0"
+  };
+    
+  // Amazon Bedrock doesn't support cancelling a response mid-stream, so there is no use for the signal callback.
+  respondWith.stream(async (_signal, streamMessage) => {
+    const command = new InvokeModelWithResponseStreamCommand(input);
+    const response = await client.send(command);
+    for await (const item of response.body) {
+      const chunk = JSON.parse(new TextDecoder().decode(item.chunk.bytes));
+      const chunk_type = chunk.type;
+
+      switch (chunk_type) {
+        case "message_start":
+          break;
+        case "content_block_start":
+          break;
+        case "content_block_delta":
+          const message = chunk.delta.text;
+          streamMessage(message);
+          break;
+        case "content_block_stop":
+          break;
+        case "message_delta":
+          break;
+        case "message_stop":
+          break;
+        default:
+          return Promise.reject("Stream error");
+      }
+    }
+  });
+};
+
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'ai code help',
+  toolbar: 'aidialog aishortcuts code help',
+  ai_request
+});
+----

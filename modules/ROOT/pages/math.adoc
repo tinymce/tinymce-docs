@@ -44,7 +44,7 @@ To work with math elements, follow these steps:
 .. By default, `LaTeX` is selected.
 . In the math dialog, use the textarea when inserting formulas.
 .. Choose to `insert` the formula either as a **block** paragraph or **inline** with text.
-. Once the formula has been added, the preview `iframe` section within the modal dialog will render the final math equation.
+. Once the formula has been added, the preview section within the modal dialog will render the final math equation.
 . After reviewing the formula, click the `save` button.
 .. This inserts the finalized math equation into the editor, wrapped in either a `+<div>+` or `+<span>+` element based on the `text-wrap` chosen. The formula is inserted at the last cursor position before the modal dialog was opened.
 

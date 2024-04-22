@@ -1,38 +1,34 @@
 <textarea id="math_demo">
   <div>
     <h1>Inserting KaTeX Math Equations</h1>
-    <p>Refer to the official <a href="https://katex.org/docs/supported.html" target="_blank" rel="noopener" title="KaTex Documentation">KaTeX documentation</a> for a comprehensive list of supported symbols and functions.</p>
-    <p>Copy and paste the below example into the Math modal:</p>
-    <pre>
-        x = \begin{cases}
-              a & \text{if } b \\
-              c & \text{if } d
-            \end{cases}
-    </pre>
+    <p>Refer to the official 
+      <a href="https://katex.org/docs/supported.html" target="_blank" rel="noopener" title="KaTex Documentation">KaTeX documentation</a> 
+      for a comprehensive list of supported symbols and functions.
+    </p>
+    <p>Select the below LaTeX expression, then open the Math model to view the formula example:</p>
+    <tiny-math-block formula="x = \begin{cases}
+                a &amp; \text{if } b \\
+                c &amp; \text{if } d
+              \end{cases}"></tiny-math-block>
   </div>
+  
   <div>
     <h1>Inserting MathML Equations</h1>
-    <p>Refer to the official <a href="https://developer.mozilla.org/en-US/docs/Web/MathML/Element/math" target="_blank" rel="noopener" title="MathML Documentation">MathML documentation</a> for a comprehensive list of supported symbols and functions.</p>
-    <p>Copy and paste the below MathML expression into the Math modal:</p>
-    <pre>
-        &lt;math xmlns="http://www.w3.org/1998/Math/MathML"&gt;
-          &lt;msup&gt;
-            &lt;mrow&gt;
-              &lt;mo&gt;(&lt;/mo&gt;
-              &lt;mrow&gt;
-                &lt;mo&gt;5&lt;/mo&gt;
-                &lt;mo mathvariant="bold"&gt;-&lt;/mo&gt;
-                &lt;mo&gt;4&lt;/mo&gt;
-              &lt;/mrow&gt;
-              &lt;mo&gt;)&lt;/mo&gt;
-            &lt;/mrow&gt;
-            &lt;mn&gt;2&lt;/mn&gt;
-          &lt;/msup&gt;
-          &lt;mrow&gt;
-            &lt;mo&gt;&gt;&lt;/mo&gt;
-            &lt;mo&gt;1&lt;/mo&gt;
-          &lt;/mrow&gt;
-        &lt;/math&gt;
-    </pre>
-  </div>
+    <p>Refer to the official 
+      <a href="https://developer.mozilla.org/en-US/docs/Web/MathML/Element/math" target="_blank" rel="noopener" title="MathML Documentation">MathML documentation</a> 
+      for a comprehensive list of supported symbols and functions.
+    </p>
+    <p>Select the below MathML expression, then open the Math model to view the formula example:</p>
+    <tiny-math-inline>
+      <math>
+        <mrow>
+          <mn>2</mn>
+          <mo>/</mo>
+          <mn>8</mn>
+          <mo>&gt;</mo>
+          <mn>6</mn>
+        </mrow>
+      </math>
+    </tiny-math-inline>
+  </div>  
 </textarea>

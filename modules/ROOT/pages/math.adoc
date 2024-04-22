@@ -48,10 +48,6 @@ To work with math elements, follow these steps:
 . After reviewing the formula, click the `save` button.
 .. This inserts the finalized math equation into the editor, wrapped in either a `+<tiny-math-block>+` or `+<tiny-math-inline>+` element based on the `text-wrap` chosen. The formula is inserted at the last cursor position before the modal dialog was opened.
 
-[NOTE]
-{pluginname} uses the below `custom_elements` to insert complex mathematical content into {productname}. {companyname} does not recommend using custom_element names for `blockMathTag` and `inlineMathTag` to avoid issues when using the {pluginname}.
-
-Learn more about Custom elements, see xref:content-filtering.adoc#custom_elements[custom_elements] and xref:content-filtering.adoc#example-using-custom_elements-with-presets-such-as-blocks-phrasing-and-flow[example using custom_elements].
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

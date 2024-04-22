@@ -130,7 +130,9 @@ import './plugins/advcode';
 import './plugins/advtable';
 import './plugins/advtemplate';
 ----
-and using a module bundler such as link:https://esbuild.github.io/[esbuild], will now load all the specific plugins from the `all.js` file, without the need to load any additional resources.
+all the specific plugins will load without the need of any additional resources.
+
+For more information on bundling with {productname}, see xref:bundling-plugins.adoc[bundling plugins]
 
 For information on the **Bundling plugins**, see: xref:bundling-plugins.adoc[Bunding plugins].
 

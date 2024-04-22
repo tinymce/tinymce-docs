@@ -1,0 +1,113 @@
+= Math plugin
+:navtitle: Math Plugin
+:description: {pluginname} plugin provides a way for users to insert a `+<math>+` element into the {productname} editor.
+:description_short: Insert `+<math>+` elements into {productname}.
+:keywords: plugin, math, formulas
+:pluginname: Math
+:plugincode: math
+:plugincategory: premium
+
+include::partial$misc/admon-paid-addon-pricing.adoc[]
+
+include::partial$misc/admon-requires-7.1v.adoc[]
+
+The {pluginname} plugin provides a way for users to insert complex formulas into `+<math>+` element blocks.
+
+== Interactive example
+
+liveDemo::{plugincode}[]
+
+== Basic setup
+
+To setup the {pluginname} plugin user-interface in the editor:
+
+* add `+math+` to the plugins option in the editor configuration;
+
+For example:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'math',
+  toolbar: 'math',
+});
+----
+
+== How to Use
+
+To work with math elements, follow these steps:
+
+. Open the {productname} editor with the `math` plugin enabled.
+.. Click the math plugin icon in the toolbar to `insert` or `edit` a math element.
+.. This opens the math dialog which allows the user to choose between either `LaTex` and `MathML` equations for the formulas field.
+.. By default, `LaTeX` is selected.
+. In the math dialog, use the textarea when inserting formulas.
+.. Choose to `insert` the formula either as a **block** paragraph or **inline** with text.
+. Once the formula has been added, the preview `iframe` section within the modal dialog will render the final math equation.
+. After reviewing the formula, click the `save` button.
+.. This inserts the finalized math equation into the editor, wrapped in either a `+<div>+` or `+<span>+` element based on the `text-wrap` chosen. The formula is inserted at the last cursor position before the modal dialog was opened.
+
+== Custom_elements
+
+{pluginname} uses the below `custom_elements` to insert complex mathematical content into {productname}.
+
+[TIP]
+If 
+
+=== `blockMathTag`
+[source, html]
+----
+[blockMathTag]: {
+  extends: 'div', <!-- extends the functionality of a standard <div> tag -->
+  attributes: [ 'formula' ], <!-- a recognized attribute -->
+  children: [ 'math' ] <!-- holds the nested mathematical content -->
+},
+----
+
+.Example using `blockMathTag`
+[source, html]
+----
+<div>
+  <tiny-math-block formula="">
+    <math>
+      <mrow></mrow>
+    </math>
+  </tiny-math-block>
+</div>
+----
+
+=== `inlineMathTag`
+[source, html]
+----
+[inlineMathTag]: {
+  extends: 'span', <!-- extends the functionality of a standard <span> tag -->
+  attributes: [ 'formula' ], <!-- a recognized attribute -->
+  children: [ 'math' ] <!-- holds the nested mathematical content -->
+},
+----
+
+.Example using `inlineMathTag`
+[source, html]
+----
+<p>
+  <tiny-math-inline formula="">
+    <math>
+      <mrow></mrow>
+    </math>
+  </tiny-math-inline>
+</p>
+
+----
+
+Learn more about Custom elements, see xref:content-filtering.adoc#custom_elements[custom_elements] and xref:content-filtering.adoc#example-using-custom_elements-with-presets-such-as-blocks-phrasing-and-flow[example using custom_elements].
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+
+== Commands
+
+The {pluginname} plugin provides the following {productname} commands.
+
+include::partial$commands/{plugincode}-cmds.adoc[]

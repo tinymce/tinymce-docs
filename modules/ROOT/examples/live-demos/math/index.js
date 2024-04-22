@@ -5,5 +5,5 @@ tinymce.init({
       "help", "image", "insertdatetime", "link", "lists", "media",
       "preview", "searchreplace", "table", "visualblocks",
   ],
-  toolbar: "math | undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+  toolbar: "math | codesample | undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
 });

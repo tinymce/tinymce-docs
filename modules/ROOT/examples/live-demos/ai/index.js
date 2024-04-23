@@ -50,7 +50,7 @@ const ai_request =  (request, respondWith) => respondWith.stream(async (signal, 
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
-      'Bearer': '{{ openai_proxy_token }}'
+      'Authorization': `Bearer {{ openai_proxy_token }}`
     },
     body: JSON.stringify(requestBody)
   };

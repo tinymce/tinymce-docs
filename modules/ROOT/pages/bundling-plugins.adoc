@@ -7,6 +7,9 @@
 include::partial$module-loading/bundling-ref-example.adoc[]
 :!editorcomponent:
 
+[NOTE]
+If using {productname} 7.0 or earlier, please refer to the link:https://www.tiny.cloud/docs/tinymce/6/bundling-plugins/[Bundling TinyMCE plugins using module loading] from the {productname} v6 documentation guide.
+
 include::partial$plugin-files/plugin-file-index.js.adoc[]
 
 

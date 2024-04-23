@@ -158,6 +158,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Fullscreen mode now prevents focus from leaving the editor.
+// #TINY-10597
+
+Previously, when using the editor in full screen with the xref:fullscreen.adoc[Full Screen] plugin active, users were still able to tab out of the editor window and access content behind it. This created an accessibility issue for keyboard-only users as the editor window could lose focus unintentionally, shifting it to elements outside the editor. Since these elements are hidden in fullscreen mode, keyboard users might have struggled to navigate back to the editor.
+
+In {productname} {release-version}, the Full Screen plugin has been modified to prevent users from tabbing out of the editor window while in full screen mode. Users are now confined to the editor window while in full screen mode, ensuring focus remains on the editor content and preventing accidental navigation away from the editing area.
 
 [[security-fixes]]
 == Security fixes

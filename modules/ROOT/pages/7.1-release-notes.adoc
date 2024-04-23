@@ -156,7 +156,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === Custom block elements with colon characters would throw errors.
 // #TINY-10813
 
-Previously, when using custom elements containing characters like colons, and that element has an anchor element nested within an error would be thrown in the dev-console as the corresponding CSS selector was invalid due to the unescaped colon character.
+Previously, when using `custom_elements` containing characters like colons, and that element has an anchor element nested within an error would be thrown in the dev-console as the corresponding CSS selector was invalid due to the unescaped colon character.
 
 {productname} {release-version} addresses this issue, now, the CSS selector properly escapes special characters like colons, ensuring its validity.
 

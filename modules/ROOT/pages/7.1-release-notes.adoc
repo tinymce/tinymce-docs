@@ -114,6 +114,26 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== New `index.js` file that includes all plugin resources.
+// #TINY-10778
+
+Previously, integrating {productname} and its premium plugins necessitated the separate inclusion of the `plugin.js` file along with the corresponding resource API-loaded CSS files. This approach often led to complications due to inconsistent naming conventions for our CSS files, making bundling a cumbersome process.
+
+To address this, {productname} {release-version} has included `index.js` files to each premium plugin, which will consolidate all necessary resources.
+
+As a result, when bundling from a distribution bundle or `.zip` build, by including all the {productname} imports for each plugin such as in a `all.js` file for example;
+
+[source, js]
+----
+import './plugins/a11ychecker';
+import './plugins/advcode';
+import './plugins/advtable';
+import './plugins/advtemplate';
+----
+all the specific plugins will load without the need of any additional resources.
+
+For more information on bundling with {productname}, see xref:bundling-plugins.adoc[bundling plugins]
+
 
 [[additions]]
 == Additions

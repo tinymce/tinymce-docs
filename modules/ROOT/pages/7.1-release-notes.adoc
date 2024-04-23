@@ -151,7 +151,14 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[bug-fixes]]
 == Bug fixes
 
-{productname} 7.1 also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
+
+=== Dialog title markup changed to use an `h1` element instead of `div`.
+// #TINY-10800
+
+Previously, the dialog component's title was wrapped in a `<div>` element, visually appearing as a heading and functioning as the main heading for the dialog. However, without the title being semantically marked up as a heading element, screen reader users may struggle to understand the purpose of the dialog box and navigate its content.
+
+{productname} {release-version} addresses this issue by updating the dialog title markup to use an `<h1>` element, ensuring that the title is semantically identified as a heading. This improves the accessibility experience for users by helping screen readers and other assistive technologies understand the structure of the page and navigate its content more easily.
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1

@@ -153,10 +153,14 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} 7.1 also includes the following bug fix<es>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Custom block elements with colon characters would throw errors.
+// #TINY-10813
 
-// CCFR here.
+Previously, when using custom elements containing characters like colons, and that element has an anchor element nested within an error would be thrown in the dev-console as the corresponding CSS selector was invalid due to the unescaped colon character.
+
+{productname} {release-version} addresses this issue, now, the CSS selector properly escapes special characters like colons, ensuring its validity.
+
+As a result, the error in the console is no longer displayed.
 
 
 [[security-fixes]]

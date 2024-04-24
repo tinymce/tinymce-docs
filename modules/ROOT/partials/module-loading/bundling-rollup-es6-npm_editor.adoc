@@ -28,11 +28,9 @@ import 'tinymce/plugins/link';
 import 'tinymce/plugins/lists';
 import 'tinymce/plugins/table';
 
-/* Import premium plugins */
+/* Import premium plugins by replacing <plugincode> */
 /* NOTE: Download separately and add these to /src/plugins */
-/* import './plugins/checklist/plugin'; */
-/* import './plugins/powerpaste/plugin'; */
-/* import './plugins/powerpaste/js/wordimport'; */
+/* import './plugins/<plugincode>'; */
 
 /* content UI CSS is required */
 import contentUiSkinCss from 'tinymce/skins/ui/oxide/content.css';

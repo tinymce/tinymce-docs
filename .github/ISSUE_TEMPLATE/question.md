@@ -7,6 +7,8 @@ assignees: ''
 
 ---
 
+**Documentation/Product Version**
+
 **Related page URL (if applicable)**
 
 **I would like to know...**

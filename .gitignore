@@ -1,4 +1,15 @@
+.bundle
+.jekyll-metadata
+_data/*
+_report/
+node_modules
+build/
+vendor
+.idea
 .DS_Store
 .vscode
-node_modules
-build
+.*.swp
+.wercker/*
+
+# Antora tmp files
+_site/

@@ -1,4 +1,4 @@
-name: Develop 7 Docs
+name: Develop 3 Docs
 
 on:
   workflow_dispatch:
@@ -29,13 +29,10 @@ jobs:
         cache: 'yarn'
         node-version: ${{ matrix.node-version }}
 
-    - name: (Develop 7 Docs) Install dependencies
+    - name: (Develop 3 Docs) Install dependencies
       run: yarn install
 
-    - name: (Develop 7 Docs) Build API References
-      run: yarn build
-
-    - name: (Develop 7 Docs) Build Website
+    - name: (Develop 3 Docs) Build Website
       run: yarn antora ./antora-playbook.yml
 
     - name: (deploy) Prepare for branch deployments

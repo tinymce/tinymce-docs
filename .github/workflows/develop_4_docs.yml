@@ -32,9 +32,6 @@ jobs:
     - name: (Develop 4 Docs) Install dependencies
       run: yarn install
 
-    - name: (Develop 4 Docs) Build API References
-      run: yarn build
-
     - name: (Develop 4 Docs) Build Website
       run: yarn antora ./antora-playbook.yml
 

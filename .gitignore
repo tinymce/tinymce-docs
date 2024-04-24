@@ -1,15 +1,15 @@
 .bundle
 .jekyll-metadata
-_data/api
-_data/nav_api.*
-_site
-_config-prod.yml
-_config-local.yml
+_data/*
+_report/
 node_modules
+build/
 vendor
 .idea
 .DS_Store
 .vscode
 .*.swp
-build/
-_data/
+.wercker/*
+
+# Antora tmp files
+_site/

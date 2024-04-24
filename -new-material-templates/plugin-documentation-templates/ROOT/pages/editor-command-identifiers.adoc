@@ -1,0 +1,20 @@
+// 0. Replace <place-holder text> instances with appropriate material.
+// 1. Add the edited material to
+//    /tinymce-docs/modules/ROOT/pages/editor-command-identifiers.adoc
+//    in alphabetical order by <Plugin name>. (*not* <plugincode>).
+// 2. Do not bring these comments over with the edited material.
+
+// add an xref in alphabetical order to the summary list that is below the following lines:
+// [[plugin-commands]]
+// === Plugin Commands
+
+* xref:<plugincode>[<Plugin name>]
+
+// add the include in alphabetical order to the body of the "Plugin Commands" section
+
+[[<plugincode>]]
+==== <Plugin name>
+
+The following commands require the xref:<plugincode>.adoc[<Plugin name> (`+<plugincode>+`)] plugin.
+
+include::partial$commands/<plugincode>-cmds.adoc[leveloffset=+3]

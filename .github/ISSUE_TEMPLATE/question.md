@@ -8,7 +8,6 @@ assignees: ''
 ---
 
 **Documentation/Product Version**
-_TinyMCE 4 Documentation_
 
 **Related page URL (if applicable)**
 

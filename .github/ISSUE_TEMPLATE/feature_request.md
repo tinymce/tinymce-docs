@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 **Documentation/Product Version**
-_TinyMCE 4 Documentation_
+
 
 **Page to be updated (if applicable)**
 

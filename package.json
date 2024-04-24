@@ -1,30 +1,40 @@
 {
   "name": "tinymce-docs",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "description": "TinyMCE documentation",
-  "repository": "git@github.com:tinymce/tinymce-docs-4x.git",
+  "repository": "git@github.com:tinymce/tinymce-docs.git",
   "bugs": {
     "url": "https://github.com/tinymce/tinymce-docs/issues"
   },
-  "homepage": "https://github.com/tinymce/tinymce-docs#readme",
+  "homepage": "https://www.tiny.cloud/docs/",
   "scripts": {
-    "watch": "nodemon --exec antora antora-playbook.yml",
+    "clean": "rm -rf ./build",
+    "nodemon": "nodemon --exec yarn antora ./antora-playbook.yml",
+    "nodemon-dev": "nodemon --exec yarn antora ./antora-playbook-local.yml",
     "server": "http-server build/site/ --port 4000",
-    "serve": "npm-run-all -p watch server"
+    "serve": "npm-run-all -p nodemon server",
+    "serve-dev": "npm-run-all -p nodemon-dev server",
+    "start": "yarn clean && yarn serve",
+    "start-dev": "yarn clean && yarn serve-dev"
   },
   "author": "Tiny Technologies Inc",
   "license": "CC-BY-NC-SA-3.0",
   "nodemonConfig": {
     "execMap": {
-      "build": "antora antora-playbook.yml"
+      "build": "antora ./antora-playbook-dev.yml"
     },
-    "watch": ["modules/*"],
+    "watch": [
+      "modules/*"
+    ],
     "delay": "2500ms",
     "ext": "*"
   },
   "devDependencies": {
-    "@antora/cli": "^2.3.4",
-    "@antora/site-generator-default": "^2.3.4",
+    "@antora/cli": "^3.0.1",
+    "@antora/site-generator-default": "^3.0.1",
+    "@tinymce/antora-extension-livedemos": "^0.1.0",
+    "@tinymce/moxiedoc": "^0.3.0",
+    "dotenv": "^16.0.0",
     "ecstatic": "^4.1.4",
     "http-server": "^0.12.3",
     "nodemon": "^2.0.7",

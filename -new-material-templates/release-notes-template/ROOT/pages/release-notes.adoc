@@ -1,0 +1,21 @@
+// add a cell to the table of releases in release-notes.adoc
+a|
+[.lead]
+xref:<x.y[.z]>-release-notes.adoc#overview[{productname} <x.y[.z]>]
+
+Release notes for {productname} <x.y[.z]>
+
+//rest of extant table here
+
+// Dummy table cell.
+// 1. When the number of cells in the table is odd:
+//    * remove the inline comment markup pre-pending this
+//      element.
+//
+// 2. When the number of cells in the table is even:
+//    * prepend the inline comment markup to this
+//      element.
+//a|
+
+|===
+

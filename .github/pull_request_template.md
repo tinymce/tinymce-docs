@@ -1,13 +1,16 @@
-Related Ticket: 
+Ticket: DOC-<num>
 
-Description of Changes:
-* Placeholder text
+Site: [Staging branch](http://docs-<hotfix|feature>-7-doc-<num>.staging.tiny.cloud/docs/tinymce/latest/)
 
-DOD:
-- [ ] nav.yml has been updated if applicable
-- [ ] file has been included where required if applicable
-- [ ] files removed have been deleted, not just excluded from the build if applicable
+Changes:
+* <placeholder-text>
 
-Review
+Pre-checks:
+- [ ] Branch prefixed with `feature/7/` or `hotfix/7/`
+- [ ] `modules/ROOT/nav.adoc` has been updated `(if applicable)`
+- [ ] Files has been included where required `(if applicable)`
+- [ ] Files removed have been deleted, not just excluded from the build `(if applicable)`
+- [ ] Files added for `New product features`, and included a `release note` entry.
+
+Review:
 - [ ] Documentation Team Lead has reviewed
-- [ ] Product Manager has reviewed

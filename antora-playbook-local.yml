@@ -7,11 +7,8 @@ content:
   - url: ./
     branches: HEAD
     start_path: ./
-  - url: https://github.com/tinymce/tinymce-docs.git
-    branches: [ tinymce/5, tinymce/6, tinymce/7 ]
 urls:
   html_extension_style: indexify
-  latest_version_segment: latest
 ui:
   bundle:
     url: https://tiny-cloud-docs-antora-themes-staging.s3.amazonaws.com/ui-bundle.zip

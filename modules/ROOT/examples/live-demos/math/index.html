@@ -1,34 +1,51 @@
 <textarea id="math_demo">
-  <div>
-    <h1>Inserting KaTeX Math Equations</h1>
-    <p>Refer to the official 
-      <a href="https://katex.org/docs/supported.html" target="_blank" rel="noopener" title="KaTex Documentation">KaTeX documentation</a> 
-      for a comprehensive list of supported symbols and functions.
-    </p>
-    <p>Select the below LaTeX expression, then open the Math model to view the formula example:</p>
-    <tiny-math-block formula="x = \begin{cases}
-                a &amp; \text{if } b \\
-                c &amp; \text{if } d
-              \end{cases}"></tiny-math-block>
+  <p style="text-align: center;">The following equations are represented in the HTML source code as LaTeX/MathML expressions.</p>
+  <div style="text-align: center;">
+  <h1>LaTeX example</h1>
+  <p>The below example is a representation of a LaTeX expression after is was inserted as a block element after selecting "Text above and below" from the text wrap toggle.</p>
+  <tiny-math-block formula="\sum_{
+        \begin{subarray}{l}
+           i\in\Lambda\\
+           0&lt;j&lt;n
+        \end{subarray}}"></tiny-math-block>
+  <p>&nbsp;</p>
   </div>
-  
-  <div>
-    <h1>Inserting MathML Equations</h1>
-    <p>Refer to the official 
-      <a href="https://developer.mozilla.org/en-US/docs/Web/MathML/Element/math" target="_blank" rel="noopener" title="MathML Documentation">MathML documentation</a> 
-      for a comprehensive list of supported symbols and functions.
-    </p>
-    <p>Select the below MathML expression, then open the Math model to view the formula example:</p>
-    <tiny-math-inline>
-      <math>
+  <div style="text-align: center;">
+  <h1 style="text-align: center;">MathML example</h1>
+  <p style="text-align: center;">The below example is a representation of a MathML expression after is was inserted as a inline element after selecting "Inline with Text" from the text wrap toggle.</p>
+  <tiny-math-block><math>
         <mrow>
-          <mn>2</mn>
-          <mo>/</mo>
-          <mn>8</mn>
-          <mo>&gt;</mo>
-          <mn>6</mn>
+         <munder>
+         <mo movablelimits="false">lim</mo>
+         <mrow>
+         <mi>n</mi>
+         <mo>→</mo>
+         <mi>N</mi>
+         </mrow>
+         </munder>
+         <mrow>
+         <mo>(</mo>
+         <mrow>
+         <mn>1</mn>
+         <mo>+</mo>
+         <mfrac>
+         <mn>1</mn>
+         <mi>n</mi>
+         </mfrac>
+         </mrow>
+         <mo>)</mo>
+         </mrow>
         </mrow>
-      </math>
-    </tiny-math-inline>
-  </div>  
-</textarea>
+      </math></tiny-math-block>
+  <div>
+  <p style="text-align: center;">This limit represents a common expression in calculus where <code>\(n\)</code> approaches a specified value <code>\(N\)</code>.</p>
+  <p style="text-align: center;">To understand this expression, let's consider what happens as <code>\(n\)</code> increases:</p>
+  <ul style="text-align: center;">
+  <li>When <code>\(n\)</code> is large, the term <code>\(\frac{1}{n}\)</code> tends to zero, which implies that <code>\((1 + \frac{1}{n})\)</code> approaches 1.</li>
+  <li>If <code>\(N\)</code> represents infinity, the limit is also 1, because the additional term <code>\(\frac{1}{n}\)</code> becomes negligible.</li>
+  <li>If <code>\(N\)</code> is a finite value, the limit would be <code>\((1 + \frac{1}{N})\)</code>. This reflects the behavior as <code>\(n\)</code> approaches a specific finite number.</li>
+  </ul>
+  <p style="text-align: center;">Therefore, without further context about what <code>\(N\)</code> represents, the specific result of the limit depends on whether <code>\(N\)</code> is infinite or finite.</p>
+  </div>
+  </div>
+  </textarea>

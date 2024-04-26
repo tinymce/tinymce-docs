@@ -38,16 +38,85 @@ tinymce.init({
 
 To work with math elements, follow these steps:
 
-. Open the {productname} editor with the `math` plugin enabled.
-.. Click the math plugin icon in the toolbar to `insert` or `edit` a math element.
-.. This opens the math dialog which allows the user to choose between either `LaTex` and `MathML` equations for the formulas field.
+. Open the {productname} editor with the {pluginname} plugin enabled.
+.. Click the {pluginname} plugin icon in the toolbar to `insert` or `edit` a math element.
+.. This opens the {pluginname} dialog which allows the user to choose between either `LaTex` and `MathML` equations for the formulas field.
 .. By default, `LaTeX` is selected.
-. In the math dialog, use the textarea when inserting formulas.
+. In the {pluginname} dialog, use the textarea when inserting formulas.
 .. Choose to `insert` the formula either as a **block** paragraph or **inline** with text.
 . Once the formula has been added, the preview section within the modal dialog will render the final math equation.
 . After reviewing the formula, click the `save` button.
-.. This inserts the finalized math equation into the editor, wrapped in either a `+<tiny-math-block>+` or `+<tiny-math-inline>+` element based on the `text-wrap` chosen. The formula is inserted at the last cursor position before the modal dialog was opened.
+.. This inserts the math equation into the editor, wrapped in either a `+<tiny-math-block>+` or `+<tiny-math-inline>+` element based on the **Text Wrap** chosen.
 
+[TIP]
+The formula is inserted at the last cursor position before the modal dialog was opened.
+
+=== Inserting LaTeX formulas (Block)
+
+The <tiny-math-block formula=""> custom tag is used to wrap the <math>, <semantics>, and <mrow> tags when inserting a LaTeX formulas when "Text above and below" `Text Wrap` is selected.
+
+[source]
+----
+<tiny-math-block formula="">
+  <math>
+    <semantics>
+      <mrow>
+      </mrow>
+    </semantics>
+  </math>
+</tiny-math-block>
+----
+
+=== Inserting LaTeX formulas (Inline)
+
+The <tiny-math-inline formula=""> custom tag is used to wrap the <math>, <semantics>, and <mrow> tags when inserting a LaTeX formulas, when the `Text Wrap` is set to `Inline with Text`.
+
+[source]
+----
+<tiny-math-inline formula="">
+  <math>
+    <semantics>
+      <mrow>
+      </mrow>
+    </semantics>
+  </math>
+</tiny-math-inline></p>
+----
+
+=== Inserting MathML formulas (Block)
+
+The <tiny-math-block> custom tag is used to wrap the <math>, <mrow>, and <mn> tags when inserting a MathML formulas when "Text above and below" `Text Wrap` is selected.
+
+[source]
+----
+<tiny-math-block>
+  <math>
+    <mrow>
+     <mn>
+     </mn>
+    </mrow>
+  </math>
+</tiny-math-block>
+----
+
+=== Inserting MathML formulas (Inline)
+
+The <tiny-math-block-inline> custom tag is used to wrap the <math>, <mrow>, and <mn> tags when inserting a MathML formulas when the `Text Wrap` is set to `Inline with Text`.
+
+[source]
+----
+<tiny-math-block-inline>
+  <math>
+    <mrow>
+     <mn>
+     </mn>
+    </mrow>
+  </math>
+</tiny-math-block-inline>
+----
+
+[NOTE]
+Visit link:https://katex.org/docs/supported.html[https://katex.org/docs/supported^] for a comprehensive list of supported symbols and functions when inserting mathematical equations after selecting "Language (LaTeX)".
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

@@ -173,10 +173,17 @@ For more information on bundling with {productname}, see xref:bundling-plugins.a
 
 {productname} 7.1 also includes the following bug fix<es>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== `ToggleToolbarDrawer` command did not toggle the toolbar in `sliding` mode when `+{skipFocus: true}+` parameter was passed.
+// #TINY-10726
 
-// CCFR here.
+In link:https://www.tiny.cloud/docs/tinymce/6/6.4.1-release-notes/#added-skip_focus-check-to-the-toggletoolbardrawer-command[{productname} 6.4.1], a boolean `skipFocus` parameter for the `ToggleToolbarDrawer` command was introduced. This parameter manages whether the focus should be set on the overflow toolbar after it is toggled. However, a bug was identified with the `ToggleToolbarDrawer` command when used with `+{skipFocus: true}+`, specifically as `+editor.execCommand('ToggleToolbarDrawer', false, { skipFocus: true })+`.
+
+As a result, the bug caused the command to behave inconsistently based on the toolbar mode:
+
+* In `toolbar_mode: floating`, the command correctly preserved focus.
+* In `toolbar_mode: sliding`, the command did not toggle the toolbar drawer at all.
+
+{productname} {release-version} addresses this issue. Now, when using the `ToggleToolbarDrawer` command with the `+{ skipFocus: true }+` argument in both `toolbar_mode: floating` and `toolbar_mode: sliding`, the command will toggle the toolbar drawer as expected while preserving focus.
 
 
 [[security-fixes]]

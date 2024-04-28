@@ -122,7 +122,7 @@ As a consequence, users who rely on keyboard navigation or screen readers could 
 
 {productname} {release-version} addressed this issue with the following changes: 
 
-* Keyboard Shortcut: keyboard shortcut `+(ALT+F12)+` was added, that allows users to now focus on notifications, providing a way for keyboard-only users to access and interact with them.
+* Keyboard Shortcut: keyboard shortcut *Alt+F12* (or *⌥+F12*) was added, that allows users to now focus on notifications, providing a way for keyboard-only users to access and interact with them.
 * Keyboard Navigation: allows keyboard navigation within the focusable elements in a notification, such as links and buttons, with *Tab* or *Shift+Tab*.
 * Tooltip: added a tooltip to the `close` button of the notification, providing additional context for users who may need it.
 * Link Styles: improved the styles of links within notifications, including `hover`, `focus`, `active`, and `focus-visible` states, to ensure that they are easily distinguishable and navigable.

@@ -182,7 +182,7 @@ As a consequence, the aria-pressed attribute was set incorrectly, which prevente
 
 {productname} {release-version} addresses this issue. Now, the `aria-pressed` attribute has been replaced with `aria-expanded` attribute. This attribute will be set to `+true+` when the overflow content is visible and `+false+` when it's hidden. 
 
-As a result, screen readers will now announce the expanded/collapsed state of the overflow menu correctly.
+As a result, screen readers will now announce the expanded/collapsed state of the overflow toolbar correctly.
 
 [NOTE]
 This fix only applies to toolbars configured with `+toolbar_mode: 'sliding'+`.

@@ -173,10 +173,19 @@ For more information on bundling with {productname}, see xref:bundling-plugins.a
 
 {productname} 7.1 also includes the following bug fix<es>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Removed `aria-pressed` from the `More` button in sliding toolbar mode and replaced it with `aria-expanded`
+// #TINY-10795
 
-// CCFR here.
+Previously, an issue was identified with the toolbar overflow button **More** button specifically in `+toolbar_mode: 'sliding'+` mode. The button uses the aria-pressed attribute, which is not appropriate for this scenario.
+
+As a consequence, the aria-pressed attribute was set incorrectly, which prevented screen readers from announcing whether the additional toolbar was in either a expanded or collapsed state.
+
+{productname} {release-version} addresses this issue. Now, the `aria-pressed` attribute has been replaced with `aria-expanded` attribute. This attribute will be set to `+true+` when the overflow content is visible and `+false+` when it's hidden. 
+
+As a result, screen readers will now announce the expanded/collapsed state of the overflow toolbar correctly.
+
+[NOTE]
+This fix only applies to toolbars configured with `+toolbar_mode: 'sliding'+`.
 
 
 [[security-fixes]]

@@ -189,6 +189,15 @@ For more information on bundling with {productname}, see xref:bundling-plugins.a
 
 {productname} {release-version} also includes the following bug fixes:
 
+=== Styles were not retained when toggling a list on and off.
+// #TINY-10837
+
+Previously, toggling a list into a paragraph that had a specific alignment style, did not retain the alignment state when the list was converted to the paragraph.
+
+{productname} {release-version} addresses this issue, by ensuring that the style attribute of the list item being transformed into a paragraph is carried over to the new paragraph.
+
+As a result, style attributes are now properly applied to the new paragraph after conversion when toggling lists.
+
 === Dialog title markup changed to use an `h1` element instead of `div`.
 // #TINY-10800
 

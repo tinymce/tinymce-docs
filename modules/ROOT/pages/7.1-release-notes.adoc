@@ -189,6 +189,15 @@ For more information on bundling with {productname}, see xref:bundling-plugins.a
 
 {productname} {release-version} also includes the following bug fixes:
 
+=== Notification width was not constrained to the width of the editor.
+// #TINY-10886
+
+Previously, opening a notification or when one is display in the editor would cause it to exceed the editor's fixed width if it contained a large amount of text.
+
+As a consequence, the notification became wider than the editor.
+
+In {productname} {release-version}, this issue is resolved by ensuring that notifications do not exceed the width of the editor.
+
 === Dialog title markup changed to use an `h1` element instead of `div`.
 // #TINY-10800
 

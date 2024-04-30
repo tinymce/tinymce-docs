@@ -109,10 +109,14 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} 7.1 also includes the following improvement<s>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== In the custom view, the scrollbar of the container were not visible if its height was greater than the editor.
+// #TINY-10741
 
-// CCFR here.
+Previously, when opening a custom view on small screens or mobile devices, like the revision history view, some header buttons and UI components were not completely visible, and in some cases, they were not accessible. For example, users might not have been able to close the view because the Close button was obscured on smaller screens.
+
+{productname} {release-version} addresses this issue by improving the layout's responsiveness to maximize usability.
+
+As a result, header buttons and UI components are more accessible and visible on small screens and mobile devices, ensuring that users can interact with the custom view without issues.
 
 === Notification accessibility improvements: added tooltips, keyboard navigation and shortcut to focus on notifications.
 

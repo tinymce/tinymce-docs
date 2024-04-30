@@ -21,6 +21,10 @@ Before you begin, you need the following:
 
 1. An OpenAI API Key. To get an API key, sign up for an account on the https://platform.openai.com/signup[OpenAI Platform].
 
+== String response
+
+This example demonstrates how to integrate the {pluginname} plugin with the OpenAI API to generate string responses.
+
 [source,js]
 ----
 // This example stores the API key in the client side integration. This is not recommended for any purpose.

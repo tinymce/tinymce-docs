@@ -192,9 +192,9 @@ For more information on bundling with {productname}, see xref:bundling-plugins.a
 === Notification width was not constrained to the width of the editor.
 // #TINY-10886
 
-Previously, opening a notification or when one is display in the editor would cause it to exceed the editor's fixed width if it contained a large amount of text.
+Previously, when opening a notification containing a large amount of text or when one was displayed by the editor, the notification was not constrained to the width of the editor.
 
-As a consequence, the notification became wider than the editor.
+As a consequence, the notification popup would exceed the fixed width of the editor window.
 
 In {productname} {release-version}, this issue is resolved by ensuring that notifications do not exceed the width of the editor.
 

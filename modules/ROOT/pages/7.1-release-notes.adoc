@@ -189,6 +189,17 @@ For more information on bundling with {productname}, see xref:bundling-plugins.a
 
 {productname} {release-version} also includes the following bug fixes:
 
+=== Dialog title was not announced in macOS VoiceOver, dialogs now use `aria-label` instead of `aria-labelledby` on macOS.
+// #TINY-10808
+
+In previous versions of {productname}, an issue was identified where **VoiceOver** was not announcing the dialog title when using the `+aria-labelledby+` attribute. 
+
+As a consequence, without announcing the dialog title, users who rely on screen readers would not be informed about the purpose of the dialog.
+
+{productname} {release-version} addresses this issue. Now, {company-name}'s approach to announcing dialog titles is by switching from using `+aria-labelledby+` to using `+aria-label+` directly on the dialog title element itself.
+
+As a result, the `+aria-label+` attribute, **VoiceOver** will now announce the dialog title as expected.
+
 === Dialog title markup changed to use an `h1` element instead of `div`.
 // #TINY-10800
 

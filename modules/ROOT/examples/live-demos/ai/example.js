@@ -118,7 +118,8 @@ const ai_request =  (request, respondWith) => respondWith.stream(async (signal, 
 
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: 'ai',
-  toolbar: 'aidialog aishortcuts',
+  plugins: "ai advlist anchor autolink charmap advcode emoticons fullscreen help image link lists media preview searchreplace table",
+  toolbar: "undo redo | aidialog aishortcuts | styles fontsizeinput | bold italic | align bullist numlist | table link image | code",
+  height: 650,
   ai_request
 });

@@ -23,6 +23,8 @@ Users can retrieve a history of their conversations with the AI using the xref:#
 
 == Interactive example
 
+NOTE: This example uses a proxy endpoint to communicate with the OpenAI API. This is done to avoid exposing the API key in the client-side code. For more information on using a proxy server with the {pluginname} plugin, see the xref:ai-proxy.adoc[AI Proxy Server reference guide].
+
 liveDemo::ai[]
 
 == Basic setup

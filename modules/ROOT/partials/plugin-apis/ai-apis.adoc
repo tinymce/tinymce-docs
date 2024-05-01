@@ -14,7 +14,7 @@ tinymce.activeEditor.plugins.ai.getThreadLog();
 [[getThreadLog]]
 === The `getThreadLog` API
 
-A user or integrator can retrieve the history of each conversation thread by calling `+editor.ai.getThreadLog()+` on an editor instance with the {pluginname} plugin enabled.
+A user or integrator can retrieve the history of each conversation thread by calling `+editor.ai.getThreadLog()+` on an editor instance with the {pluginname} plugin enabled. 
 
 A new thread is recorded into the thread log with a unique ID each time the AI dialog is opened. When a request returns either a response or an error, an event is recorded in the current thread containing the following fields:
 

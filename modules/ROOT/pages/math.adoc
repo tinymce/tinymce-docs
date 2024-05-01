@@ -85,7 +85,7 @@ The `+<tiny-math-inline formula="">+` custom tag is used to wrap the `+<math>+`,
 
 === Inserting MathML formulas (Block)
 
-The <tiny-math-block> custom tag is used to wrap the <math>, <mrow>, and <mn> tags when inserting a MathML formulas when "Text above and below" `Text Wrap` is selected.
+The `+<tiny-math-block>+` custom tag is used to wrap the `+<math>+`, `+<mrow>+`, and `+<mn>+` tags when inserting a MathML formulas, when the `Text Wrap` is set to `Text above and below`.
 
 [source]
 ----

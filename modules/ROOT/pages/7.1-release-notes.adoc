@@ -189,6 +189,17 @@ For more information on bundling with {productname}, see xref:bundling-plugins.a
 
 {productname} {release-version} also includes the following bug fixes:
 
+=== Firefox not announcing the iframe title when `iframe_aria_text` was set.
+// #TINY-10718
+
+Previously, there was inconsistencies across browsers in announcing the `aria-label` for the editor body when the host browser was Firefox.
+
+As a consequence, the aria-label of the editor body was not announced. It was intended to be conveyed by the `iframe_aria_text` option but in this case, it was not being announced, while Chrome and Safari functioned correctly.
+
+{productname} {release-version} addresses this issue. Now, the `iframe_aria_text` option is set to the **title** of the iframe specifically in Firefox, to ensure screen readers announce the option across all browsers.
+
+As a result, when navigating into the editor, screen readers in all supported browsers will now announce the correct label for the editor body.
+
 === Dialog title markup changed to use an `h1` element instead of `div`.
 // #TINY-10800
 

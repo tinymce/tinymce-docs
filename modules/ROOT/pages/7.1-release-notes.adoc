@@ -189,6 +189,12 @@ For more information on bundling with {productname}, see xref:bundling-plugins.a
 
 {productname} {release-version} also includes the following bug fixes:
 
+=== Open link context menu action was not enabled for links on images.
+// #TINY-10391
+
+// CCFR here.
+
+
 === Dialog title was not announced in macOS VoiceOver, dialogs now use `aria-label` instead of `aria-labelledby` on macOS.
 // #TINY-10808
 

@@ -25,6 +25,8 @@ Before you begin, you need the following:
 
 This example demonstrates how to integrate the {pluginname} plugin with the OpenAI API to generate string responses.
 
+include::partial$misc/admon-ai-proxy.adoc[]
+
 [source,js]
 ----
 // This example stores the API key in the client side integration. This is not recommended for any purpose.
@@ -73,6 +75,8 @@ tinymce.init({
 == Streaming response
 
 This example demonstrates how to integrate the {pluginname} plugin with the OpenAI API to generate streaming responses.
+
+include::partial$misc/admon-ai-proxy.adoc[]
 
 [source,js]
 ----

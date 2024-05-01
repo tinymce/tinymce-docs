@@ -5,7 +5,7 @@
 :navtitle: Google Gemini integration guide
 :description_short: {pluginname} with Google Gemini
 :description: A guide for integrating {pluginname} plugin using Google Gemini.
-:keywords: example, demo, custom, plugin, ai, assistant, guide, google, gemini
+:keywords: example, demo, custom, plugin, ai, assistant, guide, google, gemini, vertexai, ai-studio, console, gcp, platform, cloud
 
 include::partial$misc/admon-ai-pricing.adoc[]
 
@@ -13,39 +13,56 @@ include::partial$misc/admon-ai-pricing.adoc[]
 
 This guide provides instructions for integrating the {pluginname} plugin using Google Gemini in {productname}.
 
-There are two version of the Google Gemini API: Google AI Studio and Google Cloud - Vertex AI. The Google AI Studio API is ideal for quickly integrating the Google Gemini models into an application with the minimal setup required. The Google Cloud - Vertex AI API is more powerful and flexible than Google AI Studio, but requires more setup to integrate the Google Gemini models into an application.
+There are two version of the Google Gemini API: https://ai.google.dev/gemini-api/docs/get-started/rest[Google AI Studio] and https://cloud.google.com/vertex-ai[Google Cloud - Vertex AI]. The Google AI Studio API is ideal for quickly integrating the Google Gemini models into an application with the minimal setup required. The Google Cloud - Vertex AI API is more powerful and flexible than Google AI Studio, but requires more setup to integrate the Google Gemini models into an application.
 
-Vertex AI provides a `systemInstruction` field in the request body that allows controlling the output of the AI model. Google AI Studio does not currently provide this field, so the system messages are provided as part of the user prompt.
+In this example, we will demonstrate how to integrate the {pluginname} plugin with the Vertex AI APIs, but the same principles can be applied to the Google AI Studio APIs by changing the API endpoint, request body, and authentication method.
 
-TIP: Google AI Studio and Vertex AI can both be used to generate string and streaming responses.
+Vertex AI provides a `systemInstruction` field in the request body that allows controlling the output of the AI model. Google AI Studio does not currently provide this option, so the system messages would need to be provided as part of the user prompt for that use case.
+
+See https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/gemini[Google Cloud - Vertex AI Gemini API docs] for more information on the Vertex AI Gemini API.
 
 To learn more about the difference between string and streaming responses, see xref:ai.adoc#the-respondwith-object[The `respondWith` object] on the plugin page.
 
+== Authentication
+
+The access token is used in the Authorization header to authenticate the request to the Google Cloud API. The access token should be stored securely and not exposed to the client side integration. A recommended approach is to use a proxy server to generate the access token and make the API calls. For more information, see the xref:ai-proxy.adoc[AI Proxy Server reference guide].
+
+The https://www.npmjs.com/package/google-auth-library[google-auth-library] can be used to programmatically generate an access token for the Google Cloud API. Alternatively, the https://cloud.google.com/nodejs/docs/reference/vertexai/latest[Vertex AI Node.js SDK] or other client library can be used, but may require modifications to the code.
+
+== Prerequisites
+
+Before you begin, you need to have the following:
+
+* A Google Cloud Platform (GCP) account.
+* A Google Cloud Project with the Vertex AI API enabled.
+* The Project ID and Region of the Google Cloud Project.
+* An Access Token for the Vertex AI API.
+
 == String response
 
-This example demonstrates how to integrate the {pluginname} plugin with the https://ai.google.dev/[Google AI Studio] REST API to generate string responses. Google AI Studio is ideal for quickly integrating the Google Gemini models into an application with the minimal setup required.
-
-See https://ai.google.dev/gemini-api/docs/get-started/rest[Google AI Studio Gemini API] for more information on the Google AI Studio Gemini API.
+This example demonstrates how to integrate the {pluginname} plugin with the Vertex AI API to generate string responses.
 
 [source,js]
 ----
-// This example stores the API key in the client side integration. This is not recommended for any purpose.
-// Instead, an alternate method for retrieving the API key should be used.
-const API_KEY = '<INSERT_API_KEY_HERE>';
-const API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent?key=${API_KEY}`;
+// This example stores the Access Token and Project ID in the client side integration. This is not recommended for any purpose.
+// Instead, an alternate method for retrieving these credentials should be used.
+const ACCESS_TOKEN = '<INSERT_ACCESS_TOKEN_HERE>'; // used in the Authorization Header
+const PROJECT_ID = '<INSERT_PROJECT_ID_HERE>'; // retrieve from the Vertex AI Google Console
+const REGION = '<INSERT_REGION_HERE>'; // e.g. us-central1
+const API_URL = `https://${REGION}-aiplatform.googleapis.com/v1/projects/${PROJECT_ID}/locations/${REGION}/publishers/google/models/gemini-1.0-pro:generateContent`;
 
 const ai_request = (request, respondWith) => {
   const geminiOptions = {
 	method: 'POST',
 	headers: {
 	  'Content-Type': 'application/json',
+	  'Authorization': `Bearer ${ACCESS_TOKEN}`
 	},
 	body: JSON.stringify({
-	  contents: [{
-		parts: [
-		{ text: request.prompt }
-		]
-	  }],
+	  contents: {
+		role: "user",
+		parts: { text: request.prompt }
+	  },
 	  generationConfig: {
 		temperature: 0.9,
 		maxOutputTokens: 800,
@@ -70,7 +87,7 @@ const ai_request = (request, respondWith) => {
 };
 
 tinymce.init({
-  selector: 'textarea',  // Change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'ai',
   toolbar: 'aidialog aishortcuts',
   ai_request
@@ -79,13 +96,7 @@ tinymce.init({
 
 == Streaming response
 
-This example demonstrates how to integrate the {pluginname} plugin with the https://cloud.google.com/vertex-ai[Google Cloud - Vertex AI] REST API to generate streaming responses. Vertex AI is more powerful and flexible than Google AI Studio, but requires more setup to integrate the Google Gemini models into an application.
-
-The https://www.npmjs.com/package/google-auth-library[`google-auth-library`] can be used to programmatically generate an access token for the Google Cloud API. The access token is used in the Authorization header to authenticate the request to the Google Cloud API. The access token should be stored securely and not exposed to the client side integration.
-
-Alternatively, the https://cloud.google.com/nodejs/docs/reference/vertexai/latest[Vertex AI SDK] can be used to generate the access token and make the API calls.
-
-See https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/gemini[Google Cloud - Vertex AI Gemini API] for more information on the Vertex AI Gemini API.
+This example demonstrates how to integrate the {pluginname} plugin with the Vertex AI API to generate streaming responses.
 
 [source,js]
 ----

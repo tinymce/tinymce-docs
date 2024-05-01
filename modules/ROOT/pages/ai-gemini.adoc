@@ -42,10 +42,11 @@ Before you begin, you need to have the following:
 
 This example demonstrates how to integrate the {pluginname} plugin with the Vertex AI API to generate string responses.
 
+include::partial$misc/admon-ai-proxy.adoc[]
+
 [source,js]
 ----
-// This example stores the Access Token and Project ID in the client side integration. This is not recommended for any purpose.
-// Instead, an alternate method for retrieving these credentials should be used.
+// Not recommended for production use. Use a proxy server to generate the access token.
 const ACCESS_TOKEN = '<INSERT_ACCESS_TOKEN_HERE>'; // used in the Authorization Header
 const PROJECT_ID = '<INSERT_PROJECT_ID_HERE>'; // retrieve from the Vertex AI Google Console
 const REGION = '<INSERT_REGION_HERE>'; // e.g. us-central1
@@ -98,12 +99,13 @@ tinymce.init({
 
 This example demonstrates how to integrate the {pluginname} plugin with the Vertex AI API to generate streaming responses.
 
+include::partial$misc/admon-ai-proxy.adoc[]
+
 [source,js]
 ----
 const fetchApi = import("https://unpkg.com/@microsoft/fetch-event-source@2.0.1/lib/esm/index.js").then(module => module.fetchEventSource);
 
-// This example stores the Access Token and Project ID in the client side integration. This is not recommended for any purpose.
-// Instead, an alternate method for retrieving these credentials should be used.
+// Not recommended for production use. Use a proxy server to generate the access token.
 const ACCESS_TOKEN = '<INSERT_ACCESS_TOKEN_HERE>'; // used in the Authorization Header
 const PROJECT_ID = '<INSERT_PROJECT_ID_HERE>'; // retrieve from the Vertex AI Google Console
 const REGION = '<INSERT_REGION_HERE>'; // e.g. us-central1

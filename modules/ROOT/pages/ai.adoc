@@ -33,11 +33,11 @@ To add the {pluginname} plugin to the editor, add both `{plugincode}` to the `pl
 
 For example, interfacing with the OpenAI Completions API:
 
+include::partial$misc/admon-ai-proxy.adoc[]
+
 [source,js]
 ----
-// This example stores the API key in the client side integration. This is not recommended for any purpose.
-// Instead, an alternate method for retrieving the API key should be used.
-const api_key = '<INSERT_API_KEY_HERE>';
+const api_key = '<INSERT_API_KEY_HERE>'; // Not recommended for production use
 
 tinymce.init({
   selector: 'textarea',  // Change this value according to your HTML

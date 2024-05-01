@@ -53,7 +53,7 @@ The formula is inserted at the last cursor position before the modal dialog was 
 
 === Inserting LaTeX formulas (Block)
 
-The <tiny-math-block formula=""> custom tag is used to wrap the <math>, <semantics>, and <mrow> tags when inserting a LaTeX formulas when "Text above and below" `Text Wrap` is selected.
+The `+<tiny-math-block formula="">+` custom tag is used to wrap the `+<math>+`, `+<semantics>+`, and `+<mrow>+` tags when inserting a LaTeX formulas, when the `Text Wrap` is set to `Text above and below`.
 
 [source]
 ----

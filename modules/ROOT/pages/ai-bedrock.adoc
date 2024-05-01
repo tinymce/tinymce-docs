@@ -33,12 +33,14 @@ Before you begin, you need the following:
 
 This example demonstrates how to integrate the {pluginname} plugin with the https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html[InvokeModel command] to generate string responses.
 
+include::partial$misc/admon-ai-proxy.adoc[]
+
 [source,js]
 ----
 import { BedrockRuntimeClient, InvokeModelCommand } from "@aws-sdk/client-bedrock-runtime";
 
-// This example stores the AWS credentials in the client side integration. This is not recommended for any purpose.
-// Instead, an alternate method for retrieving these credentials should be used.
+// Providing access credentials within the integration is not recommended for production use.
+// It is recommended to set up a proxy server to authenticate requests and provide access.
 const AWS_ACCESS_KEY_ID = "<YOUR_ACCESS_KEY_ID>";
 const AWS_SECRET_ACCESS_KEY = "<YOUR_SECRET_ACCESS_KEY>";
 const AWS_SESSION_TOKEN = "<YOUR_SESSION_TOKEN>";
@@ -92,12 +94,14 @@ tinymce.init({
 
 This example demonstrates how to integrate the {pluginname} plugin with the https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html[InvokeModelWithResponseStream command] to generate streaming responses.
 
+include::partial$misc/admon-ai-proxy.adoc[]
+
 [source,js]
 ----
 import { BedrockRuntimeClient, InvokeModelWithResponseStreamCommand } from "@aws-sdk/client-bedrock-runtime";
 
-// This example stores the Access Token and Project ID in the client side integration. This is not recommended for any purpose.
-// Instead, an alternate method for retrieving these credentials should be used.
+// Providing access credentials within the integration is not recommended for production use.
+// It is recommended to set up a proxy server to authenticate requests and provide access.
 const AWS_ACCESS_KEY_ID = "<YOUR_ACCESS_KEY_ID>";
 const AWS_SECRET_ACCESS_KEY = "<YOUR_SECRET_ACCESS_KEY>";
 const AWS_SESSION_TOKEN = "<YOUR_SESSION_TOKEN>";

@@ -196,7 +196,7 @@ In previous versions of {productname}, an issue was identified where **VoiceOver
 
 As a consequence, without announcing the dialog title, users who rely on screen readers would not be informed about the purpose of the dialog.
 
-{productname} {release-version} addresses this issue. Now, {company-name}'s approach to announcing dialog titles is by switching from using `+aria-labelledby+` to using `+aria-label+` directly on the dialog title element itself.
+{productname} {release-version} addresses this issue. Now, {companyname}'s approach to announcing dialog titles is by switching from using `+aria-labelledby+` to using `+aria-label+` directly on the dialog title element itself.
 
 As a result, the `+aria-label+` attribute, **VoiceOver** will now announce the dialog title as expected.
 

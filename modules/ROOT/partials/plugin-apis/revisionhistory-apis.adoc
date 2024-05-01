@@ -1,0 +1,26 @@
+[source,ts]
+----
+interface PluginAPI {
+  diff: (originalHTML: string, changedHTML: string) => string
+}
+----
+
+[[diff]]
+=== `diff`
+Returns a HTML string with annotations indicating the changes in `originalHTML` relative to `changedHTML`. The styling of annotations can be customized via xref:revisionhistory_diff_classes[`+revisionhistory_diff_classes+`] option.
+
+== Example
+[source,js]
+----
+const input1 = `<p>The banner is <span style="color: rgb(224, 62, 45);">red</span></p>`;
+const input2 = `<p>The flag is <span style="color: rgb(22, 145, 121);">red</span></p>`;
+tinymce.activeEditor.plugins.revisionhistory.diff(input1, input2);
+/*
+Expected output:
+<p>The
+ <del class="tox-revisionhistory__annotation--removed">banner</del><ins class="tox-revisionhistory__annotation--added">flag</ins>
+ is 
+<ins class="tox-revisionhistory__annotation--modified"><span style="color: rgb(22, 145, 121);">red</span></ins>
+</p>
+*/
+----

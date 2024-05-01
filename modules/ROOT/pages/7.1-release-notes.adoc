@@ -194,7 +194,7 @@ For more information on bundling with {productname}, see xref:bundling-plugins.a
 
 Previously, there was inconsistencies across browsers in announcing the `aria-label` for the editor body when the host browser was Firefox.
 
-As a consequence, the aria-label of the editor body was not announced. It was intended to be conveyed by the `iframe_aria_text` option but in this case, it was not being announced, while Chrome and Safari functioned correctly.
+As a consequence, the `aria-label` of the editor body was not announced. It was intended to be conveyed by the `iframe_aria_text` option but in this case, it was not being announced, while Chrome and Safari functioned correctly.
 
 {productname} {release-version} addresses this issue. Now, the `iframe_aria_text` option is set to the **title** of the iframe specifically in Firefox, to ensure screen readers announce the option across all browsers.
 

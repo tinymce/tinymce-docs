@@ -158,7 +158,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 In earlier versions of {productname}, a problem occurred when users inserted a video or media element into a {productname} document while using Safari as the host browser. The issue caused media files to be unplayable in Safari.
 
-{productname} {release-version} resolves this problem by preventing events from bubbling out of the video element, which previously caused the playback issue.
+{productname} {release-version} resolves this problem by preventing events from propagating outside of the video element, which previously caused the playback issue.
 
 With this fix, users can now play video and audio elements on Safari without any issues.
 

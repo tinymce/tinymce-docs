@@ -37,7 +37,9 @@ include::partial$misc/admon-ai-proxy.adoc[]
 
 [source,js]
 ----
-const api_key = '<INSERT_API_KEY_HERE>'; // Not recommended for production use
+// Providing access credentials within the integration is not recommended for production use.
+// We recommend setting up a proxy server to authenticate requests and provide access.
+const api_key = '<INSERT_API_KEY_HERE>';
 
 tinymce.init({
   selector: 'textarea',  // Change this value according to your HTML

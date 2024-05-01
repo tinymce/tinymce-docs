@@ -46,7 +46,8 @@ include::partial$misc/admon-ai-proxy.adoc[]
 
 [source,js]
 ----
-// Not recommended for production use. Use a proxy server to generate the access token.
+// Providing access credentials within the integration is not recommended for production use.
+// We recommend setting up a proxy server to authenticate requests and provide access.
 const ACCESS_TOKEN = '<INSERT_ACCESS_TOKEN_HERE>'; // used in the Authorization Header
 const PROJECT_ID = '<INSERT_PROJECT_ID_HERE>'; // retrieve from the Vertex AI Google Console
 const REGION = '<INSERT_REGION_HERE>'; // e.g. us-central1
@@ -105,7 +106,8 @@ include::partial$misc/admon-ai-proxy.adoc[]
 ----
 const fetchApi = import("https://unpkg.com/@microsoft/fetch-event-source@2.0.1/lib/esm/index.js").then(module => module.fetchEventSource);
 
-// Not recommended for production use. Use a proxy server to generate the access token.
+// Providing access credentials within the integration is not recommended for production use.
+// We recommend setting up a proxy server to authenticate requests and provide access.
 const ACCESS_TOKEN = '<INSERT_ACCESS_TOKEN_HERE>'; // used in the Authorization Header
 const PROJECT_ID = '<INSERT_PROJECT_ID_HERE>'; // retrieve from the Vertex AI Google Console
 const REGION = '<INSERT_REGION_HERE>'; // e.g. us-central1

@@ -21,11 +21,62 @@ Once a response is generated and displayed within the dialog, the user can choos
 
 Users can retrieve a history of their conversations with the AI using the xref:#getThreadLog[`getThreadLog` API], including any discarded responses.
 
-[NOTE]
-.{pluginname} demo
-====
-Demos containing the {pluginname} plugin are currently only available on our main website. Check out https://www.tiny.cloud/tinymce/features/ai-integration/[the {pluginname} demo], or the https://www.tiny.cloud/[demo on our home page], to try it out today.
-====
+== Interactive example
+
+NOTE: This example uses a proxy endpoint to communicate with the OpenAI API. This is done to avoid exposing the API key in the client-side code. For more information on using a proxy server with the {pluginname} plugin, see the xref:ai-proxy.adoc[AI Proxy Server reference guide].
+
+liveDemo::ai[]
+
+== Basic setup
+
+To add the {pluginname} plugin to the editor, add both `{plugincode}` to the `plugins` option in the editor configuration and the `ai_request` function to the editor configuration.
+
+For example, interfacing with the OpenAI Completions API:
+
+include::partial$misc/admon-ai-proxy.adoc[]
+
+[source,js]
+----
+// Providing access credentials within the integration is not recommended for production use.
+// We recommend setting up a proxy server to authenticate requests and provide access.
+const api_key = '<INSERT_API_KEY_HERE>';
+
+tinymce.init({
+  selector: 'textarea',  // Change this value according to your HTML
+  plugins: 'ai',
+  toolbar: 'aidialog aishortcuts',
+  ai_request: (request, respondWith) => {
+    const openAiOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${api_key}`
+      },
+      body: JSON.stringify({
+        model: 'gpt-3.5-turbo',
+        temperature: 0.7,
+        max_tokens: 800,
+        messages: [{ role: 'user', content: request.prompt }],
+      })
+    };
+    respondWith.string((signal) => window.fetch('https://api.openai.com/v1/chat/completions', { signal, ...openAiOptions })
+      .then(async (response) => {
+        if (response) {
+          const data = await response.json();
+          if (data.error) {
+            throw new Error(`${data.error.type}: ${data.error.message}`);
+          } else if (response.ok) {
+            // Extract the response content from the data returned by the API
+            return data?.choices[0]?.message?.content?.trim();
+          }
+        } else {
+          throw new Error('Failed to communicate with the ChatGPT API');
+        }
+      })
+    );
+  }
+});
+----
 
 == Using a proxy server with {pluginname}
 

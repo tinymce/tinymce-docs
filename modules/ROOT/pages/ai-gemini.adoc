@@ -1,0 +1,236 @@
+= Google Gemini integration guide
+:pluginname: AI Assistant
+:plugincode: ai
+:plugincategory: premium
+:navtitle: Google Gemini integration guide
+:description_short: {pluginname} with Google Gemini
+:description: A guide for integrating {pluginname} plugin using Google Gemini.
+:keywords: example, demo, custom, plugin, ai, assistant, guide, google, gemini, vertexai, ai-studio, console, gcp, platform, cloud
+
+include::partial$misc/admon-ai-pricing.adoc[]
+
+== Introduction
+
+This guide provides instructions for integrating the {pluginname} plugin using Google Gemini in {productname}.
+
+There are two version of the Google Gemini API: https://ai.google.dev/gemini-api/docs/get-started/rest[Google AI Studio] and https://cloud.google.com/vertex-ai[Google Cloud - Vertex AI]. The Google AI Studio API is ideal for quickly integrating the Google Gemini models into an application with the minimal setup required. The Google Cloud - Vertex AI API is more powerful and flexible than Google AI Studio, but requires more setup to integrate the Google Gemini models into an application.
+
+In this example, we will demonstrate how to integrate the {pluginname} plugin with the Vertex AI APIs, but the same principles can be applied to the Google AI Studio APIs by changing the API endpoint, request body, and authentication method.
+
+Vertex AI provides a `systemInstruction` field in the request body that allows controlling the output of the AI model. Google AI Studio does not currently provide this option, so the system messages would need to be provided as part of the user prompt for that use case.
+
+See https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/gemini[Google Cloud - Vertex AI Gemini API docs] for more information on the Vertex AI Gemini API.
+
+To learn more about the difference between string and streaming responses, see xref:ai.adoc#the-respondwith-object[The `respondWith` object] on the plugin page.
+
+== Authentication
+
+The access token is used in the Authorization header to authenticate the request to the Google Cloud API. The access token should be stored securely and not exposed to the client side integration. A recommended approach is to use a proxy server to generate the access token and make the API calls. For more information, see the xref:ai-proxy.adoc[AI Proxy Server reference guide].
+
+The https://www.npmjs.com/package/google-auth-library[google-auth-library] can be used to programmatically generate an access token for the Google Cloud API. Alternatively, the https://cloud.google.com/nodejs/docs/reference/vertexai/latest[Vertex AI Node.js SDK] or other client library can be used, but may require modifications to the code.
+
+== Prerequisites
+
+Before you begin, you need to have the following:
+
+* A Google Cloud Platform (GCP) account.
+* A Google Cloud Project with the Vertex AI API enabled.
+* The Project ID and Region of the Google Cloud Project.
+* An Access Token for the Vertex AI API.
+
+include::partial$misc/admon-ai-proxy.adoc[]
+
+== String response
+
+This example demonstrates how to integrate the {pluginname} plugin with the Vertex AI API to generate string responses.
+
+[source,js]
+----
+// Providing access credentials within the integration is not recommended for production use.
+// It is recommended to set up a proxy server to authenticate requests and provide access.
+const ACCESS_TOKEN = '<INSERT_ACCESS_TOKEN_HERE>'; // used in the Authorization Header
+const PROJECT_ID = '<INSERT_PROJECT_ID_HERE>'; // retrieve from the Vertex AI Google Console
+const REGION = '<INSERT_REGION_HERE>'; // e.g. us-central1
+const API_URL = `https://${REGION}-aiplatform.googleapis.com/v1/projects/${PROJECT_ID}/locations/${REGION}/publishers/google/models/gemini-1.0-pro:generateContent`;
+
+const ai_request = (request, respondWith) => {
+  const geminiOptions = {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${ACCESS_TOKEN}`
+    },
+    body: JSON.stringify({
+      contents: {
+        role: "user",
+        parts: { text: request.prompt }
+      },
+      generationConfig: {
+        temperature: 0.9,
+        maxOutputTokens: 800,
+      }
+    })
+  };
+  respondWith.string((signal) => window.fetch(API_URL, { signal, ...geminiOptions })
+    .then(async (response) => {
+      if (response) {
+        const data = await response.json();
+        if (data.error) {
+          throw new Error(`${data.error.type}: ${data.error.message}`);
+        } else if (response.ok) {
+          // Extract the response content from the data returned by the API
+          return data?.candidates[0]?.content?.parts[0]?.text?.trim().replace(/^```html\n/, "").replace(/\n```$/, "");
+        }
+      } else {
+        throw new Error('Failed to communicate with the Gemini API');
+      }
+    })
+  );
+};
+
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'ai',
+  toolbar: 'aidialog aishortcuts',
+  ai_request
+});
+----
+
+== Streaming response
+
+This example demonstrates how to integrate the {pluginname} plugin with the Vertex AI API to generate streaming responses.
+[source,js]
+----
+const fetchApi = import("https://unpkg.com/@microsoft/fetch-event-source@2.0.1/lib/esm/index.js").then(module => module.fetchEventSource);
+
+// Providing access credentials within the integration is not recommended for production use.
+// It is recommended to set up a proxy server to authenticate requests and provide access.
+const ACCESS_TOKEN = '<INSERT_ACCESS_TOKEN_HERE>'; // used in the Authorization Header
+const PROJECT_ID = '<INSERT_PROJECT_ID_HERE>'; // retrieve from the Vertex AI Google Console
+const REGION = '<INSERT_REGION_HERE>'; // e.g. us-central1
+const API_URL = `https://${REGION}-aiplatform.googleapis.com/v1/projects/${PROJECT_ID}/locations/${REGION}/publishers/google/models/gemini-1.0-pro:streamGenerateContent?alt=sse`;
+
+const ai_request = (request, respondWith) => {
+  respondWith.stream((signal, streamMessage) => {
+    // Adds each previous query and response as individual messages
+    const conversation = request.thread.flatMap((event) => {
+      if (event.response) {
+        return [
+          { role: 'user', parts: [{ text: event.request.query }] },
+          { role: 'model', parts: [{ text: event.response.data }] }
+        ];
+      } else {
+        return [];
+      }
+    });
+
+    // System messages provided by the plugin to format the output as HTML content.
+    const pluginSystemMessages = request.system.map((text) => ({
+      text
+    }));
+
+    const systemInstruction = {
+      parts: [
+        ...pluginSystemMessages,
+        // Additional system messages to control the output of the AI
+        { text: 'Do not include html``` at the start or ``` at the end of the response.' },
+        { text: 'No boilerplate or explanation, just give the HTML response.' }
+      ]
+    };
+
+    // Forms the new query sent to the API
+    const text = request.context.length === 0 || conversation.length > 0
+      ? request.query
+      : `Question: ${request.query} Context: """${request.context}"""`;
+
+    const contents = [
+      ...conversation,
+      { role: 'user', parts: [
+        { text }
+      ]}
+    ];
+
+    const generationConfig = {
+      temperature: 0.9,
+      maxOutputTokens: 800,
+    };
+
+    const requestBody = {
+      contents,
+      generationConfig,
+      systemInstruction,
+    };
+
+    const geminiOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${ACCESS_TOKEN}`
+      },
+      body: JSON.stringify(requestBody)
+    };
+
+    const onopen = async (response) => {
+      if (response) {
+        const contentType = response.headers.get('content-type');
+        if (response.ok && contentType?.includes('text/event-stream')) {
+          return;
+        } else if (contentType?.includes('application/json')) {
+          const data = await response.json();
+          if (data.error) {
+            throw new Error(`${data.error.type}: ${data.error.message}`);
+          }
+        }
+      } else {
+        throw new Error('Failed to communicate with the Gemini API');
+      }
+    };
+
+    // This function passes each new message into the plugin via the `streamMessage` callback.
+    const onmessage = (ev) => {
+      const data = ev.data;
+      if (data !== '[DONE]') {
+        const parsedData = JSON.parse(data);
+        const message = parsedData?.candidates[0]?.content?.parts[0]?.text?.replace(/^```html\n/, "").replace(/\n```$/, "");
+        if (message) {
+          streamMessage(message);
+        }
+      }
+    };
+
+    const onerror = (error) => {
+      // Stop operation and do not retry by the fetch-event-source
+      throw error;
+    };
+
+    // Use microsoft's fetch-event-source library to work around the 2000 character limit
+    // of the browser `EventSource` API, which requires query strings
+    return fetchApi
+    .then(fetchEventSource =>
+      fetchEventSource(API_URL, {
+        ...geminiOptions,
+        openWhenHidden: true,
+        onopen,
+        onmessage,
+        onerror
+      })
+    )
+    .then(async (response) => {
+      if (response && !response.ok) {
+        const data = await response.json();
+        if (data.error) {
+          throw new Error(`${data.error.type}: ${data.error.message}`);
+        }
+      }
+    })
+    .catch(onerror);
+  });
+};
+
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'ai',
+  toolbar: 'aidialog aishortcuts',
+  ai_request
+});
+----

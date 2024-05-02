@@ -38,11 +38,11 @@ Before you begin, you need to have the following:
 * The Project ID and Region of the Google Cloud Project.
 * An Access Token for the Vertex AI API.
 
+include::partial$misc/admon-ai-proxy.adoc[]
+
 == String response
 
 This example demonstrates how to integrate the {pluginname} plugin with the Vertex AI API to generate string responses.
-
-include::partial$misc/admon-ai-proxy.adoc[]
 
 [source,js]
 ----
@@ -99,9 +99,6 @@ tinymce.init({
 == Streaming response
 
 This example demonstrates how to integrate the {pluginname} plugin with the Vertex AI API to generate streaming responses.
-
-include::partial$misc/admon-ai-proxy.adoc[]
-
 [source,js]
 ----
 const fetchApi = import("https://unpkg.com/@microsoft/fetch-event-source@2.0.1/lib/esm/index.js").then(module => module.fetchEventSource);

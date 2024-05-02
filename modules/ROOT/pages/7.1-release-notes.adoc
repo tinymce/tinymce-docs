@@ -72,6 +72,21 @@ Previously in **Mentions**, when using an inline editor where the initial conten
 
 For information on the **Mentions** plugin, see: xref:mentions.adoc[Mentions].
 
+=== Enhanced Code Editor
+
+The {productname} {release-version} release includes an accompanying release of the **Enhanced Code Editor** premium plugin.
+
+The **Enhanced Code Editor** includes the following fix:
+
+==== Inline mode didn't have tab navigation.
+// #TINY-10780
+
+Previously in {productname} 7.0, the **Enhanced Code Editor** was updated to codemirror 6, but the tab navigation was not implemented for the code editor view when `advcode_inline` was set. As a result, users who rely on keyboard navigation found it difficult to navigate the UI elements in the code editor view.
+
+In {productname} {release-version}, this issue has been fixed. Now, the tab navigation is implemented for the code editor view when `advcode_inline` is set. As a result, the code editor view UI elements can be navigated using the `tab` and `shift+tab` keys.
+
+For information on the **Enhanced Code Editor** plugin, see: xref:advcode.adoc[Enhanced Code Editor].
+
 === <Premium plugin name 1> <Premium plugin name 1 version>
 
 The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

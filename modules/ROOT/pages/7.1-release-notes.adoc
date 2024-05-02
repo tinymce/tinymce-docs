@@ -129,6 +129,42 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Notification accessibility improvements: added tooltips, keyboard navigation and shortcut to focus on notifications.
+
+In previous versions of {productname}, an accessibility issue was identified that affected keyboard-only, specifically when a user receives a notification and they where unable to close it using the keyboard.
+
+As a consequence, users who rely on keyboard navigation or screen readers could only close the notifications via mouse "Click".
+
+{productname} {release-version} addressed this issue with the following changes: 
+
+* Keyboard Shortcut: keyboard shortcut *Alt+F12* (or *⌥+F12*) was added, that allows users to now focus on notifications, providing a way for keyboard-only users to access and interact with them.
+* Keyboard Navigation: allows keyboard navigation within the focusable elements in a notification, such as links and buttons, with *Tab* or *Shift+Tab*.
+* Tooltip: added a tooltip to the `close` button of the notification, providing additional context for users who may need it.
+* Link Styles: improved the styles of links within notifications, including `hover`, `focus`, `active`, and `focus-visible` states, to ensure that they are easily distinguishable and navigable.
+* Screen Reader Announcement: content of a notification is announced by screen readers, making it easier for visually impaired users to access and understand the information.
+
+As a result of these changes notifications now more accessible for all users.
+
+=== New `index.js` file that includes all plugin resources.
+// #TINY-10778
+
+Previously, integrating {productname} and its premium plugins necessitated the separate inclusion of the `plugin.js` file along with the corresponding resource API-loaded CSS files. This approach often led to complications due to inconsistent naming conventions for our CSS files, making bundling a cumbersome process.
+
+To address this, {productname} {release-version} has included `index.js` files to each premium plugin, which will consolidate all necessary resources.
+
+As a result, when bundling from a distribution bundle or `.zip` build, by including all the {productname} imports for each plugin such as in a `all.js` file for example;
+
+[source, js]
+----
+import './plugins/a11ychecker';
+import './plugins/advcode';
+import './plugins/advtable';
+import './plugins/advtemplate';
+----
+all the specific plugins will load without the need of any additional resources.
+
+For more information on bundling with {productname}, see xref:bundling-plugins.adoc[bundling plugins]
+
 
 [[additions]]
 == Additions
@@ -166,13 +202,69 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Firefox not announcing the iframe title when `iframe_aria_text` was set.
+// #TINY-10718
 
-// CCFR here.
+Previously, there was inconsistencies across browsers in announcing the `aria-label` for the editor body when the host browser was Firefox.
 
+As a consequence, the `aria-label` of the editor body was not announced. It was intended to be conveyed by the `iframe_aria_text` option but in this case, it was not being announced in Firefox, while Chrome and Safari functioned correctly.
+
+{productname} {release-version} addresses this issue. Now, the `iframe_aria_text` option is set to the **title** of the iframe specifically in Firefox, to ensure screen readers announce the option across all browsers.
+
+As a result, when navigating into the editor, screen readers in all supported browsers will now announce the correct label for the editor body.
+
+=== `ToggleToolbarDrawer` command did not toggle the toolbar in `sliding` mode when `+{skipFocus: true}+` parameter was passed.
+// #TINY-10726
+
+In link:https://www.tiny.cloud/docs/tinymce/6/6.4.1-release-notes/#added-skip_focus-check-to-the-toggletoolbardrawer-command[{productname} 6.4.1], a boolean `skipFocus` parameter for the `ToggleToolbarDrawer` command was introduced. This parameter manages whether the focus should be set on the overflow toolbar after it is toggled. However, a bug was identified with the `ToggleToolbarDrawer` command when used with `+{skipFocus: true}+`, specifically as `+editor.execCommand('ToggleToolbarDrawer', false, { skipFocus: true })+`.
+
+As a result, the bug caused the command to behave inconsistently based on the toolbar mode:
+
+* In `toolbar_mode: floating`, the command correctly preserved focus.
+* In `toolbar_mode: sliding`, the command did not toggle the toolbar drawer at all.
+
+{productname} {release-version} addresses this issue. Now, when using the `ToggleToolbarDrawer` command with the `+{ skipFocus: true }+` argument in both `toolbar_mode: floating` and `toolbar_mode: sliding`, the command will toggle the toolbar drawer as expected while preserving focus.
+
+=== Dialog title was not announced in macOS VoiceOver, dialogs now use `aria-label` instead of `aria-labelledby` on macOS.
+// #TINY-10808
+
+In previous versions of {productname}, an issue was identified where **VoiceOver** was not announcing the dialog title when using the `+aria-labelledby+` attribute. 
+
+As a consequence, without announcing the dialog title, users who rely on screen readers would not be informed about the purpose of the dialog.
+
+{productname} {release-version} addresses this issue. Now, {companyname}'s approach to announcing dialog titles is by switching from using `+aria-labelledby+` to using `+aria-label+` directly on the dialog title element itself.
+
+As a result, the `+aria-label+` attribute, **VoiceOver** will now announce the dialog title as expected.
+
+=== Dialog title markup changed to use an `h1` element instead of `div`.
+// #TINY-10800
+
+Previously, the dialog component's title was wrapped in a `<div>` element, visually appearing as a heading and functioning as the main heading for the dialog. However, without the title being semantically marked up as a heading element, screen reader users may struggle to understand the purpose of the dialog box and navigate its content.
+
+{productname} {release-version} addresses this issue by updating the dialog title markup to use an `<h1>` element, ensuring that the title is semantically identified as a heading. This improves the accessibility experience for users by helping screen readers and other assistive technologies understand the structure of the page and navigate its content more easily.
+
+=== Removed `aria-pressed` from the `More` button in sliding toolbar mode and replaced it with `aria-expanded`
+// #TINY-10795
+
+Previously, an issue was identified with the toolbar overflow button **More** button specifically in `+toolbar_mode: 'sliding'+` mode. The button uses the aria-pressed attribute, which is not appropriate for this scenario.
+
+As a consequence, the aria-pressed attribute was set incorrectly, which prevented screen readers from announcing whether the additional toolbar was in either a expanded or collapsed state.
+
+{productname} {release-version} addresses this issue. Now, the `aria-pressed` attribute has been replaced with `aria-expanded` attribute. This attribute will be set to `+true+` when the overflow content is visible and `+false+` when it's hidden. 
+
+As a result, screen readers will now announce the expanded/collapsed state of the overflow toolbar correctly.
+
+[NOTE]
+This fix only applies to toolbars configured with `+toolbar_mode: 'sliding'+`.
+
+=== Fullscreen mode now prevents focus from leaving the editor.
+// #TINY-10597
+
+Previously, when using the editor in full screen with the xref:fullscreen.adoc[Full Screen] plugin active, users were still able to tab out of the editor window and access content behind it. This created an accessibility issue for keyboard-only users as the editor window could lose focus unintentionally, shifting it to elements outside the editor. Since these elements are hidden in fullscreen mode, keyboard users might have struggled to navigate back to the editor.
+
+In {productname} {release-version}, the Full Screen plugin has been modified to prevent users from tabbing out of the editor window while in full screen mode. Users are now confined to the editor window while in full screen mode, ensuring focus remains on the editor content and preventing accidental navigation away from the editing area.
 
 [[security-fixes]]
 == Security fixes

@@ -189,24 +189,24 @@ For more information on bundling with {productname}, see xref:bundling-plugins.a
 
 {productname} {release-version} also includes the following bug fixes:
 
-=== Windows High Contrast mode is now supported in {productname}.
+=== Improved support for Windows High Contrast themes in {productname}.
 // #TINY-9810 / #TINY-9811 / #TINY-9873 / #TINY-10781 / #TINY-10782
 
 Previously, in Windows High Contrast Mode, the colors of various elements in {productname}, such as toolbar icons, toolbar border, icon hover, focus, and active stage, were not correctly configured. This resulted in low to no color/contrast for the editor elements, leading to a poor user experience.
 
-In this fix, the following elements have been given the correct configuration to be visible and display high contrast when Windows High Contrast mode is engaged:
+In this fix, the following elements have been given the correct configuration to be visible and display high contrast when Windows High Contrast mode is enabled:
 
 * Checkbox border
 * Dialog items
 * Dropdown items
 * Editor textarea border
 * Floating toolbar outline
-* Icon, button, and dropdown items (hover, focus, active state)
+* Buttons and dropdown items (hover, focus, active state)
 * Keyboard focus highlight
 * Status bar items
+* Toolbar border
 * Toolbar icon
 * Toolbar number input
-* Toolbar border
 * Tooltip
 * Table picker UI
 

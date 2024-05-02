@@ -19,13 +19,13 @@ To learn more about the difference between string and streaming responses, see x
 
 Before you begin, you need the following:
 
-1. An OpenAI API Key. To get an API key, sign up for an account on the https://platform.openai.com/signup[OpenAI Platform].
+. An OpenAI API Key. To get an API key, sign up for an account on the https://platform.openai.com/signup[OpenAI Platform].
+
+include::partial$misc/admon-ai-proxy.adoc[]
 
 == String response
 
 This example demonstrates how to integrate the {pluginname} plugin with the OpenAI API to generate string responses.
-
-include::partial$misc/admon-ai-proxy.adoc[]
 
 [source,js]
 ----
@@ -75,8 +75,6 @@ tinymce.init({
 == Streaming response
 
 This example demonstrates how to integrate the {pluginname} plugin with the OpenAI API to generate streaming responses.
-
-include::partial$misc/admon-ai-proxy.adoc[]
 
 [source,js]
 ----

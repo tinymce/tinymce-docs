@@ -189,6 +189,38 @@ For more information on bundling with {productname}, see xref:bundling-plugins.a
 
 {productname} {release-version} also includes the following bug fixes:
 
+=== Windows High Contrast mode is now supported in {productname}.
+// #TINY-9810 / #TINY-9811 / #TINY-9873 / #TINY-10781 / #TINY-10782
+
+Previously, in Windows High Contrast Mode, the colors of various elements in {productname}, such as toolbar icons, toolbar border, icon hover, focus, and active stage, were not correctly configured. This resulted in low to no color/contrast for the editor elements, leading to a poor user experience.
+
+In this fix, the following elements have been given the correct configuration to be visible and display high contrast when Windows High Contrast mode is engaged:
+
+* Checkbox border
+* Dialog items
+* Dropdown items
+* Editor textarea border
+* Floating toolbar outline
+* Icon, button, and dropdown items (hover, focus, active state)
+* Keyboard focus highlight
+* Status bar items
+* Toolbar icon
+* Toolbar number input
+* Toolbar border
+* Tooltip
+* Table picker UI
+
+The following item has been disabled when Windows High Contrast mode is enabled:
+
+* Table context menu arrow (cosmetic change only)
+
+The following items now maintain their color when Windows High Contrast mode is enabled:
+
+* Color picker, hue slider, RGBA preview, color swatch
+
+Additionally, the fix addresses the issue where the black background added to the placeholder text in Windows High Contrast mode was blocking the caret. The fix includes applying a `z-index` to the placeholder to unblock the caret and adding a specific color to the placeholder text when high contrast mode is enabled. This ensures that both the caret and placeholder text are now visible.
+
+These changes improve the user experience in {productname} by making UI elements, icons, texts, and user actions clearly visible in Windows High Contrast mode.
 
 === Firefox not announcing the iframe title when `iframe_aria_text` was set.
 // #TINY-10718

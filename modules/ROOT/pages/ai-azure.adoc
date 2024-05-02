@@ -69,7 +69,7 @@ const ai_request = (request, respondWith) => {
 };
 
 tinymce.init({
-  selector: 'textarea',  // Change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'ai',
   toolbar: 'aidialog aishortcuts',
   ai_request
@@ -90,7 +90,7 @@ const AZURE_OPENAI_API_KEY = '<INSERT_API_KEY_HERE>';
 const AZURE_OPENAI_ENDPOINT = '<INSERT_ENDPOINT_URL_HERE>'; // e.g. https://{your-resource-name}.openai.azure.com/openai/deployments/{deployment-id}/chat/completions?api-version={api-version}
 
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'ai',
   toolbar: 'aidialog aishortcuts',
   ai_request: (request, respondWith) => {
@@ -184,24 +184,24 @@ tinymce.init({
       // Use microsoft's fetch-event-source library to work around the 2000 character limit
       // of the browser `EventSource` API, which requires query strings
       return fetchApi
-      .then(fetchEventSource =>
-        fetchEventSource(AZURE_OPENAI_ENDPOINT, {
-          ...azureOpenAiOptions,
-          openWhenHidden: true,
-		      onopen,
-          onmessage,
-          onerror
-        })
-      )
-      .then(async (response) => {
-        if (response && !response.ok) {
-          const data = await response.json();
-          if (data.error) {
-            throw new Error(`${data.error.type}: ${data.error.message}`);
+        .then(fetchEventSource =>
+          fetchEventSource(AZURE_OPENAI_ENDPOINT, {
+            ...azureOpenAiOptions,
+            openWhenHidden: true,
+            onopen,
+            onmessage,
+            onerror
+          })
+        )
+        .then(async (response) => {
+          if (response && !response.ok) {
+            const data = await response.json();
+            if (data.error) {
+              throw new Error(`${data.error.type}: ${data.error.message}`);
+            }
           }
-        }
-      })
-      .catch(onerror);
+        })
+        .catch(onerror);
     });
   }
 });

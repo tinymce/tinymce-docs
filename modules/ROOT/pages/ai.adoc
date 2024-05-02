@@ -2,7 +2,7 @@
 :navtitle: AI Assistant
 :description: Sends queries to registered AI APIs and sets the results in the document or temporarily stores the results.
 :description_short: Query AI APIs and accept results.
-:keywords: plugin, ai, artificial intelligence, query, search.
+:keywords: plugin, ai, artificial intelligence, query, search, llm, gpt, assistant
 :pluginname: AI Assistant
 :plugincode: ai
 :plugincategory: premium
@@ -95,9 +95,9 @@ NOTE: The xref:ai-proxy.adoc[AI Proxy Server reference guide] is, as its name no
 
 The following configuration options affect the behavior of the {pluginname} plugin.
 
-include::partial$configuration/ai_request.adoc[][leveloffset=+1]
+include::partial$configuration/ai_request.adoc[leveloffset=+1]
 
-include::partial$configuration/ai_shortcuts.adoc[][leveloffset=+1]
+include::partial$configuration/ai_shortcuts.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

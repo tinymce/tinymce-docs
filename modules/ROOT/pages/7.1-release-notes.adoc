@@ -32,7 +32,7 @@ These release notes provide an overview of the changes for {productname} {releas
 [[new-premium-plugin<s>]]
 New Premium plugin<s>
 
-The following new Premium plugin was released alongside {productname} 7.1.
+The following new Premium plugin was released alongside {productname} {release-version}.
 
 === <Premium plugin name> 
 
@@ -44,7 +44,7 @@ For information on the **<Premium plugin name>** plugin, see xref:<plugincode>.a
 [[new-open-source-plugin]]
 == New Open Source plugin
 
-The following new Open Source plugin was released alongside {productname} 7.1.
+The following new Open Source plugin was released alongside {productname} {release-version}.
 
 === <Open source plugin name>
 
@@ -55,11 +55,26 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 [[accompanying-premium-plugin-changes]]
 == Accompanying Premium plugin changes
 
-The following premium plugin updates were released alongside {productname} 7.1.
+The following premium plugin updates were released alongside {productname} {release-version}.
+
+=== Mentions
+
+The {productname} {release-version} release includes an accompanying release of the **Mentions** premium plugin.
+
+This **Mentions** release includes the following fix.
+
+==== Inline editor no longer grabs focus when it has a mention in it.
+// #TINY-10725
+
+Previously in **Mentions**, when using an inline editor where the initial content included a mention, the editor automatically grabbed input focus. This unexpected behavior occurred due to the adjustment of the selection range upon initialization.
+
+{productname} {release-version} resolves this issue, now, the selection range is only adjusted if the editor has focus. As a result, the inline editor no longer grabs focus on initialization when it has a mention in it.
+
+For information on the **Mentions** plugin, see: xref:mentions.adoc[Mentions].
 
 === <Premium plugin name 1> <Premium plugin name 1 version>
 
-The {productname} 7.1 release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
 
 **<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
 
@@ -93,13 +108,13 @@ The following open source plugin has been announced as reaching its end-of-life:
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes
 
-The {productname} 7.1 release includes an accompanying release of the **Enhanced Skins & Icon Packs**.
+The {productname} {release-version} release includes an accompanying release of the **Enhanced Skins & Icon Packs**.
 
 === Enhanced Skins & Icon Packs
 
 The **Enhanced Skins & Icon Packs** release includes the following updates:
 
-The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} 7.1 skin, Oxide.
+The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} {release-version} skin, Oxide.
 
 For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
 
@@ -107,7 +122,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[improvements]]
 == Improvements
 
-{productname} 7.1 also includes the following improvement<s>:
+{productname} {release-version} also includes the following improvement<s>:
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
@@ -154,7 +169,7 @@ For more information on bundling with {productname}, see xref:bundling-plugins.a
 [[additions]]
 == Additions
 
-{productname} 7.1 also includes the following addition<s>:
+{productname} {release-version} also includes the following addition<s>:
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
@@ -165,7 +180,7 @@ For more information on bundling with {productname}, see xref:bundling-plugins.a
 [[changes]]
 == Changes
 
-{productname} 7.1 also includes the following change<s>:
+{productname} {release-version} also includes the following change<s>:
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
@@ -176,7 +191,7 @@ For more information on bundling with {productname}, see xref:bundling-plugins.a
 [[removed]]
 == Removed
 
-{productname} 7.1 also includes the following removal<s>:
+{productname} {release-version} also includes the following removal<s>:
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
@@ -287,7 +302,7 @@ In {productname} {release-version}, the Full Screen plugin has been modified to 
 [[security-fixes]]
 == Security fixes
 
-{productname} 7.1 includes <a fix | fixes for the following security issue<s>:
+{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
@@ -298,7 +313,7 @@ In {productname} {release-version}, the Full Screen plugin has been modified to 
 [[deprecated]]
 == Deprecated
 
-{productname} 7.1 includes the following deprecation<s>:
+{productname} {release-version} includes the following deprecation<s>:
 
 === The `<plugin>` configuration property, `<name>`, has been deprecated
 
@@ -308,9 +323,9 @@ In {productname} {release-version}, the Full Screen plugin has been modified to 
 [[known-issues]]
 == Known issues
 
-This section describes issues that users of {productname} 7.1 may encounter and possible workarounds for these issues.
+This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
 
-There <is one | are <number> known issue<s> in {productname} 7.1.
+There <is one | are <number> known issue<s> in {productname} {release-version}.
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1

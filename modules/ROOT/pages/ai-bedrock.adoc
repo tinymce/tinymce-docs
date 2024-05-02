@@ -25,15 +25,15 @@ To learn more about the difference between string and streaming responses, see x
 
 Before you begin, you need the following:
 
-1. An AWS account with access to Amazon Bedrock.
-2. The AWS credentials for the account.
-3. A Node.js environment with the `@aws-sdk/client-bedrock-runtime` package installed.
+. An AWS account with access to Amazon Bedrock.
+. The AWS credentials for the account.
+. A Node.js environment with the `@aws-sdk/client-bedrock-runtime` package installed.
+
+include::partial$misc/admon-ai-proxy.adoc[]
 
 == String response
 
 This example demonstrates how to integrate the {pluginname} plugin with the https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModel.html[InvokeModel command] to generate string responses.
-
-include::partial$misc/admon-ai-proxy.adoc[]
 
 [source,js]
 ----
@@ -93,9 +93,6 @@ tinymce.init({
 == Streaming response
 
 This example demonstrates how to integrate the {pluginname} plugin with the https://docs.aws.amazon.com/bedrock/latest/APIReference/API_runtime_InvokeModelWithResponseStream.html[InvokeModelWithResponseStream command] to generate streaming responses.
-
-include::partial$misc/admon-ai-proxy.adoc[]
-
 [source,js]
 ----
 import { BedrockRuntimeClient, InvokeModelWithResponseStreamCommand } from "@aws-sdk/client-bedrock-runtime";

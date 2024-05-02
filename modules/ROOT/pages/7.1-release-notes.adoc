@@ -188,17 +188,17 @@ For more information on bundling with {productname}, see xref:bundling-plugins.a
 == Bug fixes
 
 {productname} {release-version} also includes the following bug fixes:
-=== Open link context menu action did not work with selection surrounding a link
-In previous versions of {productname}, nothing happened when selecting `Open link` context menu action on a link inside selection that is expanded to the surrounding content.
+=== Open link context menu action did not work with selection surrounding a link.
 
-In {productname} {release-version}, the issue has been fixed. Selecting `Open link` context menu action opens the targeted link in a new tab.
+In earlier versions of {productname}, the `Open link` context menu action did not work when a link was part of a larger text selection. This meant that selecting a text block containing a link and then choosing `Open link` from the context menu would not result in any action.
+
+With {productname} {release-version}, this issue has been addressed. Now, when you select a block of text that includes a link and choose `Open link` from the context menu, the link will open in a new tab as expected.
 
 === Open link context menu action was not enabled for links on images.
-In previous versions of {productname},`Open link` context menu action was not enabled for links on images.
 
-As a consequence, the users could not trigger opening the link via link context menu, hindering users' work flow.
+In previous versions of {productname}, the "Open link" context menu action wasn't available for links embedded in images. This limitation prevented users from using the context menu to open links directly from images, disrupting the usual workflow.
 
-In {productname} {release-version}, the `Open link` context menu is enabled for links on images.
+With {productname} {release-version}, this issue has been resolved. The "Open link" context menu action is now enabled for links on images, allowing users to easily open them with a right-click.
 
 === Dialog title was not announced in macOS VoiceOver, dialogs now use `aria-label` instead of `aria-labelledby` on macOS.
 // #TINY-10808

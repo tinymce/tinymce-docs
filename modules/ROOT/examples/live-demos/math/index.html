@@ -1,63 +1,9 @@
 <textarea id="math_demo">
-  <p style="text-align: center;">The following equations are represented in the HTML source code as LaTeX/MathML expressions.</p>
-
-  <div style="text-align: center;">
-	<h1>LaTeX Example</h1>
-	<aside style="background-color: #f9f9f9; border-left: 5px solid #ccc; padding: 10px; margin: 10px 0; font-style: italic; color: #555;">
-	  The following example is a representation of a LaTeX expression after it was inserted as a block element after selecting "Text above and below" from the text wrap toggle.
-	</aside>
-	<tiny-math-block formula="\sum_{
-		  \begin{subarray}{l}
-			 i\in\Lambda\\
-			 0<j<n
-		  \end{subarray}}"></tiny-math-block>
-	<p>&nbsp;</p>
-  </div>
-
-  <div style="text-align: center;">
-	<h1>MathML Example</h1>
-	<aside style="background-color: #f9f9f9; border-left: 5px solid #ccc; padding: 10px; margin: 10px 0; font-style: italic; color: #555;">
-	  The following example is a representation of a MathML expression after it was inserted as an inline element. 
-	  <tiny-math-inline>
-		<math>
-		  <mrow>
-			<munder>
-			  <mo movablelimits="false">lim</mo>
-			  <mrow>
-				<mi>n</mi>
-				<mo>→</mo>
-				<mi>N</mi>
-			  </mrow>
-			</munder>
-			<mrow>
-			  <mo>(</mo>
-			  <mrow>
-				<mn>1</mn>
-				<mo>+</mo>
-				<mfrac>
-				  <mn>1</mn>
-				  <mi>n</mi>
-				</mfrac>
-			  </mrow>
-			  <mo>)</mo>
-			</mrow>
-		  </mrow>
-		</math>
-	  </tiny-math-inline>
-	  This was done by selecting "Inline with Text" from the text wrap toggle.
-	  <p>&nbsp;</p>
-	</aside>
-
-	<p style="text-align: center;">This limit represents a common expression in calculus where <code>\(n\)</code> approaches a specified value <code>\(N\)</code>.</p>
-
-	<p style="text-align: center;">To understand this expression, let's consider what happens as <code>\(n\)</code> increases:</p>
-
-	<ul style="text-align: center;">
-	  <li>When <code>\(n\)</code> is large, the term <code>\(\frac{1}{n}\)</code> tends to zero, which implies that <code>\((1 + \frac{1}{n})\)</code> approaches 1.</li>
-	  <li>If <code>\(N\)</code> represents infinity, the limit is also 1, because the additional term <code>\(\frac{1}{n}\)</code> becomes negligible.</li>
-	  <li>If <code>\(N\)</code> is a finite value, the limit would be <code>\((1 + \frac{1}{N})\)</code>. This reflects the behavior as <code>\(n\)</code> approaches a specific finite number.</li>
-	</ul>
-
-	<p style="text-align: center;">Therefore, without further context about what <code>\(N\)</code> represents, the specific result of the limit depends on whether <code>\(N\)</code> is infinite or finite.</p>
-  </div>
-</textarea>
+<h2>Computation of Definite Integrals.</h2>
+		<p>In computing definite integrals it is important to observe that when the integral is known to exist the limit can be calculated on any properly chosen subset of the&nbsp;<tiny-math-inline formula="S_\delta"></tiny-math-inline>'s. So we&nbsp;have that if <tiny-math-inline formula="S_{\delta_1}"></tiny-math-inline>,&nbsp;<tiny-math-inline formula="S_{\delta_2}"></tiny-math-inline>, ... is any sequence of sums such that&nbsp;<tiny-math-inline formula="\displaystyle\mathop{L}_{n\doteq\infty}\delta_n=0"></tiny-math-inline>, then</p>
+		<tiny-math-block formula="\mathop{L}_{n\doteq\infty} S_{\delta_n} = \int_a^b f(x)dx."></tiny-math-block>
+		<p>One case of this kind occurs when&nbsp;<tiny-math-inline formula="\xi_k"></tiny-math-inline>&nbsp;is taken as an end-point of the interval <tiny-math-inline formula="{x_{k-1}}{x_k}"></tiny-math-inline> and all the&nbsp;<tiny-math-inline formula="\Delta_kx"></tiny-math-inline>'s are equal. Then we have</p>
+		<tiny-math-block formula="\displaystyle \int_a^b f(x)dx =  \mathop{L}_{n\doteq\infty} \sum_{k=1}^n f(a+k\Delta x)\Delta x,  \text{ where }  \Delta x=\frac{b-a}{n}."></tiny-math-block>
+		<p>A simple example of this principle is the proof of the following&nbsp;theorem.</p>
+		<p><em>Exerpt from <a href="https://www.gutenberg.org/ebooks/18741">Introduction to Infinitesimal Analysis; Functions of One Real Variable by Veblen et al.</a></em></p>	
+	</textarea>

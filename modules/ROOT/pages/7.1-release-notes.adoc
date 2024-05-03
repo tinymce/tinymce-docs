@@ -283,6 +283,17 @@ For more information on bundling with {productname}, see xref:bundling-plugins.a
 == Bug fixes
 
 {productname} {release-version} also includes the following bug fixes:
+=== Open link context menu action did not work with selection surrounding a link.
+
+In earlier versions of {productname}, the `Open link` context menu action did not work when a link was part of a larger text selection. This meant that selecting a text block containing a link and then choosing `Open link` from the context menu would not result in any action.
+
+With {productname} {release-version}, this issue has been addressed. Now, when you select a block of text that includes a link and choose `Open link` from the context menu, the link will open in a new tab as expected.
+
+=== Open link context menu action was not enabled when an image with a link was selected.
+
+In previous versions of {productname}, the "Open link" context menu action wasn't available for links embedded in images. This limitation prevented users from using the context menu to open links directly from images, disrupting the usual workflow.
+
+With {productname} {release-version}, this issue has been resolved. The "Open link" context menu action is now enabled for links on images, allowing users to easily open them with a right-click.
 
 === Improved support for Windows High Contrast themes in {productname}.
 // #TINY-9810 / #TINY-9811 / #TINY-9873 / #TINY-10781 / #TINY-10782

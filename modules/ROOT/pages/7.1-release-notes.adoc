@@ -194,7 +194,7 @@ In earlier versions of {productname}, the `Open link` context menu action did no
 
 With {productname} {release-version}, this issue has been addressed. Now, when you select a block of text that includes a link and choose `Open link` from the context menu, the link will open in a new tab as expected.
 
-=== Open link context menu action was not enabled for links on images.
+=== Open link context menu action was not enabled when an image with a link was selected.
 
 In previous versions of {productname}, the "Open link" context menu action wasn't available for links embedded in images. This limitation prevented users from using the context menu to open links directly from images, disrupting the usual workflow.
 

@@ -362,6 +362,15 @@ As a consequence, without announcing the dialog title, users who rely on screen 
 
 As a result, the `+aria-label+` attribute, **VoiceOver** will now announce the dialog title as expected.
 
+=== Notification width was not constrained to the width of the editor.
+// #TINY-10886
+
+Previously, when opening a notification containing a large amount of text or when one was displayed by the editor, the notification was not constrained to the width of the editor.
+
+As a consequence, the notification popup would exceed the fixed width of the editor window.
+
+In {productname} {release-version}, this issue is resolved by ensuring that notifications do not exceed the width of the editor.
+
 === Dialog title markup changed to use an `h1` element instead of `div`.
 // #TINY-10800
 

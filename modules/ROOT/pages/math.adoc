@@ -38,15 +38,29 @@ tinymce.init({
 
 To work with math elements, follow these steps:
 
-. Open the {productname} editor with the {pluginname} plugin enabled.
-.. Click the {pluginname} plugin icon in the toolbar to `insert` or `edit` a math element.
-.. This opens the {pluginname} dialog which allows the user to choose between either `LaTeX` and `MathML` equations for the formulas field.
-.. By default, `LaTeX` is selected.
-. In the {pluginname} dialog, use the textarea when inserting formulas.
-.. Choose to `insert` the formula either as a **block** paragraph or **inline** with text.
-. Once the formula has been added, the preview section within the modal dialog will render the final math equation.
-. After reviewing the formula, click the `save` button.
-.. This inserts the math equation into the editor, wrapped in either a `+<tiny-math-block>+` or `+<tiny-math-inline>+` element based on the **Text Wrap** chosen.
+. **Enable Math Plugin**
++
+.. Open the {productname} editor with the {pluginname} plugin enabled.
++
+. **Insert or Edit {pluginname} Elements**
+.. Click the {pluginname}  plugin icon in the toolbar.
+.. This opens the {pluginname} dialog.
+.. Select preferred **language**
+.. Enter {pluginname} **formula** in the textarea.
+.. Choose preferred **text wrap**
++
+. **Preview and Save**
+.. Check {pluginname} formula output in **preview.**
+.. Review the final {pluginname} equation in the **preview** section.
+.. Click the **save** button in the {pluginname} dialog.
+.. The {pluginname} equation is inserted into the editor, wrapped accordingly based on the chosen **text wrap.**
++
+. **Formula Tag Wrapping**
+.. The {pluginname} dialog wraps the inserted formula with a specific tag.
+.. The choice of tag depends on the selected **text wrap** option in the dialog:
+... For block (Text above and below) text wrap, the tag used is <tiny-math-block>.
+... For inline (Inline with text) text wrap, the tag used is <tiny-math-inline>.
+
 
 [TIP]
 The formula is inserted at the last cursor position before the modal dialog was opened.

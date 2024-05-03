@@ -133,7 +133,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === Included itemprop, itemscope, itemtype as valid HTML5 attributes in the core schema.
 // #TINY-9932
 
-Previously, using `itemprop`, `itemscope` and `itemtype` as valid HTML5 attributes within the editor was not supported as they were not included in the update in v6.
+Previously, using `itemprop`, `itemscope` and `itemtype` as valid HTML5 attributes within the editor was not supported.
 
 As a consequence, users faced difficulties in effectively working with content that used these attributes resulting in compatibility issues or data misrepresentation.
 

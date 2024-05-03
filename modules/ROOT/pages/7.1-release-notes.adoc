@@ -16,6 +16,7 @@ These release notes provide an overview of the changes for {productname} {releas
 
 * xref:new-premium-plugin<s>[New Premium plugin<s>]
 * xref:new-open-source-plugin<s>[New Open Source plugin<s>]
+* xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
 * xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
@@ -51,6 +52,50 @@ The following new Open Source plugin was released alongside {productname} {relea
 The new open source plugin, **<Open source plugin name>** // description here.
 
 For information on the **<Open source plugin name>** plugin, see xref:<plugincode>.adoc[<Open source plugin name>].
+
+[[accompanying-premium-self-hosted-server-side-component-changes]]
+== Accompanying Premium self-hosted server-side component changes
+
+The {productname} {release-version} release includes accompanying changes affecting the {productname} **self-hosted** services for the following plugins:
+
+* **Enhanced Media Embed** plugin `mediaembed`.
+* **Image Editing** plugin `editimage`.
+* **Link Checker** plugin `linkchecker`.
+* **Spell Checker** plugin `tinymcespellchecker`.
+* **Spelling Autocorrect** plugin `autocorrect`.
+
+For information on:
+
+* The **Enhanced Media Embed** plugin, see: xref:introduction-to-mediaembed.adoc[Enhanced Media Embed plugin].
+* The **Image Editing** plugin, see: xref:editimage.adoc[Image Editing plugin].
+* The **Link Checker** plugin, see: xref:linkchecker.adoc[Link Checker plugin].
+* The **Spell Checker** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checkerplugin].
+* The **Spelling Autocorrect** plugin, see: xref:autocorrect.adoc[Spelling Autocorrect plugin].
+* Deploying the **server-side** components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+
+The Java server-side components have been updated to the following versions:
+
+* `ephox-hyperlinking.war`: 2.105.25
+* `ephox-image-proxy.war`: 2.106.12
+* `ephox-spelling.war`: 2.118.21
+
+
+=== Updating the self-hosted server-side components
+
+The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
+
+. Update your Java Application Server to the minimum required version:
+
+include::partial$misc/supported-application-servers.adoc[]
+
+. Replace the existing server-side `.war` files with the `.war` files bundled with {productname} {release-version} or later.
+
+For information on:
+
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+* Deploying the server-side components using Docker, see: xref:bundle-intro-setup.adoc[Containerized service deployments].
+
+include::partial$misc/admon-no-functionality-changes-in-updated-server-side-components.adoc[]
 
 [[accompanying-premium-plugin-changes]]
 == Accompanying Premium plugin changes
@@ -337,12 +382,18 @@ In {productname} {release-version}, the Full Screen plugin has been modified to 
 [[security-fixes]]
 == Security fixes
 
-{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+{productname} {release-version} includes one fix for the following security issue:
 
-// CCFR here.
+The following server-side component has been updated to include dependency updates addressing the following security issues. 
+
+* https://nvd.nist.gov/vuln/detail/CVE-2024-29025[CVE-2024-29025]
+
+This update is considered as a **Medium** severity vulnerability fix.
+
+For information on the server-side components updates, see: xref:#accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes].
+
+include::partial$misc/admon-no-functionality-changes-in-updated-server-side-components.adoc[]
 
 
 [[deprecated]]

@@ -184,16 +184,6 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following improvement<s>:
 
-=== Improved the responsiveness of the custom view on small screens
-// #TINY-10741
-
-Previously, when opening a custom view on small screens or mobile devices, like the Revision History view, some header buttons and UI components were not completely visible, and in some cases, they were not accessible. For example, users might not have been able to close the view because the Close button was obscured on smaller screens.
-
-{productname} {release-version} addresses this issue by improving the layout's responsiveness to maximize usability.
-
-As a result, header buttons and UI components are more accessible and visible on small screens and mobile devices, ensuring that users can interact with the custom view without issues.
-
-For more information, see the xref:custom-view.adoc[Custom views] documentation.
 
 
 === Included itemprop, itemscope, itemtype as valid HTML5 attributes in the core schema.
@@ -290,6 +280,7 @@ For more information on bundling with {productname}, see xref:bundling-plugins.a
 
 {productname} {release-version} also includes the following bug fixes:
 
+
 === Styles were not retained when toggling a list on and off.
 // #TINY-10837
 
@@ -298,6 +289,17 @@ Previously, toggling a list into a paragraph that had a specific alignment style
 {productname} {release-version} addresses this issue, by ensuring that the style attribute of the list item being transformed into a paragraph is carried over to the new paragraph.
 
 As a result, style attributes are now properly applied to the new paragraph after conversion when toggling lists.
+
+=== Improved the responsiveness of the custom view on small screens
+// #TINY-10741
+
+Previously, when opening a custom view on small screens or mobile devices, like the Revision History view, some header buttons and UI components were not completely visible, and in some cases, they were not accessible. For example, users might not have been able to close the view because the Close button was obscured on smaller screens.
+
+{productname} {release-version} addresses this issue by improving the layout's responsiveness to maximize usability.
+
+As a result, header buttons and UI components are more accessible and visible on small screens and mobile devices, ensuring that users can interact with the custom view without issues.
+
+For more information, see the xref:custom-view.adoc[Custom views] documentation.
 
 === Video and audio elements could not be played on Safari.
 // #TINY-10774

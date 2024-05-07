@@ -302,6 +302,15 @@ For more information on bundling with {productname}, see xref:bundling-plugins.a
 {productname} {release-version} also includes the following bug fixes:
 
 
+=== Custom block elements with colon characters would throw errors.
+// #TINY-10813
+
+Previously, when `custom_elements` contained special characters such as colons, and these elements included a nested anchor element, an error would be thrown in the dev-console as the corresponding CSS selector was invalid due to the unescaped colon character.
+
+{productname} {release-version} addresses this issue, now, the CSS selector properly escapes special characters like colons, ensuring its validity.
+
+As a result, the error in the console is no longer displayed.
+
 === Styles were not retained when toggling a list on and off.
 // #TINY-10837
 

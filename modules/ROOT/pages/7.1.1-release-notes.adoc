@@ -71,6 +71,33 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Enhanced Tables
+
+The {productname} {release-version} release includes an accompanying release of the **Enhanced Tables** premium plugin.
+
+This **Enhanced Tables** plugin release includes the following fix.
+
+=== The sort algorithm would sometimes incorrectly compare words that start with a digit.
+// #TINY-10421
+
+Previously in **Enhanced Tables**, when trying to sort a table where the cells contained text that started with numbers followed by words, the table would only consider the number part of the text when sorting. This would cause the table to incorrectly sort the words.
+
+For example, when trying to sort the following table by column ascending (A-Z):
+
+[cols="1", options="header"]
+|===
+| Column 1
+
+| 3banana
+| 3apple
+|===
+
+The table would not sort them correctly due to it only considering the number part, so `3banana` would remain above `3apple`, even though `3apple` should come before `3banana` alphanumerically.
+
+This has been fixed in {productname} {release-version}. Now, when sorting a table with text that starts with a digit, the table considers the whole word not just the digits part. As a result, the table now correctly sorts words that start with a digit.
+
+For information on the **Enhanced Tables** plugin, see: xref:advtable.adoc[Enhanced Tables].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

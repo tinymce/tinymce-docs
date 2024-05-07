@@ -302,6 +302,13 @@ For more information on bundling with {productname}, see xref:bundling-plugins.a
 {productname} {release-version} also includes the following bug fixes:
 
 
+=== Fixed accessibility issue by removing duplicate `role="menu"` attribute from color swatches.
+// #TINY-10806
+
+The color swatch menu item, which is accessible via **Format** > **Text color** menu, previously contained nested block elements with the same ARIA role ('menu') in its HTML structure, which violated ARIA standards.
+
+{productname} {release-version} addresses this issue, by removing the duplicated role attribute, ensuring that the structure now aligns with ARIA guidelines and enhances usability for all users.
+
 === Custom block elements with colon characters would throw errors.
 // #TINY-10813
 

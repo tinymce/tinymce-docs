@@ -2,7 +2,7 @@
 :navtitle: AI Assistant
 :description: Sends queries to registered AI APIs and sets the results in the document or temporarily stores the results.
 :description_short: Query AI APIs and accept results.
-:keywords: plugin, ai, artificial intelligence, query, search.
+:keywords: plugin, ai, artificial intelligence, query, search, llm, gpt, assistant
 :pluginname: AI Assistant
 :plugincode: ai
 :plugincategory: premium
@@ -21,11 +21,11 @@ Once a response is generated and displayed within the dialog, the user can choos
 
 Users can retrieve a history of their conversations with the AI using the xref:#getThreadLog[`getThreadLog` API], including any discarded responses.
 
-[NOTE]
-.{pluginname} demo
-====
-Demos containing the {pluginname} plugin are currently only available on our main website. Check out https://www.tiny.cloud/tinymce/features/ai-integration/[the {pluginname} demo], or the https://www.tiny.cloud/[demo on our home page], to try it out today.
-====
+== Interactive example
+
+NOTE: This example uses a proxy endpoint to communicate with the OpenAI API. This is done to avoid exposing the API key in the client-side code. For more information on using a proxy server with the {pluginname} plugin, see the xref:ai-proxy.adoc[AI Proxy Server reference guide].
+
+liveDemo::ai[]
 
 == Basic setup
 
@@ -33,10 +33,12 @@ To add the {pluginname} plugin to the editor, add both `{plugincode}` to the `pl
 
 For example, interfacing with the OpenAI Completions API:
 
+include::partial$misc/admon-ai-proxy.adoc[]
+
 [source,js]
 ----
-// This example stores the API key in the client side integration. This is not recommended for any purpose.
-// Instead, an alternate method for retrieving the API key should be used.
+// Providing access credentials within the integration is not recommended for production use.
+// We recommend setting up a proxy server to authenticate requests and provide access.
 const api_key = '<INSERT_API_KEY_HERE>';
 
 tinymce.init({
@@ -93,9 +95,9 @@ NOTE: The xref:ai-proxy.adoc[AI Proxy Server reference guide] is, as its name no
 
 The following configuration options affect the behavior of the {pluginname} plugin.
 
-include::partial$configuration/ai_request.adoc[][leveloffset=+1]
+include::partial$configuration/ai_request.adoc[leveloffset=+1]
 
-include::partial$configuration/ai_shortcuts.adoc[][leveloffset=+1]
+include::partial$configuration/ai_shortcuts.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

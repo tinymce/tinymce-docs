@@ -15,7 +15,7 @@ This guide provides instructions for integrating the {pluginname} plugin using t
 
 Azure OpenAI Service provides REST API access to OpenAI's language models with Azure specific features such as private networking, regional availability, and responsible AI content filtering.
 
-To learn more about the difference between string and streaming responses, see xref:ai.adoc#the-respondwith-object[The `respondWith` object] on the plugin page.
+To learn more about the difference between string and streaming responses, see the xref:ai.adoc#the-respondwith-object[`respondWith` object] on the plugin page.
 
 == Prerequisites
 
@@ -32,7 +32,7 @@ This example demonstrates how to integrate the {pluginname} plugin with the http
 // This example stores the API key in the client side integration. This is not recommended for any purpose.
 // Instead, an alternate method for retrieving the API key should be used.
 const AZURE_OPENAI_API_KEY = '<INSERT_API_KEY_HERE>';
-const AZURE_OPENAI_ENDPOINT = '<INSERT_ENDPOINT_URL_HERE>'; // e.g. https://{your-resource-name}.openai.azure.com/openai/deployments/{deployment-id}/chat/completions?api-version={api-version}
+const AZURE_OPENAI_ENDPOINT = '<INSERT_ENDPOINT_URL_HERE>'; // e.g. https://<INSERT_RESOURCE_NAME_HERE>.openai.azure.com/openai/deployments/<INSERT_DEPLOYMENT_ID_HERE>/chat/completions?api-version=<INSERT_API_VERSION_HERE>
 
 const ai_request = (request, respondWith) => {
   const azureOpenAiOptions = {

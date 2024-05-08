@@ -14,180 +14,382 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 These release notes provide an overview of the changes for {productname} {release-version}, including:
 
-* xref:new-premium-plugin<s>[New Premium plugin<s>]
-* xref:new-open-source-plugin<s>[New Open Source plugin<s>]
+* xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
+* xref:new-premium-plugin[New Premium plugin]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
-* xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
-* xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
-* xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
 * xref:improvements[Improvements]
-* xref:additions[Additions]
-* xref:changes[Changes]
 * xref:bug-fixes[Bug fixes]
 * xref:security-fixes[Security fixes]
-* xref:deprecated[Deprecated]
-* xref:known-issues[Known issues]
 
 
-[[new-premium-plugin<s>]]
-New Premium plugin<s>
+[[accompanying-premium-self-hosted-server-side-component-changes]]
+== Accompanying Premium self-hosted server-side component changes
+
+The {productname} {release-version} release includes accompanying changes affecting the {productname} **self-hosted** services for the following plugins:
+
+* **Enhanced Media Embed** plugin `mediaembed`.
+* **Image Editing** plugin `editimage`.
+* **Link Checker** plugin `linkchecker`.
+* **Spell Checker** plugin `tinymcespellchecker`.
+* **Spelling Autocorrect** plugin `autocorrect`.
+
+For information on:
+
+* The **Enhanced Media Embed** plugin, see: xref:introduction-to-mediaembed.adoc[Enhanced Media Embed plugin].
+* The **Image Editing** plugin, see: xref:editimage.adoc[Image Editing plugin].
+* The **Link Checker** plugin, see: xref:linkchecker.adoc[Link Checker plugin].
+* The **Spell Checker** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checkerplugin].
+* The **Spelling Autocorrect** plugin, see: xref:autocorrect.adoc[Spelling Autocorrect plugin].
+* Deploying the **server-side** components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+
+The Java server-side components have been updated to the following versions:
+
+* `ephox-hyperlinking.war`: 2.105.25
+* `ephox-image-proxy.war`: 2.106.12
+* `ephox-spelling.war`: 2.118.21
+
+
+=== Updating the self-hosted server-side components
+
+The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
+
+. Update your Java Application Server to the minimum required version:
+
+include::partial$misc/supported-application-servers.adoc[]
+
+. Replace the existing server-side `.war` files with the `.war` files bundled with {productname} {release-version} or later.
+
+For information on:
+
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+* Deploying the server-side components using Docker, see: xref:bundle-intro-setup.adoc[Containerized service deployments].
+
+include::partial$misc/admon-no-functionality-changes-in-updated-server-side-components.adoc[]
+
+[[new-premium-plugin]]
+== New Premium plugin
 
 The following new Premium plugin was released alongside {productname} 7.1.
 
-=== <Premium plugin name>
+[[math]]
+=== Math
 
-The new Premium plugin, **<Premium plugin name>** // description here.
+The new Premium plugin, **Math**, provides a way for users to insert complex formulas.
 
-For information on the **<Premium plugin name>** plugin, see xref:<plugincode>.adoc[<Premium plugin name>].
-
-
-[[new-open-source-plugin]]
-== New Open Source plugin
-
-The following new Open Source plugin was released alongside {productname} 7.1.
-
-=== <Open source plugin name>
-
-The new open source plugin, **<Open source plugin name>** // description here.
-
-For information on the **<Open source plugin name>** plugin, see xref:<plugincode>.adoc[<Open source plugin name>].
+For information on the **Math** plugin, see: xref:math.adoc[Math].
 
 [[accompanying-premium-plugin-changes]]
 == Accompanying Premium plugin changes
 
-The following premium plugin updates were released alongside {productname} 7.1.
+The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== Mentions
 
-The {productname} 7.1 release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Mentions** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+This **Mentions** release includes the following fix.
 
-==== <Premium plugin name 1 change 1>
+==== Inline editor no longer grabs focus when it has a mention in it.
+// #TINY-10725
 
-// CCFR here.
+Previously in **Mentions**, when using an inline editor where the initial content included a mention, the editor automatically grabbed input focus. This unexpected behavior occurred due to the adjustment of the selection range upon initialization.
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+{productname} {release-version} resolves this issue, now, the selection range is only adjusted if the editor has focus. As a result, the inline editor no longer grabs focus on initialization when it has a mention in it.
 
+For information on the **Mentions** plugin, see: xref:mentions.adoc[Mentions].
 
-[[accompanying-premium-plugin-end-of-life-announcement]]
-== Accompanying Premium plugin end-of-life announcement
+=== Enhanced Code Editor
 
-The following Premium plugin has been announced as reaching its end-of-life:
+The {productname} {release-version} release includes an accompanying release of the **Enhanced Code Editor** premium plugin.
 
-=== <Premium plugin name eol>
+The **Enhanced Code Editor** includes the following fix:
 
-{productname}’s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
+==== Inline mode didn't have tab navigation.
+// #TINY-10780
 
+Previously in {productname} 7.0, the **Enhanced Code Editor** was updated to codemirror 6, but the tab navigation was not implemented for the code editor view when `advcode_inline` was set. As a result, users who rely on keyboard navigation found it difficult to navigate the UI elements in the code editor view.
 
-[[accompanying-open-source-plugin-end-of-life-announcement]]
-== Accompanying open source plugin end-of-life announcement
+In {productname} {release-version}, this issue has been fixed. Now, the tab navigation is implemented for the code editor view when `advcode_inline` is set. As a result, the code editor view UI elements can be navigated using the `tab` and `shift+tab` keys.
 
-The following open source plugin has been announced as reaching its end-of-life:
+For information on the **Enhanced Code Editor** plugin, see: xref:advcode.adoc[Enhanced Code Editor].
 
-=== <Open source plugin name eol>
+=== Accessibility Checker
 
-{productname}’s xref:<plugincode>.adoc[<Open source plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
+The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.
 
+**Accessibility Checker** includes the following improvement.
 
-[[accompanying-enhanced-skins-and-icon-packs-changes]]
-== Accompanying Enhanced Skins & Icon Packs changes
+==== Added new `A11ycheckStart`, `A11ycheckStop`, `A11ycheckIgnore`, `A11ycheckRepair` and `A11ycheckShowDetails` events.
+// #TINY-10777
 
-The {productname} 7.1 release includes an accompanying release of the **Enhanced Skins & Icon Packs**.
+{productname} {release-version} introduces five new events within the **Accessibility Checker** premium plugin. These events capture usage statistics, offering valuable insights into the tool's internal usage for customers.
 
-=== Enhanced Skins & Icon Packs
+The events include:
 
-The **Enhanced Skins & Icon Packs** release includes the following updates:
+[cols="1,2",options="header"]
+|===
+|Name |Description
+|A11ycheckStart |Fired when the Accessibility Checker is `opened`
+|A11ycheckStop |Fired when the Accessibility Checker is `closed`
+|A11ycheckIgnore |Fired when the `Ignore` button is pressed
+|A11ycheckRepair |Fired when the `Repair` button is pressed
+|A11ycheckShowDetails |Fired when the `Click for more info` button is pressed
+|===
 
-The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} 7.1 skin, Oxide.
+For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
 
-For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
+For information on handling events in {productname}, see: xref:events.adoc[Events].
+
+=== Revision History
+
+The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
+
+**Revision History** includes the following improvement.
+
+{productname} {release-version} introduces a new xref:revisionhistory.adoc#diff[diff] API from the **Revision History** plugin. This API allows the the user to compare two HTML strings. It does this by marking changes with annotations, so you can easily identify what's been added, removed, or changed.
+
+For information on the **Revision History** plugin, see: xref:revisionhistory.adoc[Revision History].
 
 
 [[improvements]]
 == Improvements
 
-{productname} 7.1 also includes the following improvement<s>:
+{productname} {release-version} also includes the following improvements:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Included itemprop, itemscope, itemtype as valid HTML5 attributes in the core schema.
+// #TINY-9932
 
-// CCFR here.
+Previously, using `itemprop`, `itemscope` and `itemtype` as valid HTML5 attributes within the editor was not supported.
 
+As a consequence, users faced difficulties in effectively working with content that used these attributes resulting in compatibility issues or data misrepresentation.
 
-[[additions]]
-== Additions
+{productname} {release-version} addresses this issue, now, the missed attributes have been added to the HTML5 schema, ensuring that users can now use content containing these attributes such as;
 
-{productname} 7.1 also includes the following addition<s>:
+[source, html]
+----
+<div itemscope="" itemtype="http://schema.org/Movie">
+  <h1 itemprop="name">Avatar</h1>
+  Director: <span itemprop="director">James Cameron</span> (born August 16, 1954) <span itemprop="genre">Science fiction</span> <a itemprop="trailer" href="movies/avatar-theatrical-trailer.html"> Trailer </a>
+</div>
+----
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+As a result, `itemprop`, `itemscope` and `itemtype` are now considered valid HTML5 attributes within {productname}.
 
-// CCFR here.
+=== Notification accessibility improvements: added tooltips, keyboard navigation and shortcut to focus on notifications.
 
+In previous versions of {productname}, an accessibility issue was identified that affected keyboard-only, specifically when a user receives a notification and they where unable to close it using the keyboard.
 
-[[changes]]
-== Changes
+As a consequence, users who rely on keyboard navigation or screen readers could only close the notifications via mouse "Click".
 
-{productname} 7.1 also includes the following change<s>:
+{productname} {release-version} addressed this issue with the following changes: 
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+* Keyboard Shortcut: keyboard shortcut *Alt+F12* (or *⌥+F12*) was added, that allows users to now focus on notifications, providing a way for keyboard-only users to access and interact with them.
+* Keyboard Navigation: allows keyboard navigation within the focusable elements in a notification, such as links and buttons, with *Tab* or *Shift+Tab*.
+* Tooltip: added a tooltip to the `close` button of the notification, providing additional context for users who may need it.
+* Link Styles: improved the styles of links within notifications, including `hover`, `focus`, `active`, and `focus-visible` states, to ensure that they are easily distinguishable and navigable.
+* Screen Reader Announcement: content of a notification is announced by screen readers, making it easier for visually impaired users to access and understand the information.
 
-// CCFR here.
+As a result of these changes notifications now more accessible for all users.
 
+=== New `index.js` file that includes all plugin resources.
+// #TINY-10778
 
-[[removed]]
-== Removed
+Previously, integrating {productname} and its premium plugins necessitated the separate inclusion of the `plugin.js` file along with the corresponding resource API-loaded CSS files. This approach often led to complications due to inconsistent naming conventions for our CSS files, making bundling a cumbersome process.
 
-{productname} 7.1 also includes the following removal<s>:
+To address this, {productname} {release-version} has included `index.js` files to each premium plugin, which will consolidate all necessary resources.
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+As a result, when bundling from a distribution bundle or `.zip` build, by including all the {productname} imports for each plugin such as in a `all.js` file for example;
 
-// CCFR here.
+[source, js]
+----
+import './plugins/a11ychecker';
+import './plugins/advcode';
+import './plugins/advtable';
+import './plugins/advtemplate';
+----
+all the specific plugins will load without the need of any additional resources.
+
+For more information on bundling with {productname}, see xref:bundling-plugins.adoc[bundling plugins]
 
 
 [[bug-fixes]]
 == Bug fixes
 
-{productname} 7.1 also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Fixed accessibility issue by removing duplicate `role="menu"` attribute from color swatches.
+// #TINY-10806
 
-// CCFR here.
+The color swatch menu item, which is accessible via **Format** > **Text color** menu, previously contained nested block elements with the same ARIA role ('menu') in its HTML structure, which violated ARIA standards.
 
+{productname} {release-version} addresses this issue, by removing the duplicated role attribute, ensuring that the structure now aligns with ARIA guidelines and enhances usability for all users.
+
+=== Custom block elements with colon characters would throw errors.
+// #TINY-10813
+
+Previously, when `custom_elements` contained special characters such as colons, and these elements included a nested anchor element, an error would be thrown in the dev-console as the corresponding CSS selector was invalid due to the unescaped colon character.
+
+{productname} {release-version} addresses this issue, now, the CSS selector properly escapes special characters like colons, ensuring its validity.
+
+As a result, the error in the console is no longer displayed.
+
+=== Styles were not retained when toggling a list on and off.
+// #TINY-10837
+
+Previously, toggling a list into a paragraph that had a specific alignment style, did not retain the alignment state when the list was converted to the paragraph.
+
+{productname} {release-version} addresses this issue, by ensuring that the style attribute of the list item being transformed into a paragraph is carried over to the new paragraph.
+
+As a result, style attributes are now properly applied to the new paragraph after conversion when toggling lists.
+
+=== Improved the responsiveness of the custom view on small screens
+// #TINY-10741
+
+Previously, when opening a custom view on small screens or mobile devices, like the Revision History view, some header buttons and UI components were not completely visible, and in some cases, they were not accessible. For example, users might not have been able to close the view because the Close button was obscured on smaller screens.
+
+{productname} {release-version} addresses this issue by improving the layout's responsiveness to maximize usability.
+
+As a result, header buttons and UI components are more accessible and visible on small screens and mobile devices, ensuring that users can interact with the custom view without issues.
+
+For more information, see the xref:custom-view.adoc[Custom views] documentation.
+
+=== Video and audio elements could not be played on Safari.
+// #TINY-10774
+
+In earlier versions of {productname}, a problem occurred when users inserted a video or media element into a {productname} document while using Safari as the host browser. The issue caused media files to be unplayable in Safari.
+
+{productname} {release-version} resolves this problem by preventing events from propagating outside of the video element, which previously caused the playback issue.
+
+With this fix, users can now play video and audio elements on Safari without any issues.
+
+=== Open link context menu action did not work with selection surrounding a link.
+
+In earlier versions of {productname}, the `Open link` context menu action did not work when a link was part of a larger text selection. This meant that selecting a text block containing a link and then choosing `Open link` from the context menu would not result in any action.
+
+With {productname} {release-version}, this issue has been addressed. Now, when you select a block of text that includes a link and choose `Open link` from the context menu, the link will open in a new tab as expected.
+
+=== Open link context menu action was not enabled when an image with a link was selected.
+
+In previous versions of {productname}, the "Open link" context menu action wasn't available for links embedded in images. This limitation prevented users from using the context menu to open links directly from images, disrupting the usual workflow.
+
+With {productname} {release-version}, this issue has been resolved. The "Open link" context menu action is now enabled for links on images, allowing users to easily open them with a right-click.
+
+=== Improved support for Windows High Contrast themes in {productname}.
+// #TINY-9810 / #TINY-9811 / #TINY-9873 / #TINY-10781 / #TINY-10782
+
+Previously, in Windows High Contrast Mode, the colors of various elements in {productname}, such as toolbar icons, toolbar border, icon hover, focus, and active stage, were not correctly configured. This resulted in low to no color/contrast for the editor elements, leading to a poor user experience.
+
+In this fix, the following elements have been given the correct configuration to be visible and display high contrast when Windows High Contrast mode is enabled:
+
+* Checkbox border
+* Dialog items
+* Dropdown items
+* Editor textarea border
+* Floating toolbar outline
+* Buttons and dropdown items (hover, focus, active state)
+* Keyboard focus highlight
+* Status bar items
+* Toolbar border
+* Toolbar icon
+* Toolbar number input
+* Tooltip
+* Table picker UI
+
+The following item has been disabled when Windows High Contrast mode is enabled:
+
+* Table context menu arrow (cosmetic change only)
+
+The following items now maintain their color when Windows High Contrast mode is enabled:
+
+* Color picker, hue slider, RGBA preview, color swatch
+
+Additionally, the fix addresses the issue where the black background added to the placeholder text in Windows High Contrast mode was blocking the caret. The fix includes applying a `z-index` to the placeholder to unblock the caret and adding a specific color to the placeholder text when high contrast mode is enabled. This ensures that both the caret and placeholder text are now visible.
+
+These changes improve the user experience in {productname} by making UI elements, icons, texts, and user actions clearly visible in Windows High Contrast mode.
+
+=== Firefox not announcing the iframe title when `iframe_aria_text` was set.
+// #TINY-10718
+
+Previously, there was inconsistencies across browsers in announcing the `aria-label` for the editor body when the host browser was Firefox.
+
+As a consequence, the `aria-label` of the editor body was not announced. It was intended to be conveyed by the `iframe_aria_text` option but in this case, it was not being announced in Firefox, while Chrome and Safari functioned correctly.
+
+{productname} {release-version} addresses this issue. Now, the `iframe_aria_text` option is set to the **title** of the iframe specifically in Firefox, to ensure screen readers announce the option across all browsers.
+
+As a result, when navigating into the editor, screen readers in all supported browsers will now announce the correct label for the editor body.
+
+=== `ToggleToolbarDrawer` command did not toggle the toolbar in `sliding` mode when `+{skipFocus: true}+` parameter was passed.
+// #TINY-10726
+
+In link:https://www.tiny.cloud/docs/tinymce/6/6.4.1-release-notes/#added-skip_focus-check-to-the-toggletoolbardrawer-command[{productname} 6.4.1], a boolean `skipFocus` parameter for the `ToggleToolbarDrawer` command was introduced. This parameter manages whether the focus should be set on the overflow toolbar after it is toggled. However, a bug was identified with the `ToggleToolbarDrawer` command when used with `+{skipFocus: true}+`, specifically as `+editor.execCommand('ToggleToolbarDrawer', false, { skipFocus: true })+`.
+
+As a result, the bug caused the command to behave inconsistently based on the toolbar mode:
+
+* In `toolbar_mode: floating`, the command correctly preserved focus.
+* In `toolbar_mode: sliding`, the command did not toggle the toolbar drawer at all.
+
+{productname} {release-version} addresses this issue. Now, when using the `ToggleToolbarDrawer` command with the `+{ skipFocus: true }+` argument in both `toolbar_mode: floating` and `toolbar_mode: sliding`, the command will toggle the toolbar drawer as expected while preserving focus.
+
+=== Dialog title was not announced in macOS VoiceOver, dialogs now use `aria-label` instead of `aria-labelledby` on macOS.
+// #TINY-10808
+
+In previous versions of {productname}, an issue was identified where **VoiceOver** was not announcing the dialog title when using the `+aria-labelledby+` attribute. 
+
+As a consequence, without announcing the dialog title, users who rely on screen readers would not be informed about the purpose of the dialog.
+
+{productname} {release-version} addresses this issue. Now, {companyname}'s approach to announcing dialog titles is by switching from using `+aria-labelledby+` to using `+aria-label+` directly on the dialog title element itself.
+
+As a result, the `+aria-label+` attribute, **VoiceOver** will now announce the dialog title as expected.
+
+=== Notification width was not constrained to the width of the editor.
+// #TINY-10886
+
+Previously, when opening a notification containing a large amount of text or when one was displayed by the editor, the notification was not constrained to the width of the editor.
+
+As a consequence, the notification popup would exceed the fixed width of the editor window.
+
+In {productname} {release-version}, this issue is resolved by ensuring that notifications do not exceed the width of the editor.
+
+=== Dialog title markup changed to use an `h1` element instead of `div`.
+// #TINY-10800
+
+Previously, the dialog component's title was wrapped in a `<div>` element, visually appearing as a heading and functioning as the main heading for the dialog. However, without the title being semantically marked up as a heading element, screen reader users may struggle to understand the purpose of the dialog box and navigate its content.
+
+{productname} {release-version} addresses this issue by updating the dialog title markup to use an `<h1>` element, ensuring that the title is semantically identified as a heading. This improves the accessibility experience for users by helping screen readers and other assistive technologies understand the structure of the page and navigate its content more easily.
+
+=== Removed `aria-pressed` from the `More` button in sliding toolbar mode and replaced it with `aria-expanded`
+// #TINY-10795
+
+Previously, an issue was identified with the toolbar overflow button **More** button specifically in `+toolbar_mode: 'sliding'+` mode. The button uses the aria-pressed attribute, which is not appropriate for this scenario.
+
+As a consequence, the aria-pressed attribute was set incorrectly, which prevented screen readers from announcing whether the additional toolbar was in either a expanded or collapsed state.
+
+{productname} {release-version} addresses this issue. Now, the `aria-pressed` attribute has been replaced with `aria-expanded` attribute. This attribute will be set to `+true+` when the overflow content is visible and `+false+` when it's hidden. 
+
+As a result, screen readers will now announce the expanded/collapsed state of the overflow toolbar correctly.
+
+[NOTE]
+This fix only applies to toolbars configured with `+toolbar_mode: 'sliding'+`.
+
+=== Fullscreen mode now prevents focus from leaving the editor.
+// #TINY-10597
+
+Previously, when using the editor in full screen with the xref:fullscreen.adoc[Full Screen] plugin active, users were still able to tab out of the editor window and access content behind it. This created an accessibility issue for keyboard-only users as the editor window could lose focus unintentionally, shifting it to elements outside the editor. Since these elements are hidden in fullscreen mode, keyboard users might have struggled to navigate back to the editor.
+
+In {productname} {release-version}, the Full Screen plugin has been modified to prevent users from tabbing out of the editor window while in full screen mode. Users are now confined to the editor window while in full screen mode, ensuring focus remains on the editor content and preventing accidental navigation away from the editing area.
 
 [[security-fixes]]
 == Security fixes
 
-{productname} 7.1 includes <a fix | fixes for the following security issue<s>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+{productname} {release-version} includes one fix for the following security issue:
 
-// CCFR here.
+The following server-side component has been updated to include dependency updates addressing the following security issues. 
 
+* https://nvd.nist.gov/vuln/detail/CVE-2024-29025[CVE-2024-29025]
 
-[[deprecated]]
-== Deprecated
+This update is considered as a **Medium** severity vulnerability fix.
 
-{productname} 7.1 includes the following deprecation<s>:
+For information on the server-side components updates, see: xref:#accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes].
 
-=== The `<plugin>` configuration property, `<name>`, has been deprecated
-
-// placeholder here.
-
-
-[[known-issues]]
-== Known issues
-
-This section describes issues that users of {productname} 7.1 may encounter and possible workarounds for these issues.
-
-There <is one | are <number> known issue<s> in {productname} 7.1.
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+include::partial$misc/admon-no-functionality-changes-in-updated-server-side-components.adoc[]

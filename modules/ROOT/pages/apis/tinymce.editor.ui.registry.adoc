@@ -17,11 +17,15 @@ TinyMCE UI registration API.
 |xref:#addAutocompleter[addAutocompleter()]|Registers a new auto completer component. When a configured string pattern
 is matched in the content while typing, the autocompleter will be triggered.
 Emoticons and Charmap use an autocompleter.
+
+
 For information on creating an autocompleter, see:
 link:https://www.tiny.cloud/docs/tinymce/7/autocompleter/[
 UI Components - Autocompleter].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
 |xref:#addButton[addButton()]|Registers a new toolbar button that executes a command when clicked or activated
 via keyboard navigation controls.
+
+
 For information on creating a basic toolbar button, see:
 link:https://www.tiny.cloud/docs/tinymce/7/custom-basic-toolbar-button/[
 UI Components - Types of toolbar buttons: Basic button].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
@@ -31,22 +35,32 @@ form element appearing when a content predicate is matched. An example
 of a contextual form is the link plugin when the configuration
 { link_context_toolbar: true } is used. When the cursor is on a link, a
 contextual input form appears allowing for quick changes to the url field.
+
+
 For information on creating context forms, see:
 link:https://www.tiny.cloud/docs/tinymce/7/contextform/[
 UI Components - Context forms].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
 |xref:#addContextMenu[addContextMenu()]|Registers a new context menu section that only appears when a content predicate is matched,
 for example, the cursor is inside a table.
+
+
 For information on creating context menus, see:
 link:https://www.tiny.cloud/docs/tinymce/7/contextmenu/[
 UI Components - Context Menu].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
 |xref:#addContextToolbar[addContextToolbar()]|Registers a new context toolbar that only appears when a content predicate is matched for example
 the cursor is on an image element.
+
+
 For information on creating context toolbars, see:
 link:https://www.tiny.cloud/docs/tinymce/7/contexttoolbar/[
 UI Components - Context Toolbar].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
 |xref:#addGroupToolbarButton[addGroupToolbarButton()]|Registers a new group toolbar button for the toolbar. Renders a toolbar button that opens a floating toolbar when
 clicked.
+
+
 **Note:** Group toolbar buttons can only be used when using the floating toolbar mode.
+
+
 For information on creating a group toolbar button, see:
 link:https://www.tiny.cloud/docs/tinymce/7/custom-group-toolbar-button/[
 UI Components - Types of toolbar buttons: Group toolbar button].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
@@ -56,17 +70,23 @@ to the editor instance it was configured for.|`xref:apis/tinymce.editor.ui.regis
 |xref:#addMenuButton[addMenuButton()]|Registers a new menu button. Adds a toolbar button that opens a menu when
 clicked. The menu can be populated by items created by addMenuItem,
 addNestedMenuItem or addToggleMenuItem.
+
+
 For information on creating a toolbar menu button, see:
 link:https://www.tiny.cloud/docs/tinymce/7/custom-menu-toolbar-button/[
 UI Components - Types of toolbar buttons: Menu button].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
 |xref:#addMenuItem[addMenuItem()]|Registers a new menu item that executes a command when clicked or activated
 via keyboard navigation controls.
+
+
 For information on creating a basic menu item, see:
 link:https://www.tiny.cloud/docs/tinymce/7/creating-custom-menu-items/[
 UI Components - Custom menu items: Basic menu items].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
 |xref:#addNestedMenuItem[addNestedMenuItem()]|Registers a new menu item that reveals a submenu when clicked or activated
 by keyboard navigation controls.The submenu can be populated by items
 created by addMenuItem, addNestedMenuItem or addToggleMenuItem.
+
+
 For information on creating a nested menu item, see:
 link:https://www.tiny.cloud/docs/tinymce/7/custom-nested-menu-items/[
 UI Components - Custom menu items: Nested menu items].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
@@ -77,21 +97,29 @@ button with the same sidebar name is created. Additionally there is a
 ToggleSidebar command and a 'ToggleSidebar' event that can used to
 manage the sidebar open/closed state. The tinycomments plugin uses a
 sidebar for its Ui components.
+
+
 For information on creating a custom sidebar, see:
 link:https://www.tiny.cloud/docs/tinymce/7/customsidebar/[
 UI Components - Custom sidebar].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
 |xref:#addSplitButton[addSplitButton()]|Registers a new split button for the toolbar. The list styles plugin uses
 a split button to simplify its functionality.
+
+
 For information on creating a split toolbar button, see:
 link:https://www.tiny.cloud/docs/tinymce/7/custom-split-toolbar-button/[
 UI Components - Types of toolbar buttons: Split button].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
 |xref:#addToggleButton[addToggleButton()]|Registers a new toggle button for the toolbar. A toggle buttons state can
 be set in the configuration.
+
+
 For information on creating a toggle toolbar button, see:
 link:https://www.tiny.cloud/docs/tinymce/7/custom-toggle-toolbar-button/[
 UI Components - Types of toolbar buttons: Toggle button].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
 |xref:#addToggleMenuItem[addToggleMenuItem()]|Registers a new menu item that will act like a toggle button,
 showing a tick in the menu item to represent state.
+
+
 For information on creating a toggle menu item, see:
 link:https://www.tiny.cloud/docs/tinymce/7/custom-toggle-menu-items/[
 UI Components - Custom menu items: Toggle menu items].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
@@ -103,6 +131,8 @@ When it is off, the specific view is hidden and the main view is shown.
 There is also a ToggleView command.
 The ToggleView command can toggle the view visibility.
 The ToggleView command can be queried for its current state.
+
+
 For information on creating a custom view, see:
 link:https://www.tiny.cloud/docs/tinymce/7/custom-view/[
 UI Components - Custom view].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
@@ -120,6 +150,8 @@ addAutocompleter(name: String, obj: InlineContent.AutocompleterSpec)
 Registers a new auto completer component. When a configured string pattern
 is matched in the content while typing, the autocompleter will be triggered.
 Emoticons and Charmap use an autocompleter.
+
+
 For information on creating an autocompleter, see:
 link:https://www.tiny.cloud/docs/tinymce/7/autocompleter/[
 UI Components - Autocompleter].
@@ -139,6 +171,8 @@ addButton(name: String, obj: Toolbar.ToolbarButtonSpec)
 ----
 Registers a new toolbar button that executes a command when clicked or activated
 via keyboard navigation controls.
+
+
 For information on creating a basic toolbar button, see:
 link:https://www.tiny.cloud/docs/tinymce/7/custom-basic-toolbar-button/[
 UI Components - Types of toolbar buttons: Basic button].
@@ -162,6 +196,8 @@ form element appearing when a content predicate is matched. An example
 of a contextual form is the link plugin when the configuration
 { link_context_toolbar: true } is used. When the cursor is on a link, a
 contextual input form appears allowing for quick changes to the url field.
+
+
 For information on creating context forms, see:
 link:https://www.tiny.cloud/docs/tinymce/7/contextform/[
 UI Components - Context forms].
@@ -181,6 +217,8 @@ addContextMenu(name: String, obj: Menu.ContextMenuSpec)
 ----
 Registers a new context menu section that only appears when a content predicate is matched,
 for example, the cursor is inside a table.
+
+
 For information on creating context menus, see:
 link:https://www.tiny.cloud/docs/tinymce/7/contextmenu/[
 UI Components - Context Menu].
@@ -200,6 +238,8 @@ addContextToolbar(name: String, obj: Toolbar.ContextToolbarSpec)
 ----
 Registers a new context toolbar that only appears when a content predicate is matched for example
 the cursor is on an image element.
+
+
 For information on creating context toolbars, see:
 link:https://www.tiny.cloud/docs/tinymce/7/contexttoolbar/[
 UI Components - Context Toolbar].
@@ -219,7 +259,11 @@ addGroupToolbarButton(name: String, obj: Toolbar.GroupToolbarButtonSpec)
 ----
 Registers a new group toolbar button for the toolbar. Renders a toolbar button that opens a floating toolbar when
 clicked.
+
+
 **Note:** Group toolbar buttons can only be used when using the floating toolbar mode.
+
+
 For information on creating a group toolbar button, see:
 link:https://www.tiny.cloud/docs/tinymce/7/custom-group-toolbar-button/[
 UI Components - Types of toolbar buttons: Group toolbar button].
@@ -264,6 +308,8 @@ addMenuButton(name: String, obj: Toolbar.ToolbarMenuButtonSpec)
 Registers a new menu button. Adds a toolbar button that opens a menu when
 clicked. The menu can be populated by items created by addMenuItem,
 addNestedMenuItem or addToggleMenuItem.
+
+
 For information on creating a toolbar menu button, see:
 link:https://www.tiny.cloud/docs/tinymce/7/custom-menu-toolbar-button/[
 UI Components - Types of toolbar buttons: Menu button].
@@ -283,6 +329,8 @@ addMenuItem(name: String, obj: Menu.MenuItemSpec)
 ----
 Registers a new menu item that executes a command when clicked or activated
 via keyboard navigation controls.
+
+
 For information on creating a basic menu item, see:
 link:https://www.tiny.cloud/docs/tinymce/7/creating-custom-menu-items/[
 UI Components - Custom menu items: Basic menu items].
@@ -303,6 +351,8 @@ addNestedMenuItem(name: String, obj: Menu.NestedMenuItemSpec)
 Registers a new menu item that reveals a submenu when clicked or activated
 by keyboard navigation controls.The submenu can be populated by items
 created by addMenuItem, addNestedMenuItem or addToggleMenuItem.
+
+
 For information on creating a nested menu item, see:
 link:https://www.tiny.cloud/docs/tinymce/7/custom-nested-menu-items/[
 UI Components - Custom menu items: Nested menu items].
@@ -327,6 +377,8 @@ button with the same sidebar name is created. Additionally there is a
 ToggleSidebar command and a 'ToggleSidebar' event that can used to
 manage the sidebar open/closed state. The tinycomments plugin uses a
 sidebar for its Ui components.
+
+
 For information on creating a custom sidebar, see:
 link:https://www.tiny.cloud/docs/tinymce/7/customsidebar/[
 UI Components - Custom sidebar].
@@ -346,6 +398,8 @@ addSplitButton(name: String, obj: Toolbar.ToolbarSplitButtonSpec)
 ----
 Registers a new split button for the toolbar. The list styles plugin uses
 a split button to simplify its functionality.
+
+
 For information on creating a split toolbar button, see:
 link:https://www.tiny.cloud/docs/tinymce/7/custom-split-toolbar-button/[
 UI Components - Types of toolbar buttons: Split button].
@@ -365,6 +419,8 @@ addToggleButton(name: String, obj: Toolbar.ToolbarToggleButtonSpec)
 ----
 Registers a new toggle button for the toolbar. A toggle buttons state can
 be set in the configuration.
+
+
 For information on creating a toggle toolbar button, see:
 link:https://www.tiny.cloud/docs/tinymce/7/custom-toggle-toolbar-button/[
 UI Components - Types of toolbar buttons: Toggle button].
@@ -384,6 +440,8 @@ addToggleMenuItem(name: String, obj: Menu.ToggleMenuItemSpec)
 ----
 Registers a new menu item that will act like a toggle button,
 showing a tick in the menu item to represent state.
+
+
 For information on creating a toggle menu item, see:
 link:https://www.tiny.cloud/docs/tinymce/7/custom-toggle-menu-items/[
 UI Components - Custom menu items: Toggle menu items].
@@ -409,6 +467,8 @@ When it is off, the specific view is hidden and the main view is shown.
 There is also a ToggleView command.
 The ToggleView command can toggle the view visibility.
 The ToggleView command can be queried for its current state.
+
+
 For information on creating a custom view, see:
 link:https://www.tiny.cloud/docs/tinymce/7/custom-view/[
 UI Components - Custom view].

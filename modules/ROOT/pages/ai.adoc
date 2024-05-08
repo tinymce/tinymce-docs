@@ -29,7 +29,12 @@ liveDemo::ai[]
 
 == Basic setup
 
-To add the {pluginname} plugin to the editor, add both `{plugincode}` to the `plugins` option in the editor configuration and the `ai_request` function to the editor configuration.
+To add the {pluginname} plugin to the editor, follow these steps:
+
+- Add `{plugincode}` to the `plugins` option in the editor configuration.
+- Add the `ai_request` function to the editor configuration.
+
+For example:
 
 [source,js]
 ----

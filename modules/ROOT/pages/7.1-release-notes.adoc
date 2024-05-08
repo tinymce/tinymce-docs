@@ -146,27 +146,7 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **Revision History** includes the following improvement.
 
-{productname} {release-version} introduces the new `revisionhistory_diff_classes` option. This option allows the integrator to customize the CSS classes applied to change annotations in the Revision History feature. This configuration works in conjunction with the `revisionhistory_css_url` option, which provides a way for integrators to define custom styles for changes such as additions, removals, and modifications.
-
-[NOTE]
-The default configuration uses predefined class names (tox-revisionhistory__annotation--added, tox-revisionhistory__annotation--removed, and tox-revisionhistory__annotation--modified), which can be overridden with custom classes to suit the specific style requirements, such as the below example.
-
-.Example
-[source, js]
-----
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'revisionhistory',
-  toolbar: 'revisionhistory',
-  revisionhistory_css_url: './revisionhistory.css', //required
-  revisionhistory_diff_classes: {
-    addition: 'added',
-    removal: 'removed',
-    modification: 'modified'
-  },
-  revisionhistory_fetch: () => Promise.resolve([])
-});
-----
+{productname} {release-version} introduces a new xref:revisionhistory.adoc#diff[diff] API from the **Revision History** plugin. This API allows the the user to compare two HTML strings. It does this by marking changes with annotations, so you can easily identify what's been added, removed, or changed.
 
 For information on the **Revision History** plugin, see: xref:revisionhistory.adoc[Revision History].
 

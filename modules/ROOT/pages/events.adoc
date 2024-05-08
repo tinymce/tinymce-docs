@@ -180,6 +180,7 @@ The following events are provided by the {productname} editor.
 
 The following plugins provide events.
 
+* xref:a11ychecker-events[Accessibility Checker events]
 * xref:autosave-events[Autosave events]
 * xref:character-map-events[Character Map events]
 * xref:comments-events[Comments events]
@@ -197,6 +198,13 @@ The following plugins provide events.
 * xref:visual-blocks-events[Visual Blocks events]
 * xref:visual-characters-events[Visual Characters events]
 * xref:word-count-events[Word Count events]
+
+[[a11ychecker-events]]
+=== Accessibility Checker events
+
+The following events are provided by the xref:a11ychecker.adoc[Accessibility Checker plugin].
+
+include::partial$events/a11ychecker-events.adoc[]
 
 [[autosave-events]]
 === Autosave events

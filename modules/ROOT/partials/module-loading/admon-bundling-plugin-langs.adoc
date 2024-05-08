@@ -1,1 +1,26 @@
-NOTE: The plugin language files (such as `+./plugins/plugin/langs/sv_SE.js+`) are required where the editor user interface is localized using the xref:ui-localization.adoc#language[language option]. Please refer to xref:bundling-plugins.adoc#plugin-language-files[plugin-language-files]
+[NOTE]
+====
+Plugin language files (such as `+./plugins/<plugincode>/langs/sv_SE.js+`) are required where the editor user interface is localized using the xref:ui-localization.adoc#language[language option].
+
+The below plugins require these xref:bundling-plugins.adoc#plugin-language-files[plugin-language-files]
+
+* AI Assistant (+ai+)
+* Accessibility Checker (+a11ychecker+)
+* Enhanced Code (+advcode+)
+* Enhanced Tables (+advtable+)
+* Templates (+advtemplate+)
+* Spelling Autocorrect (+autocorrect+)
+* Image Editing (+editimage+)
+* Export to PDF (+exportpdf+)
+* Export to Word (+exportword+)
+* Footnotes (+footnotes+)
+* Import from Word (+importword+)
+* Merge Tags (+mergetags+)
+* Page Embedding (+pageembed+)
+* PowerPaste (+powerpaste+)
+* Revision History (+revisionhistory+)
+* Table of Contents (+tableofcontents+)
+* Comments (+tinycomments+)
+* Spell Checker (+tinymcespellchecker+)
+* Typography (+typography+)
+====

@@ -32,9 +32,7 @@ import 'tinymce/plugins/table';
 
 /* Import premium plugins */
 /* NOTE: Download separately and add these to /src/plugins */
-/* import './plugins/checklist/plugin.js'; */
-/* import './plugins/powerpaste/plugin.js'; */
-/* import './plugins/powerpaste/js/wordimport.js'; */
+/* import './plugins/<plugincode>'; */
 
 /* content UI CSS is required */
 import contentUiSkinCss from 'tinymce/skins/ui/oxide/content.js';

@@ -290,6 +290,10 @@
 *** xref:a11ychecker.adoc[Accessibility Checker]
 *** xref:advanced-typography.adoc[Advanced Typography]
 *** xref:ai.adoc[AI Assistant]
+**** xref:ai-openai.adoc[OpenAI ChatGPT integration guide]
+**** xref:ai-azure.adoc[Azure AI integration guide]
+**** xref:ai-bedrock.adoc[Amazon Bedrock integration guide]
+**** xref:ai-gemini.adoc[Google Gemini integration guide]
 **** xref:ai-proxy.adoc[AI proxy server reference guide]
 *** xref:casechange.adoc[Case Change]
 *** xref:checklist.adoc[Checklist]
@@ -314,6 +318,7 @@
 *** xref:editimage.adoc[Image Editing]
 *** xref:inline-css.adoc[Inline CSS]
 *** xref:linkchecker.adoc[Link Checker]
+*** xref:math.adoc[Math]
 *** xref:markdown.adoc[Markdown]
 *** xref:mentions.adoc[Mentions]
 *** xref:mergetags.adoc[Merge Tags]
@@ -400,6 +405,14 @@
 ** xref:tinymce-and-cors.adoc[Cross-Origin Resource Sharing (CORS)]
 * Release information
 ** xref:release-notes.adoc[Release notes for {productname} {productmajorversion}]
+*** {productname} 7.1
+**** xref:7.1-release-notes.adoc#overview[Overview]
+**** * xref:7.1-release-notes.adoc#accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
+**** * xref:7.1-release-notes.adoc#new-premium-plugin[New Premium plugin]
+**** xref:7.1-release-notes.adoc#accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
+**** xref:7.1-release-notes.adoc#improvements[Improvements]
+**** xref:7.1-release-notes.adoc#bug-fixes[Bug fixes]
+**** xref:7.1-release-notes.adoc#security-fixes[Security fixes]
 *** {productname} 7.0.1
 **** xref:7.0.1-release-notes.adoc#overview[Overview]
 **** xref:7.0.1-release-notes.adoc#accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]

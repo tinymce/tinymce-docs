@@ -26,7 +26,7 @@ For more details, check out the xref:editor-and-features.adoc[{productname} edit
 When deploying {productname}, integrators have the choice to **self-host** premium plugins or load them from {companyname} Cloud which is referred to as Hybrid mode. Depending on your setup, a combination of both approaches can be used. For simplifying this process, {companyname} offers two configuration scripts:
 
 * `plugins.min.js`: This script configures {productname} to load all premium plugins from {companyname} Cloud, **defaulting** to the `latest` version in the selected cloud channel. You can specify different plugin versions if necessary, but it's generally best to use the latest versions for optimal performance and security.
-* `cloud-plugins.min.js`: This script allows loading of specific premium plugins from {companyname} Cloud, while self-hosting the rest. This approach is intended for edge cases, such as when you have custom plugins on your own servers and only need a few from {companyname} Cloud.
+* `cloud-plugins.min.js`: This script allows loading of specific premium plugins from {companyname} Cloud. This approach is intended for edge cases, when you self-host most premium plugins on your own servers and only need one or two from {companyname} Cloud.
 
 === Which Script Should You Use?
 

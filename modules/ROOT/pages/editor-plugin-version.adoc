@@ -37,30 +37,33 @@ In most cases, using `plugins.min.js` is the correct choice. It provides the mos
 .Example
 [source,html]
 ----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7/plugins.min.js?mentions=3.0&powerpaste=6.0" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7/plugins.min.js?mentions=3.0&powerpaste=6.0&advcode=sdk" referrerpolicy="origin"></script>
 ----
 
-In this example, {productname} will attempt to load all premium plugins from {companyname} Cloud, with specified versions for the "mentions" and "powerpaste" plugins. The only disadvantage of `+plugins.min.js+`: to load only one plugin from the {cloudname} and the rest from a self-hosted deployment, *ALL* other plugins need to be added as query parameter with the version as `+sdk+`. When {cloudname} releases a new plugin, this will need to be updated.
+In this example, {productname} will try to load all premium plugins from {companyname} Cloud, including specified versions for the "mentions" and "powerpaste" plugins. The disadvantage of using `plugins.min.js` is that if you want to load only one plugin from {companyname} Cloud while the rest are self-hosted, you have to add all other plugins as query parameters with their versions specified as "sdk." When {companyname} Cloud releases a new plugin, you'll need to update the list.
 
+include::partial$misc/admon-script-tag-placement.adoc[]
 
 ==== Using `cloud-plugins.min.js`
 
-Use `cloud-plugins.min.js` **only** if you have a specific reason to self-host some premium plugins while loading others from Tiny Cloud. This approach is more complex and requires you to specify which plugins to load from {companyname} Cloud.
+{companyname} recommends only using `cloud-plugins.min.js` if you have a specific reason to self-host some premium plugins while loading others from Tiny Cloud. This approach is more complex and requires you to specify which plugins to load from {companyname} Cloud.
 
 .Example
 [source,html]
 ----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7/cloud-plugins.min.js?mentions=3.0&powerpaste=6.0" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7/cloud-plugins.min.js?mentions=3.0&powerpaste=6.0&advcode" referrerpolicy="origin"></script>
 ----
 
-This example loads specific premium plugins from Tiny Cloud, with the rest assumed to be self-hosted. Unlike `plugins.min.js`, there is no need to specify a special version (like "sdk") for self-hosted plugins.
+In this example, {productname} loads specific premium plugins from {companyname} Cloud, with the rest assumed to be self-hosted. Unlike `plugins.min.js`, there is no need to specify a special version (like "sdk") for self-hosted plugins.
+
+include::partial$misc/admon-script-tag-placement.adoc[]
 
 [TIP]
-Specifying plugin versions is generally **not recommended**. {companyname} recommends using the latest versions to ensure compatibility and security. As the disadvantage of `+cloud-plugins.min.js+`: every plugin to be loaded from {cloudname} must be added to the query parameter.
+Specifying plugin versions is generally **not recommended**. {companyname} recommends using the latest versions to ensure compatibility and security. As the disadvantage of using `+cloud-plugins.min.js+` is that every plugin loaded from {cloudname} must be added to the query parameter.
 
-== Premium plugin versions available from Tiny Cloud
+== Premium plugin versions available from {companyname} Cloud
 
-While it is not recommended, but it is possible to specify different versions of each premium plugin to use with {productname}. Using the URL query parameters mentioned above, this can by used to specify the version of each premium plugin to load. This approach works with both the xref:editor-and-features.adoc[{productname} editor and premium plugins deployment via {cloudname}] or just the xref:features-only.adoc[premium plugins deployment from {cloudname}].
+While it is not recommended, it is possible to specify different versions of each premium plugin to use with {productname}. Using the URL query parameters mentioned above, this can by used to specify the version of each premium plugin to load. This approach works with both the xref:editor-and-features.adoc[{productname} editor and premium plugins deployment via {cloudname}] or just the xref:features-only.adoc[premium plugins deployment from {cloudname}].
 
 The `+identifier+` of the plugin is used as a query parameter. This table summarises the possible options.
 
@@ -101,11 +104,16 @@ The `+identifier+` of the plugin is used as a query parameter. This table summar
 
 === Understanding and selecting specific version numbers
 
-IMPORTANT
-All {cloudname} channels are based on the {enterpriseversion} version. For information on the latest version of the {cloudname} `{productmajorversion}` release channel, see: xref:release-notes.adoc[{productname} Release Notes]. For a list of changes that *may* be present in the {cloudname} testing channel, see: xref:changelog.adoc[{productname} Changelog].
+[IMPORTANT]
+====
+All {cloudname} channels are based on the {enterpriseversion} version.
+
+* For information on the latest version of the {cloudname} `{productmajorversion}` release channel, see: xref:release-notes.adoc[{productname} Release Notes].
+* For a list of changes that *may* be present in the {cloudname} testing channel, see: xref:changelog.adoc[{productname} Changelog].
+====
 
 [#{productmajorversion}-{productmajorversion}-testing-and-{productmajorversion}-dev-release-channels]
-=== {productmajorversion}, {productmajorversion}-testing, and {productmajorversion}-dev release channels
+=== Difference between using {productname} {productmajorversion}, {productmajorversion}-testing, and {productmajorversion}-dev release channels
 
 Choose from the `{productmajorversion}`, `{productmajorversion}-testing`, or `{productmajorversion}-dev` release channels to load the latest version of {productname} from {cloudname}.
 

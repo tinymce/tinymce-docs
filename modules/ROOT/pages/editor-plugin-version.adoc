@@ -1,108 +1,70 @@
-= Specify editor & plugin versions
-:description_short: Specifying editor and plugin versions for Tiny Cloud deployments.
-:description: Specifying editor and plugin versions for Tiny Cloud deployments.
+= Specify editor & plugins
+:description_short: Specifying editor version and plugins for Tiny Cloud deployments.
+:description: Instructions on setting the TinyMCE editor version and plugins for Tiny Cloud deployments.
 :keywords: tinymce, cloud, script, textarea, apiKey, hybrid
 
 [[specifying-the-tinymce-editor-version-deployed-from-cloud]]
 == Specifying the {productname} Editor Version from the Cloud
 
-To set the {productname} version when deploying from {cloudname}, use the following URL.
+To set the {productname} version when deploying from {cloudname}, use the following URL:
 
 [source,html,subs="attributes+"]
 ----
 <script src="{cdnurl}" referrerpolicy="origin"></script>
 ----
 
-The example above shows the default way to load {productname} {productmajorversion} from {cloudname}.
+The example above shows the default way to load {productname} {productmajorversion} from {cloudname}. This URL ensures the most recent and verified version of {productname} is used.
 
 [TIP]
-Replace 'no-api-key' with your own API key. This URL ensures the most recent and verified version of {productname} is used.
+Replace 'no-api-key' with your own API key.
 
 For more details, check out the xref:editor-and-features.adoc[{productname} editor via {cloudname}].
 
 [[specifying-the-cloud-deployment-of-plugins]]
-== Specifying the Cloud Deployment of plugins
+== Specifying the Cloud Deployment of Plugins
 
-When deploying {productname}, integrators have the choice to **self-host** premium plugins or load them from {companyname} Cloud which is referred to as Hybrid mode. Depending on your setup, a combination of both approaches can be used. For simplifying this process, {companyname} offers two configuration scripts:
-
-* `plugins.min.js`: This script configures {productname} to load all premium plugins from {companyname} Cloud, **defaulting** to the `latest` version in the selected cloud channel. You can specify different plugin versions if necessary, but it's generally best to use the latest versions for optimal performance and security.
-* `cloud-plugins.min.js`: This script allows loading of specific premium plugins from {companyname} Cloud. This approach is intended for edge cases, when you self-host most premium plugins on your own servers and only need one or two from {companyname} Cloud.
-
-=== Which Script Should You Use?
-
-==== Using `plugins.min.js`
-
-In most cases, using `plugins.min.js` is the correct choice. It provides the most flexibility and simplicity by ensuring all plugins are loaded from {companyname} Cloud. If you need to specify individual plugin versions, you can do so via query parameters.
-
-.Example
-[source,html]
-----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7/plugins.min.js?mentions=3.0&powerpaste=6.0&advcode=sdk" referrerpolicy="origin"></script>
-----
-
-In this example, {productname} will try to load all premium plugins from {companyname} Cloud, including specified versions for the "mentions" and "powerpaste" plugins. The disadvantage of using `plugins.min.js` is that if you want to load only one plugin from {companyname} Cloud while the rest are self-hosted, you have to add all other plugins as query parameters with their versions specified as "sdk." When {companyname} Cloud releases a new plugin, you'll need to update the list.
+When deploying {productname}, integrators have the choice to **self-host** premium plugins or load them from {companyname} Cloud (a.k.a. hybrid mode). Depending on your requirements, you can use a combination of both approaches.
 
 include::partial$misc/admon-script-tag-placement.adoc[]
 
-==== Using `cloud-plugins.min.js`
+{companyname} offers the following configuration scripts to assist:
 
-{companyname} recommends only using `cloud-plugins.min.js` if you have a specific reason to self-host some premium plugins while loading others from Tiny Cloud. This approach is more complex and requires you to specify which plugins to load from {companyname} Cloud.
+=== `plugin.min.js` Standalone with No Exclusions.
 
-.Example
-[source,html]
+The `plugins.min.js` script loads every plugin the API key is entitled to from the CDN.
+
+[source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7/cloud-plugins.min.js?mentions=3.0&powerpaste=6.0&advcode" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/api-key/tinymce/7/plugins.min.js" referrerpolicy="origin"></script>
 ----
 
-In this example, {productname} loads specific premium plugins from {companyname} Cloud, with the rest assumed to be self-hosted. Unlike `plugins.min.js`, there is no need to specify a special version (like "sdk") for self-hosted plugins.
+=== `plugins.min.js` with Exclusions for Specific Plugins.
 
-include::partial$misc/admon-script-tag-placement.adoc[]
+To exclude specific premium plugins from `plugins.min.js` because you are self-hosting them, add the excluded plugins to the script query parameters as shown below:
 
-[TIP]
-Specifying plugin versions is generally **not recommended**. {companyname} recommends using the latest versions to ensure compatibility and security. As the disadvantage of using `+cloud-plugins.min.js+` is that every plugin loaded from {cloudname} must be added to the query parameter.
+[source,html,subs="attributes+"]
+----
+<script src="https://cdn.tiny.cloud/1/api-key/tinymce/7/plugins.min.js?mentions=sdk&powerpaste=sdk" referrerpolicy="origin"></script>
+----
 
-== Premium plugin versions available from {companyname} Cloud
+[NOTE]
+When excluding specific plugins from the CDN, ensure that the excluded plugins' names are appended with `=sdk`, such as `mentions=sdk`. Note that when {companyname} Cloud releases a new plugin, you will need to update your script tag to accommodate it.
 
-While it is not recommended, it is possible to specify different versions of each premium plugin to use with {productname}. Using the URL query parameters mentioned above, this can by used to specify the version of each premium plugin to load. This approach works with both the xref:editor-and-features.adoc[{productname} editor and premium plugins deployment via {cloudname}] or just the xref:features-only.adoc[premium plugins deployment from {cloudname}].
+=== `cloud-plugins.min.js` for Specific Premium Plugins from {companyname} Cloud.
 
-The `+identifier+` of the plugin is used as a query parameter. This table summarises the possible options.
+The `cloud-plugins.min.js` script allows loading of specific premium plugins from {companyname} Cloud.
 
-[cols=",,",options="header"]
-|===
-|Plugin |Identifier |Supported Versions
-|xref:a11ychecker.adoc[Accessibility Checker] | `+a11ychecker+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/a11ychecker/available-versions[Versions]
-|xref:advanced-typography.adoc[Advanced Typography] | `+advtable+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/advtable/available-versions[Versions]
-|xref:ai.adoc[AI Assistant] | `+ai+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/ai/available-versions[Versions]
-|xref:casechange.adoc[Case Change] | `+casechange+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/casechange/available-versions[Versions]
-|xref:checklist.adoc[Checklist] | `+checklist+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/checklist/available-versions[Versions]
-|xref:introduction-to-tiny-comments.adoc[Comments] | `+tinycomments+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinycomments/available-versions[Versions]
-|xref:advcode.adoc[Enhanced Code Editor] | `+advcode+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/advcode/available-versions[Versions]
-|xref:introduction-to-mediaembed.adoc[Enhanced Media Embed] | `+mediaembed+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mediaembed/available-versions[Versions]
-|xref:advtable.adoc[Enhanced Tables] | `+advtable+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/advtable/available-versions[Versions]
-|xref:exportword.adoc[Export to Word] | `+exportword+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/exportword/available-versions[Versions]
-|xref:exportpdf.adoc[Export to PDF] | `+exportpdf+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/exportpdf/available-versions[Versions]
-|xref:footnotes.adoc[Footnotes] | `+footnotes+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/footnotes/available-versions[Versions]
-|xref:formatpainter.adoc[Format Painter] | `+formatpainter+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/formatpainter/available-versions[Versions]
-|xref:inline-css.adoc[Inline CSS] | `+inlinecss+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/inline-css/available-versions[Versions]
-|xref:importword.adoc[Import from Word] | `+importword+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/importword/available-versions[Versions]
-|xref:editimage.adoc[Image Editing] | `+editimage+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/editimage/available-versions[Versions]
-|xref:linkchecker.adoc[Link Checker] | `+linkchecker+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/linkchecker/available-versions[Versions]
-|xref:markdown.adoc[Markdown] | `+markdown+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/markdown/available-versions[Versions]
-|xref:mentions.adoc[Mentions] | `+mentions+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mentions/available-versions[Versions]
-|xref:mergetags.adoc[Merge Tags] | `+mergetags+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/mergetags/available-versions[Versions]
-|xref:moxiemanager.adoc[MoxieManager] | `+moxiemanager+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/moxiemanager/available-versions[Versions]
-|xref:pageembed.adoc[Page Embed] | `+pageembed+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/pageembed/available-versions[Versions]
-|xref:permanentpen.adoc[Permanent Pen] | `+permanentpen+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/permanentpen/available-versions[Versions]
-|xref:introduction-to-powerpaste.adoc[PowerPaste] | `+powerpaste+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/powerpaste/available-versions[Versions]
-|xref:revisionhistory.adoc[Revision History] | `+revisionhistory+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/revisionhistory/available-versions[Versions]
-|xref:introduction-to-tiny-spellchecker.adoc[Spell Checker] | `+tinymcespellchecker+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinymcespellchecker/available-versions[Versions]
-|xref:autocorrect.adoc[Spelling Autocorrect] | `+autocorrect+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/autocorrect/available-versions[Versions]
-|xref:advanced-templates.adoc[Templates] | `+templates+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/advanced-templates/available-versions[Versions]
-|xref:tableofcontents.adoc[Table of Contents] | `+tableofcontents+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tableofcontents/available-versions[Versions]
-|xref:tinydrive-introduction.adoc[Tiny Drive] | `+tinydrive+` |http://cdn.tiny.cloud/1/no-api-key/tinymce-plugins/tinydrive/available-versions[Versions]
-|===
+[source,html,subs="attributes+"]
+----
+<script src="https://cdn.tiny.cloud/1/api-key/tinymce/7/cloud-plugins.min.js?mentions&powerpaste&advcode" referrerpolicy="origin"></script>
+----
 
-=== Understanding and selecting specific version numbers
+[NOTE]
+This approach is intended for edge cases where you self-host most premium plugins on your own servers and only need one or two from {companyname} Cloud.
+
+'''
+
+=== Selecting Specific Editor Versions
 
 [IMPORTANT]
 ====
@@ -113,14 +75,14 @@ All {cloudname} channels are based on the {enterpriseversion} version.
 ====
 
 [#{productmajorversion}-{productmajorversion}-testing-and-{productmajorversion}-dev-release-channels]
-=== Difference between using {productname} {productmajorversion}, {productmajorversion}-testing, and {productmajorversion}-dev release channels
+=== Difference between using {productname} {productmajorversion}, {productmajorversion}-Testing, and {productmajorversion}-Dev release channels
 
 Choose from the `{productmajorversion}`, `{productmajorversion}-testing`, or `{productmajorversion}-dev` release channels to load the latest version of {productname} from {cloudname}.
 
-These channels are updated automatically and provide the latest {productname} version that matches the criteria below.
+These channels are updated automatically and provide the latest {productname} version based on the follow criteria:
 
 [#{productmajorversion}-release-channel]
-==== {productmajorversion} release channel
+==== {productmajorversion} Release Channel
 
 This channel deploys the latest release of {productname} that has passed our quality assurance process. The current version of {productname} available through the `/{productmajorversion}` channel can be found on the https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/version.txt[{cloudname} {productname} {productmajorversion} version page]. The {productname} {productmajorversion} channel can be loaded from `{cdnurl}`.
 
@@ -133,12 +95,12 @@ This channel deploys the latest release of {productname} that has passed our qua
 ----
 
 [#{productmajorversion}-testing-release-channel]
-==== {productmajorversion}-testing release channel
+==== {productmajorversion}-Testing Release Channel
 
 This channel deploys the current *release candidate* for the `{productmajorversion}` channel. The {productname} release candidate is undergoing quality assurance. The current version of {productname} available through the `{productmajorversion}-testing` channel can be found on the https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-testing/version.txt[{cloudname} {productname} {productmajorversion}-testing version page].
 
 [#example-using-the-{productmajorversion}-testing-release-channel]
-===== Example: using the `{productmajorversion}-testing` release channel
+===== Example: Using the `{productmajorversion}-testing` Release Channel
 
 [source,html,subs="attributes+"]
 ----
@@ -146,12 +108,12 @@ This channel deploys the current *release candidate* for the `{productmajorversi
 ----
 
 [#{productmajorversion}-dev-release-channel]
-==== {productmajorversion}-dev release channel
+==== {productmajorversion}-Dev Release Channel
 
-This channel deploys nightly builds of {productname}. This channel includes the unreleased changes documented in the https://github.com/tinymce/tinymce/blob/develop/modules/tinymce/CHANGELOG.md[{productname} changelog]. The current version of {productname} available through the `{productmajorversion}-dev` channel can be found on the https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-dev/version.txt[{cloudname} {productname} {productmajorversion}-dev version page].
+This channel deploys nightly builds of {productname}, which includes unreleased changes documented in the https://github.com/tinymce/tinymce/blob/develop/modules/tinymce/CHANGELOG.md[{productname} changelog]. The current version of {productname} available through the `{productmajorversion}-dev` channel can be found on the https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-dev/version.txt[{cloudname} {productname} {productmajorversion}-dev version page].
 
 [#example-using-the-{productmajorversion}-dev-release-channel]
-===== Example: using the `{productmajorversion}-dev` release channel
+===== Example: Using the `{productmajorversion}-dev` Release Channel
 
 [source,html,subs="attributes+"]
 ----

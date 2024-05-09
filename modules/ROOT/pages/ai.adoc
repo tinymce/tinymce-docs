@@ -29,52 +29,20 @@ liveDemo::ai[]
 
 == Basic setup
 
-To add the {pluginname} plugin to the editor, add both `{plugincode}` to the `plugins` option in the editor configuration and the `ai_request` function to the editor configuration.
+To add the {pluginname} plugin to the editor, follow these steps:
 
-For example, interfacing with the OpenAI Completions API:
+- Add `{plugincode}` to the `plugins` option in the editor configuration.
+- Add the `ai_request` function to the editor configuration.
 
-include::partial$misc/admon-ai-proxy.adoc[]
+For example:
 
 [source,js]
 ----
-// Providing access credentials within the integration is not recommended for production use.
-// We recommend setting up a proxy server to authenticate requests and provide access.
-const api_key = '<INSERT_API_KEY_HERE>';
-
 tinymce.init({
-  selector: 'textarea',  // Change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'ai',
   toolbar: 'aidialog aishortcuts',
-  ai_request: (request, respondWith) => {
-    const openAiOptions = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${api_key}`
-      },
-      body: JSON.stringify({
-        model: 'gpt-3.5-turbo',
-        temperature: 0.7,
-        max_tokens: 800,
-        messages: [{ role: 'user', content: request.prompt }],
-      })
-    };
-    respondWith.string((signal) => window.fetch('https://api.openai.com/v1/chat/completions', { signal, ...openAiOptions })
-      .then(async (response) => {
-        if (response) {
-          const data = await response.json();
-          if (data.error) {
-            throw new Error(`${data.error.type}: ${data.error.message}`);
-          } else if (response.ok) {
-            // Extract the response content from the data returned by the API
-            return data?.choices[0]?.message?.content?.trim();
-          }
-        } else {
-          throw new Error('Failed to communicate with the ChatGPT API');
-        }
-      })
-    );
-  }
+  ai_request: <AI_REQUEST_FUNCTION>,
 });
 ----
 

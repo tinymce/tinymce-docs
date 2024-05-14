@@ -112,7 +112,12 @@ This channel deploys the current *release candidate* for the `{productmajorversi
 [#{productmajorversion}-dev-release-channel]
 ==== {productmajorversion}-Dev Release Channel
 
-This channel deploys nightly builds of {productname}, which includes unreleased changes documented in the https://github.com/tinymce/tinymce/blob/develop/modules/tinymce/CHANGELOG.md[{productname} changelog]. The current version of {productname} available through the `{productmajorversion}-dev` channel can be found on the https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-dev/version.txt[{cloudname} {productname} {productmajorversion}-dev version page].
+This channel deploys nightly builds of {productname}, which includes **unreleased changes** from the link:https://github.com/tinymce/tinymce/tree/main[{productname} repository^]. 
+
+The current version of {productname} is available on the `{productmajorversion}-dev` channel can be found on the link:https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-dev/version.txt[{cloudname} {productname} {productmajorversion}-dev version page^].
+
+[NOTE]
+{productname} now uses `main` branch for nightly builds instead of `develop` as of {productname} `7.0.0`.
 
 [#example-using-the-{productmajorversion}-dev-release-channel]
 ===== Example: Using the `{productmajorversion}-dev` Release Channel

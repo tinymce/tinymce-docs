@@ -48,9 +48,11 @@ To exclude specific premium plugins from `plugins.min.js` because you are self-h
 ----
 
 [NOTE]
+====
 Ensure that the excluded plugins' names are appended with `=sdk`, such as `mentions=sdk`.
 
 When {companyname} Cloud releases a new premium plugin, if you wish to self-host it this script tag will need to be updated to exclude it.
+====
 
 === `cloud-plugins.min.js` for Specific Premium Plugins from {companyname} Cloud.
 

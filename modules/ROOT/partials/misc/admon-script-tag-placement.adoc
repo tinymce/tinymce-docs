@@ -1,2 +1,2 @@
 [IMPORTANT]
-The plugin script tag must be positioned between the {productname} script tag and the `tinymce.init()` call. For applications that bundle {productname}, delay the `tinymce.init()` call until the plugin script tag has fully loaded. This ensures that the plugin is available when the editor is initialized.
+The cloud plugin script tag must be positioned between the {productname} script tag and the `tinymce.init()` call. For applications that bundle {productname}, delay the `tinymce.init()` call until after the cloud plugin script tag has loaded. This ensures that the cloud plugins are available when the editor is initialized.

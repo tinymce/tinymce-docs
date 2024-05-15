@@ -1,0 +1,79 @@
+= Math plugin
+:navtitle: Math Plugin
+:description: Math plugin allows users to insert math equations into the {productname} editor.
+:description_short: Insert `+<math>+` elements into {productname}.
+:keywords: plugin, math, formulas
+:pluginname: Math
+:plugincode: math
+:plugincategory: premium
+
+include::partial$misc/admon-paid-addon-pricing.adoc[]
+
+include::partial$misc/admon-requires-7.1v.adoc[]
+
+The {pluginname} plugin provides a way for users to insert complex formulas.
+
+== Interactive example
+
+liveDemo::{plugincode}[]
+
+== Basic setup
+
+To set up the {pluginname} plugin user interface in the editor:
+
+* add `+math+` to the plugins option in the editor configuration;
+
+For example:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'math',
+  toolbar: 'math',
+});
+----
+
+== How to Use
+
+To work with math elements, follow these steps:
+
+. **Enable Math Plugin**
++
+.. Open the {productname} editor with the {pluginname} plugin enabled.
++
+. **Insert or Edit {pluginname} Elements**
+.. Click the {pluginname} plugin icon in the toolbar.
+.. This opens the {pluginname} dialog.
+.. Select preferred **language**
+.. Enter {pluginname} **formula** in the textarea.
+.. Choose preferred **text wrap**
++
+. **Preview and Save**
+.. Check {pluginname} formula output in **preview.**
+.. Review the final {pluginname} equation in the **preview** section.
+.. Click the **save** button in the {pluginname} dialog.
+.. The {pluginname} equation is inserted into the editor, wrapped accordingly based on the chosen **text wrap.**
++
+
+
+**Formula Tag Wrapping**
+
+. The {pluginname} dialog wraps the inserted formula with a specific tag.
+. The choice of tag depends on the selected **text wrap** option in the dialog:
+.. For block (_Text above and below_) text wrap, the tag used is `<tiny-math-block>`.
+.. For inline (_Inline with text_) text wrap, the tag used is `<tiny-math-inline>`.
+
+
+[NOTE]
+Visit link:https://katex.org/docs/supported.html[https://katex.org/docs/supported^] for a comprehensive list of supported symbols and functions when inserting mathematical equations after selecting "Language (LaTeX)".
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+
+== Commands
+
+The {pluginname} plugin provides the following {productname} commands.
+
+include::partial$commands/{plugincode}-cmds.adoc[]

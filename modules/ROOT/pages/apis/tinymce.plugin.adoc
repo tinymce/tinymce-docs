@@ -8,7 +8,15 @@ TinyMCE plugin psuedo class. Allows for custom plugins to be added to TinyMCE wh
 
 This is a pseudo class that describes how to create a custom plugin for TinyMCE.
 
+
+
+
+
 A custom plugin registered using `PluginManager.add` should either not return any value or return plugin metadata as an object that contains the plugin's name and a URL. The URL is intended to link to help documentation.
+
+
+
+
 
 See AddOnManager for more information about the methods available on the PluginManager instance.
 

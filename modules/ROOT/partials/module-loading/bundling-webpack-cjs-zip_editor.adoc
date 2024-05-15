@@ -20,13 +20,13 @@ require('../tinymce/js/tinymce/models/dom/model.js');
 require('../tinymce/js/tinymce/skins/ui/oxide/skin.css');
 
 /* Import plugins - include the relevant plugin in the 'plugins' option. */
-require('../tinymce/js/tinymce/plugins/advlist/plugin.js');
-require('../tinymce/js/tinymce/plugins/code/plugin.js');
-require('../tinymce/js/tinymce/plugins/emoticons/plugin.js');
+require('../tinymce/js/tinymce/plugins/advlist');
+require('../tinymce/js/tinymce/plugins/code');
+require('../tinymce/js/tinymce/plugins/emoticons');
 require('../tinymce/js/tinymce/plugins/emoticons/js/emojis');
-require('../tinymce/js/tinymce/plugins/link/plugin.js');
-require('../tinymce/js/tinymce/plugins/lists/plugin.js');
-require('../tinymce/js/tinymce/plugins/table/plugin.js');
+require('../tinymce/js/tinymce/plugins/link');
+require('../tinymce/js/tinymce/plugins/lists');
+require('../tinymce/js/tinymce/plugins/table');
 
 /* content UI CSS is required */
 const contentUiSkinCss = require('../tinymce/js/tinymce/skins/ui/oxide/content.css');

@@ -59,17 +59,29 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== PowerPaste
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **PowerPaste** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**PowerPaste** includes the following fix.
 
-==== <Premium plugin name 1 change 1>
+==== List with start attribute separated by `p` tags resulted in wrong numbering of the lists.
+// TINY-10585
 
-// CCFR here.
+Previously, when content from Microsoft Word contained a list that starts with a number grater than 1, and is pasted into the editor with `powerpaste` enabled, it caused all list items to display the same number.
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+For example, a list might appear as follows:
+
+[source]
+----
+7. Point 1 
+7. Point 2
+7. Point 3
+----
+
+{productname} {release-version} addresses this issue. Now, all lists correctly render with the proper numbering.
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]

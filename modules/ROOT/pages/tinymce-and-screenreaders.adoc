@@ -16,6 +16,7 @@ The following *Alt+key* and *Option+key* shortcuts can only be used when the con
 |Focus/jump to menu bar |Alt+F9 |⌥+F9
 |Focus/jump to toolbar |Alt+F10 |⌥+F10
 |Focus/jump to element path |Alt+F11 |⌥+F11
+|Focus/jump to notification |Alt+F12 |⌥+F12
 |Close menu/submenu/dialog |Esc |Esc
 |Return to the editor content area |Esc |Esc
 |Navigate left/right through menu/toolbar |Tab and the Arrow Keys |Tab and the Arrow Keys
@@ -45,6 +46,10 @@ To open submenus or grid selections on toolbar buttons, use the *Enter*, *Return
 === Navigating dialogs
 
 Dialogs such as *Insert/Edit Image* are opened from either a menu item or a toolbar button. Some dialogs contain multiple tabs or pages of options. To change tabs or pages, use the arrow keys; the highlighted tab will become active immediately. Use the *Tab* key to navigate between the dialog options on the selected dialog tab. The *Save* dialog button stores the changes, and the *Cancel* dialog button or the *Esc* key discards changes.
+
+=== Navigating notifications
+
+To focus on the editor notifications, press *Alt+F12* (or *⌥+F12*); which moves the keyboard focus to the first notification. To move the focus _between_ notifications and other focusable elements (e.g. links or buttons) within a notification, use the *Tab* key. Use *Shift+Tab* key to navigate backward. When you reach the end of the elements within a notification using *Tab* key, it will either cycle to the next notification in the list or cycle back to the first one if you're already on the last. To close the currently focused notification, press the *Esc* key.
 
 == Accessibility options
 

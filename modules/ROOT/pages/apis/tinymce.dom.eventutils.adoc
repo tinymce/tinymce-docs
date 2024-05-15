@@ -19,6 +19,8 @@ This class wraps the browsers native event logic with more convenient methods.
 listeners to child nodes within that target.|`xref:apis/tinymce.dom.eventutils.adoc[EventUtils]`
 |xref:#dispatch[dispatch()]|Dispatches the specified event on the specified target.|`xref:apis/tinymce.dom.eventutils.adoc[EventUtils]`
 |xref:#fire[fire()]|Fires the specified event on the specified target.
+
+
 __Deprecated in TinyMCE 6.0 and has been marked for removal in TinyMCE 7.0. Use `dispatch` instead.__|`xref:apis/tinymce.dom.eventutils.adoc[EventUtils]`
 |xref:#unbind[unbind()]|Unbinds the specified event by name, name and callback or all events on the target.|`xref:apis/tinymce.dom.eventutils.adoc[EventUtils]`
 |===
@@ -93,6 +95,8 @@ Dispatches the specified event on the specified target.
 fire(target: Object, name: String, args: Object): EventUtils
 ----
 Fires the specified event on the specified target.
+
+
 __Deprecated in TinyMCE 6.0 and has been marked for removal in TinyMCE 7.0. Use `dispatch` instead.__
 
 ==== Parameters

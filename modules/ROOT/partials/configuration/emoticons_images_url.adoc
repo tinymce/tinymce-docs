@@ -3,11 +3,11 @@
 
 This option sets the base URL for the images used to represent emojis when using the `+emojiimages+` database.
 
-By default, this option loads the required image _assets_ from the Twemoji CDN. To use self-hosted emoji images, download the image _assets_ from the https://github.com/twitter/twemoji/#download[Twitter Emoji (twemoji) GitHub repository].
+By default, this option loads the required image _assets_ from the Twemoji CDN. To use self-hosted emoji images, download the image _assets_ from the https://github.com/jdecked/twemoji/#download[Twitter Emoji (Twemoji) GitHub repository].
 
 *Type:* `+String+`
 
-*Default value:* `+'https://twemoji.maxcdn.com/v/13.0.1/72x72/'+`
+*Default value:* `+'https://cdnjs.cloudflare.com/ajax/libs/twemoji/15.1.0/72x72/'+`
 
 === Example: using `+emoticons_images_url+`
 

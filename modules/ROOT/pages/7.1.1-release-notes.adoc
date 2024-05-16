@@ -155,10 +155,18 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Resolved an issue where emojis were not loading correctly due to a broken CDN
+// #TINY-10878
 
-// CCFR here.
+Recently, the original CDN url {productname} used for the twitter emoji database was discontinued. 
+
+As a consequence, all emoji's would not render, however this issue was resolved by the CDN owner by a redirect to an active link
+
+{productname} {release-version} addresses this issue. Now, {producname} has set the default CDN link to the actively maintained one.
+
+As a result, emoji's now render in all occasion without redirecting.
+
+For more information about these changes, see xref:emoticons.adoc#emoticons_images_url[Emoticons#emoticons_images_url].
 
 
 [[security-fixes]]

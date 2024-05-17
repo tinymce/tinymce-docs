@@ -71,7 +71,7 @@ In the initial release of the Math Plugin, {productname} did nothing when the us
 
 As a consequence, when the user cleared the formula and then clicked "save", {productname} did not remove the element from the document.
 
-{productname} {release-version} addresses this issue. Now, when a user has a formula selected, clears it, and then clicks "save", the selected formula and element is removed from the editor.
+{productname} {release-version} addresses this issue. Now, when a user has a formula selected, clears it, and clicks "save", the selected formula and element are properly removed from the editor.
 
 For information on the **Math** plugin, see: xref:math.adoc[Math].
 

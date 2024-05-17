@@ -155,6 +155,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
+=== Autocompleter possible values are no longer capped at a length of 10.
+// #TINY-10942
+
+Previously in {productname}, the Autocompleter option values were constrained to lengths of less than 10. As a consequence, the Autocompleter popover would close after only one value being selected if the selected value was greater than or equal to 10. This created a limitation for users who needed to select multiple values consecutively with lengths greater than 10.
+
+In {productname} {release-version}, this hardcoded limit of 10 has been removed. The Autocompleter now allows selection of multiple options consecutively with values of any length, while keeping the same popover open.
+
 === Resolved an issue where emojis were not loading correctly due to a broken CDN
 // #TINY-10878
 

@@ -67,7 +67,7 @@ The **Math** premium plugin includes the following fix:
 
 ==== Clearing the formula input and then saving didn't remove the element.
 
-In the initial release of the Math Plugin, {productname} did nothing when the user saved an empty formula, even if a formula was selected.
+In the initial release of the Math Plugin, {productname} did not remove the selected formula and element when the user saved an empty formula.
 
 As a consequence, when the user cleared the formula and clicked "save", the selected formula and element remained in the editor.
 

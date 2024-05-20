@@ -65,7 +65,7 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **PowerPaste** includes the following fix.
 
-==== List with start attribute separated by `p` tags resulted in wrong numbering of the lists.
+==== A list with the start attribute, separated by `p` tags, resulted in incorrect numbering of lists.
 // TINY-10585
 
 Previously, when content from Microsoft Word contained a list that starts with a number greater than 1, and is pasted into the editor with `powerpaste` enabled, it caused all list items to display the same number.

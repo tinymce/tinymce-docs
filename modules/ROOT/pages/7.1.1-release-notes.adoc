@@ -206,6 +206,13 @@ As a result, emoji's now render in all occasion without redirecting.
 
 For more information about these changes, see xref:emoticons.adoc#emoticons_images_url[Emoticons#emoticons_images_url].
 
+=== Insert/Edit image dialog lost focus after the image upload completed.
+// #TINY-10885
+
+Previously, when using the {productname} editor's `Insert/Edit Image` dialog and uploading an image from the 'Upload' tab, the focus would move outside of the dialog after the image was successfully uploaded. As a consequence, users were unable to navigate within the dialog using the tab key.
+
+In {productname} {release-version}, this issue has been addressed. Now, the focus remains inside the `Insert/Edit Image` dialog after uploading an image, allowing users to navigate within the dialog using the keyboard as expected.
+
 
 [[security-fixes]]
 == Security fixes

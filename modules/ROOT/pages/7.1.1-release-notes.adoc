@@ -59,17 +59,21 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== Math Plugin
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Math** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+The **Math** premium plugin includes the following fix:
 
-==== <Premium plugin name 1 change 1>
+==== Clearing the formula input and then saving didn't remove the element.
 
-// CCFR here.
+In the initial release of the Math Plugin, {productname} did not remove the selected formula and element when the user saved an empty formula.
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+As a consequence, when the user cleared the formula and clicked "save", the selected formula and element remained in the editor.
+
+{productname} {release-version} addresses this issue. Now, when a user has a formula selected, clears it, and clicks "save", the selected formula and element are properly removed from the editor.
+
+For information on the **Math** plugin, see: xref:math.adoc[Math].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]

@@ -173,7 +173,7 @@ For more information about these changes, see xref:emoticons.adoc#emoticons_imag
 
 Previously, when opening a dialog with an `iframe` element that had a different background color than the dialog, the corners of the dialog did not round off as expected as the border radius was applied to the dialog and not the iframe.
 
-{productname} {release-version} addresses this issue by applying the border radius to the `iframe` itself, ensuring that it renders correctly.
+{productname} {release-version} addresses this issue by additionally applying the border radius to the `iframe` itself, ensuring that it renders correctly.
 
 As a result, borders now render properly, and the background of the `iframe` is no longer visible through to the parent dialog.
 

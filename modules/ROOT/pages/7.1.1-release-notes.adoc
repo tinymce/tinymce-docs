@@ -155,6 +155,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
+=== Deleting into a list from a paragraph that has an `img` tag could cause extra inline styles to be added.
+// #TINY-10892
+
+Previously in {productname}, there was an issue with lists when the host browser was Google Chrome. The issue occurred when there was content with a list followed by a paragraph that contained an `img` element. If the cursor was placed at the start of the paragraph and the backspace key was pressed, the content of the paragraph would be merged into the list item, but the `img` element and other neighboring elements would get undesired inline font styles.
+
+This issue has been fixed in {productname} {release-version}. Now, a check has been added to prevent the inline styles from being added following this action. As a result, the resulting HTML no longer gets undesired inline styles, and the behavior is as expected.
+
 === Resolved an issue where emojis were not loading correctly due to a broken CDN
 // #TINY-10878
 

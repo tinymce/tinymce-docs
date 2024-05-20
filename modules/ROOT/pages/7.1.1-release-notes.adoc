@@ -206,10 +206,21 @@ As a result, emoji's now render in all occasion without redirecting.
 
 For more information about these changes, see xref:emoticons.adoc#emoticons_images_url[Emoticons#emoticons_images_url].
 
+==== Iframes in dialogs were not rendering rounded borders correctly.
+// #TINY-10901
+
+Previously, when opening a dialog with an `iframe` element that had a different background color than the dialog, the corners of the dialog did not round off as expected as the border radius was applied to the `iframe` parent element and not the `iframe`.
+
+{productname} {release-version} addresses this issue by additionally applying the border radius to the `iframe` itself, ensuring that it renders correctly.
+
+As a result, borders now render properly, and the background of the `iframe` is no longer visible through to the parent dialog.
+
 === Insert/Edit image dialog lost focus after the image upload completed.
 // #TINY-10885
 
-Previously, when using the {productname} editor's `Insert/Edit Image` dialog and uploading an image from the 'Upload' tab, the focus would move outside of the dialog after the image was successfully uploaded. As a consequence, users were unable to navigate within the dialog using the tab key.
+Previously, when using the {productname} editor's `Insert/Edit Image` dialog and uploading an image from the 'Upload' tab, the focus would move outside of the dialog after the image was successfully uploaded.
+
+As a consequence, users were unable to navigate within the dialog using the tab key.
 
 In {productname} {release-version}, this issue has been addressed. Now, the focus remains inside the `Insert/Edit Image` dialog after uploading an image, allowing users to navigate within the dialog using the keyboard as expected.
 

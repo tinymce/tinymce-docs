@@ -8,6 +8,8 @@ NOTE: This is the {productname} Community version changelog. For information abo
 
 === Fixed
 
+* Insert/Edit image dialog lost focus after the image upload completed.
+// #TINY-10885
 * Deleting into a list from a paragraph that has an `img` tag could cause extra inline styles to be added.
 // #TINY-10892
 * Resolved an issue where emojis were not loading correctly due to a broken CDN.

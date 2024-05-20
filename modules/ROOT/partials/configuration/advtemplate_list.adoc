@@ -10,7 +10,32 @@ None
 
 *Return data:* `+Array+`
 
-=== Example of `advtemplate_list` response
+=== Example: using `advtemplate_list`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea#advtemplate',  // change this value according to your html
+  plugins: ["advtemplate"],
+  advtemplate_list: () =>
+    fetch('/categories', {
+      method: 'GET',
+    })
+    .then((response) => response.json())
+    .then((data) => data)
+    .catch((error) => console.log('Failed to get template list\n' + error)),
+});
+----
+
+The data returned by `advtemplate_list` must adhere to the following requirements:
+
+. Each list item must have a unique `id` value.
+. Each list item must have a non-empty `title` value.
+. Each category item is required to include an `items` sublist, which can be empty.
+. Category items must not contain nested subcategories.
+. Template item is not required to include a `content` value.
+
+=== Sample `advtemplate_list` response
 
 [source,js]
 ----
@@ -32,29 +57,4 @@ None
     ]
   }
 ]
-----
-
-The data returned by `advtemplate_list` must adhere to the following requirements:
-
-. Each list item must have a unique `id` value.
-. Each list item must have a non-empty `title` value.
-. Each category item is required to include an `items` sublist, which can be empty.
-. Category items must not contain nested subcategories.
-. Template item is not required to include a `content` value.
-
-=== Example: using `advtemplate_list`
-
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea#advtemplate',  // change this value according to your html
-  plugins: ["advtemplate"],
-  advtemplate_list: () =>
-    fetch('/categories', {
-      method: 'GET',
-    })
-    .then((response) => response.json())
-    .then((data) => data)
-    .catch((error) => console.log('Failed to get template list\n' + error)),
-});
 ----

@@ -68,7 +68,7 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== List with start attribute separated by `p` tags resulted in wrong numbering of the lists.
 // TINY-10585
 
-Previously, when content from Microsoft Word contained a list that starts with a number grater than 1, and is pasted into the editor with `powerpaste` enabled, it caused all list items to display the same number.
+Previously, when content from Microsoft Word contained a list that starts with a number greater than 1, and is pasted into the editor with `powerpaste` enabled, it caused all list items to display the same number.
 
 For example, a list might appear as follows:
 

@@ -1,0 +1,122 @@
+= {productname} {release-version}
+:release-version: 7.1.1
+:navtitle: {productname} {release-version}
+:description: Release notes for {productname} {release-version}
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+
+[[overview]]
+== Overview
+
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, May 22^nd^, 2024.
+
+These release notes provide an overview of the changes for {productname} {release-version}, including:
+
+* xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
+* xref:bug-fixes[Bug fixes]
+
+
+[[accompanying-premium-plugin-changes]]
+== Accompanying Premium plugin changes
+
+The following premium plugin updates were released alongside {productname} {release-version}.
+
+
+=== Math Plugin
+
+The {productname} {release-version} release includes an accompanying release of the **Math** premium plugin.
+
+This **Math** premium plugin release includes the following fix:
+
+==== Clearing the formula input and then saving didn't remove the element.
+
+In the initial release of the Math Plugin, {productname} did not remove the selected formula and element when the user saved an empty formula.
+
+As a consequence, when the user cleared the formula and clicked "save", the selected formula and element remained in the editor.
+
+{productname} {release-version} addresses this issue. Now, when a user has a formula selected, clears it, and clicks "save", the selected formula and element are properly removed from the editor.
+
+For information on the **Math** plugin, see: xref:math.adoc[Math].
+
+=== Enhanced Tables
+
+The {productname} {release-version} release includes an accompanying release of the **Enhanced Tables** premium plugin.
+
+This **Enhanced Tables** plugin release includes the following fix:
+
+==== The sort algorithm would sometimes incorrectly compare words that start with a digit.
+// #TINY-10421
+
+Previously in **Enhanced Tables**, when trying to sort a table where the cells contained text that started with numbers followed by words, the table would only consider the number part of the text when sorting. This would cause the table to incorrectly sort the words.
+
+For example, when trying to sort the following table by column ascending (A-Z):
+
+[cols="1", options="header"]
+|===
+| Column 1
+
+| 3banana
+| 3apple
+|===
+
+The table would not sort them correctly due to it only considering the number part, so `3banana` would remain above `3apple`, even though `3apple` should come before `3banana` alphanumerically.
+
+This has been fixed in {productname} {release-version}. Now, when sorting a table with text that starts with a digit, the table considers the whole word not just the digits part. As a result, the table now correctly sorts words that start with a digit.
+
+For information on the **Enhanced Tables** plugin, see: xref:advtable.adoc[Enhanced Tables].
+
+
+[[bug-fixes]]
+== Bug fixes
+
+{productname} {release-version} also includes the following bug fixes:
+
+=== Insert/Edit image dialog lost focus after the image upload completed.
+// #TINY-10885
+
+Previously, when using the {productname} editor's `Insert/Edit Image` dialog and uploading an image from the 'Upload' tab, the focus would move outside of the dialog after the image was successfully uploaded.
+
+As a consequence, users were unable to navigate within the dialog using the tab key.
+
+In {productname} {release-version}, this issue has been addressed. Now, the focus remains inside the `Insert/Edit Image` dialog after uploading an image, allowing users to navigate within the dialog using the keyboard as expected.
+
+=== Deleting into a list from a paragraph that has an `img` tag could cause extra inline styles to be added.
+// #TINY-10892
+
+Previously in {productname}, there was an issue with lists when the host browser was Google Chrome. The issue occurred when there was content with a list followed by a paragraph that contained an `img` element. If the cursor was placed at the start of the paragraph and the backspace key was pressed, the content of the paragraph would be merged into the list item, but the `img` element and other neighboring elements would get undesired inline font styles.
+
+This issue has been fixed in {productname} {release-version}. Now, a check has been added to prevent the inline styles from being added following this action. As a result, the resulting HTML no longer gets undesired inline styles, and the behavior is as expected.
+
+=== Resolved an issue where emojis configured with the `emojiimages` database were not loading correctly due to a broken CDN.
+// #TINY-10878
+
+Recently, the original CDN url {productname} used for the twitter emoji database was discontinued. 
+
+As a consequence, all emoji's would not render, however this issue was resolved by the CDN owner by a redirect to an active link
+
+{productname} {release-version} addresses this issue. Now, {producname} has set the default CDN link to the actively maintained one.
+
+As a result, emoji's now render in all occasion without redirecting.
+
+For more information about these changes, see xref:emoticons.adoc#emoticons_images_url[Emoticons (emoticons_images_url)].
+
+=== Iframes in dialogs were not rendering rounded borders correctly.
+// #TINY-10901
+
+Previously, when opening a dialog with an `iframe` element that had a different background color than the dialog, the corners of the dialog did not round off as expected as the border radius was applied to the `iframe` parent element and not the `iframe`.
+
+{productname} {release-version} addresses this issue by additionally applying the border radius to the `iframe` itself, ensuring that it renders correctly.
+
+As a result, borders now render properly, and the background of the `iframe` is no longer visible through to the parent dialog.
+
+=== Autocompleter possible values are no longer capped at a length of 10.
+// #TINY-10942
+
+Previously in {productname}, the Autocompleter option values were constrained to lengths of less than 10.
+
+As a consequence, the Autocompleter popover would close after only one value being selected if the selected value was greater than or equal to 10. This created a limitation for users who needed to select multiple values consecutively with lengths greater than 10.
+
+In {productname} {release-version}, this hardcoded limit of 10 has been removed. The Autocompleter now allows selection of multiple options consecutively with values of any length, while keeping the same popover open.

@@ -90,7 +90,7 @@ Previously in {productname}, there was an issue with lists when the host browser
 
 This issue has been fixed in {productname} {release-version}. Now, a check has been added to prevent the inline styles from being added following this action. As a result, the resulting HTML no longer gets undesired inline styles, and the behavior is as expected.
 
-=== Resolved an issue where emojis were not loading correctly due to a broken CDN.
+=== Resolved an issue where emojis configured with the `emojiimages` database were not loading correctly due to a broken CDN.
 // #TINY-10878
 
 Recently, the original CDN url {productname} used for the twitter emoji database was discontinued. 

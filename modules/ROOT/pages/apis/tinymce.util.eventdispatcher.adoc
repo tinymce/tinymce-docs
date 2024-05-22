@@ -28,7 +28,7 @@ eventDispatcher.dispatch('click', { data: 123 });
 |xref:#fire[fire()]|Fires the specified event by name.
 
 
-__Deprecated in TinyMCE 6.0 and has been marked for removal in TinyMCE 7.0. Use `dispatch` instead.__|`xref:apis/tinymce.util.eventdispatcher.adoc[EventDispatcher]`
+__Marked for removal in TinyMCE 8.0. Use `dispatch` instead.__|`xref:apis/tinymce.util.eventdispatcher.adoc[EventDispatcher]`
 |xref:#has[has()]|Returns true/false if the dispatcher has a event of the specified name.|`xref:apis/tinymce.util.eventdispatcher.adoc[EventDispatcher]`
 |xref:#isNative[isNative()]|Returns true/false if the specified event name is a native browser event or not.|`xref:apis/tinymce.util.eventdispatcher.adoc[EventDispatcher]`
 |xref:#off[off()]|Unbinds an event listener to a specific event by name.|`xref:apis/tinymce.util.eventdispatcher.adoc[EventDispatcher]`
@@ -74,7 +74,7 @@ fire(name: String, args: Object?): Object
 Fires the specified event by name.
 
 
-__Deprecated in TinyMCE 6.0 and has been marked for removal in TinyMCE 7.0. Use `dispatch` instead.__
+__Marked for removal in TinyMCE 8.0. Use `dispatch` instead.__
 
 ==== Examples
 [source, javascript]

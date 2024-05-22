@@ -12,7 +12,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 // #TINY-10885
 * Deleting into a list from a paragraph that has an `img` tag could cause extra inline styles to be added.
 // #TINY-10892
-* Resolved an issue where emojis were not loading correctly due to a broken CDN.
+* Resolved an issue where emojis configured with the `emojiimages` database were not loading correctly due to a broken CDN.
 // #TINY-10878
 * Iframes in dialogs were not rendering rounded borders correctly.
 // #TINY-10901

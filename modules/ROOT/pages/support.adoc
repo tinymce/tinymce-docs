@@ -4,21 +4,32 @@
 :description_short: Getting support and supported platforms
 :keywords: browser, compatibility, safari, firefox, chrome, edge, mobile, support, supported, browsers, windows, osx, linux, premium, self-hosted, selfhosted
 
-== Getting support
+[[tinymce-version-support-timeframes]]
+== {productname} Version Support Timeframes
 
-=== Premium support
+=== Premium Support
 
 Paid premium support is available as part of link:{pricingpage}/[{enterpriseversion} and {cloudname} subscriptions]. {productname} Enterprise customers can link:{supporturl}/[submit a case support request].
 
-=== Community support
+=== End of Premium Support
+
+Support for the enterprise version of {productname} ends **18 months** from the date of release.
+
+For detailed release dates and additional release information, please visit the xref:release-notes.adoc[Release Information] page on the xref:introduction-to-tinymce.adoc[{productname} documentation].
+
+=== Community Support
 
 Open Source Community Edition users can get free help from Stack Overflow using the link:{communitysupporturl}[`{prodnamecode}` tag].
+
+==== End of Community Support
+
+Support for the current community version ends with the **next** release of the community version, regardless of whether it is a minor or major release.
 
 // Note: The supportedversionsandplatforms anchor is needed for older external links
 [[supported-versions-and-platforms]]
 == [[supportedversionsandplatforms]] Supported Versions and Platforms
 
-include::partial$misc/supported-versions.adoc[leveloffset=+1]
+include::partial$misc/software-licence-agreement.adoc[leveloffset=+1]
 
 include::partial$misc/browser-compatibility.adoc[leveloffset=+1]
 

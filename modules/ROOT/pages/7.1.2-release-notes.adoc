@@ -62,6 +62,7 @@ The {productname} {release-version} release includes an accompanying release of 
 This **Math** premium plugin release includes the following fix:
 
 ==== Math icon state was not set to active on math element selection.
+// #TINY-10931
 
 Previously, the Math icon was not set to active when a math element was selected within the editor.
 

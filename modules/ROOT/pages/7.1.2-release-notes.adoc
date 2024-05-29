@@ -157,6 +157,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // CCFR here.
 
 === CSS color values set to `transparent` were incorrectly converted to `+#000000+`.
+// #TINY-10916
 
 Previously, transparent color values were incorrectly converted to `+#00000000+`, deviating from the behavior observed in earlier major versions.  Additionally, {productname} does not export the last two digits of the hex string, so the alpha value is lost, causing transparent to be converted to `+#000000+`.
 

@@ -53,6 +53,7 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 [[accompanying-premium-plugin-changes]]
 == Accompanying Premium plugin changes
 
+
 The following premium plugin updates were released alongside {productname} {release-version}.
 
 === Math Plugin
@@ -160,6 +161,18 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // #TINY-vwxyz1
 
 // CCFR here.
+
+[[acronyms-were-not-managed-correctly]]
+=== Acronyms were not managed correctly.
+// #TINY-10904
+
+Previously, acronyms were not managed correctly which caused false positive results with Spell Checker premium plugin. In this case, the check was separating the words excluding the dot at the end also when we check the acronyms.
+
+As a consequence, Spell Checker Premium plugin would identify acronyms without the last dot, highlighting them as errors.
+
+{productname} {release-version} addresses this issue. Now, If the word is an abbreviation, {productname} includes the next character if it is a period.
+
+As a result, acronyms are now managed correctly, and the Spell Checker retrieves the correct word (with the dot included) and provides accurate results.
 
 
 [[security-fixes]]

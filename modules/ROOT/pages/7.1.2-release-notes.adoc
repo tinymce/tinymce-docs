@@ -53,7 +53,25 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 [[accompanying-premium-plugin-changes]]
 == Accompanying Premium plugin changes
 
-The following premium plugin updates were released alongside {productname} {release-version}
+
+The following premium plugin updates were released alongside {productname} {release-version}.
+
+=== Math Plugin
+
+The {productname} {release-version} release includes an accompanying release of the **Math** premium plugin.
+
+This **Math** premium plugin release includes the following fix:
+
+==== Math icon state was not set to active on math element selection.
+// #TINY-10931
+
+Previously, the Math icon was not set to active when a math element was selected within the editor.
+
+As a consequence, users had no visual indication that a math element was selected or that it could be edited by selecting it and then clicking the toolbar button.
+
+{productname} {release-version} addresses this issue. Now, when any Math element is selected, the button's active state is triggered.
+
+For information on the **Math** plugin, see: xref:math.adoc[Math].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]

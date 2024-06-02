@@ -431,6 +431,9 @@ The following events are available:
 * `+onBlur+`
 * `+onClick+`
 * `+onContextMenu+`
+* `+onCompositionEnd+`
+* `+onCompositionStart+`
+* `+onCompositionUpdate+`
 * `+onCopy+`
 * `+onCut+`
 * `+onDblclick+`
@@ -443,6 +446,7 @@ The following events are available:
 * `+onFocus+`
 * `+onFocusIn+`
 * `+onFocusOut+`
+* `+onInput+`
 * `+onKeyDown+`
 * `+onKeyPress+`
 * `+onKeyUp+`

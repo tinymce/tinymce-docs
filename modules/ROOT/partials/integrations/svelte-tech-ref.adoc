@@ -43,6 +43,28 @@ The `+tinymce-svelte+` `+Editor+` component accepts the following properties:
 />
 ----
 
+[[licenseKey]]
+=== `+licenseKey+`
+
+{cloudname} License key.
+
+Use this when self-hosting {productname} instead of loading from {cloudname}. For more information, see: xref:license-key.adoc[License Key].
+
+*Type:* `+String+`
+
+*Default value:* `+undefined+`
+
+*Possible values:* `undefined`, `'gpl'` or a valid {productname} license key
+
+==== Example: using `+licenseKey+`
+
+[source,jsx]
+----
+<Editor
+  licenseKey="your-license-key"
+/>
+----
+
 [[channel]]
 === `+channel+`
 
@@ -229,6 +251,10 @@ The following events are available:
 * `+change+`
 * `+clearundos+`
 * `+click+`
+* `+CommentChange+`
+* `+CompositionEnd+`
+* `+CompositionStart+`
+* `+CompositionUpdate+`
 * `+contextmenu+`
 * `+copy+`
 * `+cut+`
@@ -248,6 +274,7 @@ The following events are available:
 * `+getcontent+`
 * `+hide+`
 * `+init+`
+* `+input+`
 * `+keydown+`
 * `+keypress+`
 * `+keyup+`

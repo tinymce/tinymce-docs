@@ -1,6 +1,14 @@
 Covered in this section:
 
 * xref:configuring-the-tinymce-svelte-integration[Configuring the TinyMCE Svelte integration]
+** xref:apikey[apiKey]
+** xref:licensekey[licenseKey]
+** xref:channel[channel]
+** xref:id[id]
+** xref:inline[inline]
+** xref:disabled[disabled]
+** xref:scriptsrc[scriptsrc]
+** xref:conf[conf]
 * xref:component-binding[Component binding]
 * xref:event-binding[Event binding]
 
@@ -40,6 +48,28 @@ The `+tinymce-svelte+` `+Editor+` component accepts the following properties:
 ----
 <Editor
   apiKey="your-api-key"
+/>
+----
+
+[[licenseKey]]
+=== `+licenseKey+`
+
+{cloudname} License key.
+
+Use this when self-hosting {productname} instead of loading from {cloudname}. For more information, see: xref:license-key.adoc[License Key].
+
+*Type:* `+String+`
+
+*Default value:* `+undefined+`
+
+*Possible values:* `undefined`, `'gpl'` or a valid {productname} license key
+
+==== Example: using `+licenseKey+`
+
+[source,jsx]
+----
+<Editor
+  licenseKey="your-license-key"
 />
 ----
 
@@ -229,6 +259,10 @@ The following events are available:
 * `+change+`
 * `+clearundos+`
 * `+click+`
+* `+CommentChange+`
+* `+CompositionEnd+`
+* `+CompositionStart+`
+* `+CompositionUpdate+`
 * `+contextmenu+`
 * `+copy+`
 * `+cut+`
@@ -248,6 +282,7 @@ The following events are available:
 * `+getcontent+`
 * `+hide+`
 * `+init+`
+* `+input+`
 * `+keydown+`
 * `+keypress+`
 * `+keyup+`

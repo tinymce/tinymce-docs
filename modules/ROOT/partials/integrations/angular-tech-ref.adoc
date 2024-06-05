@@ -5,6 +5,7 @@
 * xref:using-the-tinymce-angular-integration[Using the TinyMCE Angular integration]
 * xref:configuring-the-editor[Configuring the editor]
 ** xref:apikey[`+apiKey+`]
+** xref:licensekey[`+licenseKey+`]
 ** xref:cloudchannel[`+cloudChannel+`]
 ** xref:disabled[`+disabled+`]
 ** xref:id[`+id+`]
@@ -32,7 +33,9 @@ The following table shows the supported versions of Angular and the required ver
 [cols="^,^",options="header"]
 |===
 |Angular Version |`+tinymce-angular+` version
-|13+ |5.x or newer
+|16+ |8.x
+|14 or 15 |7.x
+|13 |6.x
 |9 to 12 |4.x
 |5 to 8 |3.x
 |4 or older |Not Supported
@@ -124,6 +127,28 @@ include::partial$misc/get-an-api-key.adoc[]
 <editor
   apiKey="your-api-key"
 ></editor>
+----
+
+[[licensekey]]
+=== `+licenseKey+`
+
+{cloudname} License key.
+
+Use this when self-hosting {productname} instead of loading from {cloudname}. For more information, see: xref:license-key.adoc[License Key].
+
+*Type:* `+String+`
+
+*Default value:* `+undefined+`
+
+*Possible values:* `undefined`, `'gpl'` or a valid {productname} license key
+
+==== Example: using `+licenseKey+`
+
+[source,jsx]
+----
+<Editor
+  licenseKey='your-license-key'
+/>
 ----
 
 [[cloudchannel]]
@@ -406,6 +431,9 @@ The following events are available:
 * `+onBlur+`
 * `+onClick+`
 * `+onContextMenu+`
+* `+onCompositionEnd+`
+* `+onCompositionStart+`
+* `+onCompositionUpdate+`
 * `+onCopy+`
 * `+onCut+`
 * `+onDblclick+`
@@ -418,6 +446,7 @@ The following events are available:
 * `+onFocus+`
 * `+onFocusIn+`
 * `+onFocusOut+`
+* `+onInput+`
 * `+onKeyDown+`
 * `+onKeyPress+`
 * `+onKeyUp+`

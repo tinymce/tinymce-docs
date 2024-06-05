@@ -4,6 +4,7 @@
 * xref:using-the-tinymce-vuejs-integration[Using the TinyMCE Vue.js integration]
 * xref:configuring-the-editor[Configuring the editor]
 ** xref:api-key[`+api-key+`]
+** xref:license-key[`+licenseKey+`]
 ** xref:cloud-channel[`+cloud-channel+`]
 ** xref:disabled[`+disabled+`]
 ** xref:id[`+id+`]
@@ -121,6 +122,28 @@ include::partial$misc/get-an-api-key.adoc[]
 ----
 <editor
   api-key="your-api-key"
+/>
+----
+
+[[license-key]]
+=== `+licenseKey+`
+
+{cloudname} License key.
+
+Use this when self-hosting {productname} instead of loading from {cloudname}. For more information, see: xref:license-key.adoc[License Key].
+
+*Type:* `+String+`
+
+*Default value:* `+undefined+`
+
+*Possible values:* `undefined`, `'gpl'` or a valid {productname} license key
+
+==== Example: using `+licenseKey+`
+
+[source,html]
+----
+<editor
+  licenseKey="your-license-key"
 />
 ----
 
@@ -412,6 +435,10 @@ The following events are available:
 * `+clearUndos+`
 * `+click+`
 * `+contextMenu+`
+* `+commentChange+`
+* `+compositionEnd+`
+* `+compositionStart+`
+* `+compositionUpdate+`
 * `+copy+`
 * `+cut+`
 * `+dblclick+`
@@ -430,6 +457,7 @@ The following events are available:
 * `+getContent+`
 * `+hide+`
 * `+init+`
+* `+input+`
 * `+keyDown+`
 * `+keyPress+`
 * `+keyUp+`

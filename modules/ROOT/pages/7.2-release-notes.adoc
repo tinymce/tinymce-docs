@@ -55,6 +55,21 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== Image Editing
+
+The {productname} {release-version} release includes an accompanying release of the **Image Editing** premium plugin.
+
+**Image Editing** includes the following improvement.
+
+==== Dialog slider components now emit an onChange event when using arrow keys.
+// #TINY-10428
+
+Previously in the Edit Image dialog, when using the left/right arrow keys to adjust settings with sliders, the slider component did not properly update the image preview. As a consequence, users were unable to use the keyboard to update image properties controlled by sliders such as Brightness, Contrast, Color Levels, and Gamma settings.
+
+In {productname} {release-version}, this issue has been resolved. Now, the slider component emits an onChange event when the slider value is adjusted using the left/right arrow keys. As a result, users can now update the Edit Image dialog sliders using the keyboard.
+
+For information on the **Image Editing** plugin, see: xref:editimage.adoc[Image Editing].
+
 === <Premium plugin name 1> <Premium plugin name 1 version>
 
 The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

@@ -67,6 +67,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Math
+
+The {productname} {release-version} release includes an accompanying release of the **Math** premium plugin.
+
+This **Math** plugin release includes the following fix:
+
+==== Math preview was not rendered with the colors from the current skin.
+// #TINY-10900
+
+Previously, the **Math** preview did not follow the editor skin UI colors. As a consequence, the equation preview dialog was always rendered with black text on white background even if the UI skin was a dark skin.
+
+This has been addressed in {productname} {release-version}. Now, the editor renders the equation preview inline with the **Math** dialog, and not using an iframe, so that the preview container's colors are inherited from the dialog. As a result, the text color and background color of the equation preview container now follows the editor skin UI colors.
+
+For information on the **Math** plugin, see: xref:math.adoc[Math].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

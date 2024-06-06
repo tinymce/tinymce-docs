@@ -105,12 +105,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[improvements]]
 == Improvements
 
-{productname} {release-version} also includes the following improvement<s>:
+{productname} {release-version} also includes the following improvements:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Added `referrerpolicy` as a valid attribute for an iframe element.
+// #TINY-10374
 
-// CCFR here.
+Previously in {productname}, the `referrerpolicy` attribute was not a valid attribute for an iframe element. In {productname} {release-version}, the `referrerpolicy` attribute has been added to the schema as a valid attribute for an iframe element. This allows users to add an iframe with a `referrerpolicy` attribute.
 
 
 [[additions]]

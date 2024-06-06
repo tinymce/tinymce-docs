@@ -132,39 +132,20 @@ tinymce.activeEditor.options.debug();
 
 The following data types are logged exactly as they are passed to `tinymce.init`:
 
-[options="header"]
-|===
-| Data Type | Example Option | Logged Result
+* `string`
+* `number`
+* `boolean`
+* `object`
+* `array`
+* `null`
 
-| `string`  | `selector: "textarea"`                    | `selector: "textarea"`
+All other data types not mentioned above are logged as `[object X]` where "X" is the type of the object, such as:
 
-| `number`  | `height: 600`                             | `height: 600`
-
-| `boolean` | `menubar: true`                           | `menubar: true`
-
-| `object`  | `someOption: { val: true }`   | `someOption: { val: true }`
-
-| `array`   | `anotherOption: [1, 2, 3]`              | `anotherOption: [1, 2, 3]`
-
-| `null`    | `someNullableOption: null`                | `someNullableOption: null`
-|===
-
-Any other data types not mentioned above are logged as `[object X]` where "X" is the type of the Object, such as:
-
-[cols="1,2,2", options="header"]
-|===
-| Data Type | Example Option | Logged Result
-
-| `Function` | `someFunction: function() { return true; }` | `someFunction: [object Function]`
-
-| `Undefined` | `someUndefinedOption: undefined` | `someUndefinedOption: [object Undefined]`
-
-| `RegExp` | `someRegExp: /abc/` | `someRegExp: [object RegExp]`
-
-| `Promise` | `somePromise: new Promise(() => {})` | `somePromise: [object Promise]`
-
-| HTML node | `someNode: document.createElement('div')` | `someNode: [object HTMLDivElement]`
-|===
+* `Function`
+* `Undefined`
+* `RegExp`
+* `Promise`
+* and more
 
 ==== Example: using the `options.debug` API:
 

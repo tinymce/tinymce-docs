@@ -42,7 +42,7 @@ const ai_request =  (request, respondWith) => respondWith.stream(async (signal, 
   ];
 
   const requestBody = {
-    model: 'gpt-3.5-turbo',
+    model: 'gpt-4o',
     temperature: 0.7,
     max_tokens: 800,
     messages,

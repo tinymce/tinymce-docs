@@ -116,87 +116,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[additions]]
 == Additions
 
-{productname} {release-version} also includes the following addition:
+{productname} {release-version} also includes the following addition<s>:
 
-=== Added `options.debug` API that logs the initial raw editor options to console.
-// #TINY-10605
+=== <TINY-vwxyz 1 changelog entry>
+// #TINY-vwxyz1
 
-This release introduces a new `options.debug` API that logs the initial raw editor options passed to `tinymce.init` to the console. This API is useful for debugging and troubleshooting issues with the editor, especially when dynamically composing many editor options from different sources.
-
-Usage:
-
-[source,js]
-----
-tinymce.activeEditor.options.debug();
-----
-
-The following data types are logged exactly as they are passed to `tinymce.init`:
-
-[options="header"]
-|===
-| Data Type | Example Option | Logged Result
-
-| `string`  | `selector: "textarea"`                    | `selector: "textarea"`
-
-| `number`  | `height: 600`                             | `height: 600`
-
-| `boolean` | `menubar: true`                           | `menubar: true`
-
-| `object`  | `someOption: { val: true }`   | `someOption: { val: true }`
-
-| `array`   | `anotherOption: [1, 2, 3]`              | `anotherOption: [1, 2, 3]`
-
-| `null`    | `someNullableOption: null`                | `someNullableOption: null`
-|===
-
-Any other data types not mentioned above are logged as `[object X]` where "X" is the type of the Object, such as:
-
-[cols="1,2,2", options="header"]
-|===
-| Data Type | Example Option | Logged Result
-
-| `Function` | `someFunction: function() { return true; }` | `someFunction: [object Function]`
-
-| `Undefined` | `someUndefinedOption: undefined` | `someUndefinedOption: [object Undefined]`
-
-| `RegExp` | `someRegExp: /abc/` | `someRegExp: [object RegExp]`
-
-| `Promise` | `somePromise: new Promise(() => {})` | `somePromise: [object Promise]`
-
-| HTML node | `someNode: document.createElement('div')` | `someNode: [object HTMLDivElement]`
-|===
-
-==== Example: using the `options.debug` API:
-
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',
-  height: 500,
-  paste_as_text: true,
-  context_menu: [ 'image', 'lists' ],
-  menu: { insert: { title: 'Insert', items: 'table | image | accordion' }},
-  inline: null,
-  myUndefined: undefined,
-  init_instance_callback: (editor) => editor.options.debug(),
-});
-----
-
-The above code will log the following to the console:
-
-[source,js]
-----
-{
-  selector: 'textarea',
-  height: 500,
-  paste_as_text: true,
-  context_menu: [ 'image', 'lists' ],
-  menu: { insert: { title: 'Insert', items: 'table | image | accordion' }},
-  inline: null,
-  myUndefined: [object Undefined],
-  init_instance_callback: [object Function],
-}
-----
+// CCFR here.
 
 
 [[changes]]

@@ -1,7 +1,7 @@
 = Specify editor version & plugins
 :description_short: Specifying editor version and plugins for {cloudname} deployments.
 :description: Instructions on setting the {productname} editor version and plugins for {cloudname} deployments.
-:keywords: tinymce, cloud, script, textarea, apiKey, hybrid
+:keywords: tinymce, cloud, script, textarea, apiKey, hybrid, dev, testing, production
 
 [[specifying-the-tinymce-editor-version-deployed-from-cloud]]
 == Specifying the {productname} Editor Version from the Cloud
@@ -15,8 +15,81 @@ To set the {productname} version when deploying from {cloudname}, use the follow
 
 The example above shows the default way to load {productname} {productmajorversion} from {cloudname}. This URL ensures the most recent and verified version of {productname} is used.
 
+For loading a specific version of {productname} {productmajorversion} other than the latest release, replace the `7` in the URL with the desired version. For example, to load a minor version such as {productname} `7.1`, use the following URL:
+
+[source,html,subs="attributes+"]
+----
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7.1/tinymce.min.js" referrerpolicy="origin"></script>
+----
+
+To load a specific patch version, replace the `7` in the URL with the desired version. For example, to load {productname} `7.1.1`, use the following URL:
+
+[source,html,subs="attributes+"]
+----
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7.1.1/tinymce.min.js" referrerpolicy="origin"></script>
+----
+
 [TIP]
 Replace 'no-api-key' with your own API key.
+
+[#{productmajorversion}-{productmajorversion}-testing-and-{productmajorversion}-dev-release-channels]
+=== Difference between using {productname} {productmajorversion}, {productmajorversion}-Testing, and {productmajorversion}-Dev release channels
+
+[IMPORTANT]
+====
+All {cloudname} channels are based on the {enterpriseversion} version.
+
+* For complete information on the latest version of the {cloudname} `{productmajorversion}` release channel including premium changes, see: xref:release-notes.adoc[{productname} Release Notes].
+* For a summarised list of only the changes that affect the open-source version of {productname}, see: xref:changelog.adoc[{productname} Changelog].
+====
+
+Choose from the `{productmajorversion}`, `{productmajorversion}-testing`, or `{productmajorversion}-dev` release channels to load the latest version of {productname} from {cloudname}.
+
+These channels are updated automatically and provide the latest {productname} version based on the following criteria:
+
+[#{productmajorversion}-release-channel]
+==== {productmajorversion} Release Channel
+
+This channel deploys the latest release of {productname} that has passed our quality assurance process. The current version of {productname} available through the `/{productmajorversion}` channel can be found on the https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/version.txt[{cloudname} {productname} {productmajorversion} version page]. The {productname} {productmajorversion} channel can be loaded from `{cdnurl}`.
+
+[#example-using-the-{productmajorversion}-release-channel]
+===== Example: using the `{productmajorversion}` release channel
+
+[source,html,subs="attributes+"]
+----
+<script src="{cdnurl}" referrerpolicy="origin"></script>
+----
+
+[#{productmajorversion}-testing-release-channel]
+==== {productmajorversion}-Testing Release Channel
+
+This channel deploys the current *release candidate* for the `{productmajorversion}` channel. The {productname} release candidate is undergoing quality assurance. The current version of {productname} available through the `{productmajorversion}-testing` channel can be found on the https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-testing/version.txt[{cloudname} {productname} {productmajorversion}-testing version page].
+
+[#example-using-the-{productmajorversion}-testing-release-channel]
+===== Example: Using the `{productmajorversion}-testing` Release Channel
+
+[source,html,subs="attributes+"]
+----
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-testing/tinymce.min.js" referrerpolicy="origin"></script>
+----
+
+[#{productmajorversion}-dev-release-channel]
+==== {productmajorversion}-Dev Release Channel
+
+This channel deploys nightly builds of {productname}, which includes **unreleased changes** from the link:https://github.com/tinymce/tinymce/tree/main[{productname} repository^]. 
+
+The current version of {productname} is available on the `{productmajorversion}-dev` channel can be found on the link:https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-dev/version.txt[{cloudname} {productname} {productmajorversion}-dev version page^].
+
+[NOTE]
+{productname} now uses `main` branch for nightly builds instead of `develop` as of {productname} `7.0.0`.
+
+[#example-using-the-{productmajorversion}-dev-release-channel]
+===== Example: Using the `{productmajorversion}-dev` Release Channel
+
+[source,html,subs="attributes+"]
+----
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-dev/tinymce.min.js" referrerpolicy="origin"></script>
+----
 
 For more details, check out the xref:editor-and-features.adoc[{productname} editor via {cloudname}].
 
@@ -67,64 +140,3 @@ The `cloud-plugins.min.js` script allows loading of specific premium plugins fro
 This approach is intended for edge cases where you self-host most premium plugins on your own servers and only need one or two from {companyname} Cloud.
 
 '''
-
-=== Selecting Specific Editor Versions
-
-[IMPORTANT]
-====
-All {cloudname} channels are based on the {enterpriseversion} version.
-
-* For information on the latest version of the {cloudname} `{productmajorversion}` release channel, see: xref:release-notes.adoc[{productname} Release Notes].
-* For a list of changes that *may* be present in the {cloudname} testing channel, see: xref:changelog.adoc[{productname} Changelog].
-====
-
-[#{productmajorversion}-{productmajorversion}-testing-and-{productmajorversion}-dev-release-channels]
-=== Difference between using {productname} {productmajorversion}, {productmajorversion}-Testing, and {productmajorversion}-Dev release channels
-
-Choose from the `{productmajorversion}`, `{productmajorversion}-testing`, or `{productmajorversion}-dev` release channels to load the latest version of {productname} from {cloudname}.
-
-These channels are updated automatically and provide the latest {productname} version based on the following criteria:
-
-[#{productmajorversion}-release-channel]
-==== {productmajorversion} Release Channel
-
-This channel deploys the latest release of {productname} that has passed our quality assurance process. The current version of {productname} available through the `/{productmajorversion}` channel can be found on the https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/version.txt[{cloudname} {productname} {productmajorversion} version page]. The {productname} {productmajorversion} channel can be loaded from `{cdnurl}`.
-
-[#example-using-the-{productmajorversion}-release-channel]
-===== Example: using the `{productmajorversion}` release channel
-
-[source,html,subs="attributes+"]
-----
-<script src="{cdnurl}" referrerpolicy="origin"></script>
-----
-
-[#{productmajorversion}-testing-release-channel]
-==== {productmajorversion}-Testing Release Channel
-
-This channel deploys the current *release candidate* for the `{productmajorversion}` channel. The {productname} release candidate is undergoing quality assurance. The current version of {productname} available through the `{productmajorversion}-testing` channel can be found on the https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-testing/version.txt[{cloudname} {productname} {productmajorversion}-testing version page].
-
-[#example-using-the-{productmajorversion}-testing-release-channel]
-===== Example: Using the `{productmajorversion}-testing` Release Channel
-
-[source,html,subs="attributes+"]
-----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-testing/tinymce.min.js" referrerpolicy="origin"></script>
-----
-
-[#{productmajorversion}-dev-release-channel]
-==== {productmajorversion}-Dev Release Channel
-
-This channel deploys nightly builds of {productname}, which includes **unreleased changes** from the link:https://github.com/tinymce/tinymce/tree/main[{productname} repository^]. 
-
-The current version of {productname} is available on the `{productmajorversion}-dev` channel can be found on the link:https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-dev/version.txt[{cloudname} {productname} {productmajorversion}-dev version page^].
-
-[NOTE]
-{productname} now uses `main` branch for nightly builds instead of `develop` as of {productname} `7.0.0`.
-
-[#example-using-the-{productmajorversion}-dev-release-channel]
-===== Example: Using the `{productmajorversion}-dev` Release Channel
-
-[source,html,subs="attributes+"]
-----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-dev/tinymce.min.js" referrerpolicy="origin"></script>
-----

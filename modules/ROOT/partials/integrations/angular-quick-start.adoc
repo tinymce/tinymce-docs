@@ -169,7 +169,7 @@ endif::[]
 
 == Deploying the application to a HTTP server
 
-The application will require further configuration before it can be deployed to a production environment. For information on configuring the application for deployment, see: https://angular.io/guide/build[Angular Docs - Building and serving Angular apps] or https://angular.io/guide/deployment[Angular Docs - Deployment].
+The application will require further configuration before it can be deployed to a production environment. For information on configuring the application for deployment, see: https://angular.dev/tools/cli/build[Angular Docs - Building Angular Apps] or https://angular.dev/tools/cli/deployment[Angular Docs - Deployment].
 
 To deploy the application to a local HTTP Server:
 
@@ -214,4 +214,4 @@ export class MyModule {}
 * For information on customizing:
 ** {productname} integration, see: xref:angular-ref.adoc[Angular framework Technical Reference].
 ** {productname}, see: xref:basic-setup.adoc[Basic setup].
-** The Angular application, see: https://angular.io/docs[the Angular documentation].
+** The Angular application, see: https://angular.dev[the Angular documentation].

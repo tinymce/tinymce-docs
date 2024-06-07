@@ -30,13 +30,26 @@ This **Math** premium plugin release includes the following fix:
 ==== Math icon state was not set to active on math element selection.
 // #TINY-10931
 
-Previously, the Math icon was not set to active when a math element was selected within the editor.
-
-As a consequence, users had no visual indication that a math element was selected or that it could be edited by selecting it and then clicking the toolbar button.
+Previously, the Math icon was not set to active when a math element was selected within the editor. As a consequence, users had no visual indication that a math element was selected or that it could be edited by selecting it and then clicking the toolbar button.
 
 {productname} {release-version} addresses this issue. Now, when any Math element is selected, the button's active state is triggered.
 
-For information on the **Math** plugin, see: xref:math.adoc[Math].
+For more information on the **Math** plugin, see: xref:math.adoc[Math].
+
+=== Spell Checker Plugin
+
+The {productname} {release-version} release includes an accompanying release of the **Spell Checker** premium plugin.
+
+This **Spell Checker** premium plugin release includes the following fix:
+
+==== Acronyms were not managed correctly.
+// #TINY-10904
+
+Previously, acronyms were not managed correctly, which caused false positive results with the Spell Checker premium plugin. In this case, the check was excluding the period at the end when separating words, even when checking acronyms. As a consequence, the Spell Checker Premium plugin would identify acronyms without the trailing period, therefore highlighting them as errors.
+
+{productname} {release-version} addresses this issue. Now, if the word is an acronym, {productname} includes the next character if it is a period. As a result, acronyms are now managed correctly, and the Spell Checker retrieves the correct word (with the period included) and provides accurate results.
+
+For more information on the **Spell Checker** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker].
 
 [[bug-fixes]]
 == Bug fixes
@@ -46,18 +59,6 @@ For information on the **Math** plugin, see: xref:math.adoc[Math].
 === CSS color values set to `transparent` were incorrectly converted to `+#000000+`.
 // #TINY-10916
 
-Previously, transparent color values were incorrectly converted to `+#000000+`, deviating from the behavior observed in earlier major versions.  Additionally, {productname} does not export the last two digits of the hex string, so the alpha value is lost, causing transparent to be converted to `+#000000+`.
+Previously, transparent color values were incorrectly converted to `+#000000+`, deviating from the behavior observed in earlier major versions. Additionally, {productname} did not export the last two digits of the hex string, so the alpha value was lost, causing transparent to be converted to `+#000000+`.
 
-{productname} {release-version} addresses this issue by, removing the if statement that handles transparent since it is no longer needed. As a result, the transparent property will be retained as a transparent string instead of converting to other values. This change is consistent with the behavior in {productname} v5, v6.
-
-[[acronyms-were-not-managed-correctly]]
-=== Acronyms were not managed correctly.
-// #TINY-10904
-
-Previously, acronyms were not managed correctly which caused false positive results with Spell Checker premium plugin. In this case, the check was separating the words excluding the dot at the end also when we check the acronyms.
-
-As a consequence, Spell Checker Premium plugin would identify acronyms without the last dot, highlighting them as errors.
-
-{productname} {release-version} addresses this issue. Now, If the word is an abbreviation, {productname} includes the next character if it is a period.
-
-As a result, acronyms are now managed correctly, and the Spell Checker retrieves the correct word (with the dot included) and provides accurate results.
+{productname} {release-version} addresses this issue by removing the check that handles transparency, therefore retaining the alpha component. As a result, the transparent property will be retained as a transparent string instead of being converted to other values. This change is consistent with the behavior in {productname} v5 and v6.

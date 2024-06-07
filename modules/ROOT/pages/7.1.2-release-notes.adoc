@@ -36,20 +36,6 @@ Previously, the Math icon was not set to active when a math element was selected
 
 For more information on the **Math** plugin, see: xref:math.adoc[Math].
 
-=== Spell Checker Plugin
-
-The {productname} {release-version} release includes an accompanying release of the **Spell Checker** premium plugin.
-
-This **Spell Checker** premium plugin release includes the following fix:
-
-==== Acronyms were not managed correctly.
-// #TINY-10904
-
-Previously, acronyms were not managed correctly, which caused false positive results with the Spell Checker premium plugin. In this case, the check was excluding the period at the end when separating words, even when checking acronyms. As a consequence, the Spell Checker Premium plugin would identify acronyms without the trailing period, therefore highlighting them as errors.
-
-{productname} {release-version} addresses this issue. Now, if the word is an acronym, {productname} includes the next character if it is a period. As a result, acronyms are now managed correctly, and the Spell Checker retrieves the correct word (with the period included) and provides accurate results.
-
-For more information on the **Spell Checker** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker].
 
 [[bug-fixes]]
 == Bug fixes
@@ -62,3 +48,10 @@ For more information on the **Spell Checker** plugin, see: xref:introduction-to-
 Previously, transparent color values were incorrectly converted to `+#000000+`, deviating from the behavior observed in earlier major versions. Additionally, {productname} did not export the last two digits of the hex string, so the alpha value was lost, causing transparent to be converted to `+#000000+`.
 
 {productname} {release-version} addresses this issue by removing the check that handles transparency, therefore retaining the alpha component. As a result, the transparent property will be retained as a transparent string instead of being converted to other values. This change is consistent with the behavior in {productname} v5 and v6.
+
+=== Acronyms were not managed correctly.
+// #TINY-10904
+
+Previously, acronyms were not managed correctly, which caused false positive results with the Spell Checker premium plugin. In this case, the check was excluding the period at the end when separating words, even when checking acronyms. As a consequence, the Spell Checker Premium plugin would identify acronyms without the trailing period, therefore highlighting them as errors.
+
+{productname} {release-version} addresses this issue. Now, if the word is an acronym, {productname} includes the next character if it is a period. As a result, acronyms are now managed correctly, and the Spell Checker retrieves the correct word (with the period included) and provides accurate results.

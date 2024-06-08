@@ -156,7 +156,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
-=== Focusing on `contenteditable="true"` element when using `editable_root: false` and inline mode causing selection to be shifted.
+=== Focusing on `contenteditable="true"` element when using `editable_root: false` and inline mode caused selection to be shifted.
 // #TINY-10820
 
 Previously in {productname}, there was an issue where focusing on `contenteditable="true"` elements, such as media elements, while using `editable_root: false` and inline mode would cause the selection to be shifted. When saving the media dialog, the focus would first shift to the editor to ensure the changes are inserted into the editor. However, this caused the selection to change, leading to a duplicated element being inserted into the editor.

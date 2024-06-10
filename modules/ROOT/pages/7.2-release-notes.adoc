@@ -156,6 +156,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Corrected the `role` attribute on listbox dialog components to `combobox` when there are no nested menu items.
+// #TINY-10807
+
+Previously in {productname}, the `role` attribute on listbox dialog components was set to `menu` when there were no nested menu items. This caused confusion for users, as screen readers would announce non-hierarchical listboxes as menu buttons.
+
+In {productname} {release-version}, this issue has been addressed by setting the `role` attribute to `combobox` when there are no nested menu items. As a result, screen readers now announce the listbox as a combobox and the menu it opens as a listbox. This improvement ensures that the currently selected value is announced when tabbing to the select box, and the selected items are announced as a listbox.
+
 
 [[security-fixes]]
 == Security fixes

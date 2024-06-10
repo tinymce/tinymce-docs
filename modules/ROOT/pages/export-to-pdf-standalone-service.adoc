@@ -1,5 +1,118 @@
 = Export to PDF Standalone Service
 :navtitle: Export to PDF Standalone Service
-:description: The Export to PDF service feature, which provides the ability to generate a PDF files directly without the need for an editor.
-:description_short: Generate a PDF file directly from standalone application.
+:description: The Export to PDF service feature, provides the ability to generate a PDF files directly without the need for an editor.
+:description_short: Generate a .pdf file directly from any application.
 :keywords: service, exportpdf, export to pdf
+:pluginname: Export to PDF
+:servicename: Export to PDF Standalone Service
+
+{productname}'s {servicename} offers a fast and highly scalable service enabling users to export documents to a single PDF document. The feature is available as a standalone service, making it possible to send HTML strings straight to the Cloud Services server. The service is designed to be used in any environment, including desktop applications, mobile apps, and web applications.
+
+[NOTE]
+This standalone service comes included with a single purchase of link:https://www.tiny.cloud/tinymce/features/export-pdf/[{pluginname} premium feature].
+
+[TIP]
+If used without authentication, the resulting document will be watermarked.
+
+== How the {servicename} feature works
+
+The {servicename} converter offers a robust API designed to seamlessly convert HTML documents into PDF files. Upon request, the service swiftly generates the PDF file and delivers it in the `.pdf` format, ready for storage either on a local device or within a preferred database. For integration instructions, refer to xref:exportpdf.adoc[{pluginname} official documentation] when using it with {productname}.
+
+Testing the feature is also possible using the link:https://www.tiny.cloud/tinymce/features/export-pdf/[Export to PDF] demo page.
+
+== Options Available for HTML to PDF Conversion
+
+When using the converter service, the following options are available:
+
+* `html`
+* `css`
+* `options`
+
+[TIP]
+At least one of the parameters `html`, `options.header_html`, or `options.footer_html` is required to generate a PDF. 
+
+Any of these parameters cannot contain the <meta> tag with the refresh document interval.
+
+To use this API directly, proper CSS code needs to be provided manually. To achieve this, pass a string which is a concatenation of the default editor styles (e.g. using {productname}'s list of all content styles) and, optionally, custom styles to the css property. With the default editor configuration, specifying the options property is not necessary.
+
+[[html]]
+=== HTML
+
+Any HTML compliant content can be sent to the converter.
+
+[NOTE]
+The API only accepts documents with `UTF-8` encoded content for conversion.
+
+* All HTML documents use the `+<!DOCTYPE html>+` declaration to generate PDF files.
+* The recommended way to generate a PDF document is to send only the HTML content. However, if a document requires a full HTML structure to render properly, it can be used.
+
+.Example using simple HTML with inline CSS styling.
+[source,sh]
+----
+curl -X POST https://exportpdf.converter.tiny.cloud/v1/convert \
+     -H "Content-Type: application/json" \
+     -d '{
+           "html": "<!DOCTYPE html><html><head><title>Simple HTML Example PDF</title></head><body><h1 style=\"color: #2E8B57;\">Simple HTML Example</h1><p style=\"font-size: 14px; line-height: 1.6;\">This is an example of a paragraph.</p><h2>Table Example</h2><table style=\"width: 100%; border-collapse: collapse;\"><thead><tr><th style=\"border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #f2f2f2;\">Header 1</th><th style=\"border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #f2f2f2;\">Header 2</th><th style=\"border: 1px solid #ddd; padding: 8px; text-align: left; background-color: #f2f2f2;\">Header 3</th></tr></thead><tbody><tr><td style=\"border: 1px solid #ddd; padding: 8px; text-align: left;\">Row 1, Cell 1</td><td style=\"border: 1px solid #ddd; padding: 8px; text-align: left;\">Row 1, Cell 2</td><td style=\"border: 1px solid #ddd; padding: 8px; text-align: left;\">Row 1, Cell 3</td></tr><tr><td style=\"border: 1px solid #ddd; padding: 8px; text-align: left;\">Row 2, Cell 1</td><td style=\"border: 1px solid #ddd; padding: 8px; text-align: left;\">Row 2, Cell 2</td><td style=\"border: 1px solid #ddd; padding: 8px; text-align: left;\">Row 2, Cell 3</td></tr></tbody></table><div style=\"margin-top: 20px; font-size: 12px; text-align: center; color: #888;\">&copy; 2024 Example Company. All rights reserved.</div></body></html>",
+           "options": {
+             "output": "pdf"
+           }
+         }' --output ~/Downloads/html_with_inline_css.pdf
+----
+
+[[css]]
+=== CSS
+
+This option is used to send custom CSS styles to the converter.
+
+.Example of a simple CSS document to be converted to PDF
+[source,sh]
+----
+curl -X POST https://exportpdf.converter.tiny.cloud/v1/convert \
+     -H "Content-Type: application/json" \
+     -d '{
+           "html": "<!DOCTYPE html><html><head><title>Simple HTML Example PDF</title></head><body><h1>Simple HTML Example</h1><p>This is an example of a paragraph.</p><h2>Table Example</h2><table><thead><tr><th>Header 1</th><th>Header 2</th><th>Header 3</th></tr></thead><tbody><tr><td>Row 1, Cell 1</td><td>Row 1, Cell 2</td><td>Row 1, Cell 3</td></tr><tr><td>Row 2, Cell 1</td><td>Row 2, Cell 2</td><td>Row 2, Cell 3</td></tr></tbody></table><div>&copy; 2024 Example Company. All rights reserved.</div></body></html>",
+           "css": "p { color: red; }",
+           "options": {
+             "output": "pdf"
+           }
+         }' --output ~/Downloads/html_using_custom_css.pdf
+----
+
+[TIP]
+Just like the HTML, CSS must be encoded with UTF-8. If UTF-8 cannot be used and support for other charsets is needed, link:https://www.tiny.cloud/contact/[contact us].
+
+[[options]]
+=== Options
+
+The PDF options make it possible to set a header, footer, margins, and page format of the output file. There is also the `wait_time` parameter to control the render time.
+
+Refer to the https://exportpdf.converter.tiny.cloud/docs#section/PDF-options[converter documentation^] for details on the syntax and usage of these options.
+
+[[images]]
+=== Images
+
+Images can be either inserted from a URL or Base64-encoded, using the src attribute of the `+<img>+` tag.
+
+[[webfonts]]
+=== Web Fonts
+
+To generate PDF documents, web fonts can be used like in a regular browser. Specify the URL to the font file or a font file converted to the Base64 format.
+
+[NOTE]
+Web fonts are not supported in both the header and footer body and styles. For header and footer, use one of the default fonts.
+
+Refer to the link:https://exportpdf.converter.tiny.cloud/docs#section/Web-Fonts[converter documentation^] for details and examples.
+
+== The Export to PDF Editor Plugin
+
+The xref:exportpdf.adoc[Export to PDF] plugin allows easy printing of the WYSIWYG editor content to a PDF file. When enabled, this feature sends the content of the editor together with the styles that are used to display it to the {productname} Cloud Services HTML to PDF converter service. The service then generates a PDF document that can be downloaded.
+
+Thanks to this plugin, it takes exactly one button click to get a PDF file with content formatted the same way as displayed in the {productname} WYSIWYG editor. It provides an easy solution for integrations that do not require further processing of editor data once it is edited.
+
+== Stored Data
+
+Export to PDF is a service that generates PDF files based on the data provided by the customer (HTML, CSS). To perform the conversion, it requires the data sent from the editor or a database, but the service itself is fully stateless.
+
+The data, especially sensitive data such as HTML, CSS, comments, is used only during processing. However, some information needed for billing and maintaining the system is stored. The goal is to minimize stored data, currently storing information such as the number and duration of exports, the final document size, the number of unique exports, and statistical data (used features, IP addresses, editor versions).
+
+All logs related to processing requests are saved only in case of unexpected situations and are stored for 14 days. The data in logs include an error message, stack trace, and information about the request.

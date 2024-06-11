@@ -41,7 +41,7 @@ const ai_request = (request, respondWith) => {
       'Authorization': `Bearer ${api_key}`
     },
     body: JSON.stringify({
-      model: 'gpt-3.5-turbo',
+      model: 'gpt-4o',
       temperature: 0.7,
       max_tokens: 800,
       messages: [{ role: 'user', content: request.prompt }],
@@ -122,7 +122,7 @@ const ai_request = (request, respondWith) => {
     ];
 
     const requestBody = {
-      model: 'gpt-3.5-turbo',
+      model: 'gpt-4o',
       temperature: 0.7,
       max_tokens: 800,
       messages,

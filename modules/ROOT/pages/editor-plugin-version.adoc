@@ -1,4 +1,4 @@
-= Specify editor version & plugins
+= Specify Editor Version & Plugins
 :description_short: Specifying editor version and plugins for {cloudname} deployments.
 :description: Instructions on setting the {productname} editor version and plugins for {cloudname} deployments.
 :keywords: tinymce, cloud, script, textarea, apiKey, hybrid, dev, testing, production
@@ -13,7 +13,7 @@ The example below shows the default way to load {productname} {productmajorversi
 <script src="{cdnurl}" referrerpolicy="origin"></script>
 ----
 
-For loading a specific version of {productname} {productmajorversion} other than the latest release, replace the `7` in the URL with the desired version. For example, to load a minor version such as {productname} `7.1`, use the following URL:
+To load a specific version of {productname} {productmajorversion} other than the latest release, replace the `7` in the URL with the desired version. For example, to load a minor version such as {productname} `7.1`, use the following URL:
 
 [source,html,subs="attributes+"]
 ----
@@ -31,7 +31,7 @@ To load a specific patch version, replace the `7` in the URL with the desired pa
 Replace 'no-api-key' with your own API key.
 
 [#{productmajorversion}-{productmajorversion}-testing-and-{productmajorversion}-dev-release-channels]
-=== Difference between using {productname} {productmajorversion}, {productmajorversion}-Testing, and {productmajorversion}-Dev release channels
+=== Difference between using {productname} {productmajorversion}, {productmajorversion}-Testing, and {productmajorversion}-Dev Release Channels
 
 [IMPORTANT]
 ====
@@ -48,10 +48,10 @@ These channels are updated automatically and provide the latest {productname} ve
 [#{productmajorversion}-release-channel]
 ==== {productmajorversion} Release Channel
 
-This channel deploys the latest release of {productname} that has passed our quality assurance process. The current version of {productname} available through the `{productmajorversion}` channel can be found on the https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/version.txt[{cloudname} {productname} {productmajorversion} version page].
+This channel deploys the latest release of {productname} that has passed our quality assurance process. The current version of {productname} available through the `{productmajorversion}` channel can be found on the link:https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/version.txt[{cloudname} {productname} {productmajorversion} version page].
 
 [#example-using-the-{productmajorversion}-release-channel]
-===== Example: using the `{productmajorversion}` release channel
+===== Example: Using the `{productmajorversion}` Release Channel
 
 [source,html,subs="attributes+"]
 ----
@@ -61,7 +61,7 @@ This channel deploys the latest release of {productname} that has passed our qua
 [#{productmajorversion}-testing-release-channel]
 ==== {productmajorversion}-Testing Release Channel
 
-This channel deploys the current *release candidate* for the `{productmajorversion}` channel. The {productname} release candidate is undergoing quality assurance. The current version of {productname} available through the `{productmajorversion}-testing` channel can be found on the https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-testing/version.txt[{cloudname} {productname} {productmajorversion}-testing version page].
+This channel deploys the current *release candidate* for the `{productmajorversion}` channel. The {productname} release candidate is undergoing quality assurance. The current version of {productname} available through the `{productmajorversion}-testing` channel can be found on the link:https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-testing/version.txt[{cloudname} {productname} {productmajorversion}-testing version page].
 
 [#example-using-the-{productmajorversion}-testing-release-channel]
 ===== Example: Using the `{productmajorversion}-testing` Release Channel
@@ -76,7 +76,7 @@ This channel deploys the current *release candidate* for the `{productmajorversi
 
 This channel deploys nightly builds of {productname}, which includes **unreleased changes** from the link:https://github.com/tinymce/tinymce/tree/main[{productname} repository^]. 
 
-The current version of {productname} is available on the `{productmajorversion}-dev` channel can be found on the link:https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-dev/version.txt[{cloudname} {productname} {productmajorversion}-dev version page^].
+The current version of {productname} available on the `{productmajorversion}-dev` channel can be found on the link:https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-dev/version.txt[{cloudname} {productname} {productmajorversion}-dev version page^].
 
 [NOTE]
 {productname} now uses `main` branch for nightly builds instead of `develop` as of {productname} `7.0.0`.
@@ -100,7 +100,7 @@ include::partial$misc/admon-script-tag-placement.adoc[]
 
 {companyname} offers the following configuration scripts to assist:
 
-=== `plugin.min.js` Standalone with No Exclusions.
+=== `plugin.min.js` Standalone with No Exclusions
 
 The `plugins.min.js` script loads every premium plugin the API key is entitled to from the CDN.
 
@@ -109,7 +109,7 @@ The `plugins.min.js` script loads every premium plugin the API key is entitled t
 <script src="https://cdn.tiny.cloud/1/api-key/tinymce/7/plugins.min.js" referrerpolicy="origin"></script>
 ----
 
-=== `plugins.min.js` with Exclusions for Specific Plugins.
+=== `plugins.min.js` with Exclusions for Specific Plugins
 
 To exclude specific premium plugins from `plugins.min.js` because you are self-hosting them, add the excluded plugins to the script query parameters as shown below:
 
@@ -122,10 +122,10 @@ To exclude specific premium plugins from `plugins.min.js` because you are self-h
 ====
 Ensure that the excluded plugins' names are appended with `=sdk`, such as `mentions=sdk`.
 
-When {companyname} Cloud releases a new premium plugin, if you wish to self-host it this script tag will need to be updated to exclude it.
+When {companyname} Cloud releases a new premium plugin, if you wish to self-host it, this script tag will need to be updated to exclude it.
 ====
 
-=== `cloud-plugins.min.js` for Specific Premium Plugins from {companyname} Cloud.
+=== `cloud-plugins.min.js` for Specific Premium Plugins from {companyname} Cloud
 
 The `cloud-plugins.min.js` script allows loading of specific premium plugins from {companyname} Cloud.
 
@@ -136,5 +136,3 @@ The `cloud-plugins.min.js` script allows loading of specific premium plugins fro
 
 [NOTE]
 This approach is intended for edge cases where you self-host most premium plugins on your own servers and only need one or two from {companyname} Cloud.
-
-'''

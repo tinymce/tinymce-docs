@@ -48,7 +48,7 @@ These channels are updated automatically and provide the latest {productname} ve
 [#{productmajorversion}-release-channel]
 ==== {productmajorversion} Release Channel
 
-This channel deploys the latest release of {productname} that has passed our quality assurance process. The current version of {productname} available through the `/{productmajorversion}` channel can be found on the https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/version.txt[{cloudname} {productname} {productmajorversion} version page]. The {productname} {productmajorversion} channel can be loaded from `{cdnurl}`.
+This channel deploys the latest release of {productname} that has passed our quality assurance process. The current version of {productname} available through the `{productmajorversion}` channel can be found on the https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/version.txt[{cloudname} {productname} {productmajorversion} version page].
 
 [#example-using-the-{productmajorversion}-release-channel]
 ===== Example: using the `{productmajorversion}` release channel

@@ -6,14 +6,12 @@
 [[specifying-the-tinymce-editor-version-deployed-from-cloud]]
 == Specifying the {productname} Editor Version from the Cloud
 
-To set the {productname} version when deploying from {cloudname}, use the following URL:
+The example below shows the default way to load {productname} {productmajorversion} from {cloudname}. This URL ensures the most recent and verified version of {productname} is used.
 
 [source,html,subs="attributes+"]
 ----
 <script src="{cdnurl}" referrerpolicy="origin"></script>
 ----
-
-The example above shows the default way to load {productname} {productmajorversion} from {cloudname}. This URL ensures the most recent and verified version of {productname} is used.
 
 For loading a specific version of {productname} {productmajorversion} other than the latest release, replace the `7` in the URL with the desired version. For example, to load a minor version such as {productname} `7.1`, use the following URL:
 
@@ -22,7 +20,7 @@ For loading a specific version of {productname} {productmajorversion} other than
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7.1/tinymce.min.js" referrerpolicy="origin"></script>
 ----
 
-To load a specific patch version, replace the `7` in the URL with the desired version. For example, to load {productname} `7.1.1`, use the following URL:
+To load a specific patch version, replace the `7` in the URL with the desired patch version. For example, to load {productname} `7.1.1`, use the following URL:
 
 [source,html,subs="attributes+"]
 ----
@@ -39,8 +37,8 @@ Replace 'no-api-key' with your own API key.
 ====
 All {cloudname} channels are based on the {enterpriseversion} version.
 
-* For complete information on the latest version of the {cloudname} `{productmajorversion}` release channel including premium changes, see: xref:release-notes.adoc[{productname} Release Notes].
-* For a summarised list of only the changes that affect the open-source version of {productname}, see: xref:changelog.adoc[{productname} Changelog].
+* For complete information on the latest version of the {cloudname} `{productmajorversion}` Release Channel including premium changes, see: xref:release-notes.adoc[{productname} Release Notes].
+* For a summarized list of only the changes that affect the open-source version of {productname}, see: xref:changelog.adoc[{productname} Changelog].
 ====
 
 Choose from the `{productmajorversion}`, `{productmajorversion}-testing`, or `{productmajorversion}-dev` release channels to load the latest version of {productname} from {cloudname}.
@@ -108,7 +106,7 @@ The `plugins.min.js` script loads every premium plugin the API key is entitled t
 
 [source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7/plugins.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/api-key/tinymce/7/plugins.min.js" referrerpolicy="origin"></script>
 ----
 
 === `plugins.min.js` with Exclusions for Specific Plugins.
@@ -117,7 +115,7 @@ To exclude specific premium plugins from `plugins.min.js` because you are self-h
 
 [source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7/plugins.min.js?mentions=sdk&powerpaste=sdk" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/api-key/tinymce/7/plugins.min.js?mentions=sdk&powerpaste=sdk" referrerpolicy="origin"></script>
 ----
 
 [NOTE]
@@ -133,7 +131,7 @@ The `cloud-plugins.min.js` script allows loading of specific premium plugins fro
 
 [source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7/cloud-plugins.min.js?mentions&powerpaste&advcode" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/api-key/tinymce/7/cloud-plugins.min.js?mentions&powerpaste&advcode" referrerpolicy="origin"></script>
 ----
 
 [NOTE]

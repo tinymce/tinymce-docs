@@ -151,10 +151,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Deleting in a `div` with preceding `br` elements would sometimes throw errors.
+// #TINY-10840
 
-// CCFR here.
+Previously, when deleting the last character in a `<div>` element with preceding `<br>` elements, an error _(Uncaught DOMException: Failed to execute 'setStart' on 'Range': There is no child at offset)_ was thrown to the console, and the `<div>` element was incorrectly converted to a `<p>` element.
+
+{productname} {release-version} addresses this issue. The delete logic has been modified to properly handle this situation. After the fix, the `<div>` element remains a `<div>`, and no error is thrown to the console when deleting the last character.
 
 
 [[security-fixes]]

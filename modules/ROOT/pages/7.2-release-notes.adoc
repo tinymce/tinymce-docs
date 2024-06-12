@@ -222,10 +222,14 @@ The above code will log the following to the console:
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Fixed cases where adding a newline around a br, table or img would not move the cursor to a new line.
+// #TINY-10384
 
-// CCFR here.
+In previous versions of {productname}, an issue affecting cursor positioning was identified when adding new lines around specific HTML elements such as `<br>`, `<table>`, and `<img>` tags.
+
+As a consequence, the cursor failed to move to a new line when adding a newline around these elements, resulting in unexpected behavior while editing content within the editor.
+
+With the release of {productname} {release-version}, this issue has been addressed. The editor now accurately interprets the presence of spaces or newlines after certain HTML elements. As a result, cursor movement behaves as expected when adding new lines around `<br>`, `<table>`, and `<img>` tags.
 
 
 [[security-fixes]]

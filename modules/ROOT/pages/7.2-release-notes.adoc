@@ -55,6 +55,21 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== Image Editing
+
+The {productname} {release-version} release includes an accompanying release of the **Image Editing** premium plugin.
+
+**Image Editing** includes the following improvement.
+
+==== Dialog slider components now emit an onChange event when using arrow keys.
+// #TINY-10428
+
+Previously in the Edit Image dialog, when using the left/right arrow keys to adjust settings with sliders, the slider component did not properly update the image preview. As a consequence, users were unable to use the keyboard to update image properties controlled by sliders such as Brightness, Contrast, Color Levels, and Gamma settings.
+
+In {productname} {release-version}, this issue has been resolved. Now, the slider component emits an `onChange` event when the slider value is adjusted using the left/right arrow keys. As a result, users can now update the Edit Image dialog sliders using the keyboard.
+
+For information on the **Image Editing** plugin, see: xref:editimage.adoc[Image Editing].
+
 === Accessibility Checker
 
 The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.
@@ -110,23 +125,79 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[improvements]]
 == Improvements
 
-{productname} {release-version} also includes the following improvement<s>:
+{productname} {release-version} also includes the following improvements:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Added `referrerpolicy` as a valid attribute for an iframe element.
+// #TINY-10374
 
-// CCFR here.
+Previously in {productname}, the `referrerpolicy` attribute was not considered as valid for iframe elements. In {productname} {release-version}, this attribute has been added to the schema, allowing users to include the `referrerpolicy` attribute in iframes.
 
 
 [[additions]]
 == Additions
 
-{productname} {release-version} also includes the following addition<s>:
+{productname} {release-version} also includes the following addition:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Added `options.debug` API that logs the initial raw editor options to console.
+// #TINY-10605
 
-// CCFR here.
+This release introduces a new `options.debug` API that logs the initial raw editor options passed to `tinymce.init` to the console. This API is useful for debugging and troubleshooting issues with the editor, especially when dynamically composing many editor options from different sources.
+
+Usage:
+
+[source,js]
+----
+tinymce.activeEditor.options.debug();
+----
+
+The following data types are logged exactly as they are passed to `tinymce.init`:
+
+* `string`
+* `number`
+* `boolean`
+* `object`
+* `array`
+* `null`
+
+All other data types not mentioned above are logged as `[object X]` where "X" is the type of the object, such as:
+
+* `Function`
+* `Undefined`
+* `RegExp`
+* `Promise`
+* and more
+
+==== Example: using the `options.debug` API:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  height: 500,
+  paste_as_text: true,
+  context_menu: [ 'image', 'lists' ],
+  menu: { insert: { title: 'Insert', items: 'table | image | accordion' }},
+  inline: null,
+  myUndefined: undefined,
+  init_instance_callback: (editor) => editor.options.debug(),
+});
+----
+
+The above code will log the following to the console:
+
+[source,js]
+----
+{
+  selector: 'textarea',
+  height: 500,
+  paste_as_text: true,
+  context_menu: [ 'image', 'lists' ],
+  menu: { insert: { title: 'Insert', items: 'table | image | accordion' }},
+  inline: null,
+  myUndefined: [object Undefined],
+  init_instance_callback: [object Function],
+}
+----
 
 
 [[changes]]

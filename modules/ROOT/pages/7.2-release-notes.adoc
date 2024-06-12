@@ -131,12 +131,68 @@ Previously in {productname}, the `referrerpolicy` attribute was not considered a
 [[additions]]
 == Additions
 
-{productname} {release-version} also includes the following addition<s>:
+{productname} {release-version} also includes the following addition:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Added `options.debug` API that logs the initial raw editor options to console.
+// #TINY-10605
 
-// CCFR here.
+This release introduces a new `options.debug` API that logs the initial raw editor options passed to `tinymce.init` to the console. This API is useful for debugging and troubleshooting issues with the editor, especially when dynamically composing many editor options from different sources.
+
+Usage:
+
+[source,js]
+----
+tinymce.activeEditor.options.debug();
+----
+
+The following data types are logged exactly as they are passed to `tinymce.init`:
+
+* `string`
+* `number`
+* `boolean`
+* `object`
+* `array`
+* `null`
+
+All other data types not mentioned above are logged as `[object X]` where "X" is the type of the object, such as:
+
+* `Function`
+* `Undefined`
+* `RegExp`
+* `Promise`
+* and more
+
+==== Example: using the `options.debug` API:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  height: 500,
+  paste_as_text: true,
+  context_menu: [ 'image', 'lists' ],
+  menu: { insert: { title: 'Insert', items: 'table | image | accordion' }},
+  inline: null,
+  myUndefined: undefined,
+  init_instance_callback: (editor) => editor.options.debug(),
+});
+----
+
+The above code will log the following to the console:
+
+[source,js]
+----
+{
+  selector: 'textarea',
+  height: 500,
+  paste_as_text: true,
+  context_menu: [ 'image', 'lists' ],
+  menu: { insert: { title: 'Insert', items: 'table | image | accordion' }},
+  inline: null,
+  myUndefined: [object Undefined],
+  init_instance_callback: [object Function],
+}
+----
 
 
 [[changes]]

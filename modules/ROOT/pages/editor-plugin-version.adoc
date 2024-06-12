@@ -4,7 +4,7 @@
 :keywords: tinymce, cloud, script, textarea, apiKey, hybrid, dev, testing, production
 
 [[specifying-the-tinymce-editor-version-deployed-from-cloud]]
-== Specifying the {productname} Editor Version from the Cloud
+== Specifying the {productname} Editor Version from {cloudname}
 
 The example below shows the default way to load {productname} {productmajorversion} from {cloudname}. This URL ensures the most recent and verified version of {productname} is used.
 
@@ -13,18 +13,18 @@ The example below shows the default way to load {productname} {productmajorversi
 <script src="{cdnurl}" referrerpolicy="origin"></script>
 ----
 
-To load a specific version of {productname} {productmajorversion} other than the latest release, replace the `7` in the URL with the desired version. For example, to load a minor version such as {productname} `7.1`, use the following URL:
+To load a specific version of {productname} {productmajorversion} other than the latest release, replace the `{productmajorversion}` in the URL with the desired version. For example, to load a minor version such as {productname} `{productmajorversion}.1`, use the following URL:
 
 [source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7.1/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}.1/tinymce.min.js" referrerpolicy="origin"></script>
 ----
 
-To load a specific patch version, replace the `7` in the URL with the desired patch version. For example, to load {productname} `7.1.1`, use the following URL:
+To load a specific patch version, replace the `{productmajorversion}` in the URL with the desired patch version. For example, to load {productname} `{productmajorversion}.1.2`, use the following URL:
 
 [source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/7.1.1/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}.1.2/tinymce.min.js" referrerpolicy="origin"></script>
 ----
 
 [TIP]
@@ -106,7 +106,7 @@ The `plugins.min.js` script loads every premium plugin the API key is entitled t
 
 [source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/api-key/tinymce/7/plugins.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/api-key/tinymce/{productmajorversion}/plugins.min.js" referrerpolicy="origin"></script>
 ----
 
 === `plugins.min.js` with Exclusions for Specific Plugins
@@ -115,7 +115,7 @@ To exclude specific premium plugins from `plugins.min.js` because you are self-h
 
 [source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/api-key/tinymce/7/plugins.min.js?mentions=sdk&powerpaste=sdk" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/api-key/tinymce/{productmajorversion}/plugins.min.js?mentions=sdk&powerpaste=sdk" referrerpolicy="origin"></script>
 ----
 
 [NOTE]
@@ -131,7 +131,7 @@ The `cloud-plugins.min.js` script allows loading of specific premium plugins fro
 
 [source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/api-key/tinymce/7/cloud-plugins.min.js?mentions&powerpaste&advcode" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/api-key/tinymce/{productmajorversion}/cloud-plugins.min.js?mentions&powerpaste&advcode" referrerpolicy="origin"></script>
 ----
 
 [NOTE]

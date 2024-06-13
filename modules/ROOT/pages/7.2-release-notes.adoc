@@ -130,7 +130,7 @@ Previously in {productname}, the `referrerpolicy` attribute was not considered a
 === Improved Search & Replace dialog accessibility by changing placeholders to labels.
 // #TINY-10871
 
-In previous versions of {productname}, the Find & Replace dialog inputs were initially implemented with placeholders.
+In previous versions of {productname}, the Search & Replace dialog inputs were initially implemented with placeholders.
 
 As a consequence, the dialog was less accessible because the placeholders are removed once the user starts typing. This posed difficulties for people with cognitive disabilities who rely on constant visual cues for context.
 

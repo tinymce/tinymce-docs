@@ -91,17 +91,26 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== Spell Checker
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} includes an accompanying release of the **Spell Checker** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Spell Checker** includes the following improvement:
 
-==== <Premium plugin name 1 change 1>
+=== Enhanced spelling service to support spellchecking for additional languages using customer-provided Hunspell dictionaries.
+// TCLOUD-4297
 
-// CCFR here.
+{productname} {release-version} introduces the following improvements for specified languages:
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+* Medical English (US) was updated from `"en_US-medical"` to include `"en-medical"` as an additional code.
+* Dutch was updated from `"nl"` to `"nl, nl_NL"`.
+* German was updated from `"de"` to `"de, de_DE"`.
+* Italian was updated from `"it"` to `"it, it_IT"`.
+* Norwegian Bokmål was updated from `"nb"` to `"nb, nb_NO"`.
+* Portuguese (Brazil) was updated from `"pt"` to `"pt, pt_BR"`.
+* Swedish was updated from `"sv"` to `"sv, sv_SE"`.
+
+For information on the **Spell Checker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin] or for an complete list of supported languages, see: xref:introduction-to-tiny-spellchecker.adoc#supported-languages[Supported languages].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]

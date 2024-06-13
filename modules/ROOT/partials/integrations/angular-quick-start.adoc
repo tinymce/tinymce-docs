@@ -90,7 +90,7 @@ ifeval::["{productSource}" == "package-manager"]
 ----
 
 . Load TinyMCE.
-* To load TinyMCE when the editor is initialized (also known as lazy loading), add a dependency provider to the component using the `+TINYMCE_SCRIPT_SRC+` token.
+* To load {productname} when the editor is initialized (also known as lazy loading), add a dependency provider to the component using the `+TINYMCE_SCRIPT_SRC+` token.
 +
 [source,ts]
 ----

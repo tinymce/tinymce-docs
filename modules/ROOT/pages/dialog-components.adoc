@@ -162,6 +162,7 @@ A *label* is a layout component that wraps other components and adds a label abo
 {
   type: 'label', // component type
   label: 'Caption', // text for the group label
+  for: 'findtext', // identifier of the dialog label component
   items: [ ... ] // array of panel components
 }
 ----

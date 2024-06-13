@@ -186,7 +186,7 @@ The application has now been deployed on the web server.
 NOTE: Additional configuration is required to deploy the application outside the web server root directory, such as +http://localhost:<port>/my_angular_application+.
 
 [[angular-modules]]
-== Note on Angular Modules
+== Angular Modules
 `+EditorModule+` is available to import from `+@tinymce/tinymce-angular+`. Which should be included in your `+my.module.ts+` file.
 
 [source,ts]

@@ -1,18 +1,25 @@
 [[revisionhistory_fetch]]
 == `revisionhistory_fetch`
 
-The plugin uses the `revisionhistory_fetch` function to retrieve the saved versions.
+The `revisionhistory_fetch` function is used by the plugin to retrieve saved versions. This function is required for the Revision History plugin to work. The function is called when the user opens the Revision History dialog.
 
 The `revisionhistory_fetch` option is an asynchronous function that returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise] which resolves to an array of revisions.
 
 [NOTE]
-The {pluginname} plugin does not sort the result before displaying. This allows the integrators to sort the result according to their preference. It is recommended that the result should be sorted in reverse chronological order because it is more intuitive for the users when they can only identify a version by its date.
+The {pluginname} plugin does not sort the result before displaying. This allows integrators to sort the result according to their preference. It is recommended to sort the result in reverse chronological order, as it is more intuitive for users when they can identify a version by its date.
 
 *Type:* `+Function+` (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
 
 *Input parameters:* None
 
-*Return data:* `+Array+`
+*Return data:* `+Array+` of revision `+Objects+` where each object has the following fields:
+[cols="1,1,1,3",options="header"]
+|===
+|Field |Type |Required? |Description
+|`+revisionId+` | `+string+` | required | The unique string ID of the revision.
+|`+createdAt+` | `+string+` | required | A UTC datetime string in ISO-8061 format.
+|`+content+` | `+string+` | optional | HTML string of the revision content. If provided, all revisions are fetched at once when loading the Revision History dialog. If not provided, the `revisionhistory_fetch_revision` option must be implemented to fetch the `content` of a selected revision on demand.
+|===
 
 === Example of `revisionhistory_fetch` response
 
@@ -42,14 +49,8 @@ const revisions = [
       <p>Welcome to Tinymce!</p>
     `,
   }
-]
+];
 ----
-
-The data returned by `revisionhistory_fetch` requires the following fields for the {pluginname} to work:
-
-. `revisionId`: Unique string Id.
-. `createdAt`: A UTC datetime string in ISO-8061 format. For example: `2019-11-14T10:55:31.820Z`.
-. `content`: HTML string.
 
 === Example: using `revisionhistory_fetch`
 

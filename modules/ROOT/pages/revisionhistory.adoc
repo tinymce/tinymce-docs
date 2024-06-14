@@ -89,11 +89,22 @@ The table below summarizes how versions are handled in the {pluginname}:
 |Yes |N/A |Yes |The saved versions and the current version are shown
 |===
 
+== Fetching revisions
+
+There are two ways to fetch the revision contents:
+
+. Fetch all revisions at once when loading the Revision History dialog.
+. Fetch the content of a selected revision on demand.
+
+If the `content` of a revision is provided in the `revisionhistory_fetch` response, the plugin fetches all revisions at once when loading the Revision History dialog. If the `content` is not provided by `revisionhistory_fetch`, the `revisionhistory_fetch_revision` option must be implemented to fetch the `content` of a selected revision on demand. It is recommended to fetch the `content` of a selected revision on demand if the content of the revisions is large or if there are a large number of revisions.
+
 == Options
 
 The following configuration options affect the behavior of the {pluginname} plugin.
 
 include::partial$configuration/revisionhistory_fetch.adoc[leveloffset=+1]
+
+include::partial$configuration/revisionhistory_fetch_revision.adoc[leveloffset=+1]
 
 include::partial$configuration/revisionhistory_css_url.adoc[leveloffset=+1]
 

@@ -1,0 +1,87 @@
+[[revisionhistory_fetch_revision]]
+== `revisionhistory_fetch_revision`
+
+The plugin calls this function to fetch a revision's content when a revision is selected in the revision history dialog. This function is called with the revision object that was selected in the revision history dialog. The function should return a Promise that resolves with the revision content.
+
+*Type:* `+Function+` (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
+
+*Input parameters:*
+[cols="1,1,1,3",options="header"]
+|===
+|Field |Type |Required? |Description
+|`+editor+` | `+Editor+` | required | The editor instance to load the revision into (useful if there are multiple editors on the page).
+|`+revision+` | `+Object+` | required | The revision object to load (must include `revisionId` field).
+|===
+
+*Return data:* revision `+Object+` with the following fields:
+[cols="1,1,3",options="header"]
+|===
+|Field |Type |Required? |Description
+|`+revisionId+` | `+string+` | required | The unique string Id of the revision.
+|`+createdAt+` | `+string+` | required | A UTC datetime string in ISO-8061 format.
+|`+content+` | `+string+` | required | HTML string of the revision content.
+|===
+
+=== Example: using `revisionhistory_fetch_revision`
+
+[source,js]
+----
+const lightRevisions = [
+  {
+    revisionId: '3',
+    createdAt: '2023-11-29T10:11:21.578Z',
+  },
+  {
+    revisionId: '2',
+    createdAt: '2023-11-25T08:30:21.578Z',
+  },
+  {
+    revisionId: '1',
+    createdAt: '2023-11-24T22:26:21.578Z',
+  }
+];
+
+const revisions = [
+  {
+    revisionId: '3',
+    createdAt: '2023-11-29T10:11:21.578Z',
+    content: `
+      <h2>Welcome to TinyMCE Docs!</h2>
+      <p>Here is some content that is <strong>bold</strong> and <em>italic</em>.</p>
+    `,
+  },
+  {
+    revisionId: '2',
+    createdAt: '2023-11-25T08:30:21.578Z',
+    content: `
+      <p>Welcome to TinyMCE Docs!</p>
+      <p>Here is some content that is bold and italic.</p>
+    `,
+  },
+  {
+    revisionId: '1',
+    createdAt: '2023-11-24T22:26:21.578Z',
+    content: `
+      <p>Welcome to Tinymce!</p>
+    `,
+  }
+];
+
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'revisionhistory',
+  toolbar: 'revisionhistory',
+  revisionhistory_fetch: () => Promise.resolve(lightRevisions),
+  revisionhistory_fetch_revision: (_editor, revision) => new Promise((resolve) => {
+	let newRevision = null;
+	for (let i = 0; i < revisions.length; i++) {
+	  const temp = revisions[i];
+	  if (temp.revisionId === revision.revisionId) {
+		  newRevision = temp;
+		  break;
+	  }
+	}
+	resolve(newRevision);
+  })
+});
+----

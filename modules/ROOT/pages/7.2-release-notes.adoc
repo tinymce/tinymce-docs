@@ -55,6 +55,21 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== Image Editing
+
+The {productname} {release-version} release includes an accompanying release of the **Image Editing** premium plugin.
+
+**Image Editing** includes the following improvement.
+
+==== Dialog slider components now emit an onChange event when using arrow keys.
+// #TINY-10428
+
+Previously in the Edit Image dialog, when using the left/right arrow keys to adjust settings with sliders, the slider component did not properly update the image preview. As a consequence, users were unable to use the keyboard to update image properties controlled by sliders such as Brightness, Contrast, Color Levels, and Gamma settings.
+
+In {productname} {release-version}, this issue has been resolved. Now, the slider component emits an `onChange` event when the slider value is adjusted using the left/right arrow keys. As a result, users can now update the Edit Image dialog sliders using the keyboard.
+
+For information on the **Image Editing** plugin, see: xref:editimage.adoc[Image Editing].
+
 === <Premium plugin name 1> <Premium plugin name 1 version>
 
 The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
@@ -66,6 +81,21 @@ The {productname} {release-version} release includes an accompanying release of 
 // CCFR here.
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+
+=== Math
+
+The {productname} {release-version} release includes an accompanying release of the **Math** premium plugin.
+
+This **Math** plugin release includes the following fix:
+
+==== Math preview was not rendered with the colors from the current skin.
+// #TINY-10900
+
+Previously, the **Math** preview did not follow the editor skin UI colors. As a consequence, the equation preview dialog was always rendered with black text on white background even if the UI skin was a dark skin.
+
+This has been addressed in {productname} {release-version}. Now, the editor renders the equation preview inline with the **Math** dialog, and not using an iframe, so that the preview container's colors are inherited from the dialog. As a result, the text color and background color of the equation preview container now follows the editor skin UI colors.
+
+For information on the **Math** plugin, see: xref:math.adoc[Math].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
@@ -114,16 +144,77 @@ Previously, the branding logo in the {productname} status bar was set to the {co
 
 Now, the branding logo in the {productname} status bar is set to `Build with` and the {productname} logo.
 
+=== Added `referrerpolicy` as a valid attribute for an iframe element.
+// #TINY-10374
+
+Previously in {productname}, the `referrerpolicy` attribute was not considered as valid for iframe elements. In {productname} {release-version}, this attribute has been added to the schema, allowing users to include the `referrerpolicy` attribute in iframes.
+
 
 [[additions]]
 == Additions
 
-{productname} {release-version} also includes the following addition<s>:
+{productname} {release-version} also includes the following addition:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Added `options.debug` API that logs the initial raw editor options to console.
+// #TINY-10605
 
-// CCFR here.
+This release introduces a new `options.debug` API that logs the initial raw editor options passed to `tinymce.init` to the console. This API is useful for debugging and troubleshooting issues with the editor, especially when dynamically composing many editor options from different sources.
+
+Usage:
+
+[source,js]
+----
+tinymce.activeEditor.options.debug();
+----
+
+The following data types are logged exactly as they are passed to `tinymce.init`:
+
+* `string`
+* `number`
+* `boolean`
+* `object`
+* `array`
+* `null`
+
+All other data types not mentioned above are logged as `[object X]` where "X" is the type of the object, such as:
+
+* `Function`
+* `Undefined`
+* `RegExp`
+* `Promise`
+* and more
+
+==== Example: using the `options.debug` API:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  height: 500,
+  paste_as_text: true,
+  context_menu: [ 'image', 'lists' ],
+  menu: { insert: { title: 'Insert', items: 'table | image | accordion' }},
+  inline: null,
+  myUndefined: undefined,
+  init_instance_callback: (editor) => editor.options.debug(),
+});
+----
+
+The above code will log the following to the console:
+
+[source,js]
+----
+{
+  selector: 'textarea',
+  height: 500,
+  paste_as_text: true,
+  context_menu: [ 'image', 'lists' ],
+  menu: { insert: { title: 'Insert', items: 'table | image | accordion' }},
+  inline: null,
+  myUndefined: [object Undefined],
+  init_instance_callback: [object Function],
+}
+----
 
 
 [[changes]]
@@ -157,6 +248,15 @@ Now, the branding logo in the {productname} status bar is set to `Build with` an
 // #TINY-vwxyz1
 
 // CCFR here.
+
+=== Focusing on `contenteditable="true"` element when using `editable_root: false` and inline mode caused selection to be shifted.
+// #TINY-10820
+
+Previously in {productname}, there was an issue where focusing on `contenteditable="true"` elements, such as media elements, while using `editable_root: false` and inline mode would cause the selection to be shifted. When saving the media dialog, the focus would first shift to the editor to ensure the changes are inserted into the editor. However, this caused the selection to change, leading to a duplicated element being inserted into the editor.
+
+This issue has been resolved in {productname} {release-version}. Now, after focusing on the `contenteditable="true"` root, the editor bookmark is restored, ensuring that the selection remains at the correct location when saving the media.
+
+As a result, when focusing on `contenteditable="true"` elements in inline mode with `editable_root: false`, the selection will remain correct after saving the media dialog. This prevents the duplication of elements and ensures that the changes are inserted at the intended location within the editor.
 
 
 [[security-fixes]]

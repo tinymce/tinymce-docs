@@ -149,6 +149,18 @@ Now, the branding logo in the {productname} status bar is set to `Build with` an
 
 Previously in {productname}, the `referrerpolicy` attribute was not considered as valid for iframe elements. In {productname} {release-version}, this attribute has been added to the schema, allowing users to include the `referrerpolicy` attribute in iframes.
 
+=== Improve merging of inserted inline elements by removing nodes with redundant inheritable styles.
+// #TINY-10869
+
+In previous versions of {productname}, when inserting inline elements into existing inline elements, the editor would attempt to merge the contents of identical inline elements. Inserted inline elements would only be removed if they were identical to inline parents of the element being inserted into, and this check would only occur until it found a non-inheritable style or a conflict.
+
+In {productname} {release-version}, this behavior has been improved. Now, inserted inline elements are removed when they contain no non-inheritable styles, have only one child element, and either:
+
+* Contain no styles which are inherited in a child element, or
+* Are identical to any inline parent of the selected element and don't contain any styles which conflict with another inserted parent's styles.
+
+As a result, many redundant inline elements are automatically stripped when inserted into the editor, while maintaining their appearance and overall element structure.
+
 
 [[additions]]
 == Additions

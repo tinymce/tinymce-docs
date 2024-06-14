@@ -242,6 +242,15 @@ The above code will log the following to the console:
 
 // CCFR here.
 
+=== Focusing on `contenteditable="true"` element when using `editable_root: false` and inline mode caused selection to be shifted.
+// #TINY-10820
+
+Previously in {productname}, there was an issue where focusing on `contenteditable="true"` elements, such as media elements, while using `editable_root: false` and inline mode would cause the selection to be shifted. When saving the media dialog, the focus would first shift to the editor to ensure the changes are inserted into the editor. However, this caused the selection to change, leading to a duplicated element being inserted into the editor.
+
+This issue has been resolved in {productname} {release-version}. Now, after focusing on the `contenteditable="true"` root, the editor bookmark is restored, ensuring that the selection remains at the correct location when saving the media.
+
+As a result, when focusing on `contenteditable="true"` elements in inline mode with `editable_root: false`, the selection will remain correct after saving the media dialog. This prevents the duplication of elements and ensures that the changes are inserted at the intended location within the editor.
+
 
 [[security-fixes]]
 == Security fixes

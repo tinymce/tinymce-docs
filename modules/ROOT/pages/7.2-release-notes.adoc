@@ -137,6 +137,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following improvements:
 
+=== Replaced {companyname} branding logo with `Build with TinyMCE` text and logo.
+// #TINY-11001
+
+Previously, the branding logo in the {productname} status bar was set to the {companyname} logo.
+
+Now, the branding logo in the {productname} status bar is set to `Build with` and the {productname} logo.
+
 === Added `referrerpolicy` as a valid attribute for an iframe element.
 // #TINY-10374
 

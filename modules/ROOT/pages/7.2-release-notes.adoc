@@ -70,17 +70,26 @@ In {productname} {release-version}, this issue has been resolved. Now, the slide
 
 For information on the **Image Editing** plugin, see: xref:editimage.adoc[Image Editing].
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== Revision History
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+This release of **Revision History** introduces the following addition.
 
-==== <Premium plugin name 1 change 1>
+==== New `revisionhistory_fetch_revision` option to support updating a revision when it is selected.
+// #TINY-10362
 
-// CCFR here.
+Previously in {productname}, when loading the Revision History dialog, all revisions were fetched at once. This approach was inefficient when dealing with a large number of revisions, as it could slow down the loading time of the Revision History dialog.
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+In {productname} {release-version}, a new `revisionhistory_fetch_revision` option has been added to the Revision History plugin. Implementing this option allows the editor to fetch the selected revision and the next closest revision necessary for making a comparison when a revision is selected in the Revision History dialog. This option is only called if the `content` field for the selected revisions is missing in the current instance of the Revision History dialog. One use case is that the integrator can now load revisions on demand by removing the `content` field from the `revisionhistory_fetch` option and implementing the `revisionhistory_fetch_revision` option to load the revision `content` when required. As a result, the Revision History dialog can now have a shorter startup delay when dealing with a large number of revisions.
+
+As part of this addition, the `content` field of the `revisionhistory_fetch` option is now optional and can be omitted to prevent loading all the revision contents when the Revision History dialog is opened. Omitting the `content` field without implementing the `revisionhistory_fetch_revision` option will result in the Revision History dialog loading blank revisions when selected.
+
+NOTE: The integrator can still use the `revisionhistory_fetch` option to load all revisions at once if needed by including the `content` field in the returned data and omitting the `revisionhistory_fetch_revision` option, as was the case prior to this release.
+
+For more information on the `revisionhistory_fetch_revision` option, see: xref:revisionhistory.adoc#revisionhistory_fetch_revision[Revision History - revisionhistory_fetch_revision].
+
+For information on the **Revision History** premium plugin, see: xref:revisionhistory.adoc[Revision History].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]

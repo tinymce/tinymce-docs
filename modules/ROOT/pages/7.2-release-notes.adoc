@@ -159,11 +159,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === Accessibility for element path buttons, added tooltip to describe the button and removed incorrect `aria-level` attribute.
 // #TINY-10891
 
-Previously in {productname}, an issue was identified where the element path buttons in the status bar did not provide any aria description of their functionality. Without any description for the element path buttons in the status bar, screen reader users were unable to describe the purpose of these buttons to visually impaired users.
+In previous versions of {productname}, Axe-DevTools (web accessibility testing extension) identified that the element path buttons contained an invalid `aria-level` attribute that is not permitted on `role="button"` elements. As a consequence, screen readers were unable to describe the purpose of these buttons to visually impaired users.
 
-To address this issue in {productname} {release-version}, tooltips have been added to the buttons in the element path. These tooltips provide a description of the button's functionality. Additionally, the `aria-describedby` attribute has been added when the tooltip is focused, allowing screen readers to announce and describe the purpose of the button. Now, a tooltip appears when hovering over an element path button with the mouse or focusing on it using the keyboard, and the description is announced by screen readers if the button is focused. This improvement ensures that visually impaired users receive the same information as other users.
+{productname} {release-version} addresses this issue by adding tooltips to the buttons in the element path which now provides a description of the button's functionality. In addition, the `aria-describedby` attribute has been added when the tooltip is focused, allowing screen readers to announce and describe the purpose of the button when in-focus. Now, a tooltip appears when hovering over an element path button with the mouse or focusing on it using the keyboard.
 
-Another part of the change is the removal of the incorrect `aria-level` attribute that was added to these buttons. This change was made to ensure that the editor complies with the "Elements must only use supported ARIA attributes" rule in WCAG 2.x (A).
+[NOTE]
+With this change {productname} also removed of the incorrect `aria-level` attribute that was added to these buttons previously. This change ensures that the editor complies with the "Elements must only use supported ARIA attributes" rule.
 
 
 [[security-fixes]]

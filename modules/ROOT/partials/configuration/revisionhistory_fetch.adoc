@@ -1,7 +1,7 @@
 [[revisionhistory_fetch]]
 == `revisionhistory_fetch`
 
-The `revisionhistory_fetch` function is used by the plugin to retrieve saved versions. This function is required for the Revision History plugin to work. The function is called when the user opens the Revision History dialog.
+The `revisionhistory_fetch` function is used by the plugin to retrieve saved versions. This function is required for the Revision History plugin to work. The function is called when the user opens the Revision History view.
 
 The `revisionhistory_fetch` option is an asynchronous function that returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise] which resolves to an array of revisions.
 
@@ -18,7 +18,7 @@ The {pluginname} plugin does not sort the result before displaying. This allows 
 |Field |Type |Required? |Description
 |`+revisionId+` | `+string+` | required | The unique string ID of the revision.
 |`+createdAt+` | `+string+` | required | A UTC datetime string in ISO-8061 format.
-|`+content+` | `+string+` | optional | HTML string of the revision content. If provided, all revisions are fetched at once when loading the Revision History dialog. If not provided, the `revisionhistory_fetch_revision` option must be implemented to fetch the `content` of a selected revision on demand.
+|`+content+` | `+string+` | optional | HTML string of the revision content. Empty string is considered as valid content.
 |===
 
 === Example of `revisionhistory_fetch` response

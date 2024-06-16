@@ -1,7 +1,7 @@
 [[revisionhistory_fetch_revision]]
 == `revisionhistory_fetch_revision`
 
-The plugin calls this function to fetch a revision's content when a revision is selected in the revision history dialog. This function is called with the revision object that was selected in the revision history dialog. The function should return a Promise that resolves with the revision content.
+The plugin uses this option to update for when either the selected and the closest revisions have no content. The function should return a Promise that resolves with an updated revision.
 
 *Type:* `+Function+` (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
 
@@ -73,15 +73,15 @@ tinymce.init({
   toolbar: 'revisionhistory',
   revisionhistory_fetch: () => Promise.resolve(lightRevisions),
   revisionhistory_fetch_revision: (_editor, revision) => new Promise((resolve) => {
-	let newRevision = null;
-	for (let i = 0; i < revisions.length; i++) {
-	  const temp = revisions[i];
-	  if (temp.revisionId === revision.revisionId) {
-		  newRevision = temp;
-		  break;
-	  }
-	}
-	resolve(newRevision);
+  let newRevision = null;
+  for (let i = 0; i < revisions.length; i++) {
+    const temp = revisions[i];
+    if (temp.revisionId === revision.revisionId) {
+      newRevision = temp;
+      break;
+    }
+  }
+  resolve(newRevision);
   })
 });
 ----

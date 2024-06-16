@@ -76,18 +76,19 @@ The {productname} {release-version} release includes an accompanying release of 
 
 This release of **Revision History** introduces the following addition.
 
-==== New `revisionhistory_fetch_revision` option to support updating a revision when it is selected.
+==== New `revisionhistory_fetch_revision` option to support updating a revision.
 // #TINY-10362
 
-Previously in {productname}, when loading the Revision History dialog, all revisions were fetched at once. This approach was inefficient when dealing with a large number of revisions, as it could slow down the loading time of the Revision History dialog.
 
-In {productname} {release-version}, a new `revisionhistory_fetch_revision` option has been added to the Revision History plugin. Implementing this option allows the editor to fetch the selected revision and the next closest revision necessary for making a comparison when a revision is selected in the Revision History dialog. This option is only called if the `content` field for the selected revisions is missing in the current instance of the Revision History dialog. One use case is that the integrator can now load revisions on demand by removing the `content` field from the `revisionhistory_fetch` option and implementing the `revisionhistory_fetch_revision` option to load the revision `content` when required. As a result, the Revision History dialog can now have a shorter startup delay when dealing with a large number of revisions.
+In {productname} {release-version}, a new `revisionhistory_fetch_revision` option has been added to enable updating a revision after the initial fetch. If configured, the Revision History only uses the option to update for when either the selected and the closest revisions have no content. This occurs before generating the differences between the two revisions.
 
-As part of this addition, the `content` field of the `revisionhistory_fetch` option is now optional and can be omitted to prevent loading all the revision contents when the Revision History dialog is opened. Omitting the `content` field without implementing the `revisionhistory_fetch_revision` option will result in the Revision History dialog loading blank revisions when selected.
+NOTE: As part of this addition, the `content` property is now optional. For the fetched revisions, empty string is considered as valid content.
 
-NOTE: The integrator can still use the `revisionhistory_fetch` option to load all revisions at once if needed by including the `content` field in the returned data and omitting the `revisionhistory_fetch_revision` option, as was the case prior to this release.
+NOTE: The integrators still need to configure the `revisionhistory_fetch` option to provide the initial revisions.
 
 For more information on the `revisionhistory_fetch_revision` option, see: xref:revisionhistory.adoc#revisionhistory_fetch_revision[Revision History - revisionhistory_fetch_revision].
+
+This option would be helpful when dealing with revisions that have large content or preferring to only load the content when required.
 
 For information on the **Revision History** premium plugin, see: xref:revisionhistory.adoc[Revision History].
 

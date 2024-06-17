@@ -70,6 +70,25 @@ In {productname} {release-version}, this issue has been resolved. Now, the slide
 
 For information on the **Image Editing** plugin, see: xref:editimage.adoc[Image Editing].
 
+=== PowerPaste
+
+The {productname} {release-version} release includes an accompanying release of the **PowerPaste** premium plugin.
+
+This release of **PowerPaste** introduces the following addition.
+
+==== New option to disable the auto-linking feature in PowerPaste.
+// #TINY-10962
+
+Previously in {productname}, it was not possible to configure PowerPaste to exclude converting text that resembles a URL into a hyperlink. As a consequence, all text that resembled a URL was automatically converted into a hyperlink when pasting plain text or rich text from HTML.
+
+In {productname} {release-version}, the `powerpaste_autolink_urls` option has been introduced. This option allows users to customize the auto-linking behavior on paste. As a result, users can now disable the auto-linking feature in PowerPaste.
+
+NOTE: This option is enabled by default and does not exhibit any change in behavior when upgrading to {productname} {release-version}.
+
+For more information on the `powerpaste_autolink_urls` option, refer to: xref:powerpaste-options.adoc#powerpaste_autolink_urls[PowerPaste - powerpaste_autolink_urls].
+
+For information on the **PowerPaste** premium plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
+
 === <Premium plugin name 1> <Premium plugin name 1 version>
 
 The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
@@ -81,6 +100,21 @@ The {productname} {release-version} release includes an accompanying release of 
 // CCFR here.
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+
+=== Math
+
+The {productname} {release-version} release includes an accompanying release of the **Math** premium plugin.
+
+This **Math** plugin release includes the following fix:
+
+==== Math preview was not rendered with the colors from the current skin.
+// #TINY-10900
+
+Previously, the **Math** preview did not follow the editor skin UI colors. As a consequence, the equation preview dialog was always rendered with black text on white background even if the UI skin was a dark skin.
+
+This has been addressed in {productname} {release-version}. Now, the editor renders the equation preview inline with the **Math** dialog, and not using an iframe, so that the preview container's colors are inherited from the dialog. As a result, the text color and background color of the equation preview container now follows the editor skin UI colors.
+
+For information on the **Math** plugin, see: xref:math.adoc[Math].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
@@ -122,6 +156,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following improvements:
 
+=== Replaced {companyname} branding logo with `Build with TinyMCE` text and logo.
+// #TINY-11001
+
+Previously, the branding logo in the {productname} status bar was set to the {companyname} logo.
+
+Now, the branding logo in the {productname} status bar is set to `Build with` and the {productname} logo.
+
 === Added `referrerpolicy` as a valid attribute for an iframe element.
 // #TINY-10374
 
@@ -137,6 +178,18 @@ As a consequence, the dialog was less accessible because the input placeholders 
 {productname} {release-version} addresses this issue. Now, placeholders have been replaced by input labels located above the input fields.
 
 As a result, the Search & Replace dialog is now more accessible and there are input labels that remain visible at all times.
+
+=== Improve merging of inserted inline elements by removing nodes with redundant inheritable styles.
+// #TINY-10869
+
+In previous versions of {productname}, when inserting inline elements into existing inline elements, the editor would attempt to merge the contents of identical inline elements. Inserted inline elements would only be removed if they were identical to inline parents of the element being inserted into, and this check would only occur until it found a non-inheritable style or a conflict.
+
+In {productname} {release-version}, this behavior has been improved. Now, inserted inline elements are removed when they contain no non-inheritable styles, have only one child element, and either:
+
+* Contain no styles which are inherited in a child element, or
+* Are identical to any inline parent of the selected element and don't contain any styles which conflict with another inserted parent's styles.
+
+As a result, many redundant inline elements are automatically stripped when inserted into the editor, while maintaining their appearance and overall element structure.
 
 
 [[additions]]
@@ -237,6 +290,22 @@ The above code will log the following to the console:
 // #TINY-vwxyz1
 
 // CCFR here.
+
+=== Corrected the `role` attribute on listbox dialog components to `combobox` when there are no nested menu items.
+// #TINY-10807
+
+Previously in {productname}, the `role` attribute on listbox dialog components was set to `menu` when there were no nested menu items. This caused confusion for users, as screen readers would announce non-hierarchical listboxes as menu buttons.
+
+In {productname} {release-version}, this issue has been addressed by setting the `role` attribute to `combobox` when there are no nested menu items. As a result, screen readers now announce the listbox as a combobox and the menu it opens as a listbox. This improvement ensures that the currently selected value is announced when tabbing to the select box, and the selected items are announced as a listbox.
+
+=== Focusing on `contenteditable="true"` element when using `editable_root: false` and inline mode caused selection to be shifted.
+// #TINY-10820
+
+Previously in {productname}, there was an issue where focusing on `contenteditable="true"` elements, such as media elements, while using `editable_root: false` and inline mode would cause the selection to be shifted. When saving the media dialog, the focus would first shift to the editor to ensure the changes are inserted into the editor. However, this caused the selection to change, leading to a duplicated element being inserted into the editor.
+
+This issue has been resolved in {productname} {release-version}. Now, after focusing on the `contenteditable="true"` root, the editor bookmark is restored, ensuring that the selection remains at the correct location when saving the media.
+
+As a result, when focusing on `contenteditable="true"` elements in inline mode with `editable_root: false`, the selection will remain correct after saving the media dialog. This prevents the duplication of elements and ensures that the changes are inserted at the intended location within the editor.
 
 
 [[security-fixes]]

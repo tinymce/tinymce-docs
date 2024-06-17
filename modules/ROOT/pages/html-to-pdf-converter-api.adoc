@@ -7,7 +7,7 @@
 :servicename: HTML to PDF Converter API
 
 [NOTE]
-{servicename} service is available with a single purchase of the link:https://www.tiny.cloud/tinymce/features/export-pdf/[Export to PDF Premium Feature].
+This is a premium feature. link:https://www.tiny.cloud/contact/[Contact us] to purchase a license or to learn more about our tailored offers. Note that any documents generated without authentication will be watermarked.
 
 == Overview
 
@@ -46,11 +46,116 @@ When using the converter service, the following options are available:
 * link:https://exportpdf.converter.tiny.cloud/docs#section/General/CSS[CSS]
 * link:https://exportpdf.converter.tiny.cloud/docs#section/PDF-options[Options]
 
-[TIP]
-At least one of the parameters html, options.header_html, or options.footer_html is required to generate a PDF. 
-
-To use this API directly, proper CSS code needs to be provided manually. With the default editor configuration, specifying the options property is not necessary.
 
 === Demo
 
-liveDemo::html-to-pdf[]
+++++
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML to PDF Converter API</title>
+  <style>
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background: #f9f9f9;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #333;
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      margin-bottom: 10px;
+    }
+
+    button-convert {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background: #007BFF;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button-convert:hover {
+      background: #0056b3;
+    }
+
+    code {
+      display: block;
+      background: #eee;
+      padding: 10px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <p>Try converting HTML to PDF using the form below:</p>
+
+    <textarea id="htmlContent" placeholder="Add your HTML content here"><html><head><title>Example PDF</title></head><body><h1>Hello, World!</h1></body></html></textarea>
+    <div>
+      <button-convert onclick="convertToPDF()">Convert to PDF</button>
+    </div>
+
+    <script>
+      function convertToPDF() {
+            const htmlContent = document.getElementById('htmlContent').value;
+            const data = {
+                html: htmlContent,
+                options: { output: 'pdf' }
+            };
+
+            fetch('https://exportpdf.converter.tiny.cloud/v1/convert', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.blob())
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = 'converted.pdf';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+            })
+            .catch(error => console.error('Error converting HTML to PDF:', error));
+        }
+    </script>
+  </div>
+
+</body>
+
+</html>
+++++
+
+
+== API Reference
+
+> Explore the comprehensive API documentation for the {pluginname} Premium plugin at https://exportpdf.converter.tiny.cloud/docs[API Reference documentation (Export to PDF).^]
+
+== Export to PDF with {productname}
+
+> Explore {productname}'s official Export to PDF Premium plugin documentation at https://exportpdf.converter.tiny.cloud/docs[Export to PDF.^]

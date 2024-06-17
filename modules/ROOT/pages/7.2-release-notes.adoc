@@ -70,6 +70,25 @@ In {productname} {release-version}, this issue has been resolved. Now, the slide
 
 For information on the **Image Editing** plugin, see: xref:editimage.adoc[Image Editing].
 
+=== PowerPaste
+
+The {productname} {release-version} release includes an accompanying release of the **PowerPaste** premium plugin.
+
+This release of **PowerPaste** introduces the following addition.
+
+==== New option to disable the auto-linking feature in PowerPaste.
+// #TINY-10962
+
+Previously in {productname}, it was not possible to configure PowerPaste to exclude converting text that resembles a URL into a hyperlink. As a consequence, all text that resembled a URL was automatically converted into a hyperlink when pasting plain text or rich text from HTML.
+
+In {productname} {release-version}, the `powerpaste_autolink_urls` option has been introduced. This option allows users to customize the auto-linking behavior on paste. As a result, users can now disable the auto-linking feature in PowerPaste.
+
+NOTE: This option is enabled by default and does not exhibit any change in behavior when upgrading to {productname} {release-version}.
+
+For more information on the `powerpaste_autolink_urls` option, refer to: xref:powerpaste-options.adoc#powerpaste_autolink_urls[PowerPaste - powerpaste_autolink_urls].
+
+For information on the **PowerPaste** premium plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
+
 === <Premium plugin name 1> <Premium plugin name 1 version>
 
 The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

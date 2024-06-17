@@ -81,7 +81,7 @@ This release of **Revision History** introduces the following addition.
 
 In {productname} {release-version}, a new `revisionhistory_fetch_revision` option has been added to enable updating a revision after the initial fetch. If configured, when a revision is selected, the plugin uses this option to update the selected or closest revision that has no content.
 
-NOTE: As part of this addition, the `content` property is now optional. For the fetched revisions, empty string is considered as valid content.
+NOTE: As part of this addition, the `content` property is now optional. For the fetched revisions, an empty string is considered as valid content.
 
 NOTE: The integrators still need to configure the `revisionhistory_fetch` option to provide the initial revisions.
 

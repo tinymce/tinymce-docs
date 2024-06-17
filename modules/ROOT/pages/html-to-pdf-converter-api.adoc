@@ -6,33 +6,23 @@
 :pluginname: Export to PDF
 :servicename: HTML to PDF Converter API
 
-
-The {servicename} service feature provides the ability to generate PDF files directly without the need for an editor. 
-
 [NOTE]
 {servicename} service is available with a single purchase of the link:https://www.tiny.cloud/tinymce/features/export-pdf/[Export to PDF Premium Feature].
 
-== How the HTML to PDF Converter API Works
+== Overview
 
-The HTML to PDF Converter API offers a robust API designed to seamlessly convert HTML documents into PDF files. Upon request, the service swiftly generates the PDF file and delivers it in the `.pdf` format, ready for storage either on a local device or within a preferred database. For integration instructions, refer to the xref:exportpdf.adoc[Export to PDF official documentation] when using it with TinyMCE.
+The {servicename} is a powerful tool that seamlessly integrates advanced document conversion capabilities into developers workflows. This API allows for the efficient conversion of HTML content into PDF documents, catering to a wide range of use cases.
 
+=== Key Features
 
-== Simplified Conversion Process
+* **Versatile Document Conversion**: Convert HTML content into high-quality PDF documents, providing flexibility for various document needs.
+* **Preprocessing Capabilities**: Pre-process content before conversion, such as resolving merge tags, ensuring fully customized and ready-to-use PDF documents.
+* **Customizable Output**: Tailor the appearance and structure of the converted PDFs with customizable output xref:html-to-pdf-converter-api.adoc#options[options], including page sizes, margins, and formatting.
+* **Scalability**: Handle large volumes of PDF documents with consistent performance and reliability, supporting business growth and varying demands.
+* **Ease of Integration**: Integrate the API into existing workflows easily with comprehensive documentation and straightforward API endpoints.
+* **Security and Compliance**: Ensure secure document conversion processes that adhere to data protection standards and industry regulations, crucial for handling sensitive information.
 
-With the HTML to PDF Converter API, you can convert HTML content to PDF files in just a few simple steps:
-
-1. **Submit HTML Content:** Send your HTML content directly to the converter API.
-2. **Effortless Processing:** The service swiftly generates a high-quality PDF file.
-3. **Ready for Distribution:** Download the PDF document or store it for future use.
-
-== Seamless Integration
-
-Integrate the HTML to PDF Converter API seamlessly into your workflow:
-
-* **Desktop Applications:** Enhance your desktop applications by integrating HTML to PDF conversion functionality.
-* **Mobile Apps:** Offer PDF creation capabilities within your mobile applications for enhanced user experience.
-* **Web Applications:** Embed PDF generation directly into your web applications for streamlined document management.
-
+[[options]]
 == Flexible Configuration Options
 
 Tailor your PDF documents to suit your needs:
@@ -41,27 +31,12 @@ Tailor your PDF documents to suit your needs:
 * **Header and Footer Options:** Add link:https://exportpdf.converter.tiny.cloud/docs#section/PDF-options/Header-and-footer[headers, footers], and other branding elements to your PDF documents for a professional touch.
 * **Page Formatting:** Control page settings such as orientation, link:https://exportpdf.converter.tiny.cloud/docs#section/PDF-options/Margins[margins], and link:https://exportpdf.converter.tiny.cloud/docs#section/PDF-options/Page-format[page size] to optimize readability.
 
-== Key Benefits
-
-Unlock a range of benefits with the HTML to PDF Converter API:
-
-* **Enhanced Productivity:** Streamline your document creation process and save valuable time with automated PDF generation.
-* **Professional Presentation:** Impress your audience with polished, professionally formatted PDF documents.
-* **Versatile Integration:** Seamlessly integrate HTML to PDF conversion into your existing applications and workflows.
-* **Scalable Solution:** Whether you're creating a single PDF or processing large batches of documents, the HTML to PDF Converter API scales to meet your needs.
-
 == Ideal for Various Use Cases
 
-The HTML to PDF Converter API is suitable for a wide range of applications:
-
-* **Content Management Systems:** Easily convert web pages to PDFs for sharing and distribution.
-* **E-commerce Platforms:** Generate PDF invoices, receipts, and product catalogs for seamless customer communication.
-* **Education:** Standardize course materials and assignments in PDF format for easy distribution and accessibility.
-* **Corporate Environments:** Automate the creation of PDF reports, presentations, and marketing materials for efficient document management.
-
-== {servicename} Demo
-
-This service feature is available in a standalone environment using the {servicename} link:https://exportpdf.converter.tiny.cloud/demo[Demo].
+* **Aggregating Content from Multiple Sources**: Combine content from various editors into a single cohesive PDF document, simplifying content management for organizations using multiple tools.
+* **Centralized Document Management**: Store generated PDF documents centrally for better organization and accessibility, facilitating team collaboration and efficient document retrieval.
+* **Preprocessing and Customization**: Pre-process content to resolve merge tags and customize PDF document formatting, ensuring that the final output meets specific requirements and is ready for immediate use.
+* **Large-Scale Document Processing**: Utilize the API’s scalability to handle large volumes of PDF documents, maintaining consistent performance and reliability, essential for growing businesses.
 
 == Options Available for HTML to PDF Conversion
 
@@ -72,8 +47,10 @@ When using the converter service, the following options are available:
 * link:https://exportpdf.converter.tiny.cloud/docs#section/PDF-options[Options]
 
 [TIP]
-At least one of the parameters `html`, `options.header_html`, or `options.footer_html` is required to generate a PDF. 
+At least one of the parameters html, options.header_html, or options.footer_html is required to generate a PDF. 
 
 To use this API directly, proper CSS code needs to be provided manually. With the default editor configuration, specifying the options property is not necessary.
 
-> For more information on how the HTML to PDF Converter API can enhance your document creation process, visit our link:https://exportpdf.converter.tiny.cloud/docs[API Reference Documentation].
+=== Demo
+
+liveDemo::html-to-pdf[]

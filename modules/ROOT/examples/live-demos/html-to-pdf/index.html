@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML to PDF Converter API</title>
+  <style>
+
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background: #f9f9f9;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: #333;
+    }
+
+    textarea {
+      width: 100%;
+      height: 150px;
+      margin-bottom: 10px;
+    }
+
+    button-convert {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 16px;
+      color: #fff;
+      background: #007BFF;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button-convert:hover {
+      background: #0056b3;
+    }
+
+    code {
+      display: block;
+      background: #eee;
+      padding: 10px;
+      margin: 20px 0;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <p>Try converting HTML to PDF using the form below:</p>
+
+    <textarea id="htmlContent" placeholder="Add your HTML content here"></textarea>
+    <div>
+      <button-convert onclick="convertToPDF()">Convert to PDF</button>
+    </div>
+      
+    <h2>Documentation</h2>
+    <p>For detailed API documentation, including endpoints, integration guides, <a href="https://exportpdf.converter.tiny.cloud/demo">live demo</a> and best practices, please visit: <a
+        href="https://exportpdf.converter.tiny.cloud/docs">TinyMCE Document Converter REST API Documentation</a>.</p>
+
+    <script>
+      function convertToPDF() {
+            const htmlContent = document.getElementById('htmlContent').value;
+            const data = {
+                html: htmlContent,
+                options: { output: 'pdf' }
+            };
+
+            fetch('https://exportpdf.converter.tiny.cloud/v1/convert', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.blob())
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = 'converted.pdf';
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+            })
+            .catch(error => console.error('Error converting HTML to PDF:', error));
+        }
+    </script>
+  </div>
+
+</body>
+
+</html>

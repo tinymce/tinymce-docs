@@ -1,12 +1,12 @@
 [[revisionhistory_fetch]]
 == `revisionhistory_fetch`
 
-The `revisionhistory_fetch` function is used by the plugin to retrieve saved versions. This function is required for the Revision History plugin to work. The function is called when the user opens the Revision History view.
+The `revisionhistory_fetch` function retrieves saved versions and is **required** for the Revision History plugin to work. It is called when the user opens the Revision History view.
 
-The `revisionhistory_fetch` option is an asynchronous function that returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise] which resolves to an array of revisions.
+The `revisionhistory_fetch` option is an asynchronous function that returns a link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise] which resolves to an array of revisions.
 
 [NOTE]
-The {pluginname} plugin does not sort the result before displaying. This allows integrators to sort the result according to their preference. It is recommended to sort the result in reverse chronological order, as it is more intuitive for users when they can identify a version by its date.
+The {pluginname} plugin does not sort results before displaying them, allowing integrators to sort the results according to their preference. {companyname} recommends to sort the results in reverse chronological order, as this makes it easier for users to identify versions by date.
 
 *Type:* `+Function+` (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
 

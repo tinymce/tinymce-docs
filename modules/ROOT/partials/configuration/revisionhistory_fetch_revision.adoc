@@ -2,7 +2,7 @@
 == `revisionhistory_fetch_revision`
 When a revision is selected, the plugin uses this option to update the selected or closest revision that has no content. The function is expected to return a Promise that resolves with an updated revision.
 
-*Type:* `+Function+` (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
+*Type:* `+Function+` (Returns a link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
 
 *Input parameters:*
 [cols="1,1,1,3",options="header"]

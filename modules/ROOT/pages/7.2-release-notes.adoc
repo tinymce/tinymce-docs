@@ -12,6 +12,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, June 19^th^, 2024. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
+* xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
 * xref:new-premium-plugin<s>[New Premium plugin<s>]
 * xref:new-open-source-plugin<s>[New Open Source plugin<s>]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
@@ -25,6 +26,41 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:security-fixes[Security fixes]
 * xref:deprecated[Deprecated]
 * xref:known-issues[Known issues]
+
+[[accompanying-premium-self-hosted-server-side-component-changes]]
+== Accompanying Premium self-hosted server-side component changes
+
+The {productname} {release-version} release includes accompanying changes affecting the {productname} **self-hosted** services for the following plugin:
+
+* **Spell Checker** plugin `tinymcespellchecker`.
+
+For information on:
+
+* The **Spell Checker** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker plugin].
+* Deploying the **server-side** components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+
+The Java server-side component has been updated to the following version:
+
+* `ephox-spelling.war`: 2.119.6
+
+
+=== Updating the self-hosted server-side components
+
+The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
+
+. Update your Java Application Server to the minimum required version:
+
+include::partial$misc/supported-application-servers.adoc[]
+
+. Replace the existing server-side `.war` files with the `.war` files bundled with {productname} {release-version} or later.
+
+For information on:
+
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+* Deploying the server-side components using Docker, see: xref:bundle-intro-setup.adoc[Containerized service deployments].
+
+include::partial$misc/admon-no-functionality-changes-in-updated-server-side-components.adoc[]
+
 
 
 [[new-premium-plugin<s>]]
@@ -70,17 +106,100 @@ In {productname} {release-version}, this issue has been resolved. Now, the slide
 
 For information on the **Image Editing** plugin, see: xref:editimage.adoc[Image Editing].
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== PowerPaste
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **PowerPaste** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+This release of **PowerPaste** introduces the following addition.
 
-==== <Premium plugin name 1 change 1>
+==== New option to disable the auto-linking feature in PowerPaste.
+// #TINY-10962
 
-// CCFR here.
+Previously in {productname}, it was not possible to configure PowerPaste to exclude converting text that resembles a URL into a hyperlink. As a consequence, all text that resembled a URL was automatically converted into a hyperlink when pasting plain text or rich text from HTML.
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+In {productname} {release-version}, the `powerpaste_autolink_urls` option has been introduced. This option allows users to customize the auto-linking behavior on paste. As a result, users can now disable the auto-linking feature in PowerPaste.
+
+NOTE: This option is enabled by default and does not exhibit any change in behavior when upgrading to {productname} {release-version}.
+
+For more information on the `powerpaste_autolink_urls` option, refer to: xref:powerpaste-options.adoc#powerpaste_autolink_urls[PowerPaste - powerpaste_autolink_urls].
+
+For information on the **PowerPaste** premium plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
+
+=== Revision History
+
+The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
+
+This release of **Revision History** introduces the following addition.
+
+==== New `revisionhistory_fetch_revision` option to support updating a revision.
+// #TINY-10362
+
+In {productname} {release-version}, a new `revisionhistory_fetch_revision` option has been added to enable updating a revision after the initial fetch. If configured, when a revision is selected, the plugin uses this option to update the selected or closest revision that has no content.
+
+NOTE: As part of this addition, the `content` property is now optional. For the fetched revisions, an empty string is considered as valid content.
+
+IMPORTANT: The `revisionhistory_fetch` option must be configured when using the new `revisionhistory_fetch_revision` option, as it is required to provide the initial revisions.
+
+For more information on the `revisionhistory_fetch_revision` option, see: xref:revisionhistory.adoc#revisionhistory_fetch_revision[Revision History - revisionhistory_fetch_revision].
+
+This option is useful for handling revisions with large content or for loading content only when needed.
+
+For information on the **Revision History** premium plugin, see: xref:revisionhistory.adoc[Revision History].
+
+=== Accessibility Checker
+
+The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.
+
+**Accessibility Checker** includes the following fix.
+
+==== Temporary elements such as incorrect spelling highlights were interfering with accessibility checking.
+// #TINY-10771
+
+Previously, elements with certain attributes, such as highlights from the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker] plugin, were not being ignored by some checks in the Accessibility Checker plugin.
+
+As a consequence, these checks were not functioning correctly and were missing accessibility failures that should have been detected by the Accessibility Checker plugin.
+
+{productname} {release-version} addresses this issue. Now, the checks have been modified to ignore all elements that should be excluded, such as those with specific attributes added by the Spell Checker plugin.
+
+As a result, the Accessibility Checker now accurately identifies the accessibility issues in the content, even when temporary elements are present.
+
+For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
+
+=== Spell Checker
+
+The {productname} {release-version} includes an accompanying release of the **Spell Checker** premium plugin.
+
+**Spell Checker** includes the following improvement:
+
+==== Enhanced spelling service to support spellchecking for additional languages using customer-provided Hunspell dictionaries.
+// #TCLOUD-4297
+
+{productname} {release-version} introduces the following improvements for specified languages:
+
+* Medical English (US) was updated from `"en_US-medical"` to include `"en-medical"` as an additional code.
+* Dutch was updated from `"nl"` to `"nl, nl_NL"`.
+* German was updated from `"de"` to `"de, de_DE"`.
+* Italian was updated from `"it"` to `"it, it_IT"`.
+* Norwegian Bokmål was updated from `"nb"` to `"nb, nb_NO"`.
+* Portuguese (Brazil) was updated from `"pt"` to `"pt, pt_BR"`.
+* Swedish was updated from `"sv"` to `"sv, sv_SE"`.
+
+For information on the **Spell Checker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin] or for an complete list of supported languages, see: xref:introduction-to-tiny-spellchecker.adoc#supported-languages[Supported languages].
+
+=== Math
+
+The {productname} {release-version} release includes an accompanying release of the **Math** premium plugin.
+
+This **Math** plugin release includes the following fix:
+
+==== Math preview was not rendered with the colors from the current skin.
+// #TINY-10900
+
+Previously, the **Math** preview did not follow the editor skin UI colors. As a consequence, the equation preview dialog was always rendered with black text on white background even if the UI skin was a dark skin.
+
+This has been addressed in {productname} {release-version}. Now, the editor renders the equation preview inline with the **Math** dialog, and not using an iframe, so that the preview container's colors are inherited from the dialog. As a result, the text color and background color of the equation preview container now follows the editor skin UI colors.
+
+For information on the **Math** plugin, see: xref:math.adoc[Math].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
@@ -122,10 +241,40 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following improvements:
 
+=== Replaced {companyname} branding logo with `Build with TinyMCE` text and logo.
+// #TINY-11001
+
+Previously, the branding logo in the {productname} status bar was set to the {companyname} logo.
+
+Now, the branding logo in the {productname} status bar is set to `Build with` and the {productname} logo.
+
 === Added `referrerpolicy` as a valid attribute for an iframe element.
 // #TINY-10374
 
 Previously in {productname}, the `referrerpolicy` attribute was not considered as valid for iframe elements. In {productname} {release-version}, this attribute has been added to the schema, allowing users to include the `referrerpolicy` attribute in iframes.
+
+=== Improved Search & Replace dialog accessibility by changing placeholders to labels.
+// #TINY-10871
+
+In previous versions of {productname}, the Search & Replace dialog inputs were initially implemented with placeholders.
+
+As a consequence, the dialog was less accessible because the input placeholders were hidden once the user started typing. This posed difficulties for users who rely on consistent visual cues for context.
+
+{productname} {release-version} addresses this issue. Now, placeholders have been replaced by input labels located above the input fields.
+
+As a result, the Search & Replace dialog is now more accessible and there are input labels that remain visible at all times.
+
+=== Improve merging of inserted inline elements by removing nodes with redundant inheritable styles.
+// #TINY-10869
+
+In previous versions of {productname}, when inserting inline elements into existing inline elements, the editor would attempt to merge the contents of identical inline elements. Inserted inline elements would only be removed if they were identical to inline parents of the element being inserted into, and this check would only occur until it found a non-inheritable style or a conflict.
+
+In {productname} {release-version}, this behavior has been improved. Now, inserted inline elements are removed when they contain no non-inheritable styles, have only one child element, and either:
+
+* Contain no styles which are inherited in a child element, or
+* Are identical to any inline parent of the selected element and don't contain any styles which conflict with another inserted parent's styles.
+
+As a result, many redundant inline elements are automatically stripped when inserted into the editor, while maintaining their appearance and overall element structure.
 
 
 [[additions]]
@@ -230,6 +379,50 @@ In {productname} 6.4.1, a link:https://www.tiny.cloud/docs/tinymce/6/6.4.1-relea
 As a result, the `autoresize_bottom_margin` was not consistently applied in certain scenarios.
 
 In {productname} {release-version}, this issue has been resolved, and the `autoresize_bottom_margin` is now reliably applied.
+
+=== Deleting in a `div` with preceding `br` elements would sometimes throw errors.
+// #TINY-10840
+
+Previously, when deleting the last character in a `<div>` element with preceding `<br>` elements, an error _(Uncaught DOMException: Failed to execute 'setStart' on 'Range': There is no child at offset)_ was thrown to the console, and the `<div>` element was incorrectly converted to a `<p>` element.
+
+{productname} {release-version} addresses this issue. The delete logic has been modified to properly handle this situation. After the fix, the `<div>` element remains a `<div>`, and no error is thrown to the console when deleting the last character.
+
+=== Fixed cases where adding a newline around a br, table or img would not move the cursor to a new line.
+// #TINY-10384
+
+In previous versions of {productname}, an issue affecting cursor positioning was identified when adding new lines around specific HTML elements such as `<br>`, `<table>`, and `<img>` tags.
+
+As a consequence, the cursor failed to move to a new line when adding a newline around these elements, resulting in unexpected behavior while editing content within the editor.
+
+With the release of {productname} {release-version}, this issue has been addressed. The editor now accurately interprets the presence of spaces or newlines after certain HTML elements. As a result, cursor movement behaves as expected when adding new lines around `<br>`, `<table>`, and `<img>` tags.
+
+=== Corrected the `role` attribute on listbox dialog components to `combobox` when there are no nested menu items.
+// #TINY-10807
+
+Previously in {productname}, the `role` attribute on listbox dialog components was set to `menu` when there were no nested menu items. This caused confusion for users, as screen readers would announce non-hierarchical listboxes as menu buttons.
+
+In {productname} {release-version}, this issue has been addressed by setting the `role` attribute to `combobox` when there are no nested menu items.
+
+As a result, screen readers now announce the listbox as a combobox and the menu it opens as a listbox. This improvement ensures that the currently selected value is announced when tabbing to the select box, and the selected items are announced as a listbox.
+
+=== Focusing on `contenteditable="true"` element when using `editable_root: false` and inline mode caused selection to be shifted.
+// #TINY-10820
+
+Previously in {productname}, there was an issue where focusing on `contenteditable="true"` elements, such as media elements, while using `editable_root: false` and inline mode would cause the selection to be shifted. When saving the media dialog, the focus would first shift to the editor to ensure the changes are inserted into the editor. However, this caused the selection to change, leading to a duplicated element being inserted into the editor.
+
+This issue has been resolved in {productname} {release-version}. Now, after focusing on the `contenteditable="true"` root, the editor bookmark is restored, ensuring that the selection remains at the correct location when saving the media.
+
+As a result, when focusing on `contenteditable="true"` elements in inline mode with `editable_root: false`, the selection will remain correct after saving the media dialog. This prevents the duplication of elements and ensures that the changes are inserted at the intended location within the editor.
+
+=== Accessibility for element path buttons, added tooltip to describe the button and removed incorrect `aria-level` attribute.
+// #TINY-10891
+
+In previous versions of {productname}, Axe-DevTools (web accessibility testing extension) identified that the element path buttons contained an invalid `aria-level` attribute that is not permitted on `role="button"` elements. As a consequence, screen readers were unable to describe the purpose of these buttons to visually impaired users.
+
+{productname} {release-version} addresses this issue by adding tooltips to the buttons in the element path which now provides a description of the button's functionality. In addition, the `aria-describedby` attribute has been added when the tooltip is focused, allowing screen readers to announce and describe the purpose of the button when in-focus. Now, a tooltip appears when hovering over an element path button with the mouse or focusing on it using the keyboard.
+
+[NOTE]
+With this change {productname} also removed of the incorrect `aria-level` attribute that was added to these buttons previously. This change ensures that the editor complies with the "Elements must only use supported ARIA attributes" rule.
 
 
 [[security-fixes]]

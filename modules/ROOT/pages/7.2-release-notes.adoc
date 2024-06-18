@@ -98,7 +98,7 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== Temporary elements such as incorrect spelling highlights were interfering with accessibility checking.
 // #TINY-10771
 
-Previously, elements with certain attributes (such as highlights from the spellchecker) were not being ignored by some checks in the Accessibility Checker.
+Previously, elements with certain attributes, such as highlights from the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker] plugin, were not being ignored by some checks in the Accessibility Checker plugin.
 
 As a consequence, those checks were not functioning correctly, considering an additional, unnecessary layer.
 

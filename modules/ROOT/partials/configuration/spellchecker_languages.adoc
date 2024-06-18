@@ -8,8 +8,9 @@ This option specifies the spellchecker languages that are available to the user,
 *Default value:*
 [source,js]
 ----
-'English (United States)=en_US,English (United Kingdom)=en_GB,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian=nb,Portuguese=pt,Portuguese (Portugal)=pt_PT,Spanish=es,Swedish=sv'
+'English (United States)=en_US,English (United Kingdom)=en_GB,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian Bokmål=nb_NO,Norwegian Nynorsk=nn,Brazilian Portuguese=pt_BR,Portuguese=pt,Portuguese (Portugal)=pt_PT,Spanish=es,Swedish=sv,Swedish (Finland)=sv_FI,Afrikaans (South Africa)=af_ZA,English (Australia)=en_AU,English (Canada)=en_CA,English (United Kingdom)=en_GB,English (United States)=en_US,Medical English (US)=en_US-medical,Medical English (UK)=en_GB-medical,Maori (New Zealand)=mi_NZ'
 ----
+
 
 === Example: using `spellchecker_languages`
 
@@ -18,6 +19,6 @@ This option specifies the spellchecker languages that are available to the user,
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
-  spellchecker_languages: 'US English=en_US,UK English=en_GB,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian=nb,Brazilian Portuguese=pt,Iberian Portuguese=pt_PT,Spanish=es,Swedish=sv'
+  spellchecker_languages: 'US English=en_US,UK English=en_GB,Danish=da,Dutch=nl,Finnish=fi,French=fr,German=de,Italian=it,Norwegian Bokmål=nb_NO,Norwegian Nynorsk=nn,Brazilian Portuguese=pt_BR,Portuguese=pt,Portuguese (Portugal)=pt_PT,Spanish=es,Swedish=sv,Swedish (Finland)=sv_FI,Afrikaans (South Africa)=af_ZA,English (Australia)=en_AU,English (Canada)=en_CA,English (United Kingdom)=en_GB,English (United States)=en_US,Medical English (US)=en_US-medical,Medical English (UK)=en_GB-medical,Maori (New Zealand)=mi_NZ'
 });
 ----

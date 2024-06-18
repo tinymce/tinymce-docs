@@ -18,19 +18,33 @@ For example:
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea', // change this according to your HTML
+  selector: 'textarea',
   toolbar: 'language',
   plugins: 'tinymcespellchecker',
   content_langs: [
-    { title: 'English (US)', code: 'en_US' },
-    { title: 'English (US Medical)', code: 'en_US', customCode: 'en_US-medical' },
-    { title: 'English (UK)', code: 'en_UK' },
-    { title: 'English (UK Medical)', code: 'en_UK', customCode: 'en_UK-medical' },
-    { title: 'Spanish', code: 'es' },
+    { title: 'Afrikaans (South Africa)', code: 'af_ZA', customCode: 'af_ZA' },
+    { title: 'English (Australia)', code: 'en_AU' },
+    { title: 'English (Canada)', code: 'en_CA' },
+    { title: 'English (United Kingdom)', code: 'en_GB' },
+    { title: 'English (United States)', code: 'en_US' },
+    { title: 'Medical English (US)', code: 'en_US', customCode: 'en_US-medical' },
+    { title: 'Medical English (UK)', code: 'en_GB', customCode: 'en_GB-medical' },
+    { title: 'Danish', code: 'da' },
+    { title: 'Dutch', code: 'nl_NL' },
+    { title: 'Finnish', code: 'fi' },
     { title: 'French', code: 'fr' },
-    { title: 'German', code: 'de' },
-    { title: 'Portuguese', code: 'pt' },
-    { title: 'Chinese', code: 'zh' }
-  ]
+    { title: 'German', code: 'de_DE' },
+    { title: 'Hungarian', code: 'hu' },
+    { title: 'Italian', code: 'it_IT' },
+    { title: 'Maori (New Zealand)', code: 'mi_NZ' },
+    { title: 'Norwegian Bokmål', code: 'nb_NO' },
+    { title: 'Norwegian Nynorsk', code: 'nn' },
+    { title: 'Polish', code: 'pl' },
+    { title: 'Portuguese (Brazil)', code: 'pt_BR' },
+    { title: 'Portuguese (Portugal)', code: 'pt_PT' },
+    { title: 'Spanish', code: 'es' },
+    { title: 'Swedish', code: 'sv_SE' },
+    { title: 'Swedish (Finland)', code: 'sv_FI' }
+  ],
 });
 ----

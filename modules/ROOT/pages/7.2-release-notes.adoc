@@ -12,6 +12,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, June 19^th^, 2024. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
+* xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
 * xref:new-premium-plugin<s>[New Premium plugin<s>]
 * xref:new-open-source-plugin<s>[New Open Source plugin<s>]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
@@ -25,6 +26,41 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:security-fixes[Security fixes]
 * xref:deprecated[Deprecated]
 * xref:known-issues[Known issues]
+
+[[accompanying-premium-self-hosted-server-side-component-changes]]
+== Accompanying Premium self-hosted server-side component changes
+
+The {productname} {release-version} release includes accompanying changes affecting the {productname} **self-hosted** services for the following plugin:
+
+* **Spell Checker** plugin `tinymcespellchecker`.
+
+For information on:
+
+* The **Spell Checker** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker plugin].
+* Deploying the **server-side** components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+
+The Java server-side component has been updated to the following version:
+
+* `ephox-spelling.war`: 2.119.6
+
+
+=== Updating the self-hosted server-side components
+
+The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
+
+. Update your Java Application Server to the minimum required version:
+
+include::partial$misc/supported-application-servers.adoc[]
+
+. Replace the existing server-side `.war` files with the `.war` files bundled with {productname} {release-version} or later.
+
+For information on:
+
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+* Deploying the server-side components using Docker, see: xref:bundle-intro-setup.adoc[Containerized service deployments].
+
+include::partial$misc/admon-no-functionality-changes-in-updated-server-side-components.adoc[]
+
 
 
 [[new-premium-plugin<s>]]
@@ -89,17 +125,26 @@ For more information on the `powerpaste_autolink_urls` option, refer to: xref:po
 
 For information on the **PowerPaste** premium plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== Spell Checker
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} includes an accompanying release of the **Spell Checker** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Spell Checker** includes the following improvement:
 
-==== <Premium plugin name 1 change 1>
+==== Enhanced spelling service to support spellchecking for additional languages using customer-provided Hunspell dictionaries.
+// #TCLOUD-4297
 
-// CCFR here.
+{productname} {release-version} introduces the following improvements for specified languages:
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+* Medical English (US) was updated from `"en_US-medical"` to include `"en-medical"` as an additional code.
+* Dutch was updated from `"nl"` to `"nl, nl_NL"`.
+* German was updated from `"de"` to `"de, de_DE"`.
+* Italian was updated from `"it"` to `"it, it_IT"`.
+* Norwegian Bokmål was updated from `"nb"` to `"nb, nb_NO"`.
+* Portuguese (Brazil) was updated from `"pt"` to `"pt, pt_BR"`.
+* Swedish was updated from `"sv"` to `"sv, sv_SE"`.
+
+For information on the **Spell Checker Pro** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro plugin] or for an complete list of supported languages, see: xref:introduction-to-tiny-spellchecker.adoc#supported-languages[Supported languages].
 
 === Math
 

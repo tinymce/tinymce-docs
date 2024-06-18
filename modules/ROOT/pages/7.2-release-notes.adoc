@@ -225,7 +225,7 @@ The above code will log the following to the console:
 === `autoresize_bottom_margin` was not reliably applied in some situations.
 // #TINY-10793
 
-In {productname} 6.4.1, a link:https://www.tiny.cloud/docs/tinymce/6/6.4.1-release-notes/#editor-increases-the-height-indefinitely-when-using-autoresize-with-content_css-document[fix] addressed an issue where the editor's height would increase indefinitely when using autoresize with a content_css document. This fix inadvertently caused a regression, resulting in the editor occasionally failing to apply bottom padding correctly.
+In {productname} 6.4.1, a link:https://www.tiny.cloud/docs/tinymce/6/6.4.1-release-notes/#editor-increases-the-height-indefinitely-when-using-autoresize-with-content_css-document[fix] addressed an issue where the editor's height would increase indefinitely when using the xref:autoresize.adoc[Autoresize] plugin with `content_css` set to `document`. This fix inadvertently caused a regression, resulting in the editor occasionally failing to apply bottom padding correctly.
 
 As a result, the `autoresize_bottom_margin` was not consistently applied in certain scenarios.
 

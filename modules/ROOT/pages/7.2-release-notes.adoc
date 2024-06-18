@@ -350,6 +350,13 @@ The above code will log the following to the console:
 
 {productname} {release-version} also includes the following bug fix<es>:
 
+=== Deleting in a `div` with preceding `br` elements would sometimes throw errors.
+// #TINY-10840
+
+Previously, when deleting the last character in a `<div>` element with preceding `<br>` elements, an error _(Uncaught DOMException: Failed to execute 'setStart' on 'Range': There is no child at offset)_ was thrown to the console, and the `<div>` element was incorrectly converted to a `<p>` element.
+
+{productname} {release-version} addresses this issue. The delete logic has been modified to properly handle this situation. After the fix, the `<div>` element remains a `<div>`, and no error is thrown to the console when deleting the last character.
+
 === Fixed cases where adding a newline around a br, table or img would not move the cursor to a new line.
 // #TINY-10384
 
@@ -364,7 +371,9 @@ With the release of {productname} {release-version}, this issue has been address
 
 Previously in {productname}, the `role` attribute on listbox dialog components was set to `menu` when there were no nested menu items. This caused confusion for users, as screen readers would announce non-hierarchical listboxes as menu buttons.
 
-In {productname} {release-version}, this issue has been addressed by setting the `role` attribute to `combobox` when there are no nested menu items. As a result, screen readers now announce the listbox as a combobox and the menu it opens as a listbox. This improvement ensures that the currently selected value is announced when tabbing to the select box, and the selected items are announced as a listbox.
+In {productname} {release-version}, this issue has been addressed by setting the `role` attribute to `combobox` when there are no nested menu items.
+
+As a result, screen readers now announce the listbox as a combobox and the menu it opens as a listbox. This improvement ensures that the currently selected value is announced when tabbing to the select box, and the selected items are announced as a listbox.
 
 === Focusing on `contenteditable="true"` element when using `editable_root: false` and inline mode caused selection to be shifted.
 // #TINY-10820

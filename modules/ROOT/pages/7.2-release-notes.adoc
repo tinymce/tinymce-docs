@@ -405,6 +405,16 @@ This issue has been resolved in {productname} {release-version}. Now, after focu
 
 As a result, when focusing on `contenteditable="true"` elements in inline mode with `editable_root: false`, the selection will remain correct after saving the media dialog. This prevents the duplication of elements and ensures that the changes are inserted at the intended location within the editor.
 
+=== Accessibility for element path buttons, added tooltip to describe the button and removed incorrect `aria-level` attribute.
+// #TINY-10891
+
+In previous versions of {productname}, Axe-DevTools (web accessibility testing extension) identified that the element path buttons contained an invalid `aria-level` attribute that is not permitted on `role="button"` elements. As a consequence, screen readers were unable to describe the purpose of these buttons to visually impaired users.
+
+{productname} {release-version} addresses this issue by adding tooltips to the buttons in the element path which now provides a description of the button's functionality. In addition, the `aria-describedby` attribute has been added when the tooltip is focused, allowing screen readers to announce and describe the purpose of the button when in-focus. Now, a tooltip appears when hovering over an element path button with the mouse or focusing on it using the keyboard.
+
+[NOTE]
+With this change {productname} also removed of the incorrect `aria-level` attribute that was added to these buttons previously. This change ensures that the editor complies with the "Elements must only use supported ARIA attributes" rule.
+
 
 [[security-fixes]]
 == Security fixes

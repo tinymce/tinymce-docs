@@ -125,6 +125,27 @@ For more information on the `powerpaste_autolink_urls` option, refer to: xref:po
 
 For information on the **PowerPaste** premium plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
 
+=== Revision History
+
+The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
+
+This release of **Revision History** introduces the following addition.
+
+==== New `revisionhistory_fetch_revision` option to support updating a revision.
+// #TINY-10362
+
+In {productname} {release-version}, a new `revisionhistory_fetch_revision` option has been added to enable updating a revision after the initial fetch. If configured, when a revision is selected, the plugin uses this option to update the selected or closest revision that has no content.
+
+NOTE: As part of this addition, the `content` property is now optional. For the fetched revisions, an empty string is considered as valid content.
+
+IMPORTANT: The `revisionhistory_fetch` option must be configured when using the new `revisionhistory_fetch_revision` option, as it is required to provide the initial revisions.
+
+For more information on the `revisionhistory_fetch_revision` option, see: xref:revisionhistory.adoc#revisionhistory_fetch_revision[Revision History - revisionhistory_fetch_revision].
+
+This option is useful for handling revisions with large content or for loading content only when needed.
+
+For information on the **Revision History** premium plugin, see: xref:revisionhistory.adoc[Revision History].
+
 === Accessibility Checker
 
 The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.

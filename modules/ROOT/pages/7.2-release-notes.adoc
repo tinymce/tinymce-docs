@@ -102,7 +102,9 @@ Previously, elements with certain attributes, such as highlights from the xref:i
 
 As a consequence, these checks were not functioning correctly and were missing accessibility failures that should have been detected by the Accessibility Checker plugin.
 
-{productname} {release-version} addresses this issue. Now, the checks have been modified to ignore all elements that should be excluded, such as those with specific attributes added by the spellchecker.
+{productname} {release-version} addresses this issue. Now, the checks have been modified to ignore all elements that should be excluded, such as those with specific attributes added by the Spell Checker plugin.
+
+As a result, the Accessibility Checker now accurately identifies the accessibility issues in the content, even when temporary elements are present.
 
 For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
 

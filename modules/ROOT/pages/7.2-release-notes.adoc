@@ -168,6 +168,17 @@ Now, the branding logo in the {productname} status bar is set to `Build with` an
 
 Previously in {productname}, the `referrerpolicy` attribute was not considered as valid for iframe elements. In {productname} {release-version}, this attribute has been added to the schema, allowing users to include the `referrerpolicy` attribute in iframes.
 
+=== Improved Search & Replace dialog accessibility by changing placeholders to labels.
+// #TINY-10871
+
+In previous versions of {productname}, the Search & Replace dialog inputs were initially implemented with placeholders.
+
+As a consequence, the dialog was less accessible because the input placeholders were hidden once the user started typing. This posed difficulties for users who rely on consistent visual cues for context.
+
+{productname} {release-version} addresses this issue. Now, placeholders have been replaced by input labels located above the input fields.
+
+As a result, the Search & Replace dialog is now more accessible and there are input labels that remain visible at all times.
+
 === Improve merging of inserted inline elements by removing nodes with redundant inheritable styles.
 // #TINY-10869
 

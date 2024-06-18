@@ -100,7 +100,7 @@ The {productname} {release-version} release includes an accompanying release of 
 
 Previously, elements with certain attributes, such as highlights from the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker] plugin, were not being ignored by some checks in the Accessibility Checker plugin.
 
-As a consequence, those checks were not functioning correctly, considering an additional, unnecessary layer.
+As a consequence, these checks were not functioning correctly and were missing accessibility failures that should have been detected by the Accessibility Checker plugin.
 
 {productname} {release-version} addresses this issue. Now, the checks have been modified to ignore all elements that should be excluded, such as those with specific attributes added by the spellchecker.
 

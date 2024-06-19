@@ -89,11 +89,14 @@ The table below summarizes how versions are handled in the {pluginname}:
 |Yes |N/A |Yes |The saved versions and the current version are shown
 |===
 
+
 == Options
 
 The following configuration options affect the behavior of the {pluginname} plugin.
 
 include::partial$configuration/revisionhistory_fetch.adoc[leveloffset=+1]
+
+include::partial$configuration/revisionhistory_fetch_revision.adoc[leveloffset=+1]
 
 include::partial$configuration/revisionhistory_css_url.adoc[leveloffset=+1]
 

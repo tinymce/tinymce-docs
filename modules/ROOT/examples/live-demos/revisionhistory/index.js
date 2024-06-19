@@ -1,3 +1,41 @@
+const getRandomDelay = () => {
+  const minDelay = 500;
+  const maxDelay = 2000;
+  return Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay;
+};
+
+const lightRevisions = [
+  {
+    revisionId: '4',
+    createdAt: '2023-11-29T10:11:21.578Z',
+  },
+  {
+    revisionId: '3',
+    createdAt: '2023-11-25T08:30:21.578Z',
+  },
+  {
+    revisionId: '2',
+    createdAt: '2023-11-24T22:26:21.578Z',
+  },
+  {
+    revisionId: '1',
+    createdAt: '2023-11-23T20:26:21.578Z',
+  },
+];
+
+const revisionhistory_fetch = () =>
+  new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(
+        lightRevisions
+          .sort((a, b) =>
+            new Date(a.createdAt) < new Date(b.createdAt) ? -1 : 1
+          )
+          .reverse()
+      );
+    }, getRandomDelay());
+  });
+
 const revisions = [
   {
     revisionId: '4',
@@ -82,21 +120,30 @@ const revisions = [
         <p>And those use cases are just the start. TinyMCE is incredibly flexible, and with hundreds of APIs there&rsquo;s likely a solution for your editor project. If you haven&rsquo;t experienced Tiny Cloud, get started today. You&rsquo;ll even get a free trial of our premium plugins &ndash; no credit card required!</p>
       -->
     `,
-  }
+  },
 ];
 
-const get_revisions = () => new Promise((resolve) => {
+const revisionhistory_fetch_revision = (_editor, revision) =>
+  new Promise((resolve) => {
     setTimeout(() => {
-      resolve(revisions.sort((a, b) => new Date(a.createdAt) < new Date(b.createdAt) ? -1 : 1).reverse());
-    }, 1000);
+      let newRevision = null;
+      for (let i = 0; i < revisions.length; i++) {
+        const temp = revisions[i];
+        if (temp.revisionId === revision.revisionId) {
+          newRevision = temp;
+          break;
+        }
+      }
+      resolve(newRevision);
+    }, getRandomDelay());
   });
-
 
 tinymce.init({
   selector: 'textarea#revisionhistory',
   height: 800,
   plugins: 'revisionhistory',
   toolbar: 'revisionhistory',
-  revisionhistory_fetch: get_revisions,
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
+  revisionhistory_fetch,
+  revisionhistory_fetch_revision,
 });

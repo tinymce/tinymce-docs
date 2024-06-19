@@ -4,6 +4,12 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+## 6.8.4 - 2024-06-19
+
+=== Fixed
+* HTML entities that were double decoded in `noscript` elements caused an XSS vulnerability.
+* It was possible to inject XSS HTML that was not matching the regexp when using the `noneditable_regexp` option.
+
 == 6.8.3 - 2024-02-08
 
 === Changed

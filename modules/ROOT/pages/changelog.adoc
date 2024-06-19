@@ -43,6 +43,11 @@ NOTE: This is the {productname} Community version changelog. For information abo
 // #TINY-10820
 * Corrected the `role` attribute on listbox dialog components to `combobox` when there are no nested menu items.
 // #TINY-10807
+* HTML entities that were double decoded in `noscript` elements caused an XSS vulnerability.
+// #TINY-11019
+* It was possible to inject XSS HTML that was not matching the regexp when using the `noneditable_regexp` option.
+// #TINY-11022
+
 
 == 7.1.2 - 2024-06-05
 

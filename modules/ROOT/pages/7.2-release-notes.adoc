@@ -19,6 +19,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:additions[Additions]
 * xref:changes[Changes]
 * xref:bug-fixes[Bug fixes]
+* xref:security-fix[Security fix]
 
 
 [[accompanying-premium-self-hosted-server-side-component-changes]]
@@ -354,3 +355,32 @@ Previously in {productname}, the `role` attribute on listbox dialog components w
 In {productname} {release-version}, this issue has been addressed by setting the `role` attribute to `combobox` when there are no nested menu items.
 
 As a result, screen readers now announce the listbox as a combobox and the menu it opens as a listbox. This improvement ensures that the currently selected value is announced when tabbing to the select box, and the selected items are announced as a listbox.
+
+[[security-fixes]]
+== Security fixes
+
+{productname} {release-version} includes two fixes for the following security issues:
+
+=== HTML entities that were double decoded in `noscript` elements caused an XSS vulnerability.
+// #TINY-11019
+
+A https://owasp.org/www-community/attacks/xss/[cross-site scripting] (XSS) vulnerability was discovered in {productname}'s content parsing code. This allowed specially crafted `noscript` elements containing malicious code to be executed when that content was loaded into the editor.
+
+This vulnerability has been patched in {productname} {release-version}, {productname} 6.8.4 and {productname} 5.11.0 LTS by ensuring that content within `noscript` elements are properly parsed.
+
+GHSA: link:https://github.com/tinymce/tinymce/security/advisories/GHSA-w9jx-4g6g-rp7x[GitHub Advisory].
+
+CVE: Pending.
+
+NOTE: Tiny Technologies would like to thank link:https://malavkhatri.com/[Malav Khatri (devilbugbounty)] and another reported for discovering this vulnerability.
+
+=== It was possible to inject XSS HTML that was not matching the regexp when using the `noneditable_regexp` option.
+// #TINY-11022
+
+A https://owasp.org/www-community/attacks/xss/[cross-site scripting] (XSS) vulnerability was discovered in {productname}'s content extraction code. When using the `noneditable_regexp` option, specially crafted HTML attributes containing malicious code were able to be executed when content was extracted from the editor.
+
+This vulnerability has been patched in {productname} {release-version}, {productname} 6.8.4 and {productname} 5.11.0 LTS by ensuring that, when using the `noneditable_regexp` option, any content within an attribute is properly verified to match the configured regular expression before being added.
+
+GHSA: link:https://github.com/tinymce/tinymce/security/advisories/GHSA-9hcv-j9pv-qmph[GitHub Advisory].
+
+CVE: Pending.

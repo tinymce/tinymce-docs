@@ -1,7 +1,7 @@
 = tinymce.EditorOptions
 :navtitle: tinymce.EditorOptions
 :description: TinyMCE Editor Options API. The options API provides the ability to register, lookup and set editor options.
-:keywords: get, isRegistered, isSet, register, set, unset
+:keywords: debug, get, isRegistered, isSet, register, set, unset
 :moxie-type: api
 
 TinyMCE Editor Options API. The options API provides the ability to register, lookup and set editor options.
@@ -69,6 +69,7 @@ editor.options.set('custom_option', 'value');
 [cols="2,5,1",options="header"]
 |===
 |Name|Summary|Defined by
+|xref:#debug[debug()]|Logs the initial raw editor options to the console.|`xref:apis/tinymce.editoroptions.adoc[EditorOptions]`
 |xref:#get[get()]|Get the value of a registered option.|`xref:apis/tinymce.editoroptions.adoc[EditorOptions]`
 |xref:#isRegistered[isRegistered()]|Check if an option has been registered.|`xref:apis/tinymce.editoroptions.adoc[EditorOptions]`
 |xref:#isSet[isSet()]|Checks to see if a value has been set for the specified option.|`xref:apis/tinymce.editoroptions.adoc[EditorOptions]`
@@ -79,6 +80,16 @@ editor.options.set('custom_option', 'value');
 
 [[methods]]
 == Methods
+
+[[debug]]
+=== debug()
+[source, javascript]
+----
+debug()
+----
+Logs the initial raw editor options to the console.
+
+'''
 
 [[get]]
 === get()

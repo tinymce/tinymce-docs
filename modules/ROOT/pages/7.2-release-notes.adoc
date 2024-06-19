@@ -372,7 +372,7 @@ GHSA: link:https://github.com/tinymce/tinymce/security/advisories/GHSA-w9jx-4g6g
 
 CVE: Pending.
 
-NOTE: Tiny Technologies would like to thank link:https://malavkhatri.com/[Malav Khatri (devilbugbounty)] and another reported for discovering this vulnerability.
+NOTE: Tiny Technologies would like to thank link:https://malavkhatri.com/[Malav Khatri (devilbugbounty)] and another reporter for discovering this vulnerability.
 
 === It was possible to inject XSS HTML that was not matching the regexp when using the `noneditable_regexp` option.
 // #TINY-11022

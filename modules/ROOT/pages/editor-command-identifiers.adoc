@@ -601,6 +601,7 @@ The following command states can be queried using the xref:apis/tinymce.editor.a
 |JustifyLeft |Returns `+true+` if the content is formatted using the same markup as the {productname} `+JustifyLeft+` command.
 |JustifyRight |Returns `+true+` if the content is formatted using the same markup as the {productname} `+JustifyRight+` command.
 |mceBlockQuote |Returns `+true+` if the content is formatted using the same markup as the {productname} `+mceBlockQuote+` command.
+|mceTogglePlainTextPaste |Returns `+true+` if the {productname} `+mceTogglePlainTextPaste+` command is active.
 |Outdent |Returns `+true+` if the content is formatted using the same markup as the {productname} `+Outdent+` command.
 |Strikethrough |Returns `+true+` if the content is formatted using the same markup as the {productname} `+Strikethrough+` command.
 |Subscript |Returns `+true+` if the content is formatted using the same markup as the {productname} `+Subscript+` command.
@@ -622,6 +623,7 @@ tinymce.activeEditor.queryCommandState('JustifyFull');
 tinymce.activeEditor.queryCommandState('JustifyLeft');
 tinymce.activeEditor.queryCommandState('JustifyRight');
 tinymce.activeEditor.queryCommandState('mceBlockQuote');
+tinymce.activeEditor.queryCommandState('mceTogglePlainTextPaste');
 tinymce.activeEditor.queryCommandState('Outdent');
 tinymce.activeEditor.queryCommandState('Strikethrough');
 tinymce.activeEditor.queryCommandState('Subscript');

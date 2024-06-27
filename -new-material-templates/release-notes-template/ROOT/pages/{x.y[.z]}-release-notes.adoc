@@ -1,15 +1,17 @@
-= TinyMCE <x.y[.z]>
-:navtitle: TinyMCE <x.y[.z]>
-:description: Release notes for TinyMCE <x.y[.z]>
+= {productname} {release-version}
+:release-version: <x.y[.z]>
+:navtitle: {productname} {release-version}
+:description: Release notes for {productname} {release-version}
 :keywords: releasenotes, new, changes, bugfixes
 :page-toclevels: 1
 
 include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
+
 [[overview]]
 == Overview
 
-{productname} <x.y[.z]> was released for {enterpriseversion} and {cloudname} on <weekday>, <month> <DD>^<st|nd|rd|th>^, <YYYY>. These release notes provide an overview of the changes for {productname} <x.y[.z]>, including:
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on <weekday>, <month> <DD>^<st|nd|rd|th>^, <YYYY>. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
 // Remove sections and section boilerplates as necessary.
 // Pluralise as necessary or remove the placeholder plural marker.
@@ -31,7 +33,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[new-premium-plugin<s>]]
 New Premium plugin<s>
 
-The following new Premium plugin was released alongside {productname} <x.y[.z]>.
+The following new Premium plugin was released alongside {productname} {release-version}.
 
 === <Premium plugin name>
 
@@ -43,7 +45,7 @@ For information on the **<Premium plugin name>** plugin, see xref:<plugincode>.a
 [[new-open-source-plugin]]
 == New Open Source plugin
 
-The following new Open Source plugin was released alongside {productname} <x.y[.z]>.
+The following new Open Source plugin was released alongside {productname} {release-version}.
 
 === <Open source plugin name>
 
@@ -51,14 +53,15 @@ The new open source plugin, **<Open source plugin name>** // description here.
 
 For information on the **<Open source plugin name>** plugin, see xref:<plugincode>.adoc[<Open source plugin name>].
 
+
 [[accompanying-premium-plugin-changes]]
 == Accompanying Premium plugin changes
 
-The following premium plugin updates were released alongside {productname} <x.y[.z]>.
+The following premium plugin updates were released alongside {productname} {release-version}.
 
 === <Premium plugin name 1> <Premium plugin name 1 version>
 
-The {productname} <x.y[.z]> release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
 
 **<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
 
@@ -92,13 +95,13 @@ The following open source plugin has been announced as reaching its end-of-life:
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes
 
-The {productname} <x.y[.z]> release includes an accompanying release of the **Enhanced Skins & Icon Packs**.
+The {productname} {release-version} release includes an accompanying release of the **Enhanced Skins & Icon Packs**.
 
 === Enhanced Skins & Icon Packs
 
 The **Enhanced Skins & Icon Packs** release includes the following updates:
 
-The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} <x.y[.z]> skin, Oxide.
+The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} {release-version} skin, Oxide.
 
 For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
 
@@ -106,7 +109,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[improvements]]
 == Improvements
 
-{productname} <x.y[.z]> also includes the following improvement<s>:
+{productname} {release-version} also includes the following improvement<s>:
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
@@ -117,7 +120,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[additions]]
 == Additions
 
-{productname} <x.y[.z]> also includes the following addition<s>:
+{productname} {release-version} also includes the following addition<s>:
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
@@ -128,7 +131,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[changes]]
 == Changes
 
-{productname} <x.y[.z]> also includes the following change<s>:
+{productname} {release-version} also includes the following change<s>:
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
@@ -139,7 +142,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[removed]]
 == Removed
 
-{productname} <x.y[.z]> also includes the following removal<s>:
+{productname} {release-version} also includes the following removal<s>:
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
@@ -150,7 +153,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[bug-fixes]]
 == Bug fixes
 
-{productname} <x.y[.z]> also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fix<es>:
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
@@ -161,7 +164,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[security-fixes]]
 == Security fixes
 
-{productname} <x.y[.z]> includes <a fix | fixes for the following security issue<s>:
+{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
@@ -172,7 +175,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[deprecated]]
 == Deprecated
 
-{productname} <x.y[.z]> includes the following deprecation<s>:
+{productname} {release-version} includes the following deprecation<s>:
 
 === The `<plugin>` configuration property, `<name>`, has been deprecated
 
@@ -182,9 +185,9 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[known-issues]]
 == Known issues
 
-This section describes issues that users of {productname} <x.y[.z]> may encounter and possible workarounds for these issues.
+This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
 
-There <is one | are <number> known issue<s> in {productname} <x.y[.z]>.
+There <is one | are <number> known issue<s> in {productname} {release-version}.
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1

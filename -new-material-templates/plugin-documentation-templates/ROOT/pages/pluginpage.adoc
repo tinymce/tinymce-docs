@@ -1,6 +1,3 @@
-// Replace <place-holder text> instances with material then remove this, and other comments.
-
-// <Plugin name>: the product name. Reference on this page with the {pluginname} variable.
 = <Plugin name> plugin
 :navtitle: <Plugin name>
 :description: <What does this plugin do? What is the benefit? (One sentence description)>.
@@ -11,25 +8,22 @@
 // opensource plugin = tieroneplan
 // premium plugin    = tiertwoplan or tierthreeplan or enterpriseplan
 :pluginminimumplan: <tier>
-// <plugincode>: adds the plugin to an editor configuration.
-// Reference on this page with the {plugincode} variable
 :plugincode: <plugincode>
-:plugincategory: premium|opensource
+:plugincategory: <premium|opensource>
 
 // Remove the line below (and this comment) for open source plugins
 include::partial$misc/admon-premium-plugin.adoc[]
 
-// Edit the line below to add the correct requires-<versionnumber> file from `/partials/misc`.
+// Edit the line below to add the correct requires-<versionnumber> file from `tinymce-docs/modules/ROOT/partials/misc`.
 include::partial$misc/admon-requires-<versionnumber>v.adoc
 
 // Add an introduction. What does the plugin do? Why would I use this plugin? Keep it concise.
 
 == Interactive example
 
-// No Lorem Ipsum. Add test material, or, at least, a description of how end-users use the feature.
 liveDemo::{plugincode}[]
 
-// Logic for customising what presents from this included file relies on
+// Logic for customizing what presents from this included file relies on
 // the :pluginminimumplan: attribute value above.
 //
 // 2023-09-06 addendum: the logic in purchase-premium-plugins.adoc needs
@@ -49,9 +43,9 @@ For example:
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: '{{plugincode}}',
+  plugins: '<plugincode>',
   toolbar: '<toolbar-button(s)>',
-  an_essential_option: false
+  <an_essential_option>: false
 });
 ----
 
@@ -65,9 +59,7 @@ The following configuration options affect the behavior of the {pluginname} plug
 // The template file for each such file is
 // -new-material-templates/partials/commands/<configuration_option>.adoc
 // Add one include:: statement for each added file as per the example immediately below.
-include::partial$configuration/<setting_name>.adoc[][leveloffset=+1]
-
-
+include::partial$configuration/<configuration_name>.adoc[leveloffset=+1]
 
 // If the plugin offers toolbar buttons
 // 1. Add an entry to /pages/available-toolbar-buttons.adoc
@@ -132,5 +124,3 @@ include::partial$events/{plugincode}-events.adoc[]
 The {pluginname} plugin provides the following APIs.
 
 include::partial$plugin-apis/{plugincode}-apis.adoc[]
-
-// Remove all comment lines and comment blocks before publishing.

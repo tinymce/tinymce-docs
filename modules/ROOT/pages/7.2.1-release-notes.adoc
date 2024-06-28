@@ -21,7 +21,13 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Text content could move unexpectedly when deleting a paragraph.
+// #TINY-10590
 
-// CCFR here.
+In previous versions of {productname}, backspacing sometimes caused code to mistakenly assume that a block within another block was a result of merging two blocks. Instead, it should have merged with text outside of any block. This issue typically arose when attempting to merge two paragraphs, where the code incorrectly identified the blocks as an inner block and its parent, resulting in unexpected behavior.
+
+As a consequence, some text would be moved around unexpectedly.
+
+{productname} {release-version} addresses this issue by adding a check to prevent the code from assuming that two blocks are merging if they have a `parent-child` or any other `ancestor-descendant` relationship.
+
+As a result, the issue of trying to merge two blocks unexpectedly has been resolved.

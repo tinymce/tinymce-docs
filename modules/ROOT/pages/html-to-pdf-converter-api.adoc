@@ -1,0 +1,43 @@
+= HTML to PDF Converter API
+:navtitle: Export to PDF Standalone Service
+:description: The HTML to PDF Converter API service feature, provides the ability to generate a PDF files directly without the need for an editor.
+:description_short: Generate a .pdf file directly from any application.
+:keywords: service, exportpdf, export to pdf, HTML to PDF Converter API
+:pluginname: Export to PDF
+:servicename: HTML to PDF Converter API
+
+[NOTE]
+This is a premium feature. link:https://www.tiny.cloud/contact/[Contact us] to purchase a license or to learn more about our tailored offers. Note that any documents generated without authentication will be watermarked.
+
+== Overview
+
+The {servicename} is a powerful tool that seamlessly integrates advanced document conversion capabilities into developers workflows. This API allows for the efficient conversion of HTML content into PDF documents, catering to a wide range of use cases.
+
+=== Key Features
+
+* **Versatile Document Conversion**: Convert HTML content into high-quality PDF documents, providing flexibility for various document needs.
+* **Preprocessing Capabilities**: Pre-process content before conversion, such as resolving merge tags, ensuring fully customized and ready-to-use PDF documents.
+* **Customizable Output**: Tailor the appearance and structure of the converted PDFs with customizable output xref:html-to-pdf-converter-api.adoc#options[options], including page sizes, margins, and formatting.
+* **Scalability**: Handle large volumes of PDF documents with consistent performance and reliability, supporting business growth and varying demands.
+* **Ease of Integration**: Integrate the API into existing workflows easily with comprehensive documentation and straightforward API endpoints.
+* **Security and Compliance**: Ensure secure document conversion processes that adhere to data protection standards and industry regulations, crucial for handling sensitive information.
+
+[[options]]
+== Flexible Configuration Options
+
+Tailor your PDF documents to suit your needs:
+
+* **Custom CSS Styling:** Apply link:https://exportpdf.converter.tiny.cloud/docs#section/General/CSS[custom CSS^] styles to your PDFs for brand consistency and enhanced presentation.
+* **Header and Footer Options:** Add link:https://exportpdf.converter.tiny.cloud/docs#section/PDF-options/Header-and-footer[headers, footers^], and other branding elements to your PDF documents for a professional touch.
+* **Page Formatting:** Control page settings such as orientation, link:https://exportpdf.converter.tiny.cloud/docs#section/PDF-options/Margins[margins^], and link:https://exportpdf.converter.tiny.cloud/docs#section/PDF-options/Page-format[page size] to optimize readability.
+
+== Ideal for Various Use Cases
+
+* **Aggregating Content from Multiple Sources**: Combine content from various editors into a single cohesive PDF document, simplifying content management for organizations using multiple tools.
+* **Centralized Document Management**: Store generated PDF documents centrally for better organization and accessibility, facilitating team collaboration and efficient document retrieval.
+* **Preprocessing and Customization**: Pre-process content to resolve merge tags and customize PDF document formatting, ensuring that the final output meets specific requirements and is ready for immediate use.
+* **Large-Scale Document Processing**: Utilize the API’s scalability to handle large volumes of PDF documents, maintaining consistent performance and reliability, essential for growing businesses.
+
+== PDF Converter API Reference
+
+> Explore the comprehensive API documentation at link:https://exportpdf.converter.tiny.cloud/docs[PDF Converter API Reference documentation.^]

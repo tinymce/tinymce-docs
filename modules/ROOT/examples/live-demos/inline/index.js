@@ -2,6 +2,8 @@ const emailHeaderConfig = {
   selector: '.tinymce-heading',
   menubar: false,
   inline: true,
+  toolbar_sticky: true,
+  toolbar_sticky_offset: 110,
   plugins: [
     'lists',
     'powerpaste',
@@ -20,6 +22,8 @@ const emailBodyConfig = {
   selector: '.tinymce-body',
   menubar: false,
   inline: true,
+  toolbar_sticky: true,
+  toolbar_sticky_offset: 110,
   plugins: [
     'link', 'lists', 'powerpaste',
     'autolink', 'tinymcespellchecker'

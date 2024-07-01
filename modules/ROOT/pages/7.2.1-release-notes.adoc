@@ -21,7 +21,9 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Open Link button was disabled when selection partially covered a link or when multiple links were selected.
+// #TINY-11009
 
-// CCFR here.
+Previously, the “Open link” toolbar button and menu item were disabled when a link was partially selected or when the selection included multiple links.
+
+{productname} {release-version} addresses this issue. Now, the "Open link" toolbar button and menu item are enabled when any part of a link or multiple links are within the selection, even when the selection is not perfectly confined to a single link.

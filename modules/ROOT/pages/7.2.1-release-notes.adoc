@@ -19,7 +19,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
 
 === Open Link button was disabled when selection partially covered a link or when multiple links were selected.
 // #TINY-11009
@@ -27,3 +27,14 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 Previously, the “Open link” toolbar button and menu item were disabled when a link was partially selected or when the selection included multiple links.
 
 {productname} {release-version} addresses this issue. Now, the "Open link" toolbar button and menu item are enabled when any part of a link or multiple links are within the selection.
+
+=== Cursor would shift to the start of the editor body when focus was shifted to a noneditable cell of a table.
+// #TINY-10127
+
+Previously in {productname}, when the editor did not have focus and a non-editable cell of a table was clicked, the selection was set to the non-editable cell of the table instead of the offscreen element.
+
+As a consequence, placing the selection on the non-editable cell caused the cursor to be incorrectly placed in the editor body and unexpectedly scroll to the top of the editor.
+
+In {productname} {release-version}, the selection handling logic has been updated. Now, the selection is maintained on the offscreen div when necessary to prevent the selection from being changed.
+
+As a result, the selection correctly shifts to the offscreen element when required, maintaining the cursor position and no longer causing the editor to scroll unexpectedly.

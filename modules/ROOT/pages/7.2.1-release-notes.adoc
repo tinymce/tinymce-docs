@@ -21,6 +21,15 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} {release-version} also includes the following bug fixes:
 
+=== Long translations of the bottom help text would cause minor graphical issues.
+// #TINY-10961
+
+Previously, resizing the editor caused the statusbar to render the help text incorrectly if it was too long. This was particularly problematic for long translations, as the statusbar did not handle extended text properly, leading to visual misalignment and hiding important elements.
+
+To fix this, the statusbar's CSS was updated to handle this by retaining the help text on one line and hiding any overflowing text.
+
+As a result, the help text now overflows without disrupting the statusbar layout, ensuring a consistent appearance and visibility.
+
 === Open Link button was disabled when selection partially covered a link or when multiple links were selected.
 // #TINY-11009
 

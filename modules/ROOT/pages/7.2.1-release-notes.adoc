@@ -21,6 +21,41 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} {release-version} also includes the following bug fixes:
 
+=== Text content could move unexpectedly when deleting a paragraph.
+// #TINY-10590
+
+Previously, pressing backspace within specific block elements could cause the HTML structure to change unexpectedly. This issue arose because pressing the backspace key would merge content before and after a tag boundary, leading to unintended restructuring of elements within a `+<div>+`.
+
+.Example of Original Content Structure
+[source, html]
+----
+<div>Hi ,<br><br>Thank you for contacting support.<br>
+<p class="p1">Pasted text.</p>
+<br><br>Best regards.</div>
+<div>Bli ,<br><br>Thank you for contacting support.<br>
+<p class="p1">Pasted text.</p>
+<br><br>Best regards.</div>
+----
+
+after pressing backspace, the content was merged into a single `+<div>+`, which resulted in a disrupted layout and structure such as the below.
+
+.Example of Unintended Merged Content Structure After Pressing Backspace
+[source, html]
+----
+<div>
+<p class="p1">Pasted text.Hi ,<br><br>Thank you for contacting support.</p>
+<br><br>Best regards.</div>
+<div>Bli ,<br><br>Thank you for contacting support.<br>
+<p class="p1">Pasted text.</p>
+<br><br>Best regards.</div>
+----
+
+As a consequence, the content before the `+<p>+` tag was merged into the `+<p>+` tag.
+
+In {productname} {release-version}, this issue has been addressed by preventing the merging of content across tag boundaries, ensuring the intended HTML structure is maintained. In addition to this change, adjustments were made to handle line breaks more effectively.
+
+As a result, pressing backspace no longer reduces the number of `+<br>+` tags before `+<p>+` tag, such as "Best regards," preserving the original HTML layout.
+
 === Long translations of the bottom help text would cause minor graphical issues.
 // #TINY-10961
 

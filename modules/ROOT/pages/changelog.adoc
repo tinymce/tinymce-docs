@@ -7,8 +7,8 @@ NOTE: This is the {productname} Community version changelog. For information abo
 == 7.2.1 - 2024-07-03
 
 === Fixed
-// * Text content could move unexpectedly when deleting a paragraph.
-// // #TINY-10590
+* Text content could move unexpectedly when deleting a paragraph.
+// #TINY-10590
 * Cursor would shift to the start of the editor body when focus was shifted to a noneditable cell of a table.
 // #TINY-10127
 * Long translations of the bottom help text would cause minor graphical issues.

@@ -1,0 +1,84 @@
+= {productname} {release-version}
+:release-version: 7.2.1
+:navtitle: {productname} {release-version}
+:description: Release notes for {productname} {release-version}
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+
+[[overview]]
+== Overview
+
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, July 3^rd^, 2024. These release notes provide an overview of the changes for {productname} {release-version}, including:
+
+* xref:bug-fixes[Bug fixes]
+
+
+[[bug-fixes]]
+== Bug fixes
+
+{productname} {release-version} also includes the following bug fixes:
+
+=== Text content could move unexpectedly when deleting a paragraph.
+// #TINY-10590
+
+Previously, pressing backspace within specific block elements could cause the HTML structure to change unexpectedly. This issue arose because pressing the backspace key would merge content before and after a tag boundary, leading to unintended restructuring of elements within a `+<div>+`.
+
+.Example of Original Content Structure
+[source, html]
+----
+<div>Hi ,<br><br>Thank you for contacting support.<br>
+<p class="p1">Pasted text.</p>
+<br><br>Best regards.</div>
+<div>Bli ,<br><br>Thank you for contacting support.<br>
+<p class="p1">Pasted text.</p>
+<br><br>Best regards.</div>
+----
+
+after pressing backspace, the content was merged into a single `+<div>+`, which resulted in a disrupted layout and structure such as the below.
+
+.Example of Unintended Merged Content Structure After Pressing Backspace
+[source, html]
+----
+<div>
+<p class="p1">Pasted text.Hi ,<br><br>Thank you for contacting support.</p>
+<br><br>Best regards.</div>
+<div>Bli ,<br><br>Thank you for contacting support.<br>
+<p class="p1">Pasted text.</p>
+<br><br>Best regards.</div>
+----
+
+As a consequence, the content before the `+<p>+` tag was merged into the `+<p>+` tag.
+
+In {productname} {release-version}, this issue has been addressed by preventing the merging of content across tag boundaries, ensuring the intended HTML structure is maintained. In addition to this change, adjustments were made to handle line breaks more effectively.
+
+As a result, pressing backspace no longer reduces the number of `+<br>+` tags before `+<p>+` tag, such as "Best regards," preserving the original HTML layout.
+
+=== Long translations of the bottom help text would cause minor graphical issues.
+// #TINY-10961
+
+Previously, resizing the editor caused the statusbar to render the help text incorrectly if it was too long. This was particularly problematic for long translations, as the statusbar did not handle extended text properly, leading to visual misalignment and hiding important elements.
+
+To fix this, the statusbar's CSS was updated to handle this by retaining the help text on one line and hiding any overflowing text.
+
+As a result, the help text now overflows without disrupting the statusbar layout, ensuring a consistent appearance and visibility.
+
+=== Open Link button was disabled when selection partially covered a link or when multiple links were selected.
+// #TINY-11009
+
+Previously, the “Open link” toolbar button and menu item were disabled when a link was partially selected or when the selection included multiple links.
+
+{productname} {release-version} addresses this issue. Now, the "Open link" toolbar button and menu item are enabled when any part of a link or multiple links are within the selection.
+
+=== Cursor would shift to the start of the editor body when focus was shifted to a noneditable cell of a table.
+// #TINY-10127
+
+Previously in {productname}, when the editor did not have focus and a non-editable cell of a table was clicked, the selection was set to the non-editable cell of the table instead of the offscreen element.
+
+As a consequence, placing the selection on the non-editable cell caused the cursor to be incorrectly placed in the editor body and unexpectedly scroll to the top of the editor.
+
+In {productname} {release-version}, the selection handling logic has been updated. Now, the selection is maintained on the offscreen div when necessary to prevent the selection from being changed.
+
+As a result, the selection correctly shifts to the offscreen element when required, maintaining the cursor position and no longer causing the editor to scroll unexpectedly.

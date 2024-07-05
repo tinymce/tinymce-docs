@@ -3,8 +3,6 @@ The following events are provided by the xref:<plugincode>.adoc[<Plugin name> pl
 [cols="1,1,2",options="header"]
 |===
 |Name       |Data                                       |Description
-
-// Five boilerplate rows.
 |EventOne   |`+{ <key1>: <value1> }+`                   |Fired when event one description.
 |EventTwo   |`+{ <key2>: <value2>, <key3>: <value3> }+` |Fired when event two description.
 |EventThree |N/A                                        |Fired when event three description.
@@ -17,5 +15,3 @@ include::partial$misc/admon-requires-<version.version>v.adoc[]
 |EventFour  |`+{ <key6>: <value6> }+`                   |Fired when the event seven description.
 |EventEn    |`+{ <key4>: <value4>, <key5>: <value5> }+` |Fired when event en description.
 |===
-
-// Remove all comment lines and comment blocks before publishing.

@@ -43,13 +43,7 @@ npm install @tinymce/tinymce-svelte
 endif::[]
 ifeval::["{productSource}" == "cloud"]
 
-. Open `+src/App.svelte+` and add:
-* An `+import+` statement for the {productname} Svelte component.
-* The `+<Editor />+` as a placeholder for the editor.
-+
-For example:
-+
-_File:_ `+src/App.svelte+`
+. Open `+src/App.svelte+` and replace the contents with:
 +
 [source,html,subs="+macros"]
 ----
@@ -109,14 +103,7 @@ export default defineConfig({
   ],
 })
 ----
-. Open `+src/App.svelte+` and add:
-* An `+import+` statement for the {productname} Svelte component.
-* The `+<Editor />+` as a placeholder for the editor.
-* The xref:svelte-ref.adoc#scriptsrc[`+scriptSrc+`] property for the `+Editor+` placeholder.
-+
-For example:
-+
-_File:_ `+src/App.svelte+`
+. Open `+src/App.svelte+` and replace the contents with:
 +
 [source,html]
 ----
@@ -150,14 +137,7 @@ let conf = {
 endif::[]
 ifeval::["{productSource}" == "zip"]
 
-. Open `+src/App.svelte+` and add:
-* An `+import+` statement for the {productname} Svelte component.
-* The `+<Editor />+` as a placeholder for the editor.
-* The xref:svelte-ref.adoc#scriptsrc[`+scriptSrc+`] property for the `+Editor+` placeholder.
-+
-For example:
-+
-_File:_ `+src/App.svelte+`
+. Open `+src/App.svelte+` and replace the contents with:
 +
 [source,html]
 ----

@@ -3,7 +3,7 @@
 
 The {pluginname} uses the {productname} Cloud Services HTML to DOCX converter service to generate the Word files.
 
-NOTE: The {pluginname} feature is currently only available `on-premise` and requires the `exportword_service_url` option to be configured. https://www.tiny.cloud/contact/[Contact us] if you require this feature.
+NOTE: The {pluginname} feature is currently only available `on-premise` and requires the `exportword_service_url` option to be configured. link:https://www.tiny.cloud/contact/[Contact us] if you require this feature.
 
 *Type:* `+String+`
 
@@ -38,12 +38,36 @@ tinymce.init({
   toolbar: 'exportword',
   exportword_service_url: '<service_URL>',
   exportword_converter_options: {
-    header: [
-      {
-        html: '<h1>First page header.</h1>', //example
-        css: 'h1 { font-size: 30px; }', //example
+    headers: {
+      first: {
+        html: "<p>My document header</p>",
+        css: "p { color: gray; }"
+      },
+      default: {
+        html: "<p>My default header</p>",
+        css: "p { color: blue; }"
       }
-    ],
+    },
+    footers: {
+      odd: {
+        html: "<p>My odd footer</p>",
+        css: "p { font-size: 10px; }"
+      },
+      even: {
+        html: "<p>My even footer</p>",
+        css: "p { font-size: 12px; }"
+      }
+    },
+    document: {
+      orientation: "landscape",
+      size: "a3",
+      margins: {
+        top: "10mm",
+        bottom: "10mm",
+        left: "20mm",
+        right: "15mm"
+      }
+    },
   },
 });
 ----
@@ -71,14 +95,18 @@ tinymce.init({
   plugins: 'exportword',
   toolbar: 'exportword',
   exportword_service_url: '<service_URL>', // required
-  exportword_converter_options: { // required to support "exportword_converter_style"
-    header: [
-      {
-        html: '<h1>First page header.</h1>', //example
-        css: 'h1 { font-size: 30px; }', //example
+  exportword_converter_options: {
+    headers: {
+      first: {
+        html: "<p>My document header</p>",
+        css: "p { color: gray; }"
+      },
+      default: {
+        html: "<p>My default header</p>",
+        css: "p { color: blue; }"
       }
-    ],
+    },
   },
-  exportword_converter_style: 'p { color: cyan !important }'
+  exportword_converter_style: 'p { color: cyan !important }' // will override the set <p> tag styles
 });
 ----

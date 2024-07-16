@@ -29,7 +29,7 @@ With {cloudname} the server-side spellchecking component is automatically config
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
-  spellchecker_language: 'en'
+  spellchecker_language: 'en_US'
 });
 ----
 
@@ -47,7 +47,7 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   spellchecker_rpc_url: 'localhost/ephox-spelling',
-  spellchecker_language: 'en'
+  spellchecker_language: 'en_US'
 });
 ----
 

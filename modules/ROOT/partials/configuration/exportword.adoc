@@ -107,6 +107,6 @@ tinymce.init({
       }
     },
   },
-  exportword_converter_style: 'p { color: cyan !important }' // will override the set <p> tag styles
+  exportword_converter_style: 'p { color: cyan !important }' // will override the set <p> tag styles in the HTML content
 });
 ----

@@ -29,9 +29,11 @@ tinymce.activeEditor.on('click', (e) => {
 
 === `+setup+` and `+init_instance_callback+` options
 
-The `+setup+` option is used to bind an event **before** the editor instance is initialized.
+A common use case for setting up events is to use the `+setup+` and `+init_instance_callback+` options. These options allow you to bind events before and after the editor instance is initialized.
 
-The `+init_instance_callback+` option is used to bind an event **after** the editor instance is initialized.
+The `+setup+` option can be used to bind an event **before** the editor instance is initialized.
+
+The `+init_instance_callback+` option can be used to bind an event **after** the editor instance is initialized.
 
 TIP: The `+init_instance_callback+` is functionally equivalent to binding an event listener to the `init` event on the `+setup+` option.
 

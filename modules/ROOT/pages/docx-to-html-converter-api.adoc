@@ -19,36 +19,23 @@ The {servicename} provides an API for converting Microsoft Word `.docx` and `.do
 * **Seamless Integration**: Easily integrates with a WYSIWYG editor, allowing users to convert Word documents directly within their existing content management workflows.
 * **API Accessibility**: Accessible via a simple REST API, making it easy to incorporate into various applications and services.
 * **Support for Complex Documents**: Handles complex Word documents with multiple sections, headers, footers, and different page layouts.
-* **Customization Options**: Provides options to customize the conversion process to meet specific needs, such as excluding certain elements or converting only specific parts of a document.
+* **Customization Options**: Provides options to customize the conversion process to meet specific needs.
 
 [[options]]
 == Flexible Configuration Options
-
-=== Exclude Specific Elements
-
-* **Exclude Images**: Option to exclude images during the conversion process.
-* **Exclude Tables**: Ability to exclude tables, simplifying the resulting content.
-* **Exclude Headers and Footers**: Choose to omit headers and footers from the import.
-
-=== Selective Import
-
-* **Page Range**: Import only specific pages from the Word document.
-* **Section Import**: Select and import specific sections or elements from the document.
 
 === Formatting Customization
 
 * **Style Mapping**: Map Word document styles to corresponding TinyMCE styles.
 * **Custom CSS**: Apply custom CSS to the converted content for consistent styling.
-
-=== Content Adjustments
-
-* **Replace Text**: Automatically replace specific text or phrases during import.
-* **Content Filtering**: Filter out unwanted content based on predefined rules.
+* **Formatting**: Allows which Word styles and formatting are output alongside the document.
+* **Document properties**: Set document size and margins in pixels.
 
 === Output Options
 
-* **Output Format**: Choose the output format (HTML, JSON) for the converted content.
-* **Preserve Line Breaks**: Option to maintain or adjust line breaks from the original document.
+* **Output Format**: Content is returned as a JSON object for easier integration into applications such as:
+** **HTML Content**: Provides the converted HTML, ready for web use.
+** **Document Information**: Offers document size and margin details for precise layout control.
 
 These configuration options enhance the flexibility and control users have over the import process, making it adaptable to various needs and use cases.
 

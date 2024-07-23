@@ -3,7 +3,7 @@ tinymce.init({
   plugins: 'code tinymcespellchecker link',
   toolbar: 'spellchecker language spellcheckdialog',
   height: 500,
-  spellchecker_language: 'en',
+  spellchecker_language: 'en_US',
   content_langs: [
     { title: 'English (US)', code: 'en_US' },
     { title: 'English (US Medical)', code: 'en_US', customCode: 'en_US-medical' },

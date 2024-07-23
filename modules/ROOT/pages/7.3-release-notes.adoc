@@ -29,17 +29,21 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1>
+=== AI Assistant
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **AI Assistant** premium plugin.
 
-**<Premium plugin name 1>** includes the following <fixes, changes, improvements>.
+**AI Assistant** includes the following additions.
 
-==== <Premium plugin name 1 change 1>
+==== Add "Translate" options to AI Assistant default shortcuts.
 
-// CCFR here.
+The **AI Assistant** required an enhancement to support in-editor translation capabilities.
 
-For information on the **<Premium plugin name 1>** premium plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+{productname} {release-version} introduces a new translate dropdown, that has been added to the **AI Assistant's** default shortcuts. The dropdown includes language options: English, Spanish, Portuguese, German, French, Norwegian, Ukrainian, Japanese, Korean, Simplified Chinese, Hebrew, Hindi, and Arabic.
+
+As a result, users can seamlessly translate content within the editor into multiple languages with a single "click".
+
+For information on the **AI Assistant** premium plugin, see: xref:ai.adoc[AI Assistant].
 
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]

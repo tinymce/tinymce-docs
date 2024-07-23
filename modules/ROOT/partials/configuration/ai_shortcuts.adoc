@@ -24,20 +24,41 @@ When configured with an instance-specific object array, the {pluginname} shortcu
   { title: 'Simplify language', prompt: 'Rewrite this content with simplified language and reduce the complexity of the writing, so that the content is easier to understand.', selection: true },
   { title: 'Expand upon', prompt: 'Expand upon this content with descriptive language and more detailed explanations, to make the writing easier to understand and increase the length of the content.', selection: true },
   { title: 'Trim content', prompt: 'Remove any repetitive, redundant, or non-essential writing in this content without changing the meaning or losing any key information.', selection: true },
-  { title: 'Change tone', subprompts: [
-    { title: 'Professional', prompt: 'Rewrite this content using polished, formal, and respectful language to convey professional expertise and competence.', selection: true },
-    { title: 'Casual', prompt: 'Rewrite this content with casual, informal language to convey a casual conversation with a real person.', selection: true },
-    { title: 'Direct', prompt: 'Rewrite this content with direct language using only the essential information.', selection: true },
-    { title: 'Confident', prompt: 'Rewrite this content using compelling, optimistic language to convey confidence in the writing.', selection: true },
-    { title: 'Friendly', prompt: 'Rewrite this content using friendly, comforting language, to convey understanding and empathy.', selection: true },
-  ] },
-  { title: 'Change style', subprompts: [
-    { title: 'Business', prompt: 'Rewrite this content as a business professional with formal language.', selection: true },
-    { title: 'Legal', prompt: 'Rewrite this content as a legal professional using valid legal terminology.', selection: true },
-    { title: 'Journalism', prompt: 'Rewrite this content as a journalist using engaging language to convey the importance of the information.', selection: true },
-    { title: 'Medical', prompt: 'Rewrite this content as a medical professional using valid medical terminology.', selection: true },
-    { title: 'Poetic', prompt: 'Rewrite this content as a poem using poetic techniques without losing the original meaning.', selection: true },
-  ] }
+  {
+    title: 'Change tone', subprompts: [
+      { title: 'Professional', prompt: 'Rewrite this content using polished, formal, and respectful language to convey professional expertise and competence.', selection: true },
+      { title: 'Casual', prompt: 'Rewrite this content with casual, informal language to convey a casual conversation with a real person.', selection: true },
+      { title: 'Direct', prompt: 'Rewrite this content with direct language using only the essential information.', selection: true },
+      { title: 'Confident', prompt: 'Rewrite this content using compelling, optimistic language to convey confidence in the writing.', selection: true },
+      { title: 'Friendly', prompt: 'Rewrite this content using friendly, comforting language, to convey understanding and empathy.', selection: true },
+    ]
+  },
+  {
+    title: 'Change style', subprompts: [
+      { title: 'Business', prompt: 'Rewrite this content as a business professional with formal language.', selection: true },
+      { title: 'Legal', prompt: 'Rewrite this content as a legal professional using valid legal terminology.', selection: true },
+      { title: 'Journalism', prompt: 'Rewrite this content as a journalist using engaging language to convey the importance of the information.', selection: true },
+      { title: 'Medical', prompt: 'Rewrite this content as a medical professional using valid medical terminology.', selection: true },
+      { title: 'Poetic', prompt: 'Rewrite this content as a poem using poetic techniques without losing the original meaning.', selection: true },
+    ]
+  },
+  {
+    title: 'Translate', subprompts: [
+      { title: 'Translate to English', prompt: 'Translate this content to English language.', selection: true },
+      { title: 'Translate to Spanish', prompt: 'Translate this content to Spanish language.', selection: true },
+      { title: 'Translate to Portuguese', prompt: 'Translate this content to Portuguese language.', selection: true },
+      { title: 'Translate to German', prompt: 'Translate this content to German language.', selection: true },
+      { title: 'Translate to French', prompt: 'Translate this content to French language.', selection: true },
+      { title: 'Translate to Norwegian', prompt: 'Translate this content to Norwegian language.', selection: true },
+      { title: 'Translate to Ukrainian', prompt: 'Translate this content to Ukrainian language.', selection: true },
+      { title: 'Translate to Japanese', prompt: 'Translate this content to Japanese language.', selection: true },
+      { title: 'Translate to Korean', prompt: 'Translate this content to Korean language.', selection: true },
+      { title: 'Translate to Simplified Chinese', prompt: 'Translate this content to Simplified Chinese language.', selection: true },
+      { title: 'Translate to Hebrew', prompt: 'Translate this content to Hebrew language.', selection: true },
+      { title: 'Translate to Hindi', prompt: 'Translate this content to Hindi language.', selection: true },
+      { title: 'Translate to Arabic', prompt: 'Translate this content to Arabic language.', selection: true },
+    ]
+  },
 ]
 ----
 
@@ -49,7 +70,7 @@ The default {pluginname} shortcuts are only available in English. They have not 
 Also, the default {pluginname} shortcuts are subject to change. If you prefer to keep these shortcuts, include them within your integration.
 ====
 
-=== Example: using `ai_shortcuts` to present a customised set of {pluginname} shortcuts
+=== Example: using `ai_shortcuts` to present a customized set of {pluginname} shortcuts
 
 [source,js]
 ----

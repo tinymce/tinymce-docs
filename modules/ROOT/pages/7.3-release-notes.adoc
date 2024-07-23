@@ -29,17 +29,21 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1>
+=== Enhanced Code Editor
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Enhanced Code Editor** premium plugin.
 
-**<Premium plugin name 1>** includes the following <fixes, changes, improvements>.
+**Enhanced Code Editor** includes the following improvements.
 
-==== <Premium plugin name 1 change 1>
+==== Added new option `advcode_prettify_getcontent` to Enhanced Code Editor.
 
-// CCFR here.
+Previously, formatting was only applied in the **Enhanced Code Editor** view, and as a consequence users could only obtain raw, unformatted HTML when calling `editor.getContent` via the editor API.
 
-For information on the **<Premium plugin name 1>** premium plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+{productname} {release-version} introduces the new `advcode_prettify_getcontent` option, which resolves this issue. When enabled (default is false), calling `editor.getContent` now returns formatted HTML. Additionally, it is now possible to retrieve formatted content by calling `editor.getContent({ prettify: true })`, regardless of the option's status.
+
+As a result, It is now possible to obtain formatted content through the editor API.
+
+For more information on the **Enhanced Code Editor** premium plugin, see: xref:advcode.adoc[Enhanced Code Editor].
 
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]

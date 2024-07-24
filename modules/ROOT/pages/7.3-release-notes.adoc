@@ -61,10 +61,14 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following improvement<s>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== When a full document was loaded as editor content the head elements were added to the body.
+// #TINY-11053
 
-// CCFR here.
+Previously when loading a full document as editor content, head elements were incorrectly added to the body. This issue occurred because the browser detected HTML, head, and body tags within the wrapped body block, causing them to be ignored and their content placed incorrectly.
+
+The consequence was the unintended inclusion of head tag content in the editor.
+
+{productname} {release-version} includes a fix that adds detection for HTML, head, and body elements. This fix ensures that head content is wrapped appropriately and ignored, preventing it from appearing in the editor.
 
 
 [[additions]]

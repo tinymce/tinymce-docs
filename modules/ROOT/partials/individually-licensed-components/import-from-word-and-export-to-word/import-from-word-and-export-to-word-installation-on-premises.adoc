@@ -82,7 +82,7 @@ docker-compose up
 
 === Next steps
 
-Use the link:http://localhost:8080/v1/convert[http://localhost:8080/v1/convert] endpoint to export DOCX files. Check out the xref:individual-import-from-word-and-export-to-word-on-premises.adoc#authorization[authorization] section to learn more about tokens and token endpoints.
+Use the link:http://localhost:8080/v2/convert/html-docx[http://localhost:8080/v2/convert/html-docx] endpoint to export DOCX files. Check out the xref:individual-import-from-word-and-export-to-word-on-premises.adoc#authorization[authorization] section to learn more about tokens and token endpoints.
 
 Use the demo page available on link:http://localhost:8080/demo[http://localhost:8080/demo] to generate an example DOCX file.
 

@@ -1,0 +1,21 @@
+[[revisionhistory_display_author]]
+== `revisionhistory_display_author`
+
+This option configures whether the author's name is displayed for each revision in the Revision History sidebar. When set to `+true+`, the author's name is displayed for each revision in the Revision History sidebar. If the author's name is not provided, the default value is `Anonymous`.
+
+*Type:* `+Boolean+`
+
+*Default value:* `+false+`
+
+=== Example: using `revisionhistory_display_author`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // Change this value according to your HTML
+  plugins: 'revisionhistory',
+  toolbar: 'revisionhistory',
+  revisionhistory_display_author: true,
+  revisionhistory_fetch: () => Promise.resolve([])
+});
+----

@@ -9,7 +9,7 @@ When a revision is selected, the plugin uses this option to update the selected 
 |===
 |Field |Type |Required? |Description
 |`+editor+` | `+Editor+` | required | The editor instance to load the revision into (useful if there are multiple editors on the page).
-|`+revision+` | `+Object+` | required | The revision object to load (must include `revisionId` field).
+|`+revision+` | xref:#the-revision-object[Revision] `+Object+` | required | The revision object to load (must include `revisionId` field).
 |===
 
 *Return data:* xref:#the-revision-object[Revision] `+Object+`

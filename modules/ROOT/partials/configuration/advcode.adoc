@@ -49,4 +49,4 @@ tinymce.init({
 ----
 
 [IMPORTANT]
-If existing HTML code in the database is not well-formatted or has inconsistent indentation, enabling this option could result in a uniform appearance of the HTML content, but it might also **change the formatting** of previously saved content which maybe undesirable based on specific use case.
+If existing HTML content in the database is not well-formatted or has inconsistent indentation, enabling this option may **change the formatting** of previously saved content which may be undesirable in some cases.

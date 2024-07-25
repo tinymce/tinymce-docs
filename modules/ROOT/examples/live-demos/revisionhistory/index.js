@@ -7,18 +7,38 @@ const getRandomDelay = () => {
 const lightRevisions = [
   {
     revisionId: '4',
+    author: {
+      id: 'tiny.user',
+      name: 'A Tiny User',
+      avatar: '{{imagesdir}}/logos/android-chrome-256x256.png',
+    },
     createdAt: '2023-11-29T10:11:21.578Z',
   },
   {
     revisionId: '3',
+    author: {
+      id: 'tiny.user',
+      name: 'A Tiny User',
+      avatar: '{{imagesdir}}/logos/android-chrome-256x256.png',
+    },
     createdAt: '2023-11-25T08:30:21.578Z',
   },
   {
     revisionId: '2',
+    author: {
+      id: 'tiny.user',
+      name: 'A Tiny User',
+      avatar: '{{imagesdir}}/logos/android-chrome-256x256.png',
+    },
     createdAt: '2023-11-24T22:26:21.578Z',
   },
   {
     revisionId: '1',
+    author: {
+      id: 'tiny.user',
+      name: 'A Tiny User',
+      avatar: '{{imagesdir}}/logos/android-chrome-256x256.png',
+    },
     createdAt: '2023-11-23T20:26:21.578Z',
   },
 ];
@@ -39,6 +59,11 @@ const revisionhistory_fetch = () =>
 const revisions = [
   {
     revisionId: '4',
+    author: {
+      id: 'tiny.user',
+      name: 'A Tiny User',
+      avatar: '{{imagesdir}}/logos/android-chrome-256x256.png',
+    },
     createdAt: '2023-11-29T10:11:21.578Z',
     content: `
       <h2>The world&rsquo;s first Rich Text Editor in the cloud</h2>
@@ -56,6 +81,11 @@ const revisions = [
   },
   {
     revisionId: '3',
+    author: {
+      id: 'tiny.user',
+      name: 'A Tiny User',
+      avatar: '{{imagesdir}}/logos/android-chrome-256x256.png',
+    },
     createdAt: '2023-11-25T08:30:21.578Z',
     content: `
       <h2>The world&rsquo;s first rich text editor in the cloud</h2>
@@ -77,6 +107,11 @@ const revisions = [
   },
   {
     revisionId: '2',
+    author: {
+      id: 'tiny.user',
+      name: 'A Tiny User',
+      avatar: '{{imagesdir}}/logos/android-chrome-256x256.png',
+    },
     createdAt: '2023-11-24T22:26:21.578Z',
     content: `
       <h2>The world&rsquo;s first rich text editor in the cloud</h2>
@@ -99,6 +134,11 @@ const revisions = [
   },
   {
     revisionId: '1',
+    author: {
+      id: 'tiny.user',
+      name: 'A Tiny User',
+      avatar: '{{imagesdir}}/logos/android-chrome-256x256.png',
+    },
     createdAt: '2023-11-23T20:26:21.578Z',
     content: `
       <!--
@@ -146,4 +186,9 @@ tinymce.init({
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
   revisionhistory_fetch,
   revisionhistory_fetch_revision,
+  revisionhistory_author: {
+    id: 'john.doe',
+    name: 'John Doe'
+  },
+  revisionhistory_display_author: true
 });

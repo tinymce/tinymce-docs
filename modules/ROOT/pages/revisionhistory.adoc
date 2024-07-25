@@ -65,28 +65,30 @@ tinymce.init({
 });
 ----
 
-== Understanding initial and current versions
+== Understanding types of versions
 
-When dealing with a new document, that has no saved versions, {pluginname} plugin will always typically maintain two versions: the `initial` and `current` versions.
+There are three types of versions in {pluginname} plugin:
 
 * Initial Version: This version is generated during the {productname} `Loaded` event, with the editor's initial content.
-* Current Version: This is generated upon accessing the {pluginname}, reflecting the editor's current content. When included, it becomes the `latest version` and is placed at the top of the revisions list.
+* Draft Version: This version is generated upon accessing the {pluginname}, reflecting the editor's current content. When included, it becomes the `latest version` and is placed at the top of the revisions list. Note that the draft version is not a saved version.
+* Saved Versions: These versions are saved in the client's storage and are displayed in the revisions list. They are fetched upon opening the {pluginname} view using the `revisionhistory_fetch` and `revisionhistory_fetch_revision` options.
 
-[TIP]
-When the editor is initialized with content and both versions contain the same content, the {pluginname} retains only the `current version`.
+When dealing with a new document that has no saved versions, the {pluginname} plugin will typically maintain two versions: the `initial` and `draft` versions.
 
-For documents with saved versions, the `initial version` is disregarded by the {pluginname} assuming it's already part of the version history. The current version is discarded if its content matches the closest saved version.
+For documents with saved versions, the `initial` version is disregarded by the {pluginname} plugin, assuming it's already part of the version history.
+
+If there are no changes to the content of the editor since initialization, the `initial` version is not displayed in the revisions list since it's identical to the `draft` version.
 
 The table below summarizes how versions are handled in the {pluginname}:
 
 [cols="1,1,1,3", options="header"]
 |===
-|Has Initial Version |Current Version |Has Saved Versions |Expectation
-|No |N/A |No |No versions are shown
-|No |N/A |Yes |Only the saved versions are shown
-|Yes |N/A |No |Only the current version is shown
-|Yes |Different |No |Both the initial and current versions are shown
-|Yes |N/A |Yes |The saved versions and the current version are shown
+| Has Initial Version | Draft Version | Has Saved Versions | Expectation
+| No                  | N/A           | No                 | No versions are shown
+| No                  | N/A           | Yes                | Only the saved versions are shown
+| Yes                 | N/A           | No                 | Only the draft version is shown
+| Yes                 | Different     | No                 | Both the initial and draft versions are shown
+| Yes                 | N/A           | Yes                | The saved versions and the draft version are shown
 |===
 
 

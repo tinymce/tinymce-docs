@@ -20,5 +20,3 @@ tinymce.init({
   mergetags_prefix: '{{'
 });
 ----
-
-IMPORTANT: Whatever character or characters are set as the Merge Tags prefix, it or they must be different to the characters set as the Merge Tags suffix. For example, if the Merge Tags prefix is set to `%`, the Merge Tags suffix cannot also be `%`.

@@ -12,7 +12,7 @@ When a revision is selected, the plugin uses this option to update the selected 
 |`+revision+` | `+Object+` | required | The revision object to load (must include `revisionId` field).
 |===
 
-*Return data:* revision `+Object+` as described in the return data of the xref:revisionhistory.adoc#revisionhistory_fetch[revisionhistory_fetch] option.
+*Return data:* xref:#the-revision-object[Revision] `+Object+`
 
 === Example: using `revisionhistory_fetch_revision`
 

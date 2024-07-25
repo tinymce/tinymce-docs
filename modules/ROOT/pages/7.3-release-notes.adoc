@@ -105,10 +105,14 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Fixed JavaScript error when inserting a table using the context menu by adjusting the event order in `renderInsertTableMenuItem`.
+// #TINY-6887
 
-// CCFR here.
+In {productname} version {release-version}, a JavaScript warning was addressed that occurred when using both the table and autoresize plugins. The issue was caused by the `onAction` event hiding the context menu, followed by an attempt to close it, resulting in the error: "Uncaught Error: The component must be in a context to send: triggerEvent is not in context."
+
+Although this did not affect user interactions, it was corrected by reversing the order of function calls in the code. The trigger function is now executed before `onAction`, ensuring the context menu is properly managed before any hiding actions occur. 
+
+As a result, this fix eliminates the warning, allowing seamless table insertion via the context menu.
 
 
 [[security-fixes]]

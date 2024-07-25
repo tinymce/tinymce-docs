@@ -67,6 +67,11 @@ For more information on the `revisionhistory_author` option, see: xref:revisionh
 
 In {productname} {release-version}, the **Revision History** premium plugin now features an enhanced design for the Revision History sidebar. The sidebar has been updated to align better with the new author information and the {productname} `oxide-dark` skin.
 
+==== Add labels to the `initial` and `draft` revisions.
+// #TINY-11073
+
+In {productname} {release-version}, the **Revision History** premium plugin now includes labels for the `initial` and `draft` revisions. These labels are displayed in the Revision History sidebar to help users identify the `initial` and `draft` revisions if they are present.
+
 ==== "Restore this version" button is now disabled when a draft or initial revision is selected.
 // #TINY-11042
 

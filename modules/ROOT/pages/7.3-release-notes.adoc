@@ -41,6 +41,29 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** premium plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Revision History
+
+The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
+
+**Revision History** includes the following additions, changes, and improvements.
+
+==== An author is now shown for revisions. Revisions created without an author will show as "Anonymous".
+// #TINY-11014
+
+In {productname} {release-version}, the **Revision History** premium plugin now shows the author for revisions. The author is shown in the Revision History sidebar as a part of each revision card.
+Revisions created without an author will show as "Anonymous" with an auto-generated avatar.
+
+NOTE: The `revisionhistory_display_author` option must be set to `true` to display the authors in the Revision History sidebar.
+
+==== New option `revisionhistory_author` for setting the current author.
+// #TINY-11014
+
+In {productname} {release-version}, the **Revision History** premium plugin includes a new option `revisionhistory_author` for setting the author for the `initial` and `draft` revisions. This option expects an xref:revisionhistory.adoc#the-author-object[Author] object as its value.
+
+For more information on the `revisionhistory_author` option, see: xref:revisionhistory.adoc#revisionhistory_author[revisionhistory_author option].
+
+For information on the **Revision History** premium plugin, see: xref:revisionhistory.adoc[Revision History].
+
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes

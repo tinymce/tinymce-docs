@@ -43,7 +43,7 @@ Default: false
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   plugins: 'advcode',
-  advcode_prettify_getcontent: false,
+  advcode_prettify_getcontent: true,
   toolbar: 'code',
 });
 ----

@@ -62,6 +62,11 @@ In {productname} {release-version}, the **Revision History** premium plugin incl
 
 For more information on the `revisionhistory_author` option, see: xref:revisionhistory.adoc#revisionhistory_author[revisionhistory_author option].
 
+==== New `revisionhistory_display_author` option that determines whether the author is displayed.
+// #TINY-11079
+
+In {productname} {release-version}, the **Revision History** premium plugin includes a new option `revisionhistory_display_author` that expects a boolean value. When set to `true`, the author is displayed on each revision in the Revision History sidebar. The default value is `false`.
+
 ==== Enhance the appearance of the Revision History sidebar.
 // #TINY-11045
 

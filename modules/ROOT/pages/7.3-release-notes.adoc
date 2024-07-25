@@ -62,6 +62,11 @@ In {productname} {release-version}, the **Revision History** premium plugin incl
 
 For more information on the `revisionhistory_author` option, see: xref:revisionhistory.adoc#revisionhistory_author[revisionhistory_author option].
 
+==== "Restore this version" button is now disabled when a draft or initial revision is selected.
+// #TINY-11042
+
+Previously in {productname}, the **Revision History** premium plugin allowed users to restore a `draft` or `initial` revision. In {productname} {release-version}, the **Revision History** premium plugin now disables the "Restore this version" button when a `draft` or `initial` revision is selected.
+
 For information on the **Revision History** premium plugin, see: xref:revisionhistory.adoc[Revision History].
 
 

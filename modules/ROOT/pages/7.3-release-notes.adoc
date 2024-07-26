@@ -29,17 +29,23 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1>
+=== Enhanced Code Editor
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Enhanced Code Editor** premium plugin.
 
-**<Premium plugin name 1>** includes the following <fixes, changes, improvements>.
+**Enhanced Code Editor** includes the following improvements.
 
-==== <Premium plugin name 1 change 1>
+==== By default, code is now formatted automatically when the Enhanced Code Editor view is opened.
 
-// CCFR here.
+Previously, the Enhanced Code Editor plugin did not automatically format code with indentation, resulting in less readable source code for users.
 
-For information on the **<Premium plugin name 1>** premium plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+With {productname} {release-version}, the new `advcode_prettify_editor` option has been introduced. By default, this option is set to `true`, ensuring that HTML content is automatically formatted upon opening the Enhanced Code Editor view.
+
+Additionally, users can now format either all content within the Enhanced Code Editor or a specific context selection when clicking on the "Format Code" button.
+
+As a result, code within the Enhanced Code Editor is now more readable.
+
+For more information on the **Enhanced Code Editor** premium plugin, see: xref:advcode.adoc[Enhanced Code Editor].
 
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]

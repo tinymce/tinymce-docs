@@ -1,0 +1,44 @@
+= HTML to Docx Converter API
+:navtitle: Export to Word Standalone Service
+:description: The Export to Microsoft Word feature collects the HTML generated with the tinymce.editor.getContent() method and combines it with the default editor content styles along with the styles provided in the configuration. 
+:description_short: Generate a .docx file directly from any application.
+:keywords: service, exportword, export to docx, export to word, html to docx converter api
+:pluginname: Export to Word
+:servicename: HTML to Docx Converter API
+
+[NOTE]
+This is a premium feature. link:https://www.tiny.cloud/contact/[Contact us] to purchase a license or to learn more about our tailored offers. Note that any documents generated without authentication will be watermarked.
+
+== Overview
+
+The {servicename} allows developers to convert HTML content into DOCX files seamlessly. It is designed to integrate effortlessly into your applications, providing high-quality document conversions with ease.
+
+== Key Features
+
+- **HTML to DOCX Conversion**: Transform HTML content into DOCX files with precision, maintaining the structure and styling.
+- **Customizable Outputs**: Tailor the DOCX output to match your requirements, including custom headers, footers, and styles.
+- **High Performance**: Engineered for efficiency, ensuring fast and reliable document conversions.
+- **Ease of Integration**: Simple RESTful API interface that can be integrated into any application or workflow.
+
+[[options]]
+== Flexible Configuration Options
+
+You can customize the DOCX output by specifying various options in your request:
+
+- **Headers and Footers**: Add custom headers and footers to your DOCX documents.
+- **Styles**: Define custom styles for different HTML elements to ensure your documents look exactly as desired.
+- **Page Format**: Select from a wide range of page formats, including Letter, Legal, Tabloid, and A4, ensuring your documents look perfect every time.
+
+== Ideal for Various Use Cases
+
+Examples on how you can use the API to convert an HTML document with custom styles and a header and footer.
+
+* **Legal Document Automation**: Automate the generation of legal documents by converting pre-defined HTML templates into standardized DOCX files, complete with custom headers, footers, and styling.
+* **Dynamic Report Generation**: Generate dynamic reports from HTML data, allowing for consistent formatting and styling across all generated documents.
+* **Educational Material Distribution**: Convert HTML-based educational content into DOCX files for easy distribution and offline access by students.
+* **Newsletter Archiving**: Archive HTML newsletters as DOCX files, preserving the layout and design for future reference.
+
+
+== HTML to Docx Converter API Reference
+
+> Explore the comprehensive API documentation at link:https://exportdocx.converter.tiny.cloud/docs#section/Export-to-Word[HTML to Docx Converter API Reference documentation.^]

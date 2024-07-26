@@ -108,11 +108,14 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === Fixed JavaScript error when inserting a table using the context menu by adjusting the event order in `renderInsertTableMenuItem`.
 // #TINY-6887
 
-In {productname} version {release-version}, a JavaScript warning was addressed that occurred when using both the table and autoresize plugins. The issue was caused by the `onAction` event hiding the context menu, followed by an attempt to close it, resulting in the error: "Uncaught Error: The component must be in a context to send: triggerEvent is not in context."
+Previously in {productname}, a JavaScript warning would appear when attempting to insert a table from the context menu while using both the `table` and `autoresize` plugins. This warning was caused by the `onAction` event hiding the context menu, followed by an attempt to close the already hidden context menu, resulting in the warning message:
 
-Although this did not affect user interactions, it was corrected by reversing the order of function calls in the code. The trigger function is now executed before `onAction`, ensuring the context menu is properly managed before any hiding actions occur. 
+[quote]
+"Uncaught Error: The component must be in a context to send: triggerEvent is not in context."
 
-As a result, this fix eliminates the warning, allowing seamless table insertion via the context menu.
+NOTE: This warning did not impact the functionality of table insertion, but it could be confusing for users.
+
+In {productname} {release-version}, this issue has been resolved by adjusting the order of function calls in the code. Now, the context menu is closed before the `onAction` event is triggered when inserting a table from the context menu. As a result, the table is now inserted as expected without any JavaScript warnings.
 
 
 [[security-fixes]]

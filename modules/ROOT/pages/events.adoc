@@ -2,15 +2,42 @@
 :navtitle: Available Events
 :description_short: List of common editor events
 :description: List of common editor events
-:keywords: Click, DblClick, MouseDown, MouseUp, MouseMove, MouseOver, MouseOut, MouseEnter, MouseLeave, KeyDown, KeyPress, KeyUp, ContextMenu, Paste, Init, Focus, Blur, BeforeSetContent, SetContent, GetContent, PreProcess, PostProcess, NodeChange, Undo, Redo, Change, Dirty, Remove, ExecCommand, PastePreProcess, PastePostProcess, AutocompleterStart, AutocompleterUpdate, AutocompleterEnd
+:keywords: Click, DblClick, MouseDown, MouseUp, MouseMove, MouseOver, MouseOut, MouseEnter, MouseLeave, KeyDown, KeyPress, KeyUp, ContextMenu, Paste, Init, Focus, Blur, BeforeSetContent, SetContent, GetContent, PreProcess, PostProcess, NodeChange, Undo, Redo, Change, Dirty, Remove, ExecCommand, PastePreProcess, PastePostProcess, AutocompleterStart, AutocompleterUpdate, AutocompleterEnd, setup, init, init_instance_callback, AddEditor, RemoveEditor, BeforeUnload, browser-native events, editor-core events, plugin events, editor-manager events, event handlers, event binding
 
-{productname} supports some browser-native events, and provides additional events for working with the editor and plugins.
-
+[[handling-editor-events]]
 == Handling Editor events
 
-The following examples illustrate how to use supported native events, editor core events, and plugin events with {productname}.
+{productname} supports several types of events for working with the editor and plugins.
 
-The following example uses a function to create a console log entry when the editor has initialized. This is also an example of handling an event which does not return any data.
+* xref:browser-native-events[Supported browser-native events]
+* xref:editor-core-events[Editor core events]
+* xref:plugin-events[Plugin events]
+* xref:editor-manager-events[Editor Manager events]
+
+The following examples illustrate how to use supported native events, editor core events, and plugin events with {productname}. Editor Manager events are handled separately using `+tinymce.on+`, rather than `+editor.on+`.
+
+=== Defining an event handler
+
+Event handlers can be initialized anywhere using the `+editor.on+` method, as shown in the following example:
+
+[source,js]
+----
+tinymce.activeEditor.on('click', (e) => {
+  console.log('Editor was clicked at: ' + e.pageX + ', ' + e.pageY);
+});
+----
+
+=== `+setup+` and `+init_instance_callback+` options
+
+A common use case for setting up events is to use the `+setup+` and `+init_instance_callback+` options. These options allow you to bind events before and after the editor instance is initialized.
+
+The `+setup+` option can be used to bind an event **before** the editor instance is initialized.
+
+The `+init_instance_callback+` option can be used to bind an event **after** the editor instance is initialized.
+
+TIP: The `+init_instance_callback+` is functionally equivalent to binding an event listener to the `init` event on the `+setup+` option.
+
+For example, the following code:
 
 [source,js]
 ----
@@ -18,13 +45,45 @@ tinymce.init({
   selector: 'textarea',
   setup: (editor) => {
     editor.on('init', (e) => {
-      console.log('The Editor has initialized.');
+      console.log('Editor is initialized.');
     });
   }
 });
 ----
 
-The following example uses a function to create a console log entry when a command is executed in the editor. This is also an example of handling an event that returns data.
+Is equivalent to:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  init_instance_callback: (editor) => {
+    console.log('Editor is initialized.');
+  }
+});
+----
+
+For more information on these options, see xref:editor-important-options.adoc#setup[setup] and xref:editor-important-options.adoc#init_instance_callback[init_instance_callback].
+
+=== Binding an event before editor initialization
+
+The following example uses the `+setup+` option to bind an event before the editor instance is initialized. This is an example of handling an event that does not return data, such as the `+ResizeEditor+` editor event. Therefore, the `+e+` parameter is not used.
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  setup: (editor) => {
+    editor.on('ResizeEditor', (e) => {
+      console.log('Editor was resized.');
+    });
+  }
+});
+----
+
+=== Binding an event after editor initialization
+
+The following example uses the `+init_instance_callback+` option to bind an event after the editor instance is initialized. This is an example of handling an event that returns data, such as the `+ExecCommand+` event. Therefore, we can use the `+e+` parameter to access the data returned by the event.
 
 [source,js]
 ----
@@ -38,6 +97,7 @@ tinymce.init({
 });
 ----
 
+[[browser-native-events]]
 == Supported browser-native events
 
 {productname} supports the following browser-native events. Click the event name for details (links open https://developer.mozilla.org/[MDN Web Docs]).
@@ -176,6 +236,7 @@ The following events are provided by the {productname} editor.
 |FontFamilyTextUpdate |`+{ value: string }+` |Fired after the visible text label of the `fontfamily` bespoke toolbar button is updated. `value` refers to the updated visible text label.
 |===
 
+[[plugin-events]]
 == Plugin events
 
 The following plugins provide events.

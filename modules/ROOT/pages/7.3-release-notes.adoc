@@ -37,7 +37,7 @@ The {productname} {release-version} release includes an accompanying release of 
 
 ==== Added new option `advcode_prettify_getcontent` to Enhanced Code Editor.
 
-Previously, formatting of HTML content was only applied in the **Enhanced Code Editor** view, and as a consequence, it was not possible to obtain formatted HTML content when calling the `editor.getContent` API.
+Previously, formatting HTML content within the **Enhanced Code Editor** view or retrieving formatted HTML from the `editor.getContent` API as not possible.
 
 {productname} {release-version} introduces the new `advcode_prettify_getcontent` option, which resolves this issue. When enabled (default is false), calling `editor.getContent` now returns formatted HTML. Additionally, it is now possible to retrieve formatted content by calling `editor.getContent({ prettify: true })`, regardless of the option's status.
 

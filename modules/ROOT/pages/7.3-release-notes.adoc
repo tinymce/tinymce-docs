@@ -67,10 +67,16 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following improvement<s>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Unnecessary `nbsp` entities were inserted when typing at the edges of inline elements.
+// #TINY-10854
 
-// CCFR here.
+Previously, the replacement mechanism for `+&nbsp;+` did not account for nearby elements when converting non-breaking spaces to regular spaces.
+
+As a consequence, when typing a sequence like "a space b," the output was correct. However, if the "b" was wrapped in an inline element (such as bold), the `+&nbsp;+` remained instead of being replaced.
+
+{productname} {release-version} addresses this issue. Now, the normalization process triggers when an inline format is applied, affecting the previous sibling element to ensure spaces are properly converted.
+
+As a result, non-breaking spaces between different inline elements are now normalized, preventing unnecessary `+&nbsp;+` entities.
 
 
 [[additions]]

@@ -66,13 +66,13 @@ For example, a merge tag can be set to any available typeface, type-size, foregr
 +
 A selected merge tag can be changed to any other merge tag by using the {pluginname} toolbar menu button.
 
-. Text that matches an existing merge tag will be recognised as a merge tag when it is pasted or otherwise inserted into a {productname} document.
+. Text that matches an existing merge tag will be recognized as a merge tag when it is pasted or otherwise inserted into a {productname} document.
 +
-Content containing the specified prefix and suffix, and matching a specified merge tag, will be inserted as a merge tag when pasted into the editor. For example, if `Sender.Firstname` is a merge tag value, and the merge tag prefix and suffix have their default values, adding the string, `{{Sender.FirstName}}`, to a {productname} document will result in the string automatically being recognised as a merge tag.
+Content containing the specified prefix and suffix, and matching a specified merge tag, will be inserted as a merge tag when pasted into the editor. For example, if `Sender.Firstname` is a merge tag value, and the merge tag prefix and suffix have their default values, adding the string, `{{Sender.FirstName}}`, to a {productname} document will result in the string automatically being recognized as a merge tag.
 
 . {pluginname} can be nested within the `+mergetags_list+` option.
 +
-The `+mergetags_list+` option allows for the specification of a nested menu item within the {pluginname} toolbar menu button. This option allows any number of nested menus and items for merge tag categorisation.
+The `+mergetags_list+` option allows for the specification of a nested menu item within the {pluginname} toolbar menu button. This option allows any number of nested menus and items for merge tag categorization.
 
 == Styling Merge Tags
 

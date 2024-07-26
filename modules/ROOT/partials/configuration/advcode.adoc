@@ -32,9 +32,11 @@ When this option is set to `true` it will format the HTML code when `editor.getC
 
 This is equivalent to retrieving formatted content by calling `+tinymce.activeEditor.getContent({ prettify: true })+`, regardless of the option's status.
 
-Type : `boolean`,
+*Type:* `+Boolean+`
 
-Default: false
+*Default value:* `+false+`
+
+*Possible values:* `+true+`, `+false+`
 
 == Example: basic setup
 

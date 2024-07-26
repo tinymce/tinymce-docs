@@ -116,6 +116,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Split button popups were incorrectly positioned when switching to fullscreen mode if the editor was inside a scrollable container.
+// #TINY-10973
+
+Previously in {productname}, there was an issue where split button popups would be positioned incorrectly when opened within a scrollable container and the editor was in `fullscreen` mode. The behavior occurred because the box constraints for the split button popup did not take the `fullscreen` mode into account when calculating the position, resulting in an incorrect placement of the popup.
+
+In {productname} {release-version}, this issue has been fixed. The box constraints for the split button popup are now correctly calculated when the editor is in a scrollable container and in `fullscreen` mode. As a result, the split button popup is now positioned correctly.
+
 
 [[security-fixes]]
 == Security fixes

@@ -41,7 +41,7 @@ Previously, the Enhanced Code Editor plugin did not automatically format code wi
 
 With {productname} {release-version}, the new `advcode_prettify_editor` option has been introduced. By default, this option is set to `true`, ensuring that HTML content is automatically formatted upon opening the Enhanced Code Editor view.
 
-Additionally, users can manually format pasted HTML code in the Enhanced Code Editor with a single click using the new "Format Code" button.
+Additionally, users can now format either all content within the Enhanced Code Editor or a specific context selection when clicking on the "Format Code" button.
 
 As a result, code within the Enhanced Code Editor is now more readable.
 

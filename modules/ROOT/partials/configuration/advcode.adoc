@@ -21,6 +21,38 @@ tinymce.init({
 });
 ----
 
+[[advcode_prettify_getcontent]]
+== `+advcode_prettify_getcontent+`
+
+include::partial$misc/admon-requires-7.3v.adoc[]
+
+As part of the {productname} 7.3 release, the {pluginname} plugin includes a new option, `advcode_prettify_getcontent`, which is set to `false` by default.
+
+When this option is set to `true` it will format the HTML code when `editor.getContent` is called.
+
+This is equivalent to retrieving formatted content by calling `+tinymce.activeEditor.getContent({ prettify: true })+`, regardless of the option's status.
+
+*Type:* `+Boolean+`
+
+*Default value:* `+false+`
+
+*Possible values:* `+true+`, `+false+`
+
+== Example: basic setup
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'advcode',
+  advcode_prettify_getcontent: true,
+  toolbar: 'code',
+});
+----
+
+[IMPORTANT]
+If existing HTML content in the database is not well-formatted or has inconsistent indentation, enabling this option may **change the formatting** of previously saved content which may be undesirable in some cases.
+
 [[advcode_prettify_editor]]
 == `+advcode_prettify_editor+`
 
@@ -32,7 +64,9 @@ By default, any code rendered inside **Enhanced Coded Editor** will be formatted
 
 Type : `boolean`,
 
-Default: false
+Default: `+true+`
+
+*Possible values:* `+true+`, `+false+`
 
 == Example: basic setup
 

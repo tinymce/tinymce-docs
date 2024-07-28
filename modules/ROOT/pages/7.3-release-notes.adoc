@@ -43,8 +43,34 @@ To resolve this issue, {productname} {release-version} introduces a new `advcode
 
 As a result, It is now possible to obtain formatted content through the editor API.
 
+==== By default, code is now formatted automatically when the Enhanced Code Editor view is opened.
+
+Previously, the Enhanced Code Editor plugin did not automatically format code with indentation, resulting in less readable source code for users.
+
+With {productname} {release-version}, the new `advcode_prettify_editor` option has been introduced. By default, this option is set to `true`, ensuring that HTML content is automatically formatted upon opening the Enhanced Code Editor view.
+
+Additionally, users can now format either all content within the Enhanced Code Editor or a specific context selection when clicking on the "Format Code" button.
+
+As a result, code within the Enhanced Code Editor is now more readable.
+
 For more information on the **Enhanced Code Editor** premium plugin, see: xref:advcode.adoc[Enhanced Code Editor].
 
+=== Math Plugin
+
+The {productname} {release-version} release includes an accompanying release of the **Math** premium plugin.
+
+This **Math** premium plugin release includes the following improvement:
+
+==== Double-clicking on a `math` element now opens the Edit Math dialog.
+// #TINY-10964
+
+In earlier versions of the Math plugin, the double-click handler was not implemented, preventing users from opening the Math dialog by double-clicking on a math element within the editor. This behavior was inconsistent with other plugins, such as the code sample dialog.
+
+To address this inconsistency, {productname} {release-version} introduced a double-click handler for the Math dialog.
+
+Now, users can open the Math dialog by double-clicking on a math element, aligning with the functionality of other plugins.
+
+For more information on the **Math** plugin, see: xref:math.adoc[Math].
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes
@@ -65,10 +91,16 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following improvement<s>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Unnecessary `nbsp` entities were inserted when typing at the edges of inline elements.
+// #TINY-10854
 
-// CCFR here.
+Previously, the replacement mechanism for `+&nbsp;+` did not account for nearby elements when converting non-breaking spaces to regular spaces.
+
+As a consequence, when typing a sequence like "a space b," the output was correct. However, if the "b" was wrapped in an inline element (such as bold), the `+&nbsp;+` remained instead of being replaced.
+
+{productname} {release-version} addresses this issue. Now, the normalization process triggers when an inline format is applied, affecting the previous sibling element to ensure spaces are properly converted.
+
+As a result, non-breaking spaces between different inline elements are now normalized, preventing unnecessary `+&nbsp;+` entities.
 
 
 [[additions]]
@@ -109,10 +141,16 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Notifications didn't position and resize properly when resizing the editor or toggling views.
+// #TINY-10894
 
-// CCFR here.
+Previously, the function responsible for recalculating the width of notifications only added a width if the notification's width exceeded the boundaries.
+
+As a consequence, when notifications were constrained by boundaries, an additional width was added. However, if the boundaries were later increased, the added width was not adjusted accordingly.
+
+{prouductname} {release-version} addresses this issue. Now, the function adds width when the notification's width exceeds the boundaries but also removes this width when necessary.
+
+As a result, notifications now resize correctly when the boundaries increase, ensuring their width adjusts as expected.
 
 
 [[security-fixes]]

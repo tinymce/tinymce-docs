@@ -52,3 +52,34 @@ tinymce.init({
 
 [IMPORTANT]
 If existing HTML content in the database is not well-formatted or has inconsistent indentation, enabling this option may **change the formatting** of previously saved content which may be undesirable in some cases.
+=======
+
+[[advcode_prettify_editor]]
+== `+advcode_prettify_editor+`
+
+include::partial$misc/admon-requires-7.3v.adoc[]
+
+As part of the {productname} 7.3 release, the {pluginname} plugin includes a new option, `advcode_prettify_editor`, which is set to `true` by default.  
+
+By default, any code rendered inside **Enhanced Coded Editor** will be formatted with correct indentation.
+
+Type : `boolean`,
+
+Default: `+true+`
+
+*Possible values:* `+true+`, `+false+`
+
+== Example: basic setup
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'advcode',
+  advcode_prettify_editor: true, // default value
+  toolbar: 'code',
+});
+----
+
+[NOTE]
+To disable this default behavior, set the `advcode_prettify_editor` option to `false`.

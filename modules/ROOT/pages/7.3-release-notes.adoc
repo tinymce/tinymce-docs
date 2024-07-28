@@ -29,6 +29,23 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== Math Plugin
+
+The {productname} {release-version} release includes an accompanying release of the **Math** premium plugin.
+
+This **Math** premium plugin release includes the following improvement:
+
+==== Double-clicking on a `math` element now opens the Edit Math dialog.
+// #TINY-10964
+
+In earlier versions of the Math plugin, the double-click handler was not implemented, preventing users from opening the Math dialog by double-clicking on a math element within the editor. This behavior was inconsistent with other plugins, such as the code sample dialog.
+
+To address this inconsistency, {productname} {release-version} introduced a double-click handler for the Math dialog.
+
+Now, users can open the Math dialog by double-clicking on a math element, aligning with the functionality of other plugins.
+
+For more information on the **Math** plugin, see: xref:math.adoc[Math].
+
 === Enhanced Code Editor
 
 The {productname} {release-version} release includes an accompanying release of the **Enhanced Code Editor** premium plugin.

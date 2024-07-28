@@ -159,6 +159,13 @@ Previously in {productname}, there was an issue where split button popups would 
 
 In {productname} {release-version}, this issue has been fixed. The box constraints for the split button popup are now correctly calculated when the editor is in a scrollable container and in `fullscreen` mode. As a result, the split button popup is now positioned correctly.
 
+=== The pattern commands would execute even if the command was not enabled.
+// #TINY-10994
+
+Previously in {productname}, the `text_patterns` commands would attempt to execute even if the functionality were not supported in the current editor context. As a consequence, the command would fail and the editor would display unexpected behavior. For example, typing "1. " without the `lists` plugin enabled would delete the text instead of converting it to a list.
+
+This issue has been resolved in {productname} {release-version}. The editor now filters `text_patterns` to only the supported commands. For example, typing "1. " without the `lists` plugin enabled will no longer fire a text pattern and instead retain the text as plain text.
+
 
 [[security-fixes]]
 == Security fixes

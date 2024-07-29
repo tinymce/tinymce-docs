@@ -1,0 +1,53 @@
+= Docx to HTML Converter API
+:navtitle: Docx to HTML Converter API
+:description: The DOCX to HTML converter provides an API for converting Microsoft Word .docx and .dotx files to HTML, allowing users to import content from Word documents directly into their web applications.
+:description_short: The DOCX to HTML converter provides an API for converting Microsoft Word .docx and .dotx files to HTML.
+:keywords: service, exportword, export to docx, export to word, html to docx converter api
+:pluginname: Import from Word
+:servicename: Docx to HTML Converter API
+
+[NOTE]
+This is a premium feature. link:https://www.tiny.cloud/contact/[Contact us] to purchase a license or to learn more about our tailored offers. Note that any documents generated without authentication will be watermarked.
+
+== Overview
+
+The {servicename} provides an API for converting Microsoft Word `.docx` and `.dotx` files to HTML, allowing users to import content from Word documents directly into their web applications. This feature ensures that the imported content retains its original formatting, making it an essential tool for users who require high fidelity in document conversion.
+
+== Key Features
+
+* **High Fidelity Conversion**: Ensures that the content from Word documents is imported with accurate formatting, including styles, lists, tables, images, and hyperlinks.
+* **Seamless Integration**: Easily integrates with a WYSIWYG editor, allowing users to convert Word documents directly within their existing content management workflows.
+* **API Accessibility**: Accessible via a simple REST API, making it easy to incorporate into various applications and services.
+* **Support for Complex Documents**: Handles complex Word documents with multiple sections, headers, footers, and different page layouts.
+* **Customization Options**: Provides options to customize the conversion process to meet specific needs.
+
+[[options]]
+== Flexible Configuration Options
+
+=== Formatting Customization
+
+* **Custom CSS**: Apply custom CSS to the converted content for consistent styling.
+* **Formatting**: Allows which Word styles and formatting are output alongside the document.
+* **Document properties**: Set document size and margins in pixels.
+
+=== Output Options
+
+* **Output Format**: Content is returned as a JSON object for easier integration into applications such as:
+** **HTML Content**: Provides the converted HTML, ready for web use.
+** **Document Information**: Offers document size and margin details for precise layout control.
+
+These configuration options enhance the flexibility and control users have over the import process, making it adaptable to various needs and use cases.
+
+[[ideal-use-cases]]
+== Ideal for Various Use Cases
+
+* **Corporate Documentation**: Organizations can seamlessly import Word documents into their web-based content management systems, preserving formatting and styles.
+* **Academic Publishing**: Researchers and educators can easily convert and publish their Word documents on educational platforms or academic journals' websites.
+* **Legal Document Management**: Law firms can streamline the review and editing of Word documents while preserving essential formatting elements.
+* **Content Creation and Blogging**: Bloggers can import their drafts directly into their blogging platform, saving time on reformatting.
+* **Online Learning Platforms**: Instructors can import educational materials directly from Word, improving the learning experience for students.
+* **Government and Public Services**: Government agencies can import documents into their web platforms, ensuring they are accessible in a consistent and professional manner.
+
+== Docx to HTML Converter API Reference
+
+> Explore the comprehensive API documentation at link:https://exportdocx.converter.tiny.cloud/docs#section/Import-from-Word[Docx to HTML Converter API Reference documentation.^]

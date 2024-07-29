@@ -141,6 +141,13 @@ As a result, non-breaking spaces between different inline elements are now norma
 
 {productname} {release-version} also includes the following bug fix<es>:
 
+=== `preventDefault` on mousedown on toolbar buttons was causing misplaced focus bugs.
+// #TINY-10638
+
+In previous versions of {productname}, the `preventDefault` on mousedown in the toolbar button component caused focus issues. As a consequence, when clicking on different toolbar buttons, the focus was not updated, leaving the initial button highlighted.
+
+{productname} {release-version} addresses this issue by removing the `preventDefault`, which allows the focus to change as expected with user actions, such as mouse clicks or tab navigation.
+
 === Notifications didn't position and resize properly when resizing the editor or toggling views.
 // #TINY-10894
 

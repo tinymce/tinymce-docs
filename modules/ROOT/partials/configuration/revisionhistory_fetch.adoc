@@ -3,7 +3,7 @@
 
 The `revisionhistory_fetch` function retrieves saved revisions and is **required** for the Revision History plugin to work. It is called when the user opens the Revision History view.
 
-The `revisionhistory_fetch` option is an asynchronous function that returns a link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise] which resolves to an array of revisions.
+It expects an asynchronous function that returns a link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise] which resolves to an array of revisions.
 
 [NOTE]
 The {pluginname} plugin does not sort results before displaying them, allowing integrators to sort the results according to their preference. {companyname} recommends to sort the results in reverse chronological order, as this makes it easier for users to identify revisions by date.
@@ -12,7 +12,7 @@ The {pluginname} plugin does not sort results before displaying them, allowing i
 
 *Input parameters:* None
 
-*Return data:* `+Array+` of xref:#the-revision-object[Revision] `+Objects+`
+*Return data:* `+Array+` of xref:#revision[Revision] `+Objects+`
 
 === Example of `revisionhistory_fetch` response
 
@@ -45,7 +45,7 @@ const revisions = [
 ];
 ----
 
-=== Example: using `revisionhistory_fetch`
+=== Example: Using `revisionhistory_fetch`
 
 [source,js]
 ----

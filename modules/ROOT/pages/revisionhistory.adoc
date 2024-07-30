@@ -27,7 +27,7 @@ The key components are:
 
 1. In the {pluginname} view header, there are two buttons.
 * `Restore this version`: Set the selected revision's content to the editor and close the view. Note that this button is disabled for the `initial` and `draft` revisions.
-* `Close`: Close the view.
+* `Close`: Close the view
 
 2. The readonly diff view presents the changes between the selected revision and its immediate predecessor, clearly highlighting for easy recognition. The changes are also color-coded for clarity:
 * Red: Removed content.
@@ -71,7 +71,7 @@ There are three types of revision in {pluginname} plugin:
 
 * `Initial`: This revision is generated during the {productname} `Loaded` event, with the editor's initial content.
 * `Draft`: It is generated upon opening the {pluginname}, reflecting the editor's current content. When included, it becomes the `latest revision` in the revisions list.
-* `Saved`: These revisions are saved in the client's storage and are fetched upon opening the {pluginname} view using the `revisionhistory_fetch` and `revisionhistory_fetch_revision` options.
+* `Saved`: These revisions are fetched from the client's storage upon opening the {pluginname} view, using the `revisionhistory_fetch` and `revisionhistory_fetch_revision` options.
 
 When dealing with a document that has no saved revisions, the {pluginname} plugin will typically maintain two revisions: `initial` and `draft`. If there are no changes to the content of the editor since initialization, the `initial` revision is not displayed since it's identical to the `draft` revision.
 

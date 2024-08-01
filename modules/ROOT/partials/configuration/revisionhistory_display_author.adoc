@@ -15,7 +15,7 @@ tinymce.init({
   selector: 'textarea',  // Change this value according to your HTML
   plugins: 'revisionhistory',
   toolbar: 'revisionhistory',
-  revisionhistory_display_author: true,
-  revisionhistory_fetch: () => Promise.resolve([])
+  revisionhistory_fetch: () => Promise.resolve([]),
+  revisionhistory_display_author: true
 });
 ----

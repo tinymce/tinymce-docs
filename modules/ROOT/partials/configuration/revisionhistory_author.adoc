@@ -13,11 +13,11 @@ tinymce.init({
   selector: 'textarea',  // Change this value according to your HTML
   plugins: 'revisionhistory',
   toolbar: 'revisionhistory',
+  revisionhistory_fetch: () => Promise.resolve([]),
   revisionhistory_author: {
     id: 'john.doe',
     name: 'John Doe',
     avatar: 'https://example.com/avatar.jpg'
-  },
-  revisionhistory_fetch: () => Promise.resolve([])
+  }
 });
 ----

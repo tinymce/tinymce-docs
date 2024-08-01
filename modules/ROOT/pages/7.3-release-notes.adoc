@@ -50,10 +50,12 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== An author is now shown for revisions. Revisions created without an author will show as "Anonymous".
 // #TINY-11014
 
-In {productname} {release-version}, the **Revision History** premium plugin now shows the author for revisions. The author is shown in the Revision History sidebar as a part of each revision card.
-Revisions created without an author will show as "Anonymous" with an auto-generated avatar.
+In {productname} {release-version}, the Revision History premium plugin now displays the author for each revision in the Revision History sidebar. Revisions without an author will be marked as "Anonymous" and accompanied by an auto-generated avatar.
 
-NOTE: The `revisionhistory_display_author` option must be set to `true` to display the authors in the Revision History sidebar.
+This feature enhancement aims to improve traceability and accountability for content revisions.
+
+[NOTE]
+The `revisionhistory_display_author` option must be set to `true` to display the authors.
 
 ==== New option `revisionhistory_author` for setting the current author.
 // #TINY-11014

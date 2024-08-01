@@ -1,7 +1,11 @@
 [[revisionhistory_fetch]]
 == `revisionhistory_fetch`
 
-The `revisionhistory_fetch` function retrieves saved revisions and is **required** for the Revision History plugin to work. It is called when the user opens the Revision History view.
+The `revisionhistory_fetch` function retrieves saved revisions and is called when the user opens the Revision History view.
+
+[IMPORTANT]
+The `revisionhistory_fetch` function is required for the Revision History plugin to function.
+
 
 It expects an asynchronous function that returns a link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise] which resolves to an array of revisions.
 

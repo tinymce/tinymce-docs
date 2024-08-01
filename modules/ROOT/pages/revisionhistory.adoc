@@ -75,7 +75,7 @@ There are three types of revision in {pluginname} plugin:
 
 When dealing with a document that has no saved revisions, the {pluginname} plugin will typically maintain two revisions: `initial` and `draft`. If there are no changes to the content of the editor since initialization, the `initial` revision is not displayed since it's identical to the `draft` revision.
 
-For documents with saved revisions, the `initial` revision is disregarded, assuming it already exists in the saved revisions. If the integrators want to include the initial content, a workaround is to include it as a revision via `revisionhistory_fetch` option.
+For documents with saved revisions, the `initial` revision is disregarded, assuming it already exists among the saved revisions. To include the initial content, add it as a revision using the `revisionhistory_fetch` option.
 
 == Data structure
 

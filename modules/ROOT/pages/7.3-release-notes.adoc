@@ -86,7 +86,18 @@ For more information on the `revisionhistory_author` option, see: xref:revisionh
 ==== New `revisionhistory_display_author` option that determines whether the author is displayed.
 // #TINY-11079
 
-In {productname} {release-version}, the **Revision History** premium plugin includes a new option `revisionhistory_display_author` that expects a boolean value. When set to `true`, the author is displayed on each revision in the Revision History sidebar. The default value is `false`.
+In {productname} {release-version}, the **Revision History** premium plugin includes a new option `revisionhistory_display_author` that expects a boolean value. When set to `true`, the author is displayed on each revision in the Revision History sidebar.
+
+.Example
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',  // Change this value according to your HTML
+  plugins: 'revisionhistory',
+  revisionhistory_fetch: () => Promise.resolve([]), // Required option for the plugin - replace with actual API request
+  revisionhistory_display_author: true
+});
+----
 
 ==== Enhance the appearance of the Revision History sidebar.
 // #TINY-11045

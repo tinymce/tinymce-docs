@@ -29,6 +29,22 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== AI Assistant
+
+The {productname} {release-version} release includes an accompanying release of the **AI Assistant** premium plugin.
+
+**AI Assistant** includes the following additions.
+
+==== Add "Translate" options to AI Assistant default shortcuts.
+
+The **AI Assistant** required an enhancement to support in-editor translation capabilities.
+
+{productname} {release-version} introduces a new translate dropdown, that has been added to the **AI Assistant's** default shortcuts. The dropdown includes language options: English, Spanish, Portuguese, German, French, Norwegian, Ukrainian, Japanese, Korean, Simplified Chinese, Hebrew, Hindi, and Arabic.
+
+As a result, users can seamlessly translate content within the editor into multiple languages with a single "click".
+
+For information on the **AI Assistant** premium plugin, see: xref:ai.adoc[AI Assistant].
+
 === Enhanced Code Editor
 
 The {productname} {release-version} release includes an accompanying release of the **Enhanced Code Editor** premium plugin.
@@ -54,6 +70,21 @@ Additionally, users can now format either all content within the Enhanced Code E
 As a result, code within the Enhanced Code Editor is now more readable.
 
 For more information on the **Enhanced Code Editor** premium plugin, see: xref:advcode.adoc[Enhanced Code Editor].
+
+=== Markdown
+
+The {productname} {release-version} release includes an accompanying release of the **Markdown** premium plugin.
+
+This **Markdown** premium plugin release includes the following improvement:
+
+==== Markdown will now respect the 'Paste as Text' menu option.
+// #TINY-10939
+
+In previous versions of the Markdown plugin, pasting text would always modify the content, even if the "Paste as Text" option was active. This caused HTML documents to be altered during paste operations, affecting elements like newlines.
+
+{productname} {release-version} resolves this issue. Now, pasting Markdown does not trigger conversion when the "Paste as Text" button is active.
+
+For information on the **Markdown** plugin, see xref:markdown.adoc[Markdown].
 
 === Math Plugin
 
@@ -150,6 +181,18 @@ Previously, when `+contentEditable="true"+` (CET) fields where not wrapped in `+
 
 As a result, the editor now correctly returns focus as expected, ensuring seamless user interactions.
 
+=== Fixed JavaScript error when inserting a table using the context menu by adjusting the event order in `renderInsertTableMenuItem`.
+// #TINY-6887
+
+Previously in {productname}, a JavaScript warning would appear when attempting to insert a table from the context menu while using both the `table` and `autoresize` plugins. This warning was caused by the `onAction` event hiding the context menu, followed by an attempt to close the already hidden context menu, resulting in the warning message:
+
+[quote]
+"Uncaught Error: The component must be in a context to send: triggerEvent is not in context."
+
+NOTE: This warning did not impact the functionality of table insertion, but it could be confusing for users.
+
+In {productname} {release-version}, this issue has been resolved by adjusting the order of function calls in the code. Now, the context menu is closed before the `onAction` event is triggered when inserting a table from the context menu. As a result, the table is now inserted as expected without any JavaScript warnings.
+
 === Notifications didn't position and resize properly when resizing the editor or toggling views.
 // #TINY-10894
 
@@ -157,7 +200,7 @@ Previously, the function responsible for recalculating the width of notification
 
 As a consequence, when notifications were constrained by boundaries, an additional width was added. However, if the boundaries were later increased, the added width was not adjusted accordingly.
 
-{prouductname} {release-version} addresses this issue. Now, the function adds width when the notification's width exceeds the boundaries but also removes this width when necessary.
+{productname} {release-version} addresses this issue. Now, the function adds width when the notification's width exceeds the boundaries but also removes this width when necessary.
 
 As a result, notifications now resize correctly when the boundaries increase, ensuring their width adjusts as expected.
 

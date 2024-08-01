@@ -62,6 +62,25 @@ The `revisionhistory_display_author` option must be set to `true` to display the
 
 In {productname} {release-version}, the **Revision History** premium plugin includes a new option `revisionhistory_author` for setting the author for the `initial` and `draft` revisions. This option expects an xref:revisionhistory.adoc#the-author-object[Author] object as its value.
 
+[NOTE]
+The `revisionhistory_display_author` option must be set to `true` to display the authors.
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // Change this value according to your HTML
+  plugins: 'revisionhistory',
+  toolbar: 'revisionhistory',
+  revisionhistory_fetch: () => Promise.resolve([]), // Required option for the plugin - replace with actual API request
+  revisionhistory_author: {
+    id: 'john.doe',
+    name: 'John Doe',
+    avatar: 'https://example.com/avatar.jpg'
+  }
+});
+----
+
 For more information on the `revisionhistory_author` option, see: xref:revisionhistory.adoc#revisionhistory_author[revisionhistory_author option].
 
 ==== New `revisionhistory_display_author` option that determines whether the author is displayed.

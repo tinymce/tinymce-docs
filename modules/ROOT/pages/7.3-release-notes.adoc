@@ -119,12 +119,17 @@ In {productname} {release-version}, improvements were made to the color picker i
 
 * A red outline to indicate errors.
 * An error icon for visual clarity.
-* On hover and focus, tooltips provide clear instructions such as "Numbers only, 0 to 255" or "Hexadecimal only, 000000 to FFFFFF."
-* Voice over reads aloud: "256, contents selected Range 0 to 255, invalid data, edit text."
+* On `hover` and `focus`, tooltips provide clear instructions such as "Numbers only, 0 to 255" or "Hexadecimal only, 000000 to FFFFFF."
+* Voice over reads aloud as example: "Number 256. Contents selected. Range from 0 to 255. Invalid data. Edit text."
+
+[NOTE]
+Although there may be slight variations in pronunciation and phrasing across different operating systems or specific screen readers, most screen readers will convey similar messages, emphasizing numerical values and the status of the content.
 
 These enhancements improve user understanding and facilitate error correction.
 
-image::color-picker/color-picker-error-message.png[color picker error tooltip]
+image::color-picker/color-picker-error-message-rbg.png[color picker error rbg]
+
+image::color-picker/color-picker-error-message-hex.png[color picker error message hex]
 
 
 [[changes]]
@@ -161,7 +166,7 @@ Previously, the function responsible for recalculating the width of notification
 
 As a consequence, when notifications were constrained by boundaries, an additional width was added. However, if the boundaries were later increased, the added width was not adjusted accordingly.
 
-{prouductname} {release-version} addresses this issue. Now, the function adds width when the notification's width exceeds the boundaries but also removes this width when necessary.
+{productname} {release-version} addresses this issue. Now, the function adds width when the notification's width exceeds the boundaries but also removes this width when necessary.
 
 As a result, notifications now resize correctly when the boundaries increase, ensuring their width adjusts as expected.
 

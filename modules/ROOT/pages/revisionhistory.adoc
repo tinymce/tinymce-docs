@@ -73,7 +73,7 @@ The {pluginname} plugin offers three revision types:
 . **Draft**: Generated upon opening the {pluginname}, this revision reflects the editor's current content. When included, it becomes the `latest revision` in the revisions list.
 . **Saved**: These revisions are fetched from the client's storage when opening the {pluginname} view, using the `revisionhistory_fetch` and `revisionhistory_fetch_revision` options.
 
-When dealing with a document that has no saved revisions, the {pluginname} plugin will typically maintain two revisions: `initial` and `draft`. If there are no changes to the content of the editor since initialization, the `initial` revision is not displayed since it's identical to the `draft` revision.
+When working with a document that has no saved revisions, the {pluginname} plugin typically maintains two revisions: `initial` and `draft`. If no changes have been made to the content since initialization, the `initial` revision is not displayed, as it is identical to the `draft` revision.
 
 For documents with saved revisions, the `initial` revision is disregarded, assuming it already exists among the saved revisions. To include the initial content, add it as a revision using the `revisionhistory_fetch` option.
 

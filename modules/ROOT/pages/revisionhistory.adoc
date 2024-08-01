@@ -26,7 +26,7 @@ The {pluginname} view is accessible via either the `revisionhistory` toolbar but
 The key components are:
 
 1. In the {pluginname} view header, there are two buttons.
-* `Restore this version`: Set the selected revision's content to the editor and close the view. Note that this button is disabled for the `initial` and `draft` revisions.
+* `Restore this version`: Sets the selected revision's content to the editor and closes the view. Note: the button is disabled for the `initial` and `draft` revisions.
 * `Close`: Closes the **Revision History** view.
 
 2. The readonly diff view presents the changes between the selected revision and its immediate predecessor, clearly highlighting for easy recognition. The changes are also color-coded for clarity:

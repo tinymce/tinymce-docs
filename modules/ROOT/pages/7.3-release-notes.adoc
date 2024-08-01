@@ -108,7 +108,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === The listbox component had a fixed width and was not a responsive ui element.
 // #TINY-10884
 
-Previously, the listbox component was not responsive as a ui element, due to a fixed width being applied in the `CommonDropdown` component during dialog initialization. This issue has been resolved in {productname} {release-version} by removing the fixed width setting, allowing the listbox component to function as a responsive UI element.
+Previously, the listbox component was not responsive as a UI element, due to a fixed width being applied in the `CommonDropdown` component during dialog initialization. This issue has been resolved in {productname} {release-version} by removing the fixed width setting, allowing the listbox component to function as a responsive UI element.
 
 
 [[security-fixes]]

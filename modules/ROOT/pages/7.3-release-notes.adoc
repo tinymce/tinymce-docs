@@ -172,6 +172,14 @@ As a result, non-breaking spaces between different inline elements are now norma
 
 {productname} {release-version} also includes the following bug fix<es>:
 
+=== Attempting to use focus commands on an editor where the cursor had last been in certain `+contentEditable="true"+` elements would fail.
+// #TINY-11085
+
+Previously, when `+contentEditable="true"+` (CET) fields where not wrapped in `+contentEditable="false"+` (CEF) elements, the elements did not respond properly to focus commands. As a consequence, the focus was not given to the editor as expected, leading to disruptions in user interactions.
+
+{productname} {release-version} addresses this issue. Now, when (CET) fields are **not wrapped** in (CEF) elements, the editor directs the focus to the body of the editor first.
+
+As a result, the editor now correctly returns focus as expected, ensuring seamless user interactions.
 
 === Fixed JavaScript error when inserting a table using the context menu by adjusting the event order in `renderInsertTableMenuItem`.
 // #TINY-6887

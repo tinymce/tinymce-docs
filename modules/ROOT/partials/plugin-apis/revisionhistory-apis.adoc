@@ -7,6 +7,7 @@ interface PluginAPI {
 
 [[diff]]
 === `diff`
+
 Returns a HTML string with annotations indicating the changes in `originalHTML` relative to `changedHTML`. The styling of annotations can be customized via xref:revisionhistory_diff_classes[`+revisionhistory_diff_classes+`] option.
 
 .Example

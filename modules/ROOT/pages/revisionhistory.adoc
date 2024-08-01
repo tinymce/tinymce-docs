@@ -67,7 +67,7 @@ tinymce.init({
 
 == Understanding types of revision
 
-There are three types of revision in {pluginname} plugin:
+The {pluginname} plugin offers three revision types:
 
 * `Initial`: This revision is generated during the {productname} `Loaded` event, with the editor's initial content.
 * `Draft`: It is generated upon opening the {pluginname}, reflecting the editor's current content. When included, it becomes the `latest revision` in the revisions list.

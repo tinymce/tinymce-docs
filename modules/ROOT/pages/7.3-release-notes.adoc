@@ -57,7 +57,7 @@ This feature enhancement aims to improve traceability and accountability for con
 ==== New option `revisionhistory_author` for setting the current author.
 // #TINY-11014
 
-In {productname} {release-version}, the **Revision History** premium plugin includes a new option `revisionhistory_author` for setting the author for the `initial` and `draft` revisions. This option expects an xref:revisionhistory.adoc#the-author-object[Author] object as its value.
+In {productname} {release-version}, the **Revision History** premium plugin includes a new option `revisionhistory_author` for setting the author for the `initial` and `draft` revisions. This option expects an xref:revisionhistory.adoc#author[Author] object as its value.
 
 [NOTE]
 The `revisionhistory_display_author` option must be set to `true` to display the authors.

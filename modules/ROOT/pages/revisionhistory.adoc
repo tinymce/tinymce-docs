@@ -39,7 +39,7 @@ The key components are:
 The default highlighting colors can be customized using the xref:revisionhistory_css_url[`+revisionhistory_css_url+`] option.
 
 [NOTE]
-The {pluginname} plugin interprets commented HTML as valid content, yet it disregards this content during the revision comparison process. Consequently, a revision containing solely commented content appears as empty in the user interface displaying the differential content.
+The {pluginname} plugin processes commented HTML as valid content but disregards it during the revision comparison process. Revisions containing only commented content appear as empty in the view.
 
 == Basic setup
 

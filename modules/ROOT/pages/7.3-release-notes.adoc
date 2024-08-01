@@ -71,6 +71,21 @@ As a result, code within the Enhanced Code Editor is now more readable.
 
 For more information on the **Enhanced Code Editor** premium plugin, see: xref:advcode.adoc[Enhanced Code Editor].
 
+=== Markdown
+
+The {productname} {release-version} release includes an accompanying release of the **Markdown** premium plugin.
+
+This **Markdown** premium plugin release includes the following improvement:
+
+==== Markdown will now respect the 'Paste as Text' menu option.
+// #TINY-10939
+
+In previous versions of the Markdown plugin, pasting text would always modify the content, even if the "Paste as Text" option was active. This caused HTML documents to be altered during paste operations, affecting elements like newlines.
+
+{productname} {release-version} resolves this issue. Now, pasting Markdown does not trigger conversion when the "Paste as Text" button is active.
+
+For information on the **Markdown** plugin, see xref:markdown.adoc[Markdown].
+
 === Math Plugin
 
 The {productname} {release-version} release includes an accompanying release of the **Math** premium plugin.

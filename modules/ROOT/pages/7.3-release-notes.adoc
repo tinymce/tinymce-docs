@@ -148,7 +148,7 @@ Previously, the function responsible for recalculating the width of notification
 
 As a consequence, when notifications were constrained by boundaries, an additional width was added. However, if the boundaries were later increased, the added width was not adjusted accordingly.
 
-{prouductname} {release-version} addresses this issue. Now, the function adds width when the notification's width exceeds the boundaries but also removes this width when necessary.
+{productname} {release-version} addresses this issue. Now, the function adds width when the notification's width exceeds the boundaries but also removes this width when necessary.
 
 As a result, notifications now resize correctly when the boundaries increase, ensuring their width adjusts as expected.
 

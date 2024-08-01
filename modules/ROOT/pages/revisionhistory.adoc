@@ -69,9 +69,9 @@ tinymce.init({
 
 The {pluginname} plugin offers three revision types:
 
-* `Initial`: This revision is generated during the {productname} `Loaded` event, with the editor's initial content.
-* `Draft`: It is generated upon opening the {pluginname}, reflecting the editor's current content. When included, it becomes the `latest revision` in the revisions list.
-* `Saved`: These revisions are fetched from the client's storage upon opening the {pluginname} view, using the `revisionhistory_fetch` and `revisionhistory_fetch_revision` options.
+. **Initial**: This revision is generated during the {productname} `Loaded` event, capturing the editor's initial content.
+. **Draft**: Generated upon opening the {pluginname}, this revision reflects the editor's current content. When included, it becomes the `latest revision` in the revisions list.
+. **Saved**: These revisions are fetched from the client's storage when opening the {pluginname} view, using the `revisionhistory_fetch` and `revisionhistory_fetch_revision` options.
 
 When dealing with a document that has no saved revisions, the {pluginname} plugin will typically maintain two revisions: `initial` and `draft`. If there are no changes to the content of the editor since initialization, the `initial` revision is not displayed since it's identical to the `draft` revision.
 

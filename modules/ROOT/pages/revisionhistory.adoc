@@ -57,11 +57,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'revisionhistory',
   toolbar: 'revisionhistory',
-  // Required
-  revisionhistory_fetch: () => new Promise((resolve) => {
-    const revisions = [];  // Replace this with an API request to get saved revisions
-    resolve(revisions);
-  })
+  revisionhistory_fetch: () => Promise.resolve([]), // Replace this with an API request to get saved revisions
 });
 ----
 

@@ -94,6 +94,7 @@ In {productname} {release-version}, the **Revision History** premium plugin incl
 tinymce.init({
   selector: 'textarea',  // Change this value according to your HTML
   plugins: 'revisionhistory',
+  toolbar: 'revisionhistory',
   revisionhistory_fetch: () => Promise.resolve([]), // Required option for the plugin - replace with actual API request
   revisionhistory_display_author: true
 });

@@ -70,6 +70,7 @@ tinymce.init({
   plugins: 'revisionhistory',
   toolbar: 'revisionhistory',
   revisionhistory_fetch: () => Promise.resolve([]), // Required option for the plugin - replace with actual API request
+  revisionhistory_display_author: true,
   revisionhistory_author: {
     id: 'john.doe',
     name: 'John Doe',

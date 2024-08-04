@@ -97,7 +97,7 @@ The author is an `+Object+` that represents the author or creator of a revision.
 | Field      | Type       | Required? | Description
 | `+id+`     | `+string+` | required  | The unique string ID of the author.
 | `+name+`   | `+string+` | optional  | The name of the revision author. If not provided, the default value is `Anonymous`.
-| `+avatar+` | `+string+` | optional  | The URL of the author's avatar image. If not provided, the {pluginname} will use a generated avatar using the author's initials.
+| `+avatar+` | `+string+` | optional  | The URL of the author's avatar image. If not provided or invalid, the {pluginname} will use a generated avatar using the author's initials.
 |===
 
 

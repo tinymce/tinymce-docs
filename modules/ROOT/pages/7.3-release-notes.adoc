@@ -139,10 +139,28 @@ As a result, non-breaking spaces between different inline elements are now norma
 
 {productname} {release-version} also includes the following addition<s>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Colorpicker number input fields now show an error tooltip and error icon when invalid text has been entered.
+// #TINY-10799
 
-// CCFR here.
+Previously, the color picker HEX value input field only displayed a red outline and an aria label reading "invalid data" when users entered invalid values. This lacked sufficient detail to help users correct their input.
+
+As a consequence, users experienced confusion due to the vague error indication and insufficient guidance, potentially leading to repeated input errors.
+
+In {productname} {release-version}, improvements were made to the color picker input field to enhance user feedback and accessibility. The input field now includes:
+
+* A red outline to indicate errors.
+* An error icon for visual clarity.
+* On `hover` and `focus`, tooltips provide clear instructions such as "Numbers only, 0 to 255" or "Hexadecimal only, 000000 to FFFFFF."
+* Voice over reads aloud as example: "Number 256. Contents selected. Range from 0 to 255. Invalid data. Edit text."
+
+[NOTE]
+Although there may be slight variations in pronunciation and phrasing across different operating systems or specific screen readers, most screen readers will convey similar messages, emphasizing numerical values and the status of the content.
+
+These enhancements improve user understanding and facilitate error correction.
+
+image::color-picker/color-picker-error-message-rbg.png[color picker error rbg]
+
+image::color-picker/color-picker-error-message-hex.png[color picker error message hex]
 
 
 [[changes]]

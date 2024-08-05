@@ -29,17 +29,96 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1>
+=== AI Assistant
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **AI Assistant** premium plugin.
 
-**<Premium plugin name 1>** includes the following <fixes, changes, improvements>.
+**AI Assistant** includes the following additions.
 
-==== <Premium plugin name 1 change 1>
+==== Add "Translate" options to AI Assistant default shortcuts.
 
-// CCFR here.
+The **AI Assistant** required an enhancement to support in-editor translation capabilities.
 
-For information on the **<Premium plugin name 1>** premium plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+{productname} {release-version} introduces a new translate dropdown, that has been added to the **AI Assistant's** default shortcuts. The dropdown includes language options: English, Spanish, Portuguese, German, French, Norwegian, Ukrainian, Japanese, Korean, Simplified Chinese, Hebrew, Hindi, and Arabic.
+
+As a result, users can seamlessly translate content within the editor into multiple languages with a single "click".
+
+For information on the **AI Assistant** premium plugin, see: xref:ai.adoc[AI Assistant].
+
+=== Enhanced Code Editor
+
+The {productname} {release-version} release includes an accompanying release of the **Enhanced Code Editor** premium plugin.
+
+**Enhanced Code Editor** includes the following improvements.
+
+==== Added new option `advcode_prettify_getcontent` to Enhanced Code Editor.
+
+Previously, formatting HTML content within the **Enhanced Code Editor** view or retrieving formatted HTML from the `editor.getContent` API as not possible.
+
+To resolve this issue, {productname} {release-version} introduces a new `advcode_prettify_getcontent` option. When enabled (default: false), `editor.getContent` will return formatted HTML. Additionally, invoking `+editor.getContent({ prettify: true })+` will retrieve formatted HTML content regardless of the option's status.
+
+As a result, It is now possible to obtain formatted content through the editor API.
+
+==== By default, code is now formatted automatically when the Enhanced Code Editor view is opened.
+
+Previously, the Enhanced Code Editor plugin did not automatically format code with indentation, resulting in less readable source code for users.
+
+With {productname} {release-version}, the new `advcode_prettify_editor` option has been introduced. By default, this option is set to `true`, ensuring that HTML content is automatically formatted upon opening the Enhanced Code Editor view.
+
+Additionally, users can now format either all content within the Enhanced Code Editor or a specific context selection when clicking on the "Format Code" button.
+
+As a result, code within the Enhanced Code Editor is now more readable.
+
+For more information on the **Enhanced Code Editor** premium plugin, see: xref:advcode.adoc[Enhanced Code Editor].
+
+=== Markdown
+
+The {productname} {release-version} release includes an accompanying release of the **Markdown** premium plugin.
+
+This **Markdown** premium plugin release includes the following improvement:
+
+==== Markdown will now respect the 'Paste as Text' menu option.
+// #TINY-10939
+
+In previous versions of the Markdown plugin, pasting text would always modify the content, even if the "Paste as Text" option was active. This caused HTML documents to be altered during paste operations, affecting elements like newlines.
+
+{productname} {release-version} resolves this issue. Now, pasting Markdown does not trigger conversion when the "Paste as Text" button is active.
+
+For information on the **Markdown** plugin, see xref:markdown.adoc[Markdown].
+
+=== Math Plugin
+
+The {productname} {release-version} release includes an accompanying release of the **Math** premium plugin.
+
+This **Math** premium plugin release includes the following improvement:
+
+==== Double-clicking on a `math` element now opens the Edit Math dialog.
+// #TINY-10964
+
+In earlier versions of the Math plugin, the double-click handler was not implemented, preventing users from opening the Math dialog by double-clicking on a math element within the editor. This behavior was inconsistent with other plugins, such as the code sample dialog.
+
+To address this inconsistency, {productname} {release-version} introduced a double-click handler for the Math dialog.
+
+Now, users can open the Math dialog by double-clicking on a math element, aligning with the functionality of other plugins.
+
+For more information on the **Math** plugin, see: xref:math.adoc[Math].
+
+=== Spell Checker
+
+The {productname} {release-version} includes an accompanying release of the **Spell Checker** premium plugin.
+
+**Spell Checker** includes the following improvement.
+
+==== Added success notification when all misspellings are resolved.
+// #TINT-10999
+
+Previously, when all misspelled words within the spelling dialog were resolved, the editor displayed a misleading notification: "No misspellings found." This message did not accurately reflect the user's actions. 
+
+To address this issue, {productname} {release-version} introduces a new success notification. Now, when all misspelled words are resolved, the editor displays a success notification with the text "Spell check complete."
+
+As a result, users are now correctly informed when all misspellings have been resolved within the spelling dialog.
+
+For information on the **Spell Checker** premium plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker plugin].
 
 === Revision History
 
@@ -142,10 +221,16 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following improvement<s>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Unnecessary `nbsp` entities were inserted when typing at the edges of inline elements.
+// #TINY-10854
 
-// CCFR here.
+Previously, the replacement mechanism for `+&nbsp;+` did not account for nearby elements when converting non-breaking spaces to regular spaces.
+
+As a consequence, when typing a sequence like "a space b," the output was correct. However, if the "b" was wrapped in an inline element (such as bold), the `+&nbsp;+` remained instead of being replaced.
+
+{productname} {release-version} addresses this issue. Now, the normalization process triggers when an inline format is applied, affecting the previous sibling element to ensure spaces are properly converted.
+
+As a result, non-breaking spaces between different inline elements are now normalized, preventing unnecessary `+&nbsp;+` entities.
 
 
 [[additions]]
@@ -153,10 +238,28 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following addition<s>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Colorpicker number input fields now show an error tooltip and error icon when invalid text has been entered.
+// #TINY-10799
 
-// CCFR here.
+Previously, the color picker HEX value input field only displayed a red outline and an aria label reading "invalid data" when users entered invalid values. This lacked sufficient detail to help users correct their input.
+
+As a consequence, users experienced confusion due to the vague error indication and insufficient guidance, potentially leading to repeated input errors.
+
+In {productname} {release-version}, improvements were made to the color picker input field to enhance user feedback and accessibility. The input field now includes:
+
+* A red outline to indicate errors.
+* An error icon for visual clarity.
+* On `hover` and `focus`, tooltips provide clear instructions such as "Numbers only, 0 to 255" or "Hexadecimal only, 000000 to FFFFFF."
+* Voice over reads aloud as example: "Number 256. Contents selected. Range from 0 to 255. Invalid data. Edit text."
+
+[NOTE]
+Although there may be slight variations in pronunciation and phrasing across different operating systems or specific screen readers, most screen readers will convey similar messages, emphasizing numerical values and the status of the content.
+
+These enhancements improve user understanding and facilitate error correction.
+
+image::color-picker/color-picker-error-message-rbg.png[color picker error rbg]
+
+image::color-picker/color-picker-error-message-hex.png[color picker error message hex]
 
 
 [[changes]]
@@ -186,10 +289,93 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Consecutive HTML comments would in some cases generate unwanted elements.
+// #TINY-10955
 
-// CCFR here.
+Previously in {productname}, consecutive HTML comments would generate unwanted elements in the editor. For example, when inserting the following HTML into the editor:
+
+[source,html]
+----
+<div>a</div>
+<!-- comment -->
+<!-- comment -->
+<div>b</div>
+----
+
+The editor would generate a `+&nbsp;+` paragraph between the comments, resulting in extra paragraphs being generated.
+
+[source,html]
+----
+<div>a</div>
+<!-- comment -->
+<p>&nbsp;</p>
+<!-- comment -->
+<div>b</div>
+----
+
+In {productname} {release-version}, this issue has been resolved. The editor now correctly handles consecutive HTML comments by removing the whitespace before parsing.
+
+[source,html]
+----
+<div>a</div>
+<!-- comment --><!-- comment -->
+<div>b</div>
+----
+
+As a result, no extra paragraphs are generated.
+
+=== The listbox component had a fixed width and was not a responsive ui element.
+// #TINY-10884
+
+Previously, the listbox component was not responsive as a UI element, due to a fixed width being applied in the `CommonDropdown` component during dialog initialization.
+
+This issue has been resolved in {productname} {release-version} by removing the fixed width setting, allowing the listbox component to function as a responsive UI element.
+
+=== Attempting to use focus commands on an editor where the cursor had last been in certain `+contentEditable="true"+` elements would fail.
+// #TINY-11085
+
+Previously, when `+contentEditable="true"+` (CET) fields where not wrapped in `+contentEditable="false"+` (CEF) elements, the elements did not respond properly to focus commands. As a consequence, the focus was not given to the editor as expected, leading to disruptions in user interactions.
+
+{productname} {release-version} addresses this issue. Now, when (CET) fields are **not wrapped** in (CEF) elements, the editor directs the focus to the body of the editor first.
+
+As a result, the editor now correctly returns focus as expected, ensuring seamless user interactions.
+
+=== Fixed JavaScript error when inserting a table using the context menu by adjusting the event order in `renderInsertTableMenuItem`.
+// #TINY-6887
+
+Previously in {productname}, a JavaScript warning would appear when attempting to insert a table from the context menu while using both the `table` and `autoresize` plugins. This warning was caused by the `onAction` event hiding the context menu, followed by an attempt to close the already hidden context menu, resulting in the warning message:
+
+[quote]
+"Uncaught Error: The component must be in a context to send: triggerEvent is not in context."
+
+NOTE: This warning did not impact the functionality of table insertion, but it could be confusing for users.
+
+In {productname} {release-version}, this issue has been resolved by adjusting the order of function calls in the code. Now, the context menu is closed before the `onAction` event is triggered when inserting a table from the context menu. As a result, the table is now inserted as expected without any JavaScript warnings.
+
+=== Notifications didn't position and resize properly when resizing the editor or toggling views.
+// #TINY-10894
+
+Previously, the function responsible for recalculating the width of notifications only added a width if the notification's width exceeded the boundaries.
+
+As a consequence, when notifications were constrained by boundaries, an additional width was added. However, if the boundaries were later increased, the added width was not adjusted accordingly.
+
+{productname} {release-version} addresses this issue. Now, the function adds width when the notification's width exceeds the boundaries but also removes this width when necessary.
+
+As a result, notifications now resize correctly when the boundaries increase, ensuring their width adjusts as expected.
+
+=== Split button popups were incorrectly positioned when switching to fullscreen mode if the editor was inside a scrollable container.
+// #TINY-10973
+
+Previously in {productname}, there was an issue where split button popups would be positioned incorrectly when opened within a scrollable container and the editor was in `fullscreen` mode. The behavior occurred because the box constraints for the split button popup did not take the `fullscreen` mode into account when calculating the position, resulting in an incorrect placement of the popup.
+
+In {productname} {release-version}, this issue has been fixed. The box constraints for the split button popup are now correctly calculated when the editor is in a scrollable container and in `fullscreen` mode. As a result, the split button popup is now positioned correctly.
+
+=== The pattern commands would execute even if the command was not enabled.
+// #TINY-10994
+
+Previously in {productname}, the `text_patterns` commands would attempt to execute even if the functionality were not supported in the current editor context. As a consequence, the command would fail and the editor would display unexpected behavior. For example, typing "1. " without the `lists` plugin enabled would delete the text instead of converting it to a list.
+
+This issue has been resolved in {productname} {release-version}. The editor now filters `text_patterns` to only the supported commands. For example, typing "1. " without the `lists` plugin enabled will no longer fire a text pattern and instead retain the text as plain text.
 
 
 [[security-fixes]]

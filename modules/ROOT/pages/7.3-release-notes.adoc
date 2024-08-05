@@ -207,6 +207,40 @@ image::color-picker/color-picker-error-message-hex.png[color picker error messag
 
 {productname} {release-version} also includes the following bug fix<es>:
 
+=== Consecutive HTML comments would in some cases generate unwanted elements.
+// #TINY-10955
+
+Previously in {productname}, consecutive HTML comments would generate unwanted elements in the editor. For example, when inserting the following HTML into the editor:
+
+[source,html]
+----
+<div>a</div>
+<!-- comment -->
+<!-- comment -->
+<div>b</div>
+----
+
+The editor would generate a `+&nbsp;+` paragraph between the comments, resulting in extra paragraphs being generated.
+
+[source,html]
+----
+<div>a</div>
+<!-- comment -->
+<p>&nbsp;</p>
+<!-- comment -->
+<div>b</div>
+----
+
+In {productname} {release-version}, this issue has been resolved. The editor now correctly handles consecutive HTML comments by removing the whitespace before parsing.
+
+[source,html]
+----
+<div>a</div>
+<!-- comment --><!-- comment -->
+<div>b</div>
+----
+
+As a result, no extra paragraphs are generated.
 
 === The listbox component had a fixed width and was not a responsive ui element.
 // #TINY-10884

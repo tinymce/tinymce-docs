@@ -141,13 +141,22 @@ As a result, non-breaking spaces between different inline elements are now norma
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-=== Sequential html comments would in some cases generate unwanted elements.
+=== Consecutive HTML comments would in some cases generate unwanted elements.
 // #TINY-10955
 
-Previously in {productname}, sequential HTML comments would generate unwanted elements in the editor. For example, inserting the following HTML into the editor would result in an `+&nbsp;+` element being inserted:
+Previously in {productname}, consecutive HTML comments would generate unwanted elements in the editor. For example, when inserting the following HTML into the editor:
 
-.Unwanted elements generated in the editor
-[source, html]
+[source,html]
+----
+<div>a</div>
+<!-- comment -->
+<!-- comment -->
+<div>b</div>
+----
+
+The editor would generate a `+&nbsp;+` paragraph between the comments, resulting in extra paragraphs being generated.
+
+[source,html]
 ----
 <div>a</div>
 <!-- comment -->
@@ -156,12 +165,9 @@ Previously in {productname}, sequential HTML comments would generate unwanted el
 <div>b</div>
 ----
 
-As a consequence, whitespace was added between the comments, resulting in extra paragraphs being generated in the editor.
+In {productname} {release-version}, this issue has been resolved. The editor now correctly handles consecutive HTML comments by removing the whitespace before parsing.
 
-In {productname} {release-version}, this issue has been resolved. The editor now correctly handles sequential HTML comments by removing the whitespace before parsing.
-
-.Resolved sequential HTML comments whitespace
-[source, html]
+[source,html]
 ----
 <div>a</div>
 <!-- comment --><!-- comment -->

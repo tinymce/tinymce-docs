@@ -103,6 +103,23 @@ Now, users can open the Math dialog by double-clicking on a math element, aligni
 
 For more information on the **Math** plugin, see: xref:math.adoc[Math].
 
+=== Spell Checker
+
+The {productname} {release-version} includes an accompanying release of the **Spell Checker** premium plugin.
+
+**Spell Checker** includes the following improvement.
+
+==== Added success notification when all misspellings are resolved.
+// #TINT-10999
+
+Previously, when all misspelled words within the spelling dialog were resolved, the editor displayed a misleading notification: "No misspellings found." This message did not accurately reflect the user's actions. 
+
+To address this issue, {productname} {release-version} introduces a new success notification. Now, when all misspelled words are resolved, the editor displays a success notification with the text "Spell check complete."
+
+As a result, users are now correctly informed when all misspellings have been resolved within the spelling dialog.
+
+For information on the **Spell Checker** premium plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker plugin].
+
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes
 

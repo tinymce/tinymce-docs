@@ -202,6 +202,13 @@ In {productname} {release-version}, this issue has been resolved. The editor now
 
 As a result, no extra paragraphs are generated.
 
+=== `preventDefault` on mousedown on toolbar buttons was causing misplaced focus bugs.
+// #TINY-10638
+
+In previous versions of {productname}, the `preventDefault` on mousedown in the toolbar button component caused focus issues. As a consequence, when clicking on different toolbar buttons, the focus was not updated, leaving the initial button highlighted.
+
+{productname} {release-version} addresses this issue by removing the `preventDefault`, allowing the focus to change as expected when users click on the image controls (ie. zoom in and out).
+
 === The listbox component had a fixed width and was not a responsive ui element.
 // #TINY-10884
 

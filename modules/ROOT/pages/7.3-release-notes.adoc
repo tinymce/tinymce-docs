@@ -64,11 +64,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === When a full document was loaded as editor content the head elements were added to the body.
 // #TINY-11053
 
-Previously when loading a full document as editor content, head elements were incorrectly added to the body. This issue occurred because the browser detected HTML, head, and body tags within the wrapped body block, causing them to be ignored and their content placed incorrectly.
+When loading a full document as editor content, HTML, head, and body tags were wrapped within a body tag before parsing. Since these tags are not meant to be inside a body tag, they were unwrapped.
 
-The consequence was the unintended inclusion of head tag content in the editor.
+As a consequence, this resulted in the unintended inclusion of head tag content within the editor. For example, `+<html><head><HeadContent /></head><body><BodyContent /></body>+` was treated as if it were just `+<HeadContent /><BodyContent />+` during parsing.
 
-{productname} {release-version} includes a fix that adds detection for HTML, head, and body elements. This fix ensures that head content is wrapped appropriately and ignored, preventing it from appearing in the editor.
+{productname} {release-version} addresses this issue by implementing detection for HTML, head, and body elements. This fix ensures that head content is appropriately wrapped in HTML tags instead of body tags, preventing it from appearing in the editor.
+
+As a result, the editor now correctly handles full document content without misplacing head elements into the body, ensuring cleaner and more accurate content loading.
 
 
 [[additions]]

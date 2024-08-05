@@ -121,6 +121,17 @@ For information on the **Spell Checker** premium plugin, see: xref:introduction-
 
 {productname} {release-version} also includes the following improvements:
 
+=== When a full document was loaded as editor content the head elements were added to the body.
+// #TINY-11053
+
+When loading a full document as editor content, HTML, head, and body tags were wrapped within a body tag before parsing. Since these tags are not meant to be inside a body tag, they were unwrapped.
+
+As a consequence, this resulted in the unintended inclusion of head tag content within the editor. For example, `+<html><head><HeadContent /></head><body><BodyContent /></body>+` was treated as if it were just `+<HeadContent /><BodyContent />+` during parsing.
+
+{productname} {release-version} addresses this issue by implementing detection for HTML, head, and body elements. This fix ensures that head content is appropriately wrapped in HTML tags instead of body tags, preventing it from appearing in the editor.
+
+As a result, the editor now correctly handles full document content without misplacing head elements into the body, ensuring cleaner and more accurate content loading.
+
 === Unnecessary `nbsp` entities were inserted when typing at the edges of inline elements.
 // #TINY-10854
 

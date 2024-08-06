@@ -98,6 +98,87 @@ Now, users can open the Math dialog by double-clicking on a math element, aligni
 
 For more information on the **Math** plugin, see: xref:math.adoc[Math].
 
+=== Revision History
+
+The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
+
+**Revision History** includes the following additions, changes, and improvements.
+
+==== An author is now shown for revisions. Revisions created without an author will show as "Anonymous".
+// #TINY-11014
+
+In {productname} {release-version}, the Revision History premium plugin now displays the author for each revision in the Revision History sidebar. Revisions without an author will be marked as "Anonymous" and accompanied by an auto-generated avatar.
+
+This feature enhancement aims to improve traceability and accountability for content revisions.
+
+==== New option `revisionhistory_author` for setting the current author.
+// #TINY-11014
+
+In {productname} {release-version}, the **Revision History** premium plugin includes a new option `revisionhistory_author` for setting the author for the `initial` and `draft` revisions. This option expects an xref:revisionhistory.adoc#author[Author] object as its value.
+
+[NOTE]
+The `revisionhistory_display_author` option must be set to `true` to display the authors.
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // Change this value according to your HTML
+  plugins: 'revisionhistory',
+  toolbar: 'revisionhistory',
+  revisionhistory_fetch: () => Promise.resolve([]), // Required option for the plugin - replace with actual API request
+  revisionhistory_display_author: true,
+  revisionhistory_author: {
+    id: 'john.doe',
+    name: 'John Doe',
+    avatar: 'https://example.com/avatar.jpg'
+  }
+});
+----
+
+For more information on the `revisionhistory_author` option, see: xref:revisionhistory.adoc#revisionhistory_author[revisionhistory_author option].
+
+==== New `revisionhistory_display_author` option that determines whether the author is displayed.
+// #TINY-11079
+
+In {productname} {release-version}, the **Revision History** premium plugin includes a new option `revisionhistory_display_author` that expects a boolean value. When set to `true`, the author is displayed on each revision in the Revision History sidebar.
+
+.Example
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',  // Change this value according to your HTML
+  plugins: 'revisionhistory',
+  toolbar: 'revisionhistory',
+  revisionhistory_fetch: () => Promise.resolve([]), // Required option for the plugin - replace with actual API request
+  revisionhistory_display_author: true
+});
+----
+
+For more information on the `revisionhistory_display_author` option, see: xref:revisionhistory.adoc#revisionhistory_display_author[revisionhistory_display_author option].
+
+==== Enhance the appearance of the Revision History sidebar.
+// #TINY-11045
+
+In {productname} {release-version}, the **Revision History** premium plugin features an enhanced design for the Revision History sidebar. The sidebar has been updated to align better with the new author information and the {productname} `oxide-dark` skin.
+
+==== Add a label to the `initial` and `draft` revisions.
+// #TINY-11073
+
+In {productname} {release-version}, the **Revision History** premium plugin now includes labels for the `initial` and `draft` revisions. These labels are displayed in the Revision History sidebar, providing users with a clear identification of the `initial` and `draft` revisions when present.
+
+==== It is easier to identify the selected revision.
+// #TINY-11090
+
+In {productname} {release-version}, the **Revision History** premium plugin now includes a check icon to improve identification of the selected revision. Additionally, improvements have been made to the layout of the selected revision for enhanced visibility and clarity.
+
+==== "Restore this version" button is now disabled when a draft or initial revision is selected.
+// #TINY-11042
+
+Previously in {productname}, the **Revision History** premium plugin allowed users to restore any revision. In {productname} {release-version}, the **Revision History** now disables the "Restore this version" button when a `draft` or `initial` revision is selected.
+
+For information on the **Revision History** premium plugin, see: xref:revisionhistory.adoc[Revision History].
+
 === Spell Checker
 
 The {productname} {release-version} includes an accompanying release of the **Spell Checker** premium plugin.
@@ -114,6 +195,20 @@ To address this issue, {productname} {release-version} introduces a new success 
 As a result, users are now correctly informed when all misspellings have been resolved within the spelling dialog.
 
 For information on the **Spell Checker** premium plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker plugin].
+
+
+[[accompanying-enhanced-skins-and-icon-packs-changes]]
+== Accompanying Enhanced Skins & Icon Packs changes
+
+The {productname} {release-version} release includes an accompanying release of the **Enhanced Skins & Icon Packs**.
+
+=== Enhanced Skins & Icon Packs
+
+The **Enhanced Skins & Icon Packs** release includes the following updates:
+
+The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} {release-version} skin, Oxide.
+
+For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
 
 
 [[improvements]]

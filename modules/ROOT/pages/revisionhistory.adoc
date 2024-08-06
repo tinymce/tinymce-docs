@@ -2,7 +2,7 @@
 :navtitle: Revision History
 :description: A view that allows {productname} users to see historical snapshots of a document and an ability to restore from a snapshot
 :description_short: View containing historical snapshots of a document.
-:keywords: plugin, Revision History, history, version, snapshots, restore, changes
+:keywords: plugin, Revision History, history, version, snapshots, restore, changes, revision, diff
 :pluginname: Revision History
 :plugincode: revisionhistory
 :plugincategory: premium
@@ -11,7 +11,7 @@ include::partial$misc/admon-revisionhistory-paid-addon-pricing.adoc[]
 
 include::partial$misc/admon-requires-7.0v.adoc[]
 
-The {pluginname} plugin offers users the ability to view document changes over time and restore previous versions effortlessly.
+The {pluginname} plugin offers users the ability to view document changes over time and restore previous revisions effortlessly.
 
 == Interactive example
 
@@ -26,24 +26,24 @@ The {pluginname} view is accessible via either the `revisionhistory` toolbar but
 The key components are:
 
 1. In the {pluginname} view header, there are two buttons.
-* `Restore this version`: Set the selected version's content to the editor and close the view.
-* `Close`: Close the view.
+* `Restore this version`: Sets the selected revision's content to the editor and closes the view. Note: the button is disabled for the `initial` and `draft` revisions.
+* `Close`: Closes the **Revision History** view.
 
-2. The readonly diff view presents the changes between the selected version and its immediate predecessor, clearly highlighting for easy recognition. The changes are also color-coded for clarity:
+2. The readonly diff view presents the changes between the selected revision and its immediate predecessor, clearly highlighting for easy recognition. The changes are also color-coded for clarity:
 * Red: Removed content.
 * Green: New content.
 * Yellow: Content being modified. Modifications to HTML content implies attributes or formatting (e.g. bold, italic, etc.).
-3. The revisions sidebar displays all available document versions. When a new version is selected, the diff view is updated accordingly.
+3. The revisions sidebar displays all available document revisions. When a revision is selected, the diff view is updated accordingly.
 
 [NOTE]
 The default highlighting colors can be customized using the xref:revisionhistory_css_url[`+revisionhistory_css_url+`] option.
 
 [NOTE]
-The {pluginname} plugin interprets commented HTML as valid content, yet it disregards this content during the version comparison process. Consequently, a version containing solely commented content appears as empty in the user interface displaying the differential content.
+The {pluginname} plugin processes commented HTML as valid content but disregards it during the revision comparison process. Revisions containing only commented content appear as empty in the view.
 
 == Basic setup
 
-To setup the {pluginname} plugin user-interface in the editor:
+To setup the {pluginname} plugin in the editor:
 
 * add `{plugincode}` to the `plugins` option in the editor configuration;
 * add `{plugincode}` to the `toolbar` option in the editor configuration;
@@ -57,36 +57,47 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'revisionhistory',
   toolbar: 'revisionhistory',
-  // Required
-  revisionhistory_fetch: () => new Promise((resolve) => {
-    const revisions = [];  // Replace this with an API request to get saved versions
-    resolve(revisions);
-  })
+  revisionhistory_fetch: () => Promise.resolve([]), // Replace this with an API request to get saved revisions
 });
 ----
 
-== Understanding initial and current versions
+== Understanding revision types
 
-When dealing with a new document, that has no saved versions, {pluginname} plugin will always typically maintain two versions: the `initial` and `current` versions.
+The {pluginname} plugin offers three revision types:
 
-* Initial Version: This version is generated during the {productname} `Loaded` event, with the editor's initial content.
-* Current Version: This is generated upon accessing the {pluginname}, reflecting the editor's current content. When included, it becomes the `latest version` and is placed at the top of the revisions list.
+. **Initial**: This revision is generated during the {productname} `Loaded` event, capturing the editor's initial content.
+. **Draft**: Generated upon opening the {pluginname}, this revision reflects the editor's current content. When included, it becomes the `latest revision` in the revisions list.
+. **Saved**: These revisions are fetched from the client's storage when opening the {pluginname} view, using the `revisionhistory_fetch` and `revisionhistory_fetch_revision` options.
 
-[TIP]
-When the editor is initialized with content and both versions contain the same content, the {pluginname} retains only the `current version`.
+When working with a document that has no saved revisions, the {pluginname} plugin typically maintains two revisions: `initial` and `draft`. If no changes have been made to the content since initialization, the `initial` revision is not displayed, as it is identical to the `draft` revision.
 
-For documents with saved versions, the `initial version` is disregarded by the {pluginname} assuming it's already part of the version history. The current version is discarded if its content matches the closest saved version.
+For documents with saved revisions, the `initial` revision is disregarded, assuming it already exists among the saved revisions. To include the initial content, add it as a revision using the `revisionhistory_fetch` option.
 
-The table below summarizes how versions are handled in the {pluginname}:
+== Data structure
 
-[cols="1,1,1,3", options="header"]
+=== Revision
+
+The revision is an `+Object+` that contains the following fields:
+
+[cols="1,1,1,3",options="header"]
 |===
-|Has Initial Version |Current Version |Has Saved Versions |Expectation
-|No |N/A |No |No versions are shown
-|No |N/A |Yes |Only the saved versions are shown
-|Yes |N/A |No |Only the current version is shown
-|Yes |Different |No |Both the initial and current versions are shown
-|Yes |N/A |Yes |The saved versions and the current version are shown
+| Field          | Type       | Required? | Description
+| `+revisionId+` | `+string+` | required  | The unique string ID of the revision.
+| `+createdAt+`  | `+string+` | required  | A UTC datetime string in ISO-8061 format.
+| `+content+`    | `+string+` | optional  | HTML string of the revision content. Empty string is considered as valid content.
+| `+author+`     | xref:#author[Author] `+Object+` | optional  | The author of the revision.
+|===
+
+=== Author
+
+The author is an `+Object+` that represents the author or creator of a revision. It contains the following fields:
+
+[cols="1,1,1,3",options="header"]
+|===
+| Field      | Type       | Required? | Description
+| `+id+`     | `+string+` | required  | The unique string ID of the author.
+| `+name+`   | `+string+` | optional  | The name of the revision author. If not provided, the default value is `Anonymous`.
+| `+avatar+` | `+string+` | optional  | The URL of the author's avatar image. If not provided or invalid, the {pluginname} will use a generated avatar using the author's initials.
 |===
 
 
@@ -97,6 +108,10 @@ The following configuration options affect the behavior of the {pluginname} plug
 include::partial$configuration/revisionhistory_fetch.adoc[leveloffset=+1]
 
 include::partial$configuration/revisionhistory_fetch_revision.adoc[leveloffset=+1]
+
+include::partial$configuration/revisionhistory_author.adoc[leveloffset=+1]
+
+include::partial$configuration/revisionhistory_display_author.adoc[leveloffset=+1]
 
 include::partial$configuration/revisionhistory_css_url.adoc[leveloffset=+1]
 

@@ -149,6 +149,11 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
         {
           revisionId: '3',
           createdAt: '2023-11-24T22:26:21.578Z',
+          author: {
+            id: 'husky',
+            name: 'A Tiny Husky',
+            avatar: '{{imagesdir}}/tiny-husky.jpg'
+          },
           content: `
             <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>
             <h2 style="text-align: center;">Welcome to the TinyMCE editor demo!</h2>
@@ -184,6 +189,11 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
         {
           revisionId: '2',
           createdAt: '2023-11-25T08:30:21.578Z',
+          author: {
+            id: 'tiny.user',
+            name: 'A Tiny User',
+            avatar: '{{imagesdir}}/logos/android-chrome-192x192.png'
+          },
           content: `
             <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>
             <h2 style="text-align: center;">Welcome to the TinyMCE editor demo!</h2>
@@ -225,6 +235,11 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
         {
           revisionId: '1',
           createdAt: '2023-11-29T10:11:21.578Z',
+          author: {
+            id: 'tiny.user',
+            name: 'A Tiny User',
+            avatar: '{{imagesdir}}/logos/android-chrome-192x192.png'
+          },
           content: `
             <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>
             <h2 style="text-align: center;">Welcome to the TinyMCE editor demo!</h2>
@@ -421,5 +436,10 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
       }
     ],
     revisionhistory_fetch: fetchRevisions,
+    revisionhistory_author: {
+      id: 'john.doe',
+      name: 'John Doe'
+    },
+    revisionhistory_display_author: true,
   });
 });

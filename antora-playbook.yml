@@ -15,6 +15,7 @@ urls:
 ui:
   bundle:
     url: https://tiny-cloud-docs-antora-themes-staging.s3.amazonaws.com/ui-bundle.zip
+    snapshot: true
 asciidoc:
   extensions:
     - '@tinymce/antora-extension-livedemos'

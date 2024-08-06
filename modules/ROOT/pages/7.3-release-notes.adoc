@@ -11,17 +11,12 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[overview]]
 == Overview
 
-{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, July 31^st^, 2024. These release notes provide an overview of the changes for {productname} {release-version}, including:
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, August 7^th^, 2024. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
-* xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
 * xref:improvements[Improvements]
 * xref:additions[Additions]
-* xref:changes[Changes]
-* xref:removed[Removed]
 * xref:bug-fixes[Bug fixes]
-* xref:security-fixes[Security fixes]
-* xref:known-issues[Known issues]
 
 
 [[accompanying-premium-plugin-changes]]
@@ -219,7 +214,18 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[improvements]]
 == Improvements
 
-{productname} {release-version} also includes the following improvement<s>:
+{productname} {release-version} also includes the following improvements:
+
+=== When a full document was loaded as editor content the head elements were added to the body.
+// #TINY-11053
+
+When loading a full document as editor content, HTML, head, and body tags were wrapped within a body tag before parsing. Since these tags are not meant to be inside a body tag, they were unwrapped.
+
+As a consequence, this resulted in the unintended inclusion of head tag content within the editor. For example, `+<html><head><HeadContent /></head><body><BodyContent /></body>+` was treated as if it were just `+<HeadContent /><BodyContent />+` during parsing.
+
+{productname} {release-version} addresses this issue by implementing detection for HTML, head, and body elements. This fix ensures that head content is appropriately wrapped in HTML tags instead of body tags, preventing it from appearing in the editor.
+
+As a result, the editor now correctly handles full document content without misplacing head elements into the body, ensuring cleaner and more accurate content loading.
 
 === Unnecessary `nbsp` entities were inserted when typing at the edges of inline elements.
 // #TINY-10854
@@ -236,7 +242,7 @@ As a result, non-breaking spaces between different inline elements are now norma
 [[additions]]
 == Additions
 
-{productname} {release-version} also includes the following addition<s>:
+{productname} {release-version} also includes the following addition:
 
 === Colorpicker number input fields now show an error tooltip and error icon when invalid text has been entered.
 // #TINY-10799
@@ -262,32 +268,10 @@ image::color-picker/color-picker-error-message-rbg.png[color picker error rbg]
 image::color-picker/color-picker-error-message-hex.png[color picker error message hex]
 
 
-[[changes]]
-== Changes
-
-{productname} {release-version} also includes the following change<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[removed]]
-== Removed
-
-{productname} {release-version} also includes the following removal<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
 
 === Consecutive HTML comments would in some cases generate unwanted elements.
 // #TINY-10955
@@ -323,6 +307,13 @@ In {productname} {release-version}, this issue has been resolved. The editor now
 ----
 
 As a result, no extra paragraphs are generated.
+
+=== `preventDefault` on mousedown on toolbar buttons was causing misplaced focus bugs.
+// #TINY-10638
+
+In previous versions of {productname}, the `preventDefault` on mousedown in the toolbar button component caused focus issues. As a consequence, when clicking on different toolbar buttons, the focus was not updated, leaving the initial button highlighted.
+
+{productname} {release-version} addresses this issue by removing the `preventDefault`, allowing the focus to change as expected when users click on the image controls (ie. zoom in and out).
 
 === The listbox component had a fixed width and was not a responsive ui element.
 // #TINY-10884
@@ -376,27 +367,3 @@ In {productname} {release-version}, this issue has been fixed. The box constrain
 Previously in {productname}, the `text_patterns` commands would attempt to execute even if the functionality were not supported in the current editor context. As a consequence, the command would fail and the editor would display unexpected behavior. For example, typing "1. " without the `lists` plugin enabled would delete the text instead of converting it to a list.
 
 This issue has been resolved in {productname} {release-version}. The editor now filters `text_patterns` to only the supported commands. For example, typing "1. " without the `lists` plugin enabled will no longer fire a text pattern and instead retain the text as plain text.
-
-
-[[security-fixes]]
-== Security fixes
-
-{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[known-issues]]
-== Known issues
-
-This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
-
-There <is one | are <number> known issue<s> in {productname} {release-version}.
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.

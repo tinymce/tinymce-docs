@@ -42,7 +42,7 @@ An example log for HTTP transport:
     "transport": "http",
     "statusCode": 200,
     "status": "success",
-    "url": "/v1/convert",
+    "url": "/v2/convert/html-docx",
     "method": "POST"
   },
   "tags": "metrics"

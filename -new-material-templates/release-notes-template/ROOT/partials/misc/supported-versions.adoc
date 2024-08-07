@@ -3,21 +3,23 @@
 
 Supported versions of {productname}:
 
-[cols="^,^,^,^",options="header"]
+[cols="^,^,^",options="header"]
 |===
-|Version |Release Date |End of Community Support |End of Premium Support
-|7.1 |2024-05-08 |- |2025-11-08
-|7.0 |2024-03-20 |2024-05-08 |2025-09-20
-|6.8 |2023-12-06 |2024-03-20 |2025-06-06
-|6.7 |2023-09-13 |2023-12-06 |2025-03-13
-|6.6 |2023-07-19 |2023-09-13 |2025-01-19
-|6.5 |2023-06-21 |2023-07-19 |2024-12-21
-|6.4 |2023-03-29 |2023-06-21 |2024-09-29
-|6.3 |2022-12-08 |2023-03-29 |2024-06-08
-|6.2 |2022-09-26 |2022-12-08 |2024-03-26
-|6.1 |2022-07-13 |2022-09-26 |2024-01-13
-|6.0 |2022-04-07 |2022-07-13 |2023-10-07
+|Version |Release Date |End of Support
+// add new row with version, release date, and end-of-support date.
+// use the internal spreadsheet to calculate the end-of-support date from the release date.
+|6.6 |2023-07-19 |2025-01-19
+|6.5 |2023-06-21 |2024-12-21
+|6.4 |2023-03-29 |2024-09-29
+|6.3 |2022-12-08 |2024-06-08
+|6.2 |2022-09-26 |2024-03-26
+|6.1 |2022-07-13 |2024-01-13
+|6.0 |2022-04-07 |2023-10-07
 |===
+
+
+
+
 
 To view our Software License Agreements, visit:
 
@@ -26,3 +28,5 @@ To view our Software License Agreements, visit:
 * link:{legalpages}/tiny-self-hosted-oem-saas-agreement/[The {companyname} Self-Hosted Software License Agreement - (OEM & SaaS Users)].
 
 Support for Partner Plugins is provided by Partner companies and is not the responsibility of {companynameformal}. For information on Partner Plugins, see: link:{companyurl}/partners/[https://www.tiny.cloud/partners/].
+
+// This file is instructional and is never included in the published name-space.

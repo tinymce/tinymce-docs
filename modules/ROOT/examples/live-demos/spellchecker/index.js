@@ -3,7 +3,7 @@ tinymce.init({
   plugins: 'code tinymcespellchecker link',
   toolbar: 'spellchecker language spellcheckdialog',
   height: 500,
-  spellchecker_language: 'en_US',
+  spellchecker_language: 'en',
   content_langs: [
     { title: 'Afrikaans (South Africa)', code: 'af_ZA', customCode: 'af_ZA' },
     { title: 'English (Australia)', code: 'en_AU' },

@@ -1,6 +1,12 @@
 [[<configuration_option>]]
 == `<configuration_option>`
 
+// Replace all instances of <configuration_option> with the
+// configuration option name then remove this comment.
+
+// Add explanatory material as per the comment block below then remove
+// the block and this comment.
+
 ////
 What does the option do?
 Why use it?
@@ -26,7 +32,7 @@ Are there risks?
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // Change this value according to your HTML
+  selector: 'textarea',  // change this value according to your html
   <configuration_option>: '<value>'
 });
 ----
@@ -40,18 +46,24 @@ To disable <feature>, set `<configuration_option>` to `false`.
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // Change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   <configuration_option>: 'false'
 });
 ----
 
 // Remove if not applicable.
-=== Limitation<s> of the `<configuration_option>` option
+// Edit the sub-head to singular or plural as required.
+=== Limitation(s) of the `<configuration_option>` option
 
 The `<configuration_option>` option has the following limitations.
+
+// Add explanatory material as per the comment block below then remove
+// the block and this comment.
 
 ////
 Known limitations.
 Complicated scenarios.
 Anything that warrants a CAUTION or WARNING admonition.
 ////
+
+// Remove all comment lines and comment blocks before publishing.

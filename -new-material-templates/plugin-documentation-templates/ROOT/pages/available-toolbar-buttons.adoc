@@ -1,6 +1,13 @@
-// Add the edited material to
-// tinymce-docs/modules/ROOT/pages/available-toolbar-buttons.adoc
-// in alphabetical order by <Plugin name>. (*not* <plugincode>).
+// 0. Set :plugincategory: to appropriate value
+//    1. premium; or
+//    2. opensource.
+//      Note neither value is capitalised.
+//      Note the second value has no space between the two words.
+// 1. Replace <place-holder text> instances with appropriate material.
+// 2. Add the edited material to
+//    /tinymce-docs/modules/ROOT/pages/available-toolbar-buttons.adoc
+//    in alphabetical order by <Plugin name>. (*not* <plugincode>).
+// 3. Do not bring these comments over with the edited material.
 
 :plugincategory: <premium|opensource>
 :pluginname: <Plugin name>

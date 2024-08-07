@@ -33,8 +33,8 @@ For example:
 ----
 tinymce.init({
   selector: 'textarea',
-  plugins: 'importword',
-  toolbar: 'importword',
+  plugins: 'code importword',
+  toolbar: 'importword code',
   importword_service_url: '<service_URL>'
 });
 ----

@@ -23,7 +23,7 @@ NB: there is one UX consequence of setting up demos to work in
 these cases. The *Edit on CodePen* tab does not — and cannot —
 present in the documentation.
 
-The initial setup of these ‘includes-an-emulated-back-end’ examples
+The initial setup of these ‘inclues-an-emulated-back-end’ examples
 will almost certainly include significant initial input from the
 plugin’s developer.
 

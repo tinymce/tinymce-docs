@@ -543,9 +543,9 @@ Previously, the bespoke `styles` select toolbar button in {productname} defaulte
 === Removed `force_hex_color` option, with the default now being all colors are forced to HEX format and as lower case.
 // #TINY-10436
 
-Previously in {productname} 6, all colors in the content HTML were set to use `rgb` values by default. As the common practice is using `hex` values, this change has been **reverted**.
+Previously in {productname} 6, all colors in the content HTML were set to use `rgb` values by default. As the common practice is using `hex` values this change has been **reverted**.
 
-As a result, in {productname} 7, only RGB values in absolute value like `rgb(255, 255, 255)` are converted to HEX values. Other RGB formats such as those with non-absolute values, and color options such as RGBA and HSL remain unchanged. The `forced_hex_color` option has been removed.
+As a result, in {productname} 7, all colors are converted to use `hex` values and the `forced_hex_color` option is removed. The exception being `rgba` color values, they are left as is.
 
 For more information, see xref:migration-from-6x.adoc#force-hex-color[Migrating from {productname} 6 to {productname} 7].
 

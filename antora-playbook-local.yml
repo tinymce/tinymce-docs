@@ -12,7 +12,8 @@ urls:
   latest_version_segment: latest
 ui:
   bundle:
-    url: https://tiny-cloud-docs-antora-themes-staging.s3.amazonaws.com/ui-bundle.zip
+    url: https://tiny-cloud-docs-antora-themes-production.s3.amazonaws.com/ui-bundle.zip
+    snapshot: true
 asciidoc:
   extensions:
     - '@tinymce/antora-extension-livedemos'

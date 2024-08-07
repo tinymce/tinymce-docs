@@ -3,10 +3,10 @@
 
 The {pluginname} uses the HTML to DOCX converter service to generate the Word files.
 
+
 The {pluginname} feature is currently only available exclusively for `on-premise` setups, requiring a self-hosted HTML to DOCX converter service and the `exportword_service_url` option to be properly configured. If you require access to this feature, please link:https://www.tiny.cloud/contact/[contact us]. Refer to our xref:individual-import-from-word-and-export-to-word-on-premises.adoc[on-premises documentation] for detailed instructions on deploying the {pluginname} service server-side component using Docker.
 
-[TIP]
-Update the `exportword_service_url` configuration in your {productname} setup to point to your host. For instance, if your host is `mycustomhost.com`, the URL will be `https://mycustomhost.com/v1/convert`.
+NOTE: The {pluginname} feature is currently only available `on-premise` and requires the `exportword_service_url` option to be configured. link:https://www.tiny.cloud/contact/[Contact us] if you require this feature.
 
 *Type:* `+String+`
 
@@ -41,12 +41,36 @@ tinymce.init({
   toolbar: 'exportword',
   exportword_service_url: '<service_URL>',
   exportword_converter_options: {
-    header: [
-      {
-        html: '<h1>First page header.</h1>', //example
-        css: 'h1 { font-size: 30px; }', //example
+    headers: {
+      first: {
+        html: "<p>My document header</p>",
+        css: "p { color: gray; }"
+      },
+      default: {
+        html: "<p>My default header</p>",
+        css: "p { color: blue; }"
       }
-    ],
+    },
+    footers: {
+      odd: {
+        html: "<p>My odd footer</p>",
+        css: "p { font-size: 10px; }"
+      },
+      even: {
+        html: "<p>My even footer</p>",
+        css: "p { font-size: 12px; }"
+      }
+    },
+    document: {
+      orientation: "landscape",
+      size: "a3",
+      margins: {
+        top: "10mm",
+        bottom: "10mm",
+        left: "20mm",
+        right: "15mm"
+      }
+    },
   },
 });
 ----
@@ -54,12 +78,12 @@ tinymce.init({
 [NOTE]
 To use this option, the Export to Word plugin requires the `exportword_service_url` option to be configured.
 
-> For comprehensive details regarding the `exportword_converter_options`, please refer to the https://exportdocx.converter.tiny.cloud/docs#section/Export-to-Word[API documentation^] available for the {pluginname} Premium plugin.
+> For comprehensive details regarding the `exportword_converter_options`, please refer to the link:https://exportdocx.converter.tiny.cloud/v2/convert/docs#section/Export-to-Word[API documentation^] available for the {pluginname} Premium plugin.
 
 [[exportword-converter-style]]
 == `exportword_converter_style`
 
-The `exportword_converter_style` option allow for customization of the styles applied to the exported Word document, providing flexibility in controlling its appearance.
+The `exportword_converter_style` option allows for customization of the styles applied to the exported Word document, providing flexibility in controlling its appearance; however, this option does **not affect** the distinct styling of the `header` and `footer`.
 
 *Type:* `+String+`
 
@@ -74,14 +98,18 @@ tinymce.init({
   plugins: 'exportword',
   toolbar: 'exportword',
   exportword_service_url: '<service_URL>', // required
-  exportword_converter_options: { // required to support "exportword_converter_style"
-    header: [
-      {
-        html: '<h1>First page header.</h1>', //example
-        css: 'h1 { font-size: 30px; }', //example
+  exportword_converter_options: {
+    headers: {
+      first: {
+        html: "<p>My document header</p>",
+        css: "p { color: gray; }"
+      },
+      default: {
+        html: "<p>My default header</p>",
+        css: "p { color: blue; }"
       }
-    ],
+    },
   },
-  exportword_converter_style: 'p { color: cyan !important }'
+  exportword_converter_style: 'p { color: cyan !important }' // will override the set <p> tag styles in the HTML content
 });
 ----

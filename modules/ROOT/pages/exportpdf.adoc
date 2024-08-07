@@ -12,7 +12,7 @@ include::partial$misc/admon-export-pdf-paid-addon-pricing.adoc[]
 
 include::partial$misc/admon-requires-7.0v.adoc[]
 
-The {pluginname} functionality gathers the HTML produced using the `editor.getcontent()` method and the default editor content styles, along with the styles specified in the configuration options for the plugin. This data is transmitted to the HTML to PDF converter service. The service processes this information to create a PDF file, which is then sent back to the user's browser for saving to their local disk.
+The {pluginname} feature collects the HTML generated with the `tinymce.editor.getContent()` method and combines it with the default editor content styles along with the styles provided in the plugin configuration. The combined content and styles are then processed by the included server-side converter service, which can be either self-hosted or cloud-based. Following this processing, a PDF file is generated, which is subsequently returned to the user’s browser, enabling them to save it onto their disk or drive.
 
 == Interactive example
 

@@ -26,12 +26,12 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'revisionhistory',
   toolbar: 'revisionhistory',
+  revisionhistory_fetch: () => Promise.resolve([]), // Required option for the plugin - replace with actual API request
   revisionhistory_css_url: './revisionhistory.css',
   revisionhistory_diff_classes: {
     addition: 'added',
     removal: 'removed',
     modification: 'modified'
-  },
-  revisionhistory_fetch: () => Promise.resolve([])
+  }
 });
 ----

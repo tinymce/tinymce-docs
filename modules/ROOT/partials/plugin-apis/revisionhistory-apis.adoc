@@ -7,11 +7,12 @@ interface PluginAPI {
 
 [[diff]]
 === `diff`
+
 Returns a HTML string with annotations indicating the changes in `originalHTML` relative to `changedHTML`. The styling of annotations can be customized via xref:revisionhistory_diff_classes[`+revisionhistory_diff_classes+`] option.
 
 include::partial$misc/admon-requires-7.1v.adoc[]
 
-== Example
+.Example
 [source,js]
 ----
 const input1 = `<p>The banner is <span style="color: rgb(224, 62, 45);">red</span></p>`;

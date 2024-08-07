@@ -8,13 +8,13 @@ When a revision is selected, the plugin uses this option to update the selected 
 [cols="1,1,1,3",options="header"]
 |===
 |Field |Type |Required? |Description
-|`+editor+` | `+Editor+` | required | The editor instance to load the revision into (useful if there are multiple editors on the page).
-|`+revision+` | `+Object+` | required | The revision object to load (must include `revisionId` field).
+|`+editor+` | `+Editor+` | required | The current editor instance (useful if there are multiple editors on the page).
+|`+revision+` | xref:#revision[Revision] `+Object+` | required | The targeted revision.
 |===
 
-*Return data:* revision `+Object+` as described in the return data of the xref:revisionhistory.adoc#revisionhistory_fetch[revisionhistory_fetch] option.
+*Return data:* xref:#revision[Revision] `+Object+`
 
-=== Example: using `revisionhistory_fetch_revision`
+=== Example: Using `revisionhistory_fetch_revision`
 
 [source,js]
 ----

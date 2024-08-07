@@ -1,27 +1,22 @@
 [[revisionhistory_fetch]]
 == `revisionhistory_fetch`
 
-The `revisionhistory_fetch` function retrieves saved versions and is **required** for the Revision History plugin to work. It is called when the user opens the Revision History view.
+The `revisionhistory_fetch` function retrieves saved revisions and is called when the user opens the Revision History view.
 
-The `revisionhistory_fetch` option is an asynchronous function that returns a link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise] which resolves to an array of revisions.
+[IMPORTANT]
+The `revisionhistory_fetch` function is required for the Revision History plugin to function.
+
+
+It expects an asynchronous function that returns a link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise] which resolves to an array of revisions.
 
 [NOTE]
-The {pluginname} plugin does not sort results before displaying them, allowing integrators to sort the results according to their preference. {companyname} recommends to sort the results in reverse chronological order, as this makes it easier for users to identify versions by date.
+The {pluginname} plugin does not sort results before displaying them, allowing integrators to sort the results according to their preference. {companyname} recommends to sort the results in reverse chronological order, as this makes it easier for users to identify revisions by date.
 
 *Type:* `+Function+` (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
 
 *Input parameters:* None
 
-*Return data:* `+Array+` of revision `+Objects+`
-
-Each revision `+Object+` must have the following fields:
-[cols="1,1,1,3",options="header"]
-|===
-|Field |Type |Required? |Description
-|`+revisionId+` | `+string+` | required | The unique string ID of the revision.
-|`+createdAt+` | `+string+` | required | A UTC datetime string in ISO-8061 format.
-|`+content+` | `+string+` | optional | HTML string of the revision content. Empty string is considered as valid content.
-|===
+*Return data:* `+Array+` of xref:#revision[Revision] `+Objects+`
 
 === Example of `revisionhistory_fetch` response
 
@@ -54,7 +49,7 @@ const revisions = [
 ];
 ----
 
-=== Example: using `revisionhistory_fetch`
+=== Example: Using `revisionhistory_fetch`
 
 [source,js]
 ----
@@ -66,6 +61,6 @@ tinymce.init({
     fetch('<API URL>')  // Update the URL and response handling code according to your API
     .then((response) => response.json())
     .then((data) => data)
-    .catch((error) => console.log('Failed to get versions\n' + error))
+    .catch((error) => console.log('Failed to get revisions\n' + error))
 });
 ----

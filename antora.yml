@@ -15,7 +15,7 @@ asciidoc:
     webcomponent_url: https://cdn.jsdelivr.net/npm/@tinymce/tinymce-webcomponent@2/dist/tinymce-webcomponent.min.js
     jquery_url: https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@2/dist/tinymce-jquery.min.js
     openai_proxy_url: https://openai.ai-demo-proxy.tiny.cloud/v1/chat/completions
-    openai_proxy_token: eyJhbGciOiJFUzM4NCJ9.eyJhdWQiOlsiaHR0cHM6Ly9vcGVuYWkuYWktZGVtby1wcm94eS50aW55LmNsb3VkLyJdLCJleHAiOjE3MTk3NTYwMDAsImh0dHBzOi8vb3BlbmFpLmFpLWRlbW8tcHJveHkudGlueS5jbG91ZC9yb2xlIjoicHVibGljLWRlbW8iLCJpc3MiOiJodHRwczovL2FpLWRlbW8tcHJveHkudGlueS5jbG91ZC8iLCJqdGkiOiJlYWU5MjBhMy05ZGQ0LTRkZjUtYTM4Yy04ODY5ZTJkZGIwYTQiLCJzdWIiOiJhaS1hc3Npc3RhbnQtZGVtbyJ9.hX44J5hPOCLOidK8mBAcnlAVh-ae4nVTq3W92xRLuGiF_4mGZWn1W3Ihgd7unlffz7GDayGxD_3hoQx8f64bTJg5hyHjwjKH1AZj1EKRal-NCNbqmoUa0TOm6_VXpRl2
+    openai_proxy_token: eyJhbGciOiJFUzM4NCJ9.eyJhdWQiOlsiaHR0cHM6Ly9vcGVuYWkuYWktZGVtby1wcm94eS50aW55LmNsb3VkLyJdLCJleHAiOjE3MzMwMTEyMDAsImh0dHBzOi8vb3BlbmFpLmFpLWRlbW8tcHJveHkudGlueS5jbG91ZC9yb2xlIjoicHVibGljLWRlbW8iLCJpc3MiOiJodHRwczovL2FpLWRlbW8tcHJveHkudGlueS5jbG91ZC8iLCJqdGkiOiIyMmM0MjBkNy1hNjVmLTQ3NDQtODEwZS1jZWY3ZDY2ODQ1ZGYiLCJzdWIiOiJhaS1hc3Npc3RhbnQtZGVtbyJ9.H0MgAgu6EUFLO2zx6fnsnmCMw_0MWtc3Ne4ue6N_CFAowPkIjBqr022ypJqj5i3FMJNad5cWYj84jKKfPHTUaFN5RNurl09K2SDnY2OqNnhcXOT9rl3owhrGxgODOR9G
     default_meta_keywords: tinymce, documentation, docs, plugins, customizable skins, configuration, examples, html, php, java, javascript, image editor, inline editor, distraction-free editor, classic editor, wysiwyg
     # product docker variables
     dockerimageimportfromwordexporttoword: registry.containers.tiny.cloud/docx-converter-tiny
@@ -26,7 +26,7 @@ asciidoc:
     # product variables
     productname: TinyMCE
     productmajorversion: 7
-    productminorversion: '7.0'
+    productminorversion: '7.2'
     ##### product name in codeblock
     prodnamecode: tinymce
     #### more names

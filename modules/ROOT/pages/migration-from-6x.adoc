@@ -125,19 +125,33 @@ This change does not impact editors using inline mode.
 [[force-hex-color]]
 ==== `force_hex_color`
 
-Previously in {productname} 6, all colors in the content HTML were set to use `rgb` values by default. As the common practice is using `hex` values this change has been reverted.
+Previously in {productname} 6, all colors in the content HTML were set to use `rgb` values by default. As the common practice is using `hex` values, this change has been reverted.
 
 .Example
 [source, html]
 ----
-<!-- example using RGB values -->
+<!-- example before property value conversion -->
+// RGB value
 <p>Hello <span style="color: rgb(255, 0, 0);">red</span> color</p>
+// RGBA value
+<p>Hello <span style="color: rgba(255, 0, 0, 0.5);">red</span> color</p>
+// HSL value
+<p>Hello <span style="color: hsl(0, 100%, 50%);">red</span> color</p>
+// RGB value with alpha parameter
+<p>Hello <span style="color: rgb(255, 0, 0 / 10%);">red</span> color</p>
+// RGB value with calculation
+<p>Hello <span style="color: rgb(from hsl(0 100% 50%) 132 132 224);">red</span> color</p>
 
-<!-- example using HEX values -->
+<!-- example after property value conversion -->
 <p>Hello <span style="color: #ff0000">red</span> color</p>
+<p>Hello <span style="color: rgba(255, 0, 0, 0.5);">red</span> color</p>
+<p>Hello <span style="color: hsl(0, 100%, 50%);">red</span> color</p>
+// non-absolute values and absolute values with calculation will not be converted to HEX color
+<p>Hello <span style="color: rgb(255, 0, 0 / 10%);">red</span> color</p>
+<p>Hello <span style="color: rgb(from hsl(0 100% 50%) 132 132 224);">red</span> color</p>
 ----
 
-In {productname} 7.0, all colors (excluding `rgba` values) are converted to use `hex` values and the `forced_hex_color` option has been removed.
+In {productname} 7.0, only RGB values in absolute value like `rgb(255, 255, 255)` are converted to HEX values. Other RGB formats such as those with non-absolute values, and color options such as RGBA and HSL remain unchanged. The `forced_hex_color` option has been removed.
 
 [[plugins]]
 == Plugins

@@ -1,6 +1,8 @@
 :packageName: tinymce-angular
 
-The https://github.com/tinymce/tinymce-angular[Official {productname} Angular component] integrates {productname} into Angular projects. This procedure creates a https://angular.io/guide/setup-local[basic Angular application] containing a {productname} editor.
+The https://github.com/tinymce/tinymce-angular[Official {productname} Angular component] integrates {productname} into Angular projects. This procedure creates a https://angular.dev/tools/cli/setup-local[basic Angular application] containing a {productname} editor.
+
+This procedure uses standalone components. If using Angular Modules, see xref:angular-modules[Angular Modules].
 
 For examples of the {productname} Angular integration, visit https://tinymce.github.io/tinymce-angular/[the tinymce-angular storybook].
 
@@ -45,44 +47,36 @@ ifeval::["{productSource}" != "package-manager"]
 npm install --save @tinymce/tinymce-angular
 ----
 endif::[]
-. Using a text editor, open `+/path/to/tinymce-angular-demo/src/app/app.module.ts+` and replace the contents with:
+. Using a text editor, open `+/path/to/tinymce-angular-demo/src/app/app.component.ts+` and replace the contents with:
 +
-[source,ts]
+[source,ts,subs="attributes+"]
 ----
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { EditorModule } from '@tinymce/tinymce-angular';
-import { AppComponent } from './app.component';
+import { Component } from '@angular/core';
+import { EditorComponent } from '@tinymce/tinymce-angular';
 
-@NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule,
-    EditorModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [EditorComponent],
+  template: `
+  <h1>{productname} {productmajorversion} Angular Demo</h1>
+  <editor
+    [init]="init"
+  />
+  `
 })
-export class AppModule { }
+export class AppComponent {
+  init: EditorComponent['init'] = {
+    plugins: 'lists link image table code help wordcount'
+  };
+}
 ----
-. Using a text editor, open `+/path/to/tinymce-angular-demo/src/app/app.component.html+` and replace the contents with:
-+
-[source,tsx,subs="attributes+"]
-----
-<h1>{productname} {productmajorversion} Angular Demo</h1>
-<editor
-  [init]="{ plugins: 'lists link image table code help wordcount' }"
-></editor>
-----
-
 ifeval::["{productSource}" == "cloud"]
 . Include the `+apiKey+` option in the editor element and include your link:{accountsignup}/[{cloudname} API key]. Such as:
 +
 [source,tsx]
 ----
-<editor apiKey="your-api-key" [init]={ /* your other settings */ } ></editor>
+<editor apiKey="your-api-key" [init]="init" />
 ----
 endif::[]
 ifeval::["{productSource}" == "package-manager"]
@@ -96,17 +90,16 @@ ifeval::["{productSource}" == "package-manager"]
 ----
 
 . Load TinyMCE.
-* To load TinyMCE when the editor is initialized (also known as lazy loading), add a dependency provider to the module using the `+TINYMCE_SCRIPT_SRC+` token.
+* To load {productname} when the editor is initialized (also known as lazy loading), add a dependency provider to the component using the `+TINYMCE_SCRIPT_SRC+` token.
 +
 [source,ts]
 ----
-import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
+import { EditorComponent, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 /* ... */
-@NgModule({
+@Component({
   /* ... */
-  imports: [
-    EditorModule
-  ],
+  standalone: true,
+  imports: [EditorComponent],
   providers: [
     { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }
   ]
@@ -123,12 +116,16 @@ import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 ----
 .. Update the editor configuration to include the `+base_url+` and `+suffix+` options.
 +
-[source,html]
+[source,ts]
 ----
-<editor [init]="{
-  base_url: '/tinymce', // Root for resources
-  suffix: '.min'        // Suffix to use when loading resources
-}"></editor>
+export class AppComponent {
+  /* ... */
+  init: EditorComponent['init'] = {
+    /* ... */
+    base_url: '/tinymce', // Root for resources
+    suffix: '.min'        // Suffix to use when loading resources
+  };
+}
 ----
 endif::[]
 ifeval::["{productSource}" == "zip"]
@@ -142,8 +139,6 @@ To use an independent deployment of {productname}, add a script to either the `+
 ----
 <script src="/path/to/tinymce.min.js"></script>
 ----
-+
-To use an independent deployment of {productname} with the create a Angular application, add the script to `+/path/to/tinymce-angular-demo/src/app/app.component.html+`.
 +
 * Bundling {productname} with the Angular application using a module loader (such as Webpack).
 +
@@ -174,7 +169,7 @@ endif::[]
 
 == Deploying the application to a HTTP server
 
-The application will require further configuration before it can be deployed to a production environment. For information on configuring the application for deployment, see: https://angular.io/guide/build[Angular Docs - Building and serving Angular apps] or https://angular.io/guide/deployment[Angular Docs - Deployment].
+The application will require further configuration before it can be deployed to a production environment. For information on configuring the application for deployment, see: link:https://angular.dev/tools/cli/build[Angular Docs - Building Angular Apps] or link:https://angular.dev/tools/cli/deployment[Angular Docs - Deployment].
 
 To deploy the application to a local HTTP Server:
 
@@ -190,10 +185,33 @@ The application has now been deployed on the web server.
 
 NOTE: Additional configuration is required to deploy the application outside the web server root directory, such as +http://localhost:<port>/my_angular_application+.
 
+[[angular-modules]]
+== Angular Modules
+`+EditorModule+` is available to import from `+@tinymce/tinymce-angular+`. Which should be included in your `+my.module.ts+` file.
+
+[source,ts]
+----
+import { NgModule } from '@angular/core';
+import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
+
+@NgModule({
+  /* ... */
+  imports: [
+    EditorModule
+  ],
+  providers: [
+    // If you're self hosting and lazy loading TinyMCE from node_modules:
+    { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }
+  ],
+  /* ... */
+})
+export class MyModule {}
+----
+
 == Next Steps
 
 * For examples of the {productname} integration, see: https://tinymce.github.io/tinymce-angular/[the tinymce-angular storybook].
 * For information on customizing:
 ** {productname} integration, see: xref:angular-ref.adoc[Angular framework Technical Reference].
 ** {productname}, see: xref:basic-setup.adoc[Basic setup].
-** The Angular application, see: https://angular.io/docs[the Angular documentation].
+** The Angular application, see: https://angular.dev[the Angular documentation].

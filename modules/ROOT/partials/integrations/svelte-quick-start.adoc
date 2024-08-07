@@ -1,4 +1,4 @@
-The https://github.com/tinymce/tinymce-svelte[Official {productname} Svelte component] integrates {productname} into https://svelte.dev/[Svelte applications]. This procedure creates a basic Svelte application using the https://github.com/sveltejs/template[`+sveltejs/template+` project] adds a {productname} editor based using the {productname} Svelte integration.
+The https://github.com/tinymce/tinymce-svelte[Official {productname} Svelte component] integrates {productname} into https://svelte.dev/[Svelte applications]. This procedure creates a basic Svelte application containing a {productname} editor.
 
 For examples of the {productname} integration, visit https://tinymce.github.io/tinymce-svelte/[the tinymce-svelte storybook].
 
@@ -8,21 +8,26 @@ This procedure requires https://nodejs.org/[Node.js (and npm)].
 
 == Procedure
 
-. Create a Svelte application using the https://github.com/sveltejs/template[Svelte template project], for example:
+. Use the https://github.com/vitejs/vite[Vite] package to create a new Svelte project named `+tinymce-svelte-demo+`, such as:
 +
 [source,sh]
 ----
-npx degit sveltejs/template my-tiny-app
-cd my-tiny-app
+npm create vite@5 tinymce-svelte-demo -- --template svelte
+----
+. Change to the newly created directory.
++
+[source,sh]
+----
+cd tinymce-svelte-demo
 ----
 
 ifeval::["{productSource}" == "package-manager"]
 
 . Install the `+tinymce+` and the `+tinymce-svelte+` editor component, such as:
 +
-[source,sh]
+[source,sh,subs="attributes+"]
 ----
-npm install tinymce @tinymce/tinymce-svelte
+npm install tinymce@^{productmajorversion} @tinymce/tinymce-svelte
 ----
 
 endif::[]
@@ -38,23 +43,33 @@ npm install @tinymce/tinymce-svelte
 endif::[]
 ifeval::["{productSource}" == "cloud"]
 
-. Open `+src/App.svelte+` and add:
-* An `+import+` statement for the {productname} component.
-* The `+<Editor />+` as a placeholder for the editor.
+. Open `+src/App.svelte+` and replace the contents with:
 +
-For example:
-+
-_File:_ `+src/App.svelte+`
-+
-[source,html]
+[source,html,subs="+macros"]
 ----
-<script lang="ts">
+<script>
 import Editor from '@tinymce/tinymce-svelte';
+let conf = {
+  height: 500,
+  menubar: false,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'preview', 'help', 'wordcount'
+  ],
+  toolbar: 'undo redo | blocks | ' +
+    'bold italic forecolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'removeformat | help',
+}
 </script>
 <main>
   <h1>Hello Tiny</h1>
   <Editor
-    apiKey="your-tiny-cloud-api-key"
+    apiKey='your-tiny-cloud-api-key'
+    pass:a[channel='{productmajorversion}']
+    value='<p>This is the initial content of the editor.</p>'
+    {conf}
   />
 </main>
 ----
@@ -62,50 +77,59 @@ import Editor from '@tinymce/tinymce-svelte';
 endif::[]
 ifeval::["{productSource}" == "package-manager"]
 
-. Install the `+rollup-plugin-copy+` development dependency, such as:
+. Install the `+vite-plugin-static-copy+` development dependency, such as:
 +
 [source,sh]
 ----
-npm install rollup-plugin-copy -D
+npm install -D vite-plugin-static-copy
 ----
-. Open `+rollup.config.js+` and configure the rollup copy plugin `+rollup-plugin-copy+` to copy {productname} to the `+public/+` directory, such as:
+. Open `+vite.config.js+` and configure the `+vite-plugin-static-copy+` plugin to copy {productname} to the `+public/+` directory, such as:
 +
 [source,js]
 ----
-/* Existing import statements */
-import copy from 'rollup-plugin-copy'
+import { defineConfig } from 'vite'
+import { svelte } from '@sveltejs/vite-plugin-svelte'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
-/* Skip to the export statement, `plugins` item and add `copy`*/
-export default {
-  /* Existing key: values... */
+// https://vitejs.dev/config/
+export default defineConfig({
   plugins: [
-    copy({
+    viteStaticCopy({
       targets: [
-        { src: 'node_modules/tinymce/*', dest: 'public/tinymce' }
+        { src: 'node_modules/tinymce/*', dest: 'tinymce' }
       ]
     }),
-    /* More existing configuration... */
-  ]
-}
+    svelte()
+  ],
+})
 ----
-. Open `+src/App.svelte+` and add:
-* An `+import+` statement for the {productname} component.
-* The `+<Editor />+` as a placeholder for the editor.
-* The xref:svelte-ref.adoc#scriptsrc[`+scriptSrc+`] property for the `+Editor+` placeholder.
-+
-For example:
-+
-_File:_ `+src/App.svelte+`
+. Open `+src/App.svelte+` and replace the contents with:
 +
 [source,html]
 ----
-<script lang="ts">
+<script>
 import Editor from '@tinymce/tinymce-svelte';
+let conf = {
+  height: 500,
+  menubar: false,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'preview', 'help', 'wordcount'
+  ],
+  toolbar: 'undo redo | blocks | ' +
+    'bold italic forecolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'removeformat | help',
+}
 </script>
 <main>
   <h1>Hello Tiny</h1>
   <Editor
+    licenseKey='your-license-key'
     scriptSrc='tinymce/tinymce.min.js'
+    value='<p>This is the initial content of the editor.</p>'
+    {conf}
   />
 </main>
 ----
@@ -113,24 +137,33 @@ import Editor from '@tinymce/tinymce-svelte';
 endif::[]
 ifeval::["{productSource}" == "zip"]
 
-. Open `+src/App.svelte+` and add:
-* An `+import+` statement for the {productname} component.
-* The `+<Editor />+` as a placeholder for the editor.
-* The xref:svelte-ref.adoc#scriptsrc[`+scriptSrc+`] property for the `+Editor+` placeholder.
-+
-For example:
-+
-_File:_ `+src/App.svelte+`
+. Open `+src/App.svelte+` and replace the contents with:
 +
 [source,html]
 ----
-<script lang="ts">
+<script>
 import Editor from '@tinymce/tinymce-svelte';
+let conf = {
+  height: 500,
+  menubar: false,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'preview', 'help', 'wordcount'
+  ],
+  toolbar: 'undo redo | blocks | ' +
+    'bold italic forecolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'removeformat | help',
+}
 </script>
 <main>
   <h1>Hello Tiny</h1>
   <Editor
-    scriptSrc="/path/or/url/to/tinymce.min.js"
+    licenseKey='your-license-key'
+    scriptSrc='/path/or/url/to/tinymce.min.js'
+    value='<p>This is the initial content of the editor.</p>'
+    {conf}
   />
 </main>
 ----
@@ -145,7 +178,6 @@ endif::[]
 npm run dev
 ----
 +
-This will start a local development server, accessible at http://localhost:8080.
 * To stop the development server, select on the command line or command prompt and press _Ctrl+C_.
 
 == Next Steps

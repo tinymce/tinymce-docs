@@ -3,21 +3,33 @@
 
 Supported versions of {productname}:
 
-[cols="^,^,^,^",options="header"]
+[cols="^,^,^",options="header"]
 |===
-|Version |Release Date |End of Community Support |End of Premium Support
-|7.1 |2024-05-08 |- |2025-11-08
-|7.0 |2024-03-20 |2024-05-08 |2025-09-20
-|6.8 |2023-12-06 |2024-03-20 |2025-06-06
-|6.7 |2023-09-13 |2023-12-06 |2025-03-13
-|6.6 |2023-07-19 |2023-09-13 |2025-01-19
-|6.5 |2023-06-21 |2023-07-19 |2024-12-21
-|6.4 |2023-03-29 |2023-06-21 |2024-09-29
-|6.3 |2022-12-08 |2023-03-29 |2024-06-08
-|6.2 |2022-09-26 |2022-12-08 |2024-03-26
-|6.1 |2022-07-13 |2022-09-26 |2024-01-13
-|6.0 |2022-04-07 |2022-07-13 |2023-10-07
+|Version |Release Date |End of Premium Support
+|7.2 |2024-06-19 |2025-12-19
+|7.1 |2024-05-08 |2025-11-08
+|7.0 |2024-03-20 |2025-09-20
+|6.8 |2023-12-06 |2025-06-06
+|6.7 |2023-09-13 |2025-03-13
+|6.6 |2023-07-19 |2025-01-19
+|6.5 |2023-06-21 |2024-12-21
+|6.4 |2023-03-29 |2024-09-29
+|6.3 |2023-12-08 |2024-06-08
+|6.2 |2022-09-26 |2024-03-26
+|6.1 |2022-07-13 |2024-01-13
+|6.0 |2022-04-07 |2023-10-07
 |===
+
+The date listed under "End of Premium Support" indicates the last day you may receive technical assistance for using and integrating the editor.
+
+Bug fixes and new features are always released in the latest version of {productname} (currently {productname} 7).
+
+=== Security updates:
+
+* Security updates are released in the latest minor version of each major version of {productname} that is still under active premium or LTS support ({productname} 7, {productname} 6, {productname} 5 LTS).
+* Security updates for the free open source edition of {productname} are issued only for around six months after the new major version is available. Security support for the free open source version of {productname} 6 ends on October 31, 2024.
+* For customers with a commercial license, security support for {productname} 6 ends on June 6, 2025.
+* {productname} 5 (both open source and commercial versions) is no longer receiving security updates. However, it is possible to extend security support for {productname} 5 by purchasing a dedicated LTS (Long Term Support) agreement. If you are interested in purchasing a {productname} 5 LTS license, please link:https://www.tiny.cloud/contact/[contact us].
 
 To view our Software License Agreements, visit:
 

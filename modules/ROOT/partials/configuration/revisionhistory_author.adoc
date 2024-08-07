@@ -1,0 +1,24 @@
+[[revisionhistory_author]]
+== `revisionhistory_author`
+
+This option configures the author for the `initial` and `draft` revisions.
+
+*Type:* xref:#author[Author] `+Object+`
+
+=== Example: using `revisionhistory_author`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // Change this value according to your HTML
+  plugins: 'revisionhistory',
+  toolbar: 'revisionhistory',
+  revisionhistory_fetch: () => Promise.resolve([]),
+  revisionhistory_display_author: true,
+  revisionhistory_author: {
+    id: 'john.doe',
+    name: 'John Doe',
+    avatar: 'https://example.com/avatar.jpg'
+  }
+});
+----

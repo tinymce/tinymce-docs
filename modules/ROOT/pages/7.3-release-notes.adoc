@@ -245,7 +245,7 @@ As a result, non-breaking spaces between different inline elements are now norma
 {productname} {release-version} also includes the following addition:
 
 === Colorpicker number input fields now show an error tooltip and error icon when invalid text has been entered.
-// #TINY-10799
+// #TINY-10799 / #TINY-11115
 
 Previously, the color picker HEX value input field only displayed a red outline and an aria label reading "invalid data" when users entered invalid values. This lacked sufficient detail to help users correct their input.
 

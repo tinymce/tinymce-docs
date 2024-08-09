@@ -227,17 +227,6 @@ As a consequence, this resulted in the unintended inclusion of head tag content 
 
 As a result, the editor now correctly handles full document content without misplacing head elements into the body, ensuring cleaner and more accurate content loading.
 
-=== Unnecessary `nbsp` entities were inserted when typing at the edges of inline elements.
-// #TINY-10854
-
-Previously, the replacement mechanism for `+&nbsp;+` did not account for nearby elements when converting non-breaking spaces to regular spaces.
-
-As a consequence, when typing a sequence like "a space b," the output was correct. However, if the "b" was wrapped in an inline element (such as bold), the `+&nbsp;+` remained instead of being replaced.
-
-{productname} {release-version} addresses this issue. Now, the normalization process triggers when an inline format is applied, affecting the previous sibling element to ensure spaces are properly converted.
-
-As a result, non-breaking spaces between different inline elements are now normalized, preventing unnecessary `+&nbsp;+` entities.
-
 
 [[additions]]
 == Additions
@@ -272,6 +261,17 @@ image::color-picker/color-picker-error-message-hex.png[color picker error messag
 == Bug fixes
 
 {productname} {release-version} also includes the following bug fixes:
+
+=== Unnecessary `nbsp` entities were inserted when typing at the edges of inline elements.
+// #TINY-10854
+
+Previously, the replacement mechanism for `+&nbsp;+` did not account for nearby elements when converting non-breaking spaces to regular spaces.
+
+As a consequence, when typing a sequence like "a space b," the output was correct. However, if the "b" was wrapped in an inline element (such as bold), the `+&nbsp;+` remained instead of being replaced.
+
+{productname} {release-version} addresses this issue. Now, the normalization process triggers when an inline format is applied, affecting the previous sibling element to ensure spaces are properly converted.
+
+As a result, non-breaking spaces between different inline elements are now normalized, preventing unnecessary `+&nbsp;+` entities.
 
 === Consecutive HTML comments would in some cases generate unwanted elements.
 // #TINY-10955

@@ -286,6 +286,17 @@ NOTE: This warning did not impact the functionality of table insertion, but it c
 
 In {productname} {release-version}, this issue has been resolved by adjusting the order of function calls in the code. Now, the context menu is closed before the `onAction` event is triggered when inserting a table from the context menu. As a result, the table is now inserted as expected without any JavaScript warnings.
 
+=== Notifications didn't position and resize properly when resizing the editor or toggling views.
+// #TINY-10894
+
+Previously, the function responsible for recalculating the width of notifications only added a width if the notification's width exceeded the boundaries.
+
+As a consequence, when notifications were constrained by boundaries, an additional width was added. However, if the boundaries were later increased, the added width was not adjusted accordingly.
+
+{productname} {release-version} addresses this issue. Now, the function adds width when the notification's width exceeds the boundaries but also removes this width when necessary.
+
+As a result, notifications now resize correctly when the boundaries increase, ensuring their width adjusts as expected.
+
 === Consecutive HTML comments would in some cases generate unwanted elements.
 // #TINY-10955
 
@@ -343,17 +354,6 @@ Previously, when `+contentEditable="true"+` (CET) fields where not wrapped in `+
 {productname} {release-version} addresses this issue. Now, when (CET) fields are **not wrapped** in (CEF) elements, the editor directs the focus to the body of the editor first.
 
 As a result, the editor now correctly returns focus as expected, ensuring seamless user interactions.
-
-=== Notifications didn't position and resize properly when resizing the editor or toggling views.
-// #TINY-10894
-
-Previously, the function responsible for recalculating the width of notifications only added a width if the notification's width exceeded the boundaries.
-
-As a consequence, when notifications were constrained by boundaries, an additional width was added. However, if the boundaries were later increased, the added width was not adjusted accordingly.
-
-{productname} {release-version} addresses this issue. Now, the function adds width when the notification's width exceeds the boundaries but also removes this width when necessary.
-
-As a result, notifications now resize correctly when the boundaries increase, ensuring their width adjusts as expected.
 
 === Split button popups were incorrectly positioned when switching to fullscreen mode if the editor was inside a scrollable container.
 // #TINY-10973

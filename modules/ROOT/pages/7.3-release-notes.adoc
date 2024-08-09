@@ -263,7 +263,7 @@ image::color-picker/color-picker-error-message-hex.png[color picker error messag
 
 {productname} {release-version} also includes the following bug fixes:
 
-=== Unnecessary `nbsp` entities were inserted when typing at the edges of inline elements.
+=== Unnecessary nbsp entities were inserted when typing at the edges of inline elements.
 // #TINY-10854
 
 Previously, the replacement mechanism for `+&nbsp;+` did not account for nearby elements when converting non-breaking spaces to regular spaces.
@@ -311,7 +311,7 @@ Previously in {productname}, there was an issue where split button popups would 
 
 In {productname} {release-version}, this issue has been fixed. The box constraints for the split button popup are now correctly calculated when the editor is in a scrollable container and in `fullscreen` mode. As a result, the split button popup is now positioned correctly.
 
-=== Consecutive HTML comments would in some cases generate unwanted elements.
+=== Sequential html comments would in some cases generate unwanted elements.
 // #TINY-10955
 
 Previously in {productname}, consecutive HTML comments would generate unwanted elements in the editor. For example, when inserting the following HTML into the editor:
@@ -353,7 +353,7 @@ Previously, the listbox component was not responsive as a UI element, due to a f
 
 This issue has been resolved in {productname} {release-version} by removing the fixed width setting, allowing the listbox component to function as a responsive UI element.
 
-=== `preventDefault` on mousedown on toolbar buttons was causing misplaced focus bugs.
+=== Prevent default mousedown on toolbar buttons was causing misplaced focus bugs.
 // #TINY-10638
 
 In previous versions of {productname}, the `preventDefault` on mousedown in the toolbar button component caused focus issues. As a consequence, when clicking on different toolbar buttons, the focus was not updated, leaving the initial button highlighted.

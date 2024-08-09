@@ -304,6 +304,13 @@ Previously in {productname}, the `text_patterns` commands would attempt to execu
 
 This issue has been resolved in {productname} {release-version}. The editor now filters `text_patterns` to only the supported commands. For example, typing "1. " without the `lists` plugin enabled will no longer fire a text pattern and instead retain the text as plain text.
 
+=== Split button popups were incorrectly positioned when switching to fullscreen mode if the editor was inside a scrollable container.
+// #TINY-10973
+
+Previously in {productname}, there was an issue where split button popups would be positioned incorrectly when opened within a scrollable container and the editor was in `fullscreen` mode. The behavior occurred because the box constraints for the split button popup did not take the `fullscreen` mode into account when calculating the position, resulting in an incorrect placement of the popup.
+
+In {productname} {release-version}, this issue has been fixed. The box constraints for the split button popup are now correctly calculated when the editor is in a scrollable container and in `fullscreen` mode. As a result, the split button popup is now positioned correctly.
+
 === Consecutive HTML comments would in some cases generate unwanted elements.
 // #TINY-10955
 
@@ -361,10 +368,3 @@ Previously, when `+contentEditable="true"+` (CET) fields where not wrapped in `+
 {productname} {release-version} addresses this issue. Now, when (CET) fields are **not wrapped** in (CEF) elements, the editor directs the focus to the body of the editor first.
 
 As a result, the editor now correctly returns focus as expected, ensuring seamless user interactions.
-
-=== Split button popups were incorrectly positioned when switching to fullscreen mode if the editor was inside a scrollable container.
-// #TINY-10973
-
-Previously in {productname}, there was an issue where split button popups would be positioned incorrectly when opened within a scrollable container and the editor was in `fullscreen` mode. The behavior occurred because the box constraints for the split button popup did not take the `fullscreen` mode into account when calculating the position, resulting in an incorrect placement of the popup.
-
-In {productname} {release-version}, this issue has been fixed. The box constraints for the split button popup are now correctly calculated when the editor is in a scrollable container and in `fullscreen` mode. As a result, the split button popup is now positioned correctly.

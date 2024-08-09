@@ -274,6 +274,18 @@ As a consequence, when typing a sequence like "a space b," the output was correc
 
 As a result, non-breaking spaces between different inline elements are now normalized, preventing unnecessary `+&nbsp;+` entities.
 
+=== Fixed JavaScript error when inserting a table using the context menu by adjusting the event order in `renderInsertTableMenuItem`.
+// #TINY-6887
+
+Previously in {productname}, a JavaScript warning would appear when attempting to insert a table from the context menu while using both the `table` and `autoresize` plugins. This warning was caused by the `onAction` event hiding the context menu, followed by an attempt to close the already hidden context menu, resulting in the warning message:
+
+[quote]
+"Uncaught Error: The component must be in a context to send: triggerEvent is not in context."
+
+NOTE: This warning did not impact the functionality of table insertion, but it could be confusing for users.
+
+In {productname} {release-version}, this issue has been resolved by adjusting the order of function calls in the code. Now, the context menu is closed before the `onAction` event is triggered when inserting a table from the context menu. As a result, the table is now inserted as expected without any JavaScript warnings.
+
 === Consecutive HTML comments would in some cases generate unwanted elements.
 // #TINY-10955
 
@@ -331,18 +343,6 @@ Previously, when `+contentEditable="true"+` (CET) fields where not wrapped in `+
 {productname} {release-version} addresses this issue. Now, when (CET) fields are **not wrapped** in (CEF) elements, the editor directs the focus to the body of the editor first.
 
 As a result, the editor now correctly returns focus as expected, ensuring seamless user interactions.
-
-=== Fixed JavaScript error when inserting a table using the context menu by adjusting the event order in `renderInsertTableMenuItem`.
-// #TINY-6887
-
-Previously in {productname}, a JavaScript warning would appear when attempting to insert a table from the context menu while using both the `table` and `autoresize` plugins. This warning was caused by the `onAction` event hiding the context menu, followed by an attempt to close the already hidden context menu, resulting in the warning message:
-
-[quote]
-"Uncaught Error: The component must be in a context to send: triggerEvent is not in context."
-
-NOTE: This warning did not impact the functionality of table insertion, but it could be confusing for users.
-
-In {productname} {release-version}, this issue has been resolved by adjusting the order of function calls in the code. Now, the context menu is closed before the `onAction` event is triggered when inserting a table from the context menu. As a result, the table is now inserted as expected without any JavaScript warnings.
 
 === Notifications didn't position and resize properly when resizing the editor or toggling views.
 // #TINY-10894

@@ -14,6 +14,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 {productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, August 7^th^, 2024. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
+* xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
 * xref:improvements[Improvements]
 * xref:additions[Additions]
 * xref:bug-fixes[Bug fixes]
@@ -227,17 +228,6 @@ As a consequence, this resulted in the unintended inclusion of head tag content 
 
 As a result, the editor now correctly handles full document content without misplacing head elements into the body, ensuring cleaner and more accurate content loading.
 
-=== Unnecessary `nbsp` entities were inserted when typing at the edges of inline elements.
-// #TINY-10854
-
-Previously, the replacement mechanism for `+&nbsp;+` did not account for nearby elements when converting non-breaking spaces to regular spaces.
-
-As a consequence, when typing a sequence like "a space b," the output was correct. However, if the "b" was wrapped in an inline element (such as bold), the `+&nbsp;+` remained instead of being replaced.
-
-{productname} {release-version} addresses this issue. Now, the normalization process triggers when an inline format is applied, affecting the previous sibling element to ensure spaces are properly converted.
-
-As a result, non-breaking spaces between different inline elements are now normalized, preventing unnecessary `+&nbsp;+` entities.
-
 
 [[additions]]
 == Additions
@@ -245,7 +235,7 @@ As a result, non-breaking spaces between different inline elements are now norma
 {productname} {release-version} also includes the following addition:
 
 === Colorpicker number input fields now show an error tooltip and error icon when invalid text has been entered.
-// #TINY-10799
+// #TINY-10799 / #TINY-11115
 
 Previously, the color picker HEX value input field only displayed a red outline and an aria label reading "invalid data" when users entered invalid values. This lacked sufficient detail to help users correct their input.
 
@@ -273,7 +263,55 @@ image::color-picker/color-picker-error-message-hex.png[color picker error messag
 
 {productname} {release-version} also includes the following bug fixes:
 
-=== Consecutive HTML comments would in some cases generate unwanted elements.
+=== Unnecessary nbsp entities were inserted when typing at the edges of inline elements.
+// #TINY-10854
+
+Previously, the replacement mechanism for `+&nbsp;+` did not account for nearby elements when converting non-breaking spaces to regular spaces.
+
+As a consequence, when typing a sequence like "a space b," the output was correct. However, if the "b" was wrapped in an inline element (such as bold), the `+&nbsp;+` remained instead of being replaced.
+
+{productname} {release-version} addresses this issue. Now, the normalization process triggers when an inline format is applied, affecting the previous sibling element to ensure spaces are properly converted.
+
+As a result, non-breaking spaces between different inline elements are now normalized, preventing unnecessary `+&nbsp;+` entities.
+
+=== Fixed JavaScript error when inserting a table using the context menu by adjusting the event order in `renderInsertTableMenuItem`.
+// #TINY-6887
+
+Previously in {productname}, a JavaScript warning would appear when attempting to insert a table from the context menu while using both the `table` and `autoresize` plugins. This warning was caused by the `onAction` event hiding the context menu, followed by an attempt to close the already hidden context menu, resulting in the warning message:
+
+[quote]
+"Uncaught Error: The component must be in a context to send: triggerEvent is not in context."
+
+NOTE: This warning did not impact the functionality of table insertion, but it could be confusing for users.
+
+In {productname} {release-version}, this issue has been resolved by adjusting the order of function calls in the code. Now, the context menu is closed before the `onAction` event is triggered when inserting a table from the context menu. As a result, the table is now inserted as expected without any JavaScript warnings.
+
+=== Notifications didn't position and resize properly when resizing the editor or toggling views.
+// #TINY-10894
+
+Previously, the function responsible for recalculating the width of notifications only added a width if the notification's width exceeded the boundaries.
+
+As a consequence, when notifications were constrained by boundaries, an additional width was added. However, if the boundaries were later increased, the added width was not adjusted accordingly.
+
+{productname} {release-version} addresses this issue. Now, the function adds width when the notification's width exceeds the boundaries but also removes this width when necessary.
+
+As a result, notifications now resize correctly when the boundaries increase, ensuring their width adjusts as expected.
+
+=== The pattern commands would execute even if the command was not enabled.
+// #TINY-10994
+
+Previously in {productname}, the `text_patterns` commands would attempt to execute even if the functionality were not supported in the current editor context. As a consequence, the command would fail and the editor would display unexpected behavior. For example, typing "1. " without the `lists` plugin enabled would delete the text instead of converting it to a list.
+
+This issue has been resolved in {productname} {release-version}. The editor now filters `text_patterns` to only the supported commands. For example, typing "1. " without the `lists` plugin enabled will no longer fire a text pattern and instead retain the text as plain text.
+
+=== Split button popups were incorrectly positioned when switching to fullscreen mode if the editor was inside a scrollable container.
+// #TINY-10973
+
+Previously in {productname}, there was an issue where split button popups would be positioned incorrectly when opened within a scrollable container and the editor was in `fullscreen` mode. The behavior occurred because the box constraints for the split button popup did not take the `fullscreen` mode into account when calculating the position, resulting in an incorrect placement of the popup.
+
+In {productname} {release-version}, this issue has been fixed. The box constraints for the split button popup are now correctly calculated when the editor is in a scrollable container and in `fullscreen` mode. As a result, the split button popup is now positioned correctly.
+
+=== Sequential html comments would in some cases generate unwanted elements.
 // #TINY-10955
 
 Previously in {productname}, consecutive HTML comments would generate unwanted elements in the editor. For example, when inserting the following HTML into the editor:
@@ -308,19 +346,19 @@ In {productname} {release-version}, this issue has been resolved. The editor now
 
 As a result, no extra paragraphs are generated.
 
-=== `preventDefault` on mousedown on toolbar buttons was causing misplaced focus bugs.
-// #TINY-10638
-
-In previous versions of {productname}, the `preventDefault` on mousedown in the toolbar button component caused focus issues. As a consequence, when clicking on different toolbar buttons, the focus was not updated, leaving the initial button highlighted.
-
-{productname} {release-version} addresses this issue by removing the `preventDefault`, allowing the focus to change as expected when users click on the image controls (ie. zoom in and out).
-
 === The listbox component had a fixed width and was not a responsive ui element.
 // #TINY-10884
 
 Previously, the listbox component was not responsive as a UI element, due to a fixed width being applied in the `CommonDropdown` component during dialog initialization.
 
 This issue has been resolved in {productname} {release-version} by removing the fixed width setting, allowing the listbox component to function as a responsive UI element.
+
+=== Prevent default mousedown on toolbar buttons was causing misplaced focus bugs.
+// #TINY-10638
+
+In previous versions of {productname}, the `preventDefault` on mousedown in the toolbar button component caused focus issues. As a consequence, when clicking on different toolbar buttons, the focus was not updated, leaving the initial button highlighted.
+
+{productname} {release-version} addresses this issue by removing the `preventDefault`, allowing the focus to change as expected when users click on the image controls (ie. zoom in and out).
 
 === Attempting to use focus commands on an editor where the cursor had last been in certain `+contentEditable="true"+` elements would fail.
 // #TINY-11085
@@ -330,40 +368,3 @@ Previously, when `+contentEditable="true"+` (CET) fields where not wrapped in `+
 {productname} {release-version} addresses this issue. Now, when (CET) fields are **not wrapped** in (CEF) elements, the editor directs the focus to the body of the editor first.
 
 As a result, the editor now correctly returns focus as expected, ensuring seamless user interactions.
-
-=== Fixed JavaScript error when inserting a table using the context menu by adjusting the event order in `renderInsertTableMenuItem`.
-// #TINY-6887
-
-Previously in {productname}, a JavaScript warning would appear when attempting to insert a table from the context menu while using both the `table` and `autoresize` plugins. This warning was caused by the `onAction` event hiding the context menu, followed by an attempt to close the already hidden context menu, resulting in the warning message:
-
-[quote]
-"Uncaught Error: The component must be in a context to send: triggerEvent is not in context."
-
-NOTE: This warning did not impact the functionality of table insertion, but it could be confusing for users.
-
-In {productname} {release-version}, this issue has been resolved by adjusting the order of function calls in the code. Now, the context menu is closed before the `onAction` event is triggered when inserting a table from the context menu. As a result, the table is now inserted as expected without any JavaScript warnings.
-
-=== Notifications didn't position and resize properly when resizing the editor or toggling views.
-// #TINY-10894
-
-Previously, the function responsible for recalculating the width of notifications only added a width if the notification's width exceeded the boundaries.
-
-As a consequence, when notifications were constrained by boundaries, an additional width was added. However, if the boundaries were later increased, the added width was not adjusted accordingly.
-
-{productname} {release-version} addresses this issue. Now, the function adds width when the notification's width exceeds the boundaries but also removes this width when necessary.
-
-As a result, notifications now resize correctly when the boundaries increase, ensuring their width adjusts as expected.
-
-=== Split button popups were incorrectly positioned when switching to fullscreen mode if the editor was inside a scrollable container.
-// #TINY-10973
-
-Previously in {productname}, there was an issue where split button popups would be positioned incorrectly when opened within a scrollable container and the editor was in `fullscreen` mode. The behavior occurred because the box constraints for the split button popup did not take the `fullscreen` mode into account when calculating the position, resulting in an incorrect placement of the popup.
-
-In {productname} {release-version}, this issue has been fixed. The box constraints for the split button popup are now correctly calculated when the editor is in a scrollable container and in `fullscreen` mode. As a result, the split button popup is now positioned correctly.
-
-=== The pattern commands would execute even if the command was not enabled.
-// #TINY-10994
-
-Previously in {productname}, the `text_patterns` commands would attempt to execute even if the functionality were not supported in the current editor context. As a consequence, the command would fail and the editor would display unexpected behavior. For example, typing "1. " without the `lists` plugin enabled would delete the text instead of converting it to a list.
-
-This issue has been resolved in {productname} {release-version}. The editor now filters `text_patterns` to only the supported commands. For example, typing "1. " without the `lists` plugin enabled will no longer fire a text pattern and instead retain the text as plain text.

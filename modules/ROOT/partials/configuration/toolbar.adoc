@@ -24,7 +24,10 @@ NOTE: The size of toolbar groups affects the behavior of the toolbar drawer when
 [[adding-toolbar-group-labels]]
 ==== Adding toolbar group labels
 
-To specify labels to the grouped buttons that appear on {productname}'s toolbar, the `+toolbar+` option should be provided with an array of objects with `+name+` and `+items+` as object properties. The `+name+` should be a string value that will be set as the `+title+` attribute on the `+div+` containing the toolbar group. The `+items+` should be an array of strings that indicate the buttons that should appear within the particular toolbar group.
+To specify labels for the grouped buttons that appear on {productname}'s toolbar, the `+toolbar+` option should be provided with an array of objects with `+name+` and `+items+` as object properties. The `+name+` should be a string value that will be set as the `+title+` attribute on the `+div+` containing the toolbar group. The `+items+` should be an array of strings that indicate the buttons that should appear within the particular toolbar group.
+
+[NOTE]
+Specifying group labels will not affect the appearance of the toolbar. The `+title+` attribute is not a visible attribute; it is used for accessibility purposes in the tooltip popups.
 
 *Type:* `+Array+`
 

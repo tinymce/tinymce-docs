@@ -160,6 +160,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Mouse hover on partially visible dialog collection elements no longer scrolls
+// #TINY-9915
+
+Previously, an issue caused partially visible collection elements to automatically scroll into view when hovered.
+
+{productname} {release-version} addresses this issue by preventing scrolling on hover. This ensures that content remains stable and does not unexpectedly move into view.
+
 
 [[security-fixes]]
 == Security fixes

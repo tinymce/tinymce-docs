@@ -160,7 +160,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
-=== Caret would unexpectedly go to a not editable table row above when user pressed enter.
+=== Caret would unexpectedly shift to the non-editable table row above when pressing Enter.
 // #TINY-11077
 
 Previously, an issue where pressing Enter in a table cell caused the selection to shift incorrectly when the row above was set to `contenteditable="false"`. This problem affected table editing functionality, leading to unexpected cursor placement and content modifications.

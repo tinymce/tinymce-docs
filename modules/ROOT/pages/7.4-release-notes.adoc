@@ -160,6 +160,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Pasting a table now places the cursor after the table instead of into the last table cell.
+// #TINY-11082
+
+Previously, when users copied and pasted a table, the cursor would remain in the last cell of the table, which differed from the behavior in popular word processing applications like Google Docs and Microsoft Word.
+
+{productname} {release-version} addresses this behavior. Now, after pasting a table, the cursor is automatically placed on a new line immediately following the table inside a '+<p>&nbsp;</p>+' tag.
+
 
 [[security-fixes]]
 == Security fixes

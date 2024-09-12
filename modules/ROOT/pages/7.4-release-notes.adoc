@@ -160,6 +160,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Sidebar could not be toggled until the skin was loaded.
+// #TINY-11155
+
+In {productname} 6.8, the initialization of sidebars in the UI was moved to occur after the skin was loaded. As a consequence, an issue was identified where the sidebar could not be toggled during the init event because the skin is loaded asynchronously.
+
+This issue has been resolved in {productname} {release-version} by moving the sidebar initialization back to within the PostRender event. As a result, the sidebar can now be toggled as expected during the init event.
+
 
 [[security-fixes]]
 == Security fixes

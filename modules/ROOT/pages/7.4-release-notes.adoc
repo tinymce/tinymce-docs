@@ -160,6 +160,17 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Deleting a selection in a list element would sometimes prevent the `input` event from being dispatched.
+// #TINY-11100
+
+In {productname}, certain delete actions, especially the native delete action event, were suppressing the input event. This suppression caused unexpected behavior when deleting items in lists, as the input event was not being fired as intended.
+
+{productname} {release-version} resolves this issue by implementing the following solution:
+
+. When deleting an item in a list, the system now checks if the input event was triggered.
+. If the input event was not triggered automatically, the system manually fires the event.
+
+This enhancement ensures that an input event is consistently dispatched when deleting list elements, regardless of the deletion method used. As a result, list behavior during deletion operations is now more reliable.
 
 [[security-fixes]]
 == Security fixes

@@ -71,6 +71,18 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Enhanced Code Editor
+
+The {productname} {release-version} release includes an accompanying release of the **Enhanced Code Editor** premium plugin.
+
+**Enhanced Code Editor** includes the following fixes, additions, and improvements.
+
+=== Formatting indent size would be different than CodeMirror indent size.
+// #TINY-11150
+
+Previously, the indent sizes between CodeMirror and js-beautify (formatter) were inconsistent due to the use of default options for both. As a result, the formatted code did not match the indent settings in CodeMirror, causing discrepancies in code appearance. To resolve this, the formatter's indent settings were adjusted to **2 spaces** to align with CodeMirror, ensuring consistent indent sizes and uniform code presentation.
+
+For information on the Enhanced Code Editor plugin, see: xref:advcode.adoc[Enhanced Code Editor].
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

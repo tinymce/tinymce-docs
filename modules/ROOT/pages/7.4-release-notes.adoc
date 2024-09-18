@@ -127,6 +127,24 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== New option `allow_mathml_annotation_encodings` to opt-in to keep math annotations with specific encodings.
+// TINY-11166
+
+In previous versions of {productname}, MathML annotation elements were inadvertently stripped during content processing. This caused compatibility issues with tools like Wiris that rely on these annotations.
+
+{productname} {release-version} introduces a new option, `allow_mathml_annotation_encodings`, to address this problem. This option accepts an array of strings, allowing users to specify which annotation encodings should be preserved. By configuring this option, users can ensure proper functionality of MathML-dependent tools while maintaining control over which annotations are retained.
+
+.Example
+[source, js]
+----
+tinymce.init({
+  selector: "textarea",
+  allow_mathml_annotation_encodings: [ 'wiris', 'application/x-tex' ]
+});
+----
+
+[NOTE]
+To enable this option, the xref:math.adoc[Math] plugin must be enabled in the editor initialization configuration.
 
 [[changes]]
 == Changes

@@ -163,9 +163,9 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === Mouse hover on partially visible dialog collection elements no longer scrolls
 // #TINY-9915
 
-Previously, an issue caused partially visible collection elements to automatically scroll into view when hovered.
+Previously, an issue caused partially visible collection elements, such as in the Character Map or Emojis dialog, to automatically scroll into view when hovered over.
 
-{productname} {release-version} addresses this issue by preventing scrolling on hover. This ensures that content remains stable and does not unexpectedly move into view.
+{productname} {release-version} addresses this issue by preventing scrolling on hover. This ensures that the dialog remains in place and does not scroll when partially visible elements are hovered over.
 
 
 [[security-fixes]]

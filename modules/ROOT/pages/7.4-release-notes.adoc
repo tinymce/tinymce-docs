@@ -80,7 +80,7 @@ The {productname} {release-version} release includes an accompanying release of 
 === Formatting indent size would be different than CodeMirror indent size.
 // #TINY-11150
 
-Previously, the indent sizes between CodeMirror and js-beautify (formatter) were inconsistent due to the use of default options for both.
+Previously, the indent sizes between CodeMirror and the formatter were inconsistent due to the use of default options for both.
 
 As a result, the formatted code did not match the indent settings in CodeMirror, causing discrepancies in code appearance.
 

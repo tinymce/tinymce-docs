@@ -25,3 +25,92 @@ tinymce.init({
 [IMPORTANT]
 If this string value is **not configured** it will return a console.error:
 _The {pluginname} plugin requires the `importword_service_url` to be configured_. If the editor detects an `invalid_URL`, it will return a console.error: _The value provided in `importword_service_url` is not a valid URL_.
+
+[[importword-converter-options]]
+== `importword_converter_options`
+
+**Type:** `String`
+
+The `importword_converter_options` setting allows you to customize the behavior of the ImportWord plugin when converting Word documents to HTML.
+
+.Example: using `importword_converter_options`
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'importword',
+  toolbar: 'importword',
+  importword_converter_options: {
+    formatting: {
+      resets: 'inline',
+      defaults: 'inline',
+      styles: 'none',
+    }
+  }
+});
+----
+
+=== Option details for `importword_converter_options`
+
+==== `resets`
+
+Controls whether additional formatting dedicated to minimizing differences between default Word styles and default HTML formatting should be included in the generated document.
+
+**Possible values:** `'none'` (default), or `'inline'`
+
+.Example: using `resets`
+[source, js]
+----
+tinymce.init({
+  // ... other options ...
+  importword_converter_options: {
+    formatting: {
+      resets: 'inline'
+    }
+  }
+});
+----
+
+**Effect:** Setting this to `'inline'` will include additional formatting, such as setting the font weight of HTML headings to normal to be consistent with Word styles.
+
+==== `defaults`
+
+Controls whether formatting set by default (like the default font size or default font family) should be included in the generated document.
+
+**Possible values:** `'none'` (default), or `'inline'`
+
+.Example: using `defaults`
+[source, js]
+----
+tinymce.init({
+  // ... other options ...
+  importword_converter_options: {
+    formatting: {
+      defaults: 'inline'
+    }
+  }
+});
+----
+
+**Effect:** Setting this to `'inline'` will include default formatting in the generated document.
+
+==== `styles`
+
+Controls whether Word styles should be included in the generated document.
+
+**Possible values:** `'inline'` (default), or `'none'`
+
+.Example: using `styles`
+[source, js]
+----
+tinymce.init({
+  // ... other options ...
+  importword_converter_options: {
+    formatting: {
+      styles: 'none'
+    }
+  }
+});
+----
+
+**Effect:** Setting this to `'none'` will exclude Word styles from the generated document.

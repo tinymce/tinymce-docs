@@ -160,7 +160,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
-=== Placing the cursor after a table with a BR element would misplace added newlines before the table instead of after it. 
+=== Placing the cursor after a table, but before a BR element would misplace added newlines before the table instead of after it. 
 // #TINY-11110
 
 Previously, a `+<br>+` element was incorrectly counted as content when the cursor was placed before it, resulting in newlines or elements being inserted at the start of the block rather than after the table.

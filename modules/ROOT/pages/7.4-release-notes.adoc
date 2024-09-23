@@ -80,9 +80,9 @@ The {productname} {release-version} release includes an accompanying release of 
 === Formatter would not remove empty lines.
 // #TINY-11146
 
-In previous versions of Enhanced Code Editor, the HTML formatting function used the js-beautify library's default setting of `+preserve_newlines: true+`. This configuration maintained all existing line breaks, including unnecessary ones.
+In previous versions of Enhanced Code Editor, the HTML formatting function retained all line breaks, including unnecessary empty lines, resulting in more spaced-out code than desired.
 
-{productname} {release-version} improves HTML output by explicitly setting `+preserve_newlines: false+` when calling the HTML formatting function. This change removes empty lines during formatting, resulting in cleaner and more compact HTML.
+With {productname} {release-version}, the HTML formatting has been optimized to automatically remove empty lines during the formatting process. This results in cleaner, more compact HTML output.
 
 For information on the Enhanced Code Editor plugin, see: xref:advcode.adoc[Enhanced Code Editor].
 

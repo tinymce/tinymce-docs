@@ -163,9 +163,9 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === The editor resize handle was incorrectly rendered when all components were removed from the status bar.
 // #TINY-11257
 
-Previously, in {productname}, the resize handle in the editor's status bar was positioned relative to other elements. Consequently, if these elements were removed, the resize handle would incorrectly appear in the left corner.
+Previously in {productname}, the resize handle in the editor's status bar was positioned relative to other elements. Consequently, if these elements were removed, the resize handle would incorrectly appear in the left corner.
 
-In {release-version}, this issue has been resolved by adjusting the CSS. The resize handle is now consistently placed in the right corner of the status bar, regardless of the presence of other elements. This ensures that the resize handle is always positioned correctly where users expect it to be.
+In {productname} {release-version}, this issue has been resolved by adjusting the CSS. The resize handle is now consistently placed in the right corner of the status bar, regardless of the presence of other elements. This ensures that the resize handle is always positioned correctly where users expect it to be.
 
 
 [[security-fixes]]

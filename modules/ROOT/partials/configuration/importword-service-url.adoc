@@ -25,27 +25,3 @@ tinymce.init({
 [IMPORTANT]
 If this string value is **not configured** it will return a console.error:
 _The {pluginname} plugin requires the `importword_service_url` to be configured_. If the editor detects an `invalid_URL`, it will return a console.error: _The value provided in `importword_service_url` is not a valid URL_.
-
-[[importword-converter-options]]
-== `importword_converter_options`
-
-**Type:** `String`
-
-The `importword_converter_options` setting allows you to customize the behavior of the {pluginname} plugin when converting Word documents to HTML.
-
-.Example: using `importword_converter_options`
-[source, js]
-----
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'importword',
-  toolbar: 'importword',
-  importword_converter_options: {
-    formatting: {
-      resets: 'inline',
-      defaults: 'inline',
-      styles: 'none',
-    }
-  }
-});
-----

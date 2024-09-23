@@ -43,7 +43,9 @@ tinymce.init({
 
 The following configuration options affect the behavior of the {pluginname} plugin.
 
-include::partial$configuration/{plugincode}.adoc[leveloffset=+1]
+include::partial$configuration/{plugincode}-service-url.adoc[leveloffset=+1]
+
+include::partial$configuration/{plugincode}-converter-options.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

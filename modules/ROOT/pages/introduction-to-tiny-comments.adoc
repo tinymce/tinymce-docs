@@ -1,6 +1,6 @@
-= Introduction to Tiny Comments
+= Introduction to {companyname} {pluginname}
 :navtitle: Introduction
-:description: Tiny Comments provides the ability to add comments to the content and collaborate with other users for content editing.
+:description: Tiny Comments enables users to add comments to content, fostering collaboration during content editing.
 :keywords: comments, commenting, tinycomments
 :pluginname: Comments
 :plugincode: comments
@@ -8,52 +8,48 @@
 
 == Contents
 
-* For help using comments in TinyMCE, see: xref:comments-using-comments.adoc[Using comments].
-* For an overview of the TinyMCE Comments plugin, see: xref:overview[Overview].
-* For information on adding and configuring the comments plugin for TinyMCE, see: xref:getting-started-with-the-comments-plugin-selecting-a-mode[Getting started with the Comments plugin - Selecting a mode].
+* For guidance on using comments in {productname}, refer to: xref:comments-using-comments.adoc[Using comments].
+* For an overview of the {productname} {pluginname} plugin, refer to: xref:overview[Overview].
+* For instructions on configuring the {pluginname} plugin, refer to: xref:getting-started-with-the-comments-plugin-selecting-a-mode[Getting started with the {pluginname} plugin - Selecting a mode].
 
 [[overview]]
 == Overview
 
 include::partial$misc/admon-premium-plugin.adoc[]
 
-The Comments plugin provides the ability to start or join a conversation by adding comments to the content within the {productname} editor.
+The {pluginname} plugin allows users to initiate and engage in conversations by adding comments directly within the {productname} editor. It also supports viewing all comments in a document for efficient collaboration.
 
-=== Collaborate on your projects within your content
+=== Collaborate seamlessly within your content
 
-The Comments plugin provides:
+With the {pluginname} plugin, users can:
 
-* A *user interface* to collaborate on content by creating and replying to comments.
-* A way to control the delete and resolve operations on a comment or comment thread.
+* Collaborate on content through an intuitive interface for creating and replying to comments.
+* Control the ability to delete or resolve individual comments or entire comment threads.
 
-=== Primary Comments functions
+=== Key features of the {pluginname} plugin
 
-The Comments plugin allows the user to perform the following functions:
+The {pluginname} plugin enables users to:
 
-* Create a comment
-* Edit a comment
-* Reply to a comment
-* Lookup a comment
-* Resolve a comment thread
-* Delete a comment or comment thread
+* Create comments
+* Edit comments
+* Reply to comments
+* Search for comments
+* Resolve comment threads
+* Delete comments or entire threads
 
 include::partial$misc/annotation-supported-content.adoc[leveloffset=+2]
 
-=== Interactive example
-
-The following example shows how to configure the Comments plugin in *embedded* mode. For information on configuring the Comments plugin, see: xref:getting-started-with-the-comments-plugin-selecting-a-mode[Comments plugin Modes].
-
-liveDemo::comments-embedded[]
-
-// include::partial$misc/purchase-premium-plugins.adoc[]
-
 [[getting-started-with-the-comments-plugin-selecting-a-mode]]
-== Getting started with the Comments plugin - Selecting a mode
+== Getting started with the {pluginname} plugin - Selecting a mode
 
-The Comments plugin is available in two _modes_: *Callback mode* and *Embedded mode*.
+The {pluginname} plugin offers two modes:
 
-Callback Mode:: This is the default mode for the Comments plugin. This mode is used to store the comments outside the content on a server, such as a database. This mode requires a number of callback functions to handle comment data. For instructions on configuring the Comments plugin in callback mode, see: xref:comments-callback-mode.adoc[Configuring the Comments plugin in callback mode]
+=== Callback Mode
 
-Embedded Mode:: This mode stores the comments within the content. No callbacks need to be configured for this mode. For instructions on configuring the Comments plugin in embedded mode, see: xref:comments-embedded-mode.adoc[Configuring the Comments plugin Comments in embedded mode]
+This default mode stores comments externally, such as in a database, and requires callback functions to manage comment data. For setup details, refer to: xref:comments-callback-mode.adoc[Configuring the {pluginname} plugin in Callback mode].
+
+=== Embedded Mode
+
+In this mode, comments are stored directly within the content, without needing callback configuration. For setup details, refer to: xref:comments-embedded-mode.adoc[Configuring the Comments plugin in Embedded mode].
 
 include::partial$misc/admon-inline-editing-mode-does-not-support-comments.adoc[]

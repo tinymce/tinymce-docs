@@ -7,7 +7,7 @@ The `+tinycomments_resolve+` function should asynchronously return a flag indica
 
 The `+tinycomments_resolve+` function is passed a (`+req+`) object as the first parameter, which contains the following key-value pair:
 
-`+conversationUid+`:: The uid of the conversation the reply is targeting.
+* `+conversationUid+`: The uid of the conversation the reply is targeting.
 
 The `+done+` callback should accept the following object:
 
@@ -19,10 +19,10 @@ The `+done+` callback should accept the following object:
 }
 ----
 
-NOTE: Failure to resolve due to permissions or business rules should be indicated by `+canResolve: false+`, while unexpected errors should be indicated using the `+fail+` callback.
+[NOTE]
+Failure to resolve due to permissions or business rules should be indicated by `+canResolve: false+`, while unexpected errors should be indicated using the `+fail+` callback.
 
-For example:
-
+.For example:
 [source,js]
 ----
 const resolve_comment_thread = (ref, done, fail) => {
@@ -51,6 +51,7 @@ tinymce.init({
   tinycomments_delete: delete_comment_thread,
   tinycomments_delete_all: delete_all_comment_threads,
   tinycomments_delete_comment: delete_comment,
-  tinycomments_lookup: lookup_comment
+  tinycomments_lookup: lookup_comment,
+  tinycomments_fetch: fetch_comments
 });
 ----

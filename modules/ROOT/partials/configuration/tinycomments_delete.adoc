@@ -5,7 +5,7 @@ The `+tinycomments_delete+` function should asynchronously return a flag indicat
 
 The `+tinycomments_delete+` function is passed a (`+req+`) object as the first parameter, which contains the following key-value pair:
 
-`+conversationUid+`:: The uid of the conversation the reply is targeting.
+* `+conversationUid+`: The uid of the conversation the reply is targeting.
 
 The `+done+` callback should accept the following object:
 
@@ -17,7 +17,8 @@ The `+done+` callback should accept the following object:
 }
 ----
 
-NOTE: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
+[NOTE]
+Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
 
 For example:
 
@@ -48,6 +49,7 @@ tinymce.init({
   tinycomments_delete: delete_comment_thread, // Add the callback to TinyMCE
   tinycomments_delete_all: delete_all_comment_threads,
   tinycomments_delete_comment: delete_comment,
-  tinycomments_lookup: lookup_comment
+  tinycomments_lookup: lookup_comment,
+  tinycomments_fetch: fetch_comments
 });
 ----

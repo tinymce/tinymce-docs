@@ -1,0 +1,78 @@
+[[tinycomments_fetch]]
+== `+tinycomments_fetch+`
+
+The {pluginname} plugin uses the `+tinycomments_fetch+` callback function retrieves multiple conversations based on their unique identifiers.
+
+The conventional conversation object structure that should be returned via the `+done+` callback is as follows:
+
+The `+tinycomments_fetch+` function is passed a (`+req+`) object as the first parameter, which contains the following key-value pair:
+
+* `+conversationUids+`: An array of strings representing the unique identifiers of the conversations to fetch.
+
+The `+done+` callback should accept the following object:
+
+[source,js]
+----
+{
+  conversations: {
+    [conversationUid: string]: {
+      uid: string,
+      comments: [
+        {
+          uid: string,
+          author: string,
+          authorName?: string,
+          authorAvatar?: string,
+          content: string,
+          createdAt: string, // ISO 8601 date string
+          modifiedAt: string // ISO 8601 date string
+        },
+        // ... more comments
+      ]
+    },
+    // ... more conversations
+  }
+}
+----
+
+.For example:
+[source,js]
+----
+const fetch_comments = (conversationUids, done, fail) => {
+  fetch(`https://api.example/conversations/${conversationUids}`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ uids: conversationUids }),
+  })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then((data) => {
+      console.log(`Lookup success ${conversationUids}`, data);
+      done(data);
+    })
+    .catch((err) => {
+      console.error(`Lookup failure ${conversationUids}`, err);
+      fail(err);
+    });
+};
+
+tinymce.init({
+  selector: '#editor',
+  plugins: 'tinycomments',
+  tinycomments_mode: 'callback',
+  tinycomments_create: create_comment,
+  tinycomments_reply: reply_comment,
+  tinycomments_edit_comment: edit_comment,
+  tinycomments_delete: delete_comment_thread,
+  tinycomments_delete_all: delete_all_comment_threads,
+  tinycomments_delete_comment: delete_comment,
+  tinycomments_lookup: lookup_comment,
+  tinycomments_fetch: fetch_comments // Add the callback to TinyMCE
+});
+----

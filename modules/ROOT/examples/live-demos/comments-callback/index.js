@@ -621,16 +621,42 @@ tinymce.ScriptLoader.loadScripts(
         fail(err);
       });
   };
+  
+  const tinycomments_fetch = (conversationUids, done, fail) => {
+
+    fetch(`https://api.example/conversations/${conversationUids}`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ uids: conversationUids }),
+    })
+      // .then(response => {
+      //   if (!response.ok) {
+      //     throw new Error('Network response was not ok');
+      //   }
+      //   return response.json();
+      // })
+      .then((data) => {
+        console.log(`Lookup success ${conversationUids}`, data);
+        done(data);
+      })
+      .catch((err) => {
+        console.error(`Lookup failure ${conversationUids}`, err);
+        fail(err);
+      });
+      console.log('fetching', conversationUids);
+  };
 
   tinymce.init({
     selector: 'textarea#comments-callback',
     height: 800,
     plugins: 'code tinycomments help lists',
     toolbar:
-      'undo redo | blocks | ' +
+      'addcomment showcomments | undo redo | blocks | ' +
       'bold italic backcolor | alignleft aligncenter ' +
       'alignright alignjustify | bullist numlist outdent indent | ' +
-      'removeformat | addcomment showcomments | help',
+      'removeformat | help',
     menubar: 'file edit view insert format tc',
     menu: {
       tc: {
@@ -645,13 +671,6 @@ tinymce.ScriptLoader.loadScripts(
     tinycomments_delete_all,
     tinycomments_delete_comment,
     tinycomments_lookup,
-    /* The following setup callback opens the comments sidebar when the editor loads */
-    setup: (editor) => {
-      editor.on('SkinLoaded', () => {
-        editor.execCommand('ToggleSidebar', false, 'showcomments', {
-          skip_focus: true,
-        });
-      });
-    },
+    tinycomments_fetch,
   });
 });

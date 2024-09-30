@@ -4,7 +4,7 @@ const userAllowedToResolve = 'Admin1';
 tinymce.init({
   selector: 'textarea#comments-embedded',
   plugins: 'code tinycomments',
-  toolbar: 'bold italic underline | addcomment showcomments',
+  toolbar: 'addcomment showcomments | bold italic underline',
   menubar: 'file edit view insert format tools tc',
   menu: {
     tc: {
@@ -22,10 +22,4 @@ tinymce.init({
     });
   },
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
-  /* The following setup callback opens the comments sidebar when the editor loads */
-  setup: (editor) => {
-    editor.on('SkinLoaded', () => {
-      editor.execCommand('ToggleSidebar', false, 'showcomments', { skip_focus: true });
-    });
-  }
 });

@@ -1,7 +1,7 @@
 [[tinycomments_can_resolve]]
 == `+tinycomments_can_resolve+`
 
-_Optional_ - This option adds a _Resolve Conversation_ item to the dropdown menu of the first comment in a conversation. This callback sets the author permissions for _resolving comment conversations_.
+_Optional_: This option adds a _Resolve Conversation_ item to the dropdown menu of the first comment in a conversation. This callback sets the author permissions for _resolving comment conversations_.
 
 *Type:* `+Function+`
 
@@ -14,11 +14,11 @@ const currentAuthor = 'embedded_journalist';
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'tinycomments',
+  toolbar: 'addcomment showcomments',
   tinycomments_mode: 'embedded',
   tinycomments_author: currentAuthor,
   tinycomments_can_resolve: (req, done, fail) => {
-    const allowed = req.comments.length > 0 &&
-                  req.comments[0].author === currentAuthor;
+    const allowed = req.comments.length > 0 && req.comments[0].author === currentAuthor;
     done({
       canResolve: allowed || currentAuthor === '<Admin user>'
     });

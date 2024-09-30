@@ -1,26 +1,27 @@
-= Configuring the Comments plugin in embedded mode
+= Configuring the {pluginname} plugin in embedded mode
 :navtitle: Embedded mode
 :description: Information on configuring the Comments plugin in embedded mode
 :keywords: comments, commenting, tinycomments, embedded, embedded mode
 :pluginname: Comments
 :plugincode: comments
 
-== Add the Comments plugin in embedded mode
+== Add the {pluginname} plugin in embedded mode
 
-To add the Comments plugin in embedded mode to the {productname}, configure the following options:
+To add the {pluginname} plugin in embedded mode to the {productname}, configure the following options:
 
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'tinycomments',
+  toolbar: 'addcomment showcomments',
   tinycomments_author: 'author',
   tinycomments_author_name: 'Name of the commenter',
   tinycomments_mode: 'embedded'
 });
 ----
 
-This is the minimum recommended setup for the Comments plugin in embedded mode. If the `+tinycomments_author+` and `+tinycomments_author_name+` options are not configured, all users will be assigned the name "_ANON_".
+This is the minimum recommended setup for the {pluginname} plugin in embedded mode. If the `+tinycomments_author+` and `+tinycomments_author_name+` options are not configured, all users will be assigned the name "_ANON_".
 
 == Interactive example
 

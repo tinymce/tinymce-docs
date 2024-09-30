@@ -22,12 +22,12 @@ The editor must contain content before a comment can be added.
 . The {pluginname} sidebar will appear on the right side of the editor instance.
 . The `+<textarea>+` within the comments box will display the placeholder text "_Add comment…_" and the selected field will have a visible blue `focus` highlight.
 +
-image:comment-add-comment.png[Add Comment, width=500,height=auto]
+image:comment-add-comment.png[Add Comment, width=500, height=auto]
 +
 . Type a comment in the comment box, and the "_Add comment…_" placeholder text will disappear, replaced by the user's comment.
 . Click *Save* or press *Enter* to store the comment.
 +
-image:comment-add-comment-created.png[Add Comment Created, width=500,height=auto]
+image:comment-comment-created.png[Comment Created, width=500, height=auto]
 +
 . Or press *Cancel* to discard the comment before it is saved.
 
@@ -39,15 +39,18 @@ image:comment-add-comment-created.png[Add Comment Created, width=500,height=auto
 Follow this procedure to edit a comment.
 
 . Click on the ellipsis image:icons/image-options.svg[(ellipsis - 3 horizontal dots)] icon above the comments box to expand the menu.
++
+image:comment-edit-existing-comment-ellipsis.png[Edit Existing Comment Ellipsis, width=500,height=auto]
++
 . Select *Edit* from the menu items.
 +
-image:comment-ellipsis-edit-button.png[Comment Ellipsis Edit Button, width=500,height=auto]
+image:comment-edit-comment.png[Edit Comment, width=500, height=auto]
 +
 . The comment field now displays a blue `focus` border and becomes editable.
 . Make the required changes to the comment.
 . Click *Save* to store the changes.
 +
-image:comment-edit-comment.png[Comment Edit Comment, width=500,height=auto]
+image:comment-edited-comment.png[Comment Edited Comment, width=500, height=auto]
 +
 . Or press *Cancel* to discard the changes before saving.
 
@@ -63,12 +66,12 @@ This option is not available for the first comment in a conversation.
 . Select *Delete* from the menu items.
 . The following options will appear in the comments sidebar:
 +
-image:comment-delete-comment.png[Delete Comment, width=500,height=auto]
+image:comment-delete-comment.png[Delete Comment, width=500, height=auto]
 . After selecting the *Delete* option, the following decision dialog box will appear with two options:
 .. *Cancel*: cancel the action.
 .. *Delete*: delete the comment from the current active focused conversation.
 +
-image:comment-delete-comment-dialog.png[Delete Comment Dialog, width=500,height=auto]
+image:comment-delete-comment-dialog.png[Delete Comment Dialog, width=500, height=auto]
 
 [[delete-a-comment-thread-conversation]]
 == Delete a comment thread (conversation)
@@ -78,13 +81,13 @@ This option is only available for the first comment in a conversation. Once the 
 . Click on the ellipsis image:icons/image-options.svg[(ellipsis - 3 horizontal dots)] icon above the comments box to expand the menu.
 . Select *Delete conversation* from the menu items.
 +
-image:comment-delete-conversation.png[Delete Conversation, width=500,height=auto]
+image:comment-delete-conversation.png[Delete Conversation, width=500, height=auto]
 +
 . After selecting the *Delete conversation* option, the following decision dialog box will appear:
 . *Cancel*: cancel the action.
 . *Delete*: remove the conversation.
 +
-image:comment-delete-conversation-dialog.png[Delete Conversation Dialog, width=500,height=auto]
+image:comment-delete-conversation-dialog.png[Delete Conversation Dialog, width=500, height=auto]
 
 *Result*: The conversation and all its subsequent comments will be deleted from the document.
 
@@ -99,7 +102,7 @@ This option is only available for the first comment in a conversation. Once a co
 . Click on the ellipsis image:icons/image-options.svg[(ellipsis - 3 horizontal dots)] icon above the comments box to expand the menu.
 . Select *Resolve conversation* from the menu items.
 +
-image:comment-resolve-conversation.png[Resolve Conversation, width=500,height=auto]
+image:comment-resolve-conversation.png[Resolve Conversation, width=500, height=auto]
 +
 *Result*: The conversation will be resolved and removed from the stored conversations.
 
@@ -121,10 +124,10 @@ Follow this procedure to delete all conversations in the document:
 
 . From the navigation menu, choose *File* -> *Delete all conversations* to delete all the comments in a document.
 +
-image:comment-delete-all-conversations-file-menu.png[Delete All Conversations File Menu, width=500,height=auto]
+image:comment-delete-all-conversations-file-menu.png[Delete All Conversations File Menu, width=500, height=auto]
 +
 . The following decision dialog box will appear:
 +
-image:comment-delete-all-conversations.png[Delete All Conversations, width=500,height=auto]
+image:comment-delete-all-conversations.png[Delete All Conversations, width=500, height=auto]
 +
 . Click *Yes* to remove all the comments in the selected document, or *No* to dismiss this action.

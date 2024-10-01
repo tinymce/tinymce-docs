@@ -53,6 +53,7 @@ tinymce.init({
   tinycomments_delete: delete_comment_thread, // Add the callback to TinyMCE
   tinycomments_delete_all: delete_all_comment_threads,
   tinycomments_delete_comment: delete_comment,
-  tinycomments_lookup: fetch_comments,
+  tinycomments_lookup: lookup_comment,
+  tinycomments_fetch: fetch_comments
 });
 ----

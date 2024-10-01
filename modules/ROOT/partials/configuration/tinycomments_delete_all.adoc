@@ -46,6 +46,6 @@ tinymce.init({
   tinycomments_delete_all: delete_all_comment_threads, // Add the callback to TinyMCE
   tinycomments_delete_comment: delete_comment,
   tinycomments_lookup: lookup_comment,
-  tinycomments_fetch: fetch_comments
+  tinycomments_fetch: fetch_comments // Optional callback
 });
 ----

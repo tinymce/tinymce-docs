@@ -1,4 +1,4 @@
-= Commands, Events and APIs for the comments plugin
+= Commands, Events and APIs for the {pluginname} plugin
 :navtitle: Commands, Events and APIs
 :description: Information on the commands, events and APIs provided with the comments plugin.
 :keywords: comments, commenting, tinycomments
@@ -7,7 +7,7 @@
 
 == Commands
 
-The Comments plugin provides the following {productname} commands.
+The {pluginname} plugin provides the following {productname} commands.
 
 include::partial$commands/comments-cmds.adoc[]
 
@@ -46,13 +46,104 @@ The {pluginname} plugin provides the xref:comments-commands-events-apis#getEvent
 
 include::partial$misc/admon-requires-6.1v.adoc[]
 
-Returns a log with information and timestamps of all changes to comments, including when:
+The `getEventLog` returns a log that contains information and timestamps of all changes to comments, including when:
 
-* A new comment is added (and who added it).
-* A comment is edited (and who edited it).
-* A reply to a comment is added (and who added the reply).
-* A comment is resolved (and who resolved the comment).
-* A comment is deleted (and who deleted the comment).
+* A new comment is added.
+
+[source,js]
+----
+{
+  "type": "create",
+  "timestamp": "2024-10-01T03:07:53.771Z",
+  "conversationUid": "annotation-r1nn5xdo5ye",
+  "conversationContext": "Welcome",
+  "conversationContent": "new comment"
+},
+----
+
+* A comment is edited.
+
+[source,js]
+----
+{
+  "type": "edit-comment",
+  "timestamp": "2024-10-01T03:08:06.551Z",
+  "conversationUid": "annotation-r1nn5xdo5ye",
+  "commentUid": "annotation-r1nn5xdo5ye",
+  "conversationContext": "Welcome",
+  "conversationContent": "new comment",
+  "conversationCreatedAt": "2024-10-01T03:07:53.771Z",
+  "commentContent": "new comment (Edit comment)",
+  "commentAuthor": {
+      "author": "DEMO USER",
+      "authorName": "DEMO USER"
+  },
+  "conversationAuthor": {
+      "author": "DEMO USER",
+      "authorName": "DEMO USER"
+  }
+},
+----
+
+* A reply to a comment is added.
+
+[source,js]
+----
+{
+  "type": "reply",
+  "timestamp": "2024-10-01T03:07:53.771Z",
+  "conversationUid": "annotation-r1nn5xdo5ye",
+  "commentUid": "annotation-uh00rb41kma",
+  "conversationContext": "Welcome",
+  "conversationContent": "new comment (Edit comment)",
+  "conversationCreatedAt": "2024-10-01T03:07:53.771Z",
+  "commentContent": "reply to existing comment",
+  "conversationAuthor": {
+      "author": "DEMO USER",
+      "authorName": "DEMO USER"
+  }
+},
+----
+
+* A comment is resolved.
+
+[source,js]
+----
+{
+  "type": "resolve",
+  "timestamp": "2024-10-01T03:08:25.783Z",
+  "conversationUid": "annotation-r1nn5xdo5ye",
+  "conversationContext": "Welcome",
+  "conversationContent": "new comment (Edit comment)",
+  "conversationAuthor": {
+      "author": "DEMO USER",
+      "authorName": "DEMO USER"
+  }
+},
+----
+
+* A comment is deleted.
+
+[source,js]
+----
+{
+  "type": "delete-comment",
+  "timestamp": "2024-10-01T03:08:23.292Z",
+  "conversationUid": "annotation-r1nn5xdo5ye",
+  "commentUid": "annotation-uh00rb41kma",
+  "conversationContext": "Welcome",
+  "conversationContent": "new comment (Edit comment)",
+  "commentContent": "reply to existing comment",
+  "commentAuthor": {
+      "author": "DEMO USER",
+      "authorName": "DEMO USER"
+  },
+  "conversationAuthor": {
+      "author": "DEMO USER",
+      "authorName": "DEMO USER"
+  }
+},
+----
 
 The event log can be retrieved either in full or with the `after` option, which restricts the returned list to Comment events after a time-stamp date in the link:https://en.wikipedia.org/wiki/ISO_8601[ISO-8601] format, both shown in the following:
 
@@ -81,7 +172,7 @@ The `+'tinycomments'+` annotator, like all editor APIs, can only be accessed aft
 
 This example makes use of the `+annotationChanged+` method in the `+editor.annotator+` API to create a xref:creating-custom-notifications.adoc[custom notification].
 
-This notification displays for five seconds every time any content with a `+'tinycomments'+` annotation is selected.
+The below notification example displays for five seconds every time any content with a `+'tinycomments'+` annotation is selected.
 
 [source,js]
 ----

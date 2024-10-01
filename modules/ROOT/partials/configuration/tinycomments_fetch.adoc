@@ -39,7 +39,7 @@ The `+done+` callback should accept the following object:
 [source,js]
 ----
 const fetch_comments = (conversationUids, done, fail) => {
-  fetch(`https://api.example/conversations/${conversationUids}`, {
+  fetch(`https://api.example/conversations`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

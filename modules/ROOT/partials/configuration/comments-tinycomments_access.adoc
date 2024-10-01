@@ -1,0 +1,53 @@
+[[tinycomments-access]]
+== `tinycomments_access`
+
+*Type:* `+String+`
+
+*Possible values:* `'comment'`
+
+This option controls the editor's read-only state and comment functionality.
+
+[IMPORTANT]
+====
+* When `tinycomments_access` is set to `comment`, the editor will automatically switch to xref:editor-important-options.adoc#readonly[Readonly Mode].
+* Default behavior allows full editing access to both the editor and comments.
+====
+
+=== Example: Basic Configuration
+
+[source,javascript]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'tinycomments',
+  toolbar: 'addcomment showcomments',
+  readony: true, // set the editor to read-only mode
+  tinycomments_access: '',
+});
+----
+
+=== `tinycomments_access` set to undefined or an empty string and `readonly` set to `true`
+
+When `tinycomments_access` is set to **undefined** or an **empty string**, the editor will remain in read-only mode, and the comments will be in read-only mode. This means that users cannot edit the content or add comments.
+
+[cols="1,1,2", options="header"]
+|===
+|Editor Readonly |Tinycomments_access |Result
+|true |not specified |readonly editor, readonly comments
+|false |not specified |Default behaviour, full editing rights to the comments and editor
+|===
+
+liveDemo::comments-readonly-mode[]
+
+== `tinycomments_access` set to `'comment'` and `readonly` set to `true`
+
+When `tinycomments_access` is set to `comment` and `readonly` is set to `true`, the editor **will remain** in read-only mode, but the comments will be in **comment-only** mode. This means that users can add and delete comments, but they cannot edit the editor content.
+
+[cols="1,1,2", options="header"]
+|===
+|Editor Readonly |Tinycomments_access |Result
+|true |comment |comment only mode, readonly editor, can add/delete new comments
+|false |comment |comment only mode, readonly editor, can add/delete new comments
+|===
+
+liveDemo::comments-ui-mode[]

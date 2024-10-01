@@ -61,8 +61,11 @@ include::partial$configuration/tinycomments_fetch.adoc[leveloffset=+1]
 === Optional options
 
 * xref:tinycomments_resolve[`+tinycomments_resolve+`]
+* xref:tinycomments_fetch[`+tinycomments_fetch+`]
 
 include::partial$configuration/tinycomments_resolve.adoc[leveloffset=+1]
+
+include::partial$configuration/tinycomments_fetch.adoc[leveloffset=+1]
 
 include::partial$plugins/comments-open-sidebar.adoc[]
 

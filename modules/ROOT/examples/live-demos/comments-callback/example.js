@@ -170,7 +170,7 @@ const tinycomments_lookup = ({ conversationUid }, done, fail) => {
 };
 
 const tinycomments_fetch = (conversationUids, done, fail) => {
-  fetch(`https://api.example/conversations/${conversationUids}`, {
+  fetch(`https://api.example/conversations`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',

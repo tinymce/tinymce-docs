@@ -10,7 +10,7 @@ This option controls the editor's read-only state and comment functionality.
 [IMPORTANT]
 ====
 * When `tinycomments_access` is set to `comment`, the editor will automatically switch to xref:editor-important-options.adoc#readonly[Readonly Mode].
-* Default behavior allows full editing access to both the editor and comments.
+* Default behavior, when the `tinycomments_access` option is either not configured or set to an empty string, allows full editing access to both the editor and the comments.
 ====
 
 === Example: Basic Configuration

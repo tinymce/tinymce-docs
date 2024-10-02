@@ -81,11 +81,9 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== Format button would lose focus after action while navigating through keyboard.
 // #TINY-11122
 
-Previously, after using the **Format code** button to format code, the focus would shift to the code editor wrapper instead of remaining on the **Format code** button.
+Previously, after using the **Format code** button to format code, the focus would shift to the code editor wrapper instead of remaining on the **Format code** button. This behavior was inconsistent for users who prefer to navigate through the keyboard.
 
-{productname} {release-version} implemented a fix that explicitly refocuses the **Format code** button after the formatting action.
-
-As a result, when pressing the **Format code** button, the focus now remains on the button as intended.
+{productname} {release-version} implemented a fix that explicitly refocuses the **Format code** button after the formatting action. As a result, when pressing the **Format code** button, the focus now remains on the button as intended.
 
 For information on the Enhanced Code Editor plugin, see: xref:advcode.adoc[Enhanced Code Editor].
 

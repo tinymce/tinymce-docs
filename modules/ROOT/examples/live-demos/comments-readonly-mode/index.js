@@ -10,14 +10,19 @@ tinymce.init({
   toolbar: "addcomment showcomments togglereadonly | undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
   tinycomments_mode: 'embedded',
   readonly: true,
-  setup: (ed) => {
-    editor = ed;  // Assign the editor instance globally
+  setup: (editor) => {
+    const isReadonlyMode = () => editor.mode.get() === 'readonly';
+    editor.ui.registry.addToggleButton('togglereadonly', {
+      text: 'Readonly mode',
+      context: 'any', // Available from 7.4
+      onSetup: (buttonApi) => {
+        const activate = (api) =>  () => api.setActive(isReadonlyMode());
+        editor.on('SwitchMode', activate(buttonApi));
+        return (teardownApi) => editor.off('SwitchMode', activate(teardownApi));
+      },
+      onAction: (api) => {
+        editor.mode.set(isReadonlyMode() ? 'design' : 'readonly');
+      }
+    });
   }
-});
-
-const button = document.getElementById('toggle-readonly-mode');
-
-button.addEventListener('click', () => {
-  const isReadonly = editor.mode.get() === 'readonly';
- tinymce.get(0).mode.set(isReadonly ? 'design' : 'readonly');
 });

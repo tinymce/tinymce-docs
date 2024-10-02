@@ -54,7 +54,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'tinycomments',
   toolbar: 'addcomment showcomments',
-  readony: true, // set the editor to read-only mode
+  readonly: true, // set the editor to read-only mode
 });
 ----
 

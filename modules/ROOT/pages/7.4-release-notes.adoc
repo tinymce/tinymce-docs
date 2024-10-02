@@ -72,6 +72,15 @@ The {productname} {release-version} release includes an accompanying release of 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
 
+=== Cursor would jump to the previous line after pressing shift + enter if the annotation was applied.
+// #TINY-10567
+
+In the Chrome browser, a rendering glitch caused the cursor to unexpectedly jump to the previous line when applying an annotation. The optimization intended to prevent re-selection after annotations was found to be unreliable and contributed to this issue.
+
+{productname} {release-version} resolves this problem by removing the problematic optimization, which led to this regression.
+
+As a result, users will no longer encounter unexpected selection or cursor behavior after applying annotations in the editor.
+
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement
 

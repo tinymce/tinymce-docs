@@ -86,6 +86,13 @@ As a result, the formatted code did not match the indent settings in CodeMirror,
 
 {productname} {release-version} addresses this issue. Now, the formatter's indent settings have been adjusted to "2" indent spaces to align with CodeMirror, ensuring consistent indent sizes and uniform code presentation.
 
+=== Formatter would not remove empty lines.
+// #TINY-11146
+
+In previous versions of Enhanced Code Editor, the HTML formatting function retained all line breaks, including unnecessary empty lines, resulting in more spaced-out code than desired.
+
+With {productname} {release-version}, the HTML formatting has been optimized to automatically remove empty lines during the formatting process. This results in cleaner, more compact HTML output.
+
 For information on the Enhanced Code Editor plugin, see: xref:advcode.adoc[Enhanced Code Editor].
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
@@ -132,6 +139,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Dialog list dropdown menus now close when the browser window resizes.
+// #TINY-11123
+  
+In previous versions of {productname} any listbox with a fixed-width dropdown would remain open when resizing the browser window, creating a visual discrepancy as other UI elements adjusted to the new window size.
+
+{productname} {release-version} addresses this issue. Now, dropdowns will now automatically close when a window resize event is triggered, preventing the need for resizing the dropdown list itself.
 
 [[additions]]
 == Additions
@@ -142,6 +155,24 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // #TINY-vwxyz1
 
 // CCFR here.
+
+=== New option `allow_mathml_annotation_encodings` to opt-in to keep math annotations with specific encodings.
+// TINY-11166
+
+In previous versions of {productname}, MathML annotation elements were inadvertently stripped during content processing. This caused compatibility issues with tools like Wiris that rely on these annotations.
+
+{productname} {release-version} introduces a new option, `allow_mathml_annotation_encodings`, to address this problem. This option accepts an array of strings, allowing users to specify which annotation encodings should be preserved. By configuring this option, users can ensure proper functionality of MathML-dependent tools while maintaining control over which annotations are retained.
+
+.Example
+[source, js]
+----
+tinymce.init({
+  selector: "textarea",
+  allow_mathml_annotation_encodings: [ 'wiris', 'application/x-tex' ]
+});
+----
+
+For more information on the `allow_mathml_annotation_encodings` option, see xref:content-filtering.adoc#allow-mathml-annotation-encodings[allow_mathml_annotation_encodings].
 
 
 [[changes]]

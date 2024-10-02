@@ -3,12 +3,13 @@
 
 include::partial$misc/admon-requires-6.1v.adoc[]
 
-_Optional_ - This option sets the URL for the author's avatar to be used when creating or replying to comments. If this option is omitted, a generated avatar will be used instead. The avatar, if provided:
+_Optional_: This option sets the URL for the author's avatar to be used when creating or replying to comments. If this option is omitted, a generated avatar will be used instead. The avatar, if provided:
 
 * will be scaled to a 36px diameter circle; and
-* can be any filetype able to be wrapped in an `<img>` element.
+* can be any filetype able to be wrapped in an `+<img>+` element.
 
-IMPORTANT: The avatar will be stored alongside the embedded comment data when a new comment is created and cannot be changed later by changing this options value. To change the avatar image, the image on the server that the URL points to should be updated instead.
+[IMPORTANT]
+The avatar will be stored alongside the embedded comment data when a new comment is created and cannot be changed later by changing this options value. To change the avatar image, the image on the server that the URL points to should be updated instead.
 
 *Type:* `+String+`
 
@@ -19,6 +20,7 @@ IMPORTANT: The avatar will be stored alongside the embedded comment data when a 
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'tinycomments',
+  toolbar: 'addcomment showcomments',
   tinycomments_mode: 'embedded',
   tinycomments_author: 'embedded_journalist',
   tinycomments_author_name: 'Embedded Journalist',

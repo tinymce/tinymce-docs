@@ -1,7 +1,7 @@
 [[tinycomments_can_edit_comment]]
 == `+tinycomments_can_edit_comment+`
 
-_Optional_ - This option sets the author permissions for _editing comments_. If the `+tinycomments_can_edit_comment+` option is not included, the current author (`+tinycomments_author+`) cannot edit comments added by other authors.
+_Optional_: This option sets the author permissions for _editing comments_. If the `+tinycomments_can_edit_comment+` option is not included, the current author (`+tinycomments_author+`) cannot edit comments added by other authors.
 
 *Type:* `+Function+`
 
@@ -16,7 +16,7 @@ _Optional_ - This option sets the author permissions for _editing comments_. If 
 }
 ----
 
-The following example extends the default behavior to allow the author `<Admin user>` to edit other author's comments by adding `|| currentAuthor === '<Admin user>'`.
+The following example extends the default behavior to allow the author `+<Admin user>+` to edit other author's comments by adding `|| currentAuthor === '<Admin user>'`.
 
 === Example: using `tinycomments_can_edit_comment`
 
@@ -27,6 +27,7 @@ const currentAuthor = 'embedded_journalist';
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'tinycomments',
+  toolbar: 'addcomment showcomments',
   tinycomments_mode: 'embedded',
   tinycomments_author: currentAuthor,
   tinycomments_can_edit_comment: (req, done, fail) => {

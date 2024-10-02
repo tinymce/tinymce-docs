@@ -1,7 +1,7 @@
 [[tinycomments_author_name]]
 == `+tinycomments_author_name+`
 
-_Optional_ - This option sets the author's display name to be used when creating or replying to comments. If this option is omitted, then the author id is used instead.
+_Optional_: This option sets the author's display name to be used when creating or replying to comments. If this option is omitted, the author `+id+` is used instead.
 
 *Type:* `+String+`
 
@@ -12,6 +12,7 @@ _Optional_ - This option sets the author's display name to be used when creating
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'tinycomments',
+  toolbar: 'addcomment showcomments',
   tinycomments_mode: 'embedded',
   tinycomments_author: 'embedded_journalist',
   tinycomments_author_name: 'Embedded Journalist',

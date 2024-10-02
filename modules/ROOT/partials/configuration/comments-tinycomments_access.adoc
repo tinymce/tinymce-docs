@@ -15,7 +15,7 @@ This option controls the editor's read-only state and comment functionality.
 
 === `tinycomments_access` _is set to `'comment'` and `readonly` set to `true`_
 
-When `tinycomments_access` is set to `comment` and `readonly` is set to `true`, the editor **will remain** in read-only mode, but the comments will be in **comment-only** mode. This means that users can add and delete comments, but they cannot edit the editor content.
+When `tinycomments_access` is set to `comment`, the editor will be in xref:editor-important-options.adoc#readonly[Readonly mode], but the comments will be in a **comment-only** mode. This means that users can add and delete comments, but they cannot edit the editor content.
 
 [cols="1,1,2", options="header"]
 |===

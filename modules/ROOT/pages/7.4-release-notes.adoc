@@ -116,6 +116,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Dialog list dropdown menus now close when the browser window resizes.
+// #TINY-11123
+  
+In previous versions of {productname} any listbox with a fixed-width dropdown would remain open when resizing the browser window, creating a visual discrepancy as other UI elements adjusted to the new window size.
+
+{productname} {release-version} addresses this issue. Now, dropdowns will now automatically close when a window resize event is triggered, preventing the need for resizing the dropdown list itself.
 
 [[additions]]
 == Additions

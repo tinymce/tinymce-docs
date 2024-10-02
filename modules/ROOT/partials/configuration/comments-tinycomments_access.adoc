@@ -53,6 +53,7 @@ When `tinycomments_access` is not configured, the editor will remain in read-onl
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'tinycomments',
+  tinycomments_mode: 'embedded',
   toolbar: 'addcomment showcomments',
   readonly: true, // set the editor to read-only mode
 });

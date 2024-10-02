@@ -13,32 +13,7 @@ This option controls the editor's read-only state and comment functionality.
 * Default behavior, when the `tinycomments_access` option is either not configured or set to an empty string, allows full editing access to both the editor and the comments.
 ====
 
-=== Example: Basic Configuration
-
-[source,javascript]
-----
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'tinycomments',
-  toolbar: 'addcomment showcomments',
-  readony: true, // set the editor to read-only mode
-});
-----
-
-=== `tinycomments_access` is not configured and `readonly` set to `true`
-
-When `tinycomments_access` is not configured, the editor will remain in read-only mode, and the comments will be in read-only mode. This means that users cannot edit the content or add comments.
-
-[cols="1,1,2", options="header"]
-|===
-|Editor Readonly |Tinycomments_access |Result
-|true |not specified |readonly editor, readonly comments
-|false |not specified |Default behaviour, full editing rights to the comments and editor
-|===
-
-liveDemo::comments-readonly-mode[]
-
-== `tinycomments_access` set to `'comment'` and `readonly` set to `true`
+=== `tinycomments_access` _is set to `'comment'` and `readonly` set to `true`_
 
 When `tinycomments_access` is set to `comment` and `readonly` is set to `true`, the editor **will remain** in read-only mode, but the comments will be in **comment-only** mode. This means that users can add and delete comments, but they cannot edit the editor content.
 
@@ -48,7 +23,8 @@ When `tinycomments_access` is set to `comment` and `readonly` is set to `true`, 
 |true |comment |The editor is read-only, but users can add or delete new comments.
 |false |comment |The editor is read-only, but users can add or delete new comments.
 |===
-=== Example:
+
+.Example
 [source,javascript]
 ----
 tinymce.init({
@@ -59,4 +35,29 @@ tinymce.init({
   tinycomments_access: 'comment' 
 });
 ----
+
 liveDemo::comments-ui-mode[]
+
+=== `tinycomments_access` _is not configured and `readonly` set to `true`_
+
+When `tinycomments_access` is not configured, the editor will remain in read-only mode, and the comments will be in read-only mode. This means that users cannot edit the content or add comments.
+
+[cols="1,1,2", options="header"]
+|===
+|Editor Readonly |Tinycomments_access |Result
+|true |not specified |readonly editor, readonly comments
+|false |not specified |Default behavior, full editing rights to the comments and editor
+|===
+
+.Example
+[source,javascript]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'tinycomments',
+  toolbar: 'addcomment showcomments',
+  readony: true, // set the editor to read-only mode
+});
+----
+
+liveDemo::comments-readonly-mode[]

@@ -1,5 +1,3 @@
-let editor;
-
 tinymce.init({
   selector: "textarea#comment-readonly-ui-mode",
   plugins: [

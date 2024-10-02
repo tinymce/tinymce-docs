@@ -1,5 +1,3 @@
-let editor;
-
 tinymce.init({
   selector: "textarea#comments-ui-mode",
   plugins: [
@@ -9,8 +7,5 @@ tinymce.init({
   ],
   toolbar: "addcomment showcomments | undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
   tinycomments_mode: 'embedded',
-  tinycomments_access: 'comment',
-  setup: (ed) => {
-    editor = ed;
-  }
+  tinycomments_access: 'comment'
 });

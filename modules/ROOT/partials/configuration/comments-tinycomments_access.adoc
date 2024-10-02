@@ -22,7 +22,6 @@ tinymce.init({
   plugins: 'tinycomments',
   toolbar: 'addcomment showcomments',
   readony: true, // set the editor to read-only mode
-  tinycomments_access: '',
 });
 ----
 

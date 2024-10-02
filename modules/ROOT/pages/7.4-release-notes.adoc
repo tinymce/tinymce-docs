@@ -207,6 +207,13 @@ For more information on the `allow_mathml_annotation_encodings` option, see xref
 
 // CCFR here.
 
+=== Mouse hover on partially visible dialog collection elements no longer scrolls
+// #TINY-9915
+
+Previously, an issue caused partially visible collection elements, such as those in the Character Map or Emojis dialog, to unexpectedly scroll into view with abrupt and unintended movement when hovered over, resulting in a disruptive user experience.
+
+{productname} {release-version} addresses this issue by preventing scrolling on hover. This ensures that the dialog remains in place and does not scroll when partially visible elements are hovered over.
+
 === Caret would unexpectedly shift to the non-editable table row above when pressing Enter.
 // #TINY-11077
 

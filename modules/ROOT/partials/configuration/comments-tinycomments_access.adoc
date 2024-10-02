@@ -25,9 +25,9 @@ tinymce.init({
 });
 ----
 
-=== `tinycomments_access` set to undefined or an empty string and `readonly` set to `true`
+=== `tinycomments_access` is not configured and `readonly` set to `true`
 
-When `tinycomments_access` is set to **undefined** or an **empty string**, the editor will remain in read-only mode, and the comments will be in read-only mode. This means that users cannot edit the content or add comments.
+When `tinycomments_access` is not configured, the editor will remain in read-only mode, and the comments will be in read-only mode. This means that users cannot edit the content or add comments.
 
 [cols="1,1,2", options="header"]
 |===

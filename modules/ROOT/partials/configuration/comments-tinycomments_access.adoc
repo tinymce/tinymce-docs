@@ -45,8 +45,18 @@ When `tinycomments_access` is set to `comment` and `readonly` is set to `true`, 
 [cols="1,1,2", options="header"]
 |===
 |Editor Readonly |Tinycomments_access |Result
-|true |comment |comment only mode, readonly editor, can add/delete new comments
-|false |comment |comment only mode, readonly editor, can add/delete new comments
+|true |comment |The editor is read-only, but users can add or delete new comments.
+|false |comment |The editor is read-only, but users can add or delete new comments.
 |===
-
+=== Example:
+[source,javascript]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'tinycomments',
+  toolbar: 'addcomment showcomments',
+  readony: true, // set the editor to read-only mode
+  tinycomments_access: 'comment' 
+});
+----
 liveDemo::comments-ui-mode[]

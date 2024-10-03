@@ -257,6 +257,13 @@ For more information on the `allow_mathml_annotation_encodings` option, see xref
 
 // CCFR here.
 
+=== Placing the cursor after a table, but before a BR element would misplace added newlines before the table instead of after it. 
+// #TINY-11110
+
+Previously, a `+<br>+` element was incorrectly counted as content when the cursor was placed before it, resulting in newlines or elements being inserted at the start of the block rather than after the table.
+
+{productname} {release-version} addresses this issue by treating the `+<br>+` element as the end of the block. As a result, newlines are now correctly added after the table, ensuring proper cursor placement and content insertion.
+
 === The image dialog lost focus after closing an image upload error alert.
 // #TINY-11159
 

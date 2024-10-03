@@ -177,12 +177,6 @@ const tinycomments_fetch = (conversationUids, done, fail) => {
     },
     body: JSON.stringify({ uids: conversationUids }),
   })
-    // .then(response => {
-    //   if (!response.ok) {
-    //     throw new Error('Network response was not ok');
-    //   }
-    //   return response.json();
-    // })
     .then((data) => {
       console.log(`Lookup success ${conversationUids}`, data);
       done(data);

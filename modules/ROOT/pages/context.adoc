@@ -45,14 +45,13 @@ To negate any context, place `!` before the value, using the format: `+<key>:!<v
 
 {productname} provides several built-in contexts:
 
-[cols="1,2,1"]
+[cols="1,2"]
 |===
-|Name |Description |Defined by
+|Name |Description
 
 |`+any+`
 a|
 This context is always enabled, regardless of the editor's state.
-|`xref:apis/tinymce.util.uri.adoc[URI]`
 
 |`+mode:<mode_name>+`
 a|
@@ -60,26 +59,22 @@ This context is used to enable or disable UI components based on the editor's cu
 [role="example"]
 * `+mode:design+`: Enabled only in design mode.
 * `+mode:readonly+`: Enabled only in readonly mode.
-|`xref:apis/tinymce.util.uri.adoc[URI]`
 
 |`+insert:<element_name>+`
 a|
 This context determines if a specific child element can be inserted at the current selection. It uses `+editor.schema.isValidChild+` to check if the specified element and its child are valid.
 [role="example"]
 * `+insert:p+`: Enabled if a paragraph can be inserted at the current selection.
-|`xref:apis/tinymce.util.uri.adoc[URI]`
 
 |`+formatting:<format_name>+`
 a|
 This context checks if a specific format can be applied to the current selection, using `+editor.formatter.canApply+`.
 [role="example"]
 * `+formatting:bold+`: Enabled if bold formatting can be applied to the current selection.
-|`xref:apis/tinymce.util.uri.adoc[URI]`
 
 |`+editable+`
 a|
-This context checks if the current selection is editable using `+editor.selection.isEditable()+`.
-|`xref:apis/tinymce.util.uri.adoc[URI]`
+This context checks if the current selection is editable using `+editor.selection.isEditable+`.
 |===
 
 [[using-context-in-ui-components]]
@@ -103,5 +98,12 @@ setup: (editor) => {
 
 [[state-updates]]
 == State Updates
-//TODO
-UI components (buttons, menus, etc.) update their state (enabled/disabled) in response to specific editor events. Understanding when these updates occur can help optimize the UI and prevent unexpected behavior.
+The following events will trigger a state update for UI components. During these updates, UI components re-evaluate their contexts and update their enabled/disabled state accordingly:
+
+. NodeChange: Fired when the selected node inside the editor content has changed.
+* Affects: All contexts except mode, including formatting, editable, insert, and any custom contexts.
+
+. SwitchMode: Fired when the editor mode is changed.
+
+. init: Fired when the editor is fully initialized.
+

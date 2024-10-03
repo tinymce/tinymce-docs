@@ -19,6 +19,8 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 |fetch |`+(success: (menu) => void) => void+` |Drop-down menu |required |A callback function that should be passed a list of xref:choice-menu-items[choice menu items] for the dropdown menu.
 |onItemAction |`+(api, value) => void+` |Choice menu items |required |Function invoked when a dropdown list option is clicked. The `+value+` is passed from the selected choice menu item.
 |onSetup |`+(api) => (api) => void+` |All |optional |default: `+() => () => {}+` - Function invoked when the button is rendered. For details, see: xref:using-onsetup[Using `+onSetup+`].
+include::partial$misc/admon-requires-7.4v.adoc[]
+|context |string |optional |default: `mode:design` - The context property dynamically enables or disables the button based on the editor's current state. For details, see: xref:context.adoc[Context].
 |===
 
 == API

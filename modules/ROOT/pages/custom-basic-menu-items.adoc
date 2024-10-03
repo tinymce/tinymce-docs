@@ -18,6 +18,7 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 |onSetup |`+(api) => (api) => void+` |optional |default: `+() => () => {}+` - Function invoked when the menu item is rendered, each time its menu is opened. For details, see: xref:using-onsetup[Using `+onSetup+`].
 |onAction |`+(api) => void+` |required |Function invoked when the menu item is clicked.
 |shortcut |string |optional |Text to display in the shortcut label. To register a shortcut, see: xref:shortcuts.adoc[Add custom shortcuts to TinyMCE].
+4+|
 include::partial$misc/admon-requires-7.4v.adoc[]
 |context |string |optional |default: `mode:design` - The context property dynamically enables or disables the menu item based on the editor's current state. For details, see: xref:context.adoc[Context].
 |===

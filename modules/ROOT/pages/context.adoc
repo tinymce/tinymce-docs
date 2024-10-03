@@ -16,8 +16,8 @@ These methods accept two arguments:
 
 * `+identifier+` - a unique name for the context
 * `+predicate+` - a function that determines whether the context condition is met. It accepts a single string parameter and returns a boolean:
-  ** Parameter (string): The value provided in the context syntax (e.g., in 'mode:design', 'design' would be passed to the predicate).
-  ** Return value (boolean): Returns true if the condition is met (the component should be enabled); otherwise, returns false.
+** Parameter (string): The value provided in the context syntax (e.g., in 'mode:design', 'design' would be passed to the predicate).
+** Return value (boolean): Returns true if the condition is met (the component should be enabled); otherwise, returns false.
 
 .Example
 [source,js]
@@ -98,12 +98,12 @@ setup: (editor) => {
 
 [[state-updates]]
 == State Updates
-The following events will trigger a state update for UI components. During these updates, UI components re-evaluate their contexts and update their enabled/disabled state accordingly:
+The following events trigger state updates for UI components:
 
-. NodeChange: Fired when the selected node inside the editor content has changed.
-* Affects: All contexts except mode, including formatting, editable, insert, and any custom contexts.
+[NOTE]
+During these updates, UI components re-evaluate their contexts and adjust their enabled or disabled state as needed:
 
-. SwitchMode: Fired when the editor mode is changed.
-
-. init: Fired when the editor is fully initialized.
-
+. `NodeChange`: Triggered when the selected node within the editor content changes.
+* Affects: All contexts except mode, including formatting, editable, insert, and custom contexts.
+. `SwitchMode`: Triggered when the editor's mode is changed.
+. `init`: Triggered when the editor is fully initialized.

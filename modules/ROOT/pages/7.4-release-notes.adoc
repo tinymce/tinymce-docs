@@ -257,6 +257,13 @@ For more information on the `allow_mathml_annotation_encodings` option, see xref
 
 // CCFR here.
 
+=== The editor resize handle was incorrectly rendered when all components were removed from the status bar.
+// #TINY-11257
+
+Previously in {productname}, the resize handle in the editor's status bar was positioned relative to other elements. Consequently, if these elements were removed, the resize handle would incorrectly appear in the left corner of the editor's status bar.
+
+In {productname} {release-version}, this issue has been resolved by adjusting the CSS. The resize handle is now consistently placed in the right corner of the status bar, regardless of the presence of other elements. This ensures that the resize handle is always positioned correctly where users expect it to be.
+
 === Copying tables to the clipboard did not correctly separate cells and rows for the "text/plain" MIME type.
 // #TINY-10847
 

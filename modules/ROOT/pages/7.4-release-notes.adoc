@@ -165,7 +165,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 Previously, when copying rows from tables, the newline character `+\n+` was not returned correctly, causing cell and row data to be improperly formatted. However, using the "Select All" function before copying preserved the newline characters.
 
-{productname} {release-version} resolves this issue by enhancing the `getTextContent` function in the clipboard handling module. These updates ensure better text extraction from table elements, particularly for complex structures. The updated function now sets a temporary offscreen element to accurately render and retrieve formatted text, resolving problems with detached table elements.
+{productname} {release-version} resolves this issue by enhancing the clipboard handling for text extraction from table elements, particularly for complex structures.
 
 These improvements ensure more consistent and correctly formatted text output when copying table content within the editor.
 

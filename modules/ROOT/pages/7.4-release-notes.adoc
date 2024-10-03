@@ -77,6 +77,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **Enhanced Code Editor** includes the following fixes, additions, and improvements.
 
+==== Format button would lose focus after action while navigating through keyboard.
+// #TINY-11122
+
+Previously, after using the **Format code** button to format code, the focus would shift to the code editor wrapper instead of remaining on the **Format code** button. This behavior was inconsistent for users who prefer to navigate through the keyboard.
+
+{productname} {release-version} implemented a fix that explicitly refocuses the **Format code** button after the formatting action. As a result, when pressing the **Format code** button, the focus now remains on the button as intended.
+
 === Formatting indent size would be different than CodeMirror indent size.
 // #TINY-11150
 
@@ -236,7 +243,6 @@ Previously, an issue where pressing Enter in a table cell caused the selection t
 {productname} {release-version} addresses this issue. Now, this fix ensures that the selection remains stable when adding new lines within editable cells, regardless of the content editable state of adjacent rows.
 
 As a result, users can now reliably edit table contents without experiencing unintended cursor movements.
-
 
 [[security-fixes]]
 == Security fixes

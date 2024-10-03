@@ -138,6 +138,23 @@ With {productname} {release-version}, the HTML formatting has been optimized to 
 
 For information on the Enhanced Code Editor plugin, see: xref:advcode.adoc[Enhanced Code Editor].
 
+=== AI Assistant
+
+The {productname} {release-version} release includes an accompanying release of the **AI Assistant** premium plugin.
+
+**AI Assistant** includes the following fix.
+
+=== Insert lists will no longer unexpectedly generate indented lists.
+// #TINY-10920
+
+The `+insertContent+` action previously did not handle pasting a list onto another list correctly, causing the **AI Assistant** Premium plugin to generate an unexpected indented list when inserting lists into existing ones.
+
+In {productname} {release-version}, this issue is resolved by adding a paste argument to the `+insertContent+` action, ensuring correct handling of list insertion.
+
+As a result, the **AI Assistant** Premium plugin will no longer create indented lists when inserting a list on top of an existing one.
+
+For information on the **AI Assistant** premium plugin, see: xref:ai.adoc[AI Assistant].
+
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement
 

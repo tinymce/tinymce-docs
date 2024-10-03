@@ -257,6 +257,15 @@ For more information on the `allow_mathml_annotation_encodings` option, see xref
 
 // CCFR here.
 
+=== The image dialog lost focus after closing an image upload error alert.
+// #TINY-11159
+
+Previously, when an image upload error alert was closed, the image dialog lost focus, impacting keyboard accessibility.
+
+{productname} {release-version} addresses this issue by making the dropzone component focusable and adding a callback to focus the dropzone button after the error alert is closed.
+
+As a result, keyboard users now experience improved accessibility, with the ability to focus on the dropzone using the dialog API.
+
 === The editor resize handle was incorrectly rendered when all components were removed from the status bar.
 // #TINY-11257
 

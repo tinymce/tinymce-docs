@@ -1,0 +1,26 @@
+[[importword-converter-options]]
+== `importword_converter_options`
+
+**Type:** `String`
+
+The `importword_converter_options` setting allows you to customize the behavior of the {pluginname} plugin when converting Word documents to HTML.
+
+.Example: using `importword_converter_options`
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'importword',
+  toolbar: 'importword',
+  importword_converter_options: {
+    formatting: {
+      resets: 'inline',
+      defaults: 'inline',
+      styles: 'none',
+    }
+  }
+});
+----
+
+[NOTE]
+For more information on the available converter options, refer to the link:https://importdocx.converter.tiny.cloud/v2/convert/docs#section/Import-from-Word/Configuration[Import from Word API documentation].

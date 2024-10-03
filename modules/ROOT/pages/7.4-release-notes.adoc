@@ -221,6 +221,15 @@ For more information on the `allow_mathml_annotation_encodings` option, see xref
 
 // CCFR here.
 
+=== Copying tables to the clipboard did not correctly separate cells and rows for the "text/plain" MIME type.
+// #TINY-10847
+
+Previously, when copying rows from tables, the newline character `+\n+` was not returned correctly, causing cell and row data to be improperly formatted. However, using the "Select All" function before copying preserved the newline characters.
+
+{productname} {release-version} resolves this issue by enhancing the clipboard handling for text extraction from table elements, particularly for complex structures.
+
+These improvements ensure more consistent and correctly formatted text output when copying table content within the editor.
+
 === Sidebar could not be toggled until the skin was loaded.
 // #TINY-11155
 

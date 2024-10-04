@@ -623,23 +623,35 @@ tinymce.ScriptLoader.loadScripts(
   };
   
   const tinycomments_fetch = (conversationUids, done, fail) => {
+    const requests = conversationUids.map((uid) => fetch(`https://api.example/conversations/${uid}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        }})
+        .then((response) => response.json())
+        .then((data) => ({
+          [uid]: {
+            uid: uid,
+            comments: data
+          }
+        }))
+      );
 
-    fetch(`https://api.example/conversations`, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ uids: conversationUids }),
-    })
+    Promise.all(requests)
       .then((data) => {
-        console.log(`Lookup success ${conversationUids}`, data);
-        done(data);
+        console.log('data', data);
+        const conversations = data.reduce((conv, d) => ({
+            ...conv,
+            ...d
+          })
+        , {});
+        console.log(`Fetch success ${conversationUids}`, conversations);
+        done({ conversations });
       })
       .catch((err) => {
-        console.error(`Lookup failure ${conversationUids}`, err);
-        fail(err);
+        console.error(`Fetch failure ${conversationUids}`, err);
+        fail('Fetching conversations failed');
       });
-      console.log('fetching', conversationUids);
   };
 
   tinymce.init({

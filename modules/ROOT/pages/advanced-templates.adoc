@@ -79,6 +79,65 @@ To manage the template list
 ** Move all category items to another category.
 ** Delete template/category.
 
+[[read-only-templates]]
+=== Readonly templates
+
+include::partial$misc/admon-requires-7.4v.adoc[]
+
+To manage read-only templates preventing users from modifying, adding, or deleting templates within those categories.
+
+==== Data Structure
+
+To create a locked (read-only) category, add the `+locked: true+` property to the category object in your templates data:
+
+[source,js]
+----
+// Initialize TinyMCE with locked templates
+tinymce.init({
+  selector: 'textarea',
+  plugins: ['advtemplate'],
+  toolbar: 'addtemplate inserttemplate',
+  setup: function(editor) {
+    // Your setup code here
+  },
+  advtemplate_data: [
+    {
+      title: 'Regular Templates',
+      items: [
+        // ... regular templates
+      ]
+    },
+    // Template data with locked category
+    {
+      title: 'Locked Templates',
+      locked: true,
+      items: [
+        {
+          title: 'How to find model number',
+          content: '<p dir="ltr">Hi {{Customer.FirstName}},</p>\n<p>...</p>'
+        },
+        {
+          title: 'Support escalation',
+          content: '<p dir="ltr">Hi {{Customer.FirstName}},</p>\n<p>...</p>'
+        }
+      ]
+    }
+  ]
+});
+----
+
+==== Behavior
+
+When a category is marked as locked:
+
+. Users **cannot**:
+* add new templates to the category.
+* delete templates from the category.
+* rename templates in the category.
+* move templates into or out of the category.
+
+liveDemo::{plugincode}-readonly-template[]
+
 == Basic setup
 
 To setup the {pluginname} plugin user-interface in the editor:

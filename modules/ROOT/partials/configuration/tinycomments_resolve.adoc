@@ -7,7 +7,7 @@ The `+tinycomments_resolve+` function should asynchronously return a flag indica
 
 The `+tinycomments_resolve+` function is passed a (`+req+`) object as the first parameter, which contains the following key-value pair:
 
-* `+conversationUid+`: The uid of the conversation the reply is targeting.
+* `+conversationUid+`: The uid of the targeting conversation
 
 The `+done+` callback should accept the following object:
 

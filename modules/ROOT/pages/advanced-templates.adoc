@@ -84,7 +84,8 @@ To manage the template list
 
 include::partial$misc/admon-requires-7.4v.adoc[]
 
-To manage read-only templates preventing users from modifying, adding, or deleting templates within those categories.
+This option sets a {pluginname} category to read-only in {productname}, streamlining template management. When set to read-only, users cannot perform actions such as moving, renaming, or adding new items to the category or its templates. A lock image
+/lock.svg[lock.svg] icon visually indicates that the templates are non-editable, and client-side restrictions prevent modification attempts from being submitted to the server.
 
 ==== Data Structure
 

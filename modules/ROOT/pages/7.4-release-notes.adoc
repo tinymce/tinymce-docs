@@ -80,7 +80,7 @@ The {productname} {release-version} includes an accompanying release of the **Sp
 === As you type spellchecking did not update when scrolling with the `autoresize` plugin active.
 // #TINY-10567
 
-An issue was identified that was caused by the plugin listening to the all the expected scroll events. As a result, when users scrolled down, this action was not detected by the plugin, leading to no updates in spellchecking.
+An issue was identified that was caused by the plugin not listening to the all the expected scroll events. As a result, when users scrolled down, this action was not detected by the plugin, leading to no updates in spellchecking.
 
 {productname} {release-version} addresses this issue by changing the event listener to correctly monitor scroll events.
 

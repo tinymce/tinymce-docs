@@ -1,9 +1,8 @@
-== Show the comments sidebar when TinyMCE loads
+== Show the {pluginname} sidebar when TinyMCE loads
 
-The xref:customsidebar.adoc#sidebar_show[`sidebar_show`] option can be used to show the comments sidebar when the editor is loaded.
+The xref:customsidebar.adoc#sidebar_show[`sidebar_show`] option can be used to show the {pluginname} sidebar when the editor is loaded.
 
-For example:
-
+.For example:
 ifeval::["{commentsMode}" == "callback"]
 [source,js]
 ----
@@ -18,6 +17,7 @@ tinymce.init({
   tinycomments_delete_all,
   tinycomments_delete_comment,
   tinycomments_lookup,
+  tinycomments_fetch,
   sidebar_show: 'showcomments'
 });
 ----

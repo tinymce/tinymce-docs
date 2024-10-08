@@ -1,15 +1,14 @@
 [[tinycomments_create]]
 == `+tinycomments_create+`
 
-The Comments plugin uses the `+tinycomments_create+` function to create a comment.
+The {pluginname} plugin uses the `+tinycomments_create+` function to create a comment.
 
 The `+tinycomments_create+` function saves the comment as a new conversation and returns a unique conversation ID via the `+done+` callback. If an unrecoverable error occurs, it should indicate this with the fail callback.
 
 The `+tinycomments_create+` function is given a request (req) object as the first parameter, which has these fields:
 
-`+content+`:: The content of the comment to create.
-
-`+createdAt+`:: The date the comment was created.
+* `+content+`: The content of the comment to create.
+* `+createdAt+`: The date the comment was created.
 
 The `+done+` callback should accept the following object:
 
@@ -24,8 +23,7 @@ The `+done+` callback should accept the following object:
 }
 ----
 
-For example:
-
+.For example:
 [source,js]
 ----
 const create_comment = (ref, done, fail) => {
@@ -64,6 +62,7 @@ tinymce.init({
   tinycomments_delete: delete_comment_thread,
   tinycomments_delete_all: delete_all_comment_threads,
   tinycomments_delete_comment: delete_comment,
-  tinycomments_lookup: lookup_comment
+  tinycomments_lookup: lookup_comment,
+  tinycomments_fetch: fetch_comments // Optional callback
 });
 ----

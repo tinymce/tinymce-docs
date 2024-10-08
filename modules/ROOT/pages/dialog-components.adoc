@@ -226,6 +226,7 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 *When configured, the button will display the icon instead of text.*
 |buttonType |`+'primary'+`, `+'secondary'+`, or `+'toolbar'+` |optional |default: `+'secondary'+` - Whether to style the button as a primary, secondary, or toolbar button.
 |borderless |boolean |optional |default: `+false+` - Whether to style the button without a border and background color.
+4+|
 include::partial$misc/admon-requires-7.4v.adoc[]
 |context |string |optional |default: `mode:design` - The context property dynamically enables or disables the button based on the editor's current state. Only effective when `+enabled+` is true. For details, see: xref:context.adoc[Context].
 |===

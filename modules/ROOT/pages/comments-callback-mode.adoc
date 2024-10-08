@@ -22,7 +22,7 @@ Most functions (create, reply, and edit) require an `+id+` identifying the *curr
 
 During the initial load, the {pluginname} uses `+tinycomments_fetch+` callback to retrieve the existing conversation including any additional comments with their respective authors . If not configured, the {pluginname} will fallback to `+tinycomments_lookup+`. 
 
-When a user adds a comment, the {pluginname} plugin uses the `+tinycomments_lookup+` callback to retrieve the selected conversation. 
+When a user adds a comment or a reply, the {pluginname} plugin uses the `+tinycomments_lookup+` callback to retrieve the selected conversation. 
 
 == Interactive example
 

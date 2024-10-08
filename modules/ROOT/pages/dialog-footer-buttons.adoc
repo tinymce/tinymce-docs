@@ -21,6 +21,9 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 |buttonType |`+'primary'+`, or `+'secondary'+` |optional |default: `+'secondary'+` - Whether to style the button as a primary, or secondary button.
 |enabled |boolean |optional |default: `+true+` - When `+false+`, the button will be disabled when the dialog loads.
 |align |`+'end'+` or `+'start'+` |optional |default: `+'end'+` - When set to `+'end'+` the button will display on the right-hand side of the dialog. When set to `+'start'+` the button will display on the left-hand side.
+4+|
+include::partial$misc/admon-requires-7.4v.adoc[]
+|context |string |optional |default: `mode:design` for all types except `cancel`, which defaults to `any` - The context property dynamically enables or disables the menu item based on the editor's current state. For details, see: xref:context.adoc[Context].
 |===
 
 NOTE: Buttons do not support mixing icons and text at the moment.
@@ -51,7 +54,8 @@ See the xref:dialog-configuration.adoc#options[dialog configuration options] doc
   // icon: 'checkmark', // will replace the text if configured
   enabled: true, // button is active when the dialog opens
   buttonType: 'primary', // style the button as a primary button
-  align: 'start' // align the button to the left of the dialog footer
+  align: 'start', // align the button to the left of the dialog footer
+  context: 'mode:design' // button is active when the editor is in design mode, only effective if enabled is true
 }
 ----
 
@@ -89,6 +93,9 @@ The following options can be specified for a dialog menu button _item_:
 |type |string |required |The type `+togglemenuitem+` should be used.
 |text |string |optional |Text to display if no icon is found.
 |value |string |optional |A value to associate with the menu item.
+4+|
+include::partial$misc/admon-requires-7.4v.adoc[]
+|context |string |optional |default: `mode:design` - The context property dynamically enables or disables the menu item based on the editor's current state. For details, see: xref:context.adoc[Context].
 |===
 
 ==== Example: dialog footer menu button
@@ -108,12 +115,14 @@ buttons: [
       {
         name: 'dialogMenuButtonItem1',
         type: 'togglemenuitem',
-        text: 'Item 1.'
+        text: 'Item 1.',
+        context: 'mode:design'
       },
       {
         name: 'dialogMenuButtonItem2',
         type: 'togglemenuitem',
-        text: 'Item 2.'
+        text: 'Item 2.',
+        context: 'mode:design'
       }
     ]
   }

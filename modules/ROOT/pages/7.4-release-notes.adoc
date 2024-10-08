@@ -112,6 +112,44 @@ The {productname} release introduces readonly categories for improved template m
 
 For information on the **Templates** plugin, see: xref:advanced-templates.adoc#read-only-categories[Read-only Categories].
 
+=== Document Converters (Import from Word, Export to Word, Export to PDF)
+// #TINY-11265
+
+==== Made `importword_service_url`, `exportword_service_url` and `exportpdf_service_url` option more fault tolerant
+
+Previously, If the integrator added a domain without a trailing slash `+/+`, a full URL to `exportword`, or just the domain to `exportpdf` or `importword`, it caused the plugins to not function.
+
+{productname} {release-version} addresses this issue, by normalizing the options to accept a wider variety of input formats. As a result, the plugins now function correctly, regardless of whether a full URL, just the domain, or a domain with a trailing slash is provided.
+
+[NOTE]
+The handler will always return the **"latest"** versioned URL, regardless if configuration is correct or not.
+
+=== Spell Checker
+
+The {productname} {release-version} includes an accompanying release of the **Spell Checker** premium plugin.
+
+**Spell Checker** includes the following fix.
+
+=== As you type spellchecking did not update when scrolling with the `autoresize` plugin active.
+// #TINY-10567
+
+An issue was identified that was caused by the plugin not listening to the all the expected scroll events. As a result, when users scrolled down, this action was not detected by the plugin, leading to no updates in spellchecking.
+
+{productname} {release-version} addresses this issue by changing the event listener to correctly monitor scroll events.
+
+As a result, the plugin now successfully detects when scrolling occurs, ensuring that spellcheck updates are made as intended.
+
+=== Cursor would jump to the previous line after pressing shift + enter if the annotation was applied.
+// #TINY-10567
+
+In the Chrome browser, a rendering glitch caused the cursor to unexpectedly jump to the previous line when applying an annotation. The optimization intended to prevent re-selection after annotations was found to be unreliable and contributed to this issue.
+
+{productname} {release-version} resolves this problem by removing the problematic optimization, which led to this regression.
+
+As a result, users will no longer encounter unexpected selection or cursor behavior after applying annotations in the editor.
+
+For information on the **Spell Checker** premium plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker plugin].
+
 === Import from Word
 
 The {productname} {release-version} release includes an accompanying release of the **Import from Word** premium plugin.
@@ -240,6 +278,18 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== In read-only mode the editor now allows normal cursor movement and block element selection, including video playback.
+// #TINY-11264
+
+In read-only mode, the editor now allows normal cursor movement and block element selection, including video playback. This behavior is now the **default** when the `readonly` option is set to `+true+` or when switching to read-only mode.
+
+Prior to this improvement, the editor's body element was set to `+contentEditable="false"+`, which blocked cursor placement and all user inputs. In the new behavior, the body element is set to `+contentEditable="true"+`, and input blocking is handled by the editor.
+
+For more information, see xref:editor-important-options.adoc#readonly[Read-only option].
+
+[NOTE]
+In this mode, menu buttons, read-only menu items, and read-only buttons remain enabled. To revert to the old behavior, use `+tinymce.activeEditor.ui.setEnabled(false)+`.
+
 === Pasting a table now places the cursor after the table instead of into the last table cell.
 // #TINY-11082
 
@@ -282,6 +332,30 @@ tinymce.init({
 
 For more information on the `allow_mathml_annotation_encodings` option, see xref:content-filtering.adoc#allow-mathml-annotation-encodings[allow_mathml_annotation_encodings].
 
+
+=== New `context` property for all ui components.
+// #TINY-11211
+
+A new `context` property has been introduced for all UI components, allowing buttons and menu items to be dynamically enabled or disabled based on whether their context matches a given predicate. This feature ensures that components reflect the current editing context, improving the user interface's adaptability.
+
+The status of the UI components is updated on `init`, `NodeChange`, and `SwitchMode` events. For the `mode` context, updates occur **only** on `SwitchMode` and `init`.
+
+To register a new context, integrators can now use:
+
+==== Default Contexts:
+
+- `editable`: Checks if the current selection is editable.
+- `mode`: Enables components based on the current mode (e.g., `mode:design`, `mode:!readonly`).
+- `any`: Always enables the UI component.
+- `formatting`: Verifies if a specific format can be applied at the current selection.
+- `insert`: Determines if a specific element can be inserted at the current selection.
+
+[TIP]
+Syntax for context usage is `key:value`, and negation is possible by prefixing the value with `!`. For instance, `mode:!readonly` enables a button unless the editor is in readonly mode.
+
+This enhancement allows for more context-sensitive UI components, improving user interaction by ensuring appropriate options are available based on the editor's state.
+
+For more information about the `context` property, see xref:context.adoc[Context].
 
 [[changes]]
 == Changes

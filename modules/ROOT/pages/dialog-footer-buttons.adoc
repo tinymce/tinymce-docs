@@ -21,6 +21,7 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 |buttonType |`+'primary'+`, or `+'secondary'+` |optional |default: `+'secondary'+` - Whether to style the button as a primary, or secondary button.
 |enabled |boolean |optional |default: `+true+` - When `+false+`, the button will be disabled when the dialog loads.
 |align |`+'end'+` or `+'start'+` |optional |default: `+'end'+` - When set to `+'end'+` the button will display on the right-hand side of the dialog. When set to `+'start'+` the button will display on the left-hand side.
+4+|
 include::partial$misc/admon-requires-7.4v.adoc[]
 |context |string |optional |default: `mode:design` for all types except `cancel`, which defaults to `any` - The context property dynamically enables or disables the menu item based on the editor's current state. For details, see: xref:context.adoc[Context].
 |===

@@ -132,16 +132,6 @@ tinymce.init({
 });
 ----
 
-==== Behavior
-
-When a category is marked as locked:
-
-. Users **cannot**:
-* add new templates to the category.
-* delete templates from the category.
-* rename templates in the category.
-* move templates into or out of the category.
-
 liveDemo::{plugincode}-readonly-template[]
 
 == Basic setup

@@ -406,6 +406,7 @@ An *input* is a composite component that renders a label and a single line text 
 |placeholder |string |optional |String of placeholder text for the input field.
 |enabled |boolean |optional |Allows the field to be disabled. Default is `+true+`.
 |inputMode |string |optional |Allows for the specification of input type for displaying contextual onscreen keyboards on mobile devices.
+4+|
 include::partial$misc/admon-requires-7.4v.adoc[]
 |context |string |optional |default: `mode:design` - The context property dynamically enables or disables the input based on the editor's current state. For details, see: xref:context.adoc[Context].
 |===

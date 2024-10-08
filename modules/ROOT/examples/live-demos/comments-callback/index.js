@@ -46,8 +46,53 @@ tinymce.ScriptLoader.loadScripts(
   };
 
   /* Our server "database" */
-  const getDB = () =>
-    JSON.parse(localStorage.getItem('fakedb') ?? '{}');
+  const initialDB = {
+    "mce-conversation_19679600221621399703915": {
+      uid: "mce-conversation_19679600221621399703915",
+      comments: [
+        {
+          uid: "mce-conversation_19679600221621399703915",
+          author: "Another Tiny User",
+          authorName: "Another Tiny User",
+          content: "Please revise this sentence, exclamation points are unprofessional!",
+          createdAt: "2021-05-19T04:48:23.914Z",
+          modifiedAt: "2021-05-19T04:48:23.914Z",
+        },
+        {
+          uid: "mce-conversation_19679600221621399703917",
+          author: "Another Tiny User",
+          authorName: "Another Tiny User",
+          content: "Replied",
+          createdAt: "2021-05-19T04:48:23.914Z",
+          modifiedAt: "2021-05-19T04:48:23.914Z",
+        },
+        {
+          uid: "mce-conversation_19679600221621399703918",
+          author: "Another Tiny User",
+          authorName: "Another Tiny User",
+          content: "Replied again",
+          createdAt: "2021-05-19T04:48:23.914Z",
+          modifiedAt: "2021-05-19T04:48:23.914Z",
+        },
+      ],
+    },
+    "mce-conversation_420304606321716900864126": {
+      uid: "mce-conversation_420304606321716900864126",
+      comments: [
+        {
+          uid: "mce-conversation_420304606321716900864126",
+          author: "john_smith",
+          authorName: "John Smith",
+          authorAvatar: "https://i.pravatar.cc/150?img=11",
+          content: "I think this is a great idea!",
+          createdAt: "2024-05-28T12:54:24.126Z",
+          modifiedAt: "2024-05-28T12:54:24.126Z",
+        },
+      ],
+    },
+  };
+
+  const getDB = () => JSON.parse(localStorage.getItem('fakedb') ?? JSON.stringify(initialDB));
   const setDB = (data) => {
     localStorage.setItem('fakedb', JSON.stringify(data));
   };

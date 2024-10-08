@@ -1,15 +1,15 @@
 [[readonly]]
-== `+readonly+`
+== `readonly`
 
-Setting the `+readonly+` option to `+true+` will initialize the editor in `+"readonly"+` mode instead of editing (`+"design"+`) mode. Once initialized, the editor can be set to editing (`+"design"+`) mode using the xref:apis/tinymce.editormode.adoc#set[`+tinymce.editor.mode.set+` API].
+Setting the `readonly` option to `true` initializes the editor in **readonly** mode instead of editing (**design**) mode. Once initialized, the editor can be switched to **design** mode using the xref:apis/tinymce.editormode.adoc#set[`tinymce.editor.mode.set` API].
 
-*Type:* `+Boolean+`
+*Type:* `Boolean`
 
-*Default value:* `+false+`
+*Default value:* `false`
 
-*Possible values:* `+true+`, `+false+`
+*Possible values:* `true`, `false`
 
-=== Example: using `+readonly+`
+=== Example: Using `readonly`
 
 [source,js]
 ----
@@ -20,3 +20,61 @@ tinymce.init({
 ----
 
 liveDemo::readonly-demo[]
+
+=== Behavior in `readonly` mode
+
+[cols="1,3,1", options="header"]
+|===
+| **Behavior** | **Details** | **Allowed (True/False)**
+
+| Navigation and Interaction 
+a|
+* Users can place the cursor within the editor
+* Navigation behaves the same as in design mode, including:
+  ** Moving through block elements (table of contents, images, media elements)
+  ** Using arrow keys, Home, End, Page Up, Page Down
+* Media elements can be played
+* Users can select and copy text
+* Users can interact with links
+| True
+| Prevented Actions
+a|
+* All input events (keyboard and IME input)
+* Content modifications:
+  ** Pasting content
+  ** Cutting content
+  ** Deleting content
+  ** Drag and drop operations
+* Formatting changes:
+  ** Keyboard shortcuts for formatting (e.g., Cmd/Ctrl + B)
+  ** Auto-linking when pressing space after URLs
+* Element modifications:
+  ** Toggling checklists (via click or Cmd/Ctrl + Enter)
+  ** Indenting lists
+  ** Adding new table rows via Tab key
+  ** Resizing tables, media elements, or images
+| False
+| Toolbar and UI Behavior
+a|
+* Most toolbar buttons are disabled
+* Fields in dialogs (e.g., link dialog) are disabled
+* When switching from **design** to **readonly** mode:
+  ** All open dialogs and UI components adjust to reflect readonly state
+| False
+
+| Enabled Features
+a| 
+* The following toolbar/menu items remain enabled in **readonly** mode:
+** xref:fullscreen.adoc[Full Screen]
+** xref:help.adoc[Help]
+** xref:preview.adoc[Preview]
+** xref:visualblocks.adoc[Visual Blocks]
+** xref:visualchars.adoc[Visual Characters]
+** xref:wordcount.adoc[Word Count]
+** xref:exportpdf.adoc[Export to PDF]
+** xref:exportword.adoc[Export to Word]
+** xref:content-appearance.adoc#visual[Visual Aid]
+** Copy
+** Select all
+| True
+|===

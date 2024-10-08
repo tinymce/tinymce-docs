@@ -1,0 +1,109 @@
+= Context
+:navtitle: Context
+:description: Adding the context property to UI components for {productname} {productmajorversion}
+:keywords: context, context property, context property for UI components, context property for buttons, context property for menu items, context property for UI components in {productname}
+
+The context property for UI components in {productname} enables dynamic activation or deactivation of buttons and menu items based on predefined or custom conditions.
+
+[[registering-a-context]]
+== Registering a Context
+
+Methods for adding custom contexts are available in the UI Registry section of the editor API `+editor.ui.registry+`.
+
+* `editor.ui.registry.addContext(identifier, predicate: (value: string) => boolean)`
+
+These methods accept two arguments:
+
+* `+identifier+` - a unique name for the context
+* `+predicate+` - a function that determines whether the context condition is met. It accepts a single string parameter and returns a boolean:
+** Parameter (string): The value provided in the context syntax (e.g., in 'mode:design', 'design' would be passed to the predicate).
+** Return value (boolean): Returns true if the condition is met (the component should be enabled); otherwise, returns false.
+
+.Example
+[source,js]
+----
+setup: (editor) => {
+  editor.ui.registry.addContext('mode', (value: string) => {
+    return value === editor.mode.get();
+  });
+}
+----
+
+[[context-syntax]]
+== Context Syntax
+
+Contexts are specified using the syntax: `+<key>:<value>+`.
+
+* `+key+` - the type of context, used to look up registered contexts.
+* `+value+` - the condition passed to the predicate function for evaluation.
+
+[NOTE]
+To negate any context, place `!` before the value, using the format: `+<key>:!<value>+`.
+
+[[built-in-contexts]]
+== Built-in Contexts
+
+{productname} provides several built-in contexts:
+
+[cols="1,2"]
+|===
+|Name |Description
+
+|`+any+`
+a|
+This context is always enabled, regardless of the editor's state.
+
+|`+mode:<mode_name>+`
+a|
+This context is used to enable or disable UI components based on the editor's current mode.
+[role="example"]
+* `+mode:design+`: Enabled only in design mode.
+* `+mode:readonly+`: Enabled only in readonly mode.
+
+|`+insert:<element_name>+`
+a|
+This context determines if a specific child element can be inserted at the current selection. It uses `+editor.schema.isValidChild+` to check if the specified element and its child are valid.
+[role="example"]
+* `+insert:p+`: Enabled if a paragraph can be inserted at the current selection.
+
+|`+formatting:<format_name>+`
+a|
+This context checks if a specific format can be applied to the current selection, using `+editor.formatter.canApply+`.
+[role="example"]
+* `+formatting:bold+`: Enabled if bold formatting can be applied to the current selection.
+
+|`+editable+`
+a|
+This context checks if the current selection is editable using `+editor.selection.isEditable+`.
+|===
+
+[[using-context-in-ui-components]]
+== Using Context in UI Components
+
+To utilize the context in a UI component, apply the `+context+` property.
+
+.For example:
+[source,js]
+----
+setup: (editor) => {
+  editor.ui.registry.addButton('customToolbarButton', {
+    text: 'button',
+    onAction: () => {
+      console.log('clicked');
+    },
+    context: 'any'
+  });
+}
+----
+
+[[state-updates]]
+== State Updates
+The following events trigger state updates for UI components:
+
+[NOTE]
+During these updates, UI components re-evaluate their contexts and adjust their enabled or disabled state as needed:
+
+. `NodeChange`: Triggered when the selected node within the editor content changes.
+* Affects: All contexts except mode, including formatting, editable, insert, and custom contexts.
+. `SwitchMode`: Triggered when the editor's mode is changed.
+. `init`: Triggered when the editor is fully initialized.

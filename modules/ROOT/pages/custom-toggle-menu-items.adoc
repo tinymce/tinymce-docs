@@ -18,6 +18,9 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 |enabled |boolean |optional |default: `true` - Represents the menu item's state. When `false`, the menu item is unclickable. Toggled by the menu item's API.
 |onSetup |`+(api) => (api) => void+` |optional |default: `+() => () => {}+` - Function invoked when the menu item is rendered, each time its menu is opened. For details, see: xref:using-onsetup[Using `+onSetup+`].
 |onAction |`+(api) => void+` |required |Function invoked when the menu item is clicked.
+4+|
+include::partial$misc/admon-requires-7.4v.adoc[]
+|context |string |optional |default: `mode:design` - The context property dynamically enables or disables the menu item based on the editor's current state. For details, see: xref:context.adoc[Context].
 |===
 
 == API

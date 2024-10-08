@@ -237,6 +237,18 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== In read-only mode the editor now allows normal cursor movement and block element selection, including video playback.
+// #TINY-11264
+
+In read-only mode, the editor now allows normal cursor movement and block element selection, including video playback. This behavior is now the **default** when the `readonly` option is set to `+true+` or when switching to read-only mode.
+
+Prior to this improvement, the editor's body element was set to `+contentEditable="false"+`, which blocked cursor placement and all user inputs. In the new behavior, the body element is set to `+contentEditable="true"+`, and input blocking is handled by the editor.
+
+For more information, see xref:editor-important-options.adoc#readonly[Read-only option].
+
+[NOTE]
+In this mode, menu buttons, read-only menu items, and read-only buttons remain enabled. To revert to the old behavior, use `+tinymce.activeEditor.ui.setEnabled(false)+`.
+
 === Pasting a table now places the cursor after the table instead of into the last table cell.
 // #TINY-11082
 
@@ -279,6 +291,30 @@ tinymce.init({
 
 For more information on the `allow_mathml_annotation_encodings` option, see xref:content-filtering.adoc#allow-mathml-annotation-encodings[allow_mathml_annotation_encodings].
 
+
+=== New `context` property for all ui components.
+// #TINY-11211
+
+A new `context` property has been introduced for all UI components, allowing buttons and menu items to be dynamically enabled or disabled based on whether their context matches a given predicate. This feature ensures that components reflect the current editing context, improving the user interface's adaptability.
+
+The status of the UI components is updated on `init`, `NodeChange`, and `SwitchMode` events. For the `mode` context, updates occur **only** on `SwitchMode` and `init`.
+
+To register a new context, integrators can now use:
+
+==== Default Contexts:
+
+- `editable`: Checks if the current selection is editable.
+- `mode`: Enables components based on the current mode (e.g., `mode:design`, `mode:!readonly`).
+- `any`: Always enables the UI component.
+- `formatting`: Verifies if a specific format can be applied at the current selection.
+- `insert`: Determines if a specific element can be inserted at the current selection.
+
+[TIP]
+Syntax for context usage is `key:value`, and negation is possible by prefixing the value with `!`. For instance, `mode:!readonly` enables a button unless the editor is in readonly mode.
+
+This enhancement allows for more context-sensitive UI components, improving user interaction by ensuring appropriate options are available based on the editor's state.
+
+For more information about the `context` property, see xref:context.adoc[Context].
 
 [[changes]]
 == Changes

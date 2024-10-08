@@ -201,15 +201,14 @@ const create = (data = []) => {
   }
 
   const load = (items, id) => {
-    for (const item of items) {
+    items.forEach((item) => {
       if (item.items) {
         const category = createCategory(item.title, item.locked);
         load(item.items, category.id );
       } else {
         createTemplate(item.title, item.content, id);
       }
-    }
-  };
+    });
 
   load(data);
 

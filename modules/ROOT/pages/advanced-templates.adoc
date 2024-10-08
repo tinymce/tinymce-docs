@@ -91,6 +91,7 @@ This option sets a {pluginname} category to read-only in {productname}, streamli
 
 To create a locked (read-only) category, add the `+locked: true+` property to the category object in your templates data:
 
+.Example of a locked category
 [source,js]
 ----
 // Initialize TinyMCE with locked templates

@@ -79,15 +79,19 @@ To manage the template list
 ** Move all category items to another category.
 ** Delete template/category.
 
-[[read-only-templates]]
-=== Readonly templates
+[[read-only-categories]]
+=== Readonly categories
 
 include::partial$misc/admon-requires-7.4v.adoc[]
 
-This option sets a {pluginname} category to read-only in {productname}, streamlining template management. When set to read-only, users cannot perform actions such as moving, renaming, or adding new items to the category or its templates. A lock image
-/lock.svg[lock.svg] icon visually indicates that the templates are non-editable, and client-side restrictions prevent modification attempts from being submitted to the server.
+{pluginname} categories can be set to read-only in {productname}, preventing users from modifying the category or its templates. When a category is set to read-only, users cannot:
 
-==== Data Structure
+* add new templates to the category
+* delete the category or its templates
+* rename the category or its templates
+* move templates into or out of the category
+
+A lock image:icons/lock.svg[lock.svg] icon visually indicates that a category is read-only, preventing users from modifying the category or its templates through the user interface.
 
 To create a locked (read-only) category, add the `+locked: true+` property to the category object in your templates data:
 

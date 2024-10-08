@@ -98,38 +98,20 @@ To create a locked (read-only) category, add the `+locked: true+` property to th
 .Example of a locked category
 [source,js]
 ----
-// Initialize TinyMCE with locked templates
-tinymce.init({
-  selector: 'textarea',
-  plugins: ['advtemplate'],
-  toolbar: 'addtemplate inserttemplate',
-  setup: (editor) => {
-    // Your setup code here
-  },
-  advtemplate_data: [
+{
+  title: 'Locked Templates',
+  locked: true, // Locks the category as readonly
+  items: [
     {
-      title: 'Regular Templates',
-      items: [
-        // ... regular templates
-      ]
+      title: 'How to find model number',
+      content: '<p dir="ltr">Hi {{Customer.FirstName}},</p>\n<p>...</p>'
     },
-    // Template data with locked category
     {
-      title: 'Locked Templates',
-      locked: true,
-      items: [
-        {
-          title: 'How to find model number',
-          content: '<p dir="ltr">Hi {{Customer.FirstName}},</p>\n<p>...</p>'
-        },
-        {
-          title: 'Support escalation',
-          content: '<p dir="ltr">Hi {{Customer.FirstName}},</p>\n<p>...</p>'
-        }
-      ]
+      title: 'Support escalation',
+      content: '<p dir="ltr">Hi {{Customer.FirstName}},</p>\n<p>...</p>'
     }
   ]
-});
+}
 ----
 
 liveDemo::{plugincode}-readonly-template[]

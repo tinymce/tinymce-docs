@@ -20,7 +20,7 @@ Most functions (create, reply, and edit) require an `+id+` identifying the *curr
 [NOTE]
 **Current author**: The {pluginname} plugin does not know the name of the current user. Determining the current user and storing the comment related to that user is required to be configured by the integrator.
 
-During the initial load, the {pluginname} uses `+tinycomments_fetch+` callback to retrieve the existing conversation including any additional comments with their respective authors . If not configured, the {pluginname} will fallback to `+tinycomments_lookup+`. 
+During the initial editor load, the {pluginname} uses `+tinycomments_fetch+` callback to retrieve the existing conversations in the document. If not configured, the {pluginname} will fallback to `+tinycomments_lookup+`. 
 
 When a user adds a comment or a reply, the {pluginname} plugin uses the `+tinycomments_lookup+` callback to retrieve the selected conversation. 
 

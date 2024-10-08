@@ -46,18 +46,21 @@ image:comment-comment-created.png[Comment Created, width=500, height=auto]
 == Replying to comments
 
 . Select or focus the desired conversation from either the editor body or {pluginname} sidebar.
-.. From the selected comment card Click on the *Add comment* button.
+. From the selected comment card Click on the *Add comment* button.
 +
-image:comment-reply-add-comment.png[Reply Add Comment, width=500, height=auto]
+image:comment-reply-add-comment-focus.png[Reply Add Comment Focus, width=500, height=auto]
 +
 . The `+<textarea>+` within the comments box will display the placeholder text "_Add comment…_" and the selected field will have a visible blue `focus` highlight.
 +
 image:comment-reply-add-comment-textarea.png[Reply Add Comment Textarea, width=500, height=auto]
 +
 . Type a comment in the comment box, and the "_Add comment…_" placeholder text will disappear, replaced by the user's comment.
++
+image:comment-reply-add-comment-pre-submit.png[Reply Add Comment Pre Submit, width=500, height=auto]
++
 . Click *Save* or press *Enter* to store the comment.
 +
-image:comment-reply-to-comment-done.png[Reply Add Comment Done, width=500, height=auto]
+image:comment-reply-to-comment-submitted.png[Reply Add Comment Submitted, width=500, height=auto]
 +
 . Or press *Cancel* to discard the comment before it is saved.
 

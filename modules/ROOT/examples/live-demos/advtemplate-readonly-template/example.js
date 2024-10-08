@@ -12,13 +12,11 @@ const headers = {
     }
   }
   
-  const advtemplate_list = () => {
-    return fetch('/categories', {
-        method: 'GET',
-        headers,
-      })
-      .then(handleResponse('Failed to get template list'))
-  }
+  const advtemplate_list = () => fetch('/categories', {
+      method: 'GET',
+      headers,
+    })
+    .then(handleResponse('Failed to get template list'))
   
   const advtemplate_get_template = (id) => {
     return fetch('/templates/' + id, {

@@ -225,4 +225,5 @@ tinymce.init({
   tinycomments_delete_comment,
   tinycomments_lookup,
   tinycomments_fetch,
+  sidebar_show: 'showcomments',
 });

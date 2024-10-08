@@ -93,6 +93,7 @@ The following options can be specified for a dialog menu button _item_:
 |type |string |required |The type `+togglemenuitem+` should be used.
 |text |string |optional |Text to display if no icon is found.
 |value |string |optional |A value to associate with the menu item.
+4+|
 include::partial$misc/admon-requires-7.4v.adoc[]
 |context |string |optional |default: `mode:design` - The context property dynamically enables or disables the menu item based on the editor's current state. For details, see: xref:context.adoc[Context].
 |===

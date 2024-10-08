@@ -1,7 +1,7 @@
 [[tinycomments_lookup]]
 == `+tinycomments_lookup+`
 
-The Comments plugin uses the `+tinycomments_lookup+` function to retrieve an existing conversation using a conversation's unique ID.
+The {pluginname} plugin uses the `+tinycomments_lookup+` function to retrieve one existing conversation using a conversation's unique ID.
 
 The *Display names* configuration must be considered for the `+tinycomments_lookup+` function:
 
@@ -54,8 +54,7 @@ The author avatar feature is only available in {productname} 6.1 or higher and i
 * can be any filetype able to be wrapped in an `<img>` element.
 ====
 
-For example:
-
+.For example:
 [source,js]
 ----
 const lookup_comment = ({ conversationUid }, done, fail) => {
@@ -110,6 +109,7 @@ tinymce.init({
   tinycomments_delete: delete_comment_thread,
   tinycomments_delete_all: delete_all_comment_threads,
   tinycomments_delete_comment: delete_comment,
-  tinycomments_lookup: lookup_comment // Add the callback to TinyMCE
+  tinycomments_lookup: lookup_comment, // Add the callback to TinyMCE
+  tinycomments_fetch: fetch_comments // Optional callback
 });
 ----

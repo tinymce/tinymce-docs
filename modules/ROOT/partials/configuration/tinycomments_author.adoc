@@ -14,6 +14,7 @@ This option sets the author id to be used when creating or replying to comments.
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'tinycomments',
+  toolbar: 'addcomment showcomments',
   tinycomments_mode: 'embedded',
   tinycomments_author: 'embedded_journalist',
 });

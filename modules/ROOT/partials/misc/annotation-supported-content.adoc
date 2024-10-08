@@ -1,13 +1,16 @@
 [[supported-content]]
-= Supported content
+= Supported Content
 
 * Text
 * Blocks
-+
-include::partial$misc/admon-requires-6.1v.adoc[]
-+
-** Tables of contents created using the xref:tableofcontents.adoc[Table of Contents] plugin.
-** Images and images with captions created using the xref:image.adoc[Image] plugin.
-** Code samples created using the xref:codesample.adoc[Code Sample] plugin.
-** Media created using the xref:media.adoc[Media] plugin and xref:introduction-to-mediaembed.adoc[Enhanced Media Embed] plugin.
-** Embedded pages created using the xref:pageembed.adoc[Page Embed] plugin.
+
+[NOTE]
+====
+Comments supports the following features in {productname} 6.1 and later:
+
+* Tables of contents created with the xref:tableofcontents.adoc[Table of Contents] plugin.
+* Images and images with captions created with the xref:image.adoc[Image] plugin.
+* Code samples created with the xref:codesample.adoc[Code Sample] plugin.
+* Media created with the xref:media.adoc[Media] plugin and the xref:introduction-to-mediaembed.adoc[Enhanced Media Embed] plugin.
+* Embedded pages created with the xref:pageembed.adoc[Page Embed] plugin.
+====

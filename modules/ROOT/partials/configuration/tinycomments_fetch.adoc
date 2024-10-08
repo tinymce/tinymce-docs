@@ -1,0 +1,85 @@
+[[tinycomments_fetch]]
+== `+tinycomments_fetch+`
+
+The {pluginname} plugin uses the `+tinycomments_fetch+` callback function retrieves multiple conversations based on their unique identifiers.
+
+The conventional conversation object structure that should be returned via the `+done+` callback is as follows:
+
+The `+tinycomments_fetch+` function is passed a (`+req+`) object as the first parameter, which contains the following key-value pair:
+
+* `+conversationUids+`: An array of strings representing the unique identifiers of the conversations to fetch.
+
+The `+done+` callback should accept the following object:
+
+[source,js]
+----
+{
+  conversations: {
+    [conversationUid: string]: {
+      uid: string,
+      comments: [
+        {
+          uid: string,
+          author: string,
+          authorName?: string,
+          authorAvatar?: string,
+          content: string,
+          createdAt: string, // ISO 8601 date string
+          modifiedAt: string // ISO 8601 date string
+        },
+        // ... more comments
+      ]
+    },
+    // ... more conversations
+  }
+}
+----
+
+.For example:
+[source,js]
+----
+const tinycomments_fetch = (conversationUids, done, fail) => {
+  const requests = conversationUids.map((uid) => fetch(`https://api.example/conversations/${uid}`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+      }})
+      .then((response) => response.json())
+      .then((data) => ({
+        [uid]: {
+          uid: uid,
+          comments: data
+        }
+      }))
+    );
+
+  Promise.all(requests)
+    .then((data) => {
+      console.log('data', data);
+      const conversations = data.reduce((conv, d) => ({
+          ...conv,
+          ...d
+        })
+      , {});
+      console.log(`Fetch success ${conversationUids}`, conversations);
+      done({ conversations });
+    })
+    .catch((err) => {
+      console.error(`Fetch failure ${conversationUids}`, err);
+      fail('Fetching conversations failed');
+    });
+
+tinymce.init({
+  selector: '#editor',
+  plugins: 'tinycomments',
+  tinycomments_mode: 'callback',
+  tinycomments_create: create_comment,
+  tinycomments_reply: reply_comment,
+  tinycomments_edit_comment: edit_comment,
+  tinycomments_delete: delete_comment_thread,
+  tinycomments_delete_all: delete_all_comment_threads,
+  tinycomments_delete_comment: delete_comment,
+  tinycomments_lookup: lookup_comment,
+  tinycomments_fetch: fetch_comments // Add the callback to TinyMCE
+});
+----

@@ -1,17 +1,15 @@
 [[tinycomments_reply]]
 == `+tinycomments_reply+`
 
-The Comments plugin uses the `+tinycomments_reply+` function to reply to a comment.
+The {pluginname} plugin uses the `+tinycomments_reply+` function to reply to a comment.
 
 The `+tinycomments_reply+` function saves the comment as a reply to an existing conversation and returns via the `+done+` callback once successful. Unrecoverable errors are communicated to {productname} by calling the `+fail+` callback instead.
 
 The `+tinycomments_reply+` function is given a request (req) object as the first parameter, which has these fields:
 
-`+conversationUid+`:: The uid of the conversation the reply is targeting.
-
-`+content+`:: The content of the comment to create.
-
-`+createdAt+`:: The date the comment was created.
+* `+conversationUid+`: The uid of the conversation the reply is targeting.
+* `+content+`: The content of the comment to create.
+* `+createdAt+`: The date the comment was created (ISO 8601 date string) format.
 
 The `+done+` callback should accept the following object:
 
@@ -22,8 +20,7 @@ The `+done+` callback should accept the following object:
 }
 ----
 
-For example:
-
+.For example:
 [source,js]
 ----
 const reply_comment = (ref, done, fail) => {
@@ -62,6 +59,7 @@ tinymce.init({
   tinycomments_delete: delete_comment_thread,
   tinycomments_delete_all: delete_all_comment_threads,
   tinycomments_delete_comment: delete_comment,
-  tinycomments_lookup: lookup_comment
+  tinycomments_lookup: lookup_comment,
+  tinycomments_fetch: fetch_comments // Optional callback
 });
 ----

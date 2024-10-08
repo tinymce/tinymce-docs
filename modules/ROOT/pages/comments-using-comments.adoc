@@ -7,7 +7,16 @@
 
 == Overview
 
-This guide provides comprehensive instructions for managing comments, including how to xref:add-a-comment[add comments] to selected content, xref:edit-a-comment[edit existing comments], and xref:delete-a-comment[delete individual comments] or xref:delete-a-comment-thread-conversation[entire conversation threads]. It explains the process of xref:resolve-a-comment-thread-conversation[resolving comment threads] and xref:show-or-view-a-comment[viewing comments] using the sidebar. The document also covers features like xref:delete-all-comment-threads[deleting all comment threads] in a document.
+This guide provides visual instructions for using the comments plugin, including how to:
+
+* xref:add-a-comment[add new comments] to selected content
+* xref:replying-to-comments[replying to comments]
+* xref:edit-a-comment[edit existing comments]
+* xref:delete-a-comment[delete individual comments]
+* xref:delete-a-comment-thread-conversation[delete entire conversations]
+* xref:resolve-a-comment-thread-conversation[resolving conversations]
+* xref:show-or-view-a-comment[viewing comments] using the sidebar
+* xref:delete-all-comment-threads[deleting all conversations] in a document
 
 [TIP]
 The editor must contain content before a comment can be added.
@@ -32,6 +41,25 @@ image:comment-comment-created.png[Comment Created, width=500, height=auto]
 . Or press *Cancel* to discard the comment before it is saved.
 
 *Result*: The selected content will now display a blue `focus` border with an orange `backcolor` highlight. The comment will be displayed in the {pluginname} sidebar.
+
+[[replying-to-comments]]
+== Replying to comments
+
+. Select or focus the desired conversation from either the editor body or {pluginname} sidebar.
+.. From the selected comment card Click on the *Add comment*.
++
+image:comment-reply-add-comment.png[Reply Add Comment, width=500, height=auto]
++
+. The `+<textarea>+` within the comments box will display the placeholder text "_Add comment…_" and the selected field will have a visible blue `focus` highlight.
++
+image:comment-reply-add-comment-textarea.png[Reply Add Comment Textarea, width=500, height=auto]
++
+. Type a comment in the comment box, and the "_Add comment…_" placeholder text will disappear, replaced by the user's comment.
+. Click *Save* or press *Enter* to store the comment.
++
+image:comment-reply-to-comment-done.png[Reply Add Comment Done, width=500, height=auto]
++
+. Or press *Cancel* to discard the comment before it is saved.
 
 [[edit-a-comment]]
 == Edit a comment

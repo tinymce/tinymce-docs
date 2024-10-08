@@ -1,34 +1,68 @@
-= Using TinyMCE Comments
+= Using {productname} {pluginname}
 :navtitle: Using Comments
-:description: How to add, edit, resolve, and remove comments in TinyMCE
+:description: How to add, edit, resolve, and remove comments in {productname}
 :keywords: comments, commenting, tinycomments
 :pluginname: Comments
 :plugincode: comments
 
-I'm trying to:
+== Overview
 
-* xref:add-a-comment[Add a comment].
-* xref:edit-a-comment[Edit a comment].
-* xref:delete-a-comment[Delete a comment].
-* xref:delete-a-comment-thread-conversation[Delete a comment thread (conversation)].
-* xref:resolve-a-comment-thread-conversation[Resolve a comment thread (conversation)].
-* xref:show-or-view-a-comment[Show or view a comment].
-* xref:delete-all-comment-threads[Delete all comment threads].
+This guide provides visual instructions for using the comments plugin, including how to:
+
+* xref:add-a-comment[add new comments] to selected content
+* xref:replying-to-comments[replying to comments]
+* xref:edit-a-comment[edit existing comments]
+* xref:delete-a-comment[delete individual comments]
+* xref:delete-a-comment-thread-conversation[delete entire conversations]
+* xref:resolve-a-comment-thread-conversation[resolving conversations]
+* xref:show-or-view-a-comment[viewing comments] using the sidebar
+* xref:delete-all-comment-threads[deleting all conversations] in a document
+
+[TIP]
+The editor must contain content before a comment can be added.
 
 [[add-a-comment]]
 == Add a comment
 
 . Select the content from the desired location in the editor body.
-. From the navigation menu, choose *Insert*-> *Add Comment* or click on the *Add comment* image:icons/comment-add.svg[Add comment] toolbar button to add the comment.
-. The Comment box appears in the sidebar of the editor instance.
-. Type a comment in the comment box, the "_Add comment…_" placeholder text will disappear.
-. Press *Clear* to discard or *Comment* to store the input comment.
+.. From the menubar, toggle *Insert* -> *Add comment*, or
+.. click on the *Add comment* image:icons/comment-add.svg[Add comment] toolbar button, or
+.. press `Ctrl+Alt+M` (Windows/Linux) or `Cmd+Option+M` `+⌥ + ⌘ + M+` (Mac) to add a comment.
+. The {pluginname} sidebar will appear on the right side of the editor instance.
+. The `+<textarea>+` within the comments box will display the placeholder text "_Add comment…_" and the selected field will have a visible blue `focus` highlight.
++
+image:comment-add-comment.png[Add Comment, width=500, height=auto]
++
+. Type a comment in the comment box, and the "_Add comment…_" placeholder text will disappear, replaced by the user's comment.
+. Click *Save* or press *Enter* to store the comment.
++
+image:comment-comment-created.png[Comment Created, width=500, height=auto]
++
+. Or press *Cancel* to discard the comment before it is saved.
 
-*Result*: The selected content will be highlighted as per the configured options. The following screen with the option for editing, deleting, and replying to the comment, will appear.
+*Result*: The selected content will now display a blue `focus` border with an orange `backcolor` highlight. The comment will be displayed in the {pluginname} sidebar.
 
-image:comments-edit.png[Delete Conversation]
+[[replying-to-comments]]
+== Replying to comments
 
-Note: The above procedure can be followed for adding multiple comments to the document.
+. Select or focus the desired conversation from either the editor body or {pluginname} sidebar.
+. From the selected comment card Click on the *Add comment* button.
++
+image:comment-reply-add-comment-focus.png[Reply Add Comment Focus, width=500, height=auto]
++
+. The `+<textarea>+` within the comments box will display the placeholder text "_Add comment…_" and the selected field will have a visible blue `focus` highlight.
++
+image:comment-reply-add-comment-textarea.png[Reply Add Comment Textarea, width=500, height=auto]
++
+. Type a comment in the comment box, and the "_Add comment…_" placeholder text will disappear, replaced by the user's comment.
++
+image:comment-reply-add-comment-pre-submit.png[Reply Add Comment Pre Submit, width=500, height=auto]
++
+. Click *Save* or press *Enter* to store the comment.
++
+image:comment-reply-to-comment-submitted.png[Reply Add Comment Submitted, width=500, height=auto]
++
+. Or press *Cancel* to discard the comment before it is saved.
 
 [[edit-a-comment]]
 == Edit a comment
@@ -36,21 +70,39 @@ Note: The above procedure can be followed for adding multiple comments to the do
 Follow this procedure to edit a comment.
 
 . Click on the ellipsis image:icons/image-options.svg[(ellipsis - 3 horizontal dots)] icon above the comments box to expand the menu.
++
+image:comment-edit-existing-comment-ellipsis.png[Edit Existing Comment Ellipsis, width=500,height=auto]
++
 . Select *Edit* from the menu items.
-. The comment field becomes editable. Make the required changes.
-. Click *Cancel* to discard or *Save* to store the changes.
++
+image:comment-edit-comment.png[Edit Comment, width=500, height=auto]
++
+. The comment field now displays a blue `focus` border and becomes editable.
+. Make the required changes to the comment.
+. Click *Save* to store the changes.
++
+image:comment-edited-comment.png[Comment Edited Comment, width=500, height=auto]
++
+. Or press *Cancel* to discard the changes before saving.
 
 [[delete-a-comment]]
 == Delete a comment
 
-Follow this procedure to delete a comment. This option is not available for the first comment in a conversation.
+Follow this procedure to delete a comment.
+
+[NOTE]
+This option is not available for the first comment in a conversation.
 
 . Click on the ellipsis image:icons/image-options.svg[(ellipsis - 3 horizontal dots)] icon above the comments box to expand the menu.
-. Select *Delete* from the menu items.
-. The following options appear in the comments sidebar:
 +
-image:comments-delete-comment.png[delete comment]
-. Click *Cancel* to cancel the action or *Delete* to remove the comment from the conversation.
+image:comment-delete-comment.png[Delete Comment, width=500, height=auto]
+. Select *Delete* from the menu items.
+. The following options will appear in the comments sidebar:
+. After selecting the *Delete* option, the following decision dialog box will appear with two options:
+.. *Cancel*: cancel the action.
+.. *Delete*: delete the comment from the current active focused conversation.
++
+image:comment-delete-comment-dialog.png[Delete Comment Dialog, width=500, height=auto]
 
 [[delete-a-comment-thread-conversation]]
 == Delete a comment thread (conversation)
@@ -59,28 +111,31 @@ This option is only available for the first comment in a conversation. Once the 
 
 . Click on the ellipsis image:icons/image-options.svg[(ellipsis - 3 horizontal dots)] icon above the comments box to expand the menu.
 . Select *Delete conversation* from the menu items.
-. The following decision dialog box will appear:
 +
-image:comments-delete-conversation.png[delete conversation]
-. Click *Cancel* to cancel the action or *Delete* to remove the conversation.
+image:comment-delete-conversation.png[Delete Conversation, width=500, height=auto]
++
+. After selecting the *Delete conversation* option, the following decision dialog box will appear:
+. *Cancel*: cancel the action.
+. *Delete*: remove the conversation.
++
+image:comment-delete-conversation-dialog.png[Delete Conversation Dialog, width=500, height=auto]
 
-*Result*: The conversation and all its subsequent comments will be deleted.
+*Result*: The conversation and all its subsequent comments will be deleted from the document.
 
 [[resolve-a-comment-thread-conversation]]
 == Resolve a comment thread (conversation)
 
-NOTE: This feature requires the xref:comments-callback-mode.adoc#tinycomments_resolve[`+tinycomments_resolve+`] or xref:comments-embedded-mode.adoc#tinycomments_can_resolve[`+tinycomments_can_resolve+`] setting to be configured.
+[NOTE]
+This feature requires the xref:comments-callback-mode.adoc#tinycomments_resolve[`+tinycomments_resolve+`] or xref:comments-embedded-mode.adoc#tinycomments_can_resolve[`+tinycomments_can_resolve+`] setting to be configured.
 
 This option is only available for the first comment in a conversation. Once a comment is saved, follow this procedure to resolve a conversation.
 
 . Click on the ellipsis image:icons/image-options.svg[(ellipsis - 3 horizontal dots)] icon above the comments box to expand the menu.
 . Select *Resolve conversation* from the menu items.
-. The following decision dialog box will appear:
 +
-image:comments-resolve-conversation.png[resolve conversation]
-. Click *Cancel* to cancel the action or *Resolve* to resolve the conversation.
-
-*Result*: The conversation will be resolved.
+image:comment-resolve-conversation.png[Resolve Conversation, width=500, height=auto]
++
+*Result*: The conversation will be resolved and removed from the stored conversations.
 
 [[show-or-view-a-comment]]
 == Show or view a comment
@@ -88,7 +143,8 @@ image:comments-resolve-conversation.png[resolve conversation]
 Follow this procedure to display the comments sidebar:
 
 . Place the cursor on the desired content in the editor body:
-. From the navigation menu, choose *View* -> *Show Comment* or click on the **Show Comments** image:comments-toolbar-button.png[Comments] toggle toolbar button to display the comment.
+. From the navigation menu, choose *View* -> *Show comments*, or
+. Click on the **Show comments** image:comments-toolbar-button.png[Comments] toggle toolbar button.
 
 *Result*: The comments sidebar will appear and display the corresponding conversation for the highlighted content.
 
@@ -97,10 +153,12 @@ Follow this procedure to display the comments sidebar:
 
 Follow this procedure to delete all conversations in the document:
 
-. From the navigation menu, choose *File* -> *Delete all conversations* option to delete all the comments in a document.
+. From the navigation menu, choose *File* -> *Delete all conversations* to delete all the comments in a document.
++
+image:comment-delete-all-conversations-file-menu.png[Delete All Conversations File Menu, width=500, height=auto]
++
 . The following decision dialog box will appear:
 +
-image:comments-delete-conversations.png[Delete all conversations]
-. Click *Ok* to remove the all the comments or *Cancel* to dismiss the action.
-
-*Result*: All the comments for the selected document will be deleted.
+image:comment-delete-all-conversations.png[Delete All Conversations, width=500, height=auto]
++
+. Click *Yes* to remove all the comments in the selected document, or *No* to dismiss this action.

@@ -71,6 +71,18 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Document Converters (Import from Word, Export to Word, Export to PDF)
+// #TINY-11265
+
+==== Made `importword_service_url`, `exportword_service_url` and `exportpdf_service_url` option more fault tolerant
+
+Previously, If the integrator added a domain without a trailing slash `+/+`, a full URL to `exportword`, or just the domain to `exportpdf` or `importword`, it caused the plugins to not function.
+
+{productname} {release-version} addresses this issue, by normalizing the options to accept a wider variety of input formats. As a result, the plugins now function correctly, regardless of whether a full URL, just the domain, or a domain with a trailing slash is provided.
+
+[NOTE]
+The handler will always return the **"latest"** versioned URL, regardless if configuration is correct or not.
+
 === Spell Checker
 
 The {productname} {release-version} includes an accompanying release of the **Spell Checker** premium plugin.

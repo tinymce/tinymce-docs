@@ -99,7 +99,7 @@ tinymce.init({
   selector: 'textarea',
   plugins: ['advtemplate'],
   toolbar: 'addtemplate inserttemplate',
-  setup: function(editor) {
+  setup: (editor) => {
     // Your setup code here
   },
   advtemplate_data: [

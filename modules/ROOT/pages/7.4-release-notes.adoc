@@ -82,13 +82,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 include::partial$misc/admon-requires-7.4v.adoc[]
 
-The {productname} release introduces readonly image:icons/lock.svg[lock.svg] categories for improved template management. This feature allows administrators to lock down specific categories, ensuring they remain unaltered while providing clear visual cues for non-editable items.
+The {productname} release introduces readonly categories for improved template management. This feature allows administrators to lock down specific template categories, preventing users from modifying the category or its templates.
 
 === Key Features
 
-- **Readonly Templates**: Templates assigned to readonly categories are automatically locked, preventing actions such as renaming, editing content, or moving templates between categories. These templates are marked with a lock image:icons/lock.svg[lock.svg] icon to indicate their status.
-- **Readonly Categories**: Categories can be marked as readonly by adding `locked: true` in the configuration. Once locked, categories cannot be modified, and users are prevented from adding or moving templates within these categories. A lock icon visually distinguishes readonly categories.
-- **Client-Side Restrictions**: Attempts to modify readonly templates or categories are blocked on the client side, and the UI reflects the readonly status to provide a seamless user experience.
+- **Readonly Templates**: Templates within readonly categories are locked, preventing the user from renaming, editing, moving, or deleting them. These templates are marked with a lock image:icons/lock.svg[lock.svg] icon to indicate their status.
+- **Readonly Categories**: Categories can be marked as readonly by setting `locked: true` in the configuration. Once locked, categories cannot be renamed or deleted, and users are prevented from moving templates into or out of the category. A lock icon visually distinguishes readonly categories. Readonly categories are marked with a lock image:icons/lock.svg[lock.svg] icon to indicate their status.
+- **Client-Side Restrictions**: Attempts to modify readonly categories are blocked on the client side, and the UI reflects the readonly status to provide a seamless user experience.
 
 .Example: Locking a category
 [source,js]

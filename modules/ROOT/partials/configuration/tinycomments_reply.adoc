@@ -9,7 +9,7 @@ The `+tinycomments_reply+` function is given a request (req) object as the first
 
 * `+conversationUid+`: The uid of the conversation the reply is targeting.
 * `+content+`: The content of the comment to create.
-* `+createdAt+`: The date the comment was created.
+* `+createdAt+`: The date the comment was created (ISO 8601 date string) format.
 
 The `+done+` callback should accept the following object:
 

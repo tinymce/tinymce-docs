@@ -18,13 +18,11 @@ const headers = {
     })
     .then(handleResponse('Failed to get template list'))
   
-  const advtemplate_get_template = (id) => {
-    return fetch('/templates/' + id, {
-        method: 'GET',
-        headers,
-      })
-      .then(handleResponse('Failed to get template'))
-  }
+  const advtemplate_get_template = (id) => fetch('/templates/' + id, {
+      method: 'GET',
+      headers,
+    })
+    .then(handleResponse('Failed to get template'))
   
   const advtemplate_create_category = (title) => {
     return fetch('/categories', {

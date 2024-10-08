@@ -226,6 +226,8 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 *When configured, the button will display the icon instead of text.*
 |buttonType |`+'primary'+`, `+'secondary'+`, or `+'toolbar'+` |optional |default: `+'secondary'+` - Whether to style the button as a primary, secondary, or toolbar button.
 |borderless |boolean |optional |default: `+false+` - Whether to style the button without a border and background color.
+include::partial$misc/admon-requires-7.4v.adoc[]
+|context |string |optional |default: `mode:design` - The context property dynamically enables or disables the button based on the editor's current state. Only effective when `+enabled+` is true. For details, see: xref:context.adoc[Context].
 |===
 
 NOTE: Buttons do not support mixing icons and text at the moment.
@@ -237,8 +239,9 @@ NOTE: Buttons do not support mixing icons and text at the moment.
   text: 'Alpha',
   buttonType: 'primary',
   name: 'alpha-button',
-  enabled: false,
-  borderless: false
+  enabled: true,
+  borderless: false,
+  context: 'mode:design'
 }
 ----
 
@@ -255,7 +258,8 @@ A *checkbox* is a composite component with a checkbox and a label, and with `+on
   type: 'checkbox', // component type
   name: 'checkbox-1', // identifier
   label: 'Checkbox Label', // text for the label
-  enabled: false // enabled state
+  enabled: true, // enabled state
+  context: 'mode:design' // checkbox is active when the editor is in design mode, only effective when enabled is true
 }
 ----
 
@@ -269,7 +273,8 @@ A *colorinput* is a specialized composite component with a label, an input field
 {
   type: 'colorinput', // component type
   name: 'colorinput', // identifier
-  label: 'Color Label' // text for the label
+  label: 'Color Label', // text for the label
+  context: 'mode:design' // colorinput is active when the editor is in design mode, only effective when enabled is true
 }
 ----
 
@@ -298,7 +303,8 @@ A *dropzone* is a composite component that catches drag and drops items or lets 
 {
   type: 'dropzone', // component type
   name: 'dropzone', // identifier
-  label: 'Dropzone' // text for the label
+  label: 'Dropzone', // text for the label
+  context: 'mode:design' // dropzone is active when the editor is in design mode, only effective when enabled is true
 }
 ----
 
@@ -399,6 +405,8 @@ An *input* is a composite component that renders a label and a single line text 
 |placeholder |string |optional |String of placeholder text for the input field.
 |enabled |boolean |optional |Allows the field to be disabled. Default is `+true+`.
 |inputMode |string |optional |Allows for the specification of input type for displaying contextual onscreen keyboards on mobile devices.
+include::partial$misc/admon-requires-7.4v.adoc[]
+|context |string |optional |default: `mode:design` - The context property dynamically enables or disables the input based on the editor's current state. For details, see: xref:context.adoc[Context].
 |===
 
 [source,js]
@@ -409,8 +417,9 @@ An *input* is a composite component that renders a label and a single line text 
   inputMode: 'text',
   label: 'Input Label', // text for the label
   placeholder: 'example', // placeholder text for the input
-  enabled: false, // disabled state
-  maximized: false // grow width to take as much space as possible
+  enabled: true, // enabled state
+  maximized: false, // grow width to take as much space as possible
+  context: 'mode:design' // input is active when the editor is in design mode, only effective when enabled is true
 }
 ----
 
@@ -436,14 +445,15 @@ A *listbox* is a composite component with a label and a dropdown list of options
   type: 'listbox', // component type
   name: 'ListBoxA', // identifier
   label: 'ListBox Label',
-  enabled: false, // enabled state
+  enabled: true, // enabled state
   items: [
     { text: 'One', value: 'one' },
     { text: 'Two', value: 'two' },
     { text: 'Submenu', items: [
       { text: 'Three', value: 'three' }
     ]}
-  ]
+  ],
+  context: 'mode:design' // listbox is active when the editor is in design mode, only effective when enabled is true
 }
 ----
 
@@ -461,12 +471,13 @@ A *selectbox* is a composite component with a label and a single dropdown list o
   type: 'selectbox', // component type
   name: 'SelectA', // identifier
   label: 'Select Label',
-  enabled: false, // enabled state
+  enabled: true, // enabled state
   size: 1, // number of visible values (optional)
   items: [
     { value: 'one', text: 'One' },
     { value: 'two', text: 'Two' }
-  ]
+  ],
+  context: 'mode:design' // selectbox is active when the editor is in design mode, only effective when enabled is true
 }
 ----
 
@@ -483,7 +494,8 @@ A *sizeinput* is a specialized composite component with two input fields labelle
   type: 'sizeinput', // component type
   name: 'size', // identifier
   label: 'Dimensions',
-  enabled: false // enabled state
+  enabled: true, // enabled state
+  context: 'mode:design' // sizeinput is active when the editor is in design mode, only effective when enabled is true
 }
 ----
 
@@ -536,8 +548,9 @@ A *textarea* is a multiline text field.
   name: 'text-a', // identifier
   label: 'Text: ',
   placeholder: 'example',
-  enabled: false, // enabled state
-  maximized: false // grow width to take as much space as possible
+  enabled: true, // enabled state
+  maximized: false, // grow width to take as much space as possible
+  context: 'mode:design' // textarea is active when the editor is in design mode, only effective when enabled is true
 }
 ----
 
@@ -724,6 +737,9 @@ If `picker_text` is not specified, the tooltip defaults to the value provided by
 
 
 This option *requires* `+file_picker_callback+` to be configured.
+
+include::partial$misc/admon-requires-7.4v.adoc[]
+|context |string |optional |default: `mode:design` - The context property dynamically enables or disables the urlinput based on the editor's current state. For details, see: xref:context.adoc[Context].
 |===
 
 ==== urlinput examples
@@ -739,8 +755,9 @@ The filepicker will accept any file type; the typeahead will include 5 previousl
   name: 'url', // identifier
   filetype: 'file', // allow any file types
   label: 'Url', // text for component label
-  enabled: false, // enabled state
+  enabled: true, // enabled state
   picker_text: 'Find local files', // set a custom tooltip for the filepicker button
+  context: 'mode:design' // urlinput is active when the editor is in design mode, only effective when enabled is true
 }
 ----
 
@@ -755,6 +772,7 @@ The filepicker will only accept images and the typeahead will include 5 previous
   name: 'src', // identifier
   filetype: 'image', // restrict file types to image types
   label: 'Source', // text for component label
-  enabled: false // enabled state
+  enabled: true, // enabled state
+  context: 'mode:design' // urlinput is active when the editor is in design mode, only effective when enabled is true
 }
 ----

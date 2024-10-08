@@ -332,16 +332,16 @@ tinymce.init({
   contextmenu: 'advtemplate',
   toolbar: "addtemplate inserttemplate | undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
   advtemplate_list,
-	advtemplate_get_template,
-	
-	advtemplate_create_category,
-	advtemplate_create_template,
-	
-	advtemplate_rename_category,
-	advtemplate_move_category_items,
-	advtemplate_delete_category,
-	
-	advtemplate_rename_template,
-	advtemplate_move_template,
-	advtemplate_delete_template,
+  advtemplate_get_template,
+
+  advtemplate_create_category,
+  advtemplate_create_template,
+
+  advtemplate_rename_category,
+  advtemplate_move_category_items,
+  advtemplate_delete_category,
+
+  advtemplate_rename_template,
+  advtemplate_move_template,
+  advtemplate_delete_template,
 });

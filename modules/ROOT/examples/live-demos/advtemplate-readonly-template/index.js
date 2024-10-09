@@ -4,7 +4,7 @@ const data = [
     items: [
       {
         title: 'Message received',
-        content: '<p dir="ltr">Hey {{prefix}}Customer.FirstName\}}!</p>\n<p dir="ltr">Just a quick note to say we&rsquo;ve received your message, and will get back to you within 48 hours.</p>\n<p dir="ltr">For reference, your ticket number is: {{mergetag-open}}Ticket.Number{{suffix}}</p>\n<p dir="ltr">Should you have any questions in the meantime, just reply to this email and it will be attached to this ticket.</p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">Regards,</p>\n<p dir="ltr">{{prefix}}Agent.FirstName{{suffix}}</p>'
+        content: '<p dir="ltr">Hey {{prefix}}Customer.FirstName{{suffix}}!</p>\n<p dir="ltr">Just a quick note to say we&rsquo;ve received your message, and will get back to you within 48 hours.</p>\n<p dir="ltr">For reference, your ticket number is: {{mergetag-open}}Ticket.Number{{suffix}}</p>\n<p dir="ltr">Should you have any questions in the meantime, just reply to this email and it will be attached to this ticket.</p>\n<p><strong>&nbsp;</strong></p>\n<p dir="ltr">Regards,</p>\n<p dir="ltr">{{prefix}}Agent.FirstName{{suffix}}</p>'
       },
       {
         title: 'Thanks for the feedback',

@@ -23,8 +23,9 @@ When `tinycomments_access` is set to `comment`, the editor will be in xref:edito
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'tinycomments',
+  tinycomments_mode: 'embedded',
   toolbar: 'addcomment showcomments',
-  tinycomments_access: 'comment' 
+  tinycomments_access: 'comment'
 });
 ----
 

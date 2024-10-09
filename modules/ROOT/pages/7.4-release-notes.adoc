@@ -15,43 +15,10 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 These release notes provide an overview of the changes for {productname} {release-version}, including:
 
-* xref:new-premium-plugin[New Premium plugin]
-* xref:new-open-source-plugin[New Open Source plugin]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
-* xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
-* xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
-* xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
 * xref:improvements[Improvements]
 * xref:additions[Additions]
-* xref:changes[Changes]
 * xref:bug-fixes[Bug fixes]
-* xref:security-fixes[Security fixes]
-* xref:deprecated[Deprecated]
-* xref:known-issues[Known issues]
-
-
-[[new-premium-plugin]]
-== New Premium plugin
-
-The following new Premium plugin was released alongside {productname} {release-version}.
-
-=== <Premium plugin name>
-
-The new Premium plugin, **<Premium plugin name>** // description here.
-
-For information on the **<Premium plugin name>** plugin, see xref:<plugincode>.adoc[<Premium plugin name>].
-
-
-[[new-open-source-plugin]]
-== New Open Source plugin
-
-The following new Open Source plugin was released alongside {productname} {release-version}.
-
-=== <Open source plugin name>
-
-The new open source plugin, **<Open source plugin name>** // description here.
-
-For information on the **<Open source plugin name>** plugin, see xref:<plugincode>.adoc[<Open source plugin name>].
 
 
 [[accompanying-premium-plugin-changes]]
@@ -59,17 +26,127 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== AI Assistant
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **AI Assistant** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**AI Assistant** includes the following fix.
 
-==== <Premium plugin name 1 change 1>
+=== Insert lists will no longer unexpectedly generate indented lists.
+// #TINY-10920
 
-// CCFR here.
+The `+insertContent+` action previously did not handle pasting a list onto another list correctly, causing the **AI Assistant** Premium plugin to generate an unexpected indented list when inserting lists into existing ones.
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+In {productname} {release-version}, this issue is resolved by adding a paste argument to the `+insertContent+` action, ensuring correct handling of list insertion.
+
+As a result, the **AI Assistant** Premium plugin will no longer create indented lists when inserting a list on top of an existing one.
+
+For information on the **AI Assistant** premium plugin, see: xref:ai.adoc[AI Assistant].
+
+=== Document Converters (Import from Word, Export to Word, Export to PDF)
+// #TINY-11265
+
+==== Made `importword_service_url`, `exportword_service_url` and `exportpdf_service_url` option more fault tolerant
+
+Previously, If the integrator added a domain without a trailing slash `+/+`, a full URL to `exportword`, or just the domain to `exportpdf` or `importword`, it caused the plugins to not function.
+
+{productname} {release-version} addresses this issue, by normalizing the options to accept a wider variety of input formats. As a result, the plugins now function correctly, regardless of whether a full URL, just the domain, or a domain with a trailing slash is provided.
+
+[NOTE]
+The handler will always return the **"latest"** versioned URL, regardless if configuration is correct or not.
+
+=== Enhanced Code Editor
+
+The {productname} {release-version} release includes an accompanying release of the **Enhanced Code Editor** premium plugin.
+
+**Enhanced Code Editor** includes the following fixes, and improvements.
+
+==== Format button would lose focus after action while navigating through keyboard.
+// #TINY-11122
+
+Previously, after using the **Format code** button to format code, the focus would shift to the code editor wrapper instead of remaining on the **Format code** button. This behavior was inconsistent for users who prefer to navigate through the keyboard.
+
+{productname} {release-version} implemented a fix that explicitly refocuses the **Format code** button after the formatting action. As a result, when pressing the **Format code** button, the focus now remains on the button as intended.
+
+=== Formatting indent size would be different than CodeMirror indent size.
+// #TINY-11150
+
+Previously, the indent sizes between CodeMirror and the formatter were inconsistent due to the use of default options for both.
+
+As a result, the formatted code did not match the indent settings in CodeMirror, causing discrepancies in code appearance.
+
+{productname} {release-version} addresses this issue. Now, the formatter's indent settings have been adjusted to "2" indent spaces to align with CodeMirror, ensuring consistent indent sizes and uniform code presentation.
+
+=== Formatter would not remove empty lines.
+// #TINY-11146
+
+In previous versions of Enhanced Code Editor, the HTML formatting function retained all line breaks, including unnecessary empty lines, resulting in more spaced-out code than desired.
+
+With {productname} {release-version}, the HTML formatting has been optimized to automatically remove empty lines during the formatting process. This results in cleaner, more compact HTML output.
+
+For information on the Enhanced Code Editor plugin, see: xref:advcode.adoc[Enhanced Code Editor].
+
+=== Import from Word
+
+The {productname} {release-version} release includes an accompanying release of the **Import from Word** premium plugin.
+
+**Import from Word** includes the following improvement.
+
+=== New `importword_converter_options` option that allows customizing the conversion.
+
+{productname} {release-version} introduces the addition of `importword_converter_options` to the **Import from Word** plugin. This new option allows for greater customization when converting Word documents to HTML.
+
+==== Key Features
+
+* Three Customizable Options:
+** `resets`: Minimize differences between Word and HTML default styles.
+** `defaults`: Control inclusion of default formatting.
+** `styles`: Manage Word style inclusion in the generated document.
+
+.Example: using `importword_converter_options`
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'importword',
+  toolbar: 'importword',
+  importword_converter_options: {
+    formatting: {
+      resets: 'inline',
+      defaults: 'inline',
+      styles: 'none'
+    }
+  }
+});
+----
+
+For information on the **Import from Word** plugin, see xref:importword.adoc[Import from Word].
+
+=== Spell Checker
+
+The {productname} {release-version} includes an accompanying release of the **Spell Checker** premium plugin.
+
+**Spell Checker** includes the following fix.
+
+=== As you type spellchecking did not update when scrolling with the `autoresize` plugin active.
+// #TINY-10567
+
+An issue was identified that was caused by the plugin not listening to the all the expected scroll events. As a result, when users scrolled down, this action was not detected by the plugin, leading to no updates in spellchecking.
+
+{productname} {release-version} addresses this issue by changing the event listener to correctly monitor scroll events.
+
+As a result, the plugin now successfully detects when scrolling occurs, ensuring that spellcheck updates are made as intended.
+
+=== Cursor would jump to the previous line after pressing shift + enter if the annotation was applied.
+// #TINY-10567
+
+In the Chrome browser, a rendering glitch caused the cursor to unexpectedly jump to the previous line when applying an annotation. The optimization intended to prevent re-selection after annotations was found to be unreliable and contributed to this issue.
+
+{productname} {release-version} resolves this problem by removing the problematic optimization, which led to this regression.
+
+As a result, users will no longer encounter unexpected selection or cursor behavior after applying annotations in the editor.
+
+For information on the **Spell Checker** premium plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker plugin].
 
 === Templates
 
@@ -112,171 +189,10 @@ The {productname} release introduces readonly categories for improved template m
 
 For information on the **Templates** plugin, see: xref:advanced-templates.adoc#read-only-categories[Read-only Categories].
 
-=== Document Converters (Import from Word, Export to Word, Export to PDF)
-// #TINY-11265
-
-==== Made `importword_service_url`, `exportword_service_url` and `exportpdf_service_url` option more fault tolerant
-
-Previously, If the integrator added a domain without a trailing slash `+/+`, a full URL to `exportword`, or just the domain to `exportpdf` or `importword`, it caused the plugins to not function.
-
-{productname} {release-version} addresses this issue, by normalizing the options to accept a wider variety of input formats. As a result, the plugins now function correctly, regardless of whether a full URL, just the domain, or a domain with a trailing slash is provided.
-
-[NOTE]
-The handler will always return the **"latest"** versioned URL, regardless if configuration is correct or not.
-
-=== Spell Checker
-
-The {productname} {release-version} includes an accompanying release of the **Spell Checker** premium plugin.
-
-**Spell Checker** includes the following fix.
-
-=== As you type spellchecking did not update when scrolling with the `autoresize` plugin active.
-// #TINY-10567
-
-An issue was identified that was caused by the plugin not listening to the all the expected scroll events. As a result, when users scrolled down, this action was not detected by the plugin, leading to no updates in spellchecking.
-
-{productname} {release-version} addresses this issue by changing the event listener to correctly monitor scroll events.
-
-As a result, the plugin now successfully detects when scrolling occurs, ensuring that spellcheck updates are made as intended.
-
-=== Cursor would jump to the previous line after pressing shift + enter if the annotation was applied.
-// #TINY-10567
-
-In the Chrome browser, a rendering glitch caused the cursor to unexpectedly jump to the previous line when applying an annotation. The optimization intended to prevent re-selection after annotations was found to be unreliable and contributed to this issue.
-
-{productname} {release-version} resolves this problem by removing the problematic optimization, which led to this regression.
-
-As a result, users will no longer encounter unexpected selection or cursor behavior after applying annotations in the editor.
-
-For information on the **Spell Checker** premium plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker plugin].
-
-=== Import from Word
-
-The {productname} {release-version} release includes an accompanying release of the **Import from Word** premium plugin.
-
-**Import from Word** includes the following improvement.
-
-=== New `importword_converter_options` option that allows customizing the conversion.
-
-{productname} {release-version} introduces the addition of `importword_converter_options` to the **Import from Word** plugin. This new option allows for greater customization when converting Word documents to HTML.
-
-==== Key Features
-
-* Three Customizable Options:
-** `resets`: Minimize differences between Word and HTML default styles.
-** `defaults`: Control inclusion of default formatting.
-** `styles`: Manage Word style inclusion in the generated document.
-
-.Example: using `importword_converter_options`
-[source, js]
-----
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'importword',
-  toolbar: 'importword',
-  importword_converter_options: {
-    formatting: {
-      resets: 'inline',
-      defaults: 'inline',
-      styles: 'none'
-    }
-  }
-});
-----
-
-For information on the **Import from Word** plugin, see xref:importword.adoc[Import from Word].
-
-=== Enhanced Code Editor
-
-The {productname} {release-version} release includes an accompanying release of the **Enhanced Code Editor** premium plugin.
-
-**Enhanced Code Editor** includes the following fixes, additions, and improvements.
-
-==== Format button would lose focus after action while navigating through keyboard.
-// #TINY-11122
-
-Previously, after using the **Format code** button to format code, the focus would shift to the code editor wrapper instead of remaining on the **Format code** button. This behavior was inconsistent for users who prefer to navigate through the keyboard.
-
-{productname} {release-version} implemented a fix that explicitly refocuses the **Format code** button after the formatting action. As a result, when pressing the **Format code** button, the focus now remains on the button as intended.
-
-=== Formatting indent size would be different than CodeMirror indent size.
-// #TINY-11150
-
-Previously, the indent sizes between CodeMirror and the formatter were inconsistent due to the use of default options for both.
-
-As a result, the formatted code did not match the indent settings in CodeMirror, causing discrepancies in code appearance.
-
-{productname} {release-version} addresses this issue. Now, the formatter's indent settings have been adjusted to "2" indent spaces to align with CodeMirror, ensuring consistent indent sizes and uniform code presentation.
-
-=== Formatter would not remove empty lines.
-// #TINY-11146
-
-In previous versions of Enhanced Code Editor, the HTML formatting function retained all line breaks, including unnecessary empty lines, resulting in more spaced-out code than desired.
-
-With {productname} {release-version}, the HTML formatting has been optimized to automatically remove empty lines during the formatting process. This results in cleaner, more compact HTML output.
-
-For information on the Enhanced Code Editor plugin, see: xref:advcode.adoc[Enhanced Code Editor].
-
-=== AI Assistant
-
-The {productname} {release-version} release includes an accompanying release of the **AI Assistant** premium plugin.
-
-**AI Assistant** includes the following fix.
-
-=== Insert lists will no longer unexpectedly generate indented lists.
-// #TINY-10920
-
-The `+insertContent+` action previously did not handle pasting a list onto another list correctly, causing the **AI Assistant** Premium plugin to generate an unexpected indented list when inserting lists into existing ones.
-
-In {productname} {release-version}, this issue is resolved by adding a paste argument to the `+insertContent+` action, ensuring correct handling of list insertion.
-
-As a result, the **AI Assistant** Premium plugin will no longer create indented lists when inserting a list on top of an existing one.
-
-For information on the **AI Assistant** premium plugin, see: xref:ai.adoc[AI Assistant].
-
-[[accompanying-premium-plugin-end-of-life-announcement]]
-== Accompanying Premium plugin end-of-life announcement
-
-The following Premium plugin has been announced as reaching its end-of-life:
-
-=== <Premium plugin name eol>
-
-{productname}’s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
-
-
-[[accompanying-open-source-plugin-end-of-life-announcement]]
-== Accompanying open source plugin end-of-life announcement
-
-The following open source plugin has been announced as reaching its end-of-life:
-
-=== <Open source plugin name eol>
-
-{productname}’s xref:<plugincode>.adoc[<Open source plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
-
-
-[[accompanying-enhanced-skins-and-icon-packs-changes]]
-== Accompanying Enhanced Skins & Icon Packs changes
-
-The {productname} {release-version} release includes an accompanying release of the **Enhanced Skins & Icon Packs**.
-
-=== Enhanced Skins & Icon Packs
-
-The **Enhanced Skins & Icon Packs** release includes the following updates:
-
-The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} {release-version} skin, Oxide.
-
-For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
-
-
 [[improvements]]
 == Improvements
 
-{productname} {release-version} also includes the following improvement<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+{productname} {release-version} also includes the following improvements:
 
 === In read-only mode the editor now allows normal cursor movement and block element selection, including video playback.
 // #TINY-11264
@@ -307,31 +223,7 @@ In previous versions of {productname} any listbox with a fixed-width dropdown wo
 [[additions]]
 == Additions
 
-{productname} {release-version} also includes the following addition<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-=== New option `allow_mathml_annotation_encodings` to opt-in to keep math annotations with specific encodings.
-// TINY-11166
-
-In previous versions of {productname}, MathML annotation elements were inadvertently stripped during content processing. This caused compatibility issues with tools like Wiris that rely on these annotations.
-
-{productname} {release-version} introduces a new option, `allow_mathml_annotation_encodings`, to address this problem. This option accepts an array of strings, allowing users to specify which annotation encodings should be preserved. By configuring this option, users can ensure proper functionality of MathML-dependent tools while maintaining control over which annotations are retained.
-
-.Example
-[source, js]
-----
-tinymce.init({
-  selector: "textarea",
-  allow_mathml_annotation_encodings: [ 'wiris', 'application/x-tex' ]
-});
-----
-
-For more information on the `allow_mathml_annotation_encodings` option, see xref:content-filtering.adoc#allow-mathml-annotation-encodings[allow_mathml_annotation_encodings].
-
+{productname} {release-version} also includes the following additions:
 
 === New `context` property for all ui components.
 // #TINY-11211
@@ -357,37 +249,45 @@ This enhancement allows for more context-sensitive UI components, improving user
 
 For more information about the `context` property, see xref:context.adoc[Context].
 
-[[changes]]
-== Changes
+=== New option `allow_mathml_annotation_encodings` to opt-in to keep math annotations with specific encodings.
+// TINY-11166
 
-{productname} {release-version} also includes the following change<s>:
+In previous versions of {productname}, MathML annotation elements were inadvertently stripped during content processing. This caused compatibility issues with tools like Wiris that rely on these annotations.
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+{productname} {release-version} introduces a new option, `allow_mathml_annotation_encodings`, to address this problem. This option accepts an array of strings, allowing users to specify which annotation encodings should be preserved. By configuring this option, users can ensure proper functionality of MathML-dependent tools while maintaining control over which annotations are retained.
 
-// CCFR here.
+.Example
+[source, js]
+----
+tinymce.init({
+  selector: "textarea",
+  allow_mathml_annotation_encodings: [ 'wiris', 'application/x-tex' ]
+});
+----
 
-
-[[removed]]
-== Removed
-
-{productname} {release-version} also includes the following removal<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+For more information on the `allow_mathml_annotation_encodings` option, see xref:content-filtering.adoc#allow-mathml-annotation-encodings[allow_mathml_annotation_encodings].
 
 
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Mouse hover on partially visible dialog collection elements no longer scrolls
+// #TINY-9915
 
-// CCFR here.
+Previously, an issue caused partially visible collection elements, such as those in the Character Map or Emojis dialog, to unexpectedly scroll into view with abrupt and unintended movement when hovered over, resulting in a disruptive user experience.
+
+{productname} {release-version} addresses this issue by preventing scrolling on hover. This ensures that the dialog remains in place and does not scroll when partially visible elements are hovered over.
+
+=== Caret would unexpectedly shift to the non-editable table row above when pressing Enter.
+// #TINY-11077
+
+Previously, an issue where pressing Enter in a table cell caused the selection to shift incorrectly when the row above was set to `contenteditable="false"`. This problem affected table editing functionality, leading to unexpected cursor placement and content modifications.
+
+{productname} {release-version} addresses this issue. Now, this fix ensures that the selection remains stable when adding new lines within editable cells, regardless of the content editable state of adjacent rows.
+
+As a result, users can now reliably edit table contents without experiencing unintended cursor movements.
 
 === Deleting a selection in a list element would sometimes prevent the `input` event from being dispatched.
 // #TINY-11100
@@ -408,6 +308,13 @@ Previously, a `+<br>+` element was incorrectly counted as content when the curso
 
 {productname} {release-version} addresses this issue by treating the `+<br>+` element as the end of the block. As a result, newlines are now correctly added after the table, ensuring proper cursor placement and content insertion.
 
+=== Sidebar could not be toggled until the skin was loaded.
+// #TINY-11155
+
+In {productname} 6.8, the initialization of sidebars in the UI was moved to occur after the skin was loaded. As a consequence, an issue was identified where the sidebar could not be toggled during the init event because the skin is loaded asynchronously.
+
+This issue has been resolved in {productname} {release-version} by moving the sidebar initialization back to within the PostRender event. As a result, the sidebar can now be toggled as expected during the init event.
+
 === The image dialog lost focus after closing an image upload error alert.
 // #TINY-11159
 
@@ -416,13 +323,6 @@ Previously, when an image upload error alert was closed, the image dialog lost f
 {productname} {release-version} addresses this issue by making the dropzone component focusable and adding a callback to focus the dropzone button after the error alert is closed.
 
 As a result, keyboard users now experience improved accessibility, with the ability to focus on the dropzone using the dialog API.
-
-=== The editor resize handle was incorrectly rendered when all components were removed from the status bar.
-// #TINY-11257
-
-Previously in {productname}, the resize handle in the editor's status bar was positioned relative to other elements. Consequently, if these elements were removed, the resize handle would incorrectly appear in the left corner of the editor's status bar.
-
-In {productname} {release-version}, this issue has been resolved by adjusting the CSS. The resize handle is now consistently placed in the right corner of the status bar, regardless of the presence of other elements. This ensures that the resize handle is always positioned correctly where users expect it to be.
 
 === Copying tables to the clipboard did not correctly separate cells and rows for the "text/plain" MIME type.
 // #TINY-10847
@@ -433,58 +333,9 @@ Previously, when copying rows from tables, the newline character `+\n+` was not 
 
 These improvements ensure more consistent and correctly formatted text output when copying table content within the editor.
 
-=== Sidebar could not be toggled until the skin was loaded.
-// #TINY-11155
+=== The editor resize handle was incorrectly rendered when all components were removed from the status bar.
+// #TINY-11257
 
-In {productname} 6.8, the initialization of sidebars in the UI was moved to occur after the skin was loaded. As a consequence, an issue was identified where the sidebar could not be toggled during the init event because the skin is loaded asynchronously.
+Previously in {productname}, the resize handle in the editor's status bar was positioned relative to other elements. Consequently, if these elements were removed, the resize handle would incorrectly appear in the left corner of the editor's status bar.
 
-This issue has been resolved in {productname} {release-version} by moving the sidebar initialization back to within the PostRender event. As a result, the sidebar can now be toggled as expected during the init event.
-
-=== Mouse hover on partially visible dialog collection elements no longer scrolls
-// #TINY-9915
-
-Previously, an issue caused partially visible collection elements, such as those in the Character Map or Emojis dialog, to unexpectedly scroll into view with abrupt and unintended movement when hovered over, resulting in a disruptive user experience.
-
-{productname} {release-version} addresses this issue by preventing scrolling on hover. This ensures that the dialog remains in place and does not scroll when partially visible elements are hovered over.
-
-=== Caret would unexpectedly shift to the non-editable table row above when pressing Enter.
-// #TINY-11077
-
-Previously, an issue where pressing Enter in a table cell caused the selection to shift incorrectly when the row above was set to `contenteditable="false"`. This problem affected table editing functionality, leading to unexpected cursor placement and content modifications.
-
-{productname} {release-version} addresses this issue. Now, this fix ensures that the selection remains stable when adding new lines within editable cells, regardless of the content editable state of adjacent rows.
-
-As a result, users can now reliably edit table contents without experiencing unintended cursor movements.
-
-[[security-fixes]]
-== Security fixes
-
-{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[deprecated]]
-== Deprecated
-
-{productname} {release-version} includes the following deprecation<s>:
-
-=== The `<plugin>` configuration property, `<name>`, has been deprecated
-
-// placeholder here.
-
-
-[[known-issues]]
-== Known issues
-
-This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
-
-There <is one | are <number> known issue<s> in {productname} {release-version}.
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+In {productname} {release-version}, this issue has been resolved by adjusting the CSS. The resize handle is now consistently placed in the right corner of the status bar, regardless of the presence of other elements. This ensures that the resize handle is always positioned correctly where users expect it to be.

@@ -19,6 +19,7 @@ These release notes provide an overview of the changes for {productname} {releas
 * xref:improvements[Improvements]
 * xref:additions[Additions]
 * xref:bug-fixes[Bug fixes]
+* xref:known-issues[Known issues]
 
 
 [[accompanying-premium-plugin-changes]]
@@ -339,3 +340,41 @@ These improvements ensure more consistent and correctly formatted text output wh
 Previously in {productname}, the resize handle in the editor's status bar was positioned relative to other elements. Consequently, if these elements were removed, the resize handle would incorrectly appear in the left corner of the editor's status bar.
 
 In {productname} {release-version}, this issue has been resolved by adjusting the CSS. The resize handle is now consistently placed in the right corner of the status bar, regardless of the presence of other elements. This ensures that the resize handle is always positioned correctly where users expect it to be.
+
+[[known-issues]]
+
+== Known issues
+
+=== Editor Focus after Deleting a Comment
+// #TINY-11293
+
+When deleting a comment from the Comments sidebar, the focus shifts from the comments sidebar to the editor content area, rather than switching to the "Add comment..." button in the conversation sidebar as expected.
+
+This behavior differs from the current stable version, where the focus is correctly returned to the "Add comment..." textbox.
+
+**Status**: Currently under investigation.
+
+=== Comments Not Functional with Empty tinycomments_author and tinycomments_author_name
+// #TINY-11323
+
+Comment functionality becomes non-operational when `tinycomments_author` and `tinycomments_author_name` are configured as empty strings `+''+`.
+
+.Example of affected configuration:
+[source, js]
+----
+tinycomments_author: '',
+tinycomments_author_name: '',
+----
+
+Previously, instead of assigning default user/author values as in `7-stable` (7.3), the latest release {release-version} disables all comment features when these fields are empty.
+
+**Status**: Currently under investigation.
+
+=== Comment card not removed after deleting content
+// #TINY-11366
+
+Currently, after deleting content that has related comments, the corresponding comment card still exists and becomes stale within the Comments sidebar.
+
+This behavior is inconsistent with the expected behavior, where the comment card should be removed automatically after deleting the content.
+
+**Status**: Currently under investigation.

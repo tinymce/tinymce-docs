@@ -71,6 +71,47 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Templates
+
+The {productname} {release-version} release includes an accompanying release of the **Templates** premium plugin.
+
+**Templates** includes the following improvement.
+
+==== Categories can now be declared as locked, making them readonly.
+// #TINY-11116
+
+include::partial$misc/admon-requires-7.4v.adoc[]
+
+The {productname} release introduces readonly categories for improved template management. This feature allows administrators to lock down specific template categories, preventing users from modifying the category or its templates.
+
+=== Key Features
+
+- **Readonly Templates**: Templates within readonly categories are locked, preventing the user from renaming, editing, moving, or deleting them. These templates are marked with a lock image:icons/lock.svg[lock.svg] icon to indicate their status.
+- **Readonly Categories**: Categories can be marked as readonly by setting `locked: true` in the configuration. Once locked, categories cannot be renamed or deleted, and users are prevented from moving templates into or out of the category. A lock icon visually distinguishes readonly categories. Readonly categories are marked with a lock image:icons/lock.svg[lock.svg] icon to indicate their status.
+- **Client-Side Restrictions**: Attempts to modify readonly categories are blocked on the client side, and the UI reflects the readonly status to provide a seamless user experience.
+
+.Example: Locking a category
+[source,js]
+----
+// Template data with locked category
+{
+  title: 'Locked Templates',
+  locked: true, // Locks the category as readonly
+  items: [
+    {
+      title: 'How to find model number',
+      content: '<p dir="ltr">Hi {{Customer.FirstName}},</p>\n<p>...</p>'
+    },
+    {
+      title: 'Support escalation',
+      content: '<p dir="ltr">Hi {{Customer.FirstName}},</p>\n<p>...</p>'
+    }
+  ]
+}
+----
+
+For information on the **Templates** plugin, see: xref:advanced-templates.adoc#read-only-categories[Read-only Categories].
+
 === Document Converters (Import from Word, Export to Word, Export to PDF)
 // #TINY-11265
 

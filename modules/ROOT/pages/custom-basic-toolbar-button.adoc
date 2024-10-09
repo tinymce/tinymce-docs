@@ -20,6 +20,9 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 4+|
 include::partial$misc/admon-requires-7.0v.adoc[]
 |shortcut |string |optional |Shortcut to display in the tooltip. To register a shortcut, see: xref:shortcuts.adoc[Add custom shortcuts to TinyMCE].
+4+|
+include::partial$misc/admon-requires-7.4v.adoc[]
+|context |string |optional |default: `mode:design` - The context property dynamically enables or disables the button based on the editor's current state. For details, see: xref:context.adoc[Context].
 |===
 
 == API

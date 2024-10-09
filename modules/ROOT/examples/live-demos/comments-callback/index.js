@@ -46,8 +46,47 @@ tinymce.ScriptLoader.loadScripts(
   };
 
   /* Our server "database" */
-  const getDB = () =>
-    JSON.parse(localStorage.getItem('fakedb') ?? '{}');
+  const initialDB = {
+    "mce-conversation_19679600221621399703915": [
+      {
+        uid: "mce-conversation_19679600221621399703915",
+        author: "Another Tiny User",
+        authorName: "Another Tiny User",
+        content: "Please revise this sentence, exclamation points are unprofessional!",
+        createdAt: "2021-05-19T04:48:23.914Z",
+        modifiedAt: "2021-05-19T04:48:23.914Z",
+      },
+      {
+        uid: "mce-conversation_19679600221621399703917",
+        author: "Another Tiny User",
+        authorName: "Another Tiny User",
+        content: "Replied",
+        createdAt: "2021-05-19T04:48:23.914Z",
+        modifiedAt: "2021-05-19T04:48:23.914Z",
+      },
+      {
+        uid: "mce-conversation_19679600221621399703918",
+        author: "Another Tiny User",
+        authorName: "Another Tiny User",
+        content: "Replied again",
+        createdAt: "2021-05-19T04:48:23.914Z",
+        modifiedAt: "2021-05-19T04:48:23.914Z",
+      },
+    ],
+    "mce-conversation_420304606321716900864126": [
+      {
+        uid: "mce-conversation_420304606321716900864126",
+        author: "john_smith",
+        authorName: "John Smith",
+        authorAvatar: "https://i.pravatar.cc/150?img=11",
+        content: "I think this is a great idea!",
+        createdAt: "2024-05-28T12:54:24.126Z",
+        modifiedAt: "2024-05-28T12:54:24.126Z",
+      },
+    ],
+  };
+
+  const getDB = () => JSON.parse(localStorage.getItem('fakedb') ?? JSON.stringify(initialDB));
   const setDB = (data) => {
     localStorage.setItem('fakedb', JSON.stringify(data));
   };
@@ -621,16 +660,48 @@ tinymce.ScriptLoader.loadScripts(
         fail(err);
       });
   };
+  
+  const tinycomments_fetch = (conversationUids, done, fail) => {
+    const requests = conversationUids.map((uid) => fetch(`https://api.example/conversations/${uid}`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+        }})
+        .then((response) => response.json())
+        .then((data) => ({
+          [uid]: {
+            uid: uid,
+            comments: data
+          }
+        }))
+      );
+
+    Promise.all(requests)
+      .then((data) => {
+        console.log('data', data);
+        const conversations = data.reduce((conv, d) => ({
+            ...conv,
+            ...d
+          })
+        , {});
+        console.log(`Fetch success ${conversationUids}`, conversations);
+        done({ conversations });
+      })
+      .catch((err) => {
+        console.error(`Fetch failure ${conversationUids}`, err);
+        fail('Fetching conversations failed');
+      });
+  };
 
   tinymce.init({
     selector: 'textarea#comments-callback',
     height: 800,
     plugins: 'code tinycomments help lists',
     toolbar:
-      'undo redo | blocks | ' +
+      'addcomment showcomments | undo redo | blocks | ' +
       'bold italic backcolor | alignleft aligncenter ' +
       'alignright alignjustify | bullist numlist outdent indent | ' +
-      'removeformat | addcomment showcomments | help',
+      'removeformat | help',
     menubar: 'file edit view insert format tc',
     menu: {
       tc: {
@@ -645,13 +716,7 @@ tinymce.ScriptLoader.loadScripts(
     tinycomments_delete_all,
     tinycomments_delete_comment,
     tinycomments_lookup,
-    /* The following setup callback opens the comments sidebar when the editor loads */
-    setup: (editor) => {
-      editor.on('SkinLoaded', () => {
-        editor.execCommand('ToggleSidebar', false, 'showcomments', {
-          skip_focus: true,
-        });
-      });
-    },
+    tinycomments_fetch,
+    sidebar_show: 'showcomments',
   });
 });

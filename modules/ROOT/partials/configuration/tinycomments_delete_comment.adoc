@@ -5,9 +5,8 @@ The `+tinycomments_delete_comment+` function should asynchronously return a flag
 
 The `+tinycomments_delete_comment+` function is given a request (req) object as the first parameter, which has these fields:
 
-`+conversationUid+`:: The uid of the conversation the reply is targeting.
-
-`+commentUid+`:: The uid of the comment to delete (cannot be the same as `+conversationUid+`).
+* `+conversationUid+`: The uid of the conversation the reply is targeting.
+* `+commentUid+`: The uid of the comment to delete (cannot be the same as `+conversationUid+`).
 
 The `+done+` callback should accept the following object:
 
@@ -19,10 +18,10 @@ The `+done+` callback should accept the following object:
 }
 ----
 
-NOTE: Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
+[NOTE]
+Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
 
-For example:
-
+.For example:
 [source,js]
 ----
 const delete_comment = (ref, done, fail) => {
@@ -54,6 +53,7 @@ tinymce.init({
   tinycomments_delete: delete_comment_thread, // Add the callback to TinyMCE
   tinycomments_delete_all: delete_all_comment_threads,
   tinycomments_delete_comment: delete_comment,
-  tinycomments_lookup: lookup_comment
+  tinycomments_lookup: lookup_comment,
+  tinycomments_fetch: fetch_comments // Optional callback
 });
 ----

@@ -1,0 +1,18 @@
+[[allow-mathml-annotation-encodings]]
+== `+allow_mathml_annotation_encodings+`
+
+This option allows a specific list of valid MathML annotation encodings to be used in the editor.
+
+*Type:* `+Array+` of `+Strings+`
+
+*Default value:* `+[]+` (empty array)
+
+=== Example: using `+allow_mathml_annotation_encodings+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  allow_mathml_annotation_encodings: [ 'wiris', 'application/x-tex' ]
+});
+----

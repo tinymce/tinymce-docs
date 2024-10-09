@@ -15,10 +15,10 @@ The `+done+` callback should accept the following object:
 }
 ----
 
-NOTE: Failure to delete due to permissions or business rules should be indicated by `+canDelete: false+`, while unexpected errors should be indicated using the `+fail+` callback.
+[NOTE]
+Failure to delete due to permissions or business rules should be indicated by `+canDelete: false+`, while unexpected errors should be indicated using the `+fail+` callback.
 
-For example:
-
+.For example:
 [source,js]
 ----
 const delete_all_comment_threads = (_req, done, fail) => {
@@ -45,6 +45,7 @@ tinymce.init({
   tinycomments_delete: delete_comment_thread,
   tinycomments_delete_all: delete_all_comment_threads, // Add the callback to TinyMCE
   tinycomments_delete_comment: delete_comment,
-  tinycomments_lookup: lookup_comment
+  tinycomments_lookup: lookup_comment,
+  tinycomments_fetch: fetch_comments // Optional callback
 });
 ----

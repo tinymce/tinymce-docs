@@ -250,6 +250,7 @@ Commands are available for the following plugins:
 * xref:spellchecker[Spell Checker]
 * xref:table[Table]
 * xref:tableofcontents[Table of Content]
+* xref:advtemplate[Templates]
 * xref:visualblocks[Visual Blocks]
 * xref:visualcharacters[Visual Characters]
 * xref:wordcount[Word Count]
@@ -523,6 +524,13 @@ include::partial$commands/table-cmds.adoc[leveloffset=+3]
 The following commands require the xref:tableofcontents.adoc[Table of Contents (`+tableofcontents+`)] plugin.
 
 include::partial$commands/tableofcontents-cmds.adoc[leveloffset=+3]
+
+[[advtemplate]]
+==== Templates
+
+The following commands require the xref:advanced-templates.adoc[Templates (`+advtemplate+`)] plugin.
+
+include::partial$commands/advtemplate-cmds.adoc[leveloffset=+3]
 
 [[visualblocks]]
 ==== Visual Blocks

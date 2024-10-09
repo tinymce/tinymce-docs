@@ -1,0 +1,54 @@
+[[tinycomments-access]]
+== `tinycomments_access`
+
+*Type:* `+String+`
+
+*Possible values:* `'comment'`
+
+This option sets the editor to the readonly mode, while still allowing comments to be made. 
+
+[IMPORTANT]
+====
+* When `tinycomments_access` is set to `comment`, the editor will automatically switch to xref:editor-important-options.adoc#readonly[Readonly Mode].
+====
+
+=== Comments with `tinycomments_access` set to `'comment'`
+
+When `tinycomments_access` is set to `comment`, the editor will be in xref:editor-important-options.adoc#readonly[Readonly mode], but the comments will be in a **comment-only** mode. This means that users can add and delete comments, but they cannot edit the editor content.
+
+
+.Example
+[source,javascript]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'tinycomments',
+  toolbar: 'addcomment showcomments',
+  tinycomments_access: 'comment' 
+});
+----
+
+liveDemo::comments-ui-mode[]
+
+=== Comments with `readonly` set to `true`
+
+When not using the `tinycomments_access` option, the comments sidebar will have a different state depending on the use of the xref:editor-important-options.adoc#readonly[`readonly` option].
+
+With neither xref:editor-important-options.adoc#readonly[Readonly mode] nor `tinycomments: "comment"` configured, both the editor and the comments sidebar will be in their default state. By default, comments can be both viewed and added, and the editor content is editable.
+
+With xref:editor-important-options.adoc#readonly[Readonly mode] enabled, the comments sidebar will be in a **view-only** mode, meaning all comments can be viewed and navigated, but no new comments can be added. Also, in the **readonly** state, the editor will still not be editable.
+
+
+.Example
+[source,javascript]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'tinycomments',
+  tinycomments_mode: 'embedded',
+  toolbar: 'addcomment showcomments',
+  readonly: true, // set the editor to read-only mode
+});
+----
+
+liveDemo::comments-readonly-mode[]

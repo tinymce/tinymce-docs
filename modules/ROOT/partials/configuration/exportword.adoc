@@ -8,6 +8,9 @@ The {pluginname} feature is currently only available exclusively for `on-premise
 
 NOTE: The {pluginname} feature is currently only available `on-premise` and requires the `exportword_service_url` option to be configured. link:https://www.tiny.cloud/contact/[Contact us] if you require this feature.
 
+[TIP]
+Update the `exportword_service_url` configuration in your {productname} setup to point to your host. For instance, if your host is `mycustomhost.com`, the URL will be `https://mycustomhost.com/v2/convert/html-docx`.
+
 *Type:* `+String+`
 
 === Example: using `exportword_service_url`

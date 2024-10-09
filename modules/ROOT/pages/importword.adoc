@@ -43,7 +43,9 @@ tinymce.init({
 
 The following configuration options affect the behavior of the {pluginname} plugin.
 
-include::partial$configuration/{plugincode}.adoc[leveloffset=+1]
+include::partial$configuration/{plugincode}-service-url.adoc[leveloffset=+1]
+
+include::partial$configuration/{plugincode}-converter-options.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
@@ -54,3 +56,7 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 The {pluginname} plugin provides the following {productname} commands.
 
 include::partial$commands/{plugincode}-cmds.adoc[]
+
+== API Reference
+
+> Explore the comprehensive API documentation for the {pluginname} Premium plugin at link:https://importdocx.converter.tiny.cloud/v2/convert/docs#section/Import-from-Word[Import from Word.^]

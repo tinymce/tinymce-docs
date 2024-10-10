@@ -1,0 +1,42 @@
+= {productname} {release-version}
+:release-version: 6.8.5
+:description: Release notes for TinyMCE 6.8.5
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+
+[[overview]]
+== Overview
+
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, October 10^th^, 2024.
+
+These release notes provide an overview of the changes for {productname} {release-version}, including:
+
+* xref:security-fix[Security fix]
+
+
+[[security-fix]]
+== Security fix
+
+{productname} {release-version} includes one fix for the following security issue:
+
+=== Invalid HTML elements within `SVG` elements were not removed
+// TINY-11332
+
+A https://owasp.org/www-community/attacks/xss/[cross-site scripting] (XSS) vulnerability was discovered in link:https://www.npmjs.com/package/dompurify[DOMPurify] that affects versions of {productname} prior to {release-version} release. The issue was a result of DOMPurify allowing some bypassing which lead to improper sanitization of invalid HTML elements within XML contexts, exploiting parsing inconsistencies between XML and HTML.
+
+=== Affected Versions
+
+DOMPurify versions prior to `+<3.1.7+`
+
+=== Vulnerabilities
+
+* **Invalid HTML Elements in SVG** (link:https://www.cve.org/CVERecord?id=CVE-2024-45801[CVE-2024-45801]): Allowed invalid HTML elements within `SVG` to bypass sanitization.
+* **XML Processing Instruction Bypass**: Exploited differences in XML and HTML parsers regarding Processing Instructions, where XML parsed `+<?xml-stylesheet ><h1>Hello</h1> ?>+` as a single node, allowing `h1` to bypass sanitization.
+* **CDATA Section Bypass**: Leveraged differences in CDATA section handling between XML and HTML namespaces, with CDATA treated as bogus comments in HTML, bypassing end token rules for sanitization.
+
+GHSA: link:https://github.com/cure53/DOMPurify/security/advisories/GHSA-mmhx-hmjr-r674[GitHub Advisory]
+
+CVE: link:https://www.cve.org/CVERecord?id=CVE-2024-45801[CVE-2024-45801]

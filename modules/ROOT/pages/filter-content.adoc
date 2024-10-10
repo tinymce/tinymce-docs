@@ -16,7 +16,7 @@ Check out the xref:user-formatting-options.adoc#style_formats[custom formats exa
 
 === Style merging
 
-Similar elements and styles are merged by default to reduce the output HTML size. For example, instead of assigning one `+span+` element for font size and another `+span+` element for font face, {productname} merges the two styles into a sing `+span+` element.
+Similar elements and styles are merged by default to reduce the output HTML size. For example, instead of assigning one `+span+` element for font size and another `+span+` element for font face, {productname} merges the two styles into a single `+span+` element.
 
 === Built-in formats
 

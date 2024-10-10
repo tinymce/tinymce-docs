@@ -183,17 +183,14 @@ const revisions = [
 ];
 
 const revisionhistory_fetch_revision = (_editor, revision) =>
-  new Promise((resolve) => {
+  new Promise((resolve, reject) => {
     setTimeout(() => {
-      let newRevision = null;
-      for (let i = 0; i < revisions.length; i++) {
-        const temp = revisions[i];
-        if (temp.revisionId === revision.revisionId) {
-          newRevision = temp;
-          break;
-        }
+      const newRevision = revisions.find((r) => r.revisionId === revision.revisionId);
+      if (newRevision === undefined) {
+        reject(`Revision ${revision.revisionId} is not found`);
+      } else {
+        resolve(newRevision);
       }
-      resolve(newRevision);
     }, getRandomDelay());
   });
 

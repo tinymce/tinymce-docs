@@ -24,6 +24,7 @@ During the initial editor load, the {pluginname} uses `+tinycomments_fetch+` cal
 
 When a user adds a comment or a reply, the {pluginname} plugin uses the `+tinycomments_lookup+` callback to retrieve the selected conversation. 
 
+[[comments-callback-live-demo]]
 == Interactive example
 
 The following example uses a simulated server (provided by link:https://netflix.github.io/pollyjs/[Polly.js]), which has been hidden from the example JavaScript to keep the example code concise. The interactions between {productname} and Polly.js are visible in the browser console.

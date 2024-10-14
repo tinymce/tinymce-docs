@@ -7,7 +7,7 @@ The {pluginname} feature is currently only available exclusively for `on-premise
 
 
 [TIP]
-Configure the `importword_service_url` setting in your {productname} instance to match your custom host. For example, if your host is `mycustomhost.com`, set the URL to `https://mycustomhost.com/`. {productname} will **automatically append** `v2/convert/docx-html` to the URL to ensure the correct endpoint is reached.
+Configure the `importword_service_url` setting in your {productname} instance to match your custom host. For example, if your host is `mycustomhost.com`, set the URL to `https://mycustomhost.com/`.
 
 *Type:* `+String+`
 

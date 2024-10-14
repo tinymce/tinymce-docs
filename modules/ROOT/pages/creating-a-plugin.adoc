@@ -12,10 +12,6 @@ To be recognized as a plugin by {productname}, the code for a custom plugin must
 
 {productname} does not require any special file structure or tooling apart from these requirements, so custom plugins can be developed using most frameworks and tools.
 
-=== Yeoman Generator
-
-{companyname} maintains a xref:yeoman-generator.adoc[Yeoman generator] to assist with creating plugins for {productname}. The Yeoman Generator will create the files and boilerplate code required for a custom plugin, and sets up some helpful commands.
-
 == Registering a custom plugin with {productname}
 
 Register a custom plugin with {productname} using the PluginManager. `+PluginManager.add()+` takes a string for the plugin identifier and a function that contains the code for initializing the plugin.

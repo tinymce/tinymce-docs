@@ -4,40 +4,40 @@
 :type: folder
 
 // 2 Columns, both asciidoc
-[cols=2*a]
+[cols="1,1"]
 |===
 
-|
+a|
 [.lead]
 xref:editor-and-features.adoc[Cloud deployment of editor & plugins]
 
 Learn how to set up the {productname} editor via the Cloud or migrate from a self-hosted environment.
 
-|
+a|
 [.lead]
 xref:features-only.adoc[Cloud deployment of plugins Only]
 
 Connect to Tiny Cloud within a hybrid deployment.
 
-|
+a|
 [.lead]
 xref:editor-plugin-version.adoc[Specify editor & plugins]
 
 Specifying editor and plugins for Tiny Cloud deployments.
 
-|
+a|
 [.lead]
 xref:plugin-editor-version-compatibility.adoc[Version compatibility reference]
 
 Matrix of compatibility between TinyMCE editor versions and premium plugins.
 
-|
+a|
 [.lead]
 xref:cloud-troubleshooting.adoc[Cloud Troubleshooting]
 
 Troubleshooting errors shown by the Tiny Cloud.
 
 // Empty cell to even out rows
-// | 
+a|
 
 |===

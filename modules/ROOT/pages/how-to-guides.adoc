@@ -4,118 +4,111 @@
 :type: folder
 
 // 2 Columns, both asciidoc
-[cols=2*a]
+[cols="1,1"]
 |===
 
-|
+a|
 [.lead]
 xref:accessibility.adoc[Accessibility]
 
 Learn how {productname} works with screen readers and how screen readers work with {productname}.
 
-|
+a|
 [.lead]
 xref:security.adoc[Security]
 
 Security information for {productname}.
 
-|
+a|
 [.lead]
 xref:creating-a-skin.adoc[Create a skin]
 
 Introducing skin creation.
 
-|
+a|
 [.lead]
 xref:creating-an-icon-pack.adoc[Create an icon pack]
 
 Introducing icon pack creation.
 
-|
+a|
 [.lead]
 xref:creating-a-plugin.adoc[Create a plugin]
 
 Introducing plugin creation, with an example.
 
-|
+a|
 [.lead]
 xref:annotations.adoc[Annotations]
 
 {productname} Annotations provides the ability to describe particular features or add general information to a...
 
-|
-[.lead]
-xref:yeoman-generator.adoc[Yeoman generator]
-
-How to use the Yeoman generator to bootstrap a new {productname} plugin
-
-|
+a|
 [.lead]
 xref:creating-custom-notifications.adoc[Create custom notifications]
 
 Learn how to make custom notifications.
 
-|
+a|
 [.lead]
 xref:php-upload-handler.adoc[PHP image upload handler]
 
 A server-side upload handler PHP script.
 
-|
+a|
 [.lead]
 xref:available-menu-items.adoc[Available Menu Items]
 
 Complete list of menu items available for the menu bar and context menus.
 
-|
+a|
 [.lead]
 xref:available-toolbar-buttons.adoc[Available Toolbar Buttons]
 
 Complete list of toolbar buttons available for the toolbar and quick toolbars.
 
-|
+a|
 [.lead]
 xref:editor-command-identifiers.adoc[Available Commands]
 
 Complete list of editor commands.
 
-|
+a|
 [.lead]
 xref:editor-icon-identifiers.adoc[Available Icons]
 
 Complete list of icon identifiers.
 
-|
+a|
 [.lead]
 xref:editor-context-menu-identifiers.adoc[Available Context Menu Items]
 
 Complete list of available context menu sections.
 
-|
+a|
 [.lead]
 xref:events.adoc[Available Events]
 
 List of common editor events
 
-|
+a|
 [.lead]
 xref:keyboard-shortcuts.adoc[Keyboard shortcuts]
 
 Complete list of keyboard shortcuts.
 
-|
+a|
 [.lead]
 xref:introduction-to-bundling-tinymce.adoc[Bundling {productname}]
 
 Bundling {productname} with Webpack, rollup.js, or Browserify.
 
-|
+a|
 [.lead]
 xref:generate-rsa-key-pairs.adoc[Generate public key pairs]
 
 Instructions on how to generate private/public key pairs for the Tiny Cloud
 
 // Empty cell to even out rows
-// | 
-
+a|
 |===

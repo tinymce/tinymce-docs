@@ -3,11 +3,9 @@
 
 The `+menu+` option allows integrators to define the available menus for the xref:menus-configuration-options.adoc#menubar[menubar option] and specify the xref:available-menu-items.adoc[menu items] that appear within those menus.
 
-To configure the menus, provide a JavaScript object where each property represents a menu, containing `+title+` and `+items+` fields. The `+title+` field defines the display name, while the `+items+` field lists the controls in the menu, separated by spaces.
+To configure the menus, provide a JavaScript object where each property represents a menu. Each menu object should contain `+title+` and `+items+` properties. The `+title+` property is a string that defines the display name, while the `+items+` property is a space-separated list of the xref:available-menu-items.adoc[menu items] that should populate the menu.
 
-The `+title+` property should contain a string with the display name of the `+menu+`. The `+items+` field should contain a space separated list of the controls that should populate the `+menu+`.
-
-If you would like to group these menu items, please insert a `+|+` pipe character between the menu items.
+To group certain menu items, insert a `+|+` pipe character between the menu items.
 
 *Type:* `+Object+`
 

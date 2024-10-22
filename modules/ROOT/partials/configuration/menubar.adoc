@@ -1,9 +1,9 @@
 [[menubar]]
 == `+menubar+`
 
-This option allows you to specify which menus should appear and the order that they appear in the menu bar at the top of {productname}.
+This option specifies which menus appear and their order in the menu bar at the top of {productname}.
 
-To specify the menus that should appear on {productname}'s menu bar, the menubar option should be provided with a space separated list of menus.
+To define the menus on {productname}'s menu bar, provide the menubar option with a space-separated list of menus.
 
 *Type:* `+String+` or `+Boolean+`
 
@@ -25,7 +25,7 @@ tinymce.init({
 
 === Example: disabling/removing the menu bar
 
-To disable the menu bar, the menubar option should be provided a boolean value of `+false+`.
+To disable the menu bar, set the `+menubar+` option to `+false+`.
 
 [source,js]
 ----
@@ -35,4 +35,4 @@ tinymce.init({
 });
 ----
 
-If you need more control over the contents of the menus, see the xref:menus-configuration-options.adoc#menu[menu parameter].
+For more granular control over the contents of the menus, refer to the xref:menus-configuration-options.adoc#menu[menu option] documentation.

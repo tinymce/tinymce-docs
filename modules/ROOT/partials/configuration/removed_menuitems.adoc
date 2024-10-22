@@ -1,7 +1,7 @@
 [[removed_menuitems]]
 == `+removed_menuitems+`
 
-This option allows you to remove items from {productname}'s drop down menus. This is useful if you are only using the xref:menus-configuration-options.adoc#menubar[menubar] option to set your menus without setting custom menu items using the xref:menus-configuration-options.adoc#menu[menu] option.
+This option enables the exclusion of items from {productname}'s menus. It is especially useful when configuring menus using only the xref:menus-configuration-options.adoc#menubar[menubar] option without defining custom menu items through the xref:menus-configuration-options.adoc#menu[menu] option.
 
 *Type:* `+String+`
 

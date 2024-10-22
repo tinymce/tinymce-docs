@@ -1,7 +1,7 @@
 [[menu]]
 == `+menu+`
 
-This option allows you to define what menus are available to the xref:menus-configuration-options.adoc#menubar[menubar option] and the xref:available-menu-items.adoc[menu items] that should appear within the menus themselves.
+The `+menu+` option allows integrators to define the available menus for the xref:menus-configuration-options.adoc#menubar[menubar option] and specify the xref:available-menu-items.adoc[menu items] that appear within those menus.
 
 To define the menus available in {productname}, the `+menu+` option should be provided with a JavaScript object containing a property for each menu. These properties should contain a JavaScript object themselves with properties `+title+` and `+items+`.
 

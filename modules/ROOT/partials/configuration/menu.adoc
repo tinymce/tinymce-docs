@@ -3,7 +3,7 @@
 
 The `+menu+` option allows integrators to define the available menus for the xref:menus-configuration-options.adoc#menubar[menubar option] and specify the xref:available-menu-items.adoc[menu items] that appear within those menus.
 
-To define the menus available in {productname}, the `+menu+` option should be provided with a JavaScript object containing a property for each menu. These properties should contain a JavaScript object themselves with properties `+title+` and `+items+`.
+To configure the menus, provide a JavaScript object where each property represents a menu, containing `+title+` and `+items+` fields. The `+title+` field defines the display name, while the `+items+` field lists the controls in the menu, separated by spaces.
 
 The `+title+` property should contain a string with the display name of the `+menu+`. The `+items+` field should contain a space separated list of the controls that should populate the `+menu+`.
 

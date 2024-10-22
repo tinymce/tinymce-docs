@@ -158,6 +158,14 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Closing a nested modal dialog would lose focus from the editor.
+// #TINY-11153
+
+When closing dialogs in an inline editor, focus was unintentionally lost before the dialog was fully closed. This issue was linked to link:https://www.tiny.cloud/docs/tinymce/6/6.5.1-release-notes/#closing-a-dialog-would-scroll-down-the-document-in-safari-on-macos[Closing a dialog would scroll down the document in Safari on macOS^] which was fixed in {productname} 6.5.1, where dismissing the Search/Replace dialog by clicking outside of it in Safari on macOS caused the document to scroll unexpectedly.
+
+As a consequence of this linked issue, the loss of focus led to the editor entirely losing its focus, resulting in the inline editor hiding its UI. This behavior created confusion, as the preceding dialog (e.g., table properties) appeared to close unexpectedly.
+
+The implemented fix ensures that focus is only shifted away from the dialog if it is currently focused. As a result, the editor retains its UI when closing nested dialogs.
 
 [[security-fixes]]
 == Security fixes

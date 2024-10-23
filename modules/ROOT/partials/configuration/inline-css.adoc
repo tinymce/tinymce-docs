@@ -1,8 +1,8 @@
-=== inline_selector_filter
+=== inlinecss_selector_filter
 
-Determines whether it is valid for a given CSS selector to have its CSS properties inlined into the HTML content
+Determines whether it is valid for a given CSS selector to have its CSS properties inlined into the HTML content.
 
-Default: All selectors are considered valid to have their CSS inlined
+Default: All selectors are considered valid to have their CSS inlined.
 
 Type: `String` `RegExp` or `Function`
 
@@ -13,11 +13,11 @@ inlinecss_selector_filter: (selector: string): boolean => {
 }
 ----
 
-=== inline_file_filter
+=== inlinecss_file_filter
 
-Determines whether it is valid for a given CSS stylesheet to have its CSS inspected and inlined into the HTML content
+Determines whether it is valid for a given CSS stylesheet to have its CSS inspected and inlined into the HTML content.
 
-Default: All CSS stylesheet are considered valid to have their CSS inspected and inlined
+Default: All CSS stylesheet are considered valid to have their CSS inspected and inlined.
 
 Type: `String` `RegExp` or `Function`
 
@@ -27,4 +27,3 @@ inlinecss_file_filter: (href: string): boolean => {
   return selector.indexOf('mystyles') !== -1;
 }
 ----
-

@@ -158,6 +158,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Improved color picker aria support.
+// #TINY-11291
+
+In previous versions of {productname}, an issue was identified where screen readers would inconsistently announce the original R/G/B component string in the color picker, leading to a lack of context for visually impaired users. The root cause was an incorrect placement of the `aria-label` attribute, which was initially applied to the label element instead of the input field.
+
+{productname} {release-version} addresses this issue. Now, the `aria-label` attribute has been moved to the input field to ensure it is correctly associated. Additionally, the descriptive text was updated from "Red/Green/Blue component" to "Red/Green/Blue channel" to provide clearer information for assistive technologies. These changes ensure that screen readers consistently and accurately announce the relevant RGB channels, significantly improving accessibility.
 
 [[security-fixes]]
 == Security fixes

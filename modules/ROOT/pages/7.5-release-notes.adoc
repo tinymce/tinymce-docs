@@ -77,7 +77,7 @@ The {productname} {release-version} release includes an accompanying release of 
 
 ==== The `conversationAuthor` property was missing from 'create` conversation events in the EventLog API.
 
-In previous versions of the tinycomments plugin, the `conversationAuthor` property was missing from 'create' events within the event log, which lead to incomplete tracking of user interactions when retrieving data through the `+getEventLog()+` API.
+In previous versions of the tinycomments plugin, the `conversationAuthor` property was missing from 'create' events within the event log, which led to incomplete tracking of user interactions when retrieving data through the `+getEventLog()+` API.
 
 {productname} {release-version} addresses this issue. Now, the `conversationAuthor` property is included in 'create' events in the event log.
 

@@ -193,7 +193,13 @@ This section describes issues that users of {productname} {release-version} may 
 
 There <is one | are <number> known issue<s> in {productname} {release-version}.
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+== Known Issues
 
-// CCFR here.
+=== Screenreader on safari has poor consistency of announcing aria-label
+// #TINY-11291 & #TINY-11430
+
+In Safari, when using a screen reader, the focus is incorrectly placed on the content of the input field instead of the input field itself. This behavior results in the screen reader not announcing the content of the `aria-label` associated with the input field.
+
+As a consequence, users relying on screen readers may not hear the intended description of the input field, leading to potential confusion or accessibility challenges.
+
+**Status**: Currently under investigation.

@@ -158,6 +158,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Corrected focus highlight visibility in `Statusbar` path
+
+A visual bug introduced in {productname} version xref:7.2.1-release-notes.adoc#long-translations-of-the-bottom-help-text-would-cause-minor-graphical-issues[7.1.2] caused the focus highlight to appear behind the tag name in the statusbar path, making it difficult for users to visually track their focus.
+
+In {productname} {release-version}, this has been corrected. The focus highlight is now correctly displayed above the tag name when navigating through the statusbar path, ensuring a clear and visible focus indication. 
+
 
 [[security-fixes]]
 == Security fixes

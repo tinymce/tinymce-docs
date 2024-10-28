@@ -368,7 +368,7 @@ tinycomments_author_name: '',
 
 Previously, instead of assigning default user/author values as in `7-stable` (7.3), the latest release {release-version} disables all comment features when these fields are empty.
 
-**Status**: Currently under investigation.
+**Status**: This issue has been resolved in xref:7.5-release-notes.adoc#use-default-anon-value-for-tinycomments_author-and-tinycomments_author_name-options-when-the-provided-value-is-an-empty-string[{productname} 7.5.0].
 
 === Comment card not removed after deleting content
 // #TINY-11366

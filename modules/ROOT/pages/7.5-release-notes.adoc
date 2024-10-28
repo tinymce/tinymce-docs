@@ -81,6 +81,13 @@ In previous versions of the tinycomments plugin, the `conversationAuthor` proper
 
 {productname} {release-version} addresses this issue. Now, the `conversationAuthor` property is included in 'create' events in the event log.
 
+==== Use default 'Anon' value for `tinycomments_author` and `tinycomments_author_name` options when the provided value is an empty string.
+// #TINY-11323
+
+Previously in xref:7.4-release-notes.adoc#comments-not-functional-with-empty-tinycomments_author-and-tinycomments_author_name[{productname} 7.4.0], an issue was identified in **Embedded mode** where the commenting functionality became non-operational when either the `tinycomments_author` or the `tinycomments_author_name` options were configured as empty strings `""`. As a consequence, users were unable to create comments when these options were empty.
+
+In {productname} {release-version}, the `tinycomments_author` and `tinycomments_author_name` options now default to "Anon" when the provided value is an empty string. As a result, the commenting functionality is now operational even when these options are empty.
+
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
 
 

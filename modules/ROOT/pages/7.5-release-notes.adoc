@@ -83,6 +83,23 @@ In previous versions of the tinycomments plugin, the `conversationAuthor` proper
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
 
+=== PowerPaste
+
+The {productname} {release-version} release includes an accompanying release of the **PowerPaste** premium plugin.
+
+**PowerPaste** Premium plugin includes the following improvement.
+
+==== Pasting plain text with the `mceInsertClipboardContent` command is now a synchronous action, to match {productname}'s core behaviour. 
+
+Previously, the `mceInsertClipboardContent` command in Powerpaste was executed asynchronously, diverging from {productname}'s core behavior and causing compatibility issues with the xref:markdown.adoc[Markdown] plugin.
+
+As a consequence, this asynchronous execution rendered Markdown and Powerpaste entirely incompatible. When Powerpaste was active, the Markdown plugin was effectively disabled, as it relied on synchronous command execution.
+
+{productname} {release-version} addresses this issue. Now, the `mceInsertClipboardContent` command within the Markdown plugin has been updated to be synchronous, aligning it with {productname}'s core functionality.
+
+As a result, the command now executes synchronously, allowing both Powerpaste and the Markdown plugin to operate together seamlessly, restoring full functionality for Markdown users.
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[Introduction to PowerPaste].
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

@@ -161,7 +161,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === The `toolbar-sticky-offset` would still be applied after entering fullscreen mode.
 // #TINY-11137
 
-In previous versions of {productname}, a issue was identified where the toolbar offset was incorrectly applied in fullscreen mode, causing the toolbar to overlap with the editor area.
+In previous versions of {productname}, an issue was identified where the toolbar offset was incorrectly applied in fullscreen mode, causing the toolbar to overlap with the editor area.
 
 {productname} {release-version} addresses this issue, by implementing a check to verify whether the editor is in fullscreen mode before applying the toolbar offset. As a result, the toolbar now appears in the correct position when in fullscreen mode, even with the `toolbar_sticky_offset` option defined.
 

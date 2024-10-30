@@ -176,8 +176,26 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 A visual bug introduced in {productname} version xref:7.2.1-release-notes.adoc#long-translations-of-the-bottom-help-text-would-cause-minor-graphical-issues[7.1.2] caused the focus highlight to appear behind the tag name in the statusbar path, making it difficult for users to visually track their focus.
 
-In {productname} {release-version}, this has been corrected. The focus highlight is now correctly displayed above the tag name when navigating through the statusbar path, ensuring a clear and visible focus indication. 
+In {productname} {release-version}, this has been corrected. The focus highlight is now correctly displayed above the tag name when navigating through the statusbar path, ensuring a clear and visible focus indication.
 
+=== Added new default `li` element styles to the content CSS to prevent child list elements from inheriting certain parent list item styles.
+// #TINY-11217
+
+In previous versions of {productname}, child `+<li>+` elements could inherit inline CSS styles from their parent list items, causing unexpected styling behavior in nested lists. This issue was due to native CSS behavior, where child list items would inherit certain parent styles upon post-content insertion.
+
+{productname} {release-version} addresses this issue. Now, new default CSS styles were added for `+<li>+` elements to prevent inheritance of specific parent styles. This ensures that list items in nested structures render independently, maintaining consistent visual formatting.
+
+.Example of nested list items with independent styles
+[source,html]
+----
+<ul>
+  <li>Parent Item
+    <ul>
+      <li>Child Item (Styles are now independent of Parent)</li>
+    </ul>
+  </li>
+</ul>
+----
 
 [[security-fixes]]
 == Security fixes

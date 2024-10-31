@@ -172,7 +172,15 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== The `toolbar-sticky-offset` would still be applied after entering fullscreen mode.
+// #TINY-11137
+
+In previous versions of {productname}, an issue was identified where the toolbar offset was incorrectly applied in fullscreen mode, causing the toolbar to overlap with the editor area.
+
+{productname} {release-version} addresses this issue, by implementing a check to verify that the editor is **not** in fullscreen mode before applying the toolbar offset. As a result, the toolbar now appears in the correct position when in fullscreen mode, even with the `toolbar_sticky_offset` option defined.
+
 === Corrected focus highlight visibility in `Statusbar` path
+// #TINY-11381
 
 A visual bug introduced in {productname} version xref:7.2.1-release-notes.adoc#long-translations-of-the-bottom-help-text-would-cause-minor-graphical-issues[7.1.2] caused the focus highlight to appear behind the tag name in the statusbar path, making it difficult for users to visually track their focus.
 

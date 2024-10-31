@@ -198,7 +198,7 @@ There <is one | are <number> known issue<s> in {productname} {release-version}.
 === Screenreader on safari has poor consistency of announcing aria-label
 // #TINY-11291 & #TINY-11430
 
-In Safari, when using a screen reader, the focus is incorrectly placed on the content of the input field instead of the input field itself. This behavior results in the screen reader not announcing the content of the `aria-label` associated with the input field.
+In Safari, when using a screen reader on the color picker, the focus is mistakenly placed on the content within the input field rather than the field itself. This causes the screen reader to bypass announcing the aria-label associated with the field.
 
 As a consequence, users relying on screen readers may not hear the intended description of the input field, leading to potential confusion or accessibility challenges.
 

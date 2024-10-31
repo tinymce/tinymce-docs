@@ -185,17 +185,6 @@ In previous versions of {productname}, child `+<li>+` elements could inherit inl
 
 {productname} {release-version} addresses this issue. Now, new default CSS styles were added for `+<li>+` elements to prevent inheritance of specific parent styles. This ensures that list items in nested structures render independently, maintaining consistent visual formatting.
 
-.Example of nested list items with independent styles
-[source,html]
-----
-<ul>
-  <li>Parent Item
-    <ul>
-      <li>Child Item (Styles are now independent of Parent)</li>
-    </ul>
-  </li>
-</ul>
-----
 
 [[security-fixes]]
 == Security fixes

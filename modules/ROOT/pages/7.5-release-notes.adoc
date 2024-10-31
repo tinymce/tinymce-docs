@@ -172,6 +172,15 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Forecolor and backcolor toolbar buttons were not completely greyed out while in readonly mode.
+// #TINY-11313
+
+In previous versions of {productname}, an issue was identified where the `backcolor` and `forecolor` toolbar buttons were not completely greyed out while in readonly mode due to an incorrect CSS selector.
+
+This led to a visual inconsistency in the readonly editor state.
+
+{productname} {release-version} addresses this issue. Now, the CSS selector has been corrected, ensuring that both `backcolor` and `forecolor` buttons are now completely greyed out, providing a consistent user experience when the editor is in readonly mode.
+
 === Improved color picker aria support.
 // #TINY-11291
 

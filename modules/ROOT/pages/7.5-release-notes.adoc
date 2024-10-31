@@ -202,6 +202,12 @@ A visual bug introduced in {productname} version xref:7.2.1-release-notes.adoc#l
 
 In {productname} {release-version}, this has been corrected. The focus highlight is now correctly displayed above the tag name when navigating through the statusbar path, ensuring a clear and visible focus indication. 
 
+=== Inability to type `{` character on German keyboard layouts
+
+In previous versions of {productname}, an issue was identified on German Mac keyboard layouts where the `+Option+8+` keyboard combination, used to type the opening curved bracket `{`, conflicted with the `+Alt+F12+` shortcut, which is used to focus notifications in the {productname} editor. This conflict occurred because, on German Mac keyboards, `+Option+8+` generated a key code that overlapped with the `+Alt+F12+` function, preventing users from typing `{` in the editor.
+
+To address this, {productname} {release-version} updates the keyboard event handling, implementing the `event.key` property rather than relying on numeric key codes. This solution ensures that the `{` character can be typed using `+Option+8+` on German Mac keyboards without interfering with the `+Alt+F12+` notification focus shortcut.
+
 [[security-fixes]]
 == Security fixes
 

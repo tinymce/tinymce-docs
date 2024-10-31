@@ -1,0 +1,148 @@
+== APIs
+
+The {pluginname} plugin provides the xref:comments-commands-events-apis#getEventLog[`+getEventLog()+`] API, as well as an annotator named xref:comments-commands-events-apis#tinycomments-annotator[`+'tinycomments'+`] created using the xref:annotations.adoc[`+editor.annotator+` API].
+
+[[getEventLog]]
+=== getEventLog()
+
+include::partial$misc/admon-requires-6.1v.adoc[]
+
+The `getEventLog` returns a log that contains information and timestamps of all changes to comments, including when:
+
+* A new comment is added.
+
+[source,js]
+----
+{
+  "type": "create",
+  "timestamp": "2024-10-01T03:07:53.771Z",
+  "conversationUid": "annotation-r1nn5xdo5ye",
+  "conversationContext": "Welcome",
+  "conversationContent": "new comment",
+  "conversationAuthor": {
+      "author": "DEMO USER",
+      "authorName": "DEMO USER"
+  }
+},
+----
+
+* A comment is edited.
+
+[source,js]
+----
+{
+  "type": "edit-comment",
+  "timestamp": "2024-10-01T03:08:06.551Z",
+  "conversationUid": "annotation-r1nn5xdo5ye",
+  "commentUid": "annotation-r1nn5xdo5ye",
+  "conversationContext": "Welcome",
+  "conversationContent": "new comment",
+  "conversationCreatedAt": "2024-10-01T03:07:53.771Z",
+  "commentContent": "new comment (Edit comment)",
+  "commentAuthor": {
+      "author": "DEMO USER",
+      "authorName": "DEMO USER"
+  },
+  "conversationAuthor": {
+      "author": "DEMO USER",
+      "authorName": "DEMO USER"
+  }
+},
+----
+
+* A reply to a comment is added.
+
+[source,js]
+----
+{
+  "type": "reply",
+  "timestamp": "2024-10-01T03:07:53.771Z",
+  "conversationUid": "annotation-r1nn5xdo5ye",
+  "commentUid": "annotation-uh00rb41kma",
+  "conversationContext": "Welcome",
+  "conversationContent": "new comment (Edit comment)",
+  "conversationCreatedAt": "2024-10-01T03:07:53.771Z",
+  "commentContent": "reply to existing comment",
+  "conversationAuthor": {
+      "author": "DEMO USER",
+      "authorName": "DEMO USER"
+  }
+},
+----
+
+* A comment is resolved.
+
+[source,js]
+----
+{
+  "type": "resolve",
+  "timestamp": "2024-10-01T03:08:25.783Z",
+  "conversationUid": "annotation-r1nn5xdo5ye",
+  "conversationContext": "Welcome",
+  "conversationContent": "new comment (Edit comment)",
+  "conversationAuthor": {
+      "author": "DEMO USER",
+      "authorName": "DEMO USER"
+  }
+},
+----
+
+* A comment is deleted.
+
+[source,js]
+----
+{
+  "type": "delete-comment",
+  "timestamp": "2024-10-01T03:08:23.292Z",
+  "conversationUid": "annotation-r1nn5xdo5ye",
+  "commentUid": "annotation-uh00rb41kma",
+  "conversationContext": "Welcome",
+  "conversationContent": "new comment (Edit comment)",
+  "commentContent": "reply to existing comment",
+  "commentAuthor": {
+      "author": "DEMO USER",
+      "authorName": "DEMO USER"
+  },
+  "conversationAuthor": {
+      "author": "DEMO USER",
+      "authorName": "DEMO USER"
+  }
+},
+----
+
+The event log can be retrieved either in full or with the `after` option, which restricts the returned list to Comment events after a time-stamp date in the link:https://en.wikipedia.org/wiki/ISO_8601[ISO-8601] format, both shown in the following:
+
+==== With the Mentions plugin
+
+When the Mentions plugin is enabled, each of the above events will include the `mentionUids` property, which contains an array of UIDs mentioned in the comment. The `mentionUids` property is only included when the Mentions plugin is enabled.
+
+It is recommended to use this API to retrieve which users have been mentioned in comments.
+
+==== Example: using `+getEventLog()+`
+
+[source,js]
+----
+const comments = tinymce.activeEditor.plugins.tinycomments;
+
+console.log(comments.getEventLog());
+console.log(comments.getEventLog(
+  { after: '2022-02-22T12:34:56Z' }  // ISO-8601 standard: YYYY-MM-DDThh:mm:ssZ
+));
+
+const eventLog = comments.getEventLog();
+const events = eventLog.events;
+const mentionedUsers = events.flatMap(({ mentionUids }) => mentionedUids);
+
+let whoMentionedWho = {};
+events.forEach((event) => {
+  if (event.type === "create" || event.type === "reply") {
+    console.log(event);
+    if (whoMentionedWho[event.conversationAuthor.author] === undefined) {
+      whoMentionedWho[event.conversationAuthor.author] = event.mentionedUids;
+    } else {
+      whoMentionedWho[event.conversationAuthor.author].push(...event.mentionedUids);
+    }
+  }
+});
+console.log(whoMentionedWho);
+----

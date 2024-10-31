@@ -1,0 +1,29 @@
+[[tinycomments_mentions_enabled]]
+== `+tinycomments_mentions_enabled+`
+
+The {pluginname} plugin offers the `+tinycomments_mentions_enabled+` option to control whether the Mentions plugin will be incorporated into the {pluginname} plugin, when both plugins are included in the configuration.
+
+*Type:* `+Boolean+`
+
+*Possible values:* `true`, `false`
+
+*Default value:* `true`
+
+=== Example: using `tinycomments_mentions_enabled` option
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your html
+  plugins: 'tinycomments mentions',
+  toolbar: 'addcomment showcomments',
+  tinycomments_mentions_enabled: true,
+  tinycomments_mode: 'embedded',
+  tinycomments_author: 'johnsmith',
+  tinycomments_author_name: 'John Smith',
+  mentions_fetch,
+  mentions_menu_complete,
+  mentions_menu_hover,
+  mentions_select
+});
+----

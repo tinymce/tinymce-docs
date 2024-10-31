@@ -182,8 +182,6 @@ In {productname} {release-version}, this has been corrected. The focus highlight
 
 In previous versions of {productname}, an issue was identified on German Mac keyboard layouts where the `+Option+8+` keyboard combination, used to type the opening curved bracket `{`, conflicted with the `+Alt+F12+` shortcut, which is used to focus notifications in the {productname} editor. This conflict occurred because, on German Mac keyboards, `+Option+8+` generated a key code that overlapped with the `+Alt+F12+` function, preventing users from typing `{` in the editor.
 
-This issue impacted users with German keyboard layouts by restricting their ability to type `{`, a commonly used symbol in coding and scripting.
-
 To address this, {productname} {release-version} updates the keyboard event handling, implementing the `event.key` property rather than relying on numeric key codes. This solution ensures that the `{` character can be typed using `+Option+8+` on German Mac keyboards without interfering with the `+Alt+F12+` notification focus shortcut.
 
 [[security-fixes]]

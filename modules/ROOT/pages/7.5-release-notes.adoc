@@ -200,6 +200,6 @@ There <is one | are <number> known issue<s> in {productname} {release-version}.
 
 In Safari, when using a screen reader on the color picker, the focus is mistakenly placed on the content within the input field rather than the field itself. This causes the screen reader to bypass announcing the aria-label associated with the field.
 
-As a consequence, users relying on screen readers may not hear the intended description of the input field, leading to potential confusion or accessibility challenges.
+As a consequence, users who rely on screen readers may not hear the intended description provided by the aria-label, potentially causing confusion or reducing accessibility.
 
 **Status**: Currently under investigation.

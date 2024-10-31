@@ -69,6 +69,20 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Comments
+
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** Premium plugin includes the following fix.
+
+==== The `conversationAuthor` property was missing from 'create` conversation events in the EventLog API.
+
+In previous versions of the tinycomments plugin, the `conversationAuthor` property was missing from 'create' events within the event log, which led to incomplete tracking of user interactions when retrieving data through the `+getEventLog()+` API.
+
+{productname} {release-version} addresses this issue. Now, the `conversationAuthor` property is included in 'create' events in the event log.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement
@@ -167,6 +181,27 @@ This led to a visual inconsistency in the readonly editor state.
 
 {productname} {release-version} addresses this issue. Now, the CSS selector has been corrected, ensuring that both `backcolor` and `forecolor` buttons are now completely greyed out, providing a consistent user experience when the editor is in readonly mode.
 
+=== Improved color picker aria support.
+// #TINY-11291
+
+In previous versions of {productname}, an issue was identified where screen readers would inconsistently announce the original R/G/B component string in the color picker, leading to a lack of context for visually impaired users. The root cause was an incorrect placement of the `aria-label` attribute, which was initially applied to the label element instead of the input field.
+
+{productname} {release-version} addresses this issue. Now, the `aria-label` attribute has been moved to the input field to ensure it is correctly associated. Additionally, the descriptive text was updated from "Red/Green/Blue component" to "Red/Green/Blue channel" to provide clearer information for assistive technologies. These changes ensure that screen readers consistently and accurately announce the relevant RGB channels, significantly improving accessibility.
+
+=== The `toolbar-sticky-offset` would still be applied after entering fullscreen mode.
+// #TINY-11137
+
+In previous versions of {productname}, an issue was identified where the toolbar offset was incorrectly applied in fullscreen mode, causing the toolbar to overlap with the editor area.
+
+{productname} {release-version} addresses this issue, by implementing a check to verify that the editor is **not** in fullscreen mode before applying the toolbar offset. As a result, the toolbar now appears in the correct position when in fullscreen mode, even with the `toolbar_sticky_offset` option defined.
+
+=== Corrected focus highlight visibility in `Statusbar` path
+// #TINY-11381
+
+A visual bug introduced in {productname} version xref:7.2.1-release-notes.adoc#long-translations-of-the-bottom-help-text-would-cause-minor-graphical-issues[7.1.2] caused the focus highlight to appear behind the tag name in the statusbar path, making it difficult for users to visually track their focus.
+
+In {productname} {release-version}, this has been corrected. The focus highlight is now correctly displayed above the tag name when navigating through the statusbar path, ensuring a clear and visible focus indication. 
+
 [[security-fixes]]
 == Security fixes
 
@@ -195,7 +230,13 @@ This section describes issues that users of {productname} {release-version} may 
 
 There <is one | are <number> known issue<s> in {productname} {release-version}.
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+== Known Issues
 
-// CCFR here.
+=== Screenreader on safari has poor consistency of announcing aria-label
+// #TINY-11291 & #TINY-11430
+
+In Safari, when using a screen reader on the color picker, the focus is mistakenly placed on the content within the input field rather than the field itself. This causes the screen reader to bypass announcing the aria-label associated with the field.
+
+As a consequence, users who rely on screen readers may not hear the intended description provided by the aria-label, potentially causing confusion or reducing accessibility.
+
+**Status**: Currently under investigation.

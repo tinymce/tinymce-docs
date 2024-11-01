@@ -73,7 +73,7 @@ For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode
 
 The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
 
-**Comments** Premium plugin includes the following fix.
+**Comments** Premium plugin includes the following fixes.
 
 ==== The `conversationAuthor` property was missing from 'create` conversation events in the EventLog API.
 
@@ -89,6 +89,13 @@ Previously, in xref:7.4-release-notes.adoc#comment-card-not-removed-after-deleti
 This behavior led to confusion and increased the risk of interacting with obsolete comments.
 
 In {productname} {release-version}, this issue has been resolved. Now, when annotated content is deleted, the associated conversation card is automatically removed from the sidebar.
+
+==== Use default 'Anon' value for `tinycomments_author` and `tinycomments_author_name` options when the provided value is an empty string.
+// #TINY-11323
+
+Previously in xref:7.4-release-notes.adoc#comments-not-functional-with-empty-tinycomments_author-and-tinycomments_author_name[{productname} 7.4.0], an issue was identified in **Embedded mode** where the commenting functionality became non-operational when either the `tinycomments_author` or the `tinycomments_author_name` options were configured as empty strings `""`. As a consequence, users were unable to create comments when these options were empty.
+
+In {productname} {release-version}, the `tinycomments_author` and `tinycomments_author_name` options now default to "Anon" when the provided value is an empty string. As a result, the commenting functionality is now operational even when these options are empty.
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
 

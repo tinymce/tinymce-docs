@@ -188,6 +188,15 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Autocompleter would not activate after applying an inline format like font size in some cases.
+// #TINY-11273
+
+Previously, when formatting was applied, a span with a zero-width no-break space `+U+FEFF+` was added to the editor. This character was not considered whitespace; as a result, the autocompleter did not trigger as expected. 
+
+{productname} {release-version} addresses this issue by updating the function to include `+U+FEFF+` as a valid character. 
+
+As a result, the autocompleter now triggers as expected after applying formatting.
+
 === Forecolor and backcolor toolbar buttons were not completely greyed out while in readonly mode.
 // #TINY-11313
 

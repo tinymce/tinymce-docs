@@ -114,7 +114,7 @@ The event log can be retrieved either in full or with the `after` option, which 
 
 ==== With the Mentions plugin
 
-When the Mentions plugin is enabled, each of the above events will include the `mentionUids` property, which contains an array of UIDs mentioned in the comment. The `mentionUids` property is only included when the Mentions plugin is enabled.
+When the xref:mentions.adoc[Mentions] plugin is enabled, each of the above events will include the `mentionedUids` property, which contains an array of UIDs mentioned in the comment. The `mentionedUids` property is only included when the xref:mentions.adoc[Mentions] plugin is enabled.
 
 It is recommended to use this API to retrieve which users have been mentioned in comments.
 

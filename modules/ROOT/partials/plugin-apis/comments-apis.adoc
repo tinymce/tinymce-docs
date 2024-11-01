@@ -131,7 +131,7 @@ console.log(comments.getEventLog(
 
 const eventLog = comments.getEventLog();
 const events = eventLog.events;
-const mentionedUsers = events.flatMap(({ mentionUids }) => mentionedUids);
+const mentionedUsers = events.flatMap(({ mentionedUids }) => mentionedUids);
 
 let whoMentionedWho = {};
 events.forEach((event) => {

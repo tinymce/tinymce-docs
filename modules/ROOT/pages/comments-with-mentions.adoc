@@ -11,9 +11,10 @@ When a user starts typing a mention with the `+@+` symbol, the mention dropdown 
 
 When the comment is saved, mentioned users will appear in the comment text in the same way as they do in the editor.
 
-All mentions are stored in the comment text as plain text, so for the mentions to be displayed correctly, the Mentions plugin must be included in the TinyMCE configuration when the comments are displayed.
+All mentions are stored in the comment text as plain text, so for the mentions to be displayed correctly, the xref:mentions.adoc[Mentions] plugin must be included in the {productname} configuration when the comments are displayed.
 
-To add mentions to comments, both the Comments and Mentions plugins must be included in the TinyMCE configuration, and all required options must be set.
+[IMPORTANT]
+To add mentions to comments, both the Comments and Mentions plugins must be included in the {productname} configuration, and all required options must be set.
 
 [[comments-callback-with-mentions-live-demo]]
 == Callback mode interactive example

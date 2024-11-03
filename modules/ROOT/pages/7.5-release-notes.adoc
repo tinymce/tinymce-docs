@@ -91,13 +91,11 @@ The {productname} {release-version} release includes an accompanying release of 
 
 ==== Pasting plain text with the `mceInsertClipboardContent` command is now a synchronous action, to match {productname}'s core behaviour. 
 
-Previously, the `mceInsertClipboardContent` command in Powerpaste was executed asynchronously, diverging from {productname}'s core behavior and causing compatibility issues with the xref:markdown.adoc[Markdown] plugin.
+Previously in {productname}, when the Powerpaste plugin was enabled, the `mceInsertClipboardContent` command was executed asynchronously. This caused compatibility issues with the xref:markdown.adoc[Markdown] plugin, as the Markdown plugin relied on synchronous command execution. As a consequence, the Markdown plugin was effectively disabled when Powerpaste was active.
 
-As a consequence, this asynchronous execution rendered Markdown and Powerpaste entirely incompatible. When Powerpaste was active, the Markdown plugin was effectively disabled, as it relied on synchronous command execution.
+{productname} {release-version} addresses this issue. The `mceInsertClipboardContent` command has been updated to be conditionally synchronous when the Powerpaste plugin is enabled. If the content is plaintext (e.g., `editor.execCommand('mceInsertClipboardContent', false, { text: content })`), the command is executed synchronously, aligning it with {productname}'s core functionality. If the content is HTML (e.g., `editor.execCommand('mceInsertClipboardContent', false, { html: content })`), the command remains asynchronous, as it requires async operations for HTML content.
 
-{productname} {release-version} addresses this issue. Now, the `mceInsertClipboardContent` command within the Markdown plugin has been updated to be synchronous, aligning it with {productname}'s core functionality.
-
-As a result, the command now executes synchronously, allowing both Powerpaste and the Markdown plugin to operate together seamlessly, restoring full functionality for Markdown users.
+As a result, the `mceInsertClipboardContent` command now always executes synchronously when pasting plaintext, allowing both Powerpaste and the Markdown plugin to operate together seamlessly, restoring full functionality for Markdown users.
 
 For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[Introduction to PowerPaste].
 

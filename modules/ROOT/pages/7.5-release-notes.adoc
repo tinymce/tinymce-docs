@@ -191,7 +191,7 @@ Previously in {productname}, when the Powerpaste plugin was enabled, the `mceIns
 
 {productname} {release-version} addresses this issue. The `mceInsertClipboardContent` command has been updated to be conditionally synchronous when the Powerpaste plugin is enabled. If the content is plaintext (e.g., `+editor.execCommand('mceInsertClipboardContent', false, { text: content })+`), the command is executed synchronously, aligning it with {productname}'s core functionality. If the content is HTML (e.g., `+editor.execCommand('mceInsertClipboardContent', false, { html: content })+`), the command remains asynchronous, as it requires async operations for HTML content.
 
-As a result, the `mceInsertClipboardContent` command now always executes synchronously when pasting plaintext, allowing both Powerpaste and the Markdown plugin to operate together seamlessly, restoring full functionality for Markdown users.
+As a result, the `mceInsertClipboardContent` command now always executes synchronously when pasting plaintext, allowing both Powerpaste and Markdown plugins to operate together seamlessly, restoring full functionality for Markdown users.
 
 For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[Introduction to PowerPaste].
 

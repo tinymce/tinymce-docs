@@ -139,7 +139,7 @@ events.forEach((event) => {
   if ((event.type === "create" || event.type === "reply") && event.mentionedUids !== undefined) {
     console.log(event);
     if (whoMentionedWho[event.conversationAuthor.author] === undefined) {
-      whoMentionedWho[event.conversationAuthor.author] = event.mentionedUids;
+      whoMentionedWho[event.conversationAuthor.author] = [...event.mentionedUids];
     } else {
       whoMentionedWho[event.conversationAuthor.author].push(...event.mentionedUids);
     }

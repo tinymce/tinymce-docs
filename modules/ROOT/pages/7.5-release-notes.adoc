@@ -207,6 +207,15 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Closing a nested modal dialog would lose focus from the editor.
+// #TINY-11153
+
+Previously in {productname}, closing a nested dialog (such as the color picker dialog within the Table Properties dialog) would cause the editor to lose focus on the parent dialog and shift focus to the editor content in the background.
+
+This issue impacted keyboard users, preventing them from navigating or closing the parent dialog since the focus was no longer on the dialog. Additionally, in inline mode editors, the dialog UI would disappear entirely when focus shifted to the editor area, giving the impression that the dialog had closed unexpectedly.
+
+This issue has been resolved by ensuring focus returns to the parent dialog when a nested dialog is closed. As a result, keyboard users can now navigate and close dialogs as expected, and the dialog UI remains visible in inline mode editors.
+
 === Autocompleter would not activate after applying an inline format like font size in some cases.
 // #TINY-11273
 

@@ -179,6 +179,22 @@ This behavior led to confusion and increased the risk of interacting with obsole
 
 In {productname} {release-version}, this issue has been resolved. Now, when annotated content is deleted, the associated conversation card is automatically removed from the sidebar.
 
+=== PowerPaste
+
+The {productname} {release-version} release includes an accompanying release of the **PowerPaste** premium plugin.
+
+**PowerPaste** Premium plugin includes the following improvement.
+
+==== Pasting plain text with the `mceInsertClipboardContent` command is now a synchronous action, to match {productname}'s core behaviour. 
+
+Previously in {productname}, when the Powerpaste plugin was enabled, the `mceInsertClipboardContent` command was executed asynchronously. This caused compatibility issues with the xref:markdown.adoc[Markdown] plugin, as the Markdown plugin relied on synchronous command execution. As a consequence, the Markdown plugin was effectively disabled when Powerpaste was active.
+
+{productname} {release-version} addresses this issue. The `mceInsertClipboardContent` command has been updated to be conditionally synchronous when the Powerpaste plugin is enabled. If the content is plaintext (e.g., `+editor.execCommand('mceInsertClipboardContent', false, { text: content })+`), the command is executed synchronously, aligning it with {productname}'s core functionality. If the content is HTML (e.g., `+editor.execCommand('mceInsertClipboardContent', false, { html: content })+`), the command remains asynchronous, as it requires async operations for HTML content.
+
+As a result, the `mceInsertClipboardContent` command now always executes synchronously when pasting plaintext, allowing both Powerpaste and Markdown plugins to operate together seamlessly, restoring full functionality for Markdown users.
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[Introduction to PowerPaste].
+
 ==== Use default 'Anon' value for `tinycomments_author` and `tinycomments_author_name` options when the provided value is an empty string.
 // #TINY-11323
 

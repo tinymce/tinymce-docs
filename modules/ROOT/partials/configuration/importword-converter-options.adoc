@@ -3,6 +3,21 @@
 
 **Type:** `String`
 
+[NOTE]
+As of {productname} 7.5.0, the default value of the `importword_converter_options` setting has been updated to the following:
+
+.**Default value:** 
+[source,js]
+----
+importword_converter_options: {
+  formatting: {
+    styles: 'inline',
+    resets: 'inline',
+    defaults: 'inline',
+  }
+}
+----
+
 The `importword_converter_options` setting allows you to customize the behavior of the {pluginname} plugin when converting Word documents to HTML.
 
 .Example: using `importword_converter_options`

@@ -69,6 +69,76 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Export to PDF
+
+The {productname} {release-version} release includes an accompanying release of the **Export to PDF** premium plugin.
+
+**Export to PDF** Premium plugin includes the following improvement.
+
+=== Added a default value for the `exportpdf_converter_options` option.
+// #TINY-11396
+
+As of {productname} {release-version}, the **Export to PDF** Plugin now defaults to U.S. letter page size and applies standard 1-inch margins, ensuring consistency in document formatting out of the box for integrators. The following settings have been applied:
+
+[source,js]
+----
+exportpdf_converter_options: {
+  format: 'Letter',
+  margin_top: '1in',
+  margin_right: '1in',
+  margin_bottom: '1in',
+  margin_left: '1in'
+}
+----
+
+For information on the **Export to PDF** plugin, see: xref:exportpdf.adoc[Export to PDF].
+
+=== Export to Word
+
+The {productname} {release-version} release includes an accompanying release of the **Export to Word** premium plugin.
+
+**Export to Word** Premium plugin includes the following improvement.
+
+=== Added a default value for the `exportword_converter_options` option.
+// #TINY-11396
+
+As of {productname} {release-version}, the **Export to Word** Plugin has been updated to default to the U.S. letter page size, improving compatibility with standard document formats, providing a better out-of-the-box experience for integrators. The following setting has been applied:
+
+[source,js]
+----
+exportword_converter_options: {
+  document: {
+    size: 'letter'
+  }
+}
+----
+
+For information on the **Export to Word** plugin, see: xref:exportword.adoc[Export to Word].
+
+=== Import from Word
+
+The {productname} {release-version} release includes an accompanying release of the **Import from Word** premium plugin.
+
+**Import from Word** Premium plugin includes the following improvement.
+
+=== Added a default value for the `importword_converter_options` option.
+// #TINY-11396
+
+As of {productname} {release-version}, the **Import from Word** Plugin now defaults to retaining as much original Word document styling as possible, using the following settings:
+
+[source,js]
+----
+importword_converter_options: {
+  formatting: {
+    styles: 'inline',
+    resets: 'inline',
+    defaults: 'inline',
+  }
+}
+----
+
+For information on the **Import from Word** plugin, see: xref:importword.adoc[Import from Word].
+
 === Markdown
 
 The {productname} {release-version} release includes an accompanying release of the **Markdown** premium plugin.
@@ -117,7 +187,6 @@ Previously in xref:7.4-release-notes.adoc#comments-not-functional-with-empty-tin
 In {productname} {release-version}, the `tinycomments_author` and `tinycomments_author_name` options now default to "Anon" when the provided value is an empty string. As a result, the commenting functionality is now operational even when these options are empty.
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
-
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

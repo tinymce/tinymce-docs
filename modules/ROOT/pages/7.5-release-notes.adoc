@@ -13,61 +13,17 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, November 06^th^, 2024. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
-* xref:new-premium-plugin<s>[New Premium plugin<s>]
-* xref:new-open-source-plugin<s>[New Open Source plugin<s>]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
-* xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
-* xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
-* xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
 * xref:improvements[Improvements]
 * xref:additions[Additions]
-* xref:changes[Changes]
 * xref:bug-fixes[Bug fixes]
-* xref:security-fixes[Security fixes]
-* xref:deprecated[Deprecated]
 * xref:known-issues[Known issues]
-
-
-[[new-premium-plugin<s>]]
-New Premium plugin<s>
-
-The following new Premium plugin was released alongside {productname} {release-version}.
-
-=== <Premium plugin name>
-
-The new Premium plugin, **<Premium plugin name>** // description here.
-
-For information on the **<Premium plugin name>** plugin, see xref:<plugincode>.adoc[<Premium plugin name>].
-
-
-[[new-open-source-plugin]]
-== New Open Source plugin
-
-The following new Open Source plugin was released alongside {productname} {release-version}.
-
-=== <Open source plugin name>
-
-The new open source plugin, **<Open source plugin name>** // description here.
-
-For information on the **<Open source plugin name>** plugin, see xref:<plugincode>.adoc[<Open source plugin name>].
 
 
 [[accompanying-premium-plugin-changes]]
 == Accompanying Premium plugin changes
 
 The following premium plugin updates were released alongside {productname} {release-version}.
-
-=== <Premium plugin name 1> <Premium plugin name 1 version>
-
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
-
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
-
-==== <Premium plugin name 1 change 1>
-
-// CCFR here.
-
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
 === Export to PDF
 
@@ -217,93 +173,34 @@ In {productname} {release-version}, the `tinycomments_author` and `tinycomments_
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
 
-[[accompanying-premium-plugin-end-of-life-announcement]]
-== Accompanying Premium plugin end-of-life announcement
-
-The following Premium plugin has been announced as reaching its end-of-life:
-
-=== <Premium plugin name eol>
-
-{productname}’s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
-
-
-[[accompanying-open-source-plugin-end-of-life-announcement]]
-== Accompanying open source plugin end-of-life announcement
-
-The following open source plugin has been announced as reaching its end-of-life:
-
-=== <Open source plugin name eol>
-
-{productname}’s xref:<plugincode>.adoc[<Open source plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
-
-
-[[accompanying-enhanced-skins-and-icon-packs-changes]]
-== Accompanying Enhanced Skins & Icon Packs changes
-
-The {productname} {release-version} release includes an accompanying release of the **Enhanced Skins & Icon Packs**.
-
-=== Enhanced Skins & Icon Packs
-
-The **Enhanced Skins & Icon Packs** release includes the following updates:
-
-The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} {release-version} skin, Oxide.
-
-For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
-
-
 [[improvements]]
 == Improvements
 
 {productname} {release-version} also includes the following improvement<s>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Improved color picker aria support.
+// #TINY-11291
 
-// CCFR here.
+In previous versions of {productname}, an issue was identified where screen readers would inconsistently announce the original R/G/B component string in the color picker, leading to a lack of context for visually impaired users. The root cause was an incorrect placement of the `aria-label` attribute, which was initially applied to the label element instead of the input field.
 
+{productname} {release-version} addresses this issue. Now, the `aria-label` attribute has been moved to the input field to ensure it is correctly associated. Additionally, the descriptive text was updated from "Red/Green/Blue component" to "Red/Green/Blue channel" to provide clearer information for assistive technologies. These changes ensure that screen readers consistently and accurately announce the relevant RGB channels, significantly improving accessibility.
 
 [[additions]]
 == Additions
 
 {productname} {release-version} also includes the following addition<s>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Added new default `li` element styles to the content CSS to prevent child list elements from inheriting certain parent list item styles.
+// #TINY-11217
 
-// CCFR here.
+In previous versions of {productname}, child `+<li>+` elements could inherit inline CSS styles from their parent list items, causing unexpected styling behavior in nested lists. This issue was due to native CSS behavior, where child list items would inherit certain parent styles upon post-content insertion.
 
-
-[[changes]]
-== Changes
-
-{productname} {release-version} also includes the following change<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[removed]]
-== Removed
-
-{productname} {release-version} also includes the following removal<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
+{productname} {release-version} addresses this issue. Now, new default CSS styles were added for `+<li>+` elements to prevent inheritance of specific parent styles. This ensures that list items in nested structures render independently, maintaining consistent visual formatting.
 
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+{productname} {release-version} also includes the following bug fixes:
 
 === Closing a nested modal dialog would lose focus from the editor.
 // #TINY-11153
@@ -332,13 +229,6 @@ This led to a visual inconsistency in the readonly editor state.
 
 {productname} {release-version} addresses this issue. Now, the CSS selector has been corrected, ensuring that both `backcolor` and `forecolor` buttons are now completely greyed out, providing a consistent user experience when the editor is in readonly mode.
 
-=== Improved color picker aria support.
-// #TINY-11291
-
-In previous versions of {productname}, an issue was identified where screen readers would inconsistently announce the original R/G/B component string in the color picker, leading to a lack of context for visually impaired users. The root cause was an incorrect placement of the `aria-label` attribute, which was initially applied to the label element instead of the input field.
-
-{productname} {release-version} addresses this issue. Now, the `aria-label` attribute has been moved to the input field to ensure it is correctly associated. Additionally, the descriptive text was updated from "Red/Green/Blue component" to "Red/Green/Blue channel" to provide clearer information for assistive technologies. These changes ensure that screen readers consistently and accurately announce the relevant RGB channels, significantly improving accessibility.
-
 === The `toolbar-sticky-offset` would still be applied after entering fullscreen mode.
 // #TINY-11137
 
@@ -353,48 +243,18 @@ A visual bug introduced in {productname} version xref:7.2.1-release-notes.adoc#l
 
 In {productname} {release-version}, this has been corrected. The focus highlight is now correctly displayed above the tag name when navigating through the statusbar path, ensuring a clear and visible focus indication.
 
-=== Added new default `li` element styles to the content CSS to prevent child list elements from inheriting certain parent list item styles.
-// #TINY-11217
-
-In previous versions of {productname}, child `+<li>+` elements could inherit inline CSS styles from their parent list items, causing unexpected styling behavior in nested lists. This issue was due to native CSS behavior, where child list items would inherit certain parent styles upon post-content insertion.
-
-{productname} {release-version} addresses this issue. Now, new default CSS styles were added for `+<li>+` elements to prevent inheritance of specific parent styles. This ensures that list items in nested structures render independently, maintaining consistent visual formatting.
-
 === Inability to type `{` character on German keyboard layouts
 
 In previous versions of {productname}, an issue was identified on German Mac keyboard layouts where the `+Option+8+` keyboard combination, used to type the opening curved bracket `{`, conflicted with the `+Alt+F12+` shortcut, which is used to focus notifications in the {productname} editor. This conflict occurred because, on German Mac keyboards, `+Option+8+` generated a key code that overlapped with the `+Alt+F12+` function, preventing users from typing `{` in the editor.
 
 To address this, {productname} {release-version} updates the keyboard event handling, implementing the `event.key` property rather than relying on numeric key codes. This solution ensures that the `{` character can be typed using `+Option+8+` on German Mac keyboards without interfering with the `+Alt+F12+` notification focus shortcut.
 
-[[security-fixes]]
-== Security fixes
-
-{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[deprecated]]
-== Deprecated
-
-{productname} {release-version} includes the following deprecation<s>:
-
-=== The `<plugin>` configuration property, `<name>`, has been deprecated
-
-// placeholder here.
-
-
 [[known-issues]]
 == Known issues
 
 This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
 
-There <is one | are <number> known issue<s> in {productname} {release-version}.
-
-== Known Issues
+There is one known issue in {productname} {release-version}.
 
 === Screenreader on safari has poor consistency of announcing aria-label
 // #TINY-11291 & #TINY-11430

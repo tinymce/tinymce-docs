@@ -104,8 +104,6 @@ Additionally, the **Comments** plugin now includes a new `mentionedUids` propert
 
 The **Comments** plugin now offers the `xref:comments-with-mentions.adoc#tinycomments_mentions_enabled[tinycomments_mentions_enabled]` option to enable or disable mentioning other users in comments when both plugins are included in the configuration.
 
-liveDemo::comments-embedded-with-mentions[]
-
 For information on the **Comments with Mentions** feature, see xref:comments-with-mentions.adoc[Configuring the Comments plugin with the Mentions plugin].
 
 ==== The `conversationAuthor` property was missing from 'create` conversation events in the EventLog API.

@@ -190,6 +190,19 @@ In previous versions of {productname}, an issue was identified where screen read
 
 {productname} {release-version} also includes the following addition<s>:
 
+=== Added support for using raw CSS in the list of possible colours, using the `color_map_raw` property.
+// #TINY-11385
+
+In previous versions of {productname}, the `color_map` property allowed users to define a list of colors for the color picker dropdown. However, this property only supported predefined color names or hex values, limiting the customization options for users who wanted to include custom colors using raw CSS.
+
+{productname} {release-version} addresses this limitation by introducing the `color_map_raw` property. This new property allows users to define a list of colors using raw CSS values, providing greater flexibility and customization options for the color picker dropdown.
+
+As a result, users can now include custom colors, or other CSS properties in the color map.
+
+For more information on customizing the color picker, see xref:user-formatting-options.adoc#color_map_raw[`+color_map_raw+` option].
+
+NOTE: {companyname} Technologies would like to thank link:https://github.com/andrewnicols[Andrew Nicols] for contributing to this feature.
+
 === Added new default `li` element styles to the content CSS to prevent child list elements from inheriting certain parent list item styles.
 // #TINY-11217
 

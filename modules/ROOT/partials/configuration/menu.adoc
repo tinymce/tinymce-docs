@@ -1,13 +1,11 @@
 [[menu]]
 == `+menu+`
 
-This option allows you to specify which menus should appear on {productname}'s menu bar and the xref:available-menu-items.adoc[items] that should appear within the menus themselves.
+The `+menu+` option allows integrators to define the available menus for the xref:menus-configuration-options.adoc#menubar[menubar option] and specify the xref:available-menu-items.adoc[menu items] that appear within those menus.
 
-To specify the menus that should appear on {productname}'s menu bar, the menu option should be provided with a JavaScript object containing a property for each menu. These properties should contain a JavaScript object themselves with properties `+title+` and `+items+`.
+To configure the menus, provide a JavaScript object where each property represents a menu. Each menu object should contain `+title+` and `+items+` properties. The `+title+` property is a string that defines the display name, while the `+items+` property is a space-separated list of the xref:available-menu-items.adoc[menu items] that should populate the menu.
 
-The `+title+` property should contain a string with the name of the `+menu+`. The `+items+` field should contain a space separated list of the controls that should populate the `+menu+`.
-
-If you would like to group these menu items, please insert a `+|+` pipe character between the menu items.
+To group certain menu items, insert a `+|+` pipe character between the menu items.
 
 *Type:* `+Object+`
 
@@ -18,4 +16,5 @@ include::partial$configuration/defaultmenuitems.adoc[]
 
 include::partial$misc/admon-different-default-for-mobile.adoc[]
 
-If all you need is to control which menus are available and/or in what order, see the xref:menus-configuration-options.adoc#menubar[menubar parameter].
+[NOTE]
+This option alone does not control which menus appear in the menu bar or the order in which they appear. To control the menu bar and the order of the menus in the menu bar, see the xref:menus-configuration-options.adoc#menubar[menubar option].

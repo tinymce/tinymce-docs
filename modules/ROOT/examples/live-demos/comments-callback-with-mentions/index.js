@@ -264,7 +264,7 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
   };
   
   const tinycomments_delete_all = (req, done) => {
-    Object.keys(conversationDb).each((k) => {
+    Object.keys(conversationDb).forEach((k) => {
       delete conversationDb[k];
     });
   

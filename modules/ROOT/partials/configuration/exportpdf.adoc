@@ -28,9 +28,22 @@ tinymce.init({
 
 This option allows the editor to download a PDF document containing its content, along with the specified options defined in the `exportpdf_converter_options`.
 
-*Type:* `+Object+`
+**Type:** `+Object+`
 
-*Default value:* `{}`
+[NOTE]
+As of {productname} 7.5.0, the `exportpdf_converter_options` setting now comes with a default value set to the following:
+
+.**Default value:**
+[source,js]
+----
+exportpdf_converter_options: {
+  format: 'Letter',
+  margin_top: '1in',
+  margin_right: '1in',
+  margin_bottom: '1in',
+  margin_left: '1in'
+}
+----
 
 === Example: using `exportpdf_converter_options`
 

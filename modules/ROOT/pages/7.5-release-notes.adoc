@@ -161,7 +161,20 @@ For information on the **Markdown** plugin, see xref:markdown.adoc[Markdown].
 
 The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
 
-**Comments** Premium plugin includes the following fixes.
+**Comments** Premium plugin includes the following additions and fixes.
+
+==== Comments with Mentions
+// EPIC-111
+
+The **Comments** plugin now supports the use of mentions in comments, with the **Mentions** plugin enabled.
+
+In {productname} {release-version}, the **Comments** plugin has been enhanced to support xref:mentions.adoc[Mentions] in comments. Users can now mention other users in comments by typing the `+@+` symbol followed by the user's name.
+
+Additionally, the **Comments** plugin now includes a new `mentionedUids` property for events within the EventLog API when the Mentions plugin is enabled. This property provides an array of UIDs mentioned in the comment, allowing integrators to retrieve which users have been mentioned in comments.
+
+The **Comments** plugin now offers the `xref:comments-with-mentions.adoc#tinycomments_mentions_enabled[tinycomments_mentions_enabled]` option to enable or disable mentioning other users in comments when both plugins are included in the configuration.
+
+For information on the **Comments with Mentions** feature, see xref:comments-with-mentions.adoc[Configuring the Comments plugin with the Mentions plugin].
 
 ==== The `conversationAuthor` property was missing from 'create` conversation events in the EventLog API.
 // #TINY-11352

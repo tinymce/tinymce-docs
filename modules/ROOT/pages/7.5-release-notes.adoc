@@ -98,7 +98,6 @@ The {productname} {release-version} release includes an accompanying release of 
 
 The **Comments** plugin now supports the use of mentions in comments, with the **Mentions** plugin enabled.
 
-
 In {productname} {release-version}, the **Comments** plugin has been enhanced to support xref:mentions.adoc[Mentions] in comments. Users can now mention other users in comments by typing the `+@+` symbol followed by the user's name.
 
 Additionally, the **Comments** plugin now includes a new `mentionedUids` property for events within the EventLog API when the Mentions plugin is enabled. This property provides an array of UIDs mentioned in the comment, allowing integrators to retrieve which users have been mentioned in comments.

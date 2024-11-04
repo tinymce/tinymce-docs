@@ -131,11 +131,12 @@ console.log(comments.getEventLog(
 
 const eventLog = comments.getEventLog();
 const events = eventLog.events;
-const mentionedUsers = events.flatMap(({ mentionedUids }) => mentionedUids);
+const mentionedUsers = events.flatMap(({ mentionedUids }) => mentionedUids || []);
+console.log(mentionedUsers);
 
 let whoMentionedWho = {};
 events.forEach((event) => {
-  if (event.type === "create" || event.type === "reply") {
+  if ((event.type === "create" || event.type === "reply") && event.mentionedUids !== undefined) {
     console.log(event);
     if (whoMentionedWho[event.conversationAuthor.author] === undefined) {
       whoMentionedWho[event.conversationAuthor.author] = event.mentionedUids;

@@ -203,7 +203,6 @@ For more information on customizing the color picker, see xref:user-formatting-o
 
 NOTE: {companyname} Technologies would like to thank link:https://github.com/andrewnicols[Andrew Nicols] for contributing to this feature.
 
-=== Added new default `li` element styles to the content CSS to prevent child list elements from inheriting certain parent list item styles.
 // #TINY-11217
 
 In previous versions of {productname}, child `+<li>+` elements could inherit inline CSS styles from their parent list items, causing unexpected styling behavior in nested lists. This issue was due to native CSS behavior, where child list items would inherit certain parent styles upon post-content insertion.

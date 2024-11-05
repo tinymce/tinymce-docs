@@ -99,7 +99,7 @@ For information on the **Import from Word** plugin, see: xref:importword.adoc[Im
 
 The {productname} {release-version} release includes an accompanying release of the **Markdown** premium plugin.
 
-This **Markdown** premium plugin release includes the following improvement:
+This **Markdown** premium plugin release includes the following improvements:
 
 ==== The command `MarkdownInsert` is now registered immediately and operates in an async manner, instead of waiting for resources before registering the command.
 // #TINY-11280
@@ -117,7 +117,7 @@ For information on the **Markdown** plugin, see xref:markdown.adoc[Markdown].
 
 The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
 
-**Comments** Premium plugin includes the following additions and fixes.
+**Comments** Premium plugin includes the following additions and fixes and improvement.
 
 ==== Comments with Mentions
 // EPIC-111
@@ -148,6 +148,15 @@ This behavior led to confusion and increased the risk of interacting with obsole
 
 In {productname} {release-version}, this issue has been resolved. Now, when annotated content is deleted, the associated conversation card is automatically removed from the sidebar.
 
+==== Use default 'Anon' value for `tinycomments_author` and `tinycomments_author_name` options when the provided value is an empty string.
+// #TINY-11323
+
+Previously in xref:7.4-release-notes.adoc#comments-not-functional-with-empty-tinycomments_author-and-tinycomments_author_name[{productname} 7.4.0], an issue was identified in **Embedded mode** where the commenting functionality became non-operational when either the `tinycomments_author` or the `tinycomments_author_name` options were configured as empty strings `""`. As a consequence, users were unable to create comments when these options were empty.
+
+In {productname} {release-version}, the `tinycomments_author` and `tinycomments_author_name` options now default to "Anon" when the provided value is an empty string. As a result, the commenting functionality is now operational even when these options are empty.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
+
 === PowerPaste
 
 The {productname} {release-version} release includes an accompanying release of the **PowerPaste** premium plugin.
@@ -164,19 +173,10 @@ As a result, the `mceInsertClipboardContent` command now always executes synchro
 
 For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[Introduction to PowerPaste].
 
-==== Use default 'Anon' value for `tinycomments_author` and `tinycomments_author_name` options when the provided value is an empty string.
-// #TINY-11323
-
-Previously in xref:7.4-release-notes.adoc#comments-not-functional-with-empty-tinycomments_author-and-tinycomments_author_name[{productname} 7.4.0], an issue was identified in **Embedded mode** where the commenting functionality became non-operational when either the `tinycomments_author` or the `tinycomments_author_name` options were configured as empty strings `""`. As a consequence, users were unable to create comments when these options were empty.
-
-In {productname} {release-version}, the `tinycomments_author` and `tinycomments_author_name` options now default to "Anon" when the provided value is an empty string. As a result, the commenting functionality is now operational even when these options are empty.
-
-For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
-
 [[improvements]]
 == Improvements
 
-{productname} {release-version} also includes the following improvement<s>:
+{productname} {release-version} also includes the following improvement:
 
 === Improved color picker aria support.
 // #TINY-11291
@@ -188,7 +188,7 @@ In previous versions of {productname}, an issue was identified where screen read
 [[additions]]
 == Additions
 
-{productname} {release-version} also includes the following addition<s>:
+{productname} {release-version} also includes the following addition:
 
 === Added support for using raw CSS in the list of possible colours, using the `color_map_raw` property.
 // #TINY-11385
@@ -202,8 +202,6 @@ As a result, users can now include custom colors, or other CSS properties in the
 For more information on customizing the color picker, see xref:user-formatting-options.adoc#color_map_raw[`+color_map_raw+` option].
 
 NOTE: {companyname} Technologies would like to thank link:https://github.com/andrewnicols[Andrew Nicols] for contributing to this feature.
-
-
 
 [[bug-fixes]]
 == Bug fixes

@@ -106,7 +106,7 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
   const mentions_menu_complete = (editor, userInfo) => {
     const span = editor.getDoc().createElement('span');
     span.className = 'mymention';
-    span.setAttribute('style', 'color: #1b1; background-color: #eee;');
+    span.setAttribute('style', 'color: #37F;');
     span.setAttribute('data-mention-id', userInfo.id);
     span.appendChild(editor.getDoc().createTextNode('@' + userInfo.name));
     return span;

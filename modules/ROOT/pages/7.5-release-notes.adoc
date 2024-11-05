@@ -205,9 +205,6 @@ NOTE: {companyname} Technologies would like to thank link:https://github.com/and
 
 // #TINY-11217
 
-In previous versions of {productname}, child `+<li>+` elements could inherit inline CSS styles from their parent list items, causing unexpected styling behavior in nested lists. This issue was due to native CSS behavior, where child list items would inherit certain parent styles upon post-content insertion.
-
-{productname} {release-version} addresses this issue. Now, new default CSS styles were added for `+<li>+` elements to prevent inheritance of specific parent styles. This ensures that list items in nested structures render independently, maintaining consistent visual formatting.
 
 [[bug-fixes]]
 == Bug fixes

@@ -31,9 +31,20 @@ tinymce.init({
 
 The `exportword_converter_options` option, is used to specify and configure various options related to the process of converting and exporting content from the editor to `.docx` Word file.
 
-*Type:* `+Object+`
+**Type:** `+Object+`
 
-*Default value:* `{}`
+[NOTE]
+As of {productname} 7.5.0, the default value of the `exportword_converter_options` setting has been updated to the following:
+
+.**Default value:**
+[source,js]
+----
+exportword_converter_options: {
+  document: {
+    size: 'letter'
+  }
+}
+----
 
 === Example: using `exportword_converter_options`
 

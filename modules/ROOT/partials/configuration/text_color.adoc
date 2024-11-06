@@ -145,6 +145,32 @@ tinymce.init({
 });
 ----
 
+[[color_map_raw]]
+=== `+color_map_raw+`
+
+The `color_map_raw` option specifies a map of text colors that appear in the color picker grid. This configuration provides detailed control over the colors available for the `forecolor` and `backcolor` toolbar options. The following example shows how to set the color map using CSS variables, color functions, and hex codes.
+
+*Type:* `+Array+`
+
+==== Example: using `+color_map_raw+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea', // Adjust this value according to your HTML
+  toolbar: 'forecolor backcolor',
+  color_map_raw: [
+    'var(--black)', 'Black', // CSS variable-based colors
+    'var(--red)', 'Red',
+    'hsb(0, 100%, 100%)', 'White hsb', // Color functions like hsb() and hsl()
+    'hsl(0, 100%, 50%)', 'Red hsl',
+    '#ff00ff', 'Pink', // Hex code-based colors
+    '#00ffff', 'Cyan',
+    'var(--purple)', 'Purple', // User-friendly labels for easy identification such as 'Purple'.
+    '#00FF7F', 'Spring Green'
+  ],
+});
+----
 
 [[color_map_background]]
 === `color_map_background`

@@ -1,0 +1,272 @@
+= {productname} {release-version}
+:release-version: 7.5
+:navtitle: {productname} {release-version}
+:description: Release notes for {productname} {release-version}
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+
+[[overview]]
+== Overview
+
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, November 06^th^, 2024. These release notes provide an overview of the changes for {productname} {release-version}, including:
+
+* xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
+* xref:improvements[Improvements]
+* xref:additions[Additions]
+* xref:bug-fixes[Bug fixes]
+* xref:known-issues[Known issues]
+
+
+[[accompanying-premium-plugin-changes]]
+== Accompanying Premium plugin changes
+
+The following premium plugin updates were released alongside {productname} {release-version}.
+
+=== Export to PDF
+
+The {productname} {release-version} release includes an accompanying release of the **Export to PDF** premium plugin.
+
+**Export to PDF** Premium plugin includes the following improvement.
+
+=== Added a default value for the `exportpdf_converter_options` option.
+// #TINY-11396
+
+As of {productname} {release-version}, the **Export to PDF** Plugin now defaults to U.S. letter page size and applies standard 1-inch margins, ensuring consistency in document formatting out of the box for integrators. The following settings have been applied:
+
+[source,js]
+----
+exportpdf_converter_options: {
+  format: 'Letter',
+  margin_top: '1in',
+  margin_right: '1in',
+  margin_bottom: '1in',
+  margin_left: '1in'
+}
+----
+
+For information on the **Export to PDF** plugin, see: xref:exportpdf.adoc[Export to PDF].
+
+=== Export to Word
+
+The {productname} {release-version} release includes an accompanying release of the **Export to Word** premium plugin.
+
+**Export to Word** Premium plugin includes the following improvement.
+
+=== Added a default value for the `exportword_converter_options` option.
+// #TINY-11396
+
+As of {productname} {release-version}, the **Export to Word** Plugin has been updated to default to the U.S. letter page size, improving compatibility with standard document formats, providing a better out-of-the-box experience for integrators. The following setting has been applied:
+
+[source,js]
+----
+exportword_converter_options: {
+  document: {
+    size: 'letter'
+  }
+}
+----
+
+For information on the **Export to Word** plugin, see: xref:exportword.adoc[Export to Word].
+
+=== Import from Word
+
+The {productname} {release-version} release includes an accompanying release of the **Import from Word** premium plugin.
+
+**Import from Word** Premium plugin includes the following improvement.
+
+=== Added a default value for the `importword_converter_options` option.
+// #TINY-11396
+
+As of {productname} {release-version}, the **Import from Word** Plugin now defaults to retaining as much original Word document styling as possible, using the following settings:
+
+[source,js]
+----
+importword_converter_options: {
+  formatting: {
+    styles: 'inline',
+    resets: 'inline',
+    defaults: 'inline',
+  }
+}
+----
+
+For information on the **Import from Word** plugin, see: xref:importword.adoc[Import from Word].
+
+=== Markdown
+
+The {productname} {release-version} release includes an accompanying release of the **Markdown** premium plugin.
+
+This **Markdown** premium plugin release includes the following improvements:
+
+==== The command `MarkdownInsert` is now registered immediately and operates in an async manner, instead of waiting for resources before registering the command.
+// #TINY-11280
+
+In {productname} {release-version}, the `MarkdownInsert` command is now registered immediately and operates asynchronously upon execution, rather than waiting for resources to register during initialization. Previously, the command required loading external content, which delayed its availability. By making the command async on execution instead of on loading, it is now accessible at initialization, improving responsiveness without the need for additional loading time.
+
+==== Markdown command `MarkdownInsert` fires new event `MarkdownInserted` when completed.
+// #TINY-11280
+
+In {productname} {release-version}, the `MarkdownInsert` command now triggers a new event, `MarkdownInserted`, upon completion. This event provides a notification when the markdown insertion process has finished, enabling better tracking and handling of post-insertion actions within the editor.
+
+For information on the **Markdown** plugin, see xref:markdown.adoc[Markdown].
+
+=== Comments
+
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** Premium plugin includes the following additions and fixes and improvement.
+
+==== Comments with Mentions
+// EPIC-111
+
+The **Comments** plugin now supports the use of mentions in comments, with the **Mentions** plugin enabled.
+
+In {productname} {release-version}, the **Comments** plugin has been enhanced to support xref:mentions.adoc[Mentions] in comments. Users can now mention other users in comments by typing the `+@+` symbol followed by the user's name.
+
+Additionally, the **Comments** plugin now includes a new `mentionedUids` property for events within the EventLog API when the Mentions plugin is enabled. This property provides an array of UIDs mentioned in the comment, allowing integrators to retrieve which users have been mentioned in comments.
+
+The **Comments** plugin now offers the `xref:comments-with-mentions.adoc#tinycomments_mentions_enabled[tinycomments_mentions_enabled]` option to enable or disable mentioning other users in comments when both plugins are included in the configuration.
+
+For information on the **Comments with Mentions** feature, see xref:comments-with-mentions.adoc[Configuring the Comments plugin with the Mentions plugin].
+
+==== The `conversationAuthor` property was missing from 'create` conversation events in the EventLog API.
+// #TINY-11352
+
+In previous versions of the tinycomments plugin, the `conversationAuthor` property was missing from 'create' events within the event log, which led to incomplete tracking of user interactions when retrieving data through the `+getEventLog()+` API.
+
+{productname} {release-version} addresses this issue. Now, the `conversationAuthor` property is included in 'create' events in the event log.
+
+==== Removing annotated content, now, removes associated conversation card from the sidebar.
+// #TINY-11366
+
+Previously, in xref:7.4-release-notes.adoc#comment-card-not-removed-after-deleting-content[{productname} 7.4.0], an issue was identified where deleting annotated content did not remove the corresponding conversation card from the sidebar, resulting in outdated or irrelevant cards persisting in the user interface.
+
+This behavior led to confusion and increased the risk of interacting with obsolete comments.
+
+In {productname} {release-version}, this issue has been resolved. Now, when annotated content is deleted, the associated conversation card is automatically removed from the sidebar.
+
+==== Use default 'Anon' value for `tinycomments_author` and `tinycomments_author_name` options when the provided value is an empty string.
+// #TINY-11323
+
+Previously in xref:7.4-release-notes.adoc#comments-not-functional-with-empty-tinycomments_author-and-tinycomments_author_name[{productname} 7.4.0], an issue was identified in **Embedded mode** where the commenting functionality became non-operational when either the `tinycomments_author` or the `tinycomments_author_name` options were configured as empty strings `""`. As a consequence, users were unable to create comments when these options were empty.
+
+In {productname} {release-version}, the `tinycomments_author` and `tinycomments_author_name` options now default to "Anon" when the provided value is an empty string. As a result, the commenting functionality is now operational even when these options are empty.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
+
+=== PowerPaste
+
+The {productname} {release-version} release includes an accompanying release of the **PowerPaste** premium plugin.
+
+**PowerPaste** Premium plugin includes the following improvement.
+
+==== Pasting plain text with the `mceInsertClipboardContent` command is now a synchronous action, to match {productname}'s core behaviour. 
+
+Previously in {productname}, when the Powerpaste plugin was enabled, the `mceInsertClipboardContent` command was executed asynchronously. This caused compatibility issues with the xref:markdown.adoc[Markdown] plugin, as the Markdown plugin relied on synchronous command execution. As a consequence, the Markdown plugin was effectively disabled when Powerpaste was active.
+
+{productname} {release-version} addresses this issue. The `mceInsertClipboardContent` command has been updated to be conditionally synchronous when the Powerpaste plugin is enabled. If the content is plaintext (e.g., `+editor.execCommand('mceInsertClipboardContent', false, { text: content })+`), the command is executed synchronously, aligning it with {productname}'s core functionality. If the content is HTML (e.g., `+editor.execCommand('mceInsertClipboardContent', false, { html: content })+`), the command remains asynchronous, as it requires async operations for HTML content.
+
+As a result, the `mceInsertClipboardContent` command now always executes synchronously when pasting plaintext, allowing both Powerpaste and Markdown plugins to operate together seamlessly, restoring full functionality for Markdown users.
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[Introduction to PowerPaste].
+
+[[improvements]]
+== Improvements
+
+{productname} {release-version} also includes the following improvement:
+
+=== Improved color picker aria support.
+// #TINY-11291
+
+In previous versions of {productname}, an issue was identified where screen readers would inconsistently announce the original R/G/B component string in the color picker, leading to a lack of context for visually impaired users. The root cause was an incorrect placement of the `aria-label` attribute, which was initially applied to the label element instead of the input field.
+
+{productname} {release-version} addresses this issue. Now, the `aria-label` attribute has been moved to the input field to ensure it is correctly associated. Additionally, the descriptive text was updated from "Red/Green/Blue component" to "Red/Green/Blue channel" to provide clearer information for assistive technologies. These changes ensure that screen readers consistently and accurately announce the relevant RGB channels, significantly improving accessibility.
+
+[[additions]]
+== Additions
+
+{productname} {release-version} also includes the following addition:
+
+=== Added support for using raw CSS in the list of possible colours, using the `color_map_raw` property.
+// #TINY-11385
+
+In previous versions of {productname}, the `color_map` property allowed users to define a list of colors for the color picker dropdown. However, this property only supported predefined color names or hex values, limiting the customization options for users who wanted to include custom colors using raw CSS.
+
+{productname} {release-version} addresses this limitation by introducing the `color_map_raw` property. This new property allows users to define a list of colors using raw CSS values, providing greater flexibility and customization options for the color picker dropdown.
+
+As a result, users can now include custom colors, or other CSS properties in the color map.
+
+For more information on customizing the color picker, see xref:user-formatting-options.adoc#color_map_raw[`+color_map_raw+` option].
+
+NOTE: {companyname} Technologies would like to thank link:https://github.com/andrewnicols[Andrew Nicols] for contributing to this feature.
+
+[[bug-fixes]]
+== Bug fixes
+
+{productname} {release-version} also includes the following bug fixes:
+
+=== Closing a nested modal dialog would lose focus from the editor.
+// #TINY-11153
+
+Previously in {productname}, closing a nested dialog (such as the color picker dialog within the Table Properties dialog) would cause the editor to lose focus on the parent dialog and shift focus to the editor content in the background.
+
+This issue impacted keyboard users, preventing them from navigating or closing the parent dialog since the focus was no longer on the dialog. Additionally, in inline mode editors, the dialog UI would disappear entirely when focus shifted to the editor area, giving the impression that the dialog had closed unexpectedly.
+
+This issue has been resolved by ensuring focus returns to the parent dialog when a nested dialog is closed. As a result, keyboard users can now navigate and close dialogs as expected, and the dialog UI remains visible in inline mode editors.
+
+=== Autocompleter would not activate after applying an inline format like font size in some cases.
+// #TINY-11273
+
+Previously, when formatting was applied, a span with a zero-width no-break space `+U+FEFF+` was added to the editor. This character was not considered whitespace; as a result, the autocompleter did not trigger as expected. 
+
+{productname} {release-version} addresses this issue by updating the function to include `+U+FEFF+` as a valid character. 
+
+As a result, the autocompleter now triggers as expected after applying formatting.
+
+=== Forecolor and backcolor toolbar buttons were not completely greyed out while in readonly mode.
+// #TINY-11313
+
+In previous versions of {productname}, an issue was identified where the `backcolor` and `forecolor` toolbar buttons were not completely greyed out while in readonly mode due to an incorrect CSS selector.
+
+This led to a visual inconsistency in the readonly editor state.
+
+{productname} {release-version} addresses this issue. Now, the CSS selector has been corrected, ensuring that both `backcolor` and `forecolor` buttons are now completely greyed out, providing a consistent user experience when the editor is in readonly mode.
+
+=== The `toolbar-sticky-offset` would still be applied after entering fullscreen mode.
+// #TINY-11137
+
+In previous versions of {productname}, an issue was identified where the toolbar offset was incorrectly applied in fullscreen mode, causing the toolbar to overlap with the editor area.
+
+{productname} {release-version} addresses this issue, by implementing a check to verify that the editor is **not** in fullscreen mode before applying the toolbar offset. As a result, the toolbar now appears in the correct position when in fullscreen mode, even with the `toolbar_sticky_offset` option defined.
+
+=== Corrected focus highlight visibility in `Statusbar` path
+// #TINY-11381
+
+A visual bug introduced in {productname} version xref:7.2.1-release-notes.adoc#long-translations-of-the-bottom-help-text-would-cause-minor-graphical-issues[7.1.2] caused the focus highlight to appear behind the tag name in the statusbar path, making it difficult for users to visually track their focus.
+
+In {productname} {release-version}, this has been corrected. The focus highlight is now correctly displayed above the tag name when navigating through the statusbar path, ensuring a clear and visible focus indication.
+
+=== Inability to type `{` character on German keyboard layouts
+
+In previous versions of {productname}, an issue was identified on German Mac keyboard layouts where the `+Option+8+` keyboard combination, used to type the opening curved bracket `{`, conflicted with the `+Alt+F12+` shortcut, which is used to focus notifications in the {productname} editor. This conflict occurred because, on German Mac keyboards, `+Option+8+` generated a key code that overlapped with the `+Alt+F12+` function, preventing users from typing `{` in the editor.
+
+To address this, {productname} {release-version} updates the keyboard event handling, implementing the `event.key` property rather than relying on numeric key codes. This solution ensures that the `{` character can be typed using `+Option+8+` on German Mac keyboards without interfering with the `+Alt+F12+` notification focus shortcut.
+
+[[known-issues]]
+== Known issues
+
+This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
+
+There is one known issue in {productname} {release-version}.
+
+=== Screenreader on safari has poor consistency of announcing aria-label
+// #TINY-11291 & #TINY-11430
+
+In Safari, when using a screen reader on the color picker, the focus is mistakenly placed on the content within the input field rather than the field itself. This causes the screen reader to bypass announcing the aria-label associated with the field.
+
+As a consequence, users who rely on screen readers may not hear the intended description provided by the aria-label, potentially causing confusion or reducing accessibility.
+
+**Status**: Currently under investigation.

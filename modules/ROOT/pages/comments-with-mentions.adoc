@@ -1,0 +1,80 @@
+= Configuring the Comments plugin with the Mentions plugin
+:navtitle: Comments with Mentions
+:description: Information on configuring the Comments plugin with the Mentions plugin.
+:keywords: comments, commenting, tinycomments, mentions
+:pluginname: Comments
+:plugincode: comments
+
+The Comments plugin can be used with the xref:mentions.adoc[Mentions] plugin to allow users to mention other users in comments.
+
+When a user starts typing a mention with the `+@+` symbol, the mention dropdown will appear. Users can keep typing to narrow the search results, and either click on the desired user or navigate using arrow keys and press enter to add a mention to the comment.
+
+When the comment is saved, mentioned users will appear in the comment text in the same way as they do in the editor.
+
+All mentions are stored in the comment text as plain text, so for the mentions to be displayed correctly, the xref:mentions.adoc[Mentions] plugin must be included in the {productname} configuration when the comments are displayed.
+
+[IMPORTANT]
+To add mentions to comments, both the Comments and Mentions plugins must be included in the {productname} configuration, and all required options must be set.
+
+[[comments-callback-with-mentions-live-demo]]
+== Callback mode interactive example
+
+liveDemo::comments-callback-with-mentions[]
+
+[[comments-embedded-with-mentions-live-demo]]
+== Embedded mode interactive example
+
+liveDemo::comments-embedded-with-mentions[]
+
+== Required Mentions Options
+
+These configuration options are required for use of the `+mentions+` plugin.
+
+* xref:mentions_fetch[`+mentions_fetch+`]
+
+include::partial$configuration/mentions_fetch.adoc[leveloffset=+1]
+
+== Required Comments options in callback mode
+
+When using callback mode, the {pluginname} plugin requires callback functions for the following options:
+
+* xref:tinycomments_create[`+tinycomments_create+`]
+* xref:tinycomments_reply[`+tinycomments_reply+`]
+* xref:tinycomments_edit_comment[`+tinycomments_edit_comment+`]
+* xref:tinycomments_delete_comment[`+tinycomments_delete_comment+`]
+* xref:tinycomments_delete[`+tinycomments_delete+`]
+* xref:tinycomments_delete_all[`+tinycomments_delete_all+`]
+* xref:tinycomments_lookup[`+tinycomments_lookup+`]
+
+include::partial$configuration/tinycomments_create.adoc[leveloffset=+1]
+
+include::partial$configuration/tinycomments_reply.adoc[leveloffset=+1]
+
+include::partial$configuration/tinycomments_edit_comment.adoc[leveloffset=+1]
+
+include::partial$configuration/tinycomments_delete_comment.adoc[leveloffset=+1]
+
+include::partial$configuration/tinycomments_delete.adoc[leveloffset=+1]
+
+include::partial$configuration/tinycomments_delete_all.adoc[leveloffset=+1]
+
+include::partial$configuration/tinycomments_lookup.adoc[leveloffset=+1]
+
+== Required Comments options for embedded mode
+
+When using embedded mode, the {pluginname} plugin requires the following options:
+
+* xref:tinycomments_author[`+tinycomments_author+`]
+* xref:tinycomments_author_name[`+tinycomments_author_name+`]
+
+include::partial$configuration/tinycomments_author.adoc[leveloffset=+1]
+
+include::partial$configuration/tinycomments_author_name.adoc[leveloffset=+1]
+
+== Additional options
+
+* xref:tinycomments_mentions_enabled[`+tinycomments_mentions_enabled+`]
+
+include::partial$configuration/tinycomments_mentions_enabled.adoc[leveloffset=+1]
+
+include::partial$plugin-apis/comments-apis.adoc[]

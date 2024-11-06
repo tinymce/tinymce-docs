@@ -1,0 +1,38 @@
+++++
+<h1 style="color: #000000;">Quick Start</h1>
+<h2 style="color: #000000;">Create your free Tiny account</h2>
+<br>
+<p style="margin-bottom: 16px;">
+    TinyMCE 7 is a powerful and flexible rich text editor that can be embedded in web applications. This quick start guide covers how to add a TinyMCE editor to a web page using the Tiny Cloud.
+</p>
+<p style="margin-bottom: 16px;">
+    Install TinyMCE to add a fully-featured, sleek, and intuitive rich text editor to your app—in just a few lines of code. After registration, you will find the personalized code snippet with your API key and a helpful guide that will walk you through the initial steps of your TinyMCE integration.
+</p>
+<p style="margin-bottom: 16px;">
+    It only takes 2 minutes to create your free Tiny account and get the API key:
+</p>
+<div class="account-creation-buttons" style="display: flex; gap: 10px; margin-bottom: 16px;">
+    <a href="https://tiny.cloud/signup" title="Sign in with Google" style="text-decoration: none; padding: 8px 16px; background-color: #ffffff; color: #000000; border: 1px solid #000000; border-radius: 4px; font-weight: bold; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s;">
+        <img src="https://www.tiny.cloud/images/icons/google.svg" alt="Google" width="24" height="24" style="margin-right: 8px;">
+        Sign up with Google
+    </a>
+    <a href="https://tiny.cloud/signup" title="Sign in with Github" style="text-decoration: none; padding: 8px 16px; background-color: #ffffff; color: #000000; border: 1px solid #000000; border-radius: 4px; font-weight: bold; display: flex; align-items: center; transition: background-color 0.3s, color 0.3s;">
+        <img src="https://www.tiny.cloud/images/icons/github.svg" alt="GitHub" width="24" height="24" style="margin-right: 8px;">
+        Sign up with Github
+    </a>
+</div>
+
+<style>
+    .account-creation-buttons a {
+        transition: transform 0.3s ease;
+    }
+
+    .account-creation-buttons a:hover {
+        transform: scale(1.05);
+    }
+</style>
+
+<p style="margin-bottom: 16px;">
+    Or create your account on <a href="https://tiny.cloud/signup" style="color: #000000; text-decoration: none; border-bottom: 1px solid #000000;">https://tiny.cloud/signup</a>
+</p>
+++++

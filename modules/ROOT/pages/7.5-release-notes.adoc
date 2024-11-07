@@ -132,7 +132,7 @@ The **Comments** plugin now offers the `xref:comments-with-mentions.adoc#tinycom
 
 For information on the **Comments with Mentions** feature, see xref:comments-with-mentions.adoc[Configuring the Comments plugin with the Mentions plugin].
 
-==== The `conversationAuthor` property was missing from 'create` conversation events in the EventLog API.
+==== The `conversationAuthor` property was missing from `create` conversation events in the EventLog API.
 // #TINY-11352
 
 In previous versions of the tinycomments plugin, the `conversationAuthor` property was missing from 'create' events within the event log, which led to incomplete tracking of user interactions when retrieving data through the `+getEventLog()+` API.

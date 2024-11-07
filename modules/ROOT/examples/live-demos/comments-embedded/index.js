@@ -3,7 +3,7 @@ const userAllowedToResolve = 'Admin1';
 
 tinymce.init({
   selector: 'textarea#comments-embedded',
-  plugins: 'code tinycomments',
+  plugins: 'code tinycomments quickbars link lists image',
   toolbar: 'addcomment showcomments | bold italic underline',
   menubar: 'file edit view insert format tools tc',
   menu: {
@@ -12,7 +12,10 @@ tinymce.init({
       items: 'addcomment showcomments deleteallconversations'
     }
   },
+  quickbars_selection_toolbar: 'alignleft aligncenter alignright | addcomment showcomments',
+  quickbars_image_toolbar: 'alignleft aligncenter alignright | rotateleft rotateright | imageoptions',
   tinycomments_mode: 'embedded',
+  sidebar_show: 'showcomments',
   tinycomments_author: currentAuthor,
   tinycomments_can_resolve: (req, done, fail) => {
     const allowed = req.comments.length > 0 &&

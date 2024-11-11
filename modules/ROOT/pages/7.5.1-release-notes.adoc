@@ -30,7 +30,7 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== Conversations did not load when the comments sidebar was opened on editor load with `sidebar_show`.
 // #TINY-11506
 
-In previous versions of **Comments** Plugin, when the comments sidebar was set to open on editor load using the `sidebar_show` option, conversations did not display. This was due to a throttling issue that caused the sidebar to render without conversations before they were retrieved, resulting in an empty sidebar that would not re-render with the conversations once available.
+In the {productname} 7.5 release of the **Comments** Plugin, the sidebar would not display comments when conversations took longer than ~200ms to be fetched. This issue occurred when the comments sidebar was set to open on editor load, such as using the `sidebar_show` option.
 
 {productname} {release-version} addresses this issue, by ensuring that `conversationUids` are set on initialization, allowing the sidebar to properly display conversations as soon as they are retrieved.
 

@@ -51,7 +51,7 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
     }
   };
   
-  const fakeDelay = 500;
+  const fakeDelay = 200;
   const numberOfUsers = 200;
   const randomString = () => {
     return crypto.getRandomValues(new Uint32Array(1))[0].toString(36).substring(2, 14);
@@ -304,8 +304,11 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
         items: 'addcomment showcomments deleteallconversations'
       }
     },
-    plugins: [ 'tinycomments', 'mentions', 'help', 'code' ],
+    plugins: [ 'tinycomments', 'mentions', 'help', 'code', 'quickbars', 'link', 'lists', 'image' ],
+    quickbars_selection_toolbar: 'alignleft aligncenter alignright | addcomment showcomments',
+    quickbars_image_toolbar: 'alignleft aligncenter alignright | rotateleft rotateright | imageoptions',
     tinycomments_mentions_enabled: true,
+    sidebar_show: 'showcomments',
   
     mentions_item_type: 'profile',
     mentions_min_chars: 0,

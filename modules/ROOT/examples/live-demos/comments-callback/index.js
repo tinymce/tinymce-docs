@@ -696,13 +696,15 @@ tinymce.ScriptLoader.loadScripts(
   tinymce.init({
     selector: 'textarea#comments-callback',
     height: 800,
-    plugins: 'code tinycomments help lists',
+    plugins: 'code tinycomments help lists quickbars link image',
     toolbar:
       'addcomment showcomments | undo redo | blocks | ' +
       'bold italic backcolor | alignleft aligncenter ' +
       'alignright alignjustify | bullist numlist outdent indent | ' +
       'removeformat | help',
     menubar: 'file edit view insert format tc',
+    quickbars_selection_toolbar: 'alignleft aligncenter alignright | addcomment showcomments',
+    quickbars_image_toolbar: 'alignleft aligncenter alignright | rotateleft rotateright | imageoptions',
     menu: {
       tc: {
         title: 'Comments',

@@ -140,7 +140,9 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
         items: 'addcomment showcomments deleteallconversations'
       }
     },
-    plugins: [ 'tinycomments', 'mentions', 'help', 'code' ],
+    plugins: [ 'tinycomments', 'mentions', 'help', 'code', 'quickbars', 'link', 'lists', 'image' ],
+    quickbars_selection_toolbar: 'alignleft aligncenter alignright | addcomment showcomments',
+    quickbars_image_toolbar: 'alignleft aligncenter alignright | rotateleft rotateright | imageoptions',
     tinycomments_mentions_enabled: true,
   
     mentions_item_type: 'profile',
@@ -152,6 +154,7 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
     mentions_select,
   
     tinycomments_mode: 'embedded',
+    sidebar_show: 'showcomments',
     tinycomments_author: currentUser.id,
     tinycomments_author_name: currentUser.fullName,
     tinycomments_avatar: currentUser.image,

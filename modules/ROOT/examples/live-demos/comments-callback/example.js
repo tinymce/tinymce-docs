@@ -204,19 +204,22 @@ const tinycomments_fetch = (conversationUids, done, fail) => {
 tinymce.init({
   selector: 'textarea#comments-callback',
   height: 800,
-  plugins: 'code tinycomments help lists',
+  plugins: 'code tinycomments help lists quickbars link image',
   toolbar:
     'addcomment showcomments | undo redo | blocks | ' +
     'bold italic backcolor | alignleft aligncenter ' +
     'alignright alignjustify | bullist numlist outdent indent | ' +
     'removeformat | help',
   menubar: 'file edit view insert format tc',
+  sidebar_show: 'showcomments',
   menu: {
     tc: {
       title: 'Comments',
       items: 'addcomment showcomments deleteallconversations',
     },
   },
+  quickbars_selection_toolbar: 'alignleft aligncenter alignright | addcomment showcomments',
+  quickbars_image_toolbar: 'alignleft aligncenter alignright | rotateleft rotateright | imageoptions',
   tinycomments_create,
   tinycomments_reply,
   tinycomments_edit_comment,
@@ -225,5 +228,4 @@ tinymce.init({
   tinycomments_delete_comment,
   tinycomments_lookup,
   tinycomments_fetch,
-  sidebar_show: 'showcomments',
 });

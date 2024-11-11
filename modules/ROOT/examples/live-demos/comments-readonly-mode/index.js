@@ -9,6 +9,7 @@ tinymce.init({
   quickbars_selection_toolbar: 'alignleft aligncenter alignright | addcomment showcomments',
   quickbars_image_toolbar: 'alignleft aligncenter alignright | rotateleft rotateright | imageoptions',
   tinycomments_mode: 'embedded',
+  sidebar_show: 'showcomments',
   readonly: true,
   setup: (editor) => {
     const isReadonlyMode = () => editor.mode.get() === 'readonly';

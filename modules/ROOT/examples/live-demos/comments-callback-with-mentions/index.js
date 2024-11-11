@@ -51,7 +51,7 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
     }
   };
   
-  const fakeDelay = 500;
+  const fakeDelay = 200;
   const numberOfUsers = 200;
   const randomString = () => {
     return crypto.getRandomValues(new Uint32Array(1))[0].toString(36).substring(2, 14);

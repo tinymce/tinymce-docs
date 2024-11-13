@@ -1,0 +1,37 @@
+= {productname} {release-version}
+:release-version: 7.5.1
+:navtitle: {productname} {release-version}
+:description: Release notes for {productname} {release-version}
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+
+[[overview]]
+== Overview
+
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, November 13^th^, 2024. These release notes provide an overview of the changes for {productname} {release-version}, including:
+
+* xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
+
+
+[[accompanying-premium-plugin-changes]]
+== Accompanying Premium plugin changes
+
+The following premium plugin updates were released alongside {productname} {release-version}.
+
+=== Comments
+
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** Premium plugin includes the following additions and fix.
+
+==== Conversations did not load when the comments sidebar was opened on editor load with `sidebar_show`.
+// #TINY-11506
+
+In the {productname} 7.5 release of the **Comments** Plugin, the sidebar would not display comments when conversations took longer than ~200ms to be fetched. This issue occurred when the comments sidebar was set to open on editor load, such as using the `sidebar_show` option.
+
+{productname} {release-version} addresses this issue, by ensuring that `conversationUids` are set on initialization, allowing the sidebar to properly display conversations as soon as they are retrieved.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].

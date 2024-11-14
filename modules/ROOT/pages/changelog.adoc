@@ -4,7 +4,7 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
-== 7.5.0 - 2024-11-06
+== xref:7.5.1-release-notes.adoc[7.5 - 2024-11-06]
 
 === Added
 
@@ -30,14 +30,14 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Inability to type `{` character on German keyboard layouts.
 // #TINY-11395
 
-== 7.4.1 - 2024-10-10
+== xref:7.4.1-release-notes.adoc[7.4.1 - 2024-10-10]
 
 === Fixed
 
 * Invalid HTML elements within SVG elements were not removed.
 // #TINY-11332
 
-== 7.4.0 - 2024-10-09
+==  xref:7.4-release-notes.adoc[7.4 - 2024-10-09]
 
 === Added
 
@@ -76,7 +76,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * The editor resize handle was incorrectly rendered when all components were removed from the status bar.
 // #TINY-11257
 
-== 7.3.0 - 2024-08-07
+== xref:7.3-release-notes.adoc[7.3 - 2024-08-07]
 
 === Added
 * Colorpicker number input fields now show an error tooltip and error icon when invalid text has been entered.
@@ -108,7 +108,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Colorpicker's hex-based input field showed the wrong validation error message.
 // #TINY-11115
 
-== 7.2.1 - 2024-07-03
+==  xref:7.2.1-release-notes.adoc[7.2.1 - 2024-07-03]
 
 === Fixed
 * Text content could move unexpectedly when deleting a paragraph.
@@ -120,7 +120,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Open Link button was disabled when selection partially covered a link or when multiple links were selected.
 // #TINY-11009
 
-== 7.2.0 - 2024-06-19
+== xref:7.2-release-notes.adoc[7.2 - 2024-06-19]
 
 === Added
 * Added `options.debug` API that logs the initial raw editor options to console.
@@ -165,13 +165,13 @@ NOTE: This is the {productname} Community version changelog. For information abo
 // #TINY-11022
 
 
-== 7.1.2 - 2024-06-05
+== xref:7.1.2-release-notes.adoc[7.1.2 - 2024-06-05]
 
 ### Fixed
 - CSS color values set to `transparent` were incorrectly converted to `+#000000+`.
 // #TINY-10916
 
-== 7.1.1 - 2024-05-22
+== xref:7.1.1-release-notes.adoc[7.1.1 - 2024-05-22]
 
 === Fixed
 
@@ -186,7 +186,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Autocompleter possible values are no longer capped at a length of 10.
 // #TINY-10942
 
-== 7.1.0 - 2024-05-08
+== xref:7.1-release-notes.adoc[7.1 - 2024-05-08]
 
 === Added
 
@@ -243,7 +243,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * The "Open Link" context menu action was not enabled for links on images.
 // #TINY-10391
 
-== 7.0.1 - 2024-04-10
+== xref:7.0.1-release-notes.adoc[7.0.1 - 2024-04-10]
 
 === Fixed
 
@@ -258,7 +258,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * The status bar was invisible when the editor's height was set to the minimum.
 // #TINY-10705
 
-== 7.0.0 - 2024-03-20
+== xref:7.0-release-notes.adoc[7.0.0 - 2024-03-20]
 
 [NOTE]
 {productname} 7.0 is licensed under GPL Version 2 or later. This version introduces a new `license_key`  configuration setting that gives self-hosted users the ability to select a usage under the GPL or to authenticate their paid license with Tiny. 

@@ -13,7 +13,7 @@ The `+TinyMCE.Blazor+` `+Editor+` component accepts the following properties:
 <Editor
   Id="uuid"
   Inline=false
-  CloudChannel="7"
+  CloudChannel="{productmajorversion}"
   Value=""
   Disable=false
   JsConfSrc="path_to_jsObj"

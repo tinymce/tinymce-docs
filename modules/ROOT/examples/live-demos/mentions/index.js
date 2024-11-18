@@ -21,6 +21,7 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
     for (let i = 0; i < 200; i++) {
       userNames.push(faker.name.findName());
     }
+    userNames.sort((a, b) => a.localeCompare(b));
 
     /* This represents a database of users on the server */
     const userDb = {};
@@ -79,7 +80,7 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
     }
     usersRequest.then((users) => {
       /* `query.term` is the text the user typed after the '@' */
-      users = users.filter((user) => user.name.indexOf(query.term.toLowerCase()) !== -1);
+      users = users.filter((user) => user.name.toLowerCase().includes(query.term.toLowerCase()))
 
       users = users.slice(0, 10);
 

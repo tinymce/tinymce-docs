@@ -8,18 +8,19 @@ Covered in this section:
 
 The `+TinyMCE.Blazor+` `+Editor+` component accepts the following properties:
 
-[source,cs]
+[source,cs,subs="attributes+"]
 ----
 <Editor
   Id="uuid"
   Inline=false
-  CloudChannel="5"
+  CloudChannel="{productmajorversion}"
   Value=""
   Disable=false
   JsConfSrc="path_to_jsObj"
   Conf="@yourConf"
-  ScriptSrc="/path/to/tinymce.min.js"
   ApiKey="your-api-key"
+  LicenseKey="your-license-key"
+  ScriptSrc="/path/to/tinymce.min.js"
   ClassName="tinymce-wrapper"
 />
 ----
@@ -164,6 +165,21 @@ In your component:
 ----
 <Editor
   JsConfSrc="sample"
+/>
+----
+
+=== `LicenseKey`
+
+Specifies the {productname} license key. Required for self-hosted deployments of {productname}. This property is not required for deployments using the {cloudname}. For more information on licensing, see: xref:license-key.adoc[License key].
+
+*Type:* `+String+`
+
+==== Example using LicenseKey
+
+[source,cs]
+----
+<Editor
+  LicenseKey="your-license-key"
 />
 ----
 

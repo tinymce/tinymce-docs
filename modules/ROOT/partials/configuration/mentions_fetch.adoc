@@ -34,7 +34,7 @@ tinymce.init({
       users = users.slice(0, 10);
 
       // Where the user object must contain the properties `id` and `name`
-        but you could additionally include anything else you deem useful.
+      // but you could additionally include anything else you deem useful.
       success(users);
     });
   }

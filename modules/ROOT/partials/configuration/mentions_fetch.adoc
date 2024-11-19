@@ -26,7 +26,7 @@ tinymce.init({
       usersRequest = fetch('/users');
     }
     usersRequest.then((users) => {
-      /* `query.term` is the text the user typed after the '@' */
+      // `query.term` is the text the user typed after the '@'
       users = users.filter((user) => {
         return user.name.toLowerCase().includes(query.term.toLowerCase());
       });

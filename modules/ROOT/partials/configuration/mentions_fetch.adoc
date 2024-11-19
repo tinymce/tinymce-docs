@@ -26,15 +26,13 @@ tinymce.init({
       usersRequest = fetch('/users');
     }
     usersRequest.then((users) => {
-      // query.term is the text the user typed after the '@'
-      users = users.filter((user) => {
-        return user.name.indexOf(query.term.toLowerCase()) !== -1;
-      });
+      /* `query.term` is the text the user typed after the '@' */
+      users = users.filter((user) => user.name.toLowerCase().includes(query.term.toLowerCase()))
 
       users = users.slice(0, 10);
 
-      // Where the user object must contain the properties `id` and `name`
-      // but you could additionally include anything else you deem useful.
+      /* Where the user object must contain the properties `id` and `name`
+        but you could additionally include anything else you deem useful. */
       success(users);
     });
   }

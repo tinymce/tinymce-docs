@@ -27,7 +27,9 @@ tinymce.init({
     }
     usersRequest.then((users) => {
       /* `query.term` is the text the user typed after the '@' */
-      users = users.filter((user) => user.name.toLowerCase().includes(query.term.toLowerCase()))
+      users = users.filter((user) => {
+        return user.name.toLowerCase().includes(query.term.toLowerCase());
+      });
 
       users = users.slice(0, 10);
 

@@ -1,0 +1,72 @@
+<textarea id="uploadcare">
+  <h3 style="font-size: 1.5em; margin: 20px 0;">Using the Context Toolbar for Image Editing</h3>
+
+  <h4 style="font-size: 1.25em; margin: 15px 0;">Adding Alt Text to Images</h4>
+  <p style="margin: 10px 0;">To add or edit alt text for an image:</p>
+  <ol style="margin-left: 20px;">
+    <li>Click on the image in your document to open the context toolbar.</li>
+    <li>Locate the <strong>Alt Text</strong> field in the toolbar.</li>
+    <li>Enter a brief description of the image content. For example:
+      <div style="margin: 15px 0; padding: 10px 15px; border-left: 4px solid #3498db; background-color: #f0f7fb;">
+        <p>"A mountain landscape during sunset."</p>
+      </div>
+    </li>
+    <li>The alt text is automatically saved and can be previewed by inspecting the image properties.</li>
+  </ol>
+
+  <h4 style="font-size: 1.25em; margin: 15px 0;">Resizing Images</h4>
+  <p style="margin: 10px 0;">To resize an image:</p>
+  <ol style="margin-left: 20px;">
+    <li>Select the image to activate the context toolbar.</li>
+    <li>Use the width and height input fields to specify new dimensions in pixels (e.g., 600px by 400px).</li>
+    <li>Press <strong>Enter</strong> or click outside the toolbar to apply the changes.</li>
+    <li>The image will automatically adjust in the document. For optimal performance, use the Uploadcare <code>/resize/</code> transformation:
+      <div style="margin: 15px 0; padding: 10px 15px; border-left: 4px solid #3498db; background-color: #f0f7fb;">
+        <code>https://ucarecdn.com/<YOUR_IMAGE_UUID>/-/resize/600x400/</code>
+      </div>
+    </li>
+  </ol>
+
+  <h4 style="font-size: 1.25em; margin: 15px 0;">Adjusting Image Saturation and Exposure</h4>
+  <p style="margin: 10px 0;">To modify image saturation or exposure:</p>
+  <ol style="margin-left: 20px;">
+    <li>Select the image and open the context toolbar.</li>
+    <li>Use the <strong>Saturation</strong> or <strong>Exposure</strong> sliders to adjust the values:
+      <ul style="margin-left: 20px;">
+        <li>Increase saturation for more vibrant colors.</li>
+        <li>Decrease exposure for a darker image or increase it for a brighter image.</li>
+      </ul>
+    </li>
+    <li>Changes are applied dynamically. To reset, click the <strong>Reset</strong> button in the toolbar.</li>
+    <li>Example transformation for saturation:
+      <div style="margin: 15px 0; padding: 10px 15px; border-left: 4px solid #3498db; background-color: #f0f7fb;">
+        <code>https://ucarecdn.com/<YOUR_IMAGE_UUID>/-/saturation/120%/</code>
+      </div>
+    </li>
+  </ol>
+
+  <h4 style="font-size: 1.25em; margin: 15px 0;">Cropping an Image</h4>
+  <p style="margin: 10px 0;">To crop an image:</p>
+  <ol style="margin-left: 20px;">
+    <li>Select the image to activate the context toolbar.</li>
+    <li>Click the <strong>Crop</strong> button to enter cropping mode.</li>
+    <li>Adjust the cropping handles or specify exact dimensions.</li>
+    <li>Click <strong>Apply</strong> to save the cropped image. Example transformation for cropping:
+      <div style="margin: 15px 0; padding: 10px 15px; border-left: 4px solid #3498db; background-color: #f0f7fb;">
+        <code>https://ucarecdn.com/<YOUR_IMAGE_UUID>/-/crop/400x400/</code>
+      </div>
+    </li>
+  </ol>
+
+  <h4 style="font-size: 1.25em; margin: 15px 0;">Restoring Default Settings</h4>
+  <p style="margin: 10px 0;">To reset an image to its original state:</p>
+  <ol style="margin-left: 20px;">
+    <li>Click the <strong>Reset</strong> button in the context toolbar.</li>
+    <li>The image will revert to its original dimensions and appearance.</li>
+    <li>All transformations (e.g., cropping, resizing, or adjustments) will be removed.</li>
+  </ol>
+
+  <div style="margin: 15px 0; padding: 10px 15px; border-left: 4px solid #e74c3c; background-color: #fdf7f7;">
+    <p><strong>Important:</strong> Always use descriptive alt text for accessibility and optimize image dimensions for better performance.</p>
+  </div>
+</textarea>

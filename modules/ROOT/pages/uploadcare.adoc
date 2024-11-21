@@ -1,0 +1,74 @@
+= Image Optimizer Powered by Uploadcare
+:navtitle: Image Optimizer Powered by Uploadcare
+:description: The Image Optimizer Powered by Uploadcare plugin allows you to optimize images in your content.
+:description_short: 
+:keywords: plugin, <plugincode>, etc.
+:pluginname: Image Optimizer Powered by Uploadcare
+:plugincode: uploadcare
+:plugincategory: <premium|opensource>
+
+include::partial$misc/admon-premium-plugin.adoc[]
+
+include::partial$misc/admon-requires-7.6v.adoc[]
+
+== Overview
+
+The plugin leverages Uploadcare's robust API for image optimization, providing features such as automatic resizing, format conversion, and compression. It's ideal for developers looking to improve website performance and streamline image handling inside {productname}.
+
+== Key Benefits:
+
+* Speed up your site with responsive images, adaptive quality, and automatic formatting. 
+* Get faster loading times, save on bandwidth, and give users a seamless experience.
+* Ditch the editing software! Our improved editing functionality lets you tweak images right in the editor—no extra tools needed. Less fuss, more fun.
+* Stay safe and compliant with built-in unsafe content detection, malware protection, and adherence to SOC2, and GDPR standards. 
+
+[NOTE]
+**Image Optimizer** is currently only available for cloud or self-hosted customers via our sales-assisted channel. It will be available to self-service customers in early 2025.
+
+== Interactive example
+
+liveDemo::{plugincode}[]
+
+== Basic setup
+
+To add the {pluginname} plugin to the editor, add `{plugincode}` to the `plugins` option in the editor configuration.
+
+For example:
+
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare',
+  uploadcare_public_key: 'your_public_key',
+});
+----
+
+== Options
+
+The following configuration options affect the behavior of the {pluginname} plugin.
+
+include::partial$configuration/{plugincode}.adoc[leveloffset=+1]
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[leveloffset=+1]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[leveloffset=+1]
+
+== Commands
+
+The {pluginname} plugin provides the following {productname} commands.
+
+// include::partial$commands/{plugincode}-cmds.adoc[]
+
+== Events
+
+The {pluginname} plugin provides the following events.
+
+// include::partial$events/{plugincode}-events.adoc[]
+
+== APIs
+
+The {pluginname} plugin provides the following APIs.
+
+// include::partial$plugin-apis/{plugincode}-apis.adoc[]

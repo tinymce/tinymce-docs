@@ -151,12 +151,15 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Tooltips of toolbar groups not showing
+// #TINY-11391
 
-// CCFR here.
+Previously, an issue was identified where there was no tooltip being displayed when hovering over toolbar group buttons. This was caused by swapping the `title` attribute with an `aria-label` attribute in version xref:7.0-release-notes.adoc#overview[7.0.0] without applying the tooltip behavior to the toolbar group buttons. 
+
+In {productname} {release-version}, this issue has now been resolved by applying the tooltip behavior to the toolbar group buttons resulting in the tooltips now showing on hover.
+
 
 
 [[security-fixes]]

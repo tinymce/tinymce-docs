@@ -160,7 +160,7 @@ const privateKey = `
 app.use(express.static(path.join(__dirname, 'public')));
 
 // JWT token generation endpoint
-app.post('/jwt', (req, res) => {
+app.get('/jwt', (req, res) => {
     const payload = {
         aud: 'YOUR-API-KEY-HERE', // Replace with your actual API key
         iat: Math.floor(Date.now() / 1000), // Issue timestamp

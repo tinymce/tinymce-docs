@@ -1,0 +1,215 @@
+= Export to PDF with JWT authentication (Node.js) Guide
+:navtitle: JWT Authentication setup for Export to PDF
+:description: Guide on how to setup JWT Authentication for exporting PDF files with {productname}
+:keywords: jwt, authentication, exportpdf, pdf, node.js
+:pluginname: Export to PDF
+:plugincode: exportpdf
+
+
+== Introduction
+
+{pluginname} requires setting up JSON Web Token (JWT) authentication to maintain control over file security. A JWT endpoint generates and provides authorization tokens that verify submitted content is sent by authorized users, preventing unauthorized access. As a standard web services authorization solution, JWT is documented extensively at link:https://jwt.io/[https://jwt.io/].
+
+This guide provides a comprehensive walkthrough for integrating {pluginname} with {productname}, including {pluginname} functionality, by using a Node.js server for JWT token generation. It covers project setup, server configuration, and {productname} customization.
+
+== What You'll Build
+
+Before diving into the technical details, here's what you'll achieve with this guide:
+
+* A working PDF export system for your TinyMCE editor
+* A secure authentication system using JWT tokens
+* A simple Node.js server to handle the authentication
+
+[TIP]
+====
+This guide is designed for developers new to JWT authentication and TinyMCE integration.
+====
+
+== Prerequisites
+
+Before starting, ensure you have:
+
+* Node.js installed on your computer
+* A TinyMCE API key (get one from link:https://www.tiny.cloud/signup[TinyMCE's website])
+* Basic familiarity with the command line
+
+[IMPORTANT]
+====
+Make sure you have your API key ready before starting. You'll need it for both the server and client configuration.
+====
+
+== Quick Start Guide
+
+=== Project Setup (5 minutes)
+
+[source,bash]
+----
+# Create and enter project directory
+mkdir tinymce-pdf-export
+cd tinymce-pdf-export
+
+# Initialize project
+npm init -y
+
+# Install required packages
+npm install express cors jsonwebtoken
+----
+
+Verify that the `package.json` file includes the below required dependencies:
+
+[source,json]
+----
+{
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.21.0",
+    "jsonwebtoken": "^9.0.2"
+  }
+}
+----
+
+=== Create Project Structure
+
+[source,bash]
+----
+# Create the public folder for your web files
+mkdir public
+touch public/index.html
+touch jwt.js
+----
+
+Your project should look like this:
+
+[source]
+----
+/tinymce-pdf-export
+  /public
+    index.html  (TinyMCE webpage)
+  jwt.js       (Server code)
+  package.json (Project configuration)
+----
+
+. Inside the `public` folder where you created the `index.html` file add the HTML setup code (refer to the *Setting up {productname} HTML* section).
+
+==== Web Page Setup (public/index.html)
+
+[source,html]
+----
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TinyMCE with PDF Export</title>
+  <script 
+    src="https://cdn.tiny.cloud/1/YOUR-API-KEY/tinymce/7/tinymce.min.js"
+    referrerpolicy="origin">
+  </script>
+  <script>
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'exportpdf',
+      toolbar: 'exportpdf',
+      exportpdf_converter_options: {
+        'format': 'Letter',
+        'margin_top': '1in',
+        'margin_right': '1in',
+        'margin_bottom': '1in',
+        'margin_left': '1in'
+      },
+      exportpdf_service_url: "<serviceURL>",
+
+      // export_token_provider fetches a token from the `/jwt` endpoint.
+      export_token_provider: () => {
+        return fetch('http://localhost:3000/jwt', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+        }).then(response => response.json());
+      },
+    });
+  </script>
+</head>
+<body>
+  <h1>TinyMCE Export to PDF Demo</h1>
+  <textarea>
+    Welcome to TinyMCE! Try the Export to PDF feature.
+  </textarea>
+</body>
+</html>
+----
+
+. In the root directory, copy and paste the server setup code into the `jwt.js` file (refer to the *Configuring the Node.js Server for JWT Token Generation* section).
+
+==== Server Setup (jwt.js)
+
+[source,javascript]
+----
+const express = require('express'); // Sets up the web server.
+const jwt = require('jsonwebtoken'); // Generates and signs JWTs.
+const cors = require('cors'); // Allows cross-origin requests.
+const path = require('path'); // Handles file paths.
+
+const app = express();
+app.use(cors());
+
+// Your private key (Replace this with your actual key)
+const privateKey = `
+-----BEGIN PRIVATE KEY-----
+{Your private PKCS8 key goes here}
+-----END PRIVATE KEY-----
+`;
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+// JWT token generation endpoint
+app.post('/jwt', (req, res) => {
+    const payload = {
+        aud: 'YOUR-API-KEY-HERE', // Replace with your actual API key
+        iat: Math.floor(Date.now() / 1000), // Issue timestamp
+        exp: Math.floor(Date.now() / 1000) + (60 * 10) // Expiration time (10 minutes)
+    };
+
+    try {
+        // Tokens are signed with the RS256 algorithm using your private key
+        const token = jwt.sign(payload, privateKey, { algorithm: 'RS256' });
+        res.json({ token });
+    } catch (error) {
+        res.status(500).send('Failed to generate JWT token.');
+        console.error(error.message);
+    }
+});
+
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
+});
+----
+
+=== Configuration Steps
+
+==== 1. Add Your API Key
+
+* Replace `YOUR-API-KEY` in both files with your actual {productname} API key
+* The API key should be the same in both the HTML script source and the JWT payload
+
+==== 2. Add Your Private Key
+
+* Replace the private key placeholder in `jwt.js` with your actual private key
+* Make sure it's in `PKCS8` format
+* Keep this key secure and never share it publicly
+
+=== Running Your Project
+
+. Start the server:
++
+[source,bash]
+----
+node jwt.js
+----
+
+. Open your browser to: `http://localhost:3000`
+. You should see:
+* The TinyMCE editor
+* An "Export PDF" button in the toolbar
+
+=== Start Server
+
+* Define the port and start the server using `app.listen`.

@@ -117,7 +117,7 @@ Your project should look like this:
       },
       importword_service_url: "<serviceURL>",
 
-      // export_token_provider fetches a token from the `/jwt` endpoint.
+      // importword_token_provider fetches a token from the `/jwt` endpoint.
       importword_token_provider: () => {
         return fetch('http://localhost:3000/jwt', {
           method: 'POST',

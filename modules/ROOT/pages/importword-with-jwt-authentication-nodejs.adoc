@@ -1,9 +1,9 @@
 = {pluginname} with JWT authentication (Node.js) Guide
-:navtitle: JWT Authentication setup for Export to PDF
-:description: Guide on how to setup JWT Authentication for exporting pdf files with Export to PDF
-:keywords: jwt, authentication, exportpdf, pdf, node.js
-:pluginname: Export to PDF
-:plugincode: exportpdf
+:navtitle: JWT Authentication setup for Import from Word
+:description: Guide on how to setup JWT Authentication for importing docx (MS Word) files with Import from Word
+:keywords: jwt, authentication, importword, node.js
+:pluginname: Import from Word
+:plugincode: importword
 
 
 == Introduction
@@ -16,7 +16,7 @@ This guide provides a comprehensive walkthrough for integrating {pluginname} wit
 
 Before diving into the technical details, here's what you'll achieve with this guide:
 
-* A working PDF export system for your {productname} editor
+* A working Import from Word system for your {productname} editor
 * A secure authentication system using JWT tokens
 * A simple Node.js server to handle the authentication
 
@@ -45,8 +45,8 @@ Make sure you have your API key ready before starting. You'll need it for both t
 [source,bash]
 ----
 # Create and enter project directory
-mkdir tinymce-pdf-export
-cd tinymce-pdf-export
+mkdir tinymce-import-from-word
+cd tinymce-import-from-word
 
 # Initialize project
 npm init -y
@@ -82,7 +82,7 @@ Your project should look like this:
 
 [source]
 ----
-/tinymce-pdf-export
+/tinymce-import-from-word
   /public
     index.html  (TinyMCE webpage)
   jwt.js       (Server code)
@@ -98,7 +98,7 @@ Your project should look like this:
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TinyMCE with PDF Export</title>
+  <title>TinyMCE with Import from Word</title>
   <script 
     src="https://cdn.tiny.cloud/1/YOUR-API-KEY/tinymce/7/tinymce.min.js"
     referrerpolicy="origin">
@@ -106,19 +106,19 @@ Your project should look like this:
   <script>
     tinymce.init({
       selector: 'textarea',
-      plugins: 'exportpdf',
-      toolbar: 'exportpdf',
-      exportpdf_converter_options: {
-        'format': 'Letter',
-        'margin_top': '1in',
-        'margin_right': '1in',
-        'margin_bottom': '1in',
-        'margin_left': '1in'
+      plugins: 'importword',
+      toolbar: 'importword',
+      importword_converter_options: {
+        'formatting': {
+          'styles': 'inline',
+          'resets': 'inline',
+          'defaults': 'inline',
+        }
       },
-      exportpdf_service_url: "<serviceURL>",
+      importword_service_url: "<serviceURL>",
 
       // export_token_provider fetches a token from the `/jwt` endpoint.
-      exportpdf_token_provider: () => {
+      importword_token_provider: () => {
         return fetch('http://localhost:3000/jwt', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -128,9 +128,9 @@ Your project should look like this:
   </script>
 </head>
 <body>
-  <h1>TinyMCE Export to PDF Demo</h1>
+  <h1>TinyMCE Import from Word Demo</h1>
   <textarea>
-    Welcome to TinyMCE! Try the Export to PDF feature.
+    Welcome to TinyMCE! Try the Import from Word feature.
   </textarea>
 </body>
 </html>
@@ -208,4 +208,4 @@ node jwt.js
 . Open your browser to: `http://localhost:3000`
 . You should see:
 * The {productname} editor
-* An "Export to PDF" button in the toolbar
+* An "Import from Word" button in the toolbar

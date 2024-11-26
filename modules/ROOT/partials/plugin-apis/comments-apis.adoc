@@ -128,6 +128,13 @@ The `mentionedUids` array captures any string following the `@` symbol without v
 
 [source,js]
 ----
+// Fake database of users
+const users = {
+  "user1": "John Doe",
+  "user2": "Jane Doe",
+  "user3": "Alice Doe",
+};
+
 const comments = tinymce.activeEditor.plugins.tinycomments;
 
 console.log(comments.getEventLog());
@@ -137,6 +144,10 @@ console.log(comments.getEventLog(
 
 const eventLog = comments.getEventLog();
 const events = eventLog.events;
+// Ensure that the mentioned users are valid users in the database
+events.forEach((event) => {
+  event.mentionedUids = event.mentionedUids ? event.mentionedUids.filter((uid) => users[uid]) : undefined;
+});
 const mentionedUsers = events.flatMap(({ mentionedUids }) => mentionedUids || []);
 console.log(mentionedUsers);
 

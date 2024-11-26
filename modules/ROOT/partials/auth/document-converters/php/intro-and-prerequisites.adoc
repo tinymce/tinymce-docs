@@ -1,0 +1,33 @@
+== Introduction
+
+{pluginname} requires setting up JSON Web Token (JWT) authentication to maintain control over file security. A JWT endpoint generates and provides authorization tokens that verify submitted content is sent by authorized users, preventing unauthorized access. As a standard web services authorization solution, JWT is documented extensively at link:https://jwt.io/[https://jwt.io/].
+
+This guide provides a comprehensive walkthrough for integrating {pluginname} with {productname}, including {pluginname} functionality, by using a PHP server for JWT token generation. It covers project setup, server configuration, and {productname} customization.
+
+== What You'll Build
+
+Before diving into the technical details, here's what you'll achieve with this guide:
+
+* A working {productname} editor running {pluginname} plugin.
+* A secure authentication system using JWT tokens
+* A simple PHP server to handle the authentication
+
+[TIP]
+====
+This guide is designed for developers new to JWT authentication and {productname} integration.
+====
+
+=== Prerequisites
+
+Before starting, ensure you have:
+
+* PHP installed on your computer
+* OpenSSL is installed on your computer
+* Composer is installed on your computer
+* A {productname} API key (get one from link:https://www.tiny.cloud/signup[TinyMCE's website])
+* Basic familiarity with the command line
+
+[IMPORTANT]
+====
+Make sure you have your API key ready before starting. You'll need it for both the server and client configuration.
+====

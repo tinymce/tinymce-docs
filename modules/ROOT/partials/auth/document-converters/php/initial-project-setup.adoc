@@ -1,0 +1,49 @@
+== Update PHP php.ini Files
+
+Update files inside the downloaded php package:
+
+* php.ini
+* php.ini-development
+* php.ini-production
+
+Ensure the following lines are uncommented:
+
+[source, bash]
+----
+extension=openssl 
+extension_dir={Depends on your development environment} 
+----
+
+== Quick Start Guide
+
+=== Project Setup (5 minutes)
+
+[source,bash]
+----
+# Create and enter project directory
+mkdir tinymce-app
+cd tinymce-app
+# Initialize Composer
+composer require firebase/php-jwt
+----
+
+=== Create Project Structure
+
+[source,bash]
+----
+# Create the public folder for your web files
+touch index.html
+touch jwt.php
+----
+
+Your project should look like this:
+
+[source]
+----
+/tinymce-app
+  index.html  (TinyMCE webpage)
+  jwt.php       (Server code)
+  composer 
+  composer.lock
+  vendor     
+----

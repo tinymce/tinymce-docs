@@ -118,6 +118,12 @@ When the xref:mentions.adoc[Mentions] plugin is enabled, each of the above event
 
 It is recommended to use this API to retrieve which users have been mentioned in comments.
 
+[NOTE]
+====
+The `mentionedUids` array captures any string following the `@` symbol without verifying if these strings correspond to valid user IDs. It is up to the developer to ensure that the mentioned users are valid users in the database. Refer to the xref:#example-using-geteventlog[getEventLog example] for an example of how to retrieve and verify the `mentionedUids` array.
+====
+
+[[example-using-geteventlog]]
 ==== Example: using `+getEventLog()+`
 
 [source,js]

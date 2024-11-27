@@ -36,7 +36,6 @@ include::partial$auth/document-converters/initial-project-setup.adoc[]
           'defaults': 'inline',
         }
       },
-      importword_service_url: "<serviceURL>",
 
       // importword_token_provider fetches a token from the `/jwt` endpoint.
       importword_token_provider: () => {

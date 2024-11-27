@@ -153,7 +153,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-=== Tooltips of toolbar groups not showing
+=== Tooltip would not show for group toolbar button.
 // #TINY-11391
 
 Previously, an issue was identified where tooltips were not displayed when hovering over toolbar group buttons. This was due to replacing the `title` attribute with an `aria-label` attribute in xref:7.0-release-notes.adoc#improved-accessibility-for-interactive-elements-with-custom-tooltips[{productname} 7.0.0] without implementing the custom tooltip behavior for the toolbar group buttons.

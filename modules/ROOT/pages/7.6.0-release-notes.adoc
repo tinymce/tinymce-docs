@@ -107,12 +107,15 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[improvements]]
 == Improvements
 
-{productname} {release-version} also includes the following improvement<s>:
+{productname} {release-version} also includes the following improvements:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Pressing Shift+Enter in Mentions in Comments dropdown should accept the active menu item
+// #TINY-11455
 
-// CCFR here.
+In previous versions of TinyMCE, the `Shift+Enter` key was not properly handled when used with mentions in comments. This led to a new line being inserted while the mentions dropdown remained open, resulting in inconsistent behavior compared to mentions within the editor.
+
+In TinyMCE 7.6.0, mentions in comments now handle the `Shift+Enter` key by inserting the highlighted user into the comment text area and closing the dropdown, ensuring consistent functionality across the editor and comment areas.
+
 
 
 [[additions]]

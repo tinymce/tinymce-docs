@@ -3,7 +3,7 @@
 
 To set up JSON Web Token (JWT) authentication for {productname} {pluginname}:
 
-. Add a public ket to you {accountpage}, link:https://www.tiny.cloud/auth/login/[login].
+. Add a public key to you {accountpage}, link:https://www.tiny.cloud/auth/login/[login].
 . Set up a JSON Web Token (JWT) Provider endpoint via link:{accountjwturl}[{accountpage} - JWT Keys]
 . Configure your {productname} to use the JWT endpoint.
 
@@ -35,7 +35,7 @@ The `aud` is case-sensitive string that must match a valid API key that has the 
 `+iat+` _(required)_::
 *Type:* `+Number+`
 +
-The `iat` represents the issue timestamp, specified as the number of seconds since the Unix epoch. It indicates when the payload was generated.
+The `iat` represents the issue timestamp, specified as the number of seconds. For example, to set the issue time to the current timestamp, calculate the issue time as the current timestamp divided by 1000.
 
 .Example
 [source,json]
@@ -46,7 +46,7 @@ iat: Math.floor(Date.now() / 1000), // Issue timestamp
 `+exp+` _(required)_::
 *Type:* `+Number+`
 +
-The `exp` represents the expiration timestamp, specified as the number of seconds since the Unix epoch. It determines the time after which the payload is no longer valid. For example, to set a validity period of 10 minutes, calculate the expiration time as the current timestamp plus 600 seconds.
+The `exp` represents the expiration timestamp, specified as the number of seconds. For example, to set a validity period of 10 minutes, calculate the expiration time as the current timestamp plus 600 seconds.
 
 .Example
 [source,json]

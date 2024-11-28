@@ -107,12 +107,14 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[improvements]]
 == Improvements
 
-{productname} {release-version} also includes the following improvement<s>:
+{productname} {release-version} also includes the following improvements:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Alway show the comment input field in the viewport when pressing the reply or add comment button
+// #TINY-11402
 
-// CCFR here.
+Previously, if a selected conversation card was positioned near the bottom of the sidebar, the reply input field or edit input field would be below the bottom of the sidebar resulting in the comment input field not being visible to the user.
+
+With the release of {productname} {release-version}, the sidebar now scrolls to display the comment input field. This ensures that the comment input field is always visible to the user.
 
 
 [[additions]]

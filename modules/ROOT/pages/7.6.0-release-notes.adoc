@@ -156,9 +156,9 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === Numbered table context menu not properly applying changes
 // #TINY-11383
 
-Previously, there was an issue where changes to the row type in numbered tables were not properly applied. This occurred because the action of modifying the row type from a Content Editable False (CEF) cell was being deliberately blocked.
+Previously, there was an issue where changes to the row type in numbered tables were not properly applied. This occurred because the action of modifying the row type from a `+contentEditable="false"+` cell was being deliberately blocked.
 
-In {productname} {release-version}, this issue has been resolved by removing the restriction on changing the row type from a CEF cell. As a result, changes to the row type are now correctly applied.
+In {productname} {release-version}, this issue has been resolved by removing the restriction on changing the row type from a `+contentEditable="false"+` cell. As a result, changes to the row type are now correctly applied.
 
 
 [[security-fixes]]

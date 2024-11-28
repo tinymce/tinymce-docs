@@ -10,7 +10,11 @@ Specifies the domain used for the Uploadcare service. This domain determines whe
 [source,js]
 ----
 tinymce.init({
-  uploadcare_cdn_base_url: 'ucarecdn.com'
+  selector: "textarea",
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare',
+  uploadcare_public_key: '<your-public-key>',
+  uploadcare_cdn_base_url: 'ucarecdn.com',
 });
 ----
 

@@ -45,6 +45,10 @@ Use this option if you want to ensure secure uploads or restrict file access usi
 [source,js]
 ----
 tinymce.init({
+  selector: "textarea",
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare',
+  uploadcare_public_key: '<your-public-key>',
   uploadcare_signature_provider: (_publicKey) => Promise.resolve({ signature: 'sig', expire: 123 }),
 });
 ----

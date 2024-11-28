@@ -93,6 +93,10 @@ Select the appropriate value based on your application's requirements, such as w
 [source,js]
 ----
 tinymce.init({
-  uploadcare_store_type: 'permanent'
+  selector: "textarea",
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare',
+  uploadcare_public_key: '<your-public-key>',
+  uploadcare_store_type: 'permanent',
 });
 ----

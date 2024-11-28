@@ -35,7 +35,7 @@ include::partial$auth/document-converters/php/initial-project-setup.adoc[]
         'margin_bottom': '1in',
         'margin_left': '1in'
       },
-      // export_token_provider fetches a token from the `/jwt.php` endpoint.
+      // exportpdf_token_provider fetches a token from the `/jwt.php` endpoint.
       exportpdf_token_provider: () => {
         return fetch('http://localhost:3000/jwt.php', {
           method: 'POST',

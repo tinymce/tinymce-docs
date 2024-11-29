@@ -151,12 +151,14 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Double tooltip issue in advanced templates
+// #TINY-11470
 
-// CCFR here.
+Previously, an issue was identified where custom tooltips for tree structures triggered both the browser's native tooltip (via the `title` attribute) and the custom tooltip simultaneously. This resulted in two tooltips with the same text being displayed, leading to a confusing user experience. 
+
+In {productname} {release-version}, this issue has been resolved. The `title` attribute is now automatically removed when the custom tooltip is applied, ensuring that only the custom tooltip is displayed. 
 
 
 [[security-fixes]]

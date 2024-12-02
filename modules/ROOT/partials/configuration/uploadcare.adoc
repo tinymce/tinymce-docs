@@ -31,7 +31,7 @@ This option is mandatory for using Uploadcare.
 [source,js]
 ----
 tinymce.init({
-  selector: "textarea",
+  selector: 'textarea',
   plugins: 'uploadcare',
   toolbar: 'uploadcare',
   uploadcare_public_key: '<your-public-key>',

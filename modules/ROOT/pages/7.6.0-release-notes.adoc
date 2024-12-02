@@ -153,7 +153,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fixes:
 
-=== Double tooltip issue in advanced templates
+=== Removed title attribute from dialog tree elements as they already have a tooltip.
 // #TINY-11470
 
 Previously, an issue was identified where custom tooltips for tree structures triggered both the browser's native tooltip (via the `title` attribute) and the custom tooltip simultaneously. This resulted in two tooltips with the same text being displayed, leading to a confusing user experience. 

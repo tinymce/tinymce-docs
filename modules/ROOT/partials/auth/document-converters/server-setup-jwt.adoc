@@ -22,7 +22,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 // JWT token generation endpoint
 app.post('/jwt', (req, res) => {
     const payload = {
-        aud: 'YOUR-API-KEY-HERE', // Replace with your actual API key
+        aud: 'YOUR-API-KEY', // Replace with your actual API key
         iat: Math.floor(Date.now() / 1000), // Issue timestamp
         exp: Math.floor(Date.now() / 1000) + (60 * 10) // Expiration time (10 minutes)
     };

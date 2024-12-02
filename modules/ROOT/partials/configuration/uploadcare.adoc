@@ -106,7 +106,7 @@ Select the appropriate value based on your application's requirements, such as w
 [source,js]
 ----
 tinymce.init({
-  selector: "textarea",
+  selector: 'textarea',
   plugins: 'uploadcare',
   toolbar: 'uploadcare',
   uploadcare_public_key: '<your-public-key>',

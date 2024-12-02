@@ -114,6 +114,21 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+== New `+disabled+` option for disabling all user interactions
+
+A new `+disabled+` option has been introduced to {productname} in version {release-version}. This option allows integrators to disable all user interactions with the editor, including cursor placement, content modifications, and UI components. When set to `+true+`, the editor behaves similarly to the readonly mode changes introduced in {productname} 7.4.0 but ensures complete non-interactivity.
+
+.Example disabling all user interactions with the editor
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // Specify the target HTML element
+  disabled: true         // Disables all interactions with the editor
+});
+----
+
+For more information on the `+disabled+` option, see xref:editor-important-options.adoc#disabled[Disabled] option.
+
 
 [[additions]]
 == Additions

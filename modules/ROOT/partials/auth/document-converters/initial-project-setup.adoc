@@ -15,18 +15,7 @@ npm init -y
 npm install express cors jsonwebtoken
 ----
 
-Verify that the `package.json` file includes the below required dependencies:
-
-[source,json]
-----
-{
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.21.0",
-    "jsonwebtoken": "^9.0.2"
-  }
-}
-----
+Verify that the `package.json` file now includes the required dependencies.
 
 === Create Project Structure
 

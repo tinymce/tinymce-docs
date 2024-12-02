@@ -10,7 +10,7 @@ Specifies the domain used for the Uploadcare service. This domain determines whe
 [source,js]
 ----
 tinymce.init({
-  selector: "textarea",
+  selector: 'textarea',
   plugins: 'uploadcare',
   toolbar: 'uploadcare',
   uploadcare_public_key: '<your-public-key>',

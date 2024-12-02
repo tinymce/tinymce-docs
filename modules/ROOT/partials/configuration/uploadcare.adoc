@@ -76,7 +76,11 @@ Customize this array to include only the widths you need for your application. F
 [source,js]
 ----
 tinymce.init({
-  uploadcare_srcset_steps: [100, 200, 300, 500]
+  selector: 'textarea',
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare',
+  uploadcare_public_key: '<your-public-key>',
+  uploadcare_srcset_steps: [100, 200, 300, 500],
 });
 ----
 

@@ -13,17 +13,14 @@ include::partial$misc/admon-requires-7.6v.adoc[]
 
 == Overview
 
-The plugin leverages Uploadcare's robust API for image optimization, providing features such as automatic resizing, format conversion, and compression. It's ideal for developers looking to improve website performance and streamline image handling inside {productname}.
+The **Image Optimizer** plugin leverages a suite of powerful features for hosting, serving and edit images like responsive image delivery, automatic image file format selection, automatic compression and non-destructive image transformations and adjustments, all powered by link:https://uploadcare.com[Uploadcare].
 
-== Key Benefits
+== Key benefits
 
-* Speed up your site with responsive images, adaptive quality, and automatic formatting. 
-* Get faster loading times, save on bandwidth, and give users a seamless experience.
-* Ditch the editing software! Our improved editing functionality lets you tweak images right in the editor—no extra tools needed. Less fuss, more fun.
-* Stay safe and compliant with built-in unsafe content detection, malware protection, and adherence to SOC2, and GDPR standards. 
-
-[NOTE]
-**Image Optimizer** is currently only available for cloud or self-hosted customers via our sales-assisted channel. It will be available to self-service customers in early 2025.
+* Improve page loading speed and save on bandwidth by serving images in the optimal size, format, and compression based on the visitor's browser and device.
+* Ditch the image editor and adjust images right inside {productname} with non-destructive transformations and adjustments. Change your mind any time!
+* Stay safe and compliant with secure uploads, built in malware protection, and unsafe content detection
+* Enterprise-ready scalable cloud storage provided by Uploadcare, delivered through its lightning-fast global CDN, and compliant with SOC2 and GDPR standards.
 
 == Interactive example
 
@@ -42,6 +39,10 @@ tinymce.init({
   plugins: 'uploadcare',
   toolbar: 'uploadcare',
   uploadcare_public_key: '<your-public-key>',
+  // uploadcare_signed_upload_auth_provider: (_publicKey) => Promise.resolve({
+  //   signature: 'sig',
+  //   expire: 123
+  // }), // Recommended option for secure uploads
 });
 ----
 
@@ -56,7 +57,7 @@ Below is an overview of the features of the {pluginname} plugin includes for ima
 | Align
 |
 | image:icons/align-left.svg[align-left.svg]
-| Provides alignment options for the image or element:
+| Provides alignment options for the image or element.
 
 |
 | Align Left
@@ -173,13 +174,6 @@ Below is an overview of the features of the {pluginname} plugin includes for ima
 | image:icons/blur.svg[blur.svg]
 | Blurs the image.
 
-// Waiting on confirmation- missing from ui.
-// |
-// |
-// | Enhance
-// | image:icons/image-enhancements.svg[image-enhancements.svg]
-// | Enhances the image automatically.
-
 | Revert Changes
 |
 | image:icons/revert-changes.svg[revert-changes.svg]
@@ -195,21 +189,3 @@ include::partial$configuration/{plugincode}.adoc[leveloffset=+1]
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[leveloffset=+1]
-
-== Commands
-
-The {pluginname} plugin provides the following {productname} commands.
-
-// include::partial$commands/{plugincode}-cmds.adoc[]
-
-== Events
-
-The {pluginname} plugin provides the following events.
-
-// include::partial$events/{plugincode}-events.adoc[]
-
-== APIs
-
-The {pluginname} plugin provides the following APIs.
-
-// include::partial$plugin-apis/{plugincode}-apis.adoc[]

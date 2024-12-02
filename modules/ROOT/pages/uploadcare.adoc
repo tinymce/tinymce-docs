@@ -45,159 +45,129 @@ tinymce.init({
 });
 ----
 
-== Image optimization features overview
+== Image Operations
 
 Below is an overview of the features of the {pluginname} plugin includes for image optimization:
 
-[cols="1,1,1,^1,3",options="header"]
+[cols="1,1,^1,3",options="header"]
 |===
-| Feature | Sub-feature | Operation | Icon | Description
+| Feature | Operation | Icon | Description
 
-| Upload from device
-|
-|
-| image:icons/folder.svg[folder.svg]
-| Allows users to upload an image or file directly from their local device.
-
-| Upload from URL
-|
-|
-| image:icons/link.svg[link.svg]
-| Allows users to upload an image or file from a specified URL.
-
-|
 | Align
 |
 | image:icons/align-left.svg[align-left.svg]
 | Provides alignment options for the image or element:
 
 |
-|
 | Align Left
 | image:icons/align-left.svg[align-left.svg]
 | Aligns the image to the left.
 
-|
 |
 | Align Centre
 | image:icons/align-center.svg[align-center.svg]
 | Centers the image.
 
 |
-|
 | Align Right
 | image:icons/align-right.svg[align-right.svg]
 | Aligns the image to the right.
 
-|
 | Transform
 |
 | image:icons/transform-image.svg[transform-image.svg]
 | Allows users to apply transformations to the image:
 
 |
-|
 | Rotate Counterclockwise
 | image:icons/rotate-left.svg[rotate-left.svg]
 | Rotates the image counterclockwise.
 
-|
 |
 | Rotate Clockwise
 | image:icons/rotate-right.svg[rotate-right.svg]
 | Rotates the image clockwise.
 
 |
-|
 | Flip Vertically
 | image:icons/flip-vertically.svg[flip-vertically.svg]
 | Flips the image vertically.
 
-|
 |
 | Flip Horizontally
 | image:icons/flip-horizontally.svg[flip-horizontally.svg]
 | Flips the image horizontally.
 
 |
+| Resize
+| image:icons/resize.svg[resize.svg]
+| Changes the size of the image.
+
 | Alt Text
 |
 | image:icons/alt-text.svg[alt-text.svg]
 | Adds alternative text to describe the image for accessibility purposes.
 
-|
 | Caption
 |
 | image:icons/caption.svg[caption.svg]
 | Adds a caption below the image for additional context.
 
-|
 | Adjust
 |
 | image:icons/adjustments.svg[adjustments.svg]
 | Provides tools for adjusting image properties:
 
 |
-|
 | Brightness
 | image:icons/brightness.svg[brightness.svg]
 | Adjusts the image brightness.
 
-|
 |
 | Contrast
 | image:icons/contrast.svg[contrast.svg]
 | Adjusts the image contrast.
 
 |
-|
 | Exposure
 | image:icons/exposure.svg[exposure.svg]
 | Adjusts the image exposure.
 
-|
 |
 | Gamma
 | image:icons/gamma.svg[gamma.svg]
 | Adjusts the image gamma.
 
 |
-|
 | Vibrance
 | image:icons/vibrance.svg[vibrance.svg]
 | Adjusts the image vibrance.
 
-|
 |
 | Saturation
 | image:icons/saturation.svg[saturation.svg]
 | Adjusts the image saturation.
 
 |
-|
 | Warmth
 | image:icons/warmth.svg[warmth.svg]
 | Adjusts the image warmth.
 
-|
 |
 | Grayscale
 | image:icons/grayscale.svg[grayscale.svg]
 | Converts the image to grayscale.
 
 |
-|
 | Invert Colors
 | image:icons/invert.svg[invert.svg]
 | Inverts the image colors.
 
 |
-|
 | Sharpen
 | image:icons/sharpen.svg[sharpen.svg]
 | Sharpens the image.
 
-|
 |
 | Blur
 | image:icons/blur.svg[blur.svg]
@@ -210,7 +180,6 @@ Below is an overview of the features of the {pluginname} plugin includes for ima
 // | image:icons/image-enhancements.svg[image-enhancements.svg]
 // | Enhances the image automatically.
 
-|
 | Revert Changes
 |
 | image:icons/revert-changes.svg[revert-changes.svg]

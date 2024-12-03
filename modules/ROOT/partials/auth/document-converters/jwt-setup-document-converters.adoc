@@ -1,0 +1,55 @@
+[[setting-up-jwt-authentication]]
+== Setting up JWT authentication
+
+To set up JSON Web Token (JWT) authentication for {productname} {pluginname}:
+
+. Add a public key to you {accountpage}, link:https://www.tiny.cloud/auth/login/[login].
+. Set up a JSON Web Token (JWT) Provider endpoint via link:{accountjwturl}[{accountpage} - JWT Keys]
+. Configure your {productname} to use the JWT endpoint.
+
+include::partial$auth/private-public-key-pairs-for-tiny-cloud-services.adoc[]
+
+[[set-up-a-json-web-token-jwt-endpoint]]
+== Set up a JSON Web Token (JWT) endpoint
+
+include::partial$auth/how-jwts-are-used.adoc[]
+
+=== JWT endpoint requirements
+
+A JSON Web Token (JWT) endpoint for {pluginname} requires:
+
+* The endpoint or server accepts a JSON HTTP POST request.
+* User authentication - A method of verifying the user, and that they should have access to the {pluginname}.
+* The JWTs are generated (signed) using the _private_ key that pairs with the _public_ key provided to link:{accountjwturl}[{accountpage} - JWT Keys].
+* The endpoint or server produces a JSON response with the token. {pluginname} will submit the token with requests to the {pluginname} Server.
+
+=== Required JWT claims for {pluginname}
+
+JSON Web Tokens produced by the JWT endpoint must include the following claims:
+
+`+aud+` _(required)_::
+*Type:* `+String+`
++
+The `aud` is case-sensitive string that must match a valid API key that has the {pluginname} plugin enabled.
+
+`+iat+` _(required)_::
+*Type:* `+Number+`
++
+The `iat` represents the issue timestamp, specified as the number of seconds. For example, to set the issue time to the current timestamp, calculate the issue time as the current timestamp divided by 1000.
+
+.Example
+[source,json]
+----
+iat: Math.floor(Date.now() / 1000), // Issue timestamp
+----
+
+`+exp+` _(required)_::
+*Type:* `+Number+`
++
+The `exp` represents the expiration timestamp, specified as the number of seconds. For example, to set a validity period of 10 minutes, calculate the expiration time as the current timestamp plus 600 seconds.
+
+.Example
+[source,json]
+----
+exp: Math.floor(Date.now() / 1000) + (60 * 10) // Expiration time (10 minutes)
+----

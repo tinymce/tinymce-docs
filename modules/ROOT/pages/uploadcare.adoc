@@ -197,10 +197,9 @@ include::partial$configuration/uploadcare_srcset_steps.adoc[leveloffset=+1]
 
 include::partial$configuration/uploadcare_store_type.adoc[leveloffset=+1]
 
-
-== Optional Option
-
+:includedSection: uploadcarePlugin
 include::partial$configuration/a11y_advanced_options.adoc[leveloffset=+1]
+:!includedSection:
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

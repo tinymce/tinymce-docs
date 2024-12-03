@@ -23,6 +23,20 @@ IMPORTANT: When `+a11y_advanced_options+` is set to `+true+`, xref:a11ychecker.a
 
 === Example: using `+a11y_advanced_options+`
 
+ifeval::["{includedSection}" == "uploadcarePlugin"]
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare',
+  uploadcare_public_key: '<your-public-key>',
+  a11y_advanced_options: true,
+});
+----
+
+endif::[]
 ifeval::["{includedSection}" == "imagePlugin"]
 
 [source,js]
@@ -31,7 +45,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
   toolbar: 'image',
-  a11y_advanced_options: true
+  a11y_advanced_options: true,
 });
 ----
 
@@ -44,7 +58,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'a11ychecker',
   toolbar: 'a11ycheck',
-  a11y_advanced_options: true
+  a11y_advanced_options: true,
 });
 ----
 
@@ -57,7 +71,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'a11ychecker image',
   toolbar: 'a11ycheck image',
-  a11y_advanced_options: true
+  a11y_advanced_options: true,
 });
 ----
 

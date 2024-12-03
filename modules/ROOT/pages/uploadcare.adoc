@@ -187,8 +187,21 @@ Below is an overview of the features of the {pluginname} plugin includes for ima
 
 The following configuration options affect the behavior of the {pluginname} plugin.
 
-include::partial$configuration/{plugincode}.adoc[leveloffset=+1]
+include::partial$configuration/uploadcare_public_key.adoc[leveloffset=+1]
 
-include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[leveloffset=+1]
+include::partial$configuration/uploadcare_signed_upload_auth_provider.adoc[leveloffset=+1]
 
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[leveloffset=+1]
+include::partial$configuration/uploadcare_cdn_base_url.adoc[leveloffset=+1]
+
+include::partial$configuration/uploadcare_srcset_steps.adoc[leveloffset=+1]
+
+include::partial$configuration/uploadcare_store_type.adoc[leveloffset=+1]
+
+
+== Optional Option
+
+include::partial$configuration/a11y_advanced_options.adoc[leveloffset=+1]
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]

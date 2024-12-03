@@ -1,0 +1,29 @@
+[[uploadcare-store-type]]
+== `uploadcare_store_type`
+
+Specifies the storage type for uploaded files. Use this option to control whether files are stored temporarily or permanently, or allow Uploadcare to decide automatically based on your account settings.
+
+* `auto`: Default behavior; Uploadcare decides the storage type.
+* `temporary`: Files are stored temporarily and will expire after a certain period.
+* `permanent`: Files are stored permanently in your Uploadcare account.
+
+Select the appropriate value based on your application's requirements, such as whether files should persist for long-term use or be available for a limited time.
+
+*Type:* `+String+`
+
+*Default:* `permanent`
+
+*Possible values:* `auto`, `temporary`, `permanent`
+
+=== Example: Using `uploadcare_store_type`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare',
+  uploadcare_public_key: '<your-public-key>',
+  uploadcare_store_type: 'permanent',
+});
+----

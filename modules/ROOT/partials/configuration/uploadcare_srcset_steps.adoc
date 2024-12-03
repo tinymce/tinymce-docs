@@ -1,0 +1,23 @@
+[[uploadcare-srcset-steps]]
+== `uploadcare_srcset_steps`
+
+Defines an array of numeric values representing the widths for responsive images. These widths are used to generate the `srcset` attribute for images, allowing browsers to select the most appropriate resolution based on the device's display and network conditions.
+
+Customize this array to include only the widths you need for your application. For example, you can reduce the number of resolutions for faster processing or add specific sizes required for your layout.
+
+*Type:* `+Array+`
+
+*Default:* `+[100, 200, 300, 500, 750, 1000, 1250, 1500, 2000, 2500, 3000]+`
+
+=== Example: Customizing `uploadcare_srcset_steps`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare',
+  uploadcare_public_key: '<your-public-key>',
+  uploadcare_srcset_steps: [100, 200, 300, 500],
+});
+----

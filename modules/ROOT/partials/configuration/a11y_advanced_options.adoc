@@ -3,12 +3,13 @@
 
 This option affects the functionality of:
 
-* The Accessibility Checker plugin (`+a11ychecker+`).
-* The Image plugin (`+image+`).
+* The xref:a11ychecker.adoc[Accessibility Checker] plugin (`+a11ychecker+`).
+* The xref:image.adoc[Image] plugin (`+image+`).
+* The xref:uploadcare.adoc[Image Optimizer Powered by Uploadcare] (`+uploadcare+`).
 
 Setting `+a11y_advanced_options+` to `+true+`:
 
-* Adds the *Image is decorative* option to the _Insert/Edit Image_ dialog, allowing users to specify that an image is decorative and does not require alternative text for accessibility purposes.
+* Adds the *Image is decorative* option to the _Insert/Edit Image_ or _Insert/Edit Image Optimizer_ dialog, allowing users to specify that an image is decorative and does not require alternative text for accessibility purposes.
 * Adds the *Image is decorative* option to the _Accessibility Checker error_ dialog for images without alternative text or the `+role="presentation"+` attribute.
 
 IMPORTANT: When `+a11y_advanced_options+` is set to `+true+`, xref:a11ychecker.adoc#a11ychecker_allow_decorative_images[`+a11ychecker_allow_decorative_images+`] will default to `+true+`.

@@ -1,0 +1,21 @@
+[[uploadcare-cdn-base-url]]
+== `uploadcare_cdn_base_url`
+
+Specifies the domain used for the Uploadcare service. This domain determines where your files are uploaded and accessed. By default, the plugin uses the Uploadcare CDN `ucarecdn.com` to host and deliver your files. If you use a custom domain, update this option to match your configuration.
+
+*Type:* `+String+`
+
+*Default:* `+https://ucarecdn.com/+`
+
+=== Example: Customizing `uploadcare_cdn_base_url`
+
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare',
+  uploadcare_public_key: '<your-public-key>',
+  uploadcare_cdn_base_url: 'https://cdn.mydomain.com',
+});
+----

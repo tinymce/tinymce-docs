@@ -57,17 +57,20 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== Comments
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Comments** Premium plugin includes the following improvements.
 
-==== <Premium plugin name 1 change 1>
+=== Pressing Shift+Enter in Mentions in Comments dropdown should accept the active menu item
+// #TINY-11455
 
-// CCFR here.
+In previous versions of {productname}, the `Shift+Enter` key was not properly handled when used with mentions in comments. This led to a new line being inserted while the mentions dropdown remained open, resulting in inconsistent behavior compared to mentions within the editor.
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+In {productname} {release-version}, mentions in comments now handle the `Shift+Enter` key by inserting the highlighted user into the comment text area and closing the dropdown, ensuring consistent functionality across the editor and comment areas.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
@@ -112,7 +115,6 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
 
-// CCFR here.
 
 
 [[additions]]
@@ -151,7 +153,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
 
 === Tooltip would not show for group toolbar button.
 // #TINY-11391
@@ -159,6 +161,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 Previously, an issue was identified where tooltips were not displayed when hovering over toolbar group buttons. This was due to replacing the `title` attribute with an `aria-label` attribute in xref:7.0-release-notes.adoc#improved-accessibility-for-interactive-elements-with-custom-tooltips[{productname} 7.0.0] without implementing the custom tooltip behavior for the toolbar group buttons.
 
 In {productname} {release-version}, this issue has been resolved by applying the custom tooltip behavior to the toolbar group buttons, ensuring that tooltips are now displayed on hover.
+
+=== Numbered table context menu not properly applying changes
+// #TINY-11383
+
+Previously, there was an issue where changes to the row type in numbered tables were not properly applied. This occurred because the action of modifying the row type from a `+contentEditable="false"+` cell was being deliberately blocked.
+
+In {productname} {release-version}, this issue has been resolved by removing the restriction on changing the row type from a `+contentEditable="false"+` cell. As a result, changes to the row type are now correctly applied.
 
 
 [[security-fixes]]

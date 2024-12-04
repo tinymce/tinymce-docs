@@ -399,18 +399,20 @@ console.log(issues);
 // example result
 [
   {
+    "contentID": "<div id=\"accessibility-issue__contentID\"><span>Text:&nbsp;</span><span>\"H5\"</span></div>",
+    "description": "Headings must be applied in sequential order. For example: Heading 1 should be followed by Heading 2, not Heading 3.",
+    "element": [object],  // The element value contains the DOM element (such as <h4>).
     "id": "D2",
     "severity": "error",
-    "url": "http://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html",
-    "description": "Headings must be applied in sequential order. For example: Heading 1 should be followed by Heading 2, not Heading 3.",
-    "element": {}  // The element value contains the DOM element (such as <h4>).
+    "url": "https://www.w3.org/WAI/WCAG21/Techniques/general/G141.html",
   },
   {
+    "contentID": "<div id=\"accessibility-issue__contentID\"><span>Table:&nbsp;</span><span>\"2x2\"</span></div>",
+    "description": "Tables must have captions",
+    "element": [object],  // The element value contains the DOM element (such as <table>).
     "id": "T1",
     "severity": "error",
-    "url": "http://www.w3.org/TR/UNDERSTANDING-WCAG20/content-structure-separation-programmatic.html",
-    "description": "Tables must have captions",
-    "element": {}  // The element value contains the DOM element (such as <table>).
+    "url": "https://www.w3.org/WAI/WCAG21/Techniques/html/H39.html",
   }
 ]
 ----
@@ -431,3 +433,5 @@ The `+'issue'+` object provides relevant data pertaining to any issue generated 
 * `+url+` : `+String+` URL reference for the issue. By default, this will be a link to the W3 website, containing the W3 WCAG technique that needs to be addressed to clear the issue.
 
 * `+element+` : `+Object+` DOM element where the issue was found.
+
+* `+contentID+` : `+String+` A short snippet of the content (such as text, image, or table) where the issue was found.

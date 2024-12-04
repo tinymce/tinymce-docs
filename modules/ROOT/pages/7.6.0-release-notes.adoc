@@ -57,17 +57,19 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== Comments
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Comments** includes the following fixes and improvements.
 
-==== <Premium plugin name 1 change 1>
+==== Allow mentions in comments dropdown to flow freely outside of the editor container
 
-// CCFR here.
+An issue was identified where the mentions in comments dropdown didn't freely expand to the available space alongside mentions in the editor. This was due to the dropdown being restricted within the sidebar area.
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+In {productname} {release-version}, this issue has been resolved by allowing the mentions in comments dropdown to expand outside the sidebar area, making full use of the available space outside the editor and improving the overall user experience.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]

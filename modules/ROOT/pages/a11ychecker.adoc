@@ -43,7 +43,6 @@ The following checks are available for the {pluginname} plugin. The rules checke
 
 Each rule has a severity level, which will be one of the following, listed in order of increasing severity:
 
-* Information
 * Warning
 * Error
 
@@ -434,7 +433,7 @@ The `+'issue'+` object provides relevant data pertaining to any issue generated 
 
 * `+description+` : `+String+` description of the issue; as will be displayed in the dialog.
 
-* `+severity+` : `+String+` severity level of the issue; either `+info+`, `+warning+` or `+error+`.
+* `+severity+` : `+String+` severity level of the issue; either `+warning+` or `+error+`.
 
 * `+url+` : `+String+` URL reference for the issue. By default, this will be a link to the W3 website, containing the W3 WCAG technique that needs to be addressed to clear the issue.
 

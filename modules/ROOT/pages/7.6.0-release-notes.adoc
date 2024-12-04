@@ -57,6 +57,20 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== Accessibility Checker
+
+The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.
+
+**Accessibility Checker** Premium plugin includes the following fixes and improvements.
+
+==== Improve editor content highlighting when using accessibility checker
+
+Previously, an issue involving the accessibility checker was identified where the content area highlights did not properly meet accessibility standards. This issue caused users with vision impairments to encounter difficulty in identifying the currently focused element.
+
+In {productname} {release-version}, this issue has been resolved by unifying the color palette to meet accessibility color contrast standards, ensuring that all users can easily locate the currently focused element.
+
+For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
+
 === Comments
 
 The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.

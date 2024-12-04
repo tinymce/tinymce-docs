@@ -57,17 +57,19 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== Comments
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Comments** Premium plugin includes the following fixes and improvements.
 
-==== <Premium plugin name 1 change 1>
+==== Always show the comment input field in the viewport when pressing the reply or add comment button
 
-// CCFR here.
+Previously, if a selected conversation card was positioned near the bottom of the sidebar, the reply input field or edit input field would be below the bottom of the sidebar resulting in the comment input field not being visible to the user.
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+With the release of {productname} {release-version}, the sidebar now scrolls to display the comment input field if the selected conversation card is near the bottom of the sidebar. This ensures that the comment input field is always visible to the user.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
@@ -107,15 +109,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[improvements]]
 == Improvements
 
-{productname} {release-version} also includes the following improvements:
+{productname} {release-version} also includes the following improvement<s>:
 
-=== Alway show the comment input field in the viewport when pressing the reply or add comment button
-// #TINY-11402
+=== <TINY-vwxyz 1 changelog entry>
+// #TINY-vwxyz1
 
-Previously, if a selected conversation card was positioned near the bottom of the sidebar, the reply input field or edit input field would be below the bottom of the sidebar resulting in the comment input field not being visible to the user.
-
-With the release of {productname} {release-version}, the sidebar now scrolls to display the comment input field. This ensures that the comment input field is always visible to the user.
-
+// CCFR here.
 
 [[additions]]
 == Additions

@@ -1,0 +1,23 @@
+[[exportword-service-url]]
+== `exportword_service_url`
+
+The {pluginname} plugin uses an HTML-to-DOCX converter service to generate Word files.
+
+This option is **required** when configuring the {pluginname} plugin for `on-premise` setups. If you require access to this feature, please link:https://www.tiny.cloud/contact/[contact us]. For detailed instructions on deploying the {pluginname} service server-side component using Docker, refer to the xref:individual-import-from-word-and-export-to-word-on-premises.adoc[on-premises documentation].
+
+[TIP]
+When using a custom host, set the `exportword_service_url` option in your {productname} configuration to match your host. For example, if your custom host is `mycustomhost.com`, set the URL to `https://mycustomhost.com/`.
+
+*Type:* `+String+`
+
+=== Example: Setting up `exportword_service_url`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'exportword',
+  toolbar: 'exportword',
+  exportword_service_url: '<service_URL>' // required for On-premise setups only
+});
+----

@@ -1,0 +1,31 @@
+[[importword-token-provider]]
+== `importword_token_provider`
+
+The `importword_token_provider` option enables integration with a token-based authentication service for importing Word documents. It provides a mechanism to fetch an authentication token from a specified endpoint. This ensures that the import process can securely communicate with the server.
+
+*Type:* `+Function+`
+
+*Default value:* `undefined`
+
+=== Example: using `importword_token_provider`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'importword',
+  toolbar: 'importword',
+  importword_token_provider: () => {
+    return fetch('http://localhost:3000/jwt', { // specify your token endpoint
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    }).then(response => response.json());
+  },
+});
+----
+
+[NOTE]
+The `importword_token_provider` option is required when using the {companyname} Cloud service. For more information on how to set up JWT authentication with {pluginname}, see examples:
+
+* xref:import-to-word-with-jwt-authentication-nodejs.adoc[Import to Word with JWT authentication (Nodejs)].
+* xref:import-to-word-with-jwt-authentication-php.adoc[Import to Word with JWT authentication (PHP)].

@@ -1,4 +1,4 @@
-= Export to Word
+= {pluginname} plugin
 :navtitle: exportword
 :description: The export to Word feature lets you generate a .docx file directly from the editor.
 :description_short: Generate a .docx file directly from the editor.
@@ -24,7 +24,7 @@ liveDemo::exportword[]
 * xref:introduction-to-mediaembed.adoc[Enhanced Media Embed] will not be included in the exported document, resulting in a console.error _"The Export to Word plugin requires the `exportword_service_url` to be configured"_.
 ====
 
-== Basic setup
+== Basic setup using the {companyname} Cloud service
 
 To add the {pluginname} plugin to the editor, add `{plugincode}` to the `plugins` option in the editor configuration.
 
@@ -36,18 +36,44 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'exportword',
   toolbar: 'exportword',
-  exportword_service_url: 'http://localhost:8080/' // update to your own self-hosted service URL
 });
 ----
 
 [IMPORTANT]
-The `exportword_service_url` option automatically appends `/v2/convert/html-docx` to the URL provided, so only the base URL is required. For example, if the service is hosted at `http://localhost:8080/v2/convert/html-docx`, the `exportword_service_url` option should be set to `http://localhost:8080/`.
+When using the {pluginname} plugin with the {companyname} Cloud service, JWT authentication is required to use the service. For more information on how to set up JWT authentication with {pluginname}, see examples:
+
+* xref:export-to-word-with-jwt-authentication-nodejs.adoc[Export to Word with JWT authentication].
+* xref:export-to-word-with-jwt-authentication-php.adoc[Export to Word with JWT authentication].
+
+== Basic setup using the self-hosted service
+
+To use the self-hosted version of the {pluginname} plugin, you need to set the `exportword_service_url` option to the URL of the service.
+
+For example:
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'exportword',
+  toolbar: 'exportword',
+  exportword_service_url: 'http://localhost:8080/' // Update with the URL of the service you are using such  as 'http://myserver.com/'
+});
+----
+
+[IMPORTANT]
+The `exportword_service_url` option automatically appends `/v2/convert/html-docx` to the URL provided, so only the base URL is required. For example, if the service is hosted at `http://localhost:8080/v2/convert/html-docx`, the `exportword_service_url` option should be set to `http://localhost:8080/`. When using in production, ensure that the service_url is updated to the production URL such as `https://myserver.com/`.
 
 == Options
 
 The following configuration options affect the behavior of the {pluginname} plugin.
 
-include::partial$configuration/{plugincode}.adoc[leveloffset=+1]
+include::partial$configuration/exportword_service_url.adoc[leveloffset=+1]
+
+include::partial$configuration/exportword_token_provider.adoc[leveloffset=+1]
+
+include::partial$configuration/exportword_converter_options.adoc[leveloffset=+1]
+
+include::partial$configuration/exportword_converter_style.adoc[leveloffset=+1]
 
 == Commands
 

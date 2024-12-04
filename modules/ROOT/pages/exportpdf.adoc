@@ -1,4 +1,4 @@
-= Export to PDF plugin
+= {pluginname} plugin
 :navtitle: Export to PDF
 :description: The Export to PDF feature provides the ability to generate a PDF file directly from the editor.
 :description_short: Generate a PDF file directly from the editor.
@@ -18,7 +18,7 @@ The {pluginname} feature collects the HTML generated with the `tinymce.editor.ge
 
 liveDemo::exportpdf[]
 
-== Basic setup
+== Basic setup using the {companyname} Cloud service
 
 To add the {pluginname} plugin to the editor, add `{plugincode}` to the `plugins` option in the editor configuration.
 
@@ -30,15 +30,45 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'exportpdf',
   toolbar: 'exportpdf',
-  exportpdf_service_url: '<service url>'
 });
 ----
+
+[IMPORTANT]
+When using the {pluginname} plugin with the {companyname} Cloud service, JWT authentication is required to use the service. For more information on how to set up JWT authentication with {pluginname}, see examples:
+
+* xref:export-to-pdf-with-jwt-authentication-nodejs.adoc[Export to PDF with JWT authentication (Nodejs)].
+* xref:export-to-pdf-with-jwt-authentication-php.adoc[Export to PDF with JWT authentication (PHP)].
+
+== Basic setup using the self-hosted service
+
+To use the self-hosted version of the {pluginname} plugin, you need to set the `exportpdf_service_url` option to the URL of the service.
+
+For example:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'exportpdf',
+  toolbar: 'exportpdf',
+  exportpdf_service_url: 'http://localhost:8080/' // Update with the URL of the service you are using such  as 'http://myserver.com/'
+});
+----
+
+[IMPORTANT]
+The `exportpdf_service_url` option automatically appends `/v1/convert` to the URL provided, so only the base URL is required. For example, if the service is hosted at `http://localhost:8080/v1/convert`, the `exportpdf_service_url` option should be set to `http://localhost:8080/`. When using in production, ensure that the service_url is updated to the production URL such as `https://myserver.com/`.
 
 == Options
 
 The following configuration options affect the behavior of the {pluginname} plugin.
 
-include::partial$configuration/{plugincode}.adoc[leveloffset=+1]
+include::partial$configuration/exportpdf_service_url.adoc[leveloffset=+1]
+
+include::partial$configuration/exportpdf_token_provider.adoc[leveloffset=+1]
+
+include::partial$configuration/exportpdf_converter_options.adoc[leveloffset=+1]
+
+include::partial$configuration/exportpdf_converter_style.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

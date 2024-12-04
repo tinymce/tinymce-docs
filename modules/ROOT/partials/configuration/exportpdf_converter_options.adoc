@@ -1,0 +1,42 @@
+[[exportpdf-converter-options]]
+== `exportpdf_converter_options`
+
+This option allows the editor to download a PDF document containing its content, along with the specified options defined in the `exportpdf_converter_options`.
+
+**Type:** `+Object+`
+
+[NOTE]
+As of {productname} 7.5.0, the `exportpdf_converter_options` setting now comes with a default value set to the following:
+
+.**Default value:**
+[source,js]
+----
+exportpdf_converter_options: {
+  format: 'Letter',
+  margin_top: '1in',
+  margin_right: '1in',
+  margin_bottom: '1in',
+  margin_left: '1in'
+}
+----
+
+=== Example: using `exportpdf_converter_options`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'exportpdf',
+  toolbar: 'exportpdf',
+  exportpdf_service_url: '<service_url>', // required if using On-premises service
+  exportpdf_converter_options: {
+   	header_html: '<p>HEADER</p>', // example
+   	header_and_footer_css: 'p { color: blue }', // example
+  },
+})
+----
+
+[NOTE]
+The `exportpdf_service_url` option must be configured for the {pluginname} plugin to work.
+
+> For comprehensive details regarding the `exportpdf_converter_options`, please refer to the https://exportpdf.converter.tiny.cloud/docs[API documentation^] available for the {pluginname} Premium plugin.

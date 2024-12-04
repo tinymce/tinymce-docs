@@ -1,0 +1,29 @@
+[[exportpdf-converter-style]]
+== `exportpdf_converter_style`
+
+The `exportpdf_converter_style` option allow for customization of the styles applied to the exported PDF document, providing flexibility in controlling its appearance.
+
+*Type:* `+String+`
+
+*Default value:* `''`
+
+=== Example: using `exportpdf_converter_style`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea.tinymce',
+  plugins: 'exportpdf',
+  toolbar: 'exportpdf',
+  exportpdf_service_url: '<service_URL>', // required if using On-premises service
+  exportpdf_converter_options: { // required to support "exportpdf_converter_style"
+    header: [
+      {
+        html: '<h1>First page header.</h1>', //example
+        css: 'h1 { font-size: 30px; }', //example
+      }
+    ],
+  },
+  exportpdf_converter_style: 'p { color: cyan !important }' // requires both "exportpdf_converter_style" and "exportpdf_service_url" to be set.
+});
+----

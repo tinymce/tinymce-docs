@@ -1,17 +1,16 @@
 [[importword-service-url]]
 == `importword_service_url`
 
-This option is used for setting the URL endpoint for the DOCX to HTML conversion service.
+The `importword_service_url` option sets the URL endpoint for the DOCX-to-HTML conversion service.
 
-The {pluginname} feature is currently only available exclusively for `on-premise` setups, requiring a self-hosted version of the DOCX to HTML conversion service and the `importword_service_url` option to be properly configured. If you require access to this feature, please link:https://www.tiny.cloud/contact/[contact us]. Refer to our xref:individual-import-from-word-and-export-to-word-on-premises.adoc[on-premises documentation] for detailed instructions on deploying the {pluginname} service server-side component using Docker.
-
+This option is **required** when configuring the {pluginname} plugin for `on-premise` setups. If you require access to this feature, please link:https://www.tiny.cloud/contact/[contact us]. For detailed instructions on deploying the {pluginname} service server-side component using Docker, refer to the xref:individual-import-from-word-and-export-to-word-on-premises.adoc[on-premises documentation].
 
 [TIP]
-Configure the `importword_service_url` setting in your {productname} instance to match your custom host. For example, if your host is `mycustomhost.com`, set the URL to `https://mycustomhost.com/`.
+When using a custom host, set the `importword_service_url` option in your {productname} configuration to match your host. For example, if your custom host is `mycustomhost.com`, set the URL to `https://mycustomhost.com/`.
 
 *Type:* `+String+`
 
-=== Example: using `importword_service_url`
+=== Example: Setting up `importword_service_url`
 
 [source,js]
 ----
@@ -19,10 +18,12 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'importword',
   toolbar: 'importword',
-  importword_service_url: '<service-URL>'
+  importword_service_url: '<service-URL>' // required for On-premise setups only
 });
 ----
 
 [IMPORTANT]
-If this string value is **not configured** it will return a console.error:
-_The {pluginname} plugin requires the `importword_service_url` to be configured_. If the editor detects an `invalid_URL`, it will return a console.error: _The value provided in `importword_service_url` is not a valid URL_.
+====
+* If the `importword_service_url` option is **not configured**, a `console.error` will display: _The {pluginname} plugin requires the `importword_service_url` to be configured_.
+* If the URL provided is invalid, a `console.error` will display: _The value provided in `importword_service_url` is not a valid URL_.
+====

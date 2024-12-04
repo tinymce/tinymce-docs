@@ -1,5 +1,5 @@
 
-= Import from Word plugin
+= {pluginname} plugin
 :navtitle: Import from Word
 :description: Provides a way to import .docx (Word documents) or .dotx (Word templates) files into the editor.
 :description_short: Import .docx or .dotx files into the editor.
@@ -19,7 +19,7 @@ The {pluginname} plugin lets you import `.docx` (Word document) or `.dotx` (Word
 
 liveDemo::importword[]
 
-== Basic setup
+== Basic setup using the {companyname} Cloud service
 
 To add the {pluginname} plugin to the editor, add `{plugincode}` to the `plugins` option in the editor configuration.
 
@@ -31,17 +31,43 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'importword',
   toolbar: 'importword',
-  importword_service_url: '<service_URL>'
 });
 ----
+
+[IMPORTANT]
+When using the {pluginname} plugin with the {companyname} Cloud service, JWT authentication is required to use the service. For more information on how to set up JWT authentication with {pluginname}, see examples:
+
+* xref:import-to-word-with-jwt-authentication-nodejs.adoc[Import to Word with JWT authentication].
+* xref:import-to-word-with-jwt-authentication-php.adoc[Import to Word with JWT authentication].
+
+== Basic setup using the self-hosted service
+
+To use the self-hosted version of the {pluginname} plugin, you need to set the `importword_service_url` option to the URL of the service.
+
+For example:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'importword',
+  toolbar: 'importword',
+  importword_service_url: 'http://localhost:8080/' // Update with the URL of the service you are using such  as 'http://myserver.com/'
+});
+----
+
+[IMPORTANT]
+The `importword_service_url` option automatically appends `/v2/convert/docx-html` to the URL provided, so only the base URL is required. For example, if the service is hosted at `http://localhost:8080/v2/convert/docx-html`, the `importword_service_url` option should be set to `http://localhost:8080/`. When using in production, ensure that the service_url is updated to the production URL such as `https://myserver.com/`.
 
 == Options
 
 The following configuration options affect the behavior of the {pluginname} plugin.
 
-include::partial$configuration/{plugincode}-service-url.adoc[leveloffset=+1]
+include::partial$configuration/importword-service-url.adoc[leveloffset=+1]
 
-include::partial$configuration/{plugincode}-converter-options.adoc[leveloffset=+1]
+include::partial$configuration/importword_token_provider.adoc[leveloffset=+1]
+
+include::partial$configuration/importword-converter-options.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
@@ -51,7 +77,7 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 The {pluginname} plugin provides the following {productname} commands.
 
-include::partial$commands/{plugincode}-cmds.adoc[]
+include::partial$commands/importword-cmds.adoc[]
 
 == API Reference
 

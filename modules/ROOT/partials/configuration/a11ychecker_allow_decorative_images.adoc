@@ -25,7 +25,10 @@ If `+a11ychecker_allow_decorative_images+` is set to `+false+`, the Accessibilit
 * An image has an empty alternative text attribute.
 * An image has the `+role="presentation"+` attribute.
 
-NOTE: If xref:a11ychecker.adoc#a11y_advanced_options[`+a11y_advanced_options+`] is set to `+true+`, `+a11ychecker_allow_decorative_images+` will default to `+true+`.
+[NOTE]
+====
+If xref:a11ychecker.adoc#a11y_advanced_options[`+a11y_advanced_options+`] is set to `+true+`, `+a11ychecker_allow_decorative_images+` will default to `+true+`.
+====
 
 *Type:* `+Boolean+`
 

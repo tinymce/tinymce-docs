@@ -29,7 +29,7 @@ For example:
 tinymce.init({
   selector: 'textarea',
   plugins: 'a11ychecker',
-  toolbar: 'a11ycheck'
+  toolbar: 'a11ycheck',
 });
 ----
 
@@ -296,7 +296,7 @@ WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H73.html[
 [[T4A]]
 === T4A - Table markup
 
-*Rule description:* this rule checks that all `+tables+` contain both `+td+` and `+th+` elements.
+*Rule description:* this rule checks that all `+tables+` contain both `+tr+` and `+td+` elements.
 
 ==== {pluginname} rule details - T4A
 

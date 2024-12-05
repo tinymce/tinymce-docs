@@ -64,6 +64,7 @@ The {productname} {release-version} release includes an accompanying release of 
 **Accessibility Checker** Premium plugin includes the following fixes and improvements.
 
 ==== Improve editor content highlighting when using accessibility checker
+// #TINY-11463
 
 Previously, an issue involving the accessibility checker was identified where the content area highlights did not properly meet accessibility standards. This issue caused users with vision impairments to encounter difficulty in identifying the currently focused element.
 
@@ -75,9 +76,16 @@ For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.a
 
 The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
 
-**Comments** Premium plugin includes the following improvements.
+**Comments** Premium plugin includes the following fixes and improvements.
 
-=== Pressing Shift+Enter in Mentions in Comments dropdown should accept the active menu item
+==== Scroll to show action buttons when replying/editing a comment.
+// #TINY-11402
+
+Previously, if a selected conversation card was positioned near the bottom of the sidebar, the reply/edit input field would be below the bottom of the sidebar resulting in the comment input field not being visible to the user.
+
+{productname} {release-version} addresses this issue. Now, the sidebar scrolls to display the comment input field if the selected conversation card is positioned near the bottom of the sidebar. This ensures that the comment input field is always visible to the user.
+
+==== Pressing Shift+Enter in Mentions in Comments dropdown should accept the active menu item
 // #TINY-11455
 
 In previous versions of {productname}, the `Shift+Enter` key was not properly handled when used with mentions in comments. This led to a new line being inserted while the mentions dropdown remained open, resulting in inconsistent behavior compared to mentions within the editor.
@@ -128,7 +136,6 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
-
 
 
 [[additions]]

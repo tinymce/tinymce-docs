@@ -1,9 +1,9 @@
 [[uploadcare-signed-upload-auth-provider]]
 == `uploadcare_signed_upload_auth_provider`
 
-Specifies a function used to generate secure signatures for authenticated requests to Uploadcare. This is necessary when using secure Uploadcare features, such as signed uploads. The function should return a `Promise` that resolves with an object containing the signature and expiration timestamp.
+Specifies a function used to generate secure signatures for authenticated requests to Uploadcare. This function is required when enabling Uploadcare's signed uploads feature, which ensures that only authorized users can upload files using your `uploadcare_public_key`. The function should return a `Promise` that resolves with an object containing the signature and expiration timestamp.
 
-Use this option if you want to ensure secure uploads or restrict file access using Uploadcare's signed uploads feature.
+Use this option to enforce secure uploads, preventing unauthorized users from uploading files via your application.
 
 *Type:* `+Function+`
 
@@ -25,12 +25,13 @@ tinymce.init({
 
 [IMPORTANT]
 ====
-{companyname} recommends configuring the `uploadcare_signed_upload_auth_provider` option to enable signed uploads and enhance security when integrating with Uploadcare. This option is essential for applications requiring:
+{companyname} recommends configuring the `uploadcare_signed_upload_auth_provider` option to secure uploads and prevent misuse of your Uploadcare `uploadcare_public_key`. This option is essential for applications requiring:
 
-* Secure file uploads by preventing unauthorized access.
-* Restriction of file access to specific users or sessions.
+* Prevention of unauthorized file uploads via your `uploadcare_public_key`.
+* Enforcement of secure upload practices for application integrity.
 
-The `uploadcare_signed_upload_auth_provider` ensures that every request is authenticated with a generated signature and expiration timestamp, providing an additional layer of security for sensitive data.
+[NOTE]
+This option **only** secures unauthorized access to upload files to the uploadcare storage by verifying signatures during uploads.
 
-Using this option will help safeguard your application by ensuring secure file uploads, protecting sensitive data, and maintaining system integrity. {companyname} strongly advises including this configuration as a fundamental part of your Uploadcare integration setup.
+For most integrations, enabling signed uploads by configuring this option ensures that only authorized uploads occur, reducing the risk of abuse and maintaining secure usage of your `uploadcare_public_key`.
 ====

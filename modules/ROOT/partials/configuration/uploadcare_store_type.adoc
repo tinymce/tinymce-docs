@@ -3,7 +3,7 @@
 
 Specifies the storage type for uploaded files. Use this option to control whether files are stored temporarily or permanently, or allow Uploadcare to decide automatically based on your account settings.
 
-* `auto`: Default behavior; Uploadcare decides the storage type.
+* `auto`: Uploadcare decides the storage type.
 * `temporary`: Files are stored temporarily and will expire after a certain period.
 * `permanent`: Files are stored permanently in your Uploadcare account.
 

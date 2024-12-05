@@ -57,19 +57,20 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== Comments
+=== Accessibility Checker
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.
 
-**Comments** Premium plugin includes the following fixes and improvements.
+**Accessibility Checker** Premium plugin includes the following fixes and improvements.
 
-==== Fixes to the comments dark mode
+==== Screen reader is not announcing everything in the accessibility checker dialog
+// TINY-11523
 
-Previously, an issue was identified where both the default and dark skins for comments had a visible border on comment cards that were not selected. This was inconsistent with the design specification, which stated that only the default skin should have a border for unselected comment cards. This discrepancy caused the two skins to appear inconsistent.
+Previously, an issue was identified where screen reader announcements for the accessibility dialog were inconsistent across different browsers. This inconsistency resulted in a poor user experience with screen readers and accessibility dialogs.
 
-In {productname} {release-version}, this issue has been resolved by ensuring that the border for unselected comment cards matches the comment background color, effectively removing the visible border for unselected comment cards.
+In {productname} {release-version}, this issue has been resolved by adding a dedicated screen reader section within the dialog structure, ensuring consistent and accurate announcements across browsers.
 
-For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
+For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]

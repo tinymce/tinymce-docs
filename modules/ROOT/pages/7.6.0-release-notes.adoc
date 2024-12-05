@@ -156,7 +156,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === Removed title attribute from dialog tree elements as they already have a tooltip.
 // #TINY-11470
 
-Previously, an issue was identified where custom tooltips for tree structures triggered both the browser's native tooltip (via the `title` attribute) and the custom tooltip simultaneously. This resulted in two tooltips with the same text being displayed, leading to a confusing user experience. 
+Previously, an issue was identified with tooltips for tree structures where multiple tooltip systems displayed the same text simultaneously:
+
+. The browser's native tooltip, triggered by the `title` attribute, displayed the text.
+. {productnames}'s custom tooltip functionality also displayed the text.
+
+As a consequence, this caused two tooltips with identical content to appear at the same time, leading to a confusing user experience, where the desired behavior was to show only the custom tooltip provided by {productname}.
 
 In {productname} {release-version}, this issue has been resolved. The `title` attribute is now automatically removed when the custom tooltip is applied, ensuring that only the custom tooltip is displayed. 
 

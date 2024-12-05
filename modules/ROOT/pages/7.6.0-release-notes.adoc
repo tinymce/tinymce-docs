@@ -57,17 +57,42 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== Accessibility Checker
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Accessibility Checker** Premium plugin includes the following fixes and improvements.
 
-==== <Premium plugin name 1 change 1>
+==== Improve editor content highlighting when using accessibility checker
+// #TINY-11463
 
-// CCFR here.
+Previously, an issue involving the accessibility checker was identified where the content area highlights did not properly meet accessibility standards. This issue caused users with vision impairments to encounter difficulty in identifying the currently focused element.
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+In {productname} {release-version}, this issue has been resolved by unifying the color palette to meet accessibility color contrast standards, ensuring that all users can easily locate the currently focused element.
+
+For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
+
+=== Comments
+
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** Premium plugin includes the following fixes and improvements.
+
+==== Scroll to show action buttons when replying/editing a comment.
+// #TINY-11402
+
+Previously, if a selected conversation card was positioned near the bottom of the sidebar, the reply/edit input field would be below the bottom of the sidebar resulting in the comment input field not being visible to the user.
+
+{productname} {release-version} addresses this issue. Now, the sidebar scrolls to display the comment input field if the selected conversation card is positioned near the bottom of the sidebar. This ensures that the comment input field is always visible to the user.
+
+==== Pressing Shift+Enter in Mentions in Comments dropdown should accept the active menu item
+// #TINY-11455
+
+In previous versions of {productname}, the `Shift+Enter` key was not properly handled when used with mentions in comments. This led to a new line being inserted while the mentions dropdown remained open, resulting in inconsistent behavior compared to mentions within the editor.
+
+In {productname} {release-version}, mentions in comments now handle the `Shift+Enter` key by inserting the highlighted user into the comment text area and closing the dropdown, ensuring consistent functionality across the editor and comment areas.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
@@ -112,8 +137,6 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
 
-// CCFR here.
-
 == New `+disabled+` option for disabling all user interactions
 
 A new `+disabled+` option has been introduced to {productname} in version {release-version}. This option allows integrators to disable all user interactions with the editor, including cursor placement, content modifications, and UI components. When set to `+true+`, the editor behaves similarly to the readonly mode changes introduced in {productname} 7.4.0 but ensures complete non-interactivity.
@@ -128,7 +151,6 @@ tinymce.init({
 ----
 
 For more information on the `+disabled+` option, see xref:editor-important-options.adoc#disabled[Disabled] option.
-
 
 [[additions]]
 == Additions
@@ -166,12 +188,21 @@ For more information on the `+disabled+` option, see xref:editor-important-optio
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Tooltip would not show for group toolbar button.
+// #TINY-11391
 
-// CCFR here.
+Previously, an issue was identified where tooltips were not displayed when hovering over toolbar group buttons. This was due to replacing the `title` attribute with an `aria-label` attribute in xref:7.0-release-notes.adoc#improved-accessibility-for-interactive-elements-with-custom-tooltips[{productname} 7.0.0] without implementing the custom tooltip behavior for the toolbar group buttons.
+
+In {productname} {release-version}, this issue has been resolved by applying the custom tooltip behavior to the toolbar group buttons, ensuring that tooltips are now displayed on hover.
+
+=== Numbered table context menu not properly applying changes
+// #TINY-11383
+
+Previously, there was an issue where changes to the row type in numbered tables were not properly applied. This occurred because the action of modifying the row type from a `+contentEditable="false"+` cell was being deliberately blocked.
+
+In {productname} {release-version}, this issue has been resolved by removing the restriction on changing the row type from a `+contentEditable="false"+` cell. As a result, changes to the row type are now correctly applied.
 
 
 [[security-fixes]]

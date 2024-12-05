@@ -183,7 +183,7 @@ Previously, there was an issue where changes to the row type in numbered tables 
 
 In {productname} {release-version}, this issue has been resolved by removing the restriction on changing the row type from a `+contentEditable="false"+` cell. As a result, changes to the row type are now correctly applied.
 
-== Fixed CSS Bundling for Skin UI Content CSS
+=== Fixed CSS Bundling for Skin UI Content CSS
 
 // #TINY-11558
 

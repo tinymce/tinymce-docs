@@ -92,6 +92,17 @@ In previous versions of {productname}, the `Shift+Enter` key was not properly ha
 
 In {productname} {release-version}, mentions in comments now handle the `Shift+Enter` key by inserting the highlighted user into the comment text area and closing the dropdown, ensuring consistent functionality across the editor and comment areas.
 
+==== Editor Focus after Deleting a Comment
+// #TINY-11293
+
+Previously, an issue was identified where, when a user deleted a comment, the focus exited the comments sidebar and returned to the editor instead of returning to the conversation card.
+
+In {productname} {release-version}, this issue has been resolved by updating the focus behavior in the following situations:
+
+*Deleting a comment now returns the focus to the conversation card that contained the deleted comment.
+*Creating a new comment within an existing conversation now brings the focus to the corresponding conversation card.
+*Starting a new conversation now brings the focus to the newly created conversation card.
+
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
 
 

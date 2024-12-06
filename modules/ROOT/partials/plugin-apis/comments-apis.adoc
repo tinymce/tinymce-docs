@@ -120,7 +120,10 @@ It is recommended to use this API to retrieve which users have been mentioned in
 
 [NOTE]
 ====
-The `mentionedUids` array captures any string following the `@` symbol without verifying if these strings correspond to valid user IDs. It is up to the developer to ensure that the mentioned users are valid users in the database. Refer to the xref:#example-using-geteventlog[getEventLog example] for an example of how to retrieve and verify the `mentionedUids` array.
+The `mentionedUids` array captures strings following the `@` symbol without verifying if they correspond to valid user IDs. It is the integrator's responsibility to validate these strings against the database to ensure they represent valid users. 
+
+For guidance on retrieving and verifying the `mentionedUids` array, refer to the xref:#example-using-geteventlog[getEventLog example].
+
 ====
 
 [[example-using-geteventlog]]

@@ -401,12 +401,12 @@ const issues = tinymce.activeEditor.plugins.a11ychecker.getReport();
 
 console.log(issues);
 
-// example result
+// Example result
 [
   {
     "contentID": "<div id=\"accessibility-issue__contentID\"><span>Text:&nbsp;</span><span>\"H5\"</span></div>",
     "description": "Headings must be applied in sequential order. For example: Heading 1 should be followed by Heading 2, not Heading 3.",
-    "element": [object],  // The element value contains the DOM element (such as <h4>).
+    "element": h5, // reference to the DOM element where the issue was found
     "id": "D2",
     "severity": "error",
     "url": "https://www.w3.org/WAI/WCAG21/Techniques/general/G141.html",
@@ -414,7 +414,7 @@ console.log(issues);
   {
     "contentID": "<div id=\"accessibility-issue__contentID\"><span>Table:&nbsp;</span><span>\"2x2\"</span></div>",
     "description": "Tables must have captions",
-    "element": [object],  // The element value contains the DOM element (such as <table>).
+    "element": table, // reference to the DOM element where the issue was found
     "id": "T1",
     "severity": "error",
     "url": "https://www.w3.org/WAI/WCAG21/Techniques/html/H39.html",

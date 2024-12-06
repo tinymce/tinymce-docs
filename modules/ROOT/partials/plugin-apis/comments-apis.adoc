@@ -130,9 +130,9 @@ The `mentionedUids` array captures any string following the `@` symbol without v
 ----
 // Fake database of users
 const users = {
-  "user1": "John Doe",
-  "user2": "Jane Doe",
-  "user3": "Alice Doe",
+  "johndoe": "John Doe",
+  "janedoe": "Jane Doe",
+  "alicedoe": "Alice Doe",
 };
 
 const comments = tinymce.activeEditor.plugins.tinycomments;

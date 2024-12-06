@@ -76,7 +76,14 @@ For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.a
 
 The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
 
-**Comments** Premium plugin includes the following fixes and improvements.
+**Comments** includes the following fixes and improvements.
+
+==== Allow mentions in comments dropdown to flow freely outside of the editor container
+// #TINY-11504
+
+An issue was identified where the mentions in comments dropdown didn't freely expand to the available space alongside mentions in the editor. This was due to the dropdown being restricted within the sidebar area.
+
+In {productname} {release-version}, this issue has been resolved by allowing the mentions in comments dropdown to expand outside the sidebar area, making full use of the available space outside the editor and improving the overall user experience.
 
 ==== Scroll to show action buttons when replying/editing a comment.
 // #TINY-11402

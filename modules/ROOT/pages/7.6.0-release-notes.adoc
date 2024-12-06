@@ -87,9 +87,9 @@ In {productname} {release-version}, mentions in comments now handle the `Shift+E
 === Adjust `tinycomments` UI font size to match the editor UI font size
 // #TINY-11592
 
-Previously, the **Comments** plugin used a `small` font size, which was inconsistent with the `medium` font size used in the editor UI.
+Previously, the **Comments** plugin used a `14px` font size for the comment body, which was inconsistent with the `16px` font size used in the rest of the Comments Sidebar and the editor UI.
 
-This issue has been resolved in {productname} {release-version}, ensuring font size consistency between the **Comments** plugin and the editor UI.
+This issue has been resolved in {productname} {release-version} by setting the comment body font size to `16px`, ensuring font size consistency between the **Comments** plugin and the editor UI.
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
 

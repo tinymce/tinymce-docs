@@ -56,13 +56,17 @@ The `getEventLog` returns a log that contains information and timestamps of all 
 ----
 {
   "type": "reply",
-  "timestamp": "2024-10-01T03:07:53.771Z",
-  "conversationUid": "annotation-r1nn5xdo5ye",
-  "commentUid": "annotation-uh00rb41kma",
+  "timestamp": "2024-12-06T06:38:42.444Z",
+  "conversationUid": "mce-conversation_16214546531733467122444",
+  "commentUid": "mce-reply_70110186641733467132519",
   "conversationContext": "Welcome",
-  "conversationContent": "new comment (Edit comment)",
-  "conversationCreatedAt": "2024-10-01T03:07:53.771Z",
-  "commentContent": "reply to existing comment",
+  "conversationContent": "new comment",
+  "conversationCreatedAt": "2024-12-06T06:38:42.444Z",
+  "commentContent": "reply to comment",
+  "commentAuthor": {
+      "author": "DEMO USER",
+      "authorName": "DEMO USER"
+  },
   "conversationAuthor": {
       "author": "DEMO USER",
       "authorName": "DEMO USER"

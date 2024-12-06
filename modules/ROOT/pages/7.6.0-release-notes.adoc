@@ -78,6 +78,15 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **Comments** includes the following fixes and improvements.
 
+==== The `commentAuthor` property is now included in reply events of the event log.
+// #TINY-11489
+
+In previous versions of the tinycomments plugin, the `commentAuthor` property was missing from 'reply' events within the event log, which led to incomplete tracking of user interactions when retrieving data through the `+getEventLog()+` API.
+
+{productname} {release-version} addresses this issue. Now, the `commentAuthor` property is included in 'reply' events in the event log.
+
+For more information on the `getEventLog`, see xref:comments-commands-events-apis.adoc#getEventLog[getEventLog].
+
 ==== Allow mentions in comments dropdown to flow freely outside of the editor container
 // #TINY-11504
 

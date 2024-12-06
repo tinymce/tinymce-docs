@@ -72,6 +72,23 @@ In {productname} {release-version}, this issue has been resolved by unifying the
 
 For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
 
+=== Checklist
+
+The {productname} {release-version} release includes an accompanying release of the **Checklist** premium plugin.
+
+**Checklist** Premium plugin includes the following fix.
+
+==== Checklist items were unresponsive in `center` or `right` alignments
+// #TINY-11357
+
+In previous versions of {productname}, an issue was identified where users could not check checklist items when they were `center` or `right` aligned. This occurred because the logic for detecting clicks relied on the left-most position of the `+<li>+` element, which remains unchanged regardless of text alignment.
+
+As a result, clicks in center or right alignments would fail the logic check, leaving the items unresponsive.
+
+{productname} {release-version} addresses this issue. Now, the logic compares the click position against the left-most position of the aligned text, rather than the parent `+<li>+` element. This adjustment ensures that clicks are properly registered regardless of alignment, restoring expected functionality across all alignment settings.
+
+For information on the **Checklist** plugin, see: xref:checklist.adoc[Checklist].
+
 === Comments
 
 The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.

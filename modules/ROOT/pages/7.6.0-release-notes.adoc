@@ -63,6 +63,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **Accessibility Checker** Premium plugin includes the following fixes and improvements.
 
+==== Add detailed issue description to accessibility checker
+// #TINY-11462
+
+An issue was identified where users who use screen readers did not get a satisfactory indicator of the current content. This could have potentially caused users to get confused or lost when using the accessibility checker.
+
+In {productname} {release-version}, this has been addressed by introducing a new section that displays the content type and a snippet of the content. This improvement ensures better context and presentation of the current content and its accessibility issues.
+
 ==== Improve editor content highlighting when using accessibility checker
 // #TINY-11463
 

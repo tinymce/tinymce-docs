@@ -160,6 +160,7 @@ The following events are provided by the {productname} editor.
 |ObjectResized |`+{ target: HTMLElement, width: number, height: number, origin: string }+` |Fired when an object (such as an image) has finished being resized.
 |ObjectResizeStart |`+{ target: HTMLElement, width: number, height: number, origin: string }+` |Fired when an object (such as an image) is about to be resized.
 |SwitchMode |`+{ mode: string }+` |Fired when the editor mode is changed. The available modes are "design" and "readonly". Additional modes can be registered using {productname} API xref:apis/tinymce.editormode.adoc#register['tinymce.activeEditor.mode.register()'].
+|DisabledStateChange |+{ state: boolean }+ |Fired when the editor disabled mode state changes.
 |ScrollWindow |(Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Element/scroll_event[scroll event]) |Fired when the window has scrolled.
 |ResizeWindow |(Same data as the native https://developer.mozilla.org/en-US/docs/Web/API/Window/resize_event[resize event]) |Fired when the window is resized.
 |BeforeExecCommand |`+{ command: string, ui?: boolean, value?: any }+` |Fired before a command is executed.

@@ -1,0 +1,23 @@
+[[disabled]]
+
+== `+disabled+`
+
+Disables all user interactions with the editor (including cursor placement, content modifications, UI components). This option provides behavior similar to the changes made to {productname} in 7.4.0 readonly mode. When enabled, the editor becomes completely non-interactive.
+
+To programmatically enable/disable the editor, use `+tinymce.activeEditor.options.set('disabled', false/true)+`.
+
+*Type:* `+Boolean+`
+
+*Default value:* `+false+`
+
+*Possible values:* `+true+`, `+false+`
+
+=== Example: using `+disabled+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  disabled: true
+});
+----

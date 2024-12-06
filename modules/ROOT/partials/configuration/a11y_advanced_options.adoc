@@ -13,7 +13,7 @@ Setting `+a11y_advanced_options+` to `+true+`:
 
 [IMPORTANT]
 ====
-When `+a11y_advanced_options+` is set to `+true+`, xref:a11ychecker.adoc#a11ychecker_allow_decorative_images[`+a11ychecker_allow_decorative_images+`] will default to `+true+`.
+If `xref:a11ychecker.adoc#a11ychecker_allow_decorative_images[a11ychecker_allow_decorative_images]` is not explicitly set, the value defined in `+a11y_advanced_options+` will be used.
 ====
 
 *Type:* `+Boolean+`

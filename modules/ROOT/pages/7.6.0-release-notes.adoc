@@ -208,6 +208,18 @@ For more information on the `+disabled+` option, see xref:editor-important-optio
 
 {productname} {release-version} also includes the following bug fixes:
 
+=== Removed title attribute from dialog tree elements as they already have a tooltip.
+// #TINY-11470
+
+Previously, an issue was identified with tooltips for tree structures where multiple tooltip systems displayed the same text simultaneously:
+
+. The browser's native tooltip, triggered by the `title` attribute, displayed the text.
+. {productname}'s custom tooltip functionality also displayed the text.
+
+As a consequence, this caused two tooltips with identical content to appear at the same time, leading to a confusing user experience, where the desired behavior was to show only the custom tooltip provided by {productname}.
+
+In {productname} {release-version}, this issue has been resolved. The `title` attribute is now automatically removed when the custom tooltip is applied, ensuring that only the custom tooltip is displayed. 
+
 === Tooltip would not show for group toolbar button.
 // #TINY-11391
 
@@ -221,7 +233,6 @@ In {productname} {release-version}, this issue has been resolved by applying the
 Previously, there was an issue where changes to the row type in numbered tables were not properly applied. This occurred because the action of modifying the row type from a `+contentEditable="false"+` cell was being deliberately blocked.
 
 In {productname} {release-version}, this issue has been resolved by removing the restriction on changing the row type from a `+contentEditable="false"+` cell. As a result, changes to the row type are now correctly applied.
-
 
 [[security-fixes]]
 == Security fixes

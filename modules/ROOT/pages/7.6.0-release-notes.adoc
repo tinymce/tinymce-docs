@@ -66,9 +66,9 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== Add detailed issue description to accessibility checker
 // #TINY-11462
 
-An issue was identified where users who use screen readers did not get a satisfactory indicator of the current content. This could have potentially caused users to get confused or lost when using the accessibility checker.
+An issue was identified where users relying on screen readers did not receive sufficient context about the current content when navigating the accessibility checker. This limitation could cause confusion and make it challenging for users to understand or resolve accessibility issues effectively.
 
-In {productname} {release-version}, this has been addressed by introducing a new section that displays the content type and a snippet of the content. This improvement ensures better context and presentation of the current content and its accessibility issues.
+To address this, {productname} {release-version} introduces a new section that clearly displays the content type and includes a snippet of the content. This enhancement provides users with better context and improves the overall navigation experience. By offering more comprehensive indicators, this update ensures screen reader users can efficiently identify and address accessibility issues within the content.
 
 ==== Improve editor content highlighting when using accessibility checker
 // #TINY-11463

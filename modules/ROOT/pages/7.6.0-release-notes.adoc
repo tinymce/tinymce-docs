@@ -159,7 +159,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 Previously, an issue was identified with tooltips for tree structures where multiple tooltip systems displayed the same text simultaneously:
 
 . The browser's native tooltip, triggered by the `title` attribute, displayed the text.
-. {productnames}'s custom tooltip functionality also displayed the text.
+. {productname}'s custom tooltip functionality also displayed the text.
 
 As a consequence, this caused two tooltips with identical content to appear at the same time, leading to a confusing user experience, where the desired behavior was to show only the custom tooltip provided by {productname}.
 

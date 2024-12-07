@@ -85,6 +85,16 @@ An issue was identified where the mentions in comments dropdown didn't freely ex
 
 In {productname} {release-version}, this issue has been resolved by allowing the mentions in comments dropdown to expand outside the sidebar area, making full use of the available space outside the editor and improving the overall user experience.
 
+==== Change scrolling comment card behavior
+// #TINY-11401
+
+Previously, the scrolling behavior for comment cards was different depending on the scenario. If the user scrolled from top to bottom, the scrolling would stop at the top of a comment card; however, if the user scrolled from bottom to top, the scrolling would stop at the bottom of a comment card.
+
+In {productname} {release-version}, the sidebar scrolling behavior has been updated for consistency. When a conversation is selected and is either partially or completely out of view, the sidebar now scrolls to position the top of the selected conversation just below the top of the sidebar.
+
+An exception to this occurs if the selected conversation is already partially visible (with the top in view but the bottom out of view) and the comment card's height is smaller than the scrollable container. In this scenario, the sidebar will instead scroll to position the bottom of the selected card near the bottom of the container.
+
+
 ==== Scroll to show action buttons when replying/editing a comment.
 // #TINY-11402
 

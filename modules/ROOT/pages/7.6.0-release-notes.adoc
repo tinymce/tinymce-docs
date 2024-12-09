@@ -93,7 +93,7 @@ Previously, the scrolling behavior for comment cards was inconsistent. When scro
 In {productname} {release-version}, the sidebar scrolling behavior has been updated to ensure consistency. When a conversation is selected and is either partially or completely out of view, the sidebar now scrolls to position the top of the selected conversation just below the top of the sidebar.
 
 [NOTE]
-An exception does applies if the selected conversation is already partially visible, with the top in view but the bottom out of view, and the comment card's height is smaller than the scrollable container. In this scenario, the sidebar will scroll to position the bottom of the selected card near the bottom of the container.
+An exception does apply if the selected conversation is already partially visible, with the top in view but the bottom out of view, and the comment card's height is smaller than the scrollable container. In this scenario, the sidebar will scroll to position the bottom of the selected card near the bottom of the container.
 
 
 ==== Scroll to show action buttons when replying/editing a comment.

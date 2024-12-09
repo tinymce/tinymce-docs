@@ -116,6 +116,13 @@ In previous versions of {productname}, the `Shift+Enter` key was not properly ha
 
 In {productname} {release-version}, mentions in comments now handle the `Shift+Enter` key by inserting the highlighted user into the comment text area and closing the dropdown, ensuring consistent functionality across the editor and comment areas.
 
+=== Adjust `tinycomments` UI font size to match the editor UI font size
+// #TINY-11592
+
+Previously, the **Comments** plugin used a `14px` font size for the comment body, which was inconsistent with the `16px` font size used in the rest of the Comments Sidebar and the editor UI.
+
+This issue has been resolved in {productname} {release-version} by setting the comment body font size to `16px`, ensuring font size consistency between the **Comments** plugin and the editor UI.
+
 ==== Editor Focus after Deleting a Comment
 // #TINY-11293
 

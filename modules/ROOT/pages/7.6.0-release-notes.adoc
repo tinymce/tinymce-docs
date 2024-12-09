@@ -238,6 +238,24 @@ For more information on the `+disabled+` option, see xref:editor-important-optio
 
 // CCFR here.
 
+=== New `onSetup` function to the context forms.
+// #TINY-11494
+
+Issue: There wasn’t a way to have a function to be executed when the context form was opened or closed.
+
+Impact: Development of the uploadcare plugin required us to know when the context form is opened and closed.
+
+Solution: A new `onSetup` API was added to the context forms that gets executed when the form is rendered and it’s return function gets executed when the context form is closed.
+
+Improvements/Benefits: There is a new API that handles the life cycle of context forms.
+
+=== New `onSetup` function for context forms
+// #TINY-11494
+
+A new `+onSetup+` API has been introduced for context forms, enabling integrators to execute a function when the form is rendered and handle cleanup when it is closed. This enhancement addresses the previous limitation of not being able to detect or trigger actions during the lifecycle of context forms. The `+onSetup+` API streamlines lifecycle management by supporting initialization at form rendering and providing a return function for cleanup, enhancing integration with plugins and applications.
+
+For more details, refer to xref:contextform.adoc#form[Context Form].
+
 
 [[changes]]
 == Changes

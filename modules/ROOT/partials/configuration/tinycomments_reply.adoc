@@ -16,7 +16,9 @@ The `+done+` callback should accept the following object:
 [source,js]
 ----
 {
-  commentUid: string // the value of the new comment uid
+  commentUid: string, // the value of the new comment uid
+  author: string, // the id of the current author
+  authorName: string // the name of the current authorName
 }
 ----
 
@@ -42,7 +44,11 @@ const reply_comment = (ref, done, fail) => {
     })
     .then((ref2) => {
       let commentUid = ref2.commentUid;
-      done({ commentUid: commentUid });
+      done({
+        commentUid: replyUid,
+        author: currentUser.id,
+        authorName: currentUser.fullName
+      });
     })
     .catch((e) => {
       fail(e);

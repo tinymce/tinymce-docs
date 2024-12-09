@@ -65,11 +65,11 @@ The `importword_service_url` option automatically appends `/v2/convert/docx-html
 
 The following configuration options affect the behavior of the {pluginname} plugin.
 
-include::partial$configuration/importword-service-url.adoc[leveloffset=+1]
+include::partial$configuration/importword_service_url.adoc[leveloffset=+1]
 
 include::partial$configuration/importword_token_provider.adoc[leveloffset=+1]
 
-include::partial$configuration/importword-converter-options.adoc[leveloffset=+1]
+include::partial$configuration/importword_converter_options.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

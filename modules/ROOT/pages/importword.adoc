@@ -57,7 +57,9 @@ tinymce.init({
 ----
 
 [IMPORTANT]
-The `importword_service_url` option automatically appends `/v2/convert/docx-html` to the URL provided, so only the base URL is required. For example, if the service is hosted at `http://localhost:8080/v2/convert/docx-html`, the `importword_service_url` option should be set to `http://localhost:8080/`. When using in production, ensure that the service_url is updated to the production URL such as `https://myserver.com/`.
+====
+The `importword_service_url` option automatically appends `/v2/convert/docx-html` to the URL provided, so only the base URL is required. For example, if the service is hosted at `http://localhost:8080/v2/convert/docx-html`, the `importword_service_url` option should be set to `http://localhost:8080/`. When using in production, ensure that the `importword_service_url` is updated to the production URL such as `https://myserver.com/`.
+====
 
 == Options
 

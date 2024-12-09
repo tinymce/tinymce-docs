@@ -193,7 +193,7 @@ The root cause was a misconfiguration of resource keys for the CSS bundling JS f
 
 This issue affected {productname} versions earlier than 7.1.0.
 
-{prodcutname} {release-version} resolves this issue by updating the `stylesheetLoader` to correctly load the `ui/default/content.css` stylesheet, ensuring that image resize handles are displayed as expected.
+{productname} {release-version} resolves this issue by updating the `stylesheetLoader` to correctly load the `ui/default/content.css` stylesheet, ensuring that image resize handles are displayed as expected.
 
 
 [[security-fixes]]

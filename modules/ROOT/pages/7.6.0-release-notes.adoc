@@ -168,6 +168,12 @@ In {productname} {release-version}, the focus behaviour has now been improved in
 * Creating a new comment within an existing conversation now brings the focus to the corresponding conversation card.
 * Starting a new conversation now brings the focus to the newly created conversation card.
 
+==== Added tooltips to conversation and comment kebab menus
+
+In previous versions of **Comments**, the kebab menu button in the comments sidebar was missing a tooltip for users relying on assistive technologies.
+
+{productname} {release-version} addresses this issue, by adding an `aria-label` with the description "Comment Actions" to the sidebar comment menu button, ensuring a tooltip is displayed on hover. This update improves accessibility and aligns the user experience across different menu buttons.
+
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
 
 

@@ -234,6 +234,19 @@ Previously, there was an issue where changes to the row type in numbered tables 
 
 In {productname} {release-version}, this issue has been resolved by removing the restriction on changing the row type from a `+contentEditable="false"+` cell. As a result, changes to the row type are now correctly applied.
 
+=== Fixed CSS Bundling for Skin UI Content CSS
+
+// #TINY-11558
+
+In self-hosted React setups, image resize handles were not displayed when using bundled {productname} editors. This issue impacted the usability of features such as image resizing.
+
+The root cause was a misconfiguration of resource keys for the CSS bundling JS files and CSS loading logic in {productname} core. As a result, bundled editors failed to load the necessary styles, causing the resize handles to remain hidden.
+
+This issue affected {productname} versions earlier than 7.1.0.
+
+{productname} {release-version} resolves this issue by updating the `stylesheetLoader` to correctly load the `ui/default/content.css` stylesheet, ensuring that image resize handles are displayed as expected.
+
+
 [[security-fixes]]
 == Security fixes
 

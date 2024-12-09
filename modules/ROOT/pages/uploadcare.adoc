@@ -112,6 +112,13 @@ Below is an overview of the features of the {pluginname} plugin includes for ima
 | image:icons/alt-text.svg[alt-text.svg]
 | Adds alternative text to describe the image for accessibility purposes.
 
+|
+| Decorative Image
+| image:icons/image-decorative.svg[image-decorative.svg]
+a|
+* Marks the image as decorative, indicating it doesn't require alternative text for accessibility.
+* This icon will only appear when the `a11y_advanced_options` configuration option is enabled.
+
 | Caption
 |
 | image:icons/caption.svg[caption.svg]

@@ -56,7 +56,9 @@ tinymce.init({
 ----
 
 [IMPORTANT]
-The `exportpdf_service_url` option automatically appends `/v1/convert` to the URL provided, so only the base URL is required. For example, if the service is hosted at `http://localhost:8080/v1/convert`, the `exportpdf_service_url` option should be set to `http://localhost:8080/`. When using in production, ensure that the service_url is updated to the production URL such as `https://myserver.com/`.
+====
+The `exportpdf_service_url` option automatically appends `/v1/convert` to the URL provided, so only the base URL is required. For example, if the service is hosted at `http://localhost:8080/v1/convert`, the `exportpdf_service_url` option should be set to `http://localhost:8080/`. When using in production, ensure that `exportpdf_service_url` is updated to the production URL such as `https://myserver.com/`.
+====
 
 == Options
 

@@ -85,7 +85,7 @@ An issue was identified where the mentions in comments dropdown didn't freely ex
 
 In {productname} {release-version}, this issue has been resolved by allowing the mentions in comments dropdown to expand outside the sidebar area, making full use of the available space outside the editor and improving the overall user experience.
 
-==== Change scrolling comment card behavior
+==== Reduced the amount of scrolling when changing between conversations in the sidebar.
 // #TINY-11401
 
 Previously, the scrolling behavior for comment cards was different depending on the scenario. If the user scrolled from top to bottom, the scrolling would stop at the top of a comment card; however, if the user scrolled from bottom to top, the scrolling would stop at the bottom of a comment card.

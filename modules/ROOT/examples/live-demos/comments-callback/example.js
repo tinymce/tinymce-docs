@@ -48,7 +48,11 @@ const tinycomments_reply = (req, done, fail) => {
     })
     .then((req2) => {
       const commentUid = req2.commentUid;
-      done({ commentUid });
+      done({
+        commentUid: replyUid,
+        author: currentUser.id,
+        authorName: currentUser.fullName
+      });
     })
     .catch((e) => {
       fail(e);

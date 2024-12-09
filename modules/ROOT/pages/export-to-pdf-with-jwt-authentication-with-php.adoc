@@ -9,17 +9,17 @@ include::partial$auth/document-converters/php/intro-and-prerequisites.adoc[]
 
 include::partial$auth/document-converters/php/initial-project-setup.adoc[]
 
-. Inside the `public` folder where you created the `index.html` file add the HTML setup code (refer to the *Setting up {productname} HTML* section).
-
 == Setup
 
-include::partial$auth/document-converters/jwt-setup-document-converters.adoc[leveloffset=+1]
+=== Generate a Public/Private Key Pair
 
-. In the root directory, copy and paste the server setup code into the `jwt.php` file.
+include::partial$auth/document-converters/jwt-setup-document-converters.adoc[leveloffset=+2]
 
 include::partial$auth/document-converters/php/server-setup-php.adoc[]
 
-==== Web Page Setup (index.html)
+=== Web Page Setup (index.html)
+
+Inside the `public` folder where you created the `index.html` file add the HTML setup code:
 
 [source,html]
 ----

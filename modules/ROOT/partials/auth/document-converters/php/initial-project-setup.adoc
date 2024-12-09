@@ -1,18 +1,21 @@
-== Update PHP php.ini Files
+== Update PHP Configuration File
 
-Update files inside the downloaded php package:
+Use the following command to locate the PHP configuration file:
 
-* php.ini
-* php.ini-development
-* php.ini-production
+[source,bash]
+----
+php --ini
+----
 
-Ensure the following lines are uncommented:
+Open the configuration file in a text editor and ensure the following settings are enabled:
 
-[source, bash]
+[source,ini]
 ----
 extension=openssl 
-extension_dir={Depends on your development environment} 
+extension_dir='ext'
 ----
+
+The path to the extension directory may vary depending on your system.
 
 == Quick Start Guide
 
@@ -42,7 +45,7 @@ Your project should look like this:
 ----
 /tinymce-app
   index.html  (TinyMCE webpage)
-  jwt.php       (Server code)
+  jwt.php     (Server code)
   composer.json
   composer.lock
   vendor     

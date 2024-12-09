@@ -189,7 +189,7 @@ In {productname} {release-version}, this issue has been resolved by removing the
 
 In self-hosted React setups, image resize handles were not displayed when using bundled {productname} editors. This issue impacted the usability of features such as image resizing.
 
-The root cause was a misconfiguration of resource keys for the CSS bundling JS files and CSS loading logic in {prodcutname} core. As a result, bundled editors failed to load the necessary styles, causing the resize handles to remain hidden.
+The root cause was a misconfiguration of resource keys for the CSS bundling JS files and CSS loading logic in {productname} core. As a result, bundled editors failed to load the necessary styles, causing the resize handles to remain hidden.
 
 This issue affected {productname} versions earlier than 7.1.0.
 

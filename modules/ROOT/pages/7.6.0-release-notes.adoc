@@ -78,13 +78,9 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== The caret in comment textarea returned to its previous location before closing the mentions menu by selecting with the mouse.
 // #TINY-11453
 
-Previously, when closing the Mentions dropdown in a Comment textarea by clicking away, the logic for handling the caret position did not account for changes made by mouse-clicks.
+Previously, when closing the Mentions dropdown in a Comment textarea by clicking away, the caret would revert to its previous position, disregarding the user’s mouse-click location. This issue occurred because the logic for handling caret positioning did not account for mouse interactions, resulting in a disjointed and confusing user experience.
 
-As a consequence, the caret would revert to its previous location before the Mentions dropdown was closed. This behavior provided a poor user experience and could confuse users who expected the caret to remain where they clicked.
-
-In {productname} {release-version}, the logic for handling the caret position after closing the Mentions dropdown has been improved to address this issue.
-
-As a result, the caret now remains in the position where the user clicked to close the Mentions dropdown, providing a more intuitive and consistent user experience.
+In {productname} {release-version} this issue was addressed. Now, the caret now accurately reflects the user’s intended position when the Mentions dropdown is closed via a mouse-click.
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
 

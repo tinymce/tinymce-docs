@@ -11,7 +11,7 @@ As of {productname} 7.5.0, the `exportpdf_converter_options` setting now comes w
 .**Default value:**
 [source,js]
 ----
-exportpdf_converter_options: {
+{
   format: 'Letter',
   margin_top: '1in',
   margin_right: '1in',

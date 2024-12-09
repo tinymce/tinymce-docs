@@ -64,6 +64,7 @@ The {productname} {release-version} release includes an accompanying release of 
 **Accessibility Checker** Premium plugin includes the following fixes and improvements.
 
 ==== Improve editor content highlighting when using accessibility checker
+// #TINY-11463
 
 Previously, an issue involving the accessibility checker was identified where the content area highlights did not properly meet accessibility standards. This issue caused users with vision impairments to encounter difficulty in identifying the currently focused element.
 
@@ -75,9 +76,23 @@ For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.a
 
 The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
 
-**Comments** Premium plugin includes the following improvements.
+**Comments** includes the following fixes and improvements.
 
-=== Pressing Shift+Enter in Mentions in Comments dropdown should accept the active menu item
+==== Allow mentions in comments dropdown to flow freely outside of the editor container
+// #TINY-11504
+
+An issue was identified where the mentions in comments dropdown didn't freely expand to the available space alongside mentions in the editor. This was due to the dropdown being restricted within the sidebar area.
+
+In {productname} {release-version}, this issue has been resolved by allowing the mentions in comments dropdown to expand outside the sidebar area, making full use of the available space outside the editor and improving the overall user experience.
+
+==== Scroll to show action buttons when replying/editing a comment.
+// #TINY-11402
+
+Previously, if a selected conversation card was positioned near the bottom of the sidebar, the reply/edit input field would be below the bottom of the sidebar resulting in the comment input field not being visible to the user.
+
+{productname} {release-version} addresses this issue. Now, the sidebar scrolls to display the comment input field if the selected conversation card is positioned near the bottom of the sidebar. This ensures that the comment input field is always visible to the user.
+
+==== Pressing Shift+Enter in Mentions in Comments dropdown should accept the active menu item
 // #TINY-11455
 
 In previous versions of {productname}, the `Shift+Enter` key was not properly handled when used with mentions in comments. This led to a new line being inserted while the mentions dropdown remained open, resulting in inconsistent behavior compared to mentions within the editor.
@@ -90,6 +105,17 @@ In {productname} {release-version}, mentions in comments now handle the `Shift+E
 Previously, the **Comments** plugin used a `14px` font size for the comment body, which was inconsistent with the `16px` font size used in the rest of the Comments Sidebar and the editor UI.
 
 This issue has been resolved in {productname} {release-version} by setting the comment body font size to `16px`, ensuring font size consistency between the **Comments** plugin and the editor UI.
+
+==== Editor Focus after Deleting a Comment
+// #TINY-11293
+
+Previously, the focus behaviour in the comments sidebar was observed to be inconsistent. When a user deleted a comment, the focus exited the comments sidebar and returned to the editor instead of returning to the conversation card. This also occurred when a new comment was created inside an existing conversation, and when an entire new conversation was created.
+
+In {productname} {release-version}, the focus behaviour has now been improved in the following situations:
+
+* Deleting a comment now returns the focus to the conversation card that contained the deleted comment.
+* Creating a new comment within an existing conversation now brings the focus to the corresponding conversation card.
+* Starting a new conversation now brings the focus to the newly created conversation card.
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
 
@@ -136,7 +162,20 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
 
+== New `+disabled+` option for disabling all user interactions
 
+A new `+disabled+` option has been introduced to {productname} in version {release-version}. This option allows integrators to disable all user interactions with the editor, including cursor placement, content modifications, and UI components. When set to `+true+`, the editor behaves similarly to the readonly mode changes introduced in {productname} 7.4.0 but ensures complete non-interactivity.
+
+.Example disabling all user interactions with the editor
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // Specify the target HTML element
+  disabled: true         // Disables all interactions with the editor
+});
+----
+
+For more information on the `+disabled+` option, see xref:editor-important-options.adoc#disabled[Disabled] option.
 
 [[additions]]
 == Additions
@@ -176,6 +215,18 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fixes:
 
+=== Removed title attribute from dialog tree elements as they already have a tooltip.
+// #TINY-11470
+
+Previously, an issue was identified with tooltips for tree structures where multiple tooltip systems displayed the same text simultaneously:
+
+. The browser's native tooltip, triggered by the `title` attribute, displayed the text.
+. {productname}'s custom tooltip functionality also displayed the text.
+
+As a consequence, this caused two tooltips with identical content to appear at the same time, leading to a confusing user experience, where the desired behavior was to show only the custom tooltip provided by {productname}.
+
+In {productname} {release-version}, this issue has been resolved. The `title` attribute is now automatically removed when the custom tooltip is applied, ensuring that only the custom tooltip is displayed. 
+
 === Tooltip would not show for group toolbar button.
 // #TINY-11391
 
@@ -189,7 +240,6 @@ In {productname} {release-version}, this issue has been resolved by applying the
 Previously, there was an issue where changes to the row type in numbered tables were not properly applied. This occurred because the action of modifying the row type from a `+contentEditable="false"+` cell was being deliberately blocked.
 
 In {productname} {release-version}, this issue has been resolved by removing the restriction on changing the row type from a `+contentEditable="false"+` cell. As a result, changes to the row type are now correctly applied.
-
 
 [[security-fixes]]
 == Security fixes

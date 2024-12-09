@@ -18,15 +18,15 @@ When an image is uploaded, its original width is used to create a `srcset` attri
 ----
 <img 
   style="width: min(780px, 100%); aspect-ratio: 780 / 780;" 
-  src="https://ucarecdn.com/de937e77-2fec-4781-91c1-55dae67803cd/-/preview/" 
+  src="https://ucarecdn.com/{image-uid}/-/preview/" 
   sizes="(min-width: 780px) 780px, 100vw" 
   srcset="
-      https://ucarecdn.com/de937e77-2fec-4781-91c1-55dae67803cd/-/resize/100x/ 100w,
-      https://ucarecdn.com/de937e77-2fec-4781-91c1-55dae67803cd/-/resize/200x/ 200w,
-      https://ucarecdn.com/de937e77-2fec-4781-91c1-55dae67803cd/-/resize/300x/ 300w,
-      https://ucarecdn.com/de937e77-2fec-4781-91c1-55dae67803cd/-/resize/500x/ 500w,
-      https://ucarecdn.com/de937e77-2fec-4781-91c1-55dae67803cd/-/resize/750x/ 750w,
-      https://ucarecdn.com/de937e77-2fec-4781-91c1-55dae67803cd/-/preview/ 780w
+      https://ucarecdn.com/{image-uid}/-/resize/100x/ 100w,
+      https://ucarecdn.com/{image-uid}/-/resize/200x/ 200w,
+      https://ucarecdn.com/{image-uid}/-/resize/300x/ 300w,
+      https://ucarecdn.com/{image-uid}/-/resize/500x/ 500w,
+      https://ucarecdn.com/{image-uid}/-/resize/750x/ 750w,
+      https://ucarecdn.com/{image-uid}/-/preview/ 780w
   ">
 ----
 

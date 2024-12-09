@@ -66,6 +66,10 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== Introduced a new live region for screen readers to improve accessibility notifications.
 // #TINY-11523
 
+Previously, an issue was identified where screen reader announcements for the accessibility dialog were inconsistent across different browsers. This inconsistency resulted in a poor user experience with screen readers and accessibility dialogs.
+
+In {productname} {release-version}, this issue has been resolved by adding a dedicated screen reader section within the dialog structure, ensuring consistent and accurate announcements across browsers.
+
 ==== Add detailed issue description to accessibility checker
 // #TINY-11462
 

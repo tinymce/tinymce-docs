@@ -394,7 +394,8 @@ This section describes issues that users of {productname} {release-version} may 
 
 There is one known issue in {productname} {release-version}.
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Missing translations for "Solution" for all languages in the Accessibility Checker
 
-// CCFR here.
+In {productname} {release-version}, the "Solution" translation is missing for all languages in the Accessibility Checker. This issue affects the "Solution" section of the Accessibility Checker, where the "Solution" text is not displayed in the user's selected language.
+
+**Status**: Currently under investigation.

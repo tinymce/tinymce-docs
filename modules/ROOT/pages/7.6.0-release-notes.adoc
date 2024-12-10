@@ -267,6 +267,32 @@ tinymce.init({
 === New `QuickbarInsertImage` command that is executed by the `quickimage` button.
 // #TINY-11399
 
+The **Quickbars** Plugin now allows integrators to overwrite the `+QuickbarInsertImage+` command, enabling customization of the quickimage button's behavior.
+
+.Example of how to override the `+QuickbarInsertImage+` command:
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'quickbars',
+  toolbar: false,
+  setup: (editor) => {
+    editor.addCommand('QuickbarInsertImage', () => { // Add a custom command to the editor named "QuickbarInsertImage"
+      const input = document.createElement('input'); // Create a new <input> element for file selection
+      input.type = 'file'; // Set the input type to "file" for uploading files
+      input.accept = 'image/*'; // Restrict the input to accept only image files
+      input.onchange = (e) => { // Add an event listener to handle the file selection event
+        const file = (e.target as HTMLInputElement).files?.[0]; // Get the selected file from the input element
+        if (file) {
+          console.log(file);
+        }
+      };
+      input.click();
+    });
+  }
+});
+----
+
 === New `onSetup` function for context forms
 // #TINY-11494
 

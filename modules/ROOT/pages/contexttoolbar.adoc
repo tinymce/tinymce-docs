@@ -27,6 +27,41 @@ This example shows how the quickbars plugin adds the standard selection context 
 
 liveDemo::context-toolbar[height="600", tab="js"]
 
+[[add-labels-and-groups-for-context-toolbar-buttons]]
+== Add labels and groups for context toolbar buttons
+
+From {productname} 7.6.0 onward, registering a context toolbar allows specifying `items` as an object that supports grouping with optional names and labels. This improvement enhances toolbar usability by organizing buttons into titled or labeled groups.
+
+The object structure takes two optional properties: `name` and `label`.
+
+* `name`: property is used as the group's title for the group that contains the buttons.
+* `label`: property is used as a label for each group of buttons.
+
+[NOTE]
+If neither `name` nor `label` is specified, the behavior defaults to ungrouped buttons.
+
+The object structure for `items` is as follows:
+
+.Example of a context toolbar configuration with groups and labels
+[source,js]
+----
+items: [
+  {
+    name: 'Formatting', // Optional, used as the group's title
+    items: [ 'bold', 'italic' ] // Array of registered button names
+  },
+  {
+    label: 'History', // Optional, used as a label for the group
+    items: [ 'undo', 'redo' ] // Array of registered button names
+  },
+  {
+    items: [ 'undo', 'italic' ] // No name or label specified, default behavior applies
+  }
+]
+----
+
+liveDemo::context-toolbar-labels[height="600", tab="js"]
+
 == Launching a context toolbar programmatically
 
 There is an `+editor+` event called `+contexttoolbar-show+` that can be fired to show a context toolbar at the current selection. The event takes a parameter `+toolbarKey+` which specifies the name of the registered context form or context toolbar to show.

@@ -131,11 +131,22 @@ For guidance on retrieving and verifying the `mentionedUids` array, refer to the
 
 [source,js]
 ----
-// Fake database of users
-const users = {
-  "johndoe": "John Doe",
-  "janedoe": "Jane Doe",
-  "alicedoe": "Alice Doe",
+// Sample user database
+const userDb = {
+    "johnsmith": {
+        "id": "johnsmith",
+        "name": "John Smith",
+        "fullName": "John Smith",
+        "description": "Company Founder",
+        "image": "https://i.pravatar.cc/150?img=11"
+    },
+    "jennynichols": {
+        "id": "jennynichols",
+        "name": "Jenny Nichols",
+        "fullName": "Jenny Nichols",
+        "description": "Marketing Director",
+        "image": "https://i.pravatar.cc/150?img=10"
+    }
 };
 
 const comments = tinymce.activeEditor.plugins.tinycomments;
@@ -152,7 +163,7 @@ const events = eventLog.events;
 const validatedEvents = JSON.parse(JSON.stringify(events));
 validatedEvents.forEach((event) => {
   // Filter out invalid users - change this to your own validation logic
-  event.mentionedUids = event.mentionedUids ? event.mentionedUids.filter((uid) => users[uid]) : undefined;
+  event.mentionedUids = event.mentionedUids ? event.mentionedUids.filter((uid) => userDb[uid]) : undefined;
 });
 
 const mentionedUsers = validatedEvents.flatMap(({ mentionedUids }) => mentionedUids || []);

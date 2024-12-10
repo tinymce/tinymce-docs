@@ -168,8 +168,41 @@ In {productname} {release-version}, the focus behaviour has now been improved in
 * Creating a new comment within an existing conversation now brings the focus to the corresponding conversation card.
 * Starting a new conversation now brings the focus to the newly created conversation card.
 
+==== Added tooltips to conversation and comment kebab menus
+
+In previous versions of **Comments**, the kebab menu button in the comments sidebar was missing a tooltip for users relying on assistive technologies.
+
+{productname} {release-version} addresses this issue, by adding an `aria-label` with the description "Comment Actions" to the sidebar comment menu button, ensuring a tooltip is displayed on hover. This update improves accessibility and aligns the user experience across different menu buttons.
+
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
 
+=== Comments
+
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** Premium plugin includes the following fixes and improvements.
+
+==== The caret in comment textarea returned to its previous location before closing the mentions menu by selecting with the mouse.
+// #TINY-11453
+
+Previously, when closing the Mentions dropdown in a Comment textarea by clicking away, the caret would revert to its previous position, disregarding the user’s mouse-click location. This issue occurred because the logic for handling caret positioning did not account for mouse interactions, resulting in a disjointed and confusing user experience.
+
+In {productname} {release-version} this issue was addressed. Now, the caret now accurately reflects the user’s intended position when the Mentions dropdown is closed via a mouse-click.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
+
+=== Enhanced Code Editor
+// #TINY-11298
+
+The {productname} {release-version} release includes an accompanying release of the **Enhanced Code Editor** premium plugin.
+
+**Enhanced Code Editor** Premium plugin includes the following fix.
+
+==== Spelling error in tooltip for `fullscreen` toggle button
+
+The tooltip for the `fullscreen` toggle button was incorrectly labeled as `Fullsceen`. {productname} {release-version} addresses this issue which has now been corrected to `Fullscreen`.
+
+For information on the **Enhanced Code Editor** plugin, see: xref:advcode.adoc[Enhanced Code Editor]
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement
@@ -213,7 +246,33 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
 
-== New `+disabled+` option for disabling all user interactions
+=== Add Labels and Groups for Context Toolbar Buttons
+// #TINY-11095
+
+The release of {productname} {release-version} introduces the ability to organize context toolbar buttons into groups with optional labels or titles. This enhancement, available from {productname} 7.6.0 onward, improves toolbar usability by enabling clearer categorization of buttons.
+
+The `items` object structure now supports defining groups with an optional `name` property for titles or a `label` property for identifying the group. This feature allows developers to create more intuitive and accessible toolbars by visually segmenting functionality.
+
+Example of a context toolbar configuration with groups and labels:
+
+.Example
+[source,js]
+----
+items: [
+  {
+    name: 'Formatting', // Optional, used as the group's title
+    items: [ 'bold', 'italic' ] // Array of registered button names
+  },
+  {
+    label: 'History', // Optional, used as a label for the group
+    items: [ 'undo', 'redo' ] // Array of registered button names
+  },
+]
+----
+
+For more details on configuring context toolbar groups and labels, see: xref:contexttoolbar.adoc#add-labels-and-groups-for-context-toolbar-buttons[Context Toolbar].
+
+=== New `+disabled+` option for disabling all user interactions
 
 A new `+disabled+` option has been introduced to {productname} in version {release-version}. This option allows integrators to disable all user interactions with the editor, including cursor placement, content modifications, and UI components. When set to `+true+`, the editor behaves similarly to the readonly mode changes introduced in {productname} 7.4.0 but ensures complete non-interactivity.
 
@@ -244,6 +303,24 @@ For more information on the `+disabled+` option, see xref:editor-important-optio
 A new `+onSetup+` API has been introduced for context forms, enabling integrators to execute a function when the form is rendered and handle cleanup when it is closed. This enhancement addresses the previous limitation of not being able to detect or trigger actions during the lifecycle of context forms. The `+onSetup+` API streamlines lifecycle management by supporting initialization at form rendering and providing a return function for cleanup, enhancing integration with plugins and applications.
 
 For more details, refer to xref:contextform.adoc#form[Context Form].
+
+=== Added placeholder support for context form input fields
+// #TINY-11459
+
+A new `placeholder` option has been introduced to the context form API, addressing the need for inline guidance within input fields. This feature enables developers to specify placeholder text that appears inside input fields until the field is focused or a value is entered. By providing contextual hints, this enhancement improves usability and enhances the user experience.
+
+.Example: Using a placeholder in a context form input field
+[source,js]
+----
+editor.ui.registry.addContextForm('upload-url', {
+  launch: {
+    type: 'contextformtogglebutton',
+    icon: 'link',
+    tooltip: 'Upload from URL'
+  },
+  placeholder: 'Enter URL here...', ....
+});
+----
 
 
 [[changes]]

@@ -3,7 +3,7 @@
 
 To set up JSON Web Token (JWT) authentication for {productname} {pluginname}:
 
-. Add a public key to you {accountpage}, link:https://www.tiny.cloud/auth/login/[login].
+. Add a public key to your {accountpage}, link:https://www.tiny.cloud/auth/login/[login].
 . Set up a JSON Web Token (JWT) Provider endpoint via link:{accountjwturl}[{accountpage} - JWT Keys]
 . Configure your {productname} to use the JWT endpoint.
 

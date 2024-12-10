@@ -278,6 +278,11 @@ For more information on the `+disabled+` option, see xref:editor-important-optio
 === Image selection was removed when calling nodeChanged while having focus inside the editor UI.
 // #TINY-11437
 
+Previously, executing a `nodeChange` event while an image was selected caused the image to lose its resize handles. This issue disrupted the user experience, requiring users to re-select the image to resize it.
+
+{productname} {release-version} addresses this issue. Now, resize handles are only removed when focus moves out of the editor or its UI components.
+
+As a result, the resize handles remain visible during `nodeChange` events, improving usability.
 
 === Tooltip would not show for group toolbar button.
 // #TINY-11391

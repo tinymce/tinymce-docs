@@ -1,0 +1,26 @@
+== Configuration Steps
+
+=== Add Your API Key
+
+* Replace `YOUR-API-KEY` in both files with your actual {productname} API key
+* The API key should be the same in both the HTML script source and the JWT payload
+
+=== Add Your Private Key
+
+* Replace the private key placeholder in `jwt.js` with your actual private key
+* Make sure it's in `PKCS8` format
+* Keep this key secure and never share it publicly
+
+=== Running Your Project
+
+. Start the server:
++
+[source,bash]
+----
+node jwt.js
+----
+
+. Open your browser to: `http://localhost:3000`
+. You should see:
+* The {productname} editor
+* An "{pluginname}" button in the toolbar

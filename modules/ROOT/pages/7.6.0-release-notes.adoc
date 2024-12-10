@@ -297,6 +297,13 @@ For more information on the `+disabled+` option, see xref:editor-important-optio
 
 // CCFR here.
 
+=== New `onSetup` function for context forms
+// #TINY-11494
+
+A new `+onSetup+` API has been introduced for context forms, enabling integrators to execute a function when the form is rendered and handle cleanup when it is closed. This enhancement addresses the previous limitation of not being able to detect or trigger actions during the lifecycle of context forms. The `+onSetup+` API streamlines lifecycle management by supporting initialization at form rendering and providing a return function for cleanup, enhancing integration with plugins and applications.
+
+For more details, refer to xref:contextform.adoc#form[Context Form].
+
 === Added placeholder support for context form input fields
 // #TINY-11459
 

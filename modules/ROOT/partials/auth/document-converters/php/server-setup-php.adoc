@@ -1,0 +1,49 @@
+=== Server Setup (jwt.php)
+
+In the root directory, copy and paste the server setup code into the `jwt.php` file:
+
+[source,php]
+----
+<?php
+require 'vendor/autoload.php'; // Setting up the Autoload
+use \Firebase\JWT\JWT;
+
+function fatalError($message) {
+    http_response_code(500);
+    header('Content-Type: application/json');
+    die(json_encode(array("message" => "JWT auth failed: " . $message)));
+}
+
+// Check for OpenSSL extension
+if (!extension_loaded('openssl')) {
+    fatalError('You need to enable the openssl extension in your php.ini.');
+}
+
+// Enable CORS
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+
+// JWT payload
+$payload = array(
+    "aud" => "YOUR-API-KEY-HERE",
+    "iat" => time(), // Issue timestamp
+    "exp" => time() + 60 * 10 // Expiration time (10 minutes)
+);
+
+try {
+    // Tokens are signed with the RS256 algorithm your private key
+    $privateKey = <<<EOD
+    -----BEGIN PRIVATE KEY-----
+    {Your private PKCS8 key goes here}
+    -----END PRIVATE KEY-----
+    EOD;
+    $token = JWT::encode($payload, $privateKey, 'RS256');
+
+    http_response_code(200);
+    header('Content-Type: application/json');
+    echo json_encode(array("token" => $token));
+} catch (Exception $e) {
+    fatalError($e->getMessage());
+}
+?>
+----

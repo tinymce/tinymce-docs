@@ -213,7 +213,33 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
 
-== New `+disabled+` option for disabling all user interactions
+=== Add Labels and Groups for Context Toolbar Buttons
+// #TINY-11095
+
+The release of {productname} {release-version} introduces the ability to organize context toolbar buttons into groups with optional labels or titles. This enhancement, available from {productname} 7.6.0 onward, improves toolbar usability by enabling clearer categorization of buttons.
+
+The `items` object structure now supports defining groups with an optional `name` property for titles or a `label` property for identifying the group. This feature allows developers to create more intuitive and accessible toolbars by visually segmenting functionality.
+
+Example of a context toolbar configuration with groups and labels:
+
+.Example
+[source,js]
+----
+items: [
+  {
+    name: 'Formatting', // Optional, used as the group's title
+    items: [ 'bold', 'italic' ] // Array of registered button names
+  },
+  {
+    label: 'History', // Optional, used as a label for the group
+    items: [ 'undo', 'redo' ] // Array of registered button names
+  },
+]
+----
+
+For more details on configuring context toolbar groups and labels, see: xref:contexttoolbar.adoc#add-labels-and-groups-for-context-toolbar-buttons[Context Toolbar].
+
+=== New `+disabled+` option for disabling all user interactions
 
 A new `+disabled+` option has been introduced to {productname} in version {release-version}. This option allows integrators to disable all user interactions with the editor, including cursor placement, content modifications, and UI components. When set to `+true+`, the editor behaves similarly to the readonly mode changes introduced in {productname} 7.4.0 but ensures complete non-interactivity.
 

@@ -105,12 +105,13 @@ Where the `+toggleButtonApi+` is the same as a regular toolbar toggle button.
 
 === formApi
 
-Both `+contextformbutton+` and `+contextformtogglebutton+` are passed `+formApi+` in their `+onAction+` callback. The `+formApi+` has two functions:
+Both `+contextformbutton+` and `+contextformtogglebutton+` are passed `+formApi+` in their `+onAction+` callback. The `+formApi+` has three functions:
 
 [cols="1,3",options="header"]
 |===
 |Functions |Description
 |`+hide+` |This will hide the form. By default, no button hides the form. It is the responsibility of the developer to hide the form in the `+onAction+` handler of buttons that require that the context form close after the action.
+|`+back+` |This will restore the previous toolbar. This is useful when you want to go back to the previous toolbar when you press back in the toolbar.
 |`+getValue+` |This will retrieve the value current typed in the input field.
 |===
 

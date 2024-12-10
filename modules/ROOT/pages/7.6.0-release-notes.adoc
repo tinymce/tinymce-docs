@@ -227,6 +227,43 @@ For more details on configuring context toolbar groups and labels, see: xref:con
 === New `back` function in `ContextFormApi` to go back to the previous toolbar.
 // #TINY-11344
 
+{productname} {release-version} introduces the `+back+` function in the `ContextFormApi`, enabling users to navigate back to the previous toolbar. This enhancement fulfills the need for a back button in context forms, providing a seamless way to return to the previous toolbar configuration when required.
+
+.Example: Using the `back` function in a context form
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  setup: (ed) => {
+    ed.ui.registry.addContextToolbar('toolbar-with-back-example', {
+      items: 'form-with-back-example undo redo',
+      position: 'node',
+      scope: 'node',
+      predicate: (node) => node.nodeName.toLowerCase() === 'p'
+    });
+    ed.ui.registry.addContextForm('form-with-back-example', {
+      type: 'contextsizeinputform',
+      launch: {
+        type: 'contextformtogglebutton',
+        icon: 'resize',
+        tooltip: 'ABC'
+      },
+      initValue: () => ({ width: '100', height: '200' }),
+      onInput: (formApi) => console.log(`input.${JSON.stringify(formApi.getValue())}`),
+      commands: [
+        {
+          type: 'contextformbutton',
+          icon: 'chevron-left',
+          tooltip: 'Back',
+          align: 'start',
+          onAction: (formApi) => formApi.back()
+        }
+      ]
+    });
+  }
+});
+----
+
 === New `QuickbarInsertImage` command that is executed by the `quickimage` button.
 // #TINY-11399
 

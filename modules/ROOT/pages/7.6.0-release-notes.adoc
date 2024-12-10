@@ -234,14 +234,13 @@ For more details on configuring context toolbar groups and labels, see: xref:con
 ----
 tinymce.init({
   selector: "textarea",
-	setup: (ed) => {
-	  ed.ui.registry.addContextToolbar('toolbar-with-back-example', {
-        items: 'form-with-back-example undo redo',
-        position: 'node',
-        scope: 'node',
-        predicate: (node) => node.nodeName.toLowerCase() === 'p'
-      });
-
+  setup: (ed) => {
+    ed.ui.registry.addContextToolbar('toolbar-with-back-example', {
+      items: 'form-with-back-example undo redo',
+      position: 'node',
+      scope: 'node',
+      predicate: (node) => node.nodeName.toLowerCase() === 'p'
+    });
     ed.ui.registry.addContextForm('form-with-back-example', {
       type: 'contextsizeinputform',
       launch: {
@@ -261,7 +260,7 @@ tinymce.init({
         }
       ]
     });
-	}
+  }
 });
 ----
 

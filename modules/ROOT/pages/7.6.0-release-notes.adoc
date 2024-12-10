@@ -11,45 +11,15 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[overview]]
 == Overview
 
-{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, December 04^th^, 2024. These release notes provide an overview of the changes for {productname} {release-version}, including:
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, December 11^th^, 2024. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
-* xref:new-premium-plugin<s>[New Premium plugin<s>]
-* xref:new-open-source-plugin<s>[New Open Source plugin<s>]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
-* xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
-* xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
 * xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
 * xref:improvements[Improvements]
 * xref:additions[Additions]
 * xref:changes[Changes]
 * xref:bug-fixes[Bug fixes]
-* xref:security-fixes[Security fixes]
-* xref:deprecated[Deprecated]
 * xref:known-issues[Known issues]
-
-
-[[new-premium-plugin<s>]]
-New Premium plugin<s>
-
-The following new Premium plugin was released alongside {productname} {release-version}.
-
-=== <Premium plugin name>
-
-The new Premium plugin, **<Premium plugin name>** // description here.
-
-For information on the **<Premium plugin name>** plugin, see xref:<plugincode>.adoc[<Premium plugin name>].
-
-
-[[new-open-source-plugin]]
-== New Open Source plugin
-
-The following new Open Source plugin was released alongside {productname} {release-version}.
-
-=== <Open source plugin name>
-
-The new open source plugin, **<Open source plugin name>** // description here.
-
-For information on the **<Open source plugin name>** plugin, see xref:<plugincode>.adoc[<Open source plugin name>].
 
 
 [[accompanying-premium-plugin-changes]]
@@ -135,7 +105,6 @@ In {productname} {release-version}, the sidebar scrolling behavior has been upda
 [NOTE]
 An exception does apply if the selected conversation is already partially visible, with the top in view but the bottom out of view, and the comment card's height is smaller than the scrollable container. In this scenario, the sidebar will scroll to position the bottom of the selected card near the bottom of the container.
 
-
 ==== Scroll to show action buttons when replying/editing a comment.
 // #TINY-11402
 
@@ -174,14 +143,6 @@ In previous versions of **Comments**, the kebab menu button in the comments side
 
 {productname} {release-version} addresses this issue, by adding an `aria-label` with the description "Comment Actions" to the sidebar comment menu button, ensuring a tooltip is displayed on hover. This update improves accessibility and aligns the user experience across different menu buttons.
 
-For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
-
-=== Comments
-
-The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
-
-**Comments** Premium plugin includes the following fixes and improvements.
-
 ==== The caret in comment textarea returned to its previous location before closing the mentions menu by selecting with the mouse.
 // #TINY-11453
 
@@ -202,27 +163,7 @@ The {productname} {release-version} release includes an accompanying release of 
 
 The tooltip for the `fullscreen` toggle button was incorrectly labeled as `Fullsceen`. {productname} {release-version} addresses this issue which has now been corrected to `Fullscreen`.
 
-For information on the **Enhanced Code Editor** plugin, see: xref:advcode.adoc[Enhanced Code Editor]
-
-[[accompanying-premium-plugin-end-of-life-announcement]]
-== Accompanying Premium plugin end-of-life announcement
-
-The following Premium plugin has been announced as reaching its end-of-life:
-
-=== <Premium plugin name eol>
-
-{productname}’s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
-
-
-[[accompanying-open-source-plugin-end-of-life-announcement]]
-== Accompanying open source plugin end-of-life announcement
-
-The following open source plugin has been announced as reaching its end-of-life:
-
-=== <Open source plugin name eol>
-
-{productname}’s xref:<plugincode>.adoc[<Open source plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
-
+For information on the **Enhanced Code Editor** plugin, see: xref:advcode.adoc[Enhanced Code Editor].
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes
@@ -241,10 +182,18 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[improvements]]
 == Improvements
 
-{productname} {release-version} also includes the following improvement<s>:
+{productname} {release-version} also includes the following improvements:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Base64 data was not properly decoded due to unhandled URL-encoded characters.
+// #TINY-9548
+
+=== The `latin` list style type is now recognized as an alias for the `alpha` list style type.
+// #TINY-11515
+
+[[additions]]
+== Additions
+
+{productname} {release-version} also includes the following additions:
 
 === Add Labels and Groups for Context Toolbar Buttons
 // #TINY-11095
@@ -272,30 +221,14 @@ items: [
 
 For more details on configuring context toolbar groups and labels, see: xref:contexttoolbar.adoc#add-labels-and-groups-for-context-toolbar-buttons[Context Toolbar].
 
-=== New `+disabled+` option for disabling all user interactions
+=== New `contextsliderform` and `contextsizeinput` context form types.
+// #TINY-11342
 
-A new `+disabled+` option has been introduced to {productname} in version {release-version}. This option allows integrators to disable all user interactions with the editor, including cursor placement, content modifications, and UI components. When set to `+true+`, the editor behaves similarly to the readonly mode changes introduced in {productname} 7.4.0 but ensures complete non-interactivity.
+=== New `back` function in `ContextFormApi` to go back to the previous toolbar.
+// #TINY-11344
 
-.Example disabling all user interactions with the editor
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',  // Specify the target HTML element
-  disabled: true         // Disables all interactions with the editor
-});
-----
-
-For more information on the `+disabled+` option, see xref:editor-important-options.adoc#disabled[Disabled] option.
-
-[[additions]]
-== Additions
-
-{productname} {release-version} also includes the following addition<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+=== New `QuickbarInsertImage` command that is executed by the `quickimage` button.
+// #TINY-11399
 
 === New `onSetup` function for context forms
 // #TINY-11494
@@ -322,45 +255,29 @@ editor.ui.registry.addContextForm('upload-url', {
 });
 ----
 
+=== New `+disabled+` option for disabling all user interactions
 
-[[changes]]
-== Changes
+A new `+disabled+` option has been introduced to {productname} in version {release-version}. This option allows integrators to disable all user interactions with the editor, including cursor placement, content modifications, and UI components. When set to `+true+`, the editor behaves similarly to the readonly mode changes introduced in {productname} 7.4.0 but ensures complete non-interactivity.
 
-{productname} {release-version} also includes the following change<s>:
+.Example disabling all user interactions with the editor
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // Specify the target HTML element
+  disabled: true         // Disables all interactions with the editor
+});
+----
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[removed]]
-== Removed
-
-{productname} {release-version} also includes the following removal<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
+For more information on the `+disabled+` option, see xref:editor-important-options.adoc#disabled[Disabled] option.
 
 [[bug-fixes]]
 == Bug fixes
 
 {productname} {release-version} also includes the following bug fixes:
 
-=== Removed title attribute from dialog tree elements as they already have a tooltip.
-// #TINY-11470
+=== Image selection was removed when calling nodeChanged while having focus inside the editor UI.
+// #TINY-11437
 
-Previously, an issue was identified with tooltips for tree structures where multiple tooltip systems displayed the same text simultaneously:
-
-. The browser's native tooltip, triggered by the `title` attribute, displayed the text.
-. {productname}'s custom tooltip functionality also displayed the text.
-
-As a consequence, this caused two tooltips with identical content to appear at the same time, leading to a confusing user experience, where the desired behavior was to show only the custom tooltip provided by {productname}.
-
-In {productname} {release-version}, this issue has been resolved. The `title` attribute is now automatically removed when the custom tooltip is applied, ensuring that only the custom tooltip is displayed. 
 
 === Tooltip would not show for group toolbar button.
 // #TINY-11391
@@ -376,8 +293,22 @@ Previously, there was an issue where changes to the row type in numbered tables 
 
 In {productname} {release-version}, this issue has been resolved by removing the restriction on changing the row type from a `+contentEditable="false"+` cell. As a result, changes to the row type are now correctly applied.
 
-=== Fixed CSS Bundling for Skin UI Content CSS
+// ===  The `samp` format was being applied as a `block` level format, instead of an `inline` format.
+// #TINY-11390
 
+=== Removed title attribute from dialog tree elements as they already have a tooltip.
+// #TINY-11470
+
+Previously, an issue was identified with tooltips for tree structures where multiple tooltip systems displayed the same text simultaneously:
+
+. The browser's native tooltip, triggered by the `title` attribute, displayed the text.
+. {productname}'s custom tooltip functionality also displayed the text.
+
+As a consequence, this caused two tooltips with identical content to appear at the same time, leading to a confusing user experience, where the desired behavior was to show only the custom tooltip provided by {productname}.
+
+In {productname} {release-version}, this issue has been resolved. The `title` attribute is now automatically removed when the custom tooltip is applied, ensuring that only the custom tooltip is displayed. 
+
+=== Fixed CSS Bundling for Skin UI Content CSS
 // #TINY-11558
 
 In self-hosted React setups, image resize handles were not displayed when using bundled {productname} editors. This issue impacted the usability of features such as image resizing.
@@ -388,34 +319,12 @@ This issue affected {productname} versions earlier than 7.1.0.
 
 {productname} {release-version} resolves this issue by updating the `stylesheetLoader` to correctly load the `ui/default/content.css` stylesheet, ensuring that image resize handles are displayed as expected.
 
-
-[[security-fixes]]
-== Security fixes
-
-{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[deprecated]]
-== Deprecated
-
-{productname} {release-version} includes the following deprecation<s>:
-
-=== The `<plugin>` configuration property, `<name>`, has been deprecated
-
-// placeholder here.
-
-
 [[known-issues]]
 == Known issues
 
 This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
 
-There <is one | are <number> known issue<s> in {productname} {release-version}.
+There is one known issue in {productname} {release-version}.
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1

@@ -1,5 +1,5 @@
 = {pluginname} with JWT authentication (PHP) Guide
-:navtitle: JWT Authentication setup for Import Word to TinyMCE Edtior
+:navtitle: JWT Authentication setup for Import from Word
 :description: Guide on how to setup JWT Authentication for importing Word files with {productname}
 :keywords: jwt, authentication, importword, word, php
 :pluginname: Import from Word
@@ -11,11 +11,13 @@ include::partial$auth/document-converters/php/initial-project-setup.adoc[]
 
 == Setup
 
+=== Generate a Public/Private Key Pair
+
 include::partial$auth/document-converters/jwt-setup-document-converters.adoc[leveloffset=+2]
 
 include::partial$auth/document-converters/php/server-setup-php.adoc[]
 
-==== Web Page Setup (index.html)
+=== Web Page Setup (index.html)
 
 Inside the `public` folder where you created the `index.html` file add the HTML setup code:
 

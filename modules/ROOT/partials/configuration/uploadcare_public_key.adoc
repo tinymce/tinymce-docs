@@ -1,0 +1,21 @@
+[[uploadcare-public-key]]
+== `uploadcare_public_key`
+
+Defines the public API key required to authenticate and interact with the Uploadcare API. This key identifies your account and ensures that uploads and operations are associated with your project. Without setting this key, the Uploadcare integration will not function.
+
+[IMPORTANT]
+This option is mandatory for using Uploadcare.
+
+*Type:* `+String+`
+
+=== Example: Setting `uploadcare_public_key`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare',
+  uploadcare_public_key: '<your-public-key>',
+});
+----

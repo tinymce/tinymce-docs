@@ -46,6 +46,11 @@ This relates to the form itself. The form specifications are:
 |`+position+` |This controls where the context toolbar will appear with regards to the current cursor.
 |`+scope+` |This controls whether the predicate (condition) is a `+node+`-based predicate, or an `+editor+`-based predicate. See context toolbar priority for more details.
 |`+commands+` |This is a list of the items to show in the context form. They can be either `+contextformbutton+` or `+contextformtogglebutton+`.
+|`+onSetup+`
+a|
+`+(ContextFormApi) => (ContextFormApi) => void+` 
+
+Optional default: `+() => () => {}+` - Function that's  executed when the form is rendered. Once rendered It returns a function that is executed when the context form is closed.
 |===
 
 include::partial$context/positioning.adoc[leveloffset=+1]

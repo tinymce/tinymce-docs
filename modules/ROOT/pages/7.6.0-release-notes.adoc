@@ -264,6 +264,24 @@ For more information on the `+disabled+` option, see xref:editor-important-optio
 
 // CCFR here.
 
+=== Added placeholder support for context form input fields
+// #TINY-11459
+
+A new `placeholder` option has been introduced to the context form API, addressing the need for inline guidance within input fields. This feature enables developers to specify placeholder text that appears inside input fields until the field is focused or a value is entered. By providing contextual hints, this enhancement improves usability and enhances the user experience.
+
+.Example: Using a placeholder in a context form input field
+[source,js]
+----
+editor.ui.registry.addContextForm('upload-url', {
+  launch: {
+    type: 'contextformtogglebutton',
+    icon: 'link',
+    tooltip: 'Upload from URL'
+  },
+  placeholder: 'Enter URL here...', ....
+});
+----
+
 
 [[changes]]
 == Changes

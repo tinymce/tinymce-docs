@@ -118,10 +118,37 @@ When the xref:mentions.adoc[Mentions] plugin is enabled, each of the above event
 
 It is recommended to use this API to retrieve which users have been mentioned in comments.
 
+[NOTE]
+====
+The `mentionedUids` array captures strings following the `@` symbol without verifying if they correspond to valid user IDs. It is the integrator's responsibility to validate these strings against the database to ensure they represent valid users. 
+
+For guidance on retrieving and verifying the `mentionedUids` array, refer to the xref:#example-using-geteventlog[getEventLog example].
+
+====
+
+[[example-using-geteventlog]]
 ==== Example: using `+getEventLog()+`
 
 [source,js]
 ----
+// Sample user database
+const userDb = {
+    "johnsmith": {
+        "id": "johnsmith",
+        "name": "John Smith",
+        "fullName": "John Smith",
+        "description": "Company Founder",
+        "image": "https://i.pravatar.cc/150?img=11"
+    },
+    "jennynichols": {
+        "id": "jennynichols",
+        "name": "Jenny Nichols",
+        "fullName": "Jenny Nichols",
+        "description": "Marketing Director",
+        "image": "https://i.pravatar.cc/150?img=10"
+    }
+};
+
 const comments = tinymce.activeEditor.plugins.tinycomments;
 
 console.log(comments.getEventLog());
@@ -131,11 +158,19 @@ console.log(comments.getEventLog(
 
 const eventLog = comments.getEventLog();
 const events = eventLog.events;
-const mentionedUsers = events.flatMap(({ mentionedUids }) => mentionedUids || []);
+
+// Ensure that the mentioned users are valid users in the database
+const validatedEvents = JSON.parse(JSON.stringify(events));
+validatedEvents.forEach((event) => {
+  // Filter out invalid users - change this to your own validation logic
+  event.mentionedUids = event.mentionedUids ? event.mentionedUids.filter((uid) => userDb[uid]) : undefined;
+});
+
+const mentionedUsers = validatedEvents.flatMap(({ mentionedUids }) => mentionedUids || []);
 console.log(mentionedUsers);
 
 let whoMentionedWho = {};
-events.forEach((event) => {
+validatedEvents.forEach((event) => {
   if ((event.type === "create" || event.type === "reply") && event.mentionedUids !== undefined) {
     console.log(event);
     if (whoMentionedWho[event.conversationAuthor.author] === undefined) {

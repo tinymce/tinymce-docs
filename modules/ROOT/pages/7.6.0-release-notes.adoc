@@ -389,8 +389,10 @@ This issue affected {productname} versions earlier than 7.1.0.
 
 === Incorrect translation of `Cut Column` and `Copy Column` in Hebrew
 // #TINY-11583
-An issue was identified where the Hebrew translations for Cut Column and Copy Column in the table plugin were incorrect. 
-{productname} {release-version} resolves this by providing the correct Hebrew translations for these operations.
+
+An issue was identified where the Hebrew translations for `Cut Column` and `Copy Column` in the table plugin were incorrect.
+ 
+{productname} {release-version} addresses this issue by providing the correct Hebrew translations for these operations.
 
 
 [[known-issues]]

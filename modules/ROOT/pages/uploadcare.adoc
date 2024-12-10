@@ -47,7 +47,9 @@ tinymce.init({
 ----
 
 [NOTE]
+====
 The {pluginname} plugin overrides the xref:quickbars.adoc[Quickbar] quickimage toolbar item. To ensure a better user experience and to avoid having two image buttons configure `quickbars_insert_toolbar` to omit the `quickimage` toolbar item.
+====
 
 == Image Operations
 

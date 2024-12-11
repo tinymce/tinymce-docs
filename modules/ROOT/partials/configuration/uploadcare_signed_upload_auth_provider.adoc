@@ -1,0 +1,37 @@
+[[uploadcare-signed-upload-auth-provider]]
+== `uploadcare_signed_upload_auth_provider`
+
+Specifies a function used to generate secure signatures for authenticated requests to Uploadcare. This function is required when enabling Uploadcare's signed uploads feature, which ensures that only authorized users can upload files using your `uploadcare_public_key`. The function should return a `Promise` that resolves with an object containing the signature and expiration timestamp.
+
+Use this option to enforce secure uploads, preventing unauthorized users from uploading files via your application.
+
+*Type:* `+Function+`
+
+=== Example: Setting `uploadcare_signed_upload_auth_provider`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare',
+  uploadcare_public_key: '<your-public-key>',
+  uploadcare_signed_upload_auth_provider: (_publicKey) => Promise.resolve({
+    signature: 'sig',
+    expire: 123
+  }),
+});
+----
+
+[IMPORTANT]
+====
+{companyname} recommends configuring the `uploadcare_signed_upload_auth_provider` option to secure uploads and prevent misuse of your Uploadcare `uploadcare_public_key`. This option is essential for applications requiring:
+
+* Prevention of unauthorized file uploads via your `uploadcare_public_key`.
+* Enforcement of secure upload practices for application integrity.
+
+[NOTE]
+This option **only** secures unauthorized access to upload files to the uploadcare storage by verifying signatures during uploads.
+
+For most integrations, enabling signed uploads by configuring this option ensures that only authorized uploads occur, reducing the risk of abuse and maintaining secure usage of your `uploadcare_public_key`.
+====

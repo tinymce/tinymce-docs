@@ -315,17 +315,21 @@
 **** xref:html-to-pdf-converter-api.adoc[HTML to PDF Converter API]
 **** JWT Authentication
 ***** xref:export-to-pdf-with-jwt-authentication-nodejs.adoc[NodeJS]
+***** xref:export-to-pdf-with-jwt-authentication-with-php.adoc[PHP]
 *** xref:exportword.adoc[Export to Word]
 **** xref:html-to-docx-converter-api.adoc[HTML to DOCX Converter API]
 **** JWT Authentication
 ***** xref:export-to-word-with-jwt-authentication-nodejs.adoc[NodeJS]
+***** xref:export-to-word-with-jwt-authentication-with-php.adoc[PHP]
 *** xref:footnotes.adoc[Footnotes]
 *** xref:formatpainter.adoc[Format Painter]
 *** xref:importword.adoc[Import from Word]
 **** xref:docx-to-html-converter-api.adoc[DOCX to HTML Converter API]
 **** JWT Authentication
 ***** xref:importword-with-jwt-authentication-nodejs.adoc[NodeJS]
+***** xref:import-word-with-jwt-authentication-with-php.adoc[PHP]
 *** xref:editimage.adoc[Image Editing]
+*** xref:uploadcare.adoc[Image Optimizer Powered by Uploadcare]
 *** xref:inline-css.adoc[Inline CSS]
 *** xref:linkchecker.adoc[Link Checker]
 *** xref:math.adoc[Math]
@@ -415,6 +419,15 @@
 ** xref:tinymce-and-cors.adoc[Cross-Origin Resource Sharing (CORS)]
 * Release information
 ** xref:release-notes.adoc[Release notes for {productname}]
+*** {productname} 7.6.0
+**** xref:7.6.0-release-notes.adoc#overview[Overview]
+**** xref:7.6.0-release-notes.adoc#new-premium-plugin[New Premium plugin]
+**** xref:7.6.0-release-notes.adoc#accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
+**** xref:7.6.0-release-notes.adoc#accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
+// **** xref:7.6.0-release-notes.adoc#improvements[Improvements]
+**** xref:7.6.0-release-notes.adoc#additions[Additions]
+**** xref:7.6.0-release-notes.adoc#bug-fixes[Bug fixes]
+**** xref:7.6.0-release-notes.adoc#known-issues[Known issues]
 *** {productname} 7.5.1
 **** xref:7.5.1-release-notes.adoc#overview[Overview]
 **** xref:7.5.1-release-notes.adoc#accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]

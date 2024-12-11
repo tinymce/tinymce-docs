@@ -46,6 +46,11 @@ This relates to the form itself. The form specifications are:
 |`+position+` |This controls where the context toolbar will appear with regards to the current cursor.
 |`+scope+` |This controls whether the predicate (condition) is a `+node+`-based predicate, or an `+editor+`-based predicate. See context toolbar priority for more details.
 |`+commands+` |This is a list of the items to show in the context form. They can be either `+contextformbutton+` or `+contextformtogglebutton+`.
+|`+onSetup+`
+a|
+`+(ContextFormApi) => (ContextFormApi) => void+` 
+
+Optional default: `+() => () => {}+` - Function that's  executed when the form is rendered. Once rendered, it returns a function that is executed when the context form is closed.
 |===
 
 include::partial$context/positioning.adoc[leveloffset=+1]
@@ -100,12 +105,13 @@ Where the `+toggleButtonApi+` is the same as a regular toolbar toggle button.
 
 === formApi
 
-Both `+contextformbutton+` and `+contextformtogglebutton+` are passed `+formApi+` in their `+onAction+` callback. The `+formApi+` has two functions:
+Both `+contextformbutton+` and `+contextformtogglebutton+` are passed `+formApi+` in their `+onAction+` callback. The `+formApi+` has three functions:
 
 [cols="1,3",options="header"]
 |===
 |Functions |Description
 |`+hide+` |This will hide the form. By default, no button hides the form. It is the responsibility of the developer to hide the form in the `+onAction+` handler of buttons that require that the context form close after the action.
+|`+back+` |This will restore the previous toolbar. This is useful when you want to go back to the previous toolbar when you press back in the toolbar.
 |`+getValue+` |This will retrieve the value current typed in the input field.
 |===
 

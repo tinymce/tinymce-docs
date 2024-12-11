@@ -1,0 +1,23 @@
+[[exportpdf-service-url]]
+== `exportpdf_service_url`
+
+The {pluginname} plugin uses an HTML-to-PDF converter service to generate `document-name.pdf` files.
+
+This option is **required** when configuring the {pluginname} plugin for `on-premise` setups. If you require access to this feature, please link:https://www.tiny.cloud/contact/[contact us]. For detailed instructions on deploying the {pluginname} service server-side component using Docker, refer to the xref:individual-export-to-pdf-on-premises.adoc[on-premises documentation].
+
+[TIP]
+When using a custom host, set the `exportpdf_service_url` option in your {productname} configuration to match your host. For example, if your custom host is `mycustomhost.com`, set the URL to `https://mycustomhost.com/`.
+
+*Type:* `+String+`
+
+=== Example: Setting up `exportpdf_service_url`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'exportpdf',
+  toolbar: 'exportpdf',
+  exportpdf_service_url: '<service_url>' // required for On-premise setups only
+});
+----

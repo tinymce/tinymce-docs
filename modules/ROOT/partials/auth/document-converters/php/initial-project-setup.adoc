@@ -1,0 +1,53 @@
+== Update PHP Configuration File
+
+Use the following command to locate the PHP configuration file:
+
+[source,bash]
+----
+php --ini
+----
+
+Open the configuration file in a text editor and ensure the following settings are enabled:
+
+[source,ini]
+----
+extension=openssl 
+extension_dir='ext'
+----
+
+[TIP]
+The path to the extension directory may vary depending on your system.
+
+== Quick Start Guide
+
+=== Project Setup
+
+[source,bash]
+----
+# Create and enter project directory
+mkdir tinymce-app
+cd tinymce-app
+# Initialize Composer
+composer require firebase/php-jwt
+----
+
+=== Create Project Structure
+
+[source,bash]
+----
+# Create the public folder for your web files
+touch index.html
+touch jwt.php
+----
+
+Your project should look like this:
+
+[source]
+----
+/tinymce-app
+  index.html  (TinyMCE webpage)
+  jwt.php     (Server code)
+  composer.json
+  composer.lock
+  vendor     
+----

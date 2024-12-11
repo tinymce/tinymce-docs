@@ -1,7 +1,7 @@
 [[a11ychecker_issue_url_callback]]
 == `+a11ychecker_issue_url_callback+`
 
-The `+a11ychecker_issue_url_callback+` option is used to change the target URL for the "Click for more info" button (image:icons/help.svg[help icon - a question mark inside a circle]) in the Accessibility Checker dialog. By default, the "more info" links will point to `+https://www.tiny.cloud/docs/tinymce/6/a11ychecker/#<ruleId>+`, such as `+https://www.tiny.cloud/docs/tinymce/6/a11ychecker/#D1+`. This option can be used to set the target URL to a page or pages outside {site-url}/.
+The `+a11ychecker_issue_url_callback+` option is used to change the target URL for the "Click for more info" button (image:icons/help.svg[help icon - a question mark inside a circle]) in the Accessibility Checker dialog. By default, the "more info" links will point to `+https://www.tiny.cloud/docs/tinymce/7/a11ychecker/#<ruleId>+`, such as `+https://www.tiny.cloud/docs/tinymce/7/a11ychecker/#D1+`. This option can be used to set the target URL to a page or pages outside {site-url}/.
 
 *Type:* `+Function+`
 

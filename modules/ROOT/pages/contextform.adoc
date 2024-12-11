@@ -50,7 +50,7 @@ This relates to the form itself. The form specifications are:
 a|
 `+(ContextFormApi) => (ContextFormApi) => void+` 
 
-Optional default: `+() => () => {}+` - Function that's  executed when the form is rendered. Once rendered It returns a function that is executed when the context form is closed.
+Optional default: `+() => () => {}+` - Function that's  executed when the form is rendered. Once rendered, it returns a function that is executed when the context form is closed.
 |===
 
 include::partial$context/positioning.adoc[leveloffset=+1]

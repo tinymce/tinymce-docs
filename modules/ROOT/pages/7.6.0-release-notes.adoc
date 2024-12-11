@@ -212,7 +212,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === Add Labels and Groups for Context Toolbar Buttons
 // #TINY-11095
 
-The release of {productname} {release-version} introduces the ability to organize context toolbar buttons into groups with optional labels or titles. This enhancement, available from {productname} 7.6.0 onward, improves toolbar usability by enabling clearer categorization of buttons.
+The release of {productname} {release-version} introduces the ability to organize context toolbar buttons into groups with optional labels or titles. This enhancement improves toolbar usability by enabling clearer categorization of buttons.
 
 The `items` object structure now supports defining groups with an optional `name` property for titles or a `label` property for identifying the group. This feature allows developers to create more intuitive and accessible toolbars by visually segmenting functionality.
 

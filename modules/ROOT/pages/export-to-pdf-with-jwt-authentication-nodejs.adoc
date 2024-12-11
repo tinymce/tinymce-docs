@@ -1,31 +1,33 @@
 = {pluginname} with JWT authentication (Node.js) Guide
-:navtitle: JWT Authentication setup for Export to PDF
-:description: Guide on how to setup JWT Authentication for exporting pdf files with Export to PDF
-:keywords: jwt, authentication, exportpdf, pdf, node.js
-:pluginname: Export to PDF
 :plugincode: exportpdf
+:pluginname: Export to PDF
+:navtitle: JWT Authentication setup for {pluginname}
+:description: Guide on how to setup JWT Authentication for exporting pdf files with {pluginname}
+:keywords: jwt, authentication, exportpdf, pdf, node.js
 
 
-include::partial$auth/document-converters/intro-and-prerequisites.adoc[]
+include::partial$auth/document-converters/nodejs/intro-and-prerequisites.adoc[]
 
-include::partial$auth/document-converters/initial-project-setup.adoc[]
+include::partial$auth/document-converters/nodejs/initial-project-setup.adoc[]
 
 == Setup
 
-include::partial$auth/document-converters/jwt-setup-document-converters.adoc[leveloffset=+1]
+=== Generate a Public/Private Key Pair
 
-. In the root directory, copy and paste the server setup code into the `jwt.js` file (refer to the *Configuring the Node.js Server for JWT Token Generation* section).
+include::partial$auth/document-converters/jwt-setup-document-converters.adoc[leveloffset=+2]
 
-include::partial$auth/document-converters/server-setup-jwt.adoc[]
+include::partial$auth/document-converters/nodejs/server-setup-jwt.adoc[]
 
 === Web Page (public/index.html)
+
+Inside the `public` folder where you created the `index.html` file add the HTML setup code.
 
 [source,html]
 ----
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TinyMCE with PDF Export</title>
+  <title>TinyMCE with Export to PDF</title>
   <script 
     src="https://cdn.tiny.cloud/1/YOUR-API-KEY/tinymce/7/tinymce.min.js"
     referrerpolicy="origin">
@@ -62,4 +64,4 @@ include::partial$auth/document-converters/server-setup-jwt.adoc[]
 </html>
 ----
 
-include::partial$auth/document-converters/configuration-steps.adoc[]
+include::partial$auth/document-converters/nodejs/configuration-steps.adoc[]

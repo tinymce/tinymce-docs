@@ -1,11 +1,11 @@
-=== Configuration Steps
+== Configuration Steps
 
-==== 1. Add Your API Key
+=== Add Your API Key
 
 * Replace `YOUR-API-KEY` in both files with your actual {productname} API key
 * The API key should be the same in both the HTML script source and the JWT payload
 
-==== 2. Add Your Private Key
+=== Add Your Private Key
 
 * Replace the private key placeholder in `jwt.php` with your actual private key
 * Make sure it's in `PKCS8` format

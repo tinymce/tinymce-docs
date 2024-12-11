@@ -296,7 +296,7 @@ tinymce.init({
       input.type = 'file'; // Set the input type to "file" for uploading files
       input.accept = 'image/*'; // Restrict the input to accept only image files
       input.onchange = (e) => { // Add an event listener to handle the file selection event
-        const file = (e.target as HTMLInputElement).files?.[0]; // Get the selected file from the input element
+        const file = (e.target).files?.[0]; // Get the selected file from the input element
         if (file) {
           console.log(file);
         }

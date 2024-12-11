@@ -1,0 +1,48 @@
+[[uploadcare-srcset-steps]]
+== `uploadcare_srcset_steps`
+
+Specifies an array of numeric values representing the widths used to generate the `srcset` attribute for responsive images. This enables browsers to select the most suitable resolution based on the device’s display and network conditions.
+
+Customize this array to include **only** the widths required for your application. Reducing the number of resolutions can improve processing speed, while adding specific sizes can accommodate unique layout needs.
+
+*Type:* `+Array+`
+
+*Default:* `+[100, 200, 300, 500, 750, 1000, 1250, 1500, 2000, 2500, 3000]+`
+
+=== Example: Generated `srcset` Attribute with Custom Widths
+
+When an image is uploaded, its original width is used to create a `srcset` attribute with downscaled images for the defined widths. For instance, if the image width is 780 pixels and `uploadcare_srcset_steps` is set to `[100, 200, 300, 500, 750]`, the resulting `srcset` will look like this:
+
+.Example: Responsive 780px Image with Custom Widths in `srcset`
+[source,html]
+----
+<img 
+  style="width: min(780px, 100%); aspect-ratio: 780 / 780;" 
+  src="https://ucarecdn.com/{image-uid}/-/preview/" 
+  sizes="(min-width: 780px) 780px, 100vw" 
+  srcset="
+      https://ucarecdn.com/{image-uid}/-/resize/100x/ 100w,
+      https://ucarecdn.com/{image-uid}/-/resize/200x/ 200w,
+      https://ucarecdn.com/{image-uid}/-/resize/300x/ 300w,
+      https://ucarecdn.com/{image-uid}/-/resize/500x/ 500w,
+      https://ucarecdn.com/{image-uid}/-/resize/750x/ 750w,
+      https://ucarecdn.com/{image-uid}/-/preview/ 780w
+  ">
+----
+
+This ensures the browser selects the optimal image size based on the viewport and device characteristics, enhancing performance and user experience. On devices with narrower viewports, smaller images (e.g., 100w or 200w) will be prioritized, reducing bandwidth usage.
+
+=== Example: Customizing `uploadcare_srcset_steps`
+
+To customize the array, update the configuration as shown below:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare',
+  uploadcare_public_key: '<your-public-key>',
+  uploadcare_srcset_steps: [100, 200, 300, 500, 750],
+});
+----

@@ -1,0 +1,65 @@
+= {pluginname} with JWT authentication (PHP) Guide
+:navtitle: JWT Authentication setup for Export to Word
+:description: Guide on how to setup JWT Authentication for exporting Word files with {productname}
+:keywords: jwt, authentication, exportword, word, php
+:pluginname: Export to Word
+:plugincode: exportword
+
+include::partial$auth/document-converters/php/intro-and-prerequisites.adoc[]
+
+include::partial$auth/document-converters/php/initial-project-setup.adoc[]
+
+== Setup
+
+=== Generate a Public/Private Key Pair
+
+include::partial$auth/document-converters/jwt-setup-document-converters.adoc[leveloffset=+2]
+
+include::partial$auth/document-converters/php/server-setup-php.adoc[]
+
+=== Web Page Setup (index.html)
+
+Inside the `public` folder where you created the `index.html` file add the HTML setup code:
+
+[source,html]
+----
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TinyMCE with Word Export</title>
+  <script 
+    src="https://cdn.tiny.cloud/1/YOUR-API-KEY/tinymce/7/tinymce.min.js"
+    referrerpolicy="origin">
+  </script>
+  <script>
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'exportword',
+      toolbar: 'exportword',
+      exportword_converter_options: {
+        'format': 'Letter',
+        'margin_top': '1in',
+        'margin_right': '1in',
+        'margin_bottom': '1in',
+        'margin_left': '1in'
+      },
+      // exportword_token_provider fetches a token from the `/jwt.php` endpoint.
+      exportword_token_provider: () => {
+        return fetch('http://localhost:3000/jwt.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+        }).then(response => response.json());
+      },
+    });
+  </script>
+</head>
+<body>
+  <h1>TinyMCE Export to Word Demo</h1>
+  <textarea>
+    Welcome to TinyMCE! Try the Export to Word feature.
+  </textarea>
+</body>
+</html>
+----
+
+include::partial$auth/document-converters/php/configuration-steps.adoc[]

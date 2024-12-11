@@ -1,0 +1,10 @@
+The {pluginname} Server requires a _public_ key generated from the same _private_ key that will be used on your JSON Web Token (JWT) provider endpoint. The public key(s) stored on the {pluginname} Server are used to ensure that content is sent by authorized users.
+
+There are two methods for generating and adding a public key to your API key:
+
+== Generate a key pair using the {accountpage} JWT Keys page
+
+The link:{accountjwturl}[{accountpage} - JWT Keys] page provides a private/public key generator, providing a quick and secure way of generating the required keys. This generator will store a copy of the _public_ key, and provide a downloadable file for both the public and private keys. {companyname} does **not store** the _private_ key and the key pair **cannot** be retrieved later.
+
+[[generate-a-key-pair-locally]]
+== Generate a key pair locally

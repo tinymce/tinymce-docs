@@ -16,7 +16,7 @@ The `+done+` callback should accept the following object:
 [source,js]
 ----
 {
-  commentUid: string, // the value of the new comment uid
+  commentUid: string, // the new comment uid
   author: string, // the id of the current author
   authorName: string // the name of the current author
 }

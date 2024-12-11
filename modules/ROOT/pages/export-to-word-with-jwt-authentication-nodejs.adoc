@@ -1,0 +1,63 @@
+= {pluginname} with JWT authentication (Node.js) Guide
+:navtitle: JWT Authentication setup for Export to Word
+:description: Guide on how to setup JWT Authentication for exporting docx files with Export to Word
+:keywords: jwt, authentication, exportword, node.js
+:pluginname: Export to Word
+:plugincode: exportword
+
+
+include::partial$auth/document-converters/intro-and-prerequisites.adoc[]
+
+include::partial$auth/document-converters/initial-project-setup.adoc[]
+
+== Setup
+
+include::partial$auth/document-converters/jwt-setup-document-converters.adoc[leveloffset=+1]
+
+. In the root directory, copy and paste the server setup code into the `jwt.js` file (refer to the *Configuring the Node.js Server for JWT Token Generation* section).
+
+include::partial$auth/document-converters/server-setup-jwt.adoc[]
+
+=== Web Page (public/index.html)
+
+[source,html]
+----
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TinyMCE with Export to Word</title>
+  <script 
+    src="https://cdn.tiny.cloud/1/YOUR-API-KEY/tinymce/7/tinymce.min.js"
+    referrerpolicy="origin">
+  </script>
+  <script>
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'exportword',
+      toolbar: 'exportword',
+      exportword_converter_options: {
+        'document': {
+          'size': 'Letter'
+        }
+      },
+
+      // exportword_token_provider fetches a token from the `/jwt` endpoint.
+      exportword_token_provider: () => {
+        return fetch('http://localhost:3000/jwt', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+        }).then(response => response.json());
+      },
+    });
+  </script>
+</head>
+<body>
+  <h1>TinyMCE Export to Word Demo</h1>
+  <textarea>
+    Welcome to TinyMCE! Try the Export to Word feature.
+  </textarea>
+</body>
+</html>
+----
+
+include::partial$auth/document-converters/configuration-steps.adoc[]

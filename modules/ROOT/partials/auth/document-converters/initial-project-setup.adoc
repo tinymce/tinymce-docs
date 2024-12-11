@@ -1,0 +1,41 @@
+== Quick Start Guide
+
+=== Project Setup
+
+[source,bash]
+----
+# Create and enter project directory
+mkdir tinymce-my-app
+cd tinymce-my-app
+
+# Initialize project
+npm init -y
+
+# Install required packages
+npm install express cors jsonwebtoken
+----
+
+Verify that the `package.json` file now includes the required dependencies.
+
+=== Create Project Structure
+
+[source,bash]
+----
+# Create the public folder for your web files
+mkdir public
+touch public/index.html
+touch jwt.js
+----
+
+Your project should look like this:
+
+[source]
+----
+/tinymce-my-app
+  /public
+    index.html  (TinyMCE webpage)
+  jwt.js        (Server code)
+  package.json  (Project configuration)
+----
+
+. Inside the `public` folder where you created the `index.html` file add the HTML setup code (refer to the *Web Page (public/index.html)* section).

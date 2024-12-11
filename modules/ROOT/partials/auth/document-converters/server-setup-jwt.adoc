@@ -1,0 +1,44 @@
+=== Server Setup (jwt.js)
+
+[source,javascript]
+----
+const express = require('express'); // Sets up the web server.
+const jwt = require('jsonwebtoken'); // Generates and signs JWTs.
+const cors = require('cors'); // Allows cross-origin requests.
+const path = require('path'); // Handles file paths.
+
+const app = express();
+app.use(cors());
+
+// Your private key (Replace this with your actual key)
+const privateKey = `
+-----BEGIN PRIVATE KEY-----
+{Your private PKCS8 key goes here}
+-----END PRIVATE KEY-----
+`;
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+// JWT token generation endpoint
+app.post('/jwt', (req, res) => {
+    const payload = {
+        aud: 'YOUR-API-KEY', // Replace with your actual API key
+        iat: Math.floor(Date.now() / 1000), // Issue timestamp
+        exp: Math.floor(Date.now() / 1000) + (60 * 10) // Expiration time (10 minutes)
+    };
+
+    try {
+        // Tokens are signed with the RS256 algorithm using your private key
+        const token = jwt.sign(payload, privateKey, { algorithm: 'RS256' });
+        res.json({ token });
+    } catch (error) {
+        res.status(500).send('Failed to generate JWT token.');
+        console.error(error.message);
+    }
+});
+
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
+});
+----

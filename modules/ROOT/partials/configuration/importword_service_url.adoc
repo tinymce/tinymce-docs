@@ -1,0 +1,29 @@
+[[importword-service-url]]
+== `importword_service_url`
+
+The `importword_service_url` option sets the URL endpoint for the DOCX-to-HTML conversion service.
+
+This option is **required** when configuring the {pluginname} plugin for `on-premise` setups. If you require access to this feature, please link:https://www.tiny.cloud/contact/[contact us]. For detailed instructions on deploying the {pluginname} service server-side component using Docker, refer to the xref:individual-import-from-word-and-export-to-word-on-premises.adoc[on-premises documentation].
+
+[TIP]
+When using a custom host, set the `importword_service_url` option in your {productname} configuration to match your host. For example, if your custom host is `mycustomhost.com`, set the URL to `https://mycustomhost.com/`.
+
+*Type:* `+String+`
+
+=== Example: Setting up `importword_service_url`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'importword',
+  toolbar: 'importword',
+  importword_service_url: '<service-URL>' // required for On-premise setups only
+});
+----
+
+[IMPORTANT]
+====
+* If the `importword_service_url` option is **not configured**, a `console.error` will display: _The {pluginname} plugin requires the `importword_service_url` to be configured_.
+* If the URL provided is invalid, a `console.error` will display: _The value provided in `importword_service_url` is not a valid URL_.
+====

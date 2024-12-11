@@ -1,0 +1,33 @@
+[[exportword-converter-style]]
+== `exportword_converter_style`
+
+The `exportword_converter_style` option allows for customization of the styles applied to the exported Word document, providing flexibility in controlling its appearance; however, this option does **not affect** the distinct styling of the `header` and `footer`.
+
+*Type:* `+String+`
+
+*Default value:* `''`
+
+=== Example: using `exportword_converter_style`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea.tinymce',
+  plugins: 'exportword',
+  toolbar: 'exportword',
+  exportword_service_url: '<service_URL>', // required if using On-premises service
+  exportword_converter_options: {
+    headers: {
+      first: {
+        html: "<p>My document header</p>",
+        css: "p { color: gray; }"
+      },
+      default: {
+        html: "<p>My default header</p>",
+        css: "p { color: blue; }"
+      }
+    },
+  },
+  exportword_converter_style: 'p { color: cyan !important }' // will override the set <p> tag styles in the HTML content
+});
+----

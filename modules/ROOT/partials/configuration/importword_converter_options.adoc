@@ -27,6 +27,7 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'importword',
   toolbar: 'importword',
+  importword_service_url: '<service_URL>', // required if using On-premises service
   importword_converter_options: {
     formatting: {
       resets: 'inline',

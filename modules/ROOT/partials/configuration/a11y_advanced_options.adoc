@@ -3,15 +3,20 @@
 
 This option affects the functionality of:
 
-* The Accessibility Checker plugin (`+a11ychecker+`).
-* The Image plugin (`+image+`).
+* The xref:a11ychecker.adoc[Accessibility Checker] plugin (`+a11ychecker+`).
+* The xref:image.adoc[Image] plugin (`+image+`).
+* The xref:uploadcare.adoc[Image Optimizer Powered by Uploadcare] plugin (`+uploadcare+`).
 
 Setting `+a11y_advanced_options+` to `+true+`:
 
 * Adds the *Image is decorative* option to the _Insert/Edit Image_ dialog, allowing users to specify that an image is decorative and does not require alternative text for accessibility purposes.
+* Adds the *Decorative image* button to Image Optimizer's _Alt text_ context toolbar, allowing users to specify that an image is decorative and does not require alternative text for accessibility purposes.
 * Adds the *Image is decorative* option to the _Accessibility Checker error_ dialog for images without alternative text or the `+role="presentation"+` attribute.
 
-IMPORTANT: When `+a11y_advanced_options+` is set to `+true+`, xref:a11ychecker.adoc#a11ychecker_allow_decorative_images[`+a11ychecker_allow_decorative_images+`] will default to `+true+`.
+[IMPORTANT]
+====
+If `xref:a11ychecker.adoc#a11ychecker_allow_decorative_images[a11ychecker_allow_decorative_images]` is not explicitly set, the value defined in `+a11y_advanced_options+` will be used.
+====
 
 *Type:* `+Boolean+`
 
@@ -21,6 +26,20 @@ IMPORTANT: When `+a11y_advanced_options+` is set to `+true+`, xref:a11ychecker.a
 
 === Example: using `+a11y_advanced_options+`
 
+ifeval::["{includedSection}" == "uploadcarePlugin"]
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare',
+  uploadcare_public_key: '<your-public-key>',
+  a11y_advanced_options: true,
+});
+----
+
+endif::[]
 ifeval::["{includedSection}" == "imagePlugin"]
 
 [source,js]
@@ -29,7 +48,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'image',
   toolbar: 'image',
-  a11y_advanced_options: true
+  a11y_advanced_options: true,
 });
 ----
 
@@ -42,7 +61,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'a11ychecker',
   toolbar: 'a11ycheck',
-  a11y_advanced_options: true
+  a11y_advanced_options: true,
 });
 ----
 
@@ -55,7 +74,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'a11ychecker image',
   toolbar: 'a11ycheck image',
-  a11y_advanced_options: true
+  a11y_advanced_options: true,
 });
 ----
 

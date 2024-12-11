@@ -1,0 +1,423 @@
+= {productname} {release-version}
+:release-version: 7.6.0
+:navtitle: {productname} {release-version}
+:description: Release notes for {productname} {release-version}
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+
+[[overview]]
+== Overview
+
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, December 11^th^, 2024. These release notes provide an overview of the changes for {productname} {release-version}, including:
+
+* xref:new-premium-plugin[New Premium plugin]
+* xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
+* xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
+// * xref:improvements[Improvements]
+* xref:additions[Additions]
+* xref:changes[Changes]
+* xref:bug-fixes[Bug fixes]
+* xref:known-issues[Known issues]
+
+
+[[new-premium-plugin]]
+== New Premium plugin
+
+The following new Premium plugin was released alongside {productname} {release-version}.
+
+=== Image Optimizer (Powered by Uploadcare)
+
+{productname} {release-version} introduces the **Image Optimizer (Powered by Uploadcare)** plugin.
+
+The **Image Optimizer** plugin offers a range of powerful features for image hosting, serving, and editing. These include responsive image delivery, automatic image format selection, automatic compression, and non-destructive image transformations and adjustments, all powered by link:https://uploadcare.com[Uploadcare].
+
+For information on the **Image Optimizer (Powered by Uploadcare)** plugin, see xref:uploadcare.adoc[Image Optimizer (Powered by Uploadcare)].
+
+[[accompanying-premium-plugin-changes]]
+== Accompanying Premium plugin changes
+
+The following premium plugin updates were released alongside {productname} {release-version}.
+
+=== Accessibility Checker
+
+The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.
+
+**Accessibility Checker** Premium plugin includes the following fixes and improvements.
+
+==== Introduced a new live region for screen readers to improve accessibility checker dialog announcements
+// #TINY-11523
+
+Previously, an issue was identified where screen reader announcements for the accessibility dialog were inconsistent across different browsers. This inconsistency resulted in a poor user experience with screen readers and accessibility dialogs.
+
+In {productname} {release-version}, this issue has been resolved by adding a dedicated hidden screen reader section within the dialog structure, ensuring more consistent and accurate announcements across browsers.
+
+==== Add detailed issue description to accessibility checker
+// #TINY-11462
+
+An issue was identified where users relying on screen readers did not receive sufficient context about the current content when navigating the accessibility checker. This limitation could cause confusion and make it challenging for users to understand or resolve accessibility issues effectively.
+
+To address this, {productname} {release-version} introduces a new section that clearly displays the content type and includes a snippet of the content. This enhancement provides users with better context and improves the overall navigation experience. By offering more comprehensive indicators, this update ensures screen reader users can efficiently identify and address accessibility issues within the content.
+
+==== Improve editor content highlighting when using accessibility checker
+// #TINY-11463
+
+Previously, an issue involving the accessibility checker was identified where the content area highlights did not properly meet accessibility standards. This issue caused users with vision impairments to encounter difficulty in identifying the currently focused element.
+
+In {productname} {release-version}, this issue has been resolved by unifying the color palette to meet accessibility color contrast standards, ensuring that all users can easily locate the currently focused element.
+
+For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
+
+=== Checklist
+
+The {productname} {release-version} release includes an accompanying release of the **Checklist** premium plugin.
+
+**Checklist** Premium plugin includes the following fix.
+
+==== Checklist items were unresponsive in `center` or `right` alignments
+// #TINY-11357
+
+In previous versions of {productname}, an issue was identified where users could not check checklist items when they were `center` or `right` aligned. This occurred because the logic for detecting clicks relied on the left-most position of the `+<li>+` element, which remains unchanged regardless of text alignment.
+
+As a result, clicks in center or right alignments would fail the logic check, leaving the items unresponsive.
+
+{productname} {release-version} addresses this issue. Now, the logic compares the click position against the left-most position of the aligned text, rather than the parent `+<li>+` element. This adjustment ensures that clicks are properly registered regardless of alignment, restoring expected functionality across all alignment settings.
+
+For information on the **Checklist** plugin, see: xref:checklist.adoc[Checklist].
+
+=== Comments
+
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** includes the following fixes and improvements.
+
+==== The `commentAuthor` property is now included in reply events of the event log.
+// #TINY-11489
+
+In previous versions of the tinycomments plugin, the `commentAuthor` property was missing from 'reply' events within the event log, which led to incomplete tracking of user interactions when retrieving data through the `+getEventLog()+` API.
+
+{productname} {release-version} addresses this issue. Now, the `commentAuthor` property is included in 'reply' events in the event log.
+
+For more information on the `getEventLog`, see xref:comments-commands-events-apis.adoc#getEventLog[getEventLog].
+
+==== Allow mentions in comments dropdown to flow freely outside of the editor container
+// #TINY-11504
+
+An issue was identified where the mentions in comments dropdown didn't freely expand to the available space alongside mentions in the editor. This was due to the dropdown being restricted within the sidebar area.
+
+In {productname} {release-version}, this issue has been resolved by allowing the mentions in comments dropdown to expand outside the sidebar area, making full use of the available space outside the editor and improving the overall user experience.
+
+==== Reduced the amount of scrolling when changing between conversations in the sidebar.
+// #TINY-11401
+
+Previously, the scrolling behavior for comment cards was inconsistent. When scrolling from top to bottom, the scrolling would stop at the top of a comment card, whereas scrolling from bottom to top would stop at the bottom of a comment card. This inconsistency could cause confusion when navigating through comments in the sidebar.
+
+In {productname} {release-version}, the sidebar scrolling behavior has been updated to ensure consistency. When a conversation is selected and is either partially or completely out of view, the sidebar now scrolls to position the top of the selected conversation just below the top of the sidebar.
+
+[NOTE]
+An exception does apply if the selected conversation is already partially visible, with the top in view but the bottom out of view, and the comment card's height is smaller than the scrollable container. In this scenario, the sidebar will scroll to position the bottom of the selected card near the bottom of the container.
+
+==== Scroll to show action buttons when replying/editing a comment.
+// #TINY-11402
+
+Previously, if a selected conversation card was positioned near the bottom of the sidebar, the reply/edit input field would be below the bottom of the sidebar resulting in the comment input field not being visible to the user.
+
+{productname} {release-version} addresses this issue. Now, the sidebar scrolls to display the comment input field if the selected conversation card is positioned near the bottom of the sidebar. This ensures that the comment input field is always visible to the user.
+
+==== Pressing Shift+Enter in Mentions in Comments dropdown should accept the active menu item
+// #TINY-11455
+
+In previous versions of {productname}, the `Shift+Enter` key was not properly handled when used with mentions in comments. This led to a new line being inserted while the mentions dropdown remained open, resulting in inconsistent behavior compared to mentions within the editor.
+
+In {productname} {release-version}, mentions in comments now handle the `Shift+Enter` key by inserting the highlighted user into the comment text area and closing the dropdown, ensuring consistent functionality across the editor and comment areas.
+
+=== Adjust `tinycomments` UI font size to match the editor UI font size
+// #TINY-11592
+
+Previously, the **Comments** plugin used a `14px` font size for the comment body, which was inconsistent with the `16px` font size used in the rest of the Comments Sidebar and the editor UI.
+
+This issue has been resolved in {productname} {release-version} by setting the comment body font size to `16px`, ensuring font size consistency between the **Comments** plugin and the editor UI.
+
+==== Editor Focus after Deleting a Comment
+// #TINY-11293
+
+Previously, the focus behaviour in the comments sidebar was observed to be inconsistent. When a user deleted a comment, the focus exited the comments sidebar and returned to the editor instead of returning to the conversation card. This also occurred when a new comment was created inside an existing conversation, and when an entire new conversation was created.
+
+In {productname} {release-version}, the focus behaviour has now been improved in the following situations:
+
+* Deleting a comment now returns the focus to the conversation card that contained the deleted comment.
+* Creating a new comment within an existing conversation now brings the focus to the corresponding conversation card.
+* Starting a new conversation now brings the focus to the newly created conversation card.
+
+==== Added tooltips to conversation and comment kebab menus
+
+In previous versions of **Comments**, the kebab menu button in the comments sidebar was missing a tooltip for users relying on assistive technologies.
+
+{productname} {release-version} addresses this issue, by adding an `aria-label` with the description "Comment Actions" to the sidebar comment menu button, ensuring a tooltip is displayed on hover. This update improves accessibility and aligns the user experience across different menu buttons.
+
+==== The caret in comment textarea returned to its previous location before closing the mentions menu by selecting with the mouse.
+// #TINY-11453
+
+Previously, when closing the Mentions dropdown in a Comment textarea by clicking away, the caret would revert to its previous position, disregarding the user’s mouse-click location. This issue occurred because the logic for handling caret positioning did not account for mouse interactions, resulting in a disjointed and confusing user experience.
+
+In {productname} {release-version} this issue was addressed. Now, the caret now accurately reflects the user’s intended position when the Mentions dropdown is closed via a mouse-click.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
+
+=== Enhanced Code Editor
+// #TINY-11298
+
+The {productname} {release-version} release includes an accompanying release of the **Enhanced Code Editor** premium plugin.
+
+**Enhanced Code Editor** Premium plugin includes the following fix.
+
+==== Spelling error in tooltip for `fullscreen` toggle button
+
+The tooltip for the `fullscreen` toggle button was incorrectly labeled as `Fullsceen`. {productname} {release-version} addresses this issue which has now been corrected to `Fullscreen`.
+
+For information on the **Enhanced Code Editor** plugin, see: xref:advcode.adoc[Enhanced Code Editor].
+
+[[accompanying-enhanced-skins-and-icon-packs-changes]]
+== Accompanying Enhanced Skins & Icon Packs changes
+
+The {productname} {release-version} release includes an accompanying release of the **Enhanced Skins & Icon Packs**.
+
+=== Enhanced Skins & Icon Packs
+
+The **Enhanced Skins & Icon Packs** release includes the following updates:
+
+The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} {release-version} skin, Oxide.
+
+For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
+
+
+// [[improvements]]
+// == Improvements
+
+// {productname} {release-version} also includes the following improvements:
+
+// === Base64 data was not properly decoded due to unhandled URL-encoded characters.
+// #TINY-9548
+
+// === The `latin` list style type is now recognized as an alias for the `alpha` list style type.
+// #TINY-11515
+
+[[additions]]
+== Additions
+
+{productname} {release-version} also includes the following additions:
+
+=== Add Labels and Groups for Context Toolbar Buttons
+// #TINY-11095
+
+The release of {productname} {release-version} introduces the ability to organize context toolbar buttons into groups with optional labels or titles. This enhancement improves toolbar usability by enabling clearer categorization of buttons.
+
+The `items` object structure now supports defining groups with an optional `name` property for titles or a `label` property for identifying the group. This feature allows developers to create more intuitive and accessible toolbars by visually segmenting functionality.
+
+Example of a context toolbar configuration with groups and labels:
+
+.Example
+[source,js]
+----
+items: [
+  {
+    name: 'Formatting', // Optional, used as the group's title
+    items: [ 'bold', 'italic' ] // Array of registered button names
+  },
+  {
+    label: 'History', // Optional, used as a label for the group
+    items: [ 'undo', 'redo' ] // Array of registered button names
+  },
+]
+----
+
+For more details on configuring context toolbar groups and labels, see: xref:contexttoolbar.adoc#add-labels-and-groups-for-context-toolbar-buttons[Context Toolbar].
+
+// === New `contextsliderform` and `contextsizeinput` context form types.
+// #TINY-11342
+
+=== New `back` function in `ContextFormApi` to go back to the previous toolbar.
+// #TINY-11344
+
+{productname} {release-version} introduces the `+back+` function in the `ContextFormApi`, enabling users to navigate back to the previous toolbar. This enhancement fulfills the need for a back button in context forms, providing a seamless way to return to the previous toolbar configuration when required.
+
+.Example: Using the `back` function in a context form
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  setup: (ed) => {
+    ed.ui.registry.addContextToolbar('toolbar-with-back-example', {
+      items: 'form-with-back-example undo redo',
+      position: 'node',
+      scope: 'node',
+      predicate: (node) => node.nodeName.toLowerCase() === 'p'
+    });
+    ed.ui.registry.addContextForm('form-with-back-example', {
+      type: 'contextsizeinputform',
+      launch: {
+        type: 'contextformtogglebutton',
+        icon: 'resize',
+        tooltip: 'ABC'
+      },
+      initValue: () => ({ width: '100', height: '200' }),
+      onInput: (formApi) => console.log(`input.${JSON.stringify(formApi.getValue())}`),
+      commands: [
+        {
+          type: 'contextformbutton',
+          icon: 'chevron-left',
+          tooltip: 'Back',
+          align: 'start',
+          onAction: (formApi) => formApi.back()
+        }
+      ]
+    });
+  }
+});
+----
+
+=== New `QuickbarInsertImage` command that is executed by the `quickimage` button.
+// #TINY-11399
+
+The **Quickbars** Plugin now allows integrators to overwrite the `+QuickbarInsertImage+` command, enabling customization of the quickimage button's behavior.
+
+.Example of how to override the `+QuickbarInsertImage+` command:
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'quickbars',
+  toolbar: false,
+  setup: (editor) => {
+    editor.addCommand('QuickbarInsertImage', () => { // Add a custom command to the editor named "QuickbarInsertImage"
+      const input = document.createElement('input'); // Create a new <input> element for file selection
+      input.type = 'file'; // Set the input type to "file" for uploading files
+      input.accept = 'image/*'; // Restrict the input to accept only image files
+      input.onchange = (e) => { // Add an event listener to handle the file selection event
+        const file = (e.target).files?.[0]; // Get the selected file from the input element
+        if (file) {
+          console.log(file);
+        }
+      };
+      input.click();
+    });
+  }
+});
+----
+
+=== New `onSetup` function for context forms
+// #TINY-11494
+
+A new `+onSetup+` API has been introduced for context forms, enabling integrators to execute a function when the form is rendered and handle cleanup when it is closed. This enhancement addresses the previous limitation of not being able to detect or trigger actions during the lifecycle of context forms. The `+onSetup+` API streamlines lifecycle management by supporting initialization at form rendering and providing a return function for cleanup, enhancing integration with plugins and applications.
+
+For more details, refer to xref:contextform.adoc#form[Context Form].
+
+=== Added placeholder support for context form input fields
+// #TINY-11459
+
+A new `placeholder` option has been introduced to the context form API, addressing the need for inline guidance within input fields. This feature enables developers to specify placeholder text that appears inside input fields until the field is focused or a value is entered. By providing contextual hints, this enhancement improves usability and enhances the user experience.
+
+.Example: Using a placeholder in a context form input field
+[source,js]
+----
+editor.ui.registry.addContextForm('upload-url', {
+  launch: {
+    type: 'contextformtogglebutton',
+    icon: 'link',
+    tooltip: 'Upload from URL'
+  },
+  placeholder: 'Enter URL here...', ....
+});
+----
+
+=== New `+disabled+` option for disabling all user interactions
+
+A new `+disabled+` option has been introduced to {productname} in version {release-version}. This option allows integrators to disable all user interactions with the editor, including cursor placement, content modifications, and UI components. When set to `+true+`, the editor behaves similarly to the readonly mode changes introduced in {productname} 7.4.0 but ensures complete non-interactivity.
+
+.Example disabling all user interactions with the editor
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // Specify the target HTML element
+  disabled: true         // Disables all interactions with the editor
+});
+----
+
+For more information on the `+disabled+` option, see xref:editor-important-options.adoc#disabled[Disabled] option.
+
+[[bug-fixes]]
+== Bug fixes
+
+{productname} {release-version} also includes the following bug fixes:
+
+=== Image selection was removed when calling nodeChanged while having focus inside the editor UI.
+// #TINY-11437
+
+Previously, executing a `nodeChange` event while an image was selected caused the image to lose its resize handles. This issue disrupted the user experience, requiring users to re-select the image to resize it.
+
+{productname} {release-version} addresses this issue. Now, resize handles are only removed when focus moves out of the editor or its UI components.
+
+As a result, the resize handles remain visible during `nodeChange` events, improving usability.
+
+=== Tooltip would not show for group toolbar button.
+// #TINY-11391
+
+Previously, an issue was identified where tooltips were not displayed when hovering over toolbar group buttons. This was due to replacing the `title` attribute with an `aria-label` attribute in xref:7.0-release-notes.adoc#improved-accessibility-for-interactive-elements-with-custom-tooltips[{productname} 7.0.0] without implementing the custom tooltip behavior for the toolbar group buttons.
+
+In {productname} {release-version}, this issue has been resolved by applying the custom tooltip behavior to the toolbar group buttons, ensuring that tooltips are now displayed on hover.
+
+=== Numbered table context menu not properly applying changes
+// #TINY-11383
+
+Previously, there was an issue where changes to the row type in numbered tables were not properly applied. This occurred because the action of modifying the row type from a `+contentEditable="false"+` cell was being deliberately blocked.
+
+In {productname} {release-version}, this issue has been resolved by removing the restriction on changing the row type from a `+contentEditable="false"+` cell. As a result, changes to the row type are now correctly applied.
+
+// ===  The `samp` format was being applied as a `block` level format, instead of an `inline` format.
+// #TINY-11390
+
+=== Removed title attribute from dialog tree elements as they already have a tooltip.
+// #TINY-11470
+
+Previously, an issue was identified with tooltips for tree structures where multiple tooltip systems displayed the same text simultaneously:
+
+. The browser's native tooltip, triggered by the `title` attribute, displayed the text.
+. {productname}'s custom tooltip functionality also displayed the text.
+
+As a consequence, this caused two tooltips with identical content to appear at the same time, leading to a confusing user experience, where the desired behavior was to show only the custom tooltip provided by {productname}.
+
+In {productname} {release-version}, this issue has been resolved. The `title` attribute is now automatically removed when the custom tooltip is applied, ensuring that only the custom tooltip is displayed. 
+
+=== Fixed CSS Bundling for Skin UI Content CSS
+// #TINY-11558
+
+In self-hosted React setups, image resize handles were not displayed when using bundled {productname} editors. This issue impacted the usability of features such as image resizing.
+
+The root cause was a misconfiguration of resource keys for the CSS bundling JS files and CSS loading logic in {productname} core. As a result, bundled editors failed to load the necessary styles, causing the resize handles to remain hidden.
+
+This issue affected {productname} versions earlier than 7.1.0.
+
+{productname} {release-version} resolves this issue by updating the `stylesheetLoader` to correctly load the `ui/default/content.css` stylesheet, ensuring that image resize handles are displayed as expected.
+
+=== Incorrect translation of `Cut Column` and `Copy Column` in Hebrew
+// #TINY-11583
+
+An issue was identified where the Hebrew translations for `Cut Column` and `Copy Column` in the table plugin were incorrect.
+ 
+{productname} {release-version} addresses this issue by providing the correct Hebrew translations for these operations.
+
+
+[[known-issues]]
+== Known issues
+
+This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
+
+There is one known issue in {productname} {release-version}.
+
+=== Missing translations for "Solution" for all languages in the Accessibility Checker
+
+In {productname} {release-version}, the "Solution" translation is missing for all languages in the Accessibility Checker. This issue affects the "Solution" section of the Accessibility Checker, where the "Solution" text is not displayed in the user's selected language.
+
+**Status**: Currently under investigation.

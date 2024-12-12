@@ -41,7 +41,6 @@ This relates to the form itself. The form specifications are:
 |Name |Details
 |`+launch+` |This is the specification for the launching button that can appear in a context toolbar only. It will be either type: `+contextformbutton+` or `+contextformtogglebutton+`, and will be identical to those definitions below except it will *not* have an `+onAction+`.
 |`+label+` |This is the label that will appear in the form.
-|`+placeholder+` |This specifies placeholder text that appears inside the input field until the field has a value.
 |`+initValue+` |This is the initial value the input will have in the form.
 |`+predicate+` |This controls when the context toolbar will appear.
 |`+position+` |This controls where the context toolbar will appear with regards to the current cursor.

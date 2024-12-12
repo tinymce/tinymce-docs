@@ -18,7 +18,6 @@ tinymce.init({
       },
       label: 'Link',
       predicate: isAnchorElement,
-      placeholder: 'https://www.example.com',
       initValue: () => {
         const elm = getAnchorElement();
         return !!elm ? elm.href : '';

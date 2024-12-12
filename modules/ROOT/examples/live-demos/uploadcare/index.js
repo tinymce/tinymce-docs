@@ -1,7 +1,10 @@
 tinymce.init({
   selector: "textarea",
   plugins: [ "uploadcare", "code", "link", "preview", "lists" ],
-  uploadcare_public_key: 'cfef242412638bfc4193',	
+  uploadcare_public_key: '630992ad50fe2291c406',
+	uploadcare_cdn_base_url: 'https://tiny.ucarecdn.com',
+	uploadcare_store_type: 'temporary',
+  a11y_advanced_options: true,	
   toolbar: "undo redo | styles | bold italic underline | forecolor | bullist numlist| link uploadcare | code preview",
   height: 700,	
   content_style: `

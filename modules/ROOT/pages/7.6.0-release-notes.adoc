@@ -16,7 +16,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:new-premium-plugin[New Premium plugin]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
-// * xref:improvements[Improvements]
+* xref:improvements[Improvements]
 * xref:additions[Additions]
 * xref:changes[Changes]
 * xref:bug-fixes[Bug fixes]
@@ -193,10 +193,10 @@ The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also inc
 For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
 
 
-// [[improvements]]
-// == Improvements
+[[improvements]]
+== Improvements
 
-// {productname} {release-version} also includes the following improvements:
+{productname} {release-version} also includes the following improvements:
 
 // === Base64 data was not properly decoded due to unhandled URL-encoded characters.
 // #TINY-9548

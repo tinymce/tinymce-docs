@@ -278,6 +278,8 @@ tinymce.init({
 });
 ----
 
+For more details on the `back` function, see xref:contextform.adoc#formapi[Context Form - ContextFormApi].
+
 === New `QuickbarInsertImage` command that is executed by the `quickimage` button.
 // #TINY-11399
 
@@ -312,25 +314,29 @@ tinymce.init({
 
 A new `+onSetup+` API has been introduced for context forms, enabling integrators to execute a function when the form is rendered and handle cleanup when it is closed. This enhancement addresses the previous limitation of not being able to detect or trigger actions during the lifecycle of context forms. The `+onSetup+` API streamlines lifecycle management by supporting initialization at form rendering and providing a return function for cleanup, enhancing integration with plugins and applications.
 
-For more details, refer to xref:contextform.adoc#form[Context Form].
+For more details on the `+onSetup+` function, see xref:contextform.adoc#form[Context Form].
 
 === Added placeholder support for context form input fields
 // #TINY-11459
 
-A new `placeholder` option has been introduced to the context form API, addressing the need for inline guidance within input fields. This feature enables developers to specify placeholder text that appears inside input fields until the field is focused or a value is entered. By providing contextual hints, this enhancement improves usability and enhances the user experience.
+A new `placeholder` option has been introduced to the context form API, addressing the need for inline guidance within input fields. This feature enables developers to specify placeholder text that appears inside input fields until the field has a value. By providing contextual hints, this enhancement improves usability and enhances the user experience.
 
 .Example: Using a placeholder in a context form input field
 [source,js]
 ----
-editor.ui.registry.addContextForm('upload-url', {
-  launch: {
-    type: 'contextformtogglebutton',
-    icon: 'link',
-    tooltip: 'Upload from URL'
+tinymce.init({
+  selector: 'textarea',
+  setup: (editor) => {
+    editor.ui.registry.addContextForm('my-form', {
+      predicate: () => true,
+      placeholder: 'Placeholder goes here...',
+      commands: []
+    });
   },
-  placeholder: 'Enter URL here...', ....
 });
 ----
+
+For more details on the `placeholder` option, see xref:contextform.adoc#form[Context Form].
 
 === New `+disabled+` option for disabling all user interactions
 

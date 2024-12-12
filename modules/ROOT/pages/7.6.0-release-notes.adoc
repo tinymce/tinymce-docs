@@ -16,7 +16,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:new-premium-plugin[New Premium plugin]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
-// * xref:improvements[Improvements]
+* xref:improvements[Improvements]
 * xref:additions[Additions]
 * xref:changes[Changes]
 * xref:bug-fixes[Bug fixes]
@@ -193,16 +193,24 @@ The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also inc
 For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
 
 
-// [[improvements]]
-// == Improvements
+[[improvements]]
+== Improvements
 
-// {productname} {release-version} also includes the following improvements:
+{productname} {release-version} also includes the following improvements:
 
-// === Base64 data was not properly decoded due to unhandled URL-encoded characters.
+=== Base64 data was not properly decoded due to unhandled URL-encoded characters.
 // #TINY-9548
 
-// === The `latin` list style type is now recognized as an alias for the `alpha` list style type.
+Previously, URL-encoded characters were not properly handled during base64 data decoding. This issue caused images to appear broken when using a base64 string as a source with URL-encoded characters.
+
+In {productname} {release-version}, this issue has been resolved by implementing logic to decode URL-encoded characters before processing the base64 string. As a result, images using base64 strings as a source will now appear correctly, even if URL-encoded characters are included.
+
+=== The `latin` list style type is now recognized as an alias for the `alpha` list style type.
 // #TINY-11515
+
+Previously, {productname} did not recognize `lower-latin` and `upper-latin` list style types, causing UI issues when importing documents with such lists.
+
+In {productname} {release-version}, this issue has been resolved. The editor now recognizes `lower-latin` and `upper-latin` as aliases for `lower-alpha` and `upper-alpha`, respectively, ensuring the correct list type is highlighted in the Numbered List dropdown.
 
 [[additions]]
 == Additions
@@ -381,8 +389,12 @@ Previously, there was an issue where changes to the row type in numbered tables 
 
 In {productname} {release-version}, this issue has been resolved by removing the restriction on changing the row type from a `+contentEditable="false"+` cell. As a result, changes to the row type are now correctly applied.
 
-// ===  The `samp` format was being applied as a `block` level format, instead of an `inline` format.
+===  The `samp` format was being applied as a `block` level format, instead of an `inline` format.
 // #TINY-11390
+
+Previously, an issue was identified where the `samp` (Sample) format was incorrectly applied as a block-level format instead of an inline format. This caused the entire element to receive the `samp` format and be placed on a new line, rather than just the selected text receiving the format.
+
+In {productname} {release-version}, this issue has been resolved by registering the `samp` format as an inline format. This ensures that elements with the `samp` format are treated as inline elements, maintaining the intended content flow.
 
 === Removed title attribute from dialog tree elements as they already have a tooltip.
 // #TINY-11470

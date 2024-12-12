@@ -91,7 +91,7 @@ axios.post( 'http://localhost:8080/v1/convert', data, config )
 
 `SECRET_KEY` it’s the key which has been passed to the {pluginname} On-Premises instance
 
-Please refer to the link:https://exportpdf.converter.tiny.cloud/docs[{pluginname} REST API documentation] to start using the service.
+Please refer to the link:https://exportpdf.api.tiny.cloud/docs[{pluginname} REST API documentation] to start using the service.
 
 [NOTE]
 If API clients like Postman or Insomnia are used, then set the JWT token as an `Authorization` header in the `Headers` tab. Do not use the built-in token authorization as this will generate invalid header with a `Bearer` prefix added to the token.

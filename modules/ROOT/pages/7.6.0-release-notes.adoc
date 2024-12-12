@@ -205,8 +205,12 @@ Previously, URL-encoded characters were not properly handled during base64 data 
 
 In {productname} {release-version}, this issue has been resolved by implementing logic to decode URL-encoded characters before processing the base64 string. As a result, images using base64 strings as a source will now appear correctly, even if URL-encoded characters are included.
 
-// === The `latin` list style type is now recognized as an alias for the `alpha` list style type.
+=== The `latin` list style type is now recognized as an alias for the `alpha` list style type.
 // #TINY-11515
+
+Previously, {productname} did not recognize `lower-latin` and `upper-latin` list style types, causing UI issues when importing documents with such lists.
+
+In {productname} {release-version}, this issue has been resolved. The editor now recognizes `lower-latin` and `upper-latin` as aliases for `lower-alpha` and `upper-alpha`, respectively, ensuring the correct list type is highlighted in the Numbered List dropdown.
 
 [[additions]]
 == Additions

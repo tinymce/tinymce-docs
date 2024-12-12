@@ -63,7 +63,7 @@ axios.post( 'http://localhost:8080/v2/convert/html-docx', data, config )
 
 `SECRET_KEY`: This is the key what has been passed to the {pluginname} On-Premises instance.
 
-Please refer to the link:https://importdocx.converter.tiny.cloud/v2/convert/docs#section/Import-from-Word[Import from Word^] and the link:https://exportdocx.converter.tiny.cloud/v2/convert/docs#section/Export-to-Word[Export to Word^] REST API documentation to start using the service.
+Please refer to the link:https://importdocx.api.tiny.cloud/v2/convert/docs#section/Import-from-Word[Import from Word^] and the link:https://exportdocx.api.tiny.cloud/v2/convert/docs#section/Export-to-Word[Export to Word^] REST API documentation to start using the service.
 
 [NOTE]
 If API clients like Postman or Insomnia are used, then set the JWT token as an `Authorization` header in the `Headers` tab. Do not use the built-in token authorization as this will generate invalid header with a `Bearer` prefix added to the token.

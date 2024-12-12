@@ -5,7 +5,7 @@ During document writing, the possibility of using many different fonts can be ve
 
 Using the appropriate font can change the appearance of the document and emphasize its style.
 
-{pluginname} Converter allows link:https://exportpdf.converter.tiny.cloud/docs#section/Web-Fonts[Web Fonts^] to be used, which provided the integrator with the ability to use standard operating system fonts or use custom fonts without the need to import them using CSS.
+{pluginname} Converter allows link:https://exportpdf.api.tiny.cloud/docs#section/Web-Fonts[Web Fonts^] to be used, which provided the integrator with the ability to use standard operating system fonts or use custom fonts without the need to import them using CSS.
 
 Below is a list of the basic fonts included in the image:
 
@@ -31,7 +31,7 @@ However, additional fonts can be added to {pluginname} Converter in two ways:
 ** See Use Windows fonts in PDF Converter section.
 
 [NOTE]
-The fonts inside the mounted volume will be installed on the docker image operating system. Only the `.ttf` and `.otf` font formats are supported. If other font formats are used, these will need to be converted to the supported format prior or use fonts such as link:https://exportpdf.converter.tiny.cloud/docs#section/Web-Fonts[Web Fonts^].
+The fonts inside the mounted volume will be installed on the docker image operating system. Only the `.ttf` and `.otf` font formats are supported. If other font formats are used, these will need to be converted to the supported format prior or use fonts such as link:https://exportpdf.api.tiny.cloud/docs#section/Web-Fonts[Web Fonts^].
 
 [TIP]
 Ensure that the converted fonts can be installed and used on your local machine first, before installing them on the docker container.

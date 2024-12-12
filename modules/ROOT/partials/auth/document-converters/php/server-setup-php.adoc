@@ -1,6 +1,6 @@
 === Server Setup (jwt.php)
 
-In the root directory, copy and paste the server setup code into the `jwt.php` file:
+In the root directory, copy and paste the server setup code into the `jwt.php` file.
 
 [source,php]
 ----
@@ -25,7 +25,7 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 
 // JWT payload
 $payload = array(
-    "aud" => "YOUR-API-KEY-HERE",
+    "aud" => "YOUR-API-KEY",
     "iat" => time(), // Issue timestamp
     "exp" => time() + 60 * 10 // Expiration time (10 minutes)
 );

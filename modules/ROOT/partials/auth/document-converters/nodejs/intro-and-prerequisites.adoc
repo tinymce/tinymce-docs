@@ -8,9 +8,9 @@ This guide provides a comprehensive walkthrough for integrating {pluginname} wit
 
 Before diving into the technical details, here's what you'll achieve with this guide:
 
-* A working {productname} editor running {pluginname} plugin.
-* A secure authentication system using JWT token.
-* A simple Node.js server to handle the authentication.
+* A working {productname} editor running the {pluginname} plugin
+* A secure authentication system using JWT tokens
+* A simple Node.js server to handle the authentication
 
 [TIP]
 ====
@@ -21,7 +21,7 @@ This guide is designed for developers new to JWT authentication and {productname
 
 Before starting, ensure you have:
 
-* Node.js installed on your computer
+* Node.js installed on your computer (to check, run `node -v` in your terminal)
 * A {productname} API key (get one from link:https://www.tiny.cloud/signup[TinyMCE's website])
 * Basic familiarity with the command line
 

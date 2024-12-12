@@ -1,10 +1,10 @@
 = {pluginname} plugin
-:navtitle: Export to PDF
-:description: The Export to PDF feature provides the ability to generate a PDF file directly from the editor.
-:description_short: Generate a PDF file directly from the editor.
-:keywords: plugin, exportpdf, export to pdf
-:pluginname: Export to PDF
 :plugincode: exportpdf
+:pluginname: Export to PDF
+:navtitle: {pluginname}
+:description: The {pluginname} feature provides the ability to generate a PDF file directly from the editor.
+:description_short: Generate a PDF file directly from the editor.
+:keywords: plugin, {plugincode}, {pluginname}
 :plugincategory: premium
 
 
@@ -12,7 +12,7 @@ include::partial$misc/admon-export-pdf-paid-addon-pricing.adoc[]
 
 include::partial$misc/admon-requires-7.0v.adoc[]
 
-The {pluginname} feature collects the HTML generated with the `tinymce.editor.getContent()` method and combines it with the default editor content styles along with the styles provided in the plugin configuration. The combined content and styles are then processed by the included server-side converter service, which can be either self-hosted or cloud-based. Following this processing, a PDF file is generated, which is subsequently returned to the user’s browser, enabling them to save it onto their disk or drive.
+The {pluginname} feature collects the HTML generated with the `tinymce.editor.getContent()` method and combines it with the default editor content styles along with the styles provided in the plugin configuration. The combined content and styles are then processed by the included server-side converter service, which can be either self-hosted or cloud-based. Following this processing, a PDF file is generated, which is subsequently returned to the user's browser, enabling them to save it onto their disk or drive.
 
 == Interactive example
 
@@ -36,8 +36,8 @@ tinymce.init({
 [IMPORTANT]
 When using the {pluginname} plugin with the {companyname} Cloud service, JWT authentication is required to use the service. For more information on how to set up JWT authentication with {pluginname}, see examples:
 
-* xref:export-to-pdf-with-jwt-authentication-nodejs.adoc[Export to PDF with JWT authentication (Nodejs)].
-* xref:export-to-pdf-with-jwt-authentication-php.adoc[Export to PDF with JWT authentication (PHP)].
+* xref:export-to-pdf-with-jwt-authentication-nodejs.adoc[{pluginname} with JWT authentication (Node.js)]
+* xref:export-to-pdf-with-jwt-authentication-php.adoc[{pluginname} with JWT authentication (PHP)]
 
 == Basic setup using the self-hosted service
 
@@ -84,4 +84,4 @@ include::partial$commands/{plugincode}-cmds.adoc[]
 
 == API Reference
 
-> Explore the comprehensive API documentation for the {pluginname} Premium plugin at https://exportpdf.api.tiny.cloud/docs[Export to PDF.^]
+> Explore the comprehensive API documentation for the {pluginname} Premium plugin at https://exportpdf.api.tiny.cloud/docs[{pluginname} API Reference Documentation.^]

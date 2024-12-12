@@ -1,11 +1,11 @@
 
 = {pluginname} plugin
-:navtitle: Import from Word
-:description: Provides a way to import .docx (Word documents) or .dotx (Word templates) files into the editor.
-:description_short: Import .docx or .dotx files into the editor.
-:keywords: plugin, importword, import from word
-:pluginname: Import from Word
 :plugincode: importword
+:pluginname: Import from Word
+:navtitle: {pluginname}
+:description: Provides a way to import .docx (Microsoft Word documents) or .dotx (Microsoft Word templates) files into the editor.
+:description_short: Import .docx or .dotx files into the editor.
+:keywords: plugin, {plugincode}, {pluginname}
 :plugincategory: premium
 
 include::partial$misc/admon-import-word-paid-addon-pricing.adoc[]
@@ -37,8 +37,8 @@ tinymce.init({
 [IMPORTANT]
 When using the {pluginname} plugin with the {companyname} Cloud service, JWT authentication is required to use the service. For more information on how to set up JWT authentication with {pluginname}, see examples:
 
-* xref:import-to-word-with-jwt-authentication-nodejs.adoc[Import to Word with JWT authentication].
-* xref:import-to-word-with-jwt-authentication-php.adoc[Import to Word with JWT authentication].
+* xref:import-from-word-with-jwt-authentication-nodejs.adoc[{pluginname} with JWT authentication (Node.js)]
+* xref:import-from-word-with-jwt-authentication-php.adoc[{pluginname} with JWT authentication (PHP)]
 
 == Basic setup using the self-hosted service
 
@@ -83,4 +83,4 @@ include::partial$commands/importword-cmds.adoc[]
 
 == API Reference
 
-> Explore the comprehensive API documentation for the {pluginname} Premium plugin at link:https://importdocx.api.tiny.cloud/v2/convert/docs#section/Import-from-Word[Import from Word.^]
+> Explore the comprehensive API documentation for the {pluginname} Premium plugin at link:https://importdocx.api.tiny.cloud/v2/convert/docs#section/Import-from-Word[{pluginname} API Reference Documentation.^]

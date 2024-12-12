@@ -1,17 +1,17 @@
 = {pluginname} plugin
-:navtitle: exportword
-:description: The export to Word feature lets you generate a .docx file directly from the editor.
-:description_short: Generate a .docx file directly from the editor.
-:keywords: plugin, exportword.
-:pluginname: Export to Word
 :plugincode: exportword
+:pluginname: Export to Word
+:navtitle: {pluginname}
+:description: The {pluginname} feature lets you generate a .docx (Microsoft Word document) file directly from the editor.
+:description_short: Generate a .docx file directly from the editor.
+:keywords: plugin, {plugincode}, {pluginname}
 :plugincategory: premium
 
 include::partial$misc/admon-export-word-paid-addon-pricing.adoc[]
 
 include::partial$misc/admon-requires-7.0v.adoc[]
 
-The export to Microsoft Word feature collects the HTML generated with the `tinymce.editor.getContent()` method and combines it with the default editor content styles along with the styles provided in the plugin configuration. The combined content and styles are then processed by the included server-side converter service, which can be either self-hosted or cloud-based. Following this processing, a Word file is generated, which is subsequently returned to the user’s browser, enabling them to save it in the Word format onto their disk or drive.
+The export to Microsoft Word feature collects the HTML generated with the `tinymce.editor.getContent()` method and combines it with the default editor content styles along with the styles provided in the plugin configuration. The combined content and styles are then processed by the included server-side converter service, which can be either self-hosted or cloud-based. Following this processing, a Word file is generated, which is subsequently returned to the user's browser, enabling them to save it in the Word format onto their disk or drive.
 
 == Interactive example
 
@@ -42,8 +42,8 @@ tinymce.init({
 [IMPORTANT]
 When using the {pluginname} plugin with the {companyname} Cloud service, JWT authentication is required to use the service. For more information on how to set up JWT authentication with {pluginname}, see examples:
 
-* xref:export-to-word-with-jwt-authentication-nodejs.adoc[Export to Word with JWT authentication].
-* xref:export-to-word-with-jwt-authentication-php.adoc[Export to Word with JWT authentication].
+* xref:export-to-word-with-jwt-authentication-nodejs.adoc[{pluginname} with JWT authentication (Node.js)]
+* xref:export-to-word-with-jwt-authentication-php.adoc[{pluginname} with JWT authentication (PHP)]
 
 == Basic setup using the self-hosted service
 
@@ -85,4 +85,4 @@ include::partial$commands/exportword-cmds.adoc[][leveloffset=+1]
 
 == API Reference
 
-> Explore the comprehensive API documentation for the {pluginname} Premium plugin at link:https://exportdocx.api.tiny.cloud/v2/convert/docs#section/Export-to-Word[Export to Word.^]
+> Explore the comprehensive API documentation for the {pluginname} Premium plugin at link:https://exportdocx.api.tiny.cloud/v2/convert/docs#section/Export-to-Word[{pluginname} API Reference Documentation.^]

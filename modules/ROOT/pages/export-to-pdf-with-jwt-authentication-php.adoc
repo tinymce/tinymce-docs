@@ -1,9 +1,9 @@
 = {pluginname} with JWT authentication (PHP) Guide
-:navtitle: JWT Authentication setup for Import from Word
-:description: Guide on how to setup JWT Authentication for importing Word files with {productname}
-:keywords: jwt, authentication, importword, word, php
-:pluginname: Import from Word
-:plugincode: importword
+:navtitle: JWT Authentication setup for Export to PDF
+:description: Guide on how to setup JWT Authentication for exporting PDF files with {productname}
+:keywords: jwt, authentication, exportpdf, pdf, php
+:pluginname: Export to PDF
+:plugincode: exportpdf
 
 include::partial$auth/document-converters/php/intro-and-prerequisites.adoc[]
 
@@ -19,14 +19,14 @@ include::partial$auth/document-converters/php/server-setup-php.adoc[]
 
 === Web Page Setup (index.html)
 
-Inside the `public` folder where you created the `index.html` file add the HTML setup code:
+Inside the `public` folder where you created the `index.html` file add the HTML setup code.
 
 [source,html]
 ----
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TinyMCE with Word Import</title>
+  <title>TinyMCE with PDF Export</title>
   <script 
     src="https://cdn.tiny.cloud/1/YOUR-API-KEY/tinymce/7/tinymce.min.js"
     referrerpolicy="origin">
@@ -34,17 +34,17 @@ Inside the `public` folder where you created the `index.html` file add the HTML 
   <script>
     tinymce.init({
       selector: 'textarea',
-      plugins: 'importword',
-      toolbar: 'importword',
-      importword_converter_options: {
+      plugins: 'exportpdf',
+      toolbar: 'exportpdf',
+      exportpdf_converter_options: {
         'format': 'Letter',
         'margin_top': '1in',
         'margin_right': '1in',
         'margin_bottom': '1in',
         'margin_left': '1in'
       },
-      // importword_token_provider fetches a token from the `/jwt.php` endpoint.
-      importword_token_provider: () => {
+      // exportpdf_token_provider fetches a token from the `/jwt.php` endpoint.
+      exportpdf_token_provider: () => {
         return fetch('http://localhost:3000/jwt.php', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -54,9 +54,9 @@ Inside the `public` folder where you created the `index.html` file add the HTML 
   </script>
 </head>
 <body>
-  <h1>TinyMCE Import Word Demo</h1>
+  <h1>TinyMCE Export to PDF Demo</h1>
   <textarea>
-    Welcome to TinyMCE! Try the Import from Word feature.
+    Welcome to TinyMCE! Try the Export to PDF feature.
   </textarea>
 </body>
 </html>

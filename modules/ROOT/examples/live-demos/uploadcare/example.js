@@ -2,7 +2,6 @@ tinymce.init({
     selector: "textarea",
     plugins: [ "uploadcare", "code", "link", "preview", "lists" ],
     uploadcare_public_key: '<your-public-key>',
-    uploadcare_store_type: 'temporary',
     a11y_advanced_options: true,	
     toolbar: "undo redo | styles | bold italic underline | forecolor | bullist numlist| link uploadcare | code preview",
     height: 700,	

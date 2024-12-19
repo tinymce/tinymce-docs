@@ -46,7 +46,7 @@ In this circumstance, whatever is copied or cut is exactly what is pasted.
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'powerpaste',
   powerpaste_html_import: 'prompt',
 });

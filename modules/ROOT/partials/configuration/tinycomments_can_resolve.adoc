@@ -12,7 +12,7 @@ _Optional_: This option adds a _Resolve Conversation_ item to the dropdown menu 
 const currentAuthor = 'embedded_journalist';
 
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'tinycomments',
   toolbar: 'addcomment showcomments',
   tinycomments_mode: 'embedded',

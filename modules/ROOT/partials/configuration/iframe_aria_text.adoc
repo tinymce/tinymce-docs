@@ -19,7 +19,7 @@ The `+title+` attribute is read by screen-readers to help users identify the edi
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   iframe_aria_text: 'Text Editor'
 });
 ----

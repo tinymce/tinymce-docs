@@ -22,7 +22,7 @@ The default value for this option is `+inherited+`.
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   details_serialized_state: 'collapsed',
 });
 ----

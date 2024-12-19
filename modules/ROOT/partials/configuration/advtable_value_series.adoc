@@ -96,7 +96,7 @@ The generator callback function should return an object with the following prope
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'table advtable',
   toolbar: 'advtablerownumbering',
   advtable_value_series: {
@@ -117,7 +117,7 @@ tinymce.init({
 [source,js]
 ----
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: 'table advtable',
   toolbar: "table advtablerownumbering",
   advtable_value_series: {

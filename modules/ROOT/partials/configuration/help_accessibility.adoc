@@ -18,7 +18,7 @@ The `help_accessibility` option allows for this display to be turned off.
 [source,js]
 ----
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "help",
   help_accessibility: false,
 });
@@ -33,7 +33,7 @@ It is not necessary, but may be useful, to explicitly set the option to `true`.
 [source,js]
 ----
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "help",
   help_accessibility: true,
 });

@@ -18,7 +18,7 @@ This example shows how to change the link for the "Click for more info" button (
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'a11ychecker',
   toolbar: 'a11ycheck',
   a11ychecker_issue_url_callback: (ruleId) =>

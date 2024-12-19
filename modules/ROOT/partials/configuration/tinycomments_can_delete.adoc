@@ -26,7 +26,7 @@ The following example extends the default behavior to allow the author `+<Admin 
 const currentAuthor = 'embedded_journalist';
 
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'tinycomments',
   toolbar: 'addcomment showcomments',
   tinycomments_mode: 'embedded',

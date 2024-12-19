@@ -20,7 +20,7 @@ The callback function in the following example will return `false` if the issue 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'a11ychecker',
   toolbar: 'a11ycheck',
   a11ychecker_filter_issue: (issue) => {
@@ -36,7 +36,7 @@ The callback function in the following example will only return `+false+` if the
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'a11ychecker',
   toolbar: 'a11ycheck',
   a11ychecker_filter_issue: (issue) => {
@@ -52,7 +52,7 @@ The callback function in the following example will only return `false` for any 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'a11ychecker',
   toolbar: 'a11ycheck',
   a11ychecker_filter_issue: (issue) => {

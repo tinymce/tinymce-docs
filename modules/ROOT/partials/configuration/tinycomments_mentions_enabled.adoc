@@ -14,7 +14,7 @@ The {pluginname} plugin offers the `+tinycomments_mentions_enabled+` option to c
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'tinycomments mentions',
   toolbar: 'addcomment showcomments',
   tinycomments_mentions_enabled: true,

@@ -19,7 +19,7 @@ Setting this option to `+auto+`, positions the toolbar and menu bar either:
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   toolbar_location: 'bottom'
 });
 ----

@@ -10,7 +10,7 @@ This option allows you to specify the buttons and the order that they will appea
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   toolbar1: 'undo redo | styles | bold italic | link image',
   toolbar2: 'alignleft aligncenter alignright'
 });

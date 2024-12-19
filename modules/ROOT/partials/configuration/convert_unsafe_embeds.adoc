@@ -16,7 +16,7 @@ When converted to `<img>`, `<video>`, or `<audio>`, this prevents the embedded r
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   convert_unsafe_embeds: false
 });
 ----

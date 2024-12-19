@@ -19,7 +19,7 @@ There are two settings:
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   table_column_resizing: 'resizetable'
 });
 ----

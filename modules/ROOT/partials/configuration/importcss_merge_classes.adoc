@@ -12,7 +12,7 @@ This option is used in cases where the class attribute should be replaced or mer
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   plugins: 'importcss',
   content_css: '/my-styles.css',
   importcss_merge_classes: false

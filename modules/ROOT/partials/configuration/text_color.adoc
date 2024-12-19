@@ -45,7 +45,7 @@ This example sets the number of columns in the default color grid to **10** then
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   toolbar: 'backcolor forecolor',
   color_cols: 10,
   color_cols_background: 3,
@@ -74,7 +74,7 @@ This example sets the number of columns in the default color grid to **10** then
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   toolbar: 'backcolor forecolor',
   color_cols: 10,
   color_cols_foreground: 3,
@@ -194,7 +194,7 @@ That is, the highlight grid takes its values in the following priority order:
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   toolbar: 'forecolor backcolor',
   color_map_background: [
     '000000', 'Black',
@@ -230,7 +230,7 @@ That is, the text color grid takes its values in the following priority order:
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   toolbar: 'forecolor backcolor',
   color_map_foreground: [
     '000000', 'Black',
@@ -271,7 +271,7 @@ Assuming a `color_map` is also set (and it is set by default) other colors in th
 [source,js]
 ----
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   toolbar: 'forecolor backcolor',
   color_default_background: 'yellow',
 });
@@ -293,7 +293,7 @@ Assuming a `color_map` is also set (and it is set by default) other colors in th
 [source,js]
 ----
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   toolbar: 'forecolor',
   color_default_foreground: 'red',
 });

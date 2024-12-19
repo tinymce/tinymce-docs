@@ -21,7 +21,7 @@ Empty object  `{}`
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea#advtemplate',  // change this value according to your html
+  selector: 'textarea#advtemplate',  // change this value according to your HTML
   plugins: ["advtemplate"],
   advtemplate_rename_template: (id, title) =>
     fetch('/templates/' + id, {

@@ -10,7 +10,7 @@ By setting up the `typography_default_lang`, each time the user opens the {produ
 [source,js,subs="attributes+"]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   menu: { tools: { title: 'Tools', items: 'code wordcount typography' }},
   plugins: 'typography',
   toolbar: 'typography',
@@ -36,7 +36,7 @@ If an HTML tag or an HTML tag with a specified attribute is added to the `typogr
 [source,js,subs="attributes+"]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   plugins: '{plugincode}',
   toolbar: 'typography',
   typography_default_lang: 'en-US', 
@@ -58,7 +58,7 @@ When setting up `typography_langs` in {productname}, `lang` values — such as `
 [source,js,subs="attributes+"]
 ----
 tinymce.init({
-  selector: "textarea",  // change this value according to your html
+  selector: "textarea",  // change this value according to your HTML
   plugins: "typography",
   toolbar: "typography",
   typography_default_lang: [ "en-US", "de", "es" ], // Required to set specific typography language rules.
@@ -80,7 +80,7 @@ A user can then select text and select from the available languages. That langua
 [source,js,subs="attributes+"]
 ----
 tinymce.init({
-  selector: 'textarea', // change this value according to your html
+  selector: 'textarea', // change this value according to your HTML
   plugins: '{plugincode}',
   toolbar: '{plugincode} language',
   typography_default_lang: 'en-US',
@@ -200,7 +200,7 @@ All rules supported by the {pluginname} plugin are documented in the https://git
 [source,js,subs="attributes+"]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   plugins: '{plugincode}',
   toolbar: '{plugincode}',
   typography_default_lang: 'en_US', // This is required to configure the default language used by typography.

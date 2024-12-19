@@ -24,7 +24,7 @@ The plugin uses the `advtemplate_create_category` asynchronous function to creat
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea#advtemplate',  // change this value according to your html
+  selector: 'textarea#advtemplate',  // change this value according to your HTML
   plugins: ["advtemplate"],
   advtemplate_create_category: (title) =>
     fetch('/categories', {

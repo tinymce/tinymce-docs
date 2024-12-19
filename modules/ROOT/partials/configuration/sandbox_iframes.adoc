@@ -14,7 +14,7 @@ This option allows control of whether `<iframe>` elements are link:https://devel
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   sandbox_iframes: false
 });
 ----

@@ -22,7 +22,7 @@ For example, when this option is set to `true`, an empty paragraph, `+<p></p>+`,
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   pad_empty_with_br: true,
 });
 ----

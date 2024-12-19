@@ -7,9 +7,9 @@ include::partial$misc/admon-requires-6.6v.adoc[]
 
 The property has a default value of `+false+`.
 
-When this property is set to `true`, a border displays around the `iframe` component.
+When this property is set to `+true+`, a border displays around the `iframe` component.
 
-The border is also highlighted when the `iframe` component takes focus (by, for example, using the Tab key to change focus within the active dialog).
+The border is also highlighted when the `iframe` component takes focus (for example, by using the kbd:[Tab] key to change focus within the active dialog).
 
 *Type:* `+Boolean+`
 
@@ -17,7 +17,7 @@ The border is also highlighted when the `iframe` component takes focus (by, for 
 
 *Default value:* `+false+`
 
-=== Example: using `border` to display a border around an `iframe` component
+==== Example: using `border` to display a border around an `iframe` component
 
 [source,js]
 ----

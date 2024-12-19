@@ -9,16 +9,16 @@ The plugin uses the `advtemplate_get_template` asynchronous function to get a te
 [cols="1,1,1,3",options="header"]
 |===
 |Field |Type |Required? |Description
-|`+id+` | `+string+` | required | The id of the template to get.
+|`+id+` | `+String+` | required | The id of the template to get.
 |===
 
 *Return data:*
 [cols="1,1,3",options="header"]
 |===
 |Field |Type |Description
-|`+id+` | `+string+` | The id of the template.
-|`+title+` | `+string+` | The title of the template.
-|`+content+` | `+string+` | The content of the template.
+|`+id+` | `+String+` | The id of the template.
+|`+title+` | `+String+` | The title of the template.
+|`+content+` | `+String+` | The content of the template.
 |===
 
 
@@ -27,8 +27,8 @@ The plugin uses the `advtemplate_get_template` asynchronous function to get a te
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea#advtemplate',  // change this value according to your HTML
-  plugins: ["advtemplate"],
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'advtemplate',
   advtemplate_get_template: (id) =>
     fetch('/templates/' + id, {
       method: 'GET',

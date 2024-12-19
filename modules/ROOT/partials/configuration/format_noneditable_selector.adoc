@@ -5,7 +5,7 @@ If an element has a `contenteditable="false"` attribute, the `format_noneditable
 
 As well, an element with a `contenteditable="false"` attribute that also has the `data-mce-cef-wrappable` attribute can be wrapped with a format.
 
-Wrappable formats include block formats that have the `wrapper` parameter set to `true` and inline formats.
+Wrappable formats include block formats that have the `wrapper` parameter set to `+true+` and inline formats.
 
 Selector formats are not supported.
 

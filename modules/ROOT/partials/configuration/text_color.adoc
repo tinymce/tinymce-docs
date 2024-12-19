@@ -264,7 +264,7 @@ Once set, the background color for the toolbar button will then render the new c
 
 Assuming a `color_map` is also set (and it is set by default) other colors in the `color_map` are visible by opening the `backcolor` toolbar's menu.
 
-*Type:*  `String`
+*Type:*  `+String+`
 
 ==== Example: using `+color_default_background+`
 
@@ -286,7 +286,7 @@ Once set, the foreground color for the toolbar button will then render the new c
 
 Assuming a `color_map` is also set (and it is set by default) other colors in the `color_map` are visible by opening the `forecolor` toolbar's menu.
 
-*Type:*  `String`
+*Type:*  `+String+`
 
 ==== Example: using `+color_default_foreground+`
 

@@ -5,6 +5,8 @@ Use the `+body_class+` option to add a class to the body of each editor instance
 
 *Type:* `+String+`
 
+*Default value:* `+''+` (empty string)
+
 === Example: using `+body_class+`
 
 This will add the same class to all editors that gets created by the `+init+` call.

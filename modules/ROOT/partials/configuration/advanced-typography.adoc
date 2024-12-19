@@ -5,16 +5,21 @@ This option gives the user the ability to pre-set a default typography language 
 
 By setting up the `typography_default_lang`, each time the user opens the {productname} editor, it will automatically default to the new default language applied.
 
+*Type:* `+String+`
+
+*Possible values:* see the xref:advanced-typography.adoc#currently-supported-languages[Currently supported languages]
+
+*Default value:* `+en-US+`
+
 === Example: Using `typography_default_langs`
 
 [source,js,subs="attributes+"]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  menu: { tools: { title: 'Tools', items: 'code wordcount typography' }},
-  plugins: 'typography',
-  toolbar: 'typography',
-  typography_default_lang: 'en-US', // Define the default language here, example: 'en-US'
+  plugins: '{plugincode}',
+  toolbar: '{plugincode}',
+  typography_default_lang: 'en-US'
 });
 ----
 
@@ -23,13 +28,13 @@ tinymce.init({
 
 This option tells the {pluginname} plugin to ignore content within specified HTML tags or within specified HTML tags that have specified attributes.
 
-If an HTML tag or an HTML tag with a specified attribute is added to the `typography_ignore` array, the Typography plugin’s rules are not applied to material set within that tag.
+If an HTML tag or an HTML tag with a specified attribute is added to the `typography_ignore` array, the Typography plugin's rules are not applied to material set within that tag.
 
-*Type:* `+Array+`
+*Type:* `+Array+` of `+Strings+`
 
 *Possible values:* `[ '<html-selector>', 'span["<html-selector>"]' ]`
 
-*Default value:* none
+*Default value:* `+[]+`
 
 === Example: Using `typography_ignore`
 
@@ -38,7 +43,7 @@ If an HTML tag or an HTML tag with a specified attribute is added to the `typogr
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: '{plugincode}',
-  toolbar: 'typography',
+  toolbar: '{plugincode}',
   typography_default_lang: 'en-US', 
   typography_ignore: [ 'code', 'span["lang"]' ]
 });
@@ -71,9 +76,13 @@ tinymce.init({
 
 This option sets which languages are available for applying language-specific typography rules.
 
-A user can then select text and select from the available languages. That language’s language-specific typography rules are then applied to the selected text.
+A user can then select text and select from the available languages. That language's language-specific typography rules are then applied to the selected text.
 
-*Type:* `+Object+`
+*Type:* `+Array+` of `+Strings+`
+
+*Possible values:* see the xref:advanced-typography.adoc#currently-supported-languages[Currently supported languages]
+
+*Default value:*  `+[ 'be', 'bg', 'ca', 'cs', 'da', 'nl', 'en-GB', 'en-US', 'eo', 'et', 'fi', 'de', 'el', 'hu', 'ga', 'it', 'lv', 'no', 'pl', 'ro', 'ru', 'sr', 'sk', 'sl', 'es', 'sv', 'tr', 'uk' ]+`
 
 === Example: Using `typography_langs`
 
@@ -82,7 +91,7 @@ A user can then select text and select from the available languages. That langua
 tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   plugins: '{plugincode}',
-  toolbar: '{plugincode} language',
+  toolbar: '{plugincode}',
   typography_default_lang: 'en-US',
   typography_langs: [
     'en-US',
@@ -161,7 +170,7 @@ tinymce.init({
 |Russian
 |ru
 
-|Servian
+|Serbian
 |sr
 
 |Slovak
@@ -193,7 +202,11 @@ The {pluginname} plugin rules are sourced from the https://github.com/typograf/t
 
 All rules supported by the {pluginname} plugin are documented in the https://github.com/typograf/typograf/blob/dev/docs/RULES.en-US.md[Rules of typograf].
 
-*Type:* `+Array+`
+*Type:* `+Array+` of `+Strings+`
+
+*Possible values:* see the xref:advanced-typography.adoc#advanced-typography-plugin-rules[Advanced Typography Plugin Rules]
+
+*Default value:* `+undefined+` (all rules are applied)
 
 === Example: Using `typography_rules`
 
@@ -203,7 +216,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: '{plugincode}',
   toolbar: '{plugincode}',
-  typography_default_lang: 'en_US', // This is required to configure the default language used by typography.
+  typography_default_lang: 'en-US',
   typography_rules: [
     'common/punctuation/quote',
     'en-US/dash/main',

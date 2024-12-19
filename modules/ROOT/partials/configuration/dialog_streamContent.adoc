@@ -1,5 +1,5 @@
 [[streamContent]]
-== `streamContent`
+=== `streamContent`
 
 `+streamContent+` is an optional property, available to add to the `+iframe+` dialog component.
 
@@ -21,9 +21,9 @@ A user can, however, scroll through the `+iframe+` component as updates are bein
 
 *Possible values:* `+true+` `+false+`
 
-*Default value:* `false`
+*Default value:* `+false+`
 
-=== Example: setting an `iframe` component to display updating content using the `streamContent` property
+==== Example: setting an `iframe` component to display updating content using the `streamContent` property
 
 [source,js]
 ----
@@ -52,7 +52,7 @@ tinymce.activeEditor.windowManager.open({
 [NOTE]
 .Dialog position
 ====
-The example above also adds a second argument — `{ inline: 'bottom' } — to the dialog. This argument changes the presented position of the dialog within the {productname} editor.
+The example above also adds a second argument — `+{ inline: 'bottom' }+` — to the dialog. This argument changes the presented position of the dialog within the {productname} editor.
 
 For information on using this property see the xref:dialog-configuration.adoc#dialog-position[Dialog position] section of the xref:dialog-configuration.adoc[Dialog configuration documentation].
 ====
@@ -64,7 +64,7 @@ The recommended method for updating content in an `+iframe+` component is:
 
 [source,js]
 ----
-`onAction: (api) => api.setData({ myiframe: 'new content' })`
+onAction: (api) => api.setData({ myiframe: 'new content' })
 ----
 
 . This updates the iframe to contain the string `'new content'`. This text can be any valid html.

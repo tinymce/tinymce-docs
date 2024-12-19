@@ -1,16 +1,28 @@
 [[auto_focus]]
 == `+auto_focus+`
 
-Automatically set the focus to an editor instance. The value of this option should be an editor instance `+id+`. The editor instance id is the id for the original `+textarea+` or `+div+` element that got replaced.
+Automatically set the focus to an editor instance. The value of this option should be an editor instance `+id+`. The editor instance id is the id for the original `+textarea+` or `+div+` element that got replaced. If you set this option to `+true+`, the focus will be set to the last initialized editor instance.
 
-*Type:* `+String+`
+*Type:* `+String+` or `+true+`
 
-=== Example: using `+auto_focus+`
+*Default value:* `+undefined+`
+
+=== Example: using `+auto_focus+` with custom `+id+`
 
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   auto_focus: 'element1'
+});
+----
+
+=== Example: using `+auto_focus+` with `+true+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  auto_focus: true
 });
 ----

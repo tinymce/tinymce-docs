@@ -9,20 +9,19 @@ The plugin uses the `advtemplate_rename_category` asynchronous function to renam
 [cols="1,1,1,3",options="header"]
 |===
 |Field |Type |Required? |Description
-|`+id+` | `+string+` | required | The id of the category to rename.
-|`+title+` | `+string+` | required | New category title.
+|`+id+` | `+String+` | required | The id of the category to rename.
+|`+title+` | `+String+` | required | New category title.
 |===
 
-*Return data:*
-Empty object  `{}`
+*Return data:* Empty object  `{}`
 
 === Example: using `advtemplate_rename_category`
 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea#advtemplate',  // change this value according to your HTML
-  plugins: ["advtemplate"],
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'advtemplate',
   advtemplate_rename_category: (id, title) =>
     fetch('/categories/' + id, {
       method: 'PUT',

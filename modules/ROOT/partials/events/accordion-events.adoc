@@ -3,6 +3,6 @@ The following events are provided by the xref:accordion.adoc[Accordion plugin].
 [cols="1,1,2",options="header"]
 |===
 |Name |Data |Description
-|ToggledAccordion |Passes the state — `+true+` or `~+false+` — and the element. |Fired when an accordion is toggled.
-|ToggledAllAccordions |Passes the state — `+true+`, `~+false+`, or undefined — and all the affected elements. |Fired when all accordions are toggled.
+|ToggledAccordion |Passes the state — `+true+` or `+false+` — and the element. |Fired when an accordion is toggled.
+|ToggledAllAccordions |Passes the state — `+true+`, `+false+`, or `+undefined+` — and all the affected elements. |Fired when all accordions are toggled.
 |===

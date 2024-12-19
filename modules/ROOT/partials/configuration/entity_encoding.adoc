@@ -17,6 +17,10 @@ The base entities `+<+`, `+>+`, `+&+`, `+'+`, and `+"+` will always be entity en
 
 *Type:* `+String+`
 
+*Possible values:* `+'named'+`, `+'numeric'+`, `+'raw'+`, `+'named,numeric'+`, `+'named+numeric'+`, `+'numeric,named'+`, `+'numeric+named'+`
+
+*Default value:* `+'named'+`
+
 ==== Example: using `+entity_encoding+`
 
 [source,js]

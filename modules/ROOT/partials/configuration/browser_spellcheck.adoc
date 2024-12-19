@@ -7,9 +7,9 @@ For integrated spell-checking, check out the xref:introduction-to-tiny-spellchec
 
 *Type:* `+Boolean+`
 
-*Default value:* `+false+`
-
 *Possible values:* `+true+`, `+false+`
+
+*Default value:* `+false+`
 
 [source,js]
 ----
@@ -19,4 +19,4 @@ tinymce.init({
 });
 ----
 
-For more information about spell checking in {productname}, see xref:spell-checking.adoc[this page] in the General-configuration-guide/ guide.
+For more information about spell checking in {productname}, refer to xref:spell-checking.adoc[Spell Checking in {productname}].

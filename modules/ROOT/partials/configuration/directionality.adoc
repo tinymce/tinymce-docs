@@ -1,15 +1,13 @@
 [[directionality]]
 == `+directionality+`
 
-:plugincode: directionality
-
 This option allows you to set the base direction of directionally neutral text (i.e., text that doesn't have inherent directionality as defined in Unicode) within the editor. This is similar to the use of the `+'dir'+` attribute when using content editable elements by themselves.
 
 *Type:* `+String+`
 
-*Default value:* `+'ltr'+`
-
 *Possible values:* `+'ltr'+`, `+'rtl'+`
+
+*Default value:* `+'ltr'+` for left-to-right languages, `+'rtl'+` for right-to-left languages.
 
 === Example: using `+directionality+`
 

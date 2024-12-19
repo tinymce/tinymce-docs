@@ -7,6 +7,7 @@ This option provides the default location to load the emoji database from. The d
 
 *Default value:* `+'${pluginUrl}/js/emojis.js'+`
 
+.emojis.js
 [source,js]
 ----
 tinymce.Resource.add('tinymce.plugins.emoticons', {

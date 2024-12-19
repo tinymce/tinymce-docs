@@ -9,16 +9,16 @@ The plugin uses the `advtemplate_create_template` asynchronous function to creat
 [cols="1,1,1,3",options="header"]
 |===
 |Field |Type |Required? |Description
-|`+title+` | `+string+` | required | The title of the template.
-|`+content+` | `+string+` | required | The content of the template.
-|`+categoryId+` | `+string+` | optional | The parent category id.
+|`+title+` | `+String+` | required | The title of the template.
+|`+content+` | `+String+` | required | The content of the template.
+|`+categoryId+` | `+String+` | optional | The parent category id.
 |===
 
 *Return data:*
 [cols="1,1,3",options="header"]
 |===
 |Field |Type |Description
-|`+id+` | `+string+` | The id of newly created template.
+|`+id+` | `+String+` | The id of newly created template.
 |===
 
 === Example: using `advtemplate_create_template`
@@ -26,8 +26,8 @@ The plugin uses the `advtemplate_create_template` asynchronous function to creat
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea#advtemplate',  // change this value according to your HTML
-  plugins: ["advtemplate"],
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'advtemplate',
   advtemplate_create_template: (title, content, categoryId) =>
     fetch('/templates', {
       method: 'POST',

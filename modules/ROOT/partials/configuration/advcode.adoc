@@ -3,11 +3,13 @@
 
 include::partial$misc/admon-requires-6.3v.adoc[]
 
-As part of the {productname} 6.3 release, the {pluginname} plugin includes a new option, `advcode_inline`, that allows users to open the Enhanced Code Editor within {productname}’s existing editor space instead of being displayed in a separate dialog box.
+As part of the {productname} 6.3 release, the {pluginname} plugin includes a new option, `advcode_inline`, that allows users to open the Enhanced Code Editor within {productname}'s existing editor space instead of being displayed in a separate dialog box.
 
-Type : `boolean`,
+*Type:* `+Boolean+`
 
-Default: false
+*Possible values:* `+true+`, `+false+`
+
+*Default value:* `+false+`
 
 == Example: basic setup
 
@@ -26,17 +28,17 @@ tinymce.init({
 
 include::partial$misc/admon-requires-7.3v.adoc[]
 
-As part of the {productname} 7.3 release, the {pluginname} plugin includes a new option, `advcode_prettify_getcontent`, which is set to `false` by default.
+As part of the {productname} 7.3 release, the {pluginname} plugin includes a new option, `advcode_prettify_getcontent`, which is set to `+false+` by default.
 
-When this option is set to `true` it will format the HTML code when `editor.getContent` is called.
+When this option is set to `+true+` it will format the HTML code when `editor.getContent` is called.
 
 This is equivalent to retrieving formatted content by calling `+tinymce.activeEditor.getContent({ prettify: true })+`, regardless of the option's status.
 
 *Type:* `+Boolean+`
 
-*Default value:* `+false+`
-
 *Possible values:* `+true+`, `+false+`
+
+*Default value:* `+false+`
 
 == Example: basic setup
 
@@ -58,15 +60,15 @@ If existing HTML content in the database is not well-formatted or has inconsiste
 
 include::partial$misc/admon-requires-7.3v.adoc[]
 
-As part of the {productname} 7.3 release, the {pluginname} plugin includes a new option, `advcode_prettify_editor`, which is set to `true` by default.  
+As part of the {productname} 7.3 release, the {pluginname} plugin includes a new option, `advcode_prettify_editor`, which is set to `+true+` by default.  
 
 By default, any code rendered inside **Enhanced Coded Editor** will be formatted with correct indentation.
 
-Type : `boolean`,
-
-Default: `+true+`
+*Type:* `+Boolean+`
 
 *Possible values:* `+true+`, `+false+`
+
+*Default value:* `+true+`
 
 == Example: basic setup
 
@@ -81,4 +83,4 @@ tinymce.init({
 ----
 
 [NOTE]
-To disable this default behavior, set the `advcode_prettify_editor` option to `false`.
+To disable this default behavior, set the `advcode_prettify_editor` option to `+false+`.

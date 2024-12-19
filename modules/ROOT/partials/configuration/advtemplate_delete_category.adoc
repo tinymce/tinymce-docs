@@ -9,7 +9,7 @@ The plugin uses the `advtemplate_delete_category` asynchronous function to delet
 [cols="1,1,1,3",options="header"]
 |===
 |Field |Type |Required? |Description
-|`+id+` | `+string+` | required | The id of the category to delete.
+|`+id+` | `+String+` | required | The id of the category to delete.
 |===
 
 *Return data:*
@@ -20,8 +20,8 @@ Empty object  `{}`
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea#advtemplate',  // change this value according to your HTML
-  plugins: ["advtemplate"],
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'advtemplate',
   advtemplate_delete_category: (id) =>
     fetch('/categories/' + id, {
       method: 'DELETE',

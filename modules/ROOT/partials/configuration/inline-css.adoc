@@ -2,9 +2,9 @@
 
 Determines whether it is valid for a given CSS selector to have its CSS properties inlined into the HTML content.
 
-Default: All selectors are considered valid to have their CSS inlined.
+*Default value:* All selectors are considered valid to have their CSS inlined.
 
-Type: `String` `RegExp` or `Function`
+*Type:* `+String+`, `RegExp` or `Function`
 
 [source,ts]
 ----
@@ -17,9 +17,9 @@ inlinecss_selector_filter: (selector: string): boolean => {
 
 Determines whether it is valid for a given CSS stylesheet to have its CSS inspected and inlined into the HTML content.
 
-Default: All CSS stylesheet are considered valid to have their CSS inspected and inlined.
+*Default value:* All CSS stylesheet are considered valid to have their CSS inspected and inlined.
 
-Type: `String` `RegExp` or `Function`
+*Type:* `+String+`, `RegExp` or `Function`
 
 [source,ts]
 ----

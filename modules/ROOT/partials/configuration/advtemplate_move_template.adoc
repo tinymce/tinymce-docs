@@ -9,20 +9,19 @@ The plugin uses the `advtemplate_move_template` asynchronous function to move th
 [cols="1,1,1,3",options="header"]
 |===
 |Field |Type |Required? |Description
-|`+templateId+` | `+string+` | required | The id of the template to move .
-|`+newCategoryId+` | `+string+` | optional | The id of the destination category.
+|`+templateId+` | `+String+` | required | The id of the template to move.
+|`+newCategoryId+` | `+String+` | optional | The id of the destination category.
 |===
 
-*Return data:*
-Empty object  `{}`
+*Return data:* Empty object  `{}`
 
 === Example: using `advtemplate_move_template`
 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea#advtemplate',  // change this value according to your HTML
-  plugins: ["advtemplate"],
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'advtemplate',
   advtemplate_move_template: (templateId) =>
     fetch('/templates/' + templateId, {
       method: 'PATCH',

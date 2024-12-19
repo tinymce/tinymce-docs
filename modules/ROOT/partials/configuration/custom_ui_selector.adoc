@@ -1,19 +1,26 @@
 [[custom_ui_selector]]
 == `+custom_ui_selector+`
 
-Use the *custom_ui_selector* option to specify the elements that you want {productname} to treat as a part of the editor UI. Specifying elements enables the editor not to lose the selection even if the focus is moved to the elements matching this selector. The `+editor blur+` event is not fired if the focus is moved to elements matching this selector since it's treated as part of the editor UI.
+Use the `+custom_ui_selector+` option to specify the elements that you want {productname} to treat as a part of the editor UI. Specifying elements enables the editor not to lose the selection even if the focus is moved to the elements matching this selector. The editor `+blur+` event is not fired if the focus is moved to elements matching this selector since it's treated as part of the editor UI.
 
 *Type:* `+String+`
 
+*Default value:* `+''+`
+
 === Example: using `+custom_ui_selector+`
 
-[source,html]
+.JavaScript
+[source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   custom_ui_selector: '.my-custom-button'
 });
-...
+----
+
+.HTML
+[source,html]
+----
 <textarea></textarea>
 <button class="my-custom-button">Button</button>
 ----

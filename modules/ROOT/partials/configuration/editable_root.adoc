@@ -1,13 +1,15 @@
 [[editable_root]]
 == `+editable_root+`
 
-This option sets the initial editable state of a {productname} instance’s root.
+This option sets the initial editable state of a {productname} instance's root.
 
-Setting `editable_root` to `false` sets the {productname} root to non-editable (in effect, read-only).
+Setting `editable_root` to `+false+` sets the {productname} root to non-editable (in effect, read-only).
 
 NOTE: a {productname} root set as not-editable can contain child elements with the `contenteditable="true"` attribute set. And these child elements remain editable even when `editable_root: false` is set.
 
 *Type:* `+Boolean+`
+
+*Possible values:* `+true+`, `+false+`
 
 *Default value:* `+true+`
 

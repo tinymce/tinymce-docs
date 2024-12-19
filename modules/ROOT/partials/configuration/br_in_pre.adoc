@@ -9,13 +9,16 @@ However, when `+br_in_pre+` is set to `+false+`, rather than inserting a `+br+` 
 
 `+<pre>This is inside</pre><pre>a pre tag.</pre>+`
 
-NOTE: When this option is set to `+false+`, `+shift+enter+` will insert a `+br+` tag.
+[NOTE]
+====
+When this option is set to `+false+`, kbd:[Shift+Enter] will insert a `+br+` tag.
+====
 
 *Type:* `+Boolean+`
 
-*Default value:* `+true+`
-
 *Possible values:* `+true+`, `+false+`
+
+*Default value:* `+true+`
 
 === Example: using `+br_in_pre+`
 

@@ -3,13 +3,13 @@
 
 This option, which is on by default, adds a newline character — U+000A, `\n` — between closing and opening block elements when HTML is output using `xref:apis/tinymce.editor.adoc#getContent[getContent()]` and when HTML is rendered in the {productname} xref:preview.adoc[Preview] dialog.
 
-Set `+indent+` to `false` to get HTML output from {productname} without having any newline characters added.
+Set `+indent+` to `+false+` to get HTML output from {productname} without having any newline characters added.
 
 *Type:* `+Boolean+`
 
-*Possible values:* `true`, `false`
+*Possible values:* `+true+`, `+false+`
 
-*Default value:* `true`
+*Default value:* `+true+`
 
 === Example: setting `+indent+` to false
 

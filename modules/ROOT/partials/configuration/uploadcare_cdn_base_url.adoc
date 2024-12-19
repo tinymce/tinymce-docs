@@ -5,14 +5,14 @@ Specifies the domain used for the Uploadcare service. This domain determines whe
 
 *Type:* `+String+`
 
-*Default:* `+https://ucarecdn.com/+`
+*Default value:* `+https://ucarecdn.com/+`
 
 === Example: Customizing `uploadcare_cdn_base_url`
 
 [source,js]
 ----
 tinymce.init({
-  selector: "textarea",
+  selector: 'textarea',
   plugins: 'uploadcare',
   toolbar: 'uploadcare',
   uploadcare_public_key: '<your-public-key>',

@@ -5,24 +5,24 @@ include::partial$misc/admon-requires-6.6v.adoc[]
 
 `+align+` is an optional property to add to dialog labels to set the alignment of the label text.
 
-The property has a default value of `+start+`.
+The property has a default value of `+'start'+`.
 
 This is also the value applied if the property is not explicitly set.
 
 *Type:* `+String+`
 
-*Possible values:* `'+start+'`, `'+center+'`, `+end+`
+*Possible values:* `+'start'+`, `+'center'+`, `+'end'+`
 
-*Default value:* `+start+`
+*Default value:* `+'start'+`
 
-The values, `+start+` and `+end+`, refer to the beginning or end of a text line and are relative to the display language.
+The values, `+'start'+` and `+'end'+`, refer to the beginning or end of a text line and are relative to the display language.
 
-For left-to-right written languages (eg English or Vietnamese), `+start+` sets the dialog label as left-aligned and `+end+` sets the dialog label as right-aligned.
+For left-to-right written languages (eg English or Vietnamese), `+'start'+` sets the dialog label as left-aligned and `+'end'+` sets the dialog label as right-aligned.
 
-For right-to-left written languages (eg Arabic or Persian), `+start+` sets the dialog label as right-aligned and `+end+` sets the dialog label as left-aligned.
+For right-to-left written languages (eg Arabic or Persian), `+'start'+` sets the dialog label as right-aligned and `+'end'+` sets the dialog label as left-aligned.
 
 
-=== Example: using `align` to set a dialog caption as end-aligned
+==== Example: using `align` to set a dialog caption as end-aligned
 
 [source,js]
 ----

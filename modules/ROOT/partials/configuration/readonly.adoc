@@ -1,13 +1,13 @@
 [[readonly]]
 == `readonly`
 
-Setting the `readonly` option to `true` initializes the editor in **readonly** mode instead of editing (**design**) mode. Once initialized, the editor can be switched to **design** mode using the xref:apis/tinymce.editormode.adoc#set[`tinymce.editor.mode.set` API].
+Setting the `readonly` option to `+true+` initializes the editor in **readonly** mode instead of editing (**design**) mode. Once initialized, the editor can be switched to **design** mode using the xref:apis/tinymce.editormode.adoc#set[`tinymce.editor.mode.set` API].
 
-*Type:* `Boolean`
+*Type:* `+Boolean+`
 
-*Default value:* `false`
+*Default value:* `+false+`
 
-*Possible values:* `true`, `false`
+*Possible values:* `+true+`, `+false+`
 
 === Example: Using `readonly`
 

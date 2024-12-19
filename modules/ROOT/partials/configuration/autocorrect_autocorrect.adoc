@@ -1,17 +1,17 @@
 [[autocorrect_autocorrect]]
 == `+autocorrect_autocorrect+`
 
-This option enables or disables spelling error autocorrection when the {productname} editor is loaded.
+This option enables or disables spelling error auto-correction when the {productname} editor is loaded.
 
-When set to `true`, spelling error autocorrection is enabled when {productname} is initialized.
+When set to `+true+`, spelling error auto-correction is enabled when {productname} is initialized.
 
 include::partial$misc/autocorrect-options-notes.adoc[]
 
 *Type:* `+Boolean+`
 
-*Default value:* `+true+`
-
 *Possible values:* `+true+`, `+false+`
+
+*Default value:* `+true+`
 
 === Example: using `+autocorrect_autocorrect+`
 

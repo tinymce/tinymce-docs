@@ -3,18 +3,18 @@
 
 This option allows you to include specific ordered list item markers in the default `+numlist+` toolbar control.
 
-*Type:* `+String+`
-
-*Default value:* `+'default,lower-alpha,lower-greek,lower-roman,upper-alpha,upper-roman'+`
+*Type:* A comma-separated `+String+` of list styles.
 
 *Possible values:*
 
 * `+default+`: the browser's default style
-* `+lower-alpha+`: lowercase ASCII letters, e.g. a, b, c, ... z
+* `+lower-alpha+`: lowercase ASCII letters, e.g. a, b, c, ... z, aa, ab, ac ...
 * `+lower-greek+`: lowercase classical Greek (alpha, beta, gamma), e.g. α, β, γ ...
 * `+lower-roman+`: lowercase roman numerals, e.g. i, ii, iii, iv, v ...
-* `+upper-alpha+`: uppercase ASCII letters, e.g. A, B, C, ... Z
+* `+upper-alpha+`: uppercase ASCII letters, e.g. A, B, C, ... Z, AA, AB, AC ...
 * `+upper-roman+`: uppercase roman numerals, e.g. I, II, III, IV, V ...
+
+*Default value:* `+'default,lower-alpha,lower-greek,lower-roman,upper-alpha,upper-roman'+`
 
 === Example: using `+advlist_number_styles+`
 

@@ -1,11 +1,11 @@
 [[charmap]]
 == `+charmap+`
 
-:plugincode: charmap
-
 With this option it is possible to fully override the default character map. This can be an array or a function that returns an array in the above mentioned format.
 
-*Type:* `+Array+`, `+Function+`
+*Type:* `+Array+` or `+Function+`
+
+*Default value:* `+undefined+`
 
 === Example: using `+charmap+`
 

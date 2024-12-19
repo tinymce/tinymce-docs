@@ -100,7 +100,7 @@ tinymce.init({
 
 === Example: disabling `ai_shortcuts`
 
-To disable the {pluginname} shortcuts menu and toolbar options, set `ai_shortcuts` to `false` (or to `+[]+`, an empty array).
+To disable the {pluginname} shortcuts menu and toolbar options, set `ai_shortcuts` to `+false+` (or to `+[]+`, an empty array).
 
 [source,js]
 ----

@@ -1,7 +1,7 @@
 [[resize]]
 == `+resize+`
 
-This option allows the resize handle to be disabled or to set the resize handler to resize both horizontally and vertically. The option can be `+true+`, `+false+` or the string `+'both'+`. `+False+` disables resizing, `+true+` enables vertical resizing only, `+'both'+` makes it possible to resize in both directions horizontal and vertical.
+This option allows the resize handle to be disabled or to set the resize handler to resize both horizontally and vertically. The option can be `+true+`, `+false+` or the string `+'both'+`. `+false+` disables resizing, `+true+` enables vertical resizing only, `+'both'+` makes it possible to resize in both directions horizontal and vertical.
 
 When resizing is enabled, the editor can be resized by either:
 
@@ -10,9 +10,9 @@ When resizing is enabled, the editor can be resized by either:
 
 *Type:* `+Boolean+` or `+String+`
 
-*Default value:* `+true+`
+*Possible values:* `+true+`, `+false+`, or `+'both'+`
 
-*Possible values:* `+true+`, `+false+`, `+'both'+`
+*Default value:* `+true+` for desktop, `+false+` for mobile
 
 include::partial$misc/admon-different-default-for-mobile.adoc[]
 

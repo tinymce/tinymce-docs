@@ -7,9 +7,9 @@ This options allows you to turn on/off the resizing handles on images, tables or
 
 *Type:* `+Boolean+`, `+String+`
 
-*Default value:* `+true+`
+*Possible values:* `+true+`, `+false+`
 
-*Possible values:* `+true+`, `+false+`, or a valid CSS selector
+*Default value:* `+true+`, or a valid CSS selector
 
 include::partial$misc/admon-different-default-for-mobile.adoc[]
 
@@ -27,9 +27,9 @@ tinymce.init({
 
 *Type:* `+Boolean+`, `+String+`
 
-*Default value:* `+true+`
+*Possible values:* `+true+`, `+false+`
 
-*Possible values:* `+true+`, `+false+`, `+img+`
+*Default value:* `+true+`, `+img+`
 
 ==== Example: enable object resizing for images
 

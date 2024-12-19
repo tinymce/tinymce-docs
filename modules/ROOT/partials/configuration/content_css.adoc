@@ -3,7 +3,9 @@
 
 The `+content_css+` option loads the specified CSS files into the editable area.
 
-*Type:* `+String+`, `+Array+`
+*Type:* `+String+`, `+Array+` of `+Strings+`, or `+false+`
+
+*Default value:* `+['default']+` for classic mode, `+[]+` for inline mode
 
 NOTE: This option is intended for use with {productname}'s classic mode, as the editable area is sandboxed within an iframe. For inline mode editors, relevant CSS stylesheets should be loaded as part of the webpage {productname} is rendered in, not using the `+content_css+` option.
 

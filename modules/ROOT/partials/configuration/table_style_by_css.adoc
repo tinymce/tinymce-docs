@@ -1,13 +1,13 @@
 [[table_style_by_css]]
 == `+table_style_by_css+`
 
-This option enables you to force the Table Properties dialog to use HTML5/CSS3 standards for setting cell spacing and cellpadding. By default, cell spacing is applied to the table element as a `+border-spacing+` style and cell padding is applied to all `+td+` elements as a `+padding+` style. By setting this to `false`, these are added as attributes to the table element.
+This option enables you to force the Table Properties dialog to use HTML5/CSS3 standards for setting cell spacing and cellpadding. By default, cell spacing is applied to the table element as a `+border-spacing+` style and cell padding is applied to all `+td+` elements as a `+padding+` style. By setting this to `+false+`, these are added as attributes to the table element.
 
 *Type:* `+Boolean+`
 
-*Default value:* `+true+`
-
 *Possible values:* `+true+`, `+false+`
+
+*Default value:* `+true+`
 
 === Example: using `+table_style_by_css+`
 

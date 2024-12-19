@@ -1,13 +1,13 @@
 [[uploadcare-srcset-steps]]
 == `uploadcare_srcset_steps`
 
-Specifies an array of numeric values representing the widths used to generate the `srcset` attribute for responsive images. This enables browsers to select the most suitable resolution based on the device’s display and network conditions.
+Specifies an array of numeric values representing the widths used to generate the `srcset` attribute for responsive images. This enables browsers to select the most suitable resolution based on the device's display and network conditions.
 
 Customize this array to include **only** the widths required for your application. Reducing the number of resolutions can improve processing speed, while adding specific sizes can accommodate unique layout needs.
 
 *Type:* `+Array+`
 
-*Default:* `+[100, 200, 300, 500, 750, 1000, 1250, 1500, 2000, 2500, 3000]+`
+*Default value:* `+[100, 200, 300, 500, 750, 1000, 1250, 1500, 2000, 2500, 3000]+`
 
 === Example: Generated `srcset` Attribute with Custom Widths
 

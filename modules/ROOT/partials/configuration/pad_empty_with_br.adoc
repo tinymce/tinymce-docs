@@ -9,13 +9,13 @@ For example, the empty paragraph `+<p></p>+` will, by default, be serialized to 
 
 The `+pad_empty_with_br+` option enables {productname} to change this default placeholder to a break tag: `+<br>+`.
 
-For example, when this option is set to `true`, an empty paragraph, `+<p></p>+`, is serialized to `+<p><br></p>+`.
+For example, when this option is set to `+true+`, an empty paragraph, `+<p></p>+`, is serialized to `+<p><br></p>+`.
 
 *Type:* `+Boolean+`
 
-*Possible values:* `true`, `false`
+*Possible values:* `+true+`, `+false+`
 
-*Default value:* `false`
+*Default value:* `+false+`
 
 === Example: using `pad_empty_with_br`
 

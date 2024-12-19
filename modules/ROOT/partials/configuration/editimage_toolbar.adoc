@@ -3,6 +3,8 @@
 
 The exact selection of buttons that will appear on the contextual toolbar can be controlled via `+editimage_toolbar+` option.
 
+*Type:* `+String+`
+
 *Possible values:*
 
 * `+rotateleft+`
@@ -12,9 +14,7 @@ The exact selection of buttons that will appear on the contextual toolbar can be
 * `+editimage+`
 * `+imageoptions+`
 
-*Type:* `+String+`
-
-*Default value:* `+'rotateleft rotateright | flipv fliph | editimage imageoptions'+`
+*Default value:* `+'rotateleft rotateright flipv fliph editimage imageoptions'+`
 
 === Example: using `+editimage_toolbar+`
 

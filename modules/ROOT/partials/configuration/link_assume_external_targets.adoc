@@ -10,9 +10,9 @@ Set whether {productname} should prepend a `+http://+` prefix if the supplied UR
 
 *Type:* `+Boolean+` or `+String+`
 
-*Default value:* `+false+`
+*Possible values:* `+true+`, `+false+`
 
-*Possible values:* `+true+`, `+false+`, `+'http'+`, `+'https'+`
+*Default value:* `+false+`, `+'http'+`, `+'https'+`
 
 === Example: using `+link_assume_external_targets+`
 

@@ -46,5 +46,5 @@ tinymce.init({
 ====
 The option does not require the xref:accordion.adoc[Accordion] plugin be loaded to come into effect.
 
-In the above example, when *File → New document* is selected, the xref:content-behavior-options#newdocument_content[`newdocument_content`] option puts a `<details>` element into the new editor instance and the `details_initial_state` option causes that element to present as open.
+In the above example, when menu:File[New document] is selected, the xref:content-behavior-options#newdocument_content[`newdocument_content`] option puts a `<details>` element into the new editor instance and the `details_initial_state` option causes that element to present as open.
 ====

@@ -1,10 +1,10 @@
 [[default_font_stack]]
 == `+default_font_stack+`
 
-This option changes the default font stack that is considered as the "System Font" stack in the fontfamily toolbar and menu items. It's should be an
-array of font family names that matches the default fonts in the the configured xref:add-css-options.adoc#content_css[content_css] CSS file.
+This option changes the default font stack that is considered as the "System Font" stack in the fontfamily toolbar and menu items. It should be an
+array of font family names that matches the default fonts in the configured xref:add-css-options.adoc#content_css[content_css] CSS file.
 
-*Type:* `+Array+`
+*Type:* `+Array+` of `+Strings+`
 
 *Default value:* `[ '-apple-system', 'Segoe UI', 'Roboto', 'Helvetica Neue', 'sans-serif' ]`
 

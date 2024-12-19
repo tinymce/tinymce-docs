@@ -3,16 +3,16 @@
 
 This option allows you to include specific unordered list item markers in the default `+bullist+` toolbar control.
 
-*Type:* `+String+`
-
-*Default value:* `+'default,circle,square'+`
+*Type:* A comma-separated `+String+` of list styles.
 
 *Possible values:*
 
-* `+default+`: the browser’s default style
+* `+default+`: the browser's default style
 * `+circle+`: a hollow circle
 * `+disc+`: a filled circle
 * `+square+`: a filled square
+
+*Default value:* `+'default,circle,square'+`
 
 === Example: using `+advlist_bullet_styles+`
 

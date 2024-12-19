@@ -49,7 +49,7 @@ Each top-level properties of the `advtable_value_series` object are used as the 
 [cols="1,2,1,4",options="header"]
 |===
 |Name |Value |Requirement |Description
-|title |`+string+` |Required |The text shown in the UI for the series.
+|title |`+String+` |Required |The text shown in the UI for the series.
 |update |`+boolean+` |Optional |default: `+false+` - When `+true+`, the series values will be updated when changes are made to the table.
 |resizable |`+boolean+` |Optional |default: `+true+` - When `+true+`, table cells containing the series values can be resized using a mouse or touch device.
 |generator |`+(info: GeneratorInfo, rowIndex: number, columnIndex: number) => GeneratorResult+` |Required |For details on creating a value series generator, see: xref:advtable.adoc#creating-a-value-series-generator[Creating a value series generator].
@@ -87,8 +87,8 @@ The generator callback function should return an object with the following prope
 |===
 |Name |Value |Requirement |Description
 |classes |`+string[]+` |Optional |The classes to be applied to the table cell.
-|attributes |`+Object+` |Optional |The attributes to be applied to the table cell. The `+attributes+` should be provided as an object where each key is an attribute and each value is of type `+string+`, `+boolean+`, `+number+`, or `+null+`. A value of `+null+` for an attribute will remove the attribute from the table cell.
-|value |`+string+`, `+number+` or `+undefined+` |Optional |The value of the table cell. If the value is `+undefined+`, the editor will use the previous value of the table cell.
+|attributes |`+Object+` |Optional |The attributes to be applied to the table cell. The `+attributes+` should be provided as an object where each key is an attribute and each value is of type `+String+`, `+boolean+`, `+number+`, or `+null+`. A value of `+null+` for an attribute will remove the attribute from the table cell.
+|value |`+String+`, `+number+` or `+undefined+` |Optional |The value of the table cell. If the value is `+undefined+`, the editor will use the previous value of the table cell.
 |===
 
 === Example: using `+advtable_value_series+`

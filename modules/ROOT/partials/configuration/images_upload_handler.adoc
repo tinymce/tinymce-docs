@@ -11,7 +11,7 @@ The upload handler function takes two arguments:
 and returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise] that will resolve with the uploaded image URL or reject with an error. The error can be either a string or an object containing the following properties:
 
 * `+message+` - The error message to display in the UI.
-* `+remove+` - A flag to remove the image from the document, defaults to `false` if not set.
+* `+remove+` - A flag to remove the image from the document, defaults to `+false+` if not set.
 
 When this option is not set, {productname} utilizes an `+XMLHttpRequest+` to upload images one at a time to the server and resolves the `Promise` with the JSON `location` property for the remote image returned by the server.
 

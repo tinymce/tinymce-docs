@@ -44,13 +44,13 @@ tinymce.init({
 ====
 The option does not require the xref:accordion.adoc[Accordion] plugin be loaded to come into effect.
 
-In the above example, when *File → New document* is selected, the xref:content-behavior-options#newdocument_content[`newdocument_content`] option puts a `<details>` element into the new editor instance.
+In the above example, when menu:File[New document] is selected, the xref:content-behavior-options#newdocument_content[`newdocument_content`] option puts a `<details>` element into the new editor instance.
 
 The `details_initial_state` option causes that element to present as open while the `details_serialized_state` sets the saved content state to closed.
 
-This example also demonstrates a potential UX issue with, in effect, setting `details_initial_state` and `details_serialied_state` at odds. Choosing *File → New document* results in a new editor instance containing an Accordion element presented open, as set by `details_initial_state`.
+This example also demonstrates a potential UX issue with, in effect, setting `details_initial_state` and `details_serialied_state` at odds. Choosing menu:File[New document] results in a new editor instance containing an Accordion element presented open, as set by `details_initial_state`.
 
-Choosing *File → Preview* shows this same newly-created document with a _closed_ Accordion element, as set by `details_serialized_state`.
+Choosing menu:File[Preview] shows this same newly-created document with a _closed_ Accordion element, as set by `details_serialized_state`.
 
 The difference is expected, given the option values. It may, nonetheless, be experienced as a UX inconsistency for some end-users.
 ====

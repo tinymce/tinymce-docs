@@ -5,7 +5,9 @@ include::partial$configuration/content_langs_base.adoc[]
 
 There is no default value for the `+content_langs+` option. If no value is specified, the `+language+` toolbar button and menu item are not available. A default value for this option is provided by the Spell Checker plugin. For information on using the `+content_langs+` option with the Spell Checker plugin, see: xref:introduction-to-tiny-spellchecker.adoc#content_langs[Spell Checker plugin - `+content_langs+`].
 
-*Type:* `+Array+`
+*Type:* `+Array+` of `+Objects+`
+
+*Default value:* `+undefined+`
 
 === Example: using `+content_langs+`
 

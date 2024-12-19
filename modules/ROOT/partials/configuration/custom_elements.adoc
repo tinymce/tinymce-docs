@@ -5,7 +5,9 @@ This option enables you to specify non-HTML elements for the editor.
 
 This way you can handle non-HTML elements inside an HTML editor. You can prefix the element names with a `+~+` if you want the element to behave as a `+span+` element and not a `+div+` element.
 
-*Type:* `+String+`
+*Type:* `+String+` or `+Object+`
+
+*Default value:* `+undefined+`
 
 [source,js]
 ----

@@ -21,7 +21,7 @@ The {pluginname} plugin rules are sourced from the https://github.com/typograf/t
 
 However, the {pluginname} plugin only uses a sub-set of all the rules available in this library.
 
-Of the library’s full https://github.com/typograf/typograf/blob/dev/docs/RULES.en-US.md[Rules of typograf] list, the {pluginname} plugin uses the following:
+Of the library's full https://github.com/typograf/typograf/blob/dev/docs/RULES.en-US.md[Rules of typograf] list, the {pluginname} plugin uses the following:
 
 * common/space/delBeforePunctuation
 * common/space/afterComma
@@ -77,7 +77,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: '{plugincode}',
   toolbar: '{plugincode}',
-  typography_default_lang: [ "en-US" ], // Required to set specific typography language rules.
+  typography_default_lang: 'en-US', // Required to set specific typography language rules.
 });
 ----
 

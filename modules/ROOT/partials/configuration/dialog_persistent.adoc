@@ -7,19 +7,19 @@ The `+persistent+` property, when set to `+true+`, allows an inline dialog to st
 
 If an end-user gives another part of the {productname} editor focus (for example, the document editor, or a menu), the inline dialog will stay open.
 
-Setting the property to `+true+` does not over-ride normal mechanisms for closing a dialog, such as clicking the _Close_ button or pressing the *Esc* key.
+Setting the property to `+true+` does not over-ride normal mechanisms for closing a dialog, such as clicking the btn:[Close] button or pressing the kbd:[Esc] key.
 
 The property has a default value of `+false+`.
 
-NOTE: If an inline dialog is open and focus is switched away from the {productname} editor entirely (by, for example, the end-user switching focus to an available host-browser UI element), an open inline dialog will remain open regardless of the `+persistent+` property’s value. This was the behavior prior to this property being available and continues to be the behavior.
+NOTE: If an inline dialog is open and focus is switched away from the {productname} editor entirely (for example, by the end-user switching focus to an available host-browser UI element), an open inline dialog will remain open regardless of the `+persistent+` property's value. This was the behavior prior to this property being available and continues to be the behavior.
 
 *Type:* `+Boolean+`
 
 *Possible values:* `+true+`, `+false+`
 
-*Default value:* `false`
+*Default value:* `+false+`
 
-=== Example: using `persistent`
+==== Example: using `persistent`
 
 [source,js]
 ----
@@ -44,7 +44,7 @@ tinymce.activeEditor.windowManager.open({
 });
 ----
 
-=== Example: using `focus` to refocus an open but de-focused dialog
+==== Example: using `focus` to refocus an open but de-focused dialog
 
 Because a dialog with a `{ persistent: true }` property does not close when the dialog loses focus, it is possible for an end-user to open a further instance of the dialog.
 

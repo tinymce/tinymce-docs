@@ -3,15 +3,15 @@
 
 This option enables or disables capitalization autocorrection when the {productname} editor is loaded.
 
-When set to `true`, capitalization autocorrection is enabled when {productname} is initialized.
+When set to `+true+`, capitalization autocorrection is enabled when {productname} is initialized.
 
 include::partial$misc/autocorrect-options-notes.adoc[]
 
 *Type:* `+Boolean+`
 
-*Default value:* `+false+`
-
 *Possible values:* `+true+`, `+false+`
+
+*Default value:* `+false+`
 
 === Example: using `+autocorrect_capitalize+`
 

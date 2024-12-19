@@ -4,7 +4,7 @@
 include::partial$misc/admon-requires-6.4v.adoc[]
 
 [NOTE]
-In {productname} 7.0, the default setting for `highlight_on_focus` was changed from `false` to `true`. Any editors using this `highlight_on_focus: true` option in {productname} , can remove this option from their {productname} init configuration when upgrading to {productname} 7.0.
+In {productname} 7.0, the default setting for `highlight_on_focus` was changed from `+false+` to `+true+`. Any editors using this `highlight_on_focus: true` option in {productname} , can remove this option from their {productname} init configuration when upgrading to {productname} 7.0.
 
 The `+highlight_on_focus+` option adds a blue outline to an instantiated {productname} editor when that editor is made the input focus. When using the `oxide-dark` skin, the outline is white.
 
@@ -12,9 +12,9 @@ This allows users to clearly see when the editor is in focus, or which editor ha
 
 *Type:* `+Boolean+`
 
-*Default value:* `+true+`
-
 *Possible values:* `+true+`, `+false+`
+
+*Default value:* `+true+`
 
 === Example: using `+highlight_on_focus+`
 

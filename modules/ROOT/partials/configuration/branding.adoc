@@ -1,15 +1,15 @@
 [[branding]]
 == `+branding+`
 
-Use the `+branding+` option to disable the "*Powered by Tiny*" link displayed in the status bar for link:{legalpages}/attribution-requirements/[product attribution].
+Use the `+branding+` option to disable the "*{branding}*" link displayed in the status bar for link:{legalpages}/attribution-requirements/[product attribution].
 
 IMPORTANT: Product attribution is required for free users utilizing the Tiny Cloud infrastructure. If using {productname} under the _GNU General Public License Version 2 or later_ license, then support for the open source project would be appreciated by keeping attribution turned on in your editor. For information on {productname} attribution requirements, see: link:{legalpages}/attribution-requirements/[Logo & attribution requirements].
 
 *Type:* `+Boolean+`
 
-*Default value:* `+true+`
-
 *Possible values:* `+true+`, `+false+`
+
+*Default value:* `+true+`
 
 === Example: using `+branding+`
 

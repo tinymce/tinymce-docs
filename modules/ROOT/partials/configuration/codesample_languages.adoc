@@ -1,7 +1,27 @@
 [[codesample_languages]]
 == `+codesample_languages+`
 
-This configuration option enables you to set a list of languages to be displayed in the languages drop down.
+This configuration option enables you to set a list of languages to be displayed in the languages dropdown.
+
+*Type:* `+Array+` of `+Objects+`
+
+*Default value:*
+
+[source,js]
+----
+[
+  { text: 'HTML/XML', value: 'markup' },
+  { text: 'JavaScript', value: 'javascript' },
+  { text: 'CSS', value: 'css' },
+  { text: 'PHP', value: 'php' },
+  { text: 'Ruby', value: 'ruby' },
+  { text: 'Python', value: 'python' },
+  { text: 'Java', value: 'java' },
+  { text: 'C', value: 'c' },
+  { text: 'C#', value: 'csharp' },
+  { text: 'C++', value: 'cpp' }
+]
+----
 
 === Example: using `+codesample_languages+`
 
@@ -10,18 +30,11 @@ This configuration option enables you to set a list of languages to be displayed
 tinymce.init({
   selector: 'textarea',
   plugins: 'codesample',
+  toolbar: 'codesample',
   codesample_languages: [
     { text: 'HTML/XML', value: 'markup' },
     { text: 'JavaScript', value: 'javascript' },
-    { text: 'CSS', value: 'css' },
-    { text: 'PHP', value: 'php' },
-    { text: 'Ruby', value: 'ruby' },
-    { text: 'Python', value: 'python' },
-    { text: 'Java', value: 'java' },
-    { text: 'C', value: 'c' },
-    { text: 'C#', value: 'csharp' },
-    { text: 'C++', value: 'cpp' }
-  ],
-  toolbar: 'codesample'
+    { text: 'CSS', value: 'css' }
+  ]
 });
 ----

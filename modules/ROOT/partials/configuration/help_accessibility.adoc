@@ -9,9 +9,9 @@ The `help_accessibility` option allows for this display to be turned off.
 
 *Type:* `+Boolean+`
 
-*Possible values:* `true`, `false`
+*Possible values:* `+true+`, `+false+`
 
-*Default value:* `true`
+*Default value:* `+true+`
 
 === Example: turning `help_accessibility` off
 
@@ -28,7 +28,7 @@ tinymce.init({
 
 The `help_accessibility` option is set to true by default when the *Help* plugin is loaded.
 
-It is not necessary, but may be useful, to explicitly set the option to `true`.
+It is not necessary, but may be useful, to explicitly set the option to `+true+`.
 
 [source,js]
 ----

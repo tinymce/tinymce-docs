@@ -5,6 +5,8 @@ This option allows custom CSS styles to be set as a string. The styles are injec
 
 *Type:* `+String+`
 
+*Default value:* `+undefined+`
+
 NOTE: `+content_style+` styles are not saved within {productname}'s content. If they are needed for display purposes, ensure the styles are also included in the page the content will be displayed on.
 
 === Example: applying one CSS style using `+content_style+`

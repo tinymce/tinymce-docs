@@ -1,7 +1,7 @@
 [[text_patterns]]
 == `+text_patterns+`
 
-This option allows configuring the text patterns that get matched while typing in the editor. Text patterns can be used to apply formats, replace text, or execute commands. By default, basic markdown patterns are enabled so the user can type `+# text+` to produce a header or `+**text**+` to make text *bold*. To disable text patterns getting replaced, set the option to `false`.
+This option allows configuring the text patterns that get matched while typing in the editor. Text patterns can be used to apply formats, replace text, or execute commands. By default, basic markdown patterns are enabled so the user can type `+# text+` to produce a header or `+**text**+` to make text *bold*. To disable text patterns getting replaced, set the option to `+false+`.
 
 There are three types of patterns: `+inline+`, `+block+`, and `+replacement+` patterns. Inline patterns have a `+start+` and an `+end+` text pattern whereas the block and replacement patterns only have a `+start+`. A user can specify the formats to be applied to the selection, commands to be executed, or text to be replaced.
 

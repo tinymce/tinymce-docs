@@ -1,22 +1,21 @@
 [[advtemplate_list]]
 == `advtemplate_list`
 
-The plugin uses the `advtemplate_list` asynchronous function to retreive the template list.
+The plugin uses the `advtemplate_list` asynchronous function to retrieve the template list.
 
 *Type:* `+Function+` (Returns a https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise])
 
-*Input parameters:*
-None
+*Input parameters:* None
 
-*Return data:* `+Array+`
+*Return data:* `+Array+` of `+Object+` values
 
 === Example: using `advtemplate_list`
 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea#advtemplate',  // change this value according to your HTML
-  plugins: ["advtemplate"],
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'advtemplate',
   advtemplate_list: () =>
     fetch('/categories', {
       method: 'GET',
@@ -39,14 +38,16 @@ The data returned by `advtemplate_list` must adhere to the following requirement
 
 [source,js]
 ----
-[{
+[
+  {
     id: '1',
     title: 'Resolving tickets',
   },
   {
     id: '2',
     title: 'Quick replies',
-    items: [{
+    items: [
+      {
         id: '3',
         title: 'Message received',
       },

@@ -1,12 +1,6 @@
 [[<configuration_option>]]
 == `<configuration_option>`
 
-// Replace all instances of <configuration_option> with the
-// configuration option name then remove this comment.
-
-// Add explanatory material as per the comment block below then remove
-// the block and this comment.
-
 ////
 What does the option do?
 Why use it?
@@ -19,7 +13,7 @@ Are there risks?
   - For longer or more complicated scenarios, use the limitations section below.
 ////
 
-*Type:* `+String+`, `+Boolean+`, `+Number+`, `+Function+`, `+Object+`, `+Array+`, or `+Regexp+`
+*Type:* `+String+`, `+Boolean+`, `+Number+`, `+Function+`, `+Object+`, `+Array+`, `+RegExp+`, `+null+`, `+undefined+`
 
 // Remove the *Possible values* line if there is no discrete set of possible values.
 *Possible values:* `'string1'`, `'string2'`, `false`
@@ -32,14 +26,14 @@ Are there risks?
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your html
+  selector: 'textarea',  // change this value according to your HTML
   <configuration_option>: '<value>'
 });
 ----
 
 // Add a working and tested configuration (edit as required)
 // or remove if not applicable.
-=== Example: disabling the <feature>
+=== Example: disabling the `<configuration_option>` option
 
 To disable <feature>, set `<configuration_option>` to `false`.
 
@@ -53,17 +47,12 @@ tinymce.init({
 
 // Remove if not applicable.
 // Edit the sub-head to singular or plural as required.
-=== Limitation(s) of the `<configuration_option>` option
+=== Limitation<s> of the `<configuration_option>` option
 
-The `<configuration_option>` option has the following limitations.
-
-// Add explanatory material as per the comment block below then remove
-// the block and this comment.
+The `<configuration_option>` option has the following limitation<s>:
 
 ////
 Known limitations.
 Complicated scenarios.
 Anything that warrants a CAUTION or WARNING admonition.
-///
-
-// Remove all comment lines and comment blocks before publishing.
+////

@@ -13,7 +13,7 @@ Are there risks?
   - For longer or more complicated scenarios, use the limitations section below.
 ////
 
-*Type:* `+String+`, `+Boolean+`, `+Number+`, `+Function+`, `+Object+`, `+Array+`, or `+Regexp+`
+*Type:* `+String+`, `+Boolean+`, `+Number+`, `+Function+`, `+Object+`, `+Array+`, `+RegExp+`, `+null+`, `+undefined+`
 
 // Remove the *Possible values* line if there is no discrete set of possible values.
 *Possible values:* `'string1'`, `'string2'`, `false`
@@ -26,29 +26,30 @@ Are there risks?
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // Change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   <configuration_option>: '<value>'
 });
 ----
 
 // Add a working and tested configuration (edit as required)
 // or remove if not applicable.
-=== Example: disabling the <feature>
+=== Example: disabling the `<configuration_option>` option
 
 To disable <feature>, set `<configuration_option>` to `false`.
 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // Change this value according to your HTML
+  selector: 'textarea',  // change this value according to your HTML
   <configuration_option>: 'false'
 });
 ----
 
 // Remove if not applicable.
+// Edit the sub-head to singular or plural as required.
 === Limitation<s> of the `<configuration_option>` option
 
-The `<configuration_option>` option has the following limitations.
+The `<configuration_option>` option has the following limitation<s>:
 
 ////
 Known limitations.

@@ -74,15 +74,19 @@ module.exports.register = function () {
 
         // Assemble the complete RSS feed
         const rss = `<?xml version="1.0" encoding="UTF-8" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-    <channel>
+    <rss version="2.0"
+        xmlns:atom="http://www.w3.org/2005/Atom"
+        xmlns:content="http://purl.org/rss/1.0/modules/content/"
+    >
+        <channel>
         <title>${productName} ${productMajorVersion} ${pageTitle}</title>
         <link>${siteLinkWithVersion}/${pageName}</link>
         <description>${pageDescription}</description>
+        <language>en</language>
         <atom:link href="${siteLink}/rss.xml" rel="self" type="application/rss+xml" />
         ${rssItems}
-    </channel>
-</rss>`;
+        </channel>
+    </rss>`;
 
         // Add RSS feed to site catalog
         siteCatalog.addFile({

@@ -48,12 +48,13 @@ Each top-level properties of the `advtable_value_series` object are used as the 
 
 [cols="1,2,1,4",options="header"]
 |===
-|Name |Value |Requirement |Description
-|title |`+String+` |Required |The text shown in the UI for the series.
-|update |`+boolean+` |Optional |default: `+false+` - When `+true+`, the series values will be updated when changes are made to the table.
-|resizable |`+boolean+` |Optional |default: `+true+` - When `+true+`, table cells containing the series values can be resized using a mouse or touch device.
-|generator |`+(info: GeneratorInfo, rowIndex: number, columnIndex: number) => GeneratorResult+` |Required |For details on creating a value series generator, see: xref:advtable.adoc#creating-a-value-series-generator[Creating a value series generator].
+| Name      | Value                                                                               | Requirement | Description
+| title     | `+String+`                                                                          | Required    | The text shown in the UI for the series.
+| update    | `+Boolean+`                                                                         | Optional    | default: `+false+` - When `+true+`, the series values will be updated when changes are made to the table.
+| resizable | `+Boolean+`                                                                         | Optional    | default: `+true+` - When `+true+`, table cells containing the series values can be resized using a mouse or touch device.
+| generator | `+(info: GeneratorInfo, rowIndex: number, columnIndex: number) => GeneratorResult+` | Required    | For details on creating a value series generator, see: xref:advtable.adoc#creating-a-value-series-generator[Creating a value series generator].
 |===
+
 
 [[creating-a-value-series-generator]]
 ==== Creating a value series generator
@@ -69,13 +70,13 @@ An object with the following properties is passed to the generator callback func
 
 [cols="1,2,4",options="header"]
 |===
-|Name |Value |Description
-|sectionType |`+'thead'+`, `+'tbody'+` or `+'tfoot'+` |The section of the table cell.
-|cellType |`+'td'+` or `+'th'+` |The type of the table cell.
-|getRowType |`+() => 'header' \| 'body' \| 'footer'+` | A function that returns the type of row the table cell is part of. A 'header' row is either a row that is part of a `thead` section or contains all `th` cells.
-|classes |`+string[]+` |The classes present on the table cell.
-|direction |`+'row'+` or `+'column'+` |The direction of the generator.
-|prev |`+GeneratorResult+` |The generator result from the previous iteration.
+| Name        | Value                                    | Description
+| sectionType | `+'thead'+`, `+'tbody'+` or `+'tfoot'+`  | The section of the table cell.
+| cellType    | `+'td'+` or `+'th'+`                     | The type of the table cell.
+| getRowType  | `+() => 'header' \| 'body' \| 'footer'+` | A function that returns the type of row the table cell is part of. A 'header' row is either a row that is part of a `thead` section or contains all `th` cells.
+| classes     | `+Array+` of `+Strings+`                 | The classes present on the table cell.
+| direction   | `+'row'+` or `+'column'+`                | The direction of the generator.
+| prev        | `+GeneratorResult+`                      | The generator result from the previous iteration.
 |===
 
 [[generatorresult]]
@@ -85,11 +86,12 @@ The generator callback function should return an object with the following prope
 
 [cols="1,1,1,4",options="header"]
 |===
-|Name |Value |Requirement |Description
-|classes |`+string[]+` |Optional |The classes to be applied to the table cell.
-|attributes |`+Object+` |Optional |The attributes to be applied to the table cell. The `+attributes+` should be provided as an object where each key is an attribute and each value is of type `+String+`, `+boolean+`, `+number+`, or `+null+`. A value of `+null+` for an attribute will remove the attribute from the table cell.
-|value |`+String+`, `+number+` or `+undefined+` |Optional |The value of the table cell. If the value is `+undefined+`, the editor will use the previous value of the table cell.
+| Name       | Value                                   | Requirement | Description
+| classes    | `+Array+` of `+Strings+`                | Optional    | The classes to be applied to the table cell.
+| attributes | `+Object+`                              | Optional    | The attributes to be applied to the table cell. The `+attributes+` should be provided as an object where each key is an attribute and each value is of type `+String+`, `+Boolean+`, `+Number+`, or `+null+`. A value of `+null+` for an attribute will remove the attribute from the table cell.
+| value      | `+String+`, `+Number+` or `+undefined+` | Optional    | The value of the table cell. If the value is `+undefined+`, the editor will use the previous value of the table cell.
 |===
+
 
 === Example: using `+advtable_value_series+`
 

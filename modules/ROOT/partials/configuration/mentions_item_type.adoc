@@ -10,9 +10,9 @@ For information on the properties required for the user object provided to xref:
 
 *Type:* `+String+`
 
-*Default value:* `+'name'+`
-
 *Possible values:* `+'name'+`, `+'profile'+`
+
+*Default value:* `+'name'+`
 
 === Example: using `+mentions_item_type+`
 
@@ -32,9 +32,9 @@ The following table describes the properties available for user objects provided
 
 [cols="1,1,1,1,4",options="header"]
 |===
-|Name |Value |`+name+` |`+profile+` |Description
-|id |string |required |required |Used to identify the user mention in different callbacks
-|name |string |required |required |Name to display and highlight matches
-|image |string |not available |optional |Image source for user avatar
-|description |string |not available |optional |Description to display
+| Name        | Value      | `+name+`      | `+profile+` | Description
+| id          | `+String+` | required      | required    | Used to identify the user mention in different callbacks
+| name        | `+String+` | required      | required    | Name to display and highlight matches
+| image       | `+String+` | not available | optional    | Image source for user avatar
+| description | `+String+` | not available | optional    | Description to display
 |===

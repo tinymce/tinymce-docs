@@ -6,11 +6,11 @@ This option enables you to restrict the styles that are valid for specific eleme
 * *String format* - This is a list of global styles to disallow.
 * *Object format* - This is a more complex format in which you can specify invalid styles for individual elements.
 
-=== Simple global classes
-
 *Type:* `+String+`, `+Object+`
 
-==== Example: using `+invalid_styles+` string
+*Default value:* `+undefined+`
+
+=== Example: using `+invalid_styles+` string for global classes
 
 [source,js]
 ----
@@ -20,11 +20,7 @@ tinymce.init({
 });
 ----
 
-=== Element specific classes
-
-*Type:* `+String+`, `+Object+`
-
-==== Example: using `+invalid_styles+` object
+=== Example: using `+invalid_styles+` object for element specific classes
 
 [source,js]
 ----

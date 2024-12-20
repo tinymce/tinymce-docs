@@ -3,7 +3,7 @@
 
 include::partial$misc/admon-requires-6.6.1v.adoc[]
 
-By default, {productname} places non-breaking space entities — `+&nbsp;+` — as placeholders inside empty block elements.
+By default, {productname} places non-breaking space entities — `+&nbsp;+` — as placeholders inside empty block elements.
 
 For example, the empty paragraph `+<p></p>+` will, by default, be serialized to `+<p>&nbsp;</p>+`.
 

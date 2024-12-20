@@ -5,6 +5,8 @@ This option constrains the width and height of uploaded images. When specified, 
 
 *Type:* `+Number+`
 
+*Default value:* `+undefined+`
+
 [[example-using-max_image_dimension-with-the-tinydrivebrowse-api]]
 === Example: using `+max_image_dimension+` with the tinydrive.browse API
 
@@ -20,7 +22,7 @@ tinymce.init({
       text: 'Custom browse',
       onAction: () => {
         editor.plugins.tinydrive.browse({
-          max_image_dimension: 1024
+          max_image_dimension: 1024 // set the maximum image dimension to 1024 pixels
         }).then(() => {
           console.log('Tiny Drive dialog closed.');
         });

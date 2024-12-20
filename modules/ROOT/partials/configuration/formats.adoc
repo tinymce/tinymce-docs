@@ -233,6 +233,8 @@ Makes sure that the format is not merged with other wrappers having the same for
 
 *Type:* `+Boolean+`
 
+*Possible values:* `+true+`, `+false+`
+
 *Default value:* `+false+`
 
 ===== Example: using `+exact+` parameter
@@ -255,6 +257,8 @@ tinymce.init({
 States that the format is a container format for block elements. For example, a `+div+` wrapper or `+blockquote+`.
 
 *Type:* `+Boolean+`
+
+*Possible values:* `+true+`, `+false+`
 
 *Default value:* `+false+`
 
@@ -313,7 +317,7 @@ tinymce.init({
 
 This option controls if the selection should expand upwards to the closest matching block element. This can be useful when configuring `+removeformat+` to remove block elements. So if the selection start is at the beginning of a matching block, then that matching block will be included as well. If the end of the selection is at the end of a matching block element then that parent element will be included as well.
 
-So if the selection is from _a_ to _b_ in this html contents `+<h1><b>[a</b></h1><p>b]</p>+` then the _h1_ will be removed even if it's not part of the actual selection.
+So if the selection is from _a_ to _b_ in the HTML contents `+<h1><b>[a</b></h1><p>b]</p>+` then the _h1_ will be removed even if it's not part of the actual selection.
 
 *Type:* `+Boolean+`
 
@@ -354,6 +358,8 @@ Enables control for removing the child elements of the matching format. This is 
 
 *Type:* `+Boolean+`
 
+*Possible values:* `+true+`, `+false+`
+
 *Default value:* `+false+` for `+selector+` formats
 
 ===== Example: using `+deep+`
@@ -391,6 +397,8 @@ After merge:
 ----
 
 *Type:* `+Boolean+`
+
+*Possible values:* `+true+`, `+false+`
 
 *Default value:* `+true+`
 

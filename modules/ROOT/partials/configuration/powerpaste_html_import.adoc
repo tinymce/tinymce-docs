@@ -20,7 +20,7 @@ What the supported string-based values do:
 
 Removes inline styles and classes.
 
-This results in simple content that uses the site’s CSS stylesheet while retaining the semantic structure of the original document.
+This results in simple content that uses the site's CSS stylesheet while retaining the semantic structure of the original document.
 
 |`+merge+`
 |Preserves the inline formatting and structure of the original document.
@@ -41,7 +41,7 @@ Content copied or cut from a {productname} instance and then pasted into a {prod
 In this circumstance, whatever is copied or cut is exactly what is pasted.
 ====
 
-=== example: using `+powerpaste_html_import+` to require a prompt when pasting html
+=== example: using `+powerpaste_html_import+` to require a prompt when pasting HTML content
 
 [source,js]
 ----

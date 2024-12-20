@@ -7,9 +7,9 @@ To define the menus on {productname}'s menu bar, provide the menubar option with
 
 *Type:* `+String+` or `+Boolean+`
 
-*Possible values:* `+true+`, `+false+`
+*Possible values:* `+true+`, `+false+` or `+String+` of menus
 
-*Default value:* `+true+`, or `+String+` of menus
+*Default value:* `+true+` for desktop and `+false+` for mobile
 
 include::partial$misc/admon-different-default-for-mobile.adoc[]
 

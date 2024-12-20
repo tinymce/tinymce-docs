@@ -9,11 +9,13 @@ When disabled, the editor is initialized asynchronously using `srcdoc`. This can
 
 When enabled, the editor is initialized synchronously, using `document.write`. This can reduce flickering.
 
-Flickering can still occur during synchronous initialization, however, such as when loading the content css.
+Flickering can still occur during synchronous initialization, however, such as when loading the content CSS.
 
 NOTE: using the https://html.spec.whatwg.org/multipage/dynamic-markup-insertion.html#document.write()[`document.write`] method is https://developer.mozilla.org/en-US/docs/Web/API/Document/write[strongly discouraged].
 
 *Type:* `+Boolean+`
+
+*Possible values:* `+true+`, `+false+`
 
 *Default value:* `+false+`
 

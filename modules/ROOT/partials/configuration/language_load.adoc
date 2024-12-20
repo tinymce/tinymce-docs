@@ -3,7 +3,9 @@
 
 This option determines whether additional plugin or theme languages are loaded during {productname} editor initialization. By default, plugins which have support for languages other than English will automatically load the additional language packs.
 
-*Type:* `+boolean+`
+*Type:* `+Boolean+`
+
+*Possible values:* `+true+`, `+false+`
 
 *Default value:* `+true+`
 

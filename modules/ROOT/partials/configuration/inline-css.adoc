@@ -4,7 +4,9 @@ Determines whether it is valid for a given CSS selector to have its CSS properti
 
 *Default value:* All selectors are considered valid to have their CSS inlined.
 
-*Type:* `+String+`, `RegExp` or `Function`
+*Type:* `+String+`, `+RegExp+` or `+Function+`
+
+*Default value:* `+undefined+`
 
 [source,ts]
 ----
@@ -19,7 +21,9 @@ Determines whether it is valid for a given CSS stylesheet to have its CSS inspec
 
 *Default value:* All CSS stylesheet are considered valid to have their CSS inspected and inlined.
 
-*Type:* `+String+`, `RegExp` or `Function`
+*Type:* `+String+`, `+RegExp+` or `+Function+`
+
+*Default value:* `+undefined+`
 
 [source,ts]
 ----

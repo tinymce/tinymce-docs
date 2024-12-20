@@ -67,7 +67,7 @@ The recommended method for updating content in an `+iframe+` component is:
 onAction: (api) => api.setData({ myiframe: 'new content' })
 ----
 
-. This updates the iframe to contain the string `'new content'`. This text can be any valid html.
+. This updates the iframe to contain the string `'new content'`. This text can be any valid HTML.
 
 . `onAction` is a callback defined in the dialog spec. It is called when a button within the dialog `body` is triggered.
 

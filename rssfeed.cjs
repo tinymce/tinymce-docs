@@ -36,6 +36,14 @@ module.exports.register = function () {
                 const $element = $(element);
                 const linkElement = $element.find("a.xref");
                 const [version, date] = linkElement.text().split(" - ");
+
+                // Remove <p> tags inside <li> tags to fix rendering issues
+                const contentElement = $element.find(".sectionbody");
+                contentElement.find("li > p").each((_, pElem) => {
+                    $(pElem).replaceWith($(pElem).html());
+                });
+                const content = contentElement.html();
+
                 return {
                     title: linkElement.text(),
                     link: `${siteLinkWithVersion}/${linkElement
@@ -44,7 +52,7 @@ module.exports.register = function () {
                     description: `Release notes for TinyMCE ${version}`,
                     guid: version,
                     pubDate: new Date(date).toUTCString(),
-                    content: $element.find(".sectionbody").html(),
+                    content,
                 };
             })
             .get();

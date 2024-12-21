@@ -19,6 +19,6 @@ asciidoc:
     - '@tinymce/antora-extension-livedemos'
 antora:
   extensions:
-    - './rssfeed.cjs'
+    - './lib/rssfeed.cjs'
 runtime:
   fetch: true

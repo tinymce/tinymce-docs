@@ -1,15 +1,13 @@
 [[promotion]]
 == `+promotion+`
 
-{productname} 6.2 and later includes the `promotion` option. It controls the presentation or otherwise of a Tiny-specific promotion button.
+{productname} 6.2 and later includes the `promotion` option. It controls the presentation or otherwise of a {companyname}-specific promotion button.
 
 *Type:* `+Boolean+`
 
 *Possible values:* `+true+`, `+false+`
 
-*Default value:* `+true+` in Community self-hosted instances; otherwise `+false+`.
-
-*Possible values:* `+true+`, `+false+`
+*Default value:* `+true+` in Community self-hosted instances; `+false+` otherwise
 
 See xref:editor-premium-upgrade-promotion.adoc#premium-upgrade-promotion-defaults[Premium upgrade promotion defaults] for details.
 

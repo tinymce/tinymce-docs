@@ -3,9 +3,11 @@
 
 ifndef::pluginname[]
 
-This option enables you to modify the pasted content before it gets inserted into the editor.
+This option allows you to modify the pasted content before it gets inserted into the editor.
 
 *Type:* `+Function+`
+
+*Default value:* `+undefined+`
 
 === Example: using `+paste_preprocess+`
 
@@ -35,6 +37,8 @@ This option allows you to run custom filtering on the content from the clipboard
 NOTE: The mode 'auto' is used when the content source does not have formatting to "clean" or "merge". For example, when pasting an image with no text or markup content.
 
 *Type:* `+Function+`
+
+*Default value:* `+undefined+`
 
 === Example {productname} configuration:
 

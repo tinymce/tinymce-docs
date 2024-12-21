@@ -8,7 +8,9 @@ Used for setting the level of referrer information sent when loading plugins and
 
 *Type:* `+String+`
 
-For a list of valid referrer policies (directives), see: https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy[MDN Web Docs - Referrer-Policy].
+*Possible values:* for a list of valid referrer policies (directives), refer to https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Referrer-Policy[MDN Web Docs - Referrer-Policy]
+
+*Default value:* `+''+`
 
 === Example: using `+referrer_policy+`
 

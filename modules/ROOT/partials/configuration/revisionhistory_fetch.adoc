@@ -4,8 +4,9 @@
 The `revisionhistory_fetch` function retrieves saved revisions and is called when the user opens the Revision History view.
 
 [IMPORTANT]
+====
 The `revisionhistory_fetch` function is required for the Revision History plugin to function.
-
+====
 
 It expects an asynchronous function that returns a link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise] which resolves to an array of revisions.
 
@@ -22,7 +23,7 @@ The {pluginname} plugin does not sort results before displaying them, allowing i
 
 [source,js]
 ----
-const revisions = [
+[
   {
     revisionId: '3',
     createdAt: '2023-11-29T10:11:21.578Z',

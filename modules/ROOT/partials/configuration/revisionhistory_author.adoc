@@ -3,7 +3,17 @@
 
 This option configures the author for the `initial` and `draft` revisions.
 
-*Type:* xref:#author[Author] `+Object+`
+*Type:* `+Object+`
+
+*Possible values:* see the xref:#author[Author] object
+
+*Default value:*
+[source,js]
+----
+{
+  name: 'Anonymous'
+}
+----
 
 === Example: using `revisionhistory_author`
 

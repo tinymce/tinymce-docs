@@ -5,10 +5,12 @@ This option allows configuring which plugins {productname} will attempt to load 
 
 The plugins can be provided as either:
 
-* A string of space or comma separated plugin names, such as `+'plugin1 plugin2'+`, or
+* A string of space-separated or comma-separated plugin names, such as `+'plugin1 plugin2'+`, or
 * An array of plugin names, such as `+[ 'plugin1' , `plugin2' ]+`
 
-*Type:* `+String+` or `+Array+`
+*Type:* `+String+` or `+Array+` of `+Strings+`
+
+*Default value:* `+[]+`
 
 === Example: using `+plugins+` with a string
 
@@ -30,4 +32,4 @@ tinymce.init({
 });
 ----
 
-xref:plugins.adoc[Check this documentation page for a list of available plugins].
+For a list of available plugins, refer to the xref:plugins.adoc[Plugins] documentation page.

@@ -3,40 +3,40 @@
 
 This option controls how content pasted from sources other than Microsoft Word and Google Docs are filtered.
 
-*Type:* `+String+`
+*Type:* `+String+` or `+Function+`
+
+*Possible values:* `+'clean'+`, `+'merge'+`, `+'prompt'+`, or a function that returns a `+Promise+` that resolves to `+'clean'+` or `+'merge'+`
 
 *Default value:* `+'clean'+`
 
-*Possible values:* `+'clean'+`, `+merge+`, `+prompt+`
+What the supported string values do:
 
-What the supported string-based values do:
-
-[cols="1,1"]
+[cols="1,4"]
 |===
 |Value |Behavior
 
-|`+clean+`
+|`+'clean'+`
 |Preserves the structure of the content such as headings, tables, and lists.
 
 Removes inline styles and classes.
 
 This results in simple content that uses the site's CSS stylesheet while retaining the semantic structure of the original document.
 
-|`+merge+`
+|`+'merge'+`
 |Preserves the inline formatting and structure of the original document.
 
 Removes invalid and proprietary styles, tags and attributes.
 
 This ensures the HTML is valid while more closely matching the original document formatting.
 
-|`+prompt+`
-|Prompts the user to choose between the `+clean+` and `+merge+` options after attempting to paste HTML content.
+|`+'prompt'+`
+|Prompts the user to choose between the `+'clean'+` and `+'merge'+` options after attempting to paste HTML content.
 |===
 
 [NOTE]
 .Pasting from a {productname} instance to a {productname} instance
 ====
-Content copied or cut from a {productname} instance and then pasted into a {productname} instance (eg, copyied or cut from one part of a {productname} document and pasted into another place within the same document) is not processed by `+powerpaste_html_import+`.
+Content copied or cut from a {productname} instance and then pasted into a {productname} instance (eg, copied or cut from one part of a {productname} document and pasted into another place within the same document) is not processed by `+powerpaste_html_import+`.
 
 In this circumstance, whatever is copied or cut is exactly what is pasted.
 ====

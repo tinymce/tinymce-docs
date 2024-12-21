@@ -5,9 +5,9 @@ This option allows you to specify styles you want to keep when pasting in WebKit
 
 *Type:* `+String+`
 
-*Default value:* `+'none'+`
+*Possible values:* `+'none'+`, `+'all'+`, or a space-separated list of CSS properties
 
-*Possible values:* `+'none'+`, `+'all'+` or a space separated list of styles
+*Default value:* `+'none'+`
 
 === Example: using `+paste_webkit_styles+`
 

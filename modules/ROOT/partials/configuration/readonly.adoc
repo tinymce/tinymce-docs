@@ -9,8 +9,6 @@ Setting the `readonly` option to `+true+` initializes the editor in **readonly**
 
 *Default value:* `+false+`
 
-*Possible values:* `+true+`, `+false+`
-
 === Example: Using `readonly`
 
 [source,js]
@@ -34,7 +32,7 @@ a|
 * Users can place the cursor within the editor
 * Navigation behaves the same as in design mode, including:
   ** Moving through block elements (table of contents, images, media elements)
-  ** Using arrow keys, Home, End, Page Up, Page Down
+  ** Using arrow keys, kbd:[Home], kbd:[End], kbd:[Page Up], or kbd:[Page Down]
 * Media elements can be played
 * Users can select and copy text
 * Users can interact with links
@@ -48,12 +46,12 @@ a|
   ** Deleting content
   ** Drag and drop operations
 * Formatting changes:
-  ** Keyboard shortcuts for formatting (e.g., Cmd/Ctrl + B)
-  ** Auto-linking when pressing space after URLs
+  ** Keyboard shortcuts for formatting (e.g. kbd:[Command/Ctrl+B])
+  ** Auto-linking when pressing kbd:[Space] after URLs
 * Element modifications:
-  ** Toggling checklists (via click or Cmd/Ctrl + Enter)
+  ** Toggling checklists (via click or kbd:[Command/Ctrl+Enter])
   ** Indenting lists
-  ** Adding new table rows via Tab key
+  ** Adding new table rows via kbd:[Tab] key
   ** Resizing tables, media elements, or images
 | False
 | Toolbar and UI Behavior

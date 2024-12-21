@@ -5,6 +5,10 @@ This option enables the exclusion of items from {productname}'s menus. It is esp
 
 *Type:* `+String+`
 
+*Possible values:* a space-separated list of menu items to remove
+
+*Default value:* `+''+`
+
 === Example: using `+removed_menuitems+`
 
 [source,js]

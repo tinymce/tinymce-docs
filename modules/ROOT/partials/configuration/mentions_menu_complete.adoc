@@ -18,7 +18,7 @@ tinymce.init({
   mentions_menu_complete: (editor, userInfo) => {
     const span = editor.getDoc().createElement('span');
     span.className = 'mymention';
-    // store the user id in the mention so it can be identified later
+    // store the user ID in the mention so it can be identified later
     span.setAttribute('data-mention-id', userInfo.id);
     span.appendChild(editor.getDoc().createTextNode('@' + userInfo.name));
     return span;

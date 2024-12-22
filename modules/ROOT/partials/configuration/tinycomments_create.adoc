@@ -15,7 +15,7 @@ The `+done+` callback should accept the following object:
 [source,js]
 ----
 {
-  conversationUid: string, // the new conversation uid
+  conversationUid: string, // the new conversation UID
   // Optional error callback which will be run if the new conversation could not be created
   onError: (err) => { ... },
   // Optional success callback which will be run when the new conversation is successfully created

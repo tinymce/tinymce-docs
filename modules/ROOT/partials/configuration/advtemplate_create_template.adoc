@@ -11,14 +11,14 @@ The plugin uses the `advtemplate_create_template` asynchronous function to creat
 | Field          | Type       | Required? | Description
 | `+title+`      | `+String+` | required  | The title of the template.
 | `+content+`    | `+String+` | required  | The content of the template.
-| `+categoryId+` | `+String+` | optional  | The parent category id.
+| `+categoryId+` | `+String+` | optional  | The parent category ID\.
 |===
 
 *Return data:*
 [cols="1,1,3",options="header"]
 |===
 | Field  | Type       | Description
-| `+id+` | `+String+` | The id of newly created template.
+| `+id+` | `+String+` | The ID of newly created template.
 |===
 
 === Example: using `advtemplate_create_template`

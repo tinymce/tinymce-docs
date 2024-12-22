@@ -9,8 +9,8 @@ The plugin uses the `advtemplate_move_category_items` asynchronous function to m
 [cols="1,1,1,3",options="header"]
 |===
 | Field             | Type        | Required? | Description
-| `+oldCategoryId+` | `+String+`  | required  | The id of the source category.
-| `+newCategoryId+` | `+String+`  | optional  | The id of the destination category.
+| `+oldCategoryId+` | `+String+`  | required  | The ID of the source category.
+| `+newCategoryId+` | `+String+`  | optional  | The ID of the destination category.
 |===
 
 *Return data:* Empty object  `{}`

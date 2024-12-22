@@ -11,7 +11,7 @@ The conventional conversation object structure that should be returned via the `
 
 The `+tinycomments_lookup+` function is passed a (`+req+`) object as the first parameter, which contains the following key-value pair:
 
-`+conversationUid+`:: The uid of the conversation the reply is targeting.
+`+conversationUid+`:: The UID of the conversation the reply is targeting.
 
 The `+done+` callback should accept the following object:
 
@@ -19,7 +19,7 @@ The `+done+` callback should accept the following object:
 ----
 {
  conversation: {
-   uid: string, // the uid of the conversation,
+   uid: string, // the UID of the conversation,
    comments: [
     {
       author: string, // author of first comment
@@ -28,7 +28,7 @@ The `+done+` callback should accept the following object:
       createdAt: date, // when the first comment was created
       content: string, // content of first comment
       modifiedAt: date, // when the first comment was created/last updated
-      uid: string // the uid of the first comment in the conversation
+      uid: string // the UID of the first comment in the conversation
     },
     {
       author: string, // author of second comment
@@ -37,7 +37,7 @@ The `+done+` callback should accept the following object:
       createdAt: date, // when the second comment was created
       content: string, // content of second comment
       modifiedAt: date, // when the second comment was created/last updated
-      uid: string // the uid of the second comment in the conversation
+      uid: string // the UID of the second comment in the conversation
     }
   ]
  }

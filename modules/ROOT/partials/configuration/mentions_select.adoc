@@ -26,7 +26,7 @@ tinymce.init({
   },
   mentions_select: (mention, success) => {
     // `mention` is the element we previously created with `mentions_menu_complete`
-    // in this case we have chosen to store the id as an attribute
+    // in this case we have chosen to store the ID as an attribute
     const id = mention.getAttribute('data-mention-id');
     // request more information about the user from the server and cache locally
     if (!userRequest[id]) {
@@ -70,7 +70,7 @@ tinymce.init({
   },
   mentions_select: (mention, success) => {
     // `mention` is the element we previously created with `mentions_menu_complete`
-    // in this case we have chosen to store the id as an attribute
+    // in this case we have chosen to store the ID as an attribute
     const id = mention.getAttribute('data-mention-id');
     // request more information about the user from the server and cache locally
     if (!userRequest[id]) {

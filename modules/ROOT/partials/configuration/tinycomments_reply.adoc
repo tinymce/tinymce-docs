@@ -7,7 +7,7 @@ The `+tinycomments_reply+` function saves the comment as a reply to an existing 
 
 The `+tinycomments_reply+` function is given a request (`+req+`) object as the first parameter, which has these fields:
 
-`+conversationUid+`:: The uid of the conversation the reply is targeting.
+`+conversationUid+`:: The UID of the conversation the reply is targeting.
 `+content+`:: The content of the comment to create.
 `+createdAt+`:: The date the comment was created (ISO 8601 date string) format.
 
@@ -16,8 +16,8 @@ The `+done+` callback should accept the following object:
 [source,js]
 ----
 {
-  commentUid: string, // the new comment uid
-  author: string, // the id of the current author
+  commentUid: string, // the new comment UID
+  author: string, // the ID of the current author
   authorName: string // the name of the current author
 }
 ----

@@ -17,24 +17,12 @@ The possible values set the type attribute of the ordered list, `<ol>` as follow
 
 [cols="10%,90%"]
 |===
-|Value | Ordered list type
-
-|`+'1'+`
-|A list sorted by Arabic/Hindu numerals.
-
-This is the default.
-
-|`+'A'+`
-|A list sorted alphabetically by uppercase letter.
-
-|`+'a'+`
-|A list sorted alphabetically by lowercase letter.
-
-|`+'I'+`
-|A list sorted by uppercase Roman numerals.
-
-|`+'i'+`
-|A list sorted by lowercase Roman numerals.
+| Value   | Ordered list type
+| `+'1'+` | A list sorted by Arabic/Hindu numerals.
+| `+'A'+` | A list sorted alphabetically by uppercase letter.
+| `+'a'+` | A list sorted alphabetically by lowercase letter.
+| `+'I'+` | A list sorted by uppercase Roman numerals.
+| `+'i'+` | A list sorted by lowercase Roman numerals.
 |===
 
 === Example: using `tableofcontents_orderedlist` to render a Table of Contents as uppercase Roman numerals

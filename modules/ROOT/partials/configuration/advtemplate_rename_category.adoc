@@ -8,9 +8,9 @@ The plugin uses the `advtemplate_rename_category` asynchronous function to renam
 *Input parameters:*
 [cols="1,1,1,3",options="header"]
 |===
-|Field |Type |Required? |Description
-|`+id+` | `+String+` | required | The id of the category to rename.
-|`+title+` | `+String+` | required | New category title.
+| Field    | Type       | Required? | Description
+| `+id+`   | `+String+` | required  | The id of the category to rename.
+| `+title+`| `+String+` | required  | New category title.
 |===
 
 *Return data:* Empty object  `{}`

@@ -8,9 +8,9 @@ The plugin uses the `advtemplate_move_template` asynchronous function to move th
 *Input parameters:*
 [cols="1,1,1,3",options="header"]
 |===
-|Field |Type |Required? |Description
-|`+templateId+` | `+String+` | required | The id of the template to move.
-|`+newCategoryId+` | `+String+` | optional | The id of the destination category.
+| Field            | Type        | Required? | Description
+| `+templateId+`   | `+String+`  | required  | The id of the template to move.
+| `+newCategoryId+`| `+String+`  | optional  | The id of the destination category.
 |===
 
 *Return data:* Empty object  `{}`

@@ -13,24 +13,24 @@ What the supported string values do:
 
 [cols="1,4"]
 |===
-|Value |Behavior
+| Value | Behavior
 
-|`+'clean'+`
-|Preserves the structure of the content such as headings, tables, and lists.
+| `+'clean'+`
+| Preserves the structure of the content such as headings, tables, and lists.
 
 Removes inline styles and classes.
 
 This results in simple content that uses the site's CSS stylesheet while retaining the semantic structure of the original document.
 
-|`+'merge'+`
-|Preserves the inline formatting and structure of the original document.
+| `+'merge'+`
+| Preserves the inline formatting and structure of the original document.
 
 Removes invalid and proprietary styles, tags and attributes.
 
 This ensures the HTML is valid while more closely matching the original document formatting.
 
-|`+'prompt'+`
-|Prompts the user to choose between the `+'clean'+` and `+'merge'+` options after attempting to paste HTML content.
+| `+'prompt'+`
+| Prompts the user to choose between the `+'clean'+` and `+'merge'+` options after attempting to paste HTML content.
 |===
 
 [NOTE]

@@ -5,9 +5,9 @@ This option allows you to specify the skin that {productname} should use, or `+f
 
 *Type:* `+String+` or `+Boolean+`
 
-*Default value:* `+'oxide'+`
-
 *Possible values:* the name of a skin or `+false+`
+
+*Default value:* `+'oxide'+`
 
 The name of the skin should match the name of the folder within the skins directory of {productname}. If the specified skin is not found, {productname} will not load.
 

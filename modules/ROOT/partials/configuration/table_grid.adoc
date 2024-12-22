@@ -1,7 +1,7 @@
 [[table_grid]]
 == `+table_grid+`
 
-This option allows you to disable the grid-like table picker in the Table menu. The grid feature (which is enabled by default) consists of a dragable matrix that a user can interact with to automatically create a table of x-rows by x-columns based upon their input.
+This option allows you to disable the grid-like table picker in the Table menu. The grid feature (which is enabled by default) consists of a draggable matrix that a user can interact with to automatically create a table of x-rows by x-columns based upon their input.
 
 However, if `+table_grid+` is set to `+false+` the table picker will be replaced by a menu item that opens a dialog that users can use to insert a table. This dialog allows users to set various parameters such as the number of columns and rows, width, height, cell spacing and padding, border width, alignment, and whether to display a caption. There are also advanced style options available if `+table_advtab+` is set to `+true+`.
 
@@ -11,7 +11,7 @@ NOTE: To configure the Table menu to include both the table picker and the table
 
 *Possible values:* `+true+`, `+false+`
 
-*Default value:* `+true+`
+*Default value:* `+true+` on desktop, `+false+` on mobile
 
 include::partial$misc/admon-different-default-for-mobile.adoc[]
 

@@ -1,13 +1,13 @@
 [[tinycomments_resolve]]
 == `+tinycomments_resolve+`
 
-This option adds a _Resolve Conversation_ item to the dropdown menu of the first comment in a conversation.
+This option adds a btn:[Resolve Conversation] item to the dropdown menu of the first comment in a conversation.
 
 The `+tinycomments_resolve+` function should asynchronously return a flag indicating whether the comment thread was resolved using the `+done+` callback. Unrecoverable errors are communicated to {productname} by calling the `+fail+` callback instead.
 
 The `+tinycomments_resolve+` function is passed a (`+req+`) object as the first parameter, which contains the following key-value pair:
 
-* `+conversationUid+`: The uid of the targeting conversation
+`+conversationUid+`:: The uid of the targeting conversation
 
 The `+done+` callback should accept the following object:
 
@@ -20,9 +20,11 @@ The `+done+` callback should accept the following object:
 ----
 
 [NOTE]
+====
 Failure to resolve due to permissions or business rules should be indicated by `+canResolve: false+`, while unexpected errors should be indicated using the `+fail+` callback.
+====
 
-.For example:
+.Example: using `+tinycomments_resolve+`
 [source,js]
 ----
 const resolve_comment_thread = (ref, done, fail) => {

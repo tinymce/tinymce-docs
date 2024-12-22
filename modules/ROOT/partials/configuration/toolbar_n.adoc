@@ -5,6 +5,8 @@ This option allows you to specify the buttons and the order that they will appea
 
 *Type:* `+String+`
 
+*Default value:* `+undefined+`
+
 === Example: using `+toolbar(n)+`
 
 [source,js]
@@ -16,4 +18,4 @@ tinymce.init({
 });
 ----
 
-Please see the xref:toolbar-configuration-options.adoc#toolbar[toolbar] configuration option for details.
+Refer to the xref:toolbar-configuration-options.adoc#toolbar[toolbar] configuration option for details.

@@ -7,8 +7,6 @@ Setting the option `+tableofcontents_orderedlist: true+`, switches this to a num
 
 And setting the `+tableofcontents_orderedlist_type+` to one of its available values switches the rendered Table of Contents to the specified https://html.spec.whatwg.org/dev/grouping-content.html#the-ol-element[ordered list type].
 
-
-
 *Type:* `+String+`
 
 *Possible values:* `+'1'+`, `+'A'+`, `+'a'+`, `+'I'+`, `+'i'+`
@@ -27,7 +25,7 @@ The possible values set the type attribute of the ordered list, `<ol>` as follow
 This is the default.
 
 |`+'A'+`
-|A list sorted alphabetically by capital letter.
+|A list sorted alphabetically by uppercase letter.
 
 |`+'a'+`
 |A list sorted alphabetically by lowercase letter.

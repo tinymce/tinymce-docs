@@ -3,7 +3,9 @@
 
 This option enables you to specify a list of classes to present in the table cell options dialog box. This is useful if you want users to assign predefined classes to table cells.
 
-*Type:* `+Array+`
+*Type:* `+Array+` of `+Objects+`
+
+*Default value:* `+[]+`
 
 === Example: using `+table_cell_class_list+`
 
@@ -26,8 +28,6 @@ tinymce.init({
 === Example of a nested list of table cell classes
 
 To create a nested list, replace `+value+` with `+menu+` to add the top level of the list, then provide an array of items.
-
-For example:
 
 [source,js]
 ----

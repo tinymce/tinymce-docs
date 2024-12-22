@@ -3,7 +3,7 @@
 
 The `+tinycomments_delete_all+` function should asynchronously return a flag indicating whether all the comment threads were removed using the `+done+` callback. Unrecoverable errors are communicated to {productname} by calling the `+fail+` callback instead.
 
-The `+tinycomments_delete_all+` function is given a request (req) object as the first parameter with no fields.
+The `+tinycomments_delete_all+` function is given a request (`+req+`) object as the first parameter with no fields.
 
 The `+done+` callback should accept the following object:
 
@@ -18,7 +18,7 @@ The `+done+` callback should accept the following object:
 [NOTE]
 Failure to delete due to permissions or business rules should be indicated by `+canDelete: false+`, while unexpected errors should be indicated using the `+fail+` callback.
 
-.For example:
+.Example: using `+tinycomments_delete_all+`
 [source,js]
 ----
 const delete_all_comment_threads = (_req, done, fail) => {

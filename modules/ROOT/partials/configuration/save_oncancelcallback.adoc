@@ -1,9 +1,11 @@
 [[save_oncancelcallback]]
 == `+save_oncancelcallback+`
 
-This option allows you to specify the function that will be executed when the cancel button/command is invoked.
+This option allows you to specify the function that will be executed when the `+cancel+` button is pressed or the `mceCancel` command is invoked.
 
 *Type:* `+Function+`
+
+*Default value:* `+undefined+`
 
 === Example: using `+save_oncancelcallback+`
 

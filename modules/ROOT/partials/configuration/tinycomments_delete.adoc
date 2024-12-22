@@ -5,7 +5,7 @@ The `+tinycomments_delete+` function should asynchronously return a flag indicat
 
 The `+tinycomments_delete+` function is passed a (`+req+`) object as the first parameter, which contains the following key-value pair:
 
-* `+conversationUid+`: The uid of the conversation the reply is targeting.
+`+conversationUid+`:: The uid of the conversation the reply is targeting.
 
 The `+done+` callback should accept the following object:
 
@@ -20,8 +20,7 @@ The `+done+` callback should accept the following object:
 [NOTE]
 Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
 
-For example:
-
+.Example: using `+tinycomments_delete+`
 [source,js]
 ----
 const delete_comment_thread = (ref, done, fail) => {

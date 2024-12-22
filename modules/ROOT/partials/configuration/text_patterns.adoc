@@ -13,7 +13,7 @@ Any formats or commands used in text patterns need to be registered with the edi
 * Registering commands for {productname}, see: xref:apis/tinymce.editor.adoc#addCommand[{productname} APIs - addCommand].
 ====
 
-*Type:* `+Array+` or `+false+`
+*Type:* `+false+` or `+Array+` of `+Objects+`
 
 [NOTE]
 The default value for this option was changed with {productname} 7.0, see more xref:7.0-release-notes.adoc#a-new-trigger-property-for-block-text-pattern-configurations-allowing-pattern-activation-with-either-space-or-enter-keys[changes].
@@ -21,7 +21,7 @@ The default value for this option was changed with {productname} 7.0, see more x
 *Default value:*
 [source,js]
 ----
-default: [
+[
   { start: '*', end: '*', format: 'italic' },
   { start: '**', end: '**', format: 'bold' },
   { start: '#', format: 'h1', trigger: 'space' },
@@ -37,8 +37,11 @@ default: [
   { start: '---', cmd: 'InsertHorizontalRule', trigger: 'space' }
 ]
 ----
+
 [TIP]
+====
 When the `text_patterns` option is set in the TinyMCE editor configuration, the new value entirely overwrites the existing default text patterns. This means that the editor will use the patterns specified in the user's configuration and ignore the default patterns. If one wants to add new patterns without losing the default ones, all the default patterns must be included in the custom `text_patterns` array along with any additional patterns.
+====
 
 === Inline patterns
 
@@ -50,7 +53,7 @@ Inline patterns must have the following:
 
 This allows for patterns to be used to either apply a format or execute a command, optionally with the given value.
 
-NOTE: Inline patterns are executed on either pressing the *spacebar* or the *Enter* key.
+NOTE: Inline patterns are executed on either pressing kbd:[Space] or kbd:[Enter].
 
 ==== Example: using inline patterns
 
@@ -70,8 +73,8 @@ tinymce.init({
 
 Using the configuration in this example:
 
-* `+{ start: '*', end: '*', format: 'italic' }+` - Entering text between`+*+` and then pressing the *spacebar* will result in the `+italic+` format being applied to the text between the `+*+` symbols.
-* `+{ start: '**', end: '**', format: 'bold' }+` - Entering text between`+**+` and then pressing the *spacebar* will result in the `+bold+` format being applied.
+* `+{ start: '*', end: '*', format: 'italic' }+` - Entering text between `+*+` and then pressing kbd:[Space] will result in the `+italic+` format being applied to the text between the `+*+` symbols.
+* `+{ start: '**', end: '**', format: 'bold' }+` - Entering text between `+**+` and then pressing kbd:[Space] will result in the `+bold+` format being applied.
 * `+{ start: '~', end: '~', cmd: 'createLink', value: 'https://tiny.cloud' }+` - This executes `+editor.execCommand('createLink', false, 'https://tiny.cloud')+`, which will wrap the text between the `+~+` symbols in a link that points to `+https://tiny.cloud+`.
 
 === Block patterns
@@ -85,7 +88,7 @@ Block patterns must have the following:
 
 The block patterns do not have an `+end+` property. This allows for patterns to be used to either apply a block format or execute a command, optionally, with the given value.
 
-NOTE: Block patterns are executed on *Spacebar* by default, but can be configured to be executed on *Enter*.
+NOTE: Block patterns are executed on kbd:[Space] by default, but can be configured to be executed on kbd:[Enter].
 
 ==== Example: using block patterns
 
@@ -119,8 +122,8 @@ tinymce.init({
 
 Using the configuration in this example:
 
-* `+{ start: '#', format: 'h1', trigger: 'space' }+` - Typing `+#+`, and then pressing `+Space+` will create an empty `+h1+` heading.
-* Typing `+1)+` followed by a `+Space+`, the desired text, and then pressing `+Enter+`; the editor will convert the text into an ordered list, with the original text as the first list item, and the new line as the second list item. Since we have specified `+value+`, this pattern will execute `+editor.execCommand('InsertOrderedList', false, { 'list-style-type': 'decimal'})+`.
+* `+{ start: '#', format: 'h1', trigger: 'space' }+` - Typing `+#+`, and then pressing kbd:[Space] will create an empty `+h1+` heading.
+* Typing `+1)+` followed by kbd:[Space], the desired text, and then pressing kbd:[Enter]; the editor will convert the text into an ordered list, with the original text as the first list item, and the new line as the second list item. Since we have specified `+value+`, this pattern will execute `+editor.execCommand('InsertOrderedList', false, { 'list-style-type': 'decimal'})+`.
 
 === Replacements patterns
 
@@ -131,7 +134,7 @@ Replacement patterns must have the following:
 
 Whether a replacement pattern inserts a block or inline element depends on what the `+replacement+` string is.
 
-NOTE: Replacement patterns are executed on either pressing the *spacebar* or the *Enter* key.
+NOTE: Replacement patterns are executed on either pressing kbd:[Space] or kbd:[Enter].
 
 ==== Example: using replacement patterns
 
@@ -152,7 +155,7 @@ tinymce.init({
 
 Using the configuration in this example:
 
-* Typing `+---+` and then either pressing the *spacebar* or the *Enter* key will insert a horizontal rule block.
-* Typing `+(c)+` and then either pressing the *spacebar* or the *Enter* key will insert an inline copyright symbol.
+* Typing `+---+` and then either pressing kbd:[Space] or kbd:[Enter] will insert a horizontal rule block.
+* Typing `+(c)+` and then either pressing kbd:[Space] or kbd:[Enter] will insert an inline copyright symbol.
 
 This is useful for commonly used phrases or symbols and can be leveraged to create content templates. The last pattern is an example of this.

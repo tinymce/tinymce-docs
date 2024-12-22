@@ -6,7 +6,7 @@ This option allows a list of domains to be specified that should be excluded fro
 [NOTE]
 When the `sandbox_iframes` option is set to `+false+`, all domains will be excluded from sandboxing.
 
-*Type:* `+Array+`
+*Type:* `+Array+` of `+Strings+`
 
 *Default value:*
 [source,js]

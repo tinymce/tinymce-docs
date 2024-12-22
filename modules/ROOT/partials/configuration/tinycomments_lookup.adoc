@@ -54,7 +54,7 @@ The author avatar feature is only available in {productname} 6.1 or higher and i
 * can be any filetype able to be wrapped in an `<img>` element.
 ====
 
-.For example:
+.Example: using `+tinycomments_lookup+`
 [source,js]
 ----
 const lookup_comment = ({ conversationUid }, done, fail) => {

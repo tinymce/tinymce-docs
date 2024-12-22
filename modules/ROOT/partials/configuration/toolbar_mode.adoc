@@ -18,7 +18,7 @@ tinymce.init({
 });
 ----
 
-Two situations to consider when organising the toolbar:
+Two situations to consider when organizing the toolbar:
 
 * When there are two or more toolbar button groups, the main toolbar will show as many complete, sequential toolbar groups as possible within the width of the editor. Any remaining toolbar button groups will be moved to the toolbar drawer.
 * If the first toolbar button group is wider than the editor, the whole toolbar will be shown in the toolbar drawer.
@@ -27,9 +27,9 @@ The toolbar modes are not available when using xref:toolbar-configuration-option
 
 *Type:* `+String+`
 
-*Default value:* `+'floating'+`
-
 *Possible values:* `+'floating'+`, `+'sliding'+`, `+'scrolling'+`, or `+'wrap'+`
+
+*Default value:* `+'floating'+` for desktop and `+'scrolling'+` for mobile
 
 include::partial$misc/admon-different-default-for-mobile.adoc[]
 
@@ -51,8 +51,6 @@ image::floating-toolbar.png[Floating Toolbar]
 
 ===== Configuring a Floating toolbar
 
-Use the following settings to configure a Floating toolbar:
-
 [source,js]
 ----
 tinymce.init({
@@ -69,8 +67,6 @@ If the `+toolbar_mode+` is configured to `+sliding+`, the toolbar appears as a f
 image::sliding-toolbar.png[Sliding Toolbar]
 
 ===== Configuring a Sliding toolbar
-
-Use the following settings to configure a Sliding toolbar:
 
 [source,js]
 ----
@@ -93,8 +89,6 @@ image::scrolling-toolbar.png[Scrolling Toolbar]
 
 ===== Configuring a Scrolling toolbar
 
-Use the following settings to configure a Scrolling toolbar:
-
 [source,js]
 ----
 tinymce.init({
@@ -111,8 +105,6 @@ If the `+toolbar_mode+` is configured to `+wrap+`, the overflow toolbar buttons 
 image::wrapped-toolbar.png[Wrapped Toolbar]
 
 ===== Configuring a Wrapped toolbar
-
-Use the following settings to configure a wrapped toolbar:
 
 [source,js]
 ----

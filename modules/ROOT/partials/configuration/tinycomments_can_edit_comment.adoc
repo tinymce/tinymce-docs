@@ -1,7 +1,7 @@
 [[tinycomments_can_edit_comment]]
 == `+tinycomments_can_edit_comment+`
 
-_Optional_: This option sets the author permissions for _editing comments_. If the `+tinycomments_can_edit_comment+` option is not included, the current author (`+tinycomments_author+`) cannot edit comments added by other authors.
+_Optional_: This option sets the author permissions for editing comments. If the `+tinycomments_can_edit_comment+` option is not included, the current author (`+tinycomments_author+`) cannot edit comments added by other authors.
 
 *Type:* `+Function+`
 
@@ -16,9 +16,9 @@ _Optional_: This option sets the author permissions for _editing comments_. If t
 }
 ----
 
-The following example extends the default behavior to allow the author `+<Admin user>+` to edit other author's comments by adding `|| currentAuthor === '<Admin user>'`.
-
 === Example: using `tinycomments_can_edit_comment`
+
+This example extends the default behavior to allow the author `+<Admin user>+` to edit other author's comments by adding `|| currentAuthor === '<Admin user>'`.
 
 [source,js]
 ----

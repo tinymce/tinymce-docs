@@ -3,10 +3,10 @@
 
 The `+tinycomments_delete_comment+` function should asynchronously return a flag indicating whether the comment or comment thread was removed using the `+done+` callback. Unrecoverable errors are communicated to {productname} by calling the `+fail+` callback instead.
 
-The `+tinycomments_delete_comment+` function is given a request (req) object as the first parameter, which has these fields:
+The `+tinycomments_delete_comment+` function is given a request (`+req+`) object as the first parameter, which has these fields:
 
-* `+conversationUid+`: The uid of the conversation the reply is targeting.
-* `+commentUid+`: The uid of the comment to delete (cannot be the same as `+conversationUid+`).
+`+conversationUid+`:: The uid of the conversation the reply is targeting.
+`+commentUid+`:: The uid of the comment to delete (cannot be the same as `+conversationUid+`).
 
 The `+done+` callback should accept the following object:
 
@@ -21,7 +21,7 @@ The `+done+` callback should accept the following object:
 [NOTE]
 Failure to delete due to permissions or business rules is indicated by "false", while unexpected errors should be indicated using the "fail" callback.
 
-.For example:
+.Example: using `+tinycomments_delete_comment+`
 [source,js]
 ----
 const delete_comment = (ref, done, fail) => {

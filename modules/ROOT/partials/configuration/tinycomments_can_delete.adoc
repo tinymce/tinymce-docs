@@ -1,7 +1,7 @@
 [[tinycomments_can_delete]]
 == `+tinycomments_can_delete+`
 
-_Optional_: This option sets the author permissions for _deleting comment conversations_. If the `+tinycomments_can_delete+` option is not included, the current author (`+tinycomments_author+`) cannot delete comment conversations created by other authors.
+_Optional_: This option sets the author permissions for deleting comment conversations. If the `+tinycomments_can_delete+` option is not included, the current author (`+tinycomments_author+`) cannot delete comment conversations created by other authors.
 
 *Type:* `+Function+`
 
@@ -16,10 +16,9 @@ _Optional_: This option sets the author permissions for _deleting comment conver
 }
 ----
 
-[NOTE]
-The following example extends the default behavior to allow the author `+<Admin user>+` to delete other author's comment conversations by adding `|| currentAuthor === '<Admin user>'`.
-
 === Example: using `tinycomments_can_delete`
+
+This example extends the default behavior to allow the author `+<Admin user>+` to delete other author's comment conversations by adding `|| currentAuthor === '<Admin user>'`.
 
 [source,js]
 ----

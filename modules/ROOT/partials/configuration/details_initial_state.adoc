@@ -20,7 +20,7 @@ The default value for this option is `+inherited+`.
 
 *Default value:* `+inherited+`
 
-=== Example: using `details_initial_state` to set all created Accordion sections to present as closed by default
+.Example: using `details_initial_state` to set all created Accordion sections to present as closed by default
 
 [source,js]
 ----
@@ -31,7 +31,7 @@ tinymce.init({
 });
 ----
 
-=== Example: using `details_initial_state` to set pre-configured `<details>` content in new {productname} documents to present as open
+.Example: using `details_initial_state` to set pre-configured `<details>` content in new {productname} documents to present as open
 
 [source,js]
 ----

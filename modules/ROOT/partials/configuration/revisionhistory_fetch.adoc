@@ -19,7 +19,7 @@ The {pluginname} plugin does not sort results before displaying them, allowing i
 
 *Return data:* `+Array+` of xref:#revision[Revision] `+Objects+`
 
-=== Example of `revisionhistory_fetch` response
+.Example: of `revisionhistory_fetch` response
 
 [source,js]
 ----
@@ -50,7 +50,7 @@ The {pluginname} plugin does not sort results before displaying them, allowing i
 ];
 ----
 
-=== Example: Using `revisionhistory_fetch`
+.Example: Using `revisionhistory_fetch`
 
 [source,js]
 ----

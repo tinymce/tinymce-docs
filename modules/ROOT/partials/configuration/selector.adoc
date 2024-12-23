@@ -11,7 +11,7 @@ For more information on the differences between regular and inline editing modes
 
 *Default value:* `+undefined+`
 
-=== Example: replace all textarea elements on the page
+.Example: replace all textarea elements on the page
 
 [source,js]
 ----
@@ -20,7 +20,7 @@ tinymce.init({
 });
 ----
 
-=== Example: replace a textarea element with ID "editable"
+.Example: replace a textarea element with ID "editable"
 
 [source,js]
 ----
@@ -29,7 +29,7 @@ tinymce.init({
 });
 ----
 
-=== Example: inline editing mode on a div element with ID "editable"
+.Example: inline editing mode on a div element with ID "editable"
 
 [source,js]
 ----

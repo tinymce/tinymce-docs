@@ -7,7 +7,7 @@ This option enables you to specify a list of classes to present in the table row
 
 *Default value:* `+[]+`
 
-=== Example: using `+table_row_class_list+`
+.Example: using `+table_row_class_list+`
 
 [source,js]
 ----
@@ -25,11 +25,9 @@ tinymce.init({
 });
 ----
 
-=== Example of a nested list of table row classes
-
 To create a nested list, replace `+value+` with `+menu+` to add the top level of the list, then provide an array of items.
 
-For example:
+.Example: using a nested list of table row classes
 
 [source,js]
 ----

@@ -9,13 +9,13 @@ The `+a11ychecker_ignored_rules+` option prevents specific Accessibility Checker
 
 *Default value:* `+''+`
 
-=== Example: using `+a11ychecker_ignored_rules+`
-
-This examples shows how to ignore the following checks (rules):
+This examples shows how to ignore the following rules:
 
 * D2 - Sequential headings
 * I2 - Image `+alt+` text is not the image filename
 * T4B - Table headers
+
+.Example: using `+a11ychecker_ignored_rules+`
 
 [source,js]
 ----

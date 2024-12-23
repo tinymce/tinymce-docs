@@ -9,7 +9,7 @@ This option specifies the spellchecker languages that are available to the user,
 
 *Default value:* `+[ 'en_us', 'en_gb', 'da', 'nl', 'fi', 'fr', 'de', 'it', 'nb', 'pt', 'pt_pt', 'es', 'sv' ]+`
 
-=== Example: using `spellchecker_languages` as a string
+.Example: using `spellchecker_languages` as a string
 
 [source,js]
 ----
@@ -20,7 +20,7 @@ tinymce.init({
 });
 ----
 
-=== Example: using `spellchecker_languages` as an array
+.Example: using `spellchecker_languages` as an array
 
 [source,js]
 ----

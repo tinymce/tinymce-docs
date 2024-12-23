@@ -22,7 +22,7 @@ If an inline dialog is open and focus is switched away from the {productname} ed
 
 *Default value:* `+false+`
 
-==== Example: using `persistent`
+.Example: using `persistent`
 
 [source,js]
 ----
@@ -47,8 +47,6 @@ tinymce.activeEditor.windowManager.open({
 });
 ----
 
-==== Example: using `focus` to refocus an open but de-focused dialog
-
 Because a dialog with a `{ persistent: true }` property does not close when the dialog loses focus, it is possible for an end-user to open a further instance of the dialog.
 
 To prevent this
@@ -57,6 +55,7 @@ To prevent this
 
 * use the `focus` method in the xref:apis/tinymce.windowmanager.adoc#open[`DialogInstanceAPI`] to transfer focus to the open dialog rather than creating a new instance of the same dialog.
 
+.Example: using `focus` to refocus an open but de-focused dialog
 
 [source,js]
 ----

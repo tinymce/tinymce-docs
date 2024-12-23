@@ -1,7 +1,7 @@
 [[table_toolbar]]
 == `+table_toolbar+`
 
-This option allows you to specify the toolbar buttons shown on the contextual toolbar for tables. Provide a space-separated list of toolbar buttons in the order they should be shown. To create groups on the toolbar, use the `+|+` pipe character to add a separator between toolbar buttons.
+This option allows you to specify the toolbar buttons shown on the contextual toolbar for tables. Provide a space-separated list of toolbar buttons in the order they should be shown. To create groups on the toolbar, use the `+|+` pipe character to add a separator between toolbar buttons. To disable the contextual table toolbar, set this option to an empty string.
 
 *Type:* `+String+`
 
@@ -9,7 +9,7 @@ This option allows you to specify the toolbar buttons shown on the contextual to
 
 *Default value:* `+'tableprops tabledelete | tableinsertrowbefore tableinsertrowafter tabledeleterow | tableinsertcolbefore tableinsertcolafter tabledeletecol'+`
 
-=== Example: default table_toolbar configuration
+.Example: default table_toolbar configuration
 
 [source,js]
 ----
@@ -21,9 +21,7 @@ tinymce.init({
 });
 ----
 
-=== Example: disable the table toolbar
-
-To disable or remove the contextual table toolbar, set `+table_toolbar+` to an empty string.
+.Example: disabling the contextual table toolbar
 
 [source,js]
 ----

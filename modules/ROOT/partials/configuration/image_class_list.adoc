@@ -7,7 +7,7 @@ This option lets you specify a predefined list of classes to add to an image. It
 
 *Default value:* `+undefined+`
 
-=== Example: using `+image_class_list+`
+.Example: using `+image_class_list+`
 
 [source,js]
 ----
@@ -25,11 +25,9 @@ tinymce.init({
 });
 ----
 
-=== Example of a nested list of image classes
-
 To create a nested list, replace `+value+` with `+menu+` to add the top level of the list, then provide an array of items.
 
-For example:
+.Example: using a nested list of image classes
 
 [source,js]
 ----

@@ -7,9 +7,8 @@ Use the `+custom_ui_selector+` option to specify the elements that you want {pro
 
 *Default value:* `+''+`
 
-=== Example: using `+custom_ui_selector+`
+.Example: using `+custom_ui_selector+`
 
-.JavaScript
 [source,js]
 ----
 tinymce.init({
@@ -18,7 +17,6 @@ tinymce.init({
 });
 ----
 
-.HTML
 [source,html]
 ----
 <textarea></textarea>

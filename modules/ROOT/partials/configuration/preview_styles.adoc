@@ -11,7 +11,7 @@ If unset the editor will preview the styles listed in the default value listed b
 
 *Default value:* `+'font-family font-size font-weight font-style text-decoration text-transform color background-color border border-radius outline text-shadow'+`
 
-=== Example: no preview of styles
+.Example: no preview of styles
 
 [source,js]
 ----
@@ -22,7 +22,7 @@ tinymce.init({
 });
 ----
 
-=== Example: preview of only font-size and color
+.Example: preview of only font-size and color
 
 [source,js]
 ----

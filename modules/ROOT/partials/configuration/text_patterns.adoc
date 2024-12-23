@@ -55,7 +55,7 @@ This allows for patterns to be used to either apply a format or execute a comman
 
 NOTE: Inline patterns are executed on either pressing kbd:[Space] or kbd:[Enter].
 
-==== Example: using inline patterns
+.Example: using inline patterns
 
 [source,js]
 ----
@@ -90,7 +90,7 @@ The block patterns do not have an `+end+` property. This allows for patterns to 
 
 NOTE: Block patterns are executed on kbd:[Space] by default, but can be configured to be executed on kbd:[Enter].
 
-==== Example: using block patterns
+.Example: using block patterns
 
 [source,js]
 ----
@@ -136,7 +136,7 @@ Whether a replacement pattern inserts a block or inline element depends on what 
 
 NOTE: Replacement patterns are executed on either pressing kbd:[Space] or kbd:[Enter].
 
-==== Example: using replacement patterns
+.Example: using replacement patterns
 
 [source,js]
 ----

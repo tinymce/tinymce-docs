@@ -5,7 +5,7 @@ This option enables you to only import classes from selectors matching the filte
 
 *Type:* `+String+`, `+RegExp+` or `+Function+`
 
-=== Example using a string filter with `+importcss_selector_filter+`
+.Example: using a string filter with `+importcss_selector_filter+`
 
 [source,js]
 ----
@@ -17,7 +17,7 @@ tinymce.init({
 });
 ----
 
-=== Example using a RegExp filter with `+importcss_selector_filter+`
+.Example: using a RegExp filter with `+importcss_selector_filter+`
 
 [source,js]
 ----
@@ -29,7 +29,7 @@ tinymce.init({
 });
 ----
 
-=== Example using a function filter with `+importcss_selector_filter+`
+.Example: using a function filter with `+importcss_selector_filter+`
 
 [source,js]
 ----

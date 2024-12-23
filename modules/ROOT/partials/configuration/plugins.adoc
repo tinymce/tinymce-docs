@@ -12,7 +12,7 @@ The plugins can be provided as either:
 
 *Default value:* `+[]+`
 
-=== Example: using `+plugins+` with a string
+.Example: using `+plugins+` with a string
 
 [source,js]
 ----
@@ -22,7 +22,7 @@ tinymce.init({
 });
 ----
 
-=== Example: using `+plugins+` with an array
+.Example: using `+plugins+` with an array
 
 [source,js]
 ----

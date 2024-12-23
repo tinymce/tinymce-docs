@@ -6,7 +6,7 @@ In addition to its usual functions, the `+buttons+` property can also be used to
 
 To configure a custom dialog so it does not render a footer section when displayed, set the `buttons` property to an empty array, `+[]+`, or omit it entirely.
 
-==== Example: configuring a dialog without buttons or a footer
+.Example: configuring a dialog without buttons or a footer
 
 [source,js]
 ----

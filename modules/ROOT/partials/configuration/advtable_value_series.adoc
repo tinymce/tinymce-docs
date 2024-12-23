@@ -93,7 +93,7 @@ The generator callback function should return an object with the following prope
 |===
 
 
-=== Example: using `+advtable_value_series+`
+.Example: using `+advtable_value_series+`
 
 [source,js]
 ----
@@ -114,7 +114,7 @@ tinymce.init({
 });
 ----
 
-=== Example: using a custom generator to exclude header and footer rows from row numbering
+.Example: using a custom generator to exclude header and footer rows from row numbering
 
 [source,js]
 ----

@@ -13,9 +13,9 @@ If something goes wrong in your function and you want to show an error to the us
 
 *Default value:* `+undefined+`
 
-=== Example: using `+media_url_resolver+`
-
 The following example simply checks if the URL contains some special URL and returns an iframe if it does. Otherwise it calls the `+resolve+` callback with an empty string, falling back to the default media embed logic.
+
+.Example: using `+media_url_resolver+`
 
 [source,js]
 ----

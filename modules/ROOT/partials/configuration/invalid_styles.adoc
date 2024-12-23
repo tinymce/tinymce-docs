@@ -10,7 +10,7 @@ This option enables you to restrict the styles that are valid for specific eleme
 
 *Default value:* `+undefined+`
 
-=== Example: using `+invalid_styles+` string for global classes
+.Example: using `+invalid_styles+` string for global classes
 
 [source,js]
 ----
@@ -20,7 +20,7 @@ tinymce.init({
 });
 ----
 
-=== Example: using `+invalid_styles+` object for element specific classes
+.Example: using `+invalid_styles+` object for element specific classes
 
 [source,js]
 ----

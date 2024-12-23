@@ -7,7 +7,7 @@ Lets you specify a custom name for the top anchor in the URL type ahead drop dow
 
 *Default value:* `+'#top'+`
 
-=== Example of custom value
+.Example: using `anchor_top`
 
 [source,js]
 ----
@@ -17,7 +17,7 @@ tinymce.init({
 });
 ----
 
-=== Example of disabling
+.Example: disabling the top anchor
 
 [source,js]
 ----

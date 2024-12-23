@@ -12,7 +12,7 @@ Languages specified as keys in the `+spellchecker_ignore_list+` object must matc
 
 *Default value:* `+[]+`
 
-=== Example: using `+spellchecker_ignore_list+` to ignore words in all languages
+.Example: using `+spellchecker_ignore_list+` to ignore words in all languages
 
 [source,js]
 ----
@@ -23,7 +23,7 @@ tinymce.init({
 });
 ----
 
-=== Example: using `+spellchecker_ignore_list+` for specific languages
+.Example: using `+spellchecker_ignore_list+` for specific languages
 
 [source,js]
 ----

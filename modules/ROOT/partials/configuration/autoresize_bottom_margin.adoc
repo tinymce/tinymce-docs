@@ -7,7 +7,7 @@ This option allows you to specify the size of the `+padding+` at the bottom of t
 
 *Default value:* `+50+`
 
-=== Example: using `+autoresize_bottom_margin+`
+.Example: using `+autoresize_bottom_margin+`
 
 [source,js]
 ----
@@ -20,7 +20,7 @@ tinymce.init({
 
 As of version 6.3, `autoresize_bottom_margin` must be set to a value below the `+margin-bottom+` property of any content CSS, else it will be ignored and set to `+0+`.
 
-=== Example: setting `+autoresize_bottom_margin+` to zero because `+margin-bottom+` is set elsewhere
+.Example: setting `+autoresize_bottom_margin+` to zero because `+margin-bottom+` is set elsewhere
 
 [source,js]
 ----

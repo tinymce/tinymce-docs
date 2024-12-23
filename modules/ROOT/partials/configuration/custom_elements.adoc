@@ -57,9 +57,9 @@ HTML Element Sets: The exact element sets for each preset, depending on the sche
 | @flow     | Same as @blocks + @phrasing
 |===
 
-=== Example using `+custom_elements+` with presets such as `@blocks`, `@phrasing`, and `@flow`.
+.Example: using `+custom_elements+` with presets such as `@blocks`, `@phrasing`, and `@flow`
 
-[source, js]
+[source,js]
 ----
 tinymce.init({
   selector: "textarea",

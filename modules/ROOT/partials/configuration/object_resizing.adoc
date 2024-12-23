@@ -11,7 +11,7 @@ This options allows you to turn on/off the resizing handles on images, tables or
 
 include::partial$misc/admon-different-default-for-mobile.adoc[]
 
-=== Example: disable all object resizing
+.Example: disable all object resizing
 
 [source,js]
 ----
@@ -21,7 +21,7 @@ tinymce.init({
 });
 ----
 
-=== Example: enable object resizing for images only
+.Example: enable object resizing for images only
 
 [source,js]
 ----

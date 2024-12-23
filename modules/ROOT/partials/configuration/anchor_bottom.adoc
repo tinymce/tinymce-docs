@@ -7,7 +7,7 @@ Lets you specify a custom name for the bottom anchor in the URL type ahead drop 
 
 *Default value:* `+'#bottom'+`
 
-=== Example of custom value
+.Example: using `anchor_bottom`
 
 [source,js]
 ----
@@ -17,7 +17,7 @@ tinymce.init({
 });
 ----
 
-=== Example of disabling
+.Example: disabling the bottom anchor
 
 [source,js]
 ----

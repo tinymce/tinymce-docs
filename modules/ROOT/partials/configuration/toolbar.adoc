@@ -9,7 +9,7 @@ To specify the buttons that should appear on {productname}'s toolbar, the `+tool
 
 *Type:* `+String+`
 
-==== Example grouped toolbar
+.Example: grouped toolbar
 
 [source,js]
 ----
@@ -31,7 +31,7 @@ To specify labels to the grouped buttons that appear on {productname}'s toolbar,
 
 *Type:* `+Array+`
 
-===== Example: adding toolbar group labels
+.Example: adding toolbar group labels
 
 [source,js]
 ----
@@ -57,7 +57,7 @@ To disable the toolbar, the toolbar option should be provided a boolean value of
 
 *Default value:* `+true+`
 
-==== Example: disabling the toolbar
+.Example: disabling the toolbar
 
 [source,js]
 ----
@@ -74,7 +74,7 @@ To specify multiple toolbars, the toolbar option should be provided with an arra
 
 *Type:* `+Array+`
 
-==== Example: adding multiple toolbars
+.Example: adding multiple toolbars
 
 [source,js]
 ----

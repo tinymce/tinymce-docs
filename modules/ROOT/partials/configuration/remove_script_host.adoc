@@ -13,9 +13,9 @@ If this option is set to `+false+`, the protocol and host of the `+document_base
 
 *Default value:* `+true+`
 
-=== Examples: Using `+remove_script_host+`
+When `+remove_script_host+` is set to `+true+` and adding a relative URL such as `+test.html+`, the editor will convert the URL to: `+/path1/test.html+`.
 
-When `+remove_script_host+` is set to `+true+`, such as:
+.Example: using `+remove_script_host+` to exclude the protocol and host from relative URLs
 
 [source,js]
 ----
@@ -27,9 +27,9 @@ tinymce.init({
 });
 ----
 
-Adding a relative URL such as `+test.html+`, the editor will convert the URL to: `+/path1/test.html+`.
+When `+remove_script_host+` is set to `+false+` and adding a relative URL such as `+test.html+`, the editor will convert the URL to: `+http://www.example.com/path1/test.html+`.
 
-When `+remove_script_host+` is set to `+false+`, such as:
+.Example: using `+remove_script_host+` to include the protocol and host in relative URLs
 
 [source,js]
 ----
@@ -40,5 +40,3 @@ tinymce.init({
   remove_script_host: false
 });
 ----
-
-Adding a relative URL such as `+test.html+`, the editor will convert the URL to: `+http://www.example.com/path1/test.html+`.

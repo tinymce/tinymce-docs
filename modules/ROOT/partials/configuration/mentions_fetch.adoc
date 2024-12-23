@@ -13,7 +13,7 @@ For information on the user properties to pass to the success callback for the a
 
 *Default value:* `+undefined+`
 
-=== Example: using `+mentions_fetch+`
+.Example: using `+mentions_fetch+`
 
 [source,js]
 ----
@@ -48,7 +48,7 @@ The `+success+` callback can be passed an optional array of extra items. When cl
 * A "text" property for the content to be displayed in the menu.
 * A "meta" property for that will be passed using the fetch query parameter.
 
-=== Example with extras
+.Example: with extras
 
 [source,js]
 ----

@@ -5,7 +5,7 @@ This option enables you to restrict the classes that are valid for specific elem
 
 *Type:* `+String+` or `+Object+`
 
-=== Example simple global classes
+.Example: simple global classes
 
 [source,js]
 ----
@@ -15,7 +15,7 @@ tinymce.init({
 });
 ----
 
-=== Example element specific classes
+.Example: element specific classes
 
 [source,js]
 ----

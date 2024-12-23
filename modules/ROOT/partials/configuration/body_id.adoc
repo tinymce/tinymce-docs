@@ -7,9 +7,9 @@ This option enables you to specify an ID for the body of each editor instance. T
 
 *Default value:* `+'tinymce'+`
 
-=== Example: using `+body_id+`
-
 This will add the same ID to all editors that gets created by the `+init+` call.
+
+.Example: using `+body_id+`
 
 [source,js]
 ----
@@ -20,6 +20,8 @@ tinymce.init({
 ----
 
 This will set specific ids on the bodies of specific editors.
+
+.Example: using `+body_id+` with multiple IDs
 
 [source,js]
 ----

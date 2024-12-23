@@ -13,7 +13,7 @@ To define the menus on {productname}'s menu bar, provide the menubar option with
 
 include::partial$misc/admon-different-default-for-mobile.adoc[]
 
-=== Example: customizing the menu bar
+.Example: customizing the menu bar
 
 [source,js]
 ----
@@ -23,9 +23,7 @@ tinymce.init({
 });
 ----
 
-=== Example: disabling/removing the menu bar
-
-To disable the menu bar, set the `+menubar+` option to `+false+`.
+.Example: disabling the menu bar
 
 [source,js]
 ----

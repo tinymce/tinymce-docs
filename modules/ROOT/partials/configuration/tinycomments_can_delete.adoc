@@ -16,9 +16,9 @@ _Optional_: This option sets the author permissions for deleting comment convers
 }
 ----
 
-=== Example: using `tinycomments_can_delete`
-
 This example extends the default behavior to allow the author `+<Admin user>+` to delete other author's comment conversations by adding `|| currentAuthor === '<Admin user>'`.
+
+.Example: using `tinycomments_can_delete`
 
 [source,js]
 ----

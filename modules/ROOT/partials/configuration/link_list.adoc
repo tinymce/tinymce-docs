@@ -7,7 +7,7 @@ There are multiple ways to specify how to get the data for the link list, but al
 
 *Type:* `+String+`, `+Function+`, or `+Array+` of `+Objects+`
 
-=== Example of an array of link items
+.Example: using an array of link items
 
 [source,js]
 ----
@@ -25,11 +25,9 @@ tinymce.init({
 });
 ----
 
-=== Example of a nested list of link items
-
 To create a nested list, replace `+value+` with `+menu+` to add the top level of the list, then provide an array of items.
 
-For example:
+.Example: using a nested list of link items
 
 [source,js]
 ----
@@ -51,9 +49,9 @@ tinymce.init({
 });
 ----
 
-=== Example of an external script that returns a JSON array of link items
-
 You can also configure a URL with JSON data. The JSON data must use the same format as above.
+
+.Example: using an external script that returns a JSON array of link items
 
 [source,js]
 ----
@@ -65,8 +63,6 @@ tinymce.init({
 });
 ----
 
-=== Example of a custom asynchronous callback function
-
 `+link_list+` can also take a function that is called when the link dialog is opened. {productname} passes this function a `+success+` callback function, which should be passed an array of link items. This allows for asynchronous and dynamic generation of the list of links.
 
 The following is an example of how `+link_list+` can be used with a callback function. `+fetchLinkList+` could be replaced with any function that returns an array of link items. It can be used to generate a list of link items based on:
@@ -74,6 +70,8 @@ The following is an example of how `+link_list+` can be used with a callback fun
 * Data retrieved from a database.
 * The current editor content.
 * The current user.
+
+.Example: using a custom asynchronous callback function
 
 [source,js]
 ----

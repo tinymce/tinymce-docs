@@ -14,7 +14,7 @@ For information on how to create these tokens, refer to the xref:tinydrive-jwt-a
 
 *Required:* yes
 
-=== Example Using a JWT Provider URL
+.Example: using a JWT Provider URL
 
 [source,js]
 ----
@@ -25,7 +25,7 @@ tinymce.init({
 });
 ----
 
-=== Example Using a JWT Provider Callback
+.Example: using a JWT Provider Callback
 
 [source,js]
 ----

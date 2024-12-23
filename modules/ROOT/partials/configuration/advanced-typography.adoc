@@ -11,7 +11,7 @@ By setting up the `typography_default_lang`, each time the user opens the {produ
 
 *Default value:* `+en-US+`
 
-=== Example: Using `typography_default_langs`
+.Example: Using `typography_default_langs`
 
 [source,js,subs="attributes+"]
 ----
@@ -36,7 +36,7 @@ If an HTML tag or an HTML tag with a specified attribute is added to the `typogr
 
 *Default value:* `+[]+`
 
-=== Example: Using `typography_ignore`
+.Example: Using `typography_ignore`
 
 [source,js,subs="attributes+"]
 ----
@@ -58,7 +58,7 @@ This option allows the user to apply language-specific typography rules to parti
 
 When setting up `typography_langs` in {productname}, `lang` values — such as `+"en-US"+`, `+"de"+`, and `+"es"+` — populate the Advanced Typography language dropdown list for the user to select from when applying language-specific typography rules to the selected text.
 
-=== Example: Using `typography_default_lang`
+.Example: Using `typography_default_lang`
 
 [source,js,subs="attributes+"]
 ----
@@ -84,7 +84,7 @@ A user can then select text and select from the available languages. That langua
 
 *Default value:*  `+[ 'be', 'bg', 'ca', 'cs', 'da', 'nl', 'en-GB', 'en-US', 'eo', 'et', 'fi', 'de', 'el', 'hu', 'ga', 'it', 'lv', 'no', 'pl', 'ro', 'ru', 'sr', 'sk', 'sl', 'es', 'sv', 'tr', 'uk' ]+`
 
-=== Example: Using `typography_langs`
+.Example: Using `typography_langs`
 
 [source,js,subs="attributes+"]
 ----
@@ -151,7 +151,7 @@ All rules supported by the {pluginname} plugin are documented in the https://git
 
 *Default value:* `+undefined+` (all rules are applied)
 
-=== Example: Using `typography_rules`
+.Example: Using `typography_rules`
 
 [source,js,subs="attributes+"]
 ----

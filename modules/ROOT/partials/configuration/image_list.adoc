@@ -7,7 +7,7 @@ This option lets you specify a predefined list of sources for images. `+image_li
 
 *Default value:* `+false+`
 
-=== Example: using `+image_list+`
+.Example: using `+image_list+`
 
 [source,js]
 ----
@@ -22,11 +22,9 @@ tinymce.init({
 });
 ----
 
-=== Example of a nested list of images
-
 To create a nested list, replace `+value+` with `+menu+` to add the top level of the list, then provide an array of items.
 
-For example:
+.Example: using a nested list of images
 
 [source,js]
 ----
@@ -47,9 +45,9 @@ tinymce.init({
 });
 ----
 
-=== Example of an external script that returns an JSON array of images
-
 You can also configure a URL with JSON data. The format of that list is the same as above.
+
+.Example: using an external script that returns an JSON array of images
 
 [source,js]
 ----
@@ -61,7 +59,7 @@ tinymce.init({
 });
 ----
 
-=== Example of a custom async function
+.Example: using a custom async function
 
 [source,js]
 ----

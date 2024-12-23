@@ -13,9 +13,9 @@ The callback function will be passed xref:a11ychecker.adoc#issue[`issue` objects
 (issue) => true;
 ----
 
-=== Example: using `+a11ychecker_filter_issue+` to filter out the Accessibility Checker T1 rule
-
 The callback function in the following example will return `+false+` if the issue `id` value is `'T1'`, filtering `'T1'` issues from the Accessibility Checker report.
+
+.Example: using `+a11ychecker_filter_issue+` to filter out the Accessibility Checker T1 rule
 
 [source,js]
 ----
@@ -29,9 +29,9 @@ tinymce.init({
 });
 ----
 
-=== Example: using `+a11ychecker_filter_issue+` to filter out all Accessibility Checker table rules and rules less than `+'error'+` level
-
 The callback function in the following example will only return `+false+` if the issue `+element+` is a `+'table'+` and the `+'severity'+` level is not `+'error'+`, filtering all low-severity and `+table+` element-related issues from the Accessibility Checker report.
+
+.Example: using `+a11ychecker_filter_issue+` to filter out all Accessibility Checker table rules and rules less than `+'error'+` level
 
 [source,js]
 ----
@@ -45,9 +45,9 @@ tinymce.init({
 });
 ----
 
-=== Example: using `+a11ychecker_filter_issue+` to filter images with empty alternative text from the Accessibility Checker I1 rule
-
 The callback function in the following example will only return `+false+` for any issues with `'I1'` as the `+'id'+` image elements with an empty `+'alt+'` attribute, otherwise the issue won't be filtered out. This implementation can be useful as allowing images to have empty alternative text can be another method of applying the `+role="presentation"+` attribute to mark an image as `+decorative+`.
+
+.Example: using `+a11ychecker_filter_issue+` to filter images with empty alternative text from the Accessibility Checker I1 rule
 
 [source,js]
 ----

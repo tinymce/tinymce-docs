@@ -7,7 +7,7 @@ This option enables you to add the CSS files that should be used for populating 
 
 *Default value:* `+undefined+`
 
-=== Example: using `+importcss_file_filter+`
+.Example: using `+importcss_file_filter+`
 
 [source,js]
 ----
@@ -19,7 +19,7 @@ tinymce.init({
 });
 ----
 
-=== Example using a RegExp filter with `+importcss_file_filter+`
+.Example: using a RegExp filter with `+importcss_file_filter+`
 
 [source,js]
 ----
@@ -31,7 +31,7 @@ tinymce.init({
 });
 ----
 
-=== Example using a function filter with `+importcss_file_filter+`
+.Example: using a function filter with `+importcss_file_filter+`
 
 [source,js]
 ----

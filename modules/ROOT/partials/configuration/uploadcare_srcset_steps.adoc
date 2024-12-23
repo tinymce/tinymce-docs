@@ -9,11 +9,9 @@ Customize this array to include **only** the widths required for your applicatio
 
 *Default value:* `+[100, 200, 300, 500, 750, 1000, 1250, 1500, 2000, 2500, 3000]+`
 
-=== Example: Generated `srcset` Attribute with Custom Widths
-
 When an image is uploaded, its original width is used to create a `srcset` attribute with downscaled images for the defined widths. For instance, if the image width is 780 pixels and `uploadcare_srcset_steps` is set to `[100, 200, 300, 500, 750]`, the resulting `srcset` will look like this:
 
-.Example: Responsive 780px Image with Custom Widths in `srcset`
+.Example: Responsive 780px image with generated custom widths in `srcset` attribute
 [source,html]
 ----
 <img 
@@ -32,9 +30,7 @@ When an image is uploaded, its original width is used to create a `srcset` attri
 
 This ensures the browser selects the optimal image size based on the viewport and device characteristics, enhancing performance and user experience. On devices with narrower viewports, smaller images (e.g., 100w or 200w) will be prioritized, reducing bandwidth usage.
 
-=== Example: Customizing `uploadcare_srcset_steps`
-
-To customize the array, update the configuration as shown below:
+.Example: Customizing `uploadcare_srcset_steps`
 
 [source,js]
 ----

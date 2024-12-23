@@ -7,7 +7,7 @@ The `+link_class_list+` option allows you to specify a list of classes for the l
 
 *Default value:* `+[]+`
 
-=== Example: using `+link_class_list+`
+.Example: using `+link_class_list+`
 
 [source,js]
 ----
@@ -25,11 +25,9 @@ tinymce.init({
 });
 ----
 
-=== Example of a nested list of link classes
-
 To create a nested list, replace `+value+` with `+menu+` to add the top level of the list, then provide an array of items.
 
-For example:
+.Example: using a nested list of link classes
 
 [source,js]
 ----

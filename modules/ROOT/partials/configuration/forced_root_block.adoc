@@ -5,7 +5,10 @@ This option enables you to adjust the default block element used to wrap non blo
 
 To avoid block elements in content, use the xref:content-behavior-options.adoc#newline_behavior[newline_behavior] setting to change what happens when kbd:[Enter] is pressed.
 
-WARNING: Not using `+p+` elements as the root block will impair the functionality of the editor.
+[WARNING]
+====
+Not using `+p+` elements as the root block will impair the functionality of the editor.
+====
 
 *Type:* `+String+`
 

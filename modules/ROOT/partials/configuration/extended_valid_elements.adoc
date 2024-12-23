@@ -25,7 +25,10 @@ Also see xref:content-filtering.adoc#valid_elements[valid_elements] and xref:con
 
 === Using extended_valid_elements to allow script elements
 
-WARNING: Allowing script elements (`+<script>+`) in {productname} exposes users to https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting[cross-site scripting (XSS) attacks].
+[WARNING]
+====
+Allowing script elements (`+<script>+`) in {productname} exposes users to https://developer.mozilla.org/en-US/docs/Glossary/Cross-site_scripting[cross-site scripting (XSS) attacks].
+====
 
 To allow script elements in the editor, include the following in the {productname} configuration:
 

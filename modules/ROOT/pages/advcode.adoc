@@ -10,9 +10,11 @@
 include::partial$misc/admon-premium-plugin.adoc[]
 
 [TIP]
-As of {productname} 7.0, the Advanced Code Editor plugin has been renamed to {pluginname}. When adding {pluginname} in your editor, continue to use {plugincode}.
+====
+As of {productname} 7.0, the Advanced Code Editor plugin has been renamed to {pluginname}. When adding {pluginname} in your editor, continue to use `{plugincode}`.
+====
 
-The xref:advcode.adoc[Enhanced Code Editor] plugin (`+advcode+`) brings a more advanced code editor to {productname}. This code editor makes it easier to modify the HTML, and is a useful add-on for power users. It comes with features often found in IDEs, all enabled by default:
+The {pluginname} plugin (`{plugincode}`) brings a more advanced code editor to {productname}. This code editor makes it easier to modify the HTML, and is a useful add-on for power users. It comes with features often found in IDEs, all enabled by default:
 
 * Syntax color highlighting.
 * Bracket matching.
@@ -23,7 +25,10 @@ The xref:advcode.adoc[Enhanced Code Editor] plugin (`+advcode+`) brings a more a
 * Increase and decrease display font size buttons.
 * Full-screen mode button.
 
-NOTE: For the {pluginname} to offer a full-screen mode requires the xref:fullscreen.adoc[Full screen] plugin and requires {pluginname} to be running in xref:advcode.adoc#advcode_inline[inline mode].
+[NOTE]
+====
+For the {pluginname} to offer a full-screen mode requires the xref:fullscreen.adoc[Full screen] plugin and requires {pluginname} to be running in `xref:advcode.adoc#advcode_inline[advcode_inline]` mode.
+====
 
 == The difference between the Code and Enhanced Code Editor plugins
 
@@ -58,7 +63,11 @@ tinymce.init({
 
 include::partial$misc/code-dialog-and-selection-state.adoc[]
 
-include::partial$configuration/advcode.adoc[]
+== Options
+
+The following configuration options affect the behavior of the {pluginname} plugin.
+
+include::partial$configuration/advcode.adoc[leveloffset=+1]
 
 include::partial$misc/advcode-shortcuts.adoc[]
 

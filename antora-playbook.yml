@@ -21,7 +21,7 @@ asciidoc:
     - '@tinymce/antora-extension-livedemos'
 antora:
   extensions:
-    - require: './lib/rssfeed.cjs'
+    - require: './extensions/rssfeed.cjs'
       input_file: 'changelog.adoc'
       output_file: 'rss.xml'
 runtime:

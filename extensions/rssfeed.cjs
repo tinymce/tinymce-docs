@@ -102,16 +102,15 @@ module.exports.register = function ({ config }) {
             </rss>`;
 
             // Add RSS feed to site catalog
+            const filePath = `${pageComponentName}/${pageComponentVersion}/${config.outputFile}`;
             siteCatalog.addFile({
                 contents: Buffer.from(rss),
-                out: { path: config.outputFile },
+                out: { path: filePath },
             });
 
             const endTime = Date.now(); // End the timer
             const duration = endTime - startTime; // Calculate the duration
-            console.log(
-                `RSS feed generated at ${config.outputFile} in ${duration}ms`
-            );
+            console.log(`RSS feed generated at ${filePath} in ${duration}ms`);
         } catch (error) {
             // Catch any errors to allow the build to continue
             console.error("Error generating RSS feed:", error);

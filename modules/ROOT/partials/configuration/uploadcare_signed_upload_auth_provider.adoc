@@ -5,6 +5,8 @@ Specifies a function used to generate secure signatures for authenticated reques
 
 Use this option to enforce secure uploads, preventing unauthorized users from uploading files via your application.
 
+For more information on Uploadcare Signed Uploads, refer to the official documentation at link:https://uploadcare.com/docs/security/secure-uploads/[Uploadcare Signed Uploads].
+
 *Type:* `+Function+`
 
 === Example: Setting `uploadcare_signed_upload_auth_provider`

@@ -30,6 +30,7 @@ module.exports.register = function ({ config }) {
             // Construct site links
             const siteLink = playbook.site.url;
             const siteLinkWithVersion = `${siteLink}/${pageComponentName}/${pageComponentVersion}`;
+            const filePath = `${pageComponentName}/${pageComponentVersion}/${config.outputFile}`;
 
             // Load page content with cheerio
             const $ = cheerio.load(page.contents.toString());
@@ -96,13 +97,12 @@ module.exports.register = function ({ config }) {
                     <description>${pageDescription}</description>
                     <language>en</language>
                     <copyright>Creative Commons Legal Code - Attribution-NonCommercial-ShareAlike 3.0 Unported</copyright>
-                    <atom:link href="${siteLink}/rss.xml" rel="self" type="application/rss+xml" />
+                    <atom:link href="${siteLink}/${filePath}" rel="self" type="application/rss+xml" />
                     ${rssItems}
                 </channel>
             </rss>`;
 
             // Add RSS feed to site catalog
-            const filePath = `${pageComponentName}/${pageComponentVersion}/${config.outputFile}`;
             siteCatalog.addFile({
                 contents: Buffer.from(rss),
                 out: { path: filePath },

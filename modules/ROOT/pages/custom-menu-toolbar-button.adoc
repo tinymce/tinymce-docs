@@ -37,25 +37,30 @@ include::partial$misc/admon-requires-6.4v.adoc[]
 |setIcon |`+(icon: string) => void+` |Sets the icon of the button.
 |===
 
-== Menu button example and explanation
+== Menu button example and explanation without search
 
 The following is a simple toolbar menu button example:
 
 liveDemo::custom-toolbar-menu-button[tab="js"]
 
-This example configures a toolbar menu button with the label `+My Button+` that opens the specified menu when clicked. The top-level menu contains two items. The first menu item inserts content when clicked and the second menu item opens a submenu containing two menu items which insert content when clicked.
+This example configures a toolbar menu button labeled `+My Button+` that opens a menu when clicked. The menu contains two items: one that inserts content and another that opens a submenu with two additional items to be inserted when clicked.
 
-The `+fetch+` function is called when the toolbar menu button's menu is opened. It is a function that takes a callback and passes it an array of menu items to be rendered in the drop-down menu. This allows for asynchronous fetching of the menu items.
+The `+fetch+` function retrieves an array of menu items and passes it to the callback, which renders them in the dropdown menu. This enables asynchronous menu generation. 
 
 [[searchable-menu-buttons]]
 == Searchable menu buttons
 
 include::partial$misc/admon-requires-6.2v.adoc[]
 
-The button's menu can be configured to have an input field for searching, as well as its usual items. The presence of the input field is controlled by the `+search+` field in the xref:options[options]. The `+search+` field can be a `+boolean+` or an `+object+` containing a single optional string `placeholder`. By default, `+search+` is false. If `+search+` is not false, the button's menu will contain an input field with any specified placeholder text. As the user types into this field, the `+fetch+` function will be called with the text in the input field passed back as part of `+fetchContext+`. The `+fetch+` function is responsible for using this `+fetchContext+` to determine which items to pass to its `+success+` callback.
+The button's menu can include a search input field alongside it's items, controlled by the `+search+` option. The  `+search+` option can be either:
 
-The `+fetchContext+` is an object containing a single string property: `+pattern+`. If the toolbar menu button has not configured `search` to be active, then the `+pattern+` string will be empty.
+* A `+boolean+` value: When `true`, it enables the search field. The text inside the field is empty.
 
+* An `+object+`: Allows customization with a placeholder to set placeholder text for the input field. 
+
+By default, `+search+` is false, meaning no search field is displayed. When enabled, the search field allows for dynamic updating of the menu content based on their input. The `+fetchContext+` object provides additional information to the `+fetch+` function which can be used to determine the menu's behaviour or content.
+
+When `+search+` is enabled, depending on the `+pattern+` property of `+fetchContext+` different menu buttons options will be shown. This is because when a new keypress is added to the `+search+`, `+fetch+` is called to update the possible options from the search.
 == Searchable menu button example and explanation
 
 include::partial$misc/admon-requires-6.2v.adoc[]

@@ -1,19 +1,19 @@
 = Security guide
 :navtitle: Security guide
-:description_short: Security information for TinyMCE.
-:description: Information on reporting security issues, what TinyMCE does to protect users, and what you can do to protect your users.
-:keywords: security, xss, scripting, vulnerability, hack, hacker, csp, mitigation, protection, protect
+:description_short: Security information for {productname}.
+:description: Information on reporting security issues, what {productname} does to protect users, and what you can do to protect your users.
+:keywords: security, xss, scripting, vulnerability, hack, hacker, csp, mitigation, protection, protect, hsts, https
 
 NOTE: The following is _general_ security advice that may be relevant to a website or application using {productname}.
 
 == Overview
 
-* xref:reporting-tinymce-security-issues[Reporting TinyMCE security issues]
-* xref:what-we-do-to-maintain-security-for-tinymce[What we do to maintain security for TinyMCE]
+* xref:reporting-tinymce-security-issues[Reporting {productname} security issues]
+* xref:what-we-do-to-maintain-security-for-tinymce[What we do to maintain security for {productname}]
 ** xref:scripts-and-xss-vulnerabilities[Scripts and XSS vulnerabilities]
 ** xref:keeping-dependencies-up-to-date[Keeping dependencies up-to-date]
 * xref:enforcing-https-with-hsts[Enforcing HTTPS with HSTS]
-* xref:configuring-content-security-policy-csp-for-tinymce[Configuring Content Security Policy (CSP) for TinyMCE]
+* xref:configuring-content-security-policy-csp-for-tinymce[Configuring Content Security Policy (CSP) for {productname}]
 * xref:general-security-risks-for-user-input-elements[General security risks for user input elements]
 ** xref:cross-site-scripting-xss[Cross-Site Scripting (XSS)]
 ** xref:injection[Injection]
@@ -26,7 +26,7 @@ NOTE: The following is _general_ security advice that may be relevant to a websi
 
 // Note: The reportingtinymcesecurityissues anchor is needed for older external links
 [[reporting-tinymce-security-issues]]
-== [[reportingtinymcesecurityissues]] Reporting TinyMCE security issues
+== [[reportingtinymcesecurityissues]] Reporting {productname} security issues
 
 {companyname} values the work of security researchers in improving the security of technology products worldwide. We welcome researchers who wish to responsibly disclose vulnerabilities in our products or systems.
 
@@ -36,10 +36,10 @@ To report a potential security vulnerability, contact our Security team at mailt
 
 In line with the United States National Infrastructure Advisory Council (NIAC) https://dhs.gov/xlibrary/assets/vdwgreport.pdf[Vulnerability Disclosure Framework] (PDF link), Tiny requests community members reporting potential security vulnerabilities maintain the confidentiality of their report and discovery until Tiny has investigated the issue and taken action to fix it.
 
-Tiny will communicate with you regarding the status of your report and will, with your permission, publicly attribute the security issue’s discovery to you after the issue has been fixed and disclosed.
+Tiny will communicate with you regarding the status of your report and will, with your permission, publicly attribute the security issue's discovery to you after the issue has been fixed and disclosed.
 
 [[what-we-do-to-maintain-security-for-tinymce]]
-== What we do to maintain security for TinyMCE
+== What we do to maintain security for {productname}
 
 To protect {productname} users, {companyname}:
 
@@ -60,7 +60,7 @@ From the 1st of January 2020, Security Advisories for patched XSS vulnerabilitie
 [[keeping-dependencies-up-to-date]]
 === Keeping dependencies up-to-date
 
-To protect our users, {companyname} ensures that the TinyMCE dependencies are updated before the next version (major or minor) is released.
+To protect our users, {companyname} ensures that the {productname} dependencies are updated before the next version (major or minor) is released.
 
 [[enforcing-https-with-hsts]]
 == Enforcing HTTPS with HSTS

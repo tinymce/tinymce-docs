@@ -13,16 +13,15 @@ tinymce.init({
         const allItems = [
           { type: 'menuitem', text: 'Apple', onAction: () => editor.insertContent('Apple') },
           { type: 'menuitem', text: 'Banana', onAction: () => editor.insertContent('Banana') },
-          { type: 'togglemenuitem', text: 'Cherry', onAction: () => { 
-		  		toggleState = !toggleState;
-		  		editor.insertContent('Cherry') 
-		  	
-			},
-			    onSetup: (api) => {
-                api.setActive(toggleState);
-                return () => {};
-              }
-		  }
+          { type: 'togglemenuitem', text: 'ToggleableMenu', onAction: () => { 
+            toggleState = !toggleState;
+            editor.insertContent('ToggleableMenu'); 
+            },
+            onSetup: (api) => {
+              api.setActive(toggleState);
+              return () => {};
+            },
+          },
         ];
 
         // Use the `pattern` to filter items

@@ -1,7 +1,6 @@
 tinymce.init({
   selector: 'textarea#custom-toolbar-menu-button-search',
   height: 500,
-  toolbar: 'mybutton',
   toolbar: 'searchMenuButton',
   setup: (editor) => {
     let toggleState = false;
@@ -13,9 +12,9 @@ tinymce.init({
         const allItems = [
           { type: 'menuitem', text: 'Apple', onAction: () => editor.insertContent('Apple') },
           { type: 'menuitem', text: 'Banana', onAction: () => editor.insertContent('Banana') },
-          { type: 'togglemenuitem', text: 'ToggleableMenu', onAction: () => { 
+          { type: 'togglemenuitem', text: 'Toggleable Menu', onAction: () => { 
             toggleState = !toggleState;
-            editor.insertContent('ToggleableMenu'); 
+            editor.insertContent('Toggleable Menu'); 
             },
             onSetup: (api) => {
               api.setActive(toggleState);

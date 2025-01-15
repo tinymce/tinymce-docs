@@ -47,17 +47,24 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== Comments
 
 The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Comments** Comments includes the following fixes.
 
-==== <Premium plugin name 1 change 1>
+==== The mentions dropdown remained visible even after the mention text was deleted in quick succession.
+// #TINY-11673
 
-// CCFR here.
+An issue was identified where the mentions in comments dropdown was still visibile after the mentioned text was removed in quick succession. 
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+This behavior occurred because the users list was updated following a successful API fetch request, even when the mentioned text was completely deleted. 
+As a result, users were unable to interact with or close the dropdown.
+
+In {productname} {release-version}, the logic has been updated to ensure the users list is only refreshed if the mentioned text is not entirely removed. 
+This change ensures that the mentions dropdown automatically disappears when the mentioned text is deleted, improving user experience and functionality.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]

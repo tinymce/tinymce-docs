@@ -54,7 +54,7 @@ The {productname} {release-version} release includes an accompanying release of 
 **Comments** Comments includes the following fixes.
 
 ==== The mentions menu without items was not closed when pressing Space or Enter key.
-
+// #TINY-11454
 Previously, an issue was identified where pressing the `Space` or `Enter` key when the mentions dropdown displayed the message "no users found" did not close the dropdown unlike in the editor.
 
 This issue also caused the `Space` and `Enter` keys to be non-functional, resulting in a poor user experience.

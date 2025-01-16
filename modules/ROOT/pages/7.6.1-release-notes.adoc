@@ -56,7 +56,7 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== The mentions dropdown remained visible even after the mention text was deleted in quick succession.
 // #TINY-11673
 
-An issue was identified where the mentions in comments dropdown was still visibile after the mentioned text was removed in quick succession. 
+In previous versions of the **Comments** plugin, an issue was identified where the mentions in comments dropdown was still visible after the `@` mentioned text was removed in quick succession. 
 
 This behavior occurred when the users list was updated following a successful API fetch request, even when the mentioned text was completely deleted.
 

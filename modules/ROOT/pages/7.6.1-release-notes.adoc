@@ -76,7 +76,7 @@ This issue also caused the `Space` and `Enter` keys to be non-functional, result
 ==== Toggle sidebar shortcut remained active when the editor was disabled.
 // #TINY-11646
 
-Previously, an issue was identified where the comment sidebar would close when using the keyboard shortcut `Cmd + Opt + M` while the editor was in a disabled state.
+Previously, an issue was identified where the comment sidebar would close when using the keyboard shortcut `Cmd + Opt + M` on Mac and `Ctrl + Alt + M` on Windows while the editor was in a disabled state.
 
 This led to inconsistent behavior, as keyboard shortcuts remained functional despite the editor being disabled.
 

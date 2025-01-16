@@ -58,11 +58,11 @@ The {productname} {release-version} release includes an accompanying release of 
 
 An issue was identified where the mentions in comments dropdown was still visibile after the mentioned text was removed in quick succession. 
 
-This behavior occurred because the users list was updated following a successful API fetch request, even when the mentioned text was completely deleted. 
-As a result, users were unable to interact with or close the dropdown.
+This behavior occurred when the users list was updated following a successful API fetch request, even when the mentioned text was completely deleted.
 
-In {productname} {release-version}, the logic has been updated to ensure the users list is only refreshed if the mentioned text is not entirely removed. 
-This change ensures that the mentions dropdown automatically disappears when the mentioned text is deleted, improving user experience and functionality.
+As a result, users were unable to interact with or close the `@` mentions dropdown.
+
+In {productname} {release-version}, the logic has been updated to ensure the users list is only refreshed if the mentioned text is not entirely removed. This change ensures that the mentions dropdown automatically closes when the `@` mentioned text is deleted.
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
 

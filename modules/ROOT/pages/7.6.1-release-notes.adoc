@@ -64,6 +64,15 @@ As a result, users were unable to interact with or close the `@` mentions dropdo
 
 In {productname} {release-version}, the logic has been updated to ensure the users list is only refreshed if the mentioned text is not entirely removed. This change ensures that the mentions dropdown automatically closes when the `@` mentioned text is deleted.
 
+==== The mentions menu without items was not closed when pressing Space or Enter key.
+// #TINY-11454
+
+Previously, an issue was identified where pressing the `Space` or `Enter` key when the mentions dropdown displayed the message "no users found" did not close the dropdown unlike in the editor.
+
+This issue also caused the `Space` and `Enter` keys to be non-functional, resulting in a poor user experience.
+
+{productname} {release-version} resolves this issue by ensuring that pressing the `Space` or `Enter` key closes the dropdown, maintaining consistent functionality between the comment text area and the editor.
+
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
 
 

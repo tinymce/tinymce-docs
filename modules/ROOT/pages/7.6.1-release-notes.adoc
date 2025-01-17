@@ -182,13 +182,14 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Text input was prevented in form elements in the contents of the editor.
+// #TINY-11446
 
-// CCFR here.
+Previously, an issue was identified in Google Chrome where text input was prevented within form elements, resulting in the inability to insert text into these elements.
 
+This has been addressed in {productname} {release-version} by updating the logic for handling text input on non-editable elements to include support for form elements. As a result, text can now be successfully inserted into form elements in Google Chrome.
 
 [[security-fixes]]
 == Security fixes

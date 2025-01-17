@@ -104,10 +104,11 @@ For information on the **Enhanced Table** plugin, see: xref:advtable.adoc[Enhanc
 === Image Optimizer
 
 The {productname} {release-version} release includes an accompanying release of the **Image Optimizer** premium plugin.
-// TINY-11669
+
 **Image Optimizer** includes the following fixes.
 
 ==== Resizing images by typing into the input didn't update the `style` attribute correctly.
+// TINY-11669
 
 An issue was identified where the `data-mce-style` attribute of an image was not updated correctly when its width and height were modified via user input.
 

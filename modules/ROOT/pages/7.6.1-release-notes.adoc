@@ -73,6 +73,15 @@ This issue also caused the `Space` and `Enter` keys to be non-functional, result
 
 {productname} {release-version} resolves this issue by ensuring that pressing the `Space` or `Enter` key closes the dropdown, maintaining consistent functionality between the comment text area and the editor.
 
+==== Toggle sidebar shortcut remained active when the editor was disabled.
+// #TINY-11646
+
+Previously, an issue was identified where the comment sidebar would close when using the keyboard shortcut `Cmd + Opt + M` on Mac and `Ctrl + Alt + M` on Windows while the editor was in a disabled state.
+
+This led to inconsistent behavior, as keyboard shortcuts remained functional despite the editor being disabled.
+
+{productname} {release version} addresses this issue. The behavior of keyboard shortcuts has been updated to ensure that the comment sidebar shortcut is disabled when the editor is in a disabled state.
+
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
 
 

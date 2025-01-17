@@ -82,6 +82,7 @@ The {productname} {release-version} release includes an accompanying release of 
 **Enhanced Tables** includes the following fixes.
 
 ==== Table resize bars was not properly aligned for inline editors inside scrollable containers.
+// #TINY-11215
 
 In earlier versions of {productname}, an issue was identified in the inline mode editor where table resize bars were improperly positioned when placed within a scrollable container. When the container was scrolled, the resize bars became misaligned with the corresponding table rows and columns.
 

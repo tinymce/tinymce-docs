@@ -101,6 +101,25 @@ In {productname} {release-version}, this issue has been resolved by ensuring the
 
 For information on the **Enhanced Table** plugin, see: xref:advtable.adoc[Enhanced Tables].
 
+=== Image Optimizer
+
+The {productname} {release-version} release includes an accompanying release of the **Image Optimizer** premium plugin.
+
+**Image Optimizer** includes the following fixes.
+
+==== Resizing images by typing into the input didn't update the `style` attribute correctly.
+
+An issue was identified where the `data-mce-style` attribute of an image was not updated correctly when its width and height were modified via user input.
+
+This was caused by triggering the resize function when the selection was somewhere else due to a debounce between the input and the resize, but the resize operation would be performed on the current selection.
+
+This resulted in other editor components that contain the `data-mce-style` attribute accidentally reading outdated values, and the resize not being applied as the selection would not be on the image.
+
+{productname} {release-version} addresses this by updating the `data-mce-style` attribute accordingly when a resize operation is performed and the resize function takes the image as a parameter. 
+This ensures that all editor components that reference the `data-mce-style` attribute read the most recent value entered, and the resize operation is applied to the correct image even before the debounce time has elapsed.
+
+For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
+
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement
 

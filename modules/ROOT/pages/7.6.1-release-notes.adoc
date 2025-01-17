@@ -110,14 +110,13 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== Resizing images by typing into the input didn't update the `style` attribute correctly.
 // TINY-11669
 
-An issue was identified where the `data-mce-style` attribute of an image was not updated correctly when its width and height were modified via user input.
+An issue was identified where the `style` attribute of an image was not updated correctly when its width and height were modified via user input.
 
-This was caused by triggering the resize function when the selection was somewhere else due to a debounce between the input and the resize, but the resize operation would be performed on the current selection.
+This occurred because the resize function was triggered while the selection was elsewhere, due to a debounce delay between the input and the resize operation. As a result, the resize operation was performed on the current selection instead of the intended image.
 
-This resulted in other editor components that contain the `data-mce-style` attribute accidentally reading outdated values, and the resize not being applied as the selection would not be on the image.
+This led to other editor components that rely on the `style` attribute accidentally reading outdated values, and the resize not being applied correctly since the selection was not on the image.
 
-{productname} {release-version} addresses this by updating the `data-mce-style` attribute accordingly when a resize operation is performed and the resize function takes the image as a parameter. 
-This ensures that all editor components that reference the `data-mce-style` attribute read the most recent value entered, and the resize operation is applied to the correct image even before the debounce time has elapsed.
+{productname} {release-version} resolves this issue by updating the `style` attribute appropriately whenever a resize operation is performed. The resize function now takes in the intended image as a parameter, ensuring that all editor components referencing the `style` attribute read the most recent value entered. Additionally, the resize operation is applied to the correct image, even before the debounce time elapses.
 
 For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
 

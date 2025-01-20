@@ -187,11 +187,11 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === Opening a notification when the toolbar is at the bottom threw an error.
 // #TINY-11498
 
-An issue was previously identified in the inline mode editor where, if the toolbar was positioned at the bottom of the screen, a UI error occurred that rendered notifications non-functional after being opened.
+An issue was identified in the inline mode editor where, if the toolbar was positioned at the bottom of the screen, a UI error occurred that rendered notifications non-functional after being opened.
 
 This issue significantly impacted the user experience, preventing users from interacting with the notification interface effectively.
 
-{productname} {release-version} update resolves this issue by enhancing the notification positioning logic to account for the toolbar's location. This ensures notifications function seamlessly, regardless of the toolbar's placement on the screen.
+{productname} {release-version} resolves this issue by enhancing the notification positioning logic to account for the toolbar's location. Notifications now function seamlessly, regardless of the toolbar's placement on the screen.
 
 
 [[security-fixes]]

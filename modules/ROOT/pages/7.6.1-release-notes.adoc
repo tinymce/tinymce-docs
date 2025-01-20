@@ -200,10 +200,14 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Opening a notification when the toolbar is at the bottom threw an error.
+// #TINY-11498
 
-// CCFR here.
+An issue was identified in the inline mode editor where, if the toolbar was positioned at the bottom of the screen, a UI error occurred that rendered notifications non-functional after being opened.
+
+This issue significantly impacted the user experience, preventing users from interacting with the notification interface effectively.
+
+{productname} {release-version} resolves this issue by enhancing the notification positioning logic to account for the toolbar's location. Notifications now function seamlessly, regardless of the toolbar's placement on the screen.
 
 
 [[security-fixes]]

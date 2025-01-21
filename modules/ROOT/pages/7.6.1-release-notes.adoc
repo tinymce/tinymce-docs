@@ -110,7 +110,7 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== Resizing images by typing into the input didn't update the `style` attribute correctly.
 // TINY-11669
 
-An issue was identified where the `style` attribute of an image was not updated correctly when its width and height were modified via user input.
+An issue was identified where the internal custom `style` attribute of an image was not updated correctly when its width and height were modified via user input.
 
 This occurred because the resize function was triggered while the selection was elsewhere, due to a debounce delay between the input and the resize operation. As a result, the resize operation was performed on the current selection instead of the intended image.
 

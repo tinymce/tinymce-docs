@@ -88,7 +88,7 @@ For information on the **Comments** plugin, see: xref:introduction-to-tiny-comme
 
 The {productname} {release-version} release includes an accompanying release of the **Enhanced Tables** premium plugin.
 
-**Enhanced Tables** includes the following fixes.
+**Enhanced Tables** includes the following fix.
 
 ==== Table resize bars was not properly aligned for inline editors inside scrollable containers.
 // #TINY-11215
@@ -100,6 +100,21 @@ This misalignment caused a disconnect between the table rows and their associate
 In {productname} {release-version}, this issue has been resolved by ensuring the table resize bars are properly attached to the respective table rows and columns when the container is scrolled, enhancing usability and functionality.
 
 For information on the **Enhanced Table** plugin, see: xref:advtable.adoc[Enhanced Tables].
+
+=== Import from Word
+
+The {productname} {release-version} release includes an accompanying release of the **Import from Word** premium plugin.
+
+**Import from Word** includes the following fix.
+
+==== Error messages were not rendered correctly
+// #TINY-11662
+
+In previous releases of the **Import from Word** premium plugin, an error occurring during the import process triggered an "Operation failed" notification that featured an incorrect icon and lacked the expected background. This design was inconsistent with the error notifications displayed by related plugins, such as the xref:exportpdf.adoc[Export to PDF] plugin and the xref:exportword.adoc[Export to Word] plugin, which use a red background and an exclamation mark to signify errors.
+
+In {productname} {release-version}, this UI inconsistency has been resolved. Error notifications for the Word document import process now render correctly, aligning with the visual standards of related plugins.
+
+For more information on the **Import from Word** plugin, see xref:importword.adoc[Import from Word].
 
 === Image Optimizer
 
@@ -117,6 +132,15 @@ This issue occurred because the resize function was triggered while the selectio
 This led to other editor components that rely on that custom `style` attribute to accidentally read outdated values, resulting in the resize not being applied correctly since the selection was not on the intended image.
 
 {productname} {release-version} addresses this issue, by updating the custom `style` attribute appropriately whenever a resize operation is performed. The resize function now takes in the intended image as a parameter, ensuring that all editor components referencing that custom `style` attribute read the most recent value entered. Additionally, the resize operation is applied to the correct image, even before the debounce time elapses.
+
+==== Images with existing `srcset` were not handled correctly.
+// #TINY-11653
+
+An issue was identified where images with an existing `srcset` attribute containing an Uploadcare URL were being processed incorrectly.
+
+The problem occurred when attempting to update an `srcset` attribute that did not contain an Uploadcare URL. In such cases, no changes were applied, resulting in the image failing to update if the existing `srcset` had a different structure.
+
+{productname} {release-version} resolves this issue by exclusively targeting `srcset` attributes with Uploadcare URLs. This ensures that all relevant images are updated correctly, with the `srcset` being regenerated from scratch to incorporate any modifications made.
 
 For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
 
@@ -201,13 +225,23 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Text input was prevented in form elements in the contents of the editor.
+// #TINY-11446
 
-// CCFR here.
+Previously, an issue was identified in Google Chrome and Microsoft Edge where text input was prevented within form elements, resulting in the inability to insert text into these elements.
 
+{productname} {release-version} addresses this issue, by updating the logic for handling text input on non-editable elements to include support for form elements. As a result, text can now be successfully inserted into form elements in Google Chrome and Microsoft Edge.
+
+=== Opening a notification when the toolbar is at the bottom threw an error.
+// #TINY-11498
+
+An issue was identified in the inline mode editor where, if the toolbar was positioned at the bottom of the screen, a UI error occurred that rendered notifications non-functional after being opened.
+
+This issue significantly impacted the user experience, preventing users from interacting with the notification interface effectively.
+
+{productname} {release-version} resolves this issue by enhancing the notification positioning logic to account for the toolbar's location. Notifications now function seamlessly, regardless of the toolbar's placement on the screen.
 
 [[security-fixes]]
 == Security fixes

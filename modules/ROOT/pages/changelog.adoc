@@ -4,6 +4,28 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+== xref:7.6.1-release-notes.adoc[7.6.1 - 2025-01-22]
+
+=== Fixed
+* Text input was prevented in form elements in the contents of the editor.
+// #TINY-11446
+* Opening a notification when the toolbar is positioned at the bottom of the editor threw an error.
+// #TINY-11498
+* Table resize bars was not properly aligned for inline editors inside scrollable containers.
+// #TINY-11215
+* Error messages were not rendered correctly
+// #TINY-11662
+* Resizing images by typing into the input didn’t update the style attribute correctly.
+// #TINY-11669
+* Images with existing srcset were not handled correctly.
+// #TINY-11653
+* The mentions dropdown remained visible even after the mention text was deleted in quick succession.
+// #TINY-11673
+* The mentions menu without items was not closed when pressing Space or Enter key.
+// #TINY-11454
+* Toggle sidebar shortcut remained active when the editor was disabled.
+// #TINY-11646
+
 == xref:7.6.0-release-notes.adoc[7.6.0 - 2024-12-11]
 
 === Added

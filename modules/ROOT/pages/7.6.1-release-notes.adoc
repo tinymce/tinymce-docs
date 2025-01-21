@@ -114,7 +114,7 @@ An issue was identified where the internal custom `style` attribute of an image 
 
 This occurred because the resize function was triggered while the selection was elsewhere, due to a debounce delay between the input and the resize operation. As a result, the resize operation was performed on the current selection instead of the intended image.
 
-This led to other editor components that rely on the `style` attribute accidentally reading outdated values, and the resize not being applied correctly since the selection was not on the image.
+This led to other editor components that rely on that custom `style` attribute accidentally reading outdated values, and the resize not being applied correctly since the selection was not on the image.
 
 {productname} {release-version} resolves this issue by updating that custom `style` attribute appropriately whenever a resize operation is performed. The resize function now takes in the intended image as a parameter, ensuring that all editor components referencing that custom `style` attribute read the most recent value entered. Additionally, the resize operation is applied to the correct image, even before the debounce time elapses.
 

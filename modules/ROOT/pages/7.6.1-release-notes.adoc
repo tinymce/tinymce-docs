@@ -116,7 +116,7 @@ This occurred because the resize function was triggered while the selection was 
 
 This led to other editor components that rely on the `style` attribute accidentally reading outdated values, and the resize not being applied correctly since the selection was not on the image.
 
-{productname} {release-version} resolves this issue by updating the `style` attribute appropriately whenever a resize operation is performed. The resize function now takes in the intended image as a parameter, ensuring that all editor components referencing the `style` attribute read the most recent value entered. Additionally, the resize operation is applied to the correct image, even before the debounce time elapses.
+{productname} {release-version} resolves this issue by updating that custom `style` attribute appropriately whenever a resize operation is performed. The resize function now takes in the intended image as a parameter, ensuring that all editor components referencing that custom `style` attribute read the most recent value entered. Additionally, the resize operation is applied to the correct image, even before the debounce time elapses.
 
 For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
 

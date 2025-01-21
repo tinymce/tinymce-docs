@@ -101,6 +101,21 @@ In {productname} {release-version}, this issue has been resolved by ensuring the
 
 For information on the **Enhanced Table** plugin, see: xref:advtable.adoc[Enhanced Tables].
 
+=== Import from Word
+
+The {productname} {release-version} release includes an accompanying release of the **Import from Word** premium plugin.
+
+**Import from Word** includes the following fixes.
+
+==== Error messages were not rendered correctly
+// #TINY-11662
+
+In previous releases of the **Import from Word** premium plugin, an error occurring during the import process triggered an "Operation failed" notification that featured an incorrect icon and lacked the expected background. This design was inconsistent with the error notifications displayed by related plugins, such as the xref:exportpdf.adoc[Export to PDF] plugin and the xref:exportword.adoc[Export to Word] plugin, which use a red background and an exclamation mark to signify errors.
+
+In {productname} {release-version}, this UI inconsistency has been resolved. Error notifications for the Word document import process now render correctly, aligning with the visual standards of related plugins.
+
+For more information on the **Import from Word** plugin, see xref:importword.adoc[Import from Word].
+
 === Image Optimizer
 
 The {productname} {release-version} release includes an accompanying release of the **Image Optimizer** premium plugin.

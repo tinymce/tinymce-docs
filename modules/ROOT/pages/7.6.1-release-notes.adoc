@@ -198,7 +198,14 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
+
+=== Text input was prevented in form elements in the contents of the editor.
+// #TINY-11446
+
+Previously, an issue was identified in Google Chrome and Microsoft Edge where text input was prevented within form elements, resulting in the inability to insert text into these elements.
+
+{productname} {release-version} addresses this issue, by updating the logic for handling text input on non-editable elements to include support for form elements. As a result, text can now be successfully inserted into form elements in Google Chrome and Microsoft Edge.
 
 === Opening a notification when the toolbar is at the bottom threw an error.
 // #TINY-11498
@@ -208,7 +215,6 @@ An issue was identified in the inline mode editor where, if the toolbar was posi
 This issue significantly impacted the user experience, preventing users from interacting with the notification interface effectively.
 
 {productname} {release-version} resolves this issue by enhancing the notification positioning logic to account for the toolbar's location. Notifications now function seamlessly, regardless of the toolbar's placement on the screen.
-
 
 [[security-fixes]]
 == Security fixes

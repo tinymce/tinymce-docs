@@ -11,35 +11,56 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[overview]]
 == Overview
 
-{productname} {release-version} was released for {enterpriseversion} and {cloudname} on <weekday>, <month> <DD>^<st|nd|rd|th>^, <YYYY>. These release notes provide an overview of the changes for {productname} {release-version}, including:
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, January 22^nd^, 2025. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
+* xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
-* xref:improvements[Improvements]
 * xref:bug-fixes[Bug fixes]
+* xref:security-fixes[Security fixes]
+
+[[accompanying-premium-self-hosted-server-side-component-changes]]
+== Accompanying Premium self-hosted server-side component changes
+
+The {productname} {release-version} release includes accompanying changes affecting the {productname} **self-hosted** services for the following plugins:
+
+* **Enhanced Media Embed** plugin `mediaembed`.
+* **Image Editing** plugin `editimage`.
+* **Link Checker** plugin `linkchecker`.
+* **Spell Checker** plugin `tinymcespellchecker`.
+* **Spelling Autocorrect** plugin `autocorrect`.
+
+For information on:
+
+* The **Enhanced Media Embed** plugin, see: xref:introduction-to-mediaembed.adoc[Enhanced Media Embed plugin].
+* The **Image Editing** plugin, see: xref:editimage.adoc[Image Editing plugin].
+* The **Link Checker** plugin, see: xref:linkchecker.adoc[Link Checker plugin].
+* The **Spell Checker** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checkerplugin].
+* The **Spelling Autocorrect** plugin, see: xref:autocorrect.adoc[Spelling Autocorrect plugin].
+* Deploying the **server-side** components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+
+The Java server-side components have been updated to the following versions:
+
+* `ephox-hyperlinking.war`: 2.109.2
+* `ephox-image-proxy.war`: 2.111.2
+* `ephox-spelling.war`: 2.127.2
 
 
-[[new-premium-plugin<s>]]
-New Premium plugin<s>
+=== Updating the self-hosted server-side components
 
-The following new Premium plugin was released alongside {productname} {release-version}.
+The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
 
-=== <Premium plugin name>
+. Update your Java Application Server to the minimum required version:
 
-The new Premium plugin, **<Premium plugin name>** // description here.
+include::partial$misc/supported-application-servers.adoc[]
 
-For information on the **<Premium plugin name>** plugin, see xref:<plugincode>.adoc[<Premium plugin name>].
+. Replace the existing server-side `.war` files with the `.war` files bundled with {productname} {release-version} or later.
 
+For information on:
 
-[[new-open-source-plugin]]
-== New Open Source plugin
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+* Deploying the server-side components using Docker, see: xref:bundle-intro-setup.adoc[Containerized service deployments].
 
-The following new Open Source plugin was released alongside {productname} {release-version}.
-
-=== <Open source plugin name>
-
-The new open source plugin, **<Open source plugin name>** // description here.
-
-For information on the **<Open source plugin name>** plugin, see xref:<plugincode>.adoc[<Open source plugin name>].
+include::partial$misc/admon-no-functionality-changes-in-updated-server-side-components.adoc[]
 
 
 [[accompanying-premium-plugin-changes]]
@@ -84,6 +105,34 @@ This led to inconsistent behavior, as keyboard shortcuts remained functional des
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
 
+=== Image Optimizer
+
+The {productname} {release-version} release includes an accompanying release of the **Image Optimizer** premium plugin.
+
+**Image Optimizer** includes the following fixes.
+
+==== Resizing images by typing into the input didn't update the `style` attribute correctly.
+// TINY-11669
+
+An issue was identified where an internal custom `style` attribute of an image was not updated correctly after a user modified its width and height.
+
+This issue occurred because the resize function was triggered while the selection focus was elsewhere, due to a debounce delay between the input and the resize operation. As a result, the resize operation was performed on the current selection instead of the intended image.
+
+This led to other editor components that rely on that custom `style` attribute to accidentally read outdated values, resulting in the resize not being applied correctly since the selection was not on the intended image.
+
+{productname} {release-version} addresses this issue, by updating the custom `style` attribute appropriately whenever a resize operation is performed. The resize function now takes in the intended image as a parameter, ensuring that all editor components referencing that custom `style` attribute read the most recent value entered. Additionally, the resize operation is applied to the correct image, even before the debounce time elapses.
+
+==== Images with existing `srcset` were not handled correctly.
+// #TINY-11653
+
+An issue was identified where images with an existing `srcset` attribute containing an Uploadcare URL were being processed incorrectly.
+
+The problem occurred when attempting to update an `srcset` attribute that did not contain an Uploadcare URL. In such cases, no changes were applied, resulting in the image failing to update if the existing `srcset` had a different structure.
+
+{productname} {release-version} resolves this issue by exclusively targeting `srcset` attributes with Uploadcare URLs. This ensures that all relevant images are updated correctly, with the `srcset` being regenerated from scratch to incorporate any modifications made.
+
+For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
+
 === Enhanced Tables
 
 The {productname} {release-version} release includes an accompanying release of the **Enhanced Tables** premium plugin.
@@ -116,112 +165,6 @@ In {productname} {release-version}, this UI inconsistency has been resolved. Err
 
 For more information on the **Import from Word** plugin, see xref:importword.adoc[Import from Word].
 
-=== Image Optimizer
-
-The {productname} {release-version} release includes an accompanying release of the **Image Optimizer** premium plugin.
-
-**Image Optimizer** includes the following fixes.
-
-==== Resizing images by typing into the input didn't update the `style` attribute correctly.
-// TINY-11669
-
-An issue was identified where an internal custom `style` attribute of an image was not updated correctly after a user modified its width and height.
-
-This issue occurred because the resize function was triggered while the selection focus was elsewhere, due to a debounce delay between the input and the resize operation. As a result, the resize operation was performed on the current selection instead of the intended image.
-
-This led to other editor components that rely on that custom `style` attribute to accidentally read outdated values, resulting in the resize not being applied correctly since the selection was not on the intended image.
-
-{productname} {release-version} addresses this issue, by updating the custom `style` attribute appropriately whenever a resize operation is performed. The resize function now takes in the intended image as a parameter, ensuring that all editor components referencing that custom `style` attribute read the most recent value entered. Additionally, the resize operation is applied to the correct image, even before the debounce time elapses.
-
-==== Images with existing `srcset` were not handled correctly.
-// #TINY-11653
-
-An issue was identified where images with an existing `srcset` attribute containing an Uploadcare URL were being processed incorrectly.
-
-The problem occurred when attempting to update an `srcset` attribute that did not contain an Uploadcare URL. In such cases, no changes were applied, resulting in the image failing to update if the existing `srcset` had a different structure.
-
-{productname} {release-version} resolves this issue by exclusively targeting `srcset` attributes with Uploadcare URLs. This ensures that all relevant images are updated correctly, with the `srcset` being regenerated from scratch to incorporate any modifications made.
-
-For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
-
-[[accompanying-premium-plugin-end-of-life-announcement]]
-== Accompanying Premium plugin end-of-life announcement
-
-The following Premium plugin has been announced as reaching its end-of-life:
-
-=== <Premium plugin name eol>
-
-{productname}’s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
-
-
-[[accompanying-open-source-plugin-end-of-life-announcement]]
-== Accompanying open source plugin end-of-life announcement
-
-The following open source plugin has been announced as reaching its end-of-life:
-
-=== <Open source plugin name eol>
-
-{productname}’s xref:<plugincode>.adoc[<Open source plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, dand is no longer available for purchase.
-
-
-[[accompanying-enhanced-skins-and-icon-packs-changes]]
-== Accompanying Enhanced Skins & Icon Packs changes
-
-The {productname} {release-version} release includes an accompanying release of the **Enhanced Skins & Icon Packs**.
-
-=== Enhanced Skins & Icon Packs
-
-The **Enhanced Skins & Icon Packs** release includes the following updates:
-
-The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} {release-version} skin, Oxide.
-
-For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
-
-
-[[improvements]]
-== Improvements
-
-{productname} {release-version} also includes the following improvement<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[additions]]
-== Additions
-
-{productname} {release-version} also includes the following addition<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[changes]]
-== Changes
-
-{productname} {release-version} also includes the following change<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[removed]]
-== Removed
-
-{productname} {release-version} also includes the following removal<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
 [[bug-fixes]]
 == Bug fixes
 
@@ -246,32 +189,15 @@ This issue significantly impacted the user experience, preventing users from int
 [[security-fixes]]
 == Security fixes
 
-{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
+{productname} {release-version} includes one fix for the following security issue:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+The following server-side component has been updated to include dependency updates addressing the following security issues. 
 
-// CCFR here.
+* https://nvd.nist.gov/vuln/detail/CVE-2024-12801[CVE-2024-12801]
+* https://nvd.nist.gov/vuln/detail/CVE-2024-12798[CVE-2024-12798]
 
+This update is considered as a **Medium** & *Low* severity vulnerability fix.
 
-[[deprecated]]
-== Deprecated
+For information on the server-side components updates, see: xref:#accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes].
 
-{productname} {release-version} includes the following deprecation<s>:
-
-=== The `<plugin>` configuration property, `<name>`, has been deprecated
-
-// placeholder here.
-
-
-[[known-issues]]
-== Known issues
-
-This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
-
-There <is one | are <number> known issue<s> in {productname} {release-version}.
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+include::partial$misc/admon-no-functionality-changes-in-updated-server-side-components.adoc[]

@@ -122,6 +122,17 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **Image Optimizer** includes the following fixes.
 
+==== Resizing images by typing into the input didn't update the `style` attribute correctly.
+// TINY-11669
+
+An issue was identified where an internal custom `style` attribute of an image was not updated correctly after a user modified its width and height.
+
+This issue occurred because the resize function was triggered while the selection focus was elsewhere, due to a debounce delay between the input and the resize operation. As a result, the resize operation was performed on the current selection instead of the intended image.
+
+This led to other editor components that rely on that custom `style` attribute to accidentally read outdated values, resulting in the resize not being applied correctly since the selection was not on the intended image.
+
+{productname} {release-version} addresses this issue, by updating the custom `style` attribute appropriately whenever a resize operation is performed. The resize function now takes in the intended image as a parameter, ensuring that all editor components referencing that custom `style` attribute read the most recent value entered. Additionally, the resize operation is applied to the correct image, even before the debounce time elapses.
+
 ==== Images with existing `srcset` were not handled correctly.
 // #TINY-11653
 

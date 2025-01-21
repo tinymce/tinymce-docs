@@ -123,6 +123,7 @@ The {productname} {release-version} release includes an accompanying release of 
 **Image Optimizer** includes the following fixes.
 
 ==== Images with existing `srcset` were not handled correctly.
+// #TINY-11653
 
 An issue was identified where images with an existing `srcset` attribute containing an Uploadcare URL were being processed incorrectly.
 

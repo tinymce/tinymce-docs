@@ -131,23 +131,6 @@ The problem occurred when attempting to update an `srcset` attribute that did no
 
 For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
 
-=== Enhanced Tables
-
-The {productname} {release-version} release includes an accompanying release of the **Enhanced Tables** premium plugin.
-
-**Enhanced Tables** includes the following fix.
-
-==== Table resize bars was not properly aligned for inline editors inside scrollable containers.
-// #TINY-11215
-
-In earlier versions of {productname}, an issue was identified in the inline mode editor where table resize bars were improperly positioned when placed within a scrollable container. When the container was scrolled, the resize bars became misaligned with the corresponding table rows and columns.
-
-This misalignment caused a disconnect between the table rows and their associated resize handles, leading to usability challenges as the handles appeared in the incorrect location.
-
-In {productname} {release-version}, this issue has been resolved by ensuring the table resize bars are properly attached to the respective table rows and columns when the container is scrolled, enhancing usability and functionality.
-
-For information on the **Enhanced Table** plugin, see: xref:advtable.adoc[Enhanced Tables].
-
 === Import from Word
 
 The {productname} {release-version} release includes an accompanying release of the **Import from Word** premium plugin.
@@ -183,6 +166,15 @@ An issue was identified in the inline mode editor where, if the toolbar was posi
 This issue significantly impacted the user experience, preventing users from interacting with the notification interface effectively.
 
 {productname} {release-version} resolves this issue by enhancing the notification positioning logic to account for the toolbar's location. Notifications now function seamlessly, regardless of the toolbar's placement on the screen.
+
+==== Table resize bars was not properly aligned for inline editors inside scrollable containers.
+// #TINY-11215
+
+In earlier versions of {productname}, an issue was identified in the inline mode editor where table resize bars were improperly positioned when placed within a scrollable container. When the container was scrolled, the resize bars became misaligned with the corresponding table rows and columns.
+
+This misalignment caused a disconnect between the table rows and their associated resize handles, leading to usability challenges as the handles appeared in the incorrect location.
+
+In {productname} {release-version}, this issue has been resolved by ensuring the table resize bars are properly attached to the respective table rows and columns when the container is scrolled, enhancing usability and functionality.
 
 [[security-fixes]]
 == Security fixes

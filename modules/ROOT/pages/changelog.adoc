@@ -4,6 +4,16 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+== xref:7.6.1-release-notes.adoc[7.6.1 - 2025-01-22]
+
+=== Fixed
+* Text input was prevented in form elements in the contents of the editor.
+// #TINY-11446
+* Opening a notification when the toolbar is positioned at the bottom of the editor threw an error.
+// #TINY-11498
+* Table resize bars was not properly aligned for inline editors inside scrollable containers.
+// #TINY-11215
+
 == xref:7.6.0-release-notes.adoc[7.6.0 - 2024-12-11]
 
 === Added

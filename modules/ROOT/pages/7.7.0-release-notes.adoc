@@ -64,10 +64,12 @@ For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Serbian and Ukrainian languages were spelled incorrectly.
+// #TINY-11713
 
-// CCFR here.
+Previously, an issue was identified where `Ukrainian` and `Serbian` were incorrectly spelt in the typography plugin.
+
+{productname} {release-version} addresses this by fixing the spelling.
 
 
 [[known-issues]]

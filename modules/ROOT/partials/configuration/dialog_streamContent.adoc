@@ -1,5 +1,5 @@
 [[streamContent]]
-== `streamContent`
+=== `streamContent`
 
 `+streamContent+` is an optional property, available to add to the `+iframe+` dialog component.
 
@@ -64,7 +64,7 @@ The recommended method for updating content in an `+iframe+` component is:
 
 [source,js]
 ----
-`onAction: (api) => api.setData({ myiframe: 'new content' })`
+onAction: (api) => api.setData({ myiframe: 'new content' })
 ----
 
 . This updates the iframe to contain the string `'new content'`. This text can be any valid html.

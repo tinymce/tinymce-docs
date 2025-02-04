@@ -1,7 +1,7 @@
 [[importword-converter-options]]
 == `importword_converter_options`
 
-**Type:** `String`
+**Type:** `+Object+`
 
 [NOTE]
 As of {productname} 7.5.0, the default value of the `importword_converter_options` setting has been updated to the following:
@@ -9,7 +9,7 @@ As of {productname} 7.5.0, the default value of the `importword_converter_option
 .**Default value:** 
 [source,js]
 ----
-importword_converter_options: {
+{
   formatting: {
     styles: 'inline',
     resets: 'inline',

@@ -1,9 +1,11 @@
 [[tableofcontents_header]]
 == `+tableofcontents_header+`
 
-Table of contents has a header and by default it will be marked up with `+H2+` tag. With the `+tableofcontents_header+` option you can change it to some other tag.
+Table of contents has a header and by default it will be marked up with `+H2+` tag. With the `+tableofcontents_header+` option you can change it to any other header tag.
 
 *Type:* `+String+`
+
+*Possible values:* `+'h1'+`, `+'h2'+`, `+'h3'+`, `+'h4'+`, `+'h5'+`, `+'h6'+`
 
 *Default value:* `+'h2'+`
 
@@ -15,6 +17,6 @@ tinymce.init({
   selector: 'textarea', // change this value according to your HTML
   plugins: 'tableofcontents',
   toolbar: 'tableofcontents',
-  tableofcontents_header: 'div' // case doesn't matter
+  tableofcontents_header: 'h3' // case doesn't matter
 });
 ----

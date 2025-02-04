@@ -3,15 +3,15 @@
 
 This option controls how content pasted from sources other than Microsoft Word and Google Docs are filtered.
 
-*Type:* `+String+`
+*Type:* `+String+` or `+Function+`
 
 *Default value:* `+'clean'+`
 
-*Possible values:* `+'clean'+`, `+merge+`, `+prompt+`
+*Possible values:* `+'clean'+`, `+'merge'+`, `+'prompt'+`, or a function that returns a `+Promise+` that resolves to `+'clean'+` or `+'merge'+`
 
 What the supported string-based values do:
 
-[cols="1,1"]
+[cols="1,4"]
 |===
 |Value |Behavior
 

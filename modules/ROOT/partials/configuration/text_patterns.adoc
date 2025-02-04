@@ -21,7 +21,7 @@ The default value for this option was changed with {productname} 7.0, see more x
 *Default value:*
 [source,js]
 ----
-default: [
+[
   { start: '*', end: '*', format: 'italic' },
   { start: '**', end: '**', format: 'bold' },
   { start: '#', format: 'h1', trigger: 'space' },
@@ -37,6 +37,7 @@ default: [
   { start: '---', cmd: 'InsertHorizontalRule', trigger: 'space' }
 ]
 ----
+
 [TIP]
 When the `text_patterns` option is set in the TinyMCE editor configuration, the new value entirely overwrites the existing default text patterns. This means that the editor will use the patterns specified in the user's configuration and ignore the default patterns. If one wants to add new patterns without losing the default ones, all the default patterns must be included in the custom `text_patterns` array along with any additional patterns.
 

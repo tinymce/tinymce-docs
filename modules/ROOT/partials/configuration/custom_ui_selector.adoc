@@ -7,13 +7,16 @@ Use the *custom_ui_selector* option to specify the elements that you want {produ
 
 === Example: using `+custom_ui_selector+`
 
-[source,html]
+[source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   custom_ui_selector: '.my-custom-button'
 });
-...
+----
+
+[source,html]
+----
 <textarea></textarea>
 <button class="my-custom-button">Button</button>
 ----

@@ -5,7 +5,7 @@ This option allows you to set the prefix that is used for local storage keys.
 
 *Type:* `+String+`
 
-*Default value:* `+'tinymce-autosave-{path}{query}-{id}-'+`
+*Default value:* `+'tinymce-autosave-{path}{query}{hash}-{id}-'+`
 
 === Example: using `+autosave_prefix+`
 
@@ -14,6 +14,6 @@ This option allows you to set the prefix that is used for local storage keys.
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'autosave',
-  autosave_prefix: 'tinymce-autosave-{path}{query}-{id}-'
+  autosave_prefix: 'tinymce-autosave-{path}{query}{hash}-{id}-'
 });
 ----

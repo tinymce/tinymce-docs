@@ -1,7 +1,9 @@
 [[nonbreaking_force_tab]]
 == `+nonbreaking_force_tab+`
 
-This option allows you to force {productname} to insert three `+&nbsp;+` entities when the user presses the keyboard `+tab+` key.
+This option allows you to force {productname} to insert a specified number of `+&nbsp;+` entities when the user presses the keyboard `+tab+` key.
+
+When set to `+true+`, it will insert three `+&nbsp;+` entities. When set to a number, it will insert that many `+&nbsp;+` entities.
 
 It's important to note that this does not change the behavior of the menu and toolbar controls, which will continue to insert a single `+&nbsp+` entity when `+nonbreaking_force_tab+` value is `+true+`.
 
@@ -16,11 +18,11 @@ The `+nonbreaking_force_tab+` setting can break the following functionality:
 * The `+lists+` plugin uses the Tab key for item indentation.
 ====
 
-*Type:* `+Boolean+`
+*Type:* `+Boolean+` or `+Number+`
 
 *Default value:* `+false+`
 
-*Possible values:* `+true+`, `+false+`
+*Possible values:* `+true+`, `+false+`, or any positive number
 
 === Example: using `+nonbreaking_force_tab+`
 

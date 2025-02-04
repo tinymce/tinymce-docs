@@ -18,42 +18,30 @@ When a new sidebar is registered, a corresponding toolbar button for toggling th
 
 === Specification object
 
-[[tooltip]]
-==== `+tooltip+`
+[cols="1,1,4", options="header"]
+|===
+| Property | Type | Description
 
-The `+tooltip+` specifies a tooltip to be displayed when hovering over the sidebar toggle button.
+| `+tooltip+`
+| `+String+`
+| Specifies a tooltip to be displayed when hovering over the sidebar toggle button.
 
-*Type:* `+String+`
+| `+icon+`
+| `+String+`
+| Specifies an icon for the sidebar toggle button. The icon should be the name of an icon provided by the {productname} skin or a xref:apis/tinymce.editor.ui.registry.adoc#addIcon[custom icon].
 
-[[icon]]
-==== `+icon+`
+| `+onSetup+`
+| `+Function+`
+| Specifies a function to be called when the panel is first created. It passes in an API object and should return a callback that takes an API. The default is `+(api) => (api) => {}+`. This function runs whenever the sidebar is rendered, and the returned callback is executed when the sidebar is destroyed. Therefore, the returned function is essentially an `+onTeardown+` handler, and can be used to unbind events and callbacks.
 
-The `+icon+` specifies an icon for the sidebar toggle button. The icon should be the name of an icon provided by the {productname} skin or a xref:apis/tinymce.editor.ui.registry.adoc#addIcon[custom icon].
+| `+onShow+`
+| `+Function+`
+| Specifies a function to be called when the panel is displayed. It passes in an API object.
 
-*Type:* `+String+`
-
-[[onSetup]]
-==== `+onSetup+`
-
-The `+onSetup+` specifies a function to be called when the panel is first created. It passes in an API object and should return a callback that takes an API. The default is `+(api) => (api) => {}+`.
-
-`+onSetup+` is a complex property. It requires a function that takes the sidebar’s API and should return a callback that takes the sidebar's API and returns nothing. This occurs because `+onSetup+` runs whenever the sidebar is rendered, and the returned callback is executed when the sidebar is destroyed. Therefore the returned function is essentially an `+onTeardown+` handler, and can be used to unbind events and callbacks.
-
-*Type:* `+Function+`
-
-[[onShow]]
-==== `+onShow+`
-
-The `+onShow+` specifies a function to be called when the panel displayed. It passes in an API object.
-
-*Type:* `+Function+`
-
-[[onHide]]
-==== `+onHide+`
-
-The `+onHide+` specifies a function to be called when the panel is hidden. It passes in an API object.
-
-*Type:* `+Function+`
+| `+onHide+`
+| `+Function+`
+| Specifies a function to be called when the panel is hidden. It passes in an API object.
+|===
 
 === API Object
 
@@ -72,7 +60,8 @@ include::partial$configuration/sidebar_show.adoc[leveloffset=+1]
 [source,js]
 ----
 tinymce.init({
-  ...
+  selector: 'textarea', // change this value according to your HTML
+  sidebar_show: 'mysidebar',
   toolbar: 'mysidebar',
   setup: (editor) => {
     editor.ui.registry.addSidebar('mysidebar', {

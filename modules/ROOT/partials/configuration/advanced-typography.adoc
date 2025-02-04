@@ -73,7 +73,7 @@ This option sets which languages are available for applying language-specific ty
 
 A user can then select text and select from the available languages. That language’s language-specific typography rules are then applied to the selected text.
 
-*Type:* `+Object+`
+*Type:* `+Array+`
 
 === Example: Using `typography_langs`
 
@@ -161,7 +161,7 @@ tinymce.init({
 |Russian
 |ru
 
-|Servian
+|Serbian
 |sr
 
 |Slovak
@@ -203,7 +203,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: '{plugincode}',
   toolbar: '{plugincode}',
-  typography_default_lang: 'en_US', // This is required to configure the default language used by typography.
+  typography_default_lang: 'en-US', // This is required to configure the default language used by typography.
   typography_rules: [
     'common/punctuation/quote',
     'en-US/dash/main',

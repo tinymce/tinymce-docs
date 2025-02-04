@@ -7,7 +7,7 @@ This option controls how content pasted from sources other than Microsoft Word a
 
 *Default value:* `+'clean'+`
 
-*Possible values:* `+'clean'+`, `+'merge'+`, `+'prompt'+`, or a function that returns a `+Promise+` that resolves to `+'clean'+` or `+'merge'+`
+include::partial$plugins/powerpaste_import_types.adoc[]
 
 What the supported string-based values do:
 

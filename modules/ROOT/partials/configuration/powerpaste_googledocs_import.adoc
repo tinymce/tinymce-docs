@@ -5,8 +5,6 @@ This option controls how content pasted from Google Docs is filtered.
 
 *Type:* `+String+` or `+Function+`
 
-*Possible values:* `+'clean'+`, `+'merge'+`, `+'prompt'+`, or a function that returns a `+Promise+` that resolves to `+'clean'+` or `+'merge'+`
-
 *Default value:* `+'prompt'+`
 
 include::partial$plugins/powerpaste_import_types.adoc[]

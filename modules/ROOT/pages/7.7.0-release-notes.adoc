@@ -64,11 +64,15 @@ For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Preview Dialog incorrectly opened anchor links in a new tab.
+// #TINY-11740
 
-// CCFR here.
+In previous versions of {productname}, an issue was identified in dialogs (e.g., Preview) where anchor links behaved inconsistently when clicked in the editor.
 
+The problem was that clicking an anchor link in a dialog caused the editor to attempt to open the link in a new browser tab. This behavior differed from the expected functionality in the editor, where clicking an anchor link navigates to the corresponding anchor element. 
+This resulted in a poor user experience as users could not engage with anchor links as expected.
+
+{productname} {release-version} resolves this issue by first checking whether a link is an anchor link and ensuring that users are navigated to the corresponding anchor element, which is the expected behavior.
 
 [[known-issues]]
 == Known issues

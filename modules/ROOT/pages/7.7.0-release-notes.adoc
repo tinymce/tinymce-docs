@@ -72,6 +72,15 @@ As a result, integrators were unable to insert content into inline non-editable 
 
 {productname} {release-version} resolves this by modifying the functionality of the `insertContent` API to support this scenario. This ensures that integrators can now insert content into inline elements, making the `insertContent` API more robust.
 
+=== Preview Dialog incorrectly opened anchor links in a new tab.
+// #TINY-11740
+
+In earlier versions of {productname}, an issue was identified in dialogs like the Preview dialog, where anchor links behaved inconsistently when clicked within the editor.
+
+The problem was that clicking an anchor link in a dialog caused the editor to attempt to open the link in a new browser tab. This behavior differed from the expected functionality in the editor, where clicking an anchor link navigates to the corresponding anchor element. 
+This resulted in a poor user experience as users could not engage with anchor links as expected.
+
+{productname} {release-version} resolves this issue by first checking whether a link is an anchor link and ensuring that users are navigated to the corresponding anchor element, which is the expected behavior.
 
 [[known-issues]]
 == Known issues

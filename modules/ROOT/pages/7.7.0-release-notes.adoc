@@ -64,6 +64,14 @@ For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode
 
 {productname} {release-version} also includes the following bug fix<es>:
 
+=== The `insertContent` API was not replacing selected non-editable elements correctly.
+// #TINY-11714
+
+Previously in {productname}, an issue was identified where, if an inline non-editable element was the only child of a block, inserting content would not replace the element.
+As a result, integrators were unable to insert content into inline non-editable elements.
+
+{productname} {release-version} resolves this by modifying the functionality of the `insertContent` API to support this scenario. This ensures that integrators can now insert content into inline elements, making the `insertContent` API more robust.
+
 === Preview Dialog incorrectly opened anchor links in a new tab.
 // #TINY-11740
 

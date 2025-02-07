@@ -36,7 +36,7 @@ The {productname} {release-version} release includes an accompanying release of 
 Previously, an issue was identified where the drag-and-drop functionality on an image placeholder in a table would insert the image outside of the table cell.
 This resulted in unpredictable behavior when users dragged and dropped an image into the image placeholder.
 
-{productname} {release-version} resolves this issue by making it so that that the image placeholder handles the drop event instead of the editor content element. This ensures predictable and consistent drag-and-drop behavior on image placeholders in Uploadcare.
+{productname} {release-version} resolves this issue by making it so that that the image placeholder handles the drop event instead of the editor content element. This improvement provides predictable and consistent drag-and-drop behavior for image placeholders in **Image Optimizer**.
 
 For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
 

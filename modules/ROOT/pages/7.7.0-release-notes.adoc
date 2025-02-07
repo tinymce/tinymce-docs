@@ -85,6 +85,14 @@ This resulted in a poor user experience as users could not engage with anchor li
 
 {productname} {release-version} resolves this issue by first checking whether a link is an anchor link and ensuring that users are navigated to the corresponding anchor element, which is the expected behavior.
 
+=== Iframe aria text used to suggest to open help dialog even when the help plugin was not enabled.
+// #TINY-11672
+
+Previously, an issue was identified where the aria-label attribute in the body element was set to “Rich Text Area. Press `ALT-0` for help”. This affected accessibility because the screen reader would announce this message, but when users pressed `ALT-0`, 
+the help dialog would not open if the plugin was disabled, leading to confusion.
+
+{productname} {release-version} addresses this issue by ensuring that if the help plugin is disabled, the screen reader announces only "Rich Text Area." If the help plugin is enabled, the screen reader announces "Rich Text Area. Press `ALT-0` for help.".
+
 [[known-issues]]
 == Known issues
 

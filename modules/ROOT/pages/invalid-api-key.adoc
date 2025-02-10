@@ -11,6 +11,9 @@
 Affected users will receive a xref:cloud-troubleshooting.adoc#A-valid-API-key-is-required-starting-2024-to-continue-using-TinyMCE.-Please-alert-your-admin-to-sign-up-to-get-your-free-API-key.[notification in their editor]. If you receive this notification, please contact the Administrator for your application/site. Admins will need to https://www.tiny.cloud/my-account/integrate/[get a valid API key] and paste it into the code to continue using {productname}.
 ====
 
+
+include::partial$misc/admon-account-creation-and-social-option.adoc[]
+
 == How will I know if this change affects me?
 
 If {productname} detects an invalid API key, it will display a notification. If you know or suspect you have been actively hiding or suppressing this notification, please remove these overrides. If you then see a notification, please follow the instructions to resolve the issue. If no notification appears, you are not affected. 

@@ -1,0 +1,23 @@
+[[watermark]]
+== `watermark`
+
+The `watermark` option allows integrators to add watermarks to their exported word documents.
+
+*Type:* `+Object+`
+
+=== Example : using `watermark`
+
+[source,js]
+----
+tinymce.init({
+    selector: "textarea",
+    plugins: ['exportword'],
+    toolbar: 'exportword',
+	exportword_converter_options: {
+	  watermark: {
+		source: 'http://moxiecode.cachefly.net/tinymce/v9/images/logo.png',
+		washout: true,
+	  }
+	}
+});
+----

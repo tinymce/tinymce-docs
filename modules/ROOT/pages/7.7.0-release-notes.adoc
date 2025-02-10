@@ -31,6 +31,7 @@ The {productname} {release-version} release includes an accompanying release of 
 **Image Optimizer** includes the following fixes and improvements.
 
 ==== Some error messages are now more descriptive.
+// #TINY-11613
 
 Previously, error messages were unclear when the `uploadcare_public_key` was not configured with a valid API key.
 This caused confusion in identifying the problem during setup.

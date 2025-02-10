@@ -39,6 +39,23 @@ Previously, an issue was identified where `Ukrainian` and `Serbian` were incorre
 
 For information on the **Advanced Typography** plugin, see: xref:advanced-typography.adoc[Advanced Typography].
 
+=== Comments
+
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** includes the following fixes.
+
+==== Pressing Keyboard shorctut `cmd+alt+m` when cursor is on annotated content now opens and focuses the reply textarea.
+// #TINY-11321
+
+Previously, an issue was identified where pressing the keyboard shortcut `cmd-alt-m` on Mac and `ctrl-alt-m` on Windows while the cursor was on annotated content and the comments sidebar was open resulted in the focus shifting to the corresponding comment, 
+which was not the desired behavior.
+
+{productname} {release-version} fixes this by ensuring that the focus now moves to the reply text area instead of the corresponding comment. 
+This matches the behavior when the Add new comment button is clicked, resulting in more consistent functionality.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments].
+
 
 [[improvements]]
 == Improvements

@@ -39,6 +39,21 @@ Previously, an issue was identified where `Ukrainian` and `Serbian` were incorre
 
 For information on the **Advanced Typography** plugin, see: xref:advanced-typography.adoc[Advanced Typography].
 
+=== Comments
+
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** includes the following fixes.
+
+==== Editing a comment and adding a mention to the comment would result in the mention not showing correctly after saving the comment.
+// #TINY-11602
+
+Previously, in the **Comments** premium plugin, an issue was identified where the process of caching data for mentions in comments was not handled correctly.
+As a result, mentions were not displayed correctly when editing a comment, adding a mention, and then saving the comment.
+
+{productname} {release-version} resolves this issue by improving the caching process for mentions in comments, ensuring that newly added mentions to an existing comment are displayed correctly.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments].
 
 [[improvements]]
 == Improvements

@@ -3,9 +3,9 @@
   <p style="margin-bottom: 16px;">
     It only takes 2 minutes to create your free Tiny account and get the API key:
   </p>
-  <div class="account-creation-buttons">
+  <div>
     <a href="https://tiny.cloud/signup?_gl=1*1m4fqt3*_ga*NDE5MTIxMjQwLjE3MzIxOTkwODE.*_ga_GQ50XYHWQZ*MTczMjI2OTAwMi4yLjEuMTczMjI2OTQwNy40LjAuMA..*_gcl_au*NTYyNTc2NTQyLjE3MzIxOTkwODE." class="account-creation-button" target="_blank" title="Sign up with Google">
-      Sign up with email
+      Sign up<span class="account-creation-button--full-text">&nbsp;with email</span>
       <span class="social-signup">
         <img src="https://www.tiny.cloud/images/icons/google.svg" alt="Google" width="24" height="24">
         <img src="https://www.tiny.cloud/images/icons/github.svg" alt="GitHub" width="24" height="24">
@@ -14,16 +14,18 @@
     </a>
   </div>
 </div>
+
 <style>
 .signup-promo {
   --radius: 3px;
   position: relative;
-  padding: 16px;
+  padding: 1rem;
   background: #f9f9fb;
-  margin-bottom: 16px;
+  margin: 1rem 0;
   border: 1px solid #e2e5ed;
   border-radius: var(--radius) 0 0 var(--radius)
 }
+
 .signup-promo::before {
   content: '';
   position: absolute;
@@ -32,37 +34,36 @@
   background: linear-gradient(to bottom, #F66 15%, #4D66CB 85%);
   border-radius: var(--radius) 0 0 var(--radius)
 }
-.signup-promo .account-creation-buttons {
-  display: flex; 
-  gap: 10px;
-  --options-gap: 10px;
-}
+
 .signup-promo .account-creation-button {
-  --shine-size: 120px;
+  --options-gap: 10px;
   text-decoration: none !important;
   padding: 8px 16px;
-  background: #0c132c linear-gradient(120deg, #0c132c 45%, #335dff 55%) 0 0 / calc(200% + var(--shine-size)) 100% no-repeat;
+  background: #0c132c;
   color: #fff;
   border-radius: 2px;
-  display: flex;
+  display: inline-flex;
   align-items: center;
   transition: background-color 0.15s;
   font-family: Fira Code;
   font-variant-ligatures: common-ligatures;
-  transition: background-position .15s;
 }
+
 .signup-promo .account-creation-button:hover {
-  background-position: calc(-1 * var(--shine-size)) 0;
+  background-color: #335dff;
   color: #fff;
 }
+
 .signup-promo .account-creation-button:active {
   background-position: 100% 0;
   color: #fff;
 }
+
 .signup-promo .account-creation-button .social-signup {
   display: flex;
   margin: 0 12px 0 0;
 }
+
 .signup-promo .account-creation-button .social-signup img {
   width: 16px;
   height: 16px;
@@ -71,6 +72,12 @@
   margin-left: var(--options-gap);
   border-left: 1px solid #0008;
   box-sizing: content-box;
+}
+
+@media screen and (max-width: 700px) {
+  .signup-promo .account-creation-button .account-creation-button--full-text {
+    display: none;
+  }
 }
 </style>
 ++++

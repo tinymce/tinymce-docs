@@ -78,6 +78,14 @@ This resulted in unpredictable behavior when users dragged and dropped an image 
 
 {productname} {release-version} resolves this issue by making it so that that the image placeholder handles the drop event instead of the editor content element. This improvement provides predictable and consistent drag-and-drop behavior for image placeholders in **Image Optimizer**.
 
+==== Some error messages are now more descriptive.
+// #TINY-11613
+
+Previously, error messages were unclear when the `uploadcare_public_key` was not configured with a valid API key.
+This caused confusion in identifying the problem during setup.
+
+{productname} {release-version} addresses this by providing a more detailed error message when the `uploadcare_public_key` is not configured.
+
 For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
 
 [[improvements]]

@@ -55,6 +55,22 @@ This matches the behavior when the "Add New Comment" button is clicked, resultin
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments].
 
+=== Image Optimizer
+
+The {productname} {release-version} release includes an accompanying release of the **Image Optimizer** premium plugin.
+
+**Image Optimizer** includes the following fixes and improvements.
+
+==== Some image file extensions would sometimes be incorrectly considered unsupported.
+// #TINY-11668
+
+Previously, an issue was identified where `.jfi` and `.jif` file extensions were incorrectly considered unsupported due to the validation logic.
+
+As a result, these extensions were blocked, and users encountered the error message: "Failed to upload: The image is not a supported file format."
+
+{productname} {release-version} resolves this issue by fixing the validation logic to correctly detect the MIME type of uploaded images, ensuring that users can now successfully upload `.jfi` and `.jif` files.
+
+For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
 
 [[improvements]]
 == Improvements

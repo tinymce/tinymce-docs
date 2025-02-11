@@ -70,6 +70,14 @@ As a result, these extensions were blocked, and users encountered the error mess
 
 {productname} {release-version} resolves this issue by fixing the validation logic to correctly detect the MIME type of uploaded images, ensuring that users can now successfully upload `.jfi` and `.jif` files.
 
+==== Dropping files on the placeholder would sometimes insert the image in an incorrect location.
+// #TINY-11643
+
+Previously, an issue was identified where the drag-and-drop functionality on an image placeholder in a table would insert the image outside of the table cell.
+This resulted in unpredictable behavior when users dragged and dropped an image into the image placeholder.
+
+{productname} {release-version} resolves this issue by making it so that that the image placeholder handles the drop event instead of the editor content element. This improvement provides predictable and consistent drag-and-drop behavior for image placeholders in **Image Optimizer**.
+
 ==== Some error messages are now more descriptive.
 // #TINY-11613
 

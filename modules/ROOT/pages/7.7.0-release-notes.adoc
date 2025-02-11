@@ -63,7 +63,7 @@ The {productname} {release-version} release includes an accompanying release of 
 **Comments** includes the following fixes.
 
 ==== Closing the comment kebab menu with keyboard would result in the editor dispatching a `blur` event.
-
+// #TINY-11172
 In previous versions of {productname}, an issue was identified where the editor would trigger a `blur` event if the comment kebab menu was closed using the `escape` key.
 This occurred even when the editor still had focus, leading to confusing behavior.
 

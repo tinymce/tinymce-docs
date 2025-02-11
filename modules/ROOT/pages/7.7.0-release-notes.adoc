@@ -56,6 +56,21 @@ As a result, these extensions were blocked, and users encountered the error mess
 
 For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
 
+=== Comments
+
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** includes the following fixes.
+
+==== On chrome, comment card would be jumping when editing a very large comment.
+// #TINY-11729
+
+Previously, an issue was identified where, when editing comments larger than the height of the comments sidebar, the sidebar would jump up before returning to its intended position. This caused UI glitches that impacted the user experience.
+
+{productname} {release-version} resolves this issue by improving the logic that handles the resizing of the comment textarea, ensuring that the editor no longer jumps when editing large comments.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments].
+
 [[improvements]]
 == Improvements
 

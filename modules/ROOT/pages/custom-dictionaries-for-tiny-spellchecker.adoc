@@ -52,7 +52,7 @@ INFO  c.e.i.d.StaticCustomDictionaries$ - Using custom dictionary: fr = 3 words 
 INFO  c.e.i.d.StaticCustomDictionaries$ - Using custom dictionary: fr = 3 words in engine WinterTree
 ----
 
-The above log shows that 3 custom dictionaries were found, one "global", language-independent one and one each for English and French. They were found to contain 2, 4 and 3 words, respectively. In this case, Dynamic Custom Dictionaries feature is disabled and Hunspell was incleded. Please check that this report matches your expectations.
+The above log shows that 3 custom dictionaries were found, one "global", language-independent one and one each for English and French. They were found to contain 2, 4 and 3 words, respectively. In this case, Dynamic Custom Dictionaries feature is disabled and Hunspell was included. Please check that this report matches your expectations.
 
 When enabling Dynamic Custom Dictionaries, similar logs as follows will be shown on every request matching the language of the custom dictionary:
 

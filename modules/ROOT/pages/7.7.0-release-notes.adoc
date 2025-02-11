@@ -53,6 +53,13 @@ Previously, an issue was identified where pressing the keyboard shortcut `cmd-al
 {productname} {release-version} fixes this by ensuring that the focus now moves to the reply text area instead of the corresponding comment. 
 This matches the behavior when the "Add New Comment" button is clicked, resulting in more consistent functionality.
 
+==== Improved visual separation of comments side panel header.
+// #TINY-11715
+
+In previous versions of **Comments**, the side panel header blended into the body, resulting in a lack of visual separation. This made the UI appear less polished and dimensional.
+
+{productname} {release-version} improves this by enhancing the side panel header’s visibility, creating a clearer distinction from the body, and refining the overall UI aesthetics.
+
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments].
 
 === Image Optimizer

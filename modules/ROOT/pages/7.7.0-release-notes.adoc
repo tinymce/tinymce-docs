@@ -70,6 +70,14 @@ As a result, these extensions were blocked, and users encountered the error mess
 
 {productname} {release-version} resolves this issue by fixing the validation logic to correctly detect the MIME type of uploaded images, ensuring that users can now successfully upload `.jfi` and `.jif` files.
 
+==== Some error messages are now more descriptive.
+// #TINY-11613
+
+Previously, error messages were unclear when the `uploadcare_public_key` was not configured with a valid API key.
+This caused confusion in identifying the problem during setup.
+
+{productname} {release-version} addresses this by providing a more detailed error message when the `uploadcare_public_key` is not configured.
+
 For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
 
 [[improvements]]

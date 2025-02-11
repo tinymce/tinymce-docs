@@ -141,6 +141,14 @@ the help dialog would not open if the plugin was disabled, leading to confusion.
 
 {productname} {release-version} addresses this issue by ensuring that if the help plugin is disabled, the screen reader announces only "Rich Text Area." If the help plugin is enabled, the screen reader announces "Rich Text Area. Press `ALT-0` for help.".
 
+=== The `semantics` element in MathML was not properly retained when `annotation` elements was allowed.
+// #TINY-11755
+
+Previously, in {productname}, an issue was identified where the `semantics` MathML element was removed, even when the `allow_mathml_annotation_encodings` property was configured to allow a specific annotation element. As a result, the generated MathML was invalid because the `annotation` element must be a child of a `semantics` element.
+This also caused rendering issues in some browsers.
+
+In {productname} {release-version}, this issue has been resolved by retaining the `semantics` element whenever the `allow_mathml_annotation_encodings` property is set to a non-empty array. This ensures that valid MathML is generated, improving compatibility with third-party tools and browser rendering.
+
 [[known-issues]]
 == Known issues
 

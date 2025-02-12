@@ -64,10 +64,10 @@ The {productname} {release-version} release includes an accompanying release of 
 
 ==== Closing the comment kebab menu with keyboard would result in the editor dispatching a `blur` event.
 // #TINY-11172
-In previous versions of {productname}, an issue was identified where the editor would trigger a `blur` event if the comment kebab menu was closed using the `escape` key.
-This occurred even when the editor still had focus, leading to confusing behavior.
 
-{productname} {release-version} resolves this by manually controlling where the focus goes after closing the kebab menu, rather than relying on the browser. This ensures that the editor does not trigger any `blur` events.
+In previous versions of **Comments**, an issue was identified where the editor would trigger a `blur` event if the comment kebab menu was closed using the `escape` key. This occurred even when the editor still had focus, leading to confusing behavior.
+
+{productname} {release-version} resolves this issue by ensuring that focus is properly managed when closing the kebab menu, rather than relying on the browser. This ensures that the editor does not trigger any `blur` events.
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments].
 

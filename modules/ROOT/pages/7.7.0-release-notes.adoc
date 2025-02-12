@@ -148,6 +148,13 @@ the help dialog would not open if the plugin was disabled, leading to confusion.
 
 {productname} {release-version} addresses this issue by ensuring that if the help plugin is disabled, the screen reader announces only "Rich Text Area." If the help plugin is enabled, the screen reader announces "Rich Text Area. Press `ALT-0` for help.".
 
+=== Toolbar groups had both a `title` attribute and a custom tooltip, causing overlapping tooltips
+// #TINY-11768
+
+In previous versions of {productname}, hovering over toolbar menu item would display both a custom tooltip and the default browser tooltip. This caused confusing behavior, as the custom tooltip was difficult to read due to the browser tooltip overlapping it.
+
+{productname} {release-version} resolves this issue by replacing the `title` attribute with the `aria-label` attribute for toolbar groupings, preventing the default browser tooltip from appearing.
+
 [[known-issues]]
 == Known issues
 

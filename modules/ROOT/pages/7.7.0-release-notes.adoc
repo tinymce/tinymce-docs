@@ -38,6 +38,76 @@ With the release of {productname} {release-version} watermark functionality has 
 
 For information on the **Export to Word** plugin, see: xref:exportword.adoc[Export to Word].
 
+=== Advanced Typography
+
+The {productname} {release-version} release includes an accompanying release of the **Advanced Typography** premium plugin.
+
+**Advanced Typography** includes the following fix.
+
+==== Serbian and Ukrainian languages were spelled incorrectly.
+// #TINY-11713
+
+Previously, an issue was identified where `Ukrainian` and `Serbian` were incorrectly spelt in the typography plugin.
+
+{productname} {release-version} addresses this by fixing the spelling.
+
+For information on the **Advanced Typography** plugin, see: xref:advanced-typography.adoc[Advanced Typography].
+
+=== Comments
+
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** includes the following fixes.
+
+==== Pressing Keyboard shorctut `cmd+alt+m` when cursor is on annotated content now opens and focuses the reply textarea.
+// #TINY-11321
+
+Previously, an issue was identified where pressing the keyboard shortcut `cmd-alt-m` on Mac and `ctrl-alt-m` on Windows while the cursor was on annotated content and the comments sidebar was open resulted in the focus shifting to the corresponding comment, which was not the desired behavior.
+
+{productname} {release-version} fixes this by ensuring that the focus now moves to the reply text area instead of the corresponding comment. 
+This matches the behavior when the "Add New Comment" button is clicked, resulting in more consistent functionality.
+
+==== Improved visual separation of comments side panel header.
+// #TINY-11715
+
+In previous versions of **Comments**, the side panel header blended into the body, resulting in a lack of visual separation. This made the UI appear less polished and dimensional.
+
+{productname} {release-version} improves this by enhancing the side panel header’s visibility, creating a clearer distinction from the body, and refining the overall UI aesthetics.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments].
+
+=== Image Optimizer
+
+The {productname} {release-version} release includes an accompanying release of the **Image Optimizer** premium plugin.
+
+**Image Optimizer** includes the following fixes and improvements.
+
+==== Some image file extensions would sometimes be incorrectly considered unsupported.
+// #TINY-11668
+
+Previously, an issue was identified where `.jfi` and `.jif` file extensions were incorrectly considered unsupported due to the validation logic.
+
+As a result, these extensions were blocked, and users encountered the error message: "Failed to upload: The image is not a supported file format."
+
+{productname} {release-version} resolves this issue by fixing the validation logic to correctly detect the MIME type of uploaded images, ensuring that users can now successfully upload `.jfi` and `.jif` files.
+
+==== Dropping files on the placeholder would sometimes insert the image in an incorrect location.
+// #TINY-11643
+
+Previously, an issue was identified where the drag-and-drop functionality on an image placeholder in a table would insert the image outside of the table cell.
+This resulted in unpredictable behavior when users dragged and dropped an image into the image placeholder.
+
+{productname} {release-version} resolves this issue by making it so that that the image placeholder handles the drop event instead of the editor content element. This improvement provides predictable and consistent drag-and-drop behavior for image placeholders in **Image Optimizer**.
+
+==== Some error messages are now more descriptive.
+// #TINY-11613
+
+Previously, error messages were unclear when the `uploadcare_public_key` was not configured with a valid API key.
+This caused confusion in identifying the problem during setup.
+
+{productname} {release-version} addresses this by providing a more detailed error message when the `uploadcare_public_key` is not configured.
+
+For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
 
 [[improvements]]
 == Improvements
@@ -64,7 +134,15 @@ For information on the **Export to Word** plugin, see: xref:exportword.adoc[Expo
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} <x.y[.z]> also includes the following bug fix<es>:
+
+=== The `insertContent` API was not replacing selected non-editable elements correctly.
+// #TINY-11714
+
+Previously in {productname}, an issue was identified where, if an inline non-editable element was the only child of a block, inserting content would not replace the element.
+As a result, integrators were unable to insert content into inline non-editable elements.
+
+{productname} {release-version} resolves this by modifying the functionality of the `insertContent` API to support this scenario. This ensures that integrators can now insert content into inline elements, making the `insertContent` API more robust.
 
 === Preview Dialog incorrectly opened anchor links in a new tab.
 // #TINY-11740
@@ -75,6 +153,21 @@ The problem was that clicking an anchor link in a dialog caused the editor to at
 This resulted in a poor user experience as users could not engage with anchor links as expected.
 
 {productname} {release-version} resolves this issue by first checking whether a link is an anchor link and ensuring that users are navigated to the corresponding anchor element, which is the expected behavior.
+
+=== Iframe aria text used to suggest to open help dialog even when the help plugin was not enabled.
+// #TINY-11672
+
+Previously, an issue was identified where the aria-label attribute in the body element was set to “Rich Text Area. Press `ALT-0` for help”. This affected accessibility because the screen reader would announce this message, but when users pressed `ALT-0`, 
+the help dialog would not open if the plugin was disabled, leading to confusion.
+
+{productname} {release-version} addresses this issue by ensuring that if the help plugin is disabled, the screen reader announces only "Rich Text Area." If the help plugin is enabled, the screen reader announces "Rich Text Area. Press `ALT-0` for help.".
+
+=== Toolbar groups had both a `title` attribute and a custom tooltip, causing overlapping tooltips
+// #TINY-11768
+
+In previous versions of {productname}, hovering over toolbar menu item would display both a custom tooltip and the default browser tooltip. This caused confusing behavior, as the custom tooltip was difficult to read due to the browser tooltip overlapping it.
+
+{productname} {release-version} resolves this issue by replacing the `title` attribute with the `aria-label` attribute for toolbar groupings, preventing the default browser tooltip from appearing.
 
 [[known-issues]]
 == Known issues

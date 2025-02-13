@@ -96,7 +96,7 @@ This caused confusion in identifying the problem during setup.
 ==== It was possible to `tab` to a toolbar group that had all children disabled.
 // #TINY-11665
 
-Previously, in **Image Optimizer**, a fallback mechanism caused focus to shift to the nearest ancestor element. As a result, if focus was applied to a disabled input, its container would receive the focus.
+Previously in the **Image Optimizer** premium plugin, a fallback mechanism caused focus to shift to the nearest ancestor element. As a result, if focus was applied to a disabled input, its container would receive the focus.
 
 {productname} {release-version} resolves this issue by ensuring that containers with only disabled elements are no longer focusable, preventing unintended focus behavior.
 

@@ -24,6 +24,20 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== Export to Word
+
+The {productname} {release-version} release includes an accompanying release of the **Export to Word** premium plugin.
+
+**Export to Word**  includes the following fix.
+
+==== A document watermark can now be specified for the exported file
+
+Previously, the **Export to Word** premium plugin did not support watermarks, preventing integrators from adding them to exported Word documents.
+
+With the release of {productname} {release-version} watermark functionality has been introduced, enabling watermarks to be included in exported documents.
+
+For information on the **Export to Word** plugin, see: xref:exportword.adoc[Export to Word].
+
 === Advanced Typography
 
 The {productname} {release-version} release includes an accompanying release of the **Advanced Typography** premium plugin.

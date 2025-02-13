@@ -93,6 +93,14 @@ This caused confusion in identifying the problem during setup.
 
 {productname} {release-version} addresses this by providing a more detailed error message when the `uploadcare_public_key` is not configured.
 
+==== Context toolbar inputs had incorrect margins.
+// #TINY-11624
+
+Previously, input elements within the contextual toolbar were not styled correctly and overflowed when using the `fluent`, `snow`, and `jam` premium skins. This issue arose because these skins modified toolbar element properties such as padding, height, and width, but the adjustments were not applied consistently to input elements. 
+As a result, the UI appeared misaligned and less polished.
+
+In {productname} {release-version}, this issue has been resolved. Contextual toolbar elements, including buttons and inputs, now use the same padding and height values, ensuring a consistent and polished appearance.
+
 For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
 
 [[improvements]]

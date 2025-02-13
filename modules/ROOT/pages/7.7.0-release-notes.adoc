@@ -93,6 +93,13 @@ This caused confusion in identifying the problem during setup.
 
 {productname} {release-version} addresses this by providing a more detailed error message when the `uploadcare_public_key` is not configured.
 
+==== It was possible to `tab` to a toolbar group that had all children disabled.
+// #TINY-11665
+
+Previously, in **Image Optimizer**, a fallback mechanism caused focus to shift to the nearest ancestor element. As a result, if focus was applied to a disabled input, its container would receive the focus.
+
+{productname} {release-version} resolves this issue by ensuring that containers with only disabled elements are no longer focusable, preventing unintended focus behavior.
+
 For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
 
 [[improvements]]

@@ -24,6 +24,19 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== Export to PDF
+
+The {productname} {release-version} release includes an accompanying release of the **Export to PDF** premium plugin.
+
+**Export to PDF** Premium plugin includes the following improvement.
+
+=== The `format` property in `exportpdf_converter_options` now accepts lowercase  
+// #TINY-11722  
+
+Previously, the `format` property in `exportpdf_converter_options` only accepted case-sensitive uppercase values, which lead to inconsistencies when generating PDF exports. This improvement ensures that lowercase values are now correctly recognized, making configuration more flexible and reducing potential formatting errors.  
+
+For information on the **Export to PDF** plugin, see: xref:exportpdf.adoc[Export to PDF].
+
 === Export to Word
 
 The {productname} {release-version} release includes an accompanying release of the **Export to Word** premium plugin.

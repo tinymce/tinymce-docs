@@ -109,6 +109,20 @@ This caused confusion in identifying the problem during setup.
 
 For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
 
+=== Enhanced Code Editor
+
+The {productname} {release-version} release includes an accompanying release of the **Enhanced Code Editor** premium plugin.
+
+**Enhanced Code Editor** includes the following fix.
+
+==== The cursor was sometimes incorrectly placed after opening source code editor.
+
+In previous versions of the **Enhanced Code Editor** premium plugin, the cursor was sometimes incorrectly positioned when opening the source code editor. This issue occurred when automatic formatting was enabled, particularly if the cursor was placed after indentations, leading to unpredictable cursor behavior.
+
+{productname} {release-version} addresses this by applying optional formatting before determining the cursor's position, ensuring consistent and reliable cursor placement in the source code editor.
+
+For information on the **Enhanced Code Editor** plugin, see: xref:advcode.adoc[Enhanced Code Editor].
+
 [[improvements]]
 == Improvements
 

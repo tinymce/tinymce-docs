@@ -109,6 +109,25 @@ This caused confusion in identifying the problem during setup.
 
 For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
 
+=== Revision History
+
+The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
+
+**Revision History** includes the following addition.
+
+==== New `revisionhistory_allow_restore` option to control restoration of old revisions  
+// #TINY-11746
+
+Previously, integrators had no way to control whether users could restore old revisions in the **Revision History** plugin.
+
+{prductname} {release-version} introduces a new `revisionhistory_allow_restore` option, which provides integrators with a way to manage this behavior. By default, it is set to `+true+`, setting it to `+false+` prevents users from restoring previous versions.
+
+This improvement enhances access control within the **Revision History** plugin, providing greater flexibility for managing revision restoration.
+
+For more information, see: xref:revisionhistory.adoc[Revision History].
+
+==== New `revisionhistory_allow_restore` option to control if users can restore old versions.
+
 [[improvements]]
 == Improvements
 

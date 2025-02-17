@@ -1,0 +1,20 @@
+[[revisionhistory_allow_restore]]
+== `revisionhistory_allow_restore`
+
+The `revisionhistory_allow_restore` option enables or disables the ability to restore a revision from the Revision History view.
+
+*Type:* `+Boolean+`
+
+*Default vale:* `+true+`
+
+=== Example: Using `revisionhistory_allow_restore`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'revisionhistory',
+  toolbar: 'revisionhistory',
+  revisionhistory_fetch: () => Promise.resolve([]), // Required option for the plugin - replace with actual API request
+  revisionhistory_allow_restore: false
+----

@@ -30,7 +30,7 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **Export to PDF** Premium plugin includes the following improvement.
 
-=== The `format` property in `exportpdf_converter_options` now accepts lowercase  
+==== The `format` property in `exportpdf_converter_options` now accepts lowercase  
 // #TINY-11722  
 
 Previously, the `format` property in `exportpdf_converter_options` only accepted case-sensitive uppercase values, which lead to inconsistencies when generating PDF exports. This improvement ensures that lowercase values are now correctly recognized, making configuration more flexible and reducing potential formatting errors.  

@@ -107,6 +107,12 @@ This caused confusion in identifying the problem during setup.
 
 {productname} {release-version} addresses this by providing a more detailed error message when the `uploadcare_public_key` is not configured.
 
+==== Toolbar text field was properly rendering focus.
+// #TINY-11658
+
+Previously, input elements lacked styling logic to display a border when focused, resulting in no visible indication of focus.
+This issue has been resolved in {productname} {release-version}. Input elements now correctly display a border when focused, ensuring improved visual feedback.
+
 For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
 
 [[improvements]]

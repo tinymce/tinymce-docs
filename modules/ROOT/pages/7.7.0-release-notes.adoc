@@ -59,6 +59,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **Comments** includes the following fixes.
 
+==== Editing a comment and adding a mention to the comment would result in the mention not showing correctly after saving the comment.
+// #TINY-11602
+
+Previously, in the **Comments** premium plugin, an issue was identified where mentions were not displayed correctly when editing a comment, adding a mention, and then saving the comment.
+
+{productname} {release-version} resolves this issue by ensuring that newly added mentions to an existing comment are displayed correctly.
+
 ==== Pressing Keyboard shorctut `cmd+alt+m` when cursor is on annotated content now opens and focuses the reply textarea.
 // #TINY-11321
 

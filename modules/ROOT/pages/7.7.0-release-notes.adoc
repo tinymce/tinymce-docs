@@ -169,6 +169,13 @@ In previous versions of {productname}, hovering over toolbar menu item would dis
 
 {productname} {release-version} resolves this issue by replacing the `title` attribute with the `aria-label` attribute for toolbar groupings, preventing the default browser tooltip from appearing.
 
+=== The `float` property was not properly removed from the image when converting an image into a captioned image.
+// #TINY-11670
+
+Previously, an issue occurred where toggling a caption on a floating image did not remove the float property from the image, causing the caption text to be incorrectly positioned.
+
+In {productname} {release-version}, this issue has been resolved by ensuring that the float property is removed when toggling the caption. As a result, the image and caption text now align correctly.
+
 [[known-issues]]
 == Known issues
 

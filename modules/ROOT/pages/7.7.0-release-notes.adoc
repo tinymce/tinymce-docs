@@ -136,7 +136,7 @@ For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Ima
 
 {productname} <x.y[.z]> also includes the following bug fix<es>:
 
-=== Dialog menu dropdowns now close when a dialog is moved.
+=== Dialog menu dropdowns now close when scrolling the editor container.
 // #TINY-11398
 
 Previously, dialog menu dropdowns were not positioned correctly after scrolling the editor container, causing them to remain visible even when the editor was no longer in view. This resulted in dropdowns being displayed without their corresponding dialog context. {productname} {release-version} updates the behavior to ensure that dialog menu dropdowns close on the window scroll event, preventing them from appearing out of context.

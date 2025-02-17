@@ -24,6 +24,20 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== Export to Word
+
+The {productname} {release-version} release includes an accompanying release of the **Export to Word** premium plugin.
+
+**Export to Word**  includes the following fix.
+
+==== A document watermark can now be specified for the exported file
+
+Previously, the **Export to Word** premium plugin did not support watermarks, preventing integrators from adding them to exported Word documents.
+
+With the release of {productname} {release-version} watermark functionality has been introduced, enabling watermarks to be included in exported documents.
+
+For information on the **Export to Word** plugin, see: xref:exportword.adoc[Export to Word].
+
 === Advanced Typography
 
 The {productname} {release-version} release includes an accompanying release of the **Advanced Typography** premium plugin.
@@ -52,7 +66,55 @@ Previously, in the **Comments** premium plugin, an issue was identified where me
 
 {productname} {release-version} resolves this issue by ensuring that newly added mentions to an existing comment are displayed correctly.
 
+==== Pressing Keyboard shorctut `cmd+alt+m` when cursor is on annotated content now opens and focuses the reply textarea.
+// #TINY-11321
+
+Previously, an issue was identified where pressing the keyboard shortcut `cmd-alt-m` on Mac and `ctrl-alt-m` on Windows while the cursor was on annotated content and the comments sidebar was open resulted in the focus shifting to the corresponding comment, which was not the desired behavior.
+
+{productname} {release-version} fixes this by ensuring that the focus now moves to the reply text area instead of the corresponding comment. 
+This matches the behavior when the "Add New Comment" button is clicked, resulting in more consistent functionality.
+
+==== Improved visual separation of comments side panel header.
+// #TINY-11715
+
+In previous versions of **Comments**, the side panel header blended into the body, resulting in a lack of visual separation. This made the UI appear less polished and dimensional.
+
+{productname} {release-version} improves this by enhancing the side panel header’s visibility, creating a clearer distinction from the body, and refining the overall UI aesthetics.
+
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments].
+
+=== Image Optimizer
+
+The {productname} {release-version} release includes an accompanying release of the **Image Optimizer** premium plugin.
+
+**Image Optimizer** includes the following fixes and improvements.
+
+==== Some image file extensions would sometimes be incorrectly considered unsupported.
+// #TINY-11668
+
+Previously, an issue was identified where `.jfi` and `.jif` file extensions were incorrectly considered unsupported due to the validation logic.
+
+As a result, these extensions were blocked, and users encountered the error message: "Failed to upload: The image is not a supported file format."
+
+{productname} {release-version} resolves this issue by fixing the validation logic to correctly detect the MIME type of uploaded images, ensuring that users can now successfully upload `.jfi` and `.jif` files.
+
+==== Dropping files on the placeholder would sometimes insert the image in an incorrect location.
+// #TINY-11643
+
+Previously, an issue was identified where the drag-and-drop functionality on an image placeholder in a table would insert the image outside of the table cell.
+This resulted in unpredictable behavior when users dragged and dropped an image into the image placeholder.
+
+{productname} {release-version} resolves this issue by making it so that that the image placeholder handles the drop event instead of the editor content element. This improvement provides predictable and consistent drag-and-drop behavior for image placeholders in **Image Optimizer**.
+
+==== Some error messages are now more descriptive.
+// #TINY-11613
+
+Previously, error messages were unclear when the `uploadcare_public_key` was not configured with a valid API key.
+This caused confusion in identifying the problem during setup.
+
+{productname} {release-version} addresses this by providing a more detailed error message when the `uploadcare_public_key` is not configured.
+
+For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
 
 [[improvements]]
 == Improvements
@@ -106,6 +168,13 @@ Previously, an issue was identified where the aria-label attribute in the body e
 the help dialog would not open if the plugin was disabled, leading to confusion.
 
 {productname} {release-version} addresses this issue by ensuring that if the help plugin is disabled, the screen reader announces only "Rich Text Area." If the help plugin is enabled, the screen reader announces "Rich Text Area. Press `ALT-0` for help.".
+
+=== Toolbar groups had both a `title` attribute and a custom tooltip, causing overlapping tooltips
+// #TINY-11768
+
+In previous versions of {productname}, hovering over toolbar menu item would display both a custom tooltip and the default browser tooltip. This caused confusing behavior, as the custom tooltip was difficult to read due to the browser tooltip overlapping it.
+
+{productname} {release-version} resolves this issue by replacing the `title` attribute with the `aria-label` attribute for toolbar groupings, preventing the default browser tooltip from appearing.
 
 [[known-issues]]
 == Known issues

@@ -62,7 +62,7 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **Comments** includes the following fixes.
 
-==== On chrome, comment card would be jumping when editing a very large comment.
+==== Comment card jumps when editing a large comment in Chrome
 // #TINY-11729
 
 Previously, when editing a comment larger than the height of the comments sidebar, the sidebar would briefly jump before returning to its intended position. This caused visual disruptions that impacted the editing experience.  

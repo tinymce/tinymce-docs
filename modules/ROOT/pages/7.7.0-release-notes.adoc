@@ -233,7 +233,7 @@ In previous versions of {productname}, hovering over toolbar menu item would dis
 === Expanding selection to a word didn't work inside inline editing host elements.
 // #TINY-11304
 
-Previously, an issue occurred where the selection would not expand as expected when expand to word was called within an inline edit host element inside a non-editable parent.
+Previously, an issue occurred where the selection did not expand as expected when "expand to word" action was triggered within an inline edit host element inside a non-editable parent.
 
 This has been resolved in {productname} {release-version}, ensuring that the expanded selection now remains within the boundaries of the editable host element.
 

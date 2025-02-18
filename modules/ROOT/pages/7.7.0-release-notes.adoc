@@ -173,6 +173,11 @@ For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Ima
 
 In previous versions of {productname}, the editor would transition to read-only mode if the API key was missing, invalid, or if the domain was invalid. With the release of {productname} {release-version}, this behavior has been updated to instead activate disabled mode in these scenarios.
 
+===  Added `link_attributes_postprocess` option that allows overriding attributes of a link inserted through the link dialog.
+// #TINY-11707
+
+Previously in the xref:link.adoc[Link] plugin, there was no ability to override attributes of a link. With the release of {productname} {release-version}, a new option xref:link.adoc#link_attributes_postprocess[link_attributes_postprocess] has been added that allows this functionality.
+
 [[additions]]
 == Additions
 
@@ -228,6 +233,20 @@ In {productname} {release-version}, this issue has been resolved by preserving t
 In previous versions of {productname}, hovering over toolbar menu item would display both a custom tooltip and the default browser tooltip. This caused confusing behavior, as the custom tooltip was difficult to read due to the browser tooltip overlapping it.
 
 {productname} {release-version} resolves this issue by replacing the `title` attribute with the `aria-label` attribute for toolbar groupings, preventing the default browser tooltip from appearing.
+
+=== The `float` property was not properly removed from the image when converting an image into a captioned image.
+// #TINY-11670
+
+Previously, an issue occurred where toggling a caption on a floating image did not remove the float property from the image, causing the caption text to be incorrectly positioned.
+
+In {productname} {release-version}, this issue has been resolved by ensuring that the float property is removed when toggling the caption. As a result, the image and caption text now align correctly.
+
+=== Fixed keyboard navigation for size inputs in context forms.
+// #TINY-11394
+
+Previously, input and slider elements in the context toolbar did not support keyboard navigation, preventing users from accessing and adjusting these elements via the keyboard.
+
+With the release of {productname} {release-version}, keyboard navigation has been implemented for these elements, ensuring seamless accessibility and improved usability.
 
 [[known-issues]]
 == Known issues

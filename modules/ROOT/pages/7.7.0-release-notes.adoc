@@ -24,6 +24,33 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== Export to PDF
+
+The {productname} {release-version} release includes an accompanying release of the **Export to PDF** premium plugin.
+
+**Export to PDF** Premium plugin includes the following improvement.
+
+==== The `format` property in `exportpdf_converter_options` now accepts lowercase  
+// #TINY-11722  
+
+Previously, the `format` property in `exportpdf_converter_options` only accepted case-sensitive uppercase values, which lead to inconsistencies when generating PDF exports. This improvement ensures that lowercase values are now correctly recognized, making configuration more flexible and reducing potential formatting errors.  
+
+For information on the **Export to PDF** plugin, see: xref:exportpdf.adoc[Export to PDF].
+
+=== Export to Word
+
+The {productname} {release-version} release includes an accompanying release of the **Export to Word** premium plugin.
+
+**Export to Word**  includes the following fix.
+
+==== A document watermark can now be specified for the exported file
+
+Previously, the **Export to Word** premium plugin did not support watermarks, preventing integrators from adding them to exported Word documents.
+
+With the release of {productname} {release-version} watermark functionality has been introduced, enabling watermarks to be included in exported documents.
+
+For information on the **Export to Word** plugin, see: xref:exportword.adoc[Export to Word].
+
 === Advanced Typography
 
 The {productname} {release-version} release includes an accompanying release of the **Advanced Typography** premium plugin.
@@ -38,6 +65,50 @@ Previously, an issue was identified where `Ukrainian` and `Serbian` were incorre
 {productname} {release-version} addresses this by fixing the spelling.
 
 For information on the **Advanced Typography** plugin, see: xref:advanced-typography.adoc[Advanced Typography].
+
+=== Comments
+
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** includes the following fixes.
+
+==== Editing a comment and adding a mention to the comment would result in the mention not showing correctly after saving the comment.
+// #TINY-11602
+
+Previously, in the **Comments** premium plugin, an issue was identified where mentions were not displayed correctly when editing a comment, adding a mention, and then saving the comment.
+
+{productname} {release-version} resolves this issue by ensuring that newly added mentions to an existing comment are displayed correctly.
+
+==== Pressing Keyboard shorctut `cmd+alt+m` when cursor is on annotated content now opens and focuses the reply textarea.
+// #TINY-11321
+
+Previously, an issue was identified where pressing the keyboard shortcut `cmd-alt-m` on Mac and `ctrl-alt-m` on Windows while the cursor was on annotated content and the comments sidebar was open resulted in the focus shifting to the corresponding comment, which was not the desired behavior.
+
+{productname} {release-version} fixes this by ensuring that the focus now moves to the reply text area instead of the corresponding comment. 
+This matches the behavior when the "Add New Comment" button is clicked, resulting in more consistent functionality.
+
+==== Improved visual separation of comments side panel header.
+// #TINY-11715
+
+In previous versions of **Comments**, the side panel header blended into the body, resulting in a lack of visual separation. This made the UI appear less polished and dimensional.
+
+{productname} {release-version} improves this by enhancing the side panel header’s visibility, creating a clearer distinction from the body, and refining the overall UI aesthetics.
+
+==== Comment card jumps when editing a large comment in Chrome
+// #TINY-11729
+
+Previously, when editing a comment larger than the height of the comments sidebar, the sidebar would briefly jump before returning to its intended position. This caused visual disruptions that impacted the editing experience.  
+
+{productname} {release-version} resolves this issue by ensuring the comment sidebar remains stable, preventing unintended jumps when editing large comments. 
+
+==== Closing the comment kebab menu with keyboard would result in the editor dispatching a `blur` event.
+// #TINY-11172
+
+In previous versions of **Comments**, an issue was identified where the editor would trigger a `blur` event if the comment kebab menu was closed using the `escape` key. This occurred even when the editor still had focus, leading to confusing behavior.
+
+{productname} {release-version} resolves this issue by ensuring that focus is properly managed when closing the kebab menu, rather than relying on the browser. This ensures that the editor does not trigger any `blur` events.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments].
 
 === Image Optimizer
 
@@ -54,22 +125,23 @@ As a result, these extensions were blocked, and users encountered the error mess
 
 {productname} {release-version} resolves this issue by fixing the validation logic to correctly detect the MIME type of uploaded images, ensuring that users can now successfully upload `.jfi` and `.jif` files.
 
+==== Dropping files on the placeholder would sometimes insert the image in an incorrect location.
+// #TINY-11643
+
+Previously, an issue was identified where the drag-and-drop functionality on an image placeholder in a table would insert the image outside of the table cell.
+This resulted in unpredictable behavior when users dragged and dropped an image into the image placeholder.
+
+{productname} {release-version} resolves this issue by making it so that that the image placeholder handles the drop event instead of the editor content element. This improvement provides predictable and consistent drag-and-drop behavior for image placeholders in **Image Optimizer**.
+
+==== Some error messages are now more descriptive.
+// #TINY-11613
+
+Previously, error messages were unclear when the `uploadcare_public_key` was not configured with a valid API key.
+This caused confusion in identifying the problem during setup.
+
+{productname} {release-version} addresses this by providing a more detailed error message when the `uploadcare_public_key` is not configured.
+
 For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
-
-=== Comments
-
-The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
-
-**Comments** includes the following fixes.
-
-==== Comment card jumps when editing a large comment in Chrome
-// #TINY-11729
-
-Previously, when editing a comment larger than the height of the comments sidebar, the sidebar would briefly jump before returning to its intended position. This caused visual disruptions that impacted the editing experience.  
-
-{productname} {release-version} resolves this issue by ensuring the comment sidebar remains stable, preventing unintended jumps when editing large comments. 
-
-For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments].
 
 [[improvements]]
 == Improvements
@@ -123,6 +195,13 @@ Previously, an issue was identified where the aria-label attribute in the body e
 the help dialog would not open if the plugin was disabled, leading to confusion.
 
 {productname} {release-version} addresses this issue by ensuring that if the help plugin is disabled, the screen reader announces only "Rich Text Area." If the help plugin is enabled, the screen reader announces "Rich Text Area. Press `ALT-0` for help.".
+
+=== Toolbar groups had both a `title` attribute and a custom tooltip, causing overlapping tooltips
+// #TINY-11768
+
+In previous versions of {productname}, hovering over toolbar menu item would display both a custom tooltip and the default browser tooltip. This caused confusing behavior, as the custom tooltip was difficult to read due to the browser tooltip overlapping it.
+
+{productname} {release-version} resolves this issue by replacing the `title` attribute with the `aria-label` attribute for toolbar groupings, preventing the default browser tooltip from appearing.
 
 [[known-issues]]
 == Known issues

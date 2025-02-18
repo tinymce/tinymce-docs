@@ -230,7 +230,7 @@ In previous versions of {productname}, hovering over toolbar menu item would dis
 
 {productname} {release-version} resolves this issue by replacing the `title` attribute with the `aria-label` attribute for toolbar groupings, preventing the default browser tooltip from appearing.
 
-=== Expanding selection to word didn't work inside inline editing host elements.
+=== Expanding selection to a word didn't work inside inline editing host elements.
 // #TINY-11304
 
 Previously, an issue occurred where the selection would not expand as expected when expand to word was called within an inline edit host element inside a non-editable parent.

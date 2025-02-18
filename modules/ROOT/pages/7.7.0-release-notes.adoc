@@ -94,6 +94,13 @@ In previous versions of **Comments**, the side panel header blended into the bod
 
 {productname} {release-version} improves this by enhancing the side panel header’s visibility, creating a clearer distinction from the body, and refining the overall UI aesthetics.
 
+==== Editor now dispatches `Change` event after a comment is edited or a reply is created.
+// #TINY-11802
+
+Previously, when a comment was edited or replied to, the editor did not enter a dirty state. As a result, in embedded mode with the xref:save.adoc[Save] plugin, the save button remained disabled after replying to or editing a comment, which was not the expected behavior.
+
+In {productname} {release-version}, this issue has been addressed. The editor now transitions to a dirty state when a comment is edited or replied to, ensuring that changes can be saved using the save button as intended.
+
 ==== Comment card jumps when editing a large comment in Chrome
 // #TINY-11729
 

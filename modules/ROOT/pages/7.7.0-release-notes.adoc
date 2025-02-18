@@ -168,7 +168,7 @@ For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Ima
 
 {productname} {release-version} also includes the following improvement<s>:
 
-=== Not specifying a notification type (or specifying incorrect one) now defaults to 'info'.
+=== Not specifying a notification type (or specifying an incorrect one) now defaults to 'info'.
 // #TINY-11661
 
 In earlier versions of {productname}, an undefined or incorrect `type` property in the notification manager resulted in irregular notifications with no background and a placeholder icon, making them difficult to read.

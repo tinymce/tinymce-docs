@@ -129,6 +129,21 @@ This caused confusion in identifying the problem during setup.
 
 For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
 
+=== Comments
+
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** includes the following fixes.
+
+==== Closing the comment kebab menu with keyboard would result in the editor dispatching a `blur` event.
+// #TINY-11172
+
+In previous versions of **Comments**, an issue was identified where the editor would trigger a `blur` event if the comment kebab menu was closed using the `escape` key. This occurred even when the editor still had focus, leading to confusing behavior.
+
+{productname} {release-version} resolves this issue by ensuring that focus is properly managed when closing the kebab menu, rather than relying on the browser. This ensures that the editor does not trigger any `blur` events.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments].
+
 [[improvements]]
 == Improvements
 

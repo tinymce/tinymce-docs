@@ -115,6 +115,13 @@ In previous versions of **Comments**, an issue was identified where the editor w
 
 {productname} {release-version} resolves this issue by ensuring that focus is properly managed when closing the kebab menu, rather than relying on the browser. This ensures that the editor does not trigger any `blur` events.
 
+==== Impoved visual indication of keyboard focus for a comment annotation when there is an image inside.
+// #TINY-11596
+
+In previous versions of **Comments**, annotated non-text elements occasionally displayed a double bottom border when selected, leading to a visual inconsistency that appeared buggy and clashed with existing border styles.
+
+With the release of {productname} {release-version}, dedicated styles for selected non-text element annotations have been introduced. This enhancement improves the visual clarity of comment annotations on non-text elements such as images and videos.
+
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments].
 
 === Image Optimizer

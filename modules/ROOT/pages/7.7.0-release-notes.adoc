@@ -168,11 +168,10 @@ For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Ima
 
 {productname} {release-version} also includes the following improvement<s>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Extended the `forceReadOnly` functionality to support the new `disabled` option in addition to readonly mode.
+// #TINY-11490
 
-// CCFR here.
-
+In previous versions of {productname}, the editor would transition to read-only mode if the API key was missing, invalid, or if the domain was invalid. With the release of {productname} {release-version}, this behavior has been updated to instead activate disabled mode in these scenarios.
 
 [[additions]]
 == Additions

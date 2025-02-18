@@ -168,7 +168,7 @@ For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Ima
 
 {productname} {release-version} also includes the following improvement<s>:
 
-===  Added `link_attributes_postprocess` option that allows overriding attributes of a link that would be inserted through the link dialog.'
+===  Added `link_attributes_postprocess` option that allows overriding attributes of a link inserted through the link dialog.'
 // #TINY-11707
 
 Previously in the xref:link.adoc[Link] plugin, there was no ability to override attributes of a link. With the release of {productname} {release-version}, a new option called `link_attributes_postprocess` has been added that allows this functionality.

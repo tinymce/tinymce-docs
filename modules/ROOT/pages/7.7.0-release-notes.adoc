@@ -205,6 +205,13 @@ For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.a
 
 {productname} {release-version} also includes the following improvements:
 
+=== Not specifying a notification type (or specifying an incorrect one) now defaults to 'info'.
+// #TINY-11661
+
+In earlier versions of {productname}, an undefined or incorrect `type` property in the notification manager resulted in irregular notifications with no background and a placeholder icon, making them difficult to read.
+
+With the release of {productname} {release-version}, this behavior has been improved. The `type` property now defaults to `info` when an invalid or missing value is detected, resulting in a proper looking notification that is easy to understand.
+
 === Extended the `forceReadOnly` functionality to support the new `disabled` option in addition to readonly mode.
 // #TINY-11490
 

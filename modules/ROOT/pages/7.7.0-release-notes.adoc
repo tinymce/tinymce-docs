@@ -163,16 +163,50 @@ Previously in the **Image Optimizer** premium plugin, a fallback mechanism cause
 
 For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
 
+=== Revision History
+
+The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
+
+**Revision History** includes the following addition.
+
+==== New `revisionhistory_allow_restore` option to control restoration of old revisions  
+// #TINY-11746
+
+{productname} {release-version} introduces a new `revisionhistory_allow_restore` option, which provides a way to control if a user can restore revisions. By default, it is set to `+true+`, setting it to `+false+` prevents users from restoring previous versions.
+
+This improvement enhances access control within the **Revision History** plugin, providing greater flexibility for managing revision restoration.
+
+For more information on the **Revision History** plugin, see: xref:revisionhistory.adoc[Revision History].
+
+=== Accessibility Checker
+
+The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.
+
+**Accessibility Checker** includes the following fix.
+
+==== Update form validation error message color to be the same as the error text color.
+// #TINY-11657
+
+In previous versions of the **Accessibility Checker** premium plugin, the form validation error message had insufficient color contrast in dark mode, failing to meet link:https://www.w3.org/WAI/WCAG2AA-Conformance[WCAG AA] standards and reducing visibility.
+
+With the release of {productname} {release-version}, this issue has been resolved by updating the error message color to be the same as the error text color, ensuring improved visibility and compliance with link:https://www.w3.org/WAI/WCAG2AA-Conformance[WCAG AA] contrast standards.
+
+For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
+
 [[improvements]]
 == Improvements
 
-{productname} {release-version} also includes the following improvement<s>:
+{productname} {release-version} also includes the following improvements:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Extended the `forceReadOnly` functionality to support the new `disabled` option in addition to readonly mode.
+// #TINY-11490
 
-// CCFR here.
+In previous versions of {productname}, the editor would transition to read-only mode if the API key was missing, invalid, or if the domain was invalid. With the release of {productname} {release-version}, this behavior has been updated to instead activate disabled mode in these scenarios.
 
+===  Added `link_attributes_postprocess` option that allows overriding attributes of a link inserted through the link dialog.
+// #TINY-11707
+
+Previously in the xref:link.adoc[Link] plugin, there was no ability to override attributes of a link. With the release of {productname} {release-version}, a new option xref:link.adoc#link_attributes_postprocess[link_attributes_postprocess] has been added that allows this functionality.
 
 [[additions]]
 == Additions
@@ -189,6 +223,11 @@ For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Ima
 == Bug fixes
 
 {productname} <x.y[.z]> also includes the following bug fix<es>:
+
+=== Dialog menu dropdowns now close when scrolling the editor container.
+// #TINY-11398
+
+Previously, dialog menu dropdowns were not positioned correctly after scrolling the editor container, causing them to remain visible even when the editor was no longer in view. This resulted in dropdowns being displayed without their corresponding dialog context. {productname} {release-version} updates the behavior to ensure that dialog menu dropdowns close on the window scroll event, preventing them from appearing out of context.
 
 === The `insertContent` API was not replacing selected non-editable elements correctly.
 // #TINY-11714
@@ -236,6 +275,20 @@ In previous versions of {productname}, hovering over toolbar menu item would dis
 Previously, an issue was identified where keyboard navigation using the Tab key would become stuck at the "Show More" button in the toolbar. This occurred because hidden toolbar elements were incorrectly detected as valid tab targets, disrupting seamless navigation and negatively impacting the user experience.
 
 In {productname} {release-version}, this issue has been resolved by implementing more precise filtering of viable tab targets. As a result, keyboard navigation now functions smoothly without getting stuck.
+
+=== The `float` property was not properly removed from the image when converting an image into a captioned image.
+// #TINY-11670
+
+Previously, an issue occurred where toggling a caption on a floating image did not remove the float property from the image, causing the caption text to be incorrectly positioned.
+
+In {productname} {release-version}, this issue has been resolved by ensuring that the float property is removed when toggling the caption. As a result, the image and caption text now align correctly.
+
+=== Fixed keyboard navigation for size inputs in context forms.
+// #TINY-11394
+
+Previously, input and slider elements in the context toolbar did not support keyboard navigation, preventing users from accessing and adjusting these elements via the keyboard.
+
+With the release of {productname} {release-version}, keyboard navigation has been implemented for these elements, ensuring seamless accessibility and improved usability.
 
 [[known-issues]]
 == Known issues

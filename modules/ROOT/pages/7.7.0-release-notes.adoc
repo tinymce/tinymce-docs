@@ -269,6 +269,13 @@ In previous versions of {productname}, hovering over toolbar menu item would dis
 
 {productname} {release-version} resolves this issue by replacing the `title` attribute with the `aria-label` attribute for toolbar groupings, preventing the default browser tooltip from appearing.
 
+=== Expanding selection to a word didn't work inside inline editing host elements.
+// #TINY-11304
+
+Previously, an issue occurred where the selection did not expand as expected when using the `editor.selection.expand({ type: 'word' })` API when the selection was within an inline edit host element inside a non-editable parent.
+
+This has been resolved in {productname} {release-version}, ensuring that the expanded selection now remains within the boundaries of the editable host element.
+
 === Keyboard navigation would get stuck on the 'more' toolbar button.
 // #TINY-11762
 

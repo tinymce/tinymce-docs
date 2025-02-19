@@ -163,6 +163,21 @@ Previously in the **Image Optimizer** premium plugin, a fallback mechanism cause
 
 For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
 
+=== Revision History
+
+The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
+
+**Revision History** includes the following addition.
+
+==== New `revisionhistory_allow_restore` option to control restoration of old revisions  
+// #TINY-11746
+
+{productname} {release-version} introduces a new `revisionhistory_allow_restore` option, which provides a way to control if a user can restore revisions. By default, it is set to `+true+`, setting it to `+false+` prevents users from restoring previous versions.
+
+This improvement enhances access control within the **Revision History** plugin, providing greater flexibility for managing revision restoration.
+
+For more information on the **Revision History** plugin, see: xref:revisionhistory.adoc[Revision History].
+
 === Accessibility Checker
 
 The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.

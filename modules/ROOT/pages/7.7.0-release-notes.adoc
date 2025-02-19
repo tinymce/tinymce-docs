@@ -209,6 +209,11 @@ Previously in the xref:link.adoc[Link] plugin, there was no ability to override 
 
 {productname} <x.y[.z]> also includes the following bug fix<es>:
 
+=== Dialog menu dropdowns now close when scrolling the editor container.
+// #TINY-11398
+
+Previously, dialog menu dropdowns were not positioned correctly after scrolling the editor container, causing them to remain visible even when the editor was no longer in view. This resulted in dropdowns being displayed without their corresponding dialog context. {productname} {release-version} updates the behavior to ensure that dialog menu dropdowns close on the window scroll event, preventing them from appearing out of context.
+
 === The `insertContent` API was not replacing selected non-editable elements correctly.
 // #TINY-11714
 

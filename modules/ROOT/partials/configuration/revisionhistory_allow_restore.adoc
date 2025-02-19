@@ -17,4 +17,5 @@ tinymce.init({
   toolbar: 'revisionhistory',
   revisionhistory_fetch: () => Promise.resolve([]), // Required option for the plugin - replace with actual API request
   revisionhistory_allow_restore: false
+  });
 ----

@@ -118,7 +118,6 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== New `revisionhistory_allow_restore` option to control restoration of old revisions  
 // #TINY-11746
 
-
 {productname} {release-version} introduces a new `revisionhistory_allow_restore` option, which provides a way to control if a user can restore revisions. By default, it is set to `+true+`, setting it to `+false+` prevents users from restoring previous versions.
 
 This improvement enhances access control within the **Revision History** plugin, providing greater flexibility for managing revision restoration.

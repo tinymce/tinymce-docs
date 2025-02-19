@@ -17,6 +17,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:improvements[Improvements]
 * xref:additions[Additions]
 * xref:bug-fixes[Bug fixes]
+* xref:known-issues[Known issues]
 
 
 [[accompanying-premium-plugin-changes]]
@@ -325,9 +326,11 @@ With the release of {productname} {release-version}, keyboard navigation has bee
 
 This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
 
-There <is one | are <number> known issue<s> in {productname} {release-version}.
+There one known issue in {productname} {release-version}.
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Missing Hebrew translation for Blockquote toolbar button tooltip
+// #TINY-11732
 
-// CCFR here.
+The Blockquote toolbar button tooltip does not display a translation for Hebrew. This issue affects users who rely on localized tooltips for accessibility and usability.
+
+**Status**: Currently under investigation.

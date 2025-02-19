@@ -163,6 +163,21 @@ Previously in the **Image Optimizer** premium plugin, a fallback mechanism cause
 
 For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
 
+=== Accessibility Checker
+
+The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.
+
+**Accessibility Checker** includes the following fix.
+
+==== Update form validation error message color to be the same as the error text color.
+// #TINY-11657
+
+In previous versions of the **Accessibility Checker** premium plugin, the form validation error message had insufficient color contrast in dark mode, failing to meet link:https://www.w3.org/WAI/WCAG2AA-Conformance[WCAG AA] standards and reducing visibility.
+
+With the release of {productname} {release-version}, this issue has been resolved by updating the error message color to be the same as the error text color, ensuring improved visibility and compliance with link:https://www.w3.org/WAI/WCAG2AA-Conformance[WCAG AA] contrast standards.
+
+For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
+
 [[improvements]]
 == Improvements
 

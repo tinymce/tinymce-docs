@@ -269,6 +269,13 @@ In previous versions of {productname}, hovering over toolbar menu item would dis
 
 {productname} {release-version} resolves this issue by replacing the `title` attribute with the `aria-label` attribute for toolbar groupings, preventing the default browser tooltip from appearing.
 
+=== Keyboard navigation would get stuck on the 'more' toolbar button.
+// #TINY-11762
+
+Previously, an issue was identified where keyboard navigation using the Tab key would become stuck at the "Show More" button in the toolbar. This occurred because hidden toolbar elements were incorrectly detected as valid tab targets, disrupting seamless navigation and negatively impacting the user experience.
+
+In {productname} {release-version}, this issue has been resolved by implementing more precise filtering of viable tab targets. As a result, keyboard navigation now functions smoothly without getting stuck.
+
 === The `float` property was not properly removed from the image when converting an image into a captioned image.
 // #TINY-11670
 

@@ -232,21 +232,15 @@ With the release of {productname} {release-version}, this behavior has been impr
 
 In previous versions of {productname}, the editor would transition to read-only mode if the API key was missing, invalid, or if the domain was invalid. With the release of {productname} {release-version}, this behavior has been updated to instead activate disabled mode in these scenarios.
 
+[[additions]]
+== Additions
+
+{productname} {release-version} also includes the following addition:
+
 ===  Added `link_attributes_postprocess` option that allows overriding attributes of a link inserted through the link dialog.
 // #TINY-11707
 
 Previously in the xref:link.adoc[Link] plugin, there was no ability to override attributes of a link. With the release of {productname} {release-version}, a new option xref:link.adoc#link_attributes_postprocess[link_attributes_postprocess] has been added that allows this functionality.
-
-[[additions]]
-== Additions
-
-{productname} {release-version} also includes the following addition<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
 
 [[bug-fixes]]
 == Bug fixes

@@ -148,14 +148,6 @@ Previously, the image upload placeholder had a border rendering issue, which aff
 
 {productname} {release-version} addresses this by refining the CSS to ensure the border is properly rendered, resulting in a more polished and design-compliant user interface.
 
-==== Context toolbar inputs had incorrect margins.
-// #TINY-11624
-
-Previously, input elements within the contextual toolbar were not styled correctly and overflowed when using the `fluent`, `snow`, and `jam` premium skins. This issue arose because these skins modified toolbar element properties such as padding, height, and width, but the adjustments were not applied consistently to input elements. 
-As a result, the UI appeared misaligned and less polished.
-
-In {productname} {release-version}, this issue has been resolved. Contextual toolbar elements, including buttons and inputs, now use the same padding and height values, ensuring a consistent and polished appearance.
-
 For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
 
 === Export to PDF
@@ -298,6 +290,14 @@ Previously in {productname}, an issue was identified where, if an inline non-edi
 As a result, integrators were unable to insert content into inline non-editable elements.
 
 {productname} {release-version} resolves this by modifying the functionality of the `insertContent` API to support this scenario. This ensures that integrators can now insert content into inline elements, making the `insertContent` API more robust.
+
+==== Context toolbar inputs had incorrect margins.
+// #TINY-11624
+
+Previously, input elements within the contextual toolbar were not styled correctly and overflowed when using the `fluent`, `snow`, and `jam` premium skins. This issue arose because these skins modified toolbar element properties such as padding, height, and width, but the adjustments were not applied consistently to input elements. 
+As a result, the UI appeared misaligned and less polished.
+
+In {productname} {release-version}, this issue has been resolved. Contextual toolbar elements, including buttons and inputs, now use the same padding and height values, ensuring a consistent and polished appearance.
 
 === Iframe aria text used to suggest to open help dialog even when the help plugin was not enabled.
 // #TINY-11672

@@ -141,6 +141,13 @@ This caused confusion in identifying the problem during setup.
 
 {productname} {release-version} addresses this by providing a more detailed error message when the `uploadcare_public_key` is not configured.
 
+==== Part of the placeholder border was not visible during loading.
+// #TINY-11690
+
+Previously, the image upload placeholder had a border rendering issue, which affected the visual consistency of the UI during the upload process.
+
+{productname} {release-version} addresses this by refining the CSS to ensure the border is properly rendered, resulting in a more polished and design-compliant user interface.
+
 ==== Context toolbar inputs had incorrect margins.
 // #TINY-11624
 

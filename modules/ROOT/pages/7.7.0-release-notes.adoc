@@ -291,7 +291,7 @@ As a result, integrators were unable to insert content into inline non-editable 
 
 {productname} {release-version} resolves this by modifying the functionality of the `insertContent` API to support this scenario. This ensures that integrators can now insert content into inline elements, making the `insertContent` API more robust.
 
-==== Context toolbar inputs had incorrect margins.
+=== Context toolbar inputs had incorrect margins.
 // #TINY-11624
 
 Previously, input elements within the contextual toolbar were not styled correctly and overflowed when using the `fluent`, `snow`, and `jam` premium skins. This issue arose because these skins modified toolbar element properties such as padding, height, and width, but the adjustments were not applied consistently to input elements. 

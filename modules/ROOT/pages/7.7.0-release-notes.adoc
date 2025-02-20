@@ -59,48 +59,6 @@ include::partial$misc/admon-no-functionality-changes-in-updated-server-side-comp
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== Export to PDF
-
-The {productname} {release-version} release includes an accompanying release of the **Export to PDF** premium plugin.
-
-**Export to PDF** Premium plugin includes the following improvement.
-
-==== The `format` property in `exportpdf_converter_options` now accepts lowercase  
-// #TINY-11722  
-
-Previously, the `format` property in `exportpdf_converter_options` only accepted case-sensitive uppercase values, which lead to inconsistencies when generating PDF exports. This improvement ensures that lowercase values are now correctly recognized, making configuration more flexible and reducing potential formatting errors.  
-
-For information on the **Export to PDF** plugin, see: xref:exportpdf.adoc[Export to PDF].
-
-=== Export to Word
-
-The {productname} {release-version} release includes an accompanying release of the **Export to Word** premium plugin.
-
-**Export to Word**  includes the following fix.
-
-==== A document watermark can now be specified for the exported file
-
-Previously, the **Export to Word** premium plugin did not support watermarks, preventing integrators from adding them to exported Word documents.
-
-With the release of {productname} {release-version} watermark functionality has been introduced, enabling watermarks to be included in exported documents.
-
-For information on the **Export to Word** plugin, see: xref:exportword.adoc[Export to Word].
-
-=== Advanced Typography
-
-The {productname} {release-version} release includes an accompanying release of the **Advanced Typography** premium plugin.
-
-**Advanced Typography** includes the following fix.
-
-==== Serbian and Ukrainian languages were spelled incorrectly.
-// #TINY-11713
-
-Previously, an issue was identified where `Ukrainian` and `Serbian` were incorrectly spelt in the typography plugin.
-
-{productname} {release-version} addresses this by fixing the spelling.
-
-For information on the **Advanced Typography** plugin, see: xref:advanced-typography.adoc[Advanced Typography].
-
 === Comments
 
 The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
@@ -150,13 +108,6 @@ In previous versions of **Comments**, an issue was identified where the editor w
 
 {productname} {release-version} resolves this issue by ensuring that focus is properly managed when closing the kebab menu, rather than relying on the browser. This ensures that the editor does not trigger any `blur` events.
 
-==== Improved visual indication of keyboard focus for a comment annotation when there is an image inside.
-// #TINY-11596
-
-In previous versions of **Comments**, annotated non-text elements occasionally displayed a double bottom border when selected, leading to a visual inconsistency that appeared buggy and clashed with existing border styles.
-
-With the release of {productname} {release-version}, dedicated styles for selected non-text element annotations have been introduced. This enhancement improves the visual clarity of comment annotations on non-text elements such as images and videos.
-
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments].
 
 === Image Optimizer
@@ -190,20 +141,49 @@ This caused confusion in identifying the problem during setup.
 
 {productname} {release-version} addresses this by providing a more detailed error message when the `uploadcare_public_key` is not configured.
 
-==== Toolbar text field was not properly rendering focus.
-// #TINY-11658
-
-Previously, input elements lacked styling logic to display a border when focused, resulting in no visible indication of focus.
-This issue has been resolved in {productname} {release-version}. Input elements now correctly display a border when focused, ensuring improved visual feedback.
-
-==== It was possible to `tab` to a toolbar group that had all children disabled.
-// #TINY-11665
-
-Previously in the **Image Optimizer** premium plugin, a fallback mechanism caused focus to shift to the nearest ancestor element. As a result, if focus was applied to a disabled input, its container would receive the focus.
-
-{productname} {release-version} resolves this issue by ensuring that containers with only disabled elements are no longer focusable, preventing unintended focus behavior.
-
 For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
+
+=== Export to PDF
+
+The {productname} {release-version} release includes an accompanying release of the **Export to PDF** premium plugin.
+
+**Export to PDF** Premium plugin includes the following improvement.
+
+==== The `format` property in `exportpdf_converter_options` now accepts lowercase  
+// #TINY-11722  
+
+Previously, the `format` property in `exportpdf_converter_options` only accepted case-sensitive uppercase values, which lead to inconsistencies when generating PDF exports. This improvement ensures that lowercase values are now correctly recognized, making configuration more flexible and reducing potential formatting errors.  
+
+For information on the **Export to PDF** plugin, see: xref:exportpdf.adoc[Export to PDF].
+
+=== Export to Word
+
+The {productname} {release-version} release includes an accompanying release of the **Export to Word** premium plugin.
+
+**Export to Word**  includes the following fix.
+
+==== A document watermark can now be specified for the exported file
+
+Previously, the **Export to Word** premium plugin did not support watermarks, preventing integrators from adding them to exported Word documents.
+
+With the release of {productname} {release-version} watermark functionality has been introduced, enabling watermarks to be included in exported documents.
+
+For information on the **Export to Word** plugin, see: xref:exportword.adoc[Export to Word].
+
+=== Advanced Typography
+
+The {productname} {release-version} release includes an accompanying release of the **Advanced Typography** premium plugin.
+
+**Advanced Typography** includes the following fix.
+
+==== Serbian and Ukrainian languages were spelled incorrectly.
+// #TINY-11713
+
+Previously, an issue was identified where `Ukrainian` and `Serbian` were incorrectly spelt in the typography plugin.
+
+{productname} {release-version} addresses this by fixing the spelling.
+
+For information on the **Advanced Typography** plugin, see: xref:advanced-typography.adoc[Advanced Typography].
 
 === Enhanced Code Editor
 
@@ -255,6 +235,13 @@ For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.a
 
 {productname} {release-version} also includes the following improvements:
 
+==== Improved visual indication of keyboard focus for a comment annotation when there is an image inside.
+// #TINY-11596
+
+In previous versions of **Comments**, annotated non-text elements occasionally displayed a double bottom border when selected, leading to a visual inconsistency that appeared buggy and clashed with existing border styles.
+
+With the release of {productname} {release-version}, dedicated styles for selected non-text element annotations have been introduced. This enhancement improves the visual clarity of comment annotations on non-text elements such as images and videos.
+
 === Not specifying a notification type (or specifying an incorrect one) now defaults to 'info'.
 // #TINY-11661
 
@@ -280,12 +267,14 @@ Previously in the xref:link.adoc[Link] plugin, there was no ability to override 
 [[bug-fixes]]
 == Bug fixes
 
-{productname} <x.y[.z]> also includes the following bug fixes:
+{productname} {release-version} also includes the following bug fixes:
 
-=== Dialog menu dropdowns now close when scrolling the editor container.
-// #TINY-11398
+=== Fixed keyboard navigation for size inputs in context forms.
+// #TINY-11394
 
-Previously, dialog menu dropdowns were not positioned correctly after scrolling the editor container, causing them to remain visible even when the editor was no longer in view. This resulted in dropdowns being displayed without their corresponding dialog context. {productname} {release-version} updates the behavior to ensure that dialog menu dropdowns close on the window scroll event, preventing them from appearing out of context.
+Previously, input and slider elements in the context toolbar did not support keyboard navigation, preventing users from accessing and adjusting these elements via the keyboard.
+
+With the release of {productname} {release-version}, keyboard navigation has been implemented for these elements, ensuring seamless accessibility and improved usability.
 
 === The `insertContent` API was not replacing selected non-editable elements correctly.
 // #TINY-11714
@@ -294,6 +283,14 @@ Previously in {productname}, an issue was identified where, if an inline non-edi
 As a result, integrators were unable to insert content into inline non-editable elements.
 
 {productname} {release-version} resolves this by modifying the functionality of the `insertContent` API to support this scenario. This ensures that integrators can now insert content into inline elements, making the `insertContent` API more robust.
+
+=== Iframe aria text used to suggest to open help dialog even when the help plugin was not enabled.
+// #TINY-11672
+
+Previously, an issue was identified where the aria-label attribute in the body element was set to “Rich Text Area. Press `ALT-0` for help”. This affected accessibility because the screen reader would announce this message, but when users pressed `ALT-0`, 
+the help dialog would not open if the plugin was disabled, leading to confusion.
+
+{productname} {release-version} addresses this issue by ensuring that if the help plugin is disabled, the screen reader announces only "Rich Text Area." If the help plugin is enabled, the screen reader announces "Rich Text Area. Press `ALT-0` for help.".
 
 === Preview Dialog incorrectly opened anchor links in a new tab.
 // #TINY-11740
@@ -305,13 +302,12 @@ This resulted in a poor user experience as users could not engage with anchor li
 
 {productname} {release-version} resolves this issue by first checking whether a link is an anchor link and ensuring that users are navigated to the corresponding anchor element, which is the expected behavior.
 
-=== Iframe aria text used to suggest to open help dialog even when the help plugin was not enabled.
-// #TINY-11672
+=== The `float` property was not properly removed from the image when converting an image into a captioned image.
+// #TINY-11670
 
-Previously, an issue was identified where the aria-label attribute in the body element was set to “Rich Text Area. Press `ALT-0` for help”. This affected accessibility because the screen reader would announce this message, but when users pressed `ALT-0`, 
-the help dialog would not open if the plugin was disabled, leading to confusion.
+Previously, an issue occurred where toggling a caption on a floating image did not remove the float property from the image, causing the caption text to be incorrectly positioned.
 
-{productname} {release-version} addresses this issue by ensuring that if the help plugin is disabled, the screen reader announces only "Rich Text Area." If the help plugin is enabled, the screen reader announces "Rich Text Area. Press `ALT-0` for help.".
+In {productname} {release-version}, this issue has been resolved by ensuring that the float property is removed when toggling the caption. As a result, the image and caption text now align correctly.
 
 === The `semantics` element in MathML was not properly preserved when `annotation` elements were allowed.
 // #TINY-11755
@@ -320,19 +316,12 @@ Previously, in {productname}, an issue was identified in which the `semantics` M
 
 In {productname} {release-version}, this issue has been resolved by preserving the `semantics` element whenever the `allow_mathml_annotation_encodings` property is set to a non-empty array. This ensures that valid MathML is generated, improving compatibility with third-party tools and browser rendering.
 
-=== Toolbar groups had both a `title` attribute and a custom tooltip, causing overlapping tooltips
-// #TINY-11768
+=== It was possible to `tab` to a toolbar group that had all children disabled.
+// #TINY-11665
 
-In previous versions of {productname}, hovering over toolbar menu item would display both a custom tooltip and the default browser tooltip. This caused confusing behavior, as the custom tooltip was difficult to read due to the browser tooltip overlapping it.
+Previously in the **Image Optimizer** premium plugin, a fallback mechanism caused focus to shift to the nearest ancestor element. As a result, if focus was applied to a disabled input, its container would receive the focus.
 
-{productname} {release-version} resolves this issue by replacing the `title` attribute with the `aria-label` attribute for toolbar groupings, preventing the default browser tooltip from appearing.
-
-=== Expanding selection to a word didn't work inside inline editing host elements.
-// #TINY-11304
-
-Previously, an issue occurred where the selection did not expand as expected when using the `editor.selection.expand({ type: 'word' })` API when the selection was within an inline edit host element inside a non-editable parent.
-
-This has been resolved in {productname} {release-version}, ensuring that the expanded selection now remains within the boundaries of the editable host element.
+{productname} {release-version} resolves this issue by ensuring that containers with only disabled elements are no longer focusable, preventing unintended focus behavior.
 
 === Keyboard navigation would get stuck on the 'more' toolbar button.
 // #TINY-11762
@@ -341,19 +330,32 @@ Previously, an issue was identified where keyboard navigation using the Tab key 
 
 In {productname} {release-version}, this issue has been resolved by implementing more precise filtering of viable tab targets. As a result, keyboard navigation now functions smoothly without getting stuck.
 
-=== The `float` property was not properly removed from the image when converting an image into a captioned image.
-// #TINY-11670
+=== Toolbar groups had both a `title` attribute and a custom tooltip, causing overlapping tooltips
+// #TINY-11768
 
-Previously, an issue occurred where toggling a caption on a floating image did not remove the float property from the image, causing the caption text to be incorrectly positioned.
+In previous versions of {productname}, hovering over toolbar menu item would display both a custom tooltip and the default browser tooltip. This caused confusing behavior, as the custom tooltip was difficult to read due to the browser tooltip overlapping it.
 
-In {productname} {release-version}, this issue has been resolved by ensuring that the float property is removed when toggling the caption. As a result, the image and caption text now align correctly.
+{productname} {release-version} resolves this issue by replacing the `title` attribute with the `aria-label` attribute for toolbar groupings, preventing the default browser tooltip from appearing.
 
-=== Fixed keyboard navigation for size inputs in context forms.
-// #TINY-11394
+=== Toolbar text field was not properly rendering focus.
+// #TINY-11658
 
-Previously, input and slider elements in the context toolbar did not support keyboard navigation, preventing users from accessing and adjusting these elements via the keyboard.
+Previously, input elements lacked styling logic to display a border when focused, resulting in no visible indication of focus.
+This issue has been resolved in {productname} {release-version}. Input elements now correctly display a border when focused, ensuring improved visual feedback.
 
-With the release of {productname} {release-version}, keyboard navigation has been implemented for these elements, ensuring seamless accessibility and improved usability.
+=== Dialog menu dropdowns now close when scrolling the editor container.
+// #TINY-11398
+
+Previously, dialog menu dropdowns were not positioned correctly after scrolling the editor container, causing them to remain visible even when the editor was no longer in view. This resulted in dropdowns being displayed without their corresponding dialog context. 
+
+{productname} {release-version} updates the behavior to ensure that dialog menu dropdowns close on the window scroll event, preventing them from appearing out of context.
+
+=== Expanding selection to a word didn't work inside inline editing host elements.
+// #TINY-11304
+
+Previously, an issue occurred where the selection did not expand as expected when using the `editor.selection.expand({ type: 'word' })` API when the selection was within an inline edit host element inside a non-editable parent.
+
+This has been resolved in {productname} {release-version}, ensuring that the expanded selection now remains within the boundaries of the editable host element.
 
 [[known-issues]]
 == Known issues

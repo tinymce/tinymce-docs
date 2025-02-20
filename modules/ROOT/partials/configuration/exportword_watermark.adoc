@@ -1,0 +1,26 @@
+[[watermark]]
+== `watermark`
+
+The `watermark` option provides integrators with a way to include semi-transparent image watermarks on each page of the exported document, which can be useful for branding, copyright protection, or decorative purposes.
+
+*Type:* `+Object+`
+
+=== Example : using `watermark`
+
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  plugins: ['exportword'],
+  toolbar: 'exportword',
+  exportword_converter_options: {
+    watermark: {
+      source: 'https://<your domain>/some-image.png',
+      washout: true,
+    }
+  }
+});
+----
+
+[NOTE]
+The `exportword_converter_options` is required to use the watermark feature.

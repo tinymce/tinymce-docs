@@ -11,12 +11,47 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[overview]]
 == Overview
 
-{productname} {release-version} was released for {enterpriseversion} and {cloudname} on <weekday>, <month> <DD>^<st|nd|rd|th>^, <YYYY>. These release notes provide an overview of the changes for {productname} {release-version}, including:
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Thursday, February 20^th^, 2025. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
+* xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:improvements[Improvements]
 * xref:additions[Additions]
 * xref:bug-fixes[Bug fixes]
+* xref:known-issues[Known issues]
+
+[[accompanying-premium-self-hosted-server-side-component-changes]]
+== Accompanying Premium self-hosted server-side component changes
+
+The {productname} {release-version} release includes accompanying changes affecting the {productname} **self-hosted** services for the following plugin:
+
+* **Spell Checker** plugin `tinymcespellchecker`.
+
+For information on:
+
+* The **Spell Checker** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker plugin].
+* Deploying the **server-side** components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+
+The Java server-side component has been updated to the following version:
+
+* `ephox-spelling.war`: 2.128.3
+
+=== Updating the self-hosted server-side components
+
+The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
+
+. Update your Java Application Server to the minimum required version:
+
+include::partial$misc/supported-application-servers.adoc[]
+
+. Replace the existing server-side `.war` files with the `.war` files bundled with {productname} {release-version} or later.
+
+For information on:
+
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+* Deploying the server-side components using Docker, see: xref:bundle-intro-setup.adoc[Containerized service deployments].
+
+include::partial$misc/admon-no-functionality-changes-in-updated-server-side-components.adoc[]
 
 
 [[accompanying-premium-plugin-changes]]
@@ -24,26 +59,18 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== Advanced Typography
-
-The {productname} {release-version} release includes an accompanying release of the **Advanced Typography** premium plugin.
-
-**Advanced Typography** includes the following fix.
-
-==== Serbian and Ukrainian languages were spelled incorrectly.
-// #TINY-11713
-
-Previously, an issue was identified where `Ukrainian` and `Serbian` were incorrectly spelt in the typography plugin.
-
-{productname} {release-version} addresses this by fixing the spelling.
-
-For information on the **Advanced Typography** plugin, see: xref:advanced-typography.adoc[Advanced Typography].
-
 === Comments
 
 The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
 
 **Comments** includes the following fixes.
+
+==== Editing a comment and adding a mention to the comment would result in the mention not showing correctly after saving the comment.
+// #TINY-11602
+
+Previously, in the **Comments** premium plugin, an issue was identified where mentions were not displayed correctly when editing a comment, adding a mention, and then saving the comment.
+
+{productname} {release-version} resolves this issue by ensuring that newly added mentions to an existing comment are displayed correctly.
 
 ==== Pressing Keyboard shorctut `cmd+alt+m` when cursor is on annotated content now opens and focuses the reply textarea.
 // #TINY-11321
@@ -59,6 +86,27 @@ This matches the behavior when the "Add New Comment" button is clicked, resultin
 In previous versions of **Comments**, the side panel header blended into the body, resulting in a lack of visual separation. This made the UI appear less polished and dimensional.
 
 {productname} {release-version} improves this by enhancing the side panel header’s visibility, creating a clearer distinction from the body, and refining the overall UI aesthetics.
+
+==== Editor now dispatches `Change` event after a comment is edited or a reply is created.
+// #TINY-11802
+
+Previously, when a comment was edited or replied to, the editor did not enter a dirty state. As a result, in embedded mode with the xref:save.adoc[Save] plugin, the save button remained disabled after replying to or editing a comment, which was not the expected behavior.
+
+In {productname} {release-version}, this issue has been addressed. The editor now transitions to a dirty state when a comment is edited or replied to, ensuring that changes can be saved using the save button as intended.
+
+==== Comment card jumps when editing a large comment in Chrome
+// #TINY-11729
+
+Previously, when editing a comment larger than the height of the comments sidebar, the sidebar would briefly jump before returning to its intended position. This caused visual disruptions that impacted the editing experience.  
+
+{productname} {release-version} resolves this issue by ensuring the comment sidebar remains stable, preventing unintended jumps when editing large comments. 
+
+==== Closing the comment kebab menu with keyboard would result in the editor dispatching a `blur` event.
+// #TINY-11172
+
+In previous versions of **Comments**, an issue was identified where the editor would trigger a `blur` event if the comment kebab menu was closed using the `escape` key. This occurred even when the editor still had focus, leading to confusing behavior.
+
+{productname} {release-version} resolves this issue by ensuring that focus is properly managed when closing the kebab menu, rather than relying on the browser. This ensures that the editor does not trigger any `blur` events.
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments].
 
@@ -100,34 +148,148 @@ Previously, the image upload placeholder had a border rendering issue, which aff
 
 {productname} {release-version} addresses this by refining the CSS to ensure the border is properly rendered, resulting in a more polished and design-compliant user interface.
 
+==== Context toolbar inputs had incorrect margins.
+// #TINY-11624
+
+Previously, input elements within the contextual toolbar were not styled correctly and overflowed when using the `fluent`, `snow`, and `jam` premium skins. This issue arose because these skins modified toolbar element properties such as padding, height, and width, but the adjustments were not applied consistently to input elements. 
+As a result, the UI appeared misaligned and less polished.
+
+In {productname} {release-version}, this issue has been resolved. Contextual toolbar elements, including buttons and inputs, now use the same padding and height values, ensuring a consistent and polished appearance.
+
 For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
+
+=== Export to PDF
+
+The {productname} {release-version} release includes an accompanying release of the **Export to PDF** premium plugin.
+
+**Export to PDF** Premium plugin includes the following improvement.
+
+==== The `format` property in `exportpdf_converter_options` now accepts lowercase  
+// #TINY-11722  
+
+Previously, the `format` property in `exportpdf_converter_options` only accepted case-sensitive uppercase values, which lead to inconsistencies when generating PDF exports. This improvement ensures that lowercase values are now correctly recognized, making configuration more flexible and reducing potential formatting errors.  
+
+For information on the **Export to PDF** plugin, see: xref:exportpdf.adoc[Export to PDF].
+
+=== Export to Word
+
+The {productname} {release-version} release includes an accompanying release of the **Export to Word** premium plugin.
+
+**Export to Word**  includes the following fix.
+
+==== A document watermark can now be specified for the exported file
+
+Previously, the **Export to Word** premium plugin did not support watermarks, preventing integrators from adding them to exported Word documents.
+
+With the release of {productname} {release-version} watermark functionality has been introduced, enabling watermarks to be included in exported documents.
+
+For information on the **Export to Word** plugin, see: xref:exportword.adoc[Export to Word].
+
+=== Advanced Typography
+
+The {productname} {release-version} release includes an accompanying release of the **Advanced Typography** premium plugin.
+
+**Advanced Typography** includes the following fix.
+
+==== Serbian and Ukrainian languages were spelled incorrectly.
+// #TINY-11713
+
+Previously, an issue was identified where `Ukrainian` and `Serbian` were incorrectly spelt in the typography plugin.
+
+{productname} {release-version} addresses this by fixing the spelling.
+
+For information on the **Advanced Typography** plugin, see: xref:advanced-typography.adoc[Advanced Typography].
+
+=== Enhanced Code Editor
+
+The {productname} {release-version} release includes an accompanying release of the **Enhanced Code Editor** premium plugin.
+
+**Enhanced Code Editor** includes the following fix.
+
+==== The cursor was sometimes incorrectly placed after opening the source code editor.
+// #TINY-11686
+
+In previous versions of the **Enhanced Code Editor** premium plugin, the cursor was sometimes incorrectly positioned when opening the source code editor. This issue occurred when automatic formatting was enabled, particularly if the cursor was placed after indentations, leading to unpredictable cursor behavior.
+
+{productname} {release-version} addresses this by applying optional formatting before determining the cursor's position, ensuring consistent and reliable cursor placement in the source code editor.
+
+For information on the **Enhanced Code Editor** plugin, see: xref:advcode.adoc[Enhanced Code Editor].
+
+=== Revision History
+
+The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
+
+**Revision History** includes the following addition.
+
+==== New `revisionhistory_allow_restore` option to control restoration of old revisions  
+// #TINY-11746
+
+{productname} {release-version} introduces a new `revisionhistory_allow_restore` option, which provides a way to control if a user can restore revisions. By default, it is set to `+true+`, setting it to `+false+` prevents users from restoring previous versions.
+
+This improvement enhances access control within the **Revision History** plugin, providing greater flexibility for managing revision restoration.
+
+For more information on the **Revision History** plugin, see: xref:revisionhistory.adoc[Revision History].
+
+=== Accessibility Checker
+
+The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.
+
+**Accessibility Checker** includes the following fix.
+
+==== Update form validation error message color to be the same as the error text color.
+// #TINY-11657
+
+In previous versions of the **Accessibility Checker** premium plugin, the form validation error message had insufficient color contrast in dark mode, failing to meet link:https://www.w3.org/WAI/WCAG2AA-Conformance[WCAG AA] standards and reducing visibility.
+
+With the release of {productname} {release-version}, this issue has been resolved by updating the error message color to be the same as the error text color, ensuring improved visibility and compliance with link:https://www.w3.org/WAI/WCAG2AA-Conformance[WCAG AA] contrast standards.
+
+For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
 
 [[improvements]]
 == Improvements
 
-{productname} {release-version} also includes the following improvement<s>:
+{productname} {release-version} also includes the following improvements:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+==== Improved visual indication of keyboard focus for a comment annotation when there is an image inside.
+// #TINY-11596
 
-// CCFR here.
+In previous versions of **Comments**, annotated non-text elements occasionally displayed a double bottom border when selected, leading to a visual inconsistency that appeared buggy and clashed with existing border styles.
 
+With the release of {productname} {release-version}, dedicated styles for selected non-text element annotations have been introduced. This enhancement improves the visual clarity of comment annotations on non-text elements such as images and videos.
+
+=== Not specifying a notification type (or specifying an incorrect one) now defaults to 'info'.
+// #TINY-11661
+
+In earlier versions of {productname}, an undefined or incorrect `type` property in the notification manager resulted in irregular notifications with no background and a placeholder icon, making them difficult to read.
+
+With the release of {productname} {release-version}, this behavior has been improved. The `type` property now defaults to `info` when an invalid or missing value is detected, resulting in a proper looking notification that is easy to understand.
+
+=== Extended the `forceReadOnly` functionality to support the new `disabled` option in addition to readonly mode.
+// #TINY-11490
+
+In previous versions of {productname}, the editor would transition to read-only mode if the API key was missing, invalid, or if the domain was invalid. With the release of {productname} {release-version}, this behavior has been updated to instead activate disabled mode in these scenarios.
 
 [[additions]]
 == Additions
 
-{productname} {release-version} also includes the following addition<s>:
+{productname} {release-version} also includes the following addition:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+===  Added `link_attributes_postprocess` option that allows overriding attributes of a link inserted through the link dialog.
+// #TINY-11707
 
-// CCFR here.
-
+Previously in the xref:link.adoc[Link] plugin, there was no ability to override attributes of a link. With the release of {productname} {release-version}, a new option xref:link.adoc#link_attributes_postprocess[link_attributes_postprocess] has been added that allows this functionality.
 
 [[bug-fixes]]
 == Bug fixes
 
-{productname} <x.y[.z]> also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
+
+=== Fixed keyboard navigation for size inputs in context forms.
+// #TINY-11394
+
+Previously, input and slider elements in the context toolbar did not support keyboard navigation, preventing users from accessing and adjusting these elements via the keyboard.
+
+With the release of {productname} {release-version}, keyboard navigation has been implemented for these elements, ensuring seamless accessibility and improved usability.
 
 === The `insertContent` API was not replacing selected non-editable elements correctly.
 // #TINY-11714
@@ -136,6 +298,14 @@ Previously in {productname}, an issue was identified where, if an inline non-edi
 As a result, integrators were unable to insert content into inline non-editable elements.
 
 {productname} {release-version} resolves this by modifying the functionality of the `insertContent` API to support this scenario. This ensures that integrators can now insert content into inline elements, making the `insertContent` API more robust.
+
+=== Iframe aria text used to suggest to open help dialog even when the help plugin was not enabled.
+// #TINY-11672
+
+Previously, an issue was identified where the aria-label attribute in the body element was set to “Rich Text Area. Press `ALT-0` for help”. This affected accessibility because the screen reader would announce this message, but when users pressed `ALT-0`, 
+the help dialog would not open if the plugin was disabled, leading to confusion.
+
+{productname} {release-version} addresses this issue by ensuring that if the help plugin is disabled, the screen reader announces only "Rich Text Area." If the help plugin is enabled, the screen reader announces "Rich Text Area. Press `ALT-0` for help.".
 
 === Preview Dialog incorrectly opened anchor links in a new tab.
 // #TINY-11740
@@ -147,13 +317,33 @@ This resulted in a poor user experience as users could not engage with anchor li
 
 {productname} {release-version} resolves this issue by first checking whether a link is an anchor link and ensuring that users are navigated to the corresponding anchor element, which is the expected behavior.
 
-=== Iframe aria text used to suggest to open help dialog even when the help plugin was not enabled.
-// #TINY-11672
+=== The `float` property was not properly removed from the image when converting an image into a captioned image.
+// #TINY-11670
 
-Previously, an issue was identified where the aria-label attribute in the body element was set to “Rich Text Area. Press `ALT-0` for help”. This affected accessibility because the screen reader would announce this message, but when users pressed `ALT-0`, 
-the help dialog would not open if the plugin was disabled, leading to confusion.
+Previously, an issue occurred where toggling a caption on a floating image did not remove the float property from the image, causing the caption text to be incorrectly positioned.
 
-{productname} {release-version} addresses this issue by ensuring that if the help plugin is disabled, the screen reader announces only "Rich Text Area." If the help plugin is enabled, the screen reader announces "Rich Text Area. Press `ALT-0` for help.".
+In {productname} {release-version}, this issue has been resolved by ensuring that the float property is removed when toggling the caption. As a result, the image and caption text now align correctly.
+
+=== The `semantics` element in MathML was not properly preserved when `annotation` elements were allowed.
+// #TINY-11755
+
+Previously, in {productname}, an issue was identified in which the `semantics` MathML element was removed, even when a specific annotation element was allowed by the `allow_mathml_annotation_encodings` property. As a result, the generated MathML was invalid because the annotation element must be a child of a `semantics` element. This also caused rendering issues in some browsers.
+
+In {productname} {release-version}, this issue has been resolved by preserving the `semantics` element whenever the `allow_mathml_annotation_encodings` property is set to a non-empty array. This ensures that valid MathML is generated, improving compatibility with third-party tools and browser rendering.
+
+=== It was possible to `tab` to a toolbar group that had all children disabled.
+// #TINY-11665
+
+Previously in the **Image Optimizer** premium plugin, a fallback mechanism caused focus to shift to the nearest ancestor element. As a result, if focus was applied to a disabled input, its container would receive the focus.
+
+{productname} {release-version} resolves this issue by ensuring that containers with only disabled elements are no longer focusable, preventing unintended focus behavior.
+
+=== Keyboard navigation would get stuck on the 'more' toolbar button.
+// #TINY-11762
+
+Previously, an issue was identified where keyboard navigation using the Tab key would become stuck at the "Show More" button in the toolbar. This occurred because hidden toolbar elements were incorrectly detected as valid tab targets, disrupting seamless navigation and negatively impacting the user experience.
+
+In {productname} {release-version}, this issue has been resolved by implementing more precise filtering of viable tab targets. As a result, keyboard navigation now functions smoothly without getting stuck.
 
 === Toolbar groups had both a `title` attribute and a custom tooltip, causing overlapping tooltips
 // #TINY-11768
@@ -162,14 +352,36 @@ In previous versions of {productname}, hovering over toolbar menu item would dis
 
 {productname} {release-version} resolves this issue by replacing the `title` attribute with the `aria-label` attribute for toolbar groupings, preventing the default browser tooltip from appearing.
 
+=== Toolbar text field was not properly rendering focus.
+// #TINY-11658
+
+Previously, input elements lacked styling logic to display a border when focused, resulting in no visible indication of focus.
+This issue has been resolved in {productname} {release-version}. Input elements now correctly display a border when focused, ensuring improved visual feedback.
+
+=== Dialog menu dropdowns now close when scrolling the editor container.
+// #TINY-11398
+
+Previously, dialog menu dropdowns were not positioned correctly after scrolling the editor container, causing them to remain visible even when the editor was no longer in view. This resulted in dropdowns being displayed without their corresponding dialog context. 
+
+{productname} {release-version} updates the behavior to ensure that dialog menu dropdowns close on the window scroll event, preventing them from appearing out of context.
+
+=== Expanding selection to a word didn't work inside inline editing host elements.
+// #TINY-11304
+
+Previously, an issue occurred where the selection did not expand as expected when using the `editor.selection.expand({ type: 'word' })` API when the selection was within an inline edit host element inside a non-editable parent.
+
+This has been resolved in {productname} {release-version}, ensuring that the expanded selection now remains within the boundaries of the editable host element.
+
 [[known-issues]]
 == Known issues
 
 This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
 
-There <is one | are <number> known issue<s> in {productname} {release-version}.
+There one known issue in {productname} {release-version}.
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Missing Hebrew translation for Blockquote toolbar button tooltip
+// #TINY-11732
 
-// CCFR here.
+The Blockquote toolbar button tooltip does not display a translation for Hebrew. This issue affects users who rely on localized tooltips for accessibility and usability.
+
+**Status**: Currently under investigation.

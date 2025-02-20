@@ -15,7 +15,7 @@ tinymce.init({
   toolbar: 'exportword',
   exportword_converter_options: {
     watermark: {
-      source: 'http://moxiecode.cachefly.net/tinymce/v9/images/logo.png',
+      source: 'https://<your domain>/some-image.png',
       washout: true,
     }
   }

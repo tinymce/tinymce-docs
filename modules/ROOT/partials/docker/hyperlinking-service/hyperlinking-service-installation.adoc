@@ -21,7 +21,7 @@ docker login -u [username] -p [password] registry.containers.tiny.cloud
 docker pull registry.containers.tiny.cloud/hyperlinking-tiny:<VERSION>
 ----
 +
-Replace `<VERSION>` with `latest` or the specific version number you’re looking for (eg: `2.109.0`)
+Replace `<VERSION>` with `latest` or the specific version number.
 
 === Specify Configurations 
 

@@ -1,0 +1,10 @@
+[[overview]]
+== Overview
+
+The On-Premises version of the link:https://www.tiny.cloud/tinymce/features/link-checker/[{linkcheckerplugin}] and link:https://www.tiny.cloud/tinymce/features/enhanced-media-embed/[{mediaembedplugin}] is an application that can be installed and run on the customer’s in-house servers and computing infrastructure, including a private cloud.
+
+A valid license key is required in order to install {linkcheckerplugin} and {mediaembedplugin} On-Premises. link:https://www.tiny.cloud/contact/[Contact Tiny Support] to request a trial license key.
+
+The only requirement to run these services On-Premises is a container runtime or orchestration tool e.g. Docker, Kubernetes, Podman.
+
+include::partial$misc/admon-dont-push-docker-images.adoc[]

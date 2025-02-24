@@ -1,6 +1,12 @@
-= Deploy the TinyMCE Hyperlinking server-side component using Docker (individually licensed)
+= Deploy the {productname} Hyperlinking server-side component using Docker (individually licensed)
 :navtitle: Hyperlinking service
-:description: How-to deploy the TinyMCE Hyperlinking server-side component using Docker (individually licensed).
+:description: How-to deploy the {productname} Hyperlinking server-side component using Docker (individually licensed).
 :shbundledockerfiles: false
+:linkcheckerplugin: Link Checker 
+:mediaembedplugin: Enhanced Media Embed 
 
-include::partial$docker/dockerized-hyperlinking-service.adoc[]
+include::partial$docker/hyperlinking-service/hyperlinking-service-overview.adoc[]
+
+include::partial$docker/hyperlinking-service/hyperlinking-service-requirements.adoc[]
+
+include::partial$docker/hyperlinking-service/hyperlinking-service-installation.adoc[]

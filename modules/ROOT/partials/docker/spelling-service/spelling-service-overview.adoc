@@ -1,0 +1,10 @@
+[[overview]]
+== Overview
+
+The On-Premises version of the link:https://www.tiny.cloud/tinymce/features/spell-checker/[{pluginname}] is an application that can be installed and run on the customer’s in-house servers and computing infrastructure, including a private cloud.
+
+A valid xref:license-key.adoc[License Key] is required in order to install {pluginname} On-Premises. link:https://www.tiny.cloud/contact/[Contact Tiny Support] to request a trial xref:license-key.adoc[License Key].
+
+The only requirement to run these services On-Premises is a container runtime or orchestration tool e.g. Docker, Kubernetes, Podman.
+
+include::partial$misc/admon-dont-push-docker-images.adoc[]

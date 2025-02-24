@@ -1,0 +1,204 @@
+[[installation]]
+== Installation
+
+[NOTE]
+A valid xref:license-key.adoc[License Key] is **required** in order to install {pluginname} On-Premises.
+link:https://www.tiny.cloud/contact/[Contact us] for a trial xref:license-key.adoc[License Key].
+
+=== Retrieve Docker Image
+
+. Login into the {companyname} Cloud Docker Registry: 
++
+[source, sh, subs="attributes+"]
+----
+docker login -u [username] -p [password] registry.containers.tiny.cloud
+----
+
+. Pull the Docker Image from the Docker registry:
++
+[source, sh, subs="attributes+"]
+----
+docker pull registry.containers.tiny.cloud/image-proxy-tiny:[version]
+----
++
+Replace `[version]` with `latest` or the specific version number.
+
+=== Specify Configurations 
+
+After completing the previous steps, run the Docker container from the pulled image: 
+
+[source, sh, subs="attributes+"]
+----
+docker run -p 19040:19040 registry.containers.tiny.cloud/image-proxy-tiny:[version]
+----
+
+This triggers `-p 19040:19040`, exposing the service on `localhost:19040`. The service runs on port `19040` inside the Docker container, and this maps it to the same port on your localhost.
+
+If set up correctly, the logs should display output similar to the following: 
+
+[source, log]
+----
+2025-01-08 12:03:15 [io-compute-3] INFO  emissary - emissary
+...
+2025-01-08 12:03:16 [io-compute-blocker-3] INFO  emissary - -> Raw Config assembled from various sources: ConfigOrigin(merge of /ephox-image-proxy/ephox-image-proxy-docker-env.conf: 1,system properties,reference.conf @ jar:file:/ephox-image-proxy/ephox-image-proxy.jar!/reference.conf: 1)
+2025-01-08 12:03:16 [io-compute-blocker-3] WARN  c.e.d.config.AllowedOriginsConfig$ - No allowed-origins specified in config!
+2025-01-08 12:03:16 [io-compute-blocker-3] INFO  emissary - emissary config loaded successfully: EmissaryConfig(SdkHttpConfig(HttpConfig(100,10,10,3,HttpConfigTimeouts(10,10,10),JvmTrustModel()),None),OriginWhitelist(List(),OriginPrecision(true)),Some(10000000))
+2025-01-08 12:03:17 [io-compute-1] INFO  o.h.b.c.nio1.NIO1SocketServerGroup - Service bound to address /0:0:0:0:0:0:0:0:19040
+2025-01-08 12:03:17 [io-compute-1] INFO  o.h.blaze.server.BlazeServerBuilder - 
+  _   _   _        _ _
+ | |_| |_| |_ _ __| | | ___
+ | ' \\  _|  _| '_ \\_  _(_-<
+ |_||_\\__|\\__| .__/ |_|/__/
+             |_|
+2025-01-08 12:03:17 [io-compute-1] INFO  o.h.blaze.server.BlazeServerBuilder - http4s v0.23.27 on blaze v0.23.16 started at http://[::]:19040/
+----
+
+Running this command will generate a log warning about `allowed-origins` not being configured. This is expected, as it will be set up in the next step.
+
+The {productname} server-side components require a configuration file to function correctly. By convention, this file is named `application.conf`. For more information, refer to link:https://www.tiny.cloud/docs/tinymce/latest/configure-required-services/[Required configuration for the server-side components]. 
+
+This configuration file requires at least the following information:
+
+* allowed-origins - Specifies the domains allowed to communicate with server-side editor features. This is **mandatory** for all server-side components.
+
+The following settings for the premium server-side components are optional and will apply to all services that make outgoing HTTP/HTTPS requests using the configuration file.
+
+* link:https://www.tiny.cloud/docs/tinymce/latest/configure-common-settings-services/#proxy[proxy configuration]
+* link:https://www.tiny.cloud/docs/tinymce/latest/configure-common-settings-services/#http[http configuration]
+
+The following settings for the Image Proxy service premium server-side component are optional:
+
+* link:https://www.tiny.cloud/docs/tinymce/latest/configure-imageproxy-service/#image-proxy[image-proxy configuration]
+
+=== Launch the Docker Container 
+
+Once the application configuration file is ready, proceed with the Docker Compose setup to configure and run the service.
+
+. Create the `docker-compose.yml` file:
+
++
+[source, yml]
+----
+services:
+  image-proxy-tiny:
+	  image: registry.containers.tiny.cloud/image-proxy-tiny:[version]
+    ports:
+      - "19040:19040"
+    restart: always
+    init: true
+    volumes:
+      - type: bind
+        source: <PATH_TO_APPLICATION_CONF_FILE_IN_HOST_MACHINE>
+        target: /ephox-image-proxy/ephox-image-proxy-docker-env.conf 
+        read_only: true
+----
+
+. Run the service (within the same directory where `docker-compose.yaml` was placed):
+
++
+[source, sh]
+----
+docker compose up
+----
+
++
+If the setup is correct, the initiation logs should appear as follows:
+
++
+[source, log]
+----
+ ✔ Container image-proxy-tiny-image-proxy-tiny-1  Created                                                                                                                                                                                                                                                         0.0s 
+Attaching to image-proxy-tiny-1
+image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-8] INFO  emissary - emissary
+image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-8] INFO  emissary - * External Configuration
+image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-8] INFO  emissary -   * External configuration via System Properties
+image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -     * parseConfigSources
+image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -       * looking up property: ephox.config.url
+image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -         -> Property not set
+image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -       * looking up property: config.url
+image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -         -> Property not set
+image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -     * parseConfigSources
+image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -       * looking up property: ephox.config.file
+image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -         -> Found value for property: /ephox-image-proxy/ephox-image-proxy-docker-env.conf
+image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -       * Parsing config defined by /ephox-image-proxy/ephox-image-proxy-docker-env.conf from property: ephox.config.file
+image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -         -> Processing file: /ephox-image-proxy/ephox-image-proxy-docker-env.conf
+image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -   * External application.conf => /opt/ephox/application.conf
+image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -     * Optional File (/opt/ephox/application.conf). Defaults to empty if file not found
+image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary - * Internal Configuration
+image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -   -> No extra internal configuration specified - skipping
+image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary - * Default (Reference) Configuration
+image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -   * Loading configuration files from classpath (reference.conf and integration.conf). Neither is required.
+image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary - -> Raw Config assembled from various sources: ConfigOrigin(merge of /ephox-image-proxy/ephox-image-proxy-docker-env.conf: 1,system properties,reference.conf @ jar:file:/ephox-image-proxy/ephox-image-proxy.jar!/reference.conf: 1)
+image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  c.e.d.config.AllowedOriginsConfig$ - Read allowed-origins config (ignoring ports = true) as:
+image-proxy-tiny-1  |  - good.com
+image-proxy-tiny-1  |  - example.com
+image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary - emissary config loaded successfully: EmissaryConfig(SdkHttpConfig(HttpConfig(100,10,10,3,HttpConfigTimeouts(10,10,10),JvmTrustModel()),None),OriginWhitelist(List(good.com, example.com),OriginPrecision(true)),Some(10000000))
+image-proxy-tiny-1  | 2025-01-08 15:02:37 [io-compute-1] INFO  o.h.b.c.nio1.NIO1SocketServerGroup - Service bound to address /0:0:0:0:0:0:0:0:19040
+image-proxy-tiny-1  | 2025-01-08 15:02:37 [io-compute-1] INFO  o.h.blaze.server.BlazeServerBuilder - 
+image-proxy-tiny-1  |   _   _   _        _ _
+image-proxy-tiny-1  |  | |_| |_| |_ _ __| | | ___
+image-proxy-tiny-1  |  | ' \\  _|  _| '_ \\_  _(_-<
+image-proxy-tiny-1  |  |_||_\\__|\\__| .__/ |_|/__/
+image-proxy-tiny-1  |              |_|
+image-proxy-tiny-1  | 2025-01-08 15:02:37 [io-compute-1] INFO  o.h.blaze.server.BlazeServerBuilder - http4s v0.23.27 on blaze v0.23.16 started at http://[::]:19040/
+----
+
+=== Next Steps 
+
+. Test the service via cURL command
+
++
+To verify that the Image Proxy service is set up and functioning correctly within the container, ensure the service is running on port 19040. Once active, it should be ready to receive requests. The expected outputs below confirm proper configuration, assuming http://good.com is in the allowed origins and http://bad.com is not.
+
++
+To check the service is running use:
+
++
+[source, sh]
+----
+curl <http://localhost:19040/version>
+----
+
++
+An example output is: 2.111.1
+
++
+To confirm that a request is being sent to the Image Proxy service, use:
+
++
+[source, sh]
+----
+curl --location '<http://localhost:19040/2/image?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsrikomm%2FBMP-EDITING%2Frefs%2Fheads%2Fmaster%2Fsrc%2FInputs%2Ffish.bmp>' \\
+--header 'Origin: <http://good.com>'
+----
+
++
+Finally, to verify if a request is unauthorized and originates from an incorrect origin, use:
+
++
+[source, sh]
+----
+curl --location '<http://localhost:19040/2/image?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsrikomm%2FBMP-EDITING%2Frefs%2Fheads%2Fmaster%2Fsrc%2FInputs%2Ffish.bmp>' \\
+--header 'Origin: <http://bad.com>'
+----
+
++
+If an error occurs, the expected message is: `{ "message": "The supplied authentication is not authorized to access this resource" }`.
+
+. Test directly in {productname}
+
++
+Before deploying, it is recommended to test this service within the {productname} editor itself.
+
++
+To do this, configure the {pluginname} feature in the editor and call it via `tinymce.init`. If running locally on the default port `19040`, use the following settings:
+
++
+[source, js]
+----
+tinymce.init({
+  …,
+  editimage_cors_hosts: [ 'example.com', 'good.com' ],
+  editimage_proxy_service_url: "<http://localhost:19040>"
+});
+----

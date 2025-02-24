@@ -60,7 +60,7 @@ The {productname} server-side components require a configuration file to functio
 
 This configuration file requires at least the following information:
 
-* allowed-origins - Specifies the domains allowed to communicate with server-side editor features. This is mandatory for all server-side components.
+* allowed-origins - Specifies the domains allowed to communicate with server-side editor features. This is **mandatory** for all server-side components.
 
 The following settings for the premium server-side components are optional and will apply to all services that make outgoing HTTP/HTTPS requests using the configuration file.
 

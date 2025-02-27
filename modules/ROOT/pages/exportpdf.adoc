@@ -30,14 +30,37 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'exportpdf',
   toolbar: 'exportpdf',
+  exportpdf_token_provider: () => { // required when using the Export to PDF plugin with Tiny Cloud.
+    return fetch('http://localhost:3000/jwt', { // specify your token endpoint
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    }).then(response => response.json());
+  },
 });
 ----
 
-[IMPORTANT]
-When using the {pluginname} plugin with the {companyname} Cloud service, JWT authentication is required to use the service. For more information on how to set up JWT authentication with {pluginname}, see examples:
+[NOTE]
+For more infomation on the exportpdf_token_provider option, see xref:exportpdf.adoc#exportpdf-token-provider[exportpdf_token_provider].
 
-* xref:export-to-pdf-with-jwt-authentication-nodejs.adoc[{pluginname} with JWT authentication (Node.js)]
-* xref:export-to-pdf-with-jwt-authentication-php.adoc[{pluginname} with JWT authentication (PHP)]
+[IMPORTANT]
+====
+The {pluginname} plugin **requires** JWT authentication when using the {companyname} Cloud service.
+
+* Configure the `{plugincode}_token_provider` option to specify the endpoint for retrieving a valid JWT token.
+* If hosting locally, use the format `+http://localhost:[port]/jwt+`, ensuring the endpoint returns a JSON object containing the token.
+
+For more information on how to set up JWT authentication with {pluginname}, see examples:
+
+* xref:export-to-pdf-with-jwt-authentication-nodejs.adoc[Export to PDF with JWT authentication (Node.js)]
+* xref:export-to-pdf-with-jwt-authentication-php.adoc[Export to PDF with JWT authentication (PHP)]
+
+**Trial period behavior:**
+
+* The {pluginname} plugin runs in evaluation mode and adds a watermark to exported content.
+* The `{plugincode}_token_provider` option is "not required" during the trial period.
+* If the trial period "expires" or the plugin lacks the necessary entitlement, it becomes _non-functional_.
+* Attempting to use JWT authentication during the trial will result in an _error_.
+====
 
 == Basic setup using the self-hosted service
 

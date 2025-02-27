@@ -36,14 +36,42 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'exportword',
   toolbar: 'exportword',
+  exportword_token_provider: () => { // required when using the Export to Word plugin with Tiny Cloud.
+    return fetch('http://localhost:3000/jwt', { // specify your token endpoint
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    }).then(response => response.json());
+  },
 });
 ----
 
+[NOTE]
+For more infomation on the exportword_token_provider option, see xref:exportword.adoc#exportword-token-provider[exportword_token_provider]
+
 [IMPORTANT]
-When using the {pluginname} plugin with the {companyname} Cloud service, JWT authentication is required to use the service. For more information on how to set up JWT authentication with {pluginname}, see examples:
+====
+The {pluginname} plugin **requires** JWT authentication when using the {companyname} Cloud service.
+
+* Configure the `{plugincode}_token_provider` option to specify the endpoint for retrieving a valid JWT token.
+* If hosting locally, use the format `+http://localhost:[port]/jwt+`, ensuring the endpoint returns a JSON object containing the token.
+
+For more information on how to set up JWT authentication with {pluginname}, see examples:
 
 * xref:export-to-word-with-jwt-authentication-nodejs.adoc[{pluginname} with JWT authentication (Node.js)]
 * xref:export-to-word-with-jwt-authentication-php.adoc[{pluginname} with JWT authentication (PHP)]
+
+**Trial period behavior:**
+
+* The {pluginname} plugin runs in evaluation mode and adds a watermark to exported content.
+* The `{plugincode}_token_provider` option is "not required" during the trial period.
+* If the trial period "expires" or the plugin lacks the necessary entitlement, it becomes _non-functional_.
+* Attempting to use JWT authentication during the trial will result in an _error_.
+====
+
+
+
+
+
 
 == Basic setup using the self-hosted service
 

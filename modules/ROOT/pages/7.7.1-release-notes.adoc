@@ -58,10 +58,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fixes:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Skin UI content CSS was truncated when bundling, causing CSS styles to be missing.
+// #TINY-11875
 
-// CCFR here.
+In previous versions of {productname}, an issue was identified where skin content CSS was truncated during the build process when bundling CSS files into JavaScript resources. This resulted in invalid styles, causing partial or complete loss of CSS in the editor UI for self-hosted setups, leading to broken styling and reduced usability.
+
+With the release of {productname} {release-version}, this issue has been resolved. The bundling process now ensures that CSS styles are correctly incorporated into the generated JavaScript resources, preventing truncation and maintaining proper styling consistency across the editor UI.
 
 
 [[known-issues]]

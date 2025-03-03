@@ -141,6 +141,7 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
     });
   };
 
+  const useDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const isSmallScreen = window.matchMedia('(max-width: 1023.5px)').matches;
 
   const ai_request = (request, respondWith) => {
@@ -522,7 +523,8 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
     'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
     contextmenu: 'link image editimage table spellchecker configurepermanentpen',
     a11y_advanced_options: true,
-    skin: 'oxide-dark',
+    skin: useDarkMode ? 'oxide-dark' : 'oxide',
+    content_css: useDarkMode ? 'dark' : 'default',
     mentions_selector: '.mymention',
     mentions_fetch: mentions_fetch,
     mentions_menu_hover: mentions_menu_hover,

@@ -6,6 +6,7 @@ const fetchApi = import(
 // Instead, an alternate method for retrieving the API key should be used.
 const openai_api_key = "<INSERT_OPENAI_API_KEY_HERE>";
 
+const useDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 const isSmallScreen = window.matchMedia('(max-width: 1023.5px)').matches;
 
 tinymce.init({
@@ -110,7 +111,8 @@ tinymce.init({
   content_style: '.mymention{ color: gray; }',
   contextmenu: 'link image editimage table configurepermanentpen',
   a11y_advanced_options: true,
-  skin: 'oxide-dark',
+  skin: useDarkMode ? 'oxide-dark' : 'oxide',
+  content_css: useDarkMode ? 'dark' : 'default',
   autocorrect_capitalize: true,
   mergetags_list: [
     {

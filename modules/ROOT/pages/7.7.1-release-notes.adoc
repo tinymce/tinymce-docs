@@ -61,9 +61,9 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === Skin UI content CSS was truncated when bundling, causing CSS styles to be missing.
 // #TINY-11875
 
-In previous versions of {productname}, an issue was identified where skin content CSS was truncated during the build process when bundling CSS files into JavaScript resources. This resulted in invalid styles, causing partial or complete loss of CSS in the editor UI for self-hosted setups, leading to broken styling and reduced usability.
+In {productname} {release-version}, an issue was identified where skin content CSS was truncated during the build process when bundling CSS files into JavaScript resources. This caused invalid styles, leading to partial or complete loss of CSS in the editor UI for self-hosted setups, which resulted in broken styling and reduced usability.
 
-With the release of {productname} {release-version}, this issue has been resolved. The bundling process now ensures that CSS styles are correctly incorporated into the generated JavaScript resources, preventing truncation and maintaining proper styling consistency across the editor UI.
+This issue has been resolved in {productname} {release-version}. The bundling process now correctly incorporates CSS styles into the generated JavaScript resources, preventing truncation and ensuring consistent styling across the editor UI.
 
 
 [[known-issues]]

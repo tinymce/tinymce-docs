@@ -65,10 +65,10 @@ In {productname} {release-version}, an issue was identified where skin content C
 
 This issue has been resolved in {productname} {release-version}. The bundling process now correctly incorporates CSS styles into the generated JavaScript resources, preventing truncation and ensuring consistent styling across the editor UI.
 
-=== Context forms used to disappear if their input were disabled in the `onSetup` API.
+=== Context forms used to disappear if their input was disabled in the `onSetup` API.
 // #TINY-11890
 
-Previousley, an issue was identified where disabling a context form's input in the `onSetup` function caused the form to disappear due to focus being set on a non-focusable element.
+Previously, an issue was identified where disabling a context form's input in the `onSetup` function caused the form to disappear due to focus being set on a non-focusable element.
 
 In {productname} {release-version}, this issue has been resolved by ensuring that the fallback focus is directed to a focusable element. As a result, even when the input is disabled, the focus remains intact, preventing the context form from disappearing.
 

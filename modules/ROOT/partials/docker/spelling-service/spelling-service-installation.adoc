@@ -11,17 +11,17 @@ link:https://www.tiny.cloud/contact/[Contact us] for a trial xref:license-key.ad
 +
 [source, sh, subs="attributes+"]
 ----
-docker login -u [username] -p [password] registry.containers.tiny.cloud
+docker login -u [username] -p [access-token] registry.containers.tiny.cloud
 ----
 
 . Pull the Docker Image from the Docker registry:
 +
 [source, sh, subs="attributes+"]
 ----
-docker pull registry.containers.tiny.cloud/spelling-tiny:[version]
+docker pull registry.containers.tiny.cloud/spelling-tiny:<VERSION>
 ----
 +
-Replace `version` with `latest` or the specific version number.
+Replace `<VERSION>` with `latest` or the specific version number.
 
 === Specify Configurations 
 
@@ -29,7 +29,7 @@ After completing the previous steps, run the Docker container from the pulled im
 
 [source, sh, subs="attributes+"]
 ----
-docker run -p 18080:18080 registry.containers.tiny.cloud/spelling-tiny:[version]
+docker run -p 18080:18080 registry.containers.tiny.cloud/spelling-tiny:<VERSION>
 ----
 
 This triggers `-p 18080:18080`, exposing the service on `localhost:18080`. The service runs on port `18080` inside the Docker container, and this maps it to the same port on your localhost.
@@ -103,10 +103,10 @@ ephox {
 
 Once the application configuration file is ready, proceed with the Docker Compose setup to configure and run the service.
 
-. Create the `docker-compose.yml` file:
+. Create the `docker-compose.yaml` file:
 
 +
-[source, yml]
+[source, yaml]
 ----
 services:
   spelling-tiny:
@@ -130,7 +130,7 @@ services:
         read_only: true
 ----
 
-. Run the service (within the same directory where docker-compose.yaml was placed):
+. Run the service (within the same directory where `docker-compose.yaml` was placed):
 
 +
 [source, sh]
@@ -229,7 +229,7 @@ To do this, configure the link:https://www.tiny.cloud/docs/tinymce/latest/introd
 ----
 tinymce.init({
   …,
-  spellchecker_rpc_url: "<http://localhost:18080>"
+  spellchecker_rpc_url: "http://localhost:18080"
 });
 ----
 

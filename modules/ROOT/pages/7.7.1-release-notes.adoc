@@ -14,10 +14,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 {productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, March 05^st^, 2025. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
 * xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
-* xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
-* xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
 * xref:bug-fixes[Bug fixes]
-* xref:known-issues[Known issues]
 * xref:security-fixes[Security fixes]
 
 [[accompanying-premium-self-hosted-server-side-component-changes]]
@@ -63,39 +60,6 @@ For information on:
 
 include::partial$misc/admon-no-functionality-changes-in-updated-server-side-components.adoc[]
 
-
-[[accompanying-premium-plugin-changes]]
-== Accompanying Premium plugin changes
-
-The following premium plugin updates were released alongside {productname} {release-version}.
-
-=== <Premium plugin name 1> <Premium plugin name 1 version>
-
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
-
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
-
-==== <Premium plugin name 1 change 1>
-
-// CCFR here.
-
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
-
-
-[[accompanying-enhanced-skins-and-icon-packs-changes]]
-== Accompanying Enhanced Skins & Icon Packs changes
-
-The {productname} {release-version} release includes an accompanying release of the **Enhanced Skins & Icon Packs**.
-
-=== Enhanced Skins & Icon Packs
-
-The **Enhanced Skins & Icon Packs** release includes the following updates:
-
-The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} {release-version} skin, Oxide.
-
-For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
-
-
 [[bug-fixes]]
 == Bug fixes
 
@@ -115,7 +79,7 @@ Previously, an issue was identified where disabling a context form's input in th
 
 In {productname} {release-version}, this issue has been resolved by ensuring that the fallback focus is directed to a focusable element. As a result, even when the input is disabled, the focus remains intact, preventing the context form from disappearing.
 
-For more information on the `onSetup` function and context forms, see xref:contextform.adoc[Context Forms]
+For more information on the `onSetup` function and context forms, see: xref:contextform.adoc[Context Forms]
 
 [[security-fixes]]
 == Security fixes

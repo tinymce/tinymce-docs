@@ -11,17 +11,17 @@ link:https://www.tiny.cloud/contact/[Contact us] for a trial xref:license-key.ad
 +
 [source, sh, subs="attributes+"]
 ----
-docker login -u [username] -p [password] registry.containers.tiny.cloud
+docker login -u [username] -p [access-token] registry.containers.tiny.cloud
 ----
 
 . Pull the Docker Image from the Docker registry:
 +
 [source, sh, subs="attributes+"]
 ----
-docker pull registry.containers.tiny.cloud/image-proxy-tiny:[version]
+docker pull registry.containers.tiny.cloud/image-proxy-tiny:<VERSION>
 ----
 +
-Replace `[version]` with `latest` or the specific version number.
+Replace `<VERSION>` with `latest` or the specific version number.
 
 === Specify Configurations 
 
@@ -29,7 +29,7 @@ After completing the previous steps, run the Docker container from the pulled im
 
 [source, sh, subs="attributes+"]
 ----
-docker run -p 19040:19040 registry.containers.tiny.cloud/image-proxy-tiny:[version]
+docker run -p 19040:19040 registry.containers.tiny.cloud/image-proxy-tiny:<VERSION>
 ----
 
 This triggers `-p 19040:19040`, exposing the service on `localhost:19040`. The service runs on port `19040` inside the Docker container, and this maps it to the same port on your localhost.
@@ -74,10 +74,10 @@ The following settings for the Image Proxy service premium server-side component
 
 Once the application configuration file is ready, proceed with the Docker Compose setup to configure and run the service.
 
-. Create the `docker-compose.yml` file:
+. Create the `docker-compose.yaml` file:
 
 +
-[source, yml]
+[source, yaml]
 ----
 services:
   image-proxy-tiny:
@@ -199,6 +199,6 @@ To do this, configure the {pluginname} feature in the editor and call it via `ti
 tinymce.init({
   …,
   editimage_cors_hosts: [ 'example.com', 'good.com' ],
-  editimage_proxy_service_url: "<http://localhost:19040>"
+  editimage_proxy_service_url: "http://localhost:19040"
 });
 ----

@@ -2,8 +2,8 @@
 == Installation
 
 [NOTE]
-A valid xref:license-key.adoc[License Key] is **required** in order to install {linkcheckerplugin} and {mediaembedplugin} On-Premises.
-link:https://www.tiny.cloud/contact/[Contact us] for a trial xref:license-key.adoc[License Key].
+Valid credentials (username and password) are **required** in order to retrieve On-Premises services images from our Docker Registry.
+link:https://www.tiny.cloud/contact/[Contact us] to request credentials.
 
 === Retrieve Docker Image
 
@@ -149,7 +149,7 @@ hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  c.e.d.co
 hyperlinking-tiny-1  |  - localhost
 hyperlinking-tiny-1  |  - localhost:8000
 hyperlinking-tiny-1  |  - ephox.com
-hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  navi - navi config loaded successfully: NaviConfig(LinkCheckerConfig(true,ReturnUnknown),true,CacheConfig(10000,86400 seconds,3600 seconds),SdkServiceWithClientConfig(HttpConfig(100,10,10,3,HttpConfigTimeouts(15,15,15),JvmTrustModel()),None,OriginWhitelist(List(localhost, localhost:8000, ephox.com),OriginPrecision(true))),SelfHostedMediaSourcesConfig(CustomEmbedPlugins(UrlTrie(Branch(None,TreeMap()),Branch(None,TreeMap(org -> Branch(None,TreeMap(wikipedia -> Branch(None,TreeMap(en -> Branch(Some(PathMatcher(List((wiki/.*,WikipediaEmbedPlugin(<https://en.wikipedia.org/w/api.php,10>))))),TreeMap()))))))))),None),OriginWhitelist(List(localhost, localhost:8000, ephox.com),OriginPrecision(true)),Logger[navi])
+hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  navi - navi config loaded successfully: NaviConfig(LinkCheckerConfig(true,ReturnUnknown),true,CacheConfig(10000,86400 seconds,3600 seconds),SdkServiceWithClientConfig(HttpConfig(100,10,10,3,HttpConfigTimeouts(15,15,15),JvmTrustModel()),None,OriginWhitelist(List(localhost, localhost:8000, ephox.com),OriginPrecision(true))),SelfHostedMediaSourcesConfig(CustomEmbedPlugins(UrlTrie(Branch(None,TreeMap()),Branch(None,TreeMap(org -> Branch(None,TreeMap(wikipedia -> Branch(None,TreeMap(en -> Branch(Some(PathMatcher(List((wiki/.*,WikipediaEmbedPlugin(https://en.wikipedia.org/w/api.php,10))))),TreeMap()))))))))),None),OriginWhitelist(List(localhost, localhost:8000, ephox.com),OriginPrecision(true)),Logger[navi])
 hyperlinking-tiny-1  | 2025-01-02 16:17:29 [io-compute-6] INFO  o.h.b.c.nio1.NIO1SocketServerGroup - Service bound to address /0:0:0:0:0:0:0:0:19100
 hyperlinking-tiny-1  | 2025-01-02 16:17:29 [io-compute-6] INFO  o.h.blaze.server.BlazeServerBuilder - 
 hyperlinking-tiny-1  |   _   _   _        _ _
@@ -173,7 +173,7 @@ To check the service is running use:
 +
 [source, sh]
 ----
-curl <http://localhost:19100/version>
+curl http://localhost:19100/version
 ----
 
 +
@@ -185,10 +185,10 @@ To confirm that a request is being sent to the {linkcheckerplugin} service, use:
 +
 [source, sh]
 ----
-curl --location '<http://localhost:19100/1/check>' \\
---header 'Origin: <http://good.com>' \\
+curl --location 'http://localhost:19100/1/check' \\
+--header 'Origin: http://good.com' \\
 --header 'Content-Type: application/json' \\
---data '{ "urls": [{"url":"<http://google.com>"}, {"url": "<http://youtube.com>"}, {"url":"<http://google.com/404>"}, {"url":"<https://ephox>.."}]}'
+--data '{ "urls": [{"url":"http://google.com"}, {"url": "http://youtube.com"}, {"url":"http://google.com/404"}, {"url":"https://ephox.."}]}'
 ----
 
 +
@@ -197,10 +197,10 @@ Finally, to verify if a request is unauthorized and originates from an incorrect
 +
 [source, sh]
 ----
-curl --location '<http://localhost:19100/1/check>' \\
---header 'Origin: <http://bad.com>' \\
+curl --location 'http://localhost:19100/1/check' \\
+--header 'Origin: http://bad.com' \\
 --header 'Content-Type: application/json' \\
---data '{ "urls": [{"url":"<http://google.com>"}, {"url": "<http://youtube.com>"}, {"url":"<http://google.com/404>"}, {"url":"<https://ephox>.."}]}'
+--data '{ "urls": [{"url":"http://google.com"}, {"url": "http://youtube.com"}, {"url":"http://google.com/404"}, {"url":"https://ephox.."}]}'
 ----
 
 +

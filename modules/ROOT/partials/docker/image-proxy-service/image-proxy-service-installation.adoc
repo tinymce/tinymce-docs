@@ -2,8 +2,8 @@
 == Installation
 
 [NOTE]
-A valid xref:license-key.adoc[License Key] is **required** in order to install {pluginname} On-Premises.
-link:https://www.tiny.cloud/contact/[Contact us] for a trial xref:license-key.adoc[License Key].
+Valid credentials (username and password) are **required** in order to retrieve On-Premises services images from our Docker Registry.
+link:https://www.tiny.cloud/contact/[Contact us] to request credentials.
 
 === Retrieve Docker Image
 
@@ -156,7 +156,7 @@ To check the service is running use:
 +
 [source, sh]
 ----
-curl <http://localhost:19040/version>
+curl http://localhost:19040/version
 ----
 
 +
@@ -168,8 +168,8 @@ To confirm that a request is being sent to the Image Proxy service, use:
 +
 [source, sh]
 ----
-curl --location '<http://localhost:19040/2/image?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsrikomm%2FBMP-EDITING%2Frefs%2Fheads%2Fmaster%2Fsrc%2FInputs%2Ffish.bmp>' \\
---header 'Origin: <http://good.com>'
+curl --location 'http://localhost:19040/2/image?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsrikomm%2FBMP-EDITING%2Frefs%2Fheads%2Fmaster%2Fsrc%2FInputs%2Ffish.bmp' \\
+--header 'Origin: http://good.com'
 ----
 
 +
@@ -178,8 +178,8 @@ Finally, to verify if a request is unauthorized and originates from an incorrect
 +
 [source, sh]
 ----
-curl --location '<http://localhost:19040/2/image?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsrikomm%2FBMP-EDITING%2Frefs%2Fheads%2Fmaster%2Fsrc%2FInputs%2Ffish.bmp>' \\
---header 'Origin: <http://bad.com>'
+curl --location 'http://localhost:19040/2/image?url=https%3A%2F%2Fraw.githubusercontent.com%2Fsrikomm%2FBMP-EDITING%2Frefs%2Fheads%2Fmaster%2Fsrc%2FInputs%2Ffish.bmp' \\
+--header 'Origin: http://bad.com'
 ----
 
 +

@@ -11,7 +11,7 @@ link:https://www.tiny.cloud/contact/[Contact us] for a trial xref:license-key.ad
 +
 [source, sh, subs="attributes+"]
 ----
-docker login -u [username] -p [password] registry.containers.tiny.cloud
+docker login -u [username] -p [access-token] registry.containers.tiny.cloud
 ----
 
 . Pull the Docker Image from the Docker registry:
@@ -92,10 +92,10 @@ The following settings for the Enhanced Media Embed service are optional:
 
 Once the application configuration file is ready, proceed with the Docker Compose setup to configure and run the service.
 
-. Create the `docker-compose.yml` file:
+. Create the `docker-compose.yaml` file:
 +
 
-[source, yml]
+[source, yaml]
 
 ----
 services:
@@ -219,7 +219,7 @@ To do this, configure the link:https://www.tiny.cloud/docs/tinymce/latest/linkch
 ----
 tinymce.init({
   …,
-  linkchecker_service_url: "<http://localhost:19100>",
-  mediaembed_service_url: "<http://localhost:19100>"
+  linkchecker_service_url: "http://localhost:19100",
+  mediaembed_service_url: "http://localhost:19100"
 });
 ----

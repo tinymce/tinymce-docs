@@ -2,8 +2,8 @@
 == Installation
 
 [NOTE]
-A valid xref:license-key.adoc[License Key] is **required** in order to install {pluginname} On-Premises.
-link:https://www.tiny.cloud/contact/[Contact us] for a trial xref:license-key.adoc[License Key].
+Valid credentials (username and password) are **required** in order to retrieve On-Premises services images from our Docker Registry.
+link:https://www.tiny.cloud/contact/[Contact us] to request credentials.
 
 === Retrieve Docker Image
 
@@ -189,7 +189,7 @@ To check the service is running, use:
 +
 [source, sh]
 ----
-curl <http://localhost:18080/version>
+curl http://localhost:18080/version
 ----
 
 +
@@ -201,7 +201,7 @@ To confirm that a request is being sent to the {pluginname} service, use:
 +
 [source, sh]
 ----
-curl <http://localhost:18080/2/check> -d '{"words": ["teh"], "language": "en_US"}' -H "Origin: <http://good.com>" -H "Content-Type: application/json"
+curl http://localhost:18080/2/check -d '{"words": ["teh"], "language": "en_US"}' -H "Origin: http://good.com" -H "Content-Type: application/json"
 ----
 
 +
@@ -210,7 +210,7 @@ Finally, to verify if a request is unauthorized and originates from an incorrect
 +
 [source, sh]
 ----
-curl <http://localhost:18080/2/check> -d '{"words": ["teh"], "language": "en_US"}' -H "Origin: <http://bad.com>" -H "Content-Type: application/json"
+curl http://localhost:18080/2/check -d '{"words": ["teh"], "language": "en_US"}' -H "Origin: http://bad.com" -H "Content-Type: application/json"
 ----
 
 +

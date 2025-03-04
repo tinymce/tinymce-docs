@@ -19,7 +19,7 @@ Before beginning, ensure that:
 The CSS associated with a theme is called a skin. The default skin for {productname} {productmajorversion} is **Oxide**, written in link:http://lesscss.org[Less]. Oxide introduces the *Style API*, which consists of approximately 300 variables that allow customization of {productname} without modifying the underlying CSS. This approach ensures compatibility with future updates and provides continued support for bug fixes.
 
 [IMPORTANT]
-Do not modify or overriding CSS rules directly.
+{companyname} recommends not modifying or overriding CSS rules directly.
 
 Follow these steps to set up the skin development environment:
 

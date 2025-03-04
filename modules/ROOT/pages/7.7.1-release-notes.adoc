@@ -2,7 +2,7 @@
 :release-version: 7.7.1
 :navtitle: {productname} {release-version}
 :description: Release notes for {productname} {release-version}
-:keywords: releasenotes, new, changes, bugfixes
+:keywords: releasenotes, bugfixes, security
 :page-toclevels: 1
 
 include::partial$misc/admon-releasenotes-for-stable.adoc[]
@@ -11,14 +11,57 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[overview]]
 == Overview
 
-{productname} {release-version} was released for {enterpriseversion} and {cloudname} on <weekday>, <month> <DD>^<st|nd|rd|th>^, <YYYY>. These release notes provide an overview of the changes for {productname} {release-version}, including:
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, March 05^st^, 2025. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
-// Remove sections and section boilerplates as necessary.
-// Pluralise as necessary or remove the placeholder plural marker.
+* xref:accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
 * xref:bug-fixes[Bug fixes]
 * xref:known-issues[Known issues]
+* xref:security-fixes[Security fixes]
+
+[[accompanying-premium-self-hosted-server-side-component-changes]]
+== Accompanying Premium self-hosted server-side component changes
+
+The {productname} {release-version} release includes accompanying changes affecting the {productname} **self-hosted** services for the following plugins:
+
+* **Enhanced Media Embed** plugin `mediaembed`.
+* **Image Editing** plugin `editimage`.
+* **Link Checker** plugin `linkchecker`.
+* **Spell Checker** plugin `tinymcespellchecker`.
+* **Spelling Autocorrect** plugin `autocorrect`.
+
+For information on:
+
+* The **Enhanced Media Embed** plugin, see: xref:introduction-to-mediaembed.adoc[Enhanced Media Embed plugin].
+* The **Image Editing** plugin, see: xref:editimage.adoc[Image Editing plugin].
+* The **Link Checker** plugin, see: xref:linkchecker.adoc[Link Checker plugin].
+* The **Spell Checker** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checkerplugin].
+* The **Spelling Autocorrect** plugin, see: xref:autocorrect.adoc[Spelling Autocorrect plugin].
+* Deploying the **server-side** components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+
+The Java server-side components have been updated to the following versions:
+
+* `ephox-hyperlinking.war`: 2.109.5
+* `ephox-image-proxy.war`: 2.111.6
+* `ephox-spelling.war`: 2.128.4
+
+=== Updating the self-hosted server-side components
+
+The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
+
+. Update your Java Application Server to the minimum required version:
+
+include::partial$misc/supported-application-servers.adoc[]
+
+. Replace the existing server-side `.war` files with the `.war` files bundled with {productname} {release-version} or later.
+
+For information on:
+
+* Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
+* Deploying the server-side components using Docker, see: xref:bundle-intro-setup.adoc[Containerized service deployments].
+
+include::partial$misc/admon-no-functionality-changes-in-updated-server-side-components.adoc[]
 
 
 [[accompanying-premium-plugin-changes]]
@@ -74,11 +117,18 @@ In {productname} {release-version}, this issue has been resolved by ensuring tha
 
 For more information on the `onSetup` function and context forms, see xref:contextform.adoc[Context Forms]
 
-[[known-issues]]
-== Known issues
+[[security-fixes]]
+== Security fixes
 
-This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
+{productname} {release-version} includes one fix for the following security issue:
 
-There one known issue in {productname} {release-version}.
+The following server-side component has been updated to include dependency updates addressing the following security issues. 
 
-=== <TINY-vwxyz 1 changelog entry>
+* https://nvd.nist.gov/vuln/detail/CVE-2025-25193[CVE-2025-25193]
+* https://nvd.nist.gov/vuln/detail/CVE-2025-24970[CVE-2025-24970]
+
+This update is considered as a **Medium** & *High* severity vulnerability fix.
+
+For information on the server-side components updates, see: xref:#accompanying-premium-self-hosted-server-side-component-changes[Accompanying Premium self-hosted server-side component changes].
+
+include::partial$misc/admon-no-functionality-changes-in-updated-server-side-components.adoc[]

@@ -4,6 +4,14 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+== xref:7.7.1-release-notes.adoc[7.7.1 - 2025-03-05]
+
+=== Fixed
+* Skin UI content CSS was truncated when bundling, causing CSS styles to be missing.
+// #TINY-11875
+* Context forms used to disappear if their input were disabled on `onSetup`.
+// #TINY-11890
+
 == xref:7.7.0-release-notes.adoc[7.7.0 - 2025-02-20]
 
 === Added

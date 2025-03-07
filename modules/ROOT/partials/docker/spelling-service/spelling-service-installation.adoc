@@ -3,7 +3,7 @@
 
 [NOTE]
 Valid credentials (username and password) are **required** in order to retrieve On-Premises services images from our Docker Registry.
-link:https://www.tiny.cloud/contact/[Contact us] to request credentials.
+link:https://www.tiny.cloud/contact/[Contact {companyname} Support] to request credentials.
 
 === Retrieve Docker Image
 
@@ -11,7 +11,7 @@ link:https://www.tiny.cloud/contact/[Contact us] to request credentials.
 +
 [source, sh, subs="attributes+"]
 ----
-docker login -u [username] -p [access-token] registry.containers.tiny.cloud
+docker login -u [username] -p [password] registry.containers.tiny.cloud
 ----
 
 . Pull the Docker Image from the Docker registry:

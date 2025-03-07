@@ -31,6 +31,8 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'importword',
   toolbar: 'importword',
+// Below option is only required when using the cloud-based Import from Word plugin from Tiny.Cloud.
+// Avoid setting it up during the trial period.
   importword_token_provider: () => { // required when using the Import from Word plugin with Tiny Cloud.
     return fetch('http://localhost:3000/jwt', { // specify your token endpoint
       method: 'POST',

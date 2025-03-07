@@ -36,7 +36,9 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'exportword',
   toolbar: 'exportword',
-  exportword_token_provider: () => { // required when using the Export to Word plugin with Tiny Cloud.
+// Below option is only required when using the cloud-based Export to Word plugin from Tiny.Cloud.
+// Avoid setting it up during the trial period.
+  exportword_token_provider: () => {
     return fetch('http://localhost:3000/jwt', { // specify your token endpoint
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

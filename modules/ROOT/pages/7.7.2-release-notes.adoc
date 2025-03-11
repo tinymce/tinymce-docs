@@ -1,0 +1,40 @@
+= {productname} {release-version}
+:release-version: 7.7.2
+:navtitle: {productname} {release-version}
+:description: Release notes for {productname} {release-version}
+:keywords: releasenotes, bugfixes, security
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+
+[[overview]]
+== Overview
+
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on <weekday>, <month> <DD>^<st|nd|rd|th>^, <YYYY>. These release notes provide an overview of the changes for {productname} {release-version}, including:
+
+// Remove sections and section boilerplates as necessary.
+// Pluralise as necessary or remove the placeholder plural marker.
+* xref:bug-fixes[Bug fixes]
+* xref:security-fixes[Security fixes]
+
+[[bug-fixes]]
+== Bug fixes
+
+{productname} {release-version} also includes the following bug fix<es>:
+
+=== <TINY-vwxyz 1 changelog entry>
+// #TINY-vwxyz1
+
+// CCFR here.
+
+
+[[security-fixes]]
+== Security fixes
+
+{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
+
+=== <TINY-vwxyz 1 changelog entry>
+// #TINY-vwxyz1
+
+// CCFR here.

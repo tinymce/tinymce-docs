@@ -15,7 +15,7 @@ Refer to the xref:individual-export-to-pdf-on-premises.adoc#requirements[Require
 
 === Setting up the application using a Docker container
 
-. The username and password credentials supplied by Tiny are utilized for logging into the Docker registry and retrieving the Docker image.
+. The username and password credentials supplied by {companyname} are utilized for logging into the Docker registry and retrieving the Docker image.
 . Containerize the application using `docker` or `docker-compose`.
 . Use a demo page to verify if the application works properly.
 
@@ -26,6 +26,13 @@ Login to Docker registry:
 [source, sh, subs="attributes+"]
 ----
 docker login -u [username] -p [password] registry.containers.tiny.cloud
+----
+
+Pull the Docker image: 
+
+[source, sh, subs="attributes+"]
+----
+docker pull registry.containers.tiny.cloud/{dockerimageexporttopdf}:[version]
 ----
 
 Launch the Docker container:
@@ -72,7 +79,7 @@ For details on `SECRET_KEY` usage check the xref:individual-export-to-pdf-on-pre
 
 [source, bash]
 ----
-docker-compose up
+docker compose up
 ----
 
 [NOTE]

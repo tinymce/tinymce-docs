@@ -50,7 +50,7 @@ For more infomation on the importword_token_provider option, see xref:importword
 The {pluginname} plugin **requires** JWT authentication when using the {companyname} Cloud service.
 
 * Configure the `{plugincode}_token_provider` option to specify the endpoint for retrieving a valid JWT token.
-* If hosting locally, use the format `+http://localhost:[port]/jwt+`, ensuring the endpoint returns a xref:importword.adoc#data-structure[valid JSON object] containing the token.
+* If hosting locally, use the format `+http://localhost:[port]/jwt+`, ensuring the endpoint returns a xref:importword.adoc#data-structure[JSON] containing the token.
 
 For more information on how to set up JWT authentication with {pluginname}, see examples:
 

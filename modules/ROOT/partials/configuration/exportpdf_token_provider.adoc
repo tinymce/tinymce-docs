@@ -7,6 +7,8 @@ The `exportpdf_token_provider` option enables integration with a token-based aut
 
 *Default value:* `undefined`
 
+*Return data:* xref:exportpdf.adoc#data-structure[`Token` object]
+
 === Example: using `exportpdf_token_provider`
 
 [source,js]
@@ -23,3 +25,5 @@ tinymce.init({
   },
 });
 ----
+
+include::partial$misc/admon-document-converters-jwt-expected-data-structure.adoc[]

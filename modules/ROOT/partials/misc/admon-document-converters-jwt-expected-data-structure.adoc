@@ -1,11 +1,12 @@
-== Data structure
+[[data-structure]]
+=== Data structure for the JWT token
 
-The JSON data containing the valid encoded token must match the following structure:
+The object containing the valid encoded token must match the following structure:
 
-[source,json]
+[source,js]
 ----
 {
-  "token": "<encoded JWT string>"
+  token: "<encoded JWT string>"
 }
 ----
 

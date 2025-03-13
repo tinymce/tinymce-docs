@@ -110,7 +110,6 @@ tinymce.init({
   content_style: '.mymention{ color: gray; }',
   contextmenu: 'link image editimage table configurepermanentpen',
   a11y_advanced_options: true,
-  skin: 'oxide-dark',
   autocorrect_capitalize: true,
   mergetags_list: [
     {

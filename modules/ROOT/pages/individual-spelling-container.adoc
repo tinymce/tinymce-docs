@@ -1,6 +1,11 @@
-= Deploy the TinyMCE Spelling server-side component using Docker (individually licensed)
+= Deploy the {productname} Spelling server-side component using Docker
 :navtitle: Spelling service
-:description: How-to deploy the TinyMCE Spelling server-side component using Docker (individually licensed).
+:description: How-to deploy the {productname} Spelling server-side component using Docker.
 :shbundledockerfiles: false
+:pluginname: Spell Checker
 
-include::partial$docker/dockerized-spelling-service.adoc[]
+include::partial$docker/spelling-service/spelling-service-overview.adoc[]
+
+include::partial$docker/spelling-service/spelling-service-requirements.adoc[]
+
+include::partial$docker/spelling-service/spelling-service-installation.adoc[]

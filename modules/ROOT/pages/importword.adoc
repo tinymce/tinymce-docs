@@ -2,6 +2,7 @@
 = {pluginname} plugin
 :plugincode: importword
 :pluginname: Import from Word
+:pluginfilename: import-from-word
 :navtitle: {pluginname}
 :description: Provides a way to import .docx (Microsoft Word documents) or .dotx (Microsoft Word templates) files into the editor.
 :description_short: Import .docx or .dotx files into the editor.
@@ -31,21 +32,27 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'importword',
   toolbar: 'importword',
+// Below option is only required when using the cloud-based Import from Word plugin from Tiny.Cloud.
+// Avoid setting it up during the trial period.
+  importword_token_provider: () => { // required when using the Import from Word plugin with Tiny Cloud.
+    return fetch('http://localhost:3000/jwt', { // specify your token endpoint
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    }).then(response => response.json());
+  },
 });
 ----
 
-[IMPORTANT]
-When using the {pluginname} plugin with the {companyname} Cloud service, JWT authentication is required to use the service. For more information on how to set up JWT authentication with {pluginname}, see examples:
+For more infomation on the importword_token_provider option, see xref:importword.adoc#importword-token-provider[importword_token_provider].
 
-* xref:import-from-word-with-jwt-authentication-nodejs.adoc[{pluginname} with JWT authentication (Node.js)]
-* xref:import-from-word-with-jwt-authentication-php.adoc[{pluginname} with JWT authentication (PHP)]
+include::partial$misc/admon-jwt-authentication-requirements.adoc[]
+
 
 == Basic setup using the self-hosted service
 
 To use the self-hosted version of the {pluginname} plugin, you need to set the `importword_service_url` option to the URL of the service.
 
-For example:
-
+.Example:
 [source,js]
 ----
 tinymce.init({

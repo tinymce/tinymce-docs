@@ -1,0 +1,17 @@
+[[data-structure]]
+=== Data structure for the JWT token
+
+The object containing the valid encoded token must match the following structure:
+
+[source,js]
+----
+{
+  token: "<encoded JWT string>"
+}
+----
+
+[cols="1,1,1,3",options="header"]
+|===
+|Field |Type |Required? |Description
+|`+token+` |`+string+` |required |A Base64-encoded JSON Web Token (JWT) used for authentication and authorization.
+|===

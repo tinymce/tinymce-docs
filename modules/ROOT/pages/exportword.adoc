@@ -1,6 +1,7 @@
 = {pluginname} plugin
 :plugincode: exportword
 :pluginname: Export to Word
+:pluginfilename: export-to-word
 :navtitle: {pluginname}
 :description: The {pluginname} feature lets you generate a .docx (Microsoft Word document) file directly from the editor.
 :description_short: Generate a .docx file directly from the editor.
@@ -36,20 +37,27 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'exportword',
   toolbar: 'exportword',
+// Below option is only required when using the cloud-based Export to Word plugin from Tiny.Cloud.
+// Avoid setting it up during the trial period.
+  exportword_token_provider: () => {
+    return fetch('http://localhost:3000/jwt', { // specify your token endpoint
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    }).then(response => response.json());
+  },
 });
 ----
 
-[IMPORTANT]
-When using the {pluginname} plugin with the {companyname} Cloud service, JWT authentication is required to use the service. For more information on how to set up JWT authentication with {pluginname}, see examples:
+For more infomation on the exportword_token_provider option, see xref:exportword.adoc#exportword-token-provider[exportword_token_provider]
 
-* xref:export-to-word-with-jwt-authentication-nodejs.adoc[{pluginname} with JWT authentication (Node.js)]
-* xref:export-to-word-with-jwt-authentication-php.adoc[{pluginname} with JWT authentication (PHP)]
+include::partial$misc/admon-jwt-authentication-requirements.adoc[]
+
 
 == Basic setup using the self-hosted service
 
 To use the self-hosted version of the {pluginname} plugin, you need to set the `exportword_service_url` option to the URL of the service.
 
-For example:
+.Example:
 [source,js]
 ----
 tinymce.init({

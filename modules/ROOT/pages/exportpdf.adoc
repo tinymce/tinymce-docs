@@ -1,6 +1,7 @@
 = {pluginname} plugin
 :plugincode: exportpdf
 :pluginname: Export to PDF
+:pluginfilename: export-to-pdf
 :navtitle: {pluginname}
 :description: The {pluginname} feature provides the ability to generate a PDF file directly from the editor.
 :description_short: Generate a PDF file directly from the editor.
@@ -22,29 +23,34 @@ liveDemo::exportpdf[]
 
 To add the {pluginname} plugin to the editor, add `{plugincode}` to the `plugins` option in the editor configuration.
 
-For example:
-
+.Example:
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',
   plugins: 'exportpdf',
   toolbar: 'exportpdf',
+// Below option is only required when using the cloud-based Export to PDF plugin from Tiny.Cloud.
+// Avoid setting it up during the trial period.
+  exportpdf_token_provider: () => { 
+    return fetch('http://localhost:3000/jwt', { // specify your token endpoint
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    }).then(response => response.json());
+  },
 });
 ----
 
-[IMPORTANT]
-When using the {pluginname} plugin with the {companyname} Cloud service, JWT authentication is required to use the service. For more information on how to set up JWT authentication with {pluginname}, see examples:
+For more infomation on the exportpdf_token_provider option, see xref:exportpdf.adoc#exportpdf-token-provider[exportpdf_token_provider].
 
-* xref:export-to-pdf-with-jwt-authentication-nodejs.adoc[{pluginname} with JWT authentication (Node.js)]
-* xref:export-to-pdf-with-jwt-authentication-php.adoc[{pluginname} with JWT authentication (PHP)]
+include::partial$misc/admon-jwt-authentication-requirements.adoc[]
+
 
 == Basic setup using the self-hosted service
 
 To use the self-hosted version of the {pluginname} plugin, you need to set the `exportpdf_service_url` option to the URL of the service.
 
-For example:
-
+.Example:
 [source,js]
 ----
 tinymce.init({

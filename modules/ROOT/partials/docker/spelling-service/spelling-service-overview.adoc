@@ -5,6 +5,6 @@ The On-Premises version of the link:https://www.tiny.cloud/tinymce/features/spel
 
 The only requirement to run these services On-Premises is a container runtime or orchestration tool e.g. Docker, Kubernetes, Podman.
 
-To get started, contact link:https://www.tiny.cloud/contact/[{companyname} Support] to enable the service. A username and password will be provided to access the {companyname} Cloud Docker registry and pull the Docker image.
+A valid access token is required to access the {companyname} Cloud Docker registry and pull the Docker image. Contact link:https://www.tiny.cloud/contact/[{companyname} Support] to request the access token. 
 
 include::partial$misc/admon-dont-push-docker-images.adoc[]

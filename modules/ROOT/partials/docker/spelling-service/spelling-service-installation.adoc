@@ -2,8 +2,8 @@
 == Installation
 
 [IMPORTANT]
-Valid credentials (username and password) are **required** in order to retrieve On-Premises services images from our Docker Registry.
-link:https://www.tiny.cloud/contact/[Contact {companyname} Support] to request credentials.
+A valid access token is **required** in order to retrieve On-Premises services images from {companyname} Cloud Docker Registry.
+link:https://www.tiny.cloud/contact/[Contact {companyname} Support] to request the access token.
 
 === Retrieve Docker Image
 
@@ -11,7 +11,7 @@ link:https://www.tiny.cloud/contact/[Contact {companyname} Support] to request c
 +
 [source, sh, subs="attributes+"]
 ----
-docker login -u tiny -p [password] registry.containers.tiny.cloud
+docker login -u tiny -p [access-token] registry.containers.tiny.cloud
 ----
 
 . Pull the Docker Image from the Docker registry:
@@ -20,6 +20,11 @@ docker login -u tiny -p [password] registry.containers.tiny.cloud
 ----
 docker pull registry.containers.tiny.cloud/spelling-tiny:<VERSION>
 ----
+
++
+[NOTE]
+Currently, the Docker images are only supported on x86-64 (also known as AMD64) architecture processors.
+
 +
 Replace `<VERSION>` with `latest` or the specific version number.
 
@@ -63,22 +68,30 @@ This configuration file requires at least the following information:
 
 * `allowed-origins`: Specifies the domains allowed to communicate with server-side editor features. This is **mandatory** for all server-side components.
 
-By default, the {pluginname} plugin comes with Hunspell dictionaries for link:https://www.tiny.cloud/docs/tinymce/latest/introduction-to-tiny-spellchecker/#supported-languages[supported languages]. For additional configurations, the service supports the following options:
+By default, the {pluginname} plugin comes with Hunspell dictionaries for link:https://www.tiny.cloud/docs/tinymce/latest/introduction-to-tiny-spellchecker/#supported-languages[supported languages]. For additional configurations, the service supports the following options in the `application.conf` file:
 
-==== Configure Custom Dictionaries 
+* `custom-dictionaries-path`: Sets the path to where the file or directory is mounted in the container. For more information on how to set up custom dictionaries, refer to link:https://www.tiny.cloud/docs/tinymce/latest/custom-dictionaries-for-tiny-spellchecker/[Adding custom dictionaries].  
+* `dynamic-custom-dictionaries`: When set to true, the {pluginname} service periodically checks the dictionary files in `custom-dictionaries-path` for changes and updates the custom dictionaries at runtime without requiring a service restart. The default value is `false`.
 
-To add custom dictionaries, create a folder on your machine and add the dictionary files. The custom dictionaries must conform to specific rules described in link:https://www.tiny.cloud/docs/tinymce/latest/custom-dictionaries-for-tiny-spellchecker/#creating-custom-dictionary-files[Adding custom dictionaries]. In the `application.conf` file, the `spelling` setting can be configured with the following parameters: 
+[NOTE]
+Enabling the `dynamic-custom-dictionaries` option introduces some performance overhead, which may result in a wait time for the custom dictionaries to load.
 
-* `custom-dictionaries-path`: Takes `<HOST_PATH_TO_CUSTOM_DICT_FOLDER>` as its value. Upon running the container, the specified folder is mapped to the target folder inside the container.
-* `dynamic-custom-dictionaries`: When set to true, the {pluginname} service periodically checks the dictionary files in `<HOST_PATH_TO_CUSTOM_DICT_FOLDER>` for changes and updates the custom dictionaries at runtime without requiring a service restart. Enabling this option introduces some performance overhead, which should be considered. The default value is `false`.
+=== Run the Docker Container 
 
-==== Configure Extra Hunspell Dictionaries
+The Docker container can also be run with `docker compose`. In this example, the following directory structure is assumed: 
 
-The default Hunspell dictionaries can also be replaced or extended. To do this, create a folder on your machine to store the Hunspell dictionary files. In the `application.conf` file, specify the following in the `spelling` setting:
+[source,sh]
+----
+spelling-service/
+└── resources/
+  ├── custom-dictionaries
+  └── hunspell-dictionaries
+└── application.conf
+└── docker-compose.yaml
 
-* `hunspell-dictionaries-path`: Takes `<HOST_PATH_TO_HUNSPELL_DICT_FOLDER>` as its value. Upon running the container, the specified folder is mapped to the target folder inside the container.
+----
 
-This is an example `application.conf` file with the basic configurations: 
+Here is an example of the `application.conf` file with the basic configurations: 
 
 [source, conf]
 ----
@@ -99,11 +112,10 @@ ephox {
 }
 ----
 
-=== Launch the Docker Container 
-
-Once the application configuration file is ready, proceed with the Docker Compose setup to configure and run the service.
-
 . Create the `docker-compose.yaml` file:
+
++
+Here is an example of how to set up the file given the above directory structure and `application.conf` file: 
 
 +
 [source, yaml]
@@ -117,18 +129,22 @@ services:
     init: true
     volumes:
       - type: bind
-        source: <PATH_TO_APPLICATION_CONF_FILE_IN_HOST_MACHINE>
+        source: ./application.conf
         target: /ephox-spelling/ephox-spelling-docker-env.conf 
         read_only: true
       - type: bind
-        source: <HOST_PATH_TO_CUSTOM_DICT_FOLDER>
+        source: ./resources/custom-dictionaries
         target: /app/resources/custom-dictionaries
         read_only: true
       - type: bind
-        source: <HOST_PATH_TO_HUNSPELL_DICT_FOLDER>
-        target: /app/resources/hunspell-dictionaries
+        source: ./resources/hunspell-dictionaries
+        target: /app/resources/custom-dictionaries
         read_only: true
 ----
+
++
+[NOTE]
+Ensure the `target` path in the `volumes` option matches the `custom-dictionaries-path` and `hunspell-dictionaries-path` in the `application.conf` file. 
 
 . Run the service (within the same directory where `docker-compose.yaml` was placed):
 
@@ -228,7 +244,10 @@ To do this, configure the link:https://www.tiny.cloud/docs/tinymce/latest/introd
 [source, js]
 ----
 tinymce.init({
-  …,
+  selector: 'textarea#spellchecker', // change this value according to your HTML
+  plugins: 'code tinymcespellchecker link',
+  toolbar: 'spellchecker language spellcheckdialog',
+  spellchecker_language: 'en_US',
   spellchecker_rpc_url: "http://localhost:18080"
 });
 ----

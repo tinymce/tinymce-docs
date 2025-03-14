@@ -22,11 +22,10 @@ docker pull registry.containers.tiny.cloud/spelling-tiny:<VERSION>
 ----
 
 +
+Replace `<VERSION>` with `latest` or the specific version number.
++
 [NOTE]
 Currently, the Docker images are only supported on x86-64 (also known as AMD64) architecture processors.
-
-+
-Replace `<VERSION>` with `latest` or the specific version number.
 
 === Specify Configurations 
 

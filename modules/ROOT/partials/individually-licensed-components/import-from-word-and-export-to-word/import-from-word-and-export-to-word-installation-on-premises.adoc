@@ -25,7 +25,7 @@ Login to Docker registry:
 
 [source, sh, subs="attributes+"]
 ----
-docker login -u [username] -p [password] registry.containers.tiny.cloud
+docker login -u tiny -p [access-token] registry.containers.tiny.cloud
 ----
 
 Pull the Docker image: 

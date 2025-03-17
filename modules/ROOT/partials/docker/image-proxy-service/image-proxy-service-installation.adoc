@@ -197,7 +197,9 @@ To do this, configure the {pluginname} feature in the editor and call it via `ti
 [source, js]
 ----
 tinymce.init({
-  …,
+  selector: 'textarea',  // change this value according to your HTML
+  toolbar: 'image',
+  plugins: 'image editimage',
   editimage_cors_hosts: [ 'example.com', 'good.com' ],
   editimage_proxy_service_url: "http://localhost:19040"
 });

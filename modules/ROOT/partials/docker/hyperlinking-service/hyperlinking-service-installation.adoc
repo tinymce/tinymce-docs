@@ -72,7 +72,7 @@ The following settings for the Hyperlinking premium server-side component are _o
 * link:https://www.tiny.cloud/docs/tinymce/latest/configure-hyperlink-service/#link-checking[link-checking configuration^]
 * link:https://www.tiny.cloud/docs/tinymce/latest/configure-hyperlink-service/#cache[cache configuration^]
 
-The {mediaembedplugin} service allows the use of a custom xref:mediaembed-server-config.adoc#use-your-own-iframely-account[Iframely^] account, configured xref:mediaembed-server-config.adoc#configure-a-custom-endpoint[oEmbed^] endpoints, or a combination of both. If a URL lacks an `Iframely` or `oEmbed` configuration, the service generates a summary card.
+The {mediaembedplugin} service allows the use of a custom xref:mediaembed-server-config.adoc#use-your-own-iframely-account[Iframely] account, configured xref:mediaembed-server-config.adoc#configure-a-custom-endpoint[oEmbed] endpoints, or a combination of both. If a URL lacks an `Iframely` or `oEmbed` configuration, the service generates a summary card.
 
 [TIP]
 A summary card is an embeddable snippet of code created based on the available metadata and content detected at the URL. This ensures that even if no predefined embedding method is configured, the service can still provide a structured and visually consistent media representation.

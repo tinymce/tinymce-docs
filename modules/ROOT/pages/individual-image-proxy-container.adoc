@@ -1,0 +1,14 @@
+= Deploy the {productname} Image Proxy service server-side component using Docker
+:navtitle: Image Proxy service
+:description: How-to deploy the {productname} Image Proxy service server-side component using Docker.
+:shbundledockerfiles: false
+:pluginname: Image Editing
+
+//include::partial$docker/dockerized-hyperlinking-service.adoc[]
+include::partial$docker/image-proxy-service/image-proxy-service-overview.adoc[]
+
+include::partial$docker/image-proxy-service/image-proxy-service-requirements.adoc[]
+
+include::partial$docker/image-proxy-service/image-proxy-service-installation.adoc[]
+
+

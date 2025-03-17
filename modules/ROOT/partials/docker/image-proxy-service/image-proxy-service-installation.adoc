@@ -174,7 +174,7 @@ image-proxy-tiny-1  | 2025-01-08 15:02:37 [io-compute-1] INFO  o.h.blaze.server.
 . Test the service via cURL command
 
 +
-To verify that the Image Proxy service is set up and functioning correctly within the container, ensure the service is running on port 19040. Once active, it should be ready to receive requests. The expected outputs below confirm proper configuration, assuming http://good.com is in the allowed origins and http://bad.com is not.
+To verify that the Image Proxy service is set up and functioning correctly within the container, ensure the service is running on port `19040`. Once active, it should be ready to receive requests. The expected outputs below confirm proper configuration, assuming `http://good.com` is in the allowed origins and `http://bad.com` is not.
 
 +
 To check the service is running use:

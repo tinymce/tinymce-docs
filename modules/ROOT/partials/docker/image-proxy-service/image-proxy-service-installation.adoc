@@ -11,7 +11,7 @@ link:https://www.tiny.cloud/contact/[Contact {companyname} Support^] to request 
 +
 [source, sh, subs="attributes+"]
 ----
-docker login -u [username] -p [access-token] registry.containers.tiny.cloud
+docker login -u tiny -p [access-token] registry.containers.tiny.cloud
 ----
 
 . Pull the Docker Image from the Docker registry:

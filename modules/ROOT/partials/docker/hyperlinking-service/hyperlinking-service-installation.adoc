@@ -97,7 +97,7 @@ The Docker container can also be run with `docker compose`. In this example, the
 
 [source,sh]
 ----
-image-proxy-service/
+hyperlinking-service/
 ├── application.conf
 └── docker-compose.yaml 
 ----

@@ -74,6 +74,30 @@ The following settings for the Image Proxy service premium server-side component
 
 === Run the Docker Container 
 
+The Docker container can also be run with `docker compose`. In this example, the following directory structure is assumed: 
+
+[source,sh]
+----
+tiny-image-proxy/
+│── docker-compose.yaml     # Docker Compose file to define and run the service
+│── application.conf        # Configuration file for allowed origins and other settings
+----
+
+Here is an example of the `application.conf` file with the basic configurations: 
+
+[source, conf]
+----
+ephox {
+  allowed-origins {
+    origins = [
+      "<http://example.com>",
+      "<http://good.com> ",
+      "*.my.company.org"
+    ]
+  }
+}
+----
+
 Once the application configuration file is ready, proceed with the Docker Compose setup to configure and run the service.
 
 . Create the `docker-compose.yaml` file:

@@ -23,6 +23,8 @@ docker pull registry.containers.tiny.cloud/image-proxy-tiny:<VERSION>
 +
 Replace `<VERSION>` with `latest` or the specific version number.
 
+[NOTE]
+Currently, the Docker images are only supported on x86-64 (also known as AMD64) architecture processors.
 === Specify Configurations 
 
 After completing the previous steps, run the Docker container from the pulled image: 

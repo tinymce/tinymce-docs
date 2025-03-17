@@ -23,10 +23,19 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} {release-version} also includes the following bug fixes:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Exception occurs when pressing `tab` in the last cell of a non-editable table
+// #TINY-11797
 
-// CCFR here.
+Previously in {productname}, an issue was identified where pressing `Tab` in the last cell of a non-editable table attempted to insert a new row and move the selection to it. This behavior resulted in an infinite loop. Additionally, if `Tab` was pressed in an editable cell and the next cell was a content-editable false (`CEF`) cell, the focus would skip the `CEF` cell.
+
+This issue also triggered error messages when pressing `Tab` in the last cell of a non-editable table, negatively impacting page performance.
+
+{productname} {release-version} resolves this issue by refining the tab navigation behavior:
+
+* Pressing `Tab` in the last cell of a non-editable table now has no effect.
+* When `Tab` is pressed in an editable cell, and the next cell is a `CEF` cell, the cursor remains in the editable cell.
+
+These improvements enhance table navigation, prevent unnecessary error messages, and optimize performance when working with non-editable tables.
 
 
 [[security-fixes]]

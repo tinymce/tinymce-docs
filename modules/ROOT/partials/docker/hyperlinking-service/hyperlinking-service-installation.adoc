@@ -21,9 +21,6 @@ docker pull registry.containers.tiny.cloud/hyperlinking-tiny:<VERSION>
 +
 Replace `<VERSION>` with `latest` or the specific version number.
 
-[NOTE]
-Currently, the Docker images are only supported on x86-64 (also known as AMD64) architecture processors.
-+
 include::partial$misc/admon-available-docker-images.adoc[]
 
 === Specify Configurations 

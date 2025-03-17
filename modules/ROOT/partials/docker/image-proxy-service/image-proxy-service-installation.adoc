@@ -217,7 +217,7 @@ If an error occurs, the expected message is: `{ "message": "The supplied authent
 Before deploying, it is recommended to test this service within the {productname} editor itself.
 
 +
-To do this, configure the {pluginname} feature in the editor and call it via `tinymce.init`. If running locally on the default port `19040`, use the following settings:
+To do this, configure the xref:editimage.adoc[{pluginname}] feature in the editor and call it via `tinymce.init`. If running locally on the default port `19040`, use the following settings:
 
 +
 [source, js]

@@ -2,7 +2,7 @@
 :navtitle: Introduction and initial setup
 :description: The containerized server-side components for premium plugins.
 
-The {enterpriseversion} server-side components can be deployed on Docker orchestration applications such as link:https://kubernetes.io/[Kubernetes^], link:https://docs.docker.com/engine/swarm/[Docker Swarm^], or link:https://www.openshift.com/[OpenShift^]. {companyname} provides Docker images through the {companyname} Cloud Registry. You will be provided the access token by {companyname} to log into the registry to retrieve the Docker image and run the container.
+The {enterpriseversion} server-side components can be deployed on Docker orchestration applications such as link:https://kubernetes.io/[Kubernetes^], link:https://docs.docker.com/engine/swarm/[Docker Swarm^], or link:https://www.openshift.com/[OpenShift^]. {companyname} provides Docker images through the {companyname} Cloud Registry. A access token will be provided by {companyname} to log into the registry to retrieve the Docker image and run the container.
 
 == Containerized services for Self-hosted Enterprise deployments
 
@@ -24,8 +24,11 @@ The following sections assist with containerizing the {productname} services for
 
 Proceed to setting up and deploying the containerized services for:
 
-* For the Enhanced Media Embed and Link Checker service, see: xref:individual-hyperlinking-container.adoc[Deploy the TinyMCE hyperlinking server-side component using Docker^].
-* For the Image Editing and Export image proxy service, see: xref:individual-image-proxy-container.adoc[Deploy the TinyMCE image proxy server-side component using Docker^].
-* For the Spell Checker service, see: xref:individual-spelling-container.adoc[Deploy the TinyMCE spelling service server-side component using Docker^].
-* For the Export to PDF service, see: xref:individual-export-to-pdf-on-premises.adoc[Deploy the {productname} Export to PDF service server-side component using Docker (individually licensed)^].
-* For the Import from Word and Export to Word services, see: xref:individual-import-from-word-and-export-to-word-on-premises.adoc[Deploy the {productname} Import from Word and Export to Word service server-side component using Docker (individually licensed)^].
+* For the Enhanced Media Embed and Link Checker service, see: xref:individual-hyperlinking-container.adoc[Deploy the {productname} hyperlinking server-side component using Docker^].
+* For the Image Editing and Export image proxy service, see: xref:individual-image-proxy-container.adoc[Deploy the {productname} image proxy server-side component using Docker^].
+* For the Spell Checker service, see: xref:individual-spelling-container.adoc[Deploy the {productname} spelling service server-side component using Docker^].
+
+=== Additional services
+
+* For the Export to PDF service, see: xref:individual-export-to-pdf-on-premises.adoc[Deploy the {productname} Export to PDF service server-side component using Docker^].
+* For the Import from Word and Export to Word services, see: xref:individual-import-from-word-and-export-to-word-on-premises.adoc[Deploy the {productname} Import from Word and Export to Word service server-side component using Docker^].

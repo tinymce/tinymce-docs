@@ -23,10 +23,14 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} {release-version} also includes the following bug fixes:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Exception was thrown when trying to use the context form API after the toolbar was detached.
+// #TINY-11781
 
-// CCFR here.
+Previously, an error occurred when the `setValue` function from the Context Form API was called after the toolbar had been detached from the DOM. As a result, developers were unable to retrieve the value of the Context Form when using the API after the form had been closed.
+
+{productname} {release-version} resolves this issue by ensuring that developers can now reliably get and set the value of the Context Form even after it has been detached.
+
+For more information on the Context Form API, see: xref:contextform.adoc[Context Forms]
 
 
 [[security-fixes]]

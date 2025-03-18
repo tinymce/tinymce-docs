@@ -53,6 +53,9 @@ The Java server-side components have been updated to the following versions:
 
 The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
 
+[NOTE]
+The `+ephox-<plugin>-docker-starter-kit.zip+` is no longer supported as of {productname} 7.7.2. However, until further notice, WAR files will continue to be included in the ZIP distribution of {productname}. These files require manual updates when deploying self-hosted services. To update:
+
 . Update your Java Application Server to the minimum required version:
 
 include::partial$misc/supported-application-servers.adoc[]
@@ -62,10 +65,7 @@ include::partial$misc/supported-application-servers.adoc[]
 For information on:
 
 * Deploying the server-side components, see: xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation].
-* Deploying the server-side components using Docker, see: 
-** xref:individual-hyperlinking-container.adoc[Hyperlinking service]
-** xref:individual-image-proxy-container.adoc[Image Proxy service]
-** xref:individual-spelling-container.adoc[Spelling service]
+* Deploying the server-side components using Docker, see: xref:bundle-intro-setup.adoc[Containerized service deployments].
 
 include::partial$misc/admon-no-functionality-changes-in-updated-server-side-components.adoc[]
 

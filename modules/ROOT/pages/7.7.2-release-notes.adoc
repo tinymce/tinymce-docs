@@ -26,7 +26,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 === Exception was thrown when trying to use the context form API after the toolbar was detached.
 // #TINY-11781
 
-Previously, an error occurred when the `setValue` function from the Context Form API was called after the toolbar had been detached from the DOM. As a result, developers were unable to retrieve the value of the Context Form when using the API after the form had been closed.
+Previously, an error occurred when the `setValue` function from the xref:contextform.adoc#formapi[Context Form API] was called after the toolbar had been detached from the DOM. As a result, developers were unable to retrieve the value of the Context Form when using the API after the form had been closed.
 
 {productname} {release-version} resolves this issue by ensuring that developers can now reliably get and set the value of the Context Form even after it has been detached.
 

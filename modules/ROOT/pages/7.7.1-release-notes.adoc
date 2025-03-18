@@ -47,11 +47,7 @@ The Java server-side components have been updated to the following versions:
 
 The new versions of the server-side services provide updates for the Java-based server-side components. To deploy the updated version of the server-side components:
 
-[NOTE]
-The `+ephox-<plugin>-docker-starter-kit.zip+` is no longer supported as of {productname} 7.7.2. However, until further notice, WAR files will continue to be included in the ZIP distribution of {productname}. These files require manual updates when deploying self-hosted services. To update:
-
-[NOTE]
-The `+ephox-<plugin>-docker-starter-kit.zip+` is no longer supported as of {productname} 7.7.2. However, until further notice, WAR files will continue to be included in the ZIP distribution of {productname}. These files require manual updates when deploying self-hosted services. To update:
+include::partial$misc/admon-docker-starter-kit-eos-message.adoc[]
 
 . Update your Java Application Server to the minimum required version:
 

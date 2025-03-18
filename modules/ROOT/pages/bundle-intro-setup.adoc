@@ -1,0 +1,31 @@
+= Introduction and initial setup for containerized server-side services from the premium self-hosted bundle
+:navtitle: Introduction and initial setup
+:description: The containerized server-side components for premium plugins.
+
+The {enterpriseversion} server-side components can be deployed on Docker orchestration applications such as link:https://kubernetes.io/[Kubernetes^], link:https://docs.docker.com/engine/swarm/[Docker Swarm^], or link:https://www.openshift.com/[OpenShift^]. {companyname} provides Docker images through the {companyname} Cloud Registry. You will be provided the access token by {companyname} to log into the registry to retrieve the Docker image and run the container.
+
+== Containerized services for Self-hosted Enterprise deployments
+
+The following sections assist with containerizing the {productname} services for users with licenses to the Self-hosted {productname} Enterprise bundles:
+
+* The *Self-hosted Essential* bundle.
+* The *Self-hosted Professional* bundle.
+* The *Self-hosted Premium* bundle.
+
+=== Prerequisites
+
+* The link:https://docs.docker.com/engine/docker-overview/[Docker Engine^] is installed and running.
+* The user has Administrative or Root user access to run the Docker commands.
+* The user is either:
+** Using a Unix-like operating system, such as Linux or macOS.
+** Using Windows and has access to unix command line tools using link:https://gitforwindows.org/[Git for Windows^], link:https://www.cygwin.com/[Cygwin^], or the link:https://docs.microsoft.com/en-us/windows/wsl/install-win10[Windows Subsystem for Linux^].
+
+=== Next steps
+
+Proceed to setting up and deploying the containerized services for:
+
+* For the Enhanced Media Embed and Link Checker service, see: xref:individual-hyperlinking-container.adoc[Deploy the TinyMCE hyperlinking server-side component using Docker^].
+* For the Image Editing and Export image proxy service, see: xref:individual-image-proxy-container.adoc[Deploy the TinyMCE image proxy server-side component using Docker^].
+* For the Spell Checker service, see: xref:individual-spelling-container.adoc[Deploy the TinyMCE spelling service server-side component using Docker^].
+* For the Export to PDF service, see: xref:individual-export-to-pdf-on-premises.adoc[Deploy the {productname} Export to PDF service server-side component using Docker (individually licensed)^].
+* For the Import from Word and Export to Word services, see: xref:individual-import-from-word-and-export-to-word-on-premises.adoc[Deploy the {productname} Import from Word and Export to Word service server-side component using Docker (individually licensed)^].

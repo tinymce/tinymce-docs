@@ -1,8 +1,8 @@
-= Introduction and initial setup for containerized server-side services from the premium self-hosted bundle
+= Introduction and initial setup for containerized server-side services from the premium self-hosted bundles
 :navtitle: Introduction and initial setup
 :description: The containerized server-side components for premium plugins.
 
-The {enterpriseversion} server-side components can be deployed on Docker orchestration applications such as link:https://kubernetes.io/[Kubernetes^], link:https://docs.docker.com/engine/swarm/[Docker Swarm^], or link:https://www.openshift.com/[OpenShift^]. {companyname} provides Docker images through the {companyname} Cloud Registry. A access token will be provided by {companyname} to log into the registry to retrieve the Docker image and run the container.
+The {enterpriseversion} server-side components can be deployed on Docker orchestration applications such as link:https://kubernetes.io/[Kubernetes^], link:https://docs.docker.com/engine/swarm/[Docker Swarm^], or link:https://www.openshift.com/[OpenShift^]. {companyname} provides Docker images through the {companyname} Cloud Registry. An access token will be provided by {companyname} to log into the registry to retrieve the Docker image and run the container.
 
 == Containerized services for Self-hosted Enterprise deployments
 

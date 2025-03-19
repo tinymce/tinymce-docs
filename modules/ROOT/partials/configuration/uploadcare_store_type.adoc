@@ -1,10 +1,10 @@
 [[uploadcare-store-type]]
 == `uploadcare_store_type`
 
-Specifies the storage type for uploaded files. Use this option to control whether files are stored temporarily or permanently, or allow Uploadcare to decide automatically based on your account settings.
+Specifies the storage type for uploaded files. Use this option to control whether files are stored temporarily or permanently, or allow Uploadcare to decide automatically based on your project settings.
 
-* `auto`: Uploadcare decides the storage type.
-* `temporary`: Files are stored temporarily and will expire after a certain period.
+* `auto`: Defer the choice of storage behavior to the auto-store setting in the Uploadcare Dashboard.
+* `temporary`: Files are stored temporarily and removed after 24 hours.
 * `permanent`: Files are stored permanently in your Uploadcare account.
 
 Select the appropriate value based on your application's requirements, such as whether files should persist for long-term use or be available for a limited time.
@@ -24,6 +24,6 @@ tinymce.init({
   plugins: 'uploadcare',
   toolbar: 'uploadcare',
   uploadcare_public_key: '<your-public-key>',
-  uploadcare_store_type: 'permanent',
+  uploadcare_store_type: 'temporary',
 });
 ----

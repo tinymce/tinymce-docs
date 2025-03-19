@@ -2,7 +2,7 @@
 :release-version: 7.7.2
 :navtitle: {productname} {release-version}
 :description: Release notes for {productname} {release-version}
-:keywords: releasenotes, bugfixes, security
+:keywords: releasenotes, bugfixes
 :page-toclevels: 1
 
 include::partial$misc/admon-releasenotes-for-stable.adoc[]
@@ -11,26 +11,18 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[overview]]
 == Overview
 
-{productname} {release-version} was released for {enterpriseversion} and {cloudname} on <weekday>, <month> <DD>^<st|nd|rd|th>^, <YYYY>. These release notes provide an overview of the changes for {productname} {release-version}, including:
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, March 19^th^, 2025. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
 // Remove sections and section boilerplates as necessary.
 // Pluralise as necessary or remove the placeholder plural marker.
 * xref:bug-fixes[Bug fixes]
-* xref:security-fixes[Security fixes]
 
 [[bug-fixes]]
 == Bug fixes
 
 {productname} {release-version} also includes the following bug fixes:
 
-=== Exception was thrown when trying to use the context form API after the toolbar was detached.
-// #TINY-11781
-
-Previously, an error occurred when the `setValue` function from the xref:contextform.adoc#formapi[Context Form API] was called after the toolbar had been detached from the DOM. As a result, developers were unable to retrieve the value of the Context Form when using the API after the form had been closed.
-
-{productname} {release-version} resolves this issue by ensuring that developers can now reliably get and set the value of the Context Form even after it has been detached.
-
-=== Exception occurs when pressing `tab` in the last cell of a non-editable table
+=== Error was thrown when pressing `tab` in the last cell of a non-editable table.
 // #TINY-11797
 
 Previously in {productname}, an issue was identified where pressing `Tab` in the last cell of a non-editable table attempted to insert a new row and move the selection to it. This behavior resulted in an infinite loop. Additionally, if `Tab` was pressed in an editable cell and the next cell was a `contentEditable="false"` (`CEF`) cell, with a `contenteditable="true"` element inside, the focus would skip the `CEF` cell.
@@ -44,7 +36,14 @@ This issue also triggered error messages when pressing `Tab` in the last cell of
 
 These improvements enhance table navigation, prevent unnecessary error messages, and optimize performance when working with non-editable tables.
 
-=== Deleting an empty block within an `<li>` element would move the cursor at the end of the `<li>` element.
+=== Error was thrown when trying to use the context form API after a component was detached.
+// #TINY-11781
+
+Previously, an error occurred when the `setValue` function from the xref:contextform.adoc#formapi[Context Form API] was called after the toolbar had been detached from the DOM. As a result, developers were unable to retrieve the value of the Context Form when using the API after the form had been closed.
+
+{productname} {release-version} resolves this issue by ensuring that developers can now reliably get and set the value of the Context Form even after it has been detached.
+
+=== Deleting an empty block within an `<li>` element would move cursor to the end of the `<li>`.
 // #TINY-11763
 
 In previous versions of {productname}, an issue was identified where deleting an empty block within an `<li>` element would unexpectedly reposition the cursor at the end of the `<li>` element. Additionally, deleting an empty block located between two lists could trigger an error if all elements were nested within the same `<li>` element.
@@ -52,13 +51,3 @@ In previous versions of {productname}, an issue was identified where deleting an
 These issues led to confusing behavior, as users experienced unintended cursor movement and encountered error messages.
 
 {productname} {release-version} resolves these issues by improving the list behavior. As a result, the cursor remains stable, and users no longer experience unexpected movements or error messages.
-
-[[security-fixes]]
-== Security fixes
-
-{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.

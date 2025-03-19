@@ -4,6 +4,18 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+== xref:7.7.2-release-notes.adoc[7.7.2 - 2025-03-19]
+
+=== Fixed
+* Error was thrown when pressing tab in the last cell of a non-editable table.
+// #TINY-11797
+* Error was thrown when trying to use the context form API after a component was detached.
+// #TINY-11781
+* Deleting an empty block within an <li> element would move cursor to the end of the <li>.
+// #TINY-11763
+* Deleting an empty block that was between two lists would throw an Error when all three elements were nested inside a list.
+// #TINY-11763
+
 == xref:7.7.1-release-notes.adoc[7.7.1 - 2025-03-05]
 
 === Fixed

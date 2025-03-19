@@ -1,0 +1,67 @@
+= Track Changes Plugin
+:navtitle: Track Changes 
+:description: A view that allows users to review document changes made by multiple authors
+:description_short: A view of tracked changes made by multiple authors
+:keywords: plugin, Track Changes, changes, diff
+:pluginname: Track Changes
+:plugincode: trackchanges
+:plugincategory: premium
+
+include::partial$misc/admon-revisionhistory-paid-addon-pricing.adoc[]
+
+include::partial$misc/admon-requires-8.0v.adoc[]
+
+The Track Changes plugin allows users to easily review and manage changes made to a document by multiple authors. 
+
+== Interactive example
+
+== How it works
+
+== Basic setup
+
+To setup the {pluginname} plugin in the editor:
+
+* add `{plugincode}` to the `plugins` option in the editor configuration;
+* add `{plugincode}` to the `toolbar` option in the editor configuration;
+
+For example:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'trackchanges',
+  toolbar: 'trackchanges',
+  // track changes options 
+});
+----
+
+== Data structure
+
+== Options
+
+The following configuration options affect the behavior of the {pluginname} plugin.
+
+include::partial$configuration/trackchanges-options.adoc[]
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+
+== Commands
+
+The {pluginname} plugin provides the following {productname} commands.
+
+include::partial$commands/{plugincode}-cmds.adoc[]
+
+== Events
+
+The {pluginname} plugin provides the following events.
+
+include::partial$events/{plugincode}-events.adoc[]
+
+== APIs
+
+The {pluginname} plugin provide the following APIs.
+
+include::partial$plugin-apis/{plugincode}-apis.adoc[]

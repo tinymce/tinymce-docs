@@ -36,11 +36,11 @@ Please ensure that you configure your Java Server (Tomcat/Jetty etc) with a mini
 [[deploy-server-side-components]]
 == Step 2. Deploy server-side components
 
-Deploy all the WAR files that came packaged with the {productname} Enterprise Self-hosted package to your newly installed Java application server:
+Deploy all the WAR files that came packaged with the {productname} Enterprise Self-hosted package to your newly installed application server:
 
-* ephox-spelling.war
-* ephox-image-proxy.war
-* ephox-hyperlinking.war
+* `ephox-spelling.war`
+* `ephox-image-proxy.war`
+* `ephox-hyperlinking.war`
 
 The easiest way to deploy these files is to copy them into the _webapps_ directory of your Tomcat/Jetty installation and then restart the application server.
 

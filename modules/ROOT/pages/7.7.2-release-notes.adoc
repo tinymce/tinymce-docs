@@ -23,7 +23,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 === Error was thrown when pressing `Tab` in the last cell of a non-editable table.
 // #TINY-11797
 
-Previously in {productname}, an issue was identified where pressing `Tab` in the last cell of a non-editable table attempted to insert a new row and move the selection to it. This behavior resulted in an infinite loop. Additionally, if `Tab` was pressed in an editable cell and the next cell was a `contentEditable="false"` (`CEF`) cell, with a `contenteditable="true"` element inside, the focus would skip the `CEF` cell.
+Previously in {productname}, an issue was identified where pressing `Tab` in the last cell of a non-editable table attempted to insert a new row and move the selection to it. This behavior resulted in an infinite loop. Additionally, if `Tab` was pressed in an editable cell and the next cell was a `contenteditable="false"` (`CEF`) cell, with a `contenteditable="true"` element inside, the focus would skip the `CEF` cell.
 
 This issue also triggered error messages when pressing `Tab` in the last cell of a non-editable table, negatively impacting page performance.
 

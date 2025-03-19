@@ -1,0 +1,23 @@
+[cols="1,1,4",options="header"]
+|===
+|Name   |Arguments    |Description
+
+|<api1> |<arguments1> |<What api1 does>
+// Markup to add a ‘requires this version of TinyMCE’ admonition into its own row
+// immediately above the event requiring such a notice.
+// If not needed, remove the markup and this comment.
+// If needed, edit the file-name and remove this comment.
+3+|
+//include::partial$misc/admon-requires-<version.version>v.adoc[]
+|<api2> |<arguments2> |<What api2 does>
+|===
+
+.Examples
+[source,js]
+----
+// what this example does
+tinymce.activeEditor.plugins.<plugincode>.<api1>(<arguments1>);
+
+// what this example does
+tinymce.activeEditor.plugins.<plugincode>.<api2>(<arguments2>);
+----

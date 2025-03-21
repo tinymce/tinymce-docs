@@ -2,22 +2,20 @@
 |===
 |Name   |Arguments    |Description
 
-|<api1> |<arguments1> |<What api1 does>
-// Markup to add a ‘requires this version of TinyMCE’ admonition into its own row
-// immediately above the event requiring such a notice.
-// If not needed, remove the markup and this comment.
-// If needed, edit the file-name and remove this comment.
-3+|
-//include::partial$misc/admon-requires-<version.version>v.adoc[]
-|<api2> |<arguments2> |<What api2 does>
+|getModel |N/A |Return a xref:#trackeddocument[TrackedDocument] `+Object+` of the document. 
+|resetModel |N/A |Reset the document to its original state. 
+|hasChanges |N/A |Return a boolean value indicating whether the document contains changes to be reviewed.  
 |===
 
 .Examples
 [source,js]
 ----
-// what this example does
-tinymce.activeEditor.plugins.<plugincode>.<api1>(<arguments1>);
+// Get the current model of the document
+tinymce.activeEditor.plugins.trackchanges.getModel();
 
-// what this example does
-tinymce.activeEditor.plugins.<plugincode>.<api2>(<arguments2>);
+// Reset the document model to its original state 
+tinymce.activeEditor.plugins.trackchanges.resetModel();
+
+// Check if document contains changes to be reviewed 
+tinymce.activeEditor.plugins.trackchanges.hasChanges();
 ----

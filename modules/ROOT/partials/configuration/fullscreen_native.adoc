@@ -13,6 +13,9 @@ The `+fullscreen_native+` option allows the editor to use the browser full scree
 
 *Possible values:* `+true+`, `+false+`
 
+[NOTE]
+This option is only supported when {productname} is in classic mode. It is not supported in inline mode.
+
 === Example: using `+fullscreen_native+`
 
 To use the browser-native full screen mode for the {productname} editor, set `+fullscreen_native+` to `+true+`. For example:

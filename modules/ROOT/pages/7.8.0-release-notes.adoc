@@ -70,22 +70,6 @@ The {productname} {release-version} release includes an accompanying release of 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
 
-=== Image Optimizer (Powered by Uploadcare)
-
-{productname} {release-version} introduces the **Image Optimizer (Powered by Uploadcare)** plugin.
-
-**Image Optimizer** includes the following fix.
-
-==== Dragging and dropping image files onto the placeholder was not possible if the files had the correct extension but an incorrect MIME type.
-// #TINY-11842
-
-In previous versions of the **Image Optimizer** premium plugin, dragging and dropping supported image files onto the placeholder could fail due to inconsistent file type detection. The issue occurred because only the MIME type or the file extension was checked, resulting in discrepancies when handling certain image files.
-
-{productname} {release-version} resolves this issue by updating file type detection to consider both the MIME type and the file extension when verifying supported formats. This enhancement ensures more reliable and consistent behavior when dragging and dropping image files.
-
-For information on the **Image Optimizer (Powered by Uploadcare)** plugin, see xref:uploadcare.adoc[Image Optimizer (Powered by Uploadcare)].
-
-
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement
 

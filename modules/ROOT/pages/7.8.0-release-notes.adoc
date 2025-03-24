@@ -114,6 +114,47 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== New subtoolbar support for context toolbars.
+// #TINY-11748
+
+{productname} {release-version} introduces support for multi-level context toolbars, enabling more advanced and interactive editing experiences directly within the editor interface. Previously, developers had to manually configure separate toolbars and manage transitions between them using predicate logic. This release simplifies that process by adding a new API for defining and navigating subtoolbars, similar to the existing context form functionality.
+
+A new `+navigateback+` button streamlines navigation between toolbar levels, while improved focus management ensures input fields are automatically focused when switching toolbars. These enhancements provide a more flexible, intuitive, and responsive workflow for both developers and end users.
+
+.Example of a multi-level context toolbar configuration:
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',
+  height: 350,
+  setup: (editor) => {
+    editor.ui.registry.addContextToolbar('bar', {
+      predicate: () => true,
+      items: 'bold italic | undo redo | subbar1',
+      position: 'line',
+      scope: 'editor'
+    });
+
+    editor.ui.registry.addContextToolbar('subbar1', {
+      launch: { text: 'Subbar 1' },
+      items: 'navigateback bold italic | undo redo | subbar2'
+    });
+
+    editor.ui.registry.addContextToolbar('subbar2', {
+      launch: { text: 'Subbar 2' },
+      items: 'navigateback bold italic | undo redo | subbar3'
+    });
+
+    editor.ui.registry.addContextToolbar('subbar3', {
+      launch: { text: 'Subbar 3' },
+      items: 'navigateback bold italic | undo redo'
+    });
+  }
+});
+----
+
+For more information on context toolbars, see xref:contexttoolbar.adoc[Context toolbars].
+
 
 [[additions]]
 == Additions

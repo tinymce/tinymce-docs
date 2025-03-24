@@ -60,6 +60,34 @@ items: [
 ]
 ----
 
+[NOTE]
+For editors using 7.8.0+, context toolbars also support the `+navigateback+` button for multi-level toolbar navigation. This built-in button allows returning to the previous context toolbar when using nested toolbars.
+
+.Example of a multi-level context toolbar configuration:
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',
+  setup: (editor) => {
+    // Register the main context toolbar named 'bar'
+    editor.ui.registry.addContextToolbar('bar', {
+      predicate: () => true, // Always show the toolbar when triggered
+      items: 'bold italic | undo redo | subbar1', // Toolbar buttons and nested toolbar trigger
+      position: 'line',
+      scope: 'editor'
+    });
+
+    // Register a nested context toolbar named 'subbar1'
+    editor.ui.registry.addContextToolbar('subbar1', {
+      launch: { text: 'Subbar 1' }, // Button label that appears in the parent toolbar
+      items: 'navigateback bold italic | undo redo | subbar2' 
+      // 'navigateback' allows users to return to the previous toolbar
+      // 'subbar2' is another nested toolbar (can be defined similarly)
+    });
+  }
+});
+----
+
 liveDemo::context-toolbar-labels[height="600", tab="js"]
 
 == Launching a context toolbar programmatically

@@ -2,8 +2,9 @@
 |===
 |Name   |Arguments    |Description
 
-|getModel |N/A |Return a xref:#trackeddocument[TrackedDocument] `+Object+` of the document. 
-|resetModel |N/A |Reset the document to its original state. 
+|getModel |N/A |Return an object representing the document model used to store tracked changes data. 
+//|setModel |xref:#trackeddocument[TrackedDocument] `+Object+` | Set the current model of the document. 
+//|resetModel |N/A |Reset the document to its original state. 
 |hasChanges |N/A |Return a boolean value indicating whether the document contains changes to be reviewed.  
 |===
 
@@ -13,9 +14,24 @@
 // Get the current model of the document
 tinymce.activeEditor.plugins.trackchanges.getModel();
 
+// Check if document contains changes to be reviewed 
+tinymce.activeEditor.plugins.trackchanges.hasChanges();
+----
+
+////
+.Examples
+[source,js]
+----
+// Get the current model of the document
+tinymce.activeEditor.plugins.trackchanges.getModel();
+
+// Set current model of the document 
+tinymce.activeEditor.plugins.trackchanges.setModel(model);
+
 // Reset the document model to its original state 
 tinymce.activeEditor.plugins.trackchanges.resetModel();
 
 // Check if document contains changes to be reviewed 
 tinymce.activeEditor.plugins.trackchanges.hasChanges();
 ----
+////

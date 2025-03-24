@@ -21,12 +21,43 @@ include::partial$misc/admon-iframe-only.adoc[]
 
 == How it works
 
+The Track Changes plugin monitors edits made to a document by comparing its current state to the original version. Each change is attributed to its respective author and can be approved or rejected before being applied to the document.
+
+[NOTE]
+Since the comparison is made against the original version of the document, if there are unresolved changes by multiple authors affecting the same part, the most recent change will be used for comparison. The `hasChanges` API can be used to implement a safeguard that prevents further edits on a document with unresolved changes.
+
+The plugin includes a dedicated view for reviewing current changes, accessible via the `{plugincode} toolbar button or the menu option under the `View` menu. The key components are:
+
+. **Read-only Diff View**:
++
+Highlights the current changes made to the document, using the following color codes:  
++
+* Green: New content. 
+* Blue: Modified content. Modifications to HTML content implies attributes or formatting (e.g. bold, italic, etc.).
+* Red: Removed content.
+
+. **Sidebar**:
++
+Contains a header with the following buttons: 
++
+* Show Changes: A toggle button which hides/unhides the change annotations. 
+* Complete: Ends the review applies the resolved changes. 
+* Cancel: Ends the review without any further action.
+
++
+The sidebar also displays all tracked changes that need to be resolved. Each change can be handled in the following ways:
+* Accept: Applies the change to the document. 
+* Reject: Removes the change from the document. 
+* Revert: Undoes a previously accepted or rejected change. 
+
 == Basic setup
 
 To setup the {pluginname} plugin in the editor:
 
 * add `{plugincode}` to the `plugins` option in the editor configuration;
 * add `{plugincode}` to the `toolbar` option in the editor configuration;
+* add `{plugincode}_model` to the editor configuration. 
+* add `{plugincode}_uid` to the editor configuration. 
 
 For example:
 
@@ -36,44 +67,21 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'trackchanges',
   toolbar: 'trackchanges',
-  // track changes options 
+  trackchanges_model: {
+    version: 1, 
+    maxId: 0, 
+    contents: [
+      {
+        type: 'p',
+        children: [
+          { text: 'Hello, World!' }
+        ]
+      }
+    ]
+  }
+  trackchanges_uid: 'unique-identifier' // replace this with a unique string to identify the user 
 });
 ----
-
-== Data structure
-
-=== TrackedDocument
-
-`TrackedDocument` is an `+Object+` that contains the following fields:
-
-[cols="1,1,1,3",options="header"]
-|===
-| Field          | Type       | Required? | Description
-| `+version+` | `+Number+` | required  | <description> 
-| `+maxId+` | `+Number+` | required  | <description>
-| `+contents+` | xref:#trackednode[TrackedNode] `+Object+` `+Array+` | required  | <description>
-|===
-
-=== TrackedNode
-
-`TrackedNode` is an `+Object+` that contains the following fields:
-
-[cols="1,1,1,3",options="header"]
-|===
-| Field          | Type       | Required? | Description
-| `+type+` | `+String+` | required  | <description>
-| `+attrs+` | `` | optional  | <description>
-| `+oldAttrs+` | `` | optional  | <description>
-| `+text+` | `+String+` | required  | <description>
-| `+_opData+` | xref:#trackedData[TrackedData] `+Object+` `+Array+` | optional  | <description> 
-| `+format+` | xref:#textformat[TextFormat] `+Object+` | optional  | <description>
-| `+oldFormat+` | xref:#textformat[TextFormat] `+Object+` | optional  | <description>
-| `+children+` | xref:#trackednode[TrackedNode] `+Object+` `+Array+` | optional  | <description>
-|===
-
-=== TrackedData
-
-=== TextFormat
 
 == Options
 

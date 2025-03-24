@@ -1,19 +1,9 @@
 [[trackchanges_model]]
 == `trackchanges_model`
 
-////
-What does the option do?
-Why use it?
-When use it?
-What values can it use?
-What do these values do?
-Are there risks?
-  - Explain without using ‘risk’ or similar words.
-  - Use NOTE or IMPORTANT admonitions if helpful.
-  - For longer or more complicated scenarios, use the limitations section below.
-////
+The `trackchanges_model` option sets the initial model of the document to be begin tracking changes. It takes as input an object representing the document. If no value is set, the plugin will generate the model by default. 
 
-*Type:* xref:#trackeddocument[TrackedDocument] `+Object+`
+//*Type:* xref:#trackeddocument[TrackedDocument] `+Object+`
 
 === Example: using `trackchanges_model`
 
@@ -22,306 +12,99 @@ Are there risks?
 ----
 tinymce.init({
   selector: 'textarea',  // Change this value according to your HTML
-  <configuration_option>: '<value>'
+  plugins: 'trackchanges',
+  toolbar: 'trackchanges',
+  trackchanges_model: {
+    version: 1, 
+    maxId: 0, 
+    contents: [
+      {
+        type: 'p',
+        children: [
+          { text: 'Hello, World!' }
+        ]
+      }
+    ]
+  }
 });
 ----
-
-// Add a working and tested configuration (edit as required)
-// or remove if not applicable.
-=== Example: disabling the <feature>
-
-To disable <feature>, set `<configuration_option>` to `false`.
-
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',  // Change this value according to your HTML
-  <configuration_option>: 'false'
-});
-----
-
-// Remove if not applicable.
-=== Limitation<s> of the `<configuration_option>` option
-
-The `<configuration_option>` option has the following limitations.
-
-////
-Known limitations.
-Complicated scenarios.
-Anything that warrants a CAUTION or WARNING admonition.
-////
 
 [[trackchanges_uid]]
 == `trackchanges_uid`
 
-*Type:* `+String+`
-
-
-////
-What does the option do?
-Why use it?
-When use it?
-What values can it use?
-What do these values do?
-Are there risks?
-  - Explain without using ‘risk’ or similar words.
-  - Use NOTE or IMPORTANT admonitions if helpful.
-  - For longer or more complicated scenarios, use the limitations section below.
-////
-
-=== Example: using `<configuration_option>`
-
-// Add a working and tested configuration.
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',  // Change this value according to your HTML
-  <configuration_option>: '<value>'
-});
-----
-
-// Add a working and tested configuration (edit as required)
-// or remove if not applicable.
-=== Example: disabling the <feature>
-
-To disable <feature>, set `<configuration_option>` to `false`.
-
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',  // Change this value according to your HTML
-  <configuration_option>: 'false'
-});
-----
-
-// Remove if not applicable.
-=== Limitation<s> of the `<configuration_option>` option
-
-The `<configuration_option>` option has the following limitations.
-
-////
-Known limitations.
-Complicated scenarios.
-Anything that warrants a CAUTION or WARNING admonition.
-////
-
-[[trackchanges_role]]
-== `trackchanges_role`
+The `trackchanges_uid` is a _required_ option that takes as input a unique string to identify the current user. This is used to attribute changes made by the user.  
 
 *Type:* `+String+`
 
-*Possible values:* `'admin'`, `'reviewer'`, `'contributor'`, `'viewer'`, `'none'`,
-
-*Default value:* `'admin'`
-
-
-////
-What does the option do?
-Why use it?
-When use it?
-What values can it use?
-What do these values do?
-Are there risks?
-  - Explain without using ‘risk’ or similar words.
-  - Use NOTE or IMPORTANT admonitions if helpful.
-  - For longer or more complicated scenarios, use the limitations section below.
-////
-
-=== Example: using `<configuration_option>`
+=== Example: using `trackchanges_uid`
 
 // Add a working and tested configuration.
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // Change this value according to your HTML
-  <configuration_option>: '<value>'
+  plugins: 'trackchanges',
+  toolbar: 'trackchanges',
+  trackchanges_uid: 'unique-identifier' // replace this with a unique string to identify the user 
 });
 ----
-
-// Add a working and tested configuration (edit as required)
-// or remove if not applicable.
-=== Example: disabling the <feature>
-
-To disable <feature>, set `<configuration_option>` to `false`.
-
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',  // Change this value according to your HTML
-  <configuration_option>: 'false'
-});
-----
-
-// Remove if not applicable.
-=== Limitation<s> of the `<configuration_option>` option
-
-The `<configuration_option>` option has the following limitations.
-
-////
-Known limitations.
-Complicated scenarios.
-Anything that warrants a CAUTION or WARNING admonition.
-////
-
-[[trackchanges_user_lookup]]
-== `trackchanges_user_lookup`
-
-*Type:* `+Function+`
-
-
-////
-What does the option do?
-Why use it?
-When use it?
-What values can it use?
-What do these values do?
-Are there risks?
-  - Explain without using ‘risk’ or similar words.
-  - Use NOTE or IMPORTANT admonitions if helpful.
-  - For longer or more complicated scenarios, use the limitations section below.
-////
-
-=== Example: using `<configuration_option>`
-
-// Add a working and tested configuration.
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',  // Change this value according to your HTML
-  <configuration_option>: '<value>'
-});
-----
-
-// Add a working and tested configuration (edit as required)
-// or remove if not applicable.
-=== Example: disabling the <feature>
-
-To disable <feature>, set `<configuration_option>` to `false`.
-
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',  // Change this value according to your HTML
-  <configuration_option>: 'false'
-});
-----
-
-// Remove if not applicable.
-=== Limitation<s> of the `<configuration_option>` option
-
-The `<configuration_option>` option has the following limitations.
-
-////
-Known limitations.
-Complicated scenarios.
-Anything that warrants a CAUTION or WARNING admonition.
-////
 
 [[trackchanges_css_url]]
 == `trackchanges_css_url`
+
+The `trackchanges_css_url` option sets the location where a CSS file containing change annotations in the {pluginname} view should be loaded from. To override the default CSS classes, use this option alongside `trackchanges_diff_classes`. 
 
 *Type:* `+String+`
 
 *Default value:* `'${pluginUrl}/css/trackchanges.css'`
 
-
-////
-What does the option do?
-Why use it?
-When use it?
-What values can it use?
-What do these values do?
-Are there risks?
-  - Explain without using ‘risk’ or similar words.
-  - Use NOTE or IMPORTANT admonitions if helpful.
-  - For longer or more complicated scenarios, use the limitations section below.
-////
-
-=== Example: using `<configuration_option>`
+=== Example: using `trackchanges_css_url`
 
 // Add a working and tested configuration.
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // Change this value according to your HTML
-  <configuration_option>: '<value>'
+  trackchanges_css_url: './trackchanges.css'
 });
 ----
-
-// Add a working and tested configuration (edit as required)
-// or remove if not applicable.
-=== Example: disabling the <feature>
-
-To disable <feature>, set `<configuration_option>` to `false`.
-
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',  // Change this value according to your HTML
-  <configuration_option>: 'false'
-});
-----
-
-// Remove if not applicable.
-=== Limitation<s> of the `<configuration_option>` option
-
-The `<configuration_option>` option has the following limitations.
-
-////
-Known limitations.
-Complicated scenarios.
-Anything that warrants a CAUTION or WARNING admonition.
-////
 
 [[trackchanges_diff_classes]]
 == `trackchanges_diff_classes`
 
+The `trackchanges_diff_classes` option configures the CSS classes applied to the change annotations in the {pluginname} view. This is useful to set custom styles and must be used in combination with the `trackchanges_css_url` option. 
+
+[NOTE]
+The CSS class names must exist in the xref:trackchanges_css_url[`+trackchanges_css_url+`].
+
 *Type:* `+Object+`
 
-////
-What does the option do?
-Why use it?
-When use it?
-What values can it use?
-What do these values do?
-Are there risks?
-  - Explain without using ‘risk’ or similar words.
-  - Use NOTE or IMPORTANT admonitions if helpful.
-  - For longer or more complicated scenarios, use the limitations section below.
-////
+*Default value:* `addition`, `removal`, `modification`
 
-=== Example: using `<configuration_option>`
+Below are the default CSS classes: 
 
-// Add a working and tested configuration.
 [source,js]
 ----
-tinymce.init({
-  selector: 'textarea',  // Change this value according to your HTML
-  <configuration_option>: '<value>'
-});
+{
+  addition: 'tox-trackchanges__annotation--added',
+  removal: 'tox-trackchanges__annotation--removed',
+  modification: 'tox-trackchanges__annotation--modified'
+}
 ----
 
-// Add a working and tested configuration (edit as required)
-// or remove if not applicable.
-=== Example: disabling the <feature>
-
-To disable <feature>, set `<configuration_option>` to `false`.
+=== Example: using `trackchanges_diff_classes`
 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // Change this value according to your HTML
-  <configuration_option>: 'false'
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'trackchanges',
+  toolbar: 'trackchanges',
+  trackchanges_css_url: './trackchanges.css',
+  trackchanges_diff_classes: {
+    addition: 'added',
+    removal: 'removed',
+    modification: 'modified'
+  }
 });
 ----
-
-// Remove if not applicable.
-=== Limitation<s> of the `<configuration_option>` option
-
-The `<configuration_option>` option has the following limitations.
-
-////
-Known limitations.
-Complicated scenarios.
-Anything that warrants a CAUTION or WARNING admonition.
-////

@@ -70,6 +70,19 @@ The {productname} {release-version} release includes an accompanying release of 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
 
+=== Image Optimizer (Powered by Uploadcare)
+
+{productname} {release-version} introduces the **Image Optimizer (Powered by Uploadcare)** plugin.
+
+**Image Optimizer** includes the following fix.
+
+=== Non-uploadcare image URLs would be altered by color adjustments even when they failed to upload.
+// #TINY-11761
+
+Previously, applying color filters to images that had not yet been successfully uploaded to Uploadcare could result in broken image links if the server returned an error. This occurred because the original image was modified before confirming a successful upload. With this update, {productname} now preserves the original image until a successful upload is completed, ensuring that image functionality remains intact even if an upload fails. This change improves the reliability of the image upload and editing workflow in {release-version}.
+
+For information on the **Image Optimizer (Powered by Uploadcare)** plugin, see xref:uploadcare.adoc[Image Optimizer (Powered by Uploadcare)].
+
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement
 

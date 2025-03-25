@@ -114,6 +114,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== The `+editor.selection.scrollIntoView()+` method now pads the target scroll area with a small margin, ensuring content doesn't sit at the very edge of the viewport.
+// #TINY-11786
+
+Previously, when cycling through accessibility issues in the a11y checker dialog, the highlighted content could appear aligned to the very edge of the viewport, making it difficult to identify and visually track. This behavior impacted usability by reducing the effectiveness of the a11y checker tool.
+
+In {productname} {release-version}, the `+editor.selection.scrollIntoView()+` method was updated to include a top margin, aligning the highlighted content to a fixed 30px from the top of the viewport. Additionally, a visual overlay was introduced to draw attention to the selected element. These changes improve visibility, provide smoother and more intuitive scroll positioning, and enhance the overall user experience when navigating accessibility issues in {productname}.
+
 
 [[additions]]
 == Additions

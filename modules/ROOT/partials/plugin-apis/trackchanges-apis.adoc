@@ -2,7 +2,7 @@
 |===
 |Name   |Arguments    |Description
 
-|getModel |N/A |Return an object representing the document model used to store tracked changes data. 
+|getModel |N/A |Return an object representing the document model used to store data of the tracked changes. 
 //|setModel |xref:#trackeddocument[TrackedDocument] `+Object+` | Set the current model of the document. 
 //|resetModel |N/A |Reset the document to its original state. 
 |hasChanges |N/A |Return a boolean value indicating whether the document contains changes to be reviewed.  

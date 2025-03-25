@@ -23,10 +23,7 @@ include::partial$misc/admon-iframe-only.adoc[]
 
 The Track Changes plugin monitors edits made to a document by comparing its current state to the original version. Each change is attributed to its respective author and can be approved or rejected before being applied to the document.
 
-[NOTE]
-Since the comparison is made against the original version of the document, if there are unresolved changes by multiple authors affecting the same part, the most recent change will be used for comparison. The `hasChanges` API can be used to implement a safeguard that prevents further edits on a document with unresolved changes.
-
-The plugin includes a dedicated view for reviewing current changes, accessible via the `{plugincode} toolbar button or the menu option under the `View` menu. The key components are:
+The plugin includes a dedicated view for reviewing current changes, accessible via the `{plugincode}` toolbar button or the menu option under the `View` menu. The key components are:
 
 . **Read-only Diff View**:
 +
@@ -41,7 +38,7 @@ Highlights the current changes made to the document, using the following color c
 Contains a header with the following buttons: 
 +
 * Show Changes: A toggle button which hides/unhides the change annotations. 
-* Complete: Ends the review applies the resolved changes. 
+* Complete: Ends the review and applies the resolved changes. 
 * Cancel: Ends the review without any further action.
 
 +
@@ -110,3 +107,11 @@ include::partial$events/{plugincode}-events.adoc[]
 The {pluginname} plugin provides the following APIs.
 
 include::partial$plugin-apis/{plugincode}-apis.adoc[]
+
+////
+== Known Limitations 
+
+[NOTE]
+Since the comparison is made against the original version of the document, if there are unresolved changes by multiple authors affecting the same part, the most recent change will be used for comparison. The `hasChanges` API can be used to implement a safeguard that prevents further edits on a document with unresolved changes.
+
+////

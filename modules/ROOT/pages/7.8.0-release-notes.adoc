@@ -70,6 +70,20 @@ The {productname} {release-version} release includes an accompanying release of 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
 
+=== Comments
+
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** includes the following fix.
+
+=== The `change` event was not dispatched when deleting a comment reply.
+// #TINY-11830
+
+Previously, deleting a comment reply did not dispatch a `change` event, which prevented the {productname} Save plugin from detecting the editor as modified. As a result, the “Save” button remained disabled after deleting a reply, potentially leading to lost changes. This issue has been resolved in {release-version}. Deleting a comment reply now correctly triggers a dirty state, ensuring the Save plugin enables the “Save” button as expected.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
+
+
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement
 

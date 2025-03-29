@@ -1,6 +1,8 @@
-const fetchApi = import(
-    'https://unpkg.com/@microsoft/fetch-event-source@2.0.1/lib/esm/index.js'
-).then((module) => module.fetchEventSource);
+const openai = import(
+    'https://cdn.jsdelivr.net/npm/openai@4.90.0'
+).then((OpenAI) => new OpenAI({
+    baseURL: '{{ openai_proxy_url }}'
+}));
 
 const ai_request = (request, respondWith) => {
     respondWith.stream((signal, streamMessage) => {
@@ -72,24 +74,6 @@ const ai_request = (request, respondWith) => {
             body: JSON.stringify(requestBody),
         };
 
-        const onopen = async (response) => {
-            if (response) {
-                const contentType = response.headers.get('content-type');
-                if (response.ok && contentType?.includes('text/event-stream')) {
-                    return;
-                } else if (contentType?.includes('application/json')) {
-                    const data = await response.json();
-                    if (data.error) {
-                        throw new Error(
-                            `${data.error.type}: ${data.error.message}`
-                        );
-                    }
-                }
-            } else {
-                throw new Error('Failed to communicate with the ChatGPT API');
-            }
-        };
-
         // This function passes each new message into the plugin via the `streamMessage` callback.
         const onmessage = (ev) => {
             const data = ev.data;
@@ -110,28 +94,14 @@ const ai_request = (request, respondWith) => {
             throw error;
         };
 
-        // Use microsoft's fetch-event-source library to work around the 2000 character limit
-        // of the browser `EventSource` API, which requires query strings
-        return fetchApi
-            .then((fetchEventSource) =>
-                fetchEventSource('{{ openai_proxy_url }}', {
-                    ...openAiOptions,
-                    openWhenHidden: true,
-                    onopen,
-                    onmessage,
-                    onerror,
-                })
-            )
-            .then(async (response) => {
-                if (response && !response.ok) {
-                    const data = await response.json();
-                    if (data.error) {
-                        throw new Error(
-                            `${data.error.type}: ${data.error.message}`
-                        );
-                    }
+        return openai
+            .then((client) => client.responses.create(openAiOptions)
+            .then((stream) => {
+                console.log('Stream created');
+                for (const event of stream) {
+                    event.then(onmessage).catch(onerror);
                 }
-            })
+            }))
             .catch(onerror);
     });
 };

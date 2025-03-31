@@ -1,9 +1,9 @@
-= Track Changes Plugin
-:navtitle: Track Changes 
+= Suggested Edits Plugin
+:navtitle: Suggested Edits 
 :description: A view that allows users to review document changes made by multiple authors
 :description_short: A view of tracked changes made by multiple authors
-:keywords: plugin, Track Changes, changes, diff
-:pluginname: Track Changes
+:keywords: plugin, Suggested Edits, changes, diff
+:pluginname: Suggested Edits
 :plugincode: trackchanges
 :plugincategory: premium
 
@@ -11,7 +11,7 @@ include::partial$misc/admon-revisionhistory-paid-addon-pricing.adoc[]
 
 include::partial$misc/admon-requires-8.0v.adoc[]
 
-The Track Changes plugin allows users to easily review and manage changes made to a document by multiple authors. 
+The Suggested Edits plugin allows users to easily review and manage changes made to a document by multiple authors. 
 
 == Interactive example
 
@@ -21,7 +21,7 @@ include::partial$misc/admon-iframe-only.adoc[]
 
 == How it works
 
-The Track Changes plugin monitors edits made to a document by comparing its current state to the original version. Each change is attributed to its respective author and can be approved or rejected before being applied to the document.
+The Suggested Edits plugin monitors edits made to a document by comparing its current state to the original version. Each change is attributed to its respective author and can be approved or rejected before being applied to the document.
 
 The plugin includes a dedicated view for reviewing current changes, accessible via the `{plugincode}` toolbar button or the menu option under the `View` menu. The key components are:
 

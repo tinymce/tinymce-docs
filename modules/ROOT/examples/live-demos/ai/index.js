@@ -1,6 +1,6 @@
-const fetchApi = import(
-    'https://unpkg.com/@microsoft/fetch-event-source@2.0.1/lib/esm/index.js'
-).then((module) => module.fetchEventSource);
+const fetchApi = import('https://cdn.skypack.dev/@microsoft/fetch-event-source@2.0.1')
+  .then((module) => module.fetchEventSource);
+ 
 
 const ai_request = (request, respondWith) => {
     respondWith.stream((signal, streamMessage) => {

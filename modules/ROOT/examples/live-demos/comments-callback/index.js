@@ -1,9 +1,9 @@
 tinymce.ScriptLoader.loadScripts(
   // Update to use UMD for broader compatibility browser support.
   [
-    '//unpkg.com/@pollyjs/core@5.1.1/dist/umd/pollyjs-core.js',
-    '//unpkg.com/@pollyjs/adapter-fetch@5.1.1/dist/umd/pollyjs-adapter-fetch.js',
-    '//unpkg.com/@pollyjs/persister-local-storage@5.1.1/dist/umd/pollyjs-persister-local-storage.js',
+    'https://cdn.jsdelivr.net/npm/@pollyjs/core@5.1.1/dist/umd/pollyjs-core.js',
+    'https://cdn.jsdelivr.net/npm/@pollyjs/adapter-fetch@5.1.1/dist/umd/pollyjs-adapter-fetch.js',
+    'https://cdn.jsdelivr.net/npm/@pollyjs/persister-local-storage@5.1.1/dist/umd/pollyjs-persister-local-storage.js',
   ]
 ).then(() => {
   /******************************

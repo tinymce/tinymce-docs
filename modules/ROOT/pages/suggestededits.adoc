@@ -4,7 +4,7 @@
 :description_short: A view of tracked changes made by multiple authors
 :keywords: plugin, Suggested Edits, changes, diff
 :pluginname: Suggested Edits
-:plugincode: trackchanges
+:plugincode: suggestededits
 :plugincategory: premium
 
 include::partial$misc/admon-revisionhistory-paid-addon-pricing.adoc[]
@@ -62,9 +62,9 @@ For example:
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: 'trackchanges',
-  toolbar: 'trackchanges',
-  trackchanges_model: {
+  plugins: 'suggestededits',
+  toolbar: 'suggestededits',
+  suggestededits_model: {
     version: 1, 
     maxId: 0, 
     contents: [
@@ -76,7 +76,7 @@ tinymce.init({
       }
     ]
   },
-  trackchanges_uid: 'unique-identifier' // replace this with a unique string to identify the user 
+  suggestededits_uid: 'unique-identifier' // replace this with a unique string to identify the user 
 });
 ----
 
@@ -84,7 +84,7 @@ tinymce.init({
 
 The following configuration options affect the behavior of the {pluginname} plugin.
 
-include::partial$configuration/trackchanges-options.adoc[leveloffset=+1]
+include::partial$configuration/suggestededits-options.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

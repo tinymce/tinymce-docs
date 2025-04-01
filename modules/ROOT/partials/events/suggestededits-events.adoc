@@ -3,9 +3,9 @@ The following events are provided by the xref:{plugincode}.adoc[{pluginname} plu
 [cols="1,1,2",options="header"]
 |===
 |Name       |Data                                       |Description
-|TrackChangesBeginReview   |N/A                   |Fired when the Track Changes view opens.
-|TrackChangesReviewComplete   |N/A |Fired when a review in the Track Changes view is completed. 
-|TrackChangesReviewCancelled |N/A                                        |Fired when a review in the Track Changes view is cancelled.
+|suggestededitsBeginReview   |N/A                   |Fired when the Suggested Edits view opens.
+|suggestededitsReviewComplete   |N/A |Fired when a review in the Suggested Edits view is completed. 
+|suggestededitsReviewCancelled |N/A                                        |Fired when a review in the Suggested Edits view is cancelled.
 // Markup to add a ‘requires this version of TinyMCE’ admonition into its own row
 // immediately above the event requiring such a notice.
 // If not needed, remove the markup and this comment.

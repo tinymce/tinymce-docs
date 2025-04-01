@@ -2,11 +2,11 @@
 |===
 |Command         |Description
 
-|trackchanges   |Toggle the Track Changes view
+|suggestededits   |Toggle the Suggested Edits view
 |===
 
 .Examples
 [source,js]
 ----
-tinymce.activeEditor.execCommand('trackchanges');
+tinymce.activeEditor.execCommand('suggestededits');
 ----

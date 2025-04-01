@@ -1,0 +1,22 @@
+[[onboarding]]
+== `+onboarding+`
+
+The cloud version of {productname} contains a promotion for paid features included in the 14-day trial. This promotion can be toggled on or off with the onboarding option.
+
+The promotion will automatically disappear when the trial ends.
+
+*Type:* `+Boolean+`
+
+*Default value:* `+true+` for cloud instances; otherwise `+false+`.
+
+*Possible values:* `+true+`, `+false+`
+
+=== Example: using cloud `+onboarding+`
+
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",  // change this value according to your HTML
+  onboarding: false
+});
+----

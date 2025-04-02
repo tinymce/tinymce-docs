@@ -27,8 +27,6 @@ When a user adds a comment or a reply, the {pluginname} plugin uses the `+tinyco
 [[comments-callback-live-demo]]
 == Interactive example
 
-The following example uses a simulated server (provided by link:https://netflix.github.io/pollyjs/[Polly.js]), which has been hidden from the example JavaScript to keep the example code concise. The interactions between {productname} and Polly.js are visible in the browser console.
-
 liveDemo::comments-callback[]
 
 == Options
@@ -63,10 +61,13 @@ include::partial$configuration/tinycomments_lookup.adoc[leveloffset=+1]
 
 * xref:tinycomments_resolve[`+tinycomments_resolve+`]
 * xref:tinycomments_fetch[`+tinycomments_fetch+`]
+* xref:tinycomments_fetch_author_info[`+tinycomments_fetch_author_info+`]
 
 include::partial$configuration/tinycomments_resolve.adoc[leveloffset=+1]
 
 include::partial$configuration/tinycomments_fetch.adoc[leveloffset=+1]
+
+include::partial$configuration/tinycomments_fetch_author_info.adoc[leveloffset=+1]
 
 include::partial$plugins/comments-open-sidebar.adoc[]
 

@@ -294,7 +294,7 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
   
   
   tinymce.init({
-    selector: 'textarea#comments-callback',
+    selector: 'textarea#comments-callback-with-mentions',
     license_key: 'gpl',
     toolbar: 'addcomment showcomments code | bold italic underline',
     menubar: 'file edit view insert format tools tc help',

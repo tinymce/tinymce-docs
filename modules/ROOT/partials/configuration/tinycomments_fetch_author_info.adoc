@@ -10,8 +10,8 @@ The `+tinycomments_fetch_author_info+` function is passed a request (`+req+`) ob
 The function must call `+done+` with an object containing the following properties:
 
 * `+author+` (`+string+`): A unique identifier for the user.
-* `+authorName+` (`+string+`): The full name to display for the user.
-* `+authorAvatar+` (`+string+`): A URL pointing to the user's avatar image.
+* `+authorName+` (`+string+`): The full name to display for the user. (`optional`)
+* `+authorAvatar+` (`+string+`): A URL pointing to the user's avatar image. (`optional`)
 
 .Example of `+tinycomments_fetch_author_info+` function
 [source,js]
@@ -19,8 +19,8 @@ The function must call `+done+` with an object containing the following properti
 const tinycomments_fetch_author_info = (_, done) => {
   setTimeout(() => done({
     author: currentUser.id, // Maps to the `author` field in the comment object
-    authorName: currentUser.fullName, // Maps to the `authorName` field in the comment object
-    authorAvatar: currentUser.image, // Maps to the `authorAvatar` field in the comment object
+    authorName: currentUser.fullName, // Maps to the `authorName` field in the comment object. (optional)
+    authorAvatar: currentUser.image, // Maps to the `authorAvatar` field in the comment object. (optional)
   }), fakeDelay);
 };
 ----
@@ -42,8 +42,8 @@ const tinycomments_fetch_author_info = (_, done) => {
     .then(currentUser => {
       done({
         author: currentUser.id, // Maps to the `author` field in the comment object
-        authorName: currentUser.fullName, // Maps to the `authorName` field in the comment object
-        authorAvatar: currentUser.image, // Maps to the `authorAvatar` field in the comment object
+        authorName: currentUser.fullName, // Maps to the `authorName` field in the comment object. (optional)
+        authorAvatar: currentUser.image, // Maps to the `authorAvatar` field in the comment objectv. (optional)
       });
     });
 };

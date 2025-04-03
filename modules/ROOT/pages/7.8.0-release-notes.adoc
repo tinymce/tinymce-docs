@@ -78,7 +78,7 @@ The {productname} {release-version} release includes an accompanying release of 
 === New `tinycomments_fetch_author_info` option that allows integrators to specify the current author info in callback mode.
 // #TINY-11680
 
-In {productname} {release-version}, a new `+tinycomments_fetch_author_info+` callback option has been introduced, enabling integrators to provide author information in callback mode. This enhancement ensures accurate author data is displayed in new conversation cards. Additionally, author data is now pre-fetched during comment initialization to ensure immediate availability.
+In {productname} {release-version}, a new `+tinycomments_fetch_author_info+` callback option has been introduced, enabling integrators to provide author information in callback mode. This enhancement ensures accurate author data is displayed in new conversation cards.
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
 

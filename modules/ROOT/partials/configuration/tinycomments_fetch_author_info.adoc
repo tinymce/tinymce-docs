@@ -43,7 +43,7 @@ const tinycomments_fetch_author_info = (_, done) => {
       done({
         author: currentUser.id, // Maps to the `author` field in the comment object
         authorName: currentUser.fullName, // Maps to the `authorName` field in the comment object. (optional)
-        authorAvatar: currentUser.image, // Maps to the `authorAvatar` field in the comment objectv. (optional)
+        authorAvatar: currentUser.image, // Maps to the `authorAvatar` field in the comment object. (optional)
       });
     });
 };

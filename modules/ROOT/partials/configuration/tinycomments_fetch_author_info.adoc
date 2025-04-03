@@ -37,11 +37,15 @@ const currentUser = {
 };
 
 const tinycomments_fetch_author_info = (_, done) => {
-  setTimeout(() => done({
-    author: currentUser.id, // Maps to the `author` field in the comment object
-    authorName: currentUser.fullName, // Maps to the `authorName` field in the comment object
-    authorAvatar: currentUser.image, // Maps to the `authorAvatar` field in the comment object
-  }), fakeDelay);
+  fetch('https://example.api.com/currentUser')
+    .then(res => res.json())
+    .then(currentUser => {
+      done({
+        author: currentUser.id, // Maps to the `author` field in the comment object
+        authorName: currentUser.fullName, // Maps to the `authorName` field in the comment object
+        authorAvatar: currentUser.image, // Maps to the `authorAvatar` field in the comment object
+      });
+    });
 };
 
 tinymce.init({

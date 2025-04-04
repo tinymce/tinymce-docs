@@ -69,6 +69,34 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Image Optimizer (Powered by Uploadcare)
+
+{productname} {release-version} introduces the **Image Optimizer (Powered by Uploadcare)** plugin.
+
+=== Added support for `uploadcare_filters` option in the {pluginname} plugin
+// #EPIC-146
+
+The {pluginname} plugin now includes support for a new configuration option, `+uploadcare_filters+`, introduced in {release-version}. This option allows integrators to define a customizable list of image filters available within the {pluginname} dialog. Each filter can be configured with an optional `amount` parameter, controlling the intensity of the effect, and an optional `label` to customize its display name in the UI.
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare',
+  uploadcare_public_key: '<your-public-key>',
+  uploadcare_filters: [
+    { name: 'none' },
+    { name: 'adaris', amount: -100, label: 'Vintage Fade' },
+    { name: 'adaris', amount: 0, label: 'Base' },
+    { name: 'adaris', amount: 100, label: 'Standard' },
+    { name: 'zevcen', amount: 200, label: 'Glow Boost' }
+  ]
+});
+----
+
+For information on the **Image Optimizer (Powered by Uploadcare)** plugin, see xref:uploadcare.adoc[Image Optimizer (Powered by Uploadcare)].
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

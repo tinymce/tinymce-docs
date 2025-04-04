@@ -1,0 +1,101 @@
+[[uploadcare-filters]]
+== `uploadcare_filters`
+
+The `+uploadcare_filters+` option defines the list of image filters available when using the {pluginname} plugin. Each filter applies a stylized image effect consistent with the visual design of the content and can be configured with an amount value to control its intensity. Filters are applied via URL modifiers and support intensity values ranging from `-100` to `200`. Values below `0` produce inverted effects, `100` represents the standard effect, and values above `100` apply the effect with increased intensity.
+
+*Type:* `+String+`
+
+=== Example: Setting `uploadcare_filters`
+
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare',
+  uploadcare_public_key: '<your-public-key>',
+
+  // Define available Uploadcare image filters and their intensity levels
+  uploadcare_filters: [
+    { name: 'none' }, // No filter applied
+    { name: 'adaris', amount: -100 }, // Adaris with inverted effect (amount -100), label defaults to 'adaris'
+    { name: 'adaris', amount: -100, label: 'Vintage Fade' }, // Adaris with inverted effect (amount -100), label reads 'Vintage Fade'
+    { name: 'adaris', amount: 0, label: 'Base' }, // Adaris with neutral effect (amount 0), label reads 'Base'
+    { name: 'adaris', amount: 50, label: 'Light' }, // Adaris with light effect (amount 50), label reads 'Light'
+    { name: 'adaris', amount: 100, label: 'Standard' }, // Adaris with standard effect (amount 100), label reads 'Standard'
+    { name: 'adaris', amount: 200, label: 'Intense' }, // Adaris with intense effect (amount 200), label reads 'Intense'
+    { name: 'zevcen', amount: 200, label: 'Glow Boost' }, // Zevcen with intense effect (amount 200), label reads 'Glow Boost'
+    { name: 'galen', amount: 80, label: 'Soft Focus' }, // Galen with softening effect (amount 80), label reads 'Soft Focus'
+    { name: 'carris', amount: 120, label: 'Sharp Contrast' }, // Carris with high contrast (amount 120), label reads 'Sharp Contrast'
+    { name: 'ferand', amount: 60, label: 'Light Touch' }, // Ferand with light enhancement (amount 60), label reads 'Light Touch'
+    { name: 'sorahel', amount: -50, label: 'Night Mood' } // Sorahel with darkened effect (amount -50), label reads 'Night Mood'
+  ]
+});
+----
+
+=== Uploadcare Filter Previews
+
+Each image below represents a filter applied to the same source image.
+
+[cols="1,1,1,1", options="header"]
+|===
+|-/filter/adaris/ |-/filter/briaril/ |-/filter/calarel/ |-/filter/carris/
+|image:uploadcare/filters/cynarel.jpg[-/filter/adaris/]
+|image:uploadcare/filters/briaril.jpg[-/filter/briaril/]
+|image:uploadcare/filters/calarel.jpg[-/filter/calarel/]
+|image:uploadcare/filters/carris.jpg[-/filter/carris/]
+
+|-/filter/cynarel/ |-/filter/cyren/ |-/filter/elmet/ |-/filter/elonni/
+|image:uploadcare/filters/cynarel.jpg[-/filter/cynarel/]
+|image:uploadcare/filters/cyren.jpg[-/filter/cyren/]
+|image:uploadcare/filters/elmet.jpg[-/filter/elmet/]
+|image:uploadcare/filters/elonni.jpg[-/filter/elonni/]
+
+|-/filter/enzana/ |-/filter/erydark/ |-/filter/fenralan/ |-/filter/ferand/
+|image:uploadcare/filters/enzana.jpg[-/filter/enzana/]
+|image:uploadcare/filters/erydark.jpg[-/filter/erydark/]
+|image:uploadcare/filters/fenralan.jpg[-/filter/fenralan/]
+|image:uploadcare/filters/ferand.jpg[-/filter/ferand/]
+
+|-/filter/galen/ |-/filter/gavin/ |-/filter/gethriel/ |-/filter/iorill/
+|image:uploadcare/filters/galen.jpg[-/filter/galen/]
+|image:uploadcare/filters/gavin.jpg[-/filter/gavin/]
+|image:uploadcare/filters/gethriel.jpg[-/filter/gethriel/]
+|image:uploadcare/filters/iorill.jpg[-/filter/iorill/]
+
+|-/filter/iothari/ |-/filter/iselva/ |-/filter/jadis/ |-/filter/lavra/
+|image:uploadcare/filters/iothari.jpg[-/filter/iothari/]
+|image:uploadcare/filters/iselva.jpg[-/filter/iselva/]
+|image:uploadcare/filters/jadis.jpg[-/filter/jadis/]
+|image:uploadcare/filters/lavra.jpg[-/filter/lavra/]
+
+|-/filter/misiara/ |-/filter/namala/ |-/filter/nerion/ |-/filter/nethari/
+|image:uploadcare/filters/misiara.jpg[-/filter/misiara/]
+|image:uploadcare/filters/namala.jpg[-/filter/namala/]
+|image:uploadcare/filters/nerion.jpg[-/filter/nerion/]
+|image:uploadcare/filters/nethari.jpg[-/filter/nethari/]
+
+|-/filter/pamaya/ |-/filter/sarnar/ |-/filter/sedis/ |-/filter/sewen/
+|image:uploadcare/filters/pamaya.jpg[-/filter/pamaya/]
+|image:uploadcare/filters/sarnar.jpg[-/filter/sarnar/]
+|image:uploadcare/filters/sedis.jpg[-/filter/sedis/]
+|image:uploadcare/filters/sewen.jpg[-/filter/sewen/]
+
+|-/filter/sorahel/ |-/filter/sorlen/ |-/filter/tarian/ |-/filter/thellassan/
+|image:uploadcare/filters/sorahel.jpg[-/filter/sorahel/]
+|image:uploadcare/filters/sorlen.jpg[-/filter/sorlen/]
+|image:uploadcare/filters/tarian.jpg[-/filter/tarian/]
+|image:uploadcare/filters/thellassan.jpg[-/filter/thellassan/]
+
+|-/filter/varriel/ |-/filter/varven/ |-/filter/vevera/ |-/filter/virkas/
+|image:uploadcare/filters/varriel.jpg[-/filter/varriel/]
+|image:uploadcare/filters/varven.jpg[-/filter/varven/]
+|image:uploadcare/filters/vevera.jpg[-/filter/vevera/]
+|image:uploadcare/filters/virkas.jpg[-/filter/virkas/]
+
+|-/filter/yedis/ |-/filter/yllara/ |-/filter/zatvel/ |-/filter/zevcen/
+|image:uploadcare/filters/yedis.jpg[-/filter/yedis/]
+|image:uploadcare/filters/yllara.jpg[-/filter/yllara/]
+|image:uploadcare/filters/zatvel.jpg[-/filter/zatvel/]
+|image:uploadcare/filters/zevcen.jpg[-/filter/zevcen/]
+|===

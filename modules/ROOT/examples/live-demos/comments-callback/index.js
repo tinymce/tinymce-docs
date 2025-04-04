@@ -23,7 +23,6 @@ const currentUid = 'kalebwilson';
 const adminUid = 'michaelcook';
 
 const now = new Date();
-const currentTime = now.toISOString();
 const yesterday = new Date(now.getTime() - 24 * 60 * 60 * 1000).toISOString();
 const anhourago = new Date(now.getTime() - 60 * 60 * 1000).toISOString();
 

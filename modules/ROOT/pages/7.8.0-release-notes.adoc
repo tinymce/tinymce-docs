@@ -153,10 +153,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== The focus outline was misaligned with the comment card border after saving an edited comment.
+// #TINY-11329
 
-// CCFR here.
+In previous versions of {productname}, the keyboard focus styles were not properly aligned with the comment card during the process of saving an edited comment, resulting in a poor user interface.
+
+{productname} {release-version} addresses this by adjusting the focus styles, ensuring a more polished user interface while saving an edited comment.
 
 
 [[security-fixes]]

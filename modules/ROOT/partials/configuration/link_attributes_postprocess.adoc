@@ -1,0 +1,26 @@
+[[link_attributes_postprocess]]
+== `+link_attributes_postprocess+`
+
+This option allows overriding attributes of an inserted link.
+
+*Type:* `+Function+`
+
+*Default value:* `+undefined+`
+
+=== Example: using `+link_attributes_postprocess+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'link',
+  toolbar: 'link',
+  link_attributes_postprocess: (attrs) => {
+    console.log(attrs);
+    if (attrs.rel) {
+      attrs.rel += 'noreferrer';
+    }
+  }
+});
+
+----

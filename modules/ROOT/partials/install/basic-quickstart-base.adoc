@@ -34,6 +34,8 @@ endif::[]
 
 {productname} {productmajorversion} is a powerful and flexible rich text editor that can be embedded in web applications. This quick start covers how to add a {productname} editor to a web page using {sourcename}.
 
+include::partial$misc/admon-account-creation-and-social-option.adoc[]
+
 ifeval::["{productSource}" == "composer"]
 
 To add {productname} to a PHP project using Composer, run the following on a command line:

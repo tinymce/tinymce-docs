@@ -1,0 +1,253 @@
+[[installation]]
+== Installation
+
+include::partial$misc/admon-docker-access.adoc[]
+
+=== Retrieve Docker Image
+
+. Login into the {companyname} Cloud Docker Registry: 
++
+[source, sh, subs="attributes+"]
+----
+docker login -u tiny -p [access-token] registry.containers.tiny.cloud
+----
+
+. Pull the Docker Image from the Docker registry:
++
+[source, sh, subs="attributes+"]
+----
+docker pull registry.containers.tiny.cloud/hyperlinking-tiny:<VERSION>
+----
++
+Replace `<VERSION>` with `latest` or the specific version number.
+
+include::partial$misc/admon-available-docker-images.adoc[]
+
+=== Specify Configurations 
+
+After completing the previous steps, run the Docker container from the pulled image: 
+
+[source, sh, subs="attributes+"]
+----
+docker run -p 19100:19100 registry.containers.tiny.cloud/hyperlinking-tiny:<VERSION>
+----
+
+This triggers `-p 19100:19100`, exposing the service on `localhost:19100`. The service runs on port `19100` inside the Docker container, and this maps it to the same port on your localhost.
+
+If set up correctly, the logs should display output similar to the following: 
+
+[source, log]
+----
+2025-01-02 11:06:45 [io-compute-8] INFO  navi - navi
+...
+2025-01-02 11:06:45 [io-compute-blocker-8] INFO  navi - -> Raw Config assembled from various sources: ConfigOrigin(merge of /ephox-hyperlinking/ephox-hyperlinking-docker-env.conf: 1,system properties,reference.conf @ jar:file:/ephox-hyperlinking/ephox-hyperlinking.jar!/reference.conf: 1)
+2025-01-02 11:06:46 [io-compute-blocker-8] WARN  c.e.d.config.AllowedOriginsConfig$ - No allowed-origins specified in config!
+2025-01-02 11:06:46 [io-compute-blocker-8] WARN  c.e.d.config.AllowedOriginsConfig$ - No allowed-origins specified in config!
+2025-01-02 11:06:46 [io-compute-blocker-8] INFO  navi - navi config loaded successfully: NaviConfig(LinkCheckerConfig(true,ReturnUnknown),true,CacheConfig(10000,86400 seconds,3600 seconds),SdkServiceWithClientConfig(HttpConfig(100,10,10,3,HttpConfigTimeouts(10,10,10),JvmTrustModel()),None,OriginWhitelist(List(),OriginPrecision(true))),SelfHostedMediaSourcesConfig(CustomEmbedPlugins(UrlTrie(Branch(None,TreeMap()),Branch(None,TreeMap()))),None),OriginWhitelist(List(),OriginPrecision(true)),Logger[navi])
+2025-01-02 11:06:46 [io-compute-9] INFO  o.h.b.c.nio1.NIO1SocketServerGroup - Service bound to address /0:0:0:0:0:0:0:0:19100
+2025-01-02 11:06:46 [io-compute-9] INFO  o.h.blaze.server.BlazeServerBuilder - 
+  _   _   _        _ _
+ | |_| |_| |_ _ __| | | ___
+ | ' \\  _|  _| '_ \\_  _(_-<
+ |_||_\\__|\\__| .__/ |_|/__/
+             |_|
+2025-01-02 11:06:46 [io-compute-9] INFO  o.h.blaze.server.BlazeServerBuilder - http4s v0.23.27 on blaze v0.23.16 started at http://[::]:19100/
+----
+
+Running this command will generate a log warning about `allowed-origins` not being configured. This is expected, as it will be set up in the next step.
+
+The {productname} server-side components require a configuration file to function correctly. By convention, this file is named `application.conf`. For more information, refer to link:https://www.tiny.cloud/docs/tinymce/latest/configure-required-services/[Required configuration for the server-side components^]. 
+
+This configuration file requires at least the following information:
+
+* allowed-origins - Specifies the domains allowed to communicate with server-side editor features. This is **mandatory** for all server-side components.
+
+The following settings for the premium server-side components are _optional_ and will apply to all services that make outgoing HTTP/HTTPS requests using the configuration file.
+
+* link:https://www.tiny.cloud/docs/tinymce/latest/configure-common-settings-services/#proxy[proxy configuration^]
+* link:https://www.tiny.cloud/docs/tinymce/latest/configure-common-settings-services/#http[http configuration^]
+
+The following settings for the Hyperlinking premium server-side component are _optional_:
+
+* link:https://www.tiny.cloud/docs/tinymce/latest/configure-hyperlink-service/#link-checking[link-checking configuration^]
+* link:https://www.tiny.cloud/docs/tinymce/latest/configure-hyperlink-service/#cache[cache configuration^]
+
+The {mediaembedplugin} service allows the use of a custom xref:mediaembed-server-config.adoc#use-your-own-iframely-account[Iframely] account, configured xref:mediaembed-server-config.adoc#configure-a-custom-endpoint[oEmbed] endpoints, or a combination of both. If a URL lacks an `Iframely` or `oEmbed` configuration, the service generates a summary card.
+
+[TIP]
+A summary card is an embeddable snippet of code created based on the available metadata and content detected at the URL. This ensures that even if no predefined embedding method is configured, the service can still provide a structured and visually consistent media representation.
+
+When media is inserted into content, the service follows this sequence:
+
+. Check if the URL matches any custom link:https://www.tiny.cloud/docs/tinymce/latest/mediaembed-server-config/#configure-a-custom-endpoint[oEmbed^] configuration. If that fails,
+. If link:https://www.tiny.cloud/docs/tinymce/latest/mediaembed-server-config/#use-your-own-iframely-account[Iframely^] is configured, query the Iframely API. If Iframely is not configured,
+. Create a summary card.
+
+The following settings for the Enhanced Media Embed service are _optional_:
+
+* link:https://www.tiny.cloud/docs/tinymce/latest/mediaembed-server-config/#use-your-own-iframely-account[Iframely account configuration^]
+* link:https://www.tiny.cloud/docs/tinymce/latest/mediaembed-server-config/#configure-a-custom-endpoint[oEmbed customs configuration^]
+
+=== Run the Docker Container
+
+The Docker container can also be run with `docker compose`. In this example, the following directory structure is assumed:
+
+[source,sh]
+----
+hyperlinking-service/
+├── application.conf
+└── docker-compose.yaml 
+----
+
+Here is an example of the application.conf file with the basic configurations:
+
+[source,conf]
+----
+ephox {
+
+  allowed-origins {
+    origins = [
+      "<http://example.com>",
+      "<http://good.com> ",
+      "*.my.company.org"
+    ]
+  }
+
+}
+----
+
+Once the application configuration file is ready, proceed with the Docker Compose setup to configure and run the service.
+
+. Create the `docker-compose.yaml` file:
++
+
+[source, yaml]
+
+----
+services:
+  hyperlinking-tiny:
+	  image: registry.containers.tiny.cloud/hyperlinking-tiny:<VERSION>
+    ports:
+      - "19100:19100"
+    restart: always
+    init: true
+    volumes:
+      - type: bind
+        source: ./application.conf #change this to the path on your local machine 
+        target: /ephox-hyperlinking/ephox-hyperlinking-docker-env.conf 
+        read_only: true
+----
+
+. Run the service (within the same directory where `docker-compose.yaml` was placed):
++
+
+[source, sh]
+----
+docker compose up
+----
++
+If the setup is correct, the initiation logs should appear as follows:
+
++
+[source, log]
+----
+ ✔ Container hyperlinking-tiny-hyperlinking-tiny-1  Recreated                                                                                                                                                                     0.1s 
+Attaching to hyperlinking-tiny-1
+hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-1] INFO  navi - navi
+
+...
+
+-> Found value for property: /ephox-hyperlinking/ephox-hyperlinking-docker-env.conf
+hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  navi -       * Parsing config defined by /ephox-hyperlinking/ephox-hyperlinking-docker-env.conf from property: ephox.config.file
+hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  navi -         -> Processing file: /ephox-hyperlinking/ephox-hyperlinking-docker-env.conf
+hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  navi -   * External application.conf => /opt/ephox/application.conf
+hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  navi -     * Optional File (/opt/ephox/application.conf). Defaults to empty if file not found
+hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  navi - * Internal Configuration
+hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  navi -   -> No extra internal configuration specified - skipping
+hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  navi - * Default (Reference) Configuration
+hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  navi -   * Loading configuration files from classpath (reference.conf and integration.conf). Neither is required.
+hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  navi - -> Raw Config assembled from various sources: ConfigOrigin(merge of /ephox-hyperlinking/ephox-hyperlinking-docker-env.conf: 1,system properties,reference.conf @ jar:file:/ephox-hyperlinking/ephox-hyperlinking.jar!/reference.conf: 1)
+hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  c.e.d.config.AllowedOriginsConfig$ - Read allowed-origins config (ignoring ports = true) as:
+hyperlinking-tiny-1  |  - localhost
+hyperlinking-tiny-1  |  - localhost:8000
+hyperlinking-tiny-1  |  - ephox.com
+hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  c.e.d.config.AllowedOriginsConfig$ - Read allowed-origins config (ignoring ports = true) as:
+hyperlinking-tiny-1  |  - localhost
+hyperlinking-tiny-1  |  - localhost:8000
+hyperlinking-tiny-1  |  - ephox.com
+hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  navi - navi config loaded successfully: NaviConfig(LinkCheckerConfig(true,ReturnUnknown),true,CacheConfig(10000,86400 seconds,3600 seconds),SdkServiceWithClientConfig(HttpConfig(100,10,10,3,HttpConfigTimeouts(15,15,15),JvmTrustModel()),None,OriginWhitelist(List(localhost, localhost:8000, ephox.com),OriginPrecision(true))),SelfHostedMediaSourcesConfig(CustomEmbedPlugins(UrlTrie(Branch(None,TreeMap()),Branch(None,TreeMap(org -> Branch(None,TreeMap(wikipedia -> Branch(None,TreeMap(en -> Branch(Some(PathMatcher(List((wiki/.*,WikipediaEmbedPlugin(https://en.wikipedia.org/w/api.php,10))))),TreeMap()))))))))),None),OriginWhitelist(List(localhost, localhost:8000, ephox.com),OriginPrecision(true)),Logger[navi])
+hyperlinking-tiny-1  | 2025-01-02 16:17:29 [io-compute-6] INFO  o.h.b.c.nio1.NIO1SocketServerGroup - Service bound to address /0:0:0:0:0:0:0:0:19100
+hyperlinking-tiny-1  | 2025-01-02 16:17:29 [io-compute-6] INFO  o.h.blaze.server.BlazeServerBuilder - 
+hyperlinking-tiny-1  |   _   _   _        _ _
+hyperlinking-tiny-1  |  | |_| |_| |_ _ __| | | ___
+hyperlinking-tiny-1  |  | ' \\  _|  _| '_ \\_  _(_-<
+hyperlinking-tiny-1  |  |_||_\\__|\\__| .__/ |_|/__/
+hyperlinking-tiny-1  |              |_|
+hyperlinking-tiny-1  | 2025-01-02 16:17:29 [io-compute-6] INFO  o.h.blaze.server.BlazeServerBuilder - http4s v0.23.27 on blaze v0.23.16 started at http://[::]:19100/
+----
+
+=== Next Steps
+
+. Test the service via `cURL` command
++
+
+To verify that the Hyperlinking service is set up and functioning correctly within the container, ensure the service is running on port `19100`. Once active, it should be ready to receive requests. The expected outputs below confirm proper configuration, assuming `http://good.com` is in the allowed origins and `http://bad.com` is not.
+
++
+To check the service is running use:
+
++
+[source, sh]
+----
+curl http://localhost:19100/version
+----
+
++
+An example output is: `2.109.0`
+
++
+To confirm that a request is being sent to the {linkcheckerplugin} service, use:
+
++
+[source, sh]
+----
+curl --location 'http://localhost:19100/1/check' \\
+--header 'Origin: http://good.com' \\
+--header 'Content-Type: application/json' \\
+--data '{ "urls": [{"url":"http://google.com"}, {"url": "http://youtube.com"}, {"url":"http://google.com/404"}, {"url":"https://ephox.."}]}'
+----
+
++
+Finally, to verify if a request is unauthorized and originates from an incorrect origin, use:
+
++
+[source, sh]
+----
+curl --location 'http://localhost:19100/1/check' \\
+--header 'Origin: http://bad.com' \\
+--header 'Content-Type: application/json' \\
+--data '{ "urls": [{"url":"http://google.com"}, {"url": "http://youtube.com"}, {"url":"http://google.com/404"}, {"url":"https://ephox.."}]}'
+----
+
++
+If an error occurs,  the expected message is: `{ "message": "The supplied authentication is not authorized to access this resource" }`.
+
+. Test directly in {productname}
++
+
+Before deploying, it is recommended to test this service within the {productname} editor itself.
+
++
+To do this, configure the link:https://www.tiny.cloud/docs/tinymce/latest/linkchecker/[{linkcheckerplugin}^] and link:https://www.tiny.cloud/docs/tinymce/latest/introduction-to-mediaembed/[{mediaembedplugin}^] features in the editor and call them via `tinymce.init`. If running locally on the default port `19100`, use the following settings:
+
++
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'code image link linkchecker autolink code',
+  toolbar: 'image link code',
+  linkchecker_service_url: "http://localhost:19100",
+  mediaembed_service_url: "http://localhost:19100"
+});
+----

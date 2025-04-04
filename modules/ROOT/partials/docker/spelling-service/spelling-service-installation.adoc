@@ -1,0 +1,256 @@
+[[installation]]
+== Installation
+
+[IMPORTANT]
+A valid access token is **required** in order to retrieve On-Premises services images from {companyname} Cloud Docker Registry.
+link:https://www.tiny.cloud/contact/[Contact {companyname} Support^] to request the access token.
+
+=== Retrieve Docker Image
+
+. Log into the {companyname} Cloud Docker Registry: 
++
+[source, sh, subs="attributes+"]
+----
+docker login -u tiny -p [access-token] registry.containers.tiny.cloud
+----
+
+. Pull the Docker Image from the Docker registry:
++
+[source, sh, subs="attributes+"]
+----
+docker pull registry.containers.tiny.cloud/spelling-tiny:<VERSION>
+----
+
++
+Replace `<VERSION>` with `latest` or the specific version number.
++
+[NOTE]
+Currently, the Docker images are only supported on x86-64 (also known as AMD64) architecture processors.
+
+=== Specify Configurations 
+
+After completing the previous steps, run the Docker container from the pulled image: 
+
+[source, sh, subs="attributes+"]
+----
+docker run -p 18080:18080 registry.containers.tiny.cloud/spelling-tiny:<VERSION>
+----
+
+This triggers `-p 18080:18080`, exposing the service on `localhost:18080`. The service runs on port `18080` inside the Docker container, and this maps it to the same port on your localhost.
+
+If set up correctly, the logs should display output similar to the following: 
+
+[source, log]
+----
+2024-12-05 11:30:50.813Z [io-compute-9] INFO  ironbark - ironbark
+...
+2024-12-05 11:30:51.166Z [io-compute-blocker-9] INFO  ironbark - -> Raw Config assembled from various sources: ConfigOrigin(merge of /ephox-spelling/ephox-spelling-docker-env.conf: 1,system properties,reference.conf @ jar:file:/ephox-spelling/ephox-spelling.jar!/reference.conf: 1)
+2024-12-05 11:30:51.206Z [io-compute-blocker-9] WARN  c.e.d.config.AllowedOriginsConfig$ - No allowed-origins specified in config!
+2024-12-05 11:30:51.219Z [io-compute-blocker-9] INFO  ironbark - ironbark config loaded successfully: IronbarkConfig(Logger[ironbark],SpellingConfig(None,Some(200),None,false),OriginWhitelist(List(),OriginPrecision(true)),None,None,StaticCustomDictionaryScanConfig)
+2024-12-05 11:30:51.275Z [io-compute-blocker-9] INFO  com.ephox.nectar.data.Bees$ - Loading all dictionaries from WinterTree
+2024-12-05 11:30:51.677Z [io-compute-blocker-6] INFO  com.ephox.nectar.data.Bees$ - Loading all dictionaries from WinterTree
+2024-12-05 11:30:52.127Z [io-compute-7] INFO  o.h.b.c.nio1.NIO1SocketServerGroup - Service bound to address /0:0:0:0:0:0:0:0:18080
+2024-12-05 11:30:52.131Z [io-compute-7] INFO  o.h.blaze.server.BlazeServerBuilder - 
+  _   _   _        _ _
+ | |_| |_| |_ _ __| | | ___
+ | ' \\  _|  _| '_ \\_  _(_-<
+ |_||_\\__|\\__| .__/ |_|/__/
+             |_|
+2024-12-05 11:30:52.145Z [io-compute-7] INFO  o.h.blaze.server.BlazeServerBuilder - http4s v0.23.27 on blaze v0.23.16 started at http://[::]:18080/
+----
+
+Running this command will generate a log warning about `allowed-origins` not being configured. This is expected, as it will be set up in the next step.
+
+The {productname} server-side components require a configuration file to function correctly. By convention, this file is named `application.conf`. For more information, refer to link:https://www.tiny.cloud/docs/tinymce/latest/configure-required-services/[Required configuration for the server-side components]. 
+
+This configuration file requires at least the following information:
+
+* `allowed-origins`: Specifies the domains allowed to communicate with server-side editor features. This is **mandatory** for all server-side components.
+
+By default, the {pluginname} plugin comes with Hunspell dictionaries for link:https://www.tiny.cloud/docs/tinymce/latest/introduction-to-tiny-spellchecker/#supported-languages[supported languages]. For additional configurations, the service supports the following options in the `application.conf` file:
+
+* `custom-dictionaries-path`: Sets the path to where the file or directory is mounted in the container. For more information on how to set up custom dictionaries, refer to link:https://www.tiny.cloud/docs/tinymce/latest/custom-dictionaries-for-tiny-spellchecker/[Adding custom dictionaries].  
+* `dynamic-custom-dictionaries`: When set to true, the {pluginname} service periodically checks the dictionary files in `custom-dictionaries-path` for changes and updates the custom dictionaries at runtime without requiring a service restart. The default value is `false`.
+
+[NOTE]
+Enabling the `dynamic-custom-dictionaries` option introduces some performance overhead, which may result in a wait time for the custom dictionaries to load.
+
+=== Run the Docker Container 
+
+The Docker container can also be run with `docker compose`. In this example, the following directory structure is assumed: 
+
+[source,sh]
+----
+spelling-service/
+└── resources/
+  ├── custom-dictionaries
+  └── hunspell-dictionaries
+└── application.conf
+└── docker-compose.yaml
+----
+
+Here is an example of the `application.conf` file with the basic configurations: 
+
+[source, conf]
+----
+ephox {
+
+  allowed-origins {
+    origins = [
+      "<http://example.com>",
+      "<http://good.com> ",
+      "*.my.company.org"
+    ]
+  }
+  
+  spelling {
+    custom-dictionaries-path = "/app/resources/custom-dictionaries"
+    hunspell-dictionaries-path = "/app/resources/hunspell-dictionaries"
+  }
+}
+----
+
+. Create the `docker-compose.yaml` file:
+
++
+Here is an example of how to set up the file given the above directory structure and `application.conf` file: 
+
++
+[source, yaml]
+----
+services:
+  spelling-tiny:
+    image: registry.containers.tiny.cloud/spelling-tiny:<VERSION>
+    ports:
+      - "18080:18080"
+    restart: always
+    init: true
+    volumes:
+      - type: bind
+        source: ./application.conf
+        target: /ephox-spelling/ephox-spelling-docker-env.conf 
+        read_only: true
+      - type: bind
+        source: ./resources/custom-dictionaries
+        target: /app/resources/custom-dictionaries
+        read_only: true
+      - type: bind
+        source: ./resources/hunspell-dictionaries
+        target: /app/resources/custom-dictionaries
+        read_only: true
+----
+
++
+[NOTE]
+Ensure the `target` path in the `volumes` option matches the `custom-dictionaries-path` and `hunspell-dictionaries-path` in the `application.conf` file. 
+
+. Run the service (within the same directory where `docker-compose.yaml` was placed):
+
++
+[source, sh]
+----
+docker compose up
+----
+
++
+If the allowed origins, Hunspell, and custom dictionaries folders are configured correctly, the initiation logs should appear as follows:
+
++
+[source, log]
+----
+[+] Running 2/2
+ ✔ Network spelling-tiny_default            Created                                                                                                                                                                                               0.0s 
+ ✔ Container spelling-tiny-spelling-tiny-1  Created                                                                                                                                                                                               0.1s 
+Attaching to spelling-tiny-1
+spelling-tiny-1  | 2025-02-11 09:51:10.332Z [io-compute-5] INFO  ironbark - ironbark
+...
+spelling-tiny-1  | 2025-02-11 09:51:10.736Z [io-compute-blocker-5] INFO  ironbark - -> Raw Config assembled from various sources: ConfigOrigin(merge of /ephox-spelling/ephox-spelling-docker-env.conf: 1,system properties,reference.conf @ jar:file:/ephox-spelling/ephox-spelling.jar!/reference.conf: 1)
+spelling-tiny-1  | 2025-02-11 09:51:10.814Z [io-compute-blocker-5] INFO  c.e.d.config.AllowedOriginsConfig$ - Read allowed-origins config (ignoring ports = true) as:
+spelling-tiny-1  |  - example.com
+spelling-tiny-1  |  - good.com
+spelling-tiny-1  |  - my.company.org
+spelling-tiny-1  | 2025-02-11 09:51:10.822Z [io-compute-blocker-5] INFO  ironbark - ironbark config loaded successfully: IronbarkConfig(Logger[ironbark],SpellingConfig(None,Some(200),None,5,0.8),OriginWhitelist(List(example.com, good.com, my.company.org),OriginPrecision(true)),Some(CustomDictionaryPath(/app/resources/custom-dictionaries)),Some(HunspellDictionaryPath(/app/resources/hunspell-dictionaries)),StaticCustomDictionaryScanConfig)
+spelling-tiny-1  | 2025-02-11 09:51:11.101Z [io-compute-blocker-6] INFO  c.e.i.d.StaticCustomDictionaries$ - Using custom dictionary: [global] = 2 words in engine Hunspell
+spelling-tiny-1  | 2025-02-11 09:51:11.104Z [io-compute-blocker-6] INFO  c.e.i.d.StaticCustomDictionaries$ - Using custom dictionary: [global] = 2 words in engine WinterTree
+spelling-tiny-1  | 2025-02-11 09:51:11.161Z [io-compute-blocker-6] INFO  com.ephox.nectar.data.Bees$ - Loading all dictionaries from WinterTree
+spelling-tiny-1  | 2025-02-11 09:51:11.482Z [io-compute-blocker-5] INFO  c.e.nectar.hunspell.HunspellLoader$ - Loading hunspell dictionary from path: /app/resources/hunspell-dictionaries and locale es
+spelling-tiny-1  | 2025-02-11 09:51:11.536Z [io-compute-blocker-5] INFO  c.e.nectar.hunspell.HunspellLoader$ - Finished loading hunspell for es
+spelling-tiny-1  | 2025-02-11 09:51:11.537Z [io-compute-blocker-5] INFO  c.e.nectar.hunspell.HunspellLoader$ - Loading hunspell dictionary from path: /app/resources/hunspell-dictionaries and locale pt_BR
+spelling-tiny-1  | 2025-02-11 09:51:11.881Z [io-compute-blocker-5] INFO  c.e.nectar.hunspell.HunspellLoader$ - Finished loading hunspell for pt_BR
+...
+spelling-tiny-1  | 2025-02-11 09:51:13.593Z [io-compute-blocker-5] INFO  c.e.nectar.hunspell.HunspellLoader$ - Loading hunspell dictionary from path: /app/resources/hunspell-dictionaries and locale de_DE
+spelling-tiny-1  | 2025-02-11 09:51:13.651Z [io-compute-blocker-5] INFO  c.e.nectar.hunspell.HunspellLoader$ - Finished loading hunspell for de_DE
+spelling-tiny-1  | 2025-02-11 09:51:14.142Z [io-compute-9] INFO  o.h.b.c.nio1.NIO1SocketServerGroup - Service bound to address /0:0:0:0:0:0:0:0:18080
+spelling-tiny-1  | 2025-02-11 09:51:14.146Z [io-compute-9] INFO  o.h.blaze.server.BlazeServerBuilder - 
+spelling-tiny-1  |   _   _   _        _ _
+spelling-tiny-1  |  | |_| |_| |_ _ __| | | ___
+spelling-tiny-1  |  | ' \\  _|  _| '_ \\_  _(_-<
+spelling-tiny-1  |  |_||_\\__|\\__| .__/ |_|/__/
+spelling-tiny-1  |              |_|
+spelling-tiny-1  | 2025-02-11 09:51:14.162Z [io-compute-9] INFO  o.h.blaze.server.BlazeServerBuilder - http4s v0.23.27 on blaze v0.23.16 started at http://[::]:18080/
+----
+
+=== Next Steps 
+
+. Test the service via `cURL` command
+
++
+To verify that the {pluginname} service is set up and functioning correctly within the container, ensure the service is running on port `18080`. Once active, it should be ready to receive requests. The expected outputs below confirm proper configuration, assuming `http://good.com` is in the allowed origins and `http://bad.com` is not.
+
++
+To check the service is running, use:
+
++
+[source, sh]
+----
+curl http://localhost:18080/version
+----
+
++
+An example output is: `2.127.0`
+
++
+To confirm that a request is being sent to the {pluginname} service, use:
+
++
+[source, sh]
+----
+curl http://localhost:18080/2/check -d '{"words": ["teh"], "language": "en_US"}' -H "Origin: http://good.com" -H "Content-Type: application/json"
+----
+
++
+Finally, to verify if a request is unauthorized and originates from an incorrect origin, use:
+
++
+[source, sh]
+----
+curl http://localhost:18080/2/check -d '{"words": ["teh"], "language": "en_US"}' -H "Origin: http://bad.com" -H "Content-Type: application/json"
+----
+
++
+If an error occurs,  the expected message is: `{ "message": "The supplied authentication is not authorized to access this resource" }`.
+
+. Test directly in {productname}
+
++
+Before deploying, it is recommended to test this service within the {productname} editor itself.
+
++
+To do this, configure the link:https://www.tiny.cloud/docs/tinymce/latest/introduction-to-tiny-spellchecker/[{pluginname}] feature in the editor and call it via `tinymce.init`. If running locally on the default port `18080`, use the following settings:
+
++
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea#spellchecker', // change this value according to your HTML
+  plugins: 'code tinymcespellchecker link',
+  toolbar: 'spellchecker language spellcheckdialog',
+  spellchecker_language: 'en_US',
+  spellchecker_rpc_url: "http://localhost:18080"
+});
+----
+
+
+
+
+

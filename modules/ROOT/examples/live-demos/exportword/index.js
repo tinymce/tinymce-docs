@@ -16,6 +16,10 @@ tinymce.init({
         left: "1in",
         right: "1in"
       }
-    }
+    },
+    watermark: {
+      source: 'http://moxiecode.cachefly.net/tinymce/v9/images/logo.png',
+      washout: true
+    },
   }
 });

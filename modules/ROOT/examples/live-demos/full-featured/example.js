@@ -1,12 +1,11 @@
-const fetchApi = import(
-  "https://unpkg.com/@microsoft/fetch-event-source@2.0.1/lib/esm/index.js"
-).then((module) => module.fetchEventSource);
+const fetchApi = import('https://cdn.skypack.dev/@microsoft/fetch-event-source@2.0.1')
+  .then((module) => module.fetchEventSource);
+
 
 // This example stores the OpenAI API key in the client side integration. This is not recommended for any purpose.
 // Instead, an alternate method for retrieving the API key should be used.
 const openai_api_key = "<INSERT_OPENAI_API_KEY_HERE>";
 
-const useDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
 const isSmallScreen = window.matchMedia('(max-width: 1023.5px)').matches;
 
 tinymce.init({
@@ -111,8 +110,6 @@ tinymce.init({
   content_style: '.mymention{ color: gray; }',
   contextmenu: 'link image editimage table configurepermanentpen',
   a11y_advanced_options: true,
-  skin: useDarkMode ? 'oxide-dark' : 'oxide',
-  content_css: useDarkMode ? 'dark' : 'default',
   autocorrect_capitalize: true,
   mergetags_list: [
     {

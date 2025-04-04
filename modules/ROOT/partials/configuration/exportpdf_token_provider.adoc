@@ -7,6 +7,8 @@ The `exportpdf_token_provider` option enables integration with a token-based aut
 
 *Default value:* `undefined`
 
+*Return data:* xref:exportpdf.adoc#data-structure[`Token` object]
+
 === Example: using `exportpdf_token_provider`
 
 [source,js]
@@ -15,7 +17,7 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'exportpdf',
   toolbar: 'exportpdf',
-  exportpdf_token_provider: () => {
+  exportpdf_token_provider: () => { // required when using the Export to PDF plugin with Tiny Cloud.
     return fetch('http://localhost:3000/jwt', { // specify your token endpoint
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -24,8 +26,4 @@ tinymce.init({
 });
 ----
 
-[NOTE]
-The `exportpdf_token_provider` option is required when using the {companyname} Cloud service. For more information on how to set up JWT authentication with {pluginname}, see examples:
-
-* xref:export-to-pdf-with-jwt-authentication-nodejs.adoc[Export to PDF with JWT authentication (Node.js)]
-* xref:export-to-pdf-with-jwt-authentication-php.adoc[Export to PDF with JWT authentication (PHP)]
+include::partial$misc/admon-document-converters-jwt-expected-data-structure.adoc[]

@@ -38,20 +38,31 @@ include::partial$misc/dynamic-custom-dictionaries.adoc[]
 
 == Verifying custom dictionary functionality
 
-If successfully configured, the custom dictionary feature will report dictionaries found in the application server's log at service startup.
+If successfully configured, the custom dictionary feature will report dictionaries found in the application server's log at service startup when using Static Custom Dictionaries.
 
 Example:
 
 [source,log]
 ----
-2017-06-12 17:46:00 [main] INFO  com.ephox.ironbark.IronbarkBoot - Starting task (booting Ironbark)
-2017-06-12 17:46:00 [main] INFO  com.ephox.ironbark.IronbarkBoot - using custom dictionary: [global] = 1 words
-2017-06-12 17:46:00 [main] INFO  com.ephox.ironbark.IronbarkBoot - using custom dictionary: "en" = 3 words
-2017-06-12 17:46:00 [main] INFO  com.ephox.ironbark.IronbarkBoot - using custom dictionary: "fr" = 2 words
-2017-06-12 17:46:01 [main] INFO  com.ephox.ironbark.IronbarkBoot - Finished task (booting Ironbark)
+INFO  c.e.i.d.StaticCustomDictionaries$ - Using custom dictionary: [global] = 2 words in engine Hunspell
+INFO  c.e.i.d.StaticCustomDictionaries$ - Using custom dictionary: [global] = 2 words in engine WinterTree
+INFO  c.e.i.d.StaticCustomDictionaries$ - Using custom dictionary: en-US = 4 words in engine Hunspell
+INFO  c.e.i.d.StaticCustomDictionaries$ - Using custom dictionary: en-US = 4 words in engine WinterTree
+INFO  c.e.i.d.StaticCustomDictionaries$ - Using custom dictionary: fr = 3 words in engine Hunspell
+INFO  c.e.i.d.StaticCustomDictionaries$ - Using custom dictionary: fr = 3 words in engine WinterTree
 ----
 
-The above log shows that 3 custom dictionaries were found, one "global", language-independent one and one each for English and French. They were found to contain 1, 3 and 2 words, respectively. Please check that this report matches your expectations.
+The above log shows that 3 custom dictionaries were found, one "global", language-independent one and one each for English and French. They were found to contain 2, 4 and 3 words, respectively. In this case, Dynamic Custom Dictionaries feature is disabled and Hunspell was included. Please check that this report matches your expectations.
+
+When enabling Dynamic Custom Dictionaries, similar logs as follows will be shown on every request matching the language of the custom dictionary:
+
+[source,log]
+----
+INFO  c.e.s.c.CachedCustomDictionaries$ - Using custom dictionary: [global] = 2 words in engine Hunspell
+INFO  c.e.s.c.CachedCustomDictionaries$ - Using custom dictionary: en-US = 1 words in engine Hunspell
+----
+
+The above log shows that the custom dictionary for English was found to contain 1 word.
 
 == Ongoing dictionary maintenance
 

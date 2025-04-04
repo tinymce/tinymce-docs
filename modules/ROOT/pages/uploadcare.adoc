@@ -1,7 +1,7 @@
 = {pluginname} plugin
 :navtitle: Image Optimizer Powered by Uploadcare
 :description: The Image Optimizer Powered by Uploadcare plugin allows you to optimize images in your content.
-:description_short: 
+:description_short: optimize images in your content.
 :plugincode: uploadcare
 :pluginname: Image Optimizer Powered by Uploadcare
 :keywords: plugin, {plugincode}, image, align, transform, alt text, caption, adjust, filter
@@ -13,7 +13,7 @@ include::partial$misc/admon-requires-7.6v.adoc[]
 
 == Overview
 
-The **Image Optimizer** plugin offers a range of powerful features for image hosting, serving, and editing. These include responsive image delivery, automatic image format selection, automatic compression, and non-destructive image transformations and adjustments, all powered by link:https://uploadcare.com[Uploadcare].
+The **Image Optimizer** plugin offers a range of powerful features for image hosting, serving, and editing. These include responsive image delivery, automatic image format selection, automatic compression, and non-destructive image transformations and adjustments, all powered by link:https://uploadcare.com[Uploadcare^].
 
 == Key benefits
 
@@ -28,17 +28,16 @@ liveDemo::{plugincode}[]
 
 == Basic setup
 
-To add the {pluginname} plugin to the editor, add `{plugincode}` to the `plugins` option in the editor configuration.
+To add the {pluginname} plugin to the editor, include `{plugincode}` in the `plugins` option in the editor configuration.
 
-For example:
-
+.Example
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',
   plugins: 'uploadcare',
   toolbar: 'uploadcare',
-  uploadcare_public_key: '<your-public-key>',
+  uploadcare_public_key: '<your-public-key>', // Required for Uploadcare integration
   // uploadcare_signed_upload_auth_provider: (_publicKey) => Promise.resolve({
   //   signature: 'sig',
   //   expire: 123
@@ -53,7 +52,7 @@ The {pluginname} plugin overrides the xref:quickbars.adoc[Quickbar] quickimage t
 
 == Image Operations
 
-Below is an overview of the features of the {pluginname} plugin includes for image optimization:
+Below is an overview of the features provided by the {pluginname} plugin for image optimization:
 
 [cols="1,1,^1,3",options="header"]
 |===
@@ -195,7 +194,7 @@ This icon will only appear when the `a11y_advanced_options` configuration option
 
 == Options
 
-The following configuration options affect the behavior of the {pluginname} plugin.
+The following configuration options affect the behavior of the {pluginname} plugin:
 
 include::partial$configuration/uploadcare_public_key.adoc[leveloffset=+1]
 

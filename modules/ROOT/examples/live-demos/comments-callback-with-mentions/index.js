@@ -19,6 +19,9 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
   const currentUid = 'kalebwilson';
   const adminUid = 'michaelcook';
   
+  const currentUser = userDb[currentUid];
+  const adminUser = userDb[adminUid];
+  
   const now = new Date();
   const yesterday = new Date(now.getTime() - 24 * 60 * 60 * 1000).toISOString();
   const anhourago = new Date(now.getTime() - 60 * 60 * 1000).toISOString();

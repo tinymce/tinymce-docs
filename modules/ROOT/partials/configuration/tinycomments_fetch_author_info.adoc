@@ -5,7 +5,7 @@ The {pluginname} plugin uses the `+tinycomments_fetch_author_info+` callback fun
 
 This function is called whenever a comment is rendered, and it allows the editor to display the author’s name and avatar based on the current user.
 
-The `+tinycomments_fetch_author_info+` function is passed a request (`+req+`) object as the first parameter, and a `+done+` callback as the second.
+The `+tinycomments_fetch_author_info+` function is passed a `+done+` callback parameter.
 
 The function must call `+done+` with an object containing the following properties:
 
@@ -16,7 +16,7 @@ The function must call `+done+` with an object containing the following properti
 .Example of `+tinycomments_fetch_author_info+` function
 [source,js]
 ----
-const tinycomments_fetch_author_info = (_, done) => {
+const tinycomments_fetch_author_info = (done) => {
   setTimeout(() => done({
     author: currentUser.id, // Maps to the `author` field in the comment object
     authorName: currentUser.fullName, // Maps to the `authorName` field in the comment object. (optional)
@@ -33,10 +33,10 @@ const currentUser = {
   name: 'John Smith',
   fullName: 'John Smith',
   description: 'Company Founder',
-  image: '{{imagesdir}}/logos/android-chrome-192x192.png'
+  image: '{{imagesdir}}/users/johnsmith.png'
 };
 
-const tinycomments_fetch_author_info = (_, done) => {
+const tinycomments_fetch_author_info = (done) => {
   fetch('https://example.api.com/currentUser')
     .then(res => res.json())
     .then(currentUser => {

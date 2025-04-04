@@ -212,7 +212,7 @@ const tinycomments_fetch = (conversationUids, done) => {
 };
 
 // Read the above `getAuthorInfo` function to see how this could be implemented
-const tinycomments_fetch_author_info = (_, done) => done(getAuthorInfo(currentUid));
+const tinycomments_fetch_author_info = (done) => done(getAuthorInfo(currentUid));
 
 tinymce.init({
   selector: 'textarea#comments-callback',

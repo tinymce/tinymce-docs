@@ -78,8 +78,6 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== New `extended_mathml_attributes` and `extended_mathml_elements` options.
 // #TINY-11756
 
-== New options for customizing allowed MathML elements and attributes
-
 To improve flexibility when working with MathML content, especially in cases where new attributes or elements are not yet supported by DOMPurify, two new configuration options have been introduced: xref:math.adoc#extended-mathml-elements[extended_mathml_elements] and xref:math.adoc#extended-mathml-attributes[extended_mathml_attributes].
 
 Prior to {release-version}, MathML elements and attributes could be configured informally, but were not officially supported. With enhanced security measures introduced in {productname} {release-version}, MathML content is now filtered separately from HTML using DOMPurify, and any unsupported elements or attributes are stripped from the editor content. This change increased security but removed the ability to allow certain MathML-specific content.

@@ -8,14 +8,12 @@ const userDb = {
     name: 'Michael Cook',
     fullName: 'Michael Cook',
     description: 'Product Owner',
-    image: "{{imagesdir}}/avatars/michaelcook.png"
   },
   'kalebwilson': {
     id: 'kalebwilson',
     name: 'Kaleb Wilson',
     fullName: 'Kaleb Wilson',
     description: 'Marketing Director',
-    image: "{{imagesdir}}/avatars/kalebwilson.png"
   }
 };
 
@@ -26,16 +24,15 @@ const now = new Date();
 const yesterday = new Date(now.getTime() - 24 * 60 * 60 * 1000).toISOString();
 const anhourago = new Date(now.getTime() - 60 * 60 * 1000).toISOString();
 
-const fillAuthorInfo = (id, fullName, image) => ({
+const fillAuthorInfo = (id, fullName) => ({
   author: id,
   authorName: fullName,
-  authorAvatar: image,
 });
 
 const getAuthorInfo = (uid) => {
   const user = userDb[uid];
   if (user) {
-    return fillAuthorInfo(user.id, user.fullName, user.image);
+    return fillAuthorInfo(user.id, user.fullName);
   }
   return {
     author: uid,

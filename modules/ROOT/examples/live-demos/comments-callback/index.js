@@ -202,7 +202,6 @@ const tinycomments_lookup = (req, done) => {
 
 tinymce.init({
   selector: 'textarea#comments-callback',
-  license_key: 'gpl',
   height: 800,
   toolbar: 'addcomment showcomments code | bold italic underline',
   menubar: 'file edit view insert format tools tc help',

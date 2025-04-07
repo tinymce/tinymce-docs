@@ -69,6 +69,54 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Math
+
+The {productname} {release-version} release includes an accompanying release of the **Math** premium plugin.
+
+**Math** includes the following fix.
+
+==== New `extended_mathml_attributes` and `extended_mathml_elements` options.
+// #TINY-11756
+
+== New options for customizing allowed MathML elements and attributes
+
+To improve flexibility when working with MathML content, especially in cases where new attributes or elements are not yet supported by DOMPurify, two new configuration options have been introduced: xref:math.adoc#extended-mathml-elements[extended_mathml_elements] and xref:math.adoc#extended-mathml-attributes[extended_mathml_attributes].
+
+Prior to {release-version}, MathML elements and attributes could be configured informally, but were not officially supported. With enhanced security measures introduced in {productname} {release-version}, MathML content is now filtered separately from HTML using DOMPurify, and any unsupported elements or attributes are stripped from the editor content. This change increased security but removed the ability to allow certain MathML-specific content.
+
+The new options allow users to define lists of MathML elements and attributes that should be preserved, even if DOMPurify does not currently recognize them. This enables quicker user-side updates in response to evolving MathML specifications without disabling sanitization or waiting for upstream changes.
+
+**`+extended_mathml_elements+`**: allows a list of additional MathML elements to be preserved.
+**`+extended_mathml_attributes+`**: allows a list of additional MathML attributes to be preserved.
+
+These options apply only within MathML contexts and do not affect general HTML content. They enable use cases such as preserving `+<mn>+` elements and attributes like `linebreak` in MathML expressions.
+
+.Example of MathML with preserved elements and attributes
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  extended_mathml_elements: [ "mn" ],
+  extended_mathml_attributes: [ "linebreak" ]
+});
+----
+
+.Example of MathML with preserved elements and attributes
+[source,html]
+----
+<p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow><mn>0.196</mn></mrow>
+    <mspace linebreak="newline"></mspace>
+    <mrow><mo>=</mo></mrow>
+    <mspace linebreak="newline"></mspace>
+    <mrow><mn>0.196</mn></mrow>
+  </math>
+</p>
+----
+
+For information on the **Math** premium plugin, see: xref:math.adoc[Math].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

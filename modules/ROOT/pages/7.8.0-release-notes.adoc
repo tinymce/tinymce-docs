@@ -69,12 +69,27 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Export to Word
 
-==== Relative urls are now properly handled with the use of the base_url configuration option.
+The {productname} {release-version} release includes an accompanying update to the **Export to Word** premium plugin.
+
+==== Improved handling of relative URLs using `base_url` configuration
 // #TINY-11923
 
+Previously, the `exportword` plugin converted relative URLs (e.g., `+/relative/url+`) into incorrect absolute URLs during export, causing hyperlinks in Word documents to direct users to unintended or non-existent destinations. This issue has been resolved. The plugin now correctly resolves relative URLs using the `base_url` configuration option, ensuring exported Word documents contain valid and functional hyperlinks.
 
+For more information, see: xref:exportword.adoc[Export to Word].
 
+=== Export to PDF
+
+The {productname} {release-version} release includes an accompanying update to the **Export to PDF** premium plugin.
+
+==== Improved handling of relative URLs using `base_url` configuration
+// #TINY-11923
+
+The `exportpdf` plugin previously transformed relative URLs (e.g., `+/relative/url+`) into incorrect absolute URLs, resulting in broken or misdirected links in exported PDF documents. This issue has been addressed. The plugin now uses the `base_url` configuration option to correctly resolve relative URLs, ensuring that links in exported PDFs lead to the correct destinations.
+
+For more information, see: xref:exportpdf.adoc[Export to PDF].
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

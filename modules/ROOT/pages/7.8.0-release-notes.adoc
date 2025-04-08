@@ -57,23 +57,38 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== Enhanced Code Editor
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Enhanced Code Editor** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Enhanced Code Editor includes the following fix**.
 
-==== <Premium plugin name 1 change 1>
+==== Source Code editor was not scrolling to the editor's caret position in Firefox.
+// #TINY-11811
 
-// CCFR here.
+Previously, an issue was identified where the Enhanced Code Editor in Firefox did not automatically scroll to the caret's relative position within the editor. As a result, users were required to manually scroll to locate the corresponding element, leading to a suboptimal user experience.
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+With the release of {productname} {release-version}, this issue has been resolved. The Enhanced Code Editor in Firefox now exhibits consistent behavior with other browsers, automatically scrolling to the caret's position when the editor is opened. This enhancement significantly improves the user experience by eliminating the need for manual navigation.
+
+For information on the **Enhanced Code Editor** plugin, see: xref:advcode.adoc[Enhanced Code Editor].
 
 === Comments
 
 The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
 
-**Comments** includes the following addition.
+**Comments** includes the following fix, addition and change.
+
+=== A confirmation dialog now appears when resolving conversation to match the UX of deleting a conversation.
+// #TINY-11324
+
+Previously, resolving a conversation did not trigger a confirmation dialog, unlike the behavior when deleting a conversation. Selecting *Resolve conversation* from the conversation kebab menu would immediately perform the action without user confirmation.
+
+{productname} {release-version} introduces a confirmation dialog for resolving conversations, ensuring a consistent user experience and helping prevent unintentional resolutions.
+
+=== The `change` event was not dispatched when deleting a comment reply.
+// #TINY-11830
+
+Previously, deleting a comment reply did not dispatch a `change` event, which prevented the {productname} Save plugin from detecting the editor as modified. As a result, the “Save” button remained disabled after deleting a reply, potentially leading to lost changes. This issue has been resolved in {release-version}. Deleting a comment reply now correctly triggers a dirty state, ensuring the Save plugin enables the “Save” button as expected.
 
 === New `tinycomments_fetch_author_info` option that allows integrators to specify the current author info in callback mode.
 // #TINY-11680
@@ -82,6 +97,75 @@ In {productname} {release-version}, a new `+tinycomments_fetch_author_info+` cal
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
 
+=== Math
+
+The {productname} {release-version} release includes an accompanying release of the **Math** premium plugin.
+
+**Math** includes the following addition.
+
+==== New `extended_mathml_attributes` and `extended_mathml_elements` options.
+// #TINY-11756
+
+To improve flexibility when working with MathML content, especially in cases where new attributes or elements are not yet supported by DOMPurify, two new configuration options have been introduced: xref:math.adoc#extended-mathml-elements[extended_mathml_elements] and xref:math.adoc#extended-mathml-attributes[extended_mathml_attributes].
+
+Prior to {release-version}, MathML elements and attributes were treated the same as all other content, with no special handling for MathML-specific structures. As a result, unsupported elements and attributes were either retained without validation or stripped without regard to their MathML context.
+
+In {productname} {release-version}, MathML content is now filtered separately from general HTML using DOMPurify. As part of this change, support has been added to selectively allow specific elements and attributes *within* a `<math>` element using the new configuration options.
+
+The new options allow users to define lists of MathML elements and attributes that should be preserved, even if DOMPurify does not currently recognize them. This enables quicker user-side updates in response to evolving MathML specifications without disabling sanitization or waiting for upstream changes.
+
+* **`+extended_mathml_elements+`**: allows a list of additional MathML elements to be preserved.
+* **`+extended_mathml_attributes+`**: allows a list of additional MathML attributes to be preserved.
+
+These options apply only within MathML contexts and do not affect general HTML content. They enable use cases such as preserving `+<mn>+` elements and attributes like `linebreak` in MathML expressions.
+
+.Example of MathML with preserved elements and attributes
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  extended_mathml_elements: [ "mn" ],
+  extended_mathml_attributes: [ "linebreak" ]
+});
+----
+
+.Example of MathML with preserved elements and attributes
+[source,html]
+----
+<p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow><mn>0.196</mn></mrow>
+    <mspace linebreak="newline"></mspace>
+    <mrow><mo>=</mo></mrow>
+    <mspace linebreak="newline"></mspace>
+    <mrow><mn>0.196</mn></mrow>
+  </math>
+</p>
+----
+
+For information on the **Math** premium plugin, see: xref:math.adoc[Math].
+
+=== Export to Word
+
+The {productname} {release-version} release includes an accompanying update to the **Export to Word** premium plugin.
+
+==== Improved handling of relative URLs using `base_url` configuration for Export to Word
+// #TINY-11923
+
+Previously, the `exportword` plugin converted relative URLs (e.g., `+/relative/url+`) into incorrect absolute URLs during export, causing hyperlinks in Word documents to direct users to unintended or non-existent destinations. This issue has been resolved. The plugin now correctly resolves relative URLs using the `base_url` configuration option, ensuring exported Word documents contain valid and functional hyperlinks.
+
+For more information, see: xref:exportword.adoc[Export to Word].
+
+=== Export to PDF
+
+The {productname} {release-version} release includes an accompanying update to the **Export to PDF** premium plugin.
+
+==== Improved handling of relative URLs using `base_url` configuration for Export to PDF
+// #TINY-11923
+
+The `exportpdf` plugin previously transformed relative URLs (e.g., `+/relative/url+`) into incorrect absolute URLs, resulting in broken or misdirected links in exported PDF documents. This issue has been addressed. The plugin now uses the `base_url` configuration option to correctly resolve relative URLs, ensuring that links in exported PDFs lead to the correct destinations.
+
+For more information, see: xref:exportpdf.adoc[Export to PDF].
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement
@@ -127,6 +211,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== The `+editor.selection.scrollIntoView()+` method now pads the target scroll area with a small margin, ensuring content doesn't sit at the very edge of the viewport.
+// #TINY-11786
+
+Previously, when cycling through accessibility issues in the a11y checker dialog, the highlighted content could appear aligned to the very edge of the viewport, making it difficult to identify and visually track. This behavior impacted usability by reducing the effectiveness of the a11y checker tool.
+
+In {productname} {release-version}, the `+editor.selection.scrollIntoView()+` method was updated to include a top and bottom margin, aligning the highlighted content to a fixed `30px` from the edge of the viewport. Additionally, a visual overlay was introduced to draw attention to the selected element. These changes improve visibility, provide smoother and more intuitive scroll positioning, and enhance the overall user experience when navigating accessibility issues in {productname}.
+
 
 [[additions]]
 == Additions
@@ -166,10 +257,17 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== The focus outline was misaligned with the comment card border after saving an edited comment.
+// #TINY-11329
 
-// CCFR here.
+In previous versions of {productname}, the keyboard focus styles were not properly aligned with the comment card during the process of saving an edited comment, resulting in a poor user interface.
+
+{productname} {release-version} addresses this by adjusting the focus styles, ensuring a more polished user interface while saving an edited comment.
+
+=== Setting editor height to a `pt` or `em` value was ignoring min/max height settings.
+// #TINY-11108
+
+Previously, when the editor height was set using relative units such as `pt` or `em`, the editor was unable to parse and evaluate these values correctly. As a result, it would bypass the `min_height` and `max_height` checks, leading to unpredictable layout behavior. This issue was especially noticeable during initialization, although resizing later used the browser-calculated content box height, which partially masked the problem. In {release-version}, {productname} now attempts to compute height values from additional unit types to better enforce minimum and maximum height constraints. Some units, such as percentages (`%`), may still override explicit height values due to browser limitations in determining the final rendered size. This update ensures that `min_height` and `max_height` settings are more reliably applied across a wider range of unit types.
 
 
 [[security-fixes]]

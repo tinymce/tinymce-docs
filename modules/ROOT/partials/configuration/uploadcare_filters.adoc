@@ -14,14 +14,14 @@ Each filter is defined as an object with the following properties:
 }
 ----
 
-* **name**: A predefined filter identifier (e.g., adaris, zevcen, galen).
-* **amount**: The intensity of the filter effect, ranging from -100 to 200:
+* `name`: A predefined filter identifier (e.g., adaris, zevcen, galen).
+* `amount`: The intensity of the filter effect, ranging from -100 to 200:
 ** **0**: No effect (image stays original).
 ** **0** to **100**: Gradually increases filter strength.
 ** **100**: Default intensity (as the filter is designed).
 ** **>100**: Exaggerates the effect.
 ** **<0**: Inverts the filter effect (produces a "negative" version).
-* **label**: Optional display name for the filter in your UI. If omitted, it defaults to the name.
+* `label`: Optional display name for the filter in your UI. If omitted, it defaults to the name.
 
 === Example: Setting `uploadcare_filters`
 
@@ -52,8 +52,8 @@ tinymce.init({
 ----
 
 [NOTE]
-* Filter names must be selected from the supported set: adaris, briaril, calarel, carris, cynarel, cyren, elmet, elonni, enzana, 
-erydark, fenralan, ferand, galen, gavin, gethriel, iorill, iothari, iselva, jadis, lavra, misiara, namala, nerion, nethari, pamaya, sarnar, sedis, sewen, sorahel, sorlen, tarian, thellassan, varriel, varven, evera, virkas, yedis, yllara, zatvel, zevcen.
+* Filter names must be selected from the supported set:
+** `adaris`, `briaril`, `calarel`, `carris`, `cynarel`, `cyren`, `elmet`, `elonni`, `enzana`, `erydark`, `fenralan`, `ferand`, `galen`, `gavin`, `gethriel`, `iorill`, `iothari`, `iselva`, `jadis`, `lavra`, `misiara`, `namala`, `nerion`, `nethari`, `pamaya`, `sarnar`, `sedis`, `sewen`, `sorahel`, `sorlen`, `tarian`, `thellassan`, `varriel`, `varven`, `vevera`, `virkas`, `yedis`, `yllara`, `zatvel`, `zevcen`.
 * If the amount is not set, it defaults to 100.
 * Some filters may behave unpredictably outside the 0–100 range.
 * Applying negative amount values inverts the filter, useful for creative effects.

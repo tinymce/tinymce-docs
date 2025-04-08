@@ -66,7 +66,7 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== Source Code editor was not scrolling to the editor's caret position in Firefox.
 // #TINY-11811
 
-Previously, an issue was identified where the source code editor in Firefox did not automatically scroll to the caret's relative position within the editor. As a result, users were required to manually scroll to locate the corresponding element, leading to a suboptimal user experience.
+Previously, an issue was identified where the Enhanced Code Editor in Firefox did not automatically scroll to the caret's relative position within the editor. As a result, users were required to manually scroll to locate the corresponding element, leading to a suboptimal user experience.
 
 With the release of {productname} {release-version}, this issue has been resolved. The source code editor in Firefox now exhibits consistent behavior with other browsers, automatically scrolling to the caret's position when the editor is opened. This enhancement significantly improves the user experience by eliminating the need for manual navigation.
 

@@ -41,7 +41,7 @@ const getAuthorInfo = (uid) => {
     author: uid,
     authorName: uid,
   };
-}
+};
 
 const conversationDb = {
   'mce-conversation_19679600221621399703915': {

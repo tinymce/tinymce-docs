@@ -1,0 +1,65 @@
+[[tinycomments_fetch_author_info]]
+== `+tinycomments_fetch_author_info+`
+
+The {pluginname} plugin uses the `+tinycomments_fetch_author_info+` callback function to provide author details for comments displayed in the editor.
+
+This function is called whenever a comment is rendered, and it allows the editor to display the author’s name and avatar based on the current user.
+
+The `+tinycomments_fetch_author_info+` function is passed a `+done+` callback parameter.
+
+The function must call `+done+` with an object containing the following properties:
+
+* `+author+` (`+string+`): A unique identifier for the user.
+* `+authorName+` (`+string+`): The full name to display for the user. (`optional`)
+* `+authorAvatar+` (`+string+`): A URL pointing to the user's avatar image. (`optional`)
+
+.Example of `+tinycomments_fetch_author_info+` function
+[source,js]
+----
+const tinycomments_fetch_author_info = (done) => {
+  setTimeout(() => done({
+    author: currentUser.id, // Maps to the `author` field in the comment object
+    authorName: currentUser.fullName, // Maps to the `authorName` field in the comment object. (optional)
+    authorAvatar: currentUser.image, // Maps to the `authorAvatar` field in the comment object. (optional)
+  }), fakeDelay);
+};
+----
+
+.Example of `+tinycomments_fetch_author_info+` function with a custom author
+[source,js]
+----
+const currentUser = {
+  id: 'johnsmith',
+  name: 'John Smith',
+  fullName: 'John Smith',
+  description: 'Company Founder',
+  image: '{{imagesdir}}/users/johnsmith.png'
+};
+
+const tinycomments_fetch_author_info = (done) => {
+  fetch('https://example.api.com/currentUser')
+    .then(res => res.json())
+    .then(currentUser => {
+      done({
+        author: currentUser.id, // Maps to the `author` field in the comment object
+        authorName: currentUser.fullName, // Maps to the `authorName` field in the comment object. (optional)
+        authorAvatar: currentUser.image, // Maps to the `authorAvatar` field in the comment object. (optional)
+      });
+    });
+};
+
+tinymce.init({
+  selector: '#editor',
+  plugins: 'tinycomments',
+  tinycomments_mode: 'callback',
+  tinycomments_create: create_comment,
+  tinycomments_reply: reply_comment,
+  tinycomments_edit_comment: edit_comment,
+  tinycomments_delete: delete_comment_thread,
+  tinycomments_delete_all: delete_all_comment_threads,
+  tinycomments_delete_comment: delete_comment,
+  tinycomments_lookup: lookup_comment,
+  tinycomments_fetch: fetch_comments, // Optional callback
+  tinycomments_fetch_author_info: fetch_comments
+});
+----

@@ -76,7 +76,7 @@ For information on the **Enhanced Code Editor** plugin, see: xref:advcode.adoc[E
 
 The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
 
-**Comments** includes the following change.
+**Comments** includes the following fix, addition and change.
 
 === A confirmation dialog now appears when resolving conversation to match the UX of deleting a conversation.
 // #TINY-11324
@@ -85,19 +85,15 @@ Previously, resolving a conversation did not trigger a confirmation dialog, unli
 
 {productname} {release-version} introduces a confirmation dialog for resolving conversations, ensuring a consistent user experience and helping prevent unintentional resolutions.
 
-For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
-
-
-=== Comments
-
-The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
-
-**Comments** includes the following fix.
-
 === The `change` event was not dispatched when deleting a comment reply.
 // #TINY-11830
 
 Previously, deleting a comment reply did not dispatch a `change` event, which prevented the {productname} Save plugin from detecting the editor as modified. As a result, the “Save” button remained disabled after deleting a reply, potentially leading to lost changes. This issue has been resolved in {release-version}. Deleting a comment reply now correctly triggers a dirty state, ensuring the Save plugin enables the “Save” button as expected.
+
+=== New `tinycomments_fetch_author_info` option that allows integrators to specify the current author info in callback mode.
+// #TINY-11680
+
+In {productname} {release-version}, a new `+tinycomments_fetch_author_info+` callback option has been introduced, enabling integrators to provide author information in callback mode. This enhancement ensures accurate author data is displayed in new conversation cards.
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
 

@@ -41,7 +41,7 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
       author: uid,
       authorName: uid,
     };
-  }
+  };
   
   const conversationDb = {
     'mce-conversation_19679600221621399703915': {

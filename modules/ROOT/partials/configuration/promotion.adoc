@@ -1,7 +1,5 @@
-= Open source promotion
-
 [[promotion]]
-== `+promotion+`
+== `+promotion+`  
 
 The open source version of {productname} contains a promotion for paid features. This promotion can be toggled on or off with the `+promotion+` option.
 
@@ -11,8 +9,7 @@ The open source version of {productname} contains a promotion for paid features.
 
 *Possible values:* `+true+`, `+false+`
 
-=== Example: using open source `+promotion+`
-
+.Example: using open source `+promotion+`
 [source,js]
 ----
 tinymce.init({

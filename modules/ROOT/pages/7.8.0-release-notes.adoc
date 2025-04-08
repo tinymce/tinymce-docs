@@ -84,8 +84,8 @@ Prior to {release-version}, MathML elements and attributes could be configured i
 
 The new options allow users to define lists of MathML elements and attributes that should be preserved, even if DOMPurify does not currently recognize them. This enables quicker user-side updates in response to evolving MathML specifications without disabling sanitization or waiting for upstream changes.
 
-**`+extended_mathml_elements+`**: allows a list of additional MathML elements to be preserved.
-**`+extended_mathml_attributes+`**: allows a list of additional MathML attributes to be preserved.
+* **`+extended_mathml_elements+`**: allows a list of additional MathML elements to be preserved.
+* **`+extended_mathml_attributes+`**: allows a list of additional MathML attributes to be preserved.
 
 These options apply only within MathML contexts and do not affect general HTML content. They enable use cases such as preserving `+<mn>+` elements and attributes like `linebreak` in MathML expressions.
 

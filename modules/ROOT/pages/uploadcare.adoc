@@ -108,24 +108,6 @@ Below is an overview of the features provided by the {pluginname} plugin for ima
 | image:icons/resize.svg[resize.svg]
 | Changes the size of the image.
 
-| Alt Text
-|
-| image:icons/alt-text.svg[alt-text.svg]
-| Adds alternative text to describe the image for accessibility purposes.
-
-|
-| Decorative Image
-| image:icons/image-decorative.svg[image-decorative.svg]
-a|
-Marks the image as decorative, indicating it doesn't require alternative text for accessibility.
-
-This icon will only appear when the `a11y_advanced_options` configuration option is enabled.
-
-| Caption
-|
-| image:icons/caption.svg[caption.svg]
-| Adds a caption below the image for additional context.
-
 | Adjust
 |
 | image:icons/adjustments.svg[adjustments.svg]
@@ -185,6 +167,29 @@ This icon will only appear when the `a11y_advanced_options` configuration option
 | Blur
 | image:icons/blur.svg[blur.svg]
 | Blurs the image.
+
+| Filters
+|
+| image:icons/auto-image-enhancement.svg[auto-image-enhancement.svg]
+| Provides tools for applying filters to the image.
+
+| Alt Text
+|
+| image:icons/alt-text.svg[alt-text.svg]
+| Adds alternative text to describe the image for accessibility purposes.
+
+|
+| Decorative Image
+| image:icons/image-decorative.svg[image-decorative.svg]
+a|
+Marks the image as decorative, indicating it doesn't require alternative text for accessibility.
+
+This icon will only appear when the `a11y_advanced_options` configuration option is enabled.
+
+| Caption
+|
+| image:icons/caption.svg[caption.svg]
+| Adds a caption below the image for additional context.
 
 | Revert
 |

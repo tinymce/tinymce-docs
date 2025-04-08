@@ -1,0 +1,46 @@
+[[extended-mathml-elements]]
+== `+extended_mathml_elements+`
+
+This option allows a specific list of additional MathML elements to be preserved in the editor content, even if they are not included in the default DOMPurify allowlist. This setting only affects elements used within MathML markup and has no effect on general HTML content.
+
+*Type:* `+Array+` of `+Strings+`
+
+*Default value:* `+[]+` (empty array)
+
+=== Example: using `+extended_mathml_elements+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  extended_mathml_elements: [ 'mn', 'mspace' ]
+});
+----
+
+.Example of MathML with preserved elements
+[source,html]
+----
+<p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow>
+      <mi>a</mi>
+      <mo>=</mo>
+      <mfrac>
+        <mrow>
+          <mn>1</mn>
+          <mo>+</mo>
+          <mn>√2</mn>
+        </mrow>
+        <mn>3</mn>
+      </mfrac>
+      <mspace width="1em"></mspace>
+      <mo>&#x222A;</mo>
+      <mspace width="1em"></mspace>
+      <msup>
+        <mn>5</mn>
+        <mn>2</mn>
+      </msup>
+    </mrow>
+  </math>
+</p>
+----

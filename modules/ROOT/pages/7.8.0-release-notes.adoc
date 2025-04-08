@@ -167,6 +167,20 @@ The `exportpdf` plugin previously transformed relative URLs (e.g., `+/relative/u
 
 For more information, see: xref:exportpdf.adoc[Export to PDF].
 
+=== Image Optimizer
+
+The {productname} {release-version} release includes an accompanying release of the **Image Optimizer** premium plugin.
+
+==== Placeholder element is now responsive and adjusts to the container's width.
+// #TINY-11958
+
+Previously, in **Image Optimizer**, the image placeholder had a fixed width, which prevented it from being responsive to different screen or container sizes. This limitation caused visual issues when the placeholder was placed inside small containers (e.g. table cells, small editors), resulting in layout inconsistencies.
+
+With the release of {productname} {release-version}, this issue has been resolved. The image placeholder styles have been updated to ensure full responsiveness, allowing it to adapt seamlessly to small containers without any visual issues.
+
+For more information on the **Image Optimizer** premium plugin, see: xref:uploadcare.adoc[Image Optimizer].
+
+
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement
 

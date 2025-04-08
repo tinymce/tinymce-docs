@@ -1,9 +1,27 @@
 [[uploadcare-filters]]
 == `uploadcare_filters`
 
-The `+uploadcare_filters+` option defines the list of image filters available when using the {pluginname} plugin. Each filter applies a stylized image effect consistent with the visual design of the content and can be configured with an amount value to control its intensity. Filters are applied via URL modifiers and support intensity values ranging from `-100` to `200`. Values below `0` produce inverted effects, `100` represents the standard effect, and values above `100` apply the effect with increased intensity.
+The `+uploadcare_filters+` option defines the list of image filters available when using the {pluginname} plugin. Each filter applies a stylized image effect consistent with the visual design of the content and can be configured with an amount value to control its intensity. Filters enhance images by applying consistent styling, improving overall quality, and boosting user engagement.
 
-*Type:* `+String+`
+
+Each filter is defined as an object with the following properties:
+[source,js]
+----
+{
+  name: 'filterName', // Required: name of the filter to apply
+  amount: number, // Optional: strength of the filter (default = 100)
+  label: 'string' // Optional: custom name to display in the UI
+}
+----
+
+* **name**: A predefined filter identifier (e.g., adaris, zevcen, galen).
+* **amount**: The intensity of the filter effect, ranging from -100 to 200:
+** **0**: No effect (image stays original).
+** **0** to **100**: Gradually increases filter strength.
+** **100**: Default intensity (as the filter is designed).
+** **>100**: Exaggerates the effect.
+** **<0**: Inverts the filter effect (produces a "negative" version).
+* **label**: Optional display name for the filter in your UI. If omitted, it defaults to the name.
 
 === Example: Setting `uploadcare_filters`
 
@@ -33,69 +51,76 @@ tinymce.init({
 });
 ----
 
+[NOTE]
+* Filter names must be selected from the supported set: adaris, briaril, calarel, carris, cynarel, cyren, elmet, elonni, enzana, 
+erydark, fenralan, ferand, galen, gavin, gethriel, iorill, iothari, iselva, jadis, lavra, misiara, namala, nerion, nethari, pamaya, sarnar, sedis, sewen, sorahel, sorlen, tarian, thellassan, varriel, varven, evera, virkas, yedis, yllara, zatvel, zevcen.
+* If the amount is not set, it defaults to 100.
+* Some filters may behave unpredictably outside the 0–100 range.
+* Applying negative amount values inverts the filter, useful for creative effects.
+
 === Uploadcare Filter Previews
 
 Each image below represents a filter applied to the same source image.
 
 [cols="1,1,1,1", options="header"]
 |===
-|-/filter/adaris/ |-/filter/briaril/ |-/filter/calarel/ |-/filter/carris/
-|image:uploadcare/filters/cynarel.jpg[-/filter/adaris/]
-|image:uploadcare/filters/briaril.jpg[-/filter/briaril/]
-|image:uploadcare/filters/calarel.jpg[-/filter/calarel/]
-|image:uploadcare/filters/carris.jpg[-/filter/carris/]
+|adaris |briaril |calarel |carris
+|image:uploadcare/filters/cynarel.jpg[adaris]
+|image:uploadcare/filters/briaril.jpg[briaril]
+|image:uploadcare/filters/calarel.jpg[calarel]
+|image:uploadcare/filters/carris.jpg[carris]
 
-|-/filter/cynarel/ |-/filter/cyren/ |-/filter/elmet/ |-/filter/elonni/
-|image:uploadcare/filters/cynarel.jpg[-/filter/cynarel/]
-|image:uploadcare/filters/cyren.jpg[-/filter/cyren/]
-|image:uploadcare/filters/elmet.jpg[-/filter/elmet/]
-|image:uploadcare/filters/elonni.jpg[-/filter/elonni/]
+|cynarel |cyren |elmet |elonni
+|image:uploadcare/filters/cynarel.jpg[cynarel]
+|image:uploadcare/filters/cyren.jpg[cyren]
+|image:uploadcare/filters/elmet.jpg[elmet]
+|image:uploadcare/filters/elonni.jpg[elonni]
 
-|-/filter/enzana/ |-/filter/erydark/ |-/filter/fenralan/ |-/filter/ferand/
-|image:uploadcare/filters/enzana.jpg[-/filter/enzana/]
-|image:uploadcare/filters/erydark.jpg[-/filter/erydark/]
-|image:uploadcare/filters/fenralan.jpg[-/filter/fenralan/]
-|image:uploadcare/filters/ferand.jpg[-/filter/ferand/]
+|enzana |erydark |fenralan |ferand
+|image:uploadcare/filters/enzana.jpg[enzana]
+|image:uploadcare/filters/erydark.jpg[erydark]
+|image:uploadcare/filters/fenralan.jpg[fenralan]
+|image:uploadcare/filters/ferand.jpg[ferand]
 
-|-/filter/galen/ |-/filter/gavin/ |-/filter/gethriel/ |-/filter/iorill/
-|image:uploadcare/filters/galen.jpg[-/filter/galen/]
-|image:uploadcare/filters/gavin.jpg[-/filter/gavin/]
-|image:uploadcare/filters/gethriel.jpg[-/filter/gethriel/]
-|image:uploadcare/filters/iorill.jpg[-/filter/iorill/]
+|galen |gavin |gethriel |iorill
+|image:uploadcare/filters/galen.jpg[galen]
+|image:uploadcare/filters/gavin.jpg[gavin]
+|image:uploadcare/filters/gethriel.jpg[gethriel]
+|image:uploadcare/filters/iorill.jpg[iorill]
 
-|-/filter/iothari/ |-/filter/iselva/ |-/filter/jadis/ |-/filter/lavra/
-|image:uploadcare/filters/iothari.jpg[-/filter/iothari/]
-|image:uploadcare/filters/iselva.jpg[-/filter/iselva/]
-|image:uploadcare/filters/jadis.jpg[-/filter/jadis/]
-|image:uploadcare/filters/lavra.jpg[-/filter/lavra/]
+|iothari |iselva |jadis |lavra
+|image:uploadcare/filters/iothari.jpg[iothari]
+|image:uploadcare/filters/iselva.jpg[iselva]
+|image:uploadcare/filters/jadis.jpg[jadis]
+|image:uploadcare/filters/lavra.jpg[lavra]
 
-|-/filter/misiara/ |-/filter/namala/ |-/filter/nerion/ |-/filter/nethari/
-|image:uploadcare/filters/misiara.jpg[-/filter/misiara/]
-|image:uploadcare/filters/namala.jpg[-/filter/namala/]
-|image:uploadcare/filters/nerion.jpg[-/filter/nerion/]
-|image:uploadcare/filters/nethari.jpg[-/filter/nethari/]
+|misiara |namala |nerion |nethari
+|image:uploadcare/filters/misiara.jpg[misiara]
+|image:uploadcare/filters/namala.jpg[namala]
+|image:uploadcare/filters/nerion.jpg[nerion]
+|image:uploadcare/filters/nethari.jpg[nethari]
 
-|-/filter/pamaya/ |-/filter/sarnar/ |-/filter/sedis/ |-/filter/sewen/
-|image:uploadcare/filters/pamaya.jpg[-/filter/pamaya/]
-|image:uploadcare/filters/sarnar.jpg[-/filter/sarnar/]
-|image:uploadcare/filters/sedis.jpg[-/filter/sedis/]
-|image:uploadcare/filters/sewen.jpg[-/filter/sewen/]
+|pamaya |sarnar |sedis |sewen
+|image:uploadcare/filters/pamaya.jpg[pamaya]
+|image:uploadcare/filters/sarnar.jpg[sarnar]
+|image:uploadcare/filters/sedis.jpg[sedis]
+|image:uploadcare/filters/sewen.jpg[sewen]
 
-|-/filter/sorahel/ |-/filter/sorlen/ |-/filter/tarian/ |-/filter/thellassan/
-|image:uploadcare/filters/sorahel.jpg[-/filter/sorahel/]
-|image:uploadcare/filters/sorlen.jpg[-/filter/sorlen/]
-|image:uploadcare/filters/tarian.jpg[-/filter/tarian/]
-|image:uploadcare/filters/thellassan.jpg[-/filter/thellassan/]
+|sorahel |sorlen |tarian |thellassan
+|image:uploadcare/filters/sorahel.jpg[sorahel]
+|image:uploadcare/filters/sorlen.jpg[sorlen]
+|image:uploadcare/filters/tarian.jpg[tarian]
+|image:uploadcare/filters/thellassan.jpg[thellassan]
 
-|-/filter/varriel/ |-/filter/varven/ |-/filter/vevera/ |-/filter/virkas/
-|image:uploadcare/filters/varriel.jpg[-/filter/varriel/]
-|image:uploadcare/filters/varven.jpg[-/filter/varven/]
-|image:uploadcare/filters/vevera.jpg[-/filter/vevera/]
-|image:uploadcare/filters/virkas.jpg[-/filter/virkas/]
+|varriel |varven |vevera |virkas
+|image:uploadcare/filters/varriel.jpg[varriel]
+|image:uploadcare/filters/varven.jpg[varven]
+|image:uploadcare/filters/vevera.jpg[vevera]
+|image:uploadcare/filters/virkas.jpg[virkas]
 
-|-/filter/yedis/ |-/filter/yllara/ |-/filter/zatvel/ |-/filter/zevcen/
-|image:uploadcare/filters/yedis.jpg[-/filter/yedis/]
-|image:uploadcare/filters/yllara.jpg[-/filter/yllara/]
-|image:uploadcare/filters/zatvel.jpg[-/filter/zatvel/]
-|image:uploadcare/filters/zevcen.jpg[-/filter/zevcen/]
+|yedis |yllara |zatvel |zevcen
+|image:uploadcare/filters/yedis.jpg[yedis]
+|image:uploadcare/filters/yllara.jpg[yllara]
+|image:uploadcare/filters/zatvel.jpg[zatvel]
+|image:uploadcare/filters/zevcen.jpg[zevcen]
 |===

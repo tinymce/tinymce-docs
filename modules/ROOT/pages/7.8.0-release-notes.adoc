@@ -73,10 +73,10 @@ For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode
 
 {productname} {release-version} introduces the **Image Optimizer (Powered by Uploadcare)** plugin.
 
-=== Added support for `uploadcare_filters` option in the {pluginname} plugin
+=== Added support for `+uploadcare_filters+` option in the Image Optimizer (Powered by Uploadcare) plugin
 // #EPIC-146
 
-The {pluginname} plugin now includes support for a new configuration option, `+uploadcare_filters+`, introduced in {release-version}. This option allows integrators to define a customizable list of image filters available within the {pluginname} dialog. Each filter can be configured with an optional `amount` parameter, controlling the intensity of the effect, and an optional `label` to customize its display name in the UI.
+The **Image Optimizer (Powered by Uploadcare)** plugin now includes support for a new configuration option, `+uploadcare_filters+`, introduced in {release-version}. This option allows integrators to define a customizable list of image filters available within the **Image Optimizer (Powered by Uploadcare)** dialog. Each filter can be configured with an optional `amount` parameter, controlling the intensity of the effect, and an optional `label` to customize its display name in the UI.
 
 .Example
 [source,js]

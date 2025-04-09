@@ -211,7 +211,7 @@ Previously, applying color filters to images that had not yet been successfully 
 ==== Keyboard navigation between toolbars no longer loses focus.
 // #TINY-11880
 
-In previous versions of **Image Optimizer**, navigating between toolbars and sub toolbars could cause the toolbar focus state to be lost. This issue required users to press `+Ctrl+F9+` to manually restore focus to the context toolbar, disrupting keyboard navigation workflows. {productname} {release-version} addresses this issue, by updating the focus handling using new sub toolbar APIs, ensuring that focus is now properly retained when moving between toolbars and sub toolbars. This improvement enhances accessibility and allows users to navigate the toolbar system more efficiently.
+In previous versions of **Image Optimizer (Powered by Uploadcare)** plugin, navigating between toolbars and sub toolbars could cause the toolbar focus state to be lost. This issue required users to press `+Ctrl+F9+` to manually restore focus to the context toolbar, disrupting keyboard navigation workflows. {productname} {release-version} addresses this issue, by updating the focus handling using new sub toolbar APIs, ensuring that focus is now properly retained when moving between toolbars and sub toolbars. This improvement enhances accessibility and allows users to navigate the toolbar system more efficiently.
 
 For information on the **Image Optimizer (Powered by Uploadcare)** plugin, see xref:uploadcare.adoc[Image Optimizer (Powered by Uploadcare)].
 

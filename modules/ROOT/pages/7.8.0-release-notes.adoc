@@ -169,9 +169,9 @@ For more information, see: xref:exportpdf.adoc[Export to PDF].
 
 === Image Optimizer (Powered by Uploadcare)
 
-{productname} {release-version} introduces the **Image Optimizer (Powered by Uploadcare)** plugin.
+The {productname} {release-version} release includes an accompanying release of the **Image Optimizer (Powered by Uploadcare)** premium plugin.
 
-**Image Optimizers** includes the following fix and addition.
+**Image Optimizers** includes the following fixes and addition.
 
 === Added support for `+uploadcare_filters+` option in the Image Optimizer (Powered by Uploadcare) plugin
 // #EPIC-146
@@ -212,6 +212,13 @@ Previously, applying color filters to images that had not yet been successfully 
 // #TINY-11880
 
 In previous versions of **Image Optimizer (Powered by Uploadcare)** plugin, navigating between toolbars and sub toolbars could cause the toolbar focus state to be lost. This issue required users to press `+Ctrl+F9+` to manually restore focus to the context toolbar, disrupting keyboard navigation workflows. {productname} {release-version} addresses this issue, by updating the focus handling using new sub toolbar APIs, ensuring that focus is now properly retained when moving between toolbars and sub toolbars. This improvement enhances accessibility and allows users to navigate the toolbar system more efficiently.
+
+==== Placeholder element is now responsive and adjusts to the container's width.
+// #TINY-11958
+
+Previously, in **Image Optimizer**, the image placeholder had a fixed width, which prevented it from being responsive to different screen or container sizes. This limitation caused visual issues when the placeholder was placed inside small containers (e.g. table cells, small editors), resulting in layout inconsistencies.
+
+With the release of {productname} {release-version}, this issue has been resolved. The image placeholder styles have been updated to ensure full responsiveness, allowing it to adapt seamlessly to small containers without any visual issues.
 
 For information on the **Image Optimizer (Powered by Uploadcare)** plugin, see xref:uploadcare.adoc[Image Optimizer (Powered by Uploadcare)].
 

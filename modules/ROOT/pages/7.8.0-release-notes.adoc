@@ -97,42 +97,6 @@ In {productname} {release-version}, a new `+tinycomments_fetch_author_info+` cal
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
 
-=== Image Optimizer (Powered by Uploadcare)
-
-{productname} {release-version} introduces the **Image Optimizer (Powered by Uploadcare)** plugin.
-
-**Image Optimizers** includes the following fix and addition.
-
-=== Added support for `+uploadcare_filters+` option in the Image Optimizer (Powered by Uploadcare) plugin
-// #EPIC-146
-
-The **Image Optimizer (Powered by Uploadcare)** plugin now includes support for a new configuration option, `+uploadcare_filters+`, introduced in {release-version}. This option allows integrators to define a customizable list of image filters available within the **Image Optimizer (Powered by Uploadcare)** dialog. Each filter can be configured with an optional `amount` parameter, controlling the intensity of the effect, and an optional `label` to customize its display name in the UI.
-
-.Example
-[source,js]
-----
-tinymce.init({
-  selector: "textarea",
-  plugins: 'uploadcare',
-  toolbar: 'uploadcare',
-  uploadcare_public_key: '<your-public-key>',
-  uploadcare_filters: [
-    { name: 'none' },
-    { name: 'adaris', amount: -100, label: 'Vintage Fade' },
-    { name: 'adaris', amount: 0, label: 'Base' },
-    { name: 'adaris', amount: 100, label: 'Standard' },
-    { name: 'zevcen', amount: 200, label: 'Glow Boost' }
-  ]
-});
-----
-
-==== Keyboard navigation between toolbars no longer loses focus.
-// #TINY-11880
-
-In previous versions of **Image Optimizer**, navigating between toolbars and sub toolbars could cause the toolbar focus state to be lost. This issue required users to press `+Ctrl+F9+` to manually restore focus to the context toolbar, disrupting keyboard navigation workflows. {productname} {release-version} addresses this issue, by updating the focus handling using new sub toolbar APIs, ensuring that focus is now properly retained when moving between toolbars and sub toolbars. This improvement enhances accessibility and allows users to navigate the toolbar system more efficiently.
-
-For information on the **Image Optimizer (Powered by Uploadcare)** plugin, see xref:uploadcare.adoc[Image Optimizer (Powered by Uploadcare)].
-
 === Math
 
 The {productname} {release-version} release includes an accompanying release of the **Math** premium plugin.
@@ -205,14 +169,56 @@ For more information, see: xref:exportpdf.adoc[Export to PDF].
 
 === Image Optimizer (Powered by Uploadcare)
 
-{productname} {release-version} introduces the **Image Optimizer (Powered by Uploadcare)** plugin.
+The {productname} {release-version} release includes an accompanying release of the **Image Optimizer (Powered by Uploadcare)** premium plugin.
 
-**Image Optimizer** includes the following fix.
+**Image Optimizers** includes the following fixes and addition.
+
+=== Added support for `+uploadcare_filters+` option in the Image Optimizer (Powered by Uploadcare) plugin
+// #EPIC-146
+
+The **Image Optimizer (Powered by Uploadcare)** plugin now includes support for a new configuration option, `+uploadcare_filters+`, introduced in {release-version}. This option allows integrators to define a customizable list of image filters available within the **Image Optimizer (Powered by Uploadcare)** dialog. Each filter can be configured with an optional `amount` parameter, controlling the intensity of the effect, and an optional `label` to customize its display name in the UI.
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare',
+  uploadcare_public_key: '<your-public-key>',
+  uploadcare_filters: [
+    { name: 'none' },
+    { name: 'adaris', amount: -100, label: 'Vintage Fade' },
+    { name: 'adaris', amount: 0, label: 'Base' },
+    { name: 'adaris', amount: 100, label: 'Standard' },
+    { name: 'zevcen', amount: 200, label: 'Glow Boost' }
+  ]
+});
+----
+
+==== Dragging and dropping image files onto the placeholder was not possible if the files had the correct extension but an incorrect MIME type.
+// #TINY-11842
+
+In previous versions of the **Image Optimizer (Powered by Uploadcare)** plugin, dragging and dropping supported image files onto the placeholder could fail due to inconsistent file type detection. The issue occurred because only the MIME type or the file extension was checked, resulting in discrepancies when handling certain image files.
+
+{productname} {release-version} resolves this issue by updating file type detection to consider both the MIME type and the file extension when verifying supported formats. This enhancement ensures more reliable and consistent behavior when dragging and dropping image files.
 
 === Non-uploadcare image URLs would be altered by color adjustments even when they failed to upload.
 // #TINY-11761
 
 Previously, applying color filters to images that had not yet been successfully uploaded to Uploadcare could result in broken image links if the server returned an error. This occurred because the original image was modified before confirming a successful upload. With this update, {productname} now preserves the original image until a successful upload is completed, ensuring that image functionality remains intact even if an upload fails. This change improves the reliability of the image upload and editing workflow in {release-version}.
+
+==== Keyboard navigation between toolbars no longer loses focus.
+// #TINY-11880
+
+In previous versions of **Image Optimizer (Powered by Uploadcare)** plugin, navigating between toolbars and sub toolbars could cause the toolbar focus state to be lost. This issue required users to press `+Ctrl+F9+` to manually restore focus to the context toolbar, disrupting keyboard navigation workflows. {productname} {release-version} addresses this issue, by updating the focus handling using new sub toolbar APIs, ensuring that focus is now properly retained when moving between toolbars and sub toolbars. This improvement enhances accessibility and allows users to navigate the toolbar system more efficiently.
+
+==== Placeholder element is now responsive and adjusts to the container's width.
+// #TINY-11958
+
+Previously, in **Image Optimizer**, the image placeholder had a fixed width, which prevented it from being responsive to different screen or container sizes. This limitation caused visual issues when the placeholder was placed inside small containers (e.g. table cells, small editors), resulting in layout inconsistencies.
+
+With the release of {productname} {release-version}, this issue has been resolved. The image placeholder styles have been updated to ensure full responsiveness, allowing it to adapt seamlessly to small containers without any visual issues.
 
 For information on the **Image Optimizer (Powered by Uploadcare)** plugin, see xref:uploadcare.adoc[Image Optimizer (Powered by Uploadcare)].
 
@@ -363,6 +369,15 @@ Previously, when the editor height was set using relative units such as `pt` or 
 // #TINY-11732
 
 Previously, the tooltip for the `blockquote` button was not translated in Hebrew. {productname} {release-version} addresses this by adding a new Hebrew translation to the tooltip for the `blockquote` button.
+
+=== It wasn't possible to add comments to selected footnotes elements.
+// #TINY-11842
+
+In previous versions of {productname}, it was not possible to add comments to footnotes (created by the xref:footnotes.adoc[Footnotes] plugin) when selecting the footnote element.
+
+As a result, attempting to add a comment would result in the comment being attached to a word outside the footnote as they were not considered valid block elements.
+
+{productname} {release-version} addresses this issue. Comments can now be added directly to the entire footnote element, similar to how comments are handled for figures and other comparable elements.
 
 
 [[security-fixes]]

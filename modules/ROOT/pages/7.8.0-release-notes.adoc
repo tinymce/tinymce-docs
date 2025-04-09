@@ -161,7 +161,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === It wasn't possible to add comments to selected footnotes elements.
 // #TINY-11842
 
-In previous versions of {productname}, it was not possible to add comments to footnotes when selecting the footnote element.
+In previous versions of {productname}, it was not possible to add comments to footnotes (created by the xref:footnotes.adoc[Footnotes] plugin) when selecting the footnote element.
 
 As a result, attempting to add a comment would result in the comment being attached to a word outside the footnote as they were not considered valid block elements.
 

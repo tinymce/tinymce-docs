@@ -101,6 +101,8 @@ For information on the **Comments** plugin, see: xref:introduction-to-tiny-comme
 
 {productname} {release-version} introduces the **Image Optimizer (Powered by Uploadcare)** plugin.
 
+**Image Optimizers** includes the following fix and addition.
+
 === Added support for `+uploadcare_filters+` option in the Image Optimizer (Powered by Uploadcare) plugin
 // #EPIC-146
 
@@ -123,6 +125,11 @@ tinymce.init({
   ]
 });
 ----
+
+==== Keyboard navigation between toolbars no longer loses focus.
+// #TINY-11880
+
+In previous versions of **Image Optimizer**, navigating between toolbars and sub toolbars could cause the toolbar focus state to be lost. This issue required users to press `+Ctrl+F9+` to manually restore focus to the context toolbar, disrupting keyboard navigation workflows. {productname} {release-version} addresses this issue, by updating the focus handling using new sub toolbar APIs, ensuring that focus is now properly retained when moving between toolbars and sub toolbars. This improvement enhances accessibility and allows users to navigate the toolbar system more efficiently.
 
 For information on the **Image Optimizer (Powered by Uploadcare)** plugin, see xref:uploadcare.adoc[Image Optimizer (Powered by Uploadcare)].
 
@@ -239,6 +246,47 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // #TINY-vwxyz1
 
 // CCFR here.
+
+=== New subtoolbar support for context toolbars.
+// #TINY-11748
+
+{productname} {release-version} introduces support for multi-level context toolbars, enabling more advanced and interactive editing experiences directly within the editor interface. Previously, developers had to manually configure separate toolbars and manage transitions between them using predicate logic. This release simplifies that process by adding a new API for defining and navigating subtoolbars, similar to the existing context form functionality.
+
+A new `+navigateback+` button streamlines navigation between toolbar levels, while improved focus management ensures input fields are automatically focused when switching toolbars. These enhancements provide a more flexible, intuitive, and responsive workflow for both developers and end users.
+
+.Example of a multi-level context toolbar configuration:
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',
+  height: 350,
+  setup: (editor) => {
+    editor.ui.registry.addContextToolbar('bar', {
+      predicate: () => true,
+      items: 'bold italic | undo redo | subbar1',
+      position: 'line',
+      scope: 'editor'
+    });
+
+    editor.ui.registry.addContextToolbar('subbar1', {
+      launch: { text: 'Subbar 1' },
+      items: 'navigateback bold italic | undo redo | subbar2'
+    });
+
+    editor.ui.registry.addContextToolbar('subbar2', {
+      launch: { text: 'Subbar 2' },
+      items: 'navigateback bold italic | undo redo | subbar3'
+    });
+
+    editor.ui.registry.addContextToolbar('subbar3', {
+      launch: { text: 'Subbar 3' },
+      items: 'navigateback bold italic | undo redo'
+    });
+  }
+});
+----
+
+For more information on context toolbars, see xref:contexttoolbar.adoc[Context toolbars].
 
 === The `+editor.selection.scrollIntoView()+` method now pads the target scroll area with a small margin, ensuring content doesn't sit at the very edge of the viewport.
 // #TINY-11786

@@ -101,7 +101,7 @@ tinymce.init({
 This example demonstrates how to integrate the {pluginname} plugin with the Vertex AI API to generate streaming responses.
 [source,js]
 ----
-const fetchApi = import("https://unpkg.com/@microsoft/fetch-event-source@2.0.1/lib/esm/index.js").then(module => module.fetchEventSource);
+const fetchApi = import("https://cdn.skypack.dev/@microsoft/fetch-event-source@2.0.1").then(module => module.fetchEventSource);
 
 // Providing access credentials within the integration is not recommended for production use.
 // It is recommended to set up a proxy server to authenticate requests and provide access.

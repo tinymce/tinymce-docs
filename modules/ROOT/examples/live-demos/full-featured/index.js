@@ -1,6 +1,7 @@
-const fetchApi = import(
-  "https://unpkg.com/@microsoft/fetch-event-source@2.0.1/lib/esm/index.js"
-).then((module) => module.fetchEventSource);
+const fetchApi = import('https://cdn.skypack.dev/@microsoft/fetch-event-source@2.0.1')
+  .then((module) => module.fetchEventSource);
+
+
 
 /* Script to import faker.js for generating random data for demonstration purposes */
 tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/faker.min.js']).then(() => {

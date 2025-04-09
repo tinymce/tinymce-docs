@@ -11,45 +11,12 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[overview]]
 == Overview
 
-{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, April 02^nd^, 2025. These release notes provide an overview of the changes for {productname} {release-version}, including:
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, April 09^th^, 2025. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
-* xref:new-premium-plugin<s>[New Premium plugin<s>]
-* xref:new-open-source-plugin<s>[New Open Source plugin<s>]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
-* xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
-* xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
-* xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
 * xref:improvements[Improvements]
 * xref:additions[Additions]
-* xref:changes[Changes]
 * xref:bug-fixes[Bug fixes]
-* xref:security-fixes[Security fixes]
-* xref:deprecated[Deprecated]
-* xref:known-issues[Known issues]
-
-
-[[new-premium-plugin<s>]]
-New Premium plugin<s>
-
-The following new Premium plugin was released alongside {productname} {release-version}.
-
-=== <Premium plugin name>
-
-The new Premium plugin, **<Premium plugin name>** // description here.
-
-For information on the **<Premium plugin name>** plugin, see xref:<plugincode>.adoc[<Premium plugin name>].
-
-
-[[new-open-source-plugin]]
-== New Open Source plugin
-
-The following new Open Source plugin was released alongside {productname} {release-version}.
-
-=== <Open source plugin name>
-
-The new open source plugin, **<Open source plugin name>** // description here.
-
-For information on the **<Open source plugin name>** plugin, see xref:<plugincode>.adoc[<Open source plugin name>].
 
 
 [[accompanying-premium-plugin-changes]]
@@ -78,6 +45,15 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **Comments** includes the following fix, addition and change.
 
+=== It wasn't possible to add comments to selected footnotes elements.
+// #TINY-11842
+
+In previous versions of {productname}, it was not possible to add comments to footnotes (created by the xref:footnotes.adoc[Footnotes] plugin) when selecting the footnote element.
+
+As a result, attempting to add a comment would result in the comment being attached to a word outside the footnote as they were not considered valid block elements.
+
+{productname} {release-version} addresses this issue. Comments can now be added directly to the entire footnote element, similar to how comments are handled for figures and other comparable elements.
+
 === A confirmation dialog now appears when resolving conversation to match the UX of deleting a conversation.
 // #TINY-11324
 
@@ -96,54 +72,6 @@ Previously, deleting a comment reply did not dispatch a `change` event, which pr
 In {productname} {release-version}, a new `+tinycomments_fetch_author_info+` callback option has been introduced, enabling integrators to provide author information in callback mode. This enhancement ensures accurate author data is displayed in new conversation cards.
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to {companyname} Comments].
-
-=== Math
-
-The {productname} {release-version} release includes an accompanying release of the **Math** premium plugin.
-
-**Math** includes the following addition.
-
-==== New `extended_mathml_attributes` and `extended_mathml_elements` options.
-// #TINY-11756
-
-To improve flexibility when working with MathML content, especially in cases where new attributes or elements are not yet supported by DOMPurify, two new configuration options have been introduced: xref:math.adoc#extended-mathml-elements[extended_mathml_elements] and xref:math.adoc#extended-mathml-attributes[extended_mathml_attributes].
-
-Prior to {release-version}, MathML elements and attributes were treated the same as all other content, with no special handling for MathML-specific structures. As a result, unsupported elements and attributes were either retained without validation or stripped without regard to their MathML context.
-
-In {productname} {release-version}, MathML content is now filtered separately from general HTML using DOMPurify. As part of this change, support has been added to selectively allow specific elements and attributes *within* a `<math>` element using the new configuration options.
-
-The new options allow users to define lists of MathML elements and attributes that should be preserved, even if DOMPurify does not currently recognize them. This enables quicker user-side updates in response to evolving MathML specifications without disabling sanitization or waiting for upstream changes.
-
-* **`+extended_mathml_elements+`**: allows a list of additional MathML elements to be preserved.
-* **`+extended_mathml_attributes+`**: allows a list of additional MathML attributes to be preserved.
-
-These options apply only within MathML contexts and do not affect general HTML content. They enable use cases such as preserving `+<mn>+` elements and attributes like `linebreak` in MathML expressions.
-
-.Example of MathML with preserved elements and attributes
-[source,js]
-----
-tinymce.init({
-  selector: "textarea",
-  extended_mathml_elements: [ "mn" ],
-  extended_mathml_attributes: [ "linebreak" ]
-});
-----
-
-.Example of MathML with preserved elements and attributes
-[source,html]
-----
-<p>
-  <math xmlns="http://www.w3.org/1998/Math/MathML">
-    <mrow><mn>0.196</mn></mrow>
-    <mspace linebreak="newline"></mspace>
-    <mrow><mo>=</mo></mrow>
-    <mspace linebreak="newline"></mspace>
-    <mrow><mn>0.196</mn></mrow>
-  </math>
-</p>
-----
-
-For information on the **Math** premium plugin, see: xref:math.adoc[Math].
 
 === Export to Word
 
@@ -222,49 +150,31 @@ With the release of {productname} {release-version}, this issue has been resolve
 
 For information on the **Image Optimizer (Powered by Uploadcare)** plugin, see xref:uploadcare.adoc[Image Optimizer (Powered by Uploadcare)].
 
-[[accompanying-premium-plugin-end-of-life-announcement]]
-== Accompanying Premium plugin end-of-life announcement
-
-The following Premium plugin has been announced as reaching its end-of-life:
-
-=== <Premium plugin name eol>
-
-{productname}’s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
-
-
-[[accompanying-open-source-plugin-end-of-life-announcement]]
-== Accompanying open source plugin end-of-life announcement
-
-The following open source plugin has been announced as reaching its end-of-life:
-
-=== <Open source plugin name eol>
-
-{productname}’s xref:<plugincode>.adoc[<Open source plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
-
-
-[[accompanying-enhanced-skins-and-icon-packs-changes]]
-== Accompanying Enhanced Skins & Icon Packs changes
-
-The {productname} {release-version} release includes an accompanying release of the **Enhanced Skins & Icon Packs**.
-
-=== Enhanced Skins & Icon Packs
-
-The **Enhanced Skins & Icon Packs** release includes the following updates:
-
-The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} {release-version} skin, Oxide.
-
-For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
-
 
 [[improvements]]
 == Improvements
 
-{productname} {release-version} also includes the following improvement<s>:
+{productname} {release-version} also includes the following improvements:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== The focus outline was misaligned with the comment card border after saving an edited comment.
+// #TINY-11329
 
-// CCFR here.
+In previous versions of {productname}, the keyboard focus styles were not properly aligned with the comment card during the process of saving an edited comment, resulting in a poor user interface.
+
+{productname} {release-version} addresses this by adjusting the focus styles, ensuring a more polished user interface while saving an edited comment.
+
+=== The `+editor.selection.scrollIntoView()+` method now pads the target scroll area with a small margin, ensuring content doesn't sit at the very edge of the viewport.
+// #TINY-11786
+
+Previously, when cycling through accessibility issues in the a11y checker dialog, the highlighted content could appear aligned to the very edge of the viewport, making it difficult to identify and visually track. This behavior impacted usability by reducing the effectiveness of the a11y checker tool.
+
+In {productname} {release-version}, the `+editor.selection.scrollIntoView()+` method was updated to include a top and bottom margin, aligning the highlighted content to a fixed `30px` from the edge of the viewport. Additionally, a visual overlay was introduced to draw attention to the selected element. These changes improve visibility, provide smoother and more intuitive scroll positioning, and enhance the overall user experience when navigating accessibility issues in {productname}.
+
+
+[[additions]]
+== Additions
+
+{productname} {release-version} also includes the following additions:
 
 === New subtoolbar support for context toolbars.
 // #TINY-11748
@@ -307,58 +217,58 @@ tinymce.init({
 
 For more information on context toolbars, see xref:contexttoolbar.adoc[Context toolbars].
 
-=== The `+editor.selection.scrollIntoView()+` method now pads the target scroll area with a small margin, ensuring content doesn't sit at the very edge of the viewport.
-// #TINY-11786
+=== New `extended_mathml_attributes` and `extended_mathml_elements` options.
+// #TINY-11756
 
-Previously, when cycling through accessibility issues in the a11y checker dialog, the highlighted content could appear aligned to the very edge of the viewport, making it difficult to identify and visually track. This behavior impacted usability by reducing the effectiveness of the a11y checker tool.
+To improve flexibility when working with MathML content, especially in cases where new attributes or elements are not yet supported by DOMPurify, two new configuration options have been introduced: xref:math.adoc#extended-mathml-elements[extended_mathml_elements] and xref:math.adoc#extended-mathml-attributes[extended_mathml_attributes].
 
-In {productname} {release-version}, the `+editor.selection.scrollIntoView()+` method was updated to include a top and bottom margin, aligning the highlighted content to a fixed `30px` from the edge of the viewport. Additionally, a visual overlay was introduced to draw attention to the selected element. These changes improve visibility, provide smoother and more intuitive scroll positioning, and enhance the overall user experience when navigating accessibility issues in {productname}.
+Prior to {release-version}, MathML elements and attributes were treated the same as all other content, with no special handling for MathML-specific structures. As a result, unsupported elements and attributes were either retained without validation or stripped without regard to their MathML context.
 
+In {productname} {release-version}, MathML content is now filtered separately from general HTML using DOMPurify. As part of this change, support has been added to selectively allow specific elements and attributes *within* a `<math>` element using the new configuration options.
 
-[[additions]]
-== Additions
+The new options allow users to define lists of MathML elements and attributes that should be preserved, even if DOMPurify does not currently recognize them. This enables quicker user-side updates in response to evolving MathML specifications without disabling sanitization or waiting for upstream changes.
 
-{productname} {release-version} also includes the following addition<s>:
+* **`+extended_mathml_elements+`**: allows a list of additional MathML elements to be preserved.
+* **`+extended_mathml_attributes+`**: allows a list of additional MathML attributes to be preserved.
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+These options apply only within MathML contexts and do not affect general HTML content. They enable use cases such as preserving `+<mn>+` elements and attributes like `linebreak` in MathML expressions.
 
-// CCFR here.
+.Example of MathML with preserved elements and attributes
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  extended_mathml_elements: [ "mn" ],
+  extended_mathml_attributes: [ "linebreak" ]
+});
+----
 
+.Example of MathML with preserved elements and attributes
+[source,html]
+----
+<p>
+  <math xmlns="http://www.w3.org/1998/Math/MathML">
+    <mrow><mn>0.196</mn></mrow>
+    <mspace linebreak="newline"></mspace>
+    <mrow><mo>=</mo></mrow>
+    <mspace linebreak="newline"></mspace>
+    <mrow><mn>0.196</mn></mrow>
+  </math>
+</p>
+----
 
-[[changes]]
-== Changes
+=== New `onboarding` option
+// #TINY-11931
 
-{productname} {release-version} also includes the following change<s>:
+{productname} {release-version} introduces a new `+onboarding+` option to enhance the developer experience during the 14-day trial period. This option controls the display of a cloud promotion banner highlighting paid features available during the trial. The banner is automatically hidden when the trial ends or when the editor is correctly configured, ensuring a smoother and less intrusive setup experience.
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[removed]]
-== Removed
-
-{productname} {release-version} also includes the following removal<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+For more information, see xref:promotions.adoc#onboarding[onboarding].
 
 
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
-
-=== The focus outline was misaligned with the comment card border after saving an edited comment.
-// #TINY-11329
-
-In previous versions of {productname}, the keyboard focus styles were not properly aligned with the comment card during the process of saving an edited comment, resulting in a poor user interface.
-
-{productname} {release-version} addresses this by adjusting the focus styles, ensuring a more polished user interface while saving an edited comment.
+{productname} {release-version} also includes the following bug fixes:
 
 === Setting editor height to a `pt` or `em` value was ignoring min/max height settings.
 // #TINY-11108
@@ -369,46 +279,3 @@ Previously, when the editor height was set using relative units such as `pt` or 
 // #TINY-11732
 
 Previously, the tooltip for the `blockquote` button was not translated in Hebrew. {productname} {release-version} addresses this by adding a new Hebrew translation to the tooltip for the `blockquote` button.
-
-=== It wasn't possible to add comments to selected footnotes elements.
-// #TINY-11842
-
-In previous versions of {productname}, it was not possible to add comments to footnotes (created by the xref:footnotes.adoc[Footnotes] plugin) when selecting the footnote element.
-
-As a result, attempting to add a comment would result in the comment being attached to a word outside the footnote as they were not considered valid block elements.
-
-{productname} {release-version} addresses this issue. Comments can now be added directly to the entire footnote element, similar to how comments are handled for figures and other comparable elements.
-
-
-[[security-fixes]]
-== Security fixes
-
-{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[deprecated]]
-== Deprecated
-
-{productname} {release-version} includes the following deprecation<s>:
-
-=== The `<plugin>` configuration property, `<name>`, has been deprecated
-
-// placeholder here.
-
-
-[[known-issues]]
-== Known issues
-
-This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
-
-There <is one | are <number> known issue<s> in {productname} {release-version}.
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.

@@ -101,7 +101,30 @@ For information on the **Comments** plugin, see: xref:introduction-to-tiny-comme
 
 {productname} {release-version} introduces the **Image Optimizer (Powered by Uploadcare)** plugin.
 
-**Image Optimizers** includes the following fix.
+**Image Optimizers** includes the following fix and addition.
+
+=== Added support for `+uploadcare_filters+` option in the Image Optimizer (Powered by Uploadcare) plugin
+// #EPIC-146
+
+The **Image Optimizer (Powered by Uploadcare)** plugin now includes support for a new configuration option, `+uploadcare_filters+`, introduced in {release-version}. This option allows integrators to define a customizable list of image filters available within the **Image Optimizer (Powered by Uploadcare)** dialog. Each filter can be configured with an optional `amount` parameter, controlling the intensity of the effect, and an optional `label` to customize its display name in the UI.
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare',
+  uploadcare_public_key: '<your-public-key>',
+  uploadcare_filters: [
+    { name: 'none' },
+    { name: 'adaris', amount: -100, label: 'Vintage Fade' },
+    { name: 'adaris', amount: 0, label: 'Base' },
+    { name: 'adaris', amount: 100, label: 'Standard' },
+    { name: 'zevcen', amount: 200, label: 'Glow Boost' }
+  ]
+});
+----
 
 ==== Keyboard navigation between toolbars no longer loses focus.
 // #TINY-11880

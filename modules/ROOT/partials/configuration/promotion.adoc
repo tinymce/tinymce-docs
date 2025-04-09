@@ -1,7 +1,7 @@
 [[promotion]]
-== `+promotion+`
+== `+promotion+`  
 
-{productname} 6.2 and later includes the `promotion` option. It controls the presentation or otherwise of a Tiny-specific promotion button.
+The open source version of {productname} contains a promotion for paid features. This promotion can be toggled on or off with the `+promotion+` option.
 
 *Type:* `+Boolean+`
 
@@ -9,10 +9,7 @@
 
 *Possible values:* `+true+`, `+false+`
 
-See xref:editor-premium-upgrade-promotion.adoc#premium-upgrade-promotion-defaults[Premium upgrade promotion defaults] for details.
-
-=== Example: using `+promotion+`
-
+.Example: using open source `+promotion+`
 [source,js]
 ----
 tinymce.init({
@@ -20,7 +17,3 @@ tinymce.init({
   promotion: true
 });
 ----
-
-The *Upgrade* promotion appears in the unused corner of the {productname} menu bar. Consequently it does not appear if the menu bar is disabled.
-
-NOTE: The distribution-specific defaults are not fixed. Someone running {productname} as part of a Premium plan can turn this option on. And someone running the Community distribution of {productname} as a self-hosted instance can turn this option off.

@@ -365,6 +365,15 @@ In previous versions of {productname}, the keyboard focus styles were not proper
 
 Previously, when the editor height was set using relative units such as `pt` or `em`, the editor was unable to parse and evaluate these values correctly. As a result, it would bypass the `min_height` and `max_height` checks, leading to unpredictable layout behavior. This issue was especially noticeable during initialization, although resizing later used the browser-calculated content box height, which partially masked the problem. In {release-version}, {productname} now attempts to compute height values from additional unit types to better enforce minimum and maximum height constraints. Some units, such as percentages (`%`), may still override explicit height values due to browser limitations in determining the final rendered size. This update ensures that `min_height` and `max_height` settings are more reliably applied across a wider range of unit types.
 
+=== It wasn't possible to add comments to selected footnotes elements.
+// #TINY-11842
+
+In previous versions of {productname}, it was not possible to add comments to footnotes (created by the xref:footnotes.adoc[Footnotes] plugin) when selecting the footnote element.
+
+As a result, attempting to add a comment would result in the comment being attached to a word outside the footnote as they were not considered valid block elements.
+
+{productname} {release-version} addresses this issue. Comments can now be added directly to the entire footnote element, similar to how comments are handled for figures and other comparable elements.
+
 
 [[security-fixes]]
 == Security fixes

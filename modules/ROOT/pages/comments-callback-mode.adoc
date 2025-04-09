@@ -15,10 +15,10 @@ All options accept functions incorporating `+done+` and `+fail+` callbacks as pa
 * The `+fail+` callback takes either a string or a JavaScript Error type.
 * The `+done+` callback takes an argument specific to each function.
 
-Most functions (create, reply, and edit) require an `+id+` identifying the *current author*.
+Most functions (create, reply, and edit) require an +id+ identifying the current author. This can be provided directly within the callbacks or dynamically via the `+tinycomments_fetch_author_info+` option.
 
 [NOTE]
-**Current author**: The {pluginname} plugin does not know the name of the current user. Determining the current user and storing the comment related to that user is required to be configured by the integrator.
+**Current author**: By default, the **Comments** plugin does not know the name of the current user. To display the correct author information when creating a new conversation, integrators can now use the `+tinycomments_fetch_author_info+` option to supply author details dynamically through a callback.
 
 During the initial editor load, the {pluginname} uses `+tinycomments_fetch+` callback to retrieve the existing conversations in the document. If not configured, the {pluginname} will fallback to `+tinycomments_lookup+`. 
 
@@ -26,8 +26,6 @@ When a user adds a comment or a reply, the {pluginname} plugin uses the `+tinyco
 
 [[comments-callback-live-demo]]
 == Interactive example
-
-The following example uses a simulated server (provided by link:https://netflix.github.io/pollyjs/[Polly.js]), which has been hidden from the example JavaScript to keep the example code concise. The interactions between {productname} and Polly.js are visible in the browser console.
 
 liveDemo::comments-callback[]
 
@@ -63,10 +61,13 @@ include::partial$configuration/tinycomments_lookup.adoc[leveloffset=+1]
 
 * xref:tinycomments_resolve[`+tinycomments_resolve+`]
 * xref:tinycomments_fetch[`+tinycomments_fetch+`]
+* xref:tinycomments_fetch_author_info[`+tinycomments_fetch_author_info+`]
 
 include::partial$configuration/tinycomments_resolve.adoc[leveloffset=+1]
 
 include::partial$configuration/tinycomments_fetch.adoc[leveloffset=+1]
+
+include::partial$configuration/tinycomments_fetch_author_info.adoc[leveloffset=+1]
 
 include::partial$plugins/comments-open-sidebar.adoc[]
 

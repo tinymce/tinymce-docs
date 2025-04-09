@@ -35,6 +35,13 @@ Pull the Docker image:
 docker pull registry.containers.tiny.cloud/{dockerimageexporttopdf}:[version]
 ----
 
+[TIP]
+====
+To view all available Docker image versions, refer to the changelog at link:https://registry.containers.tiny.cloud/api/changelogs/pdf-converter-tiny[pdf-converter-tiny].
+
+To ensure access to the most recent version of the service, {companyname} **recommends** using the `latest` tag when pulling the image.
+====
+
 Launch the Docker container:
 
 [source, sh, subs="attributes+"]

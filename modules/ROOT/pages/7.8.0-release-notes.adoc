@@ -167,9 +167,51 @@ The `exportpdf` plugin previously transformed relative URLs (e.g., `+/relative/u
 
 For more information, see: xref:exportpdf.adoc[Export to PDF].
 
-=== Image Optimizer
+=== Image Optimizer (Powered by Uploadcare)
 
-The {productname} {release-version} release includes an accompanying release of the **Image Optimizer** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Image Optimizer (Powered by Uploadcare)** premium plugin.
+
+**Image Optimizers** includes the following fixes and addition.
+
+=== Added support for `+uploadcare_filters+` option in the Image Optimizer (Powered by Uploadcare) plugin
+// #EPIC-146
+
+The **Image Optimizer (Powered by Uploadcare)** plugin now includes support for a new configuration option, `+uploadcare_filters+`, introduced in {release-version}. This option allows integrators to define a customizable list of image filters available within the **Image Optimizer (Powered by Uploadcare)** dialog. Each filter can be configured with an optional `amount` parameter, controlling the intensity of the effect, and an optional `label` to customize its display name in the UI.
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare',
+  uploadcare_public_key: '<your-public-key>',
+  uploadcare_filters: [
+    { name: 'none' },
+    { name: 'adaris', amount: -100, label: 'Vintage Fade' },
+    { name: 'adaris', amount: 0, label: 'Base' },
+    { name: 'adaris', amount: 100, label: 'Standard' },
+    { name: 'zevcen', amount: 200, label: 'Glow Boost' }
+  ]
+});
+----
+
+==== Dragging and dropping image files onto the placeholder was not possible if the files had the correct extension but an incorrect MIME type.
+// #TINY-11842
+
+In previous versions of the **Image Optimizer (Powered by Uploadcare)** plugin, dragging and dropping supported image files onto the placeholder could fail due to inconsistent file type detection. The issue occurred because only the MIME type or the file extension was checked, resulting in discrepancies when handling certain image files.
+
+{productname} {release-version} resolves this issue by updating file type detection to consider both the MIME type and the file extension when verifying supported formats. This enhancement ensures more reliable and consistent behavior when dragging and dropping image files.
+
+=== Non-uploadcare image URLs would be altered by color adjustments even when they failed to upload.
+// #TINY-11761
+
+Previously, applying color filters to images that had not yet been successfully uploaded to Uploadcare could result in broken image links if the server returned an error. This occurred because the original image was modified before confirming a successful upload. With this update, {productname} now preserves the original image until a successful upload is completed, ensuring that image functionality remains intact even if an upload fails. This change improves the reliability of the image upload and editing workflow in {release-version}.
+
+==== Keyboard navigation between toolbars no longer loses focus.
+// #TINY-11880
+
+In previous versions of **Image Optimizer (Powered by Uploadcare)** plugin, navigating between toolbars and sub toolbars could cause the toolbar focus state to be lost. This issue required users to press `+Ctrl+F9+` to manually restore focus to the context toolbar, disrupting keyboard navigation workflows. {productname} {release-version} addresses this issue, by updating the focus handling using new sub toolbar APIs, ensuring that focus is now properly retained when moving between toolbars and sub toolbars. This improvement enhances accessibility and allows users to navigate the toolbar system more efficiently.
 
 ==== Placeholder element is now responsive and adjusts to the container's width.
 // #TINY-11958
@@ -178,8 +220,7 @@ Previously, in **Image Optimizer**, the image placeholder had a fixed width, whi
 
 With the release of {productname} {release-version}, this issue has been resolved. The image placeholder styles have been updated to ensure full responsiveness, allowing it to adapt seamlessly to small containers without any visual issues.
 
-For more information on the **Image Optimizer** premium plugin, see: xref:uploadcare.adoc[Image Optimizer].
-
+For information on the **Image Optimizer (Powered by Uploadcare)** plugin, see xref:uploadcare.adoc[Image Optimizer (Powered by Uploadcare)].
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement
@@ -224,6 +265,47 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // #TINY-vwxyz1
 
 // CCFR here.
+
+=== New subtoolbar support for context toolbars.
+// #TINY-11748
+
+{productname} {release-version} introduces support for multi-level context toolbars, enabling more advanced and interactive editing experiences directly within the editor interface. Previously, developers had to manually configure separate toolbars and manage transitions between them using predicate logic. This release simplifies that process by adding a new API for defining and navigating subtoolbars, similar to the existing context form functionality.
+
+A new `+navigateback+` button streamlines navigation between toolbar levels, while improved focus management ensures input fields are automatically focused when switching toolbars. These enhancements provide a more flexible, intuitive, and responsive workflow for both developers and end users.
+
+.Example of a multi-level context toolbar configuration:
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',
+  height: 350,
+  setup: (editor) => {
+    editor.ui.registry.addContextToolbar('bar', {
+      predicate: () => true,
+      items: 'bold italic | undo redo | subbar1',
+      position: 'line',
+      scope: 'editor'
+    });
+
+    editor.ui.registry.addContextToolbar('subbar1', {
+      launch: { text: 'Subbar 1' },
+      items: 'navigateback bold italic | undo redo | subbar2'
+    });
+
+    editor.ui.registry.addContextToolbar('subbar2', {
+      launch: { text: 'Subbar 2' },
+      items: 'navigateback bold italic | undo redo | subbar3'
+    });
+
+    editor.ui.registry.addContextToolbar('subbar3', {
+      launch: { text: 'Subbar 3' },
+      items: 'navigateback bold italic | undo redo'
+    });
+  }
+});
+----
+
+For more information on context toolbars, see xref:contexttoolbar.adoc[Context toolbars].
 
 === The `+editor.selection.scrollIntoView()+` method now pads the target scroll area with a small margin, ensuring content doesn't sit at the very edge of the viewport.
 // #TINY-11786

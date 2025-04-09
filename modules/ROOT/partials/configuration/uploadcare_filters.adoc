@@ -1,0 +1,128 @@
+[[uploadcare-filters]]
+== `uploadcare_filters`
+
+The `+uploadcare_filters+` option defines the list of image filters available when using the {pluginname} plugin. Each filter applies a stylized image effect consistent with the visual design of the content and can be configured with an amount value to control its intensity. Filters enhance images by applying consistent styling, improving overall quality, and boosting user engagement.
+
+
+Each filter is defined as an object with the following properties:
+[source,js]
+----
+{
+  name: 'filterName', // Required: name of the filter to apply
+  amount: number, // Optional: strength of the filter (default = 100)
+  label: 'string' // Optional: custom name to display in the UI
+}
+----
+
+* `name`: A predefined filter identifier (e.g., adaris, zevcen, galen).
+* `amount`: The intensity of the filter effect, ranging from -100 to 200:
+** **0**: No effect (image stays original).
+** **0** to **100**: Gradually increases filter strength.
+** **100**: Default intensity (as the filter is designed).
+** **>100**: Exaggerates the effect.
+** **<0**: Inverts the filter effect (produces a "negative" version).
+* `label`: Optional display name for the filter in your UI. If omitted, it defaults to the name.
+
+=== Example: Setting `uploadcare_filters`
+
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare',
+  uploadcare_public_key: '<your-public-key>',
+
+  // Define available Uploadcare image filters and their intensity levels
+  uploadcare_filters: [
+    { name: 'none' }, // No filter applied
+    { name: 'adaris', amount: -100 }, // Adaris with inverted effect (amount -100), label defaults to 'adaris'
+    { name: 'adaris', amount: -100, label: 'Vintage Fade' }, // Adaris with inverted effect (amount -100), label reads 'Vintage Fade'
+    { name: 'adaris', amount: 0, label: 'Base' }, // Adaris with neutral effect (amount 0), label reads 'Base'
+    { name: 'adaris', amount: 50, label: 'Light' }, // Adaris with light effect (amount 50), label reads 'Light'
+    { name: 'adaris', amount: 100, label: 'Standard' }, // Adaris with standard effect (amount 100), label reads 'Standard'
+    { name: 'adaris', amount: 200, label: 'Intense' }, // Adaris with intense effect (amount 200), label reads 'Intense'
+    { name: 'zevcen', amount: 200, label: 'Glow Boost' }, // Zevcen with intense effect (amount 200), label reads 'Glow Boost'
+    { name: 'galen', amount: 80, label: 'Soft Focus' }, // Galen with softening effect (amount 80), label reads 'Soft Focus'
+    { name: 'carris', amount: 120, label: 'Sharp Contrast' }, // Carris with high contrast (amount 120), label reads 'Sharp Contrast'
+    { name: 'ferand', amount: 60, label: 'Light Touch' }, // Ferand with light enhancement (amount 60), label reads 'Light Touch'
+    { name: 'sorahel', amount: -50, label: 'Night Mood' } // Sorahel with darkened effect (amount -50), label reads 'Night Mood'
+  ]
+});
+----
+
+[NOTE]
+====
+* Filter names must be selected from the supported set:
+** `adaris`, `briaril`, `calarel`, `carris`, `cynarel`, `cyren`, `elmet`, `elonni`, `enzana`, `erydark`, `fenralan`, `ferand`, `galen`, `gavin`, `gethriel`, `iorill`, `iothari`, `iselva`, `jadis`, `lavra`, `misiara`, `namala`, `nerion`, `nethari`, `pamaya`, `sarnar`, `sedis`, `sewen`, `sorahel`, `sorlen`, `tarian`, `thellassan`, `varriel`, `varven`, `vevera`, `virkas`, `yedis`, `yllara`, `zatvel`, `zevcen`.
+* If the amount is not set, it defaults to 100.
+* Some filters may behave unpredictably outside the 0–100 range.
+* Applying negative amount values inverts the filter, useful for creative effects.
+====
+
+=== Uploadcare Filter Previews
+
+Each image below represents a filter applied to the same source image.
+
+[cols="1,1,1,1", options="header"]
+|===
+|adaris |briaril |calarel |carris
+|image:uploadcare/filters/cynarel.jpg[adaris]
+|image:uploadcare/filters/briaril.jpg[briaril]
+|image:uploadcare/filters/calarel.jpg[calarel]
+|image:uploadcare/filters/carris.jpg[carris]
+
+|cynarel |cyren |elmet |elonni
+|image:uploadcare/filters/cynarel.jpg[cynarel]
+|image:uploadcare/filters/cyren.jpg[cyren]
+|image:uploadcare/filters/elmet.jpg[elmet]
+|image:uploadcare/filters/elonni.jpg[elonni]
+
+|enzana |erydark |fenralan |ferand
+|image:uploadcare/filters/enzana.jpg[enzana]
+|image:uploadcare/filters/erydark.jpg[erydark]
+|image:uploadcare/filters/fenralan.jpg[fenralan]
+|image:uploadcare/filters/ferand.jpg[ferand]
+
+|galen |gavin |gethriel |iorill
+|image:uploadcare/filters/galen.jpg[galen]
+|image:uploadcare/filters/gavin.jpg[gavin]
+|image:uploadcare/filters/gethriel.jpg[gethriel]
+|image:uploadcare/filters/iorill.jpg[iorill]
+
+|iothari |iselva |jadis |lavra
+|image:uploadcare/filters/iothari.jpg[iothari]
+|image:uploadcare/filters/iselva.jpg[iselva]
+|image:uploadcare/filters/jadis.jpg[jadis]
+|image:uploadcare/filters/lavra.jpg[lavra]
+
+|misiara |namala |nerion |nethari
+|image:uploadcare/filters/misiara.jpg[misiara]
+|image:uploadcare/filters/namala.jpg[namala]
+|image:uploadcare/filters/nerion.jpg[nerion]
+|image:uploadcare/filters/nethari.jpg[nethari]
+
+|pamaya |sarnar |sedis |sewen
+|image:uploadcare/filters/pamaya.jpg[pamaya]
+|image:uploadcare/filters/sarnar.jpg[sarnar]
+|image:uploadcare/filters/sedis.jpg[sedis]
+|image:uploadcare/filters/sewen.jpg[sewen]
+
+|sorahel |sorlen |tarian |thellassan
+|image:uploadcare/filters/sorahel.jpg[sorahel]
+|image:uploadcare/filters/sorlen.jpg[sorlen]
+|image:uploadcare/filters/tarian.jpg[tarian]
+|image:uploadcare/filters/thellassan.jpg[thellassan]
+
+|varriel |varven |vevera |virkas
+|image:uploadcare/filters/varriel.jpg[varriel]
+|image:uploadcare/filters/varven.jpg[varven]
+|image:uploadcare/filters/vevera.jpg[vevera]
+|image:uploadcare/filters/virkas.jpg[virkas]
+
+|yedis |yllara |zatvel |zevcen
+|image:uploadcare/filters/yedis.jpg[yedis]
+|image:uploadcare/filters/yllara.jpg[yllara]
+|image:uploadcare/filters/zatvel.jpg[zatvel]
+|image:uploadcare/filters/zevcen.jpg[zevcen]
+|===

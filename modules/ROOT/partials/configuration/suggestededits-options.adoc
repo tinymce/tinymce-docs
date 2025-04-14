@@ -1,11 +1,11 @@
-[[suggestededits_model]]
-== `suggestededits_model`
+[[suggestededits_uid]]
+== `suggestededits_uid`
 
-The `suggestededits_model` option sets the initial model of the document to begin tracking changes. It takes as input an object representing the document. If no value is set, the plugin will generate the model by default. 
+The `{plugincode}_uid` is a _required_ option that takes as input a unique string to identify the current user. This is used to attribute changes made by the user.  
 
-//*Type:* xref:#trackeddocument[TrackedDocument] `+Object+`
+*Type:* `+String+`
 
-=== Example: using `suggestededits_model`
+=== Example: using `{plugincode}_uid`
 
 // Add a working and tested configuration.
 [source,js]
@@ -14,6 +14,27 @@ tinymce.init({
   selector: 'textarea',  // Change this value according to your HTML
   plugins: 'suggestededits',
   toolbar: 'suggestededits',
+  suggestededits_uid: 'unique-identifier' // replace this with a unique string to identify the user 
+});
+----
+
+[[suggestededits_model]]
+== `suggestededits_model`
+
+The `{plugincode}_model` option sets the initial model of the document to begin tracking changes. It takes as input an object representing the document. If no value is set, the plugin will generate the model by default. 
+
+//*Type:* xref:#trackeddocument[TrackedDocument] `+Object+`
+
+=== Example: using `{plugincode}_model`
+
+// Add a working and tested configuration.
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // Change this value according to your HTML
+  plugins: 'suggestededits',
+  toolbar: 'suggestededits',
+  suggestededits_uid: 'unique-identifier', // replace this with a unique string to identify the user 
   suggestededits_model: {
     version: 1, 
     maxId: 0, 
@@ -29,36 +50,64 @@ tinymce.init({
 });
 ----
 
-[[suggestededits_uid]]
-== `suggestededits_uid`
+[[suggestededits_access]]
+== `suggestededits_access`
 
-The `suggestededits_uid` is a _required_ option that takes as input a unique string to identify the current user. This is used to attribute changes made by the user.  
+To configure a user's permission to edit the document and review changes, the `{plugincode}_access` option can be set alongside the editor mode.  
 
 *Type:* `+String+`
 
-=== Example: using `suggestededits_uid`
+*Possible Values*: `'full'`, `'suggest'`, `'read'`, `'none'` 
 
-// Add a working and tested configuration.
-[source,js]
+*Default Value*: `'full'`
+
+The possible values set the access level of the review permissions as follows: 
+
+[cols="20%,80%"]
+|===
+|Value | Review Permission
+
+|`+'full'+`
+|Access to the {pluginname} view, with permission to accept, reject, or add suggestions to changes.  
+
+|`+'suggest'+`
+|Access to the {pluginname} view, with permission to add suggestions to changes. 
+
+|`+'read'+`
+|Readonly access to the {pluginname} view.
+
+|`+'none'+`
+|No access to the {pluginname} view.
+|===
+
+[NOTE]
+The `{plugincode}_access` option can be used in combination with the editor's read-only mode to restrict a user’s editing permission. 
+
+.Example
+[source,javascript]
 ----
 tinymce.init({
   selector: 'textarea',  // Change this value according to your HTML
   plugins: 'suggestededits',
   toolbar: 'suggestededits',
-  suggestededits_uid: 'unique-identifier' // replace this with a unique string to identify the user 
+  suggestededits_uid: 'unique-identifier', // replace this with a unique string to identify the user 
+  suggestededits_access: 'full' //change this value to set permission to the Suggested Edits view 
+  readonly: false //set to true to restrict a user's editing permission
 });
 ----
+
+liveDemo::suggestededits-access[]
 
 [[suggestededits_css_url]]
 == `suggestededits_css_url`
 
-The `suggestededits_css_url` option sets the location where a CSS file containing change annotations in the {pluginname} view should be loaded from. To override the default CSS classes, use this option alongside `suggestededits_diff_classes`. 
+The `{plugincode}_css_url` option sets the location where a CSS file containing change annotations in the {pluginname} view should be loaded from. To override the default CSS classes, use this option alongside `{plugincode}_diff_classes`. 
 
 *Type:* `+String+`
 
-*Default value:* `'${pluginUrl}/css/suggestededits.css'`
+*Default value:* `'${pluginUrl}/css/{plugincode}.css'`
 
-=== Example: using `suggestededits_css_url`
+=== Example: using `{plugincode}_css_url`
 
 // Add a working and tested configuration.
 [source,js]
@@ -72,10 +121,10 @@ tinymce.init({
 [[suggestededits_diff_classes]]
 == `suggestededits_diff_classes`
 
-The `suggestededits_diff_classes` option configures the CSS classes applied to the change annotations in the {pluginname} view. This is useful to set custom styles and must be used in combination with the `suggestededits_css_url` option. 
+The `{plugincode}_diff_classes` option configures the CSS classes applied to the change annotations in the {pluginname} view. This is useful to set custom styles and must be used in combination with the `{plugincode}_css_url` option. 
 
 [NOTE]
-The CSS class names must exist in the xref:suggestededits_css_url[`+suggestededits_css_url+`].
+The CSS class names must exist in the xref:{plugincode}_css_url[`+{plugincode}_css_url+`].
 
 *Type:* `+Object+`
 
@@ -92,7 +141,7 @@ Below are the default CSS classes:
 }
 ----
 
-=== Example: using `suggestededits_diff_classes`
+=== Example: using `{plugincode}_diff_classes`
 
 [source,js]
 ----

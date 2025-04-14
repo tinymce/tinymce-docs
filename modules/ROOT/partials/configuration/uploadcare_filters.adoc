@@ -55,6 +55,7 @@ tinymce.init({
 ====
 * Filter names must be selected from the supported set:
 ** `adaris`, `briaril`, `calarel`, `carris`, `cynarel`, `cyren`, `elmet`, `elonni`, `enzana`, `erydark`, `fenralan`, `ferand`, `galen`, `gavin`, `gethriel`, `iorill`, `iothari`, `iselva`, `jadis`, `lavra`, `misiara`, `namala`, `nerion`, `nethari`, `pamaya`, `sarnar`, `sedis`, `sewen`, `sorahel`, `sorlen`, `tarian`, `thellassan`, `varriel`, `varven`, `vevera`, `virkas`, `yedis`, `yllara`, `zatvel`, `zevcen`.
+* The `{ name: 'none' }` option adds a "No filter" or "Remove filter" choice to the list of available filters. This allows end users to remove any applied filter. If this option is **not** included, users will **not** have a way to remove a filter once it's been applied.
 * If the amount is not set, it defaults to 100.
 * Some filters may behave unpredictably outside the 0–100 range.
 * Applying negative amount values inverts the filter, useful for creative effects.

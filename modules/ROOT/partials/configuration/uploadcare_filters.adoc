@@ -51,6 +51,11 @@ tinymce.init({
 });
 ----
 
+[IMPORTANT]
+====
+The `{ name: 'none' }` option adds a "No filter" or "Remove filter" choice to the list of available filters. This allows end users to remove any applied filter. If this option is **not** included, users will **not** have a way to remove a filter once it's been applied.
+====
+
 [NOTE]
 ====
 * Filter names must be selected from the supported set:

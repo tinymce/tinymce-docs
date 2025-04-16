@@ -18,6 +18,7 @@ This procedure requires https://nodejs.org/[Node.js (and npm)].
 +
 [source,sh]
 ----
+# npm 7+, extra double-dash is needed
 npm create vite@5 tinymce-react-demo -- --template react-swc
 ----
 . Change to the newly created directory.
@@ -28,11 +29,11 @@ cd tinymce-react-demo
 ----
 
 ifeval::["{productSource}" == "cloud"]
-. Install the `+@tinymce/tinymce-react+` package and save it to your `+package.json+` with `+--save+`.
+. Install the `+@tinymce/tinymce-react+` package.
 +
 [source,sh]
 ----
-npm install --save @tinymce/tinymce-react
+npm install @tinymce/tinymce-react
 ----
 
 . Using a text editor, open `+./src/App.jsx+` and replace the contents with:
@@ -50,11 +51,12 @@ export default function App() {
       console.log(editorRef.current.getContent());
     }
   };
+
   return (
     <>
       <Editor
         apiKey='your-api-key'
-        onInit={(_evt, editor) => editorRef.current = editor}
+        onInit={ (_evt, editor) => editorRef.current = editor }
         initialValue="<p>This is the initial content of the editor.</p>"
         init={{
           height: 500,
@@ -83,11 +85,11 @@ This JavaScript file will create a component "`+App+`" containing a {productname
 endif::[]
 ifeval::["{productSource}" == "package-manager"]
 ifeval::["{productUse}" == "host"]
-. Install the `+tinymce+`, `+@tinymce/tinymce-react+` and `+fs-extra+` packages and save them to your `+package.json+` with `+--save+`.
+. Install the `+tinymce+`, `+@tinymce/tinymce-react+` and `+fs-extra+` packages.
 +
 [source,sh]
 ----
-npm install --save tinymce @tinymce/tinymce-react fs-extra
+npm install tinymce @tinymce/tinymce-react fs-extra
 ----
 
 . Setup a `postinstall` script to copy {productname} to the public directory for hosting
@@ -175,11 +177,11 @@ export default function App() {
 
 endif::[]
 ifeval::["{productUse}" == "bundle"]
-. Install the `+tinymce+` and `+@tinymce/tinymce-react+` packages and save them to your `+package.json+` with `+--save+`.
+. Install the `+tinymce+` and `+@tinymce/tinymce-react+` packages
 +
 [source,sh]
 ----
-npm install --save tinymce @tinymce/tinymce-react
+npm install tinymce @tinymce/tinymce-react
 ----
 
 . Using a text editor, create `+./src/BundledEditor.jsx+` and set the contents to:
@@ -265,6 +267,7 @@ export default function App() {
       console.log(editorRef.current.getContent());
     }
   };
+
   return (
     <>
       <BundledEditor
@@ -293,11 +296,10 @@ endif::[]
 endif::[]
 ifeval::["{productSource}" == "zip"]
 ifeval::["{productUse}" == "host"]
-. Install the `+@tinymce/tinymce-react+` package and save it to your `+package.json+` with `+--save+`.
-+
+. Install the `+@tinymce/tinymce-react+` package.
 [source,sh]
 ----
-npm install --save @tinymce/tinymce-react
+npm install @tinymce/tinymce-react
 ----
 
 . Unzip the content of the `+tinymce/js+` folder from the link:{download-enterprise}[{productname} zip] into the `+public+` folder. Afterwards the directory listing should be similar to below:
@@ -324,24 +326,17 @@ public
     └── tinymce.min.js
 ----
 
-. Using a text editor, open `+./eslintrc.cjs+` and add `+'src/tinymce'+` to the `+ignorePatterns+` array.
+. Using a text editor, open `+./eslint.config.js` and add `+'src/tinymce'+` to the `+ignores+` array.
 +
-.Diff of `.eslintrc.js`
+.Diff of `.eslint.config.js`
 [source,patch]
 ----
-diff --git a/.eslintrc.cjs b/.eslintrc.cjs
-index 3b3b3b3..4b4b4b4 100644
---- a/.eslintrc.cjs
-+++ b/.eslintrc.cjs
-@@ -7,7 +7,7 @@ modules.exports = {
-   'plugin:react/jsx-runtime',
-     'plugin:react-hooks/recommended',
-   ],
--  ignorePatterns: ['dist', '.eslintrc.cjs'],
-+  ignorePatterns: ['dist', '.eslintrc.cjs', 'src/tinymce'],
-   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
-   settings: { react: { version: '18.2' } },
-   plugins: ['react-refresh'],
+export default tseslint.config(
+-  { ignores: ['dist'] },
++  { ignores: ['dist', 'src/tinymce'] },
+   {
+     extends: [js.configs.recommended, ...tseslint.configs.recommended],
+     files: ['**/*.{ts,tsx}'],
 ----
 
 . Using a text editor, open `+./src/App.jsx+` and replace the contents with:
@@ -390,11 +385,11 @@ export default function App() {
 endif::[]
 ifeval::["{productUse}" == "bundle"]
 
-. Install the `+@tinymce/tinymce-react+` and `+script-loader+` packages and save them to your `+package.json+` with `+--save+`.
+. Install the `+@tinymce/tinymce-react+` and `+script-loader+` packages.
 +
 [source,sh]
 ----
-npm install --save @tinymce/tinymce-react script-loader
+npm install @tinymce/tinymce-react script-loader
 ----
 
 . Unzip the content of the `+tinymce/js+` folder from the link:{download-enterprise}[{productname} zip] into the `+src+` folder. Afterwards the directory listing should be similar to below:
@@ -423,24 +418,24 @@ src
     └── tinymce.min.js
 ----
 
-. Using a text editor, open `+./eslintrc.cjs+` and add `+'src/tinymce'+` to the `+ignorePatterns+` array.
+. Using a text editor, open `+./eslint.config.js+` and add `+'src/tinymce'+` to the `+ignores+` array.
 +
-.Diff of `.eslintrc.js`
+.Diff of `.eslint.config.js`
 [source,patch]
 ----
-diff --git a/.eslintrc.cjs b/.eslintrc.cjs
-index 3b3b3b3..4b4b4b4 100644
---- a/.eslintrc.cjs
-+++ b/.eslintrc.cjs
-@@ -7,7 +7,7 @@ modules.exports = {
-   'plugin:react/jsx-runtime',
-     'plugin:react-hooks/recommended',
-   ],
--  ignorePatterns: ['dist', '.eslintrc.cjs'],
-+  ignorePatterns: ['dist', '.eslintrc.cjs', 'src/tinymce'],
-   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
-   settings: { react: { version: '18.2' } },
-   plugins: ['react-refresh'],
+diff --git a/eslint.config.js b/eslint.config.js
+index 092408a..1ab8db4 100644
+--- a/eslint.config.js
++++ b/eslint.config.js
+@@ -5,7 +5,7 @@ import reactRefresh from 'eslint-plugin-react-refresh'
+ import tseslint from 'typescript-eslint'
+
+ export default tseslint.config(
+-  { ignores: ['dist'] },
++  { ignores: ['dist', 'src/tinymce'] },
+   {
+     extends: [js.configs.recommended, ...tseslint.configs.recommended],
+     files: ['**/*.{ts,tsx}'],
 ----
 
 . Using a text editor, create `+./src/BundledEditor.jsx+` and set the contents to:
@@ -596,4 +591,4 @@ endif::[]
 * For information on customizing:
 ** {productname} integration, see: xref:react-ref.adoc[].
 ** {productname}, see: xref:basic-setup.adoc[].
-** The React application, see: https://vitejs.dev/guide/#getting-started[Getting Started with Vite] or https://reactjs.org/docs/getting-started.html[the React documentation].
+** The React application, see: https://vitejs.dev/guide/#getting-started[Getting Started with Vite] or https://react.dev/learn[the React documentation].

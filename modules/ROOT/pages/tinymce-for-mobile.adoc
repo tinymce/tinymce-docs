@@ -10,12 +10,52 @@ The mobile experience for {productname} is enabled by default and has the follow
 * Contextual keyboard options for dialogs using xref:dialog-components.adoc#inputmode[`+inputMode+`].
 * xref:mobile-defaults-for-selected-options[Mobile defaults for selected options].
 
-The mobile experience allows most of the {productname} plugins to work on mobile devices, except for:
+{productname} plugins on mobile devices, that have known issues:
 
-* xref:introduction-to-tiny-comments.adoc[Comments].
-* xref:editimage.adoc[Image Editing].
-* xref:moxiemanager.adoc[MoxieManager].
-* xref:permanentpen.adoc[Permanent Pen].
+[cols="1,3", options="header"]
+|===
+|Feature
+|Limitation
+
+|xref:editimage.adoc[Image Editing]
+|Unable to resize images automatically within the editor without using the Edit Image dialog properties.
+
+|xref:autoresize.adoc[Autoresize]
+|Resizing is not applicable in inline mode.
+
+|xref:fullscreen.adoc[Full Screen]
+|Only available in `classic` Editing mode.
+
+|xref:introduction-to-powerpaste.adoc[PowerPaste]
+|Clipboard limitations on mobile block core functionality.
+|===
+
+
+[TIP]
+The native context menu on a mobile device can still be accessed with a {productname} context menu configured, either by a _single tap_ on iOS, or by a _double tap_ on Android. However if the xref:contextmenu.adoc#contextmenu_never_use_native[`+contextmenu_never_use_native+`] option is enabled, neither _single_ nor _double tap_ will have any effect.
+
+{productname} plugins that are unsupported on mobile devices:
+
+[cols="1,3", options="header"]
+|===
+|Feature
+|Limitation
+
+|xref:introduction-to-tiny-comments.adoc[Comments]
+|Not applicable in inline mode.
+
+|xref:moxiemanager.adoc[MoxieManager]
+|Not applicable in inline mode.
+
+|xref:permanentpen.adoc[Permanent Pen]
+|Not applicable due to mobile UX constraints.
+
+|xref:advcode.adoc[Enhanced Code Editor]
+|Dialog is currently not usable in mobile viewports.
+
+|xref:footnotes.adoc[Footnotes]
+|Links for created footnotes are not clickable after insertion.
+|===
 
 {productname} will detect the platform and show an optimal UI experience based on the device type and screen size.
 
@@ -62,11 +102,8 @@ The following options have mobile-specific default values:
 
 === Unsupported options for mobile
 
-The following options are not supported on mobile devices:
+The following options are not available on mobile:
 
-* xref:use-tinymce-inline.adoc[Inline editing mode].
-* xref:use-tinymce-distraction-free.adoc[Distraction-free editing mode].
-* xref:inline-editor-options.adoc#inline[`+inline+`].
 * xref:toolbar-configuration-options.adoc#toolbar_sticky[`+toolbar_sticky+`].
 * xref:table.adoc#table_grid[`+table_grid+`].
 * xref:editor-size-options.adoc#resize[`+resize+`].

@@ -1,16 +1,33 @@
-= TinyMCE for touch-enabled and mobile devices
+= TinyMCE for Touch-Enabled and Mobile Devices
 :navtitle: TinyMCE for mobile
 :description: The TinyMCE rich text editing experience for mobile devices.
 :keywords: mobile, tablet, phone
 
-The mobile experience for {productname} is enabled by default and has the following differences when compared to the "desktop" experience:
+The mobile editing experience for {productname} is enabled by default. It differs from the desktop version in several key ways to provide a responsive and touch-optimized interface:
 
-* Horizontal contextual menus on mobile.
-* Side-scrolling toolbars and contextual menus on mobile.
-* Contextual keyboard options for dialogs using xref:dialog-components.adoc#inputmode[`+inputMode+`].
-* xref:mobile-defaults-for-selected-options[Mobile defaults for selected options].
+* Horizontal and side-scrolling toolbars and contextual menus.
+* Context-sensitive keyboard behavior using xref:dialog-components.adoc#inputmode[`+inputMode+`].
+* Predefined mobile-specific default values for selected configuration options.
+* Touch gestures for accessing the context menu, depending on platform.
 
-{productname} plugins on mobile devices, that have known issues:
+{productname} automatically detects the platform and displays an optimal UI based on screen size and device type.
+
+[TIP]
+====
+The native context menu remains accessible on mobile devices even when a custom {productname} context menu is configured. On iOS, this is done with a _single tap_; on Android, a _double tap_ is required. If the xref:contextmenu.adoc#contextmenu_never_use_native[`+contextmenu_never_use_native+`] option is enabled, native menu access is disabled on both platforms.
+====
+
+NOTE: iPads are treated as desktop-class devices due to Apple's environment constraints. While the `+mobile+` configuration will not apply on iPads, touch interactions such as context toolbars and menus will still behave as expected.
+
+include::partial$misc/admon-mobile-context-menus.adoc[]
+
+include::partial$misc/mobile-platform-compatibility.adoc[]
+
+== Mobile Plugin Limitations
+
+Some plugins offer limited functionality or are unsupported when used on mobile devices, particularly in inline mode.
+
+=== Known Plugin Limitations
 
 [cols="1,3", options="header"]
 |===
@@ -18,23 +35,19 @@ The mobile experience for {productname} is enabled by default and has the follow
 |Limitation
 
 |xref:editimage.adoc[Image Editing]
-|Unable to resize images automatically within the editor without using the Edit Image dialog properties.
+|Image resizing is only available through the Edit Image dialog; in-editor resizing is not supported.
 
 |xref:autoresize.adoc[Autoresize]
-|Resizing is not applicable in inline mode.
+|Automatic resizing is not applicable when using inline mode.
 
 |xref:fullscreen.adoc[Full Screen]
-|Only available in `classic` Editing mode.
+|The Full Screen plugin is only available in `classic` editing mode.
 
 |xref:introduction-to-powerpaste.adoc[PowerPaste]
-|Clipboard limitations on mobile block core functionality.
+|Clipboard restrictions on mobile platforms prevent core PowerPaste functionality.
 |===
 
-
-[TIP]
-The native context menu on a mobile device can still be accessed with a {productname} context menu configured, either by a _single tap_ on iOS, or by a _double tap_ on Android. However if the xref:contextmenu.adoc#contextmenu_never_use_native[`+contextmenu_never_use_native+`] option is enabled, neither _single_ nor _double tap_ will have any effect.
-
-{productname} plugins that are unsupported on mobile devices:
+=== Unsupported Plugins on Mobile
 
 [cols="1,3", options="header"]
 |===
@@ -42,71 +55,60 @@ The native context menu on a mobile device can still be accessed with a {product
 |Limitation
 
 |xref:introduction-to-tiny-comments.adoc[Comments]
-|Not applicable in inline mode.
+|Not supported in inline mode on mobile devices.
 
 |xref:moxiemanager.adoc[MoxieManager]
-|Not applicable in inline mode.
+|Not supported in inline mode.
 
 |xref:permanentpen.adoc[Permanent Pen]
-|Not applicable due to mobile UX constraints.
+|Not supported due to UX constraints on mobile.
 
 |xref:advcode.adoc[Enhanced Code Editor]
-|Dialog is currently not usable in mobile viewports.
+|Dialog interface is not usable in mobile viewports.
 
 |xref:footnotes.adoc[Footnotes]
-|Links for created footnotes are not clickable after insertion.
+|Inserted footnote links are not clickable after insertion.
 |===
 
-{productname} will detect the platform and show an optimal UI experience based on the device type and screen size.
+== Configuring Mobile Behavior
 
-NOTE: iPads do not use the `+mobile+` part of the {productname} init configuration. This is due to a constraint added by Apple to return the environment as a "desktop environment" for iPads. iPad users will receive the other changes to touch functionality, such as context toolbars and context menus.
-
-include::partial$misc/admon-mobile-context-menus.adoc[]
-
-include::partial$misc/mobile-platform-compatibility.adoc[]
-
-== Configuring mobile
-
-Add the following `+meta+` tag to the `+head+` of pages using {productname} to ensure the mobile user interface functions as intended.
+To ensure the {productname} mobile UI functions correctly, include the following `+meta+` tag in the `+<head>+` of your HTML:
 
 [source,html]
 ----
 <meta name="viewport" content="width=device-width, initial-scale=1">
 ----
 
-To set mobile specific options, add the option to xref:themobileoption[the `+mobile+` option] configuration, such as:
+To customize behavior on mobile devices, use the `+mobile+` configuration option. For example:
 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
+  selector: 'textarea',  // Adjust this value to match your HTML
   mobile: {
     menubar: true
   }
 });
 ----
 
-[[mobile-defaults-for-selected-options]]
-=== Mobile defaults for selected options
+== Mobile-Specific Defaults
 
-These mobile-specific default values have been set to disable unsupported options for mobile devices or to provide the best experience without configuration from developers.
+The following options are automatically set to provide a better experience on mobile devices:
 
-The following options have mobile-specific default values:
+* xref:menus-configuration-options.adoc#menubar[`+menubar+`] — Defaults to `+false+` on mobile phones.
+* xref:toolbar-configuration-options.adoc#toolbar_mode[`+toolbar_mode+`] — Defaults to `+scrolling+`; enables side-scrolling toolbars.
+* xref:toolbar-configuration-options.adoc#toolbar_sticky[`+toolbar_sticky+`] — Defaults to `+false+`; sticky toolbars are not supported.
+* xref:table.adoc#table_grid[`+table_grid+`] — Defaults to `+false+`; a dialog replaces the table grid.
+* xref:editor-size-options.adoc#resize[`+resize+`] — Defaults to `+false+`; in-editor resizing is disabled.
+* xref:content-behavior-options.adoc#object_resizing[`+object_resizing+`] — Defaults to `+false+`; object resizing is not supported.
 
-* xref:menus-configuration-options.adoc#menubar[`+menubar+`] - defaults to `+false+` on mobile phones.
-* xref:toolbar-configuration-options.adoc#toolbar_mode[`+toolbar_mode+`] - defaults to `+scrolling+` on mobile devices. The toolbar will side-scroll by default.
-* xref:toolbar-configuration-options.adoc#toolbar_sticky[`+toolbar_sticky+`] - Sticky Toolbar is not supported on mobile devices and defaults to `+false+`.
-* xref:table.adoc#table_grid[`+table_grid+`] - Table grid is not supported on mobile devices and defaults to `+false+`. When creating tables on mobile, a dialog is shown instead of the table grid.
-* xref:editor-size-options.adoc#resize[`+resize+`] - Resizing is not supported on mobile devices and defaults to `+false+`.
-* xref:content-behavior-options.adoc#object_resizing[`+object_resizing+`] - Object resizing is not supported on mobile devices and defaults to `+false+`.
+== Unsupported Configuration Options
 
-=== Unsupported options for mobile
+The following configuration options are not applicable or functional on mobile devices:
 
-The following options are not available on mobile:
-
-* xref:toolbar-configuration-options.adoc#toolbar_sticky[`+toolbar_sticky+`].
-* xref:table.adoc#table_grid[`+table_grid+`].
-* xref:editor-size-options.adoc#resize[`+resize+`].
-* xref:content-behavior-options.adoc#object_resizing[`+object_resizing+`].
+* xref:toolbar-configuration-options.adoc#toolbar_sticky[`+toolbar_sticky+`]
+* xref:table.adoc#table_grid[`+table_grid+`]
+* xref:editor-size-options.adoc#resize[`+resize+`]
+* xref:content-behavior-options.adoc#object_resizing[`+object_resizing+`]
 
 include::partial$configuration/mobile.adoc[]

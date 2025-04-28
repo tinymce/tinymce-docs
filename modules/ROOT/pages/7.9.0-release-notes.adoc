@@ -113,6 +113,10 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // #TINY-vwxyz1
 
 // CCFR here.
+=== Bullet list icons were changed to better represent default styles.
+// TINY-12015
+
+{productname} {release-version} has updated the icons used for bullet lists to better represent the default styles. The new icons are more visually distinct and align with the overall design language of {productname}.
 
 
 [[additions]]
@@ -124,7 +128,24 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // #TINY-vwxyz1
 
 // CCFR here.
+=== Added new `disc` style option for unordered lists.
+// TINY-12015
 
+Previously, {productname} did not offer a separate `disc` styling option for unordered (bullet) lists, causing confusion as users expected the default list style to behave like a true disc style, especially for nested lists. This release introduces a distinct `disc` style option, allowing users to explicitly apply disc-styled bullets to their lists.
+
+.Example of disc style option:
+[source,html]
+----
+<ul style="list-style-type: disc;">
+  <li>Item 1</li>
+  <li>Item 2
+    <ul style="list-style-type: disc;">
+      <li>Nested Item 1</li>
+      <li>Nested Item 2</li>
+    </ul>
+  </li>
+</ul>
+----
 
 [[changes]]
 == Changes

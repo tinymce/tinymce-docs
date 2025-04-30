@@ -123,7 +123,7 @@ Set the editor to inline mode.
 
 === `Disable`
 
-Set the editor to readonly mode.
+Sets the editor to a disable state.
 
 *Type:* `+Boolean+`
 
@@ -137,6 +137,24 @@ Set the editor to readonly mode.
   Disable=@disable
 />
 <button @onclick="@(() => disable = !disable)">Toggle</button>
+----
+
+=== `Readonly`
+
+Sets the editor to readonly mode.
+
+*Type:* `+Boolean+`
+
+*Default value:* `+false+`
+
+==== Example using Readonly
+
+[source,cs]
+----
+<Editor
+  Readonly=@readonly
+/>
+<button @onclick="@(() => readonly = !readonly)">Toggle</button>
 ----
 
 === `JsConfSrc`

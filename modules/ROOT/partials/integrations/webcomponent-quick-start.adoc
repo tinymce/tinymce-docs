@@ -6,22 +6,12 @@ The https://github.com/tinymce/tinymce-webcomponent[Official {productname} Web C
 
 To add a {productname} editor to a web page using the {productname} Web Component:
 
-. Add the `+DOCTYPE+` element to the target page, such as:
+. Add the following meta tags to the head section of the page:
 +
 [source,html]
 ----
-<!DOCTYPE html>
-----
-+
-The `+DOCTYPE+` declaration is required for the editor to function correctly.
-. Add the following `+meta+` elements to the head of page:
-+
-[source,html]
-----
-<head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
 ----
 +
 The second `+meta+` element is required for the editor to function correctly on mobile devices. For information on the viewport `+meta+` element, see: https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag#viewport_basics[MDN Web Docs - Using the viewport meta tag to control layout on mobile browsers].
@@ -52,7 +42,7 @@ npm install tinymce @tinymce/tinymce-webcomponent
 include::partial$integrations/bundling-integration.adoc[]
 --
 
-. Add a `+script+` element sourcing {productname}, such as:
+. Add a `+script+` element sourcing the output file, such as:
 +
 [source,html]
 ----
@@ -63,7 +53,7 @@ If a `script` element sourcing {productname} is not provided, the {productname} 
 
 endif::[]
 ifeval::["{productSource}" == "zip"]
-. Add a `+script+` element sourcing the {productname} Web Component (`+tinymce-webcomponent.js+`), such as:
+. Add a `+script+` element sourcing the {productname} Web Component (`+tinymce-webcomponent.min.js+`), such as:
 +
 [source,html,subs="attributes+"]
 ----
@@ -80,7 +70,9 @@ The `tinymce-webcomponent` can also be sourced from link:https://www.npmjs.com/p
 ----
 +
 If a `+script+` element sourcing {productname} is not provided, the {productname} Web Component will load {productname} from the {cloudname}. For information on the available options for sourcing {productname}, see: xref:webcomponent-ref.adoc#loading-tinymce[Loading {productname}].
+
 endif::[]
+
 ifeval::["{productSource}" == "cloud"]
 . Add a `+tinymce-editor+` element where the editor should appear and include your {cloudname} API key from link:{accountpageurl}/[{accountpage}].
 +
@@ -91,17 +83,22 @@ ifeval::["{productSource}" == "cloud"]
 ></tinymce-editor>
 ----
 endif::[]
+
 ifeval::["{productSource}" != "cloud"]
 . Add a `+tinymce-editor+` element where the editor should appear.
 +
 [source,html,subs="attributes+"]
 ----
-<tinymce-editor></tinymce-editor>
+<tinymce-editor license-key="your-license-key"/>
 ----
-endif::[]
-+
 The default {productname} editor will load at this location if the page is opened in a web browser.
 
++
+. Update the `+license-key+` option in the editor element and include your xref:license-key.adoc[License Key].
++
+endif::[]
+
+ifeval::["{productSource}" == "cloud"]
 == Example: adding the TinyMCE Web Component to an HTML page
 
 The following example shows the {productname} Web Component in an HTML page, with:
@@ -110,6 +107,7 @@ The following example shows the {productname} Web Component in an HTML page, wit
 * {productname} sourced from the {cloudname}.
 
 liveDemo::web-component[tab="html"]
+endif::[]
 
 == Next Steps
 

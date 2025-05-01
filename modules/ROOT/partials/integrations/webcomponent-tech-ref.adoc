@@ -55,7 +55,7 @@ To add the {productname} Web Component integration to a JavaScript project, on c
 +
 [source,sh]
 ----
-npm i --save @tinymce/tinymce-webcomponent
+npm i @tinymce/tinymce-webcomponent
 ----
 * Yarn users:
 +
@@ -189,13 +189,6 @@ To set the menus shown on the editor menu bar, add the `+menubar+` attribute. Fo
 <tinymce-editor menubar="file edit insert view format table tools help"></tinymce-editor>
 ----
 
-To disable or remove the menu bar, set the `+menubar+` attribute to `+"false"+`. For example:
-
-[source,html]
-----
-<tinymce-editor menubar="false"></tinymce-editor>
-----
-
 To change the menu items shown in the menus, or define custom menus, set the `+menu+` configuration option using the `+config+` attribute.
 
 For information on:
@@ -212,13 +205,6 @@ To change the context menu sections that can be shown in the editor context menu
 [source,html]
 ----
 <tinymce-editor plugins="link image table" contextmenu="link image table"></tinymce-editor>
-----
-
-To disable the context menu, set the `+contextmenu+` attribute to `+"false"+`. For example:
-
-[source,html]
-----
-<tinymce-editor contextmenu="false"></tinymce-editor>
 ----
 
 For a list of available context menu sections, see: xref:editor-context-menu-identifiers.adoc[Available context menu sections]. For information on context menus, see: xref:menus-configuration-options.adoc#contextmenu[User interface options - `+contextmenu+`].
@@ -379,11 +365,11 @@ To execute a javascript callback before the editor instance is rendered, use the
 [source,html]
 ----
 <script>
-function setupEditor(editor) {
-  editor.on('click', function () {
-    console.log('Editor was clicked');
-  });
-}
+  function setupEditor(editor) {
+    editor.on('click', function () {
+      console.log('Editor was clicked');
+    });
+  }
 </script>
 <tinymce-editor setup="setupEditor"></tinymce-editor>
 ----
@@ -520,11 +506,11 @@ To configure any {productname} option that does not have a corresponding attribu
 [source,html]
 ----
 <script>
-window.myConfig = {
-  height: 500,
-  spellchecker_dialog: true,
-  spellchecker_ignore_list: ['Ephox', 'Moxiecode']
-};
+  window.myConfig = {
+    height: 500,
+    spellchecker_dialog: true,
+    spellchecker_ignore_list: ['Ephox', 'Moxiecode']
+  };
 </script>
 <tinymce-editor
   config="myConfig"
@@ -546,11 +532,11 @@ There are two methods to bind events for the TinyMCE Web Component.
 [source,html]
 ----
 <script>
-function setupEditor(editor) {
-  editor.on('click', function () {
-    console.log('Editor was clicked');
-  });
-}
+  function setupEditor(editor) {
+    editor.on('click', function () {
+      console.log('Editor was clicked');
+    });
+  }
 </script>
 <tinymce-editor setup="setupEditor"/>
 ----
@@ -559,9 +545,9 @@ function setupEditor(editor) {
 [source,html]
 ----
 <script>
-function changeHandler(evt) {
-  console.log('The ' + evt['type'] + ' event was fired.');
-}
+  function changeHandler(evt) {
+    console.log('The ' + evt['type'] + ' event was fired.');
+  }
 </script>
 <tinymce-editor on-Change="changeHandler"/>
 ----

@@ -157,6 +157,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // #TINY-vwxyz1
 
 // CCFR here.
+=== Editor did not scroll into viewport on receiving focus on Chrome and Safari.
+// #TINY-12017
+
+Previously the editor did not scroll into the viewport when focused via the keyboard `Tab` key, causing a poor user experience as users had to manually scroll to find the editor.
+
+{productname} {release-version} introduces a workaround to resolve this issue. In addition and a bug report has been submitted to both Chrome (link:https://issues.chromium.org/issues/414129878[414129878]) and Safari (link:https://bugs.webkit.org/show_bug.cgi?id=292062[292062]) teams for further investigation.
 
 
 [[security-fixes]]

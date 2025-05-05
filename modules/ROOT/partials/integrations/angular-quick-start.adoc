@@ -188,7 +188,6 @@ NOTE: Additional configuration is required to deploy the application outside the
 == Angular Modules
 `+EditorModule+` is available to import from `+@tinymce/tinymce-angular+`. Which should be included in your `+my.module.ts+` file.
 
-// TODO: make sure that I can remove it
 ifeval::["{productSource}" == "package-manager"]
 
 [source,ts]

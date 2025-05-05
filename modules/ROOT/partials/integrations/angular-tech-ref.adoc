@@ -8,6 +8,7 @@
 ** xref:licensekey[`+licenseKey+`]
 ** xref:cloudchannel[`+cloudChannel+`]
 ** xref:disabled[`+disabled+`]
+** xref:readonly[`+readonly+`]
 ** xref:id[`+id+`]
 ** xref:init[`+init+`]
 ** xref:initialvalue[`+initialValue+`]
@@ -182,7 +183,7 @@ For information {productname} development channels, see: xref:editor-plugin-vers
 [[disabled]]
 === `+disabled+`
 
-The `+disabled+` property can dynamically switch the editor between a "disabled" (read-only) mode (`+true+`) and the standard editable mode (`+false+`).
+The `+disabled+` property can dynamically switch the editor's `disabled` option.
 
 *Type:* `+Boolean+`
 
@@ -194,9 +195,25 @@ The `+disabled+` property can dynamically switch the editor between a "disabled"
 
 [source,html]
 ----
-<editor
-  [disabled]="true"
-></editor>
+<editor [disabled]="true" />
+----
+
+[[readonly]]
+=== `+readonly+`
+
+The `+readonly+` property can dynamically switch the editor between a "readonly" mode (`+true+`) and the standard editable mode (`+false+`).
+
+*Type:* `+Boolean+`
+
+*Default value:* `+false+`
+
+*Possible values:* `+true+`, `+false+`
+
+==== Example: using `+readonly+`
+
+[source,html]
+----
+<editor [readonly]="true" />
 ----
 
 [[id]]

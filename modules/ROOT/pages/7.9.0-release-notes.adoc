@@ -157,6 +157,10 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // #TINY-vwxyz1
 
 // CCFR here.
+=== Removed deprecated CSS media selector `-ms-high-contrast`.
+// TINY-11876
+
+The `-ms-high-contrast` media feature was previously used to apply a darker border color for improved accessibility in Internet Explorer 11. However, this feature is no longer supported and has been link:https://blogs.windows.com/msedgedev/2024/04/29/deprecating-ms-high-contrast/[officially deprecated] by Microsoft Edge. Its continued use triggered warnings in browser developer consoles, potentially affecting user experience during development. To enhance cross-browser compatibility and eliminate these warnings, the deprecated selector has been removed from {productname} in {release-version}.
 
 
 [[security-fixes]]

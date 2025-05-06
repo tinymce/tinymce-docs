@@ -153,10 +153,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Pressing `enter` before a floating image sometimes duplicated the image.
+// #TINY-1676
 
-// CCFR here.
+Previously, An issue in **Firefox** previously caused lines containing floating images to be handled incorrectly during deletion, resulting in content not being cleared properly and images being duplicated.
+
+With the release of {productname} {release-version}, this behavior has been resolved. Deleting lines with floating images now works as expected, ensuring that duplicate images no longer appear.
 
 
 [[security-fixes]]

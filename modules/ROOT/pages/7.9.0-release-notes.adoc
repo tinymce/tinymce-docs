@@ -64,7 +64,7 @@ The {productname} {release-version} release includes an accompanying release of 
 **Accessibility Checker** includes the following fixes and improvements.
 
 ==== Adjusted spacing in accessibility checker component for better visual alignment
-
+// #TINY-11757
 Previously in {productname}, the error card for the Accessibility Checker had slightly more space between content than necessary, making the dialog appear less compact.
 
 With the release {productname} {release-version}, the design has been updated to reduce the padding within the error card, ensuring a more compact and cohesive design.

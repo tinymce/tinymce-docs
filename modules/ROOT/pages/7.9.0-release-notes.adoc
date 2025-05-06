@@ -153,11 +153,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Changed word-capture regular expression for abbreviations to allow larger abbreviations.
+// #TINY-11560
 
-// CCFR here.
+Previously in {productname}, an issue was identified where words or letters were inadvertently duplicated during pattern matching. This behavior particularly affected the handling of acronyms, resulting in inconsistent behavior.
 
+With the release of {productname} {release-version}, this issue has been resolved. Pattern matching now performs as expected, ensuring text is processed accurately without unintended duplication.
 
 [[security-fixes]]
 == Security fixes

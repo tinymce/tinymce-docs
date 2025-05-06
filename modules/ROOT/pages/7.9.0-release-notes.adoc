@@ -160,7 +160,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === If `style_formats` is empty the button is now disabled.
 // #TINY-12005
 
-Previously, when the xref:user-formatting-options.adoc#style_formats[style_formats] configuration was empty or undefined, the **Formats** toolbar button remained active, resulting in a dropdown menu that appeared empty and non-functional. This behavior caused confusion, as users were presented with an unresponsive interface element that suggested available formatting options when none existed.
+Previously, when the xref:user-formatting-options.adoc#style_formats[style_formats] configuration was explicitly set to an empty list, the **Formats** toolbar button remained enabled, displaying an empty and non-functional dropdown menu. This led to confusion, as the button appeared interactive and suggested available formatting options, despite none being configured.
 
 In {release-version}, the {productname} editor now disables the **Formats** button entirely when no style formats are defined. This change improves usability by clearly signaling that there are no available style options, preventing unnecessary interaction and enhancing clarity for end users.
 

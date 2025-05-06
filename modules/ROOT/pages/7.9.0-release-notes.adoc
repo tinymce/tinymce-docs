@@ -157,6 +157,21 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // #TINY-vwxyz1
 
 // CCFR here.
+=== Autolink behavior updated to preserve existing links
+// TINY-11836
+
+Previously, the Autolink plugin could incorrectly re-link content that was already part of a hyperlink when the user pressed Enter at the end of a line. This occurred when the cursor was placed immediately after a link element rather than inside it and the visible text resembled a URL. As a result, Autolink could unintentionally overwrite link attributes, modify the destination URL, or alter otherwise valid markup.
+
+{productname} {release-version} resolves this issue by treating any text inside or directly following a hyperlink as the end of its search scope. This prevents Autolink from creating a new link if the content is already hyperlinked. The behavior now consistently mirrors the existing handling for cases when the cursor is inside a link.
+
+.Example of incorrect behavior
+[source,html]
+----
+<p><a href="https://www.google.com" target="_blank" rel="noopener">www.google.com</a></p> <!-- before -->
+<p><a href="https://www.google.com">www.google.com</a></p> <!-- after -->
+----
+
+This update improves reliability when working with links, ensuring that attributes and destinations remain unchanged unless explicitly edited.
 
 
 [[security-fixes]]

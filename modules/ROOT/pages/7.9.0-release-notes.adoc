@@ -158,7 +158,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 Previously, when pressing `Enter` before a floating image, the image could be duplicated instead of a new line being correctly inserted. This issue was due to limitations in the native content-editable behavior of **Firefox**, which {productname} previously relied on for handling new lines. In particular, Firefox did not clear line content correctly when it included floated elements, resulting in duplicated images.
 
-With the release of {productname} {release-version}, this behavior has been resolved. Deleting lines with floating images now works as expected, ensuring that duplicate images no longer appear.
+With the release of {productname} {release-version}, an internal new line mechanism has been introduced to replace the unreliable browser behavior. This ensures consistent and correct handling of new lines around floating content. Pressing `Enter` before a floating image now behaves as expected, and duplicate images no longer appear.
 
 
 [[security-fixes]]

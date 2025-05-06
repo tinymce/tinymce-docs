@@ -57,17 +57,19 @@ The following new Open Source plugin was released alongside {productname} {relea
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-// === <Premium plugin name 1>
+=== Accessibility Checker
 
-// The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.
 
-// **<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Accessibility Checker** includes the following fixes and improvements.
 
-// ==== <Premium plugin name 1 change 1>
+==== Adjusted spacing in accessibility checker component for better visual alignment
 
-// // CCFR here.
+Previously in {productname}, the error card for the Accessibility Checker had slightly more space between content than necessary, making the dialog appear less compact.
 
-// For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+With the release {productname} {release-version}, the design has been updated to reduce the padding within the error card, ensuring a more compact and cohesive design.
+
+For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]

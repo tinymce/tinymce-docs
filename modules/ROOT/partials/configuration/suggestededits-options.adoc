@@ -124,7 +124,7 @@ tinymce.init({
 The `{plugincode}_diff_classes` option configures the CSS classes applied to the change annotations in the {pluginname} view. This is useful to set custom styles and must be used in combination with the `{plugincode}_css_url` option. 
 
 [NOTE]
-The CSS class names must exist in the xref:{plugincode}_css_url[`+{plugincode}_css_url+`].
+The CSS class names must exist in the xref:{plugincode}_css_url[`+suggestededits_css_url+`].
 
 *Type:* `+Object+`
 

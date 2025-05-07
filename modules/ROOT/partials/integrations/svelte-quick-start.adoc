@@ -1,10 +1,11 @@
-The https://github.com/tinymce/tinymce-svelte[Official {productname} Svelte component] integrates {productname} into https://svelte.dev/[Svelte applications]. This procedure creates a basic Svelte application containing a {productname} editor.
+The https://github.com/tinymce/tinymce-svelte[Official {productname} Svelte component] integrates {productname} into https://svelte.dev/[Svelte applications].  
+Creates a basic Svelte application containing a {productname} editor.
 
-For examples of the {productname} integration, visit https://tinymce.github.io/tinymce-svelte/[the tinymce-svelte storybook].
+For examples of the {productname} integration, visit the https://tinymce.github.io/tinymce-svelte/[tinymce-svelte storybook].
 
 == Prerequisites
 
-This procedure requires https://nodejs.org/[Node.js (and npm)].
+Requires https://nodejs.org/[Node.js (and npm)].
 
 == Procedure
 
@@ -14,16 +15,22 @@ This procedure requires https://nodejs.org/[Node.js (and npm)].
 ----
 npm create vite@5 tinymce-svelte-demo -- --template svelte
 ----
-. Change to the newly created directory.
+. Change to the project directory.
 +
 [source,sh]
 ----
 cd tinymce-svelte-demo
 ----
+. Install project dependencies.
++
+[source,sh]
+----
+npm install
+----
 
 ifeval::["{productSource}" == "package-manager"]
 
-. Install the `+tinymce+` and the `+tinymce-svelte+` editor component, such as:
+. Install the `+tinymce+` and `+tinymce-svelte+` packages:
 +
 [source,sh,subs="attributes+"]
 ----
@@ -33,7 +40,7 @@ npm install tinymce@^{productmajorversion} @tinymce/tinymce-svelte
 endif::[]
 ifeval::["{productSource}" != "package-manager"]
 
-. Install the `+tinymce-svelte+` editor component, such as:
+. Install the `+tinymce-svelte+` editor component:
 +
 [source,sh]
 ----
@@ -74,16 +81,23 @@ let conf = {
 </main>
 ----
 
+[NOTE]
+====
+Replace `your-tiny-cloud-api-key` with a valid {cloudname} API key.
+
+include::partial$misc/get-an-api-key.adoc[]
+====
+
 endif::[]
 ifeval::["{productSource}" == "package-manager"]
 
-. Install the `+vite-plugin-static-copy+` development dependency, such as:
+. Install the `+vite-plugin-static-copy+` development dependency:
 +
 [source,sh]
 ----
 npm install -D vite-plugin-static-copy
 ----
-. Open `+vite.config.js+` and configure the `+vite-plugin-static-copy+` plugin to copy {productname} to the `+public/+` directory, such as:
+. Configure `+vite.config.js+` to copy {productname} to the `+public/+` directory:
 +
 [source,js]
 ----
@@ -133,6 +147,8 @@ let conf = {
   />
 </main>
 ----
++
+. Update the `+licenseKey+` option in the editor element and include your xref:license-key.adoc[License Key].
 
 endif::[]
 ifeval::["{productSource}" == "zip"]
@@ -167,22 +183,27 @@ let conf = {
   />
 </main>
 ----
++
+. Update the `+licenseKey+` option in the editor element and include your xref:license-key.adoc[License Key].
 
 endif::[]
 
-. Test the application using the Node.js development server.
-* To start the development server, in the project's root directory, run:
+== Run the Application
+
+Test the application using the Node.js development server.
+
+. To start the development server:
 +
 [source,sh]
 ----
 npm run dev
 ----
 +
-* To stop the development server, select on the command line or command prompt and press _Ctrl+C_.
+. To stop the development server, use `+Ctrl+C+` in the terminal or command prompt.
 
 == Next Steps
 
-* For examples of the {productname} integration, see: https://tinymce.github.io/tinymce-svelte/[the tinymce-svelte storybook].
-* For information on customizing, see:
-** xref:basic-setup.adoc[{productname} basic setup].
-** xref:svelte-ref.adoc[The {productname} Svelte integration technical reference].
+* See the following for additional information:
+** https://tinymce.github.io/tinymce-svelte/[tinymce-svelte storybook]
+** xref:basic-setup.adoc[{productname} basic setup]
+** xref:svelte-ref.adoc[{productname} Svelte integration technical reference]

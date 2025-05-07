@@ -80,6 +80,14 @@ tinymce.init({
 });
 ----
 
+== Suggestions
+
+The plugin also enables users to provide suggestions or feedback to edits before they are resolved. This feature is only available if xref:{plugincode}_access[`+suggestededits_access+`] is set to `admin` or `suggest`. 
+
+Example: Using Suggestions 
+
+liveDemo::suggestededits-suggestions[]
+
 == Options
 
 The following configuration options affect the behavior of the {pluginname} plugin.

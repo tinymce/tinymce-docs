@@ -168,10 +168,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Pressing `enter` before a floating image sometimes duplicated the image.
+// #TINY-1676
 
-// CCFR here.
+Previously, when pressing `Enter` before a floating image, the image could be duplicated instead of a new line being correctly inserted. This issue was due to limitations in the native content-editable behavior of **Firefox**, which {productname} previously relied on for handling new lines. In particular, Firefox did not clear line content correctly when it included floated elements, resulting in duplicated images.
+
+With the release of {productname} {release-version}, an internal new line mechanism has been introduced to replace the unreliable browser behavior. This ensures consistent and correct handling of new lines around floating content. Pressing `Enter` before a floating image now behaves as expected, and duplicate images no longer appear.
+
 === Removed deprecated CSS media selector `-ms-high-contrast`.
 // TINY-11876
 

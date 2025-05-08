@@ -57,17 +57,32 @@ The following new Open Source plugin was released alongside {productname} {relea
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-// === <Premium plugin name 1>
+=== Accessibility Checker
 
-// The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.
 
-// **<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Accessibility Checker** includes the following fixes and improvements.
 
-// ==== <Premium plugin name 1 change 1>
+==== Adjusted spacing in accessibility checker component for better visual alignment
+// #TINY-11757
+Previously in {productname}, the error card for the Accessibility Checker had slightly more space between content than necessary, making the dialog appear less compact.
 
-// // CCFR here.
+With the release {productname} {release-version}, the design has been updated to reduce the padding within the error card, ensuring a more compact and cohesive design.
 
-// For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
+
+=== Spell Checker
+
+The {productname} {release-version} includes an accompanying release of the **Spell Checker** premium plugin.
+
+**Spell Checker** includes the following improvement.
+
+==== Spellchecking with a language that does not match the content no longer overloads the spelling server.
+// #TINY-12061
+
+Previously, using the spellchecker with a language that did not match the document content could cause server overload due to the large volume of unrecognized words. This issue led to excessive CPU usage on the spelling server. In {release-version}, {productname} now processes words in manageable chunks, reducing the load on the server and preventing performance degradation during spellchecking operations with mismatched language settings.
+
+For information on the **Spell Checker** premium plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker plugin].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
@@ -153,10 +168,6 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
 === Tabbing inside a `figcaption` element no longer shows two text insertion carets.
 // #TINY-11997
 
@@ -165,6 +176,18 @@ Previously, when tabbing within a `figcaption` element, the fake text caret was 
 This has been resolved by updating the focus handling behavior to detect whether the focused element is within an editable context and hide the fake caret accordingly.
 
 As a result, only a single, correct text caret is displayed when tabbing inside `figcaption` elements, improving editing clarity and user experience.
+
+=== Pressing `enter` before a floating image sometimes duplicated the image.
+// #TINY-1676
+
+Previously, when pressing `Enter` before a floating image, the image could be duplicated instead of a new line being correctly inserted. This issue was due to limitations in the native content-editable behavior of **Firefox**, which {productname} previously relied on for handling new lines. In particular, Firefox did not clear line content correctly when it included floated elements, resulting in duplicated images.
+
+With the release of {productname} {release-version}, an internal new line mechanism has been introduced to replace the unreliable browser behavior. This ensures consistent and correct handling of new lines around floating content. Pressing `Enter` before a floating image now behaves as expected, and duplicate images no longer appear.
+
+=== Removed deprecated CSS media selector `-ms-high-contrast`.
+// TINY-11876
+
+The `-ms-high-contrast` media feature was previously used to apply a darker border color for improved accessibility in Internet Explorer 11. However, this feature is no longer supported and has been link:https://blogs.windows.com/msedgedev/2024/04/29/deprecating-ms-high-contrast/[officially deprecated] by Microsoft Edge. Its continued use triggered warnings in browser developer consoles, potentially affecting user experience during development. To enhance cross-browser compatibility and eliminate these warnings, the deprecated selector has been removed from {productname} in {release-version}.
 
 
 [[security-fixes]]

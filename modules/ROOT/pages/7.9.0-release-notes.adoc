@@ -175,6 +175,12 @@ NOTE: {companyname} Technologies would like to thank link:https://github.com/dan
 
 // CCFR here.
 
+=== `ContextFormSizeInput` lock button has been repositioned between the "width" and "height" inputs.
+// TINY-11916
+
+In previous versions of {productname}, the "lock aspect ratio" button in the `ContextFormSizeInput` component was positioned at the end of the "width" and "height" input fields. This placement made it difficult to understand the relationship between the inputs and the lock functionality. 
+
+{productname} {release-version} addresses this issue. Now, the lock button has been repositioned between the "width" and "height" inputs.
 
 [[removed]]
 == Removed

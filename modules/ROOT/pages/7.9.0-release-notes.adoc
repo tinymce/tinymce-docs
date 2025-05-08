@@ -185,6 +185,32 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
+=== Improved handling of overlapping matches in abbreviation detection
+// #TINY-11560
+
+Previously in {productname}, an issue occurred during pattern matching where overlapping regular expression matches caused duplicated content when processing abbreviations. For example, in the string `D. dd.D.`, multiple overlapping patterns such as `D.`, `dd.D`, and a final `D.` could be incorrectly matched and processed more than once. This resulted in unexpected duplication in the editor, such as `D. dd.DDD.`.
+
+This behavior was caused by insufficient overlap detection when identifying match regions, leading to multiple reinsertions of already matched substrings. The issue has now been resolved in {productname} {release-version} by refining the pattern-matching logic to accurately detect and avoid overlapping matches. The updated implementation ensures that each abbreviation is matched and processed only once, eliminating duplicated insertions and preserving the original content structure.
+
+.Example before the fix:
+[source,html]
+----
+<!-- Original content typed by the user -->
+<p>D. dd.D.</p>
+
+<!-- Result after pattern matching (incorrect behavior) -->
+<p>D. dd.DDD.</p>
+----
+
+.Example after the fix:
+[source,html]
+----
+<!-- Original content typed by the user -->
+<p>D. dd.D.</p>
+
+<!-- Result after pattern matching (correct behavior) -->
+<p>D. dd.D.</p>
+----
 
 === Inline dialog dropdowns reposition when the dialog is dragged or the window is scrolled.
 // TINY-11368 sub TINY-11823, TINY-11832

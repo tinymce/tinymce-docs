@@ -185,6 +185,14 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
+
+=== Inline dialog dropdowns reposition when the dialog is dragged or the window is scrolled.
+// TINY-11368 sub TINY-11823, TINY-11832
+
+Prior to {productname} {release-version}, opening the preferences menu from within the **Search and Replace** dialog in inline mode caused the dropdown to remain fixed in its original position, even when the dialog was moved or the window was scrolled. This resulted in the dropdown becoming visually detached from its associated button and dialog, leading to a disjointed and confusing user experience.
+
+In {productname} {release-version}, this issue has been resolved. The dropdown menu now remains visually and functionally anchored to the dialog when it is dragged or when the window is scrolled. This ensures consistent and intuitive behavior, aligned with the handling of other dropdowns across the application.
+
 === Tabbing inside a `figcaption` element no longer shows two text insertion carets.
 // #TINY-11997
 

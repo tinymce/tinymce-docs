@@ -168,6 +168,15 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
+=== Tabbing inside a `figcaption` element no longer shows two text insertion carets.
+// #TINY-11997
+
+Previously, when tabbing within a `figcaption` element, the fake text caret was not properly hidden, resulting in both the browser’s native caret and the fake caret being rendered simultaneously. This visual duplication caused confusion for users during text navigation and editing. The issue occurred because the focus event inside editable captions did not trigger logic to hide the fake caret.
+
+This has been resolved by updating the focus handling behavior to detect whether the focused element is within an editable context and hide the fake caret accordingly.
+
+As a result, only a single, correct text caret is displayed when tabbing inside `figcaption` elements, improving editing clarity and user experience.
+
 === Pressing `enter` before a floating image sometimes duplicated the image.
 // #TINY-1676
 

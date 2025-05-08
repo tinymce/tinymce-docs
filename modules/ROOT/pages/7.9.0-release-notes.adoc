@@ -185,7 +185,15 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-=== Improved handling of overlapping matches in abbreviation detection
+
+=== The toolbar did not always account for the full available space during horizontal scrolling.
+// #TINY-11549
+
+In previous versions of {productname}, the toolbar did not accurately account for the actual available space. As a result, the layout area allocated for the toolbar was smaller than the effective free space, leading to inconsistent resizing and positioning during horizontal scrolling.
+
+This issue has been addressed in {release-version}. The toolbar now correctly utilizes the available area, ensuring stable and consistent rendering within the intended layout.
+
+=== Improved handling of overlapping matches in abbreviation detection.
 // #TINY-11560
 
 Previously in {productname}, an issue occurred during pattern matching where overlapping regular expression matches caused duplicated content when processing abbreviations. For example, in the string `D. dd.D.`, multiple overlapping patterns such as `D.`, `dd.D`, and a final `D.` could be incorrectly matched and processed more than once. This resulted in unexpected duplication in the editor, such as `D. dd.DDD.`.

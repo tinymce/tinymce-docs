@@ -274,6 +274,12 @@ With the release of {productname} {release-version}, an internal new line mechan
 
 The `-ms-high-contrast` media feature was previously used to apply a darker border color for improved accessibility in Internet Explorer 11. However, this feature is no longer supported and has been link:https://blogs.windows.com/msedgedev/2024/04/29/deprecating-ms-high-contrast/[officially deprecated] by Microsoft Edge. Its continued use triggered warnings in browser developer consoles, potentially affecting user experience during development. To enhance cross-browser compatibility and eliminate these warnings, the deprecated selector has been removed from {productname} in {release-version}.
 
+=== If `style_formats` is empty the button is now disabled.
+// #TINY-12005
+
+Previously, when the xref:user-formatting-options.adoc#style_formats[style_formats] configuration was explicitly set to an empty list, the **Formats** toolbar button remained enabled, displaying an empty and non-functional dropdown menu. This led to confusion, as the button appeared interactive and suggested available formatting options, despite none being configured.
+
+In {release-version}, the {productname} editor now disables the **Formats** button entirely when no style formats are defined. This change improves usability by clearly signaling that there are no available style options, preventing unnecessary interaction and enhancing clarity for end users.
 
 [[security-fixes]]
 == Security fixes

@@ -146,6 +146,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Resize cursor is now the correct direction for each resize mode.
+// #TINY-12036 || #GH-10189
+
+Previously, when the {productname} editor was configured with `resize: true`, which restricts resizing to the vertical axis, the editor incorrectly displayed a diagonal resize cursor. This was misleading, as the visual cue did not match the actual resizing behavior. In {release-version}, the cursor style now accurately reflects the resizing direction: a vertical resize cursor is shown when `resize: true` is used, and a diagonal cursor remains for `resize: 'both'`, which allows resizing in both horizontal and vertical directions.
+
+NOTE: {companyname} Technologies would like to thank link:https://github.com/daniloff200[daniloff200] for contributing to this improvement.
+
 
 [[additions]]
 == Additions

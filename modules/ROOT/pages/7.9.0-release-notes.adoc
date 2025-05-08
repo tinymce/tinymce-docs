@@ -84,6 +84,23 @@ Previously, using the spellchecker with a language that did not match the docume
 
 For information on the **Spell Checker** premium plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker plugin].
 
+=== Image Optimizer
+
+The {productname} {release-version} release includes an accompanying release of the **Image Optimizer** premium plugin.
+
+**Image Optimizer** includes the following fix.
+
+==== Aspect ratio was not properly calculated when uploading images wider than the editor.
+// #TINY-11963
+
+Previous version of the **Image Optimizer** plugin, an issue would occur where images wider than the editor were distorted when uploaded to the CDN.
+
+This occurred when the image being uploaded replaced a resized version rendered from a `srcset` alternative, and the aspect ratio was incorrectly calculated using the `naturalWidth` of the original image and the `naturalHeight` of the new image. This mismatch led to a distorted aspect ratio post-upload.
+
+{productname} {release-version} addresses this issue. Now, the aspect ratio is now correctly calculated using both the `naturalWidth` and `naturalHeight` of the original image, ensuring consistent and undistorted rendering after upload.
+
+For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

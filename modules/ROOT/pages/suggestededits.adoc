@@ -47,6 +47,8 @@ The sidebar also displays all tracked changes that need to be resolved. Each cha
 * Reject: Removes the change from the document. 
 * Revert: Undoes a previously accepted or rejected change. 
 
+The plugin also enables users to view and provide suggestions to edits. All users with access to the {pluginname} View can view suggestions. To allow users to provide suggestions, xref:{plugincode}_access[`{plugincode}_access`] must be set to either `admin` or `suggest`. 
+
 == Basic setup
 
 To setup the {pluginname} plugin in the editor:
@@ -79,14 +81,6 @@ tinymce.init({
   suggestededits_uid: 'unique-identifier' // replace this with a unique string to identify the user 
 });
 ----
-
-== Suggestions
-
-The plugin also enables users to provide suggestions or feedback to edits before they are resolved. This feature is only available if xref:{plugincode}_access[`+suggestededits_access+`] is set to `admin` or `suggest`. 
-
-Example: Using Suggestions 
-
-liveDemo::suggestededits-suggestions[]
 
 == Options
 

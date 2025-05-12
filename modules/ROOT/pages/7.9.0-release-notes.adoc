@@ -57,17 +57,62 @@ The following new Open Source plugin was released alongside {productname} {relea
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-// === <Premium plugin name 1>
+=== Accessibility Checker
 
-// The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.
 
-// **<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Accessibility Checker** includes the following fixes and improvements.
 
-// ==== <Premium plugin name 1 change 1>
+==== Adjusted spacing in accessibility checker component for better visual alignment
+// #TINY-11757
+Previously in {productname}, the error card for the Accessibility Checker had slightly more space between content than necessary, making the dialog appear less compact.
 
-// // CCFR here.
+With the release {productname} {release-version}, the design has been updated to reduce the padding within the error card, ensuring a more compact and cohesive design.
 
-// For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
+
+=== Spell Checker
+
+The {productname} {release-version} includes an accompanying release of the **Spell Checker** premium plugin.
+
+**Spell Checker** includes the following improvement.
+
+==== Spellchecking with a language that does not match the content no longer overloads the spelling server.
+// #TINY-12061
+
+Previously, using the spellchecker with a language that did not match the document content could cause server overload due to the large volume of unrecognized words. This issue led to excessive CPU usage on the spelling server. In {release-version}, {productname} now processes words in manageable chunks, reducing the load on the server and preventing performance degradation during spellchecking operations with mismatched language settings.
+
+For information on the **Spell Checker** premium plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker plugin].
+
+=== Image Optimizer
+
+The {productname} {release-version} release includes an accompanying release of the **Image Optimizer** premium plugin.
+
+**Image Optimizer** includes the following fix.
+
+==== Aspect ratio was not properly calculated when uploading images wider than the editor.
+// #TINY-11963
+
+Previous version of the **Image Optimizer** plugin, an issue would occur where images wider than the editor were distorted when uploaded to the CDN.
+
+This occurred when the image being uploaded replaced a resized version rendered from a `srcset` alternative, and the aspect ratio was incorrectly calculated using the `naturalWidth` of the original image and the `naturalHeight` of the new image. This mismatch led to a distorted aspect ratio post-upload.
+
+{productname} {release-version} addresses this issue. Now, the aspect ratio is now correctly calculated using both the `naturalWidth` and `naturalHeight` of the original image, ensuring consistent and undistorted rendering after upload.
+
+For information on the **Image Optimizer** plugin, see: xref:uploadcare.adoc[Image Optimizer].
+
+=== **Spelling Autocorrect**
+
+The {productname} {release-version} release includes an accompanying release of the **Spelling Autocorrect** premium plugin.
+
+**Spelling Autocorrect** includes the following improvements.
+
+==== Spelling Autocorrect no longer requires the spelling service.
+// #TINY-12041
+
+Previously, the {productname} autocorrect plugin depended on a server-side spelling service to retrieve its list of autocorrect entries. This setup increased server load and introduced latency due to REST API calls. As of {release-version}, the autocorrect list has been relocated to the client side, eliminating the need for a spellchecker server. This change improves performance by enabling caching and bundling of the autocorrect functionality with other client-side assets, resulting in faster load times and reduced backend dependencies.
+
+For information on the **Spelling Autocorrect** plugin, see: xref:autocorrect.adoc[Spelling Autocorrect plugin].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
@@ -114,6 +159,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Resize cursor is now the correct direction for each resize mode.
+// #TINY-12036 || #GH-10189
+
+Previously, when the {productname} editor was configured with `resize: true`, which restricts resizing to the vertical axis, the editor incorrectly displayed a diagonal resize cursor. This was misleading, as the visual cue did not match the actual resizing behavior. In {release-version}, the cursor style now accurately reflects the resizing direction: a vertical resize cursor is shown when `resize: true` is used, and a diagonal cursor remains for `resize: 'both'`, which allows resizing in both horizontal and vertical directions.
+
+NOTE: {companyname} Technologies would like to thank link:https://github.com/daniloff200[daniloff200] for contributing to this improvement.
+
 
 [[additions]]
 == Additions
@@ -136,6 +188,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== `ContextFormSizeInput` lock button has been repositioned between the "width" and "height" inputs.
+// TINY-11916
+
+In previous versions of {productname}, the "lock aspect ratio" button in the `ContextFormSizeInput` component was positioned at the end of the "width" and "height" input fields. This placement made it difficult to understand the relationship between the inputs and the lock functionality. 
+
+{productname} {release-version} addresses this issue. Now, the lock button has been repositioned between the "width" and "height" inputs.
 
 [[removed]]
 == Removed
@@ -153,11 +211,14 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Japanese keyboard could insert content while the editor was in `readonly` mode
+// #TINY-11363
 
-// CCFR here.
-=== Autolink behavior updated to preserve existing links
+In previous versions of {productname}, an issue was identified where the editor permitted content insertion via IME (Input Method Editor) input, such as using a Japanese keyboard even when the editor was configured with `readonly: true`. 
+
+With the release of {productname} {release-version}, this issue has been addressed by implementing event handlers that intercept and block IME-related input events and their default behaviors while in read-only mode. This enhancement ensures that the readonly setting is strictly enforced, preventing content modifications from all input sources, including IME. 
+
+=== Autolink behavior was updated to preserve existing links.
 // TINY-11836
 
 Previously, the Autolink plugin could incorrectly re-link content that was already part of a hyperlink when the user pressed Enter at the end of a line. This occurred when the cursor was placed immediately after a link element rather than inside it and the visible text resembled a URL. As a result, Autolink could unintentionally overwrite link attributes, modify the destination URL, or alter otherwise valid markup.
@@ -173,6 +234,81 @@ Previously, the Autolink plugin could incorrectly re-link content that was alrea
 
 This update improves reliability when working with links, ensuring that attributes and destinations remain unchanged unless explicitly edited.
 
+=== Editor did not scroll into viewport on receiving focus on Chrome and Safari.
+// #TINY-12017
+
+Previously the editor did not scroll into the viewport when focused via the keyboard `Tab` key, causing a poor user experience as users had to manually scroll to find the editor.
+
+{productname} {release-version} introduces a workaround to resolve this issue. In addition and a bug report has been submitted to both Chrome (link:https://issues.chromium.org/issues/414129878[414129878]) and Safari (link:https://bugs.webkit.org/show_bug.cgi?id=292062[292062]) teams for further investigation.
+
+=== The toolbar did not always account for the full available space during horizontal scrolling.
+// #TINY-11549
+
+In previous versions of {productname}, the toolbar did not accurately account for the actual available space. As a result, the layout area allocated for the toolbar was smaller than the effective free space, leading to inconsistent resizing and positioning during horizontal scrolling.
+
+This issue has been addressed in {release-version}. The toolbar now correctly utilizes the available area, ensuring stable and consistent rendering within the intended layout.
+
+=== Improved handling of overlapping matches in abbreviation detection.
+// #TINY-11560
+
+Previously in {productname}, an issue occurred during pattern matching where overlapping regular expression matches caused duplicated content when processing abbreviations. For example, in the string `D. dd.D.`, multiple overlapping patterns such as `D.`, `dd.D`, and a final `D.` could be incorrectly matched and processed more than once. This resulted in unexpected duplication in the editor, such as `D. dd.DDD.`.
+
+This behavior was caused by insufficient overlap detection when identifying match regions, leading to multiple reinsertions of already matched substrings. The issue has now been resolved in {productname} {release-version} by refining the pattern-matching logic to accurately detect and avoid overlapping matches. The updated implementation ensures that each abbreviation is matched and processed only once, eliminating duplicated insertions and preserving the original content structure.
+
+.Example before the fix:
+[source,html]
+----
+<!-- Original content typed by the user -->
+<p>D. dd.D.</p>
+
+<!-- Result after pattern matching (incorrect behavior) -->
+<p>D. dd.DDD.</p>
+----
+
+.Example after the fix:
+[source,html]
+----
+<!-- Original content typed by the user -->
+<p>D. dd.D.</p>
+
+<!-- Result after pattern matching (correct behavior) -->
+<p>D. dd.D.</p>
+----
+
+=== Inline dialog dropdowns reposition when the dialog is dragged or the window is scrolled.
+// TINY-11368 sub TINY-11823, TINY-11832
+
+Prior to {productname} {release-version}, opening the preferences menu from within the **Search and Replace** dialog in inline mode caused the dropdown to remain fixed in its original position, even when the dialog was moved or the window was scrolled. This resulted in the dropdown becoming visually detached from its associated button and dialog, leading to a disjointed and confusing user experience.
+
+In {productname} {release-version}, this issue has been resolved. The dropdown menu now remains visually and functionally anchored to the dialog when it is dragged or when the window is scrolled. This ensures consistent and intuitive behavior, aligned with the handling of other dropdowns across the application.
+
+=== Tabbing inside a `figcaption` element no longer shows two text insertion carets.
+// #TINY-11997
+
+Previously, when tabbing within a `figcaption` element, the fake text caret was not properly hidden, resulting in both the browser’s native caret and the fake caret being rendered simultaneously. This visual duplication caused confusion for users during text navigation and editing. The issue occurred because the focus event inside editable captions did not trigger logic to hide the fake caret.
+
+This has been resolved by updating the focus handling behavior to detect whether the focused element is within an editable context and hide the fake caret accordingly.
+
+As a result, only a single, correct text caret is displayed when tabbing inside `figcaption` elements, improving editing clarity and user experience.
+
+=== Pressing `enter` before a floating image sometimes duplicated the image.
+// #TINY-1676
+
+Previously, when pressing `Enter` before a floating image, the image could be duplicated instead of a new line being correctly inserted. This issue was due to limitations in the native content-editable behavior of **Firefox**, which {productname} previously relied on for handling new lines. In particular, Firefox did not clear line content correctly when it included floated elements, resulting in duplicated images.
+
+With the release of {productname} {release-version}, an internal new line mechanism has been introduced to replace the unreliable browser behavior. This ensures consistent and correct handling of new lines around floating content. Pressing `Enter` before a floating image now behaves as expected, and duplicate images no longer appear.
+
+=== Removed deprecated CSS media selector `-ms-high-contrast`.
+// TINY-11876
+
+The `-ms-high-contrast` media feature was previously used to apply a darker border color for improved accessibility in Internet Explorer 11. However, this feature is no longer supported and has been link:https://blogs.windows.com/msedgedev/2024/04/29/deprecating-ms-high-contrast/[officially deprecated] by Microsoft Edge. Its continued use triggered warnings in browser developer consoles, potentially affecting user experience during development. To enhance cross-browser compatibility and eliminate these warnings, the deprecated selector has been removed from {productname} in {release-version}.
+
+=== If `style_formats` is empty the button is now disabled.
+// #TINY-12005
+
+Previously, when the xref:user-formatting-options.adoc#style_formats[style_formats] configuration was explicitly set to an empty list, the **Formats** toolbar button remained enabled, displaying an empty and non-functional dropdown menu. This led to confusion, as the button appeared interactive and suggested available formatting options, despite none being configured.
+
+In {release-version}, the {productname} editor now disables the **Formats** button entirely when no style formats are defined. This change improves usability by clearly signaling that there are no available style options, preventing unnecessary interaction and enhancing clarity for end users.
 
 [[security-fixes]]
 == Security fixes

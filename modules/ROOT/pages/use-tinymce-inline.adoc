@@ -6,8 +6,6 @@
 
 {productname} has three main integration modes: a _classic_ full editor mode, an _inline_ editing mode, and a distraction-free mode.
 
-include::partial$misc/notonmobile.adoc[]
-
 The inline editing mode is used for merging the editing and reading views of the page for a seamless editing experience and true WYSIWYG behavior.
 
 Inline editing mode does not replace the selected element with an iframe, but instead edits the element's content in-place. Inline editors are designed:

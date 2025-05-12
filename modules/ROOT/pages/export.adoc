@@ -6,6 +6,8 @@
 :plugincode: export
 :pluginminimumplan: tiertwo
 
+IMPORTANT: The {pluginname} plugin is now *deprecated* and will be permanently removed in the upcoming {productname} 9.0 release. To ensure continued access to similar functionality, consider using the link:https://www.tiny.cloud/docs/tinymce/latest/exportpdf/[Export to PDF^] Premium plugin as an alternative.
+
 include::partial$misc/admon-premium-plugin.adoc[]
 
 The {pluginname} plugin adds the ability to export content from the editor to a user's local machine in various formats. For a list of available exporters and information on what they support, see the xref:exporters[Exporters section].

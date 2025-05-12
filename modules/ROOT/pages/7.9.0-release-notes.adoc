@@ -211,6 +211,12 @@ In previous versions of {productname}, the "lock aspect ratio" button in the `Co
 
 {productname} {release-version} also includes the following bug fix<es>:
 
+=== Japanese keyboard could insert content while the editor was in `readonly` mode
+// #TINY-11363
+
+In previous versions of {productname}, an issue was identified where the editor permitted content insertion via IME (Input Method Editor) input, such as using a Japanese keyboard even when the editor was configured with `readonly: true`. 
+
+With the release of {productname} {release-version}, this issue has been addressed by implementing event handlers that intercept and block IME-related input events and their default behaviors while in read-only mode. This enhancement ensures that the readonly setting is strictly enforced, preventing content modifications from all input sources, including IME. 
 
 === Editor did not scroll into viewport on receiving focus on Chrome and Safari.
 // #TINY-12017

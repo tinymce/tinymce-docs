@@ -74,14 +74,14 @@ ifeval::["{productSource}" == "package-manager"]
 +
 [source,sh]
 ----
-npm install  tinymce "@tinymce/tinymce-vue"
+npm install tinymce "@tinymce/tinymce-vue"
 ----
 
 * For Vue.js 2.x users:
 +
 [source,sh]
 ----
-npm install  tinymce "@tinymce/tinymce-vue@^3"
+npm install tinymce "@tinymce/tinymce-vue@^3"
 ----
 
 endif::[]
@@ -92,13 +92,13 @@ ifeval::["{productSource}" != "package-manager"]
 +
 [source,sh]
 ----
-npm install  "@tinymce/tinymce-vue"
+npm install "@tinymce/tinymce-vue"
 ----
 * For Vue.js 2.x users:
 +
 [source,sh]
 ----
-npm install  "@tinymce/tinymce-vue@^3"
+npm install "@tinymce/tinymce-vue@^3"
 ----
 
 endif::[]
@@ -107,8 +107,55 @@ endif::[]
 .. Add a {productname} configuration to the `+<template>+` using the `+<editor>+` tag.
 .. Add `+import Editor from '@tinymce/tinymce-vue'+` to the start of the `+<script>+`.
 +
-For example:
+ifeval::["{productSource}" == "cloud"]
+.For example:
+[source,jsx]
+----
+<script setup>
+import Editor from '@tinymce/tinymce-vue'
+</script>
+
+<template>
+  <main id="sample">
+    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <editor
+      id="uuid"
+      apiKey="no-api-key"
+      :init="{
+        plugins: 'advlist anchor autolink charmap code fullscreen help image insertdatetime link lists media preview searchreplace table visualblocks wordcount',
+        toolbar: 'undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+        height: 500,
+      }"
+    />
+  </main>
+</template>
+
+<style scoped>
+.logo {
+  display: block;
+  margin: 0 auto 2rem;
+}
+
+@media (min-width: 1024px) {
+  #sample {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    width: 1000px;
+  }
+}
+</style>
+----
+. Include the `+api-key+` option in the editor element and include your link:{accountsignup}/[{cloudname} API key]. Such as:
 +
+[source,html]
+----
+<editor api-key='your-api-key' :init="{ /* your other settings */ }" />
+----
+endif::[]
+ifeval::["{productSource}" == "package-manager"]
++
+.For example:
 [source,jsx]
 ----
 <script setup>
@@ -146,25 +193,53 @@ import Editor from '@tinymce/tinymce-vue'
 }
 </style>
 ----
-
-ifeval::["{productSource}" == "cloud"]
-. Include the `+api-key+` option in the editor element and include your link:{accountsignup}/[{cloudname} API key].
 +
-Such as:
-+
-[source,html]
-----
-<editor api-key='your-api-key' :init="{ /* your other settings */ }" />
-----
-endif::[]
-ifeval::["{productSource}" == "package-manager"]
 . Bundle {productname} with the Vue.js application using a module loader (such as Webpack).
-+
 --
 include::partial$integrations/bundling-integration.adoc[]
 --
 endif::[]
 ifeval::["{productSource}" == "zip"]
++
+.For example:
+[source,jsx]
+----
+<script setup>
+import Editor from '@tinymce/tinymce-vue'
+</script>
+
+<template>
+  <main id="sample">
+    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <editor
+      id="uuid"
+      licenseKey="gpl"
+      :init="{
+        plugins: 'advlist anchor autolink charmap code fullscreen help image insertdatetime link lists media preview searchreplace table visualblocks wordcount',
+        toolbar: 'undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+        height: 500,
+      }"
+    />
+  </main>
+</template>
+
+<style scoped>
+.logo {
+  display: block;
+  margin: 0 auto 2rem;
+}
+
+@media (min-width: 1024px) {
+  #sample {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    width: 1000px;
+  }
+}
+</style>
+----
++
 . {productname} can be self-hosted by either:
 ** xref:deploying-tinymce-independent[Deploying {productname} independent of the Vue.js application],
 ** xref:zip-install.adoc[{productname} .zip deployments].

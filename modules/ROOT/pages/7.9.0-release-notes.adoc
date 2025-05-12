@@ -324,6 +324,18 @@ With the release of {productname} {release-version}, an internal new line mechan
 
 The `-ms-high-contrast` media feature was previously used to apply a darker border color for improved accessibility in Internet Explorer 11. However, this feature is no longer supported and has been link:https://blogs.windows.com/msedgedev/2024/04/29/deprecating-ms-high-contrast/[officially deprecated] by Microsoft Edge. Its continued use triggered warnings in browser developer consoles, potentially affecting user experience during development. To enhance cross-browser compatibility and eliminate these warnings, the deprecated selector has been removed from {productname} in {release-version}.
 
+=== Table resizers are now visible when inline editor has a `z-index` property.
+// #TINY-11981
+
+Previously, table resizers were rendered outside the editor's stacking context, causing them to appear beneath the editor when a `z-index` property was applied, making them unusable.
+
+{productname} {release-version} addresses this issue, by moving the resizers inside the editor content area, which unifies the resizer behavior across all editor modes.
+
+Key Improvements/Benefits: 
+
+* Integrators can now add a `z-index` such as `+<div id="editor1" style="min-height:200px; z-index:1;">+` to the inline editor without affecting the visibility of the resizers.
+* UI elements are consistently placed within the controlled stacking context, improving layout reliability.
+
 === If `style_formats` is empty the button is now disabled.
 // #TINY-12005
 

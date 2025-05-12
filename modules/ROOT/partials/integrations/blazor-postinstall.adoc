@@ -9,25 +9,38 @@ _File:_ `+BlazorApp.csproj+`
 </ItemGroup>
 ----
 . Add the `+tinymce-blazor.js+` script to the main page.
-* Using Blazor Server add the script in `+Pages/_Host.cshtml+`, for example:
+* If using the Blazor Web App, add the script in `+Components/App.razor+`, for example:
++
+[source,html]
+----
+<script src="_framework/blazor.web.js"></script>
+<script src="_content/TinyMCE.Blazor/tinymce-blazor.js"></script>
+----
+
+[NOTE]
+The location of the script depends on the type of Blazor app, including Blazor Server and Blazor WebAssembly (WASM) which are not covered in this guide. 
+
+* If using Blazor Server, add the script in `+Pages/_Host.cshtml+`, for example: 
 +
 [source,html]
 ----
 <script src="_framework/blazor.server.js"></script>
 <script src="_content/TinyMCE.Blazor/tinymce-blazor.js"></script>
 ----
-* Using WASM add the script in `+wwwroot/index.html+`, for example:
+* If using WASM, add the script in `+wwwroot/index.html+`, for example:
 +
 [source,html]
 ----
 <script src="_content/TinyMCE.Blazor/tinymce-blazor.js"></script>
 <script src="_framework/blazor.webassembly.js"></script>
 ----
-. Add the `+Editor+` component to a page by either:
+
+. Add the `+Editor+` component to a page by either: 
 * Using the `+using+` directive
 +
 [source,cs]
 ----
+@rendermode InteractiveServer
 @using TinyMCE.Blazor
 <Editor />
 ----
@@ -45,12 +58,15 @@ _File:_ `+Pages/Index.razor+`
 [source,cs]
 ----
 @page "/"
+@rendermode InteractiveServer
 @using TinyMCE.Blazor
 
 <h1>Hello, world!</h1>
 Welcome to your new app.
 <Editor />
 ----
+[IMPORTANT]
+In a Blazor Web App, different render modes determine how components are rendered and how interactivity is handled. To enable JavaScript interactivity, ensure that `+@rendermode InteractiveServer+` is specified in a page component.   
 
 ifeval::["{productSource}" != "cloud"]
 

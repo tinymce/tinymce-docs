@@ -2,8 +2,12 @@ The https://github.com/tinymce/tinymce-blazor[Official {productname} Blazor comp
 
 Select from the following guides:
 
+* xref:using-visual-studio-code[Using Visual Studio Code (VS Code)]
 * xref:using-visual-studio[Using Visual Studio]
 * xref:using-a-command-prompt-or-terminal[Using a command prompt or terminal]
+
+[[using-visual-studio-code]]
+== Using Visual Studio Code (VS Code)
 
 [[using-visual-studio]]
 == Using Visual Studio
@@ -18,7 +22,7 @@ This procedure requires:
 === Procedure
 
 . On the Visual Studio toolbar, click the https://docs.microsoft.com/en-us/visualstudio/ide/create-new-project[*New Project* button].
-. Select the *Blazor Server App* template.
+. Select the *Blazor Web App* template and name the project 'BlazorApp'.
 . Use the NuGet package manager console to install the `+TinyMCE.Blazor+` package, such as:
 +
 [source,sh]
@@ -55,7 +59,7 @@ This procedure requires:
 +
 [source,sh]
 ----
-dotnet new blazorserver -o BlazorApp --no-https
+dotnet new blazor -o BlazorApp --no-https
 ----
 . Change into the new application directory:
 +
@@ -90,7 +94,7 @@ include::partial$integrations/blazor-postinstall.adoc[]
 dotnet watch run
 ----
 +
-This will start a local development server, accessible at http://localhost:5000.
+This will start a local development server accessible at `http://localhost:{PORT}`, where `{PORT}` is specified in the project's `+Properties/launchSettings.json+` file.
 * To stop the development server, select on the command line or command prompt and press _Ctrl+C_.
 
 == Next Steps

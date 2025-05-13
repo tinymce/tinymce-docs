@@ -9,6 +9,29 @@ Select from the following guides:
 [[using-visual-studio-code]]
 == Using Visual Studio Code (VS Code)
 
+=== Prerequisites
+
+This procedure requires:
+
+* https://code.visualstudio.com/[Visual Studio Code (VS Code)^] 
+* https://dotnet.microsoft.com/en-us/download[.NET SDK^]
+* https://learn.microsoft.com/en-us/visualstudio/subscriptions/vs-c-sharp-dev-kit[C# Dev Kit VS Code Extension^] 
+
+Alternatively, the https://learn.microsoft.com/en-us/dotnet/core/install/windows#install-with-visual-studio-code[.NET WinGet Configuration file^] can be downloaded to install the necessary dependencies. 
+
+=== Procedure
+
+. In VS Code, open the Command Palette by pressing `+Ctrl+Shift+P+`. Find `.NET: New Project` and select it to create a new project.
+. Select *Blazor Web App* from the list of templates and follow the steps to set up the project. 
+. Using the Command Palette, find and select `.NuGet: Add NuGet Package`. Enter `+TinyMCE.Blazor+` and select the package along with the version to install. 
+
+ifeval::["{productSource}" == "package-manager"]
+
+. To use the self-hosted version of `{productName}`, install the `{productname}` package from the Command Pallette.
+endif::[]
+include::partial$integrations/blazor-postinstall.adoc[]
+
+
 [[using-visual-studio]]
 == Using Visual Studio
 
@@ -22,7 +45,7 @@ This procedure requires:
 === Procedure
 
 . On the Visual Studio toolbar, click the https://docs.microsoft.com/en-us/visualstudio/ide/create-new-project[*New Project* button].
-. Select the *Blazor Web App* template and name the project 'BlazorApp'.
+. Select the *Blazor Web App* template and follow the steps to set up the project. 
 . Use the NuGet package manager console to install the `+TinyMCE.Blazor+` package, such as:
 +
 [source,sh]

@@ -75,7 +75,7 @@ ifeval::["{productSource}" == "cloud"]
 +
 [source,tsx]
 ----
-<editor apiKey="your-api-key" [init]="init" />
+<editor apiKey="no-api-key" [init]="init" />
 ----
 endif::[]
 ifeval::["{productSource}" == "package-manager"]

@@ -31,7 +31,7 @@ ng new --defaults --skip-git tinymce-angular-demo
 cd tinymce-angular-demo
 ----
 ifeval::["{productSource}" == "package-manager"]
-. Install the `+tinymce+` and `+tinymce-angular+` packages and save them to your `+package.json+`.
+. Install the `+tinymce+` and `+tinymce-angular+` packages.
 +
 [source,sh]
 ----

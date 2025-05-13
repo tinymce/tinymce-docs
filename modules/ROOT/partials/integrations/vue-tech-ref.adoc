@@ -79,7 +79,7 @@ var app = new Vue({
 ----
 <editor
   id="uuid"
-  api-key="your-api-key"
+  api-key="no-api-key"
   tinymce-script-src="/Users/karl/tinymce/test_apps/test-app-updated-config/node_modules/tinymce/tinymce.min.js"
   :init="{
     plugins: 'advlist anchor autolink charmap code fullscreen help image insertdatetime link lists media preview searchreplace table visualblocks wordcount',

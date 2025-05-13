@@ -107,7 +107,7 @@ The editor accepts the following properties:
 />
 ----
 
-None of the configuration properties are *required* for `+tinymce-angular+` to work. Specify a {cloudname} API key using `+apiKey+` to remove the `+This domain is not registered...+` warning message.
+None of the configuration properties are *required* for `+tinymce-angular+` to work. Specify a {cloudname} API key using `+apiKey+` to remove the "A valid API key is required to continue using TinyMCE. Please alert the admin to check the current API key. Click here to learn more." warning message.
 
 [[apikey]]
 === `+apiKey+`

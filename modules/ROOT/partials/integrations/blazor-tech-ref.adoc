@@ -18,7 +18,7 @@ The `+TinyMCE.Blazor+` `+Editor+` component accepts the following properties:
   Disable=false
   JsConfSrc="path_to_jsObj"
   Conf="@yourConf"
-  ApiKey="your-api-key"
+  ApiKey="no-api-key"
   LicenseKey="your-license-key"
   ScriptSrc="/path/to/tinymce.min.js"
   ClassName="tinymce-wrapper"
@@ -40,7 +40,7 @@ None of the configuration properties are required for the TinyMCE Blazor integra
 [source,cs]
 ----
 <Editor
-  ApiKey="your-api-key"
+  ApiKey="no-api-key"
 />
 ----
 

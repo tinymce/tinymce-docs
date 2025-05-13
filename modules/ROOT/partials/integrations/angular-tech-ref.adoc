@@ -83,7 +83,7 @@ Add the `+EditorModule+` to `+@NgModule({imports})+`:
 +
 [source,html]
 ----
-<editor apiKey="test" [init]="{plugins: 'link'}" />
+<editor apiKey="no-api-key" [init]="{plugins: 'link'}" />
 ----
 
 [[configuring-the-editor]]

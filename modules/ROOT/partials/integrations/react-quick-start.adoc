@@ -55,7 +55,7 @@ export default function App() {
   return (
     <>
       <Editor
-        apiKey='your-api-key'
+        apiKey='no-api-key'
         onInit={ (_evt, editor) => editorRef.current = editor }
         initialValue="<p>This is the initial content of the editor.</p>"
         init={{

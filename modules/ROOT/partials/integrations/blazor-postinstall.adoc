@@ -84,7 +84,26 @@ Welcome to your new app.
 In a Blazor Web App, different render modes determine how components are rendered and how interactivity is handled. To enable JavaScript interactivity, ensure that `+@rendermode InteractiveServer+` is specified in a page component. 
 +
 
+ifeval::["{productSource}" == "cloud"]
+. Update the `+ApiKey+` option in the editor element and include your link:{accountsignup}/[{cloudname} API key].
+
++
+[source,cs]
+----
+<Editor ApiKey="your-api-key" />
+---- 
++
+endif::[]
+
 ifeval::["{productSource}" != "cloud"]
+. Update the `+LicenseKey+` option in the editor element and include your and include your xref:license-key.adoc[License Key].
+
++
+[source,cs]
+----
+<Editor LicenseKey="your-license-key" />
+---- 
++
 
 . To load {productname} from the self-hosted package instead of the {cloudname}, configure the `+ScriptSrc+` property:
 +

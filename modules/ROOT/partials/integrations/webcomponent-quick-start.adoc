@@ -79,7 +79,7 @@ ifeval::["{productSource}" == "cloud"]
 [source,html]
 ----
 <tinymce-editor
-  api-key="your-tiny-cloud-api-key"
+  api-key="no-api-key"
 ></tinymce-editor>
 ----
 endif::[]

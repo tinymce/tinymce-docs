@@ -96,7 +96,7 @@ ifeval::["{productSource}" == "cloud"]
 endif::[]
 
 ifeval::["{productSource}" != "cloud"]
-. Update the `+LicenseKey+` option in the editor element and include your and include your xref:license-key.adoc[License Key].
+. Update the `+LicenseKey+` option in the editor element and include your xref:license-key.adoc[License Key].
 
 +
 [source,cs]

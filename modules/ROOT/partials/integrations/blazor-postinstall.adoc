@@ -90,7 +90,7 @@ ifeval::["{productSource}" == "cloud"]
 +
 [source,cs]
 ----
-<Editor ApiKey="your-api-key" />
+<Editor ApiKey="no-api-key" />
 ---- 
 +
 endif::[]

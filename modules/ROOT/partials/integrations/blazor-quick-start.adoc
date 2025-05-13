@@ -1,4 +1,4 @@
-The https://github.com/tinymce/tinymce-blazor[Official {productname} Blazor component] integrates {productname} into https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor[Blazor applications]. This procedure creates a basic Blazor application and adds a {productname} editor using the {productname} Blazor integration. The basic Blazor application is based on the following tutorial: https://dotnet.microsoft.com/learn/aspnet/blazor-tutorial/[Microsoft .NET Blazor Tutorial - Build your first Blazor app].
+The link:https://github.com/tinymce/tinymce-blazor[Official {productname} Blazor component^] integrates {productname} into link:https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor[Blazor applications^]. This procedure creates a basic Blazor application and adds a {productname} editor using the {productname} Blazor integration. The basic Blazor application is based on the following tutorial: link:https://dotnet.microsoft.com/learn/aspnet/blazor-tutorial/[Microsoft .NET Blazor Tutorial - Build your first Blazor app^].
 
 Select from the following guides:
 
@@ -37,12 +37,12 @@ endif::[]
 
 This procedure requires:
 
-* https://docs.microsoft.com/en-us/visualstudio/windows/[Microsoft Visual Studio]
-* https://docs.microsoft.com/en-us/dotnet/core/install/[Microsoft .NET]
+* link:https://docs.microsoft.com/en-us/visualstudio/windows/[Microsoft Visual Studio^]
+* link:https://docs.microsoft.com/en-us/dotnet/core/install/[Microsoft .NET^]
 
 === Procedure
 
-. On the Visual Studio toolbar, click the link:https://docs.microsoft.com/en-us/visualstudio/ide/create-new-project[*New Project* button].
+. On the Visual Studio toolbar, click the link:https://docs.microsoft.com/en-us/visualstudio/ide/create-new-project[*New Project* button^].
 . Select the *Blazor Web App* template and follow the steps to set up the project. 
 . Use the NuGet package manager console to install the `+TinyMCE.Blazor+` package, such as:
 +
@@ -71,7 +71,7 @@ endif::[]
 
 This procedure requires:
 
-* https://docs.microsoft.com/en-us/dotnet/core/install/[Microsoft .NET]
+* link:https://docs.microsoft.com/en-us/dotnet/core/install/[Microsoft .NET^]
 
 === Procedure
 

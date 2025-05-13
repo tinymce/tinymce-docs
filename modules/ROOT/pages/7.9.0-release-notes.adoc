@@ -237,7 +237,7 @@ In previous versions of {productname}, the "lock aspect ratio" button in the `Co
 
 The {productname} `mceInsertContent` command could inadvertently remove the parent block element when an anchor (`<a>`) tag was selected.
 
-In senarios such as when an anchor element was fully selected, the surrounding block-level parent tag, such as `<p>` or `<div>`, could be incorrectly removed, causing unexpected content structure changes. This issue primarily affected Chrome users, as it did not reproduce consistently in Safari or Firefox.
+In scenarios where an anchor element was fully selected, the surrounding block-level parent tag, such as `<p>` or `<div>`, could be incorrectly removed, leading to unexpected changes in the content structure. This issue primarily affected Chrome users and did not reproduce consistently in Safari or Firefox.
 
 The issue has been resolved in {release-version}. The `mceInsertContent` command now properly retains the parent block elements when inserting content into a selected anchor element.
 

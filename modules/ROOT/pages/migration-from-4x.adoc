@@ -1,7 +1,149 @@
-= Migrating from {productname} 4 to {productname} 7
+= Migrating from {productname} 4 to {productname} {release-version}
 :navtitle: Migrating from TinyMCE 4
-:description: Guidance for migrating from TinyMCE 4 to TinyMCE 7
+:description: Guidance for migrating from TinyMCE 4 to TinyMCE {release-version}
 :keywords: migration, considerations, premigration, pre-migration
 :release-version: 7.0
 
-// Todo
+
+== Overview
+
+{productname} has evolved significantly from version 4 to version {release-version}, introducing major architectural changes, modern UI improvements, enhanced performance, and better security. This guide outlines the critical breaking changes, recommended migration action steps, and top-level configuration adjustments required to upgrade from {productname} v4 to v{release-version}.
+
+== Key Changes
+
+=== UI Themes and Skins
+
+* **Removed**: modern, lightgray, and mobile themes/skins.
+* **New**: silver theme with oxide skin (supports light and dark variants). see xref:customize-ui.adoc#themes[customize-ui].
+* **Impact**: Custom v4 skins/themes are incompatible with v{release-version} and must be rewritten using the oxide skin structure.
+
+.Example:
+[source,js]
+----
+tinymce.init({
+selector: "textarea",
+skin: "oxide-dark",
+content_css: "dark",
+});
+----
+
+=== Plugin Ecosystem
+
+// The contextmenu plugin was absorbed into core, the options still works, see https://www.tiny.cloud/docs/tinymce/latest/contextmenu/. not sure why this is mentioned as removed.
+* **Removed**: `colorpicker`, `contextmenu`, `imagetools`, `legacyoutput`, `bbcode`, `fullpage`, `template`, `print`, `spellchecker`, and `tabfocus` plugins.
+* **Core Integrations**: Many plugins are now part of the core (e.g., `paste`, `hr`, `noneditable`, `table`).
+* **Premium Only**: Plugins like `spellchecker`, `tableofcontents`, `mediaembed` are now premium.
+
+Plugin Migration Examples:
+
+* **contextmenu** (Removed in v5):
+** Replace with browser-native context menus or custom menu logic.
+** Consider using link:https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.editor.ui.registry/#addContextMenu[editor.ui.registry.addContextMenu] for custom right-click actions.
+* **bbcode** (Removed in v6):
+** Replace with custom parsing or server-side processing if needed.
+* **fullpage** (Removed in v6):
+** No direct replacement. Use custom templates or server-side processing for full HTML documents.
+* **template** (Removed in v{release-version}):
+** Use premium xref:advanced-templates.adoc[advtemplate] or implement custom modal dialogs for templating.
+* **textcolor** (Removed in v6):
+** Use `forecolor` and `backcolor` buttons instead.
+
+.Example:
+[source,js]
+----
+tinymce.init({
+selector: "textarea",
+toolbar: "undo redo | forecolor backcolor | bold italic | alignleft aligncenter alignright alignjustify",
+plugins: ["lists link image table code"],
+});
+----
+
+=== Content Structure
+
+* **Removed**: `forced_root_block: false`.
+** **Requirement**: All content must be wrapped in block elements (e.g., <p>).
+
+.Example:
+[source,js]
+----
+tinymce.init({
+selector: "textarea",
+forced_root_block: "p"
+});
+----
+
+=== Configuration Changes
+
+// multiple toolbars still work https://www.tiny.cloud/docs/tinymce/latest/toolbar-configuration-options/#toolbarn not sure why this is mentioned as decricated
+* **Deprecated**: toolbar1, toolbar2, theme, skin, mobile configurations.
+** **New Options**: Consolidate toolbar settings and use new options like xref:content-filtering.adoc#sandbox-iframes[sandbox iframes], xref:content-filtering.adoc#convert-unsafe-embeds[convert_unsafe_embeds], and xref:accessibility.adoc#highlight_on_focus[highlight_on_focus].
+
+.Example:
+[source,js]
+----
+tinymce.init({
+selector: "textarea",
+toolbar: "undo redo | blocks | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | removeformat",
+toolbar_mode: "floating",
+sandbox_iframes: true,
+convert_unsafe_embeds: true
+});
+----
+
+=== Licensing Changes (GPL v2+ and Commercial)
+
+* **Legacy License**: {productname} 4 was licensed under LGPL 2.1.
+* **New License**: {productname} {release-version} is licensed under GPL v2+ or a commercial license.
+* **Impact**: The xref:license-key.adoc[License key] option is required as part of your editor configuration if self-hosting {productname}.
+
+.Example:
+[source,js]
+----
+tinymce.init({
+selector: "textarea",
+license_key: "your-license-key"
+});
+----
+
+== Migration Steps
+
+. **Backup and Prepare**: Ensure comprehensive backups before upgrading.
+. **Update Core Initialization**:
+.. Remove `theme`, `skin`, and `forced_root_block: false` options.
+.. Consolidate toolbars.
+.. Review new v{release-version} defaults for security settings.
+. **Plugin Migration**:
+.. Remove deprecated plugins from your configuration.
+.. Update renamed plugins (e.g., `spellchecker` → `tinymcespellchecker`).
+.. Verify premium plugins for compatibility.
+. **Custom Code Updates**:
+.. Rewrite custom plugins using the `editor.ui.registry.*` API. see link:https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.editor.ui.registry/[editor.ui.registry].
+.. Replace v4 API methods like `editor.addButton`, `editor.addMenuItem`, `editor.windowManager.open`.
+.. Update media embed handling (`media_url_resolver` API changes). see xref:media.adoc#media_url_resolver[media_url_resolver].
+. **CSS Updates**:
+.. Remove `.mce-*` classes and use `.tox-*` classes.
+.. Review custom skins and stylesheets for compatibility with Oxide.
+. **Testing and Deployment**:
+.. Thoroughly test your updated configuration before production deployment.
+.. Validate media, iframe, and content security settings.
+
+== Additional Resources
+
+* link:https://www.tiny.cloud/docs/tinymce/latest/[{productname} {release-version} Documentation]
+* xref:license-key.adoc[License Key Setup]
+* link:https://community.tiny.cloud/[Community Forum]
+* link:https://github.com/tinymce/tinymce/issues[GitHub Issues]
+
+== Helpful Links
+
+To make your upgrade smooth, check the following version-specific migration guides:
+
+* link:https://www.tiny.cloud/docs/tinymce/5/migration-from-4x/[Migrating from {productname} 4 to {productname} 5]
+* link:https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/[Migrating from {productname} 5 to {productname} 6]
+* link:https://www.tiny.cloud/docs/tinymce/latest/migration-from-6x/[Migrating from {productname} 6 to {productname} {release-version}]
+
+These include deeper configuration notes, plugin replacements, and examples.
+
+== Next Steps
+
+Ensure you follow the migration steps carefully to avoid common issues like missing plugins, broken UI, and unexpected formatting changes. Consider running your updated editor in a staging environment for a complete verification before final deployment.

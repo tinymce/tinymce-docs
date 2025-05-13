@@ -80,7 +80,6 @@ var app = new Vue({
 <editor
   id="uuid"
   api-key="no-api-key"
-  tinymce-script-src="/Users/karl/tinymce/test_apps/test-app-updated-config/node_modules/tinymce/tinymce.min.js"
   :init="{
     plugins: 'advlist anchor autolink charmap code fullscreen help image insertdatetime link lists media preview searchreplace table visualblocks wordcount',
     toolbar: 'undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
@@ -97,7 +96,7 @@ The editor accepts the following properties:
 [source,html,subs="attributes+"]
 ----
 <editor
-  api-key="your-api-key"
+  api-key="no-api-key"
   cloud-channel="{productmajorversion}"
   :disabled=false
   id="uuid"
@@ -131,7 +130,7 @@ include::partial$misc/get-an-api-key.adoc[]
 [source,html]
 ----
 <editor
-  api-key="your-api-key"
+  api-key="no-api-key"
 />
 ----
 
@@ -178,7 +177,7 @@ Such as:
 [source,html,subs="attributes+"]
 ----
 <editor
-  api-key="your-api-key"
+  api-key="no-api-key"
   cloud-channel="{productmajorversion}-dev"
   :init="{ /* your other settings */ }"
 />
@@ -213,7 +212,7 @@ An `id` for the editor. Used for retrieving the editor instance using the `+tiny
 
 *Type:* `+String+`
 
-*Default value:* Automatically generated https://tools.ietf.org/html/rfc4122[UUID]
+*Default value:* Automatically generated link:https://tools.ietf.org/html/rfc4122[UUID]
 
 ==== Example: using `+id+`
 

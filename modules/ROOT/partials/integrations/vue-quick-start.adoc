@@ -150,7 +150,7 @@ import Editor from '@tinymce/tinymce-vue'
 +
 [source,html]
 ----
-<editor api-key='your-api-key' :init="{ /* your other settings */ }" />
+<editor api-key='no-api-key' :init="{ /* your other settings */ }" />
 ----
 endif::[]
 ifeval::["{productSource}" == "package-manager"]

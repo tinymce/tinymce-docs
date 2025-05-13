@@ -73,7 +73,7 @@ let conf = {
 <main>
   <h1>Hello Tiny</h1>
   <Editor
-    apiKey='your-tiny-cloud-api-key'
+    apiKey='no-api-key'
     pass:a[channel='{productmajorversion}']
     value='<p>This is the initial content of the editor.</p>'
     {conf}

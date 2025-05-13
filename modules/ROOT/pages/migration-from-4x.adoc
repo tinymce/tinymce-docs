@@ -41,7 +41,7 @@ Plugin Migration Examples:
 ** Consider using link:https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.editor.ui.registry/#addContextMenu[editor.ui.registry.addContextMenu] for custom right-click actions.
 * `bbcode` (Removed in v6):
 ** Replace with custom parsing or server-side processing if needed.
-* `fullpage (Removed in v6):
+* `fullpage` (Removed in v6):
 ** No direct replacement. Use custom templates or server-side processing for full HTML documents.
 * `template` (Removed in v{release-version}):
 ** Use premium xref:advanced-templates.adoc[advtemplate] or implement custom modal dialogs for templating.

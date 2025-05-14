@@ -48,7 +48,7 @@ To install the `+tinymce-angular+` package and save it to your `+package.json+`.
 
 [source,sh]
 ----
-npm install --save @tinymce/tinymce-angular
+npm install @tinymce/tinymce-angular
 ----
 
 [[using-the-tinymce-angular-integration]]
@@ -83,7 +83,7 @@ Add the `+EditorModule+` to `+@NgModule({imports})+`:
 +
 [source,html]
 ----
-<editor apiKey="test" [init]="{plugins: 'link'}"></editor>
+<editor apiKey="no-api-key" [init]="{plugins: 'link'}" />
 ----
 
 [[configuring-the-editor]]
@@ -104,7 +104,7 @@ The editor accepts the following properties:
   plugins=""
   tagName="div"
   toolbar=""
-></editor>
+/>
 ----
 
 None of the configuration properties are *required* for `+tinymce-angular+` to work. Specify a {cloudname} API key using `+apiKey+` to remove the "A valid API key is required to continue using TinyMCE. Please alert the admin to check the current API key. Click here to learn more." warning message.
@@ -124,9 +124,7 @@ include::partial$misc/get-an-api-key.adoc[]
 
 [source,html]
 ----
-<editor
-  apiKey="your-api-key"
-></editor>
+<editor apiKey="no-api-key" />
 ----
 
 [[licensekey]]
@@ -146,9 +144,7 @@ Use this when self-hosting {productname} instead of loading from {cloudname}. Fo
 
 [source,jsx]
 ----
-<Editor
-  licenseKey='your-license-key'
-/>
+<editor licenseKey='your-license-key' />
 ----
 
 [[cloudchannel]]
@@ -172,9 +168,9 @@ Such as:
 [source,html,subs="attributes+"]
 ----
 <editor
-  apiKey="your-api-key"
+  apiKey="no-api-key"
   cloudChannel="{productmajorversion}-dev"
-></editor>
+/>
 ----
 
 For information {productname} development channels, see: xref:editor-plugin-version.adoc#{productmajorversion}-{productmajorversion}-testing-and-{productmajorversion}-dev-release-channels[Specifying the {productname} editor version deployed from Cloud - dev, testing, and stable releases].
@@ -194,9 +190,7 @@ The `+disabled+` property can dynamically switch the editor between a "disabled"
 
 [source,html]
 ----
-<editor
-  [disabled]="true"
-></editor>
+<editor [disabled]="true" />
 ----
 
 [[id]]
@@ -212,9 +206,7 @@ An id for the editor. Used for retrieving the editor instance using the `+tinymc
 
 [source,html]
 ----
-<editor
-  id="uuid"
-></editor>
+<editor id="uuid" />
 ----
 
 [[init]]
@@ -237,7 +229,7 @@ For information on the {productname} selector (`+tinymce.init+`), see: xref:basi
     plugins: 'lists link image paste help wordcount',
     toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | help'
   }"
-></editor>
+/>
 ----
 
 [[initialvalue]]
@@ -253,15 +245,13 @@ Initial content of the editor when the editor is initialized.
 
 [source,html]
 ----
-<editor
-  initialValue="Once upon a time..."
-></editor>
+<editor initialValue="Once upon a time..." />
 ----
 
 [[inline]]
 === `+inline+`
 
-Used to set the editor to inline mode. Using `+<editor [inline]="true"></editor>+` is the same as setting `+{inline: true}+` in the {productname} selector (`+tinymce.init+`).
+Used to set the editor to inline mode. Using `+<editor [inline]="true" />+` is the same as setting `+{inline: true}+` in the {productname} selector (`+tinymce.init+`).
 
 For information on inline mode, see: xref:inline-editor-options.adoc#inline[User interface options - `+inline+`] and xref:use-tinymce-inline.adoc[Setup inline editing mode].
 
@@ -275,27 +265,23 @@ For information on inline mode, see: xref:inline-editor-options.adoc#inline[User
 
 [source,html]
 ----
-<editor
-  [inline]="true"
-></editor>
+<editor [inline]="true" />
 ----
 
 [[plugins]]
 === `+plugins+`
 
-Used to include plugins for the editor. Using `+<editor plugins="lists code"></editor>+` is the same as setting `+{plugins: 'lists code'}+` in the {productname} selector (`+tinymce.init+`).
+Used to include plugins for the editor. Using `+<editor plugins="lists code" />+` is the same as setting `+{plugins: 'lists code'}+` in the {productname} selector (`+tinymce.init+`).
 
 For information on adding plugins to {productname}, see: xref:work-with-plugins.adoc[Add plugins to {productname}].
 
-*Type:* `+String+` or `+Array+`
+*Type:* `+String+`
 
 ==== Example: using `+plugins+`
 
 [source,html]
 ----
-<editor
-  plugins="lists code"
-></editor>
+<editor plugins="lists code" />
 ----
 
 [[outputformat]]
@@ -313,15 +299,13 @@ Used to specify the format of the content emitted by the `+tinymce-angular+` com
 
 [source,html]
 ----
-<editor
-  outputFormat="text"
-></editor>
+<editor outputFormat="text" />
 ----
 
 [[tagname]]
 === `+tagName+`
 
-Only valid when xref:inline[`+<editor [inline]="true"></editor>+`]. Used to define the HTML element for the editor in inline mode.
+Only valid when xref:inline[`+<editor [inline]="true" />+`]. Used to define the HTML element for the editor in inline mode.
 
 *Type:* `+String+`
 
@@ -334,13 +318,13 @@ Only valid when xref:inline[`+<editor [inline]="true"></editor>+`]. Used to defi
 <editor
   [inline]="true"
   tagName="my-custom-tag"
-></editor>
+/>
 ----
 
 [[toolbar]]
 === `+toolbar+`
 
-Used to set the toolbar for the editor. Using `+<editor toolbar="bold italic"></editor>+` is the same as setting `+{toolbar: 'bold italic'}+` in the {productname} selector (`+tinymce.init+`).
+Used to set the toolbar for the editor. Using `+<editor toolbar="bold italic" />+` is the same as setting `+{toolbar: 'bold italic'}+` in the {productname} selector (`+tinymce.init+`).
 
 For information setting the toolbar for {productname}, see: xref:toolbar-configuration-options.adoc#toolbar[User interface options - toolbar].
 
@@ -355,7 +339,7 @@ For information setting the toolbar for {productname}, see: xref:toolbar-configu
 <editor
   plugins="code"
   toolbar="bold italic underline code"
-></editor>
+/>
 ----
 
 [[using-the-ngmodel-directive]]
@@ -365,10 +349,10 @@ The `+ngModel+` directive can be added to use the editor in a form:
 
 [source,html]
 ----
-<editor [(ngModel)]="dataModel"></editor>
+<editor [(ngModel)]="dataModel" />
 ----
 
-For information on using `+NgModel+`, see: https://angular.io/api/forms/NgModel[Angular documentation - NgModel].
+For information on using `+NgModel+`, see: link:https://angular.dev/api/forms/NgModel[Angular documentation - NgModel].
 
 [[modelevents]]
 === `+modelEvents+`
@@ -387,9 +371,7 @@ Used to specify the events that trigger the `+NgModelChange+` to emit.
 
 [source,html]
 ----
-<editor
-  modelEvents="change input nodechange undo redo"
-></editor>
+<editor modelEvents="change input nodechange undo redo" />
 ----
 
 [[using-with-reactive-forms]]
@@ -402,10 +384,10 @@ To use {productname} Angular component with reactive forms:
 +
 [source,html]
 ----
-<editor [formControlName]="schema.key" [init]="{plugins: 'link'}"></editor>
+<editor [formControlName]="schema.key" [init]="{plugins: 'link'}" />
 ----
 
-For information on using reactive forms, see: https://angular.io/guide/reactive-forms[Angular documentation - Reactive Forms].
+For information on using reactive forms, see: https://angular.dev/guide/forms/reactive-forms[Angular documentation - Reactive Forms].
 
 [[event-binding]]
 == Event binding
@@ -414,7 +396,7 @@ Functions can be bound to editor events, such as:
 
 [source,html]
 ----
-<editor (onSelectionChange)="handleEvent($event)"></editor>
+<editor (onSelectionChange)="handleEvent($event)" />
 ----
 
 When the handler is called (`+handleEvent+` in this example), it is called with an event containing two properties:
@@ -517,9 +499,7 @@ Used to provide an allow-list of valid events to trigger from the editor to the 
 
 [source,html]
 ----
-<editor
-  allowedEvents="onMouseDown,onKeyDown"
-></editor>
+<editor allowedEvents="onMouseDown,onKeyDown" />
 ----
 
 [[ignoreevents]]
@@ -537,7 +517,5 @@ Used to block a list of events from the `+tinymce-angular+` component.
 
 [source,html]
 ----
-<editor
-  ignoreEvents="onMouseEnter,onMouseLeave,onMouseOut,onMouseMove"
-></editor>
+<editor ignoreEvents="onMouseEnter,onMouseLeave,onMouseOut,onMouseMove" />
 ----

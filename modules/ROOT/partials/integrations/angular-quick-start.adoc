@@ -12,7 +12,7 @@ This procedure requires https://nodejs.org/[Node.js (and npm)].
 
 == Procedure
 
-. On a command line or command prompt, install the https://angular.io/cli[Angular CLI Tool] package.
+. On a command line or command prompt, install the link:https://angular.dev/tools/cli[Angular CLI Tool] package.
 +
 [source,sh]
 ----
@@ -31,20 +31,20 @@ ng new --defaults --skip-git tinymce-angular-demo
 cd tinymce-angular-demo
 ----
 ifeval::["{productSource}" == "package-manager"]
-. Install the `+tinymce+` and `+tinymce-angular+` packages and save them to your `+package.json+` with `+--save+`.
+. Install the `+tinymce+` and `+tinymce-angular+` packages.
 +
 [source,sh]
 ----
-npm install --save tinymce @tinymce/tinymce-angular
+npm install tinymce @tinymce/tinymce-angular
 ----
 
 endif::[]
 ifeval::["{productSource}" != "package-manager"]
-. Install the `+tinymce-angular+` package and save it to your `+package.json+` with `+--save+`.
+. Install the `+tinymce-angular+` package.
 +
 [source,sh]
 ----
-npm install --save @tinymce/tinymce-angular
+npm install @tinymce/tinymce-angular
 ----
 endif::[]
 . Using a text editor, open `+/path/to/tinymce-angular-demo/src/app/app.component.ts+` and replace the contents with:
@@ -56,7 +56,6 @@ import { EditorComponent } from '@tinymce/tinymce-angular';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
   imports: [EditorComponent],
   template: `
   <h1>{productname} {productmajorversion} Angular Demo</h1>
@@ -76,7 +75,7 @@ ifeval::["{productSource}" == "cloud"]
 +
 [source,tsx]
 ----
-<editor apiKey="your-api-key" [init]="init" />
+<editor apiKey="no-api-key" [init]="init" />
 ----
 endif::[]
 ifeval::["{productSource}" == "package-manager"]
@@ -178,7 +177,7 @@ To deploy the application to a local HTTP Server:
 ----
 ng build
 ----
-. Copy the contents of the `+tinymce-angular-demo/dist+` directory to the root directory of the web server.
+. Copy the contents of the `+tinymce-angular-demo/dist/tinymce-angular-demo/browser+` directory to the root directory of the web server.
 
 The application has now been deployed on the web server.
 
@@ -187,6 +186,8 @@ NOTE: Additional configuration is required to deploy the application outside the
 [[angular-modules]]
 == Angular Modules
 `+EditorModule+` is available to import from `+@tinymce/tinymce-angular+`. Which should be included in your `+my.module.ts+` file.
+
+ifeval::["{productSource}" == "package-manager"]
 
 [source,ts]
 ----
@@ -206,6 +207,27 @@ import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 })
 export class MyModule {}
 ----
+
+endif::[]
+
+ifeval::["{productSource}" != "package-manager"]
+
+[source,ts]
+----
+import { NgModule } from '@angular/core';
+import { EditorModule } from '@tinymce/tinymce-angular';
+
+@NgModule({
+  /* ... */
+  imports: [
+    EditorModule
+  ],
+  /* ... */
+})
+export class MyModule {}
+----
+
+endif::[]
 
 == Next Steps
 

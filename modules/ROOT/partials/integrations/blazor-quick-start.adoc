@@ -1,9 +1,34 @@
-The https://github.com/tinymce/tinymce-blazor[Official {productname} Blazor component] integrates {productname} into https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor[Blazor applications]. This procedure creates a basic Blazor application and adds a {productname} editor using the {productname} Blazor integration. The basic Blazor application is based on the following tutorial: https://dotnet.microsoft.com/learn/aspnet/blazor-tutorial/[Microsoft .NET Blazor Tutorial - Build your first Blazor app].
+The link:https://github.com/tinymce/tinymce-blazor[Official {productname} Blazor component^] integrates {productname} into link:https://dotnet.microsoft.com/apps/aspnet/web-apps/blazor[Blazor applications^]. This procedure creates a basic Blazor application and adds a {productname} editor using the {productname} Blazor integration. The basic Blazor application is based on the following tutorial: link:https://dotnet.microsoft.com/learn/aspnet/blazor-tutorial/[Microsoft .NET Blazor Tutorial - Build your first Blazor app^].
 
 Select from the following guides:
 
+* xref:using-visual-studio-code[Using Visual Studio Code (VS Code)]
 * xref:using-visual-studio[Using Visual Studio]
 * xref:using-a-command-prompt-or-terminal[Using a command prompt or terminal]
+
+[[using-visual-studio-code]]
+== Using Visual Studio Code (VS Code)
+
+=== Prerequisites
+
+This procedure requires:
+
+* link:https://code.visualstudio.com/[Visual Studio Code (VS Code)^] 
+* link:https://dotnet.microsoft.com/en-us/download[.NET SDK^]
+* link:https://learn.microsoft.com/en-us/visualstudio/subscriptions/vs-c-sharp-dev-kit[C# Dev Kit VS Code Extension^] 
+
+Alternatively, the link:https://learn.microsoft.com/en-us/dotnet/core/install/windows#install-with-visual-studio-code[.NET WinGet Configuration file^] can be downloaded to install the necessary dependencies. 
+
+=== Procedure
+
+. In VS Code, open the Command Palette by pressing `+Ctrl+Shift+P+`. Find `.NET: New Project` and select it to create a new project.
+. Select *Blazor Web App* from the list of templates and follow the steps to set up the project. 
+. Using the Command Palette, find and select `.NuGet: Add NuGet Package`. Enter `+TinyMCE.Blazor+` and select the package along with the version to install. 
+
+ifeval::["{productSource}" == "package-manager"]
+
+. To use the self-hosted version of `{productname}`, install the `{productname}` package from the Command Pallette.
+endif::[]
 
 [[using-visual-studio]]
 == Using Visual Studio
@@ -12,13 +37,13 @@ Select from the following guides:
 
 This procedure requires:
 
-* https://docs.microsoft.com/en-us/visualstudio/windows/[Microsoft Visual Studio]
-* https://docs.microsoft.com/en-us/dotnet/core/install/[Microsoft .NET]
+* link:https://docs.microsoft.com/en-us/visualstudio/windows/[Microsoft Visual Studio^]
+* link:https://docs.microsoft.com/en-us/dotnet/core/install/[Microsoft .NET^]
 
 === Procedure
 
-. On the Visual Studio toolbar, click the https://docs.microsoft.com/en-us/visualstudio/ide/create-new-project[*New Project* button].
-. Select the *Blazor Server App* template.
+. On the Visual Studio toolbar, click the link:https://docs.microsoft.com/en-us/visualstudio/ide/create-new-project[*New Project* button^].
+. Select the *Blazor Web App* template and follow the steps to set up the project. 
 . Use the NuGet package manager console to install the `+TinyMCE.Blazor+` package, such as:
 +
 [source,sh]
@@ -36,9 +61,8 @@ Install-Package TinyMCE
 ----
 
 endif::[]
-include::partial$integrations/blazor-postinstall.adoc[]
 
-. To test the application, run the application by pressing *Ctrl+F5*.
+. To test the application, run the application by pressing `+Ctrl+F5+`.
 
 [[using-a-command-prompt-or-terminal]]
 == Using a command prompt or terminal
@@ -47,7 +71,7 @@ include::partial$integrations/blazor-postinstall.adoc[]
 
 This procedure requires:
 
-* https://docs.microsoft.com/en-us/dotnet/core/install/[Microsoft .NET]
+* link:https://docs.microsoft.com/en-us/dotnet/core/install/[Microsoft .NET^]
 
 === Procedure
 
@@ -55,7 +79,7 @@ This procedure requires:
 +
 [source,sh]
 ----
-dotnet new blazorserver -o BlazorApp --no-https
+dotnet new blazor -o BlazorApp --no-https
 ----
 . Change into the new application directory:
 +
@@ -80,7 +104,6 @@ dotnet add package TinyMCE
 ----
 
 endif::[]
-include::partial$integrations/blazor-postinstall.adoc[]
 
 . Test the application using the .NET development server.
 * To start the development server, in the project's root directory, run:
@@ -90,8 +113,20 @@ include::partial$integrations/blazor-postinstall.adoc[]
 dotnet watch run
 ----
 +
-This will start a local development server, accessible at http://localhost:5000.
+This will start a local development server accessible at `http://localhost:{PORT}`, where `{PORT}` is specified in the project's `+Properties/launchSettings.json+` file.
 * To stop the development server, select on the command line or command prompt and press _Ctrl+C_.
+
+
+ifeval::["{productSource}" == "zip"]
+
+== Download {productname} Zip
+
+To use the self-hosted version of `{productname}`, download the link:https://www.tiny.cloud/my-account/downloads/[{productname} zip^]. Unzip the content and place it in the project, such as in the `+wwwroot+` folder for storing public static assets.
+endif::[]
+
+== Post-installation
+
+include::partial$integrations/blazor-postinstall.adoc[]
 
 == Next Steps
 

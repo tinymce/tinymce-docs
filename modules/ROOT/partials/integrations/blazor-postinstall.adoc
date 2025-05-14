@@ -1,6 +1,4 @@
-. Verify the installation by checking the `+ItemGroup+` references in `+BlazorApp.csproj+`, such as:
-+
-_File:_ `+BlazorApp.csproj+`
+. Verify the installation by checking the `+ItemGroup+` references in the project file. For example, if the project is named _BlazorApp_, the relevant file would be `+BlazorApp.csproj+` with the dependency referenced as follows: 
 +
 [source,xml]
 ----
@@ -8,30 +6,59 @@ _File:_ `+BlazorApp.csproj+`
   <PackageReference Include="TinyMCE.Blazor" Version="X.Y.Z" />
 </ItemGroup>
 ----
-. Add the `+tinymce-blazor.js+` script to the main page.
-* Using Blazor Server add the script in `+Pages/_Host.cshtml+`, for example:
+. Add the `+tinymce-blazor.js+` script to the main page. If using the Blazor Web App, add the script in `+Components/App.razor+`, for example:
++
+[source,html]
+----
+<script src="_framework/blazor.web.js"></script>
+<script src="_content/TinyMCE.Blazor/tinymce-blazor.js"></script>
+----
++
+[NOTE]
+====
+The location of the script depends on the type of Blazor app, including Blazor Server and Blazor WebAssembly (WASM) which are not covered in this guide. 
+
+* If using Blazor Server, add the script in `+Pages/_Host.cshtml+`, for example: 
 +
 [source,html]
 ----
 <script src="_framework/blazor.server.js"></script>
 <script src="_content/TinyMCE.Blazor/tinymce-blazor.js"></script>
 ----
-* Using WASM add the script in `+wwwroot/index.html+`, for example:
+* If using WASM, add the script in `+wwwroot/index.html+`, for example:
 +
 [source,html]
 ----
 <script src="_content/TinyMCE.Blazor/tinymce-blazor.js"></script>
 <script src="_framework/blazor.webassembly.js"></script>
 ----
-. Add the `+Editor+` component to a page by either:
-* Using the `+using+` directive
+====
++
+
+. Add the `+Editor+` component to a page by either:  
+* Using the `+using+` directive:  
 +
 [source,cs]
 ----
 @using TinyMCE.Blazor
 <Editor />
 ----
-* Using the full component and package name
++
+For example: 
++
+_File:_ `+Pages/Index.razor+`
++
+[source,cs]
+----
+@page "/"
+@rendermode InteractiveServer
+@using TinyMCE.Blazor
+
+<h1>Hello, world!</h1>
+<h2>Welcome to your new app.</h2>
+<Editor />
+----
+* Using the component with its namespace: 
 +
 [source,cs]
 ----
@@ -45,14 +72,38 @@ _File:_ `+Pages/Index.razor+`
 [source,cs]
 ----
 @page "/"
+@rendermode InteractiveServer
 @using TinyMCE.Blazor
 
 <h1>Hello, world!</h1>
-Welcome to your new app.
+<h2>Welcome to your new app.</h2>
 <Editor />
+---- 
++
+[IMPORTANT]
+In a Blazor Web App, different render modes determine how components are rendered and how interactivity is handled. To enable JavaScript interactivity, ensure that `+@rendermode InteractiveServer+` is specified in a page component. 
++
+
+ifeval::["{productSource}" == "cloud"]
+. Update the `+ApiKey+` option in the editor element and include your link:{accountsignup}/[{cloudname} API key].
+
++
+[source,cs]
 ----
+<Editor ApiKey="no-api-key" />
+---- 
++
+endif::[]
 
 ifeval::["{productSource}" != "cloud"]
+. Update the `+LicenseKey+` option in the editor element and include your xref:license-key.adoc[License Key].
+
++
+[source,cs]
+----
+<Editor LicenseKey="your-license-key" />
+---- 
++
 
 . To load {productname} from the self-hosted package instead of the {cloudname}, configure the `+ScriptSrc+` property:
 +

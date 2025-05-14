@@ -55,7 +55,7 @@ To add the {productname} Web Component integration to a JavaScript project, on c
 +
 [source,sh]
 ----
-npm i --save @tinymce/tinymce-webcomponent
+npm i @tinymce/tinymce-webcomponent
 ----
 * Yarn users:
 +
@@ -189,13 +189,6 @@ To set the menus shown on the editor menu bar, add the `+menubar+` attribute. Fo
 <tinymce-editor menubar="file edit insert view format table tools help"></tinymce-editor>
 ----
 
-To disable or remove the menu bar, set the `+menubar+` attribute to `+"false"+`. For example:
-
-[source,html]
-----
-<tinymce-editor menubar="false"></tinymce-editor>
-----
-
 To change the menu items shown in the menus, or define custom menus, set the `+menu+` configuration option using the `+config+` attribute.
 
 For information on:
@@ -212,13 +205,6 @@ To change the context menu sections that can be shown in the editor context menu
 [source,html]
 ----
 <tinymce-editor plugins="link image table" contextmenu="link image table"></tinymce-editor>
-----
-
-To disable the context menu, set the `+contextmenu+` attribute to `+"false"+`. For example:
-
-[source,html]
-----
-<tinymce-editor contextmenu="false"></tinymce-editor>
 ----
 
 For a list of available context menu sections, see: xref:editor-context-menu-identifiers.adoc[Available context menu sections]. For information on context menus, see: xref:menus-configuration-options.adoc#contextmenu[User interface options - `+contextmenu+`].
@@ -308,10 +294,11 @@ To apply a small set of CSS styles to the editor, use the `+content_style+` attr
 
 For information on the `+content_style+` option, see: xref:add-css-options.adoc#content_style[Content appearance options - `+content_style+`].
 
-[[setting-powerpastes-word-import-method]]
-=== Setting PowerPaste's word import method
+=== Settings for when PowerPaste plugin enabled
+NOTE: These settings only apply if the PowerPaste plugin (`+powerpaste+`) is enabled.
 
-This setting only applies if the PowerPaste plugin (`+powerpaste+`) is enabled.
+[[setting-powerpastes-word-import-method]]
+==== PowerPaste's word import method
 
 To control how content pasted from Microsoft Word is filtered, use the `+powerpaste_word_import+` attribute. For example:
 
@@ -323,9 +310,7 @@ To control how content pasted from Microsoft Word is filtered, use the `+powerpa
 For information on the `+powerpaste_word_import+` option, including supported values, see: xref:powerpaste-options.adoc#powerpaste_word_import[The PowerPaste plugin - `+powerpaste_word_import+`].
 
 [[setting-powerpastes-html-import-method]]
-=== Setting PowerPaste's html import method
-
-This setting only applies if the PowerPaste plugin (`+powerpaste+`) is enabled.
+==== PowerPaste's html import method
 
 To control how content pasted from sources other than Microsoft Word is filtered, use the `+powerpaste_html_import+` attribute. For example:
 
@@ -337,9 +322,8 @@ To control how content pasted from sources other than Microsoft Word is filtered
 For information on the `+powerpaste_html_import+` option, including supported values, see: xref:powerpaste-options.adoc#powerpaste_html_import[The PowerPaste plugin - `+powerpaste_html_import+`].
 
 [[setting-powerpaste-to-allow-local-images]]
-=== Setting PowerPaste to allow local images
+==== PowerPaste to allow local images
 
-This setting only applies if the PowerPaste plugin (`+powerpaste+`) is enabled.
 
 To prevent Base64 encoded images with a data URI from being pasted into the editor, set `+powerpaste_allow_local_images+` to `+"false"+`. For example:
 
@@ -379,11 +363,11 @@ To execute a javascript callback before the editor instance is rendered, use the
 [source,html]
 ----
 <script>
-function setupEditor(editor) {
-  editor.on('click', function () {
-    console.log('Editor was clicked');
-  });
-}
+  function setupEditor(editor) {
+    editor.on('click', function () {
+      console.log('Editor was clicked');
+    });
+  }
 </script>
 <tinymce-editor setup="setupEditor"></tinymce-editor>
 ----
@@ -520,11 +504,11 @@ To configure any {productname} option that does not have a corresponding attribu
 [source,html]
 ----
 <script>
-window.myConfig = {
-  height: 500,
-  spellchecker_dialog: true,
-  spellchecker_ignore_list: ['Ephox', 'Moxiecode']
-};
+  window.myConfig = {
+    height: 500,
+    spellchecker_dialog: true,
+    spellchecker_ignore_list: ['Ephox', 'Moxiecode']
+  };
 </script>
 <tinymce-editor
   config="myConfig"
@@ -546,11 +530,11 @@ There are two methods to bind events for the TinyMCE Web Component.
 [source,html]
 ----
 <script>
-function setupEditor(editor) {
-  editor.on('click', function () {
-    console.log('Editor was clicked');
-  });
-}
+  function setupEditor(editor) {
+    editor.on('click', function () {
+      console.log('Editor was clicked');
+    });
+  }
 </script>
 <tinymce-editor setup="setupEditor"/>
 ----
@@ -559,9 +543,9 @@ function setupEditor(editor) {
 [source,html]
 ----
 <script>
-function changeHandler(evt) {
-  console.log('The ' + evt['type'] + ' event was fired.');
-}
+  function changeHandler(evt) {
+    console.log('The ' + evt['type'] + ' event was fired.');
+  }
 </script>
 <tinymce-editor on-Change="changeHandler"/>
 ----

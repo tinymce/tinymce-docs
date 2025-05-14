@@ -70,36 +70,6 @@ NOTE: Visit our xref:invalid-api-key.adoc[Invalid API key] page for more informa
 
 '''
 
-[[trial-banner-exploration]]
-== Trial Banner - Explore Features (Valid Trial API Key)
-
-=== "Try out paid features! Explore all of the trial benefits including Premium plugins."
-
-==== Cause
-
-This banner appears when the API key being used is associated with a trial account. The editor is fully functional but includes a banner promoting premium features such as `PowerPaste`, `Export to Word`, and `Templates`.
-
-
-image::onboarding/onboarding-trial-explore-features.png[trial-explore-features-notification-banner, width=400, height=auto]
-
-==== Solution
-
-To disable this banner:
-
-Set the `+onboarding+` option to `+false+` in your {productname} configuration:
-
-[source,javascript]
-----
-tinymce.init({
-selector: 'textarea',
-onboarding: false, // Disables trial banner
-plugins: 'lists link image table',
-toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | bullist numlist | link image',
-});
-----
-
-Alternatively, upgrading your API key to a paid plan will remove the trial messages.
-
 
 [[empty-api-key]]
 == Empty API Key

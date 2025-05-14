@@ -35,8 +35,7 @@ For example:
 <script src="https://cdn.tiny.cloud/1/abcd1234/tinymce/{productmajorversion}/tinymce.min.js" referrerpolicy="origin"></script>
 ----
 
-In this case, the editor will be in a **read-only** state, and the user will see a **"Finish setting up"** dialog prompting them to add a valid API key, configure their domain, and explore premium features.
-
+In this case, the editor will be in a **read-only** state, and a notification appears stating: A valid API key is required to continue using TinyMCE. Please alert the admin to check the current API key. Click here to learn more.
 ==== Solution
 
 To resolve this issue:

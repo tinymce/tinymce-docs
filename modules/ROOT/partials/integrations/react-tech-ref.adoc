@@ -34,7 +34,7 @@ To install the `+tinymce-react+` package and save it to your `+package.json+`.
 
 [source,sh]
 ----
-npm install --save @tinymce/tinymce-react
+npm install @tinymce/tinymce-react
 ----
 
 or with Yarn
@@ -104,7 +104,7 @@ The `+tinymce-react+` integration will try to source {productname} in the follow
 
 These props are used to configure how the editor is sourced:
 
-xref:apikey[`+apiKey+`]:: The {cloudname} API key. When loading from {cloudname}, use this prop to remove the "This domain is not registered..." warning message.
+xref:apikey[`+apiKey+`]:: The {cloudname} API key. When loading from {cloudname}, use this prop to remove the "A valid API key is required to continue using TinyMCE. Please alert the admin to check the current API key. Click here to learn more." warning message.
 
 xref:licenseKey[`+licenseKey+`]:: The {cloudname} License key. Use this when self-hosting {productname} instead of loading from {cloudname}.
 
@@ -167,7 +167,7 @@ None of the configuration props are *required* for the {productname} React compo
 
 {cloudname} API key.
 
-Required for deployments using the {cloudname} to provide the {productname} editor without the warning message "This domain is not registered...".
+Required for deployments using the {cloudname} to provide the {productname} editor without the warning message "A valid API key is required to continue using TinyMCE. Please alert the admin to check the current API key. Click here to learn more".
 
 include::partial$misc/get-an-api-key.adoc[]
 
@@ -180,7 +180,7 @@ include::partial$misc/get-an-api-key.adoc[]
 [source,jsx]
 ----
 <Editor
-  apiKey='your-api-key'
+  apiKey='no-api-key'
 />
 ----
 
@@ -229,7 +229,7 @@ Such as:
 [source,jsx,subs="attributes+"]
 ----
 <Editor
-  apiKey='your-api-key'
+  apiKey='no-api-key'
   cloudChannel='{productmajorversion}-dev'
   init={{ /* your other settings */ }}
 />
@@ -663,7 +663,7 @@ function MyComponent({initialValue}) {
 
 CAUTION: The controlled component can have performance problems on large documents as it requires converting the entire document to a string on each keystroke or modification.
 
-To use the editor as a https://reactjs.org/docs/forms.html#controlled-components[controlled component], both the `+value+` and `+onEditorChange+` props are required.
+To use the editor as a https://legacy.reactjs.org/docs/forms.html#controlled-components[controlled component], both the `+value+` and `+onEditorChange+` props are required.
 
 The `+value+` prop is used to set and re-set the editor content. If it is not updated to the latest version of the editor content, the editor will rollback any changes.
 
@@ -767,7 +767,7 @@ function MyComponent({initialValue, limit}) {
 };
 ----
 
-For information on controlled components in React, see: https://reactjs.org/docs/forms.html#controlled-components[React Docs - Controlled Components].
+For information on controlled components in React, see: https://legacy.reactjs.org/docs/forms.html#controlled-components[React Docs - Controlled Components].
 
 [[event-binding]]
 == Event binding

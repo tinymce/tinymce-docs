@@ -112,7 +112,7 @@ The editor accepts the following properties:
 ----
 
 [NOTE]
-None of the configuration properties are *required* for `+tinymce-vue+` to work. Specify a {cloudname} API key using `+api-key+` to remove the `+This domain is not registered...+` warning message.
+None of the configuration properties are *required* for `+tinymce-vue+` to work. Specify a {cloudname} API key using `+api-key+` to remove the "A valid API key is required to continue using TinyMCE. Please alert the admin to check the current API key. Click here to learn more." warning message.
 
 [[api-key]]
 === `+api-key+`

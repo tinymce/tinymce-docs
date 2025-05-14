@@ -99,12 +99,33 @@ endif::[]
 in the jQuery prefix, and any other settings are defined in the object passed to
 the `tinymce` method.
 +
+ifeval::["{productSource}" == "cloud"]
 [source,html]
 ----
 <script>
-  $('textarea#tiny').tinymce({ height: 500, /* other settings... */ });
+  $('textarea#tiny').tinymce({
+    height: 500,
+    api_key: '<your api key>',
+    /* other settings... */,
+  });
 </script>
 ----
+. Update the `+api_key+` property to include your link:{accountsignup}/[{cloudname} API key].
+endif::[]
+
+ifeval::["{productSource}" == "package-manager"]
+[source,html]
+----
+<script>
+  $('textarea#tiny').tinymce({
+    height: 500,
+    license_key: '<your license key>',
+    /* other settings... */,
+  });
+</script>
+----
+. Update the `+license_key+` property and include your xref:license-key.adoc[License Key].
+endif::[]
 
 == Example jQuery integration
 
@@ -128,6 +149,7 @@ ifeval::["{productSource}" == "package-manager"]
     <script>
       $('textarea#tiny').tinymce({
         height: 500,
+        license_key: '<your-license-key>',
         menubar: false,
         plugins: [
           'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
@@ -169,6 +191,7 @@ ifeval::["{productSource}" == "cloud"]
     <script>
       $('textarea#tiny').tinymce({
         height: 500,
+        api_key: '<your api key>',
         menubar: false,
         plugins: [
           'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',

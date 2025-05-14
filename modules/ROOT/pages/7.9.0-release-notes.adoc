@@ -161,6 +161,13 @@ Previously, {productname} did not offer a separate `disc` styling option for uno
 </ul>
 ----
 
+=== New `onboarding` option
+// #TINY-11931
+
+{productname} {release-version} introduces a new `+onboarding+` option to enhance the developer experience during the 14-day trial period. This option controls the display of a cloud promotion banner highlighting paid features available during the trial. The banner is automatically hidden when the trial ends or when the editor is correctly configured, ensuring a smoother and less intrusive setup experience.
+
+For more information, see xref:promotions.adoc#onboarding[onboarding].
+
 [[changes]]
 == Changes
 

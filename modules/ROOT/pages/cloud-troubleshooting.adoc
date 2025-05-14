@@ -15,12 +15,15 @@ NOTE: The wording of the notifications shown here may differ from the actual not
 [[A-valid-API-key-is-required-to-continue-using-TinyMCE.-Please-alert-the-admin-to-check-the-current-API-key]]
 === "A valid API key is required to continue using {productname}. **Please alert the admin** to check the current API key. xref:invalid-api-key.adoc[Click here to learn more.]"
 
-==== Cause "No API Key"
+==== Cause "no-api-key"
 
 This notification is *only shown* when either:
 
-* An `+apiKey+` is not provided in the script tag.
-* `+no-api-key+` is provided as the API key.
+
+image:onboarding/onboarding-no-api-key-notification.png[no-api-key-notificaiton-banner, width=800, height=auto]
+
+* An `+apiKey+` is not provided in the script tag, which triggers the **"Finish setting up"** dialog.
+* When `+no-api-key+` is provided as the API key inside the script tag.
 
 For example:
 
@@ -28,6 +31,8 @@ For example:
 ----
 <script src="{cdnurl}" referrerpolicy="origin"></script>
 ----
+
+In this case, the editor will be in a **read-only** state, and the user will see a **"Finish setting up"** dialog prompting them to add a valid API key, configure their domain, and explore premium features.
 
 ==== Solution
 
@@ -65,6 +70,63 @@ Check the `apiKey` provided in the script tag:
 NOTE: Visit our xref:invalid-api-key.adoc[Invalid API key] page for more information on how to fix a `invalid API key` with {productname}.
 
 '''
+
+[[trial-banner-exploration]]
+== Trial Banner - Explore Features (Valid Trial API Key)
+
+=== "Try out paid features! Explore all of the trial benefits including Premium plugins."
+
+==== Cause
+
+This banner appears when the API key being used is associated with a trial account. The editor is fully functional but includes a banner promoting premium features such as `PowerPaste`, `Export to Word`, and `Templates`.
+
+
+image::onboarding/onboarding-trial-explore-features.png[trial-explore-features-notification-banner, width=400, height=auto]
+
+==== Solution
+
+To disable this banner:
+
+Set the `+onboarding+` option to `+false+` in your {productname} configuration:
+
+[source,javascript]
+----
+tinymce.init({
+selector: 'textarea',
+onboarding: false, // Disables trial banner
+plugins: 'lists link image table',
+toolbar: 'undo redo | bold italic | alignleft aligncenter alignright | bullist numlist | link image',
+});
+----
+
+Alternatively, upgrading your API key to a paid plan will remove the trial messages.
+
+
+[[empty-api-key]]
+== Empty API Key
+
+=== "A valid API key is required to continue using {productname}. Please alert the admin to check the current API key."
+
+==== Cause
+
+This message appears if the API key portion of the `+<script>+` URL is empty, such as:
+
+
+image:onboarding/onboarding-no-api-key-notification.png[no-api-key-notificaiton-banner, width=800, height=auto]
+
+
+[source,html]
+----
+<script src="https://cdn.staging.tiny.cloud/1//tinymce/{productmajorversion}/tinymce.min.js" referrerpolicy="origin"></script>
+----
+
+In this case, the resolved API key is effectively empty, resulting in a `read-only` editor state and the "A valid API key is required to continue using TinyMCE. Please alert the admin to check the current API key. Click here to learn more." message.
+
+==== Solution
+
+Ensure the API key is correctly included in the `+<script>+` URL, without any missing or empty segments.
+
+''''
 
 [[domain-not-registered]]
 == Domain Not Registered

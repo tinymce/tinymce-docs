@@ -25,7 +25,7 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 
 // JWT payload
 $payload = array(
-    "aud" => "YOUR-API-KEY",
+    "aud" => "no-api-key",
     "iat" => time(), // Issue timestamp
     "exp" => time() + 60 * 10 // Expiration time (10 minutes)
 );

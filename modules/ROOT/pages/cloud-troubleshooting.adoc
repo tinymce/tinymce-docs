@@ -22,8 +22,7 @@ This notification is *only shown* when either:
 
 image:onboarding/onboarding-no-api-key-notification.png[no-api-key-notificaiton-banner, width=800, height=auto]
 
-* An `+apiKey+` is not provided in the script tag, which triggers the **"Finish setting up"** dialog.
-* When `+no-api-key+` is provided as the API key inside the script tag.
+* An `+apiKey+` is not provided in the script tag, or when `+no-api-key+` is provided as the API key.
 
 For example:
 

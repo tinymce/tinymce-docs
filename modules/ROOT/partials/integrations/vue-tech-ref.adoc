@@ -23,19 +23,19 @@
 [[installing-the-tinymce-vuejs-integration-using-npm]]
 == Installing the TinyMCE Vue.js integration using NPM
 
-To install the `+tinymce-vue+` package and save it to your `+package.json+`.
+To install the `+tinymce-vue+` package.
 
 * For Vue.js 3.x users:
 +
 [source,sh]
 ----
-npm install --save "@tinymce/tinymce-vue@^4"
+npm install "@tinymce/tinymce-vue"
 ----
 * For Vue.js 2.x users:
 +
 [source,sh]
 ----
-npm install --save "@tinymce/tinymce-vue@^3"
+npm install "@tinymce/tinymce-vue@^3"
 ----
 
 [[using-the-tinymce-vuejs-integration]]
@@ -77,7 +77,15 @@ var app = new Vue({
 +
 [source,html]
 ----
-<editor api-key="API_KEY" :init="{plugins: 'wordcount'}" />
+<editor
+  id="uuid"
+  api-key="no-api-key"
+  :init="{
+    plugins: 'advlist anchor autolink charmap code fullscreen help image insertdatetime link lists media preview searchreplace table visualblocks wordcount',
+    toolbar: 'undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+    height: 500,
+  }"
+/>
 ----
 
 [[configuring-the-editor]]
@@ -88,7 +96,7 @@ The editor accepts the following properties:
 [source,html,subs="attributes+"]
 ----
 <editor
-  api-key="your-api-key"
+  api-key="no-api-key"
   cloud-channel="{productmajorversion}"
   :disabled=false
   id="uuid"
@@ -103,7 +111,8 @@ The editor accepts the following properties:
 />
 ----
 
-None of the configuration properties are *required* for `+tinymce-vue+` to work. Specify a {cloudname} API key using `+api-key+` to remove the `+This domain is not registered...+` warning message.
+[NOTE]
+None of the configuration properties are *required* for `+tinymce-vue+` to work. Specify a {cloudname} API key using `+api-key+` to remove the "A valid API key is required to continue using TinyMCE. Please alert the admin to check the current API key. Click here to learn more." warning message.
 
 [[api-key]]
 === `+api-key+`
@@ -121,7 +130,7 @@ include::partial$misc/get-an-api-key.adoc[]
 [source,html]
 ----
 <editor
-  api-key="your-api-key"
+  api-key="no-api-key"
 />
 ----
 
@@ -168,7 +177,7 @@ Such as:
 [source,html,subs="attributes+"]
 ----
 <editor
-  api-key="your-api-key"
+  api-key="no-api-key"
   cloud-channel="{productmajorversion}-dev"
   :init="{ /* your other settings */ }"
 />
@@ -199,11 +208,11 @@ The `+disabled+` property can dynamically switch the editor between a "disabled"
 [[id]]
 === `+id+`
 
-An id for the editor. Used for retrieving the editor instance using the `+tinymce.get('ID')+` method.
+An `id` for the editor. Used for retrieving the editor instance using the `+tinymce.get('ID')+` method.
 
 *Type:* `+String+`
 
-*Default value:* Automatically generated https://tools.ietf.org/html/rfc4122[UUID]
+*Default value:* Automatically generated link:https://tools.ietf.org/html/rfc4122[UUID]
 
 ==== Example: using `+id+`
 
@@ -288,12 +297,13 @@ For a list of available {productname} events, see: xref:events.adoc#editor-core-
 
 *Default value:* `+'change keyup undo redo'+`.
 
+// ref: https://github.com/tinymce/tinymce-vue/blob/d66bfa9eb6a819a1943431362cf978f7bf56c145/src/main/ts/Utils.ts#L111
 ==== Example: using `+model-events+`
 
 [source,html]
 ----
 <editor
-  model-events="change keydown blur focus paste"
+  model-events="change input undo paste"
 />
 ----
 
@@ -378,7 +388,7 @@ For information setting the toolbar for {productname}, see: xref:toolbar-configu
 [[tinymce-script-src]]
 === `+tinymce-script-src+`
 
-Use the `+tinymce-script-src+` prop to specify an external version of TinyMCE to lazy load.
+Use the `+tinymce-script-src+` prop to specify an external version of {productname} to lazy load from.
 
 *Type:* `+String+`
 
@@ -401,7 +411,7 @@ The `+v-model+` directive can be used to create a two-way data binding. For exam
 <editor v-model="content" />
 ----
 
-For information on `+v-model+` and form input bindings, see: https://vuejs.org/guide/essentials/forms.html[Vue.js documentation - Form Input Bindings].
+For information on `+v-model+` and form input bindings, see: link:https://vuejs.org/guide/essentials/forms.html[Vue.js documentation - Form Input Bindings].
 
 [[event-binding]]
 == Event binding
@@ -417,7 +427,7 @@ For older versions of Vue (Vue 2) supported by v3.x, the syntax for event bindin
 
 When the handler is called (*handlerFunction* in this example), it is called with two arguments:
 
-* `+event+` - The TinyMCE event object.
+* `+event+` - The {productname} event object.
 * `+editor+` - A reference to the editor.
 
 The following events are available:

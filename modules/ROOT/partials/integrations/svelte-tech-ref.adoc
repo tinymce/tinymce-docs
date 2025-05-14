@@ -38,6 +38,8 @@ The `+tinymce-svelte+` `+Editor+` component accepts the following properties:
 
 {cloudname} API key. Required for deployments using the {cloudname} to provide the {productname} editor.
 
+include::partial$misc/get-an-api-key.adoc[]
+
 *Type:* `+String+`
 
 *Default value:* `+'no-api-key'+`
@@ -47,16 +49,16 @@ The `+tinymce-svelte+` `+Editor+` component accepts the following properties:
 [source,jsx]
 ----
 <Editor
-  apiKey="your-api-key"
+  apiKey="no-api-key"
 />
 ----
 
-[[licenseKey]]
+[[licensekey]]
 === `+licenseKey+`
 
 {cloudname} License key.
 
-Use this when self-hosting {productname} instead of loading from {cloudname}. For more information, see: xref:license-key.adoc[License Key].
+Use this option when self-hosting {productname} instead of loading from {cloudname}. For more information, see: xref:license-key.adoc[License Key].
 
 *Type:* `+String+`
 
@@ -100,7 +102,7 @@ Specified an Id for the editor. Used for retrieving the editor instance using th
 
 *Type:* `+String+`
 
-*Default value:* Automatically generated https://tools.ietf.org/html/rfc4122[UUID]
+*Default value:* Automatically generated link:https://tools.ietf.org/html/rfc4122[UUID]
 
 ==== Example using `+id+`
 
@@ -114,7 +116,7 @@ Specified an Id for the editor. Used for retrieving the editor instance using th
 [[inline]]
 === `+inline+`
 
-Set the editor to inline mode.
+Sets the editor to use inline mode.
 
 *Type:* `+Boolean+`
 
@@ -243,6 +245,7 @@ When the handler is called (*handlerFunction* in this example), it is called wit
 
 `+editor+`:: A reference to the editor.
 
+[TIP]
 Ensure event names are specified in lower-case (event names are case-sensitive).
 
 The following events are available:

@@ -20,7 +20,7 @@ link:https://www.tiny.cloud/docs/tinymce/7/events/[event reference] for more det
 link:https://www.tiny.cloud/docs/tinymce/7/events/[event reference] for more details on each event.
 
 
-__Deprecated in TinyMCE 6.0 and has been marked for removal in TinyMCE 7.0. Use `dispatch` instead.__|`xref:apis/tinymce.util.observable.adoc[Observable]`
+__Deprecated in TinyMCE 6.0 and has been marked for removal in TinyMCE 9.0. Use `dispatch` instead.__|`xref:apis/tinymce.util.observable.adoc[Observable]`
 |xref:#hasEventListeners[hasEventListeners()]|Returns true/false if the object has a event of the specified name.|`xref:apis/tinymce.util.observable.adoc[Observable]`
 |xref:#off[off()]|Unbinds an event listener to a specific event by name. Consult the
 link:https://www.tiny.cloud/docs/tinymce/7/events/[event reference] for more details on each event.|`xref:apis/tinymce.util.observable.adoc[Observable]`
@@ -70,7 +70,7 @@ Fires the specified event by name. Consult the
 link:https://www.tiny.cloud/docs/tinymce/7/events/[event reference] for more details on each event.
 
 
-__Deprecated in TinyMCE 6.0 and has been marked for removal in TinyMCE 7.0. Use `dispatch` instead.__
+__Deprecated in TinyMCE 6.0 and has been marked for removal in TinyMCE 9.0. Use `dispatch` instead.__
 
 ==== Examples
 [source, javascript]

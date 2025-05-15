@@ -8,30 +8,75 @@ When {cloudname} detects a problem, it will show an editor notification containi
 NOTE: The wording of the notifications shown here may differ from the actual notifications from {cloudname}.
 
 '''
-
 [[invalid-api-key-cloud-troubleshooting]]
 == Invalid API Key
 
 [[A-valid-API-key-is-required-to-continue-using-TinyMCE.-Please-alert-the-admin-to-check-the-current-API-key]]
 === "A valid API key is required to continue using {productname}. **Please alert the admin** to check the current API key. xref:invalid-api-key.adoc[Click here to learn more.]"
 
-==== Cause "No API Key"
+==== Cause
 
-This notification is *only shown* when either:
+This notification is shown when either:
 
-* An `+apiKey+` is not provided in the script tag.
-* `+no-api-key+` is provided as the API key.
+* An `+apiKey+` is not provided in the script tag,
+* An empty or missing `+apiKey+` is provided, or
+* The `+apiKey+` provided cannot be found on the {cloudname} server.
+
+The `+apiKey+` must be:
+
+* An exact length,
+* comprised of certain characters, and
+* created with a {cloudname} account on the link:{accountsignup}/[{accountpage} page].
 
 For example:
 
 [source,html,subs="attributes+"]
 ----
-<script src="{cdnurl}" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/abcd1234/tinymce/{productmajorversion}/tinymce.min.js" referrerpolicy="origin"></script>
 ----
+
+In this case, the editor will be in a **read-only** state, and a notification appears stating: **"A valid API key is required to continue using TinyMCE. Please alert the admin to check the current API key. Click here to learn more."**
 
 ==== Solution
 
-Update the `+src+` URL to include your (website or application developer's) {cloudname} API Key. Your API key should replace the string `+no-api-key+`.
+To resolve this issue:
+
+. Update the `+src+` URL to include your (website or application developer's) {cloudname} API Key, by replacing the placeholder `+no-api-key+` with your actual API key.
++
+For example: if your API is `+abcd1234+`:
++
+[source,html,subs="attributes+"]
+----
+<script src="https://cdn.tiny.cloud/1/abcd1234/tinymce/{productmajorversion}/tinymce.min.js" referrerpolicy="origin"></script>
+----
++
+. Check the `+apiKey+` provided in the script tag:
+* Remove any leading or trailing spaces.
+* Remove any other characters that are not in your `apiKey`. If you are using variable substitution, ensure that the variable is substituting properly.
+* Ensure the `apiKey+` matches the API key shown at {accountpageurl}.
++
+. If you do not have an API key, or need to retrieve your existing key, visit: link:{accountsignup}/[{cloudname}].
+
+[NOTE]
+Visit our xref:invalid-api-key.adoc[Invalid API key] page for more information on how to fix an `invalid API key` issue with {productname}.
+
+'''
+
+[[no-api-key-cloud-troubleshooting]]
+== No API Key
+
+[[A-valid-API-key-is-required-to-continue-using-TinyMCE.]]
+=== "A valid API key is required to continue using {productname}." (Console message)
+
+==== Cause
+
+When `+no-api-key+` is set as the `+apiKey+` the editor will be in a **read-only** state, and the user will see a **"Finish setting up"** dialog prompting them to add a valid API key, configure their domain, and explore premium features.
+
+image:onboarding/onboarding-finish-setting-up-dialog.png[onboarding finish setting up dialog, width=500, height=auto]
+
+==== Solution
+
+. Update the `+src+` URL to include your (website or application developer's) {cloudname} API Key, by replacing the placeholder `+no-api-key+` with your actual API key.
 
 For example: if your API is `+abcd1234+`:
 
@@ -42,29 +87,7 @@ For example: if your API is `+abcd1234+`:
 
 To retrieve your API key, or to sign up for an API key, visit: link:{accountsignup}/[{cloudname}].
 
-NOTE: Visit our xref:invalid-api-key.adoc[Invalid API key] page for more information on how to fix a `invalid API key` with {productname}.
-
-==== Cause "Invalid API Key"
-
-This notification is shown when the API key provided cannot be found on the {cloudname} server.
-
-The `+apiKey+` must be:
-
-* An exact length,
-* comprised of certain characters, and
-* created with a {cloudname} account on the link:{accountsignup}/[{accountpage} page].
-
-==== Solution
-
-Check the `apiKey` provided in the script tag:
-
-* Remove any leading or trailing spaces
-* Remove any other characters that are not in your `apiKey`. If you are using variable substitution, ensure that the variable is substituting properly
-* Ensure the `apiKey` matches the API key shown at {accountpageurl}.
-
-NOTE: Visit our xref:invalid-api-key.adoc[Invalid API key] page for more information on how to fix a `invalid API key` with {productname}.
-
-'''
+''''
 
 [[domain-not-registered]]
 == Domain Not Registered

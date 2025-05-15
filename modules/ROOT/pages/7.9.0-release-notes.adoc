@@ -298,7 +298,7 @@ Previously, when the xref:user-formatting-options.adoc#style_formats[style_forma
 
 In {release-version}, the {productname} editor now disables the **Formats** button entirely when no style formats are defined. This change improves usability by clearly signaling that there are no available style options, preventing unnecessary interaction and enhancing clarity for end users.
 
-=== Select UI elements was not properly styled on Chrome version 136.
+=== Select UI elements were not properly styled on Chrome version 136.
 // #TINY-12131
 
 Previously, the `Select` UI elements were not properly styled in Chrome version 136, resulting in no visual indication of the currently selected option, which lead to usability issues.

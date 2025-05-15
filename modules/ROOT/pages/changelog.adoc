@@ -9,6 +9,8 @@ NOTE: This is the {productname} Community version changelog. For information abo
 === Added
 * Added new `disc` style option for unordered lists.
 // #TINY-12015
+* New `onboarding` option.
+// #TINY-11931
 
 === Improved
 * The resize cursor now points in the correct direction for each resize mode. Patch contributed by link:https://github.com/daniloff200[daniloff200].
@@ -49,8 +51,6 @@ NOTE: This is the {productname} Community version changelog. For information abo
 // #TINY-11748
 * New `extended_mathml_attributes` and `extended_mathml_elements` options.
 // #TINY-11756
-* New `onboarding` option.
-// #TINY-11931
 
 === Improved
 * Focus outline was misaligned with comment card border on saving an edit.

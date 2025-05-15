@@ -1,8 +1,6 @@
 [[highlight_on_focus]]
 == `+highlight_on_focus+`
 
-include::partial$misc/admon-requires-6.4v.adoc[]
-
 [NOTE]
 In {productname} 7.0, the default setting for `highlight_on_focus` was changed from `false` to `true`. Any editors using this `highlight_on_focus: true` option in {productname} , can remove this option from their {productname} init configuration when upgrading to {productname} 7.0.
 

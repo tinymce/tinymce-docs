@@ -1,8 +1,6 @@
 [[table_merge_content_on_paste]]
 == `+table_merge_content_on_paste+`
 
-include::partial$misc/admon-requires-6.5v.adoc[]
-
 This option sets the behavior of the editor when a table is pasted into another table.
 
 (If the insertion point is within a table or the current selection includes any part of a table, paste events happens into the table.)

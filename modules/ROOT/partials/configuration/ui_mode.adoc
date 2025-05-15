@@ -3,8 +3,6 @@
 [[ui_mode]]
 === `+ui_mode+`
 
-include::partial$misc/admon-requires-6.4v.adoc[]
-
 This option configures the location of all the UI elements that should scroll with the editor, such as popups, menus and inline dialogs.
 
 By default, these UI elements are rendered in a container that is attached to the document body, meaning they are not connected to any scrollable containers the editor might be in. 

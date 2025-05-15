@@ -8,7 +8,6 @@
 
 include::partial$misc/admon-premium-plugin.adoc[]
 
-include::partial$misc/admon-requires-6.2v.adoc[]
 
 The {pluginname} plugin allows the user to insert a merge tag (also known as a personalization token, or a mail merge field).
 
@@ -102,8 +101,6 @@ Here is an example of the {pluginname} HTML structure.
 ----
 
 == Merge Tags and the Templates Insertion Point Marker
-
-include::partial$misc/admon-requires-6.7v.adoc[]
 
 The xref:advanced-templates.adoc[Templates] Premium plugin can use a fixed string — `+{{mce-cursor}}+` — to xref:advanced-templates.adoc#the-insertion-point-marker[set the insertion point] within a template as the template is added to a {productname} document.
 

@@ -1,8 +1,6 @@
 [[newline_behavior]]
 == `+newline_behavior+`
 
-include::partial$misc/admon-requires-6.1v.adoc[]
-
 This option enables you to adjust what happens when Enter or Return is pressed. There are four options:
 
 * `default` inserts a block (defined by xref:content-filtering.adoc#forced_root_block[forced_root_block]) on Enter, and a `br` tag on Shift+Enter.

@@ -22,7 +22,6 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 |enabled |boolean |optional |default: `+true+` - When `+false+`, the button will be disabled when the dialog loads.
 |align |`+'end'+` or `+'start'+` |optional |default: `+'end'+` - When set to `+'end'+` the button will display on the right-hand side of the dialog. When set to `+'start'+` the button will display on the left-hand side.
 4+|
-include::partial$misc/admon-requires-7.4v.adoc[]
 |context |string |optional |default: `mode:design` for all types except `cancel`, which defaults to `any` - The context property dynamically enables or disables the menu item based on the editor's current state. For details, see: xref:context.adoc[Context].
 |===
 
@@ -94,7 +93,6 @@ The following options can be specified for a dialog menu button _item_:
 |text |string |optional |Text to display if no icon is found.
 |value |string |optional |A value to associate with the menu item.
 4+|
-include::partial$misc/admon-requires-7.4v.adoc[]
 |context |string |optional |default: `mode:design` - The context property dynamically enables or disables the menu item based on the editor's current state. For details, see: xref:context.adoc[Context].
 |===
 

@@ -19,10 +19,8 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 |onSetup |`+(api) => (api) => void+` |optional |default: `+() => () => {}+` - Function invoked when the button is rendered. For details, see: xref:using-onsetup[Using `+onSetup+`].
 |onAction |`+(api) => void+` |required |Function invoked when the button is clicked.
 4+|
-include::partial$misc/admon-requires-7.0v.adoc[]
 |shortcut |string |optional |Shortcut to display in the tooltip. To register a shortcut, see: xref:shortcuts.adoc[Add custom shortcuts to TinyMCE].
 4+|
-include::partial$misc/admon-requires-7.4v.adoc[]
 |context |string |optional |default: `mode:design` - The context property dynamically enables or disables the button based on the editor's current state. For details, see: xref:context.adoc[Context].
 |===
 
@@ -36,7 +34,6 @@ include::partial$misc/admon-requires-7.4v.adoc[]
 |isActive |`+() => boolean+` |Checks if the button is `+on+`.
 |setActive |`+(state: boolean) => void+` |Sets the button's toggle state.
 3+|
-include::partial$misc/admon-requires-6.4v.adoc[]
 |setText |`+(text: string) => void+` |Sets the text label to display.
 |setIcon |`+(icon: string) => void+` |Sets the icon of the button.
 |===

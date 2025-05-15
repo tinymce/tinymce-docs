@@ -9,8 +9,6 @@
 
 include::partial$misc/admon-premium-plugin.adoc[]
 
-include::partial$misc/admon-requires-6.3v.adoc[]
-
 As is normal and long-time best practice, {productname} documents keep CSS and HTML separate. This practice is not, however, email-friendly.
 
 The {pluginname} plugin takes a {productname} document, and processes it such that the previously separate CSS is applied inline to each HTML element. This single output file is much closer to the common requirements for sending as an HTML-formatted email.

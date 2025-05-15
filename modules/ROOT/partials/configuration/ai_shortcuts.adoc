@@ -135,8 +135,6 @@ or
 
 ==== The `+selection+` property
 
-include::partial$misc/admon-requires-6.8v.adoc[]
-
 Shortcut objects with the `+prompt+` property may also contain the following optional property.
 
 `+selection+`:: A boolean value which will match to the current selection and set the enabled state of the shortcut. When `+selection+` is:

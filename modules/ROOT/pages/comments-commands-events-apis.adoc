@@ -17,8 +17,6 @@ include::partial$events/tinycomments-events.adoc[]
 
 === CommentChange event
 
-include::partial$misc/admon-requires-6.1v.adoc[]
-
 Fired when a comment is added, resolved, deleted, edited, or replied to. Contains the `getEventLog` API for retrieving log of comment changes.
 
 ==== Example: the CommentChange event

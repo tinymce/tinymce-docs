@@ -9,8 +9,6 @@
 
 include::partial$misc/admon-premium-plugin.adoc[]
 
-include::partial$misc/admon-requires-6.4v.adoc[]
-
 [TIP]
 As of {productname} 7.0, the Advanced Template plugin has been renamed to {pluginname}. When adding {pluginname} in your editor, continue to use {plugincode}.
 
@@ -81,8 +79,6 @@ To manage the template list
 
 [[read-only-categories]]
 === Readonly categories
-
-include::partial$misc/admon-requires-7.4v.adoc[]
 
 {pluginname} categories can be set to read-only in {productname}, preventing users from modifying the category or its templates. When a category is set to read-only, users cannot:
 
@@ -180,8 +176,6 @@ liveDemo::{plugincode}[]
 [[the-insertion-point-marker]]
 === The insertion point marker
 
-include::partial$misc/admon-requires-6.7v.adoc[]
-
 The insertion point marker is a fixed string for adding to any template.
 
 The string to add is as follows: `+{{mce-cursor}}+`.
@@ -195,8 +189,6 @@ liveDemo::{plugincode}-insertionpoint[]
 
 [[the-mce-clipboard-marker]]
 === The mce-clipboard marker
-
-include::partial$misc/admon-requires-6.8v.adoc[]
 
 The `+{{mce-clipboard}}+` marker is a fixed string for adding to any template.
 

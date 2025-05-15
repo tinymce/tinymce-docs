@@ -20,7 +20,6 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 |onItemAction |`+(api, value) => void+` |Choice menu items |required |Function invoked when a dropdown list option is clicked. The `+value+` is passed from the selected choice menu item.
 |onSetup |`+(api) => (api) => void+` |All |optional |default: `+() => () => {}+` - Function invoked when the button is rendered. For details, see: xref:using-onsetup[Using `+onSetup+`].
 5+|
-include::partial$misc/admon-requires-7.4v.adoc[]
 |context |string |All |optional |default: `mode:design` - The context property dynamically enables or disables the button based on the editor's current state. For details, see: xref:context.adoc[Context].
 |===
 
@@ -34,7 +33,6 @@ include::partial$misc/admon-requires-7.4v.adoc[]
 |isActive |`+() => boolean+` |Checks the button's toggle state.
 |setActive |`+(state: boolean) => void+` |Sets the button's toggle state.
 3+|
-include::partial$misc/admon-requires-6.4v.adoc[]
 |setText |`+(text: string) => void+` |Sets the text label to display.
 |setIcon |`+(icon: string) => void+` |Sets the icon of the button.
 |===

@@ -1,7 +1,5 @@
 === Using `+buttons+` to configure a dialog without a footer
 
-include::partial$misc/admon-requires-6.6v.adoc[]
-
 In addition to its usual functions, the `+buttons+` property can also be used to stop the footer section from displaying.
 
 To configure a custom dialog so it does not render a footer section when displayed, set the `buttons` property to an empty array, `[]`, or omit it entirely.

@@ -1,12 +1,12 @@
 Ticket: DOC-<num>
 
-Site: [Staging branch](http://docs-<hotfix|feature>-7-doc-<num>.staging.tiny.cloud/docs/tinymce/latest/)
+Site: [Staging branch](http://docs-<hotfix|feature>-8-doc-<num>.staging.tiny.cloud/docs/tinymce/latest/)
 
 Changes:
 * <placeholder-text>
 
 Pre-checks:
-- [ ] Branch prefixed with `feature/7/` or `hotfix/7/`
+- [ ] Branch prefixed with `feature/8/` or `hotfix/8/`
 - [ ] `modules/ROOT/nav.adoc` has been updated `(if applicable)`
 - [ ] Files has been included where required `(if applicable)`
 - [ ] Files removed have been deleted, not just excluded from the build `(if applicable)`

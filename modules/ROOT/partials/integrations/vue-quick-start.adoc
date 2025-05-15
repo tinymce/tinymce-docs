@@ -241,10 +241,13 @@ import Editor from '@tinymce/tinymce-vue'
 ----
 +
 . {productname} can be self-hosted by either:
-** xref:deploying-tinymce-independent.adoc[Deploying {productname} independent of the Vue.js application],
+** xref:deploying-tinymce-independent[Deploying {productname} independent of the Vue.js application],
 ** xref:zip-install.adoc[{productname} .zip deployments].
 
-* [[deploying-tinymce-independent]] Deploying {productname} independent of the Vue.js application. To use a {productname} instance that has been deployed independent of the Vue.js application, use an HTML `+<script>+` tag.
+[[deploying-tinymce-independent]]
+== Deploying {productname} independent of the Vue.js application
++
+Deploying {productname} independent of the Vue.js application. To use a {productname} instance that has been deployed independent of the Vue.js application, use an HTML `+<script>+` tag.
 +
 To use an independent deployment of {productname}, add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
 +

@@ -1,10 +1,10 @@
 Covered in this section:
 
-* xref:configuring-the-tinymce-blazor-integration[Configuring the TinyMCE Blazor integration]
+* xref:configuring-the-tinymce-blazor-integration[Configuring the {productname} Blazor integration]
 * xref:component-binding[Component binding]
 
 [[configuring-the-tinymce-blazor-integration]]
-== Configuring the TinyMCE Blazor integration
+== Configuring the {productname} Blazor integration
 
 The `+TinyMCE.Blazor+` `+Editor+` component accepts the following properties:
 
@@ -25,7 +25,7 @@ The `+TinyMCE.Blazor+` `+Editor+` component accepts the following properties:
 />
 ----
 
-None of the configuration properties are required for the TinyMCE Blazor integration to work.
+None of the configuration properties are required for the {productname} Blazor integration to work.
 
 === `ApiKey`
 
@@ -264,7 +264,7 @@ The editor component allows developers to bind the contents of editor to a varia
 
 === Binding Text output
 
-Starting from TinyMCE.Blazor v0.0.4, the editor exposes the `+@bind-Text+` property, which developers can `+bind+` to retrieve a read-only value of the editor content as text. Changes will not propagate up to the editor if the `+text+` bound variable changes. It will only propagate changes from the editor.
+Starting from {productname}.Blazor v0.0.4, the editor exposes the `+@bind-Text+` property, which developers can `+bind+` to retrieve a read-only value of the editor content as text. Changes will not propagate up to the editor if the `+text+` bound variable changes. It will only propagate changes from the editor.
 
 ==== Example using output text binding
 

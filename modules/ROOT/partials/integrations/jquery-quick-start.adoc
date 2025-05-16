@@ -129,7 +129,7 @@ endif::[]
 
 == Example jQuery integration
 
-To load a TinyMCE editor similar to the xref:basic-example.adoc[Basic example], add the following code to an empty HTML file.
+To load a {productname} editor similar to the xref:basic-example.adoc[Basic example], add the following code to an empty HTML file.
 ifeval::["{productSource}" == "package-manager"]
 [source,html,subs="attributes+"]
 ----
@@ -207,7 +207,7 @@ ifeval::["{productSource}" == "cloud"]
 </html>
 ----
 endif::[]
-== TinyMCE in a jQuery UI Dialog
+== {productname} in a jQuery UI Dialog
 To render {productname} instances inside jQuery UI dialogs, add the following code:
 [source,js]
 ----

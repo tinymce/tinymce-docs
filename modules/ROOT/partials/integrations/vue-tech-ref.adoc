@@ -1,7 +1,7 @@
 *Covered in this section:*
 
-* xref:installing-the-tinymce-vuejs-integration-using-npm[Installing the TinyMCE Vue.js integration using NPM]
-* xref:using-the-tinymce-vuejs-integration[Using the TinyMCE Vue.js integration]
+* xref:installing-the-tinymce-vuejs-integration-using-npm[Installing the {productname} Vue.js integration using NPM]
+* xref:using-the-tinymce-vuejs-integration[Using the {productname} Vue.js integration]
 * xref:configuring-the-editor[Configuring the editor]
 ** xref:api-key[`+api-key+`]
 ** xref:license-key[`+licenseKey+`]
@@ -21,7 +21,7 @@
 * xref:event-binding[Event binding]
 
 [[installing-the-tinymce-vuejs-integration-using-npm]]
-== Installing the TinyMCE Vue.js integration using NPM
+== Installing the {productname} Vue.js integration using NPM
 
 To install the `+tinymce-vue+` package.
 
@@ -39,7 +39,7 @@ npm install "@tinymce/tinymce-vue@^3"
 ----
 
 [[using-the-tinymce-vuejs-integration]]
-== Using the TinyMCE Vue.js integration
+== Using the {productname} Vue.js integration
 
 . Load the component.
 * For bundle loader users (such as `+webpack+`, `+rollup+`, or `+browserify+`):
@@ -112,7 +112,7 @@ The editor accepts the following properties:
 ----
 
 [NOTE]
-None of the configuration properties are *required* for `+tinymce-vue+` to work. Specify a {cloudname} API key using `+api-key+` to remove the "A valid API key is required to continue using TinyMCE. Please alert the admin to check the current API key. Click here to learn more." warning message.
+None of the configuration properties are *required* for `+tinymce-vue+` to work. Specify a {cloudname} API key using `+api-key+` to remove the "A valid API key is required to continue using {productname}. Please alert the admin to check the current API key. Click here to learn more." warning message.
 
 [[api-key]]
 === `+api-key+`

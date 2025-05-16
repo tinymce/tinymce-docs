@@ -1,8 +1,8 @@
 *Covered in this section:*
 
-* xref:use-a-cloud-version-of-the-tinymce-web-component-integration[Use a cloud version of the TinyMCE Web Component integration]
-* xref:installing-the-tinymce-web-component-integration[Installing the TinyMCE Web Component integration]
-* xref:loading-tinymce[Loading TinyMCE]
+* xref:use-a-cloud-version-of-the-tinymce-web-component-integration[Use a cloud version of the {productname} Web Component integration]
+* xref:installing-the-tinymce-web-component-integration[Installing the {productname} Web Component integration]
+* xref:loading-tinymce[Loading {productname}]
 * xref:configuring-the-editor[Configuring the editor]
 ** xref:setting-the-initial-content[Setting the initial content]
 ** xref:loading-plugins[Loading plugins]
@@ -32,10 +32,10 @@
 ** xref:setting-additional-configuration-options[Setting additional configuration options]
 * xref:event-binding[Event binding]
 ** xref:supported-browser-events[Supported browser events]
-** xref:supported-tinymce-events[Supported TinyMCE events]
+** xref:supported-tinymce-events[Supported {productname} events]
 
 [[use-a-cloud-version-of-the-tinymce-web-component-integration]]
-== Use a cloud version of the TinyMCE Web Component integration
+== Use a cloud version of the {productname} Web Component integration
 
 To use a cloud version of Web Component, the integration is accessible from https://www.jsdelivr.com/package/npm/@tinymce/tinymce-webcomponent[JSDelivr].
 
@@ -47,7 +47,7 @@ For example:
 ----
 
 [[installing-the-tinymce-web-component-integration]]
-== Installing the TinyMCE Web Component integration
+== Installing the {productname} Web Component integration
 
 To add the {productname} Web Component integration to a JavaScript project, on command line or command prompt, run the following:
 
@@ -65,7 +65,7 @@ yarn add @tinymce/tinymce-webcomponent
 ----
 
 [[loading-tinymce]]
-== Loading TinyMCE
+== Loading {productname}
 
 The integration requires both the {productname} Web Component (`+tinymce-webcomponent.min.js+`) and {productname} (`+tinymce.min.js+`).
 
@@ -156,7 +156,7 @@ To set the editor toolbar buttons, use the `+toolbar+` attribute. For example:
 <tinymce-editor toolbar="undo redo | styles | bold italic | alignleft aligncenter alignright alignjustify | outdent indent"></tinymce-editor>
 ----
 
-The `+toolbar+` attribute accepts a space-separated string of toolbar buttons with pipe characters (`+|+`) for grouping buttons. For a list of available toolbar buttons, see: xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for TinyMCE].
+The `+toolbar+` attribute accepts a space-separated string of toolbar buttons with pipe characters (`+|+`) for grouping buttons. For a list of available toolbar buttons, see: xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
 ==== Disabling the toolbar
 
@@ -221,7 +221,7 @@ To add a quick-insert toolbar, add `+"quickbars"+` to the `+plugins+` attribute.
 <tinymce-editor plugins="quickbars pagebreak" quickbars_insert_toolbar="quickimage quicktable quicklink | hr pagebreak"></tinymce-editor>
 ----
 
-The `+quickbars_insert_toolbar+` attribute accepts a space-separated string of toolbar buttons with pipe characters (`+|+`) for grouping buttons. For a list of available toolbar buttons, see: xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for TinyMCE].
+The `+quickbars_insert_toolbar+` attribute accepts a space-separated string of toolbar buttons with pipe characters (`+|+`) for grouping buttons. For a list of available toolbar buttons, see: xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
 To disable the quick-insert toolbar, set the `+quickbars_insert_toolbar+` attribute to `+"false"+`. For example:
 
@@ -242,7 +242,7 @@ To add a quick-selection toolbar, add `+"quickbars"+` to the `+plugins+` attribu
 <tinymce-editor plugins="quickbars" quickbars_selection_toolbar="bold italic | blocks | quicklink blockquote"></tinymce-editor>
 ----
 
-The `+quickbars_selection_toolbar+` attribute accepts a space-separated string of toolbar buttons with pipe characters (`+|+`) for grouping buttons. For a list of available toolbar buttons, see: xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for TinyMCE].
+The `+quickbars_selection_toolbar+` attribute accepts a space-separated string of toolbar buttons with pipe characters (`+|+`) for grouping buttons. For a list of available toolbar buttons, see: xref:available-toolbar-buttons.adoc[Toolbar Buttons Available for {productname}].
 
 To disable the quick-selection toolbar, set the `+quickbars_selection_toolbar+` attribute to `+"false"+`. For example:
 
@@ -523,7 +523,7 @@ Configuration options that have an attribute can also be passed to the `+config+
 [[event-binding]]
 == Event binding
 
-There are two methods to bind events for the TinyMCE Web Component.
+There are two methods to bind events for the {productname} Web Component.
 
 * The `+setup+` attribute, as described in xref:setting-the-editor-setup-function[Setting the editor setup function]. For example:
 +
@@ -550,7 +550,7 @@ There are two methods to bind events for the TinyMCE Web Component.
 <tinymce-editor on-Change="changeHandler"/>
 ----
 +
-If these attributes are later removed, the event will be automatically unbound. For the full list of supported `+on-+` attributes, see: xref:supported-browser-events[Supported browser events] and xref:supported-tinymce-events[Supported TinyMCE events].
+If these attributes are later removed, the event will be automatically unbound. For the full list of supported `+on-+` attributes, see: xref:supported-browser-events[Supported browser events] and xref:supported-tinymce-events[Supported {productname} events].
 
 [[supported-browser-events]]
 === Supported browser events
@@ -591,7 +591,7 @@ Bind the following browser events using the corresponding {productname} Web Comp
 |===
 
 [[supported-tinymce-events]]
-=== Supported TinyMCE events
+=== Supported {productname} events
 
 Bind the following {productname} events using the corresponding {productname} Web Component attribute.
 

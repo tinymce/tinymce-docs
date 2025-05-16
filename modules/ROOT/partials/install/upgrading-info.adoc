@@ -4,9 +4,9 @@ The procedure for upgrading to the latest version of {productname} {productmajor
 
 * xref:upgrading-tiny-cloud[Upgrading Tiny Cloud].
 ifeval::[{enterprise} != true]
-* xref:upgrading-tinymce-self-hosted-using-a-package-manager[Upgrading TinyMCE Self-hosted using a package manager].
+* xref:upgrading-tinymce-self-hosted-using-a-package-manager[Upgrading {productname} Self-hosted using a package manager].
 endif::[]
-* xref:upgrading-tinymce-self-hosted-manually[Upgrading TinyMCE Self-hosted manually].
+* xref:upgrading-tinymce-self-hosted-manually[Upgrading {productname} Self-hosted manually].
 
 [[upgrading-tiny-cloud]]
 === Upgrading Tiny Cloud
@@ -16,7 +16,7 @@ endif::[]
 ifeval::[{enterprise} != true]
 
 [[upgrading-tinymce-self-hosted-using-a-package-manager]]
-=== Upgrading TinyMCE Self-hosted using a package manager
+=== Upgrading {productname} Self-hosted using a package manager
 
 Select from the following package managers.
 
@@ -79,7 +79,7 @@ bower install {prodnamecode}#{productminorversion} --save
 endif::[]
 
 [[upgrading-tinymce-self-hosted-manually]]
-=== Upgrading TinyMCE Self-hosted manually
+=== Upgrading {productname} Self-hosted manually
 
 To upgrade to {productname} {productminorversion} using a manually downloaded package:
 

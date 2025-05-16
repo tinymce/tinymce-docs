@@ -1,7 +1,7 @@
 *Covered in this section:*
 
-* xref:installing-the-tinymce-react-integration-using-npm-or-yarn[Installing the TinyMCE React integration using NPM or Yarn]
-* xref:using-tinymce-react-integration-in-a-bootstrap-dialog[Using TinyMCE React integration in a Bootstrap dialog]
+* xref:installing-the-tinymce-react-integration-using-npm-or-yarn[Installing the {productname} React integration using NPM or Yarn]
+* xref:using-tinymce-react-integration-in-a-bootstrap-dialog[Using {productname} React integration in a Bootstrap dialog]
 * xref:configuring-the-editor[Configuring the editor]
 * xref:available-props[Available props]
 ** xref:apikey[`+apiKey+`]
@@ -23,12 +23,12 @@
 ** xref:tinymcescriptsrc[`+tinymceScriptSrc+`]
 ** xref:value[`+value+`]
 ** xref:tabIndex[`+tabIndex+`]
-* xref:using-the-tinymce-react-component-as-a-uncontrolled-component[Using the TinyMCE React component as a uncontrolled component]
-* xref:using-the-tinymce-react-component-as-a-controlled-component[Using the TinyMCE React component as a controlled component]
+* xref:using-the-tinymce-react-component-as-a-uncontrolled-component[Using the {productname} React component as a uncontrolled component]
+* xref:using-the-tinymce-react-component-as-a-controlled-component[Using the {productname} React component as a controlled component]
 * xref:event-binding[Event binding]
 
 [[installing-the-tinymce-react-integration-using-npm-or-yarn]]
-== Installing the TinyMCE React integration using NPM or Yarn
+== Installing the {productname} React integration using NPM or Yarn
 
 To install the `+tinymce-react+` package and save it to your `+package.json+`.
 
@@ -45,7 +45,7 @@ yarn add @tinymce/tinymce-react
 ----
 
 [[using-tinymce-react-integration-in-a-bootstrap-dialog]]
-== Using TinyMCE React integration in a Bootstrap dialog
+== Using {productname} React integration in a Bootstrap dialog
 
 To use the {productname} React integration inside Bootstrap UI dialogs, add the following React effect hook to a component that renders with the editor. This code is required because Bootstrap blocks all `+focusin+` calls from elements outside the dialog.
 
@@ -104,7 +104,7 @@ The `+tinymce-react+` integration will try to source {productname} in the follow
 
 These props are used to configure how the editor is sourced:
 
-xref:apikey[`+apiKey+`]:: The {cloudname} API key. When loading from {cloudname}, use this prop to remove the "A valid API key is required to continue using TinyMCE. Please alert the admin to check the current API key. Click here to learn more." warning message.
+xref:apikey[`+apiKey+`]:: The {cloudname} API key. When loading from {cloudname}, use this prop to remove the "A valid API key is required to continue using {productname}. Please alert the admin to check the current API key. Click here to learn more." warning message.
 
 xref:licenseKey[`+licenseKey+`]:: The {cloudname} License key. Use this when self-hosting {productname} instead of loading from {cloudname}.
 
@@ -167,7 +167,7 @@ None of the configuration props are *required* for the {productname} React compo
 
 {cloudname} API key.
 
-Required for deployments using the {cloudname} to provide the {productname} editor without the warning message "A valid API key is required to continue using TinyMCE. Please alert the admin to check the current API key. Click here to learn more".
+Required for deployments using the {cloudname} to provide the {productname} editor without the warning message "A valid API key is required to continue using {productname}. Please alert the admin to check the current API key. Click here to learn more".
 
 include::partial$misc/get-an-api-key.adoc[]
 

@@ -29,21 +29,21 @@ xref:content-behavior-options.adoc#newdocument_content[`newdocument_content`]
 
 Sets the content a new editor contains when the xref:available-menu-items.adoc#the-core-menu-items[File -> New document] menu item is invoked.
 
-Used here to show a TinyMCE instance loading an entire almost-ready-to-send-out standard document.
+Used here to show a {productname} instance loading an entire almost-ready-to-send-out standard document.
 
 a|
 [.lead]
 xref:non-editable-content-options.adoc#editable_root[`editable_root`]
 
-Sets the initial editable state of a TinyMCE instance’s root.
+Sets the initial editable state of a {productname} instance’s root.
 
-Used here to show a TinyMCE being used to present an almost-ready-to-send-out standard document that cannot, in the main, be changed by an end-user.
+Used here to show a {productname} being used to present an almost-ready-to-send-out standard document that cannot, in the main, be changed by an end-user.
 
 a|
 [.lead]
 xref:non-editable-content-options#editable_class[`editable_class`]
 
-Specifies the class name that TinyMCE will use to determine which areas of content are editable.
+Specifies the class name that {productname} will use to determine which areas of content are editable.
 
 Used here to setup the portions of an almost-ready-to-send-out standard document that end-users can (and should) edit.
 

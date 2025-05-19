@@ -1,4 +1,4 @@
-= Create a plugin for TinyMCE
+= Create a plugin for {productname}
 :navtitle: Create a plugin
 :description_short: Introducing plugin creation, with an example.
 :description: A short introduction to creating plugins for TinyMCE along with an example plugin.
@@ -20,7 +20,7 @@ The plugin identifier passed to `+PluginManager.add()+` is used by {productname}
 
 * Be an alphanumeric string,
 * Not contain any spaces or other whitespaces,
-* Be a unique identifier that does not match the IDs of plugins provided with TinyMCE or any other TinyMCE plugin in use.
+* Be a unique identifier that does not match the IDs of plugins provided with {productname} or any other {productname} plugin in use.
 
 If multiple plugins have the same identifier, one will override the others.
 

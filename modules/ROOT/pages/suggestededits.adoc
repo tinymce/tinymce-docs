@@ -49,37 +49,30 @@ The sidebar also displays all tracked changes that need to be resolved. Each cha
 
 The plugin also enables users to view and provide suggestions to edits. All users with access to the {pluginname} View can view suggestions. To allow users to provide suggestions, xref:{plugincode}_access[`{plugincode}_access`] must be set to either `admin` or `suggest`. 
 
-== Basic setup
+== Initial setup
+
+The Suggested Edits plugin uses a document model to track changes. If the model is not provided in the editor configuration, the plugin will create a new model from the current content of the editor. This model can be retrieved from the editor at any time using the xref:#get_model[`getModel` API], and should be saved externally
 
 To setup the {pluginname} plugin in the editor:
 
 * add `{plugincode}` to the `plugins` option in the editor configuration;
 * add `{plugincode}` to the `toolbar` option in the editor configuration;
-* add `{plugincode}_model` to the editor configuration. 
-* add `{plugincode}_uid` to the editor configuration. 
+* add `{plugincode}_model` to the editor configuration, if a document is already being tracked.
 
 For example:
 
 [source,js]
 ----
+const suggestededits_model = `<YOUR_DOCUMENT_MODEL>` // model provided by suggestededits plugin API
+
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
+  selector: 'textarea#suggestededits',  // change this value according to your HTML
   plugins: 'suggestededits',
   toolbar: 'suggestededits',
-  suggestededits_model: {
-    version: 1, 
-    maxId: 0, 
-    contents: [
-      {
-        type: 'p',
-        children: [
-          { text: 'Hello, World!' }
-        ]
-      }
-    ]
-  },
-  suggestededits_uid: 'unique-identifier' // replace this with a unique string to identify the user 
+  suggestededits_model, // model provided by suggestededits plugin API
 });
+
+<textarea id="suggestededits"><p>Your initial content here </p></textarea>
 ----
 
 == Options

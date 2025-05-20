@@ -3,7 +3,7 @@
 |Name   |Arguments    |Description
 
 |getModel |N/A |Return an object representing the document model used to store data of the tracked changes. 
-//|setModel |xref:#trackeddocument[TrackedDocument] `+Object+` | Set the current model of the document. 
+|setModel |xref:#trackeddocument[TrackedDocument] `+Object+` | Set the current model of the document. 
 //|resetModel |N/A |Reset the document to its original state. 
 |hasChanges |N/A |Return a boolean value indicating whether the document contains changes to be reviewed.  
 |===
@@ -14,10 +14,124 @@
 // Get the current model of the document
 tinymce.activeEditor.plugins.suggestededits.getModel();
 
+// Set current model of the document
+tinymce.activeEditor.plugins.suggestededits.setModel(model);
+
 // Check if document contains changes to be reviewed 
 tinymce.activeEditor.plugins.suggestededits.hasChanges();
 ----
 
+[[get_model]]
+.`getModel` Example
+[source,js]
+----
+const documentId = '<YOUR_DOCUMENT_ID>'; // Replace with the actual document ID
+
+tinymce.init({
+  selector: 'textarea#suggestededits',  // change this value according to your HTML
+  plugins: 'suggestededits',
+  toolbar: 'suggestededits save',
+  suggestededits_model,
+  setup: (editor) => {
+    editor.ui.registry.addButton('save', {
+      text: 'Save',
+      onAction: () => {
+        // Get the current content of the editor
+        const content = editor.getContent();
+
+        // Get the current model of the document
+        const model = editor.plugins.suggestededits.getModel();
+        
+        fetch(`/api/documents/${documentId}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ content, model }),
+        })
+        .then((response) => response.json())
+        .then((data) => console.log('Document saved:', data))
+        .catch((error) => console.error('Error saving document:', error));
+
+        // Save the model to the server
+        fetch(`/api/models/${documentId}`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(model),
+        })
+        .then((response) => response.json())
+        .then((data) => console.log('Model saved:', data))
+        .catch((error) => console.error('Error saving model:', error));
+      }
+    });
+  }
+});
+
+----
+
+[[set_model]]
+.`setModel` Example
+[source,js]
+----
+const documentId = '<YOUR_DOCUMENT_ID>'; // Replace with the actual document ID
+
+tinymce.init({
+  selector: 'textarea#suggestededits',  // change this value according to your HTML
+  plugins: 'suggestededits',
+  toolbar: 'suggestededits',
+  // No model provided in the editor configuration, it will be fetched from the server
+  init_instance_callback: (editor) => {
+    // Fetch the document from the server
+    fetch(`/api/documents/${documentId}`)
+      .then((response) => {
+        // Set the content in the editor
+        editor.setContent(response);
+      })
+      .catch((error) => console.error(`Error fetching document ${documentId}:`, error));
+      
+    // Fetch the document model from the server
+    fetch(`/api/models/${documentId}`)
+      .then((response) => response.json())
+      .then((model) => {
+        // Set the model in the editor
+        editor.plugins.suggestededits.setModel(model);
+      })
+      .catch((error) => console.error(`Error fetching document ${documentId} model:`, error));
+  }
+});
+----
+
+[[has_changes]]
+.`hasChanges` Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea#suggestededits',  // change this value according to your HTML
+  plugins: 'suggestededits',
+  toolbar: 'suggestededits',
+  setup: (editor) => {
+    editor.ui.registry.addButton('save', {
+      text: 'Save',
+      onAction: () => {
+        // Get the current model of the document
+        const hasChanges = editor.plugins.suggestededits.hasChanges();
+        
+        if (hasChanges) {
+          editor.notificationManager.open({
+            text: 'There are changes to be reviewed.',
+            type: 'warning',
+            timeout: 5000,
+          });
+        } else {
+          // Insert save logic here
+        }
+      }
+    });
+  }
+});
+----
 ////
 .Examples
 [source,js]

@@ -21,8 +21,9 @@ tinymce.init({
 [[suggestededits_model]]
 == `suggestededits_model`
 
-The `{plugincode}_model` option sets the initial model of the document to begin tracking changes. It takes as input an object representing the document. If no value is set, the plugin will generate the model by default. 
+The `{plugincode}_model` option sets the initial model of the document to begin tracking changes. It takes as input an object representing the document, containing all edits made to the document up to that point. This model should be saved externally alongside the document, and loaded into the editor each time the document is opened. This will ensure that both the document and the model are in sync, and that the plugin can track edits correctly.
 
+If the model is not provided in the editor configuration, the plugin will create a new model from the current content of the editor. This model can be retrieved from the editor at any time using the xref:#get_model[`getModel` API].
 //*Type:* xref:#trackeddocument[TrackedDocument] `+Object+`
 
 === Example: using `{plugincode}_model`
@@ -35,18 +36,7 @@ tinymce.init({
   plugins: 'suggestededits',
   toolbar: 'suggestededits',
   suggestededits_uid: 'unique-identifier', // replace this with a unique string to identify the user 
-  suggestededits_model: {
-    version: 1, 
-    maxId: 0, 
-    contents: [
-      {
-        type: 'p',
-        children: [
-          { text: 'Hello, World!' }
-        ]
-      }
-    ]
-  }
+  suggestededits_model // Model representing the document with up to date edits
 });
 ----
 
@@ -57,7 +47,7 @@ To configure a user's permission to edit the document and review changes, the `{
 
 *Type:* `+String+`
 
-*Possible Values*: `'full'`, `'suggest'`, `'read'`, `'none'` 
+*Possible Values*: `'full'`, `'suggest'`, `'read'`, `'none'`
 
 *Default Value*: `'full'`
 
@@ -97,6 +87,37 @@ tinymce.init({
 ----
 
 liveDemo::suggestededits-access[]
+
+[[suggestededits_content]]
+== `suggestededits_content`
+The `{plugincode}_content` option determines where the initial content of the document is loaded from. With this option, you can set the content to be loaded from either the editor or the model, allowing you to control the source of truth for the document.
+
+When set to `'html'`, the editor loads the initial content from the HTML in the textarea or the `content` property. In this case, if a model is provided, it will need to match the content in the editor for the plugin to work correctly
+
+When set to `'model'`, the editor loads the initial content from the `{plugincode}_model` option. In this case, the content in the editor will be overwritten with the content from the model. This would allow you to only require the model for document tracking, though it is still recommended to save the content in the editor externally.
+
+In either case, if a model is not provided, the plugin will generate a new model from the current content of the editor, whether it is empty or not.
+
+*Type:* `+String+`
+
+*Possible Values*: `'html'`, `'model'` 
+
+*Default value:* `'html'`
+
+=== Example: using `{plugincode}_css_url`
+
+// Add a working and tested configuration.
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // Change this value according to your HTML
+  plugins: 'suggestededits',
+  toolbar: 'suggestededits',
+  suggestededits_uid: 'unique-identifier', // replace this with a unique string to identify the user
+  suggestededits_model,
+  suggestededits_content: 'model' // change this value to set the content source
+});
+----
 
 [[suggestededits_css_url]]
 == `suggestededits_css_url`

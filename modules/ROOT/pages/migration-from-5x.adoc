@@ -124,8 +124,7 @@ license_key: "your-license-key"
 .. Replace v5 API methods like `editor.addButton`, `editor.addMenuItem`, `editor.windowManager.open`.
 .. Update media embed handling (`media_url_resolver` API changes). see xref:media.adoc#media_url_resolver[media_url_resolver].
 . **CSS Updates**:
-.. Remove `.mce-*` classes and use `.tox-*` classes.
-.. Review custom skins and stylesheets for compatibility with Oxide.
+.. Update custom styles to align with the new Oxide standard. While many `+.mce-*+` classes have been replaced with `+.tox-*+` classes, some `+.mce-*+` prefixes remain in use. Review your CSS to ensure compatibility.
 . **Testing and Deployment**:
 .. Thoroughly test your updated configuration before production deployment.
 .. Validate media, iframe, and content security settings.

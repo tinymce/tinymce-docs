@@ -122,7 +122,6 @@ license_key: "your-license-key"
 .. Update media embed handling (`media_url_resolver` API changes). see xref:media.adoc#media_url_resolver[media_url_resolver].
 . **CSS Updates**:
 .. Update custom styles to align with the new Oxide standard. While many `+.mce-*+` classes have been replaced with `+.tox-*+` classes, some `+.mce-*+` prefixes remain in use. Review your CSS to ensure compatibility.
-.. Review custom skins and stylesheets for compatibility with Oxide.
 . **Testing and Deployment**:
 .. Thoroughly test your updated configuration before production deployment.
 .. Validate media, iframe, and content security settings.

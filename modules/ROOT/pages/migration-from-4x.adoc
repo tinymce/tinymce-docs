@@ -94,7 +94,7 @@ convert_unsafe_embeds: true
 
 * **Legacy License**: {productname} 4 was licensed under LGPL 2.1.
 * **New License**: {productname} {release-version} is licensed under GPL v2+ or a commercial license.
-* **Impact**: The xref:license-key.adoc[License key] option is required as part of your editor configuration if self-hosting {productname}.
+* **Impact**: The xref:license-key.adoc[License key] option is required as part of your editor configuration if self-hosting {productname}. This requirement does not apply if you are loading {productname} from the cloud.
 
 .Example:
 [source,js]

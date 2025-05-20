@@ -14,10 +14,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} {release-version} was released for {enterpriseversion} and {cloudname} on <weekday>, <month> <DD>^<st|nd|rd|th>^, <YYYY>. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
-// Remove sections and section boilerplates as necessary.
-// Pluralise as necessary or remove the placeholder plural marker.
 * xref:new-premium-plugin<s>[New Premium plugin<s>]
-* xref:new-open-source-plugin<s>[New Open Source plugin<s>]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
 * xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
@@ -30,29 +27,19 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:deprecated[Deprecated]
 * xref:known-issues[Known issues]
 
+[NOTE]
+For additional details on {productname} {release-version} breaking changes when considering upgrading, see xref:migration-from-7x.adoc[Migrating from {productname} 7 to {productname} {release-version}].
 
 [[new-premium-plugin<s>]]
 New Premium plugin<s>
 
 The following new Premium plugin was released alongside {productname} {release-version}.
 
-=== <Premium plugin name>
+// === <Premium plugin name>
 
-The new Premium plugin, **<Premium plugin name>** // description here.
+// The new Premium plugin, **<Premium plugin name>** // description here.
 
-For information on the **<Premium plugin name>** plugin, see xref:<plugincode>.adoc[<Premium plugin name>].
-
-
-[[new-open-source-plugin]]
-== New Open Source plugin
-
-The following new Open Source plugin was released alongside {productname} {release-version}.
-
-=== <Open source plugin name>
-
-The new open source plugin, **<Open source plugin name>** // description here.
-
-For information on the **<Open source plugin name>** plugin, see xref:<plugincode>.adoc[<Open source plugin name>].
+// For information on the **<Premium plugin name>** plugin, see xref:<plugincode>.adoc[<Premium plugin name>].
 
 
 [[accompanying-premium-plugin-changes]]
@@ -60,17 +47,17 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+// === <Premium plugin name 1> <Premium plugin name 1 version>
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+// The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+// **<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
 
-==== <Premium plugin name 1 change 1>
+// ==== <Premium plugin name 1 change 1>
 
-// CCFR here.
+// // CCFR here.
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+// For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
@@ -78,9 +65,9 @@ For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode
 
 The following Premium plugin has been announced as reaching its end-of-life:
 
-=== <Premium plugin name eol>
+// === <Premium plugin name eol>
 
-{productname}’s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
+// {productname}’s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
 
 
 [[accompanying-open-source-plugin-end-of-life-announcement]]
@@ -88,9 +75,9 @@ The following Premium plugin has been announced as reaching its end-of-life:
 
 The following open source plugin has been announced as reaching its end-of-life:
 
-=== <Open source plugin name eol>
+// === <Open source plugin name eol>
 
-{productname}’s xref:<plugincode>.adoc[<Open source plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
+// {productname}’s xref:<plugincode>.adoc[<Open source plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
 
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
@@ -112,7 +99,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following improvement<s>:
 
-=== <TINY-vwxyz 1 changelog entry>
+// === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
 
 // CCFR here.
@@ -123,7 +110,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following addition<s>:
 
-=== <TINY-vwxyz 1 changelog entry>
+// === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
 
 // CCFR here.
@@ -134,7 +121,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following change<s>:
 
-=== <TINY-vwxyz 1 changelog entry>
+// === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
 
 // CCFR here.
@@ -145,7 +132,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following removal<s>:
 
-=== <TINY-vwxyz 1 changelog entry>
+// === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
 
 // CCFR here.
@@ -156,7 +143,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-=== <TINY-vwxyz 1 changelog entry>
+// === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
 
 // CCFR here.
@@ -167,7 +154,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} includes <a fix | fixes for the following security issue<s>:
 
-=== <TINY-vwxyz 1 changelog entry>
+// === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
 
 // CCFR here.
@@ -178,9 +165,10 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} includes the following deprecation<s>:
 
-=== The `<plugin>` configuration property, `<name>`, has been deprecated
+// === The `<plugin>` configuration property, `<name>`, has been deprecated
+// #TINY-vwxyz1
 
-// placeholder here.
+// CCFR here.
 
 
 [[known-issues]]
@@ -190,7 +178,8 @@ This section describes issues that users of {productname} {release-version} may 
 
 There <is one | are <number> known issue<s> in {productname} {release-version}.
 
-=== <TINY-vwxyz 1 changelog entry>
+// === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
 
 // CCFR here.
+// **Status**: This issue is currently being investigated.

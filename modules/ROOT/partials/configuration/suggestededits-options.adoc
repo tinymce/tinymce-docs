@@ -1,23 +1,3 @@
-[[suggestededits_uid]]
-== `suggestededits_uid`
-
-The `{plugincode}_uid` is a _required_ option that takes as input a unique string to identify the current user. This is used to attribute changes made by the user.  
-
-*Type:* `+String+`
-
-=== Example: using `{plugincode}_uid`
-
-// Add a working and tested configuration.
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',  // Change this value according to your HTML
-  plugins: 'suggestededits',
-  toolbar: 'suggestededits',
-  suggestededits_uid: 'unique-identifier' // replace this with a unique string to identify the user 
-});
-----
-
 [[suggestededits_model]]
 == `suggestededits_model`
 
@@ -104,7 +84,7 @@ In either case, if a model is not provided, the plugin will generate a new model
 
 *Default value:* `'html'`
 
-=== Example: using `{plugincode}_css_url`
+=== Example: using `{plugincode}_content`
 
 // Add a working and tested configuration.
 [source,js]
@@ -116,65 +96,5 @@ tinymce.init({
   suggestededits_uid: 'unique-identifier', // replace this with a unique string to identify the user
   suggestededits_model,
   suggestededits_content: 'model' // change this value to set the content source
-});
-----
-
-[[suggestededits_css_url]]
-== `suggestededits_css_url`
-
-The `{plugincode}_css_url` option sets the location where a CSS file containing change annotations in the {pluginname} view should be loaded from. To override the default CSS classes, use this option alongside `{plugincode}_diff_classes`. 
-
-*Type:* `+String+`
-
-*Default value:* `'${pluginUrl}/css/{plugincode}.css'`
-
-=== Example: using `{plugincode}_css_url`
-
-// Add a working and tested configuration.
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',  // Change this value according to your HTML
-  suggestededits_css_url: './suggestededits.css'
-});
-----
-
-[[suggestededits_diff_classes]]
-== `suggestededits_diff_classes`
-
-The `{plugincode}_diff_classes` option configures the CSS classes applied to the change annotations in the {pluginname} view. This is useful to set custom styles and must be used in combination with the `{plugincode}_css_url` option. 
-
-[NOTE]
-The CSS class names must exist in the xref:{plugincode}_css_url[`+suggestededits_css_url+`].
-
-*Type:* `+Object+`
-
-*Default value:* `addition`, `removal`, `modification`
-
-Below are the default CSS classes: 
-
-[source,js]
-----
-{
-  addition: 'tox-suggestededits__annotation--added',
-  removal: 'tox-suggestededits__annotation--removed',
-  modification: 'tox-suggestededits__annotation--modified'
-}
-----
-
-=== Example: using `{plugincode}_diff_classes`
-
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  plugins: 'suggestededits',
-  toolbar: 'suggestededits',
-  suggestededits_css_url: './suggestededits.css',
-  suggestededits_diff_classes: {
-    addition: 'added',
-    removal: 'removed',
-    modification: 'modified'
-  }
 });
 ----

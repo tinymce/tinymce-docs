@@ -199,7 +199,9 @@ license_key: "your-license-key"
 
 . **Backup and Prepare**: Ensure comprehensive backups before upgrading.
 . **Update Core Initialization**:
-.. Remove `theme`, `skin`, and `forced_root_block: false` options.
+.. Update `theme`, `skin`, and to refect the new oxide theme and skin.
+... In {productname} 4, there were multiple themes available including 'modern', 'inlite', and 'mobile'. These themes were removed in {productname} 5 and combined into a single responsive theme called "Silver".
+.. Update `forced_root_block: false` options to `forced_root_block: "<p>"`.
 .. Consolidate toolbars.
 .. Review new v{release-version} defaults for security settings.
 . **Plugin Migration**:

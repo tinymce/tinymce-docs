@@ -21,9 +21,9 @@
 [source,js]
 ----
 tinymce.init({
-selector: "textarea",
-skin: "oxide-dark",
-content_css: "dark",
+  selector: "textarea",
+  skin: "oxide-dark",
+  content_css: "dark",
 });
 ----
 
@@ -108,8 +108,8 @@ tinymce.init({
 [source,js]
 ----
 tinymce.init({
-selector: "textarea",
-forced_root_block: "p"
+  selector: "textarea",
+  forced_root_block: "p"
 });
 ----
 
@@ -153,8 +153,8 @@ tinymce.init({
 [source,js]
 ----
 tinymce.init({
-selector: "textarea",
-license_key: "your-license-key"
+  selector: "textarea",
+  license_key: "your-license-key"
 });
 ----
 

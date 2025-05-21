@@ -20,9 +20,9 @@
 [source,js]
 ----
 tinymce.init({
-selector: "textarea",
-skin: "oxide-dark",
-content_css: "dark",
+  selector: "textarea",
+  skin: "oxide-dark",
+  content_css: "dark",
 });
 ----
 

@@ -28,11 +28,9 @@ content_css: "dark",
 
 === Plugin Ecosystem
 
-=== Plugin Ecosystem
-
 The {productname} plugin ecosystem underwent a significant overhaul starting in version 6.0, with many plugins either removed, integrated into the core, or made premium-only. The following summarizes these changes.
 
-* **Removed Plugins**:
+* **Removed Plugins** (no longer available as of {productname} 6.0):
 ** `colorpicker`: Deprecated in 5.0; functionality absorbed into core. Removed in 6.0.
 ** `contextmenu`: Deprecated in version 5.0 following the integration of context menu functionality into the core editor. Removed in version 6.0. For more information, see the link:https://www.tiny.cloud/docs/tinymce/latest/contextmenu/[contextmenu documentation].
 ** `tabfocus`: Removed in 6.0. Keyboard navigation via Tab is now handled by the browser and editor core.
@@ -70,6 +68,7 @@ The {productname} plugin ecosystem underwent a significant overhaul starting in 
 If you used the following toolbar buttons or menu options, they have changed names across major {productname} versions. Please refer to the release notes for each version for complete migration details.
 
 {productname} 5 → {productname} 6:
+
 * `formatselect` → `blocks` (toolbar item)
 * `blockformats` → `blocks` (menu item)
 * `styleselect` → `styles` (toolbar item)
@@ -83,15 +82,16 @@ If you used the following toolbar buttons or menu options, they have changed nam
 * `tocupdate` → `tableofcontentsupdate` (toolbar item)
 
 {productname} 6 → {productname} 7:
+
 * `InsertOrderedList` and `InsertUnorderedList` commands were removed from the core and are now provided by the `lists` plugin.
 * Default text pattern triggers were updated to activate on `Space` instead of `Enter`. A `trigger` property was added to configure block-level text pattern behavior.
 
-Refer to the latest release notes at https://www.tiny.cloud/docs/tinymce/latest/release-notes/ for further details.
+Refer to the latest release notes at link:https://www.tiny.cloud/docs/tinymce/latest/release-notes/[latest release notes] for further details.
 ====
 
-TIP: Always refer to the latest plugin documentation at link:https://www.tiny.cloud/docs/plugins/ for up-to-date availability and migration guidance.
+TIP: Always refer to the latest plugin documentation at xref:plugins.adoc[plugins] for up-to-date availability and migration guidance.
 
-.Example:
+.Example of Toolbar Changes:
 [source,js]
 ----
 tinymce.init({

@@ -29,24 +29,22 @@ content_css: "dark",
 
 === Plugin Ecosystem
 
-The {productname} plugin ecosystem was significantly restructured in version 6.0, with several plugins being removed, folded into the core, or reclassified as premium features. The following breakdown clarifies the status of each affected plugin.
+The {productname} plugin ecosystem was significantly restructured in version 6.0, with several plugins being removed, folded into the {productcorename}, or reclassified as premium features. The following breakdown clarifies the status of each affected plugin.
 
 * **Removed Plugins** (no longer available as of {productname} 6.0):
-** `colorpicker`: Deprecated in 5.0; functionality absorbed into core. Removed in 6.0.
-** `contextmenu`: Deprecated in version 5.0 following the integration of context menu functionality into the core editor. Removed in version 6.0. For more information, see the link:https://www.tiny.cloud/docs/tinymce/latest/contextmenu/[contextmenu documentation].
-** `tabfocus`: Removed in 6.0. Keyboard navigation via Tab is now handled by the browser and editor core.
-** `bbcode`: Deprecated in 5.9.0. Removed in 6.0.
-** `fullpage`: Deprecated in 5.9.0. Removed in 6.0.
-** `legacyoutput`: Deprecated in 5.9.0. Removed in 6.0.
-** `spellchecker`: Deprecated in 5.9.0. Removed in 6.0. Use `browser_spellcheck: true` or the premium xref:introduction-to-tiny-spellchecker.adoc[Spell Checker] plugin.
-** `template`: Removed in {release-version}. Integrators are encouraged to migrate to the premium xref:advanced-templates.adoc[Templates] plugin.
-** `imagetools`: Removed in 6.0. Replaced by the Premium xref:editimage.adoc[Enhanced Image Editing] feature, available via the `+editimage+` plugin introduced in TinyMCE 6.0.
+** `bbcode`, `fullpage`, `legacyoutput`: Deprecated in 5.9.0. Removed in 6.0.
 
-* **Integrated into Core**:
-** `paste`, `hr`, `noneditable`, `table`, `print`, and `contextmenu`: These plugins were absorbed into the {productname} core and no longer require separate installation.
+* **Integrated into {productcorename}**:
+** `paste`, `hr`, `noneditable`, `table`, `print`, `colorpicker` and `contextmenu`: These plugins were absorbed into {productcorename} and no longer require separate installation.
+** `contextmenu`: Deprecated in version 5.0 following the integration of context menu functionality into {productcorename} editor. Removed in version 6.0. For more information, see the link:https://www.tiny.cloud/docs/tinymce/latest/contextmenu/[contextmenu documentation].
+** `tabfocus`: Removed in 6.0. Keyboard navigation via Tab is now handled by the browser and {productcorename}.
 
 * **Now Premium Only**:
-** `spellchecker`, `editimage`, `mediaembed`, `tableofcontents`: These features are available through premium plugins.
+** `mediaembed`, `tableofcontents`: These features are available through premium plugins.
+** `spellchecker`: Deprecated in 5.9.0. Removed in 6.0.
+*** Use `browser_spellcheck: true` or the premium xref:introduction-to-tiny-spellchecker.adoc[Spell Checker] plugin.
+** `template`: Removed in {release-version}. Replaced by the premium xref:advanced-templates.adoc[Templates] plugin.
+** `imagetools`: Removed in 6.0. Replaced by the premium xref:editimage.adoc[Enhanced Image Editing] feature, available via the `+editimage+` plugin introduced in TinyMCE 6.0.
 
 ==== Plugin Migration Tips
 
@@ -64,8 +62,8 @@ The {productname} plugin ecosystem was significantly restructured in version 6.0
 * `imagetools`: (removed in v6):
 ** Use the premium xref:editimage.adoc[Enhanced Image Editing] or xref:uploadcare.adoc[Image Optimizer Powered by Uploadcare] plugin for image editing capabilities.
 
-[NOTE]
-====
+==== Toolbar and Menu name changes
+
 If you used the following toolbar buttons or menu options, they have changed names across major {productname} versions. Please refer to the release notes for each version for complete migration details.
 
 {productname} 5 → {productname} 6:
@@ -84,11 +82,10 @@ If you used the following toolbar buttons or menu options, they have changed nam
 
 {productname} 6 → {productname} 7:
 
-* `InsertOrderedList` and `InsertUnorderedList` commands were removed from the core and are now provided by the `lists` plugin.
+* `InsertOrderedList` and `InsertUnorderedList` commands were removed from {productcorename} and are now provided by the `lists` plugin.
 * Default text pattern triggers were updated to activate on `Space` instead of `Enter`. A `trigger` property was added to configure block-level text pattern behavior.
 
 Refer to the latest release notes at link:https://www.tiny.cloud/docs/tinymce/latest/release-notes/[latest release notes] for further details.
-====
 
 TIP: Always refer to the latest plugin documentation at xref:plugins.adoc[plugins] for up-to-date availability and migration guidance.
 

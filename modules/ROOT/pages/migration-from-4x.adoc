@@ -117,11 +117,11 @@ forced_root_block: "p"
 
 * **Removed in {productname} 6.0**: Legacy mobile theme was removed, but mobile-specific configuration is still supported through the `mobile` option.
 * **Default Changes in TinyMCE 7.0**:
-** xref:content-filtering.adoc#sandbox-iframes[sandbox iframes]: Now defaults to `true` (adds sandbox attribute to iframes)
-** xref:content-filtering.adoc#convert-unsafe-embeds[convert_unsafe_embeds]: Now defaults to `true` (converts object/embed elements to safer alternatives)
-** xref:accessibility.adoc#highlight_on_focus[highlight_on_focus]: Now defaults to `true` (adds focus outline to editors)
+** xref:content-filtering.adoc#sandbox-iframes[`sandbox iframes`]: Now defaults to `true` (adds sandbox attribute to iframes)
+** xref:content-filtering.adoc#convert-unsafe-embeds[`convert_unsafe_embeds`]: Now defaults to `true` (converts object/embed elements to safer alternatives)
+** xref:accessibility.adoc#highlight_on_focus[`highlight_on_focus`]: Now defaults to `true` (adds focus outline to editors)
 * **New Options in {productname} 7.0**:
-** xref:license-key.adoc[license_key]: Must be set to `gpl` or a valid license key
+** xref:license-key.adoc[`license_key`]: Must be set to `gpl` or a valid license key
 ** xref:content-filtering.adoc#sandbox-iframes-exclusions[`sandbox_iframes_exclusions`]: List of URL hosts to exclude from iframe sandboxing
 
 .Example:
@@ -164,7 +164,7 @@ license_key: "your-license-key"
 . **Update Core Initialization**:
 .. Update `theme`, `skin`, and to refect the new oxide theme and skin.
 ... In {productname} 4, there were multiple themes available including 'modern', 'inlite', and 'mobile'. These themes were removed in {productname} 5 and combined into a single responsive theme called "Silver".
-.. Update `forced_root_block: false` options to `forced_root_block: "<p>"`.
+.. Update `forced_root_block: false` options to `forced_root_block: "p"`.
 .. Consolidate toolbars.
 .. Review new v{release-version} defaults for security settings.
 . **Plugin Migration**:

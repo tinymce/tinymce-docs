@@ -28,70 +28,153 @@ content_css: "dark",
 
 === Plugin Ecosystem
 
-// The contextmenu plugin was absorbed into core, the options still works, see https://www.tiny.cloud/docs/tinymce/latest/contextmenu/. not sure why this is mentioned as removed.
-* **Moved to Core**: `paste`, `hr`, `table`, `noneditable`, `nonbreaking`.
-* **Removed**: `imagetools`, `template`, `colorpicker`, `contextmenu`, `legacyoutput`.
-* **Premium Only**: `mediaembed`, `toc` (renamed to `tableofcontents`), `advtemplate`.
+=== Plugin Ecosystem
 
-Plugin Migration Examples:
+The {productname} plugin ecosystem underwent a significant overhaul starting in version 6.0, with many plugins either removed, integrated into the core, or made premium-only. The following summarizes these changes.
 
-* `contextmenu` (Removed in v5):
-** Replace with browser-native context menus or custom menu logic.
+* **Removed Plugins**:
+** `colorpicker`: Deprecated in 5.0; functionality absorbed into core. Removed in 6.0.
+** `contextmenu`: Deprecated in version 5.0 following the integration of context menu functionality into the core editor. Removed in version 6.0. For more information, see the link:https://www.tiny.cloud/docs/tinymce/latest/contextmenu/[contextmenu documentation].
+** `tabfocus`: Removed in 6.0. Keyboard navigation via Tab is now handled by the browser and editor core.
+** `bbcode`: Deprecated in 5.9.0. Removed in 6.0.
+** `fullpage`: Deprecated in 5.9.0. Removed in 6.0.
+** `legacyoutput`: Deprecated in 5.9.0. Removed in 6.0.
+** `spellchecker`: Deprecated in 5.9.0. Removed in 6.0. Use `browser_spellcheck: true` or the premium xref:introduction-to-tiny-spellchecker.adoc[Spell Checker] plugin.
+** `template`: Removed in {release-version}. Integrators are encouraged to migrate to the premium xref:advanced-templates.adoc[Templates] plugin.
+** `imagetools`: Removed in 6.0.
+
+* **Integrated into Core**:
+** `paste`, `hr`, `table`, `noneditable`, `nonbreaking`, `print`, and `contextmenu`: These plugins were absorbed into the {productname} core and no longer require separate installation.
+
+* **Now Premium Only**:
+** `spellchecker`, `editimage`, `mediaembed`, `tableofcontents`:  These features are available through premium plugins.
+** `toc`: Renamed to `tableofcontents` and now premium.
+** `advtemplate`: Replaces the `template` plugin for advanced templating use cases.
+
+.Plugin Migration Examples
+
+* `contextmenu` (removed in v6):
+** Use browser-native context menus or custom logic.
 ** Consider using link:https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.editor.ui.registry/#addContextMenu[editor.ui.registry.addContextMenu] for custom right-click actions.
-* `bbcode` (Removed in v6):
-** Replace with custom parsing or server-side processing if needed.
-* `fullpage` (Removed in v6):
-** No direct replacement. Use custom templates or server-side processing for full HTML documents.
-* `template` (Removed in v{release-version}):
-** Use premium xref:advanced-templates.adoc[advtemplate] or implement custom modal dialogs for templating.
-* `textcolor` (Removed in v6):
-** Use `forecolor` and `backcolor` buttons instead.
+* `bbcode` (removed in v6):
+** Implement custom parsing or server-side processing if BBCode support is required.
+* `fullpage` (removed in v6):
+** Use custom templates or server-side logic to handle full HTML documents.
+* `template` (removed in v{release-version}):
+** Use the premium xref:advanced-templates.adoc[advtemplate] plugin or implement custom modal dialogs.
+* `textcolor` (removed in v6):
+** Use the `forecolor` and `backcolor` toolbar buttons for text color functionality.
+
+[NOTE]
+====
+If you used the following toolbar buttons or menu options, they have changed names across major {productname} versions. Please refer to the release notes for each version for complete migration details.
+
+{productname} 5 → {productname} 6:
+* `formatselect` → `blocks` (toolbar item)
+* `blockformats` → `blocks` (menu item)
+* `styleselect` → `styles` (toolbar item)
+* `formats` → `styles` (menu item)
+* `fontselect` → `fontfamily` (toolbar item)
+* `fontformats` → `fontfamily` (menu item)
+* `fontsizeselect` → `fontsize` (toolbar item)
+* `fontsizes` → `fontsize` (menu item)
+* `imagetools` → `editimage` (plugin and related toolbar items)
+* `toc` → `tableofcontents` (plugin, menu item, and toolbar item)
+* `tocupdate` → `tableofcontentsupdate` (toolbar item)
+
+{productname} 6 → {productname} 7:
+* `InsertOrderedList` and `InsertUnorderedList` commands were removed from the core and are now provided by the `lists` plugin.
+* Default text pattern triggers were updated to activate on `Space` instead of `Enter`. A `trigger` property was added to configure block-level text pattern behavior.
+
+Refer to the latest release notes at https://www.tiny.cloud/docs/tinymce/latest/release-notes/ for further details.
+====
+
+TIP: Always refer to the latest plugin documentation at link:https://www.tiny.cloud/docs/plugins/ for up-to-date availability and migration guidance.
 
 .Example:
 [source,js]
 ----
 tinymce.init({
-selector: "textarea",
-toolbar: "undo redo | forecolor backcolor | bold italic | alignleft aligncenter alignright alignjustify",
-plugins: ["lists link image table code"],
+  selector: "textarea",
+  toolbar: "undo redo | forecolor backcolor | bold italic | alignleft aligncenter alignright alignjustify",
+  plugins: ["lists link image table code"]
 });
 ----
 
 === Content Structure
 
 * **Removed**: `forced_root_block: false`.
-** **Requirement**: All content must be wrapped in block elements (e.g., `<p>`).
+** **Requirement**: All editor content must be enclosed in block elements (e.g., `<p>`).
 
 .Example:
 [source,js]
 ----
 tinymce.init({
-selector: "textarea",
-forced_root_block: "p"
+  selector: "textarea",
+  forced_root_block: "p"
 });
 ----
 
-=== API and Initialization Changes
+=== Configuration Changes
 
-// multiple toolbars still work https://www.tiny.cloud/docs/tinymce/latest/toolbar-configuration-options/#toolbarn not sure why this is mentioned as decricated
-* **Deprecated**: toolbar1, toolbar2, theme, skin, mobile configurations.
-* **New Options**: Consolidate toolbar settings and use new options like xref:content-filtering.adoc#sandbox-iframes[sandbox iframes], xref:content-filtering.adoc#convert-unsafe-embeds[convert_unsafe_embeds], and xref:accessibility.adoc#highlight_on_focus[highlight_on_focus].
-* **UI API Updates**: Rewrite custom plugins using the `editor.ui.registry.*` API. Replace methods like `editor.addButton`, `editor.addMenuItem`, and `editor.windowManager.open`.
-* **Promise-based Methods**: `media_url_resolver` now returns a Promise, requiring async handling.
-* **Obsolete Options**: Remove `force_hex_color` and update `table_responsive_width` to `table_sizing_mode`.
+* **Removed in {productname} 6.0**: Legacy mobile theme was removed, but mobile-specific configuration is still supported through the `mobile` option.
+
+* **UI API Updates**:
+** Update custom plugins to use `+editor.ui.registry.*+`.
+** Replace deprecated methods like `+editor.addButton+`, `+editor.addMenuItem+`, and `+editor.windowManager.open+`.
+
+* **Promise-Based Methods**:
+** `media_url_resolver` now requires a `Promise` return for asynchronous handling.
+
+* **Removed Options**:
+** `force_hex_color` has been removed. Use standard CSS color declarations.
+** `table_responsive_width` replaced by `table_sizing_mode`.
+
+* **Default Changes in TinyMCE 7.0**:
+  * xref:content-filtering.adoc#sandbox-iframes[sandbox iframes]: Now defaults to `true` (adds sandbox attribute to iframes)
+  * xref:content-filtering.adoc#convert-unsafe-embeds[convert_unsafe_embeds]: Now defaults to `true` (converts object/embed elements to safer alternatives)
+  * xref:accessibility.adoc#highlight_on_focus[highlight_on_focus]: Now defaults to `true` (adds focus outline to editors)
+
+* **New Options in {productname} 7.0**:
+  * xref:license-key.adoc[license_key]: Must be set to `gpl` or a valid license key
+  * xref:content-filtering.adoc#sandbox-iframes-exclusions[`sandbox_iframes_exclusions`]: List of URL hosts to exclude from iframe sandboxing
 
 .Example:
 [source,js]
 ----
 tinymce.init({
-selector: "textarea",
-toolbar: "undo redo | blocks | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | removeformat",
-toolbar_mode: "floating",
-sandbox_iframes: true,
-convert_unsafe_embeds: true,
-highlight_on_focus: true
+  selector: "textarea",
+  toolbar: "undo redo | blocks | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | removeformat",
+  toolbar_mode: "floating",
+  license_key: "gpl", // Required in TinyMCE 7.0 if self-hosting
+  // Security options now enabled by default in TinyMCE 7.0
+  sandbox_iframes: true,
+  convert_unsafe_embeds: true,
+  // Optional: exclude specific domains from iframe sandboxing
+  sandbox_iframes_exclusions: ["youtube.com", "vimeo.com"],
+  // Accessibility improvement, now enabled by default
+  highlight_on_focus: true
 });
 ----
+
+TIP: For up-to-date plugin availability and configuration references, see link:https://www.tiny.cloud/docs/plugins/.
+
+[NOTE]
+====
+Refer to version-specific release notes for changes in toolbar button names and command availability across versions 5, 6, and 7. For example:
+
+{productname} 5 → {productname} 6:
+* `formatselect` → `blocks`
+* `styleselect` → `styles`
+* `fontselect` → `fontfamily`
+* `fontsizeselect` → `fontsize`
+* `imagetools` → `editimage`
+* `toc` → `tableofcontents`
+
+{productname} 6 → {productname} 7:
+* `InsertOrderedList` / `InsertUnorderedList` commands removed from core (use `lists` plugin).
+* Default text pattern triggers updated from `Enter` to `Space`, configurable via `trigger`.
+====
 
 === Licensing Changes (GPL v2+ and Commercial)
 

@@ -48,7 +48,7 @@ The {productname} plugin ecosystem was significantly restructured in version 6.0
 * **Now Premium Only**:
 ** `spellchecker`, `editimage`, `mediaembed`, `tableofcontents`: These features are available through premium plugins.
 
-.Plugin Migration Examples
+==== Plugin Migration Tips
 
 * `contextmenu` (removed in v6):
 ** Use browser-native context menus or custom logic.
@@ -120,12 +120,12 @@ forced_root_block: "p"
 
 * **Removed in {productname} 6.0**: Legacy mobile theme was removed, but mobile-specific configuration is still supported through the `mobile` option.
 * **Default Changes in TinyMCE 7.0**:
-  * xref:content-filtering.adoc#sandbox-iframes[sandbox iframes]: Now defaults to `true` (adds sandbox attribute to iframes)
-  * xref:content-filtering.adoc#convert-unsafe-embeds[convert_unsafe_embeds]: Now defaults to `true` (converts object/embed elements to safer alternatives)
-  * xref:accessibility.adoc#highlight_on_focus[highlight_on_focus]: Now defaults to `true` (adds focus outline to editors)
+** xref:content-filtering.adoc#sandbox-iframes[sandbox iframes]: Now defaults to `true` (adds sandbox attribute to iframes)
+** xref:content-filtering.adoc#convert-unsafe-embeds[convert_unsafe_embeds]: Now defaults to `true` (converts object/embed elements to safer alternatives)
+** xref:accessibility.adoc#highlight_on_focus[highlight_on_focus]: Now defaults to `true` (adds focus outline to editors)
 * **New Options in {productname} 7.0**:
-  * xref:license-key.adoc[license_key]: Must be set to `gpl` or a valid license key
-  * xref:content-filtering.adoc#sandbox-iframes-exclusions[`sandbox_iframes_exclusions`]: List of URL hosts to exclude from iframe sandboxing
+** xref:license-key.adoc[license_key]: Must be set to `gpl` or a valid license key
+** xref:content-filtering.adoc#sandbox-iframes-exclusions[`sandbox_iframes_exclusions`]: List of URL hosts to exclude from iframe sandboxing
 
 .Example:
 [source,js]

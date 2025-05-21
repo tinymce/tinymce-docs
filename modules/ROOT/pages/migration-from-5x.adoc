@@ -49,7 +49,7 @@ The {productname} plugin ecosystem underwent a significant overhaul starting in 
 ** `toc`: Renamed to `tableofcontents` and now premium.
 ** `advtemplate`: Replaces the `template` plugin for advanced templating use cases.
 
-.Plugin Migration Examples
+==== Plugin Migration Examples
 
 * `contextmenu` (removed in v6):
 ** Use browser-native context menus or custom logic.
@@ -133,13 +133,13 @@ tinymce.init({
 ** `table_responsive_width` replaced by `table_sizing_mode`.
 
 * **Default Changes in TinyMCE 7.0**:
-  * xref:content-filtering.adoc#sandbox-iframes[sandbox iframes]: Now defaults to `true` (adds sandbox attribute to iframes)
-  * xref:content-filtering.adoc#convert-unsafe-embeds[convert_unsafe_embeds]: Now defaults to `true` (converts object/embed elements to safer alternatives)
-  * xref:accessibility.adoc#highlight_on_focus[highlight_on_focus]: Now defaults to `true` (adds focus outline to editors)
+** xref:content-filtering.adoc#sandbox-iframes[sandbox iframes]: Now defaults to `true` (adds sandbox attribute to iframes)
+** xref:content-filtering.adoc#convert-unsafe-embeds[convert_unsafe_embeds]: Now defaults to `true` (converts object/embed elements to safer alternatives)
+** xref:accessibility.adoc#highlight_on_focus[highlight_on_focus]: Now defaults to `true` (adds focus outline to editors)
 
 * **New Options in {productname} 7.0**:
-  * xref:license-key.adoc[license_key]: Must be set to `gpl` or a valid license key
-  * xref:content-filtering.adoc#sandbox-iframes-exclusions[`sandbox_iframes_exclusions`]: List of URL hosts to exclude from iframe sandboxing
+** xref:license-key.adoc[license_key]: Must be set to `gpl` or a valid license key
+** xref:content-filtering.adoc#sandbox-iframes-exclusions[`sandbox_iframes_exclusions`]: List of URL hosts to exclude from iframe sandboxing
 
 .Example:
 [source,js]
@@ -166,6 +166,7 @@ TIP: For up-to-date plugin availability and configuration references, see link:h
 Refer to version-specific release notes for changes in toolbar button names and command availability across versions 5, 6, and 7. For example:
 
 {productname} 5 → {productname} 6:
+
 * `formatselect` → `blocks`
 * `styleselect` → `styles`
 * `fontselect` → `fontfamily`
@@ -174,6 +175,7 @@ Refer to version-specific release notes for changes in toolbar button names and 
 * `toc` → `tableofcontents`
 
 {productname} 6 → {productname} 7:
+
 * `InsertOrderedList` / `InsertUnorderedList` commands removed from core (use `lists` plugin).
 * Default text pattern triggers updated from `Enter` to `Space`, configurable via `trigger`.
 ====

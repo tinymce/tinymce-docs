@@ -39,7 +39,7 @@ The {productname} plugin ecosystem underwent a significant overhaul starting in 
 ** `legacyoutput`: Deprecated in 5.9.0. Removed in 6.0.
 ** `spellchecker`: Deprecated in 5.9.0. Removed in 6.0. Use `browser_spellcheck: true` or the premium xref:introduction-to-tiny-spellchecker.adoc[Spell Checker] plugin.
 ** `template`: Removed in {release-version}. Integrators are encouraged to migrate to the premium xref:advanced-templates.adoc[Templates] plugin.
-** `imagetools`: Removed in 6.0.
+** `imagetools`: Removed in 6.0. Replaced by the Premium xref:editimage.adoc[Enhanced Image Editing] feature, available via the `+editimage+` plugin introduced in TinyMCE 6.0.
 
 * **Integrated into Core**:
 ** `paste`, `hr`, `table`, `noneditable`, `nonbreaking`, `print`, and `contextmenu`: These plugins were absorbed into the {productname} core and no longer require separate installation.
@@ -62,6 +62,8 @@ The {productname} plugin ecosystem underwent a significant overhaul starting in 
 ** Use the premium xref:advanced-templates.adoc[advtemplate] plugin or implement custom modal dialogs.
 * `textcolor` (removed in v6):
 ** Use the `forecolor` and `backcolor` toolbar buttons for text color functionality.
+* `imagetools`: (removed in v6):
+** Use the premium xref:editimage.adoc[Enhanced Image Editing] or xref:uploadcare.adoc[Image Optimizer Powered by Uploadcare] plugin for image editing capabilities.
 
 [NOTE]
 ====

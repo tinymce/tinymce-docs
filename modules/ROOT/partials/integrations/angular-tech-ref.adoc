@@ -8,6 +8,7 @@
 ** xref:licensekey[`+licenseKey+`]
 ** xref:cloudchannel[`+cloudChannel+`]
 ** xref:disabled[`+disabled+`]
+** xref:readonly[`+readonly+`]
 ** xref:id[`+id+`]
 ** xref:init[`+init+`]
 ** xref:initialvalue[`+initialValue+`]
@@ -97,6 +98,7 @@ The editor accepts the following properties:
   apiKey="no-api-key"
   cloudChannel="{productmajorversion}"
   [disabled]="false"
+  [readonly]="false"
   id=""
   [init]="{ }"
   initialValue=""
@@ -191,6 +193,24 @@ The `+disabled+` property can dynamically switch the editor between a "disabled"
 [source,html]
 ----
 <editor [disabled]="true" />
+----
+
+[[readonly]]
+=== `+readonly+`
+
+The `+readonly+` property can dynamically switch the editor between a "read-only" mode (`+true+`) and the standard editable mode (`+false+`).
+
+*Type:* `+Boolean+`
+
+*Default value:* `+false+`
+
+*Possible values:* `+true+`, `+false+`
+
+==== Example: using `+readonly+`
+
+[source,html]
+----
+<editor [readonly]="true" />
 ----
 
 [[id]]

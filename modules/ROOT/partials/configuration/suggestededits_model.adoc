@@ -1,0 +1,21 @@
+[[suggestededits_model]]
+== `suggestededits_model`
+
+The `{plugincode}_model` option sets the initial model of the document to begin tracking changes. It takes as input an object representing the document, containing all edits made to the document up to that point. This model should be saved externally alongside the document, and loaded into the editor each time the document is opened. This will ensure that both the document and the model are in sync, and that the plugin can track edits correctly.
+
+If the model is not provided in the editor configuration, the plugin will create a new model from the current content of the editor. This model can be retrieved from the editor at any time using the xref:#get_model[`getModel` API].
+//*Type:* xref:#trackeddocument[TrackedDocument] `+Object+`
+
+=== Example: using `{plugincode}_model`
+
+// Add a working and tested configuration.
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // Change this value according to your HTML
+  plugins: 'suggestededits',
+  toolbar: 'suggestededits',
+  suggestededits_uid: 'unique-identifier', // replace this with a unique string to identify the user 
+  suggestededits_model // Model representing the document with up to date edits
+});
+----

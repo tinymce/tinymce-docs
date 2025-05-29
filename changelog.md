@@ -6,6 +6,10 @@ The format is loosely based on [Keep a Changelog](https://keepachangelog.com/en/
 
 ### Unreleased
 
+### 2025-05-29
+
+- DOC-3207: Update `Notices` file and minified notices.
+
 ### 2024-02-13
 
 - DOC-2174: added documentation for Mentions plugin's `getUsers` API deprecation to `6.0-release-notes-premium-changes.adoc` and `migration-from-5x.adoc`.

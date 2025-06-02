@@ -59,6 +59,31 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Comments
+
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** Premium plugin includes the following removal.
+
+==== Removed unused `css/tinycomments.css' and `css/tinycomments.js' files.
+// #TINY-11287
+
+In {release-version}, the **Comments** plugin underwent a significant cleanup of its styling infrastructure. The following changes were made:
+
+* Removed `css/tinycomments.css` and `css/tinycomments.js` files (functionality now handled by Oxide skin since version 7.4)
+* Eliminated CSS URL configuration options and plugin-level CSS loading code
+* Removed associated build tasks
+* Cleared obsolete CSS file references from demos and examples
+
+These changes:
+
+* Streamline the plugin's styling approach
+* Reduce maintenance overhead
+* Align with modern {productname} styling practices
+* Improve performance by removing unused code
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to Tiny Comments].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

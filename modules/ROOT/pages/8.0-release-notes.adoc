@@ -70,17 +70,17 @@ The {productname} {release-version} release includes an accompanying release of 
 
 In {release-version}, the **Comments** plugin underwent a significant cleanup of its styling infrastructure. The following changes were made:
 
-* Removed `css/tinycomments.css` and `css/tinycomments.js` files (functionality now handled by Oxide skin since version 7.4)
-* Eliminated CSS URL configuration options and plugin-level CSS loading code
-* Removed associated build tasks
-* Cleared obsolete CSS file references from demos and examples
+* Removed `css/tinycomments.css` and `css/tinycomments.js` files (functionality now handled by Oxide skin since version 7.4).
+* Eliminated CSS URL configuration options and plugin-level CSS loading code.
+* Removed associated build tasks.
+* Cleared obsolete CSS file references from demos and examples.
 
 These changes:
 
-* Streamline the plugin's styling approach
-* Reduce maintenance overhead
-* Align with modern {productname} styling practices
-* Improve performance by removing unused code
+* Streamline the plugin's styling approach.
+* Reduce maintenance overhead.
+* Align with modern {productname} styling practices.
+* Improve performance by removing unused code.
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to Tiny Comments].
 

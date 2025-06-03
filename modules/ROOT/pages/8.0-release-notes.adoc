@@ -59,6 +59,21 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Mentions
+
+The {productname} {release-version} release includes an accompanying release of the **Mentions** premium plugin.
+
+**Mentions** Premium plugin includes the following removal.
+
+=== Removed unused Mentions plugin stylesheet
+
+In {release-version}, the unused `mentions.css` file was removed from the **Mentions** plugin. In earlier versions (such as 7.9), this empty CSS file was still being loaded, despite its contents having been moved to the Oxide theme in a prior update. This change ensures cleaner resource loading and avoids unnecessary network requests. 
+
+[NOTE]
+The removal does not impact plugin functionality and applies to all editor modes.
+
+For information on the **Mentions** plugin, see: xref:mentions.adoc[Mentions].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

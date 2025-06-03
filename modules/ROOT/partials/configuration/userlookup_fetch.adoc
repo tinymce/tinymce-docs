@@ -1,5 +1,5 @@
-[[userlookup_fetch]]
-== `userlookup_fetch`
+[[fetch_users]]
+== `fetch_users`
 
 Required option to fetch a list of user IDs to display in the Suggested Edits view. This option uses the xref:#userlookupapi[`UserLookup API`].
 
@@ -12,8 +12,8 @@ tinymce.init({
   selector: 'textarea',  // Change this value according to your HTML
   plugins: 'suggestededits',
   toolbar: 'suggestededits',
-  userlookup_userid: 'unique-identifier', // replace this with a unique string to identify the user
-  userlookup_fetch: (ids) => fetch(`/api/users?ids=${ids.join(',')}`)
+  user_id: 'unique-identifier', // replace this with a unique string to identify the user
+  fetch_users: (ids) => fetch(`/api/users?ids=${ids.join(',')}`)
      .then((r) => r.json())
 });
 ----

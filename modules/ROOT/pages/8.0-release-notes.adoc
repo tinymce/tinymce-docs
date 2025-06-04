@@ -1,4 +1,3 @@
-
 = {productname} {release-version}
 :release-version: 8.0.0
 :navtitle: {productname} {release-version}
@@ -104,6 +103,19 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Added support for `skip_focus` option in ToggleToolbarDrawer command
+// #TINY-12044
+
+The `ToggleToolbarDrawer` command now supports the standard `skip_focus` option, which allows opening the toolbar drawer without focusing the editor. This provides consistent behavior with other editor commands.
+
+.Updated new `skip_focus` option usage command
+[source]
+----
+editor.execCommand('ToggleToolbarDrawer', false, null, { skip_focus: true });
+----
+
+For more information on the `ToggleToolbarDrawer` command, see: xref:editor-command-identifiers.adoc[Available Commands].
+
 
 [[additions]]
 == Additions
@@ -170,6 +182,26 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== The `ToggleToolbarDrawer` command's `skipFocus` option has been deprecated
+// #TINY-12044
+
+The `ToggleToolbarDrawer` command previously accepted a non-standard `skipFocus` option to prevent the editor from receiving focus when the command was executed. This behavior differed from other editor commands, which use the generic `skip_focus` option for the same purpose. As a result, the inconsistency lead to confusion when implementing or maintaining command logic.
+
+To resolve this, support for the standard `skip_focus` option has been added to the `ToggleToolbarDrawer` command. The `skipFocus` option is now **deprecated** in {productname} {release-version} and will be removed in a future release.
+
+.Before deprecation using the `skipFocus` option
+[source]
+----
+editor.execCommand('ToggleToolbarDrawer', false, { skipFocus: true });
+----
+
+.After deprecation using the `skip_focus` option
+[source]
+----
+editor.execCommand('ToggleToolbarDrawer', false, null, { skip_focus: true });
+----
+
+This change improves consistency across commands and aligns with expected usage patterns in {productname} {release-version}.
 
 [[known-issues]]
 == Known issues

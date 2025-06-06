@@ -99,10 +99,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following improvement<s>:
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Resize handles are more accessible with `role` and `aria-valuetext` attributes.
+// #TINY-11421
 
-// CCFR here.
+In previous versions of {productname}, the editor's resize handle lacked a `role` attribute, raising accessibility concerns.
+
+In {productname} {release-version}, the resize handle now includes a `role` seperator and an `aria-valuetext` attribute that dynamically reflects the current dimensions of the editor. These improvements enhance accessibility and ensure more accurate announcements by screen readers.
 
 
 [[additions]]

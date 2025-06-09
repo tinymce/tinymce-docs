@@ -82,16 +82,14 @@ For example:
 
 [source,js]
 ----
-const suggestededits_model = `<YOUR_DOCUMENT_MODEL>` // model provided by suggestededits plugin API
+const suggestededits_model = `<YOUR_DOCUMENT_MODEL>` // model provided by the getModel API
 
 tinymce.init({
   selector: 'textarea#suggestededits',  // change this value according to your HTML
   plugins: 'suggestededits',
   toolbar: 'suggestededits',
-  suggestededits_model, // model provided by suggestededits plugin API
+  suggestededits_model,
 });
-
-<textarea id="suggestededits"><p>Your initial content here </p></textarea>
 ----
 
 == Options

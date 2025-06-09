@@ -2,10 +2,10 @@
 |===
 |Name   |Arguments    |Description
 
-|getModel |N/A |Return an object representing the document model used to store data of the tracked changes. 
-|setModel |xref:#trackeddocument[TrackedDocument] `+Object+` | Set the current model of the document. 
+|getModel |N/A |Return an object representing the document model used to store data of the suggested edits. 
+|setModel | `+Object+` | Set the current model of the document. 
 //|resetModel |N/A |Reset the document to its original state. 
-|hasChanges |N/A |Return a boolean value indicating whether the document contains changes to be reviewed.  
+|hasChanges |N/A |Return a boolean value indicating whether the document contains edits to be reviewed.  
 |===
 
 .Examples
@@ -25,7 +25,7 @@ tinymce.activeEditor.plugins.suggestededits.hasChanges();
 .`getModel` Example
 [source,js]
 ----
-const documentId = '<YOUR_DOCUMENT_ID>'; // Replace with the actual document ID
+const documentId = '<YOUR_DOCUMENT_ID>'; // Replace with your document ID
 
 tinymce.init({
   selector: 'textarea#suggestededits',  // change this value according to your HTML
@@ -75,30 +75,40 @@ tinymce.init({
 .`setModel` Example
 [source,js]
 ----
-const documentId = '<YOUR_DOCUMENT_ID>'; // Replace with the actual document ID
+const documentIds = ['doc1', 'doc2', 'doc3']; // Example document IDs
 
 tinymce.init({
   selector: 'textarea#suggestededits',  // change this value according to your HTML
   plugins: 'suggestededits',
   toolbar: 'suggestededits',
-  // No model provided in the editor configuration, it will be fetched from the server
-  init_instance_callback: (editor) => {
-    // Fetch the document from the server
-    fetch(`/api/documents/${documentId}`)
-      .then((response) => {
-        // Set the content in the editor
-        editor.setContent(response);
-      })
-      .catch((error) => console.error(`Error fetching document ${documentId}:`, error));
-      
-    // Fetch the document model from the server
-    fetch(`/api/models/${documentId}`)
-      .then((response) => response.json())
-      .then((model) => {
-        // Set the model in the editor
-        editor.plugins.suggestededits.setModel(model);
-      })
-      .catch((error) => console.error(`Error fetching document ${documentId} model:`, error));
+  setup: (editor) => {
+    // Function to load a document and its model
+    function loadDocument(documentId) {
+      // Fetch and set the document content
+      fetch(`/api/documents/${documentId}`)
+        .then((response) => response.text())
+        .then((content) => {
+          editor.setContent(content);
+        })
+        .catch((error) => console.error(`Error fetching document ${documentId}:`, error));
+
+      // Fetch and set the suggested edits model
+      fetch(`/api/models/${documentId}`)
+        .then((response) => response.json())
+        .then((model) => {
+          editor.plugins.suggestededits.setModel(model);
+        })
+        .catch((error) => console.error(`Error fetching model for ${documentId}:`, error));
+    }
+
+    // Example: Attach to a button click event
+    document.getElementById('loadDocBtn').addEventListener('click', () => {
+      const selectedId = document.getElementById('docSelect').value;
+      loadDocument(selectedId);
+    });
+
+    // Optionally, load the first document on init
+    loadDocument(documentIds[0]);
   }
 });
 ----

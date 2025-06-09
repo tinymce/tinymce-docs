@@ -38,8 +38,9 @@ tinymce.init({
   selector: 'textarea',  // Change this value according to your HTML
   plugins: 'suggestededits',
   toolbar: 'suggestededits',
-  suggestededits_uid: 'unique-identifier', // replace this with a unique string to identify the user 
-  suggestededits_access: 'full' //change this value to set permission to the Suggested Edits view 
+  user_id: 'unique-identifier', // replace this with a unique string to identify the user
+  fetch_users, // Function to fetch users for the user lookup API
+  suggestededits_access: 'full', //change this value to set the user's permission to the Suggested Edits view
   readonly: false //set to true to restrict a user's editing permission
 });
 ----

@@ -4,18 +4,27 @@
 The `{plugincode}_model` option sets the initial model of the document to begin tracking changes. It takes as input an object representing the document, containing all edits made to the document up to that point. This model should be saved externally alongside the document, and loaded into the editor each time the document is opened. This will ensure that both the document and the model are in sync, and that the plugin can track edits correctly.
 
 If the model is not provided in the editor configuration, the plugin will create a new model from the current content of the editor. This model can be retrieved from the editor at any time using the xref:#get_model[`getModel` API].
-//*Type:* xref:#trackeddocument[TrackedDocument] `+Object+`
+
+*Type:* `+Object+`
 
 === Example: using `{plugincode}_model`
 
-// Add a working and tested configuration.
 [source,js]
 ----
-tinymce.init({
-  selector: 'textarea',  // Change this value according to your HTML
-  plugins: 'suggestededits',
-  toolbar: 'suggestededits',
-  suggestededits_uid: 'unique-identifier', // replace this with a unique string to identify the user 
-  suggestededits_model // Model representing the document with up to date edits
+async function fetchSavedModel(documentId) {
+  // Replace this URL and logic with your actual backend API
+  const response = await fetch(`/api/models/${documentId}`);
+  return await response.json();
+}
+
+fetchSavedModel('your-document-id').then((savedModel) => {
+  tinymce.init({
+    selector: 'textarea',  // Change this value according to your HTML
+    plugins: 'suggestededits',
+    toolbar: 'suggestededits',
+    user_id: 'unique-identifier', // Replace with a unique string to identify the user
+    fetch_users, // Function to fetch users for the user lookup API
+    suggestededits_model: savedModel // Load the saved model into the editor
+  });
 });
 ----

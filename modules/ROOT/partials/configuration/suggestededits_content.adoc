@@ -16,15 +16,15 @@ In either case, if a model is not provided, the plugin will generate a new model
 
 === Example: using `{plugincode}_content`
 
-// Add a working and tested configuration.
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // Change this value according to your HTML
   plugins: 'suggestededits',
   toolbar: 'suggestededits',
-  suggestededits_uid: 'unique-identifier', // replace this with a unique string to identify the user
-  suggestededits_model,
-  suggestededits_content: 'model' // change this value to set the content source
+  user_id: 'unique-identifier', // Replace this with a unique string to identify the user
+  fetch_users, // Function to fetch users for the user lookup API
+  suggestededits_model, // Load the saved model into the editor
+  suggestededits_content: 'model' // Only set this if you want to load the initial content from the model
 });
 ----

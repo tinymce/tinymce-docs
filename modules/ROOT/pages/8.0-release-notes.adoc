@@ -148,6 +148,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Deleting a whole element would sometimes modify nearby content
+// #TINY-11868
+
+Previously, deleting a complete HTML element using the "Source Code" editor—either by cutting `+Ctrl+X+` or `+Cmd+X+`, backspacing, or pressing delete—could inadvertently modify surrounding content. For example, removing a `<div>` element that precedes a `<p>` tag could cause the `<p>` to be transformed into a `<div>`, resulting in unintended structural changes. This behavior was inconsistent and particularly noticeable outside of test environments such as the Fiddle editor.
+
+This issue has been resolved in {productname} {release-version} by improving how element deletions are handled within the editor's DOM logic. Cutting or deleting a selected element now preserves the integrity and tag type of adjacent elements. Users can expect consistent and predictable editing behavior when modifying HTML source content.
+
 
 [[security-fixes]]
 == Security fixes

@@ -104,6 +104,15 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Focus is now restored to a dialog after closing an alert, confirmation or another dialog
+// #TINY-12038
+
+Previously, when a dialog was opened from within another dialog—such as a file picker triggered via a `file_picker_callback` the focus was not correctly restored to the original dialog after closing the secondary one. This issue also affected alert and confirmation dialogs opened from within a parent dialog.
+
+As a result, keyboard users experienced disrupted navigation and loss of focus context, impairing accessibility and usability in multi-dialog workflows. 
+
+In {release-version}, {productname} now restores focus to the triggering button in the parent dialog once the nested dialog is closed. This improvement enhances keyboard navigation and accessibility in scenarios involving multiple overlapping dialogs.
+
 
 [[additions]]
 == Additions

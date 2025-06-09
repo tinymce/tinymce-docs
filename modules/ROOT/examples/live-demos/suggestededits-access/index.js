@@ -22,17 +22,25 @@ const userinfos = {
   },
 };
 
-const trackchanges_user_lookup = (uid) => new Promise((resolve, reject) =>
-  setTimeout(() => userinfos[uid] ? resolve(userinfos[uid]) : reject(), 1000));
+const fetch_users = (ids) => {
+  return new Promise((resolve, reject) => {
+    const users = ids.map(id => userDb[id]);
+    if (users.length > 0) {
+      resolve(users);
+    } else {
+      reject(new Error('No users found'));
+    }
+  });
+}
 
 tinymce.init({
-  selector: 'textarea#trackchanges_access',
+  selector: 'textarea#suggested_edits_access',
   height: 500,
-  plugins: 'trackchanges',
-  toolbar: 'trackchanges',
+  plugins: 'suggestededits',
+  toolbar: 'suggestededits',
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }', 
-  trackchanges_uid: 'adamhenderson',
-  trackchanges_access: 'read', //change this value to set permission to the Suggested Edits view
-  readonly: false, //set to true to restrict a user's editing permission
-  trackchanges_user_lookup
+  user_id: 'adamhenderson',
+  fetch_users,
+  suggestededits_access: 'read', //Change this value to set  the user's permission to the Suggested Edits view
+  readonly: false, //Set to true to restrict a user's editing permission
 });

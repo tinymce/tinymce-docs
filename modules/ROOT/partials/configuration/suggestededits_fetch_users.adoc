@@ -1,0 +1,25 @@
+[[fetch_users]]
+== `fetch_users`
+
+A **required callback function** that fetches user data for the Suggested Edits view. This function is called with an array of user IDs and should return a `Promise` that resolves to an array of user objects. The callback is used by the xref:#userlookupapi[`UserLookup API`].
+
+*Type:* `Function`
+
+*Parameters:*
+- `ids` (`Array<string>`): An array of user IDs to fetch.
+
+*Returns:*
+- `Promise<Array<Object>>`: A promise that resolves to an array of user objects.
+
+.Example
+[source,javascript]
+----
+tinymce.init({
+  selector: 'textarea',  // Change this value according to your HTML
+  plugins: 'suggestededits',
+  toolbar: 'suggestededits',
+  user_id: 'unique-identifier', // Replace this with a unique string to identify the user
+  fetch_users: (ids) => fetch(`/api/users?ids=${ids.join(',')}`)
+     .then((r) => r.json())
+});
+----

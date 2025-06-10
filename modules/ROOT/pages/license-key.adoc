@@ -3,16 +3,217 @@
 :description: Learn how to configure license key and stop {productname} from running in the evaluation mode.
 :keywords: {productname}, cloud, script, textarea, apiKey, faq, license key, frequently asked questions,
 
+== Overview
+
+{productname} 8 introduces an enhanced license key system that provides improved subscription access control and streamlined renewal processes. This system includes both date-based and version-locked keys, supporting various deployment scenarios including cloud, self-hosted, and hybrid configurations.
+
 [IMPORTANT]
 ====
-{productname} 7 is licensed under the GNU General Public License Version 2 or later. A new configuration option called 'license_key' requires developers to make a conscious decision to use {productname} with the GPLv2+ license or with a commercial license.
+If you are using {productname} 7, it is licensed under the GNU General Public License Version 2 or later. A configuration option called 'license_key' requires developers to make a conscious decision to use {productname} with the GPLv2+ license or with a commercial license.
 
 If you are using {productname} in a self-hosted environment, a console log warning message will display if the license key config option is missing or invalid. This message aims to ensure compliance with licensing requirements and provide transparency during the evaluation period.
 
 This message will not be shown when loading {productname} from {cloudname}, as it is already under a commercial license.
+
+For {productname} 8, license keys use the `+"T8LK:"+` prefix and provide enhanced validation and management features. These keys support both online and offline validation modes.
 ====
 
 include::partial$misc/setting-the-license.adoc[]
+
+== License Types and Deployment Options
+
+=== Date-based Keys (Standard)
+
+The standard license key type in {productname} 8 is date-based, meaning:
+
+* The key has a soft expiration date that matches your subscription end date.
+* After the soft expiration, the editor enters a grace period in `read-only` mode.
+* After the grace period expires, the editor becomes completely disabled.
+* Premium plugins are disabled at the soft expiration date.
+* In-editor messaging will notify users about approaching expiration.
+
+=== Version-locked Keys (Alternative)
+
+For customers who cannot use date-based keys, version-locked keys are available:
+
+* The key is locked to specific {productname} versions.
+* No expiration date - the key continues working for allowed versions.
+* Cannot be used with versions released after your subscription ends.
+* Must contact account manager to get access to newer versions.
+* Suitable for air-gapped environments or strict deployment policies.
+
+=== Deployment Patterns
+
+==== Cloud-only
+
+* Use API key.
+* Premium features via subscription.
+* CDN-hosted resources.
+* Automatic updates.
+
+==== Self-hosted
+
+* Use license key with `T8LK` prefix.
+* Local premium plugins.
+* Manual updates.
+* Full control over assets.
+
+==== Hybrid
+
+* Both API key and license key.
+* Mix of cloud and local features.
+* Flexible deployment options.
+* Fallback capabilities.
+
+=== Offline Mode
+
+For air-gapped environments or offline usage:
+
+* Supports environments without internet connectivity
+* Compatible with strict network security policies
+* Maintains license compliance through client-side JWT validation
+* Enforces version and domain restrictions without server connection
+* Works with standard security controls and firewalls
+* Requires version-locked keys for maximum compatibility
+
+[NOTE]
+====
+For air-gapped environments:
+* Use version-locked keys instead of date-based keys
+* Premium plugins must be downloaded and bundled locally
+* Updates require manual deployment of new versions
+====
+
+== Configuration Examples
+
+=== Cloud Deployment
+
+[source,javascript]
+----
+tinymce.init({
+  selector: "textarea",
+  plugins: [
+    // Core plugins
+    "advlist", "anchor", "autolink", "charmap", "code", "fullscreen",
+    "help", "image", "insertdatetime", "link", "lists", "media",
+    "preview", "searchreplace", "table", "visualblocks",
+    
+    // Premium plugins (requires valid subscription)
+    "powerpaste", "tinycomments", "tinydrive"
+  ],
+  toolbar: "undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+  api_key: "no-api-key"
+});
+----
+
+=== Self-hosted Commercial
+
+[source,javascript]
+----
+tinymce.init({
+  selector: "textarea",
+  plugins: [
+    "advlist", "anchor", "autolink", "charmap", "code", "fullscreen",
+    "help", "image", "insertdatetime", "link", "lists", "media",
+    "preview", "searchreplace", "table", "visualblocks",
+    // Premium plugins need to be separately downloaded and included
+    "powerpaste", "tinycomments", "tinydrive"
+  ],
+  toolbar: "undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+  license_key: "T8LK:your-license-key"  // Your commercial license key
+});
+----
+
+=== Hybrid Deployment
+
+[source,javascript]
+----
+tinymce.init({
+  selector: "textarea",
+  plugins: [
+    // Core plugins
+    "advlist", "anchor", "autolink", "charmap", "code", "fullscreen",
+    "help", "image", "link", "lists",
+    
+    // Premium plugins - available both via cloud and local fallback
+    "powerpaste", "tinycomments", "tinydrive"
+  ],
+  toolbar: "undo redo | styles | bold italic | alignleft aligncenter alignright | bullist numlist | link image",
+  // Cloud configuration with local fallback
+  api_key: "your-api-key",          // For cloud features
+  license_key: "T8LK:your-license", // For local fallback
+  // Optional: Configure failover behavior
+  serviceLoadFailbackTime: 5000,    // Wait 5s before falling back to local
+  images_upload_handler: function (blobInfo, progress) {
+    // Custom handler that tries cloud first, falls back to local
+    return new Promise((resolve, reject) => {
+      // Implementation of cloud/local failover logic
+    });
+  }
+});
+----
+
+[NOTE]
+====
+For hybrid deployments:
+* Both `api_key` and `license_key` are used together
+* Configure appropriate timeouts for service failover
+* Consider implementing custom handlers for seamless fallback
+* Test both online and offline scenarios
+====
+
+=== Offline/Air-gapped Deployment
+
+[source,javascript]
+----
+tinymce.init({
+  selector: "textarea",
+  plugins: [
+    // Core plugins included in your local bundle
+    "advlist", "anchor", "autolink", "charmap", "code", "fullscreen",
+    "help", "image", "link", "lists",
+    
+    // Premium plugins downloaded and bundled locally
+    "powerpaste", "spelling", "a11ychecker"
+  ],
+  toolbar: "undo redo | styles | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | link image",
+  // Version-locked key for offline environments
+  license_key: "T8LK:your-version-locked-key",
+  // Ensure all resources are loaded locally
+  skin_url: "/path/to/local/skin",
+  content_css: "/path/to/local/content.css"
+});
+----
+
+[NOTE]
+====
+For offline deployments:
+* All assets must be available locally
+* Content delivery URLs should point to local resources
+* Premium plugins must be downloaded and included in your bundle
+====
+
+== License States
+
+=== Active
+
+* Full editor and premium plugin functionality.
+* Regular version upgrades available (date-based keys).
+* No restrictions on features.
+
+=== Grace Period (Date-based keys only)
+
+// TBA: Validate this date is correct
+* Occurs 30 days before subscription end.
+* All features remain functional.
+* In-editor notifications about approaching expiration.
+* Time to contact Tiny for renewal.
+
+=== Expired
+
+* Date-based keys: Editor disabled after grace period.
+* Version-locked keys: Cannot use new versions.
+* Must obtain new license key after renewal.
 
 == FAQ
 
@@ -24,21 +225,46 @@ The GPLv2+ license was chosen to provide the best compatibility with existing GP
 
 === What is the difference between a license key and the API key?
 
-The **API key** is used when loading {productname} from the {cloudname}. The **license key** is used to declare the license terms when self-hosting {productname}.
+The **API key** is used when loading {productname} from the {cloudname} and undergoes server-side validation. The **license key** (starting with T8LK: in version 8) is used to declare the license terms when self-hosting {productname} and uses client-side JWT validation in the browser.
 
 === Who needs to get a license key?
 
-Anyone who intends to self-host {productname} will need to provide a valid commercial license key or declare their intention to use {productname} under the GPLv2+ license.
+Anyone who intends to self-host {productname} will need to:
+* For version 7: Provide a valid commercial license key or declare their intention to use {productname} under the GPLv2+ license
+* For version 8: Obtain a T8LK-prefixed commercial license key or use GPL mode
 
 === How will I know if this change affects me?
 
-If {productname} detects that the `license_key` configuration is missing or invalid, it will display a console log warning. If you have actively suppressed or hidden this message, please remove those overrides. If no notification appears, you are not affected.
+If {productname} detects that the `license_key` configuration is missing or invalid, it will display a console log warning message. These warnings are designed to ensure compliance and provide transparency during evaluation periods. If you have actively suppressed or hidden these messages, please remove those overrides to maintain proper license validation. If no notification appears, you are not affected.
 
 === Should I be using both an API key and a license key?
 
-No, an API key and a license key should not be used simultaneously. The API key should only be used if {productname} is loaded from the {cloudname}. If {productname} is being self-hosted, the license key option should be used instead.
+For standard deployments, use only one of the following:
+* *API key* - For cloud deployments
+** Server-side validation
+** Automatic updates and CDN delivery
+** Premium plugin access via subscription
+** No client-side validation required
 
-=== Will {productname} “phone home” to check the license key?
+* *License key* - For self-hosted deployments
+** Client-side JWT validation
+** T8LK prefix required for version 8
+** Supports air-gapped environments
+** Local premium plugin validation
+
+*Hybrid Deployment Cases:*
+* Using both keys together requires specific configuration:
+** Set up cloud services with API key
+** Configure local fallback with license key
+** Enable high availability features
+** Access both cloud and local premium plugins
+
+[IMPORTANT]
+====
+Only use both keys in properly configured hybrid deployments where you need cloud features with local fallback. Using both keys without proper hybrid deployment configuration **may cause** validation conflicts and unexpected behavior.
+====
+
+=== Will {productname} "phone home" to check the license key?
 
 No. {productname} does not contact any server to validate the license key.
 
@@ -53,3 +279,11 @@ The license key ensures compliance with {productname} licensing terms. It's part
 === How can I get further assistance?
 
 For any licensing or technical support questions, see our available options on the https://www.tiny.cloud/docs/tinymce/latest/support/[support page.]
+
+=== Technical Support
+
+For licensing or technical support:
+* API key issues: Visit link:https://www.tiny.cloud/my-account[Tiny Cloud Account]
+* License key issues: Contact your account manager
+* Technical support: Visit link:https://support.tiny.cloud[Support Portal]
+* Documentation: See link:https://www.tiny.cloud/docs/tinymce/latest/[TinyMCE Docs]

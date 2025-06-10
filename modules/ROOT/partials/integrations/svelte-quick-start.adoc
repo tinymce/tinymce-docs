@@ -74,7 +74,6 @@ let conf = {
   <h1>Hello Tiny</h1>
   <Editor
     apiKey='no-api-key'
-    pass:a[channel='{productmajorversion}']
     value='<p>This is the initial content of the editor.</p>'
     {conf}
   />
@@ -140,7 +139,7 @@ let conf = {
 <main>
   <h1>Hello Tiny</h1>
   <Editor
-    licenseKey='your-license-key'
+    licenseKey='T8LK:your-license-key'
     scriptSrc='tinymce/tinymce.min.js'
     value='<p>This is the initial content of the editor.</p>'
     {conf}
@@ -176,7 +175,7 @@ let conf = {
 <main>
   <h1>Hello Tiny</h1>
   <Editor
-    licenseKey='your-license-key'
+    licenseKey='T8LK:your-license-key'
     scriptSrc='/path/or/url/to/tinymce.min.js'
     value='<p>This is the initial content of the editor.</p>'
     {conf}

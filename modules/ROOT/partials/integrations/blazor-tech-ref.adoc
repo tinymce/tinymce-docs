@@ -188,18 +188,35 @@ In your component:
 
 === `LicenseKey`
 
-Specifies the {productname} license key. Required for self-hosted deployments of {productname}. This property is not required for deployments using the {cloudname}. For more information on licensing, see: xref:license-key.adoc[License key].
+Specifies the {productname} license key. Required for self-hosted deployments of {productname}. This property is not required for deployments using the {cloudname}.
+
+License keys must start with the "T8LK:" prefix and use client-side JWT validation. For more information, see: xref:license-key.adoc[License Key].
 
 *Type:* `+String+`
 
-==== Example using LicenseKey
+*Possible values:* 
+* `null` - Use this when loading from {cloudname} with an API key
+* `"gpl"` - For open source projects using GPL license
+* `"T8LK:your-license-key"` - For commercial {productname} installations
 
+==== Example: Commercial license (TinyMCE 8+)
 [source,cs]
 ----
 <Editor
-  LicenseKey="your-license-key"
+  LicenseKey="T8LK:your-license-key"
 />
 ----
+Use this example when you have a commercial license for TinyMCE 8 or newer. The T8LK prefix is required.
+
+==== Example: Open source GPL license
+[source,cs]
+----
+<Editor
+  LicenseKey="gpl"
+/>
+----
+
+Use this example when you're using TinyMCE under the open source GPL license in a self-hosted environment.
 
 === `ScriptSrc`
 

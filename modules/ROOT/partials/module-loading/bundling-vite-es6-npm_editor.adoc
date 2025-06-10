@@ -48,6 +48,8 @@ export function render () {
     toolbar: 'bold italic | bullist numlist | link emoticons',
     skin_url: 'default',
     content_css: 'default',
+    // Add your commercial license key for self-hosted deployments
+    license_key: 'T8LK:your-license-key'  // Your license key from the Tiny Cloud Account
   });
 };
 ----

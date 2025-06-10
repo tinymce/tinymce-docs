@@ -15,7 +15,17 @@ This guide requires the following:
 
 * Node.js and npm.
 * Basic knowledge of how to use https://vitejs.dev[Vite].
+* For self-hosted deployments: A valid license key starting with `T8LK:` from your link:{accountpageurl}/[{accountpage}]
 * (Optional: For premium features) The latest premium .zip bundle of TinyMCE that includes premium plugins.
+
+[IMPORTANT]
+====
+When self-hosting TinyMCE 8:
+
+* A license key is required for commercial deployments
+* Keys must start with the `T8LK:` prefix
+* For hybrid deployments that need both cloud features and local fallback, you can use both `license_key` and `api_key`
+====
 
 == Procedures
 
@@ -71,5 +81,7 @@ npx vite build
 npx vite preview
 ----
 :!is_zip_install:
+
+
 
 include::partial$module-loading/bundling-next-steps.adoc[]

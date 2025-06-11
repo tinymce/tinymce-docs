@@ -24,6 +24,29 @@ If the developer intends to self-host {productname} under a commercial license, 
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  license_key: '<your-license-key>'
+  license_key: 'T8LK:your-license-key'
 });
 ----
+
+=== Use {productname} under GPL with Premium Features
+
+For open source projects that need to use {productname} under the GPL license while also accessing premium features, use the combined GPL and commercial license format:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  license_key: 'GPL+T8LK:your-license-key'
+});
+----
+
+[IMPORTANT]
+====
+* The GPL portion acknowledges open source usage requirements 
+* The T8LK portion enables access to premium plugins and features included in your subscription
+* Without the T8LK portion, premium plugins would not be available with just the GPL license
+* You can find your commercial license key in the link:https://www.tiny.cloud/auth/login/[account portal]
+* This format is specifically for open source projects that need premium features while maintaining GPL compliance
+====
+
+To purchase a commercial license, see available options on the link:{pricingpage}/[pricing page].

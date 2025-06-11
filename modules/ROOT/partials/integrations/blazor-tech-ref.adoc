@@ -190,7 +190,7 @@ In your component:
 
 Specifies the {productname} license key. Required for self-hosted deployments of {productname}. This property is not required for deployments using the {cloudname}.
 
-License keys must start with the "T8LK:" prefix and use client-side JWT validation. For more information, see: xref:license-key.adoc[License Key].
+License keys must start with the "T8LK:" prefix and use client-side JWT validation that runs entirely in the browser, requiring no server communication or "phone home" checks. For more information, see: xref:license-key.adoc[License Key].
 
 *Type:* `+String+`
 
@@ -206,6 +206,7 @@ License keys must start with the "T8LK:" prefix and use client-side JWT validati
   LicenseKey="T8LK:your-license-key"
 />
 ----
+
 Use this example when you have a commercial license for TinyMCE 8 or newer. The T8LK prefix is required.
 
 ==== Example: Open source GPL license

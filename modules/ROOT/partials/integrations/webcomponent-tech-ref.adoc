@@ -79,7 +79,7 @@ To use {productname} from the {cloudname}, add the `+api-key+` attribute to the 
 [[licensekey]]
 == Setting the license key
 
-When self-hosting {productname}, specify a license key using the `+license-key+` attribute on the `+tinymce-editor+` element. License keys must start with the "T8LK:" prefix and use client-side JWT validation. Do not use both an API key and a license key - use API key for cloud deployments, and license key for self-hosted deployments. For more information, see: xref:license-key.adoc[License Key].
+When self-hosting {productname}, specify a license key using the `+license-key+` attribute on the `+tinymce-editor+` element. License keys must start with the "T8LK:" prefix and use client-side JWT validation that runs entirely in the browser, requiring no server communication or "phone home" checks. Do not use both an API key and a license key - use API key for cloud deployments, and license key for self-hosted deployments. For more information, see: xref:license-key.adoc[License Key].
 
 *Type:* `+String+`
 
@@ -105,7 +105,7 @@ When self-hosting {productname}, specify a license key using the `+license-key+`
 [IMPORTANT]
 ====
 * The `+license-key+` attribute is only required when self-hosting {productname}
-* License keys starting with "T8LK:" use client-side JWT validation
+* License keys starting with "T8LK:" use client-side JWT validation that runs entirely in the browser
 * Do not use both an API key and a license key - use API key for cloud deployments, and license key for self-hosted deployments
 ====
 

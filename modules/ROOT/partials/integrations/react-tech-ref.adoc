@@ -189,7 +189,7 @@ include::partial$misc/get-an-api-key.adoc[]
 
 {cloudname} License key.
 
-Use this when self-hosting {productname} instead of loading from {cloudname}. License keys must start with the "T8LK:" prefix and use client-side JWT validation. For more information, see: xref:license-key.adoc[License Key].
+Use this when self-hosting {productname} instead of loading from {cloudname}. License keys must start with the "T8LK:" prefix and use client-side JWT validation that runs entirely in the browser, requiring no server communication or "phone home" checks. For more information, see: xref:license-key.adoc[License Key].
 
 *Type:* `+String+`
 

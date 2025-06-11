@@ -1,4 +1,3 @@
-
 = {productname} {release-version}
 :release-version: 8.0.0
 :navtitle: {productname} {release-version}
@@ -27,8 +26,10 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:deprecated[Deprecated]
 * xref:known-issues[Known issues]
 
-[NOTE]
-For additional details on {productname} {release-version} breaking changes when considering upgrading, see xref:migration-from-7x.adoc[Migrating from {productname} 7 to {productname} {release-version}].
+[IMPORTANT]
+====
+This release includes breaking changes to the license key system. All commercial self-hosted deployments must update their license keys to use the new `T8LK:` prefix format. For details on this and other breaking changes when considering upgrading, see xref:migration-from-7x.adoc[Migrating from {productname} 7 to {productname} {release-version}].
+====
 
 [[new-premium-plugin<s>]]
 New Premium plugin<s>
@@ -119,7 +120,30 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[changes]]
 == Changes
 
-{productname} {release-version} also includes the following change<s>:
+{productname} {release-version} includes the following changes:
+
+=== Enhanced license key system with T8LK prefix
+
+The license key system in {productname} 8 has been enhanced to provide improved subscription access control and streamlined renewal processes. All commercial license keys for self-hosted deployments now require the `T8LK:` prefix to indicate version 8 compatibility.
+
+Key changes include:
+
+* All commercial license keys must start with `"T8LK:"` prefix
+* Enhanced JWT-based validation that runs entirely in the browser
+* No server communication or "phone home" checks required
+* Support for both date-based and version-locked keys
+* Streamlined hybrid deployment configuration
+* Improved support for air-gapped and offline environments
+
+[IMPORTANT]
+====
+* GPL usage still requires setting `license_key: 'gpl'` (case insensitive)
+* For open source projects using premium features, use the combined format: `license_key: 'GPL+T8LK:your-license-key'`
+* The license key is not required when using {cloudname} with an API key
+====
+
+For more information on the new license key system, see: xref:license-key.adoc[License Key].
+
 
 // === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1

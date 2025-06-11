@@ -41,7 +41,7 @@ import 'tinymce/skins/ui/oxide/content.js';
 export default function TinyEditorComponent(props) {
   return (
     <Editor
-      licenseKey='your-license-key'
+      licenseKey='gpl|T8LK:your-license-key' // gpl for open source, T8LK:your-license-key for commercial
       {...props}
     />
   );

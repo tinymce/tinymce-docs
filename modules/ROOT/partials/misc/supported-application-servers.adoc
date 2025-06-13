@@ -1,14 +1,6 @@
-* Eclipse Jetty:
-** 9.4+ (with extended support)
-* WebSphere Application Server (WAS) 8 or later
-* Apache Tomcat:
-+
---
-** 10 (See note below)
-** 9+
-** 8.5.12+
-** 8.0.42+
-** 7.0.76+
---
-+
-IMPORTANT: Tomcat 10 will require WAR files to be placed in the _webapp-javaee_ directory rather than the _webapps_ directory due to the change to Jakarta servlets. Jetty 11 is not currently supported due to this change.
+* Docker Engine:
+** 24.0 or later (latest stable version recommended)
+* Docker Compose:
+** 2.20.0 or later (latest stable version recommended)
+
+IMPORTANT: As of {productname} 8.0, server-side components are only supported via Docker containers. Java-based WAR file deployments have been deprecated and are no longer supported.

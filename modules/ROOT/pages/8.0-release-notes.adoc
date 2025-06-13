@@ -163,7 +163,22 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[deprecated]]
 == Deprecated
 
-{productname} {release-version} includes the following deprecation<s>:
+{productname} {release-version} includes the following deprecations:
+
+=== Java application server-based server components have been deprecated
+// #DOC-3231
+
+{productname} {release-version} deprecates the Java application server-based deployment method for self-hosted services. Docker containers are now the **only** supported deployment method for self-hosted services. The Java `.war` files (`ephox-spelling.war`, `ephox-image-proxy.war`, `ephox-hyperlinking.war`) will be removed in a future release.
+
+For information about setting up containerized server-side components using Docker containers, see: xref:bundle-intro-setup.adoc[Introduction and initial setup for containerized server-side services from the premium self-hosted bundles]
+
+=== Docker container services
+
+* Enhanced Media Embed and Link Checker service, see: xref:individual-hyperlinking-container.adoc[Deploy the {productname} hyperlinking server-side component using Docker].
+* Image Editing and Export image proxy service, see: xref:individual-image-proxy-container.adoc[Deploy the {productname} image proxy server-side component using Docker].
+* Spell Checker service, see: xref:individual-spelling-container.adoc[Deploy the {productname} spelling service server-side component using Docker].
+* Export to PDF service, see: xref:individual-export-to-pdf-on-premises.adoc[Deploy the {productname} Export to PDF service server-side component using Docker].
+* Import from Word and Export to Word services, see: xref:individual-import-from-word-and-export-to-word-on-premises.adoc[Deploy the {productname} Import from Word and Export to Word service server-side component using Docker].
 
 // === The `<plugin>` configuration property, `<name>`, has been deprecated
 // #TINY-vwxyz1

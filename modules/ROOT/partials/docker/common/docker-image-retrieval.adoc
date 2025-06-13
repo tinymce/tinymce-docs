@@ -1,0 +1,21 @@
+=== Retrieve Docker Image
+
+include::partial$misc/admon-docker-access.adoc[]
+
+. Login into the {companyname} Cloud Docker Registry: 
++
+[source, sh, subs="attributes+"]
+----
+docker login -u tiny -p [access-token] registry.containers.tiny.cloud
+----
+
+. Pull the Docker Image from the Docker registry:
++
+[source, sh, subs="attributes+"]
+----
+docker pull registry.containers.tiny.cloud/{service-name}:<VERSION>
+----
++
+Replace `<VERSION>` with `latest` or the specific version number.
+
+include::partial$misc/admon-available-docker-images.adoc[]

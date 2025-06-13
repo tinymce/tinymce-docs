@@ -85,15 +85,15 @@ When self-hosting {productname}, specify a license key using the `+license-key+`
 
 *Default value:* `+undefined+`
 
-*Possible values:* 
+*Possible values:*
 * `undefined` - Use this when loading from {cloudname} with an API key
 * `"gpl"` - For open source projects using GPL license
-* `"T8LK:your-license-key"` - For commercial {productname} installations
+* `"T8LK:..."` - For commercial {productname} installations
 
 === Example: Commercial license
 [source,html]
 ----
-<tinymce-editor license-key="T8LK:your-license-key"></tinymce-editor>
+<tinymce-editor license-key="T8LK:..."></tinymce-editor>
 ----
 
 === Example: Open source GPL license

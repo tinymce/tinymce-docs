@@ -1,4 +1,4 @@
-The https://github.com/tinymce/tinymce-svelte[Official {productname} Svelte component] integrates {productname} into https://svelte.dev/[Svelte applications].  
+The https://github.com/tinymce/tinymce-svelte[Official {productname} Svelte component] integrates {productname} into https://svelte.dev/[Svelte applications].
 Creates a basic Svelte application containing a {productname} editor.
 
 For examples of the {productname} integration, visit the https://tinymce.github.io/tinymce-svelte/[tinymce-svelte storybook].
@@ -118,7 +118,7 @@ export default defineConfig({
 ----
 . Open `+src/App.svelte+` and replace the contents with:
 +
-[source,html]
+[source,javascript]
 ----
 <script>
 import Editor from '@tinymce/tinymce-svelte';
@@ -139,7 +139,7 @@ let conf = {
 <main>
   <h1>Hello Tiny</h1>
   <Editor
-    licenseKey='T8LK:your-license-key'
+    licenseKey='gpl', // gpl for open source, T8LK:... for commercial
     scriptSrc='tinymce/tinymce.min.js'
     value='<p>This is the initial content of the editor.</p>'
     {conf}
@@ -154,7 +154,7 @@ ifeval::["{productSource}" == "zip"]
 
 . Open `+src/App.svelte+` and replace the contents with:
 +
-[source,html]
+[source,javascript]
 ----
 <script>
 import Editor from '@tinymce/tinymce-svelte';
@@ -175,7 +175,7 @@ let conf = {
 <main>
   <h1>Hello Tiny</h1>
   <Editor
-    licenseKey='T8LK:your-license-key'
+    license_key: 'gpl', // gpl for open source, T8LK:... for commercial
     scriptSrc='/path/or/url/to/tinymce.min.js'
     value='<p>This is the initial content of the editor.</p>'
     {conf}

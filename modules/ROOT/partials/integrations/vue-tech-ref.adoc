@@ -145,16 +145,16 @@ Use this when self-hosting {productname} instead of loading from {cloudname}. Li
 
 *Default value:* `+undefined+`
 
-*Possible values:* 
+*Possible values:*
 * `undefined` - Use this when loading from {cloudname} with an API key
 * `'gpl'` - For open source projects using GPL license
-* `'T8LK:your-license-key'` - For commercial {productname} installations
+* `'T8LK:...'` - For commercial {productname} installations
 
 ==== Example: Commercial license
 [source,html]
 ----
 <editor
-  licenseKey="T8LK:your-license-key"
+  licenseKey="T8LK:..."
 />
 ----
 

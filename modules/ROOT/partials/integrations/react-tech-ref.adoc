@@ -195,16 +195,16 @@ Use this when self-hosting {productname} instead of loading from {cloudname}. Li
 
 *Default value:* `+undefined+`
 
-*Possible values:* 
+*Possible values:*
 * `undefined` - Use this when loading from {cloudname} with an API key
 * `'gpl'` - For open source projects using GPL license
-* `'T8LK:your-license-key'` - For commercial {productname} installations
+* `'T8LK:...'` - For commercial {productname} installations
 
 ==== Example: Commercial license
 [source,jsx]
 ----
 <Editor
-  licenseKey='T8LK:your-license-key'
+  licenseKey='T8LK:...'
 />
 ----
 
@@ -394,7 +394,7 @@ For detailed information on using `+onEditorChange+`, see: xref:using-the-tinymc
 
 IMPORTANT: This option was removed with the release of the {productname} React component 4.0.0.
 
-This option was used to specify the format of the content produced by the 
+This option was used to specify the format of the content produced by the
 xref:oneditorchange[`+onEditorChange+`] event, however as it did not change the
 input format it was almost impossible to use correctly.
 

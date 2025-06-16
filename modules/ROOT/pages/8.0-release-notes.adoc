@@ -148,6 +148,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+===  New list item was not inserted correctly when existing list item had a block element inside
+// #TINY-12102
+
+{productname} {release-version} resolves an issue affecting list management when parent list items contain block-level formatting. Previously, when a list item containing a sub-list was formatted as a block element (such as `<p>` or `<div>`), pressing Enter at the end of that item would incorrectly position the new list item alongside the sub-list items instead of as a sibling of the parent item.
+
+{productname} {release-version} addresses this by ensuring that when a user presses Enter at the end of a list item that contains block-level formatting, the new list item is correctly inserted as a sibling of the parent list item, rather than being placed incorrectly alongside the sub-list items.
+
 
 [[security-fixes]]
 == Security fixes

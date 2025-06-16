@@ -1,4 +1,3 @@
-
 = {productname} {release-version}
 :release-version: 8.0.0
 :navtitle: {productname} {release-version}
@@ -147,6 +146,20 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // #TINY-vwxyz1
 
 // CCFR here.
+
+=== Nested font sizes no longer cause excessive line spacing
+// #TINY-12073
+
+Previously, applying different font sizes to nested elements could result in inconsistent and overly large line heights. This affected users by introducing visual clutter and making text blocks appear misaligned or difficult to read. 
+
+{productname} {release-version} introduces a fix that ensures line heights are calculated based on the font size of the parent element, rather than the nested child elements. This means that when different font sizes are applied within the same content, the line heights will be consistent and proportional to the parent element's font size.
+
+=== Improved font size inheritance for nested elements
+#TINY-12073
+
+Previously, when applying a smaller font size inline within text that had a larger inherited font size (for example, 10pt text within a 24pt paragraph), the editor would create nested `<span>` elements. When creating new paragraphs or pasting content, these nested styles would be unexpectedly retained instead of reverting to the original inherited font size. This caused unintended style inheritance and inconsistent formatting in documents.
+
+{productname} {release-version} resolves this by improving how font sizes are inherited and flattened when splitting paragraphs or pasting content. New paragraphs now correctly inherit the parent block's font size rather than retaining nested inline styles, ensuring more predictable and consistent text formatting.
 
 
 [[security-fixes]]

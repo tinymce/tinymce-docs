@@ -1,4 +1,3 @@
-
 = {productname} {release-version}
 :release-version: 8.0.0
 :navtitle: {productname} {release-version}
@@ -58,6 +57,15 @@ The following premium plugin updates were released alongside {productname} {rele
 // // CCFR here.
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+
+=== Spell Checker plugin
+
+==== Input label for misspelled word was not announced by screen readers.
+// #TINY-12167
+
+In previous versions, the Spell Checker dialog's misspelled word input field lacked proper accessibility labeling, preventing screen readers from announcing its purpose. {productname} {release-version} resolves this accessibility limitation by adding the appropriate label association between the "Misspelled Word" text and its input field. This enhancement allows screen readers to correctly identify and announce the input field's purpose, improving the spell checking experience for users who rely on assistive technologies.
+
+For information on the **Spell Checker** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
@@ -141,7 +149,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
 
 // === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1

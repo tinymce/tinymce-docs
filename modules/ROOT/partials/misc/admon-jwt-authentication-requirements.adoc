@@ -13,11 +13,11 @@ For more information on how to set up JWT authentication with {pluginname}, see 
 
 * **Trial Period:**
 ** With JWT: Full functionality, unlimited usage, no watermarks.
-** Without JWT: Limited functionality with watermarks and page limits.
+** Without JWT: Full functionality with watermarks.
 
 * **After Trial:**
 ** With {pluginname} "add-on" + JWT: Full functionality (subscription-based).
-** Without add-on: Limited functionality with watermarks and page limits.
+** Without add-on: Plugin entitlements are `disabled` and functionality is no longer available.
 
 Visit the link:https://www.tiny.cloud/auth/login/[account portal] to obtain your JWT key and test full functionality.
 ====

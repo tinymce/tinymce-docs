@@ -1,0 +1,21 @@
+[[script_crossorigin]]
+== Script `+crossorigin+` attribute
+
+When loading {productname} from {cloudname}, the script tag must include the `+crossorigin="anonymous"+` attribute. This requirement ensures:
+
+* Consistent Origin header behavior for license key validation
+* Proper security for cross-origin script loading
+* Reliable CORS handling across different browsers
+
+*Type:* `+String+`
+
+For a list of valid crossorigin values, see: link:https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin[MDN Web Docs - HTML attribute: crossorigin].
+
+=== Example: Script tag with required attributes
+
+[source,html,subs="attributes+"]
+----
+<script src="{cdnurl}" referrerpolicy="origin" crossorigin="anonymous"></script>
+----
+
+NOTE: Both the `+referrerpolicy="origin"+` and `+crossorigin="anonymous"+` attributes are required when loading {productname} from {cloudname}. These work together to ensure proper domain validation and secure cross-origin resource loading.

@@ -115,7 +115,7 @@ _File:_ `+resources/views/components/head/tinymce-config.blade.php+`
 +
 [source,html,subs="attributes+"]
 ----
-<script src="{scriptsource}" referrerpolicy="origin"></script>
+<script src="{scriptsource}" referrerpolicy="origin" crossorigin="anonymous"></script>
 <script>
   tinymce.init({
     selector: 'textarea#myeditorinstance', // Replace this CSS selector to match the placeholder element for TinyMCE

@@ -11,13 +11,25 @@ For more information on how to set up JWT authentication with {pluginname}, see 
 
 **Trial period behavior**
 
+ifeval::["{plugincode}" == "importword"]
+* **Trial Period:**
+** With JWT: Full functionality, unlimited usage, no watermarks.
+** Without JWT: Full functionality with watermarks and page limits.
+
+* **After Trial:**
+** With {pluginname} add-on + JWT: Full functionality (subscription-based)
+** Without add-on: Plugin entitlements are `disabled` and functionality is no longer available.
+endif::[]
+
+ifeval::["{plugincode}" != "importword"]
 * **Trial Period:**
 ** With JWT: Full functionality, unlimited usage, no watermarks.
 ** Without JWT: Full functionality with watermarks.
 
 * **After Trial:**
-** With {pluginname} "add-on" + JWT: Full functionality (subscription-based).
+** With {pluginname} add-on + JWT: Full functionality (subscription-based)
 ** Without add-on: Plugin entitlements are `disabled` and functionality is no longer available.
+endif::[]
 
 Visit the link:https://www.tiny.cloud/auth/login/[account portal] to obtain your JWT key and test full functionality.
 ====

@@ -1,0 +1,41 @@
+= {productname} Migration Guides
+:description: Comprehensive guides for upgrading between TinyMCE versions (4.x, 5.x, 6.x) and migrating from other rich text editors
+:keywords: migration, upgrade, version, tinymce 4, tinymce 5, tinymce 6, froala
+:title_nav: Migration Guides
+:toc: macro
+:toclevels: 2
+:toc-title: Version Migration Guides
+:toc-placement: preamble
+:toc-type: flat
+
+[cols="1,1"]
+|===
+
+a|
+[.lead]
+xref:migration-from-6x.adoc[Migrating from {productname} 6]
+
+Guide for upgrading from {productname} 6 to {productname} 7, covering configuration changes and UI component updates.
+
+a|
+[.lead]
+xref:migration-from-5x.adoc[Migrating from {productname} 5]
+
+Guide for upgrading from {productname} 5 to {productname} 7, including architectural improvements and security updates.
+
+a|
+[.lead]
+xref:migration-from-4x.adoc[Migrating from {productname} 4]
+
+Guide for upgrading from {productname} 4 to {productname} 7, detailing major architectural changes and modern UI improvements.
+
+a|
+[.lead]
+xref:migration-from-froala.adoc[Migrating from Froala]
+
+Guide for migrating from Froala Editor to {productname}, with equivalent feature mappings and configuration guidance.
+
+// Empty cell to even out rows
+a|
+
+|===

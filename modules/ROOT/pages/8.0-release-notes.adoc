@@ -1,4 +1,3 @@
-
 = {productname} {release-version}
 :release-version: 8.0.0
 :navtitle: {productname} {release-version}
@@ -104,6 +103,34 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== New `list_max_depth` option to limit list indentation
+// #TINY-11937
+
+{productname} {release-version} introduced a new `list_max_depth` option that allows configuration of the maximum indent depth for list items. This setting accepts a non-negative integer value, where `0` permits list creation without any indentation, and higher values set the maximum allowable indent depth. Negative values are invalid and will trigger an error. When the option is not set, list behavior remains unchanged.
+
+The setting applies only to list indentation and does not affect paragraph indentation. Existing content is not altered, and pasted lists that exceed the maximum indent depth will retain their structure but cannot be further indented. When multiple list items are selected, only items eligible for indentation will be indented individually—validation is applied per item, not across the full selection.
+
+Outdent functionality remains unaffected and always available. The state of indent and outdent controls reflects the current indentation capabilities based on this setting.
+
+.Example configuration
+
+The following example shows a basic configuration for the `list_max_depth` option, which limits list indentation to a maximum of 2 levels:
+
+[source,js]
+----
+tinymce.init({
+    selector: "textarea",
+    plugins: [
+        "advlist", "anchor", "autolink", "charmap", "code", "fullscreen",
+        "help", "image", "insertdatetime", "link", "lists", "media",
+        "preview", "searchreplace", "table", "visualblocks",
+    ],
+    list_max_depth: 2,
+    toolbar: "undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+});
+----
+
+For more information, see: xref:user-formatting-options.adoc#list_max_depth[User formatting - List max depth].
 
 [[additions]]
 == Additions

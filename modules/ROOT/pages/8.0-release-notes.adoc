@@ -148,6 +148,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Tab to create a new row in tables with a non-editable final row would freeze the editor.
+// #TINY-12018
+
+Previously, when attempting to create a new row by pressing Tab in a table with a non-editable final row, the editor would freeze causing a infinite loop of insert attempts. This was due to the logic not correctly detecting whether the last row was editable, leading to repeated, unsuccessful insert attempts.
+
+{productname} {release-version} fixes this issue by correctly detecting whether the last row is editable, allowing the user to create a new row without freezing the editor.
+
 
 [[security-fixes]]
 == Security fixes

@@ -143,10 +143,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== The `contextform` subtoolbar is no longer dismissed when using the back button in inline mode editors.
+// #TINY-12118
 
-// CCFR here.
+In inline mode, the context form toolbar incorrectly shifted focus from the selected image to the editor container. As a result, the plugin which relies on the current selection to apply changes was unable to apply attributes like `alt` text to the correct image.
+
+{productname} {release-version} resolves this by ensuring that the focus is preserved properly, ensuring that the plugin now applies changes such as `alt` text to the correct image in inline mode.
 
 
 [[security-fixes]]

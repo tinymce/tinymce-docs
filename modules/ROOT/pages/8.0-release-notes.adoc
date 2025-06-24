@@ -143,10 +143,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== It was not possible to navigate out of a `figcaption` using the left and right arrow keys in Firefox.
+// #TINY-11982
 
-// CCFR here.
+Prior to {productname} {release-version}, Firefox exhibited an issue where pressing the left or right arrow keys would not allow users to exit the image `figcaption` element. This behavior was inconsistent with other major browsers such as Google Chrome and Safari, where the arrow keys functioned as expected and allowed seamless navigation out of the `figcaption`.
+
+With {productname} {release-version}, this issue has been resolved. Users can now exit the `figcaption` using the left/right arrow keys in Firefox, aligning its behavior with that of other browsers. This update ensures a more consistent user experience.
 
 
 [[security-fixes]]

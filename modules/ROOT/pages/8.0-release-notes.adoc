@@ -143,10 +143,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Arrow key navigation between buttons was blocked when a button is hovered by the mouse.
+// #TINY-12163
 
-// CCFR here.
+In previous versions of {productname}, if a button was hovered by the mouse while using arrow keys for navigation, focus would return to the previously focused element. This caused the selection to become stuck on the button with the `mouseover` event.
+
+{productname} {release-version} resolves this issue by preventing the `mouseover` event from being triggered again during arrow key navigation, ensuring a seamless user experience when navigating with arrow keys.
 
 
 [[security-fixes]]

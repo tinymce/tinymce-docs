@@ -143,10 +143,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Decorative images would lose their decorative status when the `alt` subtoolbar was closed when using the apply button.
+// #TINY-11912
 
-// CCFR here.
+Previously, an issue was identified where closing the `alt` subtoolbar using the `Apply` button would inadvertently remove the decorative status from an image that was already marked as decorative. This occurred because the `onSetup` API disabled the input group, leading the `Apply` logic to incorrectly interpret the image as non-decorative.
+
+This issue has been resolved in {productname} {release-version}. The `onSetup` and `Apply` behavior has been aligned to consistently evaluate the input group, ensuring the decorative status is preserved as expected.
 
 
 [[security-fixes]]

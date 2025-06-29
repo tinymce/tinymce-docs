@@ -59,6 +59,24 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Spell Checker
+
+The {productname} {release-version} release includes an accompanying release of the **Spell Checker** premium plugin.
+
+**Spell Checker** Premium plugin includes the following fix.
+
+
+=== Content marked with `lang` attributes was sometimes not spellchecked correctly.
+// #TINY-12101
+
+Previously, the spellchecker did not consistently handle content marked with different `lang` attributes, particularly when the language codes used different formats. This inconsistency led to missed spellchecking for words in spans that used alternate casing or separator conventions (e.g., `en-GB` vs `en_GB`).
+
+This issue was introduced in {productname} 6.4, where documents containing a mix of language codes using different formats would not be reliably spellchecked. As a result, misspelled words in spans using alternate casing or separator conventions were not detected, even though they functioned as expected in version 6.3.
+
+In {release-version}, support for mixed-case and mixed-format language codes has been restored. The spellchecker now correctly identifies and handles variations in language attribute formatting, ensuring that content is reliably checked regardless of code style. This improvement enables accurate spellchecking for documents that include multiple languages and diverse regional conventions.
+
+For information on the **Spell Checker** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

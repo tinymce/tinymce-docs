@@ -143,7 +143,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-// === Tabbing when a `figure` was selected didn't move the selection to the `figcaption` correctly.
+=== Tabbing when a `figure` was selected didn't move the selection to the `figcaption` correctly.
 // #TINY-11753
 
 Previously, the `tab` key did not correctly handle nested components. Specifically, when a `CET` (Child Editable Text) element was placed inside a `CEF` (Container Editable Field) element such as a `figcaption`, focus behavior was unintuitive. This led to inconsistent and confusing keyboard navigation when interacting with editable nested elements like a `figcaption`.

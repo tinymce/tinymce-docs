@@ -1,4 +1,3 @@
-
 = {productname} {release-version}
 :release-version: 8.0.0
 :navtitle: {productname} {release-version}
@@ -126,6 +125,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== DomParser no longer tries to fix some nodes when parsed with a context
+// #TINY-8205
+
+Previously, the `DomParser` would attempt to fix invalid HTML structures when parsing with a context, such as when inserting content into a specific element. This behavior lead to unexpected results, especially when the structure was not valid in the context of the parent element.
+
+In {productname} {release-version}, the `DomParser` has been updated to no longer attempt to fix invalid nodes when parsing with a context. Instead, it will validate the nodes and only insert them if they are valid in the context of their parent element. If the nodes are invalid, they will not be inserted.
+
 
 [[removed]]
 == Removed
@@ -147,6 +153,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // #TINY-vwxyz1
 
 // CCFR here.
+
+=== Improved structure retention when inserting invalid HTML fragments
+// #TINY-8205
+
+Previously, when inserting HTML fragments through APIs or pasting, the parser would attempt to fix invalid structures, which could lead to the loss of valid structures like tables and lists. This behavior was inconsistent and could result in unexpected outcomes when handling complex HTML content.
+
+In {productname} {release-version}, the parser has been updated to improve the retention of structures when inserting HTML fragments. It now validates these fragments in the context of their parent structure, ensuring that valid structures are preserved even if the fragment contains invalid HTML resulting in more predictable and desirable outcomes when handling complex HTML content.
 
 
 [[security-fixes]]

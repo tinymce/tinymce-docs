@@ -13,6 +13,6 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'pagebreak',
   toolbar: 'pagebreak',
-  pagebreak_separator: '<div style=”page-break-after: all”>My page break</div>
+  pagebreak_separator: '<div style=”page-break-after: all”>My page break</div>'
 });
 ----

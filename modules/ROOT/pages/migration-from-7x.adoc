@@ -3,9 +3,485 @@
 :description: Guidance for migrating from TinyMCE 7 to TinyMCE 8
 :keywords: migration, considerations, premigration, pre-migration
 :release-version: 8.0
+:page-toclevels: 3
 
-// TODO
+== Introduction
 
-== {productname} {release-version} core changes.
+This guide provides a comprehensive overview of the breaking changes introduced in {productname} {release-version}, along with the necessary steps to migrate from {productname} 7.x. It covers key updates to APIs, plugins, and service configurations, including deprecated methods, renamed components, and removed features. These changes are designed to enhance performance, simplify configuration, and align with modern web standards, ensuring a smoother transition and continued compatibility for your integrations.
+
+[IMPORTANT]
+.Breaking Changes Quick Reference
+====
+The following table summarizes all breaking changes in {productname} {release-version}. Each item links to detailed information further in the guide.
+
+[cols="2,3,1",options="header"]
+|===
+|Breaking Change |Impact |Severity
+
+|`editor.selection.setContent` Removal
+|Method removed. Use `editor.insertContent` instead.
+|High
+
+|`editor.documentBaseUrl` Removal
+|Property removed. Use `editor.editorManager.documentBaseURL` instead.
+|Medium
+
+|`skipFocus` and `skip_focus` Consolidation
+|Options consolidated to `skipFocus` in `ToggleToolbarDrawer`.
+|Low
+
+|`fire()` Method Deprecation
+|Method deprecated. Use `dispatch()` for event handling.
+|Medium
+|===
+
+[TIP]
+All items marked "High" severity require immediate attention during migration.
+====
+
+== Core API Changes
+
+[discrete]
+=== Breaking Changes Overview
+
+IMPORTANT: The following sections detail critical changes that require updates to your code. Please review each section carefully.
+
+=== Removed Methods
+
+==== editor.selection.setContent
+[.discrete]
+// #TINY-12109
+
+The `editor.selection.setContent` API has been deprecated and will be removed in {productname} 9.
+
+.Example Usage
+[source,javascript]
+----
+// Deprecated in {productname} 8, will be removed in 9
+editor.selection.setContent('<p>New content</p>');
+
+// Recommended replacement
+editor.insertContent('<p>New content</p>');
+----
+
+*Impact*: This change simplifies content manipulation by consolidating insertion methods.
+
+.Required Changes
+* Replace `editor.selection.setContent` with `editor.insertContent`
+* Update any plugins using the old method
+
+'''
+
+==== editor.documentBaseUrl
+[.discrete]
+// #TINY-12236
+
+The undocumented `editor.documentBaseUrl` property has been removed.
+
+.Example Usage
+[source,javascript]
+----
+// Removed in {productname} 8
+console.log(editor.documentBaseUrl);
+
+// Use this instead
+console.log(editor.editorManager.documentBaseURL);
+----
+
+TIP: Use `editor.editorManager.documentBaseURL` for all base URL operations.
+
+.Required Changes
+* Update all base URL references to use `editor.editorManager.documentBaseURL`
+
+'''
+
+==== skipFocus and skip_focus
+// #TINY-12044
+
+The `skipFocus` and `skip_focus` options for the `ToggleToolbarDrawer` command have been consolidated into a single, more consistent argument. This reduces API complexity and clarifies the intended behavior.
+
+[source, javascript]
+----
+// Old approach (Deprecated) in {productname} 8
+editor.execCommand('ToggleToolbarDrawer', { skip_focus: false }, { skipFocus: true });
+
+// New approach (Recommended)
+editor.execCommand('ToggleToolbarDrawer', false, { skipFocus: true });
+----
+
+**Impact**: This change simplifies focus management, reducing the risk of confusion and unexpected behavior.
+
+**Migration steps:**
+
+* Replace all instances of `skip_focus` with `skipFocus`
+* Review any plugins or custom scripts that rely on the old method
+
+
+=== Deprecated Methods
+
+==== `fire()`
+// #TINY-11692
+
+The `fire()` method has been replaced by `dispatch()` for event handling. The `fire()` method will be removed in {productname} 9 to avoid confusion with its name.
+
+[source, javascript]
+----
+// Deprecated in {productname} 8, will be removed in 9
+// Old approach for firing custom events
+editor.fire('someEvent');
+
+// New approach for firing custom events
+editor.dispatch('someEvent');
+----
+
+**Impact**: This change aligns {productname} with modern event handling conventions, making the API more intuitive for developers.
+
+**Migration steps:**
+
+* Replace all instances of `fire()` with `dispatch()`
+* Review any third-party plugins for compatibility
+
+
+=== Plugin Updates
+
+==== List Plugin Updates
+// #TINY-11937
+
+The list plugin now includes configurable indentation level restrictions to prevent excessive nesting of list items. This change helps maintain cleaner document structure and improves compatibility with various export formats.
+
+[source, javascript]
+----
+// Configure maximum list indentation levels
+tinymce.init({
+  max_list_indent: 3  // Restricts list indentation to 3 levels
+});
+----
+
+**Impact**: Lists will no longer indent beyond the configured maximum level.
+
+**Migration steps:**
+
+* Review your content for deeply nested lists that may be affected
+* Configure the `max_list_indent` setting according to your requirements
+* Update any documentation or user guides that reference list indentation behavior
+
+==== Renaming and deprecation of "legacy" Export Plugin
+// #TINY-12297
+
+The legacy link:https://www.tiny.cloud/docs/tinymce/5/export/[Export] plugin has been renamed to `exportlegacy` as part of the migration to {productname} {release-version}. This is a transitional step before the complete removal of the legacy plugin in {productname} 9.
+
+**Impact**: Users are required to update their plugin identifiers to avoid compatibility issues.
+
+**Migration steps:**
+
+* Update all references to the old plugin identifier in your configuration:
+
+[source, javascript]
+----
+// Old configuration plugin identifier
+plugins: 'export',
+
+// Updated configuration plugin identifier
+plugins: 'exportlegacy',
+----
+
+* Review documentation and user guides to reflect this change.
+
+[TIP]
+Alternatively, consider migrating to the new xref:exportpdf.adoc[Export to PDF] and xref:exportword.adoc[Export to Word] plugins for improved functionality and support.
+
+==== Language Pack Filename Changes
+// #TINY-12090
+
+Language pack filenames have been standardized to follow the RFC5646 format. This change ensures consistent language handling across different platforms and improves internationalization support.
+
+**Impact**: Custom language packs using the old naming format will need to be updated.
+
+**Migration steps:**
+
+* Rename language pack files to follow the RFC5646 format (e.g., `en_GB.js` becomes `en-GB.js`)
+* Update any configuration or scripts that reference language pack filenames
+* If you maintain custom translations, ensure they follow the new naming convention
+
+[source, javascript]
+----
+// Old configuration
+language_url: '/langs/en_GB.js'
+
+// New configuration
+language_url: '/langs/en-GB.js'
+----
+
+==== Update to Image and Accessibility Checker Plugins
+// #TINY-12235
+
+The Image and Accessibility Checker plugins now follow the latest W3C standards for decorative images, requiring a null alt attribute rather than a `+role="presentation"+` attribute. This change helps improve accessibility support.
+
+**Impact**: Customers using these plugins will need to update their configurations to ensure continued compliance with accessibility standards.
+
+**Migration steps:**
+
+* Replace any `+role="presentation"+` attributes with a null alt attribute in your content
+* Review plugin configurations to ensure they align with the new standards
+
+
+==== Page Break plugin update for Export PDF/Word Compatibility
+// #TINY-12013
+
+The Page Break plugin has been updated to work out-of-the-box with the xref:exportpdf.adoc[Export to PDF] and xref:exportword.adoc[Export to Word] plugins, addressing a common pain point for developers.
+
+**Impact**: This change improves the export experience by providing more predictable page break behavior.
+
+**Migration steps:**
+
+* If the old behavior is prefered, explicitly set the `pagebreak_separator` option:
+
+[source, javascript]
+----
+pagebreak_separator: '<!-- my page break -->'
+----
+
+The default value has been changed to produce a page break in both the xref:exportpdf.adoc[Export to PDF] and xref:exportword.adoc[Export to Word] service., such as:
+
+.Example
+[source, javascript]
+----
+pagebreak_separator: '<div class="mce-pagebreak"></div>'
+----
+
+=== Technical Improvements and Cleanup
+
+==== ScriptLoader Enhancements
+// #TINY-12228
+
+The ScriptLoader now supports configurable crossorigin attributes, allowing better control over script loading behavior and CORS policies. This improvement is particularly important for {productname} Cloud deployments where browsers or security software (such as Norton Antivirus) might interfere with Referer headers.
+
+Configure the crossorigin attribute in two ways:
+
+[source, html]
+----
+<!-- Method 1: Direct CDN script inclusion -->
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/8/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
+----
+
+[source, javascript]
+----
+// Method 2: Global configuration
+tinymce.init({
+  selector: 'textarea',
+  crossorigin: 'anonymous'
+});
+----
+
+**Impact**: This change improves security and compatibility with various hosting configurations, particularly ensuring consistent loading behavior for both the main {productname} script and plugins when using {productname} Cloud.
+
+**Migration steps:**
+
+* Review your script loading configurations and update as needed
+* Add appropriate crossorigin attributes where required by your security policies
+* For {productname} Cloud deployments, consider setting `crossorigin: 'anonymous'` to prevent potential loading issues caused by security software
+
+==== Removed Empty Files
+// #TINY-11287, #TINY-12084
+
+Several empty files have been removed from the codebase to reduce clutter and improve maintenance:
+
+* Empty CSS file from the Comments plugin
+* Empty LESS file from the Mentions plugin
+
+**Impact**: These changes have no functional impact but may affect custom build processes that explicitly reference these files.
+
+**Migration steps:**
+
+* Remove any direct references to these files from your build processes
+* Update any custom CSS/LESS imports that included these files
+
+=== Content Handling Updates
+
+==== Improved DIV Element Handling
+// #TINY-12171
+
+The handling of `<div>` elements during cut operations has been improved to prevent issues with element structure and content preservation.
+
+**Impact**: This change affects how div elements are handled during cut operations, particularly in complex document structures.
+
+**Migration steps:**
+
+* Test cut/paste operations in your specific use cases, especially with complex nested div structures
+* Update any custom handling of div elements to align with the new behavior
+* Review and update any custom cleanup functions that process div elements
+
+=== Service and Configuration Changes
+
+==== Transition from Version 7 License Keys to Version {release-version} License Keys
+// #EPIC-192
+
+{productname} {release-version} introduces an enhanced license key system that requires specific attention during migration. The complete licensing documentation xref:license-key.adoc[License Key Management] covers:
+
+* Detailed explanations of all license types (GPL, Commercial, GPL with Premium Features)
+* Time-based vs Version-locked license key differences
+* License states (Active, Grace Period, Expired, Invalid)
+* Deployment options (Cloud-only, Self-hosted, Hybrid)
+* Step-by-step configuration examples for each setup
+* Commercial License Key Manager setup and requirements
+* Troubleshooting and FAQ
+
+===== Key Migration Considerations
+
+* *License Key Format Change:* Version 7 keys are **not compatible** with {productname} {release-version}. New keys use the prefix `T8LK:` for commercial licenses or `GPL+T8LK:` for GPL with Premium Features.
+* *Mandatory Key Requirement:* Self-hosted deployments now **require** a valid license key; without one, the editor will be set to readonly.
+* *Commercial License Manager:* Self-hosted commercial deployments **require** the new license key manager addon.
+
+===== Migration Steps
+
+. *Obtain New License Key:*
+** Contact your account manager to obtain a new {productname} {release-version} license key
+** Choose the appropriate license type based on your deployment needs (Commercial, GPL, or GPL with Premium Features), see: xref:license-key.adoc#setting-the-license[setting the license] for details.
+
+. *Update Configuration:*
++
+[source, javascript]
+----
+// Old {productname} 7 configuration
+tinymce.init({
+  selector: '#editor',
+  // No license key required
+});
+
+// New {productname} 8 configuration
+tinymce.init({
+  selector: '#editor',
+  license_key: 'T8LK:...'  // New format required
+});
+----
+
+===== License Key Manager Setup
+
+When migrating to {productname} {release-version} with a commercial license, the license key manager addon is required for the editor to operate. The setup varies based on your deployment method:
+
+. *CDN/Static Hosting:*
+** Place the `licensekeymanager` folder in your {productname} plugins directory:
++
+[tree]
+----
+your-site/
+├── tinymce/
+│   └── plugins/
+│       ├── licensekeymanager/     # Add this folder
+│       │   ├── plugin.min.js
+│       │   └── index.js
+│       └── ... other plugins
+----
+
+. *NPM/Module Bundler:*
+** Install {productname} and ensure the license key manager is imported:
++
+[source, javascript]
+----
+// Import {productname}
+import tinymce from 'tinymce';
+
+// Import the license key manager
+import 'tinymce/plugins/licensekeymanager';
+
+// Your TinyMCE initialization
+tinymce.init({
+  selector: '#editor',
+  license_key: 'T8LK:...'  // New format required
+});
+----
+
+. *React/Next.js:*
+** When using the `@tinymce/tinymce-react` package:
++
+[source, javascript]
+----
+// Import the Editor component
+import { Editor } from '@tinymce/tinymce-react';
+
+// Import the license key manager
+import 'tinymce/plugins/licensekeymanager';
+
+// Your Editor component
+export default function MyEditor() {
+  return (
+    <Editor
+      init={{
+        license_key: 'T8LK:...'  // New format required
+      }}
+    />
+  );
+}
+----
+
+. *PHP/Laravel:*
+** Ensure the license key manager is included when publishing {productname} assets:
++
+[source, php]
+----
+// Example Laravel Blade view
+<script src="{{ asset('path/to/tinymce/tinymce.min.js') }}"></script>
+<script src="{{ asset('path/to/tinymce/plugins/licensekeymanager/plugin.min.js') }}"></script>
+<script>
+tinymce.init({
+  selector: '#editor',
+  license_key: 'T8LK:...'  // New format required
+});
+</script>
+----
+
+[IMPORTANT]
+====
+* The license key manager is automatically included when using {companyname} Cloud.
+* The plugin does not need to be added to the `plugins` configuration option.
+* The license key manager must be loaded before {productname} initialization.
+* For bundled applications, ensure the license key manager is not excluded during build optimization.
+====
+
+For complete details on license key manager setup and troubleshooting, see xref:license-key.adoc##setting-up-the-commercial-license-key-manager[Setting up the Commercial License Key Manager].
+
+==== Discontinuation of Medical English (UK)
+// #TINY-12255
+
+[WARNING]
+The "Medical English (UK)" dictionary has been removed due to licensing constraints. Customers using this feature must update their configurations accordingly.
+
+**Impact**: Users relying on this dictionary will need to make alternative arrangements for medical-specific spell checking.
+
+**Migration steps:**
+
+* Remove any configuration settings referencing "Medical English (UK)"
+* Explore third-party dictionary options as needed
+
+==== Decoupling of Service Versions from {productname} Editor
+// #EPIC-247, #EPIC-265
+
+Services previously bundled with the editor, such as Java Servlet services, are no longer included in {productname} {release-version} packages. Customers should migrate to xref:bundle-intro-setup.adoc[Containerized service deployments] or consider alternative hosting options.
+
+**Impact**: This reduces the dependency between the editor and backend services, simplifying updates and maintenance.
+
+**Migration steps:**
+
+* Update the applications deployment architecture to use xref:bundle-intro-setup.adoc[Containerized services] where applicable
+
+==== Transition from Java WAR Files to Containerized Services
+// #EPIC-247
+
+{productname} {release-version} no longer includes Java WAR files for backend services like the spell checker. Customers are required to migrate to modern Docker/OCI containers for self-hosted deployments.
+
+**Impact**: This reduces infrastructure complexity and aligns with modern DevOps practices.
+
+**Migration steps:**
+
+* Transition to xref:bundle-intro-setup.adoc[Containerized service deployments] as soon as possible
+* link:{supporturl}/[{supportname}] if continued access to legacy WAR files are required
+
+For more information on deploying the server-side components using Docker, see: xref:bundle-intro-setup.adoc[Containerized service deployments].
+
+== Conclusion
+
+Upgrading to {productname} {release-version} requires integrators to update their API calls, plugin configurations, and service integrations to accommodate the breaking changes introduced in this release. While some adjustments may involve significant code updates, these enhancements are intended to simplify development, and improve the overall editor experience.
+
+For more guidance, refer to the link:https://www.tiny.cloud/docs[{productname} Documentation], utilize the in-house **Ask AI** widget for general {productname} support, or connect with your link:{supporturl}/[{supportname}] representative for assistance.
 
 For additional details on {productname} {release-version} changes, see xref:8.0-release-notes.adoc#overview[{productname} {release-version} release notes].

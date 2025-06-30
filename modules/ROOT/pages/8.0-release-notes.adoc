@@ -104,6 +104,23 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== ScriptLoader cross-origin attribute support
+
+Added configurable cross-origin attribute support to ScriptLoader. This improvement allows setting the `crossorigin` attribute for script loading, which is particularly important for {productname} Cloud deployments where browsers or security software might interfere with Referer headers. The new `crossorigin` option supports values such as "anonymous", following the same pattern as the existing `referrer_policy` option.
+
+This improvement is especially relevant for {productname} {release-version} users utilizing {companyname} Cloud, as it ensures consistent loading behavior for both the main {productname} script and plugins when browsers or security software (like Norton Antivirus) interfere with Referer headers.
+
+Example configuration:
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  crossorigin: 'anonymous'
+});
+----
+
+For more details, see the xref:tinymce-and-cors.adoc[ScriptLoader cross-origin attribute support] section.
+
 
 [[additions]]
 == Additions

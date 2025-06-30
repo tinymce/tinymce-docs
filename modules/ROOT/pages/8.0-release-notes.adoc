@@ -148,6 +148,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Strikethrough format could be added outside font size format, which renders incorrectly in some browsers.
+// #TINY-12004
+
+Previously, there was an issue where combining strikethrough (`s` element) and font size formatting could lead to incorrect rendering in some browsers, particularly Chrome. This occurred when the `s` (strikethrough) element was placed outside a font size span, causing the strikethrough line to render incorrectly.
+
+The fix ensures that the `s` element is now properly nested inside the font size element, improving visual consistency across browsers.
+
 
 [[security-fixes]]
 == Security fixes

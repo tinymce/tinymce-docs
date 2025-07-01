@@ -104,22 +104,30 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
-=== ScriptLoader cross-origin attribute support
+=== Enhanced cross-origin resource handling
 
-Added configurable cross-origin attribute support to ScriptLoader. This improvement allows setting the `crossorigin` attribute for script loading, which is particularly important for {productname} Cloud deployments where browsers or security software might interfere with Referer headers. The new `crossorigin` option supports values such as "anonymous", following the same pattern as the existing `referrer_policy` option.
+Added a new function-based `crossorigin` configuration option that provides granular control over cross-origin resource loading for both scripts and stylesheets. This enhancement allows for URL-based decisions about crossorigin attributes, which is particularly important for {productname} Cloud deployments and complex hosting scenarios.
 
-This improvement is especially relevant for {productname} {release-version} users utilizing {companyname} Cloud, as it ensures consistent loading behavior for both the main {productname} script and plugins when browsers or security software (like Norton Antivirus) interfere with Referer headers.
+The `crossorigin` option accepts a function that determines the appropriate attribute value based on the resource being loaded:
 
-Example configuration:
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',
-  crossorigin: 'anonymous'
+  crossorigin: (url, resourceType) => {
+    // Add crossorigin="anonymous" for cross-origin resources
+    if (url.startsWith('https://your-cdn.com')) {
+      return 'anonymous';
+    }
+    // Omit crossorigin attribute for same-origin resources
+    return '';
+  }
 });
 ----
 
-For more details, see the xref:tinymce-and-cors.adoc[ScriptLoader cross-origin attribute support] section.
+This improvement ensures consistent resource loading behavior across different deployment scenarios and provides better control over CORS settings for both scripts and stylesheets.
+
+For more details, see the xref:tinymce-and-cors.adoc#crossorigin[crossorigin configuration option] documentation.
 
 
 [[additions]]

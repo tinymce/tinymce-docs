@@ -66,9 +66,11 @@ editor.insertContent('<p>New content</p>');
 
 *Impact*: This change simplifies content manipulation by consolidating insertion methods.
 
-.Required Changes
-* Replace `editor.selection.setContent` with `editor.insertContent`
-* Update any plugins using the old method
+**Migration checklist:**
+
+* [ ] Replace all instances of `editor.selection.setContent` with `editor.insertContent`
+* [ ] Update custom plugins that use the old method
+* [ ] Test content insertion in your editor instances
 
 '''
 
@@ -111,10 +113,12 @@ editor.execCommand('ToggleToolbarDrawer', false, { skipFocus: true });
 
 **Impact**: This change simplifies focus management, reducing the risk of confusion and unexpected behavior.
 
-**Migration steps:**
+**Migration checklist:**
 
-* Replace all instances of `skip_focus` with `skipFocus`
-* Review any plugins or custom scripts that rely on the old method
+* [ ] Locate all instances of `ToggleToolbarDrawer` command usage
+* [ ] Replace `skip_focus` with `skipFocus` in command options
+* [ ] Update any custom plugins using this command
+* [ ] Test toolbar drawer behavior after changes
 
 
 === Deprecated Methods
@@ -136,10 +140,12 @@ editor.dispatch('someEvent');
 
 **Impact**: This change aligns {productname} with modern event handling conventions, making the API more intuitive for developers.
 
-**Migration steps:**
+**Migration checklist:**
 
-* Replace all instances of `fire()` with `dispatch()`
-* Review any third-party plugins for compatibility
+* [ ] Search codebase for all uses of the `fire()` method
+* [ ] Replace each instance with `dispatch()`
+* [ ] Review and update third-party plugins
+* [ ] Test all custom event handling
 
 
 === Plugin Updates
@@ -159,11 +165,12 @@ tinymce.init({
 
 **Impact**: Lists will no longer indent beyond the configured maximum level.
 
-**Migration steps:**
+**Migration checklist:**
 
-* Review your content for deeply nested lists that may be affected
-* Configure the `max_list_indent` setting according to your requirements
-* Update any documentation or user guides that reference list indentation behavior
+* [ ] Audit existing content for deeply nested lists
+* [ ] Determine appropriate maximum indentation level for your use case
+* [ ] Configure `max_list_indent` setting
+* [ ] Test list behavior with existing content
 
 ==== Renaming and deprecation of "legacy" Export Plugin
 // #TINY-12297
@@ -197,11 +204,14 @@ Language pack filenames have been standardized to follow the RFC5646 format. Thi
 
 **Impact**: Custom language packs using the old naming format will need to be updated.
 
-**Migration steps:**
+**Migration checklist:**
 
-* Rename language pack files to follow the RFC5646 format (e.g., `en_GB.js` becomes `en-GB.js`)
-* Update any configuration or scripts that reference language pack filenames
-* If you maintain custom translations, ensure they follow the new naming convention
+* [ ] Identify all language pack files in your deployment
+* [ ] Rename files to RFC5646 format (e.g., `en_GB.js` → `en-GB.js`)
+* [ ] Update configuration references to language files
+* [ ] Update build scripts that handle language files
+* [ ] Test language switching in your application
+* [ ] Update custom translation files to new format
 
 [source, javascript]
 ----
@@ -219,10 +229,12 @@ The Image and Accessibility Checker plugins now follow the latest W3C standards 
 
 **Impact**: Customers using these plugins will need to update their configurations to ensure continued compliance with accessibility standards.
 
-**Migration steps:**
+**Migration checklist:**
 
-* Replace any `+role="presentation"+` attributes with a null alt attribute in your content
-* Review plugin configurations to ensure they align with the new standards
+* [ ] Identify images using `role="presentation"` in your content
+* [ ] Replace with null alt attributes (`alt=""`)
+* [ ] Update image plugin configuration if customized
+* [ ] Test accessibility checker with updated content
 
 
 ==== Page Break plugin update for Export PDF/Word Compatibility
@@ -251,35 +263,54 @@ pagebreak_separator: '<div class="mce-pagebreak"></div>'
 
 === Technical Improvements and Cleanup
 
-==== ScriptLoader Enhancements
-// #TINY-12228
+==== Cross-Origin Resource Loading Configuration
+// #TINY-12228, TINY-12326
 
-The ScriptLoader now supports configurable crossorigin attributes, allowing better control over script loading behavior and CORS policies. This improvement is particularly important for {productname} Cloud deployments where browsers or security software (such as Norton Antivirus) might interfere with Referer headers.
+When upgrading to {productname} 8, you will need to review and possibly update how your integration handles cross-origin resource loading. {productname} 8 provides a new configuration option for controlling the `crossorigin` attribute on loaded resources.
 
-Configure the crossorigin attribute in two ways:
+**What to check:**
 
+. If you're using {cloudname}:
++
+* Ensure your script tag includes both required attributes:
++
 [source, html]
 ----
-<!-- Method 1: Direct CDN script inclusion -->
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/8/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
+<script src="{cdnurl}" referrerpolicy="origin" crossorigin="anonymous"></script>
 ----
-
++
+. If your application loads resources (scripts or stylesheets) from different domains:
++
+* Configure the new crossorigin function in your `tinymce.init`:
++
 [source, javascript]
 ----
-// Method 2: Global configuration
 tinymce.init({
   selector: 'textarea',
-  crossorigin: 'anonymous'
+  crossorigin: (url, resourceType) => {
+    // Add crossorigin="anonymous" for cross-origin resources
+    if (url.startsWith('https://your-cdn.com')) {
+      return 'anonymous';
+    }
+    // Omit crossorigin attribute for same-origin resources
+    return '';
+  }
 });
 ----
++
+. If you're using content_css from a different domain:
 
-**Impact**: This change improves security and compatibility with various hosting configurations, particularly ensuring consistent loading behavior for both the main {productname} script and plugins when using {productname} Cloud.
+* The `content_css_cors` option takes precedence for stylesheets.
+* Review your content_css configuration if you use cross-origin stylesheets.
 
-**Migration steps:**
+**Migration checklist:**
 
-* Review your script loading configurations and update as needed
-* Add appropriate crossorigin attributes where required by your security policies
-* For {productname} Cloud deployments, consider setting `crossorigin: 'anonymous'` to prevent potential loading issues caused by security software
+* [ ] Verify script tag attributes for Cloud deployments.
+* [ ] Configure crossorigin function if using cross-origin resources.
+* [ ] Test resource loading in your deployment environment.
+* [ ] Review content_css configuration if using cross-origin stylesheets.
+
+For complete details on the new crossorigin function API, see: xref:tinymce-and-cors.adoc#crossorigin[crossorigin configuration option].
 
 ==== Removed Empty Files
 // #TINY-11287, #TINY-12084
@@ -291,10 +322,12 @@ Several empty files have been removed from the codebase to reduce clutter and im
 
 **Impact**: These changes have no functional impact but may affect custom build processes that explicitly reference these files.
 
-**Migration steps:**
+**Migration checklist:**
 
-* Remove any direct references to these files from your build processes
-* Update any custom CSS/LESS imports that included these files
+* [ ] Check build processes for references to Comments plugin CSS
+* [ ] Check build processes for references to Mentions plugin LESS
+* [ ] Remove any imports of these empty files
+* [ ] Test Comments and Mentions plugins after removal
 
 === Content Handling Updates
 
@@ -305,11 +338,12 @@ The handling of `<div>` elements during cut operations has been improved to prev
 
 **Impact**: This change affects how div elements are handled during cut operations, particularly in complex document structures.
 
-**Migration steps:**
+**Migration checklist:**
 
-* Test cut/paste operations in your specific use cases, especially with complex nested div structures
-* Update any custom handling of div elements to align with the new behavior
-* Review and update any custom cleanup functions that process div elements
+* [ ] Test cut/paste with nested div structures
+* [ ] Update custom div handling code if present
+* [ ] Review custom cleanup functions affecting divs
+* [ ] Verify content structure after cut operations
 
 === Service and Configuration Changes
 
@@ -440,6 +474,15 @@ tinymce.init({
 
 For complete details on license key manager setup and troubleshooting, see xref:license-key.adoc##setting-up-the-commercial-license-key-manager[Setting up the Commercial License Key Manager].
 
+**License Migration checklist:**
+
+* [ ] Contact account manager for new {productname} {release-version} license key
+* [ ] Choose appropriate license type for your deployment
+* [ ] Install license key manager addon for commercial licenses
+* [ ] Update configuration with new license key format
+* [ ] Test editor functionality with new license
+* [ ] Verify all premium features are working
+
 ==== Discontinuation of Medical English (UK)
 // #TINY-12255
 
@@ -448,10 +491,12 @@ The "Medical English (UK)" dictionary has been removed due to licensing constrai
 
 **Impact**: Users relying on this dictionary will need to make alternative arrangements for medical-specific spell checking.
 
-**Migration steps:**
+**Migration checklist:**
 
-* Remove any configuration settings referencing "Medical English (UK)"
-* Explore third-party dictionary options as needed
+* [ ] Remove "Medical English (UK)" from spellchecker configurations
+* [ ] Remove any custom dictionary integrations related to Medical English
+* [ ] Test spellchecker functionality with remaining dictionaries
+* [ ] Configure alternative medical dictionary if required
 
 ==== Decoupling of Service Versions from {productname} Editor
 // #EPIC-247, #EPIC-265
@@ -471,10 +516,15 @@ Services previously bundled with the editor, such as Java Servlet services, are 
 
 **Impact**: This reduces infrastructure complexity and aligns with modern DevOps practices.
 
-**Migration steps:**
+**Migration checklist:**
 
-* Transition to xref:bundle-intro-setup.adoc[Containerized service deployments] as soon as possible
-* link:{supporturl}/[{supportname}] if continued access to legacy WAR files are required
+* [ ] Inventory current WAR file deployments
+* [ ] Review containerization requirements for your environment
+* [ ] Plan transition timeline to containerized services
+* [ ] Set up container infrastructure (Docker/Kubernetes)
+* [ ] Deploy and test containerized services
+* [ ] Update service connection configurations
+* [ ] Contact link:{supporturl}/[{supportname}] if legacy WAR files are still needed
 
 For more information on deploying the server-side components using Docker, see: xref:bundle-intro-setup.adoc[Containerized service deployments].
 

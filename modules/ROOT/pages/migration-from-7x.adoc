@@ -466,7 +466,7 @@ tinymce.init({
 ====
 * The license key manager is automatically included when using {companyname} Cloud.
 * The plugin does not need to be added to the `plugins` configuration option.
-* The license key manager must be loaded before {productname} initialization.
+* For bundled applications, the license key manager must be loaded before {productname} initialization.
 * For bundled applications, ensure the license key manager is not excluded during build optimization.
 ====
 

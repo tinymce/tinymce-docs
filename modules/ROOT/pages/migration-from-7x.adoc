@@ -392,7 +392,7 @@ tinymce.init({
 When migrating to {productname} {release-version} with a commercial license, the license key manager addon is required for the editor to operate. The setup varies based on your deployment method:
 
 . *CDN/Static Hosting:*
-** Place the `licensekeymanager` folder in your {productname} plugins directory:
+** Ensure the supplied `licensekeymanager` folder is in your {productname} plugins directory:
 +
 [tree]
 ----

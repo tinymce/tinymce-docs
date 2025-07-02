@@ -1,63 +1,81 @@
-== Convert URLs to relative, absolute, or absolute with domain
+== URL Handling in TinyMCE
 
-=== Relative URLs
+=== The documentBaseURI API
 
-This will convert all URLs within the same domain to relative URLs. The URLs will be relative from the xref:url-handling.adoc#document_base_url[document_base_url].
+The `documentBaseURI` property on the editor instance provides methods for manipulating URLs. This URI object represents the base URL for the editor and provides methods for converting between relative and absolute URLs.
+
+For detailed information on using the documentBaseURI API, see: xref:apis/tinymce.editor.adoc#documentBaseURI[documentBaseURI].
+
+=== URL Conversion Settings
+
+Two configuration options control how URLs are displayed in the editor:
+
+* `relative_urls` - When true, URLs are converted to be relative to the editor's base URL
+* `remove_script_host` - When true, the protocol and host are excluded from absolute URLs
+
+=== URL Conversion Examples
+
+==== Relative URLs
+
+This converts URLs to be relative to the base URL:
 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  relative_urls: true,
-  document_base_url: 'http://www.example.com/path1/'
+  selector: 'textarea',
+  relative_urls: true
 });
+
+// The editor's documentBaseURI can be used to manipulate URLs:
+editor.documentBaseURI.toRelative('http://www.example.com/path1/path2/file.htm'); // Returns: path2/file.htm
 ----
 
 Example: `+http://www.example.com/path1/path2/file.htm+` >> `+path2/file.htm+`
 
-==== Example: relative URLs on links and images
+===== Example: relative URLs on links and images
 
 liveDemo::url-conversion-relative-1[]
 
-==== Example: relative URLs on links and images to a specific page
+===== Example: relative URLs on links and images to a specific page
 
 liveDemo::url-conversion-relative-2[]
 
-=== Absolute URLs
+==== Absolute URLs
 
-This will convert all relative URLs to absolute URLs. The URLs will be absolute based on the xref:url-handling.adoc#document_base_url[document_base_url].
+This converts URLs to be absolute based on the document base URL:
 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
+  selector: 'textarea',
   relative_urls: false,
-  remove_script_host: true,
-  document_base_url: 'http://www.example.com/path1/'
+  remove_script_host: true
 });
+
+// The editor's documentBaseURI can be used to manipulate URLs:
+editor.documentBaseURI.toAbsolute('path2/file.htm'); // Returns: /path1/path2/file.htm
 ----
 
 Example: `+path2/file.htm+` >> `+/path1/path2/file.htm+`
 
-==== Example: absolute URLs on links and images
+===== Example: absolute URLs on links and images
 
 liveDemo::url-conversion-absolute-1[]
 
-==== Example: absolute URLs and including domain on links and images
+===== Example: absolute URLs and including domain on links and images
 
 liveDemo::url-conversion-absolute-2[]
 
-=== Domain absolute URLs
+==== Domain absolute URLs
 
-This will convert all relative URLs to absolute URLs. The URLs will be absolute based on the xref:url-handling.adoc#document_base_url[document_base_url] with domain.
+This converts URLs to be absolute with the domain included:
 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
+  selector: 'textarea',
   relative_urls: false,
-  remove_script_host: false,
-  document_base_url: 'http://www.example.com/path1/'
+  remove_script_host: false
 });
 ----
 

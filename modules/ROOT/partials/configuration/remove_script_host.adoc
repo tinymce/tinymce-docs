@@ -1,44 +1,26 @@
 [[remove_script_host]]
 == `+remove_script_host+`
 
-This option is used if the xref:url-handling.adoc#relative_urls[`+relative_urls+`] option is set to `+false+` and only applies to links with the same domain as the xref:url-handling.adoc#document_base_url[`+document_base_url+`].
+This option controls whether the protocol and domain are included in URLs when `relative_urls` is set to `false`.
 
-If this option is set to `+true+`, the protocol and host of the `+document_base_url+` is _excluded_ for relative links.
+* `+true+` (default) - Protocol and domain are removed from URLs
+* `+false+` - Protocol and domain are included in URLs
 
-If this option is set to `+false+`, the protocol and host of the `+document_base_url+` is _added_ for relative links.
+This setting affects both the visual representation of URLs in the editor and the results from the `documentBaseURI` URL manipulation methods.
 
-*Type:* `+Boolean+`
-
-*Default value:* `+true+`
-
-*Possible values:* `+true+`, `+false+`
-
-=== Examples: Using `+remove_script_host+`
-
-When `+remove_script_host+` is set to `+true+`, such as:
+=== Example: URL handling with remove_script_host
 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  document_base_url: 'http://www.example.com/path1/',
+  selector: 'textarea',
   relative_urls: false,
   remove_script_host: true
 });
+
+// With remove_script_host: true
+editor.documentBaseURI.toAbsolute('page.html');  // Returns: /path1/page.html
+
+// With remove_script_host: false
+editor.documentBaseURI.toAbsolute('page.html');  // Returns: http://www.example.com/path1/page.html
 ----
-
-Adding a relative URL such as `+test.html+`, the editor will convert the URL to: `+/path1/test.html+`.
-
-When `+remove_script_host+` is set to `+false+`, such as:
-
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  document_base_url: 'http://www.example.com/path1/',
-  relative_urls: false,
-  remove_script_host: false
-});
-----
-
-Adding a relative URL such as `+test.html+`, the editor will convert the URL to: `+http://www.example.com/path1/test.html+`.

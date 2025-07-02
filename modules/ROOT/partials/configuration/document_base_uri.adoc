@@ -1,0 +1,109 @@
+[[document_base_uri]]
+== `documentBaseURI`
+
+The `documentBaseURI` property provides methods for URL manipulation in the editor. It is an instance of the {api_url}/tinymce.util.uri/[URI] class that represents the editor's base URL.
+
+NOTE: This is different from `tinymce.documentBaseURL` (the global EditorManager property). While `tinymce.documentBaseURL` is a string property containing the document's base URL, `editor.documentBaseURI` is the recommended way to handle URL manipulations within an editor instance as it provides helpful methods for URL conversion.
+
+=== Example: URL Manipulation
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  setup: function(editor) {
+    editor.on('init', function() {
+      const baseUri = editor.documentBaseURI;
+      
+      // Get the base URL
+      console.log('Base URL:', baseUri.getURI());
+      // Output: "Base URL: https://fiddle.tiny.cloud/"
+
+      // Convert relative to absolute URL
+      console.log('Absolute URL:', baseUri.toAbsolute('images/logo.png'));
+      // Output: "Absolute URL: https://fiddle.tiny.cloud/images/logo.png"
+
+      // Convert absolute to relative URL
+      console.log('Relative URL:', baseUri.toRelative('https://fiddle.tiny.cloud/images/logo.png'));
+      // Output: "Relative URL: images/logo.png"
+    });
+  }
+});
+----
+
+=== Available Methods
+
+The `documentBaseURI` object provides the following methods for URL handling:
+
+* `getURI()` - Gets the complete base URI as a string
+* `toAbsolute(url)` - Converts a relative URL to an absolute URL based on the editor's base URL
+* `toRelative(url)` - Converts an absolute URL to a relative URL based on the editor's base URL
+* `toAbsPath(base, path)` - Converts a relative path to an absolute path
+
+NOTE: While `documentBaseURI` is an instance of the URI class, it primarily exposes methods for URL conversion. For more complex URI manipulation, you can create a new instance of `tinymce.util.URI`.
+
+=== Examples
+
+==== URL Manipulation
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  setup: function(editor) {
+    editor.on('init', function() {
+      const baseUri = editor.documentBaseURI;
+      
+      // Get the complete base URL
+      console.log('Base URL:', baseUri.getURI());
+      // Example output: "https://example.com/path/to/editor/"
+
+      // Basic URL conversions
+      console.log('To Absolute:', baseUri.toAbsolute('images/logo.png'));
+      // Example output: "https://example.com/path/to/editor/images/logo.png"
+
+      console.log('To Relative:', baseUri.toRelative('https://example.com/path/to/editor/images/logo.png'));
+      // Example output: "images/logo.png"
+
+      console.log('To Absolute Path:', baseUri.toAbsPath('/root/', 'path/file.txt'));
+      // Example output: "/root/path/file.txt"
+    });
+  }
+});
+----
+
+==== Additional URL Manipulation Examples
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  setup: function(editor) {
+    editor.on('init', function() {
+      const baseUri = editor.documentBaseURI;
+
+      // Working with content URLs
+      const imageUrl = 'images/logo.png';
+      const styleUrl = '/styles/custom.css';
+      const fullUrl = 'https://example.com/resources/file.pdf';
+
+      // Converting relative URLs to absolute
+      console.log('Image absolute:', baseUri.toAbsolute(imageUrl));
+      console.log('Style absolute:', baseUri.toAbsolute(styleUrl));
+      
+      // Converting absolute URLs to relative
+      console.log('Document relative:', baseUri.toRelative(fullUrl));
+      
+      // Working with paths (resolves and normalizes paths)
+      console.log('Absolute path 1:', baseUri.toAbsPath('/content/', '../images/photo.jpg'));
+      // Output: "/images/photo.jpg" (../ moves up from /content/ to /, then adds images/photo.jpg)
+      
+      console.log('Absolute path 2:', baseUri.toAbsPath('/content/sub/', '../../images/photo.jpg'));
+      // Output: "/images/photo.jpg" (../../ moves up twice from /content/sub/ to /)
+      
+      console.log('Absolute path 3:', baseUri.toAbsPath('/content/', './images/photo.jpg'));
+      // Output: "/content/images/photo.jpg" (./ keeps us in /content/)
+    });
+  }
+});
+----

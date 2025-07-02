@@ -136,6 +136,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // #TINY-vwxyz1
 
 // CCFR here.
+=== Removed `documentBaseUrl` property from Editor instances, use `documentBaseURI` instead.
+// #TINY-12182
+
+{productname} {release-version} has removed the undocumented `documentBaseUrl` property from `Editor` instances. This internal property was not part of the public API and may have caused confusion for developers accessing editor internals. The supported and documented alternative is `documentBaseURI`, which should be used instead. This change improves API clarity by eliminating unsupported and untracked editor properties.
+
+For more information on the `documentBaseURI` property, see the {api_url}/tinymce.editor/#documentBaseURI[Editor API - documentBaseURI] documentation.
 
 
 [[bug-fixes]]

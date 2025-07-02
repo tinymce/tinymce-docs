@@ -1,7 +1,7 @@
 = URL handling options
 :navtitle: URL handling options
 :description: These settings affect the way URLs are handled by the editor.
-:keywords: url, urls, relative, absolute, domain, document_base_url
+:keywords: url, urls, relative, absolute, domain, documentBaseURI
 
 include::partial$misc/url-handling.adoc[]
 
@@ -17,7 +17,7 @@ include::partial$configuration/allow_script_urls.adoc[leveloffset=+1]
 
 include::partial$configuration/convert_urls.adoc[leveloffset=+1]
 
-include::partial$configuration/document_base_url.adoc[leveloffset=+1]
+include::partial$configuration/document_base_uri.adoc[leveloffset=+1]
 
 include::partial$configuration/relative_urls.adoc[leveloffset=+1]
 

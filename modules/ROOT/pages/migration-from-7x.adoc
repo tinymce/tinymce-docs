@@ -23,8 +23,8 @@ The following table summarizes all breaking changes in {productname} {release-ve
 |Medium
 
 |`editor.documentBaseUrl` Removal
-|Property removed. Use `editor.editorManager.documentBaseURL` instead.
-|Medium
+|Undocumented property removed. Use `editor.editorManager.documentBaseURL` instead.
+|Low
 
 |`skipFocus` and `skip_focus` Consolidation
 |Options consolidated to `skipFocus` in `ToggleToolbarDrawer`.

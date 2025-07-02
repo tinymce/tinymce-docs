@@ -27,10 +27,10 @@ tinymce.init({
 });
 
 // The editor's documentBaseURI can be used to manipulate URLs:
-editor.documentBaseURI.toRelative('http://www.example.com/path1/path2/file.htm'); // Returns: path2/file.htm
+editor.documentBaseURI.toRelative('http://www.example.com/path1/path2/file.html'); // Returns: path2/file.html
 ----
 
-Example: `+http://www.example.com/path1/path2/file.htm+` >> `+path2/file.htm+`
+Example: `+http://www.example.com/path1/path2/file.html+` >> `+path2/file.html+`
 
 ===== Example: relative URLs on links and images
 
@@ -53,10 +53,10 @@ tinymce.init({
 });
 
 // The editor's documentBaseURI can be used to manipulate URLs:
-editor.documentBaseURI.toAbsolute('path2/file.htm'); // Returns: /path1/path2/file.htm
+editor.documentBaseURI.toAbsolute('path2/file.html'); // Returns: /path1/path2/file.html
 ----
 
-Example: `+path2/file.htm+` >> `+/path1/path2/file.htm+`
+Example: `+path2/file.html+` >> `+/path1/path2/file.html+`
 
 ===== Example: absolute URLs on links and images
 
@@ -79,4 +79,4 @@ tinymce.init({
 });
 ----
 
-Example: `+path2/file.htm+` >> `+http://www.example.com/path1/path2/file.htm+`
+Example: `+path2/file.html+` >> `+http://www.example.com/path1/path2/file.html+`

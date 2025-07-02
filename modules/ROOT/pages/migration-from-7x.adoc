@@ -299,14 +299,14 @@ tinymce.init({
 . If you're using content_css from a different domain:
 
 * The `content_css_cors` option takes precedence for stylesheets.
-* Review your content_css configuration if you use cross-origin stylesheets.
+* Review your `content_css` configuration if you use cross-origin stylesheets.
 
 **Migration checklist:**
 
 * [ ] Verify script tag attributes for Cloud deployments.
-* [ ] Configure crossorigin function if using cross-origin resources.
+* [ ] Configure `crossorigin` function if using cross-origin resources.
 * [ ] Test resource loading in your deployment environment.
-* [ ] Review content_css configuration if using cross-origin stylesheets.
+* [ ] Review `content_css` configuration if using cross-origin stylesheets.
 
 For complete details on the new crossorigin function API, see: xref:tinymce-and-cors.adoc#crossorigin[crossorigin configuration option].
 

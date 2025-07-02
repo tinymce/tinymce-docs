@@ -18,9 +18,9 @@ The following table summarizes all breaking changes in {productname} {release-ve
 |===
 |Breaking Change |Impact |Severity
 
-|`editor.selection.setContent` Removal
-|Method removed. Use `editor.insertContent` instead.
-|High
+|`editor.selection.setContent` Deprecated
+|Method deprecated. Use `editor.insertContent` instead.
+|Medium
 
 |`editor.documentBaseUrl` Removal
 |Property removed. Use `editor.editorManager.documentBaseURL` instead.

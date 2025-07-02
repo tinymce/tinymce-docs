@@ -223,14 +223,14 @@ language_url: '/langs/en-GB.js'
 ==== Update to Image and Accessibility Checker Plugins
 // #TINY-12235
 
-The Image and Accessibility Checker plugins now follow the latest W3C standards for decorative images, requiring a null alt attribute rather than a `+role="presentation"+` attribute. This change helps improve accessibility support.
+The Image and Accessibility Checker plugins now follow the latest W3C standards for decorative images, requiring an empty alt attribute rather than a `+role="presentation"+` attribute. This change helps improve accessibility support.
 
 **Impact**: Customers using these plugins will need to update their configurations to ensure continued compliance with accessibility standards.
 
 **Migration checklist:**
 
 * [ ] Identify images using `role="presentation"` in your content
-* [ ] Replace with null alt attributes (`alt=""`)
+* [ ] Replace with empty alt attributes (`alt=""`)
 * [ ] Update image plugin configuration if customized
 * [ ] Test accessibility checker with updated content
 

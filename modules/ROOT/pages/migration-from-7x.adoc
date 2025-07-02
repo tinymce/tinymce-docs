@@ -14,30 +14,166 @@ This guide provides a comprehensive overview of the breaking changes introduced 
 ====
 The following table summarizes all breaking changes in {productname} {release-version}. Each item links to detailed information further in the guide.
 
+Any items marked **"High"** level require immediate attention during migration.
+
 [cols="2,3,1",options="header"]
 |===
-|Breaking Change |Impact |Severity
+|Breaking Change |Impact |Level
+|xref:license-key-system-update[License Key System Update]
+|Self-hosted deployments now require a new license key format and license key manager. Old keys are **not compatible**.
+|High
 
-|`editor.selection.setContent` Deprecated
+|xref:editor-selection-setcontent-deprecated[editor.selection.setContent] Deprecated
 |Method deprecated. Use `editor.insertContent` instead.
 |Medium
 
-|`editor.documentBaseUrl` Removal
-|Undocumented property removed. Use `editor.editorManager.documentBaseURL` instead.
+|xref:editor-documentbaseurl-removal[editor.documentBaseUrl] Removal
+|Undocumented property removed. Use `editor.editorManager.documentBaseURI` instead.
 |Low
 
-|`skipFocus` and `skip_focus` Consolidation
+|xref:skipfocus-consolidation[skipFocus and skip_focus] Consolidation
 |Options consolidated to `skipFocus` in `ToggleToolbarDrawer`.
 |Low
 
-|`fire()` Method Deprecation
+|xref:fire-method-deprecation[fire()] Method Deprecation
 |Method deprecated. Use `dispatch()` for event handling.
 |Medium
 |===
-
-[TIP]
-All items marked "High" severity require immediate attention during migration.
 ====
+
+[[license-key-system-update]]
+=== Transition from Version 7 License Keys to Version {release-version} License Keys
+// #EPIC-192
+
+[IMPORTANT]
+====
+This section applies to self-hosted installations only. For cloud deployments, license key management is handled automatically.
+====
+
+{productname} {release-version} introduces an enhanced license key system that requires specific attention during migration. The complete licensing documentation xref:license-key.adoc[License Key Management] covers:
+
+* Detailed explanations of all license types (GPL, Commercial, GPL with Premium Features)
+* Time-based vs Version-locked license key differences
+* License states (Active, Grace Period, Expired, Invalid)
+* Deployment options (Cloud-only, Self-hosted, Hybrid)
+* Step-by-step configuration examples for each setup
+* Commercial License Key Manager setup and requirements
+* Troubleshooting and FAQ
+
+==== Key Migration Considerations
+
+* *License Key Format Change:* Version 7 keys are **not compatible** with {productname} {release-version}. New keys use the prefix `T8LK:` for commercial licenses or `GPL+T8LK:` for GPL with Premium Features.
+* *Mandatory Key Requirement:* Self-hosted deployments now **require** a valid license key; without one, the editor will be set to readonly.
+* *Commercial License Manager:* Self-hosted commercial deployments **require** the new license key manager addon.
+
+==== Migration Steps
+
+. *Obtain New License Key:*
+** link:https://www.tiny.cloud/contact/[Contact us] to obtain a new {productname} {release-version} license key, or use GPL for the open source version. See: xref:license-key.adoc#setting-the-license[setting the license] for details.
+
+. *Update Configuration:*
++
+[source, javascript]
+----
+// Old TinyMCE 7 configuration
+tinymce.init({
+  selector: '#editor',
+  // No license key required
+});
+
+// New TinyMCE 8 configuration
+tinymce.init({
+  selector: '#editor',
+  license_key: 'T8LK:...'  // New format required
+});
+----
+
+==== License Key Manager Setup
+
+When migrating to TinyMCE {release-version} with a commercial license, the license key manager addon is required for the editor to operate. The setup varies based on your deployment method:
+
+. *CDN/Static Hosting:*
+** Ensure the supplied `licensekeymanager` folder is in your TinyMCE plugins directory:
++
+[tree]
+----
+your-site/
+├── tinymce/
+│   └── plugins/
+│       ├── licensekeymanager/     # Add this folder
+│       │   ├── plugin.min.js
+│       │   └── index.js
+│       └── ... other plugins
+----
+
+. *NPM/Module Bundler:*
+** Install TinyMCE and ensure the license key manager is imported:
++
+[source, javascript]
+----
+// Import TinyMCE
+import tinymce from 'tinymce';
+
+// Import the license key manager
+import 'tinymce/plugins/licensekeymanager';
+
+tinymce.init({
+  selector: '#editor',
+  license_key: 'T8LK:...'  // New format required
+});
+----
+
+. *React/Next.js:*
+** When using the `@tinymce/tinymce-react` package:
++
+[source, javascript]
+----
+import { Editor } from '@tinymce/tinymce-react';
+import 'tinymce/plugins/licensekeymanager';
+
+export default function MyEditor() {
+  return (
+    <Editor
+      init={{
+        license_key: 'T8LK:...'
+      }}
+    />
+  );
+}
+----
+
+. *PHP/Laravel:*
+** Ensure the license key manager is included when publishing TinyMCE assets:
++
+[source, php]
+----
+<script src="{{ asset('path/to/tinymce/tinymce.min.js') }}"></script>
+<script src="{{ asset('path/to/tinymce/plugins/licensekeymanager/plugin.min.js') }}"></script>
+<script>
+tinymce.init({
+  selector: '#editor',
+  license_key: 'T8LK:...'
+});
+</script>
+----
+
+[IMPORTANT]
+====
+* The license key manager is automatically included when using Tiny Cloud.
+* The plugin does not need to be added to the `plugins` configuration option.
+* For bundled applications, the license key manager must be loaded before TinyMCE initialization.
+* For bundled applications, ensure the license key manager is not excluded during build optimization.
+====
+
+For complete details on license key manager setup and troubleshooting, see xref:license-key.adoc##setting-up-the-commercial-license-key-manager[Setting up the Commercial License Key Manager].
+
+**License Migration checklist:**
+
+* [ ] Contact support for new {productname} {release-version} license key or use GPL for the open source version
+* [ ] Install license key manager addon for commercial licenses
+* [ ] Update configuration with new license key format
+* [ ] Test editor functionality with new license
+* [ ] Verify all premium features are working
 
 == Core API Changes
 
@@ -48,6 +184,7 @@ IMPORTANT: The following sections detail critical changes that require updates t
 
 === Removed Methods
 
+[[editor-selection-setcontent-deprecated]]
 ==== editor.selection.setContent
 [.discrete]
 // #TINY-12109
@@ -57,7 +194,7 @@ The `editor.selection.setContent` API has been deprecated and will be removed in
 .Example Usage
 [source,javascript]
 ----
-// Deprecated in {productname} 8, will be removed in 9
+// Deprecated in TinyMCE 8, will be removed in 9
 editor.selection.setContent('<p>New content</p>');
 
 // Recommended replacement
@@ -74,6 +211,7 @@ editor.insertContent('<p>New content</p>');
 
 '''
 
+[[editor-documentbaseurl-removal]]
 ==== editor.documentBaseUrl
 [.discrete]
 // #TINY-12236
@@ -83,20 +221,23 @@ The undocumented `editor.documentBaseUrl` property has been removed.
 .Example Usage
 [source,javascript]
 ----
-// Removed in {productname} 8
+// Removed in TinyMCE 8
 console.log(editor.documentBaseUrl);
 
 // Use this instead
-console.log(editor.editorManager.documentBaseURL);
+console.log(editor.editorManager.documentBaseURI);
 ----
 
-TIP: Use `editor.editorManager.documentBaseURL` for all base URL operations.
+TIP: Use `editor.editorManager.documentBaseURI` for all base URL operations.
 
 .Required Changes
-* Update all base URL references to use `editor.editorManager.documentBaseURL`
+* Update all base URL references to use `editor.editorManager.documentBaseURI`
+
+For more information regarding URL handling, see: xref:url-handling.adoc#document_base_uri[document_base_uri].
 
 '''
 
+[[skipfocus-consolidation]]
 ==== skipFocus and skip_focus
 // #TINY-12044
 
@@ -104,7 +245,7 @@ The `skipFocus` and `skip_focus` options for the `ToggleToolbarDrawer` command h
 
 [source, javascript]
 ----
-// Old approach (Deprecated) in {productname} 8
+// Old approach (Deprecated) in TinyMCE 8
 editor.execCommand('ToggleToolbarDrawer', { skip_focus: false }, { skipFocus: true });
 
 // New approach (Recommended)
@@ -123,6 +264,7 @@ editor.execCommand('ToggleToolbarDrawer', false, { skipFocus: true });
 
 === Deprecated Methods
 
+[[fire-method-deprecation]]
 ==== `fire()`
 // #TINY-11692
 
@@ -130,11 +272,11 @@ The `fire()` method has been replaced by `dispatch()` for event handling. The `f
 
 [source, javascript]
 ----
-// Deprecated in {productname} 8, will be removed in 9
-// Old approach for firing custom events
+// Deprecated in TinyMCE 8, will be removed in 9
+// Old approach for dispatching custom events
 editor.fire('someEvent');
 
-// New approach for firing custom events
+// New approach for dispatching custom events
 editor.dispatch('someEvent');
 ----
 
@@ -172,29 +314,6 @@ tinymce.init({
 * [ ] Configure `max_list_indent` setting
 * [ ] Test list behavior with existing content
 
-==== Renaming and deprecation of "legacy" Export Plugin
-// #TINY-12297
-
-The legacy link:https://www.tiny.cloud/docs/tinymce/5/export/[Export] plugin has been renamed to `exportlegacy` as part of the migration to {productname} {release-version}. This is a transitional step before the complete removal of the legacy plugin in {productname} 9.
-
-**Impact**: Users are required to update their plugin identifiers to avoid compatibility issues.
-
-**Migration steps:**
-
-* Update all references to the old plugin identifier in your configuration:
-
-[source, javascript]
-----
-// Old configuration plugin identifier
-plugins: 'export',
-
-// Updated configuration plugin identifier
-plugins: 'exportlegacy',
-----
-
-[NOTE]
-Migrate to the new xref:exportpdf.adoc[Export to PDF] and xref:exportword.adoc[Export to Word] plugins for improved functionality and support.
-
 ==== Language Pack Filename Changes
 // #TINY-12090
 
@@ -229,8 +348,8 @@ The Image and Accessibility Checker plugins now follow the latest W3C standards 
 
 **Migration checklist:**
 
-* [ ] Identify images using `role="presentation"` in your content
-* [ ] Replace with empty alt attributes (`alt=""`)
+* [ ] Identify images previously using `role="presentation"` for decorative purposes in your content
+* [ ] Replace those with empty alt attributes (`alt=""`)
 * [ ] Update image plugin configuration if customized
 * [ ] Test accessibility checker with updated content
 
@@ -339,147 +458,10 @@ The handling of `<div>` elements during cut operations has been improved to prev
 **Migration checklist:**
 
 * [ ] Test cut/paste with nested div structures
-* [ ] Update custom div handling code if present
 * [ ] Review custom cleanup functions affecting divs
 * [ ] Verify content structure after cut operations
 
 === Service and Configuration Changes
-
-==== Transition from Version 7 License Keys to Version {release-version} License Keys
-// #EPIC-192
-
-{productname} {release-version} introduces an enhanced license key system that requires specific attention during migration. The complete licensing documentation xref:license-key.adoc[License Key Management] covers:
-
-* Detailed explanations of all license types (GPL, Commercial, GPL with Premium Features)
-* Time-based vs Version-locked license key differences
-* License states (Active, Grace Period, Expired, Invalid)
-* Deployment options (Cloud-only, Self-hosted, Hybrid)
-* Step-by-step configuration examples for each setup
-* Commercial License Key Manager setup and requirements
-* Troubleshooting and FAQ
-
-===== Key Migration Considerations
-
-* *License Key Format Change:* Version 7 keys are **not compatible** with {productname} {release-version}. New keys use the prefix `T8LK:` for commercial licenses or `GPL+T8LK:` for GPL with Premium Features.
-* *Mandatory Key Requirement:* Self-hosted deployments now **require** a valid license key; without one, the editor will be set to readonly.
-* *Commercial License Manager:* Self-hosted commercial deployments **require** the new license key manager addon.
-
-===== Migration Steps
-
-. *Obtain New License Key:*
-** Contact your account manager to obtain a new {productname} {release-version} license key
-** Choose the appropriate license type based on your deployment needs (Commercial, GPL, or GPL with Premium Features), see: xref:license-key.adoc#setting-the-license[setting the license] for details.
-
-. *Update Configuration:*
-+
-[source, javascript]
-----
-// Old {productname} 7 configuration
-tinymce.init({
-  selector: '#editor',
-  // No license key required
-});
-
-// New {productname} 8 configuration
-tinymce.init({
-  selector: '#editor',
-  license_key: 'T8LK:...'  // New format required
-});
-----
-
-===== License Key Manager Setup
-
-When migrating to {productname} {release-version} with a commercial license, the license key manager addon is required for the editor to operate. The setup varies based on your deployment method:
-
-. *CDN/Static Hosting:*
-** Ensure the supplied `licensekeymanager` folder is in your {productname} plugins directory:
-+
-[tree]
-----
-your-site/
-├── tinymce/
-│   └── plugins/
-│       ├── licensekeymanager/     # Add this folder
-│       │   ├── plugin.min.js
-│       │   └── index.js
-│       └── ... other plugins
-----
-
-. *NPM/Module Bundler:*
-** Install {productname} and ensure the license key manager is imported:
-+
-[source, javascript]
-----
-// Import {productname}
-import tinymce from 'tinymce';
-
-// Import the license key manager
-import 'tinymce/plugins/licensekeymanager';
-
-// Your TinyMCE initialization
-tinymce.init({
-  selector: '#editor',
-  license_key: 'T8LK:...'  // New format required
-});
-----
-
-. *React/Next.js:*
-** When using the `@tinymce/tinymce-react` package:
-+
-[source, javascript]
-----
-// Import the Editor component
-import { Editor } from '@tinymce/tinymce-react';
-
-// Import the license key manager
-import 'tinymce/plugins/licensekeymanager';
-
-// Your Editor component
-export default function MyEditor() {
-  return (
-    <Editor
-      init={{
-        license_key: 'T8LK:...'  // New format required
-      }}
-    />
-  );
-}
-----
-
-. *PHP/Laravel:*
-** Ensure the license key manager is included when publishing {productname} assets:
-+
-[source, php]
-----
-// Example Laravel Blade view
-<script src="{{ asset('path/to/tinymce/tinymce.min.js') }}"></script>
-<script src="{{ asset('path/to/tinymce/plugins/licensekeymanager/plugin.min.js') }}"></script>
-<script>
-tinymce.init({
-  selector: '#editor',
-  license_key: 'T8LK:...'  // New format required
-});
-</script>
-----
-
-[IMPORTANT]
-====
-* The license key manager is automatically included when using {companyname} Cloud.
-* The plugin does not need to be added to the `plugins` configuration option.
-* For bundled applications, the license key manager must be loaded before {productname} initialization.
-* For bundled applications, ensure the license key manager is not excluded during build optimization.
-====
-
-For complete details on license key manager setup and troubleshooting, see xref:license-key.adoc##setting-up-the-commercial-license-key-manager[Setting up the Commercial License Key Manager].
-
-**License Migration checklist:**
-
-* [ ] Contact account manager for new {productname} {release-version} license key
-* [ ] Choose appropriate license type for your deployment
-* [ ] Install license key manager addon for commercial licenses
-* [ ] Update configuration with new license key format
-* [ ] Test editor functionality with new license
-* [ ] Verify all premium features are working
 
 ==== Discontinuation of Medical English (UK)
 // #TINY-12255
@@ -530,6 +512,10 @@ For more information on deploying the server-side components using Docker, see: 
 
 Upgrading to {productname} {release-version} requires integrators to update their API calls, plugin configurations, and service integrations to accommodate the breaking changes introduced in this release. While some adjustments may involve significant code updates, these enhancements are intended to simplify development, and improve the overall editor experience.
 
-For more guidance, refer to the link:https://www.tiny.cloud/docs[{productname} Documentation], utilize the in-house **Ask AI** widget for general {productname} support, or connect with your link:{supporturl}/[{supportname}] representative for assistance.
+For more guidance, refer to the:
+
+* link:https://www.tiny.cloud/docs[{productname} Documentation],
+* Utilize our in-house **Ask AI** widget for general support found in the bottom corner of every documentation page, or
+* link:https://www.tiny.cloud/contact/[Contact {supportname}] for assistance.
 
 For additional details on {productname} {release-version} changes, see xref:8.0-release-notes.adoc#overview[{productname} {release-version} release notes].

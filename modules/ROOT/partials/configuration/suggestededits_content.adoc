@@ -1,10 +1,10 @@
 [[suggestededits_content]]
 == `suggestededits_content`
-The `{plugincode}_content` option determines where the initial content of the document is loaded from. With this option, you can set the content to be loaded from either the editor or the model, allowing you to control the source of truth for the document.
+The `suggestededits_content` option determines where the initial content of the document is loaded from. With this option, you can set the content to be loaded from either the editor or the model, allowing you to control the source of truth for the document.
 
 When set to `'html'`, the editor loads the initial content from the HTML in the textarea or the `content` property. In this case, if a model is provided, it will need to match the content in the editor for the plugin to work correctly
 
-When set to `'model'`, the editor loads the initial content from the `{plugincode}_model` option. In this case, the content in the editor will be overwritten with the content from the model. This would allow you to only require the model for document tracking, though it is still recommended to save the content in the editor externally.
+When set to `'model'`, the editor loads the initial content from the `suggestededits_model` option. In this case, the content in the editor will be overwritten with the content from the model. This would allow you to only require the model for document tracking, though it is still recommended to save the content in the editor externally.
 
 In either case, if a model is not provided, the plugin will generate a new model from the current content of the editor, whether it is empty or not.
 
@@ -14,7 +14,7 @@ In either case, if a model is not provided, the plugin will generate a new model
 
 *Default value:* `'html'`
 
-=== Example: using `{plugincode}_content`
+=== Example: using `suggestededits_content`
 
 [source,js]
 ----

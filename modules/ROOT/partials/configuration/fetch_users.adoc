@@ -1,7 +1,7 @@
 [[fetch_users]]
 == `fetch_users`
 
-A callback function that retrieves user data for the plugin. It receives an array of user IDs and returns a `Promise` resolving to an array of user objects. The callback uses the xref:#userlookupapi[`UserLookup API`].
+A **required callback function** that fetches user data for the Suggested Edits view. This function is called with an array of user IDs and should return a `Promise` that resolves to an array of user objects. The callback is used by the xref:userlookup.adoc[`UserLookup`] API.
 
 *Type:* `Function`
 
@@ -11,7 +11,8 @@ A callback function that retrieves user data for the plugin. It receives an arra
 *Returns:*
 - `Promise<Array<Object>>`: A promise that resolves to an array of user objects.
 
-.Example
+=== Example: using `fetch_users` option
+
 [source,javascript]
 ----
 tinymce.init({

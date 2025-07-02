@@ -15,15 +15,7 @@ Follow the steps below to configure and use the `userLookup` API within your int
 
 The first step is to tell the editor which user is currently active. This is done using the `+user_id+` initialization option.
 
-[source,js]
-----
-tinymce.init({
-  selector: '#editor',
-  user_id: 'user-42', // <1>
-  // ...
-});
-----
-**This ID will be used as the value of `+editor.userLookup.userId+`.**
+include::partial$configuration/user_id.adoc[leveloffset=+2]
 
 To access it:
 
@@ -37,19 +29,21 @@ editor.on('init', () => {
 [[step-2-provide-a-user-fetcher]]
 === 2. Provide a function to fetch user details
 
-To simulate a backend lookup, define a local object that maps user IDs to their corresponding data.
+To simulate a backend lookup, define a local object that maps user IDs to their corresponding data. 
+
+include::partial$configuration/fetch_users.adoc[]
 
 [source,js]
 ----
 const userDirectory = {
-  'user-1': { id: 'user-1', name: 'Jane Doe', avatar: 'https://example.com/avatar/jane.png' },
-  'user-2': { id: 'user-2', name: 'John Smith' },
-  'user-42': { id: 'user-42', name: 'Alex Taylor', avatar: 'https://example.com/avatar/alex.png' }
+  'janedoe': { id: 'janedoe', name: 'Jane Doe', avatar: 'https://example.com/avatar/jane.png' },
+  'johnsmith': { id: 'johnsmith', name: 'John Smith' },
+  'alextaylor': { id: 'alextaylor', name: 'Alex Taylor', avatar: 'https://example.com/avatar/alex.png' }
 };
 
 tinymce.init({
   selector: '#editor',
-  user_id: 'user-42',
+  user_id: 'alextaylor',
   fetch_users: (userIds) => {
     const results = userIds.map((id) => {
       const user = Object.values(userDirectory).find((user) => user.id === id);

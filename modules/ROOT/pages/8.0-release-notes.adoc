@@ -170,6 +170,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Deprecated `editor.selection.setContent` API
+// TINY-11692
+
+The `editor.selection.setContent` method has been deprecated in {productname} {release-version}. This low-level API was never intended for external use and does not guarantee consistent behavior when inserting complex content structures, such as lists. Integrators are advised to use the supported `editor.insertContent` method or the `mceInsertClipboardContent` command for reliable content insertion.
+
+This deprecation helps reduce confusion and aligns content insertion with {productname}'s supported APIs.
+
 
 [[known-issues]]
 == Known issues

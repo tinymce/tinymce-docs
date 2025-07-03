@@ -99,10 +99,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following improvement<s>:
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Instructions on how to navigate the color swatch, image select and insert table widget are now announced by screen readers.
+// #TINY-12189
 
-// CCFR here.
+Previously, interactive elements such as the color swatch, create table grid, and image select were missing an `aria-label`. This resulted in a lack of instructions for keyboard users and hindered overall accessibility.
+
+{productname} {release-version} now includes `aria-labels` for these elements, providing clear keyboard navigation instructions. This improvement ensures a more accessible experience for all users.
 
 
 [[additions]]

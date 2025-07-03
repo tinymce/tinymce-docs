@@ -30,6 +30,10 @@ liveDemo::comments-embedded[]
 
 == Options
 
+include::partial$configuration/user_id.adoc[leveloffset=+1]
+
+include::partial$configuration/fetch_users.adoc[leveloffset=+1]
+
 include::partial$configuration/tinycomments_author.adoc[leveloffset=+1]
 
 include::partial$configuration/tinycomments_author_avatar.adoc[leveloffset=+1]

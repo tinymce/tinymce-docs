@@ -137,6 +137,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Removed undocumented `documentBaseUrl` property from Editor instances. `documentBaseURI` is the supported property now.
+// #TINY-12182
+
+An undocumented `documentBaseUrl` property was previously accessible on `Editor` instances. This property was not part of the supported public API and could lead to confusion or inconsistent usage across implementations.
+
+To improve API clarity and maintain a well-defined interface, the `documentBaseUrl` property has been removed. Integrators should use the officially supported `documentBaseURI` property to access the base URI of the document.
 
 [[bug-fixes]]
 == Bug fixes

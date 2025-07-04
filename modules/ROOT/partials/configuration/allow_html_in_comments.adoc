@@ -1,0 +1,48 @@
+[[allow_html_in_comments]]
+== `allow_html_in_comments`
+
+The `allow_html_in_comments` option allows HTML-like content to be retained in comments within the editor content. By default, {productname} removes comments containing HTML-like content as a security measure (using DOMPurify's `SAFE_FOR_XML` option).
+
+*Type:* `+Boolean+`
+
+*Default value:* `+false+`
+
+[WARNING]
+Setting this option to `true` may expose your application to XSS vulnerabilities. The DOMPurify maintainers have identified potential security risks when HTML-like content is allowed in comments. Only enable this option if you trust your content sources and understand the security implications.
+
+=== Example: using `allow_html_in_comments`
+
+The following example demonstrates how comments containing HTML are handled by default (removed) and how to configure {productname} to retain them:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  allow_html_in_comments: true,  // Enable HTML in comments
+});
+----
+
+ifeval::["{docname}" != "security"]
+=== Comment behavior examples
+
+With `allow_html_in_comments: false` (default), the editor's content after initialization will be:
+[source,html]
+----
+<section>
+<h1>Some content</h1>
+<h1>Some additional content</h1>
+</section>
+----
+
+With `allow_html_in_comments: true`, the editor's content after initialization will be:
+[source,html]
+----
+<section>
+<h1>Some content</h1>
+<!--
+  <div>This is my comment content</div>
+-->
+<h1>Some additional content</h1>
+</section>
+----
+endif::[]

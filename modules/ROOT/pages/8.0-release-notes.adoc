@@ -104,6 +104,10 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== The translate API now automatically replaces three dots in a row with an ellipsis character.
+// #TINY-12155
+
+Previously, menu items and tooltips containing three consecutive periods (`...`) were read aloud by the JAWS screen reader as "dot dot dot," which could confuse users relying on assistive technologies. To enhance accessibility, the `translate` API in {productname} {release-version} now automatically replaces three dots with the typographic ellipsis character (`…`) across all translations. This update ensures a consistent visual appearance while improving screen reader behavior, as the ellipsis character is not read aloud. The change is implemented directly in the translation function, ensuring comprehensive coverage across all languages.
 
 [[additions]]
 == Additions

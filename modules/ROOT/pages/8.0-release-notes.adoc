@@ -104,6 +104,11 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Split button component architecture
+// #TINY-8665
+
+Split buttons in {productname} {release-version} now render as two independent, focusable components instead of a single composite component. The main button handles primary actions while the chevron button controls dropdown functionality. This architectural change improves accessibility by providing separate focus targets and ARIA labels for each component. The `+setTooltip+` method has been enhanced to update both main and chevron button tooltips simultaneously.
+
 
 [[additions]]
 == Additions
@@ -115,6 +120,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Split button tooltip configuration
+// #TINY-8665
+
+The `+chevronTooltip+` property provides custom tooltip text for the chevron button portion of split buttons. When `+chevronTooltip+` is not specified, {productname} automatically generates tooltip text using the pattern `+"{tooltip} menu"+`. The enhanced `+setTooltip+` method intelligently updates both main and chevron tooltips to maintain consistency.
+
+For more information, see xref:custom-split-toolbar-button.adoc[Split toolbar buttons].
+
 
 [[changes]]
 == Changes
@@ -125,6 +137,11 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // #TINY-vwxyz1
 
 // CCFR here.
+
+=== Split button DOM structure changes
+// #TINY-8665
+
+The internal DOM structure of split buttons has been updated to support the new component architecture. Split button components now use `+.tox-split-button__main+` and `+.tox-split-button__chevron+` CSS classes instead of the previous composite structure. Each component renders as a separate DOM element with independent event handling and focus management. Custom CSS targeting split button internals may require updates to accommodate the new structure.
 
 
 [[removed]]

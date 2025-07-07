@@ -22,11 +22,11 @@ The `+crossorigin+` option controls how {productname} handles cross-origin resou
 ----
 tinymce.init({
   selector: "textarea",
-	crossorigin: (url, resourceType) => {
-  // Returning 'anonymous' or 'use-credentials' here would explicitly set the attribute
-	return 'anonymous';
-	// return 'use-credentials';
-	// return undefined; // Omit the 'crossorigin' attribute for all resources by returning undefined
+  crossorigin: (url, resourceType) => {
+    // Returning 'anonymous' or 'use-credentials' here would explicitly set the attribute
+    return 'anonymous';
+    // return 'use-credentials';
+    // return undefined; // Omit the 'crossorigin' attribute for all resources by returning undefined
   },
 });
 ----
@@ -60,12 +60,12 @@ The crossorigin function can also be set globally using `+tinymce.overrideDefaul
 [source,js]
 ----
 tinymce.overrideDefaults({
-  ...tinymce.defaultOptions,  // Preserve existing defaults
+  ...tinymce.defaultOptions, // Preserve existing defaults
   crossorigin: (url, resourceType) => {
     // Returning 'anonymous' or 'use-credentials' here would explicitly set the attribute
-    // return 'anonymous';
+    return 'anonymous';
     // return 'use-credentials';
-    return undefined; // Omit the 'crossorigin' attribute for all resources by returning undefined
+    // return undefined; // Omit the 'crossorigin' attribute for all resources by returning undefined
   }
 });
 ----

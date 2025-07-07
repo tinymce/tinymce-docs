@@ -106,24 +106,22 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 === Enhanced cross-origin resource handling
 
-Added a new function-based `crossorigin` configuration option that provides granular control over cross-origin resource loading for both scripts and stylesheets. This enhancement allows for URL-based decisions about crossorigin attributes, which is particularly important for {productname} Cloud deployments and complex hosting scenarios.
-
-The `crossorigin` option accepts a function that determines the appropriate attribute value based on the resource being loaded:
+Added a new function-based `crossorigin` configuration option that provides granular control over cross-origin resource loading. The function receives the resource URL and type (script or stylesheet) as parameters and can return 'anonymous', 'use-credentials', or undefined to control the crossorigin attribute.
 
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',
   crossorigin: (url, resourceType) => {
-    // Add crossorigin="anonymous" for cross-origin resources
-    if (url.startsWith('https://your-cdn.com')) {
-      return 'anonymous';
-    }
-    // Omit crossorigin attribute for same-origin resources
-    return '';
+    // Returning 'anonymous' or 'use-credentials' here would explicitly set the attribute
+    return 'anonymous';
+    // return 'use-credentials';
+    // return undefined; // Omit the 'crossorigin' attribute for all resources
   }
 });
 ----
+
+For more details, see: xref:configure-cross-origin-resource-loading.adoc#crossorigin[crossorigin].
 
 This improvement ensures consistent resource loading behavior across different deployment scenarios and provides better control over CORS settings for both scripts and stylesheets.
 

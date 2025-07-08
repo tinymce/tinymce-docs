@@ -24,7 +24,7 @@ const userinfos = {
 
 const fetch_users = (ids) => {
   return new Promise((resolve, reject) => {
-    const users = ids.map(id => userDb[id]);
+    const users = ids.map(id => userinfos[id]);
     if (users.length > 0) {
       resolve(users);
     } else {

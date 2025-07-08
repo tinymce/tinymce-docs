@@ -1,0 +1,59 @@
+[[I1]]
+==== I1 - Conflicting or incomplete image accessibility
+
+*Rule description:* this rule checks that all images have complete and non-conflicting accessibility information. It flags images that are missing required accessibility attributes or are marked both decorative and informative (mixed signals).
+
+===== {pluginname} rule details - I1
+
+Notification level (severity):: Error
+
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
+
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
+
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html[G95 - Providing short text alternatives that provide a brief description of the non-text content].
+
+include::partial$misc/admon-accessibility-rule-i3-can-also-be-applied.adoc[]
+
+.Examples
+[%collapsible]
+====
+.Non-compliant examples
+[source,html]
+----
+<!-- Missing alt attribute -->
+<img src="logo.png">
+
+<!-- Conflicting accessibility information -->
+<img src="icon.png" alt="Navigation menu" role="presentation">
+
+<!-- Empty alt with no role -->
+<img src="divider.png" alt="">
+
+<!-- Both title and alt with different information -->
+<img src="chart.png" alt="Sales Data" title="Quarter 1 Revenue Chart">
+----
+
+These examples show various accessibility issues: missing alt text, conflicting decorative and informative attributes, and inconsistent information between attributes.
+
+.Compliant examples
+[source,html]
+----
+<!-- Informative image with appropriate alt text -->
+<img src="logo.png" alt="Company Name Logo">
+
+<!-- Decorative image properly marked -->
+<img src="divider.png" alt="" role="presentation">
+
+<!-- Image with consistent alternative text -->
+<img src="chart.png" alt="Quarter 1 Revenue Chart">
+
+<!-- Complex image with detailed description -->
+<img src="infographic.png" 
+     alt="Annual report highlights" 
+     aria-describedby="infographic-desc">
+<p id="infographic-desc">Detailed description of the infographic...</p>
+----
+
+These examples demonstrate proper accessibility markup for different types of images.
+====

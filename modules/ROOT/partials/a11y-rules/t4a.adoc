@@ -1,0 +1,93 @@
+[[T4A]]
+==== T4A - Table markup
+
+*Rule description:* this rule checks that all `+tables+` contain both `+tr+` and `+td+` elements.
+
+===== {pluginname} rule details - T4A
+
+Notification level (severity):: Error
+
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
+
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
+
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H51.html[H51 - Using table markup to present tabular information].
+
+.Examples
+[%collapsible]
+====
+.Non-compliant examples
+
+[source,html]
+----
+<!-- Table with direct content -->
+<table>
+    Content without rows or cells
+</table>
+
+<!-- Table with only divs -->
+<table>
+    <div>Row 1, Cell 1</div>
+    <div>Row 1, Cell 2</div>
+    <div>Row 2, Cell 1</div>
+    <div>Row 2, Cell 2</div>
+</table>
+
+<!-- Table with paragraphs -->
+<table>
+    <p>Header 1</p>
+    <p>Header 2</p>
+    <p>Data 1</p>
+    <p>Data 2</p>
+</table>
+----
+
+These examples lack proper table structure with rows and cells, making them inaccessible to screen readers.
+
+.Compliant examples
+
+[source,html]
+----
+<!-- Simple table with proper markup -->
+<table>
+    <tr>
+        <td>Row 1, Cell 1</td>
+        <td>Row 1, Cell 2</td>
+    </tr>
+    <tr>
+        <td>Row 2, Cell 1</td>
+        <td>Row 2, Cell 2</td>
+    </tr>
+</table>
+
+<!-- Table with headers and data cells -->
+<table>
+    <tr>
+        <th>Header 1</th>
+        <th>Header 2</th>
+    </tr>
+    <tr>
+        <td>Data 1</td>
+        <td>Data 2</td>
+    </tr>
+</table>
+
+<!-- Table with thead and tbody -->
+<table>
+    <thead>
+        <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Data 1</td>
+            <td>Data 2</td>
+        </tr>
+    </tbody>
+</table>
+----
+
+These examples use proper table markup with rows and cells, ensuring accessibility.
+====

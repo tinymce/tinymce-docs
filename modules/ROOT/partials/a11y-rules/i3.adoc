@@ -1,0 +1,56 @@
+[[I3]]
+==== I3 - Filename used as `+alt+` text
+
+*Rule description:* this rule checks that the `+alt+` attribute does not use a filename (e.g., `+photo.jpg+`) as a substitute for meaningful image description. Using filenames as `+alt+` text does not help users understand the image's content.
+
+===== {pluginname} rule details - I3
+
+Notification level (severity):: Error
+
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
+
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
+
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html[G95 - Providing short text alternatives that provide a brief description of the non-text content].
+
+include::partial$misc/admon-accessibility-rule-i3-can-also-be-applied.adoc[]
+
+.Examples
+[%collapsible]
+====
+.Non-compliant examples
+[source,html]
+----
+<!-- Using filename as alt text -->
+<img src="DSC1234.jpg" alt="DSC1234.jpg">
+
+<!-- Using file path as alt text -->
+<img src="/images/team/john-smith.png" alt="john-smith.png">
+
+<!-- Using generic image name -->
+<img src="banner.jpg" alt="banner">
+
+<!-- Using filename with underscores -->
+<img src="company_logo_2023.png" alt="company_logo_2023.png">
+----
+
+These examples use filenames or file paths as alt text, which provides no meaningful information about the image content.
+
+.Compliant examples
+[source,html]
+----
+<!-- Descriptive alt text for a photo -->
+<img src="DSC1234.jpg" alt="Students working together in the library">
+
+<!-- Meaningful description for a team member -->
+<img src="/images/team/john-smith.png" alt="John Smith, Senior Developer">
+
+<!-- Descriptive banner text -->
+<img src="banner.jpg" alt="Welcome to our 2023 Conference">
+
+<!-- Proper company logo description -->
+<img src="company_logo_2023.png" alt="TechCorp Logo">
+----
+
+These examples use descriptive alt text that explains what the image shows or represents.
+====

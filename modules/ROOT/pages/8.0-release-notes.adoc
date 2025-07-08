@@ -1,4 +1,3 @@
-
 = {productname} {release-version}
 :release-version: 8.0.0
 :navtitle: {productname} {release-version}
@@ -58,6 +57,26 @@ The following premium plugin updates were released alongside {productname} {rele
 // // CCFR here.
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+
+=== Accessibility Checker
+
+The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.
+
+**Accessibility Checker** Premium plugin includes the following improvements.
+
+=== Accessibility: Enhanced image accessibility checks in a11ychecker plugin
+// #TINY-10903
+
+The {productname} {release-version} introduces four new image accessibility rules (xref:a11ychecker.adoc##image-rules[Image rules]) in the xref:a11ychecker.adoc[a11ychecker] plugin to improve compliance and authoring guidance. These rules help identify common accessibility issues related to image use and provide actionable recommendations:
+
+* *xref:a11ychecker.adoc#I1[I1: Mixed Signals & Decorative Policy]*: Flags images with conflicting accessibility indicators (e.g., `alt` with `role="presentation"`) and ensures decorative images comply with best practices.
+* *xref:a11ychecker.adoc#I2[I2: Alt Attribute Requirement]*: Enforces the presence of the `alt` attribute on all `<img>` elements, regardless of other labeling mechanisms like `aria-label`, `aria-labelledby`, or `title`.
+* *xref:a11ychecker.adoc#I3[I3: Filename Detection]*: Warns when `alt` text appears to be a filename (e.g., `image123.jpg`), including cases with URL encoding.
+* *xref:a11ychecker.adoc#I4[I4: Alt Text Length]*: Detects `alt` text that exceeds a configurable maximum length, promoting concise descriptions. The default limit is 100 characters and can be adjusted using the new xref:a11ychecker.adoc#a11ychecker_alt_text_max_length[`a11ychecker_alt_text_max_length`] setting.
+
+Additional improvements include a rule precedence system to avoid duplicate violations, centralized image intent detection (e.g., decorative, informative, mixed signals, incomplete), and more readable user-facing messages. Technical terminology such as "alternative text" has been replaced with "text description," and repair instructions are now more contextual and user-friendly.
+
+For more information on the Accessibility Checker plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]

@@ -76,6 +76,20 @@ The {productname} {release-version} introduces four new image accessibility rule
 
 Additional improvements include a rule precedence system to avoid duplicate violations, centralized image intent detection (e.g., decorative, informative, mixed signals, incomplete), and more readable user-facing messages. Technical terminology such as "alternative text" has been replaced with "text description," and repair instructions are now more contextual and user-friendly.
 
+=== New `a11ychecker_alt_text_max_length` configuration option for Accessibility Checker alt text length
+// #TINY-10903
+
+A new configuration option, xref:a11ychecker.adoc#a11ychecker_alt_text_max_length[`a11ychecker_alt_text_max_length`], has been added to the Accessibility Checker plugin. This option allows users to configure the maximum allowed length for image alt text descriptions. The default value is 150 characters. For example:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'a11ychecker',
+  a11ychecker_alt_text_max_length: 150  // Set maximum length to 150 characters
+});
+----
+
 For more information on the Accessibility Checker plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
 
 

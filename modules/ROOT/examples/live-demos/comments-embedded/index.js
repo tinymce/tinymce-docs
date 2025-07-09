@@ -16,7 +16,7 @@ tinymce.init({
   quickbars_image_toolbar: 'alignleft aligncenter alignright | rotateleft rotateright | imageoptions',
   tinycomments_mode: 'embedded',
   sidebar_show: 'showcomments',
-  tinycomments_author: currentAuthor,
+  user_id: currentAuthor,
   tinycomments_can_resolve: (req, done, fail) => {
     const allowed = req.comments.length > 0 &&
                   req.comments[0].author === currentAuthor;

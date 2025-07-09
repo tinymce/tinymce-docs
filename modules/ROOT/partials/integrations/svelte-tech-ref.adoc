@@ -56,18 +56,8 @@ include::partial$misc/get-an-api-key.adoc[]
 [[licensekey]]
 === `+licenseKey+`
 
-{cloudname} License key.
 
-Use this option when self-hosting {productname} instead of loading from {cloudname}. License keys must start with the "T8LK:" prefix and use client-side JWT validation that runs entirely in the browser, requiring no server communication or "phone home" checks. For more information, see: xref:license-key.adoc[License Key].
-
-*Type:* `+String+`
-
-*Default value:* `+undefined+`
-
-*Possible values:*
-* `undefined` - Use this when loading from {cloudname} with an API key
-* `'gpl'` - For open source projects using GPL license
-* `'T8LK:...'` - For commercial {productname} installations
+include::partial$integrations/common/license-key-property.adoc[]
 
 ==== Example: Commercial license
 [source,jsx]

@@ -124,11 +124,18 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 === Enhanced license key system with T8LK prefix
 
-The license key system in {productname} 8 has been enhanced to provide improved subscription access control and streamlined renewal processes. All commercial license keys for self-hosted deployments now require the `T8LK:` prefix to indicate version 8 compatibility.
+The license key system in {productname} 8 has been enhanced to provide improved subscription access control and streamlined renewal processes. This change primarily affects self-hosted deployments, as cloud users ({cloudname}) do not require a license key.
 
-Key changes include:
+[IMPORTANT]
+====
+* If you use {cloudname}, no license key is required - your cloud subscription automatically includes the commercial license.
+* For self-hosted deployments, all commercial license keys must use the new `T8LK:` prefix format.
+* Existing TinyMCE 7 license keys cannot be made compatible with TinyMCE 8 by adding the T8LK prefix.
+====
 
-* All commercial license keys must start with `"T8LK:"` prefix
+Key changes for self-hosted deployments:
+
+* New `T8LK:` prefix requirement for all commercial license keys.
 * Enhanced JWT-based validation that runs entirely in the browser
 * No server communication or "phone home" checks required
 * Support for both date-based and version-locked keys
@@ -137,10 +144,22 @@ Key changes include:
 
 [IMPORTANT]
 ====
-* GPL usage still requires setting `license_key: 'gpl'` (case insensitive)
-* For open source projects using premium features, use the combined format: `license_key: 'GPL+T8LK:...'`
-* The license key is not required when using {cloudname} with an API key
+*Cloud Deployments:*
+
+* When using {cloudname}, only an API key is required - no license key needed
+* Your cloud subscription automatically includes the commercial license
+
+*Self-hosted Deployments:*
+
+* Commercial use: Contact your account manager or visit link:https://www.tiny.cloud/my-account[Tiny Cloud Account] to obtain a T8LK-prefixed license key
+* GPL use: Set `license_key: 'gpl'` (case insensitive)
+* Open source projects using premium features: Use the combined format `license_key: 'GPL+T8LK:...'`
 ====
+
+=== Upgrading from TinyMCE 7
+
+* *Cloud Users ({cloudname})*: No license key changes needed - simply update your {productname} version.
+* *Self-hosted Users*: Contact your account manager to obtain a new T8LK-prefixed license key.
 
 For more information on the new license key system, see: xref:license-key.adoc[License Key].
 

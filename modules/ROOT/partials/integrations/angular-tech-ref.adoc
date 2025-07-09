@@ -130,18 +130,7 @@ include::partial$misc/get-an-api-key.adoc[]
 [[licensekey]]
 === `+licenseKey+`
 
-{cloudname} License key.
-
-Use this when self-hosting {productname} instead of loading from {cloudname}. For more information, see: xref:license-key.adoc[License Key].
-
-*Type:* `+String+`
-
-*Default value:* `+undefined+`
-
-*Possible values:*
-* `undefined` - Use this when loading from {cloudname} with an API key
-* `'gpl'` - For open source projects using GPL license
-* `'T8LK:...'` - For commercial {productname} installations
+include::partial$integrations/common/license-key-property.adoc[]
 
 ==== Example: Commercial license
 [source,html]

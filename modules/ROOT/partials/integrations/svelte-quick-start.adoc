@@ -118,7 +118,7 @@ export default defineConfig({
 ----
 . Open `+src/App.svelte+` and replace the contents with:
 +
-[source,javascript]
+[source,svelte]
 ----
 <script>
 import Editor from '@tinymce/tinymce-svelte';

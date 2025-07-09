@@ -188,16 +188,8 @@ In your component:
 
 === `LicenseKey`
 
-Specifies the {productname} license key. Required for self-hosted deployments of {productname}. This property is not required for deployments using the {cloudname}.
 
-License keys must start with the "T8LK:" prefix and use client-side JWT validation that runs entirely in the browser, requiring no server communication or "phone home" checks. For more information, see: xref:license-key.adoc[License Key].
-
-*Type:* `+String+`
-
-*Possible values:*
-* `null` - Use this when loading from {cloudname} with an API key
-* `"gpl"` - For open source projects using GPL license
-* `"T8LK:..."` - For commercial {productname} installations
+include::partial$integrations/common/license-key-property.adoc[]
 
 ==== Example: Commercial license (TinyMCE 8+)
 [source,cs]

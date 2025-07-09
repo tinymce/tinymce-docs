@@ -86,7 +86,7 @@ a|
   ** Cloud services access
   ** Premium plugin access
   ** Automatic updates
-* No license key required (defaults to a commercial license)
+* No license key required as its automatically issued. (defaults to a commercial license)
 a|
 * Fully managed service:
   ** No local deployment needed
@@ -189,6 +189,37 @@ In addition to the editor being readonly, a console log warning message and/or e
 === Why is a license key required?
 
 The license key ensures compliance with {productname} licensing terms. It's part of our efforts to refine the license key system and may have additional functionalities in the future.
+
+=== How do I obtain a TinyMCE 8 license key?
+
+To obtain a new TinyMCE 8 license key (T8LK-prefixed):
+
+* *Existing customers*: Contact your account manager or visit link:https://www.tiny.cloud/my-account[Tiny Cloud Account] to upgrade your subscription.
+* *New customers*: Visit link:https://www.tiny.cloud/pricing[Tiny Cloud Pricing] to purchase a new license.
+
+[IMPORTANT]
+====
+Existing TinyMCE 7 license keys cannot be modified to work with TinyMCE 8 by adding the T8LK prefix. A new TinyMCE 8 license must be obtained through the proper channels listed above.
+====
+
+=== I'm upgrading from {productname} 7 - how do I get a {productname} 8 license key?
+
+If you are using {cloudname} (cloud-hosted):
+
+* No license key is required - simply update your {productname} version as your cloud subscription includes the commercial license.
+
+If you are an existing {productname} 7 self-hosted customer upgrading to {productname} 8:
+
+. *Active Subscription*:
+* Contact your account manager or visit link:https://www.tiny.cloud/my-account[Tiny Cloud Account] to obtain a new T8LK-prefixed license key.
+. *Expired Subscription*:
+* Contact your account manager or visit link:https://www.tiny.cloud/pricing[Tiny Cloud Pricing] to renew your subscription.
+* A new T8LK-prefixed license key will be provided as part of the renewal process.
+
+[NOTE]
+====
+Your existing {productname} 7 license key will continue to work with TinyMCE 7 self-hosted installations. But, you will require a separate T8LK-prefixed license key for {productname} 8 editor instances for self-hosted installations.
+====
 
 === How can I get further assistance?
 

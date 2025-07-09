@@ -56,16 +56,16 @@ The sidebar also displays all tracked changes that need to be resolved. Each cha
 
 There are four basic types of suggestions that are tracked by the Suggested Edits plugin:
 
-==== Insert
+=== Insert
 Tracks the addition of new content to the document. 
 
-==== Modify
+=== Modify
 Tracks HTML attribute changes or formatting changes to existing content, such as bold or italic text. Note that if multiple users modify the same content, the original author will still be attributed with the change. 
 
-==== Delete
+=== Delete
 Tracks the removal of content from the document.
 
-==== Replace
+=== Replace
 Tracks the replacement of existing content with new content. This is treated as a combination of a delete and an insert, where the original content is selected and replaced by new content. Note that if multiple users replace the same content, the most recent author will be attributed with the change.
 
 == Initial setup

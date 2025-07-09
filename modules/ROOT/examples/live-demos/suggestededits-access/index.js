@@ -1,22 +1,22 @@
 /** Fake user database */
 const userinfos = {
   adamhenderson: {
-      uid: 'adamhenderson',
+      id: 'adamhenderson',
       name: 'Adam Henderson',
       avatar: `https://randomuser.me/api/portraits/men/1.jpg`,
   },
   michaelcook: {
-      uid: 'michaelcook',
+      id: 'michaelcook',
       name: 'Michael Cook',
       avatar: `https://randomuser.me/api/portraits/men/2.jpg`,
   },
   kalebwilson: {
-      uid: 'kalebwilson',
+      id: 'kalebwilson',
       name: 'Kaleb Wilson',
       avatar: `https://randomuser.me/api/portraits/men/3.jpg`,
   },
   kyleeinstein: {
-      uid: 'kyleeinstein',
+      id: 'kyleeinstein',
       name: 'Kyle Einstein',
       avatar: `https://randomuser.me/api/portraits/men/4.jpg`,
   },

@@ -1,38 +1,46 @@
 /** Fake user database */
 const userinfos = {
   adamhenderson: {
-      uid: 'adamhenderson',
+      id: 'adamhenderson',
       name: 'Adam Henderson',
       avatar: `https://randomuser.me/api/portraits/men/1.jpg`,
   },
   michaelcook: {
-      uid: 'michaelcook',
+      id: 'michaelcook',
       name: 'Michael Cook',
       avatar: `https://randomuser.me/api/portraits/men/2.jpg`,
   },
   kalebwilson: {
-      uid: 'kalebwilson',
+      id: 'kalebwilson',
       name: 'Kaleb Wilson',
       avatar: `https://randomuser.me/api/portraits/men/3.jpg`,
   },
   kyleeinstein: {
-      uid: 'kyleeinstein',
+      id: 'kyleeinstein',
       name: 'Kyle Einstein',
       avatar: `https://randomuser.me/api/portraits/men/4.jpg`,
   },
 };
 
-const trackchanges_user_lookup = (uid) => new Promise((resolve, reject) =>
-  setTimeout(() => userinfos[uid] ? resolve(userinfos[uid]) : reject(), 1000));
+const fetch_users = (ids) => {
+  return new Promise((resolve, reject) => {
+    const users = ids.map(id => userinfos[id]);
+    if (users.length > 0) {
+      resolve(users);
+    } else {
+      reject(new Error('No users found'));
+    }
+  });
+}
 
 tinymce.init({
-  selector: 'textarea#trackchanges_suggestions',
+  selector: 'textarea#suggestededits_suggestions',
   height: 500,
-  plugins: 'trackchanges',
-  toolbar: 'trackchanges',
+  plugins: 'suggestededits',
+  toolbar: 'suggestededits',
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }', 
-  trackchanges_uid: 'adamhenderson',
-  trackchanges_access: 'suggest', //change this value to set permission to the Suggested Edits view
+  user_id: 'adamhenderson',
+  suggestededits_access: 'feedback', //change this value to set permission to the Suggested Edits view
   readonly: false, //set to true to restrict a user's editing permission
-  trackchanges_user_lookup
+  fetch_users
 });

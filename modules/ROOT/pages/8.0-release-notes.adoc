@@ -125,7 +125,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // #TINY-vwxyz1
 
 // CCFR here.
-=== The default value of `pagebreak_split_block` is now `true` to match the new `pagebreak_separator` default
+=== The `pagebreak_split_block` option now defaults to `true`. When a page break is inserted, the resulting HTML output is: `<div style="break-after: page"></div>.`
 // #TINY-12462
 
 The default value for the `pagebreak_split_block` option has been changed from `false` to `true`. This change improves the user experience when inserting page breaks within block elements such as paragraphs, lists, or tables. When enabled:

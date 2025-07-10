@@ -129,7 +129,7 @@ In previous versions of {productname}, inserting a page break in the editor did 
 With the release of {productname} {release-version}, this issue has been resolved by updating the default HTML value of the `pagebreak_separator` option:
 
 * **Old value** – `'<!-- pagebreak -->'`
-* **New value** – `'<div style=”page-break-after: all”></div>'`
+* **New value** – `'<div style="break-after: page"></div>'`
 
 This change aligns better with modern standards and ensures that page breaks are now accurately rendered in exported documents.
 

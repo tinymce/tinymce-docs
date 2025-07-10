@@ -1,17 +1,15 @@
 = Suggested Edits Plugin
 :navtitle: Suggested Edits 
-:description: A view that allows users to review document changes made by multiple authors
+:description: Suggested Edits keeps track of changes and review edits made by multiple authors in a document.
 :description_short: A view of tracked changes made by multiple authors
-:keywords: plugin, Suggested Edits, changes, diff
+:keywords: plugin, Suggested Edits, changes, diff, track changes, review changes, collaboration, multiple authors
 :pluginname: Suggested Edits
 :plugincode: suggestededits
 :plugincategory: premium
 
-include::partial$misc/admon-revisionhistory-paid-addon-pricing.adoc[]
+include::partial$misc/admon-paid-addon-pricing.adoc[]
 
-include::partial$misc/admon-requires-8.0v.adoc[]
-
-The Suggested Edits plugin allows users to easily review and manage changes made to a document by multiple authors. 
+The {pluginname} plugin allows multiple users to collaborate on a document. The plugin shows which user suggested which edits, whether they added, removed, modified, or replaced any content, and allows users to provide feedback on those suggestions or give a final review by approving or rejecting them.
 
 == Interactive example
 
@@ -21,52 +19,67 @@ include::partial$misc/admon-iframe-only.adoc[]
 
 == How it works
 
-The Suggested Edits plugin builds a document model of the editor content to track edits made by multiple authors. This model is used to compare the current content of the editor with the original version, highlighting changes such as insertions, modifications, and deletions. 
+The {pluginname} plugin keeps track of every suggested edit made to the document by the current user, as the edits are made, and stores this metadata in an internal model of the document. These suggestions can then be reviewed in the `'suggestededits'` xref:custom-view.adoc[editor view], where each edit is highlighted in the document, and where you can accept, reject, or provide feedback. The `'suggestededits'` view is accessible via either the `suggestededits` toolbar button or menu button within the `View` menu.
 
-This allows users to review the changes made to the document, provide feedback on them, and accept or reject them as needed. See xref:#suggestededits_access[`suggestededits_access`] option for more information on how to configure user permissions for editing and reviewing content. 
+[IMPORTANT]
+These edits, and any feedback provided, are stored in the model provided by the plugin xref:#get_model[`+get_model()+` API]. This model should be saved externally alongside the document, and loaded into the editor with the xref:#suggestededits_model[`+suggestededits_model+` option]. This will ensure that both the document and the model are in sync, and that every user's contributions are tracked correctly.
 
-[NOTE]
-The model's content should be considered as metadata of the editor's HTML content, and both should be saved together to ensure correctness. See xref:#suggestededits_content[`suggestededits_content`] for more information on how to configure the source of content loaded into the editor. 
+== Reviewing edits
 
-A dedicated read-only view is provided for reviewing current changes, accessible via the `{plugincode}` toolbar button or the menu option under the `View` menu. The key components are:
+The {pluginname} plugin provides a dedicated `'suggestededits'` xref:custom-view.adoc[editor view] for viewing and reviewing edits made by multiple authors. Which actions you can take in this view depends on the xref:#suggestededits_access[`+suggestededits_access+` option].
 
-. **Read-only Diff View**:
-+
-Highlights the current changes made to the document, using the following color codes:  
-+
-* Green: New content. 
-* Blue: Modified content. Modifications to HTML content implies attributes or formatting (e.g. bold, italic, etc.).
+=== Header
+
+The view contains a few controls to manage the review process: 
+
+* Show edits: A toggle button which hides/unhides the highlighted annotations. 
+* Complete review: Ends the review, applying the resolved changes to the document.
+* Cancel: Exits the review with no change to the document.
+
+=== Document
+
+The current editor document is displayed in a sandboxed iframe, with each suggested edit highlighted as they appear in the document. The following color coding is used to indicate the type of change:  
+
+* Green: Added content. 
+* Blue: Modified attributes or formatting (e.g. bold, italic, etc.).
 * Red: Removed content.
 
-. **Sidebar**:
-+
-Contains a header with the following buttons: 
-+
-* Show Changes: A toggle button which hides/unhides the change annotations. 
-* Complete: Ends the review and applies the resolved changes. 
-* Cancel: Ends the review without any further action.
+Replaced content is represented as both added and removed content, and indicates that some content was removed and replaced with new content in a single edit. When a suggestion is selected, whether in the document or in the sidebar, the corresponding highlighted suggestion in the document will be outlined in blue and scrolled into view.
 
-+
-The sidebar also displays all tracked changes that need to be resolved. Each change can be handled in the following ways:
-* Accept: Applies the change to the document. 
-* Reject: Removes the change from the document. 
-* Revert: Undoes a previously accepted or rejected change. 
+=== Sidebar
 
-== Types of suggestions 
+Each suggested edit is listed as a card in the sidebar and color coded by the type of change, along with the user who made the suggestion, when the edit was made, and any feedback provided on that suggestion. When selected, each suggestion can be handled in the following ways:
 
-There are four basic types of suggestions that are tracked by the Suggested Edits plugin:
+* Accept: Resolves the edit and will be applied to the document when .
+* Reject: Removes the change from the document.
+* Revert: Undoes a previously accepted or rejected change.
+* Provide feedback: Opens a text area for you to provide feedback on the suggestion.
 
-=== Insert
-Tracks the addition of new content to the document. 
+Any feedback will be stored in the model and displayed underneath the card details and in chronological order. This feedback thread can be used to discuss the suggestion with the author or other reviewers. The feedback author can edit or delete their own feedback.
 
-=== Modify
-Tracks HTML attribute changes or formatting changes to existing content, such as bold or italic text. Note that if multiple users modify the same content, the original author will still be attributed with the change. 
+At the top of the sidebar, there is also a dropdown menu to apply review actions in bulk to all suggested edits:
 
-=== Delete
-Tracks the removal of content from the document.
+* Accept all.
+* Reject all.
+* Revert all.
 
-=== Replace
-Tracks the replacement of existing content with new content. This is treated as a combination of a delete and an insert, where the original content is selected and replaced by new content. Note that if multiple users replace the same content, the most recent author will be attributed with the change.
+=== Finishing a review
+
+When you complete a review, any resolved suggestions will be applied to the document and will no longer be tracked in the model as suggestions, including any feedback on resolved suggestions. This means that any accepted edits will remain in the docuemnt, and any rejected edits will be reverted to the state before the suggestion was made. More specifically, review actions will apply the following to the document:
+
+* When added content is -
+** Accepted: The content will remain in the document.
+** Rejected: The content will be removed from the document.
+
+* When modified content is -
+** Accepted: The content will keep the current formats and attributes.
+** Rejected: The content will revert to the formats and attributes it had before the edit was made.
+
+* When removed content is -
+** Accepted: The content will be remain removed from the document.
+** Rejected: The content will be restored to the document.
+
+If you cancel your review, no resolved suggestions will be applied to the document and all suggestions will remain in the model, including any feedback provided during that review session.
 
 == Initial setup
 

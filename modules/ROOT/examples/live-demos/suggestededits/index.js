@@ -53,7 +53,7 @@ const model = {
                 },
                 {
                     "text": "interactive ",
-                    "_opData": {
+                    "opData": {
                         "id": 1,
                         "type": "insert",
                         "id": "adamhenderson",
@@ -76,7 +76,7 @@ const model = {
                 },
                 {
                     "text": ": type in the editor, apply formatting or delete some content.",
-                    "_opData": {
+                    "opData": {
                         "id": 3,
                         "type": "insert",
                         "id": "adamhenderson",
@@ -85,7 +85,7 @@ const model = {
                 },
                 {
                     "text": " by typing in the editor and",
-                    "_opData": {
+                    "opData": {
                         "id": 2,
                         "type": "remove",
                         "id": "adamhenderson",
@@ -97,7 +97,7 @@ const model = {
                 },
                 {
                     "text": "t",
-                    "_opData": {
+                    "opData": {
                         "id": 4,
                         "type": "remove",
                         "id": "adamhenderson",
@@ -106,7 +106,7 @@ const model = {
                 },
                 {
                     "text": "T",
-                    "_opData": {
+                    "opData": {
                         "id": 4,
                         "type": "insert",
                         "id": "adamhenderson",
@@ -118,7 +118,7 @@ const model = {
                 },
                 {
                     "text": ",",
-                    "_opData": {
+                    "opData": {
                         "id": 5,
                         "type": "insert",
                         "id": "adamhenderson",
@@ -130,7 +130,7 @@ const model = {
                 },
                 {
                     "text": "ing",
-                    "_opData": {
+                    "opData": {
                         "id": 6,
                         "type": "remove",
                         "id": "adamhenderson",
@@ -142,7 +142,7 @@ const model = {
                 },
                 {
                     "text": " to see your changes",
-                    "_opData": {
+                    "opData": {
                         "id": 7,
                         "type": "insert",
                         "id": "adamhenderson",
@@ -406,4 +406,3 @@ tinymce.init({
   user_id: 'michaelcook',
   fetch_users, 
 });
-

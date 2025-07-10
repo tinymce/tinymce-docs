@@ -4,6 +4,14 @@ const getRandomDelay = () => {
   return Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay;
 };
 
+const userDirectory = {
+  'john.doe': { 
+    id: 'john.doe', 
+    name: 'John Doe', 
+    avatar: 'https://example.com/avatar/john.png' 
+  }
+};
+
 const lightRevisions = [
   {
     revisionId: '3',
@@ -202,9 +210,17 @@ tinymce.init({
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
   revisionhistory_fetch,
   revisionhistory_fetch_revision,
-  revisionhistory_author: {
-    id: 'john.doe',
-    name: 'John Doe'
+  user_id: 'john.doe',
+  fetch_users: (userIds) => {
+    const results = userIds.map((id) => {
+      const user = Object.values(userDirectory).find((user) => user.id === id);
+      if (user) {
+        return user;
+      } else {
+        throw new Error(`User ${id} not found`);
+      }
+    });
+    return Promise.resolve(results);
   },
   revisionhistory_display_author: true
 });

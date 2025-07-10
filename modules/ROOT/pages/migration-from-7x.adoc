@@ -23,6 +23,10 @@ Any items marked **"High"** level require immediate attention during migration.
 |Self-hosted deployments now require a new license key format and license key manager. Old keys are **not compatible**.
 |High
 
+|xref:pagebreak-split-block-default[pagebreak_split_block Default Value]
+|The default value changed from `false` to `true`, affecting how page breaks interact with block elements.
+|Medium
+
 |xref:editor-selection-setcontent-deprecated[editor.selection.setContent] Deprecated
 |Method deprecated. Use `editor.insertContent` instead.
 |Medium
@@ -363,7 +367,7 @@ The Page Break plugin has been updated to work out-of-the-box with the xref:expo
 
 **Migration steps:**
 
-* If the old behavior is prefered, explicitly set the `pagebreak_separator` option:
+* If the old behavior is preferred, explicitly set the `pagebreak_separator` option:
 
 [source, javascript]
 ----
@@ -375,7 +379,26 @@ The default value has been changed to produce a page break in both the xref:expo
 .Example
 [source, javascript]
 ----
-pagebreak_separator: '<div class="mce-pagebreak"></div>'
+pagebreak_separator: '<div style="break-after: page"></div>'
+----
+
+==== `pagebreak_split_block` plugin option defualt has been updated
+// #TINY-12462
+
+The default value of the xref:pagebreak.adoc#pagebreak_split_block[`pagebreak_split_block`] option has changed from `false` to `true`. This means that by default, inserting a page break will now automatically split block elements (such as paragraphs, lists, or tables) at the cursor position.
+
+**Impact**: This change affects how page breaks interact with block elements, providing a more intuitive editing experience.
+
+**Migration steps:**
+
+* If you want to maintain the previous behavior where page breaks do not automatically split block elements, add the following to your configuration:
+
+[source, javascript]
+----
+tinymce.init({
+  // ...other configuration options...
+  pagebreak_split_block: false
+});
 ----
 
 === Technical Improvements and Cleanup

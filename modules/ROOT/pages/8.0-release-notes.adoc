@@ -153,7 +153,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 Previously, applying different font sizes to nested elements could result in inconsistent and overly large line heights. This affected users by introducing visual clutter and making text blocks appear misaligned or difficult to read. 
 
-{productname} {release-version} introduces a fix that ensures line heights are calculated based on the font size of the parent element, rather than the nested child elements. This means that when different font sizes are applied within the same content, the line heights will be consistent and proportional to the parent element's font size.
+{productname} {release-version} introduces a fix that ensures line heights are calculated based on the font size visible in the new line, rather than inheriting line-height from parent element. This means that when different font sizes are applied within the same content, the line heights will be consistent and proportional to the visible font size.
 
 
 [[security-fixes]]

@@ -136,7 +136,6 @@ The license key system in {productname} 8 has been enhanced to provide improved 
 Key changes for self-hosted deployments:
 
 * New `T8LK:` prefix requirement for all commercial license keys.
-* Enhanced JWT-based validation that runs entirely in the browser
 * No server communication or "phone home" checks required
 * Support for both date-based and version-locked keys
 * Streamlined hybrid deployment configuration

@@ -1,7 +1,7 @@
 [[I2]]
 ==== I2 - Missing `+alt+` attribute
 
-*Rule description:* this rule checks that all `<img>` elements include an `+alt+` attribute, even if other accessible name properties like `+aria-label+`, `+aria-labelledby+`, or `+title+` are present. This ensures images are always programmatically identified.
+*Rule description:* this rule checks that all `<img>` elements include an `+alt+` attribute, even if other accessible name properties like `+aria-label+`, `+aria-labelledby+`, or `+title+` are present. The `+alt+` attribute is required for all images, and informative images must have at least one meaningful text alternative.
 
 ===== {pluginname} rule details - I2
 
@@ -22,21 +22,20 @@ include::partial$misc/admon-accessibility-rule-i3-can-also-be-applied.adoc[]
 
 [source,html]
 ----
-<!-- Missing alt attribute completely -->
-<img src="product.jpg">
+<!-- No alt attribute at all -->
+<img src="chart.jpg">
 
-<!-- Using title instead of alt -->
-<img src="icon.png" title="Settings">
+<!-- No alt attribute (even with aria-label) -->
+<img src="icon.jpg" aria-label="Settings">
 
-<!-- Using aria-label without alt -->
-<img src="profile.jpg" aria-label="User profile picture">
+<!-- No alt attribute (but has aria-labelledby) -->
+<img src="chart.jpg" aria-labelledby="chart-caption">
 
-<!-- Using aria-labelledby without alt -->
-<img src="chart.png" aria-labelledby="chart-desc">
-<p id="chart-desc">Sales performance chart</p>
+<!-- No alt attribute (but has title) -->
+<img src="button.jpg" title="Submit">
 ----
 
-These examples fail because they're missing the required alt attribute, even though some have other accessibility attributes.
+These examples fail because they're missing the required `+alt+` attribute. Note: Images with no attributes at all trigger rule I1 for incomplete intent, not I2.
 
 .Compliant examples
 
@@ -60,5 +59,5 @@ These examples fail because they're missing the required alt attribute, even tho
      title="Settings">
 ----
 
-These examples all include the required alt attribute, properly implementing image accessibility.
+These examples all include the required `+alt+` attribute and provide meaningful text alternatives for informative images.
 ====

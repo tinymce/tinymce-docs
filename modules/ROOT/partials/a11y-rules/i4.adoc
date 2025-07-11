@@ -1,7 +1,7 @@
 [[I4]]
 ==== I4 - Overly long `+alt+` text
 
-*Rule description:* this rule checks for `+alt+` text that exceeds the configured character limit (default: 150 characters). Long descriptions may overwhelm screen reader users and should be replaced with concise summaries, with more detail provided in surrounding content if necessary.
+*Rule description:* this rule checks for `+alt+` text that exceeds the configured character limit (default: 150 characters). Long descriptions can be difficult for screen reader users to process. Complex images might need detailed descriptions in the surrounding text instead, though some images may require longer descriptions to be fully understood.
 
 ===== {pluginname} rule details - I4
 

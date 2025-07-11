@@ -143,12 +143,20 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
+
 === Decorative images would lose their decorative status when the `alt` subtoolbar was closed when using the apply button.
 // #TINY-11912
 
 Previously, an issue was identified where closing the `alt` subtoolbar using the `Apply` button would inadvertently remove the decorative status from an image that was already marked as decorative. This occurred because the `onSetup` API disabled the input group, leading the `Apply` logic to incorrectly interpret the image as non-decorative.
 
 This issue has been resolved in {productname} {release-version}. The `onSetup` and `Apply` behavior has been aligned to consistently evaluate the input group, ensuring the decorative status is preserved as expected.
+
+=== The HTML schema did not treat `colgroup` or `col` elements as block elements.
+// #TINY-12092
+
+In previous versions of {productname}, whitespace between `<colgroup>` and `<col>` tags was not removed by {productname}'s HTML schema. This behavior caused the editor to preserve unnecessary whitespace characters in the table markup.
+
+This issue has been resolved in `{release-version}`. Both `colgroup` and `col` elements are now treated as block-level elements, ensuring that extraneous whitespace is stripped from these areas. As a result, the editor now produces cleaner and more concise table markup.
 
 
 [[security-fixes]]

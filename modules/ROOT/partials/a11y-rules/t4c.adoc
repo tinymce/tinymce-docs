@@ -1,5 +1,5 @@
 [[T4C]]
-=== T4C - Table heading scope
+==== T4C - Table heading scope
 
 *Rule description:* this rule checks that all table header (`+th+`) elements have a `+scope+` attribute clarifying what scope the heading has inside of the `+table+`. The allowed values are `+row+`, `+col+`, `+rowgroup+`, and `+colgroup+`. This is important for users of assistive technologies to be able to parse table data.
 

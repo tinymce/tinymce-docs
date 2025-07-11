@@ -1,5 +1,5 @@
 [[D4U]]
-=== D4U - Unordered list structure
+==== D4U - Unordered list structure
 
 *Rule description:* this rule checks that a `+ul+` element is used for unordered lists. Do not use paragraphs beginning with `+*+` or `+-+` or some similar character instead of an `+ol+` element containing `+li+` items. This is to simplify navigation and parsing of the content for users of assistive technologies.
 

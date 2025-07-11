@@ -96,7 +96,7 @@ include::partial$integrations/common/license-key-property.adoc[]
 [IMPORTANT]
 ====
 * The `+license-key+` attribute is only required when self-hosting {productname}
-* License keys starting with "T8LK:" use client-side JWT validation that runs entirely in the browser
+* License keys starting with "T8LK:" use client-side validation.
 * Do not use both an API key and a license key - use API key for cloud deployments, and license key for self-hosted deployments
 ====
 

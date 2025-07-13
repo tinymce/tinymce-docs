@@ -154,6 +154,14 @@ In {productname} {release-version}, the resize handle now includes a `role` sepe
 
 {productname} {release-version} also includes the following bug fix<es>:
 
+
+=== Toolbar drawer now closes when the editor loses focus.
+// #TINY-12125
+
+In previous versions of {productname}, the floating toolbar remained visible even when the editor lost focus. This behavior introduced potential accessibility concerns, as the toolbar was not properly associated with the editor it controlled, potentially causing confusion for users.
+
+In {productname} {release-version}, the toolbar now automatically closes when the editor loses focus. This ensures it is only displayed within the appropriate context, enhancing accessibility and improving the overall user experience.
+
 === Arrow key navigation between buttons was blocked when a button is hovered by the mouse.
 // #TINY-12163
 

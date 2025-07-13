@@ -1,4 +1,3 @@
-
 = {productname} {release-version}
 :release-version: 8.0.0
 :navtitle: {productname} {release-version}
@@ -59,6 +58,16 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== PowerPaste
+
+The {productname} {release-version} release includes an accompanying release of the **PowerPaste** premium plugin.
+
+==== Word import of lists with a "lighter" level failed parsing.
+
+When users pasted content from Microsoft Word documents containing lists styled with Word’s "No List" setting into the editor with PowerPaste enabled, the operation failed due to a parsing error. As a result, the content was not inserted into the editor, causing disruption to content workflows. {productname} {release-version} addresses this issue by updating the **PowerPaste** parser to correctly handle lists with the "No List" style. As a result, users can now successfully paste such content into the editor without encountering errors.
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement
@@ -99,10 +108,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following improvement<s>:
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Resize handles are more accessible with `role` and `aria-valuetext` attributes.
+// #TINY-11421
 
-// CCFR here.
+In previous versions of {productname}, the editor's resize handle lacked a `role` attribute, raising accessibility concerns.
+
+In {productname} {release-version}, the resize handle now includes a `role` seperator and an `aria-valuetext` attribute that dynamically reflects the current dimensions of the editor. These improvements enhance accessibility and ensure more accurate announcements by screen readers.
 
 
 [[additions]]
@@ -143,12 +154,41 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following bug fix<es>:
 
+
 === Toolbar drawer now closes when the editor loses focus.
 // #TINY-12125
 
 In previous versions of {productname}, the floating toolbar remained visible even when the editor lost focus. This behavior introduced potential accessibility concerns, as the toolbar was not properly associated with the editor it controlled, potentially causing confusion for users.
 
 In {productname} {release-version}, the toolbar now automatically closes when the editor loses focus. This ensures it is only displayed within the appropriate context, enhancing accessibility and improving the overall user experience.
+
+=== Arrow key navigation between buttons was blocked when a button is hovered by the mouse.
+// #TINY-12163
+
+In previous versions of {productname}, if a button was hovered by the mouse while using arrow keys for navigation, focus would return to the previously focused element. This caused the selection to become stuck on the button with the `mouseover` event.
+
+{productname} {release-version} resolves this issue by preventing the `mouseover` event from being triggered again during arrow key navigation, ensuring a seamless user experience when navigating with arrow keys.
+
+=== It was not possible to navigate out of a `figcaption` using the left and right arrow keys in Firefox.
+// #TINY-11982
+
+Prior to {productname} {release-version}, Firefox exhibited an issue where pressing the left or right arrow keys would not allow users to exit the image `figcaption` element. This behavior was inconsistent with other major browsers such as Google Chrome and Safari, where the arrow keys functioned as expected and allowed seamless navigation out of the `figcaption`.
+
+With {productname} {release-version}, this issue has been resolved. Users can now exit the `figcaption` using the left/right arrow keys in Firefox, aligning its behavior with that of other browsers. This update ensures a more consistent user experience.
+
+=== Decorative images would lose their decorative status when the `alt` subtoolbar was closed when using the apply button.
+// #TINY-11912
+
+Previously, an issue was identified where closing the `alt` subtoolbar using the `Apply` button would inadvertently remove the decorative status from an image that was already marked as decorative. This occurred because the `onSetup` API disabled the input group, leading the `Apply` logic to incorrectly interpret the image as non-decorative.
+
+This issue has been resolved in {productname} {release-version}. The `onSetup` and `Apply` behavior has been aligned to consistently evaluate the input group, ensuring the decorative status is preserved as expected.
+
+=== The HTML schema did not treat `colgroup` or `col` elements as block elements.
+// #TINY-12092
+
+In previous versions of {productname}, whitespace between `<colgroup>` and `<col>` tags was not removed by {productname}'s HTML schema. This behavior caused the editor to preserve unnecessary whitespace characters in the table markup.
+
+This issue has been resolved in `{release-version}`. Both `colgroup` and `col` elements are now treated as block-level elements, ensuring that extraneous whitespace is stripped from these areas. As a result, the editor now produces cleaner and more concise table markup.
 
 
 [[security-fixes]]

@@ -305,7 +305,7 @@ The list plugin now includes configurable indentation level restrictions to prev
 ----
 // Configure maximum list indentation levels
 tinymce.init({
-  max_list_indent: 3  // Restricts list indentation to 3 levels
+  list_max_length: 3  // Restricts list indentation to 3 levels
 });
 ----
 

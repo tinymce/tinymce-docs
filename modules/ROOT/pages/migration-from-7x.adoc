@@ -299,9 +299,9 @@ editor.dispatch('someEvent');
 ==== Language Pack Filename Changes
 // #TINY-12090
 
-Language pack filenames have been standardized to follow the RFC5646 format. This change ensures consistent language handling across different platforms and improves internationalization support.
+Language pack filenames have been standardized to follow the RFC5646 format. This update ensures consistent language handling across platforms and improves internationalization support. While both the legacy underscore format (e.g., `en_GB.js`) and the new hyphenated format (e.g., `en-GB.js`) are supported in {productname} {release-version}, the underscore format is deprecated and will be removed in {productname} 9. Migrating to the RFC5646 format now will ensure future compatibility and reduce maintenance overhead during upcoming upgrades.
 
-**Impact**: Custom language packs using the old naming format will need to be updated.
+**Impact**: Custom language packs and configurations using the underscore-based format should update before upgrading to {productname} 9 to avoid loading failures.
 
 **Migration checklist:**
 
@@ -310,16 +310,20 @@ Language pack filenames have been standardized to follow the RFC5646 format. Thi
 * [ ] Update configuration references to language files
 * [ ] Update build scripts that handle language files
 * [ ] Test language switching in your application
-* [ ] Update custom translation files to new format
+* [ ] Update custom translation files to use the new format
 
 [source, javascript]
 ----
-// Old configuration
+// Deprecated format (supported only in versions 8.x)
 language_url: '/langs/en_GB.js'
 
-// New configuration
+// Recommended format
 language_url: '/langs/en-GB.js'
 ----
+
+[IMPORTANT]
+Support for the underscore format will be removed in {productname} 9. Early migration is recommended.
+
 
 ==== Update to Image and Accessibility Checker Plugins
 // #TINY-12235

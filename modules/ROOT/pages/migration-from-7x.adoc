@@ -296,28 +296,6 @@ editor.dispatch('someEvent');
 
 === Plugin Updates
 
-==== List Plugin Updates
-// #TINY-11937
-
-The list plugin now includes configurable indentation level restrictions to prevent excessive nesting of list items. This change helps maintain cleaner document structure and improves compatibility with various export formats.
-
-[source, javascript]
-----
-// Configure maximum list indentation levels
-tinymce.init({
-  list_max_length: 3  // Restricts list indentation to 3 levels
-});
-----
-
-**Impact**: Lists will no longer indent beyond the configured maximum level.
-
-**Migration checklist:**
-
-* [ ] Audit existing content for deeply nested lists
-* [ ] Determine appropriate maximum indentation level for your use case
-* [ ] Configure `max_list_indent` setting
-* [ ] Test list behavior with existing content
-
 ==== Language Pack Filename Changes
 // #TINY-12090
 

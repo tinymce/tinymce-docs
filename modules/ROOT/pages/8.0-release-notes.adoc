@@ -107,7 +107,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === Split buttons are now rendered as separate action and chevron buttons.
 // #TINY-8665
 
-Split buttons in {productname} {release-version} now render as two independent, focusable components instead of a single composite component. The main button handles primary actions while the chevron button controls dropdown functionality. This architectural change improves accessibility by providing separate focus targets and ARIA labels for each component. The `+setTooltip+` method has been enhanced to update both main and chevron button tooltips simultaneously.
+Split buttons in {productname} {release-version} now render as two independent, focusable components instead of a single composite element. The main button performs the primary action, while the chevron button controls the dropdown menu. This design improvement enhances accessibility by allowing separate focus targets and ARIA labels for each button. Additionally, the `+setTooltip+` method has been updated to apply tooltip content to both the main and chevron buttons simultaneously, ensuring consistent guidance for users.
 
 
 [[additions]]

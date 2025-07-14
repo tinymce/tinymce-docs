@@ -92,6 +92,16 @@ tinymce.init({
 
 For more information on the Accessibility Checker plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
 
+=== PowerPaste
+
+The {productname} {release-version} release includes an accompanying release of the **PowerPaste** premium plugin.
+
+==== Word import of lists with a "lighter" level failed parsing.
+
+When users pasted content from Microsoft Word documents containing lists styled with Word’s "No List" setting into the editor with PowerPaste enabled, the operation failed due to a parsing error. As a result, the content was not inserted into the editor, causing disruption to content workflows. {productname} {release-version} addresses this issue by updating the **PowerPaste** parser to correctly handle lists with the "No List" style. As a result, users can now successfully paste such content into the editor without encountering errors.
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement
@@ -132,11 +142,24 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following improvement<s>:
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Instructions on how to navigate the color swatch, image select and insert table widget are now announced by screen readers.
+// #TINY-12189
 
-// CCFR here.
+Previously, interactive elements such as the color swatch, create table grid, and image select were missing an `aria-label`. This resulted in a lack of instructions for keyboard users and hindered overall accessibility.
 
+{productname} {release-version} now includes `aria-labels` for these elements, providing clear keyboard navigation instructions. This improvement ensures a more accessible experience for all users.
+
+=== Resize handles are more accessible with `role` and `aria-valuetext` attributes.
+// #TINY-11421
+
+In previous versions of {productname}, the editor's resize handle lacked a `role` attribute, raising accessibility concerns.
+
+In {productname} {release-version}, the resize handle now includes a `role` seperator and an `aria-valuetext` attribute that dynamically reflects the current dimensions of the editor. These improvements enhance accessibility and ensure more accurate announcements by screen readers.
+
+=== The translate API now automatically replaces three dots in a row with an ellipsis character.
+// #TINY-12155
+
+Previously, menu items and tooltips containing three consecutive periods (`...`) were read aloud by the JAWS screen reader as "dot dot dot," which could confuse users relying on assistive technologies. To enhance accessibility, the `translate` API in {productname} {release-version} now automatically replaces three dots with the typographic ellipsis character (`…`) across all translations. This update ensures a consistent visual appearance while improving screen reader behavior, as the ellipsis character is not read aloud. The change is implemented directly in the translation function, ensuring comprehensive coverage across all languages.
 
 [[additions]]
 == Additions
@@ -154,10 +177,17 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following change<s>:
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Changed the default value for the `pagebreak_separator` option.
+// #TINY-12013
 
-// CCFR here.
+In previous versions of {productname}, inserting a page break in the editor did not translate correctly when exporting using the xref:exportpdf.adoc[Export to PDF] plugin. Similarly, the xref:exportword.adoc[Export to Word] plugin also failed to preserve page breaks in the exported documents. As a result, exported files lacked the intended page breaks, leading to confusing output for users.
+
+With the release of {productname} {release-version}, this issue has been resolved by updating the default HTML value of the `pagebreak_separator` option:
+
+* **Old value** – `'<!-- pagebreak -->'`
+* **New value** – `'<div style="break-after: page"></div>'`
+
+This change aligns better with modern standards and ensures that page breaks are now accurately rendered in exported documents.
 
 
 [[removed]]
@@ -170,16 +200,73 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Removed undocumented `documentBaseUrl` property from Editor instances. `documentBaseURI` is the supported property now.
+// #TINY-12182
+
+An undocumented `documentBaseUrl` property was previously accessible on `Editor` instances. This property was not part of the supported public API and could lead to confusion or inconsistent usage across implementations.
+
+To improve API clarity and maintain a well-defined interface, the `documentBaseUrl` property has been removed. Integrators should use the officially supported `documentBaseURI` property to access the base URI of the document.
 
 [[bug-fixes]]
 == Bug fixes
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== In inline mode, pressing the back button dismissed the context toolbar and moved focus from the selected image to the editor.
+// #TINY-12118
 
-// CCFR here.
+In inline mode, the context form toolbar incorrectly shifted focus from the selected image to the editor container. As a result, the plugin which relies on the current selection to apply changes was unable to apply attributes like `alt` text to the correct image.
+
+{productname} {release-version} resolves this by ensuring that the focus is preserved properly, ensuring that the plugin now applies changes such as `alt` text to the correct image in inline mode.
+
+=== Toolbar drawer now closes when the editor loses focus.
+// #TINY-12125
+
+In previous versions of {productname}, the floating toolbar remained visible even when the editor lost focus. This behavior introduced potential accessibility concerns, as the toolbar was not properly associated with the editor it controlled, potentially causing confusion for users.
+
+In {productname} {release-version}, the toolbar now automatically closes when the editor loses focus. This ensures it is only displayed within the appropriate context, enhancing accessibility and improving the overall user experience.
+
+=== Arrow key navigation between buttons was blocked when a button is hovered by the mouse.
+// #TINY-12163
+
+In previous versions of {productname}, if a button was hovered by the mouse while using arrow keys for navigation, focus would return to the previously focused element. This caused the selection to become stuck on the button with the `mouseover` event.
+
+{productname} {release-version} resolves this issue by preventing the `mouseover` event from being triggered again during arrow key navigation, ensuring a seamless user experience when navigating with arrow keys.
+
+=== It was not possible to navigate out of a `figcaption` using the left and right arrow keys in Firefox.
+// #TINY-11982
+
+Prior to {productname} {release-version}, Firefox exhibited an issue where pressing the left or right arrow keys would not allow users to exit the image `figcaption` element. This behavior was inconsistent with other major browsers such as Google Chrome and Safari, where the arrow keys functioned as expected and allowed seamless navigation out of the `figcaption`.
+
+With {productname} {release-version}, this issue has been resolved. Users can now exit the `figcaption` using the left/right arrow keys in Firefox, aligning its behavior with that of other browsers. This update ensures a more consistent user experience.
+
+=== Decorative images would lose their decorative status when the `alt` subtoolbar was closed when using the apply button.
+// #TINY-11912
+
+Previously, an issue was identified where closing the `alt` subtoolbar using the `Apply` button would inadvertently remove the decorative status from an image that was already marked as decorative. This occurred because the `onSetup` API disabled the input group, leading the `Apply` logic to incorrectly interpret the image as non-decorative.
+
+This issue has been resolved in {productname} {release-version}. The `onSetup` and `Apply` behavior has been aligned to consistently evaluate the input group, ensuring the decorative status is preserved as expected.
+
+=== The HTML schema did not treat `colgroup` or `col` elements as block elements.
+// #TINY-12092
+
+In previous versions of {productname}, whitespace between `<colgroup>` and `<col>` tags was not removed by {productname}'s HTML schema. This behavior caused the editor to preserve unnecessary whitespace characters in the table markup.
+
+This issue has been resolved in `{release-version}`. Both `colgroup` and `col` elements are now treated as block-level elements, ensuring that extraneous whitespace is stripped from these areas. As a result, the editor now produces cleaner and more concise table markup.
+
+=== Deleting a whole element would sometimes modify nearby content
+// #TINY-11868
+
+Previously, deleting a complete HTML element using the "Source Code" editor either by cutting `+Ctrl+X+` or `+Cmd+X+`, backspacing, or pressing delete could inadvertently modify surrounding content. For example, removing a `<div>` element that precedes a `<p>` tag could cause the `<p>` to be transformed into a `<div>`, resulting in unintended structural changes.
+
+This issue has been resolved in {productname} {release-version} by improving how element deletions are handled within the editor's DOM logic. Cutting or deleting a selected element now preserves the integrity and tag type of adjacent elements. Users can expect consistent and predictable editing behavior when modifying HTML source content.
+
+=== Strikethrough format could be added outside font size format, which renders incorrectly in some browsers.
+// #TINY-12004
+
+Previously, there was an issue where combining strikethrough (`s` element) and font size formatting could lead to incorrect rendering in some browsers, particularly Chrome. This occurred when the `s` (strikethrough) element was placed outside a font size `span`, causing the strikethrough line to render incorrectly.
+
+The fix ensures that the `s` element is now properly nested inside the font size element, improving visual consistency across browsers.
 
 
 [[security-fixes]]

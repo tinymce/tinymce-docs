@@ -274,18 +274,39 @@ The undocumented `editor.documentBaseUrl` property has been removed.
 [source,javascript]
 ----
 // Removed in TinyMCE 8
-console.log(editor.documentBaseUrl);
+console.log('documentBaseUrl', editor.documentBaseUrl);
 
 // Use this instead
-console.log(editor.editorManager.documentBaseURI);
+console.log('documentBaseURI', editor.documentBaseURI.getURI());
 ----
 
-TIP: Use `editor.editorManager.documentBaseURI` for all base URL operations.
+TIP: Use `tinymce.activeEditor.documentBaseURI.getURI()` for all base URL operations.
 
 .Required Changes
-* Update all base URL references to use `editor.editorManager.documentBaseURI`
 
-For more information regarding URL handling, see: xref:url-handling.adoc#document_base_uri[document_base_uri].
+To update all references of `documentBaseUrl` to the new API, replace any usage of `editor.documentBaseUrl` (or similar) with `tinymce.activeEditor.documentBaseURI.getURI()`. The property `documentBaseUrl` has been removed, and the correct way to access the document base URL is now through the `documentBaseURI` property, which is a URI object. You can then call `.getURI()` on it to get the string value of the URL.
+
+.For example, update this:
+[source, js]
+----
+const baseUrl = editor.documentBaseUrl;
+----
+
+to:
+
+[source, js]
+----
+const baseUrl = tinymce.activeEditor.documentBaseURI.getURI();
+----
+
+This change is necessary because the undocumented `editor.documentBaseUrl` API has been removed to improve URL handling consistency. The new approach uses the documented `documentBaseURI` property, which provides a URI object with methods such as `getURI()` to retrieve the full URL string. 
+
+For more information see: link:https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.editor/#properties[tinymce.editor/#properties].
+
+**Migration checklist:**
+
+* [ ] Search your codebase for all instances of `editor.documentBaseUrl`.
+* [ ] Replace them with `tinymce.activeEditor.documentBaseURI.getURI()` (or `editor.documentBaseURI.getURI()` if you have an `editor` reference).
 
 '''
 

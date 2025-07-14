@@ -112,7 +112,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === New `allow_html_in_comments` option to allow HTML-like content inside comment data
 // #TINY-12220
 
-Previously, comments containing HTML-like content were removed from the editor's content by default for security reasons. This was done using DOMPurify's `SAFE_FOR_XML` option, which ensures that any HTML-like content in comments is stripped out.
+Comments containing HTML-like content are removed from the editor's content by default for security reasons. This is done during the sanitization process, which ensures that any HTML-like content in comments is stripped out.
 
 {productname} introduces a new configuration option, xref:content-filtering.adoc#allow_html_in_comments[allow_html_in_comments], to give users control over whether HTML-like content in comments should be retained or removed. By default, this content is removed for security, but setting the option to `true` allows HTML-like content in comments to be preserved when needed.
 

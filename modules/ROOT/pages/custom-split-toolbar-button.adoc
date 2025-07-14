@@ -37,7 +37,7 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 3+|
 |setText |`+(text: string) => void+` |Sets the text label to display.
 |setIcon |`+(icon: string) => void+` |Sets the icon of the button.
-|setTooltip |`+(tooltip: string) => void+` |Sets the main button tooltip and auto-updates the chevron tooltip.
+|setTooltip |`+(tooltip: string) => void+` |Sets the main button tooltip.
 |===
 
 [[split-button-example-and-explanation]]

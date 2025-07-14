@@ -103,11 +103,11 @@ When migrating to TinyMCE {release-version} with a commercial license, the licen
 ----
 your-site/
 ├── tinymce/
-│   └── plugins/
-│       ├── licensekeymanager/     # Add this folder
-│       │   ├── plugin.min.js
-│       │   └── index.js
-│       └── ... other plugins
+│ └── plugins/
+│   ├── licensekeymanager/     # Add this folder
+│   │   ├── plugin.min.js
+│   │   └── index.js
+│   └── ... other plugins
 ----
 
 . *NPM/Module Bundler:*
@@ -179,6 +179,50 @@ For complete details on license key manager setup and troubleshooting, see xref:
 * [ ] Test editor functionality with new license
 * [ ] Verify all premium features are working
 
+[[dompurify-update-breaking-change]]
+=== DOMPurify Update and Stricter Sanitization (Breaking Change)
+// #TINY-12056
+
+{productname} {release-version} updates the DOMPurify dependency to version 3.2.6 and enables the `SAFE_FOR_XML` flag by default. This is a breaking change: content that previously passed sanitization in {productname} 7 may now be stripped or altered during the sanitization process.
+
+[IMPORTANT]
+====
+This change improves security and aligns with DOMPurify's recommended defaults. However, existing content and integrations that relied on the previous, less strict sanitization behavior may be impacted.
+====
+
+==== Key Changes
+
+* **DOMPurify upgraded to 3.2.6** — The custom patch is now included upstream; maintaining a forked patch is no longer required.
+* **`SAFE_FOR_XML` enabled** — This setting enforces stricter handling of comments and attribute values, preventing certain XSS vectors.
+* **Content Impact** — HTML comments containing tags, Internet Explorer conditional comments, and attributes with HTML-like values may now be removed during sanitization. Content that was previously allowed may be stripped.
+
+==== Migration Guidance
+
+* Review workflows and test content that previously relied on relaxed sanitization.
+* If custom comment handling is required, consider using DOMPurify hooks as recommended by the maintainers.
+
+.Example: Content Differences
+|===
+|Content |{productname} 7 Output |{productname} {release-version} Output
+
+|`<div><!-- <p>Hello World</p> --></div>`
+|`<div><!-- <p>Hello World</p> --></div>`
+|`<div></div>`
+
+|`<iframe><!-- Hello World --></iframe>`
+|`<p><iframe sandbox=""><!-- Hello World --></iframe></p>`
+|``
+
+|`<script><!-- Hello World --></script>`
+|`<script><!-- Hello World --></script>`
+|``
+|===
+
+[NOTE]
+====
+For information on disabling DOMPurify sanitization (not recommended), see xref:security.adoc#xss_sanitization-option[xss_sanitization option].
+====
+
 == Core API Changes
 
 [discrete]
@@ -218,7 +262,7 @@ editor.insertContent('<p>New content</p>');
 [[editor-documentbaseurl-removal]]
 ==== editor.documentBaseUrl
 [.discrete]
-// #TINY-12236
+// #TINY-12182
 
 The undocumented `editor.documentBaseUrl` property has been removed.
 
@@ -270,7 +314,7 @@ editor.execCommand('ToggleToolbarDrawer', false, { skipFocus: true });
 
 [[fire-method-deprecation]]
 ==== `fire()`
-// #TINY-11692
+// #TINY-12012, ref TINY-8102
 
 The `fire()` method has been replaced by `dispatch()` for event handling. The `fire()` method will be removed in {productname} 9 to avoid confusion with its name.
 
@@ -325,7 +369,7 @@ language_url: '/langs/en-GB.js'
 Support for the underscore format will be removed in {productname} 9. Early migration is recommended.
 
 ==== Update to Image and Accessibility Checker Plugins
-// #TINY-12235
+// #TINY-12226
 
 The Image and Accessibility Checker plugins now follow the latest W3C standards for decorative images, requiring an empty alt attribute rather than a `+role="presentation"+` attribute. This change helps improve accessibility support.
 
@@ -338,46 +382,29 @@ The Image and Accessibility Checker plugins now follow the latest W3C standards 
 * [ ] Update image plugin configuration if customized
 * [ ] Test accessibility checker with updated content
 
+For more information on the changes, see: xref:a11ychecker.adoc##image-rules[Accessibility Checker: Image rules].
 
-==== Page Break plugin update for Export PDF/Word Compatibility
-// #TINY-12013
+==== Page Break Plugin: Export PDF/Word Compatibility and Option Updates
+// #TINY-12013, #TINY-12462
 
-The Page Break plugin has been updated to work out-of-the-box with the xref:exportpdf.adoc[Export to PDF] and xref:exportword.adoc[Export to Word] plugins, addressing a common pain point for developers.
+The Page Break plugin has been updated to work out-of-the-box with the xref:exportpdf.adoc[Export to PDF] and xref:exportword.adoc[Export to Word] plugins, addressing a common pain point for developers. As part of this update:
 
-**Impact**: This change improves the export experience by providing more predictable page break behavior.
+* The default value of the xref:pagebreak.adoc#pagebreak_separator[`pagebreak_separator`] option now uses a block tag (`<div style="break-after: page
+* The default value of the xref:pagebreak.adoc#pagebreak_split_block[`pagebreak_split_block`] option has changed from `false` to `true`.
 
-**Migration steps:**
+This means that by default, inserting a page break will now automatically split block elements (such as paragraphs, lists, or tables) at the cursor position, and the separator will be compatible with both export services.
 
-* If the old behavior is preferred, explicitly set the `pagebreak_separator` option:
-
-[source, javascript]
-----
-pagebreak_separator: '<!-- my page break -->'
-----
-
-The default value has been changed to produce a page break in both the xref:exportpdf.adoc[Export to PDF] and xref:exportword.adoc[Export to Word] service, such as:
-
-.Example
-[source, javascript]
-----
-pagebreak_separator: '<div style="break-after: page"></div>'
-----
-
-==== `pagebreak_split_block` plugin option defualt has been updated
-// #TINY-12462
-
-The default value of the xref:pagebreak.adoc#pagebreak_split_block[`pagebreak_split_block`] option has changed from `false` to `true`. This means that by default, inserting a page break will now automatically split block elements (such as paragraphs, lists, or tables) at the cursor position.
-
-**Impact**: This change affects how page breaks interact with block elements, providing a more intuitive editing experience.
+**Impact**: These changes improve the export experience and provide a more intuitive editing experience.
 
 **Migration steps:**
 
-* If you want to maintain the previous behavior where page breaks do not automatically split block elements, add the following to your configuration:
+* If you want to restore the previous (v7) behavior, where page breaks do not automatically split block elements and use a comment tag as the separator, set both options explicitly in your configuration:
 
 [source, javascript]
 ----
 tinymce.init({
   // ...other configuration options...
+  pagebreak_separator: '<!-- my page break -->',
   pagebreak_split_block: false
 });
 ----
@@ -395,7 +422,7 @@ When upgrading to {productname} 8, you will need to review and possibly update h
 +
 * Ensure your script tag includes both required attributes:
 +
-[source, html]
+[source,html,subs="attributes+"]
 ----
 <script src="{cdnurl}" referrerpolicy="origin" crossorigin="anonymous"></script>
 ----
@@ -466,7 +493,7 @@ The handling of `<div>` elements during cut operations has been improved to prev
 === Service and Configuration Changes
 
 ==== Discontinuation of Medical English (UK)
-// #TINY-12255
+// #EPIC-255
 
 [WARNING]
 The "Medical English (UK)" dictionary has been removed due to licensing constraints. Customers using this feature must update their configurations accordingly.

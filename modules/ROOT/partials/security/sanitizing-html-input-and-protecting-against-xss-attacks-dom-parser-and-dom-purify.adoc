@@ -48,6 +48,7 @@ As of {productname} 6.4, however, it is possible to turn DOMPurify off using the
 
 NOTE: `xss_sanitization` is set to `true` by default. That is, {productname} specifically sets the `xss_sanitization` option to `true`, even if this option is not declared in a {productname} configuration.
 
+[[xss_sanitization-option]]
 *Type:* `+Boolean+`
 
 *Default value:* `+true+`
@@ -65,3 +66,8 @@ tinymce.init({
 ----
 
 WARNING: Turning DomPurify off leaves {productname}, and any application using {productname}, extremely vulnerable to XSS attacks. Only turn DomPurify off if alternative and equivalently capable HTML and XML sanitization and XSS protections are in place.
+
+[NOTE]
+====
+{productname} {release-version} upgrades DOMPurify to version 3.2.6 and enables the `SAFE_FOR_XML` flag by default. This enforces stricter sanitization, which may remove or alter content that previously passed in {productname} 7. For more information see xref:migration-from-7x.adoc#dompurify-update-breaking-change[Migration Guide]
+====

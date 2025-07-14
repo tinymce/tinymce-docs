@@ -19,10 +19,10 @@ include::partial$misc/admon-iframe-only.adoc[]
 
 == How it works
 
-The {pluginname} plugin keeps track of every suggested edit made to the document by the current user, as the edits are made, and stores this metadata in an internal model of the document. These suggestions can then be reviewed in the `'suggestededits'` xref:custom-view.adoc[editor view], where each edit is highlighted in the document, and where you can accept, reject, or provide feedback. The `'suggestededits'` view is accessible via either the `suggestededits` toolbar button or menu button within the `View` menu.
+The {pluginname} plugin keeps track of every suggested edit made to the document by the current user, as the edits are made, and stores this metadata in an internal model of the document. These suggestions can then be reviewed in the `'suggestededits'` xref:custom-view.adoc[editor view], where each edit is highlighted in the document, and where you can accept, reject, or provide feedback. The `'suggestededits'` view is accessible via either the `suggestededits` toolbar button or menu button within the `View` menu. These edits, and any feedback provided, are stored in the model provided by the plugin xref:#get_model[`+get_model()+` API].
 
 [IMPORTANT]
-These edits, and any feedback provided, are stored in the model provided by the plugin xref:#get_model[`+get_model()+` API]. This model should be saved externally alongside the document, and loaded into the editor with the xref:#suggestededits_model[`+suggestededits_model+` option]. This will ensure that both the document and the model are in sync, and that every user's contributions are tracked correctly.
+This model should be saved externally alongside the document, and loaded into the editor with the xref:#suggestededits_model[`+suggestededits_model+` option]. This will ensure that both the document and the model are in sync, and that every user's contributions are tracked correctly.
 
 == Reviewing edits
 
@@ -83,7 +83,7 @@ If you cancel your review, no resolved suggestions will be applied to the docume
 
 == Initial setup
 
-The Suggested Edits plugin uses a document model to track changes. If the model is not provided in the editor configuration, the plugin will create a new model from the current content of the editor. This model can be retrieved from the editor at any time using the xref:#get_model[`getModel` API], and should be saved externally
+The {pluginname} plugin requires a model to store . If the model is not provided in the editor configuration, the plugin will create a new model from the current content of the editor. This model can be retrieved from the editor at any time using the xref:#get_model[`getModel` API], and should be saved externally
 
 To setup the {pluginname} plugin in the editor:
 
@@ -109,7 +109,15 @@ tinymce.init({
 
 The following configuration options affect the behavior of the {pluginname} plugin.
 
-include::partial$configuration/suggestededits-options.adoc[leveloffset=+1]
+include::partial$configuration/user_id.adoc[leveloffset=+1]
+
+include::partial$configuration/fetch_users.adoc[leveloffset=+1]
+
+include::partial$configuration/suggestededits_model.adoc[leveloffset=+1]
+
+include::partial$configuration/suggestededits_content.adoc[leveloffset=+1]
+
+include::partial$configuration/suggestededits_access.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

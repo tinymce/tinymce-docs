@@ -168,6 +168,12 @@ This change aligns better with modern standards and ensures that page breaks are
 
 {productname} {release-version} also includes the following bug fix<es>:
 
+=== In inline mode, pressing the back button dismissed the context toolbar and moved focus from the selected image to the editor.
+// #TINY-12118
+
+In inline mode, the context form toolbar incorrectly shifted focus from the selected image to the editor container. As a result, the plugin which relies on the current selection to apply changes was unable to apply attributes like `alt` text to the correct image.
+
+{productname} {release-version} resolves this by ensuring that the focus is preserved properly, ensuring that the plugin now applies changes such as `alt` text to the correct image in inline mode.
 
 === Toolbar drawer now closes when the editor loses focus.
 // #TINY-12125

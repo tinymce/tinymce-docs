@@ -141,7 +141,7 @@ For more information, see xref:custom-split-toolbar-button.adoc[Split toolbar bu
 === Split button DOM structure changes
 // #TINY-8665
 
-The internal DOM structure of split buttons has been updated to support the new component architecture. Split button components now use `+.tox-split-button__main+` and `+.tox-split-button__chevron+` CSS classes instead of the previous composite structure. Each component renders as a separate DOM element with independent event handling and focus management. Custom CSS targeting split button internals may require updates to accommodate the new structure.
+The internal DOM structure of split buttons has been updated to align with the new component-based architecture. Split button components now use the `+.tox-split-button__main+` and `+.tox-split-button__chevron+` CSS classes in place of the previous composite layout. Each part of the split button is rendered as an independent DOM element with separate event handling and focus management. Custom CSS that targets split button internals may need to be updated to reflect these changes.
 
 
 [[removed]]

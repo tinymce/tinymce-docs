@@ -123,7 +123,7 @@ Split buttons in {productname} {release-version} now render as two independent, 
 === Split button tooltip configuration
 // #TINY-8665
 
-The `+chevronTooltip+` property provides custom tooltip text for the chevron button portion of split buttons. When `+chevronTooltip+` is not specified, {productname} automatically generates tooltip text using the pattern `+"{tooltip} menu"+`. The enhanced `+setTooltip+` method intelligently updates both main and chevron tooltips to maintain consistency.
+The `+chevronTooltip+` property provides custom tooltip text for the chevron button portion of split buttons. When `+chevronTooltip+` is not specified, {productname} automatically generates tooltip text using the pattern `+"{tooltip} menu"+`. The enhanced `+setTooltip+` method updates both main and chevron tooltips to maintain consistency.
 
 For more information, see xref:custom-split-toolbar-button.adoc[Split toolbar buttons].
 

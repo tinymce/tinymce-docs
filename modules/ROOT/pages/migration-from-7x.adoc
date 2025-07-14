@@ -475,21 +475,6 @@ Several empty files have been removed from the codebase to reduce clutter and im
 * [ ] Remove any imports of these empty files
 * [ ] Test Comments and Mentions plugins after removal
 
-=== Content Handling Updates
-
-==== Improved DIV Element Handling
-// #TINY-12171
-
-The handling of `<div>` elements during cut operations has been improved to prevent issues with element structure and content preservation.
-
-**Impact**: This change affects how div elements are handled during cut operations, particularly in complex document structures.
-
-**Migration checklist:**
-
-* [ ] Test cut/paste with nested div structures
-* [ ] Review custom cleanup functions affecting divs
-* [ ] Verify content structure after cut operations
-
 === Service and Configuration Changes
 
 ==== Discontinuation of Medical English (UK)

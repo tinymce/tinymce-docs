@@ -6,8 +6,4 @@ The following events are provided by the xref:{plugincode}.adoc[{pluginname} plu
 |suggestededitsBeginReview   |N/A                   |Fired when the Suggested Edits view opens.
 |suggestededitsReviewComplete   |N/A |Fired when a review in the Suggested Edits view is completed. 
 |suggestededitsReviewCancelled |N/A                                        |Fired when a review in the Suggested Edits view is cancelled.
-// Markup to add a ‘requires this version of TinyMCE’ admonition into its own row
-// immediately above the event requiring such a notice.
-// If not needed, remove the markup and this comment.
-// If needed, edit the file-name and remove this comment.
 |===

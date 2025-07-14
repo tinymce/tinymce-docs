@@ -13,7 +13,7 @@ A split button contains a basic button and a menu button, wrapped up into one to
 |text |string |Primary button |optional |Text displayed if no icon is found.
 |icon |string |Primary button |optional |
 include::partial$misc/admon-predefined-icons-only.adoc[]
-|tooltip |string |Primary button |optional |Text displayed when hovering over the main button. If `+chevronTooltip+` is not provided, this will be used to auto-generate the chevron tooltip as `+"{tooltip} menu"+`.
+|tooltip |string |Primary button |optional |Text displayed when hovering over the main button.
 |chevronTooltip |string |Chevron button |optional |Text displayed when hovering over the chevron button. If not provided, it will be generated using the tooltip of the main button. ie: `+"{tooltip} menu"+`.
 |onAction |`+(api) => void+` |Primary button |required |Function invoked when the basic button section is clicked.
 |select |`+(value: string) => boolean+` |Choice menu items |optional |default: `false` - Function run on each option when the menu is opened to determine if it should be highlighted as active.

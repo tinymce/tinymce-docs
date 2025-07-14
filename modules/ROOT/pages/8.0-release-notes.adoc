@@ -210,6 +210,13 @@ In previous versions of {productname}, whitespace between `<colgroup>` and `<col
 
 This issue has been resolved in `{release-version}`. Both `colgroup` and `col` elements are now treated as block-level elements, ensuring that extraneous whitespace is stripped from these areas. As a result, the editor now produces cleaner and more concise table markup.
 
+=== Deleting a whole element would sometimes modify nearby content
+// #TINY-11868
+
+Previously, deleting a complete HTML element using the "Source Code" editor either by cutting `+Ctrl+X+` or `+Cmd+X+`, backspacing, or pressing delete could inadvertently modify surrounding content. For example, removing a `<div>` element that precedes a `<p>` tag could cause the `<p>` to be transformed into a `<div>`, resulting in unintended structural changes.
+
+This issue has been resolved in {productname} {release-version} by improving how element deletions are handled within the editor's DOM logic. Cutting or deleting a selected element now preserves the integrity and tag type of adjacent elements. Users can expect consistent and predictable editing behavior when modifying HTML source content.
+
 
 [[security-fixes]]
 == Security fixes

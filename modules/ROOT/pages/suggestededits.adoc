@@ -83,27 +83,27 @@ If you cancel your review, no resolved suggestions will be applied to the docume
 
 == Initial setup
 
-The {pluginname} plugin requires a model to store . If the model is not provided in the editor configuration, the plugin will create a new model from the current content of the editor. This model can be retrieved from the editor at any time using the xref:#get_model[`getModel` API], and should be saved externally
-
 To setup the {pluginname} plugin in the editor:
 
 * add `{plugincode}` to the `plugins` option in the editor configuration;
 * add `{plugincode}` to the `toolbar` option in the editor configuration;
-* add `{plugincode}_model` to the editor configuration, if a document is already being tracked.
 
 For example:
 
 [source,js]
 ----
-const suggestededits_model = `<YOUR_DOCUMENT_MODEL>` // model provided by the getModel API
-
 tinymce.init({
   selector: 'textarea#suggestededits',  // change this value according to your HTML
   plugins: 'suggestededits',
   toolbar: 'suggestededits',
-  suggestededits_model,
 });
 ----
+
+This configuration will add {pluginname} to the editor toolbar, allowing users to access the plugin features. However, to fully utilize the plugin, you will need to provide additional configuration options.
+
+The {pluginname} plugin requires a model to store. If the model is not provided in the editor configuration, or is `+undefined+`, the plugin will generate a new model. The model contains all the current suggested edits, so unless you are starting a new document, the current model for the document should always be provided. This model can be retrieved from the editor at any time using the xref:#get_model[`getModel` API], and should be saved externally alongside the document.
+
+The {pluginname} plugin also requires a unique user identifier to attribute suggestions made by each user, including edits and feedback. The current user should be set with the xref:#user_id[`+user_id+` option]. The user ID should be a unique string that identifies the user, such as a username or an email address. Each suggestion in the model will have a uid, allowing other users to see who made which suggestion.
 
 == Options
 

@@ -65,22 +65,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **Comments** Premium plugin includes the following removal.
 
-==== Removed unused `css/tinycomments.css' and `css/tinycomments.js' files.
+==== Removed unused Comments stylesheet
 // #TINY-11287
 
-In {release-version}, the **Comments** plugin underwent a significant cleanup of its styling infrastructure. The following changes were made:
+In {release-version}, the unused `tinycomments.css` file was removed from the **Comments** plugin. In earlier versions (such as 7.9), this empty CSS file was still being loaded, despite its contents having been moved to the Oxide theme in a prior update. This change ensures cleaner resource loading and avoids unnecessary network requests. 
 
-* Removed `css/tinycomments.css` and `css/tinycomments.js` files (functionality now handled by Oxide skin since version 7.4).
-* Eliminated CSS URL configuration options and plugin-level CSS loading code.
-* Removed associated build tasks.
-* Cleared obsolete CSS file references from demos and examples.
-
-These changes:
-
-* Streamline the plugin's styling approach.
-* Reduce maintenance overhead.
-* Align with modern {productname} styling practices.
-* Improve performance by removing unused code.
+[NOTE]
+The removal does not impact plugin functionality and applies to all editor modes.
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to Tiny Comments].
 

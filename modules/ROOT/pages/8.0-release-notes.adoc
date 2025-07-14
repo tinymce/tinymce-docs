@@ -147,7 +147,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 Previously, the `browser_spellcheck` setting in the Codesample dialog's text area did not disable spellchecking as expected. This was due to the setting being applied to the dialog's text area instead of the editor itself.
 
-{productname} {release-version} addresses this issue. The xref:spell-checking.adoc#browser-based-spell-checking[browser_spellcheck] setting is now correctly applied to the Codesample dialog's textarea, ensuring that spellchecking is disabled when this setting is set to `false`.
+Previously, the `advcode` and `code` plugin dialogs did not have browser-based spellchecking disabled, resulting in unnecessary red underlines for code content. This occurred because the dialogs did not explicitly disable spellcheck functionality, regardless of the `browser_spellcheck` setting.
 
 
 [[security-fixes]]

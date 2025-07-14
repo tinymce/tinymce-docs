@@ -57,18 +57,6 @@ include::partial$components/choice-menu-items.adoc[]
 
 == CSS Classes
 
-As of {productname} 8.0, split buttons render as two separate components:
-
-* `.tox-split-button__main` - Main action button
-* `.tox-split-button__chevron` - Dropdown chevron button
-
-If you have custom CSS targeting split button internals, you may need to update your selectors.
-
-[source,css]
-----
-/* TinyMCE 8.0+ */
-.tox-split-button__main
-.tox-split-button__chevron
-----
+include::partial$components/split-button-css-classes.adoc[]
 
 include::partial$misc/onSetup.adoc[]

@@ -68,7 +68,29 @@ _Do not edit these files directly_. Instead, use them as references when creatin
 
 The typical workflow involves copying variables from the theme folder into the skins `skin.less` file and modifying them as needed.
 
-NOTE: As of {productname} 8.0, split buttons use `.tox-split-button__main` and `.tox-split-button__chevron` CSS classes. If your skin targets split button components, you may need to update your CSS selectors.
+NOTE: Split buttons use `.tox-split-button__main` and `.tox-split-button__chevron` CSS classes. If your skin targets split button components, you may need to update your CSS selectors.
+
+.Example: Updating split button CSS selectors
+[source,css]
+----
+/* Before: targeting the composite split button */
+.tox-split-button {
+  /* Previous styling approach */
+}
+
+/* After: targeting individual components */
+.tox-split-button__main {
+  /* Main button styling */
+  background-color: #blue;
+  border-radius: 4px 0 0 4px;
+}
+
+.tox-split-button__chevron {
+  /* Chevron button styling */
+  background-color: #darkblue;
+  border-radius: 0 4px 4px 0;
+}
+----
 ====
 
 [NOTE]

@@ -1,7 +1,7 @@
 [[allow_html_in_comments]]
 == `allow_html_in_comments`
 
-The `allow_html_in_comments` option allows HTML-like content to be retained in comments within the editor content. By default, {productname} removes comments containing HTML-like content as a security measure (using DOMPurify's `SAFE_FOR_XML` option).
+The `allow_html_in_comments` option allows HTML-like content to be retained in comments within the editor content. By default, {productname} removes comments containing HTML-like content as a security measure.
 
 *Type:* `+Boolean+`
 

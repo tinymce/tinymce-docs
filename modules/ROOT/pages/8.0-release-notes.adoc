@@ -139,10 +139,17 @@ In {productname} {release-version}, the resize handle now includes a `role` sepe
 
 {productname} {release-version} also includes the following change<s>:
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Changed the default value for the `pagebreak_separator` option.
+// #TINY-12013
 
-// CCFR here.
+In previous versions of {productname}, inserting a page break in the editor did not translate correctly when exporting using the xref:exportpdf.adoc[Export to PDF] plugin. Similarly, the xref:exportword.adoc[Export to Word] plugin also failed to preserve page breaks in the exported documents. As a result, exported files lacked the intended page breaks, leading to confusing output for users.
+
+With the release of {productname} {release-version}, this issue has been resolved by updating the default HTML value of the `pagebreak_separator` option:
+
+* **Old value** – `'<!-- pagebreak -->'`
+* **New value** – `'<div style="break-after: page"></div>'`
+
+This change aligns better with modern standards and ensures that page breaks are now accurately rendered in exported documents.
 
 
 [[removed]]

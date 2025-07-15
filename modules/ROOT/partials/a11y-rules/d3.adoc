@@ -1,0 +1,42 @@
+[[D3]]
+==== D3 - Adjacent links
+
+*Rule description:* this rule checks that links next to other links do not have the same `+href+` attribute.
+
+For example: If an image link and a text link have the same `+href+` attribute, both elements should be in the same `+a+` element. If an image link and a text link point to the same URL but are two separate elements, it can be confusing for users of screen readers and other assistive technologies.
+
+==== {pluginname} rule details - D3
+
+Notification level (severity):: Error
+
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
+
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
+
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H2.html[H2 - Combining adjacent image and text links for the same resource].
+
+.Examples
+[%collapsible]
+====
+.Non-compliant example
+
+[source,html]
+----
+<a href="/download"><img src="download-icon.png" alt="Download"></a>
+<a href="/download">Download User Guide</a>
+----
+
+This example has two separate links pointing to the same resource. Screen readers will announce these as two different links, which is redundant and potentially confusing.
+
+.Compliant example
+
+[source,html]
+----
+<a href="/download">
+  <img src="download-icon.png" alt="">
+  Download User Guide
+</a>
+----
+
+This example combines the image and text into a single link. The image is given an empty alt attribute since the text provides the link's purpose.
+====

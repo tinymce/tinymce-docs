@@ -29,7 +29,7 @@ With {cloudname} the server-side spellchecking component is automatically config
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
-  spellchecker_language: 'en_US'
+  spellchecker_language: 'en-US'  // Note: Using RFC5646 format with hyphen
 });
 ----
 
@@ -37,7 +37,7 @@ tinymce.init({
 
 To enable the {productname} Enterprise Spellchecking plugin, add `+tinymcespellchecker+` to the `+plugins+` list.
 
-For information on installing the server-side component for spell checking, please see the xref:introduction-to-premium-selfhosted-services.adoc[server-side component installation guide].
+For information on installing the server-side component for spell checking, please see the xref:individual-spelling-container.adoc[Deploy the {productname} spelling service server-side component using Docker].
 
 === Example: TinyMCE Self-hosted Installation
 
@@ -47,7 +47,7 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'tinymcespellchecker',
   spellchecker_rpc_url: 'localhost/ephox-spelling',
-  spellchecker_language: 'en_US'
+  spellchecker_language: 'en-US'  // Note: Using RFC5646 format with hyphen
 });
 ----
 
@@ -243,7 +243,7 @@ tinymce.init({
 
 The `+spelling+` object, which is provided by the `+SpellcheckerUpdated+` event, contains the result of the spelling service spellcheck.
 
-The keys of the outermost object are the language code for each checked language.
+The keys of the outermost object are the language code for each checked language (using RFC5646 format, e.g., 'en-US', 'es-ES').
 
 Under each returned language code is an object with
 

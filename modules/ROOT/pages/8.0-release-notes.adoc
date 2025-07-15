@@ -329,6 +329,14 @@ To improve API clarity and maintain a well-defined interface, the `documentBaseU
 [[bug-fixes]]
 == Bug fixes
 
+{productname} {release-version} also includes the following bug fixes:
+
+=== Codesample dialog would not disable spellcheck as expected.
+// #TINY-12120
+
+Previously, the `browser_spellcheck` setting did not correctly disable spellchecking in the Codesample dialog's text area. This was because the setting was applied to the dialog’s text area rather than the main editor instance.
+
+In addition, the `advcode` and `code` plugin dialogs did not explicitly disable browser-based spellchecking. As a result, red underlines appeared unnecessarily in code content, regardless of the `browser_spellcheck` setting.
 
 === Attempting to add a newline directly after a `block` element such as an image would cause an error.
 // #TINY-12045

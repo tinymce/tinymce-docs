@@ -371,6 +371,13 @@ Previously, there was an issue where combining strikethrough (`s` element) and f
 
 The fix ensures that the `s` element is now properly nested inside the font size element, improving visual consistency across browsers.
 
+=== Long tooltips could overflow narrow browser windows
+// #TINY-11884
+
+Previously, long tooltips could overflow narrow browser windows, causing the tooltip text to be partially cut off and unreadable. This issue was most noticeable with the `...` ellipsis toolbar for the "reveal or hide additional toolbar options" button, where the tooltip text would not fit within the narrow viewport.
+
+In {productname} {release-version}, the tooltip behavior has been improved to ensure that long tooltips are properly positioned and wrapped within narrow browser windows. This prevents overflow and ensures that the full tooltip text is visible, even in smaller viewports.
+
 
 [[security-fixes]]
 == Security fixes

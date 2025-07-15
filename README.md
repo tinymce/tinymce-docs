@@ -9,7 +9,7 @@ This project is built using [Antora](https://antora.org/), a powerful documentat
 To contribute to the TinyMCE documentation project, please review the following resources:
 
 - [TinyMCE Documentation - Contributor's Guide](https://www.tiny.cloud/docs/configure/contributing-docs/)
-- [GitHub - How to contribute to TinyMCE’s documentation](https://github.com/tinymce/tinymce-docs/blob/release/docs-6/CONTRIBUTING.md#how-to-contribute-to-tinymces-documentation)
+- [GitHub - How to contribute to TinyMCE’s documentation](https://github.com/tinymce/tinymce-docs/blob/main/CONTRIBUTING.md#how-to-contribute-to-tinymces-documentation)
 
 These guides cover contribution guidelines, project structure, style conventions, and best practices for submitting changes.
 

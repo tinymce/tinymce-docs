@@ -1,0 +1,51 @@
+[[D1]]
+==== D1 - Usage of paragraphs as headings
+
+*Rule description:* this rule checks that `+h1+`-`+h6+` tags are used for heading content, not `+p+` tags. Not using correct heading markup will make it difficult for assistive technologies to represent and navigate through your content.
+
+===== {pluginname} rule details - D1
+
+Notification level (severity):: Warning
+
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
+
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
+
+WCAG 2.1 specification::
+* https://www.w3.org/WAI/WCAG21/Techniques/html/H42.html[H42 - Using h1-h6 to identify headings].
+* https://www.w3.org/WAI/WCAG21/Techniques/html/H69.html[H69 - Providing heading elements at the beginning of each section of content].
+
+.Examples
+[%collapsible]
+====
+.Non-compliant examples
+
+[source,html]
+----
+<!-- Using paragraphs styled as headings -->
+<p style="font-size: 24px; font-weight: bold;">This looks like a heading</p>
+
+<!-- Using div as heading -->
+<div class="heading">Another pseudo heading</div>
+
+<!-- Styled paragraph with heading class -->
+<p class="h2">Not a real heading</p>
+----
+
+These examples use non-semantic markup that looks like headings but won't be recognized as such by assistive technologies.
+
+.Compliant examples
+
+[source,html]
+----
+<!-- Proper heading tags -->
+<h1>Main page title</h1>
+
+<h2>Section heading</h2>
+
+<!-- Styled heading for design purposes -->
+<h3 class="custom-style">Subsection heading</h3>
+----
+
+These examples use proper heading tags that will be correctly interpreted by assistive technologies.
+====

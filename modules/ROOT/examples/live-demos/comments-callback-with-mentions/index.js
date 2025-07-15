@@ -320,9 +320,6 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
     });
     setTimeout(() => done({ conversations: fetchedConversations }), fakeDelay);
   };
-
-  // Read the above `getAuthorInfo` function to see how this could be implemented
-  const tinycomments_fetch_author_info = (done) => done(getAuthorInfo(currentUid));
   
   tinymce.init({
     selector: 'textarea#comments-callback-with-mentions',
@@ -350,9 +347,18 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
     mentions_select,
   
     tinycomments_mode: 'callback',
-    tinycomments_author: currentUser.id,
-    tinycomments_author_name: currentUser.fullName,
-    tinycomments_avatar: currentUser.image,
+    user_id: currentUser.id,
+    fetch_users: (userIds) => {
+      const results = userIds.map((id) => {
+        const user = Object.values(userDb).find((user) => user.id === id);
+        if (user) {
+          return user;
+        } else {
+          throw new Error(`User ${id} not found`);
+        }
+      });
+      return Promise.resolve(results);
+    },
     tinycomments_create,
     tinycomments_reply,
     tinycomments_delete,
@@ -362,6 +368,5 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
     tinycomments_delete_comment,
     tinycomments_edit_comment,
     tinycomments_fetch,
-    tinycomments_fetch_author_info
   });
 });

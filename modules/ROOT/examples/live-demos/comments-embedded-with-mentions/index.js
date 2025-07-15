@@ -1,19 +1,24 @@
 import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then(({ faker }) => {
-  const adminUser = {
-    id: 'johnsmith',
-    name: 'John Smith',
-    fullName: 'John Smith',
-    description: 'Company Founder',
-    image: "https://i.pravatar.cc/150?img=11"
-  };
+  /* This represents a database of users on the server */
+  const userDb = {
+    'johnsmith': {
+      id: 'johnsmith',
+      name: 'John Smith',
+      fullName: 'John Smith',
+      description: 'Company Founder',
+      image: "https://i.pravatar.cc/150?img=11"
+    },
+    'jennynichols': {
+      id: 'jennynichols',
+      name: 'Jenny Nichols',
+      fullName: 'Jenny Nichols',
+      description: 'Marketing Director',
+      image: "https://i.pravatar.cc/150?img=10"
+    }
+  }
 
-  const currentUser = {
-    id: 'jennynichols',
-    name: 'Jenny Nichols',
-    fullName: 'Jenny Nichols',
-    description: 'Marketing Director',
-    image: "https://i.pravatar.cc/150?img=10"
-  };
+  const adminUser = userDb['johnsmith'];
+  const currentUser = userDb['jennynichols'];
   
   const fakeDelay = 500;
   const numberOfUsers = 200;
@@ -32,11 +37,6 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
       userNames.push(`${faker.person.firstName()} ${faker.person.lastName()}`);
     }
   
-    /* This represents a database of users on the server */
-    const userDb = {
-      [adminUser.id]: adminUser,
-      [currentUser.id]: currentUser
-    };
     userNames.map((fullName) => {
       if ((fullName !== currentUser.fullName) && (fullName !== adminUser.fullName)) {
         const id = fullName.toLowerCase().replace(/ /g, '');
@@ -155,9 +155,18 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
   
     tinycomments_mode: 'embedded',
     sidebar_show: 'showcomments',
-    tinycomments_author: currentUser.id,
-    tinycomments_author_name: currentUser.fullName,
-    tinycomments_avatar: currentUser.image,
+    user_id: currentUser.id,
+    fetch_users: (userIds) => {
+      const results = userIds.map((id) => {
+        const user = Object.values(userDb).find((user) => user.id === id);
+        if (user) {
+          return user;
+        } else {
+          throw new Error(`User ${id} not found`);
+        }
+      });
+      return Promise.resolve(results);
+    },
     tinycomments_can_resolve,
   });
 });

@@ -199,6 +199,19 @@ When users pasted content from Microsoft Word documents containing lists styled 
 
 For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
 
+=== Comments
+
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** Premium plugin includes the following removal.
+
+==== Removed unused Comments stylesheet
+// #TINY-11287
+
+In {release-version}, the unused `tinycomments.css` file was removed from the **Comments** plugin. In earlier versions (such as 7.9), this empty CSS file was still being loaded, despite its contents having been moved to the Oxide theme in a prior update. This change ensures cleaner resource loading and avoids unnecessary network requests. 
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to Tiny Comments].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement

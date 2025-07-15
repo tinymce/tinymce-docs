@@ -1,0 +1,24 @@
+[[list_max_depth]]
+== `list_max_depth`
+
+The `list_max_depth` option sets the maximum nesting depth for lists (ordered and unordered).
+
+*Type:* `Number`
+
+*Default value:* No limit
+
+=== Required plugins
+
+This option requires the `lists` plugin to be enabled.
+
+=== Example
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'lists',
+  toolbar: 'bullist numlist',
+  list_max_depth: 2      // limits list nesting to maximum of 2 levels
+});
+----

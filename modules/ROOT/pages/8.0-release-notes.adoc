@@ -60,9 +60,18 @@ The following premium plugin updates were released alongside {productname} {rele
 
 === Spell Checker
 
-The {productname} {release-version} includes an accompanying release of the **Spell Checker** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Spell Checker** premium plugin.
 
-**Spell Checker** includes the following improvements.
+**Spell Checker** Premium plugin includes the following fix and improvements.
+
+=== Content marked with `lang` attributes was sometimes not spellchecked correctly.
+// #TINY-12101
+
+Previously, the spellchecker did not consistently handle content marked with different `lang` attributes, particularly when the language codes used different formats. This inconsistency led to missed spellchecking for words in spans that used alternate casing or separator conventions (e.g., `en-GB` vs `en_GB`).
+
+This issue was introduced in {productname} 6.4, where documents containing a mix of language codes using different formats would not be reliably spellchecked. As a result, misspelled words in spans using alternate casing or separator conventions were not detected, even though they functioned as expected in version 6.3.
+
+In {release-version}, support for mixed-case and mixed-format language codes has been restored. The spellchecker now correctly identifies and handles variations in language attribute formatting, ensuring that content is reliably checked regardless of code style. This improvement enables accurate spellchecking for documents that include multiple languages and diverse regional conventions.
 
 ==== Input label for misspelled word was not announced by screen readers.
 // #TINY-12167
@@ -70,6 +79,7 @@ The {productname} {release-version} includes an accompanying release of the **Sp
 In previous versions, the Spell Checker dialog's misspelled word input field lacked proper accessibility labeling, preventing screen readers from announcing its purpose. {productname} {release-version} resolves this accessibility limitation by adding the appropriate label association between the "Misspelled Word" text and its input field. This enhancement allows screen readers to correctly identify and announce the input field's purpose, improving the spell checking experience for users who rely on assistive technologies.
 
 === Language code standardization to RFC5646/BCP47 format
+// #TINY-12090
 
 The {productname} {release-version} release introduces standardized support for language codes using the RFC5646 (also known as BCP47) format. This update applies to all language-related configurations, including:
 

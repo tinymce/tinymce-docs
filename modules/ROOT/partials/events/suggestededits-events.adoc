@@ -3,7 +3,7 @@ The following events are provided by the xref:{plugincode}.adoc[{pluginname} plu
 [cols="1,1,2",options="header"]
 |===
 |Name       |Data                                       |Description
-|suggestededitsBeginReview   |N/A                   |Fired when the Suggested Edits view opens.
-|suggestededitsReviewComplete   |N/A |Fired when a review in the Suggested Edits view is completed. 
-|suggestededitsReviewCancelled |N/A                                        |Fired when a review in the Suggested Edits view is cancelled.
+|suggestededitsBeginReview.         |N/A        |The Suggested Edits view has opened.
+|suggestededitsReviewComplete   |N/A        |A review in the Suggested Edits view has been completed. 
+|suggestededitsReviewCancelled   |N/A        |A review in the Suggested Edits view was cancelled.
 |===

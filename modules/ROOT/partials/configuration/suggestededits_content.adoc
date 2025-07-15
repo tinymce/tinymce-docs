@@ -2,11 +2,13 @@
 == `suggestededits_content`
 The `suggestededits_content` option determines where the initial content of the document is loaded from. With this option, you can set the content to be loaded from either the editor or the model, allowing you to control the source of truth for the document.
 
-When set to `'html'`, the editor loads the initial content from the HTML in the textarea or the `content` property. In this case, if a model is provided, it will need to match the content in the editor for the plugin to work correctly
+In a `'html'`-first approach, the editor loads content normally and the {pluginname} plugin provides augmentation. The integrator is responsible for saving the model at the same time as the editor content and providing it on the next load using the `suggestededits_model` option. This allows {pluginname} to be integrated quickly into a CMS by adding the model as an additional hidden field alongside the editor content.
 
-When set to `'model'`, the editor loads the initial content from the `suggestededits_model` option. In this case, the content in the editor will be overwritten with the content from the model. This would allow you to only require the model for document tracking, though it is still recommended to save the content in the editor externally.
+If a model is not provided the plugin will generate a new one from the initial content of the editor.
 
-In either case, if a model is not provided, the plugin will generate a new model from the current content of the editor, whether it is empty or not.
+When `suggestededits_content` is set to `'model'`, the plugin bypasses the editor's content load procedures and instead uses the `suggestededits_model` option to generate initial content. This would allow an integrator to only require the model for document tracking, and treat the editor content as simply a rendering of it.
+
+If a model is not provided, the plugin will allow the editor to load content normally and generate a new model from there (the same way `html` works).
 
 *Type:* `+String+`
 

@@ -1,9 +1,11 @@
 [[suggestededits_model]]
 == `suggestededits_model`
 
-The `{plugincode}_model` option sets the initial model of the document to begin tracking changes. It takes as input an object representing the document, containing all edits made to the document up to that point. This model should be saved externally alongside the document, and loaded into the editor each time the document is opened. This will ensure that both the document and the model are in sync, and that the plugin can track edits correctly.
+The {pluginname} model is a JSON object representing the full document along with all unreviewed edits. The model should be kept in sync with the editor content and loaded into the editor each time the document is opened. If the model and content are out of sync, the difference between them will be applied as a suggested edit by the current user.
 
-If the model is not provided in the editor configuration, the plugin will create a new model from the current content of the editor. This model can be retrieved from the editor at any time using the xref:#get_model[`getModel` API].
+The `{plugincode}_model` option sets the initial model for an editor load. How this model is used depends on the `{plugincode}_content` setting.
+
+The model can be stored using the xref:#get_model[`getModel` API]. If the model is not provided the {pluginname} plugin will create a new model from the initial content of the editor, assuming all prior changes have been accepted.
 
 *Type:* `+Object+`
 

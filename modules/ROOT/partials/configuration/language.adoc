@@ -19,20 +19,20 @@ For information on:
 
 === Example: using `+language+`
 
-In this example we will set the editor language to Swedish.
+In this example we will set the editor language to Swedish using the RFC5646 format:
 
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  language: 'sv_SE'
+  language: 'sv-SE'
 });
 ----
 
 [[using-the-premium-language-packs]]
 === Using the premium language packs
 
-The following professionally localized language packs are provided to paid {cloudname} and premium self-hosted deployments. To use these language packs, set the `+language+` option to the corresponding language code. No additional configuration is required.
+The following professionally localized language packs are provided to paid {cloudname} and premium self-hosted deployments. To use these language packs, set the `+language+` option to the corresponding language code in RFC5646 format. No additional configuration is required.
 
 include::partial$misc/ui-languages.adoc[leveloffset=+2]
 

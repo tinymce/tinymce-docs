@@ -1,0 +1,57 @@
+[[D2]]
+==== D2 - Sequential headings
+
+*Rule description:* this rule checks that heading levels are sequential. Each heading level in a document should follow a logical sequence. That is, you should not skip heading levels (for example, from `+h2+` to `+h4+`).
+
+===== {pluginname} rule details - D2
+
+Notification level (severity):: Error
+
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
+
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
+
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/general/G141.html[G141 - Organizing a page using headings].
+
+.Examples
+[%collapsible]
+====
+.Non-compliant examples
+
+[source,html]
+----
+<!-- Skipping from h1 to h3 -->
+<h1>Main title</h1>
+<h3>Subsection</h3>
+
+<!-- Skipping from h2 to h4 -->
+<h2>Section</h2>
+<h4>Sub-subsection</h4>
+
+<!-- Improper nesting -->
+<h3>Higher level</h3>
+<h2>Lower level</h2>
+----
+
+These examples show incorrect heading level progression that can confuse users of assistive technologies.
+
+.Compliant examples
+
+[source,html]
+----
+<!-- Proper sequential headings -->
+<h1>Main title</h1>
+<h2>Section</h2>
+<h3>Subsection</h3>
+<h4>Sub-subsection</h4>
+
+<!-- Multiple h2 sections -->
+<h1>Main title</h1>
+<h2>First section</h2>
+<h3>Subsection</h3>
+<h2>Second section</h2>
+<h3>Another subsection</h3>
+----
+
+These examples demonstrate proper heading level progression.
+====

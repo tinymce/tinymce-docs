@@ -34,7 +34,7 @@ include::partial$misc/support-powerpaste.adoc[leveloffset=+1]
 
 === System Requirements: Self-hosted Enterprise
 
-The {productname} server-side components are delivered as Docker containers. The following requirements must be met:
+The {productname} server-side components are delivered as Docker/OCI container images. The following requirements must be met:
 
 Docker Requirements::
 * Docker Engine

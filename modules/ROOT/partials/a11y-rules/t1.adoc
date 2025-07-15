@@ -1,0 +1,80 @@
+[[T1]]
+==== T1 - Table caption
+
+*Rule description:* this rule checks that all `+table+` elements have a `+caption+` element describing the data inside the table to simplify parsing and navigation of the content for users of assistive technologies.
+
+===== {pluginname} rule details - T1
+
+Notification level (severity):: Error
+
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
+
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
+
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H39.html[H39 - Using caption elements to associate data table captions with data tables].
+
+.Examples
+[%collapsible]
+====
+.Non-compliant examples
+
+[source,html]
+----
+<!-- Table without caption -->
+<table>
+    <tr>
+        <th>Product</th>
+        <th>Price</th>
+    </tr>
+    <tr>
+        <td>Widget A</td>
+        <td>$10.00</td>
+    </tr>
+</table>
+
+<!-- Using text outside the table -->
+<p>Product Pricing Table</p>
+<table>
+    <tr>
+        <th>Product</th>
+        <th>Price</th>
+    </tr>
+    <!-- ... table content ... -->
+</table>
+----
+
+These examples lack proper caption elements, making it harder for screen reader users to understand the table's purpose.
+
+.Compliant examples
+
+[source,html]
+----
+<!-- Simple table with caption -->
+<table>
+    <caption>Product Pricing</caption>
+    <tr>
+        <th>Product</th>
+        <th>Price</th>
+    </tr>
+    <tr>
+        <td>Widget A</td>
+        <td>$10.00</td>
+    </tr>
+</table>
+
+<!-- Table with detailed caption -->
+<table>
+    <caption>2023 Quarterly Sales by Region (in thousands USD)</caption>
+    <tr>
+        <th>Region</th>
+        <th>Q1</th>
+        <th>Q2</th>
+        <th>Q3</th>
+        <th>Q4</th>
+    </tr>
+    <!-- ... table content ... -->
+</table>
+----
+
+These examples include proper caption elements that describe the table's contents and purpose.
+====

@@ -385,6 +385,13 @@ Previously, when tabbing into a non-editable final row of a table, the editor fa
 
 {productname} {release-version} resolves this issue by detecting when the final row of a table is read-only and preventing the insertion of a new row in such cases. This ensures stable behavior when navigating through tables using the Tab key.
 
+=== Nested font sizes no longer cause excessive line spacing
+// #TINY-12073
+
+Previously, applying different font sizes to nested elements could result in inconsistent and overly large line heights. This affected users by introducing visual clutter and making text blocks appear misaligned or difficult to read. 
+
+{productname} {release-version} introduces a fix that ensures line heights are calculated based on the font size visible in the new line, rather than inheriting line-height from parent element. This means that when different font sizes are applied within the same content, the line heights will be consistent and proportional to the visible font size.
+
 
 [[security-fixes]]
 == Security fixes

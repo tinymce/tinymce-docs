@@ -212,6 +212,13 @@ To improve API clarity and maintain a well-defined interface, the `documentBaseU
 
 {productname} {release-version} also includes the following bug fix<es>:
 
+=== Attempting to add a newline directly after a `block` element such as an image would cause an error.
+// #TINY-12045
+
+In previous versions of {productname}, the content selection logic incorrectly assumed that the target element resided within a text node. In reality, it was placed directly inside a `<div>` element. This mismatch led to a scenario where the selected content was mistakenly reinserted into itself, resulting in errors when pressing `Enter` immediately after an image and introducing a risk of data loss.
+
+This issue has been resolved in {productname} {release-version}. The selection logic has been updated to correctly identify and handle content within `<div>` elements such that it does not try to insert content within itself. As a result, pressing `Enter` after an image inside a `<div>` element no longer triggers errors or causes unintended behavior.
+
 === In inline mode, pressing the back button dismissed the context toolbar and moved focus from the selected image to the editor.
 // #TINY-12118
 

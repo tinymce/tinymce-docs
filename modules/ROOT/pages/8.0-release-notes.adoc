@@ -62,7 +62,13 @@ The following premium plugin updates were released alongside {productname} {rele
 
 The {productname} {release-version} release includes an accompanying release of the **Mentions** premium plugin.
 
-**Mentions** Premium plugin includes the following removal.
+**Mentions** Premium plugin includes the following fix and removal.
+
+=== Mentions username not updating with skin changes in dark mode
+
+Previously, the username displayed on the mentions card did not update correctly when switching between skins, particularly in dark mode. This issue caused the username to become invisible against the dark background, making it difficult for users to read.
+
+To resolve this, the styling for the username has been updated. The class now uses the `@text-color` variable for its default styling, ensuring that it inherits the correct color from its parent element when the item is active. This change guarantees that the username remains visible and readable in both light and dark themes.
 
 === Removed unused Mentions plugin stylesheet
 

@@ -11,7 +11,7 @@ endif::[]
 
 == `{proxy_setting_name}`
 
-This option configures the URL to the server-side proxy service which allows remote images hosted on different domains to be retrieved by the {pluginname} plugin. If a proxy is not configured, then remote images may not be able to be {plugin_proxy_action}. Check the xref:introduction-to-premium-selfhosted-services.adoc[Install Server-side Components] guide for details on configuring the self-hosted Java proxy service.
+This option configures the URL to the server-side proxy service which allows remote images hosted on different domains to be retrieved by the {pluginname} plugin. If a proxy is not configured, then remote images may not be able to be {plugin_proxy_action}. Check the xref:individual-image-proxy-container.adoc[Deploy the {productname} image proxy server-side component using Docker] guide for details on configuring the Docker container that you will get as a part of your link:{pricingpage}/[{enterpriseversion} subscription].
 
 NOTE: `{proxy_setting_name}` is *not* required when enabling this plugin via xref:editor-and-features.adoc[{cloudname}].
 

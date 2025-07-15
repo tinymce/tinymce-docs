@@ -203,6 +203,11 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following improvement<s>:
 
+=== Tooltips can now be closed by pressing the `escape` key.
+// #TINY-12054
+
+Prior to {release-version}, tooltips could not be dismissed using the keyboard, which posed an accessibility concern. As of {productname} {release-version}, tooltips can now be closed via the `escape` key, improving accessibility.
+
 === Instructions on how to navigate the color swatch, image select and insert table widget are now announced by screen readers.
 // #TINY-12189
 

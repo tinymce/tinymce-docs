@@ -62,7 +62,12 @@ The following premium plugin updates were released alongside {productname} {rele
 
 The {productname} {release-version} includes an accompanying release of the **Spell Checker** premium plugin.
 
-**Spell Checker** includes the following improvement.
+**Spell Checker** includes the following improvements.
+
+==== Input label for misspelled word was not announced by screen readers.
+// #TINY-12167
+
+In previous versions, the Spell Checker dialog's misspelled word input field lacked proper accessibility labeling, preventing screen readers from announcing its purpose. {productname} {release-version} resolves this accessibility limitation by adding the appropriate label association between the "Misspelled Word" text and its input field. This enhancement allows screen readers to correctly identify and announce the input field's purpose, improving the spell checking experience for users who rely on assistive technologies.
 
 === Language code standardization to RFC5646/BCP47 format
 
@@ -314,7 +319,6 @@ To improve API clarity and maintain a well-defined interface, the `documentBaseU
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
 
 === Attempting to add a newline directly after a `block` element such as an image would cause an error.
 // #TINY-12045

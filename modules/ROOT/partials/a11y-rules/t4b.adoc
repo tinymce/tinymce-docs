@@ -1,0 +1,113 @@
+[[T4B]]
+==== T4B - Table headers
+
+*Rule description:* this rule checks that all `+table+` elements contain at least one table header (`+th+`) element.
+
+===== {pluginname} rule details - T4B
+
+Notification level (severity):: Error
+
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
+
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
+
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H51.html[H51 - Using table markup to present tabular information].
+
+.Examples
+[%collapsible]
+====
+.Non-compliant examples
+
+[source,html]
+----
+<!-- Table without headers -->
+<table>
+    <tr>
+        <td>Product</td>
+        <td>Price</td>
+    </tr>
+    <tr>
+        <td>Widget</td>
+        <td>$10.00</td>
+    </tr>
+</table>
+
+<!-- Headers using regular cells -->
+<table>
+    <tr>
+        <td><strong>Name</strong></td>
+        <td><strong>Position</strong></td>
+    </tr>
+    <tr>
+        <td>John Smith</td>
+        <td>Developer</td>
+    </tr>
+</table>
+----
+
+These examples lack proper header cells, making it difficult for screen readers to understand the table's structure.
+
+.Compliant examples
+
+[source,html]
+----
+<!-- Simple table with column headers -->
+<table>
+    <tr>
+        <th>Product</th>
+        <th>Price</th>
+    </tr>
+    <tr>
+        <td>Widget</td>
+        <td>$10.00</td>
+    </tr>
+</table>
+
+<!-- Table with row and column headers -->
+<table>
+    <tr>
+        <th scope="col">Quarter</th>
+        <th scope="col">Revenue</th>
+        <th scope="col">Growth</th>
+    </tr>
+    <tr>
+        <th scope="row">Q1</th>
+        <td>$10,000</td>
+        <td>5%</td>
+    </tr>
+    <tr>
+        <th scope="row">Q2</th>
+        <td>$15,000</td>
+        <td>50%</td>
+    </tr>
+</table>
+
+<!-- Complex table with multiple header levels -->
+<table>
+    <thead>
+        <tr>
+            <th rowspan="2">Product</th>
+            <th colspan="2">2023</th>
+            <th colspan="2">2024</th>
+        </tr>
+        <tr>
+            <th>Q1</th>
+            <th>Q2</th>
+            <th>Q1</th>
+            <th>Q2</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <th scope="row">Widget A</th>
+            <td>100</td>
+            <td>150</td>
+            <td>200</td>
+            <td>250</td>
+        </tr>
+    </tbody>
+</table>
+----
+
+These examples demonstrate proper use of table headers for different levels of complexity.
+====

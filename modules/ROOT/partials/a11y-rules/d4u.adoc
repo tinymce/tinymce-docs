@@ -1,0 +1,44 @@
+[[D4U]]
+==== D4U - Unordered list structure
+
+*Rule description:* this rule checks that a `+ul+` element is used for unordered lists. Do not use paragraphs beginning with `+*+` or `+-+` or some similar character instead of an `+ol+` element containing `+li+` items. This is to simplify navigation and parsing of the content for users of assistive technologies.
+
+==== {pluginname} rule details - D4U
+
+Notification level (severity):: Error
+
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
+
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
+
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H48.html[H48 - Using ol, ul and dl for lists or groups of links].
+
+.Examples
+[%collapsible]
+====
+.Non-compliant example
+
+[source,html]
+----
+<p>• Fresh vegetables</p>
+<p>• Whole grains</p>
+<p>- Lean proteins</p>
+<p>* Healthy fats</p>
+----
+
+This example uses paragraphs with bullet characters instead of proper list markup. Screen readers won't recognize this as a list structure.
+
+.Compliant example
+
+[source,html]
+----
+<ul>
+    <li>Fresh vegetables</li>
+    <li>Whole grains</li>
+    <li>Lean proteins</li>
+    <li>Healthy fats</li>
+</ul>
+----
+
+This example uses proper unordered list markup, allowing screen readers to announce it as a list and navigate through items efficiently.
+====

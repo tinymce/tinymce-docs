@@ -220,7 +220,6 @@ This change improves security and aligns with DOMPurify's recommended defaults. 
 **Migration Steps:**
 
 * Review workflows and test content that previously relied on relaxed sanitization.
-* If custom comment handling is required, note that DOMPurify hooks cannot be used directly unless you fork TinyMCE or disable TinyMCE's built-in sanitization and implement your own with DOMPurify.
 * {productname} now provides the xref:content-filtering.adoc#allow_html_in_comments[Content Filtering: allow_html_in_comments option] option. Enabling this option allows HTML tags in comments with sanitization still enabled. 
 
 [WARNING]

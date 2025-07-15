@@ -1,23 +1,45 @@
 [[a11ychecker_allow_decorative_images]]
 == `+a11ychecker_allow_decorative_images+`
 
-This option sets whether the Accessibility Checker should allow decorative images. When this option is set to `+true+`, a decorative image must have *both*:
+This option determines whether the Accessibility Checker should allow decorative images. Decorative images are those that are used purely for visual enhancement and do not convey meaningful content or serve a specific function.
 
-* An empty alternative text attribute.
-* The `+role="presentation"+` attribute.
+When this option is set to `+true+`, decorative images must have *both*:
 
-For example:
+* An empty alternative text attribute (`+alt=""+`).
+* and the `+role="presentation"+` attribute.
+
+This combination explicitly tells assistive technologies to ignore these images, improving the browsing experience for users of screen readers.
+
+=== Common Use Cases for Decorative Images
+
+* Background patterns or textures
+* Aesthetic borders or dividers
+* Purely decorative icons that repeat nearby text
+* Images that are described by adjacent text content
+* Spacer images used for layout purposes
+
+=== Example of a Decorative Image:
 
 [source,html]
 ----
-<img src="my-image.png" role="presentation" alt="" />
+<img src="decorative-border.png" role="presentation" alt="" />
 ----
+
+=== Example of an Informative Image (non-decorative):
+
+[source,html]
+----
+<img src="company-logo.png" alt="Company Name Logo" />
+----
+
+=== Validation Rules
 
 If `+a11ychecker_allow_decorative_images+` is set to `+true+`, the Accessibility Checker will present an error when:
 
 * An image does not have the alternative text attribute (`+alt+`).
-* An image has an empty alternative text attribute, but is missing the `+role="presentation"+` attribute.
+* An image has an empty alternative text attribute but is missing the `+role="presentation"+` attribute.
 * An image has alternative text and a conflicting `+role="presentation"+` attribute.
+* A potentially meaningful image (like a logo or chart) is marked as decorative.
 
 If `+a11ychecker_allow_decorative_images+` is set to `+false+`, the Accessibility Checker will present an error when:
 
@@ -32,7 +54,7 @@ If `+a11ychecker_allow_decorative_images+` is not explicitly set, the value defi
 
 *Type:* `+Boolean+`
 
-*Default value:* `+false+`
+*Default value:* `+true+`
 
 *Possible values:* `+true+`, `+false+`
 

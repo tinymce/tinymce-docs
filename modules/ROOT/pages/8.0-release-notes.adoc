@@ -252,6 +252,34 @@ With the release of {productname} {release-version}, this issue has been resolve
 
 This change aligns better with modern standards and ensures that page breaks are now accurately rendered in exported documents.
 
+=== The `pagebreak_split_block` option now defaults to `true`. When a page break is inserted, the resulting HTML output is: `<div style="break-after: page"></div>.`
+// #TINY-12462
+
+The default value for the `pagebreak_split_block` option has been changed from `false` to `true`. This change improves the user experience when inserting page breaks within block elements such as paragraphs, lists, or tables. When enabled:
+
+* Page breaks will automatically split the block element at the cursor position
+* Content after the page break will be moved to a new block element of the same type
+* The structure and formatting of the content is preserved on both sides of the page break
+
+For example, with this HTML content:
+
+[source,html]
+----
+<p>First page</p>
+----
+
+When placing the cursor after the word "First" and inserting a page break, the result will be:
+
+[source,html]
+----
+<p>First </p>
+<div style="break-after: page"></div> 
+<p>page</p>
+----
+
+This behavior is now enabled by default, but can be disabled by setting `pagebreak_split_block: false` in the editor configuration.
+
+For more information on the `pagebreak_split_block` option, see xref:pagebreak.adoc#pagebreak_split_block[pagebreak_split_block].
 
 [[removed]]
 == Removed

@@ -1,0 +1,44 @@
+[[D4O]]
+==== D4O - Ordered list structure
+
+*Rule description:* this rule checks that an `+ol+` element is used for ordered lists. Do not use paragraphs beginning with numbers or roman numerals instead of an `+ol+` element containing `+li+` items. This is to simplify navigation and parsing of the content for users of assistive technologies.
+
+==== {pluginname} rule details - D4O
+
+Notification level (severity):: Error
+
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
+
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
+
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H48.html[H48 - Using ol, ul and dl for lists or groups of links].
+
+.Examples
+[%collapsible]
+====
+.Non-compliant example
+
+[source,html]
+----
+<p>1. First prepare the ingredients</p>
+<p>2. Mix the dry ingredients together</p>
+<p>3. Add wet ingredients slowly</p>
+<p>4. Bake at 350°F</p>
+----
+
+This example uses paragraphs with manual numbering instead of proper list markup. Screen readers won't recognize this as a list structure.
+
+.Compliant example
+
+[source,html]
+----
+<ol>
+    <li>First prepare the ingredients</li>
+    <li>Mix the dry ingredients together</li>
+    <li>Add wet ingredients slowly</li>
+    <li>Bake at 350°F</li>
+</ol>
+----
+
+This example uses proper ordered list markup, allowing screen readers to announce the list structure and item count.
+====

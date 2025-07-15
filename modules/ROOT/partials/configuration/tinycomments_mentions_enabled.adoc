@@ -13,14 +13,28 @@ The {pluginname} plugin offers the `+tinycomments_mentions_enabled+` option to c
 
 [source,js]
 ----
+const userDirectory = {
+  'johnsmith': { id: 'johnsmith', name: 'John Smith' },
+};
+
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'tinycomments mentions',
   toolbar: 'addcomment showcomments',
   tinycomments_mentions_enabled: true,
   tinycomments_mode: 'embedded',
-  tinycomments_author: 'johnsmith',
-  tinycomments_author_name: 'John Smith',
+  user_id: 'johnsmith',
+  fetch_users: (userIds) => {
+    const results = userIds.map((id) => {
+      const user = Object.values(userDirectory).find((user) => user.id === id);
+      if (user) {
+        return user;
+      } else {
+        throw new Error(`User ${id} not found`);
+      }
+    });
+    return Promise.resolve(results);
+  },
   mentions_fetch,
   mentions_menu_complete,
   mentions_menu_hover,

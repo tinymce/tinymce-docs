@@ -175,11 +175,11 @@ spelling-tiny-1  | 2025-02-11 09:51:11.104Z [io-compute-blocker-6] INFO  c.e.i.d
 spelling-tiny-1  | 2025-02-11 09:51:11.161Z [io-compute-blocker-6] INFO  com.ephox.nectar.data.Bees$ - Loading all dictionaries from WinterTree
 spelling-tiny-1  | 2025-02-11 09:51:11.482Z [io-compute-blocker-5] INFO  c.e.nectar.hunspell.HunspellLoader$ - Loading hunspell dictionary from path: /app/resources/hunspell-dictionaries and locale es
 spelling-tiny-1  | 2025-02-11 09:51:11.536Z [io-compute-blocker-5] INFO  c.e.nectar.hunspell.HunspellLoader$ - Finished loading hunspell for es
-spelling-tiny-1  | 2025-02-11 09:51:11.537Z [io-compute-blocker-5] INFO  c.e.nectar.hunspell.HunspellLoader$ - Loading hunspell dictionary from path: /app/resources/hunspell-dictionaries and locale pt_BR
-spelling-tiny-1  | 2025-02-11 09:51:11.881Z [io-compute-blocker-5] INFO  c.e.nectar.hunspell.HunspellLoader$ - Finished loading hunspell for pt_BR
+spelling-tiny-1  | 2025-02-11 09:51:11.537Z [io-compute-blocker-5] INFO  c.e.nectar.hunspell.HunspellLoader$ - Loading hunspell dictionary from path: /app/resources/hunspell-dictionaries and locale pt-BR
+spelling-tiny-1  | 2025-02-11 09:51:11.881Z [io-compute-blocker-5] INFO  c.e.nectar.hunspell.HunspellLoader$ - Finished loading hunspell for pt-BR
 ...
-spelling-tiny-1  | 2025-02-11 09:51:13.593Z [io-compute-blocker-5] INFO  c.e.nectar.hunspell.HunspellLoader$ - Loading hunspell dictionary from path: /app/resources/hunspell-dictionaries and locale de_DE
-spelling-tiny-1  | 2025-02-11 09:51:13.651Z [io-compute-blocker-5] INFO  c.e.nectar.hunspell.HunspellLoader$ - Finished loading hunspell for de_DE
+spelling-tiny-1  | 2025-02-11 09:51:13.593Z [io-compute-blocker-5] INFO  c.e.nectar.hunspell.HunspellLoader$ - Loading hunspell dictionary from path: /app/resources/hunspell-dictionaries and locale de-DE
+spelling-tiny-1  | 2025-02-11 09:51:13.651Z [io-compute-blocker-5] INFO  c.e.nectar.hunspell.HunspellLoader$ - Finished loading hunspell for de-DE
 spelling-tiny-1  | 2025-02-11 09:51:14.142Z [io-compute-9] INFO  o.h.b.c.nio1.NIO1SocketServerGroup - Service bound to address /0:0:0:0:0:0:0:0:18080
 spelling-tiny-1  | 2025-02-11 09:51:14.146Z [io-compute-9] INFO  o.h.blaze.server.BlazeServerBuilder - 
 spelling-tiny-1  |   _   _   _        _ _
@@ -215,7 +215,7 @@ To confirm that a request is being sent to the {pluginname} service, use:
 +
 [source, sh]
 ----
-curl http://localhost:18080/2/check -d '{"words": ["teh"], "language": "en_US"}' -H "Origin: http://good.com" -H "Content-Type: application/json"
+curl http://localhost:18080/2/check -d '{"words": ["teh"], "language": "en-US"}' -H "Origin: http://good.com" -H "Content-Type: application/json"
 ----
 
 +
@@ -224,7 +224,7 @@ Finally, to verify if a request is unauthorized and originates from an incorrect
 +
 [source, sh]
 ----
-curl http://localhost:18080/2/check -d '{"words": ["teh"], "language": "en_US"}' -H "Origin: http://bad.com" -H "Content-Type: application/json"
+curl http://localhost:18080/2/check -d '{"words": ["teh"], "language": "en-US"}' -H "Origin: http://bad.com" -H "Content-Type: application/json"
 ----
 
 +
@@ -245,12 +245,7 @@ tinymce.init({
   selector: 'textarea#spellchecker', // change this value according to your HTML
   plugins: 'code tinymcespellchecker link',
   toolbar: 'spellchecker language spellcheckdialog',
-  spellchecker_language: 'en_US',
+  spellchecker_language: 'en-US',  // Note: Using RFC5646 format with hyphen
   spellchecker_rpc_url: "http://localhost:18080"
 });
 ----
-
-
-
-
-

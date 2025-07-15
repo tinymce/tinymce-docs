@@ -360,6 +360,13 @@ To improve API clarity and maintain a well-defined interface, the `documentBaseU
 
 {productname} {release-version} also includes the following bug fixes:
 
+=== Cutting a whole HTML element would add an empty paragraph.
+// #TINY-12171
+
+Previously, an issue was identified where cutting an entire block element, such as a `div` or `p` HTML element, resulted in the block being replaced by an empty paragraph. This behavior only occurred for blocks not contained within tables and led to inconsistent outcomes where cutting content inside tables behaved differently from outside. Additionally, the behavior diverged from that of the backspace `delete` operation.
+
+{productname} {release-version} resolves this issue by unifying the behavior for content both inside and outside tables. The updated implementation aligns cutting behavior with that of the backspace `delete` operation, ensuring a more consistent and predictable editing experience.
+
 === Codesample dialog would not disable spellcheck as expected.
 // #TINY-12120
 

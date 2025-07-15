@@ -101,23 +101,29 @@ tinymce.init({
 
 This configuration will add {pluginname} to the editor toolbar, allowing users to access the plugin features. However, to fully utilize the plugin, you will need to provide additional configuration options.
 
-The {pluginname} plugin requires a model to store. If the model is not provided in the editor configuration, or is `+undefined+`, the plugin will generate a new model. The model contains all the current suggested edits, so unless you are starting a new document, the current model for the document should always be provided. This model can be retrieved from the editor at any time using the xref:#get_model[`getModel` API], and should be saved externally alongside the document.
 
-The {pluginname} plugin also requires a unique user identifier to attribute suggestions made by each user, including edits and feedback. The current user should be set with the xref:#user_id[`+user_id+` option]. The user ID should be a unique string that identifies the user, such as a username or an email address. Each suggestion in the model will have a uid, allowing other users to see who made which suggestion.
 
 == Options
 
+The {pluginname} plugin requires a model to store. If the model is not provided in the editor configuration, or is `+undefined+`, the plugin will generate a new model. The model contains all the current suggested edits, so unless you are starting a new document, the current model for the document should always be provided. This model can be retrieved from the editor at any time using the xref:#get_model[`getModel` API], and should be saved externally alongside the document.
+
+Both the xref:#user_id[`+user_id+`] and xref:#fetch_users[`+fetch_users+`] options are required to configure the xref:userlookup.adoc[User Lookup API]. This API is used in the {pluginname} plugin to provide user information for each user who has made a change, allowing other users to see who made which suggestion.
+
+* The current user ID should be set with the xref:#user_id[`+user_id+` option]. The user ID should be a unique string that identifies the user, such as a username or an email address.
+
+* The xref:#fetch_users[`+fetch_users+` option] is required to provide the name and avatar for each user who has made a change, to then appear in the review. This option can be configured to retrieve this information from a backend service, as it provides an array of user IDs and expects a promise of an array, containing the appropriate data for the requested user IDs.
+
 The following configuration options affect the behavior of the {pluginname} plugin.
-
-include::partial$configuration/user_id.adoc[leveloffset=+1]
-
-include::partial$configuration/fetch_users.adoc[leveloffset=+1]
 
 include::partial$configuration/suggestededits_model.adoc[leveloffset=+1]
 
 include::partial$configuration/suggestededits_content.adoc[leveloffset=+1]
 
 include::partial$configuration/suggestededits_access.adoc[leveloffset=+1]
+
+include::partial$configuration/user_id.adoc[leveloffset=+1]
+
+include::partial$configuration/fetch_users.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

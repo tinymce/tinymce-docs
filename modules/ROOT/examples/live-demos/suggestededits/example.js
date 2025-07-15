@@ -1,48 +1,40 @@
-/** Fake user database */
-const userDb = {
-  adamhenderson: {
-      id: 'adamhenderson',
-      name: 'Adam Henderson',
-      avatar: `https://randomuser.me/api/portraits/men/1.jpg`,
-  },
-  michaelcook: {
-      id: 'michaelcook',
-      name: 'Michael Cook',
-      avatar: `https://randomuser.me/api/portraits/men/2.jpg`,
-  },
-  kalebwilson: {
-      id: 'kalebwilson',
-      name: 'Kaleb Wilson',
-      avatar: `https://randomuser.me/api/portraits/men/3.jpg`,
-  },
-  kyleeinstein: {
-      id: 'kyleeinstein',
-      name: 'Kyle Einstein',
-      avatar: `https://randomuser.me/api/portraits/men/4.jpg`,
-  },
-};
-
-const suggestededits_model = null; //Replace with the object returned by the plugin's getModel API, or null if there is no model.
-
-const fetch_users = (ids) => {
-  return new Promise((resolve, reject) => {
-    const users = ids.map(id => userDb[id]);
-    if (users.length > 0) {
-      resolve(users);
-    } else {
-      reject(new Error('No users found'));
-    }
-  });
-}
-
-tinymce.init({
+const config = {
   selector: 'textarea#suggested-edits',
   height: 500,
-  plugins: 'suggestededits',
-  toolbar: 'suggestededits',
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }', 
-  suggestededits_model, // If there is no model, the plugin will generate a default model based on the editor content.
+  plugins: 'suggestededits advlist anchor autolink code charmap emoticons fullscreen help image link lists media preview searchreplace table',
+  toolbar: 'undo redo | suggestededits | styles fontsizeinput | bold italic | align bullist numlist | table link image | code',
   user_id: 'michaelcook',
-  fetch_users, 
-});
+  fetch_users: (userIds) => Promise.all(userIds
+    .map((userId) =>
+      fetch(`/users/${userId}`) // Fetch user data from the server
+      .then((response) => response.json())
+      .catch(() => ({ id: userId })) // Still return a valid user object even if the fetch fails
+  )),
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }', 
+}
 
+const loadTinymce = async () => {
+	const documentPromise = fetch(`/documents/${documentId}`); // Fetch the document from the server
+	const modelPromise = fetch(`/models/${documentId}`); // Fetch the model from the same server
+
+	await documentPromise
+    .then((response) => response.text())
+    .then(async (doc) => {
+      const tinymceElement = document.querySelector('div#tinymce');
+      tinymceElement.innerHTML = doc;
+      
+      await modelPromise
+        .then((response) => response.json())
+        .then((model) => {
+          tinymce.init({
+            ...config,
+            suggestededits_model: model,
+          });
+        })
+        .catch(() => {
+          tinymce.init(config); // Initialize without a model if the model fetch fails
+        });
+    });
+};
+
+loadTinymce();

@@ -13,7 +13,7 @@ If the model is not provided in the editor configuration, the plugin will create
 ----
 async function fetchSavedModel(documentId) {
   // Replace this URL and logic with your actual backend API
-  const response = await fetch(`/api/models/${documentId}`);
+  const response = await fetch(`/models/${documentId}`);
   return await response.json();
 }
 

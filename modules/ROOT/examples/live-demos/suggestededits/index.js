@@ -1,30 +1,39 @@
 /** Fake user database */
 const userDb = {
-  adamhenderson: {
-      id: 'adamhenderson',
-      name: 'Adam Henderson',
-      avatar: `https://randomuser.me/api/portraits/men/1.jpg`,
+  adamhayes: {
+      id: 'adamhayes',
+      name: 'Adam Hayes',
+      avatar: `https://randomuser.me/api/portraits/men/4.jpg`,
   },
-  michaelcook: {
-      id: 'michaelcook',
-      name: 'Michael Cook',
-      avatar: `https://randomuser.me/api/portraits/men/2.jpg`,
+  martincook: {
+      id: 'martincook',
+      name: 'Martin Cook',
+      avatar: `https://randomuser.me/api/portraits/men/5.jpg`,
   },
   kalebwilson: {
       id: 'kalebwilson',
       name: 'Kaleb Wilson',
-      avatar: `https://randomuser.me/api/portraits/men/3.jpg`,
+      avatar: `https://randomuser.me/api/portraits/men/6.jpg`,
   },
-  kyleeinstein: {
-      id: 'kyleeinstein',
-      name: 'Kyle Einstein',
-      avatar: `https://randomuser.me/api/portraits/men/4.jpg`,
-  },
+  sarahjones: {
+      id: 'sarahjones',
+      name: 'Sarah Jones',
+      avatar: `https://randomuser.me/api/portraits/women/1.jpg`,
+  }
 };
 
 const model = {
+    "history": {
+        "2": [
+            {
+                "id": 1,
+                "uid": "sarahjones",
+                "timestamp": 1752576936000,
+                "feedback": "Nice improvement!"
+            }
+        ]
+    },
     "version": 1,
-    "maxId": 7,
     "contents": [
         {
             "type": "p",
@@ -56,8 +65,8 @@ const model = {
                     "opData": {
                         "id": 1,
                         "type": "insert",
-                        "id": "adamhenderson",
-                        "timestamp": 1749214950000
+                        "uid": "adamhayes",
+                        "timestamp": 1752015064000
                     }
                 },
                 {
@@ -75,42 +84,21 @@ const model = {
                     "text": "Try out the Suggested Edits feature"
                 },
                 {
-                    "text": ": type in the editor, apply formatting or delete some content.",
+                    "text": ": type in the editor, apply formatting or delete some content. T",
                     "opData": {
-                        "id": 3,
+                        "id": 2,
                         "type": "insert",
-                        "id": "adamhenderson",
-                        "timestamp": 1749215051000
+                        "uid": "adamhayes",
+                        "timestamp": 1752415064000
                     }
                 },
                 {
-                    "text": " by typing in the editor and",
+                    "text": " by typing in the editor and t",
                     "opData": {
                         "id": 2,
                         "type": "remove",
-                        "id": "adamhenderson",
-                        "timestamp": 1749215053000
-                    }
-                },
-                {
-                    "text": " "
-                },
-                {
-                    "text": "t",
-                    "opData": {
-                        "id": 4,
-                        "type": "remove",
-                        "id": "adamhenderson",
-                        "timestamp": 1749215055000
-                    }
-                },
-                {
-                    "text": "T",
-                    "opData": {
-                        "id": 4,
-                        "type": "insert",
-                        "id": "adamhenderson",
-                        "timestamp": 1749215055000
+                        "uid": "adamhayes",
+                        "timestamp": 1752415064000
                     }
                 },
                 {
@@ -119,10 +107,10 @@ const model = {
                 {
                     "text": ",",
                     "opData": {
-                        "id": 5,
+                        "id": 3,
                         "type": "insert",
-                        "id": "adamhenderson",
-                        "timestamp": 1749215056000
+                        "uid": "adamhayes",
+                        "timestamp": 1752515064000
                     }
                 },
                 {
@@ -131,10 +119,10 @@ const model = {
                 {
                     "text": "ing",
                     "opData": {
-                        "id": 6,
+                        "id": 4,
                         "type": "remove",
-                        "id": "adamhenderson",
-                        "timestamp": 1749215060000
+                        "uid": "adamhayes",
+                        "timestamp": 1752515064000
                     }
                 },
                 {
@@ -143,10 +131,10 @@ const model = {
                 {
                     "text": " to see your changes",
                     "opData": {
-                        "id": 7,
+                        "id": 5,
                         "type": "insert",
-                        "id": "adamhenderson",
-                        "timestamp": 1749215064000
+                        "uid": "kalebwilson",
+                        "timestamp": 1752615064000
                     }
                 },
                 {
@@ -165,6 +153,12 @@ const model = {
                 },
                 {
                     "text": "pricing page",
+                    "opData": {
+                        "id": 6,
+                        "type": "modify",
+                        "uid": "kalebwilson",
+                        "timestamp": 1752615064000
+                    },
                     "format": [
                         {
                             "type": "a",
@@ -172,6 +166,15 @@ const model = {
                                 "href": "https://www.tiny.cloud/pricing"
                             }
                         }
+                    ],
+                    "oldFormat": [
+                        {
+                            "type": "a",
+                            "attrs": {
+                                "href": "https://www.tiny.cloud/pricing"
+                            }
+                        },
+                        "em"
                     ]
                 },
                 {
@@ -304,6 +307,12 @@ const model = {
         },
         {
             "type": "h2",
+            "opData": {
+                "id": 7,
+                "type": "insert",
+                "uid": "martincook",
+                "timestamp": 1752576331000
+            },
             "children": [
                 {
                     "text": "Found a bug?"
@@ -314,10 +323,31 @@ const model = {
             "type": "p",
             "children": [
                 {
-                    "text": "If you believe you have found a bug please create an issue on the "
+                    "text": " ",
+                    "opData": {
+                        "id": 7,
+                        "type": "remove",
+                        "uid": "martincook",
+                        "timestamp": 1752576331000
+                    }
+                },
+                {
+                    "text": "If you believe you have found a bug please create an issue on the ",
+                    "opData": {
+                        "id": 7,
+                        "type": "insert",
+                        "uid": "martincook",
+                        "timestamp": 1752576331000
+                    }
                 },
                 {
                     "text": "GitHub repo",
+                    "opData": {
+                        "id": 7,
+                        "type": "insert",
+                        "uid": "martincook",
+                        "timestamp": 1752576331000
+                    },
                     "format": [
                         {
                             "type": "a",
@@ -328,7 +358,13 @@ const model = {
                     ]
                 },
                 {
-                    "text": " to report it to the developers."
+                    "text": " to report it to the developers.",
+                    "opData": {
+                        "id": 7,
+                        "type": "insert",
+                        "uid": "martincook",
+                        "timestamp": 1752576331000
+                    }
                 }
             ]
         },
@@ -380,29 +416,21 @@ const model = {
                 }
             ]
         }
-    ],
-    "history": {}
-}
-
-const fetch_users = (ids) => {
-  return new Promise((resolve, reject) => {
-    const users = ids.map(id => userDb[id]);
-    if (users.length > 0) {
-      resolve(users);
-    } else {
-      reject(new Error('No users found'));
-    }
-  });
-}
+    ]
+};
 
 tinymce.init({
   selector: 'textarea#suggested-edits',
   height: 500,
-  plugins: 'suggestededits',
-  toolbar: 'suggestededits',
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }', 
-  suggestededits_content: 'model',
+  plugins: 'suggestededits advlist anchor autolink code charmap emoticons fullscreen help image link lists media preview searchreplace table',
+  toolbar: 'undo redo | suggestededits | styles fontsizeinput | bold italic | align bullist numlist | table link image | code',
+  user_id: 'kalebwilson',
+  fetch_users: (userIds) => Promise.all(userIds
+    .map((userId) => new Promise((resolve) => 
+      resolve(userDb[userId] || { id: userId }))
+  )),
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
   suggestededits_model: model,
-  user_id: 'michaelcook',
-  fetch_users, 
+  suggestededits_content: 'html',
+  suggestededits_access: 'full'
 });

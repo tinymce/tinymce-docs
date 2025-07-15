@@ -378,6 +378,13 @@ Previously, long tooltips could overflow narrow browser windows, causing the too
 
 In {productname} {release-version}, the tooltip behavior has been improved to ensure that long tooltips are properly positioned and wrapped within narrow browser windows. This prevents overflow and ensures that the full tooltip text is visible, even in smaller viewports.
 
+=== Tab to create a new row in tables with a non-editable final row would freeze the editor.
+// #TINY-12018
+
+Previously, when tabbing into a non-editable final row of a table, the editor failed to recognize that the row was read-only and instead duplicated it. This resulted in an attempt to place the cursor in the duplicated row, which again could not be edited. The process would repeat indefinitely, creating a loop that ultimately froze the editor.
+
+{productname} {release-version} resolves this issue by detecting when the final row of a table is read-only and preventing the insertion of a new row in such cases. This ensures stable behavior when navigating through tables using the Tab key.
+
 
 [[security-fixes]]
 == Security fixes

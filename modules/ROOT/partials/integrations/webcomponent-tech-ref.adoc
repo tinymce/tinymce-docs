@@ -90,7 +90,12 @@ include::partial$integrations/common/license-key-property.adoc[]
 === Example: Open source GPL license
 [source,html]
 ----
-<tinymce-editor license-key="gpl"></tinymce-editor>
+<script>
+  var editorConfig= {
+    license_key: 'gpl'
+  }
+</script>
+<tinymce-editor config="editorConfig"></tinymce-editor>
 ----
 
 [IMPORTANT]

@@ -1,45 +1,52 @@
 [[supported-languages]]
 == Supported Languages
 
+[IMPORTANT]
+====
+From {productname} 8.0, language codes use RFC5646 format with hyphens (-) instead of underscores (_). For backward compatibility, both formats are supported in {productname} 8, but underscore format will show console warning.
+
+Example: "{productname} language code "en_US" is deprecated, please use "en-US" instead.".
+====
+
 ifeval::[{forModuleLoaders} == true]
 [cols="<2,^1,^2",options="header"]
 |===
 | Language | Code | Filename
 | Arabic | ar | `+./langs/ar.js+`
 | Basque | eu | `+./langs/eu.js+`
-| Bulgarian (Bulgaria) | bg_BG | `+./langs/bg_BG.js+`
+| Bulgarian (Bulgaria) | bg-BG | `+./langs/bg-BG.js+`
 | Catalan | ca | `+./langs/ca.js+`
-| Chinese (China) | zh_CN | `+./langs/zh_CN.js+`
-| Chinese (Taiwan) | zh_TW | `+./langs/zh_TW.js+`
+| Chinese (China) | zh-CN | `+./langs/zh-CN.js+`
+| Chinese (Taiwan) | zh-TW | `+./langs/zh-TW.js+`
 | Croatian | hr | `+./langs/hr.js+`
 | Czech | cs | `+./langs/cs.js+`
 | Danish | da | `+./langs/da.js+`
 | Dutch | nl | `+./langs/nl.js+`
 | Finnish | fi | `+./langs/fi.js+`
-| French (France) | fr_FR | `+./langs/fr_FR.js+`
+| French (France) | fr-FR | `+./langs/fr-FR.js+`
 | German | de | `+./langs/de.js+`
 | Greek | el | `+./langs/el.js+`
-| Hebrew (Israel) | he_IL | `+./langs/he_IL.js+`
+| Hebrew (Israel) | he-IL | `+./langs/he-IL.js+`
 | Hindi | hi | `+./langs/hi.js+`
-| Hungarian (Hungary) | hu_HU | `+./langs/hu_HU.js+`
+| Hungarian (Hungary) | hu-HU | `+./langs/hu-HU.js+`
 | Indonesian | id | `+./langs/id.js+`
 | Italian | it | `+./langs/it.js+`
 | Japanese | ja | `+./langs/ja.js+`
 | Kazakh | kk | `+./langs/kk.js+`
-| Korean (Korea) | ko_KR | `+./langs/ko_KR.js+`
+| Korean (Korea) | ko-KR | `+./langs/ko-KR.js+`
 | Malay | ms | `+./langs/ms.js+`
-| Norwegian Bokmål (Norway) | nb_NO | `+./langs/nb_NO.js+`
+| Norwegian Bokmål (Norway) | nb-NO | `+./langs/nb-NO.js+`
 | Persian | fa | `+./langs/fa.js+`
 | Polish | pl | `+./langs/pl.js+`
-| Portuguese (Brazil) | pt_BR | `+./langs/pt_BR.js+`
-| Portuguese (Portugal) | pt_PT | `+./langs/pt_PT.js+`
+| Portuguese (Brazil) | pt-BR | `+./langs/pt-BR.js+`
+| Portuguese (Portugal) | pt-PT | `+./langs/pt-PT.js+`
 | Romanian | ro | `+./langs/ro.js+`
 | Russian | ru | `+./langs/ru.js+`
 | Slovak | sk | `+./langs/sk.js+`
-| Slovenian (Slovenia) | sl_SI | `+./langs/sl_SI.js+`
+| Slovenian (Slovenia) | sl-SI | `+./langs/sl-SI.js+`
 | Spanish | es | `+./langs/es.js+`
-| Swedish (Sweden) | sv_SE | `+./langs/sv_SE.js+`
-| Thai (Thailand) | th_TH | `+./langs/th_TH.js+`
+| Swedish (Sweden) | sv-SE | `+./langs/sv-SE.js+`
+| Thai (Thailand) | th-TH | `+./langs/th-TH.js+`
 | Turkish | tr | `+./langs/tr.js+`
 | Ukrainian | uk | `+./langs/uk.js+`
 | Vietnamese | vi | `+./langs/vi.js+`
@@ -51,39 +58,39 @@ ifeval::[{forModuleLoaders} != true]
 | Language | Code
 | Arabic | ar
 | Basque | eu
-| Bulgarian (Bulgaria) | bg_BG
+| Bulgarian (Bulgaria) | bg-BG
 | Catalan | ca
-| Chinese (China) | zh_CN
-| Chinese (Taiwan) | zh_TW
+| Chinese (China) | zh-CN
+| Chinese (Taiwan) | zh-TW
 | Croatian | hr
 | Czech | cs
 | Danish | da
 | Dutch | nl
 | Finnish | fi
-| French (France) | fr_FR
+| French (France) | fr-FR
 | German | de
 | Greek | el
-| Hebrew (Israel) | he_IL
+| Hebrew (Israel) | he-IL
 | Hindi | hi
-| Hungarian (Hungary) | hu_HU
+| Hungarian (Hungary) | hu-HU
 | Indonesian | id
 | Italian | it
 | Japanese | ja
 | Kazakh | kk
-| Korean (Korea) | ko_KR
+| Korean (Korea) | ko-KR
 | Malay | ms
-| Norwegian Bokmål (Norway) | nb_NO
+| Norwegian Bokmål (Norway) | nb-NO
 | Persian | fa
 | Polish | pl
-| Portuguese (Brazil) | pt_BR
-| Portuguese (Portugal) | pt_PT
+| Portuguese (Brazil) | pt-BR
+| Portuguese (Portugal) | pt-PT
 | Romanian | ro
 | Russian | ru
 | Slovak | sk
-| Slovenian (Slovenia) | sl_SI
+| Slovenian (Slovenia) | sl-SI
 | Spanish | es
-| Swedish (Sweden) | sv_SE
-| Thai (Thailand) | th_TH
+| Swedish (Sweden) | sv-SE
+| Thai (Thailand) | th-TH
 | Turkish | tr
 | Ukrainian | uk
 | Vietnamese | vi

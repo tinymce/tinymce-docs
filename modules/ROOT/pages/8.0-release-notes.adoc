@@ -58,6 +58,126 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Spell Checker
+
+The {productname} {release-version} release includes an accompanying release of the **Spell Checker** premium plugin.
+
+**Spell Checker** Premium plugin includes the following fix and improvements.
+
+=== Content marked with `lang` attributes was sometimes not spellchecked correctly.
+// #TINY-12101
+
+Previously, the spellchecker did not consistently handle content marked with different `lang` attributes, particularly when the language codes used different formats. This inconsistency led to missed spellchecking for words in spans that used alternate casing or separator conventions (e.g., `en-GB` vs `en_GB`).
+
+This issue was introduced in {productname} 6.4, where documents containing a mix of language codes using different formats would not be reliably spellchecked. As a result, misspelled words in spans using alternate casing or separator conventions were not detected, even though they functioned as expected in version 6.3.
+
+In {release-version}, support for mixed-case and mixed-format language codes has been restored. The spellchecker now correctly identifies and handles variations in language attribute formatting, ensuring that content is reliably checked regardless of code style. This improvement enables accurate spellchecking for documents that include multiple languages and diverse regional conventions.
+
+==== Input label for misspelled word was not announced by screen readers.
+// #TINY-12167
+
+In previous versions, the Spell Checker dialog's misspelled word input field lacked proper accessibility labeling, preventing screen readers from announcing its purpose. {productname} {release-version} resolves this accessibility limitation by adding the appropriate label association between the "Misspelled Word" text and its input field. This enhancement allows screen readers to correctly identify and announce the input field's purpose, improving the spell checking experience for users who rely on assistive technologies.
+
+=== Language code standardization to RFC5646/BCP47 format
+// #TINY-12090
+
+The {productname} {release-version} release introduces standardized support for language codes using the RFC5646 (also known as BCP47) format. This update applies to all language-related configurations, including:
+
+* UI language packs (premium and community)
+* Spellchecker language codes
+* HTML `lang` attributes
+* Content language selection
+
+**Changes**
+
+* Language codes now use hyphens (`-`) instead of underscores (`_`). For example:
+** `'en-US'` instead of `'en_US'`
+** `'zh-TW'` instead of `'zh_TW'`
+** `'pt-BR'` instead of `'pt_BR'`
+* Base language codes without regions (e.g., `'en'`, `'es'`, `'fr'`) remain unchanged.
+* File names for language packs have been updated to use hyphens.
+* Premium plugins have been updated to recognize RFC5646-compliant codes.
+
+**Backward Compatibility**
+
+To ensure a smooth migration
+
+* Both hyphenated and underscore formats are supported in {productname} {release-version}.
+* A console warning is displayed when the legacy underscore format is used.
+* Both formats of language pack files are distributed with {productname} {release-version}.
+* {productname} 9 will support only the RFC5646-compliant hyphenated format.
+
+**Migration**
+
+. Update language-related configuration in `tinymce.init`:
++
+[source,javascript]
+----
+language: 'en-US',
+spellchecker_language: 'en-US'
+----
++
+. Update `content_langs` configuration:
++
+[source,javascript]
+----
+content_langs: [
+  { title: 'English (US)', code: 'en-US' },
+  { title: 'Portuguese (Brazil)', code: 'pt-BR' }
+]
+----
++
+. Rename any custom dictionary files to use hyphens (e.g., `'en-GB.txt'` instead of `'en_GB.txt'`).
+. Ensure any server-side integrations or custom language pack files follow the new naming convention.
+
+This standardization aligns {productname} with modern web standards and improves consistency across its multilingual features.
+
+For information on the **Spell Checker** premium plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker plugin] or for an complete list of supported languages, see: xref:introduction-to-tiny-spellchecker.adoc#supported-languages[Supported languages].
+
+=== Accessibility Checker
+
+The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.
+
+**Accessibility Checker** Premium plugin includes the following improvements.
+
+=== Accessibility: Enhanced image accessibility checks in a11ychecker plugin
+// #TINY-10903
+
+The {productname} {release-version} introduces four new image accessibility rules (xref:a11ychecker.adoc##image-rules[Image rules]) in the xref:a11ychecker.adoc[a11ychecker] plugin to improve compliance and authoring guidance. These rules help identify common accessibility issues related to image use and provide actionable recommendations:
+
+* *xref:a11ychecker.adoc#I1[I1: Mixed Signals & Decorative Policy]*: Flags images with conflicting accessibility indicators (e.g., `alt` with `role="presentation"`) and ensures decorative images comply with best practices.
+* *xref:a11ychecker.adoc#I2[I2: Alt Attribute Requirement]*: Enforces the presence of the `alt` attribute on all `<img>` elements, regardless of other labeling mechanisms like `aria-label`, `aria-labelledby`, or `title`.
+* *xref:a11ychecker.adoc#I3[I3: Filename Detection]*: Warns when `alt` text appears to be a filename (e.g., `image123.jpg`), including cases with URL encoding.
+* *xref:a11ychecker.adoc#I4[I4: Alt Text Length]*: Detects `alt` text that exceeds a configurable maximum length, promoting concise descriptions. The default limit is 100 characters and can be adjusted using the new xref:a11ychecker.adoc#a11ychecker_alt_text_max_length[`a11ychecker_alt_text_max_length`] setting.
+
+Additional improvements include a rule precedence system to avoid duplicate violations, centralized image intent detection (e.g., decorative, informative, mixed signals, incomplete), and more readable user-facing messages. Technical terminology such as "alternative text" has been replaced with "text description," and repair instructions are now more contextual and user-friendly.
+
+=== New `a11ychecker_alt_text_max_length` configuration option for Accessibility Checker alt text length
+// #TINY-10903
+
+A new configuration option, xref:a11ychecker.adoc#a11ychecker_alt_text_max_length[`a11ychecker_alt_text_max_length`], has been added to the Accessibility Checker plugin. This option allows users to configure the maximum allowed length for image alt text descriptions. The default value is 150 characters. For example:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'a11ychecker',
+  a11ychecker_alt_text_max_length: 150  // Set maximum length to 150 characters
+});
+----
+
+For more information on the Accessibility Checker plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
+
+=== PowerPaste
+
+The {productname} {release-version} release includes an accompanying release of the **PowerPaste** premium plugin.
+
+==== Word import of lists with a "lighter" level failed parsing.
+
+When users pasted content from Microsoft Word documents containing lists styled with Word’s "No List" setting into the editor with PowerPaste enabled, the operation failed due to a parsing error. As a result, the content was not inserted into the editor, causing disruption to content workflows. {productname} {release-version} addresses this issue by updating the **PowerPaste** parser to correctly handle lists with the "No List" style. As a result, users can now successfully paste such content into the editor without encountering errors.
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement
@@ -98,21 +218,41 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following improvement<s>:
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Tooltips can now be closed by pressing the `escape` key.
+// #TINY-12054
 
-// CCFR here.
+Prior to {release-version}, tooltips could not be dismissed using the keyboard, which posed an accessibility concern. As of {productname} {release-version}, tooltips can now be closed via the `escape` key, improving accessibility.
 
+=== Instructions on how to navigate the color swatch, image select and insert table widget are now announced by screen readers.
+// #TINY-12189
+
+Previously, interactive elements such as the color swatch, create table grid, and image select were missing an `aria-label`. This resulted in a lack of instructions for keyboard users and hindered overall accessibility.
+
+{productname} {release-version} now includes `aria-labels` for these elements, providing clear keyboard navigation instructions. This improvement ensures a more accessible experience for all users.
+
+=== Resize handles are more accessible with `role` and `aria-valuetext` attributes.
+// #TINY-11421
+
+In previous versions of {productname}, the editor's resize handle lacked a `role` attribute, raising accessibility concerns.
+
+In {productname} {release-version}, the resize handle now includes a `role` seperator and an `aria-valuetext` attribute that dynamically reflects the current dimensions of the editor. These improvements enhance accessibility and ensure more accurate announcements by screen readers.
+
+=== The translate API now automatically replaces three dots in a row with an ellipsis character.
+// #TINY-12155
+
+Previously, menu items and tooltips containing three consecutive periods (`...`) were read aloud by the JAWS screen reader as "dot dot dot," which could confuse users relying on assistive technologies. To enhance accessibility, the `translate` API in {productname} {release-version} now automatically replaces three dots with the typographic ellipsis character (`…`) across all translations. This update ensures a consistent visual appearance while improving screen reader behavior, as the ellipsis character is not read aloud. The change is implemented directly in the translation function, ensuring comprehensive coverage across all languages.
 
 [[additions]]
 == Additions
 
 {productname} {release-version} also includes the following addition<s>:
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== New `allow_html_in_comments` option to allow HTML-like content inside comment data
+// #TINY-12220
 
-// CCFR here.
+Comments containing HTML-like content are removed from the editor's content by default for security reasons. This is done during the sanitization process, which ensures that any HTML-like content in comments is stripped out.
+
+{productname} introduces a new configuration option, xref:content-filtering.adoc#allow_html_in_comments[allow_html_in_comments], to give users control over whether HTML-like content in comments should be retained or removed. By default, this content is removed for security, but setting the option to `true` allows HTML-like content in comments to be preserved when needed.
 
 
 [[changes]]
@@ -120,10 +260,53 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following change<s>:
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Changed the default value for the `pagebreak_separator` option.
+// #TINY-12013
 
-// CCFR here.
+In previous versions of {productname}, inserting a page break in the editor did not translate correctly when exporting using the xref:exportpdf.adoc[Export to PDF] plugin. Similarly, the xref:exportword.adoc[Export to Word] plugin also failed to preserve page breaks in the exported documents. As a result, exported files lacked the intended page breaks, leading to confusing output for users.
+
+With the release of {productname} {release-version}, this issue has been resolved by updating the default HTML value of the `pagebreak_separator` option:
+
+* **Old value** – `'<!-- pagebreak -->'`
+* **New value** – `'<div style="break-after: page"></div>'`
+
+This change aligns better with modern standards and ensures that page breaks are now accurately rendered in exported documents.
+
+=== The `pagebreak_split_block` option now defaults to `true`. When a page break is inserted, the resulting HTML output is: `<div style="break-after: page"></div>.`
+// #TINY-12462
+
+The default value for the `pagebreak_split_block` option has been changed from `false` to `true`. This change improves the user experience when inserting page breaks within block elements such as paragraphs, lists, or tables. When enabled:
+
+* Page breaks will automatically split the block element at the cursor position
+* Content after the page break will be moved to a new block element of the same type
+* The structure and formatting of the content is preserved on both sides of the page break
+
+For example, with this HTML content:
+
+[source,html]
+----
+<p>First page</p>
+----
+
+When placing the cursor after the word "First" and inserting a page break, the result will be:
+
+[source,html]
+----
+<p>First </p>
+<div style="break-after: page"></div> 
+<p>page</p>
+----
+
+This behavior is now enabled by default, but can be disabled by setting `pagebreak_split_block: false` in the editor configuration.
+
+For more information on the `pagebreak_split_block` option, see xref:pagebreak.adoc#pagebreak_split_block[pagebreak_split_block].
+
+=== DomParser no longer tries to fix some nodes when parsed with a context
+// #TINY-8205
+
+Previously, the `DomParser` would attempt to fix invalid HTML structures when parsing with a context, such as when inserting content into a specific element. This behavior lead to unexpected results, especially when the structure was not valid in the context of the parent element.
+
+In {productname} {release-version}, the `DomParser` has been updated to no longer attempt to fix invalid nodes when parsing with a context. Instead, it will validate the nodes and only insert them if they are valid in the context of their parent element. If the nodes are invalid, they will not be inserted.
 
 
 [[removed]]
@@ -136,6 +319,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Removed undocumented `documentBaseUrl` property from Editor instances. `documentBaseURI` is the supported property now.
+// #TINY-12182
+
+An undocumented `documentBaseUrl` property was previously accessible on `Editor` instances. This property was not part of the supported public API and could lead to confusion or inconsistent usage across implementations.
+
+To improve API clarity and maintain a well-defined interface, the `documentBaseUrl` property has been removed. Integrators should use the officially supported `documentBaseURI` property to access the base URI of the document.
 
 [[bug-fixes]]
 == Bug fixes
@@ -145,9 +334,100 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === Codesample dialog would not disable spellcheck as expected.
 // #TINY-12120
 
-Previously, the `browser_spellcheck` setting in the Codesample dialog's text area did not disable spellchecking as expected. This was due to the setting being applied to the dialog's text area instead of the editor itself.
+Previously, the `browser_spellcheck` setting did not correctly disable spellchecking in the Codesample dialog's text area. This was because the setting was applied to the dialog’s text area rather than the main editor instance.
 
-Previously, the `advcode` and `code` plugin dialogs did not have browser-based spellchecking disabled, resulting in unnecessary red underlines for code content. This occurred because the dialogs did not explicitly disable spellcheck functionality, regardless of the `browser_spellcheck` setting.
+In addition, the `advcode` and `code` plugin dialogs did not explicitly disable browser-based spellchecking. As a result, red underlines appeared unnecessarily in code content, regardless of the `browser_spellcheck` setting.
+
+=== Attempting to add a newline directly after a `block` element such as an image would cause an error.
+// #TINY-12045
+
+In previous versions of {productname}, the content selection logic incorrectly assumed that the target element resided within a text node. In reality, it was placed directly inside a `<div>` element. This mismatch led to a scenario where the selected content was mistakenly reinserted into itself, resulting in errors when pressing `Enter` immediately after an image and introducing a risk of data loss.
+
+This issue has been resolved in {productname} {release-version}. The selection logic has been updated to correctly identify and handle content within `<div>` elements such that it does not try to insert content within itself. As a result, pressing `Enter` after an image inside a `<div>` element no longer triggers errors or causes unintended behavior.
+
+=== In inline mode, pressing the back button dismissed the context toolbar and moved focus from the selected image to the editor.
+// #TINY-12118
+
+In inline mode, the context form toolbar incorrectly shifted focus from the selected image to the editor container. As a result, the plugin which relies on the current selection to apply changes was unable to apply attributes like `alt` text to the correct image.
+
+{productname} {release-version} resolves this by ensuring that the focus is preserved properly, ensuring that the plugin now applies changes such as `alt` text to the correct image in inline mode.
+
+=== Toolbar drawer now closes when the editor loses focus.
+// #TINY-12125
+
+In previous versions of {productname}, the floating toolbar remained visible even when the editor lost focus. This behavior introduced potential accessibility concerns, as the toolbar was not properly associated with the editor it controlled, potentially causing confusion for users.
+
+In {productname} {release-version}, the toolbar now automatically closes when the editor loses focus. This ensures it is only displayed within the appropriate context, enhancing accessibility and improving the overall user experience.
+
+=== Arrow key navigation between buttons was blocked when a button is hovered by the mouse.
+// #TINY-12163
+
+In previous versions of {productname}, if a button was hovered by the mouse while using arrow keys for navigation, focus would return to the previously focused element. This caused the selection to become stuck on the button with the `mouseover` event.
+
+{productname} {release-version} resolves this issue by preventing the `mouseover` event from being triggered again during arrow key navigation, ensuring a seamless user experience when navigating with arrow keys.
+
+=== It was not possible to navigate out of a `figcaption` using the left and right arrow keys in Firefox.
+// #TINY-11982
+
+Prior to {productname} {release-version}, Firefox exhibited an issue where pressing the left or right arrow keys would not allow users to exit the image `figcaption` element. This behavior was inconsistent with other major browsers such as Google Chrome and Safari, where the arrow keys functioned as expected and allowed seamless navigation out of the `figcaption`.
+
+With {productname} {release-version}, this issue has been resolved. Users can now exit the `figcaption` using the left/right arrow keys in Firefox, aligning its behavior with that of other browsers. This update ensures a more consistent user experience.
+
+=== Decorative images would lose their decorative status when the `alt` subtoolbar was closed when using the apply button.
+// #TINY-11912
+
+Previously, an issue was identified where closing the `alt` subtoolbar using the `Apply` button would inadvertently remove the decorative status from an image that was already marked as decorative. This occurred because the `onSetup` API disabled the input group, leading the `Apply` logic to incorrectly interpret the image as non-decorative.
+
+This issue has been resolved in {productname} {release-version}. The `onSetup` and `Apply` behavior has been aligned to consistently evaluate the input group, ensuring the decorative status is preserved as expected.
+
+=== The HTML schema did not treat `colgroup` or `col` elements as block elements.
+// #TINY-12092
+
+In previous versions of {productname}, whitespace between `<colgroup>` and `<col>` tags was not removed by {productname}'s HTML schema. This behavior caused the editor to preserve unnecessary whitespace characters in the table markup.
+
+This issue has been resolved in `{release-version}`. Both `colgroup` and `col` elements are now treated as block-level elements, ensuring that extraneous whitespace is stripped from these areas. As a result, the editor now produces cleaner and more concise table markup.
+
+=== Deleting a whole element would sometimes modify nearby content
+// #TINY-11868
+
+Previously, deleting a complete HTML element using the "Source Code" editor either by cutting `+Ctrl+X+` or `+Cmd+X+`, backspacing, or pressing delete could inadvertently modify surrounding content. For example, removing a `<div>` element that precedes a `<p>` tag could cause the `<p>` to be transformed into a `<div>`, resulting in unintended structural changes.
+
+This issue has been resolved in {productname} {release-version} by improving how element deletions are handled within the editor's DOM logic. Cutting or deleting a selected element now preserves the integrity and tag type of adjacent elements. Users can expect consistent and predictable editing behavior when modifying HTML source content.
+
+=== Strikethrough format could be added outside font size format, which renders incorrectly in some browsers.
+// #TINY-12004
+
+Previously, there was an issue where combining strikethrough (`s` element) and font size formatting could lead to incorrect rendering in some browsers, particularly Chrome. This occurred when the `s` (strikethrough) element was placed outside a font size `span`, causing the strikethrough line to render incorrectly.
+
+The fix ensures that the `s` element is now properly nested inside the font size element, improving visual consistency across browsers.
+
+=== Long tooltips could overflow narrow browser windows
+// #TINY-11884
+
+Previously, long tooltips could overflow narrow browser windows, causing the tooltip text to be partially cut off and unreadable. This issue was most noticeable with the `...` ellipsis toolbar for the "reveal or hide additional toolbar options" button, where the tooltip text would not fit within the narrow viewport.
+
+In {productname} {release-version}, the tooltip behavior has been improved to ensure that long tooltips are properly positioned and wrapped within narrow browser windows. This prevents overflow and ensures that the full tooltip text is visible, even in smaller viewports.
+
+=== Tab to create a new row in tables with a non-editable final row would freeze the editor.
+// #TINY-12018
+
+Previously, when tabbing into a non-editable final row of a table, the editor failed to recognize that the row was read-only and instead duplicated it. This resulted in an attempt to place the cursor in the duplicated row, which again could not be edited. The process would repeat indefinitely, creating a loop that ultimately froze the editor.
+
+{productname} {release-version} resolves this issue by detecting when the final row of a table is read-only and preventing the insertion of a new row in such cases. This ensures stable behavior when navigating through tables using the Tab key.
+
+=== Nested font sizes no longer cause excessive line spacing
+// #TINY-12073
+
+Previously, applying different font sizes to nested elements could result in inconsistent and overly large line heights. This affected users by introducing visual clutter and making text blocks appear misaligned or difficult to read. 
+
+{productname} {release-version} introduces a fix that ensures line heights are calculated based on the font size visible in the new line, rather than inheriting line-height from parent element. This means that when different font sizes are applied within the same content, the line heights will be consistent and proportional to the visible font size.
+
+=== Improved structure retention when inserting invalid HTML fragments
+// #TINY-8205
+
+Previously, when inserting HTML fragments through APIs or pasting, the parser would attempt to fix invalid structures, which could lead to the loss of valid structures like tables and lists. This behavior was inconsistent and could result in unexpected outcomes when handling complex HTML content.
+
+In {productname} {release-version}, the parser has been updated to improve the retention of structures when inserting HTML fragments. It now validates these fragments in the context of their parent structure, ensuring that valid structures are preserved even if the fragment contains invalid HTML resulting in more predictable and desirable outcomes when handling complex HTML content.
 
 
 [[security-fixes]]
@@ -164,12 +444,34 @@ Previously, the `advcode` and `code` plugin dialogs did not have browser-based s
 [[deprecated]]
 == Deprecated
 
-{productname} {release-version} includes the following deprecation<s>:
+{productname} {release-version} includes the following deprecations:
+
+=== Java application server-based server components have been deprecated
+// #DOC-3231
+
+{productname} {release-version} deprecates the Java application server-based deployment method for self-hosted services. Docker containers are now the **only** supported deployment method for self-hosted services. The Java `.war` files (`ephox-spelling.war`, `ephox-image-proxy.war`, `ephox-hyperlinking.war`) will be removed in a future release.
+
+For information about setting up containerized server-side components using Docker containers, see: xref:bundle-intro-setup.adoc[Introduction and initial setup for containerized server-side services from the premium self-hosted bundles]
+
+=== Docker container services
+
+* Enhanced Media Embed and Link Checker service, see: xref:individual-hyperlinking-container.adoc[Deploy the {productname} hyperlinking server-side component using Docker].
+* Image Editing and Export image proxy service, see: xref:individual-image-proxy-container.adoc[Deploy the {productname} image proxy server-side component using Docker].
+* Spell Checker service, see: xref:individual-spelling-container.adoc[Deploy the {productname} spelling service server-side component using Docker].
+* Export to PDF service, see: xref:individual-export-to-pdf-on-premises.adoc[Deploy the {productname} Export to PDF service server-side component using Docker].
+* Import from Word and Export to Word services, see: xref:individual-import-from-word-and-export-to-word-on-premises.adoc[Deploy the {productname} Import from Word and Export to Word service server-side component using Docker].
 
 // === The `<plugin>` configuration property, `<name>`, has been deprecated
 // #TINY-vwxyz1
 
 // CCFR here.
+
+=== Deprecated `editor.selection.setContent` API
+// TINY-11692
+
+The `editor.selection.setContent` method has been deprecated in {productname} {release-version}. This low-level API was never intended for external use and does not guarantee consistent behavior when inserting complex content structures, such as lists. Integrators are advised to use the supported `editor.insertContent` method for reliable content insertion.
+
+This deprecation helps reduce confusion and aligns content insertion with {productname}'s supported APIs.
 
 
 [[known-issues]]

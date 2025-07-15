@@ -1,0 +1,60 @@
+[[H93]]
+==== H93 - IDs must be unique
+
+*Rule description:* this rule checks that all `+id+` attributes are unique in the editor. Duplicate `+id+` attributes are known to cause problems for assistive technologies when parsing the content.
+
+===== {pluginname} rule details - H93
+
+Notification level (severity):: Error
+
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
+
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
+
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H93.html[H93: Ensuring that id attributes are unique on a Web page].
+
+.Examples
+[%collapsible]
+====
+.Non-compliant examples
+
+[source,html]
+----
+<!-- Multiple elements with same ID -->
+<div id="section1">First section</div>
+<div id="section1">Second section</div>
+
+<!-- Duplicate IDs in different elements -->
+<button id="submit">Submit</button>
+<input id="submit" type="submit" value="Send">
+
+<!-- Form fields with same ID -->
+<label for="name">First name:</label>
+<input id="name" type="text">
+<label for="name">Last name:</label>
+<input id="name" type="text">
+----
+
+These examples show incorrect use of duplicate IDs that can confuse assistive technologies.
+
+.Compliant examples
+
+[source,html]
+----
+<!-- Unique IDs for sections -->
+<div id="section1">First section</div>
+<div id="section2">Second section</div>
+
+<!-- Unique IDs for form controls -->
+<button id="submit-button">Submit</button>
+<input id="submit-input" type="submit" value="Send">
+
+<!-- Form fields with unique IDs -->
+<label for="firstname">First name:</label>
+<input id="firstname" type="text">
+<label for="lastname">Last name:</label>
+<input id="lastname" type="text">
+----
+
+These examples demonstrate proper use of unique IDs.
+====

@@ -1,0 +1,81 @@
+[[D5]]
+==== D5 - Contrast ratio of the text (D5A, D5B, and D5C)
+
+*Rule description:* this rule checks that the contrast ratio of the text is above the following values:
+
+* When the compliance level is set to AA,
+** 4.5:1 for normal text
+** 3:1 for large text
+* When the compliance level is set to AAA,
+** 7:1 for any text
+
+Text with a low contrast ratio is hard to read for users with impaired vision.
+
+[[D5A]]
+==== {pluginname} rule details - D5A
+
+Notification level (severity):: Error
+
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level AA
+
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
+
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/general/G145.html[G145 - Ensuring that a contrast ratio of at least 3:1 exists between text (and images of text) and background behind the text].
+
+[[D5B]]
+==== {pluginname} rule details - D5B
+
+Notification level (severity):: Error
+
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level AA
+
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
+
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/general/G18.html[G18 - Ensuring that a contrast ratio of at least 4.5:1 exists between text (and images of text) and background behind the text].
+
+[[D5C]]
+==== {pluginname} rule details - D5C
+
+Notification level (severity):: Error
+
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level AAA
+
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
+
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/general/G17.html[G17 - Ensuring that a contrast ratio of at least 7:1 exists between text (and images of text) and background behind the text].
+
+.Examples
+[%collapsible]
+====
+.Non-compliant examples
+
+[source,html]
+----
+<!-- Light gray text on white background (contrast ratio: 2.3:1) -->
+<p style="color: #999999; background-color: #FFFFFF;">This text has insufficient contrast</p>
+
+<!-- Yellow text on white background (contrast ratio: 1.2:1) -->
+<p style="color: #FFFF00; background-color: #FFFFFF;">This text is very hard to read</p>
+
+<!-- Large text with insufficient contrast for AA level -->
+<h1 style="color: #777777; background-color: #FFFFFF; font-size: 24px;">Large heading with poor contrast</h1>
+----
+
+These examples demonstrate text with insufficient contrast ratios that fail WCAG requirements.
+
+.Compliant examples
+
+[source,html]
+----
+<!-- Dark gray text on white background (contrast ratio: 4.5:1) -->
+<p style="color: #767676; background-color: #FFFFFF;">This text meets AA standard for normal text</p>
+
+<!-- Black text on white background (contrast ratio: 21:1) -->
+<p style="color: #000000; background-color: #FFFFFF;">This text exceeds AAA requirements</p>
+
+<!-- Large dark gray text meeting AA requirements for large text -->
+<h1 style="color: #959595; background-color: #FFFFFF; font-size: 24px;">Large heading with good contrast</h1>
+----
+
+These examples meet WCAG contrast requirements for their respective sizes and levels.
+====

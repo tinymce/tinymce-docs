@@ -32,16 +32,24 @@ include::partial$misc/plugin-support-table.adoc[leveloffset=+1]
 
 include::partial$misc/support-powerpaste.adoc[leveloffset=+1]
 
-=== Supported Application Servers: Self-hosted Enterprise
+=== System Requirements: Self-hosted Enterprise
 
-The {productname} spell checking server-side component requires a Java Web Application Server that supports Servlet Implementation API 3.0.
+The {productname} server-side components are delivered as Docker/OCI container images. The following requirements must be met:
 
-Java Development Kit::
-* JDK 8
 
-Java (J2EE) Application Servers::
-include::partial$misc/supported-application-servers.adoc[]
-
-Minimum Hardware Requirements::
-* CPU: Dual Core Processor ~ 2Ghz. For higher loads, a quad core or higher is recommended.
+Host System Requirements::
+* Operating System:
+** Linux
+** macOS
+** Windows with WSL 2
+* CPU: Dual Core Processor ~ 2Ghz. For higher loads, a quad core or higher is recommended
 * RAM: 4 Gigabytes of RAM available for services
+* Storage: At least 10GB of free disk space for container images and data
+
+Container Platform Support::
+* Docker standalone
+* Container orchestration platforms (such as Kubernetes)
+* Cloud container services
+
+[NOTE]
+For production deployments, we recommend using container orchestration platforms or cloud container services that provide built-in scaling and monitoring capabilities.

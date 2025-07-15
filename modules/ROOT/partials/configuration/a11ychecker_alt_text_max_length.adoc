@@ -1,0 +1,20 @@
+[[a11ychecker_alt_text_max_length]]
+== `+a11ychecker_alt_text_max_length+`
+
+This option sets the maximum length for image alternative text before triggering a warning.
+
+*Type:* `+Number+`
+
+*Default value:* `+150+`
+
+*Example:*
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'a11ychecker',
+  toolbar: 'a11ycheck',
+  a11ychecker_alt_text_max_length: 200  // Allow longer descriptions if needed
+});
+----

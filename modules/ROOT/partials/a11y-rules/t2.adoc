@@ -1,0 +1,83 @@
+[[T2]]
+==== T2 - Complex table summary
+
+*Rule description:* this rule checks that all complex tables must have a `+summary+` attribute explaining to users of assistive technologies how to navigate through the data inside of the table.
+
+[NOTE]
+====
+This rule only applies to HTML 4 content and is not checked when `+a11ychecker_html_version+` is set to `+html5+`.
+====
+
+===== {pluginname} rule details - T2
+
+Notification level (severity):: Warning
+
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
+
+xref:a11ychecker_html_version[HTML version]:: HTML4
+
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H73.html[H73 - Using the summary attribute of the table element to give an overview of data tables].
+
+.Examples
+[%collapsible]
+====
+.Non-compliant examples
+
+[source,html]
+----
+<!-- Complex table without summary -->
+<table>
+    <caption>Employee Performance Review Scores</caption>
+    <tr>
+        <th rowspan="2">Department</th>
+        <th colspan="2">Q1 2023</th>
+        <th colspan="2">Q2 2023</th>
+    </tr>
+    <tr>
+        <th>Average</th>
+        <th>Range</th>
+        <th>Average</th>
+        <th>Range</th>
+    </tr>
+    <!-- ... table content ... -->
+</table>
+
+<!-- Summary that just repeats caption -->
+<table summary="Employee Performance Review Scores">
+    <caption>Employee Performance Review Scores</caption>
+    <!-- ... table content ... -->
+</table>
+----
+
+These examples either lack a summary or provide one that doesn't explain the table's structure.
+
+.Compliant examples
+
+[source,html]
+----
+<!-- Complex table with descriptive summary -->
+<table summary="Performance scores arranged by department. Each department has average scores and score ranges for Q1 and Q2 2023. Read across for quarterly comparisons or down for departmental comparisons.">
+    <caption>Employee Performance Review Scores</caption>
+    <tr>
+        <th rowspan="2">Department</th>
+        <th colspan="2">Q1 2023</th>
+        <th colspan="2">Q2 2023</th>
+    </tr>
+    <tr>
+        <th>Average</th>
+        <th>Range</th>
+        <th>Average</th>
+        <th>Range</th>
+    </tr>
+    <!-- ... table content ... -->
+</table>
+
+<!-- Table with navigation instructions -->
+<table summary="Monthly sales data in a matrix format. Rows represent products, columns represent months. Subtotals are provided at the bottom of each quarter.">
+    <caption>2023 Product Sales by Month</caption>
+    <!-- ... table content ... -->
+</table>
+----
+
+These examples include summaries that explain the table's structure and how to navigate it.
+====

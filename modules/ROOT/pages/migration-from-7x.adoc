@@ -37,7 +37,7 @@ Any items marked **"High"** level require immediate attention during migration.
 
 |xref:pagebreak-split-block-default[pagebreak_split_block]
 |The default value changed from `false` to `true`, affecting how page breaks interact with block elements.
-|Low
+|Medium
 
 |xref:editor-documentbaseurl-removal[editor.documentBaseUrl]
 |Undocumented property removed. Use `editor.editorManager.documentBaseURI` instead.

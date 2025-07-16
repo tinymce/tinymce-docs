@@ -11,7 +11,6 @@ tinymce.init({
     { title: 'English (United Kingdom)', code: 'en-GB' },
     { title: 'English (United States)', code: 'en-US' },
     { title: 'Medical English (US)', code: 'en-US', customCode: 'en-US-medical' },
-    { title: 'Medical English (UK)', code: 'en-GB', customCode: 'en-GB-medical' },
     { title: 'Danish', code: 'da' },
     { title: 'Dutch', code: 'nl-NL' },
     { title: 'Finnish', code: 'fi' },

@@ -416,6 +416,13 @@ To improve API clarity and maintain a well-defined interface, the `documentBaseU
 
 {productname} {release-version} also includes the following bug fixes:
 
+=== Tabbing when a `figure` was selected didn't move the selection to the `figcaption` correctly.
+// #TINY-11753
+
+Previously, the `tab` key did not correctly handle nested components. Specifically, when a `CET` (Content Editable True) element was placed inside a `CEF` (Content Editable False) element such as a `figcaption`, focus behavior was unintuitive. This led to inconsistent and confusing keyboard navigation when interacting with editable nested elements like a `figcaption`.
+
+{productname} {release-version} addresses this issue by ensuring that pressing the `tab` key correctly moves focus to the `CET` element when it is nested within a `CEF` element. This ensures smooth and predictable keyboard navigation for nested editable elements such as a `figcaption`.
+
 === Cutting a whole HTML element would add an empty paragraph.
 // #TINY-12171
 

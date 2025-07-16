@@ -1,48 +1,56 @@
 [[suggestededits_access]]
 == `suggestededits_access`
 
-To configure a user's permission to edit the document and review changes, the `{plugincode}_access` option can be set alongside the editor mode.  
+To configure a user's permission to edit the document and review changes, the `{plugincode}_access` option can be set alongside the editor mode.
 
 *Type:* `+String+`
 
-*Possible Values*: `'full'`, `'suggest'`, `'read'`, `'none'`
+*Possible Values*: `'full'`, `'feedback'`, `'read'`, `'none'`
 
 *Default Value*: `'full'`
 
-The possible values set the access level of the review permissions as follows: 
+The possible values set the access level of the review permissions as follows:
 
 [cols="20%,80%"]
 |===
 |Value | Review Permission
 
 |`+'full'+`
-|Access to the {pluginname} view, with permission to accept, reject, or add suggestions to changes.  
+|Access to the {pluginname} view, with permission to accept or reject suggestions.  
 
-|`+'suggest'+`
-|Access to the {pluginname} view, with permission to add suggestions to changes. 
+|`+'feedback'+`
+|Access to the {pluginname} view, with permission to add feedback to suggestions.
 
 |`+'read'+`
-|Readonly access to the {pluginname} view.
+|Read-only access to the {pluginname} view.
 
 |`+'none'+`
 |No access to the {pluginname} view.
 |===
 
-[NOTE]
-The `{plugincode}_access` option can be used in combination with the editor's read-only mode to restrict a user’s editing permission. 
-
-.Example
+=== Example: `suggestededits_access: 'feedback'`
 [source,javascript]
 ----
 tinymce.init({
   selector: 'textarea',  // Change this value according to your HTML
   plugins: 'suggestededits',
   toolbar: 'suggestededits',
-  user_id: 'unique-identifier', // replace this with a unique string to identify the user
-  fetch_users, // Function to fetch users for the user lookup API
-  suggestededits_access: 'full', //change this value to set the user's permission to the Suggested Edits view
-  readonly: false //set to true to restrict a user's editing permission
+  suggestededits_access: 'feedback', // Change this value to set the Suggested Edits view permissions
+  readonly: false // Set to true to restrict a user's editing permission
 });
 ----
 
-liveDemo::suggestededits-access[]
+liveDemo::suggestededits-access-feedback[]
+
+=== Example: `suggestededits_access: 'read'`
+[source,javascript]
+----
+tinymce.init({
+  selector: 'textarea',  // Change this value according to your HTML
+  plugins: 'suggestededits',
+  toolbar: 'suggestededits',
+  suggestededits_access: 'feedback', // Change this value to set the Suggested Edits view permissions
+  readonly: false // Set to true to restrict a user's editing permission
+});
+----
+liveDemo::suggestededits-access-read[]

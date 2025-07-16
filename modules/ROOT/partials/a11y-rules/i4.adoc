@@ -1,0 +1,46 @@
+[[I4]]
+==== I4 - Overly long `+alt+` text
+
+*Rule description:* this rule checks for `+alt+` text that exceeds the configured character limit (default: 150 characters). Long descriptions can be difficult for screen reader users to process. Complex images might need detailed descriptions in the surrounding text instead, though some images may require longer descriptions to be fully understood.
+
+===== {pluginname} rule details - I4
+
+Notification level (severity):: Warning
+
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
+
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
+
+WCAG 2.1 specification:: N/A
+
+.Examples
+[%collapsible]
+====
+.Non-compliant examples
+[source,html]
+----
+<img src="office-photo.jpg" 
+     alt="Our modern office space features an open floor plan with collaborative workstations, standing desks, and multiple meeting rooms. The space is brightly lit with natural light from floor-to-ceiling windows, and includes a fully stocked kitchen area, relaxation zone with comfortable seating, and a game room with ping pong tables and video games for employee breaks.">
+
+<img src="chart.png"
+     alt="Bar graph showing monthly sales data for the past year, with blue bars representing domestic sales and red bars representing international sales, demonstrating a steady increase in both markets with particular growth in Q3 and Q4, reaching peak sales in December.">
+----
+
+These examples use overly detailed alt text that may overwhelm screen reader users with too much information at once.
+
+.Compliant examples
+[source,html]
+----
+<img src="office-photo.jpg" 
+     alt="Modern open-plan office with collaborative spaces"
+     aria-describedby="office-details">
+<p id="office-details">Our office features collaborative workstations, standing desks, and meeting rooms, complemented by natural lighting, a kitchen area, and recreational spaces including a game room.</p>
+
+<img src="chart.png"
+     alt="Monthly sales growth chart for domestic and international markets"
+     aria-describedby="chart-details">
+<p id="chart-details">The bar graph shows steady growth in both domestic (blue) and international (red) sales throughout the year, with significant increases in Q3 and Q4, peaking in December.</p>
+----
+
+These examples use concise alt text with additional details provided in the surrounding content.
+====

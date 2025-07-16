@@ -10,7 +10,7 @@
 ====
 {productname} is licensed under the GNU General Public License Version 2 or later. A configuration option called `+'license_key'+` introduced in {productname} 7 requires developers to make a conscious decision to use {productname} with the GPLv2+ license or with a commercial license.
 
-When using {productname} 8 in a self-hosted environment, a license key must be provided and it must be valid. Otherwise, the editor will be set to readonly. A license key is not required when loading {productname} from {cloudname}, as it is already under a commercial license.
+When using {productname} 8 in a self-hosted environment, a license key must be provided and it must be valid. Otherwise, the editor will be disabled. A license key is not required when loading {productname} from {cloudname}, as it is already under a commercial license.
 
 In addition, when using {productname} 8 in a self-hosted environment for commercial use, a commercial license key manager addon is required in order for the editor to operate.
 ====
@@ -134,12 +134,12 @@ a|
 
 | Expired
 a|
-* Editor is set to readonly
+* Editor is disabled
 * Must obtain a new license key to continue using {productname}
 | Time-based keys only
 | Invalid
 a|
-* Editor is set to readonly
+* Editor is disabled
 * Editor notifications notifying that the license key is not valid
 | All license types
 |===
@@ -162,7 +162,7 @@ Anyone who intends to self-host {productname} will need to obtain a T8LK-prefixe
 
 === How will I know if this change affects me?
 
-If {productname} detects that the `license_key` configuration is missing or invalid, it will display a console log warning message and/or editor notification and set the editor to readonly. These warnings and restrictions are designed to ensure compliance and provide transparency during evaluation periods.
+If {productname} detects that the `license_key` configuration is missing or invalid, it will display a console log warning message and/or editor notification and set the editor to disabled. These warnings and restrictions are designed to ensure compliance and provide transparency during evaluation periods.
 
 [TIP]
 If you have actively suppressed or hidden these messages, please remove those overrides to maintain proper license validation. If no notification appears, you are not affected.
@@ -184,7 +184,7 @@ If using a cloud or hybrid deployment configuration, the license key may be chec
 
 === What happens if I don't provide a valid license key?
 
-In addition to the editor being readonly, a console log warning message and/or editor notification will persist until a valid license key or 'gpl' is provided.
+In addition to the editor being disabled, a console log warning message and/or editor notification will persist until a valid license key or 'gpl' is provided.
 
 === Why is a license key required?
 
@@ -248,14 +248,27 @@ a| * Verify that the license key is correctly copied from your link:https://www.
 * Ensure there are no extra spaces or characters in the key
 * Check if the key matches your deployment type (Cloud vs Self-hosted)
 
-| xref:hard-expired[Hard expired]
+| xref:load-error[Load error (Cloud)]
+| The editor is disabled because the TinyMCE API key could not be validated. The TinyMCE Commercial License Key Manager plugin is required for the provided API key to be validated but could not be loaded.
+| The editor is disabled because the TinyMCE API key could not be validated.
+a| * Verify that your API key is valid
+* Check if your subscription is active
+* Visit the link:https://support.tiny.cloud[Support Portal] if the issue persists
+
+| xref:load-error[Load error (Self-Hosted)]
+| The editor is disabled because the license key provided is invalid. The TinyMCE Commercial License Key Manager plugin is required for the provided license key to be validated but could not be loaded.
+| The editor is disabled because the TinyMCE license key could not be validated.
+a| * Check if the license key matches your deployment type: GPL or commercial, Cloud or Self-hosted
+* Ensure the license key manager is set up correctly: <<Setting up the Commercial License Key Manager>>
+
+| xref:expired[Expired]
 | The editor is disabled because the license key has expired and is no longer valid
 | The editor is disabled because the license key has expired and is no longer valid.
 a| * Visit link:https://www.tiny.cloud/my-account[Tiny Cloud Account] to obtain a new license key
 * Update your configuration with the new key
 * Visit the link:https://support.tiny.cloud[Support Portal] if you believe your license should still be valid
 
-| xref:soft-expired[Soft expired]
+| xref:grace-period[Grace period]
 | The editor will be disabled in the near future because the license key has expired
 | The editor will be disabled in the near future because the license key has expired.
 a| * Visit link:https://www.tiny.cloud/my-account[Tiny Cloud Account] to obtain a new license key
@@ -270,7 +283,7 @@ a| * Verify that your {productname} version matches the license key version
 * For version-locked keys, ensure you're using the correct patch version
 
 | xref:no-license-key[No license key]
-| The editor is disabled because a {productname} license key has not been provided. Provide a valid license key or add license_key: 'gpl' to the init config to agree to the open source license terms.
+| The editor is disabled because a {productname} license key has not been provided. Make sure to provide a valid license key or add license_key: 'gpl' to the init config to agree to the open source license terms.
 | The editor is disabled because a {productname} license key has not been provided.
 a| * Add the `license_key` parameter to your {productname} configuration
 * For GPL usage, set `license_key: 'gpl'`
@@ -285,7 +298,7 @@ a| * Verify that your license includes access to the premium plugin
 
 | xref:online-api-key-error-fallback[Online API Key Error (5xx - Fallback)]
 | The API key could not be validated by the API key validation server [type: +${errorType}${statusMsg}+]. Attempting fallback to provided license key.
-| The editor is disabled because the API key could not be validated by the API key validation server.
+|
 a| * Check your internet connection
 * Verify your firewall settings allow access to the validation server
 * The editor will attempt to use the provided license key as fallback
@@ -304,12 +317,20 @@ a| * Verify that your API key is valid
 ==== Invalid license key (General)
 The provided license key is not recognized as a valid {productname} license key. This can occur if the key is malformed, expired, or doesn't match your deployment type. For self-hosted installations, ensure you're using a valid T8LK-prefixed license key. Visit the link:https://www.tiny.cloud/my-account[Tiny Cloud Account] to verify your license key.
 
-[[hard-expired]]
-==== Hard expired
+[[load-error-cloud]]
+==== Load error (Cloud)
+The TinyMCE Commercial License Key Manager plugin is automatically loaded from the Tiny Cloud CDN for cloud deployments. If it cannot be loaded, the editor will be disabled. Review your subscription details in your link:https://www.tiny.cloud/my-account[Tiny Cloud Account] to check its status.
+
+[[load-error-selfhosted]]
+==== Load error (Self-hosted)
+For self-hosted installations, the TinyMCE Commercial License Key Manager plugin is required for commercial license keys otherwise the editor will be disabled. If it cannot be loaded, see the <<Setting up the Commercial License Key Manager>> section for implementation details
+
+[[expired]]
+==== Expired
 The license key has reached its expiration date and is no longer valid for use. The editor will be disabled until a new valid license key is provided. For time-based keys, refer to the <<License Key Types>> section. To renew your license, visit link:https://www.tiny.cloud/pricing[Tiny Cloud Pricing] or contact your account manager.
 
-[[soft-expired]]
-==== Soft expired
+[[grace-period]]
+==== Grace period
 The license key has reached its initial expiration date but is still within the grace period. The editor will continue to function but will be disabled when the grace period ends. See the <<License States>> section for more information about grace periods. Contact your account manager or visit link:https://www.tiny.cloud/my-account[Tiny Cloud Account] to renew your license before the grace period expires.
 
 [[invalid-editor-version]]

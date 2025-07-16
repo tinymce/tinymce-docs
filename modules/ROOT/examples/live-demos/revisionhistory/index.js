@@ -213,7 +213,7 @@ tinymce.init({
   user_id: 'john.doe',
   fetch_users: (userIds) => {
     const results = userIds.map((id) => {
-      const user = Object.values(userDirectory).find((user) => user.id === id);
+      const user = userDirectory[id];
       if (user) {
         return user;
       } else {

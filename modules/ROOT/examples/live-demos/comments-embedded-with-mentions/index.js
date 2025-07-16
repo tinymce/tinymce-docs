@@ -158,7 +158,7 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
     user_id: currentUser.id,
     fetch_users: (userIds) => {
       const results = userIds.map((id) => {
-        const user = Object.values(userDb).find((user) => user.id === id);
+        const user = userDb[id];
         if (user) {
           return user;
         } else {

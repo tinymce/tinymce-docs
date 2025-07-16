@@ -4,7 +4,7 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
     'michaelcook': {
       id: 'michaelcook',
       name: 'Michael Cook',
-      avatar: "{{imagesdir}}/avatars/michaelcook.png",
+      avatar: '{{imagesdir}}/avatars/michaelcook.png',
       custom: {
         fullName: 'Michael Cook',
         description: 'Product Owner'
@@ -13,7 +13,7 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
     'kalebwilson': {
       id: 'kalebwilson',
       name: 'Kaleb Wilson',
-      avatar: "{{imagesdir}}/avatars/kalebwilson.png",
+      avatar: '{{imagesdir}}/avatars/kalebwilson.png',
       custom: {
         fullName: 'Kaleb Wilson',
         description: 'Marketing Director',

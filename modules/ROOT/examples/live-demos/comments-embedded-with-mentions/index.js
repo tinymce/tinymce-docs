@@ -4,16 +4,20 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
     'johnsmith': {
       id: 'johnsmith',
       name: 'John Smith',
-      fullName: 'John Smith',
-      description: 'Company Founder',
-      image: "https://i.pravatar.cc/150?img=11"
+      avatar: 'https://i.pravatar.cc/150?img=11',
+      custom: {
+        fullName: 'John Smith',
+        description: 'Company Founder',
+      }
     },
     'jennynichols': {
       id: 'jennynichols',
       name: 'Jenny Nichols',
-      fullName: 'Jenny Nichols',
-      description: 'Marketing Director',
-      image: "https://i.pravatar.cc/150?img=10"
+      avatar: 'https://i.pravatar.cc/150?img=10',
+      custom: {
+        fullName: 'Jenny Nichols',
+        description: 'Marketing Director',
+      }
     }
   }
 
@@ -29,23 +33,25 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
   const userRequest = {};
   
   const setupFakeServer = () => {
-    const images = [ adminUser.image, currentUser.image ];
-    const userNames = [ adminUser.fullName, currentUser.fullName ];
+    const images = [ adminUser.avatar, currentUser.avatar ];
+    const userNames = [ adminUser.custom.fullName, currentUser.custom.fullName ];
 
     for (let i = 0; i < numberOfUsers; i++) {
       images.push(faker.image.avatar());
       userNames.push(`${faker.person.firstName()} ${faker.person.lastName()}`);
     }
-  
+
     userNames.map((fullName) => {
-      if ((fullName !== currentUser.fullName) && (fullName !== adminUser.fullName)) {
+      if ((fullName !== currentUser.custom.fullName) && (fullName !== adminUser.custom.fullName)) {
         const id = fullName.toLowerCase().replace(/ /g, '');
         userDb[id] = {
           id,
           name: fullName,
-          fullName,
-          description: faker.person.jobTitle(),
-          image: images[Math.floor(images.length * Math.random())]
+          avatar: images[Math.floor(images.length * Math.random())],
+          custom: {
+            fullName,
+            description: faker.person.jobTitle(),
+          }
         };
       }
     });
@@ -157,15 +163,13 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
     sidebar_show: 'showcomments',
     user_id: currentUser.id,
     fetch_users: (userIds) => {
-      const results = userIds.map((id) => {
-        const user = userDb[id];
-        if (user) {
-          return user;
-        } else {
-          throw new Error(`User ${id} not found`);
-        }
-      });
-      return Promise.resolve(results);
+      return Promise.all(
+        userIds.map(
+          (userId) => new Promise(
+            (resolve) => resolve(userDb[userId] || { id: userId })
+          )
+        )
+      )
     },
     tinycomments_can_resolve,
   });

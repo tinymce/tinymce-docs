@@ -35,26 +35,35 @@ include::partial$configuration/fetch_users.adoc[]
 
 [source,js]
 ----
-const userDirectory = {
-  'janedoe': { id: 'janedoe', name: 'Jane Doe', avatar: 'https://example.com/avatar/jane.png' },
-  'johnsmith': { id: 'johnsmith', name: 'John Smith' },
-  'alextaylor': { id: 'alextaylor', name: 'Alex Taylor', avatar: 'https://example.com/avatar/alex.png' }
+const userDb = {
+  'janedoe': { 
+    id: 'janedoe', 
+    name: 'Jane Doe', 
+    avatar: 'https://example.com/avatar/jane.png' 
+  },
+  'johnsmith': { 
+    id: 'johnsmith', 
+    name: 'John Smith' 
+  },
+  'alextaylor': { 
+    id: 'alextaylor', 
+    name: 'Alex Taylor', 
+    avatar: 'https://example.com/avatar/alex.png' 
+  }
 };
 
 tinymce.init({
   selector: '#editor',
   user_id: 'alextaylor',
   fetch_users: (userIds) => {
-    const results = userIds.map((id) => {
-      const user = userDirectory[id];
-      if (user) {
-        return user;
-      } else {
-        throw new Error(`User ${id} not found`);
-      }
-    });
-    return Promise.resolve(results);
-  }
+    return Promise.all(
+      userIds.map(
+        (userId) => new Promise(
+          (resolve) => resolve(userDb[userId] || { id: userId })
+        )
+      )
+    )
+  },
 });
 ----
 

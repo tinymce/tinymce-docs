@@ -4,11 +4,12 @@ const getRandomDelay = () => {
   return Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay;
 };
 
-const userDirectory = {
+/* This represents a database of users on the server */
+const userDb = {
   'john.doe': { 
     id: 'john.doe', 
     name: 'John Doe', 
-    avatar: 'https://example.com/avatar/john.png' 
+    avatar: 'https://i.pravatar.cc/150?img=11' 
   }
 };
 
@@ -211,16 +212,14 @@ tinymce.init({
   revisionhistory_fetch,
   revisionhistory_fetch_revision,
   user_id: 'john.doe',
-  fetch_users: (userIds) => {
-    const results = userIds.map((id) => {
-      const user = userDirectory[id];
-      if (user) {
-        return user;
-      } else {
-        throw new Error(`User ${id} not found`);
-      }
-    });
-    return Promise.resolve(results);
-  },
+    fetch_users: (userIds) => {
+      return Promise.all(
+        userIds.map(
+          (userId) => new Promise(
+            (resolve) => resolve(userDb[userId] || { id: userId })
+          )
+        )
+      )
+    },
   revisionhistory_display_author: true
 });

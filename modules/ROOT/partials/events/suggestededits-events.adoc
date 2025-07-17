@@ -3,7 +3,8 @@ The following events are provided by the xref:{plugincode}.adoc[{pluginname} plu
 [cols="1,1,2",options="header"]
 |===
 |Name |Data |Description
-|suggestededitsBeginReview |N/A |The Suggested Edits view has opened.
-|suggestededitsReviewComplete |N/A |A review in the Suggested Edits view has been completed.
-|suggestededitsReviewCancelled |N/A |A review in the Suggested Edits view was cancelled.
+|SuggestedEditsBeginReview |N/A |The Suggested Edits view has opened.
+|SuggestedEditsReviewComplete |N/A |A review in the Suggested Edits view has been completed.
+|SuggestedEditsReviewCancelled |N/A |A review in the Suggested Edits view was cancelled.
+|SuggestedEditsHasChangesUpdate |`+hasChanges+` |The Suggested Edits model is updated. The `+hasChanges+` data is a boolean value indicating whether there are suggestions to review.
 |===

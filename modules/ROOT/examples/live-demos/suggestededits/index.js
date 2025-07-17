@@ -1,24 +1,24 @@
 /** Fake user database */
 const userDb = {
   adamhayes: {
-      id: 'adamhayes',
-      name: 'Adam Hayes',
-      avatar: `https://randomuser.me/api/portraits/men/4.jpg`,
+    id: 'adamhayes',
+    name: 'Adam Hayes',
+    avatar: `https://randomuser.me/api/portraits/men/4.jpg`,
   },
   martincook: {
-      id: 'martincook',
-      name: 'Martin Cook',
-      avatar: `https://randomuser.me/api/portraits/men/5.jpg`,
+    id: 'martincook',
+    name: 'Martin Cook',
+    avatar: `https://randomuser.me/api/portraits/men/5.jpg`,
   },
   kalebwilson: {
-      id: 'kalebwilson',
-      name: 'Kaleb Wilson',
-      avatar: `https://randomuser.me/api/portraits/men/6.jpg`,
+    id: 'kalebwilson',
+    name: 'Kaleb Wilson',
+    avatar: `https://randomuser.me/api/portraits/men/6.jpg`,
   },
   sarahjones: {
-      id: 'sarahjones',
-      name: 'Sarah Jones',
-      avatar: `https://randomuser.me/api/portraits/women/1.jpg`,
+    id: 'sarahjones',
+    name: 'Sarah Jones',
+    avatar: `https://randomuser.me/api/portraits/women/1.jpg`,
   }
 };
 

@@ -1,11 +1,10 @@
 [cols="1,3",options="header"]
 |===
 |Command |Description
-
-|suggestededits |Toggle the Suggested Edits view
+|suggestededits |Toggles the Suggested Edits view.
 |===
 
-.Examples
+.Example
 [source,js]
 ----
 tinymce.activeEditor.execCommand('suggestededits');

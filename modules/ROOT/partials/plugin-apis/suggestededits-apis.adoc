@@ -7,7 +7,7 @@
 |hasChanges |N/A |Returns a boolean value indicating whether the document contains any suggested edits.
 |===
 
-== Examples
+.Examples
 
 [source,js]
 ----
@@ -25,7 +25,7 @@ tinymce.activeEditor.plugins.suggestededits.hasChanges();
 ----
 
 [[get_model]]
-== `getModel` Example
+.`getModel` Example
 
 This example demonstrates how to submit the current document and model to a server, to ensure they are saved synchronously. The current model is retrieved using the `getModel` API.
 
@@ -76,7 +76,7 @@ tinymce.init({
 ----
 
 [[set_model]]
-== `setModel` Example
+.`setModel` Example
 
 This example demonstrates how to set the model and the document in the editor, after fetching them from a server. The `setModel` method sets the current model of the document and the editor content, as generated from that model.
 
@@ -101,7 +101,7 @@ tinymce.init({
 ----
 
 [[reset_model]]
-== `resetModel` Example
+.`resetModel` Example
 
 This example demonstrates how to reset the model to the current content of the editor, clearing all suggestions. The `resetModel` method generates a new model from the current content and sets it as the current model.
 
@@ -130,7 +130,7 @@ tinymce.init({
 ----
 
 [[has_changes]]
-== `hasChanges` Example
+.`hasChanges` Example
 
 This example demonstrates how to check if there are any changes in the document that need to be reviewed before saving. The `hasChanges` method is used to determine if there are any unreviewed edits.
 

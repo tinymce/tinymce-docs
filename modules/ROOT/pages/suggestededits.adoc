@@ -22,18 +22,18 @@ include::partial$misc/admon-iframe-only.adoc[]
 The {pluginname} plugin keeps track of every suggested edit made to the document by the current user, as the edits are made, and stores this metadata in an internal model of the document. These suggestions can then be reviewed in the `'suggestededits'` xref:custom-view.adoc[editor view], where each edit is highlighted in the document, and where you can accept, reject, or provide feedback. The `'suggestededits'` view is accessible via either the `suggestededits` toolbar button or menu button within the `View` menu. These edits, and any feedback provided, are stored in the model provided by the plugin xref:#get_model[`+get_model()+` API].
 
 [IMPORTANT]
-This model should be saved externally alongside the document, and loaded into the editor with the xref:#suggestededits_model[`+suggestededits_model+` option]. This will ensure that both the document and the model are in sync, and that every user's contributions are tracked correctly.
+This model should be saved externally alongside the document, and loaded into the editor with the xref:#suggestededits_model[`+suggestededits_model+`] option. This ensures that both the document and the model are in sync, and that every user's contributions are tracked correctly.
 
 == Reviewing edits
 
-The {pluginname} plugin provides a dedicated `'suggestededits'` xref:custom-view.adoc[editor view] for viewing and reviewing edits made by multiple authors. Which actions you can take in this view depends on the xref:#suggestededits_access[`+suggestededits_access+` option].
+The {pluginname} plugin provides a dedicated `'suggestededits'` xref:custom-view.adoc[editor view] for viewing and reviewing edits made by multiple authors. The available actions in this view depends on the xref:#suggestededits_access[`+suggestededits_access+` option].
 
 === Header
 
 The view contains a few controls to manage the review process: 
 
 * Show edits: Toggles whether suggested edits are shown. When hidden, the view shows what the document will look like if the review is completed.
-* Complete review: Ends the review, applying resolved suggestions to the document.
+* Complete review: Ends the review, applying resolved suggestions to the document. Unresolved changes remain in the document for future review.
 * Cancel: Ignores any resolved suggestions and makes no change to the document. Feedback given on suggestions will be retained.
 
 === Document
@@ -65,21 +65,26 @@ At the top of the sidebar, there is also a dropdown menu to apply review actions
 
 === Finishing a review
 
-When you complete a review, any resolved suggestions will be applied to the document and will no longer be tracked in the model as suggestions, including any feedback on resolved suggestions. This means that any accepted edits will remain in the docuemnt, and any rejected edits will be reverted to the state before the suggestion was made. More specifically, review actions will apply the following to the document:
+When completing a review, any resolved suggestions will be applied to the document and will no longer be tracked in the model as a suggestion, including any feedback on "resolved" suggestions. Any "accepted" edits will remain in the document, and any "rejected" edits will be reverted to the state before the suggestion was made.
 
-* When added content is -
-** Accepted: The content will remain in the document.
-** Rejected: The content will be removed from the document.
+Review actions will apply the following to the document:
 
-* When modified content is -
-** Accepted: The content will keep the current formats and attributes.
-** Rejected: The content will revert to the formats and attributes it had before the edit was made.
+When added content is:
 
-* When removed content is -
-** Accepted: The content will be remain removed from the document.
-** Rejected: The content will be restored to the document.
+* Accepted: The content will remain in the document.
+* Rejected: The content will be removed from the document.
 
-If you cancel your review, no resolved suggestions will be applied to the document and all suggestions will remain in the model, including any feedback provided during that review session.
+When modified content is:
+
+* Accepted: The content will retain the current formats and attributes.
+* Rejected: The content will revert to modified formats and attributes to match the content state before the edit was made.
+
+When removed content is:
+
+* Accepted: The content will be removed from the document.
+* Rejected: The removed content will be restored to the document.
+
+If a review is canceled, no resolved suggestions will be applied to the document. All suggestions, including any feedback provided during that review session, will remain stored in the model.
 
 == Initial setup
 

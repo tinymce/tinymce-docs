@@ -1,11 +1,11 @@
 [[pagebreak_split_block]]
 == `+pagebreak_split_block+`
 
-By default, page breaks automatically split block elements (such as paragraphs, lists, or tables) at the cursor position while preserving the structure and formatting of the content. This option can be used to disable this behavior by setting it to `false` if this is undesired.
+When enabled this option makes it easier to split block elements with a page break.
 
 *Type:* `+Boolean+`
 
-*Default value:* `+true+`
+*Default value:* `+false+`
 
 *Possible values:* `+true+`, `+false+`
 
@@ -13,11 +13,10 @@ By default, page breaks automatically split block elements (such as paragraphs, 
 
 [source,js]
 ----
-// Disable the block splitting behavior
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'pagebreak',
   toolbar: 'pagebreak',
-  pagebreak_split_block: false
+  pagebreak_split_block: true
 });
 ----

@@ -8,6 +8,7 @@ Specifies the {productname} license key. Required for self-hosted deployments of
 * `undefined` - Use this when loading from {cloudname} with an API key
 * `'gpl'` - For open source projects using GPL license
 * `'T8LK:...'` - For commercial {productname} installations (must use this prefix for version 8+)
+* `'GPL+T8LK:'` - For open source projects that require premium features while maintaining GPL compliance.
 
 [NOTE]
 ====

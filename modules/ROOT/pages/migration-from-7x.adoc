@@ -35,10 +35,13 @@ Any items marked **"High"** level require immediate attention during migration.
 |Method deprecated. Use `dispatch()` for event handling.
 |Medium
 
+<<<<<<< Updated upstream
 |xref:pagebreak-split-block-default[pagebreak_split_block]
 |The default value changed from `false` to `true`, affecting how page breaks interact with block elements.
 |Medium
 
+=======
+>>>>>>> Stashed changes
 |xref:editor-documentbaseurl-removal[editor.documentBaseUrl]
 |Undocumented property removed. Use `editor.editorManager.documentBaseURI` instead.
 |Low
@@ -209,13 +212,13 @@ For complete details on license key manager setup and troubleshooting, see xref:
 This change improves security and aligns with DOMPurify's recommended defaults. However, existing content and integrations that relied on the previous, less strict sanitization behavior may be impacted.
 ====
 
-==== Key Changes
+**Key Changes**:
 
 * **DOMPurify upgraded to 3.2.6**
 * **`SAFE_FOR_XML` enabled** — This setting enforces stricter handling of comments and attribute values, preventing certain XSS vectors.
 * **Content Impact** — HTML comments containing tags, Internet Explorer conditional comments, and attributes with HTML-like values may now be removed during sanitization. Content that was previously allowed may be stripped.
 
-*Impact*: This change improves security by preventing potential XSS attacks through comments and attributes that were previously allowed. However, it may also result in content being stripped or altered unexpectedly.
+**Impact**: This change improves security by preventing potential XSS attacks through comments and attributes that were previously allowed. However, it may also result in content being stripped or altered unexpectedly.
 
 **Migration Steps:**
 
@@ -253,39 +256,20 @@ For information on disabling DOMPurify sanitization (not recommended), see xref:
 === Split button CSS structure updates
 // #TINY-8665
 
-{productname} {release-version} updates the internal structure of split buttons. Split buttons now render as two separate components with updated CSS classes:
+{productname} {productmajorversion} updates the internal structure of split buttons. Split buttons now render as two separate components for the main action and the dropdown chevron.
 
-* `.tox-split-button__main` — Main action button
-* `.tox-split-button__chevron` — Dropdown chevron button
+**Impact**: This change only affects users with custom skins.
 
-**Impact**: This change improves the flexibility of split button styling and allows for more granular control over each component.
+**Migration steps**:
 
-**Migration steps:**
-
-Update all CSS selectors and styles that previously targeted the unified `.tox-split-button` class to target the new `.tox-split-button__main` and `.tox-split-button__chevron` classes.
-
-[source,css]
-----
-/* Before TinyMCE 8.0 */
-.tox-split-button {
-  /* Previous styling approach */
-}
-
-/* TinyMCE 8.0+ */
-.tox-split-button__main {
-  /* Main button styling */
-}
-
-.tox-split-button__chevron {
-  /* Chevron button styling */
-}
-----
+If you have a custom skin, rebuild it using the {productname} {productmajorversion} codebase. See xref:creating-a-skin.adoc[Creating a Skin] for guidance on the custom skin development process.
 
 **Migration checklist:**
 
-* [ ] Search your CSS for `.tox-split-button` and update to use `.tox-split-button__main` and `.tox-split-button__chevron`.
-* [ ] Test all split button styles in your application to ensure they render correctly.
-* [ ] Update any custom plugins that use split buttons to reflect the new structure.
+* [ ] Identify if you are using a custom skin.
+* [ ] Rebuild your custom skin using the {productname} {productmajorversion} codebase.
+* [ ] Test your custom skin with split buttons in {productname} {productmajorversion}.
+* [ ] Refer to xref:creating-a-skin.adoc[Creating a Skin] for details.
 
 == Core API Changes
 
@@ -294,38 +278,37 @@ Update all CSS selectors and styles that previously targeted the unified `.tox-s
 
 IMPORTANT: The following sections detail important changes that require updates to your code. Please review each section carefully.
 
-=== Removed Methods
+=== Updated Methods
 
-[[editor-selection-setcontent-deprecated]]
-==== editor.selection.setContent
-[.discrete]
-// #TINY-12109
+[[skipfocus-consolidation]]
+==== skipFocus and skip_focus
+// #TINY-12044
 
-The `editor.selection.setContent` API has been deprecated and will be removed in {productname} 9.
+The `skipFocus` and `skip_focus` options for the `ToggleToolbarDrawer` command have been consolidated into a single, more consistent argument. This reduces API complexity and clarifies the intended behavior.
 
-*Impact*: This change simplifies content manipulation by consolidating insertion methods.
+**Impact**: This change simplifies focus management, reducing the risk of confusion and unexpected behavior.
 
 **Migration steps:**
 
-To replace `editor.selection.setContent`, use `editor.insertContent` instead. The new method is more consistent with other content manipulation methods in {productname}.
-
-.Example Usage
-[source,javascript]
+[source, javascript]
 ----
-// Deprecated in TinyMCE 8, will be removed in 9
-editor.selection.setContent('<p>New content</p>');
+// Old approach (Deprecated) in TinyMCE 8
+editor.execCommand('ToggleToolbarDrawer', { skip_focus: false }, { skipFocus: true });
 
-// Recommended replacement
-editor.insertContent('<p>New content</p>');
+// New approach (Recommended)
+editor.execCommand('ToggleToolbarDrawer', false, { skipFocus: true });
 ----
 
 **Migration checklist:**
 
-* [ ] Replace all instances of `editor.selection.setContent` with `editor.insertContent`
-* [ ] Update custom plugins that use the old method
-* [ ] Test content insertion in your editor instances
+* [ ] Locate all instances of `ToggleToolbarDrawer` command usage
+* [ ] Replace `skip_focus` with `skipFocus` in command options
+* [ ] Update any custom plugins using this command
+* [ ] Test toolbar drawer behavior after changes
 
 '''
+
+=== Removed Methods
 
 [[editor-documentbaseurl-removal]]
 ==== editor.documentBaseUrl
@@ -376,34 +359,36 @@ For more information see: link:https://www.tiny.cloud/docs/tinymce/latest/apis/t
 
 '''
 
-[[skipfocus-consolidation]]
-==== skipFocus and skip_focus
-// #TINY-12044
+=== Deprecated Methods
 
-The `skipFocus` and `skip_focus` options for the `ToggleToolbarDrawer` command have been consolidated into a single, more consistent argument. This reduces API complexity and clarifies the intended behavior.
+[[editor-selection-setcontent-deprecated]]
+==== editor.selection.setContent
+[.discrete]
+// #TINY-12109
 
-**Impact**: This change simplifies focus management, reducing the risk of confusion and unexpected behavior.
+The `editor.selection.setContent` API has been deprecated and will be removed in {productname} 9.
+
+*Impact*: This change simplifies content manipulation by consolidating insertion methods.
 
 **Migration steps:**
 
-[source, javascript]
-----
-// Old approach (Deprecated) in TinyMCE 8
-editor.execCommand('ToggleToolbarDrawer', { skip_focus: false }, { skipFocus: true });
+To replace `editor.selection.setContent`, use `editor.insertContent` instead. The new method is more consistent with other content manipulation methods in {productname}.
 
-// New approach (Recommended)
-editor.execCommand('ToggleToolbarDrawer', false, { skipFocus: true });
+.Example Usage
+[source,javascript]
+----
+// Deprecated in TinyMCE 8, will be removed in 9
+editor.selection.setContent('<p>New content</p>');
+
+// Recommended replacement
+editor.insertContent('<p>New content</p>');
 ----
 
 **Migration checklist:**
 
-* [ ] Locate all instances of `ToggleToolbarDrawer` command usage
-* [ ] Replace `skip_focus` with `skipFocus` in command options
-* [ ] Update any custom plugins using this command
-* [ ] Test toolbar drawer behavior after changes
-
-
-=== Deprecated Methods
+* [ ] Replace all instances of `editor.selection.setContent` with `editor.insertContent`
+* [ ] Update custom plugins that use the old method
+* [ ] Test content insertion in your editor instances
 
 [[fire-method-deprecation]]
 ==== `fire()`
@@ -477,35 +462,7 @@ The Image and Accessibility Checker plugins now follow the latest W3C standards 
 
 For more information on the changes, see: xref:a11ychecker.adoc##image-rules[Accessibility Checker: Image rules].
 
-[[pagebreak-split-block-default]]
-==== Page Break Plugin: Export PDF/Word Compatibility and Option Updates
-// #TINY-12013, #TINY-12462
-
-The Page Break plugin has been updated to work out-of-the-box with the xref:exportpdf.adoc[Export to PDF] and xref:exportword.adoc[Export to Word] plugins, addressing a common pain point for developers. As part of this update:
-
-* The default value of the xref:pagebreak.adoc#pagebreak_separator[`pagebreak_separator`] option now uses a block tag (`<div style="break-after: page
-* The default value of the xref:pagebreak.adoc#pagebreak_split_block[`pagebreak_split_block`] option has changed from `false` to `true`.
-
-This means that by default, inserting a page break will now automatically split block elements (such as paragraphs, lists, or tables) at the cursor position, and the separator will be compatible with both export services.
-
-**Impact**: These changes improve the export experience and provide a more intuitive editing experience.
-
-**Migration steps:**
-
-* If you want to restore the previous (v7) behavior, where page breaks do not automatically split block elements and use a comment tag as the separator, set both options explicitly in your configuration:
-
-[source, javascript]
-----
-tinymce.init({
-  // ...other configuration options...
-  pagebreak_separator: '<!-- my page break -->',
-  pagebreak_split_block: false
-});
-----
-
-=== Technical Improvements and Cleanup
-
-==== Cross-Origin Resource Loading Configuration
+=== Cross-Origin Resource Loading Configuration
 // #TINY-12228, TINY-12326
 
 When upgrading to {productname} 8, you will need to review and possibly update how your integration handles cross-origin resource loading. {productname} 8 provides a new configuration option for controlling the `crossorigin` attribute on loaded resources.
@@ -523,18 +480,20 @@ When upgrading to {productname} 8, you will need to review and possibly update h
 +
 . If your application loads resources (scripts or stylesheets) from different domains:
 +
-* Configure the new crossorigin function in your `tinymce.init`:
+* Configure the new crossorigin function to control the `crossorigin` attribute for all resources.
 +
 [source, javascript]
 ----
+const crossOriginFunction = (url, resourceType) => {
+    // Returning 'anonymous' or 'use-credentials' here would explicitly set the attribute
+    return 'anonymous';
+    // return 'use-credentials';
+    // return undefined; // Omits the 'crossorigin' attribute for all resources by returning undefined 
+};
+
 tinymce.init({
   selector: "textarea",
-	crossorigin: (url, resourceType) => {
-  // Returning 'anonymous' or 'use-credentials' here would explicitly set the attribute
-	// return 'anonymous';
-	// return 'use-credentials';
-	return undefined; // Omit the 'crossorigin' attribute for all resources by returning undefined
-  },
+  crossorigin: crossOriginFunction
 });
 ----
 +
@@ -551,6 +510,8 @@ tinymce.init({
 * [ ] Review `content_css` configuration if using cross-origin stylesheets.
 
 For complete details on the new crossorigin function API, see: xref:tinymce-and-cors.adoc#crossorigin[crossorigin configuration option].
+
+=== Technical Cleanup
 
 ==== Removed Empty Files
 // #TINY-11287, #TINY-12084

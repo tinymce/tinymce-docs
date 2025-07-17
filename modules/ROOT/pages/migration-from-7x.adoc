@@ -47,6 +47,7 @@ Any items marked **"High"** level require immediate attention during migration.
 |Split button CSS classes and structure have changed.
 |Low
 |===
+====
 
 [[license-key-system-update]]
 === Transition from Version 7 License Keys to Version {release-version} License Keys
@@ -407,6 +408,7 @@ editor.dispatch('someEvent');
 * [ ] Review and update third-party plugins
 * [ ] Test all custom event handling
 
+'''
 
 === Plugin Updates
 
@@ -474,6 +476,7 @@ When upgrading to {productname} 8, you will need to review and possibly update h
 +
 * Configure the new crossorigin function to control the `crossorigin` attribute for all resources.
 +
+.Example: Configuring the crossorigin function
 [source, javascript]
 ----
 const crossOriginFunction = (url, resourceType) => {
@@ -510,8 +513,8 @@ For complete details on the new crossorigin function API, see: xref:tinymce-and-
 
 Several empty files have been removed from the codebase to reduce clutter and improve maintenance:
 
-* Empty CSS file from the Comments plugin
-* Empty LESS file from the Mentions plugin
+* Empty CSS file from the **Comments** plugin
+* Empty LESS file from the **Mentions** plugin
 
 **Impact**: These changes have no functional impact but may affect custom build processes that explicitly reference these files.
 
@@ -576,7 +579,11 @@ Upgrading to {productname} {release-version} requires integrators to update thei
 For more guidance, refer to the:
 
 * link:https://www.tiny.cloud/docs[{productname} Documentation].
-* {productname}’s new **Ask AI** widget is ready to assist you, just click the icon in the bottom-right corner of any documentation page.
 * link:https://www.tiny.cloud/contact/[Contact {supportname}] for assistance.
+* Try {productname}’s new **Ask AI** widget is ready to assist you, just click the icon in the bottom-right corner of any documentation page.
+
+image::ask-ai/ask-ai-widget.png[Ask AI Widget, width=600, align="left"]
+
+== Additional Resources
 
 For additional details on {productname} {release-version} changes, see xref:8.0-release-notes.adoc#overview[{productname} {release-version} release notes].

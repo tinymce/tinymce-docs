@@ -35,13 +35,6 @@ Any items marked **"High"** level require immediate attention during migration.
 |Method deprecated. Use `dispatch()` for event handling.
 |Medium
 
-<<<<<<< Updated upstream
-|xref:pagebreak-split-block-default[pagebreak_split_block]
-|The default value changed from `false` to `true`, affecting how page breaks interact with block elements.
-|Medium
-
-=======
->>>>>>> Stashed changes
 |xref:editor-documentbaseurl-removal[editor.documentBaseUrl]
 |Undocumented property removed. Use `editor.editorManager.documentBaseURI` instead.
 |Low

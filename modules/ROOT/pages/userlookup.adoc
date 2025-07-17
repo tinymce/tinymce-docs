@@ -8,7 +8,7 @@ This is useful when building features that rely on user context, such as comment
 
 == Using the User Lookup API
 
-Follow the steps below to configure and use the `userLookup` API within your integration.
+Follow the steps below to configure and use the `userLookup` API.
 
 [[step-1-set-the-current-user]]
 === 1. Set the current user ID
@@ -33,6 +33,7 @@ To simulate a backend lookup, define a local object that maps user IDs to their 
 
 include::partial$configuration/fetch_users.adoc[]
 
+.Example
 [source,js]
 ----
 const userDb = {
@@ -81,6 +82,7 @@ The returned array should include objects with:
 
 Once the editor is initialized, use the API to look up multiple users:
 
+.Example
 [source,js]
 ----
 editor.on('init', () => {
@@ -103,13 +105,14 @@ NOTE: All lookups are cached. If a user has already been fetched, the same promi
 [[step-4-handle-missing-or-default-users]]
 === 4. Handle default users if `fetch_users` is not provided
 
-If no `fetch_users` function is configured, TinyMCE will return fallback users:
+If no `fetch_users` function is configured, {productname} will return fallback users:
 
 * `name` will default to the ID
 * `avatar` will be a generated SVG using the first letter of the name
 
 This is useful for simpler setups or prototyping.
 
+.Example
 [source,js]
 ----
 tinymce.init({
@@ -128,8 +131,7 @@ editor.on('init', () => {
 [[step-5-integrate-user-lookup-in-a-ui]]
 === 5. Integrate User Lookup in a UI Button (Optional)
 
-Here's how you might use the API to show the current user's name via a toolbar button.
-
+. Example: Using the API to show the current user's name via a toolbar button.
 [source,js]
 ----
 setup: (editor) => {
@@ -174,6 +176,7 @@ The `userLookup` API provides two main functions:
 
 Each returned user object from `fetchUsers()` has the following structure:
 
+.Example
 [source,js]
 ----
 {

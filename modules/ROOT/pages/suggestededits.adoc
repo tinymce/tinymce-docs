@@ -32,9 +32,9 @@ The {pluginname} plugin provides a dedicated `'suggestededits'` xref:custom-view
 
 The view contains a few controls to manage the review process: 
 
-* Show edits: A toggle button which hides/unhides the highlighted annotations. 
-* Complete review: Ends the review, applying the resolved changes to the document.
-* Cancel: Exits the review with no change to the document.
+* Show edits: Toggles whether suggested edits are shown. When hidden, the view shows what the document will look like if the review is completed.
+* Complete review: Ends the review, applying resolved suggestions to the document.
+* Cancel: Ignores any resolved suggestions and makes no change to the document. Feedback given on suggestions will be retained.
 
 === Document
 
@@ -50,9 +50,9 @@ Replaced content is represented as both added and removed content, and indicates
 
 Each suggested edit is listed as a card in the sidebar and color coded by the type of change, along with the user who made the suggestion, when the edit was made, and any feedback provided on that suggestion. When selected, each suggestion can be handled in the following ways:
 
-* Accept: Resolves the edit and will be applied to the document when .
-* Reject: Removes the change from the document.
-* Revert: Undoes a previously accepted or rejected change.
+* Accept: Resolves the suggestion, applying the edit to the document when the review is completed.
+* Reject: Resolves the suggestion, turning back the edit to the original state.
+* Revert: Reverts the current "Accept" or "Reject" resolution on the suggestion.
 * Provide feedback: Opens a text area for you to provide feedback on the suggestion.
 
 Any feedback will be stored in the model and displayed underneath the card details and in chronological order. This feedback thread can be used to discuss the suggestion with the author or other reviewers. The feedback author can edit or delete their own feedback.
@@ -99,13 +99,11 @@ tinymce.init({
 });
 ----
 
-This configuration will add {pluginname} to the editor toolbar, allowing users to access the plugin features. However, to fully utilize the plugin, you will need to provide additional configuration options.
-
-
+This configuration adds {pluginname} to the editor toolbar, enabling access to the plugin features. To fully utilize the plugin, additional configuration options must be provided.
 
 == Options
 
-The {pluginname} plugin requires a model to store. If the model is not provided in the editor configuration, or is `+undefined+`, the plugin will generate a new model. The model contains all the current suggested edits, so unless you are starting a new document, the current model for the document should always be provided. This model can be retrieved from the editor at any time using the xref:#get_model[`getModel` API], and should be saved externally alongside the document.
+The {pluginname} plugin requires a model for storing suggestions. If a model is not provided in the editor configuration or is set to `+undefined+`, the plugin generates a new model. This model contains all current suggested edits. To maintain continuity across sessions, the current model for the document should always be supplied unless initializing a new document. The model can be retrieved from the editor at any time using the xref:#get_model[getModel API], and should be saved externally alongside the document.
 
 Both the xref:#user_id[`+user_id+`] and xref:#fetch_users[`+fetch_users+`] options are required to configure the xref:userlookup.adoc[User Lookup API]. This API is used in the {pluginname} plugin to provide user information for each user who has made a change, allowing other users to see who made which suggestion.
 

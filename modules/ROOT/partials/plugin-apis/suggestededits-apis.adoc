@@ -1,11 +1,11 @@
 [cols="1,1,4",options="header"]
 |===
-|Name   |Arguments    |Description
+|Name |Arguments |Description
 
 |getModel |N/A |Returns a JSON object representing the document model and all suggested edits. 
-|setModel | `+Object+` | Set the current model of the document. 
-//|resetModel |N/A |Reset the document to its original state. 
-|hasChanges |N/A |Return a boolean value indicating whether the document contains suggested edits.  
+|setModel | `+Object+` | Sets the current model of the document. 
+//|resetModel |N/A |Resets the document to its original state. 
+|hasChanges |N/A |Returns a boolean value indicating whether the document contains any suggested edits.  
 |===
 
 .Examples
@@ -22,7 +22,9 @@ tinymce.activeEditor.plugins.suggestededits.hasChanges();
 ----
 
 [[get_model]]
-.`getModel` Example
+== `getModel`
+
+.Example
 [source,js]
 ----
 const documentId = '<YOUR_DOCUMENT_ID>'; // Replace with your document ID
@@ -72,7 +74,9 @@ tinymce.init({
 ----
 
 [[set_model]]
-.`setModel` Example
+== `setModel` 
+
+.Example
 [source,js]
 ----
 const documentIds = ['doc1', 'doc2', 'doc3']; // Example document IDs
@@ -114,7 +118,9 @@ tinymce.init({
 ----
 
 [[has_changes]]
-.`hasChanges` Example
+==`hasChanges`
+
+.Example
 [source,js]
 ----
 tinymce.init({

@@ -6,7 +6,7 @@ In a `'html'`-first approach, the editor loads content normally and the {pluginn
 
 If a model is not provided the plugin will generate a new one from the initial content of the editor.
 
-When `suggestededits_content` is set to `'model'`, the plugin bypasses the editor's content load procedures and instead uses the `suggestededits_model` option to generate initial content. This would allow an integrator to only require the model for document tracking, and treat the editor content as simply a rendering of it.
+When `suggestededits_content` is set to `'model'`, the plugin bypasses the editor's content load procedures and instead uses the `suggestededits_model` option to generate the initial content. This would allow an integrator to only require the model for document tracking, and treat the editor content as simply a rendering of it.
 
 If a model is not provided, the plugin will allow the editor to load content normally and generate a new model from there (the same way `html` works).
 

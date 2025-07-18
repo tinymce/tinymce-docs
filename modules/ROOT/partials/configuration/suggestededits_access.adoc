@@ -37,7 +37,7 @@ tinymce.init({
   selector: 'textarea',  // Change this value according to your HTML
   plugins: 'suggestededits',
   toolbar: 'suggestededits',
-  suggestededits_access: 'feedback', // Change this value to set the {pluginname} view permissions
+  suggestededits_access: 'read', // Change this value to set the {pluginname} view permissions
   readonly: false // Set to true to restrict editing
 });
 ----

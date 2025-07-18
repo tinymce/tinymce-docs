@@ -322,6 +322,11 @@ editor.execCommand('ToggleToolbarDrawer', false, null, { skip_focus: true });
 
 For more information on the `ToggleToolbarDrawer` command, see: xref:editor-command-identifiers.adoc[Available Commands].
 
+=== Split buttons are now rendered as separate action and chevron buttons.
+// #TINY-8665
+
+Split buttons in {productname} {release-version} now render as two independent, focusable components instead of a single composite element. The main button performs the primary action, while the chevron button controls the dropdown menu. This design improvement enhances accessibility by allowing separate focus targets and ARIA labels for each button.
+
 === The translate API now automatically replaces three dots in a row with an ellipsis character.
 // #TINY-12155
 
@@ -339,6 +344,12 @@ Comments containing HTML-like content are removed from the editor's content by d
 
 {productname} introduces a new configuration option, xref:content-filtering.adoc#allow_html_in_comments[allow_html_in_comments], to give users control over whether HTML-like content in comments should be retained or removed. By default, this content is removed for security, but setting the option to `true` allows HTML-like content in comments to be preserved when needed.
 
+=== Split button tooltip configuration
+// #TINY-8665
+
+The `+chevronTooltip+` property provides custom tooltip text for the chevron button portion of split buttons. When `+chevronTooltip+` is not specified, {productname} automatically generates tooltip text using the pattern `+"{tooltip} menu"+`. The `+setTooltip+` method updates both main and chevron tooltips to maintain consistency.
+
+For more information, see xref:custom-split-toolbar-button.adoc[Split toolbar buttons].
 
 [[changes]]
 == Changes
@@ -349,7 +360,6 @@ Comments containing HTML-like content are removed from the editor's content by d
 // #TINY-vwxyz1
 
 // CCFR here.
-
 
 === DomParser no longer tries to fix some nodes when parsed with a context
 // #TINY-8205

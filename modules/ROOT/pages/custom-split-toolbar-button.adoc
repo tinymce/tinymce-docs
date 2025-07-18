@@ -13,6 +13,8 @@ A split button contains a basic button and a menu button, wrapped up into one to
 |text |string |Primary button |optional |Text displayed if no icon is found.
 |icon |string |Primary button |optional |
 include::partial$misc/admon-predefined-icons-only.adoc[]
+|tooltip |string |Primary button |optional |Text displayed when hovering over the main button.
+|chevronTooltip |string |Chevron button |optional |Text displayed when hovering over the chevron button. If not provided, it will be generated using the tooltip of the main button. ie: `+"{tooltip} menu"+`.
 |onAction |`+(api) => void+` |Primary button |required |Function invoked when the basic button section is clicked.
 |select |`+(value: string) => boolean+` |Choice menu items |optional |default: `false` - Function run on each option when the menu is opened to determine if it should be highlighted as active.
 |columns |number or `+'auto'+` |Drop-down menu |optional |default: `1` - Number of columns for the list of options. When set to more than 1 column, only the icon for each item will be shown.
@@ -35,6 +37,7 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 3+|
 |setText |`+(text: string) => void+` |Sets the text label to display.
 |setIcon |`+(icon: string) => void+` |Sets the icon of the button.
+|setTooltip |`+(tooltip: string) => void+` |Sets the main button tooltip.
 |===
 
 [[split-button-example-and-explanation]]

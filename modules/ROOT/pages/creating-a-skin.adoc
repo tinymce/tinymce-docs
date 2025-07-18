@@ -67,6 +67,8 @@ _Do not edit these files directly_. Instead, use them as references when creatin
 * `+modules/oxide/src/less/theme/components/toolbar-button/toolbar-button.less+`
 
 The typical workflow involves copying variables from the theme folder into the skins `skin.less` file and modifying them as needed.
+
+NOTE: Split buttons have undergone structural changes in {productname} {productmajorversion}. Previously they used a single component structure, but now use separate components for the main button and chevron areas. See xref:migration-from-7x.adoc#split-button-css-breaking-change[split button css breaking change]
 ====
 
 [NOTE]

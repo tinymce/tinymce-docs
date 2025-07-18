@@ -138,10 +138,6 @@ For more information, see xref:custom-split-toolbar-button.adoc[Split toolbar bu
 
 // CCFR here.
 
-=== Split button DOM structure changes
-// #TINY-8665
-
-The split buttons are now rendered as two separate buttons: action and dropdown. Each has its own event handling and focus management. Split button components now use `+.tox-split-button__main+` and `+.tox-split-button__chevron+` CSS classes. Custom CSS that targets split button internals may need to be updated to reflect these changes.
 
 
 [[removed]]

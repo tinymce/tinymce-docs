@@ -1,14 +1,14 @@
 [[suggestededits_content]]
 == `suggestededits_content`
-The `suggestededits_content` option determines where the initial content of the document is loaded from. With this option, you can set the content to be loaded from either the editor or the model, allowing you to control the source of truth for the document.
 
-In a `'html'`-first approach, the editor loads content normally and the {pluginname} plugin provides augmentation. The integrator is responsible for saving the model at the same time as the editor content and providing it on the next load using the `suggestededits_model` option. This allows {pluginname} to be integrated quickly into a CMS by adding the model as an additional hidden field alongside the editor content.
+The `suggestededits_content` option controls whether the content is loaded from the editor or the `suggestededits_model` model, allowing you to define the source of truth for the document. In either case, if a model is not provided, the plugin will generate a new model from the initial editor content.
 
-If a model is not provided the plugin will generate a new one from the initial content of the editor.
+When set to:
 
-When `suggestededits_content` is set to `'model'`, the plugin bypasses the editor's content load procedures and instead uses the `suggestededits_model` option to generate the initial content. This would allow an integrator to only require the model for document tracking, and treat the editor content as simply a rendering of it.
+* `'html'`: the editor loads content normally, and the plugin synchronises the model with the content. This simplifies the configuration of {pluginname} in an existing integration, by attaching the {pluginname} model as an additional field alongside the editor content.
+* `'model'`: the editor uses the `suggestededits_model` option to generate the initial content, ignoring any pre-existing content in the editor. With this configuration, you only need to store and provide the model, simplifying the integration of the {pluginname} plugin.
 
-If a model is not provided, the plugin will allow the editor to load content normally and generate a new model from there (the same way `html` works).
+NOTE: The integrator is responsible for saving the model and providing it on the next load using the `suggestededits_model` option.
 
 *Type:* `+String+`
 
@@ -16,17 +16,14 @@ If a model is not provided, the plugin will allow the editor to load content nor
 
 *Default value:* `'html'`
 
-=== Example: using `suggestededits_content`
-
+.Example: using `suggestededits_content`
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // Change this value according to your HTML
   plugins: 'suggestededits',
   toolbar: 'suggestededits',
-  user_id: 'unique-identifier', // Replace this with a unique string to identify the user
-  fetch_users, // Function to fetch users for the user lookup API
   suggestededits_model, // Load the saved model into the editor
-  suggestededits_content: 'model' // Only set this if you want to load the initial content from the model
+  suggestededits_content: 'model' // Set to 'model' if you want to load the initial content from the `suggestededits_model` option
 });
 ----

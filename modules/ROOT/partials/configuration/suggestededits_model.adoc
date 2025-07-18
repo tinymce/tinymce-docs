@@ -1,32 +1,22 @@
 [[suggestededits_model]]
 == `suggestededits_model`
 
-The {pluginname} model is a JSON object representing the full document along with all unreviewed edits. The model should be kept in sync with the editor content and loaded into the editor each time the document is opened. If the model and content are out of sync, the difference between them will be applied as a suggested edit by the current user.
-
-The `{plugincode}_model` option sets the initial model for an editor load. How this model is used depends on the `{plugincode}_content` setting.
-
-The model can be stored using the xref:#get_model[`getModel` API]. If the model is not provided the {pluginname} plugin will create a new model from the initial content of the editor, assuming all prior changes have been accepted.
+The `suggestededits_model` option loads an existing model into the {pluginname} plugin. This model contains all current suggested edits and is used to maintain continuity across sessions. If a model is not provided, the plugin generates a new model from the initial editor content.
 
 *Type:* `+Object+`
 
-=== Example: using `{plugincode}_model`
+.Example: using `{plugincode}_model` 
 
 [source,js]
 ----
-async function fetchSavedModel(documentId) {
-  // Replace this URL and logic with your actual backend API
-  const response = await fetch(`/models/${documentId}`);
-  return await response.json();
-}
-
-fetchSavedModel('your-document-id').then((savedModel) => {
-  tinymce.init({
-    selector: 'textarea',  // Change this value according to your HTML
-    plugins: 'suggestededits',
-    toolbar: 'suggestededits',
-    user_id: 'unique-identifier', // Replace with a unique string to identify the user
-    fetch_users, // Function to fetch users for the user lookup API
-    suggestededits_model: savedModel // Load the saved model into the editor
+await fetch(`/models/${documentId}`)
+  .then((response) => response.json())
+  .then((model) => {
+    tinymce.init({
+      selector: 'textarea',  // Change this value according to your HTML
+      plugins: 'suggestededits',
+      toolbar: 'suggestededits',
+      suggestededits_model: model // Load the saved model into the editor
+    });
   });
-});
 ----

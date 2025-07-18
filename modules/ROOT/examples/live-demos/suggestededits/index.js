@@ -1,25 +1,25 @@
 /** Fake user database */
 const userDb = {
-  adamhayes: {
-    id: 'adamhayes',
-    name: 'Adam Hayes',
-    avatar: `https://randomuser.me/api/portraits/men/4.jpg`,
-  },
-  martincook: {
-    id: 'martincook',
-    name: 'Martin Cook',
-    avatar: `https://randomuser.me/api/portraits/men/5.jpg`,
-  },
-  kalebwilson: {
-    id: 'kalebwilson',
-    name: 'Kaleb Wilson',
-    avatar: `https://randomuser.me/api/portraits/men/6.jpg`,
-  },
-  sarahjones: {
-    id: 'sarahjones',
-    name: 'Sarah Jones',
-    avatar: `https://randomuser.me/api/portraits/women/1.jpg`,
-  }
+    adamhayes: {
+        id: 'adamhayes',
+        name: 'Adam Hayes',
+        avatar: `https://randomuser.me/api/portraits/men/4.jpg`,
+    },
+    martincook: {
+        id: 'martincook',
+        name: 'Martin Cook',
+        avatar: `https://randomuser.me/api/portraits/men/5.jpg`,
+    },
+    kalebwilson: {
+        id: 'kalebwilson',
+        name: 'Kaleb Wilson',
+        avatar: `https://randomuser.me/api/portraits/men/6.jpg`,
+    },
+    sarahjones: {
+        id: 'sarahjones',
+        name: 'Sarah Jones',
+        avatar: `https://randomuser.me/api/portraits/women/1.jpg`,
+    }
 };
 
 const model = {
@@ -420,17 +420,17 @@ const model = {
 };
 
 tinymce.init({
-  selector: 'textarea#suggestededits',
-  height: 500,
-  plugins: 'suggestededits advlist anchor autolink code charmap emoticons fullscreen help image link lists media preview searchreplace table',
-  toolbar: 'undo redo | suggestededits | styles fontsizeinput | bold italic | align bullist numlist | table link image | code',
-  user_id: 'kalebwilson',
-  fetch_users: (userIds) => Promise.all(userIds
-    .map((userId) => new Promise((resolve) => 
-      resolve(userDb[userId] || { id: userId }))
-  )),
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
-  suggestededits_model: model,
-  suggestededits_content: 'html',
-  suggestededits_access: 'full'
+    selector: 'textarea#suggestededits',
+    height: 500,
+    plugins: 'suggestededits advlist anchor autolink code charmap emoticons fullscreen help image link lists media preview searchreplace table',
+    toolbar: 'undo redo | suggestededits | styles fontsizeinput | bold italic | align bullist numlist | table link image | code',
+    user_id: 'kalebwilson',
+    fetch_users: (userIds) => Promise.all(userIds
+        .map((userId) => new Promise((resolve) => 
+            resolve(userDb[userId] || { id: userId }))
+    )),
+    content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
+    suggestededits_model: model,
+    suggestededits_content: 'html',
+    suggestededits_access: 'full'
 });

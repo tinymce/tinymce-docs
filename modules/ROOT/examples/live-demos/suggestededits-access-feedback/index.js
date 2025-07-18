@@ -430,8 +430,8 @@ tinymce.init({
       resolve(userDb[userId] || { id: userId }))
   )),
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
-  suggestededits_model: model,
+  readonly: false,
+  suggestededits_access: 'feedback',
   suggestededits_content: 'html',
-  suggestededits_access: 'feedback', // Change this value to set  the user's permission to the Suggested Edits view
-  readonly: false, // Set to true to restrict a user's editing permission
+  suggestededits_model: model
 });

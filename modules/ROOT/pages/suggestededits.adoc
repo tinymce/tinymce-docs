@@ -19,10 +19,15 @@ include::partial$misc/admon-iframe-only.adoc[]
 
 == How it works
 
-The {pluginname} plugin keeps track of every suggested edit made to the document by the current user, as the edits are made, and stores this metadata in an internal model of the document. These suggestions can then be reviewed in the `'suggestededits'` xref:custom-view.adoc[editor view], where each edit is highlighted in the document, and where you can accept, reject, or provide feedback. The `'suggestededits'` view is accessible via either the `suggestededits` toolbar button or menu button within the `View` menu. These edits, and any feedback provided, are stored in the model provided by the plugin xref:#get_model[`+get_model()+` API].
+The {pluginname} plugin keeps track of every suggested edit made to the document by the current user, as the edits are made, and stores this metadata in an internal model of the document. These suggestions can then be reviewed in the `'suggestededits'` xref:custom-view.adoc[editor view], where each edit is highlighted in the document, and where you can accept, reject, or provide feedback. The `'suggestededits'` view is accessible via either the `suggestededits` toolbar button or menu button within the `View` menu.
 
-[IMPORTANT]
-This model should be saved externally alongside the document, and loaded into the editor with the xref:#suggestededits_model[`+suggestededits_model+`] option. This ensures that both the document and the model are in sync, and that every user's contributions are tracked correctly.
+== The model
+
+The {pluginname} model is a JSON object representing the document along with all unreviewed edits. The model should be kept in sync with the editor content and loaded into the editor each time the document is opened.
+
+The model should be retrieved from the plugin using the xref:#get_model[`+getModel+`] API, then saved externally alongside the document, and loaded into the editor with the xref:#suggestededits_model[`+suggestededits_model+`] option each time the document is opened. This ensures that both the document and the model are in sync, and that every user's contributions are tracked correctly. If the model and content are out of sync, the difference between them will be applied as a suggested edit by the current user. If a model is not provided in the editor configuration or is set to `+undefined+`, the plugin will generate a new model from the initial content.
+
+When the xref:#suggestededits_content[`+suggestededits_content+`] option is set to `'model'`, only the model is required, so keeping a synchronised document is not necessary. This also means that there will be no accidental suggestions caused by the editor content being out of sync with the model.
 
 == Reviewing edits
 
@@ -55,9 +60,9 @@ Each suggested edit is listed as a card in the sidebar and color coded by the ty
 * Revert: Reverts the current "Accept" or "Reject" resolution on the suggestion.
 * Provide feedback: Opens a text area for you to provide feedback on the suggestion.
 
-Any feedback will be stored in the model and displayed underneath the card details and in chronological order. This feedback thread can be used to discuss the suggestion with the author or other reviewers. The feedback author can edit or delete their own feedback.
+Feedback is shown in chronological order beneath the card details, when the card is selected. Feedback threads allows users to discuss suggestions before resolving them. The feedback author can edit or delete their own feedback, with the appropriate permissions in the xref:#suggestededits_access[`+suggestededits_access+`] option.
 
-At the top of the sidebar, there is also a dropdown menu to apply review actions in bulk to all suggested edits:
+At the top of the sidebar, there is a dropdown menu to apply review actions in bulk to all suggested edits:
 
 * Accept all.
 * Reject all.
@@ -108,14 +113,6 @@ This configuration adds {pluginname} to the editor toolbar, enabling access to t
 
 == Options
 
-The {pluginname} plugin requires a model for storing suggestions. If a model is not provided in the editor configuration or is set to `+undefined+`, the plugin generates a new model. This model contains all current suggested edits. To maintain continuity across sessions, the current model for the document should always be supplied unless initializing a new document. The model can be retrieved from the editor at any time using the xref:#get_model[getModel API], and should be saved externally alongside the document.
-
-Both the xref:#user_id[`+user_id+`] and xref:#fetch_users[`+fetch_users+`] options are required to configure the xref:userlookup.adoc[User Lookup API]. This API is used in the {pluginname} plugin to provide user information for each user who has made a change, allowing other users to see who made which suggestion.
-
-* The current user ID should be set with the xref:#user_id[`+user_id+` option]. The user ID should be a unique string that identifies the user, such as a username or an email address.
-
-* The xref:#fetch_users[`+fetch_users+` option] is required to provide the name and avatar for each user who has made a change, to then appear in the review. This option can be configured to retrieve this information from a backend service, as it provides an array of user IDs and expects a promise of an array, containing the appropriate data for the requested user IDs.
-
 The following configuration options affect the behavior of the {pluginname} plugin.
 
 include::partial$configuration/suggestededits_model.adoc[leveloffset=+1]
@@ -127,6 +124,11 @@ include::partial$configuration/suggestededits_access.adoc[leveloffset=+1]
 include::partial$configuration/user_id.adoc[leveloffset=+1]
 
 include::partial$configuration/fetch_users.adoc[leveloffset=+1]
+
+Both the xref:#user_id[`+user_id+`] and xref:#fetch_users[`+fetch_users+`] options are required to configure the xref:userlookup.adoc[User Lookup API]. This API is used in the {pluginname} plugin to provide user information for each user who has made a change, allowing other users to see who made which suggestion.
+
+* The current user ID should be set with the xref:#user_id[`+user_id+`] option. The user ID should be a unique string that identifies the user, such as a username or an email address.
+* The xref:#fetch_users[`+fetch_users+`] option is required to provide the name and avatar for users who have made suggestions. This option can be configured to fetch data from a backend service. The `+fetch_users+` function is given an array of user IDs and should return a promise, which resolves to an array containing data for the requested user IDs.
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

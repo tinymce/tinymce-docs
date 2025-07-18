@@ -28,8 +28,8 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'exportpdf',
   toolbar: 'exportpdf',
-// Below option is only required when using the cloud-based Export to PDF plugin from Tiny.Cloud.
-// Avoid setting it up during the trial period.
+  // Required for the cloud-based Export to PDF plugin with Tiny Cloud
+  // Create a JWT key in the Customer Portal for trial functionality to enable watermark-free exports during the trial period
   exportpdf_token_provider: () => { 
     return fetch('http://localhost:3000/jwt', { // specify your token endpoint
       method: 'POST',

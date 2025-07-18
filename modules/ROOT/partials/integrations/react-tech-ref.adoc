@@ -8,6 +8,7 @@
 ** xref:licenseKey[`+licenseKey+`]
 ** xref:cloudchannel[`+cloudChannel+`]
 ** xref:disabled[`+disabled+`]
+** xref:readonly[`+readonly+`]
 ** xref:id[`+id+`]
 ** xref:init[`+init+`]
 ** xref:initialvalue[`+initialValue+`]
@@ -143,7 +144,8 @@ xref:toolbar[`+toolbar+`]:: Specify the editor toolbar. This will *override* the
 
 These props can be updated after the editor is initialized. Note that there are xref:event-binding[other events] not mentioned here.
 
-xref:disabled[`+disabled+`]:: Should the editor be in read-only mode.
+xref:disabled[`+disabled+`]:: Should the editor be disabled.
+xref:readonly[`+readonly+`]:: Should the editor be in read-only mode.
 
 xref:initialvalue[`+initialValue+`]:: The starting value of the editor. Changing this value after the editor has loaded will reset the editor (including the editor content).
 
@@ -240,7 +242,7 @@ For information {productname} development channels, see: xref:editor-plugin-vers
 [[disabled]]
 === `+disabled+`
 
-The `+disabled+` prop can dynamically switch the editor between a "disabled" (read-only) mode (`+true+`) and the standard editable mode (`+false+`).
+The `+disabled+` prop can dynamically toggle the editor's disabled state.
 
 *Type:* `Boolean`
 
@@ -254,6 +256,26 @@ The `+disabled+` prop can dynamically switch the editor between a "disabled" (re
 ----
 <Editor
   disabled={true}
+/>
+----
+
+[[readonly]]
+=== `+readonly+`
+
+The `+readonly+` prop can dynamically switch the editor between a read-only mode (`+true+`) and the standard editable mode (`+false+`).
+
+*Type:* `Boolean`
+
+*Default value:* `+false+`
+
+*Possible values:* `+true+`, `+false+`
+
+==== Example: using `+readonly+`
+
+[source,jsx]
+----
+<Editor
+  readonly={true}
 />
 ----
 

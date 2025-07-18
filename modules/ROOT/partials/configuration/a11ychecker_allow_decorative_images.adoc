@@ -31,6 +31,9 @@ Any of these approaches explicitly tells assistive technologies to ignore these 
 
 <!-- Using both approaches -->
 <img src="pattern.png" role="presentation" alt="" />
+
+<!-- Using empty alt and title attribute -->
+<img src="decorative-border.png" alt="" title=""/>
 ----
 
 === Example of an Informative Image (non-decorative):

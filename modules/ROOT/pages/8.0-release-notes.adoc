@@ -108,16 +108,26 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 Added a new function-based `crossorigin` configuration option that provides granular control over cross-origin resource loading. The function receives the resource URL and type (script or stylesheet) as parameters and can return 'anonymous', 'use-credentials', or undefined to control the crossorigin attribute.
 
+.Example: Setting `+crossorigin="anonymous"+` to script.
+[source,html,subs="attributes+"]
+----
+<script src="{cdnurl}" referrerpolicy="origin" crossorigin="anonymous"></script>
+----
+Or;
+
+.Example: Setting reusable constant function.
 [source,js]
 ----
-tinymce.init({
-  selector: 'textarea',
-  crossorigin: (url, resourceType) => {
+const crossOriginFunction = (url, resourceType) => {
     // Returning 'anonymous' or 'use-credentials' here would explicitly set the attribute
     return 'anonymous';
     // return 'use-credentials';
-    // return undefined; // Omit the 'crossorigin' attribute for all resources
-  }
+    // return undefined; // Omits the 'crossorigin' attribute for all resources by returning undefined 
+};
+
+tinymce.init({
+  selector: "textarea",
+  crossorigin: crossOriginFunction
 });
 ----
 

@@ -2,7 +2,7 @@
 
 This project maintains the official documentation for TinyMCE, available at [https://www.tiny.cloud/docs](https://www.tiny.cloud/docs). If you have modifications or improvements to contribute, fork this repository, make the necessary changes, and submit a pull request (PR). A contributor's license agreement (CLA) must be signed before your contribution can be merged. This agreement will be sent via email when you create a PR.
 
-This project is built using [Antora](https://antora.org/), a powerful documentation site generator that supports multi-repository collaboration, content modularization, and flexible versioning.
+This project is built using [Antora](https://antora.org/)
 
 ## Contributing to the TinyMCE Documentation
 

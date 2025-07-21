@@ -14,7 +14,7 @@ The `+crossorigin+` option controls how {productname} handles cross-origin resou
 
 * `+'anonymous'+` - Sets crossorigin="anonymous".
 * `+'use-credentials'+` - Sets crossorigin="use-credentials".
-* `+''+` (empty string) - Omits the crossorigin attribute entirely.
+* `undefined` - Omits the crossorigin attribute entirely.
 
 === Example: Basic configuration
 

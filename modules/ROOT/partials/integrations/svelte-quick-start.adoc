@@ -175,7 +175,7 @@ let conf = {
 <main>
   <h1>Hello Tiny</h1>
   <Editor
-    license_key: 'gpl', // gpl for open source, T8LK:... for commercial
+    license_key: 'gpl',
     scriptSrc='/path/or/url/to/tinymce.min.js'
     value='<p>This is the initial content of the editor.</p>'
     {conf}

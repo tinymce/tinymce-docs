@@ -167,7 +167,7 @@ import Editor from '@tinymce/tinymce-vue'
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
     <editor
       id="uuid"
-      licenseKey="gpl" /* gpl for open source, T8LK:... for commercial */
+      licenseKey="gpl"
       :init="{
         plugins: 'advlist anchor autolink charmap code fullscreen help image insertdatetime link lists media preview searchreplace table visualblocks wordcount',
         toolbar: 'undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
@@ -213,7 +213,7 @@ import Editor from '@tinymce/tinymce-vue'
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
     <editor
       id="uuid"
-      licenseKey="gpl" /* gpl for open source, T8LK:... for commercial */
+      licenseKey="gpl"
       :init="{
         plugins: 'advlist anchor autolink charmap code fullscreen help image insertdatetime link lists media preview searchreplace table visualblocks wordcount',
         toolbar: 'undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',

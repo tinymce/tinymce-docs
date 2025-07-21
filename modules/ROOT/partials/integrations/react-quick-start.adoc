@@ -149,7 +149,7 @@ export default function App() {
     <>
       <Editor
         tinymceScriptSrc='/tinymce/tinymce.min.js'
-        licenseKey='gpl' // gpl for open source, T8LK:... for commercial
+        licenseKey='gpl'
         onInit={(_evt, editor) => editorRef.current = editor}
         initialValue='<p>This is the initial content of the editor.</p>'
         init={{
@@ -243,7 +243,7 @@ import 'tinymce/skins/ui/oxide/content';
 export default function BundledEditor(props) {
   return (
     <Editor
-      licenseKey='gpl' // gpl for open source, T8LK:... for commercial
+      licenseKey='gpl'
       {...props}
     />
   );
@@ -358,7 +358,7 @@ export default function App() {
     <>
       <Editor
         tinymceScriptSrc='/tinymce/tinymce.min.js'
-        licenseKey='gpl' // gpl for open source, T8LK:... for commercial
+        licenseKey='gpl'
         onInit={(_evt, editor) => editorRef.current = editor}
         initialValue='<p>This is the initial content of the editor.</p>'
         init={{

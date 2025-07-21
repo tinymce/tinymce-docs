@@ -51,7 +51,7 @@ When loading {productname} from {cloudname}:
 * The crossorigin function runs for both scripts and stylesheets loaded by {productname}.
 * Using `+'anonymous'+` sends the Origin header without credentials.
 * Using `+'use-credentials'+` sends the Origin header with credentials (not recommended for most cases).
-* An empty string `''` means no crossorigin attribute will be set, as it omits the attribute entirely for the resource.
+* Returning `undefined` means no crossorigin attribute will be set, as it omits the attribute entirely for the resource.
 * For stylesheet resources, the `+content_css_cors+` option takes precedence over the `+crossorigin+` function. See: xref:add-css-options.adoc#content_css_cors[content_css_cors] for details about cross-origin stylesheet loading.
 ====
 

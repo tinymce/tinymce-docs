@@ -44,7 +44,7 @@ import contentCss from 'tinymce/skins/content/default/content.js';
 export function render () {
   tinymce.init({
     selector: 'textarea#editor',
-    license_key: 'gpl', // gpl for open source, T8LK:... for commercial
+    license_key: 'gpl',
     plugins: 'advlist code emoticons link lists table',
     toolbar: 'bold italic | bullist numlist | link emoticons',
     skin_url: 'default',

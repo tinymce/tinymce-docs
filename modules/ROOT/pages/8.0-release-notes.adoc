@@ -26,8 +26,10 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:deprecated[Deprecated]
 * xref:known-issues[Known issues]
 
-[NOTE]
-For additional details on {productname} {release-version} breaking changes when considering upgrading, see xref:migration-from-7x.adoc[Migrating from {productname} 7 to {productname} {release-version}].
+[IMPORTANT]
+====
+This release includes breaking changes to the license key system. All commercial self-hosted deployments must update their license keys to use the new `T8LK:` prefix format. For details on this and other breaking changes when considering upgrading, see xref:migration-from-7x.adoc[Migrating from {productname} 7 to {productname} {release-version}].
+====
 
 [[new-premium-plugin<s>]]
 New Premium plugin<s>
@@ -416,7 +418,62 @@ For comprehensive documentation and examples, see: xref:userlookup.adoc[User Loo
 [[changes]]
 == Changes
 
-{productname} {release-version} also includes the following change<s>:
+{productname} {release-version} includes the following changes:
+
+=== Enhanced license key system with T8LK prefix
+
+The license key system in {productname} 8 has been enhanced to provide improved subscription access control and streamlined renewal processes. This change primarily affects self-hosted deployments, as cloud users ({cloudname}) do not require a license key.
+
+[IMPORTANT]
+====
+* If you use {cloudname}, no license key is required - your cloud subscription automatically includes the commercial license.
+* For self-hosted deployments, all commercial license keys must use the new `T8LK:` prefix format.
+* Existing TinyMCE 7 license keys cannot be made compatible with TinyMCE 8 by adding the T8LK prefix.
+====
+
+Key changes for self-hosted deployments:
+
+* New `T8LK:` prefix requirement for all commercial license keys.
+* No server communication or "phone home" checks required
+* Support for both date-based and version-locked keys
+* Streamlined hybrid deployment configuration
+* Improved support for air-gapped and offline environments
+
+[IMPORTANT]
+====
+*Cloud Deployments:*
+
+* When using {cloudname}, only an API key is required - no license key needed
+* Your cloud subscription automatically includes the commercial license
+
+*Self-hosted Deployments:*
+
+* Commercial use: Contact your account manager or visit link:https://www.tiny.cloud/my-account[Tiny Cloud Account] to obtain a T8LK-prefixed license key
+* GPL use: Set `license_key: 'gpl'` (case insensitive)
+* Open source projects using premium features: Use the combined format `license_key: 'GPL+T8LK:...'`
+
+*Required License Key Manager Setup for Self-hosted Commercial Deployments:*
+
+For commercial license keys to function, the license key manager must be properly configured. **The editor will not work without this setup.**
+
+* **Standalone hosting** (e.g., in a `/public` folder): The `+licensekeymanager+` folder is **required** to be located within the `+plugins+` folder alongside all other plugins.
+* **Bundled applications**: The `+licensekeymanager/index.js+` file is **required** to be imported, otherwise the editor will result in a disabled state.
+
+.Example: Importing the License Key Manager in a bundled application
+[source,javascript]
+----
+import 'tinymce/plugins/licensekeymanager';
+----
+
+====
+
+=== Upgrading from TinyMCE 7
+
+* *Cloud Users ({cloudname})*: No license key changes needed - simply update your {productname} version.
+* *Self-hosted Users*: Contact your account manager to obtain a new T8LK-prefixed license key.
+
+For more information on the new license key system, see: xref:license-key.adoc[License Key].
+
 
 // === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1

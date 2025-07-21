@@ -119,7 +119,7 @@ ifeval::["{productSource}" == "package-manager"]
 <script>
   $('textarea#tiny').tinymce({
     height: 500,
-    license_key: '<your license key>',
+    license_key: 'gpl'
     /* other settings... */,
   });
 </script>
@@ -149,7 +149,7 @@ ifeval::["{productSource}" == "package-manager"]
     <script>
       $('textarea#tiny').tinymce({
         height: 500,
-        license_key: '<your-license-key>',
+        license_key: 'gpl'
         menubar: false,
         plugins: [
           'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',

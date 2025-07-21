@@ -1,37 +1,117 @@
-= Using the User Lookup API
+= User Lookup API
+:navtitle: User Lookup
 :description: TinyMCE User Lookup provides an API to identify the current user and retrieve user details via integration-defined methods.
-:keywords: userLookup, fetchUsers, userId, avatar, user metadata
+:keywords: userLookup, fetchUsers, user_id, user management, collaborative editing
 
 The {productname} User Lookup API enables integrations to retrieve and cache user details (such as names and avatars) and identify the current user within the editor.
 
-This is useful when building features that rely on user context, such as commenting, or displaying a list of elements container user information, and lets you manage user data efficiently with built-in caching.
+This is useful when building features that rely on user context, such as commenting, collaborative editing, or displaying user-specific information. The API provides built-in caching for efficient user data management.
 
-== Using the User Lookup API
+== How it works
 
-Follow the steps below to configure and use the `userLookup` API.
+The User Lookup API provides two main functions:
 
-[[step-1-set-the-current-user]]
-=== 1. Set the current user_id
+[cols="2,4",options="header"]
+|===
+|Method|Description
 
-The first step is to tell the editor which user is currently active. This is done using the `+user_id+` initialization option.
+|`editor.userLookup.userId`|Returns the current user's ID, set via the `user_id` configuration option.
+|`editor.userLookup.fetchUsers(userIds)`|Fetches and caches user information. Returns a Promise-based lookup object.
+|===
 
-include::partial$configuration/user_id.adoc[leveloffset=+2]
+== Basic setup
 
-To access it:
+For a basic setup, you only need to configure the `user_id` option:
+
+[source,js]
+----
+tinymce.init({
+  selector: '#editor',
+  user_id: 'current-user-id'
+});
+----
+
+For more advanced user data fetching, see the <<options,Options>> section below.
+
+== Understanding user lookup
+
+The User Lookup API handles three main scenarios:
+
+1. **Basic identification**: Setting a current user ID for editor context
+2. **Dynamic fetching**: Retrieving user details from backend systems  
+3. **Fallback behavior**: Auto-generating user data when no fetch function is provided
+
+== Data structure
+
+=== User
+
+The user is an `Object` that contains the following fields:
+
+[cols="1,1,1,3",options="header"]
+|===
+| Field      | Type       | Required? | Description
+| `id`       | `string`   | required  | The unique string ID of the user.
+| `name`     | `string`   | optional  | The display name of the user. If not provided, defaults to the `id`.
+| `avatar`   | `string`   | optional  | The URL of the user's avatar image or data URI. If not provided, an auto-generated SVG using the user's initials will be used.
+| `custom`   | `Object`   | optional  | Additional metadata for the user.
+|===
+
+.Example user object:
+[source,js]
+----
+{
+  id: 'user-1',           // Required: User identifier
+  name: 'Jane Doe',       // Optional: Display name (defaults to id)
+  avatar: 'https://...',  // Optional: Avatar URL or data URI
+  custom: {               // Optional: Additional metadata
+    role: 'admin',
+    department: 'engineering'
+  }
+}
+----
+
+== Options
+
+The following configuration options affect the behavior of the User Lookup API.
+
+include::partial$configuration/user_id.adoc[leveloffset=+1]
+
+include::partial$configuration/fetch_users.adoc[leveloffset=+1]
+
+== Usage Examples
+
+=== Basic Usage
+
+Once the editor is initialized, you can access the current user ID and fetch user information:
 
 [source,js]
 ----
 editor.on('init', () => {
+  // Get the current user ID
   console.log('Current user:', editor.userLookup.userId);
+  
+  // Fetch user information
+  const users = editor.userLookup.fetchUsers(['user-1', 'user-2']);
+  
+  users['user-1'].then((user) => {
+    console.log('User 1 name:', user.name);
+  });
+  
+  // Handle multiple users
+  Promise.all(Object.values(users)).then((allUsers) => {
+    allUsers.forEach((user) => {
+      console.log(`Fetched: ${user.name} (${user.id})`);
+    });
+  });
 });
 ----
 
-[[step-2-provide-a-user-fetcher]]
-=== 2. Provide a function to fetch user details
+NOTE: All lookups are cached. If a user has already been fetched, the same promise will be returned without calling `fetch_users` again.
 
-To simulate a backend lookup, define a local object that maps user IDs to their corresponding data. 
+[[complete-example]]
+=== Complete Example with User Database
 
-include::partial$configuration/fetch_users.adoc[leveloffset=+2]
+This example shows how to set up a complete user lookup system with a simulated backend:
 
 .Example
 [source,js]
@@ -68,51 +148,18 @@ tinymce.init({
 });
 ----
 
-This example demonstrates how to simulate user lookup in-browser. In a production environment, this function could be swapped out for a network request.
+This example demonstrates how to simulate user lookup in-browser. In a production environment, the `fetch_users` function would typically make network requests to your backend API.
 
-The returned array should include objects with:
+[[fallback-behavior]]
+=== Fallback Behavior
 
-* `id` (string) - Required
-* `name` (string) - Optional (defaults to `id`)
-* `avatar` (string, URL or data URI) - Optional (auto-generated SVG fallback if missing)
-* `custom` (object) - Optional metadata
+If no `fetch_users` function is configured, {productname} will return fallback users with auto-generated data:
 
-[[step-3-fetch-user-information]]
-=== 3. Fetch user information
+* `name` defaults to the user ID
+* `avatar` is an auto-generated SVG using the first letter of the name
 
-Once the editor is initialized, use the API to look up multiple users:
+This is useful for simpler setups or prototyping:
 
-.Example
-[source,js]
-----
-editor.on('init', () => {
-  const users = editor.userLookup.fetchUsers(['user-1', 'user-2']);
-
-  users['user-1'].then((user) => {
-    console.log('User 1 name:', user.name);
-  });
-
-  Promise.all(Object.values(users)).then((allUsers) => {
-    allUsers.forEach((user) => {
-      console.log(`Fetched: ${user.name} (${user.id})`);
-    });
-  });
-});
-----
-
-NOTE: All lookups are cached. If a user has already been fetched, the same promise will be returned without calling `fetch_users` again.
-
-[[step-4-handle-missing-or-default-users]]
-=== 4. Handle default users if `fetch_users` is not provided
-
-If no `fetch_users` function is configured, {productname} will return fallback users:
-
-* `name` will default to the ID
-* `avatar` will be a generated SVG using the first letter of the name
-
-This is useful for simpler setups or prototyping.
-
-.Example
 [source,js]
 ----
 tinymce.init({
@@ -128,64 +175,46 @@ editor.on('init', () => {
 });
 ----
 
-[[step-5-integrate-user-lookup-in-a-ui]]
-=== 5. Integrate User Lookup in a UI Button (Optional)
+== Advanced Usage
 
-. Example: Using the API to show the current user's name via a toolbar button.
+[[ui-integration]]
+=== UI Integration Example
+
+This example shows how to create a toolbar button that displays the current user's information:
 [source,js]
 ----
-setup: (editor) => {
-  editor.ui.registry.addButton('show-user', {
-    text: 'Show User',
-    onAction: () => {
-      const currentUser = editor.userLookup.userId;
-      const users = editor.userLookup.fetchUsers([currentUser]);
+tinymce.init({
+  selector: '#editor',
+  user_id: 'current-user',
+  setup: (editor) => {
+    editor.ui.registry.addButton('show-user', {
+      text: 'Show User',
+      onAction: () => {
+        const currentUser = editor.userLookup.userId;
+        const users = editor.userLookup.fetchUsers([currentUser]);
 
-      users[currentUser].then((user) => {
-        editor.notificationManager.open({
-          text: `Logged in as: ${user.name}`,
-          type: 'info'
+        users[currentUser].then((user) => {
+          editor.notificationManager.open({
+            text: `Logged in as: ${user.name}`,
+            type: 'info'
+          });
         });
-      });
-    }
-  });
-}
+      }
+    });
+  },
+  toolbar: 'show-user'
+});
 ----
 
-Then add this to your toolbar:
+[[apis]]
+== APIs
 
-[source,js]
-----
-toolbar: 'show-user'
-----
+The User Lookup API provides the following methods:
 
-[[summary]]
-== Summary
-
-The `userLookup` API provides two main functions:
-
-[cols="2,4",options="header"]
+[cols="3,4,2",options="header"]
 |===
-|Function|Description
+|Method|Description|Return Type
 
-|`editor.userLookup.userId`|Returns the current user’s ID, set via the `user_id` option.
-|`editor.userLookup.fetchUsers(userIds)`|Fetches and caches user information from a backend.
+|`editor.userLookup.userId`|Gets the current user's ID, set via the `user_id` configuration option.|`string`
+|`editor.userLookup.fetchUsers(userIds)`|Fetches and caches user information for the specified user IDs. Returns an object where each key is a user ID and each value is a Promise that resolves to the user object.|`Object<string, Promise<UserObject>>`
 |===
-
-== Example User Object
-
-Each returned user object from `fetchUsers()` has the following structure:
-
-.Example
-[source,js]
-----
-{
-  id: 'user-1',
-  name: 'Jane Doe',
-  avatar: 'https://example.com/jane.png',
-  custom: {
-    role: 'admin',
-    department: 'engineering'
-  }
-}
-----

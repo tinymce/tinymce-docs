@@ -182,7 +182,7 @@ ifeval::["{productSource}" != "cloud"]
     <script>
       tinymce.init({
         selector: '#mytextarea',
-        license_key: 'gpl|<your-license-key>'
+        license_key: 'gpl' // gpl for open source, T8LK:... for commercial
       });
     </script>
   </head>

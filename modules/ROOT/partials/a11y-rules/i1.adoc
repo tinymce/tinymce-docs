@@ -1,0 +1,73 @@
+[[I1]]
+==== I1 - Conflicting or incomplete image accessibility
+
+*Rule description:* this rule checks that all images have complete and non-conflicting accessibility information. It flags images that send mixed signals about their purpose (both decorative and informative) or have incomplete accessibility information. When `+a11ychecker_allow_decorative_images+` is `+false+`, this rule also flags decorative images as not allowed.
+
+===== {pluginname} rule details - I1
+
+Notification level (severity):: Error
+
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
+
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
+
+WCAG 2.1 specification:: 
+* link:https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html[G95 - Providing short text alternatives that provide a brief description of the non-text content].
+* link:https://www.w3.org/WAI/WCAG21/Techniques/failures/F38.html[F38 - Using an empty alt attribute on an image that has a text alternative in another attribute].
+
+include::partial$misc/admon-accessibility-rule-i3-can-also-be-applied.adoc[]
+
+.Examples
+[%collapsible]
+====
+.Non-compliant examples
+[source,html]
+----
+<!-- Mixed signals: has alt text but marked as decorative -->
+<img src="logo.jpg" alt="Company Logo" role="presentation">
+
+<!-- Incomplete: no accessibility information -->
+<img src="chart.jpg">
+
+<!-- Conflicting: decorative intent with aria-label -->
+<img src="icon.jpg" role="presentation" aria-label="Icon">
+
+<!-- Conflicting: empty alt with aria-label -->
+<img src="decoration.jpg" alt="" aria-label="Decoration">
+
+<!-- Conflicting: decorative with title (interferes with intent) -->
+<img src="spacer.gif" role="presentation" title="Spacer">
+
+<!-- Invalid: empty role -->
+<img src="photo.jpg" alt="Description" role="">
+
+<!-- When decorative not allowed (if a11ychecker_allow_decorative_images = false) -->
+<img src="spacer.gif" alt="" role="presentation">
+----
+
+These examples show various accessibility issues: mixed signals, incomplete intent, and decorative images when not allowed.
+
+.Compliant examples
+[source,html]
+----
+<!-- Informative image with meaningful alt text -->
+<img src="logo.jpg" alt="Company Logo">
+
+<!-- Decorative image with empty alt -->
+<img src="divider.png" alt="">
+
+<!-- Decorative image with role only -->
+<img src="spacer.gif" role="presentation">
+
+<!-- Decorative image with both (redundant but valid) -->
+<img src="pattern.jpg" alt="" role="presentation">
+
+<!-- Informative image with supporting aria-describedby -->
+<img src="chart.png" 
+     alt="Sales performance chart" 
+     aria-describedby="chart-desc">
+<p id="chart-desc">Detailed breakdown of Q3 sales performance...</p>
+----
+
+These examples demonstrate proper accessibility markup with clear intent and ARIA compliance.
+====

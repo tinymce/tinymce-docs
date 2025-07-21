@@ -1,55 +1,362 @@
 = License key
 :description_short: {productname} License Configuration Guide | {productname}
-:description: Learn how to configure license key and stop {productname} from running in the evaluation mode.
+:description: Learn how to configure a license key in {productname}.
 :keywords: {productname}, cloud, script, textarea, apiKey, faq, license key, frequently asked questions,
+
+== Overview
+{productname} 8 uses an enhanced license key system to ensure compliance with {productname} licensing terms.
 
 [IMPORTANT]
 ====
-{productname} 7 is licensed under the GNU General Public License Version 2 or later. A new configuration option called 'license_key' requires developers to make a conscious decision to use {productname} with the GPLv2+ license or with a commercial license.
+{productname} is licensed under the GNU General Public License Version 2 or later. A configuration option called `+'license_key'+` introduced in {productname} 7 requires developers to make a conscious decision to use {productname} with the GPLv2+ license or with a commercial license.
 
-If you are using {productname} in a self-hosted environment, a console log warning message will display if the license key config option is missing or invalid. This message aims to ensure compliance with licensing requirements and provide transparency during the evaluation period.
+When using {productname} 8 in a self-hosted environment, a license key must be provided and it must be valid. Otherwise, the editor will be disabled. A license key is not required when loading {productname} from {cloudname}, as it is already under a commercial license.
 
-This message will not be shown when loading {productname} from {cloudname}, as it is already under a commercial license.
+In addition, when using {productname} 8 in a self-hosted environment for commercial use, a commercial license key manager addon is required in order for the editor to operate.
 ====
 
 include::partial$misc/setting-the-license.adoc[]
+
+== Setting up the Commercial License Key Manager
+
+[NOTE]
+====
+`+'licensekeymanager'+` does not need to be added to the `+plugins+` configuration option.
+====
+
+A commercial license key manager (`+licensekeymanager+`) is required to be loaded by the editor when using a commercial license key. The commercial license key manager can be set up like any other plugin for self-hosted installations. However, it does not need to be specified in the `+plugins+` configuration option as the editor will attempt to automatically load the license key manager when required.
+
+The commercial license key manager is available:
+
+* in a purchased self-hosted plan - a `licensekeymanager` folder will be present in the `plugins` folder of the {productname} `+.zip+`.
+* in a purchased self-hosted addon - a `licensekeymanager` folder will be present in addition to the purchased addon.
+* as a standalone addon - a `licensekeymanager` folder will be present.
+
+[IMPORTANT]
+====
+The following setup steps are **required** for the editor to function with commercial license keys. The editor will not work without proper license key manager configuration.
+====
+
+If hosting {productname} standalone, for example, in a `/public` folder, **ensure** the `+licensekeymanager+` folder is included in the `+plugins+` folder with all of the other plugins. The editor will not function without this.
+
+If bundling {productname} as part of an application **ensure** the `+licensekeymanager/index.js+` file is imported, otherwise the editor will not function without this.
+
+.Example importing the License Key Manager in a bundled application
+[source,javascript]
+----
+import 'tinymce/plugins/licensekeymanager';
+----
+
+== License Types and Deployment Options
+
+=== License Key Types
+
+There are two different license types:
+
+. **GPL license**
+. **Commercial license**
+
+A commercial license can be broken down into sub-types:
+
+[cols="1,2,2", options="header"]
+|===
+| **Type** | **Key Features** | **Best For**
+
+| Time-based Keys
+a|
+* Expiry date
+* Optional grace period
+* Premium plugin access
+* No patch version locking
+a|
+  ** Developers that can perform regular license rotation.
+  ** Developers that want a license key to work across patch versions.
+| Version-locked Keys
+a|
+* Specific patch version only
+* No expiration date
+* Premium plugin access
+a|
+* Environments where regular license key rotation cannot be performed.
+|===
+
+=== Deployment Types
+
+[cols="1,2,2", options="header"]
+|===
+| **Type** | **Key Configuration** | **Capabilities**
+
+| Cloud-only
+a|
+* API key required for:
+  ** Cloud services access
+  ** Premium plugin access
+  ** Automatic updates
+* No license key required as its automatically issued. (defaults to a commercial license)
+a|
+* Fully managed service:
+  ** No local deployment needed
+  ** Automatic updates and CDN delivery
+
+| Self-hosted
+a|
+* A GPL or commercial license key is required
+* No API key required
+a|
+* Complete local control:
+  ** Self-hosted editor and premium plugins
+  ** Custom deployment options
+  ** No cloud dependencies
+  ** No internet connectivity needed
+
+| Hybrid
+a|
+* Both keys required:
+  ** API key for cloud features
+  ** License key for self-hosted editor and self-hosted premium plugins
+a|
+* Best of both worlds:
+  ** Access to cloud features
+  ** Custom deployment options
+|===
+
+== License States
+
+[cols="1,2,1", options="header"]
+|===
+| State | Features & Behavior | Applicable To
+
+| Active
+a|
+* Full editor and premium plugin functionality
+* No restrictions on features
+| All license types
+
+| Grace Period
+a|
+* All features remain functional
+* Warnings that the license key is in grace period and will be not work in the future
+| Time-based keys only
+
+| Expired
+a|
+* Editor is disabled
+* Must obtain a new license key to continue using {productname}
+| Time-based keys only
+| Invalid
+a|
+* Editor is disabled
+* Editor notifications notifying that the license key is not valid
+| All license types
+|===
 
 == FAQ
 
 === What does the GPL license mean?
 
-{productname} 7 is licensed under the GNU General Public License Version 2 or later, often abbreviated to GPLv2+. https://www.gnu.org/licenses/old-licenses/gpl-2.0.html[Read more about the license terms here.^]
+{productname} 8 is licensed under the GNU General Public License Version 2 or later, often abbreviated to GPLv2+. https://www.gnu.org/licenses/old-licenses/gpl-2.0.html[Read more about the license terms here.^]
 
 The GPLv2+ license was chosen to provide the best compatibility with existing GPL licensed open source projects.
 
 === What is the difference between a license key and the API key?
 
-The **API key** is used when loading {productname} from the {cloudname}. The **license key** is used to declare the license terms when self-hosting {productname}.
+The **API key** is used when loading {productname} from the {cloudname}. The license key is used to declare the license terms when self-hosting {productname}.
 
 === Who needs to get a license key?
 
-Anyone who intends to self-host {productname} will need to provide a valid commercial license key or declare their intention to use {productname} under the GPLv2+ license.
+Anyone who intends to self-host {productname} will need to obtain a T8LK-prefixed commercial license key or use GPL mode
 
 === How will I know if this change affects me?
 
-If {productname} detects that the `license_key` configuration is missing or invalid, it will display a console log warning. If you have actively suppressed or hidden this message, please remove those overrides. If no notification appears, you are not affected.
+If {productname} detects that the `license_key` configuration is missing or invalid, it will display a console log warning message and/or editor notification and set the editor to disabled. These warnings and restrictions are designed to ensure compliance and provide transparency during evaluation periods.
+
+[TIP]
+If you have actively suppressed or hidden these messages, please remove those overrides to maintain proper license validation. If no notification appears, you are not affected.
 
 === Should I be using both an API key and a license key?
 
-No, an API key and a license key should not be used simultaneously. The API key should only be used if {productname} is loaded from the {cloudname}. If {productname} is being self-hosted, the license key option should be used instead.
+See the <<Deployment Types>> section above for more information.
 
-=== Will {productname} “phone home” to check the license key?
+[IMPORTANT]
+====
+Only use both keys in properly configured hybrid deployments. Using both keys without proper hybrid deployment configuration **may cause** validation conflicts and unexpected behavior.
+====
 
-No. {productname} does not contact any server to validate the license key.
+=== Will {productname} "phone home" to check the license key?
+
+No, {productname} does not contact any server to validate the license key for self-hosted deployments.
+
+If using a cloud or hybrid deployment configuration, the license key may be checked by {cloudname}.
 
 === What happens if I don't provide a valid license key?
 
-The console log message or notification will persist until a valid license key or 'gpl' is provided. 
+In addition to the editor being disabled, a console log warning message and/or editor notification will persist until a valid license key or 'gpl' is provided.
 
 === Why is a license key required?
 
 The license key ensures compliance with {productname} licensing terms. It's part of our efforts to refine the license key system and may have additional functionalities in the future.
 
+=== How do I obtain a {productname} 8 license key?
+
+To obtain a new {productname} 8 license key (T8LK-prefixed):
+
+* *Existing customers*: Contact your account manager or visit link:https://www.tiny.cloud/my-account[Tiny Cloud Account] to upgrade your subscription.
+* *New customers*: Visit link:https://www.tiny.cloud/pricing[Tiny Cloud Pricing] to purchase a new license.
+
+[IMPORTANT]
+====
+Existing {productname} 7 license keys cannot be modified to work with {productname} 8 by adding the T8LK prefix. A new {productname} 8 license must be obtained through the proper channels listed above.
+====
+
+=== If im upgrading from TinyMCE 7 how do I get a TinyMCE 8 license key?
+
+If you are using {cloudname} (cloud-hosted):
+
+* No license key is required - simply update your {productname} version as your cloud subscription includes the commercial license.
+
+If you are an existing {productname} 7 self-hosted customer upgrading to {productname} 8:
+
+. *Active Subscription*:
+* Contact your account manager or visit link:https://www.tiny.cloud/my-account[Tiny Cloud Account] to obtain a new T8LK-prefixed license key.
+. *Expired Subscription*:
+* Contact your account manager or visit link:https://www.tiny.cloud/pricing[Tiny Cloud Pricing] to renew your subscription.
+* A new T8LK-prefixed license key will be provided as part of the renewal process.
+
+[NOTE]
+====
+Your existing {productname} 7 license key will continue to work with {productname} 7 self-hosted installations. But, you will require a separate T8LK-prefixed license key for {productname} 8 editor instances for self-hosted installations.
+====
+
 === How can I get further assistance?
 
 For any licensing or technical support questions, see our available options on the https://www.tiny.cloud/docs/tinymce/latest/support/[support page.]
+
+=== Technical Support
+
+For licensing or technical support:
+* API key issues: Visit link:https://www.tiny.cloud/my-account[Tiny Cloud Account]
+* License key issues: Visit link:https://www.tiny.cloud/my-account[Tiny Cloud Account] or contact your account manager
+* Technical support: Visit link:https://support.tiny.cloud[Support Portal]
+* Documentation: See link:https://www.tiny.cloud/docs/tinymce/latest/[{productname} Docs]
+
+== License Key Error Messages
+
+The following table lists common license key error messages that may appear in the console or editor, along with their descriptions and solutions:
+
+[cols="1,2,2,2", options="header"]
+|===
+| Error Type | Console Message | Editor Notifications | Solution
+
+| xref:invalid-license-key[Invalid license key (General)]
+| The editor is disabled because the license key provided is invalid [+${errorType}+]
+| The editor is disabled because the license key provided is invalid.
+a| * Verify that the license key is correctly copied from your link:https://www.tiny.cloud/my-account[Tiny Cloud Account]
+* Ensure there are no extra spaces or characters in the key
+* Check if the key matches your deployment type (Cloud vs Self-hosted)
+
+| xref:load-error[Load error (Cloud)]
+| The editor is disabled because the TinyMCE API key could not be validated. The TinyMCE Commercial License Key Manager plugin is required for the provided API key to be validated but could not be loaded.
+| The editor is disabled because the TinyMCE API key could not be validated.
+a| * Verify that your API key is valid
+* Check if your subscription is active
+* Visit the link:https://support.tiny.cloud[Support Portal] if the issue persists
+
+| xref:load-error[Load error (Self-Hosted)]
+| The editor is disabled because the license key provided is invalid. The TinyMCE Commercial License Key Manager plugin is required for the provided license key to be validated but could not be loaded.
+| The editor is disabled because the TinyMCE license key could not be validated.
+a| * Check if the license key matches your deployment type: GPL or commercial, Cloud or Self-hosted
+* Ensure the license key manager is set up correctly: <<Setting up the Commercial License Key Manager>>
+
+| xref:expired[Expired]
+| The editor is disabled because the license key has expired and is no longer valid
+| The editor is disabled because the license key has expired and is no longer valid.
+a| * Visit link:https://www.tiny.cloud/my-account[Tiny Cloud Account] to obtain a new license key
+* Update your configuration with the new key
+* Visit the link:https://support.tiny.cloud[Support Portal] if you believe your license should still be valid
+
+| xref:grace-period[Grace period]
+| The editor will be disabled in the near future because the license key has expired
+| The editor will be disabled in the near future because the license key has expired.
+a| * Visit link:https://www.tiny.cloud/my-account[Tiny Cloud Account] to obtain a new license key
+* Update your configuration before the grace period ends
+* Visit the link:https://support.tiny.cloud[Support Portal] if you need assistance with license renewal
+
+| xref:invalid-editor-version[Invalid editor version]
+| The editor is disabled because the license key is not valid with this version of {productname}
+| The editor is disabled because the license key is not valid with this version of {productname}.
+a| * Verify that your {productname} version matches the license key version
+* Update either your {productname} version or obtain a new license key
+* For version-locked keys, ensure you're using the correct patch version
+
+| xref:no-license-key[No license key]
+| The editor is disabled because a {productname} license key has not been provided. Make sure to provide a valid license key or add license_key: 'gpl' to the init config to agree to the open source license terms.
+| The editor is disabled because a {productname} license key has not been provided.
+a| * Add the `license_key` parameter to your {productname} configuration
+* For GPL usage, set `license_key: 'gpl'`
+* For commercial usage, enter your valid commercial license key
+
+| xref:invalid-plugin[Invalid plugin]
+| The "+${pluginCode}+" plugin requires a valid {productname} license key
+| _No editor message_
+a| * Verify that your license includes access to the premium plugin
+* Check if your license key is valid and not expired
+* Visit the link:https://support.tiny.cloud[Support Portal] if you believe you should have access to this plugin
+
+| xref:online-api-key-error-fallback[Online API Key Error (5xx - Fallback)]
+| The API key could not be validated by the API key validation server [type: +${errorType}${statusMsg}+]. Attempting fallback to provided license key.
+|
+a| * Check your internet connection
+* Verify your firewall settings allow access to the validation server
+* The editor will attempt to use the provided license key as fallback
+
+| xref:online-api-key-error-disable[Online API Key Error (4xx - Disable)]
+| The editor is disabled because the API key could not be validated by the API key validation server [type: +${errorType}${statusMsg}+]
+| The editor is disabled because the API key could not be validated by the API key validation server.
+a| * Verify that your API key is valid
+* Check if your subscription is active
+* Visit the link:https://support.tiny.cloud[Support Portal] if the issue persists
+|===
+
+=== Detailed Error Descriptions
+
+[[invalid-license-key]]
+==== Invalid license key (General)
+The provided license key is not recognized as a valid {productname} license key. This can occur if the key is malformed, expired, or doesn't match your deployment type. For self-hosted installations, ensure you're using a valid T8LK-prefixed license key. Visit the link:https://www.tiny.cloud/my-account[Tiny Cloud Account] to verify your license key.
+
+[[load-error-cloud]]
+==== Load error (Cloud)
+The TinyMCE Commercial License Key Manager plugin is automatically loaded from the Tiny Cloud CDN for cloud deployments. If it cannot be loaded, the editor will be disabled. Review your subscription details in your link:https://www.tiny.cloud/my-account[Tiny Cloud Account] to check its status.
+
+[[load-error-selfhosted]]
+==== Load error (Self-hosted)
+For self-hosted installations, the TinyMCE Commercial License Key Manager plugin is required for commercial license keys otherwise the editor will be disabled. If it cannot be loaded, see the <<Setting up the Commercial License Key Manager>> section for implementation details
+
+[[expired]]
+==== Expired
+The license key has reached its expiration date and is no longer valid for use. The editor will be disabled until a new valid license key is provided. For time-based keys, refer to the <<License Key Types>> section. To renew your license, visit link:https://www.tiny.cloud/pricing[Tiny Cloud Pricing] or contact your account manager.
+
+[[grace-period]]
+==== Grace period
+The license key has reached its initial expiration date but is still within the grace period. The editor will continue to function but will be disabled when the grace period ends. See the <<License States>> section for more information about grace periods. Contact your account manager or visit link:https://www.tiny.cloud/my-account[Tiny Cloud Account] to renew your license before the grace period expires.
+
+[[invalid-editor-version]]
+==== Invalid editor version
+The license key is not compatible with the current version of {productname}. This typically occurs with version-locked keys when using a different patch version. Visit link:https://www.tiny.cloud/docs/tinymce/latest/[TinyMCE Documentation] to check your editor version. Review the <<License Key Types>> section about version-locked keys. If you're upgrading from {productname} 7, visit link:https://www.tiny.cloud/my-account[Tiny Cloud Account] to obtain a new license key or see <<If im upgrading from TinyMCE 7 how do I get a TinyMCE 8 license key?>> for guidance. For new licenses, visit link:https://www.tiny.cloud/pricing[Tiny Cloud Pricing].
+
+[[no-license-key]]
+==== No license key
+No license key has been provided in the {productname} configuration. For self-hosted installations, you must either provide a valid commercial license key or explicitly opt into GPL usage. See the <<Setting up the Commercial License Key Manager>> section for implementation details and the "<<What does the GPL license mean?>>" section for GPL licensing information.
+
+[[invalid-plugin]]
+==== Invalid plugin
+The attempted use of a premium plugin without a valid commercial license key. This occurs when trying to use premium features with a GPL license or an invalid commercial license. Review your subscription details in your link:https://www.tiny.cloud/my-account[Tiny Cloud Account] to verify plugin access. See the <<License Types and Deployment Options>> section for more information about license types and plugin access.
+
+[[online-api-key-error-fallback]]
+==== Online API Key Error (5xx - Fallback)
+A server-side error occurred while validating the API key. The editor will attempt to use the provided license key as a fallback mechanism. This typically occurs in hybrid deployments - see the <<Deployment Types>> section for proper configuration. If the issue persists, visit link:https://support.tiny.cloud[Support Portal] for assistance.
+
+[[online-api-key-error-disable]]
+==== Online API Key Error (4xx - Disable)
+The API key validation failed due to an invalid key or inactive subscription. The editor will be disabled until a valid API key is provided. For API key issues, visit link:https://www.tiny.cloud/my-account[Tiny Cloud Account] or see the "<<What is the difference between a license key and the API key?>>" section for clarification.
+
+For additional assistance, visit our link:https://support.tiny.cloud[Support Portal] or contact your link:https://www.tiny.cloud/my-account[Tiny Cloud Account] manager.

@@ -19,7 +19,7 @@ The `+TinyMCE.Blazor+` `+Editor+` component accepts the following properties:
   JsConfSrc="path_to_jsObj"
   Conf="@yourConf"
   ApiKey="no-api-key"
-  LicenseKey="your-license-key"
+  LicenseKey="gpl"
   ScriptSrc="/path/to/tinymce.min.js"
   ClassName="tinymce-wrapper"
 />
@@ -188,18 +188,28 @@ In your component:
 
 === `LicenseKey`
 
-Specifies the {productname} license key. Required for self-hosted deployments of {productname}. This property is not required for deployments using the {cloudname}. For more information on licensing, see: xref:license-key.adoc[License key].
 
-*Type:* `+String+`
+include::partial$integrations/common/license-key-property.adoc[]
 
-==== Example using LicenseKey
-
+==== Example: Commercial license (TinyMCE 8+)
 [source,cs]
 ----
 <Editor
-  LicenseKey="your-license-key"
+  LicenseKey="T8LK:..."
 />
 ----
+
+Use this example when you have a commercial license for TinyMCE 8 or newer. The T8LK prefix is required.
+
+==== Example: Open source GPL license
+[source,cs]
+----
+<Editor
+  LicenseKey="gpl"
+/>
+----
+
+Use this example when you're using TinyMCE under the open source GPL license in a self-hosted environment.
 
 === `ScriptSrc`
 

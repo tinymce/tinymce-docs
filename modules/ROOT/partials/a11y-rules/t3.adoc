@@ -1,0 +1,71 @@
+[[T3]]
+==== T3 - Table caption and summary
+
+*Rule description:* this rule checks that the table caption and summary does not have the same text content. The caption should explain *what* the table is about while the summary should explain *how* to navigate the data inside of the table.
+
+[NOTE]
+====
+The table `+summary+` attribute was deprecated in HTML 5, both the *what* and *how* information should be moved to the table caption.
+====
+
+===== {pluginname} rule details - T3
+
+Notification level (severity):: Error
+
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
+
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
+
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H73.html[H73 - Using the summary attribute of the table element to give an overview of data tables].
+
+.Examples
+[%collapsible]
+====
+.Non-compliant examples
+
+[source,html]
+----
+<!-- HTML4: Identical caption and summary -->
+<table summary="Quarterly Sales Report 2023">
+    <caption>Quarterly Sales Report 2023</caption>
+    <!-- ... table content ... -->
+</table>
+
+<!-- HTML4: Summary that doesn't add value -->
+<table summary="This table shows sales data">
+    <caption>Quarterly Sales Report 2023</caption>
+    <!-- ... table content ... -->
+</table>
+
+<!-- HTML5: Caption that doesn't explain structure -->
+<table>
+    <caption>Sales Data 2023</caption>
+    <!-- ... complex table content ... -->
+</table>
+----
+
+These examples show redundant or insufficient information in captions and summaries.
+
+.Compliant examples
+
+[source,html]
+----
+<!-- HTML4: Complementary caption and summary -->
+<table summary="Sales data is organized by product category (rows) and quarter (columns). Each cell contains both revenue and units sold. Totals are provided in the last row.">
+    <caption>2023 Quarterly Sales by Product Category</caption>
+    <!-- ... table content ... -->
+</table>
+
+<!-- HTML5: Comprehensive caption with both what and how -->
+<table>
+    <caption>
+        2023 Quarterly Sales by Product Category
+        (Data organized with product categories in rows and quarters in columns.
+        Each cell shows revenue and units sold, with totals in the bottom row)
+    </caption>
+    <!-- ... table content ... -->
+</table>
+----
+
+These examples show proper differentiation between what the table contains and how to navigate it.
+====

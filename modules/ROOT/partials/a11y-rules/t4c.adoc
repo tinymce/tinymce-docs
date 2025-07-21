@@ -1,0 +1,97 @@
+[[T4C]]
+==== T4C - Table heading scope
+
+*Rule description:* this rule checks that all table header (`+th+`) elements have a `+scope+` attribute clarifying what scope the heading has inside of the `+table+`. The allowed values are `+row+`, `+col+`, `+rowgroup+`, and `+colgroup+`. This is important for users of assistive technologies to be able to parse table data.
+
+==== {pluginname} rule details - T4C
+
+Notification level (severity):: Error
+
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
+
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
+
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/html/H63.html[H63 - Using the scope attribute to associate header cells and data cells in data tables].
+
+.Examples
+[%collapsible]
+====
+.Non-compliant examples
+[source,html]
+----
+<!-- Headers without scope -->
+<table>
+    <tr>
+        <th>Product</th>
+        <th>Q1</th>
+        <th>Q2</th>
+    </tr>
+    <tr>
+        <th>Widget A</th>
+        <td>100</td>
+        <td>150</td>
+    </tr>
+</table>
+
+<!-- Incorrect scope usage -->
+<table>
+    <tr>
+        <th scope="row">Name</th>
+        <th scope="row">Department</th>
+    </tr>
+    <tr>
+        <td>John Smith</td>
+        <td>Engineering</td>
+    </tr>
+</table>
+----
+
+These examples either lack scope attributes or use them incorrectly.
+
+.Compliant examples
+[source,html]
+----
+<!-- Simple table with proper scope -->
+<table>
+    <tr>
+        <th scope="col">Product</th>
+        <th scope="col">Q1</th>
+        <th scope="col">Q2</th>
+    </tr>
+    <tr>
+        <th scope="row">Widget A</th>
+        <td>100</td>
+        <td>150</td>
+    </tr>
+</table>
+
+<!-- Complex table with rowgroup and colgroup -->
+<table>
+    <thead>
+        <tr>
+            <th scope="col" rowspan="2">Department</th>
+            <th scope="colgroup" colspan="2">2023</th>
+            <th scope="colgroup" colspan="2">2024</th>
+        </tr>
+        <tr>
+            <th scope="col">Budget</th>
+            <th scope="col">Actual</th>
+            <th scope="col">Budget</th>
+            <th scope="col">Forecast</th>
+        </tr>
+    </thead>
+    <tbody>
+        <th scope="rowgroup" rowspan="2">Engineering</th>
+        <tr>
+            <th scope="row">Development</th>
+            <td>100K</td>
+            <td>95K</td>
+            <td>120K</td>
+            <td>125K</td>
+        </tr>
+    </tbody>
+</table>
+----
+
+These examples demonstrate proper use of scope attributes for different table structures.
+====

@@ -25,7 +25,7 @@ IMPORTANT: The language settings will not work unless the language pack is place
 
 == Step 3
 
-Set the language option in {productname}'s configuration to the language code in the list on xref:ui-localization.adoc#language[this page].
+Set the language option in {productname}'s configuration to the RFC5646 language code in the list on xref:ui-localization.adoc#language[this page].
 
 == Step 4
 
@@ -46,7 +46,7 @@ link:{gettiny}/language-packages/[Download the Chinese language] pack to test th
   <script type="text/javascript">
   tinymce.init({
     selector: 'textarea',
-    language: 'zh_CN',
+    language: 'zh-CN',
     directionality: 'rtl'
   });
   </script>

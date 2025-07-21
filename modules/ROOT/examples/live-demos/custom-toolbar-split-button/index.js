@@ -6,7 +6,8 @@ tinymce.init({
     editor.ui.registry.addSplitButton('myButton', {
       text: 'My Button',
       icon: 'info',
-      tooltip: 'This is an example split-button',
+      tooltip: 'Execute my action',
+      chevronTooltip: 'My Button menu options',
       onAction: () => editor.insertContent('<p>You clicked the main button</p>'),
       onItemAction: (api, value) => editor.insertContent(value),
       fetch: (callback) => {

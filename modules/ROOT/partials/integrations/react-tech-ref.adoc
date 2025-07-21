@@ -187,22 +187,22 @@ include::partial$misc/get-an-api-key.adoc[]
 [[licenseKey]]
 === `+licenseKey+`
 
-{cloudname} License key.
 
-Use this when self-hosting {productname} instead of loading from {cloudname}. For more information, see: xref:license-key.adoc[License Key].
+include::partial$integrations/common/license-key-property.adoc[]
 
-*Type:* `+String+`
-
-*Default value:* `+undefined+`
-
-*Possible values:* `undefined`, `'gpl'` or a valid {productname} license key
-
-==== Example: using `+licenseKey+`
-
+==== Example: Commercial license
 [source,jsx]
 ----
 <Editor
-  licenseKey='your-license-key'
+  licenseKey='T8LK:...'
+/>
+----
+
+==== Example: using `+licenseKey+` with GPL
+[source,jsx]
+----
+<Editor
+  licenseKey='gpl'
 />
 ----
 
@@ -384,7 +384,7 @@ For detailed information on using `+onEditorChange+`, see: xref:using-the-tinymc
 
 IMPORTANT: This option was removed with the release of the {productname} React component 4.0.0.
 
-This option was used to specify the format of the content produced by the 
+This option was used to specify the format of the content produced by the
 xref:oneditorchange[`+onEditorChange+`] event, however as it did not change the
 input format it was almost impossible to use correctly.
 

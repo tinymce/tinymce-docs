@@ -20,14 +20,16 @@ The `+crossorigin+` option controls how {productname} handles cross-origin resou
 
 [source,js]
 ----
-tinymce.init({
-  selector: "textarea",
-  crossorigin: (url, resourceType) => {
+const crossOriginFunction = (url, resourceType) => {
     // Returning 'anonymous' or 'use-credentials' here would explicitly set the attribute
     return 'anonymous';
     // return 'use-credentials';
-    // return undefined; // Omit the 'crossorigin' attribute for all resources by returning undefined
-  },
+    // return undefined; // Omits the 'crossorigin' attribute for all resources by returning undefined 
+};
+
+tinymce.init({
+  selector: "textarea",
+  crossorigin: crossOriginFunction
 });
 ----
 

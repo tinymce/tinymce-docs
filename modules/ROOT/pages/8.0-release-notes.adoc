@@ -352,7 +352,7 @@ The `+chevronTooltip+` property provides custom tooltip text for the chevron but
 For more information, see xref:custom-split-toolbar-button.adoc[Split toolbar buttons].
 
 === New User Lookup API for retrieving and caching user details
-// #TINY-12XXX
+// #TINY-11974
 
 {productname} {release-version} introduces a new xref:userlookup.adoc[User Lookup API] that enables integrations to retrieve and cache user details (such as names and avatars) and identify the current user within the editor. This API is particularly useful when building features that rely on user context, such as commenting systems or displaying lists of elements containing user information.
 

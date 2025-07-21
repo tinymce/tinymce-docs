@@ -73,7 +73,7 @@ Live demos can be added to the `modules/ROOT/examples/live-demos` directory. Ref
 liveDemo::{sub-directory-name}[]
 ```
 
-### Overriding the tinymce URL in Live Demos
+### Overriding the TinyMCE URL in Live Demos
 
 By default, live demos load TinyMCE from the URL specified in the `tinymce_live_demo_url` attribute in the `antora.yml` file. This can be overridden for specific use cases:
 

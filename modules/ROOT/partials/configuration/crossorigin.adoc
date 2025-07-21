@@ -53,26 +53,5 @@ When loading {productname} from {cloudname}:
 * For stylesheet resources, the `+content_css_cors+` option takes precedence over the `+crossorigin+` function. See: xref:add-css-options.adoc#content_css_cors[content_css_cors] for details about cross-origin stylesheet loading.
 ====
 
-=== Setting a global crossorigin function
-
-The crossorigin function can also be set globally using `+tinymce.overrideDefaults()+`:
-
-[source,js]
-----
-tinymce.overrideDefaults({
-  ...tinymce.defaultOptions, // Preserve existing defaults
-  crossorigin: (url, resourceType) => {
-    // Returning 'anonymous' or 'use-credentials' here would explicitly set the attribute
-    return 'anonymous';
-    // return 'use-credentials';
-    // return undefined; // Omit the 'crossorigin' attribute for all resources by returning undefined
-  }
-});
-----
-
-[IMPORTANT]
-====
-When using {cloudname}, preserving the existing defaults is required. Always include `+...tinymce.defaultOptions+` when using `+overrideDefaults+`.
-====
 
 For more details on the crossorigin attribute, see: link:https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin[MDN Web Docs - HTML attribute: crossorigin].

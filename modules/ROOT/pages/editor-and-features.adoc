@@ -20,7 +20,7 @@ The following example adds a script tag into the application that inserts the co
 
 [source,html,subs="attributes+"]
 ----
-<script src="{cdnurl}" referrerpolicy="origin"></script>
+<script src="{cdnurl}" referrerpolicy="origin" crossorigin="anonymous"></script>
 ----
 
 [cols="1,2,12",options="header"]
@@ -28,6 +28,7 @@ The following example adds a script tag into the application that inserts the co
 | |Value |Description
 |1 |no-api-key |Replace with your api key
 |2 |origin |A `+referrerpolicy+` specifies how much of the current page's URL is sent in the `+Referer+` header when the browser fetches page resources (for example, the {productname} editor). The use of the `+Referer+` header ensures API keys are only used on domains registered to their owners. We only care about the domain portion however (similar to the operation of `+Origin+` header), so for improved performance and privacy always set the `+referrerpolicy+` to `+origin+` when requesting {cloudname} resources.
+|3 |anonymous |the `+crossorigin="anonymous"+` attribute is required on all script tags loading {productname} from {cloudname}. This attribute ensures consistent Origin header behavior for license key validation and improves security for cross-origin script loading.
 |===
 
 image::scripttag.png[Script Tag Description]
@@ -79,12 +80,14 @@ Migrating from a self-hosted environment to {cloudname} is easy. Remove the exis
 
 NOTE: The script tag typically references `+tinymce.min.js+` hosted within the application or available at a legacy CDN.
 
-Replace the script tag with the following:
+Replace the script tag with the following, making sure to include both required attributes (`referrerpolicy` and `crossorigin`):
 
 [source,html,subs="attributes+"]
 ----
-<script src="{cdnurl}" referrerpolicy="origin"></script>
+<script src="{cdnurl}" referrerpolicy="origin" crossorigin="anonymous"></script>
 ----
+
+NOTE: When migrating to {cloudname}, both the `referrerpolicy="origin"` and `crossorigin="anonymous"` attributes are required for optimal performance and cross-browser functionality.
 
 === Step 2: Update custom plugin paths
 

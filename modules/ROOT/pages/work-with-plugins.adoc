@@ -19,7 +19,7 @@ Let's start with a simple code snippet you can paste into an empty `+html+` file
 <!DOCTYPE html>
 <html>
 <head>
-  <script src="{cdnurl}" referrerpolicy="origin"></script>
+  <script src="{cdnurl}" referrerpolicy="origin" crossorigin="anonymous"></script>
   <script type="text/javascript">
   tinymce.init({
     selector: 'textarea'

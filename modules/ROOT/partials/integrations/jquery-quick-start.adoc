@@ -73,7 +73,7 @@ https://code.jquery.com/[jQuery CDN page], which includes the `integrity` and
 +
 [source,html,subs="attributes+"]
 ----
-<script src="{cdnurl}" referrerpolicy="origin"></script>
+<script src="{cdnurl}" referrerpolicy="origin" crossorigin="anonymous"></script>
 ----
 +
 Replace `no-api-key` in the source script (`<script src=...`) with a {cloudname}
@@ -139,7 +139,7 @@ ifeval::["{productSource}" == "package-manager"]
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="/public/jquery/jquery.min.js"></script>
-    <script src="/public/tinymce/tinymce.min.js" referrerpolicy="origin"></script>
+    <script src="/public/tinymce/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
     <script src="/public/tinymce-jquery/tinymce-jquery.min.js"></script>
   </head>
   <body>

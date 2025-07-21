@@ -254,6 +254,39 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} {release-version} also includes the following improvement<s>:
 
+=== Enhanced cross-origin resource handling
+
+Added a new function-based `crossorigin` configuration option that provides granular control over cross-origin resource loading. The function receives the resource URL and type (script or stylesheet) as parameters and can return 'anonymous', 'use-credentials', or undefined to control the crossorigin attribute.
+
+.Example: Setting `+crossorigin="anonymous"+` to script.
+[source,html,subs="attributes+"]
+----
+<script src="{cdnurl}" referrerpolicy="origin" crossorigin="anonymous"></script>
+----
+Or;
+
+.Example: Setting reusable constant function.
+[source,js]
+----
+const crossOriginFunction = (url, resourceType) => {
+    // Returning 'anonymous' or 'use-credentials' here would explicitly set the attribute
+    return 'anonymous';
+    // return 'use-credentials';
+    // return undefined; // Omits the 'crossorigin' attribute for all resources by returning undefined 
+};
+
+tinymce.init({
+  selector: "textarea",
+  crossorigin: crossOriginFunction
+});
+----
+
+For more details, see: xref:configure-cross-origin-resource-loading.adoc#crossorigin[crossorigin].
+
+This improvement ensures consistent resource loading behavior across different deployment scenarios and provides better control over CORS settings for both scripts and stylesheets.
+
+For more details, see xref:tinymce-and-cors.adoc#crossorigin[crossorigin configuration option] documentation.
+
 === Tooltips can now be closed by pressing the `escape` key.
 // #TINY-12054
 
@@ -333,6 +366,7 @@ Split buttons in {productname} {release-version} now render as two independent, 
 // #TINY-12155
 
 Previously, menu items and tooltips containing three consecutive periods (`...`) were read aloud by the JAWS screen reader as "dot dot dot," which could confuse users relying on assistive technologies. To enhance accessibility, the `translate` API in {productname} {release-version} now automatically replaces three dots with the typographic ellipsis character (`…`) across all translations. This update ensures a consistent visual appearance while improving screen reader behavior, as the ellipsis character is not read aloud. The change is implemented directly in the translation function, ensuring comprehensive coverage across all languages.
+
 
 [[additions]]
 == Additions

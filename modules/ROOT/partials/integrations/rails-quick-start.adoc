@@ -7,7 +7,7 @@ include::partial$integrations/rails-basic-proj.adoc[]
 +
 [source,html,subs="attributes+"]
 ----
-<script src="{cdnurl}" referrerpolicy="origin"></script>
+<script src="{cdnurl}" referrerpolicy="origin" crossorigin="anonymous"></script>
 <script>
   tinymce.init({
     selector: '.tinymce',

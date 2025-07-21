@@ -351,6 +351,68 @@ The `+chevronTooltip+` property provides custom tooltip text for the chevron but
 
 For more information, see xref:custom-split-toolbar-button.adoc[Split toolbar buttons].
 
+=== New User Lookup API for retrieving and caching user details
+// #TINY-11974
+
+{productname} {release-version} introduces a new xref:userlookup.adoc[User Lookup API] that enables integrations to retrieve and cache user details (such as names and avatars) and identify the current user within the editor. This API is particularly useful when building features that rely on user context, such as commenting systems or displaying lists of elements containing user information.
+
+The User Lookup API provides efficient user data management with built-in caching, reducing redundant network requests and improving performance. It can be used as a universal solution for `+<pluginname>_author+` and `+<pluginname>_author_avatar+` configurations across various plugins, including currently supported plugins such as **Suggested Edits**, **Comments**, and **Revision History**.
+
+Key features include:
+
+* **Current user identification**: Set and retrieve the active user's ID using the new xref:userlookup.adoc#user_id[`user_id`] configuration option
+* **Flexible user fetching**: Configure custom user data retrieval through the xref:userlookup.adoc#fetch_users[`fetch_users`] callback function
+* **Built-in caching**: Automatic caching of user data to minimize API calls
+* **Fallback handling**: Automatic generation of default user information when custom fetch functions are not provided
+* **Extensible user objects**: Support for custom metadata through the `custom` property
+
+==== Basic configuration
+
+The API requires two main configuration options:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  user_id: 'alextaylor', // Set the current user's unique identifier
+  fetch_users: (userIds) => {
+    // Return a Promise that resolves to an array of user objects
+    return Promise.all(
+      userIds.map(userId => 
+        fetch(`/users/${userId}`)
+          .then(response => response.json())
+          .catch(() => ({ id: userId })) // Fallback for failed requests
+      )
+    );
+  }
+});
+----
+
+==== API usage
+
+Once configured, the API provides two main methods:
+
+* `editor.userLookup.userId` - Returns the current user's ID
+* `editor.userLookup.fetchUsers(userIds)` - Fetches and caches user information
+
+[source,js]
+----
+editor.on('init', () => {
+  // Get current user ID
+  console.log('Current user:', editor.userLookup.userId);
+  
+  // Fetch multiple users
+  const users = editor.userLookup.fetchUsers(['user-1', 'user-2']);
+  
+  // Handle individual user promises
+  users['user-1'].then(user => {
+    console.log('User 1 name:', user.name);
+  });
+});
+----
+
+For comprehensive documentation and examples, see: xref:userlookup.adoc[User Lookup API].
+
 [[changes]]
 == Changes
 

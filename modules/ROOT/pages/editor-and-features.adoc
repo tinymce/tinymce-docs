@@ -87,7 +87,7 @@ Replace the script tag with the following, making sure to include both required 
 <script src="{cdnurl}" referrerpolicy="origin" crossorigin="anonymous"></script>
 ----
 
-NOTE: When migrating to {cloudname}, both the `referrerpolicy="origin"` and `crossorigin="anonymous"` attributes are required for proper functionality. These attributes ensure proper domain validation and secure cross-origin script loading.
+NOTE: When migrating to {cloudname}, both the `referrerpolicy="origin"` and `crossorigin="anonymous"` attributes are required for optimal performance and cross-browser functionality.
 
 === Step 2: Update custom plugin paths
 

@@ -11,7 +11,7 @@ This is useful when building features that rely on user context, such as comment
 Follow the steps below to configure and use the `userLookup` API.
 
 [[step-1-set-the-current-user]]
-=== 1. Set the current user ID
+=== 1. Set the current user_id
 
 The first step is to tell the editor which user is currently active. This is done using the `+user_id+` initialization option.
 
@@ -31,7 +31,7 @@ editor.on('init', () => {
 
 To simulate a backend lookup, define a local object that maps user IDs to their corresponding data. 
 
-include::partial$configuration/fetch_users.adoc[]
+include::partial$configuration/fetch_users.adoc[leveloffset=+2]
 
 .Example
 [source,js]

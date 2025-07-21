@@ -153,6 +153,20 @@ Key changes for self-hosted deployments:
 * Commercial use: Contact your account manager or visit link:https://www.tiny.cloud/my-account[Tiny Cloud Account] to obtain a T8LK-prefixed license key
 * GPL use: Set `license_key: 'gpl'` (case insensitive)
 * Open source projects using premium features: Use the combined format `license_key: 'GPL+T8LK:...'`
+
+*Required License Key Manager Setup for Self-hosted Commercial Deployments:*
+
+For commercial license keys to function, the license key manager must be properly configured. **The editor will not work without this setup.**
+
+* **Standalone hosting** (e.g., in a `/public` folder): The `+licensekeymanager+` folder is **required** to be located within the `+plugins+` folder alongside all other plugins.
+* **Bundled applications**: The `+licensekeymanager/index.js+` file is **required** to be imported, otherwise the editor will result in a disabled state.
+
+.Example: Importing the License Key Manager in a bundled application
+[source,javascript]
+----
+import 'tinymce/plugins/licensekeymanager';
+----
+
 ====
 
 === Upgrading from TinyMCE 7

@@ -32,10 +32,16 @@ The commercial license key manager is available:
 * in a purchased self-hosted addon - a `licensekeymanager` folder will be present in addition to the purchased addon.
 * as a standalone addon - a `licensekeymanager` folder will be present.
 
-If hosting {productname} standalone, for example, in a `/public` folder, ensure the `+licensekeymanager+` folder is included in the `+plugins+` folder with all of the other plugins.
+[IMPORTANT]
+====
+The following setup steps are **required** for the editor to function with commercial license keys. The editor will not work without proper license key manager configuration.
+====
 
-If bundling {productname} as part of an application ensure to import the `+licensekeymanager/index.js+` file. For example:
+If hosting {productname} standalone, for example, in a `/public` folder, **ensure** the `+licensekeymanager+` folder is included in the `+plugins+` folder with all of the other plugins. The editor will not function without this.
 
+If bundling {productname} as part of an application **ensure** the `+licensekeymanager/index.js+` file is imported, otherwise the editor will not function without this.
+
+.Example importing the License Key Manager in a bundled application
 [source,javascript]
 ----
 import 'tinymce/plugins/licensekeymanager';

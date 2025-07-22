@@ -4,21 +4,29 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+
 == xref:8.0-release-notes.adoc[8.0.0 - 2025-07-23]
 
+[NOTE]
+====
+*Breaking Change in {productname} 8.0.0*: Users upgrading to {productname} {productmajorversion} with self-hosted commercial deployments must contact their account manager **to obtain new `T8LK:` prefixed license keys**. {productname} 7 license keys are not compatible with {productname} {productmajorversion} and cannot be modified to work by adding the `T8LK:` prefix. Cloud users ({cloudname}) are **not affected** as the commercial license is automatically applied. For complete details on the new license system and upgrade process, see: xref:license-key.adoc[License key configuration].
+====
+
 ### Added
+* Support for TinyMCE 8 xref:license-key.adoc[license keys] and license key manager.
+// #TINY-12001
 * New `pageUid` property on the `tinymce` global instance.
 // #TINY-12021
 * New `editorUid` property on editor instances.
 // #TINY-12021
 * New `UserLookup` API to provide consistent user management and fetching/caching user information across TinyMCE plugins.
 // #TINY-11974
+* New toolbar icons for suggested edits plugin.
+// #TINY-12070
 * New `crossorigin` option that sets the `crossorigin` attribute on scripts loaded by the editor.
 // #TINY-12228
 * New `allow_html_in_comments` option to allow HTML like contents inside comment data.
 // #TINY-12220
-* Support for TinyMCE 8 license keys and license key manager.
-// #TINY-12001
 * New `list_max_depth` option that limits the maximum list indent depth.
 // #TINY-11937
 
@@ -37,7 +45,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 // #TINY-12189
 * When `editor.resetContent()` is used, the resulting `SetContent` event now has the `initial` flag set in the event arguments.
 // #TINY-12146
-* Updated Image plugin decorative image check to align with accessbility standard
+* Updated Image plugin decorative image check to align with accessibility standard.
 // #TINY-12545
 
 ### Changed
@@ -45,18 +53,24 @@ NOTE: This is the {productname} Community version changelog. For information abo
 // #TINY-11927
 * Split buttons are now rendered as separate action and chevron buttons.
 // #TINY-8665
+* Moved essential parts of the `lists` plugin into core.
+// #TINY-12121
 * Cut action now uses the editor delete implementation instead of the native `execCommand('Delete')` function.
 // #TINY-12171
 * Comments with HTML like content, attributes with HTML like values, elements with HTML Comment like textContent are no longer retained while content sanitization is active.
-// #TINY-12056, see TINY-12220
+// #TINY-12056
 * Added space to promotion message for ease of reading.
 // #TINY-12271
+* Added deprecation console warning to `fire()` method.
+// #TINY-12012
 
 ### Deprecated
 * Deprecated `skipFocus` option for ToggleToolbarDrawer command. To skip focus use `skip_focus` option.
 // #TINY-12044
 * Deprecated 'editor.selection.setContent' method.
 // #TINY-11692
+* Deprecated `fire()` method for event handling. Use `dispatch()` instead. The `fire()` method will be removed in TinyMCE 9.
+// #TINY-12012
 
 ### Removed
 * Removed undocumented `documentBaseUrl` property from `Editor` instances. `documentBaseURI` is the supported property.
@@ -65,7 +79,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 ### Fixed
 * Long tooltips could overflow narrow browser windows.
 // #TINY-11884
-* Tab to create a new row in tables with a non-editable final row would freeze the editor.
+* Pressing Tab to create a new row in tables with a non-editable final row would freeze the editor.
 // #TINY-12018
 * Fixed an issue where the context form API `onSetup` was referencing the incorrect element.
 // #TINY-11912
@@ -77,13 +91,13 @@ NOTE: This is the {productname} Community version changelog. For information abo
 // #TINY-12073
 * New list item was not inserted correctly when existing list item had a block element inside.
 // #TINY-12102
-* Deleting a whole element would sometimes modify nearby content.
+* Deleting a whole element would sometimes replace the tag name of adjacent content.
 // #TINY-11868
 * HTML schema did not treat `colgroup` or `col` elements as block elements.
 // #TINY-12092
 * Inserting HTML fragments with invalid contents now retains more of the structure.
 // #TINY-11927
-* The `contextform` subtoolbar is no longer dismissed when using the back button in inline editors.
+* The `contextform` subtoolbar is no longer dismissed when using the toolbar back button in inline editors.
 // #TINY-12118
 * Tabbing when a `figure` was selected didn't move the selection on the `figcaption` correctly.
 // #TINY-11753
@@ -97,5 +111,7 @@ NOTE: This is the {productname} Community version changelog. For information abo
 // #TINY-12171
 * Added better support for template elements.
 // #TINY-12157
-* Tooltips no longer show above editor views
+* Tooltips no longer show above editor views.
 // #TINY-12289
+* `onboarding` plugin overlay now shows above popups.
+// #TINY-12522

@@ -14,6 +14,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 {productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, July 23^rd^, 2025. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
+* xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
 * xref:improvements[Improvements]
 * xref:additions[Additions]
 * xref:changes[Changes]
@@ -203,7 +204,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[improvements]]
 == Improvements
 
-{productname} {release-version} also includes the following improvement<s>:
+{productname} {release-version} also includes the following improvements:
 
 === Enhanced cross-origin resource handling
 
@@ -291,7 +292,7 @@ Previously, menu items and tooltips containing three consecutive periods (`...`)
 [[additions]]
 == Additions
 
-{productname} {release-version} also includes the following addition<s>:
+{productname} {release-version} also includes the following additions:
 
 === New `allow_html_in_comments` option to allow HTML-like content inside comment data
 // #TINY-12220
@@ -643,23 +644,32 @@ editor.execCommand('ToggleToolbarDrawer', false, null, { skip_focus: true });
 
 This change improves consistency across commands and aligns with expected usage patterns in {productname} {release-version}.
 
+=== Deprecated `fire()` method for event handling
+// #TINY-12012
+
+The `fire()` method was originally deprecated in {productname} 6 in favor of the `dispatch()` method for event handling, but was never removed from the codebase. {productname} {release-version} now displays a deprecation warning when the `fire()` method is used, serving as a final notice before its removal in {productname} 9.
+
+This long-overdue cleanup aligns the API with modern event handling conventions and removes confusion around method naming. Integrators should migrate to the `dispatch()` method to ensure compatibility with future releases.
+
+.Deprecated approach for dispatching custom events
+[source,javascript]
+----
+// Deprecated in TinyMCE 8, will be removed in 9
+editor.fire('someEvent');
+----
+
+.New approach for dispatching custom events
+[source,javascript]
+----
+// Use dispatch() instead
+editor.dispatch('someEvent');
+----
+
+For more information on the `dispatch()` method, see: xref:apis/tinymce.util.eventdispatcher.adoc[EventDispatcher].
+
 === Deprecated `editor.selection.setContent` API
 // TINY-11692
 
 The `editor.selection.setContent` method has been deprecated in {productname} {release-version}. This low-level API was never intended for external use and does not guarantee consistent behavior when inserting complex content structures, such as lists. Integrators are advised to use the supported `editor.insertContent` method for reliable content insertion.
 
 This deprecation helps reduce confusion and aligns content insertion with {productname}'s supported APIs.
-
-
-[[known-issues]]
-== Known issues
-
-This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
-
-There <is one | are <number> known issue<s> in {productname} {release-version}.
-
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-// **Status**: This issue is currently being investigated.

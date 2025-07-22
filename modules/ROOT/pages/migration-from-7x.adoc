@@ -246,23 +246,29 @@ For information on disabling DOMPurify sanitization (not recommended), see xref:
 == Core Changes
 
 [[split-button-css-breaking-change]]
-=== Split button CSS structure updates
+=== Split Button Styling Update for Custom Skins
 // #TINY-8665
 
-{productname} {productmajorversion} updates the internal structure of split buttons. Split buttons now render as two separate components for the main action and the dropdown chevron.
+{productname} {productmajorversion}, xref:custom-split-toolbar-button.adoc[split toolbar buttons] now render as two distinct components: one for the primary action and one for the dropdown chevron.
 
-**Impact**: This change only affects users with custom skins.
+This structural change modifies the DOM layout of split buttons and may break custom CSS rules that rely on the previous structure.
 
-**Migration steps**:
+**Impact**: This change only affects integrators using *custom skins*.
 
-If you have a custom skin, rebuild it using the {productname} {productmajorversion} codebase. See xref:creating-a-skin.adoc[Creating a Skin] for guidance on the custom skin development process.
+**Migration Guide:**
 
-**Migration checklist:**
+If your implementation includes a custom skin, follow these steps to ensure compatibility:
 
-* [ ] Identify if you are using a custom skin.
-* [ ] Rebuild your custom skin using the {productname} {productmajorversion} codebase.
-* [ ] Test your custom skin with split buttons in {productname} {productmajorversion}.
-* [ ] Refer to xref:creating-a-skin.adoc[Creating a Skin] for details.
+* [ ] Confirm whether your project uses a custom skin.
+* [ ] **Rebuild your custom skin** using the {productname} {productmajorversion} codebase. See xref:creating-a-skin.adoc[Creating a Skin] for instructions.
+* [ ] **Update your split button usage** to align with the new structure, including support for the `chevronTooltip` option. Refer to xref:custom-split-toolbar-button.adoc[Split Toolbar Buttons] for updated configuration details.
+* [ ] **Test the rendering and interaction** of split buttons in your editor to verify expected behavior.
+
+**Summary of Changes:**
+
+* Split buttons now render as two separate DOM elements.
+* CSS selectors and styles that depended on the old structure may no longer apply correctly.
+* The `chevronTooltip` API option is now supported.
 
 
 == Core API Changes

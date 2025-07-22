@@ -7,18 +7,20 @@ NOTE: This is the {productname} Community version changelog. For information abo
 == xref:8.0-release-notes.adoc[8.0.0 - 2025-07-23]
 
 ### Added
-* New `pageUid` and `editorUid` properties to tinymce global and editor instance respectively.
-// #TINY-12021 //suggest-remove//
+* New `pageUid` property on the `tinymce` global instance.
+// #TINY-12021
+* New `editorUid` property on editor instances.
+// #TINY-12021
 * New `UserLookup` API to provide consistent user management and fetching/caching user information across TinyMCE plugins.
-// #TINY-11974 //TODO//
-* New toolbar icons for suggested edits plugin.
-// #TINY-12070 //suggest-remove//
+// #TINY-11974
 * New `crossorigin` option that sets the `crossorigin` attribute on scripts loaded by the editor.
 // #TINY-12228
 * New `allow_html_in_comments` option to allow HTML like contents inside comment data.
 // #TINY-12220
 * Support for TinyMCE 8 license keys and license key manager.
 // #TINY-12001
+* New `list_max_depth` option that limits the maximum list indent depth.
+// #TINY-11937
 
 ### Improved
 * Focus is now restored to a dialog after closing an alert, confirmation or another dialog.
@@ -39,18 +41,14 @@ NOTE: This is the {productname} Community version changelog. For information abo
 // #TINY-12545
 
 ### Changed
-* New `list_max_depth` option that limits the maximum list indent depth.
-// #TINY-11937
 * DomParser no longer tries to fix some nodes when parsed with a context.
 // #TINY-11927
 * Split buttons are now rendered as separate action and chevron buttons.
 // #TINY-8665
-* Moved essential parts of the `lists` plugin into core.
-// #TINY-12121 //TODO// Was set to Task
-* Cut action no longer uses `execCommand('Delete')` function.
+* Cut action now uses the editor delete implementation instead of the native `execCommand('Delete')` function.
 // #TINY-12171
 * Comments with HTML like content, attributes with HTML like values, elements with HTML Comment like textContent are no longer retained while content sanitization is active.
-// #TINY-12056 //TODO//
+// #TINY-12056, see TINY-12220
 * Added space to promotion message for ease of reading.
 // #TINY-12271
 
@@ -98,8 +96,6 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Cutting a whole HTML element would add an empty paragraph.
 // #TINY-12171
 * Added better support for template elements.
-// #TINY-12157 // incorrect tagging in JIRA- docs_required//
-* Tooltips no longer show above editor views #TINY-12289
-// //need to know if this is specific to suggestededits only//
-* `onboarding` plugin overlay now shows above popups.
-// #TINY-12522 //suggest-remove//
+// #TINY-12157
+* Tooltips no longer show above editor views
+// #TINY-12289

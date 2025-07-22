@@ -11,54 +11,25 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[overview]]
 == Overview
 
-{productname} {release-version} was released for {enterpriseversion} and {cloudname} on <weekday>, <month> <DD>^<st|nd|rd|th>^, <YYYY>. These release notes provide an overview of the changes for {productname} {release-version}, including:
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, July 23^rd^, 2025. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
-* xref:new-premium-plugin<s>[New Premium plugin<s>]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
-* xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
-* xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
-* xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
 * xref:improvements[Improvements]
 * xref:additions[Additions]
 * xref:changes[Changes]
 * xref:bug-fixes[Bug fixes]
-* xref:security-fixes[Security fixes]
 * xref:deprecated[Deprecated]
-* xref:known-issues[Known issues]
 
 [IMPORTANT]
 ====
 This release includes breaking changes to the license key system. All commercial self-hosted deployments must update their license keys to use the new `T8LK:` prefix format. For details on this and other breaking changes when considering upgrading, see xref:migration-from-7x.adoc[Migrating from {productname} 7 to {productname} {release-version}].
 ====
 
-[[new-premium-plugin<s>]]
-New Premium plugin<s>
-
-The following new Premium plugin was released alongside {productname} {release-version}.
-
-// === <Premium plugin name>
-
-// The new Premium plugin, **<Premium plugin name>** // description here.
-
-// For information on the **<Premium plugin name>** plugin, see xref:<plugincode>.adoc[<Premium plugin name>].
-
 
 [[accompanying-premium-plugin-changes]]
 == Accompanying Premium plugin changes
 
 The following premium plugin updates were released alongside {productname} {release-version}.
-
-// === <Premium plugin name 1> <Premium plugin name 1 version>
-
-// The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
-
-// **<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
-
-// ==== <Premium plugin name 1 change 1>
-
-// // CCFR here.
-
-// For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
 === Mentions
 
@@ -215,26 +186,6 @@ In {release-version}, the unused `tinycomments.css` file was removed from the **
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to Tiny Comments].
 
 
-[[accompanying-premium-plugin-end-of-life-announcement]]
-== Accompanying Premium plugin end-of-life announcement
-
-The following Premium plugin has been announced as reaching its end-of-life:
-
-// === <Premium plugin name eol>
-
-// {productname}’s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
-
-
-[[accompanying-open-source-plugin-end-of-life-announcement]]
-== Accompanying open source plugin end-of-life announcement
-
-The following open source plugin has been announced as reaching its end-of-life:
-
-// === <Open source plugin name eol>
-
-// {productname}’s xref:<plugincode>.adoc[<Open source plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
-
-
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes
 
@@ -281,8 +232,6 @@ tinymce.init({
 });
 ----
 
-For more details, see: xref:configure-cross-origin-resource-loading.adoc#crossorigin[crossorigin].
-
 This improvement ensures consistent resource loading behavior across different deployment scenarios and provides better control over CORS settings for both scripts and stylesheets.
 
 For more details, see xref:tinymce-and-cors.adoc#crossorigin[crossorigin configuration option] documentation.
@@ -314,35 +263,6 @@ Previously, when a dialog was opened from within another dialog — such as a fi
 As a result, keyboard users experienced disrupted navigation and loss of focus context, impairing accessibility and usability in multi-dialog workflows. 
 
 In {release-version}, {productname} now restores focus to the triggering button in the parent dialog once the nested dialog is closed. This improvement enhances keyboard navigation and accessibility in scenarios involving multiple overlapping dialogs.
-
-=== New `list_max_depth` option to limit list indentation
-// #TINY-11937
-
-{productname} {release-version} introduced a new `list_max_depth` option that allows configuration of the maximum indent depth for list items. This setting accepts a non-negative integer value, where `0` permits list creation without any indentation, and higher values set the maximum allowable indent depth. Negative values are invalid and will trigger an error. When the option is not set, list behavior remains unchanged.
-
-The setting applies only to list indentation and does not affect paragraph indentation. Existing content is not altered, and pasted lists that exceed the maximum indent depth will retain their structure but cannot be further indented. When multiple list items are selected, only items eligible for indentation will be indented individually—validation is applied per item, not across the full selection.
-
-Outdent functionality remains unaffected and always available. The state of indent and outdent controls reflects the current indentation capabilities based on this setting.
-
-==== Example configuration
-
-The following example shows a basic configuration for the `list_max_depth` option, which limits list indentation to a maximum of 2 levels:
-
-[source,js]
-----
-tinymce.init({
-  selector: "textarea",
-  plugins: [
-    "advlist", "anchor", "autolink", "charmap", "code", "fullscreen",
-    "help", "image", "insertdatetime", "link", "lists", "media",
-    "preview", "searchreplace", "table", "visualblocks",
-  ],
-  list_max_depth: 2,
-  toolbar: "undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
-});
-----
-
-For more information, see: xref:user-formatting-options.adoc#list_max_depth[User formatting - List max depth].
 
 === Added support for `skip_focus` option in ToggleToolbarDrawer command
 // #TINY-12044
@@ -449,6 +369,35 @@ editor.on('init', () => {
 
 For comprehensive documentation and examples, see: xref:userlookup.adoc[User Lookup API].
 
+=== New `list_max_depth` option to limit list indentation
+// #TINY-11937
+
+{productname} {release-version} introduced a new `list_max_depth` option that allows configuration of the maximum indent depth for list items. This setting accepts a non-negative integer value, where `0` permits list creation without any indentation, and higher values set the maximum allowable indent depth. Negative values are invalid and will trigger an error. When the option is not set, list behavior remains unchanged.
+
+The setting applies only to list indentation and does not affect paragraph indentation. Existing content is not altered, and pasted lists that exceed the maximum indent depth will retain their structure but cannot be further indented. When multiple list items are selected, only items eligible for indentation will be indented individually—validation is applied per item, not across the full selection.
+
+Outdent functionality remains unaffected and always available. The state of indent and outdent controls reflects the current indentation capabilities based on this setting.
+
+==== Example configuration
+
+The following example shows a basic configuration for the `list_max_depth` option, which limits list indentation to a maximum of 2 levels:
+
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  plugins: [
+    "advlist", "anchor", "autolink", "charmap", "code", "fullscreen",
+    "help", "image", "insertdatetime", "link", "lists", "media",
+    "preview", "searchreplace", "table", "visualblocks",
+  ],
+  list_max_depth: 2,
+  toolbar: "undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+});
+----
+
+For more information, see: xref:user-formatting-options.adoc#list_max_depth[User formatting - List max depth].
+
 [[changes]]
 == Changes
 
@@ -501,18 +450,12 @@ import 'tinymce/plugins/licensekeymanager';
 
 ====
 
-=== Upgrading from TinyMCE 7
+=== Upgrading from {productname} 7
 
 * *Cloud Users ({cloudname})*: No license key changes needed - simply update your {productname} version.
 * *Self-hosted Users*: Contact your account manager to obtain a new T8LK-prefixed license key.
 
 For more information on the new license key system, see: xref:license-key.adoc[License Key].
-
-
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
 
 === DomParser no longer tries to fix some nodes when parsed with a context
 // #TINY-8205
@@ -525,12 +468,7 @@ In {productname} {release-version}, the `DomParser` has been updated to no longe
 [[removed]]
 == Removed
 
-{productname} {release-version} also includes the following removal<s>:
-
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+{productname} {release-version} also includes the following removal:
 
 === Removed undocumented `documentBaseUrl` property from Editor instances. `documentBaseURI` is the supported property now.
 // #TINY-12182
@@ -664,17 +602,6 @@ In {productname} {release-version}, the parser has been updated to improve the r
 {productname} {release-version} addresses this by ensuring that when a user presses Enter at the end of a list item that contains block-level formatting, the new list item is correctly inserted as a sibling of the parent list item, rather than being placed incorrectly alongside the sub-list items.
 
 
-[[security-fixes]]
-== Security fixes
-
-{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
-
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
 [[deprecated]]
 == Deprecated
 
@@ -694,11 +621,6 @@ For information about setting up containerized server-side components using Dock
 * Spell Checker service, see: xref:individual-spelling-container.adoc[Deploy the {productname} spelling service server-side component using Docker].
 * Export to PDF service, see: xref:individual-export-to-pdf-on-premises.adoc[Deploy the {productname} Export to PDF service server-side component using Docker].
 * Import from Word and Export to Word services, see: xref:individual-import-from-word-and-export-to-word-on-premises.adoc[Deploy the {productname} Import from Word and Export to Word service server-side component using Docker].
-
-// === The `<plugin>` configuration property, `<name>`, has been deprecated
-// #TINY-vwxyz1
-
-// CCFR here.
 
 === The `ToggleToolbarDrawer` command's `skipFocus` option has been deprecated
 // #TINY-12044

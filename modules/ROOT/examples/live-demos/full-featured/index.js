@@ -607,10 +607,6 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
       }
     },
     revisionhistory_fetch: fetchRevisions,
-    // revisionhistory_author: {
-    //   id: 'john.doe',
-    //   name: 'John Doe'
-    // },
     revisionhistory_display_author: true,
     // Suggested Edits plugin configuration
     user_id: 'kalebwilson',

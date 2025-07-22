@@ -9,7 +9,7 @@
 
 include::partial$misc/admon-paid-addon-pricing.adoc[]
 
-The {pluginname} plugin allows multiple users to collaborate on a document. The plugin shows which user suggested which edits, whether they added, removed, modified, or replaced any content, and allows users to provide feedback on those suggestions or give a final review by approving or rejecting them.
+The {pluginname} plugin allows multiple users to collaborate on a document. The review window shows which user suggested which edits, whether they added, removed, modified, or replaced any content, and allows users to provide feedback on those suggestions or give a final review by accepting or rejecting them.
 
 == Interactive example
 
@@ -19,26 +19,28 @@ include::partial$misc/admon-iframe-only.adoc[]
 
 == How it works
 
-The {pluginname} plugin keeps track of every suggested edit made to the document by the current user, as the edits are made, and stores this metadata in an internal model of the document. These suggestions can then be reviewed in the `'suggestededits'` xref:custom-view.adoc[editor view], where each edit is highlighted in the document, and where you can accept, reject, or provide feedback. The `'suggestededits'` view is accessible via either the `suggestededits` toolbar button or menu button within the `View` menu.
+The {pluginname} plugin keeps track of every edit made to the document by the current user and stores this metadata in an internal model of the document. These suggestions can then be reviewed in the Review Edits view, where each edit is highlighted in the document, and where users can accept, reject, or provide feedback. The Review Edits view is accessible via either the `suggestededits` toolbar button or menu button within the `View` menu.
 
 == The model
 
-The {pluginname} model is a JSON object representing the document along with all unreviewed edits. The model should be kept in sync with the editor content and loaded into the editor each time the document is opened.
+The {pluginname} model is a JSON object representing the document along with all unreviewed edits and feedback. The model must be kept in sync with the editor content and loaded into the editor at the same time as the content.
 
-The model should be retrieved from the plugin using the xref:#get_model[`+getModel+`] API, then saved externally alongside the document, and loaded into the editor with the xref:#suggestededits_model[`+suggestededits_model+`] option each time the document is opened. This ensures that both the document and the model are in sync, and that every user's contributions are tracked correctly. If the model and content are out of sync, the difference between them will be applied as a suggested edit by the current user. If a model is not provided in the editor configuration or is set to `+undefined+`, the plugin will generate a new model from the initial content.
+The structure of the model is not documented and should not be relied upon.
 
-When the xref:#suggestededits_content[`+suggestededits_content+`] option is set to `'model'`, only the model is required, so keeping a synchronised document is not necessary. This also means that there will be no accidental suggestions caused by the editor content being out of sync with the model.
+The model can be retrieved from the plugin using the xref:#get_model[`+getModel+`] API, saved externally alongside the document, and loaded into the editor with the xref:#suggestededits_model[`+suggestededits_model+`] option. This ensures that the document and the model are in sync and every user's contributions are tracked correctly. If the model and content are out of sync when the editor loads, the difference between them will be applied as a suggested edit by the current user. If a model is not provided in the editor configuration or is set to `+undefined+`, the plugin will generate a new model from the initial content.
+
+Alternatively the xref:#suggestededits_content[`+suggestededits_content+`] option allows the model to generate the editor content, in which case the two do not need to be kept in sync.
 
 == Reviewing edits
 
-The {pluginname} plugin provides a dedicated `'suggestededits'` xref:custom-view.adoc[editor view] for viewing and reviewing edits made by multiple authors. The available actions in this view depends on the xref:#suggestededits_access[`+suggestededits_access+` option].
+The Review Edits view can be used to view and reviewing edits made by multiple authors. The available actions in this view depends on the xref:#suggestededits_access[`+suggestededits_access+` option].
 
 === Header
 
 The view contains a few controls to manage the review process: 
 
 * Show edits: Toggles whether suggested edits are shown. When hidden, the view shows what the document will look like if the review is completed.
-* Complete review: Ends the review, applying resolved suggestions to the document. Unresolved changes remain in the document for future review.
+* Complete review: Ends the review, applying resolved suggestions to the document. Unresolved suggestions remain in the document for future review.
 * Cancel: Ignores any resolved suggestions and makes no change to the document. Feedback given on suggestions will be retained.
 
 === Document
@@ -58,11 +60,11 @@ Each suggested edit is listed as a card in the sidebar and color coded by the ty
 * Accept: Resolves the suggestion, applying the edit to the document when the review is completed.
 * Reject: Resolves the suggestion, turning back the edit to the original state.
 * Revert: Reverts the current "Accept" or "Reject" resolution on the suggestion.
-* Provide feedback: Opens a text area for you to provide feedback on the suggestion.
+* Provide feedback: Opens a text area for users to provide feedback on the suggestion.
 
-Feedback is shown in chronological order beneath the card details, when the card is selected. Feedback threads allows users to discuss suggestions before resolving them. The feedback author can edit or delete their own feedback, with the appropriate permissions in the xref:#suggestededits_access[`+suggestededits_access+`] option.
+Feedback is shown in chronological order beneath the card details when the card is selected. Feedback allows users to discuss suggestions before resolving them. The feedback author can edit or delete their own feedback, with the appropriate permissions in the xref:#suggestededits_access[`+suggestededits_access+`] option.
 
-At the top of the sidebar, there is a dropdown menu to apply review actions in bulk to all suggested edits:
+At the top of the sidebar there is a dropdown menu to apply review actions in bulk to all suggested edits:
 
 * Accept all.
 * Reject all.
@@ -70,7 +72,7 @@ At the top of the sidebar, there is a dropdown menu to apply review actions in b
 
 === Finishing a review
 
-When completing a review, any resolved suggestions will be applied to the document and will no longer be tracked in the model as a suggestion, including any feedback on "resolved" suggestions. Any "accepted" edits will remain in the document, and any "rejected" edits will be reverted to the state before the suggestion was made.
+When completing a review, resolved suggestions will be applied to the document and will no longer be tracked in the model as a suggestion. Feedback on resolved suggestions is discarded. Any "accepted" edits will remain in the document, and any "rejected" edits will be reverted to the state before the suggestion was made.
 
 Review actions will apply the following to the document:
 

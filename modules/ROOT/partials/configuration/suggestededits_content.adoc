@@ -1,0 +1,29 @@
+[[suggestededits_content]]
+== `suggestededits_content`
+
+The `suggestededits_content` option controls whether the content is loaded from the editor or the `suggestededits_model` model, allowing you to define the source of truth for the document. In either case, if a model is not provided, the plugin will generate a new model from the initial editor content.
+
+When set to:
+
+* `'html'`: the editor loads content normally, and the plugin synchronises the model with the content. This simplifies the configuration of {pluginname} in an existing integration, by attaching the {pluginname} model as an additional field alongside the editor content.
+* `'model'`: the editor uses the `suggestededits_model` option to generate the initial content, ignoring any pre-existing content in the editor. With this configuration, you only need to store and provide the model, simplifying the integration of the {pluginname} plugin.
+
+NOTE: You are responsible for saving the model and providing it on the next load using the `suggestededits_model` option.
+
+*Type:* `+String+`
+
+*Possible Values*: `'html'`, `'model'` 
+
+*Default value:* `'html'`
+
+.Example: using `suggestededits_content`
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // Change this value according to your HTML
+  plugins: 'suggestededits',
+  toolbar: 'suggestededits',
+  suggestededits_model, // Load the saved model into the editor
+  suggestededits_content: 'model' // Set to 'model' if you want to load the initial content from the `suggestededits_model` option
+});
+----

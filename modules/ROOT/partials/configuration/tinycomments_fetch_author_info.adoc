@@ -1,6 +1,8 @@
 [[tinycomments_fetch_author_info]]
 == `+tinycomments_fetch_author_info+`
 
+include::partial$DEPRECATED/generic_8_userlookup.adoc[]
+
 The {pluginname} plugin uses the `+tinycomments_fetch_author_info+` callback function to provide author details for comments displayed in the editor.
 
 This function is called whenever a comment is rendered, and it allows the editor to display the author’s name and avatar based on the current user.

@@ -1,6 +1,8 @@
 [[revisionhistory_author]]
 == `revisionhistory_author`
 
+include::partial$DEPRECATED/generic_8_userlookup.adoc[]
+
 This option configures the author for the `initial` and `draft` revisions.
 
 *Type:* xref:#author[Author] `+Object+`

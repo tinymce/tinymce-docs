@@ -74,8 +74,8 @@ The complete licensing documentation xref:license-key.adoc[License Key Managemen
 
 **Key Migration Considerations**:
 
-* *License Key Format Change:* Version 7 keys are:
-** Not compatible with {productname} {release-version}.
+* *License Key Format Change:*
+** Version 7 keys are: Not compatible with {productname} {release-version}.
 ** New keys use the prefix `T8LK:` for commercial licenses or `GPL+T8LK:` for GPL with Premium Features.
 * *Mandatory Key Requirement:* Self-hosted deployments **now require** a valid license key; without one, the editor will be set to `readonly`.
 * *Commercial License Manager:* Self-hosted commercial deployments **require** the new License Key Manager addon.
@@ -266,81 +266,6 @@ If you have a custom skin, rebuild it using the {productname} {productmajorversi
 
 **Code examples**
 
-.Before: {productname} {productmajorversion}.
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea#custom-toolbar-split-button',
-  toolbar: 'myButton',
-  menubar: false,
-  setup: (editor) => {
-    editor.ui.registry.addSplitButton('myButton', {
-      text: 'My Button',
-      icon: 'info',
-      tooltip: 'This is an example split-button',
-      onAction: () => editor.insertContent('<p>You clicked the main button</p>'),
-      onItemAction: (api, value) => editor.insertContent(value),
-      fetch: (callback) => {
-        const items = [
-          {
-            type: 'choiceitem',
-            icon: 'notice',
-            text: 'Menu item 1',
-            value: '&nbsp;<em>You clicked menu item 1!</em>'
-          },
-          {
-            type: 'choiceitem',
-            icon: 'warning',
-            text: 'Menu item 2',
-            value: '&nbsp;<em>You clicked menu item 2!</em>'
-          }
-        ];
-        callback(items);
-      }
-    });
-  },
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
-});
-----
-
-.Migrating to {productname} {productmajorversion}
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',
-  toolbar: 'myButton',
-  menubar: false,
-  setup: (editor) => {
-    editor.ui.registry.addSplitButton('myButton', {
-      text: 'My Button',
-      icon: 'info',
-      tooltip: 'Execute my action',
-      chevronTooltip: 'My Button menu options',
-      onAction: () => editor.insertContent('<p>You clicked the main button</p>'),
-      onItemAction: (api, value) => editor.insertContent(value),
-      fetch: (callback) => {
-        const items = [
-          {
-            type: 'choiceitem',
-            icon: 'notice',
-            text: 'Menu item 1',
-            value: '&nbsp;<em>You clicked menu item 1!</em>'
-          },
-          {
-            type: 'choiceitem',
-            icon: 'warning',
-            text: 'Menu item 2',
-            value: '&nbsp;<em>You clicked menu item 2!</em>'
-          }
-        ];
-        callback(items);
-      }
-    });
-  },
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }'
-});
-----
-
 
 == Core API Changes
 
@@ -364,10 +289,10 @@ The `skipFocus` and `skip_focus` options for the `ToggleToolbarDrawer` command h
 [source, javascript]
 ----
 // Old approach (Deprecated) in TinyMCE 8
-editor.execCommand('ToggleToolbarDrawer', { skip_focus: false }, { skipFocus: true });
+editor.execCommand('ToggleToolbarDrawer', false, { skipFocus: true })
 
 // New approach (Recommended)
-editor.execCommand('ToggleToolbarDrawer', false, { skipFocus: true });
+editor.execCommand('ToggleToolbarDrawer', false, null, { skip_focus: true })
 ----
 
 **Migration checklist:**
@@ -398,13 +323,13 @@ console.log('documentBaseUrl', editor.documentBaseUrl);
 console.log('documentBaseURI', editor.documentBaseURI.getURI());
 ----
 
-TIP: Use `tinymce.activeEditor.documentBaseURI.getURI()` for all base URL operations.
+TIP: Use `editor.documentBaseURI.getURI()` for all base URL operations.
 
 **Impact**: This change improves URL handling consistency by removing an undocumented API that was not aligned with the documented `documentBaseURI` property.
 
 **Migration steps:**
 
-To update all references of `documentBaseUrl` to the new API, replace any usage of `editor.documentBaseUrl` (or similar) with `tinymce.activeEditor.documentBaseURI.getURI()`. The property `documentBaseUrl` has been removed, and the correct way to access the document base URL is now through the `documentBaseURI` property, which is a URI object. You can then call `.getURI()` on it to get the string value of the URL.
+To update all references of `documentBaseUrl` to the new API, replace any usage of `editor.documentBaseUrl` (or similar) with `editor.documentBaseURI.getURI()`. The property `documentBaseUrl` has been removed, and the correct way to access the document base URL is now through the `documentBaseURI` property, which is a URI object. You can then call `.getURI()` on it to get the string value of the URL.
 
 .For example, update this:
 [source, js]

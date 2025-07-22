@@ -1,7 +1,7 @@
 [[suggestededits_access]]
 == `suggestededits_access`
 
-The `suggestededits_access` option determines the level of access a user has to the {pluginname} view. This setting is crucial for controlling who can accept or reject suggestions, add feedback, or view the document in read-only mode. When used in conjunction with the `readonly` option, it allows for fine-grained control over user permissions.
+The `suggestededits_access` option determines the level of access a user has to the {pluginname} view. This setting is crucial for controlling who can accept or reject suggestions, add feedback, or view suggestions in read-only mode. The `suggestededits_access` option does not control access to the editor content, however when used in conjunction with the xref:editor-important-options#readonly[`readonly`] option it allows for fine-grained control over user permissions.
 
 When set to:
 

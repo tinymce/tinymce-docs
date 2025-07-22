@@ -8,7 +8,7 @@ When set to:
 * `'html'`: the editor loads content normally, and the plugin synchronises the model with the content. This simplifies the configuration of {pluginname} in an existing integration, by attaching the {pluginname} model as an additional field alongside the editor content.
 * `'model'`: the editor uses the `suggestededits_model` option to generate the initial content, ignoring any pre-existing content in the editor. With this configuration, you only need to store and provide the model, simplifying the integration of the {pluginname} plugin.
 
-NOTE: The integrator is responsible for saving the model and providing it on the next load using the `suggestededits_model` option.
+NOTE: You are responsible for saving the model and providing it on the next load using the `suggestededits_model` option.
 
 *Type:* `+String+`
 

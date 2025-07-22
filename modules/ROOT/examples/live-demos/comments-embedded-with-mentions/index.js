@@ -19,7 +19,7 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
         description: 'Marketing Director',
       }
     }
-  }
+  };
 
   const adminUser = userDb['johnsmith'];
   const currentUser = userDb['jennynichols'];

@@ -13,6 +13,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, July 23^rd^, 2025. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
+* xref:new-premium-plugins[New Premium plugins]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
 * xref:improvements[Improvements]
@@ -25,6 +26,19 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 ====
 This release includes breaking changes to the license key system. All commercial self-hosted deployments must update their license keys to use the new `T8LK:` prefix format. For details on this and other breaking changes when considering upgrading, see xref:migration-from-7x.adoc[Migrating from {productname} 7 to {productname} {release-version}].
 ====
+
+[[new-premium-plugins]]
+== New Premium plugins
+
+The following new Premium plugin was released alongside {productname} {release-version}.
+
+=== Suggested Edits
+
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
+
+The **Suggested Edits** plugin allows multiple users to collaborate on a document. The review window shows which user suggested which edits, whether they added, removed, modified, or replaced any content, and allows users to provide feedback on those suggestions or give a final review by accepting or rejecting them.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
 
 
 [[accompanying-premium-plugin-changes]]

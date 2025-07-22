@@ -1,34 +1,34 @@
-This page outlines how you can provide feedback and contribute to TinyMCE documentation.
+This page provides guidance on submitting feedback and contributing to TinyMCE documentation.
 
 # Contributor Code of Conduct
 
-For our Contributor Code of Conduct, visit our [Contributor Covenant Code of Conduct on GitHub](https://github.com/tinymce/tinymce-docs/blob/develop/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct).
+To review the Contributor Code of Conduct, visit the [Contributor Covenant Code of Conduct on GitHub](https://github.com/tinymce/tinymce-docs/blob/develop/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct).
 
-# How to contribute to TinyMCE’s documentation
+# Contributing to TinyMCE documentation
 
-We welcome people with technical writing experience to help make TinyMCE’s docs as useful to our community as possible. Although you don’t need to be an expert developer to contribute, a basic understanding of software development is helpful.
+Contributions from individuals with technical writing experience are encouraged to support the clarity and usefulness of the TinyMCE documentation. While expertise in software development is not required, a basic understanding is beneficial.
 
-What is more important is your ability to articulate complex ideas. Our goal is to help developers understand TinyMCE’s functionality as quickly as possible.
+The primary requirement is the ability to communicate complex concepts clearly. The goal is to help developers understand and apply TinyMCE functionality efficiently.
 
-Simply branch the [docs GitHub repository](https://github.com/tinymce/tinymce-docs) and submit a PR, or reach out to the [TinyMCE docs team](https://github.com/tinymce/tinymce-docs/issues/new?assignees=&labels=question&template=question.md) if you have a specific question.
+To contribute, create a branch from the [docs GitHub repository](https://github.com/tinymce/tinymce-docs) and submit a pull request (PR). For documentation-specific questions, open an issue using the [TinyMCE docs team contact form](https://github.com/tinymce/tinymce-docs/issues/new?assignees=&labels=question&template=question.md).
 
 # TinyMCE documentation tech stack
 
-The documentation is built with [Antora](https://antora.org/) and text files are written in [AsciiDoc](https://asciidoc.org/). You will find the [repo here](https://github.com/tinymce/tinymce-docs).
+The documentation is built with [Antora](https://antora.org/), and text content is authored in [AsciiDoc](https://asciidoc.org/). The source repository is available on GitHub: [tinymce-docs](https://github.com/tinymce/tinymce-docs).
 
-## Highlighting
+## Syntax highlighting
 
-Code language syntax and associated elements are highlighted using an open and closing backtick. For example, this `object` is actually enclosed with backticks like this: `object`.
+Inline code elements must be enclosed in backticks. For example, to highlight `object`, use the following syntax:
 
-Highlight words relating specifically to executable parts of software languages. Keys and their values when pertaining to objects and methods (particularly the case with TinyMCE) should have backticks. We cannot cover every use case here and contributors need to use their best judgment.
+Highlight keywords that refer to executable parts of a language. Keys and values used in objects and method options (common in TinyMCE) should also be enclosed in backticks. Exercise judgment for other cases not explicitly covered here.
 
 ## Code snippets
 
-Code snippets should be complete, executable code blocks starting with the `tinymce` object. We write code snippets using [source blocks](https://docs.asciidoctor.org/asciidoc/latest/verbatim/source-blocks/). These start by specifying the `source` style and the code snippet language in square brackets to enable syntax highlighting. The language is typically html, css, js, or ts.
+Code snippets must be complete, executable blocks that begin with the `tinymce` object. Snippets are formatted using [AsciiDoc source blocks](https://docs.asciidoctor.org/asciidoc/latest/verbatim/source-blocks/), which start with a `[source,<language>]` declaration. Supported languages include `html`, `css`, `js`, and `ts`.
 
-Include any key values pairs and method options that are required to enable a user to test the snippet in a local HTML file. You do not need to include the `html` surrounding the `tinymce` object that would be required to make the snippet work.
+Each snippet must include the key-value pairs and method options necessary to run the example in a local HTML file. It is not necessary to include the full HTML structure around the `tinymce` object.
 
-For example, this is good:
+**Valid example:**
 ```js
   [source, js]
   ----
@@ -40,7 +40,7 @@ For example, this is good:
   ----
 ```
 
-This is not:
+**Invalid example:**
 ```js
   [source, js]
   ----
@@ -55,7 +55,7 @@ This is not:
 
 ## URLs and links
 
-Resources to be linked take the form of a URL following by the linked text between two brackets. Linking an external resource looks like this:
+Resources must be linked using a URL followed by the linked text in square brackets. External links are formatted as follows:
 
 ```
   hello, http://www.example.com[text to link] to the URL example.com.
@@ -63,7 +63,7 @@ Resources to be linked take the form of a URL following by the linked text betwe
 
 ## Live demos
 
-New live demos can be added to the [modules/ROOT/examples/live-demos directory](modules/ROOT/examples/live-demos). It then can be referenced in your doc with the following code:
+New live demos can be added to the [`modules/ROOT/examples/live-demos`](modules/ROOT/examples/live-demos) directory. These demos can then be referenced in documentation using:
 
 ```
   liveDemo::{sub-directory-name}[]
@@ -72,20 +72,19 @@ New live demos can be added to the [modules/ROOT/examples/live-demos directory](
 
 ## Adding metadata to a page
 
-Every page should have a meta section immediately after the heading containing information that is both informative and system critical. If you are creating a page or editing one that currently has inadequate meta information, please read the comments next to the default meta fields below.
+Each page must include a metadata section immediately following the top-level heading. This section contains essential system-level information. When creating or updating a page, ensure that the following meta fields are present and accurate:
 
 ```
-  :navtitle:          // Descriptive title for the navigation bar, if omitted nav defaults to title field.
-  :description:       // Detailed description at page level for the header section under the title.
-  :keywords:          // Comma-separated list of keywords in the content.
+  :navtitle:          // Descriptive title for the navigation bar. If omitted, defaults to the value of the `title` field.
+  :description:       // Detailed description at page header section.
+  :keywords:          // Comma-separated list of relevant keywords.
 ```
 
 # Recommended tools
 
-The following tools are recommended for significant edits to the documentation. The warnings and notifications from these tools should only be used as *guides*, not as *rules*.
+The following tools are recommended for significant documentation contributions. The feedback provided by these tools should serve as guidance rather than strict requirements:
 
-- A Spelling Checker (US English). Note: Some IDE/text editor spelling
-    checkers work well with Pascal-case, Camel-case, and Snake-case.
+- A US English spelling checker. Many IDEs and text editors support spell checking for PascalCase, camelCase, and snake_case.
 
 - Alex - [Alex.js integrations](https://alexjs.com/#integrations).
 
@@ -94,36 +93,29 @@ The following tools are recommended for significant edits to the documentation. 
 
 # Style guide
 
-You are not required to know the style guide, **but** changes may be requested on GitHub pull requests to Tiny documentation where these guidelines are not met.
+Familiarity with the style guide is not required; however, edits may be requested on pull requests if content does not align with documentation standards.
 
-The Tiny documentation style guide is based on the [Readability Guidelines](https://readabilityguidelines.co.uk) provided by [Content Design London](https://contentdesign.london/usability/readability-guidelines/). We have chosen this guide because it’s:
+The TinyMCE documentation style guide is based on the [Readability Guidelines](https://readabilityguidelines.co.uk) provided by [Content Design London](https://contentdesign.london/usability/readability-guidelines/). This guide was selected due to its community-driven approach and strong focus on readability.
 
-- open to the community
-
-- focused on readability.
-
-The information in the following subsections gives an overview of key points and lists both exceptions and additions. Please follow the guidelines on this page when they differ from the linked information.
+The following subsections provide key highlights, exceptions, and additions to the source guidelines. When inconsistencies arise, defer to the guidelines listed on this page.
 
 ## Keep it simple
 
-Use short, simple words where possible. Use formal language.
+Favor short, simple words. Use formal language.
 
-Do not use:
+Avoid the following:
 
-- Long sentences.
+- Slang (e.g., *there you go*)
 
-- Slang; such as *there you go*.
+- Jargon (e.g., *leverage*, *streamline*)
 
-- Jargon; such as *leverage* and *streamline*.
+- Ambiguous contractions (e.g., *there’d*, *it’ll*)
 
-- Ambiguous contractions; such as *there’d*, and *it’ll*.
+- Latin terms (e.g., *i.e.*, *e.g.*, *etc.*, *vs.*, *via*)
 
-- Latin terms; such as *i.e.*, *e.g.*, *etc.*, *vs.*, and *via*.
+- Metaphors (e.g., *cherry picking*, *nutshell*)
 
-- Metaphors; such as *cherry picking* and *nutshell*.
-
-- Complex or specialist terms; such as *chrome* (the toolbar, menu
-    bar, status bar) and *upstream*.
+- Complex or specialist terms (e.g., *chrome* as in UI elements, *upstream*)
 
 For guidelines on using specialist terms, see: [Content Design London: Readability Guidelines - Specialist terms](https://readabilityguidelines.co.uk/clear-language/specialist-terms/).
 
@@ -137,19 +129,19 @@ For information on:
 
 For a short list of some commonly used Latin terms, see: [Australian Government Style Manual - Latin shortened forms](https://www.stylemanual.gov.au/format-writing-and-structure/clear-language-and-writing-style/plain-english-and-word-choice/latin-shortened-forms).
 
-## Use US English (en\_US) spelling
+## Use US English (en_US) spelling
 
-Use United States English. For example:
+Use United States English spelling conventions. For example:
 
-- "behavior" rather than "behaviour".
+- "behavior" instead of "behaviour"
 
-- "canceled" rather than "cancelled".
+- "canceled" instead of "cancelled"
 
 ## Use proper names for programs and languages
 
-When referring to the name of a development language, use the proper name or the industry convention.
+Always refer to development languages and software using their proper names or recognized industry conventions.
 
-For example:
+Correct examples include:
 
 - "CSS" not "css"
 
@@ -157,7 +149,7 @@ For example:
 
 - "React" not "React-js"
 
-When using these terms in code elements (\`) or pre blocks (\`\`\`), use standard syntax. Such as:
+When referencing code elements (`` ` ``) or fenced code blocks (`` ``` ``), use standard syntax. For example:
 
 - `tinymce`
 
@@ -165,7 +157,7 @@ When using these terms in code elements (\`) or pre blocks (\`\`\`), use standar
 
 - `var React = require('react');`
 
-When referring to a program, use the proper name.
+When referring to software programs, use their full, proper names. For example:
 
 For example:
 
@@ -177,53 +169,53 @@ For example:
 
 ## TinyMCE or tinymce
 
-Use the capitalized version of TinyMCE when referring to the open source project or the editor. "TinyMCE" is an abbreviation of "Tiny MoxieCode Editor", but is better known as TinyMCE.
+Use the capitalized form **TinyMCE** when referring to the open source project or the editor interface. TinyMCE is derived from "Tiny MoxieCode Editor," but is more commonly known by its abbreviation.
 
-Use lowercase when referring to the `tinymce` JavaScript object.
+Use lowercase when referring to the **`tinymce`** JavaScript object.
 
-## Use Active voice not Passive voice
+## Use active voice, not passive voice
 
-Use active voice. Passive voice decreases readability and comprehension.
+Use active voice to improve readability and comprehension. Passive constructions should be avoided unless grammatically necessary.
 
-For information on the difference between active and passive voice, see: [Grammar Girl: Active Voice Versus Passive Voice](https://www.quickanddirtytips.com/education/grammar/active-voice-versus-passive-voice).
+For a detailed explination, see: [Grammar Girl: Active Voice Versus Passive Voice](https://www.quickanddirtytips.com/education/grammar/active-voice-versus-passive-voice).
 
 ## Titles and headings
 
-Titles and headings should be:
+Titles and headings must be:
 
-- Descriptive but concise
+- Descriptive yet concise
 
-- Written using Sentence-case capitalization.
+- Written in sentence case capitalization.
 
-Sentence case capitalization is more comfortable to read in technical documentation.
+Sentence case capitalization improves readability in technical documentation.
 
-For guidelines on headings and titles, see: [Content Design London: Readability Guidelines - Headings and titles](https://readabilityguidelines.co.uk/content-design/headings-titles/).
+For additional guidence, see: [Content Design London: Readability Guidelines - Headings and titles](https://readabilityguidelines.co.uk/content-design/headings-titles/).
 
 ## Using abbreviations, acronyms, and intialisms
 
-General points:
+General guidelines:
 
-- Do not use points or spaces.
+- Do not use periods or spaces in abbreviations.
 
-- Write out "for example" and "that is" in full (not "eg" or "ie").
+- Write out "for example" and "that is" in full (not "e.g." or "i.e.").
 
-- If an acronym is better understood than the full text, use the acronym.
+- When the acronym is more familiar than its expanded form, use the acronym.
 
-- Use all capital letters for initialisms.
+- Use all capital letters for initialisms (e.g., HTML, CSS).
 
-- Start with a capital letter for acronyms.
+- Use an initial capital letter for acronyms (e.g., AsciiDoc, Antora).
 
-- Capitalize single letters in expressions.
+- Capitalize single-letter expressions (e.g., X-axis, Y-coordinate).
 
-- Provide full text explanations.
+- Provide the full form of any abbreviation or acronym on first use.
 
-- Consider providing a full explanation each time.
+- When clarity is critical, consider repeating the full form with each usage.
 
 For guidelines on using abbreviations, acronyms, and intialisms; see: [Content Design London: Readability Guidelines - Abbreviations and acronyms](https://readabilityguidelines.co.uk/grammar-points/abbreviations-and-acronyms/).
 
 ## Adverbs
 
-Avoid adverbs, such as: *very* and *usually*.
+Avoid adverbs such as *very*, *usually*, *quickly*, and *clearly*, unless necessary for precision.
 
 For examples and a definition of an adverb, see: [Cambridge Dictionary: Grammar - Adverbs](https://dictionary.cambridge.org/grammar/british-grammar/adverbs_2).
 
@@ -231,57 +223,63 @@ For (casual) information on removing adverbs, see: [Grammar Girl: How to Elimina
 
 ## Contractions
 
-Avoid contractions, such as: *can’t*, *don’t*, *they’re*, and *could’ve*.
+Avoid contractions. Use full word forms to improve clarity and consistency in technical documentation.
+
+- Examples to avoid include: *can’t*, *don’t*, *they’re*, *could’ve*.
 
 For information on contractions, see: [Content Design London: Readability Guidelines - Contractions](https://readabilityguidelines.co.uk/grammar-points/contractions/).
 
 ## Hyphens
 
-Limit use of hyphens. Some general pointers:
+Use hyphens only when necessary to avoid confusion or ambiguity. Follow current usage standards and remain consistent throughout the content.
 
-- Only use a hyphen if the word or phrase is confusing without it.
+General principles:
 
-- Make sure your hyphen usage is up to date.
+- Use a hyphen if omitting it would cause confusion.
 
-- Be consistent with hyphen usage.
+- Avoid outdated or unnecessary hyphenation.
+
+- Maintain consistent usage patterns across similar terms.
 
 For guidelines on using hyphens, see: [Content Design London: Readability Guidelines - Hyphens and dashes](https://readabilityguidelines.co.uk/grammar-points/hyphens-and-dashes/).
 
 ## Pronouns
 
-Avoid pronouns, such as: *we*, *you*, *their*, and *I*.
+Avoid pronouns, such as *we*, *you*, *their*, and *I*.
 
 For examples and a definition of an pronoun, see: [Cambridge Dictionary: Grammar - Pronouns](https://dictionary.cambridge.org/grammar/british-grammar/pronouns_1).
 
 For reasons to avoid pronouns, see: [Content Design London: Readability Guidelines - We, you, our, your, my](https://readabilityguidelines.co.uk/audiences-devices-channels/we-you-our-your-my/).
 
-## First, Second, or Third Person Perspective
+## First, second, or third person perspective
 
-Write in a second person perspective, such as: *You*, and *your*. Remember to avoid using pronouns, including *you* and *your*.
+Documentation should avoid using any narrative perspective that requires pronouns. Although second person (*you*, *your*) is often used in general guidance, pronouns should still be excluded for clarity and consistency.
 
-For information on writing in a second person perspective, see: [Grammar Girl: First, Second, and Third Person](https://www.quickanddirtytips.com/education/grammar/first-second-and-third-person?page=1).
+For an explanation of narrative perspectives, see: [Grammar Girl: First, Second, and Third Person](https://www.quickanddirtytips.com/education/grammar/first-second-and-third-person?page=1).
 
 ## Links and cross-references
 
 When adding links or cross-references:
 
-- Make link text meaningful.
+- Use meaningful and descriptive link text.
 
-- Avoid mid-sentence links.
+- Avoid placing links mid-sentence.
 
-- Match the destination content.
+- Ensure link text accurately matches the destination content.
 
-- Use sentence case.
+- Use sentence case for link text.
 
 For guidelines on adding links to the documentation, see: [Content Design London: Readability Guidelines - Links](https://readabilityguidelines.co.uk/content-design/links/).
 
 ## Images and icons
 
-Avoid adding images to the documentation. They can quickly become outdated. Use a description or a "demo" instead.
+Avoid adding images unless necessary. Images may become outdated quickly and often require maintenance. When applicable, replace images with text descriptions or live demos.
 
-When images are used, reuse existing images if possible. This includes icons.
+When images are required:
 
-Ensure a brief description of the image is provided in the alternative text attribute.
+- Reuse existing images when possible (including icons).
+
+- Always include descriptive alternative text using the `alt` attribute.
 
 For information on providing useful alternative text for images, see: [WCAG 2.1 specification: G95 - Providing short text alternatives that provide a brief description of the non-text content](https://www.w3.org/WAI/WCAG21/Techniques/general/G95.html).
 

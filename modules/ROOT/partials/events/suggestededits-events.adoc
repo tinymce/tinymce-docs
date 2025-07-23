@@ -1,0 +1,10 @@
+The following events are provided by the xref:{plugincode}.adoc[{pluginname} plugin].
+
+[cols="2,1,3",options="header"]
+|===
+|Name |Data |Description
+|SuggestedEditsBeginReview |N/A |The Suggested Edits view has opened.
+|SuggestedEditsReviewComplete |N/A |A review in the Suggested Edits view has been completed.
+|SuggestedEditsReviewCancelled |N/A |A review in the Suggested Edits view was cancelled.
+|SuggestedEditsHasChangesUpdate |`+hasChanges+` |The Suggested Edits model is updated. The `+hasChanges+` data is a boolean value indicating whether there are suggestions to review.
+|===

@@ -1,0 +1,22 @@
+[[suggestededits_model]]
+== `suggestededits_model`
+
+The `suggestededits_model` option loads an existing model into the {pluginname} plugin. This model contains all current suggested edits and is used to maintain continuity across sessions. If a model is not provided, the plugin generates a new model from the initial editor content.
+
+*Type:* `+Object+`
+
+.Example: using `{plugincode}_model` 
+
+[source,js]
+----
+await fetch(`/models/${documentId}`)
+  .then((response) => response.json())
+  .then((model) => {
+    tinymce.init({
+      selector: 'textarea',  // Change this value according to your HTML
+      plugins: 'suggestededits',
+      toolbar: 'suggestededits',
+      suggestededits_model: model // Load the saved model into the editor
+    });
+  });
+----

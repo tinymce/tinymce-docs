@@ -4,6 +4,15 @@ const getRandomDelay = () => {
   return Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay;
 };
 
+/* This represents a database of users on the server */
+const userDb = {
+  'john.doe': { 
+    id: 'john.doe', 
+    name: 'John Doe', 
+    avatar: 'https://i.pravatar.cc/150?img=11' 
+  }
+};
+
 const lightRevisions = [
   {
     revisionId: '3',
@@ -202,9 +211,15 @@ tinymce.init({
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
   revisionhistory_fetch,
   revisionhistory_fetch_revision,
-  revisionhistory_author: {
-    id: 'john.doe',
-    name: 'John Doe'
-  },
+  user_id: 'john.doe',
+    fetch_users: (userIds) => {
+      return Promise.all(
+        userIds.map(
+          (userId) => new Promise(
+            (resolve) => resolve(userDb[userId] || { id: userId })
+          )
+        )
+      )
+    },
   revisionhistory_display_author: true
 });

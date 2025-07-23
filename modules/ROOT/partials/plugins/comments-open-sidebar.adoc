@@ -30,7 +30,7 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'tinycomments',
   tinycomments_mode: 'embedded',
-  tinycomments_author: currentAuthor,
+  user_id: currentAuthor,
   tinycomments_can_resolve: canResolveCommentsCallback,
   sidebar_show: 'showcomments'
 });

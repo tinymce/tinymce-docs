@@ -2,17 +2,34 @@
 ====
 The {pluginname} plugin **requires** JWT authentication when using the {companyname} Cloud service.
 
-* Configure the `{plugincode}_token_provider` option to specify the endpoint for retrieving a valid JWT token.
+**Authentication Setup:**
 
-For more information on how to set up JWT authentication with {pluginname}, see examples:
+. Create a JWT key in the Customer Portal
+. Configure the `{plugincode}_token_provider` option to specify the endpoint for retrieving your JWT token
 
-* xref:{pluginfilename}-with-jwt-authentication-nodejs.adoc[{pluginname} with JWT authentication (Node.js)]
-* xref:{pluginfilename}-with-jwt-authentication-php.adoc[{pluginname} with JWT authentication (PHP)]
+For more information on how to set up JWT authentication with {pluginname}, see examples: xref:{pluginfilename}-with-jwt-authentication-nodejs.adoc[{pluginname} with JWT authentication (Node.js)] or xref:{pluginfilename}-with-jwt-authentication-php.adoc[{pluginname} with JWT authentication (PHP)]
 
-**Trial period behavior:**
+**Trial period behavior**
 
-* The {pluginname} plugin runs in evaluation mode and adds a watermark to exported content.
-* The `{plugincode}_token_provider` option is "not required" during the trial period.
-* If the trial period "expires" or the plugin lacks the necessary entitlement, it becomes _non-functional_.
-* Attempting to use JWT authentication during the trial will result in an _error_.
+ifeval::["{plugincode}" == "importword"]
+* **Trial Period:**
+** With JWT: Full functionality, unlimited usage, no watermarks.
+** Without JWT: Full functionality with watermarks and page limits.
+
+* **After Trial:**
+** With {pluginname} add-on + JWT: Full functionality (subscription-based)
+** Without add-on: Plugin entitlements are `disabled` and functionality is no longer available.
+endif::[]
+
+ifeval::["{plugincode}" != "importword"]
+* **Trial Period:**
+** With JWT: Full functionality, unlimited usage, no watermarks.
+** Without JWT: Full functionality with watermarks.
+
+* **After Trial:**
+** With {pluginname} add-on + JWT: Full functionality (subscription-based)
+** Without add-on: Plugin entitlements are `disabled` and functionality is no longer available.
+endif::[]
+
+Visit the link:https://www.tiny.cloud/auth/login/[account portal] to obtain your JWT key and test full functionality.
 ====

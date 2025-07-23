@@ -1,6 +1,8 @@
 [[tinycomments_author_avatar]]
 == `+tinycomments_author_avatar+`
 
+include::partial$DEPRECATED/generic_8_userlookup.adoc[]
+
 _Optional_: This option sets the URL for the author's avatar to be used when creating or replying to comments. If this option is omitted, a generated avatar will be used instead. The avatar, if provided:
 
 * will be scaled to a 36px diameter circle; and

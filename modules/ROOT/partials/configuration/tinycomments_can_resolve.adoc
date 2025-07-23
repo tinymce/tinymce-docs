@@ -16,7 +16,7 @@ tinymce.init({
   plugins: 'tinycomments',
   toolbar: 'addcomment showcomments',
   tinycomments_mode: 'embedded',
-  tinycomments_author: currentAuthor,
+  user_id: currentAuthor,
   tinycomments_can_resolve: (req, done, fail) => {
     const allowed = req.comments.length > 0 && req.comments[0].author === currentAuthor;
     done({

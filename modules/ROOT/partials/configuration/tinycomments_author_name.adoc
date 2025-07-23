@@ -1,6 +1,8 @@
 [[tinycomments_author_name]]
 == `+tinycomments_author_name+`
 
+include::partial$DEPRECATED/generic_8_userlookup.adoc[]
+
 _Optional_: This option sets the author's display name to be used when creating or replying to comments. If this option is omitted, the author `+id+` is used instead.
 
 *Type:* `+String+`

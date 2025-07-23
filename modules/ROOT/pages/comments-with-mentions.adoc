@@ -64,8 +64,17 @@ include::partial$configuration/tinycomments_lookup.adoc[leveloffset=+1]
 
 When using embedded mode, the {pluginname} plugin requires the following options:
 
+* xref:user_id[`+user_id+`]
+* xref:fetch_users[`+fetch_users+`]
+
+Or:
+
 * xref:tinycomments_author[`+tinycomments_author+`]
 * xref:tinycomments_author_name[`+tinycomments_author_name+`]
+
+include::partial$configuration/user_id.adoc[leveloffset=+1]
+
+include::partial$configuration/fetch_users.adoc[leveloffset=+1]
 
 include::partial$configuration/tinycomments_author.adoc[leveloffset=+1]
 

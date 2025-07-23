@@ -1,18 +1,23 @@
 import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then(({ faker }) => {
+  /* This represents a database of users on the server */
   const userDb = {
     'michaelcook': {
       id: 'michaelcook',
       name: 'Michael Cook',
-      fullName: 'Michael Cook',
-      description: 'Product Owner',
-      image: "{{imagesdir}}/avatars/michaelcook.png"
+      avatar: '{{imagesdir}}/avatars/michaelcook.png',
+      custom: {
+        fullName: 'Michael Cook',
+        description: 'Product Owner'
+      }
     },
     'kalebwilson': {
       id: 'kalebwilson',
       name: 'Kaleb Wilson',
-      fullName: 'Kaleb Wilson',
-      description: 'Marketing Director',
-      image: "{{imagesdir}}/avatars/kalebwilson.png"
+      avatar: '{{imagesdir}}/avatars/kalebwilson.png',
+      custom: {
+        fullName: 'Kaleb Wilson',
+        description: 'Marketing Director',
+      }
     }
   };
   
@@ -35,7 +40,7 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
   const getAuthorInfo = (uid) => {
     const user = userDb[uid];
     if (user) {
-      return fillAuthorInfo(user.id, user.fullName, user.image);
+      return fillAuthorInfo(user.id, user.custom.fullName, user.avatar);
     }
     return {
       author: uid,
@@ -85,8 +90,8 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
   const resolvedConversationDb = {};
   
   const setupFakeServer = () => {
-    const images = [ adminUser.image, currentUser.image ];
-    const userNames = [ adminUser.fullName, currentUser.fullName ];
+    const images = [ adminUser.avatar, currentUser.avatar ];
+    const userNames = [ adminUser.custom.fullName, currentUser.custom.fullName ];
 
     for (let i = 0; i < numberOfUsers; i++) {
       images.push(faker.image.avatar());
@@ -99,14 +104,16 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
       [currentUser.id]: currentUser
     };
     userNames.map((fullName) => {
-      if ((fullName !== currentUser.fullName) && (fullName !== adminUser.fullName)) {
+      if ((fullName !== currentUser.custom.fullName) && (fullName !== adminUser.custom.fullName)) {
         const id = fullName.toLowerCase().replace(/ /g, '');
         userDb[id] = {
           id,
           name: fullName,
-          fullName,
-          description: faker.person.jobTitle(),
-          image: images[Math.floor(images.length * Math.random())]
+          avatar: images[Math.floor(images.length * Math.random())],
+          custom: {
+            fullName,
+            description: faker.person.jobTitle(),
+          }
         };
       }
     });
@@ -118,8 +125,8 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
         const users = Object.keys(userDb).map((id) => ({
           id,
           name: userDb[id].name,
-          image: userDb[id].image,
-          description: userDb[id].description
+          image: userDb[id].avatar,
+          description: userDb[id].custom.description
         }));
         resolve(users);
       }, fakeDelay);
@@ -320,9 +327,6 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
     });
     setTimeout(() => done({ conversations: fetchedConversations }), fakeDelay);
   };
-
-  // Read the above `getAuthorInfo` function to see how this could be implemented
-  const tinycomments_fetch_author_info = (done) => done(getAuthorInfo(currentUid));
   
   tinymce.init({
     selector: 'textarea#comments-callback-with-mentions',
@@ -350,9 +354,16 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
     mentions_select,
   
     tinycomments_mode: 'callback',
-    tinycomments_author: currentUser.id,
-    tinycomments_author_name: currentUser.fullName,
-    tinycomments_avatar: currentUser.image,
+    user_id: currentUser.id,
+    fetch_users: (userIds) => {
+      return Promise.all(
+        userIds.map(
+          (userId) => new Promise(
+            (resolve) => resolve(userDb[userId] || { id: userId })
+          )
+        )
+      )
+    },
     tinycomments_create,
     tinycomments_reply,
     tinycomments_delete,
@@ -362,6 +373,5 @@ import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then
     tinycomments_delete_comment,
     tinycomments_edit_comment,
     tinycomments_fetch,
-    tinycomments_fetch_author_info
   });
 });

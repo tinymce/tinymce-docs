@@ -48,7 +48,9 @@ node the parent element will be returned.|`xref:apis/tinymce.dom.selection.adoc[
 |xref:#select[select()]|Selects the specified element. This will place the start and end of the selection range around the element.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
 |xref:#selectorChanged[selectorChanged()]|Executes callback when the current selection starts/stops matching the specified selector. The current
 state will be passed to the callback as it's first argument.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
-|xref:#setContent[setContent()]|Sets the current selection to the specified content. If any contents is selected it will be replaced
+|xref:#setContent[setContent()]|This method has been deprecated. Use "editor.insertContent" instead.
+
+Sets the current selection to the specified content. If any contents is selected it will be replaced
 with the contents passed in to this function. If there is no selection the contents will be inserted
 where the caret is placed in the editor/page.|`xref:apis/tinymce.dom.selection.adoc[Selection]`
 |xref:#setCursorLocation[setCursorLocation()]|Move the selection cursor range to the specified node and offset.
@@ -356,6 +358,8 @@ state will be passed to the callback as it's first argument.
 ----
 setContent(content: String, args: Object)
 ----
+This method has been deprecated. Use "editor.insertContent" instead.
+
 Sets the current selection to the specified content. If any contents is selected it will be replaced
 with the contents passed in to this function. If there is no selection the contents will be inserted
 where the caret is placed in the editor/page.

@@ -412,9 +412,33 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
     ]);
   };
 
+  /** Fake user database for suggested edits */
+  const suggestededitsUserDb = {
+      adamhayes: {
+          id: 'adamhayes',
+          name: 'Adam Hayes',
+          avatar: `https://randomuser.me/api/portraits/men/4.jpg`,
+      },
+      martincook: {
+          id: 'martincook',
+          name: 'Martin Cook',
+          avatar: `https://randomuser.me/api/portraits/men/5.jpg`,
+      },
+      kalebwilson: {
+          id: 'kalebwilson',
+          name: 'Kaleb Wilson',
+          avatar: `https://randomuser.me/api/portraits/men/6.jpg`,
+      },
+      sarahjones: {
+          id: 'sarahjones',
+          name: 'Sarah Jones',
+          avatar: `https://randomuser.me/api/portraits/women/1.jpg`,
+      }
+  };
+
   tinymce.init({
     selector: 'textarea#full-featured',
-    plugins: 'ai preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link math media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker editimage help formatpainter permanentpen pageembed charmap tinycomments mentions quickbars linkchecker emoticons advtable footnotes mergetags autocorrect typography advtemplate markdown revisionhistory importword exportword exportpdf',
+    plugins: 'ai suggestededits preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link math media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker editimage help formatpainter permanentpen pageembed charmap tinycomments mentions quickbars emoticons advtable footnotes mergetags autocorrect typography advtemplate markdown revisionhistory importword exportword exportpdf',
     editimage_cors_hosts: ['picsum.photos'],
     tinydrive_token_provider: (success, failure) => {
       success({ token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.Ks_BdfH4CWilyzLNk8S2gDARFhuxIauLa8PwhdEQhEo' });
@@ -424,7 +448,7 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
     tinydrive_google_drive_key: 'AIzaSyAsVRuCBc-BLQ1xNKtnLHB3AeoK-xmOrTc',
     tinydrive_google_drive_client_id: '748627179519-p9vv3va1mppc66fikai92b3ru73mpukf.apps.googleusercontent.com',
     mobile: {
-      plugins: 'ai preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link math media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker help formatpainter pageembed charmap mentions quickbars linkchecker emoticons advtable footnotes mergetags autocorrect typography advtemplate',
+      plugins: 'ai suggestededits preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link math media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker help formatpainter pageembed charmap mentions quickbars emoticons advtable footnotes mergetags autocorrect typography advtemplate',
     },
     menu: {
       tc: {
@@ -433,7 +457,7 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
       }
     },
     menubar: 'file edit view insert format tools table tc help',
-      toolbar: "undo redo | importword exportword exportpdf | revisionhistory | aidialog aishortcuts | blocks fontsizeinput | bold italic | align numlist bullist | link image | table math media pageembed | lineheight  outdent indent | strikethrough forecolor backcolor formatpainter removeformat | charmap emoticons checklist | code fullscreen preview | save print | pagebreak anchor codesample footnotes mergetags | addtemplate inserttemplate | addcomment showcomments | ltr rtl casechange | spellcheckdialog a11ycheck", // Note: if a toolbar item requires a plugin, the item will not present in the toolbar if the plugin is not also loaded.
+      toolbar: "undo redo | importword exportword exportpdf | suggestededits | revisionhistory | aidialog aishortcuts | blocks fontsizeinput | bold italic | align numlist bullist | link image | table math media pageembed | lineheight  outdent indent | strikethrough forecolor backcolor formatpainter removeformat | charmap emoticons checklist | code fullscreen preview | save print | pagebreak anchor codesample footnotes mergetags | addtemplate inserttemplate | addcomment showcomments | ltr rtl casechange | spellcheckdialog a11ycheck", // Note: if a toolbar item requires a plugin, the item will not present in the toolbar if the plugin is not also loaded.
     autosave_ask_before_unload: true,
     autosave_interval: '30s',
     autosave_prefix: '{path}{query}-{id}-',
@@ -583,10 +607,15 @@ tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/fak
       }
     },
     revisionhistory_fetch: fetchRevisions,
-    revisionhistory_author: {
-      id: 'john.doe',
-      name: 'John Doe'
-    },
     revisionhistory_display_author: true,
+    // Suggested Edits plugin configuration
+    user_id: 'kalebwilson',
+    fetch_users: (userIds) => Promise.all(userIds
+        .map((userId) => new Promise((resolve) => 
+            resolve(suggestededitsUserDb[userId] || { id: userId }))
+    )),
+    suggestededits_content: 'html',
+    suggestededits_access: 'full',
   });
+
 });

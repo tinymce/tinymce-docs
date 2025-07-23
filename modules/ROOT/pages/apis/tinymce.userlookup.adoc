@@ -1,0 +1,69 @@
+= tinymce.UserLookup
+:navtitle: tinymce.UserLookup
+:description: TinyMCE User Lookup API Handles user information retrieval and caching.
+:keywords: fetchUsers, userId
+:moxie-type: api
+
+TinyMCE User Lookup API Handles user information retrieval and caching.
+
+[[examples]]
+== Examples
+[source, javascript]
+----
+// Get the current user's ID from the editor options, or defaults to 'Anonymous'.
+tinymce.activeEditor.userLookup.userId;
+
+// Fetch user information by IDs which returns a record of promises
+const userPromises = tinymce.activeEditor.userLookup.fetchUsers(['user-1', 'user-2']);
+
+// Access individual promises by user ID
+userPromises['user-1'].then(user => console.log('User 1:', user));
+userPromises['user-2'].then(user => console.log('User 2:', user));
+
+// Or wait for all promises
+Promise.all(Object.values(userPromises)).then((users) => {
+  users.forEach(user => console.log('User found:', user));
+}).catch((error) => {
+  console.error('Error fetching users:', error);
+});
+----
+
+[[summary]]
+== Summary
+
+[[properties]]
+=== Properties
+[cols="2,1,4,1",options="header"]
+|===
+|Name|Type|Summary|Defined by
+|userId|`String`|The current user's ID retrieved from the editor options, or defaults to 'Anonymous'.|`xref:apis/tinymce.userlookup.adoc[UserLookup]`
+|===
+
+[[methods-summary]]
+=== Methods
+[cols="2,5,1",options="header"]
+|===
+|Name|Summary|Defined by
+|xref:#fetchUsers[fetchUsers()]|Fetches user information using a provided array of userIds.|`xref:apis/tinymce.userlookup.adoc[UserLookup]`
+|===
+
+[[methods]]
+== Methods
+
+[[fetchUsers]]
+=== fetchUsers()
+[source, javascript]
+----
+fetchUsers(userIds: string[]): Record<UserId, Promise<User>>
+----
+Fetches user information using a provided array of userIds.
+
+==== Parameters
+
+* `userIds (string[])` - - A list of user IDs to fetch information for.
+
+==== Return value
+
+* `Record<UserId, Promise<User>>` - An object where each key is a user ID and its value is a Promise that resolves to the user's data or rejects if the user is not found.
+
+'''

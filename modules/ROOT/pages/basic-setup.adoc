@@ -198,7 +198,8 @@ The following example is a basic {productname} configuration.
   <script
     type="text/javascript"
     src='{cdnurl}'
-    referrerpolicy="origin">
+    referrerpolicy="origin"
+    crossorigin="anonymous">
   </script>
   <script type="text/javascript">
   tinymce.init({

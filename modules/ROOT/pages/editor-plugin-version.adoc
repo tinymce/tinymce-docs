@@ -10,21 +10,21 @@ The example below shows the default way to load {productname} {productmajorversi
 
 [source,html,subs="attributes+"]
 ----
-<script src="{cdnurl}" referrerpolicy="origin"></script>
+<script src="{cdnurl}" referrerpolicy="origin" crossorigin="anonymous"></script>
 ----
 
 To load a specific version of {productname} {productmajorversion} other than the latest release, replace the `{productmajorversion}` in the URL with the desired version. For example, to load a minor version such as {productname} `{productmajorversion}.1`, use the following URL:
 
 [source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}.1/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}.1/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
 ----
 
 To load a specific patch version, replace the `{productmajorversion}` in the URL with the desired patch version. For example, to load {productname} `{productmajorversion}.1.2`, use the following URL:
 
 [source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}.1.2/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}.1.2/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
 ----
 
 [TIP]
@@ -55,7 +55,7 @@ This channel deploys the latest release of {productname} that has passed our qua
 
 [source,html,subs="attributes+"]
 ----
-<script src="{cdnurl}" referrerpolicy="origin"></script>
+<script src="{cdnurl}" referrerpolicy="origin" crossorigin="anonymous"></script>
 ----
 
 [#{productmajorversion}-testing-release-channel]
@@ -68,7 +68,7 @@ This channel deploys the current *release candidate* for the `{productmajorversi
 
 [source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-testing/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-testing/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
 ----
 
 [#{productmajorversion}-dev-release-channel]
@@ -86,7 +86,7 @@ The current version of {productname} available on the `{productmajorversion}-dev
 
 [source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-dev/tinymce.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}-dev/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
 ----
 
 For more details, check out the xref:editor-and-features.adoc[{productname} editor via {cloudname}].
@@ -106,7 +106,7 @@ The `plugins.min.js` script loads every premium plugin the API key is entitled t
 
 [source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/api-key/tinymce/{productmajorversion}/plugins.min.js" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/api-key/tinymce/{productmajorversion}/plugins.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
 ----
 
 === `plugins.min.js` with Exclusions for Specific Plugins
@@ -115,7 +115,7 @@ To exclude specific premium plugins from `plugins.min.js` because you are self-h
 
 [source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/api-key/tinymce/{productmajorversion}/plugins.min.js?mentions=sdk&powerpaste=sdk" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/api-key/tinymce/{productmajorversion}/plugins.min.js?mentions=sdk&powerpaste=sdk" referrerpolicy="origin" crossorigin="anonymous"></script>
 ----
 
 [NOTE]
@@ -131,7 +131,7 @@ The `cloud-plugins.min.js` script allows loading of specific premium plugins fro
 
 [source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/api-key/tinymce/{productmajorversion}/cloud-plugins.min.js?mentions&powerpaste&advcode" referrerpolicy="origin"></script>
+<script src="https://cdn.tiny.cloud/1/api-key/tinymce/{productmajorversion}/cloud-plugins.min.js?mentions&powerpaste&advcode" referrerpolicy="origin" crossorigin="anonymous"></script>
 ----
 
 [NOTE]

@@ -1,23 +1,54 @@
 [[a11ychecker_allow_decorative_images]]
 == `+a11ychecker_allow_decorative_images+`
 
-This option sets whether the Accessibility Checker should allow decorative images. When this option is set to `+true+`, a decorative image must have *both*:
+This option determines whether the Accessibility Checker should allow decorative images. Decorative images are those that are used purely for visual enhancement and do not convey meaningful content or serve a specific function.
 
-* An empty alternative text attribute.
-* The `+role="presentation"+` attribute.
+When this option is set to `+true+`, decorative images must be marked using one or both of these methods:
 
-For example:
+* An empty alternative text attribute (`+alt=""+`), OR
+* The `+role="presentation"+` or `+role="none"+` attribute, OR
+* Both methods together
+
+Any of these approaches explicitly tells assistive technologies to ignore these images, improving the browsing experience for users of screen readers.
+
+=== Common Use Cases for Decorative Images
+
+* Background patterns or textures
+* Aesthetic borders or dividers
+* Purely decorative icons that repeat nearby text
+* Images that are described by adjacent text content
+* Spacer images used for layout purposes
+
+=== Examples of Decorative Images:
 
 [source,html]
 ----
-<img src="my-image.png" role="presentation" alt="" />
+<!-- Using empty alt attribute -->
+<img src="decorative-border.png" alt="" />
+
+<!-- Using role="presentation" -->
+<img src="spacer.gif" role="presentation" />
+
+<!-- Using both approaches -->
+<img src="pattern.png" role="presentation" alt="" />
+
+<!-- Using empty alt and title attribute -->
+<img src="decorative-border.png" alt="" title=""/>
 ----
+
+=== Example of an Informative Image (non-decorative):
+
+[source,html]
+----
+<img src="company-logo.png" alt="Company Name Logo" />
+----
+
+=== Validation Rules
 
 If `+a11ychecker_allow_decorative_images+` is set to `+true+`, the Accessibility Checker will present an error when:
 
-* An image does not have the alternative text attribute (`+alt+`).
-* An image has an empty alternative text attribute, but is missing the `+role="presentation"+` attribute.
-* An image has alternative text and a conflicting `+role="presentation"+` attribute.
+* An image has conflicting accessibility information (e.g., both meaningful alt text and `+role="presentation"+`).
+* An image has incomplete accessibility information (no clear decorative or informative intent).
 
 If `+a11ychecker_allow_decorative_images+` is set to `+false+`, the Accessibility Checker will present an error when:
 

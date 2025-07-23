@@ -1,7 +1,7 @@
 = tinymce.Editor
 :navtitle: tinymce.Editor
 :description: This class contains the core logic for a TinyMCE editor.
-:keywords: Editor, addCommand, addCommandCallback, addQueryStateHandler, addQueryStateHandlerCallback, addQueryValueHandler, addQueryValueHandlerCallback, addShortcut, addVisual, baseURI, contentCSS, contentStyles, convertURL, destroy, dispatch, documentBaseURI, dom, editorUpload, execCommand, fire, focus, formatter, getBody, getContainer, getContent, getContentAreaContainer, getDoc, getElement, getParam, getWin, hasEditableRoot, hasEventListeners, hasFocus, hasPlugin, hide, id, initialized, insertContent, isDirty, isHidden, load, mode, nodeChanged, notificationManager, off, on, once, options, parser, plugins, queryCommandState, queryCommandSupported, queryCommandValue, remove, render, resetContent, save, schema, selection, serializer, setContent, setDirty, setEditableRoot, setProgressState, show, theme, translate, ui, undoManager, uploadImages, windowManager
+:keywords: Editor, addCommand, addCommandCallback, addQueryStateHandler, addQueryStateHandlerCallback, addQueryValueHandler, addQueryValueHandlerCallback, addShortcut, addVisual, baseURI, contentCSS, contentStyles, convertURL, destroy, dispatch, documentBaseURI, dom, editorUid, editorUpload, execCommand, fire, focus, formatter, getBody, getContainer, getContent, getContentAreaContainer, getDoc, getElement, getParam, getWin, hasEditableRoot, hasEventListeners, hasFocus, hasPlugin, hide, id, initialized, insertContent, isDirty, isHidden, load, mode, nodeChanged, notificationManager, off, on, once, options, parser, plugins, queryCommandState, queryCommandSupported, queryCommandValue, remove, render, resetContent, save, schema, selection, serializer, setContent, setDirty, setEditableRoot, setProgressState, show, theme, translate, ui, undoManager, uploadImages, userLookup, windowManager
 :moxie-type: api
 
 This class contains the core logic for a TinyMCE editor.
@@ -37,6 +37,7 @@ ed.render();
 |contentStyles|`Array`|Array of CSS styles to add to head of document when the editor loads.|`xref:apis/tinymce.editor.adoc[Editor]`
 |documentBaseURI|`xref:apis/tinymce.util.uri.adoc[URI]`|URI object to document configured for the TinyMCE instance.|`xref:apis/tinymce.editor.adoc[Editor]`
 |dom|`xref:apis/tinymce.dom.domutils.adoc[DOMUtils]`|DOM instance for the editor.|`xref:apis/tinymce.editor.adoc[Editor]`
+|editorUid|`String`|A uuid string to uniquely identify an editor across any page.|`xref:apis/tinymce.editor.adoc[Editor]`
 |editorUpload|`xref:apis/tinymce.editorupload.adoc[EditorUpload]`|Editor upload API|`xref:apis/tinymce.editor.adoc[Editor]`
 |formatter|`xref:apis/tinymce.formatter.adoc[Formatter]`|Formatter instance.|`xref:apis/tinymce.editor.adoc[Editor]`
 |id|`String`|Editor instance id, normally the same as the div/textarea that was replaced.|`xref:apis/tinymce.editor.adoc[Editor]`
@@ -52,6 +53,7 @@ ed.render();
 |theme|`xref:apis/tinymce.theme.adoc[Theme]`|Reference to the theme instance that was used to generate the UI.|`xref:apis/tinymce.editor.adoc[Editor]`
 |ui|`xref:apis/tinymce.editor.ui.ui.adoc[Ui]`|Editor ui components|`xref:apis/tinymce.editor.adoc[Editor]`
 |undoManager|`xref:apis/tinymce.undomanager.adoc[UndoManager]`|Undo manager instance, responsible for handling undo levels.|`xref:apis/tinymce.editor.adoc[Editor]`
+|userLookup|`xref:apis/tinymce.userlookup.adoc[UserLookup]`|Editor user lookup API|`xref:apis/tinymce.editor.adoc[Editor]`
 |windowManager|`xref:apis/tinymce.windowmanager.adoc[WindowManager]`|Window manager reference, use this to open new windows and dialogs.|`xref:apis/tinymce.editor.adoc[Editor]`
 |===
 
@@ -723,7 +725,7 @@ Returns true/false if the editor is hidden or not.
 === load()
 [source, javascript]
 ----
-load(args: Object): String
+load(args: Object)
 ----
 Loads contents from the textarea, input or other element that got converted into an editor instance.
 This method will move the contents from that textarea, input or other element into the editor by using setContent
@@ -732,10 +734,6 @@ so all events etc that method has will get dispatched as well.
 ==== Parameters
 
 * `args (Object)` - Optional content object, this gets passed around through the whole load process.
-
-==== Return value
-
-* `String` - HTML string that got set into the editor.
 
 '''
 
@@ -949,7 +947,7 @@ so all events etc that method has will get dispatched as well.
 === setContent()
 [source, javascript]
 ----
-setContent(content: String, args: Object): String
+setContent(content: String, args: Object)
 ----
 Sets the specified content to the editor instance, this will cleanup the content before it gets set using
 the different cleanup rules options.
@@ -974,10 +972,6 @@ tinymce.activeEditor.setContent('<p>Some html</p>', { format: 'html' });
 
 * `content (String)` - Content to set to editor, normally HTML contents but can be other formats as well.
 * `args (Object)` - Optional content object, this gets passed around through the whole set process.
-
-==== Return value
-
-* `String` - HTML string that got set into the editor.
 
 '''
 

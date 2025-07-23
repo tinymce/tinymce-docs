@@ -131,7 +131,7 @@ Include the following line of code in the `+<head>+` of an HTML page.
 
 [source,html,subs="attributes+"]
 ----
-<script src="{scriptsource}" referrerpolicy="origin"></script>
+<script src="{scriptsource}" referrerpolicy="origin" crossorigin="anonymous"></script>
 ----
 
 == Initialize {productname} as part of a web form
@@ -151,7 +151,7 @@ ifeval::["{productSource}" == "cloud"]
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script src="{scriptsource}" referrerpolicy="origin"></script>
+    <script src="{scriptsource}" referrerpolicy="origin" crossorigin="anonymous"></script>
     <script>
       tinymce.init({
         selector: '#mytextarea'
@@ -178,11 +178,11 @@ ifeval::["{productSource}" != "cloud"]
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script src="{scriptsource}" referrerpolicy="origin"></script>
+    <script src="{scriptsource}" referrerpolicy="origin" crossorigin="anonymous"></script>
     <script>
       tinymce.init({
         selector: '#mytextarea',
-        license_key: 'gpl|<your-license-key>'
+        license_key: 'gpl' // gpl for open source, T8LK:... for commercial
       });
     </script>
   </head>

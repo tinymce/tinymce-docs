@@ -1,0 +1,63 @@
+[[I2]]
+==== I2 - Missing `+alt+` attribute
+
+*Rule description:* this rule checks that all `<img>` elements include an `+alt+` attribute, even if other accessible name properties like `+aria-label+`, `+aria-labelledby+`, or `+title+` are present. The `+alt+` attribute is required for all images, and informative images must have at least one meaningful text alternative.
+
+===== {pluginname} rule details - I2
+
+Notification level (severity):: Error
+
+https://www.w3.org/TR/WCAG21/#conformance[WCAG level]:: Level A ; Level AA ; Level AAA
+
+xref:a11ychecker_html_version[HTML version]:: HTML4 and HTML5
+
+WCAG 2.1 specification:: https://www.w3.org/WAI/WCAG21/Techniques/failures/F65.html[F65 - Failure of Success Criterion 1.1.1 due to omitting the alt attribute on `+img+` elements].
+
+include::partial$misc/admon-accessibility-rule-i3-can-also-be-applied.adoc[]
+
+.Examples
+[%collapsible]
+====
+.Non-compliant examples
+
+[source,html]
+----
+<!-- No alt attribute at all -->
+<img src="chart.jpg">
+
+<!-- No alt attribute (even with aria-label) -->
+<img src="icon.jpg" aria-label="Settings">
+
+<!-- No alt attribute (but has aria-labelledby) -->
+<img src="chart.jpg" aria-labelledby="chart-caption">
+
+<!-- No alt attribute (but has title) -->
+<img src="button.jpg" title="Submit">
+----
+
+These examples fail because they're missing the required `+alt+` attribute. Note: Images with no attributes at all trigger rule I1 for incomplete intent, not I2.
+
+.Compliant examples
+
+[source,html]
+----
+<!-- Basic alt attribute usage -->
+<img src="product.jpg" alt="Red coffee mug">
+
+<!-- Decorative image with empty alt -->
+<img src="separator.png" alt="" role="presentation">
+
+<!-- Alt with supporting aria-describedby -->
+<img src="chart.png" 
+     alt="Sales performance chart" 
+     aria-describedby="chart-desc">
+<p id="chart-desc">Detailed breakdown of Q3 sales performance...</p>
+
+<!-- Alt with matching title for tooltip -->
+<img src="icon.png" 
+     alt="Settings" 
+     title="Settings">
+----
+
+These examples all include the required `+alt+` attribute and provide meaningful text alternatives for informative images.
+====

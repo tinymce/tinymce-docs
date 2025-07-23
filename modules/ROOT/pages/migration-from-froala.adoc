@@ -38,7 +38,7 @@ To migrate from a basic Froala 3 configuration to a basic {productname} {product
 +
 [source,html,subs="attributes+"]
 ----
-<script src='https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/tinymce.min.js' referrerpolicy='origin'></script>
+<script src='https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/tinymce.min.js' referrerpolicy='origin' crossorigin='anonymous'></script>
 ----
 +
 Replace `+no-api-key+` with your link:{accountpageurl}/[{cloudname} API key].
@@ -119,7 +119,7 @@ The following examples show an initial Froala configuration and the migrated {pr
 <html>
   <head>
     <meta charset='utf-8'>
-    <script src='https://cdn.tiny.cloud/1/my-api-key/tinymce/5/tinymce.min.js' referrerpolicy='origin'></script>
+    <script src='https://cdn.tiny.cloud/1/my-api-key/tinymce/5/tinymce.min.js' referrerpolicy='origin' crossorigin='anonymous'></script>
   </head>
   <body>
     <form method='post'>

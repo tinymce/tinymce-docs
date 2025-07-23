@@ -88,7 +88,12 @@ ifeval::["{productSource}" != "cloud"]
 +
 [source,html,subs="attributes+"]
 ----
-<tinymce-editor license-key="your-license-key"></tinymce-editor>
+<script>
+  var editorConfig= {
+    license_key: 'gpl'
+  }
+</script>
+<tinymce-editor config="editorConfig"></tinymce-editor>
 ----
 The default {productname} editor will load at this location if the page is opened in a web browser.
 

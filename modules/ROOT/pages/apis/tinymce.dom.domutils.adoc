@@ -269,7 +269,7 @@ Creates HTML string for element. The element will be closed unless an empty inne
 [source, javascript]
 ----
 // Creates a html chunk and inserts it at the current selection/caret location
-tinymce.activeEditor.selection.setContent(tinymce.activeEditor.dom.createHTML('a', { href: 'test.html' }, 'some line'));
+tinymce.activeEditor.insertContent(tinymce.activeEditor.dom.createHTML('a', { href: 'test.html' }, 'some line'));
 ----
 
 ==== Parameters

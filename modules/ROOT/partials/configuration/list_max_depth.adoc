@@ -19,6 +19,6 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'lists',
   toolbar: 'bullist numlist',
-  list_max_depth: 2      // limits list nesting to maximum of 2 levels
+  list_max_depth: 2  // limits list nesting to maximum of 2 levels
 });
 ----

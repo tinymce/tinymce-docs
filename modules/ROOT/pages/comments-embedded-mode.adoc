@@ -11,17 +11,33 @@ To add the {pluginname} plugin in embedded mode to the {productname}, configure 
 
 [source,js]
 ----
+const userDb = {
+  'author': { 
+    id: 'author', 
+    name: 'Name of the commenter', 
+    avatar: 'https://example.com/avatar/john.png' 
+  },
+};
+
 tinymce.init({
   selector: 'textarea',  // change this value according to your html
   plugins: 'tinycomments',
   toolbar: 'addcomment showcomments',
-  tinycomments_author: 'author',
-  tinycomments_author_name: 'Name of the commenter',
+  user_id: 'author',
+  fetch_users: (userIds) => {
+    return Promise.all(
+      userIds.map(
+        (userId) => new Promise(
+          (resolve) => resolve(userDb[userId] || { id: userId })
+        )
+      )
+    )
+  },
   tinycomments_mode: 'embedded'
 });
 ----
 
-This is the minimum recommended setup for the {pluginname} plugin in embedded mode. If the `+tinycomments_author+` and `+tinycomments_author_name+` options are not configured, all users will be assigned the name "_ANON_".
+This is the minimum recommended setup for the {pluginname} plugin in embedded mode. If the `+user_id+` or `+tinycomments_author+` options are not configured, all users will be assigned the name "_ANON_".
 
 [[comments-embedded-live-demo]]
 == Interactive example
@@ -29,6 +45,10 @@ This is the minimum recommended setup for the {pluginname} plugin in embedded mo
 liveDemo::comments-embedded[]
 
 == Options
+
+include::partial$configuration/user_id.adoc[leveloffset=+1]
+
+include::partial$configuration/fetch_users.adoc[leveloffset=+1]
 
 include::partial$configuration/tinycomments_author.adoc[leveloffset=+1]
 

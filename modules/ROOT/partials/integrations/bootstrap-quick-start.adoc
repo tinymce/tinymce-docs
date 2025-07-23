@@ -20,7 +20,7 @@ ifeval::["{productSource}" == "cloud"]
 +
 [source,html,subs="attributes+"]
 ----
-<script src="{cdnurl}" referrerpolicy="origin"></script>
+<script src="{cdnurl}" referrerpolicy="origin" crossorigin="anonymous"></script>
 ----
 +
 Replace `+no-api-key+` in the source script (`+<script src=...+`) with a {cloudname} API key, which is created when signing up to the link:{accountsignup}[{cloudname}].

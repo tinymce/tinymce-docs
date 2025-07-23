@@ -1,0 +1,55 @@
+[[fetch_users]]
+== `fetch_users`
+
+A **required callback function** that fetches user data. This function is called with an array of user IDs and should return a `Promise` that resolves to an array of user objects. The callback is used by the xref:userlookup.adoc[`UserLookup`] API. If the returned array does not include all requested user IDs, promises for the missing users will be rejected with a "User \{id} not found" error.
+
+*Type:* `Function`
+
+*Parameters:*
+- `ids` (`Array<string>`): An array of user IDs to fetch.
+
+*Returns:*
+- `Promise<Array<Object>>`: A promise that resolves to an array of user objects.
+
+.Example: using `fetch_users` option
+[source,javascript]
+----
+tinymce.init({
+  selector: '#editor',
+  user_id: 'alextaylor',
+  fetch_users: (userIds) => Promise.all(userIds
+    .map((userId) =>
+      fetch(`/users/${userId}`) // Fetch user data from the server
+      .then((response) => response.json())
+      .catch(() => ({ id: userId })) // Still return a valid user object even if the fetch fails
+  )),
+});
+----
+
+.Example: returning user array with validation
+[source,javascript]
+----
+tinymce.init({
+    selector: '#editor',
+    user_id: 'alextaylor',
+    fetch_users: async (userIds) => {
+        const users = await fetch('/users', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ userIds })
+        })
+        .then((response) => response.json())
+        .catch(() =>
+            userIds.map((userId) =>
+                ({ id: userId }) // Still returns valid users even if the fetch fails
+            )
+        );
+
+        return userIds.map(
+            (userId) => 
+                users.find((user) => user.id === userId) 
+                || ({ id: userId }) // Still returns a valid user even if it wasn't returned from the server
+        )
+    }
+});
+----

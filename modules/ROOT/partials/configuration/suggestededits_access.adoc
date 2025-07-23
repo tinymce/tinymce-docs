@@ -1,0 +1,44 @@
+[[suggestededits_access]]
+== `suggestededits_access`
+
+The `suggestededits_access` option determines the level of access a user has to the {pluginname} view. This setting is crucial for controlling who can accept or reject suggestions, add feedback, or view suggestions in read-only mode. The `suggestededits_access` option does not control access to the editor content, however when used in conjunction with the xref:editor-important-options#readonly[`readonly`] option it allows for fine-grained control over user permissions.
+
+When set to:
+
+* `'full'`: The user has full access to the {pluginname} view, with permission to accept or reject suggestions.
+* `'feedback'`: The user has access to the {pluginname} view, with permission to add feedback to suggestions.
+* `'read'`: The user has read-only access to the {pluginname} view.
+* `'none'`: The user has no access to the {pluginname} view.
+
+*Type:* `+String+`
+
+*Possible Values*: `'full'`, `'feedback'`, `'read'`, `'none'`
+
+*Default Value*: `'full'`
+
+.Example: `suggestededits_access: 'feedback'`
+[source,javascript]
+----
+tinymce.init({
+  selector: 'textarea',  // Change this value according to your HTML
+  plugins: 'suggestededits',
+  toolbar: 'suggestededits',
+  suggestededits_access: 'feedback', // Change this value to set the {pluginname} view permissions
+  readonly: false // Set to true to restrict editing
+});
+----
+
+liveDemo::suggestededits-access-feedback[]
+
+.Example: `suggestededits_access: 'read'`
+[source,javascript]
+----
+tinymce.init({
+  selector: 'textarea',  // Change this value according to your HTML
+  plugins: 'suggestededits',
+  toolbar: 'suggestededits',
+  suggestededits_access: 'read', // Change this value to set the {pluginname} view permissions
+  readonly: false // Set to true to restrict editing
+});
+----
+liveDemo::suggestededits-access-read[]

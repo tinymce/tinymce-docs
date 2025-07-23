@@ -1,7 +1,7 @@
 = tinymce
 :navtitle: tinymce
 :description: TinyMCE core class.
-:keywords: DOM, PluginManager, ScriptLoader, ThemeManager, activeEditor, add, addI18n, baseURI, baseURL, createEditor, defaultOptions, documentBaseURL, each, execCommand, explode, get, grep, hasOwnProperty, i18n, inArray, init, is, isArray, majorVersion, makeMap, map, minorVersion, overrideDefaults, releaseDate, remove, resolve, setActive, suffix, toArray, translate, triggerSave, trim, walk
+:keywords: DOM, PluginManager, ScriptLoader, ThemeManager, activeEditor, add, addI18n, baseURI, baseURL, createEditor, defaultOptions, documentBaseURL, each, execCommand, explode, get, grep, hasOwnProperty, i18n, inArray, init, is, isArray, majorVersion, makeMap, map, minorVersion, overrideDefaults, pageUid, releaseDate, remove, resolve, setActive, suffix, toArray, translate, triggerSave, trim, walk
 :moxie-type: api
 
 TinyMCE core class.
@@ -26,6 +26,7 @@ TinyMCE core class.
 |i18n|`Object`|Collection of language pack data.|`xref:apis/tinymce.root.adoc[tinymce]`
 |majorVersion|`String`|Major version of TinyMCE build.|`xref:apis/tinymce.root.adoc[tinymce]`
 |minorVersion|`String`|Minor version of TinyMCE build.|`xref:apis/tinymce.root.adoc[tinymce]`
+|pageUid|`String`|A uuid string to anonymously identify the page tinymce is loaded in|`xref:apis/tinymce.root.adoc[tinymce]`
 |releaseDate|`String`|Release date of TinyMCE build.|`xref:apis/tinymce.root.adoc[tinymce]`
 |suffix|`String`|Current suffix to add to each plugin/theme that gets loaded for example ".min".|`xref:apis/tinymce.root.adoc[tinymce]`
 |===

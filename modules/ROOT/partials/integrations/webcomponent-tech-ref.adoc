@@ -3,11 +3,14 @@
 * xref:use-a-cloud-version-of-the-tinymce-web-component-integration[Use a cloud version of the {productname} Web Component integration]
 * xref:installing-the-tinymce-web-component-integration[Installing the {productname} Web Component integration]
 * xref:loading-tinymce[Loading {productname}]
+* xref:licensekey[Setting the license key]
 * xref:configuring-the-editor[Configuring the editor]
 ** xref:setting-the-initial-content[Setting the initial content]
 ** xref:loading-plugins[Loading plugins]
 ** xref:setting-the-editor-width[Setting the editor width]
 ** xref:setting-the-editor-height[Setting the editor height]
+** xref:setting-readonly[Setting the editor to readonly]
+** xref:setting-disabled[Setting the editor to disabled]
 ** xref:setting-the-toolbar[Setting the toolbar]
 ** xref:setting-the-toolbar-mode[Setting the toolbar mode]
 ** xref:setting-the-menu-bar[Setting the menu bar]
@@ -74,6 +77,42 @@ If {productname} is not available for {productname} Web Component, the latest ve
 To use {productname} Web Component with a self-hosted copy of {productname}, ensure that the self-hosted copy of {productname} can be loaded in the same location as the {productname} Web Component (such as the same web page).
 
 To use {productname} from the {cloudname}, add the `+api-key+` attribute to the `+tinymce-editor+` element with an API from link:{accountpageurl}/[{accountpage}].
+
+[[licensekey]]
+== Setting the license key
+
+include::partial$integrations/common/license-key-property.adoc[]
+
+=== Example: Commercial license
+[source,html]
+----
+<script>
+  var editorConfig= {
+    license_key: 'T8LK:...'
+  }
+</script>
+<tinymce-editor config="editorConfig"></tinymce-editor>
+----
+
+=== Example: Open source GPL license
+[source,html]
+----
+<script>
+  var editorConfig= {
+    license_key: 'gpl'
+  }
+</script>
+<tinymce-editor config="editorConfig"></tinymce-editor>
+----
+
+[IMPORTANT]
+====
+* The license key is only required when self-hosting {productname}
+* License keys starting with "T8LK:" use client-side validation.
+* Do not use both an API key and a license key - use API key for cloud deployments, and license key for self-hosted deployments
+====
+
+For more information on licensing, see: xref:license-key.adoc[License Key].
 
 [[configuring-the-editor]]
 == Configuring the editor
@@ -144,6 +183,26 @@ To set the height of the editor (content area and user interface), use the `+hei
 [source,html]
 ----
 <tinymce-editor height="15em"></tinymce-editor>
+----
+
+
+[[setting-readonly]]
+=== Setting readonly mode
+
+To set the editor's mode to `readonly`.
+
+[source,html]
+----
+<tinymce-editor readonly></tinymce-editor>
+----
+
+[[setting-disaled-state]]
+=== Setting disabled state
+To set the editor to a disabled state.
+
+[source,html]
+----
+<tinymce-editor disabled></tinymce-editor>
 ----
 
 [[setting-the-toolbar]]

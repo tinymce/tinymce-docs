@@ -1,0 +1,17 @@
+[[user_id]]
+== `+user_id+`
+
+This option sets the unique identifier for the current user in the editor. It is used in the the xref:userlookup.adoc[`UserLookup`] API.
+
+*Type:* `+String+`
+
+*Default value:* `'Anonymous'`
+
+.Example: using `user_id` option
+[source,javascript]
+----
+tinymce.init({
+  selector: 'textarea',  // Change this value according to your HTML
+  user_id: 'alextaylor' // replace this with a unique string to identify the user
+});
+----

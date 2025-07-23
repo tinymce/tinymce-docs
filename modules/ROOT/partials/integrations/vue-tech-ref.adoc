@@ -7,6 +7,7 @@
 ** xref:license-key[`+licenseKey+`]
 ** xref:cloud-channel[`+cloud-channel+`]
 ** xref:disabled[`+disabled+`]
+** xref:readonly[`+readonly+`]
 ** xref:id[`+id+`]
 ** xref:init[`+init+`]
 ** xref:initial-value[`+initial-value+`]
@@ -99,6 +100,7 @@ The editor accepts the following properties:
   api-key="no-api-key"
   cloud-channel="{productmajorversion}"
   :disabled=false
+  :readonly=false
   id="uuid"
   :init= "{ }"
   initial-value=""
@@ -137,22 +139,22 @@ include::partial$misc/get-an-api-key.adoc[]
 [[license-key]]
 === `+licenseKey+`
 
-{cloudname} License key.
 
-Use this when self-hosting {productname} instead of loading from {cloudname}. For more information, see: xref:license-key.adoc[License Key].
+include::partial$integrations/common/license-key-property.adoc[]
 
-*Type:* `+String+`
-
-*Default value:* `+undefined+`
-
-*Possible values:* `undefined`, `'gpl'` or a valid {productname} license key
-
-==== Example: using `+licenseKey+`
-
+==== Example: Commercial license
 [source,html]
 ----
 <editor
-  licenseKey="your-license-key"
+  licenseKey="T8LK:..."
+/>
+----
+
+==== Example: using `+licenseKey+` with GPL
+[source,html]
+----
+<editor
+  licenseKey="gpl"
 />
 ----
 
@@ -202,6 +204,26 @@ The `+disabled+` property can dynamically switch the editor between a "disabled"
 ----
 <editor
   :disabled=true
+/>
+----
+
+[[readonly]]
+=== `+readonly+`
+
+The `+readonly+` property can dynamically switch the editor between a "read-only" mode (`+true+`) and the standard editable mode (`+false+`).
+
+*Type:* `+Boolean+`
+
+*Default value:* `+false+`
+
+*Possible values:* `+true+`, `+false+`
+
+==== Example: using `+readonly+`
+
+[source,html]
+----
+<editor
+  :readonly=true
 />
 ----
 

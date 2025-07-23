@@ -1,4 +1,4 @@
-= Commands Available for TinyMCE
+= Commands Available for {productname}
 :navtitle: Available Commands
 :description_short: Complete list of editor commands.
 :description: The complete list of exposed editor commands.
@@ -155,7 +155,7 @@ The commands in the following table are provided by the {productname} editor and
 |mceTogglePlainTextPaste |Toggles paste as plain text.
 |mceToggleVisualAid |Toggles the visual aids for: tables without borders and anchors.
 |ToggleSidebar |Closes the current sidebar, or toggles the sidebar if the sidebar name is provided as a value (`_<sidebar-name>_`).
-|ToggleToolbarDrawer |Toggles the Toolbar Drawer. For information on toolbars, see: xref:toolbar-configuration-options.adoc#toolbar[User interface options - Toolbar].
+|ToggleToolbarDrawer |Toggles the Toolbar Drawer. Can be used with the `skip_focus` option to prevent focusing the editor. For information on toolbars, see: xref:toolbar-configuration-options.adoc#toolbar[User interface options - Toolbar].
 |===
 
 .Examples
@@ -199,7 +199,7 @@ tinymce.activeEditor.execCommand('mceTogglePlainTextPaste');
 tinymce.activeEditor.execCommand('mceToggleVisualAid');
 tinymce.activeEditor.execCommand('ToggleSidebar');  /* OR */
 tinymce.activeEditor.execCommand('ToggleSidebar', false, '<sidebar-name>');
-tinymce.activeEditor.execCommand('ToggleToolbarDrawer');
+tinymce.activeEditor.execCommand('ToggleToolbarDrawer', false, null, { skip_focus: true });
 ----
 
 [[core-table-commands]]
@@ -614,7 +614,7 @@ The following command states can be queried using the xref:apis/tinymce.editor.a
 |Strikethrough |Returns `+true+` if the content is formatted using the same markup as the {productname} `+Strikethrough+` command.
 |Subscript |Returns `+true+` if the content is formatted using the same markup as the {productname} `+Subscript+` command.
 |Superscript |Returns `+true+` if the content is formatted using the same markup as the {productname} `+Superscript+` command.
-|ToggleToolbarDrawer |Returns `+true+` if the Toolbar Drawer is open. The state can be controlled by the {productname} `+ToggleToolbarDrawer+` command.
+|ToggleToolbarDrawer |Returns `+true+` if the Toolbar Drawer is open. The state can be controlled by the {productname} `+ToggleToolbarDrawer+` command. When controlling the state, use the `skip_focus` option (recommended) instead of the deprecated `skipFocus` option.
 |Underline |Returns `+true+` if the content is formatted using the same markup as the {productname} `+Underline+` command.
 |===
 

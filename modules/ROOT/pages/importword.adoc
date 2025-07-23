@@ -1,4 +1,3 @@
-
 = {pluginname} plugin
 :plugincode: importword
 :pluginname: Import from Word
@@ -30,9 +29,9 @@ tinymce.init({
   selector: 'textarea',
   plugins: 'importword',
   toolbar: 'importword',
-// Below option is only required when using the cloud-based Import from Word plugin from Tiny.Cloud.
-// Avoid setting it up during the trial period.
-  importword_token_provider: () => { // required when using the Import from Word plugin with Tiny Cloud.
+  // Required for the cloud-based Import from Word plugin with Tiny Cloud
+  // Create a JWT key in the Customer Portal for trial functionality to enable watermark-free exports during the trial period
+  importword_token_provider: () => {
     return fetch('http://localhost:3000/jwt', { // specify your token endpoint
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },

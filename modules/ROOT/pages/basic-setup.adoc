@@ -198,7 +198,8 @@ The following example is a basic {productname} configuration.
   <script
     type="text/javascript"
     src='{cdnurl}'
-    referrerpolicy="origin">
+    referrerpolicy="origin"
+    crossorigin="anonymous">
   </script>
   <script type="text/javascript">
   tinymce.init({
@@ -290,5 +291,5 @@ liveDemo::basic-conf[]
 ** Initial configuration - For initial configuration and important settings.
 ** Interface - For customizing the look and feel of the editor.
 ** Content - For customizing the allowed content and the associated behaviors.
-* For information on Plugins and their options, see: xref:work-with-plugins.adoc[Add plugins to TinyMCE].
+* For information on Plugins and their options, see: xref:work-with-plugins.adoc[Add plugins to {productname}].
 * For information on the CSS required to render some {productname} elements outside of the editor, see: xref:editor-content-css.adoc[Boilerplate content CSS].

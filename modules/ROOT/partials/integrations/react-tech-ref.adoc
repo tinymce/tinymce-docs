@@ -8,6 +8,7 @@
 ** xref:licenseKey[`+licenseKey+`]
 ** xref:cloudchannel[`+cloudChannel+`]
 ** xref:disabled[`+disabled+`]
+** xref:readonly[`+readonly+`]
 ** xref:id[`+id+`]
 ** xref:init[`+init+`]
 ** xref:initialvalue[`+initialValue+`]
@@ -143,7 +144,8 @@ xref:toolbar[`+toolbar+`]:: Specify the editor toolbar. This will *override* the
 
 These props can be updated after the editor is initialized. Note that there are xref:event-binding[other events] not mentioned here.
 
-xref:disabled[`+disabled+`]:: Should the editor be in read-only mode.
+xref:disabled[`+disabled+`]:: Should the editor be disabled.
+xref:readonly[`+readonly+`]:: Should the editor be in read-only mode.
 
 xref:initialvalue[`+initialValue+`]:: The starting value of the editor. Changing this value after the editor has loaded will reset the editor (including the editor content).
 
@@ -187,22 +189,22 @@ include::partial$misc/get-an-api-key.adoc[]
 [[licenseKey]]
 === `+licenseKey+`
 
-{cloudname} License key.
 
-Use this when self-hosting {productname} instead of loading from {cloudname}. For more information, see: xref:license-key.adoc[License Key].
+include::partial$integrations/common/license-key-property.adoc[]
 
-*Type:* `+String+`
-
-*Default value:* `+undefined+`
-
-*Possible values:* `undefined`, `'gpl'` or a valid {productname} license key
-
-==== Example: using `+licenseKey+`
-
+==== Example: Commercial license
 [source,jsx]
 ----
 <Editor
-  licenseKey='your-license-key'
+  licenseKey='T8LK:...'
+/>
+----
+
+==== Example: using `+licenseKey+` with GPL
+[source,jsx]
+----
+<Editor
+  licenseKey='gpl'
 />
 ----
 
@@ -240,7 +242,7 @@ For information {productname} development channels, see: xref:editor-plugin-vers
 [[disabled]]
 === `+disabled+`
 
-The `+disabled+` prop can dynamically switch the editor between a "disabled" (read-only) mode (`+true+`) and the standard editable mode (`+false+`).
+The `+disabled+` prop can dynamically toggle the editor's disabled state.
 
 *Type:* `Boolean`
 
@@ -254,6 +256,26 @@ The `+disabled+` prop can dynamically switch the editor between a "disabled" (re
 ----
 <Editor
   disabled={true}
+/>
+----
+
+[[readonly]]
+=== `+readonly+`
+
+The `+readonly+` prop can dynamically switch the editor between a read-only mode (`+true+`) and the standard editable mode (`+false+`).
+
+*Type:* `Boolean`
+
+*Default value:* `+false+`
+
+*Possible values:* `+true+`, `+false+`
+
+==== Example: using `+readonly+`
+
+[source,jsx]
+----
+<Editor
+  readonly={true}
 />
 ----
 
@@ -384,7 +406,7 @@ For detailed information on using `+onEditorChange+`, see: xref:using-the-tinymc
 
 IMPORTANT: This option was removed with the release of the {productname} React component 4.0.0.
 
-This option was used to specify the format of the content produced by the 
+This option was used to specify the format of the content produced by the
 xref:oneditorchange[`+onEditorChange+`] event, however as it did not change the
 input format it was almost impossible to use correctly.
 

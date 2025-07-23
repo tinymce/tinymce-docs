@@ -1,0 +1,58 @@
+[[crossorigin]]
+== `+crossorigin+`
+
+The `+crossorigin+` option controls how {productname} handles cross-origin resource loading. This option accepts a function that determines the appropriate crossorigin attribute value based on the resource being loaded.
+
+*Type:* `+(url: string, resourceType: 'script' | 'stylesheet') => string+`
+
+
+* For {cloudname}: A function that returns `+'anonymous'+` for cloud resources and omits the attribute for other resources.
+* For self-hosted: A function that **omits** the crossorigin attribute for all resources.
+
+*Possible values:* A function that returns one of:
+
+* `+'anonymous'+` - Sets crossorigin="anonymous".
+* `+'use-credentials'+` - Sets crossorigin="use-credentials".
+* `undefined` - Omits the crossorigin attribute entirely.
+
+=== Example: Basic configuration
+
+[source,js]
+----
+const crossOriginFunction = (url, resourceType) => {
+    // Returning 'anonymous' or 'use-credentials' here would explicitly set the attribute
+    return 'anonymous';
+    // return 'use-credentials';
+    // return undefined; // Omits the 'crossorigin' attribute for all resources by returning undefined 
+};
+
+tinymce.init({
+  selector: "textarea",
+  crossorigin: crossOriginFunction
+});
+----
+
+[IMPORTANT]
+====
+When loading {productname} from {cloudname}:
+
+* The initial script tag must include `+crossorigin="anonymous"+` and `+referrerpolicy="origin"+`.
+* Example:
++
+[source,html,subs="attributes+"]
+----
+<script src="{cdnurl}" referrerpolicy="origin" crossorigin="anonymous"></script>
+----
+====
+
+[TIP]
+====
+* The crossorigin function runs for both scripts and stylesheets loaded by {productname}.
+* Using `+'anonymous'+` sends the Origin header without credentials.
+* Using `+'use-credentials'+` sends the Origin header with credentials (not recommended for most cases).
+* Returning `undefined` means no crossorigin attribute will be set, as it omits the attribute entirely for the resource.
+* For stylesheet resources, the `+content_css_cors+` option takes precedence over the `+crossorigin+` function. See: xref:add-css-options.adoc#content_css_cors[content_css_cors] for details about cross-origin stylesheet loading.
+====
+
+
+For more details on the crossorigin attribute, see: link:https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/crossorigin[MDN Web Docs - HTML attribute: crossorigin].

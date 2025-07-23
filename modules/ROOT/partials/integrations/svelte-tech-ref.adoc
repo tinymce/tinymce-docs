@@ -7,6 +7,7 @@ Covered in this section:
 ** xref:id[id]
 ** xref:inline[inline]
 ** xref:disabled[disabled]
+** xref:readonly[readonly]
 ** xref:scriptsrc[scriptsrc]
 ** xref:conf[conf]
 * xref:component-binding[Component binding]
@@ -25,6 +26,7 @@ The `+tinymce-svelte+` `+Editor+` component accepts the following properties:
   id="uuid"
   inline=false
   disabled=false
+  readonly=false
   scriptSrc=undefined
   conf={}
   modelEvents="input change undo redo"
@@ -56,22 +58,22 @@ include::partial$misc/get-an-api-key.adoc[]
 [[licensekey]]
 === `+licenseKey+`
 
-{cloudname} License key.
 
-Use this option when self-hosting {productname} instead of loading from {cloudname}. For more information, see: xref:license-key.adoc[License Key].
+include::partial$integrations/common/license-key-property.adoc[]
 
-*Type:* `+String+`
-
-*Default value:* `+undefined+`
-
-*Possible values:* `undefined`, `'gpl'` or a valid {productname} license key
-
-==== Example: using `+licenseKey+`
-
+==== Example: Commercial license
 [source,jsx]
 ----
 <Editor
-  licenseKey="your-license-key"
+  licenseKey="T8LK:..."
+/>
+----
+
+==== Example: using `+licenseKey+` with GPL
+[source,jsx]
+----
+<Editor
+  licenseKey="gpl"
 />
 ----
 
@@ -134,7 +136,7 @@ Sets the editor to use inline mode.
 [[disabled]]
 === `+disabled+`
 
-Set the editor to readonly mode.
+Set the editor to disabled.
 
 *Type:* `+Boolean+`
 
@@ -146,6 +148,24 @@ Set the editor to readonly mode.
 ----
 <Editor
   disabled=true
+/>
+----
+
+[[readonly]]
+=== `+readonly+`
+
+Set the editor to readonly mode.
+
+*Type:* `+Boolean+`
+
+*Default value:* `+false+`
+
+==== Example using `+readonly+`
+
+[source,jsx]
+----
+<Editor
+  readonly=true
 />
 ----
 

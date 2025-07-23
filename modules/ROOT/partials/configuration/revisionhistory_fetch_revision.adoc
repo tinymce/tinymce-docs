@@ -65,15 +65,15 @@ tinymce.init({
   toolbar: 'revisionhistory',
   revisionhistory_fetch: () => Promise.resolve(lightRevisions),
   revisionhistory_fetch_revision: (_editor, revision) => new Promise((resolve) => {
-  let newRevision = null;
-  for (let i = 0; i < revisions.length; i++) {
-    const temp = revisions[i];
-    if (temp.revisionId === revision.revisionId) {
-      newRevision = temp;
-      break;
+    let newRevision = null;
+    for (let i = 0; i < revisions.length; i++) {
+      const temp = revisions[i];
+      if (temp.revisionId === revision.revisionId) {
+        newRevision = temp;
+        break;
+      }
     }
-  }
-  resolve(newRevision);
+    resolve(newRevision);
   })
 });
 ----

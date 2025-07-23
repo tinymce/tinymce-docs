@@ -62,6 +62,7 @@
 *** xref:localize-your-language.adoc[Localization]
 *** xref:spell-checking.adoc[Spell checking]
 *** xref:editor-content-css.adoc[CSS for rendering content]
+*** xref:userlookup.adoc[Using the UserLookup API]
 ** Environment setup guides
 *** React framework
 **** xref:react-cloud.adoc[Using the Tiny Cloud]
@@ -140,8 +141,6 @@
 **** xref:configure-imageproxy-service.adoc[Image Proxy service settings]
 **** xref:configure-spelling-service.adoc[Spelling service settings]
 **** xref:self-hosting-hunspell.adoc[Spelling service - Using Hunspell dictionaries]
-**** xref:configure-logging-services.adoc[Activity logging]
-*** xref:introduction-to-premium-selfhosted-services.adoc[Server-side component installation without Docker]
 *** xref:troubleshoot-server.adoc[Troubleshoot server-side components]
 ** Customizing the editor appearance
 *** xref:customize-ui.adoc[Customizing the UI]
@@ -345,6 +344,7 @@
 **** xref:introduction-to-tiny-spellchecker.adoc[Spell Checker]
 **** xref:custom-dictionaries-for-tiny-spellchecker.adoc[Adding custom dictionaries]
 *** xref:autocorrect.adoc[Spelling Autocorrect]
+*** xref:suggestededits.adoc[Suggested Edits]
 *** xref:tableofcontents.adoc[Table of Contents]
 *** xref:advanced-templates.adoc[Templates]
 *** Tiny Drive
@@ -416,17 +416,14 @@
 ** xref:release-notes.adoc[Release notes for {productname}]
 *** {productname} 8.0
 **** xref:8.0-release-notes.adoc#overview[Overview]
-**** xref:8.0-release-notes.adoc#new-premium-plugins[New Premium plugins]
+**** xref:new-premium-plugins[New Premium plugins]
 **** xref:8.0-release-notes.adoc#accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
-**** xref:8.0-release-notes.adoc#accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
-**** xref:8.0-release-notes.adoc#accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
+**** xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
 **** xref:8.0-release-notes.adoc#improvements[Improvements]
 **** xref:8.0-release-notes.adoc#additions[Additions]
 **** xref:8.0-release-notes.adoc#changes[Changes]
 **** xref:8.0-release-notes.adoc#removed[Removed]
 **** xref:8.0-release-notes.adoc#bug-fixes[Bug fixes]
-**** xref:8.0-release-notes.adoc#security-fixes[Security fixes]
-**** xref:8.0-release-notes.adoc#known-issues[Known issues]
 ** xref:changelog.adoc[Changelog]
 * xref:invalid-api-key.adoc[Invalid API key]
 * xref:license-key.adoc[License key]

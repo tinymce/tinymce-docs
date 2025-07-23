@@ -8,14 +8,14 @@ asciidoc:
     idseparator: '-@'
     # generic variables
     companyurl: https://www.tiny.cloud
-    cdnurl: https://cdn.tiny.cloud/1/no-api-key/tinymce/7/tinymce.min.js
-    tdcdnurl: https://cdn.tiny.cloud/1/_your_api_key_/tinydrive/7/tinydrive.min.js
-    tinymce_live_demo_url: https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/7/tinymce.min.js
-    tinydrive_live_demo_url: https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinydrive/7/tinydrive.min.js
+    cdnurl: https://cdn.tiny.cloud/1/no-api-key/tinymce/8/tinymce.min.js
+    tdcdnurl: https://cdn.tiny.cloud/1/_your_api_key_/tinydrive/8/tinydrive.min.js
+    tinymce_live_demo_url: https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/8/tinymce.min.js
+    tinydrive_live_demo_url: https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinydrive/8/tinydrive.min.js
     webcomponent_url: https://cdn.jsdelivr.net/npm/@tinymce/tinymce-webcomponent/dist/tinymce-webcomponent.min.js
     jquery_url: https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@2/dist/tinymce-jquery.min.js
     openai_proxy_url: https://openai.ai-demo-proxy.tiny.cloud/v1/chat/completions
-    openai_proxy_token: eyJhbGciOiJFUzM4NCJ9.eyJhdWQiOlsiaHR0cHM6Ly9vcGVuYWkuYWktZGVtby1wcm94eS50aW55LmNsb3VkLyJdLCJleHAiOjE3NTEzMjgwMDAsImh0dHBzOi8vb3BlbmFpLmFpLWRlbW8tcHJveHkudGlueS5jbG91ZC9yb2xlIjoicHVibGljLWRlbW8iLCJpc3MiOiJodHRwczovL2FpLWRlbW8tcHJveHkudGlueS5jbG91ZC8iLCJqdGkiOiJmOGFmY2EyNC1mN2FhLTQxMjktYTc2Yy02YThlZDU3YjAyZjYiLCJzdWIiOiJhaS1hc3Npc3RhbnQtZGVtbyJ9.Xu0apHCbxgmRQTeTqrTIDFFhh2CgKeARRXa3mCxSGoCwZqkoQaFRZBCzDo8Xz7DuUa5mW2XHl-HYcYiXJM9ly16d0oY7lJefHBeLlmJEBE1CSttHBkCRWZS8eFLCasL6
+    openai_proxy_token: eyJhbGciOiJFUzM4NCJ9.eyJhdWQiOlsiaHR0cHM6Ly9vcGVuYWkuYWktZGVtby1wcm94eS50aW55LmNsb3VkLyJdLCJleHAiOjE3ODI4NjQwMDAsImh0dHBzOi8vb3BlbmFpLmFpLWRlbW8tcHJveHkudGlueS5jbG91ZC9yb2xlIjoicHVibGljLWRlbW8iLCJpc3MiOiJodHRwczovL2FpLWRlbW8tcHJveHkudGlueS5jbG91ZC8iLCJqdGkiOiIxZWY3NjJiNi1mZDYyLTQ3ZWQtOGRkNS0yOGRmMzBkZDU4YmMiLCJzdWIiOiJhaS1hc3Npc3RhbnQtZGVtbyJ9.WC8GIY19MgZneDVZoA-Ttt9E7gNkD0Yl-pcM_5c2RT3RdV_zE0i4bPOGBJpg_g6wu_4ki2ery6_JZtk2Q9gXEBHH7fIu7hXDFS8uIV9qe8MyxEqqRncGFVDjSTldVXGS
     default_meta_keywords: tinymce, documentation, docs, plugins, customizable skins, configuration, examples, html, php, java, javascript, image editor, inline editor, distraction-free editor, classic editor, wysiwyg
     # product docker variables
     dockerimageimportfromwordexporttoword: registry.containers.tiny.cloud/docx-converter-tiny

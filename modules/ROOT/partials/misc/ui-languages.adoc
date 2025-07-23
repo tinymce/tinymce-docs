@@ -3,7 +3,7 @@
 
 [IMPORTANT]
 ====
-From {productname} 8.0, language codes use RFC5646 format with hyphens (-) instead of underscores (_). For backward compatibility, both formats are supported in {productname} 8, but underscore format will show console warning.
+From {productname} {productmajorversion}, language codes use RFC5646 format with hyphens (-) instead of underscores (_). For backward compatibility, both formats are supported in {productname} {productmajorversion}, but underscore format will show console warning.
 
 Example: "{productname} language code "en_US" is deprecated, please use "en-US" instead.".
 ====

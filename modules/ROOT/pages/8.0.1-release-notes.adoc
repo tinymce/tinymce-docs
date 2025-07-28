@@ -1,0 +1,32 @@
+= {productname} {release-version}
+:release-version: 8.0.1
+:navtitle: {productname} {release-version}
+:description: Release notes for {productname} version {release-version}
+:keywords: releasenotes, new, changes, bugfixes, {productname}, update
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+[[overview]]
+== Overview
+
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Monday, July 28^th^, 2025.
+
+[NOTE]
+====
+This patch release introduces no new features or enhancements. It solely includes missing changelog details from the previously released link:https://download.tiny.cloud/tinymce/community/tinymce_8.0.0.zip[community/tinymce_8.0.0.zip] bundle.
+====
+
+These release notes summarize the updates introduced in {productname} {release-version}, including:
+
+* xref:bug-fixes[Bug fixes]
+
+[[bug-fixes]]
+== Bug Fixes
+
+This section outlines the bug fixes and corrections included in {productname} {release-version}.
+
+=== Added missing changelog entries for the community `.zip` distribution.
+// #TINY-12581
+
+In {productname} {productmajorversion}, the changelog information for the link:https://download.tiny.cloud/tinymce/community/tinymce_8.0.0.zip[community/tinymce_8.0.0.zip] file was inadvertently omitted. This release corrects that by providing the previously missing changelog entries for the community bundle.

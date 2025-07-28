@@ -69,5 +69,5 @@ WARNING: Turning DomPurify off leaves {productname}, and any application using {
 
 [NOTE]
 ====
-{productname} {release-version} upgrades DOMPurify to version 3.2.6 and enables the `SAFE_FOR_XML` flag by default. This enforces stricter sanitization, which may remove or alter content that previously passed in {productname} 7. For more information see xref:migration-from-7x.adoc#dompurify-update-breaking-change[Migration Guide]
+{productname} 8.0.1 upgrades DOMPurify to version 3.2.6 and enables the `SAFE_FOR_XML` flag by default. This enforces stricter sanitization, which may remove or alter content that previously passed in {productname} 7. For more information see xref:migration-from-7x.adoc#dompurify-update-breaking-change[Migration Guide]
 ====

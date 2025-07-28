@@ -37,5 +37,5 @@ tinymce.init({
 ----
 // After the editor is initialized, you can verify the configuration:
 console.log(tinymce.activeEditor.options.get('iframe_attrs'));
-// Output: {style: 'background-color: #f5f5f5; border: 2px solid #ddd;', class: 'custom-editor-frame'}
+// Output:  {style: 'background-color:rgb(64, 167, 99); border: 2px solid #ddd;', class: 'custom-editor-frame'}
 ----

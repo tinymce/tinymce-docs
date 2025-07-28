@@ -13,6 +13,10 @@ include::partial$configuration/target.adoc[leveloffset=+1]
 
 include::partial$configuration/placeholder.adoc[leveloffset=+1]
 
+== Configuring the editor iframe
+
+include::partial$configuration/iframe_attrs.adoc[leveloffset=+1]
+
 == Focusing on the editor
 
 include::partial$configuration/taborder.adoc[leveloffset=+1]
@@ -56,8 +60,3 @@ include::partial$configuration/content_security_policy.adoc[leveloffset=+1]
 include::partial$configuration/referrer_policy.adoc[leveloffset=+1]
 
 include::partial$configuration/suffix.adoc[leveloffset=+1]
-
-////
-Not documented, but probably belongs in a new section here somewhere.
-include::partial$configuration/iframe_attrs.adoc[]
-////

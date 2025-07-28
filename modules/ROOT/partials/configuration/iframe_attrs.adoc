@@ -1,0 +1,41 @@
+[[iframe_attrs]]
+== `+iframe_attrs+`
+
+This option allows adding custom attributes to the editor's content iframe element when running in classic mode. The attributes are applied during the iframe creation.
+
+NOTE: This option only affects the main editor content iframe, not other iframes such as preview frames, dialog iframes, or iframe elements created within the editor content.
+
+
+*Type:* `+Object+`
+
+.Example: using `+iframe_attrs+` for accessibility
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  iframe_attrs: {
+    'aria-required': 'true',
+    'aria-describedby': 'editor-description'
+  }
+});
+----
+
+.Example: using `+iframe_attrs+` for custom styling
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  iframe_attrs: {
+    'style': 'background-color:rgb(64, 167, 99); border: 2px solid #ddd;',
+    'class': 'custom-editor-frame'
+  }
+});
+----
+
+.Example: verifying `+iframe_attrs+` configuration
+[source,js]
+----
+// After the editor is initialized, you can verify the configuration:
+console.log(tinymce.activeEditor.options.get('iframe_attrs'));
+// Output:  {style: 'background-color:rgb(64, 167, 99); border: 2px solid #ddd;', class: 'custom-editor-frame'}
+----

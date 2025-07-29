@@ -32,7 +32,7 @@ frontend http-in
   default_backend servers
 
 backend servers
-  server server1 127.0.0.1:8000 maxconn 32
+  server server1 127.0.0.1:8080 maxconn 32
 ----
 
 === NGINX example
@@ -55,7 +55,7 @@ http {
     ssl_certificate_key /etc/ssl/your_cert_key.key;
 
     location / {
-      proxy_pass http://127.0.0.1:8000;
+      proxy_pass http://127.0.0.1:8080;
 
       proxy_set_header Upgrade $http_upgrade;
       proxy_set_header Connection "Upgrade";
@@ -66,3 +66,9 @@ http {
   }
 }
 ----
+
+
+[NOTE]
+====
+The Docker images do not include built-in SSL configuration. SSL must be handled by a reverse proxy that forwards requests to the container's HTTP service on port 8080.
+====

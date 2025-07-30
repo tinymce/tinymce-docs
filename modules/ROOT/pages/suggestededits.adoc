@@ -27,7 +27,7 @@ The {pluginname} model is a JSON object representing the document along with all
 
 The structure of the model is not documented and should not be relied upon.
 
-The model can be retrieved from the plugin using the xref:#get_model[`+getModel+`] API, saved externally alongside the document, and loaded into the editor with the xref:#suggestededits_model[`+suggestededits_model+`] option. This ensures that the document and the model are in sync and every user's contributions are tracked correctly. If the model and content are out of sync when the editor loads, the difference between them will be applied as a suggested edit by the current user. If a model is not provided in the editor configuration or is set to `+undefined+`, the plugin will generate a new model from the initial content.
+The model can be retrieved from the plugin using the xref:#get_model[`+getModel+`] API, saved externally alongside the document, and loaded into the editor with the xref:#suggestededits_model[`+suggestededits_model+`] option. This ensures that the document and the model are in sync and every user's contributions are tracked correctly. If the model and content are out of sync when the editor loads, the difference between them will be included in the next edit by the current user. If a model is not provided in the editor configuration or is set to `+undefined+`, the plugin will generate a new model from the initial content.
 
 Alternatively the xref:#suggestededits_content[`+suggestededits_content+`] option allows the model to generate the editor content, in which case the two do not need to be kept in sync.
 

@@ -20,14 +20,14 @@ Emoticons and Charmap use an autocompleter.
 
 
 For information on creating an autocompleter, see:
-link:https://www.tiny.cloud/docs/tinymce/7/autocompleter/[
+link:https://www.tiny.cloud/docs/tinymce/8/autocompleter/[
 UI Components - Autocompleter].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
 |xref:#addButton[addButton()]|Registers a new toolbar button that executes a command when clicked or activated
 via keyboard navigation controls.
 
 
 For information on creating a basic toolbar button, see:
-link:https://www.tiny.cloud/docs/tinymce/7/custom-basic-toolbar-button/[
+link:https://www.tiny.cloud/docs/tinymce/8/custom-basic-toolbar-button/[
 UI Components - Types of toolbar buttons: Basic button].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
 |xref:#addContext[addContext()]|Registers a new context configuration in the registry.
 The registry stores all context configurations.
@@ -43,21 +43,21 @@ contextual input form appears allowing for quick changes to the url field.
 
 
 For information on creating context forms, see:
-link:https://www.tiny.cloud/docs/tinymce/7/contextform/[
+link:https://www.tiny.cloud/docs/tinymce/8/contextform/[
 UI Components - Context forms].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
 |xref:#addContextMenu[addContextMenu()]|Registers a new context menu section that only appears when a content predicate is matched,
 for example, the cursor is inside a table.
 
 
 For information on creating context menus, see:
-link:https://www.tiny.cloud/docs/tinymce/7/contextmenu/[
+link:https://www.tiny.cloud/docs/tinymce/8/contextmenu/[
 UI Components - Context Menu].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
 |xref:#addContextToolbar[addContextToolbar()]|Registers a new context toolbar that only appears when a content predicate is matched for example
 the cursor is on an image element.
 
 
 For information on creating context toolbars, see:
-link:https://www.tiny.cloud/docs/tinymce/7/contexttoolbar/[
+link:https://www.tiny.cloud/docs/tinymce/8/contexttoolbar/[
 UI Components - Context Toolbar].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
 |xref:#addGroupToolbarButton[addGroupToolbarButton()]|Registers a new group toolbar button for the toolbar. Renders a toolbar button that opens a floating toolbar when
 clicked.
@@ -67,7 +67,7 @@ clicked.
 
 
 For information on creating a group toolbar button, see:
-link:https://www.tiny.cloud/docs/tinymce/7/custom-group-toolbar-button/[
+link:https://www.tiny.cloud/docs/tinymce/8/custom-group-toolbar-button/[
 UI Components - Types of toolbar buttons: Group toolbar button].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
 |xref:#addIcon[addIcon()]|Registers a new SVG icon. The icon name reference can be configured by any
 TinyMCE UI components that can display an icon. The icon is only available
@@ -78,14 +78,14 @@ addNestedMenuItem or addToggleMenuItem.
 
 
 For information on creating a toolbar menu button, see:
-link:https://www.tiny.cloud/docs/tinymce/7/custom-menu-toolbar-button/[
+link:https://www.tiny.cloud/docs/tinymce/8/custom-menu-toolbar-button/[
 UI Components - Types of toolbar buttons: Menu button].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
 |xref:#addMenuItem[addMenuItem()]|Registers a new menu item that executes a command when clicked or activated
 via keyboard navigation controls.
 
 
 For information on creating a basic menu item, see:
-link:https://www.tiny.cloud/docs/tinymce/7/creating-custom-menu-items/[
+link:https://www.tiny.cloud/docs/tinymce/8/creating-custom-menu-items/[
 UI Components - Custom menu items: Basic menu items].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
 |xref:#addNestedMenuItem[addNestedMenuItem()]|Registers a new menu item that reveals a submenu when clicked or activated
 by keyboard navigation controls.The submenu can be populated by items
@@ -93,7 +93,7 @@ created by addMenuItem, addNestedMenuItem or addToggleMenuItem.
 
 
 For information on creating a nested menu item, see:
-link:https://www.tiny.cloud/docs/tinymce/7/custom-nested-menu-items/[
+link:https://www.tiny.cloud/docs/tinymce/8/custom-nested-menu-items/[
 UI Components - Custom menu items: Nested menu items].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
 |xref:#addSidebar[addSidebar()]|Registers a new sidebar container.
 This sidebar container is attached to the right side of the editor and
@@ -105,28 +105,28 @@ sidebar for its Ui components.
 
 
 For information on creating a custom sidebar, see:
-link:https://www.tiny.cloud/docs/tinymce/7/customsidebar/[
+link:https://www.tiny.cloud/docs/tinymce/8/customsidebar/[
 UI Components - Custom sidebar].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
 |xref:#addSplitButton[addSplitButton()]|Registers a new split button for the toolbar. The list styles plugin uses
 a split button to simplify its functionality.
 
 
 For information on creating a split toolbar button, see:
-link:https://www.tiny.cloud/docs/tinymce/7/custom-split-toolbar-button/[
+link:https://www.tiny.cloud/docs/tinymce/8/custom-split-toolbar-button/[
 UI Components - Types of toolbar buttons: Split button].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
 |xref:#addToggleButton[addToggleButton()]|Registers a new toggle button for the toolbar. A toggle buttons state can
 be set in the configuration.
 
 
 For information on creating a toggle toolbar button, see:
-link:https://www.tiny.cloud/docs/tinymce/7/custom-toggle-toolbar-button/[
+link:https://www.tiny.cloud/docs/tinymce/8/custom-toggle-toolbar-button/[
 UI Components - Types of toolbar buttons: Toggle button].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
 |xref:#addToggleMenuItem[addToggleMenuItem()]|Registers a new menu item that will act like a toggle button,
 showing a tick in the menu item to represent state.
 
 
 For information on creating a toggle menu item, see:
-link:https://www.tiny.cloud/docs/tinymce/7/custom-toggle-menu-items/[
+link:https://www.tiny.cloud/docs/tinymce/8/custom-toggle-menu-items/[
 UI Components - Custom menu items: Toggle menu items].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
 |xref:#addView[addView()]|Registers a new view container.
 This view container is hidden (off) by default and attached next to the main view.
@@ -139,7 +139,7 @@ The ToggleView command can be queried for its current state.
 
 
 For information on creating a custom view, see:
-link:https://www.tiny.cloud/docs/tinymce/7/custom-view/[
+link:https://www.tiny.cloud/docs/tinymce/8/custom-view/[
 UI Components - Custom view].|`xref:apis/tinymce.editor.ui.registry.adoc[Registry]`
 |===
 
@@ -158,7 +158,7 @@ Emoticons and Charmap use an autocompleter.
 
 
 For information on creating an autocompleter, see:
-link:https://www.tiny.cloud/docs/tinymce/7/autocompleter/[
+link:https://www.tiny.cloud/docs/tinymce/8/autocompleter/[
 UI Components - Autocompleter].
 
 ==== Parameters
@@ -179,7 +179,7 @@ via keyboard navigation controls.
 
 
 For information on creating a basic toolbar button, see:
-link:https://www.tiny.cloud/docs/tinymce/7/custom-basic-toolbar-button/[
+link:https://www.tiny.cloud/docs/tinymce/8/custom-basic-toolbar-button/[
 UI Components - Types of toolbar buttons: Basic button].
 
 ==== Parameters
@@ -223,7 +223,7 @@ contextual input form appears allowing for quick changes to the url field.
 
 
 For information on creating context forms, see:
-link:https://www.tiny.cloud/docs/tinymce/7/contextform/[
+link:https://www.tiny.cloud/docs/tinymce/8/contextform/[
 UI Components - Context forms].
 
 ==== Parameters
@@ -244,7 +244,7 @@ for example, the cursor is inside a table.
 
 
 For information on creating context menus, see:
-link:https://www.tiny.cloud/docs/tinymce/7/contextmenu/[
+link:https://www.tiny.cloud/docs/tinymce/8/contextmenu/[
 UI Components - Context Menu].
 
 ==== Parameters
@@ -265,7 +265,7 @@ the cursor is on an image element.
 
 
 For information on creating context toolbars, see:
-link:https://www.tiny.cloud/docs/tinymce/7/contexttoolbar/[
+link:https://www.tiny.cloud/docs/tinymce/8/contexttoolbar/[
 UI Components - Context Toolbar].
 
 ==== Parameters
@@ -289,7 +289,7 @@ clicked.
 
 
 For information on creating a group toolbar button, see:
-link:https://www.tiny.cloud/docs/tinymce/7/custom-group-toolbar-button/[
+link:https://www.tiny.cloud/docs/tinymce/8/custom-group-toolbar-button/[
 UI Components - Types of toolbar buttons: Group toolbar button].
 
 ==== Parameters
@@ -335,7 +335,7 @@ addNestedMenuItem or addToggleMenuItem.
 
 
 For information on creating a toolbar menu button, see:
-link:https://www.tiny.cloud/docs/tinymce/7/custom-menu-toolbar-button/[
+link:https://www.tiny.cloud/docs/tinymce/8/custom-menu-toolbar-button/[
 UI Components - Types of toolbar buttons: Menu button].
 
 ==== Parameters
@@ -356,7 +356,7 @@ via keyboard navigation controls.
 
 
 For information on creating a basic menu item, see:
-link:https://www.tiny.cloud/docs/tinymce/7/creating-custom-menu-items/[
+link:https://www.tiny.cloud/docs/tinymce/8/creating-custom-menu-items/[
 UI Components - Custom menu items: Basic menu items].
 
 ==== Parameters
@@ -378,7 +378,7 @@ created by addMenuItem, addNestedMenuItem or addToggleMenuItem.
 
 
 For information on creating a nested menu item, see:
-link:https://www.tiny.cloud/docs/tinymce/7/custom-nested-menu-items/[
+link:https://www.tiny.cloud/docs/tinymce/8/custom-nested-menu-items/[
 UI Components - Custom menu items: Nested menu items].
 
 ==== Parameters
@@ -404,7 +404,7 @@ sidebar for its Ui components.
 
 
 For information on creating a custom sidebar, see:
-link:https://www.tiny.cloud/docs/tinymce/7/customsidebar/[
+link:https://www.tiny.cloud/docs/tinymce/8/customsidebar/[
 UI Components - Custom sidebar].
 
 ==== Parameters
@@ -425,7 +425,7 @@ a split button to simplify its functionality.
 
 
 For information on creating a split toolbar button, see:
-link:https://www.tiny.cloud/docs/tinymce/7/custom-split-toolbar-button/[
+link:https://www.tiny.cloud/docs/tinymce/8/custom-split-toolbar-button/[
 UI Components - Types of toolbar buttons: Split button].
 
 ==== Parameters
@@ -446,7 +446,7 @@ be set in the configuration.
 
 
 For information on creating a toggle toolbar button, see:
-link:https://www.tiny.cloud/docs/tinymce/7/custom-toggle-toolbar-button/[
+link:https://www.tiny.cloud/docs/tinymce/8/custom-toggle-toolbar-button/[
 UI Components - Types of toolbar buttons: Toggle button].
 
 ==== Parameters
@@ -467,7 +467,7 @@ showing a tick in the menu item to represent state.
 
 
 For information on creating a toggle menu item, see:
-link:https://www.tiny.cloud/docs/tinymce/7/custom-toggle-menu-items/[
+link:https://www.tiny.cloud/docs/tinymce/8/custom-toggle-menu-items/[
 UI Components - Custom menu items: Toggle menu items].
 
 ==== Parameters
@@ -494,7 +494,7 @@ The ToggleView command can be queried for its current state.
 
 
 For information on creating a custom view, see:
-link:https://www.tiny.cloud/docs/tinymce/7/custom-view/[
+link:https://www.tiny.cloud/docs/tinymce/8/custom-view/[
 UI Components - Custom view].
 
 ==== Parameters

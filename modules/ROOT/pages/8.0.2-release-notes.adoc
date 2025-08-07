@@ -48,7 +48,15 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== Elements with no visible height were not displaying in the Review Edits view.
 // TINY-12257
 
-//CCFR here.
+Previously, elements with no visible height (`+<br>+`, `+<!-- pagebreak -->+` comments, and `+<hr>+` tags) were missing from the Review Edits preview. This caused operations related to these elements to appear as floating cards without corresponding visual content, making it difficult for reviewers to understand the context of changes.
+
+{productname} {release-version} now renders visual representations of these elements in the preview:
+
+* `+<br>+` tags display as an **Enter** icon.
+* `+<!-- pagebreak -->+` comments render the same as in the editor.
+* `+<hr>+` tags show with change indicators for insertions or deletions.
+
+This ensures reviewers can clearly identify what and where changes occurred, even for elements that have no visible height.
 
 For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
 

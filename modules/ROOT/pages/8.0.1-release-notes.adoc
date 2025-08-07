@@ -32,12 +32,13 @@ This section outlines the bug fixes and corrections included in {productname} {r
 
 In {productname} {productmajorversion}, the changelog information for the link:https://download.tiny.cloud/tinymce/community/tinymce_8.0.0.zip[community/tinymce_8.0.0.zip] file was inadvertently omitted. This release corrects that by providing the previously missing changelog entries for the community bundle.
 
-[[known-issues]]
-== Known Issues
+[[known-issue]]
+== Known Issue
 
 [[missing-licensekeymanager-plugin]]
 === Missing `licensekeymanager` plugin in some bundles
+// #TINY-12160
 
 In {productname} 8.0.1, the `licensekeymanager` plugin was missing from some available bundles.
 
-**Status:** This has been corrected in {productname} 8.0.2, which now includes the `licensekeymanager` plugin in all available bundles.
+**Status:** This has been corrected in xref:8.0.2-release-notes.adoc[{productname} 8.0.2], which now includes the `licensekeymanager` plugin in all available bundles.

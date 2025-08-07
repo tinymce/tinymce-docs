@@ -20,6 +20,7 @@ This patch release introduces no new features or enhancements. It solely include
 These release notes summarize the updates introduced in {productname} {release-version}, including:
 
 * xref:bug-fixes[Bug fixes]
+* xref:known-issue[Known issue]
 
 [[bug-fixes]]
 == Bug Fixes
@@ -30,3 +31,13 @@ This section outlines the bug fixes and corrections included in {productname} {r
 // #TINY-12581
 
 In {productname} {productmajorversion}, the changelog information for the link:https://download.tiny.cloud/tinymce/community/tinymce_8.0.0.zip[community/tinymce_8.0.0.zip] file was inadvertently omitted. This release corrects that by providing the previously missing changelog entries for the community bundle.
+
+[[known-issues]]
+== Known Issues
+
+[[missing-licensekeymanager-plugin]]
+=== Missing `licensekeymanager` plugin in some bundles
+
+In {productname} 8.0.1, the `licensekeymanager` plugin was missing from some available bundles.
+
+**Status:** This has been corrected in {productname} 8.0.2, which now includes the `licensekeymanager` plugin in all available bundles.

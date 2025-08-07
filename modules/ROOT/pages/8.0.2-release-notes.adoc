@@ -34,6 +34,36 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Suggested Edits
+
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
+
+**Suggested Edits** includes the following fixes.
+
+==== HTML comments were not tracked correctly.
+// TINY-12544
+
+//CCFR here.
+
+==== Elements with no visible height were not displaying in the Review Edits view.
+// TINY-12257
+
+//CCFR here.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
+
+=== Accessibility Checker
+
+The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.
+
+**Accessibility Checker** includes the following fix.
+
+==== Enforce `+alt+` string check on all image rules
+// TINY-12546
+
+//CCFR here.
+
+For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes

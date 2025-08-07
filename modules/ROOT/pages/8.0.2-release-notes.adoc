@@ -61,7 +61,16 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== Enforce `+alt+` string check on all image rules
 // TINY-12546
 
-//CCFR here.
+Previously, users attempting to repair accessibility issues in the `a11ychecker` may not have consistently seen error messages when their input failed validation. This led to confusion, as users were not informed why their repair attempt was rejected. For example, submitting an image filename as `+alt+` text or entering excessively long or empty text—when not permitted—should have triggered specific validation messages, but these were not always shown.
+
+{productname} {release-version} ensures all defined validation messages are now displayed reliably for all relevant rule violations across the `a11ychecker` repair workflow. Scenarios include:
+
+* Filename used as `+alt+` text when decorative images are not allowed.
+** Result: Now a filename error is shown in the repair dialog.
+* `+alt+` text exceeding maximum length.
+** Result: Now a length validation error is shown in the repair dialog.
+* Empty `+alt+` text when a description is required.
+** Result: Now a empty text error is shown in the repair dialog.
 
 For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
 

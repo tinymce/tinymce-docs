@@ -43,9 +43,9 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== HTML comments were not tracked correctly.
 // TINY-12544
 
-Previously, pagebreak separators defined as HTML comments (e.g., `+<!-- pagebreak -->+`) were not detected by the suggested edit system. This meant that insertions or deletions of these separators were not displayed in the diff view, making it difficult for reviewers to identify structural changes.
+Previously, pagebreak separators defined as HTML comments (e.g., `+<!-- pagebreak -->+`) were not detected by the suggested edit system. This meant that insertions or deletions of these separators were not displayed as edits, making it difficult for reviewers to identify structural changes.
 
-{productname} {release-version} now tracks pagebreak elements defined via HTML comments. When editors insert or delete `+<!-- pagebreak -->+` markers, these changes appear in the review pane, ensuring reviewers have full visibility of all document structure modifications.
+{productname} {release-version} now tracks pagebreak elements defined via HTML comments. When editors insert or delete `+<!-- pagebreak -->+` markers, these changes appear in the Review Edits view, ensuring reviewers have full visibility of all document structure modifications.
 
 ==== Elements with no visible height were not displaying in the Review Edits view.
 // TINY-12257

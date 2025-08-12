@@ -16,6 +16,11 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
 
+// #TINY-12160
+[NOTE]
+====
+In {productname} 8.0.1, the `licensekeymanager` plugin was missing from some available bundles. {productname} 8.0.2 corrects this by including the `licensekeymanager` plugin in all available bundles which resolves the xref:8.0.1-release-notes.adoc#missing-licensekeymanager-plugin[Known issue] from the previous release.
+====
 
 [[accompanying-premium-plugin-changes]]
 == Accompanying Premium plugin changes

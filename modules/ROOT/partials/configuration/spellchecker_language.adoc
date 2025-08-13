@@ -17,3 +17,20 @@ tinymce.init({
   spellchecker_language: 'de'  // Use ISO language code, hyphenated for regional variants (e.g., 'de-DE')
 });
 ----
+
+[NOTE]
+====
+If a user selects a language from the Spell Checker language toolbar dropdown, that selection is saved to the browser's local storage and takes precedence over the `+spellchecker_language+` configuration option. The local storage value persists across browser sessions and will continue to override the configured setting.
+
+*Debugging language issues:*
+
+* To check the current active language for the specific device, use the browser console: `+tinymce.activeEditor.plugins.tinymcespellchecker.getLanguage()+`
+* If integrators or users are having issues with the `+spellchecker_language+` option not being respected, they can:
+
+. Open browser developer tools (F12)
+. Go to the Console tab
+. Run `+localStorage.clear()+` to clear all local storage
+. Refresh the page to reinitialize the editor
+
+For more information about localStorage, see link:https://developer.mozilla.org/en-US/docs/Web/API/Storage/clear[MDN Web Docs].
+====

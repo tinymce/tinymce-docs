@@ -20,7 +20,7 @@ tinymce.init({
 
 [NOTE]
 ====
-If a user selects a language from the Spell Checker language toolbar dropdown, that selection is saved to the browser's local storage and takes precedence over the `+spellchecker_language+` configuration option. The local storage value persists across browser sessions and will continue to override the developer-specified setting.
+If a user selects a language from the Spell Checker language toolbar dropdown, that selection is saved to the browser's local storage and takes precedence over the `+spellchecker_language+` configuration option. The local storage value persists across browser sessions and will continue to override the configured setting.
 
 *Debugging language issues:*
 

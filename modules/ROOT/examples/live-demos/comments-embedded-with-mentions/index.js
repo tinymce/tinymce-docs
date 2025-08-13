@@ -1,176 +1,93 @@
-import ('https://cdn.jsdelivr.net/npm/@faker-js/faker@9/dist/index.min.js').then(({ faker }) => {
-  /* This represents a database of users on the server */
-  const userDb = {
-    'johnsmith': {
-      id: 'johnsmith',
-      name: 'John Smith',
-      avatar: 'https://i.pravatar.cc/150?img=11',
-      custom: {
-        fullName: 'John Smith',
-        description: 'Company Founder',
-      }
-    },
-    'jennynichols': {
-      id: 'jennynichols',
-      name: 'Jenny Nichols',
-      avatar: 'https://i.pravatar.cc/150?img=10',
-      custom: {
-        fullName: 'Jenny Nichols',
-        description: 'Marketing Director',
-      }
+const API_URL = 'https://demouserdirectory.tiny.cloud/users';
+
+const mentions_fetch = async (query, success) => {
+  const searchPhrase = query.term.toLowerCase();
+  await fetch(`${API_URL}?q=${encodeURIComponent(searchPhrase)}`)
+    .then((response) => response.json())
+    .then((users) => success(users.data))
+    .catch((error) => console.log(error));
+};
+
+const mentions_menu_complete = (editor, userInfo) => {
+  const span = editor.getDoc().createElement('span');
+  span.className = 'mymention';
+  span.setAttribute('data-mention-id', userInfo.id);
+  span.appendChild(editor.getDoc().createTextNode('@' + userInfo.name));
+  return span;
+};
+
+const createCard = (userInfo) => {
+  const div = document.createElement('div');
+  div.innerHTML = (
+    '<div class="card">' +
+      '<img class="avatar" src="' + userInfo.image + '">' +
+      '<h1>' + userInfo.name + '</h1>' +
+      '<p>' + userInfo.description + '</p>' +
+    '</div>'
+  );
+  return div;
+};
+
+const mentions_select = async (mention, success) => {
+  const id = mention.getAttribute('data-mention-id');
+  await fetch(`${API_URL}/${id}`)
+    .then((response) => response.json())
+    .then((userInfo) => {
+      const card = createCard(userInfo);
+      success(card);
+    })
+    .catch((error) => console.error(error));
+};
+
+const mentions_menu_hover = async (userInfo, success) => {
+  const card = createCard(userInfo)
+  success(card);
+};
+
+const tinycomments_can_resolve = (req, done, _fail) => {
+  const allowed = req.comments.length > 0 && req.comments[0].author === author;
+  done({ canResolve: allowed });
+};
+
+const user_id = 'james-wilson';
+
+tinymce.init({
+  selector: 'textarea#comments-embedded-with-mentions',
+  plugins: [ 'tinycomments', 'mentions', 'help', 'code', 'quickbars', 'link', 'lists', 'image' ],
+  toolbar: 'addcomment showcomments code | bold italic underline',
+  menubar: 'file edit view insert format tools tc help',
+  menu: {
+    tc: {
+      title: 'TinyComments',
+      items: 'addcomment showcomments deleteallconversations'
     }
-  };
+  },
+  quickbars_selection_toolbar: 'alignleft aligncenter alignright | addcomment showcomments',
+  quickbars_image_toolbar: 'alignleft aligncenter alignright | rotateleft rotateright | imageoptions',
 
-  const adminUser = userDb['johnsmith'];
-  const currentUser = userDb['jennynichols'];
-  
-  const fakeDelay = 500;
-  const numberOfUsers = 200;
-  
-  /* These are "local" caches of the data returned from the fake server */
-  let fetchedUsers = false;
-  let usersRequest; // Promise
-  const userRequest = {};
-  
-  const setupFakeServer = () => {
-    const images = [ adminUser.avatar, currentUser.avatar ];
-    const userNames = [ adminUser.custom.fullName, currentUser.custom.fullName ];
+  tinycomments_mode: 'embedded',
+  sidebar_show: 'showcomments',
+  tinycomments_mentions_enabled: true,
+  tinycomments_can_resolve,
 
-    for (let i = 0; i < numberOfUsers; i++) {
-      images.push(faker.image.avatar());
-      userNames.push(`${faker.person.firstName()} ${faker.person.lastName()}`);
-    }
+  mentions_item_type: 'profile',
+  mentions_min_chars: 0,
+  mentions_selector: '.mymention',
+  mentions_fetch,
+  mentions_menu_hover,
+  mentions_menu_complete,
+  mentions_select,
 
-    userNames.map((fullName) => {
-      if ((fullName !== currentUser.custom.fullName) && (fullName !== adminUser.custom.fullName)) {
-        const id = fullName.toLowerCase().replace(/ /g, '');
-        userDb[id] = {
-          id,
-          name: fullName,
-          avatar: images[Math.floor(images.length * Math.random())],
-          custom: {
-            fullName,
-            description: faker.person.jobTitle(),
-          }
-        };
-      }
-    });
-  
-    /* This represents getting the complete list of users from the server with the details required for the mentions "profile" item */
-    const fetchUsers = () => new Promise((resolve) => {
-      /* simulate a server delay */
-      setTimeout(() => {
-        const users = Object.keys(userDb).map((id) => ({
-          id,
-          name: userDb[id].name,
-          image: userDb[id].image,
-          description: userDb[id].description
-        }));
-        resolve(users);
-      }, fakeDelay);
-    });
-  
-    const fetchUser = (id) => new Promise((resolve, reject) => {
-      /* simulate a server delay */
-      setTimeout(() => {
-        if (Object.prototype.hasOwnProperty.call(userDb, id)) {
-          resolve(userDb[id]);
-        }
-        reject('unknown user id "' + id + '"');
-      }, fakeDelay);
-    });
-
-    return {
-      fetchUsers,
-      fetchUser
-    };
-  };
-
-  const fakeServer = setupFakeServer();
-  
-  const mentions_fetch = (query, success) => {
-    if (!fetchedUsers) {
-      fetchedUsers = true;
-      usersRequest = fakeServer.fetchUsers();
-    }
-    usersRequest.then((users) => {
-      const userMatch = (name) => name.toLowerCase().indexOf(query.term.toLowerCase()) !== -1;
-      success(users.filter((user) => userMatch(user.name) || userMatch(user.id)));
-      fetchedUsers = false;
-    });
-  };
-  
-  const mentions_menu_hover = (userInfo, success) => {
-    if (!userRequest[userInfo.id]) {
-      userRequest[userInfo.id] = fakeServer.fetchUser(userInfo.id);
-    }
-    userRequest[userInfo.id].then((userDetail) => {
-      success({ type: 'profile', user: userDetail });
-    });
-  };
-  
-  const mentions_menu_complete = (editor, userInfo) => {
-    const span = editor.getDoc().createElement('span');
-    span.className = 'mymention';
-    span.setAttribute('style', 'color: #37F;');
-    span.setAttribute('data-mention-id', userInfo.id);
-    span.appendChild(editor.getDoc().createTextNode('@' + userInfo.name));
-    return span;
-  };
-  
-  const mentions_select = (mention, success) => {
-    const id = mention.getAttribute('data-mention-id');
-    if (id) {
-      userRequest[id] = fakeServer.fetchUser(id);
-      userRequest[id].then((userDetail) => {
-        success({ type: 'profile', user: userDetail });
-      });
-    }
-  };
-
-  const tinycomments_can_resolve = (req, done, _fail) => {
-    const allowed = req.comments.length > 0 && req.comments[0].author === author;
-    done({
-      canResolve: allowed
-    });
-  };
-  
-  tinymce.init({
-    selector: 'textarea#comments-embedded',
-    license_key: 'gpl',
-    toolbar: 'addcomment showcomments code | bold italic underline',
-    menubar: 'file edit view insert format tools tc help',
-    menu: {
-      tc: {
-        title: 'TinyComments',
-        items: 'addcomment showcomments deleteallconversations'
-      }
-    },
-    plugins: [ 'tinycomments', 'mentions', 'help', 'code', 'quickbars', 'link', 'lists', 'image' ],
-    quickbars_selection_toolbar: 'alignleft aligncenter alignright | addcomment showcomments',
-    quickbars_image_toolbar: 'alignleft aligncenter alignright | rotateleft rotateright | imageoptions',
-    tinycomments_mentions_enabled: true,
-  
-    mentions_item_type: 'profile',
-    mentions_min_chars: 0,
-    mentions_selector: '.mymention',
-    mentions_fetch,
-    mentions_menu_hover,
-    mentions_menu_complete,
-    mentions_select,
-  
-    tinycomments_mode: 'embedded',
-    sidebar_show: 'showcomments',
-    user_id: currentUser.id,
-    fetch_users: (userIds) => {
-      return Promise.all(
-        userIds.map(
-          (userId) => new Promise(
-            (resolve) => resolve(userDb[userId] || { id: userId })
-          )
-        )
-      )
-    },
-    tinycomments_can_resolve,
-  });
+  user_id,
+  fetch_users: (userIds) => Promise.all(userIds
+    .map((userId) =>
+      fetch(`${API_URL}/${userId}`)
+      .then((response) => response.json())
+      .then((user) => ({
+        id: user.id,
+        name: user.name,
+        avatar: user.image,
+        custom: user
+      }))
+      .catch(() => ({ id: userId }))))
 });

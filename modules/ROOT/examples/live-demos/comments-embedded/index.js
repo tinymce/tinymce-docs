@@ -1,10 +1,16 @@
-const currentAuthor = 'A Tiny User';
-const userAllowedToResolve = 'Admin1';
+const API_URL = 'https://demouserdirectory.tiny.cloud/users';
+
+const user_id = 'james-wilson';
+
+const tinycomments_can_resolve = (req, done, _fail) => {
+  const allowed = req.comments.length > 0 && req.comments[0].author === author;
+  done({ canResolve: allowed });
+};
 
 tinymce.init({
   selector: 'textarea#comments-embedded',
-  plugins: 'code tinycomments quickbars link lists image',
-  toolbar: 'addcomment showcomments | bold italic underline',
+  plugins: [ 'tinycomments', 'help', 'code', 'quickbars', 'link', 'lists', 'image' ],
+  toolbar: 'addcomment showcomments code | bold italic underline',
   menubar: 'file edit view insert format tools tc',
   menu: {
     tc: {
@@ -14,15 +20,21 @@ tinymce.init({
   },
   quickbars_selection_toolbar: 'alignleft aligncenter alignright | addcomment showcomments',
   quickbars_image_toolbar: 'alignleft aligncenter alignright | rotateleft rotateright | imageoptions',
+
   tinycomments_mode: 'embedded',
   sidebar_show: 'showcomments',
-  user_id: currentAuthor,
-  tinycomments_can_resolve: (req, done, fail) => {
-    const allowed = req.comments.length > 0 &&
-                  req.comments[0].author === currentAuthor;
-    done({
-      canResolve: allowed || currentAuthor === userAllowedToResolve
-    });
-  },
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
+  tinycomments_can_resolve,
+  
+  user_id,
+  fetch_users: (userIds) => Promise.all(userIds
+    .map((userId) =>
+      fetch(`${API_URL}/${userId}`)
+      .then((response) => response.json())
+      .then((user) => ({
+        id: user.id,
+        name: user.name,
+        avatar: user.image,
+        custom: user
+      }))
+      .catch(() => ({ id: userId }))))
 });

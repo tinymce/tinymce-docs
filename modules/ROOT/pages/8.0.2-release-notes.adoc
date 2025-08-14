@@ -11,29 +11,71 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[overview]]
 == Overview
 
-{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, August 14^th^, 2025. These release notes provide an overview of the changes for {productname} {release-version}, including:
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Thursday, August 14^th^, 2025. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
 
+// #TINY-12160
+[NOTE]
+====
+In {productname} 8.0.1, the `licensekeymanager` plugin was missing from some available bundles. {productname} 8.0.2 corrects this by including the `licensekeymanager` plugin in all available bundles which resolves the xref:8.0.1-release-notes.adoc#missing-licensekeymanager-plugin[Known issue] from the previous release.
+====
 
 [[accompanying-premium-plugin-changes]]
 == Accompanying Premium plugin changes
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-// === <Premium plugin name 1> <Premium plugin name 1 version>
+=== Suggested Edits
 
-// The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
 
-// **<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Suggested Edits** includes the following fixes.
 
-// ==== <Premium plugin name 1 change 1>
+==== HTML comments were not tracked correctly.
+// TINY-12544
 
-// CCFR here.
+Previously, pagebreak separators defined as HTML comments (e.g., `+<!-- pagebreak -->+`) were not detected by the suggested edit system. This meant that insertions or deletions of these separators were not displayed as edits, making it difficult for reviewers to identify structural changes.
 
-// For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+{productname} {release-version} now tracks pagebreak elements defined via HTML comments. When editors insert or delete `+<!-- pagebreak -->+` markers, these changes appear in the Review Edits view, ensuring reviewers have full visibility of all document structure modifications.
 
+==== Elements with no visible height were not displaying in the Review Edits view.
+// TINY-12257
+
+Previously, elements with no visible height (`+<br>+`, `+<!-- pagebreak -->+` comments, and `+<hr>+` tags) were missing from the Review Edits preview. This caused operations related to these elements to appear as floating cards without corresponding visual content, making it difficult for reviewers to understand the context of changes.
+
+{productname} {release-version} now renders visual representations of these elements in the preview:
+
+* `+<br>+` tags display as an **Enter** icon.
+* `+<!-- pagebreak -->+` comments render the same as in the editor.
+* `+<hr>+` tags show with change indicators for insertions or deletions.
+
+This ensures reviewers can clearly identify what and where changes occurred, even for elements that have no visible height.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
+
+=== Accessibility Checker
+
+The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.
+
+**Accessibility Checker** includes the following fix.
+
+==== Enforce `+alt+` string check on all image rules
+// TINY-12546
+
+Previously, users attempting to repair accessibility issues in the `a11ychecker` may not have consistently seen error messages when their input failed validation. This led to confusion, as users were not informed why their repair attempt was rejected. For example, submitting an image filename as `+alt+` text or entering excessively long or empty text—when not permitted—should have triggered specific validation messages, but these were not always shown.
+
+{productname} {release-version} ensures all defined validation messages are now displayed reliably for all relevant rule violations across the `a11ychecker` repair workflow. Scenarios include:
+
+* Filename used as `+alt+` text when decorative images are not allowed.
+** Result: Now a filename error is shown in the repair dialog.
+* `+alt+` text exceeding maximum length.
+** Result: Now a length validation error is shown in the repair dialog.
+* Empty `+alt+` text when a description is required.
+** Result: Now a empty text error is shown in the repair dialog.
+
+For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes

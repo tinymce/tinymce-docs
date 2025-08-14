@@ -1,4 +1,4 @@
-const API_URL = 'https://demouserdirectory.tiny.cloud/users';
+const API_URL = 'https://demouserdirectory.tiny.cloud/v1/users';
 
 const user_id = 'james-wilson';
 
@@ -29,12 +29,6 @@ tinymce.init({
   fetch_users: (userIds) => Promise.all(userIds
     .map((userId) =>
       fetch(`${API_URL}/${userId}`)
-      .then((response) => response.json())
-      .then((user) => ({
-        id: user.id,
-        name: user.name,
-        avatar: user.image,
-        custom: user
-      }))
-      .catch(() => ({ id: userId }))))
+        .then((response) => response.json())
+        .catch(() => ({ id: userId }))))
 });

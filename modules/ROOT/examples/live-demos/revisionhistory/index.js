@@ -1,4 +1,4 @@
-const API_URL = 'https://demouserdirectory.tiny.cloud/users';
+const API_URL = 'https://demouserdirectory.tiny.cloud/v1/users';
 
 const fakeDelay = 200;
 
@@ -170,11 +170,5 @@ tinymce.init({
     .map((userId) =>
       fetch(`${API_URL}/${userId}`)
         .then((response) => response.json())
-        .then((user) => ({
-            id: user.id,
-            name: user.name,
-            avatar: user.image,
-            custom: user
-        }))
         .catch(() => ({ id: userId })))),
 });

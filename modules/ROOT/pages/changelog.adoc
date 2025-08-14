@@ -5,13 +5,26 @@
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
 
+== xref:8.0.2-release-notes.adoc[8.0.2 - 2025-08-14]
+
+[NOTE]
+====
+In {productname} 8.0.1, the `licensekeymanager` plugin was missing from some available bundles. {productname} 8.0.2 corrects this by including the `licensekeymanager` plugin in all available bundles.
+
+**Workaround for 8.0.1 users:** If you are using a bundle that is missing the `licensekeymanager` plugin, you can download the plugin separately and manually add it to your plugins folder. Contact your account manager or support for assistance in obtaining the separate `licensekeymanager` plugin download.
+====
+
+### Fixed
+* Reverted split button design change.
+// #TINY-12593
+
 == xref:8.0.1-release-notes.adoc[8.0.1 - 2025-07-28]
 
 [NOTE]
 No new features or changes were introduced in this patch release. It contains missing changelogs from the link:https://download.tiny.cloud/tinymce/community/tinymce_8.0.0.zip[community/tinymce_8.0.0.zip] file only.
 
 ### Fixed
-- Updated missing changelogs.
+*  Updated missing changelogs.
 // #TINY-12581
 
 == xref:8.0-release-notes.adoc[8.0.0 - 2025-07-23]

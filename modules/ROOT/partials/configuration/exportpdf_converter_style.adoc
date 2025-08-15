@@ -27,3 +27,25 @@ tinymce.init({
   exportpdf_converter_style: 'p { color: cyan !important }' // requires both "exportpdf_converter_style" and "exportpdf_service_url" to be set.
 });
 ----
+
+[TIP]
+Watermarks can be added to exported PDF documents using CSS. Add the watermark styles to the `exportpdf_converter_style` option, targeting `body::after` instead of `#tinymce::after` for proper rendering. For more information see: link:https://exportpdf.converter.tiny.cloud/docs#section/General/CSS[General/CSS].
+
+=== Example: Adding watermarks to exported PDF documents
+
+[source,js]
+----
+exportpdf_converter_style: `
+  body::after {
+    content: "CONFIDENTIAL";
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    font-size: 48px;
+    color: rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    pointer-events: none;
+  }
+`
+----

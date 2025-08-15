@@ -9,14 +9,13 @@ The `suggestededits_model` option loads an existing model into the {pluginname} 
 
 [source,js]
 ----
-await fetch(`/models/${documentId}`)
-  .then((response) => response.json())
-  .then((model) => {
-    tinymce.init({
-      selector: 'textarea',  // Change this value according to your HTML
-      plugins: 'suggestededits',
-      toolbar: 'suggestededits',
-      suggestededits_model: model // Load the saved model into the editor
-    });
-  });
+const tinymceElement = document.querySelector('textarea#suggestededits');
+const model = JSON.parse(tinymceElement.getAttribute('suggestededits-model'));
+
+tinymce.init({
+  selector: 'textarea#suggestededits',  // Change this value according to your HTML
+  plugins: 'suggestededits',
+  toolbar: 'suggestededits',
+  suggestededits_model: model // Load the saved model into the editor
+});
 ----

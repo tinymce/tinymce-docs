@@ -20,7 +20,7 @@ When set to:
 [source,javascript]
 ----
 tinymce.init({
-  selector: 'textarea',  // Change this value according to your HTML
+  selector: 'textarea#suggestededits',  // Change this value according to your HTML
   plugins: 'suggestededits',
   toolbar: 'suggestededits',
   suggestededits_access: 'feedback', // Change this value to set the {pluginname} view permissions
@@ -34,11 +34,12 @@ liveDemo::suggestededits-access-feedback[]
 [source,javascript]
 ----
 tinymce.init({
-  selector: 'textarea',  // Change this value according to your HTML
+  selector: 'textarea#suggestededits',  // Change this value according to your HTML
   plugins: 'suggestededits',
   toolbar: 'suggestededits',
   suggestededits_access: 'read', // Change this value to set the {pluginname} view permissions
   readonly: false // Set to true to restrict editing
 });
 ----
+
 liveDemo::suggestededits-access-read[]

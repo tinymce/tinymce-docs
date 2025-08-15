@@ -9,31 +9,30 @@ This option enables you to provide an element to present next to the menu item b
 
 [source,js]
 ----
-const userRequest = {};
+const API_URL = 'https://demouserdirectory.tiny.cloud/v1/users';
+
+const createCard = (userInfo) => {
+  const div = document.createElement('div');
+  div.innerHTML = (
+    '<div class="card">' +
+      '<img class="avatar" src="' + userInfo.image + '">' +
+      '<h1>' + userInfo.name + '</h1>' +
+      '<p>' + userInfo.description + '</p>' +
+    '</div>'
+  );
+  return div;
+};
+
+const mentions_menu_hover = async (userInfo, success) => {
+  const card = createCard(userInfo);
+  success(card);
+};
 
 tinymce.init({
   selector: 'textarea',
   plugins: 'mentions',
-  mentions_menu_hover: (userInfo, success) => {
-    // request more information about the user from the server and cache it locally
-    if (!userRequest[userInfo.id]) {
-      userRequest[userInfo.id] = fetch('/user?id=' + userInfo.id);
-    }
-    userRequest[userInfo.id].then((userDetail) => {
-      const div = document.createElement('div');
-
-      div.innerHTML = (
-      '<div>' +
-        '<h1>' + userDetail.fullName + '</h1>' +
-        '<img src="' + userDetail.image + '" ' +
-            'style="width: 50px; height: 50px; float: left;"/>' +
-        '<p>' + userDetail.description + '</p>' +
-      '</div>'
-      );
-
-      success(div);
-    });
-  }
+  mentions_selector: '.mymention',
+  mentions_menu_hover
 });
 ----
 
@@ -45,18 +44,11 @@ If `+mentions_menu_hover+` is resolved with an object specifying the type and us
 
 [source,js]
 ----
-const userRequest = {};
 tinymce.init({
   selector: 'textarea',
   plugins: 'mentions',
-  mentions_menu_hover: (userInfo, success) => {
-    // request more information about the user from the server and cache it locally
-    if (!userRequest[userInfo.id]) {
-      userRequest[userInfo.id] = fetch('/user?id=' + userInfo.id);
-    }
-    userRequest[userInfo.id].then((userDetail) => {
-      success({ type: 'profile', user: userDetail });
-    });
-  }
+  mentions_selector: '.mymention',
+  mentions_menu_hover: (userInfo, success) =>
+    success({ type: 'profile', user: userInfo })
 });
 ----

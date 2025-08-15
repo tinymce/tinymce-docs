@@ -56,7 +56,9 @@ const tinycomments_create = (req, done, fail) => {
         uid,
         comments: [{
           uid,
-          ...getAuthorInfo(user_id),
+          author: user_id,
+          authorName: 'James Wilson',
+          authorAvatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg',
           content: req.content,
           createdAt: req.createdAt,
           modifiedAt: req.createdAt

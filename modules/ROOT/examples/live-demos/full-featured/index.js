@@ -665,7 +665,6 @@ tinymce.init({
   mentions_menu_complete,
   mentions_select,
   
-  mentions_item_type: 'profile',
   autocorrect_capitalize: true,
   mergetags_list: [
     {

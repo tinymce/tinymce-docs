@@ -27,48 +27,24 @@ tinymce.activeEditor.plugins.suggestededits.hasChanges();
 [[get_model]]
 .`getModel` Example
 
-This example demonstrates how to submit the current document and model to a server, to ensure they are saved synchronously. The current model is retrieved using the `getModel` API.
+This example demonstrates how to save the current document and model to ensure they are saved synchronously. The current model is retrieved using the `getModel` API.
 
 [source,js]
 ----
+const tinymceElement = document.querySelector('textarea#suggestededits');
+const suggestededits_model = JSON.parse(tinymceElement.getAttribute('suggestededits-model'));
+
 tinymce.init({
   selector: 'textarea#suggestededits',  // change this value according to your HTML
   plugins: 'suggestededits',
   toolbar: 'suggestededits save',
   suggestededits_model,
   setup: (editor) => {
-    editor.ui.registry.addButton('save', {
-      text: 'Save',
-      onAction: () => {
-        // Get the current content of the editor
-        const content = editor.getContent();
-
-        // Get the current model of the document
-        const model = editor.plugins.suggestededits.getModel();
-        
-        fetch(`/api/documents/${documentId}`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: content,
-        })
-        .then((response) => response.json())
-        .then((data) => console.log('Document saved:', data))
-        .catch((error) => console.error('Error saving document:', error));
-
-        // Save the model to the server
-        fetch(`/api/models/${documentId}`, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(model),
-        })
-        .then((response) => response.json())
-        .then((data) => console.log('Model saved:', data))
-        .catch((error) => console.error('Error saving model:', error));
-      }
+    editor.on('AddUndo Undo Redo SuggestedEditsBeginReview SuggestedEditsReviewComplete SuggestedEditsReviewCancelled', () => {
+      const content = editor.getContent();
+      const model = editor.plugins.suggestededits.getModel();
+      tinymceElement.value = content;
+      tinymceElement.setAttribute('suggestededits-model', JSON.stringify(model));
     });
   }
 });
@@ -78,7 +54,7 @@ tinymce.init({
 [[set_model]]
 .`setModel` Example
 
-This example demonstrates how to set the model and the document in the editor, after fetching them from a server. The `setModel` method sets the current model of the document and the editor content, as generated from that model.
+This example demonstrates how to set the model and the document in the editor, in this case fetching them from a server. The `setModel` method sets the current model of the document and the editor content, as generated from that model.
 
 [source,js]
 ----

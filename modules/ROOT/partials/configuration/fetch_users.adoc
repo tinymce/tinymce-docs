@@ -14,42 +14,39 @@ A **required callback function** that fetches user data. This function is called
 .Example: using `fetch_users` option
 [source,javascript]
 ----
+const API_URL = 'https://demouserdirectory.tiny.cloud/v1/users';
+
 tinymce.init({
-  selector: '#editor',
-  user_id: 'alextaylor',
+  selector: 'textarea',
+  user_id: 'james-wilson',
   fetch_users: (userIds) => Promise.all(userIds
     .map((userId) =>
-      fetch(`/users/${userId}`) // Fetch user data from the server
-      .then((response) => response.json())
-      .catch(() => ({ id: userId })) // Still return a valid user object even if the fetch fails
-  )),
+      fetch(`${API_URL}/${userId}`)
+        .then((response) => response.json())
+        .catch(() => ({ id: userId })))),
 });
 ----
 
 .Example: returning user array with validation
 [source,javascript]
 ----
-tinymce.init({
-    selector: '#editor',
-    user_id: 'alextaylor',
-    fetch_users: async (userIds) => {
-        const users = await fetch('/users', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ userIds })
-        })
-        .then((response) => response.json())
-        .catch(() =>
-            userIds.map((userId) =>
-                ({ id: userId }) // Still returns valid users even if the fetch fails
-            )
-        );
+const API_URL = 'https://demouserdirectory.tiny.cloud/v1/users';
 
-        return userIds.map(
-            (userId) => 
-                users.find((user) => user.id === userId) 
-                || ({ id: userId }) // Still returns a valid user even if it wasn't returned from the server
-        )
-    }
+tinymce.init({
+  selector: 'textarea',
+  user_id: 'james-wilson',
+  fetch_users: async (userIds) => {
+    const users = await Promise.all(userIds
+        .map((userId) =>
+        fetch(`${API_URL}/${userId}`)
+            .then((response) => response.json())
+            .catch(() => ({ id: userId }))));
+
+    return userIds.map(
+      (userId) => 
+        users.find((user) => user.id === userId) 
+        || ({ id: userId }) // Still returns a valid user even if it wasn't returned from the server
+    );
+  },
 });
 ----

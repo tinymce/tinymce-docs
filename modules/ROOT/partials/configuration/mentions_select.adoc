@@ -9,40 +9,41 @@ This option enables a hover card to be presented when a user hovers over a menti
 
 [source,js]
 ----
-const userRequest = {};
+const API_URL = 'https://demouserdirectory.tiny.cloud/v1/users';
+
+const createCard = (userInfo) => {
+  const div = document.createElement('div');
+  div.innerHTML = (
+    '<div class="card">' +
+      '<img class="avatar" src="' + userInfo.image + '">' +
+      '<h1>' + userInfo.name + '</h1>' +
+      '<p>' + userInfo.description + '</p>' +
+    '</div>'
+  );
+  return div;
+};
+
+const mentions_select = async (mention, success) => {
+  const id = mention.getAttribute('data-mention-id');
+  await fetch(`${API_URL}/${id}`)
+    .then((response) => response.json())
+    .then((userInfo) => {
+      const card = createCard({
+        id: userInfo.id,
+        name: userInfo.name,
+        image: userInfo.avatar,
+        description: userInfo.custom.role
+      });
+      success(card);
+    })
+    .catch((error) => console.error(error));
+};
 
 tinymce.init({
   selector: 'textarea',
   plugins: 'mentions',
-  mentions_selector: 'span.mymention',
-  mentions_menu_complete: (editor, userInfo) => {
-    const span = editor.getDoc().createElement('span');
-    span.className = 'mymention';
-    span.setAttribute('data-mention-id', userInfo.id);
-    span.appendChild(editor.getDoc().createTextNode('@' + userInfo.name));
-    return span;
-  },
-  mentions_select: (mention, success) => {
-    // `mention` is the element we previously created with `mentions_menu_complete`
-    // in this case we have chosen to store the id as an attribute
-    const id = mention.getAttribute('data-mention-id');
-    // request more information about the user from the server and cache locally
-    if (!userRequest[id]) {
-      userRequest[id] = fetch('/user?id=' + id);
-    }
-    userRequest[id].then((userDetail) => {
-      const div = document.createElement('div');
-      div.innerHTML = (
-        '<div>' +
-        '<h1>' + userDetail.fullName + '</h1>' +
-        '<img src="' + userDetail.image + '" ' +
-            'style="width: 50px; height: 50px; float: left;"/>' +
-        '<p>' + userDetail.description + '</p>' +
-        '</div>'
-      );
-      success(div);
-    });
-  }
+  mentions_selector: '.mymention',
+  mentions_select
 });
 ----
 
@@ -54,29 +55,28 @@ If `+mentions_select+` is resolved with an object specifying the type and user d
 
 [source,js]
 ----
-const userRequest = {};
+const API_URL = 'https://demouserdirectory.tiny.cloud/v1/users';
+
+const mentions_select = async (mention, success) => {
+  const id = mention.getAttribute('data-mention-id');
+  await fetch(`${API_URL}/${id}`)
+    .then((response) => response.json())
+    .then((userInfo) => {
+      const user = {
+        id: userInfo.id,
+        name: userInfo.name,
+        image: userInfo.avatar,
+        description: userInfo.custom.role
+      };
+      success({ type: 'profile', user });
+    })
+    .catch((error) => console.error(error));
+};
+
 tinymce.init({
   selector: 'textarea',
   plugins: 'mentions',
-  mentions_selector: 'span.mymention',
-  mentions_menu_complete: (editor, userInfo) => {
-    const span = editor.getDoc().createElement('span');
-    span.className = 'mymention';
-    span.setAttribute('data-mention-id', userInfo.id);
-    span.appendChild(editor.getDoc().createTextNode('@' + userInfo.name));
-    return span;
-  },
-  mentions_select: (mention, success) => {
-    // `mention` is the element we previously created with `mentions_menu_complete`
-    // in this case we have chosen to store the id as an attribute
-    const id = mention.getAttribute('data-mention-id');
-    // request more information about the user from the server and cache locally
-    if (!userRequest[id]) {
-      userRequest[id] = fetch('/user?id=' + id);
-    }
-    userRequest[id].then((userDetail) => {
-      success({ type: 'profile', user: userDetail });
-    });
-  }
+  mentions_selector: '.mymention',
+  mentions_select
 });
 ----

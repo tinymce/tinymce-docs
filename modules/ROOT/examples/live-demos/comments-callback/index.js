@@ -1,46 +1,15 @@
-/********************************
- *   Demo-specific configuration  *
- ********************************/
+const API_URL = 'https://demouserdirectory.tiny.cloud/v1/users';
 
-const userDb = {
-  'michaelcook': {
-    id: 'michaelcook',
-    name: 'Michael Cook',
-    fullName: 'Michael Cook',
-    description: 'Product Owner',
-    image: "{{imagesdir}}/avatars/michaelcook.png"
-  },
-  'kalebwilson': {
-    id: 'kalebwilson',
-    name: 'Kaleb Wilson',
-    fullName: 'Kaleb Wilson',
-    description: 'Marketing Director',
-    image: "{{imagesdir}}/avatars/kalebwilson.png"
-  }
-};
-
-const currentUid = 'kalebwilson';
-const adminUid = 'michaelcook';
+const user_id = 'james-wilson';
+const collaborator_id = 'mia-andersson';
 
 const now = new Date();
 const yesterday = new Date(now.getTime() - 24 * 60 * 60 * 1000).toISOString();
 const anhourago = new Date(now.getTime() - 60 * 60 * 1000).toISOString();
+const fakeDelay = 200;
 
-const fillAuthorInfo = (id, fullName, image) => ({
-  author: id,
-  authorName: fullName,
-  authorAvatar: image,
-});
-
-const getAuthorInfo = (uid) => {
-  const user = userDb[uid];
-  if (user) {
-    return fillAuthorInfo(user.id, user.fullName, user.image);
-  }
-  return {
-    author: uid,
-    authorName: uid,
-  };
+const randomString = () => {
+  return crypto.getRandomValues(new Uint32Array(1))[0].toString(36).substring(2, 14);
 };
 
 const conversationDb = {
@@ -48,13 +17,17 @@ const conversationDb = {
     uid: 'mce-conversation_19679600221621399703915',
     comments: [{
       uid: 'mce-conversation_19679600221621399703915',
-      ...getAuthorInfo(currentUid),
+      author: user_id,
+      authorName: 'James Wilson',
+      authorAvatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg',
       content: `What do you think about this?`,
       createdAt: yesterday,
       modifiedAt: yesterday
     }, {
       uid: 'mce-conversation_19679600221621399703917',
-      ...getAuthorInfo(adminUid),
+      author: collaborator_id,
+      authorName: 'Mia Andersson',
+      authorAvatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_mia-andersson_128_e6f9424b.jpg',
       content: `I think this is a great idea!`,
       createdAt: anhourago,
       modifiedAt: anhourago,
@@ -64,7 +37,9 @@ const conversationDb = {
     uid: 'mce-conversation_420304606321716900864126',
     comments: [{
       uid: 'mce-conversation_420304606321716900864126',
-      ...getAuthorInfo(adminUid),
+      author: collaborator_id,
+      authorName: 'Mia Andersson',
+      authorAvatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_mia-andersson_128_e6f9424b.jpg',
       content: `Please revise this sentence, exclamation points are unprofessional!`,
       createdAt: yesterday,
       modifiedAt: anhourago
@@ -72,40 +47,34 @@ const conversationDb = {
   }
 };
 
-const fakeDelay = 200;
-const randomString = () => crypto.getRandomValues(new Uint32Array(1))[0].toString(36).substring(2, 14);
-
-const resolvedConversationDb = {};
-
-/********************************
- *   Tiny Comments functions    *
- * (must call "done" or "fail") *
- ********************************/
-
 const tinycomments_create = (req, done, fail) => {
-  if (req.content === 'fail') {
-    fail(new Error('Something has gone wrong...'));
-  } else {
-    const uid = 'annotation-' + randomString();
-    conversationDb[uid] = {
-      uid,
-      comments: [{
+    if (req.content === 'fail') {
+      fail(new Error('Something has gone wrong...'));
+    } else {
+      const uid = 'annotation-' + randomString();
+      conversationDb[uid] = {
         uid,
-        ...getAuthorInfo(currentUid),
-        content: req.content,
-        createdAt: req.createdAt,
-        modifiedAt: req.createdAt
-      }]
-    };
-    setTimeout(() => done({ conversationUid: uid }), fakeDelay);
-  }
-};
+        comments: [{
+          uid,
+          author: user_id,
+          authorName: 'James Wilson',
+          authorAvatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg',
+          content: req.content,
+          createdAt: req.createdAt,
+          modifiedAt: req.createdAt
+        }]
+      };
+      setTimeout(() => done({ conversationUid: uid }), fakeDelay);
+    }
+  };
 
 const tinycomments_reply = (req, done) => {
   const replyUid = 'annotation-' + randomString();
   conversationDb[req.conversationUid].comments.push({
     uid: replyUid,
-    ...getAuthorInfo(currentUid),
+    author: user_id,
+    authorName: 'James Wilson',
+    authorAvatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg',
     content: req.content,
     createdAt: req.createdAt,
     modifiedAt: req.createdAt
@@ -114,7 +83,7 @@ const tinycomments_reply = (req, done) => {
 };
 
 const tinycomments_delete = (req, done) => {
-  if (currentUid === adminUid) { // Replace wth your own logic, e.g. check if user created the conversation
+  if (user_id === collaborator_id) { // Replace wth your own logic, e.g. check if user created the conversation
     delete conversationDb[req.conversationUid];
     setTimeout(() => done({ canDelete: true }), fakeDelay);
   } else {
@@ -124,7 +93,7 @@ const tinycomments_delete = (req, done) => {
 
 const tinycomments_resolve = (req, done) => {
   const conversation = conversationDb[req.conversationUid];
-  if (currentUid === conversation.comments[0].author) { // Replace wth your own logic, e.g. check if user has admin priveleges
+  if (user_id === conversation.comments[0].author) { // Replace wth your own logic, e.g. check if user has admin priveleges
     delete conversationDb[req.conversationUid];
     setTimeout(() => done({ canResolve: true }), fakeDelay);
   } else {
@@ -138,7 +107,7 @@ const tinycomments_delete_comment = (req, done) => {
 
   const newcomments = oldcomments.filter((comment) => {
     if (comment.uid === req.commentUid) { // Found the comment to delete
-      if (currentUid === comment.author) { // Replace with your own logic, e.g. check if user has admin privileges
+      if (user_id === comment.author) { // Replace with your own logic, e.g. check if user has admin privileges
         return false; // Remove the comment
       } else {
         reason = 'Not authorised to delete this comment'; // Update reason
@@ -146,6 +115,7 @@ const tinycomments_delete_comment = (req, done) => {
     }
     return true; // Keep the comment
   });
+
   if (newcomments.length === oldcomments.length) {
     setTimeout(() => done({ canDelete: false, reason }), fakeDelay);
   } else {
@@ -161,7 +131,7 @@ const tinycomments_edit_comment = (req, done) => {
 
   const newcomments = oldcomments.map((comment) => {
     if (comment.uid === req.commentUid) { // Found the comment to delete
-      if (currentUid === comment.author) { // Replace with your own logic, e.g. check if user has admin privileges
+      if (user_id === comment.author) { // Replace with your own logic, e.g. check if user has admin privileges
         canEdit = true; // User can edit the comment
         return { ...comment, content: req.content, modifiedAt: new Date().toISOString() }; // Update the comment
       } else {
@@ -181,7 +151,7 @@ const tinycomments_edit_comment = (req, done) => {
 
 const tinycomments_delete_all = (req, done) => {
   const conversation = conversationDb[req.conversationUid];
-  if (currentUid === conversation.comments[0].author) { // Replace wth your own logic, e.g. check if user has admin priveleges
+  if (user_id === conversation.comments[0].author) { // Replace wth your own logic, e.g. check if user has admin priveleges
     delete conversationDb[req.conversationUid];
     setTimeout(() => done({ canDelete: true }), fakeDelay);
   } else {
@@ -211,13 +181,9 @@ const tinycomments_fetch = (conversationUids, done) => {
   setTimeout(() => done({ conversations: fetchedConversations }), fakeDelay);
 };
 
-// Read the above `getAuthorInfo` function to see how this could be implemented
-const tinycomments_fetch_author_info = (done) => done(getAuthorInfo(currentUid));
-
 tinymce.init({
   selector: 'textarea#comments-callback',
   license_key: 'gpl',
-  height: 800,
   toolbar: 'addcomment showcomments code | bold italic underline',
   menubar: 'file edit view insert format tools tc help',
   menu: {
@@ -226,11 +192,13 @@ tinymce.init({
       items: 'addcomment showcomments deleteallconversations'
     }
   },
-  plugins: ['tinycomments', 'help', 'code', 'quickbars', 'link', 'lists', 'image'],
+  plugins: [ 'tinycomments', 'help', 'code', 'quickbars', 'link', 'lists', 'image' ],
   quickbars_selection_toolbar: 'alignleft aligncenter alignright | addcomment showcomments',
   quickbars_image_toolbar: 'alignleft aligncenter alignright | rotateleft rotateright | imageoptions',
-  sidebar_show: 'showcomments',
+  
   tinycomments_mode: 'callback',
+  tinycomments_mentions_enabled: true,
+  sidebar_show: 'showcomments',
   tinycomments_create,
   tinycomments_reply,
   tinycomments_delete,
@@ -240,5 +208,11 @@ tinymce.init({
   tinycomments_delete_comment,
   tinycomments_edit_comment,
   tinycomments_fetch,
-  tinycomments_fetch_author_info,
+
+  user_id,
+  fetch_users: (userIds) => Promise.all(userIds
+    .map((userId) =>
+      fetch(`${API_URL}/${userId}`)
+        .then((response) => response.json())
+        .catch(() => ({ id: userId }))))
 });

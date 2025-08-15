@@ -20,7 +20,7 @@ NOTE: You are responsible for saving the model and providing it on the next load
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // Change this value according to your HTML
+  selector: 'textarea#suggestededits',  // Change this value according to your HTML
   plugins: 'suggestededits',
   toolbar: 'suggestededits',
   suggestededits_model, // Load the saved model into the editor

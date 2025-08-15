@@ -1,621 +1,734 @@
 const fetchApi = import('https://cdn.skypack.dev/@microsoft/fetch-event-source@2.0.1')
   .then((module) => module.fetchEventSource);
 
+const API_URL = 'https://demouserdirectory.tiny.cloud/v1/users';
 
+const user_id = 'james-wilson';
+const collaborator_id = 'mia-andersson';
 
-/* Script to import faker.js for generating random data for demonstration purposes */
-tinymce.ScriptLoader.loadScripts(['https://cdn.jsdelivr.net/npm/faker@5/dist/faker.min.js']).then(() => {
+const now = new Date();
+const yesterday = new Date(now.getTime() - 24 * 60 * 60 * 1000).toISOString();
+const anhourago = new Date(now.getTime() - 60 * 60 * 1000).toISOString();
+const fakeDelay = 200;
 
-  /*
-  ** This is to simulate requesting information from a server.
-  **
-  ** It has 2 functions:
-  ** fetchUsers() - returns a complete list of users' ids and names.
-  ** fetchUser(id) - returns the full information about a single user id.
-  **
-  ** Both of these functions have a slight delay to simulate a server request.
-  */
-  const fakeServer = (() => {
-    /* Some user profile images for our fake server (original source: unsplash) */
-    const images = [
-      'Abdullah_Hadley', 'Abriella_Bond', 'Addilynn_Dodge', 'Adolfo_Hess', 'Alejandra_Stallings', 'Alfredo_Schafer', 'Aliah_Pitts', 'Amilia_Luna', 'Andi_Lane', 'Angelina_Winn', 'Arden_Dean', 'Ariyanna_Hicks', 'Asiya_Wolff', 'Brantlee_Adair', 'Carys_Metz', 'Daniela_Dewitt', 'Della_Case', 'Dianna_Smiley', 'Eliana_Stout', 'Elliana_Palacios', 'Fischer_Garland', 'Glen_Rouse', 'Grace_Gross', 'Heath_Atwood', 'Jakoby_Roman', 'Judy_Sewell', 'Kaine_Hudson', 'Kathryn_Mcgee', 'Kayley_Dwyer', 'Korbyn_Colon', 'Lana_Steiner', 'Loren_Spears', 'Lourdes_Browning', 'Makinley_Oneill', 'Mariana_Dickey', 'Miyah_Myles', 'Moira_Baxter', 'Muhammed_Sizemore', 'Natali_Craig', 'Nevaeh_Cates', 'Oscar_Khan', 'Rodrigo_Hawkins', 'Ryu_Duke', 'Tripp_Mckay', 'Vivianna_Kiser', 'Yamilet_Booker', 'Yarely_Barr', 'Zachary_Albright', 'Zahir_Mays', 'Zechariah_Burrell'
-    ];
+const randomString = () => {
+  return crypto.getRandomValues(new Uint32Array(1))[0].toString(36).substring(2, 14);
+};
 
-    /* Create an array of 200 random names using faker.js */
-    const userNames = [];
-    for (let i = 0; i < 200; i++) {
-      userNames.push(faker.name.findName());
-    }
+const conversationDb = {
+  'mce-conversation_19679600221621399703915': {
+    uid: 'mce-conversation_19679600221621399703915',
+    comments: [{
+      uid: 'mce-conversation_19679600221621399703915',
+      author: user_id,
+      authorName: 'James Wilson',
+      authorAvatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg',
+      content: `What do you think about this? @${collaborator_id}?`,
+      createdAt: yesterday,
+      modifiedAt: yesterday
+    }, {
+      uid: 'mce-conversation_19679600221621399703917',
+      author: collaborator_id,
+      authorName: 'Mia Andersson',
+      authorAvatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_mia-andersson_128_e6f9424b.jpg',
+      content: `I think this is a great idea @${user_id}!`,
+      createdAt: anhourago,
+      modifiedAt: anhourago,
+    }]
+  },
+  'mce-conversation_420304606321716900864126': {
+    uid: 'mce-conversation_420304606321716900864126',
+    comments: [{
+      uid: 'mce-conversation_420304606321716900864126',
+      author: collaborator_id,
+      authorName: 'Mia Andersson',
+      authorAvatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_mia-andersson_128_e6f9424b.jpg',
+      content: `@${user_id} Please revise this sentence, exclamation points are unprofessional!`,
+      createdAt: yesterday,
+      modifiedAt: anhourago
+    }]
+  }
+};
 
-    /* This represents a database of users on the server */
-    const userDb = {};
-    userNames.map((fullName) => {
-      const id = fullName.toLowerCase().replace(/ /g, '');
-      return {
-        id: id,
-        name: fullName,
-        fullName: fullName,
-        description: faker.name.jobTitle(),
-        image: '{{imagesdir}}/unsplash/uifaces-unsplash-portrait-' + images[Math.floor(images.length * Math.random())] + '.jpg'
-      };
-    }).forEach((user) => {
-      userDb[user.id] = user;
-    });
+const mentions_fetch = async (query, success) => {
+  const searchPhrase = query.term.toLowerCase();
+  await fetch(`${API_URL}?q=${encodeURIComponent(searchPhrase)}`)
+    .then((response) => response.json())
+    .then((users) => success(users.data.map((userInfo) => ({
+      id: userInfo.id,
+      name: userInfo.name,
+      image: userInfo.avatar,
+      description: userInfo.custom.role
+    }))))
+    .catch((error) => console.log(error));
+};
 
-    /* This represents getting the complete list of users from the server with the details required for the mentions "profile" item */
-    const fetchUsers = () => new Promise((resolve, _reject) => {
-      /* simulate a server delay */
-      setTimeout(() => {
-        const users = Object.keys(userDb).map(id => ({
-          id: id,
-          name: userDb[id].name,
-          image: userDb[id].image,
-          description: userDb[id].description
-        }));
-        resolve(users);
-      }, 500);
-    });
+const mentions_menu_complete = (editor, userInfo) => {
+  const span = editor.getDoc().createElement('span');
+  span.className = 'mymention';
+  span.setAttribute('data-mention-id', userInfo.id);
+  span.appendChild(editor.getDoc().createTextNode('@' + userInfo.name));
+  return span;
+};
 
-    /* This represents requesting all the details of a single user from the server database */
-    const fetchUser = (id) => new Promise((resolve, reject) => {
-      /* simulate a server delay */
-      setTimeout(() => {
-        if (Object.prototype.hasOwnProperty.call(userDb, id)) {
-          resolve(userDb[id]);
-        }
-        reject(`unknown user id "${id}"`);
-      }, 300);
-    });
+const createCard = (userInfo) => {
+  const div = document.createElement('div');
+  div.innerHTML = (
+    '<div class="card">' +
+      '<img class="avatar" src="' + userInfo.image + '">' +
+      '<h1>' + userInfo.name + '</h1>' +
+      '<p>' + userInfo.description + '</p>' +
+    '</div>'
+  );
+  return div;
+};
 
-    return {
-      fetchUsers: fetchUsers,
-      fetchUser: fetchUser
-    };
-  })();
-
-  /* These are "local" caches of the data returned from the fake server */
-  let usersRequest = null;
-  const userRequest = {};
-
-  const mentions_fetch = (query, success) => {
-    /* Fetch your full user list from somewhere */
-    if (usersRequest === null) {
-      usersRequest = fakeServer.fetchUsers();
-    }
-    usersRequest.then((users) => {
-      /* `query.term` is the text the user typed after the '@' */
-      users = users.filter((user) => user.name.indexOf(query.term.toLowerCase()) !== -1);
-      users = users.slice(0, 10);
-
-      /* Where the user object must contain the properties `id` and `name`
-        but you could additionally include anything else you deem useful. */
-      success(users);
-    });
-  };
-
-  const mentions_menu_hover = (userInfo, success) => {
-    /* Request more information about the user from the server and cache it locally */
-    if (!userRequest[userInfo.id]) {
-      userRequest[userInfo.id] = fakeServer.fetchUser(userInfo.id);
-    }
-    userRequest[userInfo.id].then(userDetail => {
-      const div = document.createElement('div');
-
-      div.innerHTML = (
-        '<div class="card">' +
-          '<img class="avatar" src="' + userDetail.image + '">' +
-          '<h1>' + userDetail.fullName + '</h1>' +
-          '<p>' + userDetail.description + '</p>' +
-        '</div>'
-      );
-
-      success(div);
-    });
-  };
-
-  const mentions_menu_complete = (editor, userInfo) => {
-    const span = editor.getDoc().createElement('span');
-    span.className = 'mymention';
-    span.setAttribute('data-mention-id', userInfo.id);
-    span.appendChild(editor.getDoc().createTextNode('@' + userInfo.name));
-    return span;
-  };
-
-  const mentions_select = (mention, success) => {
-    /* `mention` is the element we previously created with `mentions_menu_complete`
-      in this case we have chosen to store the id as an attribute */
-    const id = mention.getAttribute('data-mention-id');
-    /* Request more information about the user from the server and cache it locally */
-    if (!userRequest[id]) {
-      userRequest[id] = fakeServer.fetchUser(id);
-    }
-    userRequest[id].then((userDetail) => {
-      const div = document.createElement('div');
-      div.innerHTML = (
-        '<div class="card">' +
-        '<img class="avatar" src="' + userDetail.image + '">' +
-        '<h1>' + userDetail.fullName + '</h1>' +
-        '<p>' + userDetail.description + '</p>' +
-        '</div>'
-      );
-      success(div);
-    });
-  };
-
-  const isSmallScreen = window.matchMedia('(max-width: 1023.5px)').matches;
-
-  const ai_request = (request, respondWith) => {
-    respondWith.stream((signal, streamMessage) => {
-      // Adds each previous query and response as individual messages
-      const conversation = request.thread.flatMap((event) => {
-        if (event.response) {
-          return [
-            { role: "user", content: event.request.query },
-            { role: "assistant", content: event.response.data },
-          ];
-        } else {
-          return [];
-        }
+const mentions_select = async (mention, success) => {
+  const id = mention.getAttribute('data-mention-id');
+  await fetch(`${API_URL}/${id}`)
+    .then((response) => response.json())
+    .then((userInfo) => {
+      const card = createCard({
+        id: userInfo.id,
+        name: userInfo.name,
+        image: userInfo.avatar,
+        description: userInfo.custom.role
       });
+      success(card);
+    })
+    .catch((error) => console.error(error));
+};
 
-      // System messages provided by the plugin to format the output as HTML content.
-      const systemMessages = request.system.map((content) => ({
-        role: "system",
-        content,
-      }));
+const mentions_menu_hover = async (userInfo, success) => {
+  const card = createCard(userInfo);
+  success(card);
+};
 
-      // Forms the new query sent to the API
-      const content =
-        request.context.length === 0 || conversation.length > 0
-          ? request.query
-          : `Question: ${request.query} Context: """${request.context}"""`;
-
-      const messages = [
-        ...conversation,
-        ...systemMessages,
-        { role: "user", content },
-      ];
-
-      let hasHead = false;
-      let markdownHead = "";
-
-      const hasMarkdown = (message) => {
-        if (message.includes("`") && markdownHead !== "```") {
-          const numBackticks = message.split("`").length - 1;
-          markdownHead += "`".repeat(numBackticks);
-          if (hasHead && markdownHead === "```") {
-            markdownHead = "";
-            hasHead = false;
-          }
-          return true;
-        } else if (message.includes("html") && markdownHead === "```") {
-          markdownHead = "";
-          hasHead = true;
-          return true;
-        }
-        return false;
+const tinycomments_create = (req, done, fail) => {
+    if (req.content === 'fail') {
+      fail(new Error('Something has gone wrong...'));
+    } else {
+      const uid = 'annotation-' + randomString();
+      conversationDb[uid] = {
+        uid,
+        comments: [{
+          uid,
+          ...getAuthorInfo(user_id),
+          content: req.content,
+          createdAt: req.createdAt,
+          modifiedAt: req.createdAt
+        }]
       };
-
-      const requestBody = {
-        model: "gpt-4o",
-        temperature: 0.7,
-        max_tokens: 4000,
-        messages,
-        stream: true,
-      };
-
-      const openAiOptions = {
-        signal,
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer {{ openai_proxy_token }}`,
-        },
-        body: JSON.stringify(requestBody),
-      };
-
-      const onopen = async (response) => {
-        if (response) {
-          const contentType = response.headers.get("content-type");
-          if (response.ok && contentType?.includes("text/event-stream")) {
-            return;
-          } else if (contentType?.includes("application/json")) {
-            const data = await response.json();
-            if (data.error) {
-              throw new Error(`${data.error.type}: ${data.error.message}`);
-            }
-          }
-        } else {
-          throw new Error("Failed to communicate with the ChatGPT API");
-        }
-      };
-
-      // This function passes each new message into the plugin via the `streamMessage` callback.
-      const onmessage = (ev) => {
-        const data = ev.data;
-        if (data !== "[DONE]") {
-          const parsedData = JSON.parse(data);
-          const firstChoice = parsedData?.choices[0];
-          const message = firstChoice?.delta?.content;
-          if (message && message !== "") {
-            if (!hasMarkdown(message)) {
-              streamMessage(message);
-            }
-          }
-        }
-      };
-
-      const onerror = (error) => {
-        // Stop operation and do not retry by the fetch-event-source
-        throw error;
-      };
-
-      // Use microsoft's fetch-event-source library to work around the 2000 character limit
-      // of the browser `EventSource` API, which requires query strings
-      return fetchApi
-        .then((fetchEventSource) =>
-          fetchEventSource("{{ openai_proxy_url }}", {
-            ...openAiOptions,
-            openWhenHidden: true,
-            onopen,
-            onmessage,
-            onerror,
-          })
-        )
-        .then(async (response) => {
-          if (response && !response.ok) {
-            const data = await response.json();
-            if (data.error) {
-              throw new Error(`${data.error.type}: ${data.error.message}`);
-            }
-          }
-        })
-        .catch(onerror);
-    });
+      setTimeout(() => done({ conversationUid: uid }), fakeDelay);
+    }
   };
 
-  // Fetch revisions
-  const fetchRevisions = () => {
-    return Promise.resolve([
-      {
-        revisionId: '3',
-        createdAt: '2023-11-24T22:26:21.578Z',
-        author: {
-          id: 'husky',
-          name: 'A Tiny Husky',
-          avatar: '{{imagesdir}}/tiny-husky.jpg'
-        },
-        content: `
-          <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>
-          <h2 style="text-align: center;">Welcome to the TinyMCE editor demo!</h2>
-          <h2>A simple table to play with</h2>
-          <table style="border-collapse: collapse; width: 100%;" border="1">
-          <thead>
-          <tr>
-          <th>Product</th>
-          <th>Cost</th>
-          <th>Really?</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-          <td>TinyMCE</td>
-          <td>Free</td>
-          <td>YES!</td>
-          </tr>
-          <tr>
-          <td>Plupload</td>
-          <td>Free</td>
-          <td>YES!</td>
-          </tr>
-          </tbody>
-          </table>
-          <h2>Found a bug?</h2>
-          <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
-          <h2>Finally ...</h2>
-          <p><s>Don't forget to check out our other product <a href="http://www.plupload.com" target="_blank" rel="noopener">Plupload</a>, your ultimate upload solution featuring HTML5 upload support.</s></p>
-          <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>
-        `,
-      },
-      {
-        revisionId: '2',
-        createdAt: '2023-11-25T08:30:21.578Z',
-        author: {
-          id: 'tiny.user',
-          name: 'A Tiny User',
-          avatar: '{{imagesdir}}/logos/android-chrome-192x192.png'
-        },
-        content: `
-          <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>
-          <h2 style="text-align: center;">Welcome to the TinyMCE editor demo!</h2>
-          <h2>Got questions or need help?</span></h2>
-          <ol>
-          <li>Our <a href="../">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
-          <li>Have a specific question? Try the <a href="https://stackoverflow.com/questions/tagged/tinymce" target="_blank" rel="noopener"><code>tinymce</code> tag at Stack Overflow</a>.</li>
-          <li>We also offer enterprise grade support as part of <a href="../../../../pricing">TinyMCE premium plans</a>.</li>
-          </ol>
-          <h2>A simple table to play with</h2>
-          <table style="border-collapse: collapse; width: 100%;" border="1">
-          <thead>
-          <tr>
-          <th>Product</th>
-          <th>Cost</th>
-          <th>Really?</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-          <td>TinyMCE</td>
-          <td>Free</td>
-          <td>YES!</td>
-          </tr>
-          <tr>
-          <td>Plupload</td>
-          <td>Free</td>
-          <td>YES!</td>
-          </tr>
-          </tbody>
-          </table>
-          <h2>Found a bug?</h2>
-          <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
-          <h2>Finally ...</h2>
-          <p>Don't forget to check out our other product <a href="http://www.plupload.com" target="_blank" rel="noopener">Plupload</a>, your ultimate upload solution featuring HTML5 upload support.</p>
-          <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>
-        `,
-      },
-      {
-        revisionId: '1',
-        createdAt: '2023-11-29T10:11:21.578Z',
-        author: {
-          id: 'tiny.user',
-          name: 'A Tiny User',
-          avatar: '{{imagesdir}}/logos/android-chrome-192x192.png'
-        },
-        content: `
-          <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>
-          <h2 style="text-align: center;">Welcome to the TinyMCE editor demo!</h2>
-          <h2>Got questions or need help?</h2>
-          <ul>
-          <li>Our <a href="../">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
-          <li>Have a specific question? Try the <a href="https://stackoverflow.com/questions/tagged/tinymce" target="_blank" rel="noopener"><code>tinymce</code> tag at Stack Overflow</a>.</li>
-          <li>We also offer enterprise grade support as part of <a href="../../../../pricing">TinyMCE premium plans</a>.</li>
-          </ul>
-          <h2>A simple table to play with</h2>
-          <table style="border-collapse: collapse; width: 100%;" border="1">
-          <thead>
-          <tr>
-          <th>Product</th>
-          <th>Cost</th>
-          <th>Really?</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr>
-          <td>TinyMCE</td>
-          <td>Free</td>
-          <td>YES!</td>
-          </tr>
-          <tr>
-          <td>Plupload</td>
-          <td>Free</td>
-          <td>YES!</td>
-          </tr>
-          </tbody>
-          </table>
-          <h2>Found a bug?</h2>
-          <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
-          <h2>Finally ...</h2>
-          <p>Don't forget to check out our other product <a href="http://www.plupload.com" target="_blank" rel="noopener">Plupload</a>, your ultimate upload solution featuring HTML5 upload support.</p>
-          <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>
-        `,
-      },
-    ]);
-  };
+const tinycomments_reply = (req, done) => {
+  const replyUid = 'annotation-' + randomString();
+  conversationDb[req.conversationUid].comments.push({
+    uid: replyUid,
+    author: user_id,
+    authorName: 'James Wilson',
+    authorAvatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg',
+    content: req.content,
+    createdAt: req.createdAt,
+    modifiedAt: req.createdAt
+  });
+  setTimeout(() => done({ commentUid: replyUid }), fakeDelay);
+};
 
-  /** Fake user database for suggested edits */
-  const suggestededitsUserDb = {
-      adamhayes: {
-          id: 'adamhayes',
-          name: 'Adam Hayes',
-          avatar: `https://randomuser.me/api/portraits/men/4.jpg`,
-      },
-      martincook: {
-          id: 'martincook',
-          name: 'Martin Cook',
-          avatar: `https://randomuser.me/api/portraits/men/5.jpg`,
-      },
-      kalebwilson: {
-          id: 'kalebwilson',
-          name: 'Kaleb Wilson',
-          avatar: `https://randomuser.me/api/portraits/men/6.jpg`,
-      },
-      sarahjones: {
-          id: 'sarahjones',
-          name: 'Sarah Jones',
-          avatar: `https://randomuser.me/api/portraits/women/1.jpg`,
-      }
-  };
+const tinycomments_delete = (req, done) => {
+  if (user_id === collaborator_id) { // Replace wth your own logic, e.g. check if user created the conversation
+    delete conversationDb[req.conversationUid];
+    setTimeout(() => done({ canDelete: true }), fakeDelay);
+  } else {
+    setTimeout(() => done({ canDelete: false, reason: 'Must be admin user' }), fakeDelay);
+  }
+};
 
-  tinymce.init({
-    selector: 'textarea#full-featured',
-    plugins: 'ai suggestededits preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link math media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker editimage help formatpainter permanentpen pageembed charmap tinycomments mentions quickbars emoticons advtable footnotes mergetags autocorrect typography advtemplate markdown revisionhistory importword exportword exportpdf',
-    editimage_cors_hosts: ['picsum.photos'],
-    tinydrive_token_provider: (success, failure) => {
-      success({ token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.Ks_BdfH4CWilyzLNk8S2gDARFhuxIauLa8PwhdEQhEo' });
-    },
-    tinydrive_demo_files_url: '{{imagesdir}}/tiny-drive-demo/demo_files.json',
-    tinydrive_dropbox_app_key: 'jee1s9eykoh752j',
-    tinydrive_google_drive_key: 'AIzaSyAsVRuCBc-BLQ1xNKtnLHB3AeoK-xmOrTc',
-    tinydrive_google_drive_client_id: '748627179519-p9vv3va1mppc66fikai92b3ru73mpukf.apps.googleusercontent.com',
-    mobile: {
-      plugins: 'ai suggestededits preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link math media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker help formatpainter pageembed charmap mentions quickbars emoticons advtable footnotes mergetags autocorrect typography advtemplate',
-    },
-    menu: {
-      tc: {
-        title: 'Comments',
-        items: 'addcomment showcomments deleteallconversations'
+const tinycomments_resolve = (req, done) => {
+  const conversation = conversationDb[req.conversationUid];
+  if (user_id === conversation.comments[0].author) { // Replace wth your own logic, e.g. check if user has admin priveleges
+    delete conversationDb[req.conversationUid];
+    setTimeout(() => done({ canResolve: true }), fakeDelay);
+  } else {
+    setTimeout(() => done({ canResolve: false, reason: 'Must be conversation author' }), fakeDelay);
+  }
+};
+
+const tinycomments_delete_comment = (req, done) => {
+  const oldcomments = conversationDb[req.conversationUid].comments;
+  let reason = 'Comment not found';
+
+  const newcomments = oldcomments.filter((comment) => {
+    if (comment.uid === req.commentUid) { // Found the comment to delete
+      if (user_id === comment.author) { // Replace with your own logic, e.g. check if user has admin privileges
+        return false; // Remove the comment
+      } else {
+        reason = 'Not authorised to delete this comment'; // Update reason
       }
-    },
-    menubar: 'file edit view insert format tools table tc help',
-      toolbar: "undo redo | importword exportword exportpdf | suggestededits | revisionhistory | aidialog aishortcuts | blocks fontsizeinput | bold italic | align numlist bullist | link image | table math media pageembed | lineheight  outdent indent | strikethrough forecolor backcolor formatpainter removeformat | charmap emoticons checklist | code fullscreen preview | save print | pagebreak anchor codesample footnotes mergetags | addtemplate inserttemplate | addcomment showcomments | ltr rtl casechange | spellcheckdialog a11ycheck", // Note: if a toolbar item requires a plugin, the item will not present in the toolbar if the plugin is not also loaded.
-    autosave_ask_before_unload: true,
-    autosave_interval: '30s',
-    autosave_prefix: '{path}{query}-{id}-',
-    autosave_restore_when_empty: false,
-    autosave_retention: '2m',
-    image_advtab: true,
-		typography_default_lang: 'en-US',
-		typography_langs: [
-			'en-US',
-			'es',
-			'de'
-		],
-		typography_rules: [
-			'common/punctuation/quote',
-			'en-US/dash/main',
-			'common/nbsp/afterParagraphMark',
-			'common/nbsp/afterSectionMark',
-			'common/nbsp/afterShortWord',
-			'common/nbsp/beforeShortLastNumber',
-			'common/nbsp/beforeShortLastWord',
-			'common/nbsp/dpi',
-			'common/punctuation/apostrophe',
-			'common/space/delBeforePunctuation',
-			'common/space/afterComma',
-			'common/space/afterColon',
-			'common/space/afterExclamationMark',
-			'common/space/afterQuestionMark',
-			'common/space/afterSemicolon',
-			'common/space/beforeBracket',
-			'common/space/bracket',
-			'common/space/delBeforeDot',
-			'common/space/squareBracket',
-			'common/number/mathSigns',
-			'common/number/times',
-			'common/number/fraction',
-			'common/symbols/arrow',
-			'common/symbols/cf',
-			'common/symbols/copy',
-			'common/punctuation/delDoublePunctuation',
-			'common/punctuation/hellip'
-		],
-		typography_ignore: [ 'code' ],
-    advtemplate_templates: [
-      {
-        id: '1',
-        title: 'Resolving tickets',
-        content: '<p>As we have not heard back from you in over a week, we have gone ahead and resolved your ticket.</p>'
-      },
-      {
-        id: '2',
-					title: 'Quick replies',
-					items: [
-						{
-							id: '3',
-							title: 'Message received',
-							content: '<p>Just a quick note to say we have received your message, and will get back to you within 48 hours.</p>'
-						},
-						{
-							id: '4',
-							title: 'Progress update',
-							content: '<p>Just a quick note to let you know we are still working on your case</p>'
-						}
-					]
-      }
-    ],
-    link_list: [
-      { title: 'My page 1', value: 'https://www.tiny.cloud' },
-      { title: 'My page 2', value: 'http://www.moxiecode.com' }
-    ],
-    image_list: [
-      { title: 'My page 1', value: 'https://www.tiny.cloud' },
-      { title: 'My page 2', value: 'http://www.moxiecode.com' }
-    ],
-    image_class_list: [
-      { title: 'None', value: '' },
-      { title: 'Some class', value: 'class-name' }
-    ],
-    importcss_append: true,
-    height: 600,
-    image_caption: true,
-    quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
-    noneditable_class: 'mceNonEditable',
-    toolbar_mode: 'sliding',
-    spellchecker_ignore_list: ['Ephox', 'Moxiecode', 'tinymce', 'TinyMCE'],
-    tinycomments_mode: 'embedded',
-    content_style: '.mymention{ color: gray; }' +
-    'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
-    contextmenu: 'link image editimage table spellchecker configurepermanentpen',
-    a11y_advanced_options: true,
-    mentions_selector: '.mymention',
-    mentions_fetch: mentions_fetch,
-    mentions_menu_hover: mentions_menu_hover,
-    mentions_menu_complete: mentions_menu_complete,
-    mentions_select: mentions_select,
-    mentions_item_type: 'profile',
-    autocorrect_capitalize: true,
-    mergetags_list: [
-      {
-        title: 'Client',
-        menu: [
-          {
-            value: 'Client.LastCallDate',
-            title: 'Call date'
-          },
-          {
-            value: 'Client.Name',
-            title: 'Client name'
-          }
-        ]
-      },
-      {
-        title: 'Proposal',
-        menu: [
-          {
-            value: 'Proposal.SubmissionDate',
-            title: 'Submission date'
-          }
-        ]
-      },
-      {
-        value: 'Consultant',
-        title: 'Consultant'
-      },
-      {
-        value: 'Salutation',
-        title: 'Salutation'
-      }
-    ],
-    ai_request,
-    exportpdf_converter_options: {
-      'format': 'Letter',
-      'margin_top': '1in',
-      'margin_right': '1in',
-      'margin_bottom': '1in',
-      'margin_left': '1in'
-    },
-    exportword_converter_options: {
-      'document': { 
-        'size': 'Letter'
-      }
-    },
-    importword_converter_options: {
-      'formatting': {
-        'styles': 'inline',
-        'resets': 'inline',
-        'defaults': 'inline',
-      }
-    },
-    revisionhistory_fetch: fetchRevisions,
-    revisionhistory_display_author: true,
-    // Suggested Edits plugin configuration
-    user_id: 'kalebwilson',
-    fetch_users: (userIds) => Promise.all(userIds
-        .map((userId) => new Promise((resolve) => 
-            resolve(suggestededitsUserDb[userId] || { id: userId }))
-    )),
-    suggestededits_content: 'html',
-    suggestededits_access: 'full',
+    }
+    return true; // Keep the comment
   });
 
+  if (newcomments.length === oldcomments.length) {
+    setTimeout(() => done({ canDelete: false, reason }), fakeDelay);
+  } else {
+    conversationDb[req.conversationUid].comments = newcomments;
+    setTimeout(() => done({ canDelete: true }), fakeDelay);
+  }
+};
+
+const tinycomments_edit_comment = (req, done) => {
+  const oldcomments = conversationDb[req.conversationUid].comments;
+  let reason = 'Comment not found';
+  let canEdit = false;
+
+  const newcomments = oldcomments.map((comment) => {
+    if (comment.uid === req.commentUid) { // Found the comment to delete
+      if (user_id === comment.author) { // Replace with your own logic, e.g. check if user has admin privileges
+        canEdit = true; // User can edit the comment
+        return { ...comment, content: req.content, modifiedAt: new Date().toISOString() }; // Update the comment
+      } else {
+        reason = 'Not authorised to edit this comment'; // Update reason
+      }
+    }
+    return comment; // Keep the comment
+  });
+
+  if (canEdit) {
+    conversationDb[req.conversationUid].comments = newcomments;
+    setTimeout(() => done({ canEdit }), fakeDelay);
+  } else {
+    setTimeout(() => done({ canEdit, reason }), fakeDelay);
+  }
+};
+
+const tinycomments_delete_all = (req, done) => {
+  const conversation = conversationDb[req.conversationUid];
+  if (user_id === conversation.comments[0].author) { // Replace wth your own logic, e.g. check if user has admin priveleges
+    delete conversationDb[req.conversationUid];
+    setTimeout(() => done({ canDelete: true }), fakeDelay);
+  } else {
+    setTimeout(() => done({ canDelete: false, reason: 'Must be conversation author' }), fakeDelay);
+  }
+};
+
+const tinycomments_lookup = (req, done) => {
+  setTimeout(() => {
+    done({
+      conversation: {
+        uid: conversationDb[req.conversationUid].uid,
+        comments: [...conversationDb[req.conversationUid].comments]
+      }
+    });
+  }, fakeDelay);
+};
+
+const tinycomments_fetch = (conversationUids, done) => {
+  const fetchedConversations = {};
+  conversationUids.forEach((uid) => {
+    const conversation = conversationDb[uid];
+    if (conversation) {
+      fetchedConversations[uid] = {...conversation};
+    }
+  });
+  setTimeout(() => done({ conversations: fetchedConversations }), fakeDelay);
+};
+
+const ai_request = (request, respondWith) => {
+  respondWith.stream((signal, streamMessage) => {
+    // Adds each previous query and response as individual messages
+    const conversation = request.thread.flatMap((event) => {
+      if (event.response) {
+        return [
+          { role: "user", content: event.request.query },
+          { role: "assistant", content: event.response.data },
+        ];
+      } else {
+        return [];
+      }
+    });
+
+    // System messages provided by the plugin to format the output as HTML content.
+    const systemMessages = request.system.map((content) => ({
+      role: "system",
+      content,
+    }));
+
+    // Forms the new query sent to the API
+    const content =
+      request.context.length === 0 || conversation.length > 0
+        ? request.query
+        : `Question: ${request.query} Context: """${request.context}"""`;
+
+    const messages = [
+      ...conversation,
+      ...systemMessages,
+      { role: "user", content },
+    ];
+
+    let hasHead = false;
+    let markdownHead = "";
+
+    const hasMarkdown = (message) => {
+      if (message.includes("`") && markdownHead !== "```") {
+        const numBackticks = message.split("`").length - 1;
+        markdownHead += "`".repeat(numBackticks);
+        if (hasHead && markdownHead === "```") {
+          markdownHead = "";
+          hasHead = false;
+        }
+        return true;
+      } else if (message.includes("html") && markdownHead === "```") {
+        markdownHead = "";
+        hasHead = true;
+        return true;
+      }
+      return false;
+    };
+
+    const requestBody = {
+      model: "gpt-4o",
+      temperature: 0.7,
+      max_tokens: 4000,
+      messages,
+      stream: true,
+    };
+
+    const openAiOptions = {
+      signal,
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer {{ openai_proxy_token }}`,
+      },
+      body: JSON.stringify(requestBody),
+    };
+
+    const onopen = async (response) => {
+      if (response) {
+        const contentType = response.headers.get("content-type");
+        if (response.ok && contentType?.includes("text/event-stream")) {
+          return;
+        } else if (contentType?.includes("application/json")) {
+          const data = await response.json();
+          if (data.error) {
+            throw new Error(`${data.error.type}: ${data.error.message}`);
+          }
+        }
+      } else {
+        throw new Error("Failed to communicate with the ChatGPT API");
+      }
+    };
+
+    // This function passes each new message into the plugin via the `streamMessage` callback.
+    const onmessage = (ev) => {
+      const data = ev.data;
+      if (data !== "[DONE]") {
+        const parsedData = JSON.parse(data);
+        const firstChoice = parsedData?.choices[0];
+        const message = firstChoice?.delta?.content;
+        if (message && message !== "") {
+          if (!hasMarkdown(message)) {
+            streamMessage(message);
+          }
+        }
+      }
+    };
+
+    const onerror = (error) => {
+      // Stop operation and do not retry by the fetch-event-source
+      throw error;
+    };
+
+    // Use microsoft's fetch-event-source library to work around the 2000 character limit
+    // of the browser `EventSource` API, which requires query strings
+    return fetchApi
+      .then((fetchEventSource) =>
+        fetchEventSource("{{ openai_proxy_url }}", {
+          ...openAiOptions,
+          openWhenHidden: true,
+          onopen,
+          onmessage,
+          onerror,
+        })
+      )
+      .then(async (response) => {
+        if (response && !response.ok) {
+          const data = await response.json();
+          if (data.error) {
+            throw new Error(`${data.error.type}: ${data.error.message}`);
+          }
+        }
+      })
+      .catch(onerror);
+  });
+};
+
+const revisions = [
+  {
+    revisionId: '3',
+    createdAt: '2023-11-24T22:26:21.578Z',
+    author: {
+      id: 'james-wilson',
+      name: 'A Tiny Husky',
+      avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg',
+    },
+    content: `
+      <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>
+      <h2 style="text-align: center;">Welcome to the TinyMCE editor demo!</h2>
+      <h2>A simple table to play with</h2>
+      <table style="border-collapse: collapse; width: 100%;" border="1">
+      <thead>
+      <tr>
+      <th>Product</th>
+      <th>Cost</th>
+      <th>Really?</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>TinyMCE</td>
+      <td>Free</td>
+      <td>YES!</td>
+      </tr>
+      <tr>
+      <td>Plupload</td>
+      <td>Free</td>
+      <td>YES!</td>
+      </tr>
+      </tbody>
+      </table>
+      <h2>Found a bug?</h2>
+      <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
+      <h2>Finally ...</h2>
+      <p><s>Don't forget to check out our other product <a href="http://www.plupload.com" target="_blank" rel="noopener">Plupload</a>, your ultimate upload solution featuring HTML5 upload support.</s></p>
+      <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>
+    `,
+  },
+  {
+    revisionId: '2',
+    createdAt: '2023-11-25T08:30:21.578Z',
+    author: {
+      id: 'mia.andersson',
+      name: 'Mia Andersson',
+      avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_mia-andersson_128_e6f9424b.jpg',
+    },
+    content: `
+      <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>
+      <h2 style="text-align: center;">Welcome to the TinyMCE editor demo!</h2>
+      <h2>Got questions or need help?</span></h2>
+      <ol>
+      <li>Our <a href="../">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
+      <li>Have a specific question? Try the <a href="https://stackoverflow.com/questions/tagged/tinymce" target="_blank" rel="noopener"><code>tinymce</code> tag at Stack Overflow</a>.</li>
+      <li>We also offer enterprise grade support as part of <a href="../../../../pricing">TinyMCE premium plans</a>.</li>
+      </ol>
+      <h2>A simple table to play with</h2>
+      <table style="border-collapse: collapse; width: 100%;" border="1">
+      <thead>
+      <tr>
+      <th>Product</th>
+      <th>Cost</th>
+      <th>Really?</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>TinyMCE</td>
+      <td>Free</td>
+      <td>YES!</td>
+      </tr>
+      <tr>
+      <td>Plupload</td>
+      <td>Free</td>
+      <td>YES!</td>
+      </tr>
+      </tbody>
+      </table>
+      <h2>Found a bug?</h2>
+      <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
+      <h2>Finally ...</h2>
+      <p>Don't forget to check out our other product <a href="http://www.plupload.com" target="_blank" rel="noopener">Plupload</a>, your ultimate upload solution featuring HTML5 upload support.</p>
+      <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>
+    `,
+  },
+  {
+    revisionId: '1',
+    createdAt: '2023-11-29T10:11:21.578Z',
+    author: {
+      id: 'mia.andersson',
+      name: 'Mia Andersson',
+      avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_mia-andersson_128_e6f9424b.jpg',
+    },
+    content: `
+      <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>
+      <h2 style="text-align: center;">Welcome to the TinyMCE editor demo!</h2>
+      <h2>Got questions or need help?</h2>
+      <ul>
+      <li>Our <a href="../">documentation</a> is a great resource for learning how to configure TinyMCE.</li>
+      <li>Have a specific question? Try the <a href="https://stackoverflow.com/questions/tagged/tinymce" target="_blank" rel="noopener"><code>tinymce</code> tag at Stack Overflow</a>.</li>
+      <li>We also offer enterprise grade support as part of <a href="../../../../pricing">TinyMCE premium plans</a>.</li>
+      </ul>
+      <h2>A simple table to play with</h2>
+      <table style="border-collapse: collapse; width: 100%;" border="1">
+      <thead>
+      <tr>
+      <th>Product</th>
+      <th>Cost</th>
+      <th>Really?</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>TinyMCE</td>
+      <td>Free</td>
+      <td>YES!</td>
+      </tr>
+      <tr>
+      <td>Plupload</td>
+      <td>Free</td>
+      <td>YES!</td>
+      </tr>
+      </tbody>
+      </table>
+      <h2>Found a bug?</h2>
+      <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
+      <h2>Finally ...</h2>
+      <p>Don't forget to check out our other product <a href="http://www.plupload.com" target="_blank" rel="noopener">Plupload</a>, your ultimate upload solution featuring HTML5 upload support.</p>
+      <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>
+    `,
+  }
+];
+
+const revisionhistory_fetch = () => new Promise((resolve) => {
+  setTimeout(() => {
+    const sortedRevisions = revisions
+      .sort((a, b) => new Date(a.createdAt) < new Date(b.createdAt) ? 1 : -1);
+    resolve(sortedRevisions);
+  }, fakeDelay);
+});
+
+const revisionhistory_fetch_revision = (_editor, revision) => new Promise((resolve, reject) => {
+  setTimeout(() => {
+    const revision = revisions.find((r) => r.revisionId === revision.revisionId);
+    if (revision) {
+      resolve(revision);
+    } else {
+      reject(`Revision ${revision.revisionId} is not found`);
+    }
+  }, fakeDelay);
+});
+
+tinymce.init({
+  selector: 'textarea#full-featured',
+  plugins: [
+    'ai', 'suggestededits', 'preview', 'powerpaste', 'casechange', 'importcss', 'tinydrive', 'searchreplace',
+    'autolink', 'autosave', 'save', 'directionality', 'advcode', 'visualblocks', 'visualchars', 'fullscreen',
+    'image', 'link', 'math', 'media', 'mediaembed', 'codesample', 'table', 'charmap', 'pagebreak', 'nonbreaking',
+    'anchor', 'tableofcontents', 'insertdatetime', 'advlist', 'lists', 'checklist', 'wordcount', 'tinymcespellchecker',
+    'a11ychecker', 'editimage', 'help', 'formatpainter', 'permanentpen', 'pageembed', 'charmap', 'tinycomments', 'mentions',
+    'quickbars', 'emoticons', 'advtable', 'footnotes', 'mergetags', 'autocorrect', 'typography', 'advtemplate', 'markdown',
+    'revisionhistory', 'importword', 'exportword', 'exportpdf'
+  ],
+  menu: {
+    tc: {
+      title: 'Comments',
+      items: 'addcomment showcomments deleteallconversations'
+    }
+  },
+  menubar: 'file edit view insert format tools table tc help',
+  // Note: if a toolbar item requires a plugin, the item will not present in the toolbar if the plugin is not also loaded.
+  toolbar: "undo redo | importword exportword exportpdf | suggestededits | revisionhistory | aidialog aishortcuts | blocks fontsizeinput | bold italic | align numlist bullist | link image | table math media pageembed | lineheight  outdent indent | strikethrough forecolor backcolor formatpainter removeformat | charmap emoticons checklist | code fullscreen preview | save print | pagebreak anchor codesample footnotes mergetags | addtemplate inserttemplate | addcomment showcomments | ltr rtl casechange | spellcheckdialog a11ycheck", 
+  mobile: {
+    plugins: 'ai suggestededits preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link math media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker help formatpainter pageembed charmap mentions quickbars emoticons advtable footnotes mergetags autocorrect typography advtemplate',
+  },
+
+  editimage_cors_hosts: ['picsum.photos'],
+  tinydrive_token_provider: (success, failure) => {
+    success({ token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.Ks_BdfH4CWilyzLNk8S2gDARFhuxIauLa8PwhdEQhEo' });
+  },
+  tinydrive_demo_files_url: '{{imagesdir}}/tiny-drive-demo/demo_files.json',
+  tinydrive_dropbox_app_key: 'jee1s9eykoh752j',
+  tinydrive_google_drive_key: 'AIzaSyAsVRuCBc-BLQ1xNKtnLHB3AeoK-xmOrTc',
+  tinydrive_google_drive_client_id: '748627179519-p9vv3va1mppc66fikai92b3ru73mpukf.apps.googleusercontent.com',
+  
+  autosave_ask_before_unload: true,
+  autosave_interval: '30s',
+  autosave_prefix: '{path}{query}-{id}-',
+  autosave_restore_when_empty: false,
+  autosave_retention: '2m',
+  image_advtab: true,
+  typography_default_lang: 'en-US',
+  typography_langs: [
+    'en-US',
+    'es',
+    'de'
+  ],
+  typography_rules: [
+    'common/punctuation/quote',
+    'en-US/dash/main',
+    'common/nbsp/afterParagraphMark',
+    'common/nbsp/afterSectionMark',
+    'common/nbsp/afterShortWord',
+    'common/nbsp/beforeShortLastNumber',
+    'common/nbsp/beforeShortLastWord',
+    'common/nbsp/dpi',
+    'common/punctuation/apostrophe',
+    'common/space/delBeforePunctuation',
+    'common/space/afterComma',
+    'common/space/afterColon',
+    'common/space/afterExclamationMark',
+    'common/space/afterQuestionMark',
+    'common/space/afterSemicolon',
+    'common/space/beforeBracket',
+    'common/space/bracket',
+    'common/space/delBeforeDot',
+    'common/space/squareBracket',
+    'common/number/mathSigns',
+    'common/number/times',
+    'common/number/fraction',
+    'common/symbols/arrow',
+    'common/symbols/cf',
+    'common/symbols/copy',
+    'common/punctuation/delDoublePunctuation',
+    'common/punctuation/hellip'
+  ],
+  typography_ignore: [ 'code' ],
+  advtemplate_templates: [
+    {
+      id: '1',
+      title: 'Resolving tickets',
+      content: '<p>As we have not heard back from you in over a week, we have gone ahead and resolved your ticket.</p>'
+    },
+    {
+      id: '2',
+        title: 'Quick replies',
+        items: [
+          {
+            id: '3',
+            title: 'Message received',
+            content: '<p>Just a quick note to say we have received your message, and will get back to you within 48 hours.</p>'
+          },
+          {
+            id: '4',
+            title: 'Progress update',
+            content: '<p>Just a quick note to let you know we are still working on your case</p>'
+          }
+        ]
+    }
+  ],
+  link_list: [
+    { title: 'My page 1', value: 'https://www.tiny.cloud' },
+    { title: 'My page 2', value: 'http://www.moxiecode.com' }
+  ],
+  image_list: [
+    { title: 'My page 1', value: 'https://www.tiny.cloud' },
+    { title: 'My page 2', value: 'http://www.moxiecode.com' }
+  ],
+  image_class_list: [
+    { title: 'None', value: '' },
+    { title: 'Some class', value: 'class-name' }
+  ],
+  importcss_append: true,
+  height: 600,
+  image_caption: true,
+  quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
+  noneditable_class: 'mceNonEditable',
+  toolbar_mode: 'sliding',
+  spellchecker_ignore_list: ['Ephox', 'Moxiecode', 'tinymce', 'TinyMCE'],
+  content_style: '.mymention{ color: gray; }' +
+  'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
+  contextmenu: 'link image editimage table spellchecker configurepermanentpen',
+  a11y_advanced_options: true,
+  
+  ai_request,
+  
+  tinycomments_mode: 'callback',
+  tinycomments_mentions_enabled: true,
+  sidebar_show: 'showcomments',
+  tinycomments_create,
+  tinycomments_reply,
+  tinycomments_delete,
+  tinycomments_resolve,
+  tinycomments_delete_all,
+  tinycomments_lookup,
+  tinycomments_delete_comment,
+  tinycomments_edit_comment,
+  tinycomments_fetch,
+
+  mentions_item_type: 'profile',
+  mentions_min_chars: 0,
+  mentions_selector: '.mymention',
+  mentions_fetch,
+  mentions_menu_hover,
+  mentions_menu_complete,
+  mentions_select,
+  
+  mentions_item_type: 'profile',
+  autocorrect_capitalize: true,
+  mergetags_list: [
+    {
+      title: 'Client',
+      menu: [
+        {
+          value: 'Client.LastCallDate',
+          title: 'Call date'
+        },
+        {
+          value: 'Client.Name',
+          title: 'Client name'
+        }
+      ]
+    },
+    {
+      title: 'Proposal',
+      menu: [
+        {
+          value: 'Proposal.SubmissionDate',
+          title: 'Submission date'
+        }
+      ]
+    },
+    {
+      value: 'Consultant',
+      title: 'Consultant'
+    },
+    {
+      value: 'Salutation',
+      title: 'Salutation'
+    }
+  ],
+  exportpdf_converter_options: {
+    'format': 'Letter',
+    'margin_top': '1in',
+    'margin_right': '1in',
+    'margin_bottom': '1in',
+    'margin_left': '1in'
+  },
+  exportword_converter_options: {
+    'document': { 
+      'size': 'Letter'
+    }
+  },
+  importword_converter_options: {
+    'formatting': {
+      'styles': 'inline',
+      'resets': 'inline',
+      'defaults': 'inline',
+    }
+  },
+  revisionhistory_fetch,
+  revisionhistory_fetch_revision,
+  revisionhistory_display_author: true,
+  
+  suggestededits_content: 'html',
+  suggestededits_access: 'full',
+
+  user_id,
+  fetch_users: (userIds) => Promise.all(userIds
+    .map((userId) =>
+      fetch(`${API_URL}/${userId}`)
+        .then((response) => response.json())
+        .catch(() => ({ id: userId }))))
 });

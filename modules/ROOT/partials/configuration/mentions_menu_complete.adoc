@@ -9,17 +9,20 @@ This option overrides the default logic for inserting the mention into the edito
 
 [source,js]
 ----
+const API_URL = 'https://demouserdirectory.tiny.cloud/v1/users';
+
+const mentions_menu_complete = (editor, userInfo) => {
+  const span = editor.getDoc().createElement('span');
+  span.className = 'mymention';
+  span.setAttribute('data-mention-id', userInfo.id);
+  span.appendChild(editor.getDoc().createTextNode('@' + userInfo.name));
+  return span;
+};
+
 tinymce.init({
   selector: 'textarea',
   plugins: 'mentions',
   mentions_selector: 'span.mymention',
-  mentions_menu_complete: (editor, userInfo) => {
-    const span = editor.getDoc().createElement('span');
-    span.className = 'mymention';
-    // store the user id in the mention so it can be identified later
-    span.setAttribute('data-mention-id', userInfo.id);
-    span.appendChild(editor.getDoc().createTextNode('@' + userInfo.name));
-    return span;
-  }
+  mentions_menu_complete
 });
 ----

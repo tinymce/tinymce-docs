@@ -722,7 +722,6 @@ tinymce.init({
   revisionhistory_fetch,
   revisionhistory_fetch_revision,
   revisionhistory_display_author: true,
-  
   suggestededits_content: 'html',
   suggestededits_access: 'full',
 

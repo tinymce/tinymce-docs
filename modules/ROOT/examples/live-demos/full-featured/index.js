@@ -724,5 +724,13 @@ tinymce.init({
   revisionhistory_display_author: true,
   suggestededits_content: 'html',
   suggestededits_access: 'full',
-  user_id,
+  tinycomments_fetch_author_info: async (done) => await fetch(`${API_URL}/${id}`)
+    .then((response) => response.json())
+    .then((userInfo) => {
+      done({
+        author: userInfo.id,
+        authorName: userInfo.name,
+        authorAvatar: userInfo.avatar
+      });
+    })
 });

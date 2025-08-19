@@ -724,6 +724,5 @@ tinymce.init({
   revisionhistory_display_author: true,
   suggestededits_content: 'html',
   suggestededits_access: 'full',
-
   user_id,
 });

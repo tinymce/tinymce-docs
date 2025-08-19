@@ -270,5 +270,13 @@ tinymce.init({
   mentions_menu_hover,
   mentions_menu_complete,
   mentions_select,
-  user_id,
+  tinycomments_fetch_author_info: async (done) => await fetch(`${API_URL}/${id}`)
+    .then((response) => response.json())
+    .then((userInfo) => {
+      done({
+        author: userInfo.id,
+        authorName: userInfo.name,
+        authorAvatar: userInfo.avatar
+      });
+    })
 });

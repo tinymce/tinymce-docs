@@ -1,60 +1,14 @@
-const getRandomDelay = () => {
-  const minDelay = 500;
-  const maxDelay = 2000;
-  return Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay;
-};
-
-const lightRevisions = [
-  {
-    revisionId: '3',
-    author: {
-      id: 'tiny.husky',
-      name: 'A Tiny Husky',
-      avatar: '{{imagesdir}}/tiny-husky.jpg',
-    },
-    createdAt: '2023-11-25T08:30:21.578Z'
-  },
-  {
-    revisionId: '2',
-    author: {
-      id: 'tiny.user',
-      name: 'A Tiny User',
-      avatar: '{{imagesdir}}/logos/android-chrome-192x192.png',
-    },
-    createdAt: '2023-11-24T22:26:21.578Z',
-  },
-  {
-    revisionId: '1',
-    author: {
-      id: 'tiny.user',
-      name: 'A Tiny User',
-      avatar: '{{imagesdir}}/logos/android-chrome-192x192.png',
-    },
-    createdAt: '2023-11-23T20:26:21.578Z',
-  },
-];
-
-const revisionhistory_fetch = () =>
-  new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(
-        lightRevisions
-          .sort((a, b) =>
-            new Date(a.createdAt) < new Date(b.createdAt) ? -1 : 1
-          )
-          .reverse()
-      );
-    }, getRandomDelay());
-  });
+const API_URL = 'https://demouserdirectory.tiny.cloud/v1/users';
+const fakeDelay = 200;
 
 const revisions = [
   {
     revisionId: '3',
     createdAt: '2023-11-24T22:26:21.578Z',
     author: {
-      id: 'tiny.husky',
-      name: 'A Tiny Husky',
-      avatar: '{{imagesdir}}/tiny-husky.jpg',
+      id: 'james-wilson',
+      name: 'James Wilson',
+      avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg',
     },
     content: `
       <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>
@@ -92,9 +46,9 @@ const revisions = [
     revisionId: '2',
     createdAt: '2023-11-25T08:30:21.578Z',
     author: {
-      id: 'tiny.user',
-      name: 'A Tiny User',
-      avatar: '{{imagesdir}}/logos/android-chrome-192x192.png',
+      id: 'mia.andersson',
+      name: 'Mia Andersson',
+      avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_mia-andersson_128_e6f9424b.jpg',
     },
     content: `
       <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>
@@ -138,9 +92,9 @@ const revisions = [
     revisionId: '1',
     createdAt: '2023-11-29T10:11:21.578Z',
     author: {
-      id: 'tiny.user',
-      name: 'A Tiny User',
-      avatar: '{{imagesdir}}/logos/android-chrome-192x192.png',
+      id: 'mia.andersson',
+      name: 'Mia Andersson',
+      avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_mia-andersson_128_e6f9424b.jpg',
     },
     content: `
       <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>
@@ -182,29 +136,37 @@ const revisions = [
   }
 ];
 
-const revisionhistory_fetch_revision = (_editor, revision) =>
-  new Promise((resolve, reject) => {
-    setTimeout(() => {
-      const newRevision = revisions.find((r) => r.revisionId === revision.revisionId);
-      if (newRevision === undefined) {
-        reject(`Revision ${revision.revisionId} is not found`);
-      } else {
-        resolve(newRevision);
-      }
-    }, getRandomDelay());
-  });
+const revisionhistory_fetch = () => new Promise((resolve) => {
+  setTimeout(() => {
+    const sortedRevisions = revisions
+      .sort((a, b) => new Date(a.createdAt) < new Date(b.createdAt) ? 1 : -1);
+    resolve(sortedRevisions);
+  }, fakeDelay);
+});
+
+const revisionhistory_fetch_revision = (_editor, revision) => new Promise((resolve, reject) => {
+  setTimeout(() => {
+    const revision = revisions.find((r) => r.revisionId === revision.revisionId);
+    if (revision) {
+      resolve(revision);
+    } else {
+      reject(`Revision ${revision.revisionId} is not found`);
+    }
+  }, fakeDelay);
+});
 
 tinymce.init({
   selector: 'textarea#revisionhistory',
   height: 800,
-  plugins: 'revisionhistory',
-  toolbar: 'revisionhistory',
+  plugins: 'revisionhistory help code link lists image',
+  toolbar: 'undo redo | styles | bold italic underline | revisionhistory | link image | code',
   content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
   revisionhistory_fetch,
   revisionhistory_fetch_revision,
+  revisionhistory_display_author: true,
   revisionhistory_author: {
-    id: 'john.doe',
-    name: 'John Doe'
+    id: 'james-wilson',
+    name: 'James Wilson',
+    avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg',
   },
-  revisionhistory_display_author: true
 });

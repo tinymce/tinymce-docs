@@ -724,13 +724,7 @@ tinymce.init({
   revisionhistory_display_author: true,
   suggestededits_content: 'html',
   suggestededits_access: 'full',
-  tinycomments_fetch_author_info: async (done) => await fetch(`${API_URL}/${id}`)
-    .then((response) => response.json())
-    .then((userInfo) => {
-      done({
-        author: userInfo.id,
-        authorName: userInfo.name,
-        authorAvatar: userInfo.avatar
-      });
-    })
+  tinycomments_author: user_id,
+  tinycomments_author_name: 'James Wilson',
+  tinycomments_author_avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg'
 });

@@ -20,11 +20,11 @@ tinymce.init({
   },
   quickbars_selection_toolbar: 'alignleft aligncenter alignright | addcomment showcomments',
   quickbars_image_toolbar: 'alignleft aligncenter alignright | rotateleft rotateright | imageoptions',
-
+  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
   tinycomments_mode: 'embedded',
   sidebar_show: 'showcomments',
   tinycomments_can_resolve,
   tinycomments_author: user_id,
-  tinycomments_author_avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg',
-  content_style: 'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
+  tinycomments_author_name: 'James Wilson',
+  tinycomments_author_avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg'
 });

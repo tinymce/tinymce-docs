@@ -89,6 +89,7 @@ tinymce.init({
   mentions_menu_hover,
   mentions_menu_complete,
   mentions_select,
-
-  user_id,
+  tinycomments_author: user_id,
+  tinycomments_author_name: 'James Wilson',
+  tinycomments_author_avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg'
 });

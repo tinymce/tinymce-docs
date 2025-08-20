@@ -1,0 +1,54 @@
+= Full Page Plugin
+:navtitle: Full Page
+:description: Edit metadata and document properties including title, keywords, and description via a dialog box, with HTML structure exposure in source code view.
+:description_short: Edit document metadata and properties with dialog interface and source code exposure.
+:keywords: full page, metadata, document properties, title, keywords, description, HTML structure, source code
+:pluginname: Full Page
+:plugincode: fullpage
+:plugincategory: premium
+
+include::partial$misc/admon-premium-plugin.adoc[]
+
+The {pluginname} plugin provides comprehensive control over document metadata and properties. It enables users to edit HTML document metadata such as title, keywords, and description through an intuitive dialog interface. When combined with the code plugin, it also exposes the complete HTML structure including `<head>`, `<body>`, and various meta tags in the source code view.
+
+
+== Interactive example
+
+
+liveDemo::{plugincode}[]
+
+== Basic setup
+
+To add the {pluginname} plugin to the editor, add `{plugincode}` to the `plugins` option in the editor configuration.
+
+For example:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'fullpage',
+  toolbar: 'fullpage',
+  fullpage_default_doctype: '<!DOCTYPE html>'
+});
+----
+
+== Options
+
+The following configuration options affect the behavior of the {pluginname} plugin.
+
+include::partial$configuration/fullpage-default-doctype.adoc[leveloffset=+1]
+
+include::partial$configuration/fullpage-default-title.adoc[leveloffset=+1]
+
+include::partial$configuration/fullpage-default-encoding.adoc[leveloffset=+1]
+
+include::partial$configuration/fullpage-default-body-style.adoc[leveloffset=+1]
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$toolbar-button-ids/{plugincode}-toolbar-buttons.adoc[leveloffset=+1]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+
+include::partial$menu-item-ids/{plugincode}-menu-items.adoc[leveloffset=+1]

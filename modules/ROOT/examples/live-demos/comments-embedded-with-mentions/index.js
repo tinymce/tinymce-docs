@@ -1,5 +1,7 @@
 const API_URL = 'https://demouserdirectory.tiny.cloud/v1/users';
 
+const user_id = 'james-wilson';
+
 const mentions_fetch = async (query, success) => {
   const searchPhrase = query.term.toLowerCase();
   await fetch(`${API_URL}?q=${encodeURIComponent(searchPhrase)}`)
@@ -59,8 +61,6 @@ const tinycomments_can_resolve = (req, done, _fail) => {
   done({ canResolve: allowed });
 };
 
-const user_id = 'james-wilson';
-
 tinymce.init({
   selector: 'textarea#comments-embedded-with-mentions',
   plugins: [ 'tinycomments', 'mentions', 'help', 'code', 'quickbars', 'link', 'lists', 'image' ],
@@ -80,6 +80,7 @@ tinymce.init({
   tinycomments_mentions_enabled: true,
   tinycomments_can_resolve,
   tinycomments_author: user_id,
+  tinycomments_author_name: 'James Wilson',
   tinycomments_author_avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg',
 
   mentions_item_type: 'profile',
@@ -89,7 +90,4 @@ tinymce.init({
   mentions_menu_hover,
   mentions_menu_complete,
   mentions_select,
-  tinycomments_author: user_id,
-  tinycomments_author_name: 'James Wilson',
-  tinycomments_author_avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg'
 });

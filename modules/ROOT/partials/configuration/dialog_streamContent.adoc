@@ -19,9 +19,9 @@ A user can, however, scroll through the `+iframe+` component as updates are bein
 
 *Type:* `+Boolean+`
 
-*Possible values:* `+true+` `+false+`
+*Default value:* `+false+`
 
-*Default value:* `false`
+*Possible values:* `+true+` `+false+`
 
 === Example: setting an `iframe` component to display updating content using the `streamContent` property
 
@@ -72,4 +72,3 @@ The recommended method for updating content in an `+iframe+` component is:
 . `onAction` is a callback defined in the dialog spec. It is called when a button within the dialog `body` is triggered.
 
 . `myiframe` is the name of the `+iframe+` component in this spec.
-

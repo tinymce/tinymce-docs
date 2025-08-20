@@ -5,18 +5,18 @@ The {pluginname} plugin offers the `+tinycomments_mentions_enabled+` option to c
 
 *Type:* `+Boolean+`
 
-*Possible values:* `true`, `false`
+*Default value:* `+true+`
 
-*Default value:* `true`
+*Possible values:* `+true+`, `+false+`
 
 === Example: using `tinycomments_mentions_enabled` option
 
 [source,js]
 ----
 const userDb = {
-  'johnsmith': { 
-    id: 'johnsmith', 
-    name: 'John Smith' 
+  'johnsmith': {
+    id: 'johnsmith',
+    name: 'John Smith'
   },
 };
 

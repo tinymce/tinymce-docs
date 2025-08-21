@@ -7,6 +7,8 @@ The `allow_html_in_comments` option allows HTML-like content to be retained in c
 
 *Default value:* `+false+`
 
+*Possible values:* `+true+`, `+false+`
+
 [WARNING]
 Setting this option to `true` may expose your application to XSS vulnerabilities. The DOMPurify maintainers have identified potential security risks when HTML-like content is allowed in comments. Only enable this option if you trust your content sources and understand the security implications.
 

@@ -29,17 +29,17 @@ tinymce.activeEditor.windowManager.open({
   body: {
     type: 'panel', // The root body type - a Panel or TabPanel
     items: [
-        {
-          type: 'label', // component type
-          label: 'Caption', // text for the group label
-          align: 'end',
-          items: [
-            {
-              type: 'htmlpanel', // an HTML panel component
-              html: 'Panel content goes here.'
-            }
-          ]
-        }
+      {
+        type: 'label', // component type
+        label: 'Caption', // text for the group label
+        align: 'end',
+        items: [
+          {
+            type: 'htmlpanel', // an HTML panel component
+            html: 'Panel content goes here.'
+          }
+        ]
+      }
     ]
   },
   buttons: [ // A list of footer buttons

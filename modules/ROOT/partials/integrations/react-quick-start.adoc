@@ -4,7 +4,7 @@ ifeval::["{productUse}" == "bundle"]
 IMPORTANT: {companyname} does not recommend bundling the `tinymce` package. Bundling {productname} can be complex and error prone.
 
 endif::[]
-The https://github.com/tinymce/tinymce-react[Official {productname} React component] integrates {productname} into React projects. This procedure creates a https://github.com/vitejs/vite-plugin-react-swc[basic React application] containing a {productname} editor.
+The link:https://github.com/tinymce/tinymce-react[Official {productname} React component] integrates {productname} into React projects. This procedure creates a link:https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react-swc[React SWC plugin] containing a {productname} editor.
 
 For examples of the {productname} integration, visit https://tinymce.github.io/tinymce-react/[the tinymce-react storybook].
 
@@ -14,7 +14,7 @@ This procedure requires https://nodejs.org/[Node.js (and npm)].
 
 == Procedure
 
-. Use the https://github.com/vitejs/vite[Vite] package and the https://github.com/vitejs/vite-plugin-react-swc[React SWC plugin] to create a new React project named `+tinymce-react-demo+`.
+. Use the https://github.com/vitejs/vite[Vite] package and the link:https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react-swc[React SWC plugin] to create a new React project named `+tinymce-react-demo+`.
 +
 [source,sh]
 ----

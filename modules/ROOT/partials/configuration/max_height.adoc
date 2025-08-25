@@ -1,10 +1,10 @@
 [[max_height]]
 == `+max_height+`
 
-The `+max_height+` option has two kinds of behaviors depending on the state of the xref:autoresize.adoc[`+autoresize+`] plugin:
+The `+max_height+` option has different behaviors depending on whether the xref:autoresize.adoc[`+autoresize+`] plugin is enabled:
 
-* `+autoresize+` OFF (Default): Without the `+autoresize+` plugin, this option sets the maximum height that a user can stretch the entire {productname} interface (by grabbing the draggable area in the bottom right of the editor interface).
-* `+autoresize+` ON: With the `+autoresize+` plugin, this option sets the maximum height the editor can automatically expand to.
+* **Without `+autoresize+` plugin**: Sets the maximum height that users can manually resize the entire {productname} interface by dragging the resize handle in the bottom-right corner.
+* **With `+autoresize+` plugin**: Sets the maximum height the editor can automatically expand to when content is added.
 
 *Type:* `+Number+`
 
@@ -25,9 +25,15 @@ ifeval::["{plugincode}" == "autoresize"]
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'autoresize',
-  max_height: 500
+  max_height: 600
 });
 ----
 endif::[]
 
-NOTE: If the xref:editor-size-options.adoc#resize[`+resize+`] option is set to `+false+` the resize handle will be disabled and a user will not be able to resize the editor (by manual dragging). Note that `+resize+` defaults to `+false+` when the `+autoresize+` plugin is enabled.
+[NOTE]
+====
+* If the xref:editor-size-options.adoc#resize[`+resize+`] option is set to `+false+`, the resize handle will be disabled and users cannot manually resize the editor.
+* The `+resize+` option defaults to `+false+` when the `+autoresize+` plugin is enabled.
+* Values are specified in pixels without units.
+* If `+max_height+` is not set when using the `+autoresize+` plugin, the editor will default to the standard `+max_height+` behavior (unlimited height expansion).
+====

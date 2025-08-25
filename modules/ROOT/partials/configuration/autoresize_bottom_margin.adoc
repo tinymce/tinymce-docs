@@ -5,20 +5,20 @@ This option allows you to specify the size of the `+padding+` at the bottom of t
 
 *Type:* `+Number+`
 
-=== Example: using `+autoresize_bottom_margin+`
+*Default value:* `+50+`
+
+=== Example: adding bottom margin for better content spacing
 
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'autoresize',
-  autoresize_bottom_margin: 50
+  autoresize_bottom_margin: 60 // 50px is the default value
 });
 ----
 
-As of version 6.3, `autoresize_bottom_margin` must be set to a value below the `+margin-bottom+` property of any content CSS, else it will be ignored and set to `+0+`.
-
-=== Example: setting `+autoresize_bottom_margin+` to zero because `+margin-bottom+` is set elsewhere
+=== Example: setting bottom margin to zero
 
 [source,js]
 ----

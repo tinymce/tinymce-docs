@@ -235,6 +235,18 @@ const tinycomments_fetch = (conversationUids, done) => {
   setTimeout(() => done({ conversations: fetchedConversations }), fakeDelay);
 };
 
+const tinycomments_fetch_author_info = (done) => {
+  fetch(`${API_URL}/${user_id}`)
+    .then(res => res.json())
+    .then(currentUser => {
+      done({
+        author: currentUser.id,
+        authorName: currentUser.name,
+        authorAvatar: currentUser.avatar
+      });
+    });
+};
+
 tinymce.init({
   selector: 'textarea#comments-callback-with-mentions',
   license_key: 'gpl',
@@ -262,15 +274,12 @@ tinymce.init({
   tinycomments_delete_comment,
   tinycomments_edit_comment,
   tinycomments_fetch,
-
+  tinycomments_fetch_author_info,
   mentions_item_type: 'profile',
   mentions_min_chars: 0,
   mentions_selector: '.mymention',
   mentions_fetch,
   mentions_menu_hover,
   mentions_menu_complete,
-  mentions_select,
-  tinycomments_author: user_id,
-  tinycomments_author_name: 'James Wilson',
-  tinycomments_author_avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg'
+  mentions_select
 });

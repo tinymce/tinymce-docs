@@ -238,6 +238,18 @@ const tinycomments_fetch = (conversationUids, done) => {
   setTimeout(() => done({ conversations: fetchedConversations }), fakeDelay);
 };
 
+const tinycomments_fetch_author_info = (done) => {
+  fetch(`${API_URL}/${user_id}`)
+    .then(res => res.json())
+    .then(currentUser => {
+      done({
+        author: currentUser.id,
+        authorName: currentUser.name,
+        authorAvatar: currentUser.avatar
+      });
+    });
+};
+
 const ai_request = (request, respondWith) => {
   respondWith.stream((signal, streamMessage) => {
     // Adds each previous query and response as individual messages
@@ -525,7 +537,7 @@ const revisionhistory_fetch_revision = (_editor, revision) => new Promise((resol
 tinymce.init({
   selector: 'textarea#full-featured',
   plugins: [
-    'ai', 'suggestededits', 'preview', 'powerpaste', 'casechange', 'importcss', 'tinydrive', 'searchreplace',
+    'ai', 'preview', 'powerpaste', 'casechange', 'importcss', 'tinydrive', 'searchreplace',
     'autolink', 'autosave', 'save', 'directionality', 'advcode', 'visualblocks', 'visualchars', 'fullscreen',
     'image', 'link', 'math', 'media', 'mediaembed', 'codesample', 'table', 'charmap', 'pagebreak', 'nonbreaking',
     'anchor', 'tableofcontents', 'insertdatetime', 'advlist', 'lists', 'checklist', 'wordcount', 'tinymcespellchecker',
@@ -541,9 +553,9 @@ tinymce.init({
   },
   menubar: 'file edit view insert format tools table tc help',
   // Note: if a toolbar item requires a plugin, the item will not present in the toolbar if the plugin is not also loaded.
-  toolbar: "undo redo | importword exportword exportpdf | suggestededits | revisionhistory | aidialog aishortcuts | blocks fontsizeinput | bold italic | align numlist bullist | link image | table math media pageembed | lineheight  outdent indent | strikethrough forecolor backcolor formatpainter removeformat | charmap emoticons checklist | code fullscreen preview | save print | pagebreak anchor codesample footnotes mergetags | addtemplate inserttemplate | addcomment showcomments | ltr rtl casechange | spellcheckdialog a11ycheck", 
+  toolbar: "undo redo | importword exportword exportpdf | revisionhistory | aidialog aishortcuts | blocks fontsizeinput | bold italic | align numlist bullist | link image | table math media pageembed | lineheight  outdent indent | strikethrough forecolor backcolor formatpainter removeformat | charmap emoticons checklist | code fullscreen preview | save print | pagebreak anchor codesample footnotes mergetags | addtemplate inserttemplate | addcomment showcomments | ltr rtl casechange | spellcheckdialog a11ycheck", 
   mobile: {
-    plugins: 'ai suggestededits preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link math media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker help formatpainter pageembed charmap mentions quickbars emoticons advtable footnotes mergetags autocorrect typography advtemplate',
+    plugins: 'ai preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link math media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker help formatpainter pageembed charmap mentions quickbars emoticons advtable footnotes mergetags autocorrect typography advtemplate',
   },
 
   editimage_cors_hosts: ['picsum.photos'],
@@ -658,6 +670,7 @@ tinymce.init({
   tinycomments_delete_comment,
   tinycomments_edit_comment,
   tinycomments_fetch,
+  tinycomments_fetch_author_info,
 
   mentions_item_type: 'profile',
   mentions_min_chars: 0,
@@ -721,10 +734,5 @@ tinymce.init({
   },
   revisionhistory_fetch,
   revisionhistory_fetch_revision,
-  revisionhistory_display_author: true,
-  suggestededits_content: 'html',
-  suggestededits_access: 'full',
-  tinycomments_author: user_id,
-  tinycomments_author_name: 'James Wilson',
-  tinycomments_author_avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg'
+  revisionhistory_display_author: true
 });

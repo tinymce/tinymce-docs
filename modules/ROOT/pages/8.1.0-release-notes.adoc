@@ -70,7 +70,7 @@ The following premium plugin updates were released alongside {productname} {rele
 
 Previously, when using the {productname} `+getContent+` API, options such as `+indent+` and `+entity_encoding+` could not be overridden during the call. The editor always applied its initial configuration, which limited flexibility when retrieving content. This meant integrators were restricted to the defaults set at initialization, with no way to adjust formatting behavior per call.
 
-In {release-version}, the `+getContent+` API has been enhanced to support per-call overrides for `+indent+` and `+entity_encoding+`. These options can now be specified directly when invoking `+getContent+`, regardless of the editor’s default configuration. This improvement gives developers greater control over output formatting, allowing tailored content retrieval for different use cases.
+In {productname} {release-version}, the `+getContent+` API has been enhanced to support per-call overrides for `+indent+` and `+entity_encoding+`. These options can now be specified directly when invoking `+getContent+`, regardless of the editor’s default configuration. This improvement gives developers greater control over output formatting, allowing tailored content retrieval for different use cases.
 
 .Example: how to use the `+getContent+` API to retrieve content with different formatting options.
 [source,js]

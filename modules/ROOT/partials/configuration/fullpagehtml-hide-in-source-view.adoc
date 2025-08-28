@@ -1,0 +1,48 @@
+[[fullpagehtml-hide-in-source-view]]
+== `+fullpagehtml_hide_in_source_view+`
+
+This option enables you to control whether the full page HTML structure is hidden in source code view.
+
+*Type:* `+Boolean+`
+
+*Possible values:* `+true+` or `+false+`
+
+*Default value:* `+false+`
+
+=== Example: using `+fullpagehtml_hide_in_source_view+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'fullpagehtml',
+  fullpagehtml_hide_in_source_view: true
+});
+----
+
+When `+fullpagehtml_hide_in_source_view+` is set to `+true+`, the source code view will show only the body content without the full HTML document structure:
+
+.Example
+[source,html]
+----
+<h1>Full page HTML Demo</h1>
+<p>This is the body content that users can edit.</p>
+----
+
+When set to `+false+` (default), the source code view shows the complete HTML document:
+
+.Example
+[source,html]
+----
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Full Page HTML Plugin Demo Document</title>
+</head>
+<body style="margin: 20px; padding: 15px; font-family: Georgia, Times, serif; font-size: 16px; color: #2c3e50;">
+  <h1>Full page HTML Demo</h1>
+  <p>This is the body content that users can edit.</p>
+</body>
+</html>
+----

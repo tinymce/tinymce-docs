@@ -1,10 +1,10 @@
-= Full Page Plugin
-:navtitle: Full Page
+= Full Page HTML Plugin
+:navtitle: Full Page HTML
 :description: Edit metadata and document properties including title, keywords, and description via a dialog box, with HTML structure exposure in source code view.
 :description_short: Edit document metadata and properties with dialog interface and source code exposure.
-:keywords: full page, metadata, document properties, title, keywords, description, HTML structure, source code
-:pluginname: Full Page
-:plugincode: fullpage
+:keywords: full page html, metadata, document properties, title, keywords, description, HTML structure, source code
+:pluginname: Full Page HTML
+:plugincode: fullpagehtml
 :plugincategory: premium
 
 include::partial$misc/admon-premium-plugin.adoc[]
@@ -27,9 +27,9 @@ For example:
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  plugins: 'fullpage',
-  toolbar: 'fullpage',
-  fullpage_default_doctype: '<!DOCTYPE html>'
+  plugins: 'fullpagehtml',
+  toolbar: 'fullpagehtml',
+  fullpagehtml_default_doctype: '<!DOCTYPE html>'
 });
 ----
 
@@ -37,13 +37,15 @@ tinymce.init({
 
 The following configuration options affect the behavior of the {pluginname} plugin.
 
-include::partial$configuration/fullpage-default-doctype.adoc[leveloffset=+1]
+include::partial$configuration/fullpagehtml-default-doctype.adoc[leveloffset=+1]
 
-include::partial$configuration/fullpage-default-title.adoc[leveloffset=+1]
+include::partial$configuration/fullpagehtml-default-title.adoc[leveloffset=+1]
 
-include::partial$configuration/fullpage-default-encoding.adoc[leveloffset=+1]
+include::partial$configuration/fullpagehtml-default-encoding.adoc[leveloffset=+1]
 
-include::partial$configuration/fullpage-default-body-style.adoc[leveloffset=+1]
+include::partial$configuration/fullpagehtml-default-body-style.adoc[leveloffset=+1]
+
+include::partial$configuration/fullpagehtml-hide-in-source-view.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
@@ -52,3 +54,9 @@ include::partial$toolbar-button-ids/{plugincode}-toolbar-buttons.adoc[leveloffse
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 include::partial$menu-item-ids/{plugincode}-menu-items.adoc[leveloffset=+1]
+
+== Commands
+
+The {pluginname} plugin provides the following {productname} command.
+
+include::partial$commands/fullpagehtml-cmds.adoc[leveloffset=+1]

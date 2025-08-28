@@ -1,5 +1,5 @@
-[[fullpage-default-title]]
-== `+fullpage_default_title+`
+[[fullpagehtml-default-title]]
+== `+fullpagehtml_default_title+`
 
 This option enables you to specify the default title for the output HTML.
 
@@ -9,13 +9,13 @@ This option enables you to specify the default title for the output HTML.
 
 *Default value:* No default value (empty string)
 
-=== Example: using `+fullpage_default_title+`
+=== Example: using `+fullpagehtml_default_title+`
 
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',
-  plugins: 'fullpage',
-  fullpage_default_title: 'My default page title'
+  plugins: 'fullpagehtml',
+  fullpagehtml_default_title: 'My default page title'
 });
 ----

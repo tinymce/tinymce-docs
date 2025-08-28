@@ -1,5 +1,5 @@
-[[fullpage-default-doctype]]
-== `+fullpage_default_doctype+`
+[[fullpagehtml-default-doctype]]
+== `+fullpagehtml_default_doctype+`
 
 This option enables you to specify the default doctype for the output HTML.
 
@@ -9,13 +9,13 @@ This option enables you to specify the default doctype for the output HTML.
 
 *Default value:* `+'<!DOCTYPE html>'+`
 
-=== Example: using `+fullpage_default_doctype+`
+=== Example: using `+fullpagehtml_default_doctype+`
 
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',
-  plugins: 'fullpage',
-  fullpage_default_doctype: '<!DOCTYPE html>'
+  plugins: 'fullpagehtml',
+  fullpagehtml_default_doctype: '<!DOCTYPE html>'
 });
 ----

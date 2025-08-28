@@ -93,7 +93,7 @@ tinymce.get(0).getContent({ indent: false, entity_encoding: 'raw' });
 
 or
 
-.Example of configuring the editor to use named entities and disable indentation.
+.Example of configuring the editor to use named entity encoding and disable indentation.
 [source,js]
 ----
 tinymce.init({

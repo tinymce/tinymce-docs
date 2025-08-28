@@ -25,8 +25,12 @@ When `+fullpagehtml_hide_in_source_view+` is set to `+true+`, the source code vi
 .Example
 [source,html]
 ----
-<h1>Full page HTML Demo</h1>
-<p>This is the body content that users can edit.</p>
+<h1>Welcome to Our Website</h1>
+<p>This is the main content area where users can edit text, add images, and format their content.</p>
+<ul>
+  <li>First bullet point</li>
+  <li>Second bullet point</li>
+</ul>
 ----
 
 When set to `+false+` (default), the source code view shows the complete HTML document:
@@ -41,8 +45,12 @@ When set to `+false+` (default), the source code view shows the complete HTML do
   <title>Full Page HTML Plugin Demo Document</title>
 </head>
 <body style="margin: 20px; padding: 15px; font-family: Georgia, Times, serif; font-size: 16px; color: #2c3e50;">
-  <h1>Full page HTML Demo</h1>
-  <p>This is the body content that users can edit.</p>
+  <h1>Welcome to Our Website</h1>
+  <p>This is the main content area where users can edit text, add images, and format their content.</p>
+  <ul>
+    <li>First bullet point</li>
+    <li>Second bullet point</li>
+  </ul>
 </body>
 </html>
 ----

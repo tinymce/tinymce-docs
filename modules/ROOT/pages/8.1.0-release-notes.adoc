@@ -64,9 +64,9 @@ The {productname} {release-version} release includes an accompanying release of 
 === Empty editor operations sometimes showed as modified instead of added/removed
 // #TINY-12273
 
-Previously empty editor operations were sometimes incorrectly displayed as modifications instead of insertions or removals. This behavior caused confusion, as an editor that appeared empty could still show a “modified” state.
+Previously empty editor operations were sometimes incorrectly displayed as modifications instead of additions or removals. This behavior caused confusion, as an editor that appeared empty could still show a “modified” state.
 
-To resolve this, empty content is no longer sent. When the editor is empty or becomes empty, the entire state is now correctly represented as inserted or removed. This improvement ensures that change tracking is clearer and more accurate, reducing confusion when editors contain no content.
+To resolve this, empty content is no longer sent. When the editor is empty or becomes empty, the entire state is now correctly represented as added or removed. This improvement ensures that change tracking is clearer and more accurate, reducing confusion when editors contain no content.
 
 For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
 

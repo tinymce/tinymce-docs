@@ -87,6 +87,13 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // CCFR here.
 
+=== Tooltips can now remain open when hovered
+// #TINY-12053
+
+Previously, tooltips would disappear when the cursor moved from the toolbar button to the tooltip, preventing users from keeping the tooltip open for reference. This behavior impacted accessibility by making it difficult for users who rely on tooltips for extended reading or navigation. In {release-version}, {productname} has been updated to allow tooltips to accept mouse events. This ensures that tooltips remain visible when hovered, improving accessibility and usability by letting users keep the tooltip open until they move the cursor away.
+
+This improvement addresses the link:https://www.w3.org/WAI/WCAG21/Understanding/content-on-hover-or-focus[WCAG 2.1 Success Criterion 1.4.13: Content on Hover or Focus (Level AA)], specifically the "Hoverable" requirement.
+
 
 [[removed]]
 == Removed

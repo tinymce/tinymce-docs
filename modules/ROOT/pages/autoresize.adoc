@@ -6,7 +6,7 @@
 :pluginname: Autoresize
 :plugincode: autoresize
 
-The Autoresize plugin automatically adjusts the editor height to match its content, preventing the editor from expanding infinitely as users type. This creates a more intuitive editing experience where the editor grows and shrinks naturally with content.
+The {pluginname} plugin automatically adjusts the editor height to match its content. This creates a more intuitive editing experience where the editor grows and shrinks naturally with content. Setting the `+max_height+` option would allow you to still control when the content would become scrollable.
 
 == Interactive demo
 

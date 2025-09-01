@@ -235,6 +235,8 @@ Makes sure that the format is not merged with other wrappers having the same for
 
 *Default value:* `+false+`
 
+*Possible values:* `+true+`, `+false+`
+
 ===== Example: using `+exact+` parameter
 
 [source,js]
@@ -257,6 +259,8 @@ States that the format is a container format for block elements. For example, a 
 *Type:* `+Boolean+`
 
 *Default value:* `+false+`
+
+*Possible values:* `+true+`, `+false+`
 
 ===== Example: using `+wrapper+`
 
@@ -317,6 +321,10 @@ So if the selection is from _a_ to _b_ in this html contents `+<h1><b>[a</b></h1
 
 *Type:* `+Boolean+`
 
++Default value:* `+false+`
+
+*Possible values:* `+true+`, `+false+`
+
 ===== Example: using `+block_expand+`
 
 [source,js]
@@ -356,6 +364,8 @@ Enables control for removing the child elements of the matching format. This is 
 
 *Default value:* `+false+` for `+selector+` formats
 
+*Possible values:* `+true+`, `+false+`
+
 ===== Example: using `+deep+`
 
 [source,js]
@@ -393,6 +403,8 @@ After merge:
 *Type:* `+Boolean+`
 
 *Default value:* `+true+`
+
+*Possible values:* `+true+`, `+false+`
 
 ===== Example: using `+merge_siblings+`
 

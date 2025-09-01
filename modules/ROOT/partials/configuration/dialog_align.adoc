@@ -9,9 +9,9 @@ This is also the value applied if the property is not explicitly set.
 
 *Type:* `+String+`
 
-*Possible values:* `'+start+'`, `'+center+'`, `+end+`
-
 *Default value:* `+start+`
+
+*Possible values:* `'+start+'`, `'+center+'`, `'+end+'`
 
 The values, `+start+` and `+end+`, refer to the beginning or end of a text line and are relative to the display language.
 
@@ -28,18 +28,18 @@ tinymce.activeEditor.windowManager.open({
   title: 'Dialog Title', // The dialog's title - displayed in the dialog header
   body: {
     type: 'panel', // The root body type - a Panel or TabPanel
-    items: [ 
-        {
-          type: 'label', // component type
-          label: 'Caption', // text for the group label
-          align: 'end',
-          items: [
-            {
-              type: 'htmlpanel', // an HTML panel component
-              html: 'Panel content goes here.'
-            }
-          ] 
-        }
+    items: [
+      {
+        type: 'label', // component type
+        label: 'Caption', // text for the group label
+        align: 'end',
+        items: [
+          {
+            type: 'htmlpanel', // an HTML panel component
+            html: 'Panel content goes here.'
+          }
+        ]
+      }
     ]
   },
   buttons: [ // A list of footer buttons

@@ -5,7 +5,9 @@ This option allows you to specify the size of the `+padding+` at the sides of th
 
 *Type:* `+Number+`
 
-=== Example: `+autoresize_overflow_padding+`
+*Default value:* `+1+`
+
+=== Example: adding horizontal padding for better content spacing
 
 [source,js]
 ----
@@ -13,5 +15,16 @@ tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   plugins: 'autoresize',
   autoresize_overflow_padding: 50
+});
+----
+
+=== Example: setting horizontal padding to zero
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'autoresize',
+  autoresize_overflow_padding: 0
 });
 ----

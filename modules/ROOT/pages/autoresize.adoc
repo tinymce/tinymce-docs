@@ -2,11 +2,15 @@
 :navtitle: Autoresize
 :description_short:
 :description: Automatically resize TinyMCE to fit content.
-:keywords: height, width, max_height, min_height, autoresize_overflow_padding, autoresize_overflow_padding
+:keywords: height, width, max_height, min_height, autoresize_overflow_padding, autoresize_bottom_margin, resize
 :pluginname: Autoresize
 :plugincode: autoresize
 
-This plugin automatically resizes the editor to the content inside it. It is typically used to prevent the editor from expanding infinitely as a user types into the editable area. For example, by giving the `+max_height+` option a value the editor will stop resizing when the set value is reached.
+The {pluginname} plugin automatically adjusts the editor height to match its content. This creates a more intuitive editing experience where the editor grows and shrinks naturally with content. Setting the `+max_height+` option would allow you to still control when the content would become scrollable.
+
+== Interactive demo
+
+liveDemo::autoresize[]
 
 == Basic setup
 
@@ -18,9 +22,18 @@ tinymce.init({
 });
 ----
 
+== How it works
+
+The Autoresize plugin monitors content changes and automatically adjusts the editor height to accommodate the content. When enabled:
+
+* The editor initializes and renders based on the minimum height specified by `+min_height+` option.
+* As content is added, the editor expands vertically
+* The editor stops expanding when it reaches the `+max_height+` limit
+* The `+resize+` handle is removed from the editor.
+
 == Options
 
-These settings affect the execution of the Autoresize plugin, including changes to the minimum width, height, bottom margin, and default initialization state.
+These settings control the autoresize behavior, including height limits, padding, and margins.
 
 include::partial$configuration/autoresize_bottom_margin.adoc[leveloffset=+1]
 
@@ -34,4 +47,4 @@ include::partial$configuration/min_height.adoc[leveloffset=+1]
 
 The Autoresize plugin provides the following {productname} command.
 
-include::partial$commands/autoresize-cmds.adoc[]
+include::partial$commands/autoresize-cmds.adoc[leveloffset=+1]

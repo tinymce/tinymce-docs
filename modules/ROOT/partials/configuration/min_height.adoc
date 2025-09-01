@@ -1,10 +1,10 @@
 [[min_height]]
 == `+min_height+`
 
-The *min_height* option has two kinds of behaviors depending on the state of the xref:autoresize.adoc[`+autoresize+`] plugin:
+The `+min_height+` option has different behaviors depending on whether the xref:autoresize.adoc[`+autoresize+`] plugin is enabled:
 
-* `+autoresize+` OFF (Default): Without the `+autoresize+` plugin, this option sets the minimum height that a user can shrink the entire {productname} interface (by grabbing the draggable area in the bottom right of the editor interface).
-* `+autoresize+` ON: With the `+autoresize+` plugin, this option sets the minimum height the editor can automatically shrink to.
+* **Without `+autoresize+` plugin**: Sets the minimum height that users can manually shrink the entire {productname} interface by dragging the resize handle in the bottom-right corner.
+* **With `+autoresize+` plugin**: Sets the minimum height the editor can automatically shrink to when content is removed.
 
 *Type:* `+Number+`
 
@@ -32,4 +32,11 @@ tinymce.init({
 ----
 endif::[]
 
-NOTE: If the xref:editor-size-options.adoc#resize[`+resize+`] option is set to `+false+` the resize handle will be disabled and a user will not be able to resize the editor (by manual dragging). Note that `+resize+` defaults to `+false+` when the `+autoresize+` plugin is enabled.
+[NOTE]
+====
+* If the xref:editor-size-options.adoc#resize[`+resize+`] option is set to `+false+`, the resize handle will be disabled and users cannot manually resize the editor.
+* The `+resize+` option defaults to `+false+` when the `+autoresize+` plugin is enabled.
+* Values are specified in pixels without units.
+* Setting `+min_height+` too low may cause usability issues on mobile devices.
+* If `+min_height+` is not set when using the `+autoresize+` plugin, the editor will default to the standard `+min_height+` value of `+100+` pixels.
+====

@@ -1,11 +1,24 @@
 [cols="1,3",options="header"]
 |===
 |Command |Description
-|mceAutoResize |Auto resizes the editor to the contents.
+|mceAutoResize |Automatically resizes the editor to fit its current content.
 |===
 
-.Example
+== Manual autoresize trigger
+
+The `+mceAutoResize+` command can be used to manually trigger the autoresize functionality. This is useful when:
+
+* Content is dynamically added or removed programmatically
+* The editor needs to be resized after external changes
+* You want to ensure the editor size matches its content at a specific moment
+
+.Example: triggering autoresize manually
 [source,js]
 ----
+// Resize the active editor
 tinymce.activeEditor.execCommand('mceAutoResize');
+
+// Resize a specific editor by ID
+tinymce.get('my-editor-id').execCommand('mceAutoResize');
 ----
+

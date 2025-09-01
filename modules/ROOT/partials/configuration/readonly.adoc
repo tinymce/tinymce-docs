@@ -3,11 +3,11 @@
 
 Setting the `readonly` option to `true` initializes the editor in **readonly** mode instead of editing (**design**) mode. Once initialized, the editor can be switched to **design** mode using the xref:apis/tinymce.editormode.adoc#set[`tinymce.editor.mode.set` API].
 
-*Type:* `Boolean`
+*Type:* `+Boolean+`
 
-*Default value:* `false`
+*Default value:* `+false+`
 
-*Possible values:* `true`, `false`
+*Possible values:* `+true+`, `+false+`
 
 === Example: Using `readonly`
 
@@ -27,7 +27,7 @@ liveDemo::readonly-demo[]
 |===
 | **Behavior** | **Details** | **Allowed (True/False)**
 
-| Navigation and Interaction 
+| Navigation and Interaction
 a|
 * Users can place the cursor within the editor
 * Navigation behaves the same as in design mode, including:
@@ -63,7 +63,7 @@ a|
 | False
 
 | Enabled Features
-a| 
+a|
 * The following toolbar/menu items remain enabled in **readonly** mode:
 ** xref:fullscreen.adoc[Full Screen]
 ** xref:help.adoc[Help]

@@ -29,7 +29,7 @@ The Autoresize plugin monitors content changes and automatically adjusts the edi
 * The editor initializes and renders based on the minimum height specified by `+min_height+` option.
 * As content is added, the editor expands vertically
 * The editor stops expanding when it reaches the `+max_height+` limit
-* The `+resize+` handle is automatically disabled to prevent manual resizing conflicts
+* The `+resize+` handle is removed from the editor.
 
 == Options
 

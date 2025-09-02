@@ -54,6 +54,21 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Accessibility Checker
+
+The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.
+
+**Accessibility Checker** includes the following improvement.
+
+==== Auto-suggest `+alt+` text from existing `+alt+`, `+aria-label+`, and `+title+` attributes with priority fallback in image repair dialogs.
+// #TINY-12547
+
+In previous version of **Accessibility Checker**, the image repair dialog only proposed values from `+alt+`, ignoring `+aria-label+` and `+title+`, which forced manual entry and slowed accessibility repairs while increasing the risk of inconsistent descriptions.
+
+{productname} {release-version} now auto-suggests `+alt+` text using a priority-based fallback that checks existing attributes in order `+alt+`, then `+aria-label+`, then `+title+` and leaves the field empty if none are present. This ensures that users can label images faster and with greater accuracy by leveraging existing accessibility attributes, improving repair efficiency and consistency.
+
+For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
+
 
 [[improvements]]
 == Improvements

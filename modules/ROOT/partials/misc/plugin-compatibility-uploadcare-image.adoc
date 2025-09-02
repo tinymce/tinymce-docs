@@ -9,5 +9,5 @@ The xref:uploadcare.adoc[Image Optimizer Powered by Uploadcare] premium plugin c
 * Configure either the xref:image.adoc[Image] and xref:editimage.adoc[Image Editing] plugins together, or
 * Configure the xref:uploadcare.adoc[Image Optimizer Powered by Uploadcare] plugin as the sole image handler for all images.
 
-If all three plugins are enabled, editor notification: "Unable to initialize uploadcare due to the presence of incompatible plugins. Details are in the browser console." will be shown along with console error: "Unable to initialize uploadcare due to the presence of incompatible plugins: image, editimage".
+If all three plugins are enabled, editor notification: "Unable to initialize uploadcare due to the presence of incompatible plugins. Details are in the browser console." will be shown along with a console error: "Unable to initialize uploadcare due to the presence of incompatible plugins: image, editimage".
 ====

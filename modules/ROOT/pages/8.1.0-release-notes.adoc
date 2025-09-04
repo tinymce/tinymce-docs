@@ -65,6 +65,16 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // CCFR here.
 
+=== Clicking on a non selectable element when the selection is off screen no longer scrolls to the selection
+// #TINY-12245
+
+Previously, and issue was identified where clicking the editor's horizontal scrollbar a "non-selectable" UI element implicitly focused the editor, placed the caret at the beginning of the content, and then scrolled the document vertically to that caret position, causing the page to scroll away from the user's current view.
+
+{productname} {release-version} addresses this issue. Now, the editor avoids taking focus when users click elements that are not selectable (such as scrollbars), preventing unintended vertical scrolling.
+
+[NOTE]
+Due to browser limitations, the caret may still initialize at the start of the editor content when the selection is not determinable from such interactions, but the page no longer scrolls away from the user's current view.
+
 
 [[additions]]
 == Additions

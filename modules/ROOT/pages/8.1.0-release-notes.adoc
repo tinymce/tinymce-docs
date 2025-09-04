@@ -112,9 +112,20 @@ The following premium plugin updates were released alongside {productname} {rele
 === Links inserted with `+&amp;+` encoding are now decoded to `&` before inserting
 // #TINY-12504
 
-Previously, when pasting URLs containing encoded ampersands (`+&amp;+`) into {productname}, the encoded values were preserved, resulting in double encoding when the link was inserted into content. For example, a pasted link such as `https://example.com/search?&amp;query=example` would appear in the editor source as `https://example.com/search?&amp;amp;query=example`.
+Previously, when pasting URLs containing encoded ampersands `+&amp;+` into {productname}, the encoded values were preserved, resulting in double encoding when the link was inserted into content. For example, a pasted link such as
 
-This caused issues when openingsuch links, as the URLs became invalid. In {release-version}, {productname} now automatically decodes `+&amp;+` back to `+&+` before inserting the link, ensuring that pasted URLs remain valid and functional in both the editor and the source code.
+[source,text]
+----
+https://example.com/search?&amp;query=example
+----
+would appear in the editor source as
+
+[source,text]
+----
+https://example.com/search?&amp;amp;query=example
+----
+
+This caused issues when opening such links, as the URLs became invalid. In {release-version}, {productname} now automatically decodes `+&amp;+` back to `+&+` before inserting the link, ensuring that pasted URLs remain valid and functional in both the editor and the source code.
 
 
 [[security-fixes]]

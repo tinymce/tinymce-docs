@@ -54,6 +54,26 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Revision History
+
+The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
+
+**Revision History** includes the following fix and improvement.
+
+==== The same user could receive two different default avatars
+// #TINY-12527
+
+In previous versions of Revision History, the same user could receive two different default avatars. This inconsistency could make a single user appear as two distinct contributors, creating confusion when reviewing revision logs.
+
+In {productname} {release-version}, the issue has been resolved so that each user is now always assigned the same default avatar, improving accuracy and consistency in the revision history display.
+
+==== Default avatars are now generated with a consistent color based on the `user_id`
+// #TINY-12527
+
+Default avatars are now generated consistently using the `user_id`, ensuring that users are assigned a reliable and predictable color for their avatar. This improvement enhances the user experience by providing clear visual consistency when identifying contributors in revision histories.
+
+For information on the **Revision History** plugin, see: xref:revisionhistory.adoc[Revision History].
+
 
 [[improvements]]
 == Improvements

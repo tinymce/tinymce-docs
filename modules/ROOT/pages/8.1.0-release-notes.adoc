@@ -109,6 +109,13 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // CCFR here.
 
+=== Navigating between elements with `+contenteditable="true"+` was not possible on Firefox using the keyboard.
+// #TINY-12459
+
+In {productname} {release-version}, a Firefox-specific limitation prevented caret movement between editable elements when navigating with the keyboard. The caret became trapped inside a +figcaption+, blocking vertical navigation using the Arrow Down key and preventing users from moving to the next element.
+
+This issue disrupted accessibility and editing flow for Firefox users relying on keyboard interactions. To resolve this, a new caret navigation module was introduced and integrated into the Firefox-specific arrow key handling logic. The solution works around a long-standing Firefox bug by programmatically advancing the caret out of blocked states, ensuring smoother and more consistent keyboard navigation across editable elements.
+
 
 [[security-fixes]]
 == Security fixes

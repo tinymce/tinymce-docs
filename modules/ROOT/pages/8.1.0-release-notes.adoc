@@ -65,6 +65,13 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // CCFR here.
 
+=== Default avatars are now generated with a consistent color based on the `+user_id+`
+// #TINY-12528
+
+Previously, default avatars were generated with different colors on each page visit, resulting in inconsistent representations of the same user. This inconsistency created usability issues, as the avatars could not be relied on to visually identify users across sessions.
+
+In {productname} {release-version}, default avatars are now generated consistently based on the `+user_id+`, ensuring the same avatar appears on every page visit. This improvement provides a stable and recognizable visual cue, enhancing user identification and overall experience.
+
 
 [[additions]]
 == Additions

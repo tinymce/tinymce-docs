@@ -54,6 +54,21 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== AI Assistant
+
+The {productname} {release-version} release includes an accompanying release of the **AI Assistant** premium plugin.
+
+**AI Assistant** includes the following fix.
+
+==== AI Assistant plugin dialog preview now respects the `content_security_policy` editor option
+// TINY-12800
+
+Previously, the AI Assistant plugin dialog preview did not adhere to the xref:tinymce-and-csp.adoc#content_security_policy[content_security_policy] editor option, resulting in limited control over the loading of external resources such as images.
+
+In {productname} {release-version}, the dialog preview now applies the configured content security policy when provided, ensuring that external resources are restricted according to the editor's security settings. This improvement enhances consistency, strengthens security, and aligns the plugin with user-defined policies in {productname}.
+
+For information on the **AI Assistant** plugin, see: xref:ai.adoc[AI Assistant] or `+content_security_policy+` option see xref:tinymce-and-csp.adoc#content_security_policy[Content Security Policy].
+
 
 [[improvements]]
 == Improvements

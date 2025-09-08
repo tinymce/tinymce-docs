@@ -12,7 +12,7 @@ The {pluginname} (`{plugincode}`) plugin adds a contextual editing toolbar to im
 
 If the toolbar does not appear after clicking on an image, you may need to enable `+editimage_cors_hosts+` or `+editimage_proxy_service_url+` (see below).
 
-NOTE: In previous versions of {productname}, the {pluginname} plugin was provided as an open source plugin known as the Image Tools plugin.
+
 
 == Interactive example
 
@@ -20,7 +20,10 @@ liveDemo::edit-image[]
 
 include::partial$misc/admon-svg-not-supported.adoc[]
 
-// include::partial$misc/purchase-premium-plugins.adoc[]
+:includedSection: editimagePlugin
+include::partial$misc/plugin-compatibility-uploadcare-image.adoc[]
+:!includedSection:
+
 
 == Cloud Installation
 

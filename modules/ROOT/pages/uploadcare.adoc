@@ -26,6 +26,10 @@ The **Image Optimizer** plugin offers a range of powerful features for image hos
 
 liveDemo::{plugincode}[]
 
+:includedSection: uploadcarePlugin
+include::partial$misc/plugin-compatibility-uploadcare-image.adoc[]
+:!includedSection:
+
 == Basic setup
 
 To add the {pluginname} plugin to the editor, include `{plugincode}` in the `plugins` option in the editor configuration.
@@ -49,6 +53,7 @@ tinymce.init({
 ====
 The {pluginname} plugin overrides the xref:quickbars.adoc[Quickbar] quickimage toolbar item. To ensure a better user experience and to avoid having two image buttons configure `quickbars_insert_toolbar` to omit the `quickimage` toolbar item.
 ====
+
 
 == Image Operations
 

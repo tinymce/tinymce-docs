@@ -6,8 +6,7 @@ tinymce.init({
     "help", "image", "insertdatetime", "link", "lists", "media",
     "preview", "searchreplace", "table", "visualblocks",
   ],
-  menubar: 'file',
-  toolbar: "undo redo | fullpagehtml | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+  toolbar: "fullpagehtml | undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
   // Full Page HTML Plugin Configuration Options
   fullpagehtml_default_doctype: '<!DOCTYPE html>',
   fullpagehtml_default_title: 'Full Page HTML Plugin Demo Document',

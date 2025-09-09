@@ -1,6 +1,5 @@
 tinymce.init({
   selector: 'textarea.advcodedemo',
-  plugins: 'advcode',
   plugins: [
     "advcode", "advlist", "anchor", "autolink", "charmap", "fullscreen",
     "help", "image", "insertdatetime", "link", "lists", "media",

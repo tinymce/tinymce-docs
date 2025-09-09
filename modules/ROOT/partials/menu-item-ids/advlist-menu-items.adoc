@@ -1,0 +1,8 @@
+[cols="1,1,2",options="header"]
+|===
+|Menu item identifier |xref:menus-configuration-options.adoc#example-the-tinymce-default-menu-items[Default Menu Location] |Description
+|`+bullist+` |Format |Formats the current selection as a bullet list with dropdown options for different bullet styles.
+|`+numlist+` |Format |Formats the current selection as a numbered list with dropdown options for different number styles.
+|===
+
+NOTE: The {pluginname} plugin extends the core list menu items in the *Format* menu by adding dropdown functionality that allows users to select from different list styles. These menu items are provided by the core `+lists+` plugin, but the dropdown functionality is added by the {pluginname} plugin.

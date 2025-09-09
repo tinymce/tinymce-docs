@@ -22,6 +22,10 @@ tinymce.init({
 });
 ----
 
+== Interactive demo
+
+liveDemo::advlist[]
+
 == Options
 
 These settings affect the execution of the `+advlist+` plugin by providing more granular control of list styles.
@@ -29,6 +33,10 @@ These settings affect the execution of the `+advlist+` plugin by providing more 
 include::partial$configuration/advlist_bullet_styles.adoc[leveloffset=+1]
 
 include::partial$configuration/advlist_number_styles.adoc[leveloffset=+1]
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 == Commands
 

@@ -1,0 +1,24 @@
+[[advcode_inline]]
+== `+advcode_inline+`
+
+The `+advcode_inline+` option allows the {pluginname} to open within {productname}'s existing editor space instead of displaying in a separate dialog box. This enables the full-screen mode functionality when combined with the fullscreen plugin.
+
+*Type:* `+Boolean+`
+
+*Default value:* `+false+`
+
+*Possible values:* `+true+`, `+false+`
+
+.Example: enable inline mode
+[source,js]
+----
+tinymce.init({
+  selector: "textarea", // change this value according to your HTML
+  plugins: ["fullscreen", "advcode"],
+  toolbar: "code",
+  advcode_inline: true,
+});
+----
+
+[NOTE]
+This option was introduced in {productname} 6.3. When enabled, the {pluginname} replaces the editor content area instead of opening in a modal dialog.

@@ -7,7 +7,7 @@ link:https://www.tiny.cloud/contact/[Contact {companyname} Support^] to request 
 
 === Retrieve Docker Image
 
-. Log into the {companyname} Cloud Docker Registry: 
+. Log into the {companyname} Cloud Docker Registry:
 +
 [source, sh, subs="attributes+"]
 ----
@@ -27,9 +27,9 @@ Replace `<VERSION>` with `latest` or the specific version number.
 [NOTE]
 Currently, the Docker images are only supported on x86-64 (also known as AMD64) architecture processors.
 
-=== Specify Configurations 
+=== Specify Configurations
 
-After completing the previous steps, run the Docker container from the pulled image: 
+After completing the previous steps, run the Docker container from the pulled image:
 
 [source, sh, subs="attributes+"]
 ----
@@ -38,7 +38,7 @@ docker run -p 18080:18080 registry.containers.tiny.cloud/spelling-tiny:<VERSION>
 
 This triggers `-p 18080:18080`, exposing the service on `localhost:18080`. The service runs on port `18080` inside the Docker container, and this maps it to the same port on your localhost.
 
-If set up correctly, the logs should display output similar to the following: 
+If set up correctly, the logs should display output similar to the following:
 
 [source, log]
 ----
@@ -50,7 +50,7 @@ If set up correctly, the logs should display output similar to the following:
 2024-12-05 11:30:51.275Z [io-compute-blocker-9] INFO  com.ephox.nectar.data.Bees$ - Loading all dictionaries from WinterTree
 2024-12-05 11:30:51.677Z [io-compute-blocker-6] INFO  com.ephox.nectar.data.Bees$ - Loading all dictionaries from WinterTree
 2024-12-05 11:30:52.127Z [io-compute-7] INFO  o.h.b.c.nio1.NIO1SocketServerGroup - Service bound to address /0:0:0:0:0:0:0:0:18080
-2024-12-05 11:30:52.131Z [io-compute-7] INFO  o.h.blaze.server.BlazeServerBuilder - 
+2024-12-05 11:30:52.131Z [io-compute-7] INFO  o.h.blaze.server.BlazeServerBuilder -
   _   _   _        _ _
  | |_| |_| |_ _ __| | | ___
  | ' \\  _|  _| '_ \\_  _(_-<
@@ -61,7 +61,7 @@ If set up correctly, the logs should display output similar to the following:
 
 Running this command will generate a log warning about `allowed-origins` not being configured. This is expected, as it will be set up in the next step.
 
-The {productname} server-side components require a configuration file to function correctly. By convention, this file is named `application.conf`. For more information, refer to link:https://www.tiny.cloud/docs/tinymce/latest/configure-required-services/[Required configuration for the server-side components]. 
+The {productname} server-side components require a configuration file to function correctly. By convention, this file is named `application.conf`. For more information, refer to link:https://www.tiny.cloud/docs/tinymce/latest/configure-required-services/[Required configuration for the server-side components].
 
 This configuration file requires at least the following information:
 
@@ -69,15 +69,15 @@ This configuration file requires at least the following information:
 
 By default, the {pluginname} plugin comes with Hunspell dictionaries for link:https://www.tiny.cloud/docs/tinymce/latest/introduction-to-tiny-spellchecker/#supported-languages[supported languages]. For additional configurations, the service supports the following options in the `application.conf` file:
 
-* `custom-dictionaries-path`: Sets the path to where the file or directory is mounted in the container. For more information on how to set up custom dictionaries, refer to link:https://www.tiny.cloud/docs/tinymce/latest/custom-dictionaries-for-tiny-spellchecker/[Adding custom dictionaries].  
+* `custom-dictionaries-path`: Sets the path to where the file or directory is mounted in the container. For more information on how to set up custom dictionaries, refer to link:https://www.tiny.cloud/docs/tinymce/latest/custom-dictionaries-for-tiny-spellchecker/[Adding custom dictionaries].
 * `dynamic-custom-dictionaries`: When set to true, the {pluginname} service periodically checks the dictionary files in `custom-dictionaries-path` for changes and updates the custom dictionaries at runtime without requiring a service restart. The default value is `false`.
 
 [NOTE]
 Enabling the `dynamic-custom-dictionaries` option introduces some performance overhead, which may result in a wait time for the custom dictionaries to load.
 
-=== Run the Docker Container 
+=== Run the Docker Container
 
-The Docker container can also be run with `docker compose`. In this example, the following directory structure is assumed: 
+The Docker container can also be run with `docker compose`. In this example, the following directory structure is assumed:
 
 [source,sh]
 ----
@@ -89,7 +89,7 @@ spelling-service/
 └── docker-compose.yaml
 ----
 
-Here is an example of the `application.conf` file with the basic configurations: 
+Here is an example of the `application.conf` file with the basic configurations:
 
 [source, conf]
 ----
@@ -102,7 +102,7 @@ ephox {
       "*.my.company.org"
     ]
   }
-  
+
   spelling {
     custom-dictionaries-path = "/app/resources/custom-dictionaries"
     hunspell-dictionaries-path = "/app/resources/hunspell-dictionaries"
@@ -113,7 +113,7 @@ ephox {
 . Create the `docker-compose.yaml` file:
 
 +
-Here is an example of how to set up the file given the above directory structure and `application.conf` file: 
+Here is an example of how to set up the file given the above directory structure and `application.conf` file:
 
 +
 [source, yaml]
@@ -128,7 +128,9 @@ services:
     volumes:
       - type: bind
         source: ./application.conf
-        target: /ephox-spelling/ephox-spelling-docker-env.conf 
+        # Use the below target path if using any version below 2.130.0.
+        # target: /ephox-spelling/ephox-spelling-docker-env.conf
+        target: /app/application.conf
         read_only: true
       - type: bind
         source: ./resources/custom-dictionaries
@@ -139,10 +141,13 @@ services:
         target: /app/resources/custom-dictionaries
         read_only: true
 ----
++
+[NOTE]
+From version 2.130.0 onwards, the `target` path in the volums option must point to `/app/application.conf` .
 
 +
 [NOTE]
-Ensure the `target` path in the `volumes` option matches the `custom-dictionaries-path` and `hunspell-dictionaries-path` in the `application.conf` file. 
+Ensure the `target` path in the `volumes` option matches the `custom-dictionaries-path` and `hunspell-dictionaries-path` in the `application.conf` file.
 
 . Run the service (within the same directory where `docker-compose.yaml` was placed):
 
@@ -159,8 +164,8 @@ If the allowed origins, Hunspell, and custom dictionaries folders are configured
 [source, log]
 ----
 [+] Running 2/2
- ✔ Network spelling-tiny_default            Created                                                                                                                                                                                               0.0s 
- ✔ Container spelling-tiny-spelling-tiny-1  Created                                                                                                                                                                                               0.1s 
+ ✔ Network spelling-tiny_default            Created                                                                                                                                                                                               0.0s
+ ✔ Container spelling-tiny-spelling-tiny-1  Created                                                                                                                                                                                               0.1s
 Attaching to spelling-tiny-1
 spelling-tiny-1  | 2025-02-11 09:51:10.332Z [io-compute-5] INFO  ironbark - ironbark
 ...
@@ -181,7 +186,7 @@ spelling-tiny-1  | 2025-02-11 09:51:11.881Z [io-compute-blocker-5] INFO  c.e.nec
 spelling-tiny-1  | 2025-02-11 09:51:13.593Z [io-compute-blocker-5] INFO  c.e.nectar.hunspell.HunspellLoader$ - Loading hunspell dictionary from path: /app/resources/hunspell-dictionaries and locale de-DE
 spelling-tiny-1  | 2025-02-11 09:51:13.651Z [io-compute-blocker-5] INFO  c.e.nectar.hunspell.HunspellLoader$ - Finished loading hunspell for de-DE
 spelling-tiny-1  | 2025-02-11 09:51:14.142Z [io-compute-9] INFO  o.h.b.c.nio1.NIO1SocketServerGroup - Service bound to address /0:0:0:0:0:0:0:0:18080
-spelling-tiny-1  | 2025-02-11 09:51:14.146Z [io-compute-9] INFO  o.h.blaze.server.BlazeServerBuilder - 
+spelling-tiny-1  | 2025-02-11 09:51:14.146Z [io-compute-9] INFO  o.h.blaze.server.BlazeServerBuilder -
 spelling-tiny-1  |   _   _   _        _ _
 spelling-tiny-1  |  | |_| |_| |_ _ __| | | ___
 spelling-tiny-1  |  | ' \\  _|  _| '_ \\_  _(_-<
@@ -190,7 +195,7 @@ spelling-tiny-1  |              |_|
 spelling-tiny-1  | 2025-02-11 09:51:14.162Z [io-compute-9] INFO  o.h.blaze.server.BlazeServerBuilder - http4s v0.23.27 on blaze v0.23.16 started at http://[::]:18080/
 ----
 
-=== Next Steps 
+=== Next Steps
 
 . Test the service via `cURL` command
 

@@ -5,7 +5,7 @@ include::partial$misc/admon-docker-access.adoc[]
 
 === Retrieve Docker Image
 
-. Login into the {companyname} Cloud Docker Registry: 
+. Login into the {companyname} Cloud Docker Registry:
 +
 [source, sh, subs="attributes+"]
 ----
@@ -23,9 +23,9 @@ Replace `<VERSION>` with `latest` or the specific version number.
 
 include::partial$misc/admon-available-docker-images.adoc[]
 
-=== Specify Configurations 
+=== Specify Configurations
 
-After completing the previous steps, run the Docker container from the pulled image: 
+After completing the previous steps, run the Docker container from the pulled image:
 
 [source, sh, subs="attributes+"]
 ----
@@ -34,7 +34,7 @@ docker run -p 19100:19100 registry.containers.tiny.cloud/hyperlinking-tiny:<VERS
 
 This triggers `-p 19100:19100`, exposing the service on `localhost:19100`. The service runs on port `19100` inside the Docker container, and this maps it to the same port on your localhost.
 
-If set up correctly, the logs should display output similar to the following: 
+If set up correctly, the logs should display output similar to the following:
 
 [source, log]
 ----
@@ -45,7 +45,7 @@ If set up correctly, the logs should display output similar to the following:
 2025-01-02 11:06:46 [io-compute-blocker-8] WARN  c.e.d.config.AllowedOriginsConfig$ - No allowed-origins specified in config!
 2025-01-02 11:06:46 [io-compute-blocker-8] INFO  navi - navi config loaded successfully: NaviConfig(LinkCheckerConfig(true,ReturnUnknown),true,CacheConfig(10000,86400 seconds,3600 seconds),SdkServiceWithClientConfig(HttpConfig(100,10,10,3,HttpConfigTimeouts(10,10,10),JvmTrustModel()),None,OriginWhitelist(List(),OriginPrecision(true))),SelfHostedMediaSourcesConfig(CustomEmbedPlugins(UrlTrie(Branch(None,TreeMap()),Branch(None,TreeMap()))),None),OriginWhitelist(List(),OriginPrecision(true)),Logger[navi])
 2025-01-02 11:06:46 [io-compute-9] INFO  o.h.b.c.nio1.NIO1SocketServerGroup - Service bound to address /0:0:0:0:0:0:0:0:19100
-2025-01-02 11:06:46 [io-compute-9] INFO  o.h.blaze.server.BlazeServerBuilder - 
+2025-01-02 11:06:46 [io-compute-9] INFO  o.h.blaze.server.BlazeServerBuilder -
   _   _   _        _ _
  | |_| |_| |_ _ __| | | ___
  | ' \\  _|  _| '_ \\_  _(_-<
@@ -56,7 +56,7 @@ If set up correctly, the logs should display output similar to the following:
 
 Running this command will generate a log warning about `allowed-origins` not being configured. This is expected, as it will be set up in the next step.
 
-The {productname} server-side components require a configuration file to function correctly. By convention, this file is named `application.conf`. For more information, refer to link:https://www.tiny.cloud/docs/tinymce/latest/configure-required-services/[Required configuration for the server-side components^]. 
+The {productname} server-side components require a configuration file to function correctly. By convention, this file is named `application.conf`. For more information, refer to link:https://www.tiny.cloud/docs/tinymce/latest/configure-required-services/[Required configuration for the server-side components^].
 
 This configuration file requires at least the following information:
 
@@ -96,7 +96,7 @@ The Docker container can also be run with `docker compose`. In this example, the
 ----
 hyperlinking-service/
 ├── application.conf
-└── docker-compose.yaml 
+└── docker-compose.yaml
 ----
 
 Here is an example of the application.conf file with the basic configurations:
@@ -133,10 +133,16 @@ services:
     init: true
     volumes:
       - type: bind
-        source: ./application.conf #change this to the path on your local machine 
-        target: /ephox-hyperlinking/ephox-hyperlinking-docker-env.conf 
+        source: ./application.conf #change this to the path on your local machine
+        # Use the below target path if using any version below 2.109.6.
+        # target: /ephox-hyperlinking/ephox-hyperlinking-docker-env.conf
+        target: /app/application.conf
         read_only: true
 ----
+
++
+[NOTE]
+From version 2.109.6 onwards, the `target` path in the volums option must point to `/app/application.conf` .
 
 . Run the service (within the same directory where `docker-compose.yaml` was placed):
 +
@@ -151,7 +157,7 @@ If the setup is correct, the initiation logs should appear as follows:
 +
 [source, log]
 ----
- ✔ Container hyperlinking-tiny-hyperlinking-tiny-1  Recreated                                                                                                                                                                     0.1s 
+ ✔ Container hyperlinking-tiny-hyperlinking-tiny-1  Recreated                                                                                                                                                                     0.1s
 Attaching to hyperlinking-tiny-1
 hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-1] INFO  navi - navi
 
@@ -177,7 +183,7 @@ hyperlinking-tiny-1  |  - localhost:8000
 hyperlinking-tiny-1  |  - ephox.com
 hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  navi - navi config loaded successfully: NaviConfig(LinkCheckerConfig(true,ReturnUnknown),true,CacheConfig(10000,86400 seconds,3600 seconds),SdkServiceWithClientConfig(HttpConfig(100,10,10,3,HttpConfigTimeouts(15,15,15),JvmTrustModel()),None,OriginWhitelist(List(localhost, localhost:8000, ephox.com),OriginPrecision(true))),SelfHostedMediaSourcesConfig(CustomEmbedPlugins(UrlTrie(Branch(None,TreeMap()),Branch(None,TreeMap(org -> Branch(None,TreeMap(wikipedia -> Branch(None,TreeMap(en -> Branch(Some(PathMatcher(List((wiki/.*,WikipediaEmbedPlugin(https://en.wikipedia.org/w/api.php,10))))),TreeMap()))))))))),None),OriginWhitelist(List(localhost, localhost:8000, ephox.com),OriginPrecision(true)),Logger[navi])
 hyperlinking-tiny-1  | 2025-01-02 16:17:29 [io-compute-6] INFO  o.h.b.c.nio1.NIO1SocketServerGroup - Service bound to address /0:0:0:0:0:0:0:0:19100
-hyperlinking-tiny-1  | 2025-01-02 16:17:29 [io-compute-6] INFO  o.h.blaze.server.BlazeServerBuilder - 
+hyperlinking-tiny-1  | 2025-01-02 16:17:29 [io-compute-6] INFO  o.h.blaze.server.BlazeServerBuilder -
 hyperlinking-tiny-1  |   _   _   _        _ _
 hyperlinking-tiny-1  |  | |_| |_| |_ _ __| | | ___
 hyperlinking-tiny-1  |  | ' \\  _|  _| '_ \\_  _(_-<
@@ -211,9 +217,9 @@ To confirm that a request is being sent to the {linkcheckerplugin} service, use:
 +
 [source, sh]
 ----
-curl --location 'http://localhost:19100/1/check' \\
---header 'Origin: http://good.com' \\
---header 'Content-Type: application/json' \\
+curl --location 'http://localhost:19100/1/check' \
+--header 'Origin: http://good.com' \
+--header 'Content-Type: application/json' \
 --data '{ "urls": [{"url":"http://google.com"}, {"url": "http://youtube.com"}, {"url":"http://google.com/404"}, {"url":"https://ephox.."}]}'
 ----
 
@@ -223,9 +229,9 @@ Finally, to verify if a request is unauthorized and originates from an incorrect
 +
 [source, sh]
 ----
-curl --location 'http://localhost:19100/1/check' \\
---header 'Origin: http://bad.com' \\
---header 'Content-Type: application/json' \\
+curl --location 'http://localhost:19100/1/check' \
+--header 'Origin: http://bad.com' \
+--header 'Content-Type: application/json' \
 --data '{ "urls": [{"url":"http://google.com"}, {"url": "http://youtube.com"}, {"url":"http://google.com/404"}, {"url":"https://ephox.."}]}'
 ----
 

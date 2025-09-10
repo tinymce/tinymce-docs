@@ -123,7 +123,7 @@ services:
 
 +
 [NOTE]
-From version 2.111.7 onwards, the `target` path in the volumes option must point to `/app/application.conf` .
+From version 2.111.7 onwards, the `target` path in the `volumes` option must point to `/app/application.conf`.
 
 . Run the service (within the same directory where `docker-compose.yaml` was placed):
 

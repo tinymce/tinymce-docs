@@ -6,23 +6,36 @@
 :plugincode: comments
 :commentsMode: callback
 
-*Callback mode* is the default mode for the {pluginname} plugin. In the callback mode, callback functions are required to save user comments on a server. The {pluginname} functions (create, reply, edit, delete comment, delete all conversations, resolve, lookup, and fetch conversations) are configured differently depending upon the server-side storage configuration.
+*Callback mode* is the default mode for the {pluginname} plugin. In callback mode, callback functions are required to save user comments on a server. The {pluginname} functions (create, reply, edit, delete comment, delete all conversations, resolve, lookup, and fetch conversations) are configured differently depending upon the server-side storage configuration.
+
+[NOTE]
+====
+Callback mode provides the most flexibility for integrating with custom backend systems. All comment operations are handled through custom callback functions that communicate with your server.
+====
 
 == How the {pluginname} plugin works in callback mode
 
-All options accept functions incorporating `+done+` and `+fail+` callbacks as parameters. The function return type is not important, but all functions must call exactly one of these two callbacks: `+fail+` or `+done+`.
+All callback functions accept three parameters: a request object (or array for `+tinycomments_fetch+`), a `+done+` callback, and a `+fail+` callback. The function return type is not important, but all functions must call exactly one of these two callbacks: `+fail+` or `+done+`.
 
-* The `+fail+` callback takes either a string or a JavaScript Error type.
-* The `+done+` callback takes an argument specific to each function.
+* The `+fail+` callback takes either a string or a JavaScript Error type to indicate an unrecoverable error.
+* The `+done+` callback takes an argument specific to each function to indicate successful completion.
 
-Most functions (create, reply, and edit) require an +id+ identifying the current author. This can be provided directly within the callbacks or dynamically via the `+tinycomments_fetch_author_info+` option.
+Most functions (create, reply, and edit) require an `+id+` identifying the current author. This can be provided directly within the callbacks or dynamically via the `+tinycomments_fetch_author_info+` option.
 
 [NOTE]
-**Current author**: By default, the **Comments** plugin does not know the name of the current user. To display the correct author information when creating a new conversation, integrators can now use the `+tinycomments_fetch_author_info+` option to supply author details dynamically through a callback.
+====
+**Current author**: By default, the **Comments** plugin does not know the name of the current user. To display the correct author information when creating a new conversation, integrators can use the `+tinycomments_fetch_author_info+` option to supply author details dynamically through a callback.
 
-During the initial editor load, the {pluginname} uses `+tinycomments_fetch+` callback to retrieve the existing conversations in the document. If not configured, the {pluginname} will fallback to `+tinycomments_lookup+`. 
+**Author display names**: The `+authorName+` field is optional in comment objects. If not provided, the plugin will default to using the `+author+` field value.
+====
 
-When a user adds a comment or a reply, the {pluginname} plugin uses the `+tinycomments_lookup+` callback to retrieve the selected conversation. 
+=== Initial conversation loading
+
+During the initial editor load, the {pluginname} uses the `+tinycomments_fetch+` callback to retrieve existing conversations in the document. If not configured, the {pluginname} will fallback to `+tinycomments_lookup+`. 
+
+=== Comment interaction flow
+
+When a user adds a comment or a reply, the {pluginname} plugin uses the `+tinycomments_lookup+` callback to retrieve the selected conversation. This ensures that the latest conversation data is always displayed to users. 
 
 [[comments-callback-live-demo]]
 == Interactive example
@@ -31,17 +44,17 @@ liveDemo::comments-callback[]
 
 == Options
 
-=== Required options
+=== Required callback functions
 
-When using callback mode, the {pluginname} plugin requires callback functions for the following options:
+When using callback mode, the {pluginname} plugin requires callback functions for the following operations:
 
-* xref:tinycomments_create[`+tinycomments_create+`]
-* xref:tinycomments_reply[`+tinycomments_reply+`]
-* xref:tinycomments_edit_comment[`+tinycomments_edit_comment+`]
-* xref:tinycomments_delete_comment[`+tinycomments_delete_comment+`]
-* xref:tinycomments_delete[`+tinycomments_delete+`]
-* xref:tinycomments_delete_all[`+tinycomments_delete_all+`]
-* xref:tinycomments_lookup[`+tinycomments_lookup+`]
+* xref:tinycomments_create[`+tinycomments_create+`] - Creates new comment conversations
+* xref:tinycomments_reply[`+tinycomments_reply+`] - Adds replies to existing conversations
+* xref:tinycomments_edit_comment[`+tinycomments_edit_comment+`] - Edits existing comments
+* xref:tinycomments_delete_comment[`+tinycomments_delete_comment+`] - Deletes individual comments
+* xref:tinycomments_delete[`+tinycomments_delete+`] - Deletes entire conversation threads
+* xref:tinycomments_delete_all[`+tinycomments_delete_all+`] - Deletes all conversations
+* xref:tinycomments_lookup[`+tinycomments_lookup+`] - Retrieves specific conversations
 
 include::partial$configuration/tinycomments_create.adoc[leveloffset=+1]
 
@@ -57,11 +70,8 @@ include::partial$configuration/tinycomments_delete_all.adoc[leveloffset=+1]
 
 include::partial$configuration/tinycomments_lookup.adoc[leveloffset=+1]
 
-== Optional options
+== Optional callback functions
 
-* xref:tinycomments_resolve[`+tinycomments_resolve+`]
-* xref:tinycomments_fetch[`+tinycomments_fetch+`]
-* xref:tinycomments_fetch_author_info[`+tinycomments_fetch_author_info+`]
 
 include::partial$configuration/tinycomments_resolve.adoc[leveloffset=+1]
 

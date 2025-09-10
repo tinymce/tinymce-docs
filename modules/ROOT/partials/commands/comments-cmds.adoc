@@ -3,6 +3,7 @@
 |Command |Description
 |tc-delete-conversation-at-cursor |Attempts to delete the comment at the current cursor position. A confirmation dialog will be shown prior to deletion.
 |tc-try-delete-all-conversations |Attempts to delete all comments in the editor. A confirmation dialog will be shown prior to deletion.
+|ToggleSidebar |Toggles the comments sidebar open or closed. When used with the 'showcomments' parameter, specifically controls the comments sidebar.
 |===
 
 .Examples
@@ -10,4 +11,5 @@
 ----
 tinymce.activeEditor.execCommand('tc-delete-conversation-at-cursor');
 tinymce.activeEditor.execCommand('tc-try-delete-all-conversations');
+tinymce.activeEditor.execCommand('ToggleSidebar', false, 'showcomments');
 ----

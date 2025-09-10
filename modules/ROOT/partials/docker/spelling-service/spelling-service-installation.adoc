@@ -97,8 +97,8 @@ ephox {
 
   allowed-origins {
     origins = [
-      "<http://example.com>",
-      "<http://good.com> ",
+      "http://example.com",
+      "http://good.com",
       "*.my.company.org"
     ]
   }

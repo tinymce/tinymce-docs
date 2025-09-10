@@ -90,8 +90,8 @@ Here is an example of the `application.conf` file with the basic configurations:
 ephox {
   allowed-origins {
     origins = [
-      "<http://example.com>",
-      "<http://good.com> ",
+      "http://example.com",
+      "http://good.com",
       "*.my.company.org"
     ]
   }

@@ -9,6 +9,8 @@
 
 include::partial$misc/admon-premium-plugin.adoc[]
 
+include::partial$misc/admon-inline-not-supported.adoc[]
+
 The {pluginname} plugin provides comprehensive control over document metadata and properties. It enables users to edit HTML document metadata such as title, keywords, and description through an intuitive dialog interface. When combined with the code plugin, it also exposes the complete HTML structure including `<head>`, `<body>`, and various meta tags in the source code view.
 
 
@@ -32,6 +34,44 @@ tinymce.init({
   fullpagehtml_default_doctype: '<!DOCTYPE html>'
 });
 ----
+
+[WARNING]
+====
+**Meta tags may be removed by XSS sanitization**
+
+By default, {productname} sanitizes HTML content to protect against XSS attacks, which may remove certain meta tags from the full page HTML. If integrators experience issues with meta tags being removed, the following configuration options are available, though not advisable:
+
+* `xss_sanitization: false` - Disables DOMPurify.
+* `valid_elements: '*[*]'` - Allows all elements and attributes.
+
+See xref:security.adoc#xss_sanitization-option[xss_sanitization option] and xref:content-filtering.adoc#valid_elements[valid_elements option] for more information.
+
+**Preserving meta tags (advanced configuration)**
+
+If meta tags are being removed by XSS sanitization, the editor can be configured to preserve them using one of the following approaches, though these options are **not recommended**:
+
+.Example: using `+xss_sanitization+` to disable DOMPurify
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'fullpagehtml',
+  toolbar: 'fullpagehtml',
+  xss_sanitization: false  // Disables DOMPurify, TinyMCE's built-in XSS sanitization which allows potentially unsafe HTML content to be inserted
+});
+----
+
+.Example: using `+valid_elements+` to allow all elements and attributes
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'fullpagehtml',
+  toolbar: 'fullpagehtml',
+  valid_elements: '*[*]'  // Allows all elements and attributes - use with caution
+});
+----
+====
 
 == Options
 

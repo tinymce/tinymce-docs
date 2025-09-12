@@ -42,7 +42,7 @@ tinymce.init({
 By default, {productname} sanitizes HTML content to protect against XSS attacks, which may remove certain meta tags from the full page HTML. If integrators experience issues with meta tags being removed, the following configuration options are available, though not advisable:
 
 * `xss_sanitization: false` - Disables DOMPurify.
-* `valid_elements: '*[*]'` - Allows all elements and attributes.
+* `valid_elements: '+*[*]'+` - Allows all elements and attributes.
 
 See xref:security.adoc#xss_sanitization-option[xss_sanitization option] and xref:content-filtering.adoc#valid_elements[valid_elements option] for more information.
 

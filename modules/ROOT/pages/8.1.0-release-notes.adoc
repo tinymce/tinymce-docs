@@ -67,7 +67,7 @@ Previously, the AI Assistant plugin dialog preview did not adhere to the xref:ti
 
 In {productname} {release-version}, the dialog preview now applies the configured content security policy when provided, ensuring that external resources are restricted according to the editor's security settings. This improvement enhances consistency, strengthens security, and aligns the plugin with user-defined policies in {productname}.
 
-For information on the **AI Assistant** plugin, see: xref:ai.adoc[AI Assistant] or `+content_security_policy+` option see xref:tinymce-and-csp.adoc#content_security_policy[Content Security Policy].
+For information on the **AI Assistant** plugin, see: xref:ai.adoc[AI Assistant], or for information on the `+content_security_policy+` option see xref:tinymce-and-csp.adoc#content_security_policy[Content Security Policy].
 
 
 [[improvements]]

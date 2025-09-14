@@ -70,6 +70,49 @@ Previously, {productname} generated default avatars inconsistently in the Commen
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to Tiny Comments].
 
+=== Mentions
+
+The {productname} {release-version} release includes an accompanying release of the **Mentions** premium plugin.
+
+**Mentions** Premium plugin includes the following improvement.
+
+==== Users without avatars now display avatar placeholders in the mentions dropdown
+// #TINY-12473
+
+Previously, the mentions dropdown did not properly handle cases where users lacked profile avatars, resulting in a visually inconsistent and unclear user interface. This impacted usability by making it harder to distinguish between users without avatars and those with incomplete or broken profile information.
+
+In {productname} {release-version}, this issue has been addressed. Now, {productname} provides a default avatar placeholder for users without avatars, ensuring a consistent and polished experience when using the mentions dropdown.
+
+For information on the **Mentions** plugin, see: xref:mentions.adoc[Mentions].
+
+=== AI Assistant
+
+The {productname} {release-version} release includes an accompanying release of the **AI Assistant** premium plugin.
+
+**AI Assistant** includes the following fix.
+
+==== AI Assistant plugin dialog preview now respects the `content_security_policy` editor option
+// TINY-12800
+
+Previously, the AI Assistant plugin dialog preview did not adhere to the xref:tinymce-and-csp.adoc#content_security_policy[content_security_policy] editor option, resulting in limited control over the loading of external resources such as images.
+
+In {productname} {release-version}, the dialog preview now applies the configured content security policy when provided, ensuring that external resources are restricted according to the editor's security settings. This improvement enhances consistency, strengthens security, and aligns the plugin with user-defined policies in {productname}.
+
+For information on the **AI Assistant** plugin, see: xref:ai.adoc[AI Assistant], or for information on the `+content_security_policy+` option see xref:tinymce-and-csp.adoc#content_security_policy[Content Security Policy].
+
+=== Suggested Edits
+
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
+
+**Suggested Edits** includes the following improvement.
+
+==== Added keyboard navigation to the Suggested Edits plugin
+// #TINY-11452
+
+The initial release of the Suggested Edits plugin did not support keyboard navigation, limiting accessibility for users who rely on keyboard-based interactions. This restriction made it difficult to move through and interact with the suggested edits sidebar and cards without using a mouse. To improve usability and accessibility, keyboard navigation has been implemented in the Suggested Edits plugin. Users can now efficiently navigate and interact with the plugin using the keyboard.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
+
 
 [[improvements]]
 == Improvements
@@ -124,6 +167,13 @@ For information on the **Comments** plugin, see: xref:introduction-to-tiny-comme
 // #TINY-vwxyz1
 
 // CCFR here.
+
+=== Cursor movement did not operate correctly after a `figure` was selected
+// #TINY-12458
+
+In previous versions of {productname}, using the TAB key to move focus into a `figcaption` element after selecting a `figure` caused the editor to enter a broken state where the caret was displayed inside the figcaption but typing did not produce any visible content. This issue prevented users from editing figcaptions using only the keyboard, forcing them to rely on a mouse or other pointing device to make changes.
+
+In {productname} {release-version}, this bug has been fixed, ensuring that figcaptions can now be edited seamlessly with keyboard navigation alone, improving accessibility and overall editing efficiency.
 
 
 [[security-fixes]]

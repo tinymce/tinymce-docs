@@ -72,8 +72,6 @@ Previously, and issue was identified where clicking the editor's horizontal scro
 
 {productname} {release-version} addresses this issue. Now, the editor avoids taking focus when users click elements that are not selectable (such as scrollbars), preventing unintended vertical scrolling.
 
-[NOTE]
-Due to browser limitations, the caret may still initialize at the start of the editor content when the selection is not determinable from such interactions, but the page no longer scrolls away from the user's current view.
 
 
 [[additions]]

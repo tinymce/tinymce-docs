@@ -54,6 +54,19 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Suggested Edits
+
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
+
+**Suggested Edits** includes the following improvement.
+
+==== Added keyboard navigation to the Suggested Edits plugin
+// #TINY-11452
+
+The initial release of the Suggested Edits plugin did not support keyboard navigation, limiting accessibility for users who rely on keyboard-based interactions. This restriction made it difficult to move through and interact with the suggested edits sidebar and cards without using a mouse. To improve usability and accessibility, keyboard navigation has been implemented in the Suggested Edits plugin. Users can now efficiently navigate and interact with the plugin using the keyboard.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
+
 
 [[improvements]]
 == Improvements

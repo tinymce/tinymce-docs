@@ -49,7 +49,6 @@ If integrators encounter issues with required elements being removed, the follow
 Note that `extended_valid_elements` is *additive*, so all standard elements and attributes remain valid while additional ones are permitted.
 
 For more details, see xref:security.adoc#xss_sanitization-option[xss_sanitization option] and xref:content-filtering.adoc#valid_elements[valid_elements option].
-====
 
 .Example: disabling DOMPurify with `xss_sanitization`
 [source,js]
@@ -84,20 +83,16 @@ tinymce.init({
 });
 ----
 
-[NOTE]
-====
 Support for the RDFa `property` attribute on `<meta>` elements is planned for inclusion in the default {productname} schema in version 8.2. If you require this attribute now, use `extended_valid_elements` as shown above.
 ====
 
-[WARNING]
+[NOTE]
 ====
 **Incompatibility with Suggested Edits and Revision History**
 
 The Full Page HTML plugin is not compatible with the Suggested Edits and Revision History plugins. Document properties and metadata set by the Full Page HTML plugin are not currently preserved when using these collaboration features, and may be lost during the review process.
 
-**Recommendation:** Avoid using the Full Page HTML plugin in combination with Suggested Edits or Revision History plugins to prevent data loss of document metadata and properties at this current time until this issue is resolved.
-
-For more information, see the xref:8.1.0-release-notes.adoc#full-page-html-plugin-incompatibility-with-suggested-edits-and-revision-history[known issue] in the {productname} 8.1.0 release notes.
+**Recommendation:** Avoid using the {pluginname} plugin in combination with Suggested Edits or Revision History plugins to prevent data loss of document metadata and properties at this current time until this issue is resolved.
 ====
 
 == Options

@@ -54,6 +54,22 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+
+=== Spell Checker
+
+The {productname} {release-version} release includes an accompanying release of the **Spell Checker** premium plugin.
+
+**Spell Checker** Premium plugin includes the following fix.
+
+==== Spellcheck could create an invalid selection if the first element in the document was `+noneditable+`.
+// #TINY-12514
+
+Previously when the first element of a document was set as a `contenteditable="false"` (CEF) element, selecting all content with {productname} spellchecker could result in an invalid selection state. This issue prevented the deletion of the entire content selection, creating an edge case that disrupted normal editing workflows.
+
+To resolve this, {productname} now inserts a temporary hidden element before the initial CEF element in such scenarios. This adjustment ensures that full selections are valid and can be deleted as expected.
+
+For information on the **Spell Checker** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker].
+
 === Comments
 
 The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
@@ -193,6 +209,7 @@ Previously empty editor operations were sometimes incorrectly displayed as modif
 To resolve this, empty content is no longer sent. When the editor is empty or becomes empty, the entire state is now correctly represented as added or removed. This improvement ensures that change tracking is clearer and more accurate, reducing confusion when editors contain no content.
 
 For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
+
 
 [[improvements]]
 == Improvements

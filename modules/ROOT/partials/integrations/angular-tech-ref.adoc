@@ -148,7 +148,7 @@ include::partial$integrations/common/license-key-property.adoc[]
 ----
 
 [TIP]
-The `+licenseKey="gpl"+` property must be set on the `<editor>` component.
+The `+licenseKey="gpl"+` property must be set on the `<editor>` component when using TinyMCE 8 and above.
 
 [[cloudchannel]]
 === `+cloudChannel+`

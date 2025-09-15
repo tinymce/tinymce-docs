@@ -54,6 +54,21 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Accessibility Checker
+
+The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.
+
+**Accessibility Checker** includes the following improvement.
+
+==== `+alt+` text length error message now shows current and maximum character counts
+// #TINY-12569
+
+Previous versions of **Accessibility Checker**, the `+alt+` text length validation error displayed only the current character count, such as "_Currently 151 characters_" without indicating the maximum allowed length. This caused unclear guidance for users and negatively affected the experience across all image rules (I1–I4) that rely on length validation, making it inconsistent with accessibility best practices.
+
+In {productname} {release-version}, the error message for **Accessibility Checker** has been updated to show both the current and maximum character counts, for example: "_151 characters (maximum 150 allowed)_." This improvement provides clear, actionable error messaging that aligns with accessibility guidance and reduces user confusion across all affected rules.
+
+For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
+
 === Revision History
 
 The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.

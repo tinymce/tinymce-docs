@@ -54,6 +54,22 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Comments
+
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** Premium plugin includes the following fixes and improvement. 
+
+==== Default avatars generated inconsistently
+// The same user avatar was generated for all users without an avatar in the mentions dropdown.
+// The same user could receive two different default avatars.
+// Default avatars are now generated with a consistent color based on the user id.
+// #TINY-12526 #TINY-12532 #TINY-12633
+
+Previously, {productname} generated default avatars inconsistently in the Comments plugin. Users without avatars saw the same placeholder avatar in the mentions dropdown, while the same individual could also receive different default avatars in other contexts. This inconsistency made it difficult to distinguish users and, in some cases, created confusion by making a single user appear as two different people. In {release-version}, this issue has been fixed, and default avatars are now consistently generated with a stable color based on the `+user_id+`. This ensures that the same user always has the same default avatar, improving clarity and providing a more reliable user experience.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to Tiny Comments].
+
 === Mentions
 
 The {productname} {release-version} release includes an accompanying release of the **Mentions** premium plugin.

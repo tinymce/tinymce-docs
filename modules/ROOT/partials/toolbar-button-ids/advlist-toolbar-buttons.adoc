@@ -1,0 +1,8 @@
+[cols="1,3",options="header"]
+|===
+|Toolbar button identifier |Description
+|`+bullist+` |Formats the current selection as a bullet list with dropdown options for different bullet styles (disc, circle, square).
+|`+numlist+` |Formats the current selection as a numbered list with dropdown options for different number styles (decimal, alpha, roman, greek).
+|===
+
+NOTE: The {pluginname} plugin extends the core `+bullist+` and `+numlist+` toolbar buttons by adding dropdown arrows that allow users to select from different list styles. These buttons are provided by the core `+lists+` plugin, but the dropdown functionality is added by the {pluginname} plugin.

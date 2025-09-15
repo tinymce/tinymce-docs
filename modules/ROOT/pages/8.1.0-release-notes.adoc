@@ -138,9 +138,10 @@ The following premium plugin updates were released alongside {productname} {rele
 
 This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
 
-There <is one | are <number> known issue<s> in {productname} {release-version}.
+There is one known issue in {productname} {release-version}.
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Full Page HTML plugin incompatibility with Suggested Edits and Revision History
 
-// CCFR here.
+The Full Page HTML plugin enables document properties and metadata to be set. However, these are not picked up by Suggested Edits and Revision History, and actions performed in these plugins will overwrite the values set by the Full Page plugin.
+
+**Workaround:** Avoid using the Full Page HTML plugin in combination with Suggested Edits or Revision History plugins to prevent data loss of document metadata and properties.

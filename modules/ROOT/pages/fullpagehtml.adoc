@@ -73,6 +73,17 @@ tinymce.init({
 ----
 ====
 
+[WARNING]
+====
+**Incompatibility with Suggested Edits and Revision History**
+
+The Full Page HTML plugin is not compatible with the Suggested Edits and Revision History plugins. Document properties and metadata set by the Full Page HTML plugin are not currently preserved when using these collaboration features, and may be lost during the review process.
+
+**Recommendation:** Avoid using the Full Page HTML plugin in combination with Suggested Edits or Revision History plugins to prevent data loss of document metadata and properties at this current time until this issue is resolved.
+
+For more information, see the xref:8.1.0-release-notes.adoc#full-page-html-plugin-incompatibility-with-suggested-edits-and-revision-history[known issue] in the {productname} 8.1.0 release notes.
+====
+
 == Options
 
 The following configuration options affect the behavior of the {pluginname} plugin.

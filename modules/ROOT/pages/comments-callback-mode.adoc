@@ -17,7 +17,7 @@ Callback mode provides the most flexibility for integrating with custom backend 
 
 All callback functions accept three parameters: a request object (or array for `+tinycomments_fetch+`), a `+done+` callback, and a `+fail+` callback. The function return type is not important, but all functions must call exactly one of these two callbacks: `+fail+` or `+done+`.
 
-* The `+fail+` callback takes either a string or a JavaScript Error type to indicate an unrecoverable error.
+* The `+fail+` callback takes an argument specific to each function.
 * The `+done+` callback takes an argument specific to each function to indicate successful completion.
 
 Most functions (create, reply, and edit) require an `+id+` identifying the current author. This can be provided directly within the callbacks or dynamically via the `+tinycomments_fetch_author_info+` option.

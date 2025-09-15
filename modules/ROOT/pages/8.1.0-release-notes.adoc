@@ -351,6 +351,24 @@ In previous versions of {productname}, using the TAB key to move focus into a `f
 
 In {productname} {release-version}, this bug has been fixed, ensuring that figcaptions can now be edited seamlessly with keyboard navigation alone, improving accessibility and overall editing efficiency.
 
+=== Links inserted with `+&amp;+` encoding are now decoded to `&` before inserting
+// #TINY-12504
+
+Previously, when pasting URLs containing encoded ampersands `+&amp;+` into {productname}, the encoded values were preserved, resulting in double encoding when the link was inserted into content. For example, a pasted link such as
+
+[source,text]
+----
+https://example.com/search?&amp;query=example
+----
+would appear in the editor source as
+
+[source,text]
+----
+https://example.com/search?&amp;amp;query=example
+----
+
+This caused issues when opening such links, as the URLs became invalid. In {release-version}, {productname} now automatically decodes `+&amp;+` back to `+&+` before inserting the link, ensuring that pasted URLs remain valid and functional in both the editor and the source code.
+
 
 [[security-fixes]]
 == Security fixes

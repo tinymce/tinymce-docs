@@ -144,6 +144,14 @@ For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc
 
 // CCFR here.
 
+=== Clicking on a non selectable element when the selection is off screen no longer scrolls to the selection
+// #TINY-12245
+
+Previously, and issue was identified where clicking the editor's horizontal scrollbar a "non-selectable" UI element implicitly focused the editor, placed the caret at the beginning of the content, and then scrolled the document vertically to that caret position, causing the page to scroll away from the user's current view.
+
+{productname} {release-version} addresses this issue. Now, the editor avoids taking focus when users click elements that are not selectable (such as scrollbars), preventing unintended vertical scrolling.
+
+
 
 [[additions]]
 == Additions

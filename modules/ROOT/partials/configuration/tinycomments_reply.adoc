@@ -43,9 +43,9 @@ const reply_comment = (ref, done, fail) => {
       return response.json();
     })
     .then((ref2) => {
-      let commentUid = ref2.commentUid;
+      const commentUid = ref2.commentUid;
       done({
-        commentUid: replyUid,
+        commentUid: commentUid,
         author: currentUser.id,
         authorName: currentUser.fullName
       });

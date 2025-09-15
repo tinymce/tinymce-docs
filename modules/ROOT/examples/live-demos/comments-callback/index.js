@@ -69,9 +69,9 @@ const tinycomments_create = (req, done, fail) => {
   };
 
 const tinycomments_reply = (req, done) => {
-  const replyUid = 'annotation-' + randomString();
+  const commentUid = 'annotation-' + randomString();
   conversationDb[req.conversationUid].comments.push({
-    uid: replyUid,
+    uid: commentUid,
     author: user_id,
     authorName: 'James Wilson',
     authorAvatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg',
@@ -79,7 +79,7 @@ const tinycomments_reply = (req, done) => {
     createdAt: req.createdAt,
     modifiedAt: req.createdAt
   });
-  setTimeout(() => done({ commentUid: replyUid }), fakeDelay);
+  setTimeout(() => done({ commentUid: commentUid }), fakeDelay);
 };
 
 const tinycomments_delete = (req, done) => {

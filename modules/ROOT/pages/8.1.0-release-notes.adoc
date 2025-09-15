@@ -54,6 +54,85 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Revision History
+
+The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
+
+**Revision History** includes the following fix and improvement.
+
+==== The same user could receive two different default avatars
+// #TINY-12527
+
+In previous versions of Revision History, the same user could receive two different default avatars. This inconsistency could make a single user appear as two distinct contributors, creating confusion when reviewing revision logs.
+
+In {productname} {release-version}, the issue has been resolved so that each user is now always assigned the same default avatar, improving accuracy and consistency in the revision history display.
+
+==== Default avatars are now generated with a consistent color based on the `user_id`
+// #TINY-12527
+
+Default avatars are now generated consistently using the `user_id`, ensuring that users are assigned a reliable and predictable color for their avatar. This improvement enhances the user experience by providing clear visual consistency when identifying contributors in revision histories.
+
+For information on the **Revision History** plugin, see: xref:revisionhistory.adoc[Revision History].
+
+=== Comments
+
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** Premium plugin includes the following fixes and improvement. 
+
+==== Default avatars generated inconsistently
+// The same user avatar was generated for all users without an avatar in the mentions dropdown.
+// The same user could receive two different default avatars.
+// Default avatars are now generated with a consistent color based on the user id.
+// #TINY-12526 #TINY-12532 #TINY-12633
+
+Previously, {productname} generated default avatars inconsistently in the Comments plugin. Users without avatars saw the same placeholder avatar in the mentions dropdown, while the same individual could also receive different default avatars in other contexts. This inconsistency made it difficult to distinguish users and, in some cases, created confusion by making a single user appear as two different people. In {release-version}, this issue has been fixed, and default avatars are now consistently generated with a stable color based on the `+user_id+`. This ensures that the same user always has the same default avatar, improving clarity and providing a more reliable user experience.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to Tiny Comments].
+
+=== Mentions
+
+The {productname} {release-version} release includes an accompanying release of the **Mentions** premium plugin.
+
+**Mentions** Premium plugin includes the following improvement.
+
+==== Users without avatars now display avatar placeholders in the mentions dropdown
+// #TINY-12473
+
+Previously, the mentions dropdown did not properly handle cases where users lacked profile avatars, resulting in a visually inconsistent and unclear user interface. This impacted usability by making it harder to distinguish between users without avatars and those with incomplete or broken profile information.
+
+In {productname} {release-version}, this issue has been addressed. Now, {productname} provides a default avatar placeholder for users without avatars, ensuring a consistent and polished experience when using the mentions dropdown.
+
+For information on the **Mentions** plugin, see: xref:mentions.adoc[Mentions].
+
+=== AI Assistant
+
+The {productname} {release-version} release includes an accompanying release of the **AI Assistant** premium plugin.
+
+**AI Assistant** includes the following fix.
+
+==== AI Assistant plugin dialog preview now respects the `content_security_policy` editor option
+// TINY-12800
+
+Previously, the AI Assistant plugin dialog preview did not adhere to the xref:tinymce-and-csp.adoc#content_security_policy[content_security_policy] editor option, resulting in limited control over the loading of external resources such as images.
+
+In {productname} {release-version}, the dialog preview now applies the configured content security policy when provided, ensuring that external resources are restricted according to the editor's security settings. This improvement enhances consistency, strengthens security, and aligns the plugin with user-defined policies in {productname}.
+
+For information on the **AI Assistant** plugin, see: xref:ai.adoc[AI Assistant], or for information on the `+content_security_policy+` option see xref:tinymce-and-csp.adoc#content_security_policy[Content Security Policy].
+
+=== Suggested Edits
+
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
+
+**Suggested Edits** includes the following improvement.
+
+==== Added keyboard navigation to the Suggested Edits plugin
+// #TINY-11452
+
+The initial release of the Suggested Edits plugin did not support keyboard navigation, limiting accessibility for users who rely on keyboard-based interactions. This restriction made it difficult to move through and interact with the suggested edits sidebar and cards without using a mouse. To improve usability and accessibility, keyboard navigation has been implemented in the Suggested Edits plugin. Users can now efficiently navigate and interact with the plugin using the keyboard.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
+
 
 [[improvements]]
 == Improvements
@@ -115,6 +194,13 @@ The following premium plugin updates were released alongside {productname} {rele
 In {productname} {release-version}, a Firefox-specific limitation prevented caret movement between editable elements when navigating with the keyboard. The caret became trapped inside a +figcaption+, blocking vertical navigation using the Arrow Down key and preventing users from moving to the next element.
 
 This issue disrupted accessibility and editing flow for Firefox users relying on keyboard interactions. To resolve this, a new caret navigation module was introduced and integrated into the Firefox-specific arrow key handling logic. The solution works around a long-standing Firefox bug by programmatically advancing the caret out of blocked states, ensuring smoother and more consistent keyboard navigation across editable elements.
+
+=== Cursor movement did not operate correctly after a `figure` was selected
+// #TINY-12458
+
+In previous versions of {productname}, using the TAB key to move focus into a `figcaption` element after selecting a `figure` caused the editor to enter a broken state where the caret was displayed inside the figcaption but typing did not produce any visible content. This issue prevented users from editing figcaptions using only the keyboard, forcing them to rely on a mouse or other pointing device to make changes.
+
+In {productname} {release-version}, this bug has been fixed, ensuring that figcaptions can now be edited seamlessly with keyboard navigation alone, improving accessibility and overall editing efficiency.
 
 
 [[security-fixes]]

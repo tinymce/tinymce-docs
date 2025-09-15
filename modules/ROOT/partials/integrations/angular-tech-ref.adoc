@@ -97,6 +97,7 @@ The editor accepts the following properties:
 <editor
   apiKey="no-api-key"
   cloudChannel="{productmajorversion}"
+  licenseKey="gpl"
   [disabled]="false"
   [readonly]="false"
   id=""
@@ -145,6 +146,9 @@ include::partial$integrations/common/license-key-property.adoc[]
 ----
 <editor licenseKey="gpl" />
 ----
+
+[TIP]
+The `+licenseKey="gpl"+` property must be set on the `<editor>` component.
 
 [[cloudchannel]]
 === `+cloudChannel+`

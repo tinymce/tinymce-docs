@@ -38,20 +38,20 @@ If set up correctly, the logs should display output similar to the following:
 
 [source, log]
 ----
-2025-01-02 11:06:45 [io-compute-8] INFO  navi - navi
+2025-09-15 04:46:17 [io-compute-3] INFO  navi - navi
 ...
-2025-01-02 11:06:45 [io-compute-blocker-8] INFO  navi - -> Raw Config assembled from various sources: ConfigOrigin(merge of /ephox-hyperlinking/ephox-hyperlinking-docker-env.conf: 1,system properties,reference.conf @ jar:file:/ephox-hyperlinking/ephox-hyperlinking.jar!/reference.conf: 1)
-2025-01-02 11:06:46 [io-compute-blocker-8] WARN  c.e.d.config.AllowedOriginsConfig$ - No allowed-origins specified in config!
-2025-01-02 11:06:46 [io-compute-blocker-8] WARN  c.e.d.config.AllowedOriginsConfig$ - No allowed-origins specified in config!
-2025-01-02 11:06:46 [io-compute-blocker-8] INFO  navi - navi config loaded successfully: NaviConfig(LinkCheckerConfig(true,ReturnUnknown),true,CacheConfig(10000,86400 seconds,3600 seconds),SdkServiceWithClientConfig(HttpConfig(100,10,10,3,HttpConfigTimeouts(10,10,10),JvmTrustModel()),None,OriginWhitelist(List(),OriginPrecision(true))),SelfHostedMediaSourcesConfig(CustomEmbedPlugins(UrlTrie(Branch(None,TreeMap()),Branch(None,TreeMap()))),None),OriginWhitelist(List(),OriginPrecision(true)),Logger[navi])
-2025-01-02 11:06:46 [io-compute-9] INFO  o.h.b.c.nio1.NIO1SocketServerGroup - Service bound to address /0:0:0:0:0:0:0:0:19100
-2025-01-02 11:06:46 [io-compute-9] INFO  o.h.blaze.server.BlazeServerBuilder -
+2025-09-15 04:46:17 [io-compute-blocker-3] INFO  navi - -> Raw Config assembled from various sources: ConfigOrigin(merge of /app/application.conf: 1,system properties,reference.conf @ jar:file:/app/navi.jar!/reference.conf: 1)
+2025-09-15 04:46:17 [io-compute-blocker-3] WARN  c.e.d.config.AllowedOriginsConfig$ - No allowed-origins specified in config!
+2025-09-15 04:46:17 [io-compute-blocker-3] WARN  c.e.d.config.AllowedOriginsConfig$ - No allowed-origins specified in config!
+2025-09-15 04:46:17 [io-compute-blocker-3] INFO  navi - navi config loaded successfully: NaviConfig(LinkCheckerConfig(true,ReturnUnknown),true,CacheConfig(10000,86400 seconds,3600 seconds),SdkServiceWithClientConfig(HttpConfig(100,10,10,3,HttpConfigTimeouts(10,10,10),JvmTrustModel()),None,OriginWhitelist(List(),OriginPrecision(true))),SelfHostedMediaSourcesConfig(CustomEmbedPlugins(UrlTrie(Branch(None,TreeMap()),Branch(None,TreeMap()))),None),OriginWhitelist(List(),OriginPrecision(true)),Logger[navi])
+2025-09-15 04:46:18 [io-compute-blocker-3] INFO  o.h.b.c.nio1.NIO1SocketServerGroup - Service bound to address /[0:0:0:0:0:0:0:0]:19100
+2025-09-15 04:46:18 [io-compute-blocker-3] INFO  o.h.blaze.server.BlazeServerBuilder -
   _   _   _        _ _
  | |_| |_| |_ _ __| | | ___
- | ' \\  _|  _| '_ \\_  _(_-<
- |_||_\\__|\\__| .__/ |_|/__/
+ | ' \  _|  _| '_ \_  _(_-<
+ |_||_\__|\__| .__/ |_|/__/
              |_|
-2025-01-02 11:06:46 [io-compute-9] INFO  o.h.blaze.server.BlazeServerBuilder - http4s v0.23.27 on blaze v0.23.16 started at http://[::]:19100/
+2025-09-15 04:46:18 [io-compute-blocker-3] INFO  o.h.blaze.server.BlazeServerBuilder - http4s v0.23.27 on blaze v0.23.16 started at http://[::]:19100/
 ----
 
 Running this command will generate a log warning about `allowed-origins` not being configured. This is expected, as it will be set up in the next step.
@@ -157,39 +157,39 @@ If the setup is correct, the initiation logs should appear as follows:
 +
 [source, log]
 ----
- ✔ Container hyperlinking-tiny-hyperlinking-tiny-1  Recreated                                                                                                                                                                     0.1s
+✔ Container hyperlinking-tiny-hyperlinking-tiny-1                                                                                                                         Created        0.1s
 Attaching to hyperlinking-tiny-1
-hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-1] INFO  navi - navi
-
+hyperlinking-tiny-1  | 2025-09-15 04:57:29 [io-compute-7] INFO  navi - navi
 ...
-
--> Found value for property: /ephox-hyperlinking/ephox-hyperlinking-docker-env.conf
-hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  navi -       * Parsing config defined by /ephox-hyperlinking/ephox-hyperlinking-docker-env.conf from property: ephox.config.file
-hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  navi -         -> Processing file: /ephox-hyperlinking/ephox-hyperlinking-docker-env.conf
-hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  navi -   * External application.conf => /opt/ephox/application.conf
-hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  navi -     * Optional File (/opt/ephox/application.conf). Defaults to empty if file not found
-hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  navi - * Internal Configuration
-hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  navi -   -> No extra internal configuration specified - skipping
-hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  navi - * Default (Reference) Configuration
-hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  navi -   * Loading configuration files from classpath (reference.conf and integration.conf). Neither is required.
-hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  navi - -> Raw Config assembled from various sources: ConfigOrigin(merge of /ephox-hyperlinking/ephox-hyperlinking-docker-env.conf: 1,system properties,reference.conf @ jar:file:/ephox-hyperlinking/ephox-hyperlinking.jar!/reference.conf: 1)
-hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  c.e.d.config.AllowedOriginsConfig$ - Read allowed-origins config (ignoring ports = true) as:
-hyperlinking-tiny-1  |  - localhost
+-> Found value for property: /app/application.conf
+hyperlinking-tiny-1  | 2025-09-15 04:57:29 [io-compute-blocker-7] INFO  navi -       * Parsing config defined by /app/application.conf from property: ephox.config.file
+hyperlinking-tiny-1  | 2025-09-15 04:57:29 [io-compute-blocker-7] INFO  navi -         -> Processing file: /app/application.conf
+hyperlinking-tiny-1  | 2025-09-15 04:57:29 [io-compute-blocker-7] INFO  navi -   * External application.conf => /opt/ephox/application.conf
+hyperlinking-tiny-1  | 2025-09-15 04:57:29 [io-compute-blocker-7] INFO  navi -     * Optional File (/opt/ephox/application.conf). Defaults to empty if file not found
+hyperlinking-tiny-1  | 2025-09-15 04:57:29 [io-compute-blocker-7] INFO  navi - * Internal Configuration
+hyperlinking-tiny-1  | 2025-09-15 04:57:29 [io-compute-blocker-7] INFO  navi -   -> No extra internal configuration specified - skipping
+hyperlinking-tiny-1  | 2025-09-15 04:57:29 [io-compute-blocker-7] INFO  navi - * Default (Reference) Configuration
+hyperlinking-tiny-1  | 2025-09-15 04:57:29 [io-compute-blocker-7] INFO  navi -   * Loading configuration files from classpath (reference.conf and integration.conf). Neither is required.
+hyperlinking-tiny-1  | 2025-09-15 04:57:29 [io-compute-blocker-7] INFO  navi - -> Raw Config assembled from various sources: ConfigOrigin(merge of /app/application.conf: 1,system properties,reference.conf @ jar:file:/app/navi.jar!/reference.conf: 1)
+hyperlinking-tiny-1  | 2025-09-15 04:57:29 [io-compute-blocker-7] INFO  c.e.d.config.AllowedOriginsConfig$ - Read allowed-origins config (ignoring ports = true) as:
 hyperlinking-tiny-1  |  - localhost:8000
-hyperlinking-tiny-1  |  - ephox.com
-hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  c.e.d.config.AllowedOriginsConfig$ - Read allowed-origins config (ignoring ports = true) as:
-hyperlinking-tiny-1  |  - localhost
+hyperlinking-tiny-1  |  - example.com
+hyperlinking-tiny-1  |  - good.com
+hyperlinking-tiny-1  |  - my.company.org
+hyperlinking-tiny-1  | 2025-09-15 04:57:29 [io-compute-blocker-7] INFO  c.e.d.config.AllowedOriginsConfig$ - Read allowed-origins config (ignoring ports = true) as:
 hyperlinking-tiny-1  |  - localhost:8000
-hyperlinking-tiny-1  |  - ephox.com
-hyperlinking-tiny-1  | 2025-01-02 16:17:28 [io-compute-blocker-1] INFO  navi - navi config loaded successfully: NaviConfig(LinkCheckerConfig(true,ReturnUnknown),true,CacheConfig(10000,86400 seconds,3600 seconds),SdkServiceWithClientConfig(HttpConfig(100,10,10,3,HttpConfigTimeouts(15,15,15),JvmTrustModel()),None,OriginWhitelist(List(localhost, localhost:8000, ephox.com),OriginPrecision(true))),SelfHostedMediaSourcesConfig(CustomEmbedPlugins(UrlTrie(Branch(None,TreeMap()),Branch(None,TreeMap(org -> Branch(None,TreeMap(wikipedia -> Branch(None,TreeMap(en -> Branch(Some(PathMatcher(List((wiki/.*,WikipediaEmbedPlugin(https://en.wikipedia.org/w/api.php,10))))),TreeMap()))))))))),None),OriginWhitelist(List(localhost, localhost:8000, ephox.com),OriginPrecision(true)),Logger[navi])
-hyperlinking-tiny-1  | 2025-01-02 16:17:29 [io-compute-6] INFO  o.h.b.c.nio1.NIO1SocketServerGroup - Service bound to address /0:0:0:0:0:0:0:0:19100
-hyperlinking-tiny-1  | 2025-01-02 16:17:29 [io-compute-6] INFO  o.h.blaze.server.BlazeServerBuilder -
+hyperlinking-tiny-1  |  - example.com
+hyperlinking-tiny-1  |  - good.com
+hyperlinking-tiny-1  |  - my.company.org
+hyperlinking-tiny-1  | 2025-09-15 04:57:29 [io-compute-blocker-7] INFO  navi - navi config loaded successfully: NaviConfig(LinkCheckerConfig(true,ReturnUnknown),true,CacheConfig(10000,86400 seconds,3600 seconds),SdkServiceWithClientConfig(HttpConfig(100,10,10,3,HttpConfigTimeouts(15,15,15),JvmTrustModel()),None,OriginWhitelist(List(localhost:8000, example.com, good.com, my.company.org),OriginPrecision(true))),SelfHostedMediaSourcesConfig(CustomEmbedPlugins(UrlTrie(Branch(None,TreeMap()),Branch(None,TreeMap(org -> Branch(None,TreeMap(wikipedia -> Branch(None,TreeMap(en -> Branch(Some(PathMatcher(List((wiki/.*,WikipediaEmbedPlugin(https://en.wikipedia.org/w/api.php,10))))),TreeMap()))))))))),None),OriginWhitelist(List(localhost:8000, example.com, good.com, my.company.org),OriginPrecision(true)),Logger[navi])
+hyperlinking-tiny-1  | 2025-09-15 04:57:30 [io-compute-blocker-7] INFO  o.h.b.c.nio1.NIO1SocketServerGroup - Service bound to address /[0:0:0:0:0:0:0:0]:19100
+hyperlinking-tiny-1  | 2025-09-15 04:57:30 [io-compute-blocker-7] INFO  o.h.blaze.server.BlazeServerBuilder -
 hyperlinking-tiny-1  |   _   _   _        _ _
 hyperlinking-tiny-1  |  | |_| |_| |_ _ __| | | ___
-hyperlinking-tiny-1  |  | ' \\  _|  _| '_ \\_  _(_-<
-hyperlinking-tiny-1  |  |_||_\\__|\\__| .__/ |_|/__/
+hyperlinking-tiny-1  |  | ' \  _|  _| '_ \_  _(_-<
+hyperlinking-tiny-1  |  |_||_\__|\__| .__/ |_|/__/
 hyperlinking-tiny-1  |              |_|
-hyperlinking-tiny-1  | 2025-01-02 16:17:29 [io-compute-6] INFO  o.h.blaze.server.BlazeServerBuilder - http4s v0.23.27 on blaze v0.23.16 started at http://[::]:19100/
+hyperlinking-tiny-1  | 2025-09-15 04:57:30 [io-compute-blocker-7] INFO  o.h.blaze.server.BlazeServerBuilder - http4s v0.23.27 on blaze v0.23.16 started at http://[::]:19100/
 ----
 
 === Next Steps

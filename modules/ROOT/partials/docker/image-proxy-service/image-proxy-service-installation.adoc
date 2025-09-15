@@ -40,19 +40,19 @@ If set up correctly, the logs should display output similar to the following:
 
 [source, log]
 ----
-2025-01-08 12:03:15 [io-compute-3] INFO  emissary - emissary
+2025-09-15 05:11:23 [io-compute-4] INFO  emissary - emissary
 ...
-2025-01-08 12:03:16 [io-compute-blocker-3] INFO  emissary - -> Raw Config assembled from various sources: ConfigOrigin(merge of /ephox-image-proxy/ephox-image-proxy-docker-env.conf: 1,system properties,reference.conf @ jar:file:/ephox-image-proxy/ephox-image-proxy.jar!/reference.conf: 1)
-2025-01-08 12:03:16 [io-compute-blocker-3] WARN  c.e.d.config.AllowedOriginsConfig$ - No allowed-origins specified in config!
-2025-01-08 12:03:16 [io-compute-blocker-3] INFO  emissary - emissary config loaded successfully: EmissaryConfig(SdkHttpConfig(HttpConfig(100,10,10,3,HttpConfigTimeouts(10,10,10),JvmTrustModel()),None),OriginWhitelist(List(),OriginPrecision(true)),Some(10000000))
-2025-01-08 12:03:17 [io-compute-1] INFO  o.h.b.c.nio1.NIO1SocketServerGroup - Service bound to address /0:0:0:0:0:0:0:0:19040
-2025-01-08 12:03:17 [io-compute-1] INFO  o.h.blaze.server.BlazeServerBuilder -
+2025-09-15 05:11:24 [io-compute-blocker-4] INFO  emissary - -> Raw Config assembled from various sources: ConfigOrigin(merge of /ephox-image-proxy/ephox-image-proxy-docker-env.conf: 1,system properties,reference.conf @ jar:file:/ephox-image-proxy/ephox-image-proxy.jar!/reference.conf: 1)
+2025-09-15 05:11:24 [io-compute-blocker-4] WARN  c.e.d.config.AllowedOriginsConfig$ - No allowed-origins specified in config!
+2025-09-15 05:11:24 [io-compute-blocker-4] INFO  emissary - emissary config loaded successfully: EmissaryConfig(SdkHttpConfig(HttpConfig(100,10,10,3,HttpConfigTimeouts(10,10,10),JvmTrustModel()),None),OriginWhitelist(List(),OriginPrecision(true)),Some(10000000))
+2025-09-15 05:11:24 [io-compute-7] INFO  o.h.b.c.nio1.NIO1SocketServerGroup - Service bound to address /0:0:0:0:0:0:0:0:19040
+2025-09-15 05:11:24 [io-compute-7] INFO  o.h.blaze.server.BlazeServerBuilder -
   _   _   _        _ _
  | |_| |_| |_ _ __| | | ___
- | ' \\  _|  _| '_ \\_  _(_-<
- |_||_\\__|\\__| .__/ |_|/__/
+ | ' \  _|  _| '_ \_  _(_-<
+ |_||_\__|\__| .__/ |_|/__/
              |_|
-2025-01-08 12:03:17 [io-compute-1] INFO  o.h.blaze.server.BlazeServerBuilder - http4s v0.23.27 on blaze v0.23.16 started at http://[::]:19040/
+2025-09-15 05:11:24 [io-compute-7] INFO  o.h.blaze.server.BlazeServerBuilder - http4s v0.23.27 on blaze v0.23.16 started at http://[::]:19040/
 ----
 
 Running this command will generate a log warning about `allowed-origins` not being configured. This is expected, as it will be set up in the next step.
@@ -115,14 +115,10 @@ services:
     volumes:
       - type: bind
         source: ./application.conf #change this to the path on your local machine
-        # Use the below target path if using any version below 2.111.7.
-        # target: /ephox-image-proxy/ephox-image-proxy-docker-env.conf
-        target: /app/application.conf
+        target: /ephox-image-proxy/ephox-image-proxy-docker-env.conf
         read_only: true
 ----
-+
-[NOTE]
-From version 2.111.7 onwards, the `target` path in the `volumes` option must point to `/app/application.conf` .
+
 
 . Run the service (within the same directory where `docker-compose.yaml` was placed):
 
@@ -138,40 +134,42 @@ If the setup is correct, the initiation logs should appear as follows:
 +
 [source, log]
 ----
- ✔ Container image-proxy-tiny-image-proxy-tiny-1  Created                                                                                                                                                                                                                                                         0.0s
+✔ Container image-proxy-tiny-image-proxy-tiny-1                                                                                                                         Recreated       0.0s
 Attaching to image-proxy-tiny-1
-image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-8] INFO  emissary - emissary
-image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-8] INFO  emissary - * External Configuration
-image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-8] INFO  emissary -   * External configuration via System Properties
-image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -     * parseConfigSources
-image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -       * looking up property: ephox.config.url
-image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -         -> Property not set
-image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -       * looking up property: config.url
-image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -         -> Property not set
-image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -     * parseConfigSources
-image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -       * looking up property: ephox.config.file
-image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -         -> Found value for property: /ephox-image-proxy/ephox-image-proxy-docker-env.conf
-image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -       * Parsing config defined by /ephox-image-proxy/ephox-image-proxy-docker-env.conf from property: ephox.config.file
-image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -         -> Processing file: /ephox-image-proxy/ephox-image-proxy-docker-env.conf
-image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -   * External application.conf => /opt/ephox/application.conf
-image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -     * Optional File (/opt/ephox/application.conf). Defaults to empty if file not found
-image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary - * Internal Configuration
-image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -   -> No extra internal configuration specified - skipping
-image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary - * Default (Reference) Configuration
-image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary -   * Loading configuration files from classpath (reference.conf and integration.conf). Neither is required.
-image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary - -> Raw Config assembled from various sources: ConfigOrigin(merge of /ephox-image-proxy/ephox-image-proxy-docker-env.conf: 1,system properties,reference.conf @ jar:file:/ephox-image-proxy/ephox-image-proxy.jar!/reference.conf: 1)
-image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  c.e.d.config.AllowedOriginsConfig$ - Read allowed-origins config (ignoring ports = true) as:
-image-proxy-tiny-1  |  - good.com
+image-proxy-tiny-1  | 2025-09-15 05:18:27 [io-compute-4] INFO  emissary - emissary
+image-proxy-tiny-1  | 2025-09-15 05:18:28 [io-compute-4] INFO  emissary - * External Configuration
+image-proxy-tiny-1  | 2025-09-15 05:18:28 [io-compute-4] INFO  emissary -   * External configuration via System Properties
+image-proxy-tiny-1  | 2025-09-15 05:18:28 [io-compute-blocker-4] INFO  emissary -     * parseConfigSources
+image-proxy-tiny-1  | 2025-09-15 05:18:28 [io-compute-blocker-4] INFO  emissary -       * looking up property: ephox.config.url
+image-proxy-tiny-1  | 2025-09-15 05:18:28 [io-compute-blocker-4] INFO  emissary -         -> Property not set
+image-proxy-tiny-1  | 2025-09-15 05:18:28 [io-compute-blocker-4] INFO  emissary -       * looking up property: config.url
+image-proxy-tiny-1  | 2025-09-15 05:18:28 [io-compute-blocker-4] INFO  emissary -         -> Property not set
+image-proxy-tiny-1  | 2025-09-15 05:18:28 [io-compute-blocker-4] INFO  emissary -     * parseConfigSources
+image-proxy-tiny-1  | 2025-09-15 05:18:28 [io-compute-blocker-4] INFO  emissary -       * looking up property: ephox.config.file
+image-proxy-tiny-1  | 2025-09-15 05:18:28 [io-compute-blocker-4] INFO  emissary -         -> Found value for property: /ephox-image-proxy/ephox-image-proxy-docker-env.conf
+image-proxy-tiny-1  | 2025-09-15 05:18:28 [io-compute-blocker-4] INFO  emissary -       * Parsing config defined by /ephox-image-proxy/ephox-image-proxy-docker-env.conf from property: ephox.config.file
+image-proxy-tiny-1  | 2025-09-15 05:18:28 [io-compute-blocker-4] INFO  emissary -         -> Processing file: /ephox-image-proxy/ephox-image-proxy-docker-env.conf
+image-proxy-tiny-1  | 2025-09-15 05:18:28 [io-compute-blocker-4] INFO  emissary -   * External application.conf => /opt/ephox/application.conf
+image-proxy-tiny-1  | 2025-09-15 05:18:28 [io-compute-blocker-4] INFO  emissary -     * Optional File (/opt/ephox/application.conf). Defaults to empty if file not found
+image-proxy-tiny-1  | 2025-09-15 05:18:28 [io-compute-blocker-4] INFO  emissary - * Internal Configuration
+image-proxy-tiny-1  | 2025-09-15 05:18:28 [io-compute-blocker-4] INFO  emissary -   -> No extra internal configuration specified - skipping
+image-proxy-tiny-1  | 2025-09-15 05:18:28 [io-compute-blocker-4] INFO  emissary - * Default (Reference) Configuration
+image-proxy-tiny-1  | 2025-09-15 05:18:28 [io-compute-blocker-4] INFO  emissary -   * Loading configuration files from classpath (reference.conf and integration.conf). Neither is required.
+image-proxy-tiny-1  | 2025-09-15 05:18:28 [io-compute-blocker-4] INFO  emissary - -> Raw Config assembled from various sources: ConfigOrigin(merge of /ephox-image-proxy/ephox-image-proxy-docker-env.conf: 1,system properties,reference.conf @ jar:file:/ephox-image-proxy/ephox-image-proxy.jar!/reference.conf: 1)
+image-proxy-tiny-1  | 2025-09-15 05:18:28 [io-compute-blocker-4] INFO  c.e.d.config.AllowedOriginsConfig$ - Read allowed-origins config (ignoring ports = true) as:
+image-proxy-tiny-1  |  - localhost:8000
 image-proxy-tiny-1  |  - example.com
-image-proxy-tiny-1  | 2025-01-08 15:02:36 [io-compute-blocker-8] INFO  emissary - emissary config loaded successfully: EmissaryConfig(SdkHttpConfig(HttpConfig(100,10,10,3,HttpConfigTimeouts(10,10,10),JvmTrustModel()),None),OriginWhitelist(List(good.com, example.com),OriginPrecision(true)),Some(10000000))
-image-proxy-tiny-1  | 2025-01-08 15:02:37 [io-compute-1] INFO  o.h.b.c.nio1.NIO1SocketServerGroup - Service bound to address /0:0:0:0:0:0:0:0:19040
-image-proxy-tiny-1  | 2025-01-08 15:02:37 [io-compute-1] INFO  o.h.blaze.server.BlazeServerBuilder -
+image-proxy-tiny-1  |  - good.com
+image-proxy-tiny-1  |  - my.company.org
+image-proxy-tiny-1  | 2025-09-15 05:18:28 [io-compute-blocker-4] INFO  emissary - emissary config loaded successfully: EmissaryConfig(SdkHttpConfig(HttpConfig(100,10,10,3,HttpConfigTimeouts(10,10,10),JvmTrustModel()),None),OriginWhitelist(List(localhost:8000, example.com, good.com, my.company.org),OriginPrecision(true)),Some(10000000))
+image-proxy-tiny-1  | 2025-09-15 05:18:29 [io-compute-0] INFO  o.h.b.c.nio1.NIO1SocketServerGroup - Service bound to address /0:0:0:0:0:0:0:0:19040
+image-proxy-tiny-1  | 2025-09-15 05:18:29 [io-compute-0] INFO  o.h.blaze.server.BlazeServerBuilder -
 image-proxy-tiny-1  |   _   _   _        _ _
 image-proxy-tiny-1  |  | |_| |_| |_ _ __| | | ___
-image-proxy-tiny-1  |  | ' \\  _|  _| '_ \\_  _(_-<
-image-proxy-tiny-1  |  |_||_\\__|\\__| .__/ |_|/__/
+image-proxy-tiny-1  |  | ' \  _|  _| '_ \_  _(_-<
+image-proxy-tiny-1  |  |_||_\__|\__| .__/ |_|/__/
 image-proxy-tiny-1  |              |_|
-image-proxy-tiny-1  | 2025-01-08 15:02:37 [io-compute-1] INFO  o.h.blaze.server.BlazeServerBuilder - http4s v0.23.27 on blaze v0.23.16 started at http://[::]:19040/
+image-proxy-tiny-1  | 2025-09-15 05:18:29 [io-compute-0] INFO  o.h.blaze.server.BlazeServerBuilder - http4s v0.23.27 on blaze v0.23.16 started at http://[::]:19040/
 ----
 
 === Next Steps

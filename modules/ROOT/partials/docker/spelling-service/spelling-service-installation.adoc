@@ -42,21 +42,21 @@ If set up correctly, the logs should display output similar to the following:
 
 [source, log]
 ----
-2024-12-05 11:30:50.813Z [io-compute-9] INFO  ironbark - ironbark
+2025-09-15 05:31:43.758Z [io-compute-8] INFO  ironbark - ironbark
 ...
-2024-12-05 11:30:51.166Z [io-compute-blocker-9] INFO  ironbark - -> Raw Config assembled from various sources: ConfigOrigin(merge of /ephox-spelling/ephox-spelling-docker-env.conf: 1,system properties,reference.conf @ jar:file:/ephox-spelling/ephox-spelling.jar!/reference.conf: 1)
-2024-12-05 11:30:51.206Z [io-compute-blocker-9] WARN  c.e.d.config.AllowedOriginsConfig$ - No allowed-origins specified in config!
-2024-12-05 11:30:51.219Z [io-compute-blocker-9] INFO  ironbark - ironbark config loaded successfully: IronbarkConfig(Logger[ironbark],SpellingConfig(None,Some(200),None,false),OriginWhitelist(List(),OriginPrecision(true)),None,None,StaticCustomDictionaryScanConfig)
-2024-12-05 11:30:51.275Z [io-compute-blocker-9] INFO  com.ephox.nectar.data.Bees$ - Loading all dictionaries from WinterTree
-2024-12-05 11:30:51.677Z [io-compute-blocker-6] INFO  com.ephox.nectar.data.Bees$ - Loading all dictionaries from WinterTree
-2024-12-05 11:30:52.127Z [io-compute-7] INFO  o.h.b.c.nio1.NIO1SocketServerGroup - Service bound to address /0:0:0:0:0:0:0:0:18080
-2024-12-05 11:30:52.131Z [io-compute-7] INFO  o.h.blaze.server.BlazeServerBuilder -
+2025-09-15 05:31:44.093Z [io-compute-blocker-8] INFO  ironbark - -> Raw Config assembled from various sources: ConfigOrigin(merge of /app/application.conf: 1,system properties,reference.conf @ jar:file:/app/ironbark.jar!/reference.conf: 1)
+2025-09-15 05:31:44.120Z [io-compute-blocker-8] WARN  c.e.d.config.AllowedOriginsConfig$ - No allowed-origins specified in config!
+2025-09-15 05:31:44.128Z [io-compute-blocker-8] INFO  ironbark - ironbark config loaded successfully: IronbarkConfig(Logger[ironbark],SpellingConfig(None,200,None,5,0.8,500),OriginWhitelist(List(),OriginPrecision(true)),None,None,StaticCustomDictionaryScanConfig)
+2025-09-15 05:31:44.178Z [io-compute-blocker-8] INFO  com.ephox.nectar.data.Bees$ - Loading all dictionaries from WinterTree
+2025-09-15 05:31:44.680Z [io-compute-blocker-4] INFO  com.ephox.nectar.data.Bees$ - Loading all dictionaries from WinterTree
+2025-09-15 05:31:45.415Z [io-compute-blocker-8] INFO  o.h.b.c.nio1.NIO1SocketServerGroup - Service bound to address /[0:0:0:0:0:0:0:0]:18080
+2025-09-15 05:31:45.425Z [io-compute-blocker-8] INFO  o.h.blaze.server.BlazeServerBuilder -
   _   _   _        _ _
  | |_| |_| |_ _ __| | | ___
- | ' \\  _|  _| '_ \\_  _(_-<
- |_||_\\__|\\__| .__/ |_|/__/
+ | ' \  _|  _| '_ \_  _(_-<
+ |_||_\__|\__| .__/ |_|/__/
              |_|
-2024-12-05 11:30:52.145Z [io-compute-7] INFO  o.h.blaze.server.BlazeServerBuilder - http4s v0.23.27 on blaze v0.23.16 started at http://[::]:18080/
+2025-09-15 05:31:45.434Z [io-compute-blocker-8] INFO  o.h.blaze.server.BlazeServerBuilder - http4s v0.23.27 on blaze v0.23.16 started at http://[::]:18080/
 ----
 
 Running this command will generate a log warning about `allowed-origins` not being configured. This is expected, as it will be set up in the next step.
@@ -138,7 +138,7 @@ services:
         read_only: true
       - type: bind
         source: ./resources/hunspell-dictionaries
-        target: /app/resources/custom-dictionaries
+        target: /app/resources/hunspell-dictionaries
         read_only: true
 ----
 +
@@ -163,36 +163,26 @@ If the allowed origins, Hunspell, and custom dictionaries folders are configured
 +
 [source, log]
 ----
-[+] Running 2/2
- ✔ Network spelling-tiny_default            Created                                                                                                                                                                                               0.0s
- ✔ Container spelling-tiny-spelling-tiny-1  Created                                                                                                                                                                                               0.1s
+ ✔ Container spelling-tiny-spelling-tiny-1                                                                                                                         Created            0.1s
 Attaching to spelling-tiny-1
-spelling-tiny-1  | 2025-02-11 09:51:10.332Z [io-compute-5] INFO  ironbark - ironbark
+spelling-tiny-1  | 2025-09-15 05:37:52.505Z [io-compute-0] INFO  ironbark - ironbark
 ...
-spelling-tiny-1  | 2025-02-11 09:51:10.736Z [io-compute-blocker-5] INFO  ironbark - -> Raw Config assembled from various sources: ConfigOrigin(merge of /ephox-spelling/ephox-spelling-docker-env.conf: 1,system properties,reference.conf @ jar:file:/ephox-spelling/ephox-spelling.jar!/reference.conf: 1)
-spelling-tiny-1  | 2025-02-11 09:51:10.814Z [io-compute-blocker-5] INFO  c.e.d.config.AllowedOriginsConfig$ - Read allowed-origins config (ignoring ports = true) as:
+spelling-tiny-1  | 2025-09-15 05:37:52.816Z [io-compute-blocker-0] INFO  ironbark - -> Raw Config assembled from various sources: ConfigOrigin(merge of /app/application.conf: 1,system properties,reference.conf @ jar:file:/app/ironbark.jar!/reference.conf: 1)
+spelling-tiny-1  | 2025-09-15 05:37:52.874Z [io-compute-blocker-0] INFO  c.e.d.config.AllowedOriginsConfig$ - Read allowed-origins config (ignoring ports = true) as:
+spelling-tiny-1  |  - localhost:8000
 spelling-tiny-1  |  - example.com
 spelling-tiny-1  |  - good.com
 spelling-tiny-1  |  - my.company.org
-spelling-tiny-1  | 2025-02-11 09:51:10.822Z [io-compute-blocker-5] INFO  ironbark - ironbark config loaded successfully: IronbarkConfig(Logger[ironbark],SpellingConfig(None,Some(200),None,5,0.8),OriginWhitelist(List(example.com, good.com, my.company.org),OriginPrecision(true)),Some(CustomDictionaryPath(/app/resources/custom-dictionaries)),Some(HunspellDictionaryPath(/app/resources/hunspell-dictionaries)),StaticCustomDictionaryScanConfig)
-spelling-tiny-1  | 2025-02-11 09:51:11.101Z [io-compute-blocker-6] INFO  c.e.i.d.StaticCustomDictionaries$ - Using custom dictionary: [global] = 2 words in engine Hunspell
-spelling-tiny-1  | 2025-02-11 09:51:11.104Z [io-compute-blocker-6] INFO  c.e.i.d.StaticCustomDictionaries$ - Using custom dictionary: [global] = 2 words in engine WinterTree
-spelling-tiny-1  | 2025-02-11 09:51:11.161Z [io-compute-blocker-6] INFO  com.ephox.nectar.data.Bees$ - Loading all dictionaries from WinterTree
-spelling-tiny-1  | 2025-02-11 09:51:11.482Z [io-compute-blocker-5] INFO  c.e.nectar.hunspell.HunspellLoader$ - Loading hunspell dictionary from path: /app/resources/hunspell-dictionaries and locale es
-spelling-tiny-1  | 2025-02-11 09:51:11.536Z [io-compute-blocker-5] INFO  c.e.nectar.hunspell.HunspellLoader$ - Finished loading hunspell for es
-spelling-tiny-1  | 2025-02-11 09:51:11.537Z [io-compute-blocker-5] INFO  c.e.nectar.hunspell.HunspellLoader$ - Loading hunspell dictionary from path: /app/resources/hunspell-dictionaries and locale pt-BR
-spelling-tiny-1  | 2025-02-11 09:51:11.881Z [io-compute-blocker-5] INFO  c.e.nectar.hunspell.HunspellLoader$ - Finished loading hunspell for pt-BR
-...
-spelling-tiny-1  | 2025-02-11 09:51:13.593Z [io-compute-blocker-5] INFO  c.e.nectar.hunspell.HunspellLoader$ - Loading hunspell dictionary from path: /app/resources/hunspell-dictionaries and locale de-DE
-spelling-tiny-1  | 2025-02-11 09:51:13.651Z [io-compute-blocker-5] INFO  c.e.nectar.hunspell.HunspellLoader$ - Finished loading hunspell for de-DE
-spelling-tiny-1  | 2025-02-11 09:51:14.142Z [io-compute-9] INFO  o.h.b.c.nio1.NIO1SocketServerGroup - Service bound to address /0:0:0:0:0:0:0:0:18080
-spelling-tiny-1  | 2025-02-11 09:51:14.146Z [io-compute-9] INFO  o.h.blaze.server.BlazeServerBuilder -
+spelling-tiny-1  | 2025-09-15 05:37:52.877Z [io-compute-blocker-0] INFO  ironbark - ironbark config loaded successfully: IronbarkConfig(Logger[ironbark],SpellingConfig(None,200,None,5,0.8,500),OriginWhitelist(List(localhost:8000, example.com, good.com, my.company.org),OriginPrecision(true)),Some(CustomDictionaryPath(/app/resources/custom-dictionaries)),Some(HunspellDictionaryPath(/app/resources/hunspell-dictionaries)),StaticCustomDictionaryScanConfig)
+spelling-tiny-1  | 2025-09-15 05:37:52.959Z [io-compute-6] INFO  com.ephox.nectar.data.Bees$ - Loading all dictionaries from WinterTree
+spelling-tiny-1  | 2025-09-15 05:37:54.143Z [io-compute-blocker-0] INFO  o.h.b.c.nio1.NIO1SocketServerGroup - Service bound to address /[0:0:0:0:0:0:0:0]:18080
+spelling-tiny-1  | 2025-09-15 05:37:54.149Z [io-compute-blocker-0] INFO  o.h.blaze.server.BlazeServerBuilder -
 spelling-tiny-1  |   _   _   _        _ _
 spelling-tiny-1  |  | |_| |_| |_ _ __| | | ___
-spelling-tiny-1  |  | ' \\  _|  _| '_ \\_  _(_-<
-spelling-tiny-1  |  |_||_\\__|\\__| .__/ |_|/__/
+spelling-tiny-1  |  | ' \  _|  _| '_ \_  _(_-<
+spelling-tiny-1  |  |_||_\__|\__| .__/ |_|/__/
 spelling-tiny-1  |              |_|
-spelling-tiny-1  | 2025-02-11 09:51:14.162Z [io-compute-9] INFO  o.h.blaze.server.BlazeServerBuilder - http4s v0.23.27 on blaze v0.23.16 started at http://[::]:18080/
+spelling-tiny-1  | 2025-09-15 05:37:54.157Z [io-compute-blocker-0] INFO  o.h.blaze.server.BlazeServerBuilder - http4s v0.23.27 on blaze v0.23.16 started at http://[::]:18080/
 ----
 
 === Next Steps

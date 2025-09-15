@@ -313,6 +313,13 @@ As a result, `iframe_aria_text` is now consistently announced once across all su
 
 For more information, see: xref:accessibility.adoc#iframe_aria_text[iframe_aria_text].
 
+=== Using `+Command (CMD)+` + `+Backspace+` would not preserve inline formatting.
+// #TINY-12071
+
+Previously, using `+Command (CMD)+` + `+Backspace+` at the end of a line removed the entire line without preserving inline formatting, unlike selecting the line with a triple-click and pressing `+Backspace+`. This inconsistency caused confusion, as different deletion methods produced different results.
+
+In {release-version}, the behavior of `+Command (CMD)+` + `+Backspace+` has been updated to match other deletion methods, ensuring that inline formatting is preserved.
+
 === Navigating between elements with `+contenteditable="true"+` was not possible on Firefox using the keyboard.
 // #TINY-12459
 

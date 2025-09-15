@@ -61,10 +61,11 @@ import { EditorComponent } from '@tinymce/tinymce-angular';
   <h1>{productname} {productmajorversion} Angular Demo</h1>
   <editor
     [init]="init"
+    licenseKey="gpl"
   />
   `
 })
-export class AppComponent {
+export class App {
   init: EditorComponent['init'] = {
     plugins: 'lists link image table code help wordcount'
   };

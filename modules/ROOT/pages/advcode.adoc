@@ -1,7 +1,7 @@
 = Enhanced Code Editor plugin
 :navtitle: Enhanced Code Editor
-:description: How to setup TinyMCE's Enhanced Code Editor plugin.
-:keywords: code, advcode, codemirror
+:description: How to setup and configure TinyMCE's Enhanced Code Editor plugin for advanced HTML editing with IDE-like features.
+:keywords: code, advcode, codemirror, html editor, code editor, syntax highlighting
 :pluginname: Enhanced Code Editor
 :plugincode: advcode
 :altplugincode: code
@@ -9,21 +9,17 @@
 
 include::partial$misc/admon-premium-plugin.adoc[]
 
-[TIP]
-As of {productname} 7.0, the Advanced Code Editor plugin has been renamed to {pluginname}. When adding {pluginname} in your editor, continue to use {plugincode}.
+The {pluginname} plugin (`+advcode+`) provides an advanced code editor within {productname} that makes HTML editing more efficient for power users. The editor includes professional IDE features that are enabled by default:
 
-The xref:advcode.adoc[Enhanced Code Editor] plugin (`+advcode+`) brings a more advanced code editor to {productname}. This code editor makes it easier to modify the HTML, and is a useful add-on for power users. It comes with features often found in IDEs, all enabled by default:
+* Syntax color highlighting for HTML, CSS, and JavaScript
+* Bracket matching and code folding
+* Multiple selections and carets for efficient editing
+* Search and replace functionality
+* Dark or light mode toggle for code display
+* Font size adjustment controls
+* Full-screen mode for distraction-free editing
 
-* Syntax color highlighting.
-* Bracket matching.
-* Code folding.
-* Multiple selections/carets.
-* Search and Replace.
-* Dark or light mode button for code display.
-* Increase and decrease display font size buttons.
-* Full-screen mode button.
-
-NOTE: For the {pluginname} to offer a full-screen mode requires the xref:fullscreen.adoc[Full screen] plugin and requires {pluginname} to be running in xref:advcode.adoc#advcode_inline[inline mode].
+NOTE: Full-screen mode requires the xref:fullscreen.adoc[Full screen] plugin and the {pluginname} to be running in xref:advcode.adoc#advcode_inline[inline mode].
 
 == The difference between the Code and Enhanced Code Editor plugins
 
@@ -31,7 +27,7 @@ liveDemo::advcode[]
 
 // include::partial$misc/purchase-premium-plugins.adoc[]
 
-== Example: basic setup
+== Basic setup
 
 [source,js]
 ----
@@ -42,7 +38,9 @@ tinymce.init({
 });
 ----
 
-== Example: enable the {pluginname} full-screen mode button
+== Enable full-screen mode
+
+To enable the full-screen mode button in the {pluginname}, configure the plugin to run in inline mode and include the fullscreen plugin:
 
 [source,js]
 ----
@@ -58,7 +56,15 @@ tinymce.init({
 
 include::partial$misc/code-dialog-and-selection-state.adoc[]
 
-include::partial$configuration/advcode.adoc[]
+== Configuration options
+
+The {pluginname} plugin provides several configuration options to customize its behavior:
+
+include::partial$configuration/advcode_inline.adoc[leveloffset=+1]
+
+include::partial$configuration/advcode_prettify_getcontent.adoc[leveloffset=+1]
+
+include::partial$configuration/advcode_prettify_editor.adoc[leveloffset=+1]
 
 include::partial$misc/advcode-shortcuts.adoc[]
 

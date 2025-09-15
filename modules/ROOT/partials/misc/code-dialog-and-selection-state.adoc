@@ -1,27 +1,22 @@
-== Selection state when opening and closing the code editor
+== Selection behavior in code editors
 
-The safest assumption is that selection state is not preserved when switching between the rich-text editor (ie, the default {productname} editor instance) to the code editor dialog view of a {productname} document.
+When switching between the rich-text editor and code editor views, selection state behavior varies depending on the direction of the switch and whether changes are made.
 
-=== Switching from the rich-text editor view to the code editor
+=== From rich-text editor to code editor
 
-If the current selection in the {productname} instance is collapsed (ie, is a flashing insertion point), the insertion point will be in the equivalent place when the code editor is opened.
+**Collapsed selection (cursor position):**
+When the cursor is positioned at a specific location in the rich-text editor, the code editor will open with the cursor at the equivalent position in the HTML source.
 
-If the current selection in the rich-text editor is an actual selection, that state is not preserved when switching to the code editor.
+**Text selection:**
+When text is selected in the rich-text editor, the selection is not preserved in the code editor. Instead, the cursor is positioned at the beginning of the selected content in the HTML source.
 
-Instead, the insertion point in the code editor is placed at the beginning of what was the selection in the rich-text editor.
+=== From code editor back to rich-text editor
 
-=== Switching from the code editor back to the rich-text editor view
+**No changes made:**
+If no changes are made in the code editor and you click **Cancel** or press **Esc**, the original selection state or cursor position in the rich-text editor is preserved.
 
-When switching back from the code-view dialog to the rich-text editor, selection state is almost never preserved.
+**Changes made:**
+When changes are made in the code editor and you click **OK** or **Save**, the selection state or cursor position is **not** preserved. The cursor is positioned at the beginning of the document content.
 
-If you have a selection or a collapsed selection in the rich-text editor and
-
-. open the code view dialog;
-. make no changes; and
-. exit the code view dialog by clicking **Cancel** (or pressing the **Esc** key);
-
-the selection or collapsed selection will likely be preserved in the rich-text editor.
-
-Otherwise, the selection state is not preserved on round-tripping from rich-text to code-view and back.
-
-Instead, the insertion point is placed at the beginning of the editable block closest to the beginning of the {productname} document.
+[NOTE]
+Selection state preservation is not guaranteed when switching between editor views. For the most reliable editing experience, make changes in one view before switching to the other.

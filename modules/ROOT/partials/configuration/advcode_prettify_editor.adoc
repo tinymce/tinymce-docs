@@ -1,0 +1,35 @@
+[[advcode_prettify_editor]]
+== `+advcode_prettify_editor+`
+
+The `+advcode_prettify_editor+` option controls whether code rendered inside the {pluginname} is automatically formatted with correct indentation. This improves code readability and maintains consistent formatting within the editor.
+
+*Type:* `+Boolean+`
+
+*Default value:* `+true+`
+
+*Possible values:* `+true+`, `+false+`
+
+.Example: disable editor prettification
+[source,js]
+----
+tinymce.init({
+  selector: "textarea", // change this value according to your HTML
+  plugins: "advcode",
+  toolbar: "code",
+  advcode_prettify_editor: false, // disable automatic formatting
+});
+----
+
+.Example: enable editor prettification (default behavior)
+[source,js]
+----
+tinymce.init({
+  selector: "textarea", // change this value according to your HTML
+  plugins: "advcode",
+  toolbar: "code",
+  advcode_prettify_editor: true, // default value
+});
+----
+
+[NOTE]
+This option was introduced in {productname} 7.3. By default, any code rendered inside the {pluginname} will be formatted with correct indentation for improved readability.

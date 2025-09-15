@@ -1,0 +1,27 @@
+[[advcode_prettify_getcontent]]
+== `+advcode_prettify_getcontent+`
+
+The `+advcode_prettify_getcontent+` option controls whether HTML code is formatted when `editor.getContent()` is called. When enabled, this automatically formats the content using the same formatting as `tinymce.activeEditor.getContent({ prettify: true })`.
+
+*Type:* `+Boolean+`
+
+*Default value:* `+false+`
+
+*Possible values:* `+true+`, `+false+`
+
+.Example: enable content prettification
+[source,js]
+----
+tinymce.init({
+  selector: "textarea", // change this value according to your HTML
+  plugins: "advcode",
+  toolbar: "code",
+  advcode_prettify_getcontent: true,
+});
+----
+
+[IMPORTANT]
+If existing HTML content in the database is not well-formatted or has inconsistent indentation, enabling this option may **change the formatting** of previously saved content, which may be undesirable in some cases.
+
+[NOTE]
+This option was introduced in {productname} 7.3. It provides the same functionality as calling `tinymce.activeEditor.getContent({ prettify: true })` but automatically applies formatting to all `getContent()` calls.

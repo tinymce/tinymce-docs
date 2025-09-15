@@ -111,7 +111,7 @@ The following premium plugin updates were released alongside {productname} {rele
 === NVDA would announce iframe_aria_text multiple times
 // #TINY-11296
 
-Previously, in certain browsers, when using screen readers such as NVDA or JAWS, the `iframe_aria_text` was either not announced at all or announced twice, causing inconsistent and potentially confusing behavior for users relying on assistive technology. To resolve this, behavior has been standardized by adjusting how the label is applied:
+Previously, in certain browsers, when using screen readers such as NVDA or JAWS, the `iframe_aria_text` was either not announced at all or announced twice, causing inconsistent and potentially confusing behavior for users relying on assistive technology. To resolve this, the behavior has been standardized by adjusting how the label is applied:
 
 * in Firefox, the `title` attribute is now set directly on the iframe element and the `aria-label` on the body is not used.
 * while in other browsers the `aria-label` is applied to the body inside the iframe without setting a `title` attribute on the iframe.

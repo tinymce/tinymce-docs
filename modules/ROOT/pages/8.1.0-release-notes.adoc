@@ -65,7 +65,7 @@ The {productname} {release-version} release includes an accompanying release of 
 
 Previously, typing `@` to open the mentions dropdown list inside the Comments card did not support the **Shift+Enter** keyboard combination. For example, when typing a `@` + navigating to a user in the selected Comment card, pressing **Shift+Enter** did not insert the `@mention` to the `<textarea>` for the comment body.
 
-In {productname} {release-version}, this issue has been resolved by implementing an `onShiftEnter` handler that mirrors the behavior of the regular **Enter** key, ensuring consistent and predictable keyboard interaction when selecting items in the `@mentions` dropdown within comment cards.
+In {productname} {release-version}, this issue has been resolved by  handling **Shift+Enter** in the same way as the regular **Enter** key, ensuring consistent and predictable keyboard interaction when selecting items in the `@mentions` dropdown within comment cards.
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to Tiny Comments].
 

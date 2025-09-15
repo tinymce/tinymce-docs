@@ -37,40 +37,56 @@ tinymce.init({
 
 [WARNING]
 ====
-**Meta tags may be removed by XSS sanitization**
+**Certain elements may be removed by XSS sanitization**  
+By default, {productname} sanitizes HTML content to protect against XSS attacks. Elements outside the HTML5 specification, such as `<script>`, are removed. Standard `<meta>` tags are preserved, but attributes not defined in the HTML5 spec (for example, the RDFa `property` attribute) require explicit configuration to be retained.
 
-By default, {productname} sanitizes HTML content to protect against XSS attacks, which may remove certain meta tags from the full page HTML. If integrators experience issues with meta tags being removed, the following configuration options are available, though not advisable:
+If integrators encounter issues with required elements being removed, the following configuration options are available. These options reduce security and should be used with caution:
 
-* `xss_sanitization: false` - Disables DOMPurify.
-* `+valid_elements: '*[*]'+` - Allows all elements and attributes.
+* `xss_sanitization: false` — Disables DOMPurify and removes all XSS protections.
+* `valid_elements: '*[*]'` — Allows all elements and attributes.
+* `extended_valid_elements: 'meta[*]'` — Extends the schema to allow additional `<meta>` attributes (for example, RDFa `property`).
 
-See xref:security.adoc#xss_sanitization-option[xss_sanitization option] and xref:content-filtering.adoc#valid_elements[valid_elements option] for more information.
+Note that `extended_valid_elements` is *additive*, so all standard elements and attributes remain valid while additional ones are permitted.
 
-**Preserving meta tags (advanced configuration)**
+For more details, see xref:security.adoc#xss_sanitization-option[xss_sanitization option] and xref:content-filtering.adoc#valid_elements[valid_elements option].
+====
 
-If meta tags are being removed by XSS sanitization, the editor can be configured to preserve them using one of the following approaches, though these options are **not recommended**:
-
-.Example: using `+xss_sanitization+` to disable DOMPurify
+.Example: disabling DOMPurify with `xss_sanitization`
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',
   plugins: 'fullpagehtml',
   toolbar: 'fullpagehtml',
-  xss_sanitization: false  // Disables DOMPurify, TinyMCE's built-in XSS sanitization which allows potentially unsafe HTML content to be inserted
+  xss_sanitization: false  // Disables TinyMCE's built-in XSS sanitization; allows potentially unsafe HTML
 });
 ----
 
-.Example: using `+valid_elements+` to allow all elements and attributes
+.Example: allowing all elements and attributes with `valid_elements`
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',
   plugins: 'fullpagehtml',
   toolbar: 'fullpagehtml',
-  valid_elements: '*[*]'  // Allows all elements and attributes - use with caution
+  valid_elements: '*[*]'  // Permits all elements and attributes; use with extreme caution
 });
 ----
+
+.Example: extending `<meta>` support with `extended_valid_elements`
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'fullpagehtml',
+  toolbar: 'fullpagehtml',
+  extended_valid_elements: 'meta[*]'  // Permits additional <meta> attributes (such as RDFa property)
+});
+----
+
+[NOTE]
+====
+Support for the RDFa `property` attribute on `<meta>` elements is planned for inclusion in the default {productname} schema in version 8.2. If you require this attribute now, use `extended_valid_elements` as shown above.
 ====
 
 [WARNING]

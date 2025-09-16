@@ -43,7 +43,7 @@ By default, {productname} sanitizes HTML content to protect against XSS attacks.
 If integrators encounter issues with required elements being removed, the following configuration options are available. These options reduce security and should be used with caution:
 
 * `xss_sanitization: false` — Disables DOMPurify and removes all XSS protections.
-* `valid_elements: '*[*]'` — Allows all elements and attributes.
+* `+valid_elements: '*[*]'+` — Allows all elements and attributes.
 * `extended_valid_elements: 'meta[*]'` — Extends the schema to allow additional `<meta>` attributes (for example, RDFa `property`).
 
 Note that `extended_valid_elements` is *additive*, so all standard elements and attributes remain valid while additional ones are permitted.

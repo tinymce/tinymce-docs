@@ -28,11 +28,11 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following new Premium plugin was released alongside {productname} {release-version}.
 
-// === <Premium plugin name>
+=== Full Page HTML
 
-// The new Premium plugin, **<Premium plugin name>** // description here.
+The new Premium plugin, **Full Page HTML** provides comprehensive control over document metadata and properties. It enables users to edit HTML document metadata such as title, keywords, and description through an intuitive dialog interface. When combined with the code plugin, it also exposes the complete HTML structure including `<head>`, `<body>`, and various meta tags in the source code view.
 
-// For information on the **<Premium plugin name>** plugin, see xref:<plugincode>.adoc[<Premium plugin name>].
+For information on the **Full Page HTML** plugin, see xref:fullpagehtml.adoc[Full Page HTML].
 
 
 [[accompanying-premium-plugin-changes]]
@@ -329,9 +329,10 @@ As of {productname} {release-version}, the `content_css_cors` configuration opti
 
 This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
 
-There <is one | are <number> known issue<s> in {productname} {release-version}.
+There is one known issue in {productname} {release-version}.
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Full Page HTML plugin incompatibility with Suggested Edits and Revision History
 
-// CCFR here.
+The Full Page HTML plugin enables document properties and metadata to be set. However, these are not picked up by Suggested Edits and Revision History, and actions performed in these plugins will overwrite the values set by the Full Page plugin.
+
+**Workaround:** Avoid using the Full Page HTML plugin in combination with Suggested Edits or Revision History plugins to prevent data loss of document metadata and properties.

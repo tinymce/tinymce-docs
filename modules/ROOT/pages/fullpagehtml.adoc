@@ -1,0 +1,124 @@
+= Full Page HTML Plugin
+:navtitle: Full Page HTML
+:description: Edit metadata and document properties including title, keywords, and description via a dialog box, with HTML structure exposure in source code view.
+:description_short: Edit document metadata and properties with dialog interface and source code exposure.
+:keywords: full page html, metadata, document properties, title, keywords, description, HTML structure, source code
+:pluginname: Full Page HTML
+:plugincode: fullpagehtml
+:plugincategory: premium
+
+include::partial$misc/admon-premium-plugin.adoc[]
+
+include::partial$misc/admon-inline-not-supported.adoc[]
+
+The {pluginname} plugin provides comprehensive control over document metadata and properties. It enables users to edit HTML document metadata such as title, keywords, and description through an intuitive dialog interface. When combined with the code plugin, it also exposes the complete HTML structure including `<head>`, `<body>`, and various meta tags in the source code view.
+
+
+== Interactive example
+
+
+liveDemo::{plugincode}[]
+
+== Basic setup
+
+To add the {pluginname} plugin to the editor, add `{plugincode}` to the `plugins` option in the editor configuration.
+
+For example:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'fullpagehtml',
+  toolbar: 'fullpagehtml',
+  fullpagehtml_default_doctype: '<!DOCTYPE html>'
+});
+----
+
+[WARNING]
+====
+**Certain elements may be removed by XSS sanitization**  
+By default, {productname} sanitizes HTML content to protect against XSS attacks. Elements outside the HTML5 specification, such as `<script>`, are removed. Standard `<meta>` tags are preserved, but attributes not defined in the HTML5 spec (for example, the RDFa `property` attribute) require explicit configuration to be retained.
+
+If integrators encounter issues with required elements being removed, the following configuration options are available. These options reduce security and should be used with caution:
+
+* `xss_sanitization: false` — Disables DOMPurify and removes all XSS protections.
+* `+valid_elements: '*[*]'+` — Allows all elements and attributes.
+* `extended_valid_elements: 'meta[*]'` — Extends the schema to allow additional `<meta>` attributes (for example, RDFa `property`).
+
+Note that `extended_valid_elements` is *additive*, so all standard elements and attributes remain valid while additional ones are permitted.
+
+For more details, see xref:security.adoc#xss_sanitization-option[xss_sanitization option] and xref:content-filtering.adoc#valid_elements[valid_elements option].
+
+.Example: disabling DOMPurify with `xss_sanitization`
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'fullpagehtml',
+  toolbar: 'fullpagehtml',
+  xss_sanitization: false  // Disables TinyMCE's built-in XSS sanitization; allows potentially unsafe HTML
+});
+----
+
+.Example: allowing all elements and attributes with `valid_elements`
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'fullpagehtml',
+  toolbar: 'fullpagehtml',
+  valid_elements: '*[*]'  // Permits all elements and attributes; use with extreme caution
+});
+----
+
+.Example: extending `<meta>` support with `extended_valid_elements`
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'fullpagehtml',
+  toolbar: 'fullpagehtml',
+  extended_valid_elements: 'meta[*]'  // Permits additional <meta> attributes (such as RDFa property)
+});
+----
+
+Support for the RDFa `property` attribute on `<meta>` elements is planned for inclusion in the default {productname} schema in future releases. If you require this attribute now, use `extended_valid_elements` as shown above.
+====
+
+[NOTE]
+====
+**Incompatibility with Suggested Edits and Revision History**
+
+The Full Page HTML plugin is not compatible with the Suggested Edits and Revision History plugins. Document properties and metadata set by the Full Page HTML plugin are not currently preserved when using these collaboration features, and may be lost during the review process.
+
+**Recommendation:** Avoid using the {pluginname} plugin in combination with Suggested Edits or Revision History plugins to prevent data loss of document metadata and properties at this current time until this issue is resolved.
+====
+
+== Options
+
+The following configuration options affect the behavior of the {pluginname} plugin.
+
+include::partial$configuration/fullpagehtml-default-doctype.adoc[leveloffset=+1]
+
+include::partial$configuration/fullpagehtml-default-title.adoc[leveloffset=+1]
+
+include::partial$configuration/fullpagehtml-default-encoding.adoc[leveloffset=+1]
+
+include::partial$configuration/fullpagehtml-default-body-style.adoc[leveloffset=+1]
+
+include::partial$configuration/fullpagehtml-hide-in-source-view.adoc[leveloffset=+1]
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$toolbar-button-ids/{plugincode}-toolbar-buttons.adoc[leveloffset=+1]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+
+include::partial$menu-item-ids/{plugincode}-menu-items.adoc[leveloffset=+1]
+
+== Commands
+
+The {pluginname} plugin provides the following {productname} command.
+
+include::partial$commands/fullpagehtml-cmds.adoc[leveloffset=+1]

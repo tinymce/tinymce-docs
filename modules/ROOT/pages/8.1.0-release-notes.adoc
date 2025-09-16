@@ -132,6 +132,10 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // placeholder here.
 
+=== The `content_css_cors` configuration option has been deprecated
+// #TINY-12578
+
+As of {productname} {release-version}, the `content_css_cors` configuration option has been marked as *deprecated*. It will be completely removed in the upcoming {productname} 9.0 release. As an alternative, we recommend using xref:tinymce-and-cors.adoc#crossorigin[crossorigin] instead.
 
 [[known-issues]]
 == Known issues

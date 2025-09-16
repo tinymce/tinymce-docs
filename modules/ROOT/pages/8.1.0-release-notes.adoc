@@ -2,7 +2,7 @@
 :release-version: 8.1
 :navtitle: {productname} {release-version}
 :description: Release notes for {productname} {release-version}
-:keywords: releasenotes, new, changes, bugfixes, new features, improvements, additions, changes, removals, security fixes, deprecated, known issues
+:keywords: releasenotes, new, changes, bugfixes, new features, improvements, changes, removals, deprecated, known issues
 :page-toclevels: 1
 
 include::partial$misc/admon-releasenotes-for-stable.adoc[]
@@ -11,15 +11,13 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[overview]]
 == Overview
 
-{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, September 10^th^, 2025. These release notes provide an overview of the changes for {productname} {release-version}, including:
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, September 17^th^, 2025. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
 * xref:new-premium-plugins[New Premium plugins]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:improvements[Improvements]
-* xref:additions[Additions]
 * xref:changes[Changes]
 * xref:bug-fixes[Bug fixes]
-* xref:security-fixes[Security fixes]
 * xref:deprecated[Deprecated]
 * xref:known-issues[Known issues]
 
@@ -42,34 +40,6 @@ The following new Premium plugin was released alongside {productname} {release-v
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-// === <Premium plugin name 1> <Premium plugin name 1 version>
-
-// The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
-
-// **<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
-
-// ==== <Premium plugin name 1 change 1>
-
-// CCFR here.
-
-// For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
-
-=== Accessibility Checker
-
-The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.
-
-**Accessibility Checker** includes the following improvement.
-
-==== Auto-suggest `+alt+` text from existing `+alt+`, `+aria-label+`, and `+title+` attributes with priority fallback in image repair dialogs.
-// #TINY-12547
-
-In previous version of **Accessibility Checker**, the image repair dialog only proposed values from `+alt+`, ignoring `+aria-label+` and `+title+`, which forced manual entry and slowed accessibility repairs while increasing the risk of inconsistent descriptions.
-
-{productname} {release-version} now auto-suggests `+alt+` text using a priority-based fallback that checks existing attributes in order `+aria-labelledby+`, `+aria-label+`, `+alt+` then `+title+` and leaves the field empty if none are present. This ensures that users can label images faster and with greater accuracy by leveraging existing accessibility attributes, improving repair efficiency and consistency.
-
-For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
-
-
 === Spell Checker
 
 The {productname} {release-version} release includes an accompanying release of the **Spell Checker** premium plugin.
@@ -84,22 +54,6 @@ Previously when the first element of a document was set as a `contenteditable="f
 To resolve this, {productname} now inserts a temporary hidden element before the initial CEF element in such scenarios. This adjustment ensures that full selections are valid and can be deleted as expected.
 
 For information on the **Spell Checker** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker].
-
-=== Comments
-
-The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
-
-**Comments** Premium plugin includes the following removal.
-
-==== Improved keyboard navigation in Comments dropdown when inserting `@Mention`
-// #TINY-12785
-
-Previously, typing `@` to open the mentions dropdown list inside the Comments card did not support the **Shift+Enter** keyboard combination. For example, when typing a `@` + navigating to a user in the selected Comment card, pressing **Shift+Enter** did not insert the `@mention` to the `<textarea>` for the comment body.
-
-In {productname} {release-version}, this issue has been resolved by  handling **Shift+Enter** in the same way as the regular **Enter** key, ensuring consistent and predictable keyboard interaction when selecting items in the `@mentions` dropdown within comment cards.
-
-For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to Tiny Comments].
-
 
 === Image Optimizer (Powered by Uploadcare)
 
@@ -119,7 +73,7 @@ For information on the **Image Optimizer Powered by Uploadcare** plugin, see: xr
 
 The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.
 
-**Accessibility Checker** includes the following improvement.
+**Accessibility Checker** includes the following improvements.
 
 ==== `+alt+` text length error message now shows current and maximum character counts
 // #TINY-12569
@@ -127,6 +81,13 @@ The {productname} {release-version} release includes an accompanying release of 
 Previous versions of **Accessibility Checker**, the `+alt+` text length validation error displayed only the current character count, such as "_Currently 151 characters_" without indicating the maximum allowed length. This caused unclear guidance for users and negatively affected the experience across all image rules (I1–I4) that rely on length validation, making it inconsistent with accessibility best practices.
 
 In {productname} {release-version}, the error message for **Accessibility Checker** has been updated to show both the current and maximum character counts, for example: "_151 characters (maximum 150 allowed)_." This improvement provides clear, actionable error messaging that aligns with accessibility guidance and reduces user confusion across all affected rules.
+
+==== Auto-suggest `+alt+` text from existing `+alt+`, `+aria-label+`, and `+title+` attributes with priority fallback in image repair dialogs.
+// #TINY-12547
+
+In previous version of **Accessibility Checker**, the image repair dialog only proposed values from `+alt+`, ignoring `+aria-label+` and `+title+`, which forced manual entry and slowed accessibility repairs while increasing the risk of inconsistent descriptions.
+
+{productname} {release-version} now auto-suggests `+alt+` text using a priority-based fallback that checks existing attributes in order `+aria-labelledby+`, `+aria-label+`, `+alt+` then `+title+` and leaves the field empty if none are present. This ensures that users can label images faster and with greater accuracy by leveraging existing accessibility attributes, improving repair efficiency and consistency.
 
 For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
 
@@ -154,7 +115,7 @@ For information on the **Revision History** plugin, see: xref:revisionhistory.ad
 
 The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
 
-**Comments** Premium plugin includes the following fixes and improvement. 
+**Comments** Premium plugin includes the following fixes and improvement and removal. 
 
 ==== Default avatars generated inconsistently
 // The same user avatar was generated for all users without an avatar in the mentions dropdown.
@@ -163,6 +124,13 @@ The {productname} {release-version} release includes an accompanying release of 
 // #TINY-12526 #TINY-12532 #TINY-12633
 
 Previously, {productname} generated default avatars inconsistently in the Comments plugin. Users without avatars saw the same placeholder avatar in the mentions dropdown, while the same individual could also receive different default avatars in other contexts. This inconsistency made it difficult to distinguish users and, in some cases, created confusion by making a single user appear as two different people. In {release-version}, this issue has been fixed, and default avatars are now consistently generated with a stable color based on the `+user_id+`. This ensures that the same user always has the same default avatar, improving clarity and providing a more reliable user experience.
+
+==== Improved keyboard navigation in Comments dropdown when inserting `@Mention`
+// #TINY-12785
+
+Previously, typing `@` to open the mentions dropdown list inside the Comments card did not support the **Shift+Enter** keyboard combination. For example, when typing a `@` + navigating to a user in the selected Comment card, pressing **Shift+Enter** did not insert the `@mention` to the `<textarea>` for the comment body.
+
+In {productname} {release-version}, this issue has been resolved by  handling **Shift+Enter** in the same way as the regular **Enter** key, ensuring consistent and predictable keyboard interaction when selecting items in the `@mentions` dropdown within comment cards.
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to Tiny Comments].
 
@@ -200,21 +168,12 @@ For information on the **AI Assistant** plugin, see: xref:ai.adoc[AI Assistant],
 
 The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
 
-**Suggested Edits** includes the following improvement.
+**Suggested Edits** includes the following fix andimprovement.
 
 ==== Added keyboard navigation to the Suggested Edits plugin
 // #TINY-11452
 
 The initial release of the Suggested Edits plugin did not support keyboard navigation, limiting accessibility for users who rely on keyboard-based interactions. This restriction made it difficult to move through and interact with the suggested edits sidebar and cards without using a mouse. To improve usability and accessibility, keyboard navigation has been implemented in the Suggested Edits plugin. Users can now efficiently navigate and interact with the plugin using the keyboard.
-
-For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
-
-
-=== Suggested Edits
-
-The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
-
-**Suggested Edits** includes the following fix:
 
 === Empty editor operations sometimes showed as modified instead of added/removed
 // #TINY-12273
@@ -229,12 +188,7 @@ For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc
 [[improvements]]
 == Improvements
 
-{productname} {release-version} also includes the following improvement<s>:
-
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+{productname} {release-version} also includes the following improvements:
 
 === `editor.getContent()` now includes `indent` and `entity_encoding` properties to control HTML formatting
 // #TINY-12786
@@ -284,26 +238,10 @@ Previously, and issue was identified where clicking the editor's horizontal scro
 {productname} {release-version} addresses this issue. Now, the editor avoids taking focus when users click elements that are not selectable (such as scrollbars), preventing unintended vertical scrolling.
 
 
-[[additions]]
-== Additions
-
-{productname} {release-version} also includes the following addition<s>:
-
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
 [[changes]]
 == Changes
 
-{productname} {release-version} also includes the following change<s>:
-
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+{productname} {release-version} also includes the following change:
 
 === Tooltips can now remain open when hovered
 // #TINY-12053
@@ -313,26 +251,11 @@ Previously, tooltips would disappear when the cursor moved from the toolbar butt
 This improvement addresses the link:https://www.w3.org/WAI/WCAG21/Understanding/content-on-hover-or-focus[WCAG 2.1 Success Criterion 1.4.13: Content on Hover or Focus (Level AA)], specifically the "Hoverable" requirement.
 
 
-[[removed]]
-== Removed
-
-{productname} {release-version} also includes the following removal<s>:
-
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
 === NVDA would announce iframe_aria_text multiple times
 // #TINY-11296
 
@@ -383,17 +306,6 @@ https://example.com/search?&amp;amp;query=example
 ----
 
 This caused issues when opening such links, as the URLs became invalid. In {release-version}, {productname} now automatically decodes `+&amp;+` back to `+&+` before inserting the link, ensuring that pasted URLs remain valid and functional in both the editor and the source code.
-
-
-[[security-fixes]]
-== Security fixes
-
-{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
-
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
 
 
 [[deprecated]]

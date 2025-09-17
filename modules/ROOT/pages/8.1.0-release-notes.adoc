@@ -285,7 +285,7 @@ This issue disrupted accessibility and editing flow for Firefox users relying on
 === Cursor movement did not operate correctly after a `figure` was selected
 // #TINY-12458
 
-In previous versions of {productname}, using the TAB key to move focus into a `figcaption` element after selecting a `figure` caused the editor to enter a broken state where the caret was displayed inside the figcaption but typing did not produce any visible content. This issue prevented users from editing figcaptions using only the keyboard, forcing them to rely on a mouse or other pointing device to make changes.
+In previous versions of {productname}, using the `TAB` key to move focus into a `figcaption` element after selecting a `figure` caused the editor to enter a broken state where the caret was displayed inside the figcaption but typing did not produce any visible content. This issue prevented users from editing figcaptions using only the keyboard, forcing them to rely on a mouse or other pointing device to make changes.
 
 In {productname} {release-version}, this bug has been fixed, ensuring that figcaptions can now be edited seamlessly with keyboard navigation alone, improving accessibility and overall editing efficiency.
 

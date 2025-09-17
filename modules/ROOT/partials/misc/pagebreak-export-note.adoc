@@ -1,0 +1,36 @@
+[NOTE]
+====
+.Page break support
+To ensure page breaks work correctly in exported documents, configure the `pagebreak_separator` option:
+ifeval::["{plugincode}" == "exportpdf"]
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'exportpdf',
+  toolbar: 'exportpdf',
+  pagebreak_separator: '<div style="break-after: page"></div>',
+  // ... other configuration options
+});
+----
+
+For DOCX exports, the page breaks will be converted to Word-compatible page breaks.
+endif::[]
+
+ifeval::["{plugincode}" != "exportpdf"]
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'exportword',
+  toolbar: 'exportword',
+  pagebreak_separator: '<div style="break-after: page"></div>',
+  // ... other configuration options
+});
+----
+
+For PDF exports, ensure your content includes proper page break elements that will be converted to PDF page breaks.
+endif::[]
+====

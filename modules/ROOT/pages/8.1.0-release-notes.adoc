@@ -333,6 +333,6 @@ There is one known issue in {productname} {release-version}.
 
 === Full Page HTML plugin incompatibility with Suggested Edits and Revision History
 
-The Full Page HTML plugin enables document properties and metadata to be set. However, these are not picked up by Suggested Edits and Revision History, and actions performed in these plugins will overwrite the values set by the Full Page plugin.
+The Full Page HTML plugin enables document properties and metadata to be set. However, these are not picked up by Suggested Edits and Revision History, and actions performed in these plugins will overwrite the values set by the Full Page HTML plugin.
 
 **Workaround:** Avoid using the Full Page HTML plugin in combination with Suggested Edits or Revision History plugins to prevent data loss of document metadata and properties.

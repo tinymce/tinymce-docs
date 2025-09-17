@@ -23,3 +23,11 @@ tinymce.init({
   iframe_aria_text: 'Text Editor'
 });
 ----
+
+[NOTE]
+====
+The `+iframe_aria_text+` option is applied differently depending on the browser to ensure consistent screen reader announcements:
+
+* **Firefox**: The `+title+` attribute is set on the iframe element. The `+aria-label+` on the body is not set.
+* **Other browsers**: The `+aria-label+` is set on the body inside the iframe. The `+title+` is not set on the iframe.
+====

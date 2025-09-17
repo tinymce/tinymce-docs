@@ -1,0 +1,21 @@
+[[fullpagehtml-default-encoding]]
+== `+fullpagehtml_default_encoding+`
+
+This option enables you to specify the default encoding for the output HTML.
+
+*Type:* `+String+`
+
+*Possible values:* Any string value representing a character encoding
+
+*Default value:* No default value (empty string)
+
+=== Example: using `+fullpagehtml_default_encoding+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'fullpagehtml',
+  fullpagehtml_default_encoding: 'ISO-8859-1'
+});
+----

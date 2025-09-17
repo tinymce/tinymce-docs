@@ -2,7 +2,7 @@
 :release-version: 8.1
 :navtitle: {productname} {release-version}
 :description: Release notes for {productname} {release-version}
-:keywords: releasenotes, new, changes, bugfixes
+:keywords: releasenotes, new, changes, bugfixes, new features, improvements, changes, removals, deprecated, known issues
 :page-toclevels: 1
 
 include::partial$misc/admon-releasenotes-for-stable.adoc[]
@@ -11,15 +11,13 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[overview]]
 == Overview
 
-{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, September 10^th^, 2025. These release notes provide an overview of the changes for {productname} {release-version}, including:
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, September 17^th^, 2025. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
-* xref:new-premium-plugins[New Premium plugins]
+* xref:new-premium-plugin[New Premium plugin]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:improvements[Improvements]
-* xref:additions[Additions]
 * xref:changes[Changes]
 * xref:bug-fixes[Bug fixes]
-* xref:security-fixes[Security fixes]
 * xref:deprecated[Deprecated]
 * xref:known-issues[Known issues]
 
@@ -30,11 +28,11 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following new Premium plugin was released alongside {productname} {release-version}.
 
-// === <Premium plugin name>
+=== Full Page HTML
 
-// The new Premium plugin, **<Premium plugin name>** // description here.
+The new Premium plugin, **Full Page HTML** provides comprehensive control over document metadata and properties. It enables users to edit HTML document metadata such as title, keywords, and description through an intuitive dialog interface. When combined with the code plugin, it also exposes the complete HTML structure including `<head>`, `<body>`, and various meta tags in the source code view.
 
-// For information on the **<Premium plugin name>** plugin, see xref:<plugincode>.adoc[<Premium plugin name>].
+For information on the **Full Page HTML** plugin, see xref:fullpagehtml.adoc[Full Page HTML].
 
 
 [[accompanying-premium-plugin-changes]]
@@ -42,83 +40,272 @@ The following new Premium plugin was released alongside {productname} {release-v
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-// === <Premium plugin name 1> <Premium plugin name 1 version>
+=== Spell Checker
 
-// The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Spell Checker** premium plugin.
 
-// **<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Spell Checker** Premium plugin includes the following fix.
 
-// ==== <Premium plugin name 1 change 1>
+==== Spellcheck could create an invalid selection if the first element in the document was `+noneditable+`.
+// #TINY-12514
 
-// CCFR here.
+Previously when the first element of a document was set as a `contenteditable="false"` (CEF) element, selecting all content with {productname} spellchecker could result in an invalid selection state. This issue prevented the deletion of the entire content selection, creating an edge case that disrupted normal editing workflows.
 
-// For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+To resolve this, {productname} now inserts a temporary hidden element before the initial CEF element in such scenarios. This adjustment ensures that full selections are valid and can be deleted as expected.
+
+For information on the **Spell Checker** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker].
+
+=== Image Optimizer (Powered by Uploadcare)
+
+The {productname} {release-version} release includes an accompanying release of the **Image Optimizer (Powered by Uploadcare)** premium plugin.
+
+**Image Optimizer (Powered by Uploadcare)** includes the following fix.
+
+==== Image previews sometimes showed the wrong image from a `srcset`.
+
+In previous versions of the Image Optimizer premium plugin, an issue where image effects were applied based on the main `src` instead of the active `srcset` URL, caused discrepancies when the displayed image was selected from `srcset`. This led to a mismatch in the adjustment preview (rendered from the main `src`) versus the image shown in the editor (rendered from the `srcset` URL), resulting in different visual outcomes for effects such as blur or resize.
+
+{productname} {release-version} resolves this issue by using the `currentSrc` property to generate previews, ensuring the preview and the editor image reference the same resource. As a result, the preview image and the image in the editor are now consistent.
+
+For information on the **Image Optimizer Powered by Uploadcare** plugin, see: xref:uploadcare.adoc[Image Optimizer (Powered by Uploadcare)].
+
+=== Accessibility Checker
+
+The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.
+
+**Accessibility Checker** includes the following improvements.
+
+==== `+alt+` text length error message now shows current and maximum character counts
+// #TINY-12569
+
+Previous versions of **Accessibility Checker**, the `+alt+` text length validation error displayed only the current character count, such as "_Currently 151 characters_" without indicating the maximum allowed length. This caused unclear guidance for users and negatively affected the experience across all image rules (I1–I4) that rely on length validation, making it inconsistent with accessibility best practices.
+
+In {productname} {release-version}, the error message for **Accessibility Checker** has been updated to show both the current and maximum character counts, for example: "_151 characters (maximum 150 allowed)_." This improvement provides clear, actionable error messaging that aligns with accessibility guidance and reduces user confusion across all affected rules.
+
+==== Auto-suggest `+alt+` text from existing `+alt+`, `+aria-label+`, and `+title+` attributes with priority fallback in image repair dialogs.
+// #TINY-12547
+
+In previous version of **Accessibility Checker**, the image repair dialog only proposed values from `+alt+`, ignoring `+aria-label+` and `+title+`, which forced manual entry and slowed accessibility repairs while increasing the risk of inconsistent descriptions.
+
+{productname} {release-version} now auto-suggests `+alt+` text using a priority-based fallback that checks existing attributes in order `+aria-labelledby+`, `+aria-label+`, `+alt+` then `+title+` and leaves the field empty if none are present. This ensures that users can label images faster and with greater accuracy by leveraging existing accessibility attributes, improving repair efficiency and consistency.
+
+For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
+
+=== Revision History
+
+The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
+
+**Revision History** includes the following fix and improvement.
+
+==== The same user could receive two different default avatars
+// #TINY-12527
+
+In previous versions of Revision History, the same user could receive two different default avatars. This inconsistency could make a single user appear as two distinct contributors, creating confusion when reviewing revision logs.
+
+In {productname} {release-version}, the issue has been resolved so that each user is now always assigned the same default avatar, improving accuracy and consistency in the revision history display.
+
+==== Default avatars are now generated with a consistent color based on the `user_id`
+// #TINY-12527
+
+Default avatars are now generated consistently using the `user_id`, ensuring that users are assigned a reliable and predictable color for their avatar. This improvement enhances the user experience by providing clear visual consistency when identifying contributors in revision histories.
+
+For information on the **Revision History** plugin, see: xref:revisionhistory.adoc[Revision History].
+
+=== Comments
+
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** Premium plugin includes the following fixes and improvement. 
+
+==== Default avatars generated inconsistently
+// The same user avatar was generated for all users without an avatar in the mentions dropdown.
+// The same user could receive two different default avatars.
+// Default avatars are now generated with a consistent color based on the user id.
+// #TINY-12526 #TINY-12532 #TINY-12633
+
+Previously, {productname} generated default avatars inconsistently in the Comments plugin. Users without avatars saw the same placeholder avatar in the mentions dropdown, while the same individual could also receive different default avatars in other contexts. This inconsistency made it difficult to distinguish users and, in some cases, created confusion by making a single user appear as two different people. In {release-version}, this issue has been fixed, and default avatars are now consistently generated with a stable color based on the `+user_id+`. This ensures that the same user always has the same default avatar, improving clarity and providing a more reliable user experience.
+
+==== Improved keyboard navigation in Comments dropdown when inserting `@Mention`
+// #TINY-12785
+
+Previously, typing `@` to open the mentions dropdown list inside the Comments card did not support the **Shift+Enter** keyboard combination. For example, when typing a `@` + navigating to a user in the selected Comment card, pressing **Shift+Enter** did not insert the `@mention` to the `<textarea>` for the comment body.
+
+In {productname} {release-version}, this issue has been resolved by  handling **Shift+Enter** in the same way as the regular **Enter** key, ensuring consistent and predictable keyboard interaction when selecting items in the `@mentions` dropdown within comment cards.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Introduction to Tiny Comments].
+
+=== Mentions
+
+The {productname} {release-version} release includes an accompanying release of the **Mentions** premium plugin.
+
+**Mentions** Premium plugin includes the following improvement.
+
+==== Users without avatars now display avatar placeholders in the mentions dropdown
+// #TINY-12473
+
+Previously, the mentions dropdown did not properly handle cases where users lacked profile avatars, resulting in a visually inconsistent and unclear user interface. This impacted usability by making it harder to distinguish between users without avatars and those with incomplete or broken profile information.
+
+In {productname} {release-version}, this issue has been addressed. Now, {productname} provides a default avatar placeholder for users without avatars, ensuring a consistent and polished experience when using the mentions dropdown.
+
+For information on the **Mentions** plugin, see: xref:mentions.adoc[Mentions].
+
+=== AI Assistant
+
+The {productname} {release-version} release includes an accompanying release of the **AI Assistant** premium plugin.
+
+**AI Assistant** includes the following fix.
+
+==== AI Assistant plugin dialog preview now respects the `content_security_policy` editor option
+// TINY-12800
+
+Previously, the AI Assistant plugin dialog preview did not adhere to the xref:tinymce-and-csp.adoc#content_security_policy[content_security_policy] editor option, resulting in limited control over the loading of external resources such as images.
+
+In {productname} {release-version}, the dialog preview now applies the configured content security policy when provided, ensuring that external resources are restricted according to the editor's security settings. This improvement enhances consistency, strengthens security, and aligns the plugin with user-defined policies in {productname}.
+
+For information on the **AI Assistant** plugin, see: xref:ai.adoc[AI Assistant], or for information on the `+content_security_policy+` option see xref:tinymce-and-csp.adoc#content_security_policy[Content Security Policy].
+
+=== Suggested Edits
+
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
+
+**Suggested Edits** includes the following fix andimprovement.
+
+==== Added keyboard navigation to the Suggested Edits plugin
+// #TINY-11452
+
+The initial release of the Suggested Edits plugin did not support keyboard navigation, limiting accessibility for users who rely on keyboard-based interactions. This restriction made it difficult to move through and interact with the suggested edits sidebar and cards without using a mouse. To improve usability and accessibility, keyboard navigation has been implemented in the Suggested Edits plugin. Users can now efficiently navigate and interact with the plugin using the keyboard.
+
+=== Empty editor operations sometimes showed as modified instead of added/removed
+// #TINY-12273
+
+Previously empty editor operations were sometimes incorrectly displayed as modifications instead of additions or removals. This behavior caused confusion, as an editor that appeared empty could still show a “modified” state.
+
+To resolve this, empty content is no longer sent. When the editor is empty or becomes empty, the entire state is now correctly represented as added or removed. This improvement ensures that change tracking is clearer and more accurate, reducing confusion when editors contain no content.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
 
 
 [[improvements]]
 == Improvements
 
-{productname} {release-version} also includes the following improvement<s>:
+{productname} {release-version} also includes the following improvements:
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== `editor.getContent()` now includes `indent` and `entity_encoding` properties to control HTML formatting
+// #TINY-12786
 
-// CCFR here.
+Previously, when using the {productname} `+getContent+` API, options such as `+indent+` and `+entity_encoding+` could not be overridden during the call. The editor always applied its initial configuration, which limited flexibility when retrieving content. This meant integrators were restricted to the defaults set at initialization, with no way to adjust formatting behavior per call.
 
+In {productname} {release-version}, the `+getContent+` API has been enhanced to support per-call overrides for `+indent+` and `+entity_encoding+`. These options can now be specified directly when invoking `+getContent+`, regardless of the editor’s default configuration. This improvement gives developers greater control over output formatting, allowing tailored content retrieval for different use cases.
 
-[[additions]]
-== Additions
+.Example: how to use the `+getContent+` API to retrieve content with different formatting options.
+[source,js]
+----
+// Disable indentation
+tinymce.get(0).getContent({ indent: false });
 
-{productname} {release-version} also includes the following addition<s>:
+// Serialize using named entities
+tinymce.get(0).getContent({ indent: false, entity_encoding: 'named' });
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+// Serialize using numeric entities
+tinymce.get(0).getContent({ indent: false, entity_encoding: 'numeric' });
 
-// CCFR here.
+// Serialize core entities as named, others as numeric
+tinymce.get(0).getContent({ indent: false, entity_encoding: 'named+numeric' });
+
+// Output raw characters
+tinymce.get(0).getContent({ indent: false, entity_encoding: 'raw' });
+----
+
+or
+
+.Example of configuring the editor to use named entity encoding and disable indentation.
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  entity_encoding: 'named', // or 'numeric' or 'raw'
+  indent: false, // or true
+});
+----
+
+For more information on the `+getContent+` API, see `xref:apis/tinymce.editor.adoc#getContent[getContent()]`.
+
+=== Clicking on a non-selectable element when the selection is off screen no longer scrolls to the selection
+// #TINY-12245
+
+Previously, an issue was identified where clicking the editor's horizontal scrollbar a "non-selectable" UI element implicitly focused the editor, placed the caret at the beginning of the content, and then scrolled the document vertically to that caret position, causing the page to scroll away from the user's current view.
+
+{productname} {release-version} addresses this issue. Now, the editor avoids taking focus when users click elements that are not selectable (such as scrollbars), preventing unintended vertical scrolling.
 
 
 [[changes]]
 == Changes
 
-{productname} {release-version} also includes the following change<s>:
+{productname} {release-version} also includes the following change:
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Tooltips can now remain open when hovered
+// #TINY-12053
 
-// CCFR here.
+Previously, tooltips would disappear when the cursor moved from the toolbar button to the tooltip, preventing users from keeping the tooltip open for reference. This behavior impacted accessibility by making it difficult for users who rely on tooltips for extended reading or navigation. In {release-version}, {productname} has been updated to allow tooltips to accept mouse events. This ensures that tooltips remain visible when hovered, improving accessibility and usability by letting users keep the tooltip open until they move the cursor away.
 
-
-[[removed]]
-== Removed
-
-{productname} {release-version} also includes the following removal<s>:
-
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+This improvement addresses the link:https://www.w3.org/WAI/WCAG21/Understanding/content-on-hover-or-focus[WCAG 2.1 Success Criterion 1.4.13: Content on Hover or Focus (Level AA)], specifically the "Hoverable" requirement.
 
 
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== NVDA would announce iframe_aria_text multiple times
+// #TINY-11296
 
-// CCFR here.
+Previously, in certain browsers, when using screen readers such as NVDA or JAWS, the `iframe_aria_text` was either not announced at all or announced twice, causing inconsistent and potentially confusing behavior for users relying on assistive technology. To resolve this, the behavior has been standardized by adjusting how the label is applied:
 
+* in Firefox, the `title` attribute is now set directly on the iframe element and the `aria-label` on the body is not used.
+* while in other browsers the `aria-label` is applied to the body inside the iframe without setting a `title` attribute on the iframe.
 
-[[security-fixes]]
-== Security fixes
+As a result, `iframe_aria_text` is now consistently announced once across all supported browsers.
 
-{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
+For more information, see: xref:accessibility.adoc#iframe_aria_text[iframe_aria_text].
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Using `+Command (CMD)+` + `+Backspace+` would not preserve inline formatting.
+// #TINY-12071
 
-// CCFR here.
+Previously, using `+Command (CMD)+` + `+Backspace+` at the end of a line removed the entire line without preserving inline formatting, unlike selecting the line with a triple-click and pressing `+Backspace+`. This inconsistency caused confusion, as different deletion methods produced different results.
+
+In {release-version}, the behavior of `+Command (CMD)+` + `+Backspace+` has been updated to match other deletion methods, ensuring that inline formatting is preserved.
+
+=== Navigating between elements with `+contenteditable="true"+` was not possible on Firefox using the keyboard.
+// #TINY-12459
+
+In {productname} {release-version}, a Firefox-specific limitation prevented caret movement between editable elements when navigating with the keyboard. The caret became trapped inside a +figcaption+, blocking vertical navigation using the Arrow Down key and preventing users from moving to the next element.
+
+This issue disrupted accessibility and editing flow for Firefox users relying on keyboard interactions. To resolve this, a new caret navigation module was introduced and integrated into the Firefox-specific arrow key handling logic. The solution works around a long-standing Firefox bug by programmatically advancing the caret out of blocked states, ensuring smoother and more consistent keyboard navigation across editable elements.
+
+=== Cursor movement did not operate correctly after a `figure` was selected
+// #TINY-12458
+
+In previous versions of {productname}, using the `TAB` key to move focus into a `figcaption` element after selecting a `figure` caused the editor to enter a broken state where the caret was displayed inside the figcaption but typing did not produce any visible content. This issue prevented users from editing figcaptions using only the keyboard, forcing them to rely on a mouse or other pointing device to make changes.
+
+In {productname} {release-version}, this bug has been fixed, ensuring that figcaptions can now be edited seamlessly with keyboard navigation alone, improving accessibility and overall editing efficiency.
+
+=== Links inserted with `+&amp;+` encoding are now decoded to `&` before inserting
+// #TINY-12504
+
+Previously, when pasting URLs containing encoded ampersands `+&amp;+` into {productname}, the encoded values were preserved, resulting in double encoding when the link was inserted into content. For example, a pasted link such as
+
+[source,text]
+----
+https://example.com/search?&amp;query=example
+----
+would appear in the editor source as
+
+[source,text]
+----
+https://example.com/search?&amp;amp;query=example
+----
+
+This caused issues when opening such links, as the URLs became invalid. In {release-version}, {productname} now automatically decodes `+&amp;+` back to `+&+` before inserting the link, ensuring that pasted URLs remain valid and functional in both the editor and the source code.
 
 
 [[deprecated]]
@@ -132,15 +319,20 @@ The following premium plugin updates were released alongside {productname} {rele
 
 // placeholder here.
 
+=== The `content_css_cors` configuration option has been deprecated
+// #TINY-12578
+
+As of {productname} {release-version}, the `content_css_cors` configuration option has been marked as *deprecated*. It will be completely removed in the upcoming {productname} 9.0 release. As an alternative, we recommend using xref:tinymce-and-cors.adoc#crossorigin[crossorigin] instead.
 
 [[known-issues]]
 == Known issues
 
 This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
 
-There <is one | are <number> known issue<s> in {productname} {release-version}.
+There is one known issue in {productname} {release-version}.
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Full Page HTML plugin incompatibility with Suggested Edits and Revision History
 
-// CCFR here.
+The Full Page HTML plugin enables document properties and metadata to be set. However, these are not picked up by Suggested Edits and Revision History, and actions performed in these plugins will overwrite the values set by the Full Page HTML plugin.
+
+**Workaround:** Avoid using the Full Page HTML plugin in combination with Suggested Edits or Revision History plugins to prevent data loss of document metadata and properties.

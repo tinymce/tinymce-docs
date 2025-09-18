@@ -1,0 +1,25 @@
+= {productname} {release-version}
+:release-version: 8.1.2
+:navtitle: {productname} {release-version}
+:description: Release notes for {productname} {release-version}
+:keywords: releasenotes, bugfix
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+
+[[overview]]
+== Overview
+
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Thursday, September 18^th^, 2025. These release notes provide an overview of the changes for {productname} {release-version}, including:
+
+* xref:bug-fix[Bug fix]
+
+
+[[bug-fix]]
+== Bug fix
+
+=== Sidebar UI for comments was not rendering correctly
+// #TINY-12925
+
+In {productname} {release-version}, an issue was resolved where the sidebar UI for comments did not render as intended due to incorrect styling. The affected interface appeared visually inconsistent. This problem was caused by CSS class precedence preventing the correct styles from being applied. The update adjusts the styling hierarchy to ensure the appropriate CSS is applied, resulting in the sidebar UI now rendering correctly and providing the intended user experience.

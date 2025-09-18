@@ -4,6 +4,11 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+== xref:8.1.2-release-notes.adoc[8.1.2 - 2025-09-18]
+
+### Fixed
+* Sidebar UI for comments was not rendering correctly. The UI wasn't styled correctly so it didn't look what one would expect. We changed the precedence of some classes so that the CSS was applied correctly. The UI now looks more correct.
+// #TINY-12925
 
 == xref:8.1.1-release-notes.adoc[8.1.1 - 2025-09-17]
 

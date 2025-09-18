@@ -1,0 +1,25 @@
+= {productname} {release-version}
+:release-version: 8.1.1
+:navtitle: {productname} {release-version}
+:description: Release notes for {productname} {release-version}
+:keywords: releasenotes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+
+[[overview]]
+== Overview
+
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, September 17^th^, 2025. These release notes provide an overview of the changes for {productname} {release-version}, including:
+
+* xref:bug-fix[Bug fix]
+
+
+[[bug-fix]]
+== Bug fix
+
+=== Reset rules for CSS were not applying correctly.
+// #TINY-12920
+
+{productname} {release-version} fixes an issue where CSS reset rules were not applied correctly to the editor UI. On pages using site-wide reset styles or generic element selectors, external CSS could override the editor's interface styles, leading to visual inconsistencies and, in some cases, a broken editor layout. This release reverts problematic internal CSS so that the reset rules are applied as intended, preventing conflicts with existing page styles and ensuring the editor UI renders reliably across integrations.

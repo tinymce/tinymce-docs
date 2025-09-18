@@ -712,6 +712,8 @@ tinymce.init({
       'size': 'Letter'
     }
   },
+  pagebreak_separator: '<div style="break-after: page"></div>',
+  pagebreak_split_block: true,
   importword_converter_options: {
     'formatting': {
       'styles': 'inline',

@@ -7,6 +7,7 @@
 :description_short: Generate a .docx file directly from the editor.
 :keywords: plugin, {plugincode}, {pluginname}
 :plugincategory: premium
+:plugincode: exportword
 
 include::partial$misc/admon-export-word-paid-addon-pricing.adoc[]
 
@@ -70,6 +71,10 @@ tinymce.init({
 ====
 The `exportword_service_url` option automatically appends `/v2/convert/html-docx` to the URL provided, so only the base URL is required. For example, if the service is hosted at `http://localhost:8080/v2/convert/html-docx`, the `exportword_service_url` option should be set to `http://localhost:8080/`. When using in production, ensure that `exportword_service_url` is updated to the production URL such as `https://myserver.com/`.
 ====
+
+== Additional Configuration
+
+include::partial$misc/pagebreak-export-note.adoc[]
 
 == Options
 

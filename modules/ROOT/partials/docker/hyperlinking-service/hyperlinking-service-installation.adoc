@@ -126,7 +126,7 @@ Once the application configuration file is ready, proceed with the Docker Compos
 ----
 services:
   hyperlinking-tiny:
-	  image: registry.containers.tiny.cloud/hyperlinking-tiny:<VERSION>
+    image: registry.containers.tiny.cloud/hyperlinking-tiny:<VERSION>
     ports:
       - "19100:19100"
     restart: always

@@ -74,31 +74,30 @@ To create a custom icon pack:
 
 To use the {productname} icon pack template project:
 
-1. Download the link:https://github.com/tinymce/oxide-icon-pack-template[TinyMCE Oxide Icon Pack Template] by either:
-   * Downloading the `.zip` file from the link:https://github.com/tinymce/oxide-icon-pack-template[Oxide Icon Pack Template GitHub page] and extract the contents.
-   * From a terminal or command prompt, use git to clone the GitHub repository:
+. Download the link:https://github.com/tinymce/oxide-icon-pack-template[TinyMCE Oxide Icon Pack Template] by either:
+* Downloading the `.zip` file from the link:https://github.com/tinymce/oxide-icon-pack-template[Oxide Icon Pack Template GitHub page] and extract the contents.
+* From a terminal or command prompt, use git to clone the GitHub repository:
 +
 [source,bash]
 ----
 git clone https://github.com/tinymce/oxide-icon-pack-template.git
 ----
-
-2. Open a terminal or command prompt, navigate to the `oxide-icon-pack-template` directory.
-
-3. Install the project dependencies by executing:
++
+. Open a terminal or command prompt, navigate to the `oxide-icon-pack-template` directory.
+. Install the project dependencies by executing:
 +
 [source,bash]
 ----
 npm install
 ----
-
-4. When prompted, enter a name for the icon pack. The icon pack name should only contain:
-   * Numbers
-   * Letters
-   * Hyphens (`-`)
-   * Underscores (`_`)
-
-5. Verify that the `iconPackName` field has been added to your `package.json` file:
++
+. When prompted, enter a name for the icon pack. The icon pack name should only contain:
+* Numbers
+* Letters
+* Hyphens (`-`)
+* Underscores (`_`)
++
+. Verify that the `iconPackName` field has been added to your `package.json` file:
 +
 [source,json]
 ----
@@ -119,9 +118,9 @@ The `iconPackName` field in `package.json` is essential for the build process. T
 * If missing or incorrect, the icon pack will not work properly
 
 *Example:*
-- `package.json` contains: `"iconPackName": "my_icon_pack"`
-- TinyMCE config uses: `icons: 'my_icon_pack'`
-- Generated file: `tinymce.IconManager.add('my_icon_pack', {...})`
+* `package.json` contains: `"iconPackName": "my_icon_pack"`
+* TinyMCE config uses: `icons: 'my_icon_pack'`
+* Generated file: `tinymce.IconManager.add('my_icon_pack', {...})`
 ====
 
 === Add the SVG Files
@@ -155,7 +154,6 @@ For a list of default icon identifiers, see: link:https://www.tiny.cloud/docs/ti
 * *SVG Requirements:* Input SVGs must be shapes, not strokes. SVG files containing strokes will not render correctly. If the input files contain strokes, use a graphics program to convert the strokes into shapes.
 ====
 
-
 ==== SVG File Organization
 
 Organize your SVG files in the `src/svg/` directory:
@@ -180,9 +178,8 @@ src/svg/
 
 To build the icon pack using Gulp:
 
-1. Open a terminal or command prompt and navigate to the root directory of the icon pack (such as: `+oxide-icon-pack-template/+`).
-
-2. Build the icon pack by executing the `npx gulp` command:
+. Open a terminal or command prompt and navigate to the root directory of the icon pack (such as: `+oxide-icon-pack-template/+`).
+. Build the icon pack by executing the `npx gulp` command:
 +
 [source,bash]
 ----
@@ -196,21 +193,21 @@ A `+dist/+` directory containing the icon pack will be automatically created.
 ----
 tinymce.IconManager.add('my-icon-pack', {
   icons: {
-      'audio': '<svg width="24" height="24"><path d="M10.8 19q.9 0 1.5-.7t.7-1.5V13h3v-2h-4v3.9l-.6-.3-.6-.1q-1 0-1.7.7t-.6 1.6q0 .9.7 1.5t1.6.7ZM6 22q-.8 0-1.4-.6T4 20V4q0-.8.6-1.4T6 2h8l6 6v12q0 .8-.6 1.4T18 22H6Zm7-13h5l-5-5v5Z"/></svg>',
-      'bold': '<svg width="24" height="24"><path fill-rule="evenodd" d="M3.6 2.3a1.4 1.4 0 0 0-1.4 1.3v16.8c0 .7.7 1.4 1.4 1.4h16.8a1.4 1.4 0 0 0 1.4-1.4V3.6a1.4 1.4 0 0 0-1.4-1.3H3.6Zm6 4a1.4 1.4 0 0 0-1.3 1.3v9.3c0 .7.6 1.4 1.3 1.4H12v-.8.8a2.5 2.5 0 0 0 .2 0 4.6 4.6 0 0 0 1.6-.5c.5-.2 1-.5 1.3-1 .4-.5.7-1.2.7-2 0-.9-.3-1.6-.7-2a3.2 3.2 0 0 0-.8-.9 2.8 2.8 0 0 0 .4-.5c.4-.5.5-1.1.5-1.9s-.1-1.4-.5-1.9a3 3 0 0 0-1.1-1 3.9 3.9 0 0 0-1.6-.3H9.6Zm.1 6.5H12a3.2 3.2 0 0 1 1.2.2l.7.6c.2.2.4.6.4 1.1s-.2 1-.4 1.2a1.8 1.8 0 0 1-.7.6 3.2 3.2 0 0 1-1.1.2H9.7v-4Zm2.3 4Zm0-5.6H9.7V7.8H12l1 .2.5.5c.1.2.3.5.3 1s-.2.8-.3 1a1.4 1.4 0 0 1-.6.5 2.3 2.3 0 0 1-.9.2Z" clip-rule="evenodd"/></svg>',
-      'italic': '<svg width="24" height="24"><path fill-rule="evenodd" d="M3.6 2.3a1.4 1.4 0 0 0-1.4 1.3v16.8c0 .7.7 1.4 1.4 1.4h16.8a1.4 1.4 0 0 0 1.4-1.4V3.6a1.4 1.4 0 0 0-1.4-1.3H3.6ZM16 6.8h-1.5L11 17.1h1a.8.8 0 0 1 0 1.6H8a.8.8 0 0 1 0-1.6h1.5L13 6.8h-1a.8.8 0 0 1 0-1.5h4a.8.8 0 0 1 0 1.5Z" clip-rule="evenodd"/></svg>',
+    'audio': '<svg width="24" height="24"><path d="M10.8 19q.9 0 1.5-.7t.7-1.5V13h3v-2h-4v3.9l-.6-.3-.6-.1q-1 0-1.7.7t-.6 1.6q0 .9.7 1.5t1.6.7ZM6 22q-.8 0-1.4-.6T4 20V4q0-.8.6-1.4T6 2h8l6 6v12q0 .8-.6 1.4T18 22H6Zm7-13h5l-5-5v5Z"/></svg>',
+    'bold': '<svg width="24" height="24"><path fill-rule="evenodd" d="M3.6 2.3a1.4 1.4 0 0 0-1.4 1.3v16.8c0 .7.7 1.4 1.4 1.4h16.8a1.4 1.4 0 0 0 1.4-1.4V3.6a1.4 1.4 0 0 0-1.4-1.3H3.6Zm6 4a1.4 1.4 0 0 0-1.3 1.3v9.3c0 .7.6 1.4 1.3 1.4H12v-.8.8a2.5 2.5 0 0 0 .2 0 4.6 4.6 0 0 0 1.6-.5c.5-.2 1-.5 1.3-1 .4-.5.7-1.2.7-2 0-.9-.3-1.6-.7-2a3.2 3.2 0 0 0-.8-.9 2.8 2.8 0 0 0 .4-.5c.4-.5.5-1.1.5-1.9s-.1-1.4-.5-1.9a3 3 0 0 0-1.1-1 3.9 3.9 0 0 0-1.6-.3H9.6Zm.1 6.5H12a3.2 3.2 0 0 1 1.2.2l.7.6c.2.2.4.6.4 1.1s-.2 1-.4 1.2a1.8 1.8 0 0 1-.7.6 3.2 3.2 0 0 1-1.1.2H9.7v-4Zm2.3 4Zm0-5.6H9.7V7.8H12l1 .2.5.5c.1.2.3.5.3 1s-.2.8-.3 1a1.4 1.4 0 0 1-.6.5 2.3 2.3 0 0 1-.9.2Z" clip-rule="evenodd"/></svg>',
+    'italic': '<svg width="24" height="24"><path fill-rule="evenodd" d="M3.6 2.3a1.4 1.4 0 0 0-1.4 1.3v16.8c0 .7.7 1.4 1.4 1.4h16.8a1.4 1.4 0 0 0 1.4-1.4V3.6a1.4 1.4 0 0 0-1.4-1.3H3.6ZM16 6.8h-1.5L11 17.1h1a.8.8 0 0 1 0 1.6H8a.8.8 0 0 1 0-1.6h1.5L13 6.8h-1a.8.8 0 0 1 0-1.5h4a.8.8 0 0 1 0 1.5Z" clip-rule="evenodd"/></svg>',
   }
 });
 ----
 +
-3. Using a web browser, open `+dist/html/icons.html+` to preview the icons.
+. Using a web browser, open `+dist/html/icons.html+` to preview the icons.
 
 ==== Troubleshooting Information for Building Icon Packs
 
 The SVG files are optimized during the build process with link:https://github.com/svg/svgo[SVGO]. The optimization can result in distorted graphics due to rounding errors. The graphics may be fixed by providing new SVGO options. To change the SVGO options used:
 
-1. Using a text editor, open `+gulpfile.js+`.
-2. Add the `+svgo+` option to the `+iconPackager+` function, such as:
+. Using a text editor, open `+gulpfile.js+`.
+. Add the `+svgo+` option to the `+iconPackager+` function, such as:
 +
 [source,javascript]
 ----
@@ -246,4 +243,3 @@ include::partial$configuration/icons_url.adoc[]
 See the custom icon pack in action with our interactive demo:
 
 liveDemo::custom-icon-pack[]
-

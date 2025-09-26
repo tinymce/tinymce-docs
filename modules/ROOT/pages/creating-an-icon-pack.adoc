@@ -127,7 +127,7 @@ The `iconPackName` field in `package.json` is essential for the build process. T
 
 Each SVG files placed in `+/src/svg+` will be converted to an icon. The file names of the SVG files are used to set the icon identifier used by {productname}.
 
-For example: `+bold.svg+` will have the identifier `bold.` Such as:
+For example: `+bold.svg+` will have the identifier `bold`. Such as:
 
 [source,js]
 ----

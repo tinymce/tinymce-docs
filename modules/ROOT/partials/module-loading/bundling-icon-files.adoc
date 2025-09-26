@@ -1,35 +1,49 @@
-== Community
+== Community icon packs
+
+These icon packs are available with all {productname} installations:
 
 Default icons::
 ....
 ./icons/default/icons.js
 ....
++
+The default icon pack is always required and provides the base set of icons for all {productname} functionality.
 
-== Premium
+== Premium icon packs
 
-For information on premium icon packs, see: xref:enhanced-skins-and-icon-packs.adoc[{prem_skins_icons}].
+These icon packs are available with paid {productname} subscriptions. For more information, see: xref:enhanced-skins-and-icon-packs.adoc[{prem_skins_icons}].
 
 Bootstrap icons::
 ....
 ./icons/bootstrap/icons.js
 ....
++
+Bootstrap-style icons that complement the Bootstrap skin and other modern interfaces.
 
 Jam icons::
 ....
 ./icons/jam/icons.js
 ....
++
+Clean, minimal icons from the JAM icon library, ideal for modern web applications.
 
 Material icons::
 ....
 ./icons/material/icons.js
 ....
++
+Material Design icons that work well with Material Design-inspired skins.
 
 Small icons::
 ....
 ./icons/small/icons.js
 ....
++
+Compact icons designed for smaller toolbar buttons and space-constrained interfaces.
 
 Thin icons::
 ....
 ./icons/thin/icons.js
 ....
++
+Thin, lightweight icons with minimal visual weight, perfect for clean, modern designs.

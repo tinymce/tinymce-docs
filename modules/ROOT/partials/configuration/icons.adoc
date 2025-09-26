@@ -15,6 +15,17 @@ On initialization, {productname} will try to load any icon pack specified by the
 * `+TINYMCE_BASE+` is the {productname} root directory (the directory containing `+tinymce.min.js+`).
 * `+${iconPackName}+` is the name of the icon pack.
 
+== Available icon packs
+
+{productname} includes both community and premium icon packs:
+
+* **Community**: `default` (always required)
+* **Premium**: `bootstrap`, `jam`, `material`, `small`, `thin` (available with paid subscriptions)
+
+For information on creating custom icon packs, see: xref:creating-an-icon-pack.adoc[Create an icon pack for {productname}].
+
+== Usage
+
 To use a {productname} icon pack:
 
 . If required, create a new `+icons+` directory in `+TINYMCE_BASE+`.
@@ -30,12 +41,14 @@ $ cp -r  dist/icons/my_icon_pack  TINYMCE_BASE/icons/
 endif::[]
 
 . Add the `+icons+` option to `+tinymce.init+`.
+
 ifeval::[{customIconPack} == true]
-+
+For custom icon packs:
+
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
+  selector: 'textarea',
   icons: 'my_icon_pack'  // TINYMCE_BASE/icons/my_icon_pack/icons.js
 });
 ----
@@ -43,13 +56,31 @@ tinymce.init({
 endif::[]
 ifeval::[{customIconPack} != true]
 
-=== Example: using `+icons+`
+=== Example: using premium icon packs
 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  icons: 'material'  // TINYMCE_BASE/icons/material/icons.js
+  selector: 'textarea',
+  icons: 'material',  // Use Material Design icons
+  plugins: [
+    "advlist", "anchor", "autolink", "charmap", "code", "fullscreen",
+    "help", "image", "insertdatetime", "link", "lists", "media",
+    "preview", "searchreplace", "table", "visualblocks",
+  ],
+  toolbar: "undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+});
+----
+
+=== Example: using multiple icon packs
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  icons: 'bootstrap',  // Use Bootstrap icons
+  skin: 'bootstrap',   // Match with Bootstrap skin
+  content_css: 'bootstrap',  // Use Bootstrap content styling
 });
 ----
 

@@ -118,6 +118,7 @@ The `iconPackName` field in `package.json` is essential for the build process. T
 * If missing or incorrect, the icon pack will not work properly
 
 *Example:*
+
 * `package.json` contains: `"iconPackName": "my_icon_pack"`
 * TinyMCE config uses: `icons: 'my_icon_pack'`
 * Generated file: `tinymce.IconManager.add('my_icon_pack', {...})`

@@ -113,14 +113,14 @@ The icon pack name will be used with the link:https://www.tiny.cloud/docs/tinymc
 The `iconPackName` field in `package.json` is essential for the build process. This field:
 
 * Defines the name that will be used in the generated `icons.js` file
-* Must match the name you use in the `icons` option when initializing TinyMCE
+* Must match the name you use in the `icons` option when initializing {productname}
 * Is used by the build system to create the proper directory structure
 * If missing or incorrect, the icon pack will not work properly
 
 *Example:*
 
 * `package.json` contains: `"iconPackName": "my_icon_pack"`
-* TinyMCE config uses: `icons: 'my_icon_pack'`
+* {productname} config uses: `icons: 'my_icon_pack'`
 * Generated file: `tinymce.IconManager.add('my_icon_pack', {...})`
 ====
 

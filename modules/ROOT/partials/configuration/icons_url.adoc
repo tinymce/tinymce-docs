@@ -9,15 +9,84 @@ endif::[]
 On initialization, {productname} will try to load any icon pack specified by the *icons_url* option. The icons in the icon pack will be merged with xref:editor-icon-identifiers.adoc[{productname}'s default icons] and icons in the icon pack will overwrite the default icons with the same identifier.
 
 `+icons_url+` is used to specify the location of an icon pack when {productname} and the icon pack are loaded from different locations. For example: When loading {productname} from {cloudname}, the icon pack can be loaded from a different web server.
+
+[IMPORTANT]
+====
+*Understanding `icons_url` and `icons` Together:*
+
+When using `icons_url`, you must also specify the `icons` option:
+
+* `icons_url` - Tells {productname} *where* to find the icon pack file.
+* `icons` - Tells {productname} *which* icon pack to use from the loaded file.
+
+*Example:*
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  icons_url: 'dist/icons/my_icon_pack/icons.js', // Where to find it
+  icons: 'my_icon_pack',  // Which pack to use
+  // ... other options
+});
+----
+
+The `icons` value must match the pack name defined in your `package.json` `iconPackName` field.
+====
+
+== Usage
+
+To use a {productname} icon pack from a separate location:
+
+. Ensure the icon pack is available at the specified URL.
+. Add the `+icons_url+` option to `+tinymce.init+`.
+
 ifeval::[{customIconPack} == true]
-Such as:
+For custom icon packs:
 
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  icons_url: 'https://www.example.com/icons/my_icon_pack/icons.js', // load icon pack
-  icons: 'my_icon_pack'  // use icon pack
+  icons_url: 'dist/icons/my_icon_pack/icons.js', // Path to custom icon pack
+  icons: 'my_icon_pack'  // Use custom icon pack
+});
+----
+
+=== Common Development Scenarios
+
+==== Local Development with Custom Icon Pack
+
+When developing locally with a custom icon pack:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  icons_url: 'dist/icons/my_icon_pack/icons.js', // Path to custom icon pack
+  icons: 'my_icon_pack',  // Use custom icon pack
+  toolbar: 'myButton',
+  setup: (editor) => {
+    editor.ui.registry.addButton('myButton', {
+      icon: 'bold',    // Uses your custom bold icon
+      onAction: (_) => {
+        editor.insertContent('&nbsp;<strong>Custom icon clicked!</strong>&nbsp;');
+      }
+    });
+  }
+});
+----
+
+==== CDN Deployment
+
+When deploying to a CDN or separate server:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  icons_url: 'https://cdn.example.com/icons/my_icon_pack/icons.js', // CDN URL
+  icons: 'my_icon_pack',  // Use custom icon pack
+  // ... other options
 });
 ----
 
@@ -31,8 +100,14 @@ ifeval::[{customIconPack} != true]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
-  icons_url: 'https://www.example.com/icons/material/icons.js', // load icon pack
-  icons: 'material'  // use icon pack
+  icons_url: 'https://www.example.com/icons/my_icon_pack/icons.js', // load icon pack from a different location
+  icons: 'material', // use icon pack
+  plugins: [
+    "advlist", "anchor", "autolink", "charmap", "code", "fullscreen",
+    "help", "image", "insertdatetime", "link", "lists", "media",
+    "preview", "searchreplace", "table", "visualblocks",
+  ],
+  toolbar: "undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
 });
 ----
 

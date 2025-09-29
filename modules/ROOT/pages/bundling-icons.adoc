@@ -3,20 +3,27 @@
 :description_short: Information on bundling icon packs
 :description: Information on bundling TinyMCE icon packs using module loading
 
+== Overview
+
+Icon packs provide visual styling for {productname}'s toolbar buttons, menu items, and contextual toolbars. When bundling {productname} with a module loader, icon packs can be included to customize the editor's appearance.
+
+{productname} includes both community and premium icon packs:
+
+* **Community icon packs**: Available with all {productname} installations
+* **Premium icon packs**: Available with paid {productname} subscriptions
+
+The default icon pack is always required and provides the base set of icons. Additional icon packs can be bundled to extend or replace the default icons.
+
 :editorcomponent: icon pack
 include::partial$module-loading/bundling-ref-example.adoc[]
 :!editorcomponent:
 
-The following table shows examples of the syntax used to bundle the following icon pack:
+== Bundling syntax examples
 
-....
-./icons/example/icons.js
-....
-
-Example syntax for including the example icon pack in a bundle:
+The following examples show how to bundle icon packs using different module syntaxes. The examples use the `material` icon pack, but the same syntax applies to all available icon packs.
 
 [cols='1,1,4']
-|===
+|====
 |Module Syntax |Source |Example
 
 .2+|ES6+
@@ -24,14 +31,14 @@ Example syntax for including the example icon pack in a bundle:
 a|
 [source, js]
 ----
-import 'tinymce/icons/example';
+import 'tinymce/icons/material';
 ----
 
 |`.zip`
 a|
 [source, js]
 ----
-import '../tinymce/icons/example/icons';
+import '../tinymce/icons/material/icons';
 ----
 
 .2+|Common JS
@@ -39,15 +46,44 @@ import '../tinymce/icons/example/icons';
 a|
 [source, js]
 ----
-require('tinymce/icons/example');
+require('tinymce/icons/material');
 ----
 
 |`.zip`
 a|
 [source, js]
 ----
-require('../tinymce/icons/example/icons.js');
+require('../tinymce/icons/material/icons.js');
 ----
-|===
+|====
+
+== Available icon packs
 
 include::partial$module-loading/bundling-icon-files.adoc[]
+
+== Usage in editor configuration
+
+After bundling an icon pack, configure the editor to use it by setting the `icons` option:
+
+[source, js]
+----
+tinymce.init({
+  selector: 'textarea',
+  icons: 'material',  // Use the bundled material icon pack
+  plugins: [
+    "advlist", "anchor", "autolink", "charmap", "code", "fullscreen",
+    "help", "image", "insertdatetime", "link", "lists", "media",
+    "preview", "searchreplace", "table", "visualblocks",
+  ],
+  toolbar: "undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+});
+----
+
+== Troubleshooting
+
+**Icons not displaying**: Ensure the icon pack is properly bundled and the `icons` option matches the bundled pack name.
+
+**Missing icons**: The default icon pack is always required. Additional icon packs extend or replace default icons but do not provide all necessary icons on their own.
+
+**Build errors**: Verify that the icon pack path is correct and the pack exists in your {productname} installation.
+

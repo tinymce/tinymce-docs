@@ -1,0 +1,58 @@
+[[uploadcare-video-properties]]
+== `uploadcare_video_properties`
+
+Configures the video player properties and behavior for video elements.
+
+*Type:* `+Object+`
+
+*Default:* See properties table below
+
+=== Properties
+
+[cols="2,1,2,1,2"]
+|===
+|Property | Type | Valid Values | Default | Description
+|`autoplay` | Boolean | `true`, `false`, `undefined` | `undefined` | Automatically starts video playback when the page loads.
+|`controls` | Boolean | `true`, `false` | `true` | Displays the video player controls (play/pause, volume, timeline, fullscreen, etc.). When disabled, users can still control playback through keyboard shortcuts or programmatic methods.
+|`controlsList` | String | `nodownload`, `nofullscreen`, `noremoteplayback` (space-separated) | `undefined` | Specifies which controls to hide from the video player interface. Use space-separated values to disable multiple controls (e.g., `"nodownload nofullscreen"`).
+|`disablePictureInPicture` | Boolean | `true`, `false`, `undefined` | `undefined` | Prevents the video from entering picture-in-picture mode, which allows users to continue watching while using other applications or tabs.
+|`disableRemotePlayback` | Boolean | `true`, `false`, `undefined` | `undefined` | Disables the ability to cast or stream the video to external devices like Chromecast or AirPlay.
+|`height` | Number or String | Pixels or CSS value | `undefined` | Sets the video player height. Accepts numeric values (interpreted as pixels) or CSS values like `"100%"`, `"50vh"`, or `"auto"`.
+|`loop` | Boolean | `true`, `false`, `undefined` | `undefined` | Automatically restarts video playback from the beginning when it reaches the end. Useful for background videos or continuous content loops.
+|`muted` | Boolean | `true`, `false`, `undefined` | `undefined` | Mutes the video audio by default. Often used in combination with autoplay since most browsers require muted videos for autoplay to function.
+|`playsInline` | Boolean | `true`, `false`, `undefined` | `undefined` | Forces the video to play inline within the page instead of opening in fullscreen mode on mobile devices. Essential for preventing unwanted fullscreen behavior on iOS Safari. Without this attribute, iOS devices will automatically enter fullscreen mode when video playback begins, which can disrupt the user experience in web applications or when videos are part of a larger content layout.
+|`poster` | String | Valid URL | `undefined` | Sets a poster image (thumbnail) that displays before video playback begins. The image should match the video's aspect ratio for best results.
+|`preload` | String | `auto`, `metadata`, `none` | `undefined` | Controls how much video data to preload: `auto` loads the entire video, `metadata` loads only basic information, `none` loads nothing until playback starts. Performance considerations: use `metadata` for better page load times and bandwidth conservation, `auto` for immediate playback without buffering delays, and `none` for maximum bandwidth savings when videos may not be played.
+|`width` | Number or String | Pixels or CSS value | `undefined` | Sets the video player width. Accepts numeric values (interpreted as pixels) or CSS values like `"100%"`, `"50vw"`, or `"auto"`.
+|`crossOrigin` | String | `anonymous`, `use-credentials` | `undefined` | Configures CORS (Cross-Origin Resource Sharing) for the video element. Use `anonymous` for basic cross-origin requests or `use-credentials` when cookies/credentials are needed.
+|`showLogo` | Boolean | `true`, `false` | `false` | Displays the Uploadcare logo overlay on the video player.
+|`posterOffset` | String | Time string (e.g., `5s`) | `undefined` | Sets a specific time offset (in seconds) for the poster image generation.
+|===
+
+
+.Example: Basic video player configuration
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare',
+  uploadcare_public_key: '<your-public-key>',
+  uploadcare_video_properties: {
+    controls: true,
+    autoplay: false,
+    loop: false,
+    muted: false,
+    playsInline: true,
+    preload: 'metadata',
+    width: 640,
+    height: 360,
+    showLogo: false
+  }
+});
+----
+
+=== Additional Resources
+
+For comprehensive information about HTML video element attributes and their behavior, see the link:https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video[MDN Video Element documentation].

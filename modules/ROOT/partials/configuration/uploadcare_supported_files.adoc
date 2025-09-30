@@ -1,0 +1,222 @@
+[[uploadcare-supported-files]]
+== `uploadcare_supported_files`
+
+Defines the supported file types and their extensions for upload.
+
+*Type:* `+Array<Object>+`
+
+*Default:* See supported file types below
+
+=== Configuration Schema
+
+Each entry must contain:
+
+[cols="1,1,1"]
+|===
+| Property | Type | Required
+
+| `mimeType`
+| String
+| Yes
+
+| `extensions`
+| Array of Strings
+| Yes
+|===
+
+=== Default Supported File Types
+
+The uploadcare plugin supports a comprehensive range of file types by default, including images, videos, documents, and audio files.
+
+==== Images
+
+[cols="1,1,1"]
+|===
+|Category | MIME Type | Extensions
+
+| JPEG Images
+| `image/jpeg`
+| `jpg`, `jpeg`, `jpe`, `jif`, `jfi`, `jfif`
+
+| GIF Images
+| `image/gif`
+| `gif`
+
+| PNG Images
+| `image/png`
+| `png`
+
+| AVIF Images
+| `image/avif`
+| `avif`
+
+| BMP Images
+| `image/bmp`
+| `bmp`
+
+| TIFF Images
+| `image/tiff`
+| `tif`, `tiff`
+
+| WebP Images
+| `image/webp`
+| `webp`
+
+| HEIC Images
+| `image/heic`
+| `heic`
+
+| PCX Images
+| `image/x-pcx`
+| `pcx`
+
+| TGA Images
+| `image/x-tga`
+| `tga`, `icb`, `vda`, `vst`
+|===
+
+==== Videos
+
+[cols="1,1,1"]
+|===
+|Category | MIME Type | Extensions
+
+| MP4 Video
+| `video/mp4`
+| `mp4`
+
+| WebM Video
+| `video/webm`
+| `webm`
+|===
+
+==== Documents
+
+[cols="1,1,1"]
+|===
+|Category | MIME Type | Extensions
+
+| Microsoft Word (Legacy)
+| `application/msword`
+| `doc`
+
+| Microsoft Excel (Legacy)
+| `application/vnd.ms-excel`
+| `xls`
+
+| Microsoft PowerPoint (Legacy)
+| `application/vnd.ms-powerpoint`
+| `ppt`, `pps`
+
+| Microsoft Word (Modern)
+| `application/vnd.openxmlformats-officedocument.wordprocessingml.document`
+| `docx`
+
+| Microsoft Excel (Modern)
+| `application/vnd.openxmlformats-officedocument.spreadsheetml.sheet`
+| `xlsx`
+
+| Microsoft PowerPoint (Modern)
+| `application/vnd.openxmlformats-officedocument.presentationml.presentation`
+| `pptx`
+
+| PDF Documents
+| `application/pdf`
+| `pdf`
+
+| Rich Text Format
+| `application/rtf`
+| `rtf`
+
+| Plain Text
+| `text/plain`
+| `txt`
+
+| Apple Keynote
+| `application/x-iwork-keynote-sffkey`
+| `key`
+
+| Apple Pages
+| `application/x-iwork-pages-sffpages`
+| `pages`
+
+| Apple Numbers
+| `application/x-iwork-numbers-sffnumbers`
+| `numbers`
+|===
+
+==== Audio
+
+[cols="1,1,1"]
+|===
+|Category | MIME Type | Extensions
+
+| WAV Audio
+| `audio/wav`
+| `wav`, `wave`
+
+| MP3 Audio
+| `audio/mpeg`
+| `mp3`
+
+| OGG Audio
+| `audio/ogg`
+| `ogg`, `oga`, `ogx`, `ogm`, `spx`, `opus`
+|===
+
+.Example: Basic supported file types configuration
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare',
+  uploadcare_public_key: '<your-public-key>',
+  uploadcare_supported_files: [
+    // Image files
+    { 
+      mimeType: 'image/jpeg',
+      extensions: ['jpg', 'jpeg', 'jpe', 'jif', 'jfi', 'jfif']
+    },
+    { 
+      mimeType: 'image/png',
+      extensions: ['png']
+    },
+    { 
+      mimeType: 'image/webp',
+      extensions: ['webp']
+    },
+    // Video files
+    { 
+      mimeType: 'video/mp4',
+      extensions: ['mp4']
+    },
+    { 
+      mimeType: 'video/webm',
+      extensions: ['webm']
+    },
+    // Document files
+    { 
+      mimeType: 'application/pdf',
+      extensions: ['pdf']
+    },
+    { 
+      mimeType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      extensions: ['docx']
+    },
+    // Audio files
+    { 
+      mimeType: 'audio/mpeg',
+      extensions: ['mp3']
+    }
+  ]
+});
+----
+
+=== Notes
+
+* The `uploadcare_supported_files` option allows customization of which file types can be uploaded through the uploadcare plugin.
+* When this option is not specified, the plugin uses the comprehensive default list shown above.
+* The plugin validates both MIME types and file extensions to ensure compatibility.
+* Image file types are also influenced by the `images_file_types` option, which can extend the supported image formats.
+* Video files support additional properties through the `uploadcare_video_properties` option.

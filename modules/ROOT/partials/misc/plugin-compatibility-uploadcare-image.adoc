@@ -2,12 +2,25 @@
 ====
 **Plugin Compatibility Issues**
 
-The xref:uploadcare.adoc[Image Optimizer Powered by Uploadcare] premium plugin cannot be configured together with the xref:image.adoc[Image] and xref:editimage.adoc[Image Editing] plugins. These plugins have conflicting functionality's that prevent proper image editing operations.
+The xref:uploadcare.adoc[Media Optimizer Powered by Uploadcare] premium plugin cannot be configured together with the following plugins:
+
+* xref:image.adoc[Image]
+* xref:editimage.adoc[Image Editing]
+* xref:media.adoc[Media]
+* xref:introduction-to-mediaembed.adoc[Enhanced Media Embed] plugins as these plugins have conflicting functionality's that prevent proper image editing operations.
 
 **Recommended Solutions:**
 
+For images:
+
 * Configure either the xref:image.adoc[Image] and xref:editimage.adoc[Image Editing] plugins together, or
-* Configure the xref:uploadcare.adoc[Image Optimizer Powered by Uploadcare] plugin as the sole image handler for all images.
+* Configure the xref:uploadcare-image.adoc[Media Optimizer: Image] plugin as the sole image handler for all images.
+
+For videos:
+
+* Configure the xref:introduction-to-mediaembed.adoc[Enhanced Media Embed] plugin as the sole video handler for all videos, or
+* Configure the xref:media.adoc[Media] plugin as the sole media handler for all media, or
+* Configure the xref:uploadcare-video.adoc[Media Optimizer: Video] plugin as the sole image handler for all images.
 
 If all three plugins are enabled, editor notification: "Unable to initialize uploadcare due to the presence of incompatible plugins. Details are in the browser console." will be shown along with console error: "Unable to initialize uploadcare due to the presence of incompatible plugins: image, editimage".
 ====

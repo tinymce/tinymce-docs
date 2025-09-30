@@ -1,5 +1,5 @@
 tinymce.init({
-  selector: "textarea",
+  selector: "textarea#uploadcare-image",
   plugins: [ "uploadcare", "code", "link", "preview", "lists" ],
   uploadcare_public_key: '630992ad50fe2291c406',
 	uploadcare_cdn_base_url: 'https://tiny.ucarecdn.com',

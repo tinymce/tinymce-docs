@@ -111,6 +111,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+== Accordions were expandable in disabled editors
+// #TINY-12315
+
+Previously, an issues was identified where accordions remained interactive in disabled editors when the `+disabled+` option was set to `+true+`, allowing users to expand and collapse them revealing the content nested within the accordion.
+
+This unintended behavior caused inconsistencies, particularly affecting the `autoresize` plugin, which relied on stable editor states. In {release-version}, accordions are no longer expandable when the editor is in disabled mode, ensuring that content cannot be interacted with. This fix restores the intended behavior of {productname}, preventing unexpected resizing issues and reinforcing that disabled editors should not allow user interaction.
+
 
 [[security-fixes]]
 == Security fixes

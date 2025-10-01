@@ -111,6 +111,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Tooltips on toolbar buttons sometimes remained visible if the button icon was updated while hovered
+// #TINY-12289
+
+Previously, button tooltips were not always dismissed correctly when icons were updated, because the element handling hover events was being replaced and the `mouseout` event never fired. This caused tooltips to remain visible after clicking a button, creating a confusing UI experience.
+
+{productname} {release-version} addresses this issue by adjusting the icon rendering logic so hover and tooltip behavior are attached to the button itself rather than the icon element. As a result, when the `setIcon` API updates icons, it no longer interferes with mouse events.
+
 
 [[security-fixes]]
 == Security fixes

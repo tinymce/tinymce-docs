@@ -9,6 +9,10 @@ on:
       - 'release/**'
       - 'archived/**'
 
+# Need ID token write permission to use OIDC
+permissions:
+  id-token: write
+
 jobs:
   cleanup:
     name: Cleanup Docs Preview

@@ -52,7 +52,7 @@ jobs:
       id: get-subdomain
       working-directory: ./.github/workflows/scripts
       run: |
-        node ./branch-to-subdomain.js | { read s; echo "subdomain=$s" } >> $GITHUB_OUTPUT
+        node ./branch-to-subdomain.js >> $GITHUB_OUTPUT
 
     - name: configure aws credentials
       uses: aws-actions/configure-aws-credentials@v5.0.0

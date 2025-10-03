@@ -8,4 +8,4 @@ const subdomain = (
     .replace(/-$/g, '')             // remove trailing dash
     .slice(0, 63)                   // limit to 63 characters
 );
-console.log(subdomain);
+console.log(`subdomain=${subdomain}`);

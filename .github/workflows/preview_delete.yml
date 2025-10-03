@@ -1,0 +1,49 @@
+name: Preview Delete
+
+on:
+  delete:
+    branches-ignore:
+      - 'main'
+      - 'develop'
+      - 'tinymce/**'
+      - 'release/**'
+      - 'archived/**'
+
+jobs:
+  cleanup:
+    name: Cleanup Docs Preview
+
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./.github/workflows/scripts
+
+    steps:
+    - name: Checkout branch
+      uses: actions/checkout@v5
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v5
+      with:
+        cache: 'yarn'
+        node-version: 24
+
+    - name: Convert branch into subdomain
+      id: get-subdomain
+      run: |
+        node ./branch-to-subdomain.js | { read s; echo "subdomain=$s" } >> $GITHUB_OUTPUT
+
+    - name: configure aws credentials
+      uses: aws-actions/configure-aws-credentials@v5.0.0
+      with:
+        role-to-assume: arn:aws:iam::327995277200:role/staging-docs-preview-update
+        role-session-name: docs-preview-delete
+        aws-region: us-east-2
+
+    - name: Remove website preview from S3
+      run: |
+        aws s3 rm s3://tiny-cloud-antora-docs-preview/${SUBDOMAIN}/docs
+      env:
+        SUBDOMAIN: ${{ steps.get-subdomain.outputs.subdomain }}

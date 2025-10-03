@@ -1,0 +1,68 @@
+name: Preview Create/Update
+
+on:
+  create:
+    branches-ignore:
+      - 'main'
+      - 'develop'
+      - 'tinymce/**'
+      - 'release/**'
+      - 'archived/**'
+
+  push:
+    branches-ignore:
+      - 'main'
+      - 'develop'
+      - 'tinymce/**'
+      - 'release/**'
+      - 'archived/**'
+
+jobs:
+
+  build:
+    name: Update Docs Preview
+
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./.github/workflows/scripts
+
+    steps:
+    - name: Checkout branch
+      uses: actions/checkout@v5
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v5
+      with:
+        cache: 'yarn'
+        node-version: 24
+
+    - name: Install dependencies
+      run: yarn install
+
+    - name: Build Website
+      run: yarn antora ./antora-playbook.yml
+
+    - name: Rename sitemap.xml
+      run: |
+        mv ./build/site/sitemap.xml ./build/site/antora-sitemap.xml
+
+    - name: Convert branch into subdomain
+      id: get-subdomain
+      run: |
+        node ./branch-to-subdomain.js | { read s; echo "subdomain=$s" } >> $GITHUB_OUTPUT
+
+    - name: configure aws credentials
+      uses: aws-actions/configure-aws-credentials@v5.0.0
+      with:
+        role-to-assume: arn:aws:iam::327995277200:role/staging-docs-preview-update
+        role-session-name: docs-preview-update
+        aws-region: us-east-2
+
+    - name: Upload website preview to S3
+      run: |
+        aws s3 sync --delete ./build/site s3://tiny-cloud-antora-docs-preview/${SUBDOMAIN}/docs
+      env:
+        SUBDOMAIN: ${{ steps.get-subdomain.outputs.subdomain }}

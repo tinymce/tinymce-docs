@@ -18,7 +18,6 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./.github/workflows/scripts
 
     steps:
     - name: Checkout branch
@@ -32,6 +31,7 @@ jobs:
 
     - name: Convert branch into subdomain
       id: get-subdomain
+      working-directory: ./.github/workflows/scripts
       run: |
         node ./branch-to-subdomain.js | { read s; echo "subdomain=$s" } >> $GITHUB_OUTPUT
 

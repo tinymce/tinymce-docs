@@ -42,6 +42,21 @@ The following premium plugin updates were released alongside {productname} 8.2.0
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Media Optimizer
+
+The {productname} 8.2.0 release includes an accompanying release of the **Media Optimizer** premium plugin.
+
+**Media Optimizer** includes the following fix.
+
+=== Empty captions for floating images were not rendered correctly.
+// #TINY-12592
+
+In previous versions of **Media Optimizer**, when figures were styled with `+display: table+`, a floated `+<img>+` could cause an empty `+<figcaption>+` to render incorrectly alongside the image instead of below it. Deleting the caption text further disrupted the layout, causing the caption area to shift or disappear entirely.
+
+In {productname} {release-version}, this issue has been resolved by applying `+clear: both+` to `+<figcaption>+` elements when the associated image is floated. This ensures captions always render below the image, even when empty, maintaining proper alignment and consistent visual structure.
+
+For information on the **Media Optimizer** plugin, see: xref:uploadcare.adoc[Media Optimizer].
+
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes

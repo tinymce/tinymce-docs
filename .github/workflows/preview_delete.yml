@@ -1,7 +1,9 @@
 name: Preview Delete
 
 on:
-  delete:
+  pull_request:
+    types:
+      - closed
     branches-ignore:
       - 'main'
       - 'develop'
@@ -12,6 +14,9 @@ on:
 # Need ID token write permission to use OIDC
 permissions:
   id-token: write
+
+env:
+  PR_NUMBER: ${{ github.event.number }}
 
 jobs:
   cleanup:
@@ -33,12 +38,6 @@ jobs:
         cache: 'yarn'
         node-version: 24
 
-    - name: Convert branch into subdomain
-      id: get-subdomain
-      working-directory: ./.github/workflows/scripts
-      run: |
-        node ./branch-to-subdomain.js >> $GITHUB_OUTPUT
-
     - name: configure aws credentials
       uses: aws-actions/configure-aws-credentials@v5.0.0
       with:
@@ -48,6 +47,4 @@ jobs:
 
     - name: Remove website preview from S3
       run: |
-        aws s3 rm s3://tiny-cloud-antora-docs-preview/${SUBDOMAIN}/docs
-      env:
-        SUBDOMAIN: ${{ steps.get-subdomain.outputs.subdomain }}
+        aws s3 rm s3://tiny-cloud-antora-docs-preview/pr${PR_NUMBER}

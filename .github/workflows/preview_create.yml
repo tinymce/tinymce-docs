@@ -1,7 +1,11 @@
 name: Preview Create/Update
 
 on:
-  create:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
     branches-ignore:
       - 'main'
       - 'develop'
@@ -9,17 +13,13 @@ on:
       - 'release/**'
       - 'archived/**'
 
-  push:
-    branches-ignore:
-      - 'main'
-      - 'develop'
-      - 'tinymce/**'
-      - 'release/**'
-      - 'archived/**'
 
 # Need ID token write permission to use OIDC
 permissions:
   id-token: write
+
+env:
+  PR_NUMBER: ${{ github.event.number }}
 
 jobs:
 
@@ -52,12 +52,6 @@ jobs:
       run: |
         mv ./build/site/sitemap.xml ./build/site/antora-sitemap.xml
 
-    - name: Convert branch into subdomain
-      id: get-subdomain
-      working-directory: ./.github/workflows/scripts
-      run: |
-        node ./branch-to-subdomain.js >> $GITHUB_OUTPUT
-
     - name: configure aws credentials
       uses: aws-actions/configure-aws-credentials@v5.0.0
       with:
@@ -67,6 +61,4 @@ jobs:
 
     - name: Upload website preview to S3
       run: |
-        aws s3 sync --delete ./build/site s3://tiny-cloud-antora-docs-preview/${SUBDOMAIN}/docs
-      env:
-        SUBDOMAIN: ${{ steps.get-subdomain.outputs.subdomain }}
+        aws s3 sync --delete ./build/site s3://tiny-cloud-antora-docs-preview/pr${PR_NUMBER}/docs

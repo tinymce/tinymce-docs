@@ -4,12 +4,6 @@ on:
   pull_request:
     types:
       - closed
-    branches-ignore:
-      - 'main'
-      - 'develop'
-      - 'tinymce/**'
-      - 'release/**'
-      - 'archived/**'
 
 # Need ID token write permission to use OIDC
 permissions:

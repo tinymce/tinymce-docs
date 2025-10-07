@@ -12,7 +12,6 @@ tinymce.init({
       preload: 'metadata',
       showLogo: false
     },
-    uploadcare_disable_video_resize: false,
     uploadcare_supported_files: [
       { mimeType: 'video/mp4', extensions: ['mp4'] },
       { mimeType: 'video/webm', extensions: ['webm'] }

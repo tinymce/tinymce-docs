@@ -47,7 +47,7 @@ The plugin now supports multiple video formats:
 This new functionality is supported with the following new configuration options:
 
 * **`uploadcare_video_properties`**: Comprehensive video player configuration including autoplay, controls, loop and more.
-* **`uploadcare_disable_video_resize`**: Option to control whether videos can be resized directly within the editor.
+* **`uploadcare_video_resize`**: Option to control whether videos can be resized directly within the editor.
 * **`uploadcare_supported_files`**: Extended file type support to include video formats alongside existing image and document support.
 
 For information on the **Media Optimizer** plugin, see: xref:uploadcare-video.adoc[Media Optimizer: Video].

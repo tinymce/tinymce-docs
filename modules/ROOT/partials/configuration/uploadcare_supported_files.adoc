@@ -5,7 +5,7 @@ Defines the supported file types and their extensions for upload.
 
 *Type:* `+Array<Object>+`
 
-*Default:* See supported file types below
+*Default:* See a full list of supported file types below see xref:uploadcare-image.adoc#uploadcare-supported-files[Image Supported File Types] and xref:uploadcare-video.adoc#uploadcare-supported-files[Video Supported File Types]
 
 === Configuration Schema
 
@@ -24,11 +24,34 @@ Each entry must contain:
 | Yes
 |===
 
+ifeval::["{pluginfeature}" == "mediaoptimizer"]
+.Basic example: Image file types configuration and mp4 video file type configuration
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare',
+  uploadcare_public_key: '<your-public-key>',
+  uploadcare_supported_files: [
+    { 
+      mimeType: 'image/jpeg',
+      extensions: ['jpg', 'jpeg', 'jpe', 'jif', 'jfi', 'jfif']
+    },
+    { 
+      mimeType: 'video/mpeg4-generic',
+      extensions: ['mp4']
+    },
+  ]
+});
+----
+endif::[]
+
+ifeval::["{pluginfeature}" == "image" && "{pluginfeature}" != "mediaoptimizer"]
 === Default Supported File Types
 
-The uploadcare plugin supports a comprehensive range of file types by default, including images and videos. The specific file types supported depend on the features being used.
+The uploadcare plugin supports a comprehensive range of image file types by default.
 
-ifeval::["{pluginfeature}" == "image"]
 ==== Images
 
 [cols="1,1,1"]
@@ -78,186 +101,10 @@ ifeval::["{pluginfeature}" == "image"]
 endif::[]
 
 
-ifeval::["{pluginfeature}" == "video"]
-==== Videos
+ifeval::["{pluginfeature}" == "video" && "{pluginfeature}" != "mediaoptimizer"]
+=== Default Supported File Types
 
-[cols="1,1,1"]
-|===
-|Category | MIME Type | Extensions
-
-| MP4 Video
-| `video/mp4`
-| `mp4`, `m4v`
-
-| WebM Video
-| `video/webm`
-| `webm`
-
-| 3GPP Video
-| `video/3gpp`
-| `3gp`, `3gpp`
-
-| 3GPP2 Video
-| `video/3gpp2`
-| `3g2`, `3gp2`, `3gpp2`
-
-| MPEG Transport Stream
-| `video/MP2T`
-| `m2t`, `m2ts`, `MTS`
-
-| Motion JPEG 2000
-| `video/mj2`
-| `mj2`, `mjp2`
-
-| MPEG Video
-| `video/mpeg`
-| `mpeg`, `mpg`, `mpe`, `m1v`, `m2v`, `mpv`
-
-| MPEG4 Generic
-| `video/mpeg4-generic`
-| `mp4`
-
-| OGG Video
-| `video/ogg`
-| `ogv`, `ogg`, `ogx`, `oga`, `ogm`, `spx`
-
-| QuickTime Video
-| `video/quicktime`
-| `mov`, `movie`, `qt`
-
-| DVB Video
-| `video/vnd.dvb.file`
-| `dvb`
-
-| 4XMV Video
-| `video/x-4xmv`
-| `4xmv`
-
-| AMV Video
-| `video/x-amv`
-| `amv`, `mtv`
-
-| CDXA Video
-| `video/x-cdxa`
-| `dat`
-
-| FLC Video
-| `video/x-flc`
-| `flc`
-
-| FLI Video
-| `video/x-fli`
-| `fli`
-
-| Flash Video
-| `video/x-flv`
-| `flv`
-
-| IFO Video
-| `video/x-ifo`
-| `ifo`
-
-| JNG Video
-| `video/x-jng`
-| `jng`
-
-| M4V Video
-| `video/x-m4v`
-| `m4v`
-
-| Matroska Video
-| `video/x-matroska`
-| `mkv`, `mk3d`, `mka`, `mks`
-
-| MMM Video
-| `video/x-mmm`
-| `mmm`
-
-| MNG Video
-| `video/x-mng`
-| `mng`
-
-| Microsoft ASF/WMV
-| `video/x-ms-asf`
-| `asf`, `wmv`, `wma`
-
-| AVI Video
-| `video/x-msvideo`
-| `avi`
-
-| SGI Movie
-| `video/x-sgi-movie`
-| `movie`
-
-| VDR Video
-| `video/x-vdr`
-| `vdr`
-
-| MXF Video
-| `application/mxf`
-| `mxf`
-
-| OGG Application
-| `application/ogg`
-| `ogv`, `ogg`, `ogx`, `oga`, `ogm`, `spx`
-
-| RealMedia
-| `application/vnd.rn-realmedia`
-| `rm`, `rma`, `rmi`, `rmv`, `rmvb`, `rmhd`, `rmm`, `ra`, `ram`
-
-| RIFF Video/Audio
-| `application/x-riff`
-| `avi`, `wav`
-|===
-endif::[]
-
-ifeval::["{pluginfeature}" != "image" && "{pluginfeature}" != "video"]
-==== Images
-
-[cols="1,1,1"]
-|===
-|Category | MIME Type | Extensions
-
-| JPEG Images
-| `image/jpeg`
-| `jpg`, `jpeg`, `jpe`, `jif`, `jfi`, `jfif`
-
-| GIF Images
-| `image/gif`
-| `gif`
-
-| PNG Images
-| `image/png`
-| `png`
-
-| AVIF Images
-| `image/avif`
-| `avif`
-
-| BMP Images
-| `image/bmp`
-| `bmp`
-
-| TIFF Images
-| `image/tiff`
-| `tif`, `tiff`
-
-| WebP Images
-| `image/webp`
-| `webp`
-
-| HEIC Images
-| `image/heic`
-| `heic`
-
-| PCX Images
-| `image/x-pcx`
-| `pcx`
-
-| TGA Images
-| `image/x-tga`
-| `tga`, `icb`, `vda`, `vst`
-|===
+The uploadcare plugin supports a comprehensive range of video file types by default.
 
 ==== Videos
 

@@ -31,7 +31,7 @@ ifeval::["{pluginfeature}" == "mediaoptimizer"]
 tinymce.init({
   selector: 'textarea',
   plugins: 'uploadcare',
-  toolbar: 'uploadcare',
+  toolbar: 'uploadcare uploadcare-video',
   uploadcare_public_key: '<your-public-key>',
   uploadcare_supported_files: [
     { 
@@ -302,7 +302,7 @@ ifeval::["{pluginfeature}" == "video"]
 tinymce.init({
   selector: 'textarea',
   plugins: 'uploadcare',
-  toolbar: 'uploadcare',
+  toolbar: 'uploadcare uploadcare-video',
   uploadcare_public_key: '<your-public-key>',
   uploadcare_supported_files: [
     { 

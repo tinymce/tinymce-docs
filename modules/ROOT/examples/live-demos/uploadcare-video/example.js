@@ -17,7 +17,7 @@ tinymce.init({
       { mimeType: 'video/webm', extensions: ['webm'] }
     ],
     a11y_advanced_options: true,
-    toolbar: "undo redo | styles | bold italic underline | forecolor | bullist numlist| link uploadcare | code preview",
+    toolbar: "undo redo | uploadcare uploadcare-video | styles | bold italic underline | forecolor | bullist numlist| link | code preview",
     height: 700,	
     content_style: `
       body { max-width: 920px; margin: 1.5rem auto; padding: 0 2vw; }

@@ -28,7 +28,7 @@ Controls whether video elements can be resized directly within the editor.
 tinymce.init({
   selector: 'textarea',
   plugins: 'uploadcare',
-  toolbar: 'uploadcare',
+  toolbar: 'uploadcare uploadcare-video',
   uploadcare_public_key: '<your-public-key>',
   uploadcare_video_resize: false
 });

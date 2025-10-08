@@ -40,7 +40,7 @@ To add the {pluginname} plugin to the editor, include `uploadcare` in the `plugi
 tinymce.init({
   selector: 'textarea',
   plugins: 'uploadcare',
-  toolbar: 'uploadcare',
+  toolbar: 'uploadcare uploadcare-video',
   uploadcare_public_key: '<your-public-key>', // Required for Uploadcare integration
   uploadcare_video_properties: {
     controls: true,

@@ -39,16 +39,14 @@ The {productname} 8.2.0 release includes an accompanying release of the **Media 
 
 The **Media Optimizer** plugin now supports video upload and processing, extending beyond its previous image-only functionality. Users can now upload videos directly within the editor through drag-and-drop, file selection, or URL input.
 
-The plugin now supports multiple video formats:
+The plugin now supports commonly available video formats including MP4, WebM, 3GPP, MPEG variants, QuickTime, Matroska, AVI, Flash Video, RealMedia, and other standard video formats.
 
-* **MP4 Video**: Full support for MP4 video files `video/mp4`
-* **WebM Video**: Support for WebM video files `video/webm`
-
-This new functionality is supported with the following new configuration options:
+This new functionality is supported with the following configuration options:
 
 * **`uploadcare_video_properties`**: Comprehensive video player configuration including autoplay, controls, loop and more.
 * **`uploadcare_video_resize`**: Option to control whether videos can be resized directly within the editor.
-* **`uploadcare_supported_files`**: Extended file type support to include video formats alongside existing image and document support.
+* **`uploadcare_supported_files`**: File type support configuration for both images and videos.
+
 
 For information on the **Media Optimizer** plugin, see: xref:uploadcare-video.adoc[Media Optimizer: Video].
 

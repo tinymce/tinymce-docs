@@ -3,6 +3,7 @@
 :description: The Video feature of the Media Optimizer plugin allows you to optimize videos in your content.
 :description_short: optimize videos in your content.
 :plugincode: uploadcare
+:pluginfeature: video
 :pluginname: Media Optimizer's Video feature
 :keywords: plugin, {plugincode}, video, controls, autoplay, loop, poster, resize, upload, url, insert, edit, video
 :plugincategory: premium
@@ -127,6 +128,7 @@ include::partial$configuration/uploadcare_video_properties.adoc[leveloffset=+1]
 
 include::partial$configuration/uploadcare_video_resize.adoc[leveloffset=+1]
 
+:pluginfeature: video
 include::partial$configuration/uploadcare_supported_files.adoc[leveloffset=+1]
 
 == Custom Video Element

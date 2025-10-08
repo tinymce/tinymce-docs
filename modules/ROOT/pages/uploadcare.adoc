@@ -84,6 +84,13 @@ include::partial$configuration/uploadcare_cdn_base_url.adoc[leveloffset=+1]
 
 include::partial$configuration/uploadcare_store_type.adoc[leveloffset=+1]
 
+include::partial$configuration/uploadcare_supported_files.adoc[leveloffset=+1]
+
+For more information on feature specific supported file types, see the following pages:
+
+* xref:uploadcare-image.adoc#uploadcare_supported_files[Image]
+* xref:uploadcare-video.adoc#uploadcare_supported_files[Video]
+
 
 :includedSection: uploadcarePlugin
 include::partial$configuration/a11y_advanced_options.adoc[leveloffset=+1]

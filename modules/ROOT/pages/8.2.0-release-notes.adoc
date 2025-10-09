@@ -42,6 +42,16 @@ The following premium plugin updates were released alongside {productname} 8.2.0
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== License Key Manager
+
+The {productname} 8.2.0 release includes an accompanying release of the **License Key Manager**.
+
+==== New `+js/commerciallicensekeymanager.js+` file to lazyload majority of plugin after editor init.
+// #TINY-12820
+
+The **License Key Manager** has been reworked to include a new `+js/commerciallicensekeymanager.js+` file that is lazy-loaded when required. This change reduces the initialization time of the editor and time to first render.
+
+For information on the **License Key Manager** plugin, see: xref:license-key.adoc[License Key Manager].
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes

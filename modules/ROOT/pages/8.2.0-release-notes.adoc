@@ -111,6 +111,11 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+===  Some elements would be given an extra newline by the serializer when indented
+// #TINY-12857
+
+Previously, certain elements received an additional newline when indented due to the title not being correctly recognized as a block by the DOM Parser serializer. This caused unwanted whitespace to appear in the output. The issue was resolved by explicitly marking the title as a block within the code, ensuring that serialization no longer introduces unnecessary whitespace.
+
 
 [[security-fixes]]
 == Security fixes

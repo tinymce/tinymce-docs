@@ -114,7 +114,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === The editor would upon gaining focus scroll to the center of the editor on some browsers if the top of the editor was out of frame
 // #TINY-12626
 
-In {productname} {release-version}, a legacy workaround for a Chromium bug caused the page to scroll to the center of the editor when the editor gained focus while its top edge was outside the viewport; although unrelated, features like autoresize could frequently trigger this behavior. This resulted in unexpected scrolling in some situations.
+A legacy workaround for a Chromium bug caused the page to scroll to the center of the editor when the editor gained focus while its top edge was outside the viewport; although unrelated, features like autoresize could frequently trigger this behavior and resulted in unexpected scrolling in some situations.
 
 As of {productname} {release-version}, the workaround has been removed now that the underlying Chromium issue has been fixed, allowing the browser to manage scrolling natively.
 

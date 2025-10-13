@@ -42,6 +42,21 @@ The following premium plugin updates were released alongside {productname} 8.2.0
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Full Page HTML
+
+The {productname} {release-version} release includes an accompanying release of the **Full Page HTML** premium plugin.
+
+**Full Page HTML** includes the following fix.
+
+=== Encoding provided in the charset meta attribute would not be detected
+// #TINY-12860
+
+The previous encoding detection logic did not recognize certain encodings defined using the charset `+meta+` attribute, which resulted in inconsistent or conflicting encodings within a single page and caused display or editing issues.
+
+{productname} {release-version} addresses this issue, by adding support for the new encoding type, ensuring that both the original and new encoding formats are correctly detected and processed. As a result, pages using either encoding style are now handled consistently.
+
+For information on the **Full Page HTML** plugin, see xref:fullpagehtml.adoc[Full Page HTML].
+
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes

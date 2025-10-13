@@ -111,6 +111,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Some UI elements related to dragging elements were not properly filtered out when fetching content
+// #TINY-12384
+
+In {productname} {release-version}, an issue was resolved where elements used by the table resize feature were not flagged for removal by the serializer. When content was fetched via a `+getContent()+` call during an active table resize, these transient UI nodes could be included in the returned HTML, leading to extraneous markup and potentially corrupted data.
+
+The fix marks these elements with bogus attributes so the serializer reliably filters them out, ensuring clean, stable content retrieval and preventing unintended artifacts in saved or processed output.
+
 
 [[security-fixes]]
 == Security fixes

@@ -42,6 +42,19 @@ The following premium plugin updates were released alongside {productname} 8.2.0
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== **Templates**
+
+The {productname} {release-version} release includes an accompanying release of the **Templates** premium plugin.
+
+**Templates** includes the following fix.
+
+==== Pressing enter while focused on title input during category or template creation would submit even when the submit button was disabled
+// #TINY-12730
+
+Previously, pressing **Enter** while focused on the title input during category or template creation would trigger form submission, even when the submit button was disabled. This occurred because the input handling logic did not validate the form state before submission. As a result, users could inadvertently attempt to create a category or template with an empty name, causing an error.
+
+{productname} {release-version} addresses this issue by updating the input handling logic to check the form's validity before allowing submission when **Enter** is pressed. Now, if the form is invalid or the submit button is disabled, pressing **Enter** will not trigger submission, preventing erroneous attempts to create categories or templates with empty names.
+
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes

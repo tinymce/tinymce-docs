@@ -40,16 +40,16 @@ tinymce.init({
   toolbar: 'uploadcare',
   uploadcare_public_key: '<your-public-key>',
   uploadcare_video_properties: {
-    controls: true,
     autoplay: false,
+    controls: true,
     loop: false,
-    muted: false,
-    playsInline: true,
+    muted: true,
     preload: 'metadata',
+    poster: 'https://placehold.co/600x400', // Optional poster image URL
     width: 640,
     height: 360,
     showLogo: false
-  }
+  },
 });
 ----
 

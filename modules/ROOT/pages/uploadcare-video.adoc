@@ -43,11 +43,16 @@ tinymce.init({
   toolbar: 'uploadcare uploadcare-video',
   uploadcare_public_key: '<your-public-key>', // Required for Uploadcare integration
   uploadcare_video_properties: {
-    controls: true,
     autoplay: false,
+    controls: true,
     loop: false,
-    ... // other video player properties
-  }
+    muted: true,
+    preload: 'metadata',
+    poster: 'https://placehold.co/600x400', // Optional poster image URL
+    width: 640,
+    height: 360,
+    showLogo: false
+  },
 });
 ----
 
@@ -127,9 +132,6 @@ The following configuration options affect the behavior of the {pluginname} plug
 include::partial$configuration/uploadcare_video_properties.adoc[leveloffset=+1]
 
 include::partial$configuration/uploadcare_video_resize.adoc[leveloffset=+1]
-
-:pluginfeature: video
-include::partial$configuration/uploadcare_supported_files.adoc[leveloffset=+1]
 
 == Custom Video Element
 

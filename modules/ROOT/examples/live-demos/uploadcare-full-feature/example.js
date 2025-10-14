@@ -18,18 +18,16 @@ tinymce.init({
   ],
   // Video configuration
   uploadcare_video_properties: {
-    controls: true,
     autoplay: false,
+    controls: true,
     loop: false,
-    muted: false,
-    playsInline: true,
+    muted: true,
     preload: 'metadata',
+    poster: 'https://placehold.co/600x400',
+    width: 640,
+    height: 360,
     showLogo: false
   },
-  uploadcare_supported_files: [
-    { mimeType: 'video/mp4', extensions: ['mp4'] },
-    { mimeType: 'video/webm', extensions: ['webm'] }
-  ],
   a11y_advanced_options: true,
   toolbar: "undo redo | uploadcare uploadcare-video | styles | bold italic underline | forecolor | bullist numlist| link | code preview",
   height: 700,	

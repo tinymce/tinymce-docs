@@ -57,13 +57,13 @@ For a complete guide to the features provided by the {pluginname} plugin, see th
 
 a|
 [.lead]
-xref:uploadcare-image.adoc#uploadcare_supported_files[Image]
+xref:uploadcare-image.adoc#[Image]
 
 Image optimization options, including image filtering, resizing, and adjusting.
 
 a|
 [.lead]
-xref:uploadcare-video.adoc#uploadcare_supported_files[Video]
+xref:uploadcare-video.adoc#[Video]
 
 Video optimization options, including video player customization, resizing, and adjusting.
 
@@ -81,11 +81,7 @@ include::partial$configuration/uploadcare_signed_upload_auth_provider.adoc[level
 
 include::partial$configuration/uploadcare_cdn_base_url.adoc[leveloffset=+1]
 
-
 include::partial$configuration/uploadcare_store_type.adoc[leveloffset=+1]
-
-:pluginfeature: mediaoptimizer
-include::partial$configuration/uploadcare_supported_files.adoc[leveloffset=+1]
 
 :includedSection: uploadcarePlugin
 include::partial$configuration/a11y_advanced_options.adoc[leveloffset=+1]

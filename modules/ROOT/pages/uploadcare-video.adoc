@@ -3,7 +3,6 @@
 :description: The Video feature of the Media Optimizer plugin allows you to optimize videos in your content.
 :description_short: optimize videos in your content.
 :plugincode: uploadcare
-:pluginfeature: video
 :pluginname: Media Optimizer's Video feature
 :keywords: plugin, {plugincode}, video, controls, autoplay, loop, poster, resize, upload, url, insert, edit, video
 :plugincategory: premium
@@ -42,17 +41,6 @@ tinymce.init({
   plugins: 'uploadcare',
   toolbar: 'uploadcare uploadcare-video',
   uploadcare_public_key: '<your-public-key>', // Required for Uploadcare integration
-  uploadcare_video_properties: {
-    autoplay: false,
-    controls: true,
-    loop: false,
-    muted: true,
-    preload: 'metadata',
-    poster: 'https://placehold.co/600x400', // Optional poster image URL
-    width: 640,
-    height: 360,
-    showLogo: false
-  },
 });
 ----
 
@@ -159,3 +147,8 @@ The plugin creates a custom `+<uc-video>+` element that replaces the standard HT
   posteroffset="5s">
 </uc-video>
 ----
+
+:pluginfeature: uc-video
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]

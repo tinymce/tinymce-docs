@@ -3,7 +3,6 @@
 :description: The Image feature of the Media Optimizer plugin allows you to optimize images in your content.
 :description_short: optimize images in your content.
 :plugincode: uploadcare
-:pluginfeature: image
 :pluginname: Media Optimizer's Image feature
 :keywords: plugin, {plugincode}, image, align, transform, alt text, caption, adjust, filter
 :plugincategory: premium
@@ -214,6 +213,7 @@ include::partial$configuration/uploadcare_filters.adoc[leveloffset=+1]
 include::partial$configuration/a11y_advanced_options.adoc[leveloffset=+1]
 :!includedSection:
 
+:pluginfeature: uc-image
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]

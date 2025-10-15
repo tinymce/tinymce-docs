@@ -25,7 +25,7 @@ Configures the video player properties and behavior for video elements.
 |`preload` | String | `auto`, `metadata`, `none` | `undefined` | Controls how much video data to preload: `auto` loads the entire video, `metadata` loads only basic information, `none` loads nothing until playback starts. Performance considerations: use `metadata` for better page load times and bandwidth conservation, `auto` for immediate playback without buffering delays, and `none` for maximum bandwidth savings when videos may not be played.
 |`width` | Number or String | Pixels or CSS value | `undefined` | Sets the video player width. Accepts numeric values (interpreted as pixels) or CSS values like `"100%"`, `"50vw"`, or `"auto"`.
 |`crossOrigin` | String | `anonymous`, `use-credentials` | `undefined` | Configures CORS (Cross-Origin Resource Sharing) for the video element. Use `anonymous` for basic cross-origin requests or `use-credentials` when cookies/credentials are needed.
-|`showLogo` | Boolean | `true`, `false` | `false` | Displays the Uploadcare logo overlay on the video player.
+|`showLogo` | Boolean | `true`, `false` | `true` | Displays the Uploadcare logo overlay on the video player.
 |`posterOffset` | String | Time string (e.g., `5s`) | `undefined` | Sets a specific time offset (in seconds) for the poster image generation.
 |===
 

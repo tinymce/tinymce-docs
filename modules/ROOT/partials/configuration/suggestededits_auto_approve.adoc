@@ -1,0 +1,27 @@
+[[suggestededits_auto_approve]]
+== `suggestededits_auto_approve`
+
+The `suggestededits_auto_approve` option controls whether edits made during the session by the current user are automatically approved without requiring manual review. With this option enabled any edits by the current user, as set by the xref:#user_id[`+user_id+` option], as well as any previous suggestions made by the current user, will be instantly applied, bypassing the review process. This is useful for scenarios where reviews aren't necessary, such as when creating an initial draft or when the user is a trusted editor.
+
+When set to:
+
+* `false`: All edits require manual approval before being applied.
+* `true`: All new edits are automatically approved and applied.
+
+
+*Type:* `+Boolean+`
+
+*Default Value*: `false`
+
+.Example: `suggestededits_auto_approve: true`
+[source,javascript]
+----
+tinymce.init({
+  selector: 'textarea#suggestededits',  // Change this value according to your HTML
+  plugins: 'suggestededits',
+  toolbar: 'suggestededits',
+  suggestededits_auto_approve: true, // Change this value to auto-approve suggested edits
+});
+----
+
+liveDemo::suggestededits-auto-approve[]

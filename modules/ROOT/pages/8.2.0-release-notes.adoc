@@ -51,7 +51,7 @@ The {productname} {release-version} release includes an accompanying release of 
 === Operation descriptions now show the type of content that was changed.
 // #TINY-12598
 
-Previously, the **Suggested Edits** plugin displayed operation cards without indicating the type of content being modified. As a result, reviewers had to open each suggestion individually to determine whether it affected a paragraph, image, table, or another content type.
+Previously, the **Suggested Edits** plugin displayed operation cards without indicating the type of content being interacted with. As a result, reviewers had to open each suggestion individually to determine whether it affected a paragraph, image, table, or another content type.
 
 This lack of context slowed the review process, particularly in documents with numerous suggestions, as users could not quickly identify or prioritize edits by content type.
 

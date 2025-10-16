@@ -55,7 +55,11 @@ Replaced content is represented as both added and removed content, and indicates
 
 === Sidebar
 
-Each suggested edit is listed as a card in the sidebar and color coded by the type of change, along with the user who made the suggestion, when the edit was made, and any feedback provided on that suggestion. When selected, each suggestion can be handled in the following ways:
+Each suggested edit is listed as a card in the sidebar and color coded by the type of change. Each operation card displays contextual descriptions that automatically detect and show the type of content being modified, such as "added paragraph," "deleted image," or "modified table." This helps reviewers quickly identify and prioritize edits by content type without having to open each suggestion individually.
+
+The cards also show the user who made the suggestion, when the edit was made, and any feedback provided on that suggestion. Supported content types include paragraphs, headings, images, tables, block quotes, code blocks, horizontal rules, inline text, and more.
+
+When selected, each suggestion can be handled in the following ways:
 
 * Accept: Resolves the suggestion, applying the edit to the document when the review is completed.
 * Reject: Resolves the suggestion, turning back the edit to the original state.

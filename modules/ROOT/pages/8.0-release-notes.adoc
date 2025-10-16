@@ -622,6 +622,13 @@ In {productname} {release-version}, the parser has been updated to improve the r
 
 {productname} {release-version} includes the following deprecations:
 
+=== Java Swing integration has been deprecated
+// #DOC-3304
+
+{productname}'s Java Swing integration has been deprecated in {productname} 8.0 and will reach end-of-life as of December 31, 2025.
+
+For information about the Java Swing integration, see: xref:swing.adoc[TinyMCE for Java Swing integration]
+
 === Java application server-based server components have been deprecated
 // #DOC-3231
 

@@ -55,4 +55,4 @@ jobs:
 
     - name: Upload website preview to S3
       run: |
-        aws s3 sync --delete ./build/site s3://tiny-cloud-antora-docs-preview/pr${PR_NUMBER}/docs
+        aws s3 sync --delete ./build/site s3://tiny-cloud-antora-docs-preview/pr${PR_NUMBER}

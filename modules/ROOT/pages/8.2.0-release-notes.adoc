@@ -111,7 +111,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
-=== The cursor could get stuck around an absolute CEF element when navigating using arrow keys
+=== The cursor could get stuck around an absolutely positioned CEF element when navigating using arrow keys
 // #TINY-10306
 
 Previously, when using arrow keys to navigate content containing absolutely positioned non-editable elements, the cursor could become trapped near these elements. This issue disrupted caret movement and made it difficult for users to continue navigating text around complex layouts or embedded content, especially in inline editing scenarios and within table cells.

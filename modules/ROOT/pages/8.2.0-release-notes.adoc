@@ -42,6 +42,21 @@ The following premium plugin updates were released alongside {productname} 8.2.0
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Full Page HTML
+
+The {productname} {release-version} release includes an accompanying release of the **Full Page HTML** premium plugin.
+
+**Full Page HTML** includes the following improvement.
+
+=== Head element added to the same line as the `meta` element
+// #TINY-12859
+
+Previously, the `+meta+` property within the Full Page HTML plugin was not properly treated as a block-level element. This caused the `+<head>+` element to be appended directly to the same line as the `+meta+` tag, leading to formatting inconsistencies in the generated HTML output.
+
+In {release-version}, the `+meta+` property has been updated to behave as a block element, ensuring proper separation and newline handling within the `<head>` section.
+
+For information on the **Full Page HTML** plugin, see: xref:fullpagehtml.adoc[Full Page HTML].
+
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes
@@ -72,6 +87,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 == Additions
 
 {productname} 8.2.0 also includes the following addition<s>:
+
+=== Added support for loading web components into iframes
+// #TINY-13006
+
+Previously, there was no method to load web components into the editor iframe or preview iframes used by other plugins, which prevented these components from rendering correctly. This limitation impacted users who relied on custom web components for extended editor functionality or content visualization. In {release-version}, a new API link:https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.html.schema/#getComponentUrls[getComponentUrls] has been introduced that allows specifying a script URL for the web component within the custom element schema. This enhancement enables web components to be properly registered and rendered within the {productname} editor environment.
+
+For an example of using custom elements with block-level and inline-level components, see: xref:content-filtering.adoc#example-using-custom_elements-with-block-level-and-inline-level-components[Example using `+custom_elements+` with block-level and inline-level components].
 
 // === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
@@ -117,6 +139,11 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 Previously, button tooltips were not always dismissed correctly when icons were updated, because the element handling hover events was being replaced and the `mouseout` event never fired. This caused tooltips to remain visible after clicking a button, creating a confusing UI experience.
 
 {productname} {release-version} addresses this issue by adjusting the icon rendering logic so hover and tooltip behavior are attached to the button itself rather than the icon element. As a result, when the `setIcon` API updates icons, it no longer interferes with mouse events.
+
+===  Some elements would be given an extra newline by the serializer when indented
+// #TINY-12857
+
+Previously, certain elements received an additional newline when indented due to the title not being correctly recognized as a block by the DOM Parser serializer. This caused unwanted whitespace to appear in the output. The issue was resolved by explicitly marking the title as a block within the code, ensuring that serialization no longer introduces unnecessary whitespace.
 
 
 [[security-fixes]]

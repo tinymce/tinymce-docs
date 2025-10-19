@@ -53,7 +53,7 @@ The {productname} {release-version} release includes an accompanying release of 
 
 The previous encoding detection logic did not recognize certain encodings defined using the charset `+meta+` attribute, which resulted in inconsistent or conflicting encodings within a single page and caused display or editing issues.
 
-{productname} {release-version} addresses this issue, by adding support for the new encoding type, ensuring that both the original and new encoding formats are correctly detected and processed. As a result, pages using either encoding style are now handled consistently.
+{productname} {release-version} addresses this issue by adding support for the new encoding type, ensuring that both the original and new encoding formats are correctly detected and processed. As a result, pages using either encoding style are now handled consistently. When encoded content is edited, the output is normalized to the previously supported encoding format, ensuring consistent markup and preventing confusion that could occur if the original encoding style were retained.
 
 For information on the **Full Page HTML** plugin, see xref:fullpagehtml.adoc[Full Page HTML].
 

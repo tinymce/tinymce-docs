@@ -73,6 +73,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 {productname} 8.2.0 also includes the following addition<s>:
 
+=== Added support for loading web components into iframes
+// #TINY-13006
+
+Previously, there was no method to load web components into the editor iframe or preview iframes used by other plugins, which prevented these components from rendering correctly. This limitation impacted users who relied on custom web components for extended editor functionality or content visualization. In {release-version}, a new API link:https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.html.schema/#getComponentUrls[getComponentUrls] has been introduced that allows specifying a script URL for the web component within the custom element schema. This enhancement enables web components to be properly registered and rendered within the {productname} editor environment.
+
+For an example of using custom elements with block-level and inline-level components, see: xref:content-filtering.adoc#example-using-custom_elements-with-block-level-and-inline-level-components[Example using `+custom_elements+` with block-level and inline-level components].
+
 // === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
 

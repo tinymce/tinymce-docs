@@ -2,8 +2,8 @@ tinymce.init({
   selector: "textarea#uploadcare-full-feature",
   plugins: [ "uploadcare", "code", "link", "preview", "lists" ],
   uploadcare_public_key: '630992ad50fe2291c406',
-	uploadcare_cdn_base_url: 'https://tiny.ucarecdn.com',
-	uploadcare_store_type: 'temporary',
+  uploadcare_cdn_base_url: 'https://tiny.ucarecdn.com',
+  uploadcare_store_type: 'temporary',
   uploadcare_filters: [
     { name: 'adaris', amount: -100 }, // Adaris with inverted effect (amount -100), label defaults to 'adaris'
     { name: 'adaris', amount: -100, label: 'Vintage' }, // Adaris with inverted effect (amount -100), label reads 'Vintage'

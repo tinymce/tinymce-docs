@@ -42,6 +42,21 @@ The following premium plugin updates were released alongside {productname} 8.2.0
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Full Page HTML
+
+The {productname} {release-version} release includes an accompanying release of the **Full Page HTML** premium plugin.
+
+**Full Page HTML** includes the following improvement.
+
+=== Head element added to the same line as the `meta` element
+// #TINY-12859
+
+Previously, the `+meta+` property within the Full Page HTML plugin was not properly treated as a block-level element. This caused the `+<head>+` element to be appended directly to the same line as the `+meta+` tag, leading to formatting inconsistencies in the generated HTML output.
+
+In {release-version}, the `+meta+` property has been updated to behave as a block element, ensuring proper separation and newline handling within the `<head>` section.
+
+For information on the **Full Page HTML** plugin, see: xref:fullpagehtml.adoc[Full Page HTML].
+
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes

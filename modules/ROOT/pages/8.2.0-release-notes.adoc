@@ -133,6 +133,11 @@ For an example of using custom elements with block-level and inline-level compon
 
 // CCFR here.
 
+=== UI elements like focus outlines and placeholders would be visible after printing
+// TINY-12584
+
+Previously, UI elements such as focus outlines and placeholder text were rendered in printed versions of the editor content, resulting in unwanted visual artifacts in printed documents. This behavior caused confusion and reduced the professional appearance of printed materials. To address this issue, printing-specific styles were introduced to automatically hide all UI-related elements within the editor content during printing. As a result, printed output now includes only the intended content, ensuring clean and consistent presentation across all printouts.
+
 === Tooltips on toolbar buttons sometimes remained visible if the button icon was updated while hovered
 // #TINY-12289
 

@@ -19,6 +19,7 @@ tinymce.init({
 * **Custom Element Structure:** The custom_elements option and the `addCustomElements` API supports more complex structures. This structure is defined by a record where the key represents the name of the element, and the value corresponds to a detailed specification.
 * **Attributes and Inheritance:** Elements inherit attributes and children from other specified elements using the `+extends: "div"+` property in the `custom_elements` spec.
 * **Attribute and Children Specifications:** The `custom_elements` spec includes properties such as `attributes` which lists attribute names, or `children` which lists valid child element names. The `children` property includes presets like `@global`, `@blocks`, `@phrasing`, and `@flow`.
+* **Web Components Support:** Custom elements can specify a `+componentsUrl+` property to load web component scripts into the editor.
 
 HTML Element Sets: The exact element sets for each preset, depending on the schema set (html4, html5, or html5-strict), can be found in the below tables.
 
@@ -95,5 +96,30 @@ tinymce.init({
       });
     });
   },
+});
+----
+
+=== Example using `+custom_elements+` with block-level and inline-level components.
+
+[source, js]
+----
+tinymce.init({
+  selector: "textarea",
+  custom_elements: {
+    // Block-level custom element (behaves like a div)
+    "my-custom-block": {
+      extends: "div",
+      attributes: ["@global", "data-type", "data-id"],
+      children: ["@flow"],
+      componentsUrl: "/path/to/block-component.js"
+    },
+    // Inline-level custom element (behaves like a span)
+    "my-custom-inline": {
+      extends: "span",
+      attributes: ["@global", "data-value"],
+      children: ["@phrasing"],
+      componentsUrl: "/path/to/inline-component.js"
+    }
+  }
 });
 ----

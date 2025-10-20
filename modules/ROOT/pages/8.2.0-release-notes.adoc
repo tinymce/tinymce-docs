@@ -114,7 +114,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === The schema will now allow the `property` RDFa attribute on `meta` elements
 // #TINY-12858
 
-Previously, the schema did not include the `property` RDFa attribute as a valid attribute for `meta` elements. This caused the attribute to be filtered out when using features such as the {productname} `fullpagehtml` premium plugin, potentially removing important metadata required by social media or structured data integrations.
+Previously, the schema did not recognize the `property` RDFa attribute as valid for `meta` elements, causing it to be removed during content validation in features such as the {productname} `fullpagehtml` premium plugin. This behavior could strip essential metadata used for social media previews or structured data integrations, and required integrators to manually whitelist the attribute to retain it.
 
 In {release-version}, the schema has been updated to include `property` as a valid attribute for `meta` elements. This change ensures compatibility with common metadata standards.
 

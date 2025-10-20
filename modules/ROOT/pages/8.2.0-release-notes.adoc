@@ -56,6 +56,55 @@ In {release-version}, the **Suggested Edits** plugin displays the type of conten
 
 For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
 
+=== **Templates**
+
+The {productname} {release-version} release includes an accompanying release of the **Templates** premium plugin.
+
+**Templates** includes the following fix.
+
+==== Pressing enter while focused on title input during category or template creation would submit even when the submit button was disabled
+// #TINY-12730
+
+Previously, pressing **Enter** while focused on the title input during category or template creation would trigger form submission, even when the submit button was disabled. This occurred because the input handling logic did not validate the form state before submission. As a result, users could inadvertently attempt to create a category or template with an empty name, causing an error.
+
+{productname} {release-version} addresses this issue by updating the input handling logic to check the form's validity before allowing submission when **Enter** is pressed. Now, if the form is invalid or the submit button is disabled, pressing **Enter** will not trigger submission, preventing erroneous attempts to create categories or templates with empty names.
+=== Media Optimizer
+
+The {productname} 8.2.0 release includes an accompanying release of the **Media Optimizer** premium plugin.
+
+**Media Optimizer** includes the following fix.
+
+=== Empty captions for floating images were not rendered correctly.
+// #TINY-12592
+
+In previous versions of **Media Optimizer**, when figures were styled with `+display: table+`, a floated `+<img>+` could cause an empty `+<figcaption>+` to render incorrectly alongside the image instead of below it. Deleting the caption text further disrupted the layout, causing the caption area to shift or disappear entirely.
+
+In {productname} {release-version}, this issue has been resolved by applying `+clear: both+` to `+<figcaption>+` elements when the associated image is floated. This ensures captions always render below the image, even when empty, maintaining proper alignment and consistent visual structure.
+
+For information on the **Media Optimizer** plugin, see: xref:uploadcare.adoc[Media Optimizer].
+
+=== Full Page HTML
+
+The {productname} {release-version} release includes an accompanying release of the **Full Page HTML** premium plugin.
+
+**Full Page HTML** includes the following fix.
+
+=== Encoding provided in the charset meta attribute would not be detected
+// #TINY-12860
+
+The previous encoding detection logic did not recognize certain encodings defined using the charset `+meta+` attribute, which resulted in inconsistent or conflicting encodings within a single page and caused display or editing issues.
+
+{productname} {release-version} addresses this issue by adding support for the new encoding type, ensuring that both the original and new encoding formats are correctly detected and processed. As a result, pages using either encoding style are now handled consistently. When encoded content is edited, the output is normalized to the previously supported encoding format, ensuring consistent markup and preventing confusion that could occur if the original encoding style were retained.
+
+=== Head element added to the same line as the `meta` element
+// #TINY-12859
+
+Previously, the `+meta+` property within the Full Page HTML plugin was not properly treated as a block-level element. This caused the `+<head>+` element to be appended directly to the same line as the `+meta+` tag, leading to formatting inconsistencies in the generated HTML output.
+
+In {release-version}, the `+meta+` property has been updated to behave as a block element, ensuring proper separation and newline handling within the `<head>` section.
+
+For information on the **Full Page HTML** plugin, see: xref:fullpagehtml.adoc[Full Page HTML].
+
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes
@@ -86,6 +135,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 == Additions
 
 {productname} 8.2.0 also includes the following addition<s>:
+
+=== Added support for loading web components into iframes
+// #TINY-13006
+
+Previously, there was no method to load web components into the editor iframe or preview iframes used by other plugins, which prevented these components from rendering correctly. This limitation impacted users who relied on custom web components for extended editor functionality or content visualization. In {release-version}, a new API link:https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.html.schema/#getComponentUrls[getComponentUrls] has been introduced that allows specifying a script URL for the web component within the custom element schema. This enhancement enables web components to be properly registered and rendered within the {productname} editor environment.
+
+For an example of using custom elements with block-level and inline-level components, see: xref:content-filtering.adoc#example-using-custom_elements-with-block-level-and-inline-level-components[Example using `+custom_elements+` with block-level and inline-level components].
 
 // === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
@@ -125,6 +181,50 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== The schema will now allow the `property` RDFa attribute on `meta` elements
+// #TINY-12858
+
+Previously, the schema did not recognize the `property` RDFa attribute as valid for `meta` elements, causing it to be removed during content validation in features such as the {productname} `fullpagehtml` premium plugin. This behavior could strip essential metadata used for social media previews or structured data integrations, and required integrators to manually whitelist the attribute to retain it.
+
+In {release-version}, the schema has been updated to include `property` as a valid attribute for `meta` elements. This change ensures compatibility with common metadata standards.
+
+=== The editor would upon gaining focus scroll to the center of the editor on some browsers if the top of the editor was out of frame
+// #TINY-12626
+
+A legacy workaround for a Chromium bug caused the page to scroll to the center of the editor when the editor gained focus while its top edge was outside the viewport; although unrelated, features like autoresize could frequently trigger this behavior and resulted in unexpected scrolling in some situations.
+
+As of {productname} {release-version}, the workaround has been removed now that the underlying Chromium issue has been fixed, allowing the browser to manage scrolling natively.
+
+=== Some UI elements related to dragging elements were not properly filtered out when fetching content
+// #TINY-12384
+
+In {productname} {release-version}, an issue was resolved where elements used by the table resize feature were not flagged for removal by the serializer. When content was fetched via a `+getContent()+` call during an active table resize, these transient UI nodes could be included in the returned HTML, leading to extraneous markup and potentially corrupted data.
+
+The fix marks these elements with bogus attributes so the serializer reliably filters them out, ensuring clean, stable content retrieval and preventing unintended artifacts in saved or processed output.
+
+=== The cursor could get stuck around an absolutely positioned CEF element when navigating using arrow keys
+// #TINY-10306
+
+Previously, when using arrow keys to navigate content containing absolutely positioned non-editable elements, the cursor could become trapped near these elements. This issue disrupted caret movement and made it difficult for users to continue navigating around the editor's content.
+
+In {productname} {release-version}, the horizontal caret navigation logic has been updated to ensure that the caret movement is no longer disrupted when navigating around absolutely positioned elements.
+
+=== UI elements like focus outlines and placeholders would be visible after printing
+// TINY-12584
+
+Previously, UI elements such as focus outlines and placeholder text were rendered in printed versions of the editor content, resulting in unwanted visual artifacts in printed documents. This behavior caused confusion and reduced the professional appearance of printed materials. To address this issue, printing-specific styles were introduced to automatically hide all UI-related elements within the editor content during printing. As a result, printed output now includes only the intended content, ensuring clean and consistent presentation across all printouts.
+
+=== Tooltips on toolbar buttons sometimes remained visible if the button icon was updated while hovered
+// #TINY-12289
+
+Previously, button tooltips were not always dismissed correctly when icons were updated, because the element handling hover events was being replaced and the `mouseout` event never fired. This caused tooltips to remain visible after clicking a button, creating a confusing UI experience.
+
+{productname} {release-version} addresses this issue by adjusting the icon rendering logic so hover and tooltip behavior are attached to the button itself rather than the icon element. As a result, when the `setIcon` API updates icons, it no longer interferes with mouse events.
+
+===  Some elements would be given an extra newline by the serializer when indented
+// #TINY-12857
+
+Previously, certain elements received an additional newline when indented due to the title not being correctly recognized as a block by the DOM Parser serializer. This caused unwanted whitespace to appear in the output. The issue was resolved by explicitly marking the title as a block within the code, ensuring that serialization no longer introduces unnecessary whitespace.
 
 [[security-fixes]]
 == Security fixes

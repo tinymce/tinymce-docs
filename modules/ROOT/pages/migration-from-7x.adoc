@@ -9,6 +9,19 @@
 
 This guide provides a comprehensive overview of the breaking changes introduced in {productname} {release-version}, along with the necessary steps to migrate from {productname} 7.x. It covers key updates to APIs, plugins, and service configurations, including deprecated methods, renamed components, and removed features. These changes are designed to enhance performance, simplify configuration, and align with modern web standards, ensuring a smoother transition and continued compatibility for your integrations.
 
+[NOTE]
+====
+**Migrating from older versions?**
+
+If you're migrating from {productname} 4, 5, or 6, you may find it helpful to review the legacy migration guides that target version 7, then follow this guide to complete your migration to version 8:
+
+* xref:migration-from-4x.adoc[Migrating from {productname} 4 to 7] - Covers major architectural changes and modern UI improvements
+* xref:migration-from-5x.adoc[Migrating from {productname} 5 to 7] - Includes architectural improvements and security updates  
+* xref:migration-from-6x.adoc[Migrating from {productname} 6 to 7] - Covers configuration changes and UI component updates
+
+These guides provide comprehensive coverage of changes from older versions to version 7, which can be combined with this guide for a complete migration path to version 8.
+====
+
 [IMPORTANT]
 .Breaking Changes Quick Reference
 ====
@@ -31,8 +44,24 @@ Any items marked **"High"** level require immediate attention during migration.
 |Method deprecated. Use `editor.insertContent` instead.
 |Medium
 
-|xref:fire-method-deprecation[fire()]
-|Method deprecated. Use `dispatch()` for event handling.
+|xref:remove-trailing-brs[remove_trailing_brs]
+|Property removed from DomParser API.
+|Low
+
+|xref:autocompleter-changes[Autocompleter Configuration]
+|`ch` property replaced by `trigger`.
+|Low
+
+|xref:table-sizing-mode[table_responsive_width]
+|Option replaced by `table_sizing_mode`. See xref:table-sizing-mode[Table Sizing Mode] for details.
+|Low
+
+|xref:text-pattern-changes[Text Pattern Changes]
+|Default trigger changed from Enter to Space key.
+|Low
+
+|xref:addbutton-addmenuitem-deprecation[addButton, addMenuItem, windowManager.open]
+|Methods deprecated. Use `editor.ui.registry.*` API instead.
 |Medium
 
 |xref:editor-documentbaseurl-removal[editor.documentBaseUrl]
@@ -81,6 +110,7 @@ The complete licensing documentation xref:license-key.adoc[License Key Managemen
 * *Commercial License Manager:* Self-hosted commercial deployments **require** the new License Key Manager addon.
 
 **Migration Steps:**
+
 
 . *Obtain New License Key:*
 +
@@ -215,6 +245,7 @@ This change improves security and aligns with DOMPurify's recommended defaults. 
 
 **Migration Steps:**
 
+
 * Review workflows and test content that previously relied on relaxed sanitization.
 * {productname} now provides the xref:content-filtering.adoc#allow_html_in_comments[Content Filtering: allow_html_in_comments option] option. Enabling this option allows HTML tags in comments with sanitization still enabled. 
 
@@ -257,6 +288,7 @@ This structural change modifies the DOM layout of split buttons and may break cu
 
 **Migration Guide:**
 
+
 If your implementation includes a custom skin, follow these steps to ensure compatibility:
 
 * [ ] Confirm whether your project uses a custom skin.
@@ -290,6 +322,7 @@ The `skipFocus` and `skip_focus` options for the `ToggleToolbarDrawer` command h
 
 **Migration steps:**
 
+
 [source, javascript]
 ----
 // Old approach (Deprecated) in TinyMCE 8
@@ -300,6 +333,7 @@ editor.execCommand('ToggleToolbarDrawer', false, null, { skip_focus: true })
 ----
 
 **Migration checklist:**
+
 
 * [ ] Locate all instances of `ToggleToolbarDrawer` command usage
 * [ ] Replace `skip_focus` with `skipFocus` in command options
@@ -333,6 +367,7 @@ TIP: Use `editor.documentBaseURI.getURI()` for all base URL operations.
 
 **Migration steps:**
 
+
 To update all references of `documentBaseUrl` to the new API, replace any usage of `editor.documentBaseUrl` (or similar) with `editor.documentBaseURI.getURI()`. The property `documentBaseUrl` has been removed, and the correct way to access the document base URL is now through the `documentBaseURI` property, which is a URI object. You can then call `.getURI()` on it to get the string value of the URL.
 
 .For example, update this:
@@ -354,6 +389,7 @@ For more information see: link:https://www.tiny.cloud/docs/tinymce/latest/apis/t
 
 **Migration checklist:**
 
+
 * [ ] Search your codebase for all instances of `editor.documentBaseUrl`.
 * [ ] Replace them with `tinymce.activeEditor.documentBaseURI.getURI()` (or `editor.documentBaseURI.getURI()` if you have an `editor` reference).
 
@@ -372,6 +408,7 @@ The `editor.selection.setContent` API has been deprecated and will be removed in
 
 **Migration steps:**
 
+
 To replace `editor.selection.setContent`, use `editor.insertContent` instead. The new method is more consistent with other content manipulation methods in {productname}.
 
 .Example Usage
@@ -386,9 +423,207 @@ editor.insertContent('<p>New content</p>');
 
 **Migration checklist:**
 
+
 * [ ] Replace all instances of `editor.selection.setContent` with `editor.insertContent`
 * [ ] Update custom plugins that use the old method
 * [ ] Test content insertion in your editor instances
+
+[[remove-trailing-brs]]
+==== remove_trailing_brs property removal from DomParser
+// #TINY-12012, ref TINY-8102
+
+The `remove_trailing_brs` setting was removed from the DomParser API in TinyMCE 7.0, after being deprecated in TinyMCE 6.5.
+
+**Impact:**
+
+* DomParser no longer supports the `remove_trailing_brs` option
+* This affects custom DomParser configurations
+* May impact content parsing behavior
+
+**Migration Steps:**
+
+1. Remove `remove_trailing_brs` from DomParser configurations
+2. Test content parsing behavior
+3. Update any custom DomParser implementations
+
+**Migration checklist:**
+
+
+* [ ] Remove `remove_trailing_brs` from DomParser configurations
+* [ ] Test content parsing behavior
+* [ ] Update any custom DomParser implementations
+
+[[autocompleter-changes]]
+==== Autocompleter Configuration Changes
+// #TINY-12012, ref TINY-8102
+
+The `ch` configuration property for autocompleters has been removed. Use the `trigger` property instead.
+
+**Migration Steps:**
+
+1. Replace `ch: '<string>'` with `trigger: '<string>'` in autocompleter configurations
+2. Test autocompleter functionality
+3. Update any custom autocompleter implementations
+
+.Example:
+[source,js]
+----
+// Old TinyMCE 6 configuration
+editor.ui.registry.addAutocompleter('myautocompleter', {
+  ch: '@',
+  minChars: 0,
+  fetch: function(pattern) {
+    return [
+      { value: 'john@example.com', text: 'John Doe' },
+      { value: 'jane@example.com', text: 'Jane Smith' }
+    ];
+  }
+});
+
+// New TinyMCE 7+ configuration
+editor.ui.registry.addAutocompleter('myautocompleter', {
+  trigger: '@',
+  minChars: 0,
+  fetch: function(pattern) {
+    return [
+      { value: 'john@example.com', text: 'John Doe' },
+      { value: 'jane@example.com', text: 'Jane Smith' }
+    ];
+  }
+});
+----
+
+**Migration checklist:**
+
+
+* [ ] Replace `ch: '<string>'` with `trigger: '<string>'` in autocompleter configurations
+* [ ] Test autocompleter functionality
+* [ ] Update any custom autocompleter implementations
+
+[[table-sizing-mode]]
+==== table_responsive_width replaced by table_sizing_mode
+// #TINY-12012, ref TINY-8102
+
+The `table_responsive_width` option has been replaced by `table_sizing_mode` in TinyMCE 7.0.
+
+**Migration Steps:**
+
+1. Replace `table_responsive_width` with `table_sizing_mode` in your configuration
+2. Update the option value to match the new API
+3. Test table responsive behavior
+
+.Example:
+[source,js]
+----
+// Old TinyMCE 6 configuration
+tinymce.init({
+  selector: "textarea",
+  table_responsive_width: true
+});
+
+// New TinyMCE 7+ configuration
+tinymce.init({
+  selector: "textarea",
+  table_sizing_mode: "responsive"
+});
+----
+
+**Migration checklist:**
+
+
+* [ ] Replace `table_responsive_width` with `table_sizing_mode` in your configuration
+* [ ] Update the option value to match the new API
+* [ ] Test table responsive behavior
+
+[[text-pattern-changes]]
+==== Text Pattern Changes
+// #TINY-12012, ref TINY-8102
+
+TinyMCE 7.0 updated the default behavior of `text_patterns` to apply formats when the user presses the `Space` key instead of `Enter`.
+
+**Impact:**
+
+* Markdown-style formatting now triggers on Space key press
+* Previous Enter key behavior can be restored by configuring `trigger: 'enter'`
+* This affects all text patterns including headings, lists, blockquotes, and horizontal rules
+
+**Migration Steps:**
+
+1. Test existing text pattern behavior
+2. Update configurations if Enter key triggering is required
+3. Review user experience with new Space key triggering
+4. Consider updating user documentation about text pattern behavior
+
+.Example:
+[source,js]
+----
+// Default TinyMCE 7+ behavior (Space key trigger)
+tinymce.init({
+  selector: "textarea",
+  text_patterns: [
+    { start: '#', format: 'h1', trigger: 'space' },
+    { start: '##', format: 'h2', trigger: 'space' },
+    { start: '1.', cmd: 'InsertOrderedList', trigger: 'space' },
+    { start: '*', cmd: 'InsertUnorderedList', trigger: 'space' },
+    { start: '>', cmd: 'mceBlockQuote', trigger: 'space' }
+  ]
+});
+
+// Restore previous behavior (Enter key trigger)
+tinymce.init({
+  selector: "textarea",
+  text_patterns: [
+    { start: '#', format: 'h1', trigger: 'enter' },
+    { start: '##', format: 'h2', trigger: 'enter' },
+    { start: '1.', cmd: 'InsertOrderedList', trigger: 'enter' },
+    { start: '*', cmd: 'InsertUnorderedList', trigger: 'enter' },
+    { start: '>', cmd: 'mceBlockQuote', trigger: 'enter' }
+  ]
+});
+----
+
+**Migration checklist:**
+
+
+* [ ] Test existing text pattern behavior with Space key triggering
+* [ ] Update configurations if Enter key triggering is required
+* [ ] Review user experience with new Space key triggering
+* [ ] Update user documentation about text pattern behavior
+
+[[addbutton-addmenuitem-deprecation]]
+==== `addButton`, `addMenuItem`, and `windowManager.open`
+// #TINY-12012, ref TINY-8102
+
+The `addButton`, `addMenuItem`, and `windowManager.open` methods have been replaced by the `editor.ui.registry.*` API.
+
+[source, javascript]
+----
+// Deprecated in TinyMCE 8, will be removed in 9
+// Old approach for adding buttons
+editor.addButton('myButton', {
+  text: 'My Button',
+  onclick: function() {
+    editor.insertContent('Hello World!');
+  }
+});
+
+// New approach for adding buttons
+editor.ui.registry.addButton('myButton', {
+  text: 'My Button',
+  onAction: function() {
+    editor.insertContent('Hello World!');
+  }
+});
+----
+
+**Migration checklist:**
+
+
+* [ ] Replace all instances of `editor.addButton` with `editor.ui.registry.addButton`
+* [ ] Replace all instances of `editor.addMenuItem` with `editor.ui.registry.addMenuItem`
+* [ ] Replace all instances of `editor.windowManager.open` with `editor.windowManager.open`
+* [ ] Update custom plugins that use the old methods
+* [ ] Test button and menu functionality in your editor instances
 
 [[fire-method-deprecation]]
 ==== `fire()`
@@ -410,6 +645,7 @@ editor.dispatch('someEvent');
 
 **Migration checklist:**
 
+
 * [ ] Search codebase for all uses of the `fire()` method
 * [ ] Replace each instance with `dispatch()`
 * [ ] Review and update third-party plugins
@@ -427,6 +663,7 @@ Language pack filenames have been standardized to follow the RFC5646 format. Thi
 **Impact**: Custom language packs and configurations using the underscore-based format should update before upgrading to {productname} 9 to avoid loading failures.
 
 **Migration checklist:**
+
 
 * [ ] Identify all language pack files in your deployment
 * [ ] Rename files to RFC5646 format (e.g., `en_GB.js` → `en-GB.js`)
@@ -455,6 +692,7 @@ The Image and Accessibility Checker plugins now follow the latest W3C standards 
 **Impact**: Customers using these plugins will need to update their configurations to ensure continued compliance with accessibility standards.
 
 **Migration checklist:**
+
 
 * [ ] Identify images previously using `role="presentation"` for decorative purposes in your content
 * [ ] Replace those with empty alt attributes `alt=""`
@@ -506,6 +744,7 @@ tinymce.init({
 
 **Migration checklist:**
 
+
 * [ ] Verify script tag attributes for Cloud deployments.
 * [ ] Configure `crossorigin` function if using cross-origin resources.
 * [ ] Test resource loading in your deployment environment.
@@ -527,6 +766,7 @@ Several empty files have been removed from the codebase to reduce clutter and im
 
 **Migration checklist:**
 
+
 * [ ] Check build processes for references to Comments plugin CSS
 * [ ] Check build processes for references to Mentions plugin LESS
 * [ ] Remove any imports of these empty files
@@ -543,6 +783,7 @@ Several empty files have been removed from the codebase to reduce clutter and im
 
 **Migration checklist:**
 
+
 * [ ] Evaluate alternative integration options
 * [ ] Plan migration timeline to complete before December 31, 2025
 
@@ -558,6 +799,7 @@ The "Medical English (UK)" dictionary has been removed due to licensing constrai
 
 **Migration checklist:**
 
+
 * [ ] Remove "Medical English (UK)" from spellchecker configurations
 * [ ] Remove any custom dictionary integrations related to Medical English
 * [ ] Test spellchecker functionality with remaining dictionaries
@@ -572,6 +814,7 @@ Services previously bundled with the editor, such as Java Servlet services, are 
 
 **Migration steps:**
 
+
 * Update the applications deployment architecture to use xref:bundle-intro-setup.adoc[Containerized services] where applicable
 
 ==== Transition from Java WAR Files to Containerized Services
@@ -582,6 +825,7 @@ Services previously bundled with the editor, such as Java Servlet services, are 
 **Impact**: This reduces infrastructure complexity and aligns with modern DevOps practices.
 
 **Migration checklist:**
+
 
 * [ ] Inventory current WAR file deployments
 * [ ] Review containerization requirements for your environment

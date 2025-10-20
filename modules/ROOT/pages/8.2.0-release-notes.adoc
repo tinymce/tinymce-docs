@@ -167,6 +167,13 @@ For an example of using custom elements with block-level and inline-level compon
 
 // CCFR here.
 
+=== The schema will now allow the `property` RDFa attribute on `meta` elements
+// #TINY-12858
+
+Previously, the schema did not recognize the `property` RDFa attribute as valid for `meta` elements, causing it to be removed during content validation in features such as the {productname} `fullpagehtml` premium plugin. This behavior could strip essential metadata used for social media previews or structured data integrations, and required integrators to manually whitelist the attribute to retain it.
+
+In {release-version}, the schema has been updated to include `property` as a valid attribute for `meta` elements. This change ensures compatibility with common metadata standards.
+
 === The editor would upon gaining focus scroll to the center of the editor on some browsers if the top of the editor was out of frame
 // #TINY-12626
 
@@ -204,7 +211,6 @@ Previously, button tooltips were not always dismissed correctly when icons were 
 // #TINY-12857
 
 Previously, certain elements received an additional newline when indented due to the title not being correctly recognized as a block by the DOM Parser serializer. This caused unwanted whitespace to appear in the output. The issue was resolved by explicitly marking the title as a block within the code, ensuring that serialization no longer introduces unnecessary whitespace.
-
 
 [[security-fixes]]
 == Security fixes

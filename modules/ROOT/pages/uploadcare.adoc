@@ -41,6 +41,7 @@ tinymce.init({
   plugins: 'uploadcare',
   toolbar: 'uploadcare uploadcare-video',
   uploadcare_public_key: '<your-public-key>', // Required for Uploadcare integration
+  uploadcare_resources: 'uploadcare/uploadcare', // Required when Media Optimizer addon is bundled with TinyMCE
   // uploadcare_signed_upload_auth_provider: (_publicKey) => Promise.resolve({
   //   signature: 'sig',
   //   expire: 123
@@ -82,6 +83,8 @@ include::partial$configuration/uploadcare_signed_upload_auth_provider.adoc[level
 include::partial$configuration/uploadcare_cdn_base_url.adoc[leveloffset=+1]
 
 include::partial$configuration/uploadcare_store_type.adoc[leveloffset=+1]
+
+include::partial$configuration/uploadcare_resources.adoc[leveloffset=+1]
 
 :includedSection: uploadcarePlugin
 include::partial$configuration/a11y_advanced_options.adoc[leveloffset=+1]

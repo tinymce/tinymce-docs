@@ -47,6 +47,8 @@ tinymce.init({
 [NOTE]
 ====
 The {pluginname} plugin uses the same plugin code `+uploadcare+` as the Media Optimizer plugin. Video functionality is automatically enabled when video files are uploaded.
+
+When bundling {productname} with webpack or similar tools, the xref:uploadcare.adoc#uploadcare-resources[uploadcare_resources] option is required for video functionality to work properly, as it tells the plugin where to find the additional JavaScript resources needed for video playback.
 ====
 
 == Video Operations
@@ -68,48 +70,38 @@ Below is an overview of the features provided by the Video Optimizer plugin:
 
 Below are the video player control options that are available to the video element:
 
-[cols="1,1,4",options="header"]
+[cols="2,4",options="header"]
 |===
-| Operation | Icon | Description
+| Operation | Description
 
 | Play
-|
 | Customize video player controls and behavior
 
 | Mute
-| 
 | Mute the video
 
 | Unmute
-| 
 | Unmute the video
 
 | Slider
-| 
 | Shows the progress of the video and allows users to move the slider to seek to a specific time in the video
 
 | Resize
-| image:icons/resize.svg[resize.svg]
 | Changes the size of the video (when enabled)
 
 | Remaining Time
-| 
 | Shows the remaining time of the video
 
 | Picture-in-Picture
-| 
 | Enables picture-in-picture mode for the video
 
 | Settings
-| 
 | Opens the video settings menu
 
 | Fullscreen
-| 
 | Enables fullscreen mode for the video
 
 | UC Logo
-| 
 | Shows the Uploadcare logo
 |===
 
@@ -137,14 +129,11 @@ The plugin creates a custom `+<uc-video>+` element that replaces the standard HT
   autoplay="false"
   loop="false"
   muted="false"
-  playsinline="true"
   preload="metadata"
   width="640"
   height="360"
   poster="https://example.com/poster.jpg"
-  crossorigin="anonymous"
   showlogo="false"
-  posteroffset="5s">
 </uc-video>
 ----
 

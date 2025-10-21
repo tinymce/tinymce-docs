@@ -1,0 +1,52 @@
+[[uploadcare-video-properties]]
+== `uploadcare_video_properties`
+
+Configures the video player properties and behavior for video elements.
+
+*Type:* `+Object+`
+
+*Default:* See properties table below
+
+=== Properties
+
+[cols="1,1,2,1,2"]
+|===
+|Property | Type | Valid Values | Default | Description
+|`autoplay` | Boolean | `true`, `false`, `undefined` | `undefined` | Automatically starts video playback when the page loads.
+|`controls` | Boolean | `true`, `false` | `true` | Displays the video player controls (play/pause, volume, timeline, fullscreen, etc.). When disabled, users can still control playback through keyboard shortcuts or programmatic methods.
+|`height` | Number or String | Pixels or CSS value | `undefined` | Sets the video player height. Accepts numeric values (interpreted as pixels) or CSS values like `"100%"`, `"50vh"`, or `"auto"`.
+|`loop` | Boolean | `true`, `false`, `undefined` | `undefined` | Automatically restarts video playback from the beginning when it reaches the end. Useful for background videos or continuous content loops.
+|`muted` | Boolean | `true`, `false`, `undefined` | `undefined` | Mutes the video audio by default. Often used in combination with autoplay since most browsers require muted videos for autoplay to function.
+|`poster` | String | Valid URL | `undefined` | Sets a poster image (thumbnail) that displays before video playback begins. The image should match the video's aspect ratio for best results.
+|`preload` | String | `auto`, `metadata`, `none` | `undefined` | Controls how much video data to preload: `auto` loads the entire video, `metadata` loads only basic information, `none` loads nothing until playback starts. Performance considerations: use `metadata` for better page load times and bandwidth conservation, `auto` for immediate playback without buffering delays, and `none` for maximum bandwidth savings when videos may not be played.
+|`width` | Number or String | Pixels or CSS value | `undefined` | Sets the video player width. Accepts numeric values (interpreted as pixels) or CSS values like `"100%"`, `"50vw"`, or `"auto"`.
+|`showLogo` | Boolean | `true`, `false` | `true` | Displays the Uploadcare logo overlay on the video player.
+|===
+
+
+.Example: Basic video player configuration
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare',
+  uploadcare_public_key: '<your-public-key>',
+  uploadcare_video_properties: {
+    autoplay: false,
+    controls: true,
+    loop: false,
+    muted: true,
+    preload: 'metadata',
+    poster: 'https://placehold.co/600x400', // Optional poster image URL
+    width: 640,
+    height: 360,
+    showLogo: false
+  },
+});
+----
+
+=== Additional Resources
+
+For comprehensive information about HTML video element attributes and their behavior, see the link:https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/video[MDN Video Element documentation].

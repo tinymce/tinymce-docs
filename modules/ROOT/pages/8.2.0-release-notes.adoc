@@ -53,6 +53,19 @@ The **License Key Manager** has been reworked to include a new `+js/commercialli
 
 For information on the **License Key Manager** plugin, see: xref:license-key.adoc[License Key Manager].
 
+=== **Templates**
+
+The {productname} {release-version} release includes an accompanying release of the **Templates** premium plugin.
+
+**Templates** includes the following fix.
+
+==== Pressing enter while focused on title input during category or template creation would submit even when the submit button was disabled
+// #TINY-12730
+
+Previously, pressing **Enter** while focused on the title input during category or template creation would trigger form submission, even when the submit button was disabled. This occurred because the input handling logic did not validate the form state before submission. As a result, users could inadvertently attempt to create a category or template with an empty name, causing an error.
+
+{productname} {release-version} addresses this issue by updating the input handling logic to check the form's validity before allowing submission when **Enter** is pressed. Now, if the form is invalid or the submit button is disabled, pressing **Enter** will not trigger submission, preventing erroneous attempts to create categories or templates with empty names.
+
 === Media Optimizer
 
 The {productname} 8.2.0 release includes an accompanying release of the **Media Optimizer** premium plugin.
@@ -72,7 +85,14 @@ For information on the **Media Optimizer** plugin, see: xref:uploadcare.adoc[Med
 
 The {productname} {release-version} release includes an accompanying release of the **Full Page HTML** premium plugin.
 
-**Full Page HTML** includes the following improvement.
+**Full Page HTML** includes the following fix.
+
+=== Encoding provided in the charset meta attribute would not be detected
+// #TINY-12860
+
+The previous encoding detection logic did not recognize certain encodings defined using the charset `+meta+` attribute, which resulted in inconsistent or conflicting encodings within a single page and caused display or editing issues.
+
+{productname} {release-version} addresses this issue by adding support for the new encoding type, ensuring that both the original and new encoding formats are correctly detected and processed. As a result, pages using either encoding style are now handled consistently. When encoded content is edited, the output is normalized to the previously supported encoding format, ensuring consistent markup and preventing confusion that could occur if the original encoding style were retained.
 
 === Head element added to the same line as the `meta` element
 // #TINY-12859
@@ -159,6 +179,27 @@ For an example of using custom elements with block-level and inline-level compon
 
 // CCFR here.
 
+=== The schema will now allow the `property` RDFa attribute on `meta` elements
+// #TINY-12858
+
+Previously, the schema did not recognize the `property` RDFa attribute as valid for `meta` elements, causing it to be removed during content validation in features such as the {productname} `fullpagehtml` premium plugin. This behavior could strip essential metadata used for social media previews or structured data integrations, and required integrators to manually whitelist the attribute to retain it.
+
+In {release-version}, the schema has been updated to include `property` as a valid attribute for `meta` elements. This change ensures compatibility with common metadata standards.
+
+=== The editor would upon gaining focus scroll to the center of the editor on some browsers if the top of the editor was out of frame
+// #TINY-12626
+
+A legacy workaround for a Chromium bug caused the page to scroll to the center of the editor when the editor gained focus while its top edge was outside the viewport; although unrelated, features like autoresize could frequently trigger this behavior and resulted in unexpected scrolling in some situations.
+
+As of {productname} {release-version}, the workaround has been removed now that the underlying Chromium issue has been fixed, allowing the browser to manage scrolling natively.
+
+=== Some UI elements related to dragging elements were not properly filtered out when fetching content
+// #TINY-12384
+
+In {productname} {release-version}, an issue was resolved where elements used by the table resize feature were not flagged for removal by the serializer. When content was fetched via a `+getContent()+` call during an active table resize, these transient UI nodes could be included in the returned HTML, leading to extraneous markup and potentially corrupted data.
+
+The fix marks these elements with bogus attributes so the serializer reliably filters them out, ensuring clean, stable content retrieval and preventing unintended artifacts in saved or processed output.
+
 === The cursor could get stuck around an absolutely positioned CEF element when navigating using arrow keys
 // #TINY-10306
 
@@ -182,7 +223,6 @@ Previously, button tooltips were not always dismissed correctly when icons were 
 // #TINY-12857
 
 Previously, certain elements received an additional newline when indented due to the title not being correctly recognized as a block by the DOM Parser serializer. This caused unwanted whitespace to appear in the output. The issue was resolved by explicitly marking the title as a block within the code, ensuring that serialization no longer introduces unnecessary whitespace.
-
 
 [[security-fixes]]
 == Security fixes

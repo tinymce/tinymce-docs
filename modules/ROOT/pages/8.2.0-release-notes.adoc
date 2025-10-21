@@ -42,6 +42,21 @@ The following premium plugin updates were released alongside {productname} 8.2.0
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Suggested Edits
+
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
+
+**Suggested Edits** includes the following improvement.
+
+=== Suggestions now display the type of content that was changed
+// #TINY-12598
+
+Previously, the **Suggested Edits** plugin only displayed the word "content" in the suggestion card description, as a generalised context for each suggestion.
+
+In {release-version}, the **Suggested Edits** plugin displays the type of content as well as the type of edit in the card description, to provide more context for each suggestion.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
+
 === License Key Manager
 
 The {productname} 8.2.0 release includes an accompanying release of the **License Key Manager**.

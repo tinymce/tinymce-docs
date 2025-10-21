@@ -53,6 +53,6 @@ jobs:
         role-session-name: docs-preview-update
         aws-region: us-east-2
 
-    - name: Upload website preview to S3
+    - name: Upload website preview to S3 # put in the docs subfolder as we rely on that path in redirects
       run: |
-        aws s3 sync --delete ./build/site s3://tiny-cloud-antora-docs-preview/pr${PR_NUMBER}
+        aws s3 sync --delete ./build/site s3://tiny-cloud-antora-docs-preview/pr${PR_NUMBER}/docs

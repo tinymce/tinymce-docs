@@ -48,33 +48,14 @@ This new functionality is supported with the following configuration options:
 
 For information on the **Media Optimizer** plugin, see: xref:uploadcare-video.adoc[Media Optimizer: Video].
 
-// === <Premium plugin name 1> <Premium plugin name 1 version>
+=== Empty captions for floating images were not rendered correctly.
+// #TINY-12592
 
-// The {productname} 8.2.0 release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+In previous versions of **Media Optimizer**, when figures were styled with `+display: table+`, a floated `+<img>+` could cause an empty `+<figcaption>+` to render incorrectly alongside the image instead of below it. Deleting the caption text further disrupted the layout, causing the caption area to shift or disappear entirely.
 
-// **<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+In {productname} {release-version}, this issue has been resolved by applying `+clear: both+` to `+<figcaption>+` elements when the associated image is floated. This ensures captions always render below the image, even when empty, maintaining proper alignment and consistent visual structure.
 
-// ==== <Premium plugin name 1 change 1>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-// For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
-
-=== Suggested Edits
-
-The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
-
-**Suggested Edits** includes the following improvement.
-
-=== Suggestions now display the type of content that was changed
-// #TINY-12598
-
-Previously, the **Suggested Edits** plugin only displayed the word "content" in the suggestion card description, as a generalised context for each suggestion.
-
-In {release-version}, the **Suggested Edits** plugin displays the type of content as well as the type of edit in the card description, to provide more context for each suggestion.
-
-For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
+For information on the **Media Optimizer** plugin, see: xref:uploadcare.adoc[Media Optimizer].
 
 === License Key Manager
 
@@ -87,7 +68,7 @@ The **License Key Manager** has been reworked to include a new `+js/commercialli
 
 For information on the **License Key Manager** plugin, see: xref:license-key.adoc[License Key Manager].
 
-=== **Templates**
+=== Templates
 
 The {productname} {release-version} release includes an accompanying release of the **Templates** premium plugin.
 
@@ -100,20 +81,27 @@ Previously, pressing **Enter** while focused on the title input during category 
 
 {productname} {release-version} addresses this issue by updating the input handling logic to check the form's validity before allowing submission when **Enter** is pressed. Now, if the form is invalid or the submit button is disabled, pressing **Enter** will not trigger submission, preventing erroneous attempts to create categories or templates with empty names.
 
-=== Media Optimizer
+=== Suggested Edits
 
-The {productname} 8.2.0 release includes an accompanying release of the **Media Optimizer** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
 
-**Media Optimizer** includes the following fix.
+**Suggested Edits** includes the following improvements.
 
-=== Empty captions for floating images were not rendered correctly.
-// #TINY-12592
+==== Added new `+suggestededits_auto_approve+` option to auto-approve edits by the current user
+// #TINY-12258
 
-In previous versions of **Media Optimizer**, when figures were styled with `+display: table+`, a floated `+<img>+` could cause an empty `+<figcaption>+` to render incorrectly alongside the image instead of below it. Deleting the caption text further disrupted the layout, causing the caption area to shift or disappear entirely.
+A new `suggestededits_auto_approve` option has been added to the **Suggested Edits** plugin. This option allows automatic approval of edits made by the current user, as defined by the xref:suggestededits.adoc#user_id[`+user_id+`] setting, without requiring manual review. When enabled, any new edits and previously suggested changes from the same user are instantly approved and applied, streamlining workflows where review is unnecessary.
 
-In {productname} {release-version}, this issue has been resolved by applying `+clear: both+` to `+<figcaption>+` elements when the associated image is floated. This ensures captions always render below the image, even when empty, maintaining proper alignment and consistent visual structure.
+For more information on the `+suggestededits_auto_approve+` option, see: xref:suggestededits.adoc#suggestededits_auto_approve[suggestededits_auto_approve].
 
-For information on the **Media Optimizer** plugin, see: xref:uploadcare.adoc[Media Optimizer].
+=== Suggestions now display the type of content that was changed
+// #TINY-12598
+
+Previously, the **Suggested Edits** plugin only displayed the word "content" in the suggestion card description, as a generalised context for each suggestion.
+
+In {release-version}, the **Suggested Edits** plugin displays the type of content as well as the type of edit in the card description, to provide more context for each suggestion.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
 
 === Full Page HTML
 

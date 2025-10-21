@@ -316,6 +316,12 @@ a| * Check your internet connection
 a| * Verify that your API key is valid
 * Check if your subscription is active
 * Visit the link:https://support.tiny.cloud[Support Portal] if the issue persists
+
+| xref:resource-load-error[Resource Load Error]
+| The editor is disabled because the {productname} license key could not be validated.
+| The editor is disabled because the {productname} license key could not be validated. The {productname} Commercial License Key Manager plugin was unable to load additional required resources.
+a| * If bundling, verify that you are using the `licensekeymanager/index.js` file that imports other required resources.
+* If hosting, verify that a `js/commerciallicensekeymanager.js` file is also present in the `plugins/licensekeymanager` folder.
 |===
 
 === Detailed Error Descriptions
@@ -359,5 +365,9 @@ A server-side error occurred while validating the API key. The editor will attem
 [[online-api-key-error-disable]]
 ==== Online API Key Error (4xx - Disable)
 The API key validation failed due to an invalid key or inactive subscription. The editor will be disabled until a valid API key is provided. For API key issues, visit link:https://www.tiny.cloud/my-account[Tiny Cloud Account] or see the "<<What is the difference between a license key and the API key?>>" section for clarification.
+
+[[resource-load-error]]
+==== Resource Load Error
+The TinyMCE Commercial License Key Manager plugin was unable to load additional required resources. This typically occurs when the `js/commerciallicensekeymanager.js` file is missing or not properly configured. For bundled applications, ensure you are using the `licensekeymanager/index.js` file that imports other required resources. For self-hosted installations, verify that a `js/commerciallicensekeymanager.js` file is present in the `plugins/licensekeymanager` folder. See the <<Setting up the Commercial License Key Manager>> section for implementation details.
 
 For additional assistance, visit our link:https://support.tiny.cloud[Support Portal] or contact your link:https://www.tiny.cloud/my-account[Tiny Cloud Account] manager.

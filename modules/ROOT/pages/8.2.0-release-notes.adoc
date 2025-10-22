@@ -11,17 +11,11 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[overview]]
 == Overview
 
-{productname} 8.2.0 was released for {enterpriseversion} and {cloudname} on Wednesday, October 22^nd^, 2025. These release notes provide an overview of the changes for {productname} 8.2.0, including:
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, October 22^nd^, 2025. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
-* xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
 * xref:improvements[Improvements]
-* xref:additions[Additions]
-* xref:changes[Changes]
 * xref:bug-fixes[Bug fixes]
-* xref:security-fixes[Security fixes]
-* xref:deprecated[Deprecated]
-* xref:known-issues[Known issues]
 
 
 [[accompanying-premium-plugin-changes]]
@@ -126,87 +120,37 @@ In {release-version}, the `+meta+` property has been updated to behave as a bloc
 For information on the **Full Page HTML** plugin, see: xref:fullpagehtml.adoc[Full Page HTML].
 
 
-[[accompanying-enhanced-skins-and-icon-packs-changes]]
-== Accompanying Enhanced Skins & Icon Packs changes
-
-The {productname} 8.2.0 release includes an accompanying release of the **Enhanced Skins & Icon Packs**.
-
-=== Enhanced Skins & Icon Packs
-
-The **Enhanced Skins & Icon Packs** release includes the following updates:
-
-The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} 8.2.0 skin, Oxide.
-
-For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
-
-
 [[improvements]]
 == Improvements
 
 {productname} 8.2.0 also includes the following improvement<s>:
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+===  Some elements would be given an extra newline by the serializer when indented
+// #TINY-12857
 
-// CCFR here.
-
-
-[[additions]]
-== Additions
-
-{productname} 8.2.0 also includes the following addition<s>:
-
-=== Added support for loading web components into iframes
-// #TINY-13006
-
-Previously, there was no method to load web components into the editor iframe or preview iframes used by other plugins, which prevented these components from rendering correctly. This limitation impacted users who relied on custom web components for extended editor functionality or content visualization. In {release-version}, a new API link:https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.html.schema/#getComponentUrls[getComponentUrls] has been introduced that allows specifying a script URL for the web component within the custom element schema. This enhancement enables web components to be properly registered and rendered within the {productname} editor environment.
-
-For an example of using custom elements with block-level and inline-level components, see: xref:content-filtering.adoc#example-using-custom_elements-with-block-level-and-inline-level-components[Example using `+custom_elements+` with block-level and inline-level components].
-
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[changes]]
-== Changes
-
-{productname} 8.2.0 also includes the following change<s>:
-
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[removed]]
-== Removed
-
-{productname} 8.2.0 also includes the following removal<s>:
-
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
+Previously, certain elements received an additional newline when indented due to the title not being correctly recognized as a block by the DOM Parser serializer. This caused unwanted whitespace to appear in the output. The issue was resolved by explicitly marking the title as a block within the code, ensuring that serialization no longer introduces unnecessary whitespace.
 
 [[bug-fixes]]
 == Bug fixes
 
-{productname} 8.2.0 also includes the following bug fix<es>:
+{productname} 8.2.0 also includes the following bug fixes:
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== UI elements like focus outlines and placeholders would be visible after printing
+// TINY-12584
 
-// CCFR here.
+Previously, UI elements such as focus outlines and placeholder text were rendered in printed versions of the editor content, resulting in unwanted visual artifacts in printed documents. This behavior caused confusion and reduced the professional appearance of printed materials. To address this issue, printing-specific styles were introduced to automatically hide all UI-related elements within the editor content during printing. As a result, printed output now includes only the intended content, ensuring clean and consistent presentation across all printouts.
 
-=== The schema will now allow the `property` RDFa attribute on `meta` elements
-// #TINY-12858
+=== The `open` attribute on `<details>` elements is now normalized to `open="open"` when the accordion plugin is enabled. 
+// #TINY-12862
 
-Previously, the schema did not recognize the `property` RDFa attribute as valid for `meta` elements, causing it to be removed during content validation in features such as the {productname} `fullpagehtml` premium plugin. This behavior could strip essential metadata used for social media previews or structured data integrations, and required integrators to manually whitelist the attribute to retain it.
+// TBA was tagged as Task
 
-In {release-version}, the schema has been updated to include `property` as a valid attribute for `meta` elements. This change ensures compatibility with common metadata standards.
+=== Tooltips on toolbar buttons sometimes remained visible if the button icon was updated while hovered
+// #TINY-12289
+
+Previously, button tooltips were not always dismissed correctly when icons were updated, because the element handling hover events was being replaced and the `mouseout` event never fired. This caused tooltips to remain visible after clicking a button, creating a confusing UI experience.
+
+{productname} {release-version} addresses this issue by adjusting the icon rendering logic so hover and tooltip behavior are attached to the button itself rather than the icon element. As a result, when the `setIcon` API updates icons, it no longer interferes with mouse events.
 
 === The editor would upon gaining focus scroll to the center of the editor on some browsers if the top of the editor was out of frame
 // #TINY-12626
@@ -229,53 +173,31 @@ Previously, when using arrow keys to navigate content containing absolutely posi
 
 In {productname} {release-version}, the horizontal caret navigation logic has been updated to ensure that the caret movement is no longer disrupted when navigating around absolutely positioned elements.
 
-=== UI elements like focus outlines and placeholders would be visible after printing
-// TINY-12584
+=== The schema will now allow the `property` RDFa attribute on `meta` elements
+// #TINY-12858
 
-Previously, UI elements such as focus outlines and placeholder text were rendered in printed versions of the editor content, resulting in unwanted visual artifacts in printed documents. This behavior caused confusion and reduced the professional appearance of printed materials. To address this issue, printing-specific styles were introduced to automatically hide all UI-related elements within the editor content during printing. As a result, printed output now includes only the intended content, ensuring clean and consistent presentation across all printouts.
+Previously, the schema did not recognize the `property` RDFa attribute as valid for `meta` elements, causing it to be removed during content validation in features such as the {productname} `fullpagehtml` premium plugin. This behavior could strip essential metadata used for social media previews or structured data integrations, and required integrators to manually whitelist the attribute to retain it.
 
-=== Tooltips on toolbar buttons sometimes remained visible if the button icon was updated while hovered
-// #TINY-12289
+In {release-version}, the schema has been updated to include `property` as a valid attribute for `meta` elements. This change ensures compatibility with common metadata standards.
 
-Previously, button tooltips were not always dismissed correctly when icons were updated, because the element handling hover events was being replaced and the `mouseout` event never fired. This caused tooltips to remain visible after clicking a button, creating a confusing UI experience.
+=== Corrected type of `undoManager.add` method. The `event` parameter is type `EditorEvent` not `Event`.
+// #TINY-12936
 
-{productname} {release-version} addresses this issue by adjusting the icon rendering logic so hover and tooltip behavior are attached to the button itself rather than the icon element. As a result, when the `setIcon` API updates icons, it no longer interferes with mouse events.
+// TBA was tagged as Task
 
-===  Some elements would be given an extra newline by the serializer when indented
-// #TINY-12857
+=== Chromium browsers would in certain situations scroll the editor unexpectedly when dragging content over the editor.
+// #INT-3373
 
-Previously, certain elements received an additional newline when indented due to the title not being correctly recognized as a block by the DOM Parser serializer. This caused unwanted whitespace to appear in the output. The issue was resolved by explicitly marking the title as a block within the code, ensuring that serialization no longer introduces unnecessary whitespace.
+// TBA was missing target version
 
-[[security-fixes]]
-== Security fixes
+=== Added support for loading web components into iframes
+// #TINY-13006
 
-{productname} 8.2.0 includes <a fix | fixes for the following security issue<s>:
+Previously, there was no method to load web components into the editor iframe or preview iframes used by other plugins, which prevented these components from rendering correctly. This limitation impacted users who relied on custom web components for extended editor functionality or content visualization. In {release-version}, a new API link:https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.html.schema/#getComponentUrls[getComponentUrls] has been introduced that allows specifying a script URL for the web component within the custom element schema. This enhancement enables web components to be properly registered and rendered within the {productname} editor environment.
 
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+For an example of using custom elements with block-level and inline-level components, see: xref:content-filtering.adoc#example-using-custom_elements-with-block-level-and-inline-level-components[Example using `+custom_elements+` with block-level and inline-level components].
 
-// CCFR here.
+=== Reverted toolbar button width to `auto`.
+// #TINY-13097
 
-
-[[deprecated]]
-== Deprecated
-
-{productname} 8.2.0 includes the following deprecation<s>:
-
-// === The `<plugin>` configuration property, `<name>`, has been deprecated
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[known-issues]]
-== Known issues
-
-This section describes issues that users of {productname} 8.2.0 may encounter and possible workarounds for these issues.
-
-There <is one | are <number> known issue<s> in {productname} 8.2.0.
-
-// === <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+// TBA was merged last minute

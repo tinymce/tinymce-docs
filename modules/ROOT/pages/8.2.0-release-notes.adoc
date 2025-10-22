@@ -143,7 +143,9 @@ Previously, UI elements such as focus outlines and placeholder text were rendere
 === The `open` attribute on `<details>` elements is now normalized to `open="open"` when the accordion plugin is enabled. 
 // #TINY-12862
 
-// TBA was tagged as Task
+Previously, the `open` attribute on `<details>` elements was inconsistently defined when used with the accordion plugin. In some cases, the attribute appeared as `+open="true"+`, while toggling through the plugin converted it to `+open="open"+`. This inconsistency caused issues when loading externally created content that contained multiple open accordions with different attribute values, leading to mismatched accordion states.
+
+In {productname} {release-version}, the behavior has been standardized: when the accordion plugin is enabled, the `open` attribute is normalized to `+open="open"+` on content load.
 
 === Tooltips on toolbar buttons sometimes remained visible if the button icon was updated while hovered
 // #TINY-12289
@@ -183,12 +185,18 @@ In {release-version}, the schema has been updated to include `property` as a val
 === Corrected type of `undoManager.add` method. The `event` parameter is type `EditorEvent` not `Event`.
 // #TINY-12936
 
-// TBA was tagged as Task
+The `undoManager.add` method previously defined its `event` parameter as type `Event`, leading to inaccurate type inference and reduced developer clarity. This issue caused incomplete type validation and limited IDE assistance when working with `undo()` events.
+
+{productname} {release-version} addresses this issue by updating the `undoManager.add` method to use the `EditorEvent<unknown>` type for the `event` parameter, ensuring consistency with other {productname} APIs.
+
+For more information on the `undoManager.add` method, see: xref:apis/tinymce.undomanager.adoc#add[undoManager.add()].
 
 === Chromium browsers would in certain situations scroll the editor unexpectedly when dragging content over the editor.
 // #INT-3373
 
-// TBA was missing target version
+Previously, in Chromium-based browsers starting with Chrome 141 (and some builds of 140), focusing the editor during a `dragover` event could trigger the browser's scroll-to-caret behavior. Because the caret initially sat at the start of the document, pages could jump to the top as users dragged content over the editor, disrupting drag-and-drop workflows.
+
+In {productname} {release-version}, dragover handling has been updated to move the caret to the intended drop position before the editor receives focus. This ensures Chrome's scroll-to-caret check finds the caret already in view, preventing unexpected scrolling and maintaining a smooth drag-and-drop experience.
 
 === Added support for loading web components into iframes
 // #TINY-13006

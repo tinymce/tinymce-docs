@@ -1,0 +1,38 @@
+<div style="display: flex; gap: 20px; width: 100%; flex-wrap: wrap;">
+  <div style="flex: 1; min-width: 300px;">
+    <h2>Default TinyMCE Icons</h2>
+    <textarea id="default-editor" style="width: 100%;">
+      <h2>Default Icons Editor</h2>
+      <p>This editor uses the <strong>default TinyMCE icons</strong>.</p>
+      <p>Notice the standard appearance of the toolbar buttons.</p>
+      <ul>
+        <li>Bold, italic, underline buttons</li>
+        <li>Link and image buttons</li>
+        <li>List and code buttons</li>
+      </ul>
+    </textarea>
+  </div>
+  <div style="flex: 1; min-width: 300px;">
+    <h2>Custom Icon Pack</h2>
+    <textarea id="custom-editor" style="width: 100%;">
+      <h2>Custom Icons Editor</h2>
+      <p>This editor uses a <strong>custom icon pack</strong> created with our icon pack system.</p>
+      
+      <h3>How It Works:</h3>
+      <p><strong>Demo Setup:</strong> For this live demo, the custom icons are defined using <code>tinymce.IconManager.add()</code> directly in the JavaScript file.</p>
+      
+      <p><strong>Production Setup:</strong> In normal usage, you would:</p>
+      <ul>
+        <li>Build your icon pack using the template (see our guide)</li>
+        <li>Place the generated <code>icons.js</code> file in <code>dist/icons/your-pack-name/</code></li>
+        <li>Use <code>icons_url: 'path/to/icons.js'</code> to load it</li>
+      </ul>
+      
+      <p>The editor is configured with <code>icons: 'my-icon-pack'</code> to use the custom icons. <strong>Try the custom buttons:</strong> Look for the custom bold, italic, and audio buttons in the toolbar above.</p>
+    </textarea>
+  </div>
+</div>
+
+<div style="margin-top: 20px; padding: 15px; background: #f8f9fa; border-radius: 4px; font-size: 14px; color: #666;">
+  <strong>Icon Credits:</strong> Custom icons in this demo are sourced from <a href="https://freesvgicons.com/" target="_blank" rel="noopener">FreeSVGIcons.com</a> - a collection of 250k+ open-source SVG icons.
+</div>

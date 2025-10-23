@@ -1,0 +1,51 @@
+= Custom Icon Pack Demo
+:navtitle: Custom Icon Pack Demo
+:description: Interactive demo showing how to create and use custom icon packs with TinyMCE
+:keywords: custom, icon, icons, pack, demo, interactive, customize, theme
+
+This demo shows how to create and use custom icon packs with {productname}. Compare default icons with a custom icon pack side-by-side.
+
+== What This Demo Shows
+
+* **Side-by-side comparison** of default and custom icons
+* **Custom icon pack** with redesigned SVG icons
+* **Custom toolbar buttons** using icons from the custom pack
+* **Working code examples** you can copy
+
+== Key Features
+
+=== Custom Icon Pack Implementation
+
+The demo shows how to:
+
+. Load a custom icon pack using `icons_url`
+. Specify which icon pack to use with `icons`
+. Create custom toolbar buttons with custom icons
+
+=== Visual Comparison
+
+Compare:
+
+* Default {productname} icons (left editor)
+* Custom redesigned icons (right editor)
+* Different visual styles and approaches
+
+== How to Use This Demo
+
+1. **Compare the editors** - Notice the visual differences between default and custom icons
+2. **Test the custom buttons** - Use the star and heart buttons in the custom editor
+3. **Copy the code** - Use the provided examples in your own projects
+
+== Next Steps
+
+After exploring this demo:
+
+. Read the link:creating-an-icon-pack.adoc[Creating an Icon Pack] guide
+. Learn about link:bundling-icons.adoc[Bundling Icon Packs] for production
+. Check the link:icons.adoc[Icons Configuration] options
+
+liveDemo::custom-icon-pack[]
+
+== Icon Credits
+
+The custom icons used in this demo are sourced from https://freesvgicons.com/[FreeSVGIcons.com], a collection of 250k+ open-source SVG icons. When using free icons in your own projects, always check the license requirements and provide appropriate attribution.

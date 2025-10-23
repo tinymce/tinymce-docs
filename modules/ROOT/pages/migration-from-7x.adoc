@@ -534,6 +534,20 @@ Several empty files have been removed from the codebase to reduce clutter and im
 
 === Service and Configuration Changes
 
+==== Java Swing Integration Deprecation
+// #DOC-3304
+
+{productname}'s Java Swing integration has been deprecated in {productname} 8.0 and will reach end-of-life as of December 31, 2025.
+
+**Impact**: Customers using the Java Swing integration need to plan for migration to alternative solutions before the end-of-life date.
+
+**Migration checklist:**
+
+* [ ] Evaluate alternative integration options
+* [ ] Plan migration timeline to complete before December 31, 2025
+
+For information about the Java Swing integration, see: xref:swing.adoc[TinyMCE for Java Swing integration]
+
 ==== Discontinuation of Medical English (UK)
 // #EPIC-255
 

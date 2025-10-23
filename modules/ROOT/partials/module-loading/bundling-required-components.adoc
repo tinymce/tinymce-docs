@@ -4,7 +4,7 @@ The following components are required to bundle {productname}:
 - The `tinymce` global
 - The `silver` theme
 - The `dom` model
-- The `default` icon pack. This is always required, but the default icons can be overridden using a custom or premium icon pack.
+- The `default` icon pack. This is always required and provides the base set of icons for all {productname} functionality. The default icons can be extended or overridden using additional icon packs.
 - A _skin_ for styling the user interface, including toolbars and menus. This can be a community, premium or custom skin.
 - A _content skin_ for styling UI features within the content such as table and image resizing. This can be a community, premium or custom skin.
 

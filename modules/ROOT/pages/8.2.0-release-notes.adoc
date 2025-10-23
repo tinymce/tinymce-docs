@@ -205,7 +205,9 @@ Previously, there was no method to load web components into the editor iframe or
 
 For an example of using custom elements with block-level and inline-level components, see: xref:content-filtering.adoc#example-using-custom_elements-with-block-level-and-inline-level-components[Example using `+custom_elements+` with block-level and inline-level components].
 
-=== Reverted toolbar button width to `auto`.
-// #TINY-13097
+=== Addressed split buttons rendering narrower than in TinyMCE 7, ensuring consistent sizing across the toolbar
+// #TINY-13097 && #TINY-13111
 
-// TBA was merged last minute
+In {productname} {release-version}, an issue was resolved where split buttons rendered narrower than in {productname} 7 and other toolbar buttons. This occurred because the main portion of the split button used a CSS rule that caused it to collapse to the icon size during initialization, resulting in an incorrect fixed width. This made split buttons appear visually inconsistent, reduced their clickability, and could cause text labels to be truncated.
+
+{productname} {release-version} addresses this issue by adjusting the width behavior to inherit the correct `34px` for icons and auto for text—ensuring consistent sizing across the toolbar.

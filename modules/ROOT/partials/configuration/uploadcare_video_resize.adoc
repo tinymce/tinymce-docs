@@ -1,0 +1,35 @@
+[[uploadcare-video-resize]]
+== `uploadcare_video_resize`
+
+Controls whether video elements can be resized directly within the editor.
+
+*Type:* `+Boolean+`
+
+*Default:* `+true+`
+
+*Valid values:* `+true+`, `+false+`
+
+=== Behavior
+
+|===
+|Value | Behavior
+
+|`true` (default)
+|Allows video resizing by adding `uc-video` to `object_resizing` configuration
+
+|`false`
+|Disables video resizing by removing `uc-video` from `object_resizing` configuration
+|===
+
+=== Example
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare uploadcare-video',
+  uploadcare_public_key: '<your-public-key>',
+  uploadcare_video_resize: false
+});
+----

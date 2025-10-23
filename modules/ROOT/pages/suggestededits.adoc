@@ -55,7 +55,9 @@ Replaced content is represented as both added and removed content, and indicates
 
 === Sidebar
 
-Each suggested edit is listed as a card in the sidebar and color coded by the type of change, along with the user who made the suggestion, when the edit was made, and any feedback provided on that suggestion. When selected, each suggestion can be handled in the following ways:
+Each suggested edit is listed as a card in the sidebar and color coded by the type of change. Each card shows a contextual description of the content, along with the user who made the suggestion, when the edit was made, and any feedback provided on that suggestion.
+
+When selected, a suggestion can be handled in the following ways:
 
 * Accept: Resolves the suggestion, applying the edit to the document when the review is completed.
 * Reject: Resolves the suggestion, turning back the edit to the original state.
@@ -122,6 +124,8 @@ include::partial$configuration/suggestededits_model.adoc[leveloffset=+1]
 include::partial$configuration/suggestededits_content.adoc[leveloffset=+1]
 
 include::partial$configuration/suggestededits_access.adoc[leveloffset=+1]
+
+include::partial$configuration/suggestededits_auto_approve.adoc[leveloffset=+1]
 
 include::partial$configuration/user_id.adoc[leveloffset=+1]
 

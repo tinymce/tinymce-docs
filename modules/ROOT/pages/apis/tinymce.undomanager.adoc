@@ -43,14 +43,14 @@ be ignored. So a translation can include calls to execCommand or editor.insertCo
 === add()
 [source, javascript]
 ----
-add(level: Object, event: DOMEvent): Object
+add(level: Object, event: EditorEvent): Object
 ----
 Adds a new undo level/snapshot to the undo list.
 
 ==== Parameters
 
 * `level (Object)` - Optional undo level object to add.
-* `event (DOMEvent)` - Optional event responsible for the creation of the undo level.
+* `event (EditorEvent)` - Optional event responsible for the creation of the undo level.
 
 ==== Return value
 

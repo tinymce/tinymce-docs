@@ -1,0 +1,143 @@
+= Media Optimizer (Video)
+:navtitle: Video feature of the Media Optimizer plugin
+:description: The Video feature of the Media Optimizer plugin allows you to optimize videos in your content.
+:description_short: optimize videos in your content.
+:plugincode: uploadcare
+:pluginname: Media Optimizer's Video feature
+:keywords: plugin, {plugincode}, video, controls, autoplay, loop, poster, resize, upload, url, insert, edit, video
+:plugincategory: premium
+
+The {pluginname} plugin allows {productname} users to upload, process, and embed both images and videos directly within the editor.
+
+== Overview
+
+The {pluginname} plugin extends {productname} with powerful video handling features that allow users to upload, process, and embed videos directly within the editor. The plugin leverages Uploadcare's infrastructure to provide video processing, custom video player functionality, and responsive video sizing.
+
+== Key benefits
+
+* Upload and optimize videos directly within the editor
+* Custom video player with configurable properties
+* Video poster image generation
+* Responsive video sizing
+* Support for MP4 and WebM formats
+* Drag-and-drop video upload
+* URL-based video insertion
+* Video controls customization
+* Accessibility features for videos
+
+== Interactive example
+
+liveDemo::uploadcare-video[]
+
+== Basic setup
+
+To add the {pluginname} plugin to the editor, include `uploadcare` in the `plugins` option in the editor configuration.
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare uploadcare-video',
+  uploadcare_public_key: '<your-public-key>', // Required for Uploadcare integration
+});
+----
+
+[NOTE]
+====
+The {pluginname} plugin uses the same plugin code `+uploadcare+` as the Media Optimizer plugin. Video functionality is automatically enabled when video files are uploaded.
+
+When bundling {productname} with webpack or similar tools, the xref:uploadcare.adoc#uploadcare-resources[uploadcare_resources] option is required for video functionality to work properly, as it tells the plugin where to find the additional JavaScript resources needed for video playback.
+====
+
+== Video Operations
+
+Below is an overview of the features provided by the Video Optimizer plugin:
+
+[cols="1,1,4",options="header"]
+|===
+| Feature | Icon | Description
+
+| Upload
+| image:icons/folder.svg[folder.svg]
+| Upload videos via drag-and-drop, file selection, or URL input
+
+| Upload from URL
+| image:icons/link.svg[link.svg]
+| Upload videos from a URL
+|===
+
+Below are the video player control options that are available to the video element:
+
+[cols="2,4",options="header"]
+|===
+| Operation | Description
+
+| Play
+| Customize video player controls and behavior
+
+| Mute
+| Mute the video
+
+| Unmute
+| Unmute the video
+
+| Slider
+| Shows the progress of the video and allows users to move the slider to seek to a specific time in the video
+
+| Resize
+| Changes the size of the video (when enabled)
+
+| Remaining Time
+| Shows the remaining time of the video
+
+| Picture-in-Picture
+| Enables picture-in-picture mode for the video
+
+| Settings
+| Opens the video settings menu
+
+| Fullscreen
+| Enables fullscreen mode for the video
+
+| UC Logo
+| Shows the Uploadcare logo
+|===
+
+== Options
+
+The following configuration options affect the behavior of the {pluginname} plugin:
+
+include::partial$configuration/uploadcare_video_properties.adoc[leveloffset=+1]
+
+include::partial$configuration/uploadcare_video_resize.adoc[leveloffset=+1]
+
+== Custom Video Element
+
+The plugin creates a custom `+<uc-video>+` element that replaces the standard HTML `+<video>+` element when videos are processed through Uploadcare's infrastructure.
+
+.Example: Custom video element created by the plugin on video insertion
+[source,html]
+----
+<uc-video 
+  uuid="video-uuid-here"
+  class="tox-uc-video"
+  contenteditable="false"
+  data-setup="{}"
+  controls="true"
+  autoplay="false"
+  loop="false"
+  muted="false"
+  preload="metadata"
+  width="640"
+  height="360"
+  poster="https://example.com/poster.jpg"
+  showlogo="false"
+</uc-video>
+----
+
+:pluginfeature: uc-video
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]

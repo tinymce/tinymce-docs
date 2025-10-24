@@ -28,10 +28,10 @@ An icon pack only **requires** the custom icons to be included; the default {pro
 ====
 *Understanding Icon Pack Loading:*
 
-{productname} loads icon packs from the path `+TINYMCE_BASE/icons/${iconPackName}/icons.js+`, where:
+{productname} loads icon packs from the path `+TINYMCE_BASE/icons/{iconPackName}/icons.js+`, where:
 
 * `TINYMCE_BASE` is the {productname} root directory (the directory containing `tinymce.min.js`).
-* `${iconPackName}` is the name of the icon pack.
+* `+{iconPackName}+` is the name of the icon pack.
 
 **Example Directory Structure:**
 ----
@@ -48,7 +48,7 @@ js/tinymce/
 
 === Icon Pack File Format
 
-The generated `icons.js` file in the `+dist/icons/${iconPackName}/icons.js+` directory follows this exact format:
+The generated `icons.js` file in the `+dist/icons/{iconPackName}/icons.js+` directory follows this exact format:
 
 [source,javascript]
 ----

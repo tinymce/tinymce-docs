@@ -139,7 +139,9 @@ const revisions = [
 
 const revisionhistory_fetch = () => new Promise((resolve) => {
   setTimeout(() => {
-    resolve(revisions);
+    const sortedRevisions = revisions
+      .sort((a, b) => new Date(a.createdAt) < new Date(b.createdAt) ? -1 : 1);
+    resolve(sortedRevisions);
   }, fakeDelay);
 });
 

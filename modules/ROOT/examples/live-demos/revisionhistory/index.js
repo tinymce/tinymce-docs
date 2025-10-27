@@ -8,7 +8,7 @@ const revisions = [
     createdAt: '2023-11-24T22:26:21.578Z',
     author: {
       id: 'james-wilson',
-      name: 'A Tiny Husky',
+      name: 'James Wilson',
       avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg',
     },
     content: `
@@ -140,7 +140,7 @@ const revisions = [
 const revisionhistory_fetch = () => new Promise((resolve) => {
   setTimeout(() => {
     const sortedRevisions = revisions
-      .sort((a, b) => new Date(a.createdAt) < new Date(b.createdAt) ? 1 : -1);
+      .sort((a, b) => new Date(a.createdAt) < new Date(b.createdAt) ? -1 : 1);
     resolve(sortedRevisions);
   }, fakeDelay);
 });

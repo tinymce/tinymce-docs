@@ -20,9 +20,9 @@ tinymce.init({
 });
 ----
 
-=== Directory Structure
+=== Resources Structure
 
-When using `uploadcare_resources`, ensure your directory structure follows this pattern, specifically the `js` and `css` subdirectories:
+When using `uploadcare_resources`, ensure your directory structure follows this pattern, specifically the `js` and `css` subdirectories, and that the necessary resource files are present:
 
 .Example directory structure:
 [source,text]

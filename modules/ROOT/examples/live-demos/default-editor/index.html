@@ -14,26 +14,34 @@
 }
 .live_demo {
   background-color: #335dff;
-  color: #fafafa;
+  color: #fafafa !important;
   cursor: pointer;
   font-size: 1em;
+  font-weight: 600;
   line-height: 1.15;
   margin: 0;
-  padding: .5rem;
-  border-radius: 6px;
+  padding: 0.625rem 1.5rem;
+  border-radius: 8px;
+  border: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(51, 93, 255, 0.2);
 }
 .live_demo:hover {
-  background-color: #2a4fd8;
+  background-color: #f5f5f5 !important;
+  color: #0c132c !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(51, 93, 255, 0.3);
 }
 </style>
 
 <textarea id="default-editor">
-  <p><em>Hello</em>, <span style="text-decoration: underline;"><strong>World!</strong></span></p>
+  <h1>Welcome to TinyMCE!</h1>
+  <p>⭐️ Let's <em>explore</em> some features 🗺️ like <span style="background-color: #bfedd2;">footnotes</span>, <span style="background-color: #c2e0f4;">spellchecking</span> and <span style="background-color: #fbeeb8;">export to PDF</span>...</p>
 </textarea>
 <div id="submitContainer">
   <button id="fake-submit" class="live_demo">View HTML Output</button>
 </div>
-<pre id="output-content" class="contentDumpBox">Click the "View HTML Output" button to see the generated HTML content.</pre>
+<pre id="output-content" class="contentDumpBox">Click the "View HTML Output" button to see the generated HTML content. Try editing the text above to see how TinyMCE preserves your formatting and styles!</pre>
 <script>
   const btn = document.getElementById('fake-submit');
   btn.addEventListener('click', () => {

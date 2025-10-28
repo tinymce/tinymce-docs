@@ -1,0 +1,202 @@
+= Installing {productname} using a package manager
+:navtitle: Self-hosted
+:description: Install {productname} using npm, Yarn, or other package managers for self-hosted deployments.
+:keywords: npm, yarn, tinymce install, self-hosted
+
+== Quick start
+
+Install {productname} using npm or Yarn:
+
+[source,sh]
+----
+# Using npm
+npm install tinymce@^{productmajorversion}
+
+# Using Yarn
+yarn add tinymce@^{productmajorversion}
+----
+
+Then configure {productname} to use the local installation:
+
+[source,html]
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="/path/to/tinymce/tinymce.min.js"></script>
+  </head>
+  <body>
+    <textarea id="mytextarea"></textarea>
+    <script>
+      tinymce.init({
+        selector: '#mytextarea'
+      });
+    </script>
+  </body>
+</html>
+----
+
+== Framework integrations
+
+Get started with {productname} in your preferred framework:
+
+++++
+include::partial$css/installation-cards.css[]
+<div class="framework-cards">
+  <div class="framework-group">
+    <h4 class="framework-group-title">Frontend Frameworks</h4>
+    <div class="framework-grid">
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/react-pm-host/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/react-color.svg" alt="React"></div>
+          <h3 class="framework-name">React (Hosting)</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/react-pm-bundle/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/react-color.svg" alt="React"></div>
+          <h3 class="framework-name">React (Bundling)</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/angular-pm/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/angular-color.svg" alt="Angular"></div>
+          <h3 class="framework-name">Angular</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/vue-pm/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/vue-color.svg" alt="Vue"></div>
+          <h3 class="framework-name">Vue.js</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/blazor-pm/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/blazor-color.svg" alt="Blazor"></div>
+          <h3 class="framework-name">Blazor</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/svelte-pm/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/svelte-color.svg" alt="Svelte"></div>
+          <h3 class="framework-name">Svelte</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/webcomponent-pm/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/web-components-color.svg" alt="Web Components"></div>
+          <h3 class="framework-name">Web Component</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/shadow-dom/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="3" y="3" width="18" height="18" rx="2" fill="#512BD4" opacity=".8"/><rect x="5" y="5" width="14" height="14" fill="#512BD4" opacity=".4"/><circle cx="12" cy="12" r="4" fill="none" stroke="#fff" stroke-width="2"/></svg></div>
+          <h3 class="framework-name">Shadow DOM</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/jquery-pm/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/jquery-color.svg" alt="jQuery"></div>
+          <h3 class="framework-name">jQuery</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+  
+  <div class="framework-group">
+    <h4 class="framework-group-title">Backend Frameworks</h4>
+    <div class="framework-grid">
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/laravel-composer-install/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/laravel-color.svg" alt="Laravel"></div>
+          <h3 class="framework-name">Laravel</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/rails-third-party/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/rails-color.svg" alt="Rails"></div>
+          <h3 class="framework-name">Ruby on Rails</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/expressjs-pm/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/nodejs-color.svg" alt="Node.js"></div>
+          <h3 class="framework-name">Express.js</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+  
+  <div class="framework-group">
+    <h4 class="framework-group-title">General Integration</h4>
+    <div class="framework-grid">
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/npm-projects/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/nodejs-color.svg" alt="Node.js"></div>
+          <h3 class="framework-name">NPM Projects</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/php-projects/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon">🐘</div>
+          <h3 class="framework-name">PHP Projects</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/dotnet-projects/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon">💼</div>
+          <h3 class="framework-name">.NET Projects</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/bower-projects/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon">🥃</div>
+          <h3 class="framework-name">Bower Projects</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/wordpress/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/wordpress.svg" alt="WordPress"></div>
+          <h3 class="framework-name">WordPress</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/swing/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon">☕</div>
+          <h3 class="framework-name">Java Swing</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+++++
+
+== Package managers
+
+You can install {productname} using various package managers:
+
+[cols="1,2"]
+|===
+|Package Manager
+|Command
+
+|npm
+|`npm install tinymce`
+
+|Yarn
+|`yarn add tinymce`
+
+|Bower
+|`bower install tinymce`
+
+|Composer (PHP)
+|`composer require tinymce/tinymce`
+
+|NuGet (.NET)
+|`Install-Package tinymce`
+
+|===
+
+== npm package
+
+View the {productname} package on npm: https://www.npmjs.com/package/tinymce[npmjs.com/package/tinymce]

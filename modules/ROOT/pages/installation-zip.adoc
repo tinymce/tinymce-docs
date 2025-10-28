@@ -1,0 +1,138 @@
+= Installing {productname} using a .zip file
+:navtitle: ZIP
+:description: Download and install {productname} from a .zip archive for traditional web deployments.
+:keywords: zip download, tinymce zip, archive install
+:productSource: zip
+
+== Quick start
+
+Download the {productname} .zip package from the link:{download-community}[official download page].
+
+Extract the archive and include the TinyMCE script:
+
+[source,html]
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="/path/to/tinymce/tinymce.min.js"></script>
+  </head>
+  <body>
+    <textarea id="mytextarea"></textarea>
+    <script>
+      tinymce.init({
+        selector: '#mytextarea'
+      });
+    </script>
+  </body>
+</html>
+----
+
+== Framework integrations
+
+Get started with {productname} in your preferred framework:
+
+++++
+include::partial$css/installation-cards.css[]
+<div class="framework-cards">
+  <div class="framework-group">
+    <h4 class="framework-group-title">Frontend Frameworks</h4>
+    <div class="framework-grid">
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/react-zip-host/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/react-color.svg" alt="React"></div>
+          <h3 class="framework-name">React (Hosting)</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/react-zip-bundle/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/react-color.svg" alt="React"></div>
+          <h3 class="framework-name">React (Bundling)</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/angular-zip/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/angular-color.svg" alt="Angular"></div>
+          <h3 class="framework-name">Angular</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/vue-zip/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/vue-color.svg" alt="Vue"></div>
+          <h3 class="framework-name">Vue.js</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/blazor-zip/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/blazor-color.svg" alt="Blazor"></div>
+          <h3 class="framework-name">Blazor</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/svelte-zip/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/svelte-color.svg" alt="Svelte"></div>
+          <h3 class="framework-name">Svelte</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/webcomponent-zip/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/web-components-color.svg" alt="Web Components"></div>
+          <h3 class="framework-name">Web Component</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+  
+  <div class="framework-group">
+    <h4 class="framework-group-title">Backend Frameworks</h4>
+    <div class="framework-grid">
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/bootstrap-zip/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/bootstrap-color.svg" alt="Bootstrap"></div>
+          <h3 class="framework-name">Bootstrap</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/django-zip/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/django-color.svg" alt="Django"></div>
+          <h3 class="framework-name">Django</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/laravel-zip-install/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/laravel-color.svg" alt="Laravel"></div>
+          <h3 class="framework-name">Laravel</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/rails-zip/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/rails-color.svg" alt="Rails"></div>
+          <h3 class="framework-name">Ruby on Rails</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/zip-install/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon">📦</div>
+          <h3 class="framework-name">General ZIP Install</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/swing/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon">☕</div>
+          <h3 class="framework-name">Java Swing</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+++++
+
+== Installation steps
+
+1. Download the {productname} .zip package
+2. Extract the archive to your project directory
+3. Copy the `+tinymce+` folder to your web-accessible location
+4. Include the TinyMCE script in your HTML: `+<script src="/path/to/tinymce/tinymce.min.js"></script>+`
+5. Initialize {productname} on a textarea or div element
+
+include::partial$install/basic-quickstart-base.adoc[]

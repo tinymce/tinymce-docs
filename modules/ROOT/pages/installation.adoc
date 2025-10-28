@@ -3,128 +3,113 @@
 :description: Learn how to install {productname} via {cloudname}, package managers, self-hosted zips for various integration options.
 :page-aliases: integrations.adoc
 
-There are multiple ways to install {productname}. This section lists the various installation and integration options for installing {productname} using the {cloudname}, package managers or self-hosted downloads.
+There are multiple ways to install {productname}. Choose your installation method below:
 
-[cols="1,1"]
-|===
+++++
+include::partial$css/installation-cards.css[]
+<div class="installation-options">
+  <div class="integration-cards">
+    <a href="https://www.tiny.cloud/docs/tinymce/latest/installation-cloud/" class="integration-card-link">
+      <div class="integration-card">
+        <div class="card-icon-wrapper" style="background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);">
+          <div class="card-icon">☁️</div>
+        </div>
+        <h3 class="card-title">Cloud CDN</h3>
+        <p class="card-description">Load from the Tiny Cloud CDN for automatic updates to the latest version with zero maintenance overhead.</p>
+        <div class="card-footer">
+          <span class="card-badge">Recommended</span>
+        </div>
+      </div>
+    </a>
+    
+    <a href="https://www.tiny.cloud/docs/tinymce/latest/installation-self-hosted/" class="integration-card-link">
+      <div class="integration-card">
+        <div class="card-icon-wrapper" style="background: linear-gradient(135deg, #10B981 0%, #047857 100%);">
+          <div class="card-icon">📦</div>
+        </div>
+        <h3 class="card-title">Package Manager</h3>
+        <p class="card-description">Install locally using npm, composer, or yarn for self-hosted solutions with complete control.</p>
+        <div class="card-footer">
+          <span class="card-badge secondary">Self-hosted</span>
+        </div>
+      </div>
+    </a>
+    
+    <a href="https://www.tiny.cloud/docs/tinymce/latest/installation-zip/" class="integration-card-link">
+      <div class="integration-card">
+        <div class="card-icon-wrapper" style="background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);">
+          <div class="card-icon">⬇️</div>
+        </div>
+        <h3 class="card-title">Direct Download</h3>
+        <p class="card-description">Extract from .zip files for maximum control, offline deployments, and air-gapped environments.</p>
+        <div class="card-footer">
+          <span class="card-badge secondary">Enterprise</span>
+        </div>
+      </div>
+    </a>
+  </div>
+  
+  <h3 style="margin-top: 3rem; font-size: 1.3rem; font-weight: 700; color: #1e293b; margin-bottom: 1.5rem;">Browse by Framework</h3>
+  
+  <div class="framework-cards">
+    <div class="framework-grid">
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/react-cloud/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/react-color.svg" alt="React"></div>
+          <h3 class="framework-name">React</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/angular-cloud/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/angular-color.svg" alt="Angular"></div>
+          <h3 class="framework-name">Angular</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/vue-cloud/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/vue-color.svg" alt="Vue"></div>
+          <h3 class="framework-name">Vue.js</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/blazor-cloud/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/blazor-color.svg" alt="Blazor"></div>
+          <h3 class="framework-name">Blazor</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/svelte-cloud/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/svelte-color.svg" alt="Svelte"></div>
+          <h3 class="framework-name">Svelte</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/webcomponent-cloud/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/web-components-color.svg" alt="Web Components"></div>
+          <h3 class="framework-name">Web Component</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/jquery-cloud/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/jquery-color.svg" alt="jQuery"></div>
+          <h3 class="framework-name">jQuery</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/laravel-tiny-cloud/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/laravel-color.svg" alt="Laravel"></div>
+          <h3 class="framework-name">Laravel</h3>
+        </div>
+      </a>
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/rails-cloud/" class="framework-card-link">
+        <div class="framework-card">
+          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/rails-color.svg" alt="Rails"></div>
+          <h3 class="framework-name">Ruby on Rails</h3>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
 
-a|
-[.lead]
-Quick start
-
-* xref:cloud-quick-start.adoc[Using the {cloudname}]
-* xref:npm-projects.adoc[NPM projects]
-* xref:php-projects.adoc[PHP projects]
-* xref:dotnet-projects.adoc[.NET projects]
-* xref:bower-projects.adoc[Bower projects]
-* xref:zip-install.adoc[{productname} .zip deployments]
-
-a|
-[.lead]
-React
-
-* xref:react-cloud.adoc[Using the {cloudname}]
-* xref:react-pm-host.adoc[Using a package manager with hosting]
-* xref:react-pm-bundle.adoc[Using a package manager with bundling]
-* xref:react-zip-host.adoc[{productname} .zip deployments with hosting]
-* xref:react-zip-bundle.adoc[{productname} .zip deployments with bundling]
-
-a|
-[.lead]
-Angular
-
-* xref:angular-cloud.adoc[Using the {cloudname}]
-* xref:angular-pm.adoc[Using a package manager]
-* xref:angular-zip.adoc[{productname} .zip deployments]
-
-a|
-[.lead]
-Vue.js
-
-* xref:vue-cloud.adoc[Using the {cloudname}]
-* xref:vue-pm.adoc[Using a package manager]
-* xref:vue-zip.adoc[{productname} .zip deployments]
-
-a|
-[.lead]
-Blazor
-
-* xref:blazor-cloud.adoc[Using the {cloudname}]
-* xref:blazor-pm.adoc[Using a package manager]
-* xref:blazor-zip.adoc[{productname} .zip deployments]
-
-a|
-[.lead]
-Svelte
-
-* xref:svelte-cloud.adoc[Using the {cloudname}]
-* xref:svelte-pm.adoc[Using a package manager]
-* xref:svelte-zip.adoc[{productname} .zip deployments]
-
-a|
-[.lead]
-Web Component
-
-* xref:webcomponent-cloud.adoc[Using the {cloudname}]
-* xref:webcomponent-pm.adoc[Using a package manager]
-* xref:webcomponent-zip.adoc[{productname} .zip deployments]
-
-a|
-[.lead]
-Java Swing
-
-* xref:swing.adoc[{productname} .zip deployments]
-
-a|
-[.lead]
-jQuery
-
-* xref:jquery-cloud.adoc[Using the {cloudname}]
-* xref:jquery-pm.adoc[Using a package manager]
-
-a|
-[.lead]
-Bootstrap
-
-* xref:bootstrap-cloud.adoc[Using the {cloudname}]
-* xref:bootstrap-zip.adoc[{productname} .zip deployments]
-
-a|
-[.lead]
-Django
-
-* xref:django-cloud.adoc[Using the {cloudname}]
-* xref:django-zip.adoc[{productname} .zip deployments]
-
-a|
-[.lead]
-Node.js + Express
-
-* xref:expressjs-pm.adoc[Using a package manager]
-
-a|
-[.lead]
-Laravel
-
-* xref:laravel-tiny-cloud.adoc[Using the {cloudname}]
-* xref:laravel-composer-install.adoc[Using a package manager]
-* xref:laravel-zip-install.adoc[{productname} .zip deployments]
-
-a|
-[.lead]
-Ruby on Rails
-
-* xref:rails-cloud.adoc[Using the {cloudname}]
-* xref:rails-third-party.adoc[Using a package manager]
-* xref:rails-zip.adoc[{productname} .zip deployments]
-
-
-a|
-[.lead]
-Wordpress
-
-* xref:wordpress.adoc[Wordpress plugin]
-
-a|
-
-|===
+include::partial$css/installation-cards.css[]
+++++

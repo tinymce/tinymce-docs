@@ -1,0 +1,133 @@
+= Installing {productname} using the {cloudname}
+:navtitle: Cloud
+:description: Get started with TinyMCE using the Tiny Cloud CDN - the fastest way to get {productname} up and running.
+:keywords: tinymce cloud, cdn, cloud hosting
+
+== Quick start
+
+The easiest way to get started with {productname} is using the {cloudname}. Simply include the TinyMCE script in your HTML:
+
+[source,html]
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script src="{cdnurl}"></script>
+  </head>
+  <body>
+    <textarea id="mytextarea"></textarea>
+    <script>
+      tinymce.init({
+        selector: '#mytextarea'
+      });
+    </script>
+  </body>
+</html>
+----
+
+== Framework integrations
+
+Get started with {productname} in your preferred framework:
+
+++++
+include::partial$css/installation-cards.css[]
+<div class="framework-cards">
+  <div class="framework-grid">
+    <a href="https://www.tiny.cloud/docs/tinymce/latest/cloud-quick-start/" class="framework-card-link">
+      <div class="framework-card">
+        <div class="framework-icon">⚡</div>
+        <h3 class="framework-name">Quick start</h3>
+      </div>
+    </a>
+    
+    <a href="https://www.tiny.cloud/docs/tinymce/latest/react-cloud/" class="framework-card-link">
+      <div class="framework-card">
+        <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/react-color.svg" alt="React"></div>
+        <h3 class="framework-name">React</h3>
+      </div>
+    </a>
+    
+    <a href="https://www.tiny.cloud/docs/tinymce/latest/angular-cloud/" class="framework-card-link">
+      <div class="framework-card">
+        <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/angular-color.svg" alt="Angular"></div>
+        <h3 class="framework-name">Angular</h3>
+      </div>
+    </a>
+    
+    <a href="https://www.tiny.cloud/docs/tinymce/latest/vue-cloud/" class="framework-card-link">
+      <div class="framework-card">
+        <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/vue-color.svg" alt="Vue"></div>
+        <h3 class="framework-name">Vue.js</h3>
+      </div>
+    </a>
+    
+    <a href="https://www.tiny.cloud/docs/tinymce/latest/blazor-cloud/" class="framework-card-link">
+      <div class="framework-card">
+        <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/blazor-color.svg" alt="Blazor"></div>
+        <h3 class="framework-name">Blazor</h3>
+      </div>
+    </a>
+    
+    <a href="https://www.tiny.cloud/docs/tinymce/latest/svelte-cloud/" class="framework-card-link">
+      <div class="framework-card">
+        <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/svelte-color.svg" alt="Svelte"></div>
+        <h3 class="framework-name">Svelte</h3>
+      </div>
+    </a>
+    
+    <a href="https://www.tiny.cloud/docs/tinymce/latest/webcomponent-cloud/" class="framework-card-link">
+      <div class="framework-card">
+        <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/web-components-color.svg" alt="Web Components"></div>
+        <h3 class="framework-name">Web Component</h3>
+      </div>
+    </a>
+    
+    <a href="https://www.tiny.cloud/docs/tinymce/latest/jquery-cloud/" class="framework-card-link">
+      <div class="framework-card">
+        <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/jquery-color.svg" alt="jQuery"></div>
+        <h3 class="framework-name">jQuery</h3>
+      </div>
+    </a>
+    
+    <a href="https://www.tiny.cloud/docs/tinymce/latest/bootstrap-cloud/" class="framework-card-link">
+      <div class="framework-card">
+        <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/bootstrap-color.svg" alt="Bootstrap"></div>
+        <h3 class="framework-name">Bootstrap</h3>
+      </div>
+    </a>
+    
+    <a href="https://www.tiny.cloud/docs/tinymce/latest/django-cloud/" class="framework-card-link">
+      <div class="framework-card">
+        <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/django-color.svg" alt="Django"></div>
+        <h3 class="framework-name">Django</h3>
+      </div>
+    </a>
+    
+    <a href="https://www.tiny.cloud/docs/tinymce/latest/laravel-tiny-cloud/" class="framework-card-link">
+      <div class="framework-card">
+        <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/laravel-color.svg" alt="Laravel"></div>
+        <h3 class="framework-name">Laravel</h3>
+      </div>
+    </a>
+    
+    <a href="https://www.tiny.cloud/docs/tinymce/latest/rails-cloud/" class="framework-card-link">
+      <div class="framework-card">
+        <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/rails-color.svg" alt="Rails"></div>
+        <h3 class="framework-name">Ruby on Rails</h3>
+      </div>
+    </a>
+  </div>
+</div>
+++++
+
+== Benefits of the {cloudname}
+
+Using the {cloudname} provides several advantages:
+
+* **Zero configuration** - No server setup required
+* **Always up-to-date** - Access to the latest {productname} features automatically
+* **Global CDN** - Fast loading times worldwide
+* **Optimized assets** - Automatically minified and optimized for production
+* **Premium features** - Access to premium plugins with cloud API key
+
+include::partial$misc/admon-account-creation-and-social-option.adoc[]

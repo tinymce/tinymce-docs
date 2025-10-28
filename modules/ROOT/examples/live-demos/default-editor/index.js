@@ -1,9 +1,12 @@
 tinymce.init({
   selector: 'textarea#default-editor',
   plugins: [
-      "advlist", "anchor", "autolink", "charmap", "code", "fullscreen",
-      "help", "image", "insertdatetime", "link", "lists", "media",
-      "preview", "searchreplace", "table", "visualblocks",
+    "advlist", "autolink", "charmap", "codesample", "emoticons", "help",
+    "image", "link", "lists", "searchreplace", "table", "wordcount",
+    // Premium features
+    "advcode", "autocorrect", "footnotes", "mediaembed", 
+    "powerpaste", "tinymcespellchecker", "casechange", "checklist", 
+    "formatpainter", "permanentpen", "advtable", "tableofcontents"
   ],
-  toolbar: "undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+  toolbar: "spellcheckdialog | styles | bold italic underline strikethrough | align bullist numlist | link image emoticons footnotes checklist formatpainter permanentpen tableofcontents",
 });

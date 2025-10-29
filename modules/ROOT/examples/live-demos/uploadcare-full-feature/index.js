@@ -22,9 +22,7 @@ tinymce.init({
     loop: false,
     muted: true,
     preload: 'metadata',
-    // poster: 'https://placehold.co/600x400', // Optional poster image URL
-    width: 640,
-    height: 360,
+    posterOffset: "0:10",
     showLogo: false
   },
   a11y_advanced_options: true,

@@ -7,109 +7,102 @@ There are multiple ways to install {productname}. Choose your installation metho
 
 ++++
 include::partial$css/installation-cards.css[]
-<div class="installation-options">
-  <div class="integration-cards">
-    <a href="https://www.tiny.cloud/docs/tinymce/latest/installation-cloud/" class="integration-card-link">
-      <div class="integration-card">
-        <div class="card-icon-wrapper" style="background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);">
-          <div class="card-icon">☁️</div>
-        </div>
-        <h3 class="card-title">Cloud CDN</h3>
-        <p class="card-description">Load from the Tiny Cloud CDN for automatic updates to the latest version with zero maintenance overhead.</p>
-        <div class="card-footer">
-          <span class="card-badge">Recommended</span>
-        </div>
-      </div>
-    </a>
-    
-    <a href="https://www.tiny.cloud/docs/tinymce/latest/installation-self-hosted/" class="integration-card-link">
-      <div class="integration-card">
-        <div class="card-icon-wrapper" style="background: linear-gradient(135deg, #10B981 0%, #047857 100%);">
-          <div class="card-icon">📦</div>
-        </div>
-        <h3 class="card-title">Package Manager</h3>
-        <p class="card-description">Install locally using npm, composer, or yarn for self-hosted solutions with complete control.</p>
-        <div class="card-footer">
-          <span class="card-badge secondary">Self-hosted</span>
-        </div>
-      </div>
-    </a>
-    
-    <a href="https://www.tiny.cloud/docs/tinymce/latest/installation-zip/" class="integration-card-link">
-      <div class="integration-card">
-        <div class="card-icon-wrapper" style="background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);">
-          <div class="card-icon">⬇️</div>
-        </div>
-        <h3 class="card-title">Direct Download</h3>
-        <p class="card-description">Extract from .zip files for maximum control, offline deployments, and air-gapped environments.</p>
-        <div class="card-footer">
-          <span class="card-badge secondary">Enterprise</span>
-        </div>
-      </div>
-    </a>
+<div class="integration-cards">
+  <div class="integration-card">
+    <div class="card-icon-wrapper" style="background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);">
+      <div class="card-icon">☁️</div>
+    </div>
+    <h3 class="card-title">Cloud CDN</h3>
+    <p class="card-description">Load from the Tiny Cloud CDN for automatic updates to the latest version with zero maintenance overhead.</p>
+    <div class="card-footer">
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/installation-cloud/" class="card-learn-more">Learn More →</a>
+    </div>
   </div>
   
-  <h3 style="margin-top: 3rem; font-size: 1.3rem; font-weight: 700; color: #1e293b; margin-bottom: 1.5rem;">Browse by Framework</h3>
+  <div class="integration-card">
+    <div class="card-icon-wrapper" style="background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);">
+      <div class="card-icon">📦</div>
+    </div>
+    <h3 class="card-title">Package Manager</h3>
+    <p class="card-description">Install locally using npm, composer, or yarn for self-hosted solutions with complete control.</p>
+    <div class="card-footer">
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/installation-self-hosted/" class="card-learn-more">Learn More →</a>
+    </div>
+  </div>
   
-  <div class="framework-cards">
-    <div class="framework-grid">
-      <a href="https://www.tiny.cloud/docs/tinymce/latest/react-cloud/" class="framework-card-link">
-        <div class="framework-card">
-          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/react-color.svg" alt="React"></div>
-          <h3 class="framework-name">React</h3>
-        </div>
-      </a>
-      <a href="https://www.tiny.cloud/docs/tinymce/latest/angular-cloud/" class="framework-card-link">
-        <div class="framework-card">
-          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/angular-color.svg" alt="Angular"></div>
-          <h3 class="framework-name">Angular</h3>
-        </div>
-      </a>
-      <a href="https://www.tiny.cloud/docs/tinymce/latest/vue-cloud/" class="framework-card-link">
-        <div class="framework-card">
-          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/vue-color.svg" alt="Vue"></div>
-          <h3 class="framework-name">Vue.js</h3>
-        </div>
-      </a>
-      <a href="https://www.tiny.cloud/docs/tinymce/latest/blazor-cloud/" class="framework-card-link">
-        <div class="framework-card">
-          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/blazor-color.svg" alt="Blazor"></div>
-          <h3 class="framework-name">Blazor</h3>
-        </div>
-      </a>
-      <a href="https://www.tiny.cloud/docs/tinymce/latest/svelte-cloud/" class="framework-card-link">
-        <div class="framework-card">
-          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/svelte-color.svg" alt="Svelte"></div>
-          <h3 class="framework-name">Svelte</h3>
-        </div>
-      </a>
-      <a href="https://www.tiny.cloud/docs/tinymce/latest/webcomponent-cloud/" class="framework-card-link">
-        <div class="framework-card">
-          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/web-components-color.svg" alt="Web Components"></div>
-          <h3 class="framework-name">Web Component</h3>
-        </div>
-      </a>
-      <a href="https://www.tiny.cloud/docs/tinymce/latest/jquery-cloud/" class="framework-card-link">
-        <div class="framework-card">
-          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/jquery-color.svg" alt="jQuery"></div>
-          <h3 class="framework-name">jQuery</h3>
-        </div>
-      </a>
-      <a href="https://www.tiny.cloud/docs/tinymce/latest/laravel-tiny-cloud/" class="framework-card-link">
-        <div class="framework-card">
-          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/laravel-color.svg" alt="Laravel"></div>
-          <h3 class="framework-name">Laravel</h3>
-        </div>
-      </a>
-      <a href="https://www.tiny.cloud/docs/tinymce/latest/rails-cloud/" class="framework-card-link">
-        <div class="framework-card">
-          <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/rails-color.svg" alt="Rails"></div>
-          <h3 class="framework-name">Ruby on Rails</h3>
-        </div>
-      </a>
+  <div class="integration-card">
+    <div class="card-icon-wrapper" style="background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);">
+      <div class="card-icon">⬇️</div>
+    </div>
+    <h3 class="card-title">Direct Download</h3>
+    <p class="card-description">Extract from .zip files for maximum control, offline deployments, and air-gapped environments.</p>
+    <div class="card-footer">
+      <a href="https://www.tiny.cloud/docs/tinymce/latest/installation-zip/" class="card-learn-more">Learn More →</a>
     </div>
   </div>
 </div>
+++++
 
+++++
 include::partial$css/installation-cards.css[]
+<h3 style="margin-top: 3rem; font-size: 1.3rem; font-weight: 700; color: #1e293b; margin-bottom: 1.5rem;">Browse by Framework</h3>
+  
+<div class="framework-cards">
+  <div class="framework-grid">
+    <a href="https://www.tiny.cloud/docs/tinymce/latest/react-cloud/" class="framework-card-link">
+      <div class="framework-card">
+        <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/react-color.svg" alt="React"></div>
+        <h3 class="framework-name">React</h3>
+      </div>
+    </a>
+    <a href="https://www.tiny.cloud/docs/tinymce/latest/angular-cloud/" class="framework-card-link">
+      <div class="framework-card">
+        <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/angular-color.svg" alt="Angular"></div>
+        <h3 class="framework-name">Angular</h3>
+      </div>
+    </a>
+    <a href="https://www.tiny.cloud/docs/tinymce/latest/vue-cloud/" class="framework-card-link">
+      <div class="framework-card">
+        <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/vue-color.svg" alt="Vue"></div>
+        <h3 class="framework-name">Vue.js</h3>
+      </div>
+    </a>
+    <a href="https://www.tiny.cloud/docs/tinymce/latest/blazor-cloud/" class="framework-card-link">
+      <div class="framework-card">
+        <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/blazor-color.svg" alt="Blazor"></div>
+        <h3 class="framework-name">Blazor</h3>
+      </div>
+    </a>
+    <a href="https://www.tiny.cloud/docs/tinymce/latest/svelte-cloud/" class="framework-card-link">
+      <div class="framework-card">
+        <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/svelte-color.svg" alt="Svelte"></div>
+        <h3 class="framework-name">Svelte</h3>
+      </div>
+    </a>
+    <a href="https://www.tiny.cloud/docs/tinymce/latest/webcomponent-cloud/" class="framework-card-link">
+      <div class="framework-card">
+        <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/web-components-color.svg" alt="Web Components"></div>
+        <h3 class="framework-name">Web Component</h3>
+      </div>
+    </a>
+    <a href="https://www.tiny.cloud/docs/tinymce/latest/jquery-cloud/" class="framework-card-link">
+      <div class="framework-card">
+        <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/jquery-color.svg" alt="jQuery"></div>
+        <h3 class="framework-name">jQuery</h3>
+      </div>
+    </a>
+    <a href="https://www.tiny.cloud/docs/tinymce/latest/laravel-tiny-cloud/" class="framework-card-link">
+      <div class="framework-card">
+        <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/laravel-color.svg" alt="Laravel"></div>
+        <h3 class="framework-name">Laravel</h3>
+      </div>
+    </a>
+    <a href="https://www.tiny.cloud/docs/tinymce/latest/rails-cloud/" class="framework-card-link">
+      <div class="framework-card">
+        <div class="framework-icon"><img src="https://www.tiny.cloud/images/homepage/integrations/rails-color.svg" alt="Rails"></div>
+        <h3 class="framework-name">Ruby on Rails</h3>
+      </div>
+    </a>
+  </div>
+</div>
 ++++

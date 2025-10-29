@@ -1,94 +1,15 @@
-++++
-include::partial$css/what-is-tinymce.css[]
+{productname} is a rich-text editor that allows users to create formatted content within a user-friendly interface.
 
-<div class="tinymce-hero">
-  <div class="hero-badge">Trusted by millions of developers worldwide</div>
-  <h1 class="hero-title">The rich text editor that powers exceptional content experiences</h1>
-  <p class="hero-subtitle">Start with a robust open-source editor and scale with enterprise-grade features, AI capabilities, suggested edits, document conversion capabilities, and more.</p>
-  
-  <div class="hero-stats">
-    <div class="stat-item">
-      <div class="stat-number">9M+</div>
-      <div class="stat-label">Weekly npm downloads</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number">60+</div>
-      <div class="stat-label">Total plugins</div>
-    </div>
-    <div class="stat-item">
-      <div class="stat-number">7</div>
-      <div class="stat-label">Framework integrations</div>
-    </div>
-  </div>
-</div>
-++++
-
-++++
-<div class="demo-section">
-  <div class="demo-header">
-    <h2 class="demo-title">Try TinyMCE Now</h2>
-    <p class=">Experience the power of TinyMCE with a fully interactive demo. Edit, format, and explore all the features live.</p>
-  </div>
-  
-  <div class="demo-wrapper">
-++++
 
 liveDemo::default-editor[]
 
-++++
-  </div>
-</div>
-++++
-
 == Overview
 
-TinyMCE generates HTML5 output and supports various content elements including lists, tables, and other formatting options. The editor's functionality can be extended through plugins and customizations, or restricted to meet specific requirements. The user interface can be customized to integrate seamlessly with applications or webpages.
+{productname} generates HTML5 output and supports various content elements including lists, tables, and other formatting options. The editor's functionality can be extended through plugins and customizations, or restricted to meet specific requirements. The user interface can be customized to integrate seamlessly with applications or webpages.
 
-== Why Developers Choose {productname}
+== Integration Options
 
-++++
-<div class="features-grid">
-  <div class="feature-box">
-    <div class="feature-icon">✨</div>
-    <h3 class="feature-title">Powerful & Flexible</h3>
-    <p class="feature-desc">Comprehensive rich text editing with 50+ plugins, customizable UI, and extensive API's. Build exactly what you need with <a href="https://www.tiny.cloud/docs/tinymce/latest/plugins/" style="color: #2563EB;">plugins</a> and configuration options</a>.</p>
-  </div>
-
-  <div class="feature-box">
-    <div class="feature-icon">🎨</div>
-    <h3 class="feature-title">Fully Customizable</h3>
-    <p class="feature-desc">Complete control over UI, functionality, and integrations. Seamless integration with any <a href="https://www.tiny.cloud/docs/tinymce/latest/installation/" style="color: #2563EB;">framework</a>. Customize <a href="https://www.tiny.cloud/docs/tinymce/latest/ui-components/" style="color: #2563EB;">UI components</a> to match your design.</p>
-  </div>
-
-  <div class="feature-box">
-    <div class="feature-icon">🤖</div>
-    <h3 class="feature-title">AI Assistant</h3>
-    <p class="feature-desc">Built-in AI assistance, smart suggestions, and content generation. Powered by OpenAI, Azure, Bedrock, and Gemini. Learn more about the <a href="https://www.tiny.cloud/docs/tinymce/latest/ai/" style="color: #2563EB;">AI Assistant plugin</a>.</p>
-  </div>
-
-  <div class="feature-box">
-    <div class="feature-icon">💬</div>
-    <h3 class="feature-title">Comments & Mentions</h3>
-    <p class="feature-desc">Add comments with <a href="https://www.tiny.cloud/docs/tinymce/latest/mentions/" style="color: #2563EB;">@mentions</a>, track feedback, and collaborate on content. Notify team members and review comments with ease. Learn more about <a href="https://www.tiny.cloud/docs/tinymce/latest/introduction-to-tiny-comments/" style="color: #2563EB;">Tiny Comments</a>.</p>
-  </div>
-
-  <div class="feature-box">
-    <div class="feature-icon">✏️</div>
-    <h3 class="feature-title">Suggested Edits</h3>
-    <p class="feature-desc">Collaborate with suggested changes, track revisions, and review edits before accepting or rejecting. Explore <a href="https://www.tiny.cloud/docs/tinymce/latest/suggestededits/" style="color: #2563EB;">Suggested Edits</a> for collaborative workflows.</p>
-  </div>
-
-  <div class="feature-box">
-    <div class="feature-icon">📄</div>
-    <h3 class="feature-title">Export to PDF & Word Document Converters</h3>
-    <p class="feature-desc">Import from Word, export to Word and export to PDF formats with professional document conversion capabilities. Learn more about <a href="https://www.tiny.cloud/docs/tinymce/latest/importword/" style="color: #2563EB;">Import from Word</a>, <a href="https://www.tiny.cloud/docs/tinymce/latest/exportword/" style="color: #2563EB;">Export to Word</a>, and <a href="https://www.tiny.cloud/docs/tinymce/latest/exportpdf/" style="color: #2563EB;">Export to PDF</a>.</p>
-  </div>
-</div>
-++++
-
-== Deployment Options
-
-Deploy TinyMCE however you want - from the cloud with zero configuration to self-hosted with full control.
+Deploy {productname} however you want - from the cloud with zero configuration to self-hosted with full control.
 
 ++++
 include::partial$css/installation-cards.css[]
@@ -105,7 +26,7 @@ include::partial$css/installation-cards.css[]
   </div>
   
   <div class="integration-card">
-    <div class="card-icon-wrapper" style="background: linear-gradient(135deg, #10B981 0%, #047857 100%);">
+    <div class="card-icon-wrapper" style="background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);">
       <div class="card-icon">📦</div>
     </div>
     <h3 class="card-title">Package Manager</h3>
@@ -116,7 +37,7 @@ include::partial$css/installation-cards.css[]
   </div>
   
   <div class="integration-card">
-    <div class="card-icon-wrapper" style="background: linear-gradient(135deg, #8B5CF6 0%, #6D28D9 100%);">
+    <div class="card-icon-wrapper" style="background: linear-gradient(135deg, #3B82F6 0%, #1D4ED8 100%);">
       <div class="card-icon">⬇️</div>
     </div>
     <h3 class="card-title">Direct Download</h3>
@@ -131,23 +52,3 @@ include::partial$css/installation-cards.css[]
 include::partial$misc/admon-getting-started-with-tinymce.adoc[]
 
 include::partial$misc/admon-account-creation-and-social-option.adoc[]
-
-++++
-<div class="pricing-note">
-  <div class="pricing-content">
-    <p class="pricing-text">Explore pricing options that include a commercial license, cloud hosting, and professional support. All plans come with a <strong>14-day free trial</strong> to test everything.</p>
-    <a href="https://www.tiny.cloud/pricing/" class="pricing-link">View Pricing Plans →</a>
-  </div>
-</div>
-++++
-
-++++
-<div class="cta-section">
-  <h2 class="cta-title">Ready to get started?</h2>
-  <p class="cta-desc">Explore TinyMCE's capabilities using the interactive demos throughout this documentation. The editor works seamlessly across all modern browsers and can be integrated with any framework or CMS.</p>
-  <div class="cta-buttons">
-    <a href="https://www.tiny.cloud/docs/tinymce/latest/getting-started/" class="cta-button primary">Get Started →</a>
-    <a href="https://www.tiny.cloud/developer-center/" class="cta-button secondary">Developer Center →</a>
-  </div>
-</div>
-++++

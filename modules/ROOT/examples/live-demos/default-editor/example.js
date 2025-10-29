@@ -6,7 +6,7 @@ tinymce.init({
     // Premium features
     "advcode", "autocorrect", "footnotes", "mediaembed", 
     "powerpaste", "tinymcespellchecker", "casechange", "checklist", 
-    "formatpainter", "permanentpen", "advtable", "tableofcontents"
+    "formatpainter", "permanentpen", "advtable", "tableofcontents", "exportpdf"
   ],
-  toolbar: "spellcheckdialog | styles | bold italic underline strikethrough | align bullist numlist | link image emoticons footnotes checklist formatpainter permanentpen tableofcontents",
+  toolbar: " exportpdf | spellcheckdialog | styles | bold italic underline strikethrough | align bullist numlist | link image emoticons footnotes checklist formatpainter permanentpen tableofcontents",
 });

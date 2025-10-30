@@ -42,6 +42,7 @@
   padding: 1rem;
   background-color: #eff1f5;
   border-radius: 0.5rem;
+  margin-top: 1rem;
 }
 
 /* Remove inner margins when using the wrapper */
@@ -217,13 +218,14 @@
   text-decoration: none;
   display: block;
   color: inherit;
+  border: 2px solid transparent; /* reserve space to avoid layout shift on hover */
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
 .framework-card-link:hover {
   text-decoration: none !important;
-  border: 2px solid var(--card-border);
-  border-radius: 10px;
-  transition: all 0.3s ease;
+  border-color: var(--card-border);
 }
 
 .framework-card {

@@ -221,17 +221,14 @@
 
 .framework-card-link:hover {
   text-decoration: none !important;
-}
-
-.framework-card-link:hover .framework-name,
-.framework-card-link:hover .framework-icon {
-  text-decoration: none !important;
+  border: 2px solid var(--card-border);
+  border-radius: 10px;
+  transition: all 0.3s ease;
 }
 
 .framework-card {
   align-items: center;
   background: #fff;
-  border: 0;
   border-radius: 0.5rem;
   box-sizing: border-box;
   cursor: pointer;
@@ -242,12 +239,7 @@
   padding: 0.375rem;
   position: relative;
   text-decoration: none;
-  transition: opacity 0.2s ease;
   width: 5.3125rem; /* 85px fixed */
-}
-
-.framework-card-link:hover .framework-card {
-  opacity: 0.85;
 }
 
 .framework-icon {

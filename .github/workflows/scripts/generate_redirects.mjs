@@ -353,7 +353,7 @@ const main = async () => {
   if (parallelValue != null && !/^\d+$/.test(parallelValue)) {
     return Promise.reject(`Invalid value for --parallel, got ${parallelValue}`);
   }
-  const parallel = parallelValue != null ? parseInt(parallelValue, 10) : 5;
+  const parallel = parallelValue != null ? parseInt(parallelValue, 10) : 20;
   if (args.length !== 2) {
     return Promise.reject(`Expected 2 values, got ${args.length}`);
   }

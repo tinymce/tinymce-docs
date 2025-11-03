@@ -1,18 +1,11 @@
 [[uploadcare-resources]]
 == `uploadcare_resources`
 
-Specifies the base path where the Uploadcare plugin resources are served from. This option is primarily used when bundling {productname} with webpack or other bundlers, where the plugin needs to know where to load additional resources such as the `ucvideo.min.js` file for video functionality.
-
-When {productname} is bundled, the Uploadcare plugin cannot automatically determine where its additional resources are located. This option tells the plugin where to find these resources by specifying the root path to the Uploadcare plugin directory.
+Specifies the base path where the Uploadcare plugin resources are loaded from. This allows you to specify a different location for the Uploadcare resources if they are hosted separately from the main {productname} installation.
 
 *Type:* `+String+`
 
-*Default:* `+undefined+`
-
-*Possible values:* A string that points to the root path of the Uploadcare plugin directory.
-
-[NOTE]
-This option is only required when using the **Media Optimizer** as a paid "addon" and bundling {productname} with webpack or similar bundling tools.
+*Default:* `+'<plugin-path>'+`
 
 .Example: Setting `uploadcare_resources`
 [source,js]
@@ -22,53 +15,19 @@ tinymce.init({
   plugins: 'uploadcare',
   toolbar: 'uploadcare uploadcare-video',
   uploadcare_public_key: '<your-public-key>',
-  uploadcare_resources: 'uploadcare/uploadcare', // Points to the uploadcare plugin directory
+  uploadcare_resources: 'path/to/uploadcare-resources/',
   license_key: '<your-license-key>'
 });
 ----
 
-=== Complete Bundled Setup Example
+=== Resources Structure
 
-For a complete example of setting up {productname} with the Uploadcare addon, see the bundled setup example:
-
-[source,html]
-----
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TinyMCE with Uploadcare Addon</title>
-    <script src="path/to/tinymce/tinymce.min.js"></script> <!-- points to the tinymce.min.js file in your project -->
-    <script src="path/to/uploadcare/uploadcare/plugin.min.js"></script> <!-- points to the uploadcare plugin.min.js file in your project -->
-</head>
-<body>
-    <textarea>Welcome to TinyMCE with Uploadcare!</textarea>
-    <script>
-        tinymce.init({
-          selector: 'textarea',
-          plugins: [
-            "uploadcare"
-          ],
-          toolbar: "uploadcare uploadcare-video",
-          uploadcare_resources: 'path/to/uploadcare/uploadcare', // points to the uploadcare plugin directory
-          uploadcare_public_key: '<your-public-key>', 
-          license_key: '<your-license-key>'
-        });
-    </script>
-</body>
-</html>
-----
-
-=== Resource Structure
-
-When using `uploadcare_resources`, ensure your directory structure follows this pattern:
+When using `uploadcare_resources`, ensure your directory structure follows this pattern, specifically the `js` and `css` subdirectories, and that the necessary resource files are present:
 
 .Example directory structure:
 [source,text]
 ----
 project/
-├── uploadcare/
 │  └── uploadcare/
 │     ├── js/
 │     │   └── ucvideo.min.js
@@ -79,4 +38,4 @@ project/
     └── tinymce.min.js
 ----
 
-The plugin will automatically append the necessary subpaths (e.g., `/js/ucvideo.min.js`) to the base path you specify.
+NOTE: This option does not control the loading of the main Uploadcare plugin script, which should be included in the `+plugins+` or `+external_plugins+` configuration options as appropriate.

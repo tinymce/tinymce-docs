@@ -15,7 +15,6 @@ tinymce.init({
     { name: 'sorahel', amount: -50, label: 'Night' }, // Sorahel with darkened effect (amount -50), label reads 'Night'
     { name: 'none' }, // No filter applied
   ],
-  // Video configuration
   uploadcare_video_properties: {
     autoplay: false,
     controls: true,
@@ -23,22 +22,23 @@ tinymce.init({
     muted: true,
     preload: 'metadata',
     posterOffset: "0:10",
-    showLogo: false
+    showLogo: false,
+    fluid: true,
   },
   a11y_advanced_options: true,
-  toolbar: "undo redo | uploadcare uploadcare-video | styles | bold italic underline | forecolor | bullist numlist| link | code preview",
+  toolbar: "undo redo | styles | bold italic underline | forecolor | bullist numlist| link uploadcare | code preview",
   height: 700,	
   content_style: `
-    body { max-width: 920px; margin: 1.5rem auto; padding: 0 2vw; }
-    h1 { font-size: 1.5em; }
-        h2 { font-size: 1.17em; }
-    h1, h2, h3, h4, h5, h6 { font-weight: 500; margin: 0 0 0.75rem; }
-    p + h1, p + h2, p + h3, p + h4, p + h5, p + h6 { margin-top: 2rem; }
-    p { line-height: 1.6; margin: 0; } 
-    p + p { margin-top: 1rem; }
-    a { color: #2b70e3; }
-    blockquote { color: #4e5c73; font-weight: 200; font-size: 1.3rem; margin: 1rem 2rem; padding: 0 0 0 1rem; border-left: 2px solid #2b70e3 !important; }
-    figcaption {font-size: 0.875em;}
-    uc-video { display: block; margin: 1rem 0; }
-  `
+  body { max-width: 920px; margin: 1.5rem auto; padding: 0 2vw; }https://fiddle.tiny.cloud/5HPetOu0b2/38#
+  h1 { font-size: 1.5em; }
+      h2 { font-size: 1.17em; }
+  h1, h2, h3, h4, h5, h6 { font-weight: 500; margin: 0 0 0.75rem; }
+  p + h1, p + h2, p + h3, p + h4, p + h5, p + h6 { margin-top: 2rem; }
+  p { line-height: 1.6; margin: 0; } 
+  p + p { margin-top: 1rem; }
+  a { color: #2b70e3; }
+  blockquote { color: #4e5c73; font-weight: 200; font-size: 1.3rem; margin: 1rem 2rem; padding: 0 0 0 1rem; border-left: 2px solid #2b70e3 !important; }
+  figcaption {font-size: 0.875em;}
+      uc-video { display: block; margin: 1rem 0; width: 100%;}
+`
 });

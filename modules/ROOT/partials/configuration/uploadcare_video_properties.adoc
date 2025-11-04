@@ -12,15 +12,17 @@ Configures the video player properties and behavior for video elements.
 [cols="1,1,2,1,2"]
 |===
 |Property | Type | Valid Values | Default | Description
-|`autoplay` | Boolean | `true`, `false`, `undefined` | `undefined` | Automatically starts video playback when the page loads.
+|`autoplay` | Boolean | `true`, `false`, `undefined` | `undefined` | Automatically starts video playback when the page loads. NOTE: Even if autoplay is enabled, modern browsers may delay or block playback until the user interacts with the page, depending on their autoplay policies.
 |`controls` | Boolean | `true`, `false` | `true` | Displays the video player controls (play/pause, volume, timeline, fullscreen, etc.). When disabled, users can still control playback through keyboard shortcuts or programmatic methods.
+|`disablePictureInPicture` | Boolean | `true`, `false`, `undefined` | `undefined` | Disables the Picture-in-Picture feature for the video player. When enabled, users cannot use Picture-in-Picture mode.
 |`height` | Number or String | Pixels or CSS value | `undefined` | Sets the video player height. Accepts numeric values (interpreted as pixels) or CSS values like `"100%"`, `"50vh"`, or `"auto"`.
 |`loop` | Boolean | `true`, `false`, `undefined` | `undefined` | Automatically restarts video playback from the beginning when it reaches the end. Useful for background videos or continuous content loops.
 |`muted` | Boolean | `true`, `false`, `undefined` | `undefined` | Mutes the video audio by default. Often used in combination with autoplay since most browsers require muted videos for autoplay to function.
 |`poster` | String | Valid URL | `undefined` | Sets a poster image (thumbnail) that displays before video playback begins. The image should match the video's aspect ratio for best results.
+|`posterOffset` | String | Time format `"MM:SS"` or `"H:MM:SS"` | `undefined` | Sets the time offset for generating a poster image from the video. When `poster` is not specified, this value determines the frame to use as the poster. Format: `"0:10"` for 10 seconds, `"1:30"` for 1 minute 30 seconds.
 |`preload` | String | `auto`, `metadata`, `none` | `undefined` | Controls how much video data to preload: `auto` loads the entire video, `metadata` loads only basic information, `none` loads nothing until playback starts. Performance considerations: use `metadata` for better page load times and bandwidth conservation, `auto` for immediate playback without buffering delays, and `none` for maximum bandwidth savings when videos may not be played.
+|`showLogo` | Boolean | `true`, `false` | `false` | Displays the Uploadcare logo overlay on the video player.
 |`width` | Number or String | Pixels or CSS value | `undefined` | Sets the video player width. Accepts numeric values (interpreted as pixels) or CSS values like `"100%"`, `"50vw"`, or `"auto"`.
-|`showLogo` | Boolean | `true`, `false` | `true` | Displays the Uploadcare logo overlay on the video player.
 |===
 
 
@@ -40,6 +42,7 @@ tinymce.init({
     muted: true,
     preload: 'metadata',
     poster: 'https://placehold.co/600x400', // Optional poster image URL
+    posterOffset: '0:10', // Time offset for poster generation
     width: 640,
     height: 360,
     showLogo: false

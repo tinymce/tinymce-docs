@@ -2,12 +2,12 @@
   {
     "location": "/",
     "pattern": "^/docs%-beta(.*)$",
-    "redirect": "/docs$1"
+    "redirect": "/docs%1"
   },
   {
     "location": "/",
     "pattern": "^/docs%-preview(.*)$",
-    "redirect": "/docs$1"
+    "redirect": "/docs%1"
   },
   {
     "location": "/docs-3x/",
@@ -3072,7 +3072,7 @@
   {
     "location": "/docs/tinymce/8/",
     "pattern": "^/docs/tinymce/8/(.*)$",
-    "redirect": "/docs/tinymce/latest/$1"
+    "redirect": "/docs/tinymce/latest/%1"
   },
   {
     "location": "/docs/tinymce/demo/url-dialog-demo/external-page.html",

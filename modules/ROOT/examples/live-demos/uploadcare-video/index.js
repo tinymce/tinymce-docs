@@ -28,6 +28,6 @@ tinymce.init({
   a { color: #2b70e3; }
   blockquote { color: #4e5c73; font-weight: 200; font-size: 1.3rem; margin: 1rem 2rem; padding: 0 0 0 1rem; border-left: 2px solid #2b70e3 !important; }
   figcaption {font-size: 0.875em;}
-      uc-video { display: block; margin: 1rem 0; width: 100%;}
-`
+  uc-video { display: block; margin: 1rem 0; width: 100%;}
+  `
 });

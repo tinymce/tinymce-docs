@@ -42,9 +42,13 @@ jobs:
     - name: Build Website
       run: yarn antora ./antora-playbook.yml
 
+    - name: Rename site
+      run: |
+        mv ./build/site ./build/docs
+
     - name: Rename sitemap.xml
       run: |
-        mv ./build/site/sitemap.xml ./build/site/antora-sitemap.xml
+        mv ./build/docs/sitemap.xml ./build/docs/antora-sitemap.xml
 
     - name: configure aws credentials
       uses: aws-actions/configure-aws-credentials@v5.0.0
@@ -55,8 +59,7 @@ jobs:
 
     - name: Upload website preview to S3 # put in the docs subfolder as we rely on that path in redirects
       run: |
-        aws s3 rm s3://tiny-cloud-antora-docs-preview/pr${PR_NUMBER}
-        aws s3 sync ./build/site s3://tiny-cloud-antora-docs-preview/pr${PR_NUMBER}/docs
+        aws s3 sync --delete ./build s3://tiny-cloud-antora-docs-preview/pr${PR_NUMBER}
 
     - name: Create redirects on S3
       run: node ./.github/workflows/scripts/generate_redirects.mjs tiny-cloud-antora-docs-preview pr${PR_NUMBER}

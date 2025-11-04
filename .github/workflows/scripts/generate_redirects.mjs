@@ -49,7 +49,7 @@ const dryRunSuccess = (cmd) => new Promise((resolve) => {
 function checkS3ObjectExists(_dryRun, _bucket, _prefix, subPath) {
   // it's too slow to talk to s3, so just check the local files we just uploaded...
   if (subPath.startsWith('docs/')) {
-    return fs.existsSync(path.join(import.meta.dirname, '../../../build/site', subPath.slice('docs/'.length)));
+    return fs.existsSync(path.join(import.meta.dirname, '../../../build', subPath));
   } else {
     return false;
   }
@@ -84,7 +84,7 @@ const copyS3ObjectWithMetadataAsync = async (dryRun, bucket, prefix, subPath, me
     'aws', 's3api', 'copy-object',
     '--bucket', bucket,
     '--copy-source', `${bucket}/${fullPath}`,
-    '--key', subPath,
+    '--key', fullPath,
     '--metadata-directive', 'REPLACE',
     '--content-type', 'text/html',
     ...metadataArgs(metadata)

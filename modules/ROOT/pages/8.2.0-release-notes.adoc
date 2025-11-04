@@ -16,6 +16,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:improvements[Improvements]
 * xref:bug-fixes[Bug fixes]
+* xref:known-issues[Known issues]
 
 
 [[accompanying-premium-plugin-changes]]
@@ -211,3 +212,16 @@ For an example of using custom elements with block-level and inline-level compon
 In {productname} {release-version}, an issue was resolved where split buttons rendered narrower than in {productname} 7 and other toolbar buttons. This occurred because the main portion of the split button used a CSS rule that caused it to collapse to the icon size during initialization, resulting in an incorrect fixed width. This made split buttons appear visually inconsistent, reduced their clickability, and could cause text labels to be truncated.
 
 {productname} {release-version} addresses this issue by adjusting the width behavior to inherit the correct `34px` for icons and auto for text—ensuring consistent sizing across the toolbar.
+
+== Known issues
+
+{productname} {release-version} also includes the following known issues:
+
+=== Uploadcare video audio continues playing after copying paused and muted video
+// #TINY-13198
+
+In certain edge cases, when a video is inserted, played, paused, and muted, then copied using **Ctrl+C** (or **Cmd+C** on Mac), the paused and muted video may begin playing audio. Once this occurs, the audio continues to play even after deleting the video from the editor.
+
+**Workaround:** None, the user must refresh the page to stop the unwanted audio which can result in the loss of any unsaved content.
+
+**Status:** Currently under investigation.

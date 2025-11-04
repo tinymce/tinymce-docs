@@ -140,7 +140,7 @@ Previously, certain elements received an additional newline when indented due to
 
 Previously, UI elements such as focus outlines and placeholder text were rendered in printed versions of the editor content, resulting in unwanted visual artifacts in printed documents. This behavior caused confusion and reduced the professional appearance of printed materials. To address this issue, printing-specific styles were introduced to automatically hide all UI-related elements within the editor content during printing. As a result, printed output now includes only the intended content, ensuring clean and consistent presentation across all printouts.
 
-=== The `open` attribute on `<details>` elements is now normalized to `open="open"` when the accordion plugin is enabled. 
+=== The `open` attribute on `<details>` elements is now normalized to `open="open"` when the accordion plugin is enabled.
 // #TINY-12862
 
 Previously, the `open` attribute on `<details>` elements was inconsistently defined when used with the accordion plugin. In some cases, the attribute appeared as `+open="true"+`, while toggling through the plugin converted it to `+open="open"+`. This inconsistency caused issues when loading externally created content that contained multiple open accordions with different attribute values, leading to mismatched accordion states.

@@ -22,7 +22,11 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} {release-version} also includes the following bug fixes:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Dragging an element over the editor would cause it to jump unexpectedly on some versions of Chrome with the PowerPaste plugin.
+// #TINY-13196
 
-// CCFR here.
+In {productname} xref:8.2.0-release-notes.adoc#the-editor-would-upon-gaining-focus-scroll-to-the-center-of-the-editor-on-some-browsers-if-the-top-of-the-editor-was-out-of-frame[8.2.0], an issue was resolved where the editor would unexpectedly scroll in certain situations. This behavior originated from a workaround for a Chromium bug, which caused the editor to scroll when the top of the editor was out of frame.
+
+While this issue was addressed for the core editor behavior in that release, the same problem persisted in the xref:introduction-to-powerpaste.adoc[PowerPaste] plugin, resulting in similar unexpected scrolling.
+
+In {productname} {release-version}, this issue has now been fully resolved for PowerPaste as well. The editor no longer scrolls unexpectedly when using the PowerPaste plugin.

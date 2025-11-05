@@ -64,7 +64,7 @@ jobs:
 
     - name: Create redirects on S3
       run: |
-        node .github/workflows/scripts/generate_redirects.mjs tiny-cloud-antora-docs-preview ${PR}/${RUN} --parallel 2
+        node .github/workflows/scripts/generate_redirects.mjs tiny-cloud-antora-docs-preview ${PR}/${RUN} --parallel 10
 
     - name: Update pointer to current run output # put in the docs subfolder as we rely on that path in redirects
       run: |

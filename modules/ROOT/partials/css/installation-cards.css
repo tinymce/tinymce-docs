@@ -220,12 +220,22 @@
   color: inherit;
   border: 2px solid transparent; /* reserve space to avoid layout shift on hover */
   border-radius: 10px;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
 }
 
 .framework-card-link:hover {
   text-decoration: none !important;
-  border-color: var(--card-border);
+  border-color: var(--tiny-light-blue);
+}
+
+/* When hovering over framework-cards container, dim all cards except the hovered one */
+.framework-cards:hover .framework-card-link {
+  opacity: 0.5;
+}
+
+.framework-cards:hover .framework-card-link:hover {
+  opacity: 1;
 }
 
 .framework-card {

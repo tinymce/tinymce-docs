@@ -339,7 +339,7 @@ const main = async () => {
     return Promise.reject(`Invalid bucket name, got ${bucket}`);
   }
 
-  if (!/^[a-z0-9\.-]+$/.test(prefix)) {
+  if (!/^[a-z0-9\.-]+(\/[a-z0-9\.-]+)*$/.test(prefix)) {
     return Promise.reject(`Invalid prefix, got ${prefix}`);
   }
 

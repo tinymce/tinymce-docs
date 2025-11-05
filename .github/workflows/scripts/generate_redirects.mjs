@@ -1,4 +1,6 @@
+import crypto from 'node:crypto';
 import fs from 'node:fs';
+import os from 'node:os';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
 
@@ -166,7 +168,7 @@ function* generateRedirectObjectsAsync(dryRun, bucket, prefix, redirectsByLocati
 </html>`;
 
   // Write temporary file
-  const newFileTemplate = `/tmp/redirect-${Date.now()}.html`;
+  const newFileTemplate = path.join(os.tmpdir(), `redirect-${crypto.randomBytes(16).toString('hex')}.html`);
   fs.writeFileSync(newFileTemplate, htmlContent);
 
   let allSettled = Promise.resolve();

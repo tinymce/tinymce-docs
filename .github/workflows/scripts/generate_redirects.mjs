@@ -209,7 +209,7 @@ function* generateRedirectObjectsAsync(dryRun, bucket, prefix, redirectsByLocati
       if (fs.existsSync(newFileTemplate)) {
         fs.unlinkSync(newFileTemplate);
       }
-    })
+    });
   }
 }
 

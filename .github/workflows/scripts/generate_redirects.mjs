@@ -116,7 +116,8 @@ const createNewS3ObjectAsync = async (dryRun, bucket, prefix, subPath, metadata,
     '--key', fullPath,
     '--body', newFileTemplate,
     '--content-type', 'text/html',
-    ...metadataArgs(metadata)
+    '--if-none-match', fullPath,
+    ...metadataArgs({...metadata, 'redirect-failure': 'not-found'})
   ];
   const result = await (dryRun ? dryRunSuccess(cmd) : spawnAsync(cmd));
   return {

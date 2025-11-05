@@ -28,3 +28,8 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 Previously, an issue was identified where the editor’s width styles were overwritten when resizing the editor. This caused the width styles to break, resulting in the editor having a fixed width value instead of adapting to the container’s width.
 
 In {productname} {release-version}, this issue has been resolved. The editor's width is no longer overwritten after resizing when the xref:editor-size-options.adoc#resize[resize option] is set to `true`. Now, resizing only affects the width when the resize option is set to `both`. This ensures that only the necessary styles are applied during editor resizing, preserving other styles and allowing the resize behavior to function as expected.
+
+=== The Help Plugin did not contain an entry for the Full Page HTML plugin.
+// #TINY-13183
+
+Prior to the {release-version} release, the xref:fullpagehtml.adoc[Full Page HTML] plugin was not included in the plugin list displayed in the xref:help.adoc[Help plugin] dialog. This has now been corrected, and the Help plugin dialog properly lists the plugin.

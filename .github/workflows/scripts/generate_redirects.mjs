@@ -38,7 +38,6 @@ const spawnAsync = (cmd) => new Promise((resolve) => {
  * @returns {Promise<{ cmd: string[], stdout: string, stderr: string, status: number | null, signal: NodeJS.Signals | null, error?: Error}>}
  */
 const dryRunSuccess = (cmd) => new Promise((resolve) => {
-  console.log('Starting ' + cmd.join(' '));
   setTimeout(() => resolve({ cmd, stdout: '', stderr: '', status: 0, signal: null }), Math.floor(Math.random() * 100));
 });
 
@@ -260,38 +259,19 @@ const makeRedirectObjects = async (dryRun, bucket, prefix, parallel, redirects) 
   const tasks = parallelGenerator(parallel, generateRedirectObjectsAsync(dryRun, bucket, prefix, redirectsByLocation));
   let processedCount = 0;
   for await (const taskResult of tasks) {
-    const { subPath, cmd, error } = taskResult;
+    const { subPath, cmd, error, copied } = taskResult;
     processedCount++;
+    console.log(`Processed ${((processedCount / redirectsByLocation.size) * 100).toFixed(1)}%: ${taskResult.subPath}`);
     if (error) {
       errorCount++;
+      console.error(`\nCommand: ${cmd.join(' ')}`);
+      console.error(`Error ${copied ? 'Updating' : 'Creating'} S3 object ${prefix}/${subPath}:`, error);
+      console.error('');
     } else {
       successCount++;
     }
-    console.log(`\nProcessed ${processedCount} of ${redirectsByLocation.size}: ${taskResult.subPath}`);
-    const fullPath = `${prefix}/${subPath}`;
-    if (taskResult.copied) {
-      console.log(`Updating S3 object: ${fullPath}`);
-      console.log(`Command: ${cmd.join(' ')}`);
-      if (taskResult.error) {
-        console.error(`Error copying S3 object ${fullPath}:`, error);
-      } else {
-        console.log(`Successfully updated S3 object ${fullPath}`);
-      }
-    } else {
-      console.log(`Created new S3 object: ${fullPath}`);
-      console.log(`Command: ${cmd.join(' ')}`);
-      if (taskResult.error) {
-        console.error(`Error creating S3 object ${fullPath}:`, error);
-      } else {
-        console.log(`Successfully created S3 object ${fullPath}`);
-      }
-    }
   }
-
-  console.log(`\nSummary:`);
-  console.log(`Successfully processed: ${successCount} objects`);
-  console.log(`Errors: ${errorCount} objects`);
-  console.log('Redirect object generation completed.');
+  console.log(`\nFinished with ${errorCount} error(s)`);
 };
 
 const usage = () => `

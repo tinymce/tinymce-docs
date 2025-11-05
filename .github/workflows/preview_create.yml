@@ -14,6 +14,7 @@ permissions:
 
 env:
   PR_NUMBER: ${{ github.event.number }}
+  RUN_NUMBER: ${{ github.run_attempt }}
 
 jobs:
 
@@ -59,12 +60,12 @@ jobs:
 
     - name: Upload website preview to S3 # put in the docs subfolder as we rely on that path in redirects
       run: |
-        aws s3 sync ./build s3://tiny-cloud-antora-docs-preview/pr${PR_NUMBER}/${GITHUB_RUN_ATTEMPT}
+        aws s3 sync ./build s3://tiny-cloud-antora-docs-preview/pr${PR_NUMBER}/run${RUN_NUMBER}
 
     - name: Create redirects on S3
       run: |
-        node .github/workflows/scripts/generate_redirects.mjs tiny-cloud-antora-docs-preview pr${PR_NUMBER}/${GITHUB_RUN_ATTEMPT}
+        node .github/workflows/scripts/generate_redirects.mjs tiny-cloud-antora-docs-preview pr${PR_NUMBER}/run${RUN_NUMBER}
 
     - name: Update pointer to current run output # put in the docs subfolder as we rely on that path in redirects
       run: |
-        aws s3api put-object --bucket tiny-cloud-antora-docs-preview --key pr${PR_NUMBER}/index.html --body .github/workflows/scripts/empty.html --content-type text/html --metadata pointer=${GITHUB_RUN_ATTEMPT}
+        aws s3api put-object --bucket tiny-cloud-antora-docs-preview --key pr${PR_NUMBER}/index.html --body .github/workflows/scripts/empty.html --content-type text/html --metadata pointer=run${RUN_NUMBER}

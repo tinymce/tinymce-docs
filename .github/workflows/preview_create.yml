@@ -60,7 +60,7 @@ jobs:
 
     - name: Upload website preview to S3 # put in the docs subfolder as we rely on that path in redirects
       run: |
-        aws s3 sync ./build s3://tiny-cloud-antora-docs-preview/${PR}/{RUN}
+        aws s3 sync ./build s3://tiny-cloud-antora-docs-preview/${PR}/${RUN}
 
     - name: Create redirects on S3
       run: |

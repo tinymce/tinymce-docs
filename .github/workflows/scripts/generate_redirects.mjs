@@ -1,6 +1,4 @@
-import crypto from 'node:crypto';
 import fs from 'node:fs';
-import os from 'node:os';
 import path from 'node:path';
 import { spawn } from 'node:child_process';
 
@@ -155,63 +153,35 @@ const createOrUpdateS3ObjectAsync = (dryRun, bucket, prefix, subPath, metadata, 
  * @param {Map<string, string>} redirectsByLocation 
  */
 function* generateRedirectObjectsAsync(dryRun, bucket, prefix, redirectsByLocation) {
-  // Create empty index.html content for the redirect
-  const htmlContent = `<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>Redirecting...</title>
-</head>
-<body>
-  <p>Redirecting...</p>
-</body>
-</html>`;
+  // create path to empty template
+  const newFileTemplate = path.join(import.meta.dirname, 'empty.html');
 
-  // Write temporary file
-  const newFileTemplate = path.join(os.tmpdir(), `redirect-${crypto.randomBytes(16).toString('hex')}.html`);
-  fs.writeFileSync(newFileTemplate, htmlContent);
+  for (const [location, locationRedirects] of redirectsByLocation) {
+    // Create S3 object path by appending index.html to location
+    const locationIndexHtml = location.endsWith('/')
+      ? `${location}index.html`
+      : `${location}/index.html`;
 
-  let allSettled = Promise.resolve();
+    // Remove leading slash from location
+    const subPath = locationIndexHtml.startsWith('/') ? locationIndexHtml.slice(1) : locationIndexHtml;
 
-  try {
-    for (const [location, locationRedirects] of redirectsByLocation) {
-      // Create S3 object path by appending index.html to location
-      const locationIndexHtml = location.endsWith('/')
-        ? `${location}index.html`
-        : `${location}/index.html`;
+    // Build metadata headers
+    const metadata = {};
 
-      // Remove leading slash from location
-      const subPath = locationIndexHtml.startsWith('/') ? locationIndexHtml.slice(1) : locationIndexHtml;
+    locationRedirects.forEach((redirect, index) => {
+      const i = index + 1; // 1-based indexing as requested
 
-      // Build metadata headers
-      const metadata = {};
+      // Add redirect location header
+      metadata[`redirect-location-${i}`] = redirect.redirect;
 
-      locationRedirects.forEach((redirect, index) => {
-        const i = index + 1; // 1-based indexing as requested
-
-        // Add redirect location header
-        metadata[`redirect-location-${i}`] = redirect.redirect;
-
-        // Add pattern header if it exists
-        if (redirect.pattern !== undefined) {
-          metadata[`redirect-pattern-${i}`] = redirect.pattern;
-        }
-      });
-
-      // Create or update the S3 object
-      const task = createOrUpdateS3ObjectAsync(dryRun, bucket, prefix, subPath, metadata, newFileTemplate);
-      yield task;
-      // throw away task success/failure info, just keep task settled status
-      const taskSettled = task.then(() => { }, () => { });
-      allSettled = allSettled.then(() => taskSettled);
-    }
-  } finally {
-    allSettled.then(() => {
-      // Clean up temporary file
-      if (fs.existsSync(newFileTemplate)) {
-        fs.unlinkSync(newFileTemplate);
+      // Add pattern header if it exists
+      if (redirect.pattern !== undefined) {
+        metadata[`redirect-pattern-${i}`] = redirect.pattern;
       }
     });
+
+    // Create or update the S3 object
+    yield createOrUpdateS3ObjectAsync(dryRun, bucket, prefix, subPath, metadata, newFileTemplate);
   }
 }
 

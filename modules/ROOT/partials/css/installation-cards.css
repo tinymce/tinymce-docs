@@ -19,21 +19,50 @@
   --card-shadow-hover: 0 16px 32px -8px rgba(0, 47, 230, 0.25);
 }
 
-/* Reusable brand gradient (solid per brand request) */
-.brand-gradient {
-  background: var(--tiny-charcoal);
+
+/* Branded gradients for installation cards - subtle top stripe accent */
+.brand-gradient--sunny {
+  background: white;
+  position: relative;
 }
 
-/* Branded gradients for installation cards */
-.brand-gradient--sunny {
+.brand-gradient--sunny::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
   background: linear-gradient(135deg, #F8B500 0%, #FF6666 100%);
 }
 
 .brand-gradient--neutral {
+  background: white;
+  position: relative;
+}
+
+.brand-gradient--neutral::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
   background: linear-gradient(135deg, #FF6666 0%, #4D66CB 100%);
 }
 
 .brand-gradient--marine {
+  background: white;
+  position: relative;
+}
+
+.brand-gradient--marine::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
   background: linear-gradient(135deg, #00C0CD 0%, #4D66CB 100%);
 }
 
@@ -58,19 +87,6 @@
   margin: 1.5rem 0;
 }
 
-.integration-card-link {
-  text-decoration: none !important;
-  color: inherit;
-}
-
-.integration-card-link:hover {
-  text-decoration: none !important;
-}
-
-.integration-card-link:hover .card-title,
-.integration-card-link:hover .card-description {
-  text-decoration: none !important;
-}
 
 .integration-card {
   padding: 0;
@@ -84,11 +100,23 @@
   height: 100%;
 }
 
-.integration-card:hover,
-.integration-card-link:hover .integration-card {
+.integration-card:hover {
   transform: translateY(-4px);
   border-color: var(--card-border-hover);
   box-shadow: var(--card-shadow-hover);
+}
+
+/* Subtle gradient stripe enhancement on hover */
+.integration-card:hover .brand-gradient--sunny::before {
+  height: 4px;
+}
+
+.integration-card:hover .brand-gradient--neutral::before {
+  height: 4px;
+}
+
+.integration-card:hover .brand-gradient--marine::before {
+  height: 4px;
 }
 
 .card-icon-wrapper {
@@ -135,19 +163,6 @@
   gap: 0.5rem;
 }
 
-.card-badge {
-  display: inline-block;
-  padding: 0.32rem 0.7rem;
-  background: linear-gradient(135deg, var(--tiny-navy) 0%, var(--tiny-dark-navy) 100%);
-  color: white;
-  border-radius: 40px;
-  font-size: 0.65rem;
-  font-weight: 600;
-}
-
-.card-badge.secondary {
-  background: linear-gradient(135deg, var(--tiny-light-blue) 0%, var(--tiny-navy) 100%);
-}
 
 .card-learn-more {
   display: inline-block;
@@ -291,85 +306,6 @@
   text-decoration: none !important;
 }
 
-/* Installation Method Cards (large cards) */
-.installation-cards-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1rem;
-  margin-bottom: 2rem;
-}
-
-.installation-card-link {
-  text-decoration: none;
-  color: inherit;
-}
-
-.installation-card {
-  padding: 0;
-  background: white;
-  border: 2px solid var(--card-border);
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-
-.installation-card-link:hover .installation-card {
-  transform: translateY(-4px);
-  border-color: var(--card-border-hover);
-  box-shadow: var(--card-shadow-hover);
-}
-
-.installation-icon-wrapper {
-  width: 100%;
-  padding: 1.2rem 1rem;
-  text-align: center;
-}
-
-.installation-icon {
-  font-size: 1.8rem;
-  display: inline-block;
-}
-
-.installation-title {
-  font-size: 0.9rem;
-  font-weight: 700;
-  margin: 0 0 0.5rem 0;
-  color: var(--tiny-charcoal);
-  padding: 0 1rem;
-  text-align: center;
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
-}
-
-.installation-description {
-  margin: 0;
-  line-height: 1.5;
-  color: var(--tiny-medium-blue);
-  padding: 0 1rem 0.75rem;
-  text-align: center;
-  flex-grow: 1;
-  font-size: 0.7rem;
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
-}
-
-.installation-section-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--tiny-charcoal);
-  margin: 2rem 0 1.5rem 0;
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
-}
-
-/* Generic section title used in pages */
-.brand-section-title {
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--tiny-charcoal);
-  margin: 2rem 0 1.5rem 0;
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans";
-}
 
 /* Responsive */
 @media screen and (max-width: 768px) {
@@ -418,11 +354,6 @@
   
   .framework-name {
     font-size: 0.85rem;
-  }
-  
-  .installation-cards-grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
   }
 }
 </style>

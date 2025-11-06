@@ -10,10 +10,10 @@ Install {productname} using npm or Yarn:
 [source,sh]
 ----
 # Using npm
-npm install tinymce@^{productmajorversion}
+npm install tinymce@^{productmajorversion}.0.0
 
 # Using Yarn
-yarn add tinymce@^{productmajorversion}
+yarn add tinymce@^{productmajorversion}.0.0
 ----
 
 Then configure {productname} to use the local installation:

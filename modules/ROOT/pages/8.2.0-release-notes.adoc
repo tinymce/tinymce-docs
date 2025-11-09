@@ -217,7 +217,7 @@ In {productname} {release-version}, an issue was resolved where split buttons re
 
 {productname} {release-version} also includes the following known issues:
 
-=== Uploadcare video audio continues playing after copying paused and muted video
+=== Uploadcare video audio continues playing after copying a paused and muted video
 // #TINY-13198
 
 In certain edge cases, when a video is inserted, played, paused, and muted, then copied using **Ctrl+C** (or **Cmd+C** on Mac), the paused and muted video may begin playing audio. Once this occurs, the audio continues to play even after deleting the video from the editor.

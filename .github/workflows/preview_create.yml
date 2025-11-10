@@ -73,4 +73,4 @@ jobs:
 
     - name: Update pointer to current run output # put in the docs subfolder as we rely on that path in redirects
       run: |
-        aws s3api put-object --bucket tiny-cloud-antora-docs-preview --key ${PR}/index.html --body .github/workflows/scripts/empty.html --content-type text/html --metadata pointer=${RUN}
+        aws s3api put-object --bucket tiny-cloud-antora-docs-preview --key ${PR}/index.html --body .github/workflows/resources/empty.html --content-type text/html --metadata pointer=${RUN}

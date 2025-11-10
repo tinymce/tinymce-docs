@@ -56,7 +56,7 @@ jobs:
       with:
         role-to-assume: arn:aws:iam::327995277200:role/staging-docs-preview-update
         role-session-name: docs-preview-update
-        aws-region: us-east-2
+        aws-region: us-east-1
 
     - name: Upload website preview to S3 # put in the docs subfolder as we rely on that path in redirects
       run: |

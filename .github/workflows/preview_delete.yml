@@ -10,7 +10,7 @@ permissions:
   id-token: write
 
 env:
-  PR_NUMBER: ${{ github.event.number }}
+  PR: pr-${{ github.event.number }}
 
 jobs:
   cleanup:
@@ -41,4 +41,4 @@ jobs:
 
     - name: Remove website preview from S3
       run: |
-        aws s3 rm s3://tiny-cloud-antora-docs-preview/pr${PR_NUMBER}
+        aws s3 rm s3://tiny-cloud-antora-docs-preview/${PR}

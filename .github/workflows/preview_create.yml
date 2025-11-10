@@ -43,11 +43,11 @@ jobs:
     - name: Build Website
       run: yarn antora ./antora-playbook.yml
 
-    - name: Rename site
+    - name: Rename site folder to docs
       run: |
         mv ./build/site ./build/docs
 
-    - name: Rename sitemap.xml
+    - name: Rename sitemap.xml to antora-sitemap.xml
       run: |
         mv ./build/docs/sitemap.xml ./build/docs/antora-sitemap.xml
 
@@ -63,8 +63,13 @@ jobs:
         aws s3 sync ./build s3://tiny-cloud-antora-docs-preview/${PR}/${RUN}
 
     - name: Create redirects on S3
-      run: |
-        node .github/workflows/scripts/generate_redirects.mjs tiny-cloud-antora-docs-preview ${PR}/${RUN} --parallel 5
+      uses: tinymce/tinymce-docs-generate-redirects-action@feature/TCLOUD-4780
+      with:
+        build: ./build/
+        redirects: ./redirects.json
+        bucket: tiny-cloud-antora-docs-preview
+        prefix: ${PR}/${RUN}
+        parallel: 10
 
     - name: Update pointer to current run output # put in the docs subfolder as we rely on that path in redirects
       run: |

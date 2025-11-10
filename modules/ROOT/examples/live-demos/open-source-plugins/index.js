@@ -4,7 +4,6 @@ const isSmallScreen = window.matchMedia('(max-width: 1023.5px)').matches;
 tinymce.init({
   selector: 'textarea#open-source-plugins',
   plugins: [
-    /* Open source plugins */
     'accordion', 'advlist', 'anchor', 'autolink', 'autoresize', 'autosave', 'charmap', 'code',
     'codesample', 'directionality', 'emoticons', 'fullscreen', 'help', 'image',
     'importcss', 'insertdatetime', 'link', 'lists', 'media',

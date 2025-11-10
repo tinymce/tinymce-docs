@@ -527,15 +527,11 @@ tinymce.init({
   plugins: [
     'ai', 'suggestededits', 'preview', 'powerpaste', 'casechange', 'importcss', 'searchreplace',
     'autolink', 'autosave', 'save', 'directionality', 'advcode', 'visualblocks', 'visualchars', 'fullscreen',
-    /* Image plugin removed due to compatibility issues with the uploadcare plugin */
-    /* 'image', 'editimage', tinydrive', */
     'link', 'math', 'media', 'mediaembed', 'codesample', 'table', 'charmap', 'pagebreak', 'nonbreaking',
     'anchor', 'tableofcontents', 'insertdatetime', 'advlist', 'lists', 'checklist', 'wordcount', 'tinymcespellchecker',
     'a11ychecker', 'help', 'formatpainter', 'permanentpen', 'pageembed', 'charmap', 'tinycomments', 'mentions',
     'quickbars', 'emoticons', 'advtable', 'footnotes', 'mergetags', 'autocorrect', 'typography', 'advtemplate', 'markdown',
-    'revisionhistory', 'importword', 'exportword', 'exportpdf',
-    /* Uploadcare plugin for image and video optimization */
-    'uploadcare',
+    'revisionhistory', 'importword', 'exportword', 'exportpdf', 'uploadcare',
   ],
   menu: {
     tc: {
@@ -548,30 +544,13 @@ tinymce.init({
   toolbar: "undo redo | insertfile |importword exportword exportpdf | suggestededits | revisionhistory | aidialog aishortcuts | blocks fontsizeinput | bold italic | align numlist bullist | link uploadcare uploadcare-video | table math media pageembed | lineheight  outdent indent | strikethrough forecolor backcolor formatpainter removeformat | charmap emoticons checklist | code fullscreen preview | save print | pagebreak anchor codesample footnotes mergetags | addtemplate inserttemplate | addcomment showcomments | ltr rtl casechange | spellcheckdialog a11ycheck", 
   mobile: {
     plugins: 'ai suggestededits preview powerpaste casechange importcss searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen link math media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker help formatpainter pageembed charmap mentions quickbars emoticons advtable footnotes mergetags autocorrect typography advtemplate uploadcare'
-    /* The below plugins have been removed due to compatibility issues with the uploadcare plugin */
-    /* 'image', 'editimage', 'tinydrive', */
   },
-  
-  /* editimage_cors_hosts: ['picsum.photos'], */
-
-  /* Tiny Drive has been disabled due to compatibility issues with the uploadcare plugin */
-  /*
-  tinydrive_token_provider: (success, failure) => {
-    success({ token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.Ks_BdfH4CWilyzLNk8S2gDARFhuxIauLa8PwhdEQhEo' });
-  },
-  tinydrive_demo_files_url: '{{imagesdir}}/tiny-drive-demo/demo_files.json',
-  tinydrive_dropbox_app_key: 'jee1s9eykoh752j',
-  tinydrive_google_drive_key: 'AIzaSyAsVRuCBc-BLQ1xNKtnLHB3AeoK-xmOrTc',
-  tinydrive_google_drive_client_id: '748627179519-p9vv3va1mppc66fikai92b3ru73mpukf.apps.googleusercontent.com',
-  */
  
   autosave_ask_before_unload: true,
   autosave_interval: '30s',
   autosave_prefix: '{path}{query}-{id}-',
   autosave_restore_when_empty: false,
   autosave_retention: '2m',
-  /* Image plugin options have been disabled due to compatibility issues with the uploadcare plugin */
-  /* image_advtab: true, */
   typography_default_lang: 'en-US',
   typography_langs: [
     'en-US',
@@ -635,19 +614,8 @@ tinymce.init({
     { title: 'My page 1', value: 'https://www.tiny.cloud' },
     { title: 'My page 2', value: 'http://www.moxiecode.com' }
   ],
-  /* Image plugin options have been disabled due to compatibility issues with the uploadcare plugin */
-  /* image_list: [
-    { title: 'My page 1', value: 'https://www.tiny.cloud' },
-    { title: 'My page 2', value: 'http://www.moxiecode.com' }
-  ],
-  image_class_list: [
-    { title: 'None', value: '' },
-    { title: 'Some class', value: 'class-name' }
-  ], */
   importcss_append: true,
   height: 600,
-  /* image_caption: true, */
-  /* quickimage removed from quickbars_selection_toolbar due to compatibility with uploadcare plugin */
   quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quicktable',
   noneditable_class: 'mceNonEditable',
   toolbar_mode: 'sliding',

@@ -3,7 +3,16 @@ const isSmallScreen = window.matchMedia('(max-width: 1023.5px)').matches;
 
 tinymce.init({
   selector: 'textarea#open-source-plugins',
-  plugins: 'preview importcss searchreplace autolink autosave save directionality code visualblocks visualchars fullscreen image link media codesample table charmap pagebreak nonbreaking anchor insertdatetime advlist lists wordcount help charmap quickbars emoticons accordion',
+  plugins: [
+    /* Open source plugins */
+    'accordion', 'advlist', 'anchor', 'autolink', 'autoresize', 'autosave', 'charmap', 'code',
+    'codesample', 'directionality', 'emoticons', 'fullscreen', 'help', 'image',
+    'importcss', 'insertdatetime', 'link', 'lists', 'media',
+    'nonbreaking', 'pagebreak', 'preview', 'quickbars', 'save', 'searchreplace',
+    'table', 'visualblocks', 'visualchars', 'wordcount',
+    /* Premium plugins for demo purposes only */
+    'mediaembed',
+  ],
   editimage_cors_hosts: ['picsum.photos'],
   menubar: 'file edit view insert format tools table help',
   toolbar: "undo redo | accordion accordionremove | blocks fontfamily fontsize | bold italic underline strikethrough | align numlist bullist | link image | table media | lineheight outdent indent| forecolor backcolor removeformat | charmap emoticons | code fullscreen preview | save print | pagebreak anchor codesample | ltr rtl",

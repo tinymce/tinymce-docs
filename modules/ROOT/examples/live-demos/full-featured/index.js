@@ -525,13 +525,17 @@ const revisionhistory_fetch_revision = (_editor, revision) => new Promise((resol
 tinymce.init({
   selector: 'textarea#full-featured',
   plugins: [
-    'ai', 'suggestededits', 'preview', 'powerpaste', 'casechange', 'importcss', 'tinydrive', 'searchreplace',
+    'ai', 'suggestededits', 'preview', 'powerpaste', 'casechange', 'importcss', 'searchreplace',
     'autolink', 'autosave', 'save', 'directionality', 'advcode', 'visualblocks', 'visualchars', 'fullscreen',
-    'image', 'link', 'math', 'media', 'mediaembed', 'codesample', 'table', 'charmap', 'pagebreak', 'nonbreaking',
+    /* Image plugin removed due to compatibility issues with the uploadcare plugin */
+    /* 'image', 'editimage', tinydrive', */
+    'link', 'math', 'media', 'mediaembed', 'codesample', 'table', 'charmap', 'pagebreak', 'nonbreaking',
     'anchor', 'tableofcontents', 'insertdatetime', 'advlist', 'lists', 'checklist', 'wordcount', 'tinymcespellchecker',
-    'a11ychecker', 'editimage', 'help', 'formatpainter', 'permanentpen', 'pageembed', 'charmap', 'tinycomments', 'mentions',
+    'a11ychecker', 'help', 'formatpainter', 'permanentpen', 'pageembed', 'charmap', 'tinycomments', 'mentions',
     'quickbars', 'emoticons', 'advtable', 'footnotes', 'mergetags', 'autocorrect', 'typography', 'advtemplate', 'markdown',
-    'revisionhistory', 'importword', 'exportword', 'exportpdf'
+    'revisionhistory', 'importword', 'exportword', 'exportpdf',
+    /* Uploadcare plugin for image and video optimization */
+    'uploadcare',
   ],
   menu: {
     tc: {
@@ -541,12 +545,17 @@ tinymce.init({
   },
   menubar: 'file edit view insert format tools table tc help',
   // Note: if a toolbar item requires a plugin, the item will not present in the toolbar if the plugin is not also loaded.
-  toolbar: "undo redo | importword exportword exportpdf | suggestededits | revisionhistory | aidialog aishortcuts | blocks fontsizeinput | bold italic | align numlist bullist | link image | table math media pageembed | lineheight  outdent indent | strikethrough forecolor backcolor formatpainter removeformat | charmap emoticons checklist | code fullscreen preview | save print | pagebreak anchor codesample footnotes mergetags | addtemplate inserttemplate | addcomment showcomments | ltr rtl casechange | spellcheckdialog a11ycheck", 
+  toolbar: "undo redo | insertfile |importword exportword exportpdf | suggestededits | revisionhistory | aidialog aishortcuts | blocks fontsizeinput | bold italic | align numlist bullist | link uploadcare uploadcare-video | table math media pageembed | lineheight  outdent indent | strikethrough forecolor backcolor formatpainter removeformat | charmap emoticons checklist | code fullscreen preview | save print | pagebreak anchor codesample footnotes mergetags | addtemplate inserttemplate | addcomment showcomments | ltr rtl casechange | spellcheckdialog a11ycheck", 
   mobile: {
-    plugins: 'ai suggestededits preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link math media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker help formatpainter pageembed charmap mentions quickbars emoticons advtable footnotes mergetags autocorrect typography advtemplate',
+    plugins: 'ai suggestededits preview powerpaste casechange importcss searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen link math media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker help formatpainter pageembed charmap mentions quickbars emoticons advtable footnotes mergetags autocorrect typography advtemplate uploadcare'
+    /* The below plugins have been removed due to compatibility issues with the uploadcare plugin */
+    /* 'image', 'editimage', 'tinydrive', */
   },
+  
+  /* editimage_cors_hosts: ['picsum.photos'], */
 
-  editimage_cors_hosts: ['picsum.photos'],
+  /* Tiny Drive has been disabled due to compatibility issues with the uploadcare plugin */
+  /*
   tinydrive_token_provider: (success, failure) => {
     success({ token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.Ks_BdfH4CWilyzLNk8S2gDARFhuxIauLa8PwhdEQhEo' });
   },
@@ -554,13 +563,15 @@ tinymce.init({
   tinydrive_dropbox_app_key: 'jee1s9eykoh752j',
   tinydrive_google_drive_key: 'AIzaSyAsVRuCBc-BLQ1xNKtnLHB3AeoK-xmOrTc',
   tinydrive_google_drive_client_id: '748627179519-p9vv3va1mppc66fikai92b3ru73mpukf.apps.googleusercontent.com',
-  
+  */
+ 
   autosave_ask_before_unload: true,
   autosave_interval: '30s',
   autosave_prefix: '{path}{query}-{id}-',
   autosave_restore_when_empty: false,
   autosave_retention: '2m',
-  image_advtab: true,
+  /* Image plugin options have been disabled due to compatibility issues with the uploadcare plugin */
+  /* image_advtab: true, */
   typography_default_lang: 'en-US',
   typography_langs: [
     'en-US',
@@ -624,25 +635,26 @@ tinymce.init({
     { title: 'My page 1', value: 'https://www.tiny.cloud' },
     { title: 'My page 2', value: 'http://www.moxiecode.com' }
   ],
-  image_list: [
+  /* Image plugin options have been disabled due to compatibility issues with the uploadcare plugin */
+  /* image_list: [
     { title: 'My page 1', value: 'https://www.tiny.cloud' },
     { title: 'My page 2', value: 'http://www.moxiecode.com' }
   ],
   image_class_list: [
     { title: 'None', value: '' },
     { title: 'Some class', value: 'class-name' }
-  ],
+  ], */
   importcss_append: true,
   height: 600,
-  image_caption: true,
-  quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
+  /* image_caption: true, */
+  /* quickimage removed from quickbars_selection_toolbar due to compatibility with uploadcare plugin */
+  quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quicktable',
   noneditable_class: 'mceNonEditable',
   toolbar_mode: 'sliding',
   spellchecker_ignore_list: ['Ephox', 'Moxiecode', 'tinymce', 'TinyMCE'],
   content_style: '.mymention{ color: gray; }' +
   'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
-  contextmenu: 'link image editimage table spellchecker configurepermanentpen',
-  a11y_advanced_options: true,
+  contextmenu: 'link uploadcare uploadcare-video table spellchecker configurepermanentpen',
   
   ai_request,
   
@@ -666,6 +678,29 @@ tinymce.init({
   mentions_menu_hover,
   mentions_menu_complete,
   mentions_select,
+  
+  uploadcare_public_key: '630992ad50fe2291c406',
+  uploadcare_cdn_base_url: 'https://tiny.ucarecdn.com',
+  uploadcare_store_type: 'temporary',
+  uploadcare_srcset_steps: [100, 200, 300, 500, 750, 1000],
+  uploadcare_video_properties: { 
+    posterOffset: "1:35"
+  },
+  a11y_advanced_options: true,
+  uploadcare_filters: [
+    { name: 'none' }, // No filter applied
+    { name: 'adaris', amount: -100 }, // Adaris with inverted effect (amount -100), label defaults to 'adaris'
+    { name: 'adaris', amount: -100, label: 'Vintage Fade' }, // Adaris with inverted effect (amount -100), label reads 'Vintage Fade'
+    { name: 'adaris', amount: 0, label: 'Base' }, // Adaris with neutral effect (amount 0), label reads 'Base'
+    { name: 'adaris', amount: 50, label: 'Light' }, // Adaris with light effect (amount 50), label reads 'Light'
+    { name: 'adaris', amount: 100, label: 'Standard' }, // Adaris with standard effect (amount 100), label reads 'Standard'
+    { name: 'adaris', amount: 200, label: 'Intense' }, // Adaris with intense effect (amount 200), label reads 'Intense'
+    { name: 'zevcen', amount: 200, label: 'Glow Boost' }, // Zevcen with intense effect (amount 200), label reads 'Glow Boost'
+    { name: 'galen', amount: 80, label: 'Soft Focus' }, // Galen with softening effect (amount 80), label reads 'Soft Focus'
+    { name: 'carris', amount: 120, label: 'Sharp Contrast' }, // Carris with high contrast (amount 120), label reads 'Sharp Contrast'
+    { name: 'ferand', amount: 60, label: 'Light Touch' }, // Ferand with light enhancement (amount 60), label reads 'Light Touch'
+    { name: 'sorahel', amount: -50, label: 'Night Mood' } // Sorahel with darkened effect (amount -50), label reads 'Night Mood'
+  ],
   
   autocorrect_capitalize: true,
   mergetags_list: [

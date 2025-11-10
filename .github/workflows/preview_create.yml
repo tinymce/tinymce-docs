@@ -68,10 +68,8 @@ jobs:
         build: ./build/
         redirects: ./redirects.json
         bucket: tiny-cloud-antora-docs-preview
-        prefix: ${PR}/${RUN}
+        prefix: ${{ vars.PR }}/${{ vars.RUN }}
         parallel: 10
-      env:
-        ACTIONS_STEP_DEBUG: true
 
     - name: Update pointer to current run output # put in the docs subfolder as we rely on that path in redirects
       run: |

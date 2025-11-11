@@ -391,16 +391,21 @@ const revisions = [
       </thead>
       <tbody>
       <tr>
-      <td style="text-align: center;">TinyMCE</td>
-      <td style="text-align: center;">Free</td>
-      <td style="text-align: center;">YES!</td>
+      <td>TinyMCE</td>
+      <td>Free</td>
+      <td>YES!</td>
+      </tr>
+      <tr>
+      <td>Plupload</td>
+      <td>Free</td>
+      <td>YES!</td>
       </tr>
       </tbody>
       </table>
       <h2>Found a bug?</h2>
       <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
       <h2>Finally ...</h2>
-      <p><s>Need file uploads in your app? Consider using <a href="https://www.tiny.cloud/docs/tinymce/latest/uploadcare/" target="_blank" rel="noopener noreferrer">Uploadcare</a> with TinyMCE for a fast, modern upload experience.</s></p>
+      <p><s>Don't forget to check out our other product <a href="http://www.plupload.com" target="_blank" rel="noopener">Plupload</a>, your ultimate upload solution featuring HTML5 upload support.</s></p>
       <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>
     `,
   },
@@ -432,16 +437,21 @@ const revisions = [
       </thead>
       <tbody>
       <tr>
-      <td style="text-align: center;">TinyMCE</td>
-      <td style="text-align: center;">Free</td>
-      <td style="text-align: center;">YES!</td>
+      <td>TinyMCE</td>
+      <td>Free</td>
+      <td>YES!</td>
+      </tr>
+      <tr>
+      <td>Plupload</td>
+      <td>Free</td>
+      <td>YES!</td>
       </tr>
       </tbody>
       </table>
       <h2>Found a bug?</h2>
       <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
       <h2>Finally ...</h2>
-      <p>Need file uploads in your app? Consider using <a href="https://www.tiny.cloud/docs/tinymce/latest/uploadcare/" target="_blank" rel="noopener noreferrer">Uploadcare</a> with TinyMCE for a fast, modern upload experience.</p>
+      <p>Don't forget to check out our other product <a href="http://www.plupload.com" target="_blank" rel="noopener">Plupload</a>, your ultimate upload solution featuring HTML5 upload support.</p>
       <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>
     `,
   },
@@ -473,16 +483,21 @@ const revisions = [
       </thead>
       <tbody>
       <tr>
-      <td style="text-align: center;">TinyMCE</td>
-      <td style="text-align: center;">Free</td>
-      <td style="text-align: center;">YES!</td>
+      <td>TinyMCE</td>
+      <td>Free</td>
+      <td>YES!</td>
+      </tr>
+      <tr>
+      <td>Plupload</td>
+      <td>Free</td>
+      <td>YES!</td>
       </tr>
       </tbody>
       </table>
       <h2>Found a bug?</h2>
       <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
       <h2>Finally ...</h2>
-      <p>Need file uploads in your app? Consider using <a href="https://www.tiny.cloud/docs/tinymce/latest/uploadcare/" target="_blank" rel="noopener noreferrer">Uploadcare</a> with TinyMCE for a fast, modern upload experience.</p>
+      <p>Don't forget to check out our other product <a href="http://www.plupload.com" target="_blank" rel="noopener">Plupload</a>, your ultimate upload solution featuring HTML5 upload support.</p>
       <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>
     `,
   }
@@ -526,7 +541,7 @@ tinymce.init({
   },
   menubar: 'file edit view insert format tools table tc help',
   // Note: if a toolbar item requires a plugin, the item will not present in the toolbar if the plugin is not also loaded.
-  toolbar: "undo redo | importword exportword exportpdf | suggestededits | revisionhistory | aidialog aishortcuts | blocks fontsizeinput | bold italic | align numlist bullist | link uploadcare uploadcare-video | table math media pageembed | lineheight  outdent indent | strikethrough forecolor backcolor formatpainter removeformat | charmap emoticons checklist | code fullscreen preview | save print | pagebreak anchor codesample footnotes mergetags | addtemplate inserttemplate | addcomment showcomments | ltr rtl casechange | spellcheckdialog a11ycheck", 
+  toolbar: "undo redo | insertfile |importword exportword exportpdf | suggestededits | revisionhistory | aidialog aishortcuts | blocks fontsizeinput | bold italic | align numlist bullist | link uploadcare uploadcare-video | table math media pageembed | lineheight  outdent indent | strikethrough forecolor backcolor formatpainter removeformat | charmap emoticons checklist | code fullscreen preview | save print | pagebreak anchor codesample footnotes mergetags | addtemplate inserttemplate | addcomment showcomments | ltr rtl casechange | spellcheckdialog a11ycheck", 
   mobile: {
     plugins: 'ai suggestededits preview powerpaste casechange importcss searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen link math media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker help formatpainter pageembed charmap mentions quickbars emoticons advtable footnotes mergetags autocorrect typography advtemplate uploadcare'
   },
@@ -632,9 +647,7 @@ tinymce.init({
   mentions_menu_complete,
   mentions_select,
   
-  uploadcare_public_key: '630992ad50fe2291c406',
-  uploadcare_cdn_base_url: 'https://tiny.ucarecdn.com',
-  uploadcare_store_type: 'temporary',
+  uploadcare_public_key: '<your-public-key>',
   uploadcare_srcset_steps: [100, 200, 300, 500, 750, 1000],
   uploadcare_video_properties: { 
     posterOffset: "1:35"

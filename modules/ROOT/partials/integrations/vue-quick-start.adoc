@@ -246,16 +246,16 @@ import Editor from '@tinymce/tinymce-vue'
 
 [[deploying-tinymce-independent]]
 == Deploying {productname} independent of the Vue.js application
-+
+
 Deploying {productname} independent of the Vue.js application. To use a {productname} instance that has been deployed independent of the Vue.js application, use an HTML `+<script>+` tag.
-+
+
 To use an independent deployment of {productname}, add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
-+
+
 [source,html]
 ----
 <script src="/path/to/tinymce.min.js"></script>
 ----
-+
+
 To use an independent deployment of {productname} with the example create a Vue.js application, add the `+<script>+` to `/path/to/tinymce-vue-demo/public/index.html`.
 endif::[]
 

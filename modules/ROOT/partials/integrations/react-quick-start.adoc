@@ -297,11 +297,12 @@ endif::[]
 ifeval::["{productSource}" == "zip"]
 ifeval::["{productUse}" == "host"]
 . Install the `+@tinymce/tinymce-react+` package.
++
 [source,sh]
 ----
 npm install @tinymce/tinymce-react
 ----
-
++
 . Unzip the content of the `+tinymce/js+` folder from the link:{download-enterprise}[{productname} zip] into the `+public+` folder. Afterwards the directory listing should be similar to below:
 +
 .> `tree -L 2 public`
@@ -325,7 +326,7 @@ public
     ├── tinymce.d.ts
     └── tinymce.min.js
 ----
-
++
 . Using a text editor, open `+./eslint.config.js` and add `+'src/tinymce'+` to the `+ignores+` array.
 +
 .Diff of `.eslint.config.js`
@@ -338,7 +339,7 @@ export default tseslint.config(
      extends: [js.configs.recommended, ...tseslint.configs.recommended],
      files: ['**/*.{ts,tsx}'],
 ----
-
++
 . Using a text editor, open `+./src/App.jsx+` and replace the contents with:
 +
 [source,jsx]
@@ -381,6 +382,7 @@ export default function App() {
   );
 }
 ----
++
 . Update the `+licenseKey+` option in the editor element and include your xref:license-key.adoc[License Key].
 endif::[]
 ifeval::["{productUse}" == "bundle"]
@@ -391,7 +393,7 @@ ifeval::["{productUse}" == "bundle"]
 ----
 npm install @tinymce/tinymce-react script-loader
 ----
-
++
 . Unzip the content of the `+tinymce/js+` folder from the link:{download-enterprise}[{productname} zip] into the `+src+` folder. Afterwards the directory listing should be similar to below:
 +
 .> `tree -L 2 src`
@@ -417,7 +419,7 @@ src
     ├── tinymce.d.ts
     └── tinymce.min.js
 ----
-
++
 . Using a text editor, open `+./eslint.config.js+` and add `+'src/tinymce'+` to the `+ignores+` array.
 +
 .Diff of `.eslint.config.js`
@@ -437,7 +439,7 @@ index 092408a..1ab8db4 100644
      extends: [js.configs.recommended, ...tseslint.configs.recommended],
      files: ['**/*.{ts,tsx}'],
 ----
-
++
 . Using a text editor, create `+./src/BundledEditor.jsx+` and set the contents to:
 +
 [source,jsx]
@@ -502,9 +504,8 @@ export default function BundledEditor(props) {
   );
 }
 ----
-
++
 . Update the `+licenseKey+` option in the editor element and include your xref:license-key.adoc[License Key].
-
 . Using a text editor, open `+./src/App.jsx+` and replace the contents with:
 +
 [source,jsx]

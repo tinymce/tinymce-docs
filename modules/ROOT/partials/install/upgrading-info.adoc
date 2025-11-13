@@ -24,7 +24,6 @@ Select from the following package managers.
 * xref:npm[npm]
 * xref:composer[Composer]
 * xref:nuget[NuGet]
-* xref:bower[Bower]
 
 [[yarn]]
 ==== Yarn
@@ -64,16 +63,6 @@ To upgrade to {productname} {productminorversion} using NuGet, run:
 [source,sh,subs="attributes+"]
 ----
 Install-Package {productname}
-----
-
-[[bower]]
-==== Bower
-
-To upgrade to {productname} {productminorversion} using Bower, run:
-
-[source,sh,subs="attributes+"]
-----
-bower install {prodnamecode}#{productminorversion} --save
 ----
 
 endif::[]

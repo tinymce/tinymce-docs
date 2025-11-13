@@ -10,10 +10,6 @@ ifeval::["{productSource}" == "npm"]
 :sourcename: NPM or Yarn
 endif::[]
 
-ifeval::["{productSource}" == "bower"]
-:sourcename: Bower
-endif::[]
-
 ifeval::["{productSource}" == "nuget"]
 :sourcename: Nuget
 endif::[]
@@ -68,20 +64,6 @@ yarn add tinymce@^{productmajorversion}
 ----
 
 The location of the main {productname} script will be: `+node_modules/tinymce/tinymce.min.js+`. Ensure the `+tinymce+` directory containing the `+tinymce.min.js+` file is accessible for the target page or application by either:
-
-* Using a webserver route, or
-* Copying the `+tinymce+` directory to a public folder using a build tool such as Gulp or Webpack.
-endif::[]
-ifeval::["{productSource}" == "bower"]
-
-To add {productname} to a Bower project, run the following on a command line:
-
-[source,sh,subs="attributes+"]
-----
-bower install tinymce#^{productmajorversion}
-----
-
-The location of the main {productname} script will be: `+bower_components/tinymce/tinymce.min.js+`. Ensure the `+tinymce+` directory containing the `+tinymce.min.js+` file is accessible for the target page or application by either:
 
 * Using a webserver route, or
 * Copying the `+tinymce+` directory to a public folder using a build tool such as Gulp or Webpack.

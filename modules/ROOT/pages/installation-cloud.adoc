@@ -1,17 +1,16 @@
-= Installing {productname}
-:navtitle: Installation
-:description: Learn how to install {productname} via {cloudname}, package managers, self-hosted zips for various integration options.
-:page-aliases: integrations.adoc
+= Installing {productname} using the {cloudname}
+:navtitle: Cloud
+:description: Get started with TinyMCE using the Tiny Cloud CDN - the fastest way to get {productname} up and running.
+:keywords: tinymce cloud, cdn, cloud hosting
 
-
-== Quick start guides
+== Quick start guide
 
 [cols=2*a]
 |===
 
 |
 [.lead]
-xref:cloud-quick-start.adoc[Cloud quick start]
+xref:cloud-quick-start.adoc[Quick start guide]
 
 Get started with {productname} using the {cloudname} in minutes.
 |
@@ -19,7 +18,7 @@ Get started with {productname} using the {cloudname} in minutes.
 
 == Integrations
 
-Get started with {productname} in your preferred integration:
+Get started with {productname} in your preferred framework:
 
 === Supported
 
@@ -30,48 +29,49 @@ The following packages are thin wrappers around {productname} to make it easier 
 
 |
 [.lead]
-xref:react-cloud.adoc[React]
+link:https://www.tiny.cloud/docs/tinymce/latest/react-cloud/[React]
 
 Integrate {productname} into your React application using the {cloudname}.
 
 |
 [.lead]
-xref:angular-cloud.adoc[Angular]
+link:https://www.tiny.cloud/docs/tinymce/latest/angular-cloud/[Angular]
 
 Integrate {productname} into your Angular application using the {cloudname}.
 
 |
 [.lead]
-xref:vue-cloud.adoc[Vue.js]
+link:https://www.tiny.cloud/docs/tinymce/latest/vue-cloud/[Vue.js]
 
 Integrate {productname} into your Vue.js application using the {cloudname}.
 
 |
 [.lead]
-xref:blazor-cloud.adoc[Blazor]
+link:https://www.tiny.cloud/docs/tinymce/latest/blazor-cloud/[Blazor]
 
 Integrate {productname} into your Blazor application using the {cloudname}.
 
 |
 [.lead]
-xref:svelte-cloud.adoc[Svelte]
+link:https://www.tiny.cloud/docs/tinymce/latest/svelte-cloud/[Svelte]
 
 Integrate {productname} into your Svelte application using the {cloudname}.
 
 |
 [.lead]
-xref:webcomponent-cloud.adoc[Web Component]
+link:https://www.tiny.cloud/docs/tinymce/latest/webcomponent-cloud/[Web Component]
 
 Integrate {productname} as a web component using the {cloudname}.
 
 |
 [.lead]
-xref:jquery-cloud.adoc[jQuery]
+link:https://www.tiny.cloud/docs/tinymce/latest/jquery-cloud/[jQuery]
 
 Integrate {productname} with the jQuery JavaScript library using the {cloudname}.
 
 // Empty cell to even out rows
 |
+
 |===
 
 === Backend Integrations
@@ -81,19 +81,19 @@ Integrate {productname} with the jQuery JavaScript library using the {cloudname}
 
 |
 [.lead]
-xref:django-cloud.adoc[Django]
+link:https://www.tiny.cloud/docs/tinymce/latest/django-cloud/[Django]
 
 Integrate {productname} into your Django application using the {cloudname}.
 
 |
 [.lead]
-xref:laravel-tiny-cloud.adoc[Laravel]
+link:https://www.tiny.cloud/docs/tinymce/latest/laravel-tiny-cloud/[Laravel]
 
 Integrate {productname} into your Laravel application using the {cloudname}.
 
 |
 [.lead]
-xref:rails-cloud.adoc[Ruby on Rails]
+link:https://www.tiny.cloud/docs/tinymce/latest/rails-cloud/[Ruby on Rails]
 
 Integrate {productname} into your Ruby on Rails application using the {cloudname}.
 
@@ -107,11 +107,15 @@ Integrate {productname} into your Ruby on Rails application using the {cloudname
 [cols=2*a]
 |===
 
-
 |
 [.lead]
-xref:bootstrap-cloud.adoc[Bootstrap]
+link:https://www.tiny.cloud/docs/tinymce/latest/bootstrap-cloud/[Bootstrap]
 
 Integrate {productname} with the Bootstrap CSS framework using the {cloudname}.
+
+// Empty cell to even out rows
 |
+
 |===
+
+include::partial$misc/admon-account-creation-and-social-option.adoc[]

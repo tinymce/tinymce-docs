@@ -1,0 +1,30 @@
+Initialize {productname} {productmajorversion} on any element (or elements) on the web page by passing an object containing a `+selector+` value to `+tinymce.init()+`. The `+selector+` value can be any valid https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors[CSS selector].
+
+For example, to replace `+<textarea id="mytextarea">+` with a {productname} {productmajorversion} editor instance, pass the selector `+'#mytextarea'+` to `+tinymce.init()+`:
+
+[source,html,subs="attributes+"]
+----
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <script src="/path/or/uri/to/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
+    <script>
+      tinymce.init({
+        selector: '#mytextarea',
+        license_key: 'gpl' // gpl for open source, T8LK:... for commercial
+      });
+    </script>
+  </head>
+
+  <body>
+    <h1>{productname} Quick Start Guide</h1>
+    <form method="post">
+      <textarea id="mytextarea">Hello, World!</textarea>
+    </form>
+  </body>
+</html>
+----
+

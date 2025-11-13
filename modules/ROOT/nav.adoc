@@ -1,58 +1,75 @@
 * xref:getting-started.adoc[Getting started]
 ** xref:introduction-to-tinymce.adoc[Introduction to {productname}]
 ** xref:installation.adoc[Installation]
-*** Cloud
-**** xref:cloud-quick-start.adoc[Quick start]
-**** xref:react-cloud.adoc[React]
-**** xref:angular-cloud.adoc[Angular]
-**** xref:vue-cloud.adoc[Vue.js]
-**** xref:blazor-cloud.adoc[Blazor]
-**** xref:svelte-cloud.adoc[Svelte]
-**** xref:webcomponent-cloud.adoc[Web Component]
-**** xref:jquery-cloud.adoc[jQuery]
-**** xref:bootstrap-cloud.adoc[Bootstrap]
-**** xref:django-cloud.adoc[Django]
-**** xref:laravel-tiny-cloud.adoc[Laravel]
-**** xref:rails-cloud.adoc[Ruby on Rails]
-*** Self-hosted
-**** React
-***** xref:react-pm-host.adoc[Using a package manager with hosting]
-***** xref:react-pm-bundle.adoc[Using a package manager with bundling]
-***** xref:react-zip-host.adoc[Using a .zip package with hosting]
-***** xref:react-zip-bundle.adoc[Using a .zip package with bundling]
-**** Angular
-***** xref:angular-pm.adoc[Using a package manager]
-***** xref:angular-zip.adoc[Using a .zip package]
-**** Vue.js
-***** xref:vue-pm.adoc[Using a package manager]
-***** xref:vue-zip.adoc[Using a .zip package]
-**** Blazor
-***** xref:blazor-pm.adoc[Using a package manager]
-***** xref:blazor-zip.adoc[Using a .zip package]
-**** Svelte
-***** xref:svelte-pm.adoc[Using a package manager]
-***** xref:svelte-zip.adoc[Using a .zip package]
-**** Web Component
-***** xref:webcomponent-pm.adoc[Using a package manager]
-***** xref:webcomponent-zip.adoc[Using a .zip package]
-**** xref:swing.adoc[Java Swing]
-**** xref:shadow-dom.adoc[Shadow DOM]
-**** xref:jquery-pm.adoc[jQuery]
-**** xref:bootstrap-zip.adoc[Bootstrap]
-**** xref:django-zip.adoc[Django]
-**** xref:expressjs-pm.adoc[Node.js + Express]
-**** Laravel
-***** xref:laravel-composer-install.adoc[Using the Composer package]
-***** xref:laravel-zip-install.adoc[Using a .zip package]
-**** Ruby on Rails
-***** xref:rails-third-party.adoc[Using a package manager]
-***** xref:rails-zip.adoc[Using a .zip package]
-**** xref:wordpress.adoc[WordPress]
-**** xref:npm-projects.adoc[NPM projects]
-**** xref:php-projects.adoc[PHP projects]
-**** xref:dotnet-projects.adoc[.NET projects]
-**** xref:bower-projects.adoc[Bower projects]
-**** xref:zip-install.adoc[{productname} .zip deployments]
+*** xref:installation-cloud.adoc[Cloud]
+**** xref:cloud-quick-start.adoc[Quick start guide]
+**** Supported
+***** xref:react-cloud.adoc[React]
+***** xref:angular-cloud.adoc[Angular]
+***** xref:vue-cloud.adoc[Vue.js]
+***** xref:blazor-cloud.adoc[Blazor]
+***** xref:svelte-cloud.adoc[Svelte]
+***** xref:webcomponent-cloud.adoc[Web Component]
+***** xref:jquery-cloud.adoc[jQuery]
+**** Backend Integrations
+***** xref:django-cloud.adoc[Django]
+***** xref:laravel-tiny-cloud.adoc[Laravel]
+***** xref:rails-cloud.adoc[Ruby on Rails]
+**** Other Integrations
+***** xref:bootstrap-cloud.adoc[Bootstrap]
+*** xref:installation-self-hosted.adoc[Self-hosted]
+**** xref:npm-projects.adoc[Quick start guide]
+**** Supported
+***** React
+****** xref:react-pm-host.adoc[Using a package manager with hosting]
+****** xref:react-pm-bundle.adoc[Using a package manager with bundling]
+***** Angular
+****** xref:angular-pm.adoc[Using a package manager]
+***** Vue.js
+****** xref:vue-pm.adoc[Using a package manager]
+***** Blazor
+****** xref:blazor-pm.adoc[Using a package manager]
+***** Svelte
+****** xref:svelte-pm.adoc[Using a package manager]
+***** Web Component
+****** xref:webcomponent-pm.adoc[Using a package manager]
+***** xref:jquery-pm.adoc[jQuery]
+***** xref:swing.adoc[Java Swing]
+**** Backend Integrations
+***** Laravel
+****** xref:laravel-composer-install.adoc[Using the Composer package]
+***** Ruby on Rails
+****** xref:rails-third-party.adoc[Using a package manager]
+***** xref:expressjs-pm.adoc[Node.js + Express]
+**** Other Integrations
+***** xref:shadow-dom.adoc[Shadow DOM]
+***** xref:php-projects.adoc[PHP projects]
+***** xref:dotnet-projects.adoc[.NET projects]
+***** xref:bower-projects.adoc[Bower projects]
+***** xref:wordpress.adoc[WordPress]
+*** xref:installation-zip.adoc[ZIP]
+**** xref:zip-install.adoc[Quick start guide]
+**** Supported
+***** React
+****** xref:react-zip-host.adoc[Using a .zip package with hosting]
+****** xref:react-zip-bundle.adoc[Using a .zip package with bundling]
+***** Angular
+****** xref:angular-zip.adoc[Using a .zip package]
+***** Vue.js
+****** xref:vue-zip.adoc[Using a .zip package]
+***** Blazor
+****** xref:blazor-zip.adoc[Using a .zip package]
+***** Svelte
+****** xref:svelte-zip.adoc[Using a .zip package]
+***** Web Component
+****** xref:webcomponent-zip.adoc[Using a .zip package]
+***** xref:swing.adoc[Java Swing]
+**** Backend Integrations
+***** xref:django-zip.adoc[Django]
+***** xref:laravel-zip-install.adoc[Laravel]
+***** xref:rails-zip.adoc[Ruby on Rails]
+**** Other Integrations
+***** xref:bootstrap-zip.adoc[Bootstrap]
 ** xref:upgrading.adoc[Upgrading {productname}]
 * xref:how-to-guides.adoc[How-to guides]
 ** Learn the basics
@@ -63,64 +80,6 @@
 *** xref:spell-checking.adoc[Spell checking]
 *** xref:editor-content-css.adoc[CSS for rendering content]
 *** xref:userlookup.adoc[Using the UserLookup API]
-** Environment setup guides
-*** React framework
-**** xref:react-cloud.adoc[Using the Tiny Cloud]
-**** xref:react-pm-host.adoc[Using a package manager with hosting]
-**** xref:react-pm-bundle.adoc[Using a package manager with bundling]
-**** xref:react-zip-host.adoc[Using a .zip package with hosting]
-**** xref:react-zip-bundle.adoc[Using a .zip package with bundling]
-**** xref:react-ref.adoc[Technical reference]
-*** Angular framework
-**** xref:angular-cloud.adoc[Using the Tiny Cloud]
-**** xref:angular-pm.adoc[Using a package manager]
-**** xref:angular-zip.adoc[Using a .zip package]
-**** xref:angular-ref.adoc[Technical reference]
-*** Vue.js framework
-**** xref:vue-cloud.adoc[Using the Tiny Cloud]
-**** xref:vue-pm.adoc[Using a package manager]
-**** xref:vue-zip.adoc[Using a .zip package]
-**** xref:vue-ref.adoc[Technical reference]
-*** Blazor framework
-**** xref:blazor-cloud.adoc[Using the Tiny Cloud]
-**** xref:blazor-pm.adoc[Using a package manager]
-**** xref:blazor-zip.adoc[Using a .zip package]
-**** xref:blazor-ref.adoc[Technical reference]
-*** Svelte framework
-**** xref:svelte-cloud.adoc[Using the Tiny Cloud]
-**** xref:svelte-pm.adoc[Using a package manager]
-**** xref:svelte-zip.adoc[Using a .zip package]
-**** xref:svelte-ref.adoc[Technical reference]
-*** Web Component
-**** xref:webcomponent-cloud.adoc[Using the Tiny Cloud]
-**** xref:webcomponent-pm.adoc[Using a package manager]
-**** xref:webcomponent-zip.adoc[Using a .zip package]
-**** xref:webcomponent-ref.adoc[Technical reference]
-*** xref:swing.adoc[Java Swing]
-*** jQuery
-**** xref:jquery-cloud.adoc[Using the Tiny Cloud]
-**** xref:jquery-pm.adoc[Using a package manager]
-*** Bootstrap framework
-**** xref:bootstrap-cloud.adoc[Using the Tiny Cloud]
-**** xref:bootstrap-zip.adoc[Using a .zip package]
-*** Django framework
-**** xref:django-cloud.adoc[Using the Tiny Cloud]
-**** xref:django-zip.adoc[Using a .zip package]
-*** xref:expressjs-pm.adoc[Node.js + Express]
-*** Laravel framework
-**** xref:laravel-tiny-cloud.adoc[Using the Tiny Cloud]
-**** xref:laravel-composer-install.adoc[Using the Composer package]
-**** xref:laravel-zip-install.adoc[Using a .zip package]
-*** Ruby on Rails framework
-**** xref:rails-cloud.adoc[Using the Tiny Cloud]
-**** xref:rails-third-party.adoc[Using a package manager]
-**** xref:rails-zip.adoc[Using a .zip package]
-*** xref:wordpress.adoc[WordPress]
-*** xref:npm-projects.adoc[NPM projects]
-*** xref:php-projects.adoc[PHP projects]
-*** xref:dotnet-projects.adoc[.NET projects]
-*** xref:bower-projects.adoc[Bower projects]
-*** xref:zip-install.adoc[{productname} .zip deployments]
 ** xref:cloud-deployment-guide.adoc[Cloud deployment guide]
 *** xref:editor-and-features.adoc[Cloud deployment of editor & plugins]
 *** xref:features-only.adoc[Cloud deployment of plugins Only]
@@ -328,13 +287,13 @@
 ***** xref:import-from-word-with-jwt-authentication-nodejs.adoc[Node.js]
 ***** xref:import-from-word-with-jwt-authentication-php.adoc[PHP]
 *** xref:editimage.adoc[Image Editing]
+*** xref:uploadcare.adoc[Media Optimizer]
+**** xref:uploadcare-image.adoc[Image]
+**** xref:uploadcare-video.adoc[Video]
 *** xref:inline-css.adoc[Inline CSS]
 *** xref:linkchecker.adoc[Link Checker]
 *** xref:math.adoc[Math]
 *** xref:markdown.adoc[Markdown]
-*** xref:uploadcare.adoc[Media Optimizer]
-**** xref:uploadcare-image.adoc[Image]
-**** xref:uploadcare-video.adoc[Video]
 *** xref:mentions.adoc[Mentions]
 *** xref:mergetags.adoc[Merge Tags]
 *** xref:moxiemanager.adoc[MoxieManager]

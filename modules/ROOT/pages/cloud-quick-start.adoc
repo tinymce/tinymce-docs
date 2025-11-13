@@ -5,6 +5,39 @@
 :keywords: tinymce, script, textarea
 :productSource: cloud
 
-include::partial$install/basic-quickstart-base.adoc[]
+== Install {productname} using the {cloudname}
+
+{productname} {productmajorversion} is a powerful and flexible rich text editor that can be embedded in web applications. This quick start covers how to add a {productname} editor to a web page using the {cloudname}.
 
 include::partial$misc/admon-account-creation-and-social-option.adoc[]
+
+== Include the {productname} script
+
+Include the following line of code in the `+<head>+` of an HTML page:
+
+[source,html,subs="attributes+"]
+----
+<script src="{cdnurl}" referrerpolicy="origin" crossorigin="anonymous"></script>
+----
+
+== Initialize {productname} as part of a web form
+
+include::partial$install/initialize-editor-cloud.adoc[]
+
+Adding this content to an HTML file and opening it in a web browser will load a {productname} editor, such as:
+
+liveDemo::default[]
+
+== Add your API key
+
+To remove the notice:
+
+**This domain is not registered with {cloudname}. Please see the quick start guide or create an account.**
+
+Replace `+no-api-key+` in the source script (`+<script src=...+`) with a {cloudname} API key, which is created when signing up to the link:{accountsignup}/[{cloudname}].
+
+Signing up for a {cloudname} API key will also provide a trial of the xref:plugins.adoc#premium-plugins[Premium Plugins].
+
+include::partial$install/save-content.adoc[]
+
+include::partial$misc/quickstart-next-steps.adoc[]

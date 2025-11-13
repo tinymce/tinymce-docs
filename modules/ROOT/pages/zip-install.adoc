@@ -2,6 +2,41 @@
 :navtitle: {productname} .zip deployments
 :description: Learn how to use {productname} from a .zip archive.
 :keywords: zip, archive, unzip, install
-:productSource: zip
 
-include::partial$install/basic-quickstart-base.adoc[]
+== Install {productname} using a .zip package
+
+{productname} {productmajorversion} is a powerful and flexible rich text editor that can be embedded in web applications. This quick start covers how to add a {productname} editor to a web page using a {productname} .zip package.
+
+To deploy {productname} from a .zip archive:
+
+include::partial$integrations/download-tinymce-zip.adoc[]
+
+. Unzip the archive into a public folder of your webserver, such as:
++
+[source,sh]
+----
+unzip tinymce_latest.zip -d /path/to/webserver/public/
+----
++
+The location of the main {productname} script will be: `+/path/to/webserver/public/tinymce/js/tinymce/tinymce.min.js+`.
+
+== Include the {productname} script
+
+Include the following line of code in the `+<head>+` of an HTML page:
+
+[source,html,subs="attributes+"]
+----
+<script src="/path/or/uri/to/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
+----
+
+== Initialize {productname} as part of a web form
+
+include::partial$install/initialize-editor-self-hosted.adoc[]
+
+Adding this content to an HTML file and opening it in a web browser will load a {productname} editor, such as:
+
+liveDemo::default[]
+
+include::partial$install/save-content.adoc[]
+
+include::partial$misc/quickstart-next-steps.adoc[]

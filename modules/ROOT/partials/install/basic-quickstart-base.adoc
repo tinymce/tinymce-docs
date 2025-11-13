@@ -7,7 +7,7 @@ ifeval::["{productSource}" == "composer"]
 endif::[]
 
 ifeval::["{productSource}" == "npm"]
-:sourcename: npm or Yarn
+:sourcename: NPM or Yarn
 endif::[]
 
 ifeval::["{productSource}" == "bower"]

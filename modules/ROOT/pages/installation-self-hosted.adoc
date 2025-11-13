@@ -1,0 +1,178 @@
+= Installing {productname} using a package manager
+:navtitle: Self-hosted
+:description: Install {productname} using npm, Yarn, or other package managers for self-hosted deployments.
+:keywords: npm, yarn, tinymce install, self-hosted
+
+== Quick start guide
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:npm-projects.adoc[Quick start guide]
+
+Install and configure {productname} in NPM-based projects.
+|
+|===
+
+== Integrations
+
+Get started with {productname} in your preferred integration:
+
+=== Supported
+
+The following packages are thin wrappers around {productname} to make it easier to integrate into your project:
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+link:https://www.tiny.cloud/docs/tinymce/latest/react-pm-host/[React (Hosting)]
+
+Integrate {productname} into your React application using a package manager with hosting.
+
+|
+[.lead]
+link:https://www.tiny.cloud/docs/tinymce/latest/react-pm-bundle/[React (Bundling)]
+
+Integrate {productname} into your React application using a package manager with bundling.
+
+|
+[.lead]
+link:https://www.tiny.cloud/docs/tinymce/latest/angular-pm/[Angular]
+
+Integrate {productname} into your Angular application using a package manager.
+
+|
+[.lead]
+link:https://www.tiny.cloud/docs/tinymce/latest/vue-pm/[Vue.js]
+
+Integrate {productname} into your Vue.js application using a package manager.
+
+|
+[.lead]
+link:https://www.tiny.cloud/docs/tinymce/latest/blazor-pm/[Blazor]
+
+Integrate {productname} into your Blazor application using a package manager.
+
+|
+[.lead]
+link:https://www.tiny.cloud/docs/tinymce/latest/svelte-pm/[Svelte]
+
+Integrate {productname} into your Svelte application using a package manager.
+
+|
+[.lead]
+link:https://www.tiny.cloud/docs/tinymce/latest/webcomponent-pm/[Web Component]
+
+Integrate {productname} as a web component using a package manager.
+
+|
+[.lead]
+link:https://www.tiny.cloud/docs/tinymce/latest/jquery-pm/[jQuery]
+
+Integrate {productname} with the jQuery JavaScript library using a package manager.
+
+|
+[.lead]
+link:https://www.tiny.cloud/docs/tinymce/latest/swing/[Java Swing]
+
+Integrate {productname} into your Java Swing application using a package manager.
+
+// Empty cell to even out rows
+|
+
+|===
+
+=== Backend Integrations
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+link:https://www.tiny.cloud/docs/tinymce/latest/laravel-composer-install/[Laravel]
+
+Integrate {productname} into your Laravel application using Composer.
+
+|
+[.lead]
+link:https://www.tiny.cloud/docs/tinymce/latest/rails-third-party/[Ruby on Rails]
+
+Integrate {productname} into your Ruby on Rails application using a package manager.
+
+|
+[.lead]
+link:https://www.tiny.cloud/docs/tinymce/latest/expressjs-pm/[Express.js]
+
+Integrate {productname} into your Express.js application using a package manager.
+
+// Empty cell to even out rows
+|
+
+|===
+
+=== Other Integrations
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+link:https://www.tiny.cloud/docs/tinymce/latest/shadow-dom/[Shadow DOM]
+
+Integrate {productname} with Shadow DOM using a package manager.
+
+|
+[.lead]
+link:https://www.tiny.cloud/docs/tinymce/latest/php-projects/[PHP Projects]
+
+Install and configure {productname} in PHP projects.
+
+|
+[.lead]
+link:https://www.tiny.cloud/docs/tinymce/latest/dotnet-projects/[.NET Projects]
+
+Install and configure {productname} in .NET projects.
+
+|
+[.lead]
+link:https://www.tiny.cloud/docs/tinymce/latest/bower-projects/[Bower Projects]
+
+Install and configure {productname} in Bower-based projects.
+
+|
+[.lead]
+link:https://www.tiny.cloud/docs/tinymce/latest/wordpress/[WordPress]
+
+Integrate {productname} into your WordPress site.
+
+|===
+
+== Package managers
+
+You can install {productname} using various package managers:
+
+[cols="1,2"]
+|===
+|*Package Manager*
+|*Command*
+
+|link:https://www.npmjs.com/package/tinymce[npm^]
+|`npm install tinymce`
+
+|link:https://classic.yarnpkg.com/en/package/tinymce[Yarn^]
+|`yarn add tinymce`
+
+|link:https://bower.io[Bower^]
+|`bower install tinymce` (_deprecated_)
+
+|link:https://packagist.org/packages/tinymce/tinymce[Composer (PHP)^]
+|`composer require tinymce/tinymce`
+
+|link:https://www.nuget.org/packages/TinyMCE[NuGet (.NET)^]
+|`Install-Package tinymce`
+
+|===

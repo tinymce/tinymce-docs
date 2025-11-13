@@ -18,7 +18,7 @@ This procedure requires https://nodejs.org/[Node.js (and npm)].
 +
 [source,sh]
 ----
-# npm 7+, extra double-dash is needed
+# NPM 7+, extra double-dash is needed
 npm create vite@5 tinymce-react-demo -- --template react-swc
 ----
 . Change to the newly created directory.

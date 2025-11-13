@@ -2,6 +2,49 @@
 :navtitle: .NET projects
 :description: Learn how to install {productname} from NuGet.
 :keywords: nuget .net install
-:productSource: nuget
 
-include::partial$install/basic-quickstart-base.adoc[]
+== Install {productname} using NuGet
+
+{productname} {productmajorversion} is a powerful and flexible rich text editor that can be embedded in web applications. This quick start covers how to add a {productname} editor to a web page using NuGet.
+
+To add {productname} to a .NET project, run the following on a command line:
+
+* Using the NuGet package manager console, run the following:
++
+[source,sh]
+----
+Install-Package {productname}
+----
+
+* Using the `+dotnet+` CLI, run the following:
++
+[source,sh]
+----
+dotnet add package {productname}
+----
+
+Ensure the `+tinymce+` directory containing the `+tinymce.min.js+` file is accessible for the target page or application by either:
+
+* Using a webserver route, or
+* Copying the `+tinymce+` directory to a public folder using a build tool.
+
+== Include the {productname} script
+
+Include the following line of code in the `+<head>+` of an HTML page:
+
+[source,html,subs="attributes+"]
+----
+<script src="/path/or/uri/to/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
+----
+
+== Initialize {productname} as part of a web form
+
+include::partial$install/initialize-editor-self-hosted.adoc[]
+
+Adding this content to an HTML file and opening it in a web browser will load a {productname} editor, such as:
+
+liveDemo::default[]
+
+include::partial$install/save-content.adoc[]
+
+include::partial$misc/quickstart-next-steps.adoc[]

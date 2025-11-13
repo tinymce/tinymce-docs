@@ -1,7 +1,7 @@
-= Bundling an npm version of TinyMCE with ES6 and Vite
+= Bundling an NPM version of TinyMCE with ES6 and Vite
 :navtitle: ES6 and npm
-:description_short: Bundling an npm version of TinyMCE in a project using ES6 and Vite
-:description: Bundling an npm version of TinyMCE in a project using ES6 and Vite
+:description_short: Bundling an NPM version of TinyMCE in a project using ES6 and Vite
+:description: Bundling an NPM version of TinyMCE in a project using ES6 and Vite
 :keywords: vite, es6, es2015, npm, modules, tinymce
 :installtype: a npm
 :bundler: https://vitejs.dev[Vite]
@@ -29,9 +29,9 @@ When self-hosting TinyMCE 8:
 
 == Procedures
 
-:is_zip_install: vite
-// use new vite dev-dependencies
-include::partial$module-loading/webpack-dev-dependencies.adoc[]
+:is_zip_install: false
+
+include::partial$module-loading/bundling-vite-es6-npm_vite-dependencies.adoc[]
 
 include::partial$module-loading/bundling-vite-es6-npm_editor.adoc[]
 

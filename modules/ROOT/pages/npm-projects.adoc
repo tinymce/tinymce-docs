@@ -1,7 +1,55 @@
-= Installing {productname} from NPM
-:navtitle: NPM projects
-:description: Learn how to install {productname} from NPM using npm and Yarn.
+= Quick start: {productname} from NPM or Yarn
+:navtitle: Quick start: NPM/Yarn
+:description: Learn how to install {productname} from NPM using NPM and Yarn.
 :keywords: yarn, npm, javascript, install
-:productSource: npm
 
-include::partial$install/basic-quickstart-base.adoc[]
+== Install {productname} using NPM or Yarn
+
+{productname} {productmajorversion} is a powerful and flexible rich text editor that can be embedded in web applications. This quick start covers how to add a {productname} editor to a web page using NPM or Yarn.
+
+== Prerequisites
+
+This procedure requires https://nodejs.org/[Node.js (and npm)] to be installed. Ensure you have a project directory with a `+package.json+` file. If you don't have a project yet, initialize one by running `+npm init+` or `+yarn init+` in your project directory.
+
+== Install {productname}
+
+To add {productname} to your project, navigate to your project directory and run one of the following commands:
+
+* *NPM:*
++
+[source,sh,subs="attributes+"]
+----
+npm install tinymce@^{productmajorversion}
+----
+* *Yarn:*
++
+[source,sh,subs="attributes+"]
+----
+yarn add tinymce@^{productmajorversion}
+----
+
+The location of the main {productname} script will be: `+node_modules/tinymce/tinymce.min.js+`. Ensure the `+tinymce+` directory containing the `+tinymce.min.js+` file is accessible for the target page or application by either:
+
+* Using a webserver route, or
+* Copying the `+tinymce+` directory to a public folder using a build tool such as Gulp or Webpack.
+
+== Include the {productname} script
+
+Include the following line of code in the `+<head>+` of an HTML page:
+
+[source,html,subs="attributes+"]
+----
+<script src="/path/or/uri/to/tinymce.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
+----
+
+== Initialize {productname} as part of a web form
+
+include::partial$install/initialize-editor-self-hosted.adoc[]
+
+Adding this content to an HTML file and opening it in a web browser will load a {productname} editor, such as:
+
+liveDemo::default[]
+
+include::partial$install/save-content.adoc[]
+
+include::partial$misc/quickstart-next-steps.adoc[]

@@ -172,7 +172,7 @@ Set the editor to readonly mode.
 [[scriptsrc]]
 === `+scriptSrc+`
 
-Use the `+scriptSrc+` property to specify the location of {productname} to lazy load when the application is not using {cloudname}. This setting is required if the application uses a self-hosted version of {productname}, such as the {productname} npm package or a .zip package of {productname}.
+Use the `+scriptSrc+` property to specify the location of {productname} to lazy load when the application is not using {cloudname}. This setting is required if the application uses a self-hosted version of {productname}, such as the {productname} NPM package or a .zip package of {productname}.
 
 *Type:* `+String+`
 

@@ -1,5 +1,5 @@
-= Installing {productname} from NPM
-:navtitle: NPM projects
+= Quick start: {productname} from NPM or Yarn
+:navtitle: Quick start: NPM/Yarn
 :description: Learn how to install {productname} from NPM using NPM and Yarn.
 :keywords: yarn, npm, javascript, install
 
@@ -7,15 +7,21 @@
 
 {productname} {productmajorversion} is a powerful and flexible rich text editor that can be embedded in web applications. This quick start covers how to add a {productname} editor to a web page using NPM or Yarn.
 
-To add {productname} to a project:
+== Prerequisites
 
-* Using npm, run the following on a command line:
+This procedure requires https://nodejs.org/[Node.js (and npm)] to be installed. Ensure you have a project directory with a `+package.json+` file. If you don't have a project yet, initialize one by running `+npm init+` or `+yarn init+` in your project directory.
+
+== Install {productname}
+
+To add {productname} to your project, navigate to your project directory and run one of the following commands:
+
+* *NPM:*
 +
 [source,sh,subs="attributes+"]
 ----
 npm install tinymce@^{productmajorversion}
 ----
-* Using Yarn, run the following on a command line:
+* *Yarn:*
 +
 [source,sh,subs="attributes+"]
 ----

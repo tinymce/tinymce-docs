@@ -9,6 +9,8 @@ const collaborator_id = 'mia-andersson';
 const now = new Date();
 const yesterday = new Date(now.getTime() - 24 * 60 * 60 * 1000).toISOString();
 const anhourago = new Date(now.getTime() - 60 * 60 * 1000).toISOString();
+const oneminuteago = new Date(now.getTime() - 1 * 60 * 1000).toISOString();
+const amomentago = new Date(now.getTime() - 30 * 1000).toISOString();
 const fakeDelay = 200;
 
 const randomString = () => {
@@ -23,29 +25,29 @@ const conversationDb = {
       author: user_id,
       authorName: 'James Wilson',
       authorAvatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg',
-      content: `What do you think about this? @${collaborator_id}?`,
-      createdAt: yesterday,
-      modifiedAt: yesterday
+      content: 'Do we want to say "rich text editor" or "WYSIWYG editor" here?',
+      createdAt: oneminuteago,
+      modifiedAt: oneminuteago
     }, {
       uid: 'mce-conversation_19679600221621399703917',
       author: collaborator_id,
       authorName: 'Mia Andersson',
       authorAvatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_mia-andersson_128_e6f9424b.jpg',
-      content: `I think this is a great idea @${user_id}!`,
-      createdAt: anhourago,
-      modifiedAt: anhourago,
+      content: 'I think "rich text editor" works ok.',
+      createdAt: amomentago,
+      modifiedAt: amomentago,
     }]
   },
   'mce-conversation_420304606321716900864126': {
     uid: 'mce-conversation_420304606321716900864126',
     comments: [{
       uid: 'mce-conversation_420304606321716900864126',
-      author: collaborator_id,
-      authorName: 'Mia Andersson',
-      authorAvatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_mia-andersson_128_e6f9424b.jpg',
-      content: `@${user_id} Please revise this sentence, exclamation points are unprofessional!`,
-      createdAt: yesterday,
-      modifiedAt: anhourago
+      author: user_id,
+      authorName: 'James Wilson',
+      authorAvatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg',
+      content: 'Let\'s mention Export to PDF here as well.',
+      createdAt: oneminuteago,
+      modifiedAt: oneminuteago
     }]
   }
 };
@@ -140,11 +142,12 @@ const tinycomments_reply = (req, done) => {
 };
 
 const tinycomments_delete = (req, done) => {
-  if (user_id === collaborator_id) { // Replace wth your own logic, e.g. check if user created the conversation
+  const conversation = conversationDb[req.conversationUid];
+  if (user_id === conversation.comments[0].author) { // Replace wth your own logic, e.g. check if user created the conversation
     delete conversationDb[req.conversationUid];
     setTimeout(() => done({ canDelete: true }), fakeDelay);
   } else {
-    setTimeout(() => done({ canDelete: false, reason: 'Must be admin user' }), fakeDelay);
+    setTimeout(() => done({ canDelete: false, reason: 'Must be conversation author' }), fakeDelay);
   }
 };
 
@@ -152,6 +155,15 @@ const tinycomments_resolve = (req, done) => {
   const conversation = conversationDb[req.conversationUid];
   if (user_id === conversation.comments[0].author) { // Replace wth your own logic, e.g. check if user has admin priveleges
     delete conversationDb[req.conversationUid];
+    setTimeout(() => done({ canResolve: true }), fakeDelay);
+  } else {
+    setTimeout(() => done({ canResolve: false, reason: 'Must be conversation author' }), fakeDelay);
+  }
+};
+
+const tinycomments_can_resolve = (req, done, fail) => {
+  const conversation = conversationDb[req.conversationUid];
+  if (user_id === conversation.comments[0].author) { // Replace wth your own logic, e.g. check if user has admin priveleges
     setTimeout(() => done({ canResolve: true }), fakeDelay);
   } else {
     setTimeout(() => done({ canResolve: false, reason: 'Must be conversation author' }), fakeDelay);
@@ -616,7 +628,7 @@ tinymce.init({
   ],
   importcss_append: true,
   height: 600,
-  quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quicktable',
+  quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quicktable | addcomment showcomments',
   noneditable_class: 'mceNonEditable',
   toolbar_mode: 'sliding',
   spellchecker_ignore_list: ['Ephox', 'Moxiecode', 'tinymce', 'TinyMCE'],
@@ -633,6 +645,7 @@ tinymce.init({
   tinycomments_reply,
   tinycomments_delete,
   tinycomments_resolve,
+  tinycomments_can_resolve,
   tinycomments_delete_all,
   tinycomments_lookup,
   tinycomments_delete_comment,

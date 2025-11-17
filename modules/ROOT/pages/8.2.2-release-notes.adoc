@@ -21,4 +21,11 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} {release-version} also includes the following improvement:
 
-// CCFR here.
+=== Improved the ability to load the License Key Manager in different hosting scenarios
+// #TINY-13203
+
+The **License Key Manager** plugin no longer requires self-hosting when using a hybrid deployment, where the editor is hosted locally but premium plugins are delivered from the {cloudname} CDN. In this configuration, the License Key Manager will now automatically load from the {cloudname} CDN as required, improving setup flexibility and reducing hosting complexity.
+
+For details on hybrid deployment, see: xref:editor-plugin-version.adoc[Editor Plugin Version]
+
+For information on the License Key Manager plugin, see: xref:license-key.adoc[License Key Manager].

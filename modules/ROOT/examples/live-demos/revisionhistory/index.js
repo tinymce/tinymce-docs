@@ -24,21 +24,16 @@ const revisions = [
       </thead>
       <tbody>
       <tr>
-      <td>TinyMCE</td>
-      <td>Free</td>
-      <td>YES!</td>
-      </tr>
-      <tr>
-      <td>Uploadcare</td>
-      <td>Free tier available</td>
-      <td>YES!</td>
+      <td style="text-align: center;">TinyMCE</td>
+      <td style="text-align: center;">Free</td>
+      <td style="text-align: center;">YES!</td>
       </tr>
       </tbody>
       </table>
       <h2>Found a bug?</h2>
       <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
       <h2>Finally ...</h2>
-      <p><s>Need file uploads in your app? Consider using <a href="https://www.tiny.cloud/docs/tinymce/latest/uploadcare/" target="_blank" rel="noopener noreferrer">Uploadcare</a> with TinyMCE for a fast, modern upload experience.</s></p>
+      <p><s>Need file uploads in your app? Consider using <a href="https://www.tiny.cloud/docs/tinymce/7/uploadcare/" target="_blank" rel="noopener noreferrer">Uploadcare</a> with TinyMCE for a fast, modern upload experience.</s></p>
       <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>
     `,
   },
@@ -70,21 +65,16 @@ const revisions = [
       </thead>
       <tbody>
       <tr>
-      <td>TinyMCE</td>
-      <td>Free</td>
-      <td>YES!</td>
-      </tr>
-      <tr>
-      <td>Uploadcare</td>
-      <td>Free tier available</td>
-      <td>YES!</td>
+      <td style="text-align: center;">TinyMCE</td>
+      <td style="text-align: center;">Free</td>
+      <td style="text-align: center;">YES!</td>
       </tr>
       </tbody>
       </table>
       <h2>Found a bug?</h2>
       <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
       <h2>Finally ...</h2>
-      <p>Need file uploads in your app? Consider using <a href="https://www.tiny.cloud/docs/tinymce/latest/uploadcare/" target="_blank" rel="noopener noreferrer">Uploadcare</a> with TinyMCE for a fast, modern upload experience.</p>
+      <p>Need file uploads in your app? Consider using <a href="https://www.tiny.cloud/docs/tinymce/7/uploadcare/" target="_blank" rel="noopener noreferrer">Uploadcare</a> with TinyMCE for a fast, modern upload experience.</p>
       <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>
     `,
   },
@@ -116,21 +106,16 @@ const revisions = [
       </thead>
       <tbody>
       <tr>
-      <td>TinyMCE</td>
-      <td>Free</td>
-      <td>YES!</td>
-      </tr>
-      <tr>
-      <td>Uploadcare</td>
-      <td>Free tier available</td>
-      <td>YES!</td>
+      <td style="text-align: center;">TinyMCE</td>
+      <td style="text-align: center;">Free</td>
+      <td style="text-align: center;">YES!</td>
       </tr>
       </tbody>
       </table>
       <h2>Found a bug?</h2>
       <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
       <h2>Finally ...</h2>
-      <p>Need file uploads in your app? Consider using <a href="https://www.tiny.cloud/docs/tinymce/latest/uploadcare/" target="_blank" rel="noopener noreferrer">Uploadcare</a> with TinyMCE for a fast, modern upload experience.</p>
+      <p>Need file uploads in your app? Consider using <a href="https://www.tiny.cloud/docs/tinymce/7/uploadcare/" target="_blank" rel="noopener noreferrer">Uploadcare</a> with TinyMCE for a fast, modern upload experience.</p>
       <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>
     `,
   }

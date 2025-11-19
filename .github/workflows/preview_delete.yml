@@ -41,4 +41,4 @@ jobs:
 
     - name: Remove website preview from S3
       run: |
-        aws s3 rm s3://tiny-cloud-antora-docs-preview/${PR}
+        aws s3 rm --recursive s3://tiny-cloud-antora-docs-preview/${PR}

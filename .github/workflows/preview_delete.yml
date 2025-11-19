@@ -35,8 +35,8 @@ jobs:
     - name: configure aws credentials
       uses: aws-actions/configure-aws-credentials@v5.0.0
       with:
-        role-to-assume: arn:aws:iam::327995277200:role/staging-docs-preview-update
-        role-session-name: docs-preview-delete
+        role-to-assume: arn:aws:iam::327995277200:role/staging-tinymce-docs-update
+        role-session-name: tinymce-docs-delete
         aws-region: us-east-2
 
     - name: Remove website preview from S3

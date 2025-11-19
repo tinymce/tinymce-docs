@@ -58,7 +58,7 @@ jobs:
         role-session-name: docs-preview-update
         aws-region: us-east-1
 
-    - name: Upload website preview to S3 # put in the docs subfolder as we rely on that path in redirects
+    - name: Upload website preview to S3
       run: |
         aws s3 sync ./build s3://tiny-cloud-antora-docs-preview/${PR}/${RUN}
 
@@ -71,6 +71,6 @@ jobs:
         prefix: ${{ env.PR }}/${{ env.RUN }}
         parallel: 10
 
-    - name: Update pointer to current run output # put in the docs subfolder as we rely on that path in redirects
+    - name: Update pointer to current run output
       run: |
         aws s3api put-object --bucket tiny-cloud-antora-docs-preview --key ${PR}/index.html --body .github/workflows/resources/empty.html --content-type text/html --metadata pointer=${RUN}

@@ -1,6 +1,6 @@
 Ticket: DOC-<num>
 
-Site: [Staging branch](https://pr-<PR#>.tinymce-docs.iad.staging.tiny.cloud/docs/tinymce/latest/)
+Site: [Staging branch](https://pr-<PR#>.tinymce-docs.iad.staging.tiny.cloud/docs/tinymce/7/)
 
 Changes:
 * <placeholder-text>

@@ -63,7 +63,7 @@ jobs:
         aws s3 sync ./build s3://tiny-cloud-antora-docs-preview/${PR}/${RUN}
 
     - name: Create redirects on S3
-      uses: tinymce/tinymce-docs-generate-redirects-action@v0.1
+      uses: tinymce/tinymce-docs-generate-redirects-action@v1.0
       with:
         build: ./build/
         redirects: ./redirects.json

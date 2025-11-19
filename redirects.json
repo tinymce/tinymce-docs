@@ -1,0 +1,3361 @@
+[
+  {
+    "location": "/",
+    "pattern": "^/docs%-beta(.*)$",
+    "redirect": "/docs%1"
+  },
+  {
+    "location": "/",
+    "pattern": "^/docs%-preview(.*)$",
+    "redirect": "/docs%1"
+  },
+  {
+    "location": "/docs-3x/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs-4x/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/advanced/",
+    "redirect": "/docs/tinymce/latest/how-to-guides"
+  },
+  {
+    "location": "/docs/advanced/accessibility/",
+    "redirect": "/docs/tinymce/latest/tinymce-and-screenreaders/"
+  },
+  {
+    "location": "/docs/advanced/annotations/",
+    "redirect": "/docs/tinymce/latest/annotations/"
+  },
+  {
+    "location": "/docs/advanced/available-menu-items/",
+    "redirect": "/docs/tinymce/latest/available-menu-items/"
+  },
+  {
+    "location": "/docs/advanced/available-toolbar-buttons/",
+    "redirect": "/docs/tinymce/latest/available-toolbar-buttons/"
+  },
+  {
+    "location": "/docs/advanced/boilerplate-content-css/",
+    "redirect": "/docs/tinymce/latest/editor-content-css/"
+  },
+  {
+    "location": "/docs/advanced/cdn-details/",
+    "redirect": "/docs/tinymce/latest/tinydrive-introduction/#securityperformance"
+  },
+  {
+    "location": "/docs/advanced/configuring-comments-callbacks/",
+    "redirect": "/docs/tinymce/latest/comments-callback-mode/"
+  },
+  {
+    "location": "/docs/advanced/contributing-docs/",
+    "redirect": "https://github.com/tinymce/tinymce-docs/blob/staging/docs-7/CONTRIBUTING.md"
+  },
+  {
+    "location": "/docs/advanced/contributing-to-open-source/",
+    "redirect": "https://github.com/tinymce/tinymce/blob/main/CONTRIBUTING.md"
+  },
+  {
+    "location": "/docs/advanced/creating-a-custom-button/",
+    "redirect": "/docs/tinymce/latest/custom-toolbarbuttons/"
+  },
+  {
+    "location": "/docs/advanced/creating-a-plugin/",
+    "redirect": "/docs/tinymce/latest/creating-a-plugin/"
+  },
+  {
+    "location": "/docs/advanced/creating-a-sidebar/",
+    "redirect": "/docs/tinymce/latest/customsidebar/"
+  },
+  {
+    "location": "/docs/advanced/creating-a-skin/",
+    "redirect": "/docs/tinymce/latest/creating-a-skin/"
+  },
+  {
+    "location": "/docs/advanced/creating-an-icon-pack/",
+    "redirect": "/docs/tinymce/latest/creating-an-icon-pack/"
+  },
+  {
+    "location": "/docs/advanced/creating-custom-dialogs/",
+    "redirect": "/docs/tinymce/latest/dialog/"
+  },
+  {
+    "location": "/docs/advanced/creating-custom-notifications/",
+    "redirect": "/docs/tinymce/latest/creating-custom-notifications/"
+  },
+  {
+    "location": "/docs/advanced/editor-command-identifiers/",
+    "redirect": "/docs/tinymce/latest/editor-command-identifiers/"
+  },
+  {
+    "location": "/docs/advanced/editor-context-menu-identifiers/",
+    "redirect": "/docs/tinymce/latest/editor-context-menu-identifiers/"
+  },
+  {
+    "location": "/docs/advanced/editor-icon-identifiers/",
+    "redirect": "/docs/tinymce/latest/editor-icon-identifiers/"
+  },
+  {
+    "location": "/docs/advanced/events/",
+    "redirect": "/docs/tinymce/latest/events/"
+  },
+  {
+    "location": "/docs/advanced/generate-rsa-key-pairs/",
+    "redirect": "/docs/tinymce/latest/generate-rsa-key-pairs/"
+  },
+  {
+    "location": "/docs/advanced/handle-async-image-uploads/",
+    "redirect": "/docs/tinymce/latest/upload-images/"
+  },
+  {
+    "location": "/docs/advanced/keyboard-shortcuts/",
+    "redirect": "/docs/tinymce/latest/keyboard-shortcuts/"
+  },
+  {
+    "location": "/docs/advanced/php-upload-handler/",
+    "redirect": "/docs/tinymce/latest/php-upload-handler/"
+  },
+  {
+    "location": "/docs/advanced/plugin-reference/",
+    "redirect": "/docs/tinymce/latest/plugins/"
+  },
+  {
+    "location": "/docs/advanced/security/",
+    "redirect": "/docs/tinymce/latest/security/"
+  },
+  {
+    "location": "/docs/advanced/usage-with-module-loaders/",
+    "redirect": "/docs/tinymce/latest/introduction-to-bundling-tinymce/"
+  },
+  {
+    "location": "/docs/advanced/usage-with-module-loaders/browserify/",
+    "redirect": "/docs/tinymce/latest/browserify/"
+  },
+  {
+    "location": "/docs/advanced/usage-with-module-loaders/browserify/browserify_cjs_download/",
+    "redirect": "/docs/tinymce/latest/browserify-cjs-download/"
+  },
+  {
+    "location": "/docs/advanced/usage-with-module-loaders/browserify/browserify_cjs_npm/",
+    "redirect": "/docs/tinymce/latest/browserify-cjs-npm/"
+  },
+  {
+    "location": "/docs/advanced/usage-with-module-loaders/introduction_to_bundling_tinymce/",
+    "redirect": "/docs/tinymce/latest/introduction-to-bundling-tinymce/"
+  },
+  {
+    "location": "/docs/advanced/usage-with-module-loaders/reference/",
+    "redirect": "/docs/tinymce/latest/bundling-reference/"
+  },
+  {
+    "location": "/docs/advanced/usage-with-module-loaders/reference/content-css/",
+    "redirect": "/docs/tinymce/latest/bundling-content-css/"
+  },
+  {
+    "location": "/docs/advanced/usage-with-module-loaders/reference/icons/",
+    "redirect": "/docs/tinymce/latest/bundling-icons/"
+  },
+  {
+    "location": "/docs/advanced/usage-with-module-loaders/reference/localization/",
+    "redirect": "/docs/tinymce/latest/bundling-localization/"
+  },
+  {
+    "location": "/docs/advanced/usage-with-module-loaders/reference/plugins/",
+    "redirect": "/docs/tinymce/latest/bundling-plugins/"
+  },
+  {
+    "location": "/docs/advanced/usage-with-module-loaders/reference/skins/",
+    "redirect": "/docs/tinymce/latest/bundling-skins/"
+  },
+  {
+    "location": "/docs/advanced/usage-with-module-loaders/reference/themes/",
+    "redirect": "/docs/tinymce/latest/bundling-themes/"
+  },
+  {
+    "location": "/docs/advanced/usage-with-module-loaders/rollup/",
+    "redirect": "/docs/tinymce/latest/rollup-es6-npm/"
+  },
+  {
+    "location": "/docs/advanced/usage-with-module-loaders/rollup/rollup_es6_download/",
+    "redirect": "/docs/tinymce/latest/rollup-es6-download/"
+  },
+  {
+    "location": "/docs/advanced/usage-with-module-loaders/rollup/rollup_es6_npm/",
+    "redirect": "/docs/tinymce/latest/rollup-es6-npm/"
+  },
+  {
+    "location": "/docs/advanced/usage-with-module-loaders/webpack/",
+    "redirect": "/docs/tinymce/latest/webpack-es6-npm/"
+  },
+  {
+    "location": "/docs/advanced/usage-with-module-loaders/webpack/webpack_cjs_download/",
+    "redirect": "/docs/tinymce/latest/webpack-cjs-download/"
+  },
+  {
+    "location": "/docs/advanced/usage-with-module-loaders/webpack/webpack_cjs_npm/",
+    "redirect": "/docs/tinymce/latest/webpack-cjs-npm/"
+  },
+  {
+    "location": "/docs/advanced/usage-with-module-loaders/webpack/webpack_es6_download/",
+    "redirect": "/docs/tinymce/latest/webpack-es6-download/"
+  },
+  {
+    "location": "/docs/advanced/usage-with-module-loaders/webpack/webpack_es6_npm/",
+    "redirect": "/docs/tinymce/latest/webpack-es6-npm/"
+  },
+  {
+    "location": "/docs/advanced/yeoman-generator/",
+    "redirect": "/docs/tinymce/latest/yeoman-generator/"
+  },
+  {
+    "location": "/docs/api-reference/core/editor/editor/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/api/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.root/"
+  },
+  {
+    "location": "/docs/api/class/tinymce/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.root/"
+  },
+  {
+    "location": "/docs/api/tinymce-react/",
+    "redirect": "/docs/tinymce/latest/react-ref/"
+  },
+  {
+    "location": "/docs/api/tinymce.dom/tinymce.dom.bookmarkmanager/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.dom.bookmarkmanager/"
+  },
+  {
+    "location": "/docs/api/tinymce.dom/tinymce.dom.controlselection/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.dom.selection/"
+  },
+  {
+    "location": "/docs/api/tinymce.dom/tinymce.dom.domquery/",
+    "redirect": "/docs/tinymce/latest/migration-from-5x/#previously-deprecated-items-now-removed"
+  },
+  {
+    "location": "/docs/api/tinymce.dom/tinymce.dom.domutils/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.dom.domutils/"
+  },
+  {
+    "location": "/docs/api/tinymce.dom/tinymce.dom.eventutils/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.dom.eventutils/"
+  },
+  {
+    "location": "/docs/api/tinymce.dom/tinymce.dom.rangeutils/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.dom.rangeutils/"
+  },
+  {
+    "location": "/docs/api/tinymce.dom/tinymce.dom.scriptloader/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.dom.scriptloader/"
+  },
+  {
+    "location": "/docs/api/tinymce.dom/tinymce.dom.selection/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.dom.selection/"
+  },
+  {
+    "location": "/docs/api/tinymce.dom/tinymce.dom.serializer/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.dom.serializer/"
+  },
+  {
+    "location": "/docs/api/tinymce.dom/tinymce.dom.stylesheetloader/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.dom.stylesheetloader/"
+  },
+  {
+    "location": "/docs/api/tinymce.dom/tinymce.dom.textseeker/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.dom.textseeker/"
+  },
+  {
+    "location": "/docs/api/tinymce.dom/tinymce.dom.treewalker/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.dom.treewalker/"
+  },
+  {
+    "location": "/docs/api/tinymce.editor.ui/tinymce.editor.ui.registry/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.editor.ui.registry/"
+  },
+  {
+    "location": "/docs/api/tinymce.editor.ui/tinymce.editor.ui.ui/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.editor.ui.ui/"
+  },
+  {
+    "location": "/docs/api/tinymce.editor/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/api/tinymce.geom/tinymce.geom.rect/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.geom.rect/"
+  },
+  {
+    "location": "/docs/api/tinymce.html/tinymce.html.domparser/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.html.domparser/"
+  },
+  {
+    "location": "/docs/api/tinymce.html/tinymce.html.entities/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.html.entities/"
+  },
+  {
+    "location": "/docs/api/tinymce.html/tinymce.html.node/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.html.node/"
+  },
+  {
+    "location": "/docs/api/tinymce.html/tinymce.html.saxparser/",
+    "redirect": "/docs/tinymce/latest/6.0-release-notes-core-changes/#changed-plugins-media"
+  },
+  {
+    "location": "/docs/api/tinymce.html/tinymce.html.schema/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.html.schema/"
+  },
+  {
+    "location": "/docs/api/tinymce.html/tinymce.html.serializer/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.html.serializer/"
+  },
+  {
+    "location": "/docs/api/tinymce.html/tinymce.html.styles/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.html.styles/"
+  },
+  {
+    "location": "/docs/api/tinymce.html/tinymce.html.writer/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.html.writer/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.browsebutton/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.button/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.buttongroup/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.checkbox/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.collection/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.colorpicker/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.control/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.draghelper/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.factory/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.filepicker/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.flexlayout/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.form/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.formitem/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.iframe/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.listbox/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.menubar/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.menuitem/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.notification/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.panelbutton/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.path/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.progress/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.resizehandle/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.scrollable/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.slider/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.splitbutton/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.tabpanel/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.throbber/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.tooltip/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/api/tinymce.ui/tinymce.ui.window/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/api/tinymce.util/tinymce.util.color/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/api/tinymce.util/tinymce.util.delay/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.util.delay/"
+  },
+  {
+    "location": "/docs/api/tinymce.util/tinymce.util.eventdispatcher/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.util.eventdispatcher/"
+  },
+  {
+    "location": "/docs/api/tinymce.util/tinymce.util.i18n/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.util.i18n/"
+  },
+  {
+    "location": "/docs/api/tinymce.util/tinymce.util.imageuploader/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.util.imageuploader/"
+  },
+  {
+    "location": "/docs/api/tinymce.util/tinymce.util.json/",
+    "redirect": "/docs/tinymce/latest/6.0-release-notes-core-changes/#previously-deprecated-items-now-removed"
+  },
+  {
+    "location": "/docs/api/tinymce.util/tinymce.util.jsonrequest/",
+    "redirect": "/docs/tinymce/latest/6.0-release-notes-core-changes/#previously-deprecated-items-now-removed"
+  },
+  {
+    "location": "/docs/api/tinymce.util/tinymce.util.observable/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.util.observable/"
+  },
+  {
+    "location": "/docs/api/tinymce.util/tinymce.util.tools/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.util.tools/"
+  },
+  {
+    "location": "/docs/api/tinymce.util/tinymce.util.uri/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.util.uri/"
+  },
+  {
+    "location": "/docs/api/tinymce.util/tinymce.util.xhr/",
+    "redirect": "/docs/tinymce/latest/6.0-release-notes-core-changes/#previously-deprecated-items-now-removed"
+  },
+  {
+    "location": "/docs/api/tinymce/root_tinymce/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.root/"
+  },
+  {
+    "location": "/docs/api/tinymce/tinymce.addonmanager/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.addonmanager/"
+  },
+  {
+    "location": "/docs/api/tinymce/tinymce.annotator/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.annotator/"
+  },
+  {
+    "location": "/docs/api/tinymce/tinymce.contentevent/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/api/tinymce/tinymce.editor/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.editor/"
+  },
+  {
+    "location": "/docs/api/tinymce/tinymce.editormode/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.editormode/"
+  },
+  {
+    "location": "/docs/api/tinymce/tinymce.env/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.env/"
+  },
+  {
+    "location": "/docs/api/tinymce/tinymce.event/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.event/"
+  },
+  {
+    "location": "/docs/api/tinymce/tinymce.formatter/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.formatter/"
+  },
+  {
+    "location": "/docs/api/tinymce/tinymce.notificationmanager/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.notificationmanager/"
+  },
+  {
+    "location": "/docs/api/tinymce/tinymce.plugin/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.plugin/"
+  },
+  {
+    "location": "/docs/api/tinymce/tinymce.progressstateevent/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/api/tinymce/tinymce.shortcuts/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.shortcuts/"
+  },
+  {
+    "location": "/docs/api/tinymce/tinymce.theme/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.theme/"
+  },
+  {
+    "location": "/docs/api/tinymce/tinymce.undomanager/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.undomanager/"
+  },
+  {
+    "location": "/docs/api/tinymce/tinymce.windowmanager/",
+    "redirect": "/docs/tinymce/latest/apis/tinymce.windowmanager/"
+  },
+  {
+    "location": "/docs/browser-compatibility/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/browser-extensions/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/changelog/",
+    "redirect": "/docs/tinymce/latest/changelog/"
+  },
+  {
+    "location": "/docs/cloud-deployment-guide/",
+    "redirect": "/docs/tinymce/latest/cloud-deployment-guide/"
+  },
+  {
+    "location": "/docs/cloud-deployment-guide/cloud-troubleshooting/",
+    "redirect": "/docs/tinymce/latest/cloud-troubleshooting/"
+  },
+  {
+    "location": "/docs/cloud-deployment-guide/editor-and-features/",
+    "redirect": "/docs/tinymce/latest/editor-and-features/"
+  },
+  {
+    "location": "/docs/cloud-deployment-guide/editor-plugin-version/",
+    "redirect": "/docs/tinymce/latest/editor-plugin-version/"
+  },
+  {
+    "location": "/docs/cloud-deployment-guide/features-only/",
+    "redirect": "/docs/tinymce/latest/features-only/"
+  },
+  {
+    "location": "/docs/cloud-deployment-guide/plugin-editor-version-compatibility/",
+    "redirect": "/docs/tinymce/latest/plugin-editor-version-compatibility/"
+  },
+  {
+    "location": "/docs/cms-web-application-settings/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/configure/",
+    "redirect": "/docs/tinymce/latest/initial-configuration/"
+  },
+  {
+    "location": "/docs/configure/accessibility/",
+    "redirect": "/docs/tinymce/latest/accessibility/"
+  },
+  {
+    "location": "/docs/configure/advanced-editing-behavior/",
+    "redirect": "/docs/tinymce/latest/content-behavior-options/"
+  },
+  {
+    "location": "/docs/configure/content-appearance/",
+    "redirect": "/docs/tinymce/latest/add-css-options/"
+  },
+  {
+    "location": "/docs/configure/content-filtering/",
+    "redirect": "/docs/tinymce/latest/content-filtering/"
+  },
+  {
+    "location": "/docs/configure/content-formatting/",
+    "redirect": "/docs/tinymce/latest/content-formatting/"
+  },
+  {
+    "location": "/docs/configure/contributing-docs/",
+    "redirect": "https://github.com/tinymce/tinymce-docs/blob/staging/docs-7/CONTRIBUTING.md"
+  },
+  {
+    "location": "/docs/configure/contributing-to-open-source/",
+    "redirect": "https://github.com/tinymce/tinymce/blob/main/CONTRIBUTING.md"
+  },
+  {
+    "location": "/docs/configure/editor-appearance/",
+    "redirect": "/docs/tinymce/latest/user-formatting-options/"
+  },
+  {
+    "location": "/docs/configure/editor-settings/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/configure/editor/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/configure/file-image-link-tools/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/configure/file-image-pload/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/configure/file-image-upload/",
+    "redirect": "/docs/tinymce/latest/file-image-upload/"
+  },
+  {
+    "location": "/docs/configure/integration-and-setup/",
+    "redirect": "/docs/tinymce/latest/editor-important-options/"
+  },
+  {
+    "location": "/docs/configure/integration-and-setup/content-filtering/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/configure/integration/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/configure/jwt-authentication/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/configure/localization/",
+    "redirect": "/docs/tinymce/latest/ui-localization/"
+  },
+  {
+    "location": "/docs/configure/spelling/",
+    "redirect": "/docs/tinymce/latest/spelling/"
+  },
+  {
+    "location": "/docs/configure/url handling/",
+    "redirect": "/docs/tinymce/latest/url-handling/"
+  },
+  {
+    "location": "/docs/configure/url-handling/",
+    "redirect": "/docs/tinymce/latest/url-handling/"
+  },
+  {
+    "location": "/docs/demo/",
+    "redirect": "/docs/tinymce/latest/examples/"
+  },
+  {
+    "location": "/docs/demo/a11ychecker/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/demo/advcode/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/demo/basic-example/",
+    "redirect": "/docs/tinymce/latest/basic-example/"
+  },
+  {
+    "location": "/docs/demo/casechange/",
+    "redirect": "/docs/tinymce/latest/casechange/"
+  },
+  {
+    "location": "/docs/demo/checklist/",
+    "redirect": "/docs/tinymce/latest/checklist/"
+  },
+  {
+    "location": "/docs/demo/classic/",
+    "redirect": "/docs/tinymce/latest/classic-demo/"
+  },
+  {
+    "location": "/docs/demo/comments-2/",
+    "redirect": "/docs/tinymce/latest/introduction-to-tiny-comments/"
+  },
+  {
+    "location": "/docs/demo/custom-menu-item/",
+    "redirect": "/docs/tinymce/latest/creating-custom-menu-items/#interactive-example"
+  },
+  {
+    "location": "/docs/demo/custom-toolbar-button/",
+    "redirect": "/docs/tinymce/latest/custom-toggle-toolbar-button/#toggle-button-example-and-explanation"
+  },
+  {
+    "location": "/docs/demo/custom-toolbar-listbox/",
+    "redirect": "/docs/tinymce/latest/examples/"
+  },
+  {
+    "location": "/docs/demo/custom-toolbar-menu-button/",
+    "redirect": "/docs/tinymce/latest/custom-menu-toolbar-button/#menu-button-example-and-explanation"
+  },
+  {
+    "location": "/docs/demo/custom-toolbar-split-button/",
+    "redirect": "/docs/tinymce/latest/custom-split-toolbar-button/#split-button-example-and-explanation"
+  },
+  {
+    "location": "/docs/demo/editor-dfree/",
+    "redirect": "/docs/tinymce/latest/distraction-free-demo/"
+  },
+  {
+    "location": "/docs/demo/export/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/demo/file-picker/",
+    "redirect": "/docs/tinymce/latest/tinydrive-pick/"
+  },
+  {
+    "location": "/docs/demo/format-custom/",
+    "redirect": "/docs/tinymce/latest/content-formatting/#example-of-usage-of-the-formats-option"
+  },
+  {
+    "location": "/docs/demo/format-html5/",
+    "redirect": "/docs/tinymce/latest/user-formatting-options/#interactive-examples"
+  },
+  {
+    "location": "/docs/demo/formatpainter/",
+    "redirect": "/docs/tinymce/latest/formatpainter/"
+  },
+  {
+    "location": "/docs/demo/full-fateud/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/demo/full-featured/",
+    "redirect": "/docs/tinymce/latest/full-featured-premium-demo/"
+  },
+  {
+    "location": "/docs/demo/image-tools/",
+    "redirect": "/docs/tinymce/latest/editimage/"
+  },
+  {
+    "location": "/docs/demo/inline/",
+    "redirect": "/docs/tinymce/latest/inline-demo/"
+  },
+  {
+    "location": "/docs/demo/linkchecker/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/demo/local-upload/",
+    "redirect": "/docs/tinymce/latest/upload-images/"
+  },
+  {
+    "location": "/docs/demo/mediaembed/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/demo/mentions/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/demo/pageembed/",
+    "redirect": "/docs/tinymce/latest/pageembed/"
+  },
+  {
+    "location": "/docs/demo/permanentpen/",
+    "redirect": "/docs/tinymce/latest/permanentpen/"
+  },
+  {
+    "location": "/docs/demo/powerpaste/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/demo/tiny-drive-demo/demo_files.json",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/demo/tiny-drive/",
+    "redirect": "/docs/tinymce/latest/tinydrive-introduction/"
+  },
+  {
+    "location": "/docs/demo/tinydrive/",
+    "redirect": "/docs/tinymce/latest/tinydrive-introduction/"
+  },
+  {
+    "location": "/docs/demo/upload-image/",
+    "redirect": "/docs/tinymce/latest/examples/"
+  },
+  {
+    "location": "/docs/demo/url-conversion/",
+    "redirect": "/docs/tinymce/latest/url-handling/"
+  },
+  {
+    "location": "/docs/demo/valid-elements/",
+    "redirect": "/docs/tinymce/latest/content-filtering/#interactive-example"
+  },
+  {
+    "location": "/docs/demo/whats-new/",
+    "redirect": "/docs/tinymce/latest/release-notes/"
+  },
+  {
+    "location": "/docs/enterprise/",
+    "redirect": "/docs/tinymce/latest/plugins/"
+  },
+  {
+    "location": "/docs/enterprise/accessibility/",
+    "redirect": "/docs/tinymce/latest/a11ychecker/"
+  },
+  {
+    "location": "/docs/enterprise/advanced-tables/",
+    "redirect": "/docs/tinymce/latest/advtable/"
+  },
+  {
+    "location": "/docs/enterprise/advcode/",
+    "redirect": "/docs/tinymce/latest/advcode/"
+  },
+  {
+    "location": "/docs/enterprise/casechange/",
+    "redirect": "/docs/tinymce/latest/casechange/"
+  },
+  {
+    "location": "/docs/enterprise/check-links/",
+    "redirect": "/docs/tinymce/latest/linkchecker/"
+  },
+  {
+    "location": "/docs/enterprise/check-spelling/",
+    "redirect": "/docs/tinymce/latest/introduction-to-tiny-spellchecker/"
+  },
+  {
+    "location": "/docs/enterprise/check-spelling/custom/",
+    "redirect": "/docs/tinymce/latest/custom-dictionaries-for-tiny-spellchecker/"
+  },
+  {
+    "location": "/docs/enterprise/check-spelling/modifying/",
+    "redirect": "/docs/tinymce/latest/introduction-to-tiny-spellchecker/"
+  },
+  {
+    "location": "/docs/enterprise/checklist/",
+    "redirect": "/docs/tinymce/latest/checklist/"
+  },
+  {
+    "location": "/docs/enterprise/embed-media/",
+    "redirect": "/docs/tinymce/latest/introduction-to-mediaembed/"
+  },
+  {
+    "location": "/docs/enterprise/embed-media/mediaembed-server-config/",
+    "redirect": "/docs/tinymce/latest/mediaembed-server-config/"
+  },
+  {
+    "location": "/docs/enterprise/embed-media/mediaembed-server-integration/",
+    "redirect": "/docs/tinymce/latest/mediaembed-server-integration/"
+  },
+  {
+    "location": "/docs/enterprise/export/",
+    "redirect": "/docs/tinymce/latest/export/"
+  },
+  {
+    "location": "/docs/enterprise/formatpainter/",
+    "redirect": "/docs/tinymce/latest/formatpainter/"
+  },
+  {
+    "location": "/docs/enterprise/get-tinymce-bugs-fixed/",
+    "redirect": "/docs/tinymce/latest/support/"
+  },
+  {
+    "location": "/docs/enterprise/manage-files-and-images/",
+    "redirect": "/docs/tinymce/latest/moxiemanager/#fileandimagemanagementusingmoxiemanager"
+  },
+  {
+    "location": "/docs/enterprise/mentions/",
+    "redirect": "/docs/tinymce/latest/mentions/"
+  },
+  {
+    "location": "/docs/enterprise/moxiemanager/",
+    "redirect": "/docs/tinymce/latest/moxiemanager/"
+  },
+  {
+    "location": "/docs/enterprise/pageembed/",
+    "redirect": "/docs/tinymce/latest/pageembed/"
+  },
+  {
+    "location": "/docs/enterprise/paste-from-word/",
+    "redirect": "/docs/tinymce/latest/introduction-to-powerpaste/"
+  },
+  {
+    "location": "/docs/enterprise/permanentpen/",
+    "redirect": "/docs/tinymce/latest/permanentpen/"
+  },
+  {
+    "location": "/docs/enterprise/premium-skins-and-icon-packs/",
+    "redirect": "/docs/tinymce/latest/enhanced-skins-and-icon-packs/"
+  },
+  {
+    "location": "/docs/enterprise/premium-skins-and-icon-packs/bootstrap-demo/",
+    "redirect": "/docs/tinymce/latest/bootstrap-demo/"
+  },
+  {
+    "location": "/docs/enterprise/premium-skins-and-icon-packs/borderless-demo/",
+    "redirect": "/docs/tinymce/latest/borderless-demo/"
+  },
+  {
+    "location": "/docs/enterprise/premium-skins-and-icon-packs/fabric-demo/",
+    "redirect": "/docs/tinymce/latest/fabric-demo/"
+  },
+  {
+    "location": "/docs/enterprise/premium-skins-and-icon-packs/fluent-demo/",
+    "redirect": "/docs/tinymce/latest/fluent-demo/"
+  },
+  {
+    "location": "/docs/enterprise/premium-skins-and-icon-packs/jam-demo/",
+    "redirect": "/docs/tinymce/latest/jam-demo/"
+  },
+  {
+    "location": "/docs/enterprise/premium-skins-and-icon-packs/material-classic-demo/",
+    "redirect": "/docs/tinymce/latest/material-classic-demo/"
+  },
+  {
+    "location": "/docs/enterprise/premium-skins-and-icon-packs/material-outline-demo/",
+    "redirect": "/docs/tinymce/latest/material-outline-demo/"
+  },
+  {
+    "location": "/docs/enterprise/premium-skins-and-icon-packs/naked-demo/",
+    "redirect": "/docs/tinymce/latest/naked-demo/"
+  },
+  {
+    "location": "/docs/enterprise/premium-skins-and-icon-packs/outside-demo/",
+    "redirect": "/docs/tinymce/latest/outside-demo/"
+  },
+  {
+    "location": "/docs/enterprise/premium-skins-and-icon-packs/small-demo/",
+    "redirect": "/docs/tinymce/latest/small-demo/"
+  },
+  {
+    "location": "/docs/enterprise/premium-skins-and-icon-packs/snow-demo/",
+    "redirect": "/docs/tinymce/latest/snow-demo/"
+  },
+  {
+    "location": "/docs/enterprise/server/",
+    "redirect": "/docs/tinymce/latest/introduction-to-premium-selfhosted-services/"
+  },
+  {
+    "location": "/docs/enterprise/server/configure/",
+    "redirect": "/docs/tinymce/latest/configure-required-services/"
+  },
+  {
+    "location": "/docs/enterprise/server/docker/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/enterprise/server/docker/docker-compose.yml",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/enterprise/server/docker/docker-compose.yml/openapi.json",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/enterprise/server/docker/setup/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/enterprise/server/docker/setup/aspnet.core/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/enterprise/server/docker/setup/java/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/enterprise/server/docker/setup/nodejs/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/enterprise/server/docker/setup/php/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/enterprise/server/dockerservices/",
+    "redirect": "/docs/tinymce/latest/bundle-intro-setup/"
+  },
+  {
+    "location": "/docs/enterprise/server/php/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/enterprise/server/self-hosting-hunspell/",
+    "redirect": "/docs/tinymce/latest/self-hosting-hunspell/"
+  },
+  {
+    "location": "/docs/enterprise/server/troubleshoot/",
+    "redirect": "/docs/tinymce/latest/troubleshoot-server/"
+  },
+  {
+    "location": "/docs/enterprise/support/",
+    "redirect": "/docs/tinymce/latest/support/"
+  },
+  {
+    "location": "/docs/enterprise/system-requirements/",
+    "redirect": "/docs/tinymce/latest/support/"
+  },
+  {
+    "location": "/docs/enterprise/tiny-comments/",
+    "redirect": "/docs/tinymce/latest/introduction-to-tiny-comments/"
+  },
+  {
+    "location": "/docs/enterprise/tinydrive/",
+    "redirect": "/docs/tinymce/latest/tinydrive-introduction/"
+  },
+  {
+    "location": "/docs/general-configuration-guide/",
+    "redirect": "/docs/tinymce/latest/getting-started/"
+  },
+  {
+    "location": "/docs/general-configuration-guide/advanced-install/",
+    "redirect": "/docs/tinymce/latest/installation/"
+  },
+  {
+    "location": "/docs/general-configuration-guide/attribution-requirements/",
+    "redirect": "https://www.tiny.cloud/legal/attribution-requirements/"
+  },
+  {
+    "location": "/docs/general-configuration-guide/basic-setup/",
+    "redirect": "/docs/tinymce/latest/basic-setup/"
+  },
+  {
+    "location": "/docs/general-configuration-guide/boilerplate-content-css/",
+    "redirect": "/docs/tinymce/latest/editor-content-css/"
+  },
+  {
+    "location": "/docs/general-configuration-guide/customize-ui/",
+    "redirect": "/docs/tinymce/latest/customize-ui/"
+  },
+  {
+    "location": "/docs/general-configuration-guide/filter-content/",
+    "redirect": "/docs/tinymce/latest/filter-content/"
+  },
+  {
+    "location": "/docs/general-configuration-guide/get-support/",
+    "redirect": "/docs/tinymce/latest/support/"
+  },
+  {
+    "location": "/docs/general-configuration-guide/localize-your-language/",
+    "redirect": "/docs/tinymce/latest/localize-your-language/"
+  },
+  {
+    "location": "/docs/general-configuration-guide/mobile/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/general-configuration-guide/multiple-editors/",
+    "redirect": "/docs/tinymce/latest/multiple-editors/"
+  },
+  {
+    "location": "/docs/general-configuration-guide/spell-checking/",
+    "redirect": "/docs/tinymce/latest/spell-checking/"
+  },
+  {
+    "location": "/docs/general-configuration-guide/system-requirements/",
+    "redirect": "/docs/tinymce/latest/support/"
+  },
+  {
+    "location": "/docs/general-configuration-guide/upgrading/",
+    "redirect": "/docs/tinymce/latest/upgrading/"
+  },
+  {
+    "location": "/docs/general-configuration-guide/upload-images/",
+    "redirect": "/docs/tinymce/latest/upload-images/"
+  },
+  {
+    "location": "/docs/general-configuration-guide/use-tinymce-classic/",
+    "redirect": "/docs/tinymce/latest/use-tinymce-classic/"
+  },
+  {
+    "location": "/docs/general-configuration-guide/use-tinymce-distraction-free/",
+    "redirect": "/docs/tinymce/latest/use-tinymce-distraction-free/"
+  },
+  {
+    "location": "/docs/general-configuration-guide/use-tinymce-inline/",
+    "redirect": "/docs/tinymce/latest/use-tinymce-inline/"
+  },
+  {
+    "location": "/docs/general-configuration-guide/work-with-plugins/",
+    "redirect": "/docs/tinymce/latest/work-with-plugins/"
+  },
+  {
+    "location": "/docs/get-started-cloud/",
+    "redirect": "/docs/tinymce/latest/editor-and-features/"
+  },
+  {
+    "location": "/docs/get-started-cloud/editor-and-features/",
+    "redirect": "/docs/tinymce/latest/editor-and-features/"
+  },
+  {
+    "location": "/docs/get-started/",
+    "redirect": "/docs/tinymce/latest/editor-and-features/"
+  },
+  {
+    "location": "/docs/get-started/advanced-install/",
+    "redirect": "/docs/tinymce/latest/installation/"
+  },
+  {
+    "location": "/docs/get-started/customize-ui/",
+    "redirect": "/docs/tinymce/latest/customize-ui/"
+  },
+  {
+    "location": "/docs/get-started/first-steps/",
+    "redirect": "/docs/tinymce/latest/editor-and-features/"
+  },
+  {
+    "location": "/docs/get-started/get-support/",
+    "redirect": "/docs/tinymce/latest/support/"
+  },
+  {
+    "location": "/docs/get-started/multiple-editors/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/get-started/system-requirements/",
+    "redirect": "/docs/tinymce/latest/support/"
+  },
+  {
+    "location": "/docs/get-started/upload-images/",
+    "redirect": "/docs/tinymce/latest/upload-images/"
+  },
+  {
+    "location": "/docs/get-started/use-tinymce-inline/",
+    "redirect": "/docs/tinymce/latest/use-tinymce-inline/"
+  },
+  {
+    "location": "/docs/get-started/work-with-plugins/",
+    "redirect": "/docs/tinymce/latest/work-with-plugins/"
+  },
+  {
+    "location": "/docs/integrations/",
+    "redirect": "/docs/tinymce/latest/installation/"
+  },
+  {
+    "location": "/docs/integrations/angular/",
+    "redirect": "/docs/tinymce/latest/angular-ref/"
+  },
+  {
+    "location": "/docs/integrations/angular2/",
+    "redirect": "/docs/tinymce/latest/angular-ref/"
+  },
+  {
+    "location": "/docs/integrations/angularjs/",
+    "redirect": "/docs/tinymce/latest/angular-pm/"
+  },
+  {
+    "location": "/docs/integrations/blazor/",
+    "redirect": "/docs/tinymce/latest/blazor-cloud/"
+  },
+  {
+    "location": "/docs/integrations/bootstrap/",
+    "redirect": "/docs/tinymce/latest/bootstrap-cloud/"
+  },
+  {
+    "location": "/docs/integrations/django/",
+    "redirect": "/docs/tinymce/latest/django-cloud/"
+  },
+  {
+    "location": "/docs/integrations/dojo/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/integrations/expressjs/",
+    "redirect": "/docs/tinymce/latest/expressjs-pm/"
+  },
+  {
+    "location": "/docs/integrations/jquery/",
+    "redirect": "/docs/tinymce/latest/jquery-cloud/"
+  },
+  {
+    "location": "/docs/integrations/knockout/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/integrations/laravel/laravel-composer-install/",
+    "redirect": "/docs/tinymce/latest/laravel-composer-install/"
+  },
+  {
+    "location": "/docs/integrations/laravel/laravel-introduction/",
+    "redirect": "/docs/tinymce/latest/laravel-tiny-cloud/"
+  },
+  {
+    "location": "/docs/integrations/laravel/laravel-tiny-cloud/",
+    "redirect": "/docs/tinymce/latest/laravel-tiny-cloud/"
+  },
+  {
+    "location": "/docs/integrations/laravel/laravel-zip-install/",
+    "redirect": "/docs/tinymce/latest/laravel-zip-install/"
+  },
+  {
+    "location": "/docs/integrations/python/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/integrations/rails/",
+    "redirect": "/docs/tinymce/latest/rails-cloud/"
+  },
+  {
+    "location": "/docs/integrations/react/",
+    "redirect": "/docs/tinymce/latest/react-cloud/"
+  },
+  {
+    "location": "/docs/integrations/svelte/",
+    "redirect": "/docs/tinymce/latest/svelte-cloud/"
+  },
+  {
+    "location": "/docs/integrations/swing/",
+    "redirect": "/docs/tinymce/latest/swing/"
+  },
+  {
+    "location": "/docs/integrations/vue/",
+    "redirect": "/docs/tinymce/latest/vue-cloud/"
+  },
+  {
+    "location": "/docs/integrations/webcomponent/",
+    "redirect": "/docs/tinymce/latest/webcomponent-cloud/"
+  },
+  {
+    "location": "/docs/integrations/wordpress/",
+    "redirect": "/docs/tinymce/latest/wordpress/"
+  },
+  {
+    "location": "/docs/js-tutorial/understanding-the-api/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/migration-from-4x/",
+    "redirect": "/docs/tinymce/latest/migration-from-6x/"
+  },
+  {
+    "location": "/docs/migration-from-5x/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/migration-from-froala/",
+    "redirect": "/docs/tinymce/latest/migration-from-froala/"
+  },
+  {
+    "location": "/docs/mobile/",
+    "redirect": "/docs/tinymce/latest/tinymce-for-mobile/"
+  },
+  {
+    "location": "/docs/php-integration/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/plugin-module-settings/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/plugins/",
+    "redirect": "/docs/tinymce/latest/plugins/"
+  },
+  {
+    "location": "/docs/plugins/a11ychecker/",
+    "redirect": "/docs/tinymce/latest/a11ychecker/"
+  },
+  {
+    "location": "/docs/plugins/advcode/",
+    "redirect": "/docs/tinymce/latest/advcode/"
+  },
+  {
+    "location": "/docs/plugins/advlist/",
+    "redirect": "/docs/tinymce/latest/advlist/"
+  },
+  {
+    "location": "/docs/plugins/advtable/",
+    "redirect": "/docs/tinymce/latest/advtable/"
+  },
+  {
+    "location": "/docs/plugins/anchor/",
+    "redirect": "/docs/tinymce/latest/anchor/"
+  },
+  {
+    "location": "/docs/plugins/autocorrect/",
+    "redirect": "/docs/tinymce/latest/autocorrect/"
+  },
+  {
+    "location": "/docs/plugins/autolink/",
+    "redirect": "/docs/tinymce/latest/autolink/"
+  },
+  {
+    "location": "/docs/plugins/autoresize/",
+    "redirect": "/docs/tinymce/latest/autoresize/"
+  },
+  {
+    "location": "/docs/plugins/autosave/",
+    "redirect": "/docs/tinymce/latest/autosave/"
+  },
+  {
+    "location": "/docs/plugins/bbcode/",
+    "redirect": "/docs/tinymce/6/migration-from-5x/#removed-plugins"
+  },
+  {
+    "location": "/docs/plugins/casechange/",
+    "redirect": "/docs/tinymce/latest/casechange/"
+  },
+  {
+    "location": "/docs/plugins/charmap/",
+    "redirect": "/docs/tinymce/latest/charmap/"
+  },
+  {
+    "location": "/docs/plugins/checklist/",
+    "redirect": "/docs/tinymce/latest/checklist/"
+  },
+  {
+    "location": "/docs/plugins/code/",
+    "redirect": "/docs/tinymce/latest/code/"
+  },
+  {
+    "location": "/docs/plugins/codesample/",
+    "redirect": "/docs/tinymce/latest/codesample/"
+  },
+  {
+    "location": "/docs/plugins/colorpicker/",
+    "redirect": "/docs/tinymce/latest/add-css-options/#textcoloroptions"
+  },
+  {
+    "location": "/docs/plugins/comments/",
+    "redirect": "/docs/tinymce/latest/introduction-to-tiny-comments/"
+  },
+  {
+    "location": "/docs/plugins/compat3x/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/plugins/contextmenu/",
+    "redirect": "/docs/tinymce/latest/contextmenu/"
+  },
+  {
+    "location": "/docs/plugins/directionality/",
+    "redirect": "/docs/tinymce/latest/directionality/"
+  },
+  {
+    "location": "/docs/plugins/drive/",
+    "redirect": "/docs/tinymce/latest/tinydrive-introduction/"
+  },
+  {
+    "location": "/docs/plugins/emoticons/",
+    "redirect": "/docs/tinymce/latest/emoticons/"
+  },
+  {
+    "location": "/docs/plugins/example/",
+    "redirect": "/docs/tinymce/latest/plugins/"
+  },
+  {
+    "location": "/docs/plugins/exampledependency/",
+    "redirect": "/docs/tinymce/latest/plugins/"
+  },
+  {
+    "location": "/docs/plugins/export/",
+    "redirect": "/docs/tinymce/latest/exportpdf/"
+  },
+  {
+    "location": "/docs/plugins/formatpainter/",
+    "redirect": "/docs/tinymce/latest/formatpainter/"
+  },
+  {
+    "location": "/docs/plugins/fullpage/",
+    "redirect": "/docs/tinymce/6/migration-from-5x/#removed-plugins"
+  },
+  {
+    "location": "/docs/plugins/fullscreen/",
+    "redirect": "/docs/tinymce/latest/fullscreen/"
+  },
+  {
+    "location": "/docs/plugins/help/",
+    "redirect": "/docs/tinymce/latest/help/"
+  },
+  {
+    "location": "/docs/plugins/hr/",
+    "redirect": "/docs/tinymce/6/migration-from-5x/#removed-plugins"
+  },
+  {
+    "location": "/docs/plugins/image/",
+    "redirect": "/docs/tinymce/latest/image/"
+  },
+  {
+    "location": "/docs/plugins/imagetools/",
+    "redirect": "/docs/tinymce/latest/editimage/"
+  },
+  {
+    "location": "/docs/plugins/importcss/",
+    "redirect": "/docs/tinymce/latest/importcss/"
+  },
+  {
+    "location": "/docs/plugins/insertdatetime/",
+    "redirect": "/docs/tinymce/latest/insertdatetime/"
+  },
+  {
+    "location": "/docs/plugins/layer/",
+    "redirect": "/docs/tinymce/latest/plugins/"
+  },
+  {
+    "location": "/docs/plugins/legacyoutput/",
+    "redirect": "/docs/tinymce/6/migration-from-5x/#removed-plugins"
+  },
+  {
+    "location": "/docs/plugins/link/",
+    "redirect": "/docs/tinymce/latest/link/"
+  },
+  {
+    "location": "/docs/plugins/linkchecker/",
+    "redirect": "/docs/tinymce/latest/linkchecker/"
+  },
+  {
+    "location": "/docs/plugins/lists/",
+    "redirect": "/docs/tinymce/latest/lists/"
+  },
+  {
+    "location": "/docs/plugins/media/",
+    "redirect": "/docs/tinymce/latest/media/"
+  },
+  {
+    "location": "/docs/plugins/mediaembed/",
+    "redirect": "/docs/tinymce/latest/introduction-to-mediaembed/"
+  },
+  {
+    "location": "/docs/plugins/mentions/",
+    "redirect": "/docs/tinymce/latest/mentions/"
+  },
+  {
+    "location": "/docs/plugins/moxiemanager/",
+    "redirect": "/docs/tinymce/latest/moxiemanager/"
+  },
+  {
+    "location": "/docs/plugins/nonbreaking/",
+    "redirect": "/docs/tinymce/latest/nonbreaking/"
+  },
+  {
+    "location": "/docs/plugins/noneditable/",
+    "redirect": "/docs/tinymce/6/migration-from-5x/#removed-plugins"
+  },
+  {
+    "location": "/docs/plugins/obscenewords/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/plugins/opensource/",
+    "redirect": "/docs/tinymce/latest/plugins/"
+  },
+  {
+    "location": "/docs/plugins/opensource/accordion/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/plugins/opensource/advlist/",
+    "redirect": "/docs/tinymce/latest/advlist/"
+  },
+  {
+    "location": "/docs/plugins/opensource/anchor/",
+    "redirect": "/docs/tinymce/latest/anchor/"
+  },
+  {
+    "location": "/docs/plugins/opensource/autolink/",
+    "redirect": "/docs/tinymce/latest/autolink/"
+  },
+  {
+    "location": "/docs/plugins/opensource/autoresize/",
+    "redirect": "/docs/tinymce/latest/autoresize/"
+  },
+  {
+    "location": "/docs/plugins/opensource/autosave/",
+    "redirect": "/docs/tinymce/latest/autosave/"
+  },
+  {
+    "location": "/docs/plugins/opensource/bbcode/",
+    "redirect": "/docs/tinymce/6/migration-from-5x/#removed-plugins"
+  },
+  {
+    "location": "/docs/plugins/opensource/charmap/",
+    "redirect": "/docs/tinymce/latest/charmap/"
+  },
+  {
+    "location": "/docs/plugins/opensource/code/",
+    "redirect": "/docs/tinymce/latest/code/"
+  },
+  {
+    "location": "/docs/plugins/opensource/codesample/",
+    "redirect": "/docs/tinymce/latest/codesample/"
+  },
+  {
+    "location": "/docs/plugins/opensource/directionality/",
+    "redirect": "/docs/tinymce/latest/directionality/"
+  },
+  {
+    "location": "/docs/plugins/opensource/emoticons/",
+    "redirect": "/docs/tinymce/latest/emoticons/"
+  },
+  {
+    "location": "/docs/plugins/opensource/fullpage/",
+    "redirect": "/docs/tinymce/6/migration-from-5x/#removed-plugins"
+  },
+  {
+    "location": "/docs/plugins/opensource/fullscreen/",
+    "redirect": "/docs/tinymce/latest/fullscreen/"
+  },
+  {
+    "location": "/docs/plugins/opensource/help/",
+    "redirect": "/docs/tinymce/latest/help/"
+  },
+  {
+    "location": "/docs/plugins/opensource/hr/",
+    "redirect": "/docs/tinymce/6/migration-from-5x/#removed-plugins"
+  },
+  {
+    "location": "/docs/plugins/opensource/image/",
+    "redirect": "/docs/tinymce/latest/image/"
+  },
+  {
+    "location": "/docs/plugins/opensource/imagetools/",
+    "redirect": "/docs/tinymce/latest/editimage/"
+  },
+  {
+    "location": "/docs/plugins/opensource/importcss/",
+    "redirect": "/docs/tinymce/latest/importcss/"
+  },
+  {
+    "location": "/docs/plugins/opensource/insertdatetime/",
+    "redirect": "/docs/tinymce/latest/insertdatetime/"
+  },
+  {
+    "location": "/docs/plugins/opensource/legacyoutput/",
+    "redirect": "/docs/tinymce/6/migration-from-5x/#removed-plugins"
+  },
+  {
+    "location": "/docs/plugins/opensource/link/",
+    "redirect": "/docs/tinymce/latest/link/"
+  },
+  {
+    "location": "/docs/plugins/opensource/lists/",
+    "redirect": "/docs/tinymce/latest/lists/"
+  },
+  {
+    "location": "/docs/plugins/opensource/media/",
+    "redirect": "/docs/tinymce/latest/media/"
+  },
+  {
+    "location": "/docs/plugins/opensource/nonbreaking/",
+    "redirect": "/docs/tinymce/latest/nonbreaking/"
+  },
+  {
+    "location": "/docs/plugins/opensource/noneditable/",
+    "redirect": "/docs/tinymce/6/migration-from-5x/#removed-plugins"
+  },
+  {
+    "location": "/docs/plugins/opensource/pagebreak/",
+    "redirect": "/docs/tinymce/latest/pagebreak/"
+  },
+  {
+    "location": "/docs/plugins/opensource/paste/",
+    "redirect": "/docs/tinymce/6/migration-from-5x/#removed-plugins"
+  },
+  {
+    "location": "/docs/plugins/opensource/preview/",
+    "redirect": "/docs/tinymce/latest/preview/"
+  },
+  {
+    "location": "/docs/plugins/opensource/print/",
+    "redirect": "/docs/tinymce/6/migration-from-5x/#removed-plugins"
+  },
+  {
+    "location": "/docs/plugins/opensource/quickbars/",
+    "redirect": "/docs/tinymce/latest/quickbars/"
+  },
+  {
+    "location": "/docs/plugins/opensource/save/",
+    "redirect": "/docs/tinymce/latest/save/"
+  },
+  {
+    "location": "/docs/plugins/opensource/searchreplace/",
+    "redirect": "/docs/tinymce/latest/searchreplace/"
+  },
+  {
+    "location": "/docs/plugins/opensource/spellchecker/",
+    "redirect": "/docs/tinymce/latest/spelling/"
+  },
+  {
+    "location": "/docs/plugins/opensource/tabfocus/",
+    "redirect": "/docs/tinymce/6/migration-from-5x/#tabfocus"
+  },
+  {
+    "location": "/docs/plugins/opensource/table/",
+    "redirect": "/docs/tinymce/latest/table/"
+  },
+  {
+    "location": "/docs/plugins/opensource/template/",
+    "redirect": "/docs/tinymce/latest/migration-from-6x/#removed-plugins"
+  },
+  {
+    "location": "/docs/plugins/opensource/textcolor/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/plugins/opensource/textpattern/",
+    "redirect": "/docs/tinymce/6/migration-from-5x/#text-patterns"
+  },
+  {
+    "location": "/docs/plugins/opensource/toc/",
+    "redirect": "/docs/tinymce/latest/tableofcontents/"
+  },
+  {
+    "location": "/docs/plugins/opensource/visualblocks/",
+    "redirect": "/docs/tinymce/latest/visualblocks/"
+  },
+  {
+    "location": "/docs/plugins/opensource/visualchars/",
+    "redirect": "/docs/tinymce/latest/visualchars/"
+  },
+  {
+    "location": "/docs/plugins/opensource/wordcount/",
+    "redirect": "/docs/tinymce/latest/wordcount/"
+  },
+  {
+    "location": "/docs/plugins/pagebreak/",
+    "redirect": "/docs/tinymce/latest/pagebreak/"
+  },
+  {
+    "location": "/docs/plugins/pageembed/",
+    "redirect": "/docs/tinymce/latest/pageembed/"
+  },
+  {
+    "location": "/docs/plugins/paste/",
+    "redirect": "/docs/tinymce/6/migration-from-5x/#removed-plugins"
+  },
+  {
+    "location": "/docs/plugins/permanentpen/",
+    "redirect": "/docs/tinymce/latest/permanentpen/"
+  },
+  {
+    "location": "/docs/plugins/powerpaste/",
+    "redirect": "/docs/tinymce/latest/introduction-to-powerpaste/"
+  },
+  {
+    "location": "/docs/plugins/premium/",
+    "redirect": "/docs/tinymce/latest/plugins/"
+  },
+  {
+    "location": "/docs/plugins/premium/a11ychecker/",
+    "redirect": "/docs/tinymce/latest/a11ychecker/"
+  },
+  {
+    "location": "/docs/plugins/premium/advcode/",
+    "redirect": "/docs/tinymce/latest/advcode/"
+  },
+  {
+    "location": "/docs/plugins/premium/advtable/",
+    "redirect": "/docs/tinymce/latest/advtable/"
+  },
+  {
+    "location": "/docs/plugins/premium/casechange/",
+    "redirect": "/docs/tinymce/latest/casechange/"
+  },
+  {
+    "location": "/docs/plugins/premium/checklist/",
+    "redirect": "/docs/tinymce/latest/checklist/"
+  },
+  {
+    "location": "/docs/plugins/premium/comments/",
+    "redirect": "/docs/tinymce/latest/introduction-to-tiny-comments/"
+  },
+  {
+    "location": "/docs/plugins/premium/comments/comments_callback_mode/",
+    "redirect": "/docs/tinymce/latest/comments-callback-mode/"
+  },
+  {
+    "location": "/docs/plugins/premium/comments/comments_commands_events_apis/",
+    "redirect": "/docs/tinymce/latest/comments-commands-events-apis/"
+  },
+  {
+    "location": "/docs/plugins/premium/comments/comments_embedded_mode/",
+    "redirect": "/docs/tinymce/latest/comments-embedded-mode/"
+  },
+  {
+    "location": "/docs/plugins/premium/comments/comments_toolbars_menus/",
+    "redirect": "/docs/tinymce/latest/comments-toolbars-menus/"
+  },
+  {
+    "location": "/docs/plugins/premium/comments/comments_using_comments/",
+    "redirect": "/docs/tinymce/latest/comments-using-comments/"
+  },
+  {
+    "location": "/docs/plugins/premium/comments/introduction_to_tiny_comments/",
+    "redirect": "/docs/tinymce/latest/introduction-to-tiny-comments/"
+  },
+  {
+    "location": "/docs/plugins/premium/export/",
+    "redirect": "/docs/tinymce/latest/export/"
+  },
+  {
+    "location": "/docs/plugins/premium/formatpainter/",
+    "redirect": "/docs/tinymce/latest/formatpainter/"
+  },
+  {
+    "location": "/docs/plugins/premium/linkchecker/",
+    "redirect": "/docs/tinymce/latest/linkchecker/"
+  },
+  {
+    "location": "/docs/plugins/premium/mediaembed/",
+    "redirect": "/docs/tinymce/latest/introduction-to-mediaembed/"
+  },
+  {
+    "location": "/docs/plugins/premium/mentions/",
+    "redirect": "/docs/tinymce/latest/mentions/"
+  },
+  {
+    "location": "/docs/plugins/premium/moxiemanager/",
+    "redirect": "/docs/tinymce/latest/moxiemanager/"
+  },
+  {
+    "location": "/docs/plugins/premium/pageembed/",
+    "redirect": "/docs/tinymce/latest/pageembed/"
+  },
+  {
+    "location": "/docs/plugins/premium/permanentpen/",
+    "redirect": "/docs/tinymce/latest/permanentpen/"
+  },
+  {
+    "location": "/docs/plugins/premium/powerpaste/",
+    "redirect": "/docs/tinymce/latest/introduction-to-powerpaste/"
+  },
+  {
+    "location": "/docs/plugins/premium/rtc/",
+    "redirect": "/docs/tinymce/6/rtc-introduction/"
+  },
+  {
+    "location": "/docs/plugins/premium/tinydrive/",
+    "redirect": "/docs/tinymce/latest/tinydrive-introduction/"
+  },
+  {
+    "location": "/docs/plugins/premium/tinymcespellchecker/",
+    "redirect": "/docs/tinymce/latest/introduction-to-tiny-spellchecker/"
+  },
+  {
+    "location": "/docs/plugins/preview/",
+    "redirect": "/docs/tinymce/latest/preview/"
+  },
+  {
+    "location": "/docs/plugins/print/",
+    "redirect": "/docs/tinymce/6/migration-from-5x/#removed-plugins"
+  },
+  {
+    "location": "/docs/plugins/quickbars/",
+    "redirect": "/docs/tinymce/latest/quickbars/"
+  },
+  {
+    "location": "/docs/plugins/save/",
+    "redirect": "/docs/tinymce/latest/save/"
+  },
+  {
+    "location": "/docs/plugins/searchreplace/",
+    "redirect": "/docs/tinymce/latest/searchreplace/"
+  },
+  {
+    "location": "/docs/plugins/spellchecker/",
+    "redirect": "/docs/tinymce/latest/introduction-to-tiny-spellchecker/"
+  },
+  {
+    "location": "/docs/plugins/tabfocus/",
+    "redirect": "/docs/tinymce/6/migration-from-5x/#tabfocus"
+  },
+  {
+    "location": "/docs/plugins/table/",
+    "redirect": "/docs/tinymce/latest/table/"
+  },
+  {
+    "location": "/docs/plugins/template/",
+    "redirect": "/docs/tinymce/latest/template/"
+  },
+  {
+    "location": "/docs/plugins/textcolor/",
+    "redirect": "/docs/tinymce/latest/add-css-options/#textcoloroptions"
+  },
+  {
+    "location": "/docs/plugins/textpattern/",
+    "redirect": "/docs/tinymce/6/migration-from-5x/#text-patterns"
+  },
+  {
+    "location": "/docs/plugins/tinydrive/",
+    "redirect": "/docs/tinymce/latest/tinydrive-introduction/"
+  },
+  {
+    "location": "/docs/plugins/tinymcespellchecker/",
+    "redirect": "/docs/tinymce/latest/introduction-to-tiny-spellchecker/"
+  },
+  {
+    "location": "/docs/plugins/toc/",
+    "redirect": "/docs/tinymce/latest/tableofcontents/"
+  },
+  {
+    "location": "/docs/plugins/visualblocks/",
+    "redirect": "/docs/tinymce/latest/visualblocks/"
+  },
+  {
+    "location": "/docs/plugins/visualchars/",
+    "redirect": "/docs/tinymce/latest/visualchars/"
+  },
+  {
+    "location": "/docs/plugins/wordcount/",
+    "redirect": "/docs/tinymce/latest/wordcount/"
+  },
+  {
+    "location": "/docs/plugins/xulrunner/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/quick-start/",
+    "redirect": "/docs/tinymce/latest/editor-and-features/"
+  },
+  {
+    "location": "/docs/release-notes/",
+    "redirect": "/docs/tinymce/latest/release-notes/"
+  },
+  {
+    "location": "/docs/release-notes/6.0-upcoming-changes/",
+    "redirect": "/docs/tinymce/5/6.0-upcoming-changes/"
+  },
+  {
+    "location": "/docs/release-notes/premium-plugins-errata509/",
+    "redirect": "/docs/tinymce/latest/release-notes/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes/",
+    "redirect": "/docs/tinymce/5/release-notes/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes50/",
+    "redirect": "/docs/tinymce/5/release-notes50/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes501/",
+    "redirect": "/docs/tinymce/5/release-notes501/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes5013/",
+    "redirect": "/docs/tinymce/5/release-notes5013/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes5014/",
+    "redirect": "/docs/tinymce/5/release-notes5014/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes502/",
+    "redirect": "/docs/tinymce/5/release-notes502/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes503/",
+    "redirect": "/docs/tinymce/5/release-notes503/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes504/",
+    "redirect": "/docs/tinymce/5/release-notes504/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes505/",
+    "redirect": "/docs/tinymce/5/release-notes505/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes506/",
+    "redirect": "/docs/tinymce/5/release-notes506/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes507/",
+    "redirect": "/docs/tinymce/5/release-notes507/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes509/",
+    "redirect": "/docs/tinymce/5/release-notes509/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes51/",
+    "redirect": "/docs/tinymce/5/release-notes51/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes510/",
+    "redirect": "/docs/tinymce/5/release-notes510/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes5101/",
+    "redirect": "/docs/tinymce/5/release-notes5101/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes5102/",
+    "redirect": "/docs/tinymce/5/release-notes5102/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes5103/",
+    "redirect": "/docs/tinymce/5/release-notes5103/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes5104/",
+    "redirect": "/docs/tinymce/5/release-notes5104/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes5105/",
+    "redirect": "/docs/tinymce/5/release-notes5105/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes5106/",
+    "redirect": "/docs/tinymce/5/release-notes5106/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes5107/",
+    "redirect": "/docs/tinymce/5/release-notes5107/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes5108/",
+    "redirect": "/docs/tinymce/5/release-notes5108/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes5109/",
+    "redirect": "/docs/tinymce/5/release-notes5109/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes514/",
+    "redirect": "/docs/tinymce/5/release-notes514/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes515/",
+    "redirect": "/docs/tinymce/5/release-notes515/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes516/",
+    "redirect": "/docs/tinymce/5/release-notes516/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes52/",
+    "redirect": "/docs/tinymce/5/release-notes52/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes521/",
+    "redirect": "/docs/tinymce/5/release-notes521/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes522/",
+    "redirect": "/docs/tinymce/5/release-notes522/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes53/",
+    "redirect": "/docs/tinymce/5/release-notes53/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes54/",
+    "redirect": "/docs/tinymce/5/release-notes54/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes542/",
+    "redirect": "/docs/tinymce/5/release-notes542/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes55/",
+    "redirect": "/docs/tinymce/5/release-notes55/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes56/",
+    "redirect": "/docs/tinymce/5/release-notes56/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes562/",
+    "redirect": "/docs/tinymce/5/release-notes562/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes57/",
+    "redirect": "/docs/tinymce/5/release-notes57/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes571/",
+    "redirect": "/docs/tinymce/5/release-notes571/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes58/",
+    "redirect": "/docs/tinymce/5/release-notes58/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes581/",
+    "redirect": "/docs/tinymce/5/release-notes581/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes582/",
+    "redirect": "/docs/tinymce/5/release-notes582/"
+  },
+  {
+    "location": "/docs/release-notes/release-notes59/",
+    "redirect": "/docs/tinymce/5/release-notes59/"
+  },
+  {
+    "location": "/docs/rtc/",
+    "redirect": "/docs/tinymce/6/rtc-introduction/"
+  },
+  {
+    "location": "/docs/rtc/configuration/rtc-options-optional/",
+    "redirect": "/docs/tinymce/6/rtc-options-optional/"
+  },
+  {
+    "location": "/docs/rtc/configuration/rtc-options-overview/",
+    "redirect": "/docs/tinymce/6/rtc-options-overview/"
+  },
+  {
+    "location": "/docs/rtc/configuration/rtc-options-required/",
+    "redirect": "/docs/tinymce/6/rtc-options-required/"
+  },
+  {
+    "location": "/docs/rtc/encryption/",
+    "redirect": "/docs/tinymce/6/rtc-encryption/"
+  },
+  {
+    "location": "/docs/rtc/events/",
+    "redirect": "/docs/tinymce/6/rtc-events/"
+  },
+  {
+    "location": "/docs/rtc/getting-started/",
+    "redirect": "/docs/tinymce/6/rtc-getting-started/"
+  },
+  {
+    "location": "/docs/rtc/how-the-rtc-plugin-encrypts-content/",
+    "redirect": "/docs/tinymce/6/how-the-rtc-plugin-encrypts-content/"
+  },
+  {
+    "location": "/docs/rtc/introduction/",
+    "redirect": "/docs/tinymce/6/rtc-introduction/"
+  },
+  {
+    "location": "/docs/rtc/jwt-authentication/",
+    "redirect": "/docs/tinymce/6/rtc-jwt-authentication/"
+  },
+  {
+    "location": "/docs/rtc/rtc-supported-functionality/",
+    "redirect": "/docs/tinymce/6/rtc-supported-functionality/"
+  },
+  {
+    "location": "/docs/rtc/rtc-troubleshooting/",
+    "redirect": "/docs/tinymce/6/rtc-troubleshooting/"
+  },
+  {
+    "location": "/docs/textbox-io/apis/editor/editorconfig/editor.html",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/textbox-io/apis/editor/editorconfig/toolbar.html",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/themes/modern/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/tinydrive/",
+    "redirect": "/docs/tinymce/latest/tinydrive-introduction/"
+  },
+  {
+    "location": "/docs/tinydrive/api/",
+    "redirect": "/docs/tinymce/latest/introduction-to-tinydrive-apis/"
+  },
+  {
+    "location": "/docs/tinydrive/changelog/",
+    "redirect": "/docs/tinymce/latest/tinydrive-changelog/"
+  },
+  {
+    "location": "/docs/tinydrive/configuration/",
+    "redirect": "/docs/tinymce/latest/tinydrive-setup-options/"
+  },
+  {
+    "location": "/docs/tinydrive/get-help/",
+    "redirect": "/docs/tinymce/latest/tinydrive-dotnet/#additional-resources"
+  },
+  {
+    "location": "/docs/tinydrive/getting-started/",
+    "redirect": "/docs/tinymce/latest/tinydrive-getting-started/"
+  },
+  {
+    "location": "/docs/tinydrive/integrations/",
+    "redirect": "/docs/tinymce/latest/tinydrive-dropbox-integration/"
+  },
+  {
+    "location": "/docs/tinydrive/integrations/dropbox-integration/",
+    "redirect": "/docs/tinymce/latest/tinydrive-dropbox-integration/"
+  },
+  {
+    "location": "/docs/tinydrive/integrations/googledrive-integration/",
+    "redirect": "/docs/tinymce/latest/tinydrive-googledrive-integration/"
+  },
+  {
+    "location": "/docs/tinydrive/introduction/",
+    "redirect": "/docs/tinymce/latest/tinydrive-introduction/"
+  },
+  {
+    "location": "/docs/tinydrive/jwt-authentication/",
+    "redirect": "/docs/tinymce/latest/tinydrive-jwt-authentication/"
+  },
+  {
+    "location": "/docs/tinydrive/libraries/",
+    "redirect": "/docs/tinymce/latest/tinydrive-dotnet/"
+  },
+  {
+    "location": "/docs/tinydrive/libraries/dotnet/",
+    "redirect": "/docs/tinymce/latest/tinydrive-dotnet/"
+  },
+  {
+    "location": "/docs/tinydrive/libraries/java/",
+    "redirect": "/docs/tinymce/latest/tinydrive-java/"
+  },
+  {
+    "location": "/docs/tinydrive/libraries/nodejs/",
+    "redirect": "/docs/tinymce/latest/tinydrive-nodejs/"
+  },
+  {
+    "location": "/docs/tinydrive/libraries/php/",
+    "redirect": "/docs/tinymce/latest/tinydrive-php/"
+  },
+  {
+    "location": "/docs/tinydrive/tinydrive-api/plugin/",
+    "redirect": "/docs/tinymce/latest/introduction-to-tinydrive-apis/"
+  },
+  {
+    "location": "/docs/tinydrive/tinydrive-api/standalone/",
+    "redirect": "/docs/tinymce/latest/introduction-to-tinydrive-apis/"
+  },
+  {
+    "location": "/docs/tinymce-for-swing/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/tinymce/5/advanced/annotations/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/advanced/available-toolbar-buttons/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/advanced/editor-command-identifiers/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/advanced/events/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/advanced/generate-rsa-key-pairs/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/advanced/keyboard-shortcuts/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/advanced/security/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/advanced/usage-with-module-loaders/reference/icons/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/advanced/usage-with-module-loaders/reference/plugins/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/advanced/usage-with-module-loaders/reference/skins/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/advanced/usage-with-module-loaders/reference/themes/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/advanced/usage-with-module-loaders/rollup/rollup_es6_download/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/advanced/usage-with-module-loaders/rollup/rollup_es6_npm/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/advanced/usage-with-module-loaders/webpack/webpack_cjs_download/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/advanced/usage-with-module-loaders/webpack/webpack_cjs_npm/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/advanced/usage-with-module-loaders/webpack/webpack_es6_download/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce.dom/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce.dom/tinymce.dom.domutils/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce.dom/tinymce.dom.rangeutils/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce.dom/tinymce.dom.scriptloader/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce.dom/tinymce.dom.stylesheetloader/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce.dom/tinymce.dom.textseeker/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce.dom/tinymce.dom.treewalker/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce.editor.ui/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce.editor.ui/tinymce.editor.ui.registry/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce.editor.ui/tinymce.editor.ui.ui/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce.html/tinymce.html.entities/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce.html/tinymce.html.node/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce.html/tinymce.html.saxparser/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce.html/tinymce.html.serializer/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce.html/tinymce.html.styles/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce.util/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce.util/tinymce.util.imageuploader/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce.util/tinymce.util.jsonrequest/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce.util/tinymce.util.observable/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce.util/tinymce.util.tools/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce.util/tinymce.util.xhr/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce/root_tinymce/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce/tinymce.editor/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce/tinymce.env/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce/tinymce.event/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce/tinymce.formatter/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce/tinymce.plugin/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce/tinymce.shortcuts/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/api/tinymce/tinymce.theme/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/cloud-deployment-guide/cloud-troubleshooting/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/cloud-deployment-guide/editor-and-features/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/cloud-deployment-guide/editor-plugin-version/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/cloud-deployment-guide/features-only/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/cloud-deployment-guide/plugin-editor-version-compatibility/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/configure/advanced-editing-behavior/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/configure/content-filtering/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/configure/contributing-docs/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/configure/editor-appearance/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/configure/integration-and-setup/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/configure/localization/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/demo/basic-example/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/demo/checklist/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/demo/comments-2/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/demo/custom-toolbar-button/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/demo/custom-toolbar-menu-button/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/demo/custom-toolbar-split-button/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/demo/editor-dfree/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/demo/file-picker/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/demo/format-custom/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/demo/formatpainter/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/demo/full-featured/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/demo/image-tools/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/demo/inline/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/demo/local-upload/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/demo/tiny-drive-demo/demo_files.json",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/demo/tinydrive/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/demo/url-conversion/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/demo/valid-elements/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/demos/tiny-drive-demo/demo_files.json",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/enterprise/advanced-tables/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/enterprise/advcode/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/enterprise/check-links/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/enterprise/check-spelling/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/enterprise/check-spelling/custom/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/enterprise/checklist/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/enterprise/embed-media/mediaembed-server-config/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/enterprise/embed-media/mediaembed-server-integration/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/enterprise/export/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/enterprise/formatpainter/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/enterprise/moxiemanager/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/enterprise/permanentpen/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/enterprise/premium-skins-and-icon-packs/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/enterprise/premium-skins-and-icon-packs/borderless-demo/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/enterprise/premium-skins-and-icon-packs/fabric-demo/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/enterprise/premium-skins-and-icon-packs/naked-demo/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/enterprise/premium-skins-and-icon-packs/small-demo/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/enterprise/premium-skins-and-icon-packs/snow-demo/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/enterprise/server/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/enterprise/server/configure/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/enterprise/server/dockerservices/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/enterprise/server/self-hosting-hunspell/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/enterprise/tinydrive/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/general-configuration-guide/advanced-install/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/general-configuration-guide/attribution-requirements/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/general-configuration-guide/basic-setup/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/general-configuration-guide/customize-ui/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/general-configuration-guide/filter-content/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/general-configuration-guide/get-support/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/general-configuration-guide/localize-your-language/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/general-configuration-guide/multiple-editors/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/general-configuration-guide/spell-checking/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/general-configuration-guide/system-requirements/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/general-configuration-guide/use-tinymce-inline/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/general-configuration-guide/work-with-plugins/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/integrations/angular/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/integrations/angularjs/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/integrations/blazor/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/integrations/bootstrap/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/integrations/laravel/laravel-composer-install/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/integrations/laravel/laravel-introduction/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/integrations/laravel/laravel-tiny-cloud/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/integrations/laravel/laravel-zip-install/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/integrations/react/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/integrations/svelte/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/integrations/swing/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/integrations/vue/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/integrations/webcomponent/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/opensource/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/opensource/anchor/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/opensource/autoresize/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/opensource/autosave/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/opensource/charmap/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/opensource/code/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/opensource/codesample/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/opensource/emoticons/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/opensource/fullscreen/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/opensource/help/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/opensource/image/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/opensource/imagetools/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/opensource/importcss/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/opensource/insertdatetime/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/opensource/media/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/opensource/noneditable/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/opensource/paste/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/opensource/preview/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/opensource/print/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/opensource/quickbars/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/opensource/searchreplace/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/opensource/spellchecker/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/opensource/tabfocus/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/opensource/template/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/opensource/textpattern/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/premium/a11ychecker/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/premium/advcode/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/premium/casechange/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/premium/checklist/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/premium/comments/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/premium/comments/comments_commands_events_apis/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/premium/comments/comments_embedded_mode/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/premium/comments/comments_toolbars_menus/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/premium/comments/comments_using_comments/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/premium/comments/introduction_to_tiny_comments/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/premium/export/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/premium/linkchecker/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/premium/mediaembed/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/premium/mentions/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/premium/pageembed/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/premium/powerpaste/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/plugins/premium/tinydrive/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/6.0-upcoming-changes/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes503/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes504/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes505/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes506/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes507/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes509/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes51/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes510/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes5101/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes5102/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes5106/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes5107/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes5108/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes5109/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes514/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes515/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes516/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes521/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes522/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes53/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes542/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes55/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes56/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes562/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes58/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes581/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/release-notes/release-notes582/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/rtc/configuration/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/rtc/configuration/rtc-options-optional/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/rtc/configuration/rtc-options-overview/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/rtc/getting-started/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/rtc/jwt-authentication/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/rtc/rtc-troubleshooting/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/tinydrive/get-help/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/tinydrive/getting-started/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/tinydrive/integrations/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/tinydrive/libraries/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/tinydrive/libraries/dotnet/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/tinydrive/libraries/java/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/tinydrive/tinydrive-api/plugin/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/ui-components/autocompleter/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/ui-components/contextform/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/ui-components/contextmenu/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/ui-components/contexttoolbar/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/ui-components/customsidebar/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/ui-components/dialog/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/ui-components/dialogcomponents/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/ui-components/typesoftoolbarbuttons/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/5/ui-components/urldialog/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/6/api/",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/6/basic-setup.html",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/6/cloud-quick-start.html",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/6/code-plugin/",
+    "redirect": "/docs/tinymce/6/code/"
+  },
+  {
+    "location": "/docs/tinymce/6/file-picker/",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/6/get-started/",
+    "redirect": "/docs/tinymce/6/getting-started/"
+  },
+  {
+    "location": "/docs/tinymce/6/integrations.html",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/6/integrations/",
+    "redirect": "/docs/tinymce/6/installation/"
+  },
+  {
+    "location": "/docs/tinymce/6/npm-projects.html",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/6/premium-full-featured/",
+    "redirect": "/docs/tinymce/6/full-featured-premium-demo/"
+  },
+  {
+    "location": "/docs/tinymce/6/premium-skins-and-icons/",
+    "redirect": "/docs/tinymce/6/enhanced-skins-and-icon-packs/"
+  },
+  {
+    "location": "/docs/tinymce/6/react-pm/",
+    "redirect": "/docs/tinymce/6/react-pm-host/"
+  },
+  {
+    "location": "/docs/tinymce/6/react-zip/",
+    "redirect": "/docs/tinymce/6/react-zip-host/"
+  },
+  {
+    "location": "/docs/tinymce/7/export/",
+    "redirect": "/docs/tinymce/7/exportpdf/"
+  },
+  {
+    "location": "/docs/tinymce/8/",
+    "pattern": "^/docs/tinymce/8/(.*)$",
+    "redirect": "/docs/tinymce/latest/%1"
+  },
+  {
+    "location": "/docs/tinymce/demo/url-dialog-demo/external-page.html",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/tinymce/latest/6.0-release-notes-core-changes/",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/latest/6.0-release-notes-known-issues/",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/latest/6.0-release-notes-overview/",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/latest/6.0-release-notes-premium-changes/",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/latest/6.0.2-release-notes/",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/latest/6.0.3-release-notes/",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/latest/6.1-release-notes/",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/latest/6.1.2-release-notes/",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/latest/6.2-release-notes/",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/latest/6.3-release-notes/",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/latest/6.3.2-release-notes/",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/latest/6.4.1-release-notes/",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/latest/6.4.2-release-notes/",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/latest/6.5.1-release-notes/",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/latest/6.6-release-notes/",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/latest/6.6.2-release-notes/",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/latest/6.7-release-notes/",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/latest/6.7.1-release-notes/",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/latest/6.7.2-release-notes/",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/latest/6.7.3-release-notes/",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/latest/6.8.1-release-notes/",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/latest/6.8.2-release-notes/",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/latest/6.8.3-release-notes/",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/latest/7.0-relea",
+    "redirect": "/docs/tinymce/6/"
+  },
+  {
+    "location": "/docs/tinymce/latest/bundle-hyperlinking-container/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/tinymce/latest/bundle-imageproxy-container/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/tinymce/latest/bundle-spelling-container/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/tinymce/latest/editor-premium-upgrade-promotion/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/tinymce/latest/export-to-pdf-with-jwt-authentication-with-php/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/tinymce/latest/export-to-word-with-jwt-authentication-with-php/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/tinymce/latest/export/",
+    "redirect": "/docs/tinymce/latest/exportpdf/"
+  },
+  {
+    "location": "/docs/tinymce/latest/how-the-rtc-plugin-encrypts-content/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/tinymce/latest/import-word-with-jwt-authentication-with-php/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/tinymce/latest/importword-with-jwt-authentication-nodejs/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/tinymce/latest/integrations/",
+    "redirect": "/docs/tinymce/latest/installation/"
+  },
+  {
+    "location": "/docs/tinymce/latest/markdown/r/",
+    "redirect": "/docs/tinymce/5/"
+  },
+  {
+    "location": "/docs/tinymce/latest/mathequations/",
+    "redirect": "/docs/tinymce/latest/math/"
+  },
+  {
+    "location": "/docs/tinymce/latest/premium-full-featured/",
+    "redirect": "/docs/tinymce/latest/full-featured-premium-demo/"
+  },
+  {
+    "location": "/docs/tinymce/latest/premium-skins-and-icons/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/tinymce/latest/react-pm/",
+    "redirect": "/docs/tinymce/latest/react-pm-host/"
+  },
+  {
+    "location": "/docs/tinymce/latest/react-zip/",
+    "redirect": "/docs/tinymce/latest/react-zip-host/"
+  },
+  {
+    "location": "/docs/tinymce/latest/rtc-encryption/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/tinymce/latest/rtc-events/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/tinymce/latest/rtc-getting-started/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/tinymce/latest/rtc-introduction/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/tinymce/latest/rtc-jwt-authentication/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/tinymce/latest/rtc-options-optional/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/tinymce/latest/rtc-options-overview/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/tinymce/latest/rtc-options-required/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/tinymce/latest/rtc-supported-functionality/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/tinymce/latest/rtc-troubleshooting/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/tinymce/latest/template/",
+    "redirect": "/docs/tinymce/latest/advanced-templates/"
+  },
+  {
+    "location": "/docs/tinymce/latest/templates/",
+    "redirect": "/docs/tinymce/latest/advanced-templates/"
+  },
+  {
+    "location": "/docs/tinymce/latest/tinymce-and-csp/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/tinymce/latest/yeoman-generator/",
+    "redirect": "/docs/"
+  },
+  {
+    "location": "/docs/ui-components/",
+    "redirect": "/docs/tinymce/latest/ui-components/"
+  },
+  {
+    "location": "/docs/ui-components/autocompleter/",
+    "redirect": "/docs/tinymce/latest/autocompleter/"
+  },
+  {
+    "location": "/docs/ui-components/button/",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/ui-components/contextform/",
+    "redirect": "/docs/tinymce/latest/contextform/"
+  },
+  {
+    "location": "/docs/ui-components/contextmenu/",
+    "redirect": "/docs/tinymce/latest/contextmenu/"
+  },
+  {
+    "location": "/docs/ui-components/contexttoolbar/",
+    "redirect": "/docs/tinymce/latest/contexttoolbar/"
+  },
+  {
+    "location": "/docs/ui-components/customsidebar/",
+    "redirect": "/docs/tinymce/latest/customsidebar/"
+  },
+  {
+    "location": "/docs/ui-components/dialog/",
+    "redirect": "/docs/tinymce/latest/dialog/"
+  },
+  {
+    "location": "/docs/ui-components/dialogc/",
+    "redirect": "/docs/tinymce/5/dialog/"
+  },
+  {
+    "location": "/docs/ui-components/dialogcomponents/",
+    "redirect": "/docs/tinymce/latest/dialog-components/"
+  },
+  {
+    "location": "/docs/ui-components/menuitems/",
+    "redirect": "/docs/tinymce/latest/creating-custom-menu-items/"
+  },
+  {
+    "location": "/docs/ui-components/toolbarbuttons/",
+    "redirect": "/docs/tinymce/latest/custom-toolbarbuttons/"
+  },
+  {
+    "location": "/docs/ui-components/typesoftoolbarbuttons/",
+    "redirect": "/docs/tinymce/latest/custom-toolbarbuttons/"
+  },
+  {
+    "location": "/docs/ui-components/urldialog/",
+    "redirect": "/docs/tinymce/latest/urldialog/"
+  },
+  {
+    "location": "/docs/usage-limits/",
+    "redirect": "/docs/tinymce/latest/"
+  }
+]

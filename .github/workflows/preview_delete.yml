@@ -1,0 +1,44 @@
+name: Preview Delete
+
+on:
+  pull_request:
+    types:
+      - closed
+
+# Need ID token write permission to use OIDC
+permissions:
+  id-token: write
+
+env:
+  PR: pr-${{ github.event.number }}
+
+jobs:
+  cleanup:
+    name: Cleanup Docs Preview
+
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    - name: Checkout branch
+      uses: actions/checkout@v5
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v5
+      with:
+        cache: 'yarn'
+        node-version: 24
+
+    - name: configure aws credentials
+      uses: aws-actions/configure-aws-credentials@v5.0.0
+      with:
+        role-to-assume: arn:aws:iam::327995277200:role/staging-docs-preview-update
+        role-session-name: docs-preview-delete
+        aws-region: us-east-2
+
+    - name: Remove website preview from S3
+      run: |
+        aws s3 rm s3://tiny-cloud-antora-docs-preview/${PR}

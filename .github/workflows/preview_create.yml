@@ -1,0 +1,76 @@
+name: Preview Create/Update
+
+on:
+  pull_request:
+    types:
+      - opened
+      - reopened
+      - synchronize
+
+
+# Need ID token write permission to use OIDC
+permissions:
+  id-token: write
+
+env:
+  PR: pr-${{ github.event.number }}
+  RUN: run-${{ github.run_number }}-${{ github.run_attempt }}
+
+jobs:
+
+  build:
+    name: Update Docs Preview
+
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    - name: Checkout branch
+      uses: actions/checkout@v5
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v5
+      with:
+        cache: 'yarn'
+        node-version: 24
+
+    - name: Install dependencies
+      run: yarn install
+
+    - name: Build Website
+      run: yarn antora ./antora-playbook.yml
+
+    - name: Rename site folder to docs
+      run: |
+        mv ./build/site ./build/docs
+
+    - name: Rename sitemap.xml to antora-sitemap.xml
+      run: |
+        mv ./build/docs/sitemap.xml ./build/docs/antora-sitemap.xml
+
+    - name: configure aws credentials
+      uses: aws-actions/configure-aws-credentials@v5.0.0
+      with:
+        role-to-assume: arn:aws:iam::327995277200:role/staging-tinymce-docs-update
+        role-session-name: tinymce-docs-update
+        aws-region: us-east-1
+
+    - name: Upload website preview to S3
+      run: |
+        aws s3 sync ./build s3://tiny-cloud-antora-docs-preview/${PR}/${RUN}
+
+    - name: Create redirects on S3
+      uses: tinymce/tinymce-docs-generate-redirects-action@v1.0
+      with:
+        build: ./build/
+        redirects: https://raw.githubusercontent.com/tinymce/tinymce-docs/refs/heads/main/redirects.json
+        bucket: tiny-cloud-antora-docs-preview
+        prefix: ${{ env.PR }}/${{ env.RUN }}
+        parallel: 10
+
+    - name: Update pointer to current run output
+      run: |
+        aws s3api put-object --bucket tiny-cloud-antora-docs-preview --key ${PR}/index.html --body .github/workflows/resources/empty.html --content-type text/html --metadata pointer=${RUN}

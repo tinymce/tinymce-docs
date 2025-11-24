@@ -90,10 +90,12 @@ The following premium plugin updates were released alongside {productname} {rele
 
 {productname} {release-version} also includes the following bug fixes:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== The `font-size` style on list items was not copied to new list items.
+// #TINY-13224
 
-// CCFR here.
+Previously, an issue was identified where the `font-size` style applied to list items was not retained when creating new items in either numbered or bulleted lists. As a result, list items added by pressing `Enter` did not inherit the correct font size from the preceding item.
+
+{productname} {release-version} addresses this issue by changing the behavior such that the `font-size` style is now consistently transferred to newly created list items. This ensures that all new list items have the correct font size.
 
 
 [[security-fixes]]
@@ -128,4 +130,3 @@ There <is one | are <number> known issue<s> in {productname} {release-version}.
 // #TINY-vwxyz1
 
 // CCFR here.
-

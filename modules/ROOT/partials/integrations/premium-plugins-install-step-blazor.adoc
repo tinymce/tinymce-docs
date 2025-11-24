@@ -1,0 +1,13 @@
+. (Optional) For premium plugins, install the `+tinymce-premium+` package using npm:
++
+[source,sh]
+----
+npm install tinymce-premium@^8.3
+----
++
+[NOTE]
+====
+When using premium plugins with Blazor, configure them using the `+external_plugins+` option in your editor configuration. See xref:editor-important-options.adoc#external_plugins[external_plugins option] for more information.
+====
++
+

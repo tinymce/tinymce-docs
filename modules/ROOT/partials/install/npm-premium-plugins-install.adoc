@@ -1,0 +1,52 @@
+== Install premium plugins
+
+For commercial customers using premium plugins, install the `+tinymce-premium+` package:
+
+[source,sh]
+----
+npm install tinymce-premium@^8.3
+----
+
+Or install a specific version:
+
+[source,sh]
+----
+npm install tinymce-premium@8.3.0
+----
+
+[NOTE]
+====
+The `+tinymce-premium+` package version aligns with the `+tinymce+` package version. Always use compatible versions of both packages.
+====
+
+The `+tinymce-premium+` package includes:
+
+* All premium plugins.
+* License key manager plugin.
+* Premium skins, themes, icons, and language packs for premium plugins.
+
+[IMPORTANT]
+====
+The `+tinymce-premium+` package requires a commercial license. Ensure you have a valid license key before using premium plugins. You'll need to configure the `+license_key+` option in your editor initialization.
+
+For information on obtaining a license key, see: xref:license-key.adoc[License Key].
+====
+
+After installing `+tinymce-premium+`, you need to:
+
+* Import or configure the premium plugins (see options below)
+* Add the plugins to your editor's `+plugins+` configuration
+* Set your commercial `+license_key+` in the editor initialization
+
+[NOTE]
+====
+When bundling, you import individual premium plugins (e.g., `+import 'tinymce-premium/plugins/advcode'+`), not the package itself. You do **not** need `+import tinymcePremium from 'tinymce-premium'+` - only import the specific plugins you need.
+====
+
+For complete examples, see the integration guides for your specific framework.
+
+For information on using premium plugins, see:
+
+* xref:bundling-plugins.adoc[Bundling premium plugins] (for bundling workflows) - Recommended for most applications
+* xref:editor-important-options.adoc#external_plugins[Using external_plugins] (for non-bundling workflows) - For lazy loading or when bundling isn't available
+

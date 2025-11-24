@@ -1,7 +1,7 @@
 = Quick start: {productname} from NPM or Yarn
 :navtitle: Quick start: NPM/Yarn
-:description: Learn how to install {productname} from NPM using NPM and Yarn.
-:keywords: yarn, npm, javascript, install
+:description: Learn how to install {productname} from NPM using NPM and Yarn, including premium plugins for commercial customers.
+:keywords: yarn, npm, javascript, install, premium plugins, tinymce-premium
 
 == Install {productname} using NPM or Yarn
 
@@ -32,6 +32,70 @@ The location of the main {productname} script will be: `+node_modules/tinymce/ti
 
 * Using a webserver route, or
 * Copying the `+tinymce+` directory to a public folder using a build tool such as Gulp or Webpack.
+
+[[install-premium-plugins]]
+== Install premium plugins
+
+The `+tinymce-premium+` NPM package provides all premium plugins, skins, themes, icons, and language packs for commercial TinyMCE customers.
+
+[IMPORTANT]
+====
+The `+tinymce-premium+` package requires a commercial license. Ensure you have a valid license key before using premium plugins. For information on obtaining a license key, see: xref:license-key.adoc[License Key].
+====
+
+=== Prerequisites
+
+Before installing premium plugins, ensure you have:
+
+* The core `+tinymce+` package installed (see above)
+* A valid commercial license key
+* Node.js and npm installed
+
+=== Install the premium plugins package
+
+Install the `+tinymce-premium+` package using npm:
+
+[source,sh]
+----
+npm install tinymce-premium@^8.3
+----
+
+[NOTE]
+====
+* For {productname} 8.3, the `+tinymce-premium+` package is only published to the NPM registry. Other package manager registries (Packagist/Composer, NuGet etc.) may be considered for future releases.
+* Yarn can also install packages from the NPM registry, so `+yarn add tinymce-premium@^8.3+` will work.
+* The `+tinymce-premium+` package version aligns with the `+tinymce+` package version. **Always** use compatible versions of both packages (e.g., both at 8.3.0 or later).
+====
+
+=== Package contents
+
+The `+tinymce-premium+` package includes:
+
+* All premium plugins
+* License key manager plugin
+* Premium skins, themes, icons, and language packs for premium plugins
+
+[NOTE]
+====
+Dictionaries are **not** included in the `+tinymce-premium+` package and remain a separate download.
+====
+
+=== Using premium plugins
+
+After installing the `+tinymce-premium+` package, configure the plugins in your editor. For complete instructions on bundling premium plugins or using the `+external_plugins+` option, see: xref:bundling-plugins.adoc#using-premium-plugins[Using premium plugins].
+
+=== Framework integration
+
+For framework-specific integration guides, see:
+
+* xref:react-pm-bundle.adoc[React (Bundling)]
+* xref:react-pm-host.adoc[React (Hosting)]
+* xref:angular-pm.adoc[Angular]
+* xref:vue-pm.adoc[Vue.js]
+* xref:blazor-pm.adoc[Blazor]
+* xref:svelte-pm.adoc[Svelte]
+* xref:webcomponent-pm.adoc[Web Component]
+
 
 == Include the {productname} script
 

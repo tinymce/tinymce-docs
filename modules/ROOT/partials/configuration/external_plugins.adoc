@@ -27,3 +27,10 @@ tinymce.init({
   }
 });
 ----
+
+include::partial$configuration/external_plugins-premium-npm.adoc[]
+
+[NOTE]
+====
+For more information on URL formats and path resolution, see the xref:editor-important-options.adoc#base_url[`+base_url+` option].
+====

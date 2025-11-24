@@ -91,7 +91,8 @@ ifeval::["{productUse}" == "host"]
 ----
 npm install tinymce @tinymce/tinymce-react fs-extra
 ----
-
++
+include::partial$integrations/premium-plugins-install-step.adoc[]
 . Setup a `postinstall` script to copy {productname} to the public directory for hosting
 +
 .postinstall.js
@@ -174,6 +175,9 @@ export default function App() {
 ----
 
 . Update the `+licenseKey+` option in the editor element and include your xref:license-key.adoc[License Key].
++
+include::partial$integrations/premium-plugins-hosting.adoc[]
++
 
 endif::[]
 ifeval::["{productUse}" == "bundle"]
@@ -183,7 +187,8 @@ ifeval::["{productUse}" == "bundle"]
 ----
 npm install tinymce @tinymce/tinymce-react
 ----
-
++
+include::partial$integrations/premium-plugins-install-step.adoc[]
 . Using a text editor, create `+./src/BundledEditor.jsx+` and set the contents to:
 +
 [source,jsx]
@@ -235,6 +240,11 @@ import 'tinymce/plugins/wordcount';
 
 // importing plugin resources
 import 'tinymce/plugins/emoticons/js/emojis';
+
+// Import premium plugins from NPM (optional, requires tinymce-premium package)
+import 'tinymce-premium/plugins/advcode';
+import 'tinymce-premium/plugins/licensekeymanager';
+import 'tinymce-premium/plugins/tinycomments';
 
 // Content styles, including inline UI like fake cursors
 import 'tinymce/skins/content/default/content';

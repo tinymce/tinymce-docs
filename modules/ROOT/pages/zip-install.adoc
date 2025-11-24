@@ -20,6 +20,11 @@ unzip tinymce_latest.zip -d /path/to/webserver/public/
 +
 The location of the main {productname} script will be: `+/path/to/webserver/public/tinymce/js/tinymce/tinymce.min.js+`.
 
+[NOTE]
+====
+For commercial customers using premium plugins, you can install the `+tinymce-premium+` NPM package and configure premium plugins using the `+external_plugins+` option. For more information, see: xref:editor-important-options.adoc#external_plugins[`+external_plugins+` configuration option] and xref:npm-projects.adoc#install-premium-plugins[Installing premium plugins from NPM].
+====
+
 == Include the {productname} script
 
 Include the following line of code in the `+<head>+` of an HTML page:

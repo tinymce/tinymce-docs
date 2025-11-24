@@ -42,10 +42,23 @@ If hosting {productname} standalone, for example, in a `/public` folder, **ensur
 If bundling {productname} as part of an application **ensure** the `+licensekeymanager/index.js+` file is imported, otherwise the editor will not function without this.
 
 .Example importing the License Key Manager in a bundled application
++
+When using the `+tinymce+` NPM package with premium plugins from ZIP:
 [source,javascript]
 ----
 import 'tinymce/plugins/licensekeymanager';
 ----
++
+When using the `+tinymce-premium+` NPM package (recommended):
+[source,javascript]
+----
+import 'tinymce-premium/plugins/licensekeymanager';
+----
++
+[NOTE]
+====
+The `+licensekeymanager+` plugin is included in the `+tinymce-premium+` package. The `+tinymce-premium+` package version aligns with the `+tinymce+` package version (e.g., both at 8.3.0).
+====
 
 == License Types and Deployment Options
 

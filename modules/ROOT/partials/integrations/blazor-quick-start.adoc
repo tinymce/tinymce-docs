@@ -27,7 +27,9 @@ Alternatively, the link:https://learn.microsoft.com/en-us/dotnet/core/install/wi
 
 ifeval::["{productSource}" == "package-manager"]
 
-. To use the self-hosted version of `{productname}`, install the `{productname}` package from the Command Pallette.
+. To use the self-hosted version of `{productname}`, install the `{productname}` package from the Command Palette.
++
+include::partial$integrations/premium-plugins-install-step-blazor.adoc[]
 endif::[]
 
 [[using-visual-studio]]
@@ -102,6 +104,8 @@ ifeval::["{productSource}" == "package-manager"]
 ----
 dotnet add package TinyMCE
 ----
+
+include::partial$integrations/premium-plugins-install-step-blazor.adoc[]
 
 endif::[]
 

@@ -37,6 +37,8 @@ ifeval::["{productSource}" == "package-manager"]
 npm install tinymce@^{productmajorversion} @tinymce/tinymce-svelte
 ----
 
+include::partial$integrations/premium-plugins-install-step.adoc[]
+
 endif::[]
 ifeval::["{productSource}" != "package-manager"]
 

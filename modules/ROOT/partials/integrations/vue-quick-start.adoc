@@ -84,6 +84,8 @@ npm install tinymce "@tinymce/tinymce-vue"
 npm install tinymce "@tinymce/tinymce-vue@^3"
 ----
 
+include::partial$integrations/premium-plugins-install-step.adoc[]
+
 endif::[]
 ifeval::["{productSource}" != "package-manager"]
 

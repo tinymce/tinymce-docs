@@ -1,0 +1,74 @@
+=== Premium plugins from NPM
+
+NOTE: The `+tinymce-premium+` package is the recommended way to install and use premium plugins. It includes all premium plugins, skins, themes, icons, and language packs.
+
+To bundle premium plugins from the NPM package, import the individual plugins you need.
+
+[cols='1,2,3']
+|====
+|Module Syntax |Source |Example
+
+.2+|ES6+
+|NPM
+a|
+[source, js]
+----
+import 'tinymce-premium/plugins/advcode';
+import 'tinymce-premium/plugins/tinycomments';
+import 'tinymce-premium/plugins/licensekeymanager';
+----
+
+|`.zip`
+a|
+[source, js]
+----
+import '../tinymce-premium/plugins/advcode';
+----
+
+.2+|Common JS
+|NPM
+a|
+[source, js]
+----
+require('tinymce-premium/plugins/advcode');
+require('tinymce-premium/plugins/tinycomments');
+require('tinymce-premium/plugins/licensekeymanager');
+----
+
+|`.zip`
+a|
+[source, js]
+----
+require('../tinymce-premium/plugins/advcode');
+----
+|====
+
+IMPORTANT: Always import the `+licensekeymanager+` plugin when using premium plugins with a commercial license:
+
+[source, js]
+----
+import 'tinymce-premium/plugins/licensekeymanager';
+----
+
+NOTE: When using `+import tinymce from 'tinymce'+`, import only the individual premium plugins (e.g., `+import 'tinymce-premium/plugins/advcode'+`). Do not import the `+tinymce-premium+` package. The plugins automatically register with the {productname} instance.
+
+You can also import premium skins, themes, and icons from the `+tinymce-premium+` package:
+
+[source, js]
+----
+// Premium skins
+import 'tinymce-premium/skins/ui/oxide/skin.css';
+
+// Premium themes
+import 'tinymce-premium/themes/premium/theme';
+
+// Premium icons
+import 'tinymce-premium/icons/premium';
+----
+
+[IMPORTANT]
+====
+* **Icons**: The default icon pack is always required. Premium icon packs extend or override default icons. Import both the default and premium icon packs, then configure which to use via the xref:editor-icons.adoc[`+icons+`] option in your editor configuration.
+* **Skins**: Import either a community or premium skin (not both). Configure the skin using the xref:editor-skin.adoc[`+skin+`] option in your editor configuration.
+* **Themes**: The `+silver+` theme is **required**. Premium themes are alternatives to `+silver+` and should be used instead of, not alongside, the default theme.
+====

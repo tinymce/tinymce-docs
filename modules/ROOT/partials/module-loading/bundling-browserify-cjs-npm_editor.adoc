@@ -30,6 +30,11 @@ require('tinymce/plugins/link');
 require('tinymce/plugins/lists');
 require('tinymce/plugins/table');
 
+/* Import premium plugins from NPM */
+require('tinymce-premium/plugins/advcode');
+require('tinymce-premium/plugins/licensekeymanager');
+require('tinymce-premium/plugins/tinycomments');
+
 /* content UI CSS is required */
 const contentUiSkinCss = fs.readFileSync('node_modules/tinymce/skins/ui/oxide/content.css', { encoding: 'UTF-8' });
 
@@ -46,6 +51,14 @@ exports.render = () => {
     skin: false,
     content_css: false,
     content_style: contentUiSkinCss.toString() + '\n' + contentCss.toString(),
+    /* Optional: Configure external_plugins for lazy loading premium plugins
+     * Remove the require statement for any premium plugin you want to lazy load,
+     * then uncomment and configure external_plugins below:
+     */
+    // external_plugins: {
+    //   'advcode': '/node_modules/tinymce-premium/plugins/advcode/plugin.min.js',
+    //   'tinycomments': '/node_modules/tinymce-premium/plugins/tinycomments/plugin.min.js'
+    // },
   });
 };
 ----

@@ -45,6 +45,18 @@ To upgrade to {productname} {productminorversion} using npm, run:
 npm install {prodnamecode}@latest --save
 ----
 
+For commercial customers using premium plugins, also upgrade the `+tinymce-premium+` package:
+
+[source,sh,subs="attributes+"]
+----
+npm install tinymce-premium@latest --save
+----
+
+[NOTE]
+====
+The `+tinymce+` and `+tinymce-premium+` packages are always released together with matching version numbers. Upgrading both packages together ensures compatibility.
+====
+
 [[composer]]
 ==== Composer
 

@@ -1,9 +1,9 @@
 . Create a new source file for importing the required components from {productname} and configuring the editor.
 +
 include::partial$module-loading/bundling-required-components.adoc[]
-
++
 NOTE: This example will only work for {productname} 6.8.0 and later.
-
++
 Example `+src/editor.js+`
 +
 [source,js]
@@ -30,9 +30,8 @@ import 'tinymce/plugins/link';
 import 'tinymce/plugins/lists';
 import 'tinymce/plugins/table';
 
-/* Import premium plugins */
-/* NOTE: Download separately and add these to /src/plugins */
-/* import './plugins/<plugincode>'; */
+/* Import premium plugins from NPM */
+include::partial$module-loading/bundling-premium-plugins-imports-npm.adoc[]
 
 /* content UI CSS is required */
 import 'tinymce/skins/ui/oxide/content.js';
@@ -49,6 +48,14 @@ export function render () {
     toolbar: 'bold italic | bullist numlist | link emoticons',
     skin_url: 'default',
     content_css: 'default',
+    /* Optional: Configure external_plugins for lazy loading premium plugins
+     * Remove the import statement for any premium plugin you want to lazy load,
+     * then uncomment and configure external_plugins below:
+     */
+    // external_plugins: {
+    //   'advcode': '/node_modules/tinymce-premium/plugins/advcode/plugin.min.js',
+    //   'tinycomments': '/node_modules/tinymce-premium/plugins/tinycomments/plugin.min.js'
+    // },
   });
 };
 ----

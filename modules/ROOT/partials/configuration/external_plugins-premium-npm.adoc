@@ -1,0 +1,76 @@
+=== Using premium plugins from NPM with `+external_plugins+`
+
+When using the `+tinymce-premium+` package without bundling, you can configure premium plugins using the `+external_plugins+` option. The URLs can be specified in three ways:
+
+==== Absolute URLs
+
+Use absolute URLs if the plugins are hosted on a CDN or separate server:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  external_plugins: {
+    'advcode': 'https://cdn.example.com/tinymce-premium/plugins/advcode/plugin.min.js',
+    'licensekeymanager': 'https://cdn.example.com/tinymce-premium/plugins/licensekeymanager/plugin.min.js',
+    'tinycomments': 'https://cdn.example.com/tinymce-premium/plugins/tinycomments/plugin.min.js'
+  },
+  plugins: 'advcode tinycomments',
+  // ... other configuration
+});
+----
+
+==== Relative to web-server root
+
+Use a leading "`+/+`" to indicate the path is relative to the web-server root:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  external_plugins: {
+    'advcode': '/node_modules/tinymce-premium/plugins/advcode/plugin.min.js',
+    'licensekeymanager': '/node_modules/tinymce-premium/plugins/licensekeymanager/plugin.min.js',
+    'tinycomments': '/node_modules/tinymce-premium/plugins/tinycomments/plugin.min.js'
+  },
+  plugins: 'advcode tinycomments',
+  // ... other configuration
+});
+----
+
+[NOTE]
+====
+This assumes the `+node_modules+` directory is accessible from your web server. In production, you may need to copy the plugin files to a public directory.
+====
+
+==== Relative to TinyMCE `+base_url+`
+
+Use a relative path (without leading "`+/+`") to specify plugins relative to the TinyMCE `+base_url+`:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  base_url: '/tinymce', // TinyMCE location
+  external_plugins: {
+    'advcode': '../../node_modules/tinymce-premium/plugins/advcode/plugin.min.js',
+    'licensekeymanager': '../../node_modules/tinymce-premium/plugins/licensekeymanager/plugin.min.js',
+    'tinycomments': '../../node_modules/tinymce-premium/plugins/tinycomments/plugin.min.js'
+  },
+  plugins: 'advcode tinycomments',
+  // ... other configuration
+});
+----
+
+[IMPORTANT]
+====
+* Always include the `+licensekeymanager+` plugin when using premium plugins with a commercial license.
+* The `+external_plugins+` option is useful when you want to lazy-load plugins or when bundling is not available.
+* Choose the URL format that best matches your deployment structure.
+====
+
+[TIP]
+====
+For most modern applications, bundling premium plugins is recommended. See xref:bundling-plugins.adoc[Bundling {productname} plugins] for more information.
+====
+

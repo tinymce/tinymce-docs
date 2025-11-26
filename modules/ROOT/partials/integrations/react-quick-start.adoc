@@ -241,10 +241,7 @@ import 'tinymce/plugins/wordcount';
 // importing plugin resources
 import 'tinymce/plugins/emoticons/js/emojis';
 
-// Import premium plugins from NPM (optional, requires tinymce-premium package)
-import 'tinymce-premium/plugins/advcode';
-import 'tinymce-premium/plugins/licensekeymanager';
-import 'tinymce-premium/plugins/tinycomments';
+include::partial$integrations/premium-plugins-bundling.adoc[]
 
 // Content styles, including inline UI like fake cursors
 import 'tinymce/skins/content/default/content';

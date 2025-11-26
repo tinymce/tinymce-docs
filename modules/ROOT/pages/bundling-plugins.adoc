@@ -7,9 +7,6 @@
 include::partial$module-loading/bundling-ref-example.adoc[]
 :!editorcomponent:
 
-[NOTE]
-If using {productname} 7.0.1 or earlier, please refer to link:https://www.tiny.cloud/docs/tinymce/6/bundling-plugins/[Bundling {productname} plugins using module loading] from the {productname} v6 documentation guide.
-
 include::partial$plugin-files/plugin-file-index.js.adoc[]
 
 
@@ -38,14 +35,14 @@ import 'tinymce-premium/plugins/<plugincode>';
 a|
 [source, js]
 ----
-import '../tinymce/plugins/<plugincode>';
+import '<path_to_tinymce_zip>/plugins/<plugincode>';
 ----
 
 |`.zip` (premium plugins)
 a|
 [source, js]
 ----
-import '../tinymce-premium/plugins/<plugincode>';
+import '<path_to_tinymce_premium_zip>/plugins/<plugincode>';
 ----
 
 .4+|Common JS
@@ -67,14 +64,14 @@ require('tinymce-premium/plugins/<plugincode>');
 a|
 [source, js]
 ----
-require('../tinymce/plugins/<plugincode>');
+require('<path_to_tinymce_zip>/plugins/<plugincode>');
 ----
 
 |`.zip` (premium plugins)
 a|
 [source, js]
 ----
-require('../tinymce-premium/plugins/<plugincode>');
+require('<path_to_tinymce_premium_zip>/plugins/<plugincode>');
 ----
 |===
 
@@ -87,63 +84,6 @@ When using `+import tinymce from 'tinymce'+`, import only the individual premium
 == Using premium plugins
 
 After installing the `+tinymce-premium+` package, you need to configure the plugins in your editor. There are two main approaches:
-
-=== Bundling (Recommended)
-
-For most modern applications, bundling premium plugins is recommended. This includes the plugin code directly in your application bundle.
-
-. Import the premium plugins you need:
-+
-[source,js]
-----
-import 'tinymce-premium/plugins/advcode';
-import 'tinymce-premium/plugins/licensekeymanager';
-import 'tinymce-premium/plugins/tinycomments';
-----
-
-. Add the plugins to your editor configuration:
-+
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',
-  license_key: 'T8LK:...', // Your commercial license key
-  plugins: 'advcode tinycomments',
-  // ... other configuration
-});
-----
-
-For complete bundling examples, see the <<Contents>> section below.
-
-=== Using external_plugins (Non-bundling)
-
-When bundling is not available or you want to lazy-load plugins, use the `+external_plugins+` option:
-
-[source,js]
-----
-tinymce.init({
-  selector: 'textarea',
-  license_key: 'T8LK:...', // Your commercial license key
-  external_plugins: {
-    'advcode': '/node_modules/tinymce-premium/plugins/advcode/plugin.min.js',
-    'licensekeymanager': '/node_modules/tinymce-premium/plugins/licensekeymanager/plugin.min.js',
-    'tinycomments': '/node_modules/tinymce-premium/plugins/tinycomments/plugin.min.js'
-  },
-  plugins: 'advcode tinycomments',
-  // ... other configuration
-});
-----
-
-[NOTE]
-====
-The `+external_plugins+` option supports three URL formats:
-
-* Absolute URLs (e.g., `+https://cdn.example.com/...`)
-* Relative to web-server root (e.g., `+/node_modules/...`)
-* Relative to {productname} `+base_url+` (e.g., `+../../node_modules/...`)
-
-For more information, see: xref:editor-important-options.adoc#external_plugins[`+external_plugins+` configuration option].
-====
 
 === License key manager
 
@@ -162,8 +102,66 @@ When using `+external_plugins+`:
 [source,js]
 ----
 external_plugins: {
-  'licensekeymanager': '/node_modules/tinymce-premium/plugins/licensekeymanager/plugin.min.js'
+  'licensekeymanager': '<path_to_premium_plugins>/licensekeymanager/plugin.min.js'
 }
 ----
+
+=== Bundling (Recommended)
+
+For most modern applications, bundling premium plugins is recommended. This includes the plugin code directly in your application bundle.
+
+. Import the premium plugins you need:
++
+[source,js]
+----
+import 'tinymce-premium/plugins/advcode';
+import 'tinymce-premium/plugins/tinycomments';
+// Always include the licensekeymanager plugin when using premium plugins with a commercial license.
+import 'tinymce-premium/plugins/licensekeymanager';
+----
+
+. Add the plugins to your editor configuration:
++
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  license_key: 'T8LK:...', // Your commercial license key
+  plugins: 'advcode tinycomments',
+  // ... other configuration
+});
+----
+
+For complete bundling examples, see the <<premium-plugins,Premium plugins>> and <<community-plugins,Community plugins>> sections below.
+
+=== Using external_plugins (Non-bundling)
+
+When bundling is not available or you want to lazy-load plugins, use the `+external_plugins+` option:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  license_key: 'T8LK:...', // Your commercial license key
+  external_plugins: {
+    'advcode': '<path_to_premium_plugins>/advcode/plugin.min.js',
+    'licensekeymanager': '<path_to_premium_plugins>/licensekeymanager/plugin.min.js',
+    'tinycomments': '<path_to_premium_plugins>/tinycomments/plugin.min.js'
+  },
+  plugins: 'advcode tinycomments',
+  // ... other configuration
+});
+----
+
+[NOTE]
+====
+The `+external_plugins+` option supports three URL formats:
+
+* Absolute URLs (e.g., `+https://cdn.example.com/...`)
+* Relative to web-server root (e.g., `+/node_modules/...`)
+* Relative to {productname} `+base_url+` (e.g., `+../../node_modules/...`)
+
+For more information, see: xref:editor-important-options.adoc#external_plugins[`+external_plugins+` configuration option].
+====
 
 include::partial$module-loading/bundling-plugin-files.adoc[]

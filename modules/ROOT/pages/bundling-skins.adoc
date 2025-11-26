@@ -94,4 +94,3 @@ import contentUiSkinCss from 'tinymce-premium/skins/ui/oxide/content.css';
 * Leave the premium skins in `+node_modules/tinymce-premium/skins/+` and configure xref:editor-skin.adoc#skin_url[`+skin_url+`] to point at the required skin directory.
 * This approach avoids moving files and is useful when the `+node_modules+` directory is web-accessible (or when copying only the specific skin to a public folder).
 
-Document the chosen approach in deployment scripts to keep upgrades predictable.

@@ -92,7 +92,12 @@ ifeval::["{productUse}" == "host"]
 npm install tinymce @tinymce/tinymce-react fs-extra
 ----
 +
-include::partial$integrations/premium-plugins-install-step.adoc[]
+include::partial$integrations/premium-plugins-install-step-link.adoc[]
+[NOTE]
+====
+For information on configuring premium plugins when hosting (using `+external_plugins+`), see: xref:bundling-plugins.adoc#using-premium-plugins[Using premium plugins].
+====
++
 . Setup a `postinstall` script to copy {productname} to the public directory for hosting
 +
 .postinstall.js
@@ -103,6 +108,11 @@ import path from 'path';
 const topDir = import.meta.dirname;
 fse.emptyDirSync(path.join(topDir, 'public', 'tinymce'));
 fse.copySync(path.join(topDir, 'node_modules', 'tinymce'), path.join(topDir, 'public', 'tinymce'), { overwrite: true });
+// If using premium plugins, copy tinymce-premium into the same tinymce folder
+// Note: This will overwrite root-level files (license.txt, README.md, CHANGELOG.md, etc.) with the premium package versions
+if (fse.existsSync(path.join(topDir, 'node_modules', 'tinymce-premium'))) {
+  fse.copySync(path.join(topDir, 'node_modules', 'tinymce-premium'), path.join(topDir, 'public', 'tinymce'), { overwrite: true });
+}
 ----
 +
 .package.json
@@ -176,8 +186,6 @@ export default function App() {
 
 . Update the `+licenseKey+` option in the editor element and include your xref:license-key.adoc[License Key].
 +
-include::partial$integrations/premium-plugins-hosting.adoc[]
-+
 
 endif::[]
 ifeval::["{productUse}" == "bundle"]
@@ -188,7 +196,7 @@ ifeval::["{productUse}" == "bundle"]
 npm install tinymce @tinymce/tinymce-react
 ----
 +
-include::partial$integrations/premium-plugins-install-step.adoc[]
+include::partial$integrations/premium-plugins-install-step-link.adoc[]
 . Using a text editor, create `+./src/BundledEditor.jsx+` and set the contents to:
 +
 [source,jsx]

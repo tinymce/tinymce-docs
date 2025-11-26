@@ -22,6 +22,8 @@ include::partial$misc/using-community-lang-packs.adoc[leveloffset=+1]
 include::partial$module-loading/bundling-ref-example.adoc[leveloffset=+1]
 :!editorcomponent:
 
+Premium language packs are available from ZIP downloads or the `+tinymce-premium+` NPM package. When using the NPM package, import language packs from `+tinymce-premium/langs/+` instead of `+tinymce/langs/+`.
+
 The following table shows examples of the syntax used to bundle the following example localization file:
 
 ....
@@ -33,11 +35,18 @@ The following table shows examples of the syntax used to bundle the following ex
 |Module Syntax |Source |Example
 
 .2+|ES6+
-|npm
+|npm (community)
 a|
 [source, js]
 ----
 import 'tinymce/langs/sv_SE';
+----
+
+|npm (premium)
+a|
+[source, js]
+----
+import 'tinymce-premium/langs/sv_SE';
 ----
 
 |`.zip`
@@ -48,11 +57,18 @@ import '../tinymce/langs/sv_SE';
 ----
 
 .2+|Common JS
-|npm
+|npm (community)
 a|
 [source, js]
 ----
 require('tinymce/langs/sv_SE');
+----
+
+|npm (premium)
+a|
+[source, js]
+----
+require('tinymce-premium/langs/sv_SE');
 ----
 
 |`.zip`
@@ -62,6 +78,11 @@ a|
 require('../tinymce/langs/sv_SE.js');
 ----
 |===
+
+[NOTE]
+====
+For complete information on using premium language packs from the NPM package, including non-bundling approaches, see: xref:ui-localization.adoc#premium-language-packs-npm[Providing premium language packs from `+tinymce-premium+`].
+====
 
 :forModuleLoaders: true
 include::partial$misc/ui-languages.adoc[leveloffset=+1]

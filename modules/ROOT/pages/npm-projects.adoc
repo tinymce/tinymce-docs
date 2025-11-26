@@ -60,13 +60,9 @@ Install the `+tinymce-premium+` package using npm:
 npm install tinymce-premium@^8.3
 ----
 
-include::partial$install/npm-premium-version-note.adoc[]
-
 [NOTE]
 ====
-* For {productname} 8.3, the `+tinymce-premium+` package is only published to the NPM registry. Other package manager registries (Packagist/Composer, NuGet etc.) may be considered for future releases.
-* Yarn can also install packages from the NPM registry, so `+yarn add tinymce-premium@^8.3+` will work.
-* The `+tinymce-premium+` package version aligns with the `+tinymce+` package version. **Always** use compatible versions of both packages (e.g., both at 8.3.0 or later).
+The `+tinymce-premium+` package is available for {productname} 8.3 onwards and is currently only published to the NPM registry (Yarn can also install from NPM). The package version must align with the `+tinymce+` package version—always use compatible versions of both packages (e.g., both at 8.3.0 or later).
 ====
 
 === Package contents

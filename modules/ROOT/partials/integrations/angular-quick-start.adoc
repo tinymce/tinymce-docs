@@ -38,8 +38,7 @@ ifeval::["{productSource}" == "package-manager"]
 npm install tinymce @tinymce/tinymce-angular
 ----
 +
-include::partial$integrations/premium-plugins-install-step.adoc[]
-
+include::partial$integrations/premium-plugins-install-step-link.adoc[]
 endif::[]
 ifeval::["{productSource}" != "package-manager"]
 . Install the `+tinymce-angular+` package.

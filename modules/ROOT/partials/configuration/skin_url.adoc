@@ -14,3 +14,22 @@ tinymce.init({
   skin_url: '/css/my{prodnamecode}skin'
 });
 ----
+
+=== Example: loading premium skins from `+tinymce-premium+` (NPM)
+
+When installing the `+tinymce-premium+` NPM package, premium skins are stored in `+node_modules/tinymce-premium/skins/+`. Configure `+skin_url+` to point at the desired skin directory. For example:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  skin_url: '/node_modules/tinymce-premium/skins/ui/oxide',
+  skin: 'oxide'
+});
+----
+
+[NOTE]
+====
+* Ensure the `+node_modules+` directory (or a copy of the skin directory) is accessible to the browser. Many projects copy the required skin into a public folder (such as `+/public/skins/ui/oxide+`) during their build step and update `+skin_url+` accordingly.
+* Combine this with the approaches listed in xref:bundling-skins.adoc#premium-skins-npm[Premium skins from `+tinymce-premium+`] to match the deployment strategy.
+====

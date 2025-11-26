@@ -111,4 +111,23 @@ tinymce.init({
 });
 ----
 
+=== Example: loading premium icons from `+tinymce-premium+` (NPM)
+
+When installing the `+tinymce-premium+` NPM package, premium icon packs are stored in `+node_modules/tinymce-premium/icons/+`. Configure `+icons_url+` to point at the desired icon pack file. For example:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  icons_url: '/node_modules/tinymce-premium/icons/material/icons.js',
+  icons: 'material'
+});
+----
+
+[NOTE]
+====
+* Ensure the `+node_modules+` directory (or a copy of the icon pack file) is accessible to the browser. Many projects copy the required icon pack into a public folder (such as `+/public/icons/material/icons.js+`) during their build step and update `+icons_url+` accordingly.
+* Combine this with the approaches listed in xref:bundling-icons.adoc#premium-icon-packs-npm[Premium icon packs from `+tinymce-premium+`] to match the deployment strategy.
+====
+
 endif::[]

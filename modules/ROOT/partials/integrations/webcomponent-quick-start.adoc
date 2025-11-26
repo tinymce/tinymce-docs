@@ -35,8 +35,7 @@ ifeval::["{productSource}" == "package-manager"]
 npm install tinymce @tinymce/tinymce-webcomponent
 ----
 
-include::partial$integrations/premium-plugins-install-step.adoc[]
-
+include::partial$integrations/premium-plugins-install-step-link.adoc[]
 . Bundle {productname} with the Web Component application using a module loader (such as Webpack).
 +
 --

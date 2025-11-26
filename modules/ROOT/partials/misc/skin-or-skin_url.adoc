@@ -1,1 +1,4 @@
-There are two options for applying a skin to {productname}: `+skin+` and `+skin_url+`. {companyname} recommends using the `+skin+` option for skins bundled with the product or included in your cloud subscription. Custom or third-party skins should be included using the `+skin_url+` option to simplify updating and upgrading {productname}.
+There are two options for applying a skin to {productname}: `+skin+` and `+skin_url+`. 
+
+* Use the `+skin+` option when skins are in the default location (for {cloudname} deployments, ZIP bundles, or when using NPM packages with bundling or file layering).
+* Use the `+skin_url+` option to specify a custom path to skins, which is useful for custom skins or when using NPM packages without bundling.

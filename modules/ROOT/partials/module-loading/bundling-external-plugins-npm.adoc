@@ -1,9 +1,9 @@
-    /* Optional: Configure external_plugins for lazy loading premium plugins
-     * Remove the import or require statement for any premium plugin you want to lazy load,
-     * then uncomment and configure external_plugins below:
+    /* Alternatively to importing premium plugins directly, you can configure external_plugins to load premium plugins in a different location.
+     * Remember to include the licensekeymanager plugin when using premium plugins.
     */
     // external_plugins: {
-    //   'advcode': '/node_modules/tinymce-premium/plugins/advcode/plugin.min.js',
-    //   'tinycomments': '/node_modules/tinymce-premium/plugins/tinycomments/plugin.min.js'
+    //   'advcode': '<path_to_premium_plugins>/advcode/plugin.min.js',
+    //   'tinycomments': '<path_to_premium_plugins>/tinycomments/plugin.min.js'
+    //   'licensekeymanager': '<path_to_premium_plugins>/licensekeymanager/plugin.min.js',
     // },
 

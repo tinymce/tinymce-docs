@@ -65,14 +65,6 @@ const contentCSS = require('../tinymce/skins/content/example/content.css');
 ----
 |===
 
-[IMPORTANT]
-====
-The handling of content CSS files varies between bundling tools:
-
-* **Webpack/Rollup**: Import the `.css` file as a variable and use `+content_style+` option (e.g., `+content_style: contentCSS.toString()+`).
-* **Vite**: Import the `.js` file as a side-effect and use `+content_css+` option with a string value (e.g., `+content_css: 'example'+`).
-
-View the relevant guide for the required syntax at xref:introduction-to-bundling-tinymce.adoc[Bundling {productname} with a module loader].
-====
+IMPORTANT: The handling of content CSS files (such as `+content.css+` or `+content.min.css+`) varies between bundling tools. View the relevant guide for the required syntax at xref:introduction-to-bundling-tinymce.adoc[Bundling {productname} with a module loader].
 
 include::partial$module-loading/bundling-content-css-files.adoc[]

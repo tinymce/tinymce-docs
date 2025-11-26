@@ -75,10 +75,6 @@ require('<path_to_tinymce_premium_zip>/plugins/<plugincode>');
 ----
 |===
 
-[NOTE]
-====
-When using `+import tinymce from 'tinymce'+`, import only the individual premium plugins from `+tinymce-premium+` (e.g., `+import 'tinymce-premium/plugins/advcode'+`).
-====
 
 [[using-premium-plugins]]
 == Using premium plugins

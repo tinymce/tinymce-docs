@@ -58,6 +58,6 @@ import 'tinymce-premium/icons/premium';
 
 [NOTE]
 ====
-* **Icons**: The default icon pack is always required. Premium icon packs may not include all icons and are designed to fall back to the default icons when they suit the pack. Import both the default and premium icon packs, then configure which to use via the xref:editor-icons.adoc[`+icons+`] option in your editor configuration.
+* **Icons**: The default icon pack is always required. Premium icon packs may not include all icons and are designed to fall back to the default icons when they suit the pack. Import both the default and premium icon packs, then use the xref:editor-icons.adoc[`+icons+`] option in your editor configuration to tell {productname} to also use the premium icon pack. 
 * **Skins**: Import either a community or premium skin (not both). Configure the skin using the xref:editor-skin.adoc[`+skin+`] option in your editor configuration.
 ====

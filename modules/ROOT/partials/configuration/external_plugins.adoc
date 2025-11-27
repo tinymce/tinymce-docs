@@ -1,11 +1,16 @@
 [[external_plugins]]
 == `+external_plugins+`
 
-This option allows a URL based location of plugins to be provided that are outside of the normal {productname} plugins directory.
+This option allows plugins to be loaded from outside the default {productname} plugins directory. {productname} will attempt to load these plugins as usual when starting up, provided the required files exist.
 
-{productname} will attempt to load these as per regular plugins when starting up. This option is useful when loading {productname} from a CDN or when the {productname} directory is separate from custom plugins.
+This can be useful when:
 
-This value should be set as a JavaScript object that contains a property for each {productname} plugin to be loaded. This property should be named after the plugin and should have a value that contains the location that the plugin that will be loaded from.
+* Using custom plugins.
+* Loading {productname} from a CDN but not the plugins.
+* Loading premium plugins from the tinymce-premium NPM package, without bundling or file stacking.
+* Loading plugins from any location separate to the core {productname} files.
+
+This option takes an object which contains `+key-value+` pairs of plugin names and the location their JavaScript file should be loaded from as a URL.
 
 The URLs provided can be:
 
@@ -22,9 +27,11 @@ The URLs provided can be:
 tinymce.init({
   selector: 'textarea',  // change this value according to your HTML
   external_plugins: {
-    'testing': 'http://www.testing.com/plugin.min.js',
-    'maths': 'http://www.maths.com/plugin.min.js'
-  }
+    'customplugin': 'https://cdn.example.com/customplugin/plugin.min.js',
+    'advcode': '/<path_to_tinymce-premium>/plugins/advcode/plugin.min.js'
+  },
+  plugins: 'customplugin advcode',
+  // ... other configuration
 });
 ----
 

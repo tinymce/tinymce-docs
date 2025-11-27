@@ -1,60 +1,31 @@
 = Create an icon pack for {productname}
 :navtitle: Create an icon pack
 :description_short: Introducing icon pack creation.
-:description: How to make your own icon pack.
+:description: How to create a custom icon pack.
 :keywords: create, creator, icon
 
 == Overview
 
-This guide provides comprehensive coverage of creating, building, and deploying custom icon packs, including solutions to common issues.
+This guide provides comprehensive coverage of creating, building, and deploying custom icon packs, including solutions to common issues. It details two approaches:
 
-== Prerequisites
-
-This guide assumes:
-
-* Familiarity with the command line and running commands
-* https://nodejs.org/en/[Node.js] and https://www.npmjs.com/[NPM] are already installed  
-* Optional: https://git-scm.com/[git] is already installed
+* The inline approach, for adding a small number of custom icons
+* The icon file approach, using the Icon Pack Template project to easily generate the required output file from a folder of SVGs.
 
 == How Icons Work in {productname}
 
-A {productname} icon pack is a `+.js+` file containing strings of link:https://developer.mozilla.org/en-US/docs/Web/SVG[SVG's]. An icon pack can be used: to include one or more custom icons; or to replace some or all of the default {productname} icons.
+A {productname} icon pack is a JavaScript construct containing strings of link:https://developer.mozilla.org/en-US/docs/Web/SVG[SVG's]. Icon packs are often kept in separate files, but can be inlined if needed. An icon pack can be used to add one or more custom icons or to replace some or all of the default {productname} icons.
 
 An icon pack only **requires** the custom icons to be included; the default {productname} icons are used as a fallback for icons missing from the custom icon pack.
 
-=== Icon Pack Structure and Loading
+== Registering an icon pack
 
-[IMPORTANT]
-====
-*Understanding Icon Pack Loading:*
-
-{productname} loads icon packs from the path `+TINYMCE_BASE/icons/{iconPackName}/icons.js+`, where:
-
-* `TINYMCE_BASE` is the {productname} root directory (the directory containing `tinymce.min.js`).
-* `+{iconPackName}+` is the name of the icon pack.
-
-**Example Directory Structure:**
-----
-js/tinymce/
-├── tinymce.min.js          ← TINYMCE_BASE marker file
-├── icons/
-│   ├── default/
-│   │   └── icons.js        ← Default TinyMCE icons
-│   └── my_icon_pack/       ← Your custom pack
-│       └── icons.js        ← Must be exactly this filename
-└── ... (other TinyMCE files)
-----
-====
-
-=== Icon Pack File Format
-
-The generated `icons.js` file in the `+dist/icons/{iconPackName}/icons.js+` directory follows this exact format:
+Icon packs are registered with {productname} using the IconManager. Whether creating the icon pack manually or using the Icon Pack Template tool, the JavaScript required to setup an icon pack looks like:
 
 [source,javascript]
 ----
-tinymce.IconManager.add('your-pack-name', {
+tinymce.IconManager.add('custom-pack-name', {
   icons: {
-    'bold': '<svg width="24" height="24">...</svg>', // this is automatically generated from the 'bold.svg' file in the 'src/svg' directory
+    'bold': '<svg width="24" height="24">...</svg>', 
     'italic': '<svg width="24" height="24">...</svg>',
     'custom-icon': '<svg width="24" height="24">...</svg>',
     // ... more icons
@@ -62,170 +33,74 @@ tinymce.IconManager.add('your-pack-name', {
 });
 ----
 
-== Creating a TinyMCE Icon Pack
+== Creating an icon pack manually
 
-To create a custom icon pack:
+When adding only a few icons, it may be easier to manually configure the new icon pack than to use the Icon Pack Template tool. To do this:
 
-* xref:download-and-setup-the-icon-pack-template[Download and setup the icon pack template]
-* xref:add-the-svg-files[Add the SVG files]
-* xref:build-the-icon-pack[Build the icon pack]
+. Gather the SVG files for the new icons. Extract their content string, e.g. `+<svg width="24" height="24">...</svg>+`
+. Call `+tinymce.IconManager.add()+`
+. Specify the icon pack name as the first argument
+. The second argument is an object, with key `+icons+` and a nested object containing the new icons with their names and SVG strings as their keys and values.
 
-=== Download and Setup the Icon Pack Template
-
-To use the {productname} icon pack template project:
-
-. Download the link:https://github.com/tinymce/oxide-icon-pack-template[TinyMCE Oxide Icon Pack Template] by either:
-* Downloading the `.zip` file from the link:https://github.com/tinymce/oxide-icon-pack-template[Oxide Icon Pack Template GitHub page] and extract the contents.
-* From a terminal or command prompt, use git to clone the GitHub repository:
-+
-[source,bash]
-----
-git clone https://github.com/tinymce/oxide-icon-pack-template.git
-----
-+
-. Open a terminal or command prompt, navigate to the `oxide-icon-pack-template` directory.
-. Install the project dependencies by executing:
-+
-[source,bash]
-----
-npm install
-----
-+
-. When prompted, enter a name for the icon pack. The icon pack name should only contain:
-* Numbers
-* Letters
-* Hyphens (`-`)
-* Underscores (`_`)
-+
-. Verify that the `iconPackName` field has been added to your `package.json` file:
-+
-[source,json]
-----
-{
-  "iconPackName": "my_icon_pack",
-}
-----
-
-The icon pack name will be used with the link:https://www.tiny.cloud/docs/tinymce/latest/editor-icons/#icons[icons] option to apply the icons in {productname}.
+The new icons can then be used by name within {productname}.
 
 [IMPORTANT]
 ====
-The `iconPackName` field in `package.json` is essential for the build process. This field:
-
-* Defines the name that will be used in the generated `icons.js` file
-* Must match the name you use in the `icons` option when initializing {productname}
-* Is used by the build system to create the proper directory structure
-* If missing or incorrect, the icon pack will not work properly
-
-*Example:*
-
-* `package.json` contains: `"iconPackName": "my_icon_pack"`
-* {productname} config uses: `icons: 'my_icon_pack'`
-* Generated file: `tinymce.IconManager.add('my_icon_pack', {...})`
+*Icon Override:* If custom icons have the same name as a default {productname} icon, they will override the default icon.
 ====
 
-=== Add the SVG Files
+This JavaScript can be included as a separate icon file or inlined beside the application's `+tinymce.init()+` call. Configure {productname} to load the icon pack and possibly where from.
 
-Each SVG files placed in `+/src/svg+` will be converted to an icon. The file names of the SVG files are used to set the icon identifier used by {productname}.
+[NOTE]
+====
+*Naming Icon Pack Files:* When loading icon packs from a separate file, it is safest to name the file `+icons.js+`. This ensures that, if placed in the default location, {productname} will recognize the file as an icon pack.
+====
 
-For example: `+bold.svg+` will have the identifier `bold`. Such as:
+=== Example: using a custom icon pack inline
 
 [source,js]
 ----
+tinymce.IconManager.add('customIcons', { // icon pack name
+  icons: { // list icons as name-SVG pairs
+    'my-custom-icon': '<svg width="24" height="24">...</svg>',
+  }
+});
+
 tinymce.init({
-  selector: '#tiny_custom_button',  // change this value according to your HTML
-  toolbar: 'myButton',
-  icons: 'my_icon_pack',
-  setup: (editor) => {
-    editor.ui.registry.addButton('myButton', {
-      icon: 'bold',    // the 'bold' icon created from 'bold.svg'
-      onAction: (_) => {
-        editor.insertContent('&nbsp;<strong>It\'s my icon button!</strong>&nbsp;');
-      }
+  selector: '#editor',
+  icons: 'customIcons', // tell {productname} to load the custom icon pack
+  toolbar: 'myCustomButton',
+  setup: function(editor) {
+    editor.ui.registry.addToolbarButton('myCustomButton', {
+      icon: 'my-custom-icon' // use the custom icon for a custom toolbar button
     });
   }
 });
 ----
 
-For a list of default icon identifiers, see: link:https://www.tiny.cloud/docs/tinymce/latest/editor-icon-identifiers/[Available icons]. If using a custom icon pack, the icon identifiers will be the file names of the SVG files.
+== Using the Icon Pack Template tool
+
+For large custom icon packs, use the xref:using-the-icon-pack-template.adoc[Icon Pack Template tool], which can take a folder of SVGs and generate the required output file. This approach is ideal when creating icon packs with many icons or when automating the build process.
+
+For step-by-step instructions, see: xref:using-the-icon-pack-template.adoc[Using the Icon Pack Template tool].
+
+== Deploying an Icon Pack file
+
+An icon pack file can be served either:
+
+* With {productname}
+* Separate from {productname}
+
+Use the xref:editor-icons.adoc#icons[`+icons+`] and xref:editor-icons.adoc#icons_url[`+icons_url+`] options to configure {productname} appropriately.
 
 [NOTE]
 ====
-* {productname} does **not** resize the SVGs provided, relying on the size defined in the SVG. This allows icons of different sizes to be used in the editor. The Toolbar button sizes are independent of the icon sizes. To change button sizes, a link:https://www.tiny.cloud/docs/tinymce/latest/creating-a-skin/[custom skin] is required.
-* *SVG Requirements:* Input SVGs must be shapes, not strokes. SVG files containing strokes will not render correctly. If the input files contain strokes, use a graphics program to convert the strokes into shapes.
+*Default Icon Pack Location:*
+
+The `+icons+` option will only recognize icon files located at `+TINYMCE_BASE/icons/${iconPackName}/icons.js+`; where:
+
+* `+TINYMCE_BASE+` is the {productname} root directory (the directory containing `+tinymce.min.js+`).
 ====
-
-==== SVG File Organization
-
-Organize your SVG files in the `src/svg/` directory:
-
-[source]
-----
-src/svg/
-├── bold.svg           ← Overrides default bold icon
-├── italic.svg         ← Overrides default italic icon  
-├── underline.svg      ← Overrides default underline icon
-├── my-custom-icon.svg ← Creates new 'my-custom-icon' identifier
-├── company-logo.svg   ← Creates new 'company-logo' identifier
-└── save-action.svg    ← Creates new 'save-action' identifier
-----
-
-*Icon Identifier Rules:*
-
-* Filename becomes the identifier: `+bold.svg+` → `+'bold'+`
-* Hyphens are preserved: `+my-custom-icon.svg+` → `+'my-custom-icon'+`
-
-=== Build the Icon Pack
-
-To build the icon pack using Gulp:
-
-. Open a terminal or command prompt and navigate to the root directory of the icon pack (such as: `+oxide-icon-pack-template/+`).
-. Build the icon pack by executing the `npx gulp` command:
-+
-[source,bash]
-----
-npx gulp
-----
-+
-A `+dist/+` directory containing the icon pack will be automatically created.
-+
-.Example: `+dist/icons/my-icon-pack/icons.js+` automatically generated from the SVG files in the `+src/svg+` directory.
-[source,js]
-----
-tinymce.IconManager.add('my-icon-pack', {
-  icons: {
-    'audio': '<svg width="24" height="24"><path d="M10.8 19q.9 0 1.5-.7t.7-1.5V13h3v-2h-4v3.9l-.6-.3-.6-.1q-1 0-1.7.7t-.6 1.6q0 .9.7 1.5t1.6.7ZM6 22q-.8 0-1.4-.6T4 20V4q0-.8.6-1.4T6 2h8l6 6v12q0 .8-.6 1.4T18 22H6Zm7-13h5l-5-5v5Z"/></svg>',
-    'bold': '<svg width="24" height="24"><path fill-rule="evenodd" d="M3.6 2.3a1.4 1.4 0 0 0-1.4 1.3v16.8c0 .7.7 1.4 1.4 1.4h16.8a1.4 1.4 0 0 0 1.4-1.4V3.6a1.4 1.4 0 0 0-1.4-1.3H3.6Zm6 4a1.4 1.4 0 0 0-1.3 1.3v9.3c0 .7.6 1.4 1.3 1.4H12v-.8.8a2.5 2.5 0 0 0 .2 0 4.6 4.6 0 0 0 1.6-.5c.5-.2 1-.5 1.3-1 .4-.5.7-1.2.7-2 0-.9-.3-1.6-.7-2a3.2 3.2 0 0 0-.8-.9 2.8 2.8 0 0 0 .4-.5c.4-.5.5-1.1.5-1.9s-.1-1.4-.5-1.9a3 3 0 0 0-1.1-1 3.9 3.9 0 0 0-1.6-.3H9.6Zm.1 6.5H12a3.2 3.2 0 0 1 1.2.2l.7.6c.2.2.4.6.4 1.1s-.2 1-.4 1.2a1.8 1.8 0 0 1-.7.6 3.2 3.2 0 0 1-1.1.2H9.7v-4Zm2.3 4Zm0-5.6H9.7V7.8H12l1 .2.5.5c.1.2.3.5.3 1s-.2.8-.3 1a1.4 1.4 0 0 1-.6.5 2.3 2.3 0 0 1-.9.2Z" clip-rule="evenodd"/></svg>',
-    'italic': '<svg width="24" height="24"><path fill-rule="evenodd" d="M3.6 2.3a1.4 1.4 0 0 0-1.4 1.3v16.8c0 .7.7 1.4 1.4 1.4h16.8a1.4 1.4 0 0 0 1.4-1.4V3.6a1.4 1.4 0 0 0-1.4-1.3H3.6ZM16 6.8h-1.5L11 17.1h1a.8.8 0 0 1 0 1.6H8a.8.8 0 0 1 0-1.6h1.5L13 6.8h-1a.8.8 0 0 1 0-1.5h4a.8.8 0 0 1 0 1.5Z" clip-rule="evenodd"/></svg>',
-  }
-});
-----
-+
-. Using a web browser, open `+dist/html/icons.html+` to preview the icons.
-
-==== Troubleshooting Information for Building Icon Packs
-
-The SVG files are optimized during the build process with link:https://github.com/svg/svgo[SVGO]. The optimization can result in distorted graphics due to rounding errors. The graphics may be fixed by providing new SVGO options. To change the SVGO options used:
-
-. Using a text editor, open `+gulpfile.js+`.
-. Add the `+svgo+` option to the `+iconPackager+` function, such as:
-+
-[source,javascript]
-----
-iconPackager({
-  name: 'my-icon-pack',
-  svgo: { floatPrecision: 3 } //Increase the rounding precision
-})
-----
-
-All user defined options, including SVGO options, will merge with the default options. For information on SVGO options, see: link:https://github.com/svg/svgo[SVGO on GitHub].
-
-== Deploying an Icon Pack
-
-An icon pack can be served either:
-
-* xref:deploy-the-icon-pack-with-tinymce[With {productname}]
-* xref:deploy-the-icon-pack-and-tinymce-separately[Separate from {productname}]
 
 [[deploy-the-icon-pack-with-tinymce]]
 === Deploy the Icon Pack with {productname}
@@ -241,6 +116,6 @@ include::partial$configuration/icons_url.adoc[]
 
 == Interactive Demo
 
-See the custom icon pack in action with our interactive demo:
+See the custom icon pack in action with the interactive demo:
 
 liveDemo::custom-icon-pack[]

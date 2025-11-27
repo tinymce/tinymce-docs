@@ -18,7 +18,7 @@ require('tinymce/icons/default');
 require('tinymce/themes/silver');
 require('tinymce/models/dom');
 
-/* Import a skin (can be a custom skin instead of the default) */
+/* Import the default skin (oxide). Replace with a custom skin if required. */
 require('tinymce/skins/ui/oxide/skin.css');
 
 /* Import plugins - include the relevant plugin in the 'plugins' option. */
@@ -35,7 +35,7 @@ require('tinymce-premium/plugins/advcode');
 require('tinymce-premium/plugins/licensekeymanager');
 require('tinymce-premium/plugins/tinycomments');
 
-/* content UI CSS is required */
+/* content UI CSS is required (using the default oxide skin) */
 const contentUiSkinCss = fs.readFileSync('node_modules/tinymce/skins/ui/oxide/content.css', { encoding: 'UTF-8' });
 
 /* The default content CSS can be changed or replaced with appropriate CSS for the editor content. */

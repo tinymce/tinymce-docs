@@ -74,7 +74,7 @@ The `+tinymce-premium+` NPM package ships all premium skins in `+tinymce-premium
 
 *Bundling (recommended for modern build tools)*
 
-* Import the required skin files so the module bundler adds them to the application bundle. For example:
+* Import the required skin files so the module bundler adds them to the application bundle. For example, importing the default skin (oxide):
 +
 [source,js]
 ----

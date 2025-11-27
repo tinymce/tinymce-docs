@@ -16,7 +16,7 @@ import 'tinymce/icons/default';
 import 'tinymce/themes/silver';
 import 'tinymce/models/dom';
 
-/* Import a skin (can be a custom skin instead of the default) */
+/* Import the default skin (oxide). Replace with a custom skin if required. */
 import 'tinymce/skins/ui/oxide/skin.css';
 
 /* Import plugins */
@@ -30,7 +30,7 @@ import 'tinymce/plugins/table';
 
 include::partial$integrations/premium-plugins-bundling.adoc[]
 
-/* content UI CSS is required */
+/* content UI CSS is required (using the default oxide skin) */
 import contentUiSkinCss from 'tinymce/skins/ui/oxide/content.css';
 
 /* The default content CSS can be changed or replaced with appropriate CSS for the editor content. */

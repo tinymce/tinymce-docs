@@ -11,6 +11,8 @@ This option specifies the skin that {productname} should use, or `+false+` to no
 
 The name of the skin should match the name of the folder within the `+skins/ui+` directory of {productname}. If the specified skin is not found, {productname} will not load.
 
+=== Example: using `+skin+`
+
 [source,js]
 ----
 tinymce.init({

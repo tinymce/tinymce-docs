@@ -48,6 +48,11 @@ tinymce.init({
 
 [NOTE]
 ====
+The `+skin+` option requires the skin files to be in the default location (`+TINYMCE_BASE/skins/ui/${skinName}+`). For custom locations or when using NPM packages without bundling, refer to xref:editor-skin.adoc[Skin options] for more information.
+====
+
+[NOTE]
+====
 *Mixing skins and content_css:*
 
 The `+content_css+` option is not required when using skins that include content styles. However, if both `+skin+` and `+content_css+` are specified, `+content_css+` will override the skin's content styles, allowing mixing and matching of UI and content styles.
@@ -74,6 +79,11 @@ tinymce.init({
   icons: 'material'      // Name of icon pack
 });
 ----
+
+[NOTE]
+====
+The `+icons+` option requires the icon pack files to be in the default location (`+TINYMCE_BASE/icons/${iconPackName}/icons.js+`). For custom locations or when using NPM packages without bundling, refer to xref:editor-icons.adoc[Icon options] for more information.
+====
 
 [[icon-pack-compatibility-matrix]]
 == Icon pack compatibility matrix

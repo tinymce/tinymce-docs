@@ -25,17 +25,6 @@ The following premium skins are available for {productname}:
 
 For information on configuring skins, see: xref:editor-skin.adoc[Skin options].
 
-Some skins include both UI styles (`+skin.css+`) and content styles (`+content.css+`). When a skin includes both files, using the `+skin+` option will apply both UI and content styles. The `+content_css+` option is not required in this case.
-
-For styling only the editable area (without changing the UI), separate content-only CSS files are available. These files are located in the content folder and may differ from the content styles included with skins. Available content-only options:
-
-* `material-classic`
-* `material-outline`
-* `fabric`
-* `fluent`
-
-Use the xref:add-css-options.adoc#content_css[`+content_css+`] option to apply content-only styles.
-
 Skins can include both UI styles (`+skin.css+`) and content styles (`+content.css+`). Using the `+skin+` option applies both automatically when both files are present.
 
 For styling only the editable area (without changing the UI), separate content-only CSS files are available. These files are located in the content folder and may differ from the content styles included with skins. Available content-only options:

@@ -141,8 +141,9 @@ tinymce.init({
   license_key: 'T8LK:...', // Your commercial license key
   external_plugins: {
     'advcode': '<path_to_premium_plugins>/advcode/plugin.min.js',
-    'licensekeymanager': '<path_to_premium_plugins>/licensekeymanager/plugin.min.js',
-    'tinycomments': '<path_to_premium_plugins>/tinycomments/plugin.min.js'
+    'tinycomments': '<path_to_premium_plugins>/tinycomments/plugin.min.js',
+    // Always include the licensekeymanager plugin when using premium plugins with a commercial license.
+    'licensekeymanager': '<path_to_premium_plugins>/licensekeymanager/plugin.min.js'
   },
   plugins: 'advcode tinycomments',
   // ... other configuration

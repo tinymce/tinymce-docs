@@ -3,12 +3,12 @@ ifeval::[{customIconPack} != true]
 [[icons_url]]
 == `+icons_url+`
 
-The *icons_url* option allows the editor icons to be extended or replaced using an icon pack. For information on creating icon packs, see: xref:creating-an-icon-pack.adoc[Create an icon pack for {productname}].
+The *icons_url* option allows integrators to specify a non-default location to load icon packs from. This is useful when {productname} and the icon pack are loaded from different locations. For example: When loading {productname} from {cloudname}, the icon pack can be loaded from a different web server.
+
+*Type:* `+String+`
 endif::[]
 
-On initialization, {productname} will try to load any icon pack specified by the *icons_url* option. The icons in the icon pack will be merged with xref:editor-icon-identifiers.adoc[{productname}'s default icons] and icons in the icon pack will overwrite the default icons with the same identifier.
-
-`+icons_url+` is used to specify the location of an icon pack when {productname} and the icon pack are loaded from different locations. For example: When loading {productname} from {cloudname}, the icon pack can be loaded from a different web server.
+On initialization, {productname} will try to load any icon pack specified by the *icons* option from the location specified by *icons_url*. The icons in the icon pack will be merged with xref:editor-icon-identifiers.adoc[{productname}'s default icons] and icons in the icon pack will overwrite the default icons with the same identifier.
 
 [IMPORTANT]
 ====
@@ -30,7 +30,6 @@ tinymce.init({
 });
 ----
 
-The `icons` value must match the pack name defined in your `package.json` `iconPackName` field.
 ====
 
 == Usage
@@ -39,6 +38,7 @@ To use a {productname} icon pack from a separate location:
 
 . Ensure the icon pack is available at the specified URL.
 . Add the `+icons_url+` option to `+tinymce.init+`.
+. Specify the icon pack name using the `+icons+` setting.
 
 ifeval::[{customIconPack} == true]
 For custom icon packs:
@@ -92,7 +92,6 @@ tinymce.init({
 
 endif::[]
 ifeval::[{customIconPack} != true]
-*Type:* `+String+`
 
 === Example: using `+icons_url+`
 
@@ -113,13 +112,13 @@ tinymce.init({
 
 === Example: loading premium icons from `+tinymce-premium+` (NPM)
 
-When installing the `+tinymce-premium+` NPM package, premium icon packs are stored in `+node_modules/tinymce-premium/icons/+`. Configure `+icons_url+` to point at the desired icon pack file. For example:
+When installing the `+tinymce-premium+` NPM package, premium icon packs are stored in `+node_modules/tinymce-premium/icons/+`. Configure `+icons_url+` to point at the desired icon pack file. The path is relative to where {productname} is loaded from. For example:
 
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',
-  icons_url: '/node_modules/tinymce-premium/icons/material/icons.js',
+  icons_url: '../../node_modules/tinymce-premium/icons/material/icons.js',
   icons: 'material'
 });
 ----

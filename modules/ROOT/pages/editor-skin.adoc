@@ -2,6 +2,34 @@
 :navtitle: Skins
 :description: Configure the editor's overall appearance.
 
+{productname} comes with several premium skins which change the look of the editor. These skins are an easy way to restyle {productname} to better suit applications.
+
+[NOTE]
+====
+*Skins vs Content CSS:*
+
+Skins change both the look of {productname}'s UI and the editable area. To change only the look of the editable area, use xref:add-css-options.adoc#content_css[`+content_css+`].
+====
+
+The default skin does not require any configuration, though it must be imported when bundling for deployment:
+
+[source,js]
+----
+import 'tinymce/skins/ui/oxide/skin';
+----
+
+Replacing the default skin uses the `+skin+` and `+skin_url+` settings.
+
+== Available skins
+
+See xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs] for a list of available skins and the icon packs which look best with each skin.
+
+== Custom skins
+
+Integrators can create and use their own skin files. For information on creating custom skins, see: xref:creating-a-skin.adoc[Create a skin for {productname}].
+
+== Replacing the default skin
+
 include::partial$misc/skin-or-skin_url.adoc[]
 
 include::partial$configuration/skin.adoc[]

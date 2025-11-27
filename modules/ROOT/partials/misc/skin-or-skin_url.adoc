@@ -1,4 +1,28 @@
-There are two options for applying a skin to {productname}: `+skin+` and `+skin_url+`. 
+There are two options for replacing the default {productname} skin:
 
-* Use the `+skin+` option when skins are in the default location (for {cloudname} deployments, ZIP bundles, or when using NPM packages with bundling or file layering).
-* Use the `+skin_url+` option to specify a custom path to skins, which is useful for custom skins or when using NPM packages without bundling.
+* Use the `+skin+` option when the skin files are in the default location (for {cloudname} deployments, ZIP bundles, or when using NPM packages with bundling or file layering).
+* Use the `+skin_url+` option to specify a custom path to skin files, which is useful for custom skins or when using NPM packages without bundling. When using `+skin_url+`, the `+skin+` option is not required.
+
+The default location {productname} tries to load skin files from is `+TINYMCE_BASE/skins/ui/${skinName}+`; where:
+
+* `+TINYMCE_BASE+` is the {productname} root directory (the directory containing `+tinymce.min.js+`).
+* `+${skinName}+` is the name of the skin.
+
+To load skins from another location, integrators must specify that location using `+skin_url+`.
+
+* When using {productname} from {cloudname}, ZIP bundles, or NPM packages with bundling or file layering, use `+skin+`.
+* When using custom skins or using NPM packages without bundling, use `+skin_url+`.
+
+[IMPORTANT]
+====
+*Understanding the skins folder structure:*
+
+The **skins** folder in the `+tinymce-premium+` NPM package and ZIP bundles contains both a **ui** folder and a **content** folder. The files within the **content** folder are for use with the xref:add-css-options.adoc#content_css[`+content_css+`] option, and only affect the editable area. They do not work with the `+skin+` or `+skin_url+` options.
+====
+
+[NOTE]
+====
+*Content CSS Override:*
+
+`+content_css+` will override any content styles set by UI skins.
+====

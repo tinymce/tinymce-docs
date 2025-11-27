@@ -1,4 +1,14 @@
-There are two options for replacing the icons in {productname}: `+icons+` and `+icons_url+`. 
+There are two options related to replacing the icons in {productname}: `+icons+` and `+icons_url+`.
 
-* Use the `+icons+` option when icon packs are in the default location (for {cloudname} deployments, ZIP bundles, or when using NPM packages with bundling or file layering).
-* Use the `+icons_url+` option to specify a custom path to icon packs, which is useful for custom icon packs or when using NPM packages without bundling.
+* `+icons+` specifies *which* icon pack to use.
+* `+icons_url+` specifies *where* to find that icon pack if it is not in the **default location**.
+
+If only `+icons+` is configured, {productname} will try to load the specified icon pack from `+TINYMCE_BASE/icons/${iconPackName}/icons.js+`; where:
+
+* `+TINYMCE_BASE+` is the {productname} root directory (the directory containing `+tinymce.min.js+`).
+* `+${iconPackName}+` is the name of the icon pack.
+
+To load icon packs from another location, integrators must specify that location using `+icons_url+`.
+
+* When using {productname} from {cloudname}, ZIP bundles, or NPM packages with bundling or file layering, only `+icons+` should be required.
+* When using custom icon packs or using NPM packages without bundling, `+icons_url+` will likely also be required.

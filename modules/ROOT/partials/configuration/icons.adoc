@@ -3,44 +3,12 @@ ifeval::[{customIconPack} != true]
 [[icons]]
 == `+icons+`
 
-The *icons* option allows the editor icons to be extended or replaced using an icon pack. For information on creating icon packs, see: xref:creating-an-icon-pack.adoc[Create an icon pack for {productname}].
+The *icons* option allows the editor icons to be extended or replaced using an icon pack. The icon pack is specified by name.
 
 *Type:* `+String+`
 endif::[]
 
 On initialization, {productname} will try to load any icon pack specified by the *icons* option. The icons in the icon pack will be merged with xref:editor-icon-identifiers.adoc[{productname}'s default icons] and icons in the icon pack will overwrite the default icons with the same identifier.
-
-{productname} loads icon packs from the path `+TINYMCE_BASE/icons/${iconPackName}/icons.js+`; where:
-
-* `+TINYMCE_BASE+` is the {productname} root directory (the directory containing `+tinymce.min.js+`).
-* `+${iconPackName}+` is the name of the icon pack.
-
-== Available icon packs
-
-{productname} includes both community and premium icon packs:
-
-* **Community**: `default` (always required)
-* **Premium**: `bootstrap`, `jam`, `material`, `small`, `thin` (available with paid subscriptions)
-
-For information on creating custom icon packs, see: xref:creating-an-icon-pack.adoc[Create an icon pack for {productname}].
-
-== Usage
-
-To use a {productname} icon pack:
-
-. If required, create a new `+icons+` directory in `+TINYMCE_BASE+`.
-. Copy the icon pack into the `+icons+` directory.
-ifeval::[{customIconPack} == true]
-For example:
-+
-[source,sh]
-----
-$ cp -r  dist/icons/my_icon_pack  TINYMCE_BASE/icons/
-----
-
-endif::[]
-
-. Add the `+icons+` option to `+tinymce.init+`.
 
 ifeval::[{customIconPack} == true]
 For custom icon packs:
@@ -56,7 +24,7 @@ tinymce.init({
 endif::[]
 ifeval::[{customIconPack} != true]
 
-=== Example: using premium icon packs
+=== Example: using a premium icon pack
 
 [source,js]
 ----
@@ -72,7 +40,7 @@ tinymce.init({
 });
 ----
 
-=== Example: using multiple icon packs
+=== Example: using icon packs with matching skins and content styling
 
 [source,js]
 ----

@@ -8,7 +8,7 @@
 ====
 *Skins vs Content CSS:*
 
-Skins change both the look of {productname}'s UI and the editable area. To change only the look of the editable area, use xref:add-css-options.adoc#content_css[`+content_css+`].
+Skins change both the look of {productname}'s UI and the editable area (when the skin includes both `+skin.css+` and `+content.css+` files). The `+content_css+` option only styles the editable area. If both `+skin+` and `+content_css+` are used, `+content_css+` will override the skin's content styles, allowing mixing and matching of UI and content styles.
 ====
 
 The default skin does not require any configuration, though it must be imported when bundling for deployment:

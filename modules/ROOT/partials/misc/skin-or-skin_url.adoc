@@ -17,12 +17,12 @@ To load skins from another location, integrators must specify that location usin
 ====
 *Understanding the skins folder structure:*
 
-The **skins** folder in the `+tinymce-premium+` NPM package and ZIP bundles contains both a **ui** folder and a **content** folder. The files within the **content** folder are for use with the xref:add-css-options.adoc#content_css[`+content_css+`] option, and only affect the editable area. They do not work with the `+skin+` or `+skin_url+` options.
+The **skins** folder in the `+tinymce-premium+` NPM package and ZIP bundles contains both a **ui** folder and a **content** folder. Skins in the **ui** folder can include both `+skin.css+` (for UI styling) and `+content.css+` (for editable area styling). When a skin includes both files, using the `+skin+` option will apply both UI and content styles. The files in the **content** folder can also be used independently with the xref:add-css-options.adoc#content_css[`+content_css+`] option to style only the editable area.
 ====
 
 [NOTE]
 ====
-*Content CSS Override:*
+*Using skins and content_css together:*
 
-`+content_css+` will override any content styles set by UI skins.
+Skins that include both `+skin.css+` and `+content.css+` files will style both the UI and the editable area. The `+content_css+` option is not required when using such skins. However, if both `+skin+` and `+content_css+` are specified, `+content_css+` will override the skin's content styles, allowing mixing and matching of UI and content styles.
 ====

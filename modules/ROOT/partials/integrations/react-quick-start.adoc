@@ -184,8 +184,6 @@ export default function App() {
 }
 ----
 
-. Update the `+licenseKey+` option in the editor element and include your xref:license-key.adoc[License Key].
-+
 
 endif::[]
 ifeval::["{productUse}" == "bundle"]
@@ -264,8 +262,6 @@ export default function BundledEditor(props) {
   );
 }
 ----
-
-. Update the `+licenseKey+` option in the editor element and include your xref:license-key.adoc[License Key].
 
 . Using a text editor, open `+./src/App.jsx+` and replace the contents with:
 +

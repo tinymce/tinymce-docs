@@ -8,10 +8,10 @@
 ====
 *Skins vs Content CSS:*
 
-Skins change both the look of {productname}'s UI and the editable area (when the skin includes both `+skin.css+` and `+content.css+` files). The `+content_css+` option only styles the editable area. If both `+skin+` and `+content_css+` are used, `+content_css+` will override the skin's content styles, allowing mixing and matching of UI and content styles.
+Skins change the look of both {productname}'s UI and the editable area (when the skin includes both `+skin.css+` and `+content.css+` files). The `+content_css+` option only styles the editable area. If both `+skin+` and `+content_css+` are used, `+content_css+` will override the skin's content styles, allowing mixing and matching of UI and content styles.
 ====
 
-The default skin does not require any configuration, though it must be imported when bundling for deployment:
+The default skin does not require any configuration, though it must be imported when bundling for deployment: For example:
 
 [source,js]
 ----

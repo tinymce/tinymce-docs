@@ -98,9 +98,6 @@ ifeval::["{productSource}" != "cloud"]
 ----
 The default {productname} editor will load at this location if the page is opened in a web browser.
 
-+
-. Update the `+license-key+` option in the editor element and include your xref:license-key.adoc[License Key].
-+
 endif::[]
 
 ifeval::["{productSource}" == "cloud"]

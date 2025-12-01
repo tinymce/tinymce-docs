@@ -1,9 +1,11 @@
 = {productname} Theme options
 :navtitle: Themes
 :description: Configure the editor's theme.
+:keywords: theme, silver, theme_url
 
-WARNING: {companyname} does not recommend creating custom themes. The default `+silver+` theme provides the editor user interface components such as buttons, dialogs, and menus. To change the editor appearance, customize the skin, icons, and other user interface elements such as the toolbar.
+== Overview
 
-include::partial$configuration/theme.adoc[]
+{productname} breaks the core editor into several parts to optimize load times. The theme provides the editor UI-related logic and components such as buttons, dialogs, and menus. The currently supported theme, "Silver", is automatically loaded unless its files are missing from the core {productname} distribution or are hosted separately.
 
-include::partial$configuration/theme_url.adoc[]
+
+include::partial$configuration/theme_url.adoc[leveloffset=+1]

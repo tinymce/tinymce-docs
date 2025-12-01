@@ -109,7 +109,6 @@ tinymce/
 * Custom icons packs
 * Custom plugins
 * Custom skins
-* Custom themes
 . Delete the existing `{prodnamecode}/` directory and replace with the new `{prodnamecode}/`.
 
 [NOTE]
@@ -123,5 +122,4 @@ To simplify the upgrade process to future versions of {productname}:
 * Set the location of custom icon packages using xref:editor-icons.adoc#icons_url[`+icons_url+`] instead of `+icons+`.
 * Set the location of custom localization packages using xref:ui-localization.adoc#language_url[`+language_url+`] instead of `+language+`.
 * Set the location of custom skin packages using xref:editor-skin.adoc#skin_url[`+skin_url+`] instead of `+skin+`.
-* Set the location of custom themes using xref:editor-theme.adoc#theme_url[`+theme_url+`] instead of `+theme+`.
 ====

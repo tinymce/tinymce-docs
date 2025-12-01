@@ -1,16 +1,36 @@
 [[theme_url]]
 == `+theme_url+`
 
-If you are using {productname} themes, this option enables you to specify the location of the theme file. This is useful if you are loading {productname} from one URL, for example a CDN, while loading a theme on, say, a local server.
+This option allows you to specify a custom location for the theme files. Use this option **only** when you need to load the theme files from a location that is not bundled with the core {productname} distribution. The current supportedtheme is called *Silver*.
 
 *Type:* `+String+`
 
-=== Example: using `+theme_url+`
+
+[NOTE]
+====
+The `+theme_url+` option should only be used in specific deployment scenarios:
+
+**CDN Loading:**
+
+When loading the theme files from a CDN or external server while {productname} core files are loaded from a different location:
 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  theme_url: '/mytheme/mytheme.js'
+  selector: 'textarea',
+  theme_url: 'https://cdn.example.com/tinymce/themes/silver/theme.min.js'
 });
 ----
+
+**Custom Deployment Structure:**
+
+During development or when using a custom deployment structure where the theme files are in different directories:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  theme_url: '<path_to_tinymce_theme>/themes/silver/theme.min.js'
+});
+----
+====

@@ -8,18 +8,18 @@
 
 This guide provides comprehensive coverage of creating, building, and deploying custom icon packs, including solutions to common issues. It details two approaches:
 
-* The inline approach, for adding a small number of custom icons
-* The icon file approach, using the Icon Pack Template project to easily generate the required output file from a folder of SVGs.
+* The manual approach, for adding a small number of custom icons
+* Using the xref:using-the-icon-pack-template.adoc[Icon Pack Template tool] to easily generate the required output file from a folder of SVGs.
 
 == How Icons Work in {productname}
 
-A {productname} icon pack is a JavaScript construct containing strings of link:https://developer.mozilla.org/en-US/docs/Web/SVG[SVG's]. Icon packs are often kept in separate files, but can be inlined if needed. An icon pack can be used to add one or more custom icons or to replace some or all of the default {productname} icons.
+A {productname} icon pack is a JavaScript construct containing strings of link:https://developer.mozilla.org/en-US/docs/Web/SVG[SVGs]. Icon packs are often kept in separate files, but can be inlined if needed. An icon pack can be used to add one or more custom icons or to replace some or all of the default {productname} icons.
 
 An icon pack only **requires** the custom icons to be included; the default {productname} icons are used as a fallback for icons missing from the custom icon pack.
 
 == Registering an icon pack
 
-Icon packs are registered with {productname} using the IconManager. Whether creating the icon pack manually or using the Icon Pack Template tool, the JavaScript required to setup an icon pack looks like:
+Icon packs are registered with {productname} using the IconManager. Whether creating the icon pack manually or using the xref:using-the-icon-pack-template.adoc[Icon Pack Template tool], the JavaScript required to setup an icon pack looks like:
 
 [source,javascript]
 ----
@@ -35,7 +35,7 @@ tinymce.IconManager.add('custom-pack-name', {
 
 == Creating an icon pack manually
 
-When adding only a few icons, it may be easier to manually configure the new icon pack than to use the Icon Pack Template tool. To do this:
+When adding only a few icons, it may be easier to manually configure the new icon pack than to use the xref:using-the-icon-pack-template.adoc[Icon Pack Template tool]. To do this:
 
 . Gather the SVG files for the new icons. Extract their content string, e.g. `+<svg width="24" height="24">...</svg>+`
 . Call `+tinymce.IconManager.add()+`
@@ -49,7 +49,7 @@ The new icons can then be used by name within {productname}.
 *Icon Override:* If custom icons have the same name as a default {productname} icon, they will override the default icon.
 ====
 
-This JavaScript can be included as a separate icon file or inlined beside the application's `+tinymce.init()+` call. Configure {productname} to load the icon pack and possibly where from.
+This JavaScript can be included as a separate icon file or inlined beside the application's `+tinymce.init()+` call. Configure {productname} to load the icon pack and, if necessary, where from using the xref:editor-icons.adoc#icons[`+icons+`] and xref:editor-icons.adoc#icons_url[`+icons_url+`] options.
 
 [NOTE]
 ====

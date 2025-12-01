@@ -28,13 +28,27 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-// === <Premium plugin name 1> <Premium plugin name 1 version>
+=== PowerPaste
 
-// The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **PowerPaste** premium plugin.
 
-// **<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**PowerPaste** includes the following addition.
 
-// ==== <Premium plugin name 1 change 1>
+==== `powerpaste_emf_processor` function that takes an `emf` blob and returns a promise of a `png` blob.
+
+Before October 2025, copying and pasting content from Microsoft Word containing `emf` images resulted in those images not being pasted and an error message being displayed. After October 2025, this behavior changed where the images began appearing in the editor, but only at low resolution, accompanied by an error message in Chrome and Firefox. Safari displayed the low-resolution images without showing an error message.
+
+This change negatively affected the user experience. After October 2025, users would see a low-quality image alongside an error message stating `Some images failed to import`, which caused confusion since the image was, in fact, visible in the editor—albeit with degraded quality.
+
+{productname} {release-version} introduces a new option, xref:powerpaste_emf_processor.adoc#powerpaste_emf_processor[powerpaste_emf_processor], to address this issue. This option accepts a function that receives an `emf` blob and returns a promise resolving to a `png` blob (i.e. `(blob: Blob) => Promise<Blob>`).
+
+* If this option is provided, the editor will invoke the supplied function to convert `emf` image blobs into `png` image blobs before inserting them into the editor.
+
+* If this option is **not** provided, the editor will remove the low-quality images and display an error message, restoring the pre–October 2025 behavior.
+
+NOTE: If only the image is selected, pasting it will succeed and the image will be inserted correctly. However, if the image is selected together with other types of content, such as text, the image will not be pasted and an error message will be displayed.
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
 
 // // CCFR here.
 
@@ -128,4 +142,3 @@ There <is one | are <number> known issue<s> in {productname} {release-version}.
 // #TINY-vwxyz1
 
 // CCFR here.
-

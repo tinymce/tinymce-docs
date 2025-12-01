@@ -1,0 +1,20 @@
+[[powerpaste_emf_processor]]
+== `+powerpaste_emf_processor+`
+
+This option controls how `emf` images are handled. If this option **is** provided, `emf` image blobs will be converted into `png` image blobs, which will then be pasted into the editor. If this option is **not** provided, the editor will remove the poor quality images, and show an error message.
+
+*Type:* `+Function+`
+
+=== Example: `+powerpaste_emf_processor+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'powerpaste',
+  powerpaste_word_import: 'clean',
+  powerpaste_emf_processor: (blob) => {
+	  return fetch('YOUR_IMAGE_URL').then(res => res.blob())
+	}
+  });
+----

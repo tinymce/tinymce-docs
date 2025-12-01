@@ -13,6 +13,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, December 10^th^, 2025. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
+* xref:premium-plugins-npm[Premium plugins now available via NPM]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:improvements[Improvements]
 * xref:additions[Additions]
@@ -21,6 +22,16 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:security-fixes[Security fixes]
 * xref:deprecated[Deprecated]
 * xref:known-issues[Known issues]
+
+
+[[premium-plugins-npm]]
+== Premium plugins now available via NPM
+
+{productname} {release-version} introduces the `+tinymce-premium+` NPM package, providing commercial customers with easy access to all premium plugins, skins, icons, and language packs directly from the NPM registry. The package is available for download at link:https://www.npmjs.com/package/tinymce-premium[https://www.npmjs.com/package/tinymce-premium].
+
+The `+tinymce-premium+` package simplifies the installation and integration of premium plugins for projects using NPM or Yarn. The package includes all premium plugins, the license key manager plugin, and premium skins, icons, and language packs.
+
+To get started with using premium plugins with {productname} using NPM, see: xref:npm-projects.adoc[Quick start: {productname} from NPM or Yarn].
 
 
 [[accompanying-premium-plugin-changes]]

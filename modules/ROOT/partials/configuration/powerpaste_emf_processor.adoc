@@ -18,3 +18,5 @@ tinymce.init({
 	}
   });
 ----
+
+NOTE: If only the image is selected, pasting it will succeed and the image will be inserted correctly. However, if the image is selected together with other types of content, such as text, the image will not be pasted and an error message will be displayed.

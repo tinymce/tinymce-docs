@@ -90,10 +90,12 @@ The following premium plugin updates were released alongside {productname} {rele
 
 {productname} {release-version} also includes the following bug fixes:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Removing a line height at times did not remove it from all selected lines.
+// #TINY-13053
 
-// CCFR here.
+An issue was identified where removing or modifying `lineheight` properties on multiple elements resulted in inconsistent updates when the elements had differing values. In these cases, only the `lineheight` of the first line was changed or removed, while subsequent lines were not updated.
+
+{productname} {release-version} resolves this issue by introducing improved toggling behavior for the permissive `lineheight` option, ensuring that all lines are now correctly updated or removed as expected.
 
 
 [[security-fixes]]
@@ -128,4 +130,3 @@ There <is one | are <number> known issue<s> in {productname} {release-version}.
 // #TINY-vwxyz1
 
 // CCFR here.
-

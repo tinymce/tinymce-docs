@@ -39,8 +39,8 @@ To add the Media Optimizer plugin to the editor, include `uploadcare` in the `pl
 ----
 tinymce.init({
   selector: 'textarea',
-  plugins: 'uploadcare',
-  toolbar: 'uploadcare uploadcare-video',
+  plugins: 'uploadcare link', // Include 'link' plugin for file upload support
+  toolbar: 'uploadcare uploadcare-video link',
   uploadcare_public_key: '<your-public-key>', // Required for Uploadcare integration
   uploadcare_resources: 'uploadcare/uploadcare', // Required when Media Optimizer addon is bundled with TinyMCE
   // uploadcare_signed_upload_auth_provider: (_publicKey) => Promise.resolve({

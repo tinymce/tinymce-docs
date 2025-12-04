@@ -28,17 +28,20 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-// === <Premium plugin name 1> <Premium plugin name 1 version>
+=== Media Optimizer
 
-// The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Media Optimizer** premium plugin.
 
-// **<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Media Optimizer** includes the following improvements.
 
-// ==== <Premium plugin name 1 change 1>
+==== Support for uploading additional file types
+// #TINY-13270
 
-// // CCFR here.
+The Media Optimizer plugin now supports uploading many additional file types through the link dialog, including documents (PDF, Word, Excel, PowerPoint, RTF, plain text), iWork files (Keynote, Pages, Numbers), audio files (WAV, MP3, OGG), and archive files (ZIP, GZIP, TAR, 7Z, RAR). A full list of supported file types is available in the documentation.
 
-// For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+The default list of supported file types can be customized using the xref:uploadcare.adoc#documents-file-types[`+documents_file_types+`] option.
+
+For information on the **Media Optimizer** plugin, see: xref:uploadcare.adoc#documents-file-types[Media Optimizer].
 
 
 [[improvements]]
@@ -57,10 +60,16 @@ The following premium plugin updates were released alongside {productname} {rele
 
 {productname} {release-version} also includes the following additions:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== New options `files_upload_handler`, `documents_file_types`, and `link_uploadtab`
+// #TINY-13278
 
-// CCFR here.
+Added new configuration options to the Link plugin to support file uploads through the link dialog:
+
+* xref:link.adoc#files_upload_handler[`+files_upload_handler+`] - Specifies a function that handles file uploads in the link dialog's upload tab
+* xref:link.adoc#documents_file_types[`+documents_file_types+`] - Specifies which file types (MIME types and extensions) are supported for file uploads
+* xref:link.adoc#link_uploadtab[`+link_uploadtab+`] - Controls whether the "Upload" tab is displayed in the link dialog
+
+For more information, see xref:link.adoc#files_upload_handler[`+files_upload_handler+`], xref:link.adoc#documents_file_types[`+documents_file_types+`], and xref:link.adoc#link_uploadtab[`+link_uploadtab+`].
 
 
 [[changes]]

@@ -1,6 +1,6 @@
 = Media Optimizer
 :navtitle: Media Optimizer
-:description: The Media Optimizer plugin allows you to optimize images and videos in your content.
+:description: The Media Optimizer plugin optimizes images and videos in content.
 :description_short: optimize images and videos in your content.
 :plugincode: uploadcare
 :pluginname: Media Optimizer
@@ -11,11 +11,12 @@ The {pluginname} plugin provides comprehensive media management capabilities for
 
 == Overview
 
-The {pluginname} plugin extends {productname} with powerful media handling features that allow users to upload, process, and embed both images and videos directly within the editor. The plugin leverages Uploadcare's infrastructure to provide real-time media processing, responsive delivery, and advanced optimization capabilities.
+The {pluginname} plugin extends {productname} with powerful media handling features that enable uploading, processing, and embedding both images and videos directly within the editor. The plugin also supports uploading and linking document files (PDF, Word, Excel, PowerPoint, and more) through the xref:link.adoc[Link] plugin's dialog. The plugin leverages Uploadcare's infrastructure to provide real-time media processing, responsive delivery, and advanced optimization capabilities.
 
 == Key benefits
 
 * Upload and optimize both images and videos directly within the editor
+* Upload and link document files (PDF, Word, Excel, PowerPoint, and more) through the xref:link.adoc[Link] plugin's dialog
 * Real-time media optimization and compression
 * Responsive media delivery with automatic format selection
 * Advanced image filtering and video player customization
@@ -85,6 +86,25 @@ include::partial$configuration/uploadcare_cdn_base_url.adoc[leveloffset=+1]
 include::partial$configuration/uploadcare_store_type.adoc[leveloffset=+1]
 
 include::partial$configuration/uploadcare_resources.adoc[leveloffset=+1]
+
+:includedSection: uploadcarePlugin
+include::partial$configuration/documents_file_types.adoc[leveloffset=+1]
+:!includedSection:
+
+[NOTE]
+====
+**File Upload Support**
+
+The Media Optimizer plugin supports file uploads for documents and other file types through the xref:link.adoc[Link] plugin's dialog. The `+link+` plugin must be enabled for file uploads via the Insert/Edit Link dialog to work.
+
+When both the `+link+` plugin and the Media Optimizer plugin are enabled, the Media Optimizer plugin automatically configures the xref:link.adoc#files_upload_handler[`+files_upload_handler+`] and xref:uploadcare.adoc#documents-file-types[`+documents_file_types+`] options to enable file uploads in the link dialog.
+
+By default, the Media Optimizer plugin supports a comprehensive list of file types including documents (PDF, Word, Excel, PowerPoint, RTF, plain text), iWork files (Keynote, Pages, Numbers), audio files (WAV, MP3, OGG), and archive files (ZIP, GZIP, TAR, 7Z, RAR). You can customize this list by setting the xref:uploadcare.adoc#documents-file-types[`+documents_file_types+`] option.
+
+When the Media Optimizer plugin sets `+documents_file_types+`, this option acts as the source of truth for supported file types. Both the Link plugin and the Media Optimizer plugin will use this list, ensuring consistent file type validation across the editor.
+
+These options are part of the xref:link.adoc[Link plugin] and can also be configured independently. If you set `+documents_file_types+` manually, both the Link plugin and Media Optimizer plugin will use your custom list. For more information about file upload configuration, see the xref:link.adoc[Link plugin] documentation.
+====
 
 :includedSection: uploadcarePlugin
 include::partial$configuration/a11y_advanced_options.adoc[leveloffset=+1]

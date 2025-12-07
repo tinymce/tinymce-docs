@@ -90,10 +90,12 @@ The following premium plugin updates were released alongside {productname} {rele
 
 {productname} {release-version} also includes the following bug fixes:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Accordions could be toggled when the editor was disabled.
+// #TINY-12315
 
-// CCFR here.
+In earlier versions of {productname}, an issue allowed accordions to remain interactive (expandable) even when the editor was disabled. This resulted in unexpected behavior when used alongside the xref:autoresize.adoc[Autoresize plugin].
+
+This issue has been resolved in {release-version}. Accordions are now non-interactive in disabled mode, ensuring the editor behaves as intended. Users can no longer interact with accordions when the editor is disabled.
 
 
 [[security-fixes]]
@@ -128,4 +130,3 @@ There <is one | are <number> known issue<s> in {productname} {release-version}.
 // #TINY-vwxyz1
 
 // CCFR here.
-

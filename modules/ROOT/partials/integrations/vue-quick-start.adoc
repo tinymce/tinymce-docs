@@ -6,32 +6,6 @@ Version 4 and later of the `+tinymce-vue+` package supports Vue.js 3.x, but does
 
 include::partial$integrations/bundling-integrations-not-recommended-message.adoc[]
 
-[[tinymce-vuejs-integration-live-examples]]
-== {productname} Vue.js integration live examples
-
-For examples of the {productname} Vue.js 3.x integration:
-
-. Clone the `+tinymce/tinymce-vue+` link:https://github.com/tinymce/tinymce-vue[GitHub repository]. For example:
-+
-[source,sh]
-----
-git clone https://github.com/tinymce/tinymce-vue.git
-----
-. Install the required packages using `+yarn+`. For example:
-+
-[source,sh]
-----
-yarn install
-----
-. To start the demo server, run:
-+
-[source,sh]
-----
-yarn demo
-----
-
-The `+tinymce-vue+` demo is now running. Visit: link:http://localhost:3001[http://localhost:3001].
-
 == Prerequisites
 
 This procedure requires:

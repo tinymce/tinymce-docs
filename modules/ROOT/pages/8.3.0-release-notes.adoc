@@ -90,10 +90,12 @@ The following premium plugin updates were released alongside {productname} {rele
 
 {productname} {release-version} also includes the following bug fixes:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Inline formats were not applied to the marker of a list item when its content was a single block element.
+// #TINY-13197
 
-// CCFR here.
+Previously, when applying an inline format to a fully or partially selected list that contained content wrapped inside a single block element, the style was not applied to the list item where the selection began. This resulted in inconsistent styling between the list decorator and its content.
+
+This issue has now been resolved in {release-version}. The logic has been updated to ensure that the inline format is applied correctly to the list item where the selection begins.
 
 
 [[security-fixes]]
@@ -128,4 +130,3 @@ There <is one | are <number> known issue<s> in {productname} {release-version}.
 // #TINY-vwxyz1
 
 // CCFR here.
-

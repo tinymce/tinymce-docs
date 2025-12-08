@@ -39,7 +39,29 @@ The following premium plugin updates were released alongside {productname} {rele
 // // CCFR here.
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+=== Premium plugins now include ESM module support
+// #TINY-12888
 
+All premium plugins now include an `+index.mjs+` file in their dist folders alongside the existing `+index.js+` file. The `+index.mjs+` file uses ES module (`+import+`) syntax instead of CommonJS (`+require+`) syntax, allowing bundlers and integrators to use native ESM without requiring a CommonJS compatibility layer.
+
+The `+package.json+` file in each premium plugin's dist folder has been updated to include proper module exports configuration:
+
+[source,json]
+----
+{
+  "main": "index.js",
+  "module": "index.mjs",
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.js"
+    },
+    "./package.json": "./package.json"
+  }
+}
+----
+
+This enables modern bundlers to automatically select the appropriate module format based on the project's configuration, improving compatibility and reducing the need for additional build tooling.
 
 [[improvements]]
 == Improvements

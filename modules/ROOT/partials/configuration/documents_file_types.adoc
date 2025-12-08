@@ -28,11 +28,22 @@ When the Media Optimizer plugin is enabled with the `+link+` plugin, it automati
 
 * **Documents:** PDF, Word (doc, docx), Excel (xls, xlsx), PowerPoint (ppt, pps, pptx), RTF, plain text (txt)
 * **iWork files:** Keynote (key), Pages (pages), Numbers (numbers)
-* **Audio files:** WAV, MP3, OGG (with various extensions)
-* **Archive files:** ZIP, GZIP, TAR, 7Z, RAR
+* **Audio files:** WAV (wav, wave), MP3 (mp3), OGG (ogg)
+* **Archive files:** ZIP (zip), GZIP (gz, gzip), TAR (tar), TAR.GZ (tar.gz, tgz), 7Z (7z), RAR (rar)
 
 This list can be customized by setting `+documents_file_types+` manually in the editor configuration.
 
+endif::[]
+
+*Type:* `+Array+`
+
+ifeval::["{includedSection}" == "uploadcarePlugin"]
+*Default value:* `+undefined+`.
+
+The Media Optimizer plugin automatically configures this option when both the `+link+` plugin and the Media Optimizer plugin are enabled. The automatically configured list includes documents, iWork files, audio files, and archive files.
+endif::[]
+ifndef::includedSection[]
+*Default value:* `+undefined+`
 endif::[]
 
 ifeval::["{includedSection}" == "uploadcarePlugin"]
@@ -68,15 +79,6 @@ If `+documents_file_types+` is not set:
 
 endif::[]
 
-*Type:* `+Array+`
-
-ifeval::["{includedSection}" == "uploadcarePlugin"]
-*Default value:* `+undefined+`. The Media Optimizer plugin automatically configures this option when both the `+link+` plugin and the Media Optimizer plugin are enabled. The automatically configured list includes documents, iWork files, audio files, and archive files.
-endif::[]
-ifndef::includedSection[]
-*Default value:* `+undefined+`
-endif::[]
-
 ifeval::["{includedSection}" == "uploadcarePlugin"]
 === Example: Using `documents_file_types` with Media Optimizer
 
@@ -87,7 +89,7 @@ This example shows how to customize the file types when using the Media Optimize
 tinymce.init({
   selector: 'textarea',
   plugins: 'uploadcare link',
-  toolbar: 'uploadcare link',
+  toolbar: 'link',
   uploadcare_public_key: '<your-public-key>',
   documents_file_types: [
     { mimeType: 'application/msword', extensions: [ 'doc' ] },
@@ -99,18 +101,19 @@ tinymce.init({
     { mimeType: 'application/pdf', extensions: [ 'pdf' ] },
     { mimeType: 'application/rtf', extensions: [ 'rtf' ] },
     { mimeType: 'text/plain', extensions: [ 'txt' ] },
-    { mimeType: 'application/x-iwork-keynote-sffkey', extensions: [ 'key' ] },
-    { mimeType: 'application/x-iwork-pages-sffpages', extensions: [ 'pages' ] },
-    { mimeType: 'application/x-iwork-numbers-sffnumbers', extensions: [ 'numbers' ] },
+    { mimeType: 'application/vnd.apple.keynote', extensions: [ 'key' ] },
+    { mimeType: 'application/vnd.apple.pages', extensions: [ 'pages' ] },
+    { mimeType: 'application/vnd.apple.numbers', extensions: [ 'numbers' ] },
     { mimeType: 'audio/wav', extensions: [ 'wav', 'wave' ] },
     { mimeType: 'audio/mpeg', extensions: [ 'mp3' ] },
-    { mimeType: 'audio/ogg', extensions: [ 'ogg', 'oga', 'ogx', 'ogm', 'spx', 'opus' ] },
+    { mimeType: 'audio/ogg', extensions: [ 'ogg' ] },
     { mimeType: 'application/zip', extensions: [ 'zip' ] },
     { mimeType: 'application/gzip', extensions: [ 'gz', 'gzip' ] },
     { mimeType: 'application/x-tar', extensions: [ 'tar' ] },
     { mimeType: 'application/x-gtar', extensions: [ 'tar.gz', 'tgz' ] },
+    { mimeType: 'application/x-compressed-tar', extensions: [ 'tar.gz', 'tgz' ] },
     { mimeType: 'application/x-7z-compressed', extensions: [ '7z' ] },
-    { mimeType: 'application/x-rar-compressed', extensions: [ 'rar' ] }
+    { mimeType: 'application/vnd.rar', extensions: [ 'rar' ] }
   ]
 });
 ----

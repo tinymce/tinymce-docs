@@ -1,0 +1,108 @@
+= Media Optimizer (Documents)
+:navtitle: Documents feature of the Media Optimizer plugin
+:description: The Documents feature of the Media Optimizer plugin allows you to upload and link document files in your content.
+:description_short: upload and link document files in your content.
+:plugincode: uploadcare
+:pluginname: Media Optimizer's Documents feature
+:keywords: plugin, {plugincode}, documents, files, upload, pdf, word, excel, powerpoint, link
+:plugincategory: premium
+
+include::partial$misc/admon-premium-plugin.adoc[]
+
+== Overview
+
+The Documents feature of the {pluginname} plugin enables users to upload and link document files (PDF, Word, Excel, PowerPoint, and more) directly within the editor through the xref:link.adoc[Link] plugin's dialog. The plugin automatically configures the necessary options to enable file uploads in the link dialog when both the {pluginname} plugin and the Link plugin are enabled.
+
+== Key benefits
+
+* Upload and link document files directly within the editor
+* Support for a wide range of file types including documents, iWork files, audio files, and archives
+* Automatic configuration of file upload handlers when both plugins are enabled
+* Secure file uploads through Uploadcare's infrastructure
+* Customizable list of supported file types
+* Drag-and-drop file upload support
+* URL-based file linking
+
+== Interactive example
+
+liveDemo::uploadcare-documents[]
+
+== Basic setup
+
+To enable document file uploads, include both `uploadcare` and `link` in the `plugins` option in the editor configuration. The {pluginname} plugin will automatically configure the necessary options to enable file uploads in the link dialog.
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'uploadcare link',
+  toolbar: 'link',
+  uploadcare_public_key: '<your-public-key>',
+  documents_file_types: [
+    { mimeType: 'application/msword', extensions: [ 'doc' ] },
+    { mimeType: 'application/vnd.ms-excel', extensions: [ 'xls' ] },
+    { mimeType: 'application/vnd.ms-powerpoint', extensions: [ 'ppt', 'pps' ] },
+    { mimeType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', extensions: [ 'docx' ] },
+    { mimeType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', extensions: [ 'xlsx' ] },
+    { mimeType: 'application/vnd.openxmlformats-officedocument.presentationml.presentation', extensions: [ 'pptx' ] },
+    { mimeType: 'application/pdf', extensions: [ 'pdf' ] },
+    { mimeType: 'application/rtf', extensions: [ 'rtf' ] },
+    { mimeType: 'text/plain', extensions: [ 'txt' ] },
+    { mimeType: 'application/vnd.apple.keynote', extensions: [ 'key' ] },
+    { mimeType: 'application/vnd.apple.pages', extensions: [ 'pages' ] },
+    { mimeType: 'application/vnd.apple.numbers', extensions: [ 'numbers' ] },
+    { mimeType: 'audio/wav', extensions: [ 'wav', 'wave' ] },
+    { mimeType: 'audio/mpeg', extensions: [ 'mp3' ] },
+    { mimeType: 'audio/ogg', extensions: [ 'ogg' ] },
+    { mimeType: 'application/zip', extensions: [ 'zip' ] },
+    { mimeType: 'application/gzip', extensions: [ 'gz', 'gzip' ] },
+    { mimeType: 'application/x-tar', extensions: [ 'tar' ] },
+    { mimeType: 'application/x-gtar', extensions: [ 'tar.gz', 'tgz' ] },
+    { mimeType: 'application/x-compressed-tar', extensions: [ 'tar.gz', 'tgz' ] },
+    { mimeType: 'application/x-7z-compressed', extensions: [ '7z' ] },
+    { mimeType: 'application/vnd.rar', extensions: [ 'rar' ] }
+  ]
+});
+----
+
+[NOTE]
+====
+The {pluginname} plugin automatically configures the xref:link.adoc#files_upload_handler[`+files_upload_handler+`] and `+documents_file_types+` options when both the Link plugin and the {pluginname} plugin are enabled. This enables file uploads in the Link dialog without requiring manual configuration. However, you can customize the list of supported file types by explicitly setting the xref:uploadcare.adoc#documents-file-types[`+documents_file_types+`] option as shown in the example above.
+====
+
+== Document Operations
+
+Below is an overview of the features provided by the {pluginname} plugin for document file uploads:
+
+[cols="1,1,4",options="header"]
+|===
+| Toolbar button | Icon | Description
+
+| `+link+`
+| image:icons/link.svg[link.svg]
+| Opens the Insert/edit link dialog so the user can upload with file picker or dropping file to be uploaded. Uploaded files are processed through Uploadcare's infrastructure and automatically linked in the content.
+|===
+
+The {pluginname} plugin supports a comprehensive list of file types:
+
+* **Documents:** PDF, Word (doc, docx), Excel (xls, xlsx), PowerPoint (ppt, pps, pptx), RTF, plain text (txt)
+* **iWork files:** Keynote (key), Pages (pages), Numbers (numbers)
+* **Audio files:** WAV (wav, wave), MP3 (mp3), OGG (ogg)
+* **Archive files:** ZIP (zip), GZIP (gz, gzip), TAR (tar), TAR.GZ (tar.gz, tgz), 7Z (7z), RAR (rar)
+
+When both the {pluginname} plugin and the Link plugin are enabled, the Link dialog displays an "Upload" tab that enables file uploads. Users can upload files via drag-and-drop, file selection, or by providing a URL. Uploaded files are processed through Uploadcare's infrastructure and automatically linked in the content.
+
+== Options
+
+The following configuration options affect the behavior of the Documents feature:
+
+:includedSection: uploadcarePlugin
+include::partial$configuration/documents_file_types.adoc[leveloffset=+1]
+:!includedSection:
+
+:pluginfeature: uc-documents
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+

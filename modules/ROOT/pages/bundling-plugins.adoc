@@ -166,9 +166,9 @@ tinymce.init({
 ====
 The `+external_plugins+` option supports three URL formats:
 
-* Absolute URLs (e.g., `+https://cdn.example.com/...`)
-* Relative to web-server root (e.g., `+/node_modules/...`)
-* Relative to {productname} `+base_url+` (e.g., `+../../node_modules/...`)
+* Absolute URLs (e.g., `+https://cdn.example.com/...+`)
+* Relative to web-server root (e.g., `+/node_modules/...+`)
+* Relative to {productname} `+base_url+` (e.g., `+../../node_modules/...+`)
 
 For more information, see: xref:editor-important-options.adoc#external_plugins[`+external_plugins+` configuration option].
 ====

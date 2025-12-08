@@ -71,6 +71,18 @@ Added new configuration options to the Link plugin to support file uploads throu
 
 For more information, see xref:link.adoc#files_upload_handler[`+files_upload_handler+`], xref:link.adoc#documents_file_types[`+documents_file_types+`], and xref:link.adoc#link_uploadtab[`+link_uploadtab+`].
 
+=== New options for `dropzone` dialog components
+// #TINY-13278
+
+Added new configuration options to the `dropzone` dialog component to customize the dropzone UI and file type restrictions:
+
+* xref:dialog-components.adoc#dropzone[`+dropAreaLabel+`] - Specifies the text label for the drop area where files can be dragged (default: `+'Drop an image here'+`)
+* xref:dialog-components.adoc#dropzone[`+buttonLabel+`] - Specifies the text label for the browse button (default: `+'Browse for an image'+`)
+* xref:dialog-components.adoc#dropzone[`+allowedFileTypes+`] - Specifies a MIME type pattern for allowed file types (default: `+'image/*'+`, e.g., `+'image/*'+`, `+'application/pdf'+`)
+* xref:dialog-components.adoc#dropzone[`+allowedFileExtensions+`] - Specifies an array of allowed file extensions (default: xref:file-image-upload.adoc#images_file_types[`+images_file_types+`], e.g., `+['.jpg', '.png', '.pdf']+`)
+
+For more information, see xref:dialog-components.adoc#dropzone[dropzone component].
+
 
 [[changes]]
 == Changes

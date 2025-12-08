@@ -90,10 +90,10 @@ The following premium plugin updates were released alongside {productname} {rele
 
 {productname} {release-version} also includes the following bug fixes:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Toolbar split button chevron tooltip is now the same as the main button tooltip unless explicitly set otherwise.
+// #TINY-13271
 
-// CCFR here.
+Previously, an issue was identified where the **Bullet list menu** and **Numbered list menu** did not include translations for the chevron icons. This has been resolved in {release-version}. The chevron icons for these list menus now display correctly translated tooltips on hover.
 
 
 [[security-fixes]]
@@ -128,4 +128,3 @@ There <is one | are <number> known issue<s> in {productname} {release-version}.
 // #TINY-vwxyz1
 
 // CCFR here.
-

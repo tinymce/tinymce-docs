@@ -3,8 +3,7 @@
 :description: A guide on bundling TinyMCE with a Vue.js application using a module loader.
 :keywords: integration, integrate, vue, vuejs, bundle, webpack, vite
 :productSource: package-manager
-
-IMPORTANT: {companyname} does not recommend bundling `tinymce` and `@tinymce/tinymce-vue` with a module loader. Bundling these packages can be complex and error prone.
+:packageName: @tinymce/tinymce-vue
 
 The link:https://github.com/tinymce/tinymce-vue[Official {productname} Vue.js component] integrates {productname} into Vue.js projects, providing a powerful WYSIWYG editor within the Vue ecosystem. This procedure creates a link:https://cli.vuejs.org/guide/creating-a-project.html#vue-create[basic Vue.js application] containing a bundled {productname} editor.
 

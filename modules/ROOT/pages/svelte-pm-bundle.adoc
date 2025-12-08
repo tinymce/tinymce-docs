@@ -3,8 +3,7 @@
 :description: A guide on bundling TinyMCE with a Svelte application using a module loader.
 :keywords: integration, integrate, svelte, bundle, vite
 :productSource: package-manager
-
-IMPORTANT: {companyname} does not recommend bundling `tinymce` and `@tinymce/tinymce-svelte` with a module loader. Bundling these packages can be complex and error prone.
+:packageName: @tinymce/tinymce-svelte
 
 The https://github.com/tinymce/tinymce-svelte[Official {productname} Svelte component] integrates {productname} into https://svelte.dev/[Svelte applications]. This procedure creates a basic Svelte application containing a bundled {productname} editor.
 

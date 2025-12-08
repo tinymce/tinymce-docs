@@ -3,8 +3,7 @@
 :description: A guide on bundling TinyMCE with an Angular application using a module loader.
 :keywords: integration, integrate, angular, bundle, webpack
 :productSource: package-manager
-
-IMPORTANT: {companyname} does not recommend bundling `tinymce` and `@tinymce/tinymce-angular` with a module loader. Bundling these packages can be complex and error prone.
+:packageName: @tinymce/tinymce-angular
 
 The https://github.com/tinymce/tinymce-angular[Official {productname} Angular component] integrates {productname} into Angular projects. This procedure creates a https://angular.dev/tools/cli/setup-local[basic Angular application] containing a bundled {productname} editor.
 

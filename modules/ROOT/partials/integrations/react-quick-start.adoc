@@ -1,9 +1,5 @@
 :packageName: tinymce-react
 
-ifeval::["{productUse}" == "bundle"]
-IMPORTANT: {companyname} does not recommend bundling the `tinymce` package. Bundling {productname} can be complex and error prone.
-
-endif::[]
 The link:https://github.com/tinymce/tinymce-react[Official {productname} React component] integrates {productname} into React projects. This procedure creates a link:https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react-swc[React SWC plugin] containing a {productname} editor.
 
 For examples of the {productname} integration, visit https://tinymce.github.io/tinymce-react/[the tinymce-react storybook].

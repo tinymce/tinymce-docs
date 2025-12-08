@@ -166,12 +166,6 @@ To use an independent deployment of {productname}, add a script to either the `+
 ----
 <script src="/path/to/tinymce.min.js"></script>
 ----
-+
-* Bundling {productname} with the Angular application using a module loader (such as Webpack).
-+
---
-include::partial$integrations/bundling-integration.adoc[]
---
 endif::[]
 
 . Run `+ng serve+` to start a dev server

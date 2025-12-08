@@ -4,8 +4,6 @@ The link:https://github.com/tinymce/tinymce-vue[Official {productname} Vue.js co
 
 Version 4 and later of the `+tinymce-vue+` package supports Vue.js 3.x, but does not support Vue.js 2.x. For Vue.js 2.x applications, use `+tinymce-vue+` version 3.
 
-include::partial$integrations/bundling-integrations-not-recommended-message.adoc[]
-
 == Prerequisites
 
 This procedure requires:
@@ -168,11 +166,6 @@ import Editor from '@tinymce/tinymce-vue'
 }
 </style>
 ----
-+
-. Bundle {productname} with the Vue.js application using a module loader (such as Webpack).
---
-include::partial$integrations/bundling-integration.adoc[]
---
 endif::[]
 ifeval::["{productSource}" == "zip"]
 +

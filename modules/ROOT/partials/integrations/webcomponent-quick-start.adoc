@@ -36,12 +36,6 @@ npm install tinymce @tinymce/tinymce-webcomponent
 ----
 
 include::partial$integrations/premium-plugins-install-step-link.adoc[]
-. Bundle {productname} with the Web Component application using a module loader (such as Webpack).
-+
---
-include::partial$integrations/bundling-integration.adoc[]
---
-
 . Add a `+script+` element sourcing the output file, such as:
 +
 [source,html]

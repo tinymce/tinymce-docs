@@ -28,17 +28,17 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-// === <Premium plugin name 1> <Premium plugin name 1 version>
+=== Media Optimizer
 
-// The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Media Optimizer** premium plugin.
 
-// **<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Media Optimizer** includes the following fixes, changes, and improvements.
 
-// ==== <Premium plugin name 1 change 1>
+==== CSS resource files were not loaded correctly when bundled.
 
-// // CCFR here.
+Previously, Media Optimizer CSS resource files were not loaded correctly when bundled. In {productname} {release-version}, this issue has been resolved by ensuring that CSS resource files for Media Optimizer are now loaded correctly when bundled.
 
-// For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+For information on the **Media Optimizer** plugin, see: xref:uploadcare.adoc[Media Optimizer].
 
 
 [[improvements]]
@@ -128,4 +128,3 @@ There <is one | are <number> known issue<s> in {productname} {release-version}.
 // #TINY-vwxyz1
 
 // CCFR here.
-

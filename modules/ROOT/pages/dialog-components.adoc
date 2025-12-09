@@ -298,13 +298,30 @@ A *dropzone* is a composite component that catches drag and drops items or lets 
 
 *Events:* Interacting with a *dropzone* component will fire the `+onChange+` function in the dialog's configuration.
 
+[cols="1,1,1,3",options="header"]
+|===
+|Name |Type |Requirement |Description
+|type |`+'dropzone'+` |required |The component type. Must be `+'dropzone'+`.
+|name |string |required |An identifier for the dropzone.
+|label |string |optional |Text for the label displayed above the dropzone.
+|dropAreaLabel |string |optional |default: `+'Drop an image here'+` - Text label for the drop area where files can be dragged.
+|buttonLabel |string |optional |default: `+'Browse for an image'+` - Text label for the browse button.
+|allowedFileTypes |string |optional |default: `+'image/*'+` - MIME type pattern that specifies allowed file types (e.g., `+'image/*'+`, `+'application/pdf'+`).
+|allowedFileExtensions |array |optional |default: xref:file-image-upload.adoc#images_file_types[`+images_file_types+`] - Array of allowed file extensions (e.g., `+['.jpg', '.png', '.pdf']+`).
+|context |string |optional |Context condition for when the dropzone is active (e.g., `+'mode:design'+`). Only effective when `+enabled+` is `+true+`.
+|===
+
 [source,js]
 ----
 {
   type: 'dropzone', // component type
   name: 'dropzone', // identifier
   label: 'Dropzone', // text for the label
-  context: 'mode:design' // dropzone is active when the editor is in design mode, only effective when enabled is true
+  dropAreaLabel: 'Drag and drop files here', // text for the drop area (default: 'Drop an image here')
+  buttonLabel: 'Browse files', // text for the browse button (default: 'Browse for an image')
+  allowedFileTypes: 'image/*', // MIME type pattern (default: 'image/*')
+  allowedFileExtensions: ['.jpg', '.png', '.pdf'], // allowed file extensions (default: images_file_types)
+  context: 'mode:design' // dropzone is active when the editor is in design mode
 }
 ----
 

@@ -1,0 +1,33 @@
+[[link_uploadtab]]
+== `+link_uploadtab+`
+
+This option controls whether the "Upload" tab is displayed in the link dialog. The upload tab enables file uploads when both xref:link.adoc#files_upload_handler[`+files_upload_handler+`] and xref:link.adoc#documents_file_types[`+documents_file_types+`] are configured.
+
+If set to `+false+`, the upload tab will be hidden even if the other two options are set.
+
+*Type:* `+Boolean+`
+
+*Default value:* `+true+`
+
+*Possible values:* `+true+`, `+false+`
+
+=== Example: hiding the link dialog upload tab
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'link',
+  toolbar: 'link',
+	files_upload_handler: (blobInfo, _progress) => new Promise((success) => {
+	  setTimeout(() => {
+		success({ url: 'https://www.google.com/logos/google.jpg', fileName: 'test-in-demo' });
+	  }, 2_000);
+	}),
+  documents_file_types: [
+    { mimeType: 'application/pdf', extensions: [ 'pdf' ] }
+  ],
+  link_uploadtab: false  // Hide the link dialog upload tab
+});
+----
+

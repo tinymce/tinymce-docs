@@ -56,6 +56,15 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **Media Optimizer** includes the following improvement and fix.
 
+==== Support for uploading additional file types
+// #TINY-13270
+
+The Media Optimizer plugin now supports uploading many additional file types through the link dialog, including documents (PDF, Word, Excel, PowerPoint, RTF, plain text), iWork files (Keynote, Pages, Numbers), audio files (WAV, MP3, OGG), and archive files (ZIP, GZIP, TAR, 7Z, RAR). A full list of supported file types is available in the documentation.
+
+The default list of supported file types can be customized using the xref:uploadcare-documents.adoc#documents-file-types[`+documents_file_types+`] option.
+
+For information on the **Media Optimizer** plugin, see: xref:uploadcare-documents.adoc[Media Optimizer: Files and Documents].
+
 ==== Newly uploaded videos are now responsive
 // #TINY-13166
 
@@ -100,10 +109,28 @@ In {productname} {release-version}, the xref:accordion.adoc[Accordion plugin] no
 
 {productname} {release-version} also includes the following additions:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== New options `files_upload_handler`, `documents_file_types`, and `link_uploadtab`
+// #TINY-13278
 
-// CCFR here.
+Added new configuration options to the Link plugin to support file uploads through the link dialog:
+
+* xref:link.adoc#files_upload_handler[`+files_upload_handler+`] - Specifies a function that handles file uploads in the link dialog's upload tab
+* xref:link.adoc#documents_file_types[`+documents_file_types+`] - Specifies which file types (MIME types and extensions) are supported for file uploads
+* xref:link.adoc#link_uploadtab[`+link_uploadtab+`] - Controls whether the "Upload" tab is displayed in the link dialog
+
+For more information, see xref:link.adoc#files_upload_handler[`+files_upload_handler+`], xref:link.adoc#documents_file_types[`+documents_file_types+`], and xref:link.adoc#link_uploadtab[`+link_uploadtab+`].
+
+=== New options for `dropzone` dialog components
+// #TINY-13278
+
+Added new configuration options to the `dropzone` dialog component to customize the dropzone UI and file type restrictions:
+
+* xref:dialog-components.adoc#dropzone[`+dropAreaLabel+`] - Specifies the text label for the drop area where files can be dragged (default: `+'Drop an image here'+`)
+* xref:dialog-components.adoc#dropzone[`+buttonLabel+`] - Specifies the text label for the browse button (default: `+'Browse for an image'+`)
+* xref:dialog-components.adoc#dropzone[`+allowedFileTypes+`] - Specifies a MIME type pattern for allowed file types (default: `+'image/*'+`, e.g., `+'image/*'+`, `+'application/pdf'+`)
+* xref:dialog-components.adoc#dropzone[`+allowedFileExtensions+`] - Specifies an array of allowed file extensions (default: xref:file-image-upload.adoc#images_file_types[`+images_file_types+`], e.g., `+['.jpg', '.png', '.pdf']+`)
+
+For more information, see xref:dialog-components.adoc#dropzone[dropzone component].
 
 
 [[changes]]

@@ -99,6 +99,13 @@ In {productname} {release-version}, the xref:accordion.adoc[Accordion plugin] no
 
 {productname} {release-version} also includes the following bug fixes:
 
+=== Removing a line height at times did not remove it from all selected lines.
+// #TINY-13053
+
+An issue was identified where removing or modifying `lineheight` properties on multiple elements resulted in inconsistent updates when the elements had differing values. In these cases, only the `lineheight` of the first line was changed or removed, while subsequent lines were not updated.
+
+{productname} {release-version} resolves this issue by introducing improved toggling behavior for the permissive `lineheight` option, ensuring that all lines are now correctly updated or removed as expected.
+
 === The `font-size` style on list items was not copied to new list items.
 // #TINY-13224
 

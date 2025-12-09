@@ -34,11 +34,9 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **Media Optimizer** includes the following improvements.
 
-==== `uc-video` tags can now be made responsive
+==== Newly uploaded videos are now responsive
 
-The **Media Optimizer** plugin's video functionality has been enhanced with a new configuration option for the xref:uploadcare-video.adoc#uploadcare-video-properties[`uploadcare_video_properties`] setting:
-
-* **`fluid`**: Enables responsive video sizing. When set to `true`, videos are automatically sized responsively using `width: min(original-width, 100%)` CSS, allowing them to scale down on smaller screens while maintaining their maximum size.
+Newly uploaded videos are now responsive by default. Videos automatically scale down on smaller screens while maintaining their maximum size. For more information, see: xref:uploadcare-video.adoc#uploadcare-video-properties[`uploadcare_video_properties` configuration option].
 
 For information on the **Media Optimizer** plugin, see: xref:uploadcare-video.adoc[Media Optimizer: Video].
 

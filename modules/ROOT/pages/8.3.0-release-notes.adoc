@@ -39,7 +39,10 @@ The following premium plugin updates were released alongside {productname} {rele
 // // CCFR here.
 
 // For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+=== Premium plugins now include ESM module support
+// #TINY-12888
 
+Premium plugins in {productname} {release-version} can now be consumed as native ES modules (`import`) in addition to CommonJS (`require`). This enhancement aligns premium plugins with the existing ESM capabilities already available in core plugins and applies to all distributed artifacts, including NPM packages and ZIP bundles. The update enables modern bundlers to automatically resolve the optimal module format, improving compatibility with ESM-focused toolchains and removing the need for CommonJS shims during integration.
 
 [[improvements]]
 == Improvements

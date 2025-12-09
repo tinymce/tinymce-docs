@@ -32,25 +32,22 @@ The following premium plugin updates were released alongside {productname} {rele
 
 The {productname} {release-version} release includes an accompanying release of the **Media Optimizer** premium plugin.
 
-**Media Optimizer** includes the following improvements.
+**Media Optimizer** includes the following improvement and fix.
 
 ==== Newly uploaded videos are now responsive
+// #TINY-13166
 
 Newly uploaded videos are now responsive by default. Videos automatically scale down on smaller screens while maintaining their maximum size. For more information, see: xref:uploadcare-video.adoc#uploadcare-video-properties[`uploadcare_video_properties` configuration option].
 
 For information on the **Media Optimizer** plugin, see: xref:uploadcare-video.adoc[Media Optimizer: Video].
 
-// === <Premium plugin name 1> <Premium plugin name 1 version>
+==== CSS resource files were not loaded correctly.
+// #TINY-13154
 
-// The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+Previously, Media Optimizer CSS resource files were not loaded correctly. This mainly caused issues when trying to bundle this plugin. In {productname} {release-version}, this issue has been resolved by ensuring that CSS resource files for Media Optimizer are now loaded correctly.
 
-// **<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+For information on the **Media Optimizer** plugin, see: xref:uploadcare.adoc[Media Optimizer].
 
-// ==== <Premium plugin name 1 change 1>
-
-// // CCFR here.
-
-// For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 === Premium plugins now include ESM module support
 // #TINY-12888
 

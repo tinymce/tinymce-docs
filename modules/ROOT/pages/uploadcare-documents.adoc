@@ -1,9 +1,9 @@
-= Media Optimizer (Documents)
-:navtitle: Documents feature of the Media Optimizer plugin
-:description: The Documents feature of the Media Optimizer plugin allows you to upload and link document files in your content.
+= Media Optimizer (Files and Documents)
+:navtitle: Files and Documents feature of the Media Optimizer plugin
+:description: The Files and Documents feature of the Media Optimizer plugin allows you to upload and link document files in your content.
 :description_short: upload and link document files in your content.
 :plugincode: uploadcare
-:pluginname: Media Optimizer's Documents feature
+:pluginname: Media Optimizer's Files and Documents feature
 :keywords: plugin, {plugincode}, documents, files, upload, pdf, word, excel, powerpoint, link
 :plugincategory: premium
 
@@ -95,7 +95,7 @@ When both the {pluginname} plugin and the Link plugin are enabled, the Link dial
 
 == Options
 
-The following configuration options affect the behavior of the Documents feature:
+The following configuration options affect the behavior of the Files and Documents feature:
 
 :includedSection: uploadcarePlugin
 include::partial$configuration/documents_file_types.adoc[leveloffset=+1]

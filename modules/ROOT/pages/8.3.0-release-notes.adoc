@@ -133,6 +133,13 @@ In {productname} {release-version}, the xref:accordion.adoc[Accordion plugin] no
 
 {productname} {release-version} also includes the following bug fixes:
 
+=== Accordions could be toggled when the editor was disabled.
+// #TINY-12315
+
+Earlier versions of {productname} allowed accordions to remain expandable even when the editor was disabled, creating inconsistent and unexpected behavior, particularly when used with the xref:autoresize.adoc[Autoresize plugin].
+
+This could lead to content changes when none were expected and caused interaction patterns to shift between the intended custom behavior and the browser’s default handling. In {release-version}, this issue has been resolved by ensuring accordions are fully non-interactive when the editor is disabled, preventing unintended state changes and maintaining consistent editor behavior.
+
 === Inline formats were not applied to the marker of a list item when its content was a single block element.
 // #TINY-13197
 

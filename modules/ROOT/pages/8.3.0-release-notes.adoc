@@ -36,7 +36,7 @@ The {productname} {release-version} release includes an accompanying release of 
 
 ==== CSS resource files were not loaded correctly when bundled.
 
-Previously, Media Optimizer CSS resource files were not loaded correctly when bundled. In {productname} {release-version}, this issue has been resolved by ensuring that CSS resource files for Media Optimizer are now loaded correctly when bundled.
+Previously, Media Optimizer CSS resource files were not loaded correctly. This mainly caused issues when trying to bundle this plugin. In {productname} {release-version}, this issue has been resolved by ensuring that CSS resource files for Media Optimizer are now loaded correctly.
 
 For information on the **Media Optimizer** plugin, see: xref:uploadcare.adoc[Media Optimizer].
 

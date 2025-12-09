@@ -27,6 +27,8 @@ import '../tinymce/js/tinymce/plugins/emoticons/js/emojis';
 import '../tinymce/js/tinymce/plugins/link';
 import '../tinymce/js/tinymce/plugins/lists';
 import '../tinymce/js/tinymce/plugins/table';
+import '../tinymce/js/tinymce/plugins/help';
+import '../tinymce/js/tinymce/plugins/help/js/i18n/keynav/en';
 
 include::partial$integrations/premium-plugins-bundling.adoc[]
 /* From ZIP download - download separately and add to /src/plugins */
@@ -42,7 +44,7 @@ import contentCss from '../tinymce/js/tinymce/skins/content/default/content.css'
 export function render () {
   tinymce.init({
     selector: 'textarea#editor',
-    plugins: 'advlist code emoticons link lists table',
+    plugins: 'advlist code emoticons link lists table help',
     toolbar: 'bold italic | bullist numlist | link emoticons',
     skin: false,
     content_css: false,

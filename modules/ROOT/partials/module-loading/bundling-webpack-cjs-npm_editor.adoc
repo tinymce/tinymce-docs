@@ -27,6 +27,8 @@ require('tinymce/plugins/emoticons/js/emojis');
 require('tinymce/plugins/link');
 require('tinymce/plugins/lists');
 require('tinymce/plugins/table');
+require('tinymce/plugins/help');
+require('tinymce/plugins/help/js/i18n/keynav/en');
 
 /* Import premium plugins from NPM */
 require('tinymce-premium/plugins/advcode');
@@ -44,7 +46,7 @@ exports.render = () => {
   tinymce.init({
     selector: 'textarea#editor',
     /* All plugins need to be imported and added to the plugins option. */
-    plugins: 'advlist code emoticons link lists table',
+    plugins: 'advlist code emoticons link lists table help',
     toolbar: 'bold italic | bullist numlist | link emoticons',
     skin: false,
     content_css: false,

@@ -85,7 +85,6 @@ require('<path_to_tinymce_premium_zip>/plugins/<plugincode>');
 ----
 |===
 
-
 [[using-premium-plugins]]
 == Using premium plugins
 
@@ -174,3 +173,5 @@ For more information, see: xref:editor-important-options.adoc#external_plugins[`
 ====
 
 include::partial$module-loading/bundling-plugin-files.adoc[]
+
+include::partial$module-loading/bundling-plugin-resources.adoc[]

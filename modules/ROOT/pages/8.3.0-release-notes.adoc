@@ -34,7 +34,7 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **Media Optimizer** includes the following fixes, changes, and improvements.
 
-==== CSS resource files were not loaded correctly when bundled.
+==== CSS resource files were not loaded correctly.
 
 Previously, Media Optimizer CSS resource files were not loaded correctly. This mainly caused issues when trying to bundle this plugin. In {productname} {release-version}, this issue has been resolved by ensuring that CSS resource files for Media Optimizer are now loaded correctly.
 

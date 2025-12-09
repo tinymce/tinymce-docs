@@ -46,10 +46,12 @@ The following premium plugin updates were released alongside {productname} {rele
 
 {productname} {release-version} also includes the following improvements:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Show editor notification when a premium plugin is not allowed for a given license key.
+// #TINY-12937
 
-// CCFR here.
+Previously, when a premium plugin was not permitted for a given license key, the plugin would be disabled without any corresponding editor message. As of {release-version}, this behaviour has been improved: the editor now displays a notification when a plugin is disabled due to license restrictions, reducing ambiguity.
+
+For more informaton on license keys, see: xref:license-key.adoc[License Key].
 
 
 [[additions]]
@@ -96,6 +98,13 @@ The following premium plugin updates were released alongside {productname} {rele
 An issue was identified where removing or modifying `lineheight` properties on multiple elements resulted in inconsistent updates when the elements had differing values. In these cases, only the `lineheight` of the first line was changed or removed, while subsequent lines were not updated.
 
 {productname} {release-version} resolves this issue by introducing improved toggling behavior for the permissive `lineheight` option, ensuring that all lines are now correctly updated or removed as expected.
+
+=== The `font-size` style on list items was not copied to new list items.
+// #TINY-13224
+
+Previously, an issue was identified where the `font-size` style applied to list items was not retained when creating new items in either numbered or bulleted lists. As a result, list items added by pressing `Enter` did not inherit the correct font size from the preceding item.
+
+{productname} {release-version} addresses this issue by changing the behavior such that the `font-size` style is now consistently transferred to newly created list items. This ensures that all new list items have the correct font size.
 
 
 [[security-fixes]]

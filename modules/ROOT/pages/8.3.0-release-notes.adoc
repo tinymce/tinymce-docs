@@ -53,6 +53,13 @@ Previously, when a premium plugin was not permitted for a given license key, the
 
 For more informaton on license keys, see: xref:license-key.adoc[License Key].
 
+=== Accordions can now be opened and closed when the editor is set to readonly.
+// #TINY-12316
+
+In previous versions of {productname}, accordion behavior in readonly mode relied on the browser’s default handling, which could still modify the DOM and lead to undesirable, uncontrolled changes to the editor state. This meant that even when the editor was configured as readonly, expanding or collapsing accordion sections could alter the underlying content structure in inconsistent ways.
+
+In {productname} {release-version}, the xref:accordion.adoc[Accordion plugin] now explicitly manages open and close interactions in readonly mode, ensuring that any required DOM updates for toggling panels are performed in a controlled, minimally invasive manner. This improvement provides more predictable behavior, better control over how the DOM is manipulated, and a consistent user experience when interacting with accordions in readonly editors.
+
 
 [[additions]]
 == Additions

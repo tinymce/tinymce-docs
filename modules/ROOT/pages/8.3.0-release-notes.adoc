@@ -46,10 +46,12 @@ The following premium plugin updates were released alongside {productname} {rele
 
 {productname} {release-version} also includes the following improvements:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Show editor notification when a premium plugin is not allowed for a given license key.
+// #TINY-12937
 
-// CCFR here.
+Previously, when a premium plugin was not permitted for a given license key, the plugin would be disabled without any corresponding editor message. As of {release-version}, this behaviour has been improved: the editor now displays a notification when a plugin is disabled due to license restrictions, reducing ambiguity.
+
+For more informaton on license keys, see: xref:license-key.adoc[License Key].
 
 
 [[additions]]
@@ -128,4 +130,3 @@ There <is one | are <number> known issue<s> in {productname} {release-version}.
 // #TINY-vwxyz1
 
 // CCFR here.
-

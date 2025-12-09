@@ -5,7 +5,7 @@
 
 == Overview
 
-{productname} plugins can be bundled using module loaders such as Webpack, Rollup, or Vite. This guide covers how to include both community and premium plugins in your application bundle.
+{productname} plugins can be bundled using a module bundler such as Webpack, Rollup, or Vite. This guide covers how to include both community and premium plugins in your application bundle.
 
 {productname} includes both community and premium plugins:
 
@@ -151,10 +151,10 @@ tinymce.init({
   selector: 'textarea',
   license_key: 'T8LK:...', // Your commercial license key
   external_plugins: {
-    'advcode': '<path_to_premium_plugins>/advcode/plugin.min.js',
-    'tinycomments': '<path_to_premium_plugins>/tinycomments/plugin.min.js',
+    'advcode': '/<path_to_premium_plugins>/advcode/plugin.min.js',
+    'tinycomments': '/<path_to_premium_plugins>/tinycomments/plugin.min.js',
     // Always include the licensekeymanager plugin when using premium plugins with a commercial license.
-    'licensekeymanager': '<path_to_premium_plugins>/licensekeymanager/plugin.min.js'
+    'licensekeymanager': '/<path_to_premium_plugins>/licensekeymanager/plugin.min.js'
   },
   plugins: 'advcode tinycomments',
   // ... other configuration

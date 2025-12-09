@@ -134,7 +134,6 @@ export default {
       content: '<p>This is the initial content of the editor.</p>',
       editorConfig: {
         height: 500,
-        menubar: false,
         plugins: 'advlist autolink lists link image table code help wordcount',
         toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist | help'
       }

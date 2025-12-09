@@ -29,9 +29,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} {release-version} introduces the `+tinymce-premium+` NPM package, providing commercial customers with easy access to all premium plugins, skins, icons, and language packs directly from the NPM registry. The package is available for download at link:https://www.npmjs.com/package/tinymce-premium[https://www.npmjs.com/package/tinymce-premium].
 
-The `+tinymce-premium+` package simplifies the installation and integration of premium plugins for projects using NPM or Yarn. The package includes all premium plugins, the license key manager plugin, and premium skins, icons, and language packs.
-
-To get started with using premium plugins with {productname} using NPM, see: xref:npm-projects.adoc[Quick start: {productname} from NPM or Yarn].
+The `+tinymce-premium+` package simplifies the installation and integration of premium plugins. To get started with using premium plugins with {productname}, see: xref:npm-projects.adoc[Quick start: {productname} from NPM or Yarn].
 
 
 [[accompanying-premium-plugin-changes]]

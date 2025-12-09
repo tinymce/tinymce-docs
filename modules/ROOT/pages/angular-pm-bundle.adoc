@@ -1,7 +1,7 @@
 = Bundling TinyMCE with an Angular application
 :navtitle: Using a package manager with bundling
-:description: A guide on bundling TinyMCE with an Angular application using a module loader.
-:keywords: integration, integrate, angular, bundle, webpack
+:description: A guide on bundling TinyMCE with an Angular application using Vite.
+:keywords: integration, integrate, angular, bundle, vite, npm, tinymce
 :productSource: package-manager
 :packageName: @tinymce/tinymce-angular
 
@@ -11,7 +11,7 @@ For examples of the {productname} Angular integration, visit https://tinymce.git
 
 == Prerequisites
 
-This procedure requires https://nodejs.org/[Node.js (and npm)].
+This procedure requires https://nodejs.org/[Node.js (and NPM)].
 
 == Procedure
 
@@ -54,7 +54,7 @@ For information on configuring premium plugins when bundling, see: xref:bundling
 import { Component } from '@angular/core';
 import { EditorComponent } from '@tinymce/tinymce-angular';
 
-// TinyMCE so the global var exists
+// Ensure you import TinyMCE to register the global variable required by other components
 import 'tinymce/tinymce';
 // DOM model
 import 'tinymce/models/dom/model';
@@ -74,6 +74,7 @@ import 'tinymce/plugins/lists';
 import 'tinymce/plugins/table';
 import 'tinymce/plugins/code';
 import 'tinymce/plugins/help';
+import 'tinymce/plugins/help/js/en.js';
 import 'tinymce/plugins/wordcount';
 
 include::partial$integrations/premium-plugins-bundling.adoc[]
@@ -96,7 +97,6 @@ import 'tinymce/skins/ui/oxide/content.js';
 export class MyEditorComponent {
   init: EditorComponent['init'] = {
     height: 500,
-    menubar: false,
     plugins: 'advlist autolink lists link image table code help wordcount',
     toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist | help'
   };
@@ -129,7 +129,6 @@ export class AppComponent {}
 ng serve
 ----
 +
-The development server will automatically bundle your application, including TinyMCE, when you access it in your browser. The bundler processes all the `import` statements and includes the {productname} modules in the development bundle.
 
 . Build the application for production:
 +
@@ -140,7 +139,7 @@ ng build
 +
 This command creates an optimized production bundle in the `+dist+` directory.
 
-. Update the `+licenseKey+` option in the editor component and include your xref:license-key.adoc[License Key].
+. If premium plugins are included, update the `+licenseKey+` option in the editor component and include your xref:license-key.adoc[License Key].
 
 == Next Steps
 

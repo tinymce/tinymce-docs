@@ -111,6 +111,13 @@ In {productname} {release-version}, the xref:accordion.adoc[Accordion plugin] no
 
 {productname} {release-version} also includes the following bug fixes:
 
+=== Inline formats were not applied to the marker of a list item when its content was a single block element.
+// #TINY-13197
+
+Previously, when applying an inline format to a fully or partially selected list that contained content wrapped inside a single block element, the style was not applied to the list item where the selection began. This resulted in inconsistent styling between the list decorator and its content.
+
+This issue has now been resolved in {release-version}. The logic has been updated to ensure that the inline format is applied correctly to the list item where the selection begins.
+
 === Tooltip is now translated correctly for the dropdown chevron of the bullet and number list toolbar buttons.
 // #TINY-13271
 

@@ -42,26 +42,7 @@ The following premium plugin updates were released alongside {productname} {rele
 === Premium plugins now include ESM module support
 // #TINY-12888
 
-All premium plugins now include an `+index.mjs+` file in their dist folders alongside the existing `+index.js+` file. The `+index.mjs+` file uses ES module (`+import+`) syntax instead of CommonJS (`+require+`) syntax, allowing bundlers and integrators to use native ESM without requiring a CommonJS compatibility layer.
-
-The `+package.json+` file in each premium plugin's dist folder has been updated to include proper module exports configuration:
-
-[source,json]
-----
-{
-  "main": "index.js",
-  "module": "index.mjs",
-  "exports": {
-    ".": {
-      "import": "./index.mjs",
-      "require": "./index.js"
-    },
-    "./package.json": "./package.json"
-  }
-}
-----
-
-This enables modern bundlers to automatically select the appropriate module format based on the project's configuration, improving compatibility and reducing the need for additional build tooling.
+Premium plugins in {productname} {release-version} can now be consumed as native ES modules (`import`) in addition to CommonJS (`require`). This enhancement aligns premium plugins with the existing ESM capabilities already available in core plugins and applies to all distributed artifacts, including NPM packages and ZIP bundles. The update enables modern bundlers to automatically resolve the optimal module format, improving compatibility with ESM-focused toolchains and removing the need for CommonJS shims during integration.
 
 [[improvements]]
 == Improvements

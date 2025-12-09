@@ -93,7 +93,7 @@ The following premium plugin updates were released alongside {productname} {rele
 === Toolbar split button chevron tooltip is now the same as the main button tooltip unless explicitly set otherwise.
 // #TINY-13271
 
-Previously, an issue was identified where the **Bullet list menu** and **Numbered list menu** did not include translations for the chevron icons. This has been resolved in {release-version}. The chevron icons for these list menus now display correctly translated tooltips on hover.
+Previously, an issue was identified where the tooltips for the dropdown chevrons for the **Bullet list** and **Numbered list** toolbar buttons were not translated correctly. This has been resolved in {release-version}. The dropdown chevron of these splitbuttons now displays correctly translated tooltips on hover.
 
 
 [[security-fixes]]

@@ -1,7 +1,7 @@
 [[powerpaste_emf_processor]]
 == `+powerpaste_emf_processor+`
 
-This option controls how `emf` images are handled. If this option **is** provided, `emf` image blobs will be converted into `png` image blobs, which will then be pasted into the editor. If this option is **not** provided, the editor will remove the poor quality images, and show an error message.
+This option controls how `emf` images are handled. If this option **is** provided, `emf` image blobs will be converted into `png` image blobs using the supplied function, which will then be pasted into the editor. If this option is **not** provided, the editor will remove the poor quality images, and show an error message.
 
 *Type:* `+Function+`
 

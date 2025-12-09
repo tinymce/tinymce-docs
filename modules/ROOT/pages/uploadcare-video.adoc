@@ -117,7 +117,7 @@ include::partial$configuration/uploadcare_video_resize.adoc[leveloffset=+1]
 
 The plugin creates a custom `+<uc-video>+` element that replaces the standard HTML `+<video>+` element when videos are processed through Uploadcare's infrastructure.
 
-.Example: Custom video element created by the plugin on video insertion
+.Example: Custom video element with fixed dimensions (non-responsive)
 [source,html]
 ----
 <uc-video 
@@ -130,8 +130,6 @@ The plugin creates a custom `+<uc-video>+` element that replaces the standard HT
   loop="false"
   muted="false"
   preload="metadata"
-  width="640"
-  height="360"
   poster="https://example.com/poster.jpg"
   showlogo="false"
 </uc-video>

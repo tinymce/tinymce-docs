@@ -50,20 +50,49 @@ NOTE: If only the image is selected, pasting it will succeed and the image will 
 
 For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
 
-// // CCFR here.
+=== Media Optimizer
 
-// For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+The {productname} {release-version} release includes an accompanying release of the **Media Optimizer** premium plugin.
 
+**Media Optimizer** includes the following improvement and fix.
+
+==== Newly uploaded videos are now responsive
+// #TINY-13166
+
+Newly uploaded videos are now responsive by default. Videos automatically scale down on smaller screens while maintaining their maximum size. For more information, see: xref:uploadcare-video.adoc#uploadcare-video-properties[`uploadcare_video_properties` configuration option].
+
+For information on the **Media Optimizer** plugin, see: xref:uploadcare-video.adoc[Media Optimizer: Video].
+
+==== CSS resource files were not loaded correctly.
+// #TINY-13154
+
+Previously, Media Optimizer CSS resource files were not loaded correctly. This mainly caused issues when trying to bundle this plugin. In {productname} {release-version}, this issue has been resolved by ensuring that CSS resource files for Media Optimizer are now loaded correctly.
+
+For information on the **Media Optimizer** plugin, see: xref:uploadcare.adoc[Media Optimizer].
+
+=== Premium plugins now include ESM module support
+// #TINY-12888
+
+Premium plugins in {productname} {release-version} can now be consumed as native ES modules (`import`) in addition to CommonJS (`require`). This enhancement aligns premium plugins with the existing ESM capabilities already available in core plugins and applies to all distributed artifacts, including NPM packages and ZIP bundles. The update enables modern bundlers to automatically resolve the optimal module format, improving compatibility with ESM-focused toolchains and removing the need for CommonJS shims during integration.
 
 [[improvements]]
 == Improvements
 
 {productname} {release-version} also includes the following improvements:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Show editor notification when a premium plugin is not allowed for a given license key.
+// #TINY-12937
 
-// CCFR here.
+Previously, when a premium plugin was not permitted for a given license key, the plugin would be disabled without any corresponding editor message. As of {release-version}, this behaviour has been improved: the editor now displays a notification when a plugin is disabled due to license restrictions, reducing ambiguity.
+
+For more informaton on license keys, see: xref:license-key.adoc[License Key].
+
+=== Accordions can now be opened and closed when the editor is set to readonly.
+// #TINY-12316
+
+In previous versions of {productname}, accordion behavior in readonly mode relied on the browser’s default handling, which could still modify the DOM and lead to undesirable, uncontrolled changes to the editor state. This meant that even when the editor was configured as readonly, expanding or collapsing accordion sections could alter the underlying content structure in inconsistent ways.
+
+In {productname} {release-version}, the xref:accordion.adoc[Accordion plugin] now explicitly manages open and close interactions in readonly mode, ensuring that any required DOM updates for toggling panels are performed in a controlled, minimally invasive manner. This improvement provides more predictable behavior, better control over how the DOM is manipulated, and a consistent user experience when interacting with accordions in readonly editors.
 
 
 [[additions]]
@@ -104,10 +133,31 @@ For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpas
 
 {productname} {release-version} also includes the following bug fixes:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Inline formats were not applied to the marker of a list item when its content was a single block element.
+// #TINY-13197
 
-// CCFR here.
+Previously, when applying an inline format to a fully or partially selected list that contained content wrapped inside a single block element, the style was not applied to the list item where the selection began. This resulted in inconsistent styling between the list decorator and its content.
+
+This issue has now been resolved in {release-version}. The logic has been updated to ensure that the inline format is applied correctly to the list item where the selection begins.
+
+=== Tooltip is now translated correctly for the dropdown chevron of the bullet and number list toolbar buttons.
+// #TINY-13271
+
+Previously, an issue was identified where the tooltips for the dropdown chevrons for the **Bullet list** and **Numbered list** toolbar buttons were not translated correctly. This has been resolved in {release-version}. The dropdown chevron of these splitbuttons now displays correctly translated tooltips on hover.
+
+=== Removing a line height at times did not remove it from all selected lines.
+// #TINY-13053
+
+An issue was identified where removing or modifying `lineheight` properties on multiple elements resulted in inconsistent updates when the elements had differing values. In these cases, only the `lineheight` of the first line was changed or removed, while subsequent lines were not updated.
+
+{productname} {release-version} resolves this issue by introducing improved toggling behavior for the permissive `lineheight` option, ensuring that all lines are now correctly updated or removed as expected.
+
+=== The `font-size` style on list items was not copied to new list items.
+// #TINY-13224
+
+Previously, an issue was identified where the `font-size` style applied to list items was not retained when creating new items in either numbered or bulleted lists. As a result, list items added by pressing `Enter` did not inherit the correct font size from the preceding item.
+
+{productname} {release-version} addresses this issue by changing the behavior such that the `font-size` style is now consistently transferred to newly created list items. This ensures that all new list items have the correct font size.
 
 
 [[security-fixes]]

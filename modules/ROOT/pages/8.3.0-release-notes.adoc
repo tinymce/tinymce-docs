@@ -28,6 +28,18 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== Media Optimizer
+
+The {productname} {release-version} release includes an accompanying release of the **Media Optimizer** premium plugin.
+
+**Media Optimizer** includes the following improvements.
+
+==== Newly uploaded videos are now responsive
+
+Newly uploaded videos are now responsive by default. Videos automatically scale down on smaller screens while maintaining their maximum size. For more information, see: xref:uploadcare-video.adoc#uploadcare-video-properties[`uploadcare_video_properties` configuration option].
+
+For information on the **Media Optimizer** plugin, see: xref:uploadcare-video.adoc[Media Optimizer: Video].
+
 // === <Premium plugin name 1> <Premium plugin name 1 version>
 
 // The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

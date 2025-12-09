@@ -93,9 +93,9 @@ The following premium plugin updates were released alongside {productname} {rele
 === Accordions could be toggled when the editor was disabled.
 // #TINY-12315
 
-In earlier versions of {productname}, an issue allowed accordions to remain interactive (expandable) even when the editor was disabled. This resulted in unexpected behavior when used alongside the xref:autoresize.adoc[Autoresize plugin].
+Earlier versions of {productname} allowed accordions to remain expandable even when the editor was disabled, creating inconsistent and unexpected behavior, particularly when used with the xref:autoresize.adoc[Autoresize plugin].
 
-This issue has been resolved in {release-version}. Accordions are now non-interactive in disabled mode, ensuring the editor behaves as intended. Users can no longer interact with accordions when the editor is disabled.
+This could lead to content changes when none were expected and caused interaction patterns to shift between the intended custom behavior and the browser’s default handling. In {release-version}, this issue has been resolved by ensuring accordions are fully non-interactive when the editor is disabled, preventing unintended state changes and maintaining consistent editor behavior.
 
 
 [[security-fixes]]

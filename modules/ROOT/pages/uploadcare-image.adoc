@@ -52,10 +52,26 @@ tinymce.init({
 The {pluginname} plugin overrides the xref:quickbars.adoc[Quickbar] quickimage toolbar item. To ensure a better user experience and to avoid having two image buttons configure `quickbars_insert_toolbar` to omit the `quickimage` toolbar item.
 ====
 
-
 == Image Operations
 
 Below is an overview of the features provided by the {pluginname} plugin for image optimization:
+
+[cols="1,1,^1,3",options="header"]
+|===
+| Feature | | Icon | Description
+
+| Upload
+| 
+| image:icons/upload-from-device.svg[upload-from-device.svg]
+| Upload images via drag-and-drop, file selection, or URL input
+
+| Upload from URL
+| 
+| image:icons/upload-from-link.svg[upload-from-link.svg]
+| Upload images from a URL
+|===
+
+Below is an overview of the image editing features provided by the {pluginname} plugin:
 
 [cols="1,1,^1,3",options="header"]
 |===

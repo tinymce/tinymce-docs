@@ -1,6 +1,6 @@
 = Media Optimizer
 :navtitle: Media Optimizer
-:description: The Media Optimizer plugin allows you to optimize images and videos in your content.
+:description: The Media Optimizer plugin optimizes images and videos in content.
 :description_short: optimize images and videos in your content.
 :plugincode: uploadcare
 :pluginname: Media Optimizer
@@ -11,11 +11,12 @@ The {pluginname} plugin provides comprehensive media management capabilities for
 
 == Overview
 
-The {pluginname} plugin extends {productname} with powerful media handling features that allow users to upload, process, and embed both images and videos directly within the editor. The plugin leverages Uploadcare's infrastructure to provide real-time media processing, responsive delivery, and advanced optimization capabilities.
+The {pluginname} plugin extends {productname} with powerful media handling features that enable uploading, processing, and embedding both images and videos directly within the editor. The plugin also supports uploading and linking document files (PDF, Word, Excel, PowerPoint, and more) through the xref:link.adoc[Link] plugin's dialog. The plugin leverages Uploadcare's infrastructure to provide real-time media processing, responsive delivery, and advanced optimization capabilities.
 
 == Key benefits
 
 * Upload and optimize both images and videos directly within the editor
+* Upload and link document files (PDF, Word, Excel, PowerPoint, and more) through the xref:link.adoc[Link] plugin's dialog
 * Real-time media optimization and compression
 * Responsive media delivery with automatic format selection
 * Advanced image filtering and video player customization
@@ -38,8 +39,8 @@ To add the Media Optimizer plugin to the editor, include `uploadcare` in the `pl
 ----
 tinymce.init({
   selector: 'textarea',
-  plugins: 'uploadcare',
-  toolbar: 'uploadcare uploadcare-video',
+  plugins: 'uploadcare link', // Include 'link' plugin for file upload support
+  toolbar: 'uploadcare uploadcare-video link',
   uploadcare_public_key: '<your-public-key>', // Required for Uploadcare integration
   uploadcare_resources: 'uploadcare/uploadcare', // Required when Media Optimizer addon is bundled with TinyMCE
   // uploadcare_signed_upload_auth_provider: (_publicKey) => Promise.resolve({
@@ -53,7 +54,7 @@ tinymce.init({
 
 For a complete guide to the features provided by the {pluginname} plugin, see the following pages:
 
-[cols="1,1"]
+[cols="1,1,1"]
 |===
 
 a|
@@ -67,6 +68,12 @@ a|
 xref:uploadcare-video.adoc#[Video]
 
 Video optimization options, including video player customization, resizing, and adjusting.
+
+a|
+[.lead]
+xref:uploadcare-documents.adoc#[Files and Documents]
+
+Document file upload and linking options, including support for PDF, Word, Excel, PowerPoint, and more.
 
 a|
 |===

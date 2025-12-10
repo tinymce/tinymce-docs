@@ -1,0 +1,155 @@
+= Bundling TinyMCE with a Svelte application
+:navtitle: Using a package manager with bundling
+:description: A guide on bundling TinyMCE with a Svelte application using a module loader.
+:keywords: integration, integrate, svelte, bundle, vite
+:productSource: package-manager
+:packageName: @tinymce/tinymce-svelte
+
+The https://github.com/tinymce/tinymce-svelte[Official {productname} Svelte component] integrates {productname} into https://svelte.dev/[Svelte applications]. This procedure creates a basic Svelte application containing a bundled {productname} editor.
+
+For examples of the {productname} integration, visit the https://tinymce.github.io/tinymce-svelte/[tinymce-svelte storybook].
+
+== Prerequisites
+
+Requires https://nodejs.org/[Node.js (and npm)].
+
+== Procedure
+
+. Use the https://github.com/vitejs/vite[Vite] package to create a new Svelte project named `+tinymce-svelte-demo+`, such as:
++
+[source,sh]
+----
+npm create vite@6 tinymce-svelte-demo -- --template svelte
+----
+. Change to the project directory.
++
+[source,sh]
+----
+cd tinymce-svelte-demo
+----
+. Install project dependencies.
++
+[source,sh]
+----
+npm install
+----
+. Install the `+tinymce+` and `+tinymce-svelte+` packages:
++
+[source,sh,subs="attributes+"]
+----
+npm install tinymce@^{productmajorversion} @tinymce/tinymce-svelte
+----
+
+include::partial$integrations/premium-plugins-install-step-link.adoc[]
++
+[NOTE]
+====
+For information on configuring premium plugins when bundling, see: xref:bundling-plugins.adoc#using-premium-plugins[Using premium plugins].
+====
++
+. Using a text editor, create `+src/editor.js+` and set the contents to:
++
+[source,js]
+----
+// Add the @tinymce/tinymce-svelte wrapper to the bundle
+import Editor from '@tinymce/tinymce-svelte';
+
+// TinyMCE so the global var exists
+import 'tinymce/tinymce';
+// DOM model
+import 'tinymce/models/dom/model';
+// Theme
+import 'tinymce/themes/silver';
+// Toolbar icons
+import 'tinymce/icons/default';
+// Editor styles
+import 'tinymce/skins/ui/oxide/skin.min.css';
+
+// Import plugins
+import 'tinymce/plugins/advlist';
+import 'tinymce/plugins/autolink';
+import 'tinymce/plugins/link';
+import 'tinymce/plugins/image';
+import 'tinymce/plugins/lists';
+import 'tinymce/plugins/table';
+import 'tinymce/plugins/code';
+import 'tinymce/plugins/help';
+import 'tinymce/plugins/wordcount';
+
+include::partial$integrations/premium-plugins-bundling.adoc[]
+
+// Content styles, including inline UI like fake cursors
+import 'tinymce/skins/content/default/content.js';
+import 'tinymce/skins/ui/oxide/content.js';
+
+// Export Editor component for use in Svelte components
+export default Editor;
+----
++
+. Using a text editor, open `+src/App.svelte+` and replace the contents with:
++
+[source,svelte]
+----
+<script>
+import Editor from './editor.js';
+let content = '<p>This is the initial content of the editor.</p>';
+let conf = {
+  height: 500,
+  menubar: false,
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'preview', 'help', 'wordcount'
+  ],
+  toolbar: 'undo redo | blocks | ' +
+    'bold italic forecolor | alignleft aligncenter ' +
+    'alignright alignjustify | bullist numlist outdent indent | ' +
+    'removeformat | help',
+}
+</script>
+
+<main>
+  <h1>TinyMCE Svelte Demo</h1>
+  <Editor
+    licenseKey='gpl'
+    value={content}
+    conf={conf}
+  />
+</main>
+----
++
+. Run the development server:
++
+[source,sh]
+----
+npm run dev
+----
++
+The development server uses Vite to bundle your application on-the-fly. Vite processes all the `import` statements and includes the TinyMCE modules in the development bundle.
+
+. Build the application for production:
++
+[source,sh]
+----
+npm run build
+----
++
+This command creates an optimized production bundle in the `+dist+` directory.
+
+. Preview the production build:
++
+[source,sh]
+----
+npm run preview
+----
++
+. Update the `+licenseKey+` property in the editor component and include your xref:license-key.adoc[License Key].
+
+== Next Steps
+
+* For information on bundling, see: xref:introduction-to-bundling-tinymce.adoc[]
+* See the following for additional information:
+** https://tinymce.github.io/tinymce-svelte/[tinymce-svelte storybook]
+** xref:basic-setup.adoc[{productname} basic setup]
+** xref:svelte-ref.adoc[{productname} Svelte integration technical reference]
+* For a complete example, see: https://github.com/tinymce/tinymce-svelte-integration-examples/tree/bundle_with_npm_premium_plugins[the Svelte bundling example repository].

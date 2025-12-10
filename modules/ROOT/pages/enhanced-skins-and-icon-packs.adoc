@@ -1,79 +1,98 @@
 = Enhanced Skins & Icon Packs
 :navtitle: Enhanced Skins & Icon Packs
-:description: Quickly give TinyMCE a new look.
-:keywords: skin, skins, icon, icons, material, bootstrap, customize, theme
+:description: Premium skins and icon packs for TinyMCE.
+:keywords: skin, skins, icon, icons, material, bootstrap, customize
 
-The {prem_skins_icons} lets you quickly give {productname} a new look. Just choose one of our pre-made skins and icon packs.
+NOTE: Enhanced skins are only available with a link:{pricingpage}/[paid {productname} subscription].
 
-== How to use a Enhanced skins
+The {prem_skins_icons} provide pre-made skins and icon packs to quickly customize {productname}'s appearance. These premium options allow integrators to match {productname} to their application's design system.
 
-NOTE: Enhanced skins are only available with a link:{pricingpage}/[paid {productname} subscriptions].
+== Available premium skins
 
-Use the xref:editor-skin.adoc#skin[skin] option, in combination with the xref:add-css-options.adoc#content_css[content_css] option and the values listed below.
+The following premium skins are available for {productname}:
 
-Available values for xref:editor-skin.adoc#skin[skins]:
+* `material-classic`
+* `material-outline`
+* `bootstrap`
+* `fabric`
+* `fluent`
+* `borderless`
+* `small`
+* `jam`
+* `naked`
+* `outside`
+* `snow`
 
-* material-classic
-* material-outline
-* bootstrap
-* fabric
-* fluent
-* borderless
-* small
-* jam
-* naked
-* outside
-* snow
+For information on configuring skins, see: xref:editor-skin.adoc[Skin options].
 
-Available values for xref:add-css-options.adoc#content_css[content_css]:
+Skins can include both UI styles (`+skin.css+`) and content styles (`+content.css+`). Using the `+skin+` option applies both automatically when both files are present.
 
-* material-classic
-* material-outline
-* fabric
-* fluent
+For styling only the editable area (without changing the UI), separate content-only CSS files are available. These files are located in the content folder and may differ from the content styles included with skins. Available content-only options:
 
-=== Example: using a Enhanced skin
+* `material-classic`
+* `material-outline`
+* `fabric`
+* `fluent`
+
+Use the xref:add-css-options.adoc#content_css[`+content_css+`] option to apply content-only styles.
+
+=== Example: using a premium skin
 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  skin: 'fabric',        // Name of the skin
-  content_css: 'fabric'  // Name of the content skin
+  selector: 'textarea',
+  skin: 'fabric'  // Applies both UI and content styles (if both files are included)
 });
 ----
 
-== How to use an icon pack
+[NOTE]
+====
+The `+skin+` option requires the skin files to be in the default location (`+TINYMCE_BASE/skins/ui/${skinName}+`). For custom locations or when using NPM packages without bundling, refer to xref:editor-skin.adoc[Skin options] for more information.
+====
 
-Use the xref:editor-icons.adoc#icons[icons] option with any of the values listed below.
+[NOTE]
+====
+*Mixing skins and content_css:*
 
-Available values for xref:editor-icons.adoc#icons[icon] packs:
+The `+content_css+` option is not required when using skins that include content styles. However, if both `+skin+` and `+content_css+` are specified, `+content_css+` will override the skin's content styles, allowing mixing and matching of UI and content styles.
+====
 
-* bootstrap
-* material
-* small
-* jam
-* thin
+== Available premium icon packs
+
+The following premium icon packs are available for {productname}:
+
+* `bootstrap`
+* `material`
+* `small`
+* `jam`
+* `thin`
+
+For information on configuring icon packs, see: xref:editor-icons.adoc[Icon options].
 
 === Example: using a premium icon pack
 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
+  selector: 'textarea',
   icons: 'material'      // Name of icon pack
 });
 ----
 
-For information on using the `+icons+` option, see: xref:editor-icons.adoc#icons[User interface options - `+icons+`].
+[NOTE]
+====
+The `+icons+` option requires the icon pack files to be in the default location (`+TINYMCE_BASE/icons/${iconPackName}/icons.js+`). For custom locations or when using NPM packages without bundling, refer to xref:editor-icons.adoc[Icon options] for more information.
+====
 
-=== Icon pack compatibility matrix
+[[icon-pack-compatibility-matrix]]
+== Icon pack compatibility matrix
 
-Due to different toolbar button sizes, some icon packs fit better with some skins. Use the below matrix as a guide.
+Due to different toolbar button sizes, some icon packs fit better with some skins. Use the compatibility matrix below as a guide when selecting combinations.
 
 [cols="1,3",options="header"]
 |===
-|Skin |Compatible Icon pack
+|Skin |Compatible Icon packs
 |material-classic |bootstrap, material, jam, small, thin
 |material-outline |bootstrap, material, jam, small, thin
 |bootstrap |bootstrap, material, jam, small, thin
@@ -89,7 +108,7 @@ Due to different toolbar button sizes, some icon packs fit better with some skin
 
 == Examples
 
-Below are some recommended combinations of skins and icon packs:
+Below are interactive demos showing recommended combinations of skins and icon packs:
 
 * xref:bootstrap-demo.adoc[Bootstrap skin]
 * xref:material-outline-demo.adoc[Material Outline skin with Material icon pack]
@@ -103,13 +122,3 @@ Below are some recommended combinations of skins and icon packs:
 * xref:outside-demo.adoc[Outside editor]
 * xref:snow-demo.adoc[Snow editor]
 * xref:custom-icon-pack-demo.adoc[Custom Icon Pack Demo]
-
-////
-:pluginname: Tiny Skins and Icon
-:pluginminimumplan: tiertwo
-:extensionType: Packs
-:pluralExtensionType: true
-include::partial$misc/purchase-premium-plugins.adoc[]
-:!extensionType:
-:!pluralExtensionType:
-////

@@ -5,6 +5,9 @@ For information on:
 ifeval::["{productSource}" != "cloud"]
 * Setting the license, see: xref:license-key.adoc#setting-the-license[Setting the license].
 endif::[]
+ifeval::["{productSource}" == "package-manager"]
+* Installing premium plugins, see: xref:npm-projects.adoc#install-premium-plugins[Installing premium plugins from NPM].
+endif::[]
 * Customizing {productname}, see: xref:basic-setup.adoc[Basic Setup].
 * The three editor modes, see:
 ** xref:use-tinymce-classic.adoc[{productname} classic editing mode].

@@ -26,12 +26,19 @@ The following examples show how to bundle icon packs using different module synt
 |====
 |Module Syntax |Source |Example
 
-.2+|ES6+
-|npm
+.3+|ES6+
+|npm (community)
 a|
 [source, js]
 ----
 import 'tinymce/icons/material';
+----
+
+|npm (premium)
+a|
+[source, js]
+----
+import 'tinymce-premium/icons/material';
 ----
 
 |`.zip`
@@ -41,12 +48,19 @@ a|
 import '../tinymce/icons/material/icons';
 ----
 
-.2+|Common JS
-|npm
+.3+|Common JS
+|npm (community)
 a|
 [source, js]
 ----
 require('tinymce/icons/material');
+----
+
+|npm (premium)
+a|
+[source, js]
+----
+require('tinymce-premium/icons/material');
 ----
 
 |`.zip`
@@ -56,6 +70,35 @@ a|
 require('../tinymce/icons/material/icons.js');
 ----
 |====
+
+[[premium-icon-packs-npm]]
+== Premium icon packs from `+tinymce-premium+` (NPM)
+
+The `+tinymce-premium+` NPM package ships all premium icon packs in `+tinymce-premium/icons/+`. Choose one of the following patterns depending on how {productname} is deployed:
+
+*Bundling (recommended for modern build tools)*
+
+* Import the required icon pack so the module bundler adds it to the application bundle. For example:
++
+[source,js]
+----
+import 'tinymce/icons/default';  // Always required
+import 'tinymce-premium/icons/material';
+// ... other TinyMCE imports
+----
+* After bundling, set `+icons: 'material'+` (or any imported icon pack) in the editor configuration.
+
+=== Non-bundling methods
+
+*Non-bundling with file layering*
+
+* When hosting directly from `+node_modules+`, copy `+node_modules/tinymce-premium/icons/+` into `+node_modules/tinymce/icons/+` as part of the build or deployment step (for example, in a `+postinstall+` script).
+* Once copied, premium icon packs live beside the core files, so setting `+icons+` works without extra configuration.
+
+*Non-bundling with `+icons_url+`*
+
+* Leave the premium icon packs in `+node_modules/tinymce-premium/icons/+` and configure xref:editor-icons.adoc#icons_url[`+icons_url+`] to point at the required icon pack file.
+* This approach avoids moving files and is useful when the `+node_modules+` directory is web-accessible (or when copying only the specific icon pack to a public folder).
 
 == Available icon packs
 

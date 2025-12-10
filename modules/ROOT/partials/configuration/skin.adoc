@@ -1,7 +1,7 @@
 [[skin]]
 == `+skin+`
 
-This option allows you to specify the skin that {productname} should use, or `+false+` to not load a skin. The default skin included with {productname} is named "oxide".
+This option specifies the skin that {productname} should use, or `+false+` to not load a skin. The default skin included with {productname} is named "oxide".
 
 *Type:* `+String+` or `+Boolean+`
 
@@ -9,14 +9,16 @@ This option allows you to specify the skin that {productname} should use, or `+f
 
 *Possible values:* the name of a skin or `+false+`
 
-The name of the skin should match the name of the folder within the skins directory of {productname}. If the specified skin is not found, {productname} will not load.
+The name of the skin should match the name of the folder within the `+skins/ui+` directory of {productname}. If the specified skin is not found, {productname} will not load.
+
+=== Example: using `+skin+`
 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  skin: 'oxide'
+  selector: 'textarea',  // change this value according to the HTML
+  skin: 'fabric'
 });
 ----
 
-If you would like to create your own skin, please see the guide xref:creating-a-skin.adoc[here].
+For information on creating custom skins, see: xref:creating-a-skin.adoc[Create a skin for {productname}].

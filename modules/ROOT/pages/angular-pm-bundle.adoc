@@ -1,0 +1,152 @@
+= Bundling TinyMCE with an Angular application
+:navtitle: Using a package manager with bundling
+:description: A guide on bundling TinyMCE with an Angular application using Vite.
+:keywords: integration, integrate, angular, bundle, vite, npm, tinymce
+:productSource: package-manager
+:packageName: @tinymce/tinymce-angular
+
+The https://github.com/tinymce/tinymce-angular[Official {productname} Angular component] integrates {productname} into Angular projects. This procedure creates a https://angular.dev/tools/cli/setup-local[basic Angular application] containing a bundled {productname} editor.
+
+For examples of the {productname} Angular integration, visit https://tinymce.github.io/tinymce-angular/[the tinymce-angular storybook].
+
+== Prerequisites
+
+This procedure requires https://nodejs.org/[Node.js (and NPM)].
+
+== Procedure
+
+. On a command line or command prompt, install the link:https://angular.dev/tools/cli[Angular CLI Tool] package.
++
+[source,sh]
+----
+npm install -g @angular/cli
+----
+. Create a new Angular project named `+tinymce-angular-demo+`.
++
+[source,sh]
+----
+ng new --defaults --skip-git tinymce-angular-demo
+----
+. Change into the newly created directory.
++
+[source,sh]
+----
+cd tinymce-angular-demo
+----
+. Install the `+tinymce+` and `+@tinymce/tinymce-angular+` packages.
++
+[source,sh]
+----
+npm install tinymce @tinymce/tinymce-angular
+----
++
+include::partial$integrations/premium-plugins-install-step-link.adoc[]
++
+[NOTE]
+====
+For information on configuring premium plugins when bundling, see: xref:bundling-plugins.adoc#using-premium-plugins[Using premium plugins].
+====
++
+. Using a text editor, create `+src/app/editor.component.ts+` and set the contents to:
++
+[source,ts]
+----
+import { Component } from '@angular/core';
+import { EditorComponent } from '@tinymce/tinymce-angular';
+
+// Ensure you import TinyMCE to register the global variable required by other components
+import 'tinymce/tinymce';
+// DOM model
+import 'tinymce/models/dom/model';
+// Theme
+import 'tinymce/themes/silver';
+// Toolbar icons
+import 'tinymce/icons/default';
+// Editor styles
+import 'tinymce/skins/ui/oxide/skin.min.css';
+
+// Import plugins
+import 'tinymce/plugins/advlist';
+import 'tinymce/plugins/autolink';
+import 'tinymce/plugins/link';
+import 'tinymce/plugins/image';
+import 'tinymce/plugins/lists';
+import 'tinymce/plugins/table';
+import 'tinymce/plugins/code';
+import 'tinymce/plugins/help';
+import 'tinymce/plugins/help/js/en.js';
+import 'tinymce/plugins/wordcount';
+
+include::partial$integrations/premium-plugins-bundling.adoc[]
+
+// Content styles, including inline UI like fake cursors
+import 'tinymce/skins/content/default/content.js';
+import 'tinymce/skins/ui/oxide/content.js';
+
+@Component({
+  selector: 'app-editor',
+  standalone: true,
+  imports: [EditorComponent],
+  template: `
+    <editor
+      [init]="init"
+      licenseKey="gpl"
+    />
+  `
+})
+export class MyEditorComponent {
+  init: EditorComponent['init'] = {
+    height: 500,
+    plugins: 'advlist autolink lists link image table code help wordcount',
+    toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist | help'
+  };
+}
+----
++
+. Using a text editor, open `+src/app/app.component.ts+` and update it to use the editor component:
++
+[source,ts]
+----
+import { Component } from '@angular/core';
+import { MyEditorComponent } from './editor.component';
+
+@Component({
+  selector: 'app-root',
+  standalone: true,
+  imports: [MyEditorComponent],
+  template: `
+    <h1>TinyMCE Angular Demo</h1>
+    <app-editor />
+  `
+})
+export class AppComponent {}
+----
++
+. Run `+ng serve+` to start a dev server
++
+[source,sh]
+----
+ng serve
+----
++
+
+. Build the application for production:
++
+[source,sh]
+----
+ng build
+----
++
+This command creates an optimized production bundle in the `+dist+` directory.
+
+. If premium plugins are included, update the `+licenseKey+` option in the editor component and include your xref:license-key.adoc[License Key].
+
+== Next Steps
+
+* For information on bundling, see: xref:introduction-to-bundling-tinymce.adoc[]
+* For examples of the {productname} integration, see: https://tinymce.github.io/tinymce-angular/[the tinymce-angular storybook].
+* For information on customizing:
+** {productname} integration, see: xref:angular-ref.adoc[Angular framework Technical Reference].
+** {productname}, see: xref:basic-setup.adoc[Basic setup].
+** The Angular application, see: https://angular.dev[the Angular documentation].
+* For a complete example, see: https://github.com/tinymce/tinymce-angular-integration-examples/tree/self-hosted-with-npm-premium-plugins[the Angular bundling example repository].

@@ -8,32 +8,156 @@ The following guides and reference pages assist with bundling {productname} usin
 
 == Webpack
 
-* xref:webpack-es6-npm.adoc[ES6 and npm]
-* xref:webpack-cjs-npm.adoc[CommonJS and npm]
-* xref:webpack-es6-download.adoc[ES6 and a .zip archive]
-* xref:webpack-cjs-download.adoc[CommonJS and a .zip archive]
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:webpack-es6-npm.adoc[Webpack - ES6 and npm]
+
+Bundle {productname} with Webpack using ES6 modules and npm.
+
+|
+[.lead]
+xref:webpack-cjs-npm.adoc[Webpack - CommonJS and npm]
+
+Bundle {productname} with Webpack using CommonJS modules and npm.
+
+|===
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:webpack-es6-download.adoc[Webpack - ES6 and .zip]
+
+Bundle {productname} with Webpack using ES6 modules from a .zip archive.
+
+|
+[.lead]
+xref:webpack-cjs-download.adoc[Webpack - CommonJS and .zip]
+
+Bundle {productname} with Webpack using CommonJS modules from a .zip archive.
+
+|===
 
 == Vite
 
-* xref:vite-es6-npm.adoc[Vite, ES6 and npm]
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:vite-es6-npm.adoc[Vite - ES6 and npm]
+
+Bundle {productname} with Vite using ES6 modules and npm for modern development workflows.
+
+|
+
+|===
 
 [[rollupjs]]
 == Rollup.js
 
-* xref:rollup-es6-npm.adoc[ES6 and npm]
-* xref:rollup-es6-download.adoc[ES6 and a .zip archive]
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:rollup-es6-npm.adoc[Rollup.js - ES6 and npm]
+
+Bundle {productname} with Rollup.js using ES6 modules and npm.
+
+|
+[.lead]
+xref:rollup-es6-download.adoc[Rollup.js - ES6 and .zip]
+
+Bundle {productname} with Rollup.js using ES6 modules from a .zip archive.
+
+|===
 
 == Browserify
 
-* xref:browserify-cjs-npm.adoc[CommonJS and npm]
-* xref:browserify-cjs-download.adoc[CommonJS and a .zip archive]
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:browserify-cjs-npm.adoc[Browserify - CommonJS and npm]
+
+Bundle {productname} with Browserify using CommonJS modules and npm.
+
+|
+[.lead]
+xref:browserify-cjs-download.adoc[Browserify - CommonJS and .zip]
+
+Bundle {productname} with Browserify using CommonJS modules from a .zip archive.
+
+|===
 
 == Reference
 
-* xref:bundling-plugins.adoc[Plugins]
-* xref:bundling-content-css.adoc[Content CSS]
-* xref:bundling-skins.adoc[Skins]
-* xref:bundling-icons.adoc[Icons]
-* xref:bundling-models.adoc[Models]
-* xref:bundling-localization.adoc[UI localizations]
-* xref:bundling-themes.adoc[Themes]
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:bundling-plugins.adoc[Plugins]
+
+Learn how to bundle {productname} plugins with your module loader.
+
+|
+[.lead]
+xref:bundling-content-css.adoc[Content CSS]
+
+Configure and bundle content CSS for {productname} editor content.
+
+|===
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:bundling-skins.adoc[Skins]
+
+Bundle and configure {productname} skins for custom editor appearance.
+
+|
+[.lead]
+xref:bundling-icons.adoc[Icons]
+
+Bundle and customize {productname} icon sets for your editor interface.
+
+|===
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:bundling-models.adoc[Models]
+
+Learn about bundling {productname} content models and data structures.
+
+|
+[.lead]
+xref:bundling-localization.adoc[UI localizations]
+
+Bundle and configure {productname} UI localizations for internationalization.
+
+|===
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:bundling-themes.adoc[Themes]
+
+Bundle and customize {productname} themes for your editor interface.
+
+|
+
+|===

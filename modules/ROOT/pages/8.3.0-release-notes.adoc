@@ -13,14 +13,19 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, December 10^th^, 2025. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
+* xref:premium-plugins-npm[Premium plugins now available via NPM]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:improvements[Improvements]
 * xref:additions[Additions]
-* xref:changes[Changes]
 * xref:bug-fixes[Bug fixes]
-* xref:security-fixes[Security fixes]
-* xref:deprecated[Deprecated]
-* xref:known-issues[Known issues]
+
+
+[[premium-plugins-npm]]
+== Premium plugins now available via NPM
+
+{productname} {release-version} introduces the `+tinymce-premium+` NPM package, providing commercial customers with easy access to all premium plugins, skins, icons, and language packs directly from the NPM registry. The package is available for download at link:https://www.npmjs.com/package/tinymce-premium[https://www.npmjs.com/package/tinymce-premium].
+
+The `+tinymce-premium+` package simplifies the installation and integration of premium plugins. To get started with using premium plugins with {productname}, see: xref:npm-projects.adoc[Quick start: {productname} from NPM or Yarn].
 
 
 [[accompanying-premium-plugin-changes]]
@@ -28,114 +33,145 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-// === <Premium plugin name 1> <Premium plugin name 1 version>
+=== PowerPaste
 
-// The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **PowerPaste** premium plugin.
 
-// **<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**PowerPaste** includes the following addition.
 
-// ==== <Premium plugin name 1 change 1>
+==== `powerpaste_emf_processor` function that takes an `emf` blob and returns a promise of a `png` blob.
 
-// // CCFR here.
+Before October 2025, copying and pasting content from Microsoft Word containing `emf` images resulted in those images not being pasted and an error message being displayed. After October 2025, this behavior changed where the images began appearing in the editor, but only at low resolution, accompanied by an error message in Chrome and Firefox. Safari displayed the low-resolution images without showing an error message.
 
-// For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+This change negatively affected the user experience. After October 2025, users would see a low-quality image alongside an error message stating `Some images failed to import`, which caused confusion since the image was, in fact, visible in the editor—albeit with degraded quality.
 
+{productname} {release-version} introduces a new option, xref:powerpaste-options.adoc#powerpaste_emf_processor[powerpaste_emf_processor], to address this issue. This option accepts a function that receives an `emf` blob and returns a promise resolving to a `png` blob (i.e. `(blob: Blob) => Promise<Blob>`).
 
-[[accompanying-premium-plugin-end-of-life-announcement]]
-== Accompanying Premium plugin end-of-life announcement
+* If this option is provided, the editor will invoke the supplied function to convert `emf` image blobs into `png` image blobs before inserting them into the editor.
 
-The following Premium plugin has been announced as reaching its end-of-life:
+* If this option is **not** provided, the editor will remove the low-quality images and display an error message, restoring the pre–October 2025 behavior.
 
-=== <Premium plugin name eol>
+NOTE: If only the image is selected, pasting it will succeed and the image will be inserted correctly. However, if the image is selected together with other types of content, such as text, the image will not be pasted and an error message will be displayed.
 
-{productname}'s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
 
+=== Media Optimizer
+
+The {productname} {release-version} release includes an accompanying release of the **Media Optimizer** premium plugin.
+
+**Media Optimizer** includes the following improvements and fixes.
+
+==== Support for uploading additional file types
+// #TINY-13270
+
+The Media Optimizer plugin now supports uploading many additional file types through the link dialog, including documents (PDF, Word, Excel, PowerPoint, RTF, plain text), iWork files (Keynote, Pages, Numbers), audio files (WAV, MP3, OGG), and archive files (ZIP, GZIP, TAR, 7Z, RAR). A full list of supported file types is available in the documentation.
+
+The default list of supported file types can be customized using the xref:uploadcare-documents.adoc#documents-file-types[`+documents_file_types+`] option.
+
+For information on the **Media Optimizer** plugin, see: xref:uploadcare-documents.adoc[Media Optimizer: Files and Documents].
+
+==== Newly uploaded videos are now responsive
+// #TINY-13166
+
+Newly uploaded videos are now responsive by default. Videos automatically scale down on smaller screens while maintaining their maximum size. For more information, see: xref:uploadcare-video.adoc#uploadcare-video-properties[`uploadcare_video_properties` configuration option].
+
+For information on the **Media Optimizer** plugin, see: xref:uploadcare-video.adoc[Media Optimizer: Video].
+
+==== CSS resource files were not loaded correctly.
+// #TINY-13154
+
+Previously, Media Optimizer CSS resource files were not loaded correctly. This mainly caused issues when trying to bundle this plugin. In {productname} {release-version}, this issue has been resolved by ensuring that CSS resource files for Media Optimizer are now loaded correctly.
+
+For information on the **Media Optimizer** plugin, see: xref:uploadcare.adoc[Media Optimizer].
+
+=== Premium plugins now include ESM module support
+// #TINY-12888
+
+Premium plugins in {productname} {release-version} can now be consumed as native ES modules (`import`) in addition to CommonJS (`require`). This enhancement aligns premium plugins with the existing ESM capabilities already available in core plugins and applies to all distributed artifacts, including NPM packages and ZIP bundles. The update enables modern bundlers to automatically resolve the optimal module format, improving compatibility with ESM-focused toolchains and removing the need for CommonJS shims during integration.
 
 [[improvements]]
 == Improvements
 
-{productname} {release-version} also includes the following improvement<s>:
+{productname} {release-version} also includes the following improvements:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Show editor notification when a premium plugin is not allowed for a given license key.
+// #TINY-12937
 
-// CCFR here.
+Previously, when a premium plugin was not permitted for a given license key, the plugin would be disabled without any corresponding editor message. As of {release-version}, this behaviour has been improved: the editor now displays a notification when a plugin is disabled due to license restrictions, reducing ambiguity.
+
+For more informaton on license keys, see: xref:license-key.adoc[License Key].
+
+=== Accordions can now be opened and closed when the editor is set to readonly.
+// #TINY-12316
+
+In previous versions of {productname}, accordion behavior in readonly mode relied on the browser’s default handling, which could still modify the DOM and lead to undesirable, uncontrolled changes to the editor state. This meant that even when the editor was configured as readonly, expanding or collapsing accordion sections could alter the underlying content structure in inconsistent ways.
+
+In {productname} {release-version}, the xref:accordion.adoc[Accordion plugin] now explicitly manages open and close interactions in readonly mode, ensuring that any required DOM updates for toggling panels are performed in a controlled, minimally invasive manner. This improvement provides more predictable behavior, better control over how the DOM is manipulated, and a consistent user experience when interacting with accordions in readonly editors.
 
 
 [[additions]]
 == Additions
 
-{productname} {release-version} also includes the following addition<s>:
+{productname} {release-version} also includes the following additions:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== New options `files_upload_handler`, `documents_file_types`, and `link_uploadtab`
+// #TINY-13278
 
-// CCFR here.
+Added new configuration options to the Link plugin to support file uploads through the link dialog:
 
+* xref:link.adoc#files_upload_handler[`+files_upload_handler+`] - Specifies a function that handles file uploads in the link dialog's upload tab
+* xref:link.adoc#documents_file_types[`+documents_file_types+`] - Specifies which file types (MIME types and extensions) are supported for file uploads
+* xref:link.adoc#link_uploadtab[`+link_uploadtab+`] - Controls whether the "Upload" tab is displayed in the link dialog
 
-[[changes]]
-== Changes
+For more information, see xref:link.adoc#files_upload_handler[`+files_upload_handler+`], xref:link.adoc#documents_file_types[`+documents_file_types+`], and xref:link.adoc#link_uploadtab[`+link_uploadtab+`].
 
-{productname} {release-version} also includes the following change<s>:
+=== New options for `dropzone` dialog components
+// #TINY-13278
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+Added new configuration options to the `dropzone` dialog component to customize the dropzone UI and file type restrictions:
 
-// CCFR here.
+* xref:dialog-components.adoc#dropzone[`+dropAreaLabel+`] - Specifies the text label for the drop area where files can be dragged (default: `+'Drop an image here'+`)
+* xref:dialog-components.adoc#dropzone[`+buttonLabel+`] - Specifies the text label for the browse button (default: `+'Browse for an image'+`)
+* xref:dialog-components.adoc#dropzone[`+allowedFileTypes+`] - Specifies a MIME type pattern for allowed file types (default: `+'image/*'+`, e.g., `+'image/*'+`, `+'application/pdf'+`)
+* xref:dialog-components.adoc#dropzone[`+allowedFileExtensions+`] - Specifies an array of allowed file extensions (default: xref:file-image-upload.adoc#images_file_types[`+images_file_types+`], e.g., `+['.jpg', '.png', '.pdf']+`)
 
-
-[[removed]]
-== Removed
-
-{productname} {release-version} also includes the following removal<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+For more information, see xref:dialog-components.adoc#dropzone[dropzone component].
 
 
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Accordions could be toggled when the editor was disabled.
+// #TINY-12315
 
-// CCFR here.
+Earlier versions of {productname} allowed accordions to remain expandable even when the editor was disabled, creating inconsistent and unexpected behavior, particularly when used with the xref:autoresize.adoc[Autoresize plugin].
 
+This could lead to content changes when none were expected and caused interaction patterns to shift between the intended custom behavior and the browser’s default handling. In {release-version}, this issue has been resolved by ensuring accordions are fully non-interactive when the editor is disabled, preventing unintended state changes and maintaining consistent editor behavior.
 
-[[security-fixes]]
-== Security fixes
+=== Inline formats were not applied to the marker of a list item when its content was a single block element.
+// #TINY-13197
 
-{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
+Previously, when applying an inline format to a fully or partially selected list that contained content wrapped inside a single block element, the style was not applied to the list item where the selection began. This resulted in inconsistent styling between the list decorator and its content.
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+This issue has now been resolved in {release-version}. The logic has been updated to ensure that the inline format is applied correctly to the list item where the selection begins.
 
-// CCFR here.
+=== Tooltip is now translated correctly for the dropdown chevron of the bullet and number list toolbar buttons.
+// #TINY-13271
 
+Previously, an issue was identified where the tooltips for the dropdown chevrons for the **Bullet list** and **Numbered list** toolbar buttons were not translated correctly. This has been resolved in {release-version}. The dropdown chevron of these splitbuttons now displays correctly translated tooltips on hover.
 
-[[deprecated]]
-== Deprecated
+=== Removing a line height at times did not remove it from all selected lines.
+// #TINY-13053
 
-{productname} {release-version} includes the following deprecation<s>:
+An issue was identified where removing or modifying `lineheight` properties on multiple elements resulted in inconsistent updates when the elements had differing values. In these cases, only the `lineheight` of the first line was changed or removed, while subsequent lines were not updated.
 
-=== The `<plugin>` configuration property, `<name>`, has been deprecated
+{productname} {release-version} resolves this issue by introducing improved toggling behavior for the permissive `lineheight` option, ensuring that all lines are now correctly updated or removed as expected.
 
-// placeholder here.
+=== The `font-size` style on list items was not copied to new list items.
+// #TINY-13224
 
+Previously, an issue was identified where the `font-size` style applied to list items was not retained when creating new items in either numbered or bulleted lists. As a result, list items added by pressing `Enter` did not inherit the correct font size from the preceding item.
 
-[[known-issues]]
-== Known issues
-
-This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
-
-There <is one | are <number> known issue<s> in {productname} {release-version}.
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
+{productname} {release-version} addresses this issue by changing the behavior such that the `font-size` style is now consistently transferred to newly created list items. This ensures that all new list items have the correct font size.

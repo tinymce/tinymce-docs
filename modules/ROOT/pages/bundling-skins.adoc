@@ -66,3 +66,31 @@ const contentUiSkinInlineCss = require('../tinymce/skins/ui/example/content.inli
 ////
 
 include::partial$module-loading/bundling-skin-files.adoc[]
+
+[[premium-skins-npm]]
+== Premium skins from `+tinymce-premium+` (NPM)
+
+The `+tinymce-premium+` NPM package ships all premium skins in `+tinymce-premium/skins/+`. Choose one of the following patterns depending on how {productname} is deployed:
+
+*Bundling (recommended for modern build tools)*
+
+* Import the required skin files so the module bundler adds them to the application bundle. For example, importing the default skin (oxide):
++
+[source,js]
+----
+import 'tinymce-premium/skins/ui/oxide/skin.css';
+import contentUiSkinCss from 'tinymce-premium/skins/ui/oxide/content.css';
+// ... other TinyMCE imports
+----
+* After bundling, set `+skin: false+` and `+content_css: false+` in the editor configuration, then use `+content_style+` to inject the bundled CSS.
+
+*Non-bundling with file layering*
+
+* When hosting directly from `+node_modules+`, copy `+node_modules/tinymce-premium/skins/+` into `+node_modules/tinymce/skins/+` as part of the build or deployment step (for example, in a `+postinstall+` script).
+* Once copied, premium skins live beside the core files, so setting `+skin+` works without extra configuration.
+
+*Non-bundling with `+skin_url+`*
+
+* Leave the premium skins in `+node_modules/tinymce-premium/skins/+` and configure xref:editor-skin.adoc#skin_url[`+skin_url+`] to point at the required skin directory.
+* This approach avoids moving files and is useful when the `+node_modules+` directory is web-accessible (or when copying only the specific skin to a public folder).
+

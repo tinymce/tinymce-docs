@@ -35,12 +35,7 @@ ifeval::["{productSource}" == "package-manager"]
 npm install tinymce @tinymce/tinymce-webcomponent
 ----
 
-. Bundle {productname} with the Web Component application using a module loader (such as Webpack).
-+
---
-include::partial$integrations/bundling-integration.adoc[]
---
-
+include::partial$integrations/premium-plugins-install-step-link.adoc[]
 . Add a `+script+` element sourcing the output file, such as:
 +
 [source,html]
@@ -97,9 +92,6 @@ ifeval::["{productSource}" != "cloud"]
 ----
 The default {productname} editor will load at this location if the page is opened in a web browser.
 
-+
-. Update the `+license-key+` option in the editor element and include your xref:license-key.adoc[License Key].
-+
 endif::[]
 
 ifeval::["{productSource}" == "cloud"]

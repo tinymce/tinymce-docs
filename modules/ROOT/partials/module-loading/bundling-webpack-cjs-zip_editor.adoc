@@ -16,7 +16,7 @@ require('../tinymce/js/tinymce/icons/default/icons.js');
 require('../tinymce/js/tinymce/themes/silver/theme.js');
 require('../tinymce/js/tinymce/models/dom/model.js');
 
-/* Import a skin (can be a custom skin instead of the default) */
+/* Import the default skin (oxide). Replace with a custom skin if required. */
 require('../tinymce/js/tinymce/skins/ui/oxide/skin.css');
 
 /* Import plugins - include the relevant plugin in the 'plugins' option. */
@@ -27,8 +27,14 @@ require('../tinymce/js/tinymce/plugins/emoticons/js/emojis');
 require('../tinymce/js/tinymce/plugins/link');
 require('../tinymce/js/tinymce/plugins/lists');
 require('../tinymce/js/tinymce/plugins/table');
+require('../tinymce/js/tinymce/plugins/help');
+require('../tinymce/js/tinymce/plugins/help/js/i18n/keynav/en');
 
-/* content UI CSS is required */
+include::partial$integrations/premium-plugins-bundling.adoc[]
+/* From ZIP download - download separately and add to /src/plugins */
+/* import './plugins/<plugincode>'; */
+
+/* content UI CSS is required (using the default oxide skin) */
 const contentUiSkinCss = require('../tinymce/js/tinymce/skins/ui/oxide/content.css');
 
 /* The default content CSS can be changed or replaced with appropriate CSS for the editor content. */
@@ -39,11 +45,12 @@ exports.render = () => {
   tinymce.init({
     selector: 'textarea#editor',
     /* All plugins need to be imported and added to the plugins option. */
-    plugins: 'advlist code emoticons link lists table',
+    plugins: 'advlist code emoticons link lists table help',
     toolbar: 'bold italic | bullist numlist | link emoticons',
     skin: false,
     content_css: false,
     content_style: contentUiSkinCss.toString() + '\n' + contentCss.toString(),
+include::partial$module-loading/bundling-external-plugins-zip.adoc[]
   });
 };
 ----

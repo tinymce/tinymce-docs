@@ -25,12 +25,15 @@
 ****** xref:react-pm-bundle.adoc[Using a package manager with bundling]
 ***** Angular
 ****** xref:angular-pm.adoc[Using a package manager]
+****** xref:angular-pm-bundle.adoc[Using a package manager with bundling]
 ***** Vue.js
 ****** xref:vue-pm.adoc[Using a package manager]
+****** xref:vue-pm-bundle.adoc[Using a package manager with bundling]
 ***** Blazor
 ****** xref:blazor-pm.adoc[Using a package manager]
 ***** Svelte
 ****** xref:svelte-pm.adoc[Using a package manager]
+****** xref:svelte-pm-bundle.adoc[Using a package manager with bundling]
 ***** Web Component
 ****** xref:webcomponent-pm.adoc[Using a package manager]
 ***** xref:jquery-pm.adoc[jQuery]
@@ -104,6 +107,7 @@
 *** xref:customize-ui.adoc[Customizing the UI]
 *** xref:creating-a-skin.adoc[Create a skin]
 *** xref:creating-an-icon-pack.adoc[Create an icon pack]
+*** xref:using-the-icon-pack-template.adoc[Using the icon pack template tool]
 ** Images Guide
 *** xref:upload-images.adoc[Image uploads]
 *** xref:php-upload-handler.adoc[PHP image upload handler]
@@ -286,13 +290,14 @@
 ***** xref:import-from-word-with-jwt-authentication-nodejs.adoc[Node.js]
 ***** xref:import-from-word-with-jwt-authentication-php.adoc[PHP]
 *** xref:editimage.adoc[Image Editing]
-*** xref:uploadcare.adoc[Media Optimizer]
-**** xref:uploadcare-image.adoc[Image]
-**** xref:uploadcare-video.adoc[Video]
 *** xref:inline-css.adoc[Inline CSS]
 *** xref:linkchecker.adoc[Link Checker]
 *** xref:math.adoc[Math]
 *** xref:markdown.adoc[Markdown]
+*** xref:uploadcare.adoc[Media Optimizer]
+**** xref:uploadcare-image.adoc[Image]
+**** xref:uploadcare-video.adoc[Video]
+**** xref:uploadcare-documents.adoc[Files and Documents]
 *** xref:mentions.adoc[Mentions]
 *** xref:mergetags.adoc[Merge Tags]
 *** xref:moxiemanager.adoc[MoxieManager]
@@ -381,15 +386,11 @@
 ** xref:release-notes.adoc[Release notes for {productname}]
 *** {productname} 8.3.0
 **** xref:8.3.0-release-notes.adoc#overview[Overview]
+**** xref:8.3.0-release-notes.adoc#premium-plugins-npm[Premium plugins now available via NPM]
 **** xref:8.3.0-release-notes.adoc#accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
 **** xref:8.3.0-release-notes.adoc#improvements[Improvements]
 **** xref:8.3.0-release-notes.adoc#additions[Additions]
-**** xref:8.3.0-release-notes.adoc#changes[Changes]
-**** xref:8.3.0-release-notes.adoc#removed[Removed]
 **** xref:8.3.0-release-notes.adoc#bug-fixes[Bug fixes]
-**** xref:8.3.0-release-notes.adoc#security-fixes[Security fixes]
-**** xref:8.3.0-release-notes.adoc#deprecated[Deprecated]
-**** xref:8.3.0-release-notes.adoc#known-issues[Known issues]
 *** {productname} 8.2.2
 **** xref:8.2.2-release-notes.adoc#overview[Overview]
 **** xref:8.2.2-release-notes.adoc#improvement[Improvement]

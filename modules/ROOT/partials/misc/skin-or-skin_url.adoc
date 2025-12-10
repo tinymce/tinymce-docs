@@ -1,1 +1,28 @@
-There are two options for applying a skin to {productname}: `+skin+` and `+skin_url+`. {companyname} recommends using the `+skin+` option for skins bundled with the product or included in your cloud subscription. Custom or third-party skins should be included using the `+skin_url+` option to simplify updating and upgrading {productname}.
+There are two options for replacing the default {productname} skin:
+
+* Use the `+skin+` option when the skin files are in the default location (for {cloudname} deployments, ZIP bundles, or when using NPM packages with bundling or file layering).
+* Use the `+skin_url+` option to specify a custom path to skin files, which is useful for custom skins or when using NPM packages without bundling. When using `+skin_url+`, the `+skin+` option is not required.
+
+The default location {productname} tries to load skin files from is `+TINYMCE_BASE/skins/ui/${skinName}+`; where:
+
+* `+TINYMCE_BASE+` is the {productname} root directory (the directory containing `+tinymce.min.js+`).
+* `+${skinName}+` is the name of the skin.
+
+To load skins from another location, integrators must specify that location using `+skin_url+`.
+
+* When using {productname} from {cloudname}, ZIP bundles, or NPM packages with bundling or file layering, use `+skin+`.
+* When using custom skins or using NPM packages without bundling, use `+skin_url+`.
+
+[IMPORTANT]
+====
+*Understanding the skins folder structure:*
+
+The **skins** folder in the `+tinymce-premium+` NPM package and ZIP bundles contains both a **ui** folder and a **content** folder. Skins in the **ui** folder can include both `+skin.css+` (for UI styling) and `+content.css+` (for editable area styling). When a skin includes both files, using the `+skin+` option will apply both UI and content styles. The files in the **content** folder can also be used independently with the xref:add-css-options.adoc#content_css[`+content_css+`] option to style only the editable area.
+====
+
+[NOTE]
+====
+*Using skins and content_css together:*
+
+Skins that include both `+skin.css+` and `+content.css+` files will style both the UI and the editable area. The `+content_css+` option is not required when using such skins. However, if both `+skin+` and `+content_css+` are specified, `+content_css+` will override the skin's content styles, allowing mixing and matching of UI and content styles.
+====

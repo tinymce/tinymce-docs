@@ -1,0 +1,184 @@
+= Using the icon pack template tool
+:navtitle: Icon Pack Template
+:description_short: Using the Icon Pack Template tool to create icon packs.
+:description: How to use the Icon Pack Template tool to create large custom icon packs from SVG files.
+:keywords: icon, icon pack, template, tool, svg
+
+For large custom icon packs, use the link:https://github.com/tinymce/oxide-icon-pack-template[TinyMCE Oxide Icon Pack Template] tool which can take a folder of SVGs and generate the required output file.
+
+== Prerequisites
+
+This guide assumes:
+
+* Familiarity with the command line and running commands
+* https://nodejs.org/en/[Node.js] and https://www.npmjs.com/[NPM] are already installed
+* Optional: https://git-scm.com/[git] is already installed
+
+[[download-and-setup-the-icon-pack-template]]
+== Download and Setup the Icon Pack Template
+
+To use the {productname} icon pack template project:
+
+. Download the link:https://github.com/tinymce/oxide-icon-pack-template[TinyMCE Oxide Icon Pack Template] by either:
+* Downloading the `.zip` file from the link:https://github.com/tinymce/oxide-icon-pack-template[Oxide Icon Pack Template GitHub page] and extract the contents.
+* From a terminal or command prompt, use git to clone the GitHub repository:
++
+[source,bash]
+----
+git clone https://github.com/tinymce/oxide-icon-pack-template.git
+----
++
+. Open a terminal or command prompt, navigate to the `+oxide-icon-pack-template+` directory.
+. Install the project dependencies by executing:
++
+[source,bash]
+----
+npm install
+----
++
+. When prompted, enter a name for the icon pack. The icon pack name should only contain:
+* Numbers
+* Letters
+* Hyphens (`-`)
+* Underscores (`_`)
++
+. Verify that the `+iconPackName+` field has been added to the `+package.json+` file:
++
+[source,json]
+----
+{
+  "iconPackName": "my_icon_pack",
+}
+----
++
+
+The icon pack name will be used with the xref:editor-icons.adoc#icons[`+icons+`] option to apply the icons in {productname}.
+
+[IMPORTANT]
+====
+The `+iconPackName+` field in `+package.json+` is essential for the build process. This field:
+
+* Defines the name that will be used in the generated `+icons.js+` file
+* Must match the name used in the `+icons+` option when initializing {productname}
+* Is used by the build system to create the proper directory structure
+* If missing or incorrect, the icon pack will not work properly
+
+*Example:*
+
+* `+package.json+` contains: `+"iconPackName": "my_icon_pack"+`
+* {productname} config uses: `+icons: 'my_icon_pack'+`
+* Generated file: `+tinymce.IconManager.add('my_icon_pack', {...})+`
+====
+
+[[add-the-svg-files]]
+== Add the SVG Files
+
+Each SVG file placed in `+/src/svg+` will be converted to an icon. The file names of the SVG files are used to set the icon identifier used by {productname}.
+
+[NOTE]
+====
+*Icon Override:*
+
+Custom icons with the same name as a default icon will override the default icon.
+====
+
+For a list of default icon identifiers, see: xref:editor-icon-identifiers.adoc[Available icons].
+
+For example, the `+src/svg/+` directory could contain:
+
+[source]
+----
+src/svg/
+├── bold.svg           ← Overrides default bold icon
+├── italic.svg         ← Overrides default italic icon
+├── underline.svg      ← Overrides default underline icon
+├── my-custom-icon.svg ← Creates new 'my-custom-icon' identifier
+├── company-logo.svg   ← Creates new 'company-logo' identifier
+└── save-action.svg    ← Creates new 'save-action' identifier
+----
+
+*Icon Identifier Rules:*
+
+* Filename becomes the identifier: `+bold.svg+` → `+'bold'+`
+* Hyphens are preserved: `+my-custom-icon.svg+` → `+'my-custom-icon'+`
+
+*Usage:*
+
+These icons can then be used in the {productname} configuration.
+
+For example: `+bold.svg+` will have the identifier `bold`. This icon can be used as such:
+
+[source,js]
+----
+tinymce.init({
+  selector: '#tiny_custom_button',  // change this value according to the HTML
+  toolbar: 'myButton',
+  icons: 'my_icon_pack',
+  setup: (editor) => {
+    editor.ui.registry.addButton('myButton', {
+      icon: 'bold',    // the 'bold' icon created from 'bold.svg'
+      onAction: (_) => {
+        editor.insertContent('&nbsp;<strong>Custom icon button!</strong>&nbsp;');
+      }
+    });
+  }
+});
+----
+
+[NOTE]
+====
+* {productname} does **not** resize the SVGs provided, relying on the size defined in the SVG. This allows icons of different sizes to be used in the editor. The Toolbar button sizes are independent of the icon sizes. To change button sizes, a xref:creating-a-skin.adoc[custom skin] is required.
+* *SVG Requirements:* Input SVGs must be shapes, not strokes. SVG files containing strokes will not render correctly. If the input files contain strokes, use a graphics program to convert the strokes into shapes.
+====
+
+[[build-the-icon-pack]]
+== Build the Icon Pack
+
+To build the icon pack using Gulp:
+
+. Open a terminal or command prompt and navigate to the root directory of the icon pack (such as: `+oxide-icon-pack-template/+`).
+. Build the icon pack by executing the `+npx gulp+` command:
++
+[source,bash]
+----
+npx gulp
+----
++
+A `+dist/+` directory containing the icon pack will be automatically created.
++
+.Example: `+dist/icons/my-icon-pack/icons.js+` automatically generated from the SVG files in the `+src/svg+` directory.
+[source,js]
+----
+tinymce.IconManager.add('my-icon-pack', {
+  icons: {
+    'audio': '<svg width="24" height="24"><path d="M10.8 19q.9 0 1.5-.7t.7-1.5V13h3v-2h-4v3.9l-.6-.3-.6-.1q-1 0-1.7.7t-.6 1.6q0 .9.7 1.5t1.6.7ZM6 22q-.8 0-1.4-.6T4 20V4q0-.8.6-1.4T6 2h8l6 6v12q0 .8-.6 1.4T18 22H6Zm7-13h5l-5-5v5Z"/></svg>',
+    'bold': '<svg width="24" height="24"><path fill-rule="evenodd" d="M3.6 2.3a1.4 1.4 0 0 0-1.4 1.3v16.8c0 .7.7 1.4 1.4 1.4h16.8a1.4 1.4 0 0 0 1.4-1.4V3.6a1.4 1.4 0 0 0-1.4-1.3H3.6Zm6 4a1.4 1.4 0 0 0-1.3 1.3v9.3c0 .7.6 1.4 1.3 1.4H12v-.8.8a2.5 2.5 0 0 0 .2 0 4.6 4.6 0 0 0 1.6-.5c.5-.2 1-.5 1.3-1 .4-.5.7-1.2.7-2 0-.9-.3-1.6-.7-2a3.2 3.2 0 0 0-.8-.9 2.8 2.8 0 0 0 .4-.5c.4-.5.5-1.1.5-1.9s-.1-1.4-.5-1.9a3 3 0 0 0-1.1-1 3.9 3.9 0 0 0-1.6-.3H9.6Zm.1 6.5H12a3.2 3.2 0 0 1 1.2.2l.7.6c.2.2.4.6.4 1.1s-.2 1-.4 1.2a1.8 1.8 0 0 1-.7.6 3.2 3.2 0 0 1-1.1.2H9.7v-4Zm2.3 4Zm0-5.6H9.7V7.8H12l1 .2.5.5c.1.2.3.5.3 1s-.2.8-.3 1a1.4 1.4 0 0 1-.6.5 2.3 2.3 0 0 1-.9.2Z" clip-rule="evenodd"/></svg>',
+    'italic': '<svg width="24" height="24"><path fill-rule="evenodd" d="M3.6 2.3a1.4 1.4 0 0 0-1.4 1.3v16.8c0 .7.7 1.4 1.4 1.4h16.8a1.4 1.4 0 0 0 1.4-1.4V3.6a1.4 1.4 0 0 0-1.4-1.3H3.6ZM16 6.8h-1.5L11 17.1h1a.8.8 0 0 1 0 1.6H8a.8.8 0 0 1 0-1.6h1.5L13 6.8h-1a.8.8 0 0 1 0-1.5h4a.8.8 0 0 1 0 1.5Z" clip-rule="evenodd"/></svg>',
+  }
+});
+----
+
+. Using a web browser, open `+dist/html/icons.html+` to preview the icons.
+
+== Troubleshooting Information for Building Icon Packs
+
+The SVG files are optimized during the build process with link:https://github.com/svg/svgo[SVGO]. The optimization can result in distorted graphics due to rounding errors. The graphics may be fixed by providing new SVGO options. To change the SVGO options used:
+
+. Using a text editor, open `+gulpfile.js+`.
+. Add the `+svgo+` option to the `+iconPackager+` function, such as:
++
+[source,javascript]
+----
+iconPackager({
+  name: 'my-icon-pack',
+  svgo: { floatPrecision: 3 } //Increase the rounding precision
+})
+----
++
+
+All user defined options, including SVGO options, will merge with the default options. For information on SVGO options, see: link:https://github.com/svg/svgo[SVGO on GitHub].
+
+== Next steps
+
+After generating the icon pack file, configure {productname} to load it using the guidance in xref:creating-an-icon-pack.adoc#deploying-an-icon-pack-file[Deploying an Icon Pack file]. That section explains how to use the `+icons+` and `+icons_url+` options to load the pack from either the default location or a custom path.
+

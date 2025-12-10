@@ -1,0 +1,5 @@
+// Import premium plugins from NPM
+import 'tinymce-premium/plugins/advcode';
+import 'tinymce-premium/plugins/tinycomments';
+// Always include the licensekeymanager plugin when using premium plugins with a commercial license.
+import 'tinymce-premium/plugins/licensekeymanager';

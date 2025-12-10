@@ -17,11 +17,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:improvements[Improvements]
 * xref:additions[Additions]
-* xref:changes[Changes]
 * xref:bug-fixes[Bug fixes]
-* xref:security-fixes[Security fixes]
-* xref:deprecated[Deprecated]
-* xref:known-issues[Known issues]
 
 
 [[premium-plugins-npm]]
@@ -63,7 +59,7 @@ For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpas
 
 The {productname} {release-version} release includes an accompanying release of the **Media Optimizer** premium plugin.
 
-**Media Optimizer** includes the following improvement and fix.
+**Media Optimizer** includes the following improvements and fixes.
 
 ==== Support for uploading additional file types
 // #TINY-13270
@@ -142,28 +138,6 @@ Added new configuration options to the `dropzone` dialog component to customize 
 For more information, see xref:dialog-components.adoc#dropzone[dropzone component].
 
 
-[[changes]]
-== Changes
-
-{productname} {release-version} also includes the following changes:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[removed]]
-== Removed
-
-{productname} {release-version} also includes the following removals:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
 [[bug-fixes]]
 == Bug fixes
 
@@ -201,62 +175,3 @@ An issue was identified where removing or modifying `lineheight` properties on m
 Previously, an issue was identified where the `font-size` style applied to list items was not retained when creating new items in either numbered or bulleted lists. As a result, list items added by pressing `Enter` did not inherit the correct font size from the preceding item.
 
 {productname} {release-version} addresses this issue by changing the behavior such that the `font-size` style is now consistently transferred to newly created list items. This ensures that all new list items have the correct font size.
-
-
-[[security-fixes]]
-== Security fixes
-
-{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[deprecated]]
-== Deprecated
-
-{productname} {release-version} includes the following deprecation<s>:
-
-=== The `<plugin>` configuration property, `<name>`, has been deprecated
-
-// placeholder here.
-
-
-[[known-issues]]
-== Known issues
-
-This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
-
-There is one known issue in {productname} {release-version}.
-
-<<<<<<< Updated upstream
-=== Vite/Rollup import issue with `tinymce-premium/plugins/inlinecss`
-
-When using Vite or Rollup as a bundler, importing the `inlinecss` plugin from the `tinymce-premium` package using `import 'tinymce-premium/plugins/inlinecss'` may fail due to a pattern matching bug in Vite/Rollup. The bundler incorrectly matches the `./plugins/*.css` pattern instead of `./plugins/*`, causing the import to fail.
-
-**Workaround:** Use an alias in your `vite.config.js` file to explicitly resolve the plugin path:
-
-[source,javascript]
-----
-import { defineConfig } from 'vite'
-import path from 'node:path'
-
-export default defineConfig({
-  resolve: {
-    alias: {
-      'tinymce-premium/plugins/inlinecss':
-        path.resolve(__dirname, 'node_modules/tinymce-premium/plugins/inlinecss/index.js'),
-    },
-  },
-})
-----
-
-Alternatively, you can use the explicit import paths that work correctly:
-- `import 'tinymce-premium/plugins/inlinecss/index.js'`
-- `import 'tinymce-premium/plugins/inlinecss/plugin.js'`
-
-**Status:** This is a known issue with Vite/Rollup's pattern matching. Webpack handles this correctly without any workaround.
-=======
->>>>>>> Stashed changes

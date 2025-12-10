@@ -88,6 +88,8 @@ import 'tinymce-premium/icons/material';
 ----
 * After bundling, set `+icons: 'material'+` (or any imported icon pack) in the editor configuration.
 
+=== Non-bundling methods
+
 *Non-bundling with file layering*
 
 * When hosting directly from `+node_modules+`, copy `+node_modules/tinymce-premium/icons/+` into `+node_modules/tinymce/icons/+` as part of the build or deployment step (for example, in a `+postinstall+` script).

@@ -174,4 +174,55 @@ For more information, see: xref:editor-important-options.adoc#external_plugins[`
 
 include::partial$module-loading/bundling-plugin-files.adoc[]
 
+[[plugin-language-files-bundling]]
+=== Bundling plugin language files
+
+Plugin language files are separate from the main {productname} UI language files. Each plugin has its own language files located in `+plugins/<plugincode>/langs/+`.
+
+* **Core UI language files**: Located in `+langs/+` (e.g., `+tinymce-premium/langs/ar.js+`)
+* **Premium plugin language files**: Located in `+plugins/<plugincode>/langs/+` (e.g., `+tinymce-premium/plugins/advcode/langs/ar.js+`)
+
+To bundle premium plugin language files, import them using the same module syntax as bundling plugins, but append `+/langs/<language>.js+` to the import path:
+
+[source, js]
+----
+// Import the plugin
+import 'tinymce-premium/plugins/advcode';
+// Import the premium plugin's Arabic language file
+import 'tinymce-premium/plugins/advcode/langs/ar.js';
+// Import the main UI Arabic language file (if needed)
+import 'tinymce-premium/langs/ar.js';
+
+tinymce.init({
+  selector: 'textarea',
+  language: 'ar',
+  plugins: 'advcode',
+  // ... other configuration
+});
+----
+
+[NOTE]
+====
+For premium plugins from `+tinymce-premium+`, the language file path must include the `.js` extension.
+====
+
+[[plugin-lazy-loading]]
+=== Plugin lazy-loading and additional resources
+
+[IMPORTANT]
+====
+Plugins lazy-load additional resources (JS and CSS files) at runtime for optimal performance. These resources must be:
+
+* **Included in the bundle** along with the plugin (recommended for bundled applications)
+* **Placed as static assets** in the expected location (for non-bundled deployments)
+
+Missing resources may cause plugins to fail or display errors.
+====
+
+When bundling, explicitly import any additional resources that plugins require. The module bundler includes these files in the application bundle, making them available at runtime.
+
+For non-bundled deployments using `+external_plugins+`, ensure all required resource files (CSS, JS, and language files) are accessible at the expected paths relative to the plugin file location.
+
+See <<plugin-resources,Additional plugin resources>> for specific examples of plugins that require additional resources.
+
 include::partial$module-loading/bundling-plugin-resources.adoc[]

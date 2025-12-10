@@ -231,6 +231,7 @@ This section describes issues that users of {productname} {release-version} may 
 
 There is one known issue in {productname} {release-version}.
 
+<<<<<<< Updated upstream
 === Vite/Rollup import issue with `tinymce-premium/plugins/inlinecss`
 
 When using Vite or Rollup as a bundler, importing the `inlinecss` plugin from the `tinymce-premium` package using `import 'tinymce-premium/plugins/inlinecss'` may fail due to a pattern matching bug in Vite/Rollup. The bundler incorrectly matches the `./plugins/*.css` pattern instead of `./plugins/*`, causing the import to fail.
@@ -257,3 +258,5 @@ Alternatively, you can use the explicit import paths that work correctly:
 - `import 'tinymce-premium/plugins/inlinecss/plugin.js'`
 
 **Status:** This is a known issue with Vite/Rollup's pattern matching. Webpack handles this correctly without any workaround.
+=======
+>>>>>>> Stashed changes

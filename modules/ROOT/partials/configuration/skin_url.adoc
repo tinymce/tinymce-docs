@@ -1,16 +1,36 @@
 [[skin_url]]
 == `+skin_url+`
 
-If you are using {productname} skins, this option enables you to specify the location of the skin directory. This is useful if you are loading {productname} from one URL, for example a CDN, while loading a skin on, say, a local server.
+This option specifies the location of the skin directory. This is useful when loading {productname} and the skin files from different locations.
+
+When using `+skin_url+`, the `+skin+` option is not required. The `+skin_url+` option points directly to the skin directory location.
 
 *Type:* `+String+`
 
 === Example: using `+skin_url+`
 
-[source,js,subs="attributes+"]
+[source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
-  skin_url: '/css/my{prodnamecode}skin'
+  selector: 'textarea',  // change this value according to the HTML
+  skin_url: '/css/mytinymceskin' // change this to point to the folder of skin files
 });
 ----
+
+=== Example: loading premium skins from `+tinymce-premium+` (NPM)
+
+Configure the `+skin_url+` to point at the appropriate location. For example:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  skin_url: '/<path_to_premium_skins>/ui/fabric'
+});
+----
+
+[NOTE]
+====
+* Ensure the skin directory is accessible to the application. Many projects copy the required skin into a static assets folder (such as `+/public/skins/ui/oxide+`) during their build step.
+* Combine this with the approaches listed in xref:bundling-skins.adoc#premium-skins-npm[Premium skins from `+tinymce-premium+`] to match the deployment strategy.
+====

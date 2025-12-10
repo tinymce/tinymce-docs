@@ -32,8 +32,40 @@ tinymce.init({
 [[using-the-premium-language-packs]]
 === Using the premium language packs
 
-The following professionally localized language packs are provided to paid {cloudname} and premium self-hosted deployments. To use these language packs, set the `+language+` option to the corresponding language code in RFC5646 format. No additional configuration is required.
+The following professionally localized language packs are provided to paid {cloudname} and premium self-hosted deployments. To use these language packs, set the `+language+` option to the corresponding language code in RFC5646 format.
+
+For {cloudname} and ZIP-based deployments, no additional configuration is required. When using the `+tinymce-premium+` NPM package, see xref:ui-localization.adoc#premium-language-packs-npm[Providing premium language packs from `+tinymce-premium+`] for configuration options.
+
+The following table lists the available premium language packs:
 
 include::partial$misc/ui-languages.adoc[leveloffset=+2]
+
+[[premium-language-packs-npm]]
+==== Providing premium language packs from `+tinymce-premium+` (NPM)
+
+The `+tinymce-premium+` NPM package ships all paid translations in `+tinymce-premium/langs/+`. Choose one of the following patterns depending on how {productname} is deployed:
+
+*Bundling (recommended for modern build tools)*
+
+* Import the required language files so the module bundler adds them to the application bundle. For example:
++
+[source,js]
+----
+import 'tinymce/langs/en_GB';
+import 'tinymce-premium/langs/fi';
+// ... other TinyMCE imports
+----
+* After bundling, set `+language: 'fi'+` (or any imported locale) and no extra HTTP requests are required.
+
+*Non-bundling with file layering*
+
+* When hosting directly from `+node_modules+`, copy `+node_modules/tinymce-premium/langs/+` into `+node_modules/tinymce/langs/+` as part of the build or deployment step (for example, in a `+postinstall+` script).
+* Once copied, premium language packs live beside the core files, so setting `+language+` works without extra configuration.
+
+*Non-bundling with `+language_url+`*
+
+* Leave the premium packs in `+node_modules/tinymce-premium/langs/+` and configure xref:ui-localization.adoc#language_url[`+language_url+`] to point at the required file.
+* This approach avoids moving files and is useful when the `+node_modules+` directory is web-accessible (or when copying only the specific file to a public folder).
+
 
 include::partial$misc/using-community-lang-packs.adoc[leveloffset=+1]

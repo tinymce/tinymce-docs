@@ -1,1 +1,14 @@
-There are two options for replacing the icons in {productname}: `+icons+` and `+icons_url+`. {companyname} recommends using the `+icons+` option for icon packs bundled with the product or included in your cloud subscription. Custom or third-party icons should be included using the `+icons_url+` option to simplify updating and upgrading {productname}.
+There are two options related to replacing the icons in {productname}: `+icons+` and `+icons_url+`.
+
+* `+icons+` specifies *which* icon pack to use.
+* `+icons_url+` specifies *where* to find that icon pack if it is not in the **default location**.
+
+If only `+icons+` is configured, {productname} will try to load the specified icon pack from `+TINYMCE_BASE/icons/${iconPackName}/icons.js+`; where:
+
+* `+TINYMCE_BASE+` is the {productname} root directory (the directory containing `+tinymce.min.js+`).
+* `+${iconPackName}+` is the name of the icon pack.
+
+To load icon packs from another location, integrators must specify that location using `+icons_url+`.
+
+* When using {productname} from {cloudname}, ZIP bundles, or NPM packages with bundling or file layering, only `+icons+` should be required.
+* When using custom icon packs or using NPM packages without bundling, `+icons_url+` will likely also be required.

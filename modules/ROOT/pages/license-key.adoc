@@ -31,21 +31,51 @@ The commercial license key manager is available:
 * in a purchased self-hosted plan - a `licensekeymanager` folder will be present in the `plugins` folder of the {productname} `+.zip+`.
 * in a purchased self-hosted addon - a `licensekeymanager` folder will be present in addition to the purchased addon.
 * as a standalone addon - a `licensekeymanager` folder will be present.
+* in the `+tinymce-premium+` NPM package - the `+licensekeymanager+` plugin is included in the `+tinymce-premium+` package.
 
 [IMPORTANT]
 ====
 The following setup steps are **required** for the editor to function with commercial license keys. The editor will not work without proper license key manager configuration.
 ====
 
-If hosting {productname} standalone, for example, in a `/public` folder, **ensure** the `+licensekeymanager+` folder is included in the `+plugins+` folder with all of the other plugins. The editor will not function without this.
+== Considerations when hosting vs bundling
 
-If bundling {productname} as part of an application **ensure** the `+licensekeymanager/index.js+` file is imported, otherwise the editor will not function without this.
+* If **hosting** {productname} standalone, for example, in a `/public` folder, **ensure** the `+licensekeymanager+` folder is included in the `+plugins+` folder with all of the other plugins. The editor will not function without this.
+* If **bundling** {productname} as part of an application **ensure** the `+licensekeymanager/index.js+` file is imported, otherwise the editor will not function without this.
 
-.Example importing the License Key Manager in a bundled application
+When using the `+tinymce+` NPM package with premium plugins from ZIP:
+
 [source,javascript]
 ----
 import 'tinymce/plugins/licensekeymanager';
 ----
+
+When using the `+tinymce-premium+` NPM package (recommended):
+
+[source,javascript]
+----
+import 'tinymce-premium/plugins/licensekeymanager';
+----
+
+When using `+external_plugins+` to load the license key manager from a custom location:
+
+[source,javascript]
+----
+tinymce.init({
+  selector: 'textarea',
+  external_plugins: {
+    'licensekeymanager': '<path_to_premium_plugins>/licensekeymanager/plugin.min.js'
+  },
+  // ... other configuration
+});
+----
+
+[NOTE]
+====
+* The `+licensekeymanager+` plugin is included in the `+tinymce-premium+` package.
+* The `+tinymce-premium+` package version must match the `+tinymce+` package version (e.g., both at 8.3.0).
+* The `+external_plugins+` option allows loading the license key manager from any location, useful when bundling is not available or when lazy-loading plugins. For more information, see: xref:editor-important-options.adoc#external_plugins[`+external_plugins+` configuration option].
+====
 
 == License Types and Deployment Options
 
@@ -208,7 +238,7 @@ To obtain a new {productname} 8 license key (T8LK-prefixed):
 Existing {productname} 7 license keys cannot be modified to work with {productname} 8 by adding the T8LK prefix. A new {productname} 8 license must be obtained through the proper channels listed above.
 ====
 
-=== If im upgrading from TinyMCE 7 how do I get a TinyMCE 8 license key?
+=== When upgrading from {productname} 7, what is the process for obtaining a {productname} 8 license key?
 
 If you are using {cloudname} (cloud-hosted):
 
@@ -298,7 +328,7 @@ a| * Add the `license_key` parameter to your {productname} configuration
 
 | xref:invalid-plugin[Invalid plugin]
 | The "+${pluginCode}+" plugin requires a valid {productname} license key
-| _No editor message_
+| One or more premium plugins are disabled due to license key restrictions.
 a| * Verify that your license includes access to the premium plugin
 * Check if your license key is valid and not expired
 * Visit the link:https://support.tiny.cloud[Support Portal] if you believe you should have access to this plugin

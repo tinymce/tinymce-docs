@@ -2,6 +2,37 @@
 :navtitle: Icons
 :description: Configure the editor's toolbar button and menu item icons.
 
+{productname} icons come from icon packs. {productname} includes both community and premium icon packs, but also allows integrators to add custom icons or override {productname} icons with their own.
+
+The default icon pack is shipped with {productname} and does not require any configuration, though it must be imported when bundling for deployment: For example:
+
+[source,js]
+----
+import 'tinymce/icons/default';
+----
+
+Replacing the default icon can be done using the `+icons+` and `+icons_url+` settings.
+
+== Available icon packs
+
+{productname} includes both community and premium icon packs:
+
+* **Community**: `default` (always required)
+* **Premium**: `bootstrap`, `jam`, `material`, `small`, `thin` (available with paid subscriptions)
+
+For information on which icon packs work best with which skins, see: xref:enhanced-skins-and-icon-packs.adoc#icon-pack-compatibility-matrix[Icon pack compatibility matrix].
+
+== Custom icon packs
+
+For information on creating custom icon packs, see: xref:creating-an-icon-pack.adoc[Create an icon pack for {productname}].
+
+The value passed to `+icons+` must match the pack name defined either:
+
+* Passed to `+tinymce.IconManager.add+` when registering the icon pack via JavaScript; or
+* Specified in the `+package.json+` `+iconPackName+` field when creating the icon pack using the xref:creating-an-icon-pack.adoc#download-and-setup-the-icon-pack-template[Icon Pack Template].
+
+== Replacing the default icon pack
+
 include::partial$misc/icons-or-icons_url.adoc[]
 
 include::partial$configuration/icons.adoc[]

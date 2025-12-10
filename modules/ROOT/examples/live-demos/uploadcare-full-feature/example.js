@@ -24,6 +24,18 @@ tinymce.init({
     showLogo: false,
     fluid: true,
   },
+  // File upload configuration - enables file uploads in the link dialog
+  documents_file_types: [
+    { mimeType: 'application/msword', extensions: [ 'doc' ] },
+    { mimeType: 'application/vnd.ms-excel', extensions: [ 'xls' ] },
+    { mimeType: 'application/vnd.ms-powerpoint', extensions: [ 'ppt', 'pps' ] },
+    { mimeType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', extensions: [ 'docx' ] },
+    { mimeType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet', extensions: [ 'xlsx' ] },
+    { mimeType: 'application/vnd.openxmlformats-officedocument.presentationml.presentation', extensions: [ 'pptx' ] },
+    { mimeType: 'application/pdf', extensions: [ 'pdf' ] },
+    { mimeType: 'application/rtf', extensions: [ 'rtf' ] },
+    { mimeType: 'text/plain', extensions: [ 'txt' ] }
+  ],
   a11y_advanced_options: true,
   toolbar: "undo redo | styles | bold italic underline | forecolor | bullist numlist| link uploadcare uploadcare-video | code preview",
   height: 700,	

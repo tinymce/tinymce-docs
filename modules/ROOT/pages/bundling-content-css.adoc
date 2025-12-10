@@ -19,7 +19,7 @@ Example syntax for including the example content CSS in a bundle:
 |===
 |Module Syntax |Source |Example
 
-.2+|ES6+
+.2+|ES6+ (Webpack/Rollup)
 |npm
 a|
 [source, js]
@@ -32,6 +32,21 @@ a|
 [source, js]
 ----
 import contentCSS from '../tinymce/skins/content/example/content.css';
+----
+
+.2+|ES6+ (Vite)
+|npm
+a|
+[source, js]
+----
+import 'tinymce/skins/content/example/content.js';
+----
+
+|`.zip`
+a|
+[source, js]
+----
+import '../tinymce/skins/content/example/content.js';
 ----
 
 .2+|Common JS
@@ -49,6 +64,7 @@ a|
 const contentCSS = require('../tinymce/skins/content/example/content.css');
 ----
 |===
+
 IMPORTANT: The handling of content CSS files (such as `+content.css+` or `+content.min.css+`) varies between bundling tools. View the relevant guide for the required syntax at xref:introduction-to-bundling-tinymce.adoc[Bundling {productname} with a module loader].
 
 include::partial$module-loading/bundling-content-css-files.adoc[]

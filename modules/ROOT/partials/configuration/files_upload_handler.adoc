@@ -1,0 +1,102 @@
+[[files_upload_handler]]
+== `+files_upload_handler+`
+
+This option specifies a function that handles file uploads in the link dialog's upload tab. This is similar to xref:file-image-upload.adoc#images_upload_handler[`+images_upload_handler+`], but is specifically designed for document and file uploads.
+
+The upload handler function takes two arguments:
+
+* `+blobInfo+` - An object containing information about the file blob to upload
+* A `+progress+` callback that takes a value between 1 and 100
+
+and returns a link:https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise[Promise] that will resolve with an object containing the uploaded file `+url+` and `+fileName+`, or reject with an error. The resolved object must have the following structure:
+
+* `+url+` - The URL of the uploaded file
+* `+fileName+` - The filename of the uploaded file
+
+The error can be either a string or an object containing the following properties:
+
+* `+message+` - The error message to display in the UI.
+* `+remove+` - A flag to remove the file from the document, defaults to `+false+` if not set.
+
+When both `+files_upload_handler+` and xref:link.adoc#documents_file_types[`+documents_file_types+`] are configured, the link dialog displays an "Upload" tab that enables file uploads via the function defined by `+files_upload_handler+`.
+
+*Type:* `+Function+`
+
+*Default value:* `+undefined+`
+
+=== Example: using `+files_upload_handler+`
+
+This example shows a client-side JavaScript handler that uploads files to a server endpoint. The server should return a JSON response with a `+location+` property containing the URL of the uploaded file.
+
+[source,js]
+----
+const files_upload_handler = (blobInfo, progress) => new Promise((resolve, reject) => {
+  const xhr = new XMLHttpRequest();
+  xhr.withCredentials = false;
+  xhr.open('POST', 'upload-handler.php');
+
+  xhr.upload.onprogress = (e) => {
+    progress(e.loaded / e.total * 100);
+  };
+
+  xhr.onload = () => {
+    if (xhr.status === 403) {
+      reject({ message: 'HTTP Error: ' + xhr.status, remove: true });
+      return;
+    }
+
+    if (xhr.status < 200 || xhr.status >= 300) {
+      reject('HTTP Error: ' + xhr.status);
+      return;
+    }
+
+    const json = JSON.parse(xhr.responseText);
+
+    if (!json || typeof json.location != 'string') {
+      reject('Invalid JSON: ' + xhr.responseText);
+      return;
+    }
+
+    resolve({
+      url: json.location,
+      fileName: blobInfo.filename()
+    });
+  };
+
+  xhr.onerror = () => {
+    reject('File upload failed due to a XHR Transport error. Code: ' + xhr.status);
+  };
+
+  const formData = new FormData();
+  formData.append('file', blobInfo.blob(), blobInfo.filename());
+
+  xhr.send(formData);
+});
+
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'link',
+  toolbar: 'link',
+  files_upload_handler: files_upload_handler,
+  documents_file_types: [
+    { mimeType: 'application/pdf', extensions: [ 'pdf' ] },
+    { mimeType: 'application/msword', extensions: [ 'doc' ] },
+    { mimeType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document', extensions: [ 'docx' ] },
+    { mimeType: 'text/plain', extensions: [ 'txt' ] }
+  ]
+});
+----
+
+[NOTE]
+====
+**Server-Side Handler Requirements**
+
+The server endpoint (e.g., `upload-handler.php` in the example above) should:
+
+* Accept a POST request with a file in the request body (sent as FormData with the field name `file`)
+* Return a JSON response with a `+location+` property containing the URL of the uploaded file: `+{ "location": "<path-to-your-web-server>/uploaded/file.pdf" }+`
+* Handle errors by returning appropriate HTTP status codes (e.g., 403 for forbidden file types, 400 for invalid requests, 500 for server errors)
+* Set appropriate CORS headers if needed for cross-origin requests
+
+This is similar to how xref:file-image-upload.adoc#images_upload_url[`+images_upload_url+`] works, but `+files_upload_handler+` gives you full control over the client-side upload logic, including custom error handling, progress tracking, and request customization.
+====

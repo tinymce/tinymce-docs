@@ -13,7 +13,7 @@ Requires https://nodejs.org/[Node.js (and npm)].
 +
 [source,sh]
 ----
-npm create vite@5 tinymce-svelte-demo -- --template svelte
+npm create vite@6 tinymce-svelte-demo -- --template svelte
 ----
 . Change to the project directory.
 +
@@ -37,6 +37,7 @@ ifeval::["{productSource}" == "package-manager"]
 npm install tinymce@^{productmajorversion} @tinymce/tinymce-svelte
 ----
 
+include::partial$integrations/premium-plugins-install-step-link.adoc[]
 endif::[]
 ifeval::["{productSource}" != "package-manager"]
 
@@ -146,8 +147,6 @@ let conf = {
   />
 </main>
 ----
-+
-. Update the `+licenseKey+` option in the editor element and include your xref:license-key.adoc[License Key].
 
 endif::[]
 ifeval::["{productSource}" == "zip"]
@@ -182,8 +181,6 @@ let conf = {
   />
 </main>
 ----
-+
-. Update the `+licenseKey+` option in the editor element and include your xref:license-key.adoc[License Key].
 
 endif::[]
 

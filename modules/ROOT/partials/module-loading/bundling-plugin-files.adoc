@@ -1,13 +1,9 @@
-== Contents
-
-
 [[premium-plugins]]
 === Premium plugins
 
-[NOTE]
-Currently `.zip` style bundling is only available for premium plugins.
-
 include::partial$plugin-files/plugin-file-bundling-message.adoc[]
+
+include::partial$module-loading/bundling-premium-plugins-npm.adoc[]
 
 include::partial$module-loading/admon-bundling-plugin-langs.adoc[]
 

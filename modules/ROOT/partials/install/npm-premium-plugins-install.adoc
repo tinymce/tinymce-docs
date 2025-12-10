@@ -36,13 +36,13 @@ For information on obtaining a license key, see: xref:license-key.adoc[License K
 
 After installing `+tinymce-premium+`, you need to:
 
-* Import or configure the premium plugins (see options below)
+* Import or configure to include the premium plugins (see options below)
 * Add the plugins to your editor's `+plugins+` configuration
 * Set your commercial `+license_key+` in the editor initialization
 
 [NOTE]
 ====
-When bundling, you import individual premium plugins (e.g., `+import 'tinymce-premium/plugins/advcode'+`), not the package itself. You do **not** need `+import tinymcePremium from 'tinymce-premium'+` - only import the specific plugins you need.
+When bundling, you can only import premium plugins individually (e.g., `+import 'tinymce-premium/plugins/advcode'+`). You can **not**  include  `+import 'tinymce-premium'+` - only import the specific plugins you need.
 ====
 
 For complete examples, see the integration guides for your specific framework.

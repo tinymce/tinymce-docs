@@ -53,9 +53,9 @@ tinymce.init({
   selector: 'textarea',
   base_url: '/tinymce', // TinyMCE location
   external_plugins: {
-    'advcode': '../../node_modules/tinymce-premium/plugins/advcode/plugin.min.js',
-    'licensekeymanager': '../../node_modules/tinymce-premium/plugins/licensekeymanager/plugin.min.js',
-    'tinycomments': '../../node_modules/tinymce-premium/plugins/tinycomments/plugin.min.js'
+    'advcode': 'tinymce-premium/plugins/advcode/plugin.min.js',
+    'licensekeymanager': 'tinymce-premium/plugins/licensekeymanager/plugin.min.js',
+    'tinycomments': 'tinymce-premium/plugins/tinycomments/plugin.min.js'
   },
   plugins: 'advcode tinycomments',
   // ... other configuration

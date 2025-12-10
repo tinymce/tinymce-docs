@@ -130,7 +130,7 @@ import { EditorComponent, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 +
 [NOTE]
 ====
-When using `+TINYMCE_SCRIPT_SRC+` to lazy load TinyMCE, you cannot import premium plugins directly. Premium plugins must be bundled with your application. For instructions on bundling TinyMCE with premium plugins, see: xref:angular-pm-bundle.adoc[Bundling with Angular].
+When using `+TINYMCE_SCRIPT_SRC+` to lazy load TinyMCE, you can not import premium plugins directly. This will trigger a `tinymce not defined` error in your application because the plugins need to access `tinymce` global variable which doesn't exist at that time.
 ====
 * To load {productname} when the page or application is loaded:
 .. Open `+angular.json+` and add {productname} to the _global scripts_ tag.

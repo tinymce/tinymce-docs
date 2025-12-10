@@ -45,7 +45,7 @@ You can find and download languages link:{gettiny}/language-packages/[here].
 
 === Example: loading premium languages from `+tinymce-premium+` (NPM)
 
-When installing the `+tinymce-premium+` NPM package, each paid translation is stored in `+node_modules/tinymce-premium/langs/+`. Configure `+language_url+` to point at the desired file.
+When installing the `+tinymce-premium+` NPM package, each translation is stored in `+node_modules/tinymce-premium/langs/+`. Configure `+language_url+` to point at the desired file.
 
 .Example
 [source,js]
@@ -59,6 +59,6 @@ tinymce.init({
 
 [NOTE]
 ====
-* Ensure the `+node_modules+` directory (or a copy of the language file) is accessible to the browser. Many projects copy the required file into a public folder (such as `+/public/langs/pt_BR.js+`) during their build step and update `+language_url+` accordingly.
+* Ensure the language file is accessible in the application. Many projects copy the required file into a static assets folder (such as `+/public/langs/pt_BR.js+`) during their build step.
 * Combine this with the approaches listed in xref:ui-localization.adoc#premium-language-packs-npm[Providing premium language packs from `+tinymce-premium+`] to match the deployment strategy.
 ====

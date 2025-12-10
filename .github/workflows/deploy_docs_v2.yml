@@ -1,0 +1,85 @@
+name: Deploy Tiny Docs v2
+
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Deployment Environment'
+        required: true
+        default: 'staging'
+        type: choice
+        options:
+        - 'staging'
+        - 'production'
+
+env:
+  ACCT: ${{ inputs.environment == 'production' && '990880627107' || '327995277200' }}
+  BUCKET: ${{ inputs.environment == 'production' && 'tiny-cloud-antora-docs-release' || 'tiny-cloud-antora-docs-preview' }}
+  RUN: run-${{ github.run_number }}-${{ github.run_attempt }}
+
+jobs:
+  build:
+    name: Build Docs and Deploy
+
+    if: github.repository == 'tinymce/tinymce-docs' && github.repository_owner == 'tinymce'
+
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+    - name: Checkout branch
+      uses: actions/checkout@v5
+
+    - name: Setup Node.js
+      uses: actions/setup-node@v5
+      with:
+        cache: 'yarn'
+        node-version: 24
+
+    - name: Install dependencies
+      run: yarn install
+
+    - name: Build Website
+      run: yarn antora ./antora-playbook.yml
+
+    - name: Rename site folder to docs
+      run: |
+        mv ./build/site ./build/docs
+
+    - name: Rename sitemap.xml to antora-sitemap.xml
+      run: |
+        mv ./build/docs/sitemap.xml ./build/docs/antora-sitemap.xml
+
+    - name: configure aws credentials
+      uses: aws-actions/configure-aws-credentials@v5.0.0
+      with:
+        role-to-assume: 'arn:aws:iam::${{ env.ACCT }}:role/${{ inputs.environment }}-tinymce-docs-update'
+        role-session-name: tinymce-docs-${{ inputs.environment }}-release
+        aws-region: us-east-1
+
+    - name: Upload website preview to S3
+      run: |
+        aws s3 sync ./build s3://${BUCKET}/main/${RUN}
+
+    - name: Create redirects on S3
+      uses: tinymce/tinymce-docs-generate-redirects-action@v1.0
+      with:
+        build: ./build/
+        redirects: ./redirects.json
+        bucket: ${{ env.BUCKET }}
+        prefix: main/${{ env.RUN }}
+        parallel: 10
+
+    - name: Update pointer to current run output
+      run: |
+        aws s3api put-object --bucket ${BUCKET} --key main/index.html --body .github/workflows/resources/empty.html --content-type text/html --metadata pointer=${RUN}
+
+    - name: Tag old versions for cleanup
+      uses: tinymce/tinymce-docs-cleanup-action@v0.1
+      with:
+        bucket: ${{ env.BUCKET }}
+        folder: main
+        parallel: 20

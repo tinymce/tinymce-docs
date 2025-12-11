@@ -129,7 +129,7 @@ npm run postinstall
 ----
 +
 
-. Add `Editor` component to `+./src/App.jsx+` and update `tinymceScriptSrc` as below:
+. Add `Editor` component to `+./src/App.jsx+` and point `tinymceScriptSrc` the `tinymce` location.
 +
 [source,jsx]
 ----
@@ -247,51 +247,25 @@ endif::[]
 endif::[]
 ifeval::["{productSource}" == "zip"]
 ifeval::["{productUse}" == "host"]
-. Install the `+@tinymce/tinymce-react+` package.
+
+. Unzip the content of the `+tinymce/js+` folder from the link:{download-enterprise}[{productname} zip] into the `+public+` folder
 +
-[source,sh]
-----
-npm install @tinymce/tinymce-react
-----
-+
-. Unzip the content of the `+tinymce/js+` folder from the link:{download-enterprise}[{productname} zip] into the `+public+` folder. Afterwards the directory listing should be similar to below:
-+
-.> `tree -L 2 public`
-[source,text]
-----
-public
-├── favicon.ico
-├── index.html
-├── logo192.png
-├── logo512.png
-├── manifest.json
-├── robots.txt
-└── tinymce
-    ├── icons
-    ├── langs
-    ├── license.txt
-    ├── models
-    ├── plugins
-    ├── skins
-    ├── themes
-    ├── tinymce.d.ts
-    └── tinymce.min.js
-----
-+
-. Using a text editor, open `+./eslint.config.js` and add `+'src/tinymce'+` to the `+ignores+` array.
+
+. Add `+'public/tinymce'+` to the `+ignores+` array to `+./eslint.config.js` file.
 +
 .Diff of `.eslint.config.js`
 [source,patch]
 ----
 export default tseslint.config(
 -  { ignores: ['dist'] },
-+  { ignores: ['dist', 'src/tinymce'] },
++  { ignores: ['dist', 'public/tinymce'] },
    {
      extends: [js.configs.recommended, ...tseslint.configs.recommended],
      files: ['**/*.{ts,tsx}'],
 ----
 +
-. Using a text editor, open `+./src/App.jsx+` and replace the contents with:
+
+. Update `+./src/App.jsx+` as below. *Note*: Remember to point `tinymceScriptSrc` the `tinymce` location.
 +
 [source,jsx]
 ----
@@ -334,44 +308,21 @@ export default function App() {
 }
 ----
 +
+
 . Update the `+licenseKey+` option in the editor element and include your xref:license-key.adoc[License Key].
 endif::[]
 ifeval::["{productUse}" == "bundle"]
 
-. Install the `+@tinymce/tinymce-react+` and `+script-loader+` packages.
+. Install `+script-loader+` package.
 +
 [source,sh]
 ----
-npm install @tinymce/tinymce-react script-loader
+npm install script-loader
 ----
 +
-. Unzip the content of the `+tinymce/js+` folder from the link:{download-enterprise}[{productname} zip] into the `+src+` folder. Afterwards the directory listing should be similar to below:
-+
-.> `tree -L 2 src`
-[source,text]
-----
-src
-├── App.css
-├── App.js
-├── App.test.js
-├── index.css
-├── index.js
-├── logo.svg
-├── reportWebVitals.js
-├── setupTests.js
-└── tinymce
-    ├── icons
-    ├── langs
-    ├── license.txt
-    ├── models
-    ├── plugins
-    ├── skins
-    ├── themes
-    ├── tinymce.d.ts
-    └── tinymce.min.js
-----
-+
-. Using a text editor, open `+./eslint.config.js+` and add `+'src/tinymce'+` to the `+ignores+` array.
+. Unzip the content of the `+tinymce/js+` folder from the link:{download-enterprise}[{productname} zip] into the `+src+` folder.
+
+. Add `+'src/tinymce'+` to the `+ignores+` array to `+./eslint.config.js` file.
 +
 .Diff of `.eslint.config.js`
 [source,patch]
@@ -391,60 +342,13 @@ index 092408a..1ab8db4 100644
      files: ['**/*.{ts,tsx}'],
 ----
 +
-. Using a text editor, create `+./src/BundledEditor.jsx+` and set the contents to:
+
+. Create `+./src/BundledEditor.jsx+` and set the contents to:
 +
 [source,jsx]
 ----
 import { Editor } from '@tinymce/tinymce-react';
-
-// TinyMCE so the global var exists
-import './tinymce/tinymce.min.js';
-// DOM model
-import './tinymce/models/dom/model.min.js'
-// Theme
-import './tinymce/themes/silver/theme.min.js';
-// Toolbar icons
-import './tinymce/icons/default/icons.min.js';
-// Editor styles
-import './tinymce/skins/ui/oxide/skin.min.js';
-
-// importing the plugin index.js file.
-// if you use a plugin that is not listed here the editor will fail to load
-import './tinymce/plugins/advlist';
-import './tinymce/plugins/anchor';
-import './tinymce/plugins/autolink';
-import './tinymce/plugins/autoresize';
-import './tinymce/plugins/autosave';
-import './tinymce/plugins/charmap';
-import './tinymce/plugins/code';
-import './tinymce/plugins/codesample';
-import './tinymce/plugins/directionality';
-import './tinymce/plugins/emoticons';
-import './tinymce/plugins/fullscreen';
-import './tinymce/plugins/help';
-import './tinymce/plugins/image';
-import './tinymce/plugins/importcss';
-import './tinymce/plugins/insertdatetime';
-import './tinymce/plugins/link';
-import './tinymce/plugins/lists';
-import './tinymce/plugins/media';
-import './tinymce/plugins/nonbreaking';
-import './tinymce/plugins/pagebreak';
-import './tinymce/plugins/preview';
-import './tinymce/plugins/quickbars';
-import './tinymce/plugins/save';
-import './tinymce/plugins/searchreplace';
-import './tinymce/plugins/table';
-import './tinymce/plugins/visualblocks';
-import './tinymce/plugins/visualchars';
-import './tinymce/plugins/wordcount';
-
-// importing plugin resources
-import './tinymce/plugins/emoticons/js/emojis.js';
-
-// Content styles, including inline UI like fake cursors
-import './tinymce/skins/content/default/content.js';
-import './tinymce/skins/ui/oxide/content.js';
+include::partial$integrations/import-tinymce-statements.adoc[]
 
 export default function BundledEditor(props) {
   return (
@@ -456,8 +360,9 @@ export default function BundledEditor(props) {
 }
 ----
 +
-. Update the `+licenseKey+` option in the editor element and include your xref:license-key.adoc[License Key].
-. Using a text editor, open `+./src/App.jsx+` and replace the contents with:
+. Update the `+licenseKey+` option to include your xref:license-key.adoc[License Key].
+
+. Add `BundleEditor` component into `+./src/App.jsx+` as the following:
 +
 [source,jsx]
 ----
@@ -481,8 +386,9 @@ export default function App() {
           height: 500,
           menubar: false,
           plugins: [
-            'advlist', 'anchor', 'autolink', 'help', 'image', 'link', 'lists',
-            'searchreplace', 'table', 'wordcount'
+            'advlist', 'autolink', 'lists', 'link', 'image', 'charmap',
+            'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+            'insertdatetime', 'media', 'table', 'preview', 'help', 'wordcount'
           ],
           toolbar: 'undo redo | blocks | ' +
             'bold italic forecolor | alignleft aligncenter ' +

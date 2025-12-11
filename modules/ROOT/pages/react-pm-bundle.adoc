@@ -1,8 +1,10 @@
-= Bundle with TinyMCE and the React framework
-:navtitle: Using a package manager with bundling
-:description: A guide on integrating the TinyMCE package into the React framework by bundling it.
+= Bundle TinyMCE in React
+:navtitle: Bundle TinyMCE in a React project using a module bundler
+:description: A guide on integrating the TinyMCE package into React by bundling it.
 :keywords: integration, integrate, react, reactjs, vite, tinymce-react, bundle
 :productSource: package-manager
 :productUse: bundle
+
+This guide shows how to bundle TinyMCE in a React project with link:https://github.com/tinymce/tinymce-react[{productname} React component]
 
 include::partial$integrations/react-quick-start.adoc[]

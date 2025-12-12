@@ -84,7 +84,7 @@ jobs:
         aws s3api put-object --bucket ${BUCKET} --key main/index.html --body .github/workflows/resources/empty.html --content-type text/html --metadata pointer=${RUN}
 
     - name: Tag old versions for cleanup
-      uses: tinymce/tinymce-docs-cleanup-action@v0.1
+      uses: tinymce/tinymce-docs-cleanup-action@v1.0
       with:
         bucket: ${{ env.BUCKET }}
         folder: main

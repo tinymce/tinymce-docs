@@ -18,6 +18,7 @@ permissions:
   id-token: write
 
 env:
+  ENVNAME: ${{ inputs.environment }}
   ACCT: ${{ inputs.environment == 'production' && '990880627107' || '327995277200' }}
   BUCKET: ${{ inputs.environment == 'production' && 'tiny-cloud-antora-docs-release' || 'tiny-cloud-antora-docs-preview' }}
   RUN: run-${{ github.run_number }}-${{ github.run_attempt }}
@@ -61,8 +62,8 @@ jobs:
     - name: configure aws credentials
       uses: aws-actions/configure-aws-credentials@v5.0.0
       with:
-        role-to-assume: 'arn:aws:iam::${{ env.ACCT }}:role/${{ inputs.environment }}-tinymce-docs-update'
-        role-session-name: tinymce-docs-${{ inputs.environment }}-release
+        role-to-assume: 'arn:aws:iam::${{ env.ACCT }}:role/${{ env.ENVNAME }}-tinymce-docs-update'
+        role-session-name: tinymce-docs-${{ env.ENVNAME }}-release
         aws-region: us-east-1
 
     - name: Upload website preview to S3

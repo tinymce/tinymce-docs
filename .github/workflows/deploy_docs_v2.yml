@@ -21,6 +21,7 @@ env:
   TARGET: ${{ inputs.environment || 'staging' }}
   ACCT: ${{ inputs.environment == 'production' && '990880627107' || '327995277200' }}
   BUCKET: ${{ inputs.environment == 'production' && 'tiny-cloud-antora-docs-release' || 'tiny-cloud-antora-docs-preview' }}
+  DISTRIBUTION: ${{ inputs.environment == 'production' && 'E3LFU502SQ5UR' || 'E7DUUPEI08HNW'}}
   RUN: run-${{ github.run_number }}-${{ github.run_attempt }}
 
 jobs:
@@ -89,3 +90,11 @@ jobs:
         bucket: ${{ env.BUCKET }}
         folder: main
         parallel: 20
+
+    - name: Invalidate Cloudfront Cache
+      # sleep to wait for envoy's version pointer caching to expire
+      run: |
+        sleep 30s
+        aws cloudfront create-invalidation --distribution-id ${{ env.DISTRIBUTION }} --paths "/docs/*"
+      env:
+        AWS_EC2_METADATA_DISABLED: true

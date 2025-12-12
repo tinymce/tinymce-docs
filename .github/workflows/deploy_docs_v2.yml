@@ -54,33 +54,33 @@ jobs:
       run: |
         mv ./build/docs/sitemap.xml ./build/docs/antora-sitemap.xml
 
-    # - name: configure aws credentials
-    #   uses: aws-actions/configure-aws-credentials@v5.0.0
-    #   with:
-    #     role-to-assume: 'arn:aws:iam::${{ env.ACCT }}:role/${{ inputs.environment }}-tinymce-docs-update'
-    #     role-session-name: tinymce-docs-${{ inputs.environment }}-release
-    #     aws-region: us-east-1
+    - name: configure aws credentials
+      uses: aws-actions/configure-aws-credentials@v5.0.0
+      with:
+        role-to-assume: 'arn:aws:iam::${{ env.ACCT }}:role/${{ inputs.environment }}-tinymce-docs-update'
+        role-session-name: tinymce-docs-${{ inputs.environment }}-release
+        aws-region: us-east-1
 
-    # - name: Upload website preview to S3
-    #   run: |
-    #     aws s3 sync ./build s3://${BUCKET}/main/${RUN}
+    - name: Upload website preview to S3
+      run: |
+        aws s3 sync ./build s3://${BUCKET}/main/${RUN}
 
-    # - name: Create redirects on S3
-    #   uses: tinymce/tinymce-docs-generate-redirects-action@v1.0
-    #   with:
-    #     build: ./build/
-    #     redirects: ./redirects.json
-    #     bucket: ${{ env.BUCKET }}
-    #     prefix: main/${{ env.RUN }}
-    #     parallel: 10
+    - name: Create redirects on S3
+      uses: tinymce/tinymce-docs-generate-redirects-action@v1.0
+      with:
+        build: ./build/
+        redirects: ./redirects.json
+        bucket: ${{ env.BUCKET }}
+        prefix: main/${{ env.RUN }}
+        parallel: 10
 
-    # - name: Update pointer to current run output
-    #   run: |
-    #     aws s3api put-object --bucket ${BUCKET} --key main/index.html --body .github/workflows/resources/empty.html --content-type text/html --metadata pointer=${RUN}
+    - name: Update pointer to current run output
+      run: |
+        aws s3api put-object --bucket ${BUCKET} --key main/index.html --body .github/workflows/resources/empty.html --content-type text/html --metadata pointer=${RUN}
 
-    # - name: Tag old versions for cleanup
-    #   uses: tinymce/tinymce-docs-cleanup-action@v0.1
-    #   with:
-    #     bucket: ${{ env.BUCKET }}
-    #     folder: main
-    #     parallel: 20
+    - name: Tag old versions for cleanup
+      uses: tinymce/tinymce-docs-cleanup-action@v0.1
+      with:
+        bucket: ${{ env.BUCKET }}
+        folder: main
+        parallel: 20

@@ -13,6 +13,10 @@ on:
         - 'production'
   push:
 
+# Need ID token write permission to use OIDC
+permissions:
+  id-token: write
+
 env:
   ACCT: ${{ inputs.environment == 'production' && '990880627107' || '327995277200' }}
   BUCKET: ${{ inputs.environment == 'production' && 'tiny-cloud-antora-docs-release' || 'tiny-cloud-antora-docs-preview' }}

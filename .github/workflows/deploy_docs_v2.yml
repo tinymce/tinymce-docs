@@ -18,10 +18,8 @@ permissions:
   id-token: write
 
 env:
-  ENVNAME: ${{ inputs.environment }}
-  ACCT: ${{ inputs.environment == 'production' && '990880627107' || '327995277200' }}
-  BUCKET: ${{ inputs.environment == 'production' && 'tiny-cloud-antora-docs-release' || 'tiny-cloud-antora-docs-preview' }}
-  RUN: run-${{ github.run_number }}-${{ github.run_attempt }}
+  # inputs are only defined on a dispatch event, so to test we provide a default...
+  TARGET: ${{ inputs.environment || 'staging' }}
 
 jobs:
   build:
@@ -30,6 +28,11 @@ jobs:
     if: github.repository == 'tinymce/tinymce-docs' && github.repository_owner == 'tinymce'
 
     runs-on: ubuntu-latest
+
+    env:
+      ACCT: ${{ env.TARGET == 'production' && '990880627107' || '327995277200' }}
+      BUCKET: ${{ env.TARGET == 'production' && 'tiny-cloud-antora-docs-release' || 'tiny-cloud-antora-docs-preview' }}
+      RUN: run-${{ github.run_number }}-${{ github.run_attempt }}
 
     defaults:
       run:
@@ -62,8 +65,8 @@ jobs:
     - name: configure aws credentials
       uses: aws-actions/configure-aws-credentials@v5.0.0
       with:
-        role-to-assume: 'arn:aws:iam::${{ env.ACCT }}:role/${{ env.ENVNAME }}-tinymce-docs-update'
-        role-session-name: tinymce-docs-${{ env.ENVNAME }}-release
+        role-to-assume: 'arn:aws:iam::${{ env.ACCT }}:role/${{ env.TARGET }}-tinymce-docs-update'
+        role-session-name: tinymce-docs-${{ env.TARGET }}-release
         aws-region: us-east-1
 
     - name: Upload website preview to S3

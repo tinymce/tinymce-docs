@@ -96,5 +96,3 @@ jobs:
       run: |
         sleep 30s
         aws cloudfront create-invalidation --distribution-id ${{ env.DISTRIBUTION }} --paths "/docs/*"
-      env:
-        AWS_EC2_METADATA_DISABLED: true

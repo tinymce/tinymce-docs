@@ -18,8 +18,10 @@ permissions:
   id-token: write
 
 env:
-  # inputs are only defined on a dispatch event, so to test we provide a default...
   TARGET: ${{ inputs.environment || 'staging' }}
+  ACCT: ${{ inputs.environment == 'production' && '990880627107' || '327995277200' }}
+  BUCKET: ${{ inputs.environment == 'production' && 'tiny-cloud-antora-docs-release' || 'tiny-cloud-antora-docs-preview' }}
+  RUN: run-${{ github.run_number }}-${{ github.run_attempt }}
 
 jobs:
   build:
@@ -27,12 +29,9 @@ jobs:
 
     if: github.repository == 'tinymce/tinymce-docs' && github.repository_owner == 'tinymce'
 
-    runs-on: ubuntu-latest
-
     env:
-      ACCT: ${{ env.TARGET == 'production' && '990880627107' || '327995277200' }}
-      BUCKET: ${{ env.TARGET == 'production' && 'tiny-cloud-antora-docs-release' || 'tiny-cloud-antora-docs-preview' }}
-      RUN: run-${{ github.run_number }}-${{ github.run_attempt }}
+
+    runs-on: ubuntu-latest
 
     defaults:
       run:

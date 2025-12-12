@@ -29,8 +29,6 @@ jobs:
 
     if: github.repository == 'tinymce/tinymce-docs' && github.repository_owner == 'tinymce'
 
-    env:
-
     runs-on: ubuntu-latest
 
     defaults:

@@ -10,7 +10,6 @@ This procedure requires https://nodejs.org/[Node.js (and NPM)].
 
 == Procedure
 
---
 . From a terminal or command prompt, install the link:https://angular.dev/tools/cli[Angular CLI Tool] globally.
 +
 [source,sh]
@@ -50,12 +49,10 @@ ifeval::["{productSource}" != "package-manager"]
 ----
 npm install @tinymce/tinymce-angular
 ----
-+
-
 endif::[]
+
 . Update the root component `+src/app/app.component.ts+` to import and use the `EditorComponent`.
 ifeval::["{productSource}" == "cloud"]
-
 +
 [source,ts,subs="attributes+"]
 ----
@@ -110,39 +107,19 @@ export class AppComponent {
 ----
 
 endif::[]
-ifeval::["{productSource}" == "package-manager"]
-include::partial$integrations/angular-load-tinymce-independently.adoc[]
+
+ifeval::["{productSource}" == "zip"]
+. Unzip the content of the `+tinymce/js+` folder from the link:{download-enterprise}[{productname} zip] into the `+src+` folder.
 endif::[]
+
+include::partial$integrations/angular-load-tinymce-independently.adoc[]
+
 . Run the Angular a development server
 +
 [source,sh]
 ----
 ng serve
 ----
-+
-
-
-ifeval::["{productSource}" == "package-manager"]
-[[angular-modules]]
-== Angular Modules
-`+EditorModule+` is available to import from `+@tinymce/tinymce-angular+`. Which should be included in your `+my.module.ts+` file.
-
-[source,ts]
-----
-import { NgModule } from '@angular/core';
-import { EditorModule } from '@tinymce/tinymce-angular';
-
-@NgModule({
-  /* ... */
-  imports: [
-    EditorModule
-  ],
-  /* ... */
-})
-export class MyModule {}
-----
-endif::[]
-
 
 == Next Steps
 

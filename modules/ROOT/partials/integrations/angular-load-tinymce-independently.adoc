@@ -1,21 +1,7 @@
 
 +
-. There are two ways to add the {productname} into the application:
+. There are two options for including {productname} into the application:
 .. Lazy load {productname} using the provided `TINYMCE_SCRIPT_SRC` dependency provider.
-* Add {productname} to the `+assets+` configuration in `+angular.json+`. This will make {productname} available as a static asset to the application.
-+
-[source,json]
-----
-"assets": [
-  { 
-    "glob": "**/*",
-    "input": "node_modules/tinymce",
-    "output": "/tinymce/"
-  }
-]
-----
-
-* Update the component's dependency providers.
 +
 [source,ts]
 ----
@@ -26,22 +12,34 @@ import { EditorComponent, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
   standalone: true,
   imports: [EditorComponent],
   providers: [
-    { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }
+    { provide: TINYMCE_SCRIPT_SRC, useValue: '/tinymce/tinymce.min.js' }
   ]
 })
 ----
 
-.. Load {productname} into the application's runtime global scope.
-* Open `+angular.json+` and add {productname} to the _global scripts_ tag.
+.. Add {productname} to the _global scripts_ tag via `+angular.json+`.
 +
 [source,json]
 ----
 "scripts": [
-  "/<path_to_tinymce>/tinymce.min.js"
+  "<path_to_source_tinymce>/tinymce.min.js"
 ]
 ----
 
-* Update the `+base_url+` and `+suffix+` options to configurate the location of other components like skins, icons, plugins, etc.
+. Then update `+angular.json+` to include {productname} and other components as `+assets+`. This will make them available to the application.
++
+[source,json]
+----
+"assets": [
+  {
+    "glob": "**/*",
+    "input": "<path_to_source_tinymce>/tinymce",
+    "output": "/tinymce"
+  }
+]
+----
+
+. Update the `+base_url+` and `+suffix+` options to configurate the location of other components like skins, icons, plugins, etc.
 +
 [source,ts]
 ----

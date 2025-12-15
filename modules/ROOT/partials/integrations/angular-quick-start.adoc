@@ -1,56 +1,61 @@
 :packageName: tinymce-angular
 
-The https://github.com/tinymce/tinymce-angular[Official {productname} Angular component] integrates {productname} into Angular projects. This procedure creates a https://angular.dev/tools/cli/setup-local[basic Angular application] containing a {productname} editor.
+The steps below use standalone components. If using Angular Modules, see xref:angular-modules[Angular Modules].
 
-This procedure uses standalone components. If using Angular Modules, see xref:angular-modules[Angular Modules].
-
-For examples of the {productname} Angular integration, visit https://tinymce.github.io/tinymce-angular/[the tinymce-angular storybook].
+For more examples of the {productname} Angular integration, visit https://tinymce.github.io/tinymce-angular/[the tinymce-angular storybook].
 
 == Prerequisites
 
-This procedure requires https://nodejs.org/[Node.js (and npm)].
+This procedure requires https://nodejs.org/[Node.js (and NPM)].
 
 == Procedure
 
-. On a command line or command prompt, install the link:https://angular.dev/tools/cli[Angular CLI Tool] package.
+. From a terminal or command prompt, install the link:https://angular.dev/tools/cli[Angular CLI Tool] globally.
 +
 [source,sh]
 ----
 npm install -g @angular/cli
 ----
-. Create a new Angular project named `+tinymce-angular-demo+`.
++
+. Create a new Angular project named `+tinymce-angular-demo+` using default settings and without Git initialization.
 +
 [source,sh]
 ----
 ng new --defaults --skip-git tinymce-angular-demo
 ----
-. Change into the newly created directory.
++
+. Move into the project directory and install `+tinymce-angular+`.
 +
 [source,sh]
 ----
-cd tinymce-angular-demo
+cd tinymce-angular-demo && npm install @tinymce/tinymce-angular
 ----
++
 ifeval::["{productSource}" == "package-manager"]
-. Install the `+tinymce+` and `+tinymce-angular+` packages.
+
+. Install the `+tinymce+`.
 +
 [source,sh]
 ----
-npm install tinymce @tinymce/tinymce-angular
+npm install tinymce
 ----
 +
-include::partial$integrations/premium-plugins-install-step-link.adoc[]
 endif::[]
 ifeval::["{productSource}" != "package-manager"]
+
 . Install the `+tinymce-angular+` package.
 +
 [source,sh]
 ----
 npm install @tinymce/tinymce-angular
 ----
-endif::[]
-. Using a text editor, open `+/path/to/tinymce-angular-demo/src/app/app.component.ts+` and replace the contents with:
 +
+
+endif::[]
+. Update the root component `+src/app/app.component.ts+` to import and use the `EditorComponent`.
 ifeval::["{productSource}" == "cloud"]
+
++
 [source,ts,subs="attributes+"]
 ----
 import { Component } from '@angular/core';
@@ -75,9 +80,11 @@ export class AppComponent {
 }
 ----
 +
-. Update the `+apiKey+` option in the editor element to include your link:{accountsignup}/[{cloudname} API key].
+. Update the `+apiKey+` with your own link:{accountsignup}/[{cloudname} API key].
 endif::[]
 ifeval::["{productSource}" != "cloud"]
+
++
 [source,ts,subs="attributes+"]
 ----
 import { Component } from '@angular/core';
@@ -100,109 +107,25 @@ export class AppComponent {
   };
 }
 ----
++
 endif::[]
 ifeval::["{productSource}" == "package-manager"]
-. Using a text editor, open `+angular.json+` and add {productname} to the `+assets+` property.
-+
-[source,json]
-----
-"assets": [
-  { "glob": "**/*", "input": "node_modules/tinymce", "output": "/tinymce/" }
-]
-----
-
-. Load {productname}.
-* To load {productname} when the editor is initialized (also known as lazy loading), add a dependency provider to the component using the `+TINYMCE_SCRIPT_SRC+` token.
-+
-[source,ts]
-----
-import { EditorComponent, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
-/* ... */
-@Component({
-  /* ... */
-  standalone: true,
-  imports: [EditorComponent],
-  providers: [
-    { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }
-  ]
-})
-----
-+
-[NOTE]
-====
-When using `+TINYMCE_SCRIPT_SRC+` to lazy load TinyMCE, you can not import premium plugins directly. This will trigger a `tinymce not defined` error in your application because the plugins need to access `tinymce` global variable which doesn't exist at that time.
-====
-* To load {productname} when the page or application is loaded:
-.. Open `+angular.json+` and add {productname} to the _global scripts_ tag.
-+
-[source,json]
-----
-"scripts": [
-  "node_modules/tinymce/tinymce.min.js"
-]
-----
-.. Update the editor configuration to include the `+base_url+` and `+suffix+` options.
-+
-[source,ts]
-----
-export class AppComponent {
-  /* ... */
-  init: EditorComponent['init'] = {
-    /* ... */
-    base_url: '/tinymce', // Root for resources
-    suffix: '.min'        // Suffix to use when loading resources
-  };
-}
-----
-endif::[]
-ifeval::["{productSource}" == "zip"]
-
-. Add the `+tinymce+` global to the application by: Deploying {productname} independent of the Angular application, or bundling {productname} with the Angular application.
-* Deploy {productname} independent of the Angular application
-+
-To use an independent deployment of {productname}, add a script to either the `+<head>+` or the end of the `+<body>+` of the HTML file, such as:
-+
-[source,html]
-----
-<script src="/path/to/tinymce.min.js"></script>
-----
+include::partial$integrations/angular-load-tinymce-independently.adoc[]
 endif::[]
 
-. Run `+ng serve+` to start a dev server
+. Run the Angular a development server
 +
 [source,sh]
 ----
 ng serve
 ----
++
 
+ifeval::["{productSource}" == "package-manager"]
 [[angular-modules]]
 == Angular Modules
 `+EditorModule+` is available to import from `+@tinymce/tinymce-angular+`. Which should be included in your `+my.module.ts+` file.
 
-ifeval::["{productSource}" == "package-manager"]
-
-[source,ts]
-----
-import { NgModule } from '@angular/core';
-import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
-
-@NgModule({
-  /* ... */
-  imports: [
-    EditorModule
-  ],
-  providers: [
-    // If you're self hosting and lazy loading TinyMCE from node_modules:
-    { provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js' }
-  ],
-  /* ... */
-})
-export class MyModule {}
-----
-
-endif::[]
-
-ifeval::["{productSource}" != "package-manager"]
 
 [source,ts]
 ----
@@ -220,6 +143,7 @@ export class MyModule {}
 ----
 
 endif::[]
+
 
 == Next Steps
 

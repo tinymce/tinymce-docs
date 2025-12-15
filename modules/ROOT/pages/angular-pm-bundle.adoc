@@ -1,11 +1,11 @@
-= Bundling TinyMCE with an Angular application
+= Bundling TinyMCE from NPM in an Angular application
 :navtitle: Using a package manager with bundling
-:description: A guide on bundling TinyMCE with an Angular application using Vite.
+:description: A guide on bundling TinyMCE in an Angular application using Vite.
 :keywords: integration, integrate, angular, bundle, vite, npm, tinymce
 :productSource: package-manager
 :packageName: @tinymce/tinymce-angular
 
-The https://github.com/tinymce/tinymce-angular[Official {productname} Angular component] integrates {productname} into Angular projects. This procedure creates a https://angular.dev/tools/cli/setup-local[basic Angular application] containing a bundled {productname} editor.
+This guide shows how to integrate the NPM version of {productname} in an Angular application using a module bundler Vite.
 
 For examples of the {productname} Angular integration, visit https://tinymce.github.io/tinymce-angular/[the tinymce-angular storybook].
 
@@ -15,7 +15,7 @@ This procedure requires https://nodejs.org/[Node.js (and NPM)].
 
 == Procedure
 
-. On a command line or command prompt, install the link:https://angular.dev/tools/cli[Angular CLI Tool] package.
+. From a terminal or command prompt, install the link:https://angular.dev/tools/cli[Angular CLI Tool] globally.
 +
 [source,sh]
 ----
@@ -27,27 +27,14 @@ npm install -g @angular/cli
 ----
 ng new --defaults --skip-git tinymce-angular-demo
 ----
-. Change into the newly created directory.
+. Go to the newly project directory and install `+tinymce+` and `+@tinymce/tinymce-angular+`.
 +
 [source,sh]
 ----
-cd tinymce-angular-demo
-----
-. Install the `+tinymce+` and `+@tinymce/tinymce-angular+` packages.
-+
-[source,sh]
-----
-npm install tinymce @tinymce/tinymce-angular
+cd tinymce-angular-demo && npm install tinymce @tinymce/tinymce-angular
 ----
 +
-include::partial$integrations/premium-plugins-install-step-link.adoc[]
-+
-[NOTE]
-====
-For information on configuring premium plugins when bundling, see: xref:bundling-plugins.adoc#using-premium-plugins[Using premium plugins].
-====
-+
-. Using a text editor, create `+src/app/editor.component.ts+` and set the contents to:
+. Create `+src/app/editor.component.ts+`
 +
 [source,ts]
 ----
@@ -74,10 +61,9 @@ import 'tinymce/plugins/lists';
 import 'tinymce/plugins/table';
 import 'tinymce/plugins/code';
 import 'tinymce/plugins/help';
-import 'tinymce/plugins/help/js/en.js';
+// Include resources that a plugin lazy-loads at the run-time
+import 'tinymce/plugins/help/js/i18n/keynav/en.js';
 import 'tinymce/plugins/wordcount';
-
-include::partial$integrations/premium-plugins-bundling.adoc[]
 
 // Content styles, including inline UI like fake cursors
 import 'tinymce/skins/content/default/content.js';
@@ -103,7 +89,7 @@ export class MyEditorComponent {
 }
 ----
 +
-. Using a text editor, open `+src/app/app.component.ts+` and update it to use the editor component:
+. Open `+src/app/app.component.ts+` and update it to use `MyEditorComponent`:
 +
 [source,ts]
 ----
@@ -122,7 +108,7 @@ import { MyEditorComponent } from './editor.component';
 export class AppComponent {}
 ----
 +
-. Run `+ng serve+` to start a dev server
+. Run the Angular development server
 +
 [source,sh]
 ----
@@ -130,16 +116,6 @@ ng serve
 ----
 +
 
-. Build the application for production:
-+
-[source,sh]
-----
-ng build
-----
-+
-This command creates an optimized production bundle in the `+dist+` directory.
-
-. If premium plugins are included, update the `+licenseKey+` option in the editor component and include your xref:license-key.adoc[License Key].
 
 == Next Steps
 

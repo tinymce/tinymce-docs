@@ -1,4 +1,5 @@
 
++
 . There are two ways to add the {productname} into the application:
 .. Lazy load {productname} using the provided `TINYMCE_SCRIPT_SRC` dependency provider.
 * Add {productname} to the `+assets+` configuration in `+angular.json+`. This will make {productname} available as a static asset to the application.
@@ -13,7 +14,6 @@
   }
 ]
 ----
-+
 
 * Update the component's dependency providers.
 +
@@ -30,7 +30,6 @@ import { EditorComponent, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
   ]
 })
 ----
-+
 
 .. Load {productname} into the application's runtime global scope.
 * Open `+angular.json+` and add {productname} to the _global scripts_ tag.
@@ -55,4 +54,3 @@ export class AppComponent {
   };
 }
 ----
-+

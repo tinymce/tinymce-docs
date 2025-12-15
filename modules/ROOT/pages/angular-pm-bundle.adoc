@@ -5,7 +5,7 @@
 :productSource: package-manager
 :packageName: @tinymce/tinymce-angular
 
-This guide shows how to integrate the NPM version of {productname} in an Angular application using a module bundler Vite.
+This guide shows how to integrate the NPM version of {productname} in an Angular application using a module bundler such as Vite.
 
 For examples of the {productname} Angular integration, visit https://tinymce.github.io/tinymce-angular/[the tinymce-angular storybook].
 
@@ -21,18 +21,21 @@ This procedure requires https://nodejs.org/[Node.js (and NPM)].
 ----
 npm install -g @angular/cli
 ----
+
 . Create a new Angular project named `+tinymce-angular-demo+`.
 +
 [source,sh]
 ----
 ng new --defaults --skip-git tinymce-angular-demo
 ----
+
 . Go to the newly project directory and install `+tinymce+` and `+@tinymce/tinymce-angular+`.
 +
 [source,sh]
 ----
 cd tinymce-angular-demo && npm install tinymce @tinymce/tinymce-angular
 ----
+
 +
 . Create `+src/app/editor.component.ts+`
 +
@@ -89,6 +92,7 @@ export class MyEditorComponent {
 }
 ----
 +
+
 . Open `+src/app/app.component.ts+` and update it to use `MyEditorComponent`:
 +
 [source,ts]
@@ -107,6 +111,7 @@ import { MyEditorComponent } from './editor.component';
 })
 export class AppComponent {}
 ----
+
 +
 . Run the Angular development server
 +
@@ -114,7 +119,6 @@ export class AppComponent {}
 ----
 ng serve
 ----
-+
 
 
 == Next Steps

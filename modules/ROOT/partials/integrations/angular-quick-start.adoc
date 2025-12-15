@@ -10,6 +10,7 @@ This procedure requires https://nodejs.org/[Node.js (and NPM)].
 
 == Procedure
 
+--
 . From a terminal or command prompt, install the link:https://angular.dev/tools/cli[Angular CLI Tool] globally.
 +
 [source,sh]
@@ -107,12 +108,11 @@ export class AppComponent {
   };
 }
 ----
-+
+
 endif::[]
 ifeval::["{productSource}" == "package-manager"]
 include::partial$integrations/angular-load-tinymce-independently.adoc[]
 endif::[]
-
 . Run the Angular a development server
 +
 [source,sh]
@@ -121,11 +121,11 @@ ng serve
 ----
 +
 
+
 ifeval::["{productSource}" == "package-manager"]
 [[angular-modules]]
 == Angular Modules
 `+EditorModule+` is available to import from `+@tinymce/tinymce-angular+`. Which should be included in your `+my.module.ts+` file.
-
 
 [source,ts]
 ----
@@ -141,7 +141,6 @@ import { EditorModule } from '@tinymce/tinymce-angular';
 })
 export class MyModule {}
 ----
-
 endif::[]
 
 

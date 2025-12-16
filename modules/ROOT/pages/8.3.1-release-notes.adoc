@@ -46,4 +46,4 @@ For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode
 === Views could not be opened during the `init` event.
 // #TINY-13463
 
-Prior to {release-version}, the `init` event did not open editor views, which meant that views triggered during initialization were not visible when the editor finished loading. {release-version} addresses this by ensuring that views can now be opened during the editor’s `init` event, ensuring that any views initialized at this stage are visible immediately after initialization completes.
+Prior to {release-version}, editor views were not registered until after the CSS was loaded, which meant that they could not be opened until after editor initialization. {release-version} addresses this by registering views sooner, before editor initialization.

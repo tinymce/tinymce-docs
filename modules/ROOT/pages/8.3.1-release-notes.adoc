@@ -25,17 +25,19 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== Suggested Edits
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Suggested Edits** includes the following fix.
 
-==== <Premium plugin name 1 change 1>
+==== View would close when the resource was still loading.
 
-// CCFR here.
+In previous versions of {productname}, opening the Suggested Edits view when the integration script was not yet loaded would cause the view to immediately close, requiring users to manually reopen it until the script was loaded.
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+This issue has been resolved in {productname} {release-version}. The editor now enters a loading state if the Suggested Edits view is opened while the integration script is loading, instead of immediately closing, and exits this state once the script has loaded.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
 
 
 [[bug-fixes]]

@@ -43,7 +43,7 @@ For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode
 
 {productname} {release-version} also includes the following bug fix<es>:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Views could not be opened during the `init` event.
+// #TINY-13463
 
-// CCFR here.
+Prior to {release-version}, editor views were not registered until after the CSS was loaded, which meant that they could not be opened until after editor initialization. {release-version} addresses this by registering views sooner, before editor initialization.

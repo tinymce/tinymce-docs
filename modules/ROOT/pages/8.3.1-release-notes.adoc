@@ -33,7 +33,7 @@ The {productname} {release-version} release includes an accompanying release of 
 
 ==== View would close when the resource was still loading.
 
-In previous versions of {productname}, the Suggested Edits view could automatically close while the integration script was still loading. As a result, the view was exited during editor initialization, requiring users to manually reopen it.
+In previous versions of {productname}, opening the Suggested Edits view when the integration script was not yet loaded would cause the view to immediately close, requiring users to manually reopen it until the script was loaded.
 
 This issue has been resolved in {productname} {release-version}. The editor now enters a loading state while the integration script is loading, preventing the Suggested Edits view from closing automatically during initialization.
 

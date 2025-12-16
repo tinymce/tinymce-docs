@@ -11,13 +11,12 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[overview]]
 == Overview
 
-{productname} {release-version} was released for {enterpriseversion} and {cloudname} on <weekday>, <month> <DD>^<st|nd|rd|th>^, <YYYY>. These release notes provide an overview of the changes for {productname} {release-version}, including:
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, December 17^th^, 2025. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
 // Remove sections and section boilerplates as necessary.
 // Pluralise as necessary or remove the placeholder plural marker.
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
-* xref:improvements[Improvements]
-* xref:bug-fixes[Bug fixes]
+* xref:bug-fixes[Bug fix]
 
 
 [[accompanying-premium-plugin-changes]]
@@ -41,9 +40,9 @@ For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc
 
 
 [[bug-fixes]]
-== Bug fixes
+== Bug fix
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fix:
 
 === Views could not be opened during the `init` event.
 // #TINY-13463

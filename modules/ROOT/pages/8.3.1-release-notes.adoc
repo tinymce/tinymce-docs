@@ -35,7 +35,7 @@ The {productname} {release-version} release includes an accompanying release of 
 
 In previous versions of {productname}, opening the Suggested Edits view when the integration script was not yet loaded would cause the view to immediately close, requiring users to manually reopen it until the script was loaded.
 
-This issue has been resolved in {productname} {release-version}. The editor now enters a loading state while the integration script is loading, preventing the Suggested Edits view from closing automatically during initialization.
+This issue has been resolved in {productname} {release-version}. The editor now enters a loading state if the Suggested Edits view is opened while the integration script is loading, instead of immediately closing, and exits this state once the script has loaded.
 
 For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
 

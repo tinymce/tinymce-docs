@@ -2,8 +2,6 @@
 
 The steps below use standalone components. If using Angular Modules, see xref:angular-modules[Angular Modules].
 
-For more examples of the {productname} Angular integration, visit https://tinymce.github.io/tinymce-angular/[the tinymce-angular storybook].
-
 == Prerequisites
 
 This procedure requires https://nodejs.org/[Node.js (and NPM)].
@@ -16,21 +14,21 @@ This procedure requires https://nodejs.org/[Node.js (and NPM)].
 ----
 npm install -g @angular/cli
 ----
-+
+
 . Create a new Angular project named `+tinymce-angular-demo+` using default settings and without Git initialization.
 +
 [source,sh]
 ----
 ng new --defaults --skip-git tinymce-angular-demo
 ----
-+
+
 . Move into the project directory and install `+tinymce-angular+`.
 +
 [source,sh]
 ----
 cd tinymce-angular-demo && npm install @tinymce/tinymce-angular
 ----
-+
+
 ifeval::["{productSource}" == "package-manager"]
 
 . Install the `+tinymce+`.
@@ -40,15 +38,6 @@ ifeval::["{productSource}" == "package-manager"]
 npm install tinymce
 ----
 +
-endif::[]
-ifeval::["{productSource}" != "package-manager"]
-
-. Install the `+tinymce-angular+` package.
-+
-[source,sh]
-----
-npm install @tinymce/tinymce-angular
-----
 endif::[]
 
 . Update the root component `+src/app/app.component.ts+` to import and use the `EditorComponent`.
@@ -121,10 +110,4 @@ include::partial$integrations/angular-load-tinymce-independently.adoc[]
 ng serve
 ----
 
-== Next Steps
-
-* For examples of the {productname} integration, see: https://tinymce.github.io/tinymce-angular/[the tinymce-angular storybook].
-* For information on customizing:
-** {productname} integration, see: xref:angular-ref.adoc[Angular framework Technical Reference].
-** {productname}, see: xref:basic-setup.adoc[Basic setup].
-** The Angular application, see: https://angular.dev[the Angular documentation].
+include::partial$integrations/angular-other-resources.adoc[]

@@ -26,7 +26,7 @@ import { EditorComponent, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 ]
 ----
 
-. Then update `+angular.json+` to include {productname} and other components as `+assets+`. This will make them available to the application.
+. Then update `+angular.json+` to include {productname} and other components as `+assets+`. This will make them available to the application as static assets.
 +
 [source,json]
 ----

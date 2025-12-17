@@ -1,11 +1,11 @@
-= Bundling TinyMCE from NPM in an Angular application
+= Bundling TinyMCE from .zip package in Angular
 :navtitle: Using a package manager with bundling
-:description: A guide on bundling TinyMCE in an Angular application using Vite.
+:description: A guide on bundling TinyMCE from a .zip package in an Angular application.
 :keywords: integration, integrate, angular, bundle, vite, npm, tinymce
 :productSource: package-manager
 :packageName: @tinymce/tinymce-angular
 
-This guide shows how to integrate the NPM version of {productname} in an Angular application.
+This guide shows how to integrate {productname} from a `.zip` package in an Angular application.
 
 == Prerequisites
 
@@ -27,15 +27,16 @@ npm install -g @angular/cli
 ng new --defaults --skip-git tinymce-angular-demo
 ----
 
-. Go to the newly project directory and install `+tinymce+` and `+@tinymce/tinymce-angular+`.
+. Go to the new project directory and `+@tinymce/tinymce-angular+`.
 +
 [source,sh]
 ----
-cd tinymce-angular-demo && npm install tinymce @tinymce/tinymce-angular
+cd tinymce-angular-demo && npm install @tinymce/tinymce-angular
 ----
 
+. Unzip the content of the `+tinymce/js+` folder from the link:{download-enterprise}[{productname} zip] into the `+src+` folder.
 
-. Create `+src/app/editor.component.ts+`.
+. Create `+src/app/editor.component.ts+` with the following:
 +
 [source,ts]
 ----
@@ -43,32 +44,31 @@ import { Component } from '@angular/core';
 import { EditorComponent } from '@tinymce/tinymce-angular';
 
 // Ensure you import TinyMCE to register the global variable required by other components
-import 'tinymce/tinymce';
+import '../tinymce/tinymce';
 // DOM model
-import 'tinymce/models/dom/model';
+import '../tinymce/models/dom/model';
 // Theme
-import 'tinymce/themes/silver';
+import '../tinymce/themes/silver';
 // Toolbar icons
-import 'tinymce/icons/default';
+import '../tinymce/icons/default';
 // Editor styles
-import 'tinymce/skins/ui/oxide/skin.min.css';
+import '../tinymce/skins/ui/oxide/skin.js';
+// Content styles, including inline UI like fake cursors
+import '../tinymce/skins/content/default/content.js';
+import '../tinymce/skins/ui/oxide/content.js';
 
 // Import plugins
-import 'tinymce/plugins/advlist';
-import 'tinymce/plugins/autolink';
-import 'tinymce/plugins/link';
-import 'tinymce/plugins/image';
-import 'tinymce/plugins/lists';
-import 'tinymce/plugins/table';
-import 'tinymce/plugins/code';
-import 'tinymce/plugins/help';
+import '../tinymce/plugins/advlist';
+import '../tinymce/plugins/autolink';
+import '../tinymce/plugins/link';
+import '../tinymce/plugins/image';
+import '../tinymce/plugins/lists';
+import '../tinymce/plugins/table';
+import '../tinymce/plugins/code';
+import '../tinymce/plugins/help';
 // Include resources that a plugin lazy-loads at the run-time
-import 'tinymce/plugins/help/js/i18n/keynav/en.js';
-import 'tinymce/plugins/wordcount';
-
-// Content styles, including inline UI like fake cursors
-import 'tinymce/skins/content/default/content.js';
-import 'tinymce/skins/ui/oxide/content.js';
+import '../tinymce/plugins/help/js/i18n/keynav/en.js';
+import '../tinymce/plugins/wordcount';
 
 @Component({
   selector: 'app-editor',
@@ -89,9 +89,8 @@ export class MyEditorComponent {
   };
 }
 ----
-+
 
-. Open `+src/app/app.component.ts+` and update it to use `MyEditorComponent`:
+. Update `+src/app/app.component.ts+` to use `MyEditorComponent`.
 +
 [source,ts]
 ----

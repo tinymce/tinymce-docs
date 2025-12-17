@@ -11,13 +11,12 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[overview]]
 == Overview
 
-{productname} {release-version} was released for {enterpriseversion} and {cloudname} on <weekday>, <month> <DD>^<st|nd|rd|th>^, <YYYY>. These release notes provide an overview of the changes for {productname} {release-version}, including:
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, December 17^th^, 2025. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
 // Remove sections and section boilerplates as necessary.
 // Pluralise as necessary or remove the placeholder plural marker.
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
-* xref:improvements[Improvements]
-* xref:bug-fixes[Bug fixes]
+* xref:bug-fixes[Bug fix]
 
 
 [[accompanying-premium-plugin-changes]]
@@ -25,36 +24,27 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== Suggested Edits
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Suggested Edits** includes the following fix.
 
-==== <Premium plugin name 1 change 1>
+==== View would close when the resource was still loading.
 
-// CCFR here.
+In previous versions of {productname}, opening the Suggested Edits view when the integration script was not yet loaded would cause the view to immediately close, requiring users to manually reopen it until the script was loaded.
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+This issue has been resolved in {productname} {release-version}. The editor now enters a loading state if the Suggested Edits view is opened while the integration script is loading, instead of immediately closing, and exits this state once the script has loaded.
 
-
-[[improvements]]
-== Improvements
-
-{productname} {release-version} also includes the following improvement<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
 
 
 [[bug-fixes]]
-== Bug fixes
+== Bug fix
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fix:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Views could not be opened during the `init` event.
+// #TINY-13463
 
-// CCFR here.
+Prior to {release-version}, editor views were not registered until after the CSS was loaded, which meant that they could not be opened until after editor initialization. {release-version} addresses this by registering views sooner, before editor initialization.

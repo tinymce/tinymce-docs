@@ -1,7 +1,5 @@
 :packageName: tinymce-react
 
-For more live examples of {productname} React component, visit https://tinymce.github.io/tinymce-react/[the tinymce-react storybook].
-
 == Prerequisites
 
 This procedure requires https://nodejs.org/[Node.js (and NPM)].
@@ -85,21 +83,21 @@ npm install -D fs-extra
 ----
 +
 
-. Setup a `postinstall` script to copy {productname} to `public` directory which makes {productname} available as static assets
+. Setup a `postinstall` script to copy {productname} to `public` directory, which automatically makes {productname} and other components available as static assets after each installation.
 +
-.Add `postinstall.js` script with the following:
+.Add `postinstall.js` file.
 [source,js]
 ----
 import fse from 'fs-extra';
 import path from 'path';
+
 const topDir = import.meta.dirname;
 fse.emptyDirSync(path.join(topDir, 'public', 'tinymce'));
 fse.copySync(path.join(topDir, 'node_modules', 'tinymce'), path.join(topDir, 'public', 'tinymce'), { overwrite: true });
 ----
-+
 
 +
-.Update `postinstall` target in `package.json` to run the `postinstall.js` script
+.Update `postinstall` target in `package.json` to run the `postinstall.js` script.
 [source,json]
 ----
 {
@@ -110,26 +108,23 @@ fse.copySync(path.join(topDir, 'node_modules', 'tinymce'), path.join(topDir, 'pu
   }
 }
 ----
-+
 
-. Exclude `public/tinymce` from Git tracking
+. Exclude `+public/tinymce+` from Git tracking
 +
 [source,.gitignore]
 ----
 # ... other rules omitted for brevity ...
 /public/tinymce/
 ----
-+
 
-. In this instance, run the `postinstall` to copy {productname} to the `public` directory. Note: This script will run automatically after every package installation.
+. In this instance, run the `postinstall` to copy {productname} to the `public` directory.
 +
 [source,sh]
 ----
 npm run postinstall
 ----
-+
 
-. Add `Editor` component to `+./src/App.jsx+` and point `tinymceScriptSrc` the `tinymce` location.
+. Add `Editor` component to `+./src/App.jsx+` and point `tinymceScriptSrc` to the `tinymce` location.
 +
 [source,jsx]
 ----
@@ -171,15 +166,15 @@ export default function App() {
   );
 }
 ----
-+
 
 endif::[]
+
 ifeval::["{productUse}" == "bundle"]
-. Install the `+tinymce+` and `+@tinymce/tinymce-react+` packages
+. Install the `+tinymce+` package.
 +
 [source,sh]
 ----
-npm install tinymce @tinymce/tinymce-react
+npm install tinymce
 ----
 +
 
@@ -188,7 +183,41 @@ npm install tinymce @tinymce/tinymce-react
 [source,jsx]
 ----
 import { Editor } from '@tinymce/tinymce-react';
-include::partial$integrations/import-tinymce-statements.adoc[]
+// Ensure to import tinymce first as other components expect
+// a global variable `tinymce` to exist
+import 'tinymce/tinymce';
+// DOM model
+import 'tinymce/models/dom/model'
+// Theme
+import 'tinymce/themes/silver';
+// Toolbar icons
+import 'tinymce/icons/default';
+// Editor styles
+import 'tinymce/skins/ui/oxide/skin';
+// Content styles, including inline UI like fake cursors
+import 'tinymce/skins/content/default/content';
+import 'tinymce/skins/ui/oxide/content';
+
+// Import plugins
+import 'tinymce/plugins/anchor';
+import 'tinymce/plugins/advlist';
+import 'tinymce/plugins/autolink';
+import 'tinymce/plugins/charmap';
+import 'tinymce/plugins/code';
+import 'tinymce/plugins/media';
+import 'tinymce/plugins/visualblocks';
+import 'tinymce/plugins/fullscreen';
+import 'tinymce/plugins/insertdatetime';
+import 'tinymce/plugins/preview';
+import 'tinymce/plugins/help';
+// Include resources that a plugin lazy-loads at the run-time
+import 'tinymce/plugins/help/js/i18n/keynav/en';
+import 'tinymce/plugins/image';
+import 'tinymce/plugins/link';
+import 'tinymce/plugins/lists';
+import 'tinymce/plugins/searchreplace';
+import 'tinymce/plugins/table';
+import 'tinymce/plugins/wordcount';
 
 export default function BundledEditor(props) {
   return (
@@ -199,9 +228,8 @@ export default function BundledEditor(props) {
   );
 }
 ----
-+
 
-. Use `BundleEditor` component in `+./src/App.jsx+` as the following:
+. Add `BundledEditor` component into `+./src/App.jsx+` with necessary configurations.
 +
 [source,jsx]
 ----
@@ -242,16 +270,16 @@ export default function App() {
   );
 }
 ----
-+
 endif::[]
+
 endif::[]
+
 ifeval::["{productSource}" == "zip"]
 ifeval::["{productUse}" == "host"]
 
 . Unzip the content of the `+tinymce/js+` folder from the link:{download-enterprise}[{productname} zip] into the `+public+` folder
-+
 
-. Add `+'public/tinymce'+` to the `+ignores+` array to `+./eslint.config.js` file.
+. Add `+'public/tinymce'+` to the `+ignores+` array to `+./eslint.config.js+` file.
 +
 .Diff of `.eslint.config.js`
 [source,patch]
@@ -263,7 +291,6 @@ export default tseslint.config(
      extends: [js.configs.recommended, ...tseslint.configs.recommended],
      files: ['**/*.{ts,tsx}'],
 ----
-+
 
 . Update `+./src/App.jsx+` as below. *Note*: Remember to point `tinymceScriptSrc` the `tinymce` location.
 +
@@ -307,9 +334,6 @@ export default function App() {
   );
 }
 ----
-+
-
-. Update the `+licenseKey+` option in the editor element and include your xref:license-key.adoc[License Key].
 endif::[]
 ifeval::["{productUse}" == "bundle"]
 
@@ -319,7 +343,7 @@ ifeval::["{productUse}" == "bundle"]
 ----
 npm install script-loader
 ----
-+
+
 . Unzip the content of the `+tinymce/js+` folder from the link:{download-enterprise}[{productname} zip] into the `+src+` folder.
 
 . Add `+'src/tinymce'+` to the `+ignores+` array to `+./eslint.config.js` file.
@@ -341,14 +365,60 @@ index 092408a..1ab8db4 100644
      extends: [js.configs.recommended, ...tseslint.configs.recommended],
      files: ['**/*.{ts,tsx}'],
 ----
+
+. Install `+vite-plugin-commonjs+` and update `vite.config.ts` file to enable support for `+CommonJS+` modules.
 +
+[source,typescript]
+----
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import commonjs from 'vite-plugin-commonjs';
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react(), commonjs()],
+});
+----
 
 . Create `+./src/BundledEditor.jsx+` and set the contents to:
 +
 [source,jsx]
 ----
 import { Editor } from '@tinymce/tinymce-react';
-include::partial$integrations/import-tinymce-statements.adoc[]
+// Ensure to import `tinymce` first as other components expect
+// a global variable `tinymce` to exist
+import './tinymce/tinymce';
+// DOM model
+import './tinymce/models/dom/model'
+// Theme
+import './tinymce/themes/silver';
+// Toolbar icons
+import './tinymce/icons/default';
+// Editor styles
+import './tinymce/skins/ui/oxide/skin';
+// Content styles, including inline UI like fake cursors
+import './tinymce/skins/content/default/content';
+import './tinymce/skins/ui/oxide/content';
+// Import plugins
+import './tinymce/plugins/anchor';
+import './tinymce/plugins/advlist';
+import './tinymce/plugins/autolink';
+import './tinymce/plugins/charmap';
+import './tinymce/plugins/code';
+import './tinymce/plugins/media';
+import './tinymce/plugins/visualblocks';
+import './tinymce/plugins/fullscreen';
+import './tinymce/plugins/insertdatetime';
+import './tinymce/plugins/preview';
+import './tinymce/plugins/help';
+// Include resources that a plugin lazy-loads at the run-time
+import './tinymce/plugins/help/js/i18n/keynav/en';
+import './tinymce/plugins/image';
+import './tinymce/plugins/link';
+import './tinymce/plugins/lists';
+import './tinymce/plugins/searchreplace';
+import './tinymce/plugins/table';
+import './tinymce/plugins/wordcount';
 
 export default function BundledEditor(props) {
   return (
@@ -359,8 +429,6 @@ export default function BundledEditor(props) {
   );
 }
 ----
-+
-. Update the `+licenseKey+` option to include your xref:license-key.adoc[License Key].
 
 . Add `BundleEditor` component into `+./src/App.jsx+` as the following:
 +
@@ -406,7 +474,6 @@ endif::[]
 endif::[]
 
 . Test the application.
-+
 * To start the development server run:
 +
 [source,sh]
@@ -414,19 +481,13 @@ endif::[]
 npm run dev
 ----
 
-* To stop the development server, select on the command line or command prompt and press _Ctrl+C_.
-
-
-== Deploying the application
-
-The application will require further configuration before it can be deployed to a production environment. For information on configuring the application for deployment, see: https://vitejs.dev/guide/build[Building for Production] or https://vitejs.dev/guide/static-deploy.html[Deploying a Static Site].
-
-== Next Steps
+== Other resources
 
 ifeval::["{productUse}" == "bundle"]
 * For information on bundling, see: xref:introduction-to-bundling-tinymce.adoc[]
 endif::[]
-* For examples of the {productname} integration, see: https://tinymce.github.io/tinymce-react/[the tinymce-react storybook].
+* For examples of the {productname} React integration, see: https://tinymce.github.io/tinymce-react/[the tinymce-react storybook].
+* For guides on integrating {productname} premium plugins, see: xref:bundling-plugins.adoc#using-premium-plugins[Using premium plugins].
 * For information on customizing:
 ** {productname} integration, see: xref:react-ref.adoc[].
 ** {productname}, see: xref:basic-setup.adoc[].

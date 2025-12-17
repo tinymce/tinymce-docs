@@ -1,9 +1,11 @@
-= Self-host TinyMCE from .zip package in React
+= Lazy-loading TinyMCE from .zip package in React
 :page-aliases: react-zip.adoc
 :navtitle: Using a TinyMCE .zip package in React
-:description: A guide on self-hosting a .zip version of TinyMCE into React.
+:description: A guide on lazy-loading a .zip version of TinyMCE in a React application.
 :keywords: integration, integrate, react, reactjs, vite, tinymce-react, host
 :productSource: zip
 :productUse: host
+
+This guide shows how to self-host and lazy-load {productname} from a `.zip` package into a React application.
 
 include::partial$integrations/react-quick-start.adoc[]

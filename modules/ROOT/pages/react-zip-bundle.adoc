@@ -1,8 +1,10 @@
 = Bundling TinyMCE from .zip package in React
 :navtitle: Using a .zip package with a module bundler
-:description: A guide on integrating a .zip version of TinyMCE in a React project by bundling it.
+:description: A guide on bundling a .zip version of TinyMCE in a React project.
 :keywords: integration, integrate, react, reactjs, vite, tinymce-react, bundle
 :productSource: zip
 :productUse: bundle
+
+This shows how to self-host and bundle {productname} from a `.zip` package into a React application.
 
 include::partial$integrations/react-quick-start.adoc[]

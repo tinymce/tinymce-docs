@@ -20,7 +20,6 @@ env:
   TARGET: ${{ inputs.environment || 'staging' }}
   ACCT: ${{ inputs.environment == 'production' && '990880627107' || '327995277200' }}
   BUCKET: ${{ inputs.environment == 'production' && 'tiny-cloud-antora-docs-release' || 'tiny-cloud-antora-docs-preview' }}
-  DISTRIBUTION: ${{ inputs.environment == 'production' && 'E3LFU502SQ5UR' || 'E7DUUPEI08HNW'}}
   RUN: run-${{ github.run_number }}-${{ github.run_attempt }}
 
 jobs:
@@ -66,9 +65,15 @@ jobs:
         role-session-name: tinymce-docs-${{ env.TARGET }}-release
         aws-region: us-east-1
 
-    - name: Upload website preview to S3
+    - name: Upload website to S3
       run: |
-        aws s3 sync ./build s3://${BUCKET}/main/${RUN}
+        aws s3 sync ./build s3://${BUCKET}/main/${RUN} \
+          --exclude "*/index.html" \
+          --cache-control "public, max-age=3600, stale-while-revalidate=86400"
+        aws s3 sync ./build s3://${BUCKET}/main/${RUN} \
+          --exclude "*" \
+          --include "*/index.html" \
+          --cache-control "max-age=300, stale-while-revalidate=86400"
 
     - name: Create redirects on S3
       uses: tinymce/tinymce-docs-generate-redirects-action@v1.0
@@ -89,9 +94,3 @@ jobs:
         bucket: ${{ env.BUCKET }}
         folder: main
         parallel: 20
-
-    - name: Invalidate Cloudfront Cache
-      # sleep to wait for envoy's version pointer caching to expire
-      run: |
-        sleep 30s
-        aws cloudfront create-invalidation --distribution-id ${{ env.DISTRIBUTION }} --paths "/docs/*"

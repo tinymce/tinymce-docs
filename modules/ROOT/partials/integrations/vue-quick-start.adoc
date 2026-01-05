@@ -70,9 +70,7 @@ ifeval::["{productSource}" == "zip"]
 
 . Unzip the content of the `+tinymce/js+` folder from the link:{download-enterprise}[{productname} zip] into the `+public+` folder.
 
-. Add `+'src/tinymce'+` to the `+ignores+` array to `+./eslint.config.js` file.
-
-. Update `+App.vue+` as below. *Note*: Remember to point `tinymceScriptSrc` to `/tinymce/tinymce.min.js`
+. Update `+App.vue+` with the below code snippet. *Note*: `+tinymceSrcScript+` references to the public `+tinymce+` using absolute root path.
 +
 [source,jsx]
 ----
@@ -115,9 +113,10 @@ import Editor from '@tinymce/tinymce-vue'
 endif::[]
 
 ifeval::["{productSource}" != "zip"]
-. Update `+App.vue+`, then import and add `+Editor+` component from `+@tinymce/tinymce-vue+` as below:
+
 ifeval::["{productSource}" == "cloud"]
 +
+. Update `+App.vue+` to include `+Editor+` from `+tinymce/tinymce-vue+` as below:
 .For example:
 +
 [source,jsx]
@@ -158,16 +157,12 @@ import Editor from '@tinymce/tinymce-vue'
 </style>
 ----
 
-. Update the `+api-key+` prop in the Editor element with your link:{accountsignup}/[{cloudname} API key].
-+
-[source,jsx]
-----
-<Editor api-key='no-api-key' :init="{ /* your other settings */ }" />
-----
+. Update the `+apiKey+` prop with your link:{accountsignup}/[{cloudname} API key].
 
 endif::[]
 ifeval::["{productSource}" == "lazy-load"]
 +
+. Update `+App.vue+` with the below code snippet. *Note*: `+tinymceSrcScript+` references to the public `+tinymce+` using absolute root path.
 .For example:
 +
 [source,jsx]

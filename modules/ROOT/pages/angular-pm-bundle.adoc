@@ -1,11 +1,11 @@
-= Bundling TinyMCE from NPM in an Angular application
+= Bundling TinyMCE in Angular
 :navtitle: Using a package manager with bundling
 :description: A guide on bundling TinyMCE in an Angular application using Vite.
 :keywords: integration, integrate, angular, bundle, vite, npm, tinymce
 :productSource: package-manager
 :packageName: @tinymce/tinymce-angular
 
-This guide shows how to integrate the NPM version of {productname} in an Angular application.
+This guide shows how to integrate {productname} in an Angular application using the link:https://github.com/tinymce/tinymce-angular[{productname} Angular component].
 
 == Prerequisites
 
@@ -91,7 +91,7 @@ export class MyEditorComponent {
 ----
 +
 
-. Open `+src/app/app.component.ts+` and update it to use `MyEditorComponent`:
+. Open `+app.component.ts+` and import `+MyEditorComponent+`.
 +
 [source,ts]
 ----

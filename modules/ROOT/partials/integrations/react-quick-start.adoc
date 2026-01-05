@@ -21,7 +21,7 @@ cd tinymce-react-demo && npm install @tinymce/tinymce-react
 ----
 
 ifeval::["{productSource}" == "cloud"]
-. Add `Editor` component to `+./src/App.jsx+`. By default, it will fetch {productname} from Tiny Cloud:
+. Update `+App.jsx+` to include `+Editor+` from `+tinymce/tinymce-react+` as below.
 +
 [source,jsx]
 ----
@@ -124,7 +124,7 @@ fse.copySync(path.join(topDir, 'node_modules', 'tinymce'), path.join(topDir, 'pu
 npm run postinstall
 ----
 
-. Add `Editor` component to `+./src/App.jsx+` and point `tinymceScriptSrc` to the `tinymce` location.
+. Update `+App.jsx+` to include `+Editor+` component. **Note**: `+tinymceSrcScript+` references to the public `+tinymce+` using absolute root path.
 +
 [source,jsx]
 ----
@@ -178,7 +178,7 @@ npm install tinymce
 ----
 +
 
-. Add `+./src/BundledEditor.jsx+` and add `Editor` component as below:
+. Add `+BundledEditor.jsx+` and import `+Editor+` and `+tinymce+` components as below.
 +
 [source,jsx]
 ----
@@ -229,7 +229,7 @@ export default function BundledEditor(props) {
 }
 ----
 
-. Add `BundledEditor` component into `+./src/App.jsx+` with necessary configurations.
+. Add `BundledEditor` component with configuration into `+App.jsx+`.
 +
 [source,jsx]
 ----
@@ -277,7 +277,7 @@ endif::[]
 ifeval::["{productSource}" == "zip"]
 ifeval::["{productUse}" == "host"]
 
-. Unzip the content of the `+tinymce/js+` folder from the link:{download-enterprise}[{productname} zip] into the `+public+` folder
+. Unzip the content of the `+tinymce/js+` folder from the link:{download-enterprise}[{productname} zip] into the `+public+` folder. This will make `+tinymce+` avaiable to the application as static assets.
 
 . Add `+'public/tinymce'+` to the `+ignores+` array to `+./eslint.config.js+` file.
 +
@@ -292,7 +292,7 @@ export default tseslint.config(
      files: ['**/*.{ts,tsx}'],
 ----
 
-. Update `+App.jsx+` as below. *Note*: Remember to point to `tinymceScriptSrc` to the `tinymce` location.
+. Update `+App.jsx+` with the below code snippet. **Note**: `+tinymceSrcScript+` references to the public `+tinymce+` using absolute root path.
 +
 [source,jsx]
 ----
@@ -380,7 +380,7 @@ export default defineConfig({
 });
 ----
 
-. Create `+./src/BundledEditor.jsx+` and set the contents to:
+. Create `+./src/BundledEditor.jsx+` with the following code snippet:
 +
 [source,jsx]
 ----
@@ -430,7 +430,7 @@ export default function BundledEditor(props) {
 }
 ----
 
-. Add `BundleEditor` component into `+./src/App.jsx+` as the following:
+. Add `BundleEditor` component with configuration into `+App.jsx+`.
 +
 [source,jsx]
 ----
@@ -473,8 +473,7 @@ export default function App() {
 endif::[]
 endif::[]
 
-. Test the application.
-* To start the development server run:
+. Run the development server to test the application:
 +
 [source,sh]
 ----

@@ -1,11 +1,11 @@
-= Bundling TinyMCE from .zip package in Angular
+= Bundling TinyMCE from a .zip package in Angular
 :navtitle: Using a package manager with bundling
 :description: A guide on bundling TinyMCE from a .zip package in an Angular application.
 :keywords: integration, integrate, angular, bundle, vite, npm, tinymce
 :productSource: package-manager
 :packageName: @tinymce/tinymce-angular
 
-This guide shows how to integrate {productname} from a `.zip` package in an Angular application.
+This guide shows how to integrate {productname} from a `.zip` package in an Angular application using the link:https://github.com/tinymce/tinymce-angular[{productname} Angular component].
 
 == Prerequisites
 
@@ -90,7 +90,7 @@ export class MyEditorComponent {
 }
 ----
 
-. Update `+src/app/app.component.ts+` to use `MyEditorComponent`.
+. Update `+app.component.ts+` to import `MyEditorComponent`.
 +
 [source,ts]
 ----

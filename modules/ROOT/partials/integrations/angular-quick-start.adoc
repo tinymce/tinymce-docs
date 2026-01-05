@@ -40,7 +40,7 @@ npm install tinymce
 +
 endif::[]
 
-. Update the root component `+src/app/app.component.ts+` to import and use the `EditorComponent`.
+. Update the root component `+app.component.ts+` to import `+EditorComponent+` component.
 ifeval::["{productSource}" == "cloud"]
 +
 [source,ts,subs="attributes+"]
@@ -109,5 +109,6 @@ include::partial$integrations/angular-load-tinymce-independently.adoc[]
 ----
 ng serve
 ----
+
 
 include::partial$integrations/angular-other-resources.adoc[]

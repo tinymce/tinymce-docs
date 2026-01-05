@@ -292,7 +292,7 @@ export default tseslint.config(
      files: ['**/*.{ts,tsx}'],
 ----
 
-. Update `+./src/App.jsx+` as below. *Note*: Remember to point `tinymceScriptSrc` the `tinymce` location.
+. Update `+App.jsx+` as below. *Note*: Remember to point to `tinymceScriptSrc` to the `tinymce` location.
 +
 [source,jsx]
 ----

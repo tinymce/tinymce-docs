@@ -1,13 +1,11 @@
-= Bundling TinyMCE with a Vue.js application
+= Bundling TinyMCE in a Vue.js application
 :navtitle: Using a package manager with bundling
 :description: A guide on bundling TinyMCE with a Vue.js application using a module loader.
 :keywords: integration, integrate, vue, vuejs, bundle, webpack, vite
 :productSource: package-manager
 :packageName: @tinymce/tinymce-vue
 
-The link:https://github.com/tinymce/tinymce-vue[Official {productname} Vue.js component] integrates {productname} into Vue.js projects, providing a powerful WYSIWYG editor within the Vue ecosystem. This procedure creates a link:https://cli.vuejs.org/guide/creating-a-project.html#vue-create[basic Vue.js application] containing a bundled {productname} editor.
-
-Version 4 and later of the `+tinymce-vue+` package supports Vue.js 3.x, but does not support Vue.js 2.x. For Vue.js 2.x applications, use `+tinymce-vue+` version 3.
+This guide shows how to bundle {productname} into a Vue.js application using link:https://github.com/tinymce/tinymce-vue[{productname} Vue.js component].
 
 == Prerequisites
 
@@ -25,6 +23,7 @@ This procedure requires:
 ----
 npm create vue@3
 ----
+
 * If a Vue.js 2.x project is required, instead use:
 +
 [source,sh]
@@ -36,16 +35,16 @@ npm create vue@2
 ====
 As per the link:https://vuejs.org/about/faq.html#what-s-the-difference-between-vue-2-and-vue-3[Vue FAQ], _Vue 2 will reach End of Life by the end of 2023_.
 ====
-+
+
 * Follow the prompts and type `+tinymce-vue-demo+` as the project name.
-. Change into the newly created directory.
+. Go into the newly created directory.
 +
 [source,sh]
 ----
 cd tinymce-vue-demo
 ----
-. Install the `+tinymce+` and `+tinymce-vue+` packages.
 
+. Install the `+tinymce+` and `+tinymce-vue+` packages.
 * For Vue.js 3.x users:
 +
 [source,sh]
@@ -60,21 +59,14 @@ npm install tinymce "@tinymce/tinymce-vue"
 npm install tinymce "@tinymce/tinymce-vue@^3"
 ----
 
-include::partial$integrations/premium-plugins-install-step-link.adoc[]
-+
-[NOTE]
-====
-For information on configuring premium plugins when bundling, see: xref:bundling-plugins.adoc#using-premium-plugins[Using premium plugins].
-====
-+
-. Using a text editor, create `+src/editor.js+` and set the contents to:
+. Create `+src/editor.js+` and set the contents to:
 +
 [source,js]
 ----
 // Add the @tinymce/tinymce-vue wrapper to the bundle
 import Editor from '@tinymce/tinymce-vue';
 
-// TinyMCE so the global var exists
+// Ensure you import TinyMCE to register the global variable required by other components
 import 'tinymce/tinymce';
 // DOM model
 import 'tinymce/models/dom/model';
@@ -94,9 +86,9 @@ import 'tinymce/plugins/lists';
 import 'tinymce/plugins/table';
 import 'tinymce/plugins/code';
 import 'tinymce/plugins/help';
+// Include resources that a plugin lazy-loads at the run-time
+import 'tinymce/plugins/help/js/i18n/keynav/en.js';
 import 'tinymce/plugins/wordcount';
-
-include::partial$integrations/premium-plugins-bundling.adoc[]
 
 // Content styles, including inline UI like fake cursors
 import 'tinymce/skins/content/default/content.js';
@@ -106,9 +98,9 @@ import 'tinymce/skins/ui/oxide/content.js';
 export default Editor;
 ----
 +
-. Using a text editor, open `+src/App.vue+` and replace the contents with:
+. Update `+src/App.vue+` to import and configure `+Editor+`.
 +
-[source,vue]
+[source,jsx]
 ----
 <template>
   <div>
@@ -116,7 +108,7 @@ export default Editor;
     <Editor
       v-model="content"
       :init="editorConfig"
-      license-key="gpl"
+      licenseKey="gpl"
     />
   </div>
 </template>
@@ -142,38 +134,20 @@ export default {
 };
 </script>
 ----
-+
-. Run the development server:
+
+. To start the development server, run:
 +
 [source,sh]
 ----
 npm run dev
 ----
-+
-The development server uses Vite to bundle your application on-the-fly. Vite processes all the `import` statements and includes the TinyMCE modules in the development bundle.
 
-. Build the application for production:
-+
-[source,sh]
-----
-npm run build
-----
-+
-This command creates an optimized production bundle in the `+dist+` directory.
+== Other resources
 
-. Preview the production build:
-+
-[source,sh]
-----
-npm run preview
-----
-+
-. Update the `+license-key+` property in the editor component and include your xref:license-key.adoc[License Key].
-
-== Next Steps
-
+* For reporting issues, go to: link:https://github.com/tinymce/tinymce-vue/issues[{productname} Vue.js issues].
+* For more examples of `tinymce-vue` wrapper, see: https://tinymce.github.io/tinymce-vue/[the tinymce-vue storybook].
 * For information on bundling, see: xref:introduction-to-bundling-tinymce.adoc[]
-* For examples of the {productname} integration, see: https://tinymce.github.io/tinymce-vue/[the tinymce-vue storybook].
+* For guides on integrating {productname} premium plugins, see: xref:bundling-plugins.adoc#using-premium-plugins[Using premium plugins].
 * For information on customizing:
 ** {productname} integration, see: xref:vue-ref.adoc[Vue.js framework Technical Reference].
 ** {productname}, see: xref:basic-setup.adoc[Basic setup].

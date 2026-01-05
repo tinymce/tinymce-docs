@@ -1,7 +1,9 @@
-= Using the TinyMCE .zip package with the Vue.js framework
+= Lazy-load TinyMCE from .zip package in Vue.js application
 :navtitle: Using a .zip package
 :description: A guide on integrating a .zip version of TinyMCE into the Vue.js framework.
 :keywords: integration, integrate, vue, vuejs, tinymce-vue
 :productSource: zip
+
+This guide shows how to self-host TinyMCE from .zip package in a Vue.js application using link:https://github.com/tinymce/tinymce-vue[{productname} Vue.js component].
 
 include::partial$integrations/vue-quick-start.adoc[]

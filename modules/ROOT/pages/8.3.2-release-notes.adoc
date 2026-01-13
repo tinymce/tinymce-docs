@@ -29,8 +29,9 @@ The {productname} {release-version} release includes an accompanying release of 
 **Media Optimizer** includes the following improvement.
 
 === Placeholder loading had two progress indicators
+// #TINY-13163
 
-// TODO: add documentation
+Uploading a video in {productname} could display two progress indicators at the same time (a spinner and a progress bar), which unnecessarily cluttered the UI and made upload status harder to interpret. In {release-version}, the upload experience was updated to display only a single progress indicator: a progress bar when the upload duration can be estimated, or a spinner when the remaining time is unknown, resulting in a cleaner and clearer interface during video uploads.
 
 For information on the **Media Optimizer** plugin, see: xref:uploadcare.adoc[Media Optimizer].
 

@@ -14,7 +14,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 {productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, January 14^th^, 2026. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
-* xref:improvements[Improvements]
+* xref:improvement[Improvement]
 
 
 [[accompanying-premium-plugin-changes]]
@@ -26,7 +26,7 @@ The following premium plugin updates were released alongside {productname} {rele
 
 The {productname} {release-version} release includes an accompanying release of the **Media Optimizer** premium plugin.
 
-**Media Optimizer** includes the following improvement.
+**Media Optimizer** includes the following fix.
 
 === Placeholder loading had two progress indicators
 // #TINY-13163

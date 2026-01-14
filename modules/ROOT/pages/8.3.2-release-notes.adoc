@@ -14,7 +14,7 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 {productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, January 14^th^, 2026. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
-* xref:bug-fixes[Bug fix]
+* xref:improvement[Improvement]
 
 
 [[accompanying-premium-plugin-changes]]
@@ -22,25 +22,26 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== Media Optimizer
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Media Optimizer** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Media Optimizer** includes the following fix.
 
-==== <Premium plugin name 1 change 1>
+=== Placeholder loading had two progress indicators
+// #TINY-13163
 
-// CCFR here.
+Uploading a video in {productname} could display two progress indicators at the same time (a spinner and a progress bar), which unnecessarily cluttered the UI and made upload status harder to interpret. In {release-version}, the upload experience was updated to display only a single progress indicator: a progress bar when the upload duration can be estimated, or a spinner when the remaining time is unknown, resulting in a cleaner and clearer interface during video uploads.
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+For information on the **Media Optimizer** plugin, see: xref:uploadcare.adoc[Media Optimizer].
 
 
-[[bug-fixes]]
-== Bug fix
+[[improvements]]
+== Improvements
 
-{productname} {release-version} also includes the following bug fix:
+{productname} {release-version} also includes the following improvement:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== `uc-video` elements are not refreshed on undo/redo actions
+// #TINY-12884
 
-// CCFR here.
+Previously, undo and redo operations rewrote the entire editor content, causing embedded `uc-video` elements to be rewritten and unintentionally refreshed, which disrupted playback and user experience. This behavior affected any content containing `uc-video`, as media elements were reloaded even when unrelated changes were undone or redone. The undo/redo mechanism has been updated to align with the existing iframe handling logic so that, when `uc-video` elements are present, only the modified portion of the content is refreshed rather than the full editor content. As a result, `uc-video` elements now remain stable and are no longer refreshed during undo or redo actions in {productname} {release-version}.

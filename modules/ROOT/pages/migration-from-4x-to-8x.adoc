@@ -8,7 +8,7 @@
 
 {productname} has evolved significantly from version 4 to version {release-version}, introducing major architectural changes, modern UI improvements, enhanced performance, and better security. This comprehensive guide outlines the critical breaking changes, recommended migration action steps, and top-level configuration adjustments required to upgrade from {productname} v4 to v{release-version}.
 
-This guide provides a complete migration path from TinyMCE 4 to TinyMCE 8, covering all changes across versions 5, 6, 7, and 8 in a single comprehensive document.
+This guide provides a complete migration path from {productname} 4 to {productname} 8, covering all changes across versions 5, 6, 7, and 8 in a single comprehensive document.
 
 == Key Changes
 
@@ -34,18 +34,18 @@ The {productname} plugin ecosystem was significantly restructured across version
 
 * **Removed Plugins** (no longer available as of {productname} 6.0):
 ** `bbcode`, `fullpage`, `legacyoutput`: Deprecated in 5.9.0. Removed in 6.0.
-** `imagetools`: Removed in 6.0. Replaced by the premium xref:editimage.adoc[Enhanced Image Editing] feature, available via the `+editimage+` plugin introduced in TinyMCE 6.0.
-** `textcolor`: Removed in 6.0. Use the premium Color Picker plugin instead.
+** `imagetools`: Removed in 6.0. Replaced by the premium xref:editimage.adoc[Enhanced Image Editing] feature, available via the `+editimage+` plugin introduced in {productname} 6.0.
+** `textcolor`: Removed in 6.0. Use the xref:user-formatting-options.adoc#text-color-options[premium Color Picker] functionality instead.
 
 * **Integrated into {productname} core**:
 ** `paste`, `hr`, `noneditable`, `table`, `print`, `colorpicker` and `contextmenu`: These plugins were absorbed into {productname} core and no longer require separate installation. See xref:copy-and-paste.adoc[Copy and Paste], xref:non-editable-content-options.adoc[Non-editable Content], xref:table.adoc[Table], and xref:contextmenu.adoc[Context Menu] for more information.
-** `contextmenu`: Deprecated in version 5.0 following the integration of context menu functionality into {productname} core editor. Removed in version 6.0. For more information, see the link:https://www.tiny.cloud/docs/tinymce/latest/contextmenu/[contextmenu documentation].
+** `contextmenu`: Deprecated in version 5.0 following the integration of context menu functionality into {productname} core editor. Removed in version 6.0. For more information, see xref:contextmenu.adoc[contextmenu documentation].
 ** `tabfocus`: Removed in 6.0. Keyboard navigation via Tab is now handled by the browser and {productname} core.
 
 * **Now Premium Only**:
 ** `mediaembed`, `tableofcontents`: These features are available through premium plugins. See xref:introduction-to-mediaembed.adoc[Media Embed] and xref:tableofcontents.adoc[Table of Contents] for more information.
 ** `spellchecker`: Deprecated in 5.9.0. Removed in 6.0.
-*** Use `browser_spellcheck: true` or the premium xref:introduction-to-tiny-spellchecker.adoc[Spell Checker] plugin.
+*** Use xref:spelling.adoc#browser_spellcheck[`browser_spellcheck: true`] or the premium xref:introduction-to-tiny-spellchecker.adoc[Spell Checker] plugin.
 ** `advtemplate`: Replaces the `template` plugin for advanced templating use cases.
 ** `template`: Removed in 7.0. Replaced by the premium xref:advanced-templates.adoc[Templates] plugin.
 
@@ -53,7 +53,7 @@ The {productname} plugin ecosystem was significantly restructured across version
 
 * `contextmenu` (removed in v6):
 ** Use browser-native context menus or custom logic.
-** Consider using link:https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.editor.ui.registry/#addContextMenu[editor.ui.registry.addContextMenu] for custom right-click actions.
+** Consider using xref:apis/tinymce.editor.ui.registry.adoc#addContextMenu[`editor.ui.registry.addContextMenu`] for custom right-click actions. See xref:contextmenu.adoc[Context menus] for more information.
 * `bbcode` (removed in v6):
 ** Implement custom parsing or server-side processing if BBCode support is required.
 * `fullpage` (removed in v6):
@@ -61,7 +61,7 @@ The {productname} plugin ecosystem was significantly restructured across version
 * `template` (removed in v7):
 ** Use the premium xref:advanced-templates.adoc[advtemplate] plugin or implement custom modal dialogs.
 * `textcolor` (removed in v6):
-** Use the `forecolor` and `backcolor` toolbar buttons for text color functionality.
+** Use the xref:available-toolbar-buttons.adoc[`forecolor` and `backcolor`] toolbar buttons for text color functionality.
 * `imagetools`: (removed in v6):
 ** Use the premium xref:editimage.adoc[Enhanced Image Editing] or xref:uploadcare.adoc[Image Optimizer Powered by Uploadcare] plugin for image editing capabilities.
 
@@ -111,7 +111,7 @@ tinymce.init({
 === Content Structure
 
 * **Removed**: `forced_root_block: false`.
-** **Requirement**: All editor content must be enclosed in block elements (e.g., `<p>`).
+** **Requirement**: All editor content must be enclosed in block elements (e.g., `<p>`). See xref:content-filtering.adoc#forced_root_block[forced_root_block] for more information.
 
 .Example:
 [source,js]
@@ -124,7 +124,7 @@ tinymce.init({
 
 === Configuration Changes
 
-* **Removed in {productname} 6.0**: Legacy mobile theme was removed, but mobile-specific configuration is still supported through the `mobile` option.
+* **Removed in {productname} 6.0**: Legacy mobile theme was removed, but mobile-specific configuration is still supported through the xref:tinymce-for-mobile.adoc[mobile] option.
 * **Default Changes in TinyMCE 7.0**:
 ** xref:content-filtering.adoc#sandbox-iframes[`sandbox iframes`]: Now defaults to `true` (adds sandbox attribute to iframes)
 ** xref:content-filtering.adoc#convert-unsafe-embeds[`convert_unsafe_embeds`]: Now defaults to `true` (converts object/embed elements to safer alternatives)
@@ -135,7 +135,7 @@ tinymce.init({
 * **New Options in {productname} 8.0**:
 ** Enhanced license key system with new format requirements
 ** Stricter DOMPurify sanitization with `SAFE_FOR_XML` enabled by default
-** New `crossorigin` configuration option for cross-origin resource loading
+** New xref:tinymce-and-cors.adoc#crossorigin[`crossorigin`] configuration option for cross-origin resource loading
 
 .Example:
 [source,js]
@@ -177,6 +177,14 @@ TinyMCE 8 introduces a new license key system that requires immediate attention:
 For complete details, see xref:migration-from-7x.adoc#license-key-system-update[License Key System Update] in the 7→8 migration guide.
 ====
 
+**License Migration checklist:**
+
+* [ ] Contact support for new {productname} {release-version} license key or use GPL for the open source version
+* [ ] Install license key manager addon for commercial licenses
+* [ ] Update configuration with new license key format
+* [ ] Test editor functionality with new license
+* [ ] Verify all premium features are working
+
 .Example:
 [source,js]
 ----
@@ -202,7 +210,7 @@ The `editor.selection.setContent` API has been deprecated and will be removed in
 **Migration steps:**
 
 
-To replace `editor.selection.setContent`, use `editor.insertContent` instead. The new method is more consistent with other content manipulation methods in {productname}.
+To replace `editor.selection.setContent`, use xref:apis/tinymce.editor.adoc#insertContent[`editor.insertContent`] instead. The new method is more consistent with other content manipulation methods in {productname}.
 
 .Example Usage
 [source,javascript]
@@ -214,10 +222,16 @@ editor.selection.setContent('<p>New content</p>');
 editor.insertContent('<p>New content</p>');
 ----
 
+**Migration checklist:**
+
+* [ ] Replace all instances of `editor.selection.setContent` with `editor.insertContent`
+* [ ] Update custom plugins that use the old method
+* [ ] Test content insertion in your editor instances
+
 ===== fire() method
 // #TINY-12012, ref TINY-8102
 
-The `fire()` method has been replaced by `dispatch()` for event handling. The `fire()` method will be removed in {productname} 9 to avoid confusion with its name.
+The `fire()` method has been replaced by xref:apis/tinymce.editor.adoc#dispatch[`dispatch()`] for event handling. The `fire()` method will be removed in {productname} 9 to avoid confusion with its name.
 
 [source, javascript]
 ----
@@ -228,6 +242,15 @@ editor.fire('someEvent');
 // New approach for dispatching custom events
 editor.dispatch('someEvent');
 ----
+
+**Impact**: This change aligns {productname} with modern event handling conventions, making the API more intuitive for developers.
+
+**Migration checklist:**
+
+* [ ] Search codebase for all uses of the `fire()` method
+* [ ] Replace each instance with `dispatch()`
+* [ ] Review and update third-party plugins
+* [ ] Test all custom event handling
 
 ===== editor.documentBaseUrl
 // #TINY-12182
@@ -246,22 +269,26 @@ console.log('documentBaseURI', editor.documentBaseURI.getURI());
 
 TIP: Use `editor.documentBaseURI.getURI()` for all base URL operations.
 
+**Impact**: This change improves URL handling consistency by removing an undocumented API that was not aligned with the documented `documentBaseURI` property.
+
+**Migration steps:**
+
+To update all references of `documentBaseUrl` to the new API, replace any usage of `editor.documentBaseUrl` (or similar) with `editor.documentBaseURI.getURI()`. The property `documentBaseUrl` has been removed, and the correct way to access the document base URL is now through the `documentBaseURI` property, which is a URI object. You can then call `.getURI()` on it to get the string value of the URL.
+
+**Migration checklist:**
+
+* [ ] Search your codebase for all instances of `editor.documentBaseUrl`.
+* [ ] Replace them with `tinymce.activeEditor.documentBaseURI.getURI()` (or `editor.documentBaseURI.getURI()` if you have an `editor` reference).
+
 ===== skipFocus and skip_focus Consolidation (v8)
 
-The `skipFocus` and `skip_focus` options for the `ToggleToolbarDrawer` command have been consolidated into a single, more consistent argument in TinyMCE 8.0.
+The `skipFocus` and `skip_focus` options for the `ToggleToolbarDrawer` command have been consolidated into a single, more consistent argument in TinyMCE 8.0. For more information, see xref:editor-command-identifiers.adoc[Available Commands].
 
 **Impact:**
-
 
 * Reduces API complexity
 * Clarifies intended behavior
 * Requires updating command calls
-
-**Migration Steps:**
-
-1. Locate all instances of `ToggleToolbarDrawer` command usage
-2. Replace `skip_focus` with `skipFocus` in command parameters
-3. Test toolbar drawer behavior
 
 .Example:
 [source,js]
@@ -273,10 +300,25 @@ editor.execCommand('ToggleToolbarDrawer', false, null, { skip_focus: true });
 editor.execCommand('ToggleToolbarDrawer', false, { skipFocus: true });
 ----
 
+**Migration checklist:**
+
+* [ ] Locate all instances of `ToggleToolbarDrawer` command usage
+* [ ] Replace `skip_focus` with `skipFocus` in command options
+* [ ] Update any custom plugins using this command
+* [ ] Test toolbar drawer behavior after changes
+
 ==== Removed Methods
 
 ===== Legacy API Methods (removed in v6)
-** `editor.addButton`, `editor.addMenuItem`, `editor.windowManager.open` (replaced by `editor.ui.registry.*` API)
+** `editor.addButton`, `editor.addMenuItem`, `editor.windowManager.open` (replaced by xref:apis/tinymce.editor.ui.registry.adoc[`editor.ui.registry.*`] API)
+
+**Migration checklist:**
+
+* [ ] Replace all instances of `editor.addButton` with `editor.ui.registry.addButton`
+* [ ] Replace all instances of `editor.addMenuItem` with `editor.ui.registry.addMenuItem`
+* [ ] Replace all instances of `editor.windowManager.open` with `editor.windowManager.open`
+* [ ] Update custom plugins that use the old methods
+* [ ] Test button and menu functionality in your editor instances
 
 ===== Autocompleter `ch` property (removed in v7)
 // #TINY-8929
@@ -298,13 +340,31 @@ editor.ui.registry.addAutocompleter('myAutocompleter', {
 });
 ----
 
+**Migration checklist:**
+
+* [ ] Replace `ch: '<string>'` with `trigger: '<string>'` in autocompleter configurations
+* [ ] Test autocompleter functionality
+* [ ] Update any custom autocompleter implementations
+
 ===== remove_trailing_brs property (removed in v7)
 
-The `remove_trailing_brs` setting was removed from the DomParser API in {productname} 7.0, after being deprecated in {productname} 6.5.
+The `remove_trailing_brs` setting was removed from the DomParser API in {productname} 7.0, after being deprecated in {productname} 6.5. For more information on DomParser, see xref:apis/tinymce.html.domparser.adoc[DomParser API].
+
+**Impact:**
+
+* DomParser no longer supports the `remove_trailing_brs` option
+* This affects custom DomParser configurations
+* May impact content parsing behavior
+
+**Migration checklist:**
+
+* [ ] Remove `remove_trailing_brs` from DomParser configurations
+* [ ] Test content parsing behavior
+* [ ] Update any custom DomParser implementations
 
 ===== Text Pattern Changes (v7)
 
-TinyMCE 7.0 updated the default behavior of `text_patterns` to apply formats when the user presses the `Space` key instead of `Enter`.
+{productname} 7.0 updated the default behavior of xref:content-behavior-options.adoc#text_patterns[`text_patterns`] to apply formats when the user presses the `Space` key instead of `Enter`.
 
 **Impact:**
 
@@ -347,15 +407,16 @@ tinymce.init({
 });
 ----
 
+**Migration checklist:**
+
+* [ ] Test existing text pattern behavior with Space key triggering
+* [ ] Update configurations if Enter key triggering is required
+* [ ] Review user experience with new Space key triggering
+* [ ] Update user documentation about text pattern behavior
+
 ===== Autocompleter Configuration Changes (v7)
 
 The `ch` configuration property for autocompleters has been removed. Use the `trigger` property instead.
-
-**Migration Steps:**
-
-1. Replace `ch: '<string>'` with `trigger: '<string>'` in autocompleter configurations
-2. Test autocompleter functionality
-3. Update any custom autocompleter implementations
 
 .Example:
 [source,js]
@@ -379,13 +440,19 @@ editor.ui.registry.addAutocompleter('myautocompleter', {
 });
 ----
 
+**Migration checklist:**
+
+* [ ] Replace `ch: '<string>'` with `trigger: '<string>'` in autocompleter configurations
+* [ ] Test autocompleter functionality
+* [ ] Update any custom autocompleter implementations
+
 ===== force_hex_color option (removed in v7)
 
 The `force_hex_color` option has been removed. Only RGB values in absolute format like `rgb(255, 255, 255)` are now converted to HEX values.
 
 ===== Text Pattern Changes (v7)
 
-TinyMCE 7.0 updated the default behavior of `text_patterns` to apply formats when the user presses the `Space` key instead of `Enter`.
+{productname} 7.0 updated the default behavior of xref:content-behavior-options.adoc#text_patterns[`text_patterns`] to apply formats when the user presses the `Space` key instead of `Enter`.
 
 **Impact:**
 
@@ -428,13 +495,13 @@ tinymce.init({
 });
 ----
 
-The `table_responsive_width` option has been replaced by `table_sizing_mode` in TinyMCE 7.0.
+The `table_responsive_width` option has been replaced by xref:table-options.adoc#table_sizing_mode[`table_sizing_mode`] in TinyMCE 7.0.
 
-**Migration Steps:**
+**Migration checklist:**
 
-1. Replace `table_responsive_width` with `table_sizing_mode` in your configuration
-2. Update the option value to match the new API
-3. Test table responsive behavior
+* [ ] Replace `table_responsive_width` with `table_sizing_mode` in your configuration
+* [ ] Update the option value to match the new API
+* [ ] Test table responsive behavior
 
 .Example:
 [source,js]
@@ -471,6 +538,14 @@ Removed **Template** options:
 * `template_replace_values`
 * `template_preview_replace_values`
 * `template_selected_content_classes`
+
+**Migration checklist:**
+
+* [ ] Remove `template` plugin from configuration if used
+* [ ] Evaluate need for premium Templates plugin (advtemplate)
+* [ ] Remove all template-related configuration options listed above
+* [ ] Update any custom template implementations
+* [ ] Test template functionality if migrating to premium plugin
 
 ==== Media URL Resolver Changes (v7)
 // #TINY-9154
@@ -515,6 +590,13 @@ tinymce.init({
 });
 ----
 
+**Migration checklist:**
+
+* [ ] Update `media_url_resolver` implementations to return Promises instead of using callbacks
+* [ ] Remove `resolve` and `reject` callback parameters from resolver functions
+* [ ] Test media embedding functionality with updated resolver
+* [ ] Update any custom media URL resolver implementations
+
 === UI and UX Changes
 
 ==== Table Height Changes (v7)
@@ -545,8 +627,6 @@ This structural change modifies the DOM layout of split buttons and may break cu
 **Impact**: This change only affects integrators using *custom skins*.
 
 **Migration Guide:**
-
-
 
 If your implementation includes a custom skin, follow these steps to ensure compatibility:
 
@@ -599,9 +679,17 @@ This change improves security and aligns with DOMPurify's recommended defaults. 
 
 **Migration Steps:**
 
-
 * Review workflows and test content that previously relied on relaxed sanitization.
-* {productname} now provides the xref:content-filtering.adoc#allow_html_in_comments[Content Filtering: allow_html_in_comments option] option. Enabling this option allows HTML tags in comments with sanitization still enabled. 
+* {productname} now provides the xref:content-filtering.adoc#allow_html_in_comments[Content Filtering: allow_html_in_comments option] option. Enabling this option allows HTML tags in comments with sanitization still enabled.
+
+**Migration checklist:**
+
+* [ ] Review existing content for HTML comments containing tags
+* [ ] Test content sanitization behavior with DOMPurify 3.2.6
+* [ ] Update content workflows if comments are being stripped unexpectedly
+* [ ] Consider enabling `allow_html_in_comments` if needed (with security awareness)
+* [ ] Test Internet Explorer conditional comments if used
+* [ ] Verify attributes with HTML-like values are handled correctly
 
 [WARNING]
 Using `allow_html_in_comments` increases the risk of XSS vulnerabilities. xref:security.adoc#allow_html_in_comments[allow_html_in_comments] is not recommended for production use unless you fully understand the implications and have appropriate security measures in place.
@@ -616,7 +704,6 @@ Using `allow_html_in_comments` increases the risk of XSS vulnerabilities. xref:s
 **Impact**: Customers using the Java Swing integration need to plan for migration to alternative solutions before the end-of-life date.
 
 **Migration checklist:**
-
 
 * [ ] Evaluate alternative integration options
 * [ ] Plan migration timeline to complete before December 31, 2025
@@ -643,30 +730,30 @@ Using `allow_html_in_comments` increases the risk of XSS vulnerabilities. xref:s
 
 . **Backup and Prepare**: Ensure comprehensive backups before upgrading.
 . **Update Core Initialization**:
-.. Update `theme`, `skin`, and to reflect the new oxide theme and skin.
-... In {productname} 4, there were multiple themes available including 'modern', 'inlite', and 'mobile'. These themes were removed in {productname} 5 and combined into a single responsive theme called "Silver".
-.. Update `forced_root_block: false` options to `forced_root_block: "p"`.
-.. Consolidate toolbars.
-.. Review new v{release-version} defaults for security settings.
-.. Update license key to new format if self-hosting.
+** Update `theme`, `skin`, and to reflect the new oxide theme and skin.
+*** In {productname} 4, there were multiple themes available including 'modern', 'inlite', and 'mobile'. These themes were removed in {productname} 5 and combined into a single responsive theme called "Silver".
+** Update `forced_root_block: false` options to `forced_root_block: "p"`.
+** Consolidate toolbars.
+** Review new v{release-version} defaults for security settings.
+** Update license key to new format if self-hosting.
 . **Plugin Migration**:
-.. Remove deprecated plugins from your configuration.
-.. Update renamed plugins (e.g., `spellchecker` → `tinymcespellchecker`).
-.. Verify premium plugins for compatibility.
-.. Install License Key Manager addon if using commercial license.
+** Remove deprecated plugins from your configuration.
+** Update renamed plugins (e.g., `spellchecker` → xref:introduction-to-tiny-spellchecker.adoc[`tinymcespellchecker`]).
+** Verify premium plugins for compatibility.
+** Install License Key Manager addon if using commercial license.
 . **Custom Code Updates**:
-.. Rewrite custom plugins using the `editor.ui.registry.*` API. see link:https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.editor.ui.registry/[editor.ui.registry].
-.. Replace v4 API methods like `editor.addButton`, `editor.addMenuItem`, `editor.windowManager.open`.
-.. Update media embed handling (`media_url_resolver` API changes). see xref:media.adoc#media_url_resolver[media_url_resolver].
-.. Replace deprecated API methods (`editor.selection.setContent`, `editor.fire()`, etc.).
+** Rewrite custom plugins using the xref:apis/tinymce.editor.ui.registry.adoc[`editor.ui.registry.*`] API.
+** Replace v4 API methods like `editor.addButton`, `editor.addMenuItem`, `editor.windowManager.open`.
+** Update media embed handling (xref:media.adoc#media_url_resolver[`media_url_resolver`] API changes).
+** Replace deprecated API methods (xref:apis/tinymce.editor.adoc#insertContent[`editor.insertContent`] replaces `editor.selection.setContent`, xref:apis/tinymce.editor.adoc#dispatch[`editor.dispatch()`] replaces `editor.fire()`, etc.).
 . **CSS Updates**:
-.. Update custom styles to align with the new Oxide standard. While many `+.mce-*+` classes have been replaced with `+.tox-*+` classes, some `+.mce-*+` prefixes remain in use. Review your CSS to ensure compatibility.
-.. Update split button CSS if using custom skins (TinyMCE 8 change).
+** Update custom styles to align with the new Oxide standard. While many `+.mce-*+` classes have been replaced with `+.tox-*+` classes, some `+.mce-*+` prefixes remain in use. Review your CSS to ensure compatibility.
+** Update split button CSS if using custom skins (TinyMCE 8 change).
 . **Testing and Deployment**:
-.. Thoroughly test your updated configuration before production deployment.
-.. Validate media, iframe, and content security settings.
-.. Test license key functionality and premium features.
-.. Verify DOMPurify sanitization behavior with your content.
+** Thoroughly test your updated configuration before production deployment.
+** Validate media, iframe, and content security settings.
+** Test license key functionality and premium features.
+** Verify DOMPurify sanitization behavior with your content.
 
 == Additional Resources
 

@@ -20,4 +20,8 @@ tinymce.init({
       fetch(`${API_URL}/${userId}`)
         .then((response) => response.json())
         .catch(() => ({ id: userId })))),
+  
+  init_instance_callback: (editor) => { 
+    tinymce.activeEditor.execCommand('suggestededits'); 
+  }
 });

@@ -7,16 +7,9 @@
 
 == Overview
 
-The process for setting up a basic {productname} {release-version} instance is similar to {productname} 6, but there are important changes across versions 7 and 8 that require attention.
-
-Most configuration changes in {productname} {release-version} affect complex use cases, such as custom plugins and customized user interface components, but some breaking changes require immediate attention.
-
-This documentation details the changes in {productname} {release-version} that integrators using {productname} 6 should consider when upgrading.
+{productname} has evolved significantly from version 6 to version {release-version}, introducing architectural improvements, modern UI enhancements, stricter security defaults, and updated plugin structures. This comprehensive guide outlines the critical breaking changes, recommended migration action steps, and top-level configuration adjustments required to upgrade from {productname} v6 to v{release-version}.
 
 This guide provides a complete migration path from TinyMCE 6 to TinyMCE 8, covering all changes across versions 7 and 8 in a single comprehensive document.
-
-NOTE: For support related to migration, please contact https://support.tiny.cloud/hc/en-us/requests/new[Tiny Support].  +
-Open Source users: please report issues in the https://github.com/tinymce/tinymce/[TinyMCE GitHub Repository].
 
 == Key Changes
 
@@ -732,12 +725,13 @@ The "Medical English (UK)" dictionary has been discontinued and is no longer ava
 
 == Helpful Links
 
-To make your upgrade smooth, check the following version-specific migration guides:
+To make your upgrade smooth, check the following legacy step-by-step migration guides:
 
-* link:https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/[Migrating from {productname} 5 to {productname} 6]
-* xref:migration-from-6x.adoc[Migrating from {productname} 6 to {productname} 7]
+* xref:migration-from-4x.adoc[Migrating from {productname} 4 to {productname} 7] - Covers major architectural changes and modern UI improvements
+* xref:migration-from-5x.adoc[Migrating from {productname} 5 to {productname} 7] - Includes architectural improvements and security updates
+* xref:migration-from-6x.adoc[Migrating from {productname} 6 to {productname} 7] - Covers configuration changes and UI component updates
 
-These include deeper configuration notes, plugin replacements, and examples.
+These guides provide comprehensive coverage of changes from older versions to version 7, which can be combined with this guide for a complete migration path to version 8.
 
 == Next Steps
 

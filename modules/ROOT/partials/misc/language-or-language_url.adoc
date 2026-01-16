@@ -1,1 +1,4 @@
-There are two options for changing the language of the {productname} user interfaces: `+language+` and `+language_url+`. {companyname} recommends using the `+language+` option for language packs bundled with the product or included in your cloud subscription. Community translations, custom language pack, or third-party language packs should be included using the `+language_url+` option to simplify updating and upgrading {productname}.
+There are two options for changing the language of the {productname} user interfaces: `+language+` and `+language_url+`.
+
+* Use the `+language+` option when language packs are in the default location (for {cloudname} deployments, ZIP bundles, or when using NPM packages with bundling or file layering).
+* Use the `+language_url+` option to specify a custom path to language packs, which is useful for community translations, custom language packs, or when using NPM packages without bundling. When using `+language_url+`, the `+language+` option is also required.

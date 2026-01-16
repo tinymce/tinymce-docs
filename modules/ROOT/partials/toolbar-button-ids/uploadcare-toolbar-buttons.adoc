@@ -1,5 +1,33 @@
+ifeval::["{pluginfeature}" == "uc-mediaoptimizer"]
 [cols="1,3",options="header"]
 |===
 |Identifier |Description
 | `+uploadcare+` | Inserts an image placeholder element. This placeholder supports image uploads via drag-and-drop, file selection, or by providing a URL.
 |===
+endif::[]
+
+
+ifeval::["{pluginfeature}" == "uc-video" ]
+[cols="1,3",options="header"]
+|===
+|Identifier |Description
+| `+uploadcare+` | Inserts an image placeholder element. This placeholder supports image uploads via drag-and-drop, file selection, or by providing a URL.
+| `+uploadcare-video+` | Inserts a video placeholder element. This placeholder supports video uploads via drag-and-drop, file selection, or by providing a URL.
+|===
+endif::[]
+
+ifeval::["{pluginfeature}" == "uc-image"]
+[cols="1,3",options="header"]
+|===
+|Identifier |Description
+| `+uploadcare+` | Inserts an image placeholder element. This placeholder supports image uploads via drag-and-drop, file selection, or by providing a URL.
+|===
+endif::[]
+
+ifeval::["{pluginfeature}" == "uc-documents"]
+[cols="1,3",options="header"]
+|===
+|Identifier |Description
+| `+link+` | Opens the Insert/edit link dialog so the user can upload files via file picker or by dropping files to be uploaded. Uploaded files are processed through Uploadcare's infrastructure and automatically linked in the content.
+|===
+endif::[]

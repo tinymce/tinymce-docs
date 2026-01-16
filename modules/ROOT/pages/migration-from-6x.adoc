@@ -66,7 +66,7 @@ Applying basic formats such as headings, lists, bold and italic from typing them
 {productname} {release-version} updates the default behavior of the `text-patterns` option to apply these formats when the user presses the `Space` key.
 
 [NOTE]
-The previous default `text_patterns` behavior, applying the format on an `Enter` key press, can be configured by replacing the `trigger` property with the value `'space'`. See the Text Pattern Changes section below for more details.
+The previous default `text_patterns` behavior, applying the format on an `Enter` key press, can be configured by replacing the `trigger` property with the value `'space'`. Learn more about how you can configure `text_patterns` in the link:https://www.tiny.cloud/docs/tinymce/7/7.0-release-notes/#a-new-trigger-property-for-block-text-pattern-configurations-allowing-pattern-activation-with-either-space-or-enter-keys[{release-version} Release notes]
 
 .Updated default text patterns
 [source, ts]

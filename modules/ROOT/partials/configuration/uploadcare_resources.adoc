@@ -1,0 +1,41 @@
+[[uploadcare-resources]]
+== `uploadcare_resources`
+
+Specifies the base path where the Uploadcare plugin resources are loaded from. This allows you to specify a different location for the Uploadcare resources if they are hosted separately from the main {productname} installation.
+
+*Type:* `+String+`
+
+*Default:* `+'<plugin-path>'+`
+
+.Example: Setting `uploadcare_resources`
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'uploadcare',
+  toolbar: 'uploadcare uploadcare-video',
+  uploadcare_public_key: '<your-public-key>',
+  uploadcare_resources: 'path/to/uploadcare-resources/',
+  license_key: '<your-license-key>'
+});
+----
+
+=== Resources Structure
+
+When using `uploadcare_resources`, ensure your directory structure follows this pattern, specifically the `js` and `css` subdirectories, and that the necessary resource files are present:
+
+.Example directory structure:
+[source,text]
+----
+project/
+│  └── uploadcare/
+│     ├── js/
+│     │   └── ucvideo.min.js
+│     ├── css/
+│     │   └── uc-video.css
+│     └── plugin.min.js
+└── tinymce/
+    └── tinymce.min.js
+----
+
+NOTE: This option does not control the loading of the main Uploadcare plugin script, which should be included in the `+plugins+` or `+external_plugins+` configuration options as appropriate.

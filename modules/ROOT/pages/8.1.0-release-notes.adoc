@@ -55,19 +55,19 @@ To resolve this, {productname} now inserts a temporary hidden element before the
 
 For information on the **Spell Checker** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker].
 
-=== Image Optimizer (Powered by Uploadcare)
+=== Media Optimizer (Powered by Uploadcare)
 
-The {productname} {release-version} release includes an accompanying release of the **Image Optimizer (Powered by Uploadcare)** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Media Optimizer (Powered by Uploadcare)** premium plugin.
 
-**Image Optimizer (Powered by Uploadcare)** includes the following fix.
+**Media Optimizer (Powered by Uploadcare)** includes the following fix.
 
 ==== Image previews sometimes showed the wrong image from a `srcset`.
 
-In previous versions of the Image Optimizer premium plugin, an issue where image effects were applied based on the main `src` instead of the active `srcset` URL, caused discrepancies when the displayed image was selected from `srcset`. This led to a mismatch in the adjustment preview (rendered from the main `src`) versus the image shown in the editor (rendered from the `srcset` URL), resulting in different visual outcomes for effects such as blur or resize.
+In previous versions of the Media Optimizer premium plugin, an issue where image effects were applied based on the main `src` instead of the active `srcset` URL, caused discrepancies when the displayed image was selected from `srcset`. This led to a mismatch in the adjustment preview (rendered from the main `src`) versus the image shown in the editor (rendered from the `srcset` URL), resulting in different visual outcomes for effects such as blur or resize.
 
 {productname} {release-version} resolves this issue by using the `currentSrc` property to generate previews, ensuring the preview and the editor image reference the same resource. As a result, the preview image and the image in the editor are now consistent.
 
-For information on the **Image Optimizer Powered by Uploadcare** plugin, see: xref:uploadcare.adoc[Image Optimizer (Powered by Uploadcare)].
+For information on the **Media Optimizer Powered by Uploadcare** plugin, see: xref:uploadcare.adoc[Media Optimizer (Powered by Uploadcare)].
 
 === Accessibility Checker
 

@@ -1,0 +1,17 @@
+[TIP]
+====
+**Uploadcare Dashboard Configuration**
+
+File types can also be configured through the Uploadcare dashboard under **Settings >> Uploading >> MIME type filtering**. This provides an alternative way to control which file types can be uploaded to your project.
+
+**MIME Type Filtering**
+
+MIME type filtering allows you to control which types of files can be uploaded to your project. By default, all file types are allowed, but integrators can customize this by selecting specific MIME types to allow or block.
+
+Available categories include:
+
+* **Images** - Image file formats
+* **Video** - Video file formats
+
+You can also select all file types at once or fine-tune your selection by choosing specific formats within each category.
+====

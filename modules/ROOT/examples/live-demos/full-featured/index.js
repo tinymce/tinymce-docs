@@ -9,6 +9,8 @@ const collaborator_id = 'mia-andersson';
 const now = new Date();
 const yesterday = new Date(now.getTime() - 24 * 60 * 60 * 1000).toISOString();
 const anhourago = new Date(now.getTime() - 60 * 60 * 1000).toISOString();
+const oneminuteago = new Date(now.getTime() - 1 * 60 * 1000).toISOString();
+const amomentago = new Date(now.getTime() - 30 * 1000).toISOString();
 const fakeDelay = 200;
 
 const randomString = () => {
@@ -23,29 +25,29 @@ const conversationDb = {
       author: user_id,
       authorName: 'James Wilson',
       authorAvatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg',
-      content: `What do you think about this? @${collaborator_id}?`,
-      createdAt: yesterday,
-      modifiedAt: yesterday
+      content: 'Do we want to say "rich text editor" or "WYSIWYG editor" here?',
+      createdAt: oneminuteago,
+      modifiedAt: oneminuteago
     }, {
       uid: 'mce-conversation_19679600221621399703917',
       author: collaborator_id,
       authorName: 'Mia Andersson',
       authorAvatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_mia-andersson_128_e6f9424b.jpg',
-      content: `I think this is a great idea @${user_id}!`,
-      createdAt: anhourago,
-      modifiedAt: anhourago,
+      content: 'I think "rich text editor" works ok.',
+      createdAt: amomentago,
+      modifiedAt: amomentago,
     }]
   },
   'mce-conversation_420304606321716900864126': {
     uid: 'mce-conversation_420304606321716900864126',
     comments: [{
       uid: 'mce-conversation_420304606321716900864126',
-      author: collaborator_id,
-      authorName: 'Mia Andersson',
-      authorAvatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_mia-andersson_128_e6f9424b.jpg',
-      content: `@${user_id} Please revise this sentence, exclamation points are unprofessional!`,
-      createdAt: yesterday,
-      modifiedAt: anhourago
+      author: user_id,
+      authorName: 'James Wilson',
+      authorAvatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg',
+      content: 'Let\'s mention Export to PDF here as well.',
+      createdAt: oneminuteago,
+      modifiedAt: oneminuteago
     }]
   }
 };
@@ -140,11 +142,12 @@ const tinycomments_reply = (req, done) => {
 };
 
 const tinycomments_delete = (req, done) => {
-  if (user_id === collaborator_id) { // Replace wth your own logic, e.g. check if user created the conversation
+  const conversation = conversationDb[req.conversationUid];
+  if (user_id === conversation.comments[0].author) { // Replace wth your own logic, e.g. check if user created the conversation
     delete conversationDb[req.conversationUid];
     setTimeout(() => done({ canDelete: true }), fakeDelay);
   } else {
-    setTimeout(() => done({ canDelete: false, reason: 'Must be admin user' }), fakeDelay);
+    setTimeout(() => done({ canDelete: false, reason: 'Must be conversation author' }), fakeDelay);
   }
 };
 
@@ -152,6 +155,15 @@ const tinycomments_resolve = (req, done) => {
   const conversation = conversationDb[req.conversationUid];
   if (user_id === conversation.comments[0].author) { // Replace wth your own logic, e.g. check if user has admin priveleges
     delete conversationDb[req.conversationUid];
+    setTimeout(() => done({ canResolve: true }), fakeDelay);
+  } else {
+    setTimeout(() => done({ canResolve: false, reason: 'Must be conversation author' }), fakeDelay);
+  }
+};
+
+const tinycomments_can_resolve = (req, done, fail) => {
+  const conversation = conversationDb[req.conversationUid];
+  if (user_id === conversation.comments[0].author) { // Replace wth your own logic, e.g. check if user has admin priveleges
     setTimeout(() => done({ canResolve: true }), fakeDelay);
   } else {
     setTimeout(() => done({ canResolve: false, reason: 'Must be conversation author' }), fakeDelay);
@@ -391,21 +403,16 @@ const revisions = [
       </thead>
       <tbody>
       <tr>
-      <td>TinyMCE</td>
-      <td>Free</td>
-      <td>YES!</td>
-      </tr>
-      <tr>
-      <td>Plupload</td>
-      <td>Free</td>
-      <td>YES!</td>
+      <td style="text-align: center;">TinyMCE</td>
+      <td style="text-align: center;">Free</td>
+      <td style="text-align: center;">YES!</td>
       </tr>
       </tbody>
       </table>
       <h2>Found a bug?</h2>
       <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
       <h2>Finally ...</h2>
-      <p><s>Don't forget to check out our other product <a href="http://www.plupload.com" target="_blank" rel="noopener">Plupload</a>, your ultimate upload solution featuring HTML5 upload support.</s></p>
+      <p><s>Need file uploads in your app? Consider using <a href="https://www.tiny.cloud/docs/tinymce/latest/uploadcare/" target="_blank" rel="noopener noreferrer">Uploadcare</a> with TinyMCE for a fast, modern upload experience.</s></p>
       <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>
     `,
   },
@@ -437,21 +444,16 @@ const revisions = [
       </thead>
       <tbody>
       <tr>
-      <td>TinyMCE</td>
-      <td>Free</td>
-      <td>YES!</td>
-      </tr>
-      <tr>
-      <td>Plupload</td>
-      <td>Free</td>
-      <td>YES!</td>
+      <td style="text-align: center;">TinyMCE</td>
+      <td style="text-align: center;">Free</td>
+      <td style="text-align: center;">YES!</td>
       </tr>
       </tbody>
       </table>
       <h2>Found a bug?</h2>
       <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
       <h2>Finally ...</h2>
-      <p>Don't forget to check out our other product <a href="http://www.plupload.com" target="_blank" rel="noopener">Plupload</a>, your ultimate upload solution featuring HTML5 upload support.</p>
+      <p>Need file uploads in your app? Consider using <a href="https://www.tiny.cloud/docs/tinymce/latest/uploadcare/" target="_blank" rel="noopener noreferrer">Uploadcare</a> with TinyMCE for a fast, modern upload experience.</p>
       <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>
     `,
   },
@@ -483,21 +485,16 @@ const revisions = [
       </thead>
       <tbody>
       <tr>
-      <td>TinyMCE</td>
-      <td>Free</td>
-      <td>YES!</td>
-      </tr>
-      <tr>
-      <td>Plupload</td>
-      <td>Free</td>
-      <td>YES!</td>
+      <td style="text-align: center;">TinyMCE</td>
+      <td style="text-align: center;">Free</td>
+      <td style="text-align: center;">YES!</td>
       </tr>
       </tbody>
       </table>
       <h2>Found a bug?</h2>
       <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
       <h2>Finally ...</h2>
-      <p>Don't forget to check out our other product <a href="http://www.plupload.com" target="_blank" rel="noopener">Plupload</a>, your ultimate upload solution featuring HTML5 upload support.</p>
+      <p>Need file uploads in your app? Consider using <a href="https://www.tiny.cloud/docs/tinymce/latest/uploadcare/" target="_blank" rel="noopener noreferrer">Uploadcare</a> with TinyMCE for a fast, modern upload experience.</p>
       <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>
     `,
   }
@@ -525,13 +522,13 @@ const revisionhistory_fetch_revision = (_editor, revision) => new Promise((resol
 tinymce.init({
   selector: 'textarea#full-featured',
   plugins: [
-    'ai', 'suggestededits', 'preview', 'powerpaste', 'casechange', 'importcss', 'tinydrive', 'searchreplace',
+    'ai', 'suggestededits', 'preview', 'powerpaste', 'casechange', 'importcss', 'searchreplace',
     'autolink', 'autosave', 'save', 'directionality', 'advcode', 'visualblocks', 'visualchars', 'fullscreen',
-    'image', 'link', 'math', 'media', 'mediaembed', 'codesample', 'table', 'charmap', 'pagebreak', 'nonbreaking',
+    'link', 'math', 'media', 'mediaembed', 'codesample', 'table', 'charmap', 'pagebreak', 'nonbreaking',
     'anchor', 'tableofcontents', 'insertdatetime', 'advlist', 'lists', 'checklist', 'wordcount', 'tinymcespellchecker',
-    'a11ychecker', 'editimage', 'help', 'formatpainter', 'permanentpen', 'pageembed', 'charmap', 'tinycomments', 'mentions',
+    'a11ychecker', 'help', 'formatpainter', 'permanentpen', 'pageembed', 'charmap', 'tinycomments', 'mentions',
     'quickbars', 'emoticons', 'advtable', 'footnotes', 'mergetags', 'autocorrect', 'typography', 'advtemplate', 'markdown',
-    'revisionhistory', 'importword', 'exportword', 'exportpdf'
+    'revisionhistory', 'importword', 'exportword', 'exportpdf', 'uploadcare',
   ],
   menu: {
     tc: {
@@ -541,26 +538,16 @@ tinymce.init({
   },
   menubar: 'file edit view insert format tools table tc help',
   // Note: if a toolbar item requires a plugin, the item will not present in the toolbar if the plugin is not also loaded.
-  toolbar: "undo redo | importword exportword exportpdf | suggestededits | revisionhistory | aidialog aishortcuts | blocks fontsizeinput | bold italic | align numlist bullist | link image | table math media pageembed | lineheight  outdent indent | strikethrough forecolor backcolor formatpainter removeformat | charmap emoticons checklist | code fullscreen preview | save print | pagebreak anchor codesample footnotes mergetags | addtemplate inserttemplate | addcomment showcomments | ltr rtl casechange | spellcheckdialog a11ycheck", 
+  toolbar: "undo redo | importword exportword exportpdf | suggestededits | revisionhistory | aidialog aishortcuts | blocks fontsizeinput | bold italic | align numlist bullist | link uploadcare uploadcare-video | table math media pageembed | lineheight  outdent indent | strikethrough forecolor backcolor formatpainter removeformat | charmap emoticons checklist | code fullscreen preview | save print | pagebreak anchor codesample footnotes mergetags | addtemplate inserttemplate | addcomment showcomments | ltr rtl casechange | spellcheckdialog a11ycheck", 
   mobile: {
-    plugins: 'ai suggestededits preview powerpaste casechange importcss tinydrive searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen image link math media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker help formatpainter pageembed charmap mentions quickbars emoticons advtable footnotes mergetags autocorrect typography advtemplate',
+    plugins: 'ai suggestededits preview powerpaste casechange importcss searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen link math media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker help formatpainter pageembed charmap mentions quickbars emoticons advtable footnotes mergetags autocorrect typography advtemplate uploadcare'
   },
-
-  editimage_cors_hosts: ['picsum.photos'],
-  tinydrive_token_provider: (success, failure) => {
-    success({ token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJqb2huZG9lIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.Ks_BdfH4CWilyzLNk8S2gDARFhuxIauLa8PwhdEQhEo' });
-  },
-  tinydrive_demo_files_url: '{{imagesdir}}/tiny-drive-demo/demo_files.json',
-  tinydrive_dropbox_app_key: 'jee1s9eykoh752j',
-  tinydrive_google_drive_key: 'AIzaSyAsVRuCBc-BLQ1xNKtnLHB3AeoK-xmOrTc',
-  tinydrive_google_drive_client_id: '748627179519-p9vv3va1mppc66fikai92b3ru73mpukf.apps.googleusercontent.com',
-  
+ 
   autosave_ask_before_unload: true,
   autosave_interval: '30s',
   autosave_prefix: '{path}{query}-{id}-',
   autosave_restore_when_empty: false,
   autosave_retention: '2m',
-  image_advtab: true,
   typography_default_lang: 'en-US',
   typography_langs: [
     'en-US',
@@ -624,25 +611,15 @@ tinymce.init({
     { title: 'My page 1', value: 'https://www.tiny.cloud' },
     { title: 'My page 2', value: 'http://www.moxiecode.com' }
   ],
-  image_list: [
-    { title: 'My page 1', value: 'https://www.tiny.cloud' },
-    { title: 'My page 2', value: 'http://www.moxiecode.com' }
-  ],
-  image_class_list: [
-    { title: 'None', value: '' },
-    { title: 'Some class', value: 'class-name' }
-  ],
   importcss_append: true,
   height: 600,
-  image_caption: true,
-  quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quickimage quicktable',
+  quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quicktable | addcomment showcomments',
   noneditable_class: 'mceNonEditable',
   toolbar_mode: 'sliding',
   spellchecker_ignore_list: ['Ephox', 'Moxiecode', 'tinymce', 'TinyMCE'],
   content_style: '.mymention{ color: gray; }' +
   'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
-  contextmenu: 'link image editimage table spellchecker configurepermanentpen',
-  a11y_advanced_options: true,
+  contextmenu: 'link uploadcare uploadcare-video table spellchecker configurepermanentpen',
   
   ai_request,
   
@@ -653,6 +630,7 @@ tinymce.init({
   tinycomments_reply,
   tinycomments_delete,
   tinycomments_resolve,
+  tinycomments_can_resolve,
   tinycomments_delete_all,
   tinycomments_lookup,
   tinycomments_delete_comment,
@@ -666,6 +644,29 @@ tinymce.init({
   mentions_menu_hover,
   mentions_menu_complete,
   mentions_select,
+  
+  uploadcare_public_key: '630992ad50fe2291c406',
+  uploadcare_cdn_base_url: 'https://tiny.ucarecdn.com',
+  uploadcare_store_type: 'temporary',
+  uploadcare_srcset_steps: [100, 200, 300, 500, 750, 1000],
+  uploadcare_video_properties: { 
+    posterOffset: "1:35"
+  },
+  a11y_advanced_options: true,
+  uploadcare_filters: [
+    { name: 'none' }, // No filter applied
+    { name: 'adaris', amount: -100 }, // Adaris with inverted effect (amount -100), label defaults to 'adaris'
+    { name: 'adaris', amount: -100, label: 'Vintage Fade' }, // Adaris with inverted effect (amount -100), label reads 'Vintage Fade'
+    { name: 'adaris', amount: 0, label: 'Base' }, // Adaris with neutral effect (amount 0), label reads 'Base'
+    { name: 'adaris', amount: 50, label: 'Light' }, // Adaris with light effect (amount 50), label reads 'Light'
+    { name: 'adaris', amount: 100, label: 'Standard' }, // Adaris with standard effect (amount 100), label reads 'Standard'
+    { name: 'adaris', amount: 200, label: 'Intense' }, // Adaris with intense effect (amount 200), label reads 'Intense'
+    { name: 'zevcen', amount: 200, label: 'Glow Boost' }, // Zevcen with intense effect (amount 200), label reads 'Glow Boost'
+    { name: 'galen', amount: 80, label: 'Soft Focus' }, // Galen with softening effect (amount 80), label reads 'Soft Focus'
+    { name: 'carris', amount: 120, label: 'Sharp Contrast' }, // Carris with high contrast (amount 120), label reads 'Sharp Contrast'
+    { name: 'ferand', amount: 60, label: 'Light Touch' }, // Ferand with light enhancement (amount 60), label reads 'Light Touch'
+    { name: 'sorahel', amount: -50, label: 'Night Mood' } // Sorahel with darkened effect (amount -50), label reads 'Night Mood'
+  ],
   
   autocorrect_capitalize: true,
   mergetags_list: [

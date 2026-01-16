@@ -1,0 +1,50 @@
+= {productname} {release-version}
+:release-version: 8.3.1
+:navtitle: {productname} {release-version}
+:description: Release notes for {productname} {release-version}
+:keywords: releasenotes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+
+[[overview]]
+== Overview
+
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, December 17^th^, 2025. These release notes provide an overview of the changes for {productname} {release-version}, including:
+
+// Remove sections and section boilerplates as necessary.
+// Pluralise as necessary or remove the placeholder plural marker.
+* xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
+* xref:bug-fixes[Bug fix]
+
+
+[[accompanying-premium-plugin-changes]]
+== Accompanying Premium plugin changes
+
+The following premium plugin updates were released alongside {productname} {release-version}.
+
+=== Suggested Edits
+
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
+
+**Suggested Edits** includes the following fix.
+
+==== View would close when the resource was still loading.
+
+In previous versions of {productname}, opening the Suggested Edits view when the integration script was not yet loaded would cause the view to immediately close, requiring users to manually reopen it until the script was loaded.
+
+This issue has been resolved in {productname} {release-version}. The editor now enters a loading state if the Suggested Edits view is opened while the integration script is loading, instead of immediately closing, and exits this state once the script has loaded.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
+
+
+[[bug-fixes]]
+== Bug fix
+
+{productname} {release-version} also includes the following bug fix:
+
+=== Views could not be opened during the `init` event.
+// #TINY-13463
+
+Prior to {release-version}, editor views were not registered until after the CSS was loaded, which meant that they could not be opened until after editor initialization. {release-version} addresses this by registering views sooner, before editor initialization.

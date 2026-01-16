@@ -1,0 +1,140 @@
+[[plugin-resources]]
+== Additional plugin resources
+
+[IMPORTANT]
+====
+When bundling {productname} with module loaders (Webpack, Vite, Rollup), some plugins require additional resource files (CSS, JS, or language files) to be explicitly imported. These files are not automatically resolved by the bundler and must be imported manually.
+
+Key points:
+
+* Core plugin resources typically use relative paths without file extensions
+* Premium plugin resources (from `tinymce-premium`) MUST include the `.js` or `.css` file extension in the import path
+* Language files are typically located in `plugins/<plugincode>/langs/`
+* CSS files may be in `plugins/<plugincode>/css/` or at the plugin root
+* English is the default language, so `en.js` language files don't exist (plugins fall back to English)
+====
+
+=== Common plugin resource requirements
+
+The following plugins require additional resource files when bundling:
+
+[[help-plugin-resources]]
+==== Help plugin (`+help+`)
+
+The Help plugin requires the keyboard navigation language file for the keyboard navigation tab to function properly:
+
+[cols='1,1,4']
+|===
+|Module Syntax |Source |Example
+
+.2+|ES6+
+|npm
+a|
+[source, js]
+----
+import 'tinymce/plugins/help/js/i18n/keynav/en';
+----
+
+|`.zip`
+a|
+[source, js]
+----
+import '../tinymce/plugins/help/js/i18n/keynav/en';
+----
+
+.2+|Common JS
+|npm
+a|
+[source, js]
+----
+require('tinymce/plugins/help/js/i18n/keynav/en');
+----
+
+|`.zip`
+a|
+[source, js]
+----
+require('../tinymce/plugins/help/js/i18n/keynav/en');
+----
+|===
+
+[[pageembed-plugin-resources]]
+==== Page Embed plugin (`+pageembed+`)
+
+The Page Embed plugin requires a CSS file for proper styling:
+
+[cols='1,1,4']
+|===
+|Module Syntax |Source |Example
+
+.2+|ES6+
+|npm
+a|
+[source, js]
+----
+import 'tinymce-premium/plugins/pageembed/css/empa30.css';
+----
+
+|`.zip`
+a|
+[source, js]
+----
+import '../plugins/pageembed/css/empa30.css';
+----
+
+.2+|Common JS
+|npm
+a|
+[source, js]
+----
+require('tinymce-premium/plugins/pageembed/css/empa30.css');
+----
+
+|`.zip`
+a|
+[source, js]
+----
+require('../plugins/pageembed/css/empa30.css');
+----
+|===
+
+[[emoticons-plugin-resources]]
+==== Emoticons plugin (`+emoticons+`)
+
+The xref:emoticons.adoc[Emoticons plugin] requires an emoji database file. By default, it uses `+js/emojis.js+`, but you can also use `+js/emojiimages.js+` by configuring the xref:emoticons.adoc#emoticons_database[`+emoticons_database+`] option.
+
+[cols='1,1,4']
+|===
+|Module Syntax |Source |Example
+
+.2+|ES6+
+|npm
+a|
+[source, js]
+----
+import 'tinymce/plugins/emoticons/js/emojis';
+----
+
+|`.zip`
+a|
+[source, js]
+----
+import '../tinymce/plugins/emoticons/js/emojis';
+----
+
+.2+|Common JS
+|npm
+a|
+[source, js]
+----
+require('tinymce/plugins/emoticons/js/emojis');
+----
+
+|`.zip`
+a|
+[source, js]
+----
+require('../tinymce/plugins/emoticons/js/emojis');
+----
+|===
+

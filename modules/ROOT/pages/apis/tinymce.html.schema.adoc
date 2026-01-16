@@ -1,7 +1,7 @@
 = tinymce.html.Schema
 :navtitle: tinymce.html.Schema
 :description: Schema validator class.
-:keywords: addCustomElements, addValidChildren, addValidElements, children, getBlockElements, getBoolAttrs, getCustomElements, getElementRule, getInvalidStyles, getMoveCaretBeforeOnEnterElements, getNonEmptyElements, getSelfClosingElements, getSpecialElements, getTextBlockElements, getTextInlineElements, getTransparentElements, getValidClasses, getValidStyles, getVoidElements, getWhitespaceElements, isValid, isValidChild, setValidElements
+:keywords: addCustomElements, addValidChildren, addValidElements, children, getBlockElements, getBoolAttrs, getComponentUrls, getCustomElements, getElementRule, getInvalidStyles, getMoveCaretBeforeOnEnterElements, getNonEmptyElements, getSelfClosingElements, getSpecialElements, getTextBlockElements, getTextInlineElements, getTransparentElements, getValidClasses, getValidStyles, getVoidElements, getWhitespaceElements, isValid, isValidChild, setValidElements
 :moxie-type: api
 
 Schema validator class.
@@ -36,6 +36,7 @@ format is for example `element[attr=default{vbar}otherattr]`.
 Existing rules will be replaced with the ones specified, so this extends the schema.|`xref:apis/tinymce.html.schema.adoc[Schema]`
 |xref:#getBlockElements[getBlockElements()]|Returns a map with block elements.|`xref:apis/tinymce.html.schema.adoc[Schema]`
 |xref:#getBoolAttrs[getBoolAttrs()]|Returns a map with boolean attributes.|`xref:apis/tinymce.html.schema.adoc[Schema]`
+|xref:#getComponentUrls[getComponentUrls()]|Returns an object of all custom elements that have component URLs.|`xref:apis/tinymce.html.schema.adoc[Schema]`
 |xref:#getCustomElements[getCustomElements()]|Returns an map object of all custom elements.|`xref:apis/tinymce.html.schema.adoc[Schema]`
 |xref:#getElementRule[getElementRule()]|Returns true/false if the specified element is valid or not
 according to the schema.|`xref:apis/tinymce.html.schema.adoc[Schema]`
@@ -138,6 +139,20 @@ Returns a map with boolean attributes.
 ==== Return value
 
 * `Object` - Name/value lookup map for boolean attributes.
+
+'''
+
+[[getComponentUrls]]
+=== getComponentUrls()
+[source, javascript]
+----
+getComponentUrls(): Object
+----
+Returns an object of all custom elements that have component URLs.
+
+==== Return value
+
+* `Object` - Object with where key is the component and the value is the url for that component.
 
 '''
 

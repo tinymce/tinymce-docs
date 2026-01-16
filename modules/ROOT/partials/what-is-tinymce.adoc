@@ -12,9 +12,28 @@ liveDemo::default-editor[]
 
 {productname} integrates with frameworks and Content Management Systems (CMSs) through multiple deployment methods:
 
-* **Cloud CDN**: Load from the {cloudname} CDN for automatic updates to the latest version
-* **Package Manager**: Install locally using package managers for self-hosted solutions
-* **Direct Download**: Extract from .zip files for self-hosted installations
+[cols=3*a]
+|===
+
+|
+[.lead]
+xref:installation-cloud.adoc[Using the {cloudname}]
+
+The fastest way to get started with {productname}. Load from the {cloudname} CDN for automatic updates to the latest version.
+
+|
+[.lead]
+xref:installation-self-hosted.adoc[Using a package manager]
+
+Install {productname} locally using link:https://www.npmjs.com/package/tinymce^[NPM], link:https://classic.yarnpkg.com/en/package/tinymce^[Yarn], or other package managers for self-hosted solutions.
+
+|
+[.lead]
+xref:installation-zip.adoc[Direct download]
+
+Download and install {productname} from a .zip archive for traditional web deployments.
+
+|===
 
 
 include::partial$misc/admon-getting-started-with-tinymce.adoc[]

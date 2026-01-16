@@ -4,6 +4,93 @@
 
 NOTE: This is the {productname} Community version changelog. For information about the latest {cloudname} or {enterpriseversion} Release, see: xref:release-notes.adoc[{productname} Release Notes].
 
+== xref:8.3.2-release-notes.adoc[8.3.2 - 2026-01-14]
+
+* `uc-video` elements are not refreshed on undo/redo actions.
+// #TINY-12884
+
+== xref:8.3.1-release-notes.adoc[8.3.1 - 2025-12-17]
+
+### Fixed
+- Views could not be opened during the `init` event.
+// #TINY-13463
+
+== xref:8.3.0-release-notes.adoc[8.3.0 - 2025-12-10]
+
+### Added
+* New `documents_file_types` option.
+// #TINY-13278
+* New `files_upload_handler` and `link_uploadtab` options in the Link plugin.
+// #TINY-13278
+* New upload tab to the link dialog when `files_upload_handler`, `documents_file_types`, and `link_uploadtab` are all specified.
+// #TINY-13278
+* New options for `dropzone` dialog components: `dropAreaLabel`, `buttonLabel`, `allowedFileTypes` and `allowedFileExtensions`.
+// #TINY-13278
+
+### Improved
+* Accordions can now be opened and closed when the editor is in a read-only state.
+// #TINY-12316
+* An editor notification is now shown when a premium plugin is not allowed for a given license key.
+// #TINY-12937
+
+### Fixed
+* Accordions could be toggled when the editor was in a disabled state.
+// #TINY-12315
+* Removing a line height sometimes did not remove it from all selected lines.
+// #TINY-13053
+* The `font-size` style on `li` elements was not copied to new list items.
+// #TINY-13224
+* Toolbar split button chevron tooltip is now the same as the main button tooltip unless explicitly set.
+// #TINY-13271
+* Inline formats were not applied to the marker of a list item when its content was a single block element.
+// #TINY-13197
+
+== xref:8.2.2-release-notes.adoc[8.2.2 - 2025-11-13]
+
+### Improved
+* Improved the ability to load the License Key Manager in different hosting scenarios.
+// #TINY-13203
+
+== xref:8.2.1-release-notes.adoc[8.2.1 - 2025-11-06]
+
+### Fixed
+* Resizing the editor's height would add a fixed width value.
+// #TINY-13138
+* Help Plugin did not contain an entry for the Fullpage HTML plugin.
+// #TINY-13183
+
+== xref:8.2.0-release-notes.adoc[8.2.0 - 2025-10-23]
+
+### Improved
+* Some elements would be given an extra newline by the serializer when indented.
+// #TINY-12857
+
+### Fixed
+* UI elements like focus outlines and placeholders would be visible after printing.
+// #TINY-12584
+* The `open` attribute on `<details>` elements is now normalized to `open="open"` when the accordion plugin is enabled.
+//#TINY-12862
+* Tooltips on toolbar buttons sometimes remained visible if the button icon was updated while hovered.
+// #TINY-12289
+* The editor would upon gaining focus scroll to the center of the editor on some browsers if the top of the editor was out of frame.
+// #TINY-12626
+* Some UI elements related to dragging elements were not properly filtered out when fetching content.
+// #TINY-12384
+* The cursor could get stuck around an absolute CEF element when navigating using arrow keys.
+// #TINY-10526
+* The schema will now allow the `property` RDFa attribute on `meta` elements.
+// #TINY-12858
+* Corrected type of `undoManager.add` method. The `event` parameter is type `EditorEvent` not `Event`.
+// #TINY-12936
+* Chromium browsers would in certain situations scroll the editor unexpectedly when dragging content over the editor.
+// #INT-3373
+* Support for setting component urls for custom elements.
+// #TINY-13006
+* Reverted toolbar button width to `auto`.
+// #TINY-13097
+* Addressed split buttons rendering narrower than in {productname} 7, ensuring consistent sizing across the toolbar.
+// #TINY-13111
+
 == xref:8.1.2-release-notes.adoc[8.1.2 - 2025-09-18]
 
 ### Fixed

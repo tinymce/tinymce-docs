@@ -3,128 +3,115 @@
 :description: Learn how to install {productname} via {cloudname}, package managers, self-hosted zips for various integration options.
 :page-aliases: integrations.adoc
 
-There are multiple ways to install {productname}. This section lists the various installation and integration options for installing {productname} using the {cloudname}, package managers or self-hosted downloads.
 
-[cols="1,1"]
+== Quick start guides
+
+[cols=2*a]
 |===
 
-a|
+|
 [.lead]
-Quick start
+xref:cloud-quick-start.adoc[Cloud quick start]
 
-* xref:cloud-quick-start.adoc[Using the {cloudname}]
-* xref:npm-projects.adoc[NPM projects]
-* xref:php-projects.adoc[PHP projects]
-* xref:dotnet-projects.adoc[.NET projects]
-* xref:bower-projects.adoc[Bower projects]
-* xref:zip-install.adoc[{productname} .zip deployments]
+Get started with {productname} using the {cloudname} in minutes.
+|
+|===
 
-a|
+== Integrations
+
+Get started with {productname} in your preferred integration:
+
+=== Supported Integrations
+
+The following packages are thin wrappers around {productname} to make it easier to integrate into your project:
+
+[cols=2*a]
+|===
+
+|
 [.lead]
-React
+xref:react-cloud.adoc[React]
 
-* xref:react-cloud.adoc[Using the {cloudname}]
-* xref:react-pm-host.adoc[Using a package manager with hosting]
-* xref:react-pm-bundle.adoc[Using a package manager with bundling]
-* xref:react-zip-host.adoc[{productname} .zip deployments with hosting]
-* xref:react-zip-bundle.adoc[{productname} .zip deployments with bundling]
+Integrate {productname} into your React application using the {cloudname}.
 
-a|
+|
 [.lead]
-Angular
+xref:angular-cloud.adoc[Angular]
 
-* xref:angular-cloud.adoc[Using the {cloudname}]
-* xref:angular-pm.adoc[Using a package manager]
-* xref:angular-zip.adoc[{productname} .zip deployments]
+Integrate {productname} into your Angular application using the {cloudname}.
 
-a|
+|
 [.lead]
-Vue.js
+xref:vue-cloud.adoc[Vue.js]
 
-* xref:vue-cloud.adoc[Using the {cloudname}]
-* xref:vue-pm.adoc[Using a package manager]
-* xref:vue-zip.adoc[{productname} .zip deployments]
+Integrate {productname} into your Vue.js application using the {cloudname}.
 
-a|
+|
 [.lead]
-Blazor
+xref:blazor-cloud.adoc[Blazor]
 
-* xref:blazor-cloud.adoc[Using the {cloudname}]
-* xref:blazor-pm.adoc[Using a package manager]
-* xref:blazor-zip.adoc[{productname} .zip deployments]
+Integrate {productname} into your Blazor application using the {cloudname}.
 
-a|
+|
 [.lead]
-Svelte
+xref:svelte-cloud.adoc[Svelte]
 
-* xref:svelte-cloud.adoc[Using the {cloudname}]
-* xref:svelte-pm.adoc[Using a package manager]
-* xref:svelte-zip.adoc[{productname} .zip deployments]
+Integrate {productname} into your Svelte application using the {cloudname}.
 
-a|
+|
 [.lead]
-Web Component
+xref:webcomponent-cloud.adoc[Web Component]
 
-* xref:webcomponent-cloud.adoc[Using the {cloudname}]
-* xref:webcomponent-pm.adoc[Using a package manager]
-* xref:webcomponent-zip.adoc[{productname} .zip deployments]
+Integrate {productname} as a web component using the {cloudname}.
 
-a|
+|
 [.lead]
-Java Swing
+xref:jquery-cloud.adoc[jQuery]
 
-* xref:swing.adoc[{productname} .zip deployments]
+Integrate {productname} with the jQuery JavaScript library using the {cloudname}.
 
-a|
+// Empty cell to even out rows
+|
+|===
+
+=== Backend Integrations
+
+[cols=2*a]
+|===
+
+|
 [.lead]
-jQuery
+xref:django-cloud.adoc[Django]
 
-* xref:jquery-cloud.adoc[Using the {cloudname}]
-* xref:jquery-pm.adoc[Using a package manager]
+Integrate {productname} into your Django application using the {cloudname}.
 
-a|
+|
 [.lead]
-Bootstrap
+xref:laravel-tiny-cloud.adoc[Laravel]
 
-* xref:bootstrap-cloud.adoc[Using the {cloudname}]
-* xref:bootstrap-zip.adoc[{productname} .zip deployments]
+Integrate {productname} into your Laravel application using the {cloudname}.
 
-a|
+|
 [.lead]
-Django
+xref:rails-cloud.adoc[Ruby on Rails]
 
-* xref:django-cloud.adoc[Using the {cloudname}]
-* xref:django-zip.adoc[{productname} .zip deployments]
+Integrate {productname} into your Ruby on Rails application using the {cloudname}.
 
-a|
+// Empty cell to even out rows
+|
+
+|===
+
+=== Other Integrations
+
+[cols=2*a]
+|===
+
+
+|
 [.lead]
-Node.js + Express
+xref:bootstrap-cloud.adoc[Bootstrap]
 
-* xref:expressjs-pm.adoc[Using a package manager]
-
-a|
-[.lead]
-Laravel
-
-* xref:laravel-tiny-cloud.adoc[Using the {cloudname}]
-* xref:laravel-composer-install.adoc[Using a package manager]
-* xref:laravel-zip-install.adoc[{productname} .zip deployments]
-
-a|
-[.lead]
-Ruby on Rails
-
-* xref:rails-cloud.adoc[Using the {cloudname}]
-* xref:rails-third-party.adoc[Using a package manager]
-* xref:rails-zip.adoc[{productname} .zip deployments]
-
-
-a|
-[.lead]
-Wordpress
-
-* xref:wordpress.adoc[Wordpress plugin]
-
-a|
-
+Integrate {productname} with the Bootstrap CSS framework using the {cloudname}.
+|
 |===

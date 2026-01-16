@@ -1,0 +1,61 @@
+The `+tinymce-premium+` package is the recommended way to install and use premium plugins with {productname}. It includes all premium plugins, skins, icons, and language packs.
+
+To bundle premium plugins from the NPM package, import the individual plugins you need.
+
+[cols='1,2,3']
+|====
+|Module Syntax |Source |Example
+
+.2+|ES6+
+|NPM
+a|
+[source, js]
+----
+import 'tinymce-premium/plugins/advcode';
+import 'tinymce-premium/plugins/tinycomments';
+/* Always include the licensekeymanager plugin when using premium plugins with a commercial license. */
+import 'tinymce-premium/plugins/licensekeymanager';
+----
+
+|`.zip`
+a|
+[source, js]
+----
+import '<path_to_tinymce_premium_zip>/plugins/advcode';
+----
+
+.2+|Common JS
+|NPM
+a|
+[source, js]
+----
+require('tinymce-premium/plugins/advcode');
+require('tinymce-premium/plugins/tinycomments');
+/* Always include the licensekeymanager plugin when using premium plugins with a commercial license. */
+require('tinymce-premium/plugins/licensekeymanager');
+----
+
+|`.zip`
+a|
+[source, js]
+----
+require('<path_to_tinymce_premium_zip>/plugins/advcode');
+----
+|====
+
+If premium skins and icons are required, you can import them from the `+tinymce-premium+` package: 
+
+[source, js]
+----
+// Premium skins (oxide is the default skin)
+import 'tinymce-premium/skins/ui/oxide/skin.css';
+
+// Premium icons
+import 'tinymce-premium/icons/premium';
+----
+
+[NOTE]
+====
+* **Icons**: The default icon pack is always required. Premium icon packs may not include all icons and are designed to fall back to the default icons when they suit the pack. Import both the default and premium icon packs, then use the xref:editor-icons.adoc[`+icons+`] option in your editor configuration to tell {productname} to also use the premium icon pack. 
+* **Skins**: Import either a community or premium skin (not both). Configure the skin using the xref:editor-skin.adoc[`+skin+`] option in your editor configuration.
+====

@@ -3,51 +3,226 @@
 :description_short: Information on bundling plugins
 :description: Information on bundling TinyMCE plugins using module loading
 
+== Overview
+
+{productname} plugins can be bundled using a module bundler such as Webpack, Rollup, or Vite. This guide covers how to include both community and premium plugins in your application bundle.
+
+{productname} includes both community and premium plugins:
+
+* **Community plugins**: Available with all {productname} installations
+* **Premium plugins**: Available with paid {productname} subscriptions via the `+tinymce-premium+` package
+
 :editorcomponent: plugin
 include::partial$module-loading/bundling-ref-example.adoc[]
 :!editorcomponent:
 
-[NOTE]
-If using {productname} 7.0.1 or earlier, please refer to link:https://www.tiny.cloud/docs/tinymce/6/bundling-plugins/[Bundling {productname} plugins using module loading] from the {productname} v6 documentation guide.
-
 include::partial$plugin-files/plugin-file-index.js.adoc[]
 
+== Bundling syntax examples
 
-Example syntax for including the example "<plugincode>" plugin in a bundle using `content.js`for bundling:
+The following examples show the syntax for including plugins in a bundle. The examples use a placeholder `+<plugincode>+` to represent any plugin name:
 
-[cols='1,1,4']
+[cols='1,2,3']
 |===
 |Module Syntax |Source |Example
 
-.2+|ES6+
-|npm
+.4+|ES6+
+|npm (community plugins)
 a|
 [source, js]
 ----
 import 'tinymce/plugins/<plugincode>';
 ----
 
-|`.zip`
+|npm (premium plugins)
 a|
 [source, js]
 ----
-import '../tinymce/plugins/<plugincode>';
+import 'tinymce-premium/plugins/<plugincode>';
 ----
 
-.2+|Common JS
-|npm
+|`.zip` (community plugins)
+a|
+[source, js]
+----
+import '<path_to_tinymce_zip>/plugins/<plugincode>';
+----
+
+|`.zip` (premium plugins)
+a|
+[source, js]
+----
+import '<path_to_tinymce_premium_zip>/plugins/<plugincode>';
+----
+
+.4+|Common JS
+|npm (community plugins)
 a|
 [source, js]
 ----
 require('tinymce/plugins/<plugincode>');
 ----
 
-|`.zip`
+|npm (premium plugins)
 a|
 [source, js]
 ----
-require('../tinymce/plugins/<plugincode>');
+require('tinymce-premium/plugins/<plugincode>');
+----
+
+|`.zip` (community plugins)
+a|
+[source, js]
+----
+require('<path_to_tinymce_zip>/plugins/<plugincode>');
+----
+
+|`.zip` (premium plugins)
+a|
+[source, js]
+----
+require('<path_to_tinymce_premium_zip>/plugins/<plugincode>');
 ----
 |===
 
+[[using-premium-plugins]]
+== Using premium plugins
+
+After installing the `+tinymce-premium+` package, you need to configure the plugins in your editor. There are two main approaches:
+
+[IMPORTANT]
+====
+*License Key Manager Requirement:*
+
+When using premium plugins with a commercial license, you must include the `+licensekeymanager+` plugin. The editor will not function properly without it. For more information, see: xref:license-key.adoc[License Key].
+
+*xref:bundling-plugins.adoc#bundling-recommended[When bundling]:*
+[source,js]
+----
+import 'tinymce-premium/plugins/licensekeymanager';
+----
+
+*xref:bundling-plugins.adoc#using-external-plugins[When using `+external_plugins+`]:*
+[source,js]
+----
+external_plugins: {
+  'licensekeymanager': '<path_to_premium_plugins>/licensekeymanager/plugin.min.js'
+}
+----
+====
+
+[[bundling-recommended]]
+=== Bundling (Recommended)
+
+For most modern applications, bundling premium plugins is recommended. This includes the plugin code directly in your application bundle.
+
+. Import the premium plugins you need:
++
+[source,js]
+----
+import 'tinymce-premium/plugins/advcode';
+import 'tinymce-premium/plugins/tinycomments';
+// Always include the licensekeymanager plugin when using premium plugins with a commercial license.
+import 'tinymce-premium/plugins/licensekeymanager';
+----
+
+. Add the plugins to your editor configuration:
++
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  license_key: 'T8LK:...', // Your commercial license key
+  plugins: 'advcode tinycomments',
+  // ... other configuration
+});
+----
+
+For complete bundling examples, see the <<premium-plugins,Premium plugins>> and <<community-plugins,Community plugins>> sections below.
+
+[[using-external-plugins]]
+=== Using external_plugins (Non-bundling)
+
+When bundling is not available or you want to lazy-load plugins, use the `+external_plugins+` option:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  license_key: 'T8LK:...', // Your commercial license key
+  external_plugins: {
+    'advcode': '/<path_to_premium_plugins>/advcode/plugin.min.js',
+    'tinycomments': '/<path_to_premium_plugins>/tinycomments/plugin.min.js',
+    // Always include the licensekeymanager plugin when using premium plugins with a commercial license.
+    'licensekeymanager': '/<path_to_premium_plugins>/licensekeymanager/plugin.min.js'
+  },
+  plugins: 'advcode tinycomments',
+  // ... other configuration
+});
+----
+
+[NOTE]
+====
+The `+external_plugins+` option supports three URL formats:
+
+* Absolute URLs (e.g., `+https://cdn.example.com/...+`)
+* Relative to web-server root (e.g., `+/node_modules/...+`)
+* Relative to {productname} `+base_url+` (e.g., `+../../node_modules/...+`)
+
+For more information, see: xref:editor-important-options.adoc#external_plugins[`+external_plugins+` configuration option].
+====
+
 include::partial$module-loading/bundling-plugin-files.adoc[]
+
+[[plugin-language-files-bundling]]
+=== Bundling plugin language files
+
+Plugin language files are separate from the main {productname} UI language files. Each plugin has its own language files located in `+plugins/<plugincode>/langs/+`.
+
+* **Core UI language files**: Located in `+langs/+` (e.g., `+tinymce-premium/langs/ar.js+`)
+* **Premium plugin language files**: Located in `+plugins/<plugincode>/langs/+` (e.g., `+tinymce-premium/plugins/advcode/langs/ar.js+`)
+
+To bundle premium plugin language files, import them using the same module syntax as bundling plugins, but append `+/langs/<language>.js+` to the import path:
+
+[source, js]
+----
+// Import the plugin
+import 'tinymce-premium/plugins/advcode';
+// Import the premium plugin's Arabic language file
+import 'tinymce-premium/plugins/advcode/langs/ar.js';
+// Import the main UI Arabic language file (if needed)
+import 'tinymce-premium/langs/ar.js';
+
+tinymce.init({
+  selector: 'textarea',
+  language: 'ar',
+  plugins: 'advcode',
+  // ... other configuration
+});
+----
+
+[NOTE]
+====
+For premium plugins from `+tinymce-premium+`, the language file path must include the `.js` extension.
+====
+
+[[plugin-lazy-loading]]
+=== Plugin lazy-loading and additional resources
+
+[IMPORTANT]
+====
+Plugins lazy-load additional resources (JS and CSS files) at runtime for optimal performance. These resources must be:
+
+* **Included in the bundle** along with the plugin (recommended for bundled applications)
+* **Placed as static assets** in the expected location (for non-bundled deployments)
+
+Missing resources may cause plugins to fail or display errors.
+====
+
+When bundling, explicitly import any additional resources that plugins require. The module bundler includes these files in the application bundle, making them available at runtime.
+
+For non-bundled deployments using `+external_plugins+`, ensure all required resource files (CSS, JS, and language files) are accessible at the expected paths relative to the plugin file location.
+
+See <<plugin-resources,Additional plugin resources>> for specific examples of plugins that require additional resources.
+
+include::partial$module-loading/bundling-plugin-resources.adoc[]

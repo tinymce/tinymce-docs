@@ -1,7 +1,7 @@
 = tinymce.dom.ScriptLoader
 :navtitle: tinymce.dom.ScriptLoader
 :description: This class handles asynchronous/synchronous loading of JavaScript files it will execute callbacks when various items gets loaded. This class is useful to load external JavaScript files.
-:keywords: add, isDone, loadQueue, loadScript, loadScripts, markDone
+:keywords: add, getScriptAttributes, isDone, loadQueue, loadScript, loadScripts, markDone
 :moxie-type: api
 
 This class handles asynchronous/synchronous loading of JavaScript files it will execute callbacks when various items gets loaded. This class is useful to load external JavaScript files.
@@ -37,6 +37,7 @@ scriptLoader.loadQueue().then(() => {
 |===
 |Name|Summary|Defined by
 |xref:#add[add()]|Adds a specific script to the load queue of the script loader.|`xref:apis/tinymce.dom.scriptloader.adoc[ScriptLoader]`
+|xref:#getScriptAttributes[getScriptAttributes()]|Returns the attributes that should be added to a script tag when loading the specified URL.|`xref:apis/tinymce.dom.scriptloader.adoc[ScriptLoader]`
 |xref:#isDone[isDone()]|Returns true/false if a script has been loaded or not.|`xref:apis/tinymce.dom.scriptloader.adoc[ScriptLoader]`
 |xref:#loadQueue[loadQueue()]|Starts the loading of the queue.|`xref:apis/tinymce.dom.scriptloader.adoc[ScriptLoader]`
 |xref:#loadScript[loadScript()]|Loads a specific script directly without adding it to the load queue.|`xref:apis/tinymce.dom.scriptloader.adoc[ScriptLoader]`
@@ -64,6 +65,24 @@ Adds a specific script to the load queue of the script loader.
 ==== Return value
 
 * `Promise` - A promise that will resolve when the script loaded successfully or reject if it failed to load.
+
+'''
+
+[[getScriptAttributes]]
+=== getScriptAttributes()
+[source, javascript]
+----
+getScriptAttributes(url: String): Object
+----
+Returns the attributes that should be added to a script tag when loading the specified URL.
+
+==== Parameters
+
+* `url (String)` - Url to get attributes for.
+
+==== Return value
+
+* `Object` - Object with attributes to add to the script tag.
 
 '''
 

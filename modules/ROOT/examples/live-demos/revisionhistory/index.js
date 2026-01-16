@@ -8,7 +8,7 @@ const revisions = [
     createdAt: '2023-11-24T22:26:21.578Z',
     author: {
       id: 'james-wilson',
-      name: 'A Tiny Husky',
+      name: 'James Wilson',
       avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg',
     },
     content: `
@@ -25,21 +25,16 @@ const revisions = [
       </thead>
       <tbody>
       <tr>
-      <td>TinyMCE</td>
-      <td>Free</td>
-      <td>YES!</td>
-      </tr>
-      <tr>
-      <td>Plupload</td>
-      <td>Free</td>
-      <td>YES!</td>
+      <td style="text-align: center;">TinyMCE</td>
+      <td style="text-align: center;">Free</td>
+      <td style="text-align: center;">YES!</td>
       </tr>
       </tbody>
       </table>
       <h2>Found a bug?</h2>
       <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
       <h2>Finally ...</h2>
-      <p><s>Don't forget to check out our other product <a href="http://www.plupload.com" target="_blank" rel="noopener">Plupload</a>, your ultimate upload solution featuring HTML5 upload support.</s></p>
+      <p><s>Need file uploads in your app? Consider using <a href="https://www.tiny.cloud/docs/tinymce/latest/uploadcare/" target="_blank" rel="noopener noreferrer">Uploadcare</a> with TinyMCE for a fast, modern upload experience.</s></p>
       <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>
     `,
   },
@@ -71,21 +66,16 @@ const revisions = [
       </thead>
       <tbody>
       <tr>
-      <td>TinyMCE</td>
-      <td>Free</td>
-      <td>YES!</td>
-      </tr>
-      <tr>
-      <td>Plupload</td>
-      <td>Free</td>
-      <td>YES!</td>
+      <td style="text-align: center;">TinyMCE</td>
+      <td style="text-align: center;">Free</td>
+      <td style="text-align: center;">YES!</td>
       </tr>
       </tbody>
       </table>
       <h2>Found a bug?</h2>
       <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
       <h2>Finally ...</h2>
-      <p>Don't forget to check out our other product <a href="http://www.plupload.com" target="_blank" rel="noopener">Plupload</a>, your ultimate upload solution featuring HTML5 upload support.</p>
+      <p>Need file uploads in your app? Consider using <a href="https://www.tiny.cloud/docs/tinymce/latest/uploadcare/" target="_blank" rel="noopener noreferrer">Uploadcare</a> with TinyMCE for a fast, modern upload experience.</p>
       <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>
     `,
   },
@@ -117,21 +107,16 @@ const revisions = [
       </thead>
       <tbody>
       <tr>
-      <td>TinyMCE</td>
-      <td>Free</td>
-      <td>YES!</td>
-      </tr>
-      <tr>
-      <td>Plupload</td>
-      <td>Free</td>
-      <td>YES!</td>
+      <td style="text-align: center;">TinyMCE</td>
+      <td style="text-align: center;">Free</td>
+      <td style="text-align: center;">YES!</td>
       </tr>
       </tbody>
       </table>
       <h2>Found a bug?</h2>
       <p>If you think you have found a bug please create an issue on the <a href="https://github.com/tinymce/tinymce/issues">GitHub repo</a> to report it to the developers.</p>
       <h2>Finally ...</h2>
-      <p>Don't forget to check out our other product <a href="http://www.plupload.com" target="_blank" rel="noopener">Plupload</a>, your ultimate upload solution featuring HTML5 upload support.</p>
+      <p>Need file uploads in your app? Consider using <a href="https://www.tiny.cloud/docs/tinymce/latest/uploadcare/" target="_blank" rel="noopener noreferrer">Uploadcare</a> with TinyMCE for a fast, modern upload experience.</p>
       <p>Thanks for supporting TinyMCE! We hope it helps you and your users create great content.<br>All the best from the TinyMCE team.</p>
     `,
   }
@@ -140,7 +125,7 @@ const revisions = [
 const revisionhistory_fetch = () => new Promise((resolve) => {
   setTimeout(() => {
     const sortedRevisions = revisions
-      .sort((a, b) => new Date(a.createdAt) < new Date(b.createdAt) ? 1 : -1);
+      .sort((a, b) => new Date(a.createdAt) < new Date(b.createdAt) ? -1 : 1);
     resolve(sortedRevisions);
   }, fakeDelay);
 });

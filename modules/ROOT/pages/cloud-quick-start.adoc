@@ -1,10 +1,46 @@
-= Quick start
-:navtitle: Quick start
+= Quick start: {productname} with {cloudname}
+:navtitle: Quick start: Cloud
 :description_short: Setup a basic {productname} {productmajorversion} editor using the {cloudname}.
 :description: Get an instance of {productname} {productmajorversion} up and running using the {cloudname}.
 :keywords: tinymce, script, textarea
 :productSource: cloud
 
-include::partial$install/basic-quickstart-base.adoc[]
+== Install {productname} using the {cloudname}
+
+{productname} {productmajorversion} is a powerful and flexible rich text editor that can be embedded in web applications. This quick start covers how to add a {productname} editor to a web page using the {cloudname}.
 
 include::partial$misc/admon-account-creation-and-social-option.adoc[]
+
+== Include the {productname} script
+
+Include the following line of code in the `+<head>+` of a HTML page:
+
+[source,html,subs="attributes+"]
+----
+<script src="{cdnurl}" referrerpolicy="origin" crossorigin="anonymous"></script>
+----
+
+== Initialize {productname} as part of a web form
+
+include::partial$install/initialize-editor-cloud.adoc[]
+
+Adding this content to an HTML file and opening it in a web browser will load a {productname} editor, such as:
+
+liveDemo::default[]
+
+== Update the "no-api-key" placeholder with your API key
+
+To remove the notice:
+
+[WARNING]
+====
+**This domain is not registered with {cloudname}. Please see the quick start guide or create an account.**
+====
+
+Update the `+no-api-key+` placeholder in the source script (`+<script src=...+`) with your {cloudname} API key, which is created when signing up to the link:{accountsignup}/[{cloudname}].
+
+Signing up for a {cloudname} API key will also provide a trial of the xref:plugins.adoc#premium-plugins[Premium Plugins].
+
+include::partial$install/save-content.adoc[]
+
+include::partial$misc/quickstart-next-steps.adoc[]

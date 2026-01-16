@@ -1,0 +1,31 @@
+= {productname} {release-version}
+:release-version: 8.2.2
+:navtitle: {productname} {release-version}
+:description: Release notes for {productname} {release-version}
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+
+[[overview]]
+== Overview
+
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Monday, November 17^th^, 2025. These release notes provide an overview of the changes for {productname} {release-version}, including:
+
+* xref:improvement[Improvement]
+
+
+[[improvement]]
+== Improvement
+
+{productname} {release-version} also includes the following improvement:
+
+=== Improved the ability to load the License Key Manager in different hosting scenarios
+// #TINY-13203
+
+The **License Key Manager** plugin no longer requires self-hosting when using a hybrid deployment, where the editor is hosted locally but premium plugins are delivered from the {cloudname} CDN. In this configuration, the License Key Manager will now automatically load from the {cloudname} CDN as required, improving setup flexibility and reducing hosting complexity.
+
+For details on hybrid deployment, see: xref:editor-plugin-version.adoc[Editor Plugin Version]
+
+For information on the License Key Manager plugin, see: xref:license-key.adoc[License Key Manager].

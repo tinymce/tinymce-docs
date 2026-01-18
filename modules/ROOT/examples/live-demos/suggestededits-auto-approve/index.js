@@ -23,6 +23,6 @@ tinymce.init({
         .catch(() => ({ id: userId })))),
   
   init_instance_callback: (editor) => { 
-    tinymce.activeEditor.execCommand('suggestededits'); 
+    editor.execCommand('suggestededits'); 
   }
 });

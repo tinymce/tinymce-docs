@@ -1,7 +1,7 @@
 tinymce.init({
   selector: 'textarea',
   plugins: 'uploadcare link',
-  toolbar: 'link',
+  toolbar: "undo redo | styles | bold italic underline | forecolor | bullist numlist | link uploadcare uploadcare-video | code preview",
   uploadcare_public_key: '<your-public-key>',
   documents_file_types: [
     { mimeType: 'application/msword', extensions: [ 'doc' ] },

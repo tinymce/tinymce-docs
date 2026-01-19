@@ -17,13 +17,19 @@ import { EditorComponent, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
 })
 ----
 
-.. Add {productname} to the _global scripts_ tag via `+angular.json+`.
+.. Add the relative path to {productname} to the `scripts` array in +angular.json+`.
 +
 [source,json]
 ----
-"scripts": [
-  "<path_to_source_tinymce>/tinymce.min.js"
-]
+"build": {
+  "options": {
+    // ... other options
+    "scripts": [
+      "<path_to_source_tinymce>/tinymce.min.js"
+    ]
+  }
+}
+
 ----
 
 . Then update `+angular.json+` to include {productname} and other components as `+assets+`. This will make them available to the application as static assets.

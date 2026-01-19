@@ -30,8 +30,6 @@ import 'tinymce/plugins/table';
 import 'tinymce/plugins/help';
 import 'tinymce/plugins/help/js/i18n/keynav/en';
 
-include::partial$integrations/premium-plugins-bundling.adoc[]
-
 /* content UI CSS is required (using the default oxide skin) */
 import contentUiSkinCss from 'tinymce/skins/ui/oxide/content.css';
 
@@ -46,8 +44,7 @@ export function render () {
     toolbar: 'bold italic | bullist numlist | link emoticons',
     skin: false,
     content_css: false,
-    content_style: contentUiSkinCss.toString() + '\n' + contentCss.toString(),
-include::partial$module-loading/bundling-external-plugins-npm.adoc[]
+    content_style: contentUiSkinCss.toString() + '\n' + contentCss.toString()
   });
 };
 ----

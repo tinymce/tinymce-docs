@@ -1,6 +1,6 @@
-Initialize {productname} {productmajorversion} on any element (or elements) on the web page by passing an object containing a `+selector+` value to `+tinymce.init()+`. The `+selector+` value can be any valid https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors[CSS selector].
+Initialize {productname} {productmajorversion} on any element (or elements) on the web page by passing a `+selector+` to `+tinymce.init()+`. The `+selector+` value can be any valid https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Selectors[CSS selector].
 
-For example, to replace `+<textarea id="mytextarea">+` with a {productname} {productmajorversion} editor instance, pass the selector `+'#mytextarea'+` to `+tinymce.init()+`:
+For example, to initialize a {productname} {productmajorversion} instance at the textarea element, pass the selector `+#mytextarea+` to `+tinymce.init()+`.
 
 [source,html,subs="attributes+"]
 ----
@@ -11,18 +11,16 @@ For example, to replace `+<textarea id="mytextarea">+` with a {productname} {pro
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <script src="{cdnurl}" referrerpolicy="origin" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <h1>{productname} Quick Start Guide</h1>
+    <textarea id="mytextarea">Hello, World!</textarea>
     <script>
       tinymce.init({
         selector: '#mytextarea'
       });
     </script>
-  </head>
-
-  <body>
-    <h1>{productname} Quick Start Guide</h1>
-    <form method="post">
-      <textarea id="mytextarea">Hello, World!</textarea>
-    </form>
   </body>
 </html>
 ----

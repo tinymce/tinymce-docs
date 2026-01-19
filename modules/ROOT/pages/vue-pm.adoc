@@ -1,7 +1,9 @@
-= Using the TinyMCE package with the Vue.js framework
+= Lazy-loading TinyMCE in Vue.js
 :navtitle: Using a package manager
-:description: A guide on integrating the TinyMCE package into the Vue.js framework.
+:description: A guide on lazy-loading the TinyMCE into a Vue.js application.
 :keywords: integration, integrate, vue, vuejs, tinymce-vue
-:productSource: package-manager
+:productSource: lazy-load
+
+This guide shows how to self-host and lazy-load {productname} in a Vue.js application using the link:https://github.com/tinymce/tinymce-vue[{productname} Vue.js component^].
 
 include::partial$integrations/vue-quick-start.adoc[]

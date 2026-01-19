@@ -30,10 +30,6 @@ require('../tinymce/js/tinymce/plugins/table');
 require('../tinymce/js/tinymce/plugins/help');
 require('../tinymce/js/tinymce/plugins/help/js/i18n/keynav/en');
 
-include::partial$integrations/premium-plugins-bundling.adoc[]
-/* From ZIP download - download separately and add to /src/plugins */
-/* import './plugins/<plugincode>'; */
-
 /* content UI CSS is required (using the default oxide skin) */
 const contentUiSkinCss = require('../tinymce/js/tinymce/skins/ui/oxide/content.css');
 

@@ -25,6 +25,9 @@
 ** xref:supported-tinymce-events[Supported {productname} events]
 ** xref:allowedevents[`+allowedEvents+`]
 ** xref:ignoreevents[`+ignoreEvents+`]
+* xref:angular-modules[`+Angular module+`]
+
+
 
 [[supported-angular-versions]]
 == Supported Angular versions
@@ -92,7 +95,7 @@ Add the `+EditorModule+` to `+@NgModule({imports})+`:
 
 The editor accepts the following properties:
 
-[source,html,subs="attributes+"]
+[source,jsx]
 ----
 <editor
   apiKey="no-api-key"
@@ -518,7 +521,7 @@ Used to provide an allow-list of valid events to trigger from the editor to the 
 
 ==== Example: using `+allowedEvents+`
 
-[source,html]
+[source,jsx]
 ----
 <editor allowedEvents="onMouseDown,onKeyDown" />
 ----
@@ -536,7 +539,7 @@ Used to block a list of events from the `+tinymce-angular+` component.
 
 ==== Example: using `+ignoreEvents+`
 
-[source,html]
+[source,jsx]
 ----
 <editor ignoreEvents="onMouseEnter,onMouseLeave,onMouseOut,onMouseMove" />
 ----

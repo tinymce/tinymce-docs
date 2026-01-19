@@ -1,9 +1,5 @@
 :packageName: tinymce-vue
 
-The link:https://github.com/tinymce/tinymce-vue[Official {productname} Vue.js component] integrates {productname} into Vue.js projects, providing a powerful WYSIWYG editor within the Vue ecosystem. This procedure creates a link:https://cli.vuejs.org/guide/creating-a-project.html#vue-create[basic Vue.js application] containing a {productname} editor.
-
-Version 4 and later of the `+tinymce-vue+` package supports Vue.js 3.x, but does not support Vue.js 2.x. For Vue.js 2.x applications, use `+tinymce-vue+` version 3.
-
 == Prerequisites
 
 This procedure requires:
@@ -13,8 +9,8 @@ This procedure requires:
 
 == Procedure
 
-. Create a new Vue project named `tinymce-vue-demo` using the link:https://github.com/vuejs/create-vue[Create Vue Tool].
-* From a command line or command prompt create a Vue.js 3.x project: `+tinymce-vue-demo+`.
+. Create a new Vue project named `tinymce-vue-demo` using the link:https://github.com/vuejs/create-vue[Create Vue^] tool.
+* From a command line or command prompt, create a Vue.js 3.x project: `+tinymce-vue-demo+`.
 +
 [source,sh]
 ----
@@ -26,11 +22,7 @@ npm create vue@3
 ----
 npm create vue@2
 ----
-+
-[NOTE]
-As per the link:https://vuejs.org/about/faq.html#what-s-the-difference-between-vue-2-and-vue-3[Vue FAQ], _Vue 2 will reach End of Life by the end of 2023_.
 
-+
 * Follow the prompts and type `+tinymce-vue-demo+` as the project name.
 . Change into the newly created directory.
 +
@@ -39,49 +31,47 @@ As per the link:https://vuejs.org/about/faq.html#what-s-the-difference-between-v
 cd tinymce-vue-demo
 ----
 
-ifeval::["{productSource}" == "package-manager"]
+ifeval::["{productSource}" == "lazy-load"]
 . Install the `+tinymce+` and `+tinymce-vue+` packages.
 
 * For Vue.js 3.x users:
 +
 [source,sh]
 ----
-npm install tinymce "@tinymce/tinymce-vue"
+npm install tinymce @tinymce/tinymce-vue
 ----
 
 * For Vue.js 2.x users:
 +
 [source,sh]
 ----
-npm install tinymce "@tinymce/tinymce-vue@^3"
+npm install tinymce @tinymce/tinymce-vue@^3
 ----
 
-include::partial$integrations/premium-plugins-install-step-link.adoc[]
 endif::[]
-ifeval::["{productSource}" != "package-manager"]
+ifeval::["{productSource}" != "lazy-load"]
 
 . Install the `+tinymce-vue+` package.
 * For Vue.js 3.x users:
 +
 [source,sh]
 ----
-npm install "@tinymce/tinymce-vue"
+npm install @tinymce/tinymce-vue
 ----
 * For Vue.js 2.x users:
 +
 [source,sh]
 ----
-npm install "@tinymce/tinymce-vue@^3"
+npm install @tinymce/tinymce-vue@^3
 ----
-
 endif::[]
 
-. Using a text editor, open `+/path/to/tinymce-vue-demo/src/App.vue+`.
-.. Add a {productname} configuration to the `+<template>+` using the `+<editor>+` tag.
-.. Add `+import Editor from '@tinymce/tinymce-vue'+` to the start of the `+<script>+`.
+ifeval::["{productSource}" == "zip"]
+
+. Unzip the content of the `+tinymce/js+` folder from the link:{download-enterprise}[{productname} zip] into the `+public+` folder.
+
+. Update `+App.vue+` with the below code snippet. *Note*: `+tinymceSrcScript+` references to the public `+tinymce+` using absolute root path.
 +
-ifeval::["{productSource}" == "cloud"]
-.For example:
 [source,jsx]
 ----
 <script setup>
@@ -91,8 +81,55 @@ import Editor from '@tinymce/tinymce-vue'
 <template>
   <main id="sample">
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-    <editor
-      id="uuid"
+    <Editor
+      id="<uid>"
+      licenseKey="gpl"
+      tinymceScriptSrc="/tinymce/tinymce.min.js"
+      :init="{
+        plugins: 'advlist anchor autolink code help image insertdatetime link lists media table wordcount',
+        toolbar: 'undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+        height: 500
+      }"
+    />
+  </main>
+</template>
+
+<style scoped>
+.logo {
+  display: block;
+  margin: 0 auto 2rem;
+}
+
+@media (min-width: 1024px) {
+  #sample {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    width: 1000px;
+  }
+}
+</style>
+----
+endif::[]
+
+ifeval::["{productSource}" != "zip"]
+
+ifeval::["{productSource}" == "cloud"]
++
+. Update `+App.vue+` to include `+Editor+` from `+tinymce/tinymce-vue+` as below:
+.For example:
++
+[source,jsx]
+----
+<script setup>
+import Editor from '@tinymce/tinymce-vue'
+</script>
+
+<template>
+  <main id="sample">
+    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
+    <Editor
+      id="<uid>"
       apiKey="no-api-key"
       :init="{
         plugins: 'advlist anchor autolink charmap code fullscreen help image insertdatetime link lists media preview searchreplace table visualblocks wordcount',
@@ -119,32 +156,33 @@ import Editor from '@tinymce/tinymce-vue'
 }
 </style>
 ----
-. Include the `+api-key+` option in the editor element and include your link:{accountsignup}/[{cloudname} API key]. Such as:
-+
-[source,html]
-----
-<editor api-key='no-api-key' :init="{ /* your other settings */ }" />
-----
+
+. Update the `+apiKey+` prop with your link:{accountsignup}/[{cloudname} API key].
+
 endif::[]
-ifeval::["{productSource}" == "package-manager"]
+ifeval::["{productSource}" == "lazy-load"]
 +
+. Update `+App.vue+` with the below code snippet. *Note*: `+tinymceSrcScript+` references to the public `+tinymce+` using absolute root path.
 .For example:
++
 [source,jsx]
 ----
 <script setup>
-import Editor from '@tinymce/tinymce-vue'
+import Editor from '@tinymce/tinymce-vue';
 </script>
 
 <template>
   <main id="sample">
     <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-    <editor
-      id="uuid"
+    <Editor
+      id="<uid>"
       licenseKey="gpl"
+      // Load tinymce at run-time
+      tinymce-script-src="/tinymce/tinymce.min.js"
       :init="{
-        plugins: 'advlist anchor autolink charmap code fullscreen help image insertdatetime link lists media preview searchreplace table visualblocks wordcount',
+        plugins: 'anchor lists advlist autolink charmap code media help',
         toolbar: 'undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-        height: 500,
+        height: 500
       }"
     />
   </main>
@@ -166,84 +204,68 @@ import Editor from '@tinymce/tinymce-vue'
 }
 </style>
 ----
+
+. Setup a `postinstall` script to copy {productname} to `public` directory after each packages installation, which makes {productname} available to the application as static assets.
+
+.. Install a library to help with copying assets.
++
+[source,bash]
+----
+npm install -D fs-extra
+----
+
+.. Add the following snipper to `postinstall.js` file.
++
+[source,js]
+----
+import fse from 'fs-extra';
+import path from 'path';
+
+const topDir = import.meta.dirname;
+fse.emptyDirSync(path.join(topDir, 'public', 'tinymce'));
+fse.copySync(path.join(topDir, 'node_modules', 'tinymce'), path.join(topDir, 'public', 'tinymce'), { overwrite: true });
+----
+
+.. Update `postinstall` target in `package.json` to run the `postinstall.js` script.
++
+[source,json]
+----
+// ... other content omitted for brevity ...
+"scripts": {
+  "postinstall": "node ./postinstall.js"
+}
+----
+
+. Exclude `+public/tinymce+` from Git tracking.
++
+[source,.gitignore]
+----
+# ... other rules omitted for brevity ...
+/public/tinymce/
+----
+
+. In this instance, run the `postinstall` to copy {productname} to the `public` directory.
++
+[source,sh]
+----
+npm run postinstall
+----
+
 endif::[]
-ifeval::["{productSource}" == "zip"]
-+
-.For example:
-[source,jsx]
-----
-<script setup>
-import Editor from '@tinymce/tinymce-vue'
-</script>
-
-<template>
-  <main id="sample">
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-    <editor
-      id="uuid"
-      licenseKey="gpl"
-      :init="{
-        plugins: 'advlist anchor autolink charmap code fullscreen help image insertdatetime link lists media preview searchreplace table visualblocks wordcount',
-        toolbar: 'undo redo | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
-        height: 500,
-      }"
-    />
-  </main>
-</template>
-
-<style scoped>
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  #sample {
-    display: flex;
-    flex-direction: column;
-    place-items: center;
-    width: 1000px;
-  }
-}
-</style>
-----
-+
-. {productname} can be self-hosted by either:
-** xref:deploying-tinymce-independent[Deploying {productname} independent of the Vue.js application],
-** xref:zip-install.adoc[{productname} .zip deployments].
-
-[[deploying-tinymce-independent]]
-== Deploying {productname} independent of the Vue.js application
-
-Deploying {productname} independent of the Vue.js application. To use a {productname} instance that has been deployed independent of the Vue.js application, use an HTML `+<script>+` tag.
-
-To use an independent deployment of {productname}, add a script to either the `<head>` or the end of the `<body>` of the HTML file, such as:
-
-[source,html]
-----
-<script src="/path/to/tinymce.min.js"></script>
-----
-
-To use an independent deployment of {productname} with the example create a Vue.js application, add the `+<script>+` to `/path/to/tinymce-vue-demo/public/index.html`.
 endif::[]
 
-. Test the application using the Node.js development server.
-* To start the development server, navigate to the `+tinymce-vue-demo+` directory and run:
+. To start the development server, run:
 +
 [source,sh]
 ----
 npm run dev
 ----
 
-* To stop the development server, select on the command line or command prompt and press `+Ctrl+C+`.
+== Other resources
 
-== Deploying the application to a HTTP server
-
-The application will require further configuration before it can be deployed to a production environment. For information on configuring the application for deployment, see: link:https://vuejs.org/v2/guide/deployment.html[Vue.js - Production Deployment].
-
-== Next Steps
-
-* For examples of the {productname} integration, see: link:https://tinymce.github.io/tinymce-vue/[the tinymce-vue storybook].
+* For examples of `tinymce-vue` wrapper, see: link:https://tinymce.github.io/tinymce-vue/[the tinymce-vue storybook^].
+* To report an issue, please go to: link:https://github.com/tinymce/tinymce-vue/issues[{productname} Vue.js issues^].
+* For guides on integrating {productname} premium plugins, see: xref:bundling-plugins.adoc#using-premium-plugins[Using premium plugins].
 * For information on customizing:
 ** {productname} integration, see: xref:vue-ref.adoc[Vue.js framework Technical Reference].
 ** {productname}, see: xref:basic-setup.adoc[Basic setup].

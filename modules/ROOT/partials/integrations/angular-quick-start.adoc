@@ -4,11 +4,11 @@ The steps below use standalone components. If using Angular Modules, see xref:an
 
 == Prerequisites
 
-This procedure requires https://nodejs.org/[Node.js (and NPM)].
+This procedure requires https://nodejs.org/[Node.js (and NPM)^].
 
 == Procedure
 
-. From a terminal or command prompt, install the link:https://angular.dev/tools/cli[Angular CLI Tool] globally.
+. From a terminal or command prompt, install the link:https://angular.dev/tools/cli[Angular CLI Tool^] globally.
 +
 [source,sh]
 ----
@@ -22,7 +22,7 @@ npm install -g @angular/cli
 ng new --defaults --skip-git tinymce-angular-demo
 ----
 
-. Move into the project directory and install `+tinymce-angular+`.
+. Navigate into the project directory and install `+tinymce-angular+`.
 +
 [source,sh]
 ----

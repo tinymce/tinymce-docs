@@ -5,7 +5,7 @@
 :productSource: package-manager
 :packageName: @tinymce/tinymce-vue
 
-This guide shows how to bundle {productname} into a Vue.js application using the link:https://github.com/tinymce/tinymce-vue[{productname} Vue.js component].
+This guide shows how to bundle {productname} into a Vue.js application using the link:https://github.com/tinymce/tinymce-vue[{productname} Vue.js component^].
 
 == Prerequisites
 
@@ -37,7 +37,7 @@ As per the link:https://vuejs.org/about/faq.html#what-s-the-difference-between-v
 ====
 
 * Follow the prompts and type `+tinymce-vue-demo+` as the project name.
-. Go into the newly created directory.
+. Navigate into the newly created directory.
 +
 [source,sh]
 ----
@@ -66,7 +66,7 @@ npm install tinymce "@tinymce/tinymce-vue@^3"
 // Add the @tinymce/tinymce-vue wrapper to the bundle
 import Editor from '@tinymce/tinymce-vue';
 
-// Ensure you import TinyMCE to register the global variable required by other components
+// Ensure TinyMCE is imported to register the global variable required by other components
 import 'tinymce/tinymce';
 // DOM model
 import 'tinymce/models/dom/model';
@@ -144,8 +144,8 @@ npm run dev
 
 == Other resources
 
-* For reporting issues, go to: link:https://github.com/tinymce/tinymce-vue/issues[{productname} Vue.js issues].
-* For more examples of `tinymce-vue` wrapper, see: https://tinymce.github.io/tinymce-vue/[the tinymce-vue storybook].
+* For reporting issues, go to: link:https://github.com/tinymce/tinymce-vue/issues[{productname} Vue.js issues^].
+* For more examples of `tinymce-vue` wrapper, see: link:https://tinymce.github.io/tinymce-vue/[the tinymce-vue storybook^].
 * For information on bundling, see: xref:introduction-to-bundling-tinymce.adoc[]
 * For guides on integrating {productname} premium plugins, see: xref:bundling-plugins.adoc#using-premium-plugins[Using premium plugins].
 * For information on customizing:

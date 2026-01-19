@@ -6,14 +6,14 @@ This procedure requires https://nodejs.org/[Node.js (and NPM)].
 
 == Procedure
 
-. Use https://github.com/vitejs/vite[Vite] and link:https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react-swc[React SWC] to create a new React project named `+tinymce-react-demo+`.
+. Use link:https://github.com/vitejs/vite[Vite^] and link:https://github.com/vitejs/vite-plugin-react/tree/main/packages/plugin-react-swc[React SWC^] to create a new React project named `+tinymce-react-demo+`.
 +
 [source,sh]
 ----
 # NPM 7+, extra double-dash is needed
 npm create vite@5 tinymce-react-demo -- --template react-swc
 ----
-. Go to the project directory and install `+@tinymce/tinymce-react+`
+. Navigate to the project directory and install `+@tinymce/tinymce-react+`
 +
 [source,sh]
 ----
@@ -485,7 +485,7 @@ npm run dev
 ifeval::["{productUse}" == "bundle"]
 * For information on bundling, see: xref:introduction-to-bundling-tinymce.adoc[]
 endif::[]
-* For examples of the {productname} React integration, see: https://tinymce.github.io/tinymce-react/[the tinymce-react storybook].
+* For examples of the {productname} React integration, see: https://tinymce.github.io/tinymce-react/[the tinymce-react storybook^].
 * For guides on integrating {productname} premium plugins, see: xref:bundling-plugins.adoc#using-premium-plugins[Using premium plugins].
 * For information on customizing:
 ** {productname} integration, see: xref:react-ref.adoc[].

@@ -13,7 +13,7 @@ This project will help you get started with {cloudfilemanager} and allow you to 
 Before you start your journey with {cloudfilemanager}, it will go a lot smoother if you have done these steps:
 
 . Login/register to {accountpageurl}[{accountpage}]
-. Get a link:{accountkeyurl}[{cloudname} API Key]
+. Get a link:{accountpageurl}[{cloudname} API Key]
 . Get a link:{accountjwturl}[JWT Key]
 
 Store the keys temporarily somewhere as you will need to copy & paste them later.
@@ -37,12 +37,12 @@ $ git clone git@github.com:tinymce/tinydrive-java-spring-starter.git
 [[change-the-apikey-in-tinydrive-java-spring-startersrcmainresourcesapplicationyml]]
 ==== 2. Change the `+apiKey+` in `+tinydrive-java-spring-startersrc/main/resources/application.yml+`
 
-The API key can be generated using the `+API Key Manager+` {accountpage} page at http://tiny.cloud.
+Get your API key from the link:{accountpageurl}[{accountpage}] and replace the placeholder value in the `+application.yml+` file.
 
 [[create-a-tinydrive-java-spring-startersrcmainresourcesprivatekey-file-containing-your-generated-private-rsa-key]]
 ==== 3. Create a `+tinydrive-java-spring-starter/src/main/resources/private.key+` file containing your generated private RSA key
 
-You get the private RSA key from the `+JWT Key Manager+` {accountpage} page at http://tiny.cloud.
+Use the "Generate New Keypair" option at link:{accountjwturl}[{accountpage} - JWT Keys] to create a key pair. Download the private key from the generated key pair and save it to the `+private.key+` file.
 
 [[go-to-the-directory-and-install-npm-packages-and-then-start-the-dev-server]]
 ==== 4. Go to the directory and install NPM packages and then start the dev server

@@ -19,11 +19,14 @@ NOTE: You are responsible for saving the model and providing it on the next load
 .Example: using `suggestededits_content`
 [source,js]
 ----
+const tinymceElement = document.querySelector('textarea#suggestededits');
+const model = JSON.parse(tinymceElement.getAttribute('suggestededits-model'));
+
 tinymce.init({
   selector: 'textarea#suggestededits',  // Change this value according to your HTML
   plugins: 'suggestededits',
   toolbar: 'suggestededits',
-  suggestededits_model, // Load the saved model into the editor
+  suggestededits_model: model, // Load the saved model into the editor
   suggestededits_content: 'model' // Set to 'model' if you want to load the initial content from the `suggestededits_model` option
 });
 ----

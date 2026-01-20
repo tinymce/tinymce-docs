@@ -37,12 +37,12 @@ $ git clone git@github.com:tinymce/tinydrive-nodejs-starter.git
 [[change-the-apikey-in-tinydrive-nodejs-starterconfigjs]]
 ==== 2. Change the `+apiKey+` in `+tinydrive-nodejs-starter/config.js+`
 
-You get the API key from the `+API Key Manager+` {accountpage} page at http://tiny.cloud.
+Get your API key from the link:{accountpageurl}[{accountpage}] and replace the placeholder value in the `+config.js+` file.
 
 [[create-a-tinydrive-nodejs-starterprivatekey-file-containing-your-generated-private-rsa-key]]
 ==== 3. Create a `+tinydrive-nodejs-starter/private.key+` file containing your generated private RSA key
 
-You get the private RSA key from the `+JWT Key Manager+` {accountpage} page at http://tiny.cloud.
+Use the "Generate New Keypair" option at link:{accountjwturl}[{accountpage} - JWT Keys] to create a key pair. Download the private key from the generated key pair and save it to the `+private.key+` file.
 
 [[go-to-the-directory-and-install-npm-packages-and-then-start-the-dev-server]]
 ==== 4. Go to the directory and install npm packages and then start the dev server

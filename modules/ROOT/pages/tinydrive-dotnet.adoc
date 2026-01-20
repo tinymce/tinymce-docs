@@ -37,12 +37,12 @@ $ git clone git@github.com:tinymce/tinydrive-dotnet-starter.git
 [[change-the-apikey-in-tinydrive-dotnet-mvc-starterappsettingsdevelopmentjson]]
 ==== 2. Change the `+apiKey+` in `+tinydrive-dotnet-mvc-starter/appsettings.Development.json+`
 
-The API key can be generated using the `+API Key Manager+` {accountpage} page at http://tiny.cloud.
+Get your API key from the link:{accountpageurl}[{accountpage}] and replace the placeholder value in the `+appsettings.Development.json+` file.
 
 [[create-a-tinydrive-dotnet-mvc-starterprivatekey-file-containing-your-generated-private-rsa-key]]
 ==== 3. Create a `+tinydrive-dotnet-mvc-starter/private.key+` file containing your generated private RSA key
 
-You get the private RSA key from the `+JWT Key Manager+` {accountpage} page at http://tiny.cloud.
+Use the "Generate New Keypair" option at link:{accountjwturl}[{accountpage} - JWT Keys] to create a key pair. Download the private key from the generated key pair and save it to the `+private.key+` file.
 
 [[go-to-the-directory-and-start-the-dev-server]]
 ==== 4. Go to the directory and start the dev server

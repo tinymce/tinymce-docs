@@ -16,7 +16,7 @@ include::partial$plugins/tinydrive-starter-projects.adoc[]
 The steps required for setting up {cloudfilemanager} are:
 
 . Register for a {cloudname} API key.
-. Add a public key to the {cloudname} API key.
+. Add a public key in the JWT Keys section of your account portal.
 . Set up a JSON Web Token (JWT) Provider endpoint (or server).
 . Configure the required {productname} options.
 

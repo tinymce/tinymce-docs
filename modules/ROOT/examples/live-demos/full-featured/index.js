@@ -390,7 +390,7 @@ const revisions = [
       avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_james-wilson_128_52f19412.jpg',
     },
     content: `
-      <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>
+      <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/tinymce/latest/_images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>
       <h2 style="text-align: center;">Welcome to the TinyMCE editor demo!</h2>
       <h2>A simple table to play with</h2>
       <table style="border-collapse: collapse; width: 100%;" border="1">
@@ -425,7 +425,7 @@ const revisions = [
       avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_mia-andersson_128_e6f9424b.jpg',
     },
     content: `
-      <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>
+      <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/tinymce/latest/_images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>
       <h2 style="text-align: center;">Welcome to the TinyMCE editor demo!</h2>
       <h2>Got questions or need help?</span></h2>
       <ol>
@@ -466,7 +466,7 @@ const revisions = [
       avatar: 'https://sneak-preview.tiny.cloud/demouserdirectory/images/employee_mia-andersson_128_e6f9424b.jpg',
     },
     content: `
-      <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>
+      <p><img style="display: block; margin-left: auto; margin-right: auto;" title="Tiny Logo" src="https://www.tiny.cloud/docs/tinymce/latest/_images/logos/android-chrome-256x256.png" alt="TinyMCE Logo" width="128" height="128"></p>
       <h2 style="text-align: center;">Welcome to the TinyMCE editor demo!</h2>
       <h2>Got questions or need help?</h2>
       <ul>

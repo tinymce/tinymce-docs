@@ -22,6 +22,11 @@
     "redirect": "/docs/tinymce/latest/"
   },
   {
+    "location": "/docs/images",
+    "pattern": "^/docs/images/(.*)$",
+    "redirect": "/docs/tinymce/latest/_images/%1"
+  },
+  {
     "location": "/docs/advanced/",
     "redirect": "/docs/tinymce/latest/how-to-guides"
   },

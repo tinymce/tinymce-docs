@@ -264,21 +264,21 @@ The undocumented `editor.documentBaseUrl` property has been removed.
 console.log('documentBaseUrl', editor.documentBaseUrl);
 
 // Use this instead
-console.log('documentBaseURI', editor.documentBaseURI.getURI());
+console.log('documentBaseURI', editor.editorManager.documentBaseURI.getURI());
 ----
 
-TIP: Use `editor.documentBaseURI.getURI()` for all base URL operations.
+TIP: Use `editor.editorManager.documentBaseURI.getURI()` for all base URL operations.
 
 **Impact**: This change improves URL handling consistency by removing an undocumented API that was not aligned with the documented `documentBaseURI` property.
 
 **Migration steps:**
 
-To update all references of `documentBaseUrl` to the new API, replace any usage of `editor.documentBaseUrl` (or similar) with `editor.documentBaseURI.getURI()`. The property `documentBaseUrl` has been removed, and the correct way to access the document base URL is now through the `documentBaseURI` property, which is a URI object. You can then call `.getURI()` on it to get the string value of the URL.
+To update all references of `documentBaseUrl` to the new API, replace any usage of `editor.documentBaseUrl` (or similar) with `editor.editorManager.documentBaseURI.getURI()`. The property `documentBaseUrl` has been removed, and the correct way to access the document base URL is now through the `editorManager.documentBaseURI` property, which is a URI object. You can then call `.getURI()` on it to get the string value of the URL.
 
 **Migration checklist:**
 
 * [ ] Search your codebase for all instances of `editor.documentBaseUrl`.
-* [ ] Replace them with `tinymce.activeEditor.documentBaseURI.getURI()` (or `editor.documentBaseURI.getURI()` if you have an `editor` reference).
+* [ ] Replace them with `tinymce.activeEditor.editorManager.documentBaseURI.getURI()` (or `editor.editorManager.documentBaseURI.getURI()` if you have an `editor` reference).
 
 ===== skipFocus and skip_focus Consolidation (v8)
 
@@ -293,17 +293,17 @@ The `skipFocus` and `skip_focus` options for the `ToggleToolbarDrawer` command h
 .Example:
 [source,js]
 ----
-// Old TinyMCE 7 usage
-editor.execCommand('ToggleToolbarDrawer', false, null, { skip_focus: true });
-
-// New TinyMCE 8 usage
+// Old approach (deprecated in TinyMCE 8)
 editor.execCommand('ToggleToolbarDrawer', false, { skipFocus: true });
+
+// New approach (recommended)
+editor.execCommand('ToggleToolbarDrawer', false, null, { skip_focus: true });
 ----
 
 **Migration checklist:**
 
 * [ ] Locate all instances of `ToggleToolbarDrawer` command usage
-* [ ] Replace `skip_focus` with `skipFocus` in command options
+* [ ] Replace `skipFocus` with `skip_focus` in command options
 * [ ] Update any custom plugins using this command
 * [ ] Test toolbar drawer behavior after changes
 

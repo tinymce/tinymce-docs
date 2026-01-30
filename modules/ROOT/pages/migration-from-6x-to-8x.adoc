@@ -13,38 +13,6 @@ This guide provides a complete migration path from TinyMCE 6 to TinyMCE 8, cover
 
 == Key Changes
 
-=== UI Themes and Skins
-
-The theme and skin system has been updated across versions 7 and 8:
-
-* **Modern Theme**: Replaced by the `silver` theme with `oxide` skin
-* **Lightgray Theme**: Replaced by the `silver` theme with `oxide` skin  
-* **Mobile Theme**: Replaced by the `silver` theme with `oxide` skin
-
-**Migration Steps:**
-
-1. Update theme configuration to use `silver` theme
-2. Update skin configuration to use `oxide` skin
-3. Test UI appearance and functionality
-
-.Example:
-[source,js]
-----
-// Old TinyMCE 6 configuration
-tinymce.init({
-  selector: "textarea",
-  theme: "modern",
-  skin: "lightgray"
-});
-
-// New TinyMCE 7+ configuration
-tinymce.init({
-  selector: "textarea",
-  theme: "silver",
-  skin: "oxide"
-});
-----
-
 === Plugin Ecosystem
 
 The {productname} plugin ecosystem underwent changes starting in version 7.0, with several plugins being removed or reclassified.
@@ -52,9 +20,14 @@ The {productname} plugin ecosystem underwent changes starting in version 7.0, wi
 * **Removed Plugins** (no longer available as of {productname} 7.0):
 ** `template`: Removed in 7.0. Replaced by the premium xref:advanced-templates.adoc[Templates] plugin.
 
-* **Now Premium Only**:
+* **Now Premium Only** (removed in 6.0, before this migration path):
 ** `imagetools`: Removed in 6.0. Replaced by the premium xref:editimage.adoc[Enhanced Image Editing] feature, available via the `+editimage+` plugin introduced in TinyMCE 6.0.
 ** `textcolor`: Removed in 6.0. Use the xref:user-formatting-options.adoc#text-color-options[premium Color Picker] functionality instead.
+
+[NOTE]
+====
+If you're migrating from TinyMCE 6, these plugins (`imagetools` and `textcolor`) were already removed in version 6.0, so you won't need to migrate them. The sections below are included for reference only, in case you're upgrading from an older version or have legacy code.
+====
 
 ==== Plugin Migration Examples
 
@@ -223,7 +196,7 @@ The `editor.documentBaseUrl` property has been removed. Use `editor.editorManage
 const baseUrl = editor.documentBaseUrl;
 
 // New approach
-const baseUrl = editor.documentBaseURI.getURI();
+const baseUrl = editor.editorManager.documentBaseURI.getURI();
 ----
 
 **Impact**: This change improves URL handling consistency by removing an undocumented API that was not aligned with the documented `documentBaseURI` property.
@@ -231,7 +204,7 @@ const baseUrl = editor.documentBaseURI.getURI();
 **Migration checklist:**
 
 * [ ] Search your codebase for all instances of `editor.documentBaseUrl`.
-* [ ] Replace them with `tinymce.activeEditor.documentBaseURI.getURI()` (or `editor.documentBaseURI.getURI()` if you have an `editor` reference).
+* [ ] Replace them with `tinymce.activeEditor.editorManager.documentBaseURI.getURI()` (or `editor.editorManager.documentBaseURI.getURI()` if you have an `editor` reference).
 
 ==== skipFocus and skip_focus Consolidation
 
@@ -246,23 +219,23 @@ The `skipFocus` and `skip_focus` options for the `ToggleToolbarDrawer` command w
 **Migration Steps:**
 
 1. Locate all instances of `ToggleToolbarDrawer` command usage
-2. Replace `skip_focus` with `skipFocus` in command parameters
+2. Replace `skipFocus` with `skip_focus` in command parameters
 3. Test toolbar drawer behavior
 
 .Example:
 [source,js]
 ----
-// Old approach
-editor.execCommand('ToggleToolbarDrawer', false, { skip_focus: true });
-
-// New approach
+// Old approach (deprecated in TinyMCE 8)
 editor.execCommand('ToggleToolbarDrawer', false, { skipFocus: true });
+
+// New approach (recommended)
+editor.execCommand('ToggleToolbarDrawer', false, null, { skip_focus: true });
 ----
 
 **Migration checklist:**
 
 * [ ] Locate all instances of `ToggleToolbarDrawer` command usage
-* [ ] Replace `skip_focus` with `skipFocus` in command options
+* [ ] Replace `skipFocus` with `skip_focus` in command options
 * [ ] Update any custom plugins using this command
 * [ ] Test toolbar drawer behavior after changes
 
@@ -441,6 +414,11 @@ The `template` plugin was removed in TinyMCE 7.0. If you were using this plugin,
 
 === Image Tools Plugin Removal
 
+[NOTE]
+====
+This section applies only if you're upgrading from TinyMCE 5 or earlier. The `imagetools` plugin was removed in TinyMCE 6.0, so if you're migrating from TinyMCE 6, this plugin was already unavailable.
+====
+
 The `imagetools` plugin was removed in TinyMCE 6.0. If you were using this plugin, you need to migrate to the premium Enhanced Image Editing feature.
 
 **Migration Steps:**
@@ -476,6 +454,11 @@ tinymce.init({
 ----
 
 === Text Color Plugin Removal
+
+[NOTE]
+====
+This section applies only if you're upgrading from TinyMCE 5 or earlier. The `textcolor` plugin was removed in TinyMCE 6.0, so if you're migrating from TinyMCE 6, this plugin was already unavailable.
+====
 
 The `textcolor` plugin was removed in TinyMCE 6.0. If you were using this plugin, you need to migrate to the xref:user-formatting-options.adoc#text-color-options[premium Color Picker] functionality.
 

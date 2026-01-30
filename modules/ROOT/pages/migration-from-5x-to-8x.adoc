@@ -225,28 +225,29 @@ editor.ui.registry.addAutocompleter('myautocompleter', {
 
 ==== table_responsive_width replaced by table_sizing_mode (v7)
 
+The `table_responsive_width` option has been replaced by xref:table-options.adoc#table_sizing_mode[`table_sizing_mode`] in TinyMCE 7.0.
+
 .Example:
 [source,js]
 ----
 // Old TinyMCE 6 configuration
-editor.ui.registry.addAutocompleter('myautocompleter', {
-  ch: '@',
-  minChars: 2,
-  fetch: function(pattern) {
-    return Promise.resolve(['item1', 'item2']);
-  }
+tinymce.init({
+  selector: "textarea",
+  table_responsive_width: true
 });
 
 // New TinyMCE 7+ configuration
-editor.ui.registry.addAutocompleter('myautocompleter', {
-  trigger: '@',
-  minChars: 2,
-  fetch: function(pattern) {
-    return Promise.resolve(['item1', 'item2']);
-  }
+tinymce.init({
+  selector: "textarea",
+  table_sizing_mode: "responsive"
 });
 ----
-** `table_responsive_width` replaced by xref:table-options.adoc#table_sizing_mode[`table_sizing_mode`].
+
+**Migration checklist:**
+
+* [ ] Replace `table_responsive_width` with `table_sizing_mode` in your configuration
+* [ ] Update the option value to match the new API
+* [ ] Test table responsive behavior
 
 * **Default Changes in TinyMCE 7.0**:
 ** xref:content-filtering.adoc#sandbox-iframes[`sandbox iframes`]: Now defaults to `true` (adds sandbox attribute to iframes)
@@ -306,7 +307,7 @@ Refer to version-specific release notes for changes in toolbar button names and 
 
 * `editor.selection.setContent` → `editor.insertContent`
 * `editor.fire()` → `editor.dispatch()`
-* `editor.documentBaseUrl` → `editor.documentBaseURI.getURI()`
+* `editor.documentBaseUrl` → `editor.editorManager.documentBaseURI.getURI()`
 ====
 
 === Licensing Changes (GPL v2+ and Commercial)
@@ -352,7 +353,7 @@ Several API methods have been deprecated or removed across versions 6-8. Key cha
 * **Deprecated in TinyMCE 8**:
 ** `editor.selection.setContent` → Use xref:apis/tinymce.editor.adoc#insertContent[`editor.insertContent`] instead
 ** `editor.fire()` → Use xref:apis/tinymce.editor.adoc#dispatch[`editor.dispatch()`] instead
-** `editor.documentBaseUrl` → Use `editor.documentBaseURI.getURI()` instead
+** `editor.documentBaseUrl` → Use `editor.editorManager.documentBaseURI.getURI()` instead
 
 ==== skipFocus and skip_focus Consolidation (v8)
 
@@ -367,17 +368,17 @@ The `skipFocus` and `skip_focus` options for the `ToggleToolbarDrawer` command h
 .Example:
 [source,js]
 ----
-// Old TinyMCE 7 usage
-editor.execCommand('ToggleToolbarDrawer', false, null, { skip_focus: true });
-
-// New TinyMCE 8 usage
+// Old approach (deprecated in TinyMCE 8)
 editor.execCommand('ToggleToolbarDrawer', false, { skipFocus: true });
+
+// New approach (recommended)
+editor.execCommand('ToggleToolbarDrawer', false, null, { skip_focus: true });
 ----
 
 **Migration checklist:**
 
 * [ ] Locate all instances of `ToggleToolbarDrawer` command usage
-* [ ] Replace `skip_focus` with `skipFocus` in command options
+* [ ] Replace `skipFocus` with `skip_focus` in command options
 * [ ] Update any custom plugins using this command
 * [ ] Test toolbar drawer behavior after changes
 

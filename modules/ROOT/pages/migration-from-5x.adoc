@@ -196,8 +196,7 @@ license_key: "your-license-key"
 
 . **Backup and Prepare**: Ensure comprehensive backups before upgrading.
 . **Update Core Initialization**:
-.. Update `theme`, `skin`, and to refect the new oxide theme and skin.
-... In {productname} 4, there were multiple themes available including 'modern', 'inlite', and 'mobile'. These themes were removed in {productname} 5 and combined into a single responsive theme called "Silver".
+.. Verify `theme` and `skin` settings. In {productname} 5, the Silver theme with Oxide skin was already standard, so no theme changes are required when migrating to v{release-version}.
 .. Update `forced_root_block: false` options to `forced_root_block: "p"`.
 .. Consolidate toolbars.
 .. Review new v{release-version} defaults for security settings.

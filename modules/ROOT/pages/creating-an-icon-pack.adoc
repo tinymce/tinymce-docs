@@ -17,6 +17,18 @@ A {productname} icon pack is a JavaScript construct containing strings of link:h
 
 An icon pack only **requires** the custom icons to be included; the default {productname} icons are used as a fallback for icons missing from the custom icon pack.
 
+=== Icon Pack Structure and Loading
+
+[IMPORTANT]
+====
+*Understanding Icon Pack Loading:*
+
+{productname} loads icon packs from the path `+TINYMCE_BASE/icons/${iconPackName}/icons.js+`, where:
+
+* `TINYMCE_BASE` is the {productname} root directory (the directory containing `tinymce.min.js`).
+* `+${iconPackName}+` is the name of the icon pack.
+====
+
 == Registering an icon pack
 
 Icon packs are registered with {productname} using the IconManager. Whether creating the icon pack manually or using the xref:using-the-icon-pack-template.adoc[Icon Pack Template tool], the JavaScript required to setup an icon pack looks like:

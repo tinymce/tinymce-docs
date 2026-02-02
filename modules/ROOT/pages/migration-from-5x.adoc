@@ -33,10 +33,10 @@ The {productname} plugin ecosystem underwent a significant overhaul starting in 
 * **Removed Plugins** (no longer available as of {productname} 6.0):
 ** `bbcode`, `fullpage`, `legacyoutput`: Deprecated in 5.9.0. Removed in 6.0.
 
-* **Integrated into {productname}**:
-** `paste`, `hr`, `table`, `noneditable`, `nonbreaking`, `print`, `colorpicker` and `contextmenu`: These plugins were absorbed into {productname} and no longer require separate installation.
-** `contextmenu`: Deprecated in version 5.0 following the integration of context menu functionality into {productname} editor. Removed in version 6.0. For more information, see the link:https://www.tiny.cloud/docs/tinymce/latest/contextmenu/[contextmenu documentation].
-** `tabfocus`: Removed in 6.0. Keyboard navigation via Tab is now handled by the browser and {productname}.
+* **Integrated into {productname} core**:
+** `paste`, `hr`, `table`, `noneditable`, `nonbreaking`, `print`, `colorpicker` and `contextmenu`: These plugins were absorbed into {productname} core and no longer require separate installation.
+** `contextmenu`: Deprecated in version 5.0 following the integration of context menu functionality into {productname} core editor. Removed in version 6.0. For more information, see the link:https://www.tiny.cloud/docs/tinymce/latest/contextmenu/[contextmenu documentation].
+** `tabfocus`: Removed in 6.0. Keyboard navigation via Tab is now handled by the browser and {productname} core.
 
 * **Now Premium Only**:
 ** `mediaembed`, `tableofcontents`:  These features are available through premium plugins.
@@ -83,7 +83,7 @@ If you used the following toolbar buttons or menu options, they have changed nam
 
 {productname} 6 → {productname} 7:
 
-* `InsertOrderedList` and `InsertUnorderedList` commands were removed from {productname} and are now provided by the `lists` plugin.
+* `InsertOrderedList` and `InsertUnorderedList` commands were removed from {productname} core and are now provided by the `lists` plugin.
 * Default text pattern triggers were updated to activate on `Space` instead of `Enter`. A `trigger` property was added to configure block-level text pattern behavior.
 
 Refer to the latest release notes at link:https://www.tiny.cloud/docs/tinymce/latest/release-notes/[latest release notes] for further details.
@@ -173,7 +173,7 @@ Refer to version-specific release notes for changes in toolbar button names and 
 
 {productname} 6 → {productname} 7:
 
-* `InsertOrderedList` / `InsertUnorderedList` commands removed from {productname} (use `lists` plugin).
+* `InsertOrderedList` / `InsertUnorderedList` commands removed from {productname} core (use `lists` plugin).
 * Default text pattern triggers updated from `Enter` to `Space`, configurable via `trigger`.
 ====
 
@@ -196,8 +196,7 @@ license_key: "your-license-key"
 
 . **Backup and Prepare**: Ensure comprehensive backups before upgrading.
 . **Update Core Initialization**:
-.. Update `theme`, `skin`, and to refect the new oxide theme and skin.
-... In {productname} 4, there were multiple themes available including 'modern', 'inlite', and 'mobile'. These themes were removed in {productname} 5 and combined into a single responsive theme called "Silver".
+.. Verify `theme` and `skin` settings. In {productname} 5, the Silver theme with Oxide skin was already standard, so no theme changes are required when migrating to v{release-version}.
 .. Update `forced_root_block: false` options to `forced_root_block: "p"`.
 .. Consolidate toolbars.
 .. Review new v{release-version} defaults for security settings.

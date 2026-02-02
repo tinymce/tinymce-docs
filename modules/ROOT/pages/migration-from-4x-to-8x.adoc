@@ -1,0 +1,808 @@
+= Migrating from {productname} 4 to {productname} {productmajorversion}
+:navtitle: Migrating from TinyMCE 4 to 8
+:description: Guidance for migrating from TinyMCE 4 to TinyMCE 8
+:keywords: migration, considerations, premigration, pre-migration
+:release-version: 8.0
+
+== Overview
+
+{productname} has evolved significantly from version 4 to version {release-version}, introducing major architectural changes, modern UI improvements, enhanced performance, and better security. This comprehensive guide outlines the critical breaking changes, recommended migration action steps, and top-level configuration adjustments required to upgrade from {productname} v4 to v{release-version}.
+
+This guide provides a complete migration path from {productname} 4 to {productname} 8, covering all changes across versions 5, 6, 7, and 8 in a single comprehensive document.
+
+== Key Changes
+
+=== UI Themes and Skins
+
+* **Removed**: modern, lightgray, and mobile themes/skins.
+* **New**: silver theme with oxide skin (supports light and dark variants). see xref:customize-ui.adoc#themes[customize-ui].
+* **Impact**: Custom v4 skins/themes are incompatible with v{release-version} and must be rewritten using the oxide skin structure.
+
+.Example:
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  skin: "oxide-dark",
+  content_css: "dark",
+});
+----
+
+=== Plugin Ecosystem
+
+The {productname} plugin ecosystem was significantly restructured across versions 5, 6, and 7, with several plugins being removed, folded into the {productname} core, or reclassified as premium features. The following breakdown clarifies the status of each affected plugin.
+
+* **Removed Plugins** (no longer available as of {productname} 6.0):
+** `bbcode`, `fullpage`, `legacyoutput`: Deprecated in 5.9.0. Removed in 6.0.
+** `imagetools`: Removed in 6.0. Replaced by the premium xref:editimage.adoc[Enhanced Image Editing] feature, available via the `+editimage+` plugin introduced in {productname} 6.0.
+** `textcolor`: Removed in 6.0. Use the xref:user-formatting-options.adoc#text-color-options[premium Color Picker] functionality instead.
+
+* **Integrated into {productname} core**:
+** `paste`, `hr`, `noneditable`, `table`, `print`, `colorpicker` and `contextmenu`: These plugins were absorbed into {productname} core and no longer require separate installation. See xref:copy-and-paste.adoc[Copy and Paste], xref:non-editable-content-options.adoc[Non-editable Content], xref:table.adoc[Table], and xref:contextmenu.adoc[Context Menu] for more information.
+** `contextmenu`: Deprecated in version 5.0 following the integration of context menu functionality into {productname} core editor. Removed in version 6.0. For more information, see xref:contextmenu.adoc[contextmenu documentation].
+** `tabfocus`: Removed in 6.0. Keyboard navigation via Tab is now handled by the browser and {productname} core.
+
+* **Now Premium Only**:
+** `mediaembed`, `tableofcontents`: These features are available through premium plugins. See xref:introduction-to-mediaembed.adoc[Media Embed] and xref:tableofcontents.adoc[Table of Contents] for more information.
+** `spellchecker`: Deprecated in 5.9.0. Removed in 6.0.
+*** Use xref:spelling.adoc#browser_spellcheck[`browser_spellcheck: true`] or the premium xref:introduction-to-tiny-spellchecker.adoc[Spell Checker] plugin.
+** `advtemplate`: Replaces the `template` plugin for advanced templating use cases.
+** `template`: Removed in 7.0. Replaced by the premium xref:advanced-templates.adoc[Templates] plugin.
+
+==== Plugin Migration Tips
+
+* `contextmenu` (removed in v6):
+** Use browser-native context menus or custom logic.
+** Consider using xref:apis/tinymce.editor.ui.registry.adoc#addContextMenu[`editor.ui.registry.addContextMenu`] for custom right-click actions. See xref:contextmenu.adoc[Context menus] for more information.
+* `bbcode` (removed in v6):
+** Implement custom parsing or server-side processing if BBCode support is required.
+* `fullpage` (removed in v6):
+** Use custom templates or server-side logic to handle full HTML documents.
+* `template` (removed in v7):
+** Use the premium xref:advanced-templates.adoc[advtemplate] plugin or implement custom modal dialogs.
+* `textcolor` (removed in v6):
+** Use the xref:available-toolbar-buttons.adoc[`forecolor` and `backcolor`] toolbar buttons for text color functionality.
+* `imagetools`: (removed in v6):
+** Use the premium xref:editimage.adoc[Enhanced Image Editing] or xref:uploadcare.adoc[Image Optimizer Powered by Uploadcare] plugin for image editing capabilities.
+
+==== Toolbar and Menu name changes
+
+If you used the following toolbar buttons or menu options, they have changed names across major {productname} versions. Please refer to the release notes for each version for complete migration details.
+
+{productname} 5 → {productname} 6:
+
+* `formatselect` → `blocks` (toolbar item)
+* `blockformats` → `blocks` (menu item)
+* `styleselect` → `styles` (toolbar item)
+* `formats` → `styles` (menu item)
+* `fontselect` → `fontfamily` (toolbar item)
+* `fontformats` → `fontfamily` (menu item)
+* `fontsizeselect` → `fontsize` (toolbar item)
+* `fontsizes` → `fontsize` (menu item)
+* `imagetools` → `editimage` (plugin and related toolbar items)
+* `toc` → `tableofcontents` (plugin, menu item, and toolbar item)
+* `tocupdate` → `tableofcontentsupdate` (toolbar item)
+
+{productname} 6 → {productname} 7:
+
+* `InsertOrderedList` and `InsertUnorderedList` commands were removed from {productname} core and are now provided by the xref:lists.adoc[Lists] plugin.
+* Default text pattern triggers were updated to activate on `Space` instead of `Enter`. A `trigger` property was added to configure block-level text pattern behavior.
+
+{productname} 7 → {productname} 8:
+
+* Several API methods have been deprecated or removed (see the API Changes section below for details)
+* License key system has been updated with new format requirements
+* DOMPurify sanitization has been strengthened
+
+Refer to the latest release notes at link:https://www.tiny.cloud/docs/tinymce/latest/release-notes/[latest release notes] for further details.
+
+TIP: Always refer to the latest plugin documentation at xref:plugins.adoc[plugins] for up-to-date availability and migration guidance.
+
+.Example of Toolbar Changes:
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  toolbar: "undo redo | forecolor backcolor | bold italic | alignleft aligncenter alignright alignjustify",
+  plugins: ["lists link image table code"]
+});
+----
+
+=== Content Structure
+
+* **Removed**: `forced_root_block: false`.
+** **Requirement**: All editor content must be enclosed in block elements (e.g., `<p>`). See xref:content-filtering.adoc#forced_root_block[forced_root_block] for more information.
+
+.Example:
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  forced_root_block: "p"
+});
+----
+
+=== Configuration Changes
+
+* **Removed in {productname} 6.0**: Legacy mobile theme was removed, but mobile-specific configuration is still supported through the xref:tinymce-for-mobile.adoc[mobile] option.
+* **Default Changes in TinyMCE 7.0**:
+** xref:content-filtering.adoc#sandbox-iframes[`sandbox iframes`]: Now defaults to `true` (adds sandbox attribute to iframes)
+** xref:content-filtering.adoc#convert-unsafe-embeds[`convert_unsafe_embeds`]: Now defaults to `true` (converts object/embed elements to safer alternatives)
+** xref:accessibility.adoc#highlight_on_focus[`highlight_on_focus`]: Now defaults to `true` (adds focus outline to editors)
+* **New Options in {productname} 7.0**:
+** xref:license-key.adoc[`license_key`]: Must be set to `gpl` or a valid license key
+** xref:content-filtering.adoc#sandbox-iframes-exclusions[`sandbox_iframes_exclusions`]: List of URL hosts to exclude from iframe sandboxing
+* **New Options in {productname} 8.0**:
+** Enhanced license key system with new format requirements
+** Stricter DOMPurify sanitization with `SAFE_FOR_XML` enabled by default
+** New xref:tinymce-and-cors.adoc#crossorigin[`crossorigin`] configuration option for cross-origin resource loading
+
+.Example:
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  toolbar: "undo redo | blocks | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | removeformat",
+  toolbar_mode: "floating",
+  // Required in TinyMCE 8.0 if self-hosting
+  license_key: "T8LK:...", // New format required
+  // Security options now enabled by default in TinyMCE 7.0
+  sandbox_iframes: true,
+  convert_unsafe_embeds: true,
+  // Optional: exclude specific domains from iframe sandboxing
+  sandbox_iframes_exclusions: ["youtube.com", "vimeo.com"],
+  // Accessibility improvement, now enabled by default
+  highlight_on_focus: true,
+  // New in TinyMCE 8.0: Cross-origin resource loading
+  crossorigin: (url, resourceType) => 'anonymous'
+});
+----
+
+=== Licensing Changes (GPL v2+ and Commercial)
+
+* **Legacy License**: {productname} 4 was licensed under LGPL 2.1.
+* **New License**: {productname} {release-version} is licensed under GPL v2+ or a commercial license.
+* **Impact**: The xref:license-key.adoc[License key] option is required as part of your editor configuration if self-hosting {productname}. This requirement does not apply if you are loading {productname} from the cloud.
+
+[IMPORTANT]
+====
+**License Key System Update in TinyMCE 8**
+
+TinyMCE 8 introduces a new license key system that requires immediate attention:
+
+* **New Format**: License keys now use the prefix `T8LK:` for commercial licenses or `GPL+T8LK:` for GPL with Premium Features
+* **Mandatory Requirement**: Self-hosted deployments now require a valid license key; without one, the editor will be set to `readonly`
+* **License Key Manager**: Self-hosted commercial deployments require the new License Key Manager addon
+
+For complete details, see xref:migration-from-7x.adoc#license-key-system-update[License Key System Update] in the 7→8 migration guide.
+====
+
+**License Migration checklist:**
+
+* [ ] Contact support for new {productname} {release-version} license key or use GPL for the open source version
+* [ ] Install license key manager addon for commercial licenses
+* [ ] Update configuration with new license key format
+* [ ] Test editor functionality with new license
+* [ ] Verify all premium features are working
+
+.Example:
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  license_key: "T8LK:your-license-key" // New format required
+});
+----
+
+=== API Changes
+
+Several API methods have been deprecated or removed across versions 5-8. Key changes include:
+
+==== Deprecated in TinyMCE 8
+
+===== editor.selection.setContent
+// #TINY-12109
+
+The `editor.selection.setContent` API has been deprecated and will be removed in {productname} 9.
+
+*Impact*: This change simplifies content manipulation by consolidating insertion methods.
+
+**Migration steps:**
+
+
+To replace `editor.selection.setContent`, use xref:apis/tinymce.editor.adoc#insertContent[`editor.insertContent`] instead. The new method is more consistent with other content manipulation methods in {productname}.
+
+.Example Usage
+[source,javascript]
+----
+// Deprecated in TinyMCE 8, will be removed in 9
+editor.selection.setContent('<p>New content</p>');
+
+// Recommended replacement
+editor.insertContent('<p>New content</p>');
+----
+
+**Migration checklist:**
+
+* [ ] Replace all instances of `editor.selection.setContent` with `editor.insertContent`
+* [ ] Update custom plugins that use the old method
+* [ ] Test content insertion in your editor instances
+
+===== fire() method
+// #TINY-12012, ref TINY-8102
+
+The `fire()` method has been replaced by xref:apis/tinymce.editor.adoc#dispatch[`dispatch()`] for event handling. The `fire()` method will be removed in {productname} 9 to avoid confusion with its name.
+
+[source, javascript]
+----
+// Deprecated in TinyMCE 8, will be removed in 9
+// Old approach for dispatching custom events
+editor.fire('someEvent');
+
+// New approach for dispatching custom events
+editor.dispatch('someEvent');
+----
+
+**Impact**: This change aligns {productname} with modern event handling conventions, making the API more intuitive for developers.
+
+**Migration checklist:**
+
+* [ ] Search codebase for all uses of the `fire()` method
+* [ ] Replace each instance with `dispatch()`
+* [ ] Review and update third-party plugins
+* [ ] Test all custom event handling
+
+===== editor.documentBaseUrl
+// #TINY-12182
+
+The undocumented `editor.documentBaseUrl` property has been removed.
+
+.Example Usage
+[source,javascript]
+----
+// Removed in TinyMCE 8
+console.log('documentBaseUrl', editor.documentBaseUrl);
+
+// Use this instead
+console.log('documentBaseURI', editor.editorManager.documentBaseURI.getURI());
+----
+
+TIP: Use `editor.editorManager.documentBaseURI.getURI()` for all base URL operations.
+
+**Impact**: This change improves URL handling consistency by removing an undocumented API that was not aligned with the documented `documentBaseURI` property.
+
+**Migration steps:**
+
+To update all references of `documentBaseUrl` to the new API, replace any usage of `editor.documentBaseUrl` (or similar) with `editor.editorManager.documentBaseURI.getURI()`. The property `documentBaseUrl` has been removed, and the correct way to access the document base URL is now through the `editorManager.documentBaseURI` property, which is a URI object. You can then call `.getURI()` on it to get the string value of the URL.
+
+**Migration checklist:**
+
+* [ ] Search your codebase for all instances of `editor.documentBaseUrl`.
+* [ ] Replace them with `tinymce.activeEditor.editorManager.documentBaseURI.getURI()` (or `editor.editorManager.documentBaseURI.getURI()` if you have an `editor` reference).
+
+===== skipFocus and skip_focus Consolidation (v8)
+
+The `skipFocus` and `skip_focus` options for the `ToggleToolbarDrawer` command have been consolidated into a single, more consistent argument in TinyMCE 8.0. For more information, see xref:editor-command-identifiers.adoc[Available Commands].
+
+**Impact:**
+
+* Reduces API complexity
+* Clarifies intended behavior
+* Requires updating command calls
+
+.Example:
+[source,js]
+----
+// Old approach (deprecated in TinyMCE 8)
+editor.execCommand('ToggleToolbarDrawer', false, { skipFocus: true });
+
+// New approach (recommended)
+editor.execCommand('ToggleToolbarDrawer', false, null, { skip_focus: true });
+----
+
+**Migration checklist:**
+
+* [ ] Locate all instances of `ToggleToolbarDrawer` command usage
+* [ ] Replace `skipFocus` with `skip_focus` in command options
+* [ ] Update any custom plugins using this command
+* [ ] Test toolbar drawer behavior after changes
+
+==== Removed Methods
+
+===== Legacy API Methods (removed in v6)
+** `editor.addButton`, `editor.addMenuItem`, `editor.windowManager.open` (replaced by xref:apis/tinymce.editor.ui.registry.adoc[`editor.ui.registry.*`] API)
+
+**Migration checklist:**
+
+* [ ] Replace all instances of `editor.addButton` with `editor.ui.registry.addButton`
+* [ ] Replace all instances of `editor.addMenuItem` with `editor.ui.registry.addMenuItem`
+* [ ] Replace all instances of `editor.windowManager.open` with `editor.windowManager.open`
+* [ ] Update custom plugins that use the old methods
+* [ ] Test button and menu functionality in your editor instances
+
+===== Autocompleter `ch` property (removed in v7)
+// #TINY-8929
+
+The `ch` configuration property was removed in {productname} 7.0. Use the `trigger` property instead.
+
+[source, javascript]
+----
+// Old approach (removed in v7)
+editor.ui.registry.addAutocompleter('myAutocompleter', {
+  ch: '@',
+  // ... other options
+});
+
+// New approach
+editor.ui.registry.addAutocompleter('myAutocompleter', {
+  trigger: '@',
+  // ... other options
+});
+----
+
+**Migration checklist:**
+
+* [ ] Replace `ch: '<string>'` with `trigger: '<string>'` in autocompleter configurations
+* [ ] Test autocompleter functionality
+* [ ] Update any custom autocompleter implementations
+
+===== remove_trailing_brs property (removed in v7)
+
+The `remove_trailing_brs` setting was removed from the DomParser API in {productname} 7.0, after being deprecated in {productname} 6.5. For more information on DomParser, see xref:apis/tinymce.html.domparser.adoc[DomParser API].
+
+**Impact:**
+
+* DomParser no longer supports the `remove_trailing_brs` option
+* This affects custom DomParser configurations
+* May impact content parsing behavior
+
+**Migration checklist:**
+
+* [ ] Remove `remove_trailing_brs` from DomParser configurations
+* [ ] Test content parsing behavior
+* [ ] Update any custom DomParser implementations
+
+===== Text Pattern Changes (v7)
+
+{productname} 7.0 updated the default behavior of xref:content-behavior-options.adoc#text_patterns[`text_patterns`] to apply formats when the user presses the `Space` key instead of `Enter`.
+
+**Impact:**
+
+* Markdown-style formatting now triggers on Space key press
+* Previous Enter key behavior can be restored by configuring `trigger: 'enter'`
+* This affects all text patterns including headings, lists, blockquotes, and horizontal rules
+
+**Migration Steps:**
+
+1. Test existing text pattern behavior
+2. Update configurations if Enter key triggering is required
+3. Review user experience with new Space key triggering
+4. Consider updating user documentation about text pattern behavior
+
+.Example:
+[source,js]
+----
+// Default TinyMCE 7+ behavior (Space key trigger)
+tinymce.init({
+  selector: "textarea",
+  text_patterns: [
+    { start: '#', format: 'h1', trigger: 'space' },
+    { start: '##', format: 'h2', trigger: 'space' },
+    { start: '1.', cmd: 'InsertOrderedList', trigger: 'space' },
+    { start: '*', cmd: 'InsertUnorderedList', trigger: 'space' },
+    { start: '>', cmd: 'mceBlockQuote', trigger: 'space' }
+  ]
+});
+
+// Restore previous behavior (Enter key trigger)
+tinymce.init({
+  selector: "textarea",
+  text_patterns: [
+    { start: '#', format: 'h1', trigger: 'enter' },
+    { start: '##', format: 'h2', trigger: 'enter' },
+    { start: '1.', cmd: 'InsertOrderedList', trigger: 'enter' },
+    { start: '*', cmd: 'InsertUnorderedList', trigger: 'enter' },
+    { start: '>', cmd: 'mceBlockQuote', trigger: 'enter' }
+  ]
+});
+----
+
+**Migration checklist:**
+
+* [ ] Test existing text pattern behavior with Space key triggering
+* [ ] Update configurations if Enter key triggering is required
+* [ ] Review user experience with new Space key triggering
+* [ ] Update user documentation about text pattern behavior
+
+===== Autocompleter Configuration Changes (v7)
+
+The `ch` configuration property for autocompleters has been removed. Use the `trigger` property instead.
+
+.Example:
+[source,js]
+----
+// Old TinyMCE 6 configuration
+editor.ui.registry.addAutocompleter('myautocompleter', {
+  ch: '@',
+  minChars: 2,
+  fetch: function(pattern) {
+    return Promise.resolve(['item1', 'item2']);
+  }
+});
+
+// New TinyMCE 7+ configuration
+editor.ui.registry.addAutocompleter('myautocompleter', {
+  trigger: '@',
+  minChars: 2,
+  fetch: function(pattern) {
+    return Promise.resolve(['item1', 'item2']);
+  }
+});
+----
+
+**Migration checklist:**
+
+* [ ] Replace `ch: '<string>'` with `trigger: '<string>'` in autocompleter configurations
+* [ ] Test autocompleter functionality
+* [ ] Update any custom autocompleter implementations
+
+===== force_hex_color option (removed in v7)
+
+The `force_hex_color` option has been removed. Only RGB values in absolute format like `rgb(255, 255, 255)` are now converted to HEX values.
+
+===== Text Pattern Changes (v7)
+
+{productname} 7.0 updated the default behavior of xref:content-behavior-options.adoc#text_patterns[`text_patterns`] to apply formats when the user presses the `Space` key instead of `Enter`.
+
+**Impact:**
+
+* Markdown-style formatting now triggers on Space key press
+* Previous Enter key behavior can be restored by configuring `trigger: 'enter'`
+* This affects all text patterns including headings, lists, blockquotes, and horizontal rules
+
+**Migration Steps:**
+
+1. Test existing text pattern behavior
+2. Update configurations if Enter key triggering is required
+3. Review user experience with new Space key triggering
+4. Consider updating user documentation about text pattern behavior
+
+.Example:
+[source,js]
+----
+// Default TinyMCE 7+ behavior (Space key trigger)
+tinymce.init({
+  selector: "textarea",
+  text_patterns: [
+    { start: '#', format: 'h1', trigger: 'space' },
+    { start: '##', format: 'h2', trigger: 'space' },
+    { start: '1.', cmd: 'InsertOrderedList', trigger: 'space' },
+    { start: '*', cmd: 'InsertUnorderedList', trigger: 'space' },
+    { start: '>', cmd: 'mceBlockQuote', trigger: 'space' }
+  ]
+});
+
+// Restore previous behavior (Enter key trigger)
+tinymce.init({
+  selector: "textarea",
+  text_patterns: [
+    { start: '#', format: 'h1', trigger: 'enter' },
+    { start: '##', format: 'h2', trigger: 'enter' },
+    { start: '1.', cmd: 'InsertOrderedList', trigger: 'enter' },
+    { start: '*', cmd: 'InsertUnorderedList', trigger: 'enter' },
+    { start: '>', cmd: 'mceBlockQuote', trigger: 'enter' }
+  ]
+});
+----
+
+The `table_responsive_width` option has been replaced by xref:table-options.adoc#table_sizing_mode[`table_sizing_mode`] in TinyMCE 7.0.
+
+**Migration checklist:**
+
+* [ ] Replace `table_responsive_width` with `table_sizing_mode` in your configuration
+* [ ] Update the option value to match the new API
+* [ ] Test table responsive behavior
+
+.Example:
+[source,js]
+----
+// Old TinyMCE 6 configuration
+tinymce.init({
+  selector: "textarea",
+  table_responsive_width: true
+});
+
+// New TinyMCE 7+ configuration
+tinymce.init({
+  selector: "textarea",
+  table_sizing_mode: "responsive"
+});
+----
+
+For complete API migration details, see xref:migration-from-7x.adoc#core-api-changes[Core API Changes] in the 7→8 migration guide.
+
+=== Plugin Changes
+
+==== Template Plugin Removal (v7)
+
+The open-source `Template` plugin and associated config options have been removed in {productname} 7.0.
+
+Customers using the `template` plugin are recommended to upgrade to the premium **Templates** plugin which provides enhanced template functionality. For more information on the **Templates** plugin, see: xref:advanced-templates.adoc[Templates] for more details.
+
+Removed **Template** options:
+    
+* `template_cdate_classes`
+* `template_cdate_format`
+* `template_mdate_classes`
+* `template_mdate_format`
+* `template_replace_values`
+* `template_preview_replace_values`
+* `template_selected_content_classes`
+
+**Migration checklist:**
+
+* [ ] Remove `template` plugin from configuration if used
+* [ ] Evaluate need for premium Templates plugin (advtemplate)
+* [ ] Remove all template-related configuration options listed above
+* [ ] Update any custom template implementations
+* [ ] Test template functionality if migrating to premium plugin
+
+==== Media URL Resolver Changes (v7)
+// #TINY-9154
+
+In {productname} 6 and earlier, the `media_url_resolver` option provided `resolve` and `reject` callbacks, rather than a Promise. In {productname} 7, the `media_url_resolver` option now requires a Promise to be returned.
+
+.Old expected value implementing callbacks
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'media',
+  toolbar: 'media',
+  media_url_resolver: (data, resolve, reject) => {
+    if (data.url.indexOf('YOUR_SPECIAL_VIDEO_URL') !== -1) {
+      const embedHtml = `<iframe src="${data.url}" width="400" height="400" ></iframe>`;
+      resolve({ html: embedHtml });
+    } else {
+      resolve({ html: '' });
+    }
+  }
+});
+----
+
+.New expected value returning a Promise
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'media',
+  toolbar: 'media',
+  media_url_resolver: (data) => {
+    return new Promise((resolve) => {
+      if (data.url.indexOf('YOUR_SPECIAL_VIDEO_URL') !== -1) {
+        const embedHtml = `<iframe src="${data.url}" width="400" height="400" ></iframe>`;
+        resolve({ html: embedHtml });
+      } else {
+        resolve({ html: '' });
+      }
+    });
+  }
+});
+----
+
+**Migration checklist:**
+
+* [ ] Update `media_url_resolver` implementations to return Promises instead of using callbacks
+* [ ] Remove `resolve` and `reject` callback parameters from resolver functions
+* [ ] Test media embedding functionality with updated resolver
+* [ ] Update any custom media URL resolver implementations
+
+=== UI and UX Changes
+
+==== Table Height Changes (v7)
+
+Previously, {productname} added numerous `height` styles when resizing table rows such as on the `table` element, `tr` elements, and `td` elements. This resulted in unnecessarily verbose HTML output.
+
+{productname} 7.0 addresses this by making a couple of changes:
+
+* The height input field has been removed from the "Cell Properties" dialog. Now, the "Row Properties" dialog is the only way to update row heights. 
+* When a table is resized using the resize handles or the "Row properties" dialog, existing `height` styles will be stripped from `td/th` elements where applicable and only applied to the `table` element and `tr` elements.
+
+[NOTE]
+{productname} 7.0 does not provide any fallback to revert to the old behavior.
+
+==== Notification Close Button (v7)
+
+In previous versions of {productname}, xref:creating-custom-notifications.adoc[notifications] were able to be displayed without a close button (`X`). Accessibility is an important component of the editor, and when this button is not in a notification, that notification cannot be closed via keyboard navigation.
+
+As of {productname} 7.0, the `closeButton` property has been removed from the xref:creating-custom-notifications.adoc[notification API], with all notifications now displaying a visible `closeButton`. This is to allow notifications to be closed using the `Tab` key.
+
+==== Split Button Changes (v8)
+// #TINY-8665
+
+{productname} 8.0, xref:custom-split-toolbar-button.adoc[split toolbar buttons] now render as two distinct components: one for the primary action and one for the dropdown chevron.
+
+This structural change modifies the DOM layout of split buttons and may break custom CSS rules that rely on the previous structure.
+
+**Impact**: This change only affects integrators using *custom skins*.
+
+**Migration Guide:**
+
+If your implementation includes a custom skin, follow these steps to ensure compatibility:
+
+* [ ] Confirm whether your project uses a custom skin.
+* [ ] **Rebuild your custom skin** using the {productname} 8.0 codebase. See xref:creating-a-skin.adoc[Creating a Skin] for instructions.
+* [ ] **Update your split button usage** to align with the new structure, including support for the `chevronTooltip` option. Refer to xref:custom-split-toolbar-button.adoc[Split Toolbar Buttons] for updated configuration details.
+* [ ] **Test the rendering and interaction** of split buttons in your editor to verify expected behavior.
+
+=== Security Changes
+
+==== Sandbox Iframes (v7)
+
+In {productname} 6.8.1, the xref:content-filtering.adoc#sandbox-iframes[sandbox iframes] editor option was introduced to allow iframes to be sandboxed by default when inserted into the editor.
+
+In {productname} 7.0, the default for `+sandbox_iframes+` will change from `false` to `true`, meaning that all `+iframe+` elements inserted into the editor will be given the `sandbox=""` attribute by default, preventing most actions, including scripting and same-origin access, which may break existing editor content or produce undesirable effects.
+
+To prevent any expected iframes from being sandboxed, we recommend adding the source domains of such iframes to the new xref:content-filtering.adoc#sandbox-iframes-exclusions[`+sandbox_iframes_exclusions+`] option list, and including the domains in the default list where necessary. To prevent all iframes from being sandboxed, set the option `+sandbox_iframes+` to `+false+` in your editor configuration.
+
+==== Convert Unsafe Embeds (v7)
+
+In {productname} 6.8.1, xref:content-filtering.adoc#convert-unsafe-embeds[convert_unsafe_embeds] editor option was introduced to allow `+object+` and `+embed+` elements to be converted by default to the correct element, respective of the MIME type, automatically when inserted into the editor.
+
+In {productname} 7.0, the default value for `+convert_unsafe_embeds+` will change from `false` to `true`, meaning that all `+object+` and `+embed+` tags will automatically be converted to different elements when inserted to the editor.
+
+.Example of before/after conversion.
+[source, html]
+----
+<!-- Before Conversion -->
+<object type="video/mp4" data="https://sneak-preview.tiny.cloud/3adc27b5-bb2f-49f0-9ccc-72b7c48313b0/bad.mov"></object>
+
+<!-- After Conversion -->
+<video src="https://sneak-preview.tiny.cloud/3adc27b5-bb2f-49f0-9ccc-72b7c48313b0/bad.mov" controls="controls"></video>
+----
+
+==== DOMPurify Update (v8)
+// #TINY-12056
+
+{productname} 8.0 updates the DOMPurify dependency to version 3.2.6 and enables the `SAFE_FOR_XML` flag by default. This is a breaking change: content that previously passed sanitization in {productname} 7 may now be stripped or altered during the sanitization process.
+
+[IMPORTANT]
+====
+This change improves security and aligns with DOMPurify's recommended defaults. However, existing content and integrations that relied on the previous, less strict sanitization behavior may be impacted.
+====
+
+**Key Changes**:
+
+* **DOMPurify upgraded to 3.2.6**
+* **`SAFE_FOR_XML` enabled** — This setting enforces stricter handling of comments and attribute values, preventing certain XSS vectors.
+* **Content Impact** — HTML comments containing tags, Internet Explorer conditional comments, and attributes with HTML-like values may now be removed during sanitization. Content that was previously allowed may be stripped.
+
+**Migration Steps:**
+
+* Review workflows and test content that previously relied on relaxed sanitization.
+* {productname} now provides the xref:content-filtering.adoc#allow_html_in_comments[Content Filtering: allow_html_in_comments option] option. Enabling this option allows HTML tags in comments with sanitization still enabled.
+
+**Migration checklist:**
+
+* [ ] Review existing content for HTML comments containing tags
+* [ ] Test content sanitization behavior with DOMPurify 3.2.6
+* [ ] Update content workflows if comments are being stripped unexpectedly
+* [ ] Consider enabling `allow_html_in_comments` if needed (with security awareness)
+* [ ] Test Internet Explorer conditional comments if used
+* [ ] Verify attributes with HTML-like values are handled correctly
+
+[WARNING]
+Using `allow_html_in_comments` increases the risk of XSS vulnerabilities. xref:security.adoc#allow_html_in_comments[allow_html_in_comments] is not recommended for production use unless you fully understand the implications and have appropriate security measures in place.
+
+=== Service Changes
+
+==== Java Swing Integration Deprecation (v8)
+// #DOC-3304
+
+{productname}'s Java Swing integration has been deprecated in {productname} 8.0 and will reach end-of-life as of December 31, 2025.
+
+**Impact**: Customers using the Java Swing integration need to plan for migration to alternative solutions before the end-of-life date.
+
+**Migration checklist:**
+
+* [ ] Evaluate alternative integration options
+* [ ] Plan migration timeline to complete before December 31, 2025
+
+==== Transition from Java WAR Files to Containerized Services (v8)
+// #EPIC-247
+
+{productname} 8.0 no longer includes Java WAR files for backend services like the spell checker. Customers are required to migrate to modern Docker/OCI containers for self-hosted deployments.
+
+**Impact**: This reduces infrastructure complexity and aligns with modern DevOps practices.
+
+**Migration checklist:**
+
+
+* [ ] Inventory current WAR file deployments
+* [ ] Review containerization requirements for your environment
+* [ ] Plan transition timeline to containerized services
+* [ ] Set up container infrastructure (Docker/Kubernetes)
+* [ ] Deploy and test containerized services
+* [ ] Update service connection configurations
+* [ ] Contact link:{supporturl}/[{supportname}] if legacy WAR files are still needed
+
+== Migration Tips
+
+. **Backup and Prepare**: Ensure comprehensive backups before upgrading.
+. **Update Core Initialization**:
+** Update `theme`, `skin`, and to reflect the new oxide theme and skin.
+*** In {productname} 4, there were multiple themes available including 'modern', 'inlite', and 'mobile'. These themes were removed in {productname} 5 and combined into a single responsive theme called "Silver".
+** Update `forced_root_block: false` options to `forced_root_block: "p"`.
+** Consolidate toolbars.
+** Review new v{release-version} defaults for security settings.
+** Update license key to new format if self-hosting.
+. **Plugin Migration**:
+** Remove deprecated plugins from your configuration.
+** Update renamed plugins (e.g., `spellchecker` → xref:introduction-to-tiny-spellchecker.adoc[`tinymcespellchecker`]).
+** Verify premium plugins for compatibility.
+** Install License Key Manager addon if using commercial license.
+. **Custom Code Updates**:
+** Rewrite custom plugins using the xref:apis/tinymce.editor.ui.registry.adoc[`editor.ui.registry.*`] API.
+** Replace v4 API methods like `editor.addButton`, `editor.addMenuItem`, `editor.windowManager.open`.
+** Update media embed handling (xref:media.adoc#media_url_resolver[`media_url_resolver`] API changes).
+** Replace deprecated API methods (xref:apis/tinymce.editor.adoc#insertContent[`editor.insertContent`] replaces `editor.selection.setContent`, xref:apis/tinymce.editor.adoc#dispatch[`editor.dispatch()`] replaces `editor.fire()`, etc.).
+. **CSS Updates**:
+** Update custom styles to align with the new Oxide standard. While many `+.mce-*+` classes have been replaced with `+.tox-*+` classes, some `+.mce-*+` prefixes remain in use. Review your CSS to ensure compatibility.
+** Update split button CSS if using custom skins (TinyMCE 8 change).
+. **Testing and Deployment**:
+** Thoroughly test your updated configuration before production deployment.
+** Validate media, iframe, and content security settings.
+** Test license key functionality and premium features.
+** Verify DOMPurify sanitization behavior with your content.
+
+== Additional Resources
+
+* link:https://www.tiny.cloud/docs/tinymce/latest/[{productname} {release-version} Documentation]
+* Paid users can link:https://www.tiny.cloud/contact/[contact our Technical Support] team for help.
+* xref:license-key.adoc[License Key Setup]
+* link:https://community.tiny.cloud/[Community Forum]
+* link:https://github.com/tinymce/tinymce/issues[GitHub Issues]
+
+== Helpful Links
+
+To make your upgrade smooth, check the following version-specific migration guides:
+
+* link:https://www.tiny.cloud/docs/tinymce/5/migration-from-4x/[Migrating from {productname} 4 to {productname} 5]
+* link:https://www.tiny.cloud/docs/tinymce/6/migration-from-5x/[Migrating from {productname} 5 to {productname} 6]
+* xref:migration-from-6x.adoc[Migrating from {productname} 6 to {productname} 7]
+* xref:migration-from-7x.adoc[Migrating from {productname} 7 to {productname} 8]
+
+These include deeper configuration notes, plugin replacements, and examples.
+
+== Next Steps
+
+Ensure you follow the migration steps carefully to avoid common issues like missing plugins, broken UI, and unexpected formatting changes. Consider running your updated editor in a staging environment for a complete verification before final deployment.
+
+[IMPORTANT]
+====
+**Migration Checklist**
+
+Before deploying to production, verify:
+
+* [ ] License key is updated to new format (`T8LK:` prefix)
+* [ ] License Key Manager addon is installed (commercial licenses)
+* [ ] All deprecated API methods have been replaced (`editor.selection.setContent`, `editor.fire()`, etc.)
+* [ ] Custom skins have been rebuilt for TinyMCE 8 compatibility
+* [ ] DOMPurify sanitization behavior is tested with your content
+* [ ] Cross-origin resource loading is configured if needed
+* [ ] All premium features are working correctly
+* [ ] Media URL resolver has been updated to use Promises
+* [ ] Autocompleter configuration uses `trigger` instead of `ch`
+* [ ] Template plugin has been replaced with premium Templates plugin if needed
+* [ ] Language pack files are updated to RFC5646 format
+* [ ] Accessibility checker configurations are updated for W3C standards
+* [ ] Empty file references are removed from build processes
+* [ ] Java Swing integration migration is planned (if applicable)
+* [ ] Medical English dictionary references are removed
+* [ ] WAR file deployments are migrated to containerized services
+* [ ] Split button CSS is updated for custom skins
+* [ ] Table height handling is tested
+* [ ] Notification close button behavior is verified
+* [ ] Sandbox iframes configuration is reviewed
+* [ ] Convert unsafe embeds behavior is tested
+====

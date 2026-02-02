@@ -1,6 +1,6 @@
 = {productname} Migration Guides
-:description: Comprehensive guides for upgrading between TinyMCE versions (4.x, 5.x, 6.x) and migrating from other rich text editors
-:keywords: migration, upgrade, version, tinymce 4, tinymce 5, tinymce 6, froala
+:description: Comprehensive guides for upgrading between TinyMCE versions (4.x, 5.x, 6.x, 7.x) and migrating from other rich text editors
+:keywords: migration, upgrade, version, tinymce 4, tinymce 5, tinymce 6, tinymce 7, tinymce 8, froala
 :title_nav: Migration Guides
 :toc: macro
 :toclevels: 2
@@ -10,53 +10,74 @@
 
 == Introduction
 
-This section provides comprehensive guides for upgrading between {productname} versions (4.x, 5.x, 6.x) and migrating from other rich text editors. Each guide is designed to help you understand the key changes, configuration adjustments, and best practices for upgrading your editor to the latest version of {productname}.
+This section provides comprehensive guides for upgrading between {productname} versions (4.x, 5.x, 6.x, 7.x) and migrating from other rich text editors. Each guide is designed to help you understand the key changes, configuration adjustments, and best practices for upgrading your editor to the latest version of {productname}.
 
-== New Migration Guides
+== Latest Migration Guide
+
+[.lead]
+xref:migration-from-7x.adoc[Migrating from {productname} 7 to 8]
+
+The most recent migration guide for upgrading from {productname} 7 to {productname} 8, covering the latest configuration changes, API updates, and UI component improvements.
+
+== Direct Migration to TinyMCE 8
+
+These guides provide direct migration paths from older TinyMCE versions to TinyMCE 8, consolidating all changes into comprehensive single guides.
 
 [cols="1,1"]
 |===
 
 a|
 [.lead]
-xref:migration-from-7x.adoc[Migrating from {productname} 7]
+xref:migration-from-4x-to-8x.adoc[Migrating from {productname} 4 to 8]
 
-Guide for upgrading from {productname} 7 to {productname} 8, covering configuration changes and UI component updates.
+Comprehensive guide for upgrading from {productname} 4 directly to {productname} 8, covering all major architectural changes and modern UI improvements.
 
-// Empty cell to even out rows
+a|
+[.lead]
+xref:migration-from-5x-to-8x.adoc[Migrating from {productname} 5 to 8]
+
+Comprehensive guide for upgrading from {productname} 5 directly to {productname} 8, including architectural improvements and security updates.
+
+a|
+[.lead]
+xref:migration-from-6x-to-8x.adoc[Migrating from {productname} 6 to 8]
+
+Comprehensive guide for upgrading from {productname} 6 directly to {productname} 8, covering configuration changes and UI component updates.
+
 a|
 
 |===
 
-== Legacy Migration Guides
+== Step-by-Step Migration Guides
+
+These guides provide step-by-step migration paths, allowing you to upgrade incrementally through intermediate versions.
 
 [cols="1,1"]
 |===
 
 a|
 [.lead]
-xref:migration-from-6x.adoc[Migrating from {productname} 6]
+xref:migration-from-4x.adoc[Migrating from {productname} 4 to 7]
 
-Guide for upgrading from {productname} 6 to {productname} 7, covering configuration changes and UI component updates.
+Guide for upgrading from {productname} 4 to {productname} 7, detailing major architectural changes and modern UI improvements.
 
 a|
 [.lead]
-xref:migration-from-5x.adoc[Migrating from {productname} 5]
+xref:migration-from-5x.adoc[Migrating from {productname} 5 to 7]
 
 Guide for upgrading from {productname} 5 to {productname} 7, including architectural improvements and security updates.
 
 a|
 [.lead]
-xref:migration-from-4x.adoc[Migrating from {productname} 4]
+xref:migration-from-6x.adoc[Migrating from {productname} 6 to 7]
 
-Guide for upgrading from {productname} 4 to {productname} 7, detailing major architectural changes and modern UI improvements.
+Guide for upgrading from {productname} 6 to {productname} 7, covering configuration changes and UI component updates.
 
-// Empty cell to even out rows
 a|
 
 |===
 
-== Other Migration Guides
+== Migration from Other Editors
 
 [cols="1,1"]
 |===
@@ -67,7 +88,6 @@ xref:migration-from-froala.adoc[Migrating from Froala]
 
 Guide for migrating from Froala Editor to {productname}, with equivalent feature mappings and configuration guidance.
 
-// Empty cell to even out rows
 a|
 
 |===

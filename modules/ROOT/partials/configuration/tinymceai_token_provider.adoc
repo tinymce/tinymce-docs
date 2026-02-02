@@ -1,0 +1,20 @@
+[[tinymceai-token-provider]]
+== `+tinymceai_token_provider+`
+
+
+*Type:* `+Function+`
+
+*Default value:* `+undefined+`
+
+=== Example: using `+tinymceai_token_provider+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  tinymceai_token_provider: function() {
+    // Token provider implementation
+  }
+});
+----

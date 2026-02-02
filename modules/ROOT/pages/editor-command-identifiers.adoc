@@ -215,6 +215,7 @@ Commands are available for the following plugins:
 * xref:advancedlists[Advanced Lists]
 * xref:Enhanced Tables[Enhanced Tables]
 * xref:anchor[Anchor]
+* xref:tinymceai[TinyMCE AI]
 * xref:autoresize[Autoresize]
 * xref:casechange[Case Change]
 * xref:charactermap[Character Map]
@@ -524,6 +525,13 @@ include::partial$commands/table-cmds.adoc[leveloffset=+3]
 The following commands require the xref:tableofcontents.adoc[Table of Contents (`+tableofcontents+`)] plugin.
 
 include::partial$commands/tableofcontents-cmds.adoc[leveloffset=+3]
+
+[[tinymceai]]
+==== TinyMCE AI
+
+The following commands require the xref:tinymceai.adoc[TinyMCE AI (`+tinymceai+`)] plugin.
+
+include::partial$commands/tinymceai-cmds.adoc[leveloffset=+3]
 
 [[advtemplate]]
 ==== Templates

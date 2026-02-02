@@ -245,6 +245,7 @@ The following plugins provide events.
 * xref:a11ychecker-events[Accessibility Checker events]
 * xref:autosave-events[Autosave events]
 * xref:character-map-events[Character Map events]
+* xref:tinymceai-events[TinyMCE AI events]
 * xref:comments-events[Comments events]
 * xref:format-painter-events[Format Painter events]
 * xref:fullscreen-events[Fullscreen events]
@@ -291,6 +292,13 @@ The following event is provided by the xref:charmap.adoc[Character Map plugin].
 |Name |Data |Description
 |InsertCustomChar |`+{ chr: string }+` |Fired before a special character is inserted into the editor.
 |===
+
+[[tinymceai-events]]
+=== TinyMCE AI events
+
+The following events are provided by the xref:tinymceai.adoc[TinyMCE AI plugin].
+
+include::partial$events/tinymceai-events.adoc[]
 
 [[comments-events]]
 === Comments events

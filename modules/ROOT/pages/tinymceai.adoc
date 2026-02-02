@@ -1,0 +1,68 @@
+= TinyMCE AI
+
+:navtitle: TinyMCE AI
+:description: AI-powered features for {productname} including AI chat, AI review, and quick actions
+:description_short: AI-powered features for {productname}
+:keywords: AI, artificial intelligence, chat, review, quick actions, tinymceai
+:pluginname: TinyMCE AI
+:plugincode: tinymceai
+:pluginminimumplan: enterpriseplan
+:plugincategory: premium
+
+[[what-is-tinymce-ai]]
+== What is TinyMCE AI
+
+[[plugin-vs-api]]
+== Plugin vs API
+
+[[architecture-overview]]
+== Architecture overview
+
+[[interactive-example]]
+== Interactive example
+
+liveDemo::{tinymceai}[]
+
+[[plugin-reference]]
+== Plugin reference
+
+[[basic-setup]]
+== Basic setup
+
+[[options]]
+== Options
+
+The following configuration options affect the behavior of the {pluginname} plugin.
+
+include::partial$configuration/tinymceai_token_provider.adoc[leveloffset=+1]
+
+[[toolbar-buttons]]
+== Toolbar buttons
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+[[menu-items]]
+== Menu items
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+
+[[commands]]
+== Commands
+
+The {pluginname} plugin provides the following {productname} commands.
+
+include::partial$commands/{plugincode}-cmds.adoc[]
+
+[[events]]
+== Events
+
+The {pluginname} plugin provides the following events.
+
+include::partial$events/{plugincode}-events.adoc[]
+
+[[apis]]
+== APIs
+
+The {pluginname} plugin provides the following APIs.
+
+include::partial$plugin-apis/{plugincode}-apis.adoc[]

@@ -1,0 +1,557 @@
+= TinyMCE AI Integration
+
+:navtitle: Integration
+:description: Integration guide for TinyMCE AI plugin
+:description_short: Integration guide
+:keywords: AI, integration, plugin, configuration, tinymceai
+
+This guide will take you step-by-step through the process of running TinyMCE AI in your editor integration. It also presents possible configuration and customization options.
+
+[[installation]]
+== Installation
+
+After installing the editor, add the feature to your plugin list and provide xref:tinymceai-integration.adoc#sample-implementation[essential configuration]:
+
+[source,js]
+----
+tinymce.init({
+  selector: '#editor',
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai',
+  tinymceai_token_provider: function() {
+    // Return a promise that resolves to a JWT token
+    return fetch('/api/token').then(response => response.text());
+  }
+});
+----
+
+[NOTE]
+====
+You must configure a user interface type for the AI features to work. Learn more about the available options in the xref:tinymceai-integration.adoc#ui-types-and-positioning[UI placement] section or use the xref:tinymceai-integration.adoc#sample-implementation[sample implementation] as a reference.
+====
+
+[NOTE]
+====
+Using AI features with the Suggested Edits feature requires proper user configuration. Learn more about the xref:tinymceai-integration.adoc#suggested-edits-dependency[Suggested Edits dependency] or refer to the xref:tinymceai-integration.adoc#sample-implementation[sample implementation] for more details.
+====
+
+[[sample-implementation]]
+== Sample implementation
+
+An example TinyMCE AI configuration is presented below. You can learn more about specific configurations such as xref:tinymceai-integration.adoc#ui-types-and-positioning[UI types and positioning] or xref:tinymceai-integration.adoc#suggested-edits-dependency[Suggested Edits dependency] in the later sections of this guide.
+
+To learn more about toolbar configuration, refer to the xref:toolbar-configuration-options.adoc[toolbar configuration] guide.
+
+[source,js]
+----
+// Simplified integration of the Users plugin needed for Suggested Edits integration.
+// For production applications, replace the dummy user with actual user data from your authentication system.
+function setupUsers(editor) {
+  // Just add a minimal dummy user
+  editor.settings.tinymceai_user = {
+    id: 'user-1',
+    name: 'John Doe'
+  };
+}
+
+tinymce.init({
+  selector: '#editor',
+  plugins: 'tinymceai suggestededits',
+  
+  // Extend the main editor toolbar configuration with additional buttons:
+  // - 'tinymceai': opens the Quick actions menu,
+  // - 'tinymceai-conversations': moves the user focus to AI chat,
+  // - 'tinymceai-improve-writing': executes the "Improve Writing" quick action.
+  //
+  // You can add more Quick actions to the toolbar configuration if needed.
+  toolbar: [
+    'tinymceai',
+    'tinymceai-conversations',
+    'tinymceai-improve-writing',
+    // ... other toolbar items
+  ],
+  
+  // You can use the same AI feature buttons in the balloon toolbar configuration for contextual convenience.
+  contextmenu: 'tinymceai tinymceai-conversations tinymceai-improve-writing',
+  
+  setup: function(editor) {
+    setupUsers(editor);
+  },
+  
+  // Configure the document identifier for AI chat history and context preservation.
+  // This should be a unique identifier for the document/article being edited.
+  tinymceai_document_id: 'document-123', // Replace with your actual document ID
+  
+  // Main configuration of AI feature.
+  tinymceai_token_provider: function() {
+    return fetch('/api/token').then(response => response.text());
+  },
+  
+  // ⚠️ Mandatory UI configuration.
+  // Display the AI user interface in a dedicated DOM element. The interface can be also displayed
+  // in an overlay or in a custom way, learn more in the next chapters of this guide.
+  tinymceai_ui_type: 'sidebar',
+  tinymceai_sidebar_element: document.querySelector('.ai-sidebar'),
+  
+  // (Optional) Whether the AI interface should be visible when the editor is created.
+  tinymceai_ui_visible_by_default: false,
+  
+  // (Optional) Configure AI chat by configuring available context resources.
+  tinymceai_conversations_context: {
+    // Configuration of the built-in context options.
+    document: {
+      enabled: true
+    },
+    urls: {
+      enabled: false
+    },
+    files: {
+      enabled: true
+    },
+    
+    // (Optional) Additional sources for AI chat context.
+    sources: [
+      // Definition of the custom context provider.
+      {
+        // The unique identifier of the provider.
+        id: 'my-docs',
+        
+        // The human-readable name of the provider.
+        label: 'My Documents',
+        
+        // The async callback to retrieve the list of available resources.
+        // Usually involves fetching data from a database or an external API,
+        // but here we use a simple array of resources for demonstration purposes.
+        getResources: async (query) => [
+          // Texts in various formats
+          {
+            id: 'text1',
+            type: 'text',
+            label: 'Internal note in plain text format',
+            data: {
+              content: 'Lorem ipsum dolor sit amet...',
+              type: 'text'
+            }
+          },
+          {
+            id: 'text2',
+            type: 'text',
+            label: 'Internal note in Markdown format',
+            data: {
+              content: '## Markdown note\n\n**Lorem ipsum** dolor sit amet...',
+              type: 'markdown'
+            }
+          },
+          {
+            id: 'text3',
+            type: 'text',
+            label: 'Internal note in HTML format',
+            data: {
+              content: '<h2>HTML note</h2><p>Lorem ipsum dolor sit amet...</p>',
+              type: 'html'
+            }
+          },
+          {
+            id: 'text4',
+            type: 'text',
+            label: 'Internal note (fetched on demand)',
+            
+            // Note: Since the `data` property is not provided, the content will be retrieved using the `getData()` callback (see below).
+            // This will prevent fetching large content along with the list of resources.
+          },
+          
+          // URLs to resources in different formats
+          {
+            id: 'url1',
+            type: 'web-resource',
+            label: 'Blog post in Markdown',
+            data: 'https://example.com/blog-post.md'
+          },
+          {
+            id: 'url2',
+            type: 'web-resource',
+            label: 'Company brochure in PDF',
+            data: 'https://example.com/brochure.pdf'
+          },
+          {
+            id: 'url3',
+            type: 'web-resource',
+            label: 'Company website in HTML',
+            data: 'https://example.com/index.html'
+          },
+          {
+            id: 'url4',
+            type: 'web-resource',
+            label: 'Terms of service in plain text',
+            data: 'https://example.com/terms-of-service.txt'
+          },
+          
+          // ...
+        ],
+        
+        // The optional callback to retrieve the content of resources without the `data` property provided by the `getResources()` callback.
+        // When the user picks a specific resource,  the content will be fetched on demand (from database or external API) by this callback.
+        // This prevents fetching large resources along with the list of resources.
+        getData: (id) => fetchDocumentContent(id)
+      },
+      
+      // More context providers...
+    ]
+  },
+  
+  // (Optional) The configuration of AI chat models selection feature.
+  tinymceai_conversations_models: {
+    defaultModelId: 'agent-1',
+    modelSelectorAlwaysVisible: true,
+    displayedModels: ['gpt', 'claude']
+  },
+  
+  // (Optional) Configure the Quick actions feature by adding a new command.
+  tinymceai_quick_actions_extra_commands: [
+    // An action that opens AI chat interface for interactive conversations.
+    {
+      id: 'explain-like-i-am-five',
+      displayedPrompt: 'Explain like I am five',
+      prompt: 'Explain the following text like I am five years old.',
+      type: 'CHAT'
+    },
+    
+    // ... More custom actions ...
+  ]
+});
+----
+
+[[configuration]]
+== Configuration
+
+[[supported-ai-models]]
+=== Supported AI models
+
+TinyMCE AI supports multiple AI models from different providers. By default, the automatically selected model (`agent-1`) will be used for optimal cost and performance.
+
+You can narrow down the list of available models. xref:tinymceai-chat.adoc#model-selection-configuration[Learn how to configure the list of available models in Chat].
+
+Here's a detailed list of available models with their capabilities:
+
+[cols="1,2,1,1,2"]
+|===
+|Model |Description |xref:tinymceai-chat.adoc#web-search[Web Search] |xref:tinymceai-chat.adoc#reasoning[Reasoning] |Configuration id
+
+|**Auto (default)**
+|Automatically selects best model for speed, quality, and cost.
+|Yes
+|Yes
+|`'auto'` (also `'agent-1'`, learn more about xref:tinymceai-models.adoc#model-compatibility-versions[compatibility versions])
+
+|**GPT-5.2**
+|OpenAI's flagship model for advanced reasoning, creativity, and complex tasks
+|Yes
+|Yes
+|`'gpt-5.2'`
+
+|**GPT-5.1**
+|OpenAI's flagship model for advanced reasoning, creativity, and complex tasks
+|Yes
+|Yes
+|`'gpt-5.1'`
+
+|**GPT-5**
+|OpenAI's flagship model for advanced reasoning, creativity, and complex tasks
+|Yes
+|Yes
+|`'gpt-5'`
+
+|**GPT-5 Mini**
+|A lightweight version of GPT-5 – faster, more cost-efficient
+|Yes
+|Yes
+|`'gpt-5-mini'`
+
+|**Claude 4.5 Haiku**
+|Cost-efficient model for quick interactions with improved reasoning
+|Yes
+|Yes
+|`'claude-4-5-haiku'`
+
+|**Claude 4.5 Sonnet**
+|Advanced model with improved creativity, reliability, and reasoning
+|Yes
+|Yes
+|`'claude-4-5-sonnet'`
+
+|**Gemini 3 Pro**
+|Google's advanced model for versatile problem-solving and research
+|Yes
+|Yes
+|`'gemini-3-pro'`
+
+|**Gemini 3 Flash**
+|Lightweight Gemini model for fast, cost-efficient interactions
+|Yes
+|Yes
+|`'gemini-3-flash'`
+
+|**Gemini 2.5 Flash**
+|Lightweight Gemini model for fast, cost-efficient interactions
+|Yes
+|Yes
+|`'gemini-2-5-flash'`
+
+|**GPT-4.1**
+|OpenAI's model for reliable reasoning, speed, and versatility
+|Yes
+|No
+|`'gpt-4.1'`
+
+|**GPT-4.1 Mini**
+|A lighter variant of GPT-4.1 that balances speed and cost while maintaining solid accuracy
+|Yes
+|No
+|`'gpt-4.1-mini'`
+|===
+
+[NOTE]
+====
+Model availability depends on your subscription tier and service compatibility version. Some models may have specific limitations or requirements. For detailed information about available models, their capabilities, and API-level configuration, see xref:tinymceai-models.adoc[AI models documentation].
+====
+
+[[document-id]]
+=== Document ID
+
+The `tinymceai_document_id` configuration property serves as the document identifier corresponding to the edited resource (article, document, etc.) in your application. This ID is essential for maintaining xref:tinymceai-chat.adoc[Chat] history, ensuring that AI conversations are properly associated with the specific document being edited. When users interact with AI features, their chat history is preserved and linked to this document ID.
+
+[source,js]
+----
+tinymce.init({
+  selector: '#editor',
+  plugins: 'tinymceai',
+  tinymceai_document_id: 'DOCUMENT_ID', // Replace with your actual document ID
+  tinymceai_token_provider: function() {
+    return fetch('/api/token').then(response => response.text());
+  }
+});
+----
+
+[NOTE]
+====
+The `tinymceai_document_id` configuration uses a dedicated namespace in the configuration. This namespace may be subject to change in future versions as we continue to refine the AI integration architecture.
+====
+
+[[suggested-edits-dependency]]
+=== Suggested Edits dependency
+
+TinyMCE AI can leverage the Suggested Edits feature to enhance the user experience, for instance, by allowing users to turn AI-generated content into suggestions that can later be reviewed, accepted, or rejected. Without the Suggested Edits plugin, TinyMCE AI will work, but some functionalities may be limited. For the most complete integration, we highly recommend using Suggested Edits along with TinyMCE AI.
+
+[NOTE]
+====
+Please keep in mind that the `suggestededits` plugin requires user management, and as such, it will require you to provide a minimal user integration, even for non-collaborative setups.
+
+The xref:tinymceai-integration.adoc#sample-implementation[sample implementation] above shows a basic user setup function that adds a dummy user. For production applications, replace the dummy user with actual user data from your authentication system.
+====
+
+[[ui-types-and-positioning]]
+=== UI types and positioning
+
+TinyMCE AI gives you flexible options for displaying the AI user interface. The `tinymceai_ui_type` and related configuration properties allow you to choose from three different UI placement modes:
+
+[[sidebar]]
+==== Sidebar
+
+When in sidebar mode, the AI user interface is displayed in a specific DOM element, allowing you to inject it into your existing user interface.
+
+[source,js]
+----
+tinymce.init({
+  selector: '#editor',
+  plugins: 'tinymceai',
+  tinymceai_ui_type: 'sidebar',
+  
+  // Existing DOM element to use as the container for the AI user interface.
+  tinymceai_sidebar_element: document.querySelector('#ai-sidebar-container'),
+  
+  // (Optional) The preferred side for positioning the tab buttons.
+  tinymceai_sidebar_side: 'right',
+  
+  tinymceai_token_provider: function() {
+    return fetch('/api/token').then(response => response.text());
+  }
+});
+----
+
+In addition to the above, we recommend using the following or similar CSS to style the sidebar container for the AI user interface (tabs) to render optimally:
+
+[source,css]
+----
+#ai-sidebar-container .tinymce-ai-tabs {
+    /* An arbitrary fixed width to limit the space consumed by the AI tabs. */
+    width: 500px;
+
+    /* A fixed height that enables vertical scrolling (e.g., in AI chat feed). */
+    height: 800px;
+}
+----
+
+[[overlay]]
+==== Overlay
+
+When in overlay mode, the AI user interface is displayed on top of the page, allowing you to position it on your preferred side. This mode is best suited for integrations with limited space.
+
+[source,js]
+----
+tinymce.init({
+  selector: '#editor',
+  plugins: 'tinymceai',
+  tinymceai_ui_type: 'overlay',
+  tinymceai_overlay_side: 'right',
+  tinymceai_token_provider: function() {
+    return fetch('/api/token').then(response => response.text());
+  }
+});
+----
+
+Learn how to xref:tinymceai-integration.adoc#toggling-the-ui[toggle the AI overlay] using a dedicated toolbar button.
+
+[[custom]]
+==== Custom
+
+When in custom mode, the AI user interface is displayed in a custom way, allowing you to use the building blocks of the AI user interface to create your own and satisfy the specific needs of your application.
+
+[source,js]
+----
+tinymce.init({
+  selector: '#editor',
+  plugins: 'tinymceai',
+  tinymceai_ui_type: 'custom',
+  tinymceai_token_provider: function() {
+    return fetch('/api/token').then(response => response.text());
+  },
+  setup: function(editor) {
+    // A custom integration of the AI user interface placing the tab buttons and panels separately in custom containers.
+    editor.on('tinymceai:ready', function() {
+      const aiTabs = editor.plugins.get('tinymceai').getTabs();
+      
+      for (const id of aiTabs.getTabIds()) {
+        const tab = aiTabs.getTab(id);
+        
+        // Display tab button and panel in a custom container.
+        myButtonsContainer.appendChild(tab.button.element);
+        myPanelContainer.appendChild(tab.panel.element);
+      }
+    });
+  }
+});
+----
+
+[[toggling-the-ui]]
+=== Toggling the UI
+
+The user interface can be easily toggled by the users using the `'tinymceai-toggle'` image:https://placehold.net/default.png[Ask AI icon,24px] toolbar button. The button becomes available for configuration when the AI features are enabled.
+
+The following example shows how to enable the `'tinymceai-toggle'` button in the main editor toolbar:
+
+[source,js]
+----
+tinymce.init({
+  selector: '#editor',
+  plugins: 'tinymceai',
+  
+  // Enable the 'tinymceai-toggle' button in the main editor toolbar.
+  toolbar: ['tinymceai-toggle', /* ... */],
+  
+  tinymceai_token_provider: function() {
+    return fetch('/api/token').then(response => response.text());
+  },
+  
+  tinymceai_ui_type: 'overlay',
+  // ... other configuration
+});
+----
+
+You can also programmatically show or hide the AI interface:
+
+[source,js]
+----
+// Show the AI interface
+editor.execCommand('tinymceai:show');
+
+// Hide the AI interface
+editor.execCommand('tinymceai:hide');
+
+// Toggle the AI interface
+editor.execCommand('tinymceai:toggle');
+----
+
+If you wish to initially hide the overlay until a user opens it with a button, you can use the xref:tinymceai-integration.adoc#hiding-the-ui-on-initialization[dedicated configuration].
+
+[[hiding-the-ui-on-initialization]]
+=== Hiding the UI on initialization
+
+By default, the AI interface will be visible when editor is created (and the xref:tinymceai-integration.adoc#toggling-the-ui[related toolbar button] will be active). If you wish to have it hidden until the user opens it (e.g. via toolbar button), set `tinymceai_ui_visible_by_default` property to `false`.
+
+[source,js]
+----
+tinymce.init({
+  selector: '#editor',
+  plugins: 'tinymceai',
+  tinymceai_ui_visible_by_default: false,
+  tinymceai_token_provider: function() {
+    return fetch('/api/token').then(response => response.text());
+  }
+});
+----
+
+[[maximizing-the-ui]]
+=== Maximizing the UI
+
+The maximize button image:https://placehold.net/default.png[Maximize icon,24px] in the upper-right corner allows changing the width of the TinyMCE AI user interface. Users can use this button to interact with the AI features more comfortably, especially while xref:tinymceai-chat.adoc[chatting] and interacting with large chunks of content.
+
+Clicking this button will toggle the `.tinymce-ai-tabs_maximized` CSS class on the `.tinymce-ai-tabs` DOM element. The integrator can then style the geometry of the element based on the specific requirements of the integration.
+
+* When the UI is configured in the xref:tinymceai-integration.adoc#sidebar[sidebar mode], the decision on how to style the maximized state of the user interface is left to the integrator due to many possible integration types and configurations.
+* When the UI is configured in the xref:tinymceai-integration.adoc#overlay[overlay mode], integrators can override the `--tinymce-ai-tabs-overlay-width-maximized` CSS custom property to change the width of the overlay.
+
+[source,css]
+----
+:root {
+    /* The TinyMCE AI interface will consume 40% of the space when maximized */
+    --tinymce-ai-tabs-overlay-width-maximized: 40%;
+}
+----
+
+You can also programmatically maximize or restore the AI interface:
+
+[source,js]
+----
+// Maximize the AI interface
+editor.execCommand('tinymceai:maximize');
+
+// Restore the AI interface to normal size
+editor.execCommand('tinymceai:restore');
+----
+
+[[permissions]]
+=== Permissions
+
+Learn more about the permissions system used in TinyMCE AI in a xref:tinymceai-permissions.adoc[dedicated guide].
+
+[[chat]]
+== Chat
+
+Learn more about integrating the Chat feature image:https://placehold.net/default.png[Chat icon,24px] in a xref:tinymceai-chat.adoc[dedicated guide].
+
+[[quick-actions]]
+== Quick Actions
+
+Learn more about integrating the Quick Actions feature image:https://placehold.net/default.png[Quick Actions icon,24px] in a xref:tinymceai-actions-plugin.adoc[dedicated guide].
+
+[[review]]
+== Review
+
+Learn more about integrating the Review feature image:https://placehold.net/default.png[Review icon,24px] in a xref:tinymceai-review-plugin.adoc[dedicated guide].
+
+[[related-features]]
+== Related Features
+
+* xref:tinymceai-introduction.adoc[Introduction] – Overview of all TinyMCE AI features.
+* xref:tinymceai.adoc[Plugin Reference] – Complete plugin API reference.
+* xref:tinymceai-api-overview.adoc[API Overview] – AI service documentation.

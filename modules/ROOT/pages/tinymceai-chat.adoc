@@ -12,17 +12,91 @@ The TinyMCE AI Chat is a conversational AI that can be used to aid content creat
 
 The Chat feature provides context setting and model selection to better suit the needs of specific content and holds chat history for quick reference of previous work. The Chat is also capable of using the web for more up-to-date information and reasoning to think more deeply about the answers and changes it is allowed to make.
 
+image::https://placehold.net/default.png[TinyMCE AI Chat interface showing the conversational AI assistant]
+
+[[working-with-the-document]]
+=== Working with the document
+
+TinyMCE AI operates directly within the context of your document. When you chat with it, you can ask questions about specific sections, request a full-document proofreading, and more.
+
+By enabling xref:tinymceai-chat.adoc#web-search[Web search] or xref:tinymceai-chat.adoc#reasoning[Reasoning], you can extend its capabilities — allowing the chat to look up information online and tackle complex tasks step by step.
+
+[[making-changes-to-the-content]]
+=== Making changes to the content
+
+Not only can you chat with the AI, but you can also use it to introduce changes to your document. Ask it to _"Summarize the document"_, _"Turn this report into a one-page executive summary"_, or _"Suggest better section titles and subheadings"_. The AI will then propose a series of changes to the document you can xref:tinymceai-chat.adoc#previewing-changes[review] and xref:tinymceai-chat.adoc#applying-changes[accept or discard one by one]. **Copying and pasting chat transcripts is over; TinyMCE AI understands your content and edits with you hand in hand**.
+
+[[brainstorming]]
+=== Brainstorming
+
+The chat feature jump-starts your creative process. Begin with a blank document and ask the AI for ideas. Build your content step by step by chatting and applying changes. Then review — or have the AI rewrite — the final draft for best results. All in one place.
+
+[[demo]]
+== Demo
+
+liveDemo::tinymceai[]
+
 [[integration]]
 == Integration
 
-To start using the Chat feature, first load the TinyMCE AI plugin in your editor configuration. See xref:tinymceai.adoc[Plugin Reference] for installation and enabling AI features.
+To start using the Chat feature, first load the TinyMCE AI plugin in your editor configuration. The Chat button image:https://placehold.net/default.png[Chat icon,24px] will appear in the AI user interface along with the Chat history image:https://placehold.net/default.png[History icon,24px]. See xref:tinymceai.adoc[Plugin Reference] for installation and enabling AI features.
 
-The Chat interface can be accessed through the main AI button in the toolbar or by using the `tinymceai-conversations` toolbar button.
+[[available-models]]
+== Available models
+
+Users can select the desired AI model for their conversation from a dropdown at the bottom of the chat.
+
+image::https://placehold.net/default.png[TinyMCE AI Chat available models dropdown]
+
+Once selected, the AI model will persist for the duration of the conversation. If you want to change the model, you can start a new conversation using a dedicated image:https://placehold.net/default.png[New chat icon,24px] button at the top-right corner of the chat panel.
+
+[[web-search]]
+=== Web search
+
+Web search in Chat allows it to access and retrieve real-time information from the internet. Instead of relying only on pre-trained knowledge, the model can search the web to find up-to-date facts, verify details, and provide more accurate, current answers. Toggle the "Enable web search" button image:https://placehold.net/default.png[Web search icon,24px] for a compatible model to start using the Web search functionality.
+
+[[reasoning]]
+=== Reasoning
+
+Reasoning in Chat models turns on the ability to think through problems, draw logical conclusions, and make sense of complex information. It enables the model to analyze context, connect ideas, and produce well-structured, coherent answers beyond simple pattern matching. Toggle the "Enable reasoning" button image:https://placehold.net/default.png[Reasoning icon,24px] for a compatible model to start using the Reasoning functionality.
+
+[[model-selection-configuration]]
+=== Configuration
+
+The `tinymceai_conversations_models` configuration property allows you to configure model selection for AI chat. The property lets the integrator set the default model, tailor the available models list, or turn the list off. xref:tinymceai-integration.adoc#supported-ai-models[Learn more about available AI models].
+
+[source,js]
+----
+tinymce.init({
+  selector: '#editor',
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai',
+  tinymceai_token_provider: function() {
+    return fetch('/api/token').then(response => response.text());
+  },
+  tinymceai_conversations_models: {
+    defaultModelId: 'claude-3-5-haiku',
+    modelSelectorAlwaysVisible: false,
+    displayedModels: ['gpt', 'claude']
+  }
+});
+----
+
+[[adding-context-to-conversations]]
+== Adding context to conversations
+
+The AI chat can work with your document and beyond. Use the "Add context" button image:https://placehold.net/default.png[Add context icon,24px] on the right of the prompt input, to add URLs, files, and external resources to your conversation.
+
+image::https://placehold.net/default.png[TinyMCE AI Chat add context user interface]
+
+Ask the AI about specific resources, for instance, _"Describe the attached image"_ or _"Summarize the key points from the attached Word document"_. The AI will analyze those resources for you and provide information you can easily use in your document.
+
+External resources enable you to seamlessly integrate knowledge bases and other centralized data into your AI chat conversations. Instead of uploading documents each time you want to chat, you can simply select them from a list and reference them during your conversation.
 
 [[context-configuration]]
-== Context Configuration
+=== Configuration
 
-The `tinymceai_conversations_context` configuration property configures the AI Chat menu for adding resources to the prompt context.
+The `tinymceai_conversations_context` configuration property configures the AI chat menu for adding resources to the prompt context.
 
 The example below enables built-in options to add the current document, URLs, and files to the conversation context by the user.
 
@@ -38,18 +112,68 @@ tinymce.init({
     return fetch('/api/token').then(response => response.text());
   },
   tinymceai_conversations_context: {
-    document: true,
-    url: true,
-    file: true,
+    // Allow for adding the current document to the conversation.
+    document: {
+      enabled: true
+    },
+    // Allow for adding URLs to the conversation.
+    urls: {
+      enabled: true
+    },
+    // Allow for uploading files to the conversation.
+    files: {
+      enabled: true
+    },
+    // External resources configuration.
     sources: [
+      // Definition of the custom context provider.
       {
-        id: 'knowledge-base',
-        label: 'Knowledge Base',
-        fetch: async () => {
-          const response = await fetch('/api/knowledge-base');
-          return response.json();
-        }
-      }
+        // The unique identifier of the provider.
+        id: 'my-docs',
+        // The human-readable name of the provider.
+        label: 'My Documents',
+        // The async callback to retrieve the list of available resources.
+        // Usually involves fetching data from a database or an external API,
+        // but here we use a simple array of resources for demonstration purposes.
+        getResources: async (query) => [
+          // Text resources.
+          {
+            id: 'text3',
+            type: 'text',
+            label: 'Internal note in HTML format',
+            data: {
+              content: '<h2>HTML note</h2><p>Lorem ipsum dolor sit amet...</p>',
+              type: 'html'
+            }
+          },
+          {
+            id: 'text4',
+            type: 'text',
+            label: 'Internal note (fetched on demand)',
+            // Note: Since the `data` property is not provided, the content will be retrieved using the `getData()` callback (see below).
+            // This will prevent fetching large content along with the list of resources.
+          },
+          // URLs to resources.
+          {
+            id: 'url2',
+            type: 'web-resource',
+            label: 'Company brochure in PDF',
+            data: 'https://example.com/brochure.pdf'
+          },
+          {
+            id: 'url3',
+            type: 'web-resource',
+            label: 'Company website in HTML',
+            data: 'https://example.com/index.html'
+          },
+          // ...
+        ],
+        // The optional callback to retrieve the content of resources without the `data` property provided by the `getResources()` callback.
+        // When the user picks a specific resource,  the content will be fetched on demand (from database or external API) by this callback.
+        // This prevents fetching large resources along with the list of resources.
+        getData: (id) => fetchDocumentContent(id)
+      },
+      // More context providers...
     ]
   }
 });
@@ -58,36 +182,79 @@ tinymce.init({
 [[working-with-ai-generated-changes]]
 == Working with AI-generated changes
 
-When the AI suggests changes to your content, you can:
+If you ask the AI for changes to your document, for instance, _"Bold key facts in the document"_, you will receive a series of proposed changes instead of plain text responses.
 
-* **Accept** - Accept the suggested changes that are rendered directly in the document
-* **Reject** - Discard the suggestion
-* **Edit** - Modify the suggestion before applying
-* **Suggested Edits** - Convert suggestions to Suggested Edits for review
+image::https://placehold.net/default.png[TinyMCE AI Chat changes]
 
-// image::tinymceai/ai-chat-suggestions.png[AI Chat suggestions interface]
-// TODO: Add image placeholder
+Move your cursor over any change to highlight the section of your document it applies to, helping you identify it among other proposed edits.
+
+image::https://placehold.net/default.png[TinyMCE AI Chat highlighted changes in content]
+
+[[showing-details]]
+=== Showing details
+
+You can toggle details of the changes by pressing the "Show details" button image:https://placehold.net/default.png[Show details icon,24px]. By default, you will see detailed information on what exactly was suggested, including additions (green markers), removals (red markers), and formatting changes (blue markers).
+
+image::https://placehold.net/default.png[TinyMCE AI Chat highlighted changes]
+
+Click the button again to see a clean, simplified overview of the changes as they'll appear in your document once accepted.
+
+image::https://placehold.net/default.png[TinyMCE AI Chat clean view]
+
+[[previewing-changes]]
+=== Previewing changes
+
+Click the "Show in the text" button image:https://placehold.net/default.png[Show in the text icon,24px] to display the information window about an individual change with options to apply it or turn it into a Suggested Edits suggestion. You can use this window to browse all proposed changes and work with them one by one. As you navigate through the changes, the window will automatically follow the corresponding sections of the document.
+
+image::https://placehold.net/default.png[TinyMCE AI Chat changes preview in text]
+
+[[applying-changes]]
+=== Applying changes
+
+If you click the "Apply" button in the AI balloon, the change proposed by the AI will be applied to the document.
+
+image::https://placehold.net/default.png[TinyMCE AI Chat apply changes]
+
+Click the "Apply all" button in chat to apply all AI suggestions at once.
+
+image::https://placehold.net/default.png[TinyMCE AI Chat apply all changes]
+
+[[inserting-suggested-edits]]
+=== Inserting Suggested Edits suggestions
+
+When xref:suggestededits.adoc[Suggested Edits feature] is available in your integration, the "Insert suggestion" button image:https://placehold.net/default.png[Insert suggestion icon,24px] will be available in chat. Clicking it will create a Suggested Edits suggestion that can later be reviewed or discarded.
+
+image::https://placehold.net/default.png[TinyMCE AI Chat insert suggestion button]
+
+You can pick "Suggest" option from the "Apply all" menu to turn all changes suggested by AI into Suggested Edits suggestions.
+
+[[rejecting-suggestions]]
+=== Rejecting suggestions
+
+You can click the "Delete" button image:https://placehold.net/default.png[Delete icon,24px] to reject AI suggestions you do not want before applying the remaining ones or turning them into Suggested Edits suggestions.
+
+image::https://placehold.net/default.png[TinyMCE AI Chat reject button]
+
 
 [[chat-history]]
 == Chat history
 
-All your past conversations appear in the Chat history. Click the button to open the list, where you can reopen, rename, or delete any conversation.
+All your past conversations appear in the Chat history. Click the button image:https://placehold.net/default.png[Chat history icon,24px] to open the list, where you can reopen, rename, or delete any conversation.
 
 Conversations are grouped by date to help you navigate your project easily. You can filter conversations by name using the search field at the top of the user interface.
 
-// image::tinymceai/ai-chat-history.png[AI Chat history]
-// TODO: Add image placeholder
+image::https://placehold.net/default.png[AI Chat history]
 
 [NOTE]
 ====
-You can continue any conversation from the chat history as long as the AI model used for that conversation is still supported by the feature. Click the conversation in the history to load it in the Chat interface.
+You can continue any conversation from the chat history as long as the AI model used for that conversation is xref:tinymceai-models.adoc#supported-models[still supported] by the feature. Click the conversation in the history to load it in the Chat interface.
 ====
 
 [NOTE]
 ====
 The ability to apply suggestions to the document or generate Suggested Edits from historical conversations may be restricted in some scenarios:
 
-After closing the browser and reopening the AI Chat, previous conversations will no longer interact with the document content. To continue working with a conversation, you can reopen it from the chat history.
+After closing the browser and reopening AI chat, previous conversations will no longer interact with the document content. To continue working with a conversation, you can reopen it from the chat history.
 ====
 
 [[advanced-features]]
@@ -95,16 +262,16 @@ After closing the browser and reopening the AI Chat, previous conversations will
 
 The Chat feature supports advanced capabilities:
 
-* **Web Search** - Access up-to-date information from the web
-* **Reasoning** - Deep thinking about answers and changes
-* **Multi-turn conversations** - Maintain context across multiple interactions
-* **Model selection** - Choose the appropriate AI model for your task
+* xref:tinymceai-chat.adoc#chat-history[**Multi-turn conversations**] - Maintain context across multiple interactions
+* xref:tinymceai-chat.adoc#available-models[**Model selection**] - Choose the appropriate AI model for your task
+* xref:tinymceai-chat.adoc#web-search[**Web Search**] - Access up-to-date information from the web
+* xref:tinymceai-chat.adoc#reasoning[**Reasoning**] - Deep thinking about answers and changes
 
 For more information about API-level features, see xref:tinymceai-conversations.adoc[Conversations API documentation].
 
 [[related-features]]
 == Related Features
 
-* xref:tinymceai-review-plugin.adoc[AI Review] – For content quality analysis and improvement suggestions.
-* xref:tinymceai-actions-plugin.adoc[AI Quick Actions] – For fast, stateless content transformations.
+* xref:tinymceai-review-plugin.adoc[AI review] – For content quality analysis and improvement suggestions.
+* xref:tinymceai-actions-plugin.adoc[Quick actions] – For fast, stateless content transformations.
 * xref:tinymceai-introduction.adoc[Introduction] – Overview of all TinyMCE AI features.

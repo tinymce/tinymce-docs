@@ -1,11 +1,11 @@
 = TinyMCE AI API Quick Start
 
 :navtitle: API Quick Start
-:description: Quick start guide for TinyMCE AI REST API
+:description: Quick start guide for TinyMCE AI service
 :description_short: API quick start guide
-:keywords: AI, quick start, API, REST API, tinymceai, setup
+:keywords: AI, quick start, API, AI service, tinymceai, setup
 
-The aim of this article is to get you up and running with the TinyMCE AI REST API.
+The aim of this article is to get you up and running with the TinyMCE AI service.
 
 [TIP]
 ====
@@ -16,7 +16,7 @@ The TinyMCE Premium Features free trial allows for testing SaaS services. If you
 
 == Getting Started
 
-To start using the TinyMCE AI REST API, follow the steps below:
+To start using the TinyMCE AI service, follow the steps below:
 
 * Sign up for one of our link:https://www.tiny.cloud/pricing/[self-service plans], or link:https://www.tiny.cloud/contact/[contact us] to purchase the TinyMCE AI license.
 * Generate your access credentials in the link:https://www.tiny.cloud/my-account/[Customer Portal].
@@ -40,8 +40,7 @@ After signing up, you will receive access to the link:https://www.tiny.cloud/my-
 
 Log in to the link:https://www.tiny.cloud/my-account/[Customer Portal] and navigate to link:https://www.tiny.cloud/my-account/jwt/["JWT Keys"].
 
-// image::tinymceai/ai-trial-view.png[TinyMCE AI trial view]
-// TODO: Add image placeholder
+image::https://placehold.net/default.png[TinyMCE AI trial view]
 
 [[create-token-endpoint]]
 == Create token endpoint
@@ -63,7 +62,7 @@ Cloud Services can reside in either US or EU region or in both. The region is se
 [[api-integration]]
 == API Integration
 
-All features are accessible through the REST API at `https://tinymceai.api.tiny.cloud` with JWT authentication.
+All features are accessible through the API at `https://tinymceai.api.tiny.cloud` with JWT authentication.
 
 For an overview of all API features, see xref:tinymceai-api-overview.adoc[API Overview].
 

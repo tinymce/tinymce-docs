@@ -1,10 +1,11 @@
 [[tinymceai-token-provider]]
 == `+tinymceai_token_provider+`
 
-
-*Type:* `+Function+`
+*Type:* `+Function+` (`+() => Promise<string>+`)
 
 *Default value:* `+undefined+`
+
+*Description:* A function that returns a Promise resolving to a JWT token string for authenticating with the AI service.
 
 === Example: using `+tinymceai_token_provider+`
 
@@ -13,8 +14,20 @@
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymceai',
+  toolbar: 'showai aiquickactions aireview',
+  tinymceai_token_provider: () => Promise.resolve('eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...')
+});
+----
+
+NOTE: In production, you should fetch the JWT token from your backend server rather than hardcoding it. For example:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
   tinymceai_token_provider: function() {
-    // Token provider implementation
+    return fetch('/api/token').then(response => response.text());
   }
 });
 ----

@@ -1,1 +1,25 @@
-== TinyMCE AI Commands
+[cols="1,2"]
+|===
+|Command name |Description
+
+|`tinymceai-toggle-sidebar` |Toggle the AI sidebar interface visibility. Accepts an optional object parameter with `type` ('static' or 'floating') and optional `view` (e.g., 'chat', 'review', 'actions') to open a specific view.
+|`TinyMCEAIDumpDiagnostics` |Download diagnostic information for troubleshooting purposes.
+|===
+
+.Examples
+[source,js]
+----
+// Toggle the AI sidebar
+editor.execCommand('tinymceai-toggle-sidebar');
+
+// Open the sidebar with a specific view (e.g., 'chat')
+editor.execCommand('tinymceai-toggle-sidebar', false, { 
+  type: 'static', 
+  view: 'chat' 
+});
+
+// Close the sidebar
+editor.execCommand('tinymceai-toggle-sidebar', false, { 
+  type: 'static' 
+});
+----

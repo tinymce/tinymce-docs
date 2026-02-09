@@ -77,3 +77,38 @@ include::partial$events/{plugincode}-events.adoc[]
 The {pluginname} plugin provides the following APIs.
 
 include::partial$plugin-apis/{plugincode}-apis.adoc[]
+
+[[known-issues]]
+== Known issues and caveats
+
+The {pluginname} plugin has the following known issues and caveats:
+
+=== General HTML Support
+
+{pluginname} may not work correctly when General HTML Support for block elements is enabled. This issue will be addressed in future updates. In the meantime, we recommend avoiding configurations that may cause problems.
+
+=== Issues with tables
+
+We are aware of certain glitches that may occur when the AI modifies complex tables or layout tables. To prevent data loss, please ensure that the content around these structures remains intact when using {pluginname} tools, while our team investigates the causes and potential solutions to this issue.
+
+=== Editor context and multiple editor handling
+
+While it's possible to use {pluginname} with multiple editors in an editor context, only the first editor registered in the context will currently be able to interact with AI tools and benefit from the content suggestions made by the AI. As our team works on resolving this issue, we recommend using standalone editor instances with {pluginname}.
+
+=== Inline image processing issues
+
+Inline images may not be processed correctly by commands within AI review. A solution is currently under development.
+
+=== Quick actions and content markers issues
+
+Applying quick action responses may result in the loss of Comments and Suggested Edits suggestion markers. This issue will be addressed in a future update.
+
+=== Limited interactivity in Chat history
+
+The interactivity of historical AI chat conversations can become limited over time.
+
+=== Issues with specific AI models
+
+Some AI models may occasionally return empty responses. If this occurs, we recommend sending a follow-up message asking the Assistant to complete the previous request, or starting a new conversation.
+
+NOTE: If you wish to stay informed about updates or discuss {pluginname} possibilities, please reach out to us.

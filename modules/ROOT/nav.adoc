@@ -262,10 +262,10 @@
 **** xref:ai-proxy.adoc[AI proxy server reference guide]
 *** TinyMCE AI
 **** xref:tinymceai-introduction.adoc[Introduction]
-***** Features
-****** xref:tinymceai-chat.adoc[Chat]
-****** xref:tinymceai-review-plugin.adoc[Review]
-****** xref:tinymceai-actions-plugin.adoc[Actions]
+***** xref:tinymceai-chat.adoc[Chat]
+***** xref:tinymceai-review-plugin.adoc[Review]
+***** xref:tinymceai-actions-plugin.adoc[Actions]
+***** xref:tinymceai-integration.adoc[Integration]
 ***** xref:tinymceai-integration-options.adoc[Integration Options]
 ****** xref:tinymceai.adoc[Plugin quick start]
 ****** REST API
@@ -282,11 +282,12 @@
 ******** xref:tinymceai-streaming.adoc[Streaming]
 ******* Integration
 ******** xref:tinymceai-api-overview.adoc#data-handling-and-security[Data Handling and Security]
-******** xref:tinymceai-api-overview.adoc#on-premises-deployment[On-premises deployment]
+
 ******** xref:tinymceai-api-overview.adoc#security-features[Security]
-****** JWT Authentication
-******* xref:tinymceai-with-jwt-authentication-nodejs.adoc[JWT authentication (Node.js)]
-******* xref:tinymceai-with-jwt-authentication-php.adoc[JWT authentication (PHP)]
+******** xref:tinymceai-api-overview.adoc#on-premises-deployment[On-premises deployment]
+***** JWT Authentication
+****** xref:tinymceai-with-jwt-authentication-nodejs.adoc[JWT authentication (Node.js)]
+****** xref:tinymceai-with-jwt-authentication-php.adoc[JWT authentication (PHP)]
 *** xref:casechange.adoc[Case Change]
 *** xref:checklist.adoc[Checklist]
 *** Comments

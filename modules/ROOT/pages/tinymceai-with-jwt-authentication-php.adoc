@@ -1,6 +1,133 @@
-= TinyMCE AI with JWT Authentication (PHP)
+= {pluginname} with JWT authentication (PHP) Guide
+:navtitle: JWT Authentication setup for TinyMCE AI
+:description: Guide on how to setup JWT Authentication for TinyMCE AI with {productname}
+:keywords: jwt, authentication, tinymceai, ai, php
+:pluginname: TinyMCE AI
+:plugincode: tinymceai
 
-:navtitle: JWT Authentication (PHP)
-:description: JWT authentication setup for TinyMCE AI using PHP
-:description_short: JWT authentication with PHP
-:keywords: AI, JWT, authentication, PHP, tinymceai
+include::partial$auth/tinymceai/php/intro-and-prerequisites.adoc[]
+
+include::partial$auth/tinymceai/php/initial-project-setup.adoc[]
+
+== Setup
+
+=== Generate a Public/Private Key Pair
+
+include::partial$auth/tinymceai/jwt-setup-tinymceai.adoc[leveloffset=+2]
+
+=== Server Setup (jwt.php)
+
+In the root directory, copy and paste the server setup code into the `jwt.php` file.
+
+[source,php]
+----
+<?php
+require 'vendor/autoload.php'; // Setting up the Autoload
+use \Firebase\JWT\JWT;
+
+function fatalError($message) {
+    http_response_code(500);
+    header('Content-Type: text/plain');
+    die("JWT auth failed: " . $message);
+}
+
+// Check for OpenSSL extension
+if (!extension_loaded('openssl')) {
+    fatalError('You need to enable the openssl extension in your php.ini.');
+}
+
+// Enable CORS
+header("Access-Control-Allow-Origin: *");
+header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
+
+// JWT payload
+$payload = array(
+    "aud" => "no-api-key", // Replace with your actual API key
+    "sub" => "user-id", // Replace with actual user identifier
+    "iat" => time(), // Issue timestamp
+    "exp" => time() + 60 * 10, // Expiration time (10 minutes)
+    "auth" => array(
+        "ai" => array(
+            "permissions" => array(
+                "ai:conversations:read",
+                "ai:conversations:write",
+                "ai:models:agent",
+                "ai:actions:system:*",
+                "ai:reviews:system:*"
+            )
+        )
+    )
+);
+
+try {
+    // Tokens are signed with the RS256 algorithm using your private key
+    $privateKey = <<<EOD
+    -----BEGIN PRIVATE KEY-----
+    {Your private PKCS8 key goes here}
+    -----END PRIVATE KEY-----
+    EOD;
+    $token = JWT::encode($payload, $privateKey, 'RS256');
+
+    // TinyMCE AI expects the token as a plain text string, not JSON
+    http_response_code(200);
+    header('Content-Type: text/plain');
+    echo $token;
+} catch (Exception $e) {
+    fatalError($e->getMessage());
+}
+?>
+----
+
+[NOTE]
+====
+The JWT payload includes an `auth.ai.permissions` array that defines what AI features the user can access. Adjust these permissions based on your requirements. See xref:tinymceai-permissions.adoc[Permissions] for more details on available permissions.
+====
+
+=== Web Page Setup (index.html)
+
+Inside the root directory where you created the `index.html` file add the HTML setup code.
+
+[source,html]
+----
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TinyMCE with TinyMCE AI</title>
+  <script 
+    src="https://cdn.tiny.cloud/1/no-api-key/tinymce/8/tinymce.min.js"
+    referrerpolicy="origin"
+    crossorigin="anonymous">
+  </script>
+  <script>
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'tinymceai',
+      toolbar: 'showai aiquickactions aireview',
+      // tinymceai_token_provider fetches a token from the `/jwt.php` endpoint.
+      // TinyMCE AI expects the response to be a plain text token string.
+      tinymceai_token_provider: () => {
+        return fetch('http://localhost:3000/jwt.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+        }).then(response => response.text());
+      },
+    });
+  </script>
+</head>
+<body>
+  <h1>TinyMCE AI Demo</h1>
+  <textarea>
+    Welcome to TinyMCE! Try the AI features like chat, quick actions, and review.
+  </textarea>
+</body>
+</html>
+----
+
+include::partial$auth/tinymceai/php/configuration-steps.adoc[]
+
+[NOTE]
+====
+When you run the project, you should see:
+* The {productname} editor
+* AI feature buttons in the toolbar (showai, aiquickactions, aireview)
+====

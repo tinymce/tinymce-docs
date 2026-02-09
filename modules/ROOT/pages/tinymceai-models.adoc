@@ -4,3 +4,213 @@
 :description: AI model configuration for TinyMCE AI
 :description_short: AI model configuration
 :keywords: AI, models, configuration, tinymceai
+
+[[recommended-agent-models]]
+== Recommended: Agent Models
+
+The `agent-1` model automatically selects the best AI model for your request based on speed, quality, and cost. It's the recommended choice for most use cases as it optimizes performance and cost automatically.
+
+[[available-models]]
+== Available Models
+
+TinyMCE AI supports multiple AI models from different providers. Each model has unique capabilities, performance characteristics, and cost profiles.
+
+[[limitations]]
+=== Limitations
+
+Model availability depends on your subscription tier and service compatibility version. Some models may have specific limitations or requirements.
+
+[[how-model-selection-works]]
+== How Model Selection Works
+
+The agent model (`agent-1`) automatically selects the best underlying model based on:
+
+* **Request complexity** – Simple queries use faster, cost-effective models
+* **Content size** – Larger content uses models with better context windows
+* **Required capabilities** – Web search and reasoning require compatible models
+* **Cost optimization** – Balances quality with cost efficiency
+
+You can also specify a model directly in your API requests for more control.
+
+[[model-compatibility-versions]]
+== Model Compatibility Versions
+
+Models are organized by compatibility versions to ensure API stability. When new models are introduced or existing models are updated, they may be added to a new compatibility version.
+
+[[how-it-works]]
+=== How It Works
+
+Compatibility versions allow TinyMCE AI to introduce new models and capabilities without breaking existing integrations. Each version maintains a stable set of models and capabilities.
+
+[[checking-compatibility]]
+=== Checking Compatibility
+
+Check the `/v1/models` endpoint to see available models for your compatibility version. The API response includes model capabilities, limits, and availability.
+
+[[model-capabilities]]
+== Model Capabilities
+
+Different models support different capabilities. Check the model information endpoint to see which capabilities are available for each model.
+
+[[web-search]]
+=== Web Search
+
+Enable real-time web search to access current information during conversations. Not all models support web search. Check model capabilities to see which models support this feature.
+
+[[reasoning]]
+=== Reasoning
+
+Enable step-by-step reasoning to see the AI's problem-solving process. Some models have reasoning always enabled and cannot be turned off.
+
+**Always-on reasoning models:**
+
+* Reasoning is always active during inference.
+* You cannot turn reasoning off via the API.
+
+To determine if a model has always-on reasoning, check the API response when listing models. Models with mandatory reasoning will indicate this in their capability structure.
+
+NOTE: Please observe, that model names such as `gpt-5`, `claude-4-sonnet`, etc. are examples. Actual available models depend on your service's compatibility version. Use the `/v1/models` endpoint to see current available models for your environment.
+
+[[web-scraping]]
+=== Web Scraping
+
+Extract and process content from web pages for analysis and summarization.
+
+[[model-limitations]]
+== Model Limitations
+
+[[file-processing-limits]]
+=== File Processing Limits
+
+Files are limited to 7MB each (PDF, DOCX, PNG, JPEG, Markdown, HTML, Plain text). You can upload up to 100 files per conversation with a total size limit of 30MB. PDF files are limited to 100 pages total across all PDFs in a conversation.
+
+[[model-specific-file-limits]]
+==== Model-specific file limits
+
+Anthropic and agent models may use files up to 5MB each.
+
+[[content-moderation]]
+=== Content Moderation
+
+All models include moderation for inappropriate content, harmful instructions, personal information, copyrighted material, misinformation, sensitive topics, and security threats.
+
+[[model-descriptions]]
+=== Model Descriptions
+
+Model descriptions returned by the API are provided in English and may be updated over time to reflect model improvements or capability changes.
+
+[[translation-and-localization]]
+=== Translation and Localization
+
+NOTE: Backend translation handling for model descriptions is planned in a future release. Until then, use the approach described below.
+
+If your application requires translated model descriptions, maintain a translation map in your code keyed by `model.id`, with fallback to the English description from the API for unknown models. This allows new models to work immediately while you add translations at your own pace.
+
+[[model-deprecation]]
+=== Model Deprecation
+
+Models scheduled for removal will include a `removal` field with an ISO 8601 date (e.g., `"removal": "2025-11-17T00:00:00.000Z"`). When a model is removed, API requests will fail with error code `MODEL_NOT_FOUND` and the models endpoint will stop returning that particular model.
+
+[[api-examples]]
+== API Examples
+
+[[model-selection]]
+=== Model Selection
+
+[source,http]
+----
+POST /v1/conversations/my-conversation-123/messages
+Content-Type: application/json
+Authorization: Bearer <your-token>
+
+{
+  "prompt": "Analyze this document and provide insights",
+  "model": "agent-1",
+  "content": [
+    {
+      "type": "document",
+      "id": "doc-1234567890123"
+    }
+  ]
+}
+----
+
+[[capability-configuration]]
+=== Capability Configuration
+
+[source,http]
+----
+POST /v1/conversations/my-conversation-123/messages
+Content-Type: application/json
+Authorization: Bearer <your-token>
+
+{
+  "prompt": "Research the latest developments in AI",
+  "model": "gpt-4o",
+  "capabilities": {
+    "webSearch": {},
+    "reasoning": {}
+  }
+}
+----
+
+[[model-information]]
+=== Model Information
+
+Get all available models for compatibility version `1`:
+
+[source,http]
+----
+GET /v1/models/1
+Authorization: Bearer <your-token>
+----
+
+Response:
+
+[source,json]
+----
+{
+  "items": [
+    {
+      "id": "agent-1",
+      "name": "Agent",
+      "provider": "Agent",
+      "description": "Automatically selects the best model for speed, quality, and cost",
+      "allowed": true,
+      "capabilities": {
+        "webSearch": {
+          "enabled": true,
+          "allowed": true
+        },
+        "reasoning": {
+          "enabled": true,
+          "allowed": true
+        }
+      },
+      "limits": {
+        "maxPromptLength": 30000,
+        "maxConversationLength": 256000,
+        "maxFiles": 100,
+        "maxFileSize": 7000000,
+        "maxTotalFileSize": 30000000,
+        "maxTotalPdfFilePages": 100
+      }
+    }
+  ]
+}
+----
+
+[[api-reference]]
+== API Reference
+
+For complete documentation on model endpoints, compatibility versions, and capability schemas, see:
+
+* **https://tinymceai.api.tiny.cloud/docs#tag/Models[Models API Reference]** – Full documentation for model listing and configuration.
+* **https://tinymceai.api.tiny.cloud/docs[Complete API Documentation]** – Interactive API reference with all TinyMCE AI endpoints.
+
+[[related-features]]
+== Related Features
+
+* xref:tinymceai-conversations.adoc[Conversations] – Use models in interactive AI discussions.
+* xref:tinymceai-reviews.adoc[Reviews] – Apply models to content analysis and improvement.
+* xref:tinymceai-actions.adoc[Actions] – Use models for content transformation tasks.

@@ -4,3 +4,123 @@
 :description: Streaming configuration for TinyMCE AI
 :description_short: Streaming configuration
 :keywords: AI, streaming, configuration, tinymceai
+
+Real-time AI interactions using Server-Sent Events (SSE) for immediate feedback and progressive content generation.
+
+[[overview]]
+== Overview
+
+TinyMCE AI services use Server-Sent Events (SSE) to provide real-time streaming responses. This allows you to see AI-generated content as it is being created, providing immediate feedback and enabling interactive experiences.
+
+[[sse-event-types]]
+== SSE Event Types
+
+Different AI services provide different types of streaming events. For service-specific event details, see:
+
+* xref:tinymceai-conversations.adoc#streaming-responses[Conversations] – Interactive AI discussions with text streaming, web search sources, and reasoning.
+* xref:tinymceai-reviews.adoc#streaming-responses[Reviews] – Content improvement suggestions and review progress.
+* xref:tinymceai-actions.adoc#streaming-responses[Actions] – Content transformations and action progress.
+
+[[basic-implementation]]
+== Basic Implementation
+
+Here is the standard pattern for consuming SSE streams:
+
+[source,javascript]
+----
+const response = await fetch('/v1/your-endpoint', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer <token>',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    // Your request payload
+  })
+});
+
+const reader = response.body.getReader();
+const decoder = new TextDecoder();
+
+while (true) {
+  const { done, value } = await reader.read();
+  if (done) break;
+
+  const chunk = decoder.decode(value);
+  const lines = chunk.split('\n');
+
+  for (const line of lines) {
+    if (line.startsWith('data: ')) {
+      const data = JSON.parse(line.slice(6));
+
+      // Handle different event types
+      // See service-specific guides for detailed event handling:
+      // - Conversations: text-delta, source, reasoning, modification-delta
+      // - Reviews: review-delta, review-metadata
+      // - Actions: modification-delta, action-metadata
+
+      switch (data.event) {
+        case 'error':
+          // Handle errors
+          console.error('Error:', data.data.message);
+          break;
+        default:
+          // Handle all other events
+          console.log('Event:', data.event, data.data);
+      }
+    }
+  }
+}
+----
+
+[[event-handling-patterns]]
+== Event Handling Patterns
+
+For detailed event handling examples specific to each service, see:
+
+* xref:tinymceai-conversations.adoc#streaming-responses[Conversations] – Text streaming, web search sources, reasoning, and document modifications.
+* xref:tinymceai-reviews.adoc#streaming-responses[Reviews] – Review suggestions and progress tracking.
+* xref:tinymceai-actions.adoc#streaming-responses[Actions] – Content transformations and action progress.
+
+[[error-handling]]
+== Error Handling
+
+Always handle errors gracefully:
+
+[source,javascript]
+----
+if (data.event === 'error') {
+  const error = data.data;
+  console.error('Streaming error:', error.message);
+
+  // Show user-friendly error message
+  showErrorMessage(error.message);
+
+  // Optionally retry or fallback
+  if (error.retryable) {
+    setTimeout(() => retryRequest(), 1000);
+  }
+}
+----
+
+[[progress-tracking]]
+== Progress Tracking
+
+Use metadata events to show progress. For service-specific progress tracking examples, see xref:tinymceai-reviews.adoc[Review progress and status information].
+
+[[api-reference]]
+== API Reference
+
+For complete documentation on streaming endpoints, event schemas, and error codes, see:
+
+* **https://tinymceai.api.tiny.cloud/docs[Complete API Documentation]** – Interactive API reference with streaming implementation details.
+* **https://tinymceai.api.tiny.cloud/docs#tag/Conversations[Conversations API]** – Streaming events for conversations.
+* **https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API]** – Streaming events for reviews.
+* **https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API]** – Streaming events for actions.
+
+[[next-steps]]
+== Next Steps
+
+* xref:tinymceai-conversations.adoc[Learn about Conversations] for interactive AI discussions.
+* xref:tinymceai-reviews.adoc[Explore Reviews] for content improvement.
+* xref:tinymceai-actions.adoc[Discover Actions] for content transformation.

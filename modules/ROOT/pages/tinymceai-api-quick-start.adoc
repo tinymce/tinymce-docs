@@ -1,0 +1,89 @@
+= TinyMCE AI API Quick Start
+
+:navtitle: API Quick Start
+:description: Quick start guide for TinyMCE AI REST API
+:description_short: API quick start guide
+:keywords: AI, quick start, API, REST API, tinymceai, setup
+
+The aim of this article is to get you up and running with the TinyMCE AI REST API.
+
+[TIP]
+====
+You can also sign up for the link:https://www.tiny.cloud/auth/signup/[TinyMCE Premium Features 14-day free trial] if you want to test this feature first.
+
+The TinyMCE Premium Features free trial allows for testing SaaS services. If you are interested in on-premises solutions, please link:https://www.tiny.cloud/contact/[contact us].
+====
+
+== Getting Started
+
+To start using the TinyMCE AI REST API, follow the steps below:
+
+* Sign up for one of our link:https://www.tiny.cloud/pricing/[self-service plans], or link:https://www.tiny.cloud/contact/[contact us] to purchase the TinyMCE AI license.
+* Generate your access credentials in the link:https://www.tiny.cloud/my-account/[Customer Portal].
+* Write a script that generates one-time tokens for authorizing end users of your application in TinyMCE Cloud Services (using access credentials created earlier).
+
+All steps are explained in details below.
+
+[[get-the-tinymce-ai-license]]
+== Get the TinyMCE AI license
+
+You can purchase TinyMCE AI as an add-on to selected tiers of our self-service plans. You can find details on our link:https://www.tiny.cloud/pricing/[pricing page].
+
+You can also link:https://www.tiny.cloud/contact/[contact us] directly if you would like to have a custom plan.
+
+For testing purposes, you can sign up for the link:https://www.tiny.cloud/auth/signup/[free trial].
+
+After signing up, you will receive access to the link:https://www.tiny.cloud/my-account/[customer dashboard (Customer Portal)].
+
+[[log-in-to-the-customer-portal]]
+== Log in to the Customer Portal
+
+Log in to the link:https://www.tiny.cloud/my-account/[Customer Portal] and navigate to link:https://www.tiny.cloud/my-account/jwt/["JWT Keys"].
+
+// image::tinymceai/ai-trial-view.png[TinyMCE AI trial view]
+// TODO: Add image placeholder
+
+[[create-token-endpoint]]
+== Create token endpoint
+
+You now need to create a security token endpoint in your application. This endpoint securely authorizes end users of your application to use TinyMCE AI features based on their permissions and access rights.
+
+[[writing-your-own-token-endpoint]]
+=== Writing your own token endpoint
+
+To write your own security token endpoint, create access credentials for the selected environment by going to the "Access credentials" tab and clicking the "Create a new access key" button.
+
+Read more in the Creating access credentials section of the Environments management guide.
+
+[[cloud-region]]
+== Cloud region
+
+Cloud Services can reside in either US or EU region or in both. The region is set per subscription and cannot be changed for existing environments by the user. For Custom plan with multi-region, you can choose the region during environment creation. This topic is addressed in more detail in the Environment management guide.
+
+[[api-integration]]
+== API Integration
+
+All features are accessible through the REST API at `https://tinymceai.api.tiny.cloud` with JWT authentication.
+
+For an overview of all API features, see xref:tinymceai-api-overview.adoc[API Overview].
+
+For detailed API examples and implementation guides, see:
+
+* xref:tinymceai-conversations.adoc[Conversations] – Interactive AI discussions and document analysis.
+* xref:tinymceai-reviews.adoc[Reviews] – Content improvement and quality analysis.
+* xref:tinymceai-actions.adoc[Actions] – Content transformation and batch processing.
+* xref:tinymceai-streaming.adoc[Streaming] – Real-time AI interactions.
+
+link:https://tinymceai.api.tiny.cloud/docs[Complete API Documentation] – Full API reference for TinyMCE AI
+
+[[next-steps]]
+== Next Steps
+
+Now that you made your first API call, explore the features:
+
+* xref:tinymceai-api-overview.adoc[API Overview] – Overview of all API features, data handling, and security.
+* xref:tinymceai-conversations.adoc[Conversations] – Start with interactive AI discussions.
+* xref:tinymceai-models.adoc[AI Models] – Choose the right model for your use case.
+* xref:tinymceai-permissions.adoc[Permissions] – Set up user access control for production.
+* xref:tinymceai-reviews.adoc[Reviews] – Add content improvement features.
+* xref:tinymceai-actions.adoc[Actions] – Implement content transformation.

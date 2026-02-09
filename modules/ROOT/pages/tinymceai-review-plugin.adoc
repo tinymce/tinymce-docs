@@ -1,0 +1,91 @@
+= TinyMCE AI Review
+
+:navtitle: Review
+:description: AI Review feature for TinyMCE AI plugin
+:description_short: AI Review feature
+:keywords: AI, review, reviews, tinymceai
+
+The Review feature provides users with AI-powered quality assurance for their content by running checks for grammar, style, tone, and more. It also introduces an intuitive interface for reviewing and managing AI-suggested edits directly within the document, ensuring content meets professional standards with minimal manual effort.
+
+[[overview]]
+== Overview
+
+The Review feature analyzes your content and provides specific recommendations for grammar, style, clarity, and tone improvements. Unlike Actions that transform content directly, Reviews analyze your content and provide suggestions without automatically changing the content.
+
+[[integration]]
+== Integration
+
+To start using the Review feature, first load the TinyMCE AI plugin in your editor configuration. The Review Mode button will appear in the AI user interface. See xref:tinymceai.adoc[Plugin Reference] for installation and enabling AI features.
+
+After picking one of the available commands in the Review Mode tab, AI will analyze the document and propose a series of suggestions:
+
+// image::tinymceai/ai-review-sidebar.png[AI Review sidebar with suggestions]
+// TODO: Add image placeholder
+
+While in the Review Mode, the editor remains read-only and allows you to browse suggestions. You can either click suggestions in the sidebar or select them in the editor content (underlined):
+
+// image::tinymceai/ai-review-suggestion.png[AI Review suggestion in content]
+// TODO: Add image placeholder
+
+You can accept or dismiss review suggestions by clicking the corresponding buttons. You can also accept all suggestions by using the "Accept all" button in the top of the user interface and preview changes similar to chat suggestions. Changes that were accepted or dismissed become greyed out in the interface. You can also abandon the review by hitting the "Exit review" button.
+
+Once you are done reviewing your document and all changes are accepted or rejected, click "Finish review" (the button state changes automatically) to return to the normal operation of the editor, where typing is possible.
+
+[[review-commands]]
+== Review commands
+
+The feature comes with several review commands:
+
+[cols="1,1,1"]
+|===
+|Command name |Command description |Additional information
+
+|**Custom command** |Enter a custom command for a specific review |You can pick one of the available AI models to execute a custom command
+
+|**Proofread** |Check the text for errors in grammar, spelling and punctuation |
+
+|**Improve clarity** |Improve the logical structure and precision for clearer message |
+
+|**Improve readability** |Adjust sentence structure and word choice for an easier read |
+
+|**Adjust length** |Shorten or lengthen the text as needed |_Longer_ and _Shorter_ options available
+
+|**Adjust tone and style** |Modify the text to a desired tone and style |Several tone and style options are available: _Casual, Direct, Friendly, Confident, Professional_
+
+|**Translate** |Translate the text into another language |Several languages are available out-of-the-box, and the list can be customized: _English, Spanish, French, German, Chinese (Simplified), Japanese, Russian, Portuguese, Korean, Italian_
+|===
+
+[[customizing-translation-commands]]
+== Customizing translation commands
+
+The `tinymceai_reviews_translations` configuration property allows you to provide a custom list of translations for the "Translate" check. For instance, the following configuration will add "German" and "French" to the list:
+
+[source,js]
+----
+tinymce.init({
+  selector: '#editor',
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai',
+  tinymceai_token_provider: function() {
+    return fetch('/api/token').then(response => response.text());
+  },
+  tinymceai_reviews_translations: [
+    {
+      id: 'german',
+      label: 'German'
+    },
+    {
+      id: 'french',
+      label: 'French'
+    }
+  ]
+});
+----
+
+[[related-features]]
+== Related Features
+
+* xref:tinymceai-chat.adoc[AI Chat] – For interactive discussions with document analysis and context.
+* xref:tinymceai-actions-plugin.adoc[AI Quick Actions] – For content transformation and batch processing.
+* xref:tinymceai-reviews.adoc[Reviews API] – For API-level review functionality.
+* xref:tinymceai-introduction.adoc[Introduction] – Overview of all TinyMCE AI features.

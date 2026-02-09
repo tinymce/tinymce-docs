@@ -1,0 +1,76 @@
+= TinyMCE AI API Overview
+
+:navtitle: API Overview
+:description: Overview of TinyMCE AI REST API features and capabilities
+:description_short: API Overview
+:keywords: AI, API, REST API, overview, tinymceai
+
+TinyMCE AI integrates AI-assisted authoring with rich-text editing. Users can interact through Actions, Reviews, or Conversations that can use relevant context from multiple sources.
+
+[NOTE]
+====
+**REST API Reference**: The complete API documentation with all endpoints, parameters, request/response schemas, and interactive examples is available at link:https://tinymceai.api.tiny.cloud/docs[TinyMCE AI API Documentation]
+====
+
+[[getting-started]]
+== Getting Started
+
+New to TinyMCE AI? Kick your adventure off with the xref:tinymceai-api-quick-start.adoc[Quick Start] guide to set up your environment, generate access credentials, and make your first API call.
+
+[[tinymce-ai-features]]
+== TinyMCE AI features
+
+* xref:tinymceai-conversations.adoc[**Conversations**] – Interactive AI chats with history and persistent context.
+* xref:tinymceai-reviews.adoc[**Reviews**] – Content analysis and proofreading, optimized for larger content.
+* xref:tinymceai-actions.adoc[**Actions**] – Fast, stateless operations for specific tasks.
+
+[[architecture]]
+== Architecture
+
+The following pages cover the system architecture.
+
+* xref:tinymceai-models.adoc[**Models**] – AI model selection, capabilities, and configuration.
+* xref:tinymceai-streaming.adoc[**Streaming**] – Real-time streaming of AI-generated responses.
+* xref:tinymceai-permissions.adoc[**Permissions**] – How to control user access to features.
+* xref:tinymceai-limits.adoc[**Limits**] – Rate limits, context size limits, and file restrictions.
+
+[[data-handling-and-security]]
+== Data Handling and Security
+
+[[regional-data-storage]]
+=== Regional Data Storage
+
+All data stored by TinyMCE AI follows the region settings of your TinyMCE Cloud Services environment, ensuring compliance with data residency requirements and optimal performance for your geographic location.
+
+[TIP]
+====
+**Important**: Data sent to LLM providers for processing is currently processed in the US region, regardless of your Cloud Services environment region.
+====
+
+[[data-retention-policy]]
+=== Data Retention Policy
+
+Conversation data is automatically deleted after 12 months of inactivity, including:
+
+* all conversation messages and history,
+* attached documents, files, and web resources,
+* conversation metadata and settings.
+
+[[security]]
+=== Security
+
+All data is encrypted in transit and at rest with end-to-end encryption. Conversations and attachments are stored in secure cloud infrastructure with fine-grained access control and comprehensive permission systems. Audit Logs are available through our Customer Portal and the API.
+
+[[on-premises-deployment]]
+== On-Premises Deployment
+
+[TIP]
+====
+**Coming Soon**: On-premises deployment is currently in development. Follow TinyMCE social accounts and our newsletter for updates.
+====
+
+[[resources-and-support]]
+== Resources and Support
+
+* **REST API Documentation**: link:https://tinymceai.api.tiny.cloud/docs[Complete API reference for TinyMCE AI].
+* **Customer Support**: link:https://www.tiny.cloud/contact/[Contact us] to get help from our support team or speak with sales.

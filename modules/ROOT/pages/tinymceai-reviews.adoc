@@ -4,3 +4,166 @@
 :description: AI review feature for {productname}
 :description_short: AI review feature
 :keywords: AI, review, reviews, tinymceai
+
+Reviews provide comprehensive content analysis and improvement suggestions. Unlike Actions that transform content directly, Reviews analyze your content and provide specific recommendations for grammar, style, clarity, and tone improvements.
+
+**When to use Reviews vs Actions:** Use Reviews when you need to analyze entire documents for quality improvements and get suggestions without automatically changing the content. Use Actions when you need to transform specific text content (fix grammar, translate, adjust tone).
+
+[[available-reviews]]
+== Available Reviews
+
+[[system-reviews]]
+=== System Reviews
+
+TinyMCE AI provides built-in system reviews for comprehensive content analysis:
+
+* **Correctness** – Fix grammar, spelling, and factual errors.
+* **Clarity** – Improve sentence structure, word choice, and logical flow.
+* **Readability** – Enhance paragraph structure, transitions, and reading level.
+* **Length Optimization** – Expand or condense content while preserving key information.
+* **Tone Adjustment** – Modify tone to casual, direct, friendly, confident, or professional styles.
+* **Translation** – Translate content between languages with cultural adaptation.
+
+[[custom-reviews]]
+=== Custom Reviews
+
+In addition to system reviews, you can create custom reviews tailored to your specific content quality standards and editorial guidelines. Custom reviews allow you to define specialized analysis criteria using your own prompts to control the review behavior.
+
+Unlike system reviews that use predefined identifiers, custom reviews use a unified endpoint where you define the analysis behavior through a prompt parameter.
+
+[[key-features]]
+== Key Features
+
+Reviews use streaming output with Server-Sent Events for real-time feedback as suggestions are generated. Each review type is optimized for specific improvement tasks, providing consistent, high-quality analysis of text structure, style, and quality.
+
+Reviews provide specific, actionable recommendations for content improvement.
+
+[[api-examples]]
+== API Examples
+
+[[basic-grammar-review-example]]
+=== Basic Grammar Review Example
+
+[source,http]
+----
+POST /v1/reviews/system/correctness/calls
+Content-Type: application/json
+Authorization: Bearer <your-token>
+
+{
+  "content": [
+    {
+      "type": "text",
+      "content": "<p data-id=\"p1\">The norhtern lights dence across the polar skies, painting ribbons of green and purple light that ripple like a cosmic curtain.</p>"
+    }
+  ]
+}
+----
+
+[[clarity-improvement-example]]
+=== Clarity Improvement Example
+
+[source,http]
+----
+POST /v1/reviews/system/clarity/calls
+Content-Type: application/json
+Authorization: Bearer <your-token>
+
+{
+  "content": [
+    {
+      "type": "text",
+      "content": "<p data-id=\"p1\">The system works by processing data through various algorithms to produce results.</p>"
+    }
+  ]
+}
+----
+
+[[tone-adjustment-example]]
+=== Tone Adjustment Example
+
+[source,http]
+----
+POST /v1/reviews/system/make-tone-casual/calls
+Content-Type: application/json
+Authorization: Bearer <your-token>
+
+{
+  "content": [
+    {
+      "type": "text",
+      "content": "<p data-id=\"p1\">We regret to inform you that your request cannot be processed at this time.</p>"
+    }
+  ],
+  "args": {
+    "language": "casual"
+  }
+}
+----
+
+[[translation-review]]
+=== Translation Review
+
+[source,http]
+----
+POST /v1/reviews/system/translate/calls
+Content-Type: application/json
+Authorization: Bearer <your-token>
+
+{
+  "content": [
+    {
+      "type": "text",
+      "content": "<p data-id=\"p1\">Hello, how are you today?</p>"
+    }
+  ],
+  "args": {
+    "language": "Spanish"
+  }
+}
+----
+
+[[custom-review-example]]
+=== Custom Review Example
+
+[source,http]
+----
+POST /v1/reviews/custom/calls
+Content-Type: application/json
+Authorization: Bearer <your-token>
+
+{
+  "content": [
+    {
+      "type": "text",
+      "content": "<p data-id=\"p1\">Our product is really good and customers love it because it has many features.</p>"
+    }
+  ],
+  "prompt": "Review the text for vague language and generic claims. Suggest specific, concrete alternatives that would make the content more credible and informative.",
+  "model": "agent-1"
+}
+----
+
+Custom reviews require the `ai:reviews:custom` permission in your JWT token.
+
+[[streaming-responses]]
+== Streaming Responses
+
+Reviews use Server-Sent Events (SSE) for real-time streaming results. See the xref:tinymceai-streaming.adoc[Streaming Responses guide] for detailed implementation information.
+
+[[api-reference]]
+== API Reference
+
+For complete endpoint documentation, request/response schemas, authentication details, and additional parameters, see:
+
+* **https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API Reference]** – Full documentation for system and custom reviews endpoints.
+* **https://tinymceai.api.tiny.cloud/docs[Complete API Documentation]** – Interactive API reference with all TinyMCE AI endpoints.
+
+[[related-features]]
+== Related Features
+
+* xref:tinymceai-review-plugin.adoc[AI Review Plugin] – For plugin integration and UI configuration.
+* xref:tinymceai-conversations.adoc[Conversations API] – For interactive discussions with document analysis and context.
+* xref:tinymceai-actions.adoc[Actions API] – For content transformation and batch processing.
+* xref:tinymceai-streaming.adoc[Streaming Responses] – For implementing real-time review suggestions.
+* xref:tinymceai-api-overview.adoc[API Overview] – Overview of all API features.

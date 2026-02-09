@@ -1,0 +1,142 @@
+= TinyMCE AI Introduction
+
+:navtitle: Introduction
+:description: Introduction to TinyMCE AI features and capabilities
+:description_short: TinyMCE AI introduction
+:keywords: AI, introduction, tinymceai
+
+By integrating AI writing assistance directly into the editing experience, TinyMCE AI empowers authors with real-time AI writing support, streamlines content creation, and enhances editorial workflows across a wide range of use cases – from productivity boosts and proof-reading to content quality and consistency.
+
+[[what-is-tinymce-ai]]
+== What is TinyMCE AI
+
+TinyMCE AI is an AI-powered writing assistant that integrates directly into our rich-text editor, {productname}, providing instant text rewriting, summarization, correction, and contextual chat help based on internal style guides. The platform includes automated review tools and enterprise-ready functionality that plugs into existing systems without requiring custom infrastructure.
+
+Teams can implement a full suite of AI writing tools in weeks rather than months, delivering streamlined, compliant content workflows that maintain brand consistency and integrate seamlessly with existing document management systems.
+
+The core components of TinyMCE AI are:
+
+* **{productname}**: A modern rich text editor with dozens of features that improve writing workflows, including collaboration.
+* **AI service**: A state-of-the-art backend AI engine that incorporates multiple models and delivers high-quality content. Currently available only in Cloud setup, with on-premises deployment coming soon. The AI service also provides a REST API.
+
+[[features]]
+== TinyMCE AI features
+
+There are three main features of TinyMCE AI. You can test them all using the free trial.
+
+* xref:tinymceai-chat.adoc[**Chat**] – Interactive AI chats with history and persistent context.
+* xref:tinymceai-review-plugin.adoc[**Review**] – Content analysis and proofreading, optimized for larger content.
+* xref:tinymceai-actions-plugin.adoc[**Actions**] – Fast, stateless operations for specific tasks.
+
+[[integration-options]]
+== Integration Options
+
+TinyMCE AI can be integrated with your application through two methods. See xref:tinymceai-integration-options.adoc[Integration Options] for details.
+
+[[permissions]]
+== Permissions
+
+Developers can control access to AI features, models, and capabilities based on user roles, subscription tiers, and organizational requirements. Learn more about the xref:tinymceai-permissions.adoc[permissions system].
+
+[[privacy-and-data-handling]]
+== Privacy and data handling
+
+You can find detailed information on how TinyMCE AI manages your data in the xref:tinymceai-api-overview.adoc#data-handling-and-security[API Overview] documentation.
+
+[[known-issues]]
+== Known issues and caveats
+
+The TinyMCE AI plugin has the following known issues and caveats:
+
+=== General HTML Support
+
+TinyMCE AI may not work correctly when General HTML Support for block elements is enabled. This issue will be addressed in future updates. In the meantime, we recommend avoiding configurations that may cause problems.
+
+=== Issues with tables
+
+We are aware of certain glitches that may occur when the AI modifies complex tables or layout tables. To prevent data loss, please ensure that the content around these structures remains intact when using TinyMCE AI tools, while our team investigates the causes and potential solutions to this issue.
+
+=== Editor context and multiple editor handling
+
+While it's possible to use TinyMCE AI with multiple editors in an editor context, only the first editor registered in the context will currently be able to interact with AI tools and benefit from the content suggestions made by the AI. As our team works on resolving this issue, we recommend using standalone editor instances with TinyMCE AI.
+
+=== Inline image processing issues
+
+Inline images may not be processed correctly by commands within the AI Review feature. A solution is currently under development.
+
+=== Quick actions and content markers issues
+
+Applying quick action responses may result in the loss of Comments and Suggested Edits suggestion markers. This issue will be addressed in a future update.
+
+=== Limited interactivity in Chat history
+
+The interactivity of historical AI Chat conversations can become limited over time.
+
+=== Issues with specific AI models
+
+Some AI models may occasionally return empty responses. If this occurs, we recommend sending a follow-up message asking the Assistant to complete the previous request, or starting a new conversation.
+
+NOTE: If you wish to stay informed about updates or discuss TinyMCE AI possibilities, please reach out to us.
+
+[[common-api]]
+== Common API
+
+The AI features register the following UI components and editor commands.
+
+[[ui-components]]
+=== UI components
+
+The AI features register the following UI components:
+
+[cols="1,1"]
+|===
+|Component name |Registered by
+
+|`tinymceai` |Main AI plugin button
+|`tinymceai-conversations` |Conversations feature
+|`tinymceai-actions` |Quick Actions feature
+|`tinymceai-reviews` |Reviews feature
+|`ask-ai` |Quick Actions
+|`explain` |Quick Actions
+|`summarize` |Quick Actions
+|`highlight-key-points` |Quick Actions
+|`improve-writing` |Quick Actions
+|`continue` |Quick Actions
+|`fix-grammar` |Quick Actions
+|`make-shorter` |Quick Actions
+|`make-longer` |Quick Actions
+|`make-tone-casual` |Quick Actions
+|`make-tone-direct` |Quick Actions
+|`make-tone-friendly` |Quick Actions
+|`make-tone-confident` |Quick Actions
+|`make-tone-professional` |Quick Actions
+|`translate-to-english` |Quick Actions
+|`translate-to-chinese` |Quick Actions
+|`translate-to-french` |Quick Actions
+|`translate-to-german` |Quick Actions
+|`translate-to-italian` |Quick Actions
+|`translate-to-portuguese` |Quick Actions
+|`translate-to-russian` |Quick Actions
+|===
+
+[[editor-commands]]
+=== Editor commands
+
+The TinyMCE AI plugin provides the following {productname} commands:
+
+[cols="1,1"]
+|===
+|Command name |Description
+
+|`mceTinymceAI` |Toggle AI interface visibility
+|`mceTinymceAIConversations` |Open Conversations interface
+|`mceTinymceAIActions` |Open Quick Actions interface
+|`mceTinymceAIReviews` |Open Reviews interface
+|===
+
+NOTE: We recommend using the official {productname} inspector for development and debugging. It will give you tons of useful information about the state of the editor such as internal data structures, selection, commands, and many more.
+
+[[future-ideas]]
+== Future ideas - share your feedback
+
+Have an idea for future improvements? We'd love to hear from you! Share your thoughts and suggestions with us through our link:https://www.tiny.cloud/contact/[contact form].

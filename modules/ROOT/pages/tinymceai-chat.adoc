@@ -1,0 +1,110 @@
+= TinyMCE AI Chat
+
+:navtitle: Chat
+:description: AI Chat feature for TinyMCE AI plugin
+:description_short: AI Chat feature
+:keywords: AI, chat, conversations, tinymceai
+
+The TinyMCE AI Chat is a conversational AI that can be used to aid content creation and editing. It introduces a dynamic chat interface designed to facilitate rich, multi-turn interactions between users and an AI Assistant. This capability moves beyond single-prompt content generation, enabling a more interactive and collaborative experience within writing workflows.
+
+[[overview]]
+== Overview
+
+The Chat feature provides context setting and model selection to better suit the needs of specific content and holds chat history for quick reference of previous work. The Chat is also capable of using the web for more up-to-date information and reasoning to think more deeply about the answers and changes it is allowed to make.
+
+[[integration]]
+== Integration
+
+To start using the Chat feature, first load the TinyMCE AI plugin in your editor configuration. See xref:tinymceai.adoc[Plugin Reference] for installation and enabling AI features.
+
+The Chat interface can be accessed through the main AI button in the toolbar or by using the `tinymceai-conversations` toolbar button.
+
+[[context-configuration]]
+== Context Configuration
+
+The `tinymceai_conversations_context` configuration property configures the AI Chat menu for adding resources to the prompt context.
+
+The example below enables built-in options to add the current document, URLs, and files to the conversation context by the user.
+
+It also demonstrates a context sources configuration that introduces a menu with external resources fetched from a database or an external API for the user to pick from.
+
+[source,js]
+----
+tinymce.init({
+  selector: '#editor',
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai',
+  tinymceai_token_provider: function() {
+    return fetch('/api/token').then(response => response.text());
+  },
+  tinymceai_conversations_context: {
+    document: true,
+    url: true,
+    file: true,
+    sources: [
+      {
+        id: 'knowledge-base',
+        label: 'Knowledge Base',
+        fetch: async () => {
+          const response = await fetch('/api/knowledge-base');
+          return response.json();
+        }
+      }
+    ]
+  }
+});
+----
+
+[[working-with-ai-generated-changes]]
+== Working with AI-generated changes
+
+When the AI suggests changes to your content, you can:
+
+* **Accept** - Accept the suggested changes that are rendered directly in the document
+* **Reject** - Discard the suggestion
+* **Edit** - Modify the suggestion before applying
+* **Suggested Edits** - Convert suggestions to Suggested Edits for review
+
+// image::tinymceai/ai-chat-suggestions.png[AI Chat suggestions interface]
+// TODO: Add image placeholder
+
+[[chat-history]]
+== Chat history
+
+All your past conversations appear in the Chat history. Click the button to open the list, where you can reopen, rename, or delete any conversation.
+
+Conversations are grouped by date to help you navigate your project easily. You can filter conversations by name using the search field at the top of the user interface.
+
+// image::tinymceai/ai-chat-history.png[AI Chat history]
+// TODO: Add image placeholder
+
+[NOTE]
+====
+You can continue any conversation from the chat history as long as the AI model used for that conversation is still supported by the feature. Click the conversation in the history to load it in the Chat interface.
+====
+
+[NOTE]
+====
+The ability to apply suggestions to the document or generate Suggested Edits from historical conversations may be restricted in some scenarios:
+
+After closing the browser and reopening the AI Chat, previous conversations will no longer interact with the document content. To continue working with a conversation, you can reopen it from the chat history.
+====
+
+[[advanced-features]]
+== Advanced Features
+
+The Chat feature supports advanced capabilities:
+
+* **Web Search** - Access up-to-date information from the web
+* **Reasoning** - Deep thinking about answers and changes
+* **Multi-turn conversations** - Maintain context across multiple interactions
+* **Model selection** - Choose the appropriate AI model for your task
+
+For more information about API-level features, see xref:tinymceai-conversations.adoc[Conversations API documentation].
+
+[[related-features]]
+== Related Features
+
+* xref:tinymceai-review-plugin.adoc[AI Review] – For content quality analysis and improvement suggestions.
+* xref:tinymceai-actions-plugin.adoc[AI Quick Actions] – For fast, stateless content transformations.
+* xref:tinymceai-introduction.adoc[Introduction] – Overview of all TinyMCE AI features.

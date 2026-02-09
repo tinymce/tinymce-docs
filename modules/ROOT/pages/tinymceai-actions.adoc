@@ -4,3 +4,203 @@
 :description: Quick actions feature for {productname}
 :description_short: Quick actions feature
 :keywords: AI, quick actions, actions, tinymceai
+
+Actions are fast, stateless operations that transform content directly. Unlike Reviews that provide suggestions, Actions immediately modify your content based on the selected operation.
+
+**When to use Actions vs Reviews:** Use Actions when you need to transform specific text content (fix grammar, translate, adjust tone). Use Reviews when you need to analyze entire documents for quality improvements and get suggestions without automatically changing the content.
+
+Unlike conversations, actions do not remember previous interactions. Each action is independent and focused on a single task.
+
+[[available-actions]]
+== Available Actions
+
+[[system-actions]]
+=== System Actions
+
+TinyMCE AI provides built-in system actions for common content transformations:
+
+* **Fix Grammar** – Correct grammar, spelling, and punctuation errors.
+* **Improve Writing** – Enhance clarity, word choice, and sentence structure.
+* **Continue Writing** – Complete unfinished sentences, paragraphs, or entire documents.
+* **Make Longer** – Expand content with more detail, examples, and explanations.
+* **Make Shorter** – Condense lengthy text while keeping the essential information.
+* **Adjust Tone** – Change writing style to casual, professional, friendly, or confident.
+* **Translate** – Convert content between languages with proper cultural context.
+
+[[custom-actions]]
+=== Custom Actions
+
+In addition to system actions, you can create custom actions tailored to your specific use cases. Custom actions allow you to define specialized content transformations using your own prompts to control AI behavior.
+
+Unlike system actions that use predefined identifiers, custom actions use a unified endpoint where you define the transformation behavior through a prompt parameter.
+
+[[key-features]]
+== Key Features
+
+Each action is independent and does not require conversation context. Actions use streaming output with Server-Sent Events for real-time feedback as results are generated.
+
+[[api-examples]]
+== API Examples
+
+[[grammar-fix-example]]
+=== Grammar Fix Example
+
+[source,http]
+----
+POST /v1/actions/system/fix-grammar/calls
+Content-Type: application/json
+Authorization: Bearer <your-token>
+
+{
+  "content": [
+    {
+      "type": "text",
+      "content": "<p>The norhtern lights dence across the polar skies, painting ribbons of green and purple light that ripple like a cosmic curtain.</p>"
+    }
+  ]
+}
+----
+
+[[writing-improvement-example]]
+=== Writing Improvement Example
+
+[source,http]
+----
+POST /v1/actions/system/improve-writing/calls
+Content-Type: application/json
+Authorization: Bearer <your-token>
+
+{
+  "content": [
+    {
+      "type": "text",
+      "content": "<p>The system works by processing data through various algorithms to produce results.</p>"
+    }
+  ]
+}
+----
+
+[[content-expansion]]
+=== Content Expansion
+
+[source,http]
+----
+POST /v1/actions/system/make-longer/calls
+Content-Type: application/json
+Authorization: Bearer <your-token>
+
+{
+  "content": [
+    {
+      "type": "text",
+      "content": "<p>Artificial intelligence is transforming the way we work.</p>"
+    }
+  ]
+}
+----
+
+[[content-condensation-example]]
+=== Content Condensation Example
+
+[source,http]
+----
+POST /v1/actions/system/make-shorter/calls
+Content-Type: application/json
+Authorization: Bearer <your-token>
+
+{
+  "content": [
+    {
+      "type": "text",
+      "content": "<p>Artificial intelligence, which is a rapidly evolving field of computer science that focuses on creating intelligent machines capable of performing tasks that typically require human intelligence, is transforming the way we work across various industries and sectors.</p>"
+    }
+  ]
+}
+----
+
+[[tone-adjustment-example]]
+=== Tone Adjustment Example
+
+[source,http]
+----
+POST /v1/actions/system/make-tone-casual/calls
+Content-Type: application/json
+Authorization: Bearer <your-token>
+
+{
+  "content": [
+    {
+      "type": "text",
+      "content": "<p>We regret to inform you that your request cannot be processed at this time.</p>"
+    }
+  ]
+}
+----
+
+[[translation-example]]
+=== Translation Example
+
+[source,http]
+----
+POST /v1/actions/system/translate/calls
+Content-Type: application/json
+Authorization: Bearer <your-token>
+
+{
+  "content": [
+    {
+      "type": "text",
+      "content": "<p>Hello, how are you today?</p>"
+    }
+  ],
+  "args": {
+    "language": "Spanish"
+  }
+}
+----
+
+[[custom-action-example]]
+=== Custom Action Example
+
+[source,http]
+----
+POST /v1/actions/custom/calls
+Content-Type: application/json
+Authorization: Bearer <your-token>
+
+{
+  "content": [
+    {
+      "type": "text",
+      "content": "<p>The company's Q4 revenue was $2.5M, representing a 15% increase YoY.</p>"
+    }
+  ],
+  "prompt": "Convert financial abbreviations to full words (e.g., 'YoY' to 'year-over-year', 'Q4' to 'fourth quarter') to make the text more accessible to general audiences.",
+  "model": "agent-1",
+  "outputFormat": "html"
+}
+----
+
+Custom actions require the `ai:actions:custom` permission in your JWT token.
+
+[[streaming-responses]]
+== Streaming Responses
+
+Actions use Server-Sent Events (SSE) for real-time streaming results. See the xref:tinymceai-streaming.adoc[Streaming Responses guide] for detailed implementation information.
+
+[[api-reference]]
+== API Reference
+
+For complete endpoint documentation, request/response schemas, authentication details, and additional parameters, see:
+
+* **https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API Reference]** – Full documentation for system and custom actions endpoints.
+* **https://tinymceai.api.tiny.cloud/docs[Complete API Documentation]** – Interactive API reference with all TinyMCE AI endpoints.
+
+[[related-features]]
+== Related Features
+
+* xref:tinymceai-actions-plugin.adoc[AI Quick Actions Plugin] – For plugin integration and UI configuration.
+* xref:tinymceai-conversations.adoc[Conversations API] – For interactive discussions with document analysis and context.
+* xref:tinymceai-reviews.adoc[Reviews API] – For content quality analysis and improvement suggestions.
+* xref:tinymceai-streaming.adoc[Streaming Responses] – For implementing real-time review suggestions.
+* xref:tinymceai-api-overview.adoc[API Overview] – Overview of all API features.

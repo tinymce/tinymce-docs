@@ -1,0 +1,25 @@
+= TinyMCE AI Integration Options
+
+:navtitle: Integration Options
+:description: Choose how to integrate TinyMCE AI with your application
+:description_short: Integration options for TinyMCE AI
+:keywords: AI, integration, plugin, API, REST API, tinymceai
+
+TinyMCE AI can be integrated with your application through two methods:
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:tinymceai.adoc[**Plugin Quick Start**]
+
+Integrate AI features directly into the TinyMCE editor interface. Works with CDN or self-hosted TinyMCE installations. The fastest way to add AI capabilities to your editor.
+
+|
+[.lead]
+xref:tinymceai-api-overview.adoc[**REST API**]
+
+Use the REST API to build custom integrations and workflows. Perfect for server-side processing, custom UI implementations, and advanced use cases. Start with the xref:tinymceai-api-quick-start.adoc[API Quick Start] guide.
+
+|===

@@ -4,3 +4,50 @@
 :description: Usage limits configuration for TinyMCE AI
 :description_short: Usage limits configuration
 :keywords: AI, limits, configuration, tinymceai
+
+Understand the limits that ensure fair usage, optimal performance, and cost control across all TinyMCE AI features.
+
+[[overview]]
+== Overview
+
+TinyMCE AI implements various limits to ensure fair usage, optimal performance, and cost control. These include rate limits for API requests, context limits for content size and processing, model-specific constraints, and file restrictions.
+
+[[rate-limits]]
+== Rate Limits
+
+Rate limits control the frequency of API requests to prevent abuse and ensure service stability. The service implements limits on API requests, token usage, web search, and web scraping requests per minute. All rate limits are applied at both organization level (higher limits) and individual user level (lower limits) to ensure fair usage.
+
+NOTE: Specific rate limit values are subject to change and may vary based on your subscription tier. Contact support for current rate limit details for your environment.
+
+[[context-limits]]
+== Context Limits
+
+Context limits control how much content can be attached to conversations to ensure AI models can process all information effectively. These limits vary by model based on their specific capabilities and processing requirements.
+
+[[file-limits]]
+=== File Limits
+
+Files are limited to 7MB each (PDF, DOCX, PNG, JPEG, Markdown, HTML, Plain text). You can upload up to 100 files per conversation with a total size limit of 30MB. PDF files are limited to 100 pages total across all PDFs in a conversation.
+
+[[model-specific-file-limits]]
+==== Model-specific file limits
+
+Anthropic and agent models may use files up to 5MB each.
+
+[[context-optimization-tips]]
+=== Context Optimization Tips
+
+Compress images and split large documents into smaller sections. Use text formats (TXT or MD) over PDF when possible for better processing. Attach only relevant files to conversations and provide document summaries for very large files.
+
+[[model-specific-limits]]
+== Model-Specific Limits
+
+Different AI models have varying capabilities and limitations that affect context processing. Each model has different context window sizes that determine how much content can be processed. Models have response timeouts, file processing timeouts, web resource timeouts, and streaming response limits. All models include content moderation for inappropriate content, safety checks, and moderation response time limits.
+
+[[next-steps]]
+== Next Steps
+
+* xref:tinymceai-models.adoc[Learn about AI Models] for model-specific limitations.
+* xref:tinymceai-permissions.adoc[Set up Permisssions] to control user access.
+* xref:tinymceai-conversations.adoc[Explore Conversations] for context management.
+* https://tinymceai.api.tiny.cloud/docs[API Documentation] – Complete API reference for TinyMCE AI.

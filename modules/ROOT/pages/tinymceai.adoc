@@ -1,4 +1,4 @@
-= TinyMCE AI
+= TinyMCE AI Plugin
 
 :navtitle: TinyMCE AI
 :description: AI-powered features for {productname} including AI chat, AI review, and quick actions
@@ -9,25 +9,38 @@
 :pluginminimumplan: enterpriseplan
 :plugincategory: premium
 
-[[what-is-tinymce-ai]]
-== What is TinyMCE AI
+include::partial$misc/admon-premium-plugin.adoc[]
 
-[[plugin-vs-api]]
-== Plugin vs API
-
-[[architecture-overview]]
-== Architecture overview
+The {pluginname} plugin integrates AI-assisted authoring with rich-text editing. Users can interact through Actions, Reviews, or Conversations that can use relevant context from multiple sources.
 
 [[interactive-example]]
 == Interactive example
 
-liveDemo::{tinymceai}[]
-
-[[plugin-reference]]
-== Plugin reference
+liveDemo::{plugincode}[]
 
 [[basic-setup]]
 == Basic setup
+
+To setup the {pluginname} plugin in the editor:
+
+* add `{plugincode}` to the `plugins` option in the editor configuration;
+* add `{plugincode}` to the `toolbar` option in the editor configuration;
+* configure the `tinymceai_token_provider` option to provide authentication tokens;
+
+For example:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai',
+  tinymceai_token_provider: function() {
+    // Return a promise that resolves to a JWT token
+    return fetch('/api/token').then(response => response.text());
+  }
+});
+----
 
 [[options]]
 == Options
@@ -36,15 +49,13 @@ The following configuration options affect the behavior of the {pluginname} plug
 
 include::partial$configuration/tinymceai_token_provider.adoc[leveloffset=+1]
 
-[[toolbar-buttons]]
-== Toolbar buttons
-
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-[[menu-items]]
-== Menu items
+include::partial$toolbar-button-ids/{plugincode}-toolbar-buttons.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+
+include::partial$menu-item-ids/{plugincode}-menu-items.adoc[leveloffset=+1]
 
 [[commands]]
 == Commands

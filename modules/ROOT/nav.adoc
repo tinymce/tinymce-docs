@@ -261,41 +261,32 @@
 **** xref:ai-gemini.adoc[Google Gemini integration guide]
 **** xref:ai-proxy.adoc[AI proxy server reference guide]
 *** TinyMCE AI
-**** xref:tinymceai.adoc[Overview]
-***** xref:tinymceai.adoc#what-is-tinymce-ai[What is TinyMCE AI]
-***** xref:tinymceai.adoc#plugin-vs-api[Plugin vs API]
-***** xref:tinymceai.adoc#architecture-overview[Architecture overview]
-***** xref:tinymceai.adoc#interactive-example[Interactive example]
-**** xref:tinymceai.adoc#plugin-reference[Plugin reference]
-***** xref:tinymceai.adoc#basic-setup[Basic setup]
-***** xref:tinymceai.adoc#options[Options]
-***** xref:tinymceai.adoc#toolbar-buttons[Toolbar buttons]
-***** xref:tinymceai.adoc#menu-items[Menu items]
-***** xref:tinymceai.adoc#commands[Commands]
-***** xref:tinymceai.adoc#events[Events]
-***** xref:tinymceai.adoc#apis[APIs]
-**** xref:tinymceai-quick-start.adoc[Quick start]
-***** xref:tinymceai-quick-start.adoc#plugin-quick-start[Plugin quick start]
-***** xref:tinymceai-quick-start.adoc#api-quick-start[API quick start]
-**** Features
-***** xref:tinymceai-conversations.adoc[Conversations]
-***** xref:tinymceai-reviews.adoc[Reviews]
-***** xref:tinymceai-actions.adoc[Actions]
-**** Configuration
-***** xref:tinymceai-models.adoc[AI models]
-***** xref:tinymceai-permissions.adoc[Permissions]
-***** xref:tinymceai-limits.adoc[Limits]
-***** xref:tinymceai-streaming.adoc[Streaming]
-**** Integration
-***** xref:tinymceai-with-jwt-authentication-nodejs.adoc[JWT authentication (Node.js)]
-***** xref:tinymceai-with-jwt-authentication-php.adoc[JWT authentication (PHP)]
-***** xref:tinymceai-without-tinymce.adoc[Using the AI service without TinyMCE]
-***** xref:tinymceai-rest-api.adoc[REST API reference]
-**** Security
-***** xref:tinymceai-data-handling.adoc[Data handling]
-***** xref:tinymceai-privacy.adoc[Privacy]
-**** xref:tinymceai-on-premises.adoc[On-premises]
-***** xref:tinymceai-on-premises.adoc#availability-and-roadmap[Availability and roadmap]
+**** xref:tinymceai-introduction.adoc[Introduction]
+***** Features
+****** xref:tinymceai-chat.adoc[Chat]
+****** xref:tinymceai-review-plugin.adoc[Review]
+****** xref:tinymceai-actions-plugin.adoc[Actions]
+***** xref:tinymceai-integration-options.adoc[Integration Options]
+****** xref:tinymceai.adoc[Plugin quick start]
+****** REST API
+******* xref:tinymceai-api-overview.adoc[API Overview]
+******* xref:tinymceai-api-quick-start.adoc[API quick start]
+******* Features
+******** xref:tinymceai-conversations.adoc[Conversations]
+******** xref:tinymceai-reviews.adoc[Reviews]
+******** xref:tinymceai-actions.adoc[Actions]
+******* Configuration
+******** xref:tinymceai-models.adoc[AI models]
+******** xref:tinymceai-permissions.adoc[Permissions]
+******** xref:tinymceai-limits.adoc[Limits]
+******** xref:tinymceai-streaming.adoc[Streaming]
+******* Integration
+******** xref:tinymceai-api-overview.adoc#data-handling-and-security[Data Handling and Security]
+******** xref:tinymceai-api-overview.adoc#on-premises-deployment[On-premises deployment]
+******** xref:tinymceai-api-overview.adoc#security-features[Security]
+****** JWT Authentication
+******* xref:tinymceai-with-jwt-authentication-nodejs.adoc[JWT authentication (Node.js)]
+******* xref:tinymceai-with-jwt-authentication-php.adoc[JWT authentication (PHP)]
 *** xref:casechange.adoc[Case Change]
 *** xref:checklist.adoc[Checklist]
 *** Comments

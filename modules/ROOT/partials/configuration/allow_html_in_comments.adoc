@@ -1,0 +1,25 @@
+[[allow-html-in-comments]]
+== `+allow_html_in_comments+`
+
+This option controls whether HTML-like syntax in comment nodes is allowed during content sanitization. When set to `false`, HTML-like content in comment nodes will be sanitized more strictly.
+
+*Type:* `+Boolean+`
+
+*Default value:* `+true+`
+
+*Possible values:* `+true+`, `+false+`
+
+[NOTE]
+====
+This option will default to `false` in {productname} 8.x.
+====
+
+=== Example: using `+allow_html_in_comments+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  allow_html_in_comments: false
+});
+----

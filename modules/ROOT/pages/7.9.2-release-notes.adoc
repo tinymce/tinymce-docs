@@ -11,185 +11,49 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[overview]]
 == Overview
 
-{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Monday, November 2^nd^, 2026. These release notes provide an overview of the changes for {productname} {release-version}, including:
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, February 11^th^, 2026. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
-// Remove sections and section boilerplates as necessary.
-// Pluralise as necessary or remove the placeholder plural marker.
-* xref:new-premium-plugin<s>[New Premium plugin<s>]
-* xref:new-open-source-plugin<s>[New Open Source plugin<s>]
-* xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
-* xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
-* xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life announcement]
-* xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
-* xref:improvements[Improvements]
 * xref:additions[Additions]
-* xref:changes[Changes]
-* xref:bug-fixes[Bug fixes]
-* xref:security-fixes[Security fixes]
 * xref:deprecated[Deprecated]
-* xref:known-issues[Known issues]
-
-
-[[new-premium-plugin<s>]]
-== New Premium plugin<s>
-
-The following new Premium plugin was released alongside {productname} {release-version}.
-
-=== <Premium plugin name>
-
-The new Premium plugin, **<Premium plugin name>** // description here.
-
-For information on the **<Premium plugin name>** plugin, see xref:<plugincode>.adoc[<Premium plugin name>].
-
-
-[[new-open-source-plugin]]
-== New Open Source plugin
-
-The following new Open Source plugin was released alongside {productname} {release-version}.
-
-=== <Open source plugin name>
-
-The new open source plugin, **<Open source plugin name>** // description here.
-
-For information on the **<Open source plugin name>** plugin, see xref:<plugincode>.adoc[<Open source plugin name>].
-
-
-[[accompanying-premium-plugin-changes]]
-== Accompanying Premium plugin changes
-
-The following premium plugin updates were released alongside {productname} {release-version}.
-
-=== <Premium plugin name 1> <Premium plugin name 1 version>
-
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
-
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
-
-==== <Premium plugin name 1 change 1>
-
-// CCFR here.
-
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
-
-
-[[accompanying-premium-plugin-end-of-life-announcement]]
-== Accompanying Premium plugin end-of-life announcement
-
-The following Premium plugin has been announced as reaching its end-of-life:
-
-=== <Premium plugin name eol>
-
-{productname}'s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
-
-
-[[accompanying-open-source-plugin-end-of-life-announcement]]
-== Accompanying open source plugin end-of-life announcement
-
-The following open source plugin has been announced as reaching its end-of-life:
-
-=== <Open source plugin name eol>
-
-{productname}'s xref:<plugincode>.adoc[<Open source plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
-
-
-[[accompanying-enhanced-skins-and-icon-packs-changes]]
-== Accompanying Enhanced Skins & Icon Packs changes
-
-The {productname} {release-version} release includes an accompanying release of the **Enhanced Skins & Icon Packs**.
-
-=== Enhanced Skins & Icon Packs
-
-The **Enhanced Skins & Icon Packs** release includes the following updates:
-
-The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} {release-version} skin, Oxide.
-
-For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
-
-
-[[improvements]]
-== Improvements
-
-{productname} {release-version} also includes the following improvement<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+* xref:security-fixes[Security fixes]
 
 
 [[additions]]
 == Additions
 
-{productname} {release-version} also includes the following addition<s>:
+{productname} {release-version} also includes the following addition:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Introduced `allow_html_in_comments` option
 
-// CCFR here.
+Introduced `allow_html_in_comments` option (boolean, default: `true`) to control handling of HTML-like syntax in comment nodes. This option will default to `false` in TinyMCE 8.x.
 
-
-[[changes]]
-== Changes
-
-{productname} {release-version} also includes the following change<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[removed]]
-== Removed
-
-{productname} {release-version} also includes the following removal<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[bug-fixes]]
-== Bug fixes
-
-{productname} {release-version} also includes the following bug fix<es>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
-[[security-fixes]]
-== Security fixes
-
-{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+For information on the `allow_html_in_comments` option, see: xref:content-filtering.adoc#allow-html-in-comments[allow_html_in_comments].
 
 
 [[deprecated]]
 == Deprecated
 
-{productname} {release-version} includes the following deprecation<s>:
+{productname} {release-version} includes the following deprecation:
 
-=== The `<plugin>` configuration property, `<name>`, has been deprecated
+=== The default value of `allow_html_in_comments` will change in TinyMCE 8.x
 
-// placeholder here.
+The default value of `allow_html_in_comments` will change from `true` to `false` in TinyMCE 8.x.
 
 
-[[known-issues]]
-== Known issues
+[[security-fixes]]
+== Security fixes
 
-This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
+{productname} {release-version} includes fixes for the following security issues:
 
-There <is one | are <number> known issue<s> in {productname} {release-version}.
+=== Enhanced content sanitization
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+Updated dependencies and parsing logic for enhanced content sanitization. HTML-like content in comments and certain legacy patterns are now sanitized more strictly when `xss_sanitization` is enabled (default). The introduced `allow_html_in_comments` option provides control over comment node sanitization behavior.
 
-// CCFR here.
+For information on content sanitization, see: xref:security.adoc#sanitizing-html-input-to-protect-against-xss-attacks[Sanitizing HTML input to protect against XSS attacks].
+
+[IMPORTANT]
+====
+**Migration:** Legacy content using HTML comment wrappers in script or style tags should be updated to use modern syntax without comment wrappers. These comment patterns were primarily used for compatibility with browsers from the 1990s and are not required by modern browsers.
+
+**Workaround:** To temporarily preserve existing content during migration, set `xss_sanitization: false`, though this is **not recommended** for production environments due to security implications.
+====

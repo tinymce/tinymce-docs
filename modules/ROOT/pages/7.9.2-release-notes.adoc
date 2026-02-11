@@ -1,0 +1,59 @@
+= {productname} {release-version}
+:release-version: 7.9.2
+:navtitle: {productname} {release-version}
+:description: Release notes for {productname} {release-version}
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+
+[[overview]]
+== Overview
+
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, February 11^th^, 2026. These release notes provide an overview of the changes for {productname} {release-version}, including:
+
+* xref:additions[Additions]
+* xref:deprecated[Deprecated]
+* xref:security-fixes[Security fixes]
+
+
+[[additions]]
+== Additions
+
+{productname} {release-version} also includes the following addition:
+
+=== Introduced `allow_html_in_comments` option
+
+Introduced `allow_html_in_comments` option (boolean, default: `true`) to control handling of HTML-like syntax in comment nodes. This option will default to `false` in TinyMCE 8.x.
+
+For information on the `allow_html_in_comments` option, see: xref:content-filtering.adoc#allow-html-in-comments[allow_html_in_comments].
+
+
+[[deprecated]]
+== Deprecated
+
+{productname} {release-version} includes the following deprecation:
+
+=== The default value of `allow_html_in_comments` will change in TinyMCE 8.x
+
+The default value of `allow_html_in_comments` will change from `true` to `false` in TinyMCE 8.x.
+
+
+[[security-fixes]]
+== Security fixes
+
+{productname} {release-version} includes fixes for the following security issues:
+
+=== Enhanced content sanitization
+
+Updated dependencies and parsing logic for enhanced content sanitization. HTML-like content in comments and certain legacy patterns are now sanitized more strictly when `xss_sanitization` is enabled (default). The introduced `allow_html_in_comments` option provides control over comment node sanitization behavior.
+
+For information on content sanitization, see: xref:security.adoc#sanitizing-html-input-to-protect-against-xss-attacks[Sanitizing HTML input to protect against XSS attacks].
+
+[IMPORTANT]
+====
+**Migration:** Legacy content using HTML comment wrappers in script or style tags should be updated to use modern syntax without comment wrappers. These comment patterns were primarily used for compatibility with browsers from the 1990s and are not required by modern browsers.
+
+**Workaround:** To temporarily preserve existing content during migration, set `xss_sanitization: false`, though this is **not recommended** for production environments due to security implications.
+====

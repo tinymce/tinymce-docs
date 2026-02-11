@@ -12,3 +12,32 @@ ifeval::["{plugincode}" == "tinydrive"]
 . When the user makes a request (such as adding or deleting a file), the JWT will be sent with the request to show that the user is authorized. This JWT is verified using the _public_ key stored on the {cloudname} Server.
 . The {cloudname} Server sends a response, indicating that content submission was successful (or unauthorized if necessary).
 endif::[]
+
+ifeval::["{plugincode}" == "tinymceai"]
+. {pluginname} requests a signed JWT on behalf of the user.
+. If your JWT endpoint authorizes the user, your JWT endpoint will send a JWT to {pluginname}, certifying the user.
+. The JWT includes a `sub` (subject) claim that identifies the user. This user identifier is used to lock down conversation history, AI-generated content, and other user-specific data to individual users, ensuring privacy and data isolation.
+. When the user makes a request (such as starting a chat conversation, requesting AI actions, or submitting reviews), the JWT will be sent with the request to show that the user is authorized. This JWT is verified using the _public_ key stored on the AI service.
+. The AI service sends a response, indicating that the request was successful (or unauthorized if necessary).
+endif::[]
+
+ifeval::["{plugincode}" == "importword"]
+. {pluginname} requests a signed JWT on behalf of the user.
+. If your JWT endpoint authorizes the user, your JWT endpoint will send a JWT to {pluginname}, certifying the user.
+. When the user makes a request (such as importing a document), the JWT will be sent with the request to show that the user is authorized. This JWT is verified using the _public_ key stored on the {pluginname} Server.
+. The {pluginname} Server sends a response, indicating that content submission was successful (or unauthorized if necessary).
+endif::[]
+
+ifeval::["{plugincode}" == "exportword"]
+. {pluginname} requests a signed JWT on behalf of the user.
+. If your JWT endpoint authorizes the user, your JWT endpoint will send a JWT to {pluginname}, certifying the user.
+. When the user makes a request (such as exporting a document), the JWT will be sent with the request to show that the user is authorized. This JWT is verified using the _public_ key stored on the {pluginname} Server.
+. The {pluginname} Server sends a response, indicating that content submission was successful (or unauthorized if necessary).
+endif::[]
+
+ifeval::["{plugincode}" == "exportpdf"]
+. {pluginname} requests a signed JWT on behalf of the user.
+. If your JWT endpoint authorizes the user, your JWT endpoint will send a JWT to {pluginname}, certifying the user.
+. When the user makes a request (such as exporting a document), the JWT will be sent with the request to show that the user is authorized. This JWT is verified using the _public_ key stored on the {pluginname} Server.
+. The {pluginname} Server sends a response, indicating that content submission was successful (or unauthorized if necessary).
+endif::[]

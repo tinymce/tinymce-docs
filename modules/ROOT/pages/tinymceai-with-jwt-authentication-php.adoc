@@ -9,11 +9,90 @@ include::partial$auth/tinymceai/php/intro-and-prerequisites.adoc[]
 
 include::partial$auth/tinymceai/php/initial-project-setup.adoc[]
 
-== Setup
+== Generate a Public/Private Key Pair
 
-=== Generate a Public/Private Key Pair
+include::partial$auth/private-public-key-pairs-for-tiny-cloud-services.adoc[]
 
-include::partial$auth/tinymceai/jwt-setup-tinymceai.adoc[leveloffset=+2]
+== JWT Configuration Requirements
+
+This section explains what needs to be configured for JWT authentication, whether you're using a managed service (such as AWS or Azure JWT services) or setting up a manual endpoint.
+
+include::partial$auth/how-jwts-are-used.adoc[]
+
+=== JWT endpoint requirements
+
+A JSON Web Token (JWT) endpoint for {pluginname} requires:
+
+* The endpoint or server accepts a JSON HTTP POST request.
+* User authentication - A method of verifying the user, and that they should have access to the {pluginname}.
+* The JWTs are generated (signed) using the _private_ key that pairs with the _public_ key provided to link:{accountjwturl}[{accountpage} - JWT Keys].
+* The endpoint or server produces a JSON response with the token. {pluginname} will submit the token with requests to the AI service.
+
+=== Required JWT claims for {pluginname}
+
+JSON Web Tokens produced by the JWT endpoint must include the following claims:
+
+`+aud+` _(required)_::
+*Type:* `+String+`
++
+The `aud` is a case-sensitive string that must match a valid API key that has the {pluginname} plugin enabled.
+
+`+sub+` _(required)_::
+*Type:* `+String+`
++
+The `sub` claim identifies the user. This should be a unique identifier for the user making the request.
+
+`+iat+` _(required)_::
+*Type:* `+Number+`
++
+The `iat` represents the issue timestamp, specified as the number of seconds. For example, to set the issue time to the current timestamp, calculate the issue time as the current timestamp divided by 1000.
+
+.Example
+[source,json]
+----
+iat: Math.floor(Date.now() / 1000), // Issue timestamp
+----
+
+`+exp+` _(required)_::
+*Type:* `+Number+`
++
+The `exp` represents the expiration timestamp, specified as the number of seconds. For example, to set a validity period of 10 minutes, calculate the expiration time as the current timestamp plus 600 seconds.
+
+.Example
+[source,json]
+----
+exp: Math.floor(Date.now() / 1000) + (60 * 10) // Expiration time (10 minutes)
+----
+
+`+auth+` _(required)_::
+*Type:* `+Object+`
++
+The `auth` object contains AI-specific permissions that control which features the user can access.
+
+.Example
+[source,json]
+----
+auth: {
+  ai: {
+    permissions: [
+      "ai:conversations:read",
+      "ai:conversations:write",
+      "ai:models:agent",
+      "ai:actions:system:*",
+      "ai:reviews:system:*"
+    ]
+  }
+}
+----
+
+[NOTE]
+====
+See xref:tinymceai-permissions.adoc[Permissions] for a complete list of available permissions and best practices for configuring user access.
+====
+
+== Set up JWT Endpoint
+
+The following section shows how to create a JWT endpoint manually. If you're using a managed JWT service (such as AWS or Azure), configure it according to the requirements above and skip to the xref:#configure-tinymce[Configure TinyMCE] section.
 
 === Server Setup (jwt.php)
 
@@ -27,8 +106,8 @@ use \Firebase\JWT\JWT;
 
 function fatalError($message) {
     http_response_code(500);
-    header('Content-Type: text/plain');
-    die("JWT auth failed: " . $message);
+    header('Content-Type: application/json');
+    die(json_encode(array("message" => "JWT auth failed: " . $message)));
 }
 
 // Check for OpenSSL extension
@@ -68,10 +147,9 @@ try {
     EOD;
     $token = JWT::encode($payload, $privateKey, 'RS256');
 
-    // TinyMCE AI expects the token as a plain text string, not JSON
     http_response_code(200);
-    header('Content-Type: text/plain');
-    echo $token;
+    header('Content-Type: application/json');
+    echo json_encode(array("token" => $token));
 } catch (Exception $e) {
     fatalError($e->getMessage());
 }
@@ -83,7 +161,10 @@ try {
 The JWT payload includes an `auth.ai.permissions` array that defines what AI features the user can access. Adjust these permissions based on your requirements. See xref:tinymceai-permissions.adoc[Permissions] for more details on available permissions.
 ====
 
-=== Web Page Setup (index.html)
+== Configure TinyMCE
+
+[[configure-tinymce]]
+=== Web Page (index.html)
 
 Inside the root directory where you created the `index.html` file add the HTML setup code.
 
@@ -104,12 +185,11 @@ Inside the root directory where you created the `index.html` file add the HTML s
       plugins: 'tinymceai',
       toolbar: 'showai aiquickactions aireview',
       // tinymceai_token_provider fetches a token from the `/jwt.php` endpoint.
-      // TinyMCE AI expects the response to be a plain text token string.
       tinymceai_token_provider: () => {
         return fetch('http://localhost:3000/jwt.php', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-        }).then(response => response.text());
+        }).then(response => response.json());
       },
     });
   </script>
@@ -123,11 +203,14 @@ Inside the root directory where you created the `index.html` file add the HTML s
 </html>
 ----
 
+== Configuration and Running
+
 include::partial$auth/tinymceai/php/configuration-steps.adoc[]
 
 [NOTE]
 ====
 When you run the project, you should see:
+
 * The {productname} editor
-* AI feature buttons in the toolbar (showai, aiquickactions, aireview)
+* AI feature buttons in the toolbar (`showai`, `aiquickactions`, `aireview`)
 ====

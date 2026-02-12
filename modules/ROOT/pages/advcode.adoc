@@ -38,6 +38,9 @@ tinymce.init({
 });
 ----
 
+include::partial$misc/bundling-guide-link.adoc[]
+
+
 == Enable full-screen mode
 
 To enable the full-screen mode button in the {pluginname}, configure the plugin to run in inline mode and include the fullscreen plugin:

@@ -39,6 +39,9 @@ tinymce.init({
 });
 ----
 
+include::partial$misc/bundling-guide-link.adoc[]
+
+
 For more infomation on the exportpdf_token_provider option, see xref:exportpdf.adoc#exportpdf-token-provider[exportpdf_token_provider].
 
 include::partial$misc/admon-jwt-authentication-requirements.adoc[]

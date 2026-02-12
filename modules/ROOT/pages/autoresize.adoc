@@ -22,6 +22,9 @@ tinymce.init({
 });
 ----
 
+include::partial$misc/bundling-guide-link.adoc[]
+
+
 == How it works
 
 The Autoresize plugin monitors content changes and automatically adjusts the editor height to accommodate the content. When enabled:

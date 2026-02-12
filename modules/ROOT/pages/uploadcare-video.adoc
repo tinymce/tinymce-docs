@@ -44,6 +44,8 @@ tinymce.init({
 });
 ----
 
+include::partial$misc/bundling-guide-link.adoc[]
+
 [NOTE]
 ====
 The {pluginname} plugin uses the same plugin code `+uploadcare+` as the Media Optimizer plugin. Video functionality is automatically enabled when video files are uploaded.

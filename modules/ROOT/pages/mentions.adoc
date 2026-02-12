@@ -16,6 +16,8 @@ liveDemo::mentions[height="400"]
 
 // include::partial$misc/purchase-premium-plugins.adoc[]
 
+include::partial$misc/bundling-guide-link.adoc[]
+
 == Options
 
 These configuration options affect the execution of the `+mentions+` plugin. The main option that needs to be implemented is the `+mentions_fetch+` callback.

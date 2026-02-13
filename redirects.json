@@ -19,6 +19,12 @@
   },
   {
     "location": "/docs/",
+    "pattern": "^/docs/?$",
+    "redirect": "/docs/tinymce/latest/"
+  },
+  {
+    "location": "/docs/",
+    "pattern": "^/docs/tinymce/?$",
     "redirect": "/docs/tinymce/latest/"
   },
   {

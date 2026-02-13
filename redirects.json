@@ -2751,6 +2751,11 @@
     "redirect": "/docs/tinymce/7/exportpdf/"
   },
   {
+    "location": "/docs/tinymce/8/",
+    "pattern": "^/docs/tinymce/8/(.*)$",
+    "redirect": "/docs/tinymce/latest/%1"
+  },
+  {
     "location": "/docs/tinymce/latest/6.0-release-notes-core-changes/",
     "redirect": "/docs/tinymce/6/"
   },

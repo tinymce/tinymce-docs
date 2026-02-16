@@ -10,7 +10,7 @@ Real-time AI interactions using Server-Sent Events (SSE) for immediate feedback 
 [[overview]]
 == Overview
 
-TinyMCE AI services use Server-Sent Events (SSE) to provide real-time streaming responses. This allows you to see AI-generated content as it is being created, providing immediate feedback and enabling interactive experiences.
+TinyMCE AI services use Server-Sent Events (SSE) to provide real-time streaming responses. This allows users to see AI-generated content as it is being created, providing immediate feedback and enabling interactive experiences.
 
 [[sse-event-types]]
 == SSE Event Types
@@ -35,7 +35,7 @@ const response = await fetch('/v1/your-endpoint', {
     'Content-Type': 'application/json'
   },
   body: JSON.stringify({
-    // Your request payload
+    // Request payload
   })
 });
 

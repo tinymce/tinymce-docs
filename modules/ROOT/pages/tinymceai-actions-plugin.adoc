@@ -5,7 +5,7 @@
 :description_short: quick actions feature
 :keywords: AI, quick actions, actions, tinymceai
 
-Quick actions streamline routine content transformations by offering one-click AI-powered suggestions directly within the editor. You can also ask questions about your selected text in AI chat to get instant AI insights and analysis. This feature enhances speed, relevance, and usability, particularly for repeatable or simple tasks. The feature comes with an easy-to-use window interface but can also act as a conversation starter with the xref:tinymceai-chat.adoc[Chat].
+Quick actions streamline routine content transformations by offering one-click AI-powered suggestions directly within the editor. This feature enhances speed, relevance, and usability, particularly for repeatable or simple tasks. The feature comes with an easy-to-use window interface but can also act as a conversation starter with the xref:tinymceai-chat.adoc[Chat].
 
 [[demo]]
 == Demo
@@ -15,22 +15,29 @@ liveDemo::tinymceai[]
 [[overview]]
 == Overview
 
-Actions are fast, stateless operations that transform content directly. Unlike Reviews that provide suggestions, Actions immediately modify your content based on the selected operation.
+Actions are fast, stateless operations that transform content directly. Unlike Reviews that provide suggestions, Actions immediately modify content based on the selected operation.
 
-**When to use Actions vs Reviews:** Use Actions when you need to transform specific text content (fix grammar, translate, adjust tone). Use Reviews when you need to analyze entire documents for quality improvements and get suggestions without automatically changing the content.
+**When to use Actions vs Reviews:** Use Actions when transforming a selection or small section of text (fix grammar, translate, adjust tone). Use Reviews when analyzing entire documents for quality improvements and getting suggestions without automatically changing the content.
 
 image::https://placehold.net/default.png[TinyMCE AI quick actions showing AI-powered suggestions and Q&A functionality]
 
 [[integration]]
 == Integration
 
-To start using the Quick Actions feature, first load the TinyMCE AI plugin in your editor configuration. xref:tinymceai-integration.adoc[Learn more about installing and enabling AI features].
+To start using the Quick Actions feature, first load the TinyMCE AI plugin in the editor configuration. xref:tinymceai-integration.adoc[Learn more about installing and enabling AI features].
 
-Then, you can add the menu that opens the list of Quick Actions (`tinymceai-actions`) image:https://placehold.net/default.png[Quick Actions icon,24px] to your main toolbar and/or balloon toolbar configurations. To learn more about toolbar configuration, refer to the xref:toolbar-configuration-options.adoc[toolbar configuration] guide.
+Then, add the menu that opens the list of Quick Actions (`tinymceai-actions`) image:https://placehold.net/default.png[Quick Actions icon,24px] to the main toolbar and/or context toolbar (selection toolbar) configurations. 
+
+[NOTE]
+====
+AI features are added to the selection toolbar by default when the plugin is enabled. The `tinymceai_context_toolbar` configuration option controls which AI features appear in the selection toolbar. Configure it to show specific features, for example: `tinymceai_context_toolbar: 'showai aiquickactions aireview'` or `tinymceai_context_toolbar: 'showai aireview'` to show only certain features.
+====
+
+To learn more about toolbar configuration, refer to the xref:toolbar-configuration-options.adoc[toolbar configuration] guide.
 
 image::https://placehold.net/default.png[TinyMCE AI Quick Actions dropdown in the toolbar]
 
-Finally, you can also add individual Quick Actions to the toolbar as shortcuts for even easier access. For example, you can add the `ask-ai` image:https://placehold.net/default.png[Ask AI icon,24px] button, or the `improve-writing` image:https://placehold.net/default.png[Improve Writing icon,24px] button (find it in the demo above). You can add whole categories to the toolbar, too. xref:tinymceai-actions-plugin.adoc#default-actions[Learn more about available actions].
+Finally, individual Quick Actions can also be added to the toolbar as shortcuts for even easier access. For example, add the `ask-ai` image:https://placehold.net/default.png[Ask AI icon,24px] button, or the `improve-writing` image:https://placehold.net/default.png[Improve Writing icon,24px] button (find it in the demo above). Whole categories can be added to the toolbar, too. xref:tinymceai-actions-plugin.adoc#default-actions[Learn more about available actions].
 
 The final example configuration looks as follows:
 
@@ -69,18 +76,18 @@ tinymce.init({
 
 There are two types of actions available in the quick actions feature:
 
-* Some actions, for instance, "Ask AI" or "Summarize", lead to the xref:tinymceai-chat.adoc[Chat] interface with selected text added as context. The former will just open the Chat and allow you to start typing your message. The latter, however, will not only open the Chat but also start the conversation for your current editor selection right away, and expect a summary of that selection from the AI.
+* Chat actions, such as "Explain" or "Summarize", open the xref:tinymceai-chat.adoc[Chat] interface with the selected text added as context and automatically start the conversation with a pre-filled prompt. Actions like "Ask AI" open the Chat interface and allow users to start typing their message.
 
-* Executing other actions like "Continue writing" or "Make shorter" will open the window interface conveniently right next to your selection and present the answers from the AI for you to accept or reject them.
+* Preview actions, such as "Continue writing", "Make shorter", "Improve writing", or "Fix grammar", display the AI response in a preview interface where users can review and accept or reject the suggested changes.
 
-You can define the behavior of each action when you xref:tinymceai-actions-plugin.adoc#custom-actions[create custom ones].
+The behavior of each action can be defined when xref:tinymceai-actions-plugin.adoc#custom-actions[creating custom ones].
 
 [[default-actions]]
 == Default Actions
 
-By default, the Quick Actions feature includes several built-in actions that speed up the content editing process. All Quick Actions can be accessed through the menu button image:https://placehold.net/default.png[Quick Actions icon,24px] (`tinymceai-actions`) but also individually when handpicked by the integrator in the xref:toolbar-configuration-options.adoc[editor toolbar configuration]. You can add the whole action categories to the toolbar too.
+By default, the Quick Actions feature includes several built-in actions that speed up the content editing process. All Quick Actions can be accessed through the menu button image:https://placehold.net/default.png[Quick Actions icon,24px] (`tinymceai-actions`) but also individually when handpicked by the integrator in the xref:toolbar-configuration-options.adoc[editor toolbar configuration]. Whole action categories can be added to the toolbar too.
 
-Keep in mind that you can xref:tinymceai-actions-plugin.adoc#custom-actions[add custom actions] to the list and xref:tinymceai-actions-plugin.adoc#removing-default-actions[remove defaults].
+Keep in mind that xref:tinymceai-actions-plugin.adoc#custom-actions[custom actions] can be added to the list and xref:tinymceai-actions-plugin.adoc#removing-default-actions[defaults can be removed].
 
 Here's the full list of available actions:
 
@@ -113,7 +120,7 @@ Here's the full list of available actions:
 [[custom-actions]]
 == Custom Actions
 
-The `tinymceai_actions_extraCommands` configuration property allows you to add new commands to the Quick actions feature. Below, you will find an example of three extra actions added to the user interface: two of them open the quick actions window, but the last one interacts with AI chat. Learn more about xref:tinymceai-actions-plugin.adoc#types-of-actions[types of actions].
+The `tinymceai_custom_commands` configuration property allows adding new commands to the Quick actions feature. The items can be type `action` (a quick action that goes straight to the preview rendering) or type `chat` (opens the chat interface). The `displayedPrompt` is used in the menu items, while the `prompt` is what is actually sent to the AI. The `model` is required for `action` type commands. Learn more about xref:tinymceai-actions-plugin.adoc#types-of-actions[types of actions].
 
 [source,js]
 ----
@@ -124,37 +131,38 @@ tinymce.init({
   tinymceai_token_provider: function() {
     return fetch('/api/token').then(response => response.text());
   },
-  tinymceai_actions_extraCommands: [
+  tinymceai_custom_commands: [
     {
-      id: 'add-quote-from-famous-person',
       displayedPrompt: 'Add a quote from a famous person',
       prompt: 'Add a quote from a known person, which would make sense in the context of the selected text.',
-      type: 'ACTION',
-      model: 'agent-1'
+      type: 'action',
+      model: 'gemini-2-5-flash'
     },
     {
-      id: 'summarize-in-bullet-points',
       displayedPrompt: 'Summarize in 5 bullet points',
       prompt: 'Summarize the selected text in 5 bullet points.',
-      type: 'CHAT'
+      type: 'chat'
     },
     {
-      id: 'include-more-sarcasm',
       displayedPrompt: 'Rewrite adding more sarcasm',
       prompt: 'Rewrite using a sarcastic tone.',
-      type: 'ACTION',
-      model: 'agent-1'
+      type: 'action',
+      model: 'gemini-2-5-flash'
     }
-    
-    // ... More commands ...
   ]
 });
 ----
 
-[[removing-default-actions]]
-== Removing default actions
+[[configuring-quick-actions-menu]]
+== Configuring Quick Actions menu
 
-The `tinymceai_actions_removeCommands` configuration property allows you to remove existing commands from the Quick actions feature. Here's an example that removes two actions ("Explain" and "Summarize"):
+Which actions appear in the Quick Actions menu can be configured by specifying the list of actions to include. The `tinymceai_quickactions_menu` configuration option controls the main menu items.
+
+Sub-menus have their own configuration options:
+* `tinymceai_chat_commands_menu` - Controls items in the "Chat commands" sub-menu
+* `tinymceai_adjust_length_menu` - Controls items in the "Adjust length" sub-menu
+* `tinymceai_change_tone_menu` - Controls items in the "Change tone" sub-menu
+* `tinymceai_translate_menu` - Controls items in the "Translate" sub-menu
 
 [source,js]
 ----
@@ -165,11 +173,22 @@ tinymce.init({
   tinymceai_token_provider: function() {
     return fetch('/api/token').then(response => response.text());
   },
-  tinymceai_actions_removeCommands: [
-    'explain',
-    'summarize'
-    
-    // ... More commands to remove ...
+  // Configure the main Quick Actions menu
+  tinymceai_quickactions_menu: [
+    'tinymceai-chat-commands',
+    'tinymceai-improve-writing',
+    'tinymceai-continue',
+    'tinymceai-fix-grammar',
+    'tinymceai-adjust-length',
+    'tinymceai-change-tone',
+    'tinymceai-translate',
+    'tinymceai-custom-commands'
+  ],
+  // Configure a sub-menu (e.g., chat commands)
+  tinymceai_chat_commands_menu: [
+    'tinymceai-explain',
+    'tinymceai-summarize',
+    'tinymceai-highlight-key-points'
   ]
 });
 ----

@@ -15,26 +15,26 @@ liveDemo::tinymceai[]
 [[overview]]
 == Overview
 
-The Review feature analyzes your content and provides specific recommendations for grammar, style, clarity, and tone improvements. Unlike Actions that transform content directly, Reviews analyze your content and provide suggestions without automatically changing the content.
+The Review feature analyzes content and provides specific recommendations for grammar, style, clarity, and tone improvements. Unlike Actions that transform content directly, Reviews analyze content and provide suggestions without automatically changing the content.
 
 image::https://placehold.net/default.png[TinyMCE AI Review feature showing AI-powered quality assurance and suggested edits]
 
 [[integration]]
 == Integration
 
-To start using the Review feature, first load the TinyMCE AI plugin in your editor configuration. The Review Mode button image:https://placehold.net/default.png[Review icon,24px] will appear in the AI user interface. xref:tinymceai-integration.adoc[Learn more about installing and enabling AI features].
+To start using the Review feature, first load the TinyMCE AI plugin in the editor configuration. The Review Mode button image:https://placehold.net/default.png[Review icon,24px] will appear in the AI user interface. xref:tinymceai-integration.adoc[Learn more about installing and enabling AI features].
 
 After picking one of the available commands in the Review Mode tab, AI will analyze the document and propose a series of suggestions:
 
 image::https://placehold.net/default.png[TinyMCE AI Review sidebar with suggestions]
 
-While in the Review Mode, the editor remains read-only and allows you to browse suggestions. You can either click suggestions in the sidebar or select them in the editor content (underlined):
+While in the Review Mode, the editor remains read-only and allows browsing suggestions. Suggestions can be clicked in the sidebar or selected in the editor content (underlined):
 
 image::https://placehold.net/default.png[TinyMCE AI Review suggestion in content]
 
-You can accept or dismiss review suggestions by clicking the corresponding buttons. You can also accept all suggestions by using the "Accept all" button in the top of the user interface and xref:tinymceai-chat.adoc#previewing-changes[preview changes similar to chat suggestions]. Changes that were accepted or dismissed become greyed out in the interface. You can also abandon the review by hitting the "Exit review" button.
+Review suggestions can be accepted or dismissed by clicking the corresponding buttons. All suggestions can also be accepted by using the "Accept all" button in the top of the user interface and xref:tinymceai-chat.adoc#previewing-changes[previewing changes similar to chat suggestions]. Changes that were accepted or dismissed become greyed out in the interface. The review can also be abandoned by clicking the "Exit review" button.
 
-Once you are done reviewing your document and all changes are accepted or rejected, click "Finish review" (the button state changes automatically) to return to the normal operation of the editor, where typing is possible.
+Once reviewing is complete and all changes are accepted or rejected, click "Finish review" (the button state changes automatically) to return to the normal operation of the editor, where typing is possible.
 
 [[review-commands]]
 == Review commands
@@ -45,8 +45,6 @@ The feature comes with several review commands:
 |===
 |Command name |Command description |Additional information
 
-|**Custom command** |Enter a custom command for a specific review |You can pick one of the xref:tinymceai-integration.adoc#supported-ai-models[available AI models] to execute a custom command
-
 |**Proofread** |Check the text for errors in grammar, spelling and punctuation |
 
 |**Improve clarity** |Improve the logical structure and precision for clearer message |
@@ -56,36 +54,12 @@ The feature comes with several review commands:
 |**Adjust length** |Shorten or lengthen the text as needed |_Longer_ and _Shorter_ options available
 
 |**Adjust tone and style** |Modify the text to a desired tone and style |Several tone and style options are available: _Casual, Direct, Friendly, Confident, Professional_
-
-|**Translate** |Translate the text into another language |Several languages are available out-of-the-box, and the list can be xref:tinymceai-review-plugin.adoc#customizing-translation-commands[customized]: _English, Spanish, French, German, Chinese (Simplified), Japanese, Russian, Portuguese, Korean, Italian_
 |===
 
-[[customizing-translation-commands]]
-== Customizing translation commands
-
-The `tinymceai_reviews_translations` configuration property allows you to provide a custom list of translations for the "Translate" check. For instance, the following configuration will add "German" and "French" to the list:
-
-[source,js]
-----
-tinymce.init({
-  selector: '#editor',
-  plugins: 'tinymceai',
-  toolbar: 'tinymceai',
-  tinymceai_token_provider: function() {
-    return fetch('/api/token').then(response => response.text());
-  },
-  tinymceai_reviews_translations: [
-    {
-      id: 'german',
-      label: 'German'
-    },
-    {
-      id: 'french',
-      label: 'French'
-    }
-  ]
-});
-----
+[NOTE]
+====
+Custom commands and translation are not currently supported in the Review feature. This may change in future updates.
+====
 
 [[related-features]]
 == Related Features

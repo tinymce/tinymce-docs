@@ -1,22 +1,22 @@
 == Configuration Steps
 
-=== Add Your API Key
+=== Add API Key
 
-* Replace `no-api-key` in both files with your actual {productname} API key
+* Replace `no-api-key` in both files with the actual {productname} API key
 * The API key should be the same in both the HTML script source and the JWT payload
 
-=== Add Your Private Key
+=== Add Private Key
 
-* Replace the private key placeholder in `jwt.php` with your actual private key
+* Replace the private key placeholder in `jwt.php` with the actual private key
 * Make sure it's in `PKCS8` format
 * Keep this key secure and never share it publicly
 
 === Configure AI Permissions
 
-* Adjust the `auth.ai.permissions` array in the JWT payload based on your requirements
+* Adjust the `auth.ai.permissions` array in the JWT payload based on requirements
 * See xref:tinymceai-permissions.adoc[Permissions] for available permissions and best practices
 
-=== Running Your Project
+=== Running the Project
 
 . Start the server:
 +
@@ -25,7 +25,7 @@
 php -S localhost:3000
 ----
 
-. Open your browser to: `http://localhost:3000`
-. You should see:
+. Open the browser to: `http://localhost:3000`
+. The following should be visible:
 * The {productname} editor
 * AI feature buttons in the toolbar (showai, aiquickactions, aireview)

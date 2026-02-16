@@ -5,14 +5,14 @@
 :description_short: AI chat feature
 :keywords: AI, chat, conversations, tinymceai
 
-Conversations allow you to exchange multiple messages with AI that maintains them in its context. Conversations can be extended by external context sources like websites or files, and have the ability to refer to editor content and suggest modifications.
+Conversations allow exchanging multiple messages with AI that maintains them in its context. Conversations can be extended by external context sources like websites or files, and have the ability to refer to editor content and suggest modifications.
 
 [[key-features]]
 == Key Features
 
 Upload PDFs, Word docs, and images for the AI to read and understand. Ask questions about specific sections and get intelligent answers. The AI extracts text while preserving structure from PDFs, maintains formatting context from Word documents, parses web content from HTML files, and processes images with OCR and object recognition.
 
-Each conversation builds on previous messages, so the AI keeps track of your entire discussion and any files you have shared. You can mix documents, images, web links, and text in one conversation, and the AI connects information across all formats. Enable web search for real-time research while keeping your conversation context.
+Each conversation builds on previous messages, so the AI keeps track of the entire discussion and any files that have been shared. Documents, images, web links, and text can be mixed in one conversation, and the AI connects information across all formats. Enable web search for real-time research while keeping conversation context.
 
 [[example-product-launch-workflow]]
 === Example: Product Launch Workflow
@@ -22,7 +22,7 @@ Each conversation builds on previous messages, so the AI keeps track of your ent
 . **Reference blog post** → _"Write a press release using this blog post and our competitive advantages"_
 . **Include brand guidelines** → _"Match our brand voice and key messaging"_
 
-The AI remembers everything you have shared and builds on it throughout your conversation.
+The AI remembers everything that has been shared and builds on it throughout the conversation.
 
 [[advanced-features]]
 == Advanced Features
@@ -64,7 +64,7 @@ Authorization: Bearer <your-token>
 [[upload-a-document]]
 === Upload a Document
 
-Before you can reference documents in conversations, you need to upload them first:
+Before documents can be referenced in conversations, they need to be uploaded first:
 
 [source,http]
 ----
@@ -84,7 +84,7 @@ Response:
 }
 ----
 
-You can see how to upload other resources, including web resources and files using https://tinymceai.api.tiny.cloud/docs#tag/Conversations[REST API documentation].
+See how to upload other resources, including web resources and files using https://tinymceai.api.tiny.cloud/docs#tag/Conversations[REST API documentation].
 
 [[send-a-message-with-context]]
 === Send a Message with Context
@@ -150,6 +150,6 @@ Conversations use Server-Sent Events (SSE) for real-time streaming responses. Se
 * xref:tinymceai-chat.adoc[AI Chat Plugin] – For plugin integration and UI configuration.
 * xref:tinymceai-reviews.adoc[Reviews API] – Content quality analysis and improvement suggestions.
 * xref:tinymceai-actions.adoc[Actions API] – Content transformation and batch processing.
-* xref:tinymceai-models.adoc[AI Models] – Choosing the right AI model for your conversations.
+* xref:tinymceai-models.adoc[AI Models] – Choosing the right AI model for conversations.
 * xref:tinymceai-streaming.adoc[Streaming Responses] – Implementing real-time conversation features.
 * xref:tinymceai-api-overview.adoc[API Overview] – Overview of all API features.

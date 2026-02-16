@@ -8,7 +8,7 @@
 [[recommended-agent-models]]
 == Recommended: Agent Models
 
-The `agent-1` model automatically selects the best AI model for your request based on speed, quality, and cost. It's the recommended choice for most use cases as it optimizes performance and cost automatically.
+The `agent-1` model automatically selects the best AI model for requests based on speed, quality, and cost. It's the recommended choice for most use cases as it optimizes performance and cost automatically.
 
 [[available-models]]
 == Available Models
@@ -18,7 +18,7 @@ TinyMCE AI supports multiple AI models from different providers. Each model has 
 [[limitations]]
 === Limitations
 
-Model availability depends on your subscription tier and service compatibility version. Some models may have specific limitations or requirements.
+Model availability depends on the subscription tier and service compatibility version. Some models may have specific limitations or requirements.
 
 [[how-model-selection-works]]
 == How Model Selection Works
@@ -30,7 +30,7 @@ The agent model (`agent-1`) automatically selects the best underlying model base
 * **Required capabilities** – Web search and reasoning require compatible models
 * **Cost optimization** – Balances quality with cost efficiency
 
-You can also specify a model directly in your API requests for more control.
+A model can also be specified directly in API requests for more control.
 
 [[model-compatibility-versions]]
 == Model Compatibility Versions
@@ -45,7 +45,7 @@ Compatibility versions allow TinyMCE AI to introduce new models and capabilities
 [[checking-compatibility]]
 === Checking Compatibility
 
-Check the `/v1/models` endpoint to see available models for your compatibility version. The API response includes model capabilities, limits, and availability.
+Check the `/v1/models` endpoint to see available models for the compatibility version. The API response includes model capabilities, limits, and availability.
 
 [[model-capabilities]]
 == Model Capabilities
@@ -65,11 +65,11 @@ Enable step-by-step reasoning to see the AI's problem-solving process. Some mode
 **Always-on reasoning models:**
 
 * Reasoning is always active during inference.
-* You cannot turn reasoning off via the API.
+* Reasoning cannot be turned off via the API.
 
 To determine if a model has always-on reasoning, check the API response when listing models. Models with mandatory reasoning will indicate this in their capability structure.
 
-NOTE: Please observe, that model names such as `gpt-5`, `claude-4-sonnet`, etc. are examples. Actual available models depend on your service's compatibility version. Use the `/v1/models` endpoint to see current available models for your environment.
+NOTE: Please observe, that model names such as `gpt-5`, `claude-4-sonnet`, etc. are examples. Actual available models depend on the service's compatibility version. Use the `/v1/models` endpoint to see current available models for the environment.
 
 [[web-scraping]]
 === Web Scraping
@@ -82,7 +82,7 @@ Extract and process content from web pages for analysis and summarization.
 [[file-processing-limits]]
 === File Processing Limits
 
-Files are limited to 7MB each (PDF, DOCX, PNG, JPEG, Markdown, HTML, Plain text). You can upload up to 100 files per conversation with a total size limit of 30MB. PDF files are limited to 100 pages total across all PDFs in a conversation.
+Files are limited to 7MB each (PDF, DOCX, PNG, JPEG, Markdown, HTML, Plain text). Up to 100 files can be uploaded per conversation with a total size limit of 30MB. PDF files are limited to 100 pages total across all PDFs in a conversation.
 
 [[model-specific-file-limits]]
 ==== Model-specific file limits
@@ -104,7 +104,7 @@ Model descriptions returned by the API are provided in English and may be update
 
 NOTE: Backend translation handling for model descriptions is planned in a future release. Until then, use the approach described below.
 
-If your application requires translated model descriptions, maintain a translation map in your code keyed by `model.id`, with fallback to the English description from the API for unknown models. This allows new models to work immediately while you add translations at your own pace.
+If the application requires translated model descriptions, maintain a translation map in the code keyed by `model.id`, with fallback to the English description from the API for unknown models. This allows new models to work immediately while translations are added at a custom pace.
 
 [[model-deprecation]]
 === Model Deprecation

@@ -15,7 +15,7 @@ include::partial$auth/private-public-key-pairs-for-tiny-cloud-services.adoc[]
 
 == JWT Configuration Requirements
 
-This section explains what needs to be configured for JWT authentication, whether you're using a managed service (such as AWS or Azure JWT services) or setting up a manual endpoint.
+This section explains what needs to be configured for JWT authentication, whether using a managed service (such as AWS or Azure JWT services) or setting up a manual endpoint.
 
 include::partial$auth/how-jwts-are-used.adoc[]
 
@@ -92,7 +92,7 @@ See xref:tinymceai-permissions.adoc[Permissions] for a complete list of availabl
 
 == Set up JWT Endpoint
 
-The following section shows how to create a JWT endpoint manually. If you're using a managed JWT service (such as AWS or Azure), configure it according to the requirements above and skip to the xref:#configure-tinymce[Configure TinyMCE] section.
+The following section shows how to create a JWT endpoint manually. If using a managed JWT service (such as AWS or Azure), configure it according to the requirements above and skip to the xref:#configure-tinymce[Configure TinyMCE] section.
 
 === Server Setup (jwt.php)
 
@@ -112,7 +112,7 @@ function fatalError($message) {
 
 // Check for OpenSSL extension
 if (!extension_loaded('openssl')) {
-    fatalError('You need to enable the openssl extension in your php.ini.');
+    fatalError('The openssl extension must be enabled in php.ini.');
 }
 
 // Enable CORS
@@ -121,7 +121,7 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 
 // JWT payload
 $payload = array(
-    "aud" => "no-api-key", // Replace with your actual API key
+    "aud" => "no-api-key", // Replace with the actual API key
     "sub" => "user-id", // Replace with actual user identifier
     "iat" => time(), // Issue timestamp
     "exp" => time() + 60 * 10, // Expiration time (10 minutes)
@@ -139,7 +139,7 @@ $payload = array(
 );
 
 try {
-    // Tokens are signed with the RS256 algorithm using your private key
+    // Tokens are signed with the RS256 algorithm using the private key
     $privateKey = <<<EOD
     -----BEGIN PRIVATE KEY-----
     {Your private PKCS8 key goes here}
@@ -158,7 +158,7 @@ try {
 
 [NOTE]
 ====
-The JWT payload includes an `auth.ai.permissions` array that defines what AI features the user can access. Adjust these permissions based on your requirements. See xref:tinymceai-permissions.adoc[Permissions] for more details on available permissions.
+The JWT payload includes an `auth.ai.permissions` array that defines what AI features the user can access. Adjust these permissions based on requirements. See xref:tinymceai-permissions.adoc[Permissions] for more details on available permissions.
 ====
 
 == Configure TinyMCE
@@ -166,7 +166,7 @@ The JWT payload includes an `auth.ai.permissions` array that defines what AI fea
 [[configure-tinymce]]
 === Web Page (index.html)
 
-Inside the root directory where you created the `index.html` file add the HTML setup code.
+Inside the root directory where the `index.html` file was created, add the HTML setup code.
 
 [source,html]
 ----
@@ -209,7 +209,7 @@ include::partial$auth/tinymceai/php/configuration-steps.adoc[]
 
 [NOTE]
 ====
-When you run the project, you should see:
+When running the project, the following should be visible:
 
 * The {productname} editor
 * AI feature buttons in the toolbar (`showai`, `aiquickactions`, `aireview`)

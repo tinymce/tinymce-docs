@@ -16,7 +16,7 @@ extension_dir='ext'
 ----
 
 [TIP]
-The path to the extension directory may vary depending on your system.
+The path to the extension directory may vary depending on the system.
 
 == Quick Start Guide
 
@@ -35,12 +35,12 @@ composer require firebase/php-jwt
 
 [source,bash]
 ----
-# Create the public folder for your web files
+# Create the public folder for web files
 touch index.html
 touch jwt.php
 ----
 
-Your project should look like this:
+The project should look like this:
 
 [source]
 ----

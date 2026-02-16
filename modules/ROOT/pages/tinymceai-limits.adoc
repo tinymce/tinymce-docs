@@ -17,7 +17,7 @@ TinyMCE AI implements various limits to ensure fair usage, optimal performance, 
 
 Rate limits control the frequency of API requests to prevent abuse and ensure service stability. The service implements limits on API requests, token usage, web search, and web scraping requests per minute. All rate limits are applied at both organization level (higher limits) and individual user level (lower limits) to ensure fair usage.
 
-NOTE: Specific rate limit values are subject to change and may vary based on your subscription tier. Contact support for current rate limit details for your environment.
+NOTE: Specific rate limit values are subject to change and may vary based on the subscription tier. Contact support for current rate limit details for the environment.
 
 [[context-limits]]
 == Context Limits
@@ -27,7 +27,7 @@ Context limits control how much content can be attached to conversations to ensu
 [[file-limits]]
 === File Limits
 
-Files are limited to 7MB each (PDF, DOCX, PNG, JPEG, Markdown, HTML, Plain text). You can upload up to 100 files per conversation with a total size limit of 30MB. PDF files are limited to 100 pages total across all PDFs in a conversation.
+Files are limited to 7MB each (PDF, DOCX, PNG, JPEG, Markdown, HTML, Plain text). Up to 100 files can be uploaded per conversation with a total size limit of 30MB. PDF files are limited to 100 pages total across all PDFs in a conversation.
 
 [[model-specific-file-limits]]
 ==== Model-specific file limits

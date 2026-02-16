@@ -4,9 +4,9 @@
 
 This guide provides a comprehensive walkthrough for integrating {pluginname} with {productname}, including {pluginname} functionality, by using a PHP server for JWT token generation. It covers project setup, server configuration, and {productname} customization.
 
-=== What You'll Build
+=== What Will Be Built
 
-Before diving into the technical details, here's what you'll achieve with this guide:
+Before diving into the technical details, here's what will be achieved with this guide:
 
 * A working {productname} editor running the {pluginname} plugin
 * A secure authentication system using JWT tokens
@@ -21,13 +21,13 @@ This guide is designed for developers new to JWT authentication and {productname
 
 Before starting, ensure you have:
 
-* PHP installed on your computer (to check, run `php -v` in your terminal)
-* OpenSSL installed on your computer (to check, run `openssl version` in your terminal)
-* Composer installed on your computer  (to check, run `composer -v` in your terminal)
+* PHP installed on the computer (to check, run `php -v` in the terminal)
+* OpenSSL installed on the computer (to check, run `openssl version` in the terminal)
+* Composer installed on the computer  (to check, run `composer -v` in the terminal)
 * A {productname} API key with TinyMCE AI enabled (get one from link:https://www.tiny.cloud/signup[TinyMCE's website])
 * Basic familiarity with the command line
 
 [IMPORTANT]
 ====
-Make sure you have your API key ready before starting. You'll need it for both the server and client configuration.
+Make sure the API key is ready before starting. It will be needed for both the server and client configuration.
 ====

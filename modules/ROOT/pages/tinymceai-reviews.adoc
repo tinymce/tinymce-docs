@@ -5,9 +5,9 @@
 :description_short: AI review feature
 :keywords: AI, review, reviews, tinymceai
 
-Reviews provide comprehensive content analysis and improvement suggestions. Unlike Actions that transform content directly, Reviews analyze your content and provide specific recommendations for grammar, style, clarity, and tone improvements.
+Reviews provide comprehensive content analysis and improvement suggestions. Unlike Actions that transform content directly, Reviews analyze content and provide specific recommendations for grammar, style, clarity, and tone improvements.
 
-**When to use Reviews vs Actions:** Use Reviews when you need to analyze entire documents for quality improvements and get suggestions without automatically changing the content. Use Actions when you need to transform specific text content (fix grammar, translate, adjust tone).
+**When to use Reviews vs Actions:** Use Reviews when analyzing entire documents for quality improvements and getting suggestions without automatically changing the content. Use Actions when transforming specific text content (fix grammar, translate, adjust tone).
 
 [[available-reviews]]
 == Available Reviews
@@ -27,9 +27,9 @@ TinyMCE AI provides built-in system reviews for comprehensive content analysis:
 [[custom-reviews]]
 === Custom Reviews
 
-In addition to system reviews, you can create custom reviews tailored to your specific content quality standards and editorial guidelines. Custom reviews allow you to define specialized analysis criteria using your own prompts to control the review behavior.
+In addition to system reviews, custom reviews can be created tailored to specific content quality standards and editorial guidelines. Custom reviews allow defining specialized analysis criteria using custom prompts to control the review behavior.
 
-Unlike system reviews that use predefined identifiers, custom reviews use a unified endpoint where you define the analysis behavior through a prompt parameter.
+Unlike system reviews that use predefined identifiers, custom reviews use a unified endpoint where the analysis behavior is defined through a prompt parameter.
 
 [[key-features]]
 == Key Features
@@ -144,7 +144,7 @@ Authorization: Bearer <your-token>
 }
 ----
 
-Custom reviews require the `ai:reviews:custom` permission in your JWT token.
+Custom reviews require the `ai:reviews:custom` permission in the JWT token.
 
 [[streaming-responses]]
 == Streaming Responses

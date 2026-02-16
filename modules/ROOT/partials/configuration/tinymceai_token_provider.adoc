@@ -19,7 +19,7 @@ tinymce.init({
 });
 ----
 
-NOTE: In production, you should fetch the JWT token from your backend server rather than hardcoding it. For example:
+NOTE: In production, fetch the JWT token from the backend server rather than hardcoding it. For example:
 
 [source,js]
 ----

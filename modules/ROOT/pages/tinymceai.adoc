@@ -24,17 +24,17 @@ liveDemo::{plugincode}[]
 To setup the {pluginname} plugin in the editor:
 
 * add `{plugincode}` to the `plugins` option in the editor configuration;
-* add `{plugincode}` to the `toolbar` option in the editor configuration;
 * configure the `tinymceai_token_provider` option to provide authentication tokens;
+* add the AI toolbar buttons to the `toolbar` option in the editor configuration. The plugin provides approximately 3 toolbar buttons for different features: `showai`, `aiquickactions`, and `aireview`;
 
 For example:
 
 [source,js]
 ----
 tinymce.init({
-  selector: 'textarea',  // change this value according to your HTML
+  selector: 'textarea',  // change this value according to the HTML
   plugins: 'tinymceai',
-  toolbar: 'tinymceai',
+  toolbar: 'showai aiquickactions aireview',
   tinymceai_token_provider: function() {
     // Return a promise that resolves to a JWT token
     return fetch('/api/token').then(response => response.text());
@@ -85,21 +85,26 @@ The {pluginname} plugin has the following known issues and caveats:
 
 === General HTML Support
 
-{pluginname} may not work correctly when General HTML Support for block elements is enabled. This issue will be addressed in future updates. In the meantime, we recommend avoiding configurations that may cause problems.
+{pluginname} may not work correctly when General HTML Support for block elements is enabled. This issue will be addressed in future updates. In the meantime, avoid configurations that may cause problems.
 
 === Issues with tables
 
-We are aware of certain glitches that may occur when the AI modifies complex tables or layout tables. To prevent data loss, please ensure that the content around these structures remains intact when using {pluginname} tools, while our team investigates the causes and potential solutions to this issue.
+Certain glitches may occur when the AI modifies complex tables or layout tables. To prevent data loss, ensure that the content around these structures remains intact when using {pluginname} tools, while the team investigates the causes and potential solutions to this issue.
 
 === Editor context and multiple editor handling
 
-While it's possible to use {pluginname} with multiple editors in an editor context, only the first editor registered in the context will currently be able to interact with AI tools and benefit from the content suggestions made by the AI. As our team works on resolving this issue, we recommend using standalone editor instances with {pluginname}.
+While it's possible to use {pluginname} with multiple editors in an editor context, only the first editor registered in the context will currently be able to interact with AI tools and benefit from the content suggestions made by the AI. As the team works on resolving this issue, use standalone editor instances with {pluginname}.
 
 === Inline image processing issues
 
 Inline images may not be processed correctly by commands within AI review. A solution is currently under development.
 
 === Quick actions and content markers issues
+
+[NOTE]
+====
+// TODO: Verify with QA about their testing results before finalizing this known issue documentation.
+====
 
 Applying quick action responses may result in the loss of Comments and Suggested Edits suggestion markers. This issue will be addressed in a future update.
 
@@ -109,6 +114,6 @@ The interactivity of historical AI chat conversations can become limited over ti
 
 === Issues with specific AI models
 
-Some AI models may occasionally return empty responses. If this occurs, we recommend sending a follow-up message asking the Assistant to complete the previous request, or starting a new conversation.
+Some AI models may occasionally return empty responses. If this occurs, send a follow-up message asking the Assistant to complete the previous request, or start a new conversation.
 
-NOTE: If you wish to stay informed about updates or discuss {pluginname} possibilities, please reach out to us.
+NOTE: To stay informed about updates or discuss {pluginname} possibilities, please reach out.

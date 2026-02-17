@@ -1,14 +1,39 @@
-= TinyMCE AI Permissions
+= TinyMCE AI JWT Permissions
 
 :navtitle: Permissions
-:description: Permission configuration for TinyMCE AI
-:description_short: Permission configuration
-:keywords: AI, permissions, configuration, tinymceai
-
-[[overview]]
-== Overview
+:description: JWT permissions system for TinyMCE AI
+:description_short: JWT Permissions
+:keywords: AI, JWT, permissions, authentication, tinymceai
 
 TinyMCE AI uses a permission-based access control system to manage user access to AI features. Permissions are specified in JWT tokens and control which features, models, and capabilities users can access.
+
+For information about JWT authentication setup and required claims, see xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication].
+
+[[quick-reference]]
+== Quick Reference
+
+[cols="2,3"]
+|===
+|Category |Permissions
+
+|Admin
+|`ai:admin`
+
+|Models
+|`ai:models:*`, `ai:models:<provider>:*`, `ai:models:<provider>:<model-name>`, `ai:models:agent`
+
+|Conversations
+|`ai:conversations:*`, `ai:conversations:read`, `ai:conversations:write`, `ai:conversations:websearch`, `ai:conversations:reasoning`
+
+|Context
+|`ai:conversations:context:*`, `ai:conversations:context:files:*`, `ai:conversations:context:files:<format>`, `ai:conversations:context:urls`
+
+|Actions
+|`ai:actions:*`, `ai:actions:custom`, `ai:actions:system:*`, `ai:actions:system:<action-name>`
+
+|Reviews
+|`ai:reviews:*`, `ai:reviews:custom`, `ai:reviews:system:*`, `ai:reviews:system:<review-name>`
+|===
 
 [[use-cases]]
 == Use Cases
@@ -24,140 +49,118 @@ TinyMCE AI uses a permission-based access control system to manage user access t
 Permissions follow a hierarchical format: `ai:<category>:<subcategory>:<specific-permission>`
 
 [[admin-permissions]]
-=== Admin Permissions
+== Admin Permissions
 
-[[aiadmin]]
-==== `ai:admin`
+[cols="2,3"]
+|===
+|Permission |Description
 
-Grants full access to all TinyMCE AI features, models, and capabilities. Use with caution in production environments.
+|`ai:admin`
+|Grants full access to all TinyMCE AI features, models, and capabilities. Use with caution in production environments.
+|===
 
 [[model-permissions]]
-=== Model Permissions
+== Model Permissions
 
-[[aimodels]]
-==== `ai:models:*`
+[cols="2,3"]
+|===
+|Permission |Description
 
-Access to all available AI models. Use with caution as this includes access to new models that may be more expensive.
+|`ai:models:*`
+|Access to all available AI models. Use with caution as this includes access to new models that may be more expensive.
 
-[[aimodelsprovider]]
-==== `ai:models:<provider>:*`
+|`ai:models:<provider>:*`
+|Access to all models from a specific provider (e.g., `ai:models:openai:*`, `ai:models:anthropic:*`).
 
-Access to all models from a specific provider (e.g., `ai:models:openai:*`, `ai:models:anthropic:*`).
+|`ai:models:<provider>:<model-name>`
+|Access to a specific model (e.g., `ai:models:openai:gpt-4o`, `ai:models:anthropic:claude-3-sonnet`).
 
-[[aimodelsprovidermodel-name]]
-==== `ai:models:<provider>:<model-name>`
-
-Access to a specific model (e.g., `ai:models:openai:gpt-4o`, `ai:models:anthropic:claude-3-sonnet`).
-
-[[aimodelsagent-recommended]]
-==== `ai:models:agent` ⭐ Recommended
-
-Access to the agent model which automatically selects the best model for each request. This is the recommended permission for most use cases.
+|`ai:models:agent` ⭐ Recommended
+|Access to the agent model which automatically selects the best model for each request. This is the recommended permission for most use cases.
+|===
 
 [[conversation-permissions]]
-=== Conversation Permissions
+== Conversation Permissions
 
-[[aiconversations]]
-==== `ai:conversations:*`
+[cols="2,3"]
+|===
+|Permission |Description
 
-Full access to all conversation features including read, write, web search, and reasoning.
+|`ai:conversations:*`
+|Full access to all conversation features including read, write, web search, and reasoning.
 
-[[aiconversationsread]]
-==== `ai:conversations:read`
+|`ai:conversations:read`
+|Ability to read and list conversations.
 
-Ability to read and list conversations.
+|`ai:conversations:write`
+|Ability to create and send messages in conversations.
 
-[[aiconversationswrite]]
-==== `ai:conversations:write`
+|`ai:conversations:websearch`
+|Ability to use web search capability in conversations.
 
-Ability to create and send messages in conversations.
-
-[[aiconversationswebsearch]]
-==== `ai:conversations:websearch`
-
-Ability to use web search capability in conversations.
-
-[[aiconversationsreasoning]]
-==== `ai:conversations:reasoning`
-
-Ability to use reasoning capability in conversations.
+|`ai:conversations:reasoning`
+|Ability to use reasoning capability in conversations.
+|===
 
 [[context-permissions]]
-=== Context Permissions
+== Context Permissions
 
-[[aiconversationscontext]]
-==== `ai:conversations:context:*`
+[cols="2,3"]
+|===
+|Permission |Description
 
-Access to all context types (files and URLs).
+|`ai:conversations:context:*`
+|Access to all context types (files and URLs).
 
-[[aiconversationscontextfiles]]
-==== `ai:conversations:context:files:*`
+|`ai:conversations:context:files:*`
+|Access to all file types for context.
 
-Access to all file types for context.
+|`ai:conversations:context:files:<format>`
+|Access to specific file formats (e.g., `ai:conversations:context:files:pdf`, `ai:conversations:context:files:docx`).
 
-[[aiconversationscontextfilesformat]]
-==== `ai:conversations:context:files:<format>`
-
-Access to specific file formats (e.g., `ai:conversations:context:files:pdf`, `ai:conversations:context:files:docx`).
-
-[[aiconversationscontexturls]]
-==== `ai:conversations:context:urls`
-
-Ability to use web URLs as context sources.
+|`ai:conversations:context:urls`
+|Ability to use web URLs as context sources.
+|===
 
 [[actions-permissions]]
-=== Actions Permissions
+== Actions Permissions
 
-[[aiactions]]
-==== `ai:actions:*`
+[cols="2,3"]
+|===
+|Permission |Description
 
-Access to all action types, including custom and system actions.
+|`ai:actions:*`
+|Access to all action types, including custom and system actions.
 
-[[aiactionscustom]]
-==== `ai:actions:custom`
+|`ai:actions:custom`
+|Ability to run custom actions with free-form prompts.
 
-Ability to run custom actions with free-form prompts.
+|`ai:actions:system:*`
+|Access to all pre-defined system actions.
 
-[[aiactionssystem]]
-==== `ai:actions:system:*`
-
-Access to all pre-defined system actions.
-
-[[aiactionssystemaction-name]]
-==== `ai:actions:system:<action-name>`
-
-Access to specific system actions. Examples:
-
-* `ai:actions:system:improve-writing`
-* `ai:actions:system:fix-grammar`
-* `ai:actions:system:translate`
+|`ai:actions:system:<action-name>`
+|Access to specific system actions. Examples: `ai:actions:system:improve-writing`, `ai:actions:system:fix-grammar`, `ai:actions:system:translate`
+|===
 
 [[reviews-permissions]]
-=== Reviews Permissions
+== Reviews Permissions
 
-[[aireviews]]
-==== `ai:reviews:*`
+[cols="2,3"]
+|===
+|Permission |Description
 
-Access to all review types, including custom and system reviews.
+|`ai:reviews:*`
+|Access to all review types, including custom and system reviews.
 
-[[aireviewscustom]]
-==== `ai:reviews:custom`
+|`ai:reviews:custom`
+|Ability to run custom reviews with free-form prompts.
 
-Ability to run custom reviews with free-form prompts.
+|`ai:reviews:system:*`
+|Access to all pre-defined system reviews.
 
-[[aireviewssystem]]
-==== `ai:reviews:system:*`
-
-Access to all pre-defined system reviews.
-
-[[aireviewssystemreview-name]]
-==== `ai:reviews:system:<review-name>`
-
-Access to specific system reviews. Examples:
-
-* `ai:reviews:system:correctness`
-* `ai:reviews:system:clarity`
-* `ai:reviews:system:make-tone-professional`
+|`ai:reviews:system:<review-name>`
+|Access to specific system reviews. Examples: `ai:reviews:system:correctness`, `ai:reviews:system:clarity`, `ai:reviews:system:make-tone-professional`
+|===
 
 [[permission-examples]]
 == Permission Examples
@@ -250,11 +253,11 @@ Avoid `ai:models:*` in production to prevent unexpected access to new expensive 
 
 When a user lacks required permissions, the API returns a `403 Forbidden` error with the message "No permissions to the resource". Common issues include missing model permissions, file type restrictions, feature access without permission, and action/review access without permission.
 
-[[next-steps]]
-== Next Steps
+[[related-features]]
+== Related Features
 
-* xref:tinymceai-models.adoc[Learn about AI Models] for model selection and capabilities.
-* xref:tinymceai-conversations.adoc[Learn about Conversations] for interactive AI discussions.
-* xref:tinymceai-reviews.adoc[Explore Reviews] for content improvement.
-* xref:tinymceai-actions.adoc[Discover Actions] for content transformation.
-* https://tinymceai.api.tiny.cloud/docs[API Documentation] – Complete API reference for TinyMCE AI.
+* xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication] – JWT authentication setup and required claims.
+* xref:tinymceai-models.adoc[AI Models] – Model selection and capabilities.
+* xref:tinymceai-chat.adoc[Chat] – Interactive AI discussions.
+* xref:tinymceai-review-plugin.adoc[Review] – Content improvement.
+* xref:tinymceai-actions-plugin.adoc[Quick Actions] – Content transformation.

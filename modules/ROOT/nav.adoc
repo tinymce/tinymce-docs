@@ -262,30 +262,21 @@
 **** xref:ai-proxy.adoc[AI proxy server reference guide]
 *** TinyMCE AI
 **** xref:tinymceai-introduction.adoc[Introduction]
-***** xref:tinymceai-chat.adoc[Chat]
-***** xref:tinymceai-review-plugin.adoc[Review]
-***** xref:tinymceai-actions-plugin.adoc[Actions]
-***** xref:tinymceai-integration.adoc[Integration]
-***** xref:tinymceai-integration-options.adoc[Integration Options]
-****** xref:tinymceai.adoc[Plugin quick start]
-****** REST API
-******* xref:tinymceai-api-overview.adoc[API Overview]
-******* xref:tinymceai-api-quick-start.adoc[API quick start]
-******* Features
-******** xref:tinymceai-conversations.adoc[Conversations]
-******** xref:tinymceai-reviews.adoc[Reviews]
-******** xref:tinymceai-actions.adoc[Actions]
-******* Configuration
-******** xref:tinymceai-models.adoc[AI models]
-******** xref:tinymceai-permissions.adoc[Permissions]
-******** xref:tinymceai-limits.adoc[Limits]
-******** xref:tinymceai-streaming.adoc[Streaming]
-******* Integration
-******** xref:tinymceai-api-overview.adoc#data-handling-and-security[Data Handling and Security]
-
-******** xref:tinymceai-api-overview.adoc#security-features[Security]
-******** xref:tinymceai-api-overview.adoc#on-premises-deployment[On-premises deployment]
-***** JWT Authentication
+**** xref:tinymceai-chat.adoc[Chat]
+**** xref:tinymceai-review-plugin.adoc[Review]
+**** xref:tinymceai-actions-plugin.adoc[Actions]
+**** xref:tinymceai-integration-options.adoc[Integration Options]
+***** xref:tinymceai.adoc[Plugin quick start]
+***** REST API
+****** xref:tinymceai-api-overview.adoc[API Overview]
+****** xref:tinymceai-api-quick-start.adoc[API quick start]
+****** Configuration
+******* xref:tinymceai-models.adoc[AI models]
+******* xref:tinymceai-limits.adoc[Limits]
+******* xref:tinymceai-streaming.adoc[Streaming]
+**** xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication]
+***** xref:tinymceai-permissions.adoc[Permissions]
+***** Guides
 ****** xref:tinymceai-with-jwt-authentication-nodejs.adoc[JWT authentication (Node.js)]
 ****** xref:tinymceai-with-jwt-authentication-php.adoc[JWT authentication (PHP)]
 *** xref:casechange.adoc[Case Change]

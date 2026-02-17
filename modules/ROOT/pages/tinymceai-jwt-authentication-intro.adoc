@@ -1,0 +1,74 @@
+= TinyMCE AI JWT Authentication
+
+:navtitle: JWT Authentication
+:description: JWT authentication requirements and permissions for TinyMCE AI
+:description_short: JWT Authentication
+:keywords: AI, JWT, authentication, permissions, tinymceai
+
+TinyMCE AI requires JWT (JSON Web Token) authentication when using the Tiny Cloud service. JWT authentication provides secure, user-specific access to TinyMCE AI features. Each JWT token contains claims that identify the user and specify which AI features they can access.
+
+[[requirements]]
+== Requirements
+
+JWT authentication for TinyMCE AI requires the following components:
+
+[[public-private-key-pair]]
+=== Public/Private Key Pair
+
+A public/private key pair is required for signing JWT tokens. The public key must be added to your {accountpage}, and the private key is used by your JWT endpoint to sign tokens.
+
+For details on generating and managing key pairs, see:
+
+* xref:tinymceai-with-jwt-authentication-nodejs.adoc#generate-a-public-private-key-pair[Node.js guide - Generate a Public/Private Key Pair]
+* xref:tinymceai-with-jwt-authentication-php.adoc#generate-a-public-private-key-pair[PHP guide - Generate a Public/Private Key Pair]
+
+[[jwt-endpoint]]
+=== JWT Endpoint
+
+A JWT endpoint that generates tokens with required claims. The endpoint must accept JSON HTTP POST requests and return a JSON response containing the signed JWT token.
+
+For detailed endpoint requirements, see:
+
+* xref:tinymceai-with-jwt-authentication-nodejs.adoc#jwt-endpoint-requirements[Node.js guide - JWT endpoint requirements]
+* xref:tinymceai-with-jwt-authentication-php.adoc#jwt-endpoint-requirements[PHP guide - JWT endpoint requirements]
+
+[[required-claims]]
+=== Required JWT Claims
+
+JWT tokens must include the following required claims: `aud`, `sub`, `iat`, `exp`, and `auth`. The `auth` object contains AI-specific permissions that control feature access.
+
+For complete details on all required claims, including types, formats, and examples, see:
+
+* xref:tinymceai-with-jwt-authentication-nodejs.adoc#required-jwt-claims-for-tinymce-ai[Node.js guide - Required JWT claims]
+* xref:tinymceai-with-jwt-authentication-php.adoc#required-jwt-claims-for-tinymce-ai[PHP guide - Required JWT claims]
+
+[[permissions]]
+=== Permissions
+
+Permissions are specified in the `auth.ai.permissions` array within the JWT token and control which AI features, models, and capabilities users can access.
+
+For a complete list of available permissions, permission examples, and best practices, see xref:tinymceai-permissions.adoc[Permissions].
+
+[[quick-setup]]
+== Quick Setup
+
+To set up JWT authentication for TinyMCE AI:
+
+. Generate a public/private key pair and add the public key to your {accountpage} via link:{accountjwturl}[{accountpage} - JWT Keys].
+. Set up a JWT endpoint that generates tokens with the required claims.
+. Configure your {productname} to use the JWT endpoint via the `tinymceai_token_provider` option.
+
+For step-by-step implementation instructions with complete code examples, see:
+
+* xref:tinymceai-with-jwt-authentication-nodejs.adoc[JWT authentication (Node.js)] – Complete Node.js implementation guide
+* xref:tinymceai-with-jwt-authentication-php.adoc[JWT authentication (PHP)] – Complete PHP implementation guide
+
+[[related-features]]
+== Related Features
+
+* xref:tinymceai-permissions.adoc[Permissions]: Complete permissions reference and examples.
+* xref:tinymceai-models.adoc[AI Models]: Model selection and capabilities.
+* xref:tinymceai-chat.adoc[Chat]: Interactive AI discussions.
+* xref:tinymceai-review-plugin.adoc[Review]: Content improvement.
+* xref:tinymceai-actions-plugin.adoc[Quick Actions]: Content transformation.
+* link:https://tinymceai.api.tiny.cloud/docs[API Documentation]: Complete API reference for TinyMCE AI.

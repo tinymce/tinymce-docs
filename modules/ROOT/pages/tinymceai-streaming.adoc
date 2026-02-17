@@ -17,9 +17,9 @@ TinyMCE AI services use Server-Sent Events (SSE) to provide real-time streaming 
 
 Different AI services provide different types of streaming events. For service-specific event details, see:
 
-* xref:tinymceai-conversations.adoc#streaming-responses[Conversations] – Interactive AI discussions with text streaming, web search sources, and reasoning.
-* xref:tinymceai-reviews.adoc#streaming-responses[Reviews] – Content improvement suggestions and review progress.
-* xref:tinymceai-actions.adoc#streaming-responses[Actions] – Content transformations and action progress.
+* xref:tinymceai-chat.adoc#conversations-streaming[Chat] – Interactive AI discussions with text streaming, web search sources, and reasoning.
+* xref:tinymceai-review-plugin.adoc#reviews-streaming[Review] – Content improvement suggestions and review progress.
+* xref:tinymceai-actions-plugin.adoc#actions-streaming[Quick Actions] – Content transformations and action progress.
 
 [[basic-implementation]]
 == Basic Implementation
@@ -78,9 +78,9 @@ while (true) {
 
 For detailed event handling examples specific to each service, see:
 
-* xref:tinymceai-conversations.adoc#streaming-responses[Conversations] – Text streaming, web search sources, reasoning, and document modifications.
-* xref:tinymceai-reviews.adoc#streaming-responses[Reviews] – Review suggestions and progress tracking.
-* xref:tinymceai-actions.adoc#streaming-responses[Actions] – Content transformations and action progress.
+* xref:tinymceai-chat.adoc#conversations-streaming[Chat] – Text streaming, web search sources, reasoning, and document modifications.
+* xref:tinymceai-review-plugin.adoc#reviews-streaming[Review] – Review suggestions and progress tracking.
+* xref:tinymceai-actions-plugin.adoc#actions-streaming[Quick Actions] – Content transformations and action progress.
 
 [[error-handling]]
 == Error Handling
@@ -106,7 +106,7 @@ if (data.event === 'error') {
 [[progress-tracking]]
 == Progress Tracking
 
-Use metadata events to show progress. For service-specific progress tracking examples, see xref:tinymceai-reviews.adoc[Review progress and status information].
+Use metadata events to show progress. For service-specific progress tracking examples, see xref:tinymceai-review-plugin.adoc[Review progress and status information].
 
 [[api-reference]]
 == API Reference
@@ -121,6 +121,6 @@ For complete documentation on streaming endpoints, event schemas, and error code
 [[next-steps]]
 == Next Steps
 
-* xref:tinymceai-conversations.adoc[Learn about Conversations] for interactive AI discussions.
-* xref:tinymceai-reviews.adoc[Explore Reviews] for content improvement.
-* xref:tinymceai-actions.adoc[Discover Actions] for content transformation.
+* xref:tinymceai-chat.adoc[Learn about Chat] for interactive AI discussions.
+* xref:tinymceai-review-plugin.adoc[Explore Review] for content improvement.
+* xref:tinymceai-actions-plugin.adoc[Discover Quick Actions] for content transformation.

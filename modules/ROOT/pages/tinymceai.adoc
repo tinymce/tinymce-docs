@@ -27,7 +27,8 @@ To setup the {pluginname} plugin in the editor:
 * configure the `tinymceai_token_provider` option to provide authentication tokens;
 * add the AI toolbar buttons to the `toolbar` option in the editor configuration. The plugin provides approximately 3 toolbar buttons for different features: `showai`, `aiquickactions`, and `aireview`;
 
-For example:
+[[minimal-setup]]
+=== Minimal setup
 
 [source,js]
 ----
@@ -42,12 +43,149 @@ tinymce.init({
 });
 ----
 
+[[complete-setup]]
+=== Complete setup example
+
+An example {pluginname} configuration with common options:
+
+[source,js]
+----
+tinymce.init({
+  selector: '#editor',
+  plugins: 'tinymceai',
+  
+  // Add AI toolbar buttons
+  toolbar: 'showai aiquickactions aireview',
+  
+  // AI features are added to the selection toolbar by default
+  // Configure which features appear using tinymceai_context_toolbar
+  
+  // Configure the document identifier for AI chat history and context preservation.
+  // This should be a unique identifier for the document/article being edited.
+  tinymceai_document_id: 'document-123', // Replace with the actual document ID
+  
+  // Main configuration of AI feature.
+  tinymceai_token_provider: function() {
+    return fetch('/api/token').then(response => response.text());
+  },
+  
+  // Configure sidebar type (static or floating)
+  tinymceai_sidebar_type: 'static',
+  
+  // (Optional) Configure AI chat model selection.
+  tinymceai_default_model: 'agent-1',
+  tinymceai_allow_model_selection: true,
+  tinymceai_allowed_models: ['gpt', 'claude'],
+  
+  // (Optional) Configure additional context sources for AI chat.
+  // Built-in options (document, URLs, files) are always available.
+  tinymceai_additional_sources_list: async (query) => [
+    {
+      id: 'my-doc-1',
+      label: 'My Document 1',
+      type: 'text'
+    },
+    {
+      id: 'my-doc-2',
+      label: 'My Document 2',
+      type: 'text'
+    }
+    // ... More sources ...
+  ],
+  
+  // (Optional) Function to fetch content for additional sources.
+  tinymceai_get_additional_source: async (id) => {
+    // Fetch content from the database or API
+    return fetch(`/api/documents/${id}`).then(response => response.text());
+  },
+  
+  // (Optional) Configure custom Quick Actions commands.
+  tinymceai_custom_commands: [
+    {
+      displayedPrompt: 'Explain like I am five',
+      prompt: 'Explain the following text in simple terms.',
+      type: 'chat'
+    }
+    // ... More custom actions ...
+  ]
+});
+----
+
 [[options]]
 == Options
 
 The following configuration options affect the behavior of the {pluginname} plugin.
 
 include::partial$configuration/tinymceai_token_provider.adoc[leveloffset=+1]
+
+include::partial$configuration/tinymceai_document_id.adoc[leveloffset=+1]
+
+[[tinymceai-sidebar-type]]
+== `+tinymceai_sidebar_type+`
+
+This option controls how the AI sidebar is displayed. The sidebar can be set to `static` (default) or `floating`.
+
+*Type:* `+String+`
+
+*Default value:* `+'static'+`
+
+*Valid values:*
+* `+'static'+` – The sidebar is rendered inside the editor.
+* `+'floating'+` – The sidebar is rendered in a separate container outside of the editor and can be dragged on the page.
+
+.Example: using `tinymceai_sidebar_type` option
+[source,javascript]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  tinymceai_sidebar_type: 'static',  // or 'floating'
+  tinymceai_token_provider: function() {
+    return fetch('/api/token').then(response => response.text());
+  }
+});
+----
+
+[NOTE]
+====
+Changing the `tinymceai_sidebar_type` property dynamically (after the editor has been initialized) is not supported and can result in unpredictable behavior.
+====
+
+[[ui-control]]
+== UI Control
+
+The AI user interface can be toggled by users using toolbar buttons or menu items. Clicking a toolbar button (or menu item) opens or minimizes the relevant AI sidebar.
+
+* Clicking the chat toolbar button opens the chat sidebar. Clicking it again minimizes the chat sidebar. Importantly, minimizing the chat sidebar does not wipe the chat history—it just hides the sidebar.
+* Clicking the review button opens the review sidebar.
+* When reviewing suggested changes, the sidebar can be minimized to provide more screen space for reviewing. Once done reviewing, the sidebar can be opened again to continue working.
+
+The AI sidebar can also be toggled programmatically:
+
+[source,js]
+----
+// Toggle the AI sidebar
+editor.execCommand('tinymceai-toggle-sidebar');
+----
+
+By default, the AI interface will be hidden when the editor is created. To have it visible on load, use the `tinymceai-toggle-sidebar` command after the editor is initialized:
+
+[source,js]
+----
+tinymce.init({
+  selector: '#editor',
+  plugins: 'tinymceai',
+  tinymceai_token_provider: function() {
+    return fetch('/api/token').then(response => response.text());
+  },
+  setup: function(editor) {
+    editor.on('init', function() {
+      // Show the AI interface on load
+      editor.execCommand('tinymceai-toggle-sidebar');
+    });
+  }
+});
+----
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 

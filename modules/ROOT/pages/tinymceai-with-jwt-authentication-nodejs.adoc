@@ -17,6 +17,8 @@ include::partial$auth/private-public-key-pairs-for-tiny-cloud-services.adoc[]
 
 This section explains what needs to be configured for JWT authentication, whether using a managed service (such as AWS or Azure JWT services) or setting up a manual endpoint.
 
+For complete information about JWT requirements, claims, and permissions, see xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication].
+
 include::partial$auth/how-jwts-are-used.adoc[]
 
 === JWT endpoint requirements
@@ -87,7 +89,7 @@ auth: {
 
 [NOTE]
 ====
-See xref:tinymceai-permissions.adoc[Permissions] for a complete list of available permissions and best practices for configuring user access.
+See xref:tinymceai-jwt-authentication-intro.adoc#permissions[Permissions] for a complete list of available permissions and best practices for configuring user access.
 ====
 
 == Set up JWT Endpoint

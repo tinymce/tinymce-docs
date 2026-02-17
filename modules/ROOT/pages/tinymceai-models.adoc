@@ -13,7 +13,89 @@ The `agent-1` model automatically selects the best AI model for requests based o
 [[available-models]]
 == Available Models
 
-TinyMCE AI supports multiple AI models from different providers. Each model has unique capabilities, performance characteristics, and cost profiles.
+TinyMCE AI supports multiple AI models from different providers. Each model has unique capabilities, performance characteristics, and cost profiles. By default, the automatically selected model (`agent-1`) will be used for optimal cost and performance.
+
+[[supported-models-table]]
+=== Supported Models
+
+Here's a detailed list of available models with their capabilities:
+
+[cols="1,2,1,1,2"]
+|===
+|Model |Description |xref:tinymceai-chat.adoc#web-search[Web Search] |xref:tinymceai-chat.adoc#reasoning[Reasoning] |Configuration id
+
+|**Auto (default)**
+|Automatically selects best model for speed, quality, and cost.
+|Yes
+|Yes
+|`'auto'` (also `'agent-1'`, learn more about xref:tinymceai-models.adoc#model-compatibility-versions[compatibility versions])
+
+|**GPT-5.2**
+|OpenAI's flagship model for advanced reasoning, creativity, and complex tasks
+|Yes
+|Yes
+|`'gpt-5.2'`
+
+|**GPT-5.1**
+|OpenAI's flagship model for advanced reasoning, creativity, and complex tasks
+|Yes
+|Yes
+|`'gpt-5.1'`
+
+|**GPT-5**
+|OpenAI's flagship model for advanced reasoning, creativity, and complex tasks
+|Yes
+|Yes
+|`'gpt-5'`
+
+|**GPT-5 Mini**
+|A lightweight version of GPT-5 – faster, more cost-efficient
+|Yes
+|Yes
+|`'gpt-5-mini'`
+
+|**Claude 4.5 Haiku**
+|Cost-efficient model for quick interactions with improved reasoning
+|Yes
+|Yes
+|`'claude-4-5-haiku'`
+
+|**Claude 4.5 Sonnet**
+|Advanced model with improved creativity, reliability, and reasoning
+|Yes
+|Yes
+|`'claude-4-5-sonnet'`
+
+|**Gemini 3 Pro**
+|Google's advanced model for versatile problem-solving and research
+|Yes
+|Yes
+|`'gemini-3-pro'`
+
+|**Gemini 3 Flash**
+|Lightweight Gemini model for fast, cost-efficient interactions
+|Yes
+|Yes
+|`'gemini-3-flash'`
+
+|**Gemini 2.5 Flash**
+|Lightweight Gemini model for fast, cost-efficient interactions
+|Yes
+|Yes
+|`'gemini-2-5-flash'`
+
+|**GPT-4.1**
+|OpenAI's model for reliable reasoning, speed, and versatility
+|Yes
+|No
+|`'gpt-4.1'`
+
+|**GPT-4.1 Mini**
+|A lighter variant of GPT-4.1 that balances speed and cost while maintaining solid accuracy
+|Yes
+|No
+|`'gpt-4.1-mini'`
+|===
 
 [[limitations]]
 === Limitations
@@ -211,6 +293,6 @@ For complete documentation on model endpoints, compatibility versions, and capab
 [[related-features]]
 == Related Features
 
-* xref:tinymceai-conversations.adoc[Conversations] – Use models in interactive AI discussions.
-* xref:tinymceai-reviews.adoc[Reviews] – Apply models to content analysis and improvement.
-* xref:tinymceai-actions.adoc[Actions] – Use models for content transformation tasks.
+* xref:tinymceai-chat.adoc[Chat] – Use models in interactive AI discussions.
+* xref:tinymceai-review-plugin.adoc[Review] – Apply models to content analysis and improvement.
+* xref:tinymceai-actions-plugin.adoc[Quick Actions] – Use models for content transformation tasks.

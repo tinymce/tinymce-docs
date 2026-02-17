@@ -5,12 +5,15 @@
 :description_short: AI Chat feature
 :keywords: AI, chat, conversations, tinymceai
 
-The TinyMCE AI Chat is a conversational AI that can be used to aid content creation and editing. It introduces a dynamic chat interface designed to facilitate rich, multi-turn interactions between users and an AI Assistant. This capability moves beyond single-prompt content generation, enabling a more interactive and collaborative experience within writing workflows.
+The TinyMCE AI Chat is a conversational AI that facilitates rich, multi-turn interactions between users and an AI Assistant for content creation and editing. It provides context setting, model selection, chat history, and capabilities for web search and reasoning.
 
-[[overview]]
-== Overview
+The Chat feature is available as a plugin UI and via the xref:tinymceai-chat.adoc#conversations-api[Conversations API]. This page covers both:
 
-The Chat feature provides context setting and model selection to better suit the needs of specific content and holds chat history for quick reference of previous work. The Chat is also capable of using the web for more up-to-date information and reasoning to think more deeply about the answers and changes it is allowed to make.
+* Plugin sections describe user-facing features and configuration.
+* API sections cover REST API access (starting at xref:tinymceai-chat.adoc#conversations-api[Conversations API]).
+
+[[using-chat]]
+== Using Chat
 
 image::https://placehold.net/default.png[TinyMCE AI Chat interface showing the conversational AI assistant]
 
@@ -73,7 +76,7 @@ Model selection for AI chat can be configured using three separate configuration
 * `tinymceai_allow_model_selection`: Control whether users can select from available models (defaults to `true`).
 * `tinymceai_allowed_models`: Specify an array of allowed model IDs that users can select from.
 
-xref:tinymceai-integration.adoc#supported-ai-models[Learn more about available AI models].
+xref:tinymceai-models.adoc#supported-models-table[Learn more about available AI models].
 
 [source,js]
 ----
@@ -182,21 +185,61 @@ The ability to apply suggestions to the document or generate Suggested Edits fro
 After closing the browser and reopening AI chat, previous conversations will no longer interact with the document content. To continue working with a conversation, reopen it from the chat history.
 ====
 
-[[advanced-features]]
-== Advanced Features
+[[conversations-api]]
+== Conversations API
 
-The Chat feature supports advanced capabilities:
+The Chat plugin feature is built on top of the Conversations API, which provides REST API access to conversation functionality. Conversations allow exchanging multiple messages with AI that maintains them in its context. Conversations can be extended by external context sources like websites or files, and have the ability to refer to editor content and suggest modifications.
 
-* xref:tinymceai-chat.adoc#chat-history[**Multi-turn conversations**] - Maintain context across multiple interactions
-* xref:tinymceai-chat.adoc#available-models[**Model selection**] - Choose the appropriate AI model for the task
-* xref:tinymceai-chat.adoc#web-search[**Web Search**] - Access up-to-date information from the web
-* xref:tinymceai-chat.adoc#reasoning[**Reasoning**] - Deep thinking about answers and changes
+[[conversations-key-features]]
+=== Key Features
 
-For more information about API-level features, see xref:tinymceai-conversations.adoc[Conversations API documentation].
+Upload PDFs, Word docs, and images for the AI to read and understand. Ask questions about specific sections and get intelligent answers. The AI extracts text while preserving structure from PDFs, maintains formatting context from Word documents, parses web content from HTML files, and processes images with OCR and object recognition.
+
+Each conversation builds on previous messages, so the AI keeps track of the entire discussion and any files that have been shared. Documents, images, web links, and text can be mixed in one conversation, and the AI connects information across all formats.
+
+[[example-product-launch-workflow]]
+=== Example: Product Launch Workflow
+
+. **Upload product spec** → _"What are the key features for marketing?"_
+. **Add competitor analysis** → _"How do we compare to competitors?"_
+. **Reference blog post** → _"Write a press release using this blog post and our competitive advantages"_
+. **Include brand guidelines** → _"Match our brand voice and key messaging"_
+
+The AI remembers everything that has been shared and builds on it throughout the conversation.
+
+[[conversations-api-capabilities]]
+=== API Capabilities
+
+When using the Conversations API directly, you can configure advanced capabilities:
+
+* **Web Search** – Enable real-time web search to access current information during conversations. Configure via the `webSearch` capability in API requests. See https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Web-Resources[Conversation Web Resources API] for endpoint details.
+* **Reasoning** – Enable step-by-step reasoning to see the AI's problem-solving process. Configure via the `reasoning` capability in API requests. See https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Messages[Conversation Messages API] for endpoint details.
+
+[[conversations-streaming]]
+=== Streaming Responses
+
+Conversations use Server-Sent Events (SSE) for real-time streaming responses. See the xref:tinymceai-streaming.adoc[Streaming Responses guide] for detailed implementation information and code examples.
+
+[[conversations-api-reference]]
+=== API Reference
+
+For complete API documentation including endpoints, parameters, request/response schemas, and interactive examples, see:
+
+* **https://tinymceai.api.tiny.cloud/docs#tag/Conversations[REST API Conversations Documentation]** – Full documentation for conversations endpoints with interactive examples
+
+The REST API documentation includes examples for:
+
+* Creating conversations - see https://tinymceai.api.tiny.cloud/docs#tag/Conversations[Conversations API]
+* Uploading documents - see https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Documents[Conversation Documents API]
+* Uploading files - see https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Files[Conversation Files API]
+* Uploading web resources - see https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Web-Resources[Conversation Web Resources API]
+* Sending messages with context - see https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Messages[Conversation Messages API]
+* Configuring web search capabilities - see https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Web-Resources[Conversation Web Resources API]
+* Configuring reasoning capabilities - see https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Messages[Conversation Messages API]
+* Streaming responses - see https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Messages[Conversation Messages API]
 
 [[related-features]]
 == Related Features
 
 * xref:tinymceai-review-plugin.adoc[AI review] – For content quality analysis and improvement suggestions.
 * xref:tinymceai-actions-plugin.adoc[Quick actions] – For fast, stateless content transformations.
-* xref:tinymceai-introduction.adoc[Introduction] – Overview of all TinyMCE AI features.

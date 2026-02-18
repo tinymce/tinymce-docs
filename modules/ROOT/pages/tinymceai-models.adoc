@@ -5,6 +5,8 @@
 :description_short: AI model configuration
 :keywords: AI, models, configuration, tinymceai
 
+TinyMCE AI supports multiple AI models from different providers. Model selection and configuration can be done through the plugin UI or via the REST API. This page covers model capabilities, configuration options, and limitations that apply to both plugin and API usage.
+
 [[recommended-agent-models]]
 == Recommended: Agent Models
 
@@ -112,7 +114,13 @@ The agent model (`agent-1`) automatically selects the best underlying model base
 * **Required capabilities** – Web search and reasoning require compatible models
 * **Cost optimization** – Balances quality with cost efficiency
 
-A model can also be specified directly in API requests for more control.
+[[model-configuration]]
+=== Model Configuration
+
+Models can be configured in two ways:
+
+* **Plugin Configuration** – Use `tinymceai_default_model`, `tinymceai_allow_model_selection`, and `tinymceai_allowed_models` options. See xref:tinymceai-chat.adoc#model-selection-configuration[Chat model configuration] for details.
+* **API Configuration** – Specify the model directly in API requests for more control. See xref:tinymceai-models.adoc#api-examples[API Examples] below.
 
 [[model-compatibility-versions]]
 == Model Compatibility Versions
@@ -127,12 +135,15 @@ Compatibility versions allow TinyMCE AI to introduce new models and capabilities
 [[checking-compatibility]]
 === Checking Compatibility
 
-Check the `/v1/models` endpoint to see available models for the compatibility version. The API response includes model capabilities, limits, and availability.
+To see available models for your compatibility version:
+
+* **Via API** – Check the `/v1/models` endpoint. The API response includes model capabilities, limits, and availability.
+* **Via Plugin** – Available models are shown in the model selection dropdown when `tinymceai_allow_model_selection` is enabled.
 
 [[model-capabilities]]
 == Model Capabilities
 
-Different models support different capabilities. Check the model information endpoint to see which capabilities are available for each model.
+Different models support different capabilities. Check the model information via the API endpoint or the plugin's model selection UI to see which capabilities are available for each model.
 
 [[web-search]]
 === Web Search
@@ -149,9 +160,9 @@ Enable step-by-step reasoning to see the AI's problem-solving process. Some mode
 * Reasoning is always active during inference.
 * Reasoning cannot be turned off via the API.
 
-To determine if a model has always-on reasoning, check the API response when listing models. Models with mandatory reasoning will indicate this in their capability structure.
+To determine if a model has always-on reasoning, check the API response when listing models or refer to the model capabilities in the plugin UI. Models with mandatory reasoning will indicate this in their capability structure.
 
-NOTE: Please observe, that model names such as `gpt-5`, `claude-4-sonnet`, etc. are examples. Actual available models depend on the service's compatibility version. Use the `/v1/models` endpoint to see current available models for the environment.
+NOTE: Please observe, that model names such as `gpt-5`, `claude-4-sonnet`, etc. are examples. Actual available models depend on the service's compatibility version. Use the `/v1/models` API endpoint or check the plugin's model selection dropdown to see current available models for your environment.
 
 [[web-scraping]]
 === Web Scraping
@@ -195,6 +206,8 @@ Models scheduled for removal will include a `removal` field with an ISO 8601 dat
 
 [[api-examples]]
 == API Examples
+
+The following examples show how to configure models when using the REST API directly. For plugin configuration, see xref:tinymceai-chat.adoc#model-selection-configuration[Chat model configuration].
 
 [[model-selection]]
 === Model Selection
@@ -293,6 +306,7 @@ For complete documentation on model endpoints, compatibility versions, and capab
 [[related-features]]
 == Related Features
 
-* xref:tinymceai-chat.adoc[Chat] – Use models in interactive AI discussions.
+* xref:tinymceai-chat.adoc[Chat] – Use models in interactive AI discussions and configure model selection.
 * xref:tinymceai-review-plugin.adoc[Review] – Apply models to content analysis and improvement.
 * xref:tinymceai-actions-plugin.adoc[Quick Actions] – Use models for content transformation tasks.
+* xref:tinymceai.adoc[Plugin Reference] – Complete plugin configuration options including model settings.

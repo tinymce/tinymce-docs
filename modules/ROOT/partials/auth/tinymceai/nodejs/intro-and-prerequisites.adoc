@@ -1,6 +1,6 @@
 == Introduction
 
-{pluginname} requires setting up JSON Web Token (JWT) authentication to maintain control over AI feature access. A JWT endpoint generates and provides authorization tokens that verify users are authorized to use AI features, preventing unauthorized access. As a standard web services authorization solution, JWT is documented extensively at link:https://jwt.io/[https://jwt.io/].
+{pluginname} requires setting up JSON Web Token (JWT) authentication to maintain control over AI feature access. A JWT endpoint generates and provides authorization tokens that verify users are authorized to use AI features, preventing unauthorized access. As a standard web services authorization solution, JWT is documented extensively at link:https://jwt.io/[https://jwt.io/]. {productname} recommends using the libraries listed on link:https://www.jwt.io/libraries[jwt.io/libraries] to create JWT tokens.
 
 This guide provides a comprehensive walkthrough for integrating {pluginname} with {productname}, including {pluginname} functionality, by using a Node.js server for JWT token generation. It covers project setup, server configuration, and {productname} customization.
 

@@ -50,6 +50,9 @@ jobs:
     - name: Build Website
       run: yarn antora ./antora-playbook.yml
 
+    - name: Copy llms.txt files to root
+      run: ./-scripts/copy-llms-files.sh build/site
+
     - name: Rename site folder to docs
       run: |
         mv ./build/site ./build/docs

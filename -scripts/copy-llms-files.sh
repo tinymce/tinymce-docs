@@ -7,30 +7,15 @@ set -e
 
 BUILD_DIR="${1:-build/site}"
 
-if [ ! -d "$BUILD_DIR" ]; then
-  echo "Error: Build directory not found: $BUILD_DIR"
+echo "Copying llms.txt files to $BUILD_DIR/..."
+
+find "$BUILD_DIR" -mindepth 2 \( -name "llms.txt" -o -name "llms-full.txt" \) \
+    -exec cp {} "$BUILD_DIR/" \; \
+    -print
+
+if [ ! -f "$BUILD_DIR/llms.txt" ] || [ ! -f "$BUILD_DIR/llms-full.txt" ]; then
+  echo "Error: one or both llms.txt files were not copied to $BUILD_DIR"
   exit 1
 fi
 
-# Find the latest version directory (usually 'latest' or version number)
-LATEST_DIR=$(find "$BUILD_DIR" -type d -path "*/tinymce/*/_attachments" -name "_attachments" | head -1 | xargs dirname)
-
-if [ -z "$LATEST_DIR" ]; then
-  echo "Error: Could not find _attachments directory in $BUILD_DIR"
-  exit 1
-fi
-
-ATTACHMENTS_DIR="$LATEST_DIR/_attachments"
-
-if [ ! -f "$ATTACHMENTS_DIR/llms.txt" ] || [ ! -f "$ATTACHMENTS_DIR/llms-full.txt" ]; then
-  echo "Error: llms.txt files not found in $ATTACHMENTS_DIR"
-  exit 1
-fi
-
-# Copy files to root
-cp "$ATTACHMENTS_DIR/llms.txt" "$BUILD_DIR/llms.txt"
-cp "$ATTACHMENTS_DIR/llms-full.txt" "$BUILD_DIR/llms-full.txt"
-
-echo "✓ Copied llms.txt files to $BUILD_DIR/"
-echo "  - $BUILD_DIR/llms.txt"
-echo "  - $BUILD_DIR/llms-full.txt"
+echo "Done."

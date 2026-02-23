@@ -1,0 +1,64 @@
+= Using {productname} in Laravel
+:navtitle: Laravel
+:description: Integrate TinyMCE into your Laravel application. Choose from Cloud, Composer, or ZIP installation methods.
+:keywords: integration, integrate, laravel, php, composer, tinymce
+
+{productname} can be integrated into Laravel applications to provide rich text editing capabilities.
+
+== Installation methods
+
+Choose the installation method that best fits your project:
+
+=== Cloud
+
+The fastest way to get started with {productname} in Laravel. The editor is loaded from the {cloudname} CDN.
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:laravel-tiny-cloud.adoc[Using {cloudname}]
+
+Get started quickly with {productname} using the {cloudname} CDN. No build configuration required.
+
+// Empty cell to even out rows
+|
+
+|===
+
+=== Self-hosted
+
+Install {productname} using Composer.
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:laravel-composer-install.adoc[Using the Composer package]
+
+Install and configure {productname} in your Laravel application using Composer.
+
+// Empty cell to even out rows
+|
+
+|===
+
+=== ZIP
+
+Download and install {productname} from a .zip archive. Suitable for traditional web deployments.
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:laravel-zip-install.adoc[Using a .zip package]
+
+Extract {productname} from a .zip archive and integrate it into your Laravel application.
+
+// Empty cell to even out rows
+|
+
+|===

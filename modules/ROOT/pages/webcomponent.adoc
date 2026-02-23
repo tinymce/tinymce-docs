@@ -1,0 +1,64 @@
+= Using {productname} as a Web Component
+:navtitle: Web Component
+:description: Integrate TinyMCE as a web component. Choose from Cloud, self-hosted, or ZIP installation methods.
+:keywords: integration, integrate, web-component, web-components, tinymce
+
+{productname} can be used as a web component, making it easy to integrate into any web application regardless of framework.
+
+== Installation methods
+
+Choose the installation method that best fits your project:
+
+=== Cloud
+
+The fastest way to get started with {productname} as a web component. The editor is loaded from the {cloudname} CDN.
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:webcomponent-cloud.adoc[Using {cloudname}]
+
+Get started quickly with {productname} using the {cloudname} CDN. No build configuration required.
+
+// Empty cell to even out rows
+|
+
+|===
+
+=== Self-hosted
+
+Install {productname} using npm, Yarn, or other package managers.
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:webcomponent-pm.adoc[Using a package manager]
+
+Install and configure {productname} as a web component using a package manager.
+
+// Empty cell to even out rows
+|
+
+|===
+
+=== ZIP
+
+Download and install {productname} from a .zip archive. Suitable for traditional web deployments.
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:webcomponent-zip.adoc[Using a .zip package]
+
+Extract {productname} from a .zip archive and use it as a web component.
+
+// Empty cell to even out rows
+|
+
+|===

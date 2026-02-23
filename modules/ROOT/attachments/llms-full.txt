@@ -31,58 +31,58 @@ TinyMCE is a rich text editor that provides a WYSIWYG editing experience. The la
 ## Integration Guides
 
 ### Frontend Frameworks
-- **React**: https://www.tiny.cloud/docs/tinymce/latest/integrations/react/
+- **React**: https://www.tiny.cloud/docs/tinymce/latest/react/
   - Cloud: https://www.tiny.cloud/docs/tinymce/latest/react-cloud/
   - Package Manager: https://www.tiny.cloud/docs/tinymce/latest/react-pm-host/
   - ZIP: https://www.tiny.cloud/docs/tinymce/latest/react-zip-host/
-- **Vue.js**: https://www.tiny.cloud/docs/tinymce/latest/integrations/vue/
+- **Vue.js**: https://www.tiny.cloud/docs/tinymce/latest/vue/
   - Cloud: https://www.tiny.cloud/docs/tinymce/latest/vue-cloud/
   - Package Manager: https://www.tiny.cloud/docs/tinymce/latest/vue-pm/
   - ZIP: https://www.tiny.cloud/docs/tinymce/latest/vue-zip/
-- **Angular**: https://www.tiny.cloud/docs/tinymce/latest/integrations/angular/
+- **Angular**: https://www.tiny.cloud/docs/tinymce/latest/angular/
   - Cloud: https://www.tiny.cloud/docs/tinymce/latest/angular-cloud/
   - Package Manager: https://www.tiny.cloud/docs/tinymce/latest/angular-pm/
   - ZIP: https://www.tiny.cloud/docs/tinymce/latest/angular-zip/
-- **Blazor**: https://www.tiny.cloud/docs/tinymce/latest/integrations/blazor/
+- **Blazor**: https://www.tiny.cloud/docs/tinymce/latest/blazor/
   - Cloud: https://www.tiny.cloud/docs/tinymce/latest/blazor-cloud/
   - Package Manager: https://www.tiny.cloud/docs/tinymce/latest/blazor-pm/
   - ZIP: https://www.tiny.cloud/docs/tinymce/latest/blazor-zip/
-- **Svelte**: https://www.tiny.cloud/docs/tinymce/latest/integrations/svelte/
+- **Svelte**: https://www.tiny.cloud/docs/tinymce/latest/svelte/
   - Cloud: https://www.tiny.cloud/docs/tinymce/latest/svelte-cloud/
   - Package Manager: https://www.tiny.cloud/docs/tinymce/latest/svelte-pm/
   - ZIP: https://www.tiny.cloud/docs/tinymce/latest/svelte-zip/
-- **Web Component**: https://www.tiny.cloud/docs/tinymce/latest/integrations/webcomponent/
+- **Web Component**: https://www.tiny.cloud/docs/tinymce/latest/webcomponent/
   - Cloud: https://www.tiny.cloud/docs/tinymce/latest/webcomponent-cloud/
   - Package Manager: https://www.tiny.cloud/docs/tinymce/latest/webcomponent-pm/
   - ZIP: https://www.tiny.cloud/docs/tinymce/latest/webcomponent-zip/
-- **jQuery**: https://www.tiny.cloud/docs/tinymce/latest/integrations/jquery/
+- **jQuery**: https://www.tiny.cloud/docs/tinymce/latest/jquery/
   - Cloud: https://www.tiny.cloud/docs/tinymce/latest/jquery-cloud/
   - Package Manager: https://www.tiny.cloud/docs/tinymce/latest/jquery-pm/
 
 ### Backend Frameworks
-- **Django**: https://www.tiny.cloud/docs/tinymce/latest/integrations/django/
+- **Django**: https://www.tiny.cloud/docs/tinymce/latest/django/
   - Cloud: https://www.tiny.cloud/docs/tinymce/latest/django-cloud/
   - ZIP: https://www.tiny.cloud/docs/tinymce/latest/django-zip/
-- **Laravel**: https://www.tiny.cloud/docs/tinymce/latest/integrations/laravel/
+- **Laravel**: https://www.tiny.cloud/docs/tinymce/latest/laravel/
   - Cloud: https://www.tiny.cloud/docs/tinymce/latest/laravel-tiny-cloud/
   - Composer: https://www.tiny.cloud/docs/tinymce/latest/laravel-composer-install/
   - ZIP: https://www.tiny.cloud/docs/tinymce/latest/laravel-zip-install/
-- **Ruby on Rails**: https://www.tiny.cloud/docs/tinymce/latest/integrations/rails/
+- **Ruby on Rails**: https://www.tiny.cloud/docs/tinymce/latest/rails/
   - Cloud: https://www.tiny.cloud/docs/tinymce/latest/rails-cloud/
   - Package Manager: https://www.tiny.cloud/docs/tinymce/latest/rails-third-party/
   - ZIP: https://www.tiny.cloud/docs/tinymce/latest/rails-zip/
-- **Node.js + Express**: https://www.tiny.cloud/docs/tinymce/latest/integrations/expressjs/
+- **Node.js + Express**: https://www.tiny.cloud/docs/tinymce/latest/expressjs-pm/
   - Package Manager: https://www.tiny.cloud/docs/tinymce/latest/expressjs-pm/
 
 ### Other Integrations
-- **Bootstrap**: https://www.tiny.cloud/docs/tinymce/latest/integrations/bootstrap/
+- **Bootstrap**: https://www.tiny.cloud/docs/tinymce/latest/bootstrap/
   - Cloud: https://www.tiny.cloud/docs/tinymce/latest/bootstrap-cloud/
   - ZIP: https://www.tiny.cloud/docs/tinymce/latest/bootstrap-zip/
-- **PHP Projects**: https://www.tiny.cloud/docs/tinymce/latest/integrations/php-projects/
-- **.NET Projects**: https://www.tiny.cloud/docs/tinymce/latest/integrations/dotnet-projects/
-- **WordPress**: https://www.tiny.cloud/docs/tinymce/latest/integrations/wordpress/
-- **Shadow DOM**: https://www.tiny.cloud/docs/tinymce/latest/integrations/shadow-dom/
-- **Java Swing**: https://www.tiny.cloud/docs/tinymce/latest/integrations/swing/
+- **PHP Projects**: https://www.tiny.cloud/docs/tinymce/latest/php-projects/
+- **.NET Projects**: https://www.tiny.cloud/docs/tinymce/latest/dotnet-projects/
+- **WordPress**: https://www.tiny.cloud/docs/tinymce/latest/wordpress/
+- **Shadow DOM**: https://www.tiny.cloud/docs/tinymce/latest/shadow-dom/
+- **Java Swing**: https://www.tiny.cloud/docs/tinymce/latest/swing/
 
 ## Configuration
 
@@ -214,10 +214,8 @@ export default {
 7. **Cloud vs Self-Hosted**: Cloud deployment is recommended for most use cases
 
 ## API Reference
-- **Complete API Reference**: https://www.tiny.cloud/docs/tinymce/latest/apis/
 - **Editor API**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.editor/
 - **Plugin API**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.plugin/
-- **Configuration Options**: All configuration pages are in https://www.tiny.cloud/docs/tinymce/latest/configuration/
 
 ## Migration Guides
 - **Upgrading TinyMCE**: https://www.tiny.cloud/docs/tinymce/latest/upgrading/
@@ -232,396 +230,467 @@ export default {
 
 ## Complete Documentation Index
 
-This section provides a complete list of all 395 documentation pages available in TinyMCE 8. This comprehensive index ensures LLMs have access to every documentation page, reducing the risk of hallucinations or missing important details.
+This section provides a complete list of all 395 documentation pages available in TinyMCE 8, organized by category. This comprehensive index ensures LLMs have access to every documentation page, reducing the risk of hallucinations or missing important details.
 
-- **.NET projects**: https://www.tiny.cloud/docs/tinymce/latest/dotnet-projects/
-- **.Net Core**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-dotnet/
-- **AI Assistant**: https://www.tiny.cloud/docs/tinymce/latest/ai/
-- **AI proxy server reference guide**: https://www.tiny.cloud/docs/tinymce/latest/ai-proxy/
-- **APIs**: https://www.tiny.cloud/docs/tinymce/latest/dialog-apis/
+### Getting Started & Installation
+
+- **Getting Started**: https://www.tiny.cloud/docs/tinymce/latest/getting-started/
+- **Introduction to TinyMCE**: https://www.tiny.cloud/docs/tinymce/latest/introduction-to-tinymce/
+- **Installation**: https://www.tiny.cloud/docs/tinymce/latest/installation/
+- **Cloud Quick Start**: https://www.tiny.cloud/docs/tinymce/latest/cloud-quick-start/
+- **Cloud Deployment Guide**: https://www.tiny.cloud/docs/tinymce/latest/cloud-deployment-guide/
+- **Cloud deployment of editor & plugins**: https://www.tiny.cloud/docs/tinymce/latest/editor-and-features/
+- **Cloud deployment of plugins Only**: https://www.tiny.cloud/docs/tinymce/latest/features-only/
+- **Cloud**: https://www.tiny.cloud/docs/tinymce/latest/installation-cloud/
+- **NPM Projects Quick Start**: https://www.tiny.cloud/docs/tinymce/latest/npm-projects/
+- **ZIP Installation Quick Start**: https://www.tiny.cloud/docs/tinymce/latest/zip-install/
+- **Self-Hosted Installation**: https://www.tiny.cloud/docs/tinymce/latest/installation-self-hosted/
+- **Self-hosted**: https://www.tiny.cloud/docs/tinymce/latest/installation-self-hosted/
+- **ZIP**: https://www.tiny.cloud/docs/tinymce/latest/installation-zip/
+- **Quick start: Cloud**: https://www.tiny.cloud/docs/tinymce/latest/cloud-quick-start/
+- **Quick start: NPM/Yarn**: https://www.tiny.cloud/docs/tinymce/latest/npm-projects/
+- **Quick start: ZIP**: https://www.tiny.cloud/docs/tinymce/latest/zip-install/
+- **Cloud Troubleshooting**: https://www.tiny.cloud/docs/tinymce/latest/cloud-troubleshooting/
+- **Invalid API key**: https://www.tiny.cloud/docs/tinymce/latest/invalid-api-key/
 - **About Tiny Cloud's Usage-Based Billing (UBB)**: https://www.tiny.cloud/docs/tinymce/latest/usage-based-billing/
-- **Accessibility Checker**: https://www.tiny.cloud/docs/tinymce/latest/a11ychecker/
-- **Accessibility Guide**: https://www.tiny.cloud/docs/tinymce/latest/tinymce-and-screenreaders/
-- **Accessibility**: https://www.tiny.cloud/docs/tinymce/latest/accessibility/
-- **Accordion**: https://www.tiny.cloud/docs/tinymce/latest/accordion/
-- **Add CSS**: https://www.tiny.cloud/docs/tinymce/latest/add-css-options/
-- **Adding custom dictionaries**: https://www.tiny.cloud/docs/tinymce/latest/custom-dictionaries-for-tiny-spellchecker/
-- **Advanced Typography**: https://www.tiny.cloud/docs/tinymce/latest/advanced-typography/
-- **Amazon Bedrock integration guide**: https://www.tiny.cloud/docs/tinymce/latest/ai-bedrock/
-- **Anchor**: https://www.tiny.cloud/docs/tinymce/latest/anchor/
+
+### Framework Integrations
+
+#### Frontend Frameworks
+- **React**: https://www.tiny.cloud/docs/tinymce/latest/react-cloud/
+- **React Cloud**: https://www.tiny.cloud/docs/tinymce/latest/react-cloud/
+- **React Package Manager**: https://www.tiny.cloud/docs/tinymce/latest/react-pm-host/
+- **React ZIP**: https://www.tiny.cloud/docs/tinymce/latest/react-zip-host/
+- **Self-host TinyMCE in React**: https://www.tiny.cloud/docs/tinymce/latest/react-pm-host/
+- **Bundle TinyMCE in a React application**: https://www.tiny.cloud/docs/tinymce/latest/react-pm-bundle/
+- **Using a TinyMCE .zip package in React**: https://www.tiny.cloud/docs/tinymce/latest/react-zip-host/
+- **Using a .zip package with a module bundler**: https://www.tiny.cloud/docs/tinymce/latest/react-zip-bundle/
+- **Vue.js**: https://www.tiny.cloud/docs/tinymce/latest/vue-cloud/
+- **Vue Cloud**: https://www.tiny.cloud/docs/tinymce/latest/vue-cloud/
+- **Vue Package Manager**: https://www.tiny.cloud/docs/tinymce/latest/vue-pm/
+- **Vue ZIP**: https://www.tiny.cloud/docs/tinymce/latest/vue-zip/
 - **Angular**: https://www.tiny.cloud/docs/tinymce/latest/angular-cloud/
-- **Autocompleter**: https://www.tiny.cloud/docs/tinymce/latest/autocompleter/
-- **Autolink**: https://www.tiny.cloud/docs/tinymce/latest/autolink/
-- **Autoresize**: https://www.tiny.cloud/docs/tinymce/latest/autoresize/
-- **Autosave**: https://www.tiny.cloud/docs/tinymce/latest/autosave/
+- **Angular Cloud**: https://www.tiny.cloud/docs/tinymce/latest/angular-cloud/
+- **Angular Package Manager**: https://www.tiny.cloud/docs/tinymce/latest/angular-pm/
+- **Angular ZIP**: https://www.tiny.cloud/docs/tinymce/latest/angular-zip/
+- **Using a package manager with bundling**: https://www.tiny.cloud/docs/tinymce/latest/angular-pm-bundle/
+- **Using a package manager with bundling**: https://www.tiny.cloud/docs/tinymce/latest/angular-zip-bundle/
+- **Using a .zip package**: https://www.tiny.cloud/docs/tinymce/latest/angular-zip/
+- **Using a package manager**: https://www.tiny.cloud/docs/tinymce/latest/angular-pm/
+- **Blazor**: https://www.tiny.cloud/docs/tinymce/latest/blazor-cloud/
+- **Blazor Cloud**: https://www.tiny.cloud/docs/tinymce/latest/blazor-cloud/
+- **Blazor Package Manager**: https://www.tiny.cloud/docs/tinymce/latest/blazor-pm/
+- **Blazor ZIP**: https://www.tiny.cloud/docs/tinymce/latest/blazor-zip/
+- **Using a package manager**: https://www.tiny.cloud/docs/tinymce/latest/blazor-pm/
+- **Using a .zip package**: https://www.tiny.cloud/docs/tinymce/latest/blazor-zip/
+- **Svelte**: https://www.tiny.cloud/docs/tinymce/latest/svelte-cloud/
+- **Svelte Cloud**: https://www.tiny.cloud/docs/tinymce/latest/svelte-cloud/
+- **Svelte Package Manager**: https://www.tiny.cloud/docs/tinymce/latest/svelte-pm/
+- **Svelte ZIP**: https://www.tiny.cloud/docs/tinymce/latest/svelte-zip/
+- **Using a package manager with bundling**: https://www.tiny.cloud/docs/tinymce/latest/svelte-pm-bundle/
+- **Using a package manager**: https://www.tiny.cloud/docs/tinymce/latest/svelte-pm/
+- **Using a .zip package**: https://www.tiny.cloud/docs/tinymce/latest/svelte-zip/
+- **Web Component**: https://www.tiny.cloud/docs/tinymce/latest/webcomponent-cloud/
+- **Web Component Cloud**: https://www.tiny.cloud/docs/tinymce/latest/webcomponent-cloud/
+- **Web Component Package Manager**: https://www.tiny.cloud/docs/tinymce/latest/webcomponent-pm/
+- **Web Component ZIP**: https://www.tiny.cloud/docs/tinymce/latest/webcomponent-zip/
+- **Using a package manager**: https://www.tiny.cloud/docs/tinymce/latest/webcomponent-pm/
+- **Using a .zip package**: https://www.tiny.cloud/docs/tinymce/latest/webcomponent-zip/
+- **jQuery**: https://www.tiny.cloud/docs/tinymce/latest/jquery-cloud/
+- **jQuery Cloud**: https://www.tiny.cloud/docs/tinymce/latest/jquery-cloud/
+- **jQuery Package Manager**: https://www.tiny.cloud/docs/tinymce/latest/jquery-pm/
+
+#### Backend Frameworks
+- **Django**: https://www.tiny.cloud/docs/tinymce/latest/django-cloud/
+- **Django Cloud**: https://www.tiny.cloud/docs/tinymce/latest/django-cloud/
+- **Django ZIP**: https://www.tiny.cloud/docs/tinymce/latest/django-zip/
+- **Laravel**: https://www.tiny.cloud/docs/tinymce/latest/laravel-tiny-cloud/
+- **Laravel Cloud**: https://www.tiny.cloud/docs/tinymce/latest/laravel-tiny-cloud/
+- **Laravel Composer**: https://www.tiny.cloud/docs/tinymce/latest/laravel-composer-install/
+- **Laravel ZIP**: https://www.tiny.cloud/docs/tinymce/latest/laravel-zip-install/
+- **Using the Composer package**: https://www.tiny.cloud/docs/tinymce/latest/laravel-composer-install/
+- **Using a .zip package**: https://www.tiny.cloud/docs/tinymce/latest/laravel-zip-install/
+- **Ruby on Rails**: https://www.tiny.cloud/docs/tinymce/latest/rails-cloud/
+- **Rails Cloud**: https://www.tiny.cloud/docs/tinymce/latest/rails-cloud/
+- **Rails Package Manager**: https://www.tiny.cloud/docs/tinymce/latest/rails-third-party/
+- **Rails ZIP**: https://www.tiny.cloud/docs/tinymce/latest/rails-zip/
+- **Using a package manager**: https://www.tiny.cloud/docs/tinymce/latest/rails-third-party/
+- **Using a .zip package**: https://www.tiny.cloud/docs/tinymce/latest/rails-zip/
+- **Node.js + Express**: https://www.tiny.cloud/docs/tinymce/latest/expressjs-pm/
+- **Express Package Manager**: https://www.tiny.cloud/docs/tinymce/latest/expressjs-pm/
+
+#### Other Integrations
+- **Bootstrap**: https://www.tiny.cloud/docs/tinymce/latest/bootstrap-cloud/
+- **Bootstrap Cloud**: https://www.tiny.cloud/docs/tinymce/latest/bootstrap-cloud/
+- **Bootstrap ZIP**: https://www.tiny.cloud/docs/tinymce/latest/bootstrap-zip/
+- **PHP Projects**: https://www.tiny.cloud/docs/tinymce/latest/php-projects/
+- **PHP projects**: https://www.tiny.cloud/docs/tinymce/latest/php-projects/
+- **.NET Projects**: https://www.tiny.cloud/docs/tinymce/latest/dotnet-projects/
+- **.NET projects**: https://www.tiny.cloud/docs/tinymce/latest/dotnet-projects/
+- **WordPress**: https://www.tiny.cloud/docs/tinymce/latest/wordpress/
+- **Shadow DOM**: https://www.tiny.cloud/docs/tinymce/latest/shadow-dom/
+- **Java Swing**: https://www.tiny.cloud/docs/tinymce/latest/swing/
+
+#### Technical References
+- **Technical reference (Angular)**: https://www.tiny.cloud/docs/tinymce/latest/angular-ref/
+- **Technical reference (Blazor)**: https://www.tiny.cloud/docs/tinymce/latest/blazor-ref/
+- **Technical reference (React)**: https://www.tiny.cloud/docs/tinymce/latest/react-ref/
+- **Technical reference (Svelte)**: https://www.tiny.cloud/docs/tinymce/latest/svelte-ref/
+- **Technical reference (Vue)**: https://www.tiny.cloud/docs/tinymce/latest/vue-ref/
+- **Technical reference (Web Component)**: https://www.tiny.cloud/docs/tinymce/latest/webcomponent-ref/
+
+### Configuration & Setup
+
+- **Basic Setup**: https://www.tiny.cloud/docs/tinymce/latest/basic-setup/
+- **Basic setup**: https://www.tiny.cloud/docs/tinymce/latest/basic-setup/
+- **Configuration reference**: https://www.tiny.cloud/docs/tinymce/latest/initial-configuration/
+- **Basic configuration**: https://www.tiny.cloud/docs/tinymce/latest/dialog-configuration/
+- **Selector Configuration**: Required for all TinyMCE instances
+- **Plugin Configuration**: https://www.tiny.cloud/docs/tinymce/latest/work-with-plugins/
+- **Using plugins to extend TinyMCE**: https://www.tiny.cloud/docs/tinymce/latest/work-with-plugins/
+- **Toolbar Configuration**: https://www.tiny.cloud/docs/tinymce/latest/toolbar-configuration-options/
+- **Menu Configuration**: https://www.tiny.cloud/docs/tinymce/latest/menus-configuration-options/
+- **Content Filtering**: https://www.tiny.cloud/docs/tinymce/latest/filter-content/
+- **Content filtering**: https://www.tiny.cloud/docs/tinymce/latest/content-filtering/
+- **Content filtering**: https://www.tiny.cloud/docs/tinymce/latest/filter-content/
+- **Localization**: https://www.tiny.cloud/docs/tinymce/latest/localize-your-language/
+- **Localization**: https://www.tiny.cloud/docs/tinymce/latest/content-localization/
+- **Localization options**: https://www.tiny.cloud/docs/tinymce/latest/ui-localization/
+- **Spell Checking**: https://www.tiny.cloud/docs/tinymce/latest/spell-checking/
+- **Spell checking**: https://www.tiny.cloud/docs/tinymce/latest/spell-checking/
+- **Content CSS**: https://www.tiny.cloud/docs/tinymce/latest/editor-content-css/
+- **CSS for rendering content**: https://www.tiny.cloud/docs/tinymce/latest/editor-content-css/
+- **URL Handling**: https://www.tiny.cloud/docs/tinymce/latest/url-handling/
+- **URL handling options**: https://www.tiny.cloud/docs/tinymce/latest/url-handling/
+- **Content Security Policies (CSP)**: https://www.tiny.cloud/docs/tinymce/latest/tinymce-and-csp/
+- **Cross-Origin Resource Sharing (CORS)**: https://www.tiny.cloud/docs/tinymce/latest/tinymce-and-cors/
+- **Editor Themes**: https://www.tiny.cloud/docs/tinymce/latest/editor-theme/
+- **Editor Skins**: https://www.tiny.cloud/docs/tinymce/latest/editor-skin/
+- **Skins**: https://www.tiny.cloud/docs/tinymce/latest/editor-skin/
+- **Editor Icons**: https://www.tiny.cloud/docs/tinymce/latest/editor-icons/
+- **Icons**: https://www.tiny.cloud/docs/tinymce/latest/editor-icons/
+- **Editor Size Options**: https://www.tiny.cloud/docs/tinymce/latest/editor-size-options/
+- **Size**: https://www.tiny.cloud/docs/tinymce/latest/editor-size-options/
+- **Statusbar Configuration**: https://www.tiny.cloud/docs/tinymce/latest/statusbar-configuration-options/
+- **Statusbar**: https://www.tiny.cloud/docs/tinymce/latest/statusbar-configuration-options/
+- **UI Mode Configuration**: https://www.tiny.cloud/docs/tinymce/latest/ui-mode-configuration-options/
+- **UI Mode**: https://www.tiny.cloud/docs/tinymce/latest/ui-mode-configuration-options/
+- **Integration options**: https://www.tiny.cloud/docs/tinymce/latest/editor-important-options/
+- **Specify Editor Version & Plugins**: https://www.tiny.cloud/docs/tinymce/latest/editor-plugin-version/
+- **Multiple editors in a page**: https://www.tiny.cloud/docs/tinymce/latest/multiple-editors/
+- **Understanding editor loads**: https://www.tiny.cloud/docs/tinymce/latest/understanding-editor-loads/
+- **Editor content models**: https://www.tiny.cloud/docs/tinymce/latest/editor-model/
+- **Save and submit**: https://www.tiny.cloud/docs/tinymce/latest/editor-save-and-submit/
 - **Available Commands**: https://www.tiny.cloud/docs/tinymce/latest/editor-command-identifiers/
 - **Available Context Menu Items**: https://www.tiny.cloud/docs/tinymce/latest/editor-context-menu-identifiers/
 - **Available Events**: https://www.tiny.cloud/docs/tinymce/latest/events/
 - **Available Icons**: https://www.tiny.cloud/docs/tinymce/latest/editor-icon-identifiers/
 - **Available Menu Items**: https://www.tiny.cloud/docs/tinymce/latest/available-menu-items/
 - **Available Toolbar Buttons**: https://www.tiny.cloud/docs/tinymce/latest/available-toolbar-buttons/
-- **Azure AI integration guide**: https://www.tiny.cloud/docs/tinymce/latest/ai-azure/
-- **Basic configuration**: https://www.tiny.cloud/docs/tinymce/latest/dialog-configuration/
-- **Basic example**: https://www.tiny.cloud/docs/tinymce/latest/basic-example/
-- **Basic setup**: https://www.tiny.cloud/docs/tinymce/latest/basic-setup/
-- **Basic toolbar button**: https://www.tiny.cloud/docs/tinymce/latest/custom-basic-toolbar-button/
-- **Behaviors**: https://www.tiny.cloud/docs/tinymce/latest/content-behavior-options/
-- **Blazor**: https://www.tiny.cloud/docs/tinymce/latest/blazor-cloud/
-- **Body components**: https://www.tiny.cloud/docs/tinymce/latest/dialog-components/
-- **Bootstrap Demo**: https://www.tiny.cloud/docs/tinymce/latest/bootstrap-demo/
-- **Bootstrap**: https://www.tiny.cloud/docs/tinymce/latest/bootstrap-cloud/
-- **Bootstrap**: https://www.tiny.cloud/docs/tinymce/latest/bootstrap-zip/
-- **Borderless Demo**: https://www.tiny.cloud/docs/tinymce/latest/borderless-demo/
-- **Bundle TinyMCE in a React application**: https://www.tiny.cloud/docs/tinymce/latest/react-pm-bundle/
-- **CSS for rendering content**: https://www.tiny.cloud/docs/tinymce/latest/editor-content-css/
-- **Callback mode**: https://www.tiny.cloud/docs/tinymce/latest/comments-callback-mode/
-- **Case Change**: https://www.tiny.cloud/docs/tinymce/latest/casechange/
-- **Changelog**: https://www.tiny.cloud/docs/tinymce/latest/changelog/
-- **Changelog**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-changelog/
-- **Character Map**: https://www.tiny.cloud/docs/tinymce/latest/charmap/
-- **Checklist**: https://www.tiny.cloud/docs/tinymce/latest/checklist/
-- **Classic editing mode**: https://www.tiny.cloud/docs/tinymce/latest/use-tinymce-classic/
-- **Classic editor mode**: https://www.tiny.cloud/docs/tinymce/latest/classic-demo/
-- **Cloud Deployment Guide**: https://www.tiny.cloud/docs/tinymce/latest/cloud-deployment-guide/
-- **Cloud Troubleshooting**: https://www.tiny.cloud/docs/tinymce/latest/cloud-troubleshooting/
-- **Cloud deployment of editor & plugins**: https://www.tiny.cloud/docs/tinymce/latest/editor-and-features/
-- **Cloud deployment of plugins Only**: https://www.tiny.cloud/docs/tinymce/latest/features-only/
-- **Cloud**: https://www.tiny.cloud/docs/tinymce/latest/installation-cloud/
-- **Code Sample**: https://www.tiny.cloud/docs/tinymce/latest/codesample/
-- **Code**: https://www.tiny.cloud/docs/tinymce/latest/code/
-- **Commands and Events**: https://www.tiny.cloud/docs/tinymce/latest/powerpaste-commands-events-apis/
-- **Commands, Events and APIs**: https://www.tiny.cloud/docs/tinymce/latest/comments-commands-events-apis/
-- **Comments Access Options**: https://www.tiny.cloud/docs/tinymce/latest/comments-access-options/
-- **Comments with Mentions**: https://www.tiny.cloud/docs/tinymce/latest/comments-with-mentions/
-- **CommonJS and NPM**: https://www.tiny.cloud/docs/tinymce/latest/webpack-cjs-npm/
-- **CommonJS and a .zip archive**: https://www.tiny.cloud/docs/tinymce/latest/browserify-cjs-download/
-- **CommonJS and a .zip archive**: https://www.tiny.cloud/docs/tinymce/latest/webpack-cjs-download/
-- **CommonJS and npm**: https://www.tiny.cloud/docs/tinymce/latest/browserify-cjs-npm/
-- **Configuration reference**: https://www.tiny.cloud/docs/tinymce/latest/initial-configuration/
-- **Configure Enhanced Media Embed Server**: https://www.tiny.cloud/docs/tinymce/latest/mediaembed-server-config/
-- **Content CSS**: https://www.tiny.cloud/docs/tinymce/latest/bundling-content-css/
-- **Content Security Policies (CSP)**: https://www.tiny.cloud/docs/tinymce/latest/tinymce-and-csp/
-- **Content appearance**: https://www.tiny.cloud/docs/tinymce/latest/content-appearance/
-- **Content filtering**: https://www.tiny.cloud/docs/tinymce/latest/content-filtering/
-- **Content filtering**: https://www.tiny.cloud/docs/tinymce/latest/filter-content/
-- **Content formats**: https://www.tiny.cloud/docs/tinymce/latest/content-formatting/
-- **Context forms**: https://www.tiny.cloud/docs/tinymce/latest/contextform/
-- **Context menus**: https://www.tiny.cloud/docs/tinymce/latest/contextmenu/
-- **Context toolbar**: https://www.tiny.cloud/docs/tinymce/latest/contexttoolbar/
-- **Context**: https://www.tiny.cloud/docs/tinymce/latest/context/
-- **Copy and paste options**: https://www.tiny.cloud/docs/tinymce/latest/copy-and-paste/
-- **Create a Skin**: https://www.tiny.cloud/docs/tinymce/latest/creating-a-skin/
-- **Create a plugin**: https://www.tiny.cloud/docs/tinymce/latest/creating-a-plugin/
-- **Create an icon pack**: https://www.tiny.cloud/docs/tinymce/latest/creating-an-icon-pack/
-- **Creating custom dialogs**: https://www.tiny.cloud/docs/tinymce/latest/dialog/
-- **Creating custom menu items**: https://www.tiny.cloud/docs/tinymce/latest/creating-custom-menu-items/
-- **Cross-Origin Resource Sharing (CORS)**: https://www.tiny.cloud/docs/tinymce/latest/tinymce-and-cors/
-- **Custom Basic menu items**: https://www.tiny.cloud/docs/tinymce/latest/custom-basic-menu-items/
-- **Custom Icon Pack Demo**: https://www.tiny.cloud/docs/tinymce/latest/custom-icon-pack-demo/
-- **Custom Nested menu items**: https://www.tiny.cloud/docs/tinymce/latest/custom-nested-menu-items/
-- **Custom Toggle menu items**: https://www.tiny.cloud/docs/tinymce/latest/custom-toggle-menu-items/
-- **Custom view**: https://www.tiny.cloud/docs/tinymce/latest/custom-view/
-- **Customizing the UI**: https://www.tiny.cloud/docs/tinymce/latest/customize-ui/
-- **Directionality**: https://www.tiny.cloud/docs/tinymce/latest/directionality/
-- **Distraction-free editing mode**: https://www.tiny.cloud/docs/tinymce/latest/use-tinymce-distraction-free/
-- **Distraction-free editor**: https://www.tiny.cloud/docs/tinymce/latest/distraction-free-demo/
-- **Django**: https://www.tiny.cloud/docs/tinymce/latest/django-cloud/
-- **Django**: https://www.tiny.cloud/docs/tinymce/latest/django-zip/
-- **Docx to HTML Converter API**: https://www.tiny.cloud/docs/tinymce/latest/docx-to-html-converter-api/
-- **Dropbox and Google Drive integration options**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-dropbox-and-google-drive/
-- **Dropbox**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-dropbox-integration/
-- **ES6 and NPM**: https://www.tiny.cloud/docs/tinymce/latest/vite-es6-npm/
-- **ES6 and a .zip archive**: https://www.tiny.cloud/docs/tinymce/latest/rollup-es6-download/
-- **ES6 and a .zip archive**: https://www.tiny.cloud/docs/tinymce/latest/webpack-es6-download/
-- **ES6 and npm**: https://www.tiny.cloud/docs/tinymce/latest/rollup-es6-npm/
-- **ES6**: https://www.tiny.cloud/docs/tinymce/latest/webpack-es6-npm/
-- **Editor content models**: https://www.tiny.cloud/docs/tinymce/latest/editor-model/
-- **Embedded mode**: https://www.tiny.cloud/docs/tinymce/latest/comments-embedded-mode/
-- **Emoticons**: https://www.tiny.cloud/docs/tinymce/latest/emoticons/
-- **Enhanced Code Editor**: https://www.tiny.cloud/docs/tinymce/latest/advcode/
-- **Enhanced Media Embed**: https://www.tiny.cloud/docs/tinymce/latest/introduction-to-mediaembed/
-- **Enhanced Skins & Icon Packs**: https://www.tiny.cloud/docs/tinymce/latest/enhanced-skins-and-icon-packs/
+- **Options**: https://www.tiny.cloud/docs/tinymce/latest/menus-configuration-options/
+- **Options**: https://www.tiny.cloud/docs/tinymce/latest/toolbar-configuration-options/
+
+### Plugins & Features
+
+#### Core Plugins
+- **Plugins Overview**: https://www.tiny.cloud/docs/tinymce/latest/plugins/
+- **Plugins**: https://www.tiny.cloud/docs/tinymce/latest/plugins/
+- **Table Plugin**: https://www.tiny.cloud/docs/tinymce/latest/table/
+- **Table**: https://www.tiny.cloud/docs/tinymce/latest/table/
+- **Table options**: https://www.tiny.cloud/docs/tinymce/latest/table-options/
 - **Enhanced Tables**: https://www.tiny.cloud/docs/tinymce/latest/advtable/
-- **Excluding premium features**: https://www.tiny.cloud/docs/tinymce/latest/full-featured-open-source-demo/
-- **Export to PDF Standalone Service**: https://www.tiny.cloud/docs/tinymce/latest/html-to-pdf-converter-api/
-- **Export to PDF**: https://www.tiny.cloud/docs/tinymce/latest/exportpdf/
-- **Export to PDF**: https://www.tiny.cloud/docs/tinymce/latest/individual-export-to-pdf-on-premises/
-- **Export to Word Standalone Service**: https://www.tiny.cloud/docs/tinymce/latest/export-to-word-standalone-service/
-- **Export to Word Standalone Service**: https://www.tiny.cloud/docs/tinymce/latest/html-to-docx-converter-api/
-- **Export to Word**: https://www.tiny.cloud/docs/tinymce/latest/exportword/
-- **Fabric Demo**: https://www.tiny.cloud/docs/tinymce/latest/fabric-demo/
-- **Files and Documents feature of the Media Optimizer plugin**: https://www.tiny.cloud/docs/tinymce/latest/uploadcare-documents/
-- **Fluent Demo**: https://www.tiny.cloud/docs/tinymce/latest/fluent-demo/
-- **Footer buttons**: https://www.tiny.cloud/docs/tinymce/latest/dialog-footer-buttons/
+- **Image Plugin**: https://www.tiny.cloud/docs/tinymce/latest/image/
+- **Image**: https://www.tiny.cloud/docs/tinymce/latest/image/
+- **Image Editing**: https://www.tiny.cloud/docs/tinymce/latest/editimage/
+- **Image uploads**: https://www.tiny.cloud/docs/tinymce/latest/upload-images/
+- **Images and files**: https://www.tiny.cloud/docs/tinymce/latest/file-image-upload/
+- **Link Plugin**: https://www.tiny.cloud/docs/tinymce/latest/link/
+- **Link**: https://www.tiny.cloud/docs/tinymce/latest/link/
+- **Link Checker**: https://www.tiny.cloud/docs/tinymce/latest/linkchecker/
+- **Lists Plugin**: https://www.tiny.cloud/docs/tinymce/latest/lists/
+- **Lists**: https://www.tiny.cloud/docs/tinymce/latest/lists/
+- **List Styles**: https://www.tiny.cloud/docs/tinymce/latest/advlist/
+- **Code Plugin**: https://www.tiny.cloud/docs/tinymce/latest/code/
+- **Code**: https://www.tiny.cloud/docs/tinymce/latest/code/
+- **Code Sample**: https://www.tiny.cloud/docs/tinymce/latest/codesample/
+- **Enhanced Code Editor**: https://www.tiny.cloud/docs/tinymce/latest/advcode/
+- **Media Plugin**: https://www.tiny.cloud/docs/tinymce/latest/media/
+- **Media**: https://www.tiny.cloud/docs/tinymce/latest/media/
+- **Enhanced Media Embed**: https://www.tiny.cloud/docs/tinymce/latest/introduction-to-mediaembed/
+- **Preview**: https://www.tiny.cloud/docs/tinymce/latest/preview/
+- **Anchor**: https://www.tiny.cloud/docs/tinymce/latest/anchor/
+- **Autolink**: https://www.tiny.cloud/docs/tinymce/latest/autolink/
+- **Autoresize**: https://www.tiny.cloud/docs/tinymce/latest/autoresize/
+- **Autosave**: https://www.tiny.cloud/docs/tinymce/latest/autosave/
+- **Save**: https://www.tiny.cloud/docs/tinymce/latest/save/
+- **Character Map**: https://www.tiny.cloud/docs/tinymce/latest/charmap/
+- **Emoticons**: https://www.tiny.cloud/docs/tinymce/latest/emoticons/
+- **Directionality**: https://www.tiny.cloud/docs/tinymce/latest/directionality/
+- **Full Screen**: https://www.tiny.cloud/docs/tinymce/latest/fullscreen/
+- **Help**: https://www.tiny.cloud/docs/tinymce/latest/help/
+- **Insert Date/Time**: https://www.tiny.cloud/docs/tinymce/latest/insertdatetime/
+- **Nonbreaking Space**: https://www.tiny.cloud/docs/tinymce/latest/nonbreaking/
+- **Page Break**: https://www.tiny.cloud/docs/tinymce/latest/pagebreak/
+- **Search and Replace**: https://www.tiny.cloud/docs/tinymce/latest/searchreplace/
+- **Word Count**: https://www.tiny.cloud/docs/tinymce/latest/wordcount/
+- **Visual Blocks**: https://www.tiny.cloud/docs/tinymce/latest/visualblocks/
+- **Visual Characters**: https://www.tiny.cloud/docs/tinymce/latest/visualchars/
+- **Context Toolbar**: https://www.tiny.cloud/docs/tinymce/latest/contexttoolbar/
+- **Context toolbar**: https://www.tiny.cloud/docs/tinymce/latest/contexttoolbar/
+- **Quick Toolbars**: https://www.tiny.cloud/docs/tinymce/latest/quickbars/
+- **Context Menus**: https://www.tiny.cloud/docs/tinymce/latest/contextmenu/
+- **Context menus**: https://www.tiny.cloud/docs/tinymce/latest/contextmenu/
+- **Context Forms**: https://www.tiny.cloud/docs/tinymce/latest/contextform/
+- **Context forms**: https://www.tiny.cloud/docs/tinymce/latest/contextform/
+- **Context**: https://www.tiny.cloud/docs/tinymce/latest/context/
+- **Accordion**: https://www.tiny.cloud/docs/tinymce/latest/accordion/
+- **Checklist**: https://www.tiny.cloud/docs/tinymce/latest/checklist/
+- **Case Change**: https://www.tiny.cloud/docs/tinymce/latest/casechange/
 - **Footnotes**: https://www.tiny.cloud/docs/tinymce/latest/footnotes/
 - **Format Painter**: https://www.tiny.cloud/docs/tinymce/latest/formatpainter/
+- **Markdown**: https://www.tiny.cloud/docs/tinymce/latest/markdown/
+- **Math Plugin**: https://www.tiny.cloud/docs/tinymce/latest/math/
+- **Mentions**: https://www.tiny.cloud/docs/tinymce/latest/mentions/
+- **Merge Tags**: https://www.tiny.cloud/docs/tinymce/latest/mergetags/
+- **Table of Contents**: https://www.tiny.cloud/docs/tinymce/latest/tableofcontents/
+- **Page Embed**: https://www.tiny.cloud/docs/tinymce/latest/pageembed/
+- **Permanent Pen**: https://www.tiny.cloud/docs/tinymce/latest/permanentpen/
 - **Full Page HTML**: https://www.tiny.cloud/docs/tinymce/latest/fullpagehtml/
-- **Full Screen**: https://www.tiny.cloud/docs/tinymce/latest/fullscreen/
-- **Generate public key pairs**: https://www.tiny.cloud/docs/tinymce/latest/generate-rsa-key-pairs/
-- **Getting Started**: https://www.tiny.cloud/docs/tinymce/latest/getting-started/
-- **Getting started**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-getting-started/
-- **Google Drive**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-googledrive-integration/
-- **Google Gemini integration guide**: https://www.tiny.cloud/docs/tinymce/latest/ai-gemini/
-- **Group toolbar button**: https://www.tiny.cloud/docs/tinymce/latest/custom-group-toolbar-button/
-- **Help**: https://www.tiny.cloud/docs/tinymce/latest/help/
-- **How To Guides**: https://www.tiny.cloud/docs/tinymce/latest/how-to-guides/
-- **Hyperlinking service settings**: https://www.tiny.cloud/docs/tinymce/latest/configure-hyperlink-service/
-- **Hyperlinking service**: https://www.tiny.cloud/docs/tinymce/latest/individual-hyperlinking-container/
-- **Icon Pack Template**: https://www.tiny.cloud/docs/tinymce/latest/using-the-icon-pack-template/
-- **Icons**: https://www.tiny.cloud/docs/tinymce/latest/bundling-icons/
-- **Icons**: https://www.tiny.cloud/docs/tinymce/latest/editor-icons/
-- **Image Editing**: https://www.tiny.cloud/docs/tinymce/latest/editimage/
-- **Image Proxy service settings**: https://www.tiny.cloud/docs/tinymce/latest/configure-imageproxy-service/
-- **Image Proxy service**: https://www.tiny.cloud/docs/tinymce/latest/individual-image-proxy-container/
-- **Image feature of the Media Optimizer plugin**: https://www.tiny.cloud/docs/tinymce/latest/uploadcare-image/
-- **Image uploads**: https://www.tiny.cloud/docs/tinymce/latest/upload-images/
-- **Image**: https://www.tiny.cloud/docs/tinymce/latest/image/
-- **Images and files**: https://www.tiny.cloud/docs/tinymce/latest/file-image-upload/
+- **Template**: https://www.tiny.cloud/docs/tinymce/latest/advanced-templates/
 - **Import CSS**: https://www.tiny.cloud/docs/tinymce/latest/importcss/
-- **Import from Word Standalone Service**: https://www.tiny.cloud/docs/tinymce/latest/import-from-word-standalone-service/
-- **Import from Word and Export to Word**: https://www.tiny.cloud/docs/tinymce/latest/individual-import-from-word-and-export-to-word-on-premises/
-- **Import from Word**: https://www.tiny.cloud/docs/tinymce/latest/importword/
-- **Including premium features**: https://www.tiny.cloud/docs/tinymce/latest/full-featured-premium-demo/
+- **Autocompleter**: https://www.tiny.cloud/docs/tinymce/latest/autocompleter/
+- **Sidebars**: https://www.tiny.cloud/docs/tinymce/latest/customsidebar/
+- **Custom view**: https://www.tiny.cloud/docs/tinymce/latest/custom-view/
+- **Non-editable content**: https://www.tiny.cloud/docs/tinymce/latest/non-editable-content-options/
+- **User formatting**: https://www.tiny.cloud/docs/tinymce/latest/user-formatting-options/
+- **User Lookup**: https://www.tiny.cloud/docs/tinymce/latest/userlookup/
+- **Content appearance**: https://www.tiny.cloud/docs/tinymce/latest/content-appearance/
+- **Content formats**: https://www.tiny.cloud/docs/tinymce/latest/content-formatting/
+- **Content behavior options**: https://www.tiny.cloud/docs/tinymce/latest/content-behavior-options/
+- **Behaviors**: https://www.tiny.cloud/docs/tinymce/latest/content-behavior-options/
+- **Copy and paste options**: https://www.tiny.cloud/docs/tinymce/latest/copy-and-paste/
+- **Advanced Typography**: https://www.tiny.cloud/docs/tinymce/latest/advanced-typography/
+- **Add CSS**: https://www.tiny.cloud/docs/tinymce/latest/add-css-options/
 - **Inline CSS**: https://www.tiny.cloud/docs/tinymce/latest/inline-css/
+
+#### Editor Modes
+- **Classic editing mode**: https://www.tiny.cloud/docs/tinymce/latest/use-tinymce-classic/
 - **Inline editing mode**: https://www.tiny.cloud/docs/tinymce/latest/use-tinymce-inline/
 - **Inline editor options**: https://www.tiny.cloud/docs/tinymce/latest/inline-editor-options/
-- **Inline editor**: https://www.tiny.cloud/docs/tinymce/latest/inline-demo/
-- **Insert Date/Time**: https://www.tiny.cloud/docs/tinymce/latest/insertdatetime/
-- **Installation**: https://www.tiny.cloud/docs/tinymce/latest/installation/
-- **Integrate Enhanced Media Embed Server**: https://www.tiny.cloud/docs/tinymce/latest/mediaembed-server-integration/
-- **Integration options**: https://www.tiny.cloud/docs/tinymce/latest/editor-important-options/
-- **Interactive examples**: https://www.tiny.cloud/docs/tinymce/latest/dialog-examples/
-- **Introduction and initial setup**: https://www.tiny.cloud/docs/tinymce/latest/bundle-intro-setup/
-- **Introduction to TinyMCE**: https://www.tiny.cloud/docs/tinymce/latest/introduction-to-tinymce/
-- **Introduction to the plugin APIs**: https://www.tiny.cloud/docs/tinymce/latest/introduction-to-tinydrive-apis/
-- **Introduction**: https://www.tiny.cloud/docs/tinymce/latest/introduction-to-bundling-tinymce/
-- **Introduction**: https://www.tiny.cloud/docs/tinymce/latest/introduction-to-powerpaste/
-- **Introduction**: https://www.tiny.cloud/docs/tinymce/latest/introduction-to-tiny-comments/
-- **Introduction**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-introduction/
-- **Invalid API key**: https://www.tiny.cloud/docs/tinymce/latest/invalid-api-key/
+- **Distraction-free editing mode**: https://www.tiny.cloud/docs/tinymce/latest/use-tinymce-distraction-free/
+
+#### Spell Checking
+- **Spell Checker**: https://www.tiny.cloud/docs/tinymce/latest/introduction-to-tiny-spellchecker/
+- **Spelling Autocorrect**: https://www.tiny.cloud/docs/tinymce/latest/autocorrect/
+- **Spelling options**: https://www.tiny.cloud/docs/tinymce/latest/spelling/
+- **Adding custom dictionaries**: https://www.tiny.cloud/docs/tinymce/latest/custom-dictionaries-for-tiny-spellchecker/
+- **Spelling service**: https://www.tiny.cloud/docs/tinymce/latest/individual-spelling-container/
+- **Spelling service settings**: https://www.tiny.cloud/docs/tinymce/latest/configure-spelling-service/
+- **Spelling service - Using Hunspell dictionaries**: https://www.tiny.cloud/docs/tinymce/latest/self-hosting-hunspell/
+
+### Premium Features
+
+#### AI Features
+- **AI Assistant**: https://www.tiny.cloud/docs/tinymce/latest/ai/
+- **AI proxy server reference guide**: https://www.tiny.cloud/docs/tinymce/latest/ai-proxy/
+- **Amazon Bedrock integration guide**: https://www.tiny.cloud/docs/tinymce/latest/ai-bedrock/
+- **Azure AI integration guide**: https://www.tiny.cloud/docs/tinymce/latest/ai-azure/
+- **Google Gemini integration guide**: https://www.tiny.cloud/docs/tinymce/latest/ai-gemini/
+- **OpenAI ChatGPT integration guide**: https://www.tiny.cloud/docs/tinymce/latest/ai-openai/
+
+#### Comments & Collaboration
+- **Comments Introduction**: https://www.tiny.cloud/docs/tinymce/latest/introduction-to-tiny-comments/
+- **Using Comments**: https://www.tiny.cloud/docs/tinymce/latest/comments-using-comments/
+- **Comments Access Options**: https://www.tiny.cloud/docs/tinymce/latest/comments-access-options/
+- **Comments with Mentions**: https://www.tiny.cloud/docs/tinymce/latest/comments-with-mentions/
+- **Callback mode**: https://www.tiny.cloud/docs/tinymce/latest/comments-callback-mode/
+- **Embedded mode**: https://www.tiny.cloud/docs/tinymce/latest/comments-embedded-mode/
+- **Commands, Events and APIs**: https://www.tiny.cloud/docs/tinymce/latest/comments-commands-events-apis/
+- **Toolbar buttons and menu items**: https://www.tiny.cloud/docs/tinymce/latest/comments-toolbars-menus/
+- **Using the Annotations API**: https://www.tiny.cloud/docs/tinymce/latest/annotations/
+- **Suggested Edits**: https://www.tiny.cloud/docs/tinymce/latest/suggestededits/
+- **Revision History**: https://www.tiny.cloud/docs/tinymce/latest/revisionhistory/
+
+#### Export & Import
+- **Export to PDF**: https://www.tiny.cloud/docs/tinymce/latest/exportpdf/
+- **Export to PDF Standalone Service**: https://www.tiny.cloud/docs/tinymce/latest/html-to-pdf-converter-api/
+- **Export to PDF (On-Premises)**: https://www.tiny.cloud/docs/tinymce/latest/individual-export-to-pdf-on-premises/
+- **Export to Word**: https://www.tiny.cloud/docs/tinymce/latest/exportword/
+- **Export to Word Standalone Service**: https://www.tiny.cloud/docs/tinymce/latest/export-to-word-standalone-service/
+- **Export to Word Standalone Service**: https://www.tiny.cloud/docs/tinymce/latest/html-to-docx-converter-api/
+- **Import from Word**: https://www.tiny.cloud/docs/tinymce/latest/importword/
+- **Import from Word Standalone Service**: https://www.tiny.cloud/docs/tinymce/latest/import-from-word-standalone-service/
+- **Import from Word and Export to Word**: https://www.tiny.cloud/docs/tinymce/latest/individual-import-from-word-and-export-to-word-on-premises/
+- **Docx to HTML Converter API**: https://www.tiny.cloud/docs/tinymce/latest/docx-to-html-converter-api/
 - **JWT Authentication setup for Export to PDF**: https://www.tiny.cloud/docs/tinymce/latest/export-to-pdf-with-jwt-authentication-php/
 - **JWT Authentication setup for Export to Word**: https://www.tiny.cloud/docs/tinymce/latest/export-to-word-with-jwt-authentication-php/
 - **JWT Authentication setup for Import from Word**: https://www.tiny.cloud/docs/tinymce/latest/import-from-word-with-jwt-authentication-php/
-- **JWT Authentication setup for Plugin**: https://www.tiny.cloud/docs/tinymce/latest/export-to-pdf-with-jwt-authentication-nodejs/
-- **JWT Authentication setup for Plugin**: https://www.tiny.cloud/docs/tinymce/latest/export-to-word-with-jwt-authentication-nodejs/
-- **JWT Authentication setup for Plugin**: https://www.tiny.cloud/docs/tinymce/latest/import-from-word-with-jwt-authentication-nodejs/
-- **JWT Authentication setup**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-jwt-authentication/
-- **Jam Icons Demo**: https://www.tiny.cloud/docs/tinymce/latest/jam-demo/
-- **Java Spring**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-java/
-- **Java Swing**: https://www.tiny.cloud/docs/tinymce/latest/swing/
-- **Keyboard Shortcuts**: https://www.tiny.cloud/docs/tinymce/latest/shortcuts/
-- **Laravel**: https://www.tiny.cloud/docs/tinymce/latest/laravel-tiny-cloud/
-- **License key**: https://www.tiny.cloud/docs/tinymce/latest/license-key/
-- **Link Checker**: https://www.tiny.cloud/docs/tinymce/latest/linkchecker/
-- **Link**: https://www.tiny.cloud/docs/tinymce/latest/link/
-- **List Styles**: https://www.tiny.cloud/docs/tinymce/latest/advlist/
-- **Lists**: https://www.tiny.cloud/docs/tinymce/latest/lists/
-- **Localization options**: https://www.tiny.cloud/docs/tinymce/latest/ui-localization/
-- **Localization**: https://www.tiny.cloud/docs/tinymce/latest/content-localization/
-- **Localization**: https://www.tiny.cloud/docs/tinymce/latest/localize-your-language/
-- **Markdown**: https://www.tiny.cloud/docs/tinymce/latest/markdown/
-- **Material Classic Demo**: https://www.tiny.cloud/docs/tinymce/latest/material-classic-demo/
-- **Material Outline Demo**: https://www.tiny.cloud/docs/tinymce/latest/material-outline-demo/
-- **Math Plugin**: https://www.tiny.cloud/docs/tinymce/latest/math/
+- **JWT Authentication setup for Plugin (Node.js)**: https://www.tiny.cloud/docs/tinymce/latest/export-to-pdf-with-jwt-authentication-nodejs/
+- **JWT Authentication setup for Plugin (Node.js)**: https://www.tiny.cloud/docs/tinymce/latest/export-to-word-with-jwt-authentication-nodejs/
+- **JWT Authentication setup for Plugin (Node.js)**: https://www.tiny.cloud/docs/tinymce/latest/import-from-word-with-jwt-authentication-nodejs/
+
+#### PowerPaste
+- **PowerPaste Introduction**: https://www.tiny.cloud/docs/tinymce/latest/introduction-to-powerpaste/
+- **PowerPaste Options**: https://www.tiny.cloud/docs/tinymce/latest/powerpaste-options/
+- **PowerPaste Commands and Events**: https://www.tiny.cloud/docs/tinymce/latest/powerpaste-commands-events-apis/
+- **PowerPaste Supported functionality**: https://www.tiny.cloud/docs/tinymce/latest/powerpaste-support/
+- **PowerPaste Troubleshooting**: https://www.tiny.cloud/docs/tinymce/latest/powerpaste-troubleshooting/
+
+#### TinyDrive
+- **TinyDrive Introduction**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-introduction/
+- **TinyDrive Getting started**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-getting-started/
+- **TinyDrive Setup options**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-setup-options/
+- **TinyDrive Browse API**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-browse/
+- **TinyDrive Pick API**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-pick/
+- **TinyDrive Upload API**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-upload/
+- **TinyDrive Toolbar buttons and menu items**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-toolbars-menus/
+- **TinyDrive UI options**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-ui-options/
+- **TinyDrive TypeScript interfaces**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-type-interfaces/
+- **TinyDrive JWT Authentication setup**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-jwt-authentication/
+- **TinyDrive Changelog**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-changelog/
+- **Dropbox and Google Drive integration options**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-dropbox-and-google-drive/
+- **Dropbox**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-dropbox-integration/
+- **Google Drive**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-googledrive-integration/
+- **TinyDrive Node.js**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-nodejs/
+- **TinyDrive PHP**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-php/
+- **TinyDrive Java Spring**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-java/
+- **.Net Core**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-dotnet/
+- **Introduction to the plugin APIs**: https://www.tiny.cloud/docs/tinymce/latest/introduction-to-tinydrive-apis/
+
+#### Media Optimizer
 - **Media Optimizer**: https://www.tiny.cloud/docs/tinymce/latest/uploadcare/
-- **Media**: https://www.tiny.cloud/docs/tinymce/latest/media/
-- **Mentions**: https://www.tiny.cloud/docs/tinymce/latest/mentions/
-- **Menu toolbar button**: https://www.tiny.cloud/docs/tinymce/latest/custom-menu-toolbar-button/
-- **Merge Tags**: https://www.tiny.cloud/docs/tinymce/latest/mergetags/
-- **Migrating from Froala**: https://www.tiny.cloud/docs/tinymce/latest/migration-from-froala/
-- **Migrating from TinyMCE 4 to 8**: https://www.tiny.cloud/docs/tinymce/latest/migration-from-4x-to-8x/
-- **Migrating from TinyMCE 4**: https://www.tiny.cloud/docs/tinymce/latest/migration-from-4x/
-- **Migrating from TinyMCE 5 to 8**: https://www.tiny.cloud/docs/tinymce/latest/migration-from-5x-to-8x/
-- **Migrating from TinyMCE 5**: https://www.tiny.cloud/docs/tinymce/latest/migration-from-5x/
-- **Migrating from TinyMCE 6 to 8**: https://www.tiny.cloud/docs/tinymce/latest/migration-from-6x-to-8x/
-- **Migrating from TinyMCE 6**: https://www.tiny.cloud/docs/tinymce/latest/migration-from-6x/
-- **Migrating from TinyMCE 7**: https://www.tiny.cloud/docs/tinymce/latest/migration-from-7x/
-- **Migration Guides**: https://www.tiny.cloud/docs/tinymce/latest/migration-guides/
-- **Models**: https://www.tiny.cloud/docs/tinymce/latest/bundling-models/
-- **MoxieManager**: https://www.tiny.cloud/docs/tinymce/latest/moxiemanager/
-- **Multiple editors in a page**: https://www.tiny.cloud/docs/tinymce/latest/multiple-editors/
-- **Naked Demo**: https://www.tiny.cloud/docs/tinymce/latest/naked-demo/
-- **Node.js + Express**: https://www.tiny.cloud/docs/tinymce/latest/expressjs-pm/
-- **Node.js**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-nodejs/
-- **Non-editable content**: https://www.tiny.cloud/docs/tinymce/latest/non-editable-content-options/
-- **Nonbreaking Space**: https://www.tiny.cloud/docs/tinymce/latest/nonbreaking/
-- **Notifications**: https://www.tiny.cloud/docs/tinymce/latest/creating-custom-notifications/
-- **OpenAI ChatGPT integration guide**: https://www.tiny.cloud/docs/tinymce/latest/ai-openai/
-- **Optional common settings**: https://www.tiny.cloud/docs/tinymce/latest/configure-common-settings-services/
-- **Options**: https://www.tiny.cloud/docs/tinymce/latest/menus-configuration-options/
-- **Options**: https://www.tiny.cloud/docs/tinymce/latest/powerpaste-options/
-- **Options**: https://www.tiny.cloud/docs/tinymce/latest/toolbar-configuration-options/
-- **Outside Demo**: https://www.tiny.cloud/docs/tinymce/latest/outside-demo/
-- **PHP image upload handler**: https://www.tiny.cloud/docs/tinymce/latest/php-upload-handler/
-- **PHP projects**: https://www.tiny.cloud/docs/tinymce/latest/php-projects/
-- **PHP**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-php/
-- **Page Break**: https://www.tiny.cloud/docs/tinymce/latest/pagebreak/
-- **Page Embed**: https://www.tiny.cloud/docs/tinymce/latest/pageembed/
-- **Permanent Pen**: https://www.tiny.cloud/docs/tinymce/latest/permanentpen/
-- **Plugins**: https://www.tiny.cloud/docs/tinymce/latest/bundling-plugins/
-- **Plugins**: https://www.tiny.cloud/docs/tinymce/latest/plugins/
-- **Preview**: https://www.tiny.cloud/docs/tinymce/latest/preview/
-- **Quick Toolbars**: https://www.tiny.cloud/docs/tinymce/latest/quickbars/
-- **Quick start: Cloud**: https://www.tiny.cloud/docs/tinymce/latest/cloud-quick-start/
-- **Quick start: NPM/Yarn**: https://www.tiny.cloud/docs/tinymce/latest/npm-projects/
-- **Quick start: ZIP**: https://www.tiny.cloud/docs/tinymce/latest/zip-install/
-- **React**: https://www.tiny.cloud/docs/tinymce/latest/react-cloud/
-- **Release notes for TinyMCE **: https://www.tiny.cloud/docs/tinymce/latest/release-notes/
-- **Required configuration**: https://www.tiny.cloud/docs/tinymce/latest/configure-required-services/
-- **Reusable template creation**: https://www.tiny.cloud/docs/tinymce/latest/ie-template-creation/
-- **Revision History**: https://www.tiny.cloud/docs/tinymce/latest/revisionhistory/
-- **Ruby on Rails**: https://www.tiny.cloud/docs/tinymce/latest/rails-cloud/
-- **Save and submit**: https://www.tiny.cloud/docs/tinymce/latest/editor-save-and-submit/
-- **Save**: https://www.tiny.cloud/docs/tinymce/latest/save/
-- **Search and Replace**: https://www.tiny.cloud/docs/tinymce/latest/searchreplace/
-- **Security guide**: https://www.tiny.cloud/docs/tinymce/latest/security/
-- **Self-host TinyMCE in React**: https://www.tiny.cloud/docs/tinymce/latest/react-pm-host/
-- **Self-hosted**: https://www.tiny.cloud/docs/tinymce/latest/installation-self-hosted/
-- **Setup options**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-setup-options/
-- **Shadow DOM**: https://www.tiny.cloud/docs/tinymce/latest/shadow-dom/
-- **Sidebars**: https://www.tiny.cloud/docs/tinymce/latest/customsidebar/
-- **Size**: https://www.tiny.cloud/docs/tinymce/latest/editor-size-options/
-- **Skins**: https://www.tiny.cloud/docs/tinymce/latest/bundling-skins/
-- **Skins**: https://www.tiny.cloud/docs/tinymce/latest/editor-skin/
-- **Small Icons Demo**: https://www.tiny.cloud/docs/tinymce/latest/small-demo/
-- **Snow Demo**: https://www.tiny.cloud/docs/tinymce/latest/snow-demo/
-- **Specify Editor Version & Plugins**: https://www.tiny.cloud/docs/tinymce/latest/editor-plugin-version/
-- **Spell Checker**: https://www.tiny.cloud/docs/tinymce/latest/introduction-to-tiny-spellchecker/
-- **Spell checking**: https://www.tiny.cloud/docs/tinymce/latest/spell-checking/
-- **Spelling Autocorrect**: https://www.tiny.cloud/docs/tinymce/latest/autocorrect/
-- **Spelling options**: https://www.tiny.cloud/docs/tinymce/latest/spelling/
-- **Spelling service - Using Hunspell dictionaries**: https://www.tiny.cloud/docs/tinymce/latest/self-hosting-hunspell/
-- **Spelling service settings**: https://www.tiny.cloud/docs/tinymce/latest/configure-spelling-service/
-- **Spelling service**: https://www.tiny.cloud/docs/tinymce/latest/individual-spelling-container/
-- **Split toolbar button**: https://www.tiny.cloud/docs/tinymce/latest/custom-split-toolbar-button/
-- **Statusbar**: https://www.tiny.cloud/docs/tinymce/latest/statusbar-configuration-options/
-- **Suggested Edits**: https://www.tiny.cloud/docs/tinymce/latest/suggestededits/
-- **Support**: https://www.tiny.cloud/docs/tinymce/latest/support/
-- **Supported functionality**: https://www.tiny.cloud/docs/tinymce/latest/powerpaste-support/
-- **Svelte**: https://www.tiny.cloud/docs/tinymce/latest/svelte-cloud/
-- **Table of Contents**: https://www.tiny.cloud/docs/tinymce/latest/tableofcontents/
-- **Table options**: https://www.tiny.cloud/docs/tinymce/latest/table-options/
-- **Table**: https://www.tiny.cloud/docs/tinymce/latest/table/
-- **Technical reference**: https://www.tiny.cloud/docs/tinymce/latest/angular-ref/
-- **Technical reference**: https://www.tiny.cloud/docs/tinymce/latest/blazor-ref/
-- **Technical reference**: https://www.tiny.cloud/docs/tinymce/latest/react-ref/
-- **Technical reference**: https://www.tiny.cloud/docs/tinymce/latest/svelte-ref/
-- **Technical reference**: https://www.tiny.cloud/docs/tinymce/latest/vue-ref/
-- **Technical reference**: https://www.tiny.cloud/docs/tinymce/latest/webcomponent-ref/
-- **Template**: https://www.tiny.cloud/docs/tinymce/latest/advanced-templates/
-- **The Browse API**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-browse/
-- **The Pick API**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-pick/
-- **The Upload API**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-upload/
-- **Themes**: https://www.tiny.cloud/docs/tinymce/latest/bundling-themes/
-- **Themes**: https://www.tiny.cloud/docs/tinymce/latest/editor-theme/
-- **TinyMCE  Documentation**: https://www.tiny.cloud/docs/tinymce/latest/index/
-- **TinyMCE  examples**: https://www.tiny.cloud/docs/tinymce/latest/examples/
-- **TinyMCE 8.0.0**: https://www.tiny.cloud/docs/tinymce/latest/8.0-release-notes/
-- **TinyMCE 8.0.0**: https://www.tiny.cloud/docs/tinymce/latest/8.0.1-release-notes/
-- **TinyMCE 8.0.0**: https://www.tiny.cloud/docs/tinymce/latest/8.0.2-release-notes/
-- **TinyMCE 8.0.0**: https://www.tiny.cloud/docs/tinymce/latest/8.1.0-release-notes/
-- **TinyMCE 8.0.0**: https://www.tiny.cloud/docs/tinymce/latest/8.1.1-release-notes/
-- **TinyMCE 8.0.0**: https://www.tiny.cloud/docs/tinymce/latest/8.1.2-release-notes/
-- **TinyMCE 8.0.0**: https://www.tiny.cloud/docs/tinymce/latest/8.2.1-release-notes/
-- **TinyMCE 8.0.0**: https://www.tiny.cloud/docs/tinymce/latest/8.2.2-release-notes/
-- **TinyMCE 8.0.0**: https://www.tiny.cloud/docs/tinymce/latest/8.3.0-release-notes/
-- **TinyMCE 8.0.0**: https://www.tiny.cloud/docs/tinymce/latest/8.3.1-release-notes/
-- **TinyMCE 8.0.0**: https://www.tiny.cloud/docs/tinymce/latest/8.3.2-release-notes/
-- **TinyMCE 8.2.0**: https://www.tiny.cloud/docs/tinymce/latest/8.2.0-release-notes/
-- **TinyMCE Keyboard shortcuts**: https://www.tiny.cloud/docs/tinymce/latest/keyboard-shortcuts/
-- **TinyMCE Premium upgrade promotion**: https://www.tiny.cloud/docs/tinymce/latest/promotions/
-- **TinyMCE for mobile**: https://www.tiny.cloud/docs/tinymce/latest/tinymce-for-mobile/
-- **Toggle toolbar button**: https://www.tiny.cloud/docs/tinymce/latest/custom-toggle-toolbar-button/
-- **Toolbar buttons and menu items**: https://www.tiny.cloud/docs/tinymce/latest/comments-toolbars-menus/
-- **Toolbar buttons and menu items**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-toolbars-menus/
-- **Toolbar buttons**: https://www.tiny.cloud/docs/tinymce/latest/custom-toolbarbuttons/
-- **Troubleshoot server-side components**: https://www.tiny.cloud/docs/tinymce/latest/troubleshoot-server/
-- **Troubleshooting**: https://www.tiny.cloud/docs/tinymce/latest/powerpaste-troubleshooting/
-- **TypeScript interfaces**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-type-interfaces/
-- **UI Mode**: https://www.tiny.cloud/docs/tinymce/latest/ui-mode-configuration-options/
-- **UI components**: https://www.tiny.cloud/docs/tinymce/latest/ui-components/
-- **UI localizations**: https://www.tiny.cloud/docs/tinymce/latest/bundling-localization/
-- **UI options**: https://www.tiny.cloud/docs/tinymce/latest/tinydrive-ui-options/
-- **URL dialogs**: https://www.tiny.cloud/docs/tinymce/latest/urldialog/
-- **URL handling options**: https://www.tiny.cloud/docs/tinymce/latest/url-handling/
-- **Understanding editor loads**: https://www.tiny.cloud/docs/tinymce/latest/understanding-editor-loads/
-- **Upgrading TinyMCE**: https://www.tiny.cloud/docs/tinymce/latest/upgrading/
-- **User Lookup**: https://www.tiny.cloud/docs/tinymce/latest/userlookup/
-- **User formatting**: https://www.tiny.cloud/docs/tinymce/latest/user-formatting-options/
-- **Using Comments**: https://www.tiny.cloud/docs/tinymce/latest/comments-using-comments/
-- **Using a .zip package with a module bundler**: https://www.tiny.cloud/docs/tinymce/latest/react-zip-bundle/
-- **Using a .zip package**: https://www.tiny.cloud/docs/tinymce/latest/angular-zip/
-- **Using a .zip package**: https://www.tiny.cloud/docs/tinymce/latest/blazor-zip/
-- **Using a .zip package**: https://www.tiny.cloud/docs/tinymce/latest/laravel-zip-install/
-- **Using a .zip package**: https://www.tiny.cloud/docs/tinymce/latest/rails-zip/
-- **Using a .zip package**: https://www.tiny.cloud/docs/tinymce/latest/svelte-zip/
-- **Using a .zip package**: https://www.tiny.cloud/docs/tinymce/latest/vue-zip/
-- **Using a .zip package**: https://www.tiny.cloud/docs/tinymce/latest/webcomponent-zip/
-- **Using a TinyMCE .zip package in React**: https://www.tiny.cloud/docs/tinymce/latest/react-zip-host/
-- **Using a package manager with bundling**: https://www.tiny.cloud/docs/tinymce/latest/angular-pm-bundle/
-- **Using a package manager with bundling**: https://www.tiny.cloud/docs/tinymce/latest/angular-zip-bundle/
-- **Using a package manager with bundling**: https://www.tiny.cloud/docs/tinymce/latest/svelte-pm-bundle/
-- **Using a package manager with bundling**: https://www.tiny.cloud/docs/tinymce/latest/vue-pm-bundle/
-- **Using a package manager**: https://www.tiny.cloud/docs/tinymce/latest/angular-pm/
-- **Using a package manager**: https://www.tiny.cloud/docs/tinymce/latest/blazor-pm/
-- **Using a package manager**: https://www.tiny.cloud/docs/tinymce/latest/rails-third-party/
-- **Using a package manager**: https://www.tiny.cloud/docs/tinymce/latest/svelte-pm/
-- **Using a package manager**: https://www.tiny.cloud/docs/tinymce/latest/vue-pm/
-- **Using a package manager**: https://www.tiny.cloud/docs/tinymce/latest/webcomponent-pm/
-- **Using plugins to extend TinyMCE**: https://www.tiny.cloud/docs/tinymce/latest/work-with-plugins/
-- **Using the Annotations API**: https://www.tiny.cloud/docs/tinymce/latest/annotations/
-- **Using the Composer package**: https://www.tiny.cloud/docs/tinymce/latest/laravel-composer-install/
-- **Version compatibility reference**: https://www.tiny.cloud/docs/tinymce/latest/plugin-editor-version-compatibility/
+- **Image feature of the Media Optimizer plugin**: https://www.tiny.cloud/docs/tinymce/latest/uploadcare-image/
+- **Files and Documents feature of the Media Optimizer plugin**: https://www.tiny.cloud/docs/tinymce/latest/uploadcare-documents/
 - **Video feature of the Media Optimizer plugin**: https://www.tiny.cloud/docs/tinymce/latest/uploadcare-video/
-- **Visual Blocks**: https://www.tiny.cloud/docs/tinymce/latest/visualblocks/
-- **Visual Characters**: https://www.tiny.cloud/docs/tinymce/latest/visualchars/
-- **Vue.js**: https://www.tiny.cloud/docs/tinymce/latest/vue-cloud/
-- **Web Component**: https://www.tiny.cloud/docs/tinymce/latest/webcomponent-cloud/
-- **Word Count**: https://www.tiny.cloud/docs/tinymce/latest/wordcount/
-- **WordPress**: https://www.tiny.cloud/docs/tinymce/latest/wordpress/
-- **ZIP**: https://www.tiny.cloud/docs/tinymce/latest/installation-zip/
-- **jQuery**: https://www.tiny.cloud/docs/tinymce/latest/jquery-cloud/
-- **jQuery**: https://www.tiny.cloud/docs/tinymce/latest/jquery-pm/
-- **tiny docs ai**: https://www.tiny.cloud/docs/tinymce/latest/tiny-docs-ai/
+
+#### Services & Infrastructure
+- **Hyperlinking service**: https://www.tiny.cloud/docs/tinymce/latest/individual-hyperlinking-container/
+- **Hyperlinking service settings**: https://www.tiny.cloud/docs/tinymce/latest/configure-hyperlink-service/
+- **Image Proxy service**: https://www.tiny.cloud/docs/tinymce/latest/individual-image-proxy-container/
+- **Image Proxy service settings**: https://www.tiny.cloud/docs/tinymce/latest/configure-imageproxy-service/
+- **Enhanced Media Embed Server**: https://www.tiny.cloud/docs/tinymce/latest/mediaembed-server-config/
+- **Integrate Enhanced Media Embed Server**: https://www.tiny.cloud/docs/tinymce/latest/mediaembed-server-integration/
+- **Configure Enhanced Media Embed Server**: https://www.tiny.cloud/docs/tinymce/latest/mediaembed-server-config/
+- **Required configuration**: https://www.tiny.cloud/docs/tinymce/latest/configure-required-services/
+- **Optional common settings**: https://www.tiny.cloud/docs/tinymce/latest/configure-common-settings-services/
+- **Troubleshoot server-side components**: https://www.tiny.cloud/docs/tinymce/latest/troubleshoot-server/
+- **License key**: https://www.tiny.cloud/docs/tinymce/latest/license-key/
+- **Generate public key pairs**: https://www.tiny.cloud/docs/tinymce/latest/generate-rsa-key-pairs/
+
+### Customization & Development
+
+#### Creating Custom Components
+- **Create a plugin**: https://www.tiny.cloud/docs/tinymce/latest/creating-a-plugin/
+- **Create a Skin**: https://www.tiny.cloud/docs/tinymce/latest/creating-a-skin/
+- **Create an icon pack**: https://www.tiny.cloud/docs/tinymce/latest/creating-an-icon-pack/
+- **Creating custom dialogs**: https://www.tiny.cloud/docs/tinymce/latest/dialog/
+- **Creating custom menu items**: https://www.tiny.cloud/docs/tinymce/latest/creating-custom-menu-items/
+- **Custom Basic menu items**: https://www.tiny.cloud/docs/tinymce/latest/custom-basic-menu-items/
+- **Custom Nested menu items**: https://www.tiny.cloud/docs/tinymce/latest/custom-nested-menu-items/
+- **Custom Toggle menu items**: https://www.tiny.cloud/docs/tinymce/latest/custom-toggle-menu-items/
+- **Custom Basic toolbar button**: https://www.tiny.cloud/docs/tinymce/latest/custom-basic-toolbar-button/
+- **Custom Group toolbar button**: https://www.tiny.cloud/docs/tinymce/latest/custom-group-toolbar-button/
+- **Custom Menu toolbar button**: https://www.tiny.cloud/docs/tinymce/latest/custom-menu-toolbar-button/
+- **Custom Split toolbar button**: https://www.tiny.cloud/docs/tinymce/latest/custom-split-toolbar-button/
+- **Custom Toggle toolbar button**: https://www.tiny.cloud/docs/tinymce/latest/custom-toggle-toolbar-button/
+- **Custom Toolbar buttons**: https://www.tiny.cloud/docs/tinymce/latest/custom-toolbarbuttons/
+- **Customizing the UI**: https://www.tiny.cloud/docs/tinymce/latest/customize-ui/
+- **Creating custom notifications**: https://www.tiny.cloud/docs/tinymce/latest/creating-custom-notifications/
+- **Notifications**: https://www.tiny.cloud/docs/tinymce/latest/creating-custom-notifications/
+
+#### Bundling & Build Tools
+- **Introduction to bundling TinyMCE**: https://www.tiny.cloud/docs/tinymce/latest/introduction-to-bundling-tinymce/
+- **Introduction and initial setup**: https://www.tiny.cloud/docs/tinymce/latest/bundle-intro-setup/
+- **Bundling Plugins**: https://www.tiny.cloud/docs/tinymce/latest/bundling-plugins/
+- **Plugins**: https://www.tiny.cloud/docs/tinymce/latest/bundling-plugins/
+- **Bundling Skins**: https://www.tiny.cloud/docs/tinymce/latest/bundling-skins/
+- **Skins**: https://www.tiny.cloud/docs/tinymce/latest/bundling-skins/
+- **Bundling Themes**: https://www.tiny.cloud/docs/tinymce/latest/bundling-themes/
+- **Themes**: https://www.tiny.cloud/docs/tinymce/latest/bundling-themes/
+- **Bundling Icons**: https://www.tiny.cloud/docs/tinymce/latest/bundling-icons/
+- **Icons**: https://www.tiny.cloud/docs/tinymce/latest/bundling-icons/
+- **Bundling Content CSS**: https://www.tiny.cloud/docs/tinymce/latest/bundling-content-css/
+- **Content CSS**: https://www.tiny.cloud/docs/tinymce/latest/bundling-content-css/
+- **Bundling Models**: https://www.tiny.cloud/docs/tinymce/latest/bundling-models/
+- **Models**: https://www.tiny.cloud/docs/tinymce/latest/bundling-models/
+- **Bundling UI localizations**: https://www.tiny.cloud/docs/tinymce/latest/bundling-localization/
+- **UI localizations**: https://www.tiny.cloud/docs/tinymce/latest/bundling-localization/
+- **CommonJS and NPM**: https://www.tiny.cloud/docs/tinymce/latest/webpack-cjs-npm/
+- **CommonJS and a .zip archive (Browserify)**: https://www.tiny.cloud/docs/tinymce/latest/browserify-cjs-download/
+- **CommonJS and a .zip archive (Webpack)**: https://www.tiny.cloud/docs/tinymce/latest/webpack-cjs-download/
+- **CommonJS and npm (Browserify)**: https://www.tiny.cloud/docs/tinymce/latest/browserify-cjs-npm/
+- **ES6 and NPM**: https://www.tiny.cloud/docs/tinymce/latest/vite-es6-npm/
+- **ES6 and a .zip archive (Rollup)**: https://www.tiny.cloud/docs/tinymce/latest/rollup-es6-download/
+- **ES6 and a .zip archive (Webpack)**: https://www.tiny.cloud/docs/tinymce/latest/webpack-es6-download/
+- **ES6 and npm (Rollup)**: https://www.tiny.cloud/docs/tinymce/latest/rollup-es6-npm/
+- **ES6 (Webpack)**: https://www.tiny.cloud/docs/tinymce/latest/webpack-es6-npm/
+- **Version compatibility reference**: https://www.tiny.cloud/docs/tinymce/latest/plugin-editor-version-compatibility/
+
+#### Dialog & UI Components
+- **APIs**: https://www.tiny.cloud/docs/tinymce/latest/dialog-apis/
+- **Basic configuration**: https://www.tiny.cloud/docs/tinymce/latest/dialog-configuration/
+- **Body components**: https://www.tiny.cloud/docs/tinymce/latest/dialog-components/
+- **Footer buttons**: https://www.tiny.cloud/docs/tinymce/latest/dialog-footer-buttons/
+- **Interactive examples**: https://www.tiny.cloud/docs/tinymce/latest/dialog-examples/
+- **URL dialogs**: https://www.tiny.cloud/docs/tinymce/latest/urldialog/
+- **UI components**: https://www.tiny.cloud/docs/tinymce/latest/ui-components/
+
+#### Enhanced Skins & Icons
+- **Enhanced Skins & Icon Packs**: https://www.tiny.cloud/docs/tinymce/latest/enhanced-skins-and-icon-packs/
+- **Icon Pack Template**: https://www.tiny.cloud/docs/tinymce/latest/using-the-icon-pack-template/
+- **Custom Icon Pack Demo**: https://www.tiny.cloud/docs/tinymce/latest/custom-icon-pack-demo/
+
+### API Reference
+
+#### Core APIs
 - **tinymce**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.root/
 - **tinymce.AddOnManager**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.addonmanager/
-- **tinymce.Annotator**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.annotator/
 - **tinymce.Editor**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.editor/
 - **tinymce.EditorManager**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.editormanager/
 - **tinymce.EditorMode**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.editormode/
 - **tinymce.EditorOptions**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.editoroptions/
 - **tinymce.EditorUpload**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.editorupload/
+- **tinymce.Plugin**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.plugin/
+- **tinymce.Theme**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.theme/
+
+#### UI APIs
+- **tinymce.WindowManager**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.windowmanager/
+- **tinymce.NotificationManager**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.notificationmanager/
+- **tinymce.Shortcuts**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.shortcuts/
+- **tinymce.editor.ui.Registry**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.editor.ui.registry/
+- **tinymce.editor.ui.Ui**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.editor.ui.ui/
+
+#### Utility APIs
 - **tinymce.Env**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.env/
 - **tinymce.Event**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.event/
-- **tinymce.FakeClipboard**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.fakeclipboard/
-- **tinymce.Formatter**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.formatter/
-- **tinymce.NotificationManager**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.notificationmanager/
-- **tinymce.Plugin**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.plugin/
-- **tinymce.Shortcuts**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.shortcuts/
-- **tinymce.Theme**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.theme/
 - **tinymce.UndoManager**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.undomanager/
+- **tinymce.Formatter**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.formatter/
+- **tinymce.Annotator**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.annotator/
 - **tinymce.UserLookup**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.userlookup/
-- **tinymce.WindowManager**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.windowmanager/
-- **tinymce.dom.BookmarkManager**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.dom.bookmarkmanager/
+- **tinymce.FakeClipboard**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.fakeclipboard/
+
+#### DOM APIs
 - **tinymce.dom.DOMUtils**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.dom.domutils/
-- **tinymce.dom.EventUtils**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.dom.eventutils/
-- **tinymce.dom.RangeUtils**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.dom.rangeutils/
-- **tinymce.dom.ScriptLoader**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.dom.scriptloader/
 - **tinymce.dom.Selection**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.dom.selection/
 - **tinymce.dom.Serializer**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.dom.serializer/
+- **tinymce.dom.RangeUtils**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.dom.rangeutils/
+- **tinymce.dom.BookmarkManager**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.dom.bookmarkmanager/
+- **tinymce.dom.EventUtils**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.dom.eventutils/
+- **tinymce.dom.ScriptLoader**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.dom.scriptloader/
 - **tinymce.dom.StyleSheetLoader**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.dom.stylesheetloader/
 - **tinymce.dom.TextSeeker**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.dom.textseeker/
 - **tinymce.dom.TreeWalker**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.dom.treewalker/
-- **tinymce.editor.ui.Registry**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.editor.ui.registry/
-- **tinymce.editor.ui.Ui**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.editor.ui.ui/
-- **tinymce.geom.Rect**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.geom.rect/
+
+#### HTML APIs
 - **tinymce.html.DomParser**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.html.domparser/
-- **tinymce.html.Entities**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.html.entities/
-- **tinymce.html.Node**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.html.node/
-- **tinymce.html.Schema**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.html.schema/
 - **tinymce.html.Serializer**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.html.serializer/
+- **tinymce.html.Schema**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.html.schema/
+- **tinymce.html.Node**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.html.node/
+- **tinymce.html.Entities**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.html.entities/
 - **tinymce.html.Styles**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.html.styles/
 - **tinymce.html.Writer**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.html.writer/
+
+#### Utility APIs
 - **tinymce.util.Delay**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.util.delay/
 - **tinymce.util.EventDispatcher**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.util.eventdispatcher/
 - **tinymce.util.I18n**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.util.i18n/
@@ -629,3 +698,85 @@ This section provides a complete list of all 395 documentation pages available i
 - **tinymce.util.Observable**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.util.observable/
 - **tinymce.util.Tools**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.util.tools/
 - **tinymce.util.URI**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.util.uri/
+
+#### Geometry APIs
+- **tinymce.geom.Rect**: https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.geom.rect/
+
+### Migration Guides
+
+- **Upgrading TinyMCE**: https://www.tiny.cloud/docs/tinymce/latest/upgrading/
+- **Migration Guides Overview**: https://www.tiny.cloud/docs/tinymce/latest/migration-guides/
+- **Migration from 7.x**: https://www.tiny.cloud/docs/tinymce/latest/migration-from-7x/
+- **Migration from 6.x**: https://www.tiny.cloud/docs/tinymce/latest/migration-from-6x/
+- **Migration from 6.x to 8.x**: https://www.tiny.cloud/docs/tinymce/latest/migration-from-6x-to-8x/
+- **Migration from 5.x**: https://www.tiny.cloud/docs/tinymce/latest/migration-from-5x/
+- **Migration from 5.x to 8.x**: https://www.tiny.cloud/docs/tinymce/latest/migration-from-5x-to-8x/
+- **Migration from 4.x**: https://www.tiny.cloud/docs/tinymce/latest/migration-from-4x/
+- **Migration from 4.x to 8.x**: https://www.tiny.cloud/docs/tinymce/latest/migration-from-4x-to-8x/
+- **Migrating from Froala**: https://www.tiny.cloud/docs/tinymce/latest/migration-from-froala/
+
+### Examples & Demos
+
+- **Examples**: https://www.tiny.cloud/docs/tinymce/latest/examples/
+- **TinyMCE examples**: https://www.tiny.cloud/docs/tinymce/latest/examples/
+- **Basic example**: https://www.tiny.cloud/docs/tinymce/latest/basic-example/
+- **How To Guides**: https://www.tiny.cloud/docs/tinymce/latest/how-to-guides/
+- **Bootstrap Demo**: https://www.tiny.cloud/docs/tinymce/latest/bootstrap-demo/
+- **Borderless Demo**: https://www.tiny.cloud/docs/tinymce/latest/borderless-demo/
+- **Classic editor mode**: https://www.tiny.cloud/docs/tinymce/latest/classic-demo/
+- **Distraction-free editor**: https://www.tiny.cloud/docs/tinymce/latest/distraction-free-demo/
+- **Fabric Demo**: https://www.tiny.cloud/docs/tinymce/latest/fabric-demo/
+- **Fluent Demo**: https://www.tiny.cloud/docs/tinymce/latest/fluent-demo/
+- **Inline editor**: https://www.tiny.cloud/docs/tinymce/latest/inline-demo/
+- **Jam Icons Demo**: https://www.tiny.cloud/docs/tinymce/latest/jam-demo/
+- **Material Classic Demo**: https://www.tiny.cloud/docs/tinymce/latest/material-classic-demo/
+- **Material Outline Demo**: https://www.tiny.cloud/docs/tinymce/latest/material-outline-demo/
+- **Naked Demo**: https://www.tiny.cloud/docs/tinymce/latest/naked-demo/
+- **Outside Demo**: https://www.tiny.cloud/docs/tinymce/latest/outside-demo/
+- **Small Icons Demo**: https://www.tiny.cloud/docs/tinymce/latest/small-demo/
+- **Snow Demo**: https://www.tiny.cloud/docs/tinymce/latest/snow-demo/
+- **Full-featured open source demo**: https://www.tiny.cloud/docs/tinymce/latest/full-featured-open-source-demo/
+- **Excluding premium features**: https://www.tiny.cloud/docs/tinymce/latest/full-featured-open-source-demo/
+- **Full-featured premium demo**: https://www.tiny.cloud/docs/tinymce/latest/full-featured-premium-demo/
+- **Including premium features**: https://www.tiny.cloud/docs/tinymce/latest/full-featured-premium-demo/
+
+### Release Information
+
+- **Release Notes**: https://www.tiny.cloud/docs/tinymce/latest/release-notes/
+- **Release notes for TinyMCE**: https://www.tiny.cloud/docs/tinymce/latest/release-notes/
+- **Changelog**: https://www.tiny.cloud/docs/tinymce/latest/changelog/
+- **TinyMCE 8.0.0**: https://www.tiny.cloud/docs/tinymce/latest/8.0-release-notes/
+- **TinyMCE 8.0.1**: https://www.tiny.cloud/docs/tinymce/latest/8.0.1-release-notes/
+- **TinyMCE 8.0.2**: https://www.tiny.cloud/docs/tinymce/latest/8.0.2-release-notes/
+- **TinyMCE 8.1.0**: https://www.tiny.cloud/docs/tinymce/latest/8.1.0-release-notes/
+- **TinyMCE 8.1.1**: https://www.tiny.cloud/docs/tinymce/latest/8.1.1-release-notes/
+- **TinyMCE 8.1.2**: https://www.tiny.cloud/docs/tinymce/latest/8.1.2-release-notes/
+- **TinyMCE 8.2.0**: https://www.tiny.cloud/docs/tinymce/latest/8.2.0-release-notes/
+- **TinyMCE 8.2.1**: https://www.tiny.cloud/docs/tinymce/latest/8.2.1-release-notes/
+- **TinyMCE 8.2.2**: https://www.tiny.cloud/docs/tinymce/latest/8.2.2-release-notes/
+- **TinyMCE 8.3.0**: https://www.tiny.cloud/docs/tinymce/latest/8.3.0-release-notes/
+- **TinyMCE 8.3.1**: https://www.tiny.cloud/docs/tinymce/latest/8.3.1-release-notes/
+- **TinyMCE 8.3.2**: https://www.tiny.cloud/docs/tinymce/latest/8.3.2-release-notes/
+
+### Accessibility & Security
+
+- **Accessibility**: https://www.tiny.cloud/docs/tinymce/latest/accessibility/
+- **Accessibility Guide**: https://www.tiny.cloud/docs/tinymce/latest/tinymce-and-screenreaders/
+- **Accessibility Checker**: https://www.tiny.cloud/docs/tinymce/latest/a11ychecker/
+- **Security guide**: https://www.tiny.cloud/docs/tinymce/latest/security/
+- **TinyMCE for mobile**: https://www.tiny.cloud/docs/tinymce/latest/tinymce-for-mobile/
+- **Keyboard Shortcuts**: https://www.tiny.cloud/docs/tinymce/latest/shortcuts/
+- **TinyMCE Keyboard shortcuts**: https://www.tiny.cloud/docs/tinymce/latest/keyboard-shortcuts/
+
+### Support & Resources
+
+- **Support**: https://www.tiny.cloud/docs/tinymce/latest/support/
+- **Documentation Home**: https://www.tiny.cloud/docs/tinymce/latest/
+- **TinyMCE Premium upgrade promotion**: https://www.tiny.cloud/docs/tinymce/latest/promotions/
+- **tiny docs ai**: https://www.tiny.cloud/docs/tinymce/latest/tiny-docs-ai/
+
+### Legacy & Other
+
+- **MoxieManager**: https://www.tiny.cloud/docs/tinymce/latest/moxiemanager/
+- **PHP image upload handler**: https://www.tiny.cloud/docs/tinymce/latest/php-upload-handler/
+- **Reusable template creation**: https://www.tiny.cloud/docs/tinymce/latest/ie-template-creation/

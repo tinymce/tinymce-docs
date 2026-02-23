@@ -1,0 +1,70 @@
+= Using {productname} in React
+:navtitle: React
+:description: Integrate TinyMCE into your React application. Choose from Cloud, self-hosted, or ZIP installation methods.
+:keywords: integration, integrate, react, reactjs, tinymce-react, tinymce
+
+{productname} provides official React integration through the link:https://github.com/tinymce/tinymce-react[{productname} React component^] (`@tinymce/tinymce-react`). This component is a thin wrapper around {productname} that makes it easy to integrate the editor into React applications.
+
+== Installation methods
+
+Choose the installation method that best fits your project:
+
+=== Cloud
+
+The fastest way to get started with {productname} in React. The editor is loaded from the {cloudname} CDN.
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:react-cloud.adoc[Using {cloudname}]
+
+Get started quickly with {productname} using the {cloudname} CDN. No build configuration required.
+
+// Empty cell to even out rows
+|
+
+|===
+
+=== Self-hosted
+
+Install {productname} using npm, Yarn, or other package managers. Choose between hosting the editor files as static assets or bundling them with your application.
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:react-pm-host.adoc[Using a package manager with hosting]
+
+Host {productname} files as static assets. Simple setup with no bundling configuration.
+
+|
+[.lead]
+xref:react-pm-bundle.adoc[Using a package manager with bundling]
+
+Bundle {productname} with your React application using webpack, Vite, or other bundlers. Optimize your bundle size by including only the components you need.
+
+|===
+
+=== ZIP
+
+Download and install {productname} from a .zip archive. Suitable for traditional web deployments.
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:react-zip-host.adoc[Using a .zip package with hosting]
+
+Extract {productname} from a .zip archive and host the files as static assets.
+
+|
+[.lead]
+xref:react-zip-bundle.adoc[Using a .zip package with bundling]
+
+Extract {productname} from a .zip archive and bundle it with your React application.
+
+|===

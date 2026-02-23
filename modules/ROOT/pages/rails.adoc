@@ -1,0 +1,64 @@
+= Using {productname} in Ruby on Rails
+:navtitle: Ruby on Rails
+:description: Integrate TinyMCE into your Ruby on Rails application. Choose from Cloud, package manager, or ZIP installation methods.
+:keywords: integration, integrate, ruby, rails, ruby-on-rails, tinymce
+
+{productname} can be integrated into Ruby on Rails applications to provide rich text editing capabilities.
+
+== Installation methods
+
+Choose the installation method that best fits your project:
+
+=== Cloud
+
+The fastest way to get started with {productname} in Ruby on Rails. The editor is loaded from the {cloudname} CDN.
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:rails-cloud.adoc[Using {cloudname}]
+
+Get started quickly with {productname} using the {cloudname} CDN. No build configuration required.
+
+// Empty cell to even out rows
+|
+
+|===
+
+=== Self-hosted
+
+Install {productname} using a package manager.
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:rails-third-party.adoc[Using a package manager]
+
+Install and configure {productname} in your Ruby on Rails application using a package manager.
+
+// Empty cell to even out rows
+|
+
+|===
+
+=== ZIP
+
+Download and install {productname} from a .zip archive. Suitable for traditional web deployments.
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:rails-zip.adoc[Using a .zip package]
+
+Extract {productname} from a .zip archive and integrate it into your Ruby on Rails application.
+
+// Empty cell to even out rows
+|
+
+|===

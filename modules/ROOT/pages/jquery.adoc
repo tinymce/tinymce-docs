@@ -1,0 +1,46 @@
+= Using {productname} with jQuery
+:navtitle: jQuery
+:description: Integrate TinyMCE with jQuery. Choose from Cloud or self-hosted installation methods.
+:keywords: integration, integrate, jquery, javascript, tinymce
+
+{productname} provides official jQuery integration through the link:https://github.com/tinymce/tinymce-jquery[{productname} jQuery integration^] (`@tinymce/tinymce-jquery`). This integration makes it easy to use {productname} with jQuery.
+
+== Installation methods
+
+Choose the installation method that best fits your project:
+
+=== Cloud
+
+The fastest way to get started with {productname} and jQuery. The editor is loaded from the {cloudname} CDN.
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:jquery-cloud.adoc[Using {cloudname}]
+
+Get started quickly with {productname} using the {cloudname} CDN. No build configuration required.
+
+// Empty cell to even out rows
+|
+
+|===
+
+=== Self-hosted
+
+Install {productname} using npm, Yarn, or other package managers.
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:jquery-pm.adoc[Using a package manager]
+
+Install and configure {productname} with jQuery using a package manager.
+
+// Empty cell to even out rows
+|
+
+|===

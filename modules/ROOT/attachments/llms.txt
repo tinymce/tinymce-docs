@@ -2,6 +2,8 @@
 
 > Rich text editor for web applications. The latest stable version is TinyMCE 8.
 
+TinyMCE is a powerful, flexible WYSIWYG rich text editor that can be integrated into any web application. This documentation covers installation, configuration, integration with popular frameworks, API reference, plugins, and advanced features.
+
 **IMPORTANT**: Always use TinyMCE 8 for new projects. Use `tinymce@8` or `tinymce/8` in CDN URLs and package installations.
 
 ## Getting Started
@@ -28,51 +30,61 @@
 
 ### Frontend Frameworks
 
-- [React Integration](https://www.tiny.cloud/docs/tinymce/latest/integrations/react/): React integration overview
+- [React Integration](https://www.tiny.cloud/docs/tinymce/latest/react/): React integration overview
   - [React Cloud](https://www.tiny.cloud/docs/tinymce/latest/react-cloud/): React with Tiny Cloud
   - [React Package Manager](https://www.tiny.cloud/docs/tinymce/latest/react-pm-host/): React with package manager
   - [React ZIP](https://www.tiny.cloud/docs/tinymce/latest/react-zip-host/): React with ZIP package
-- [Vue.js Integration](https://www.tiny.cloud/docs/tinymce/latest/integrations/vue/): Vue.js integration overview
+- [Vue.js Integration](https://www.tiny.cloud/docs/tinymce/latest/vue/): Vue.js integration overview
   - [Vue Cloud](https://www.tiny.cloud/docs/tinymce/latest/vue-cloud/): Vue.js with Tiny Cloud
   - [Vue Package Manager](https://www.tiny.cloud/docs/tinymce/latest/vue-pm/): Vue.js with package manager
   - [Vue ZIP](https://www.tiny.cloud/docs/tinymce/latest/vue-zip/): Vue.js with ZIP package
-- [Angular Integration](https://www.tiny.cloud/docs/tinymce/latest/integrations/angular/): Angular integration overview
+- [Angular Integration](https://www.tiny.cloud/docs/tinymce/latest/angular/): Angular integration overview
   - [Angular Cloud](https://www.tiny.cloud/docs/tinymce/latest/angular-cloud/): Angular with Tiny Cloud
   - [Angular Package Manager](https://www.tiny.cloud/docs/tinymce/latest/angular-pm/): Angular with package manager
   - [Angular ZIP](https://www.tiny.cloud/docs/tinymce/latest/angular-zip/): Angular with ZIP package
-- [Blazor Integration](https://www.tiny.cloud/docs/tinymce/latest/integrations/blazor/): Blazor integration overview
+- [Blazor Integration](https://www.tiny.cloud/docs/tinymce/latest/blazor/): Blazor integration overview
   - [Blazor Cloud](https://www.tiny.cloud/docs/tinymce/latest/blazor-cloud/): Blazor with Tiny Cloud
   - [Blazor Package Manager](https://www.tiny.cloud/docs/tinymce/latest/blazor-pm/): Blazor with package manager
   - [Blazor ZIP](https://www.tiny.cloud/docs/tinymce/latest/blazor-zip/): Blazor with ZIP package
-- [Svelte Integration](https://www.tiny.cloud/docs/tinymce/latest/integrations/svelte/): Svelte integration overview
+- [Svelte Integration](https://www.tiny.cloud/docs/tinymce/latest/svelte/): Svelte integration overview
   - [Svelte Cloud](https://www.tiny.cloud/docs/tinymce/latest/svelte-cloud/): Svelte with Tiny Cloud
   - [Svelte Package Manager](https://www.tiny.cloud/docs/tinymce/latest/svelte-pm/): Svelte with package manager
   - [Svelte ZIP](https://www.tiny.cloud/docs/tinymce/latest/svelte-zip/): Svelte with ZIP package
-- [Web Component Integration](https://www.tiny.cloud/docs/tinymce/latest/integrations/webcomponent/): Web Component integration
+- [Web Component Integration](https://www.tiny.cloud/docs/tinymce/latest/webcomponent/): Web Component integration
   - [Web Component Cloud](https://www.tiny.cloud/docs/tinymce/latest/webcomponent-cloud/): Web Component with Tiny Cloud
   - [Web Component Package Manager](https://www.tiny.cloud/docs/tinymce/latest/webcomponent-pm/): Web Component with package manager
   - [Web Component ZIP](https://www.tiny.cloud/docs/tinymce/latest/webcomponent-zip/): Web Component with ZIP package
-- [jQuery Integration](https://www.tiny.cloud/docs/tinymce/latest/integrations/jquery/): jQuery integration
+- [jQuery Integration](https://www.tiny.cloud/docs/tinymce/latest/jquery/): jQuery integration
   - [jQuery Cloud](https://www.tiny.cloud/docs/tinymce/latest/jquery-cloud/): jQuery with Tiny Cloud
   - [jQuery Package Manager](https://www.tiny.cloud/docs/tinymce/latest/jquery-pm/): jQuery with package manager
 
 ### Backend Frameworks
 
-- [Django Integration](https://www.tiny.cloud/docs/tinymce/latest/integrations/django/): Django integration
+- [Django Integration](https://www.tiny.cloud/docs/tinymce/latest/django/): Django integration
   - [Django Cloud](https://www.tiny.cloud/docs/tinymce/latest/django-cloud/): Django with Tiny Cloud
   - [Django ZIP](https://www.tiny.cloud/docs/tinymce/latest/django-zip/): Django with ZIP package
-- [Laravel Integration](https://www.tiny.cloud/docs/tinymce/latest/integrations/laravel/): Laravel integration
+- [Laravel Integration](https://www.tiny.cloud/docs/tinymce/latest/laravel/): Laravel integration
   - [Laravel Cloud](https://www.tiny.cloud/docs/tinymce/latest/laravel-tiny-cloud/): Laravel with Tiny Cloud
   - [Laravel Composer](https://www.tiny.cloud/docs/tinymce/latest/laravel-composer-install/): Laravel with Composer
   - [Laravel ZIP](https://www.tiny.cloud/docs/tinymce/latest/laravel-zip-install/): Laravel with ZIP package
-- [Ruby on Rails Integration](https://www.tiny.cloud/docs/tinymce/latest/integrations/rails/): Ruby on Rails integration
+- [Ruby on Rails Integration](https://www.tiny.cloud/docs/tinymce/latest/rails/): Ruby on Rails integration
   - [Rails Cloud](https://www.tiny.cloud/docs/tinymce/latest/rails-cloud/): Rails with Tiny Cloud
   - [Rails Package Manager](https://www.tiny.cloud/docs/tinymce/latest/rails-third-party/): Rails with package manager
   - [Rails ZIP](https://www.tiny.cloud/docs/tinymce/latest/rails-zip/): Rails with ZIP package
-- [Node.js + Express Integration](https://www.tiny.cloud/docs/tinymce/latest/integrations/expressjs/): Node.js and Express integration
+- [Node.js + Express Integration](https://www.tiny.cloud/docs/tinymce/latest/expressjs-pm/): Node.js and Express integration
   - [Express Package Manager](https://www.tiny.cloud/docs/tinymce/latest/expressjs-pm/): Express with package manager
 
+### Other Integrations
+
+- [Bootstrap Integration](https://www.tiny.cloud/docs/tinymce/latest/bootstrap/): Bootstrap integration
+- [PHP Projects](https://www.tiny.cloud/docs/tinymce/latest/php-projects/): PHP integration
+- [.NET Projects](https://www.tiny.cloud/docs/tinymce/latest/dotnet-projects/): .NET integration
+- [WordPress Integration](https://www.tiny.cloud/docs/tinymce/latest/wordpress/): WordPress integration
+- [Shadow DOM](https://www.tiny.cloud/docs/tinymce/latest/shadow-dom/): Shadow DOM integration
+
 ## Configuration
+
+### Basic Configuration
 
 - [Basic Setup](https://www.tiny.cloud/docs/tinymce/latest/basic-setup/): Essential configuration options
 - [Working with Plugins](https://www.tiny.cloud/docs/tinymce/latest/work-with-plugins/): How to use plugins
@@ -82,39 +94,92 @@
 - [Content CSS](https://www.tiny.cloud/docs/tinymce/latest/editor-content-css/): CSS for rendering content
 - [URL Handling](https://www.tiny.cloud/docs/tinymce/latest/url-handling/): URL handling options
 
+### Advanced Configuration
+
+- [Editor Themes](https://www.tiny.cloud/docs/tinymce/latest/editor-theme/): Customizing editor themes
+- [Editor Skins](https://www.tiny.cloud/docs/tinymce/latest/editor-skin/): Customizing editor skins
+- [Toolbar Configuration](https://www.tiny.cloud/docs/tinymce/latest/toolbar-configuration-options/): Toolbar customization
+- [Menu Configuration](https://www.tiny.cloud/docs/tinymce/latest/menus-configuration-options/): Menu customization
+- [Content Security Policy](https://www.tiny.cloud/docs/tinymce/latest/tinymce-and-csp/): CSP configuration
+- [CORS Configuration](https://www.tiny.cloud/docs/tinymce/latest/tinymce-and-cors/): CORS setup
+
+## Plugins and Features
+
+### Core Plugins
+
+- [Plugins Overview](https://www.tiny.cloud/docs/tinymce/latest/plugins/): Complete list of available plugins
+- [Table Plugin](https://www.tiny.cloud/docs/tinymce/latest/table/): Advanced table editing
+- [Image Plugin](https://www.tiny.cloud/docs/tinymce/latest/image/): Image insertion and editing
+- [Link Plugin](https://www.tiny.cloud/docs/tinymce/latest/link/): Link management
+- [Lists Plugin](https://www.tiny.cloud/docs/tinymce/latest/lists/): List formatting
+- [Code Plugin](https://www.tiny.cloud/docs/tinymce/latest/code/): Code view and editing
+
+### Premium Features
+
+- [AI Assistant](https://www.tiny.cloud/docs/tinymce/latest/ai/): AI-powered writing assistance
+- [Comments](https://www.tiny.cloud/docs/tinymce/latest/introduction-to-tiny-comments/): Collaborative commenting
+- [Export to PDF](https://www.tiny.cloud/docs/tinymce/latest/exportpdf/): PDF export functionality
+- [Export to Word](https://www.tiny.cloud/docs/tinymce/latest/exportword/): Word document export
+- [Import from Word](https://www.tiny.cloud/docs/tinymce/latest/importword/): Word document import
+- [PowerPaste](https://www.tiny.cloud/docs/tinymce/latest/introduction-to-powerpaste/): Advanced paste handling
+- [TinyDrive](https://www.tiny.cloud/docs/tinymce/latest/tinydrive-introduction/): Cloud file management
+
 ## API Reference
 
-- [Complete API Reference](https://www.tiny.cloud/docs/tinymce/latest/apis/): Full API documentation
 - [Editor API](https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.editor/): Editor API reference
 - [Plugin API](https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.plugin/): Plugin API reference
-- [Configuration Options](https://www.tiny.cloud/docs/tinymce/latest/configuration/): All configuration options
+- [EditorManager API](https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.editormanager/): EditorManager API reference
+- [WindowManager API](https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.windowmanager/): WindowManager API reference
+- [Complete API Reference](https://www.tiny.cloud/docs/tinymce/latest/apis/): Full API documentation index
 
 ## Examples and Guides
 
 - [Examples](https://www.tiny.cloud/docs/tinymce/latest/examples/): Code examples and demos
 - [How-to Guides](https://www.tiny.cloud/docs/tinymce/latest/how-to-guides/): Step-by-step guides
-- [Release Notes](https://www.tiny.cloud/docs/tinymce/latest/release-notes/): TinyMCE 8 release notes
-- [Upgrading TinyMCE](https://www.tiny.cloud/docs/tinymce/latest/upgrading/): Upgrade guide
+- [Basic Example](https://www.tiny.cloud/docs/tinymce/latest/basic-example/): Simple implementation example
+
+## Migration and Upgrading
+
+- [Upgrading TinyMCE](https://www.tiny.cloud/docs/tinymce/latest/upgrading/): General upgrade guide
 - [Migration from 7.x](https://www.tiny.cloud/docs/tinymce/latest/migration-from-7x/): Migration guide from TinyMCE 7
+- [Migration from 6.x](https://www.tiny.cloud/docs/tinymce/latest/migration-from-6x/): Migration guide from TinyMCE 6
+- [Migration from 5.x](https://www.tiny.cloud/docs/tinymce/latest/migration-from-5x/): Migration guide from TinyMCE 5
+- [Migration from 4.x](https://www.tiny.cloud/docs/tinymce/latest/migration-from-4x/): Migration guide from TinyMCE 4
+- [Migration Guides Overview](https://www.tiny.cloud/docs/tinymce/latest/migration-guides/): All migration guides
+
+## Release Information
+
+- [Release Notes](https://www.tiny.cloud/docs/tinymce/latest/release-notes/): TinyMCE 8 release notes
+- [Changelog](https://www.tiny.cloud/docs/tinymce/latest/changelog/): Detailed changelog
 
 ## CDN and Package Information
 
-**Cloud CDN (Recommended)**:
+### Cloud CDN (Recommended)
 ```
 https://cdn.tiny.cloud/1/[api-key]/tinymce/8/tinymce.min.js
 ```
+Replace `[api-key]` with your Tiny Cloud API key.
 
-**jsDelivr CDN**:
+### jsDelivr CDN
 ```
 https://cdn.jsdelivr.net/npm/tinymce@8/tinymce.min.js
 ```
 
-**Package Manager Installation**:
+### Package Manager Installation
 - npm: `npm install tinymce@8`
 - yarn: `yarn add tinymce@8`
 - pnpm: `pnpm add tinymce@8`
+- Composer (PHP): `composer require tinymce/tinymce`
+- NuGet (.NET): `Install-Package TinyMCE`
 
-**Integration Packages**:
+### Integration Packages
 - React: `npm install @tinymce/tinymce-react tinymce@8`
 - Vue: `npm install @tinymce/tinymce-vue tinymce@8`
 - Angular: `npm install @tinymce/tinymce-angular tinymce@8`
+
+## Support and Resources
+
+- [Documentation Home](https://www.tiny.cloud/docs/tinymce/latest/): Main documentation page
+- [Support](https://www.tiny.cloud/docs/tinymce/latest/support/): Get help and support
+- [Accessibility Guide](https://www.tiny.cloud/docs/tinymce/latest/accessibility/): Accessibility features and best practices
+- [Security Guide](https://www.tiny.cloud/docs/tinymce/latest/security/): Security best practices

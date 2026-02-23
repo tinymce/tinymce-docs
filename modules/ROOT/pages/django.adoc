@@ -1,0 +1,46 @@
+= Using {productname} in Django
+:navtitle: Django
+:description: Integrate TinyMCE into your Django application. Choose from Cloud or ZIP installation methods.
+:keywords: integration, integrate, django, python, tinymce
+
+{productname} can be integrated into Django applications to provide rich text editing capabilities.
+
+== Installation methods
+
+Choose the installation method that best fits your project:
+
+=== Cloud
+
+The fastest way to get started with {productname} in Django. The editor is loaded from the {cloudname} CDN.
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:django-cloud.adoc[Using {cloudname}]
+
+Get started quickly with {productname} using the {cloudname} CDN. No build configuration required.
+
+// Empty cell to even out rows
+|
+
+|===
+
+=== ZIP
+
+Download and install {productname} from a .zip archive. Suitable for traditional web deployments.
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:django-zip.adoc[Using a .zip package]
+
+Extract {productname} from a .zip archive and integrate it into your Django application.
+
+// Empty cell to even out rows
+|
+
+|===

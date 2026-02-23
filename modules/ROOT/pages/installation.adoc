@@ -30,45 +30,45 @@ The following packages are thin wrappers around {productname} to make it easier 
 
 |
 [.lead]
-xref:react-cloud.adoc[React]
+xref:react.adoc[React]
 
-Integrate {productname} into your React application using the {cloudname}.
-
-|
-[.lead]
-xref:angular-cloud.adoc[Angular]
-
-Integrate {productname} into your Angular application using the {cloudname}.
+Integrate {productname} into your React application.
 
 |
 [.lead]
-xref:vue-cloud.adoc[Vue.js]
+xref:angular.adoc[Angular]
 
-Integrate {productname} into your Vue.js application using the {cloudname}.
-
-|
-[.lead]
-xref:blazor-cloud.adoc[Blazor]
-
-Integrate {productname} into your Blazor application using the {cloudname}.
+Integrate {productname} into your Angular application.
 
 |
 [.lead]
-xref:svelte-cloud.adoc[Svelte]
+xref:vue.adoc[Vue.js]
 
-Integrate {productname} into your Svelte application using the {cloudname}.
-
-|
-[.lead]
-xref:webcomponent-cloud.adoc[Web Component]
-
-Integrate {productname} as a web component using the {cloudname}.
+Integrate {productname} into your Vue.js application.
 
 |
 [.lead]
-xref:jquery-cloud.adoc[jQuery]
+xref:blazor.adoc[Blazor]
 
-Integrate {productname} with the jQuery JavaScript library using the {cloudname}.
+Integrate {productname} into your Blazor application.
+
+|
+[.lead]
+xref:svelte.adoc[Svelte]
+
+Integrate {productname} into your Svelte application.
+
+|
+[.lead]
+xref:webcomponent.adoc[Web Component]
+
+Integrate {productname} as a web component.
+
+|
+[.lead]
+xref:jquery.adoc[jQuery]
+
+Integrate {productname} with the jQuery JavaScript library.
 
 // Empty cell to even out rows
 |
@@ -81,21 +81,21 @@ Integrate {productname} with the jQuery JavaScript library using the {cloudname}
 
 |
 [.lead]
-xref:django-cloud.adoc[Django]
+xref:django.adoc[Django]
 
-Integrate {productname} into your Django application using the {cloudname}.
-
-|
-[.lead]
-xref:laravel-tiny-cloud.adoc[Laravel]
-
-Integrate {productname} into your Laravel application using the {cloudname}.
+Integrate {productname} into your Django application.
 
 |
 [.lead]
-xref:rails-cloud.adoc[Ruby on Rails]
+xref:laravel.adoc[Laravel]
 
-Integrate {productname} into your Ruby on Rails application using the {cloudname}.
+Integrate {productname} into your Laravel application.
+
+|
+[.lead]
+xref:rails.adoc[Ruby on Rails]
+
+Integrate {productname} into your Ruby on Rails application.
 
 // Empty cell to even out rows
 |
@@ -110,8 +110,8 @@ Integrate {productname} into your Ruby on Rails application using the {cloudname
 
 |
 [.lead]
-xref:bootstrap-cloud.adoc[Bootstrap]
+xref:bootstrap.adoc[Bootstrap]
 
-Integrate {productname} with the Bootstrap CSS framework using the {cloudname}.
+Integrate {productname} with the Bootstrap CSS framework.
 |
 |===

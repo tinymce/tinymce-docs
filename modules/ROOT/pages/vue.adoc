@@ -1,0 +1,67 @@
+= Using {productname} in Vue.js
+:navtitle: Vue.js
+:description: Integrate TinyMCE into your Vue.js application. Choose from Cloud, self-hosted, or ZIP installation methods.
+:keywords: integration, integrate, vue, vuejs, tinymce-vue, tinymce
+
+{productname} provides official Vue.js integration through the link:https://github.com/tinymce/tinymce-vue[{productname} Vue.js component^] (`@tinymce/tinymce-vue`). This component is a thin wrapper around {productname} that makes it easy to integrate the editor into Vue.js applications.
+
+== Installation methods
+
+Choose the installation method that best fits your project:
+
+=== Cloud
+
+The fastest way to get started with {productname} in Vue.js. The editor is loaded from the {cloudname} CDN.
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:vue-cloud.adoc[Using {cloudname}]
+
+Get started quickly with {productname} using the {cloudname} CDN. No build configuration required.
+
+// Empty cell to even out rows
+|
+
+|===
+
+=== Self-hosted
+
+Install {productname} using npm, Yarn, or other package managers. Choose between hosting the editor files as static assets or bundling them with your application.
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:vue-pm.adoc[Using a package manager]
+
+Host {productname} files as static assets. Simple setup with no bundling configuration.
+
+|
+[.lead]
+xref:vue-pm-bundle.adoc[Using a package manager with bundling]
+
+Bundle {productname} with your Vue.js application using webpack, Vite, or other bundlers. Optimize your bundle size by including only the components you need.
+
+|===
+
+=== ZIP
+
+Download and install {productname} from a .zip archive. Suitable for traditional web deployments.
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:vue-zip.adoc[Using a .zip package]
+
+Extract {productname} from a .zip archive and host the files as static assets.
+
+// Empty cell to even out rows
+|
+
+|===

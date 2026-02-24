@@ -84,13 +84,15 @@ async function fetchH1Title(url) {
           const h1Match = data.match(/<h1[^>]*>(.*?)<\/h1>/i);
           
           if (h1Match && h1Match[1]) {
-            // Clean up the title - remove HTML tags and extra whitespace
+            // Clean up the title - remove HTML tags first, then decode entities
             let title = h1Match[1]
-              .replace(/<[^>]+>/g, '') // Remove any HTML tags inside H1
+              .replace(/<[^>]+>/g, ''); // Remove any HTML tags inside H1 first
+            
+            // Decode HTML entities safely - decode all entities to plain text
+            // Order matters: decode &amp; first, then other entities
+            title = title
+              .replace(/&amp;/g, '&') // Must decode &amp; first
               .replace(/&nbsp;/g, ' ')
-              .replace(/&amp;/g, '&')
-              .replace(/&lt;/g, '<')
-              .replace(/&gt;/g, '>')
               .replace(/&quot;/g, '"')
               .replace(/&#39;/g, "'")
               .replace(/&#8217;/g, "'") // Right single quotation mark (apostrophe)
@@ -100,10 +102,27 @@ async function fetchH1Title(url) {
               .replace(/&#8211;/g, '–') // En dash
               .replace(/&#8212;/g, '—') // Em dash
               .replace(/&#160;/g, ' ') // Non-breaking space
-              // Decode numeric entities (&#123; format)
-              .replace(/&#(\d+);/g, (match, dec) => String.fromCharCode(parseInt(dec, 10)))
+              // Decode numeric entities (&#123; format) - safe as we've already removed HTML tags
+              .replace(/&#(\d+);/g, (match, dec) => {
+                const code = parseInt(dec, 10);
+                // Only decode safe character codes (printable ASCII and valid Unicode)
+                if ((code >= 32 && code <= 126) || (code >= 160 && code <= 1114111)) {
+                  return String.fromCharCode(code);
+                }
+                return match; // Keep entity if unsafe
+              })
               // Decode hex entities (&#x1F; format)
-              .replace(/&#x([0-9a-fA-F]+);/g, (match, hex) => String.fromCharCode(parseInt(hex, 16)))
+              .replace(/&#x([0-9a-fA-F]+);/gi, (match, hex) => {
+                const code = parseInt(hex, 16);
+                // Only decode safe character codes
+                if ((code >= 32 && code <= 126) || (code >= 160 && code <= 1114111)) {
+                  return String.fromCharCode(code);
+                }
+                return match; // Keep entity if unsafe
+              })
+              // Decode remaining named entities (after numeric/hex to avoid conflicts)
+              .replace(/&lt;/g, '<') // Safe: HTML tags already removed
+              .replace(/&gt;/g, '>') // Safe: HTML tags already removed
               .trim();
             
             // Remove extra whitespace

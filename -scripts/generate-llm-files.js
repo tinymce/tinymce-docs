@@ -107,17 +107,26 @@ async function fetchH1Title(url) {
           
           if (h1Match && h1Match[1]) {
             // Clean up the title - remove any script content/tags first, then all HTML tags, then decode entities
-            let title = h1Match[1]
-              // Remove any full <script>...</script> blocks (multiline, with attributes)
-              .replace(/<script\b[\s\S]*?<\/script[^>]*>/gi, '')
-              // Remove any remaining script-like opening fragments starting with "<script"
-              .replace(/<\s*script[^>]*>/gi, '')
-              // Remove any other HTML tags inside H1
-              .replace(/<[^>]+>/g, '')
-              // Remove javascript:, data:, or vbscript: protocol indicators
-              .replace(/(?:javascript|data|vbscript):/gi, '')
-              // As a final safeguard, strip any remaining angle brackets so no tag-like text can survive
-              .replace(/[<>]/g, '');
+            let title = h1Match[1];
+
+            // Apply script and HTML tag sanitization repeatedly until no more changes occur
+            // This prevents multi-character patterns from reappearing after a single replacement pass
+            let previous;
+            do {
+              previous = title;
+              title = title
+                // Remove any full <script>...</script> blocks (multiline, with attributes)
+                .replace(/<script\b[\s\S]*?<\/script[^>]*>/gi, '')
+                // Remove any remaining script-like opening fragments starting with "<script"
+                .replace(/<\s*script[^>]*>/gi, '')
+                // Remove any other HTML tags inside H1
+                .replace(/<[^>]+>/g, '')
+                // Remove javascript:, data:, or vbscript: protocol indicators
+                .replace(/(?:javascript|data|vbscript):/gi, '');
+            } while (title !== previous);
+
+            // As a final safeguard, strip any remaining angle brackets so no tag-like text can survive
+            title = title.replace(/[<>]/g, '');
             
             // Decode HTML entities safely - decode all entities to plain text
             // Order matters: decode '&' last to avoid double-unescaping

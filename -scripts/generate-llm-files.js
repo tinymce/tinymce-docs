@@ -109,7 +109,7 @@ async function fetchH1Title(url) {
             // Clean up the title - remove any script content/tags first, then all HTML tags, then decode entities
             let title = h1Match[1]
               // Remove any full <script>...</script> blocks (multiline, with attributes)
-              .replace(/<script\b[\s\S]*?<\/script\s*>/gi, '')
+              .replace(/<script\b[\s\S]*?<\/script[^>]*>/gi, '')
               // Remove any remaining script-like opening fragments starting with "<script"
               .replace(/<\s*script[^>]*>/gi, '')
               // Remove any other HTML tags inside H1

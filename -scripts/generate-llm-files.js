@@ -118,7 +118,7 @@ async function fetchH1Title(url) {
                 // Remove any full <script>...</script> blocks (multiline, with attributes)
                 .replace(/<script\b[\s\S]*?<\/script[^>]*>/gi, '')
                 // Remove any remaining script-like opening fragments starting with "<script"
-                .replace(/<\s*script[^>]*>/gi, '')
+                .replace(/<\s*script\b[^>]*>/gi, '')
                 // Remove any other HTML tags inside H1
                 .replace(/<[^>]+>/g, '')
                 // Remove javascript:, data:, or vbscript: protocol indicators
@@ -127,6 +127,9 @@ async function fetchH1Title(url) {
 
             // As a final safeguard, strip any remaining angle brackets so no tag-like text can survive
             title = title.replace(/[<>]/g, '');
+            // Additionally, defensively strip any residual script/protocol keywords that could
+            // be used for injection even after angle brackets and colons have been removed
+            title = title.replace(/\b(?:script|javascript|vbscript|data)\b/gi, '');
             
             // Decode HTML entities safely - decode all entities to plain text
             // Order matters: decode '&' last to avoid double-unescaping

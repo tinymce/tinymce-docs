@@ -115,7 +115,9 @@ async function fetchH1Title(url) {
               // Remove any other HTML tags inside H1
               .replace(/<[^>]+>/g, '')
               // Remove javascript:, data:, or vbscript: protocol indicators
-              .replace(/(?:javascript|data|vbscript):/gi, '');
+              .replace(/(?:javascript|data|vbscript):/gi, '')
+              // As a final safeguard, strip any remaining angle brackets so no tag-like text can survive
+              .replace(/[<>]/g, '');
             
             // Decode HTML entities safely - decode all entities to plain text
             // Order matters: decode '&' last to avoid double-unescaping

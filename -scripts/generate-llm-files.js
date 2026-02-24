@@ -29,10 +29,25 @@ async function getSitemap(source) {
       }).on('error', reject);
     });
   } else {
-    if (!fs.existsSync(source)) {
+    // Validate file path to prevent path traversal
+    const resolvedPath = path.resolve(source);
+    const projectRoot = path.resolve(__dirname, '..');
+    
+    // Ensure the resolved path is within the project directory
+    if (!resolvedPath.startsWith(projectRoot)) {
+      throw new Error(`Invalid sitemap path: ${source}. Path must be within the project directory.`);
+    }
+    
+    if (!fs.existsSync(resolvedPath)) {
       throw new Error(`Sitemap not found: ${source}\nPlease run 'yarn antora ./antora-playbook.yml' first to generate the site, or provide a URL.`);
     }
-    return fs.readFileSync(source, 'utf8');
+    
+    // Only allow .xml files
+    if (!resolvedPath.endsWith('.xml')) {
+      throw new Error(`Invalid file type: ${source}. Only .xml files are allowed.`);
+    }
+    
+    return fs.readFileSync(resolvedPath, 'utf8');
   }
 }
 
@@ -65,6 +80,12 @@ function getUrlPath(url) {
 // Fetch H1 title from a page URL
 async function fetchH1Title(url) {
   return new Promise((resolve) => {
+    // Validate URL to prevent SSRF - only allow tiny.cloud domains
+    if (!url.startsWith('https://www.tiny.cloud/') && !url.startsWith('http://www.tiny.cloud/')) {
+      resolve(null);
+      return;
+    }
+    
     const client = url.startsWith('https') ? https : http;
     
     const req = client.get(url, (res) => {
@@ -86,12 +107,14 @@ async function fetchH1Title(url) {
           if (h1Match && h1Match[1]) {
             // Clean up the title - remove HTML tags first, then decode entities
             let title = h1Match[1]
-              .replace(/<[^>]+>/g, ''); // Remove any HTML tags inside H1 first
+              .replace(/<[^>]+>/g, '') // Remove any HTML tags inside H1 first
+              .replace(/<script/gi, '') // Additional sanitization: remove any script tags
+              .replace(/javascript:/gi, ''); // Remove javascript: protocol
             
             // Decode HTML entities safely - decode all entities to plain text
-            // Order matters: decode &amp; first, then other entities
+            // Order matters: decode '&' last to avoid double-unescaping
+            // Decode all specific entities first, then &amp; at the end
             title = title
-              .replace(/&amp;/g, '&') // Must decode &amp; first
               .replace(/&nbsp;/g, ' ')
               .replace(/&quot;/g, '"')
               .replace(/&#39;/g, "'")
@@ -123,6 +146,7 @@ async function fetchH1Title(url) {
               // Decode remaining named entities (after numeric/hex to avoid conflicts)
               .replace(/&lt;/g, '<') // Safe: HTML tags already removed
               .replace(/&gt;/g, '>') // Safe: HTML tags already removed
+              .replace(/&amp;/g, '&') // Decode '&' last to prevent double-unescaping
               .trim();
             
             // Remove extra whitespace
@@ -847,7 +871,7 @@ TinyMCE is a rich text editor that provides a WYSIWYG editing experience. The la
   });
 
   content += `\n### Other Integrations\n`;
-  content += `- **Bootstrap**: ${BASE_URL}/bootstrap/\n`;
+  content += `- **Bootstrap**:\n`;
   content += `  - Cloud: ${BASE_URL}/bootstrap-cloud/\n`;
   content += `  - ZIP: ${BASE_URL}/bootstrap-zip/\n`;
   content += `- **PHP Projects**: ${BASE_URL}/php-projects/\n`;

@@ -105,11 +105,16 @@ async function fetchH1Title(url) {
           const h1Match = data.match(/<h1[^>]*>(.*?)<\/h1>/i);
           
           if (h1Match && h1Match[1]) {
-            // Clean up the title - remove HTML tags first, then decode entities
+            // Clean up the title - remove any script content/tags first, then all HTML tags, then decode entities
             let title = h1Match[1]
-              .replace(/<[^>]+>/g, '') // Remove any HTML tags inside H1 first
-              .replace(/<script/gi, '') // Additional sanitization: remove any script tags
-              .replace(/javascript:/gi, ''); // Remove javascript: protocol
+              // Remove any full <script>...</script> blocks (multiline, with attributes)
+              .replace(/<script\b[\s\S]*?<\/script\s*>/gi, '')
+              // Remove any remaining script-like opening fragments starting with "<script"
+              .replace(/<\s*script[^>]*>/gi, '')
+              // Remove any other HTML tags inside H1
+              .replace(/<[^>]+>/g, '')
+              // Remove any javascript: protocol indicators
+              .replace(/javascript:/gi, '');
             
             // Decode HTML entities safely - decode all entities to plain text
             // Order matters: decode '&' last to avoid double-unescaping

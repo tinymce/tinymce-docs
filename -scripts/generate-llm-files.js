@@ -13,6 +13,7 @@ const fs = require('fs');
 const path = require('path');
 const https = require('https');
 const http = require('http');
+const sanitizeHtml = require('sanitize-html');
 
 const BASE_URL = 'https://www.tiny.cloud/docs/tinymce/latest';
 const OUTPUT_DIR = path.join(__dirname, '../modules/ROOT/attachments');
@@ -106,24 +107,24 @@ async function fetchH1Title(url) {
           const h1Match = data.match(/<h1[^>]*>(.*?)<\/h1>/i);
           
           if (h1Match && h1Match[1]) {
-            // Clean up the title: strip tags, angle brackets, and dangerous script/protocol keywords
+            // Clean up the title using a well-tested HTML sanitization library
             let title = h1Match[1];
 
-            // Apply sanitization repeatedly until no more changes occur.
-            // This prevents multi-character patterns from reappearing after a single replacement pass
-            let previous;
-            do {
-              previous = title;
-              title = title
-                // Remove any HTML tags inside H1
-                .replace(/<[^>]*>/g, '')
-                // Remove any remaining angle brackets so no tag-like text can survive
-                .replace(/[<>]/g, '')
-                // Remove javascript, data, or vbscript protocol keywords (optionally followed by a colon)
-                .replace(/(?:javascript|data|vbscript)\s*:?/gi, '')
-                // Remove occurrences of the word "script" to avoid residual script-related fragments
-                .replace(/\bscript\b/gi, '');
-            } while (title !== previous);
+            // First, use sanitize-html to strip all HTML tags and attributes while preserving text.
+            // This avoids fragile hand-written tag parsing and multi-character sanitization pitfalls.
+            title = sanitizeHtml(title, {
+              allowedTags: [],
+              allowedAttributes: {},
+              textFilter: (text) => text
+            });
+
+            // Then, defensively remove any remaining angle brackets and script/protocol keywords
+            // to ensure no HTML-like or script-related fragments remain.
+            title = title
+              .replace(/[<>]/g, '')
+              .replace(/(?:javascript|data|vbscript)\s*:?/gi, '')
+              .replace(/\bscript\b/gi, '')
+              .trim();
 
             // At this point, title is plain text with no angle brackets or script/protocol keywords
             // Additionally, defensively strip any residual script/protocol keywords that could

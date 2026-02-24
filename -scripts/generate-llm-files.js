@@ -106,27 +106,27 @@ async function fetchH1Title(url) {
           const h1Match = data.match(/<h1[^>]*>(.*?)<\/h1>/i);
           
           if (h1Match && h1Match[1]) {
-            // Clean up the title - remove any script content/tags first, then all HTML tags, then decode entities
+            // Clean up the title: strip tags, angle brackets, and dangerous script/protocol keywords
             let title = h1Match[1];
 
-            // Apply script and HTML tag sanitization repeatedly until no more changes occur
+            // Apply sanitization repeatedly until no more changes occur
             // This prevents multi-character patterns from reappearing after a single replacement pass
             let previous;
             do {
               previous = title;
               title = title
-                // Remove any full <script>...</script> blocks (multiline, with attributes)
-                .replace(/<script\b[\s\S]*?<\/script[^>]*>/gi, '')
-                // Remove any remaining script-like opening fragments starting with "<script"
-                .replace(/<\s*script\b[^>]*>/gi, '')
-                // Remove any other HTML tags inside H1
+                // Remove any HTML tags inside H1 (including malformed ones)
                 .replace(/<[^>]+>/g, '')
-                // Remove javascript:, data:, or vbscript: protocol indicators
-                .replace(/(?:javascript|data|vbscript):/gi, '');
+                // Remove any remaining angle brackets so no tag-like text can survive
+                .replace(/[<>]/g, '')
+                // Remove javascript, data, or vbscript protocol keywords (optionally followed by a colon)
+                .replace(/(?:javascript|data|vbscript)\s*:?/gi, '')
+                // Remove standalone occurrences of the word "script" to avoid residual "<script" fragments
+                .replace(/\bscript\b/gi, '');
             } while (title !== previous);
 
-            // As a final safeguard, strip any remaining angle brackets so no tag-like text can survive
-            title = title.replace(/[<>]/g, '');
+            // Additionally, defensively strip any residual protocol indicators that could have been obfuscated
+            title = title.replace(/(?:javascript|data|vbscript)\s*:?/gi, '');
             // Additionally, defensively strip any residual script/protocol keywords that could
             // be used for injection even after angle brackets and colons have been removed
             title = title.replace(/\b(?:script|javascript|vbscript|data)\b/gi, '');

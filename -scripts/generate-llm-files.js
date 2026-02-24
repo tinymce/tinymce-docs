@@ -117,6 +117,8 @@ async function fetchH1Title(url) {
               title = title
                 // Remove any HTML tags inside H1 (including malformed ones)
                 .replace(/<[^>]+>/g, '')
+                // Explicitly remove any "<script" style fragment, even if malformed or partial
+                .replace(/<\s*script/gi, '')
                 // Remove any remaining angle brackets so no tag-like text can survive
                 .replace(/[<>]/g, '')
                 // Remove javascript, data, or vbscript protocol keywords (optionally followed by a colon)

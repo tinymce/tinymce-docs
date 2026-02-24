@@ -11,6 +11,8 @@
     "build": "./-scripts/api-reference.sh",
     "build-local-ref": "./-scripts/api-reference-local.sh",
     "clean": "rm -rf ./build",
+    "generate-llm-files": "node ./-scripts/generate-llm-files.js",
+    "generate-llm-files-from-url": "node ./-scripts/generate-llm-files.js https://www.tiny.cloud/docs/antora-sitemap.xml",
     "nodemon": "nodemon --exec yarn antora ./antora-playbook.yml",
     "nodemon-dev": "nodemon --exec yarn antora ./antora-playbook-local.yml",
     "server": "http-server build/site/ --port 4000 -a localhost",

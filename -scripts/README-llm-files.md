@@ -38,15 +38,15 @@ Generate directly from the published sitemap (useful for syncing with production
 ```bash
 yarn generate-llm-files-from-url
 # or
-node -scripts/generate-llm-files.js https://www.tiny.cloud/docs/antora-sitemap.xml
+node ./-scripts/generate-llm-files.js https://www.tiny.cloud/docs/antora-sitemap.xml
 ```
 
 ### Option 3: Custom Sitemap Source
 
 ```bash
-node -scripts/generate-llm-files.js /path/to/sitemap.xml
+node ./-scripts/generate-llm-files.js /path/to/sitemap.xml
 # or
-node -scripts/generate-llm-files.js https://example.com/sitemap.xml
+node ./-scripts/generate-llm-files.js https://example.com/sitemap.xml
 ```
 
 ## Workflow
@@ -54,11 +54,15 @@ node -scripts/generate-llm-files.js https://example.com/sitemap.xml
 ### Manual Regeneration (Current Approach)
 
 **After major/minor/patch releases:**
-1. Run the script locally to regenerate files:
+1. Run the script to regenerate files from production sitemap:
+   ```bash
+   yarn generate-llm-files-from-url
+   ```
+   This ensures the LLM files match what's actually published on the live site.
+   
+   Alternatively, if you need to generate from a local build:
    ```bash
    yarn generate-llm-files
-   # or from production:
-   yarn generate-llm-files-from-url
    ```
 2. Review the generated files in a PR
 3. Commit and merge
@@ -72,7 +76,7 @@ node -scripts/generate-llm-files.js https://example.com/sitemap.xml
 ### File Locations
 
 The files are generated in `modules/ROOT/attachments/`:
-- `llms.txt` - Simplified, curated documentation index (~127 lines)
+- `llms.txt` - Simplified, curated documentation index (~105 lines)
 - `llms-full.txt` - Complete documentation index with all pages (~700 lines)
 
 **Post-build:** Files are moved to the root directory (handled in separate PR) and accessible at:
@@ -93,18 +97,22 @@ The files are generated in `modules/ROOT/attachments/`:
 The script uses hardcoded categorization logic. To customize:
 
 1. Edit `generate-llm-files.js`
-2. Modify the `categorizeUrls()` function to adjust categorization
+2. Modify the `categorizeUrl()` function to adjust categorization
 3. Update `generateLLMsTxt()` and `generateLLMsFullTxt()` to change output format
 
 ## Notes
 
-- The script requires Node.js (no additional dependencies)
+- The script requires Node.js and `sanitize-html` package (installed via `yarn install`)
 - Generated files are written to `modules/ROOT/attachments/`
 - Uses only the sitemap (no dependency on `nav.adoc`)
 - Fetches actual H1 titles from pages (validates no 404s)
+- Rate-limited fetching: 10 concurrent requests with 100ms delay between batches
+- Request timeout: 10 seconds per page
+- Security: Validates URLs to prevent SSRF attacks (only allows tiny.cloud domains)
 - Handles HTML entity decoding (`&#8217;` → `'`)
 - Filters out error pages and duplicate URLs
 - Makes titles unique within categories (e.g., "ES6 and npm (Webpack)", "ES6 and npm (Rollup)")
+- Falls back to URL-based title generation if H1 fetch fails
 
 ## Troubleshooting
 
@@ -119,5 +127,5 @@ The script uses hardcoded categorization logic. To customize:
 - 404 pages are automatically filtered out
 
 **Incorrect categorization**
-- Review the `categorizeUrls()` function
+- Review the `categorizeUrl()` function (note: function name is singular, not plural)
 - Add custom patterns for new page types

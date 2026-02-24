@@ -88,6 +88,7 @@ async function fetchH1Title(url) {
     
     const client = url.startsWith('https') ? https : http;
     
+    // codeql[js/file-access-to-http]: URL is validated to only allow tiny.cloud domains, preventing SSRF attacks
     const req = client.get(url, (res) => {
       // Check for error status codes (404, 500, etc.)
       if (res.statusCode >= 400) {
@@ -113,8 +114,8 @@ async function fetchH1Title(url) {
               .replace(/<\s*script[^>]*>/gi, '')
               // Remove any other HTML tags inside H1
               .replace(/<[^>]+>/g, '')
-              // Remove any javascript: protocol indicators
-              .replace(/javascript:/gi, '');
+              // Remove javascript:, data:, or vbscript: protocol indicators
+              .replace(/(?:javascript|data|vbscript):/gi, '');
             
             // Decode HTML entities safely - decode all entities to plain text
             // Order matters: decode '&' last to avoid double-unescaping

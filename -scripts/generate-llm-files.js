@@ -109,26 +109,23 @@ async function fetchH1Title(url) {
             // Clean up the title: strip tags, angle brackets, and dangerous script/protocol keywords
             let title = h1Match[1];
 
-            // Apply sanitization repeatedly until no more changes occur
+            // Apply sanitization repeatedly until no more changes occur.
             // This prevents multi-character patterns from reappearing after a single replacement pass
             let previous;
             do {
               previous = title;
               title = title
-                // Remove any HTML tags inside H1 (including malformed ones)
-                .replace(/<[^>]+>/g, '')
-                // Explicitly remove any "<script" style fragment, even if malformed or partial
-                .replace(/<\s*script/gi, '')
+                // Remove any HTML tags inside H1
+                .replace(/<[^>]*>/g, '')
                 // Remove any remaining angle brackets so no tag-like text can survive
                 .replace(/[<>]/g, '')
                 // Remove javascript, data, or vbscript protocol keywords (optionally followed by a colon)
                 .replace(/(?:javascript|data|vbscript)\s*:?/gi, '')
-                // Remove standalone occurrences of the word "script" to avoid residual "<script" fragments
+                // Remove occurrences of the word "script" to avoid residual script-related fragments
                 .replace(/\bscript\b/gi, '');
             } while (title !== previous);
 
-            // Additionally, defensively strip any residual protocol indicators that could have been obfuscated
-            title = title.replace(/(?:javascript|data|vbscript)\s*:?/gi, '');
+            // At this point, title is plain text with no angle brackets or script/protocol keywords
             // Additionally, defensively strip any residual script/protocol keywords that could
             // be used for injection even after angle brackets and colons have been removed
             title = title.replace(/\b(?:script|javascript|vbscript|data)\b/gi, '');

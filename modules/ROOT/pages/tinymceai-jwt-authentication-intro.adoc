@@ -165,7 +165,7 @@ The token endpoint will be requested:
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymceai',
-  toolbar: 'showai aiquickactions aireview',
+  toolbar: 'aichat aiquickactions aireview',
   tinymceai_token_provider: () => {
     return fetch('https://example.com/cs-token-endpoint', {
       method: 'POST',
@@ -185,8 +185,12 @@ For more advanced token request customization, see xref:tinymceai-with-jwt-authe
 [[token-responses]]
 == Responses from the Token Endpoint
 
-The endpoint must respond with a JSON object containing a `token` property. The response format is:
+The token provider must return an object with a `+token+` property: `+{ token: string }+`. The endpoint may respond in either format:
 
+* **JSON response** – Endpoint returns `+{ "token": "eyJ..." }+`. Use `+response.json()+` and return `+{ token: data.token }+`.
+* **Plain text response** – Endpoint returns the raw JWT string. Use `+response.text()+` and return `+{ token }+`.
+
+.Example: JSON response
 [source,json]
 ----
 {
@@ -194,7 +198,11 @@ The endpoint must respond with a JSON object containing a `token` property. The 
 }
 ----
 
-The {pluginname} plugin extracts the token from the `token` property. Plain text string responses are no longer supported and will not work.
+.Example: Plain text response
+[source,text]
+----
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9...
+----
 
 [[quick-setup]]
 == Quick Setup

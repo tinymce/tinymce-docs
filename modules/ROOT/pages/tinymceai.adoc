@@ -24,8 +24,8 @@ liveDemo::{plugincode}[]
 To setup the {pluginname} plugin in the editor:
 
 * add `{plugincode}` to the `plugins` option in the editor configuration;
-* configure the `tinymceai_token_provider` option to provide authentication tokens;
-* add the AI toolbar buttons to the `toolbar` option in the editor configuration. The plugin provides approximately 3 toolbar buttons for different features: `showai`, `aiquickactions`, and `aireview`;
+* configure the `tinymceai_token_provider` option to provide authentication tokens (must return `+{ token: string }+`);
+* add the AI toolbar buttons to the `toolbar` option. The plugin provides: `+aichat+`, `+aiquickactions+`, and `+aireview+`;
 
 [[minimal-setup]]
 === Minimal setup
@@ -35,10 +35,9 @@ To setup the {pluginname} plugin in the editor:
 tinymce.init({
   selector: 'textarea',  // change this value according to the HTML
   plugins: 'tinymceai',
-  toolbar: 'showai aiquickactions aireview',
-  tinymceai_token_provider: function() {
-    // Return a promise that resolves to a JWT token
-    return fetch('/api/token').then(response => response.text());
+  toolbar: 'aichat aiquickactions aireview',
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
   }
 });
 ----
@@ -46,68 +45,66 @@ tinymce.init({
 [[complete-setup]]
 === Complete setup example
 
-An example {pluginname} configuration with common options:
+[source,js]
+----
+tinymce.init({
+  selector: '#editor',
+  plugins: 'tinymceai',
+  toolbar: 'aichat aiquickactions aireview',
+  content_id: 'document-123',
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  },
+  tinymceai_sidebar_type: 'static',
+  tinymceai_default_model: 'agent-1',
+  tinymceai_allow_model_selection: true,
+  tinymceai_allowed_models: ['gpt', 'claude'],
+  tinymceai_additional_sources_list: async () => [
+    {
+      label: 'My Documents',
+      sources: [
+        { id: 'doc-1', label: 'Document 1', type: 'file' },
+        { id: 'url-1', label: 'Web Page', type: 'web-resource' }
+      ]
+    }
+  ],
+  tinymceai_get_additional_source: async (id) => {
+    const res = await fetch(`/api/documents/${id}`);
+    const blob = await res.blob();
+    const filename = `${id}.pdf`;
+    return { type: 'file', file: new File([blob], filename, { type: blob.type }) };
+  },
+  tinymceai_custom_commands: [
+    { displayedPrompt: 'Explain like I am five', prompt: 'Explain the following text in simple terms.', type: 'chat' }
+  ]
+});
+----
+
+[[ui-control]]
+== UI Control
+
+The AI interface is toggled via toolbar buttons or menu items. Clicking `+aichat+` opens the chat sidebar; clicking again minimizes it (chat history is preserved). Clicking `+aireview+` opens the review sidebar.
+
+To toggle sidebars programmatically, use the core `+ToggleSidebar+` command:
+
+[source,js]
+----
+editor.execCommand('ToggleSidebar', false, 'aichat');
+editor.execCommand('ToggleSidebar', false, 'aireview');
+----
+
+To show the chat sidebar on load:
 
 [source,js]
 ----
 tinymce.init({
   selector: '#editor',
   plugins: 'tinymceai',
-  
-  // Add AI toolbar buttons
-  toolbar: 'showai aiquickactions aireview',
-  
-  // AI features are added to the selection toolbar by default
-  // Configure which features appear using tinymceai_context_toolbar
-  
-  // Configure the document identifier for AI chat history and context preservation.
-  // This should be a unique identifier for the document/article being edited.
-  tinymceai_document_id: 'document-123', // Replace with the actual document ID
-  
-  // Main configuration of AI feature.
-  tinymceai_token_provider: function() {
-    return fetch('/api/token').then(response => response.text());
+  sidebar_show: 'aichat',
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
   },
-  
-  // Configure sidebar type (static or floating)
-  tinymceai_sidebar_type: 'static',
-  
-  // (Optional) Configure AI chat model selection.
-  tinymceai_default_model: 'agent-1',
-  tinymceai_allow_model_selection: true,
-  tinymceai_allowed_models: ['gpt', 'claude'],
-  
-  // (Optional) Configure additional context sources for AI chat.
-  // Built-in options (document, URLs, files) are always available.
-  tinymceai_additional_sources_list: async (query) => [
-    {
-      id: 'my-doc-1',
-      label: 'My Document 1',
-      type: 'text'
-    },
-    {
-      id: 'my-doc-2',
-      label: 'My Document 2',
-      type: 'text'
-    }
-    // ... More sources ...
-  ],
-  
-  // (Optional) Function to fetch content for additional sources.
-  tinymceai_get_additional_source: async (id) => {
-    // Fetch content from the database or API
-    return fetch(`/api/documents/${id}`).then(response => response.text());
-  },
-  
-  // (Optional) Configure custom Quick Actions commands.
-  tinymceai_custom_commands: [
-    {
-      displayedPrompt: 'Explain like I am five',
-      prompt: 'Explain the following text in simple terms.',
-      type: 'chat'
-    }
-    // ... More custom actions ...
-  ]
+  toolbar: 'aichat aiquickactions aireview'
 });
 ----
 
@@ -116,76 +113,7 @@ tinymce.init({
 
 The following configuration options affect the behavior of the {pluginname} plugin.
 
-include::partial$configuration/tinymceai_token_provider.adoc[leveloffset=+1]
-
-include::partial$configuration/tinymceai_document_id.adoc[leveloffset=+1]
-
-[[tinymceai-sidebar-type]]
-== `+tinymceai_sidebar_type+`
-
-This option controls how the AI sidebar is displayed. The sidebar can be set to `static` (default) or `floating`.
-
-*Type:* `+String+`
-
-*Default value:* `+'static'+`
-
-*Valid values:*
-* `+'static'+` – The sidebar is rendered inside the editor.
-* `+'floating'+` – The sidebar is rendered in a separate container outside of the editor and can be dragged on the page.
-
-.Example: using `tinymceai_sidebar_type` option
-[source,javascript]
-----
-tinymce.init({
-  selector: 'textarea',
-  plugins: 'tinymceai',
-  tinymceai_sidebar_type: 'static',  // or 'floating'
-  tinymceai_token_provider: function() {
-    return fetch('/api/token').then(response => response.text());
-  }
-});
-----
-
-[NOTE]
-====
-Changing the `tinymceai_sidebar_type` property dynamically (after the editor has been initialized) is not supported and can result in unpredictable behavior.
-====
-
-[[ui-control]]
-== UI Control
-
-The AI user interface can be toggled by users using toolbar buttons or menu items. Clicking a toolbar button (or menu item) opens or minimizes the relevant AI sidebar.
-
-* Clicking the chat toolbar button opens the chat sidebar. Clicking it again minimizes the chat sidebar. Importantly, minimizing the chat sidebar does not wipe the chat history—it just hides the sidebar.
-* Clicking the review button opens the review sidebar.
-* When reviewing suggested changes, the sidebar can be minimized to provide more screen space for reviewing. Once done reviewing, the sidebar can be opened again to continue working.
-
-The AI sidebar can also be toggled programmatically:
-
-[source,js]
-----
-// Toggle the AI sidebar
-editor.execCommand('tinymceai-toggle-sidebar');
-----
-
-By default, the AI interface will be hidden when the editor is created. To have it visible on load, use the `tinymceai-toggle-sidebar` command after the editor is initialized:
-
-[source,js]
-----
-tinymce.init({
-  selector: '#editor',
-  plugins: 'tinymceai',
-  tinymceai_token_provider: function() {
-    return fetch('/api/token').then(response => response.text());
-  },
-  setup: function(editor) {
-    editor.on('init', function() {
-      // Show the AI interface on load
-      editor.execCommand('tinymceai-toggle-sidebar');
-    });
-  }
-});
-----
+include::partial$configuration/tinymceai_options.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
@@ -212,46 +140,12 @@ include::partial$events/{plugincode}-events.adoc[]
 [[apis]]
 == APIs
 
-The {pluginname} plugin provides the following APIs.
+TBA
 
-include::partial$plugin-apis/{plugincode}-apis.adoc[]
 
 [[known-issues]]
 == Known issues and caveats
 
 The {pluginname} plugin has the following known issues and caveats:
 
-=== General HTML Support
-
-{pluginname} may not work correctly when General HTML Support for block elements is enabled. This issue will be addressed in future updates. In the meantime, avoid configurations that may cause problems.
-
-=== Issues with tables
-
-Certain glitches may occur when the AI modifies complex tables or layout tables. To prevent data loss, ensure that the content around these structures remains intact when using {pluginname} tools, while the team investigates the causes and potential solutions to this issue.
-
-=== Editor context and multiple editor handling
-
-While it's possible to use {pluginname} with multiple editors in an editor context, only the first editor registered in the context will currently be able to interact with AI tools and benefit from the content suggestions made by the AI. As the team works on resolving this issue, use standalone editor instances with {pluginname}.
-
-=== Inline image processing issues
-
-Inline images may not be processed correctly by commands within AI review. A solution is currently under development.
-
-=== Quick actions and content markers issues
-
-[NOTE]
-====
-// TODO: Verify with QA about their testing results before finalizing this known issue documentation.
-====
-
-Applying quick action responses may result in the loss of Comments and Suggested Edits suggestion markers. This issue will be addressed in a future update.
-
-=== Limited interactivity in Chat history
-
-The interactivity of historical AI chat conversations can become limited over time.
-
-=== Issues with specific AI models
-
-Some AI models may occasionally return empty responses. If this occurs, send a follow-up message asking the Assistant to complete the previous request, or start a new conversation.
-
-NOTE: To stay informed about updates or discuss {pluginname} possibilities, please reach out.
+TODO:

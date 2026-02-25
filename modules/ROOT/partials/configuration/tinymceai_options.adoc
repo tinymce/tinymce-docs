@@ -1,0 +1,481 @@
+[[content_id]]
+== `+content_id+`
+
+A unique identifier for the document or content being edited. When set, chat history is scoped to this ID, allowing conversations to be preserved and associated with the specific document across sessions. When not set, all conversations are shown regardless of document.
+
+*Type:* `+String+`
+
+*Default value:* `+undefined+`
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  content_id: 'document-123',
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  },
+  toolbar: 'aichat aiquickactions aireview'
+});
+----
+
+[[tinymceai_token_provider]]
+== `+tinymceai_token_provider+`
+
+A function that returns a Promise resolving to an object with a `+token+` property containing the signed JWT token for authenticating with the {pluginname} service.
+
+The JWT payload must include these required claims:
+
+* `+iat+` - Issued at time (provided by JWT libraries)
+* `+exp+` - Expiration time (tokens cannot exceed 24 hours; 5-15 minutes recommended)
+* `+aud+` - The {productname} API key
+* `+auth+` - Authentication object (see separate authentication documentation)
+* `+sub+` - Unique user ID
+
+*Type:* `+Function+` (`+() => Promise<{ token: string }>+`)
+
+*Default value:* `+undefined+`
+
+For JWT setup and required claims, see xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication].
+
+The token endpoint may return the JWT in different formats. Handle both:
+
+* **JSON response** – Endpoint returns `+{ "token": "eyJ..." }+`. Use `+fetch(url).then(r => r.json())+`.
+* **Plain text response** – Endpoint returns the raw JWT string. Use `+fetch(url).then(r => r.text()).then(token => ({ token }))+`.
+
+.Example: JSON response from custom endpoint
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  toolbar: 'aichat aiquickactions aireview',
+  tinymceai_token_provider: () => {
+    return fetch('/api/tinymceai-token').then(r => r.json());
+  }
+});
+----
+
+.Example: Plain text response from custom endpoint
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  toolbar: 'aichat aiquickactions aireview',
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.text()).then(token => ({ token }));
+  }
+});
+----
+
+[[tinymceai_sidebar_type]]
+== `+tinymceai_sidebar_type+`
+
+Controls how the AI sidebar is displayed. With `+static+`, the sidebar renders inside the editor. With `+floating+`, it renders in a separate container outside the editor and can be dragged on the page.
+
+*Type:* `+String+`
+
+*Possible Values:* `+'static'+`, `+'floating'+`
+
+*Default value:* `+'static'+`
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  tinymceai_sidebar_type: 'floating',
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  },
+  toolbar: 'aichat aiquickactions aireview'
+});
+----
+
+[NOTE]
+====
+Changing this property dynamically (after the editor has been initialized) is not supported and can result in unpredictable behavior.
+====
+
+[[tinymceai_default_model]]
+== `+tinymceai_default_model+`
+
+The default AI model to use when no model is explicitly selected.
+
+*Type:* `+String+`
+
+*Default value:* `+undefined+`
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  tinymceai_default_model: 'gemini-2-5-flash',
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  },
+  toolbar: 'aichat aiquickactions aireview'
+});
+----
+
+[[tinymceai_allow_model_selection]]
+== `+tinymceai_allow_model_selection+`
+
+Whether users can select a different AI model from the chat interface.
+
+*Type:* `+Boolean+`
+
+*Possible Values:* `+true+`, `+false+`
+
+*Default value:* `+true+`
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  tinymceai_allow_model_selection: false,
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  },
+  toolbar: 'aichat aiquickactions aireview'
+});
+----
+
+[[tinymceai_allowed_models]]
+== `+tinymceai_allowed_models+`
+
+Array of model identifiers that users can select from when model selection is enabled. When empty, all available models are shown.
+
+*Type:* `+Array+` of `+String+`
+
+*Default value:* `+[]+`
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  tinymceai_allowed_models: [
+    'gemini-2-5-flash',
+    'gpt-4o'
+  ],
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  },
+  toolbar: 'aichat aiquickactions aireview'
+});
+----
+
+[[tinymceai_context_toolbar]]
+== `+tinymceai_context_toolbar+`
+
+Array of control IDs shown in the context toolbar when content is selected. These can be used in the `+context_toolbar+` option.
+
+*Type:* `+Array+` of `+String+`
+
+*Default value:* `+['aichat', 'aiquickactions', 'aireview']+`
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  tinymceai_context_toolbar: [
+    'aichat',
+    'aiquickactions',
+    'aireview'
+  ],
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  },
+  toolbar: 'aichat aiquickactions aireview'
+});
+----
+
+[[tinymceai_quickactions_menu]]
+== `+tinymceai_quickactions_menu+`
+
+Array of control IDs that define the order of items in the Quick Actions menu.
+
+*Type:* `+Array+` of `+String+`
+
+*Default value:*
+[source,js]
+----
+[
+  'tinymceai-chat-commands',
+  'tinymceai-improve-writing',
+  'tinymceai-continue',
+  'tinymceai-fix-grammar',
+  'tinymceai-adjust-length',
+  'tinymceai-change-tone',
+  'tinymceai-translate',
+  'tinymceai-custom-commands'
+]
+----
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  tinymceai_quickactions_menu: [
+    'tinymceai-improve-writing',
+    'tinymceai-fix-grammar',
+    'tinymceai-custom-commands'
+  ],
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  },
+  toolbar: 'aichat aiquickactions aireview'
+});
+----
+
+[[tinymceai_chat_commands_menu]]
+== `+tinymceai_chat_commands_menu+`
+
+Array of control IDs for the Chat Commands submenu within Quick Actions.
+
+*Type:* `+Array+` of `+String+`
+
+*Default value:* `+['tinymceai-explain', 'tinymceai-summarize', 'tinymceai-highlight-key-points']+`
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  tinymceai_chat_commands_menu: [
+    'tinymceai-explain',
+    'tinymceai-summarize',
+    'tinymceai-highlight-key-points'
+  ],
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  },
+  toolbar: 'aichat aiquickactions aireview'
+});
+----
+
+[[tinymceai_adjust_length_menu]]
+== `+tinymceai_adjust_length_menu+`
+
+Array of control IDs for the Adjust Length submenu.
+
+*Type:* `+Array+` of `+String+`
+
+*Default value:* `+['tinymceai-make-shorter', 'tinymceai-make-longer']+`
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  tinymceai_adjust_length_menu: [
+    'tinymceai-make-shorter',
+    'tinymceai-make-longer'
+  ],
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  },
+  toolbar: 'aichat aiquickactions aireview'
+});
+----
+
+[[tinymceai_change_tone_menu]]
+== `+tinymceai_change_tone_menu+`
+
+Array of control IDs for the Change Tone submenu.
+
+*Type:* `+Array+` of `+String+`
+
+*Default value:*
+[source,js]
+----
+[
+  'tinymceai-make-tone-casual',
+  'tinymceai-make-tone-direct',
+  'tinymceai-make-tone-friendly',
+  'tinymceai-make-tone-confident',
+  'tinymceai-make-tone-professional'
+]
+----
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  tinymceai_change_tone_menu: [
+    'tinymceai-make-tone-casual',
+    'tinymceai-make-tone-professional'
+  ],
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  },
+  toolbar: 'aichat aiquickactions aireview'
+});
+----
+
+[[tinymceai_translate_menu]]
+== `+tinymceai_translate_menu+`
+
+Array of control IDs for the Translate submenu.
+
+*Type:* `+Array+` of `+String+`
+
+*Default value:*
+[source,js]
+----
+[
+  'tinymceai-translate-to-english',
+  'tinymceai-translate-to-chinese',
+  'tinymceai-translate-to-spanish',
+  'tinymceai-translate-to-german',
+  'tinymceai-translate-to-japanese',
+  'tinymceai-translate-to-portuguese',
+  'tinymceai-translate-to-korean',
+  'tinymceai-translate-to-italian',
+  'tinymceai-translate-to-russian'
+]
+----
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  tinymceai_translate_menu: [
+    'tinymceai-translate-to-english',
+    'tinymceai-translate-to-spanish'
+  ],
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  },
+  toolbar: 'aichat aiquickactions aireview'
+});
+----
+
+[[tinymceai_custom_commands]]
+== `+tinymceai_custom_commands+`
+
+Array of custom command objects rendered in the Custom Commands menu item. Each item can be type `+action+` (quick action with immediate preview) or type `+chat+` (opens in chat).
+
+* `+displayedPrompt+` - Text shown in the menu and chat history
+* `+prompt+` - The actual prompt sent to the AI
+* `+type+` - `+'action'+` or `+'chat'+`
+* `+model+` - Required for `+action+` type only
+
+*Type:* `+Array+` of `+Object+`
+
+*Possible Values:* For `+type+` property: `+'action'+`, `+'chat'+`
+
+*Default value:* `+[]+`
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  tinymceai_custom_commands: [
+    {
+      displayedPrompt: 'Add a quote from a famous person',
+      prompt: 'Add a quote from a known person, which would make sense in the context of the selected text.',
+      type: 'action',
+      model: 'gemini-2-5-flash'
+    },
+    {
+      displayedPrompt: 'Summarize in 5 bullet points',
+      prompt: 'Summarize the selected text in 5 bullet points.',
+      type: 'chat'
+    }
+  ],
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  },
+  toolbar: 'aichat aiquickactions aireview'
+});
+----
+
+[[tinymceai_additional_sources_list]]
+== `+tinymceai_additional_sources_list+`
+
+A function that returns a Promise resolving to an array of additional context source groups. Each group has `+label+`, optional `+icon+`, and `+sources+` array. Each source has `+id+`, `+label+`, and `+type+` (`+'web-resource'+` or `+'file'+`).
+
+*Type:* `+Function+` (`+() => Promise<Array>+`)
+
+*Possible Values:* For source `+type+` property: `+'web-resource'+`, `+'file'+`
+
+*Default value:* `+() => Promise.resolve([])+`
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  tinymceai_additional_sources_list: async () => [
+    {
+      label: 'My Documents',
+      icon: 'folder',
+      sources: [
+        { id: 'doc-1', label: 'Document 1', type: 'file' },
+        { id: 'url-1', label: 'Web Page', type: 'web-resource' }
+      ]
+    }
+  ],
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  },
+  toolbar: 'aichat aiquickactions aireview'
+});
+----
+
+[[tinymceai_get_additional_source]]
+== `+tinymceai_get_additional_source+`
+
+A function that fetches the content for an additional source by ID. Receives the source `+id+` and returns a Promise resolving to the source content (either `+{ type: 'file', file: File }+` or `+{ type: 'web-resource', url: string }+`).
+
+*Type:* `+Function+` (`+(id: string) => Promise<Object>+`)
+
+*Possible Values:* For return object `+type+` property: `+'file'+`, `+'web-resource'+`
+
+*Default value:* `+(id) => Promise.resolve(\`Should fetch additional source with given ${id}\`)+`
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  tinymceai_additional_sources_list: async () => [
+    { label: 'Docs', sources: [{ id: 'doc-1', label: 'Document 1', type: 'file' }] }
+  ],
+  tinymceai_get_additional_source: async (id) => {
+    const res = await fetch(`/api/documents/${id}`);
+    const blob = await res.blob();
+    const filename = `${id}.pdf`;
+    return { type: 'file', file: new File([blob], filename, { type: blob.type }) };
+  },
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  },
+  toolbar: 'aichat aiquickactions aireview'
+});
+----

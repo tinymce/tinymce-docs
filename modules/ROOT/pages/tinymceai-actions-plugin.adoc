@@ -32,7 +32,7 @@ Then, add the menu that opens the list of Quick Actions (`tinymceai-actions`) im
 
 [NOTE]
 ====
-AI features are added to the selection toolbar by default when the plugin is enabled. The `tinymceai_context_toolbar` configuration option controls which AI features appear in the selection toolbar. Configure it to show specific features, for example: `tinymceai_context_toolbar: 'showai aiquickactions aireview'` or `tinymceai_context_toolbar: 'showai aireview'` to show only certain features.
+AI features are added to the selection toolbar by default when the plugin is enabled. The `tinymceai_context_toolbar` configuration option controls which AI features appear in the selection toolbar. Configure it to show specific features, for example: `tinymceai_context_toolbar: ['aichat', 'aiquickactions', 'aireview']` or `tinymceai_context_toolbar: ['aichat', 'aireview']` to show only certain features.
 ====
 
 To learn more about toolbar configuration, refer to the xref:toolbar-configuration-options.adoc[toolbar configuration] guide.
@@ -48,16 +48,16 @@ The final example configuration looks as follows:
 tinymce.init({
   selector: '#editor',
   plugins: 'tinymceai',
-  tinymceai_token_provider: function() {
-    return fetch('/api/token').then(response => response.text());
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.text()).then(token => ({ token }));
   },
   
   // Adding Quick Actions to the main editor toolbar.
-  toolbar: 'undo redo showai aiquickactions aireview | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+  toolbar: 'undo redo aichat aiquickactions aireview | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
   
   // Adding Quick Actions to the context toolbar (selection toolbar). Since some of the actions are selection-sensitive,
   // accessing them might be easier for users using this kind of toolbar.
-  tinymceai_context_toolbar: 'showai aiquickactions aireview',
+  tinymceai_context_toolbar: ['aichat', 'aiquickactions', 'aireview'],
   
   // Configure the main Quick Actions menu
   tinymceai_quickactions_menu: [
@@ -137,8 +137,8 @@ tinymce.init({
   selector: '#editor',
   plugins: 'tinymceai',
   toolbar: 'tinymceai-actions',
-  tinymceai_token_provider: function() {
-    return fetch('/api/token').then(response => response.text());
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.text()).then(token => ({ token }));
   },
   tinymceai_custom_commands: [
     {
@@ -179,8 +179,8 @@ tinymce.init({
   selector: '#editor',
   plugins: 'tinymceai',
   toolbar: 'tinymceai-actions',
-  tinymceai_token_provider: function() {
-    return fetch('/api/token').then(response => response.text());
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.text()).then(token => ({ token }));
   },
   // Configure the main Quick Actions menu
   tinymceai_quickactions_menu: [

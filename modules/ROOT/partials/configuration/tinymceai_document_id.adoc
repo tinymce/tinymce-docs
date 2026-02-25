@@ -14,8 +14,8 @@ tinymce.init({
   selector: 'textarea',  // Change this value according to the HTML
   plugins: 'tinymceai',
   tinymceai_document_id: 'document-123', // Replace with the actual document ID
-  tinymceai_token_provider: function() {
-    return fetch('/api/token').then(response => response.text());
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
   }
 });
 ----

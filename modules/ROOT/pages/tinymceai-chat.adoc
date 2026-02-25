@@ -84,8 +84,8 @@ tinymce.init({
   selector: '#editor',
   plugins: 'tinymceai',
   toolbar: 'tinymceai',
-  tinymceai_token_provider: function() {
-    return fetch('/api/token').then(response => response.text());
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.text()).then(token => ({ token }));
   },
   tinymceai_default_model: 'claude-3-5-haiku',
   tinymceai_allow_model_selection: true,
@@ -120,8 +120,8 @@ tinymce.init({
   selector: '#editor',
   plugins: 'tinymceai',
   toolbar: 'tinymceai',
-  tinymceai_token_provider: function() {
-    return fetch('/api/token').then(response => response.text());
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.text()).then(token => ({ token }));
   },
   // Function that returns a list of available external sources
   tinymceai_additional_sources_list: async (query) => {

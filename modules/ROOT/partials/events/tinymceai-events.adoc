@@ -1,15 +1,1 @@
-[cols="1,2"]
-|===
-|Event name |Description
-
-|`tinymceai-toggle-floating-sidebar` |Dispatched when the floating AI sidebar should be toggled. This event is used internally to control the visibility of the floating sidebar interface.
-|===
-
-.Example
-[source,js]
-----
-editor.on('tinymceai-toggle-floating-sidebar', function() {
-  // Handle the toggle floating sidebar event
-  console.log('Floating sidebar toggle requested');
-});
-----
+TBA

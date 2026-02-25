@@ -1,30 +1,37 @@
-[cols="1,3",options="header"]
+[cols="2,3",options="header"]
 |===
 |Toolbar button identifier |Description
 
-|`tinymceai` |Main AI plugin button
-|`tinymceai-conversations` |Conversations feature
-|`tinymceai-actions` |Quick Actions feature
-|`tinymceai-reviews` |Reviews feature
-|`ask-ai` |Quick Actions
-|`explain` |Quick Actions
-|`summarize` |Quick Actions
-|`highlight-key-points` |Quick Actions
-|`improve-writing` |Quick Actions
-|`continue` |Quick Actions
-|`fix-grammar` |Quick Actions
-|`make-shorter` |Quick Actions
-|`make-longer` |Quick Actions
-|`make-tone-casual` |Quick Actions
-|`make-tone-direct` |Quick Actions
-|`make-tone-friendly` |Quick Actions
-|`make-tone-confident` |Quick Actions
-|`make-tone-professional` |Quick Actions
-|`translate-to-english` |Quick Actions
-|`translate-to-chinese` |Quick Actions
-|`translate-to-french` |Quick Actions
-|`translate-to-german` |Quick Actions
-|`translate-to-italian` |Quick Actions
-|`translate-to-portuguese` |Quick Actions
-|`translate-to-russian` |Quick Actions
+|`+aichat+` |Opens the AI Chat sidebar for conversations with the AI assistant.
+|`+aiquickactions+` |Opens the Quick Actions menu (improve writing, fix grammar, translate, etc.).
+|`+aireview+` |Opens the AI Review sidebar for suggested edits and content review.
+|`+tinymceai-chat-commands+` |Chat commands submenu (Explain, Summarize, Highlight key points).
+|`+tinymceai-adjust-length+` |Adjust length submenu (Make shorter, Make longer).
+|`+tinymceai-change-tone+` |Change tone submenu (Casual, Direct, Friendly, Confident, Professional).
+|`+tinymceai-translate+` |Translate submenu (various languages).
+|`+tinymceai-improve-writing+` |Improve writing quick action.
+|`+tinymceai-continue+` |Continue writing quick action.
+|`+tinymceai-fix-grammar+` |Fix grammar quick action.
+|`+tinymceai-make-shorter+` |Make text shorter.
+|`+tinymceai-make-longer+` |Make text longer.
+|`+tinymceai-make-tone-casual+` |Make tone casual.
+|`+tinymceai-make-tone-direct+` |Make tone direct.
+|`+tinymceai-make-tone-friendly+` |Make tone friendly.
+|`+tinymceai-make-tone-confident+` |Make tone confident.
+|`+tinymceai-make-tone-professional+` |Make tone professional.
+|`+tinymceai-translate-to-english+` |Translate to English.
+|`+tinymceai-translate-to-chinese+` |Translate to Chinese.
+|`+tinymceai-translate-to-spanish+` |Translate to Spanish.
+|`+tinymceai-translate-to-german+` |Translate to German.
+|`+tinymceai-translate-to-japanese+` |Translate to Japanese.
+|`+tinymceai-translate-to-portuguese+` |Translate to Portuguese.
+|`+tinymceai-translate-to-korean+` |Translate to Korean.
+|`+tinymceai-translate-to-italian+` |Translate to Italian.
+|`+tinymceai-translate-to-russian+` |Translate to Russian.
+|`+tinymceai-explain+` |Explain selected content.
+|`+tinymceai-summarize+` |Summarize selected content.
+|`+tinymceai-highlight-key-points+` |Highlight key points in selected content.
+|`+tinymceai-custom-commands+` |Custom commands menu (configured via `tinymceai_custom_commands`).
 |===
+
+NOTE: Submenu items (e.g. `+tinymceai-make-shorter+`, `+tinymceai-translate-to-english+`) are typically used within menus rather than as standalone toolbar buttons.

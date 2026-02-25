@@ -1,18 +1,19 @@
-[cols="1,2"]
+[cols="1,3",options="header"]
 |===
 |Command name |Description
 
-|`tinymceai-toggle-sidebar` |Toggle the AI sidebar interface visibility.
+|`+ToggleSidebar+` |Core command. Use `+editor.execCommand('ToggleSidebar', false, 'aichat')+` or `+editor.execCommand('ToggleSidebar', false, 'aireview')+` to toggle the AI Chat or AI Review sidebar.
 |===
-
-[NOTE]
-====
-The command name may be changed to camelCase in a future version (e.g., `tinymceaiToggleSidebar`).
-====
 
 .Examples
 [source,js]
 ----
-// Toggle the AI sidebar
-editor.execCommand('tinymceai-toggle-sidebar');
+// Open the AI Chat sidebar
+tinymce.activeEditor.execCommand('ToggleSidebar', false, 'aichat');
+
+// Open the AI Review sidebar
+tinymce.activeEditor.execCommand('ToggleSidebar', false, 'aireview');
+
+// Close the current sidebar (pass same ID again to toggle off)
+tinymce.activeEditor.execCommand('ToggleSidebar', false, 'aichat');
 ----

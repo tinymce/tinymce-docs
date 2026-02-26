@@ -240,11 +240,13 @@ async function fetchH1TitlesBatch(urls, batchSize = 10, delay = 100) {
 }
 
 // Generate a descriptive title from URL path
+// NOTE: This script does A LOT of string matching against URL paths. If you encounter
+// weirdness (e.g. wrong titles, wrong categories), search for the relevant path strings
+// in this file to locate and fix the matching logic.
 function generateTitleFromPath(urlPath) {
   if (!urlPath) return 'Home';
-  
-  // Handle special cases first
-  const specialCases = {
+
+  const pathTitleMap = {
     '': 'Home',
     'index': 'Home',
     'getting-started': 'Getting Started',
@@ -293,15 +295,7 @@ function generateTitleFromPath(urlPath) {
     'changelog': 'Changelog',
     'accessibility': 'Accessibility',
     'security': 'Security guide',
-    'support': 'Support'
-  };
-  
-  if (specialCases[urlPath]) {
-    return specialCases[urlPath];
-  }
-  
-  // Framework integrations
-  const frameworkMap = {
+    'support': 'Support',
     'react': 'React',
     'react-cloud': 'React Cloud',
     'react-pm-host': 'React Package Manager',
@@ -362,44 +356,32 @@ function generateTitleFromPath(urlPath) {
     'shadow-dom': 'Shadow DOM',
     'swing': 'Java Swing'
   };
-  
-  if (frameworkMap[urlPath]) {
-    return frameworkMap[urlPath];
+
+  if (pathTitleMap[urlPath]) {
+    return pathTitleMap[urlPath];
   }
-  
+
   // Handle release notes
   if (urlPath.match(/^\d+\.\d+\.\d+-release-notes$/)) {
     const version = urlPath.replace('-release-notes', '');
     return `TinyMCE ${version}`;
   }
-  
-  // Handle bundling entries
-  if (urlPath.includes('webpack-cjs-npm')) {
-    return 'CommonJS and NPM (Webpack)';
-  }
-  if (urlPath.includes('webpack-es6-npm')) {
-    return 'ES6 and NPM (Webpack)';
-  }
-  if (urlPath.includes('webpack-cjs-download')) {
-    return 'CommonJS and a .zip archive (Webpack)';
-  }
-  if (urlPath.includes('webpack-es6-download')) {
-    return 'ES6 and a .zip archive (Webpack)';
-  }
-  if (urlPath.includes('rollup-es6-npm')) {
-    return 'ES6 and npm (Rollup)';
-  }
-  if (urlPath.includes('rollup-es6-download')) {
-    return 'ES6 and a .zip archive (Rollup)';
-  }
-  if (urlPath.includes('vite-es6-npm')) {
-    return 'ES6 and NPM (Vite)';
-  }
-  if (urlPath.includes('browserify-cjs-npm')) {
-    return 'CommonJS and npm (Browserify)';
-  }
-  if (urlPath.includes('browserify-cjs-download')) {
-    return 'CommonJS and a .zip archive (Browserify)';
+
+  // Handle bundling entries (order matters: more specific keys first)
+  const bundlingTitles = {
+    'webpack-cjs-npm': 'CommonJS and NPM (Webpack)',
+    'webpack-es6-npm': 'ES6 and NPM (Webpack)',
+    'webpack-cjs-download': 'CommonJS and a .zip archive (Webpack)',
+    'webpack-es6-download': 'ES6 and a .zip archive (Webpack)',
+    'rollup-es6-npm': 'ES6 and npm (Rollup)',
+    'rollup-es6-download': 'ES6 and a .zip archive (Rollup)',
+    'vite-es6-npm': 'ES6 and NPM (Vite)',
+    'browserify-cjs-npm': 'CommonJS and npm (Browserify)',
+    'browserify-cjs-download': 'CommonJS and a .zip archive (Browserify)'
+  };
+  const bundlingMatch = Object.keys(bundlingTitles).find((k) => urlPath.includes(k));
+  if (bundlingMatch) {
+    return bundlingTitles[bundlingMatch];
   }
   
   // Handle API references
@@ -461,56 +443,38 @@ function categorizeUrl(urlPath) {
   }
   
   // Configuration & Setup
-  if (urlPath.startsWith('basic-setup') || urlPath.startsWith('work-with-plugins') || 
-      urlPath.startsWith('filter-content') || urlPath.startsWith('content-filtering') ||
-      urlPath.startsWith('localize') || urlPath.startsWith('content-localization') ||
-      urlPath.startsWith('spell-checking') || urlPath.startsWith('editor-') ||
-      urlPath.startsWith('content-') || urlPath.startsWith('dialog-') ||
-      urlPath.startsWith('menus-configuration') || urlPath.startsWith('toolbar-configuration') ||
-      urlPath.startsWith('statusbar') || urlPath.startsWith('ui-mode') ||
-      urlPath.startsWith('initial-configuration') || urlPath.startsWith('editor-important') ||
-      urlPath.startsWith('editor-size') || urlPath.startsWith('editor-save') ||
-      urlPath.startsWith('editor-model') || urlPath.startsWith('editor-command') ||
-      urlPath.startsWith('editor-context-menu') || urlPath.startsWith('editor-icon-identifiers') ||
-      urlPath.startsWith('available-menu-items') || urlPath.startsWith('available-toolbar-buttons') ||
-      urlPath.startsWith('editor-icons') || urlPath.startsWith('editor-skin') ||
-      urlPath.startsWith('editor-theme') || urlPath.startsWith('editor-content-css') ||
-      urlPath.startsWith('url-handling') || urlPath.startsWith('tinymce-and-csp') ||
-      urlPath.startsWith('tinymce-and-cors') || urlPath.startsWith('cloud-deployment-guide') ||
-      urlPath.startsWith('editor-and-features') || urlPath.startsWith('features-only') ||
-      urlPath.startsWith('editor-plugin-version') || urlPath.startsWith('plugin-editor-version') ||
-      urlPath.startsWith('cloud-troubleshooting') || urlPath.startsWith('multiple-editors') ||
-      urlPath.startsWith('understanding-editor-loads') || urlPath === 'events') {
+  const configPrefixes = [
+    'basic-setup', 'work-with-plugins', 'filter-content', 'content-filtering',
+    'localize', 'content-localization', 'spell-checking', 'editor-', 'content-',
+    'dialog-', 'menus-configuration', 'toolbar-configuration', 'statusbar', 'ui-mode',
+    'initial-configuration', 'editor-important', 'editor-size', 'editor-save',
+    'editor-model', 'editor-command', 'editor-context-menu', 'editor-icon-identifiers',
+    'available-menu-items', 'available-toolbar-buttons', 'editor-icons', 'editor-skin',
+    'editor-theme', 'editor-content-css', 'url-handling', 'tinymce-and-csp',
+    'tinymce-and-cors', 'cloud-deployment-guide', 'editor-and-features', 'features-only',
+    'editor-plugin-version', 'plugin-editor-version', 'cloud-troubleshooting',
+    'multiple-editors', 'understanding-editor-loads'
+  ];
+  if (configPrefixes.some((p) => urlPath.startsWith(p)) || urlPath === 'events') {
     return { category: 'Configuration & Setup', subcategory: null };
   }
-  
+
   // Plugins & Features - Core Plugins
-  if (urlPath === 'plugins' || 
-      urlPath === 'table' || urlPath === 'table-options' ||
-      urlPath === 'image' || urlPath === 'link' ||
-      urlPath === 'lists' || urlPath === 'code' || urlPath === 'codesample' ||
-      urlPath === 'autolink' || urlPath === 'anchor' || urlPath === 'autosave' ||
-      urlPath === 'charmap' || urlPath === 'checklist' || urlPath === 'directionality' ||
-      urlPath === 'emoticons' || urlPath === 'fullscreen' || urlPath === 'help' ||
-      urlPath === 'insertdatetime' || urlPath === 'nonbreaking' || urlPath === 'pagebreak' ||
-      urlPath === 'preview' || urlPath === 'save' || urlPath === 'searchreplace' ||
-      urlPath === 'visualblocks' || urlPath === 'visualchars' || urlPath === 'wordcount' ||
-      urlPath === 'advlist' || urlPath === 'contextmenu' || urlPath === 'contexttoolbar' ||
-      urlPath === 'quickbars' || urlPath === 'advanced-templates' ||
-      urlPath === 'fullpagehtml' || urlPath === 'importcss' || urlPath === 'importword' ||
-      urlPath === 'media' || urlPath === 'pageembed' || urlPath === 'paste' ||
-      urlPath === 'textcolor' || urlPath === 'colorpicker' || urlPath === 'textpattern' ||
-      urlPath === 'hr' || urlPath === 'print' || urlPath === 'spellchecker' ||
-      urlPath === 'tabfocus' || urlPath === 'autoresize' || urlPath === 'markdown' ||
-      urlPath === 'math' || urlPath === 'mentions' || urlPath === 'permanentpen' ||
-      urlPath === 'contextform' || urlPath === 'context' ||
-      // Premium plugins that appear in Core Plugins section
-      urlPath === 'advtable' || urlPath === 'advcode' || urlPath === 'editimage' ||
-      urlPath === 'linkchecker' || urlPath === 'a11ychecker' || urlPath === 'casechange' ||
-      urlPath === 'footnotes' || urlPath === 'formatpainter' || urlPath === 'tableofcontents' ||
-      urlPath === 'advanced-typography' || urlPath === 'typography' || urlPath === 'mergetags' ||
-      urlPath === 'accordion' || urlPath === 'introduction-to-mediaembed' ||
-      urlPath.startsWith('upload-') || urlPath === 'file-image-upload') {
+  const corePluginPaths = new Set([
+    'plugins', 'table', 'table-options', 'image', 'link', 'lists', 'code', 'codesample',
+    'autolink', 'anchor', 'autosave', 'charmap', 'checklist', 'directionality',
+    'emoticons', 'fullscreen', 'help', 'insertdatetime', 'nonbreaking', 'pagebreak',
+    'preview', 'save', 'searchreplace', 'visualblocks', 'visualchars', 'wordcount',
+    'advlist', 'contextmenu', 'contexttoolbar', 'quickbars', 'advanced-templates',
+    'fullpagehtml', 'importcss', 'importword', 'media', 'pageembed', 'paste',
+    'textcolor', 'colorpicker', 'textpattern', 'hr', 'print', 'spellchecker',
+    'tabfocus', 'autoresize', 'markdown', 'math', 'mentions', 'permanentpen',
+    'contextform', 'context',
+    'advtable', 'advcode', 'editimage', 'linkchecker', 'a11ychecker', 'casechange',
+    'footnotes', 'formatpainter', 'tableofcontents', 'advanced-typography', 'typography',
+    'mergetags', 'accordion', 'introduction-to-mediaembed', 'file-image-upload'
+  ]);
+  if (corePluginPaths.has(urlPath) || urlPath.startsWith('upload-')) {
     return { category: 'Plugins & Features', subcategory: 'Core Plugins' };
   }
   
@@ -594,35 +558,39 @@ function categorizeUrl(urlPath) {
     return { category: 'Customization & Development', subcategory: 'Enhanced Skins & Icons' };
   }
   
-  // API Reference
+  // API Reference (order matters: first match wins)
+  const apiSubcategoryPatterns = [
+    ['tinymce.editor', 'Core APIs'],
+    ['tinymce.plugin', 'Core APIs'],
+    ['tinymce.theme', 'Core APIs'],
+    ['tinymce.root', 'Core APIs'],
+    ['tinymce.addonmanager', 'Core APIs'],
+    ['tinymce.editormanager', 'Core APIs'],
+    ['tinymce.editormode', 'Core APIs'],
+    ['tinymce.editoroptions', 'Core APIs'],
+    ['tinymce.editorupload', 'Core APIs'],
+    ['windowmanager', 'UI APIs'],
+    ['notificationmanager', 'UI APIs'],
+    ['shortcuts', 'UI APIs'],
+    ['editor.ui', 'UI APIs'],
+    ['dom.', 'DOM APIs'],
+    ['html.', 'HTML APIs'],
+    ['geom.', 'Geometry APIs'],
+    ['util.', 'Utility APIs'],
+    ['env', 'Utility APIs'],
+    ['event', 'Utility APIs'],
+    ['undomanager', 'Utility APIs'],
+    ['formatter', 'Utility APIs'],
+    ['annotator', 'Utility APIs'],
+    ['userlookup', 'Utility APIs'],
+    ['fakeclipboard', 'Utility APIs']
+  ];
   if (urlPath.startsWith('apis/')) {
-    // Determine API subcategory
-    if (urlPath.includes('tinymce.editor') || urlPath.includes('tinymce.plugin') ||
-        urlPath.includes('tinymce.theme') || urlPath.includes('tinymce.root') ||
-        urlPath.includes('tinymce.addonmanager') || urlPath.includes('tinymce.editormanager') ||
-        urlPath.includes('tinymce.editormode') || urlPath.includes('tinymce.editoroptions') ||
-        urlPath.includes('tinymce.editorupload')) {
-      return { category: 'API Reference', subcategory: 'Core APIs' };
-    }
-    if (urlPath.includes('windowmanager') || urlPath.includes('notificationmanager') ||
-        urlPath.includes('shortcuts') || urlPath.includes('editor.ui')) {
-      return { category: 'API Reference', subcategory: 'UI APIs' };
-    }
-    if (urlPath.includes('dom.')) {
-      return { category: 'API Reference', subcategory: 'DOM APIs' };
-    }
-    if (urlPath.includes('html.')) {
-      return { category: 'API Reference', subcategory: 'HTML APIs' };
-    }
-    if (urlPath.includes('geom.')) {
-      return { category: 'API Reference', subcategory: 'Geometry APIs' };
-    }
-    if (urlPath.includes('util.') || urlPath.includes('env') || urlPath.includes('event') ||
-        urlPath.includes('undomanager') || urlPath.includes('formatter') || urlPath.includes('annotator') ||
-        urlPath.includes('userlookup') || urlPath.includes('fakeclipboard')) {
-      return { category: 'API Reference', subcategory: 'Utility APIs' };
-    }
-    return { category: 'API Reference', subcategory: 'Core APIs' };
+    const match = apiSubcategoryPatterns.find(([pattern]) => urlPath.includes(pattern));
+    return {
+      category: 'API Reference',
+      subcategory: match ? match[1] : 'Core APIs'
+    };
   }
   
   // Migration Guides
@@ -682,30 +650,23 @@ function makeTitlesUnique(entries) {
   });
   
   // For duplicate titles, make them unique
+  const quickStartTitles = {
+    'cloud-quick-start': 'Quick start: Cloud',
+    'npm-projects': 'Quick start: NPM/Yarn',
+    'zip-install': 'Quick start: ZIP'
+  };
   titleToEntries.forEach((entriesWithTitle, title) => {
     if (titleCounts.get(title) > 1) {
       entriesWithTitle.forEach((entry, index) => {
-        // Generate a more specific title based on URL path
         const path = entry.urlPath;
-        
-        // Titles should already be unique from generateTitleFromPath, but handle edge cases
-        if (path === 'cloud-quick-start') {
-          entry.title = 'Quick start: Cloud';
-        } else if (path === 'npm-projects') {
-          entry.title = 'Quick start: NPM/Yarn';
-        } else if (path === 'zip-install') {
-          entry.title = 'Quick start: ZIP';
-        } else if (path === 'swing') {
-          // Swing should only appear once - if duplicate, skip
-          if (index > 0) {
-            entry.title = null; // Mark for removal
-          }
+        if (path === 'swing' && index > 0) {
+          entry.title = null; // Mark for removal - swing should only appear once
+        } else if (quickStartTitles[path]) {
+          entry.title = quickStartTitles[path];
         } else {
-          // For other duplicates, add context from URL
           const pathParts = path.split('-');
           if (pathParts.length > 1) {
-            const lastPart = pathParts[pathParts.length - 1];
-            entry.title = `${title} (${lastPart})`;
+            entry.title = `${title} (${pathParts[pathParts.length - 1]})`;
           }
         }
       });
@@ -890,71 +851,163 @@ TinyMCE is a rich text editor that provides a WYSIWYG editing experience. The la
     }
   });
 
-  content += `\n### Other Integrations\n`;
-  content += `- **Bootstrap**:\n`;
-  content += `  - Cloud: ${BASE_URL}/bootstrap-cloud/\n`;
-  content += `  - ZIP: ${BASE_URL}/bootstrap-zip/\n`;
-  content += `- **PHP Projects**: ${BASE_URL}/php-projects/\n`;
-  content += `- **.NET Projects**: ${BASE_URL}/dotnet-projects/\n`;
-  content += `- **WordPress**: ${BASE_URL}/wordpress/\n`;
-  content += `- **Shadow DOM**: ${BASE_URL}/shadow-dom/\n`;
-  content += `- **Java Swing**: ${BASE_URL}/swing/\n`;
+  content += `\n### Other Integrations
+- **Bootstrap**:
+  - Cloud: ${BASE_URL}/bootstrap-cloud/
+  - ZIP: ${BASE_URL}/bootstrap-zip/
+- **PHP Projects**: ${BASE_URL}/php-projects/
+- **.NET Projects**: ${BASE_URL}/dotnet-projects/
+- **WordPress**: ${BASE_URL}/wordpress/
+- **Shadow DOM**: ${BASE_URL}/shadow-dom/
+- **Java Swing**: ${BASE_URL}/swing/
+`;
 
-  // Add remaining top sections
-  content += `\n## Configuration\n\n### Basic Setup\n`;
-  content += `- **Basic Setup**: ${BASE_URL}/basic-setup/\n`;
-  content += `- **Selector Configuration**: Required for all TinyMCE instances\n`;
-  content += `- **Plugin Configuration**: ${BASE_URL}/work-with-plugins/\n`;
-  content += `- **Toolbar Configuration**: Part of basic setup\n`;
-  content += `- **Menu and Menu Bar**: Part of basic setup\n\n`;
-  content += `### Common Configuration Options\n`;
-  content += `- **Content Filtering**: ${BASE_URL}/filter-content/\n`;
-  content += `- **Localization**: ${BASE_URL}/localize-your-language/\n`;
-  content += `- **Spell Checking**: ${BASE_URL}/spell-checking/\n`;
-  content += `- **Content CSS**: ${BASE_URL}/editor-content-css/\n`;
-  content += `- **URL Handling**: ${BASE_URL}/url-handling/\n`;
+  content += `
+## Configuration
 
-  content += `\n## CDN and Package URLs\n\n### Cloud CDN (Recommended)\n\`\`\`\nhttps://cdn.tiny.cloud/1/[api-key]/tinymce/8/tinymce.min.js\n\`\`\`\nReplace \`[api-key]\` with your Tiny Cloud API key.\n\n### jsDelivr CDN\n\`\`\`\nhttps://cdn.jsdelivr.net/npm/tinymce@8/tinymce.min.js\n\`\`\`\n\n### Package Manager Installation\n`;
-  content += `- **npm**: \`npm install tinymce@8\`\n`;
-  content += `- **yarn**: \`yarn add tinymce@8\`\n`;
-  content += `- **pnpm**: \`pnpm add tinymce@8\`\n`;
-  content += `- **Composer** (PHP): \`composer require tinymce/tinymce\`\n`;
-  content += `- **NuGet** (.NET): \`Install-Package TinyMCE\`\n`;
+### Basic Setup
+- **Basic Setup**: ${BASE_URL}/basic-setup/
+- **Selector Configuration**: Required for all TinyMCE instances
+- **Plugin Configuration**: ${BASE_URL}/work-with-plugins/
+- **Toolbar Configuration**: Part of basic setup
+- **Menu and Menu Bar**: Part of basic setup
 
-  content += `\n## Integration Packages\n\n### React\n`;
-  content += `- **Package**: \`@tinymce/tinymce-react\`\n`;
-  content += `- **Installation**: \`npm install @tinymce/tinymce-react tinymce@8\`\n\n`;
-  content += `### Vue\n`;
-  content += `- **Package**: \`@tinymce/tinymce-vue\`\n`;
-  content += `- **Installation**: \`npm install @tinymce/tinymce-vue tinymce@8\`\n\n`;
-  content += `### Angular\n`;
-  content += `- **Package**: \`@tinymce/tinymce-angular\`\n`;
-  content += `- **Installation**: \`npm install @tinymce/tinymce-angular tinymce@8\`\n`;
+### Common Configuration Options
+- **Content Filtering**: ${BASE_URL}/filter-content/
+- **Localization**: ${BASE_URL}/localize-your-language/
+- **Spell Checking**: ${BASE_URL}/spell-checking/
+- **Content CSS**: ${BASE_URL}/editor-content-css/
+- **URL Handling**: ${BASE_URL}/url-handling/
 
-  content += `\n## Code Examples\n\n### Basic HTML Example (Cloud)\n\`\`\`html\n<script src="https://cdn.tiny.cloud/1/[api-key]/tinymce/8/tinymce.min.js" \n        referrerpolicy="origin"></script>\n<script>\ntinymce.init({\n  selector: 'textarea',\n  plugins: 'advlist autolink lists link image charmap preview anchor',\n  toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist | link image'\n});\n</script>\n\`\`\`\n\n### Basic HTML Example (Self-Hosted)\n\`\`\`html\n<script src="https://cdn.jsdelivr.net/npm/tinymce@8/tinymce.min.js"></script>\n<script>\ntinymce.init({\n  selector: 'textarea',\n  plugins: 'advlist autolink lists link image charmap preview anchor',\n  toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist | link image'\n});\n</script>\n\`\`\`\n\n### React Example\n\`\`\`jsx\nimport { Editor } from '@tinymce/tinymce-react';\n\nfunction App() {\n  return (\n    <Editor\n      apiKey="your-api-key"\n      init={{\n        height: 500,\n        plugins: 'advlist autolink lists link image charmap preview anchor',\n        toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist | link image'\n      }}\n    />\n  );\n}\n\`\`\`\n\n### Vue Example\n\`\`\`vue\n<template>\n  <editor\n    api-key="your-api-key"\n    :init="{\n      height: 500,\n      plugins: 'advlist autolink lists link image charmap preview anchor',\n      toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist | link image'\n    }"\n  />\n</template>\n\n<script>\nimport Editor from '@tinymce/tinymce-vue';\n\nexport default {\n  components: {\n    Editor\n  }\n};\n</script>\n\`\`\`\n`;
+## CDN and Package URLs
 
-  content += `\n## Important Notes for AI Assistants\n\n`;
-  content += `1. **Always use TinyMCE 8** for new projects and code examples\n`;
-  content += `2. **CDN URLs must include version 8**: Use \`tinymce@8\` or \`tinymce/8\` in URLs\n`;
-  content += `3. **Package installations**: Always specify \`tinymce@8\` when installing\n`;
-  content += `4. **Integration packages**: Use the latest versions compatible with TinyMCE 8\n`;
-  content += `5. **Code examples default to TinyMCE 8** unless explicitly noted otherwise\n`;
-  content += `6. **Legacy versions (5, 6, 7)**: Only reference when specifically asked about migration or legacy support\n`;
-  content += `7. **Cloud vs Self-Hosted**: Cloud deployment is recommended for most use cases\n`;
+### Cloud CDN (Recommended)
+\`\`\`
+https://cdn.tiny.cloud/1/[api-key]/tinymce/8/tinymce.min.js
+\`\`\`
+Replace \`[api-key]\` with your Tiny Cloud API key.
 
-  content += `\n## API Reference\n`;
-  content += `- **Editor API**: ${BASE_URL}/apis/tinymce.editor/\n`;
-  content += `- **Plugin API**: ${BASE_URL}/apis/tinymce.plugin/\n`;
+### jsDelivr CDN
+\`\`\`
+https://cdn.jsdelivr.net/npm/tinymce@8/tinymce.min.js
+\`\`\`
 
-  content += `\n## Migration Guides\n`;
-  content += `- **Upgrading TinyMCE**: ${BASE_URL}/upgrading/\n`;
-  content += `- **Migration from 7.x**: ${BASE_URL}/migration-from-7x/\n`;
+### Package Manager Installation
+- **npm**: \`npm install tinymce@8\`
+- **yarn**: \`yarn add tinymce@8\`
+- **pnpm**: \`pnpm add tinymce@8\`
+- **Composer** (PHP): \`composer require tinymce/tinymce\`
+- **NuGet** (.NET): \`Install-Package TinyMCE\`
 
-  content += `\n## Support and Resources\n`;
-  content += `- **Documentation Home**: ${BASE_URL}/\n`;
-  content += `- **Release Notes**: ${BASE_URL}/release-notes/\n`;
-  content += `- **Examples**: ${BASE_URL}/examples/\n`;
-  content += `- **How-to Guides**: ${BASE_URL}/how-to-guides/\n\n\n`;
+## Integration Packages
+
+### React
+- **Package**: \`@tinymce/tinymce-react\`
+- **Installation**: \`npm install @tinymce/tinymce-react tinymce@8\`
+
+### Vue
+- **Package**: \`@tinymce/tinymce-vue\`
+- **Installation**: \`npm install @tinymce/tinymce-vue tinymce@8\`
+
+### Angular
+- **Package**: \`@tinymce/tinymce-angular\`
+- **Installation**: \`npm install @tinymce/tinymce-angular tinymce@8\`
+
+## Code Examples
+
+### Basic HTML Example (Cloud)
+\`\`\`html
+<script src="https://cdn.tiny.cloud/1/[api-key]/tinymce/8/tinymce.min.js" 
+        referrerpolicy="origin"></script>
+<script>
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'advlist autolink lists link image charmap preview anchor',
+  toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist | link image'
+});
+</script>
+\`\`\`
+
+### Basic HTML Example (Self-Hosted)
+\`\`\`html
+<script src="https://cdn.jsdelivr.net/npm/tinymce@8/tinymce.min.js"></script>
+<script>
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'advlist autolink lists link image charmap preview anchor',
+  toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist | link image'
+});
+</script>
+\`\`\`
+
+### React Example
+\`\`\`jsx
+import { Editor } from '@tinymce/tinymce-react';
+
+function App() {
+  return (
+    <Editor
+      apiKey="your-api-key"
+      init={{
+        height: 500,
+        plugins: 'advlist autolink lists link image charmap preview anchor',
+        toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist | link image'
+      }}
+    />
+  );
+}
+\`\`\`
+
+### Vue Example
+\`\`\`vue
+<template>
+  <editor
+    api-key="your-api-key"
+    :init="{
+      height: 500,
+      plugins: 'advlist autolink lists link image charmap preview anchor',
+      toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist | link image'
+    }"
+  />
+</template>
+
+<script>
+import Editor from '@tinymce/tinymce-vue';
+
+export default {
+  components: {
+    Editor
+  }
+};
+</script>
+\`\`\`
+
+## Important Notes for AI Assistants
+
+1. **Always use TinyMCE 8** for new projects and code examples
+2. **CDN URLs must include version 8**: Use \`tinymce@8\` or \`tinymce/8\` in URLs
+3. **Package installations**: Always specify \`tinymce@8\` when installing
+4. **Integration packages**: Use the latest versions compatible with TinyMCE 8
+5. **Code examples default to TinyMCE 8** unless explicitly noted otherwise
+6. **Legacy versions (5, 6, 7)**: Only reference when specifically asked about migration or legacy support
+7. **Cloud vs Self-Hosted**: Cloud deployment is recommended for most use cases
+
+## API Reference
+- **Editor API**: ${BASE_URL}/apis/tinymce.editor/
+- **Plugin API**: ${BASE_URL}/apis/tinymce.plugin/
+
+## Migration Guides
+- **Upgrading TinyMCE**: ${BASE_URL}/upgrading/
+- **Migration from 7.x**: ${BASE_URL}/migration-from-7x/
+
+## Support and Resources
+- **Documentation Home**: ${BASE_URL}/
+- **Release Notes**: ${BASE_URL}/release-notes/
+- **Examples**: ${BASE_URL}/examples/
+- **How-to Guides**: ${BASE_URL}/how-to-guides/
+
+
+`;
 
   // Complete Documentation Index
   content += `## Complete Documentation Index\n\n`;
@@ -1152,15 +1205,12 @@ async function main() {
     console.log(`Found ${urls.length} unique URLs in sitemap`);
     
     const llmsTxt = generateLLMsTxt(urls);
-    const llmsFullTxt = await generateLLMsFullTxt(urls);
-    
     fs.writeFileSync(path.join(OUTPUT_DIR, 'llms.txt'), llmsTxt);
-    fs.writeFileSync(path.join(OUTPUT_DIR, 'llms-full.txt'), llmsFullTxt);
-    
     console.log('✓ Generated llms.txt');
+    
+    const llmsFullTxt = await generateLLMsFullTxt(urls);
+    fs.writeFileSync(path.join(OUTPUT_DIR, 'llms-full.txt'), llmsFullTxt);
     console.log('✓ Generated llms-full.txt');
-    console.log(`\nFiles written to: ${OUTPUT_DIR}`);
-    console.log(`\nTotal unique pages: ${urls.length}`);
     
   } catch (error) {
     console.error('Error:', error.message);

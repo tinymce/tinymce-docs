@@ -16,6 +16,7 @@ const http = require('http');
 const sanitizeHtml = require('sanitize-html');
 
 const BASE_URL = 'https://www.tiny.cloud/docs/tinymce/latest';
+const DOCS_ROOT_URL = 'https://www.tiny.cloud/docs';
 const OUTPUT_DIR = path.join(__dirname, '../modules/ROOT/attachments');
 
 // Fetch sitemap from URL or file
@@ -1187,7 +1188,7 @@ function App() {
 
 ## Complete Documentation
 
-For a complete list of all ${urls.length} documentation pages, see [llms-full.txt](${BASE_URL}/llms-full.txt).
+For a complete list of all ${urls.length} documentation pages, see [llms-full.txt](${DOCS_ROOT_URL}/llms-full.txt).
 
 `;
 }

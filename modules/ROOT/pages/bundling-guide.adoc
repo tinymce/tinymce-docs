@@ -90,20 +90,10 @@ For detailed information on bundling plugins, see xref:bundling-plugins.adoc[Bun
 
 Some plugins require additional resource files (JS, CSS, or language files) to function properly. These must be explicitly imported when bundling:
 
-[IMPORTANT]
-====
-Key points about plugin resources:
-
-* Core plugin resources typically use relative paths without file extensions
-* Premium plugin resources (from `+tinymce-premium+`) MUST include the `.js` or `.css` file extension in the import path
-* Plugins lazy-load additional resources at runtime, so these files must be included in the bundle or accessible as static assets
-====
-
 === Plugins requiring additional resources
 
-* **Emoticons**: Requires an emoji database file (`+js/emojis+`)
-* **Help**: Requires a keyboard navigation language file (`+js/i18n/keynav/<lang>+`)
-* **Page Embed**: Requires a CSS file (`+css/empa30.css+`)
+* **Emoticons**: Requires an emoji database file (`+js/emojis.js+`)
+* **Help**: Requires a keyboard navigation language file (`+js/i18n/keynav/<lang>.js+`)
 * **Autocorrect**: Requires a word list file (`+js/en.js+`)
 * **Uploadcare**: Requires a webcomponent file (`+js/uc-video.js+`)
 
@@ -119,12 +109,17 @@ Always import dependent plugins before the plugin that requires them.
 
 == CSS files
 
-Plugin CSS files are typically included automatically when importing plugins. However, some plugins may require explicit CSS imports for proper styling.
+Some plugins require additional CSS files. Plugin CSS files are included automatically when importing plugins via their JS file.
 
 When using skins, you must import both:
 
 * The skin CSS file (`+skin.css+` or `+skin.js+`)
 * The content UI CSS file (`+content.css+` or `+content.js+`)
+
+[NOTE]
+====
+Importing the `+skin.js+` and `+content.js+` files is an alternative way to load skin styles. For bundlers like Webpack and Browserify that support CSS imports, the CSS examples in xref:bundling-skins.adoc[Bundling skins] remain valid.
+====
 
 For more information, see xref:bundling-skins.adoc[Bundling skins].
 
@@ -133,6 +128,8 @@ For more information, see xref:bundling-skins.adoc[Bundling skins].
 Language files are optional and used for localizing the {productname} UI and plugin interfaces.
 
 === Core UI language files
+
+For community packages:
 
 [source,js]
 ----
@@ -148,21 +145,21 @@ import 'tinymce-premium/langs/<language>.js';
 
 === Plugin language files
 
-Plugin language files are separate from the main UI language files:
+Plugin language files are separate from the main UI language files. The editor's `+language+` option must be set to the desired language for the plugin's language file to take effect.
 
 [source,js]
 ----
 // Community plugin language file
 import 'tinymce/plugins/<plugincode>/langs/<language>.js';
 
-// Premium plugin language file (note: .js extension required)
+// Premium plugin language file
 import 'tinymce-premium/plugins/<plugincode>/langs/<language>.js';
 ----
 
 [NOTE]
 ====
-* English is the default language, so `+en.js+` language files don't exist
-* For premium plugins, the language file path must include the `.js` extension
+* US English is the default language, so the language packs do not include `+en.js+` language files (see xref:ui-localization.adoc#language[`+language+` option]). Note that the Help and Autocorrect plugins have their own `+en.js+` files.
+* Examples include the `.js` extension for clarity; most bundlers can resolve file extensions automatically.
 ====
 
 For more information, see xref:bundling-localization.adoc[UI localizations].

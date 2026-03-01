@@ -53,7 +53,7 @@ On Android devices, the GBoard keyboard and similar input methods intercept cont
 |Autocompleter (xref:emoticons.adoc[Emoticons], xref:charmap.adoc[Charmap], xref:mentions.adoc[Mentions])
 |Limited or non-functional on Android. The autocompleter popup does not appear reliably because Android processes content prior to insertion.
 
-|xref:textpattern.adoc[Text Patterns]
+|xref:content-behavior-options.adoc#text_patterns[Text Patterns]
 |Limited functionality on Android. Inline patterns may not apply when the pattern is immediately followed by a space. The plugin relies on keypress events, which do not work as expected on Android.
 |===
 

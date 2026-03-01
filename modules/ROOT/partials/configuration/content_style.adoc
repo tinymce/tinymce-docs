@@ -7,6 +7,8 @@ This option allows custom CSS styles to be set as a string. The styles are injec
 
 NOTE: `+content_style+` styles are not saved within {productname}'s content. If they are needed for display purposes, ensure the styles are also included in the page the content will be displayed on.
 
+NOTE: For xref:use-tinymce-inline.adoc[inline mode], do not use `+content_style+` for content styles. Styles injected via `+content_style+` apply globally and can overflow onto the rest of the page. Add content styles directly to the page instead, and use `+body_class+` to scope them. Reserve `+content_style+` in inline mode only for styling editor components, not the editable content.
+
 === Example: applying one CSS style using `+content_style+`
 
 [source,js]

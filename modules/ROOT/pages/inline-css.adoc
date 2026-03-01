@@ -120,7 +120,7 @@ CSS can be specified in inline mode in the following ways:
 +
 Setting the xref:add-css-options.adoc#content_css[`content_css`] option automatically creates the `<link>` tag and puts it in the {productname} document’s `<head>`.
 +
-NOTE: This is not recommended.
+NOTE: This is not recommended. Content CSS injected via `+content_css+` applies globally in inline mode and can overflow onto the rest of the page. See xref:use-tinymce-inline.adoc#content-css-overflow-in-inline-mode[Content CSS overflow in inline mode] for details.
 
 . A CSS stylesheet specified in the `<head>` of the document with a `<link>` tag.
 +

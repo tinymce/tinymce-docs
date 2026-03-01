@@ -5,7 +5,7 @@ The `+content_css+` option loads the specified CSS files into the editable area.
 
 *Type:* `+String+`, `+Array+`
 
-NOTE: This option is intended for use with {productname}'s classic mode, as the editable area is sandboxed within an iframe. For inline mode editors, relevant CSS stylesheets should be loaded as part of the webpage {productname} is rendered in, not using the `+content_css+` option.
+NOTE: This option is intended for use with {productname}'s classic mode, as the editable area is sandboxed within an iframe. For xref:use-tinymce-inline.adoc[inline mode], do not use `+content_css+` for content styles. Content CSS injected via `+content_css+` applies globally and can overflow onto the rest of the page. Add content styles directly to the page instead, and use `+body_class+` to scope them. Reserve `+content_css+` in inline mode only for styling editor components (for example, the floating toolbar), not the editable content.
 
 include::partial$misc/shipped-content-css.adoc[]
 

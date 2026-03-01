@@ -49,3 +49,12 @@ The following demonstration is using four {productname} editors in inline mode, 
 liveDemo::inline[]
 
 For information on inline mode and the `+inline+` setting, see: xref:inline-editor-options.adoc#inline[User interface options - inline].
+
+== Content CSS overflow in inline mode
+
+Inline mode is not sandboxed in an iframe. Content CSS loaded via `+content_css+` or `+content_style+` is injected into the page `+head+` and applies globally. This can cause content styles to "break out" or overflow from the editable area onto the rest of the page, affecting layout and appearance outside the editor.
+
+To avoid this:
+
+. *Preferred:* Use the `+body_class+` option and scope your content styles to that class. Add the stylesheet or `+<style>+` block directly to the page (in the `+head+` or before the editable element), and target only elements inside the editor body class.
+. *Alternative:* Do not use `+content_css+` or `+content_style+` in inline mode for content styles. Add content styles directly to the page instead. Reserve `+content_css+` and `+content_style+` for styling only the editor inline components (for example, the floating toolbar), not the editable content itself.

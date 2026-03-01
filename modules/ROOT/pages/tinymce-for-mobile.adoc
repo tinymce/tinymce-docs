@@ -41,6 +41,24 @@ Some plugins offer limited functionality or are unsupported when used on mobile 
 |Clipboard restrictions on mobile platforms prevent core PowerPaste functionality.
 |===
 
+=== Android-specific limitations
+
+On Android devices, the GBoard keyboard and similar input methods intercept content before it reaches the editor. This affects plugins that rely on the autocompleter API or keypress events:
+
+[cols="1,3", options="header"]
+|===
+|Feature
+|Limitation
+
+|Autocompleter (xref:emoticons.adoc[Emoticons], xref:charmap.adoc[Charmap], xref:mentions.adoc[Mentions])
+|Limited or non-functional on Android. The autocompleter popup does not appear reliably because Android processes content prior to insertion.
+
+|xref:textpattern.adoc[Text Patterns]
+|Limited functionality on Android. Inline patterns may not apply when the pattern is immediately followed by a space. The plugin relies on keypress events, which do not work as expected on Android.
+|===
+
+For more details, see the https://www.tiny.cloud/docs/release-notes/release-notes51/#textpatternspluginlimitedfunctionalityonandroiddevices[release notes for version 5.1].
+
 === Unsupported Plugins on Mobile
 
 [cols="1,3", options="header"]

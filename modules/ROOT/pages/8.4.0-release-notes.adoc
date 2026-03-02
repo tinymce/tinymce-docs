@@ -158,6 +158,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Attempting to remove a link after a `contentEditable="false"` element would not be possible.
+// #TINY-13108
+
+In previous version of {productname}, attempting to remove a link positioned after a `contentEditable="false" (CEF) element could fail because the action flow created a bookmark that normalized the selection and shifted it into the CEF; once the cursor was inside a CEF, the selection check prevented the link-removal action (and other selection-based actions) from running.
+
+{productname} {release-version} addresses this by capturing the selection’s target before creating the bookmark, reversing the previous order so the selection is copied prior to normalization, ensuring the selection target remains valid and link removal works as expected.
 
 [[security-fixes]]
 == Security fixes

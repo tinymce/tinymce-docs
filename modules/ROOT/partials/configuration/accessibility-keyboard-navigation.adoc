@@ -1,0 +1,41 @@
+[[how-to-use-the-editor]]
+== How to use the editor
+
+{productname} supports full keyboard navigation. Users can access the menu bar, toolbars, and contextual toolbars without using a mouse.
+
+=== Menus and toolbars
+
+The editor provides two main ways to access formatting and editing features:
+
+* **Menu bar**: Use the menu bar when the desired command is known. Menus group related actions and can be faster to navigate for experienced users.
+* **Toolbars**: Use the main toolbar for frequently used actions. Toolbar buttons are visible by default and provide quick access to common formatting options.
+* **Contextual toolbars**: Some actions are available only from contextual toolbars that appear when the cursor is on specific content, such as images, links, or tables.
+
+[TIP]
+====
+When a feature appears only in a contextual toolbar (for example, editing alternative text for an image), use the keyboard shortcut to focus the contextual toolbar. See the table below.
+====
+
+=== Keyboard shortcuts for editor navigation
+
+[cols="1,2,2",options="header"]
+|===
+|Action |Windows or Linux |macOS
+|Focus the menu bar |Alt+F9 |⌥+F9
+|Focus the toolbar |Alt+F10 |⌥+F10
+|Focus the element path (footer) |Alt+F11 |⌥+F11
+|Focus notifications |Alt+F12 |⌥+F12
+|Focus the contextual toolbar |Ctrl+F9 |Ctrl+F9
+|Open the Help dialog |Alt+0 |⌥+0
+|===
+
+The contextual toolbar appears when the cursor is on content that has context-specific actions, such as an image or a link. For example, to edit alternative text for an image using only the keyboard:
+
+. Place the cursor on the image.
+. Press Ctrl+F9 (Windows, Linux, or macOS) to focus the contextual toolbar.
+. Use the arrow keys to move to the desired button (for example, *Image options* or *Alternative description*).
+. Press Enter or Space to activate the button.
+
+=== Screen readers
+
+{productname} works with common screen readers, including VoiceOver (macOS and iOS), JAWS, and NVDA. The xref:help.adoc[Help] plugin provides a Keyboard Navigation tab that documents the full keyboard navigation model. When the Help plugin is loaded, the shortcut to open the Help dialog (Alt+0 or ⌥+0) appears in the status bar by default.

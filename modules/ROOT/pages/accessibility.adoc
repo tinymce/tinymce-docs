@@ -2,6 +2,11 @@
 :navtitle: Accessibility
 :description_short: Configure the accessibility of TinyMCE.
 :description: Configure the accessibility of TinyMCE.
+:keywords: accessibility, keyboard navigation, screen reader, a11y
+
+This page describes configuration options that affect how {productname} supports keyboard users and screen readers. For guidance on using the editor with the keyboard, see the xref:accessibility.adoc#how-to-use-the-editor[How to use the editor] section that follows.
+
+include::partial$configuration/accessibility-keyboard-navigation.adoc[]
 
 include::partial$configuration/a11y_advanced_options.adoc[]
 

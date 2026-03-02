@@ -118,7 +118,7 @@ When using skins, you must import both:
 
 [NOTE]
 ====
-Importing the `+skin.js+` and `+content.js+` files is an alternative way to load skin styles. For bundlers like Webpack and Browserify that support CSS imports, the CSS examples in xref:bundling-skins.adoc[Bundling skins] remain valid.
+Importing the `+skin.js+` and `+content.js+` files is an alternative way to load skin styles besides CSS imports. For bundlers like Webpack and Browserify that require additional setup to support CSS imports, the CSS examples in xref:bundling-skins.adoc[Bundling skins] remain valid.
 ====
 
 For more information, see xref:bundling-skins.adoc[Bundling skins].

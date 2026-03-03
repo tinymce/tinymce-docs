@@ -11,7 +11,7 @@ ifeval::["{productSource}" == "zip"]
 :packageSource: TinyMCE .zip package
 endif::[]
 
-https://laravel.com/[Laravel] is a scaleable web application framework built on PHP. This guide assists with adding {productname} from the {packageSource} to pages or views in Laravel. The example Laravel project created in this procedure is based on the Laravel project documented in the Laravel Docs, under https://laravel.com/docs/11.x/installation#installation-via-composer[Installation Via Composer]. The guide will create two blades: one for the JavaScript and another for the editor placeholder, to reflect how {productname} should be used in production environments.
+https://laravel.com/[Laravel] is a scaleable web application framework built on PHP. This guide assists with adding {productname} from the {packageSource} to pages or views in Laravel. The example Laravel project created in this procedure is based on the Laravel project documented in the Laravel Docs, under https://laravel.com/docs/12.x/installation#installation-via-composer[Installation Via Composer]. The guide will create two blades: one for the JavaScript and another for the editor placeholder, to reflect how {productname} should be used in production environments.
 
 == Requirements
 
@@ -40,7 +40,7 @@ cd my-example-app
 
 ifeval::["{productSource}" != "cloud"]
 
-. Install the required Node.js components, including https://laravel.com/docs/11.x/vite[Vite]:
+. Install the required Node.js components, including https://laravel.com/docs/12.x/vite[Vite]:
 +
 [source,sh]
 ----
@@ -133,7 +133,7 @@ npm run build
 
 endif::[]
 
-. Create a new reusable https://laravel.com/docs/11.x/blade#components[component (`+blade.php+`)] for the {productname} configuration, such as:
+. Create a new reusable https://laravel.com/docs/12.x/blade#components[component (`+blade.php+`)] for the {productname} configuration, such as:
 +
 [source,sh]
 ----

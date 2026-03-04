@@ -81,7 +81,7 @@ The files are generated in `modules/ROOT/attachments/`:
 
 **Post-build:** Files are moved to the root directory (handled in separate PR) and accessible at:
 - `https://www.tiny.cloud/docs/tinymce/latest/llms.txt`
-- `https://www.tiny.cloud/docs/tinymce/latest/llms-full.txt`
+- `https://www.tiny.cloud/docs/llms-full.txt`
 
 ## How It Works
 

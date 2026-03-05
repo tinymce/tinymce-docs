@@ -165,7 +165,7 @@ The token endpoint will be requested:
 tinymce.init({
   selector: 'textarea',
   plugins: 'tinymceai',
-  toolbar: 'aichat aiquickactions aireview',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
   tinymceai_token_provider: () => {
     return fetch('https://example.com/cs-token-endpoint', {
       method: 'POST',

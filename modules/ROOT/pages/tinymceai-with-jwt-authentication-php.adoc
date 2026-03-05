@@ -185,7 +185,7 @@ Inside the root directory where the `index.html` file was created, add the HTML 
     tinymce.init({
       selector: 'textarea',
       plugins: 'tinymceai',
-      toolbar: 'aichat aiquickactions aireview',
+      toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
       // tinymceai_token_provider fetches a token from the `/jwt.php` endpoint.
       tinymceai_token_provider: () => {
         return fetch('http://localhost:3000/jwt.php', {
@@ -214,5 +214,5 @@ include::partial$auth/tinymceai/php/configuration-steps.adoc[]
 When running the project, the following should be visible:
 
 * The {productname} editor
-* AI feature buttons in the toolbar (`aichat`, `aiquickactions`, `aireview`)
+* AI feature buttons in the toolbar (`tinymceai-chat`, `tinymceai-quickactions`, `tinymceai-review`)
 ====

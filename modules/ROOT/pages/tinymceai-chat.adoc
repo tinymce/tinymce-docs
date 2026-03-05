@@ -27,7 +27,7 @@ By enabling xref:tinymceai-chat.adoc#web-search[Web search] or xref:tinymceai-ch
 [[making-changes-to-the-content]]
 === Making changes to the content
 
-Users can chat with the AI and use it to introduce changes to the document. Ask it to _"Summarize the document"_, _"Turn this report into a one-page executive summary"_, or _"Suggest better section titles and subheadings"_. The AI will then propose a series of changes to the document that can be xref:tinymceai-chat.adoc#previewing-changes[reviewed] and xref:tinymceai-chat.adoc#applying-changes[accepted or discarded one by one]. **Copying and pasting chat transcripts is over; TinyMCE AI understands the content and edits hand in hand**.
+Users can chat with the AI and use it to introduce changes to the document. Ask it to _"Summarize the document"_, _"Turn this report into a one-page executive summary"_, or _"Suggest better section titles and subheadings"_. The AI will then propose a series of changes to the document that can be xref:tinymceai-chat.adoc#previewing-changes[reviewed] and xref:tinymceai-chat.adoc#applying-changes[accepted or discarded one by one]. Long AI responses can be expanded using the **Expand** button to view the full suggestion. **Copying and pasting chat transcripts is over; TinyMCE AI understands the content and edits hand in hand**.
 
 [[brainstorming]]
 === Brainstorming
@@ -42,7 +42,7 @@ liveDemo::tinymceai[]
 [[integration]]
 == Integration
 
-To start using the Chat feature, first load the TinyMCE AI plugin in the editor configuration. The Chat button image:https://placehold.net/default.png[Chat icon,24px] will appear in the AI user interface along with the Chat history image:https://placehold.net/default.png[History icon,24px]. See xref:tinymceai.adoc[Plugin Reference] for installation and enabling AI features.
+To start using the Chat feature, first load the TinyMCE AI plugin in the editor configuration. The Chat button image:icons/ai-assistant.svg[Chat icon,24px] will appear in the AI user interface along with the Chat history image:icons/restore-draft.svg[History icon,24px]. See xref:tinymceai.adoc[Plugin Reference] for installation and enabling AI features.
 
 [[available-models]]
 == Available models
@@ -51,30 +51,29 @@ Users can select the desired AI model for their conversation from a dropdown at 
 
 image::https://placehold.net/default.png[TinyMCE AI Chat available models dropdown]
 
-Once selected, the AI model will persist for the duration of the conversation. To change the model, start a new conversation using a dedicated image:https://placehold.net/default.png[New chat icon,24px] button at the top-right corner of the chat panel.
+Once selected, the AI model will persist for the duration of the conversation. To change the model, start a new conversation using the **+ New Chat** image:icons/plus.svg[plus icon,24px] button at the top-right corner of the chat panel.
 
 [[web-search]]
 === Web search
 
 Web search in Chat allows it to access and retrieve real-time information from the internet. Instead of relying only on pre-trained knowledge, the model can search the web to find up-to-date facts, verify details, and provide more accurate, current answers.
 
-Some models use web search automatically, while others may require manual activation. Whether the "Enable web search" button image:https://placehold.net/default.png[Web search icon,24px] needs to be toggled depends on the model and sometimes even how the prompt is worded. For models that support it, use the toggle button to enable web search functionality.
+Some models use web search automatically, while others may require manual activation. Whether the "Enable web search" button image:icons/chat-web-search.svg[Web search icon,24px] below the prompt input needs to be toggled depends on the model and sometimes even how the prompt is worded. For models that support it, use the toggle button to enable web search functionality.
 
 [[reasoning]]
 === Reasoning
 
 Reasoning in Chat models turns on the ability to think through problems, draw logical conclusions, and make sense of complex information. It enables the model to analyze context, connect ideas, and produce well-structured, coherent answers beyond simple pattern matching.
 
-Some models use reasoning automatically, while others may require manual activation. Whether the "Enable reasoning" button image:https://placehold.net/default.png[Reasoning icon,24px] needs to be toggled depends on the model and sometimes even how the prompt is worded. For models that support it, use the toggle button to enable reasoning functionality.
+Some models use reasoning automatically, while others may require manual activation. Whether the "Enable reasoning" button image:icons/chat-reasoning.svg[Reasoning icon,24px] below the prompt input needs to be toggled depends on the model and sometimes even how the prompt is worded. For models that support it, use the toggle button to enable reasoning functionality.
 
 [[model-selection-configuration]]
 === Configuration
 
-Model selection for AI chat can be configured using three separate configuration options:
+Model selection for AI chat can be configured using two configuration options:
 
 * `tinymceai_default_model`: Set the default model to use for AI chat.
 * `tinymceai_allow_model_selection`: Control whether users can select from available models (defaults to `true`).
-* `tinymceai_allowed_models`: Specify an array of allowed model IDs that users can select from.
 
 xref:tinymceai-models.adoc#supported-models-table[Learn more about available AI models].
 
@@ -83,20 +82,20 @@ xref:tinymceai-models.adoc#supported-models-table[Learn more about available AI 
 tinymce.init({
   selector: '#editor',
   plugins: 'tinymceai',
-  toolbar: 'tinymceai',
-  tinymceai_token_provider: () => {
-    return fetch('/api/token').then(r => r.text()).then(token => ({ token }));
-  },
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
   tinymceai_default_model: 'claude-3-5-haiku',
   tinymceai_allow_model_selection: true,
-  tinymceai_allowed_models: ['gpt-4', 'claude-3-5-haiku']
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.text()).then(token => ({ token }));
+  }
 });
 ----
 
 [[adding-context-to-conversations]]
 == Adding context to conversations
 
-The AI chat can work with the document and beyond. Use the "Add context" button image:https://placehold.net/default.png[Add context icon,24px] on the right of the prompt input, to add URLs, files, and external resources to the conversation.
+The AI chat can work with the document and beyond. Use the "Add context" button image:icons/attachment.svg[Add context icon,24px] below the prompt input, to add URLs, files, and external resources to the conversation.
 
 image::https://placehold.net/default.png[TinyMCE AI Chat add context user interface]
 
@@ -111,29 +110,26 @@ Built-in options for adding the current document, URLs, and files to the convers
 
 To add custom external sources for users to select from, use the following configuration options:
 
-* `tinymceai_additional_sources_list`: A function that returns a promise resolving to an array of available external sources. This is typically used to fetch a list of resources from a database or external API.
-* `tinymceai_get_additional_source`: A function that retrieves the content of a specific source by ID. This is used for hooking into a repository of custom sources and fetching content on demand.
+* `tinymceai_chat_fetch_sources`: A function that returns a promise resolving to an array of available external sources. This is typically used to fetch a list of resources from a database or external API.
+* `tinymceai_chat_fetch_source`: A function that retrieves the content of a specific source by ID. This is used for hooking into a repository of custom sources and fetching content on demand.
 
 [source,js]
 ----
 tinymce.init({
   selector: '#editor',
   plugins: 'tinymceai',
-  toolbar: 'tinymceai',
-  tinymceai_token_provider: () => {
-    return fetch('/api/token').then(r => r.text()).then(token => ({ token }));
-  },
-  // Function that returns a list of available external sources
-  tinymceai_additional_sources_list: async (query) => {
-    // Fetch sources from the database or API
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_chat_fetch_sources: async (query) => {
     const response = await fetch(`/api/sources?q=${query}`);
     return response.json();
   },
-  // Function to fetch the content of a specific source by ID
-  tinymceai_get_additional_source: async (id) => {
-    // Fetch the source content on demand
+  tinymceai_chat_fetch_source: async (id) => {
     const response = await fetch(`/api/sources/${id}`);
     return response.json();
+  },
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.text()).then(token => ({ token }));
   }
 });
 ----
@@ -143,23 +139,31 @@ tinymce.init({
 
 When asking the AI for changes to the document, for instance, _"Bold key facts in the document"_, a series of proposed changes will be received. The changes are displayed directly in the document content, making it easy to see what will be modified.
 
-Toggle between showing and previewing the changes using a single toggle button. When enabled, the proposed changes are highlighted in the document with markers indicating additions (green), removals (red), and formatting changes (blue). Navigate through the changes and work with them one by one. As navigation occurs, the information window automatically follows the corresponding sections of the document.
+[NOTE]
+====
+AI output may need review. The chat interface displays this reminder below the prompt input.
+====
+
+[[previewing-changes]]
+=== Previewing changes
+
+A review bar appears at the bottom of the editor with **Diff mode** and **Preview** tabs. Toggle between them to show proposed changes inline (with markers for additions, removals, and formatting) or to preview the final result. When Diff mode is enabled, the proposed changes are highlighted in the document with markers indicating additions (green), removals (red), and formatting changes (blue). Navigate through the changes using the arrows in the suggestion overlay. As navigation occurs, the overlay automatically follows the corresponding sections of the document.
 
 [[applying-changes]]
 === Applying changes
 
-Clicking the "Apply" button in the AI balloon applies the change proposed by the AI to the document.
+Click the checkmark image:icons/checkmark.svg[Accept suggestion icon,24px] in the suggestion overlay to accept the current change. Use the arrow buttons to move between suggestions.
 
 image::https://placehold.net/default.png[TinyMCE AI Chat apply changes]
 
-Click the "Apply all" button in chat to apply all AI suggestions at once.
+Click **Apply pending** in the review bar at the bottom of the editor to apply all remaining suggestions at once. The button shows the number of pending changes, for example, "Apply pending (4)".
 
 image::https://placehold.net/default.png[TinyMCE AI Chat apply all changes]
 
 [[rejecting-suggestions]]
 === Rejecting suggestions
 
-Click the "Delete" button image:https://placehold.net/default.png[Delete icon,24px] to reject AI suggestions that are not wanted before applying the remaining ones.
+Click the image:icons/close.svg[Reject suggestion icon,24px] in the suggestion overlay to reject the current suggestion. Click **Skip pending** in the review bar at the bottom of the editor to skip all remaining suggestions.
 
 image::https://placehold.net/default.png[TinyMCE AI Chat reject button]
 
@@ -167,7 +171,7 @@ image::https://placehold.net/default.png[TinyMCE AI Chat reject button]
 [[chat-history]]
 == Chat history
 
-All past conversations appear in the Chat history. Click the button image:https://placehold.net/default.png[Chat history icon,24px] to open the list, where conversations can be reopened, renamed, or deleted.
+All past conversations appear in the Chat history. Click the button image:icons/restore-draft.svg[Chat history icon,24px] in the chat header to open the list. Click a conversation to reopen it, or use the menu on each entry to pin, rename, or delete it. Click **Go to AI Chat** to return from the history view to the active conversation.
 
 Conversations are grouped by date to help navigate the project easily. Conversations can be filtered by name using the search field at the top of the user interface.
 

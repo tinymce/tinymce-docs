@@ -2,20 +2,9 @@
 |===
 |Toolbar button identifier |Description
 
-|`+aichat+` |Opens the AI Chat sidebar for conversations with the AI assistant.
-|`+aiquickactions+` |Opens the Quick Actions menu (improve writing, fix grammar, translate, etc.).
-|`+aireview+` |Opens the AI Review sidebar for suggested edits and content review.
-|`+tinymceai-chat-commands+` |Chat commands submenu (Explain, Summarize, Highlight key points).
-|`+tinymceai-adjust-length+` |Adjust length submenu (Make shorter, Make longer).
-|`+tinymceai-change-tone+` |Change tone submenu (Casual, Direct, Friendly, Confident, Professional).
-|`+tinymceai-translate+` |Translate submenu (various languages).
-|`+tinymceai-improve-writing+` |Improve writing quick action.
-|`+tinymceai-continue+` |Continue writing quick action.
-|`+tinymceai-fix-grammar+` |Fix grammar quick action.
-|`+tinymceai-explain+` |Explain selected content.
-|`+tinymceai-summarize+` |Summarize selected content.
-|`+tinymceai-highlight-key-points+` |Highlight key points in selected content.
-|`+tinymceai-custom-commands+` |Custom commands menu (configured via `tinymceai_custom_commands`).
+|image:icons/ai-assistant.svg[Chat icon,24px] `+tinymceai-chat+` |Opens the AI Chat sidebar for conversations with the AI assistant.
+|image:icons/ai-prompt.svg[Quick Actions icon,24px] `+tinymceai-quickactions+` |Opens the Quick Actions menu (improve writing, fix grammar, translate, etc.).
+|image:icons/ai-review.svg[Review icon,24px] `+tinymceai-review+` |Opens the AI Review sidebar for suggested edits and content review.
 |===
 
-NOTE: Submenu items (e.g. within `+tinymceai-adjust-length+`, `+tinymceai-change-tone+`, `+tinymceai-translate+`) are typically used within menus rather than as standalone toolbar buttons.
+For submenu and individual action identifiers (e.g. `+ai-quickactions-improve-writing+`, `+ai-chat-explain+`), see xref:tinymceai-actions-plugin.adoc#configuring-quick-actions-menu[Configuring Quick Actions menu].

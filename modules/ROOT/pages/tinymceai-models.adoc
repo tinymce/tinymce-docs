@@ -119,7 +119,7 @@ The agent model (`agent-1`) automatically selects the best underlying model base
 
 Models can be configured in two ways:
 
-* **Plugin Configuration** – Use `tinymceai_default_model`, `tinymceai_allow_model_selection`, and `tinymceai_allowed_models` options. See xref:tinymceai-chat.adoc#model-selection-configuration[Chat model configuration] for details.
+* **Plugin Configuration** – Use `tinymceai_default_model` and `tinymceai_allow_model_selection` options. See xref:tinymceai-chat.adoc#model-selection-configuration[Chat model configuration] for details.
 * **API Configuration** – Specify the model directly in API requests for more control. See xref:tinymceai-models.adoc#api-examples[API Examples] below.
 
 [[model-compatibility-versions]]

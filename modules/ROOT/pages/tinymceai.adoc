@@ -25,7 +25,7 @@ To setup the {pluginname} plugin in the editor:
 
 * add `{plugincode}` to the `plugins` option in the editor configuration;
 * configure the `tinymceai_token_provider` option to provide authentication tokens (must return `+{ token: string }+`);
-* add the AI toolbar buttons to the `toolbar` option. The plugin provides: `+aichat+`, `+aiquickactions+`, and `+aireview+`;
+* add the AI toolbar buttons to the `toolbar` option. The plugin provides: `+tinymceai-chat+` image:icons/ai-assistant.svg[Chat icon,24px], `+tinymceai-quickactions+` image:icons/ai-prompt.svg[Quick Actions icon,24px], and `+tinymceai-review+` image:icons/ai-review.svg[Review icon,24px];
 
 [[minimal-setup]]
 === Minimal setup
@@ -35,7 +35,7 @@ To setup the {pluginname} plugin in the editor:
 tinymce.init({
   selector: 'textarea',  // change this value according to the HTML
   plugins: 'tinymceai',
-  toolbar: 'aichat aiquickactions aireview',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
   tinymceai_token_provider: () => {
     return fetch('/api/token').then(r => r.json());
   }
@@ -50,16 +50,16 @@ tinymce.init({
 tinymce.init({
   selector: '#editor',
   plugins: 'tinymceai',
-  toolbar: 'aichat aiquickactions aireview',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
   content_id: 'document-123',
+  // Required for authentication
   tinymceai_token_provider: () => {
     return fetch('/api/token').then(r => r.json());
   },
   tinymceai_sidebar_type: 'static',
   tinymceai_default_model: 'agent-1',
   tinymceai_allow_model_selection: true,
-  tinymceai_allowed_models: ['gpt', 'claude'],
-  tinymceai_additional_sources_list: async () => [
+  tinymceai_chat_fetch_sources: async () => [
     {
       label: 'My Documents',
       sources: [
@@ -68,13 +68,13 @@ tinymce.init({
       ]
     }
   ],
-  tinymceai_get_additional_source: async (id) => {
+  tinymceai_chat_fetch_source: async (id) => {
     const res = await fetch(`/api/documents/${id}`);
     const blob = await res.blob();
     const filename = `${id}.pdf`;
     return { type: 'file', file: new File([blob], filename, { type: blob.type }) };
   },
-  tinymceai_custom_commands: [
+  tinymceai_quickactions_custom: [
     { displayedPrompt: 'Explain like I am five', prompt: 'Explain the following text in simple terms.', type: 'chat' }
   ]
 });
@@ -83,14 +83,14 @@ tinymce.init({
 [[ui-control]]
 == UI Control
 
-The AI interface is toggled via toolbar buttons or menu items. Clicking `+aichat+` opens the chat sidebar; clicking again minimizes it (chat history is preserved). Clicking `+aireview+` opens the review sidebar.
+The AI interface is toggled via toolbar buttons or menu items. Clicking `+tinymceai-chat+` image:icons/ai-assistant.svg[Chat icon,24px] opens the chat sidebar; clicking again minimizes it (chat history is preserved). Clicking `+tinymceai-review+` image:icons/ai-review.svg[Review icon,24px] opens the review sidebar.
 
 To toggle sidebars programmatically, use the core `+ToggleSidebar+` command:
 
 [source,js]
 ----
-editor.execCommand('ToggleSidebar', false, 'aichat');
-editor.execCommand('ToggleSidebar', false, 'aireview');
+editor.execCommand('ToggleSidebar', false, 'tinymceai-chat');
+editor.execCommand('ToggleSidebar', false, 'tinymceai-review');
 ----
 
 To show the chat sidebar on load:
@@ -100,11 +100,12 @@ To show the chat sidebar on load:
 tinymce.init({
   selector: '#editor',
   plugins: 'tinymceai',
-  sidebar_show: 'aichat',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  sidebar_show: 'tinymceai-chat',
+  // Required for authentication
   tinymceai_token_provider: () => {
     return fetch('/api/token').then(r => r.json());
-  },
-  toolbar: 'aichat aiquickactions aireview'
+  }
 });
 ----
 
@@ -117,11 +118,7 @@ include::partial$configuration/tinymceai_options.adoc[leveloffset=+1]
 
 include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
 
-include::partial$toolbar-button-ids/{plugincode}-toolbar-buttons.adoc[leveloffset=+1]
-
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
-
-include::partial$menu-item-ids/{plugincode}-menu-items.adoc[leveloffset=+1]
 
 [[commands]]
 == Commands
@@ -130,22 +127,4 @@ The {pluginname} plugin provides the following {productname} commands.
 
 include::partial$commands/{plugincode}-cmds.adoc[]
 
-[[events]]
-== Events
 
-The {pluginname} plugin provides the following events.
-
-include::partial$events/{plugincode}-events.adoc[]
-
-[[apis]]
-== APIs
-
-TBA
-
-
-[[known-issues]]
-== Known issues and caveats
-
-The {pluginname} plugin has the following known issues and caveats:
-
-TODO:

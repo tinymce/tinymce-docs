@@ -2,18 +2,18 @@
 |===
 |Command name |Description
 
-|`+ToggleSidebar+` |Core command. Use `+editor.execCommand('ToggleSidebar', false, 'aichat')+` or `+editor.execCommand('ToggleSidebar', false, 'aireview')+` to toggle the AI Chat or AI Review sidebar.
+|`+ToggleSidebar+` |Core command. Use `+editor.execCommand('ToggleSidebar', false, 'tinymceai-chat')+` or `+editor.execCommand('ToggleSidebar', false, 'tinymceai-review')+` to toggle the AI Chat or AI Review sidebar.
 |===
 
 .Examples
 [source,js]
 ----
 // Open the AI Chat sidebar
-tinymce.activeEditor.execCommand('ToggleSidebar', false, 'aichat');
+tinymce.activeEditor.execCommand('ToggleSidebar', false, 'tinymceai-chat');
 
 // Open the AI Review sidebar
-tinymce.activeEditor.execCommand('ToggleSidebar', false, 'aireview');
+tinymce.activeEditor.execCommand('ToggleSidebar', false, 'tinymceai-review');
 
 // Close the current sidebar (pass same ID again to toggle off)
-tinymce.activeEditor.execCommand('ToggleSidebar', false, 'aichat');
+tinymce.activeEditor.execCommand('ToggleSidebar', false, 'tinymceai-chat');
 ----

@@ -30,8 +30,8 @@ tinymce.init({
   toolbar: 'exportpdf',
   exportpdf_service_url: '<service_url>', // required if using On-premises service
   exportpdf_converter_options: {
-   	header_html: '<p>HEADER</p>', // example
-   	header_and_footer_css: 'p { color: blue }', // example
+    header_html: '<p>HEADER</p>', // example
+    header_and_footer_css: 'p { color: blue }', // example
   },
 })
 ----

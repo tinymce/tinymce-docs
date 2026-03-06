@@ -1,0 +1,71 @@
+= {pluginname} with JWT authentication (PHP) Guide – (v2)
+:navtitle: JWT Authentication setup for Export to PDF v2
+:description: Guide on how to setup JWT Authentication for exporting PDF files with {productname} (version 2)
+:keywords: jwt, authentication, exportpdf, pdf, php, v2
+:pluginname: Export to PDF
+:plugincode: exportpdf
+
+include::partial$auth/document-converters/php/intro-and-prerequisites.adoc[]
+
+include::partial$auth/document-converters/php/initial-project-setup.adoc[]
+
+== Setup
+
+=== Generate a Public/Private Key Pair
+
+include::partial$auth/document-converters/jwt-setup-document-converters.adoc[leveloffset=+2]
+
+include::partial$auth/document-converters/php/server-setup-php.adoc[]
+
+=== Web Page Setup (index.html)
+
+Inside the `public` folder where you created the `index.html` file add the HTML setup code.
+
+[source,html]
+----
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TinyMCE with PDF Export (v2)</title>
+  <script 
+    src="https://cdn.tiny.cloud/1/no-api-key/tinymce/8/tinymce.min.js"
+    referrerpolicy="origin"
+    crossorigin="anonymous">
+  </script>
+  <script>
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'exportpdf',
+      toolbar: 'exportpdf',
+      exportpdf_converter_options: {
+        version: '2',
+        document: {
+          size: 'Letter',
+          margins: {
+            top: '1in',
+            right: '1in',
+            bottom: '1in',
+            left: '1in'
+          }
+        }
+      },
+      // exportpdf_token_provider fetches a token from the `/jwt.php` endpoint.
+      exportpdf_token_provider: () => {
+        return fetch('http://localhost:3000/jwt.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+        }).then(response => response.json());
+      },
+    });
+  </script>
+</head>
+<body>
+  <h1>TinyMCE Export to PDF Demo (v2)</h1>
+  <textarea>
+    Welcome to TinyMCE! Try the Export to PDF feature.
+  </textarea>
+</body>
+</html>
+----
+
+include::partial$auth/document-converters/php/configuration-steps.adoc[]

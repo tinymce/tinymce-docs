@@ -57,17 +57,18 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== Export to PDF
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Export to PDF** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Export to PDF** includes the following addition.
 
-==== <Premium plugin name 1 change 1>
+==== exportpdf supports API version 2 converter options
+// #TINY-13700
 
-// CCFR here.
+`{productname}` `{release-version}` adds support for version `2` of the `exportpdf` API through `exportpdf_converter_options`. Version `1` remains the default for backward compatibility. The new nested structure organizes options under `document`, `headers`, `footers`, `metadata`, `security`, and `signature`, enabling per-page headers and footers, PDF metadata, password protection, and certificate-based signing.
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+For information on the **Export to PDF** plugin, see: xref:exportpdf-v2.adoc[Export to PDF v2] and xref:exportpdf.adoc[Export to PDF v1].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]

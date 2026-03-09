@@ -345,12 +345,54 @@ tinymce.init({
 });
 ----
 
+[[tinymceai_languages]]
+=== `+tinymceai_languages+`
+
+Array of language options for the Translate submenu within Quick Actions. Each item has `+title+` (displayed in the menu) and `+language+` (language code sent to the API, e.g. `+'english'+`, `+'chinese'+`).
+
+*Type:* `+Array+` of `+Object+`
+
+*Default value:*
+[source,js]
+----
+[
+  { title: 'English', language: 'english' },
+  { title: 'Chinese (Simplified)', language: 'chinese' },
+  { title: 'Spanish', language: 'spanish' },
+  { title: 'German', language: 'german' },
+  { title: 'Japanese', language: 'japanese' },
+  { title: 'Portuguese', language: 'portuguese' },
+  { title: 'Korean', language: 'korean' },
+  { title: 'Italian', language: 'italian' },
+  { title: 'Russian', language: 'russian' }
+]
+----
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_languages: [
+    { title: 'English', language: 'english' },
+    { title: 'French', language: 'french' },
+    { title: 'German', language: 'german' }
+  ],
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  }
+});
+----
+
 [[tinymceai_quickactions_custom]]
 === `+tinymceai_quickactions_custom+`
 
 Array of custom command objects rendered in the Custom Commands menu item. Each item can be type `+action+` (quick action with immediate preview) or type `+chat+` (opens in chat).
 
-* `+displayedPrompt+` - Text shown in the menu and chat history
+* `+title+` - Text shown in the menu and chat history
 * `+prompt+` - The actual prompt sent to the AI
 * `+type+` - `+'action'+` or `+'chat'+`
 * `+model+` - Required for `+action+` type only
@@ -370,13 +412,13 @@ tinymce.init({
   toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
   tinymceai_quickactions_custom: [
     {
-      displayedPrompt: 'Add a quote from a famous person',
+      title: 'Add a quote from a famous person',
       prompt: 'Add a quote from a known person, which would make sense in the context of the selected text.',
       type: 'action',
       model: 'gemini-2-5-flash'
     },
     {
-      displayedPrompt: 'Summarize in 5 bullet points',
+      title: 'Summarize in 5 bullet points',
       prompt: 'Summarize the selected text in 5 bullet points.',
       type: 'chat'
     }

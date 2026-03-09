@@ -75,7 +75,7 @@ tinymce.init({
     return { type: 'file', file: new File([blob], filename, { type: blob.type }) };
   },
   tinymceai_quickactions_custom: [
-    { displayedPrompt: 'Explain like I am five', prompt: 'Explain the following text in simple terms.', type: 'chat' }
+    { title: 'Explain like I am five', prompt: 'Explain the following text in simple terms.', type: 'chat' }
   ]
 });
 ----

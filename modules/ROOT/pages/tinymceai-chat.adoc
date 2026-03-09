@@ -119,13 +119,20 @@ tinymce.init({
   selector: '#editor',
   plugins: 'tinymceai',
   toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
-  tinymceai_chat_fetch_sources: async (query) => {
-    const response = await fetch(`/api/sources?q=${query}`);
-    return response.json();
-  },
+  tinymceai_chat_fetch_sources: async () => [
+    {
+      label: 'My Documents',
+      sources: [
+        { id: 'doc-1', label: 'Document 1', type: 'file' },
+        { id: 'url-1', label: 'Web Page', type: 'web-resource' }
+      ]
+    }
+  ],
   tinymceai_chat_fetch_source: async (id) => {
-    const response = await fetch(`/api/sources/${id}`);
-    return response.json();
+    const res = await fetch(`/api/documents/${id}`);
+    const blob = await res.blob();
+    const filename = `${id}.pdf`;
+    return { type: 'file', file: new File([blob], filename, { type: blob.type }) };
   },
   // Required for authentication
   tinymceai_token_provider: () => {

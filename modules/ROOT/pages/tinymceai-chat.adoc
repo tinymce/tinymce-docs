@@ -51,21 +51,21 @@ Users can select the desired AI model for their conversation from a dropdown at 
 
 image::https://placehold.net/default.png[TinyMCE AI Chat available models dropdown]
 
-Once selected, the AI model will persist for the duration of the conversation. To change the model, start a new conversation using the **+ New Chat** image:icons/plus.svg[plus icon,24px] button at the top-right corner of the chat panel.
+Once selected, the AI model will persist for the duration of the conversation. To change the model, start a new conversation using the image:icons/new-chat.svg[New Chat icon,24px] **New Chat** button at the top-right corner of the chat panel.
 
 [[web-search]]
 === Web search
 
 Web search in Chat allows it to access and retrieve real-time information from the internet. Instead of relying only on pre-trained knowledge, the model can search the web to find up-to-date facts, verify details, and provide more accurate, current answers.
 
-Some models use web search automatically, while others may require manual activation. Whether the "Enable web search" button image:icons/chat-web-search.svg[Web search icon,24px] below the prompt input needs to be toggled depends on the model and sometimes even how the prompt is worded. For models that support it, use the toggle button to enable web search functionality.
+Some models use web search automatically, while others may require manual activation. Whether the "Enable web search" button image:icons/web-search.svg[Web search icon,24px] below the prompt input needs to be toggled depends on the model and sometimes even how the prompt is worded. For models that support it, use the toggle button to enable web search functionality.
 
 [[reasoning]]
 === Reasoning
 
 Reasoning in Chat models turns on the ability to think through problems, draw logical conclusions, and make sense of complex information. It enables the model to analyze context, connect ideas, and produce well-structured, coherent answers beyond simple pattern matching.
 
-Some models use reasoning automatically, while others may require manual activation. Whether the "Enable reasoning" button image:icons/chat-reasoning.svg[Reasoning icon,24px] below the prompt input needs to be toggled depends on the model and sometimes even how the prompt is worded. For models that support it, use the toggle button to enable reasoning functionality.
+Some models use reasoning automatically, while others may require manual activation. Whether the "Enable reasoning" button image:icons/reasoning.svg[Reasoning icon,24px] below the prompt input needs to be toggled depends on the model and sometimes even how the prompt is worded. For models that support it, use the toggle button to enable reasoning functionality.
 
 [[model-selection-configuration]]
 === Configuration
@@ -95,7 +95,7 @@ tinymce.init({
 [[adding-context-to-conversations]]
 == Adding context to conversations
 
-The AI chat can work with the document and beyond. Use the "Add context" button image:icons/attachment.svg[Add context icon,24px] below the prompt input, to add URLs, files, and external resources to the conversation.
+The AI chat can work with the document and beyond. Use the "Add context" image:icons/plus.svg[Add context icon,24px] button below the prompt input, to add URLs, files, and external resources to the conversation.
 
 image::https://placehold.net/default.png[TinyMCE AI Chat add context user interface]
 

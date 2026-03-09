@@ -18,6 +18,9 @@ tinymce.init({
 });
 ----
 
+include::partial$misc/bundling-guide-link.adoc[]
+
+
 == Save error messages
 
 The `+"Error: Form submit field collision."+` error message will appear if you call the submit button of your form "submit", which causes a collision with the JS form `+submit+` function and makes it impossible to submit the form using code. This can easily be avoided by naming the submit button `+"submitbtn"+` or similar.

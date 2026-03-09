@@ -66,6 +66,8 @@ tinymce.init({
 });
 ----
 
+include::partial$misc/bundling-guide-link.adoc[]
+
 [NOTE]
 ====
 The {pluginname} plugin automatically configures the xref:link.adoc#files_upload_handler[`+files_upload_handler+`] and `+documents_file_types+` options when both the Link plugin and the {pluginname} plugin are enabled. This enables file uploads in the Link dialog without requiring manual configuration. However, you can customize the list of supported file types by explicitly setting the xref:uploadcare.adoc#documents-file-types[`+documents_file_types+`] option as shown in the example above.

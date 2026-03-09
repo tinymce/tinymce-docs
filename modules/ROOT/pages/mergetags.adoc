@@ -47,6 +47,9 @@ tinymce.init({
 });
 ----
 
+include::partial$misc/bundling-guide-link.adoc[]
+
+
 The {pluginname} plugin provides an xref:autocompleter.adoc[autocompleter] for adding a merge tag without using the toolbar button or menu item.
 
 The autocompleter is triggered by typing a specified prefix, controlled by the xref:#mergetags_prefix[`+mergetags_prefix+`] option.

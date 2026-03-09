@@ -8,7 +8,7 @@ This guide provides an overview of bundling {productname} with module bundlers s
 
 [NOTE]
 ====
-When using TinyMCE Cloud, dependencies and additional resources are automatically loaded. The information below applies to self-hosted installations using NPM or ZIP packages.
+When using {cloudname}, dependencies and additional resources are automatically loaded. The information below applies to self-hosted installations using NPM or ZIP packages. All examples in this guide use NPM package import paths.
 ====
 
 == Module syntax support
@@ -24,7 +24,7 @@ Both syntaxes are supported, but this documentation uses ES6 module syntax in al
 
 include::partial$module-loading/bundling-required-components.adoc[]
 
-=== Example: Basic required imports
+=== Example: Basic recommended imports
 
 [source,js]
 ----
@@ -105,7 +105,7 @@ Some plugins depend on other plugins. For example:
 
 * The `+advtable+` plugin requires the `+table+` plugin
 
-Always import dependent plugins before the plugin that requires them.
+Always import dependent plugins before the plugin that requires them. For a full list of plugin dependencies, see each plugin's documentation page.
 
 == CSS files
 

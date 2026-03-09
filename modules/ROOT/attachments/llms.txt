@@ -1,0 +1,105 @@
+# TinyMCE Documentation
+
+> Rich text editor for web applications. The latest stable version is TinyMCE 8.
+
+TinyMCE is a powerful, flexible WYSIWYG rich text editor that can be integrated into any web application.
+
+**IMPORTANT**: Always use TinyMCE 8 for new projects. Use `tinymce@8` or `tinymce/8` in CDN URLs and package installations.
+
+## Getting Started
+
+- [Getting Started](https://www.tiny.cloud/docs/tinymce/latest/getting-started/): Overview and introduction to TinyMCE
+- [Introduction to TinyMCE](https://www.tiny.cloud/docs/tinymce/latest/introduction-to-tinymce/): What is TinyMCE and how to add it to your project
+- [Installation](https://www.tiny.cloud/docs/tinymce/latest/installation/): Installation options and methods
+
+### Quick Start Guides
+
+- [Cloud Quick Start](https://www.tiny.cloud/docs/tinymce/latest/cloud-quick-start/): Get started with Tiny Cloud CDN (recommended)
+- [NPM Quick Start](https://www.tiny.cloud/docs/tinymce/latest/npm-projects/): Install via npm, yarn, or pnpm
+- [ZIP Quick Start](https://www.tiny.cloud/docs/tinymce/latest/zip-install/): Download and install from ZIP archive
+
+## Integration Guides
+
+See the complete documentation index in llms-full.txt for all available integration pages.
+
+## Basic Setup Examples
+
+### Cloud Deployment (Recommended)
+
+```html
+<script src="https://cdn.tiny.cloud/1/[api-key]/tinymce/8/tinymce.min.js" 
+        referrerpolicy="origin"></script>
+<script>
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'advlist autolink lists link image charmap preview anchor',
+  toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist | link image'
+});
+</script>
+```
+
+### Self-Hosted (NPM)
+
+```bash
+npm install tinymce@8
+```
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/tinymce@8/tinymce.min.js"></script>
+<script>
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'advlist autolink lists link image charmap preview anchor',
+  toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist | link image'
+});
+</script>
+```
+
+### React Example
+
+```jsx
+import { Editor } from '@tinymce/tinymce-react';
+
+function App() {
+  return (
+    <Editor
+      apiKey="your-api-key"
+      init={{
+        height: 500,
+        plugins: 'advlist autolink lists link image charmap preview anchor',
+        toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist | link image'
+      }}
+    />
+  );
+}
+```
+
+## Key Configuration
+
+- [Basic Setup](https://www.tiny.cloud/docs/tinymce/latest/basic-setup/): Essential configuration options
+- [Content Filtering](https://www.tiny.cloud/docs/tinymce/latest/filter-content/): Control HTML output
+- [Localization](https://www.tiny.cloud/docs/tinymce/latest/localize-your-language/): Multi-language support
+- [Spell Checking](https://www.tiny.cloud/docs/tinymce/latest/spell-checking/): Enable spell checking
+- [Cloud Deployment Guide](https://www.tiny.cloud/docs/tinymce/latest/cloud-deployment-guide/): Configure Tiny Cloud
+
+## Plugins & Features
+
+- [Plugins Overview](https://www.tiny.cloud/docs/tinymce/latest/plugins/): Available plugins and features
+- [Table Plugin](https://www.tiny.cloud/docs/tinymce/latest/table/): Table editing capabilities
+- [Image Plugin](https://www.tiny.cloud/docs/tinymce/latest/image/): Image handling and editing
+- [Link Plugin](https://www.tiny.cloud/docs/tinymce/latest/link/): Link management
+
+## API Reference
+
+- [Editor API](https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.editor/): Core editor API
+- [Plugin API](https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.plugin/): Plugin development API
+
+## Migration & Upgrading
+
+- [Upgrading TinyMCE](https://www.tiny.cloud/docs/tinymce/latest/upgrading/): Upgrade guide
+- [Migration from 7.x](https://www.tiny.cloud/docs/tinymce/latest/migration-from-7x/): Migrate from TinyMCE 7
+
+## Complete Documentation
+
+For a complete list of all 395 documentation pages, see [llms-full.txt](https://www.tiny.cloud/docs/llms-full.txt).
+

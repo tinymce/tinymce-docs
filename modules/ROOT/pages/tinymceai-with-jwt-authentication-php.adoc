@@ -190,6 +190,7 @@ Inside the root directory where the `index.html` file was created, add the HTML 
       plugins: 'tinymceai',
       toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
       // tinymceai_token_provider fetches a token from the `/jwt.php` endpoint.
+      // This demo does not verify user session; it simulates an already-authenticated user. Integrate with your auth before returning tokens.
       tinymceai_token_provider: () => {
         return fetch('http://localhost:3000/jwt.php', {
           method: 'POST',
@@ -222,6 +223,7 @@ tinymce.init({
   toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
   tinymceai_default_model: 'agent-1',
   tinymceai_allow_model_selection: true,
+  // This demo does not verify user session; it simulates an already-authenticated user. Integrate with your auth before returning tokens.
   tinymceai_token_provider: () => {
     return fetch('http://localhost:3000/jwt.php', {
       method: 'POST',

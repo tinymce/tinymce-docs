@@ -5,6 +5,11 @@ Configuration options are grouped by the feature they configure. Options in the 
 
 These options apply to the plugin overall or to multiple AI features (Chat, Quick Actions, Review).
 
+[TIP]
+====
+For context toolbar use cases (a toolbar that appears when text is selected), use the xref:quickbars.adoc[Quick Toolbars] plugin and configure `+quickbars_selection_toolbar+` instead.
+====
+
 [[content_id]]
 === `+content_id+`
 
@@ -227,6 +232,30 @@ tinymce.init({
     const filename = `${id}.pdf`;
     return { type: 'file', file: new File([blob], filename, { type: blob.type }) };
   },
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  }
+});
+----
+
+[[tinymceai_chat_welcome_message]]
+=== `+tinymceai_chat_welcome_message+`
+
+Customises the welcome message displayed in the Chat sidebar when starting a new conversation.
+
+*Type:* `+String+`
+
+*Default value:* A default message introducing the AI assistant and its capabilities.
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_chat_welcome_message: '<p>Welcome! How can I help you today?</p>',
   // Required for authentication
   tinymceai_token_provider: () => {
     return fetch('/api/token').then(r => r.json());

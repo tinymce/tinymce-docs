@@ -1,6 +1,5 @@
-= {pluginname} Plugin
-
-:navtitle: {pluginname}
+= TinyMCE AI Plugin
+:navtitle: TinyMCE AI
 :description: AI-powered features for TinyMCE AI including AI chat, AI review, and quick actions
 :description_short: AI-powered features for {productname}
 :keywords: AI, artificial intelligence, chat, review, quick actions, tinymceai
@@ -8,6 +7,7 @@
 :plugincode: tinymceai
 :pluginminimumplan: enterpriseplan
 :plugincategory: premium
+:page-role: -toc
 
 include::partial$misc/admon-premium-plugin.adoc[]
 

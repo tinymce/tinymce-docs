@@ -71,6 +71,8 @@ exp: Math.floor(Date.now() / 1000) + (60 * 10) // Expiration time (10 minutes)
 +
 The `auth` object contains AI-specific permissions that control which features the user can access.
 
+The following example grants access to conversations, the recommended agent model, and system actions and reviews. See xref:tinymceai-permissions.adoc[Permissions] for the full list of available permissions.
+
 .Example
 [source,json]
 ----
@@ -89,7 +91,7 @@ auth: {
 
 [NOTE]
 ====
-See xref:tinymceai-jwt-authentication-intro.adoc#permissions[Permissions] for a complete list of available permissions and best practices for configuring user access.
+See xref:tinymceai-permissions.adoc[Permissions] for a complete list of available permissions and best practices for configuring user access.
 ====
 
 == Set up JWT Endpoint
@@ -126,6 +128,7 @@ app.post('/jwt', (req, res) => {
         sub: 'user-id', // Replace with actual user identifier
         iat: Math.floor(Date.now() / 1000), // Issue timestamp
         exp: Math.floor(Date.now() / 1000) + (60 * 10), // Expiration time (10 minutes)
+        // Permissions control which AI features the user can access. See the Permissions page for full details.
         auth: {
             ai: {
                 permissions: [
@@ -202,14 +205,29 @@ Inside the `public` folder where the `index.html` file was created, add the HTML
 </html>
 ----
 
+[[model-configuration]]
+=== Model configuration
+
+Model selection can be configured using `tinymceai_default_model` and `tinymceai_allow_model_selection`. See xref:tinymceai-chat.adoc#model-selection-configuration[Chat model configuration] for details. Model access is controlled by JWT permissions; see xref:tinymceai-permissions.adoc#model-permissions[Model permissions] for available model permissions and xref:tinymceai-models.adoc[AI Models] for the list of available models.
+
+.Example: Adding model options to the JWT setup
+[source,html]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_default_model: 'agent-1',
+  tinymceai_allow_model_selection: true,
+  tinymceai_token_provider: () => {
+    return fetch('http://localhost:3000/jwt', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    }).then(response => response.json());
+  },
+});
+----
+
 == Configuration and Running
 
 include::partial$auth/tinymceai/nodejs/configuration-steps.adoc[]
-
-[NOTE]
-====
-When running the project, the following should be visible:
-
-* The {productname} editor
-* AI feature buttons in the toolbar (`tinymceai-chat`, `tinymceai-quickactions`, `tinymceai-review`)
-====

@@ -16,6 +16,11 @@
 * Adjust the `auth.ai.permissions` array in the JWT payload based on requirements
 * See xref:tinymceai-permissions.adoc[Permissions] for available permissions and best practices
 
+=== Configure model selection (optional)
+
+* Add `tinymceai_default_model` and `tinymceai_allow_model_selection` to the editor config if needed
+* See xref:tinymceai-with-jwt-authentication-php.adoc#model-configuration[Model configuration] for details
+
 === Running the Project
 
 . Start the server:

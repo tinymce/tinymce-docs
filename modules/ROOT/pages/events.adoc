@@ -293,13 +293,6 @@ The following event is provided by the xref:charmap.adoc[Character Map plugin].
 |InsertCustomChar |`+{ chr: string }+` |Fired before a special character is inserted into the editor.
 |===
 
-[[tinymceai-events]]
-=== TinyMCE AI events
-
-The following events are provided by the xref:tinymceai.adoc[TinyMCE AI plugin].
-
-include::partial$events/tinymceai-events.adoc[]
-
 [[comments-events]]
 === Comments events
 

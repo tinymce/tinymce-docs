@@ -1,6 +1,8 @@
-= TinyMCE AI Streaming
+= {pluginname} Streaming
 
 :navtitle: Streaming
+:pluginname: TinyMCE AI
+:plugincode: tinymceai
 :description: Streaming configuration for TinyMCE AI
 :description_short: Streaming configuration
 :keywords: AI, streaming, configuration, tinymceai
@@ -10,7 +12,7 @@ Real-time AI interactions using Server-Sent Events (SSE) for immediate feedback 
 [[overview]]
 == Overview
 
-TinyMCE AI services use Server-Sent Events (SSE) to provide real-time streaming responses. This allows users to see AI-generated content as it is being created, providing immediate feedback and enabling interactive experiences.
+{pluginname} services use Server-Sent Events (SSE) to provide real-time streaming responses. This allows users to see AI-generated content as it is being created, providing immediate feedback and enabling interactive experiences.
 
 [[sse-event-types]]
 == SSE Event Types

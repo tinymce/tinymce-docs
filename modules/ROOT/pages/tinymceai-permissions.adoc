@@ -1,11 +1,13 @@
-= TinyMCE AI JWT Permissions
+= {pluginname} JWT Permissions
 
 :navtitle: Permissions
+:pluginname: TinyMCE AI
+:plugincode: tinymceai
 :description: JWT permissions system for TinyMCE AI
 :description_short: JWT Permissions
 :keywords: AI, JWT, permissions, authentication, tinymceai
 
-TinyMCE AI uses a permission-based access control system to manage user access to AI features. Permissions are specified in JWT tokens and control which features, models, and capabilities users can access.
+{pluginname} uses a permission-based access control system to manage user access to AI features. Permissions are specified in JWT tokens and control which features, models, and capabilities users can access.
 
 For information about JWT authentication setup and required claims, see xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication].
 
@@ -56,7 +58,7 @@ Permissions follow a hierarchical format: `ai:<category>:<subcategory>:<specific
 |Permission |Description
 
 |`ai:admin`
-|Grants full access to all TinyMCE AI features, models, and capabilities. Use with caution in production environments.
+|Grants full access to all {pluginname} features, models, and capabilities. Use with caution in production environments.
 |===
 
 [[model-permissions]]
@@ -70,10 +72,10 @@ Permissions follow a hierarchical format: `ai:<category>:<subcategory>:<specific
 |Access to all available AI models. Use with caution as this includes access to new models that may be more expensive.
 
 |`ai:models:<provider>:*`
-|Access to all models from a specific provider (e.g., `ai:models:openai:*`, `ai:models:anthropic:*`).
+|Access to all models from a specific provider (for example, `ai:models:openai:*`, `ai:models:anthropic:*`).
 
 |`ai:models:<provider>:<model-name>`
-|Access to a specific model (e.g., `ai:models:openai:gpt-4o`, `ai:models:anthropic:claude-3-sonnet`).
+|Access to a specific model (for example, `ai:models:openai:gpt-4o`, `ai:models:anthropic:claude-3-sonnet`).
 
 |`ai:models:agent` ⭐ Recommended
 |Access to the agent model which automatically selects the best model for each request. This is the recommended permission for most use cases.
@@ -116,7 +118,7 @@ Permissions follow a hierarchical format: `ai:<category>:<subcategory>:<specific
 |Access to all file types for context.
 
 |`ai:conversations:context:files:<format>`
-|Access to specific file formats (e.g., `ai:conversations:context:files:pdf`, `ai:conversations:context:files:docx`).
+|Access to specific file formats (for example, `ai:conversations:context:files:pdf`, `ai:conversations:context:files:docx`).
 
 |`ai:conversations:context:urls`
 |Ability to use web URLs as context sources.

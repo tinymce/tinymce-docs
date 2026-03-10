@@ -1,7 +1,7 @@
-= TinyMCE AI Plugin
+= {pluginname} Plugin
 
-:navtitle: TinyMCE AI
-:description: AI-powered features for {productname} including AI chat, AI review, and quick actions
+:navtitle: {pluginname}
+:description: AI-powered features for TinyMCE AI including AI chat, AI review, and quick actions
 :description_short: AI-powered features for {productname}
 :keywords: AI, artificial intelligence, chat, review, quick actions, tinymceai
 :pluginname: TinyMCE AI
@@ -83,7 +83,7 @@ tinymce.init({
 [[ui-control]]
 == UI Control
 
-The AI interface is toggled via toolbar buttons or menu items. Clicking `+tinymceai-chat+` image:icons/ai-assistant.svg[Chat icon,24px] opens the chat sidebar; clicking again minimizes it (chat history is preserved). Clicking `+tinymceai-review+` image:icons/ai-review.svg[Review icon,24px] opens the review sidebar.
+The AI interface is toggled through toolbar buttons or menu items. Clicking `+tinymceai-chat+` image:icons/ai-assistant.svg[Chat icon,24px] opens the chat sidebar; clicking again minimizes it (chat history is preserved). Clicking `+tinymceai-review+` image:icons/ai-review.svg[Review icon,24px] opens the review sidebar.
 
 To toggle sidebars programmatically, use the core `+ToggleSidebar+` command:
 

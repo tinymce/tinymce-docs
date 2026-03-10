@@ -3,8 +3,8 @@
 |Toolbar button identifier |Description
 
 |image:icons/ai-assistant.svg[Chat icon,24px] `+tinymceai-chat+` |Opens the AI Chat sidebar for conversations with the AI assistant.
-|image:icons/ai-prompt.svg[Quick Actions icon,24px] `+tinymceai-quickactions+` |Opens the Quick Actions menu (improve writing, fix grammar, translate, etc.).
+|image:icons/ai-prompt.svg[Quick Actions icon,24px] `+tinymceai-quickactions+` |Opens the Quick Actions menu (improve writing, fix grammar, translate, and similar).
 |image:icons/ai-review.svg[Review icon,24px] `+tinymceai-review+` |Opens the AI Review sidebar for suggested edits and content review.
 |===
 
-For submenu and individual action identifiers (e.g. `+ai-quickactions-improve-writing+`, `+ai-chat-explain+`), see xref:tinymceai-actions-plugin.adoc#configuring-quick-actions-menu[Configuring Quick Actions menu].
+For submenu and individual action identifiers (for example, `+ai-quickactions-improve-writing+`, `+ai-chat-explain+`), see xref:tinymceai-actions-plugin.adoc#configuring-quick-actions-menu[Configuring Quick Actions menu].

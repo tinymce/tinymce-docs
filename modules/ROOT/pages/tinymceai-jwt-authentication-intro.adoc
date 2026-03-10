@@ -1,10 +1,11 @@
-= TinyMCE AI JWT Authentication
+= {pluginname} JWT Authentication
 
 :navtitle: JWT Authentication
 :description: JWT authentication requirements and permissions for TinyMCE AI
 :description_short: JWT Authentication
 :keywords: AI, JWT, authentication, permissions, tinymceai
 :pluginname: TinyMCE AI
+:plugincode: tinymceai
 
 {pluginname} requires JWT (JSON Web Token) authentication when using the Tiny Cloud service. JWT authentication provides secure, user-specific access to {pluginname} features. Each JWT token contains claims that identify the user and specify which AI features they can access.
 
@@ -34,7 +35,7 @@ image::JWT-flow.svg[JSON Web Token Call Flow,title="JSON Web Token Call Flow"]
 A JWT consists of three parts separated by dots `.`
 
 * **Header**: Contains metadata about the token, including the signing algorithm
-* **Payload**: Contains the claims (user information, permissions, etc.)
+* **Payload**: Contains the claims (user information, permissions, and similar)
 * **Signature**: Used to verify the token's authenticity
 
 [source,json]
@@ -180,7 +181,7 @@ tinymce.init({
 The editor will not be ready to use until the first token is obtained from the token endpoint. If an error occurs during the initial request, the editor will not start correctly.
 ====
 
-For more advanced token request customization, see xref:tinymceai-with-jwt-authentication-nodejs.adoc#configure-tinymce[Configure TinyMCE] in the implementation guides.
+For more advanced token request customization, see xref:tinymceai-with-jwt-authentication-nodejs.adoc#configure-tinymce[Configure {productname}] in the implementation guides.
 
 [[token-responses]]
 == Responses from the Token Endpoint
@@ -247,7 +248,7 @@ If an error indicates insufficient permissions:
 * Verify that the token includes the `auth.ai.permissions` array with the required permissions
 * Check that the permissions match the AI features being accessed
 * Review the xref:tinymceai-permissions.adoc[Permissions] guide for the correct permission format
-* Ensure permissions are specified correctly (e.g., `ai:conversations:read`, `ai:conversations:write`)
+* Ensure permissions are specified correctly (for example, `ai:conversations:read`, `ai:conversations:write`)
 
 [[related-features]]
 == Related Features

@@ -1,63 +1,65 @@
-= TinyMCE AI API Quick Start
+= {pluginname} API Quick Start
 
 :navtitle: API Quick Start
+:pluginname: TinyMCE AI
+:plugincode: tinymceai
 :description: Quick start guide for TinyMCE AI service
 :description_short: API quick start guide
 :keywords: AI, quick start, API, AI service, tinymceai, setup
 
-The aim of this article is to get users up and running with the TinyMCE AI service.
+The aim of this article is to get users up and running with the {pluginname} service.
 
 [TIP]
 ====
-Sign up for the link:https://www.tiny.cloud/auth/signup/[TinyMCE Premium Features 14-day free trial] to test this feature first.
+Sign up for the link:https://www.tiny.cloud/auth/signup/[{productname} Premium Features 14-day free trial] to test this feature first.
 
-The TinyMCE Premium Features free trial allows for testing SaaS services. If you are interested in on-premises solutions, please link:https://www.tiny.cloud/contact/[contact us].
+The {productname} Premium Features free trial allows for testing SaaS services. For on-premises solutions, link:https://www.tiny.cloud/contact/[contact us].
 ====
 
 == Getting Started
 
-To start using the TinyMCE AI service, follow the steps below:
+To start using the {pluginname} service, follow the steps below:
 
-* Sign up for one of the link:https://www.tiny.cloud/pricing/[self-service plans], or link:https://www.tiny.cloud/contact/[contact us] to purchase the TinyMCE AI license.
+* Sign up for one of the link:https://www.tiny.cloud/pricing/[self-service plans], or link:https://www.tiny.cloud/contact/[contact us] to purchase the {pluginname} license.
 * Generate access credentials in the link:https://www.tiny.cloud/my-account/[Customer Portal].
-* Write a script that generates one-time tokens for authorizing end users of your application in TinyMCE Cloud Services (using access credentials created earlier).
+* Write a script that generates one-time tokens for authorizing end users of the application in {productname} Cloud Services (using access credentials created earlier).
 
 All steps are explained in details below.
 
 [[get-the-tinymce-ai-license]]
-== Get the TinyMCE AI license
+== Get the {pluginname} license
 
-You can purchase TinyMCE AI as an add-on to selected tiers of our self-service plans. You can find details on our link:https://www.tiny.cloud/pricing/[pricing page].
+{pluginname} can be purchased as a plugin for selected tiers of the self-service plans. Details are available on the link:https://www.tiny.cloud/pricing/[pricing page].
 
-You can also link:https://www.tiny.cloud/contact/[contact us] directly if you would like to have a custom plan.
+For custom plans, link:https://www.tiny.cloud/contact/[contact us] directly.
 
-For testing purposes, you can sign up for the link:https://www.tiny.cloud/auth/signup/[free trial].
+For testing purposes, sign up for the link:https://www.tiny.cloud/auth/signup/[free trial].
 
-After signing up, you will receive access to the link:https://www.tiny.cloud/my-account/[customer dashboard (Customer Portal)].
+After signing up, access to the link:https://www.tiny.cloud/my-account/[customer dashboard (Customer Portal)] is provided.
 
 [[log-in-to-the-customer-portal]]
 == Log in to the Customer Portal
 
 Log in to the link:https://www.tiny.cloud/my-account/[Customer Portal] and navigate to link:https://www.tiny.cloud/my-account/jwt/["JWT Keys"].
 
-image::https://placehold.net/default.png[TinyMCE AI trial view]
+image::https://placehold.net/default.png[{pluginname} trial view]
 
 [[create-token-endpoint]]
 == Create token endpoint
 
-You now need to create a security token endpoint in your application. This endpoint securely authorizes end users of your application to use TinyMCE AI features based on their permissions and access rights.
+The next step is to create a security token endpoint in the application. This endpoint securely authorizes end users to use {pluginname} features based on their permissions and access rights.
 
 [[writing-your-own-token-endpoint]]
 === Writing your own token endpoint
 
-To write your own security token endpoint, create access credentials for the selected environment by going to the "Access credentials" tab and clicking the "Create a new access key" button.
+To create a custom security token endpoint, create access credentials for the selected environment by going to the "Access credentials" tab and clicking the "Create a new access key" button.
 
 Read more in the Creating access credentials section of the Environments management guide.
 
 [[cloud-region]]
 == Cloud region
 
-Cloud Services can reside in either US or EU region or in both. The region is set per subscription and cannot be changed for existing environments by the user. For Custom plan with multi-region, you can choose the region during environment creation. This topic is addressed in more detail in the Environment management guide.
+Cloud Services can reside in either US or EU region or in both. The region is set per subscription and cannot be changed for existing environments. For Custom plan with multi-region, the region can be chosen during environment creation. This topic is addressed in more detail in the Environment management guide.
 
 [[api-integration]]
 == API Integration
@@ -68,9 +70,9 @@ For an overview of all API features, see xref:tinymceai-api-overview.adoc[API Ov
 
 For feature documentation and API access information, see:
 
-* xref:tinymceai-chat.adoc#conversations-api[Chat] – Interactive AI discussions and document analysis via the Conversations API.
-* xref:tinymceai-review-plugin.adoc#reviews-api[Review] – Content improvement and quality analysis via the Reviews API.
-* xref:tinymceai-actions-plugin.adoc#actions-api[Quick Actions] – Content transformation via the Actions API.
+* xref:tinymceai-chat.adoc#conversations-api[Chat] – Interactive AI discussions and document analysis through the Conversations API.
+* xref:tinymceai-review-plugin.adoc#reviews-api[Review] – Content improvement and quality analysis through the Reviews API.
+* xref:tinymceai-actions-plugin.adoc#actions-api[Quick Actions] – Content transformation through the Actions API.
 * xref:tinymceai-streaming.adoc[Streaming] – Real-time AI interactions with code examples.
 
 link:https://tinymceai.api.tiny.cloud/docs[Complete API Documentation] – Full API reference with interactive examples for all endpoints
@@ -78,7 +80,7 @@ link:https://tinymceai.api.tiny.cloud/docs[Complete API Documentation] – Full 
 [[next-steps]]
 == Next Steps
 
-After setting up your JWT endpoint, continue with:
+After setting up the JWT endpoint, continue with:
 
 * xref:tinymceai-api-overview.adoc[API Overview] – Overview of all API features and capabilities.
 * xref:tinymceai-models.adoc[AI Models] – Choose the right model for your use case.

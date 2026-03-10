@@ -1,11 +1,13 @@
-= TinyMCE AI Introduction
+= {pluginname} Introduction
 
 :navtitle: Introduction
+:pluginname: TinyMCE AI
+:plugincode: tinymceai
 :description: Introduction to TinyMCE AI features and capabilities
 :description_short: TinyMCE AI introduction
 :keywords: AI, introduction, tinymceai
 
-By integrating AI writing assistance directly into the editing experience, TinyMCE AI empowers authors with real-time AI writing support, streamlines content creation, and enhances editorial workflows across a wide range of use cases – from productivity boosts and proof-reading to content quality and consistency.
+By integrating AI writing assistance directly into the editing experience, {pluginname} empowers authors with real-time AI writing support, speeds up content creation, and enhances editorial workflows across a wide range of use cases – from productivity boosts and proof-reading to content quality and consistency.
 
 [[demo]]
 == Demo
@@ -13,21 +15,21 @@ By integrating AI writing assistance directly into the editing experience, TinyM
 liveDemo::tinymceai[]
 
 [[what-is-tinymce-ai]]
-== What is TinyMCE AI
+== What is {pluginname}
 
-TinyMCE AI is an AI-powered writing assistant that integrates directly into the rich-text editor, {productname}, providing instant text rewriting, summarization, correction, and contextual chat help based on internal style guides. The platform includes automated review tools and enterprise-ready functionality that plugs into existing systems without requiring custom infrastructure.
+{pluginname} is an AI-powered writing assistant that integrates directly into the rich-text editor, {productname}, providing instant text rewriting, summarization, correction, and contextual chat help based on internal style guides. The platform includes automated review tools and enterprise-ready functionality that plugs into existing systems without requiring custom infrastructure.
 
-Teams can implement a full suite of AI writing tools in weeks rather than months, delivering streamlined, compliant content workflows that maintain brand consistency and integrate seamlessly with existing document management systems.
+Teams can implement a full suite of AI writing tools in weeks rather than months, delivering efficient, compliant content workflows that maintain brand consistency and integrate seamlessly with existing document management systems.
 
-The core components of TinyMCE AI are:
+The core components of {pluginname} are:
 
 * **xref:introduction-to-tinymce.adoc[{productname}]**: A modern rich text editor with dozens of features that improve writing workflows, including collaboration.
-* **xref:tinymceai-api-overview.adoc[AI service]**: A state-of-the-art backend AI engine that incorporates multiple models and delivers high-quality content. Currently available in Cloud setup. See xref:tinymceai-introduction.adoc#on-premises-deployment[On-Premises Deployment] for deployment options.
+* **xref:tinymceai-api-overview.adoc[AI service]**: A state-of-the-art back-end AI engine that incorporates multiple models and delivers high-quality content. Currently available in Cloud setup. See xref:tinymceai-introduction.adoc#on-premises-deployment[On-Premises Deployment] for deployment options.
 
 [[features]]
-== TinyMCE AI features
+== {pluginname} features
 
-There are three main features of TinyMCE AI. All features can be tested using the free trial.
+There are three main features of {pluginname}. All features can be tested using the free trial.
 
 * xref:tinymceai-chat.adoc[**Chat**] – Interactive AI chats with history and persistent context.
 * xref:tinymceai-review-plugin.adoc[**Review**] – Content analysis and proofreading, optimized for larger content.
@@ -36,7 +38,7 @@ There are three main features of TinyMCE AI. All features can be tested using th
 [[integration-options]]
 == Integration Options
 
-TinyMCE AI can be integrated with applications through two methods. See xref:tinymceai-integration-options.adoc[Integration Options] for details.
+{pluginname} can be integrated with applications through two methods. See xref:tinymceai-integration-options.adoc[Integration Options] for details.
 
 [[permissions]]
 == Permissions
@@ -49,11 +51,11 @@ Developers can control access to AI features, models, and capabilities based on 
 [[regional-data-storage]]
 === Regional Data Storage
 
-All data stored by TinyMCE AI follows the region settings of your TinyMCE Cloud Services environment, ensuring compliance with data residency requirements and optimal performance for your geographic location.
+All data stored by {pluginname} follows the region settings of the {productname} Cloud Services environment, ensuring compliance with data residency requirements and optimal performance for the geographic location.
 
 [IMPORTANT]
 ====
-Data sent to LLM providers for processing is currently processed in the US region, regardless of your Cloud Services environment region.
+Data sent to LLM providers for processing is currently processed in the US region, regardless of the Cloud Services environment region.
 ====
 
 [[data-retention-policy]]
@@ -75,5 +77,5 @@ All data is encrypted in transit and at rest with end-to-end encryption. Convers
 
 [NOTE]
 ====
-On-premises deployment is currently in development. Follow TinyMCE social accounts and our newsletter for updates.
+On-premises deployment is currently in development. Follow {productname} social accounts and our newsletter for updates.
 ====

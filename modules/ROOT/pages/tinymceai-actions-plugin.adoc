@@ -1,13 +1,15 @@
-= TinyMCE AI Quick Actions
+= {pluginname} Quick Actions
 
 :navtitle: Quick Actions
-:description: quick actions feature for TinyMCE AI plugin
+:pluginname: TinyMCE AI
+:plugincode: tinymceai
+:description: Quick actions feature for TinyMCE AI plugin
 :description_short: quick actions feature
 :keywords: AI, quick actions, actions, tinymceai
 
-Quick actions streamline routine content transformations by offering one-click AI-powered suggestions directly within the editor. This feature enhances speed, relevance, and usability, particularly for repeatable or simple tasks. The feature comes with an easy-to-use window interface but can also act as a conversation starter with the xref:tinymceai-chat.adoc[Chat].
+Quick actions simplify routine content transformations by offering one-click AI-powered suggestions directly within the editor. This feature enhances speed, relevance, and usability, particularly for repeatable or simple tasks. The feature comes with an easy-to-use window interface but can also act as a conversation starter with the xref:tinymceai-chat.adoc[Chat].
 
-The Quick Actions feature is available as a plugin UI and via the xref:tinymceai-actions-plugin.adoc#actions-api[Actions API]. This page covers both:
+The Quick Actions feature is available as a plugin UI and through the xref:tinymceai-actions-plugin.adoc#actions-api[Actions API]. This page covers both:
 
 * Plugin sections describe user-facing features and configuration.
 * API sections cover REST API access (starting at xref:tinymceai-actions-plugin.adoc#actions-api[Actions API]).
@@ -21,12 +23,12 @@ Actions are fast, stateless operations that transform content directly. Unlike R
 
 **When to use Actions vs Reviews:** Use Actions when transforming a selection or small section of text (fix grammar, translate, adjust tone). Use Reviews when analyzing entire documents for quality improvements and getting suggestions without automatically changing the content.
 
-image::https://placehold.net/default.png[TinyMCE AI quick actions showing AI-powered suggestions and Q&A functionality]
+image::https://placehold.net/default.png[{pluginname} quick actions showing AI-powered suggestions and Q&A functionality]
 
 [[integration]]
 == Integration
 
-To start using the Quick Actions feature, first load the TinyMCE AI plugin in the editor configuration. See xref:tinymceai.adoc[Plugin Reference] for installation and enabling AI features.
+To start using the Quick Actions feature, first load the {pluginname} plugin in the editor configuration. See xref:tinymceai.adoc[Plugin Reference] for installation and enabling AI features.
 
 Then, add the menu that opens the list of Quick Actions (`tinymceai-quickactions`) image:icons/ai-prompt.svg[Quick Actions icon,24px] to the main toolbar and/or context toolbar (selection toolbar) configurations. 
 
@@ -37,7 +39,7 @@ AI features are added to the selection toolbar by default when the plugin is ena
 
 To learn more about toolbar configuration, refer to the xref:toolbar-configuration-options.adoc[toolbar configuration] guide.
 
-image::https://placehold.net/default.png[TinyMCE AI Quick Actions dropdown in the toolbar]
+image::https://placehold.net/default.png[{pluginname} Quick Actions dropdown in the toolbar]
 
 Finally, individual Quick Actions can also be added to the toolbar as shortcuts for even easier access. For example, add the `ai-quickactions-improve-writing` image:icons/improve-writing.svg[Improve Writing icon,24px] button, or the `ai-chat-explain` image:icons/explain.svg[Explain icon,24px] button (find it in the demo above). Whole categories can be added to the toolbar, too. xref:tinymceai-actions-plugin.adoc#default-actions[Learn more about available actions].
 
@@ -91,7 +93,7 @@ By default, the Quick Actions feature includes several built-in actions that spe
 
 Keep in mind that xref:tinymceai-actions-plugin.adoc#custom-actions[custom actions] can be added to the list and xref:tinymceai-actions-plugin.adoc#removing-default-actions[defaults can be removed].
 
-Here's the full list of available actions. The identifiers below are used by the REST API. For the plugin UI, configure the Translate submenu via `tinymceai_languages`.
+Here is the full list of available actions. The identifiers below are used by the REST API. For the plugin UI, configure the Translate submenu using `tinymceai_languages`.
 
 * **"Chat commands"** category
 ** `'explain'`
@@ -201,16 +203,16 @@ tinymce.init({
 [[actions-api]]
 == Actions API
 
-The Quick Actions plugin feature is built on top of the Actions API, which provides REST API access to action functionality. Actions are fast, stateless operations that transform content directly. Unlike Reviews that provide suggestions, Actions immediately modify your content based on the selected operation.
+The Quick Actions plugin feature is built on top of the Actions API, which provides REST API access to action functionality. Actions are fast, stateless operations that transform content directly. Unlike Reviews that provide suggestions, Actions immediately modify the document content based on the selected operation.
 
-**When to use Actions vs Reviews:** Use Actions when you need to transform specific text content (fix grammar, translate, adjust tone). Use Reviews when you need to analyze entire documents for quality improvements and get suggestions without automatically changing the content.
+**When to use Actions vs Reviews:** Use Actions when transforming a selection or small section of text (fix grammar, translate, adjust tone). Use Reviews when analyzing entire documents for quality improvements and getting suggestions without automatically changing the content.
 
 Unlike conversations, actions do not remember previous interactions. Each action is independent and focused on a single task. Actions use streaming output with Server-Sent Events for real-time feedback as results are generated.
 
 [[actions-system-actions-api]]
 === System Actions
 
-TinyMCE AI provides built-in system actions for common content transformations via the API. These correspond to the default actions available in the plugin UI:
+{pluginname} provides built-in system actions for common content transformations through the API. These correspond to the default actions available in the plugin UI:
 
 [cols="2,4,1",options="header"]
 |===
@@ -225,13 +227,13 @@ TinyMCE AI provides built-in system actions for common content transformations v
 |===
 
 [[actions-custom-actions-api]]
-=== Custom Actions via API
+=== Custom Actions through the API
 
-In addition to system actions, you can create custom actions tailored to your specific use cases via the API. Custom actions allow you to define specialized content transformations using your own prompts to control AI behavior.
+In addition to system actions, custom actions can be created for specific use cases through the API. Custom actions allow specialized content transformations using custom prompts to control AI behavior.
 
-Unlike system actions that use predefined identifiers, custom actions use a unified endpoint where you define the transformation behavior through a prompt parameter. See https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API] for the custom actions endpoint and implementation details.
+Unlike system actions that use predefined identifiers, custom actions use a unified endpoint where the transformation behavior is defined through a prompt parameter. See https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API] for the custom actions endpoint and implementation details.
 
-Custom actions require the `ai:actions:custom` permission in your JWT token.
+Custom actions require the `ai:actions:custom` permission in the JWT token.
 
 [[actions-streaming]]
 === Streaming Responses

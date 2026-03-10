@@ -1,8 +1,8 @@
 = {pluginname} with JWT authentication (Node.js) Guide
 :plugincode: tinymceai
 :pluginname: TinyMCE AI
-:navtitle: JWT Authentication setup for {pluginname}
-:description: Guide on how to setup JWT Authentication for TinyMCE AI with {productname}
+:navtitle: JWT Authentication setup for TinyMCE AI
+:description: Guide on how to setup JWT Authentication with Node.js for TinyMCE AI with TinyMCE
 :keywords: jwt, authentication, tinymceai, ai, node.js
 
 include::partial$auth/tinymceai/nodejs/intro-and-prerequisites.adoc[]
@@ -94,7 +94,7 @@ See xref:tinymceai-jwt-authentication-intro.adoc#permissions[Permissions] for a 
 
 == Set up JWT Endpoint
 
-The following section shows how to create a JWT endpoint manually. If using a managed JWT service (such as AWS or Azure), configure it according to the requirements above and skip to the xref:#configure-tinymce[Configure TinyMCE] section.
+The following section shows how to create a JWT endpoint manually. If using a managed JWT service (such as AWS or Azure), configure it according to the requirements above and skip to the xref:#configure-tinymce[Configure {productname}] section.
 
 === Server Setup (jwt.js)
 
@@ -160,7 +160,7 @@ app.listen(PORT, () => {
 The JWT payload includes an `auth.ai.permissions` array that defines what AI features the user can access. Adjust these permissions based on requirements. See xref:tinymceai-permissions.adoc[Permissions] for more details on available permissions.
 ====
 
-== Configure TinyMCE
+== Configure {productname}
 
 [[configure-tinymce]]
 === Web Page (public/index.html)
@@ -172,7 +172,7 @@ Inside the `public` folder where the `index.html` file was created, add the HTML
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TinyMCE with TinyMCE AI</title>
+  <title>{productname} with {pluginname}</title>
   <script 
     src="https://cdn.tiny.cloud/1/no-api-key/tinymce/8/tinymce.min.js"
     referrerpolicy="origin"
@@ -194,9 +194,9 @@ Inside the `public` folder where the `index.html` file was created, add the HTML
   </script>
 </head>
 <body>
-  <h1>TinyMCE AI Demo</h1>
+  <h1>{pluginname} Demo</h1>
   <textarea>
-    Welcome to TinyMCE! Try the AI features like chat, quick actions, and review.
+    Welcome to {productname}! Try the AI features like chat, quick actions, and review.
   </textarea>
 </body>
 </html>

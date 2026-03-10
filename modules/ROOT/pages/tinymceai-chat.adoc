@@ -1,13 +1,15 @@
-= TinyMCE AI Chat
+= {pluginname} Chat
 
 :navtitle: Chat
+:pluginname: TinyMCE AI
+:plugincode: tinymceai
 :description: AI Chat feature for TinyMCE AI plugin
 :description_short: AI Chat feature
 :keywords: AI, chat, conversations, tinymceai
 
-The TinyMCE AI Chat is a conversational AI that facilitates rich, multi-turn interactions between users and an AI Assistant for content creation and editing. It provides context setting, model selection, chat history, and capabilities for web search and reasoning.
+The {pluginname} Chat is a conversational AI that facilitates rich, multi-turn interactions between users and an AI Assistant for content creation and editing. It provides context setting, model selection, chat history, and capabilities for web search and reasoning.
 
-The Chat feature is available as a plugin UI and via the xref:tinymceai-chat.adoc#conversations-api[Conversations API]. This page covers both:
+The Chat feature is available as a plugin UI and through the xref:tinymceai-chat.adoc#conversations-api[Conversations API]. This page covers both:
 
 * Plugin sections describe user-facing features and configuration.
 * API sections cover REST API access (starting at xref:tinymceai-chat.adoc#conversations-api[Conversations API]).
@@ -15,19 +17,19 @@ The Chat feature is available as a plugin UI and via the xref:tinymceai-chat.ado
 [[using-chat]]
 == Using Chat
 
-image::https://placehold.net/default.png[TinyMCE AI Chat interface showing the conversational AI assistant]
+image::https://placehold.net/default.png[{pluginname} Chat interface showing the conversational AI assistant]
 
 [[working-with-the-document]]
 === Working with the document
 
-TinyMCE AI operates directly within the context of the document. Users can ask questions about specific sections, request a full-document proofreading, and more.
+{pluginname} operates directly within the context of the document. Users can ask questions about specific sections, request a full-document proofreading, and more.
 
 By enabling xref:tinymceai-chat.adoc#web-search[Web search] or xref:tinymceai-chat.adoc#reasoning[Reasoning], the chat capabilities can be extended — allowing the chat to look up information online and tackle complex tasks step by step.
 
 [[making-changes-to-the-content]]
 === Making changes to the content
 
-Users can chat with the AI and use it to introduce changes to the document. Ask it to _"Summarize the document"_, _"Turn this report into a one-page executive summary"_, or _"Suggest better section titles and subheadings"_. The AI will then propose a series of changes to the document that can be xref:tinymceai-chat.adoc#previewing-changes[reviewed] and xref:tinymceai-chat.adoc#applying-changes[accepted or discarded one by one]. Long AI responses can be expanded using the **Expand** button to view the full suggestion. **Copying and pasting chat transcripts is over; TinyMCE AI understands the content and edits hand in hand**.
+Users can chat with the AI and use it to introduce changes to the document. Ask it to _"Summarize the document"_, _"Turn this report into a one-page executive summary"_, or _"Suggest better section titles and subheadings"_. The AI will then propose a series of changes to the document that can be xref:tinymceai-chat.adoc#previewing-changes[reviewed] and xref:tinymceai-chat.adoc#applying-changes[accepted or discarded one by one]. Long AI responses can be expanded using the **Expand** button to view the full suggestion. **Copying and pasting chat transcripts is over; {pluginname} understands the content and edits hand in hand**.
 
 [[brainstorming]]
 === Brainstorming
@@ -42,14 +44,14 @@ liveDemo::tinymceai[]
 [[integration]]
 == Integration
 
-To start using the Chat feature, first load the TinyMCE AI plugin in the editor configuration. The Chat button image:icons/ai-assistant.svg[Chat icon,24px] will appear in the AI user interface along with the Chat history image:icons/restore-draft.svg[History icon,24px]. See xref:tinymceai.adoc[Plugin Reference] for installation and enabling AI features.
+To start using the Chat feature, first load the {pluginname} plugin in the editor configuration. The Chat button image:icons/ai-assistant.svg[Chat icon,24px] will appear in the AI user interface along with the Chat history image:icons/restore-draft.svg[History icon,24px]. See xref:tinymceai.adoc[Plugin Reference] for installation and enabling AI features.
 
 [[available-models]]
 == Available models
 
 Users can select the desired AI model for their conversation from a dropdown at the bottom of the chat.
 
-image::https://placehold.net/default.png[TinyMCE AI Chat available models dropdown]
+image::https://placehold.net/default.png[{pluginname} Chat available models dropdown]
 
 Once selected, the AI model will persist for the duration of the conversation. To change the model, start a new conversation using the image:icons/new-chat.svg[New Chat icon,24px] **New Chat** button at the top-right corner of the chat panel.
 
@@ -97,7 +99,7 @@ tinymce.init({
 
 The AI chat can work with the document and beyond. Use the "Add context" image:icons/plus.svg[Add context icon,24px] button below the prompt input, to add URLs, files, and external resources to the conversation.
 
-image::https://placehold.net/default.png[TinyMCE AI Chat add context user interface]
+image::https://placehold.net/default.png[{pluginname} Chat add context user interface]
 
 Ask the AI about specific resources, for instance, _"Describe the attached image"_ or _"Summarize the key points from the attached Word document"_. The AI will analyze those resources and provide information that can be easily used in the document.
 
@@ -161,18 +163,18 @@ A review bar appears at the bottom of the editor with **Diff mode** and **Previe
 
 Click the checkmark image:icons/checkmark.svg[Accept suggestion icon,24px] in the suggestion overlay to accept the current change. Use the arrow buttons to move between suggestions.
 
-image::https://placehold.net/default.png[TinyMCE AI Chat apply changes]
+image::https://placehold.net/default.png[{pluginname} Chat apply changes]
 
 Click **Apply pending** in the review bar at the bottom of the editor to apply all remaining suggestions at once. The button shows the number of pending changes, for example, "Apply pending (4)".
 
-image::https://placehold.net/default.png[TinyMCE AI Chat apply all changes]
+image::https://placehold.net/default.png[{pluginname} Chat apply all changes]
 
 [[rejecting-suggestions]]
 === Rejecting suggestions
 
 Click the image:icons/close.svg[Reject suggestion icon,24px] in the suggestion overlay to reject the current suggestion. Click **Skip pending** in the review bar at the bottom of the editor to skip all remaining suggestions.
 
-image::https://placehold.net/default.png[TinyMCE AI Chat reject button]
+image::https://placehold.net/default.png[{pluginname} Chat reject button]
 
 
 [[chat-history]]
@@ -221,10 +223,10 @@ The AI remembers everything that has been shared and builds on it throughout the
 [[conversations-api-capabilities]]
 === API Capabilities
 
-When using the Conversations API directly, you can configure advanced capabilities:
+When using the Conversations API directly, advanced capabilities can be configured:
 
-* **Web Search** – Enable real-time web search to access current information during conversations. Configure via the `webSearch` capability in API requests. See https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Web-Resources[Conversation Web Resources API] for endpoint details.
-* **Reasoning** – Enable step-by-step reasoning to see the AI's problem-solving process. Configure via the `reasoning` capability in API requests. See https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Messages[Conversation Messages API] for endpoint details.
+* **Web Search** – Enable real-time web search to access current information during conversations. Configure using the `webSearch` capability in API requests. See https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Web-Resources[Conversation Web Resources API] for endpoint details.
+* **Reasoning** – Enable step-by-step reasoning to see the AI's problem-solving process. Configure using the `reasoning` capability in API requests. See https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Messages[Conversation Messages API] for endpoint details.
 
 [[conversations-streaming]]
 === Streaming Responses

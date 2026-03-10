@@ -1,11 +1,13 @@
-= TinyMCE AI Models
+= {pluginname} Models
 
 :navtitle: AI Models
+:pluginname: TinyMCE AI
+:plugincode: tinymceai
 :description: AI model configuration for TinyMCE AI
 :description_short: AI model configuration
 :keywords: AI, models, configuration, tinymceai
 
-TinyMCE AI supports multiple AI models from different providers. Model selection and configuration can be done through the plugin UI or via the REST API. This page covers model capabilities, configuration options, and limitations that apply to both plugin and API usage.
+{pluginname} supports multiple AI models from different providers. Model selection and configuration can be done through the plugin UI or through the REST API. This page covers model capabilities, configuration options, and limitations that apply to both plugin and API usage.
 
 [[recommended-agent-models]]
 == Recommended: Agent Models
@@ -15,7 +17,7 @@ The `agent-1` model automatically selects the best AI model for requests based o
 [[available-models]]
 == Available Models
 
-TinyMCE AI supports multiple AI models from different providers. Each model has unique capabilities, performance characteristics, and cost profiles. By default, the automatically selected model (`agent-1`) will be used for optimal cost and performance.
+{pluginname} supports multiple AI models from different providers. Each model has unique capabilities, performance characteristics, and cost profiles. By default, the automatically selected model (`agent-1`) will be used for optimal cost and performance.
 
 [[supported-models-table]]
 === Supported Models
@@ -130,7 +132,7 @@ Models are organized by compatibility versions to ensure API stability. When new
 [[how-it-works]]
 === How It Works
 
-Compatibility versions allow TinyMCE AI to introduce new models and capabilities without breaking existing integrations. Each version maintains a stable set of models and capabilities.
+Compatibility versions allow {pluginname} to introduce new models and capabilities without breaking existing integrations. Each version maintains a stable set of models and capabilities.
 
 [[checking-compatibility]]
 === Checking Compatibility
@@ -158,11 +160,11 @@ Enable step-by-step reasoning to see the AI's problem-solving process. Some mode
 **Always-on reasoning models:**
 
 * Reasoning is always active during inference.
-* Reasoning cannot be turned off via the API.
+* Reasoning cannot be turned off through the API.
 
 To determine if a model has always-on reasoning, check the API response when listing models or refer to the model capabilities in the plugin UI. Models with mandatory reasoning will indicate this in their capability structure.
 
-NOTE: Please observe, that model names such as `gpt-5`, `claude-4-sonnet`, etc. are examples. Actual available models depend on the service's compatibility version. Use the `/v1/models` API endpoint or check the plugin's model selection dropdown to see current available models for your environment.
+NOTE: Model names such as `gpt-5`, `claude-4-sonnet`, and similar are examples. Actual available models depend on the service compatibility version. Use the `/v1/models` API endpoint or check the plugin model selection dropdown to see current available models for the environment.
 
 [[web-scraping]]
 === Web Scraping
@@ -195,14 +197,14 @@ Model descriptions returned by the API are provided in English and may be update
 [[translation-and-localization]]
 === Translation and Localization
 
-NOTE: Backend translation handling for model descriptions is planned in a future release. Until then, use the approach described below.
+NOTE: Back-end translation handling for model descriptions is planned in a future release. Until then, use the approach described below.
 
 If the application requires translated model descriptions, maintain a translation map in the code keyed by `model.id`, with fallback to the English description from the API for unknown models. This allows new models to work immediately while translations are added at a custom pace.
 
 [[model-deprecation]]
 === Model Deprecation
 
-Models scheduled for removal will include a `removal` field with an ISO 8601 date (e.g., `"removal": "2025-11-17T00:00:00.000Z"`). When a model is removed, API requests will fail with error code `MODEL_NOT_FOUND` and the models endpoint will stop returning that particular model.
+Models scheduled for removal will include a `removal` field with an ISO 8601 date (for example, `"removal": "2025-11-17T00:00:00.000Z"`). When a model is removed, API requests will fail with error code `MODEL_NOT_FOUND` and the models endpoint will stop returning that particular model.
 
 [[api-examples]]
 == API Examples
@@ -301,7 +303,7 @@ Response:
 For complete documentation on model endpoints, compatibility versions, and capability schemas, see:
 
 * **https://tinymceai.api.tiny.cloud/docs#tag/Models[Models API Reference]** – Full documentation for model listing and configuration.
-* **https://tinymceai.api.tiny.cloud/docs[Complete API Documentation]** – Interactive API reference with all TinyMCE AI endpoints.
+* **https://tinymceai.api.tiny.cloud/docs[Complete API Documentation]** – Interactive API reference with all {pluginname} endpoints.
 
 [[related-features]]
 == Related Features

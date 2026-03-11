@@ -1,10 +1,10 @@
-= HTML to PDF Converter API (version 2)
-:navtitle: Export to PDF Standalone Service v2
-:description: The HTML to PDF Converter API v2 service feature provides the ability to generate PDF files directly without the need for an editor.
-:description_short: Generate a .pdf file directly from any application (version 2).
-:keywords: service, exportpdf, export to pdf, HTML to PDF Converter API, v2, version 2
+= HTML to PDF Converter API
+:navtitle: HTML to PDF Converter API
+:description: The HTML to PDF Converter API service provides the ability to generate PDF files directly without the need for an editor.
+:description_short: Generate a .pdf file directly from any application.
+:keywords: service, exportpdf, export to pdf, HTML to PDF Converter API
 :pluginname: Export to PDF
-:servicename: HTML to PDF Converter API (v2)
+:servicename: HTML to PDF Converter API
 
 [NOTE]
 This is a premium feature. link:https://www.tiny.cloud/contact/[Contact us] to purchase a license or to learn more about our tailored offers. Note that any documents generated without authentication will be watermarked.
@@ -13,7 +13,7 @@ This is a premium feature. link:https://www.tiny.cloud/contact/[Contact us] to p
 
 The {servicename} is a powerful tool that seamlessly integrates advanced document conversion capabilities into developers workflows. This API allows for the efficient conversion of HTML content into PDF documents, catering to a wide range of use cases.
 
-Version 2 uses a nested configuration structure and supports per-page headers and footers, PDF metadata, security, and digital signatures. For version 1, see xref:html-to-pdf-converter-api.adoc[HTML to PDF Converter API].
+The API uses a nested configuration structure and supports per-page headers and footers, PDF metadata, security, and digital signatures.
 
 === Key Features
 

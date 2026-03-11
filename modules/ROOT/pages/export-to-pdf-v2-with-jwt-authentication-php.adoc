@@ -1,11 +1,16 @@
-= {pluginname} with JWT authentication (PHP) Guide – (v2)
-:navtitle: JWT Authentication setup for Export to PDF v2
-:description: Guide on how to setup JWT Authentication for exporting PDF files with {productname} (version 2)
-:keywords: jwt, authentication, exportpdf, pdf, php, v2
+= {pluginname} with JWT authentication (PHP) Guide
 :pluginname: Export to PDF
 :plugincode: exportpdf
+:navtitle: JWT Authentication setup for {pluginname}
+:description: Guide on how to set up JWT authentication for exporting PDF files with {pluginname} using PHP
+:keywords: jwt, authentication, exportpdf, pdf, php
 
 include::partial$auth/document-converters/php/intro-and-prerequisites.adoc[]
+
+[NOTE]
+====
+This guide uses the nested format (`version: '2'`) for `exportpdf_converter_options`. Requires {productname} 8.4.0 or newer. For full option documentation, see xref:exportpdf.adoc[Export to PDF]. For integrators on older versions, see xref:export-to-pdf-with-jwt-authentication-php.adoc[JWT Authentication setup for Export to PDF (PHP) – flat format].
+====
 
 include::partial$auth/document-converters/php/initial-project-setup.adoc[]
 
@@ -26,7 +31,7 @@ Inside the `public` folder where you created the `index.html` file add the HTML 
 <!DOCTYPE html>
 <html>
 <head>
-  <title>TinyMCE with PDF Export (v2)</title>
+  <title>TinyMCE with Export to PDF</title>
   <script 
     src="https://cdn.tiny.cloud/1/no-api-key/tinymce/8/tinymce.min.js"
     referrerpolicy="origin"
@@ -60,7 +65,7 @@ Inside the `public` folder where you created the `index.html` file add the HTML 
   </script>
 </head>
 <body>
-  <h1>TinyMCE Export to PDF Demo (v2)</h1>
+  <h1>TinyMCE Export to PDF Demo</h1>
   <textarea>
     Welcome to TinyMCE! Try the Export to PDF feature.
   </textarea>
@@ -69,3 +74,7 @@ Inside the `public` folder where you created the `index.html` file add the HTML 
 ----
 
 include::partial$auth/document-converters/php/configuration-steps.adoc[]
+
+== Further configuration
+
+For additional options such as per-page headers and footers, PDF metadata, and security settings, see the xref:exportpdf.adoc#exportpdf-converter-options[`exportpdf_converter_options`] section on the Export to PDF plugin page.

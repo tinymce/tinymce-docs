@@ -16,7 +16,9 @@ Configures page layout, headers, footers, and other PDF output options. The edit
 Both formats use the same API endpoint. Flat-format options are converted to the nested structure automatically before the request.
 
 [NOTE]
-Requires {productname} 8.4.0 or newer.
+====
+Requires {productname} 8.4.0 or newer. On-premises deployments require a Docker image version that supports the v2 API.
+====
 
 === Flat format
 

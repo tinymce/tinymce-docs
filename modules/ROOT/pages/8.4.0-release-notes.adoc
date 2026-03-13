@@ -158,6 +158,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Bundled content CSS is now loaded into preview iframes
+// #TINY-13190
+
+Previously, when the editor content CSS was bundled, it was not loaded into the Preview Iframe. This caused a visual mismatch between the editor content area and what users saw in the Preview dialog.
+
+In {productname} {release-version}, the fix checks if the content CSS is available as a bundled resource and applies it to the Preview Iframe through style tags. Bundled content CSS is now correctly loaded in the Preview Iframe.
+
 
 [[security-fixes]]
 == Security fixes

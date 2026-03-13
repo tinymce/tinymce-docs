@@ -158,6 +158,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Dropdown menus with `matchWidth: true` would be located to the left of their parent if the content was sufficiently long
+// #TINY-4531
+
+Previously, dropdown menus with `matchWidth: true` could appear shifted to the left when content was long, such as when pasting URLs into the image dialog source field. The dropdown width was constrained to match the input, but the menu was not repositioned after that constraint, so the final placement no longer aligned with the input. This made the dropdown seem disconnected and confused users.
+
+In {productname} {release-version}, the positioning logic now triggers a repositioning whenever the dropdown width is constrained. The dropdown remains aligned with the input as expected.
+
 
 [[security-fixes]]
 == Security fixes

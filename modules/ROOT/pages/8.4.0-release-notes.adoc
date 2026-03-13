@@ -158,6 +158,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Toolbars incorrectly had the role "group" instead of "toolbar". Toolbar groups incorrectly had the role "toolbar" instead of "group".
+// #TINY-13339
+
+Previously, toolbars were incorrectly given the role `group` instead of `toolbar`, and toolbar groups were incorrectly given the role `toolbar` instead of `group`. This resulted in misleading semantics for screen readers, as users heard multiple "toolbars" without clear grouping structure and no accessible names.
+
+In {productname} {release-version}, the ARIA roles have been corrected so that toolbars use `role="toolbar"` and toolbar groups use `role="group"`. This improves accessibility and screen reader behavior.
+
 
 [[security-fixes]]
 == Security fixes

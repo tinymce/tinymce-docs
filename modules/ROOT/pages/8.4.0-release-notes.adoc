@@ -113,7 +113,10 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // #TINY-vwxyz1
 
 // CCFR here.
+=== The file upload feature of `link` and `image` dialogs now provide feedback when an unsupported file type is selected
+// #TINY-13420
 
+In {productname} {release-version}, the dropzone in the link and image dialog upload tabs previously provided no feedback when users inserted only files with disallowed extensions. This left users unsure whether the upload had failed or the dialog had not responded. The dropzone now displays an error message when all selected files have disallowed extensions, informing users that the selected files do not have allowed extensions and prompting them to choose different files.
 
 [[additions]]
 == Additions
@@ -124,6 +127,10 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // #TINY-vwxyz1
 
 // CCFR here.
+=== New `errorHandler` option for `dropzone` dialog components
+// #TINY-13420
+
+In {productname} {release-version}, the dropzone dialog component supports a new `onInvalidFiles` callback (exposed as `errorHandler` in the changelog) that runs when all dropped or selected files have disallowed extensions. This enables custom error handling for invalid file uploads in dialogs that use dropzones, such as the link and image dialogs.
 
 
 [[changes]]

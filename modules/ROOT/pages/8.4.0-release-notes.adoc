@@ -57,6 +57,21 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== Comments
+
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** includes the following fix.
+
+==== Users with an `id` that includes `@` weren't parsed correctly.
+// #TINY-12235
+
+Previously, the mentions parser in Comments did not treat the `@` symbol as part of a mention string. User IDs containing `@` (such as email addresses) were split incorrectly, so mentions remained as raw text instead of resolving to the display name after saving.
+
+In {productname} {release-version}, the Comments plugin now correctly parses mentions with `@` in user IDs. Mentions resolve to display names as expected.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments].
+
 === <Premium plugin name 1> <Premium plugin name 1 version>
 
 The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

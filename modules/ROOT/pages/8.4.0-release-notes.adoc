@@ -161,7 +161,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === Dialogs did not retain focus when using the block/unblock API.
 // #TINY-12918
 
-Previously, when a dialog was blocked (for example, while loading) and then unblocked, the loading spinner disappeared without automatically focusing the first focusable element in the dialog. Focus was lost from the editor entirely. When using an inline editor, this caused the dialog and the rest of the editor UI to disappear when the dialog lost focus.
+Previously, when a dialog was blocked (for example, while loading) and then unblocked, the loading spinner disappeared without automatically focusing any other element. As a result, focus escaped the editor entirely. When using an inline editor, this caused the dialog and the rest of the editor UI to disappear.
 
 In {productname} {release-version}, unblocking a dialog now focuses the first focusable element automatically, the same as when opening a dialog. This prevents the dialog and the rest of the editor UI from disappearing when using an inline editor.
 

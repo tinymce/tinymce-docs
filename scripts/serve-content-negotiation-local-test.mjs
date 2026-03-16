@@ -13,11 +13,12 @@
 
 import { createReadStream } from 'node:fs';
 import { readFile, stat } from 'node:fs/promises';
-import { join, extname } from 'node:path';
+import { join, extname, resolve, sep } from 'node:path';
 import { createServer } from 'node:http';
 
 const PORT = Number(process.argv[2]) || 4000;
 const BUILD_DIR = process.argv[3] || 'build/site';
+const ROOT = resolve(BUILD_DIR);
 
 // ---------------------------------------------------------------------------
 // Load manifest (token counts per URL path)
@@ -73,7 +74,14 @@ async function handler(req, res) {
   if (urlPath.endsWith('/')) urlPath += 'index.html';
   if (!extname(urlPath)) urlPath += '/index.html';
 
-  const htmlFile = join(BUILD_DIR, urlPath);
+  // Normalize and constrain path to ROOT to prevent traversal
+  const relativePath = urlPath.replace(/^\/+/, '');
+  const htmlFile = resolve(ROOT, relativePath);
+  if (!(htmlFile === ROOT || htmlFile.startsWith(ROOT + sep))) {
+    res.writeHead(403, { 'Content-Type': 'text/plain' });
+    res.end('403 Forbidden');
+    return;
+  }
 
   // Content negotiation: swap .html → .md when agent requests markdown
   if (wantsMarkdown(req) && urlPath.endsWith('.html')) {

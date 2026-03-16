@@ -44,7 +44,7 @@ function extractTitle(doc) {
 function buildFrontmatter(title, tokens) {
   return [
     '---',
-    `title: "${title.replace(/"/g, '\\"')}"`,
+    `title: "${title.replace(/\\/g, '\\\\').replace(/"/g, '\\"')}"`,
     `tokens: ${tokens}`,
     '---',
     '',

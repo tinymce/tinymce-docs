@@ -158,6 +158,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Now `link` dialog allows uploading empty files
+// #TINY-13421
+
+Previously, when uploading an empty file through the link dialog's upload tab, the conversion to `BlobInfo` failed and returned a generic, cryptic error about blob and base64 encoding. As a result, users could not understand what caused the failure or how to resolve it.
+
+In {productname} {release-version}, empty file uploads are now handled by the link dialog itself, which displays a clear, user-friendly error message when an empty file is selected. Users receive a specific error that explains the issue instead of a generic conversion error.
+
 
 [[security-fixes]]
 == Security fixes

@@ -1,11 +1,18 @@
+[[mceLink]]
 [cols="1,3",options="header"]
 |===
 |Command |Description
-|mceLink |Opens the Link or Quicklink Dialog at the current cursor position or for the current selection.
+|mceLink |Opens the Link dialog or the link context toolbar at the current cursor position or for the current selection. The behaviour depends on the xref:link.adoc#link_quicklink[`+link_quicklink+`] option. Pass `+{ dialog: true }+` as the third argument to always open the full Link dialog, even when `+link_quicklink+` is enabled.
 |===
 
-.Example
+.Example: open link dialog or context toolbar (default behaviour)
 [source,js]
 ----
 tinymce.activeEditor.execCommand('mceLink');
+----
+
+.Example: always open the full Link dialog
+[source,js]
+----
+tinymce.activeEditor.execCommand('mceLink', false, { dialog: true });
 ----

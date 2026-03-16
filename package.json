@@ -15,7 +15,6 @@
     "clean": "rm -rf ./build",
     "nodemon-dev": "nodemon --exec yarn antora ./antora-playbook.yml",
     "server": "http-server build/site/ --port 4000",
-    "server:negotiate:local-test": "node scripts/serve-content-negotiation-local-test.mjs",
     "serve": "npm-run-all -p nodemon-dev server",
     "start": "yarn clean && yarn serve"
   },

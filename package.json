@@ -9,9 +9,13 @@
   "homepage": "https://www.tiny.cloud/docs/",
   "scripts": {
     "build-local-ref": "./-scripts/api-reference-local.sh",
+    "build:production": "antora ./antora-playbook.yml",
+    "build:markdown": "node scripts/generate-markdown.mjs",
+    "build:all": "yarn build:production && yarn build:markdown",
     "clean": "rm -rf ./build",
     "nodemon-dev": "nodemon --exec yarn antora ./antora-playbook.yml",
     "server": "http-server build/site/ --port 4000",
+    "server:negotiate:local-test": "node scripts/serve-content-negotiation-local-test.mjs",
     "serve": "npm-run-all -p nodemon-dev server",
     "start": "yarn clean && yarn serve"
   },
@@ -30,6 +34,9 @@
   "devDependencies": {
     "@antora/cli": "^3.1.10",
     "@antora/site-generator-default": "^3.1.10",
+    "dom-to-semantic-markdown": "^1.5.0",
+    "gpt-tokenizer": "^3.4.0",
+    "jsdom": "^24.1.0",
     "@tinymce/antora-extension-livedemos": "^0.1.0",
     "@tinymce/moxiedoc": "^0.3.0",
     "dotenv": "^16.5.0",

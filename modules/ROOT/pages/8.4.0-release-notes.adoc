@@ -57,6 +57,21 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== Media Optimizer
+
+The {productname} {release-version} release includes an accompanying release of the **Media Optimizer** premium plugin.
+
+**Media Optimizer** includes the following fix.
+
+==== Toolbar button was not initialized when used with the `quickbars` plugin.
+// #TINY-13731
+
+Previously, when the Media Optimizer plugin was used together with the quickbars plugin, the uploadcare toolbar button was not registered at all. As a result, the button could not appear in the toolbar, even when configured.
+
+In {productname} {release-version}, the uploadcare button is now always registered and can be used in the toolbar alongside the quickbars plugin. To avoid duplication in the context toolbar, the plugin no longer adds the uploadcare button when the quickbars insert image button is already present.
+
+For information on the **Media Optimizer** plugin, see: xref:uploadcare.adoc[Media Optimizer].
+
 === <Premium plugin name 1> <Premium plugin name 1 version>
 
 The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

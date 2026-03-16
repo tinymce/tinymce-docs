@@ -4,8 +4,7 @@
  * Post-build script: converts every Antora HTML page into a Markdown sibling
  * so AI agents can fetch clean, low-token content via content negotiation.
  *
- * Uses dom-to-semantic-markdown (d2m) for conversion. See docs/turndown-vs-d2m-comparison-report.md
- * for the evaluation that led to this choice.
+ * Uses dom-to-semantic-markdown (d2m) for conversion (preserves links in tables).
  *
  * Usage:  node scripts/generate-markdown.mjs [buildDir]
  *         Default buildDir = build/site

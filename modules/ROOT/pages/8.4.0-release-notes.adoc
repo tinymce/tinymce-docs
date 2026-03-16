@@ -57,17 +57,20 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== Suggested Edits
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Suggested Edits** includes the following fix.
 
-==== <Premium plugin name 1 change 1>
+==== Cancel button would always focus when the view opened, even when editor wasn't focused.
+// #TINY-13711
 
-// CCFR here.
+Previously, the Cancel button in Suggested Edits was automatically focused whenever the review was opened, including when the review opened automatically on load. When the editor was positioned lower on the page, the browser would scroll the focused button into view, causing unexpected page scrolling.
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+In {productname} {release-version}, the Cancel button is now focused only when the editor itself is already focused. When the review is opened automatically, the button is no longer focused, preventing unintended scrolling.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]

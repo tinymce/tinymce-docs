@@ -57,6 +57,21 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== Full Page HTML
+
+The {productname} {release-version} release includes an accompanying release of the **Full Page HTML** premium plugin.
+
+**Full Page HTML** includes the following addition.
+
+==== New argument `fullpagehtml` to `editor.getContent()` and `editor.setContent()` APIs to only get/set the body of the content while the full page plugin is active.
+// #TINY-13744
+
+Previously, setting and getting the editor content while the Full Page HTML plugin was active could be troublesome due to the presence of the full HTML document on all API calls, even when not needed. Attempting to get and act only on the body content (for example, for saving) was undocumented and required workarounds.
+
+In {productname} {release-version}, the `fullpagehtml` option has been added to the `editor.getContent()` and `editor.setContent()` APIs. When set to `false`, this option allows getting and setting only the body content while the Full Page HTML plugin is active, without interfering with the full document structure. The document is now more resistant to accidental changes, and content can be retrieved or updated without including the full HTML document. For details, see xref:fullpagehtml.adoc#fullpagehtml-getcontent-setcontent[`fullpagehtml` option for getContent/setContent].
+
+For information on the **Full Page HTML** plugin, see: xref:fullpagehtml.adoc[Full Page HTML].
+
 === <Premium plugin name 1> <Premium plugin name 1 version>
 
 The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

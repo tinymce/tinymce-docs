@@ -65,6 +65,11 @@ The feature comes with several review commands:
 Custom commands and translation are not currently supported in the Review feature. This may change in future updates.
 ====
 
+[[review-configuration]]
+== Configuration
+
+Which review commands appear in the Review sidebar can be configured using the `tinymceai_reviews` option. See xref:tinymceai.adoc#tinymceai_reviews[`tinymceai_reviews`] in the Plugin Reference for details.
+
 [[reviews-api]]
 == Reviews API
 
@@ -120,4 +125,4 @@ The REST API documentation includes examples for:
 == Related Features
 
 * xref:tinymceai-chat.adoc[AI chat] – For interactive discussions with document analysis and context.
-* xref:tinymceai-actions-plugin.adoc[Quick actions] – For content transformation and batch processing.
+* xref:tinymceai-actions-plugin.adoc[Quick actions] – For fast, stateless content transformations.

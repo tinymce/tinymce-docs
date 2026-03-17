@@ -459,3 +459,53 @@ tinymce.init({
 });
 ----
 
+[[options-review]]
+== Options for Review
+
+These options configure the AI Review sidebar, which provides content quality analysis and improvement suggestions.
+
+[[tinymceai_reviews]]
+=== `+tinymceai_reviews+`
+
+Array of review command IDs that define which review types appear in the Review sidebar and their order. Only the listed reviews are available to users.
+
+*Type:* `+Array+` of `+String+`
+
+*Valid values:*
+* `+'ai-reviews-proofread'+` – Check grammar, spelling, and punctuation
+* `+'ai-reviews-improve-clarity'+` – Improve logical structure and precision
+* `+'ai-reviews-improve-readability'+` – Adjust sentence structure and word choice
+* `+'ai-reviews-change-length'+` – Shorten or lengthen text
+* `+'ai-reviews-change-tone'+` – Modify tone and style
+
+*Default value:*
+[source,js]
+----
+[
+  'ai-reviews-proofread',
+  'ai-reviews-improve-clarity',
+  'ai-reviews-improve-readability',
+  'ai-reviews-change-length',
+  'ai-reviews-change-tone'
+]
+----
+
+.Example
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_reviews: [
+    'ai-reviews-proofread',
+    'ai-reviews-improve-clarity',
+    'ai-reviews-change-tone'
+  ],
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  }
+});
+----
+

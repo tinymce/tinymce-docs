@@ -12,7 +12,7 @@
 [[recommended-agent-models]]
 == Recommended: Agent Models
 
-The `agent-1` model automatically selects the best AI model for requests based on speed, quality, and cost. It's the recommended choice for most use cases as it optimizes performance and cost automatically.
+The `agent-1` model automatically selects the best AI model for requests based on speed, quality, and cost. It is the recommended choice for most use cases as it optimizes performance and cost automatically.
 
 [[available-models]]
 == Available Models
@@ -22,7 +22,7 @@ The `agent-1` model automatically selects the best AI model for requests based o
 [[supported-models-table]]
 === Supported Models
 
-Here's a detailed list of available models with their capabilities:
+The following is a detailed list of available models with their capabilities:
 
 [cols="1,2,1,1,2"]
 |===
@@ -137,7 +137,7 @@ Compatibility versions allow {pluginname} to introduce new models and capabiliti
 [[checking-compatibility]]
 === Checking Compatibility
 
-To see available models for your compatibility version:
+To see available models for a compatibility version:
 
 * **Via API** – Check the `/v1/models` endpoint. The API response includes model capabilities, limits, and availability.
 * **Via Plugin** – Available models are shown in the model selection dropdown when `tinymceai_allow_model_selection` is enabled.

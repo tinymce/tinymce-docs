@@ -19,7 +19,7 @@ The Quick Actions feature is available as a plugin UI and through the xref:tinym
 
 liveDemo::tinymceai[]
 
-Actions are fast, stateless operations that transform content directly. Unlike Reviews that provide suggestions, Actions immediately modify content based on the selected operation.
+Actions are fast, stateless operations that transform content. Unlike Reviews that provide suggestions for review, Actions run a transformation and display the result in a preview interface where users can accept or reject before changes are applied.
 
 **When to use Actions vs Reviews:** Use Actions when transforming a selection or small section of text (fix grammar, translate, adjust tone). Use Reviews when analyzing entire documents for quality improvements and getting suggestions without automatically changing the content.
 
@@ -91,7 +91,7 @@ The behavior of each action can be defined when xref:tinymceai-actions-plugin.ad
 
 By default, the Quick Actions feature includes several built-in actions that speed up the content editing process. All Quick Actions can be accessed through the menu button image:icons/ai-prompt.svg[Quick Actions icon,24px] (`tinymceai-quickactions`) but also individually when handpicked by the integrator in the xref:toolbar-configuration-options.adoc[editor toolbar configuration]. Whole action categories can be added to the toolbar too.
 
-Keep in mind that xref:tinymceai-actions-plugin.adoc#custom-actions[custom actions] can be added to the list and xref:tinymceai-actions-plugin.adoc#removing-default-actions[defaults can be removed].
+Custom actions can be added to the list, and default actions can be removed or reordered by configuring `tinymceai_quickactions_menu`. See xref:tinymceai-actions-plugin.adoc#configuring-quick-actions-menu[Configuring Quick Actions menu].
 
 Here is the full list of available actions. The identifiers below are used by the REST API. For the plugin UI, configure the Translate submenu using `tinymceai_languages`.
 
@@ -203,7 +203,7 @@ tinymce.init({
 [[actions-api]]
 == Actions API
 
-The Quick Actions plugin feature is built on top of the Actions API, which provides REST API access to action functionality. Actions are fast, stateless operations that transform content directly. Unlike Reviews that provide suggestions, Actions immediately modify the document content based on the selected operation.
+The Quick Actions plugin feature is built on top of the Actions API, which provides REST API access to action functionality. Actions are fast, stateless operations that transform content. Unlike Reviews that provide suggestions for review, Actions run a transformation and display the result in a preview interface where users can accept or reject before changes are applied.
 
 **When to use Actions vs Reviews:** Use Actions when transforming a selection or small section of text (fix grammar, translate, adjust tone). Use Reviews when analyzing entire documents for quality improvements and getting suggestions without automatically changing the content.
 

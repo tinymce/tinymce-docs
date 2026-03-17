@@ -25,7 +25,7 @@ To setup the {pluginname} plugin in the editor:
 
 * add `{plugincode}` to the `plugins` option in the editor configuration;
 * configure the `tinymceai_token_provider` option to provide authentication tokens (must return `+{ token: string }+`);
-* add the AI toolbar buttons to the `toolbar` option. The plugin provides: `+tinymceai-chat+` image:icons/ai-assistant.svg[Chat icon,24px], `+tinymceai-quickactions+` image:icons/ai-prompt.svg[Quick Actions icon,24px], and `+tinymceai-review+` image:icons/ai-review.svg[Review icon,24px];
+* add the AI toolbar buttons to the `toolbar` option. The plugin provides: `+tinymceai-chat+` image:icons-premium/ai-assistant.svg[Chat icon,24px], `+tinymceai-quickactions+` image:icons/ai-prompt.svg[Quick Actions icon,24px], and `+tinymceai-review+` image:icons-premium/ai-review.svg[Review icon,24px];
 
 [[minimal-setup]]
 === Minimal setup
@@ -69,9 +69,9 @@ tinymce.init({
     }
   ],
   tinymceai_chat_fetch_source: async (id) => {
-    const res = await fetch(`/api/documents/${id}`);
+    const res = await fetch(`/api/documents/\$\{id\}`);
     const blob = await res.blob();
-    const filename = `${id}.pdf`;
+    const filename = `\$\{id\}.pdf`;
     return { type: 'file', file: new File([blob], filename, { type: blob.type }) };
   },
   tinymceai_quickactions_custom: [
@@ -83,7 +83,7 @@ tinymce.init({
 [[ui-control]]
 == UI Control
 
-The AI interface is toggled through toolbar buttons or menu items. Clicking `+tinymceai-chat+` image:icons/ai-assistant.svg[Chat icon,24px] opens the chat sidebar; clicking again minimizes it (chat history is preserved). Clicking `+tinymceai-review+` image:icons/ai-review.svg[Review icon,24px] opens the review sidebar.
+The AI interface is toggled through toolbar buttons or menu items. Clicking `+tinymceai-chat+` image:icons-premium/ai-assistant.svg[Chat icon,24px] opens the chat sidebar; clicking again minimizes it (chat history is preserved). Clicking `+tinymceai-review+` image:icons-premium/ai-review.svg[Review icon,24px] opens the review sidebar.
 
 To toggle sidebars programmatically, use the core `+ToggleSidebar+` command:
 

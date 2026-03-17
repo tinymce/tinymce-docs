@@ -44,7 +44,7 @@ liveDemo::tinymceai[]
 [[integration]]
 == Integration
 
-To start using the Chat feature, first load the {pluginname} plugin in the editor configuration. The Chat button image:icons/ai-assistant.svg[Chat icon,24px] will appear in the AI user interface along with the Chat history image:icons/restore-draft.svg[History icon,24px]. See xref:tinymceai.adoc[Plugin Reference] for installation and enabling AI features.
+To start using the Chat feature, first load the {pluginname} plugin in the editor configuration. The Chat button image:icons-premium/ai-assistant.svg[Chat icon,24px] will appear in the AI user interface along with the Chat history image:icons/restore-draft.svg[History icon,24px]. See xref:tinymceai.adoc[Plugin Reference] for installation and enabling AI features.
 
 [[available-models]]
 == Available models
@@ -53,21 +53,21 @@ Users can select the desired AI model for their conversation from a dropdown at 
 
 image::https://placehold.net/default.png[{pluginname} Chat available models dropdown]
 
-Once selected, the AI model will persist for the duration of the conversation. To change the model, start a new conversation using the image:icons/new-chat.svg[New Chat icon,24px] **New Chat** button at the top-right corner of the chat panel.
+Once selected, the AI model will persist for the duration of the conversation. To change the model, start a new conversation using the image:icons-premium/new-chat.svg[New Chat icon,24px] **New Chat** button at the top-right corner of the chat panel.
 
 [[web-search]]
 === Web search
 
 Web search in Chat allows it to access and retrieve real-time information from the internet. Instead of relying only on pre-trained knowledge, the model can search the web to find up-to-date facts, verify details, and provide more accurate, current answers.
 
-Some models use web search automatically, while others may require manual activation. Whether the "Enable web search" button image:icons/web-search.svg[Web search icon,24px] below the prompt input needs to be toggled depends on the model and sometimes even how the prompt is worded. For models that support it, use the toggle button to enable web search functionality.
+Some models use web search automatically, while others may require manual activation. Whether the "Enable web search" button image:icons-premium/web-search.svg[Web search icon,24px] below the prompt input needs to be toggled depends on the model and sometimes even how the prompt is worded. For models that support it, use the toggle button to enable web search functionality.
 
 [[reasoning]]
 === Reasoning
 
 Reasoning in Chat models turns on the ability to think through problems, draw logical conclusions, and make sense of complex information. It enables the model to analyze context, connect ideas, and produce well-structured, coherent answers beyond simple pattern matching.
 
-Some models use reasoning automatically, while others may require manual activation. Whether the "Enable reasoning" button image:icons/reasoning.svg[Reasoning icon,24px] below the prompt input needs to be toggled depends on the model and sometimes even how the prompt is worded. For models that support it, use the toggle button to enable reasoning functionality.
+Some models use reasoning automatically, while others may require manual activation. Whether the "Enable reasoning" button image:icons-premium/reasoning.svg[Reasoning icon,24px] below the prompt input needs to be toggled depends on the model and sometimes even how the prompt is worded. For models that support it, use the toggle button to enable reasoning functionality.
 
 [[model-selection-configuration]]
 === Configuration
@@ -131,9 +131,9 @@ tinymce.init({
     }
   ],
   tinymceai_chat_fetch_source: async (id) => {
-    const res = await fetch(`/api/documents/${id}`);
+    const res = await fetch(`/api/documents/\$\{id\}`);
     const blob = await res.blob();
-    const filename = `${id}.pdf`;
+    const filename = `\$\{id\}.pdf`;
     return { type: 'file', file: new File([blob], filename, { type: blob.type }) };
   },
   // Required for authentication

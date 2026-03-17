@@ -214,7 +214,7 @@ A function that fetches the content for an additional source by ID. Receives the
 
 *Possible Values:* For return object `+type+` property: `+'file'+`, `+'web-resource'+`
 
-*Default value:* `+(id) => Promise.resolve(\`Should fetch additional source with given ${id}\`)+`
+*Default value:* `+(id) => Promise.resolve(\`Should fetch additional source with given \$\{id\}\`)+`
 
 .Example
 [source,js]
@@ -227,9 +227,9 @@ tinymce.init({
     { label: 'Docs', sources: [{ id: 'doc-1', label: 'Document 1', type: 'file' }] }
   ],
   tinymceai_chat_fetch_source: async (id) => {
-    const res = await fetch(`/api/documents/${id}`);
+    const res = await fetch(`/api/documents/\$\{id\}`);
     const blob = await res.blob();
-    const filename = `${id}.pdf`;
+    const filename = `\$\{id\}.pdf`;
     return { type: 'file', file: new File([blob], filename, { type: blob.type }) };
   },
   // Required for authentication

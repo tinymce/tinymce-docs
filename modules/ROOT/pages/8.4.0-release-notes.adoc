@@ -75,7 +75,7 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **Full Page HTML** includes the following fix.
 
-==== Pasting an HTML document was vulnerable to XSS attacks on link element href attribute
+==== Pasting an HTML document was vulnerable to XSS attacks
 // #TINY-13673
 
 A cross-site scripting (XSS) vulnerability was discovered in the Full Page HTML plugin. Previously, malicious code within the document `<head>` was able to be executed when pasted.

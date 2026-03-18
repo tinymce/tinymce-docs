@@ -57,17 +57,20 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== Comments
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Comments** includes the following fix.
 
-==== <Premium plugin name 1 change 1>
+==== Errors when creating new comments made the save button stuck in a saving state.
+// #TINY-12224
 
-// CCFR here.
+Previously, when creating or editing a comment in Comments, the save button could remain in a saving state indefinitely if the save operation failed or if the component was not replaced. The saving state had no way to reset to false except by recreating the component, which misled users into thinking the operation was still in progress.
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+In {productname} {release-version}, the save logic now resets the saving state to false after the save operation completes, whether the operation succeeds or fails. The save button no longer remains stuck in a saving state.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments].
 
 
 [[accompanying-premium-plugin-end-of-life-announcement]]

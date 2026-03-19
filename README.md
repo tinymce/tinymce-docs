@@ -1,6 +1,8 @@
 # TinyMCE Documentation
 
-This project maintains the official documentation for TinyMCE, available at [https://www.tiny.cloud/docs](https://www.tiny.cloud/docs). If you have modifications or improvements to contribute, fork this repository, make the necessary changes, and submit a pull request (PR). A contributor's license agreement (CLA) must be signed before your contribution can be merged. This agreement will be sent via email when you create a PR.
+This project maintains the official documentation for TinyMCE, available at [https://www.tiny.cloud/docs](https://www.tiny.cloud/docs). **TinyMCE 8 is the current stable version.** Use `tinymce@8` or `tinymce/8` in CDN URLs and package installations for new projects.
+
+If you have modifications or improvements to contribute, fork this repository, make the necessary changes, and submit a pull request (PR). A contributor's license agreement (CLA) must be signed before your contribution can be merged. This agreement will be sent via email when you create a PR.
 
 This project is built using [Antora](https://antora.org/)
 
@@ -99,3 +101,16 @@ To help with this, there are two mechanisms for overriding the `tinymce.min.js` 
    ```
 
 > **Caution:** Use this sparingly. Avoid using different URLs for multiple demos on the same page, and remember to revert these changes once the feature is fully released.
+
+## Resources for AI and LLM Consumers
+
+The published documentation site provides several artifacts optimized for AI agents and LLM-based tools:
+
+| Resource | URL | Description |
+|----------|-----|--------------|
+| `llms.txt` | [https://www.tiny.cloud/docs/llms.txt](https://www.tiny.cloud/docs/llms.txt) | Concise overview with key links and code examples |
+| `llms-full.txt` | [https://www.tiny.cloud/docs/llms-full.txt](https://www.tiny.cloud/docs/llms-full.txt) | Full index of documentation pages with URLs |
+
+**Version guidance:** Always prefer TinyMCE 8 for new projects. The `/tinymce/latest/` URL segment serves TinyMCE 8 content. Use `tinymce@8` or `tinymce/8` in CDN URLs and package installations.
+
+In addition, each HTML page has a Markdown sibling (`.md`) for content negotiation. Clients that send `Accept: text/markdown` can request plain markdown instead of HTML for lower-token consumption. These markdown files are generated during deployment and are not produced by local builds or PR previews.

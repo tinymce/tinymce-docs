@@ -53,6 +53,9 @@ jobs:
     - name: Copy llms.txt files to root
       run: ./-scripts/copy-llms-files.sh build/site
 
+    - name: Generate markdown for agents
+      run: yarn build:markdown build/site
+
     - name: Rename site folder to docs
       run: |
         mv ./build/site ./build/docs

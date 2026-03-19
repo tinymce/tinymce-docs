@@ -158,6 +158,20 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Setting width via Table Properties did not apply when `table_style_by_css` was `false`.
+// #TINY-12797
+
+Previously, when `table_style_by_css` was set to `false`, updating the width of a table through the Table Properties dialog did not apply the width attribute. The dialog only applied width when using CSS styles, which broke the functionality for users who rely on HTML attributes for table sizing.
+
+In {productname} {release-version}, updating the width through the Table Properties dialog now ensures the width attribute is applied correctly when `table_style_by_css` is `false`. The table dialog behaves as expected for both attribute-based and style-based width settings.
+
+=== Tables with unitless width or height attributes could not be resized correctly.
+// #TINY-12797
+
+Previously, tables that used unitless width or height attributes (for example, numeric values without `px` or `%`) could not be resized correctly. Resizing handles and column operations did not behave as expected for these tables.
+
+In {productname} {release-version}, the table resize logic correctly handles unitless width and height attributes. Tables can now be resized and modified as expected regardless of how their dimensions are specified.
+
 
 [[security-fixes]]
 == Security fixes

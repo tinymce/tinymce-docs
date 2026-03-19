@@ -57,6 +57,21 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== Media Optimizer
+
+The {productname} {release-version} release includes an accompanying release of the **Media Optimizer** premium plugin.
+
+**Media Optimizer** includes the following fix.
+
+==== Third-party library icons appear in formats when using Media Optimiser plugin together with CSS plugin
+// #TINY-13515
+
+Previously, when the Media Optimiser plugin was used together with the importcss plugin, the previous version of `uc-video` required importing external styles. The importcss plugin detected these imports and added them to the format menu, causing third-party library icons to appear in the formats UI. These icons were not part of the official TinyMCE icon pack and created a confusing and inconsistent UI experience.
+
+In {productname} {release-version}, the `uc-video` package was upgraded to a version that has styles self-contained in the web component. The importcss plugin no longer detects `uc-video` styles, so third-party icons no longer appear in the formats UI.
+
+For information on the **Media Optimizer** plugin, see: xref:uploadcare.adoc[Media Optimizer].
+
 === <Premium plugin name 1> <Premium plugin name 1 version>
 
 The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

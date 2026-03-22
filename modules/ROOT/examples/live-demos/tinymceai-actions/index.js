@@ -3,13 +3,12 @@ const apiKey = '{{tinymceai_demo_api_key}}';
 const isLoggedIn = fetch(`https://demo.api.tiny.cloud/1/${apiKey}/auth/random`, { method: "POST", credentials: "include" });
 
 tinymce.init({
-  selector: 'textarea#tinymceai',
+  selector: 'textarea#tinymceai-actions',
   height: '610px',
   plugins: ["tinymceai", "advlist", "anchor", "autolink", "charmap", "code"],
-  toolbar: "undo redo | tinymceai-chat ai-quickactions-translate tinymceai-review | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
+  toolbar: "undo redo | tinymceai-chat tinymceai-quickactions tinymceai-review | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
   sidebar_show: 'tinymceai-chat',
   tinymceai_token_provider: async () => {
-    // Step 2: Check we have a session then fetch JWT
     return isLoggedIn.then(() =>
       fetch(`https://demo.api.tiny.cloud/1/${apiKey}/jwt/tinymceai`, { credentials: "include" })
         .then(resp => resp.text())
@@ -33,11 +32,7 @@ tinymce.init({
     return Promise.resolve({ type: 'web-resource', url: urls[id] });
   },
   tinymceai_quickactions_custom: [
-    {
-      type: 'chat',
-      title: 'Challenge',
-      prompt: 'Challenge statements, verify facts and identify assumptions'
-    }
+    { type: 'chat', title: 'Challenge', prompt: 'Challenge statements, verify facts and identify assumptions' }
   ],
   tinymceai_languages: [
     { title: 'English', language: 'english' },

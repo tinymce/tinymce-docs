@@ -21,7 +21,7 @@ The `+tinymce-svelte+` `+Editor+` component accepts the following properties:
 [source,jsx,subs="attributes+"]
 ----
 <Editor
-  apiKey="api-key"
+  apiKey="no-api-key"
   channel="{productmajorversion}"
   id="uuid"
   inline=false

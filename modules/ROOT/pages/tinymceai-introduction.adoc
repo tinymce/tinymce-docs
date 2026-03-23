@@ -7,7 +7,7 @@
 :keywords: AI, introduction, tinymceai
 :page-role: -toc
 
-By integrating AI writing assistance directly into the editing experience, {pluginname} empowers authors with real-time AI writing support, speeds up content creation, and enhances editorial workflows across a wide range of use cases – from productivity boosts and proof-reading to content quality and consistency.
+By integrating AI writing assistance directly into the editing experience, {pluginname} empowers authors with real-time AI writing support, speeds up content creation, and enhances editorial workflows across a wide range of use cases, from productivity boosts and proof-reading to content quality and consistency.
 
 [[demo]]
 == Demo
@@ -24,7 +24,7 @@ Teams can implement a full suite of AI writing tools quickly, delivering efficie
 The core components of {pluginname} are:
 
 * **xref:introduction-to-tinymce.adoc[{productname}]**: A modern rich text editor with dozens of features that improve writing workflows, including collaboration.
-* **xref:tinymceai-api-overview.adoc[AI service]**: A state-of-the-art back-end AI engine that incorporates multiple models and delivers high-quality content. Currently available in Cloud setup. See xref:tinymceai-introduction.adoc#on-premises-deployment[On-Premises Deployment] for deployment options.
+* **xref:tinymceai-api-overview.adoc[AI service]**: A state-of-the-art back-end AI engine that incorporates multiple models and delivers high-quality content. *Currently available in Cloud setup only.* See xref:tinymceai-introduction.adoc#on-premises-deployment[On-Premises Deployment] for deployment options.
 
 [[features]]
 == {pluginname} features
@@ -75,7 +75,9 @@ All data is encrypted in transit and at rest with end-to-end encryption. Convers
 [[on-premises-deployment]]
 == On-Premises Deployment
 
+On-premises deployment allows the AI service to run within an organization's infrastructure, giving teams more control over data and infrastructure.
+
 [NOTE]
 ====
-On-premises deployment is currently in development. Contact support for regular updates.
+On-premises deployment is currently in development. link:{contactpage}[Contact {supportname}] for availability updates and timeline information.
 ====

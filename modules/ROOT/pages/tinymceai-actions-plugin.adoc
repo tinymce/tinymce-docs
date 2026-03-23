@@ -111,16 +111,9 @@ Here is the full list of available actions. The identifiers below are used by th
 ** `'make-tone-friendly'`
 ** `'make-tone-confident'`
 ** `'make-tone-professional'`
-* **"Translate"** category (API identifiers)
-** `'translate-to-english'`
-** `'translate-to-chinese'`
-** `'translate-to-spanish'`
-** `'translate-to-german'`
-** `'translate-to-japanese'`
-** `'translate-to-portuguese'`
-** `'translate-to-korean'`
-** `'translate-to-italian'`
-** `'translate-to-russian'`
+* **"Translate"** category
++
+The REST API uses the single action `'translate'` with a `language` parameter in the request body (`args: { language: string }`). Use language names such as `english`, `spanish`, `russian`, `swedish`, `german`, `japanese`, `portuguese`, `korean`, `italian`, or `chinese`. For the plugin UI, configure languages via `tinymceai_languages`.
 
 [[custom-actions]]
 == Custom Actions

@@ -21,7 +21,7 @@ liveDemo::{plugincode}[]
 [[basic-setup]]
 == Basic setup
 
-To setup the {pluginname} plugin in {productname}:
+To set up the {pluginname} plugin in {productname}:
 
 * add `{plugincode}` to the `plugins` option in the editor configuration;
 * configure the `tinymceai_token_provider` option to provide authentication tokens (must return `+{ token: string }+`);
@@ -92,6 +92,17 @@ To toggle sidebars programmatically, use the core `+ToggleSidebar+` command:
 editor.execCommand('ToggleSidebar', false, 'tinymceai-chat');
 editor.execCommand('ToggleSidebar', false, 'tinymceai-review');
 ----
+
+[[keyboard-shortcuts]]
+=== Keyboard shortcuts
+
+The following keyboard shortcuts are available for the AI interface:
+
+[cols="2,1,1",options="header"]
+|===
+|Action |Windows |macOS
+|Open or Close the AI Chat sidebar |Ctrl+J |Cmd+J
+|===
 
 To show the chat sidebar on load:
 

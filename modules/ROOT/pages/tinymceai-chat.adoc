@@ -29,12 +29,12 @@ By enabling xref:tinymceai-chat.adoc#web-search[Web search] or xref:tinymceai-ch
 [[making-changes-to-the-content]]
 === Making changes to the content
 
-Users can chat with the AI and use it to introduce changes to the document. Ask it to _"Summarize the document"_, _"Turn this report into a one-page executive summary"_, or _"Suggest better section titles and subheadings"_. The AI will then propose a series of changes to the document that can be xref:tinymceai-chat.adoc#previewing-changes[reviewed] and xref:tinymceai-chat.adoc#applying-changes[accepted or discarded one by one]. Long AI responses can be expanded using the **Expand** button to view the full suggestion. **Copying and pasting chat transcripts is over; {pluginname} understands the content and edits hand in hand**.
+Users can chat with the AI and use it to introduce changes to the document. Ask it to _"Summarize the document"_, _"Turn this report into a one-page executive summary"_, or _"Suggest better section titles and subheadings"_. The AI will then propose a series of changes to the document that can be xref:tinymceai-chat.adoc#previewing-changes[reviewed] and xref:tinymceai-chat.adoc#applying-changes[accepted or discarded one by one]. Long AI responses can be expanded using the **Expand** button to view the full suggestion. {pluginname} works directly on the content instead of requiring copy-paste of chat transcripts.
 
 [[brainstorming]]
 === Brainstorming
 
-The chat feature jump-starts the creative process. Begin with a blank document and ask the AI for ideas. Build content step by step by chatting and applying changes. Then review — or have the AI rewrite — the final draft for best results. All in one place.
+The chat feature accelerates the creative process. Begin with a blank document and ask the AI for ideas. Build content step by step by chatting and applying changes. Then review or have the AI rewrite the final draft for best results, all in one place.
 
 [[demo]]
 == Demo
@@ -58,16 +58,16 @@ Once selected, the AI model will persist for the duration of the conversation. T
 [[web-search]]
 === Web search
 
-Web search in Chat allows it to access and retrieve real-time information from the internet. Instead of relying only on pre-trained knowledge, the model can search the web to find up-to-date facts, verify details, and provide more accurate, current answers.
+Web search in Chat allows the AI to access and retrieve real-time information from the internet. Instead of relying only on pre-trained knowledge, the model can search the web to find up-to-date facts, verify details, and provide more accurate, current answers.
 
-Some models use web search automatically, while others may require manual activation. Whether the "Enable web search" button image:icons-premium/web-search.svg[Web search icon,24px] below the prompt input needs to be toggled depends on the model and sometimes even how the prompt is worded. For models that support it, use the toggle button to enable web search functionality.
+Some models use web search automatically, while others may require manual activation. Whether the "Enable web search" button image:icons-premium/web-search.svg[Web search icon,24px] below the prompt input needs to be toggled depends on the model and sometimes even how the prompt is worded. For models that support web search, use the toggle button to enable it.
 
 [[reasoning]]
 === Reasoning
 
 Reasoning in Chat models turns on the ability to think through problems, draw logical conclusions, and make sense of complex information. It enables the model to analyze context, connect ideas, and produce well-structured, coherent answers beyond simple pattern matching.
 
-Some models use reasoning automatically, while others may require manual activation. Whether the "Enable reasoning" button image:icons-premium/reasoning.svg[Reasoning icon,24px] below the prompt input needs to be toggled depends on the model and sometimes even how the prompt is worded. For models that support it, use the toggle button to enable reasoning functionality.
+Some models use reasoning automatically, while others may require manual activation. Whether the "Enable reasoning" button image:icons-premium/reasoning.svg[Reasoning icon,24px] below the prompt input needs to be toggled depends on the model and sometimes even how the prompt is worded. For models that support reasoning, use the toggle button to enable it.
 
 [[model-selection-configuration]]
 === Configuration
@@ -97,7 +97,7 @@ tinymce.init({
 [[adding-context-to-conversations]]
 == Adding context to conversations
 
-The AI chat can work with the document and beyond. Use the "Add context" image:icons/plus.svg[Add context icon,24px] button below the prompt input, to add URLs, files, and external resources to the conversation.
+The AI chat can work with the document and beyond. Use the "Add context" image:icons/plus.svg[Add context icon,24px] button below the prompt input to add URLs, files, and external resources to the conversation.
 
 image::https://placehold.net/default.png[{pluginname} Chat add context user interface]
 
@@ -146,7 +146,7 @@ tinymce.init({
 [[working-with-ai-generated-changes]]
 == Working with AI-generated changes
 
-When asking the AI for changes to the document, for instance, _"Bold key facts in the document"_, a series of proposed changes will be received. The changes are displayed directly in the document content, making it easy to see what will be modified.
+When asking the AI for changes to the document, for instance, _"Bold key facts in the document"_, the AI proposes a series of changes. The changes are displayed directly in the document content, making it easy to see what will be modified.
 
 [NOTE]
 ====
@@ -156,7 +156,7 @@ AI output may need review. The chat interface displays this reminder below the p
 [[previewing-changes]]
 === Previewing changes
 
-A review bar appears at the bottom of the editor with **Diff mode** and **Preview** tabs. Toggle between them to show proposed changes inline (with markers for additions, removals, and formatting) or to preview the final result. When Diff mode is enabled, the proposed changes are highlighted in the document with markers indicating additions (green), removals (red), and formatting changes (blue). Navigate through the changes using the arrows in the suggestion overlay. As navigation occurs, the overlay automatically follows the corresponding sections of the document.
+A review bar appears at the bottom of the editor with **Diff mode** and **Preview** tabs. Toggle between them to show proposed changes inline (with markers for additions, removals, and formatting) or to preview the final result. When Diff mode is enabled, the proposed changes are highlighted in the document with markers indicating additions (green), removals (red), and formatting changes (blue). Use the arrows in the suggestion overlay to navigate through the changes. The overlay automatically follows the corresponding document sections as each suggestion is selected.
 
 [[applying-changes]]
 === Applying changes
@@ -182,7 +182,7 @@ image::https://placehold.net/default.png[{pluginname} Chat reject button]
 
 All past conversations appear in the Chat history. Click the button image:icons/restore-draft.svg[Chat history icon,24px] in the chat header to open the list. Click a conversation to reopen it, or use the menu on each entry to pin, rename, or delete it. Click **Go to AI Chat** to return from the history view to the active conversation.
 
-Conversations are grouped by date to help navigate the project easily. Conversations can be filtered by name using the search field at the top of the user interface.
+Conversations are grouped by date to help navigate the history. Conversations can be filtered by name using the search field at the top of the user interface.
 
 image::https://placehold.net/default.png[AI Chat history]
 
@@ -201,12 +201,12 @@ After closing the browser and reopening AI chat, previous conversations will no 
 [[conversations-api]]
 == Conversations API
 
-The Chat plugin feature is built on top of the Conversations API, which provides REST API access to conversation functionality. Conversations allow exchanging multiple messages with AI that maintains them in its context. Conversations can be extended by external context sources like websites or files, and have the ability to refer to editor content and suggest modifications.
+The Chat plugin feature is built on top of the Conversations API, which provides REST API access to conversation functionality. Conversations support exchanging multiple messages with the AI, which maintains them in context. Conversations can be extended by external context sources like websites or files, and have the ability to refer to editor content and suggest modifications.
 
 [[conversations-key-features]]
 === Key Features
 
-Upload PDFs, Word docs, and images for the AI to read and understand. Ask questions about specific sections and get intelligent answers. The AI extracts text while preserving structure from PDFs, maintains formatting context from Word documents, parses web content from HTML files, and processes images with OCR and object recognition.
+The API supports uploading PDFs, Word docs, and images for the AI to read and understand. Ask questions about specific sections and get intelligent answers. The AI extracts text while preserving structure from PDFs, maintains formatting context from Word documents, parses web content from HTML files, and processes images with OCR and object recognition.
 
 Each conversation builds on previous messages, so the AI keeps track of the entire discussion and any files that have been shared. Documents, images, web links, and text can be mixed in one conversation, and the AI connects information across all formats.
 

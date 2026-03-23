@@ -28,7 +28,7 @@ image::https://placehold.net/default.png[{pluginname} Review feature showing AI-
 
 To start using the Review feature, first load the {pluginname} plugin in the editor configuration. The Review Mode button image:icons-premium/ai-review.svg[Review icon,24px] will appear in the AI user interface. See xref:tinymceai.adoc[Plugin Reference] for installation and enabling AI features.
 
-After picking one of the available commands in the Review Mode tab, AI will analyze the document and propose a series of suggestions:
+After picking one of the available commands in the Review Mode tab, the AI will analyze the document and propose a series of suggestions:
 
 image::https://placehold.net/default.png[{pluginname} Review sidebar with suggestions]
 
@@ -36,7 +36,7 @@ While in the Review Mode, the editor remains read-only and allows browsing sugge
 
 image::https://placehold.net/default.png[{pluginname} Review suggestion in content]
 
-Review suggestions can be accepted or dismissed by clicking the corresponding buttons. All suggestions can also be accepted by using the "Accept all" button in the top of the user interface and xref:tinymceai-chat.adoc#previewing-changes[previewing changes similar to chat suggestions]. Changes that were accepted or dismissed become greyed out in the interface. The review can also be abandoned by clicking the "Exit review" button.
+Review suggestions can be accepted or dismissed by clicking the corresponding buttons. All suggestions can also be accepted using the "Accept all" button at the top of the user interface. Changes can be previewed in the same way as xref:tinymceai-chat.adoc#previewing-changes[Chat suggestions]. Changes that were accepted or dismissed become greyed out in the interface. The review can also be abandoned by clicking the "Exit review" button.
 
 Once reviewing is complete and all changes are accepted or rejected, click "Finish review" (the button state changes automatically) to return to the normal operation of the editor, where typing is possible.
 
@@ -49,11 +49,11 @@ The feature comes with several review commands:
 |===
 |Command name |Command description |Additional information
 
-|**Proofread** |Check the text for errors in grammar, spelling and punctuation |
+|**Proofread** |Check the text for errors in grammar, spelling and punctuation |—
 
-|**Improve clarity** |Improve the logical structure and precision for clearer message |
+|**Improve clarity** |Improve the logical structure and precision for a clearer message |—
 
-|**Improve readability** |Adjust sentence structure and word choice for an easier read |
+|**Improve readability** |Adjust sentence structure and word choice to improve readability |—
 
 |**Adjust length** |Shorten or lengthen the text as needed |_Longer_ and _Shorter_ options available
 
@@ -62,7 +62,7 @@ The feature comes with several review commands:
 
 [NOTE]
 ====
-Custom commands and translation are not currently supported in the Review feature. This may change in future updates.
+Custom review commands are not supported in the Review feature. Translation is available only through the API. This may change in future updates.
 ====
 
 [[review-configuration]]
@@ -89,7 +89,7 @@ Reviews use streaming output with Server-Sent Events for real-time feedback as s
 * **Readability** (corresponds to "Improve readability" in plugin) – Enhance paragraph structure, transitions, and reading level. See https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for the readability endpoint.
 * **Length Optimization** (corresponds to "Adjust length" in plugin) – Expand or condense content while preserving key information. See https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for the length optimization endpoint.
 * **Tone Adjustment** (corresponds to "Adjust tone and style" in plugin) – Modify tone to casual, direct, friendly, confident, or professional styles. See https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for tone adjustment endpoints.
-* **Translation** – Translate content between languages with cultural adaptation. (Note: Translation is not currently available in the plugin UI, but is available via the API.) See https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for the translation endpoint.
+* **Translation** – Translate content between languages with cultural adaptation. (Note: Translation is not currently available in the plugin UI, but is available through the API.) See https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for the translation endpoint.
 
 [[reviews-custom-reviews]]
 === Custom Reviews

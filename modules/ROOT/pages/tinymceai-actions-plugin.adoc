@@ -7,7 +7,7 @@
 :keywords: AI, quick actions, actions, tinymceai
 :page-role: -toc
 
-Quick actions simplify routine content transformations by offering one-click AI-powered suggestions directly within the editor. This feature enhances speed, relevance, and usability, particularly for repeatable or simple tasks. The feature comes with an easy-to-use window interface but can also act as a conversation starter with the xref:tinymceai-chat.adoc[Chat].
+Quick actions simplify routine content transformations by offering one-click AI-powered suggestions directly within the editor. This feature enhances speed, relevance, and usability, particularly for repeatable or simple tasks. The feature comes with a window interface for most actions; some actions (such as Explain or Summarize) open the xref:tinymceai-chat.adoc[Chat] instead and start the conversation with a pre-filled prompt.
 
 The Quick Actions feature is available as a plugin UI and through the xref:tinymceai-actions-plugin.adoc#actions-api[Actions API]. This page covers both:
 
@@ -41,7 +41,7 @@ To learn more about toolbar configuration, refer to the xref:toolbar-configurati
 
 image::https://placehold.net/default.png[{pluginname} Quick Actions dropdown in the toolbar]
 
-Finally, individual Quick Actions can also be added to the toolbar as shortcuts for even easier access. For example, add the `ai-quickactions-improve-writing` image:icons-premium/improve-writing.svg[Improve Writing icon,24px] button, or the `ai-chat-explain` image:icons-premium/explain.svg[Explain icon,24px] button (find it in the demo above). Whole categories can be added to the toolbar, too. xref:tinymceai-actions-plugin.adoc#default-actions[Learn more about available actions].
+Finally, individual Quick Actions can also be added to the toolbar as shortcuts for easier access. For example, add the `ai-quickactions-improve-writing` image:icons-premium/improve-writing.svg[Improve Writing icon,24px] button, or the `ai-chat-explain` image:icons-premium/explain.svg[Explain icon,24px] button (find it in the demo above). Whole categories can be added to the toolbar as well. xref:tinymceai-actions-plugin.adoc#default-actions[Learn more about available actions].
 
 The final example configuration looks as follows:
 
@@ -84,12 +84,12 @@ There are two types of actions available in the quick actions feature:
 
 * Preview actions, such as "Continue writing", "Make shorter", "Improve writing", or "Fix grammar", display the AI response in a preview interface where users can review and accept or reject the suggested changes.
 
-The behavior of each action can be defined when xref:tinymceai-actions-plugin.adoc#custom-actions[creating custom ones].
+Custom actions let integrators define whether each action opens Chat or shows a preview. See xref:tinymceai-actions-plugin.adoc#custom-actions[Custom Actions].
 
 [[default-actions]]
 == Default Actions
 
-By default, the Quick Actions feature includes several built-in actions that speed up the content editing process. All Quick Actions can be accessed through the menu button image:icons/ai-prompt.svg[Quick Actions icon,24px] (`tinymceai-quickactions`) but also individually when handpicked by the integrator in the xref:toolbar-configuration-options.adoc[editor toolbar configuration]. Whole action categories can be added to the toolbar too.
+By default, the Quick Actions feature includes several built-in actions that speed up the content editing process. All Quick Actions can be accessed through the menu button image:icons/ai-prompt.svg[Quick Actions icon,24px] (`tinymceai-quickactions`) or individually when selected by the integrator in the xref:toolbar-configuration-options.adoc[editor toolbar configuration]. Whole action categories can be added to the toolbar as well.
 
 Custom actions can be added to the list, and default actions can be removed or reordered by configuring `tinymceai_quickactions_menu`. See xref:tinymceai-actions-plugin.adoc#configuring-quick-actions-menu[Configuring Quick Actions menu].
 

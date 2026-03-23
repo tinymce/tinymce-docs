@@ -14,14 +14,14 @@
 [[token-endpoint-overview]]
 == Token Endpoint Overview
 
-To connect {productname} with {pluginname}, a token endpoint must be created. This guide outlines the principles required to create it.
+To connect {productname} with {pluginname}, a token endpoint must be created in the application backend. This guide outlines the principles required to create that endpoint.
 
 [[how-tinymce-ai-uses-tokens]]
 == How {pluginname} Uses Tokens
 
 To authenticate users, {pluginname} uses tokens. The purpose of tokens is to inform the AI service that the user has access to AI features and which API key the user should connect to. The authenticity of tokens is provided by a digital signature.
 
-*The token endpoint*: is where {productname} makes a request to get the token. It is required to return the token only if the user proves their identity. It should be placed inside the system, not exposed as a public endpoint without proper authentication.
+*The token endpoint* is where {productname} makes a request to get the token. It is required to return the token only if the user proves their identity. It should be placed inside the system, not exposed as a public endpoint without proper authentication.
 
 The following diagram shows how {pluginname} uses tokens:
 
@@ -80,7 +80,7 @@ The following properties **must** be included in the payload:
 
 * `aud` – The API key that has entitlements to use {pluginname}.
 * `sub` – The user ID. This should be a unique identifier for the user making the request. This identifier is used to lock down conversation history, AI-generated content, and other user-specific data to individual users, ensuring privacy and data isolation.
-* `iat` – "Issued at". Make sure that `iat` is present and contains a correct time stated in seconds. Some JWT implementations do not include it by default. Sometimes the system time may also be invalid, causing issues.
+* `iat` – "Issued at". Ensure `iat` is present and contains a correct time stated in seconds. Some JWT implementations do not include it by default. Sometimes the system time may also be invalid, causing issues.
 * `exp` – Token expiration time. Identifies the expiration time after which the JWT will not be accepted. {pluginname} only accepts tokens no older than 24 hours. This field can be used to shorten the token validity time.
 * `auth` – The `auth.ai.permissions` array inside is required. This defines which AI features the user can access. See xref:#permissions[Permissions] below for details.
 
@@ -210,9 +210,9 @@ eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9...
 
 To set up JWT authentication for {pluginname}:
 
-. Generate a public/private key pair and add the public key to the {accountpage} via link:{accountjwturl}[{accountpage} - JWT Keys].
+. Generate a public/private key pair and add the public key to the {accountpage} using link:{accountjwturl}[{accountpage} - JWT Keys].
 . Set up a JWT endpoint that generates tokens with the required claims.
-. Configure {productname} to use the JWT endpoint via the `tinymceai_token_provider` option.
+. Configure {productname} to use the JWT endpoint through the `tinymceai_token_provider` option.
 
 For step-by-step implementation instructions with complete code examples, see:
 

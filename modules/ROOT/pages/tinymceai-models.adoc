@@ -139,13 +139,13 @@ Compatibility versions allow {pluginname} to introduce new models and capabiliti
 
 To see available models for a compatibility version:
 
-* **Via API** – Check the `/v1/models` endpoint. The API response includes model capabilities, limits, and availability.
-* **Via Plugin** – Available models are shown in the model selection dropdown when `tinymceai_allow_model_selection` is enabled.
+* **Through the API** – Check the `/v1/models` endpoint. The API response includes model capabilities, limits, and availability.
+* **Through the plugin** – Available models are shown in the model selection dropdown when `tinymceai_allow_model_selection` is enabled.
 
 [[model-capabilities]]
 == Model Capabilities
 
-Different models support different capabilities. Check the model information via the API endpoint or the plugin's model selection UI to see which capabilities are available for each model.
+Different models support different capabilities (such as web search and reasoning). Check the model information through the API endpoint or the plugin model selection UI to see which capabilities are available for each model.
 
 [[web-search]]
 === Web Search
@@ -169,7 +169,7 @@ NOTE: Model names such as `gpt-5`, `claude-4-sonnet`, and similar are examples. 
 [[web-scraping]]
 === Web Scraping
 
-Extract and process content from web pages for analysis and summarization.
+Web scraping extracts and processes content from web pages so the AI can analyze and summarize it.
 
 [[model-limitations]]
 == Model Limitations
@@ -199,7 +199,7 @@ Model descriptions returned by the API are provided in English and may be update
 
 NOTE: Back-end translation handling for model descriptions is planned in a future release. Until then, use the approach described below.
 
-If the application requires translated model descriptions, maintain a translation map in the code keyed by `model.id`, with fallback to the English description from the API for unknown models. This allows new models to work immediately while translations are added at a custom pace.
+If the application requires translated model descriptions (the text returned by the API for each model), maintain a translation map in the code keyed by `model.id`, with fallback to the English description from the API for unknown models. This allows new models to work immediately while translations are added at a custom pace.
 
 [[model-deprecation]]
 === Model Deprecation

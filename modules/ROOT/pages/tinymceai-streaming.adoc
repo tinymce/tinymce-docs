@@ -108,7 +108,7 @@ if (data.event === 'error') {
 [[progress-tracking]]
 == Progress Tracking
 
-Use metadata events to show progress. For service-specific progress tracking examples, see xref:tinymceai-review-plugin.adoc[Review progress and status information].
+Use metadata events to show progress. For service-specific progress tracking examples, see the xref:tinymceai-review-plugin.adoc#reviews-streaming[Review streaming] section.
 
 [[api-reference]]
 == API Reference
@@ -124,5 +124,5 @@ For complete documentation on streaming endpoints, event schemas, and error code
 == Next Steps
 
 * xref:tinymceai-chat.adoc[Learn about Chat] for interactive AI discussions.
-* xref:tinymceai-review-plugin.adoc[Explore Review] for content improvement.
-* xref:tinymceai-actions-plugin.adoc[Discover Quick Actions] for content transformation.
+* xref:tinymceai-review-plugin.adoc[Learn about Review] for content improvement.
+* xref:tinymceai-actions-plugin.adoc[Learn about Quick Actions] for content transformation.

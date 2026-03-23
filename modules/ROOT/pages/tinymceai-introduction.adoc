@@ -17,9 +17,9 @@ liveDemo::tinymceai[]
 [[what-is-tinymce-ai]]
 == What is {pluginname}
 
-{pluginname} is an AI-powered writing assistant that integrates directly into the rich-text editor, {productname}, providing instant text rewriting, summarization, correction, and contextual chat help based on internal style guides. The platform includes automated review tools and enterprise-ready functionality that plugs into existing systems without requiring custom infrastructure.
+{pluginname} is an AI-powered writing assistant that integrates directly into {productname}, providing instant text rewriting, summarization, correction, and contextual chat help based on organizational style guides. It includes automated review tools and enterprise-ready functionality that integrates with existing systems without requiring custom infrastructure.
 
-Teams can implement a full suite of AI writing tools in weeks rather than months, delivering efficient, compliant content workflows that maintain brand consistency and integrate seamlessly with existing document management systems.
+Teams can implement a full suite of AI writing tools quickly, delivering efficient content workflows that maintain brand consistency and integrate smoothly with document management systems.
 
 The core components of {pluginname} are:
 
@@ -38,7 +38,7 @@ There are three main features of {pluginname}. All features can be tested using 
 [[integration-options]]
 == Integration Options
 
-{pluginname} can be integrated with applications through two methods. See xref:tinymceai-integration-options.adoc[Integration Options] for details.
+{pluginname} can be integrated with applications through two methods: the plugin (for the editor UI) or the AI service API (for custom integrations). See xref:tinymceai-integration-options.adoc[Integration Options] for details.
 
 [[permissions]]
 == Permissions
@@ -70,12 +70,12 @@ Conversation data is automatically deleted after 12 months of inactivity, includ
 [[security]]
 === Security
 
-All data is encrypted in transit and at rest with end-to-end encryption. Conversations and attachments are stored in secure cloud infrastructure with fine-grained access control and comprehensive permission systems. Audit Logs are available through our Customer Portal and the API.
+All data is encrypted in transit and at rest with end-to-end encryption. Conversations and attachments are stored in secure cloud infrastructure with fine-grained access control and comprehensive permission systems.
 
 [[on-premises-deployment]]
 == On-Premises Deployment
 
 [NOTE]
 ====
-On-premises deployment is currently in development. Follow {productname} social accounts and our newsletter for updates.
+On-premises deployment is currently in development. Follow {productname} social accounts for updates.
 ====

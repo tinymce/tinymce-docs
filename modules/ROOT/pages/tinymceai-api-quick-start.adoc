@@ -7,7 +7,7 @@
 :description_short: API quick start guide
 :keywords: AI, quick start, API, AI service, tinymceai, setup
 
-The aim of this article is to get users up and running with the {pluginname} service.
+This guide helps users get up and running with the {pluginname} service.
 
 [TIP]
 ====
@@ -24,7 +24,7 @@ To start using the {pluginname} service, follow the steps below:
 * Generate access credentials in the link:https://www.tiny.cloud/my-account/[Customer Portal].
 * Write a script that generates one-time tokens for authorizing end users of the application in {productname} Cloud Services (using access credentials created earlier).
 
-All steps are explained in details below.
+All steps are explained in detail below.
 
 [[get-the-tinymce-ai-license]]
 == Get the {pluginname} license
@@ -47,19 +47,19 @@ image::https://placehold.net/default.png[{pluginname} trial view]
 [[create-token-endpoint]]
 == Create token endpoint
 
-The next step is to create a security token endpoint in the application. This endpoint securely authorizes end users to use {pluginname} features based on their permissions and access rights.
+The next step is to create a security token endpoint in the application backend. That endpoint securely authorizes end users to use {pluginname} features based on their permissions and access rights.
 
 [[writing-your-own-token-endpoint]]
 === Writing your own token endpoint
 
 To create a custom security token endpoint, create access credentials for the selected environment by going to the "Access credentials" tab and clicking the "Create a new access key" button.
 
-Read more in the Creating access credentials section of the Environments management guide.
+See the Creating access credentials section of the Environments management guide for more information.
 
 [[cloud-region]]
 == Cloud region
 
-Cloud Services can reside in either US or EU region or in both. The region is set per subscription and cannot be changed for existing environments. For Custom plan with multi-region, the region can be chosen during environment creation. This topic is addressed in more detail in the Environment management guide.
+Cloud Services can reside in either US or EU region or in both. The region is set per subscription and cannot be changed for existing environments. For Custom plan with multi-region, the region can be chosen during environment creation. The Environment management guide covers this topic in more detail.
 
 [[api-integration]]
 == API Integration
@@ -75,7 +75,7 @@ For feature documentation and API access information, see:
 * xref:tinymceai-actions-plugin.adoc#actions-api[Quick Actions] – Content transformation through the Actions API.
 * xref:tinymceai-streaming.adoc[Streaming] – Real-time AI interactions with code examples.
 
-link:https://tinymceai.api.tiny.cloud/docs[Complete API Documentation] – Full API reference with interactive examples for all endpoints
+link:https://tinymceai.api.tiny.cloud/docs[Complete API Documentation] – Full API reference with interactive examples for all endpoints.
 
 [[next-steps]]
 == Next Steps

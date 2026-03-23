@@ -21,7 +21,7 @@ liveDemo::{plugincode}[]
 [[basic-setup]]
 == Basic setup
 
-To setup the {pluginname} plugin in the editor:
+To setup the {pluginname} plugin in {productname}:
 
 * add `{plugincode}` to the `plugins` option in the editor configuration;
 * configure the `tinymceai_token_provider` option to provide authentication tokens (must return `+{ token: string }+`);

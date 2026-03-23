@@ -41,11 +41,11 @@ A function that returns a Promise resolving to an object with a `+token+` proper
 
 The JWT payload must include these required claims:
 
-* `+iat+` - Issued at time (provided by JWT libraries)
-* `+exp+` - Expiration time (tokens cannot exceed 24 hours; 5-15 minutes recommended)
-* `+aud+` - The {productname} API key
-* `+auth+` - Authentication object (see separate authentication documentation)
-* `+sub+` - Unique user ID
+* `+iat+`: Issued at time (provided by JWT libraries)
+* `+exp+`: Expiration time (tokens cannot exceed 24 hours; 5-15 minutes recommended)
+* `+aud+`: The {productname} API key
+* `+auth+`: Authentication object (see separate authentication documentation)
+* `+sub+`: Unique user ID
 
 *Type:* `+Function+` (`+() => Promise<{ token: string }>+`)
 
@@ -55,8 +55,8 @@ For JWT setup and required claims, see xref:tinymceai-jwt-authentication-intro.a
 
 The token endpoint may return the JWT in different formats. Handle both:
 
-* **JSON response** – Endpoint returns `+{ "token": "eyJ..." }+`. Use `+fetch(url).then(r => r.json())+`.
-* **Plain text response** – Endpoint returns the raw JWT string. Use `+fetch(url).then(r => r.text()).then(token => ({ token }))+`.
+* **JSON response**: Endpoint returns `+{ "token": "eyJ..." }+`. Use `+fetch(url).then(r => r.json())+`.
+* **Plain text response**: Endpoint returns the raw JWT string. Use `+fetch(url).then(r => r.text()).then(token => ({ token }))+`.
 
 .Example: JSON response from custom endpoint
 [source,js]
@@ -472,11 +472,11 @@ Array of review command IDs that define which review types appear in the Review 
 *Type:* `+Array+` of `+String+`
 
 *Valid values:*
-* `+'ai-reviews-proofread'+` – Check grammar, spelling, and punctuation
-* `+'ai-reviews-improve-clarity'+` – Improve logical structure and precision
-* `+'ai-reviews-improve-readability'+` – Adjust sentence structure and word choice
-* `+'ai-reviews-change-length'+` – Shorten or lengthen text
-* `+'ai-reviews-change-tone'+` – Modify tone and style
+* `+'ai-reviews-proofread'+`: Check grammar, spelling, and punctuation
+* `+'ai-reviews-improve-clarity'+`: Improve logical structure and precision
+* `+'ai-reviews-improve-readability'+`: Adjust sentence structure and word choice
+* `+'ai-reviews-change-length'+`: Shorten or lengthen text
+* `+'ai-reviews-change-tone'+`: Modify tone and style
 
 *Default value:*
 [source,js]

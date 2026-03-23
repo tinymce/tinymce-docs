@@ -54,8 +54,8 @@ eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyLTQ4NzI5IiwibmFtZSI6Ikplc3N
 
 The JWT header identifies the token type and specifies the cryptographic algorithm used to sign the token. For {pluginname}, the header must be a JSON object containing:
 
-* `alg` – The signing algorithm used to create the token signature. See xref:#supported-algorithms[Supported Algorithms] for the list of supported algorithms. {companyname} recommends using `RS256`.
-* `typ` – The token type identifier, which must always be `JWT`
+* `alg`: The signing algorithm used to create the token signature. See xref:#supported-algorithms[Supported Algorithms] for the list of supported algorithms. {companyname} recommends using `RS256`.
+* `typ`: The token type identifier, which must always be `JWT`
 
 The header is Base64URL-encoded to form the first part of the JWT token.
 
@@ -78,15 +78,15 @@ The JWT payload is a JSON object containing claims that identify the user, speci
 
 The following properties **must** be included in the payload:
 
-* `aud` – The API key that has entitlements to use {pluginname}.
-* `sub` – The user ID. This should be a unique identifier for the user making the request. This identifier is used to lock down conversation history, AI-generated content, and other user-specific data to individual users, ensuring privacy and data isolation.
-* `iat` – "Issued at". Ensure `iat` is present and contains a correct time stated in seconds. Some JWT implementations do not include it by default. Sometimes the system time may also be invalid, causing issues.
-* `exp` – Token expiration time. Identifies the expiration time after which the JWT will not be accepted. {pluginname} only accepts tokens no older than 24 hours. This field can be used to shorten the token validity time.
-* `auth` – The `auth.ai.permissions` array inside is required. This defines which AI features the user can access. See xref:#permissions[Permissions] below for details.
+* `aud`: The API key that has entitlements to use {pluginname}.
+* `sub`: The user ID. This should be a unique identifier for the user making the request. This identifier is used to lock down conversation history, AI-generated content, and other user-specific data to individual users, ensuring privacy and data isolation.
+* `iat`: "Issued at". Ensure `iat` is present and contains a correct time stated in seconds. Some JWT implementations do not include it by default. Sometimes the system time may also be invalid, causing issues.
+* `exp`: Token expiration time. Identifies the expiration time after which the JWT will not be accepted. {pluginname} only accepts tokens no older than 24 hours. This field can be used to shorten the token validity time.
+* `auth`: The `auth.ai.permissions` array inside is required. This defines which AI features the user can access. See xref:#permissions[Permissions] below for details.
 
 The properties that are optional:
 
-* `user` – User information. Providing `name` and `email` is recommended for better user experience and debugging.
+* `user`: User information. Providing `name` and `email` is recommended for better user experience and debugging.
 
 [[example-token-payload]]
 ==== Example Token Payload
@@ -188,8 +188,8 @@ For more advanced token request customization, see xref:tinymceai-with-jwt-authe
 
 The token provider must return an object with a `+token+` property: `+{ token: string }+`. The endpoint may respond in either format:
 
-* **JSON response** – Endpoint returns `+{ "token": "eyJ..." }+`. Use `+response.json()+` and return `+{ token: data.token }+`.
-* **Plain text response** – Endpoint returns the raw JWT string. Use `+response.text()+` and return `+{ token }+`.
+* **JSON response**: Endpoint returns `+{ "token": "eyJ..." }+`. Use `+response.json()+` and return `+{ token: data.token }+`.
+* **Plain text response**: Endpoint returns the raw JWT string. Use `+response.text()+` and return `+{ token }+`.
 
 .Example: JSON response
 [source,json]
@@ -216,8 +216,8 @@ To set up JWT authentication for {pluginname}:
 
 For step-by-step implementation instructions with complete code examples, see:
 
-* xref:tinymceai-with-jwt-authentication-nodejs.adoc[JWT authentication (Node.js)] – Complete Node.js implementation guide
-* xref:tinymceai-with-jwt-authentication-php.adoc[JWT authentication (PHP)] – Complete PHP implementation guide
+* xref:tinymceai-with-jwt-authentication-nodejs.adoc[JWT authentication (Node.js)]: Complete Node.js implementation guide
+* xref:tinymceai-with-jwt-authentication-php.adoc[JWT authentication (PHP)]: Complete PHP implementation guide
 
 [[tools]]
 == Tools

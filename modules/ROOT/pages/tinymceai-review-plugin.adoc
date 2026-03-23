@@ -49,11 +49,11 @@ The feature comes with several review commands:
 |===
 |Command name |Command description |Additional information
 
-|**Proofread** |Check the text for errors in grammar, spelling and punctuation |—
+|**Proofread** |Check the text for errors in grammar, spelling and punctuation |
 
-|**Improve clarity** |Improve the logical structure and precision for a clearer message |—
+|**Improve clarity** |Improve the logical structure and precision for a clearer message |
 
-|**Improve readability** |Adjust sentence structure and word choice to improve readability |—
+|**Improve readability** |Adjust sentence structure and word choice to improve readability |
 
 |**Adjust length** |Shorten or lengthen the text as needed |_Longer_ and _Shorter_ options available
 
@@ -84,12 +84,12 @@ Reviews use streaming output with Server-Sent Events for real-time feedback as s
 
 {pluginname} provides built-in system reviews for comprehensive content analysis through the API. These correspond to the review commands available in the plugin UI:
 
-* **Correctness** (corresponds to "Proofread" in plugin) – Fix grammar, spelling, and factual errors. See https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for the correctness endpoint.
-* **Clarity** (corresponds to "Improve clarity" in plugin) – Improve sentence structure, word choice, and logical flow. See https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for the clarity endpoint.
-* **Readability** (corresponds to "Improve readability" in plugin) – Enhance paragraph structure, transitions, and reading level. See https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for the readability endpoint.
-* **Length Optimization** (corresponds to "Adjust length" in plugin) – Expand or condense content while preserving key information. See https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for the length optimization endpoint.
-* **Tone Adjustment** (corresponds to "Adjust tone and style" in plugin) – Modify tone to casual, direct, friendly, confident, or professional styles. See https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for tone adjustment endpoints.
-* **Translation** – Translate content between languages with cultural adaptation. (Note: Translation is not currently available in the plugin UI, but is available through the API.) See https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for the translation endpoint.
+* **Correctness** (corresponds to "Proofread" in plugin): Fix grammar, spelling, and factual errors. See https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for the correctness endpoint.
+* **Clarity** (corresponds to "Improve clarity" in plugin): Improve sentence structure, word choice, and logical flow. See https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for the clarity endpoint.
+* **Readability** (corresponds to "Improve readability" in plugin): Enhance paragraph structure, transitions, and reading level. See https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for the readability endpoint.
+* **Length Optimization** (corresponds to "Adjust length" in plugin): Expand or condense content while preserving key information. See https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for the length optimization endpoint.
+* **Tone Adjustment** (corresponds to "Adjust tone and style" in plugin): Modify tone to casual, direct, friendly, confident, or professional styles. See https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for tone adjustment endpoints.
+* **Translation**: Translate content between languages with cultural adaptation. (Note: Translation is not currently available in the plugin UI, but is available through the API.) See https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for the translation endpoint.
 
 [[reviews-custom-reviews]]
 === Custom Reviews
@@ -110,19 +110,19 @@ Reviews use Server-Sent Events (SSE) for real-time streaming results. See the xr
 
 For complete endpoint documentation, request/response schemas, authentication details, and additional parameters, see:
 
-* **https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API Reference]** – Full documentation for system and custom reviews endpoints with interactive examples
+* **https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API Reference]**: Full documentation for system and custom reviews endpoints with interactive examples
 
 The REST API documentation includes examples for:
 
-* Basic grammar review - see https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API]
-* Clarity improvement - see https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API]
-* Tone adjustment - see https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API]
-* Translation reviews - see https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API]
-* Custom reviews with custom prompts - see https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API]
-* Streaming responses - see https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API]
+* Basic grammar review: see https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API]
+* Clarity improvement: see https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API]
+* Tone adjustment: see https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API]
+* Translation reviews: see https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API]
+* Custom reviews with custom prompts: see https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API]
+* Streaming responses: see https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API]
 
 [[related-features]]
 == Related Features
 
-* xref:tinymceai-chat.adoc[AI chat] – For interactive discussions with document analysis and context.
-* xref:tinymceai-actions-plugin.adoc[Quick actions] – For fast, stateless content transformations.
+* xref:tinymceai-chat.adoc[AI chat]: For interactive discussions with document analysis and context.
+* xref:tinymceai-actions-plugin.adoc[Quick actions]: For fast, stateless content transformations.

@@ -19,9 +19,9 @@ Real-time AI interactions using Server-Sent Events (SSE) for immediate feedback 
 
 Different AI services provide different types of streaming events. For service-specific event details, see:
 
-* xref:tinymceai-chat.adoc#conversations-streaming[Chat] – Interactive AI discussions with text streaming, web search sources, and reasoning.
-* xref:tinymceai-review-plugin.adoc#reviews-streaming[Review] – Content improvement suggestions and review progress.
-* xref:tinymceai-actions-plugin.adoc#actions-streaming[Quick Actions] – Content transformations and action progress.
+* xref:tinymceai-chat.adoc#conversations-streaming[Chat]: Interactive AI discussions with text streaming, web search sources, and reasoning.
+* xref:tinymceai-review-plugin.adoc#reviews-streaming[Review]: Content improvement suggestions and review progress.
+* xref:tinymceai-actions-plugin.adoc#actions-streaming[Quick Actions]: Content transformations and action progress.
 
 [[basic-implementation]]
 == Basic Implementation
@@ -80,9 +80,9 @@ while (true) {
 
 For detailed event handling examples specific to each service, see:
 
-* xref:tinymceai-chat.adoc#conversations-streaming[Chat] – Text streaming, web search sources, reasoning, and document modifications.
-* xref:tinymceai-review-plugin.adoc#reviews-streaming[Review] – Review suggestions and progress tracking.
-* xref:tinymceai-actions-plugin.adoc#actions-streaming[Quick Actions] – Content transformations and action progress.
+* xref:tinymceai-chat.adoc#conversations-streaming[Chat]: Text streaming, web search sources, reasoning, and document modifications.
+* xref:tinymceai-review-plugin.adoc#reviews-streaming[Review]: Review suggestions and progress tracking.
+* xref:tinymceai-actions-plugin.adoc#actions-streaming[Quick Actions]: Content transformations and action progress.
 
 [[error-handling]]
 == Error Handling
@@ -115,10 +115,10 @@ Use metadata events to show progress. For service-specific progress tracking exa
 
 For complete documentation on streaming endpoints, event schemas, and error codes, see:
 
-* **https://tinymceai.api.tiny.cloud/docs[Complete API Documentation]** – Interactive API reference with streaming implementation details.
-* **https://tinymceai.api.tiny.cloud/docs#tag/Conversations[Conversations API]** – Streaming events for conversations.
-* **https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API]** – Streaming events for reviews.
-* **https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API]** – Streaming events for actions.
+* **https://tinymceai.api.tiny.cloud/docs[Complete API Documentation]**: Interactive API reference with streaming implementation details.
+* **https://tinymceai.api.tiny.cloud/docs#tag/Conversations[Conversations API]**: Streaming events for conversations.
+* **https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API]**: Streaming events for reviews.
+* **https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API]**: Streaming events for actions.
 
 [[next-steps]]
 == Next Steps

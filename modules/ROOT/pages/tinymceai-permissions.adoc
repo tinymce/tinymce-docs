@@ -40,10 +40,10 @@ For information about JWT authentication setup and required claims, see xref:tin
 [[use-cases]]
 == Use Cases
 
-* **Role-based access** – Different user roles have different AI capabilities
-* **Cost control** – Limit access to expensive models or features
-* **Feature gating** – Enable specific AI features for premium users
-* **Security** – Restrict access to sensitive AI operations
+* **Role-based access**: Different user roles have different AI capabilities
+* **Cost control**: Limit access to expensive models or features
+* **Feature gating**: Enable specific AI features for premium users
+* **Security**: Restrict access to sensitive AI operations
 
 [[permission-format]]
 == Permission Format
@@ -258,8 +258,8 @@ When a user lacks required permissions, the API returns a `403 Forbidden` error 
 [[related-features]]
 == Related Features
 
-* xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication] – JWT authentication setup and required claims.
-* xref:tinymceai-models.adoc[AI Models] – Model selection and capabilities.
-* xref:tinymceai-chat.adoc[Chat] – Interactive AI discussions.
-* xref:tinymceai-review-plugin.adoc[Review] – Content improvement.
-* xref:tinymceai-actions-plugin.adoc[Quick Actions] – Content transformation.
+* xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication]: JWT authentication setup and required claims.
+* xref:tinymceai-models.adoc[AI Models]: Model selection and capabilities.
+* xref:tinymceai-chat.adoc[Chat]: Interactive AI discussions.
+* xref:tinymceai-review-plugin.adoc[Review]: Content improvement.
+* xref:tinymceai-actions-plugin.adoc[Quick Actions]: Content transformation.

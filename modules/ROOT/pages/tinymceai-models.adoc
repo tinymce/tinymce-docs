@@ -121,8 +121,21 @@ The agent model (`agent-1`) automatically selects the best underlying model base
 
 Models can be configured in two ways:
 
-* **Plugin Configuration**: Use `tinymceai_default_model` and `tinymceai_allow_model_selection` options. See xref:tinymceai-chat.adoc#model-selection-configuration[Chat model configuration] for details.
+* **Plugin Configuration**: Use `tinymceai_default_model` and `tinymceai_allow_model_selection` options. See xref:tinymceai.adoc#options-chat[Chat configuration options] for full details.
 * **API Configuration**: Specify the model directly in API requests for more control. See xref:tinymceai-models.adoc#api-examples[API Examples] below.
+
+.Example: Set default model in plugin configuration
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to the HTML
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_default_model: 'gemini-2-5-flash',
+  tinymceai_allow_model_selection: true,
+  tinymceai_token_provider: () => fetch('/api/token').then(r => r.json())
+});
+----
 
 [[model-compatibility-versions]]
 == Model Compatibility Versions
@@ -139,8 +152,8 @@ Compatibility versions allow {pluginname} to introduce new models and capabiliti
 
 To see available models for a compatibility version:
 
-* **Through the API**: Check the `/v1/models` endpoint. The API response includes model capabilities, limits, and availability.
-* **Through the plugin**: Available models are shown in the model selection dropdown when `tinymceai_allow_model_selection` is enabled.
+* **Through the plugin**: Available models are shown in the model selection dropdown when `tinymceai_allow_model_selection` is enabled. See xref:tinymceai.adoc#tinymceai_allow_model_selection[`tinymceai_allow_model_selection`] for configuration.
+* **Through the API**: Check the `GET /v1/models/{version}` endpoint. The API response includes model capabilities, limits, and availability. See xref:tinymceai-models.adoc#model-information[Model Information] for an example.
 
 [[model-capabilities]]
 == Model Capabilities
@@ -169,7 +182,7 @@ NOTE: Model names such as `gpt-5`, `claude-4-sonnet`, and similar are examples. 
 [[web-scraping]]
 === Web Scraping
 
-Web scraping extracts and processes content from web pages so the AI can analyze and summarize it.
+Web scraping extracts and processes content from web pages so the AI can analyze and summarize it. When users add web resources as context in xref:tinymceai-chat.adoc#adding-context-to-conversations[Chat], the service fetches and parses the page content for the AI to use. Web scraping supports standard web pages and is subject to xref:tinymceai-limits.adoc#rate-limits[rate limits] for web resource requests.
 
 [[model-limitations]]
 == Model Limitations
@@ -179,6 +192,8 @@ Web scraping extracts and processes content from web pages so the AI can analyze
 
 Files are limited to 7MB each (PDF, DOCX, PNG, JPEG, Markdown, HTML, Plain text). Up to 100 files can be uploaded per conversation with a total size limit of 30MB. PDF files are limited to 100 pages total across all PDFs in a conversation.
 
+For optimization tips and the full file limits reference, see xref:tinymceai-limits.adoc#file-limits[File limits] in the Limits documentation.
+
 [[model-specific-file-limits]]
 ==== Model-specific file limits
 
@@ -187,12 +202,12 @@ Anthropic and agent models may use files up to 5MB each.
 [[content-moderation]]
 === Content Moderation
 
-All models include moderation for inappropriate content, harmful instructions, personal information, copyrighted material, misinformation, sensitive topics, and security threats.
+All models include moderation for inappropriate content, harmful instructions, personal information, copyrighted material, misinformation, sensitive topics, and security threats. Requests containing content that triggers moderation may be rejected with an error response. Moderation is applied automatically and cannot be disabled.
 
 [[model-descriptions]]
 === Model Descriptions
 
-Model descriptions returned by the API are provided in English and may be updated over time to reflect model improvements or capability changes.
+Model descriptions returned by the API are provided in English and may be updated over time to reflect model improvements or capability changes. For applications that require translated model descriptions, see xref:tinymceai-models.adoc#translation-and-localization[Translation and Localization] below.
 
 [[translation-and-localization]]
 === Translation and Localization

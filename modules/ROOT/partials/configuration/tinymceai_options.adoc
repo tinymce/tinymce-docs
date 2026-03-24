@@ -421,10 +421,10 @@ tinymce.init({
 
 Array of custom command objects rendered in the Custom Commands menu item. Each item can be type `+action+` (quick action with immediate preview) or type `+chat+` (opens in chat).
 
-* `+title+` - Text shown in the menu and chat history
-* `+prompt+` - The actual prompt sent to the AI
-* `+type+` - `+'action'+` or `+'chat'+`
-* `+model+` - Required for `+action+` type only
+* `+title+`: Text shown in the menu and chat history
+* `+prompt+`: The actual prompt sent to the AI
+* `+type+`: `+'action'+` or `+'chat'+`
+* `+model+`: Required for `+action+` type only
 
 *Type:* `+Array+` of `+Object+`
 
@@ -472,6 +472,7 @@ Array of review command IDs that define which review types appear in the Review 
 *Type:* `+Array+` of `+String+`
 
 *Valid values:*
+
 * `+'ai-reviews-proofread'+`: Check grammar, spelling, and punctuation
 * `+'ai-reviews-improve-clarity'+`: Improve logical structure and precision
 * `+'ai-reviews-improve-readability'+`: Adjust sentence structure and word choice

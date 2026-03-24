@@ -21,7 +21,11 @@ liveDemo::tinymceai-actions[]
 
 Actions are fast, stateless operations that transform content. Unlike Reviews that provide suggestions for review, Actions run a transformation and display the result in a preview interface where users can accept or reject before changes are applied.
 
-**When to use Actions vs Reviews:** Use Actions when transforming a selection or small section of text (fix grammar, translate, adjust tone). Use Reviews when analyzing entire documents for quality improvements and getting suggestions without automatically changing the content.
+**When to use Actions vs Reviews?**
+
+* *Actions*: Transform a selection or small section of text (fix grammar, translate, adjust tone).
+* *Reviews*: Analyze entire documents for quality improvements and get suggestions without automatically changing the content.
+
 
 image::https://placehold.net/default.png[{pluginname} quick actions showing AI-powered suggestions and Q&A functionality]
 

@@ -128,7 +128,6 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === New `view_show` option to display a specified view on initialization.
 // #TINY-11967
 
-Previously, integrators could not configure the editor to open with a specific view (such as Suggested Edits or Revision History) displayed on initialization. This was needed when users would only need to resolve suggested changes or review content, or when the current user had permission only to review changes.
 
 In {productname} {release-version}, the new xref:custom-view.adoc#view_show[`+view_show+`] option allows specifying which view to display when the editor is initialized. The option behaves similarly to `+sidebar_show+` but takes precedence for views; both sidebars and views can be configured to show on init.
 

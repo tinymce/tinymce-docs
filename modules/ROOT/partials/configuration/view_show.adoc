@@ -1,7 +1,7 @@
 [[view_show]]
 == `+view_show+`
 
-This option allows the specified view to be displayed on editor initialization. It behaves similarly to xref:customsidebar.adoc#sidebar_show[`+sidebar_show+`] but applies to views and takes precedence when both are configured. Views and sidebars can both be set to show on init.
+This option allows the specified view to be displayed on editor initialization. It behaves similarly to xref:customsidebar.adoc#sidebar_show[`+sidebar_show+`] but applies to views and takes precedence when both are configured. Views and sidebars can both be set to show on init, with the sidebar shown once the view is closed.
 
 The value must match the name of a registered view. Premium plugins that register views include:
 

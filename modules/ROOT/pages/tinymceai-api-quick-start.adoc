@@ -42,7 +42,7 @@ After signing up, access to the link:https://www.tiny.cloud/my-account/[customer
 
 Log in to the link:https://www.tiny.cloud/my-account/[Customer Portal] and navigate to link:https://www.tiny.cloud/my-account/jwt/["JWT Keys"].
 
-image::https://placehold.net/default.png[{pluginname} trial view]
+image::https://placehold.net/default.png[JWT Keys page showing Secure Keys List, Generate New Keypair, and Import Public Key sections]
 
 [[create-token-endpoint]]
 == Create token endpoint
@@ -52,14 +52,12 @@ The next step is to create a security token endpoint in the application backend.
 [[writing-your-own-token-endpoint]]
 === Writing your own token endpoint
 
-To create a custom security token endpoint, create access credentials for the selected environment by going to the "Access credentials" tab and clicking the "Create a new access key" button.
-
-See the Creating access credentials section of the Environments management guide for more information.
+To create a custom security token endpoint, generate a keypair in the link:https://www.tiny.cloud/my-account/jwt/[JWT Keys] area of the Customer Portal. In the "Generate New Keypair" section, enter a description, select the key length, and click "Add Key". Alternatively, use "Import Public Key" to add an existing key.
 
 [[cloud-region]]
 == Cloud region
 
-Cloud Services can reside in either US or EU region or in both. The region is set per subscription and cannot be changed for existing environments. For Custom plan with multi-region, the region can be chosen during environment creation. The Environment management guide covers this topic in more detail.
+Cloud Services can reside in either US or EU region or in both. The region is set per subscription and cannot be changed for existing environments. For Custom plan with multi-region, the region can be chosen during environment creation.
 
 [[api-integration]]
 == API Integration

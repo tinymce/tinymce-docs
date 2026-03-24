@@ -9,9 +9,9 @@
 
 The {pluginname} Chat is a conversational AI that facilitates rich, multi-turn interactions between users and an AI Assistant for content creation and editing. It provides context setting, model selection, chat history, and capabilities for web search and reasoning.
 
-The Chat feature is available as a plugin UI and through the xref:tinymceai-chat.adoc#conversations-api[Conversations API]. This page covers both:
+The Chat feature is available as a plugin UI and through the Conversations API. This page covers both:
 
-* Plugin sections describe user-facing features and configuration.
+* Plugin sections describe user-facing features and configuration (xref:tinymceai.adoc#options-chat[Chat configuration]).
 * API sections cover REST API access (starting at xref:tinymceai-chat.adoc#conversations-api[Conversations API]).
 
 [[using-chat]]
@@ -24,7 +24,7 @@ image::https://placehold.net/default.png[{pluginname} Chat interface showing the
 
 {pluginname} operates directly within the context of the document. Users can ask questions about specific sections, request a full-document proofreading, and more.
 
-By enabling xref:tinymceai-chat.adoc#web-search[Web search] or xref:tinymceai-chat.adoc#reasoning[Reasoning], the chat capabilities can be extended — allowing the chat to look up information online and tackle complex tasks step by step.
+By enabling image:icons-premium/web-search.svg[Web search icon,24px] xref:tinymceai-chat.adoc#web-search[Web search] or image:icons-premium/reasoning.svg[Reasoning icon,24px] xref:tinymceai-chat.adoc#reasoning[Reasoning], the chat capabilities can be extended, allowing the chat to look up information online and tackle complex tasks step by step.
 
 [[making-changes-to-the-content]]
 === Making changes to the content

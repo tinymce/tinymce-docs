@@ -9,9 +9,9 @@
 
 Quick actions simplify routine content transformations by offering one-click AI-powered suggestions directly within the editor. This feature enhances speed, relevance, and usability, particularly for repeatable or simple tasks. The feature comes with a window interface for most actions; some actions (such as Explain or Summarize) open the xref:tinymceai-chat.adoc[Chat] instead and start the conversation with a pre-filled prompt.
 
-The Quick Actions feature is available as a plugin UI and through the xref:tinymceai-actions-plugin.adoc#actions-api[Actions API]. This page covers both:
+The Quick Actions feature is available as a plugin UI and through the Actions API. This page covers both:
 
-* Plugin sections describe user-facing features and configuration.
+* Plugin sections describe user-facing features and configuration (xref:tinymceai.adoc#options-quickactions[Quick Actions configuration]).
 * API sections cover REST API access (starting at xref:tinymceai-actions-plugin.adoc#actions-api[Actions API]).
 
 [[demo]]

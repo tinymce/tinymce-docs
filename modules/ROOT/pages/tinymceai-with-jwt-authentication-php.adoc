@@ -50,9 +50,9 @@ The `sub` claim identifies the user. This should be a unique identifier for the 
 The `iat` represents the issue timestamp, specified as the number of seconds. For example, to set the issue time to the current timestamp, calculate the issue time as the current timestamp divided by 1000.
 
 .Example
-[source,json]
+[source,php]
 ----
-iat: Math.floor(Date.now() / 1000), // Issue timestamp
+"iat" => time(),  // Issue timestamp
 ----
 
 `+exp+` _(required)_::
@@ -61,9 +61,9 @@ iat: Math.floor(Date.now() / 1000), // Issue timestamp
 The `exp` represents the expiration timestamp, specified as the number of seconds. For example, to set a validity period of 10 minutes, calculate the expiration time as the current timestamp plus 600 seconds.
 
 .Example
-[source,json]
+[source,php]
 ----
-exp: Math.floor(Date.now() / 1000) + (60 * 10) // Expiration time (10 minutes)
+"exp" => time() + (60 * 10),  // Expiration time (10 minutes)
 ----
 
 `+auth+` _(required)_::
@@ -145,11 +145,11 @@ $payload = array(
 
 try {
     // Tokens are signed with the RS256 algorithm using the private key
-    $privateKey = <<<EOD
-    -----BEGIN PRIVATE KEY-----
-    {Your private PKCS8 key goes here}
-    -----END PRIVATE KEY-----
-    EOD;
+    $privateKey = <<<'EOD'
+-----BEGIN PRIVATE KEY-----
+{Your private PKCS8 key goes here}
+-----END PRIVATE KEY-----
+EOD;
     $token = JWT::encode($payload, $privateKey, 'RS256');
 
     http_response_code(200);

@@ -7,9 +7,78 @@
 :pluginname: TinyMCE AI
 :plugincode: tinymceai
 
-{pluginname} requires JWT (JSON Web Token) authentication when using the Tiny Cloud service. JWT authentication provides secure, user-specific access to {pluginname} features. Each JWT token contains claims that identify the user and specify which AI features they can access.
+{pluginname} requires JWT (JSON Web Token) authentication when using the {cloudname} service. JWT authentication provides secure, user-specific access to {pluginname} features. Each JWT token contains claims that identify the user and specify which AI features they can access.
 
 {productname} recommends using the libraries listed on link:https://www.jwt.io/libraries[jwt.io/libraries] to create JWT tokens. These libraries support the algorithms required by {pluginname}. For details on supported algorithms, see xref:#supported-algorithms[Supported Algorithms].
+
+[[trial-demo-identity-service]]
+== Trial: demo identity service
+
+During a {cloudname} trial, a demo identity service is available for the {pluginname} plugin. This allows trying the plugin without setting up a custom token endpoint, for the duration of the trial. The demo service assigns a random session and user ID to the end user, then generates a JWT for that user. This prevents users from viewing each other's conversation history.
+
+[[trial-quick-start]]
+=== Quick start
+
+The following is the simplest way to use the demo identity service. Replace `{apiKey}` with the trial API key from the link:{accountpageurl}[Customer Portal].
+
+[NOTE]
+====
+In production, the user session should be scoped to the page, not a specific TinyMCE instance. This example places it in the `tinymceai_token_provider` option for ease of use. If there are multiple TinyMCE instances on the page, this may cause unexpected behavior regarding users. In that case, run the session fetch only once per page.
+====
+
+[source,js]
+----
+const apiKey = 'no-api-key'; // Replace with the trial API key from the Customer Portal
+
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_token_provider: async () => {
+    // Step 1: Set up a random session
+    await fetch(`https://demo.api.tiny.cloud/1/${apiKey}/auth/random`, { method: "POST", credentials: "include" }).then((resp) => resp.json());
+
+    // Step 2: Get a JWT
+    const jwtRes = await fetch(`https://demo.api.tiny.cloud/1/${apiKey}/jwt/tinymceai`, { credentials: "include" });
+    const token = await jwtRes.text();
+    return { token };
+  }
+});
+----
+
+[[trial-realistic-usage]]
+=== Realistic usage
+
+In production, user and session management typically happens at the page level. This example gives a more realistic pattern for using the demo identity service's two endpoints:
+
+[source,js]
+----
+// Step 1: Set up session - this should be part of the application's user management process. We simulate that here by creating a session for a random user.
+const apiKey = 'no-api-key'; // Replace with the trial API key from the Customer Portal
+const isLoggedIn = fetch(`https://demo.api.tiny.cloud/1/${apiKey}/auth/random`, { method: "POST", credentials: "include" });
+
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_token_provider: async () => {
+    // Step 2: Ensure session exists, then fetch the JWT
+    return isLoggedIn.then(() =>
+      fetch(`https://demo.api.tiny.cloud/1/${apiKey}/jwt/tinymceai`, { credentials: "include" })
+        .then(resp => resp.text())
+        .then(token => ({ token }))
+    );
+  }
+});
+----
+
+[[trial-moving-to-production]]
+=== Moving to production
+
+To move from the demo identity service to a production system:
+
+. Replace the session call with your own user management. If there is no concept of users, generate a randomized identifier per session or page so end users do not share conversation history.
+. Set up a JWT endpoint that creates JWTs as described in this guide. Replace the JWT fetch with a call to your endpoint. See xref:tinymceai-with-jwt-authentication-nodejs.adoc[Node.js] or xref:tinymceai-with-jwt-authentication-php.adoc[PHP] for implementation guides.
 
 [[token-endpoint-overview]]
 == Token Endpoint Overview
@@ -96,7 +165,7 @@ The example below presents a complete token payload with access to all AI featur
 [source,json]
 ----
 {
-  "aud": "your-api-key",
+  "aud": "no-api-key",
   "iat": 1511963669,
   "exp": 1511967269,
   "sub": "user-123",
@@ -161,7 +230,7 @@ The token endpoint will be requested:
 [[simple-token-request]]
 === Simple Usage
 
-[source,javascript]
+[source,js]
 ----
 tinymce.init({
   selector: 'textarea',

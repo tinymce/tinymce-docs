@@ -125,6 +125,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== New `view_show` option to display a specified view on initialization.
+// #TINY-11967
+
+
+In {productname} {release-version}, the new xref:custom-view.adoc#view_show[`+view_show+`] option allows specifying which view to display when the editor is initialized. The option behaves similarly to `+sidebar_show+` but takes precedence for views; both sidebars and views can be configured to show on init.
+
 
 [[changes]]
 == Changes

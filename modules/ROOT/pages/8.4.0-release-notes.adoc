@@ -125,6 +125,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== New `view_show` option to display a specified view on initialization.
+// #TINY-11967
+
+
+In {productname} {release-version}, the new xref:custom-view.adoc#view_show[`+view_show+`] option allows specifying which view to display when the editor is initialized. The option behaves similarly to `+sidebar_show+` but takes precedence for views; both sidebars and views can be configured to show on init.
+
 
 [[changes]]
 == Changes
@@ -157,6 +163,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // #TINY-vwxyz1
 
 // CCFR here.
+=== Directionality of Hebrew was incorrect
+// #TINY-13667
+
+Previously, right-to-left (RTL) directionality was not correctly set for Hebrew in the language pack. This caused the editor to render the wrong directionality when Hebrew was set as the language.
+
+In {productname} {release-version}, this issue has been addressed by ensuring that the directionality is correctly set for Hebrew in the language pack.
 
 === Bundled content CSS is now loaded into preview iframes
 // #TINY-13190

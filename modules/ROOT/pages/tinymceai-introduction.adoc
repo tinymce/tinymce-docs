@@ -24,16 +24,21 @@ Teams can implement a full suite of AI writing tools quickly, delivering efficie
 The core components of {pluginname} are:
 
 * **xref:introduction-to-tinymce.adoc[{productname}]**: A modern rich text editor with dozens of features that improve writing workflows, including collaboration.
-* **xref:tinymceai-api-overview.adoc[AI service]**: A state-of-the-art back-end AI engine that incorporates multiple models and delivers high-quality content. *Currently available in Cloud setup only.* See xref:tinymceai-introduction.adoc#on-premises-deployment[On-Premises Deployment] for deployment options.
+* **xref:tinymceai-api-overview.adoc[AI service]**: A state-of-the-art back-end AI engine that incorporates multiple models and delivers high-quality content. *The hosted AI service is currently available in Cloud setup only.*
+
+include::partial$misc/tinymceai-on-premises-early-access-note.adoc[]
 
 [[features]]
 == {pluginname} features
 
-There are three main features of {pluginname}. All features can be tested using the free trial.
+There are three main features of {pluginname}.
 
 * xref:tinymceai-chat.adoc[**Chat**]: Interactive AI chats with history and persistent context.
 * xref:tinymceai-review-plugin.adoc[**Review**]: Content analysis and proofreading, optimized for larger content.
 * xref:tinymceai-actions-plugin.adoc[**Actions**]: Fast, stateless operations for specific tasks.
+
+[NOTE]
+Existing customers on paid plans can request a full featured free trial through the link:{accountpageurl}[Customer Portal].
 
 [[integration-options]]
 == Integration Options
@@ -53,10 +58,7 @@ Developers can control access to AI features, models, and capabilities based on 
 
 All data stored by {pluginname} follows the region settings of the {productname} Cloud Services environment, ensuring compliance with data residency requirements and optimal performance for the geographic location.
 
-[IMPORTANT]
-====
-Data sent to LLM providers for processing is currently processed in the US region, regardless of the Cloud Services environment region.
-====
+NOTE: Data sent to LLM providers for processing is currently handled in the US region, regardless of the Cloud Services environment region. {productname} does not offer separate LLM processing regions to choose from.
 
 [[data-retention-policy]]
 === Data Retention Policy
@@ -77,7 +79,4 @@ All data is encrypted in transit and at rest with end-to-end encryption. Convers
 
 On-premises deployment allows the AI service to run within an organization's infrastructure, giving teams more control over data and infrastructure.
 
-[NOTE]
-====
-On-premises deployment is currently in development. link:{contactpage}[Contact {supportname}] for availability updates and timeline information.
-====
+include::partial$misc/tinymceai-on-premises-early-access-note.adoc[]

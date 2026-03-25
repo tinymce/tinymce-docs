@@ -98,31 +98,34 @@ By default, the Quick Actions feature includes several built-in actions that spe
 Custom actions can be added to the list, and default actions can be removed or reordered by configuring `tinymceai_quickactions_menu`. See xref:tinymceai-actions-plugin.adoc#configuring-quick-actions-menu[Configuring Quick Actions menu].
 
 [[quick-actions-reference-table]]
-The following table lists built-in Quick Actions. The **Editor command** column is the menu label. The **API action** column is the identifier: for preview actions it is the `actionName` segment in `+/v1/actions/system/{actionName}/calls+` (see xref:tinymceai-actions-plugin.adoc#actions-api[Actions API]); for Chat commands it is the prompt id used with the xref:tinymceai-chat.adoc[Conversations API], not a system `actionName`. Configure the Translate submenu in the UI with `tinymceai_languages`.
+The following table lists built-in Quick Actions. The **Editor command** column is the menu label. The **Menu or control ID** column lists values used in `tinymceai_quickactions_menu`, `tinymceai_quickactions_chat_prompts`, `tinymceai_quickactions_change_tone_menu`, and the toolbar when adding individual controls (see xref:tinymceai-actions-plugin.adoc#configuring-quick-actions-menu[Configuring Quick Actions menu]). The **System `actionName` or quick-action prompt id** column is the service identifier: for preview actions it is the `actionName` path segment in `+/v1/actions/system/{actionName}/calls+` (see xref:tinymceai-actions-plugin.adoc#actions-api[Actions API]); for Chat commands it is the built-in quick-action prompt id (`explain`, `summarize`, `highlight-key-points`) used when opening xref:tinymceai-chat.adoc[Chat] with a pre-filled prompt—not a system `actionName` and not sent on the system actions path.
 
-[cols="1,2,4,^,^",options="header"]
+[cols="1,3,2,3,1,1",options="header"]
 |===
-|Editor command |API action |Description |Editor UI |API
+|Editor command |Menu or control ID |System `actionName` or quick-action prompt id |Description |Editor UI |API
 
-|**Explain** |`explain` |Opens Chat with the selected text and a pre-filled prompt. Uses the Conversations API, not the system actions path. |✓ |—
+|**Explain** |`ai-chat-explain` |`explain` |Opens Chat with the selected text and a pre-filled prompt. Uses the Conversations API, not the system actions path. |✓ |—
 
-|**Summarize** |`summarize` |Opens Chat with a summarize prompt. Uses the Conversations API, not the system actions path. |✓ |—
+|**Summarize** |`ai-chat-summarize` |`summarize` |Opens Chat with a summarize prompt. Uses the Conversations API, not the system actions path. |✓ |—
 
-|**Highlight key points** |`highlight-key-points` |Opens Chat with a key-points prompt. Uses the Conversations API, not the system actions path. |✓ |—
+|**Highlight key points** |`ai-chat-highlight-key-points` |`highlight-key-points` |Opens Chat with a key-points prompt. Uses the Conversations API, not the system actions path. |✓ |—
 
-|**Improve Writing** |`improve-writing` |Enhance clarity, word choice, and sentence structure. |✓ |✓
+|**Improve Writing** |`ai-quickactions-improve-writing` |`improve-writing` |Enhance clarity, word choice, and sentence structure. |✓ |✓
 
-|**Continue Writing** |`continue` |Complete unfinished sentences, paragraphs, or entire documents. |✓ |✓
+|**Continue Writing** |`ai-quickactions-continue-writing` |`continue` |Complete unfinished sentences, paragraphs, or entire documents. |✓ |✓
 
-|**Fix Grammar** |`fix-grammar` |Correct grammar, spelling, and punctuation errors. |✓ |✓
+|**Fix Grammar** |`ai-quickactions-check-grammar` |`fix-grammar` |Correct grammar, spelling, and punctuation errors. |✓ |✓
 
-|**Adjust length**
-a|
-`make-shorter` +
-`make-longer`
-|Shorten or lengthen the selection. Each option is its own system action. |✓ |✓
+|**Adjust length** |`ai-quickactions-change-length` |`make-shorter`, `make-longer` |Shorten or lengthen the selection. Each option is its own system action. |✓ |✓
 
 |**Adjust Tone**
+a|
+`ai-quickactions-change-tone` +
+`ai-quickactions-tone-casual` +
+`ai-quickactions-tone-direct` +
+`ai-quickactions-tone-friendly` +
+`ai-quickactions-tone-confident` +
+`ai-quickactions-tone-professional`
 a|
 `make-tone-casual` +
 `make-tone-direct` +
@@ -131,13 +134,28 @@ a|
 `make-tone-professional`
 |Change writing style; each menu option maps to its own system action. |✓ |✓
 
-|**Translate** |`translate` |Convert content between languages. Request body uses `args: { language: string }` with values such as `english`, `spanish`, `russian`, `swedish`, `german`, `japanese`, `portuguese`, `korean`, `italian`, or `chinese`. Configure the editor submenu with `tinymceai_languages`. |✓ |✓
+|**Translate**
+a|
+`ai-quickactions-translate` +
+`ai-quickactions-translate-english` +
+`ai-quickactions-translate-spanish` +
+`ai-quickactions-translate-russian` +
+`ai-quickactions-translate-swedish` +
+`ai-quickactions-translate-german` +
+`ai-quickactions-translate-japanese` +
+`ai-quickactions-translate-portuguese` +
+`ai-quickactions-translate-korean` +
+`ai-quickactions-translate-italian` +
+`ai-quickactions-translate-chinese`
+a|
+`translate`
+|Convert content between languages. Request body uses `args: { language: string }` with values such as `english`, `spanish`, `russian`, `swedish`, `german`, `japanese`, `portuguese`, `korean`, `italian`, or `chinese`. Configure the editor submenu with `tinymceai_languages`. |✓ |✓
 |===
 
 [NOTE]
 ====
-* A checkmark in the Editor UI column means the action can appear when included in `tinymceai_quickactions_menu` (and related sub-menu options such as `tinymceai_quickactions_chat_prompts`).
-* A checkmark in the API column means the action is invoked through the system Actions API path `+/v1/actions/system/{actionName}/calls+`. An em dash means the command is Chat-based and uses the Conversations API instead.
+* A checkmark in the **Editor UI** column means the action can appear when included in `tinymceai_quickactions_menu` (and related sub-menu options such as `tinymceai_quickactions_chat_prompts`).
+* A checkmark in the **API** column means the action is invoked through the system Actions API path `+/v1/actions/system/{actionName}/calls+`. An em dash means the command is Chat-based and uses the Conversations API instead.
 ====
 
 For system action endpoints, schemas, and streaming details, see the https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API] reference.

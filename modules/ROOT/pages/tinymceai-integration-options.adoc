@@ -13,9 +13,9 @@
 
 |
 [.lead]
-xref:tinymceai.adoc[**Plugin Quick Start**]
+xref:tinymceai.adoc[**Plugin configuration**]
 
-Integrate AI features directly into the TinyMCE editor interface. Works with CDN or self-hosted TinyMCE installations. A quick way to add AI capabilities to the editor.
+Integrate {pluginname} features directly into the {productname} editor interface. Works with the {cloudname} CDN or self-hosted {productname}; both use the hosted AI service with JWT authentication.
 
 |
 [.lead]
@@ -23,4 +23,11 @@ xref:tinymceai-api-overview.adoc[**AI service**]
 
 Use the AI service API to build custom integrations and workflows. Suitable for server-side processing, custom UI implementations, and advanced use cases. Start with the xref:tinymceai-api-quick-start.adoc[API Quick Start] guide.
 
+|
+[.lead]
+**On-Premises Deployment**
+
+include::partial$misc/tinymceai-on-premises-early-access-note.adoc[]
+
+a|
 |===

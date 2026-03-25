@@ -237,7 +237,7 @@ tinymce.init({
   plugins: 'tinymceai',
   toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
   tinymceai_token_provider: () => {
-    return fetch('https://example.com/cs-token-endpoint', {
+    return fetch('http://localhost:3000/jwt', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
     }).then(response => response.json());
@@ -249,8 +249,6 @@ tinymce.init({
 ====
 The editor will not be ready to use until the first token is obtained from the token endpoint. If an error occurs during the initial request, the editor will not start correctly.
 ====
-
-For more advanced token request customization, see xref:tinymceai-with-jwt-authentication-nodejs.adoc#configure-tinymce[Configure {productname}] in the implementation guides.
 
 [[token-responses]]
 == Responses from the Token Endpoint

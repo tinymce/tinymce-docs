@@ -42,7 +42,7 @@ After signing up, access to the link:{accountpageurl}[customer dashboard (Custom
 
 Log in to the link:{accountpageurl}[Customer Portal] and navigate to link:{accountjwturl}["JWT Keys"].
 
-image::tinymceai/tinymce-ai-customer-portal-jwt-keys-page.png[JWT Keys page showing Secure Keys List, Generate New Keypair, and Import Public Key sections,width=80%]
+image::tinymceai/tinymce-ai-customer-portal-jwt-keys-page.png[JWT Keys page showing Secure Keys List, Generate New Keypair, and Import Public Key sections,width=100%]
 
 During the free trial, the demo identity service can provide JWT tokens without creating a custom token endpoint. See xref:tinymceai-jwt-authentication-intro.adoc#trial-demo-identity-service[Trial: demo identity service] in the JWT Authentication guide for a quick start.
 
@@ -55,11 +55,6 @@ The next step for production is to create a security token endpoint in the appli
 === Writing your own token endpoint
 
 To create a custom security token endpoint, generate a keypair in the link:{accountjwturl}[JWT Keys] area of the Customer Portal. In the "Generate New Keypair" section, enter a description, select the key length, and click "Add Key". Alternatively, use "Import Public Key" to add an existing key.
-
-[[cloud-region]]
-== Cloud region
-
-Cloud Services can reside in either US or EU region or in both. The region is set per subscription and cannot be changed for existing environments. For Custom plan with multi-region, the region can be chosen during environment creation.
 
 [[api-integration]]
 == API Integration

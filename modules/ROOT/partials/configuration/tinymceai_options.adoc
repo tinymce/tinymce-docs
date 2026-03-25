@@ -379,6 +379,8 @@ tinymce.init({
 
 Array of language options for the Translate submenu within the AI Quick Actions menu. Each item has `+title+` (displayed in the menu) and `+language+` (language code sent to the API, for example `+'english'+`, `+'chinese'+`).
 
+The `+language+` string is passed to the API as the target language description. Values are not limited to the built-in examples: any clear label the model can interpret can be used (including informal or regional phrasing).
+
 *Type:* `+Array+` of `+Object+`
 
 *Default value:*

@@ -124,6 +124,11 @@ Models can be configured in two ways:
 * **Plugin Configuration**: Use `tinymceai_default_model` and `tinymceai_allow_model_selection` options. See xref:tinymceai.adoc#options-chat[Chat configuration options] for full details.
 * **API Configuration**: Specify the model directly in API requests for more control. See xref:tinymceai-models.adoc#api-examples[API Examples] below.
 
+[NOTE]
+====
+The set of models and capabilities can change between major {productname} releases. That kind of change is not treated as a breaking change for the editor. Use the plugin model picker or `GET /v1/models/{version}` to see what the environment offers and the model limitations.
+====
+
 .Example: Set default model in plugin configuration
 [source,js]
 ----
@@ -162,13 +167,21 @@ To see available models for a compatibility version:
 
 Follow these steps to read limits and capabilities for the model the integration uses with {pluginname}:
 
-. Call the same HTTP base URL the editor uses for {pluginname} requests. If the base URL and JWT do not belong to the same environment, the response is an authorization error rather than model metadata.
-. Request `GET /v1/models/{version}` with the compatibility version the integration targets (often `1`). Use the https://tinymceai.api.tiny.cloud/docs#tag/Models[Models API] OpenAPI definition to confirm `{version}` when unsure.
-. In the JSON `items` array, select the object whose `id` matches the model in configuration (`tinymceai_default_model` or `tinymceai_allowed_models`) or in API bodies (`model`).
-. Inspect `limits` for numeric caps (sizes are usually in bytes). Inspect `capabilities` for `webSearch` and `reasoning`, using `enabled` and `allowed`. Compare with the example response under xref:tinymceai-models.adoc#model-information[Model Information].
-. Treat `allowed: false` as “model not available for this token or subscription.” The `recommended` field guides default selection in the UI; it does not alter `limits`.
+* *Align base URL and credentials*
+** Call the same HTTP base URL the editor uses for {pluginname} requests. If the base URL and JWT do not belong to the same environment, the response is an authorization error rather than model metadata.
+* *List models for the compatibility version*
+** Request `GET /v1/models/{version}` with the compatibility version the integration targets (often `1`). Use the https://tinymceai.api.tiny.cloud/docs#tag/Models[Models API] OpenAPI definition to confirm `{version}` when unsure.
+* *Pick the matching `items[]` entry*
+** In the JSON `items` array, select the object whose `id` matches the model in configuration (`tinymceai_default_model` or `tinymceai_allowed_models`) or in API bodies (`model`).
+* *Read `limits` and `capabilities`*
+** Inspect `limits` for numeric caps (sizes are usually in bytes). Inspect `capabilities` for `webSearch` and `reasoning`, using `enabled` and `allowed`. Compare with the example response under xref:tinymceai-models.adoc#model-information[Model Information].
+* *Interpret availability flags*
+** Treat `allowed: false` as “model not available for this token or subscription.” The `recommended` field guides default selection in the UI; it does not alter `limits`.
 
-For copy-paste examples, see `fetch` (browser console) and `curl` (terminal) under xref:tinymceai-models.adoc#model-information[Model Information]. For the authoritative schema as fields evolve, use the OpenAPI document linked above.
+[TIP]
+====
+Ready-to-run `fetch` (browser console) and `curl` examples appear under xref:tinymceai-models.adoc#model-information[Model Information]. For field names and schema changes over time, use the https://tinymceai.api.tiny.cloud/docs#tag/Models[Models API] OpenAPI document.
+====
 
 [[model-capabilities]]
 == Model Capabilities

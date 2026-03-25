@@ -14,10 +14,15 @@ The Chat feature is available as a plugin UI and through the Conversations API. 
 * Plugin sections describe user-facing features and configuration (xref:tinymceai.adoc#options-chat[Chat configuration]).
 * API sections cover REST API access (starting at xref:tinymceai-chat.adoc#conversations-api[Conversations API]).
 
+[[demo]]
+== Demo
+
+liveDemo::tinymceai[]
+
 [[using-chat]]
 == Using Chat
 
-image::tinymceai/tinymce-ai-chat-editor-with-ai-chat-sidebar-open.png[{pluginname} Chat interface showing the conversational AI assistant,width=80%]
+The <<demo,interactive demo>> above shows the Chat sidebar open beside the document. The following sections describe how Chat behaves in the editor.
 
 [[working-with-the-document]]
 === Working with the document
@@ -35,11 +40,6 @@ Users can chat with the AI and use it to introduce changes to the document. Ask 
 === Brainstorming
 
 The chat feature accelerates the creative process. Begin with a blank document and ask the AI for ideas. Build content step by step by chatting and applying changes. Then review or have the AI rewrite the final draft for best results, all in one place.
-
-[[demo]]
-== Demo
-
-liveDemo::tinymceai[]
 
 [[integration]]
 == Integration
@@ -148,11 +148,6 @@ tinymce.init({
 
 When asking the AI for changes to the document, for instance, _"Bold key facts in the document"_, the AI proposes a series of changes. The changes are displayed directly in the document content, making it easy to see what will be modified.
 
-[NOTE]
-====
-AI output may need review. The chat interface displays this reminder below the prompt input.
-====
-
 [[previewing-changes]]
 === Previewing changes
 
@@ -193,9 +188,7 @@ Any conversation from the chat history can be continued as long as the AI model 
 
 [NOTE]
 ====
-The ability to apply suggestions to the document or generate Suggested Edits from historical conversations may be restricted in some scenarios:
-
-After closing the browser and reopening AI chat, previous conversations will no longer interact with the document content. To continue working with a conversation, reopen it from the chat history.
+After starting a new browser session, opening AI Chat does not restore an active link between the editor and a previous conversation's pending suggestions. To apply or dismiss suggestions from an earlier conversation, open that conversation again from Chat history so the editor and the conversation are connected in the current session.
 ====
 
 [[conversations-api]]

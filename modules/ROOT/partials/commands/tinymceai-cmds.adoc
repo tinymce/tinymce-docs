@@ -11,9 +11,9 @@
 // Open the AI Chat sidebar
 tinymce.activeEditor.execCommand('ToggleSidebar', false, 'tinymceai-chat');
 
-// Open the AI Review sidebar
-tinymce.activeEditor.execCommand('ToggleSidebar', false, 'tinymceai-review');
-
 // Close the current sidebar (pass same ID again to toggle off)
 tinymce.activeEditor.execCommand('ToggleSidebar', false, 'tinymceai-chat');
+
+// Open the AI Review sidebar
+tinymce.activeEditor.execCommand('ToggleSidebar', false, 'tinymceai-review');
 ----

@@ -57,6 +57,21 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== Full Page HTML
+
+The {productname} {release-version} release includes an accompanying release of the **Full Page HTML** premium plugin.
+
+**Full Page HTML** includes the following update.
+
+==== Replaced deprecated browser APIs with modern equivalents.
+// #TINY-13674
+
+Previously, the Full Page HTML plugin used deprecated `+escape+` and `+unescape+` JavaScript APIs for some protected content handling. Those APIs are no longer recommended for new code.
+
+In {productname} {release-version}, the plugin uses modern encoding APIs instead. This aligns the implementation with current browser guidance and improves reliability for protected content handling.
+
+For information on the **Full Page HTML** plugin, see: xref:fullpagehtml.adoc[Full Page HTML].
+
 === <Premium plugin name 1> <Premium plugin name 1 version>
 
 The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

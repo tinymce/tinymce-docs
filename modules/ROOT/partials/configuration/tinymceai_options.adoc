@@ -13,7 +13,7 @@ For context toolbar use cases (a toolbar that appears when text is selected), us
 [[content_id]]
 === `+content_id+`
 
-A unique identifier for the document or content being edited. When set, chat history is scoped to this ID, allowing conversations to be preserved and associated with the specific document across sessions. When not set, all conversations are shown regardless of document.
+A unique identifier for the document or content being edited. When set, the chat history shown for the user is scoped to this ID, allowing conversations to be preserved and associated with the specific document across sessions. When not set, all conversations for the user are shown regardless of document.
 
 *Type:* `+String+`
 

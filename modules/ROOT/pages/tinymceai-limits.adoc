@@ -28,12 +28,7 @@ Context limits control how much content can be attached to conversations to ensu
 [[file-limits]]
 === File Limits
 
-Files are limited to 7MB each (PDF, DOCX, PNG, JPEG, Markdown, HTML, Plain text). Up to 100 files can be uploaded per conversation with a total size limit of 30MB. PDF files are limited to 100 pages total across all PDFs in a conversation.
-
-[[model-specific-file-limits]]
-==== Model-specific file limits
-
-Anthropic and agent models may use files up to 5MB each.
+Supported attachment types include PDF, DOCX, PNG, JPEG, Markdown, HTML, and plain text. Exact per-file, per-conversation, and PDF page limits depend on the model in use. Read the `limits` object for that model from `GET /v1/models/{version}` (see xref:tinymceai-models.adoc#verifying-model-limits-for-integration[Verifying limits for a configured model] and xref:tinymceai-models.adoc#model-information[Model Information]). For schema details, see the https://tinymceai.api.tiny.cloud/docs#tag/Models[Models API] OpenAPI documentation.
 
 [[context-optimization-tips]]
 === Context Optimization Tips
@@ -43,12 +38,14 @@ Compress images and split large documents into smaller sections. Use text format
 [[model-specific-limits]]
 == Model-Specific Limits
 
-Different AI models have varying capabilities and limitations that affect context processing. Each model has different context window sizes that determine how much content can be processed. Models have response timeouts, file processing timeouts, web resource timeouts, and streaming response limits. All models include content moderation for inappropriate content, safety checks, and moderation response time limits.
+Different AI models have varying capabilities and limitations that affect context processing. Each model exposes numeric caps and capability flags in the `GET /v1/models/{version}` response: find the object in `items` whose `id` matches the model in use, then read `limits` (for example context length and file size ceilings, often in bytes) and `capabilities`. See xref:tinymceai-models.adoc#verifying-model-limits-for-integration[Verifying limits for a configured model].
+
+Models also have response timeouts, file processing timeouts, web resource timeouts, and streaming response limits. All models include content moderation for inappropriate content, safety checks, and moderation response time limits.
 
 [[next-steps]]
 == Next Steps
 
-* xref:tinymceai-models.adoc[Learn about AI Models] for model-specific limitations.
+* xref:tinymceai-models.adoc#model-information[Model Information] documents the `GET /v1/models/{version}` request; each item in the response includes `limits` and capabilities for that model.
 * xref:tinymceai-permissions.adoc[Set up Permissions] to control user access.
 * xref:tinymceai-chat.adoc[Explore Chat] for context management.
 * https://tinymceai.api.tiny.cloud/docs[API Documentation]: Complete API reference for TinyMCE AI.

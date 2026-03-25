@@ -84,6 +84,7 @@ After setting up the JWT endpoint, continue with:
 
 * xref:tinymceai-api-overview.adoc[API Overview]: Overview of all API features and capabilities.
 * xref:tinymceai-models.adoc[AI Models]: Choose the right model for your use case.
+* xref:tinymceai-models.adoc#verifying-model-limits-for-integration[Verify model limits]: Match the configured model id to `GET /v1/models/{version}` and read `limits` and `capabilities`.
 * xref:tinymceai-permissions.adoc[Permissions]: Set up user access control for production.
 * xref:tinymceai-streaming.adoc[Streaming]: Learn how to handle real-time streaming responses.
 * xref:tinymceai-chat.adoc#conversations-api[Chat API]: Start with interactive AI discussions.

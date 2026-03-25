@@ -157,6 +157,19 @@ To see available models for a compatibility version:
 * **Through the plugin**: Available models are shown in the model selection dropdown when `tinymceai_allow_model_selection` is enabled. See xref:tinymceai.adoc#tinymceai_allow_model_selection[`tinymceai_allow_model_selection`] for configuration.
 * **Through the API**: Check the `GET /v1/models/{version}` endpoint. The API response includes model capabilities, limits, and availability. See xref:tinymceai-models.adoc#model-information[Model Information] for an example.
 
+[[verifying-model-limits-for-integration]]
+=== Verifying limits for a configured model
+
+Follow these steps to read limits and capabilities for the model the integration uses with {pluginname}:
+
+. Call the same HTTP base URL the editor uses for {pluginname} requests. If the base URL and JWT do not belong to the same environment, the response is an authorization error rather than model metadata.
+. Request `GET /v1/models/{version}` with the compatibility version the integration targets (often `1`). Use the https://tinymceai.api.tiny.cloud/docs#tag/Models[Models API] OpenAPI definition to confirm `{version}` when unsure.
+. In the JSON `items` array, select the object whose `id` matches the model in configuration (`tinymceai_default_model` or `tinymceai_allowed_models`) or in API bodies (`model`).
+. Inspect `limits` for numeric caps (sizes are usually in bytes). Inspect `capabilities` for `webSearch` and `reasoning`, using `enabled` and `allowed`. Compare with the example response under xref:tinymceai-models.adoc#model-information[Model Information].
+. Treat `allowed: false` as “model not available for this token or subscription.” The `recommended` field guides default selection in the UI; it does not alter `limits`.
+
+For copy-paste examples, see `fetch` (browser console) and `curl` (terminal) under xref:tinymceai-models.adoc#model-information[Model Information]. For the authoritative schema as fields evolve, use the OpenAPI document linked above.
+
 [[model-capabilities]]
 == Model Capabilities
 
@@ -189,15 +202,16 @@ Web scraping extracts and processes content from web pages so the AI can analyze
 [[model-limitations]]
 == Model Limitations
 
+Per-model caps (context length, attachment sizes, PDF page totals, and similar) are returned in the `limits` object for each entry in `GET /v1/models/{version}`. Those values are **authoritative for the environment** and can differ by model (for example stricter `maxImageSize` than `maxFileSize` for some providers). See xref:tinymceai-models.adoc#verifying-model-limits-for-integration[Verifying limits for a configured model] for how to match the integration’s model id to the correct `items[]` entry.
+
+The sections below cover moderation, descriptions, and deprecation. Attachment limits are documented only under xref:tinymceai-models.adoc#file-processing-limits[File processing limits], using the live models API so values stay aligned with the service.
+
 [[file-processing-limits]]
 === File Processing Limits
 
-Files are limited to 7MB each (PDF, DOCX, PNG, JPEG, Markdown, HTML, Plain text). Up to 100 files can be uploaded per conversation with a total size limit of 30MB. PDF files are limited to 100 pages total across all PDFs in a conversation.
+{pluginname} supports common attachment types in Chat conversations, including PDF, DOCX, images, Markdown, HTML, and plain text. Per-file and per-conversation ceilings—including maximum sizes, attachment counts, and PDF page totals—are returned per model in the `limits` object from `GET /v1/models/{version}`. Those numbers are authoritative for the deployment; they can change with the service and vary by model, so read the `limits` object from that response at runtime for each model the integration uses. Field names, units, and schema updates are defined in the https://tinymceai.api.tiny.cloud/docs#tag/Models[Models API] OpenAPI documentation.
 
-[[model-specific-file-limits]]
-==== Model-specific file limits
-
-Anthropic and agent models may use files up to 5MB each.
+For the request flow and how to match a configured model id to the correct `items[]` entry, see xref:tinymceai-models.adoc#verifying-model-limits-for-integration[Verifying limits for a configured model]. Typical `limits` keys include `maxFileSize`, `maxImageSize`, `maxFiles`, `maxTotalFileSize`, and `maxTotalPdfFilePages`.
 
 [[content-moderation]]
 === Content Moderation
@@ -258,7 +272,7 @@ Authorization: Bearer <your-token>
 
 {
   "prompt": "Research the latest developments in AI",
-  "model": "gpt-4o",
+  "model": "gpt-5.1",
   "capabilities": {
     "webSearch": {},
     "reasoning": {}
@@ -269,7 +283,28 @@ Authorization: Bearer <your-token>
 [[model-information]]
 === Model Information
 
-Get all available models for compatibility version `1`:
+Get all available models for compatibility version `1`.
+
+Replace `<your-token>` with a JWT from xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication]. Use the same TinyMCE AI API base URL the integration uses for requests. For {cloudname} production deployments, that URL is `https://tinymceai.api.tiny.cloud`. A JWT is valid only for the API host and credentials it was issued for.
+
+To try the request from a **browser DevTools console** (JavaScript), substitute a real token string for `'<your-token>'` and use the same base URL as in the application. The `fetch` and `curl` examples below use `https://tinymceai.api.tiny.cloud`.
+
+[source,javascript]
+----
+fetch('https://tinymceai.api.tiny.cloud/v1/models/1', {
+  headers: { Authorization: 'Bearer ' + '<your-token>' }
+}).then((r) => r.json()).then(console.log);
+----
+
+From a **terminal**, use curl (do not paste curl into the browser console—only `fetch` belongs there):
+
+[source,bash]
+----
+curl -sS 'https://tinymceai.api.tiny.cloud/v1/models/1' \
+  -H 'Authorization: Bearer <your-token>'
+----
+
+Equivalent HTTP request:
 
 [source,http]
 ----
@@ -277,7 +312,9 @@ GET /v1/models/1
 Authorization: Bearer <your-token>
 ----
 
-Response:
+NOTE: If `fetch` fails with a CORS error in the console, run the curl example from a terminal instead, or call the API from the application backend.
+
+Response (shape illustrated; field names and numeric limits follow the live service and https://tinymceai.api.tiny.cloud/docs#tag/Models[OpenAPI] for the environment):
 
 [source,json]
 ----
@@ -286,39 +323,45 @@ Response:
     {
       "id": "agent-1",
       "name": "Agent",
+      "description": "Automatically selects best model for speed, quality, and cost.",
       "provider": "Agent",
-      "description": "Automatically selects the best model for speed, quality, and cost",
+      "recommended": true,
       "allowed": true,
+      "limits": {
+        "maxContextLength": 256000,
+        "maxFiles": 100,
+        "maxFileSize": 25000000,
+        "maxImageSize": 5000000,
+        "maxTotalFileSize": 30000000,
+        "maxTotalPdfFilePages": 100
+      },
       "capabilities": {
-        "webSearch": {
-          "enabled": true,
-          "allowed": true
-        },
         "reasoning": {
           "enabled": true,
           "allowed": true
+        },
+        "webSearch": {
+          "enabled": true,
+          "allowed": true
         }
-      },
-      "limits": {
-        "maxPromptLength": 30000,
-        "maxConversationLength": 256000,
-        "maxFiles": 100,
-        "maxFileSize": 7000000,
-        "maxTotalFileSize": 30000000,
-        "maxTotalPdfFilePages": 100
       }
     }
   ]
 }
 ----
 
+* **`id`**: Model identifier for `tinymceai_default_model`, `tinymceai_allowed_models`, and API `model` fields.
+* **`allowed`**: Whether the model can be used with the current token or subscription.
+* **`recommended`**: Service hint for default or highlighted models in UIs.
+* **`limits`**: Per-model numeric caps (sizes are typically bytes; `maxContextLength` is the context budget for that model in the service).
+* **`capabilities`**: Whether `webSearch` and `reasoning` are available (`allowed`) and on by default (`enabled`) for that model.
+
+After xref:tinymceai-models.adoc#verifying-model-limits-for-integration[locating the entry for the configured `id`], use these fields to validate integrations (for example before uploading large attachments or enabling reasoning in API calls).
+
 [[api-reference]]
 == API Reference
 
-For complete documentation on model endpoints, compatibility versions, and capability schemas, see:
-
-* **https://tinymceai.api.tiny.cloud/docs#tag/Models[Models API Reference]**: Full documentation for model listing and configuration.
-* **https://tinymceai.api.tiny.cloud/docs[Complete API Documentation]**: Interactive API reference with all {pluginname} endpoints.
+The https://tinymceai.api.tiny.cloud/docs#tag/Models[Models API] section of the https://tinymceai.api.tiny.cloud/docs[interactive API documentation] covers model listing, compatibility versions, and capability schemas, along with the rest of the {pluginname} endpoints.
 
 [[related-features]]
 == Related Features

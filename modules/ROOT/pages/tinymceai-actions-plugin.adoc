@@ -100,7 +100,7 @@ Custom actions can be added to the list, and default actions can be removed or r
 [[quick-actions-reference-table]]
 The following table lists built-in Quick Actions. The **Editor command** column is the menu label. The **API action** column is the identifier: for preview actions it is the `actionName` segment in `+/v1/actions/system/{actionName}/calls+` (see xref:tinymceai-actions-plugin.adoc#actions-api[Actions API]); for Chat commands it is the prompt id used with the xref:tinymceai-chat.adoc[Conversations API], not a system `actionName`. Configure the Translate submenu in the UI with `tinymceai_languages`.
 
-[cols="1,1,4,^,^",options="header"]
+[cols="1,2,4,^,^",options="header"]
 |===
 |Editor command |API action |Description |Editor UI |API
 
@@ -116,9 +116,20 @@ The following table lists built-in Quick Actions. The **Editor command** column 
 
 |**Fix Grammar** |`fix-grammar` |Correct grammar, spelling, and punctuation errors. |✓ |✓
 
-|**Adjust length** |`make-shorter`, `make-longer` |Shorten or lengthen the selection. Each option is its own system action. |✓ |✓
+|**Adjust length**
+a|
+`make-shorter` +
+`make-longer`
+|Shorten or lengthen the selection. Each option is its own system action. |✓ |✓
 
-|**Adjust Tone** |`make-tone-casual`, `make-tone-direct`, `make-tone-friendly`, `make-tone-confident`, `make-tone-professional` |Change writing style; each menu option maps to its own system action. |✓ |✓
+|**Adjust Tone**
+a|
+`make-tone-casual` +
+`make-tone-direct` +
+`make-tone-friendly` +
+`make-tone-confident` +
+`make-tone-professional`
+|Change writing style; each menu option maps to its own system action. |✓ |✓
 
 |**Translate** |`translate` |Convert content between languages. Request body uses `args: { language: string }` with values such as `english`, `spanish`, `russian`, `swedish`, `german`, `japanese`, `portuguese`, `korean`, `italian`, or `chinese`. Configure the editor submenu with `tinymceai_languages`. |✓ |✓
 |===

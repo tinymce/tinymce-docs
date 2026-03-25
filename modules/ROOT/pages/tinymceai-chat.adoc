@@ -236,20 +236,7 @@ Conversations use Server-Sent Events (SSE) for real-time streaming responses. Se
 [[conversations-api-reference]]
 === API Reference
 
-For complete API documentation including endpoints, parameters, request/response schemas, and interactive examples, see:
-
-* **https://tinymceai.api.tiny.cloud/docs#tag/Conversations[REST API Conversations Documentation]**: Full documentation for conversations endpoints with interactive examples
-
-The REST API documentation includes examples for:
-
-* Creating conversations: see https://tinymceai.api.tiny.cloud/docs#tag/Conversations[Conversations API]
-* Uploading documents: see https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Documents[Conversation Documents API]
-* Uploading files: see https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Files[Conversation Files API]
-* Uploading web resources: see https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Web-Resources[Conversation Web Resources API]
-* Sending messages with context: see https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Messages[Conversation Messages API]
-* Configuring web search capabilities: see https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Web-Resources[Conversation Web Resources API]
-* Configuring reasoning capabilities: see https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Messages[Conversation Messages API]
-* Streaming responses: see https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Messages[Conversation Messages API]
+The https://tinymceai.api.tiny.cloud/docs[interactive API documentation] lists every conversation endpoint, parameter, schema, and example. In that UI, related operations are grouped under tags such as https://tinymceai.api.tiny.cloud/docs#tag/Conversations[Conversations], https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Documents[Conversation Documents], https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Files[Conversation Files], https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Web-Resources[Conversation Web Resources], and https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Messages[Conversation Messages] (including streaming, web search, and reasoning options where applicable).
 
 [[related-features]]
 == Related Features

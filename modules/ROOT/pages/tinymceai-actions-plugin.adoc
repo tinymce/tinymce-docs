@@ -97,27 +97,39 @@ By default, the Quick Actions feature includes several built-in actions that spe
 
 Custom actions can be added to the list, and default actions can be removed or reordered by configuring `tinymceai_quickactions_menu`. See xref:tinymceai-actions-plugin.adoc#configuring-quick-actions-menu[Configuring Quick Actions menu].
 
-Here is the full list of available actions. The identifiers below are used by the REST API. For the plugin UI, configure the Translate submenu using `tinymceai_languages`.
+[[quick-actions-reference-table]]
+The following table lists built-in Quick Actions. The **Editor command** column is the menu label. The **API action** column is the identifier: for preview actions it is the `actionName` segment in `+/v1/actions/system/{actionName}/calls+` (see xref:tinymceai-actions-plugin.adoc#actions-api[Actions API]); for Chat commands it is the prompt id used with the xref:tinymceai-chat.adoc[Conversations API], not a system `actionName`. Configure the Translate submenu in the UI with `tinymceai_languages`.
 
-* **"Chat commands"** category
-** `'explain'`
-** `'summarize'`
-** `'highlight-key-points'`
-* `'improve-writing'`
-* `'continue'`
-* `'fix-grammar'`
-* **"Adjust length"** category
-** `'make-shorter'`
-** `'make-longer'`
-* **"Change tone"** category
-** `'make-tone-casual'`
-** `'make-tone-direct'`
-** `'make-tone-friendly'`
-** `'make-tone-confident'`
-** `'make-tone-professional'`
-* **"Translate"** category
-+
-The REST API uses the single action `'translate'` with a `language` parameter in the request body (`args: { language: string }`). Use language names such as `english`, `spanish`, `russian`, `swedish`, `german`, `japanese`, `portuguese`, `korean`, `italian`, or `chinese`. For the plugin UI, configure languages via `tinymceai_languages`.
+[cols="1,1,4,^,^",options="header"]
+|===
+|Editor command |API action |Description |Editor UI |API
+
+|**Explain** |`explain` |Opens Chat with the selected text and a pre-filled prompt. Uses the Conversations API, not the system actions path. |✓ |—
+
+|**Summarize** |`summarize` |Opens Chat with a summarize prompt. Uses the Conversations API, not the system actions path. |✓ |—
+
+|**Highlight key points** |`highlight-key-points` |Opens Chat with a key-points prompt. Uses the Conversations API, not the system actions path. |✓ |—
+
+|**Improve Writing** |`improve-writing` |Enhance clarity, word choice, and sentence structure. |✓ |✓
+
+|**Continue Writing** |`continue` |Complete unfinished sentences, paragraphs, or entire documents. |✓ |✓
+
+|**Fix Grammar** |`fix-grammar` |Correct grammar, spelling, and punctuation errors. |✓ |✓
+
+|**Adjust length** |`make-shorter`, `make-longer` |Shorten or lengthen the selection. Each option is its own system action. |✓ |✓
+
+|**Adjust Tone** |`make-tone-casual`, `make-tone-direct`, `make-tone-friendly`, `make-tone-confident`, `make-tone-professional` |Change writing style; each menu option maps to its own system action. |✓ |✓
+
+|**Translate** |`translate` |Convert content between languages. Request body uses `args: { language: string }` with values such as `english`, `spanish`, `russian`, `swedish`, `german`, `japanese`, `portuguese`, `korean`, `italian`, or `chinese`. Configure the editor submenu with `tinymceai_languages`. |✓ |✓
+|===
+
+[NOTE]
+====
+* A checkmark in the Editor UI column means the action can appear when included in `tinymceai_quickactions_menu` (and related sub-menu options such as `tinymceai_quickactions_chat_prompts`).
+* A checkmark in the API column means the action is invoked through the system Actions API path `+/v1/actions/system/{actionName}/calls+`. An em dash means the command is Chat-based and uses the Conversations API instead.
+====
+
+For system action endpoints, schemas, and streaming details, see the https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API] reference.
 
 [[custom-actions]]
 == Custom Actions
@@ -209,19 +221,9 @@ Unlike conversations, actions do not remember previous interactions. Each action
 [[actions-system-actions-api]]
 === System Actions
 
-{pluginname} provides built-in system actions for common content transformations through the API. These correspond to the default actions available in the plugin UI:
+Built-in Quick Actions—including identifiers, descriptions, and whether each command uses the system Actions API or Chat (Conversations API)—are summarized in xref:tinymceai-actions-plugin.adoc#quick-actions-reference-table[Default Actions].
 
-[cols="2,4,1",options="header"]
-|===
-|Action|Description|API
-|**Fix Grammar**|Correct grammar, spelling, and punctuation errors.|https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API]
-|**Improve Writing**|Enhance clarity, word choice, and sentence structure.|https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API]
-|**Continue Writing**|Complete unfinished sentences, paragraphs, or entire documents.|https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API]
-|**Make Longer**|Expand content with more detail, examples, and explanations.|https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API]
-|**Make Shorter**|Condense lengthy text while keeping the essential information.|https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API]
-|**Adjust Tone**|Change writing style to casual, professional, friendly, or confident.|https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API]
-|**Translate**|Convert content between languages with proper cultural context.|https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API]
-|===
+For endpoint details, request and response schemas, authentication, and streaming behavior for system `actionName` calls, see https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API].
 
 [[actions-custom-actions-api]]
 === Custom Actions through the API
@@ -240,20 +242,7 @@ Actions use Server-Sent Events (SSE) for real-time streaming results. See the xr
 [[actions-api-reference]]
 === API Reference
 
-For complete endpoint documentation, request/response schemas, authentication details, and additional parameters, see:
-
-* **https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API Reference]**: Full documentation for system and custom actions endpoints with interactive examples
-
-The REST API documentation includes examples for:
-
-* Grammar fix: see https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API]
-* Writing improvement: see https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API]
-* Content expansion (make longer): see https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API]
-* Content condensation (make shorter): see https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API]
-* Tone adjustment: see https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API]
-* Translation: see https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API]
-* Custom actions with custom prompts: see https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API]
-* Streaming responses: see https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API]
+The https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API] reference (interactive OpenAPI documentation) is the full source for system and custom action endpoints, request and response schemas, authentication, worked examples, and streaming action responses.
 
 [[related-features]]
 == Related Features

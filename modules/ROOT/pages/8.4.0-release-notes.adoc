@@ -170,6 +170,14 @@ Previously, right-to-left (RTL) directionality was not correctly set for Hebrew 
 
 In {productname} {release-version}, this issue has been addressed by ensuring that the directionality is correctly set for Hebrew in the language pack.
 
+=== Bundled content CSS is now loaded into preview iframes
+// #TINY-13190
+
+Previously, when the editor content CSS was bundled, it was not loaded into preview iframes. This caused a visual mismatch between the editor content area and what users saw in the Preview dialog, Suggested Edits view and Revision History view.
+
+In {productname} {release-version}, the fix checks if the content CSS is available as a bundled resource and applies it to the Preview Iframe through style tags. Bundled content CSS is now correctly loaded in the Preview Iframe.
+
+
 [[security-fixes]]
 == Security fixes
 

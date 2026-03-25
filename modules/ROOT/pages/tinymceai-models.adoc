@@ -133,9 +133,11 @@ tinymce.init({
   toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
   tinymceai_default_model: 'gemini-2-5-flash',
   tinymceai_allow_model_selection: true,
-  tinymceai_token_provider: () => fetch('/api/token').then(r => r.json())
+  tinymceai_token_provider: () => fetch('/api/token').then(r => r.text()).then(token => ({ token }))
 });
 ----
+
+If the token endpoint returns JSON (for example `{"token":"..."}`), resolve the body with `response.json()` and return an object that includes a `token` string property in the shape `tinymceai_token_provider` expects.
 
 [[model-compatibility-versions]]
 == Model Compatibility Versions

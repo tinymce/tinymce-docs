@@ -17,7 +17,7 @@ The Chat feature is available as a plugin UI and through the Conversations API. 
 [[using-chat]]
 == Using Chat
 
-image::https://placehold.net/default.png[{pluginname} Chat interface showing the conversational AI assistant]
+image::tinymceai/tinymce-ai-chat-editor-with-ai-chat-sidebar-open.png[{pluginname} Chat interface showing the conversational AI assistant,width=80%]
 
 [[working-with-the-document]]
 === Working with the document
@@ -51,7 +51,7 @@ To start using the Chat feature, first load the {pluginname} plugin in the edito
 
 Users can select the desired AI model for their conversation from a dropdown at the bottom of the chat.
 
-image::https://placehold.net/default.png[{pluginname} Chat available models dropdown]
+image::tinymceai/tinymce-ai-chat-model-selector-dropdown-open.png[{pluginname} Chat available models dropdown,width=80%]
 
 Once selected, the AI model will persist for the duration of the conversation. To change the model, start a new conversation using the image:icons-premium/new-chat.svg[New Chat icon,24px] **New Chat** button at the top-right corner of the chat panel.
 
@@ -99,7 +99,7 @@ tinymce.init({
 
 The AI chat can work with the document and beyond. Use the "Add context" image:icons/plus.svg[Add context icon,24px] button below the prompt input to add URLs, files, and external resources to the conversation.
 
-image::https://placehold.net/default.png[{pluginname} Chat add context user interface]
+image::tinymceai/tinymce-ai-chat-add-context-source-menu.png[{pluginname} Chat add context user interface,width=80%]
 
 Ask the AI about specific resources, for instance, _"Describe the attached image"_ or _"Summarize the key points from the attached Word document"_. The AI will analyze those resources and provide information that can be easily used in the document.
 
@@ -163,18 +163,18 @@ A review bar appears at the bottom of the editor with **Diff mode** and **Previe
 
 Click the checkmark image:icons/checkmark.svg[Accept suggestion icon,24px] in the suggestion overlay to accept the current change. Use the arrow buttons to move between suggestions.
 
-image::https://placehold.net/default.png[{pluginname} Chat apply changes]
+image::tinymceai/tinymce-ai-chat-diff-mode-apply-single-suggestion-overlay.png[{pluginname} Chat apply changes,width=80%]
 
-Click **Apply pending** in the review bar at the bottom of the editor to apply all remaining suggestions at once. The button shows the number of pending changes, for example, "Apply pending (4)".
+Click **Apply remaining** in the review bar at the bottom of the editor to apply all remaining suggestions at once. The button shows the number of remaining suggestions, for example, "Apply remaining (11)".
 
-image::https://placehold.net/default.png[{pluginname} Chat apply all changes]
+image::tinymceai/tinymce-ai-chat-diff-mode-apply-remaining-suggestions.png[{pluginname} Chat apply all changes,width=80%]
 
 [[rejecting-suggestions]]
 === Rejecting suggestions
 
-Click the image:icons/close.svg[Reject suggestion icon,24px] in the suggestion overlay to reject the current suggestion. Click **Skip pending** in the review bar at the bottom of the editor to skip all remaining suggestions.
+Click the image:icons/close.svg[Reject suggestion icon,24px] in the suggestion overlay to reject the current suggestion. Click **Skip remaining** in the review bar at the bottom of the editor to skip all remaining suggestions.
 
-image::https://placehold.net/default.png[{pluginname} Chat reject button]
+image::tinymceai/tinymce-ai-chat-diff-mode-reject-suggestion-overlay.png[{pluginname} Chat reject button,width=80%]
 
 
 [[chat-history]]
@@ -184,7 +184,7 @@ All past conversations appear in the Chat history. Click the button image:icons/
 
 Conversations are grouped by date to help navigate the history. Conversations can be filtered by name using the search field at the top of the user interface.
 
-image::https://placehold.net/default.png[AI Chat history]
+image::tinymceai/tinymce-ai-chat-history-sidebar-conversation-list.png[AI Chat history,width=80%]
 
 [NOTE]
 ====

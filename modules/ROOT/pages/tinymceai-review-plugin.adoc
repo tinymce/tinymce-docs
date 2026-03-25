@@ -21,7 +21,7 @@ liveDemo::tinymceai-review[]
 
 The Review feature analyzes content and provides specific recommendations for grammar, style, clarity, and tone improvements. Unlike Actions that transform content directly, Reviews analyze content and provide suggestions without automatically changing the content.
 
-image::https://placehold.net/default.png[{pluginname} Review feature showing AI-powered quality assurance and suggested edits]
+image::tinymceai/tinymce-ai-review-sidebar-command-categories-proofread-clarity.png[{pluginname} Review feature showing AI-powered quality assurance and suggested edits,width=80%]
 
 [[integration]]
 == Integration
@@ -30,11 +30,11 @@ To start using the Review feature, first load the {pluginname} plugin in the edi
 
 After picking one of the available commands in the Review Mode tab, the AI will analyze the document and propose a series of suggestions:
 
-image::https://placehold.net/default.png[{pluginname} Review sidebar with suggestions]
+image::tinymceai/tinymce-ai-review-improve-readability-suggestion-cards-and-underlines.png[{pluginname} Review sidebar with suggestions,width=80%]
 
 While in the Review Mode, the editor remains read-only and allows browsing suggestions. Suggestions can be clicked in the sidebar or selected in the editor content (underlined):
 
-image::https://placehold.net/default.png[{pluginname} Review suggestion in content]
+image::tinymceai/tinymce-ai-review-mode-suggestions-underlined-in-editor-content.png[{pluginname} Review suggestion in content,width=80%]
 
 Review suggestions can be accepted or dismissed by clicking the corresponding buttons. All suggestions can also be accepted using the "Accept all" button at the top of the user interface. Changes can be previewed in the same way as xref:tinymceai-chat.adoc#previewing-changes[Chat suggestions]. Changes that were accepted or dismissed become greyed out in the interface. The review can also be abandoned by clicking the "Exit review" button.
 

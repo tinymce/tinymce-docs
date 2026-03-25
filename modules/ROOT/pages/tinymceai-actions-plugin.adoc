@@ -27,7 +27,7 @@ Actions are fast, stateless operations that transform content. Unlike Reviews th
 * *Reviews*: Analyze entire documents for quality improvements and get suggestions without automatically changing the content.
 
 
-image::https://placehold.net/default.png[{pluginname} quick actions showing AI-powered suggestions and Q&A functionality]
+image::tinymceai/tinymce-ai-quick-actions-toolbar-primary-menu-with-chat-commands.png[{pluginname} quick actions showing AI-powered suggestions and Q&A functionality,width=80%]
 
 [[integration]]
 == Integration
@@ -43,7 +43,7 @@ AI features are added to the selection toolbar by default when the plugin is ena
 
 To learn more about toolbar configuration, refer to the xref:toolbar-configuration-options.adoc[toolbar configuration] guide.
 
-image::https://placehold.net/default.png[{pluginname} Quick Actions dropdown in the toolbar]
+image::tinymceai/tinymce-ai-quick-actions-change-tone-flyout-submenu.png[{pluginname} Quick Actions dropdown in the toolbar,width=80%]
 
 Finally, individual Quick Actions can also be added to the toolbar as shortcuts for easier access. For example, add the `ai-quickactions-improve-writing` image:icons-premium/improve-writing.svg[Improve Writing icon,24px] button, or the `ai-chat-explain` image:icons-premium/explain.svg[Explain icon,24px] button (find it in the demo above). Whole categories can be added to the toolbar as well. xref:tinymceai-actions-plugin.adoc#default-actions[Learn more about available actions].
 

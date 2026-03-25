@@ -42,7 +42,7 @@ After signing up, access to the link:{accountpageurl}[customer dashboard (Custom
 
 Log in to the link:{accountpageurl}[Customer Portal] and navigate to link:{accountjwturl}["JWT Keys"].
 
-image::https://placehold.net/default.png[JWT Keys page showing Secure Keys List, Generate New Keypair, and Import Public Key sections]
+image::tinymceai/tinymce-ai-customer-portal-jwt-keys-page.png[JWT Keys page showing Secure Keys List, Generate New Keypair, and Import Public Key sections,width=80%]
 
 During the free trial, the demo identity service can provide JWT tokens without creating a custom token endpoint. See xref:tinymceai-jwt-authentication-intro.adoc#trial-demo-identity-service[Trial: demo identity service] in the JWT Authentication guide for a quick start.
 

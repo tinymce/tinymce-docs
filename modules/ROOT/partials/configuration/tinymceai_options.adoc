@@ -118,7 +118,7 @@ Changing this property dynamically (after the editor has been initialized) is no
 [[tinymceai_default_model]]
 === `+tinymceai_default_model+`
 
-The default AI model to use when no model is explicitly selected.
+The default AI model to use when no model is explicitly selected by the user. If undefined, the AI service will select the best model for speed, quality, and cost.
 
 *Type:* `+String+`
 

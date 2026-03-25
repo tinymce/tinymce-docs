@@ -1,7 +1,7 @@
 // Step 1: Set up session - this should be part of the application's user management process.
 tinymce.init({
   selector: 'textarea#tinymceai-actions',
-  height: '610px',
+  height: '800px',
   plugins: ["tinymceai", "advlist", "anchor", "autolink", "charmap", "code"],
   toolbar: "undo redo | tinymceai-chat tinymceai-quickactions tinymceai-review | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
   tinymceai_token_provider: async () => {

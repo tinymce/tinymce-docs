@@ -4,7 +4,7 @@ const isLoggedIn = fetch(`https://demo.api.tiny.cloud/1/${apiKey}/auth/random`, 
 
 tinymce.init({
   selector: 'textarea#tinymceai',
-  height: '610px',
+  height: '800px',
   plugins: ["tinymceai", "advlist", "anchor", "autolink", "charmap", "code"],
   toolbar: "undo redo | tinymceai-chat ai-quickactions-translate tinymceai-review | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image",
   sidebar_show: 'tinymceai-chat',

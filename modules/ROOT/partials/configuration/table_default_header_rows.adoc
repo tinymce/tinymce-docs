@@ -1,0 +1,18 @@
+[[table_default_header_rows]]
+== `+table_default_header_rows+`
+
+The `+table_default_header_rows+` option sets the number of default header rows for new tables created through the editor UI (for example, via the table picker or insert table dialog). This helps integrators meet accessibility standards by ensuring new tables have header rows by default without manual intervention.
+
+*Type:* `+Number+`
+
+*Default value:* `+0+`
+
+=== Example: using `+table_default_header_rows+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  table_default_header_rows: 1
+});
+----

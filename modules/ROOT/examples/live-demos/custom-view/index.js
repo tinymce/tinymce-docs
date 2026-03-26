@@ -19,7 +19,7 @@ tinymce.init({
           text: 'Save code',
           buttonType: 'primary',
           onAction: () => {
-            const codeContent = document.querySelector('.tox-view__pane_panel').value;
+            const codeContent = document.querySelector('.my-textarea').value;
             ed.setContent(codeContent);
             ed.execCommand('ToggleView', false, 'code');
             console.log('save');
@@ -28,12 +28,12 @@ tinymce.init({
       ],
       onShow: (api) => {
         const editorContent = ed.getContent();
-        api.getContainer().innerHTML = `
+        const container = api.getContainer();
+        container.innerHTML = `
           <div style="height: 100%">
-            <textarea class="tox-view__pane_panel" style="width: 100%; height: 100%; resize: none; padding: 0.5em">
-              ${editorContent}
-            </textarea>
-          </div>`.replace(/\s+/g, '');
+            <textarea class="my-textarea" style="width: 100%; height: 100%; resize: none; padding: 0.5em"></textarea>
+          </div>`;
+        container.querySelector('.my-textarea').value = editorContent;
       },
       onHide: (api) => {
         console.log('Deactivate code', api.getContainer());

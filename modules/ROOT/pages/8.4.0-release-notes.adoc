@@ -98,6 +98,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **Media Optimizer** includes the following addition and fix.
 
+==== Toolbar button was not initialized when used with the `quickbars` plugin.
+// #TINY-13731
+
+Previously, when the Media Optimizer plugin was used together with the quickbars plugin, the uploadcare toolbar button was not registered at all. As a result, the button could not appear in the toolbar, even when configured.
+
+In {productname} {release-version}, the uploadcare button is now always registered and can be used in the toolbar alongside the quickbars plugin. To avoid duplication in the context toolbar, the plugin no longer adds the uploadcare button when the quickbars insert image button is already present.
+
 ==== Third-party library icons appear in formats when using Media Optimiser plugin together with CSS plugin
 // #TINY-13515
 

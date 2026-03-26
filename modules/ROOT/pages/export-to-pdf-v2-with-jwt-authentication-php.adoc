@@ -1,0 +1,80 @@
+= {pluginname} with JWT authentication (PHP) Guide
+:pluginname: Export to PDF
+:plugincode: exportpdf
+:navtitle: JWT Authentication setup for {pluginname}
+:description: Guide on how to set up JWT authentication for exporting PDF files with {pluginname} using PHP
+:keywords: jwt, authentication, exportpdf, pdf, php
+
+include::partial$auth/document-converters/php/intro-and-prerequisites.adoc[]
+
+[NOTE]
+====
+This guide uses the nested format (`version: '2'`) for `exportpdf_converter_options`. Requires {productname} 8.4.0 or newer. For full option documentation, see xref:exportpdf.adoc[Export to PDF]. For integrators on older versions, see xref:export-to-pdf-with-jwt-authentication-php.adoc[JWT Authentication setup for Export to PDF (PHP) – flat format].
+====
+
+include::partial$auth/document-converters/php/initial-project-setup.adoc[]
+
+== Setup
+
+=== Generate a Public/Private Key Pair
+
+include::partial$auth/document-converters/jwt-setup-document-converters.adoc[leveloffset=+2]
+
+include::partial$auth/document-converters/php/server-setup-php.adoc[]
+
+=== Web Page Setup (index.html)
+
+Inside the `public` folder where you created the `index.html` file add the HTML setup code.
+
+[source,html]
+----
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TinyMCE with Export to PDF</title>
+  <script 
+    src="https://cdn.tiny.cloud/1/no-api-key/tinymce/8/tinymce.min.js"
+    referrerpolicy="origin"
+    crossorigin="anonymous">
+  </script>
+  <script>
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'exportpdf',
+      toolbar: 'exportpdf',
+      exportpdf_converter_options: {
+        version: '2',
+        document: {
+          size: 'Letter',
+          margins: {
+            top: '1in',
+            right: '1in',
+            bottom: '1in',
+            left: '1in'
+          }
+        }
+      },
+      // exportpdf_token_provider fetches a token from the `/jwt.php` endpoint.
+      exportpdf_token_provider: () => {
+        return fetch('http://localhost:3000/jwt.php', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+        }).then(response => response.json());
+      },
+    });
+  </script>
+</head>
+<body>
+  <h1>TinyMCE Export to PDF Demo</h1>
+  <textarea>
+    Welcome to TinyMCE! Try the Export to PDF feature.
+  </textarea>
+</body>
+</html>
+----
+
+include::partial$auth/document-converters/php/configuration-steps.adoc[]
+
+== Further configuration
+
+For additional options such as per-page headers and footers, PDF metadata, and security settings, see the xref:exportpdf.adoc#exportpdf-converter-options[`exportpdf_converter_options`] section on the Export to PDF plugin page.

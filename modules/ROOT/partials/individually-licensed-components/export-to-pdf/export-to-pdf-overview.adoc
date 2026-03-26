@@ -3,6 +3,11 @@
 
 The On-Premises version of the {pluginname} Converter is an application that can be installed and run on the customer’s in-house servers and computing infrastructure, including a private cloud. It contains all the features of the {pluginname} Converter available as SaaS.
 
+[IMPORTANT]
+====
+To use {productname} 8.4.0 or newer with the Export to PDF plugin, the on-premises Docker image must support the v2 API (`/v2/convert/html-pdf`). Use the latest image or a v2-compatible version. See the link:https://registry.containers.tiny.cloud/api/changelogs/pdf-converter-tiny[changelog^] for version details.
+====
+
 A valid license key is required in order to install {pluginname} Converter On-Premises. You will also need an access token to access the {companyname} Cloud Docker registry and pull the Docker image. 
 
 To get started, link:https://www.tiny.cloud/contact/[Contact Tiny Support] for a trial license key and Docker access token. 

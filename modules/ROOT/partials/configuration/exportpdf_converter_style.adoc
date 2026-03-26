@@ -1,7 +1,7 @@
 [[exportpdf-converter-style]]
 == `exportpdf_converter_style`
 
-The `exportpdf_converter_style` option allow for customization of the styles applied to the exported PDF document, providing flexibility in controlling its appearance.
+The `exportpdf_converter_style` option allows customization of the styles applied to the exported PDF document, providing flexibility in controlling its appearance.
 
 *Type:* `+String+`
 
@@ -17,19 +17,20 @@ tinymce.init({
   toolbar: 'exportpdf',
   exportpdf_service_url: '<service_URL>', // required if using On-premises service
   exportpdf_converter_options: { // required to support "exportpdf_converter_style"
-    header: [
-      {
-        html: '<h1>First page header.</h1>', //example
-        css: 'h1 { font-size: 30px; }', //example
-      }
-    ],
+    header_html: '<h1>First page header.</h1>',
+    header_and_footer_css: 'h1 { font-size: 30px; }'
   },
   exportpdf_converter_style: 'p { color: cyan !important }' // requires both "exportpdf_converter_style" and "exportpdf_service_url" to be set.
 });
 ----
 
 [TIP]
-Watermarks can be added to exported PDF documents using CSS. Add the watermark styles to the `exportpdf_converter_style` option, targeting `body::after` instead of `#tinymce::after` for proper rendering. For more information see: link:https://exportpdf.converter.tiny.cloud/docs#section/General/CSS[General/CSS].
+====
+Watermarks can be added to exported PDF documents using CSS.
+
+* Add the watermark styles to the `exportpdf_converter_style` option, targeting **`body::after`** instead of **`#tinymce::after`** for proper rendering.
+* For more information see: link:https://exportpdf.converter.tiny.cloud/docs#section/General/CSS[General/CSS].
+====
 
 === Example: Adding watermarks to exported PDF documents
 

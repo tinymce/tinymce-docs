@@ -28,8 +28,8 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:known-issues[Known issues]
 
 
-[[new-premium-plugin<s>]]
-== New Premium plugin<s>
+[[new-premium-plugins]]
+== New Premium plugins
 
 The following new Premium plugin was released alongside {productname} {release-version}.
 
@@ -244,6 +244,13 @@ In {productname} {release-version}, the new xref:custom-view.adoc#view_show[`+vi
 // #TINY-vwxyz1
 
 // CCFR here.
+
+=== Certain deletion keyboard events in lists could not be prevented
+// #TINY-13276
+
+In {productname} {release-version}, an issue was identified where certain deletion keyboard events within lists could not be prevented due to the key handler being registered before the editor setup phase and without verifying whether the event had already been prevented. As a result, attempts to intercept and prevent selection deletion were ineffective, limiting customization and control over list behavior.
+
+{productname} {release-version} addresses this by updating the key handler registration to occur during the `init` phase, and additional checks now ensure that previously prevented events are respected.
 
 === Directionality of Hebrew was incorrect
 // #TINY-13667

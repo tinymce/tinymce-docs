@@ -77,7 +77,7 @@ jobs:
       uses: tinymce/tinymce-docs-generate-redirects-action@v1.0
       with:
         build: ./build/
-        redirects: https://raw.githubusercontent.com/tinymce/tinymce-docs/refs/heads/main/redirects.json
+        redirects: https://raw.githubusercontent.com/tinymce/tinymce-docs/main/redirects.json
         bucket: tiny-cloud-antora-docs-preview
         prefix: ${{ env.PR }}/${{ env.RUN }}
         parallel: 10

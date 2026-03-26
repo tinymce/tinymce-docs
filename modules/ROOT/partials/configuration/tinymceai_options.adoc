@@ -200,6 +200,12 @@ tinymce.init({
       ]
     }
   ],
+  tinymceai_chat_fetch_source: async (id) => {
+    const res = await fetch(`/api/documents/\$\{id\}`);
+    const blob = await res.blob();
+    const filename = `\$\{id\}.pdf`;
+    return { type: 'file', file: new File([blob], filename, { type: blob.type }) };
+  },
   // Required for authentication
   tinymceai_token_provider: () => {
     return fetch('/api/token').then(r => r.json());

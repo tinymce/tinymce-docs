@@ -7,7 +7,7 @@
 :keywords: AI, review, reviews, tinymceai
 :page-role: -toc
 
-The Review feature provides AI-powered quality assurance for content by running checks for grammar, style, tone, and more. It introduces an intuitive interface for reviewing and managing AI-suggested edits directly within the document, ensuring content meets professional standards with minimal manual effort.
+The Review feature provides AI-powered quality assurance for content by running checks for grammar, style, tone, and more. The plugin introduces an intuitive interface for reviewing and managing AI-suggested edits directly within the document, ensuring content meets professional standards with minimal manual effort. The API offers the same functionality with flexible integration.
 
 The Review feature is available as a plugin UI and through the Reviews API. This page covers both:
 
@@ -26,9 +26,11 @@ image::tinymceai/tinymce-ai-review-sidebar-command-categories-proofread-clarity.
 [[integration]]
 == Integration
 
-To start using the Review feature, first load the {pluginname} plugin in the editor configuration. The Review Mode button image:icons-premium/ai-review.svg[Review icon,24px] will appear in the AI user interface. See xref:tinymceai.adoc[Plugin Reference] for installation and enabling AI features.
+To start using the Review feature,  add `+tinymceai+` to the plugins option. This will automatically add the image:icons-premium/ai-review.svg[Review icon,24px] Review toolbar button and menu item to the default {productname} toolbar and menu.
+ 
+See xref:tinymceai.adoc[Plugin Reference] for more information regarding installation and enabling AI features.
 
-After picking one of the available commands in the Review Mode tab, the AI will analyze the document and propose a series of suggestions:
+After picking one of the available reviews in the Review Mode tab, the AI will analyze the document and propose a series of suggestions:
 
 image::tinymceai/tinymce-ai-review-improve-readability-suggestion-cards-and-underlines.png[{pluginname} Review sidebar with suggestions,width=80%]
 
@@ -36,9 +38,11 @@ While in the Review Mode, the editor remains read-only and allows browsing sugge
 
 image::tinymceai/tinymce-ai-review-mode-suggestions-underlined-in-editor-content.png[{pluginname} Review suggestion in content,width=80%]
 
-Review suggestions can be accepted or dismissed by clicking the corresponding buttons. All suggestions can also be accepted using the "Accept all" button at the top of the user interface. Changes can be previewed in the same way as xref:tinymceai-chat.adoc#previewing-changes[Chat suggestions]. Changes that were accepted or dismissed become greyed out in the interface. The review can also be abandoned by clicking the "Exit review" button.
+Review suggestions can be individually skipped or applied by clicking the corresponding buttons. Changes that were accepted or dismissed become greyed out in the interface. The "Complete" button in the top of the sidebar enables actions such as:
 
-Once reviewing is complete and all changes are accepted or rejected, click "Finish review" (the button state changes automatically) to return to the normal operation of the editor, where typing is possible.
+- Skipping or applying the remaining suggestions in bulk
+- Completing the review with the currently applied suggestions (and skipping the rest)
+- Aborting the review and exiting (with all applied changes reverted)
 
 [[review-commands]]
 == Review commands
@@ -86,6 +90,8 @@ Reviews use streaming output with Server-Sent Events for real-time feedback as s
 [[reviews-system-reviews-api]]
 === System Reviews
 
+System reviews are predefined review operations for common use cases, which each use the AI agent most suitable for their functionality. The API includes one endpoint for running system reviews, which is passed the review name. 
+
 Built-in system reviews including API names, descriptions, and whether each type is available in the Review sidebar or only through the API—are summarized in xref:tinymceai-review-plugin.adoc#review-commands[Review commands].
 
 For endpoint details, request and response schemas, authentication, and streaming behavior, see https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API].
@@ -93,7 +99,9 @@ For endpoint details, request and response schemas, authentication, and streamin
 [[reviews-custom-reviews]]
 === Custom reviews (API)
 
-Custom reviews use a unified Reviews API endpoint: analysis behavior is defined with a prompt parameter instead of the fixed system review identifiers listed under xref:tinymceai-review-plugin.adoc#review-commands[Review commands]. See https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for the endpoint, parameters, and examples.
+Integrators can also define custom reviews using the Custom Review API endpoint, which returns a output in a similar manner to system reviews but which takes a custom prompt to define the analysis behavior. Custom reviews can be as simple as checking for specific words or phrases, or as complex as applying a company style guide that includes business logic, specific terminology, and more.
+
+ See https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for the endpoint, parameters, and examples.
 
 The Review sidebar only exposes those built-in types for now; sidebar support for custom reviews is coming soon.
 

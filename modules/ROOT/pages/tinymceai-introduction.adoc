@@ -43,7 +43,7 @@ Existing customers on paid plans can request a full featured free trial through 
 [[integration-options]]
 == Integration Options
 
-{pluginname} can be integrated with applications through two methods: the plugin (for the editor UI) or the AI service API (for custom integrations). See xref:tinymceai-integration-options.adoc[Integration Options] for details.
+{pluginname} can be integrated with applications through two methods: the plugin (for out-of-the-box editor features) or the AI service API (for custom integrations). See xref:tinymceai-integration-options.adoc[Integration Options] for details.
 
 [[permissions]]
 == Permissions
@@ -56,9 +56,9 @@ Developers can control access to AI features, models, and capabilities based on 
 [[regional-data-storage]]
 === Regional Data Storage
 
-All data stored by {pluginname} follows the region settings of the {productname} Cloud Services environment, ensuring compliance with data residency requirements and optimal performance for the geographic location.
+All data stored by Tiny for {pluginname} is handled in the US region. 
 
-NOTE: Data sent to LLM providers for processing is currently handled in the US region, regardless of the Cloud Services environment region. {productname} does not offer separate LLM processing regions to choose from.
+Data sent to LLM providers for processing is currently handled in the US region. {productname} does not offer separate LLM processing regions to choose from.
 
 [[data-retention-policy]]
 === Data Retention Policy

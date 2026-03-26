@@ -109,6 +109,21 @@ In {productname} {release-version}, the save logic now resets the saving state t
 
 For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments].
 
+=== Suggested Edits
+
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
+
+**Suggested Edits** includes the following improvement.
+
+==== Document view rendering to reduce flickering when loading Suggested Edits.
+// #TINY-13135
+
+Previously, the document displayed in the Review Edits view relied on the deprecated browser method `document.write`, which could cause content to appear before it was fully styled. Users could briefly see partially rendered or unstyled content when opening the review interface.
+
+In {productname} {release-version}, the document loading process in the Review Edits view has been updated to remove the deprecated method. The document is now displayed only after it has fully loaded, improving browser compatibility and providing a smoother and more stable experience when reviewing suggested edits.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
+
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement
 

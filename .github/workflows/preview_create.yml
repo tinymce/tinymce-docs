@@ -6,14 +6,18 @@ on:
       - opened
       - reopened
       - synchronize
-
+  workflow_dispatch:
+    inputs:
+      pr_number:
+        description: Pull request number (e.g. 3976 for docs preview path pr-3976)
+        required: true
+        type: string
 
 # Need ID token write permission to use OIDC
 permissions:
   id-token: write
 
 env:
-  PR: pr-${{ github.event.number }}
   RUN: run-${{ github.run_number }}-${{ github.run_attempt }}
 
 jobs:
@@ -23,6 +27,9 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    env:
+      PR: pr-${{ github.event_name == 'workflow_dispatch' && github.event.inputs.pr_number || github.event.number }}
+
     defaults:
       run:
         shell: bash
@@ -30,6 +37,8 @@ jobs:
     steps:
     - name: Checkout branch
       uses: actions/checkout@v5
+      with:
+        ref: ${{ github.event_name == 'workflow_dispatch' && format('refs/pull/{0}/head', github.event.inputs.pr_number) || github.sha }}
 
     - name: Setup Node.js
       uses: actions/setup-node@v5

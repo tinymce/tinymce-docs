@@ -17,14 +17,14 @@ liveDemo::tinymceai[]
 [[what-is-tinymce-ai]]
 == What is {pluginname}
 
-{pluginname} is an AI-powered writing assistant that integrates directly into {productname}, providing instant text rewriting, summarization, correction, and contextual chat help based on organizational style guides. It includes automated review tools and enterprise-ready functionality that integrates with existing systems without requiring custom infrastructure.
+{pluginname} is an AI-powered writing assistant platform with two core components:
 
-Teams can implement a full suite of AI writing tools quickly, delivering efficient content workflows that maintain brand consistency and integrate smoothly with document management systems.
+* **xref:tinymceai.adoc[{pluginname} plugin]**: Integrates the AI directly into {productname}, providing instant text rewriting, summarization, correction, and contextual chat help based on organizational style guides. It includes automated review tools and enterprise-ready functionality that integrates with existing systems without requiring custom infrastructure.
+* **xref:tinymceai-api-overview.adoc[TinyMCE AI API]**: A state-of-the-art back-end AI engine that incorporates multiple models and delivers high-quality content. Any functionality available in the plugin is also available in the API, plus more, and the API can be used anywhere in your application -- not just in {productname}. *The hosted AI service is currently available in Cloud setup only.*
 
-The core components of {pluginname} are:
+These components enable teams to implement a full suite of AI writing tools quickly, delivering efficient content workflows that maintain brand consistency and integrate smoothly with document management systems. In addition, the plugin and API use the same authorisation mechanisms and share conversation history, enabling ease of integration with your application's broader content authoring workflow -- not just within {productname}.
 
-* **xref:introduction-to-tinymce.adoc[{productname}]**: A modern rich text editor with dozens of features that improve writing workflows, including collaboration.
-* **xref:tinymceai-api-overview.adoc[AI service]**: A state-of-the-art back-end AI engine that incorporates multiple models and delivers high-quality content. *The hosted AI service is currently available in Cloud setup only.*
+Both components support multiple AI models, enabling a unified UI and API across the models your application needs. See xref:tinymceai-models.adoc[AI Models] for more information.
 
 include::partial$misc/tinymceai-on-premises-early-access-note.adoc[]
 

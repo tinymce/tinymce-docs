@@ -1,0 +1,18 @@
+[[allow_noneditable]]
+== `+allow_noneditable+`
+
+This option controls whether the non-editable content feature is enabled. When set to `+false+`, the non-editable feature is disabled entirely, equivalent to disabling the `noneditable` plugin prior to {productname} 6.
+
+*Type:* `+Boolean+`
+
+*Default value:* `+true+`
+
+=== Example: using `+allow_noneditable+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  allow_noneditable: false
+});
+----

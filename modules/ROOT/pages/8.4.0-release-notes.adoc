@@ -179,9 +179,15 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== The noneditable feature can now be disabled with the new `allow_noneditable` option.
+// #TINY-10121
+
+Previously, the noneditable plugin was converted to a feature in core in {productname} 6. The feature was always enabled with no documented way to turn it off, which was not always desirable for integrators.
+
+In {productname} {release-version}, a new xref:non-editable-content-options.adoc#allow_noneditable[`+allow_noneditable+`] option is available. It is enabled by default. When set to `+false+`, the noneditable feature is disabled, equivalent to disabling the plugin prior to {productname} 6.
+
 === New `view_show` option to display a specified view on initialization.
 // #TINY-11967
-
 
 In {productname} {release-version}, the new xref:custom-view.adoc#view_show[`+view_show+`] option allows specifying which view to display when the editor is initialized. The option behaves similarly to `+sidebar_show+` but takes precedence for views; both sidebars and views can be configured to show on init.
 

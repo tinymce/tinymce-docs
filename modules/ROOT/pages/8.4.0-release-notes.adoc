@@ -236,6 +236,13 @@ In {productname} {release-version}, the new xref:custom-view.adoc#view_show[`+vi
 
 // CCFR here.
 
+=== The `border-color` style with multiple rgb colors would be compressed into `border` incorrectly
+// #TINY-13393
+
+Previously, when `border-color` used multiple rgb values (for example, for different sides of an element), the style compressor would incorrectly compress them into a single `border` shorthand. The `border` shorthand only supports one color, so this produced invalid CSS. This could affect tables and other elements with multi-colored borders.
+
+In {productname} {release-version}, a check was added to prevent compression when `border-color` contains multiple rgb values. The styles are no longer compressed into invalid shorthand.
+
 
 [[removed]]
 == Removed

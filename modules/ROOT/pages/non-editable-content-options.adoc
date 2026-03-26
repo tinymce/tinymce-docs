@@ -13,6 +13,9 @@ liveDemo::editable-class-and-editable-root[]
 [NOTE]
 Visit xref:ie-template-creation.adoc[Template creation example] for a practical example of multi-root editing.
 
+// allow_noneditable
+include::partial$configuration/allow_noneditable.adoc[]
+
 // noneditable_class
 include::partial$configuration/noneditable_class.adoc[]
 

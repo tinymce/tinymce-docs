@@ -173,7 +173,9 @@ These options configure the AI Chat sidebar, where users have interactive conver
 [[tinymceai_chat_fetch_sources]]
 === `+tinymceai_chat_fetch_sources+`
 
-A function that returns a Promise resolving to an array of additional context source groups. Each group has `+label+`, optional `+icon+`, and `+sources+` array. Each source has `+id+`, `+label+`, and `+type+` (`+'web-resource'+` or `+'file'+`).
+Populates the sources menu with submenus of files and web resources. Users can select these sources as additional context for chat conversations.
+
+Takes a function that returns a Promise resolving to an array of additional context source groups. Each group has `+label+`, optional `+icon+`, and `+sources+` array. Each source has `+id+`, `+label+`, and `+type+` (`+'web-resource'+` or `+'file'+`). A source's `+id+` is used to fetch its content via xref:tinymceai.adoc#tinymceai_chat_fetch_source[`tinymceai_chat_fetch_source`].
 
 *Type:* `+Function+` (`+() => Promise<Array>+`)
 

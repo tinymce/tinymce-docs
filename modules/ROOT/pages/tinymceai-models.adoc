@@ -172,7 +172,7 @@ Follow these steps to read limits and capabilities for the model the integration
 * *List models for the compatibility version*
 ** Request `GET /v1/models/{version}` with the compatibility version the integration targets (often `1`). Use the https://tinymceai.api.tiny.cloud/docs#tag/Models[Models API] OpenAPI definition to confirm `{version}` when unsure.
 * *Pick the matching `items[]` entry*
-** In the JSON `items` array, select the object whose `id` matches the model in configuration (`tinymceai_default_model` or `tinymceai_allowed_models`) or in API bodies (`model`).
+** In the JSON `items` array, select the object whose `id` matches the model in configuration (`tinymceai_default_model`) or in API bodies (`model`).
 * *Read `limits` and `capabilities`*
 ** Inspect `limits` for numeric caps (sizes are usually in bytes). Inspect `capabilities` for `webSearch` and `reasoning`, using `enabled` and `allowed`. Compare with the example response under xref:tinymceai-models.adoc#model-information[Model Information].
 * *Interpret availability flags*
@@ -363,7 +363,7 @@ Response (shape illustrated; field names and numeric limits follow the live serv
 }
 ----
 
-* **`id`**: Model identifier for `tinymceai_default_model`, `tinymceai_allowed_models`, and API `model` fields.
+* **`id`**: Model identifier for `tinymceai_default_model` and API `model` fields.
 * **`allowed`**: Whether the model can be used with the current token or subscription.
 * **`recommended`**: Service hint for default or highlighted models in UIs.
 * **`limits`**: Per-model numeric caps (sizes are typically bytes; `maxContextLength` is the context budget for that model in the service).

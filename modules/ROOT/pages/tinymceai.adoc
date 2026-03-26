@@ -24,7 +24,7 @@ liveDemo::{plugincode}[]
 To set up the {pluginname} plugin in {productname}:
 
 * add `{plugincode}` to the `plugins` option in the editor configuration;
-* configure the `tinymceai_token_provider` option to provide authentication tokens (must return `+{ token: string }+`);
+* configure the `tinymceai_token_provider` option to provide authentication tokens (must return `+{ token: string }+`). During a {cloudname} trial, the xref:tinymceai-jwt-authentication-intro.adoc#trial-demo-identity-service[demo identity service] can issue JWTs without a dedicated token endpoint;
 * add the AI toolbar buttons to the `toolbar` option. The plugin provides: `+tinymceai-chat+` image:icons-premium/ai-assistant.svg[Chat icon,24px], `+tinymceai-quickactions+` image:icons/ai-prompt.svg[Quick Actions icon,24px], and `+tinymceai-review+` image:icons-premium/ai-review.svg[Review icon,24px];
 
 [[minimal-setup]]
@@ -56,7 +56,6 @@ tinymce.init({
   tinymceai_token_provider: () => {
     return fetch('/api/token').then(r => r.json());
   },
-  tinymceai_sidebar_type: 'static',
   tinymceai_default_model: 'agent-1',
   tinymceai_allow_model_selection: true,
   tinymceai_chat_fetch_sources: async () => [

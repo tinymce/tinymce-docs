@@ -71,7 +71,6 @@ tinymce.init({
     'ai-chat-summarize',
     'ai-chat-highlight-key-points'
   ],
-  tinymceai_sidebar_type: 'static',
   // Required for authentication
   tinymceai_token_provider: () => {
     return fetch('/api/token').then(r => r.text()).then(token => ({ token }));

@@ -293,6 +293,13 @@ In {productname} {release-version}, a check was added to prevent compression whe
 
 // CCFR here.
 
+=== Toggling lists cause selection issues
+// #TINY-13213
+
+Previously, repeatedly toggling list formatting (for example, switching between bullet and ordered lists) could cause the selection to extend unexpectedly, including content that was not initially selected. The selection would jump to adjacent lines and expand with each subsequent toggle, making it difficult to apply list changes only to the intended items.
+
+In {productname} {release-version}, the selection logic no longer considers the forced root block when the selection is not collapsed. This prevents the selection from expanding beyond the intended list items, so list formatting can be toggled without unintended selection changes.
+
 === Setting width via Table Properties did not apply when `table_style_by_css` was `false`.
 // #TINY-12797
 

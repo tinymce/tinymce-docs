@@ -7,11 +7,11 @@
 :keywords: AI, chat, conversations, tinymceai
 :page-role: -toc
 
-The {pluginname} Chat is a conversational AI that facilitates rich, multi-turn interactions between users and an AI Assistant for content creation and editing. It provides context setting, model selection, chat history, and capabilities for web search and reasoning.
+The {pluginname} Chat is a conversational AI feature that facilitates rich, multi-turn interactions between users and an AI Assistant. It provides context setting, model selection, chat history, and capabilities for web search and reasoning.
 
-The Chat feature is available as a plugin UI and through the Conversations API. This page covers both:
+The Chat feature is available as part of the `+tinymceai+` plugin for {productname} and through the Conversations API. This page covers both:
 
-* Plugin sections describe user-facing features and configuration (xref:tinymceai.adoc#options-chat[Chat configuration]).
+* Plugin sections describe out-of-the-box user-facing features and configuration (xref:tinymceai.adoc#options-chat[Chat configuration]).
 * API sections cover REST API access (starting at xref:tinymceai-chat.adoc#conversations-api[Conversations API]).
 
 [[demo]]
@@ -44,7 +44,9 @@ The chat feature accelerates the creative process. Begin with a blank document a
 [[integration]]
 == Integration
 
-To start using the Chat feature, first load the {pluginname} plugin in the editor configuration. The Chat button image:icons-premium/ai-assistant.svg[Chat icon,24px] will appear in the AI user interface along with the Chat history image:icons/restore-draft.svg[History icon,24px]. See xref:tinymceai.adoc[Plugin Reference] for installation and enabling AI features.
+To start using the Chat feature, add `+tinymceai+` to the plugins option. This will automatically add the image:icons-premium/ai-assistant.svg[Chat icon,24px] Chat toolbar button and menu item to the default {productname} toolbar and menu.
+ 
+See xref:tinymceai.adoc[Plugin Reference] for more information regarding installation and enabling AI features.
 
 [[available-models]]
 == Available models
@@ -75,7 +77,7 @@ Some models use reasoning automatically, while others may require manual activat
 Model selection for AI chat can be configured using two configuration options:
 
 * `tinymceai_default_model`: Set the default model to use for AI chat.
-* `tinymceai_allow_model_selection`: Control whether users can select from available models (defaults to `true`).
+* `tinymceai_allow_model_selection`: Control what models users can select from available models (defaults to `true`).
 
 xref:tinymceai-models.adoc#supported-models-table[Learn more about available AI models].
 
@@ -106,7 +108,7 @@ Ask the AI about specific resources, for instance, _"Describe the attached image
 External resources enable seamless integration of knowledge bases and other centralized data into AI chat conversations. Instead of uploading documents each time, they can be selected from a list and referenced during the conversation.
 
 [[context-configuration]]
-=== Configuration
+=== Adding custom context sources
 
 Built-in options for adding the current document, URLs, and files to the conversation context are always available to users. There is no configuration option to enable or disable these built-in options.
 
@@ -175,7 +177,7 @@ image::tinymceai/tinymce-ai-chat-diff-mode-reject-suggestion-overlay.png[{plugin
 [[chat-history]]
 == Chat history
 
-All past conversations appear in the Chat history. Click the button image:icons/restore-draft.svg[Chat history icon,24px] in the chat header to open the list. Click a conversation to reopen it, or use the menu on each entry to pin, rename, or delete it. Click **Go to AI Chat** to return from the history view to the active conversation.
+All past conversations appear in the Chat history. Click the image:icons/restore-draft.svg[Chat history icon,24px] button in the chat header to open the list. Click a conversation to reopen it, or use the menu on each entry to pin, rename, or delete it. Click **Go to AI Chat** to return from the history view to the active conversation.
 
 Conversations are grouped by date to help navigate the history. Conversations can be filtered by name using the search field at the top of the user interface.
 

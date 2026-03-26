@@ -7,9 +7,9 @@
 :keywords: AI, quick actions, actions, tinymceai
 :page-role: -toc
 
-Quick actions simplify routine content transformations by offering one-click AI-powered suggestions directly within the editor. This feature enhances speed, relevance, and usability, particularly for repeatable or simple tasks. The feature comes with a window interface for most actions; some actions (such as Explain or Summarize) open the xref:tinymceai-chat.adoc[Chat] instead and start the conversation with a pre-filled prompt.
+Quick actions simplify routine content transformations by offering one-click AI-powered suggestions directly within the editor. This feature enhances speed, relevance, and usability, particularly for repeatable or simple tasks. The plugin feature comes with a review interface for most AI suggestions; some actions (such as Explain or Summarize) open the xref:tinymceai-chat.adoc[Chat] instead and start the conversation with a pre-filled prompt. The API includes the ability to call predefined and optimized system actions, or to define your own.
 
-The Quick Actions feature is available as a plugin UI and through the Actions API. This page covers both:
+The Quick Actions feature is available as part of the `+tinymceai+` plugin for {productname} and through the Actions API. This page covers both:
 
 * Plugin sections describe user-facing features and configuration (xref:tinymceai.adoc#options-quickactions[Quick Actions configuration]).
 * API sections cover REST API access (starting at xref:tinymceai-actions-plugin.adoc#actions-api[Actions API]).
@@ -98,7 +98,11 @@ By default, the Quick Actions feature includes several built-in actions that spe
 Custom actions can be added to the list, and default actions can be removed or reordered by configuring `tinymceai_quickactions_menu`. See xref:tinymceai-actions-plugin.adoc#configuring-quick-actions-menu[Configuring Quick Actions menu].
 
 [[quick-actions-reference-table]]
-The following table lists built-in Quick Actions. The **Editor command** column is the menu label. The **Menu or control ID** column lists values used in `tinymceai_quickactions_menu`, `tinymceai_quickactions_chat_prompts`, `tinymceai_quickactions_change_tone_menu`, and the toolbar when adding individual controls (see xref:tinymceai-actions-plugin.adoc#configuring-quick-actions-menu[Configuring Quick Actions menu]). The **System `actionName` or quick-action prompt id** column is the service identifier: for preview actions it is the `actionName` path segment in `+/v1/actions/system/{actionName}/calls+` (see xref:tinymceai-actions-plugin.adoc#actions-api[Actions API]); for Chat commands it is the built-in quick-action prompt id (`explain`, `summarize`, `highlight-key-points`) used when opening xref:tinymceai-chat.adoc[Chat] with a pre-filled prompt—not a system `actionName` and not sent on the system actions path.
+The following table lists built-in Quick Actions. 
+
+- The **Editor command** column is the menu label. 
+- The **Menu or control ID** column lists values used in `tinymceai_quickactions_menu`, `tinymceai_quickactions_chat_prompts`, `tinymceai_quickactions_change_tone_menu`, and the toolbar when adding individual controls (see xref:tinymceai-actions-plugin.adoc#configuring-quick-actions-menu[Configuring Quick Actions menu]). 
+- The **System `actionName` or quick-action prompt id** column is the service identifier: for preview actions it is the `actionName` path segment in `+/v1/actions/system/{actionName}/calls+` (see xref:tinymceai-actions-plugin.adoc#actions-api[Actions API]); for Chat commands it is the built-in quick-action prompt id (`explain`, `summarize`, `highlight-key-points`) used when opening xref:tinymceai-chat.adoc[Chat] with a pre-filled prompt—not a system `actionName` and not sent on the system actions path.
 
 [cols="1,3,2,3,1,1",options="header"]
 |===

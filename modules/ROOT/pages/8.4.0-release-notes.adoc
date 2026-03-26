@@ -57,6 +57,28 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== Comments
+
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
+
+**Comments** includes the following fixes.
+
+==== Errors when creating new comments made the save button stuck in a saving state.
+// #TINY-12224
+
+Previously, when creating or editing a comment in Comments, the save button could remain in a saving state indefinitely if the save operation failed or if the component was not replaced. The saving state had no way to reset to false except by recreating the component, which misled users into thinking the operation was still in progress.
+
+In {productname} {release-version}, the save logic now resets the saving state to false after the save operation completes, whether the operation succeeds or fails. The save button no longer remains stuck in a saving state.
+
+==== Users with an `id` that includes `@` weren't parsed correctly.
+// #TINY-12235
+
+Previously, the mentions parser in Comments did not treat the `@` symbol as part of a mention string. User IDs containing `@` (such as email addresses) were split incorrectly, so mentions remained as raw text instead of resolving to the display name after saving.
+
+In {productname} {release-version}, the Comments plugin now correctly parses mentions with `@` in user IDs. Mentions resolve to display names as expected.
+
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments].
+
 === Export to PDF
 
 The {productname} {release-version} release includes an accompanying release of the **Export to PDF** premium plugin.
@@ -113,21 +135,6 @@ Previously, setting and getting the editor content while the Full Page HTML plug
 In {productname} {release-version}, the `fullpagehtml` option has been added to the `editor.getContent()` and `editor.setContent()` APIs. When set to `false`, this option allows getting and setting only the body content while the Full Page HTML plugin is active, without interfering with the full document structure. The document is now more resistant to accidental changes, and content can be retrieved or updated without including the full HTML document. For details, see xref:fullpagehtml.adoc#fullpagehtml-getcontent-setcontent[`fullpagehtml` option for getContent/setContent].
 
 For information on the **Full Page HTML** plugin, see: xref:fullpagehtml.adoc[Full Page HTML].
-
-=== Comments
-
-The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
-
-**Comments** includes the following fix.
-
-==== Errors when creating new comments made the save button stuck in a saving state.
-// #TINY-12224
-
-Previously, when creating or editing a comment in Comments, the save button could remain in a saving state indefinitely if the save operation failed or if the component was not replaced. The saving state had no way to reset to false except by recreating the component, which misled users into thinking the operation was still in progress.
-
-In {productname} {release-version}, the save logic now resets the saving state to false after the save operation completes, whether the operation succeeds or fails. The save button no longer remains stuck in a saving state.
-
-For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments].
 
 === Suggested Edits
 

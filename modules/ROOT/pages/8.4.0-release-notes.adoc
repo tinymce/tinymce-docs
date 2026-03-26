@@ -207,6 +207,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 In {productname} {release-version}, the dropzone in the link and image dialog upload tabs previously provided no feedback when users inserted only files with disallowed extensions. This left users unsure whether the upload had failed or the dialog had not responded. The dropzone now displays an error message when all selected files have disallowed extensions, informing users that the selected files do not have allowed extensions and prompting them to choose different files.
 
+=== Directionality buttons now always apply to blocks and only appear active when directionality is set
+// #TINY-13337
+
+Previously, the directionality buttons would not apply the directionality attribute or style when toggling to the default directionality. This could cause non-default directional content to appear in the opposite direction.
+
+In {productname} {release-version}, each directionality button always applies or removes the directionality attribute on the selected block, and only appears active when directionality is explicitly set on the block.
+
 [[additions]]
 == Additions
 

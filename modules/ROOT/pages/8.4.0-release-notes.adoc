@@ -2,7 +2,7 @@
 :release-version: 8.4.0
 :navtitle: {productname} {release-version}
 :description: Release notes for {productname} {release-version}
-:keywords: releasenotes, new, changes, bugfixes
+:keywords: releasenotes, new, changes, bugfixes, new features, improvements, changes, removals, deprecated, known issues
 :page-toclevels: 1
 
 include::partial$misc/admon-releasenotes-for-stable.adoc[]
@@ -13,8 +13,8 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, February 4^th^, 2026. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
-* xref:new-premium-plugin<s>[New Premium plugin<s>]
-* xref:new-open-source-plugin<s>[New Open Source plugin<s>]
+* xref:new-premium-plugins[New Premium plugin<s>]
+* xref:new-open-source-plugins[New Open Source plugins]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
 * xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
@@ -76,7 +76,14 @@ For information on the **Media Optimizer** plugin, see: xref:uploadcare.adoc[Med
 
 The {productname} {release-version} release includes an accompanying release of the **Full Page HTML** premium plugin.
 
-**Full Page HTML** includes the following fixes.
+**Full Page HTML** includes the following update.
+
+==== Replaced deprecated browser APIs with modern equivalents.
+// #TINY-13674
+
+Previously, the Full Page HTML plugin used deprecated `+escape+` and `+unescape+` JavaScript APIs for some protected content handling. Those APIs are no longer recommended for new code.
+
+In {productname} {release-version}, the plugin uses modern encoding APIs instead. This aligns the implementation with current browser guidance and improves reliability for protected content handling.
 
 ==== Pasting an HTML document was vulnerable to XSS attacks
 // #TINY-13673
@@ -123,6 +130,7 @@ Previously, the document displayed in the Review Edits view relied on the deprec
 In {productname} {release-version}, the document loading process in the Review Edits view has been updated to remove the deprecated method. The document is now displayed only after it has fully loaded, improving browser compatibility and providing a smoother and more stable experience when reviewing suggested edits.
 
 For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
+
 
 [[accompanying-premium-plugin-end-of-life-announcement]]
 == Accompanying Premium plugin end-of-life announcement
@@ -191,7 +199,6 @@ In {productname} {release-version}, a new xref:non-editable-content-options.adoc
 
 In {productname} {release-version}, the new xref:custom-view.adoc#view_show[`+view_show+`] option allows specifying which view to display when the editor is initialized. The option behaves similarly to `+sidebar_show+` but takes precedence for views; both sidebars and views can be configured to show on init.
 
-
 [[changes]]
 == Changes
 
@@ -223,6 +230,7 @@ In {productname} {release-version}, the new xref:custom-view.adoc#view_show[`+vi
 // #TINY-vwxyz1
 
 // CCFR here.
+
 === Directionality of Hebrew was incorrect
 // #TINY-13667
 

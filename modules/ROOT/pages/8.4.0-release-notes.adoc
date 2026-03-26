@@ -66,7 +66,7 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== Cancel button would always focus when the view opened, even when editor wasn't focused.
 // #TINY-13711
 
-Previously, the Cancel button in Suggested Edits was automatically focused whenever the review was opened, including when the review opened automatically on load. When the editor was positioned lower on the page, the browser would scroll the focused button into view, causing unexpected page scrolling.
+Previously, the Cancel button in Suggested Edits was automatically focused whenever the review was opened, including when the review opened automatically on load. This could cause unexpected scrolling behaviour, such as when an editor is positioned further down the page, the browser would scroll the editor into view when the page loads.
 
 In {productname} {release-version}, the Cancel button is now focused only when the editor itself is already focused. When the review is opened automatically, the button is no longer focused, preventing unintended scrolling.
 

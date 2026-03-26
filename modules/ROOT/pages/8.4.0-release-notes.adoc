@@ -300,6 +300,13 @@ In {productname} {release-version}, a check was added to prevent compression whe
 
 // CCFR here.
 
+=== Some formatting was not applied to items in multilevel list.
+// #TINY-13324
+
+Previously, when applying formatting such as background, bold, italic, underline, or strikethrough to a multilevel list and then adding new items before the second-level list, the new items could lose some of that formatting. This occurred because creating a new line in a list item that contained a nested list sometimes trimmed the empty elements that held the applied styles.
+
+In {productname} {release-version}, the trim logic has been updated to avoid removing these elements when inserting a new line inside a list item that contains both an empty element (the styles) and a nested list. The formatting is now preserved as expected when adding new items to multilevel lists.
+
 === Now `link` dialog allows uploading empty files
 // #TINY-13421
 

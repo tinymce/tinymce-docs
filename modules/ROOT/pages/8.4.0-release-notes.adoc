@@ -265,6 +265,13 @@ In {productname} {release-version}, a check was added to prevent compression whe
 
 // CCFR here.
 
+=== Dropdown menus with `matchWidth: true` would be located to the left of their parent if the content was sufficiently long
+// #TINY-4531
+
+Previously, dropdown menus with `matchWidth: true` could sit to the left of the input when the field value overflowed past the right edge of the viewport, such as when pasting a long URL into the image dialog source field. Misalignment ranged from a slight offset to the menu sitting flush against the left edge of the viewport. The dropdown width was constrained to match the input, but the menu was not repositioned after that constraint, so the list no longer lined up with the field and looked disconnected.
+
+In {productname} {release-version}, the positioning logic now triggers a repositioning whenever the dropdown width is constrained. The dropdown remains aligned with the input as expected.
+
 === Attempting to remove a link after a `contentEditable="false"` element would not be possible.
 // #TINY-13108
 

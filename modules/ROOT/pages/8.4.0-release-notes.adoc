@@ -117,7 +117,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 === Directionality buttons now always apply to blocks and only appear active when directionality is set
 // #TINY-13337
 
-Previously, the directionality buttons only applied the directionality attribute or style to the current block when toggling to the opposite of the default directionality. Clicking the button for the default directionality had no effect, and the toolbar could show an active button even when the block itself had no explicit directionality set.
+Previously, the directionality buttons would not apply the directionality attribute or style when toggling to the default directionality. This could cause non-default directional content to appear in the opposite direction.
 
 In {productname} {release-version}, each directionality button always applies or removes the directionality attribute on the selected block, and only appears active when directionality is explicitly set on the block.
 

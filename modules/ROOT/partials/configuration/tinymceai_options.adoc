@@ -39,19 +39,19 @@ tinymce.init({
 
 A function that returns a Promise resolving to an object with a `+token+` property containing the signed JWT token for authenticating with the {pluginname} service.
 
+*Type:* `+Function+` (`+() => Promise<{ token: string }>+`)
+
+*Default value:* `+undefined+`
+
 The JWT payload must include these required claims:
 
 * `+iat+`: Issued at time (provided by JWT libraries)
 * `+exp+`: Expiration time (tokens cannot exceed 24 hours; 5-15 minutes recommended)
 * `+aud+`: The {productname} API key
-* `+auth+`: Authentication object (see separate authentication documentation)
+* `+auth+`: Authentication object
 * `+sub+`: Unique user ID
 
-*Type:* `+Function+` (`+() => Promise<{ token: string }>+`)
-
-*Default value:* `+undefined+`
-
-For JWT setup and required claims, see xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication].
+For more information about JWT setup, required claims, and the authentication object, see xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication].
 
 The token endpoint may return the JWT in different formats. Handle both:
 

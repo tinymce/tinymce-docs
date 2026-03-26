@@ -1,0 +1,14 @@
+== Show view on editor load
+
+The xref:custom-view.adoc#view_show[`+view_show+`] option can be used to show the {pluginname} view when the editor is loaded.
+
+.For example:
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  plugins: 'advcode',
+  toolbar: 'code',
+  view_show: 'code',
+});
+----

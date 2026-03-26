@@ -1,0 +1,61 @@
+[[view_show]]
+== `+view_show+`
+
+This option allows the specified view to be displayed on editor initialization. It behaves similarly to xref:customsidebar.adoc#sidebar_show[`+sidebar_show+`] but applies to views and takes precedence when both are configured. Views and sidebars can both be set to show on init, with the sidebar shown once the view is closed.
+
+The value must match the name of a registered view. Premium plugins that register views include:
+
+* xref:suggestededits.adoc[Suggested Edits] (`+suggestededits+`)
+* xref:revisionhistory.adoc[Revision History] (`+revision+`)
+* xref:advcode.adoc[Enhanced Code Editor] (`+code+`)
+
+Custom views registered via xref:custom-view.adoc[`+addView+`] can also be specified.
+
+include::partial$misc/admon-iframe-only.adoc[]
+
+*Type:* `+String+`
+
+=== Example: using `+view_show+` with a premium plugin
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  plugins: 'suggestededits',
+  toolbar: 'suggestededits',
+  view_show: 'suggestededits',
+  // ... other Suggested Edits options (suggestededits_model, user_id, fetch_users)
+});
+----
+
+=== Example: using `+view_show+` with a custom view
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea', // change this value according to your HTML
+  menubar: false,
+  toolbar: 'view',
+  view_show: 'view',
+  setup: (editor) => {
+    const toggleView = () => editor.execCommand('ToggleView', false, 'view');
+    editor.ui.registry.addView('view', {
+      onShow: (api) => {
+        api.getContainer().innerHTML = '<p>You opened the view!</p>';
+      },
+      onHide: (api) => {
+        api.getContainer().innerHTML = '';
+      },
+      buttons: [{
+        type: 'button',
+        text: 'Close',
+        onAction: toggleView
+      }]
+    });
+    editor.ui.registry.addButton('view', {
+      text: 'Open view',
+      onAction: toggleView
+    });
+  }
+});
+----

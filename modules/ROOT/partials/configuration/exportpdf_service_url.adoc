@@ -5,6 +5,11 @@ The {pluginname} plugin uses an HTML-to-PDF converter service to generate `docum
 
 This option is **required** when configuring the {pluginname} plugin for `on-premise` setups. If you require access to this feature, please link:https://www.tiny.cloud/contact/[contact us]. For detailed instructions on deploying the {pluginname} service server-side component using Docker, refer to the xref:individual-export-to-pdf-on-premises.adoc[on-premises documentation].
 
+[IMPORTANT]
+====
+On-premises deployments require a Docker image version that supports the v2 API (`/v2/convert/html-pdf`). Upgrade to the latest image or a v2-compatible version to use {productname} 8.4.0 or newer with the Export to PDF plugin.
+====
+
 [TIP]
 When using a custom host, set the `exportpdf_service_url` option in your {productname} configuration to match your host. For example, if your custom host is `mycustomhost.com`, set the URL to `https://mycustomhost.com/`.
 

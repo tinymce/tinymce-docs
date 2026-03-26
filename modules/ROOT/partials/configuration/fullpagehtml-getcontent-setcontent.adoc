@@ -1,0 +1,22 @@
+[[fullpagehtml-getcontent-setcontent]]
+== `+fullpagehtml+` option for `+getContent()+` and `+setContent()+`
+
+When the {pluginname} plugin is active, `editor.getContent()` and `editor.setContent()` return and accept the full HTML document by default. The `fullpagehtml` option allows getting and setting only the body content when needed.
+
+Pass `fullpagehtml: false` in the options object to bypass full-page processing and work with body content only:
+
+* `editor.getContent({ fullpagehtml: false })` — Returns only the `<body>` content.
+* `editor.setContent(content, { fullpagehtml: false })` — Sets only the body content without modifying the document head.
+
+This option is useful when saving or loading body content separately (for example, when storing content in a database or when integrating with systems that expect body-only HTML). Unlike `fullpagehtml_hide_in_source_view`, which affects only the source code view display, the `fullpagehtml` option affects API behavior and requires no configuration.
+
+=== Example: getting and setting body content
+
+[source,js]
+----
+// Get only the body content for saving
+const bodyContent = editor.getContent({ fullpagehtml: false });
+
+// Set only the body content (preserves document head)
+editor.setContent(newBodyContent, { format: 'html', fullpagehtml: false });
+----

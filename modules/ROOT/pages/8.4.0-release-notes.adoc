@@ -57,6 +57,19 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== Export to PDF
+
+The {productname} {release-version} release includes an accompanying release of the **Export to PDF** premium plugin.
+
+**Export to PDF** includes the following addition.
+
+==== exportpdf supports API version 2 converter options
+// #TINY-13700
+
+`{productname}` `{release-version}` adds support for version `2` of the `exportpdf` API through `exportpdf_converter_options`. Version `1` remains the default for backward compatibility. The new nested structure organizes options under `document`, `headers`, `footers`, `metadata`, `security`, and `signature`, enabling per-page headers and footers, PDF metadata, password protection, and certificate-based signing.
+
+For information on the **Export to PDF** plugin, see xref:exportpdf.adoc[Export to PDF].
+
 === Media Optimizer
 
 The {productname} {release-version} release includes an accompanying release of the **Media Optimizer** premium plugin.
@@ -198,6 +211,7 @@ In {productname} {release-version}, a new xref:non-editable-content-options.adoc
 // #TINY-11967
 
 In {productname} {release-version}, the new xref:custom-view.adoc#view_show[`+view_show+`] option allows specifying which view to display when the editor is initialized. The option behaves similarly to `+sidebar_show+` but takes precedence for views; both sidebars and views can be configured to show on init.
+
 
 [[changes]]
 == Changes

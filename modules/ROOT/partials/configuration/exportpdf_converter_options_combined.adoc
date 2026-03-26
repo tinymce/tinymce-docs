@@ -1,0 +1,152 @@
+[[exportpdf-converter-options]]
+== `exportpdf_converter_options`
+
+Configures page layout, headers, footers, and other PDF output options. The editor sends this configuration to the converter service when exporting.
+
+**Type:** `+Object+`
+
+[TIP]
+====
+**Which format to use**
+
+* **Flat format** – Use for existing integrations (no changes required) or when a simple structure is preferred. Properties such as `format`, `margin_top`, `header_html` at the top level.
+* **Nested format** – Use for new integrations or when per-page headers, PDF metadata, security, or digital signatures are needed. Set `version: '2'` and organize options under `document`, `headers`, `footers`, `metadata`.
+====
+
+Both formats use the same API endpoint. Flat-format options are converted to the nested structure automatically before the request.
+
+[NOTE]
+====
+Requires {productname} 8.4.0 or newer. On-premises deployments require a Docker image version that supports the v2 API.
+====
+
+=== Flat format
+
+Top-level properties: `format`, `margin_top`, `margin_right`, `margin_bottom`, `margin_left`, `header_html`, `footer_html`, `header_and_footer_css`, `page_orientation`, `wait_for_network`, `wait_time`, `base_url`, `extra_http_headers`. Supported for backward compatibility.
+
+[NOTE]
+As of {productname} 7.5.0, the `exportpdf_converter_options` setting now comes with a default value set to the following:
+
+.**Default value (flat format):**
+[source,js]
+----
+{
+  format: 'Letter',
+  margin_top: '1in',
+  margin_right: '1in',
+  margin_bottom: '1in',
+  margin_left: '1in'
+}
+----
+
+.Example: flat format
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'exportpdf',
+  toolbar: 'exportpdf',
+  exportpdf_service_url: '<service_url>', // required if using On-premises service
+  exportpdf_converter_options: {
+    header_html: '<p>HEADER</p>', // example
+    header_and_footer_css: 'p { color: blue }', // example
+  },
+})
+----
+
+=== Nested format
+
+Set `version: '2'` to use the nested structure. Access per-page headers and footers, PDF metadata, security, and digital signatures.
+
+.**Default value (nested format):**
+[source,js]
+----
+{
+  version: '2',
+  document: {
+    size: 'Letter',
+    margins: {
+      top: '1in',
+      right: '1in',
+      bottom: '1in',
+      left: '1in'
+    }
+  }
+}
+----
+
+**Main option groups:**
+
+[cols="1,3",options="header"]
+|===
+| Option | Description
+| `document` | Page size, orientation, and margins
+| `headers` / `footers` | Per-page headers and footers (`default`, `first`, `odd`, `even`) with `html` and `css`
+| `metadata` | PDF metadata (`title`, `author`, `subject`, `keywords` array, `custom_fields`)
+|===
+
+**Additional options:**
+
+* `rendering` – `wait_for_network`, `wait_time`
+* `security` – `owner_password` (password protection)
+* `signature` – `certificate`, `certificate_password` (digital signing; cannot be used with `security`)
+* `base_url`, `extra_http_headers`, `disable_compression`
+
+For full details, see the https://exportpdf.api.tiny.cloud/v2/convert/docs#section/Export-to-PDF-(v2)/Configuration[PDF Converter API documentation^].
+
+.Example: per-page headers and footers
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'exportpdf',
+  toolbar: 'exportpdf',
+  exportpdf_service_url: '<service_url>',
+  exportpdf_converter_options: {
+    version: '2',
+    document: {
+      size: 'Letter',
+      orientation: 'portrait',
+      margins: {
+        top: '2cm',
+        bottom: '2cm',
+        left: '1cm',
+        right: '3cm',
+        enable_mirror_margins: true
+      }
+    },
+    headers: {
+      default: { html: '<p>HEADER</p>', css: 'p { color: blue }' },
+      first: { html: '<p>FIRST PAGE</p>', css: 'p { font-weight: bold }' }
+    },
+    footers: {
+      default: { html: '<p>FOOTER</p>', css: 'p { color: green }' }
+    }
+  },
+});
+----
+
+.Example: metadata
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'exportpdf',
+  toolbar: 'exportpdf',
+  exportpdf_converter_options: {
+    version: '2',
+    metadata: {
+      title: 'My Document',
+      author: 'John Doe',
+      subject: 'Quarterly Report',
+      keywords: [ 'report', '2024', 'sales' ],
+      custom_fields: { 'Department': 'Sales' }
+    }
+  }
+});
+----
+
+[NOTE]
+The `exportpdf_service_url` option must be configured for the {pluginname} plugin to work.
+
+> For comprehensive details, see the https://exportpdf.api.tiny.cloud/v2/convert/docs[PDF Converter API documentation^]. For migration guidance from flat to nested format, see the https://exportpdf.api.tiny.cloud/v2/convert/docs#section/Export-to-PDF-(v2)/Migration-guide-from-v1-to-v2[migration guide^].

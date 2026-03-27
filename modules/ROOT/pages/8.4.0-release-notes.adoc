@@ -13,8 +13,8 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, February 4^th^, 2026. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
-* xref:new-premium-plugins[New Premium plugin<s>]
-* xref:new-open-source-plugins[New Open Source plugins]
+* xref:new-premium-plugins[New Premium plugins]
+* xref:new-open-source-plugin[New Open Source plugin]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
 * xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
@@ -210,7 +210,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[improvements]]
 == Improvements
 
-{productname} {release-version} also includes the following improvement<s>:
+{productname} {release-version} also includes the following improvements:
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
@@ -233,7 +233,7 @@ In {productname} {release-version}, each directionality button always applies or
 [[additions]]
 == Additions
 
-{productname} {release-version} also includes the following addition<s>:
+{productname} {release-version} also includes the following additions:
 
 === New `table_default_header_rows` and `table_default_header_cols` options to set the default header size for new tables
 // #TINY-13391
@@ -261,7 +261,7 @@ In {productname} {release-version}, the new xref:custom-view.adoc#view_show[`+vi
 [[changes]]
 == Changes
 
-{productname} {release-version} also includes the following change<s>:
+{productname} {release-version} also includes the following changes:
 
 === The `border-color` style with multiple rgb colors would be compressed into `border` incorrectly
 // #TINY-13393
@@ -273,7 +273,7 @@ In {productname} {release-version}, a check was added to prevent compression whe
 [[removed]]
 == Removed
 
-{productname} {release-version} also includes the following removal<s>:
+{productname} {release-version} also includes the following removals:
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
@@ -284,7 +284,7 @@ In {productname} {release-version}, a check was added to prevent compression whe
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
@@ -379,7 +379,7 @@ In {productname} {release-version}, the fix checks if the content CSS is availab
 [[security-fixes]]
 == Security fixes
 
-{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
+{productname} {release-version} includes fixes for the following security issues:
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
@@ -390,7 +390,7 @@ In {productname} {release-version}, the fix checks if the content CSS is availab
 [[deprecated]]
 == Deprecated
 
-{productname} {release-version} includes the following deprecation<s>:
+{productname} {release-version} includes the following deprecations:
 
 === The `<plugin>` configuration property, `<name>`, has been deprecated
 
@@ -402,7 +402,7 @@ In {productname} {release-version}, the fix checks if the content CSS is availab
 
 This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
 
-There <is one | are <number> known issue<s> in {productname} {release-version}.
+The following known issues affect {productname} {release-version}.
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1

@@ -85,7 +85,7 @@ There are two types of actions available in the quick actions feature:
 
 * Chat actions, such as "Explain" or "Summarize", open the xref:tinymceai-chat.adoc[Chat] interface with the selected text added as context and automatically start the conversation with a pre-filled prompt.
 
-* Preview actions, such as "Continue writing", "Make shorter", "Improve writing", or "Fix grammar", display the AI response in a preview interface where users can review and accept or reject the suggested changes.
+* Preview actions such as _Continue writing_, _Make shorter_, _Improve writing_, and _Fix grammar_ show a preview of your document where suggested edits appear so you can review them and apply or skip each change.
 
 Custom actions let integrators define whether each action opens Chat or shows a preview. See xref:tinymceai-actions-plugin.adoc#custom-actions[Custom Actions].
 

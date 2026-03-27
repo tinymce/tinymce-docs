@@ -126,7 +126,7 @@ Models can be configured in two ways:
 
 [NOTE]
 ====
-The set of models and capabilities can change between major {productname} releases. That kind of change is not treated as a breaking change for the editor. Use the plugin model picker or `GET /v1/models/{version}` to see what the environment offers and the model limitations.
+The set of models and capabilities can change between major {productname} releases. That kind of change is not treated as a breaking change for the editor. Use the plugin's model selection dropdown or `GET /v1/models/{version}` to see what the environment offers and the model limitations.
 ====
 
 .Example: Set default model in plugin configuration

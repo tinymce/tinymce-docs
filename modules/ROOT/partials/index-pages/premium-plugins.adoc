@@ -1,7 +1,5 @@
 This section lists the premium plugins provided by {productname}.
 
-include::partial$misc/admon-plugins-tinymce-ai-feature.adoc[]
-
 [cols="1,1"]
 |===
 
@@ -19,9 +17,9 @@ Replace common typewriter-style characters with their professional typesetter eq
 
 a|
 [.lead]
-xref:ai.adoc[AI Assistant (legacy)]
+xref:ai.adoc[AI Assistant]
 
-Earlier plugin for sending queries to registered AI APIs and inserting results into the document. New integrations are documented under xref:tinymceai-introduction.adoc[TinyMCE AI].
+Send queries to registered AI APIs and set the results in the current document.
 
 a|
 [.lead]
@@ -201,6 +199,12 @@ a|
 xref:tableofcontents.adoc[Table of Contents]
 
 Insert a simple Table of Contents into the {productname} editor.
+
+a|
+[.lead]
+xref:tinymceai-introduction.adoc[TinyMCE AI]
+
+AI-powered features for {productname} including AI chat, AI review, and quick actions.
 
 a|
 [.lead]

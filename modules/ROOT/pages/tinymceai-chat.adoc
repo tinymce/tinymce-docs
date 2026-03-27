@@ -9,7 +9,7 @@
 
 The {pluginname} Chat is a conversational AI feature that facilitates rich, multi-turn interactions between users and an AI Assistant. It provides context setting, model selection, chat history, and capabilities for web search and reasoning.
 
-The Chat feature is available as part of the `+tinymceai+` plugin for {productname} and through the Conversations API. This page covers both:
+The Chat feature is available as part of the `+tinymceai+` plugin for {productname} and through the https://tinymceai.api.tiny.cloud/docs#tag/Conversations[Conversations API]. This page covers both:
 
 * Plugin sections describe built-in user-facing features and configuration (xref:tinymceai.adoc#options-chat[Chat configuration]).
 * API sections cover REST API access (starting at xref:tinymceai-chat.adoc#conversations-api[Conversations API]).
@@ -198,9 +198,9 @@ After a full page load or new browser session, reopening Chat does not automatic
 [[conversations-api]]
 == Conversations API
 
-The Chat plugin feature is built on top of the Conversations API, which provides REST access to the same conversation functionality described in xref:tinymceai-api-overview.adoc[API Overview]. Conversations support multiple messages with shared context, optional files and web resources, and suggestions that can update editor content.
+The Chat plugin feature is built on top of the https://tinymceai.api.tiny.cloud/docs#tag/Conversations[Conversations API], which provides REST access to the same conversation functionality described in xref:tinymceai-api-overview.adoc[API Overview]. Conversations support multiple messages with shared context, optional files and web resources, and suggestions that can update editor content.
 
-For endpoint listings and schemas, start with xref:tinymceai-api-overview.adoc[API Overview] and xref:tinymceai-api-quick-start.adoc[API Quick Start], then use the interactive reference linked below.
+For endpoint listings and request or response schemas, start with xref:tinymceai-api-overview.adoc[API Overview] and xref:tinymceai-api-quick-start.adoc[API Quick Start], then use the https://tinymceai.api.tiny.cloud/docs[interactive API documentation] (for example the https://tinymceai.api.tiny.cloud/docs#tag/Conversations[Conversations] operations).
 
 [[conversations-key-features]]
 === Key Features

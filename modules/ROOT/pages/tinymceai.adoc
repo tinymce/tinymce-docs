@@ -25,17 +25,18 @@ To set up the {pluginname} plugin in {productname}:
 
 * add `{plugincode}` to the `plugins` option in the editor configuration;
 * configure the `tinymceai_token_provider` option to provide authentication tokens (must return `+{ token: string }+`). During a {cloudname} trial, the xref:tinymceai-jwt-authentication-intro.adoc#trial-demo-identity-service[demo identity service] can issue JWTs without a dedicated token endpoint;
-* add the AI toolbar buttons to the `toolbar` option. The plugin provides: `+tinymceai-chat+` image:icons-premium/ai-assistant.svg[Chat icon,24px], `+tinymceai-quickactions+` image:icons/ai-prompt.svg[Quick Actions icon,24px], and `+tinymceai-review+` image:icons-premium/ai-review.svg[Review icon,24px];
+* when the `toolbar` option is omitted or left at the default, the Silver theme toolbar already includes the AI toolbar buttons once the plugin is enabled: `+tinymceai-chat+` image:icons-premium/ai-assistant.svg[Chat icon,24px], `+tinymceai-quickactions+` image:icons/ai-prompt.svg[Quick Actions icon,24px], and `+tinymceai-review+` image:icons-premium/ai-review.svg[Review icon,24px]. When a custom `toolbar` string is set, add those button ids to the string explicitly.
 
 [[minimal-setup]]
 === Minimal setup
+
+The following configuration enables the plugin and token provider and relies on the default toolbar, which includes the AI buttons. If the `toolbar` option is set to a custom string, add `+tinymceai-chat+`, `+tinymceai-quickactions+`, and `+tinymceai-review+` to that string.
 
 [source,js]
 ----
 tinymce.init({
   selector: 'textarea',  // change this value according to the HTML
   plugins: 'tinymceai',
-  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
   tinymceai_token_provider: () => {
     return fetch('/api/token').then(r => r.json());
   }
@@ -45,10 +46,12 @@ tinymce.init({
 [[complete-setup]]
 === Complete setup example
 
+The following example sets a custom `toolbar` string. To use the default toolbar instead (which already includes the AI buttons), omit the `toolbar` option.
+
 [source,js]
 ----
 tinymce.init({
-  selector: '#editor',
+  selector: 'textarea',  // change this value according to the HTML
   plugins: 'tinymceai',
   toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
   content_id: 'document-123',
@@ -79,10 +82,21 @@ tinymce.init({
 });
 ----
 
-[[ui-control]]
-== UI Control
+[[options]]
+== Options
 
-The AI interface is toggled through toolbar buttons or menu items. Clicking `+tinymceai-chat+` image:icons-premium/ai-assistant.svg[Chat icon,24px] opens the chat sidebar; clicking again minimizes it (chat history is preserved). Clicking `+tinymceai-review+` image:icons-premium/ai-review.svg[Review icon,24px] opens the review sidebar.
+The following configuration options affect the behavior of the {pluginname} plugin.
+
+include::partial$configuration/tinymceai_options.adoc[leveloffset=+1]
+
+include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
+
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+
+[[sidebars]]
+== Sidebars
+
+The chat and review interfaces open as sidebars. From the toolbar or menu, clicking `+tinymceai-chat+` image:icons-premium/ai-assistant.svg[Chat icon,24px] opens the chat sidebar; clicking again minimizes it (chat history is preserved). Clicking `+tinymceai-review+` image:icons-premium/ai-review.svg[Review icon,24px] opens the review sidebar.
 
 To toggle sidebars programmatically, use the core `+ToggleSidebar+` command:
 
@@ -95,7 +109,7 @@ editor.execCommand('ToggleSidebar', false, 'tinymceai-review');
 [[keyboard-shortcuts]]
 === Keyboard shortcuts
 
-The following keyboard shortcuts are available for the AI interface:
+The following keyboard shortcuts are available for the AI sidebars:
 
 [cols="2,1,1",options="header"]
 |===
@@ -108,7 +122,7 @@ To show the chat sidebar on load:
 [source,js]
 ----
 tinymce.init({
-  selector: '#editor',
+  selector: 'textarea',  // change this value according to the HTML
   plugins: 'tinymceai',
   toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
   sidebar_show: 'tinymceai-chat',
@@ -118,17 +132,6 @@ tinymce.init({
   }
 });
 ----
-
-[[options]]
-== Options
-
-The following configuration options affect the behavior of the {pluginname} plugin.
-
-include::partial$configuration/tinymceai_options.adoc[leveloffset=+1]
-
-include::partial$misc/plugin-toolbar-button-id-boilerplate.adoc[]
-
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 [[commands]]
 == Commands

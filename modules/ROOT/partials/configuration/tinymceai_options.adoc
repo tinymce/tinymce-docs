@@ -429,7 +429,7 @@ tinymce.init({
 [[tinymceai_quickactions_custom]]
 === `+tinymceai_quickactions_custom+`
 
-Array of custom command objects rendered in the Custom Commands menu item. Each item can be type `+action+` (quick action with immediate preview) or type `+chat+` (opens in chat).
+Array of custom actions rendered in the Custom submenu within the AI Quick Actions menu. Each item can be type `+action+` (quick action with immediate preview) or type `+chat+` (opens in chat).
 
 * `+title+`: Text shown in the menu and chat history
 * `+prompt+`: The prompt sent to the AI

@@ -217,14 +217,14 @@ Web scraping extracts and processes content from web pages so the AI can analyze
 [[model-limitations]]
 == Model Limitations
 
-Per-model caps (context length, attachment sizes, PDF page totals, and similar) are returned in the `limits` object for each entry in `GET /v1/models/{version}`. Those values are **authoritative for the environment** and can differ by model (for example stricter `maxImageSize` than `maxFileSize` for some providers). See xref:tinymceai-models.adoc#verifying-model-limits-for-integration[Verifying limits for a configured model] for how to match the integration’s model id to the correct `items[]` entry.
+Per-model caps (context length, attachment sizes, PDF page totals, and similar) are returned in the `limits` object for each entry in `GET /v1/models/{version}`. Those values are **the limits the service applies at runtime** and can differ by model (for example stricter `maxImageSize` than `maxFileSize` for some providers). See xref:tinymceai-models.adoc#verifying-model-limits-for-integration[Verifying limits for a configured model] for how to match the integration’s model id to the correct `items[]` entry.
 
 The sections below cover moderation, descriptions, and deprecation. Attachment limits are documented only under xref:tinymceai-models.adoc#file-processing-limits[File processing limits], using the live models API so values stay aligned with the service.
 
 [[file-processing-limits]]
 === File Processing Limits
 
-{pluginname} supports common attachment types in Chat conversations, including PDF, DOCX, images, Markdown, HTML, and plain text. Per-file and per-conversation ceilings—including maximum sizes, attachment counts, and PDF page totals—are returned per model in the `limits` object from `GET /v1/models/{version}`. Those numbers are authoritative for the deployment; they can change with the service and vary by model, so read the `limits` object from that response at runtime for each model the integration uses. Field names, units, and schema updates are defined in the https://tinymceai.api.tiny.cloud/docs#tag/Models[Models API] OpenAPI documentation.
+{pluginname} supports common attachment types in Chat conversations, including PDF, DOCX, images, Markdown, HTML, and plain text. Per-file and per-conversation ceilings—including maximum sizes, attachment counts, and PDF page totals—are returned per model in the `limits` object from `GET /v1/models/{version}`. Those numbers are **the current limits the service applies**; they can change with the service and vary by model, so read the `limits` object from that response at runtime for each model the integration uses. Field names, units, and schema updates are defined in the https://tinymceai.api.tiny.cloud/docs#tag/Models[Models API] OpenAPI documentation.
 
 For the request flow and how to match a configured model id to the correct `items[]` entry, see xref:tinymceai-models.adoc#verifying-model-limits-for-integration[Verifying limits for a configured model]. Typical `limits` keys include `maxFileSize`, `maxImageSize`, `maxFiles`, `maxTotalFileSize`, and `maxTotalPdfFilePages`.
 

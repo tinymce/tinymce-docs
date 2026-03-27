@@ -1,5 +1,16 @@
-// Plugins index — TinyMCE AI feature advert. Self-contained styles (not shared with admon-promo-banner).
+// Plugins index — TinyMCE AI feature advert. Single passthrough keeps markup before <style> (matches signup banner partial; style-only pass + open block reordered in output).
+[subs=attributes+]
 ++++
+<div class="openblock plugins-ai-feature-banner">
+<div class="content">
+<div class="paragraph lead">
+<p><a href="../tinymceai-introduction/" class="xref page">TinyMCE AI</a></p>
+</div>
+<div class="paragraph">
+<p>AI-powered features for {productname} including AI chat, AI review, and quick actions.</p>
+</div>
+</div>
+</div>
 <style>
 .plugins-ai-feature-banner {
   --radius: 3px;
@@ -18,7 +29,7 @@
   top: -1px; bottom: -1px; left: -1px;
   width: 5px;
   background: linear-gradient(to bottom, #F66 15%, #4D66CB 85%);
-  border-radius: var(--radius) 0 0 var(--radius)
+  border-radius: var(--radius) 0 0 var(--radius);
 }
 
 .plugins-ai-feature-banner .paragraph:first-child {
@@ -34,11 +45,3 @@
 }
 </style>
 ++++
-
-[.plugins-ai-feature-banner]
---
-[.lead]
-xref:tinymceai-introduction.adoc[TinyMCE AI]
-
-AI-powered features for {productname} including AI chat, AI review, and quick actions.
---

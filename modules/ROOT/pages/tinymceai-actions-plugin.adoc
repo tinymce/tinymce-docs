@@ -7,7 +7,7 @@
 :keywords: AI, quick actions, actions, tinymceai
 :page-role: -toc
 
-Quick actions simplify routine content transformations by offering one-click AI-powered suggestions directly within the editor. This feature enhances speed, relevance, and usability, particularly for repeatable or simple tasks. The plugin feature comes with a review interface for most AI suggestions; some actions (such as Explain or Summarize) open the xref:tinymceai-chat.adoc[Chat] instead and start the conversation with a pre-filled prompt. The API includes the ability to call predefined and optimized system actions, or to define your own.
+Quick actions simplify routine content transformations by offering one-click AI-powered suggestions directly within the editor. This feature enhances speed, relevance, and usability, particularly for repeatable or simple tasks. For suggestions that change the document, the editor shows a preview and applies changes only after each suggestion is accepted or rejected. For actions that only open Chat with a pre-filled prompt, see xref:tinymceai-chat.adoc[Chat]. The API includes the ability to call predefined and optimized system actions, or to define your own.
 
 The Quick Actions feature is available as part of the `+tinymceai+` plugin for {productname} and through the Actions API. This page covers both:
 
@@ -17,35 +17,29 @@ The Quick Actions feature is available as part of the `+tinymceai+` plugin for {
 [[demo]]
 == Demo
 
+The live demo loads the full {productname} example with Chat, Quick Actions, and Review on the toolbar.
+
 liveDemo::tinymceai-actions[]
 
-Actions are fast, stateless operations that transform content. Unlike Reviews that provide suggestions for review, Actions run a transformation and display the result in a preview interface where users can accept or reject before changes are applied.
+[[quick-actions-vs-review]]
+== Quick Actions vs Review
 
-**When to use Actions vs Reviews?**
-
-* *Actions*: Transform a selection or small section of text (fix grammar, translate, adjust tone).
-* *Reviews*: Analyze entire documents for quality improvements and get suggestions without automatically changing the content.
-
-
-image::tinymceai/tinymce-ai-quick-actions-toolbar-primary-menu-with-chat-commands.png[{pluginname} quick actions showing AI-powered suggestions and Q&A functionality,width=80%]
+* *Quick Actions*: Target a selection or section (including the full document when the scope includes it). The feature supports a wide range of operations: for example opening Chat with a pre-filled prompt, preview transformations, translation, and custom actions.
+* *Review*: Always analyzes the entire document and is built for whole-document quality review with suggestions in the Review sidebar. See xref:tinymceai-review-plugin.adoc[Review] for details.
 
 [[integration]]
 == Integration
 
 To start using the Quick Actions feature, first load the {pluginname} plugin in the editor configuration. See xref:tinymceai.adoc[Plugin Reference] for installation and enabling AI features.
 
-Then, add the menu that opens the list of Quick Actions (`tinymceai-quickactions`) image:icons/ai-prompt.svg[Quick Actions icon,24px] to the main toolbar and/or context toolbar (selection toolbar) configurations. 
-
-[NOTE]
-====
-AI features are added to the selection toolbar by default when the plugin is enabled. Use the toolbar configuration options to customize which AI features appear.
-====
-
-To learn more about toolbar configuration, refer to the xref:toolbar-configuration-options.adoc[toolbar configuration] guide.
+Then, add the menu that opens the list of Quick Actions (`tinymceai-quickactions`) image:icons/ai-prompt.svg[Quick Actions icon,24px] to the main toolbar and/or context toolbar (selection toolbar) configurations.
 
 image::tinymceai/tinymce-ai-quick-actions-change-tone-flyout-submenu.png[{pluginname} Quick Actions dropdown in the toolbar,width=80%]
 
-Finally, individual Quick Actions can also be added to the toolbar as shortcuts for easier access. For example, add the `ai-quickactions-improve-writing` image:icons-premium/improve-writing.svg[Improve Writing icon,24px] button, or the `ai-chat-explain` image:icons-premium/explain.svg[Explain icon,24px] button (find it in the demo above). Whole categories can be added to the toolbar as well. xref:tinymceai-actions-plugin.adoc#default-actions[Learn more about available actions].
+
+Finally, individual Quick Actions can also be added to the toolbar as shortcuts for easier access.
+
+For example, add the `ai-quickactions-improve-writing` image:icons-premium/improve-writing.svg[Improve Writing icon,24px] button, or the `ai-chat-explain` image:icons-premium/explain.svg[Explain icon,24px] button (find it in the demo above). Whole categories can be added to the toolbar as well. Learn more about xref:tinymceai-actions-plugin.adoc#default-actions[available actions].
 
 The final example configuration looks as follows:
 
@@ -77,6 +71,13 @@ tinymce.init({
   }
 });
 ----
+
+[NOTE]
+====
+AI features are added to the selection toolbar by default when the plugin is enabled. Use the toolbar configuration options to customize which AI features appear.
+====
+
+To learn more about toolbar configuration, refer to the xref:toolbar-configuration-options.adoc[toolbar configuration] guide.
 
 [[types-of-actions]]
 == Types of actions
@@ -244,9 +245,9 @@ tinymce.init({
 [[actions-api]]
 == Actions API
 
-The Quick Actions plugin feature is built on top of the Actions API, which provides REST API access to action functionality. Actions are fast, stateless operations that transform content. Unlike Reviews that provide suggestions for review, Actions run a transformation and display the result in a preview interface where users can accept or reject before changes are applied.
+The Quick Actions plugin feature is built on top of the Actions API, which provides REST API access to action functionality. Actions are fast, stateless operations. For suggestions that change the document, the preview flow applies edits only after each suggestion is accepted or rejected. Actions that only open Chat with a pre-filled prompt use the Conversations API; see xref:tinymceai-chat.adoc[Chat].
 
-**When to use Actions vs Reviews:** Use Actions when transforming a selection or small section of text (fix grammar, translate, adjust tone). Use Reviews when analyzing entire documents for quality improvements and getting suggestions without automatically changing the content.
+**When to use Quick Actions vs Review:** Use Quick Actions for operations on a selection or section (including Chat with a pre-filled prompt, preview transformations, translation, and custom actions). Use Review for whole-document quality review with suggestions in the Review sidebar. See xref:tinymceai-review-plugin.adoc[Review] for details.
 
 Unlike conversations, actions do not remember previous interactions. Each action is independent and focused on a single task. Actions use streaming output with Server-Sent Events for real-time feedback as results are generated.
 

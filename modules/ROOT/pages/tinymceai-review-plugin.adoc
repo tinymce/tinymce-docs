@@ -7,7 +7,7 @@
 :keywords: AI, review, reviews, tinymceai
 :page-role: -toc
 
-The Review feature provides AI-powered quality assurance for content by running checks for grammar, style, tone, and more. The plugin introduces an intuitive interface for reviewing and managing AI-suggested edits directly within the document, ensuring content meets professional standards with minimal manual effort. The API offers the same functionality with flexible integration.
+The Review feature provides AI-powered quality assurance for content by running checks for grammar, style, clarity, tone, and more. Review always analyzes the entire document. For operations on a selection or section, see xref:tinymceai-actions-plugin.adoc[Quick Actions]. The editor enters read-only Review mode until the review completes or is dismissed. Suggestions appear in the Review sidebar and in the document; each change applies only after acceptance or rejection. The plugin introduces an intuitive interface for reviewing and managing AI-suggested edits directly within the document, ensuring content meets professional standards with minimal manual effort. The API offers the same functionality with flexible integration.
 
 The Review feature is available as a plugin UI and through the Reviews API. This page covers both:
 
@@ -17,11 +17,15 @@ The Review feature is available as a plugin UI and through the Reviews API. This
 [[demo]]
 == Demo
 
+The interactive demo below loads the editor with the Review feature. Use the Review toolbar button to open the Review sidebar and run the built-in review commands.
+
 liveDemo::tinymceai-review[]
 
-The Review feature analyzes content and provides specific recommendations for grammar, style, clarity, and tone improvements. Unlike Actions that transform content directly, Reviews analyze content and provide suggestions without automatically changing the content.
+=== Review sidebar and commands
 
-image::tinymceai/tinymce-ai-review-sidebar-command-categories-proofread-clarity.png[{pluginname} Review feature showing AI-powered quality assurance and suggested edits,width=80%]
+The figure below is a static screenshot of the Review sidebar in Review mode before any suggestions are returned. Built-in reviews are grouped by category (Proofread, Improve clarity, Improve readability, Change length, Adjust tone and style). Expand a category to read the description and select **Run** to analyze the whole document. In this example, **Improve readability** is expanded.
+
+image::tinymceai/tinymce-ai-review-sidebar-command-categories-proofread-clarity.png[Review sidebar showing review categories with Improve readability expanded and Run available,width=80%]
 
 [[integration]]
 == Integration
@@ -81,9 +85,9 @@ Which review commands appear in the Review sidebar can be configured using the `
 [[reviews-api]]
 == Reviews API
 
-The Review plugin feature is built on top of the Reviews API, which provides REST API access to review functionality. Reviews provide comprehensive content analysis and improvement suggestions. Unlike Actions that transform content directly, Reviews analyze content and provide specific recommendations for grammar, style, clarity, and tone improvements.
+The Review plugin feature is built on top of the Reviews API, which provides REST API access to review functionality. Reviews provide comprehensive content analysis and improvement suggestions for the entire document. Suggested edits apply only after acceptance or rejection in the Review workflow. For operations on a selection or section, see xref:tinymceai-actions-plugin.adoc[Quick Actions].
 
-**When to use Reviews vs Actions:** Use Reviews when analyzing entire documents for quality improvements and getting suggestions without automatically changing the content. Use Actions when transforming specific text content (fix grammar, translate, adjust tone).
+**When to use Reviews vs Quick Actions:** Use Reviews for whole-document quality checks with suggestions in the Review sidebar. Use Quick Actions for a selection or section, including preview transformations, translation, Chat with a pre-filled prompt, and custom actions. See xref:tinymceai-actions-plugin.adoc[Quick Actions] for details.
 
 Reviews use streaming output with Server-Sent Events for real-time feedback as suggestions are generated. Each review type is optimized for specific improvement tasks, providing consistent, high-quality analysis of text structure, style, and quality. Reviews provide specific, actionable recommendations for content improvement.
 

@@ -88,15 +88,6 @@ while (true) {
 }
 ----
 
-[[event-handling-patterns]]
-== Event Handling Patterns
-
-For detailed event handling examples specific to each service, see:
-
-* xref:tinymceai-chat.adoc#conversations-streaming[Chat]: Text streaming, web search sources, reasoning, and document modifications.
-* xref:tinymceai-review-plugin.adoc#reviews-streaming[Review]: Review suggestions and progress tracking.
-* xref:tinymceai-actions-plugin.adoc#actions-streaming[Quick Actions]: Content transformations and action progress.
-
 [[error-handling]]
 == Error Handling
 
@@ -113,12 +104,12 @@ if (data.event === 'error') {
 [[progress-tracking]]
 == Progress Tracking
 
-Use metadata events to show progress. For service-specific progress tracking examples, see the xref:tinymceai-review-plugin.adoc#reviews-streaming[Review streaming] section.
+Use metadata events to show progress. For review streaming and progress-related events, see xref:tinymceai-review-plugin.adoc#reviews-streaming[Review streaming].
 
 [[api-reference]]
 == API Reference
 
-The https://tinymceai.api.tiny.cloud/docs[interactive API documentation] describes streaming endpoints, event shapes, and errors for each feature area. See the https://tinymceai.api.tiny.cloud/docs#tag/Conversations[Conversations], https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews], and https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions] sections for feature-specific streaming details.
+The https://tinymceai.api.tiny.cloud/docs[interactive API documentation] describes streaming endpoints, event shapes, and errors for each feature area.
 
 [[next-steps]]
 == Next Steps

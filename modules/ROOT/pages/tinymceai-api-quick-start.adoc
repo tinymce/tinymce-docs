@@ -22,7 +22,8 @@ To start using the {pluginname} service, follow the steps below:
 
 * Sign up for one of the link:{pricingpage}[self-service plans], or link:{contactpage}[contact us] to purchase the {pluginname} license.
 * Generate access credentials in the link:{accountpageurl}[Customer Portal].
-* Write a script that generates one-time tokens for authorizing end users of the application in {productname} Cloud Services (using access credentials created earlier).
+* During a {cloudname} trial, the xref:tinymceai-jwt-authentication-intro.adoc#trial-demo-identity-service[demo identity service] can issue JWTs (JSON Web Tokens) for testing without a custom token endpoint. See xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication].
+* For production, implement a backend that issues short-lived JWTs to authorize end users of the application for {productname} Cloud Services, using the access credentials from the Customer Portal. See xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication].
 
 All steps are explained in detail below.
 
@@ -44,7 +45,7 @@ Log in to the link:{accountpageurl}[Customer Portal] and navigate to link:{accou
 
 image::tinymceai/tinymce-ai-customer-portal-jwt-keys-page.png[JWT Keys page showing Secure Keys List, Generate New Keypair, and Import Public Key sections,width=100%]
 
-During the free trial, the demo identity service can provide JWT tokens without creating a custom token endpoint. See xref:tinymceai-jwt-authentication-intro.adoc#trial-demo-identity-service[Trial: demo identity service] in the JWT Authentication guide for a quick start.
+For trial setup without a custom token endpoint, see xref:tinymceai-jwt-authentication-intro.adoc#trial-demo-identity-service[Trial: demo identity service] in xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication].
 
 [[create-token-endpoint]]
 == Create token endpoint
@@ -59,7 +60,7 @@ To create a custom security token endpoint, generate a keypair in the link:{acco
 [[api-integration]]
 == API Integration
 
-All features are accessible through the API at `https://tinymceai.api.tiny.cloud` with JWT authentication.
+All features are accessible through the API at `https://tinymceai.api.tiny.cloud` with xref:tinymceai-jwt-authentication-intro.adoc[JWT authentication].
 
 For an overview of all API features, see xref:tinymceai-api-overview.adoc[API Overview].
 

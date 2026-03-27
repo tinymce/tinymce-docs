@@ -53,6 +53,11 @@ The JWT payload must include these required claims:
 
 For more information about JWT setup, required claims, and the authentication object, see xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication].
 
+[NOTE]
+====
+During a {cloudname} trial, a xref:tinymceai-jwt-authentication-intro.adoc#trial-demo-identity-service[demo identity service] is available so `tinymceai_token_provider` can obtain JWTs without implementing a custom token endpoint. See xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication] for setup and examples.
+====
+
 The function must return the token value within an object with a `+token+` property. Ensure the response from the token endpoint is handled correctly, based on the response format:
 
 * **JSON response**: Endpoint returns `+{ "token": "eyJ..." }+`. Use `+fetch(url).then(r => r.json())+`.

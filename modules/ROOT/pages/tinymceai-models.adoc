@@ -7,7 +7,7 @@
 :description_short: AI model configuration
 :keywords: AI, models, configuration, tinymceai
 
-{pluginname} supports multiple AI models from different providers. Model selection and configuration can be done through the plugin configuration and UI or through the REST API. This page covers model capabilities, configuration options, and limitations that apply to both plugin and API usage.
+{pluginname} supports multiple AI models from different providers. Which models may be used is determined by xref:tinymceai-permissions.adoc#model-permissions[model permissions] in the JWT; the plugin configuration UI, REST API request bodies, and per-action options (for example xref:tinymceai-actions-plugin.adoc[Quick Actions] custom items) then select which allowed model applies in each situation. This page covers model capabilities, configuration options, and limitations that apply to both plugin and API usage.
 
 [[recommended-agent-models]]
 == Recommended: Agent Models
@@ -119,10 +119,14 @@ The agent model (`agent-1`) automatically selects the best underlying model base
 [[model-configuration]]
 === Model Configuration
 
-Models can be configured in two ways:
+The JWT `auth.ai.permissions` array includes xref:tinymceai-permissions.adoc#model-permissions[model permissions] that define which models are allowed for the token. That allowed set applies to both the plugin and the REST API.
 
-* **Plugin Configuration**: Use `tinymceai_default_model` and `tinymceai_allow_model_selection` options to configure which models are available to users in the plugin UI. See xref:tinymceai.adoc#options-chat[Chat configuration options] for full details.
-* **API Configuration**: Specify the model directly in API requests for more control. See xref:tinymceai-models.adoc#api-examples[API Examples] below.
+Plugin configuration, API parameters, and per-feature options do not grant access to models that the JWT disallows; they only choose which *allowed* model to use in a given context:
+
+* **JWT model permissions**: Set `ai:models:*`, `ai:models:agent`, `ai:models:<provider>:*`, or `ai:models:<provider>:<model-name>` as required. See xref:tinymceai-permissions.adoc#model-permissions[Model permissions] and xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication].
+* **Plugin configuration**: `tinymceai_default_model` sets the default model, and `tinymceai_allow_model_selection` controls whether end users can choose among allowed models in the UI. See xref:tinymceai.adoc#options-chat[Chat configuration options].
+* **API requests**: The `model` field in request bodies selects the model for that call. See xref:tinymceai-models.adoc#api-examples[API Examples] below.
+* **Custom Quick Actions and similar**: Per-item options such as the `model` property on xref:tinymceai-actions-plugin.adoc#custom-actions[custom Quick Actions] select a model for that action; the value must be among the models allowed by the JWT.
 
 [NOTE]
 ====

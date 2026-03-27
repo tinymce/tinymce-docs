@@ -117,6 +117,7 @@ tinymce.activeEditor.execCommand('Redo');
 tinymce.activeEditor.execCommand('Undo');
 ----
 
+[[miscellaneous-core-commands]]
 ==== Miscellaneous Core Commands
 
 The commands in the following table are provided by the {productname} editor and provide additional functionality that does not require any plugins to be enabled.
@@ -529,7 +530,7 @@ include::partial$commands/tableofcontents-cmds.adoc[leveloffset=+3]
 [[tinymceai]]
 ==== TinyMCE AI
 
-The following commands require the xref:tinymceai.adoc[TinyMCE AI (`+tinymceai+`)] plugin.
+The xref:tinymceai.adoc[TinyMCE AI (`+tinymceai+`)] plugin registers AI Chat and AI Review sidebars. The following subsection describes how to open and close them using a core editor command.
 
 include::partial$commands/tinymceai-cmds.adoc[leveloffset=+3]
 

@@ -23,13 +23,30 @@ Different AI services provide different types of streaming events. For service-s
 * xref:tinymceai-review-plugin.adoc#reviews-streaming[Review]: Content improvement suggestions and review progress.
 * xref:tinymceai-actions-plugin.adoc#actions-streaming[Quick Actions]: Content transformations and action progress.
 
+[[sse-wire-format]]
+== SSE wire format
+
+The response body is a text stream in https://html.spec.whatwg.org/multipage/server-sent-events.html[Server-Sent Events] format. Events are separated by blank lines. Each event can include an `+event:+` line (event name) and one or more `+data:+` lines (payload; long payloads may be split across several `+data:+` lines). For example:
+
+....
+event: <event-name-1>
+data: <data>
+
+event: <event-name-2>
+data: <data2>
+....
+
+Parsing this format correctly (including chunk boundaries, multi-line `+data:+` fields, and comments) is easy to get wrong in hand-written loops. For production code, use a maintained SSE parser such as the https://www.npmjs.com/package/eventsource-parser[`eventsource-parser`] package.
+
 [[basic-implementation]]
 == Basic Implementation
 
-Here is the standard pattern for consuming SSE streams:
+After obtaining a streaming `+Response+` from `+fetch+`, pass the byte stream through an SSE parser. The following example uses https://www.npmjs.com/package/eventsource-parser[`eventsource-parser`] to turn raw chunks into parsed events; application code then inspects each event payload (for example JSON with an `+event+` field and `+data+` for {pluginname} services):
 
 [source,javascript]
 ----
+import { createParser } from 'eventsource-parser';
+
 const response = await fetch('/v1/your-endpoint', {
   method: 'POST',
   headers: {
@@ -41,37 +58,33 @@ const response = await fetch('/v1/your-endpoint', {
   })
 });
 
+const parser = createParser({
+  onEvent: (event) => {
+    // event.event is the SSE event name (if present)
+    // event.data is the reassembled data string for this event
+    const data = JSON.parse(event.data);
+
+    switch (data.event) {
+      case 'error':
+        console.error('Error:', data.data.message);
+        break;
+      default:
+        // Handle all other events — see service-specific guides:
+        // - Conversations: text-delta, source, reasoning, modification-delta
+        // - Reviews: review-delta, review-metadata
+        // - Actions: modification-delta, action-metadata
+        console.log('Event:', data.event, data.data);
+    }
+  }
+});
+
 const reader = response.body.getReader();
 const decoder = new TextDecoder();
 
 while (true) {
   const { done, value } = await reader.read();
   if (done) break;
-
-  const chunk = decoder.decode(value);
-  const lines = chunk.split('\n');
-
-  for (const line of lines) {
-    if (line.startsWith('data: ')) {
-      const data = JSON.parse(line.slice(6));
-
-      // Handle different event types
-      // See service-specific guides for detailed event handling:
-      // - Conversations: text-delta, source, reasoning, modification-delta
-      // - Reviews: review-delta, review-metadata
-      // - Actions: modification-delta, action-metadata
-
-      switch (data.event) {
-        case 'error':
-          // Handle errors
-          console.error('Error:', data.data.message);
-          break;
-        default:
-          // Handle all other events
-          console.log('Event:', data.event, data.data);
-      }
-    }
-  }
+  parser.feed(decoder.decode(value, { stream: true }));
 }
 ----
 
@@ -94,14 +107,6 @@ Always handle errors gracefully:
 if (data.event === 'error') {
   const error = data.data;
   console.error('Streaming error:', error.message);
-
-  // Show user-friendly error message
-  showErrorMessage(error.message);
-
-  // Optionally retry or fallback
-  if (error.retryable) {
-    setTimeout(() => retryRequest(), 1000);
-  }
 }
 ----
 

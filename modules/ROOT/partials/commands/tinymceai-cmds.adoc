@@ -1,9 +1,10 @@
-[cols="1,3",options="header"]
-|===
-|Command name |Description
+[[tinymceai-toggling-sidebars]]
+.Toggling the AI Chat and AI Review sidebars
 
-|`+ToggleSidebar+` |Core command. Use `+editor.execCommand('ToggleSidebar', false, 'tinymceai-chat')+` or `+editor.execCommand('ToggleSidebar', false, 'tinymceai-review')+` to toggle the AI Chat or AI Review sidebar.
-|===
+AI Chat and AI Review use sidebars registered by the plugin. To show or hide them programmatically, use the core `+ToggleSidebar+` command (listed in the xref:editor-command-identifiers.adoc#miscellaneous-core-commands[Miscellaneous Core Commands] table), not a command defined by the TinyMCE AI plugin. Pass the sidebar identifier as the third argument:
+
+* `+'tinymceai-chat'+` — AI Chat
+* `+'tinymceai-review'+` — AI Review
 
 .Examples
 [source,js]
@@ -11,7 +12,7 @@
 // Open the AI Chat sidebar
 tinymce.activeEditor.execCommand('ToggleSidebar', false, 'tinymceai-chat');
 
-// Close the current sidebar (pass same ID again to toggle off)
+// Close the current sidebar (pass the same ID again to toggle off)
 tinymce.activeEditor.execCommand('ToggleSidebar', false, 'tinymceai-chat');
 
 // Open the AI Review sidebar

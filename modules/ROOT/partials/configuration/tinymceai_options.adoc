@@ -279,7 +279,7 @@ These options configure the Quick Actions menu, which provides one-click AI tran
 [[tinymceai_quickactions_menu]]
 === `+tinymceai_quickactions_menu+`
 
-Array of control IDs that define the order of items in the Quick Actions menu.
+Array of control IDs that define the order of items in the Quick Actions menu. The default value includes all predefined items, including `+ai-quickactions-custom+` which adds a submenu of custom actions defined by `+tinymceai_quickactions_custom+`.
 
 *Type:* `+Array+` of `+String+`
 

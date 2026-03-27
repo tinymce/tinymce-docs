@@ -216,7 +216,7 @@ tinymce.init({
 [[tinymceai_chat_fetch_source]]
 === `+tinymceai_chat_fetch_source+`
 
-A function that fetches the content for an additional source by ID. Receives the source `+id+` and returns a Promise resolving to the source content (either `+{ type: 'file', file: File }+` or `+{ type: 'web-resource', url: string }+`).
+A function that fetches the content for an additional source by ID. Receives the source `+id+` and returns a Promise resolving to the source content (either `+{ type: 'file', file: File }+` or `+{ type: 'web-resource', url: string }+`). The content is passed to the AI agent as additional context for the chat conversation.
 
 *Type:* `+Function+` (`+(id: string) => Promise<Object>+`)
 

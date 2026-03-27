@@ -6,12 +6,10 @@
 :keywords: AI, limits, configuration, tinymceai
 :pluginname: TinyMCE AI
 
-This page describes the limits that ensure fair usage, optimal performance, and cost control across all {pluginname} features.
-
 [[overview]]
 == Overview
 
-{pluginname} implements various limits to ensure fair usage, optimal performance, and cost control. These include rate limits for API requests, context limits for content size and processing, model-specific constraints, and file restrictions.
+{pluginname} enforces limits on API requests, context and attachments, models, and files to ensure fair usage, optimal performance, and cost control. The sections below describe rate limits, context limits, model-specific constraints, and file restrictions.
 
 [[rate-limits]]
 == Rate Limits

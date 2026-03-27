@@ -34,6 +34,12 @@ The following is a detailed list of available models with their capabilities:
 |Yes
 |`'auto'` (also `'agent-1'`, learn more about xref:tinymceai-models.adoc#model-compatibility-versions[compatibility versions])
 
+|**GPT-5.4**
+|OpenAI's flagship model for advanced reasoning, creativity, and complex tasks
+|Yes
+|Yes
+|`'gpt-5.4'`
+
 |**GPT-5.2**
 |OpenAI's flagship model for advanced reasoning, creativity, and complex tasks
 |Yes
@@ -70,11 +76,23 @@ The following is a detailed list of available models with their capabilities:
 |Yes
 |`'claude-4-5-sonnet'`
 
+|**Claude 4.6 Sonnet**
+|Advanced model with improved creativity, reliability, and reasoning
+|Yes
+|Yes
+|`'claude-4-6-sonnet'`
+
 |**Gemini 3 Pro**
 |Google's advanced model for versatile problem-solving and research
 |Yes
 |Yes
 |`'gemini-3-pro'`
+
+|**Gemini 3.1 Pro**
+|Google's advanced model for versatile problem-solving and research
+|Yes
+|Yes
+|`'gemini-3-1-pro'`
 
 |**Gemini 3 Flash**
 |Lightweight Gemini model for fast, cost-efficient interactions

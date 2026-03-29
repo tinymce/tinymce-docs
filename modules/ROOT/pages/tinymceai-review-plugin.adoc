@@ -72,7 +72,7 @@ Built-in system reviews are listed below. The **Editor command** column is the l
 
 [NOTE]
 ====
-* A checkmark in the Editor UI column means that review type can appear in the Review sidebar when its command is listed in `tinymceai_reviews`.
+* A checkmark in the Editor UI column means that review type can appear in the Review sidebar when its command is listed in xref:tinymceai.adoc#tinymceai_reviews[`tinymceai_reviews`].
 * Custom reviews (analysis defined with a prompt) are available through the xref:tinymceai-review-plugin.adoc#reviews-custom-reviews[Custom reviews (API)]. _Note: The same capability in the Review sidebar is coming soon._
 * Translation Review is API-only (no Review sidebar command); see the xref:tinymceai-review-plugin.adoc#review-commands[Translation row] in the table above. For an editor translation operation, see the xref:tinymceai-quickactions-plugin.adoc#translate-quick-action[Translate Quick Action].
 ====

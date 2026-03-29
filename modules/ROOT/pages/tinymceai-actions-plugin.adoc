@@ -21,11 +21,13 @@ The live demo loads the full {productname} example with Chat, Quick Actions, and
 
 liveDemo::tinymceai-actions[]
 
-[[quick-actions-vs-review]]
-== Quick Actions vs Review
+[[quick-actions-and-review]]
+== Quick Actions and Review
 
-* *Quick Actions*: Target a selection or section (including the full document when the scope includes it). The feature supports a wide range of operations: for example opening Chat with a pre-filled prompt, preview transformations, translation, and custom actions.
-* *Review*: Always analyzes the entire document and is built for whole-document quality review with suggestions in the Review sidebar. See xref:tinymceai-review-plugin.adoc[Review] for details.
+Both Quick Actions and Review can propose edits that apply only after acceptance or rejection. The main differences are scope and where the work happens in the editor:
+
+* *Quick Actions*: Operate on a selection or section (including the full document when the scope includes it). The Quick Actions menu runs one-off operations such as Chat with a pre-filled prompt, preview transformations, translation, and custom actions.
+* *Review*: Always analyzes the entire document in read-only Review mode. Suggestions appear in the Review sidebar and in the document. See xref:tinymceai-review-plugin.adoc[Review] for details.
 
 [[integration]]
 == Integration
@@ -247,7 +249,7 @@ tinymce.init({
 
 The Quick Actions plugin feature is built on top of the Actions API, which provides REST API access to action functionality. Actions are fast, stateless operations. For suggestions that change the document, the preview flow applies edits only after each suggestion is accepted or rejected. Actions that only open Chat with a pre-filled prompt use the Conversations API; see xref:tinymceai-chat.adoc[Chat].
 
-**When to use Quick Actions vs Review:** Use Quick Actions for operations on a selection or section (including Chat with a pre-filled prompt, preview transformations, translation, and custom actions). Use Review for whole-document quality review with suggestions in the Review sidebar. See xref:tinymceai-review-plugin.adoc[Review] for details.
+For how Quick Actions relate to Review in the editor (scope and UI), see xref:tinymceai-actions-plugin.adoc#quick-actions-and-review[Quick Actions and Review].
 
 Unlike conversations, actions do not remember previous interactions. Each action is independent and focused on a single task. Actions use streaming output with Server-Sent Events for real-time feedback as results are generated.
 

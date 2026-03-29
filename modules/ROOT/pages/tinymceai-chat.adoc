@@ -73,7 +73,7 @@ tinymce.init({
   selector: '#editor',
   plugins: 'tinymceai',
   toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
-  tinymceai_default_model: 'claude-3-5-haiku',
+  tinymceai_default_model: 'claude-4-5-haiku',
   tinymceai_allow_model_selection: true,
   // Required for authentication
   tinymceai_token_provider: () => {

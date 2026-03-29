@@ -58,23 +58,23 @@ The following is a detailed list of available models with their capabilities:
 |Yes
 |`'gpt-5'`
 
+|**GPT-4.1**
+|OpenAI's model for reliable reasoning, speed, and versatility
+|Yes
+|No
+|`'gpt-4.1'`
+
 |**GPT-5 Mini**
-|A lightweight version of GPT-5: faster, more cost-efficient
+|A lightweight version of GPT-5 for faster, more cost-efficient responses
 |Yes
 |Yes
 |`'gpt-5-mini'`
 
-|**Claude 4.5 Haiku**
-|Cost-efficient model for quick interactions with improved reasoning
+|**GPT-4.1 Mini**
+|A lighter variant of GPT-4.1 that balances speed and cost while maintaining solid accuracy
 |Yes
-|Yes
-|`'claude-4-5-haiku'`
-
-|**Claude 4.5 Sonnet**
-|Advanced model with improved creativity, reliability, and reasoning
-|Yes
-|Yes
-|`'claude-4-5-sonnet'`
+|No
+|`'gpt-4.1-mini'`
 
 |**Claude 4.6 Sonnet**
 |Advanced model with improved creativity, reliability, and reasoning
@@ -82,11 +82,17 @@ The following is a detailed list of available models with their capabilities:
 |Yes
 |`'claude-4-6-sonnet'`
 
-|**Gemini 3 Pro**
-|Google's advanced model for versatile problem-solving and research
+|**Claude 4.5 Sonnet**
+|Advanced model with improved creativity, reliability, and reasoning
 |Yes
 |Yes
-|`'gemini-3-pro'`
+|`'claude-4-5-sonnet'`
+
+|**Claude 4.5 Haiku**
+|Cost-efficient model for quick interactions with improved reasoning
+|Yes
+|Yes
+|`'claude-4-5-haiku'`
 
 |**Gemini 3.1 Pro**
 |Google's advanced model for versatile problem-solving and research
@@ -94,29 +100,17 @@ The following is a detailed list of available models with their capabilities:
 |Yes
 |`'gemini-3-1-pro'`
 
-|**Gemini 3 Flash**
-|Lightweight Gemini model for fast, cost-efficient interactions
-|Yes
-|Yes
-|`'gemini-3-flash'`
-
 |**Gemini 2.5 Flash**
 |Lightweight Gemini model for fast, cost-efficient interactions
 |Yes
 |Yes
 |`'gemini-2-5-flash'`
 
-|**GPT-4.1**
-|OpenAI's model for reliable reasoning, speed, and versatility
+|**Gemini 3 Flash**
+|Lightweight Gemini model for fast, cost-efficient interactions
 |Yes
-|No
-|`'gpt-4.1'`
-
-|**GPT-4.1 Mini**
-|A lighter variant of GPT-4.1 that balances speed and cost while maintaining solid accuracy
 |Yes
-|No
-|`'gpt-4.1-mini'`
+|`'gemini-3-flash'`
 |===
 
 [[limitations]]

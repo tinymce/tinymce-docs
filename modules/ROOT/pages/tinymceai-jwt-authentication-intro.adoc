@@ -224,6 +224,7 @@ For details on each of these algorithms, visit: link:https://tools.ietf.org/html
 The token for {pluginname} is requested by the {pluginname} plugin. The easiest way to configure this is to set the `tinymceai_token_provider` option to a function that fetches the token from the endpoint.
 
 The token endpoint will be requested:
+
 * At editor initialization
 * Periodically to refresh the token (typically every hour)
 

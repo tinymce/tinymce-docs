@@ -57,6 +57,11 @@ The next step for production is to create a security token endpoint in the appli
 
 To create a custom security token endpoint, generate a keypair in the link:{accountjwturl}[JWT Keys] area of the Customer Portal. In the "Generate New Keypair" section, enter a description, select the key length, and click "Add Key". Alternatively, use "Import Public Key" to add an existing key.
 
+Once the keypair is created, use it to sign JWTs in the token endpoint. For step-by-step implementation instructions with complete code examples, see:
+
+* xref:tinymceai-with-jwt-authentication-nodejs.adoc[JWT authentication (Node.js)]: Complete Node.js implementation guide
+* xref:tinymceai-with-jwt-authentication-php.adoc[JWT authentication (PHP)]: Complete PHP implementation guide
+
 [[api-integration]]
 == API Integration
 

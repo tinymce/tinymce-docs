@@ -62,10 +62,8 @@ Once selected, the AI model will persist for the duration of the conversation. T
 
 Model selection for AI chat can be configured using these options:
 
-* `tinymceai_default_model`: Set the default model to use for AI chat.
+* `tinymceai_default_model`: Sets the default model for new chat sessions. The value is a **model configuration id** (for example `+agent-1+`, `+gpt-5.4+`, or `+claude-4-5-haiku+`) that must be among the models allowed by the JWT and subscription. The xref:tinymceai-models.adoc#supported-models-table[Supported Models] table lists the documented names and ids. For the list the service returns for a given environment, use `GET /v1/models/{version}` or the in-editor model selector when xref:tinymceai.adoc#tinymceai_allow_model_selection[+tinymceai_allow_model_selection+] is enabled; see xref:tinymceai-models.adoc#checking-compatibility[Checking compatibility].
 * `tinymceai_allow_model_selection`: When `true`, users can pick from models the service exposes in the UI; when `false`, the default model is used without a selector (defaults to `true`).
-
-xref:tinymceai-models.adoc#supported-models-table[Learn more about available AI models].
 
 [source,js]
 ----
@@ -100,6 +98,8 @@ Some models use reasoning automatically, while others may require manual activat
 == Adding context to conversations
 
 The AI chat can work with the document and beyond. Use the "Add context" image:icons/plus.svg[Add context icon,24px] button below the prompt input to add URLs, files, and external resources to the conversation.
+
+Uploaded files can include PDF, DOCX, common image formats, Markdown, HTML, and plain text. Per-file size limits, attachment counts, and similar caps depend on the selected model; see xref:tinymceai-models.adoc#file-processing-limits[File processing limits].
 
 image::tinymceai/tinymce-ai-chat-add-context-source-menu.png[{pluginname} Chat add context user interface,width=80%]
 

@@ -80,3 +80,13 @@ All data is encrypted in transit and at rest with end-to-end encryption. Convers
 On-premises deployment allows the AI service to run within an organization's infrastructure, giving teams more control over data and infrastructure.
 
 include::partial$misc/tinymceai-on-premises-early-access-note.adoc[]
+
+[[next-steps]]
+== Next steps
+
+* xref:tinymceai.adoc[Plugin Reference]: Install the `tinymceai` plugin, configure authentication, and enable Chat, Review, and Quick Actions.
+* xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication]: Issue tokens for the hosted `{pluginname}` service.
+* xref:tinymceai-models.adoc[AI Models]: Review supported models, compatibility versions, and limits.
+* xref:tinymceai-api-overview.adoc[API Overview]: Call the REST API from application code outside the editor.
+* xref:tinymceai-api-quick-start.adoc[API Quick Start]: Obtain API credentials and connect to the service.
+* xref:tinymceai-integration-options.adoc[Integration Options]: Compare plugin-first and API-first integration paths.

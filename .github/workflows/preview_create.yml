@@ -6,15 +6,6 @@ on:
       - opened
       - reopened
       - synchronize
-      # Extra triggers when synchronize is missing or base branch changes (also runs on title/body edits).
-      - edited
-      - ready_for_review
-  workflow_dispatch:
-    inputs:
-      pr_number:
-        description: 'PR number to build (refs/pull/N/merge). Use when Preview did not run on push.'
-        required: true
-        type: string
 
 
 # Need ID token write permission to use OIDC
@@ -22,7 +13,7 @@ permissions:
   id-token: write
 
 env:
-  PR: ${{ github.event_name == 'workflow_dispatch' && format('pr-{0}', github.event.inputs.pr_number) || format('pr-{0}', github.event.number) }}
+  PR: pr-${{ github.event.number }}
   RUN: run-${{ github.run_number }}-${{ github.run_attempt }}
 
 jobs:
@@ -39,8 +30,6 @@ jobs:
     steps:
     - name: Checkout branch
       uses: actions/checkout@v5
-      with:
-        ref: ${{ github.event_name == 'workflow_dispatch' && format('refs/pull/{0}/merge', github.event.inputs.pr_number) || github.sha }}
 
     - name: Setup Node.js
       uses: actions/setup-node@v5

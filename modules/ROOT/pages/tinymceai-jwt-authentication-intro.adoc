@@ -28,20 +28,16 @@ In production, the user session should be scoped to the page, not a specific Tin
 
 [source,js]
 ----
-const apiKey = 'no-api-key'; // Replace with the trial API key from the Customer Portal
-
 tinymce.init({
-  selector: 'textarea',
-  plugins: 'tinymceai',
-  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  selector: "textarea",
+  plugins: "tinymceai",
+  toolbar: "tinymceai-chat tinymceai-review tinymceai-quickactions",
+  sidebar_show: 'aichat',
   tinymceai_token_provider: async () => {
-    // Step 1: Set up a random session
-    await fetch(`https://demo.api.tiny.cloud/1/${apiKey}/auth/random`, { method: "POST", credentials: "include" }).then((resp) => resp.json());
-
-    // Step 2: Get a JWT
-    const jwtRes = await fetch(`https://demo.api.tiny.cloud/1/${apiKey}/jwt/tinymceai`, { credentials: "include" });
-    const token = await jwtRes.text();
-    return { token };
+	await fetch(`https://demo.api.tiny.cloud/1/no-api-key/auth/random`, { method: "POST", credentials: "include" });
+	return await fetch(`https://demo.api.tiny.cloud/1/no-api-key/jwt/tinymceai`, { credentials: "include" })
+	  .then(resp => resp.text())
+	  .then(token => ({ token }))
   }
 });
 ----
@@ -53,21 +49,21 @@ In production, user and session management typically happens at the page level. 
 
 [source,js]
 ----
-// Step 1: Set up session - this should be part of the application's user management process. We simulate that here by creating a session for a random user.
-const apiKey = 'no-api-key'; // Replace with the trial API key from the Customer Portal
-const isLoggedIn = fetch(`https://demo.api.tiny.cloud/1/${apiKey}/auth/random`, { method: "POST", credentials: "include" });
+// Establish a session with the demo identity service (cookies sent on same-site requests).
+const isLoggedIn = fetch(`https://demo.api.tiny.cloud/1/no-api-key/auth/random`, { method: "POST", credentials: "include" });
 
 tinymce.init({
-  selector: 'textarea',
-  plugins: 'tinymceai',
-  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  selector: "textarea",
+  plugins: "tinymceai",
+  toolbar: "tinymceai-chat tinymceai-review tinymceai-quickactions",
+  sidebar_show: 'aichat',
   tinymceai_token_provider: async () => {
-    // Step 2: Ensure session exists, then fetch the JWT
-    return isLoggedIn.then(() =>
-      fetch(`https://demo.api.tiny.cloud/1/${apiKey}/jwt/tinymceai`, { credentials: "include" })
-        .then(resp => resp.text())
-        .then(token => ({ token }))
-    );
+	// Wait for the session request so the JWT endpoint receives the session cookie.
+	await isLoggedIn;
+	// Return a JWT string in the shape the AI plugin expects: { token }.
+	return await fetch(`https://demo.api.tiny.cloud/1/no-api-key/jwt/tinymceai`, { credentials: "include" })
+	  .then(resp => resp.text())
+	  .then(token => ({ token }))
   }
 });
 ----

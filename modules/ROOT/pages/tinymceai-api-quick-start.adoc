@@ -85,7 +85,6 @@ link:https://tinymceai.api.tiny.cloud/docs[Complete API Documentation]: Full API
 
 After setting up the JWT endpoint, continue with:
 
-* xref:tinymceai-api-overview.adoc[API Overview]: Overview of all API features and capabilities.
 * xref:tinymceai-models.adoc[AI Models]: Choose the right model for your use case.
 * xref:tinymceai-models.adoc#verifying-model-limits-for-integration[Verify model limits]: Match the configured model id to `GET /v1/models/{version}` and read `limits` and `capabilities`.
 * xref:tinymceai-permissions.adoc[Permissions]: Set up user access control for production.
@@ -93,3 +92,4 @@ After setting up the JWT endpoint, continue with:
 * xref:tinymceai-chat.adoc#conversations-api[Chat API]: Start with interactive AI discussions.
 * xref:tinymceai-review-plugin.adoc#reviews-api[Review API]: Add content improvement features.
 * xref:tinymceai-actions-plugin.adoc#actions-api[Quick Actions API]: Implement content transformation.
+* xref:tinymceai-api-overview.adoc[API Overview]: Optional high-level map of Chat, Review, Quick Actions, and related resources.

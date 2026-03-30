@@ -113,13 +113,13 @@ Custom actions can be added to the list, and default actions can be removed or r
 [[quick-actions-reference-table]]
 The following table lists built-in Quick Actions. 
 
-- The **Editor command** column is the menu label. 
-- The **Menu or control ID** column lists values used in `tinymceai_quickactions_menu`, `tinymceai_quickactions_chat_prompts`, `tinymceai_quickactions_change_tone_menu`, and the toolbar when adding individual controls (see xref:tinymceai-actions-plugin.adoc#configuring-quick-actions-menu[Configuring Quick Actions menu]). 
-- The **System `actionName` or quick-action prompt id** column is the service identifier: for preview actions it is the `actionName` path segment in `+/v1/actions/system/{actionName}/calls+` (see xref:tinymceai-actions-plugin.adoc#actions-api[Actions API]); for Chat commands it is the built-in quick-action prompt id (`explain`, `summarize`, `highlight-key-points`) used when opening xref:tinymceai-chat.adoc[Chat] with a pre-filled prompt—not a system `actionName` and not sent on the system actions path.
+* The **Editor** column is the label in the Quick Actions menu when that action is available in the editor.
+* The **Menu or control ID** column lists values for `tinymceai_quickactions_menu`, `tinymceai_quickactions_chat_prompts`, `tinymceai_quickactions_change_tone_menu`, and the toolbar when adding individual controls (see xref:tinymceai-actions-plugin.adoc#configuring-quick-actions-menu[Configuring Quick Actions menu]).
+* The **System `actionName` or quick-action prompt id** column is the service identifier. Preview actions use a system `actionName` with the xref:tinymceai-actions-plugin.adoc#actions-api[Actions API]. Chat actions use a quick-action prompt id and xref:tinymceai-chat.adoc[Chat] with a pre-filled prompt, not the system actions API.
 
 [cols="1,3,2,3,1,1",options="header"]
 |===
-|Editor command |Menu or control ID |System `actionName`  |Description |Editor UI |API
+|Editor |Menu or control ID |System `actionName`  |Description |Editor UI |API
 
 |**Explain** |`ai-chat-explain` |`explain` |Opens Chat with the selected text and a pre-filled prompt. Uses the Conversations API, not the system actions path. |✓ |—
 

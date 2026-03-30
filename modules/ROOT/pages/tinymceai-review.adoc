@@ -7,12 +7,12 @@
 :keywords: AI, review, reviews, tinymceai
 :page-role: -toc
 
-The Review feature provides AI-powered quality assurance for content by running checks for grammar, style, clarity, tone, and more. Review always analyzes the entire document. For AI shortcuts on a selection or range, see xref:tinymceai-actions-plugin.adoc[Quick Actions]. The editor enters read-only Review mode until the review completes or is dismissed. Suggestions appear in the Review sidebar and in the document; each change applies only after acceptance or rejection. The plugin introduces an intuitive interface for reviewing and managing AI-suggested edits directly within the document, ensuring content meets professional standards with minimal manual effort. The API offers the same functionality with flexible integration.
+The Review feature provides AI-powered quality assurance for content by running checks for grammar, style, clarity, tone, and more. Review always analyzes the entire document. For AI shortcuts on a selection or range, see xref:tinymceai-actions.adoc[Quick Actions]. The editor enters read-only Review mode until the review completes or is dismissed. Suggestions appear in the Review sidebar and in the document; each change applies only after acceptance or rejection. The plugin introduces an intuitive interface for reviewing and managing AI-suggested edits directly within the document, ensuring content meets professional standards with minimal manual effort. The API offers the same functionality with flexible integration.
 
 The Review feature is available as a plugin UI and through the Reviews API. This page covers both:
 
 * Plugin sections describe user-facing features and configuration (xref:tinymceai.adoc#options-review[Review configuration]).
-* API sections cover REST API access (starting at xref:tinymceai-review-plugin.adoc#reviews-api[Reviews API]).
+* API sections cover REST API access (starting at xref:tinymceai-review.adoc#reviews-api[Reviews API]).
 
 [[demo]]
 == Demo
@@ -73,8 +73,8 @@ Built-in system reviews are listed below. The **Editor** column is the label in 
 [NOTE]
 ====
 * A checkmark in the Editor UI column means that review type can appear in the Review sidebar when it is listed in xref:tinymceai.adoc#tinymceai_reviews[`tinymceai_reviews`].
-* Custom reviews (analysis defined with a prompt) are available through the xref:tinymceai-review-plugin.adoc#reviews-custom-reviews[Custom reviews (API)]. _Note: The same capability in the Review sidebar is coming soon._
-* Translation Review is API-only (not listed in the Review sidebar); see the xref:tinymceai-review-plugin.adoc#built-in-reviews[Translation row] in the table above. For translation from the editor, see **Translate** in xref:tinymceai-actions-plugin.adoc#quick-actions-reference-table[Quick Actions reference table].
+* Custom reviews (analysis defined with a prompt) are available through the xref:tinymceai-review.adoc#reviews-custom-reviews[Custom reviews (API)]. _Note: The same capability in the Review sidebar is coming soon._
+* Translation Review is API-only (not listed in the Review sidebar); see the xref:tinymceai-review.adoc#built-in-reviews[Translation row] in the table above. For translation from the editor, see **Translate** in xref:tinymceai-actions.adoc#quick-actions-reference-table[Quick Actions reference table].
 ====
 
 [[review-configuration]]
@@ -85,9 +85,9 @@ Which built-in reviews appear in the Review sidebar can be configured using the 
 [[reviews-api]]
 == Reviews API
 
-The Review plugin feature is built on top of the Reviews API, which provides REST API access to review functionality. Reviews run a whole-document workflow: the editor analyzes the full document, streams suggestions, and applies changes only after acceptance or rejection in the Review sidebar. xref:tinymceai-actions-plugin.adoc[Quick Actions] are shortcuts to discrete AI operations on a selection or range (for example previewing a transformation, translation, or chat with context)—not the same end-to-end review flow.
+The Review plugin feature is built on top of the Reviews API, which provides REST API access to review functionality. Reviews run a whole-document workflow: the editor analyzes the full document, streams suggestions, and applies changes only after acceptance or rejection in the Review sidebar. xref:tinymceai-actions.adoc[Quick Actions] are shortcuts to discrete AI operations on a selection or range (for example previewing a transformation, translation, or chat with context)—not the same end-to-end review flow.
 
-**Reviews compared with Quick Actions:** Reviews coordinate document-wide analysis and tracked suggestions in Review mode. Quick Actions expose individual AI capabilities from the Quick Actions menu without entering that workflow. See xref:tinymceai-actions-plugin.adoc[Quick Actions] for the available shortcuts and behavior.
+**Reviews compared with Quick Actions:** Reviews coordinate document-wide analysis and tracked suggestions in Review mode. Quick Actions expose individual AI capabilities from the Quick Actions menu without entering that workflow. See xref:tinymceai-actions.adoc[Quick Actions] for the available shortcuts and behavior.
 
 Reviews use streaming output with Server-Sent Events for real-time feedback as suggestions are generated. Each review type is optimized for specific improvement tasks, providing consistent, high-quality analysis of text structure, style, and quality. Reviews provide specific, actionable recommendations for content improvement.
 
@@ -96,7 +96,7 @@ Reviews use streaming output with Server-Sent Events for real-time feedback as s
 
 System reviews are default review operations for common use cases, which each use the AI agent most suitable for their functionality. The API includes one endpoint for running system reviews, which is passed the review name. 
 
-Built-in system reviews including API names, descriptions, and whether each type is available in the Review sidebar or only through the API—are summarized in xref:tinymceai-review-plugin.adoc#built-in-reviews[Built-in reviews].
+Built-in system reviews including API names, descriptions, and whether each type is available in the Review sidebar or only through the API—are summarized in xref:tinymceai-review.adoc#built-in-reviews[Built-in reviews].
 
 For endpoint details, request and response schemas, authentication, and streaming behavior, see https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API].
 
@@ -125,4 +125,4 @@ The https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] reference (in
 == Related Features
 
 * xref:tinymceai-chat.adoc[AI chat]: For interactive discussions with document analysis and context.
-* xref:tinymceai-actions-plugin.adoc[Quick actions]: Shortcuts to individual AI operations on a selection or range (transformations, translation, chat, and custom actions).
+* xref:tinymceai-actions.adoc[Quick actions]: Shortcuts to individual AI operations on a selection or range (transformations, translation, chat, and custom actions).

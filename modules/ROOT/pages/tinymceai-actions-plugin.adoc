@@ -185,7 +185,7 @@ For system action endpoints, schemas, and streaming details, see the https://tin
 [[custom-actions]]
 == Custom Actions
 
-The `tinymceai_quickactions_custom` configuration property allows adding new commands to the Quick actions feature. The items can be type `action` (a quick action that goes straight to the preview rendering) or type `chat` (opens the chat interface). The `title` is used in the menu items, while the `prompt` is what is actually sent to the AI. The `model` is required for `action` type commands. Learn more about xref:tinymceai-actions-plugin.adoc#types-of-actions[types of actions].
+The `tinymceai_quickactions_custom` configuration property allows adding new commands to the Quick actions feature. The items can be of type `action` (a quick action that shows a preview of the editor content with AI suggestions so changes can be reviewed before applying) or type `chat` (which opens the chat interface for a conversation related to the prompt and selection). The `title` is used in the menu items, while the `prompt` is what is actually sent to the AI. The `model` is required for `action` type commands. Learn more about xref:tinymceai-actions-plugin.adoc#types-of-actions[types of actions].
 
 [source,js]
 ----

@@ -39,9 +39,9 @@ The following new Premium plugin was released alongside {productname} {release-v
 
 The platform centers on three experiences that mirror what teams expect from modern AI writing tools:
 
-* **Chat** — Contextual conversations, persistent history, and help that understands the document.
-* **Review** — Proofreading and structured quality passes for longer content and editorial standards.
-* **Actions** — Quick, repeatable transformations for everyday tasks (tone, length, clarity, and more).
+* image:icons-premium/ai-assistant.svg[Chat icon,24px] **Chat**: Contextual conversations, persistent history, and help that understands the document.
+* image:icons-premium/ai-review.svg[Review icon,24px] **Review**: Proofreading and structured quality passes for longer content and editorial standards.
+* image:icons/ai-prompt.svg[Quick Actions icon,24px] **Actions**: Quick, repeatable transformations for everyday tasks (tone, length, clarity, and more).
 
 Behind the UI sits a production-ready **TinyMCE AI** service with JWT authentication, granular permissions, and multiple models, plus the **TinyMCE AI API** for the same capabilities in server-side workflows, automation, and anywhere outside the editor.
 

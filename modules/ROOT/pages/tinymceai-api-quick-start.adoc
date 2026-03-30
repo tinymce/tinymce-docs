@@ -18,12 +18,14 @@ The {productname} Premium Features free trial allows for testing SaaS services. 
 
 == Getting Started
 
-To start using the {pluginname} service, follow the steps below:
+Every request to the {pluginname} APIs must include a JWT signed with a keypair from the Customer Portal. Signing must run on the application server so private keys are never exposed to the browser. The editor supplies each token by calling xref:tinymceai.adoc#tinymceai_token_provider[+tinymceai_token_provider+], which is typically implemented as a `fetch` to a backend URL that returns a signed JWT for the signed-in user.
+
+To start using the service:
 
 * Sign up for one of the link:{pricingpage}[self-service plans], or link:{contactpage}[contact us] to purchase the {pluginname} license.
 * Generate access credentials in the link:{accountpageurl}[Customer Portal].
 * During a {cloudname} trial, the xref:tinymceai-jwt-authentication-intro.adoc#trial-demo-identity-service[demo identity service] can issue JWTs (JSON Web Tokens) for testing without a custom token endpoint. See xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication].
-* For production, implement a backend that issues short-lived JWTs to authorize end users of the application for {productname} Cloud Services, using the access credentials from the Customer Portal. See xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication].
+* For production, add <<writing-your-own-token-endpoint,Writing your own token endpoint>>: a backend HTTPS route that signs short-lived JWTs with the portal keypair for each authorized end user. See xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication] for the full flow and code examples.
 
 All steps are explained in detail below.
 
@@ -50,7 +52,7 @@ For trial setup without a custom token endpoint, see xref:tinymceai-jwt-authenti
 [[create-token-endpoint]]
 == Create token endpoint
 
-The next step for production is to create a security token endpoint in the application backend. That endpoint securely authorizes end users to use {pluginname} features based on their permissions and access rights.
+The next step for production is to create a security token endpoint in the application backend. That endpoint securely authorizes end users to use {pluginname} features based on their permissions and access rights. The editor calls this endpoint through xref:tinymceai.adoc#tinymceai_token_provider[+tinymceai_token_provider+] in xref:tinymceai.adoc[Plugin Reference]. API integrations use the same JWT when calling `https://tinymceai.api.tiny.cloud`; see xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication] for request details.
 
 [[writing-your-own-token-endpoint]]
 === Writing your own token endpoint

@@ -55,7 +55,7 @@ Users can select the desired AI model for their conversation from a dropdown at 
 
 image::tinymceai/tinymce-ai-chat-model-selector-dropdown-open.png[{pluginname} Chat available models dropdown,width=80%]
 
-Once selected, the AI model will persist for the duration of the conversation. To change the model, start a new conversation using the image:icons-premium/new-chat.svg[New Chat icon,24px] **New Chat** button at the top-right corner of the chat panel.
+The model can be changed at any time using the same dropdown. Messages sent after a change use the newly selected model.
 
 [[model-selection-configuration]]
 === Configuration

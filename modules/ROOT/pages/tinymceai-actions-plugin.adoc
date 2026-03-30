@@ -9,6 +9,9 @@
 
 Quick actions simplify routine content transformations by offering one-click AI-powered suggestions directly within the editor. This feature enhances speed, relevance, and usability, particularly for repeatable or simple tasks. For suggestions that change the document, the editor shows a preview and applies changes only after each suggestion is accepted or rejected. For actions that only open Chat with a pre-filled prompt, see xref:tinymceai-chat.adoc[Chat]. The API includes the ability to call predefined and optimized system actions, or to define your own.
 
+[[stateless-actions]]
+Preview transformations and Actions API calls are **stateless**: each invocation is independent and does not retain prior interactions, unlike ongoing xref:tinymceai-chat.adoc[Chat] conversations. Quick Actions that open Chat with a pre-filled prompt hand off to the Conversations API instead.
+
 The Quick Actions feature is available as part of the `+tinymceai+` plugin for {productname} and through the Actions API. This page covers both:
 
 * Plugin sections describe user-facing features and configuration (xref:tinymceai.adoc#options-quickactions[Quick Actions configuration]).
@@ -23,6 +26,8 @@ liveDemo::tinymceai-actions[]
 
 [[quick-actions-and-review]]
 == Quick Actions and Review
+
+Quick Actions fit transforming a selection or section (for example grammar fixes, translation, or tone). Review fits whole-document quality analysis with suggestions in the Review sidebar and the document.
 
 Both Quick Actions and Review can propose edits that apply only after acceptance or rejection. The main differences are scope and where the work happens in the editor:
 
@@ -258,11 +263,11 @@ tinymce.init({
 [[actions-api]]
 == Actions API
 
-The Quick Actions plugin feature is built on top of the Actions API, which provides REST API access to action functionality. Actions are fast, stateless operations. For suggestions that change the document, the preview flow applies edits only after each suggestion is accepted or rejected. Actions that only open Chat with a pre-filled prompt use the Conversations API; see xref:tinymceai-chat.adoc[Chat].
+The Quick Actions plugin feature is built on top of the Actions API, which provides REST API access to action functionality. Actions are fast, stateless operations—each request is independent, as described under xref:tinymceai-actions-plugin.adoc#stateless-actions[Stateless actions]. For suggestions that change the document, the preview flow applies edits only after each suggestion is accepted or rejected. Actions that only open Chat with a pre-filled prompt use the Conversations API; see xref:tinymceai-chat.adoc[Chat].
 
 For how Quick Actions relate to Review in the editor (scope and UI), see xref:tinymceai-actions-plugin.adoc#quick-actions-and-review[Quick Actions and Review].
 
-Unlike conversations, actions do not remember previous interactions. Each action is independent and focused on a single task. Actions use streaming output with Server-Sent Events for real-time feedback as results are generated.
+Actions use streaming output with Server-Sent Events for real-time feedback as results are generated.
 
 [[actions-system-actions-api]]
 === System Actions

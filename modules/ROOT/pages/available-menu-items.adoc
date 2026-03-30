@@ -25,37 +25,20 @@ include::partial$menu-item-ids/core-menu-items.adoc[]
 :plugincode: a11ychecker
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
+:plugincategory: premium
+:pluginname: AI Assistant
+:plugincode: ai
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+
 :plugincategory: opensource
 :pluginname: Accordion
 :plugincode: accordion
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 :plugincategory: premium
-:pluginname: Enhanced Code Editor
-:plugincode: advcode
-:altplugincode: code
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
-:!altplugincode:
-
-:plugincategory: opensource
-:pluginname: List Styles
-:plugincode: advlist
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
-
-:plugincategory: premium
-:pluginname: Enhanced Tables
-:plugincode: advtable
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
-
-:plugincategory: premium
 :pluginname: Advanced Typography
 :plugincode: typography
 :pluginpage: advanced-typography.adoc
-include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
-
-:plugincategory: premium
-:pluginname: AI Assistant
-:plugincode: ai
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 :plugincategory: opensource
@@ -106,9 +89,15 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 :plugincategory: premium
-:pluginname: Full Page HTML
-:plugincode: fullpagehtml
-:pluginpage: fullpagehtml.adoc
+:pluginname: Enhanced Code Editor
+:plugincode: advcode
+:altplugincode: code
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+:!altplugincode:
+
+:plugincategory: premium
+:pluginname: Enhanced Tables
+:plugincode: advtable
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 :plugincategory: premium
@@ -124,6 +113,12 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 :plugincategory: premium
 :pluginname: Footnotes
 :plugincode: footnotes
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+
+:plugincategory: premium
+:pluginname: Full Page HTML
+:plugincode: fullpagehtml
+:pluginpage: fullpagehtml.adoc
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 :plugincategory: opensource
@@ -154,6 +149,11 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 :plugincategory: opensource
 :pluginname: Link
 :plugincode: link
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
+
+:plugincategory: opensource
+:pluginname: List Styles
+:plugincode: advlist
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 :plugincategory: opensource
@@ -239,6 +239,12 @@ include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 :pluginpage: tinydrive-introduction.adoc
 include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 :!pluginpage:
+
+:plugincategory: premium
+:pluginname: TinyMCE AI
+:plugincode: tinymceai
+:pluginpage: tinymceai.adoc
+include::partial$misc/plugin-menu-item-id-boilerplate.adoc[]
 
 :plugincategory: opensource
 :pluginname: Visual Blocks

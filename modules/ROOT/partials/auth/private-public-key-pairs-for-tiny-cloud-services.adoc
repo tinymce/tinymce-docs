@@ -1,16 +1,20 @@
-The **{pluginname}** Server requires a _public_ key generated from the same _private_ key that will be used on your JSON Web Token (JWT) provider endpoint. The public key(s) stored on the {pluginname} Server are used to ensure that content is sent by authorized users.
+The **{pluginname}** Server requires a _public_ key generated from the same _private_ key that will be used on the JSON Web Token (JWT) provider endpoint. The public key(s) stored on the {pluginname} Server are used to ensure that content is sent by authorized users.
 
-There are two methods for generating and adding a public key in the JWT Keys section of your account portal:
+There are two methods for generating and adding a public key in the JWT Keys section of the account portal:
 
 . Generate New Keypair at link:{accountjwturl}[{accountpage} - JWT Keys] (recommended).
 . Generate a key pair locally and Import Public Key at link:{accountjwturl}[{accountpage} - JWT Keys].
 
-== Generate a key pair using the {accountpage} JWT Keys page
+=== Generate a key pair using the {accountpage} JWT Keys page
 
 The link:{accountjwturl}[{accountpage} - JWT Keys] page provides a "Generate New Keypair" option, providing a quick and secure way of generating the required keys. This will store a copy of the _public_ key, and provide a downloadable file for both the public and private keys. {companyname} does **not store** the _private_ key and the key pair **cannot** be retrieved later.
 
+=== Generate a key pair locally and add it to the account
+
+This method involves two steps: generating the key pair locally, then adding the public key to the account portal.
+
 [[generate-a-key-pair-locally]]
-== Generate a key pair locally
+==== Generate a key pair locally
 
 When generating a key pair locally, use one of the supported algorithms.
 include::partial$auth/jwt-supported-algorithms.adoc[]
@@ -19,11 +23,11 @@ For instructions on generating a key pair locally, see: xref:generate-rsa-key-pa
 
 [[add-a-public-key-to-the-tiny-cloud-api-key]]
 ifeval::[{numberedHeading} == true]
-= 2. Add a public key in the JWT Keys section of your account portal
+==== 2. Add a public key in the JWT Keys section of the account portal
 endif::[]
 
 ifeval::[{numberedHeading} != true]
-== Add a public key in the JWT Keys section of your account portal
+==== Add a public key in the JWT Keys section of the account portal
 endif::[]
 
-Once a public key has been generated locally, use the "Import Public Key" option in the JWT Keys section of your account portal at: link:{accountjwturl}[{accountpage} - JWT Keys].
+Once a public key has been generated locally, use the "Import Public Key" option in the JWT Keys section of the account portal at: link:{accountjwturl}[{accountpage} - JWT Keys].

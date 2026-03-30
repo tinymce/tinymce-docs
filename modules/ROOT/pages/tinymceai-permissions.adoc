@@ -1,0 +1,265 @@
+= TinyMCE AI JWT Permissions
+
+:navtitle: Permissions
+:pluginname: TinyMCE AI
+:plugincode: tinymceai
+:description: JWT permissions system for TinyMCE AI
+:description_short: JWT Permissions
+:keywords: AI, JWT, permissions, authentication, tinymceai
+
+{pluginname} uses a permission-based access control system to manage user access to AI features. Permissions are specified in JWT tokens and control which features, models, and capabilities users can access.
+
+For information about JWT authentication setup and required claims, see xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication].
+
+[[quick-reference]]
+== Quick Reference
+
+[cols="2,3"]
+|===
+|Category |Permissions
+
+|Admin
+|`ai:admin`
+
+|Models
+|`ai:models:*`, `ai:models:<provider>:*`, `ai:models:<provider>:<model-name>`, `ai:models:agent`
+
+|Conversations
+|`ai:conversations:*`, `ai:conversations:read`, `ai:conversations:write`, `ai:conversations:websearch`, `ai:conversations:reasoning`
+
+|Context
+|`ai:conversations:context:*`, `ai:conversations:context:files:*`, `ai:conversations:context:files:<format>`, `ai:conversations:context:urls`
+
+|Actions
+|`ai:actions:*`, `ai:actions:custom`, `ai:actions:system:*`, `ai:actions:system:<action-name>`
+
+|Reviews
+|`ai:reviews:*`, `ai:reviews:custom`, `ai:reviews:system:*`, `ai:reviews:system:<review-name>`
+|===
+
+[[use-cases]]
+== Use Cases
+
+* **Role-based access**: Different user roles have different AI capabilities
+* **Cost control**: Limit access to expensive models or features
+* **Feature gating**: Enable specific AI features for premium users
+* **Security**: Restrict access to sensitive AI operations
+
+[[permission-format]]
+== Permission Format
+
+Permissions follow a hierarchical format: `ai:<category>:<subcategory>:<specific-permission>`
+
+[[admin-permissions]]
+== Admin Permissions
+
+[cols="2,3"]
+|===
+|Permission |Description
+
+|`ai:admin`
+|Grants full access to all {pluginname} features, models, and capabilities. Use with caution in production environments.
+|===
+
+[[model-permissions]]
+== Model Permissions
+
+[cols="2,3"]
+|===
+|Permission |Description
+
+|`ai:models:*`
+|Access to all available AI models. Use with caution as this includes access to new models that may be more expensive.
+
+|`ai:models:<provider>:*`
+|Access to all models from a specific provider (for example, `ai:models:openai:*`, `ai:models:anthropic:*`).
+
+|`ai:models:<provider>:<model-name>`
+|Access to a specific model (for example, `ai:models:openai:gpt-4o`, `ai:models:anthropic:claude-3-sonnet`).
+
+|`ai:models:agent` ⭐ Recommended
+|Access to the agent model which automatically selects the best model for each request. This is the recommended permission for most use cases.
+|===
+
+[[conversation-permissions]]
+== Conversation Permissions
+
+[cols="2,3"]
+|===
+|Permission |Description
+
+|`ai:conversations:*`
+|Full access to all conversation features including read, write, web search, and reasoning.
+
+|`ai:conversations:read`
+|Ability to read and list conversations.
+
+|`ai:conversations:write`
+|Ability to create and send messages in conversations.
+
+|`ai:conversations:websearch`
+|Ability to use web search capability in conversations.
+
+|`ai:conversations:reasoning`
+|Ability to use reasoning capability in conversations.
+|===
+
+[[context-permissions]]
+== Context Permissions
+
+[cols="2,3"]
+|===
+|Permission |Description
+
+|`ai:conversations:context:*`
+|Access to all context types (files and URLs).
+
+|`ai:conversations:context:files:*`
+|Access to all file types for context.
+
+|`ai:conversations:context:files:<format>`
+|Access to specific file formats (for example, `ai:conversations:context:files:pdf`, `ai:conversations:context:files:docx`).
+
+|`ai:conversations:context:urls`
+|Ability to use web URLs as context sources.
+|===
+
+[[actions-permissions]]
+== Actions Permissions
+
+[cols="2,3"]
+|===
+|Permission |Description
+
+|`ai:actions:*`
+|Access to all action types, including custom and system actions.
+
+|`ai:actions:custom`
+|Ability to run custom actions with free-form prompts.
+
+|`ai:actions:system:*`
+|Access to all pre-defined system actions.
+
+|`ai:actions:system:<action-name>`
+|Access to specific system actions. Examples: `ai:actions:system:improve-writing`, `ai:actions:system:fix-grammar`, `ai:actions:system:translate`
+|===
+
+[[reviews-permissions]]
+== Reviews Permissions
+
+[cols="2,3"]
+|===
+|Permission |Description
+
+|`ai:reviews:*`
+|Access to all review types, including custom and system reviews.
+
+|`ai:reviews:custom`
+|Ability to run custom reviews with free-form prompts.
+
+|`ai:reviews:system:*`
+|Access to all pre-defined system reviews.
+
+|`ai:reviews:system:<review-name>`
+|Access to specific system reviews. Examples: `ai:reviews:system:correctness`, `ai:reviews:system:clarity`, `ai:reviews:system:make-tone-professional`
+|===
+
+[[permission-examples]]
+== Permission Examples
+
+[[basic-user]]
+=== Basic User
+
+[source,json]
+----
+{
+  "auth": {
+    "ai": {
+      "permissions": [
+        "ai:conversations:read",
+        "ai:conversations:write",
+        "ai:models:agent",
+        "ai:conversations:context:files:pdf",
+        "ai:conversations:context:files:docx"
+      ]
+    }
+  }
+}
+----
+
+[[premium-user]]
+=== Premium User
+
+[source,json]
+----
+{
+  "auth": {
+    "ai": {
+      "permissions": [
+        "ai:conversations:*",
+        "ai:models:*",
+        "ai:actions:system:*",
+        "ai:reviews:system:*"
+      ]
+    }
+  }
+}
+----
+
+[[enterprise-admin]]
+=== Enterprise Admin
+
+[source,json]
+----
+{
+  "auth": {
+    "ai": {
+      "permissions": [
+        "ai:admin"
+      ]
+    }
+  }
+}
+----
+
+[[restricted-user-review-only]]
+=== Restricted User (Review Only)
+
+[source,json]
+----
+{
+  "auth": {
+    "ai": {
+      "permissions": [
+        "ai:reviews:system:correctness",
+        "ai:reviews:system:clarity",
+        "ai:models:gpt-4.1-mini"
+      ]
+    }
+  }
+}
+----
+
+[[best-practices]]
+== Best Practices
+
+[[permission-design]]
+=== Permission Design
+
+Begin with minimal, specific permissions based on actual requirements. Use wildcards only for testing environments and power users who need comprehensive access. Gradually expand permissions based on user needs and usage patterns.
+
+Avoid `ai:models:*` in production to prevent unexpected access to new expensive models. Use provider-specific permissions like `ai:models:openai:*` for better control, or specify exact models for maximum control. Start with common formats (PDF, DOCX, TXT, PNG, JPEG) and add specialized formats only when needed.
+
+[[error-handling]]
+== Error Handling
+
+When a user lacks required permissions, the API returns a `403 Forbidden` error with the message "No permissions to the resource". Common issues include missing model permissions, file type restrictions, feature access without permission, and action/review access without permission.
+
+[[related-features]]
+== Related Features
+
+* xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication]: JWT authentication setup and required claims.
+* xref:tinymceai-models.adoc[AI Models]: Model selection and capabilities.
+* xref:tinymceai-chat.adoc[Chat]: Interactive AI discussions.
+* xref:tinymceai-review.adoc[Review]: Content improvement.
+* xref:tinymceai-actions.adoc[Quick Actions]: Content transformation.

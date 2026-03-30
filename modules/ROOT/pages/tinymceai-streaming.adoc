@@ -1,0 +1,122 @@
+= TinyMCE AI Streaming
+
+:navtitle: Streaming
+:pluginname: TinyMCE AI
+:plugincode: tinymceai
+:description: Streaming configuration for TinyMCE AI
+:description_short: Streaming configuration
+:keywords: AI, streaming, configuration, tinymceai
+
+Real-time AI interactions using Server-Sent Events (SSE) for immediate feedback and progressive content generation.
+
+[[overview]]
+== Overview
+
+{pluginname} services use Server-Sent Events (SSE) to provide real-time streaming responses. This allows users to see AI-generated content as it is being created, providing immediate feedback and enabling interactive experiences.
+
+[[sse-event-types]]
+== SSE Event Types
+
+Conversations, Reviews, and Actions each use different event names and JSON payloads in the SSE stream. Those payloads are documented on each streaming operation in the https://tinymceai.api.tiny.cloud/docs[interactive API documentation], not on the feature overview pages (which only summarize that SSE is used).
+
+Use the API reference for the operation being called—for example:
+
+* https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Messages[Conversation Messages] and related Conversation tags for chat streaming, sources, and reasoning.
+* https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for review streaming responses.
+* https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API] for action streaming responses.
+
+The shared wire format and client-side parsing are covered in <<sse-wire-format,SSE wire format>> and <<basic-implementation,Basic implementation>> on this page.
+
+[[sse-wire-format]]
+== SSE wire format
+
+The response body is a text stream in https://html.spec.whatwg.org/multipage/server-sent-events.html[Server-Sent Events] format. Events are separated by blank lines. Each event can include an `+event:+` line (event name) and one or more `+data:+` lines (payload; long payloads may be split across several `+data:+` lines). For example:
+
+....
+event: <event-name-1>
+data: <data>
+
+event: <event-name-2>
+data: <data2>
+....
+
+Parsing this format correctly (including chunk boundaries, multi-line `+data:+` fields, and comments) is easy to get wrong in hand-written loops. For production code, use a maintained SSE parser such as the https://www.npmjs.com/package/eventsource-parser[`eventsource-parser`] package.
+
+[[basic-implementation]]
+== Basic Implementation
+
+After obtaining a streaming `+Response+` from `+fetch+`, pass the byte stream through an SSE parser. The following example uses https://www.npmjs.com/package/eventsource-parser[`eventsource-parser`] to turn raw chunks into parsed events; application code then inspects each event payload (for example JSON with an `+event+` field and `+data+` for {pluginname} services):
+
+[source,javascript]
+----
+import { createParser } from 'eventsource-parser';
+
+const response = await fetch('/v1/your-endpoint', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'Bearer <token>',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    // Request payload
+  })
+});
+
+const parser = createParser({
+  onEvent: (event) => {
+    // event.event is the SSE event name (if present)
+    // event.data is the reassembled data string for this event
+    const data = JSON.parse(event.data);
+
+    switch (data.event) {
+      case 'error':
+        console.error('Error:', data.data.message);
+        break;
+      default:
+        // Handle all other events — event names vary by API; see
+        // https://tinymceai.api.tiny.cloud/docs for each operation's schema.
+        // Examples: Conversations (text-delta, source, reasoning, modification-delta),
+        // Reviews (review-delta, review-metadata), Actions (modification-delta, action-metadata)
+        console.log('Event:', data.event, data.data);
+    }
+  }
+});
+
+const reader = response.body.getReader();
+const decoder = new TextDecoder();
+
+while (true) {
+  const { done, value } = await reader.read();
+  if (done) break;
+  parser.feed(decoder.decode(value, { stream: true }));
+}
+----
+
+[[error-handling]]
+== Error Handling
+
+Always handle errors gracefully:
+
+[source,javascript]
+----
+if (data.event === 'error') {
+  const error = data.data;
+  console.error('Streaming error:', error.message);
+}
+----
+
+[[progress-tracking]]
+== Progress Tracking
+
+Use metadata events to show progress. Event names and fields for review streaming are defined in the https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] operations that return SSE responses, not in the Review plugin overview.
+
+[[api-reference]]
+== API Reference
+
+The https://tinymceai.api.tiny.cloud/docs[interactive API documentation] describes streaming endpoints, event shapes, and errors for each feature area.
+
+[[next-steps]]
+== Next Steps
+
+* xref:tinymceai-chat.adoc[Chat], xref:tinymceai-review.adoc[Review], and xref:tinymceai-actions.adoc[Quick Actions] for product behavior and editor integration.
+* xref:tinymceai-models.adoc[AI Models] for model configuration and limits.

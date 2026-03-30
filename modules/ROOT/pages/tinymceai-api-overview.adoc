@@ -1,0 +1,41 @@
+= TinyMCE AI API Overview
+
+:navtitle: API Overview
+:description: Overview of TinyMCE AI service features and capabilities
+:description_short: API Overview
+:keywords: AI, API, AI service, overview, tinymceai
+
+The TinyMCE AI REST API enables AI integration within your application using the same infrastructure as the TinyMCE AI plugin, but without being tied to the editor. Integrate with multiple AI agents via one API, accessing all functionality from the Chat, Review, and Quick Actions features, with your own custom UI and workflows. 
+
+[NOTE]
+====
+**API Reference**: The complete API documentation with all endpoints, parameters, request/response schemas, and interactive examples is available at link:https://tinymceai.api.tiny.cloud/docs[TinyMCE AI API Documentation]
+====
+
+[[getting-started]]
+== Getting Started
+
+New to TinyMCE AI? Start with the xref:tinymceai-api-quick-start.adoc[Quick Start] guide to set up the environment, generate access credentials, and make the first API call.
+
+[[tinymce-ai-features]]
+== TinyMCE AI features
+
+* xref:tinymceai-chat.adoc[**Chat**]: Interactive AI chats with history and persistent context.
+* xref:tinymceai-review.adoc[**Review**]: Content analysis and proofreading, optimized for larger content.
+* xref:tinymceai-actions.adoc[**Quick Actions**]: Fast, stateless operations for specific tasks.
+
+[[architecture]]
+== Architecture
+
+The following pages cover the AI service architecture and configuration.
+
+* xref:tinymceai-models.adoc[**Models**]: AI model selection, capabilities, and configuration.
+* xref:tinymceai-streaming.adoc[**Streaming**]: Real-time streaming of AI-generated responses.
+* xref:tinymceai-permissions.adoc[**Permissions**]: How to control user access to features.
+* xref:tinymceai-limits.adoc[**Limits**]: Rate limits, context size limits, and file restrictions.
+
+[[resources-and-support]]
+== Resources and Support
+
+* **API Documentation**: link:https://tinymceai.api.tiny.cloud/docs[Complete API reference for TinyMCE AI].
+* **Customer Support**: link:https://www.tiny.cloud/contact/[Contact us] to get help from the support team or speak with sales.

@@ -1,0 +1,41 @@
+== Quick Start Guide
+
+If a Node.js project is not already set up, follow the steps below to create a basic environment for integrating TinyMCE AI with JWT authentication. If a project is already configured, skip this section and proceed to the xref:tinymceai-with-jwt-authentication-nodejs.adoc#jwt-configuration-requirements[JWT Configuration Requirements] section.
+
+=== Project Setup
+
+[source,bash]
+----
+# Create and enter project directory
+mkdir tinymce-my-app
+cd tinymce-my-app
+
+# Initialize project
+npm init -y
+
+# Install required packages
+npm install express cors jsonwebtoken
+----
+
+Verify that the `package.json` file now includes the required dependencies.
+
+=== Create Project Structure
+
+[source,bash]
+----
+# Create the public folder for web files
+mkdir public
+touch public/index.html
+touch jwt.js
+----
+
+The project should look like this:
+
+[source]
+----
+/tinymce-my-app
+  /public
+    index.html  (TinyMCE webpage)
+  jwt.js        (Server code)
+  package.json  (Project configuration)
+----

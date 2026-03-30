@@ -13,8 +13,8 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 {productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, February 4^th^, 2026. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
-* xref:new-premium-plugins[New Premium plugin<s>]
-* xref:new-open-source-plugins[New Open Source plugins]
+* xref:new-premium-plugins[New Premium plugins]
+* xref:new-open-source-plugin[New Open Source plugin]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
 * xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
 * xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
@@ -33,11 +33,34 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following new Premium plugin was released alongside {productname} {release-version}.
 
-=== <Premium plugin name>
+=== TinyMCE AI
 
-The new Premium plugin, **<Premium plugin name>** // description here.
+**TinyMCE AI** is the new premium AI platform for {productname}: faster drafting and stronger editing workflows with a ready-to-use AI features - now available as both a plug-and-play plugin and an API for custom integrations.
 
-For information on the **<Premium plugin name>** plugin, see xref:<plugincode>.adoc[<Premium plugin name>].
+The platform centers on three experiences that mirror what teams expect from modern AI writing tools:
+
+* image:icons-premium/ai-assistant.svg[Chat icon,24px] **Chat**: Contextual conversations, persistent history, and help that understands the document.
+* image:icons-premium/ai-review.svg[Review icon,24px] **Review**: Proofreading and structured quality passes for longer content and editorial standards.
+* image:icons/ai-prompt.svg[Quick Actions icon,24px] **Actions**: Quick, repeatable transformations for everyday tasks (tone, length, clarity, and more).
+
+Behind the UI sits a production-ready **TinyMCE AI API** with JWT authentication, granular permissions, and multiple models, which is also available for use within the editor or without - in your broader application.
+
+**What this means for users** (the outcomes the interface is built for):
+
+* Move drafts forward and refine tone without leaving the editor.
+* Summarize, adjust length, and improve clarity with guided flows.
+* Keep brand and policy guardrails in reach through permissions and review-style workflows.
+
+**Documentation** for **TinyMCE AI**:
+
+* xref:tinymceai-introduction.adoc[Introduction to TinyMCE AI] — Capabilities, features, and how the platform fits together.
+* xref:tinymceai.adoc[TinyMCE AI plugin] — Setup, configuration, and the out-of-the-box editor experience.
+* xref:tinymceai-api-overview.adoc[TinyMCE AI API] — Service integration, authentication, and building beyond the editor.
+
+[TIP]
+====
+Existing customers on paid plans can request a full featured free trial through the link:{accountpageurl}[Customer Portal].
+====
 
 
 [[new-open-source-plugin]]
@@ -210,12 +233,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[improvements]]
 == Improvements
 
-{productname} {release-version} also includes the following improvement<s>:
+{productname} {release-version} also includes the following improvements:
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
 
 // CCFR here.
+
 === The file upload feature of `link` and `image` dialogs now provide feedback when an unsupported file type is selected
 // #TINY-13420
 
@@ -228,21 +252,17 @@ Previously, the directionality buttons would not apply the directionality attrib
 
 In {productname} {release-version}, each directionality button always applies or removes the directionality attribute on the selected block, and only appears active when directionality is explicitly set on the block.
 
+
 [[additions]]
 == Additions
 
-{productname} {release-version} also includes the following addition<s>:
+{productname} {release-version} also includes the following additions:
 
 === New `table_default_header_rows` and `table_default_header_cols` options to set the default header size for new tables
 // #TINY-13391
 
 Previously, integrators had no way to set default header rows and columns when creating tables through the editor UI. This affected the accessibility of tables and required manual intervention for integrators aiming to meet accessibility standards. The new xref:table-options.adoc#table_default_header_rows[`+table_default_header_rows+`] and xref:table-options.adoc#table_default_header_cols[`+table_default_header_cols+`] options enable integrators to set the number of default header rows and columns for new tables created through the editor's UI, providing a supported way to meet accessibility requirements.
 
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
 === New `errorHandler` option for `dropzone` dialog components
 // #TINY-13420
 
@@ -264,12 +284,7 @@ In {productname} {release-version}, the new xref:custom-view.adoc#view_show[`+vi
 [[changes]]
 == Changes
 
-{productname} {release-version} also includes the following change<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+{productname} {release-version} also includes the following changes:
 
 === The `border-color` style with multiple rgb colors would be compressed into `border` incorrectly
 // #TINY-13393
@@ -278,11 +293,10 @@ Previously, when `border-color` used multiple rgb values (for example, for diffe
 
 In {productname} {release-version}, a check was added to prevent compression when `border-color` contains multiple rgb values. The styles are no longer compressed into invalid shorthand.
 
-
 [[removed]]
 == Removed
 
-{productname} {release-version} also includes the following removal<s>:
+{productname} {release-version} also includes the following removals:
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
@@ -293,7 +307,7 @@ In {productname} {release-version}, a check was added to prevent compression whe
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
@@ -388,7 +402,7 @@ In {productname} {release-version}, the fix checks if the content CSS is availab
 [[security-fixes]]
 == Security fixes
 
-{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
+{productname} {release-version} includes fixes for the following security issues:
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1
@@ -399,7 +413,7 @@ In {productname} {release-version}, the fix checks if the content CSS is availab
 [[deprecated]]
 == Deprecated
 
-{productname} {release-version} includes the following deprecation<s>:
+{productname} {release-version} includes the following deprecations:
 
 === The `<plugin>` configuration property, `<name>`, has been deprecated
 
@@ -411,7 +425,7 @@ In {productname} {release-version}, the fix checks if the content CSS is availab
 
 This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
 
-There <is one | are <number> known issue<s> in {productname} {release-version}.
+The following known issues affect {productname} {release-version}.
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1

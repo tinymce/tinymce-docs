@@ -10,7 +10,7 @@ asciidoc:
     companyurl: https://www.tiny.cloud
     cdnurl: https://cdn.tiny.cloud/1/no-api-key/tinymce/8/tinymce.min.js
     tdcdnurl: https://cdn.tiny.cloud/1/_your_api_key_/tinydrive/8/tinydrive.min.js
-    tinymce_live_demo_url: https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/8/tinymce.min.js
+    tinymce_live_demo_url: https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinymce/8-testing/tinymce.min.js
     tinydrive_live_demo_url: https://cdn.tiny.cloud/1/qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc/tinydrive/8/tinydrive.min.js
     webcomponent_url: https://cdn.jsdelivr.net/npm/@tinymce/tinymce-webcomponent/dist/tinymce-webcomponent.min.js
     jquery_url: https://cdn.jsdelivr.net/npm/@tinymce/tinymce-jquery@2/dist/tinymce-jquery.min.js
@@ -22,7 +22,9 @@ asciidoc:
     dockerimageexporttopdf: registry.containers.tiny.cloud/pdf-converter-tiny
     dockerimageexporttopdfwindows: registry.containers.tiny.cloud/pdf-converter-windows-tiny
     # document converter placeholder variables
-    exportpdf_service_url: exportpdf_service_url placeholder 
+    exportpdf_service_url: exportpdf_service_url placeholder
+    # TinyMCE AI demo API key
+    tinymceai_demo_api_key: qagffr3pkuv17a8on1afax661irst1hbr4e6tbv888sz91jc
     # product variables
     productname: TinyMCE
     productmajorversion: 8

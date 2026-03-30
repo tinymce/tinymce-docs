@@ -34,7 +34,7 @@ By enabling image:icons-premium/web-search.svg[Web search icon,24px] xref:tinymc
 [[making-changes-to-the-content]]
 === Making changes to the content
 
-Users can chat with the AI and use it to introduce changes to the document. Ask it to _"Summarize the document"_, _"Turn this report into a one-page executive summary"_, or _"Suggest better section titles and subheadings"_. The AI will then propose a series of changes to the document that can be xref:tinymceai-chat.adoc#previewing-changes[reviewed] and xref:tinymceai-chat.adoc#applying-changes[accepted or discarded one by one]. Long AI responses can be expanded using the **Expand** button to view the full suggestion. {pluginname} works directly on the content instead of requiring copy-paste of chat transcripts.
+Users can chat with the AI and use it to introduce changes to the document. Ask it to _"Summarize the document"_, _"Turn this report into a one-page executive summary"_, or _"Suggest better section titles and subheadings"_. The AI will then propose a series of changes to the document that can be xref:tinymceai-chat.adoc#previewing-changes[reviewed] and xref:tinymceai-chat.adoc#applying-changes[accepted or discarded one by one]. {pluginname} works directly on the content instead of requiring copy-paste of chat transcripts.
 
 [[brainstorming]]
 === Brainstorming
@@ -151,6 +151,8 @@ tinymce.init({
 == Working with AI-generated changes
 
 When asking the AI for changes to the document, for instance, _"Bold key facts in the document"_, the AI proposes a series of changes. The changes are displayed directly in the document content, making it easy to see what will be modified.
+
+When the AI response in the chat panel includes modification history, that block appears in a collapsible section. **Expand** shows the full history when the default preview is truncated.
 
 [[previewing-changes]]
 === Previewing changes

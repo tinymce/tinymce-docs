@@ -33,11 +33,34 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following new Premium plugin was released alongside {productname} {release-version}.
 
-=== <Premium plugin name>
+=== TinyMCE AI
 
-The new Premium plugin, **<Premium plugin name>** // description here.
+**TinyMCE AI** is the new premium AI platform for {productname}: faster drafting, stronger editing workflows, and AI that stays inside a familiar rich-text surface — without wiring a separate AI product to the stack.
 
-For information on the **<Premium plugin name>** plugin, see xref:<plugincode>.adoc[<Premium plugin name>].
+The platform centers on three experiences that mirror what teams expect from modern AI writing tools:
+
+* **Chat** — Contextual conversations, persistent history, and help that understands the document.
+* **Review** — Proofreading and structured quality passes for longer content and editorial standards.
+* **Actions** — Quick, repeatable transformations for everyday tasks (tone, length, clarity, and more).
+
+Behind the UI sits a production-ready **TinyMCE AI** service with JWT authentication, granular permissions, and multiple models, plus the **TinyMCE AI API** for the same capabilities in server-side workflows, automation, and anywhere outside the editor.
+
+**What this means for users** (the outcomes the interface is built for):
+
+* Move first drafts forward and refine tone without leaving the editor.
+* Summarize, adjust length, and improve clarity with guided flows.
+* Keep brand and policy guardrails in reach through permissions and review-style workflows.
+
+**Documentation** for **TinyMCE AI**:
+
+* xref:tinymceai-introduction.adoc[Introduction to TinyMCE AI] — Capabilities, features, and how the platform fits together.
+* xref:tinymceai.adoc[TinyMCE AI plugin] — Setup, configuration, and the out-of-the-box editor experience.
+* xref:tinymceai-api-overview.adoc[TinyMCE AI API] — Service integration, authentication, and building beyond the editor.
+
+[TIP]
+====
+Existing customers on paid plans can request a full featured free trial through the link:{accountpageurl}[Customer Portal].
+====
 
 
 [[new-open-source-plugin]]

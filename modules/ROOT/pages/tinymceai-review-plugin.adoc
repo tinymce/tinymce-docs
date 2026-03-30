@@ -94,7 +94,7 @@ Reviews use streaming output with Server-Sent Events for real-time feedback as s
 [[reviews-system-reviews-api]]
 === System Reviews
 
-System reviews are predefined review operations for common use cases, which each use the AI agent most suitable for their functionality. The API includes one endpoint for running system reviews, which is passed the review name. 
+System reviews are default review operations for common use cases, which each use the AI agent most suitable for their functionality. The API includes one endpoint for running system reviews, which is passed the review name. 
 
 Built-in system reviews including API names, descriptions, and whether each type is available in the Review sidebar or only through the API—are summarized in xref:tinymceai-review-plugin.adoc#built-in-reviews[Built-in reviews].
 

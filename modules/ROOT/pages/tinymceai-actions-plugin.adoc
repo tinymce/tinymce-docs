@@ -7,7 +7,7 @@
 :keywords: AI, quick actions, actions, tinymceai
 :page-role: -toc
 
-Quick actions simplify routine content transformations by offering one-click AI-powered suggestions directly within the editor. This feature enhances speed, relevance, and usability, particularly for repeatable or simple tasks. For suggestions that change the document, the editor shows a preview and applies changes only after each suggestion is accepted or rejected. For actions that only open Chat with a pre-filled prompt, see xref:tinymceai-chat.adoc[Chat]. The API includes the ability to call predefined and optimized system actions, or to define your own.
+Quick actions simplify routine content transformations by offering one-click AI-powered suggestions directly within the editor. This feature enhances speed, relevance, and usability, particularly for repeatable or simple tasks. For suggestions that change the document, the editor shows a preview and applies changes only after each suggestion is accepted or rejected. For actions that only open Chat with a pre-filled prompt, see xref:tinymceai-chat.adoc[Chat]. The API includes the ability to call default and optimized system actions, or to define your own.
 
 [[stateless-actions]]
 Preview transformations and Actions API calls are **stateless**: each invocation is independent and does not retain prior interactions, unlike ongoing xref:tinymceai-chat.adoc[Chat] conversations. Quick Actions that open Chat with a pre-filled prompt hand off to the Conversations API instead.
@@ -279,7 +279,7 @@ For endpoint details, request and response schemas, authentication, and streamin
 
 In addition to system actions, custom actions can be created for specific use cases through the API. Custom actions allow specialized content transformations using custom prompts to control AI behavior.
 
-Unlike system actions that use predefined identifiers, custom actions use a unified endpoint where the transformation behavior is defined through a prompt parameter. See https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API] for the custom actions endpoint and implementation details.
+Unlike system actions that use default identifiers, custom actions use a unified endpoint where the transformation behavior is defined through a prompt parameter. See https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API] for the custom actions endpoint and implementation details.
 
 Custom actions require the `ai:actions:custom` permission in the JWT token.
 

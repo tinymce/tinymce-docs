@@ -2,7 +2,7 @@
 :plugincode: exportpdf
 :pluginname: Export to PDF
 :pluginfilename: export-to-pdf
-:navtitle: {pluginname}
+:navtitle: Export to PDF
 :description: The {pluginname} feature provides the ability to generate a PDF file directly from the editor.
 :description_short: Generate a PDF file directly from the editor.
 :keywords: plugin, {plugincode}, {pluginname}
@@ -12,6 +12,15 @@
 include::partial$misc/admon-export-pdf-paid-addon-pricing.adoc[]
 
 The {pluginname} feature collects the HTML generated with the `tinymce.editor.getContent()` method and combines it with the default editor content styles along with the styles provided in the plugin configuration. The combined content and styles are then processed by the included server-side converter service, which can be either self-hosted or cloud-based. Following this processing, a PDF file is generated, which is subsequently returned to the user's browser, enabling them to save it onto their disk or drive.
+
+== Backwards compatibility and conversion
+
+The plugin always uses the v2 API endpoint (`/v2/convert/html-pdf`). Two option formats are supported:
+
+* **Flat format** – Top-level properties such as `format`, `margin_top`, `header_html`, and `footer_html`. Existing integrations using this format continue to work without changes. The plugin converts flat options to the nested structure automatically before the request.
+* **Nested format** – Set `version: '2'` to use the nested structure and access features such as per-page headers and footers, PDF metadata, security, and digital signatures.
+
+Both formats produce equivalent output when configured for the same result. Requires {productname} 8.4.0 or newer for v2 API support and automatic conversion.
 
 == Interactive example
 
@@ -41,7 +50,6 @@ tinymce.init({
 
 include::partial$misc/bundling-guide-link.adoc[]
 
-
 For more infomation on the exportpdf_token_provider option, see xref:exportpdf.adoc#exportpdf-token-provider[exportpdf_token_provider].
 
 include::partial$misc/admon-jwt-authentication-requirements.adoc[]
@@ -64,7 +72,7 @@ tinymce.init({
 
 [IMPORTANT]
 ====
-The `exportpdf_service_url` option automatically appends `/v1/convert` to the URL provided, so only the base URL is required. For example, if the service is hosted at `http://localhost:8080/v1/convert`, the `exportpdf_service_url` option should be set to `http://localhost:8080/`. When using in production, ensure that `exportpdf_service_url` is updated to the production URL such as `https://myserver.com/`.
+The `exportpdf_service_url` option automatically appends `/v2/convert/html-pdf` to the URL provided, so only the base URL is required. For example, if the service is hosted at `http://localhost:8080/v2/convert/html-pdf`, the `exportpdf_service_url` option should be set to `http://localhost:8080/`. When using in production, ensure that `exportpdf_service_url` is updated to the production URL such as `https://myserver.com/`.
 ====
 
 == Additional Configuration
@@ -79,7 +87,7 @@ include::partial$configuration/exportpdf_service_url.adoc[leveloffset=+1]
 
 include::partial$configuration/exportpdf_token_provider.adoc[leveloffset=+1]
 
-include::partial$configuration/exportpdf_converter_options.adoc[leveloffset=+1]
+include::partial$configuration/exportpdf_converter_options_combined.adoc[leveloffset=+1]
 
 include::partial$configuration/exportpdf_converter_style.adoc[leveloffset=+1]
 
@@ -95,4 +103,4 @@ include::partial$commands/{plugincode}-cmds.adoc[]
 
 == API Reference
 
-> Explore the comprehensive API documentation for the {pluginname} Premium plugin at https://exportpdf.api.tiny.cloud/v1/convert/docs[{pluginname} API Reference Documentation.^]
+> Explore the comprehensive API documentation for the {pluginname} Premium plugin at https://exportpdf.api.tiny.cloud/v2/convert/docs[{pluginname} API Reference Documentation.^]

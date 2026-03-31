@@ -9,6 +9,8 @@ For example: If a paragraph element within a table is selected, the element path
 
 Selecting elements from the element path allows users to perform operations on blocks, such as applying formatting or copying an entire block.
 
+For assistive technologies, the element path container uses `role="group"` with an `aria-label` (localized; `Element Path` in English). For keyboard access from the content area, see xref:tinymce-and-screenreaders.adoc#navigating-element-path[Accessible navigation guide].
+
 *Type:* `+Boolean+`
 
 *Default value:* `+true+`

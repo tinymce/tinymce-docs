@@ -1,0 +1,47 @@
+// Premium plugins index — TinyMCE AI feature advert. Single passthrough (markup then <style>) matches admon-account-creation-and-social-option.adoc; a style-only block plus AsciiDoc open block can reorder in output.
+[subs=attributes+]
+++++
+<div class="openblock plugins-ai-feature-banner">
+<div class="content">
+<div class="paragraph lead">
+<p><a href="../tinymceai-introduction/" class="xref page">TinyMCE AI</a></p>
+</div>
+<div class="paragraph">
+<p>AI-powered features for {productname} including AI chat, AI review, and quick actions.</p>
+</div>
+</div>
+</div>
+<style>
+.plugins-ai-feature-banner {
+  --radius: 3px;
+  position: relative;
+  padding: 1rem;
+  background: #f9f9fb;
+  margin: 1rem 0;
+  border: 1px solid #e2e5ed;
+  border-radius: var(--radius) 0 0 var(--radius);
+}
+
+/* Same left bar as default .signup-promo::before in admon-promo-banner.adoc (coral → blue, not tinymce-ai green) */
+.plugins-ai-feature-banner::before {
+  content: '';
+  position: absolute;
+  top: -1px; bottom: -1px; left: -1px;
+  width: 5px;
+  background: linear-gradient(to bottom, #F66 15%, #4D66CB 85%);
+  border-radius: var(--radius) 0 0 var(--radius);
+}
+
+.plugins-ai-feature-banner .paragraph:first-child {
+  margin-top: 0;
+}
+
+.plugins-ai-feature-banner .paragraph:last-child {
+  margin-bottom: 0;
+}
+
+.plugins-ai-feature-banner .paragraph + .paragraph {
+  margin-top: 0.5em;
+}
+</style>
+++++

@@ -1,0 +1,235 @@
+= {pluginname} with JWT authentication (Node.js) Guide
+:plugincode: tinymceai
+:pluginname: TinyMCE AI
+:navtitle: JWT Authentication setup for TinyMCE AI
+:description: Guide on how to setup JWT Authentication with Node.js for TinyMCE AI with TinyMCE
+:keywords: jwt, authentication, tinymceai, ai, node.js
+
+include::partial$auth/tinymceai/nodejs/intro-and-prerequisites.adoc[]
+
+include::partial$auth/tinymceai/nodejs/initial-project-setup.adoc[]
+
+== Generate a Public/Private Key Pair
+
+include::partial$auth/private-public-key-pairs-for-tiny-cloud-services.adoc[]
+
+== JWT Configuration Requirements
+
+This section explains what needs to be configured for JWT authentication, whether using a managed service (such as AWS or Azure JWT services) or setting up a manual endpoint.
+
+For complete information about JWT requirements, claims, and permissions, see xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication].
+
+include::partial$auth/how-jwts-are-used.adoc[]
+
+=== JWT endpoint requirements
+
+A JSON Web Token (JWT) endpoint for {pluginname} requires:
+
+* The endpoint or server accepts a JSON HTTP POST request.
+* User authentication: A method of verifying the user, and that they should have access to the {pluginname}.
+* The JWTs are generated (signed) using the _private_ key that pairs with the _public_ key provided to link:{accountjwturl}[{accountpage} - JWT Keys].
+* The endpoint or server produces a JSON response with the token. {pluginname} will submit the token with requests to the AI service.
+
+=== Required JWT claims for {pluginname}
+
+JSON Web Tokens produced by the JWT endpoint must include the following claims:
+
+`+aud+` _(required)_::
+*Type:* `+String+`
++
+The `aud` is a case-sensitive string that must match a valid API key that has the {pluginname} plugin enabled.
+
+`+sub+` _(required)_::
+*Type:* `+String+`
++
+The `sub` claim identifies the user. This should be a unique identifier for the user making the request.
+
+`+iat+` _(required)_::
+*Type:* `+Number+`
++
+The `iat` represents the issue timestamp, specified as the number of seconds. For example, to set the issue time to the current timestamp, calculate the issue time as the current timestamp divided by 1000.
+
+.Example
+[source,json]
+----
+iat: Math.floor(Date.now() / 1000), // Issue timestamp
+----
+
+`+exp+` _(required)_::
+*Type:* `+Number+`
++
+The `exp` represents the expiration timestamp, specified as the number of seconds. For example, to set a validity period of 10 minutes, calculate the expiration time as the current timestamp plus 600 seconds.
+
+.Example
+[source,json]
+----
+exp: Math.floor(Date.now() / 1000) + (60 * 10) // Expiration time (10 minutes)
+----
+
+`+auth+` _(required)_::
+*Type:* `+Object+`
++
+The `auth` object contains AI-specific permissions that control which features the user can access.
+
+The following example grants access to conversations, the recommended agent model, and system actions and reviews. See xref:tinymceai-permissions.adoc[Permissions] for the full list of available permissions.
+
+.Example
+[source,json]
+----
+auth: {
+  ai: {
+    permissions: [
+      "ai:conversations:read",
+      "ai:conversations:write",
+      "ai:models:agent",
+      "ai:actions:system:*",
+      "ai:reviews:system:*"
+    ]
+  }
+}
+----
+
+[NOTE]
+====
+See xref:tinymceai-permissions.adoc[Permissions] for a complete list of available permissions and best practices for configuring user access.
+====
+
+== Set up JWT Endpoint
+
+The following section shows how to create a JWT endpoint manually. If using a managed JWT service (such as AWS or Azure), configure it according to the requirements above and skip to the xref:#configure-tinymce[Configure {productname}] section.
+
+=== Server Setup (jwt.js)
+
+In the root directory, copy and paste the server setup code into the `jwt.js` file.
+
+[source,javascript]
+----
+const express = require('express'); // Sets up the web server.
+const jwt = require('jsonwebtoken'); // Generates and signs JWTs.
+const cors = require('cors'); // Allows cross-origin requests.
+const path = require('path'); // Handles file paths.
+
+const app = express();
+app.use(cors());
+
+// Private key (Replace this with the actual key)
+const privateKey = `
+-----BEGIN PRIVATE KEY-----
+{Your private PKCS8 key goes here}
+-----END PRIVATE KEY-----
+`;
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+// JWT token generation endpoint
+app.post('/jwt', (req, res) => {
+    const payload = {
+        aud: 'no-api-key', // Replace with the actual API key
+        sub: 'user-id', // Replace with actual user identifier
+        iat: Math.floor(Date.now() / 1000), // Issue timestamp
+        exp: Math.floor(Date.now() / 1000) + (60 * 10), // Expiration time (10 minutes)
+        // Permissions control which AI features the user can access. See the Permissions page for full details.
+        auth: {
+            ai: {
+                permissions: [
+                    'ai:conversations:read',
+                    'ai:conversations:write',
+                    'ai:models:agent',
+                    'ai:actions:system:*',
+                    'ai:reviews:system:*'
+                ]
+            }
+        }
+    };
+
+    try {
+        // Tokens are signed with the RS256 algorithm using the private key
+        const token = jwt.sign(payload, privateKey, { algorithm: 'RS256' });
+        res.json({ token });
+    } catch (error) {
+        res.status(500).send('Failed to generate JWT token.');
+        console.error(error.message);
+    }
+});
+
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log(`Server running at http://localhost:${PORT}`);
+});
+----
+
+[NOTE]
+====
+The JWT payload includes an `auth.ai.permissions` array that defines what AI features the user can access. Adjust these permissions based on requirements. See xref:tinymceai-permissions.adoc[Permissions] for more details on available permissions.
+====
+
+== Configure {productname}
+
+[[configure-tinymce-nodejs]]
+=== Web Page (public/index.html)
+
+Inside the `public` folder where the `index.html` file was created, add the HTML setup code.
+
+[source,html]
+----
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{productname} with {pluginname}</title>
+  <script 
+    src="https://cdn.tiny.cloud/1/no-api-key/tinymce/8/tinymce.min.js"
+    referrerpolicy="origin"
+    crossorigin="anonymous">
+  </script>
+  <script>
+    tinymce.init({
+      selector: 'textarea',
+      plugins: 'tinymceai',
+      toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+      // tinymceai_token_provider fetches a token from the `/jwt` endpoint.
+      // This demo does not verify user session; it simulates an already-authenticated user. Integrate with your auth before returning tokens.
+      tinymceai_token_provider: () => {
+        return fetch('http://localhost:3000/jwt', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+        }).then(response => response.json());
+      },
+    });
+  </script>
+</head>
+<body>
+  <h1>{pluginname} Demo</h1>
+  <textarea>
+    Welcome to {productname}! Try the AI features like chat, quick actions, and review.
+  </textarea>
+</body>
+</html>
+----
+
+[[model-configuration]]
+=== Model configuration
+
+Model selection can be configured using `tinymceai_default_model` and `tinymceai_allow_model_selection`. See xref:tinymceai-chat.adoc#model-selection-configuration[Chat model configuration] for details. Model access is controlled by JWT permissions; see xref:tinymceai-permissions.adoc#model-permissions[Model permissions] for available model permissions and xref:tinymceai-models.adoc[AI Models] for the list of available models.
+
+.Example: Adding model options to the JWT setup
+[source,html]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_default_model: 'agent-1',
+  tinymceai_allow_model_selection: true,
+  // This demo does not verify user session; it simulates an already-authenticated user. Integrate with your auth before returning tokens.
+  tinymceai_token_provider: () => {
+    return fetch('http://localhost:3000/jwt', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    }).then(response => response.json());
+  },
+});
+----
+
+== Configuration and Running
+
+include::partial$auth/tinymceai/nodejs/configuration-steps.adoc[]

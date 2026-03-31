@@ -1,0 +1,18 @@
+[[table_default_header_cols]]
+== `+table_default_header_cols+`
+
+The `+table_default_header_cols+` option sets the number of default header columns for new tables created through the editor UI (for example, via the table picker or insert table dialog). This helps integrators meet accessibility standards by ensuring new tables have header columns by default without manual intervention.
+
+*Type:* `+Number+`
+
+*Default value:* `+0+`
+
+=== Example: using `+table_default_header_cols+`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  table_default_header_cols: 1
+});
+----

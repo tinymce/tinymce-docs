@@ -1,0 +1,246 @@
+= TinyMCE AI Chat
+:navtitle: Chat
+:pluginname: TinyMCE AI
+:plugincode: tinymceai
+:description: AI Chat feature for TinyMCE AI plugin
+:description_short: AI Chat feature
+:keywords: AI, chat, conversations, tinymceai
+:page-role: -toc
+
+The {pluginname} Chat is a conversational AI feature that facilitates rich, multi-turn interactions between users and an AI Assistant. It provides context setting, model selection, chat history, and capabilities for web search and reasoning.
+
+The Chat feature is available as part of the `+tinymceai+` plugin for {productname} and through the https://tinymceai.api.tiny.cloud/docs#tag/Conversations[Conversations API]. This page covers both:
+
+* Plugin sections describe built-in user-facing features and configuration (xref:tinymceai.adoc#options-chat[Chat configuration]).
+* API sections cover REST API access (starting at xref:tinymceai-chat.adoc#conversations-api[Conversations API]).
+
+[[demo]]
+== Demo
+
+liveDemo::tinymceai[]
+
+[[using-chat]]
+== Using Chat
+
+The <<demo,interactive demo>> above shows the Chat sidebar open beside the document. The following sections describe how Chat behaves in the editor.
+
+[[working-with-the-document]]
+=== Working with the document
+
+{pluginname} operates directly within the context of the document. Users can ask questions about specific sections, request a full-document proofreading, and more.
+
+By enabling image:icons-premium/web-search.svg[Web search icon,24px] xref:tinymceai-chat.adoc#web-search[Web search] or image:icons-premium/reasoning.svg[Reasoning icon,24px] xref:tinymceai-chat.adoc#reasoning[Reasoning], the chat capabilities can be extended, allowing the chat to look up information online and tackle complex tasks step by step.
+
+[[making-changes-to-the-content]]
+=== Making changes to the content
+
+Users can chat with the AI and use it to introduce changes to the document. Ask it to _"Summarize the document"_, _"Turn this report into a one-page executive summary"_, or _"Suggest better section titles and subheadings"_. The AI will then propose a series of changes to the document that can be xref:tinymceai-chat.adoc#previewing-changes[reviewed] and xref:tinymceai-chat.adoc#applying-changes[accepted or discarded one by one]. {pluginname} works directly on the content instead of requiring copy-paste of chat transcripts.
+
+[[brainstorming]]
+=== Brainstorming
+
+The chat feature accelerates the creative process. Begin with a blank document and ask the AI for ideas. Build content step by step by chatting and applying changes. Then review or have the AI rewrite the final draft for best results, all in one place.
+
+[[integration]]
+== Integration
+
+To start using the Chat feature, add `+tinymceai+` to the plugins option. This will automatically add the image:icons-premium/ai-assistant.svg[Chat icon,24px] Chat toolbar button and menu item to the default {productname} toolbar and menu.
+ 
+See xref:tinymceai.adoc[Plugin Reference] for more information regarding installation and enabling AI features.
+
+[[available-models]]
+== Available models
+
+Users can select the desired AI model for their conversation from a dropdown at the bottom of the chat.
+
+image::tinymceai/tinymce-ai-chat-model-selector-dropdown-open.png[{pluginname} Chat available models dropdown,width=80%]
+
+The model can be changed at any time using the same dropdown. Messages sent after a change use the newly selected model.
+
+[[model-selection-configuration]]
+=== Configuration
+
+Model selection for AI chat can be configured using these options:
+
+* `tinymceai_default_model`: Sets the default model for new chat sessions. The value is a **model configuration id** (for example `+agent-1+`, `+gpt-5.4+`, or `+claude-4-5-haiku+`) that must be among the models allowed by the JWT and subscription. The xref:tinymceai-models.adoc#supported-models-table[Supported Models] table lists the documented names and ids. For the list the service returns for a given environment, use `GET /v1/models/{version}` or the in-editor model selector when xref:tinymceai.adoc#tinymceai_allow_model_selection[+tinymceai_allow_model_selection+] is enabled; see xref:tinymceai-models.adoc#checking-compatibility[Checking compatibility].
+* `tinymceai_allow_model_selection`: When `true`, users can pick from models the service exposes in the UI; when `false`, the default model is used without a selector (defaults to `true`).
+
+[source,js]
+----
+tinymce.init({
+  selector: '#editor',
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_default_model: 'claude-4-5-haiku',
+  tinymceai_allow_model_selection: true,
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.text()).then(token => ({ token }));
+  }
+});
+----
+
+[[web-search]]
+=== Web search
+
+Web search in Chat allows the AI to access and retrieve real-time information from the internet. Instead of relying only on pre-trained knowledge, the model can search the web to find up-to-date facts, verify details, and provide more accurate, current answers.
+
+Some models use web search automatically, while others may require manual activation. Whether the "Enable web search" button image:icons-premium/web-search.svg[Web search icon,24px] below the prompt input needs to be toggled depends on the model and sometimes even how the prompt is worded. For models that support web search, use the toggle button to enable it.
+
+[[reasoning]]
+=== Reasoning
+
+Reasoning in Chat models turns on the ability to think through problems, draw logical conclusions, and make sense of complex information. It enables the model to analyze context, connect ideas, and produce well-structured, coherent answers beyond simple pattern matching.
+
+Some models use reasoning automatically, while others may require manual activation. Whether the "Enable reasoning" button image:icons-premium/reasoning.svg[Reasoning icon,24px] below the prompt input needs to be toggled depends on the model and sometimes even how the prompt is worded. For models that support reasoning, use the toggle button to enable it.
+
+[[adding-context-to-conversations]]
+== Adding context to conversations
+
+The AI chat can work with the document and beyond. Use the "Add context" image:icons/plus.svg[Add context icon,24px] button below the prompt input to add URLs, files, and external resources to the conversation.
+
+Uploaded files can include PDF, DOCX, common image formats, Markdown, HTML, and plain text. Per-file size limits, attachment counts, and similar caps depend on the selected model; see xref:tinymceai-models.adoc#file-processing-limits[File processing limits].
+
+image::tinymceai/tinymce-ai-chat-add-context-source-menu.png[{pluginname} Chat add context user interface,width=80%]
+
+Ask the AI about specific resources, for instance, _"Describe the attached image"_ or _"Summarize the key points from the attached Word document"_. The AI will analyze those resources and provide information that can be easily used in the document.
+
+External resources enable seamless integration of knowledge bases and other centralized data into AI chat conversations. Instead of uploading documents each time, they can be selected from a list and referenced during the conversation.
+
+[[context-configuration]]
+=== Adding custom context sources
+
+Built-in options for adding the current document, URLs, and files to the conversation context are always available to users. There is no configuration option to enable or disable these built-in options.
+
+To add custom external sources for users to select from, configure:
+
+* `tinymceai_chat_fetch_sources`: Supplies the list of sources shown in the menu (for example from a database or API).
+* `tinymceai_chat_fetch_source`: Loads the content for a selected source ID so it can be sent to the model as context.
+
+Full schemas, return types, and examples are documented under xref:tinymceai.adoc#tinymceai_chat_fetch_sources[Chat configuration options].
+
+[source,js]
+----
+tinymce.init({
+  selector: '#editor',
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_chat_fetch_sources: async () => [
+    {
+      label: 'My Documents',
+      sources: [
+        { id: 'doc-1', label: 'Document 1', type: 'file' },
+        { id: 'url-1', label: 'Web Page', type: 'web-resource' }
+      ]
+    }
+  ],
+  tinymceai_chat_fetch_source: async (id) => {
+    const res = await fetch(`/api/documents/\$\{id\}`);
+    const blob = await res.blob();
+    const filename = `\$\{id\}.pdf`;
+    return { type: 'file', file: new File([blob], filename, { type: blob.type }) };
+  },
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.text()).then(token => ({ token }));
+  }
+});
+----
+
+[[working-with-ai-generated-changes]]
+== Working with AI-generated changes
+
+When asking the AI for changes to the document, for instance, _"Bold key facts in the document"_, the AI proposes a series of changes. The changes are displayed directly in the document content, making it easy to see what will be modified.
+
+When the AI response in the chat panel includes modification history, that block appears in a collapsible section. **Expand** shows the full history when the default preview is truncated.
+
+[[previewing-changes]]
+=== Previewing changes
+
+A review bar appears at the bottom of the editor with **Diff mode** and **Preview** tabs. Toggle between them to show proposed changes inline (with markers for additions, removals, and formatting) or to preview the final result. When Diff mode is enabled, the proposed changes are highlighted in the document with markers indicating additions (green), removals (red), and formatting changes (blue). Use the arrows in the suggestion overlay to navigate through the changes. The overlay automatically follows the corresponding document sections as each suggestion is selected.
+
+[[applying-changes]]
+=== Applying changes
+
+Click the checkmark image:icons/checkmark.svg[Accept suggestion icon,24px] in the suggestion overlay to accept the current change. Use the arrow buttons to move between suggestions.
+
+image::tinymceai/tinymce-ai-chat-diff-mode-apply-single-suggestion-overlay.png[{pluginname} Chat apply changes,width=80%]
+
+Click **Apply remaining** in the review bar at the bottom of the editor to apply all remaining suggestions at once. The button shows the number of remaining suggestions, for example, "Apply remaining (11)".
+
+image::tinymceai/tinymce-ai-chat-diff-mode-apply-remaining-suggestions.png[{pluginname} Chat apply all changes,width=80%]
+
+[[rejecting-suggestions]]
+=== Rejecting suggestions
+
+Click the image:icons/close.svg[Reject suggestion icon,24px] in the suggestion overlay to reject the current suggestion. Click **Skip remaining** in the review bar at the bottom of the editor to skip all remaining suggestions.
+
+image::tinymceai/tinymce-ai-chat-diff-mode-reject-suggestion-overlay.png[{pluginname} Chat reject button,width=80%]
+
+
+[[chat-history]]
+== Chat history
+
+All past conversations appear in the Chat history. Click the image:icons/restore-draft.svg[Chat history icon,24px] button in the chat header to open the list. Click a conversation to reopen it, or use the menu on each entry to pin, rename, or delete it. Click **Go to AI Chat** to return from the history view to the active conversation.
+
+Conversations are grouped by date to help navigate the history. Conversations can be filtered by name using the search field at the top of the user interface.
+
+image::tinymceai/tinymce-ai-chat-history-sidebar-conversation-list.png[AI Chat history,width=80%]
+
+[NOTE]
+====
+Any conversation from the chat history can be continued as long as the AI model used for that conversation is xref:tinymceai-models.adoc#supported-models[still supported] by the feature. Click the conversation in the history to load it in the Chat interface.
+====
+
+[NOTE]
+====
+After a full page load or new browser session, reopening Chat does not automatically reconnect the editor to pending suggestions from an older conversation. Open that conversation again from Chat history so pending suggestions are linked to the current editor session before accepting or dismissing them.
+====
+
+[[conversations-api]]
+== Conversations API
+
+The Chat plugin feature is built on top of the https://tinymceai.api.tiny.cloud/docs#tag/Conversations[Conversations API], which provides REST access to the same conversation functionality described in xref:tinymceai-api-overview.adoc[API Overview]. Conversations support multiple messages with shared context, optional files and web resources, and suggestions that can update editor content.
+
+For endpoint listings and request or response schemas, start with xref:tinymceai-api-overview.adoc[API Overview] and xref:tinymceai-api-quick-start.adoc[API Quick Start], then use the https://tinymceai.api.tiny.cloud/docs[interactive API documentation] (for example the https://tinymceai.api.tiny.cloud/docs#tag/Conversations[Conversations] operations).
+
+[[conversations-key-features]]
+=== Key Features
+
+The API supports uploading PDFs, Word docs, and images for the AI to read and understand. Ask questions about specific sections and get intelligent answers. The AI extracts text while preserving structure from PDFs, maintains formatting context from Word documents, parses web content from HTML files, and processes images with OCR and object recognition.
+
+Each conversation builds on previous messages, so the AI keeps track of the entire discussion and any files that have been shared. Documents, images, web links, and text can be mixed in one conversation, and the AI connects information across all formats.
+
+[[example-product-launch-workflow]]
+=== Example: Product Launch Workflow
+
+. **Upload product spec** → _"What are the key features for marketing?"_
+. **Add competitor analysis** → _"How do we compare to competitors?"_
+. **Reference blog post** → _"Write a press release using this blog post and our competitive advantages"_
+. **Include brand guidelines** → _"Match our brand voice and key messaging"_
+
+The AI remembers everything that has been shared and builds on it throughout the conversation.
+
+[[conversations-api-capabilities]]
+=== API Capabilities
+
+When using the Conversations API directly, advanced capabilities can be configured:
+
+* **Web Search**: Enable real-time web search to access current information during conversations. Configure using the `webSearch` capability in API requests. See https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Web-Resources[Conversation Web Resources API] for endpoint details.
+* **Reasoning**: Enable step-by-step reasoning to see the AI's problem-solving process. Configure using the `reasoning` capability in API requests. See https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Messages[Conversation Messages API] for endpoint details.
+
+[[conversations-streaming]]
+=== Streaming Responses
+
+Conversations use Server-Sent Events (SSE) for real-time streaming responses. See the xref:tinymceai-streaming.adoc[Streaming Responses guide] for detailed implementation information and code examples.
+
+[[conversations-api-reference]]
+=== API Reference
+
+The https://tinymceai.api.tiny.cloud/docs[interactive API documentation] lists every conversation endpoint, parameter, schema, and example. In that UI, related operations are grouped under tags such as https://tinymceai.api.tiny.cloud/docs#tag/Conversations[Conversations], https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Documents[Conversation Documents], https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Files[Conversation Files], https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Web-Resources[Conversation Web Resources], and https://tinymceai.api.tiny.cloud/docs#tag/Conversation-Messages[Conversation Messages] (including streaming, web search, and reasoning options where applicable).
+
+[[related-features]]
+== Related Features
+
+* xref:tinymceai-review.adoc[AI Review]: For content quality analysis and improvement suggestions.
+* xref:tinymceai-actions.adoc[Quick actions]: For fast, stateless content transformations.

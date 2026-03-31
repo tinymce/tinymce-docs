@@ -43,6 +43,11 @@ To focus on the editor toolbars, press *Alt+F10* (or *⌥+F10*); which moves the
 
 To open submenus or grid selections on toolbar buttons, use the *Enter*, *Return*, *Spacebar*, or *Down Arrow* keys. To close submenus or grids, use the *Esc* key. Some toolbar buttons with menus will present a grid of options rather than a menu, such as the background color selector. These grids can be navigated with the arrow keys and closed using the *Esc* key.
 
+[[navigating-element-path]]
+=== Navigating the element path
+
+To focus on the element path in the status bar, press *Alt+F11* (or *⌥+F11*). The element path is exposed as a WAI-ARIA `group` with a localized accessible name (`Element Path` in English). Use the *Left Arrow* and *Right Arrow* keys to move between segments. To return focus to the content area, use the *Esc* key.
+
 === Navigating dialogs
 
 Dialogs such as *Insert/Edit Image* are opened from either a menu item or a toolbar button. Some dialogs contain multiple tabs or pages of options. To change tabs or pages, use the arrow keys; the highlighted tab will become active immediately. Use the *Tab* key to navigate between the dialog options on the selected dialog tab. The *Save* dialog button stores the changes, and the *Cancel* dialog button or the *Esc* key discards changes.

@@ -1,0 +1,325 @@
+= TinyMCE AI JWT Authentication
+
+:navtitle: JWT Authentication
+:description: JWT authentication requirements and permissions for TinyMCE AI
+:description_short: JWT Authentication
+:keywords: AI, JWT, authentication, permissions, tinymceai
+:pluginname: TinyMCE AI
+:plugincode: tinymceai
+
+{pluginname} requires JWT (JSON Web Token) authentication when using the {cloudname} service. JWT authentication provides secure, user-specific access to {pluginname} features. Each JWT token contains claims that identify the user and specify which AI features they can access.
+
+{productname} recommends using the libraries listed on link:https://www.jwt.io/libraries[jwt.io/libraries] to create JWT tokens. These libraries support the algorithms required by {pluginname}. For details on supported algorithms, see xref:#supported-algorithms[Supported Algorithms].
+
+[[trial-demo-identity-service]]
+== Trial: demo identity service
+
+During a {cloudname} trial, a demo identity service is available for the {pluginname} plugin. This allows trying the plugin without setting up a custom token endpoint, for the duration of the trial. The demo service assigns a random session and user ID to the end user, then generates a JWT for that user. This prevents users from viewing each other's conversation history.
+
+[[trial-quick-start]]
+=== Quick start
+
+The following is the simplest way to use the demo identity service. Replace `{apiKey}` with the trial API key from the link:{accountpageurl}[Customer Portal].
+
+[NOTE]
+====
+In production, the user session should be scoped to the page, not a specific TinyMCE instance. This example places it in the `tinymceai_token_provider` option for ease of use. If there are multiple TinyMCE instances on the page, this may cause unexpected behavior regarding users. In that case, run the session fetch only once per page.
+====
+
+[source,js]
+----
+tinymce.init({
+  selector: "textarea",
+  plugins: "tinymceai",
+  toolbar: "tinymceai-chat tinymceai-review tinymceai-quickactions",
+  sidebar_show: 'aichat',
+  tinymceai_token_provider: async () => {
+	await fetch(`https://demo.api.tiny.cloud/1/no-api-key/auth/random`, { method: "POST", credentials: "include" });
+	return await fetch(`https://demo.api.tiny.cloud/1/no-api-key/jwt/tinymceai`, { credentials: "include" })
+	  .then(resp => resp.text())
+	  .then(token => ({ token }))
+  }
+});
+----
+
+[[trial-realistic-usage]]
+=== Realistic usage
+
+In production, user and session management typically happens at the page level. This example gives a more realistic pattern for using the demo identity service's two endpoints:
+
+[source,js]
+----
+// Establish a session with the demo identity service (cookies sent on same-site requests).
+const isLoggedIn = fetch(`https://demo.api.tiny.cloud/1/no-api-key/auth/random`, { method: "POST", credentials: "include" });
+
+tinymce.init({
+  selector: "textarea",
+  plugins: "tinymceai",
+  toolbar: "tinymceai-chat tinymceai-review tinymceai-quickactions",
+  sidebar_show: 'aichat',
+  tinymceai_token_provider: async () => {
+	// Wait for the session request so the JWT endpoint receives the session cookie.
+	await isLoggedIn;
+	// Return a JWT string in the shape the AI plugin expects: { token }.
+	return await fetch(`https://demo.api.tiny.cloud/1/no-api-key/jwt/tinymceai`, { credentials: "include" })
+	  .then(resp => resp.text())
+	  .then(token => ({ token }))
+  }
+});
+----
+
+[[trial-moving-to-production]]
+=== Moving to production
+
+To move from the demo identity service to a production system:
+
+. Replace the session call with your own user management. If there is no concept of users, generate a randomized identifier per session or page so end users do not share conversation history.
+. Set up a JWT endpoint that creates JWTs as described in this guide. Replace the JWT fetch with a call to your endpoint. See xref:tinymceai-with-jwt-authentication-nodejs.adoc[Node.js] or xref:tinymceai-with-jwt-authentication-php.adoc[PHP] for implementation guides.
+
+[[token-endpoint-overview]]
+== Token Endpoint Overview
+
+To connect {productname} with {pluginname}, a token endpoint must be created in the application backend. This guide outlines the principles required to create that endpoint.
+
+[[how-tinymce-ai-uses-tokens]]
+== How {pluginname} Uses Tokens
+
+To authenticate users, {pluginname} uses tokens. The purpose of tokens is to inform the AI service that the user has access to AI features and which API key the user should connect to. The authenticity of tokens is provided by a digital signature.
+
+*The token endpoint* is where {productname} makes a request to get the token. It is required to return the token only if the user proves their identity. It should be placed inside the system, not exposed as a public endpoint without proper authentication.
+
+The following diagram shows how {pluginname} uses tokens:
+
+image::JWT-flow.svg[JSON Web Token Call Flow,title="JSON Web Token Call Flow"]
+
+[[jwt-specification]]
+== The JSON Web Tokens Specification
+
+{pluginname} tokens are represented as JSON Web Tokens (JWT). JWT is an open link:https://datatracker.ietf.org/doc/html/rfc7519[standard] (RFC 7519) for transmitting digitally signed information. Using it ensures that the data comes from a trusted source and has not been tampered with.
+
+A JWT consists of three parts separated by dots `.`
+
+* **Header**: Contains metadata about the token, including the signing algorithm
+* **Payload**: Contains the claims (user information, permissions, and similar)
+* **Signature**: Used to verify the token's authenticity
+
+[source,json]
+----
+{header}.{payload}.{signature}
+----
+
+.Example: 
+[source,json]
+----
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJ1c2VyLTQ4NzI5IiwibmFtZSI6Ikplc3NpY2EgV2lsbGlhbXMiLCJpYXQiOjE3Mjg0NzM2NDJ9.kX9mP2qL8vN4rT7wY3zA5bC6dE1fG2hI3jK4lM5nO6pQ7rS8tU9vW0xY1zA2b
+----
+
+[[jwt-header]]
+=== Header
+
+The JWT header identifies the token type and specifies the cryptographic algorithm used to sign the token. For {pluginname}, the header must be a JSON object containing:
+
+* `alg`: The signing algorithm used to create the token signature. See xref:#supported-algorithms[Supported Algorithms] for the list of supported algorithms. {companyname} recommends using `RS256`.
+* `typ`: The token type identifier, which must always be `JWT`
+
+The header is Base64URL-encoded to form the first part of the JWT token.
+
+.Example header
+[source,json]
+----
+{
+  "alg": "RS256",
+  "typ": "JWT"
+}
+----
+
+[[jwt-payload]]
+=== Payload
+
+The JWT payload is a JSON object containing claims that identify the user, specify their AI permissions, and control token validity. The payload is Base64URL-encoded to form the second part of the JWT token.
+
+[[payload-properties]]
+==== Payload Properties
+
+The following properties **must** be included in the payload:
+
+* `aud`: The API key that has entitlements to use {pluginname}.
+* `sub`: The user ID. This should be a unique identifier for the user making the request. This identifier is used to lock down conversation history, AI-generated content, and other user-specific data to individual users, ensuring privacy and data isolation.
+* `iat`: "Issued at". Ensure `iat` is present and contains a correct time stated in seconds. Some JWT implementations do not include it by default. Sometimes the system time may also be invalid, causing issues.
+* `exp`: Token expiration time. Identifies the expiration time after which the JWT will not be accepted. {pluginname} only accepts tokens no older than 24 hours. This field can be used to shorten the token validity time.
+* `auth`: The `auth.ai.permissions` array inside is required. This defines which AI features the user can access. See xref:#permissions[Permissions] below for details.
+
+The properties that are optional:
+
+* `user`: User information. Providing `name` and `email` is recommended for better user experience and debugging.
+
+[[example-token-payload]]
+==== Example Token Payload
+
+The example below presents a complete token payload with access to all AI features:
+
+[source,json]
+----
+{
+  "aud": "no-api-key",
+  "iat": 1511963669,
+  "exp": 1511967269,
+  "sub": "user-123",
+  "user": {
+    "email": "user@example.com",
+    "name": "John Doe"
+  },
+  "auth": {
+    "ai": {
+      "permissions": [
+        "ai:conversations:read",
+        "ai:conversations:write",
+        "ai:models:agent",
+        "ai:actions:system:*",
+        "ai:reviews:system:*"
+      ]
+    }
+  }
+}
+----
+
+[[permissions]]
+==== Permissions
+
+Permissions are specified in the `auth.ai.permissions` array within the JWT token and control which AI features, models, and capabilities users can access.
+
+For a complete list of available permissions, permission examples, and best practices, see xref:tinymceai-permissions.adoc[Permissions].
+
+For complete details on all required claims, including types, formats, and implementation examples, see:
+
+* xref:tinymceai-with-jwt-authentication-nodejs.adoc#required-jwt-claims-for-tinymce-ai[Node.js guide - Required JWT claims]
+* xref:tinymceai-with-jwt-authentication-php.adoc#required-jwt-claims-for-tinymce-ai[PHP guide - Required JWT claims]
+
+[[jwt-signature]]
+=== Signature
+
+The signature is created by encoding the header and payload using Base64URL, then signing them with the private key using the specified algorithm. The {pluginname} service verifies the signature using the corresponding public key stored in the {accountpage}.
+
+[[supported-algorithms]]
+=== Supported Algorithms
+
+{productname} does not support symmetrical encryption algorithms, such as `HS256`. {companyname} recommends using the `RS256` algorithm. The following algorithms are supported:
+
+* RS256
+* RS384
+* RS512
+* PS256
+* PS384
+* PS512
+
+For details on each of these algorithms, visit: link:https://tools.ietf.org/html/rfc7518#section-3[RFC 7518, JSON Web Algorithms (JWA) Section 3 - Cryptographic Algorithms for Digital Signatures and MACs].
+
+[[token-requests]]
+== Requests to the Token Endpoint
+
+The token for {pluginname} is requested by the {pluginname} plugin. The easiest way to configure this is to set the `tinymceai_token_provider` option to a function that fetches the token from the endpoint.
+
+The token endpoint will be requested:
+
+* At editor initialization
+* Periodically to refresh the token (typically every hour)
+
+[[simple-token-request]]
+=== Simple Usage
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  tinymceai_token_provider: () => {
+    return fetch('http://localhost:3000/jwt', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+    }).then(response => response.json());
+  },
+});
+----
+
+[TIP]
+====
+The editor will not be ready to use until the first token is obtained from the token endpoint. If an error occurs during the initial request, the editor will not start correctly.
+====
+
+[[token-responses]]
+== Responses from the Token Endpoint
+
+The token provider must return an object with a `+token+` property: `+{ token: string }+`. The endpoint may respond in either format:
+
+* **JSON response**: Endpoint returns `+{ "token": "eyJ..." }+`. Use `+response.json()+` and return `+{ token: data.token }+`.
+* **Plain text response**: Endpoint returns the raw JWT string. Use `+response.text()+` and return `+{ token }+`.
+
+.Example: JSON response
+[source,json]
+----
+{
+  "token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9..."
+}
+----
+
+.Example: Plain text response
+[source,text]
+----
+eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9...
+----
+
+[[quick-setup]]
+== Quick Setup
+
+To set up JWT authentication for {pluginname}:
+
+. Generate a public/private key pair and add the public key to the {accountpage} using link:{accountjwturl}[{accountpage} - JWT Keys].
+. Set up a JWT endpoint that generates tokens with the required claims.
+. Configure {productname} to use the JWT endpoint through the `tinymceai_token_provider` option.
+
+For step-by-step implementation instructions with complete code examples, see:
+
+* xref:tinymceai-with-jwt-authentication-nodejs.adoc[JWT authentication (Node.js)]: Complete Node.js implementation guide
+* xref:tinymceai-with-jwt-authentication-php.adoc[JWT authentication (PHP)]: Complete PHP implementation guide
+
+[[tools]]
+== Tools
+
+JWT tokens can be validated and debugged using the link:https://jwt.io/[jwt.io debugger].
+
+[[troubleshooting]]
+== Troubleshooting
+
+[[invalid-token-error]]
+=== Invalid token
+
+If an error message indicates an invalid token:
+
+* Verify that the token was created in accordance with the required claims and format
+* Ensure the API key in the `aud` claim is correct and valid
+* Verify that the token is signed with one of the xref:#supported-algorithms[supported algorithms]
+* Check that the public key in the {accountpage} matches the private key used to sign the token
+* Validate the token structure using the link:https://jwt.io/[jwt.io debugger]
+* Ensure the `iat` (issued at) timestamp is correct and not in the future
+* Verify that system time is accurate (time drift can cause token validation issues)
+
+[[insufficient-permissions-error]]
+=== Insufficient permissions
+
+If an error indicates insufficient permissions:
+
+* Verify that the token includes the `auth.ai.permissions` array with the required permissions
+* Check that the permissions match the AI features being accessed
+* Review the xref:tinymceai-permissions.adoc[Permissions] guide for the correct permission format
+* Ensure permissions are specified correctly (for example, `ai:conversations:read`, `ai:conversations:write`)
+
+[[related-features]]
+== Related Features
+
+* xref:tinymceai-permissions.adoc[Permissions]: Complete permissions reference and examples.
+* xref:tinymceai-models.adoc[AI Models]: Model selection and capabilities.
+* xref:tinymceai-chat.adoc[Chat]: Interactive AI discussions.
+* xref:tinymceai-review.adoc[Review]: Content improvement.
+* xref:tinymceai-actions.adoc[Quick Actions]: Content transformation.
+* link:https://tinymceai.api.tiny.cloud/docs[API Documentation]: Complete API reference for {pluginname}.

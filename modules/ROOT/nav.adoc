@@ -251,12 +251,30 @@
 ** Premium plugins
 *** xref:a11ychecker.adoc[Accessibility Checker]
 *** xref:advanced-typography.adoc[Advanced Typography]
-*** xref:ai.adoc[AI Assistant]
-**** xref:ai-openai.adoc[OpenAI ChatGPT integration guide]
-**** xref:ai-azure.adoc[Azure AI integration guide]
-**** xref:ai-bedrock.adoc[Amazon Bedrock integration guide]
-**** xref:ai-gemini.adoc[Google Gemini integration guide]
-**** xref:ai-proxy.adoc[AI proxy server reference guide]
+*** TinyMCE AI
+**** xref:tinymceai-introduction.adoc[Introduction]
+**** xref:tinymceai-chat.adoc[Chat]
+**** xref:tinymceai-review.adoc[Review]
+**** xref:tinymceai-actions.adoc[Actions]
+**** xref:tinymceai-models.adoc[AI Models]
+**** xref:tinymceai-limits.adoc[Limits]
+**** xref:tinymceai-integration-options.adoc[Integration Options]
+***** xref:tinymceai.adoc[Plugin Configuration]
+***** REST API
+****** xref:tinymceai-api-overview.adoc[API Overview]
+****** xref:tinymceai-api-quick-start.adoc[API Quick Start]
+****** xref:tinymceai-streaming.adoc[Streaming]
+**** xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication]
+***** xref:tinymceai-permissions.adoc[Permissions]
+***** Guides
+****** xref:tinymceai-with-jwt-authentication-nodejs.adoc[JWT authentication (Node.js)]
+****** xref:tinymceai-with-jwt-authentication-php.adoc[JWT authentication (PHP)]
+**** xref:ai.adoc[AI Assistant (legacy)]
+***** xref:ai-openai.adoc[OpenAI ChatGPT integration guide]
+***** xref:ai-azure.adoc[Azure AI integration guide]
+***** xref:ai-bedrock.adoc[Amazon Bedrock integration guide]
+***** xref:ai-gemini.adoc[Google Gemini integration guide]
+***** xref:ai-proxy.adoc[AI proxy server reference guide]
 *** xref:casechange.adoc[Case Change]
 *** xref:checklist.adoc[Checklist]
 *** Comments
@@ -274,11 +292,14 @@
 **** xref:mediaembed-server-config.adoc[Configure Enhanced Media Embed Server]
 **** xref:mediaembed-server-integration.adoc[Integrate Enhanced Media Embed Server]
 *** xref:advtable.adoc[Enhanced Tables]
-*** xref:exportpdf.adoc[Export to PDF]
-**** xref:html-to-pdf-converter-api.adoc[HTML to PDF Converter API]
-**** JWT Authentication
-***** xref:export-to-pdf-with-jwt-authentication-nodejs.adoc[Node.js]
-***** xref:export-to-pdf-with-jwt-authentication-php.adoc[PHP]
+*** Export to PDF
+**** xref:exportpdf.adoc[Export to PDF]
+***** xref:html-to-pdf-converter-api-v2.adoc[HTML to PDF Converter API]
+***** JWT Authentication
+****** xref:export-to-pdf-v2-with-jwt-authentication-nodejs.adoc[Node.js (8.4.0+)]
+****** xref:export-to-pdf-v2-with-jwt-authentication-php.adoc[PHP (8.4.0+)]
+****** xref:export-to-pdf-with-jwt-authentication-nodejs.adoc[Node.js (pre-8.4.0)]
+****** xref:export-to-pdf-with-jwt-authentication-php.adoc[PHP (pre-8.4.0)]
 *** xref:exportword.adoc[Export to Word]
 **** xref:html-to-docx-converter-api.adoc[HTML to DOCX Converter API]
 **** JWT Authentication
@@ -387,6 +408,17 @@
 ** xref:tinymce-and-cors.adoc[Cross-Origin Resource Sharing (CORS)]
 * Release information
 ** xref:release-notes.adoc[Release notes for {productname}]
+*** {productname} 8.4.0
+**** xref:8.4.0-release-notes.adoc#overview[Overview]
+**** xref:8.4.0-release-notes.adoc#new-premium-plugin[New Premium plugin]
+**** xref:8.4.0-release-notes.adoc#accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]
+**** xref:8.4.0-release-notes.adoc#accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
+**** xref:8.4.0-release-notes.adoc#improvements[Improvements]
+**** xref:8.4.0-release-notes.adoc#additions[Additions]
+**** xref:8.4.0-release-notes.adoc#changes[Changes]
+**** xref:8.4.0-release-notes.adoc#bug-fixes[Bug fixes]
+**** xref:8.4.0-release-notes.adoc#security-fixes[Security fixes]
+**** xref:8.4.0-release-notes.adoc#known-issues[Known issues]
 *** {productname} 8.3.2
 **** xref:8.3.2-release-notes.adoc#overview[Overview]
 **** xref:8.3.2-release-notes.adoc#accompanying-premium-plugin-changes[Accompanying Premium Plugin changes]

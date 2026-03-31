@@ -1,0 +1,300 @@
+= TinyMCE AI Quick Actions
+:navtitle: Quick Actions
+:pluginname: TinyMCE AI
+:plugincode: tinymceai
+:description: Quick actions feature for TinyMCE AI plugin
+:description_short: quick actions feature
+:keywords: AI, quick actions, actions, tinymceai
+:page-role: -toc
+
+Quick actions simplify routine content transformations by offering one-click AI-powered suggestions directly within the editor. This feature enhances speed, relevance, and usability, particularly for repeatable or simple tasks. For suggestions that change the document, the editor shows a preview and applies changes only after each suggestion is accepted or rejected. For actions that only open Chat with a pre-filled prompt, see xref:tinymceai-chat.adoc[Chat]. The API includes the ability to call default and optimized system actions, or to define your own.
+
+[[stateless-actions]]
+Preview transformations and Actions API calls are **stateless**: each invocation is independent and does not retain prior interactions, unlike ongoing xref:tinymceai-chat.adoc[Chat] conversations. Quick Actions that open Chat with a pre-filled prompt hand off to the Conversations API instead.
+
+The Quick Actions feature is available as part of the `+tinymceai+` plugin for {productname} and through the Actions API. This page covers both:
+
+* Plugin sections describe user-facing features and configuration (xref:tinymceai.adoc#options-quickactions[Quick Actions configuration]).
+* API sections cover REST API access (starting at xref:tinymceai-actions.adoc#actions-api[Actions API]).
+
+[[demo]]
+== Demo
+
+The live demo loads the full {productname} example with Chat, Quick Actions, and Review on the toolbar.
+
+liveDemo::tinymceai-actions[]
+
+[[quick-actions-and-review]]
+== Quick Actions and Review
+
+Quick Actions fit transforming a selection or section (for example grammar fixes, translation, or tone). Review fits whole-document quality analysis with suggestions in the Review sidebar and the document.
+
+Both Quick Actions and Review can propose edits that apply only after acceptance or rejection. The main differences are scope and where the work happens in the editor:
+
+* *Quick Actions*: Operate on a selection or section (including the full document when the scope includes it). The Quick Actions menu runs one-off operations such as Chat with a pre-filled prompt, preview transformations, translation, and custom actions.
+* *Review*: Always analyzes the entire document in read-only Review mode. Suggestions appear in the Review sidebar and in the document. See xref:tinymceai-review.adoc[Review] for details.
+
+[[integration]]
+== Integration
+
+To start using the Quick Actions feature, first load the {pluginname} plugin in the editor configuration. See xref:tinymceai.adoc[Plugin Reference] for installation and enabling AI features.
+
+Enabling the `+tinymceai+` plugin registers Chat, Quick Actions, and Review toolbar controls. Those controls appear on the main toolbar only when the xref:toolbar-configuration-options.adoc#toolbar[`+toolbar+`] configuration includes them: the default toolbar (when `+toolbar+` is omitted or `+true+`) adds `+tinymceai-chat+`, `+tinymceai-quickactions+` image:icons/ai-prompt.svg[Quick Actions icon,24px], `+tinymceai-review+`, and related items; with a custom `+toolbar+` value, each control must be listed or it remains hidden.
+
+To show Quick Actions on the Quickbars selection toolbar, add the desired identifiers to the xref:quickbars.adoc#quickbars_selection_toolbar[`+quickbars_selection_toolbar+`] option.
+
+image::tinymceai/tinymce-ai-quick-actions-change-tone-flyout-submenu.png[{pluginname} Quick Actions dropdown in the toolbar,width=80%]
+
+
+Finally, individual Quick Actions can also be added to the toolbar as shortcuts for easier access.
+
+For example, add the `ai-quickactions-improve-writing` image:icons-premium/improve-writing.svg[Improve Writing icon,24px] button, or the `ai-chat-explain` image:icons-premium/explain.svg[Explain icon,24px] button (find it in the demo above). Whole categories can be added to the toolbar as well. Learn more about xref:tinymceai-actions.adoc#default-actions[available actions].
+
+The final example configuration looks as follows:
+
+[source,js]
+----
+tinymce.init({
+  selector: '#editor',
+  plugins: 'tinymceai',
+  toolbar: 'undo redo tinymceai-chat tinymceai-quickactions tinymceai-review | styles | bold italic underline strikethrough | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image',
+  tinymceai_quickactions_menu: [
+    'ai-quickactions-chat-prompts',
+    'ai-quickactions-improve-writing',
+    'ai-quickactions-continue-writing',
+    'ai-quickactions-check-grammar',
+    'ai-quickactions-change-length',
+    'ai-quickactions-change-tone',
+    'ai-quickactions-translate'
+  ],
+  
+  // Configure a sub-menu (e.g., chat commands)
+  tinymceai_quickactions_chat_prompts: [
+    'ai-chat-explain',
+    'ai-chat-summarize',
+    'ai-chat-highlight-key-points'
+  ],
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.text()).then(token => ({ token }));
+  }
+});
+----
+
+[NOTE]
+====
+AI controls are not added to the xref:quickbars.adoc#quickbars_selection_toolbar[`+quickbars_selection_toolbar+`] automatically; add the desired toolbar button identifiers to that option when they should appear there.
+
+For example:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea#editor',
+  plugins: 'quickbars tinymceai',
+  quickbars_selection_toolbar: 'tinymceai-quickactions bold italic',
+});
+----
+====
+
+[[types-of-actions]]
+== Types of actions
+
+There are two types of actions available in the quick actions feature:
+
+* Chat actions, such as "Explain" or "Summarize", open the xref:tinymceai-chat.adoc[Chat] interface with the selected text added as context and automatically start the conversation with a pre-filled prompt.
+
+* Preview actions such as _Continue writing_, _Make shorter_, _Improve writing_, and _Fix grammar_ show a preview of your document where suggested edits appear so you can review them and apply or skip each change.
+
+Custom actions let integrators define whether each action opens Chat or shows a preview. See xref:tinymceai-actions.adoc#custom-actions[Custom Actions].
+
+[[default-actions]]
+== Default Actions
+
+By default, the Quick Actions feature includes several built-in actions that speed up the content editing process. All Quick Actions can be accessed through the menu button image:icons/ai-prompt.svg[Quick Actions icon,24px] (`tinymceai-quickactions`) or individually when selected by the integrator in the xref:toolbar-configuration-options.adoc[editor toolbar configuration]. Whole action categories can be added to the toolbar as well.
+
+Custom actions can be added to the list, and default actions can be removed or reordered by configuring `tinymceai_quickactions_menu`. See xref:tinymceai-actions.adoc#configuring-quick-actions-menu[Configuring Quick Actions menu].
+
+[[quick-actions-reference-table]]
+The following table lists built-in Quick Actions. 
+
+* The **Editor** column is the label in the Quick Actions menu when that action is available in the editor.
+* The **Menu or control ID** column lists values for `tinymceai_quickactions_menu`, `tinymceai_quickactions_chat_prompts`, `tinymceai_quickactions_change_tone_menu`, and the toolbar when adding individual controls (see xref:tinymceai-actions.adoc#configuring-quick-actions-menu[Configuring Quick Actions menu]).
+* The **System `actionName` or quick-action prompt id** column is the service identifier. Preview actions use a system `actionName` with the xref:tinymceai-actions.adoc#actions-api[Actions API]. Chat actions use a quick-action prompt id and xref:tinymceai-chat.adoc[Chat] with a pre-filled prompt, not the system actions API.
+
+[cols="1,3,2,3,1,1",options="header"]
+|===
+|Editor |Menu or control ID |System `actionName`  |Description |Editor UI |API
+
+|**Explain** |`ai-chat-explain` |`explain` |Opens Chat with the selected text and a pre-filled prompt. Uses the Conversations API, not the system actions path. |✓ |—
+
+|**Summarize** |`ai-chat-summarize` |`summarize` |Opens Chat with a summarize prompt. Uses the Conversations API, not the system actions path. |✓ |—
+
+|**Highlight key points** |`ai-chat-highlight-key-points` |`highlight-key-points` |Opens Chat with a key-points prompt. Uses the Conversations API, not the system actions path. |✓ |—
+
+|**Improve Writing** |`ai-quickactions-improve-writing` |`improve-writing` |Enhance clarity, word choice, and sentence structure. |✓ |✓
+
+|**Continue Writing** |`ai-quickactions-continue-writing` |`continue` |Complete unfinished sentences, paragraphs, or entire documents. |✓ |✓
+
+|**Fix Grammar** |`ai-quickactions-check-grammar` |`fix-grammar` |Correct grammar, spelling, and punctuation errors. |✓ |✓
+
+|**Adjust length** |`ai-quickactions-change-length` |`make-shorter`, `make-longer` |Shorten or lengthen the selection. Each option is its own system action. |✓ |✓
+
+|**Adjust Tone**
+a|
+`ai-quickactions-change-tone` +
+`ai-quickactions-tone-casual` +
+`ai-quickactions-tone-direct` +
+`ai-quickactions-tone-friendly` +
+`ai-quickactions-tone-confident` +
+`ai-quickactions-tone-professional`
+a|
+`make-tone-casual` +
+`make-tone-direct` +
+`make-tone-friendly` +
+`make-tone-confident` +
+`make-tone-professional`
+|Change writing style; each menu option maps to its own system action. |✓ |✓
+
+|**Translate**
+a|
+`ai-quickactions-translate` +
+`ai-quickactions-translate-english` +
+`ai-quickactions-translate-spanish` +
+`ai-quickactions-translate-russian` +
+`ai-quickactions-translate-swedish` +
+`ai-quickactions-translate-german` +
+`ai-quickactions-translate-japanese` +
+`ai-quickactions-translate-portuguese` +
+`ai-quickactions-translate-korean` +
+`ai-quickactions-translate-italian` +
+`ai-quickactions-translate-chinese`
+a|
+`translate`
+|Convert content between languages. Request body uses `args: { language: string }` with values such as `english`, `spanish`, `russian`, `swedish`, `german`, `japanese`, `portuguese`, `korean`, `italian`, or `chinese`. Configure the editor submenu with `tinymceai_languages`. |✓ |✓
+|===
+
+[NOTE]
+====
+* A checkmark in the **Editor UI** column means the action can appear when included in `tinymceai_quickactions_menu` (and related sub-menu options such as `tinymceai_quickactions_chat_prompts`).
+* A checkmark in the **API** column means the action is invoked through the system Actions API path `+/v1/actions/system/{actionName}/calls+`. An em dash means the command is Chat-based and uses the Conversations API instead.
+====
+
+For system action endpoints, schemas, and streaming details, see the https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API] reference.
+
+[[custom-actions]]
+== Custom Actions
+
+The `tinymceai_quickactions_custom` configuration property allows adding new commands to the Quick actions feature. The items can be of type `action` (a quick action that shows a preview of the editor content with AI suggestions so changes can be reviewed before applying) or type `chat` (which opens the chat interface for a conversation related to the prompt and selection). The `title` is used in the menu items, while the `prompt` is what is actually sent to the AI. The `model` is required for `action` type commands. Learn more about xref:tinymceai-actions.adoc#types-of-actions[types of actions].
+
+[source,js]
+----
+tinymce.init({
+  selector: '#editor',
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-quickactions',
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.text()).then(token => ({ token }));
+  },
+  tinymceai_quickactions_custom: [
+    {
+      title: 'Add a quote from a famous person',
+      prompt: 'Add a quote from a known person, which would make sense in the context of the selected text.',
+      type: 'action',
+      model: 'gemini-2-5-flash'
+    },
+    {
+      title: 'Summarize in 5 bullet points',
+      prompt: 'Summarize the selected text in 5 bullet points.',
+      type: 'chat'
+    },
+    {
+      title: 'Rewrite adding more sarcasm',
+      prompt: 'Rewrite using a sarcastic tone.',
+      type: 'action',
+      model: 'gemini-2-5-flash'
+    }
+  ]
+});
+----
+
+[[configuring-quick-actions-menu]]
+== Configuring Quick Actions menu
+
+Which actions appear in the Quick Actions menu can be configured by specifying the list of actions to include. The `tinymceai_quickactions_menu` configuration option controls the main menu items.
+
+Sub-menus have their own configuration options:
+
+* `tinymceai_quickactions_chat_prompts`: Controls items in the **"Chat commands"** sub-menu
+* `tinymceai_quickactions_change_tone_menu`: Controls items in the **"Change tone"** sub-menu
+* `tinymceai_languages`: Controls languages in the **"Translate"** sub-menu
+
+[source,js]
+----
+tinymce.init({
+  selector: '#editor',
+  plugins: 'tinymceai',
+  toolbar: 'tinymceai-quickactions',
+  // Required for authentication
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.text()).then(token => ({ token }));
+  },
+  // Configure the main Quick Actions menu
+  tinymceai_quickactions_menu: [
+    'ai-quickactions-chat-prompts',
+    'ai-quickactions-improve-writing',
+    'ai-quickactions-continue-writing',
+    'ai-quickactions-check-grammar',
+    'ai-quickactions-change-length',
+    'ai-quickactions-change-tone',
+    'ai-quickactions-translate',
+    'ai-quickactions-custom'
+  ],
+  // Configure a sub-menu (e.g., chat commands)
+  tinymceai_quickactions_chat_prompts: [
+    'ai-chat-explain',
+    'ai-chat-summarize',
+    'ai-chat-highlight-key-points'
+  ]
+});
+----
+
+[[actions-api]]
+== Actions API
+
+The Quick Actions plugin feature is built on top of the Actions API, which provides REST API access to action functionality. Actions are fast, stateless operations—each request is independent, as described under xref:tinymceai-actions.adoc#stateless-actions[Stateless actions]. For suggestions that change the document, the preview flow applies edits only after each suggestion is accepted or rejected. Actions that only open Chat with a pre-filled prompt use the Conversations API; see xref:tinymceai-chat.adoc[Chat].
+
+Actions use streaming output with Server-Sent Events for real-time feedback as results are generated.
+
+[[actions-system-actions-api]]
+=== System Actions
+
+Built-in Quick Actions—including identifiers, descriptions, and whether each command uses the system Actions API or Chat (Conversations API)—are summarized in xref:tinymceai-actions.adoc#quick-actions-reference-table[Default Actions].
+
+For endpoint details, request and response schemas, authentication, and streaming behavior for system `actionName` calls, see https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API].
+
+[[actions-custom-actions-api]]
+=== Custom Actions through the API
+
+In addition to system actions, custom actions can be created for specific use cases through the API. Custom actions allow specialized content transformations using custom prompts to control AI behavior.
+
+Unlike system actions that use default identifiers, custom actions use a unified endpoint where the transformation behavior is defined through a prompt parameter. See https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API] for the custom actions endpoint and implementation details.
+
+Custom actions require the `ai:actions:custom` permission in the JWT token.
+
+[[actions-streaming]]
+=== Streaming Responses
+
+Actions use Server-Sent Events (SSE) for real-time streaming results. See the xref:tinymceai-streaming.adoc[Streaming Responses guide] for detailed implementation information.
+
+[[actions-api-reference]]
+=== API Reference
+
+The https://tinymceai.api.tiny.cloud/docs#tag/Actions[Actions API] reference (interactive OpenAPI documentation) is the full source for system and custom action endpoints, request and response schemas, authentication, worked examples, and streaming action responses.
+
+[[related-features]]
+== Related Features
+
+* xref:tinymceai-chat.adoc[AI Chat]: For interactive discussions with document analysis and context.
+* xref:tinymceai-review.adoc[AI Review]: For content quality analysis and improvement suggestions.

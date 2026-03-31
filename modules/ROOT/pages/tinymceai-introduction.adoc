@@ -1,0 +1,92 @@
+= TinyMCE AI Introduction
+:navtitle: Introduction
+:pluginname: TinyMCE AI
+:plugincode: tinymceai
+:description: Introduction to TinyMCE AI features and capabilities
+:description_short: TinyMCE AI introduction
+:keywords: AI, introduction, tinymceai
+:page-role: -toc
+
+Integrate real-time AI writing assistance into your application with TinyMCE AI, with ready-to-go editor features available via the TinyMCE plugin, and custom functionality available via the API -- even outside the editor. Speed up content creation and enhance editorial workflows across a wide range of use cases, from productivity boosts and proof-reading to content quality and consistency. All with your choice of LLM -- including your own.
+
+[[demo]]
+== Demo
+
+liveDemo::tinymceai[]
+
+[[what-is-tinymce-ai]]
+== What is {pluginname}
+
+{pluginname} is an AI-powered writing assistant platform with two core components:
+
+* **xref:tinymceai.adoc[{pluginname} plugin]**: Integrates the AI directly into {productname}, providing instant text rewriting, summarization, correction, and contextual chat help based on organizational style guides. It includes automated review tools and enterprise-ready functionality that integrates with existing systems without requiring custom infrastructure.
+* **xref:tinymceai-api-overview.adoc[TinyMCE AI API]**: A state-of-the-art back-end AI engine that incorporates multiple models and delivers high-quality content. Any functionality available in the plugin is also available in the API, plus more, and the API can be used anywhere in your application -- not just in {productname}. *The hosted AI service is currently available in Cloud setup only.*
+
+These components enable teams to implement a full suite of AI writing tools quickly, delivering efficient content workflows that maintain brand consistency and integrate smoothly with document management systems. In addition, the plugin and API use the same authorisation mechanisms and share conversation history, enabling ease of integration with your application's broader content authoring workflow -- not just within {productname}.
+
+Both components support multiple AI models, enabling a unified UI and API across the models your application needs. See xref:tinymceai-models.adoc[AI Models] for more information.
+
+include::partial$misc/tinymceai-on-premises-early-access-note.adoc[]
+
+[[features]]
+== {pluginname} features
+
+There are three main features of {pluginname}.
+
+* xref:tinymceai-chat.adoc[**Chat**]: Interactive AI chats with history and persistent context.
+* xref:tinymceai-review.adoc[**Review**]: Content analysis and proofreading, optimized for larger content.
+* xref:tinymceai-actions.adoc[**Actions**]: Fast, stateless operations for specific tasks.
+
+[NOTE]
+Existing customers on paid plans can request a full featured free trial through the link:{accountpageurl}[Customer Portal].
+
+[[integration-options]]
+== Integration Options
+
+{pluginname} can be integrated with applications through two methods: the plugin (for out-of-the-box editor features) or the AI service API (for custom integrations). See xref:tinymceai-integration-options.adoc[Integration Options] for details.
+
+[[permissions]]
+== Permissions
+
+Developers can control access to AI features, models, and capabilities based on user roles, subscription tiers, and organizational requirements. Learn more about the xref:tinymceai-permissions.adoc[permissions system].
+
+[[privacy-and-data-handling]]
+== Privacy and data handling
+
+[[regional-data-storage]]
+=== Regional Data Storage
+
+All data stored by Tiny for {pluginname} is handled in the US region. 
+
+Data sent to LLM providers for processing is currently handled in the US region. {productname} does not offer separate LLM processing regions to choose from.
+
+[[data-retention-policy]]
+=== Data Retention Policy
+
+Conversation data is automatically deleted after 12 months of inactivity, including:
+
+* all conversation messages and history,
+* attached documents, files, and web resources,
+* conversation metadata and settings.
+
+[[security]]
+=== Security
+
+All data is encrypted in transit and at rest with end-to-end encryption. Conversations and attachments are stored in secure cloud infrastructure with fine-grained access control and comprehensive permission systems.
+
+[[on-premises-deployment]]
+== On-Premises Deployment
+
+On-premises deployment allows the AI service to run within an organization's infrastructure, giving teams more control over data and infrastructure.
+
+include::partial$misc/tinymceai-on-premises-early-access-note.adoc[]
+
+[[next-steps]]
+== Next steps
+
+* xref:tinymceai.adoc[Plugin Reference]: Install the `tinymceai` plugin, configure authentication, and enable Chat, Review, and Quick Actions.
+* xref:tinymceai-jwt-authentication-intro.adoc[JWT Authentication]: Issue tokens for the hosted `{pluginname}` service.
+* xref:tinymceai-models.adoc[AI Models]: Review supported models, compatibility versions, and limits.
+* xref:tinymceai-api-overview.adoc[API Overview]: Call the REST API from application code outside the editor.
+* xref:tinymceai-api-quick-start.adoc[API Quick Start]: Obtain API credentials and connect to the service.
+* xref:tinymceai-integration-options.adoc[Integration Options]: Compare plugin-first and API-first integration paths.

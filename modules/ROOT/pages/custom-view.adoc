@@ -57,6 +57,10 @@ To query the state of the custom view (whether it is currently visible or hidden
 editor.queryCommandValue('ToggleView') == 'myCustomView';
 ----
 
+== Options
+
+include::partial$configuration/view_show.adoc[leveloffset=+1]
+
 == Interactive example
 
 This example shows how to integrate a custom view using the `addView` API.

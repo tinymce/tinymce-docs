@@ -2,7 +2,7 @@
 :release-version: 8.4.0
 :navtitle: {productname} {release-version}
 :description: Release notes for {productname} {release-version}
-:keywords: releasenotes, new, changes, bugfixes
+:keywords: releasenotes, new, changes, bugfixes, new features, improvements, changes, removals, deprecated, known issues
 :page-toclevels: 1
 
 include::partial$misc/admon-releasenotes-for-stable.adoc[]
@@ -11,45 +11,52 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 [[overview]]
 == Overview
 
-{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, February 4^th^, 2026. These release notes provide an overview of the changes for {productname} {release-version}, including:
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Tuesday, March 31^st^, 2026. These release notes provide an overview of the changes for {productname} {release-version}, including:
 
-* xref:new-premium-plugin<s>[New Premium plugin<s>]
-* xref:new-open-source-plugin<s>[New Open Source plugin<s>]
+* xref:new-premium-plugins[New Premium plugins]
 * xref:accompanying-premium-plugin-changes[Accompanying Premium plugin changes]
-* xref:accompanying-premium-plugin-end-of-life-announcement[Accompanying Premium plugin end-of-life announcement]
-* xref:accompanying-open-source-plugin-end-of-life-announcement[Accompanying open source plugin end-of-life-announcement]
 * xref:accompanying-enhanced-skins-and-icon-packs-changes[Accompanying Enhanced Skins & Icon Packs changes]
 * xref:improvements[Improvements]
 * xref:additions[Additions]
 * xref:changes[Changes]
 * xref:bug-fixes[Bug fixes]
 * xref:security-fixes[Security fixes]
-* xref:deprecated[Deprecated]
 * xref:known-issues[Known issues]
 
 
-[[new-premium-plugin<s>]]
-== New Premium plugin<s>
+[[new-premium-plugin]]
+== New Premium plugin
 
 The following new Premium plugin was released alongside {productname} {release-version}.
 
-=== <Premium plugin name>
+=== TinyMCE AI
 
-The new Premium plugin, **<Premium plugin name>** // description here.
+**TinyMCE AI** is the new premium AI platform for {productname}: faster drafting and stronger editing workflows with a ready-to-use AI features - now available as both a plug-and-play plugin and an API for custom integrations.
 
-For information on the **<Premium plugin name>** plugin, see xref:<plugincode>.adoc[<Premium plugin name>].
+The platform centers on three experiences that mirror what teams expect from modern AI writing tools:
 
+* image:icons-premium/ai-assistant.svg[Chat icon,24px] **Chat**: Contextual conversations, persistent history, and help that understands the document.
+* image:icons-premium/ai-review.svg[Review icon,24px] **Review**: Proofreading and structured quality passes for longer content and editorial standards.
+* image:icons/ai-prompt.svg[Quick Actions icon,24px] **Actions**: Quick, repeatable transformations for everyday tasks (tone, length, clarity, and more).
 
-[[new-open-source-plugin]]
-== New Open Source plugin
+Behind the UI sits a production-ready **TinyMCE AI API** with JWT authentication, granular permissions, and multiple models, which is also available for use in your broader application.
 
-The following new Open Source plugin was released alongside {productname} {release-version}.
+**What this means for users** (the outcomes the interface is built for):
 
-=== <Open source plugin name>
+* Move drafts forward and refine tone without leaving the editor.
+* Summarize, adjust length, and improve clarity with guided flows.
+* Keep brand and policy guardrails in reach through permissions and review-style workflows.
 
-The new open source plugin, **<Open source plugin name>** // description here.
+**Documentation** for **TinyMCE AI**:
 
-For information on the **<Open source plugin name>** plugin, see xref:<plugincode>.adoc[<Open source plugin name>].
+* xref:tinymceai-introduction.adoc[Introduction to TinyMCE AI] — Capabilities, features, and how the platform fits together.
+* xref:tinymceai.adoc[TinyMCE AI plugin] — Setup, configuration, and the out-of-the-box editor experience.
+* xref:tinymceai-api-overview.adoc[TinyMCE AI API] — Service integration, authentication, and building beyond the editor.
+
+[TIP]
+====
+Existing customers on paid plans can request a full featured free trial through the link:{accountpageurl}[Customer Portal].
+====
 
 
 [[accompanying-premium-plugin-changes]]
@@ -57,37 +64,120 @@ For information on the **<Open source plugin name>** plugin, see xref:<plugincod
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
-=== <Premium plugin name 1> <Premium plugin name 1 version>
+=== Comments
 
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
+The {productname} {release-version} release includes an accompanying release of the **Comments** premium plugin.
 
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
+**Comments** includes the following fixes.
 
-==== <Premium plugin name 1 change 1>
+==== Errors when creating new comments made the save button stuck in a saving state.
+// #TINY-12224
 
-// CCFR here.
+Previously, when creating or editing a comment in Comments, the save button could remain in a saving state indefinitely if the save operation failed or if the component was not replaced. The saving state had no way to reset to false except by recreating the component, which misled users into thinking the operation was still in progress.
 
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
+In {productname} {release-version}, the save logic now resets the saving state to false after the save operation completes, whether the operation succeeds or fails. The save button no longer remains stuck in a saving state.
 
+==== Users with an `id` that includes `@` weren't parsed correctly.
+// #TINY-12235
 
-[[accompanying-premium-plugin-end-of-life-announcement]]
-== Accompanying Premium plugin end-of-life announcement
+Previously, the mentions parser in Comments did not treat the `@` symbol as part of a mention string. User IDs containing `@` (such as email addresses) were split incorrectly, so mentions remained as raw text instead of resolving to the display name after saving.
 
-The following Premium plugin has been announced as reaching its end-of-life:
+In {productname} {release-version}, the Comments plugin now correctly parses mentions with `@` in user IDs. Mentions resolve to display names as expected.
 
-=== <Premium plugin name eol>
+For information on the **Comments** plugin, see: xref:introduction-to-tiny-comments.adoc[Comments].
 
-{productname}'s xref:<plugincode>.adoc[<Premium plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
+=== Export to PDF
 
+The {productname} {release-version} release includes an accompanying release of the **Export to PDF** premium plugin.
 
-[[accompanying-open-source-plugin-end-of-life-announcement]]
-== Accompanying open source plugin end-of-life announcement
+**Export to PDF** includes the following addition.
 
-The following open source plugin has been announced as reaching its end-of-life:
+==== `exportpdf` supports API version 2 converter options
+// #TINY-13700
 
-=== <Open source plugin name eol>
+`{productname}` `{release-version}` adds support for version `2` of the `exportpdf` API through `exportpdf_converter_options`. Version `1` remains the default for backward compatibility. The new nested structure organizes options under `document`, `headers`, `footers`, `metadata`, `security`, and `signature`, enabling per-page headers and footers, PDF metadata, password protection, and certificate-based signing.
 
-{productname}'s xref:<plugincode>.adoc[<Open source plugin name eol>] plugin will be deactivated on <month> <DD>, <YYYY>, and is no longer available for purchase.
+For information on the **Export to PDF** plugin, see xref:exportpdf.adoc[Export to PDF].
+
+=== Full Page HTML
+
+The {productname} {release-version} release includes an accompanying release of the **Full Page HTML** premium plugin.
+
+**Full Page HTML** includes the following fixes.
+
+==== Replaced deprecated browser APIs with modern equivalents.
+// #TINY-13674
+
+Previously, the Full Page HTML plugin used deprecated `+escape+` and `+unescape+` JavaScript APIs for some protected content handling. Those APIs are no longer recommended for new code.
+
+In {productname} {release-version}, the plugin uses modern encoding APIs instead. This aligns the implementation with current browser guidance and improves reliability for protected content handling.
+
+==== Pasting an HTML document was vulnerable to XSS attacks
+// #TINY-13673
+
+A cross-site scripting (XSS) vulnerability was discovered in the Full Page HTML plugin. Previously, malicious code within the document `<head>` was able to be executed when pasted.
+
+This vulnerability has been patched in {productname} {release-version} by ensuring that content in the document `<head>` is properly encoded.
+
+==== New argument `fullpagehtml` to `editor.getContent()` and `editor.setContent()` APIs to only get/set the body of the content while the full page plugin is active.
+// #TINY-13744
+
+Previously, setting and getting the editor content while the Full Page HTML plugin was active could be troublesome due to the presence of the full HTML document on all API calls, even when not needed. Attempting to get and act only on the body content (for example, for saving) was undocumented and required workarounds.
+
+In {productname} {release-version}, the `fullpagehtml` option has been added to the `editor.getContent()` and `editor.setContent()` APIs. When set to `false`, this option allows getting and setting only the body content while the Full Page HTML plugin is active, without interfering with the full document structure. The document is now more resistant to accidental changes, and content can be retrieved or updated without including the full HTML document. For details, see xref:fullpagehtml.adoc#fullpagehtml-getcontent-setcontent[`fullpagehtml` option for getContent/setContent].
+
+For information on the **Full Page HTML** plugin, see: xref:fullpagehtml.adoc[Full Page HTML].
+
+=== Media Optimizer
+
+The {productname} {release-version} release includes an accompanying release of the **Media Optimizer** premium plugin.
+
+**Media Optimizer** includes the following additions and fixes.
+
+==== Toolbar button was not initialized when used with the `quickbars` plugin.
+// #TINY-13731
+
+Previously, when the Media Optimizer plugin was used together with the quickbars plugin, the uploadcare toolbar button was not registered at all. As a result, the button could not appear in the toolbar, even when configured.
+
+In {productname} {release-version}, the uploadcare button is now always registered and can be used in the toolbar alongside the quickbars plugin. To avoid duplication in the context toolbar, the plugin no longer adds the uploadcare button when the quickbars insert image button is already present.
+
+==== Third-party library icons appear in formats when using Media Optimiser plugin together with CSS plugin
+// #TINY-13515
+
+Previously, when the Media Optimiser plugin was used together with the importcss plugin, the previous version of `uc-video` required importing external styles. The importcss plugin detected these imports and added them to the format menu, causing third-party library icons to appear in the formats UI. These icons were not part of the official TinyMCE icon pack and created a confusing and inconsistent UI experience.
+
+In {productname} {release-version}, the `uc-video` package was upgraded to a version that has styles self-contained in the web component. The importcss plugin no longer detects `uc-video` styles, so third-party icons no longer appear in the formats UI.
+
+==== SVG images can now be uploaded.
+// #TINY-13708
+
+Previously, SVG images could not be uploaded through the Media Optimizer plugin because Uploadcare placed restrictions on SVG file handling. Users who needed to include SVG graphics in content were unable to upload them directly.
+
+In {productname} {release-version}, SVG images can now be uploaded through the Media Optimizer plugin. Some CDN operations may have limitations on SVG files; for details, see the link:https://uploadcare.com/docs/cdn-operations/#limits[Uploadcare documentation on CDN operation limits].
+
+For information on the **Media Optimizer** plugin, see: xref:uploadcare.adoc[Media Optimizer].
+
+=== Suggested Edits
+
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
+
+**Suggested Edits** includes the following improvement and fix.
+
+==== Document view rendering to reduce flickering when loading Suggested Edits.
+// #TINY-13135
+
+Previously, the document displayed in the Review Edits view relied on the deprecated browser method `document.write`, which could cause content to appear before it was fully styled. Users could briefly see partially rendered or unstyled content when opening the review interface.
+
+In {productname} {release-version}, the document loading process in the Review Edits view has been updated to remove the deprecated method. The document is now displayed only after it has fully loaded, improving browser compatibility and providing a smoother and more stable experience when reviewing suggested edits.
+
+==== Cancel button would always focus when the view opened, even when editor wasn't focused.
+// #TINY-13711
+
+Previously, the Cancel button in Suggested Edits was automatically focused whenever the review was opened, including when the review opened automatically on load. This could cause unexpected scrolling behaviour, such as when an editor is positioned further down the page, the browser would scroll the editor into view when the page loads.
+
+In {productname} {release-version}, the Cancel button is now focused only when the editor itself is already focused. When the review is opened automatically, the button is no longer focused, preventing unintended scrolling.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
 
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
@@ -107,77 +197,189 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[improvements]]
 == Improvements
 
-{productname} {release-version} also includes the following improvement<s>:
+{productname} {release-version} also includes the following improvements:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== The file upload feature of `link` and `image` dialogs now provide feedback when an unsupported file type is selected
+// #TINY-13420
 
-// CCFR here.
+In {productname} {release-version}, the dropzone in the link and image dialog upload tabs previously provided no feedback when users inserted only files with disallowed extensions. This left users unsure whether the upload had failed or the dialog had not responded. The dropzone now displays an error message when all selected files have disallowed extensions, informing users that the selected files do not have allowed extensions and prompting them to choose different files.
+
+=== Directionality buttons now always apply to blocks and only appear active when directionality is set
+// #TINY-13337
+
+Previously, the directionality buttons would not apply the directionality attribute or style when toggling to the default directionality. This could cause non-default directional content to appear in the opposite direction.
+
+In {productname} {release-version}, each directionality button always applies or removes the directionality attribute on the selected block, and only appears active when directionality is explicitly set on the block.
+
+=== Directionality of Hebrew was incorrect
+// #TINY-13667
+
+Previously, right-to-left (RTL) directionality was not correctly set for Hebrew in the language pack. This caused the editor to render the wrong directionality when Hebrew was set as the language.
+
+In {productname} {release-version}, this issue has been addressed by ensuring that the directionality is correctly set for Hebrew in the language pack.
 
 
 [[additions]]
 == Additions
 
-{productname} {release-version} also includes the following addition<s>:
+{productname} {release-version} also includes the following additions:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== New `table_default_header_rows` and `table_default_header_cols` options to set the default header size for new tables
+// #TINY-13391
 
-// CCFR here.
+Previously, integrators had no way to set default header rows and columns when creating tables through the editor UI. This affected the accessibility of tables and required manual intervention for integrators aiming to meet accessibility standards. The new xref:table-options.adoc#table_default_header_rows[`+table_default_header_rows+`] and xref:table-options.adoc#table_default_header_cols[`+table_default_header_cols+`] options enable integrators to set the number of default header rows and columns for new tables created through the editor's UI, providing a supported way to meet accessibility requirements.
+
+=== New `errorHandler` option for `dropzone` dialog components
+// #TINY-13420
+
+In {productname} {release-version}, the dropzone dialog component supports a new `onInvalidFiles` callback (exposed as `errorHandler` in the changelog) that runs when all dropped or selected files have disallowed extensions. This enables custom error handling for invalid file uploads in dialogs that use dropzones, such as the link and image dialogs.
+
+=== The noneditable feature can now be disabled with the new `allow_noneditable` option.
+// #TINY-10121
+
+Previously, the noneditable plugin was converted to a feature in core in {productname} 6. The feature was always enabled with no documented way to turn it off, which was not always desirable for integrators.
+
+In {productname} {release-version}, a new xref:non-editable-content-options.adoc#allow_noneditable[`+allow_noneditable+`] option is available. It is enabled by default. When set to `+false+`, the noneditable feature is disabled, equivalent to disabling the plugin prior to {productname} 6.
+
+=== New `view_show` option to display a specified view on initialization.
+// #TINY-11967
+
+In {productname} {release-version}, the new xref:custom-view.adoc#view_show[`+view_show+`] option allows specifying which view to display when the editor is initialized. The option behaves similarly to `+sidebar_show+` but takes precedence for views; both sidebars and views can be configured to show on init.
+
+=== New `content_id` editor option for uniquely identifying the edited document
+// #TINY-13379
+
+Previously, there was no supported editor option for supplying a stable identifier for the document being edited in the editor configuration.
+
+In {productname} {release-version}, the optional `+content_id+` string option is available. Integrations can set it to a value that uniquely identifies the document (for example, a database record id). When the xref:tinymceai.adoc[TinyMCE AI] plugin is enabled, `+content_id+` scopes chat history to that document; for details, see xref:tinymceai.adoc#content_id[`+content_id+` in the TinyMCE AI options].
 
 
 [[changes]]
 == Changes
 
-{productname} {release-version} also includes the following change<s>:
+{productname} {release-version} also includes the following changes:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== The `border-color` style with multiple rgb colors would be compressed into `border` incorrectly
+// #TINY-13393
 
-// CCFR here.
+Previously, when `border-color` used multiple rgb values (for example, for different sides of an element), the style compressor would incorrectly compress them into a single `border` shorthand. The `border` shorthand only supports one color, so this produced invalid CSS. This could affect tables and other elements with multi-colored borders.
 
+In {productname} {release-version}, a check was added to prevent compression when `border-color` contains multiple rgb values. The styles are no longer compressed into invalid shorthand.
 
-[[removed]]
-== Removed
+=== Element path uses WAI-ARIA group semantics and an accessible name
+// #TINY-13338
 
-{productname} {release-version} also includes the following removal<s>:
+Previously, the element path container used the `navigation` landmark role (`role="navigation"`) and had no accessible name. That did not match how the control behaves for assistive technologies.
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+In {productname} {release-version}, the element path uses `role="group"` with an `aria-label` (localized; `Element Path` in English). For keyboard navigation, see xref:tinymce-and-screenreaders.adoc#navigating-element-path[Accessible navigation guide].
 
 
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
+{productname} {release-version} also includes the following bug fixes:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Now `link` dialog allows uploading empty files
+// #TINY-13421
 
-// CCFR here.
+Previously, when uploading an empty file through the link dialog's upload tab, the conversion to `BlobInfo` failed and returned a generic, cryptic error about blob and base64 encoding. As a result, users could not understand what caused the failure or how to resolve it.
+
+In {productname} {release-version}, empty file uploads are now handled by the link dialog itself, which displays a clear, user-friendly error message when an empty file is selected. Users receive a specific error that explains the issue instead of a generic conversion error.
+
+=== Bundled content CSS is now loaded into preview iframes
+// #TINY-13190
+
+Previously, when the editor content CSS was bundled, it was not loaded into preview iframes. This caused a visual mismatch between the editor content area and what users saw in the Preview dialog, Suggested Edits view and Revision History view.
+
+In {productname} {release-version}, the fix checks if the content CSS is available as a bundled resource and applies it to the Preview Iframe through style tags. Bundled content CSS is now correctly loaded in the Preview Iframe.
+
+=== Attempting to remove a link after a `contentEditable="false"` element would not be possible.
+// #TINY-13108
+
+In previous version of {productname}, attempting to remove a link positioned after a `contentEditable="false" (CEF) element could fail because the action flow created a bookmark that normalized the selection and shifted it into the CEF; once the cursor was inside a CEF, the selection check prevented the link-removal action (and other selection-based actions) from running.
+
+{productname} {release-version} addresses this by capturing the selection’s target before creating the bookmark, reversing the previous order so the selection is copied prior to normalization, ensuring the selection target remains valid and link removal works as expected.
+
+=== Some formatting was not applied to items in multilevel list.
+// #TINY-13324
+
+Previously, when applying formatting such as background, bold, italic, underline, or strikethrough to a multilevel list and then adding new items before the second-level list, the new items could lose some of that formatting. This occurred because creating a new line in a list item that contained a nested list sometimes trimmed the empty elements that held the applied styles.
+
+In {productname} {release-version}, the trim logic has been updated to avoid removing these elements when inserting a new line inside a list item that contains both an empty element (the styles) and a nested list. The formatting is now preserved as expected when adding new items to multilevel lists.
+
+=== Setting width via Table Properties did not apply when `table_style_by_css` was `false`.
+// #TINY-12797
+
+Previously, when `table_style_by_css` was set to `false`, updating the width of a table through the Table Properties dialog did not apply the width attribute. The dialog only applied width when using CSS styles, which broke the functionality for users who rely on HTML attributes for table sizing.
+
+In {productname} {release-version}, updating the width through the Table Properties dialog now ensures the width attribute is applied correctly when `table_style_by_css` is `false`. The table dialog behaves as expected for both attribute-based and style-based width settings.
+
+=== Dialogs did not retain focus when using the block/unblock API.
+// #TINY-12918
+
+Previously, when a dialog was blocked (for example, while loading) and then unblocked, the loading spinner disappeared without automatically focusing any other element. As a result, focus escaped the editor entirely. When using an inline editor, this caused the dialog and the rest of the editor UI to disappear.
+
+In {productname} {release-version}, unblocking a dialog now focuses the first focusable element automatically, the same as when opening a dialog. This prevents the dialog and the rest of the editor UI from disappearing when using an inline editor.
+
+=== Toggling lists cause selection issues
+// #TINY-13213
+
+Previously, repeatedly toggling list formatting (for example, switching between bullet and ordered lists) could cause the selection to extend unexpectedly, including content that was not initially selected. The selection would jump to adjacent lines and expand with each subsequent toggle, making it difficult to apply list changes only to the intended items.
+
+In {productname} {release-version}, the selection logic no longer considers the forced root block when the selection is not collapsed. This prevents the selection from expanding beyond the intended list items, so list formatting can be toggled without unintended selection changes.
+
+=== Tables with unitless width or height attributes could not be resized correctly.
+// #TINY-12797
+
+Previously, tables that used unitless width or height attributes (for example, numeric values without `px` or `%`) could not be resized correctly. Resizing handles and column operations did not behave as expected for these tables.
+
+In {productname} {release-version}, the table resize logic correctly handles unitless width and height attributes. Tables can now be resized and modified as expected regardless of how their dimensions are specified.
+
+=== Toolbars incorrectly had the role "group" instead of "toolbar". Toolbar groups incorrectly had the role "toolbar" instead of "group".
+// #TINY-13339
+
+Previously, toolbars were incorrectly given the role `group` instead of `toolbar`, and toolbar groups were incorrectly given the role `toolbar` instead of `group`. This resulted in misleading semantics for screen readers, as users heard multiple "toolbars" without clear grouping structure and no accessible names.
+
+In {productname} {release-version}, the ARIA roles have been corrected so that toolbars use `role="toolbar"` and toolbar groups use `role="group"`. This improves accessibility and screen reader behavior.
+
+=== Dropdown menus with `matchWidth: true` would be located to the left of their parent if the content was sufficiently long
+// #TINY-4531
+
+Previously, dropdown menus with `matchWidth: true` could sit to the left of the input when the field value overflowed past the right edge of the viewport, such as when pasting a long URL into the image dialog source field. Misalignment ranged from a slight offset to the menu sitting flush against the left edge of the viewport. The dropdown width was constrained to match the input, but the menu was not repositioned after that constraint, so the list no longer lined up with the field and looked disconnected.
+
+In {productname} {release-version}, the positioning logic now triggers a repositioning whenever the dropdown width is constrained. The dropdown remains aligned with the input as expected.
+
+=== Certain deletion keyboard events in lists could not be prevented
+// #TINY-13276
+
+In {productname} {release-version}, an issue was identified where certain deletion keyboard events within lists could not be prevented due to the key handler being registered before the editor setup phase and without verifying whether the event had already been prevented. As a result, attempts to intercept and prevent selection deletion were ineffective, limiting customization and control over list behavior.
+
+{productname} {release-version} addresses this by updating the key handler registration to occur during the `init` phase, and additional checks now ensure that previously prevented events are respected.
+
 
 
 [[security-fixes]]
 == Security fixes
 
-{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
+{productname} {release-version} includes one fix for the following security issue:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
+=== Attribute sanitization bypass in rawtext contexts
+// #TINY-14180
 
-// CCFR here.
+A link:https://owasp.org/www-community/attacks/xss/[cross-site scripting] (XSS) vulnerability was discovered in link:https://www.npmjs.com/package/dompurify[DOMPurify] that affects versions of {productname} prior to {release-version}. The issue was a result of DOMPurify allowing attackers to bypass attribute sanitization in certain rawtext contexts, which could lead to improper sanitization when sanitized output was placed inside those contexts.
 
+=== Affected Versions
 
-[[deprecated]]
-== Deprecated
+* DOMPurify `3.1.3` through `3.3.1`
+* DOMPurify `2.5.3` through `2.5.8`
 
-{productname} {release-version} includes the following deprecation<s>:
+=== Vulnerabilities
 
-=== The `<plugin>` configuration property, `<name>`, has been deprecated
+* **Attribute sanitization bypass in rawtext contexts** (link:https://www.cve.org/CVERecord?id=CVE-2026-0540[CVE-2026-0540]): Allowed attackers to bypass attribute sanitization by exploiting missing rawtext elements in the `SAFE_FOR_XML` regex.
 
-// placeholder here.
+GHSA: link:https://github.com/advisories/GHSA-v2wj-7wpq-c8vv[GitHub Advisory]
+
+CVE: link:https://nvd.nist.gov/vuln/detail/CVE-2026-0540[CVE-2026-0540]
 
 
 [[known-issues]]
@@ -185,7 +387,7 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
 
-There <is one | are <number> known issue<s> in {productname} {release-version}.
+The following known issues affect {productname} {release-version}.
 
 === <TINY-vwxyz 1 changelog entry>
 // #TINY-vwxyz1

@@ -1,0 +1,33 @@
+= TinyMCE AI Integration Options
+
+:navtitle: Integration Options
+:pluginname: TinyMCE AI
+:description: Choose how to integrate TinyMCE AI with applications
+:description_short: Integration options for TinyMCE AI
+:keywords: AI, integration, plugin, API, AI service, tinymceai
+
+{pluginname} can be integrated with applications through two methods:
+
+[cols=2*a]
+|===
+
+|
+[.lead]
+xref:tinymceai.adoc[**Plugin Configuration**]
+
+Integrate {pluginname} features directly into the {productname} editor interface out of the box. Works with the {cloudname} CDN or self-hosted {productname}; both use the hosted AI service with JWT authentication.
+
+|
+[.lead]
+xref:tinymceai-api-overview.adoc[**AI service**]
+
+Use the AI service API to build custom integrations and workflows. Suitable for server-side processing, custom UI implementations, and advanced use cases. Start with the xref:tinymceai-api-quick-start.adoc[API Quick Start] guide.
+
+|
+[.lead]
+**On-Premises Deployment**
+
+include::partial$misc/tinymceai-on-premises-early-access-note.adoc[]
+
+a|
+|===

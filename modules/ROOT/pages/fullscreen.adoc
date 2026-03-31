@@ -23,6 +23,9 @@ tinymce.init({
 });
 ----
 
+include::partial$misc/bundling-guide-link.adoc[]
+
+
 [NOTE]
 This feature is supported only when {productname} is operating in classic mode. It is **not supported** in inline mode. For details on the differences between editing modes, refer to xref:use-tinymce-classic.adoc[Classic editing mode].
 

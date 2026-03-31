@@ -1,7 +1,13 @@
 [[link_quicklink]]
 == `+link_quicklink+`
 
-This option changes the behaviour of the `+CTRL + K+` shortcut. By default, pressing `+CTRL + K+` will open the link dialog. If `+link_quicklink+` is set to `+true+`, pressing `+CTRL + K+` will instead open the link context toolbar. If the cursor is within an existing link, this context toolbar will contain fields for modifying, removing and opening the selected link. If not, the context toolbar allows for the quick insertion of a link.
+This option changes the behaviour of the `+CTRL + K+` shortcut and the xref:link.adoc#mceLink[`+mceLink+`] command.
+
+When `+link_quicklink+` is set to `+false+`, pressing `+CTRL + K+` or executing the `+mceLink+` command will open the Link dialog.
+
+When `+link_quicklink+` is set to `+true+`, pressing `+CTRL + K+` will open the link context toolbar instead, though the Link dialog can still be opened by running `+editor.execCommand('mceLink', false, { dialog: true })+`.
+
+When a link is selected, the link context toolbar contains fields and buttons for modifying, removing and opening the selected link. When the selection doesn't contain a link, the link context toolbar contains fields and buttons for quickly inserting a link.
 
 NOTE: This context toolbar is the same as the context toolbar mentioned in the xref:link.adoc#link_context_toolbar[`+link_context_toolbar+`] documentation above.
 

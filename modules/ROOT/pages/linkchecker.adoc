@@ -32,6 +32,9 @@ tinymce.init({
 });
 ----
 
+include::partial$misc/bundling-guide-link.adoc[]
+
+
 == Self-hosted Instructions
 
 Customers using a Self-hosted environment will need to provide a URL to their deployment of the link checking service via the `+linkchecker_service_url+` parameter

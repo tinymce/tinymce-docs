@@ -17,6 +17,8 @@ liveDemo::{plugincode}[]
 
 include::partial$misc/admon-iframe-only.adoc[]
 
+include::partial$misc/bundling-guide-link.adoc[]
+
 == How it works
 
 The {pluginname} plugin keeps track of every edit made to the document by the current user and stores this metadata in an internal model of the document. These suggestions can then be reviewed in the Review Edits view, where each edit is highlighted in the document, and where users can accept, reject, or provide feedback. The Review Edits view is accessible via either the `suggestededits` toolbar button or menu button within the `View` menu.

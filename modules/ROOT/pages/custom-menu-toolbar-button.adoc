@@ -1,7 +1,7 @@
 = Creating custom Menu toolbar buttons
 :navtitle: Menu toolbar button
 :description: Creating custom Menu toolbar buttons for TinyMCE
-:keywords: toolbar, toolbarbuttons, buttons, toolbarbuttonsapi
+:keywords: toolbar, toolbarbuttons, buttons, toolbarbuttonsapi, fancymenuitem, inserttable, table picker
 
 A toolbar menu button is a toolbar button that opens a menu when clicked. This menu can also contain submenus. This is useful for grouping together actions that would otherwise be several buttons on the toolbar. It can also be used to reduce visual clutter and save UI space, as menubar menu items and some toolbar buttons could be moved into a toolbar menu button. Potentially, all menubar menu items could be moved into toolbar menu buttons, allowing for the editor to be used without a menubar at all.
 
@@ -39,7 +39,7 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 
 The following is a simple toolbar menu button example:
 
-liveDemo::custom-toolbar-menu-button[tab="js"]
+liveDemo::custom-toolbar-menu-button[]
 
 This example configures a toolbar menu button with the label `+My Button+` that opens the specified menu when clicked. The top-level menu contains two items. The first menu item inserts content when clicked and the second menu item opens a submenu containing two menu items which insert content when clicked.
 
@@ -56,10 +56,55 @@ The `+fetchContext+` is an object containing a single string property: `+pattern
 
 The following is a simple toolbar menu button example, where searching has been configured:
 
-liveDemo::custom-toolbar-menu-button-search[tab="js"]
+liveDemo::custom-toolbar-menu-button-search[]
 
 This example configures a toolbar menu button with the label `+My searchable button+` that opens the specified menu when clicked. The menu will contain a search input field because `+search+` is not `+false+`. The input field's https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input#placeholder[placeholder attribute] will be `+Type...+`.
 
 Initially, when the menu opens, the search input field will be empty, and the `+fetch+` function is called with an empty `+pattern+` for its `+fetchContext+`. In that situation, `+fetch+` passes back an array of two items to be rendered in the drop-down menu. When the user types in the input field, `+fetch+` will be called again, except this time, the `+pattern+` property in `+fetchContext+` will reflect the value typed in the input field. For illustration purposes, this example then passes back an item that contains this pattern inside the item's text. In a more real-life example, the `+pattern+` could be used to filter which of the items are passed to the callback.
+
+[[table-picker-menu-item]]
+== Adding a table picker to a custom menu
+
+The built-in table grid picker can be added to a custom menu button using a `+fancymenuitem+` with `+fancytype: 'inserttable'+`. This displays the same interactive grid that appears in the Table plugin's menu when xref:table.adoc#table_grid[`+table_grid+`] is enabled.
+
+The `+onAction+` callback receives an object with `+numRows+` and `+numColumns+` properties. Pass these values to the `+mceInsertTable+` command to insert the table.
+
+NOTE: The table picker requires the `+table+` plugin.
+
+liveDemo::custom-table-picker-menu-button[]
+
+=== Example: adding a table picker menu button
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'table',
+  toolbar: 'inserttable',
+  menubar: false,
+
+  setup: (editor) => {
+    editor.ui.registry.addMenuButton('inserttable', {
+      icon: 'table',
+      tooltip: 'Insert table',
+      fetch: (callback) => {
+        callback([
+          {
+            type: 'fancymenuitem',
+            fancytype: 'inserttable',
+            onAction: (data) => {
+              editor.execCommand('mceInsertTable', false, {
+                rows: data.numRows,
+                columns: data.numColumns,
+                options: { headerRows: 1 }
+              });
+            }
+          }
+        ]);
+      }
+    });
+  }
+});
+----
 
 include::partial$misc/onSetup.adoc[]

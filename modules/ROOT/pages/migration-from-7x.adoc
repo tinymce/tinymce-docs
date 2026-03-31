@@ -9,19 +9,6 @@
 
 This guide provides a comprehensive overview of the breaking changes introduced in {productname} {release-version}, along with the necessary steps to migrate from {productname} 7.x. It covers key updates to APIs, plugins, and service configurations, including deprecated methods, renamed components, and removed features. These changes are designed to enhance performance, simplify configuration, and align with modern web standards, ensuring a smoother transition and continued compatibility for your integrations.
 
-[NOTE]
-====
-**Migrating from older versions?**
-
-If you're migrating from {productname} 4, 5, or 6, you may find it helpful to review the legacy migration guides that target version 7, then follow this guide to complete your migration to version 8:
-
-* xref:migration-from-4x.adoc[Migrating from {productname} 4 to 7] - Covers major architectural changes and modern UI improvements
-* xref:migration-from-5x.adoc[Migrating from {productname} 5 to 7] - Includes architectural improvements and security updates  
-* xref:migration-from-6x.adoc[Migrating from {productname} 6 to 7] - Covers configuration changes and UI component updates
-
-These guides provide comprehensive coverage of changes from older versions to version 7, which can be combined with this guide for a complete migration path to version 8.
-====
-
 [IMPORTANT]
 .Breaking Changes Quick Reference
 ====

@@ -138,3 +138,82 @@ require('../tinymce/plugins/emoticons/js/emojis');
 ----
 |===
 
+[[autocorrect-plugin-resources]]
+==== Spelling Autocorrect plugin (`+autocorrect+`)
+
+The xref:autocorrect.adoc[Spelling Autocorrect plugin] requires a word list file. English is the only supported language.
+
+[cols='1,1,4']
+|===
+|Module Syntax |Source |Example
+
+.2+|ES6+
+|npm
+a|
+[source, js]
+----
+import 'tinymce-premium/plugins/autocorrect/js/en.js';
+----
+
+|`.zip`
+a|
+[source, js]
+----
+import '../plugins/autocorrect/js/en.js';
+----
+
+.2+|Common JS
+|npm
+a|
+[source, js]
+----
+require('tinymce-premium/plugins/autocorrect/js/en.js');
+----
+
+|`.zip`
+a|
+[source, js]
+----
+require('../plugins/autocorrect/js/en.js');
+----
+|===
+
+[[uploadcare-plugin-resources]]
+==== Media Optimizer plugin (`+uploadcare+`)
+
+The xref:uploadcare.adoc[Media Optimizer plugin] requires a webcomponent file for video functionality. The `+uc-video.js+` file is needed when using the video features of the plugin.
+
+[cols='1,1,4']
+|===
+|Module Syntax |Source |Example
+
+.2+|ES6+
+|npm
+a|
+[source, js]
+----
+import 'tinymce-premium/plugins/uploadcare/js/uc-video.js';
+----
+
+|`.zip`
+a|
+[source, js]
+----
+import '../plugins/uploadcare/js/uc-video.js';
+----
+
+.2+|Common JS
+|npm
+a|
+[source, js]
+----
+require('tinymce-premium/plugins/uploadcare/js/uc-video.js');
+----
+
+|`.zip`
+a|
+[source, js]
+----
+require('../plugins/uploadcare/js/uc-video.js');
+----
+|===

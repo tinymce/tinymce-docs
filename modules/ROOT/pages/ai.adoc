@@ -44,6 +44,9 @@ tinymce.init({
 });
 ----
 
+include::partial$misc/bundling-guide-link.adoc[]
+
+
 == Using a proxy server with {pluginname}
 
 NOTE: As per OpenAI’s https://help.openai.com/en/articles/5112595-best-practices-for-api-key-safety[best practices for API key safety], deployment of an API key in a client-side environment is specifically not recommended.

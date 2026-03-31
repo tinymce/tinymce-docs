@@ -19,6 +19,9 @@ tinymce.init({
 });
 ----
 
+include::partial$misc/bundling-guide-link.adoc[]
+
+
 == Options
 
 These settings affect the execution of the `+importcss+` plugin, specifically the way that these operations are handled.

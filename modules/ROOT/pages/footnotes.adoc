@@ -31,6 +31,9 @@ tinymce.init({
 });
 ----
 
+include::partial$misc/bundling-guide-link.adoc[]
+
+
 The footnotes section, which is placed at the bottom of the {productname} editor, is created when the first footnote is added.
 
 Footnotes can be inserted with

@@ -106,7 +106,7 @@ The `plugins.min.js` script loads every premium plugin the API key is entitled t
 
 [source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/api-key/tinymce/{productmajorversion}/plugins.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/plugins.min.js" referrerpolicy="origin" crossorigin="anonymous"></script>
 ----
 
 === `plugins.min.js` with Exclusions for Specific Plugins
@@ -115,7 +115,7 @@ To exclude specific premium plugins from `plugins.min.js` because you are self-h
 
 [source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/api-key/tinymce/{productmajorversion}/plugins.min.js?mentions=sdk&powerpaste=sdk" referrerpolicy="origin" crossorigin="anonymous"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/plugins.min.js?mentions=sdk&powerpaste=sdk" referrerpolicy="origin" crossorigin="anonymous"></script>
 ----
 
 [NOTE]
@@ -131,7 +131,7 @@ The `cloud-plugins.min.js` script allows loading of specific premium plugins fro
 
 [source,html,subs="attributes+"]
 ----
-<script src="https://cdn.tiny.cloud/1/api-key/tinymce/{productmajorversion}/cloud-plugins.min.js?mentions&powerpaste&advcode" referrerpolicy="origin" crossorigin="anonymous"></script>
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/{productmajorversion}/cloud-plugins.min.js?mentions&powerpaste&advcode" referrerpolicy="origin" crossorigin="anonymous"></script>
 ----
 
 [NOTE]

@@ -76,7 +76,7 @@ https://code.jquery.com/[jQuery CDN page], which includes the `integrity` and
 <script src="{cdnurl}" referrerpolicy="origin" crossorigin="anonymous"></script>
 ----
 +
-Replace `no-api-key` in the source script (`<script src=...`) with a {cloudname}
+Replace `no-api-key` in the source script (`<script src=...>`) with a {cloudname}
 API key, which is created when signing up to the link:{accountsignup}/[{cloudname}].
 
 . Add the following `<script>` element to get the {productname} jQuery integration from the JS Delivr CDN:
@@ -105,7 +105,7 @@ ifeval::["{productSource}" == "cloud"]
 <script>
   $('textarea#tiny').tinymce({
     height: 500,
-    api_key: '<your api key>',
+    api_key: 'no-api-key',
     /* other settings... */,
   });
 </script>
@@ -190,7 +190,7 @@ ifeval::["{productSource}" == "cloud"]
     <script>
       $('textarea#tiny').tinymce({
         height: 500,
-        api_key: '<your api key>',
+        api_key: 'no-api-key',
         menubar: false,
         plugins: [
           'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',

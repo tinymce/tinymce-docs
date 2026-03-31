@@ -20,6 +20,9 @@ tinymce.init({
 });
 ----
 
+include::partial$misc/bundling-guide-link.adoc[]
+
+
 == Options
 
 These options affect the execution of the `+media+` plugin, making it possible to disable parts of the media dialog made available to an end-user inserting or editing media items.

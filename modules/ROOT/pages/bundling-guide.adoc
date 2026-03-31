@@ -1,0 +1,176 @@
+= Bundling {productname} - Overview
+:navtitle: Bundling overview
+:description_short: Overview of bundling TinyMCE with module bundlers
+:description: Overview of bundling TinyMCE with module bundlers including required imports, plugins, and resources
+:keywords: bundling, webpack, vite, rollup, modules, imports, es6, commonjs
+
+This guide provides an overview of bundling {productname} with module bundlers such as Webpack, Vite, Rollup, or Browserify. For bundler-specific setup instructions, see xref:introduction-to-bundling-tinymce.adoc[Introduction to bundling {productname}].
+
+[NOTE]
+====
+When using {cloudname}, dependencies and additional resources are automatically loaded. The information below applies to self-hosted installations using NPM or ZIP packages. All examples in this guide use NPM package import paths.
+====
+
+== Module syntax support
+
+{productname} supports both ES6 modules and CommonJS modules:
+
+* **ES6 modules**: Use `+import+` statements (shown in all documentation examples)
+* **CommonJS modules**: Use `+require()+` statements
+
+Both syntaxes are supported, but this documentation uses ES6 module syntax in all examples.
+
+== Required imports
+
+include::partial$module-loading/bundling-required-components.adoc[]
+
+=== Example: Basic recommended imports
+
+[source,js]
+----
+/* Import TinyMCE */
+import tinymce from 'tinymce';
+
+/* Default icons are required */
+import 'tinymce/icons/default';
+
+/* Required TinyMCE components */
+import 'tinymce/themes/silver';
+import 'tinymce/models/dom';
+
+/* Import a skin (oxide is the default) */
+import 'tinymce/skins/ui/oxide/skin.js';
+import 'tinymce/skins/ui/oxide/content.js';
+
+/* Content CSS for editor content styling */
+import 'tinymce/skins/content/default/content.js';
+----
+
+For more information on:
+
+* Icons, see xref:bundling-icons.adoc[Bundling icons]
+* Themes, see xref:bundling-themes.adoc[Bundling themes]
+* Models, see xref:bundling-models.adoc[Bundling models]
+* Skins, see xref:bundling-skins.adoc[Bundling skins]
+* Content CSS, see xref:bundling-content-css.adoc[Bundling content CSS]
+
+== Importing plugins
+
+Most plugins can be imported directly using their plugin code. The import path depends on whether the plugin is a community or premium plugin:
+
+=== Community plugins
+
+[source,js]
+----
+import 'tinymce/plugins/<plugincode>';
+----
+
+=== Premium plugins
+
+[source,js]
+----
+import 'tinymce-premium/plugins/<plugincode>';
+----
+
+[IMPORTANT]
+====
+When using premium plugins with a commercial license, you must include the `+licensekeymanager+` plugin:
+
+[source,js]
+----
+import 'tinymce-premium/plugins/licensekeymanager';
+----
+
+For more information, see xref:bundling-plugins.adoc#using-premium-plugins[Using premium plugins].
+====
+
+For detailed information on bundling plugins, see xref:bundling-plugins.adoc[Bundling plugins].
+
+== Plugin gotchas
+
+Some plugins require additional resource files (JS, CSS, or language files) to function properly. These must be explicitly imported when bundling:
+
+=== Plugins requiring additional resources
+
+* **Emoticons**: Requires an emoji database file (`+js/emojis.js+`)
+* **Help**: Requires a keyboard navigation language file (`+js/i18n/keynav/<lang>.js+`)
+* **Autocorrect**: Requires a word list file (`+js/en.js+`)
+* **Uploadcare**: Requires a webcomponent file (`+js/uc-video.js+`)
+
+For specific import examples, see xref:bundling-plugins.adoc#plugin-resources[Additional plugin resources].
+
+=== Plugin dependencies
+
+Some plugins depend on other plugins. For example:
+
+* The `+advtable+` plugin requires the `+table+` plugin
+
+Always import dependent plugins before the plugin that requires them. For a full list of plugin dependencies, see each plugin's documentation page.
+
+== CSS files
+
+Some plugins require additional CSS files. Plugin CSS files are included automatically when importing plugins via their JS file.
+
+When using skins, you must import both:
+
+* The skin CSS file (`+skin.css+` or `+skin.js+`)
+* The content skin CSS file (`+content.css+` or `+content.js+`)
+
+[NOTE]
+====
+Importing the `+skin.js+` and `+content.js+` files is an alternative way to load skin styles besides CSS imports. For bundlers like Webpack and Browserify that require additional setup to support CSS imports, the CSS examples in xref:bundling-skins.adoc[Bundling skins] remain valid.
+====
+
+For more information, see xref:bundling-skins.adoc[Bundling skins].
+
+== Language files
+
+Language files are optional and used for localizing the {productname} UI and plugin interfaces.
+
+=== Core UI language files
+
+For community packages:
+
+[source,js]
+----
+import 'tinymce/langs/<language>.js';
+----
+
+For premium packages:
+
+[source,js]
+----
+import 'tinymce-premium/langs/<language>.js';
+----
+
+=== Plugin language files
+
+Plugin language files are separate from the main UI language files. The editor's `+language+` option must be set to the desired language for the plugin's language file to take effect.
+
+[source,js]
+----
+// Community plugin language file
+import 'tinymce/plugins/<plugincode>/langs/<language>.js';
+
+// Premium plugin language file
+import 'tinymce-premium/plugins/<plugincode>/langs/<language>.js';
+----
+
+[NOTE]
+====
+* US English is the default language, so the language packs do not include `+en.js+` language files (see xref:ui-localization.adoc#language[`+language+` option]). Note that the Help and Autocorrect plugins have their own `+en.js+` files.
+* Examples include the `.js` extension for clarity; most bundlers can resolve file extensions automatically.
+====
+
+For more information, see xref:bundling-localization.adoc[UI localizations].
+
+== Next steps
+
+* xref:introduction-to-bundling-tinymce.adoc[Introduction to bundling {productname}] - Bundler-specific guides
+* xref:bundling-themes.adoc[Bundling themes] - Theme configuration and customization
+* xref:bundling-models.adoc[Bundling models] - Model configuration
+* xref:bundling-plugins.adoc[Bundling plugins] - Detailed plugin bundling information
+* xref:bundling-skins.adoc[Bundling skins] - Skin configuration and customization
+* xref:bundling-icons.adoc[Bundling icons] - Icon pack configuration
+* xref:bundling-content-css.adoc[Content CSS] - Content styling configuration
+* xref:bundling-localization.adoc[UI localizations] - Language file configuration

@@ -493,7 +493,8 @@ function categorizeUrl(urlPath) {
   }
   
   // Premium Features - AI Features
-  if (urlPath === 'ai' || urlPath.startsWith('ai-')) {
+  if (urlPath === 'ai' || urlPath.startsWith('ai-') ||
+      urlPath === 'tinymceai' || urlPath.startsWith('tinymceai-')) {
     return { category: 'Premium Features', subcategory: 'AI Features' };
   }
   
@@ -1047,7 +1048,8 @@ export default {
     { category: 'Release Information', subcategory: null },
     { category: 'Accessibility & Security', subcategory: null },
     { category: 'Support & Resources', subcategory: null },
-    { category: 'Legacy & Other', subcategory: null }
+    { category: 'Legacy & Other', subcategory: null },
+    { category: 'Other', subcategory: null }
   ];
 
   let currentMainCategory = null;
@@ -1175,6 +1177,24 @@ function App() {
 - [Table Plugin](${BASE_URL}/table/): Table editing capabilities
 - [Image Plugin](${BASE_URL}/image/): Image handling and editing
 - [Link Plugin](${BASE_URL}/link/): Link management
+
+## TinyMCE AI (Premium)
+
+TinyMCE AI (\`tinymceai\` plugin) is the current AI writing assistant for TinyMCE. It provides chat, review, and quick actions powered by multiple LLM providers. The earlier AI Assistant (\`ai\` plugin) is legacy; new integrations should use TinyMCE AI.
+
+- [TinyMCE AI Introduction](${BASE_URL}/tinymceai-introduction/): Overview of TinyMCE AI features and capabilities
+- [Chat](${BASE_URL}/tinymceai-chat/): Conversational AI with history and persistent context
+- [Review](${BASE_URL}/tinymceai-review/): Content analysis and proofreading
+- [Actions](${BASE_URL}/tinymceai-actions/): Fast, stateless AI operations for specific tasks
+- [AI Models](${BASE_URL}/tinymceai-models/): Supported AI models and configuration
+- [Plugin Configuration](${BASE_URL}/tinymceai/): \`tinymceai\` plugin options and setup
+- [Integration Options](${BASE_URL}/tinymceai-integration-options/): Cloud and self-hosted integration paths
+- [API Overview](${BASE_URL}/tinymceai-api-overview/): TinyMCE AI API for use inside and outside the editor
+- [API Quick Start](${BASE_URL}/tinymceai-api-quick-start/): Get started with the TinyMCE AI API
+- [Streaming](${BASE_URL}/tinymceai-streaming/): Streaming responses from the AI API
+- [JWT Authentication](${BASE_URL}/tinymceai-jwt-authentication-intro/): Authentication setup for TinyMCE AI
+- [Limits](${BASE_URL}/tinymceai-limits/): Rate limits and usage constraints
+- [AI Assistant (legacy)](${BASE_URL}/ai/): Earlier \`ai\` plugin — use TinyMCE AI for new projects
 
 ## API Reference
 

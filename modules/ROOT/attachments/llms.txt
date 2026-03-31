@@ -89,6 +89,24 @@ function App() {
 - [Image Plugin](https://www.tiny.cloud/docs/tinymce/latest/image/): Image handling and editing
 - [Link Plugin](https://www.tiny.cloud/docs/tinymce/latest/link/): Link management
 
+## TinyMCE AI (Premium)
+
+TinyMCE AI (`tinymceai` plugin) is the current AI writing assistant for TinyMCE. It provides chat, review, and quick actions powered by multiple LLM providers. The earlier AI Assistant (`ai` plugin) is legacy; new integrations should use TinyMCE AI.
+
+- [TinyMCE AI Introduction](https://www.tiny.cloud/docs/tinymce/latest/tinymceai-introduction/): Overview of TinyMCE AI features and capabilities
+- [Chat](https://www.tiny.cloud/docs/tinymce/latest/tinymceai-chat/): Conversational AI with history and persistent context
+- [Review](https://www.tiny.cloud/docs/tinymce/latest/tinymceai-review/): Content analysis and proofreading
+- [Actions](https://www.tiny.cloud/docs/tinymce/latest/tinymceai-actions/): Fast, stateless AI operations for specific tasks
+- [AI Models](https://www.tiny.cloud/docs/tinymce/latest/tinymceai-models/): Supported AI models and configuration
+- [Plugin Configuration](https://www.tiny.cloud/docs/tinymce/latest/tinymceai/): `tinymceai` plugin options and setup
+- [Integration Options](https://www.tiny.cloud/docs/tinymce/latest/tinymceai-integration-options/): Cloud and self-hosted integration paths
+- [API Overview](https://www.tiny.cloud/docs/tinymce/latest/tinymceai-api-overview/): TinyMCE AI API for use inside and outside the editor
+- [API Quick Start](https://www.tiny.cloud/docs/tinymce/latest/tinymceai-api-quick-start/): Get started with the TinyMCE AI API
+- [Streaming](https://www.tiny.cloud/docs/tinymce/latest/tinymceai-streaming/): Streaming responses from the AI API
+- [JWT Authentication](https://www.tiny.cloud/docs/tinymce/latest/tinymceai-jwt-authentication-intro/): Authentication setup for TinyMCE AI
+- [Limits](https://www.tiny.cloud/docs/tinymce/latest/tinymceai-limits/): Rate limits and usage constraints
+- [AI Assistant (legacy)](https://www.tiny.cloud/docs/tinymce/latest/ai/): Earlier `ai` plugin — use TinyMCE AI for new projects
+
 ## API Reference
 
 - [Editor API](https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.editor/): Core editor API
@@ -101,5 +119,5 @@ function App() {
 
 ## Complete Documentation
 
-For a complete list of all 395 documentation pages, see [llms-full.txt](https://www.tiny.cloud/docs/llms-full.txt).
+For a complete list of all 411 documentation pages, see [llms-full.txt](https://www.tiny.cloud/docs/llms-full.txt).
 

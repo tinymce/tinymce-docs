@@ -5,7 +5,9 @@ This option enables you to specify non-HTML elements for the editor.
 
 This way you can handle non-HTML elements inside an HTML editor. You can prefix the element names with a `+~+` if you want the element to behave as a `+span+` element and not a `+div+` element.
 
-*Type:* `+String+`
+*Type:* `+String+` or `+Object+`
+
+=== Simple string format
 
 [source,js]
 ----
@@ -16,12 +18,29 @@ tinymce.init({
 });
 ----
 
-* **Custom Element Structure:** The custom_elements option and the `addCustomElements` API supports more complex structures. This structure is defined by a record where the key represents the name of the element, and the value corresponds to a detailed specification.
-* **Attributes and Inheritance:** Elements inherit attributes and children from other specified elements using the `+extends: "div"+` property in the `custom_elements` spec.
-* **Attribute and Children Specifications:** The `custom_elements` spec includes properties such as `attributes` which lists attribute names, or `children` which lists valid child element names. The `children` property includes presets like `@global`, `@blocks`, `@phrasing`, and `@flow`.
-* **Web Components Support:** Custom elements can specify a `+componentsUrl+` property to load web component scripts into the editor.
+=== Record format
 
-HTML Element Sets: The exact element sets for each preset, depending on the schema set (html4, html5, or html5-strict), can be found in the below tables.
+The `custom_elements` option and the `addCustomElements` API support a record structure. The key is the element name, and the value is a specification object with the following properties:
+
+`+extends+` (string)::
+  The element name from which the new element inherits its default properties. Using `extends` also adds the new element as a valid child wherever the extended element is valid. For example, `extends: "div"` makes the custom element block-level and allows it wherever `div` is allowed.
+
+`+attributes+` (array of strings)::
+  List of attribute names or the preset `@global`. Each string is either an attribute name or the preset `@global`, which expands to the schema's global attributes (see <<attribute-preset-global>>). For example: `["@global", "data-type", "data-id"]`.
+
+`+children+` (array of strings)::
+  List of valid child element names or presets. Each string is either an element name or one of the presets `@blocks`, `@phrasing`, or `@flow`. See <<html4>>, <<html5>>, and <<html5-strict>> for the exact element sets per schema.
+
+`+padEmpty+` (boolean)::
+  Defaults to `false`. When `true`, the element is padded with content (for example, a non-breaking space) when saved so that it always has some content. Use for elements that must not be empty.
+
+`+componentUrl+` (string)::
+  URL of the web component script to load into the editor. Use when the custom element is a web component that requires its script to render.
+
+[[attribute-preset-global]]
+=== Attribute preset: `@global`
+
+The `@global` preset in the `attributes` array expands to the schema's global attributes. The exact set depends on the schema type:
 
 [[html4]]
 === HTML Element Sets: `html4`
@@ -32,6 +51,7 @@ HTML Element Sets: The exact element sets for each preset, depending on the sche
 | @blocks | address, blockquote, div, dl, fieldset, form, h1, h2, h3, h4, h5, h6, hr, menu, ol, p, pre, table, ul, center, dir, isindex, noframes
 | @phrasing | a, abbr, b, bdo, br, button, cite, code, del, dfn, em, embed, i, iframe, img, input, ins, kbd, label, map, noscript, object, q, s, samp, script, select, small, span, strong, sub, sup, textarea, u, var, #text, #comment, acronym, applet, basefont, big, font, strike, tt
 | @flow | Same as @blocks + @phrasing
+| @global (attributes) | id, accesskey, class, dir, lang, style, tabindex, title, role, xml:lang
 |===
 
 [[html5]]
@@ -43,6 +63,7 @@ HTML Element Sets: The exact element sets for each preset, depending on the sche
 | @blocks | address, blockquote, div, dl, fieldset, form, h1, h2, h3, h4, h5, h6, hr, menu, ol, p, pre, table, ul, article, aside, details, dialog, figure, main, header, footer, hgroup, section, nav, a, ins, del, canvas, map, center, dir, isindex, noframes
 | @phrasing | a, abbr, b, bdo, br, button, cite, code, del, dfn, em, embed, i, iframe, img, input, ins, kbd, label, map, noscript, object, q, s, samp, script, select, small, span, strong, sub, sup, textarea, u, var, #text, #comment, audio, canvas, command, data, datalist, mark, meter, output, picture, progress, time, wbr, video, ruby, bdi, keygen, svg, acronym, applet, basefont, big, font, strike, tt
 | @flow | Same as @blocks + @phrasing
+| @global (attributes) | id, accesskey, class, dir, lang, style, tabindex, title, role, contenteditable, contextmenu, draggable, dropzone, hidden, spellcheck, translate, itemprop, itemscope, itemtype, xml:lang
 |===
 
 [[html5-strict]]
@@ -54,9 +75,10 @@ HTML Element Sets: The exact element sets for each preset, depending on the sche
 | @blocks | address, blockquote, div, dl, fieldset, form, h1, h2, h3, h4, h5, h6, hr, menu, ol, p, pre, table, ul, article, aside, details, dialog, figure, main, header, footer, hgroup, section, nav, a, ins, del, canvas, map
 | @phrasing | a, abbr, b, bdo, br, button, cite, code, del, dfn, em, embed, i, iframe, img, input, ins, kbd, label, map, noscript, object, q, s, samp, script, select, small, span, strong, sub, sup, textarea, u, var, #text, #comment, audio, canvas, command, data, datalist, mark, meter, output, picture, progress, time, wbr, video, ruby, bdi, keygen, svg
 | @flow | Same as @blocks + @phrasing
+| @global (attributes) | id, accesskey, class, dir, lang, style, tabindex, title, role, contenteditable, contextmenu, draggable, dropzone, hidden, spellcheck, translate, itemprop, itemscope, itemtype
 |===
 
-=== Example using `+custom_elements+` with presets such as `@blocks`, `@phrasing`, and `@flow`.
+=== Example using `+custom_elements+` with presets such as `@blocks`, `@phrasing`, and `@flow`
 
 [source, js]
 ----
@@ -99,26 +121,32 @@ tinymce.init({
 });
 ----
 
-=== Example using `+custom_elements+` with block-level and inline-level components.
+[[example-using-custom_elements-with-block-level-and-inline-level-components]]
+=== Example using `+custom_elements+` with `padEmpty` and `componentUrl`
 
 [source, js]
 ----
 tinymce.init({
   selector: "textarea",
   custom_elements: {
-    // Block-level custom element (behaves like a div)
+    // Custom element that is padded when empty
+    "my-empty-padded": {
+      extends: "div",
+      padEmpty: true,
+    },
+    // Block-level custom element (behaves like a div) with web component
     "my-custom-block": {
       extends: "div",
       attributes: ["@global", "data-type", "data-id"],
       children: ["@flow"],
-      componentsUrl: "/path/to/block-component.js"
+      componentUrl: "/path/to/block-component.js"
     },
-    // Inline-level custom element (behaves like a span)
+    // Inline-level custom element (behaves like a span) with web component
     "my-custom-inline": {
       extends: "span",
       attributes: ["@global", "data-value"],
       children: ["@phrasing"],
-      componentsUrl: "/path/to/inline-component.js"
+      componentUrl: "/path/to/inline-component.js"
     }
   }
 });

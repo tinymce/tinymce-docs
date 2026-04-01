@@ -219,7 +219,7 @@ export default {
 
 ## Complete Documentation Index
 
-This section provides a complete list of all 395 documentation pages available in TinyMCE 8, organized by category. This comprehensive index ensures LLMs have access to every documentation page, reducing the risk of hallucinations or missing important details.
+This section provides a complete list of all 411 documentation pages available in TinyMCE 8, organized by category. This comprehensive index ensures LLMs have access to every documentation page, reducing the risk of hallucinations or missing important details.
 
 ### Getting Started & Installation
 
@@ -433,6 +433,21 @@ This section provides a complete list of all 395 documentation pages available i
 - **Azure AI integration guide**: https://www.tiny.cloud/docs/tinymce/latest/ai-azure/
 - **Google Gemini integration guide**: https://www.tiny.cloud/docs/tinymce/latest/ai-gemini/
 - **OpenAI ChatGPT integration guide**: https://www.tiny.cloud/docs/tinymce/latest/ai-openai/
+- **TinyMCE AI API Overview**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-api-overview/
+- **TinyMCE AI API Quick Start**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-api-quick-start/
+- **TinyMCE AI Chat**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-chat/
+- **TinyMCE AI Integration Options**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-integration-options/
+- **TinyMCE AI Introduction**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-introduction/
+- **TinyMCE AI JWT Authentication**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-jwt-authentication-intro/
+- **TinyMCE AI JWT Permissions**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-permissions/
+- **TinyMCE AI Limits**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-limits/
+- **TinyMCE AI Models**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-models/
+- **TinyMCE AI Plugin**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai/
+- **TinyMCE AI Quick Actions**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-actions/
+- **TinyMCE AI Review**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-review/
+- **TinyMCE AI Streaming**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-streaming/
+- **TinyMCE AI with JWT authentication (Node.js) Guide**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-with-jwt-authentication-nodejs/
+- **TinyMCE AI with JWT authentication (PHP) Guide**: https://www.tiny.cloud/docs/tinymce/latest/tinymceai-with-jwt-authentication-php/
 
 #### Comments & Collaboration
 - **Commands, Events and APIs for the Comments plugin**: https://www.tiny.cloud/docs/tinymce/latest/comments-commands-events-apis/
@@ -450,14 +465,17 @@ This section provides a complete list of all 395 documentation pages available i
 #### Export & Import
 - **Docx to HTML Converter API**: https://www.tiny.cloud/docs/tinymce/latest/docx-to-html-converter-api/
 - **Export to PDF plugin**: https://www.tiny.cloud/docs/tinymce/latest/exportpdf/
-- **Export to PDF with JWT authentication (Node.js) Guide**: https://www.tiny.cloud/docs/tinymce/latest/export-to-pdf-with-jwt-authentication-nodejs/
-- **Export to PDF with JWT authentication (PHP) Guide**: https://www.tiny.cloud/docs/tinymce/latest/export-to-pdf-with-jwt-authentication-php/
+- **Export to PDF with JWT authentication (Node.js) Guide (nodejs)**: https://www.tiny.cloud/docs/tinymce/latest/export-to-pdf-v2-with-jwt-authentication-nodejs/
+- **Export to PDF with JWT authentication (Node.js) Guide (nodejs)**: https://www.tiny.cloud/docs/tinymce/latest/export-to-pdf-with-jwt-authentication-nodejs/
+- **Export to PDF with JWT authentication (PHP) Guide (php)**: https://www.tiny.cloud/docs/tinymce/latest/export-to-pdf-v2-with-jwt-authentication-php/
+- **Export to PDF with JWT authentication (PHP) Guide (php)**: https://www.tiny.cloud/docs/tinymce/latest/export-to-pdf-with-jwt-authentication-php/
 - **Export to Word plugin**: https://www.tiny.cloud/docs/tinymce/latest/exportword/
 - **Export to Word Standalone Service**: https://www.tiny.cloud/docs/tinymce/latest/export-to-word-standalone-service/
 - **Export to Word with JWT authentication (Node.js) Guide**: https://www.tiny.cloud/docs/tinymce/latest/export-to-word-with-jwt-authentication-nodejs/
 - **Export to Word with JWT authentication (PHP) Guide**: https://www.tiny.cloud/docs/tinymce/latest/export-to-word-with-jwt-authentication-php/
 - **HTML to Docx Converter API**: https://www.tiny.cloud/docs/tinymce/latest/html-to-docx-converter-api/
-- **HTML to PDF Converter API**: https://www.tiny.cloud/docs/tinymce/latest/html-to-pdf-converter-api/
+- **HTML to PDF Converter API (api)**: https://www.tiny.cloud/docs/tinymce/latest/html-to-pdf-converter-api/
+- **HTML to PDF Converter API (v2)**: https://www.tiny.cloud/docs/tinymce/latest/html-to-pdf-converter-api-v2/
 - **Import from Word Standalone Service**: https://www.tiny.cloud/docs/tinymce/latest/import-from-word-standalone-service/
 - **Import from Word with JWT authentication (Node.js) Guide**: https://www.tiny.cloud/docs/tinymce/latest/import-from-word-with-jwt-authentication-nodejs/
 - **Import from Word with JWT authentication (PHP) Guide**: https://www.tiny.cloud/docs/tinymce/latest/import-from-word-with-jwt-authentication-php/
@@ -543,6 +561,7 @@ This section provides a complete list of all 395 documentation pages available i
 - **Bundling an NPM version of TinyMCE with CommonJS and Browserify**: https://www.tiny.cloud/docs/tinymce/latest/browserify-cjs-npm/
 - **Bundling an NPM version of TinyMCE with ES6 and Rollup.js**: https://www.tiny.cloud/docs/tinymce/latest/rollup-es6-npm/
 - **Bundling the User Interface localizations for TinyMCE**: https://www.tiny.cloud/docs/tinymce/latest/bundling-localization/
+- **Bundling TinyMCE - Overview**: https://www.tiny.cloud/docs/tinymce/latest/bundling-guide/
 - **Bundling TinyMCE content CSS using module loading**: https://www.tiny.cloud/docs/tinymce/latest/bundling-content-css/
 - **Bundling TinyMCE from NPM using Webpack and CommonJS**: https://www.tiny.cloud/docs/tinymce/latest/webpack-cjs-npm/
 - **Bundling TinyMCE from NPM with ES6 and Vite**: https://www.tiny.cloud/docs/tinymce/latest/vite-es6-npm/
@@ -624,11 +643,8 @@ This section provides a complete list of all 395 documentation pages available i
 ### Migration Guides
 
 - **Migrating from Froala to TinyMCE**: https://www.tiny.cloud/docs/tinymce/latest/migration-from-froala/
-- **Migrating from TinyMCE 4 to TinyMCE 7.0**: https://www.tiny.cloud/docs/tinymce/latest/migration-from-4x/
 - **Migrating from TinyMCE 4 to TinyMCE 8**: https://www.tiny.cloud/docs/tinymce/latest/migration-from-4x-to-8x/
-- **Migrating from TinyMCE 5 to TinyMCE 7.0**: https://www.tiny.cloud/docs/tinymce/latest/migration-from-5x/
 - **Migrating from TinyMCE 5 to TinyMCE 8**: https://www.tiny.cloud/docs/tinymce/latest/migration-from-5x-to-8x/
-- **Migrating from TinyMCE 6 to TinyMCE 7.0**: https://www.tiny.cloud/docs/tinymce/latest/migration-from-6x/
 - **Migrating from TinyMCE 6 to TinyMCE 8**: https://www.tiny.cloud/docs/tinymce/latest/migration-from-6x-to-8x/
 - **Migrating from TinyMCE 7 to TinyMCE 8**: https://www.tiny.cloud/docs/tinymce/latest/migration-from-7x/
 - **TinyMCE Migration Guides**: https://www.tiny.cloud/docs/tinymce/latest/migration-guides/
@@ -673,6 +689,7 @@ This section provides a complete list of all 395 documentation pages available i
 - **TinyMCE 8.3.0**: https://www.tiny.cloud/docs/tinymce/latest/8.3.0-release-notes/
 - **TinyMCE 8.3.1**: https://www.tiny.cloud/docs/tinymce/latest/8.3.1-release-notes/
 - **TinyMCE 8.3.2**: https://www.tiny.cloud/docs/tinymce/latest/8.3.2-release-notes/
+- **TinyMCE 8.4.0**: https://www.tiny.cloud/docs/tinymce/latest/8.4.0-release-notes/
 
 
 ### Accessibility & Security
@@ -689,11 +706,25 @@ This section provides a complete list of all 395 documentation pages available i
 
 - **Premium upgrade promotion**: https://www.tiny.cloud/docs/tinymce/latest/promotions/
 - **Support**: https://www.tiny.cloud/docs/tinymce/latest/support/
-- **Tiny Docs Ai**: https://www.tiny.cloud/docs/tinymce/latest/tiny-docs-ai/
 
 
 ### Legacy & Other
 
 - **Interactive integration example**: https://www.tiny.cloud/docs/tinymce/latest/ie-template-creation/
 - **MoxieManager plugin**: https://www.tiny.cloud/docs/tinymce/latest/moxiemanager/
+
+
+### Other
+
+- **Adding or changing the editor content CSS**: https://www.tiny.cloud/docs/tinymce/latest/add-css-options/
+- **Autocompleter**: https://www.tiny.cloud/docs/tinymce/latest/autocompleter/
+- **Changing user formatting controls**: https://www.tiny.cloud/docs/tinymce/latest/user-formatting-options/
+- **Copy & paste options**: https://www.tiny.cloud/docs/tinymce/latest/copy-and-paste/
+- **Creating custom URL dialogs**: https://www.tiny.cloud/docs/tinymce/latest/urldialog/
+- **Custom sidebar**: https://www.tiny.cloud/docs/tinymce/latest/customsidebar/
+- **Inline CSS plugin**: https://www.tiny.cloud/docs/tinymce/latest/inline-css/
+- **Localization options**: https://www.tiny.cloud/docs/tinymce/latest/ui-localization/
+- **Non-editable content**: https://www.tiny.cloud/docs/tinymce/latest/non-editable-content-options/
+- **TinyMCE 8 Documentation**: https://www.tiny.cloud/docs/tinymce/latest/
+- **User Lookup API**: https://www.tiny.cloud/docs/tinymce/latest/userlookup/
 

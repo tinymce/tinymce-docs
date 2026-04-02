@@ -1,5 +1,5 @@
-const fetchApi = import('https://cdn.skypack.dev/@microsoft/fetch-event-source@2.0.1')
-  .then((module) => module.fetchEventSource);
+const apiKey = '{{tinymceai_demo_api_key}}';
+const isLoggedIn = fetch(`https://demo.api.tiny.cloud/1/${apiKey}/auth/random`, { method: "POST", credentials: "include" });
 
 const API_URL = 'https://demouserdirectory.tiny.cloud/v1/users';
 
@@ -250,136 +250,6 @@ const tinycomments_fetch = (conversationUids, done) => {
   setTimeout(() => done({ conversations: fetchedConversations }), fakeDelay);
 };
 
-const ai_request = (request, respondWith) => {
-  respondWith.stream((signal, streamMessage) => {
-    // Adds each previous query and response as individual messages
-    const conversation = request.thread.flatMap((event) => {
-      if (event.response) {
-        return [
-          { role: "user", content: event.request.query },
-          { role: "assistant", content: event.response.data },
-        ];
-      } else {
-        return [];
-      }
-    });
-
-    // System messages provided by the plugin to format the output as HTML content.
-    const systemMessages = request.system.map((content) => ({
-      role: "system",
-      content,
-    }));
-
-    // Forms the new query sent to the API
-    const content =
-      request.context.length === 0 || conversation.length > 0
-        ? request.query
-        : `Question: ${request.query} Context: """${request.context}"""`;
-
-    const messages = [
-      ...conversation,
-      ...systemMessages,
-      { role: "user", content },
-    ];
-
-    let hasHead = false;
-    let markdownHead = "";
-
-    const hasMarkdown = (message) => {
-      if (message.includes("`") && markdownHead !== "```") {
-        const numBackticks = message.split("`").length - 1;
-        markdownHead += "`".repeat(numBackticks);
-        if (hasHead && markdownHead === "```") {
-          markdownHead = "";
-          hasHead = false;
-        }
-        return true;
-      } else if (message.includes("html") && markdownHead === "```") {
-        markdownHead = "";
-        hasHead = true;
-        return true;
-      }
-      return false;
-    };
-
-    const requestBody = {
-      model: "gpt-4o",
-      temperature: 0.7,
-      max_tokens: 4000,
-      messages,
-      stream: true,
-    };
-
-    const openAiOptions = {
-      signal,
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer {{ openai_proxy_token }}`,
-      },
-      body: JSON.stringify(requestBody),
-    };
-
-    const onopen = async (response) => {
-      if (response) {
-        const contentType = response.headers.get("content-type");
-        if (response.ok && contentType?.includes("text/event-stream")) {
-          return;
-        } else if (contentType?.includes("application/json")) {
-          const data = await response.json();
-          if (data.error) {
-            throw new Error(`${data.error.type}: ${data.error.message}`);
-          }
-        }
-      } else {
-        throw new Error("Failed to communicate with the ChatGPT API");
-      }
-    };
-
-    // This function passes each new message into the plugin via the `streamMessage` callback.
-    const onmessage = (ev) => {
-      const data = ev.data;
-      if (data !== "[DONE]") {
-        const parsedData = JSON.parse(data);
-        const firstChoice = parsedData?.choices[0];
-        const message = firstChoice?.delta?.content;
-        if (message && message !== "") {
-          if (!hasMarkdown(message)) {
-            streamMessage(message);
-          }
-        }
-      }
-    };
-
-    const onerror = (error) => {
-      // Stop operation and do not retry by the fetch-event-source
-      throw error;
-    };
-
-    // Use microsoft's fetch-event-source library to work around the 2000 character limit
-    // of the browser `EventSource` API, which requires query strings
-    return fetchApi
-      .then((fetchEventSource) =>
-        fetchEventSource("{{ openai_proxy_url }}", {
-          ...openAiOptions,
-          openWhenHidden: true,
-          onopen,
-          onmessage,
-          onerror,
-        })
-      )
-      .then(async (response) => {
-        if (response && !response.ok) {
-          const data = await response.json();
-          if (data.error) {
-            throw new Error(`${data.error.type}: ${data.error.message}`);
-          }
-        }
-      })
-      .catch(onerror);
-  });
-};
-
 const revisions = [
   {
     revisionId: '3',
@@ -522,7 +392,7 @@ const revisionhistory_fetch_revision = (_editor, revision) => new Promise((resol
 tinymce.init({
   selector: 'textarea#full-featured',
   plugins: [
-    'ai', 'suggestededits', 'preview', 'powerpaste', 'casechange', 'importcss', 'searchreplace',
+    'tinymceai', 'suggestededits', 'preview', 'powerpaste', 'casechange', 'importcss', 'searchreplace',
     'autolink', 'autosave', 'save', 'directionality', 'advcode', 'visualblocks', 'visualchars', 'fullscreen',
     'link', 'math', 'media', 'mediaembed', 'codesample', 'table', 'charmap', 'pagebreak', 'nonbreaking',
     'anchor', 'tableofcontents', 'insertdatetime', 'advlist', 'lists', 'checklist', 'wordcount', 'tinymcespellchecker',
@@ -538,9 +408,9 @@ tinymce.init({
   },
   menubar: 'file edit view insert format tools table tc help',
   // Note: if a toolbar item requires a plugin, the item will not present in the toolbar if the plugin is not also loaded.
-  toolbar: "undo redo | importword exportword exportpdf | suggestededits | revisionhistory | aidialog aishortcuts | blocks fontsizeinput | bold italic | align numlist bullist | link uploadcare uploadcare-video | table math media pageembed | lineheight  outdent indent | strikethrough forecolor backcolor formatpainter removeformat | charmap emoticons checklist | code fullscreen preview | save print | pagebreak anchor codesample footnotes mergetags | addtemplate inserttemplate | addcomment showcomments | ltr rtl casechange | spellcheckdialog a11ycheck", 
+  toolbar: "undo redo | importword exportword exportpdf | suggestededits | revisionhistory | tinymceai-chat tinymceai-review ai-quickactions-translate | blocks fontsizeinput | bold italic | align numlist bullist | link uploadcare uploadcare-video | table math media pageembed | lineheight  outdent indent | strikethrough forecolor backcolor formatpainter removeformat | charmap emoticons checklist | code fullscreen preview | save print | pagebreak anchor codesample footnotes mergetags | addtemplate inserttemplate | addcomment showcomments | ltr rtl casechange | spellcheckdialog a11ycheck", 
   mobile: {
-    plugins: 'ai suggestededits preview powerpaste casechange importcss searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen link math media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker help formatpainter pageembed charmap mentions quickbars emoticons advtable footnotes mergetags autocorrect typography advtemplate uploadcare'
+    plugins: 'tinymceai suggestededits preview powerpaste casechange importcss searchreplace autolink autosave save directionality advcode visualblocks visualchars fullscreen link math media mediaembed codesample table charmap pagebreak nonbreaking anchor tableofcontents insertdatetime advlist lists checklist wordcount tinymcespellchecker a11ychecker help formatpainter pageembed charmap mentions quickbars emoticons advtable footnotes mergetags autocorrect typography advtemplate uploadcare'
   },
  
   autosave_ask_before_unload: true,
@@ -613,7 +483,7 @@ tinymce.init({
   ],
   importcss_append: true,
   height: 600,
-  quickbars_selection_toolbar: 'bold italic | quicklink h2 h3 blockquote quicktable | addcomment showcomments',
+  quickbars_selection_toolbar: 'tinymceai-quickactions ai-quickactions-translate | addcomment',
   noneditable_class: 'mceNonEditable',
   toolbar_mode: 'sliding',
   spellchecker_ignore_list: ['Ephox', 'Moxiecode', 'tinymce', 'TinyMCE'],
@@ -621,11 +491,54 @@ tinymce.init({
   'body { font-family:Helvetica,Arial,sans-serif; font-size:16px }',
   contextmenu: 'link uploadcare uploadcare-video table spellchecker configurepermanentpen',
   
-  ai_request,
+  tinymceai_token_provider: async () => {
+    return isLoggedIn.then(() =>
+      fetch(`https://demo.api.tiny.cloud/1/${apiKey}/jwt/tinymceai`, { credentials: "include" })
+        .then(resp => resp.text())
+        .then(token => ({ token }))
+    );
+  },
+  tinymceai_chat_fetch_sources: () => Promise.resolve([{
+    label: 'TinyMCE resources',
+    sources: [
+      { id: 'docs', label: 'TinyMCE Documentation', type: 'web-resource' },
+      { id: 'blog', label: 'Tiny Blog', type: 'web-resource' },
+      { id: 'survey-2023', label: 'State of rich text editing 2023', type: 'web-resource' },
+    ]
+  }]),
+  tinymceai_chat_fetch_source: (id) => {
+    const urls = {
+      'docs': 'https://www.tiny.cloud/docs/tinymce/latest/',
+      'blog': 'https://www.tiny.cloud/blog/',
+      'survey-2023': 'https://www.tiny.cloud/developer-survey-results-2023/',
+    };
+    return Promise.resolve({ type: 'web-resource', url: urls[id] });
+  },
+  tinymceai_quickactions_custom: [
+    {
+      type: 'chat',
+      title: 'Challenge',
+      prompt: 'Challenge statements, verify facts and identify assumptions'
+    }
+  ],
+  tinymceai_languages: [
+    { title: 'English', language: 'english' },
+    { title: 'Chinese (Simplified)', language: 'chinese' },
+    { title: 'Spanish', language: 'spanish' },
+    { title: 'German', language: 'german' },
+    { title: 'Japanese', language: 'japanese' },
+    { title: 'Portuguese', language: 'portuguese' },
+    { title: 'Swedish', language: 'swedish' },
+    { title: 'Korean', language: 'korean' },
+    { title: 'Hindi (Devanagari)', language: 'hindi devanagari' },
+    { title: 'Italian', language: 'italian' },
+    { title: 'Klingon', language: 'klingon' },
+    { title: 'Dothraki', language: 'dothraki' },
+  ],
   
   tinycomments_mode: 'callback',
   tinycomments_mentions_enabled: true,
-  sidebar_show: 'showcomments',
+  sidebar_show: 'tinymceai-chat',
   tinycomments_create,
   tinycomments_reply,
   tinycomments_delete,

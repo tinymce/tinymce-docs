@@ -495,7 +495,7 @@ tinymce.init({
   ],
   importcss_append: true,
   height: 600,
-  quickbars_selection_toolbar: 'tinymceai-quickactions ai-quickactions-translate | addcomment',
+  quickbars_selection_toolbar: 'tinymceai-quickactions ai-quickactions-translate | bold italic | quicklink h2 h3 blockquote quicktable | addcomment',
   noneditable_class: 'mceNonEditable',
   toolbar_mode: 'sliding',
   spellchecker_ignore_list: ['Ephox', 'Moxiecode', 'tinymce', 'TinyMCE'],

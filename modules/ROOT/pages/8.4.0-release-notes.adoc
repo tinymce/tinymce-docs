@@ -356,7 +356,12 @@ In {productname} {release-version}, an issue was identified where certain deleti
 
 {productname} {release-version} addresses this by updating the key handler registration to occur during the `init` phase, and additional checks now ensure that previously prevented events are respected.
 
+=== Deleting a selection in an `li` didn't trigger `beforeinput`.
+// #TINY-12793
 
+Previously, deleting a selection inside a list item or pressing Backspace at the start of a list item did not fire the native `beforeinput` event. The editor's list key handler prevented the `keydown` event before performing the deletion, which also suppressed the `beforeinput` event. This affected integrations and plugins that relied on `beforeinput` to intercept or customize deletion behavior in lists.
+
+In {productname} {release-version}, the editor now dispatches a synthetic `beforeinput` event before performing delete operations inside list items. Handlers can call `preventDefault()` on this event to intercept the deletion as expected.
 
 [[security-fixes]]
 == Security fixes

@@ -2,7 +2,7 @@
 :release-version: 8.4.0
 :navtitle: {productname} {release-version}
 :description: Release notes for {productname} {release-version}
-:keywords: releasenotes, new, changes, bugfixes, new features, improvements, changes, removals, deprecated, known issues
+:keywords: releasenotes, new, changes, bugfixes, new features, improvements, changes, removals, deprecated
 :page-toclevels: 1
 
 include::partial$misc/admon-releasenotes-for-stable.adoc[]
@@ -21,7 +21,6 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:changes[Changes]
 * xref:bug-fixes[Bug fixes]
 * xref:security-fixes[Security fixes]
-* xref:known-issues[Known issues]
 
 
 [[new-premium-plugin]]
@@ -385,16 +384,3 @@ A link:https://owasp.org/www-community/attacks/xss/[cross-site scripting] (XSS) 
 GHSA: link:https://github.com/advisories/GHSA-v2wj-7wpq-c8vv[GitHub Advisory]
 
 CVE: link:https://nvd.nist.gov/vuln/detail/CVE-2026-0540[CVE-2026-0540]
-
-
-[[known-issues]]
-== Known issues
-
-This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
-
-The following known issues affect {productname} {release-version}.
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.

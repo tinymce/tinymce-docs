@@ -88,7 +88,12 @@ require('<path_to_tinymce_premium_zip>/plugins/<plugincode>');
 [[using-premium-plugins]]
 == Using premium plugins
 
-After installing the `+tinymce-premium+` package, you need to configure the plugins in your editor. There are two main approaches:
+After installing the `+tinymce-premium+` package, configure the plugins in the editor using one of two fully supported approaches. Both options are production-ready and will continue to be supported in future releases:
+
+* **<<bundling-recommended,Bundling>>** -- includes plugin code directly in the application bundle using a module bundler
+* **<<using-external-plugins,Loading with `+external_plugins+`>>** -- loads plugins at runtime from a specified URL, enabling lazy-loading and CDN hosting
+
+The right choice depends on the application architecture and deployment requirements.
 
 [IMPORTANT]
 ====
@@ -112,9 +117,9 @@ external_plugins: {
 ====
 
 [[bundling-recommended]]
-=== Bundling (Recommended)
+=== Bundling
 
-For most modern applications, bundling premium plugins is recommended. This includes the plugin code directly in your application bundle.
+Bundling includes the plugin code directly in the application bundle. This approach works well for applications that already use a module bundler such as Webpack, Vite, or Rollup.
 
 . Import the premium plugins you need:
 +
@@ -141,9 +146,9 @@ tinymce.init({
 For complete bundling examples, see the <<premium-plugins,Premium plugins>> and <<community-plugins,Community plugins>> sections below.
 
 [[using-external-plugins]]
-=== Using external_plugins (Non-bundling)
+=== Loading with external_plugins
 
-When bundling is not available or you want to lazy-load plugins, use the `+external_plugins+` option:
+The `+external_plugins+` option loads plugins at runtime from a specified URL. This approach uses lazy loading, serving {productname} assets from a CDN or separate host, and avoids adding editor code to the application bundle. {cloudname} uses this approach to load the editor.
 
 [source,js]
 ----

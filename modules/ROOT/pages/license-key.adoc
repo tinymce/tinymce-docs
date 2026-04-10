@@ -74,7 +74,7 @@ tinymce.init({
 ====
 * The `+licensekeymanager+` plugin is included in the `+tinymce-premium+` package.
 * The `+tinymce-premium+` package version must match the `+tinymce+` package version (e.g., both at 8.3.0).
-* The `+external_plugins+` option allows loading the license key manager from any location, useful when bundling is not available or when lazy-loading plugins. For more information, see: xref:editor-important-options.adoc#external_plugins[`+external_plugins+` configuration option].
+* The `+external_plugins+` option allows loading the license key manager from any location, such as a CDN or separate host. For more information, see: xref:editor-important-options.adoc#external_plugins[`+external_plugins+` configuration option].
 ====
 
 == License Types and Deployment Options

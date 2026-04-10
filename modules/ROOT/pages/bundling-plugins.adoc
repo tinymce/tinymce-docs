@@ -148,7 +148,7 @@ For complete bundling examples, see the <<premium-plugins,Premium plugins>> and 
 [[using-external-plugins]]
 === Loading with external_plugins
 
-The `+external_plugins+` option loads plugins at runtime from a specified URL. This approach enables lazy-loading, allows serving {productname} assets from a CDN or separate host, and avoids adding editor code to the application bundle. {cloudname} uses this same mechanism to load the editor.
+The `+external_plugins+` option loads plugins at runtime from a specified URL. This approach uses lazy loading, serving {productname} assets from a CDN or separate host, and avoids adding editor code to the application bundle. {cloudname} uses this approach to load the editor.
 
 [source,js]
 ----

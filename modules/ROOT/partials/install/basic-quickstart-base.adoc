@@ -183,6 +183,21 @@ Adding this content to an HTML file and opening it in a web browser will load a 
 
 liveDemo::default[]
 
+== Configure plugins and toolbar
+
+To enable specific plugins and customize the toolbar, use the `+plugins+` and `+toolbar+` options. For example, to add the `+image+` and `+code+` plugins with their toolbar buttons:
+
+[source,js]
+----
+tinymce.init({
+  selector: '#mytextarea',
+  plugins: 'image code',
+  toolbar: 'undo redo | image code'
+});
+----
+
+Plugin names are space-separated. Toolbar items can include plugin-provided buttons (such as `+image+` and `+code+`) and separators (`+|+`). For a full list of available plugins, see xref:plugins.adoc[Plugins].
+
 ifeval::["{productSource}" == "cloud"]
 == Add your API key
 

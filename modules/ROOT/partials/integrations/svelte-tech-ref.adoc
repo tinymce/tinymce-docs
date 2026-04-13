@@ -1,6 +1,7 @@
 Covered in this section:
 
-* xref:configuring-the-tinymce-svelte-integration[Configuring the TinyMCE Svelte integration]
+* xref:supported-versions[Supported versions]
+* xref:configuring-the-tinymce-svelte-integration[Configuring the {productname} Svelte integration]
 ** xref:apikey[apiKey]
 ** xref:licensekey[licenseKey]
 ** xref:channel[channel]
@@ -12,6 +13,21 @@ Covered in this section:
 ** xref:conf[conf]
 * xref:component-binding[Component binding]
 * xref:event-binding[Event binding]
+
+[[supported-versions]]
+== Supported versions
+
+[cols="1,1", options="header"]
+|===
+|`+@tinymce/tinymce-svelte+`
+|Svelte
+
+|4.x
+|5 or later
+
+|\<= 3.x
+|4 (also compatible with Svelte 5 in legacy mode)
+|===
 
 [[configuring-the-tinymce-svelte-integration]]
 == Configuring the TinyMCE Svelte integration
@@ -254,9 +270,9 @@ let text = '';
 
 Functions can be bound to editor events, such as:
 
-[source,jsx]
+[source,svelte]
 ----
-<Editor on:resizeeditor={this.handlerFunction} />
+<Editor resizeeditor={handlerFunction} />
 ----
 
 When the handler is called (*handlerFunction* in this example), it is called with two arguments:
@@ -265,8 +281,26 @@ When the handler is called (*handlerFunction* in this example), it is called wit
 
 `+editor+`:: A reference to the editor.
 
+=== Example of event binding
+
+[source,svelte]
+----
+<script>
+import Editor from '@tinymce/tinymce-svelte';
+
+function handlerFunction(event, editor) {
+  console.log('Editor event:', event);
+  console.log('Editor instance:', editor);
+}
+</script>
+
+<main>
+  <Editor resizeeditor={handlerFunction} />
+</main>
+----
+
 [TIP]
-Ensure event names are specified in lower-case (event names are case-sensitive).
+Specify event names in lower-case (event names are case-sensitive).
 
 The following events are available:
 
@@ -282,10 +316,10 @@ The following events are available:
 * `+change+`
 * `+clearundos+`
 * `+click+`
-* `+CommentChange+`
-* `+CompositionEnd+`
-* `+CompositionStart+`
-* `+CompositionUpdate+`
+* `+commentchange+`
+* `+compositionend+`
+* `+compositionstart+`
+* `+compositionupdate+`
 * `+contextmenu+`
 * `+copy+`
 * `+cut+`

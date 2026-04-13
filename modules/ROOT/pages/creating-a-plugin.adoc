@@ -1,8 +1,8 @@
 = Create a plugin for {productname}
 :navtitle: Create a plugin
 :description_short: Introducing plugin creation, with an example.
-:description: A short introduction to creating plugins for TinyMCE along with an example plugin.
-:keywords: plugin, plugin.js, plugin.min.js, tinymce.js
+:description: Create custom TinyMCE plugins using PluginManager.add, editor.ui.registry.addButton, and editor.addCommand. Register plugins, add toolbar buttons, and define commands.
+:keywords: plugin, plugin.js, plugin.min.js, tinymce.js, PluginManager, addButton, addCommand, custom plugin, toolbar button
 
 {productname} is designed to be easily extended by custom plugins; with APIs for registering custom plugins, and creating and localizing custom UI.
 
@@ -44,6 +44,47 @@ tinymce.PluginManager.add('pluginId', (editor, url) => {
   }
 });
 ----
+
+== Adding a toolbar button to a custom plugin
+
+Use `+editor.ui.registry.addButton+` to add a toolbar button and `+editor.addCommand+` to define the action. Register both inside the plugin callback passed to `+PluginManager.add()+`:
+
+[source,js]
+----
+tinymce.PluginManager.add('myplugin', (editor, url) => {
+  editor.addCommand('myCommand', () => {
+    editor.insertContent('&nbsp;<strong>Inserted content</strong>&nbsp;');
+  });
+
+  editor.ui.registry.addButton('mybutton', {
+    text: 'My Button',
+    onAction: () => editor.execCommand('myCommand')
+  });
+
+  return {
+    getMetadata: () => ({
+      name: 'My plugin',
+      url: 'https://example.com/docs'
+    })
+  };
+});
+----
+
+Then include the plugin and button in the editor configuration:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'myplugin',
+  toolbar: 'mybutton',
+  external_plugins: {
+    myplugin: '/path/to/myplugin.js'
+  }
+});
+----
+
+For more toolbar button types, see xref:custom-toolbarbuttons.adoc[Toolbar buttons].
 
 == Using custom plugins with {productname}
 

@@ -295,7 +295,7 @@ function eventHandler(event, editor) {
 </script>
 
 <main>
-  <Editor resizeeditor={handlerFunction} />
+  <Editor resizeeditor={this.eventHandler} />
 </main>
 ----
 

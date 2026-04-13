@@ -1,6 +1,9 @@
 = Adding or changing the editor content CSS
 :navtitle: Add CSS
-:description: Options for changing the editor content CSS.
+:description: Apply custom CSS to the editor content area using content_css and content_style. Control typography, colors, margins, and layout in the editable region.
+:keywords: content_css, content_style, custom CSS, content area, stylesheet, editor styling
+
+Use `+content_css+` to load external stylesheets into the editable area, or `+content_style+` to inject inline CSS. Both options apply only to the editor content (the iframe body in classic mode), not the surrounding UI.
 
 == Add CSS and styles to the editor
 

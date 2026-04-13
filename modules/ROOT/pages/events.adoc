@@ -97,6 +97,24 @@ tinymce.init({
 });
 ----
 
+=== Example: content change callback
+
+To run a callback when the editor content changes, use the `+Change+` event with `+editor.on()+` inside the `+setup+` option:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  setup: (editor) => {
+    editor.on('change', () => {
+      console.log('Content was modified.');
+    });
+  }
+});
+----
+
+The `+Change+` event fires when content changes are committed, such as when moving focus away from the editor. For real-time updates as the user types, use the `+input+` event instead.
+
 [[browser-native-events]]
 == Supported browser-native events
 

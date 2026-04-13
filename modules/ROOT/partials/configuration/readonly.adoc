@@ -21,6 +21,21 @@ tinymce.init({
 
 liveDemo::readonly-demo[]
 
+=== Example: switching modes programmatically
+
+Use the xref:apis/tinymce.editormode.adoc#set[`+editor.mode.set()+`] API to switch between `+readonly+` and `+design+` (editable) modes at runtime:
+
+[source,js]
+----
+const editor = tinymce.activeEditor;
+
+// Switch to read-only
+editor.mode.set('readonly');
+
+// Switch back to editable
+editor.mode.set('design');
+----
+
 === Behavior in `readonly` mode
 
 [cols="1,3,1", options="header"]

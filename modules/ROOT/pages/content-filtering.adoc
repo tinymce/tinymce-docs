@@ -1,7 +1,10 @@
 = Content filtering options
 :navtitle: Content filtering
-:description_short: Learn how to create clean, maintainable and readable content.
-:description: These settings change the way the editor handles the input and output of content. This will help you to create clean, maintainable and readable content.
+:description_short: Control which HTML elements and attributes are allowed or removed using valid_elements, invalid_elements, and extended_valid_elements.
+:description: Configure content filtering and sanitization using valid_elements, invalid_elements, extended_valid_elements, and paste hooks. Control which HTML elements and attributes {productname} allows or removes when content is inserted or pasted.
+:keywords: valid_elements, invalid_elements, extended_valid_elements, allow_html_in_named_anchor, content filtering, sanitization, HTML elements, paste_preprocess, paste_postprocess
+
+Use `+valid_elements+` to define which elements and attributes are allowed, `+invalid_elements+` to block specific elements, and `+extended_valid_elements+` to add or modify rules. For paste-time filtering, use the `+PastePreProcess+` and `+PastePostProcess+` events or the xref:introduction-to-powerpaste.adoc[PowerPaste] plugin options.
 
 include::partial$configuration/allow_conditional_comments.adoc[]
 

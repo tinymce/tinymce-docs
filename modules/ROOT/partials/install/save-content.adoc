@@ -4,3 +4,33 @@ To retrieve content from the editor, either process the content with a form hand
 
 If you use a form handler, once the `+<form>+` is submitted, {productname} {productmajorversion} will `+POST+` the content in the same way as a normal HTML `+<textarea>+`, including the HTML elements and inline CSS of the editor content. The host's form handler can process the submitted content in the same way as content from a regular `+<textarea>+`.
 
+=== Get and set content programmatically
+
+Use the xref:apis/tinymce.editor.adoc#getContent[`+getContent+`] and xref:apis/tinymce.editor.adoc#setContent[`+setContent+`] APIs to read and write editor content from JavaScript.
+
+==== Example: retrieve editor content as HTML
+
+[source,js]
+----
+const editor = tinymce.activeEditor;
+const html = editor.getContent();
+console.log(html);
+----
+
+To retrieve the content as plain text instead of HTML:
+
+[source,js]
+----
+const editor = tinymce.activeEditor;
+const text = editor.getContent({ format: 'text' });
+console.log(text);
+----
+
+==== Example: set editor content
+
+[source,js]
+----
+const editor = tinymce.activeEditor;
+editor.setContent('<p>New content</p>');
+----
+

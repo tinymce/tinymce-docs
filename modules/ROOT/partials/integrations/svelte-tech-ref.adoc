@@ -288,7 +288,7 @@ When the handler is called (*handlerFunction* in this example), it is called wit
 <script>
 import Editor from '@tinymce/tinymce-svelte';
 
-function handlerFunction(event, editor) {
+function eventHandler(event, editor) {
   console.log('Editor event:', event);
   console.log('Editor instance:', editor);
 }

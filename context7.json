@@ -1,4 +1,26 @@
 {
+  "$schema": "https://context7.com/schema/context7.json",
   "url": "https://context7.com/tinymce/tinymce-docs",
-  "public_key": "pk_zfLsHseHKUL2Ys96GNqA5"
+  "public_key": "pk_zfLsHseHKUL2Ys96GNqA5",
+  "projectTitle": "TinyMCE",
+  "description": "TinyMCE rich text editor documentation — setup, configuration, plugins, APIs, and integration guides",
+  "branch": "tinymce/8",
+  "folders": [
+    "modules/ROOT/pages",
+    "modules/ROOT/partials",
+    "modules/ROOT/examples"
+  ],
+  "excludeFolders": [
+    "-new-material-templates",
+    "-scripts",
+    ".github",
+    "modules/ROOT/images",
+    "modules/ROOT/attachments"
+  ],
+  "excludeFiles": [
+    "LICENSE.txt",
+    "CODE_OF_CONDUCT.md",
+    "antora-playbook-local.yml",
+    ".env"
+  ]
 }

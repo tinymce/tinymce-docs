@@ -524,6 +524,14 @@ tinymce.init({
     };
     return Promise.resolve({ type: 'web-resource', url: urls[id] });
   },
+  tinymceai_reviews: [
+    'ai-reviews-proofread',
+    'ai-reviews-improve-clarity',
+    'ai-reviews-improve-readability',
+    'ai-reviews-change-length',
+    'ai-reviews-change-tone',
+    'ai-reviews-custom'
+  ],
   tinymceai_quickactions_custom: [
     {
       type: 'chat',

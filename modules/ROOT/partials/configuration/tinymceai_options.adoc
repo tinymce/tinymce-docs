@@ -180,7 +180,7 @@ These options configure the AI Chat sidebar, where users have interactive conver
 
 Populates the sources menu with submenus of files and web resources. Users can select these sources as additional context for chat conversations.
 
-Takes a function that returns a Promise resolving to an array of additional context source groups. Each group has `+label+`, optional `+icon+`, and `+sources+` array. Each source has `+id+`, `+label+`, and `+type+` (`+'web-resource'+` or `+'file'+`). A source's `+id+` is used to fetch its content via xref:tinymceai.adoc#tinymceai_chat_fetch_source[`tinymceai_chat_fetch_source`].
+Takes a function that returns a Promise resolving to an array of additional context source groups. Each group has `+label+`, optional `+icon+`, and `+sources+` array. Each source has `+id+`, `+label+`, and `+type+` (`+'web-resource'+` or `+'file'+`). A source's `+id+` is used to fetch its content through xref:tinymceai.adoc#tinymceai_chat_fetch_source[`tinymceai_chat_fetch_source`].
 
 *Type:* `+Function+` (`+() => Promise<Array>+`)
 
@@ -255,7 +255,7 @@ tinymce.init({
 [[tinymceai_chat_welcome_message]]
 === `+tinymceai_chat_welcome_message+`
 
-Customises the welcome message displayed in the Chat sidebar when starting a new conversation.
+Customizes the welcome message displayed in the Chat sidebar when starting a new conversation.
 
 *Type:* `+String+`
 
@@ -440,6 +440,7 @@ Array of custom actions rendered in the Custom submenu within the AI Quick Actio
 * `+prompt+`: The prompt sent to the AI
 * `+type+`: `+'action'+` or `+'chat'+`
 * `+model+`: Required for `+action+` type only
+* `+id+` (optional): Stable identifier for the custom action. When set, the same string can be listed in xref:tinymceai.adoc#tinymceai_quickactions_menu[`tinymceai_quickactions_menu`] so the action appears as its own top-level menu item instead of only inside the Custom submenu. The identifier can also be used in xref:quickbars.adoc#quickbars_selection_toolbar[`+quickbars_selection_toolbar+`], the xref:menus-configuration-options.adoc#menu[`+menu+`] option, or any other toolbar or menu configuration that accepts control identifiers.
 
 *Type:* `+Array+` of `+Object+`
 
@@ -474,6 +475,40 @@ tinymce.init({
 });
 ----
 
+.Example: custom actions as top-level Quick Actions menu items using `+id+`
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'quickbars tinymceai',
+  toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
+  quickbars_selection_toolbar: 'tinymceai-quickactions | bold italic',
+  tinymceai_quickactions_menu: [
+    'ai-quickactions-chat-prompts',
+    'ai-quote',
+    'ai-summarize'
+  ],
+  tinymceai_quickactions_custom: [
+    {
+      id: 'ai-quote',
+      title: 'Add a quote from a famous person',
+      prompt: 'Add a quote from a known person, which would make sense in the context of the selected text.',
+      type: 'action',
+      model: 'gemini-2-5-flash'
+    },
+    {
+      id: 'ai-summarize',
+      title: 'Summarize in 5 bullet points',
+      prompt: 'Summarize the selected text in 5 bullet points.',
+      type: 'chat'
+    }
+  ],
+  tinymceai_token_provider: () => {
+    return fetch('/api/token').then(r => r.json());
+  }
+});
+----
+
 [[options-review]]
 == Options for Review
 
@@ -493,6 +528,9 @@ Array of review command IDs that define which review types appear in the Review 
 * `+'ai-reviews-improve-readability'+`: Adjust sentence structure and word choice
 * `+'ai-reviews-change-length'+`: Shorten or lengthen text
 * `+'ai-reviews-change-tone'+`: Modify tone and style
+* `+'ai-reviews-custom'+`: xref:tinymceai-review.adoc#custom-review-choose-review[Custom review] — accepts a prompt and model, then runs the same streaming preview and apply flow as other reviews
+
+To hide Custom review from the Review sidebar, omit `+'ai-reviews-custom'+` from the array.
 
 *Default value:*
 [source,js]
@@ -502,7 +540,8 @@ Array of review command IDs that define which review types appear in the Review 
   'ai-reviews-improve-clarity',
   'ai-reviews-improve-readability',
   'ai-reviews-change-length',
-  'ai-reviews-change-tone'
+  'ai-reviews-change-tone',
+  'ai-reviews-custom'
 ]
 ----
 

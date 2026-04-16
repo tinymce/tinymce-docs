@@ -30,7 +30,7 @@ image::tinymceai/tinymce-ai-review-sidebar-command-categories-proofread-clarity.
 [[integration]]
 == Integration
 
-To start using the Review feature,  add `+tinymceai+` to the plugins option. This will automatically add the image:icons-premium/ai-review.svg[Review icon,24px] Review toolbar button and menu item to the default {productname} toolbar and menu.
+To start using the Review feature, add `+tinymceai+` to the plugins configuration option. This will automatically add the image:icons-premium/ai-review.svg[Review icon,24px] Review toolbar button and menu item to the default {productname} toolbar and menu.
  
 See xref:tinymceai.adoc[Plugin Reference] for more information regarding installation and enabling AI features.
 
@@ -42,7 +42,7 @@ While in the Review Mode, the editor remains read-only and allows browsing sugge
 
 image::tinymceai/tinymce-ai-review-improve-readability-suggestion-cards-and-underlines.png[{pluginname} Review sidebar with suggestions,width=80%]
 
-Review suggestions can be individually skipped or applied by clicking the corresponding buttons. Changes that were accepted or dismissed become greyed out in the interface. The "Complete" button in the top of the sidebar enables actions such as:
+Review suggestions can be individually skipped or applied by clicking the corresponding buttons. Changes that were accepted or dismissed become grayed out in the interface. The "Complete" button in the top of the sidebar enables actions such as:
 
 - Skipping or applying the remaining suggestions in bulk
 - Completing the review with the currently applied suggestions (and skipping the rest)
@@ -67,15 +67,25 @@ Built-in system reviews are listed below. The **Editor** column is the label in 
 
 |**Adjust tone and style** |Tone Adjustment |Adjust tone and style. The editor includes _Casual_, _Direct_, _Friendly_, _Confident_, and _Professional_ options. |✓ |✓
 
+|**Custom review** |— |xref:tinymceai-review.adoc#custom-review-choose-review[Custom review]: custom prompt and model; streams like other reviews. |✓ (when `+'ai-reviews-custom'+` is in xref:tinymceai.adoc#tinymceai_reviews[`tinymceai_reviews`]) |✓ (custom review calls endpoint)
+
 | |Translation |Translate between languages with cultural adaptation. | |✓
 |===
 
 [NOTE]
 ====
 * A checkmark in the Editor UI column means that review type can appear in the Review sidebar when it is listed in xref:tinymceai.adoc#tinymceai_reviews[`tinymceai_reviews`].
-* Custom reviews (analysis defined with a prompt) are available through the xref:tinymceai-review.adoc#reviews-custom-reviews[Custom reviews (API)]. _Note: The same capability in the Review sidebar is coming soon._
+* xref:tinymceai-review.adoc#custom-review-choose-review[Custom review] in the Review sidebar is available when `+'ai-reviews-custom'+` is included in xref:tinymceai.adoc#tinymceai_reviews[`tinymceai_reviews`]. The xref:tinymceai-review.adoc#reviews-custom-reviews[Custom reviews (API)] section describes the REST endpoint used for the same streaming review flow.
 * Translation Review is API-only (not listed in the Review sidebar); see the xref:tinymceai-review.adoc#built-in-reviews[Translation row] in the table above. For translation from the editor, see **Translate** in xref:tinymceai-actions.adoc#quick-actions-reference-table[Quick Actions reference table].
 ====
+
+[[custom-review-choose-review]]
+== Custom review
+
+When `+'ai-reviews-custom'+` is present in xref:tinymceai.adoc#tinymceai_reviews[`tinymceai_reviews`], the Review sidebar includes a **Custom review** category. A natural-language prompt can be entered, and an AI model can be selected when xref:tinymceai.adoc#tinymceai_allow_model_selection[`tinymceai_allow_model_selection`] allows it; the review runs from **Run**. The document is analyzed with streaming suggestions like xref:tinymceai-review.adoc#review-sidebar-and-built-in-reviews[built-in reviews]; **Run** remains disabled until the prompt is entered and a model is selected.
+
+[TIP]
+The backend uses the custom review call (`POST /v1/reviews/custom/calls`) with `content`, `prompt`, and `model` in the request body. After a run completes, **Retry** in the Review UI can re-run the last review with the same parameters for both system and custom reviews.
 
 [[review-configuration]]
 == Configuration
@@ -92,7 +102,7 @@ The Review plugin feature is built on top of the Reviews API, which provides RES
 Reviews use streaming output with Server-Sent Events for real-time feedback as suggestions are generated. Each review type is optimized for specific improvement tasks, providing consistent, high-quality analysis of text structure, style, and quality. Reviews provide specific, actionable recommendations for content improvement.
 
 [[reviews-system-reviews-api]]
-=== System Reviews
+=== System reviews
 
 System reviews are default review operations for common use cases, which each use the AI agent most suitable for their functionality. The API includes one endpoint for running system reviews, which is passed the review name. 
 
@@ -103,26 +113,26 @@ For endpoint details, request and response schemas, authentication, and streamin
 [[reviews-custom-reviews]]
 === Custom reviews (API)
 
-Integrators can also define custom reviews using the Custom Review API endpoint, which returns a output in a similar manner to system reviews but which takes a custom prompt to define the analysis behavior. Custom reviews can be as simple as checking for specific words or phrases, or as complex as applying a company style guide that includes business logic, specific terminology, and more.
+Integrators can also call the Custom Review API endpoint directly. It streams suggestions in the same way as system reviews but takes a custom `prompt` (and `model`) with document `content` in the request body. Custom reviews can be as simple as checking for specific words or phrases, or as complex as applying a company style guide that includes business logic, specific terminology, and more.
 
- See https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for the endpoint, parameters, and examples.
+See https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for the endpoint, parameters, and examples.
 
-The Review sidebar only exposes those built-in types for now; sidebar support for custom reviews is coming soon.
+Users can run the same style of custom review from the editor when xref:tinymceai-review.adoc#custom-review-choose-review[Custom review] is enabled through xref:tinymceai.adoc#tinymceai_reviews[`tinymceai_reviews`].
 
 Custom reviews require the `ai:reviews:custom` permission in the JWT token.
 
 [[reviews-streaming]]
-=== Streaming Responses
+=== Streaming responses
 
-Reviews use Server-Sent Events (SSE) for real-time streaming results. See the xref:tinymceai-streaming.adoc[Streaming Responses guide] for detailed implementation information.
+Reviews use Server-Sent Events (SSE) for real-time streaming results. See the xref:tinymceai-streaming.adoc[Streaming responses guide] for detailed implementation information.
 
 [[reviews-api-reference]]
-=== API Reference
+=== API reference
 
 The https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] reference (interactive OpenAPI documentation) is the full source for endpoints, request and response schemas, authentication, system and custom review calls, worked examples, and streaming review responses.
 
 [[related-features]]
-== Related Features
+== Related features
 
 * xref:tinymceai-chat.adoc[AI chat]: For interactive discussions with document analysis and context.
 * xref:tinymceai-actions.adoc[Quick actions]: Shortcuts to individual AI operations on a selection or range (transformations, translation, chat, and custom actions).

@@ -1,7 +1,7 @@
 [[tinymceai-toggling-sidebars]]
 .Toggling the AI Chat and AI Review sidebars
 
-AI Chat and AI Review use sidebars registered by the plugin. To show or hide them programmatically, use the core `+ToggleSidebar+` command (listed in the xref:editor-command-identifiers.adoc#miscellaneous-core-commands[Miscellaneous Core Commands] table), not a command defined by the TinyMCE AI plugin. Pass the sidebar identifier as the third argument:
+AI Chat and AI Review use sidebars registered by the plugin. To show or hide them programmatically, use the core `+ToggleSidebar+` command (listed in the xref:editor-command-identifiers.adoc#miscellaneous-core-commands[Miscellaneous Core Commands] table), not a command defined by the `+tinymceai+` plugin. Pass the sidebar identifier as the third argument:
 
 * `+'tinymceai-chat'+` — AI Chat
 * `+'tinymceai-review'+` — AI Review
@@ -17,4 +17,61 @@ tinymce.activeEditor.execCommand('ToggleSidebar', false, 'tinymceai-chat');
 
 // Open the AI Review sidebar
 tinymce.activeEditor.execCommand('ToggleSidebar', false, 'tinymceai-review');
+----
+
+[[tinymceai-floating-sidebar-api]]
+.Floating sidebar and `ToggleSidebar`
+
+When xref:tinymceai.adoc#tinymceai_sidebar_type[`tinymceai_sidebar_type`] is `+'floating'+`, the core `+ToggleSidebar+` command, the `+ToggleSidebar+` event, and `+queryCommandValue('ToggleSidebar')+` work the same as for a static sidebar for `+'tinymceai-chat'+` and `+'tinymceai-review'+`.
+
+[[tinymceai-plugin-commands]]
+.TinyMCE AI plugin commands
+
+The xref:tinymceai.adoc[`tinymceai`] plugin registers the following editor commands. They mirror the Quick Actions and related UI: each invocation returns immediately while the plugin performs any network and UI work asynchronously.
+
+[cols="2,2,3",options="header"]
+|===
+|Command |Third argument |Description
+
+|`+TinyMCEAIQuickActionImproveWriting+` | |Runs the **Improve writing** quick action.
+|`+TinyMCEAIQuickActionContinueWriting+` | |Runs the **Continue writing** quick action.
+|`+TinyMCEAIQuickActionCheckGrammar+` | |Runs the **Fix grammar** quick action.
+|`+TinyMCEAIQuickActionMakeShorter+` | |Runs **Make shorter**.
+|`+TinyMCEAIQuickActionMakeLonger+` | |Runs **Make longer**.
+|`+TinyMCEAIQuickActionToneCasual+` | |Runs **More casual** tone.
+|`+TinyMCEAIQuickActionToneDirect+` | |Runs **More direct** tone.
+|`+TinyMCEAIQuickActionToneFriendly+` | |Runs **More friendly** tone.
+|`+TinyMCEAIQuickActionToneConfident+` | |Runs **More confident** tone.
+|`+TinyMCEAIQuickActionToneProfessional+` | |Runs **More professional** tone.
+|`+TinyMCEAIQuickActionTranslate+` |`+string+` |Runs **Translate** with the given language label (same string family as xref:tinymceai.adoc#tinymceai_languages[`tinymceai_languages`] `+language+` values).
+|`+TinyMCEAIQuickActionCustom+` |`+{ prompt, model }+` |Runs a custom quick action with the given prompt and model (same behavior as xref:tinymceai.adoc#tinymceai_quickactions_custom[`tinymceai_quickactions_custom`] preview actions).
+|`+TinyMCEAIQuickActionsExplain+` | |Opens Chat with the built-in **Explain** prompt.
+|`+TinyMCEAIQuickActionsSummarize+` | |Opens Chat with the built-in **Summarize** prompt.
+|`+TinyMCEAIQuickActionsHighlightKeyPoints+` | |Opens Chat with the built-in **Highlight key points** prompt.
+|`+TinyMCEAIChatPrompt+` |`+{ prompt, displayedPrompt? }+` |Opens the Chat sidebar if needed, then sends `+prompt+` to the back end. Optional `+displayedPrompt+` controls the label shown in the chat UI when it differs from the text sent to the model.
+|===
+
+[NOTE]
+====
+Command names use the `+TinyMCEAIQuickActions…+` prefix (with an `+s+`) for **Explain**, **Summarize**, and **Highlight key points** — these map to the xref:tinymceai.adoc#tinymceai_quickactions_chat_prompts[chat prompts] submenu, not to standalone `+TinyMCEAIQuickAction…+` spellings.
+====
+
+.Example: translate and custom quick action
+[source,js]
+----
+tinymce.activeEditor.execCommand('TinyMCEAIQuickActionTranslate', false, 'swedish');
+
+tinymce.activeEditor.execCommand('TinyMCEAIQuickActionCustom', false, {
+  prompt: 'Uppercase text',
+  model: 'gpt-4.1'
+});
+----
+
+.Example: chat prompt with a shorter label in the UI
+[source,js]
+----
+tinymce.activeEditor.execCommand('TinyMCEAIChatPrompt', false, {
+  prompt: 'Explain the current selection in Klingon',
+  displayedPrompt: 'Explain'
+});
 ----

@@ -20,13 +20,15 @@ The {productname} plugin ecosystem underwent changes starting in version 7.0, wi
 * **Removed Plugins** (no longer available as of {productname} 7.0):
 ** `template`: Removed in 7.0. Replaced by the premium xref:advanced-templates.adoc[Templates] plugin.
 
+* **Integrated into {productname} core** (removed in 6.0, before this migration path):
+** `textcolor`: Removed as a separate plugin in 6.0. Text color functionality is now part of {productname} core via the xref:available-toolbar-buttons.adoc[`forecolor` and `backcolor`] toolbar buttons, which are available without additional plugins.
+
 * **Now Premium Only** (removed in 6.0, before this migration path):
 ** `imagetools`: Removed in 6.0. Replaced by the premium xref:editimage.adoc[Enhanced Image Editing] feature, available via the `+editimage+` plugin introduced in TinyMCE 6.0.
-** `textcolor`: Removed in 6.0. Use the xref:user-formatting-options.adoc#text-color-options[premium Color Picker] functionality instead.
 
 [NOTE]
 ====
-If you're migrating from TinyMCE 6, these plugins (`imagetools` and `textcolor`) were already removed in version 6.0, so you won't need to migrate them. The sections below are included for reference only, in case you're upgrading from an older version or have legacy code.
+If migrating from TinyMCE 6, these plugins (`imagetools` and `textcolor`) were already removed in version 6.0, so they do not require migration. The sections below are included for reference only, in case the upgrade started from an older version or the codebase contains legacy references.
 ====
 
 ==== Plugin Migration Examples
@@ -39,9 +41,8 @@ If you're migrating from TinyMCE 6, these plugins (`imagetools` and `textcolor`)
 ** Use the premium xref:editimage.adoc[Enhanced Image Editing] feature.
 ** Ensure you have a valid commercial license for the Enhanced Image Editing feature.
 
-* `textcolor` (removed in v6):
-** Use the xref:user-formatting-options.adoc#text-color-options[premium Color Picker] functionality.
-** Ensure you have a valid commercial license for the Color Picker feature.
+* `textcolor` (integrated into core in v6):
+** Text color functionality is now built into {productname} core. Use the xref:available-toolbar-buttons.adoc[`forecolor` and `backcolor`] toolbar buttons, which are available without additional plugins.
 
 === Content Structure
 
@@ -453,22 +454,19 @@ tinymce.init({
 });
 ----
 
-=== Text Color Plugin Removal
+=== Text Color Plugin (integrated into core)
 
 [NOTE]
 ====
-This section applies only if you're upgrading from TinyMCE 5 or earlier. The `textcolor` plugin was removed in TinyMCE 6.0, so if you're migrating from TinyMCE 6, this plugin was already unavailable.
+This section applies only when upgrading from TinyMCE 5 or earlier. The `textcolor` plugin was removed in TinyMCE 6.0, so migrating from TinyMCE 6 does not require action.
 ====
 
-The `textcolor` plugin was removed in TinyMCE 6.0. If you were using this plugin, you need to migrate to the xref:user-formatting-options.adoc#text-color-options[premium Color Picker] functionality.
+The `textcolor` plugin was removed as a separate plugin in TinyMCE 6.0 because its functionality was integrated into {productname} core. The `forecolor` and `backcolor` toolbar buttons are available without additional plugins.
 
 **Migration checklist:**
 
-* [ ] Remove `textcolor` from plugins list
-* [ ] Add `colorpicker` to plugins list (premium feature)
-* [ ] Ensure you have a valid commercial license for Color Picker
-* [ ] Update any custom color picker configurations
-* [ ] Test color picker functionality
+* [ ] Remove `textcolor` from the plugins list
+* [ ] The `forecolor` and `backcolor` toolbar buttons remain available as core toolbar buttons
 
 .Example:
 [source,js]
@@ -480,10 +478,9 @@ tinymce.init({
   toolbar: "forecolor backcolor"
 });
 
-// New TinyMCE 6+ configuration
+// New TinyMCE 6+ configuration (no plugin required)
 tinymce.init({
   selector: "textarea",
-  plugins: "colorpicker",
   toolbar: "forecolor backcolor"
 });
 ----

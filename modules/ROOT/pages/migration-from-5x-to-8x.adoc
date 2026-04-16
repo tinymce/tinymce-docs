@@ -34,22 +34,22 @@ tinymce.init({
 The {productname} plugin ecosystem underwent a significant overhaul starting in version 6.0, with many plugins either removed, integrated into the core, or made premium-only. The following summarizes these changes.
 
 * **Removed Plugins** (no longer available as of {productname} 6.0):
-** `bbcode`, `fullpage`, `legacyoutput`: Deprecated in 5.9.0. Removed in 6.0.
+** `bbcode`, `legacyoutput`: Deprecated in 5.9.0. Removed in 6.0.
 ** `imagetools`: Removed in 6.0. Replaced by the premium xref:editimage.adoc[Enhanced Image Editing] feature, available via the `+editimage+` plugin introduced in TinyMCE 6.0.
-** `textcolor`: Removed in 6.0. Use the xref:user-formatting-options.adoc#text-color-options[premium Color Picker] functionality instead.
 
 * **Integrated into {productname} core**:
 ** `paste`, `hr`, `table`, `noneditable`, `nonbreaking`, `print`, `colorpicker` and `contextmenu`: These plugins were absorbed into {productname} core and no longer require separate installation. See xref:copy-and-paste.adoc[Copy and Paste], xref:table.adoc[Table], xref:non-editable-content-options.adoc[Non-editable Content], and xref:contextmenu.adoc[Context Menu] for more information.
+** `textcolor`: Removed as a separate plugin in 6.0. Text color functionality is now part of {productname} core via the xref:available-toolbar-buttons.adoc[`forecolor` and `backcolor`] toolbar buttons, which are available without additional plugins.
 ** `contextmenu`: Deprecated in version 5.0 following the integration of context menu functionality into {productname} core editor. Removed in version 6.0. For more information, see xref:contextmenu.adoc[contextmenu documentation].
 ** `tabfocus`: Removed in 6.0. Keyboard navigation via Tab is now handled by the browser and {productname} core.
 
 * **Now Premium Only**:
-** `mediaembed`, `tableofcontents`: These features are available through premium plugins. See xref:introduction-to-mediaembed.adoc[Media Embed] and xref:tableofcontents.adoc[Table of Contents] for more information.
+** `fullpage`: Removed in 6.0. Replaced by the premium xref:fullpagehtml.adoc[Full Page HTML] plugin (`+fullpagehtml+`).
+** `tableofcontents`: Previously available as the open-source `toc` plugin. Renamed to `tableofcontents` and now available as a premium plugin. See xref:tableofcontents.adoc[Table of Contents] for more information.
 ** `spellchecker`: Deprecated in 5.9.0. Removed in 6.0.
 *** Use `browser_spellcheck: true` or the premium xref:introduction-to-tiny-spellchecker.adoc[Spell Checker] plugin.
 ** `advtemplate`: Replaces the `template` plugin for advanced templating use cases.
 ** `template`: Removed in 7.0. Replaced by the premium xref:advanced-templates.adoc[Templates] plugin.
-** `toc`: Renamed to `tableofcontents` and now premium.
 
 ==== Plugin Migration Examples
 
@@ -58,12 +58,12 @@ The {productname} plugin ecosystem underwent a significant overhaul starting in 
 ** Consider using xref:apis/tinymce.editor.ui.registry.adoc#addContextMenu[`editor.ui.registry.addContextMenu`] for custom right-click actions. See xref:contextmenu.adoc[Context menus] for more information.
 * `bbcode` (removed in v6):
 ** Implement custom parsing or server-side processing if BBCode support is required.
-* `fullpage` (removed in v6):
-** Use custom templates or server-side logic to handle full HTML documents.
+* `fullpage` (now premium in v8):
+** Use the premium xref:fullpagehtml.adoc[Full Page HTML] plugin (`+fullpagehtml+`) for full HTML document editing.
 * `template` (removed in v7):
 ** Use the premium xref:advanced-templates.adoc[advtemplate] plugin or implement custom modal dialogs.
-* `textcolor` (removed in v6):
-** Use the xref:available-toolbar-buttons.adoc[`forecolor` and `backcolor`] toolbar buttons for text color functionality.
+* `textcolor` (integrated into core in v6):
+** Text color functionality is now built into {productname} core. Use the xref:available-toolbar-buttons.adoc[`forecolor` and `backcolor`] toolbar buttons, which are available without additional plugins.
 * `imagetools`: (removed in v6):
 ** Use the premium xref:editimage.adoc[Enhanced Image Editing] or xref:uploadcare.adoc[Image Optimizer Powered by Uploadcare] plugin for image editing capabilities.
 

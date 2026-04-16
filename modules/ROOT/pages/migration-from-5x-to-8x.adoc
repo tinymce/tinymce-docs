@@ -58,7 +58,7 @@ The {productname} plugin ecosystem underwent a significant overhaul starting in 
 ** Consider using xref:apis/tinymce.editor.ui.registry.adoc#addContextMenu[`editor.ui.registry.addContextMenu`] for custom right-click actions. See xref:contextmenu.adoc[Context menus] for more information.
 * `bbcode` (removed in v6):
 ** Implement custom parsing or server-side processing if BBCode support is required.
-* `fullpage` (now premium in v6):
+* `fullpage` (now premium in v8):
 ** Use the premium xref:fullpagehtml.adoc[Full Page HTML] plugin (`+fullpagehtml+`) for full HTML document editing.
 * `template` (removed in v7):
 ** Use the premium xref:advanced-templates.adoc[advtemplate] plugin or implement custom modal dialogs.

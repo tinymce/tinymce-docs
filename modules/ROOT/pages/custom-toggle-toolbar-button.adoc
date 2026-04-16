@@ -1,9 +1,9 @@
-= Creating custom Toggle toolbar buttons
+= Creating custom toggle toolbar buttons
 :navtitle: Toggle toolbar button
-:description: Creating custom Toggle toolbar buttons for TinyMCE
-:keywords: toolbar, toolbarbuttons, buttons, toolbarbuttonsapi
+:description: Creating custom toggle toolbar buttons for {productname}
+:keywords: toolbar, toolbarbuttons, buttons, toolbarbuttonsapi, toggle, formatChanged
 
-A toggle button triggers an action when clicked but also has a concept of state. This means it can be toggled `+on+` and `+off+`. A toggle button gives the user visual feedback for its state through CSS styling. An example of this behavior is the *Bold* button that is highlighted when the cursor is in a word with bold formatting.
+A toggle button triggers an action when clicked and maintains an active state. This means it can be toggled `+on+` or `+off+`. The toggle button provides the user visual feedback of its state through CSS styling. An example of this behavior is the *Bold*, which becomes highlighted when the cursor is within text that has bold formatting.  
 
 == Options
 
@@ -14,8 +14,8 @@ A toggle button triggers an action when clicked but also has a concept of state.
 |icon |string |optional |
 include::partial$misc/admon-predefined-icons-only.adoc[]
 |tooltip |string |optional |Text for button tooltip.
-|enabled |boolean |optional |default: `true` - Represents the button's state. When `false`, the button is unclickable. Toggled by the button's API.
-|active |boolean |optional |default: `false` - Represents the button's state. When `true`, the button is highlighted. Toggled by the button's API.
+|enabled |boolean |optional |default: `true` - Represents the button's enabled state. When `false`, the button is unclickable. Can be changed using `+setEnabled+` from the button's API.
+|active |boolean |optional |default: `false` - Represents the button's active state. When `true`, the button is highlighted. Can be changed using `+setActive+` from the button's API.
 |onSetup |`+(api) => (api) => void+` |optional |default: `+() => () => {}+` - Function invoked when the button is rendered. For details, see: xref:using-onsetup[Using `+onSetup+`].
 |onAction |`+(api) => void+` |required |Function invoked when the button is clicked.
 4+|
@@ -31,8 +31,8 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 |Name |Value |Description
 |isEnabled |`+() => boolean+` |Checks if the button is enabled.
 |setEnabled |`+(state: boolean) => void+` |Sets the button's enabled state.
-|isActive |`+() => boolean+` |Checks if the button is `+on+`.
-|setActive |`+(state: boolean) => void+` |Sets the button's toggle state.
+|isActive |`+() => boolean+` |Checks if the button is in the active (toggled on) state.
+|setActive |`+(state: boolean) => void+` |Sets the button's active (toggled) state.
 3+|
 |setText |`+(text: string) => void+` |Sets the text label to display.
 |setIcon |`+(icon: string) => void+` |Sets the icon of the button.
@@ -42,20 +42,31 @@ include::partial$misc/admon-predefined-icons-only.adoc[]
 
 liveDemo::custom-toolbar-toggle-button[tab="js"]
 
-The example above adds two custom *strikethrough* buttons with the same `+onAction+` configuration. The configuration uses `+editor.execCommand(command, ui, args)+` to execute `+mceToggleFormat+`. This editor method toggles the specified format on and off, but only works for xref:content-formatting.adoc#formats[formats] that are already registered with the editor. In this example, `+strikethrough+` is the registered format.
+The example above adds two custom *strikethrough* toggle buttons. Both buttons use the xref:editor-command-identifiers.adoc[`+mceToggleFormat+`] command to apply and remove strikethrough formatting. This command toggles a specified format on and off, but only works for xref:content-formatting.adoc#formats[formats] already registered with the editor. In this example, `+strikethrough+` is the registered format.
 
-The first button applies and removes strikethrough formatting, and its state toggles on click using `+api.setActive(!api.isActive())+`. However, the expected behavior is that the button's state will reflect whether the selected content has strikethrough formatting. For example, if the cursor is moved into editor content that has strikethrough formatting the button will become *active* and if it is moved into content that does not have strikethrough formatting the button will become *inactive*. The first button in the example does not do this, since its state only toggles when the button is clicked.
+=== Basic togle: manual state management
 
-To achieve this, the second button uses `+onSetup+` to register a callback for strikethrough content using `+editor.formatter.formatChanged(formatName, callback)+`. This method executes the specified callback function when the selected content has the specified formatting.
+The first (`+customStrikethrough+`) button applies and removes strikethrough formatting. Its state toggles upon click using `+api.setActive(!api.isActive())+`. However, this button does not reflect whether the selected content has strikethrough formatting which is its expected behavior. Moving the cursor into content with strikethrough formatting does not activate the button, and moving it out does not deactivate it.
 
-NOTE: The format name given to `+mceToggleFormat+` via `+editor.execCommand(command, ui, args)+` and to `+editor.formatter.formatChanged(formatName, callback)+` is the same.
+=== State-synced toggle: automatic state updates 
 
-The callback given to `+editor.formatter.formatChanged+` is a function that takes a `+state+` boolean representing whether the currently selected content contains the applied format. This `+state+` boolean is used to set the button's active state to match if the selected content has the specified formatting by using `+api.setActive(state)+` from the button's API. This ensures the `+customToggleStrikethrough+` button is only *active* when the selected content contains the strikethrough formatting.
+The second button (`+customToggleStrikethrough+`) addresses this by using xref:apis/tinymce.formatter.adoc#formatChanged[`+editor.formatter.formatChanged+`] in its `+onSetup+` callback to monitor the formatting state of the current selection.
 
-For formats that require variables, the `+editor.formatter.formatChanged+` function takes two extra arguments: `+similar+` and `+vars+`.
+Note: The format name passed to +mceToggleFormat+ via +editor.execCommand(command, ui, args)+ is the same as the one used in +editor.formatter.formatChanged(formatName, callback)+.
 
-When the `+similar+` argument is `+true+`, similar formats will all be treated as the same by `+formatChanged+`. Similar formats are those with the same `+formatName+` but different variables. This argument will default to `+false+`.
+The `+formatChanged+` method accepts the following parameters:
 
-The `+vars+` argument controls which variables are used to match the content when determining whether to run the callback. This argument is only used when `+similar+` is `+false+`.
+The `+formatChanged+` method accepts the following parameters:
+
+* `+formats+` (String, required) -- The name of the registered format to monitor.
+* `+callback+` (Function, required) -- A function called when the formatting state changes. The callback receives a `+state+` boolean indicating whether the format is present (`+true+`) or absent (`+false+`) in the current selection.
+* `+similar+` (Boolean, optional) -- When `+true+`, treats all similar variants of the same format name as equivalent, regardless of variables. Defaults to `+false+`.
+* `+vars+` (Object, optional) -- When `+similar+` is `+false+`, specifies which format variables must match for the callback to execute.
+
+The method returns an object with an `+unbind+` function. Calling `+unbind()+` removes the format listener, which is essential for cleanup when the button is destroyed.
+
+In the example, `+onSetup+` first checks if the current selection matches strikethrough formatting using `+editor.formatter.match('strikethrough')+` and sets the initial active state accordingly. It then registers a `+formatChanged+` listener that calls `+api.setActive(state)+` whenever the strikethrough state changes. The teardown function returned from `+onSetup+` calls `+changed.unbind()+` to clean up the listener.
+
+This approach ensures `+customToggleStrikethrough+` is highlighted whenever the cursor is within strikethrough-formatted content and deactivated when it is not, regardless of how the formatting was applied.
 
 include::partial$misc/onSetup.adoc[]

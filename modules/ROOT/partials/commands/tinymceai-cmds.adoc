@@ -1,5 +1,5 @@
 [[tinymceai-toggling-sidebars]]
-.Toggling the AI Chat and AI Review sidebars
+=== Toggling the AI Chat and AI Review sidebars
 
 AI Chat and AI Review use sidebars registered by the plugin. To show or hide them programmatically, use the core `+ToggleSidebar+` command (listed in the xref:editor-command-identifiers.adoc#miscellaneous-core-commands[Miscellaneous Core Commands] table), not a command defined by the `+tinymceai+` plugin. Pass the sidebar identifier as the third argument:
 
@@ -20,12 +20,12 @@ tinymce.activeEditor.execCommand('ToggleSidebar', false, 'tinymceai-review');
 ----
 
 [[tinymceai-floating-sidebar-api]]
-.Floating sidebar and `ToggleSidebar`
+=== Floating sidebar and `+ToggleSidebar+`
 
 When xref:tinymceai.adoc#tinymceai_sidebar_type[`tinymceai_sidebar_type`] is `+'floating'+`, the core `+ToggleSidebar+` command, the `+ToggleSidebar+` event, and `+queryCommandValue('ToggleSidebar')+` work the same as for a static sidebar for `+'tinymceai-chat'+` and `+'tinymceai-review'+`.
 
 [[tinymceai-plugin-commands]]
-.TinyMCE AI plugin commands
+=== TinyMCE AI plugin commands
 
 The xref:tinymceai.adoc[`tinymceai`] plugin registers the following editor commands. They mirror the Quick Actions and related UI: each invocation returns immediately while the plugin performs any network and UI work asynchronously.
 

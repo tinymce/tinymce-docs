@@ -110,6 +110,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Fixed visual rendering glitch in Diff mode and Preview when a quick action was triggered during a review
+// #TINY-14294
+
+Previously, if a custom quick action was triggered from the menu or toolbar while an AI Review session was active, the Diff mode and Preview views could render incorrectly. The selection styling for diff annotations relied on an explicit list of block elements for box-shadow styling, and elements not in that list — such as `ins` and `del` — received an inline background-image approach that did not display correctly in all contexts. This caused suggestions to appear visually broken and prevented them from being applied or dismissed.
+
+In {productname} {release-version}, the selection styling approach for diff annotations has been reversed. Box-shadow styling is now the default for all elements, while only `ins` and `del` elements use the tighter inline background-image approach suited to text-level content. This ensures consistent rendering across all element types in Diff mode and Preview.
+
 
 [[security-fixes]]
 == Security fixes

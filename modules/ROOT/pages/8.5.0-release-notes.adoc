@@ -41,6 +41,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== History conversation titles were not trimmed
+// #TINY-14076
+
+Previously, renaming a conversation in the TinyMCE AI Chat History panel preserved leading and trailing whitespace exactly as entered. If a title was submitted with extra spaces before or after the text, those spaces were saved as part of the name. This could result in conversation titles that appeared blank or misaligned in the history list.
+
+In {productname} {release-version}, conversation titles are now trimmed on save, removing any leading and trailing whitespace before the name is stored. Titles display consistently in the Chat History panel without unintended spacing.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes

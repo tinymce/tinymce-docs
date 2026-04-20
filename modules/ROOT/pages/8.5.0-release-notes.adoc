@@ -42,6 +42,22 @@ The {productname} {release-version} release includes an accompanying release of 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following improvement.
+
+==== While the plugin is generating a review or quick action, the Stop button in the loading indicator receives focus
+// #TINY-14083
+
+Previously, the TinyMCE AI plugin displayed the stop generating button inconsistently across different contexts. The review loading indicator used a text-based "Stop generating" button, while the AI Chat sidebar used a stop icon button. Additionally, the button did not receive focus when displayed, which compromised keyboard accessibility.
+
+In {productname} {release-version}, the stop button in the loading indicator now matches the icon button used in the AI Chat sidebar, providing a consistent visual experience. The button also receives immediate focus when displayed, improving keyboard navigation and accessibility during content generation.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
+
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes
 

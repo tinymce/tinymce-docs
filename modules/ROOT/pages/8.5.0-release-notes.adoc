@@ -41,6 +41,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== Preserved the selected diff when switching between diff and preview modes
+// #TINY-13402
+
+Previously, switching between preview and diff modes in the TinyMCE AI review panel did not preserve the current suggestion selection. The view would reset to the first suggestion, causing the document to jump to the top rather than maintaining the position within the current context. This disrupted the review experience, particularly for users working through suggestions further down the document.
+
+In {productname} {release-version}, the active suggestion is now preserved when switching between preview and diff modes. Users return to the same suggestion they were viewing prior to the mode change, and manually scrolling in preview mode no longer forces the view to jump when switching back to diff mode.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes

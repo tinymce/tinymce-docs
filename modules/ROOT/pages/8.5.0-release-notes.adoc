@@ -41,6 +41,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== It was possible to submit white space only titles when renaming a conversation
+// #TINY-14251
+
+Previously, in the TinyMCE AI Chat History panel, renaming a conversation and clearing the title field would correctly disable the Save button. However, pressing Enter while the input was empty or contained only whitespace bypassed the disabled button and submitted the empty title. This resulted in conversations being saved with blank names, making them difficult to identify in the history.
+
+In {productname} {release-version}, the save handler now validates the title value directly, applying the same check used to disable the Save button. Pressing Enter with an empty or whitespace-only title no longer submits the rename, ensuring all conversations retain a meaningful title in the Chat History.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes

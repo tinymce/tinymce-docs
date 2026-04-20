@@ -41,6 +41,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== New chat button was not disabled when the chat was empty
+// #TINY-14094
+
+Previously, the New Chat button in the TinyMCE AI sidebar remained enabled even when the current conversation was empty. Clicking the button in this state had no effect, which created a confusing experience and an accessibility issue, as screen readers and keyboard users could interact with a control that performed no action.
+
+In {productname} {release-version}, the New Chat button is now disabled when no conversation has been started, ensuring the button state accurately reflects its availability.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes

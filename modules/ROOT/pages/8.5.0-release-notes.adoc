@@ -41,6 +41,54 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+[[tinymceai-preview-iframe-missing-content-styles]]
+==== Preview iframe missing content styles such as figure alignment
+// #TINY-14194
+
+Previously, the TinyMCE AI preview iframe did not include the `mce-content-body` class, causing content styles such as figure alignment to render incorrectly.
+
+In {productname} {release-version}, the `mce-content-body` class is applied to the preview iframe, ensuring content renders consistently with the editor.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
+=== Revision History
+
+The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
+
+**Revision History** includes the following fix.
+
+[[revisionhistory-preview-iframe-missing-content-styles]]
+==== Preview iframe missing content styles such as figure alignment
+// #TINY-14194
+
+Previously, the Revision History preview iframe did not include the `mce-content-body` class, causing content styles such as figure alignment to render incorrectly.
+
+In {productname} {release-version}, the `mce-content-body` class is applied to the preview iframe, ensuring content renders consistently with the editor.
+
+For information on the **Revision History** plugin, see: xref:revisionhistory.adoc[Revision History].
+
+=== Suggested Edits
+
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
+
+**Suggested Edits** includes the following fix.
+
+[[suggestededits-preview-iframe-missing-content-styles]]
+==== Preview iframe missing content styles such as figure alignment
+// #TINY-14194
+
+Previously, the Suggested Edits preview iframe did not include the `mce-content-body` class, causing content styles such as figure alignment to render incorrectly.
+
+In {productname} {release-version}, the `mce-content-body` class is applied to the preview iframe, ensuring content renders consistently with the editor.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
+
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes

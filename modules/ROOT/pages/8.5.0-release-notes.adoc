@@ -41,6 +41,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Spell Checker
+
+The {productname} {release-version} release includes an accompanying release of the **Spell Checker** premium plugin.
+
+**Spell Checker** includes the following change.
+
+==== The Spell Checker plugin now uses the `content_language` option as the default language, falling back to `spellchecker_language` if not set
+// #TINY-11214
+
+Previously, the Spell Checker plugin relied exclusively on the `spellchecker_language` option to determine its default proofing language. There was no way to align the spellchecker language with the content language set on the editor.
+
+In {productname} {release-version}, the Spell Checker plugin now reads the new `content_language` option first and uses its value as the default proofing language. If `content_language` is not set, the plugin falls back to `spellchecker_language`. The `spellchecker_language` option will be deprecated in a future major version; integrators are encouraged to use `content_language` instead.
+
+For information on the **Spell Checker** plugin, see: xref:introduction-to-tiny-spellchecker.adoc[Spell Checker].
+
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes
@@ -76,6 +91,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // #TINY-vwxyz1
 
 // CCFR here.
+
+=== New `content_language` option to set the `lang` attribute on the iframe's `html` element or the inline editor's target element
+// #TINY-11214
+
+Previously, {productname} had no option to set the default content language of the editor. In classic (iframe) mode, the `html` element inside the editor iframe had no `lang` attribute, which failed to meet accessibility standards such as link:https://www.w3.org/WAI/standards-guidelines/act/rules/b5c3f8/[WCAG Success Criterion 3.1.1]. Screen readers and other assistive technologies could not determine the language of the editor content.
+
+In {productname} {release-version}, the new xref:content-localization.adoc#content_language[`+content_language+`] option sets a `lang` attribute on the `html` element of the editor's iframe in classic mode, or on the target element in inline mode. This is separate from the xref:ui-localization.adoc#language[`+language+`] option, which controls the UI language. The Spell Checker plugin also now defaults to `+content_language+` when set, before falling back to `+spellchecker_language+`.
 
 
 [[changes]]

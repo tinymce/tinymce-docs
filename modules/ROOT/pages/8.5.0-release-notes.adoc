@@ -29,6 +29,21 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== AI Review suggestion cards now stay available when you close and reopen the review sidebar while suggestions are still loading
+// #TINY-14197
+
+Previously, closing the TinyMCE AI Review sidebar immediately after starting a review and then reopening it after the AI finished generating suggestions would reset the sidebar state. The suggestion cards associated with the review were not displayed, and instead the list of available reviews appeared alongside the preview. This prevented the generated suggestions from being actioned.
+
+In {productname} {release-version}, the sidebar state is now correctly preserved when the sidebar is closed and reopened during or after suggestion generation. The review suggestion cards remain visible and actionable, even if the sidebar was closed while the AI was still streaming results.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 === <Premium plugin name 1> <Premium plugin name 1 version>
 
 The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

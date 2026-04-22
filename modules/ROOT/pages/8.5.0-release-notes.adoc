@@ -29,6 +29,21 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== Layout would shift causing the text to jump when action button appears on hover in the chat history list
+// #TINY-14157
+
+Previously, the actions container in the TinyMCE AI Chat History panel had no reserved space for the icon button that appears on hover. When hovering over a chat history item, the button became visible and caused the entire layout to shift, making content jump position unexpectedly. This resulted in jarring visual inconsistency and inconsistent spacing throughout the component.
+
+In {productname} {release-version}, the actions container now reserves minimum horizontal space to accommodate the icon button and its surrounding padding. Action buttons appear and disappear without causing layout shifts, providing smoother and more predictable interactions with the Chat History.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 === <Premium plugin name 1> <Premium plugin name 1 version>
 
 The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

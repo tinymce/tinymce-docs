@@ -14,15 +14,11 @@ tinymce.init({
   suggestededits_access: 'full',
   suggestededits_content: 'html',
   suggestededits_auto_approve: true,
-
+  view_show: 'suggestededits',
   user_id: 'kai-nakamura',
   fetch_users: (userIds) => Promise.all(userIds
     .map((userId) =>
       fetch(`${API_URL}/${userId}`)
         .then((response) => response.json())
-        .catch(() => ({ id: userId })))),
-  
-  init_instance_callback: (editor) => { 
-    editor.execCommand('suggestededits'); 
-  }
+        .catch(() => ({ id: userId }))))
 });

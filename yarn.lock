@@ -507,6 +507,11 @@ combined-stream@^1.0.8:
   dependencies:
     delayed-stream "~1.0.0"
 
+commander@^10.0.0:
+  version "10.0.1"
+  resolved "https://registry.yarnpkg.com/commander/-/commander-10.0.1.tgz#881ee46b4f77d1c1dccc5823433aa39b022cbe06"
+  integrity sha512-y4Mg2tXshplEbSGzx7amzPwKKOCGuoSRP/CjEdwwk0FOGlUbq6lKuoyDZTNZkmxHdJtp54hdfY/JUrdL7Xfdug==
+
 commander@^7.0.0:
   version "7.2.0"
   resolved "https://registry.yarnpkg.com/commander/-/commander-7.2.0.tgz#a36cb57d0b501ce108e4d20559a150a391d97ab7"
@@ -1384,10 +1389,12 @@ json5@~2.2:
   resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.3.tgz#78cd6f1a19bdc12b73db5ad0c61efd66c1e29283"
   integrity sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==
 
-liquidjs@^9.37.0:
-  version "9.37.0"
-  resolved "https://registry.yarnpkg.com/liquidjs/-/liquidjs-9.37.0.tgz#58e0dd2fa779635ead589e82cfa9baffe49f490e"
-  integrity sha512-qDj9iiNdB+QNZTR4iKjiQzoHQma7V8Itx5oZG/ZCP7xjebh1LI+s5IG2ZYUbs1ALO6hBzmW36Ptd8RR4eohuDA==
+liquidjs@>=10.25.5, liquidjs@^9.37.0:
+  version "10.25.6"
+  resolved "https://registry.yarnpkg.com/liquidjs/-/liquidjs-10.25.6.tgz#dddf7ee43cd3c7a2d7768063937bf14e77079afb"
+  integrity sha512-h5ki5HS1PiL9/NmLw3iUcTF1jQswKJd8KLEXNrtSf8XHF0v3c5+d+8llz3N9I5IUdc5rsOuVLb9AVnqvqqscPg==
+  dependencies:
+    commander "^10.0.0"
 
 load-json-file@^4.0.0:
   version "4.0.0"

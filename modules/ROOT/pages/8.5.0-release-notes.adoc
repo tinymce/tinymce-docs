@@ -110,6 +110,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Certain combinations of divs inside of lists would cause issues turning off lists
+// #TINY-14070
+
+Previously, certain combinations of `+div+` elements inside list items could prevent lists from being toggled off. The list detection logic would prematurely identify a `+div+` within a list item as a list host rather than recognizing it as content inside an existing list. This made it impossible to remove the list formatting in affected content structures.
+
+In {productname} {release-version}, the list detection logic now correctly identifies when a `+div+` is inside a list and locates the parent list before treating the element as a host. Lists with nested `+div+` elements can now be toggled off as expected.
+
 
 [[security-fixes]]
 == Security fixes

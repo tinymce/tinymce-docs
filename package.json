@@ -20,6 +20,9 @@
   },
   "author": "Tiny Technologies Inc",
   "license": "CC-BY-NC-SA-3.0",
+  "resolutions": {
+    "picomatch": "^2.3.2"
+  },
   "nodemonConfig": {
     "execMap": {
       "build": "antora ./antora-playbook-dev.yml"

@@ -29,6 +29,21 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 
 The following premium plugin updates were released alongside {productname} {release-version}.
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fixes.
+
+==== `ToggleSidebar` events were not being triggered when toggling floating sidebars
+// #TINY-14243
+
+Previously, the `+ToggleSidebar+` event was not emitted when opening or closing floating sidebars in the TinyMCE AI plugin. Additionally, querying the current sidebar value using `+editor.queryCommandValue('ToggleSidebar')+` did not return the correct identifier when a floating sidebar was open. This made it difficult to programmatically determine the state of floating sidebars or respond to state changes.
+
+In {productname} {release-version}, floating sidebars now fully support the existing sidebar APIs. The `+ToggleSidebar+` event fires when floating sidebars are opened, closed, or switched, and `+queryCommandValue+` returns the correct sidebar identifier. This brings floating sidebars to full API parity with regular sidebars.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 === <Premium plugin name 1> <Premium plugin name 1 version>
 
 The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.

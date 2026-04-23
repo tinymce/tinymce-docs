@@ -41,6 +41,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== History entries with lengthy names with no line breaks were overflowing
+// #TINY-14075
+
+Previously, chat history entries in the TinyMCE AI plugin did not handle text overflow for titles containing lengthy names without spaces. The title text extended beyond the visible area, hiding the options menu (three-dot button) and making the entry difficult to manage.
+
+In {productname} {release-version}, chat history item titles now correctly truncate with an ellipsis when the text exceeds the available width. The options menu remains visible and accessible regardless of title length.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes

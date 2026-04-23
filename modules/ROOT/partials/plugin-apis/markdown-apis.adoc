@@ -1,6 +1,6 @@
 A new API, `editor.plugins.markdown.getContent();` has been added to support the new {pluginname} plugin
 
-The API's function is to take a {productname} document, and processes it such that the previously HTML content is converted into content with valid {pluginname} syntax.
+The API converts the current {productname} document from HTML into valid {pluginname} syntax.
 
 The `editor.plugins.markdown.getContent();` API does not require configuration from the user
 

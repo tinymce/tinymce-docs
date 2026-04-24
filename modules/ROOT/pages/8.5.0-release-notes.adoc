@@ -49,9 +49,16 @@ The {productname} {release-version} release includes an accompanying release of 
 
 === Enhanced Skins & Icon Packs
 
-The **Enhanced Skins & Icon Packs** release includes the following updates:
+The **Enhanced Skins & Icon Packs** release includes the following updates and fix.
 
 The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} {release-version} skin, Oxide.
+
+==== The floating toolbar had a transparent background in the fabric, snow, and naked skins
+// #TINY-14190
+
+Previously, the floating toolbar background was transparent in the fabric, snow, and naked skins, causing editor content below to show through the toolbar. This reduced readability and made the toolbar difficult to use.
+
+In {productname} {release-version}, the toolbar background styling uses proper background colors for the affected skins. The floating toolbar now has a solid background in all three skins, ensuring proper visual separation from editor content.
 
 For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
 

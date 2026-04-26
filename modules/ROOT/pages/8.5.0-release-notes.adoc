@@ -41,6 +41,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== Arrow key navigation did not cycle between the first and last menu items
+// #TINY-14193
+
+Previously, when navigating TinyMCE AI menus using the arrow keys, the focus did not cycle between the first and last menu items. Pressing the down arrow on the last item or the up arrow on the first item had no effect. This was inconsistent with the cycling behavior of menus elsewhere in {productname} and could slow down keyboard-based navigation.
+
+In {productname} {release-version}, arrow key navigation in TinyMCE AI menus now cycles between the first and last items, matching the standard keyboard navigation behavior used throughout the editor.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes

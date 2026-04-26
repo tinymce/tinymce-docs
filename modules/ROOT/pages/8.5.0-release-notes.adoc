@@ -41,6 +41,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== A long list of fetched sources could overflow the submenu in the AI chat without a way to scroll
+// #TINY-14064
+
+Previously, when the list of fetched sources returned from the AI chat exceeded the available space, the submenu overflowed beyond the visible area without any scrolling mechanism. This prevented users from viewing or selecting sources beyond the visible area, blocking functionality and creating a poor user experience. Attempting to scroll within the overflowed submenu closed the menu entirely.
+
+In {productname} {release-version}, the AI chat source submenu includes a maximum height constraint and scrollbar support. Long lists of fetched sources now display within a scrollable area, allowing access to all sources regardless of list length.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes

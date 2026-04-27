@@ -41,6 +41,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== Tab could be used to move focus between segmented button options in the preview footer
+// #TINY-14161
+
+Previously, the Tab key could be used to move focus between individual options within the segmented button in the TinyMCE AI preview mode footer. This was inconsistent with standard keyboard navigation behavior, where arrow keys should navigate between options in a segmented control and Tab should move focus to the next interactive element outside the group.
+
+In {productname} {release-version}, the focus order in the TinyMCE AI preview footer has been corrected. The Tab key now moves focus to the next interactive element outside the segmented button, and arrow keys navigate between options within the group. This provides a more predictable and accessible keyboard navigation experience.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes

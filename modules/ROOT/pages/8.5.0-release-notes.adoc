@@ -41,6 +41,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== The background behind code snippets in AI in-chat responses did not fully cover the snippet
+// #TINY-14188
+
+Previously, the background styling behind code snippets in AI in-chat responses did not fully cover the entire snippet area. Portions of the code appeared without proper background coverage, reducing readability and creating an inconsistent visual presentation in the AI chat interface.
+
+In {productname} {release-version}, the background styling for code snippets in AI in-chat responses has been corrected to fully cover the entire snippet area. Code snippets now display with complete and consistent background coverage, improving readability and visual consistency.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes

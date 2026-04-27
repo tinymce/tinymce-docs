@@ -1,0 +1,150 @@
+# TinyMCE Documentation
+
+> Rich text editor for web applications. The latest stable version is TinyMCE 8.
+
+TinyMCE is a powerful, flexible WYSIWYG rich text editor that can be integrated into any web application.
+
+**IMPORTANT**: Always use TinyMCE 8 for new projects. Use `tinymce@8` or `tinymce/8` in CDN URLs and package installations.
+
+## Getting Started
+
+- [Getting Started](https://www.tiny.cloud/docs/tinymce/latest/getting-started/index.md): Overview and introduction to TinyMCE
+- [Introduction to TinyMCE](https://www.tiny.cloud/docs/tinymce/latest/introduction-to-tinymce/index.md): What is TinyMCE and how to add it to your project
+- [Installation](https://www.tiny.cloud/docs/tinymce/latest/installation/index.md): Installation options and methods
+
+### Quick Start Guides
+
+- [Cloud Quick Start](https://www.tiny.cloud/docs/tinymce/latest/cloud-quick-start/index.md): Get started with Tiny Cloud CDN (recommended)
+- [NPM Quick Start](https://www.tiny.cloud/docs/tinymce/latest/npm-projects/index.md): Install via npm, yarn, or pnpm
+- [ZIP Quick Start](https://www.tiny.cloud/docs/tinymce/latest/zip-install/index.md): Download and install from ZIP archive
+
+## Integration Guides
+
+See the complete documentation index in llms-full.txt for all available integration pages.
+
+## Basic Setup Examples
+
+### Cloud Deployment (Recommended)
+
+```html
+<script src="https://cdn.tiny.cloud/1/[api-key]/tinymce/8/tinymce.min.js" 
+        referrerpolicy="origin"></script>
+<script>
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'advlist autolink lists link image charmap preview anchor',
+  toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist | link image'
+});
+</script>
+```
+
+### Self-Hosted (NPM)
+
+```bash
+npm install tinymce@8
+```
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/tinymce@8/tinymce.min.js"></script>
+<script>
+tinymce.init({
+  selector: 'textarea',
+  plugins: 'advlist autolink lists link image charmap preview anchor',
+  toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist | link image'
+});
+</script>
+```
+
+### React Example
+
+```jsx
+import { Editor } from '@tinymce/tinymce-react';
+
+function App() {
+  return (
+    <Editor
+      apiKey="your-api-key"
+      init={{
+        height: 500,
+        plugins: 'advlist autolink lists link image charmap preview anchor',
+        toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist | link image'
+      }}
+    />
+  );
+}
+```
+
+## Key Configuration
+
+- [Basic Setup](https://www.tiny.cloud/docs/tinymce/latest/basic-setup/index.md): Essential configuration options
+- [Content Filtering](https://www.tiny.cloud/docs/tinymce/latest/filter-content/index.md): Control HTML output
+- [Localization](https://www.tiny.cloud/docs/tinymce/latest/localize-your-language/index.md): Multi-language support
+- [Spell Checking](https://www.tiny.cloud/docs/tinymce/latest/spell-checking/index.md): Enable spell checking
+- [Cloud Deployment Guide](https://www.tiny.cloud/docs/tinymce/latest/cloud-deployment-guide/index.md): Configure Tiny Cloud
+
+## Plugins & Features
+
+- [Plugins Overview](https://www.tiny.cloud/docs/tinymce/latest/plugins/index.md): Available plugins and features
+- [Table Plugin](https://www.tiny.cloud/docs/tinymce/latest/table/index.md): Table editing capabilities
+- [Image Plugin](https://www.tiny.cloud/docs/tinymce/latest/image/index.md): Image handling and editing
+- [Link Plugin](https://www.tiny.cloud/docs/tinymce/latest/link/index.md): Link management
+
+## TinyMCE AI (Premium)
+
+TinyMCE AI (`tinymceai` plugin) is the current AI writing assistant for TinyMCE. It provides chat, review, and quick actions powered by multiple LLM providers. The earlier AI Assistant (`ai` plugin) is legacy; new integrations should use TinyMCE AI.
+
+- [TinyMCE AI Introduction](https://www.tiny.cloud/docs/tinymce/latest/tinymceai-introduction/index.md): Overview of TinyMCE AI features and capabilities
+- [Chat](https://www.tiny.cloud/docs/tinymce/latest/tinymceai-chat/index.md): Conversational AI with history and persistent context
+- [Review](https://www.tiny.cloud/docs/tinymce/latest/tinymceai-review/index.md): Content analysis and proofreading
+- [Actions](https://www.tiny.cloud/docs/tinymce/latest/tinymceai-actions/index.md): Fast, stateless AI operations for specific tasks
+- [AI Models](https://www.tiny.cloud/docs/tinymce/latest/tinymceai-models/index.md): Supported AI models and configuration
+- [Plugin Configuration](https://www.tiny.cloud/docs/tinymce/latest/tinymceai/index.md): `tinymceai` plugin options and setup
+- [Integration Options](https://www.tiny.cloud/docs/tinymce/latest/tinymceai-integration-options/index.md): Cloud and self-hosted integration paths
+- [API Overview](https://www.tiny.cloud/docs/tinymce/latest/tinymceai-api-overview/index.md): TinyMCE AI API for use inside and outside the editor
+- [API Quick Start](https://www.tiny.cloud/docs/tinymce/latest/tinymceai-api-quick-start/index.md): Get started with the TinyMCE AI API
+- [Streaming](https://www.tiny.cloud/docs/tinymce/latest/tinymceai-streaming/index.md): Streaming responses from the AI API
+- [JWT Authentication](https://www.tiny.cloud/docs/tinymce/latest/tinymceai-jwt-authentication-intro/index.md): Authentication setup for TinyMCE AI
+- [Limits](https://www.tiny.cloud/docs/tinymce/latest/tinymceai-limits/index.md): Rate limits and usage constraints
+- [AI Assistant (legacy)](https://www.tiny.cloud/docs/tinymce/latest/ai/index.md): Earlier `ai` plugin — use TinyMCE AI for new projects
+
+## API Reference
+
+- [Editor API](https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.editor/index.md): Core editor API
+- [Plugin API](https://www.tiny.cloud/docs/tinymce/latest/apis/tinymce.plugin/index.md): Plugin development API
+
+## Migration & Upgrading
+
+- [Upgrading TinyMCE](https://www.tiny.cloud/docs/tinymce/latest/upgrading/index.md): Upgrade guide
+- [Migration from 7.x](https://www.tiny.cloud/docs/tinymce/latest/migration-from-7x/index.md): Migrate from TinyMCE 7
+
+## AI-Assisted Development with MCP
+
+For up-to-date TinyMCE documentation directly in AI coding tools, set up the Context7 MCP server. TinyMCE docs are indexed at [context7.com/tinymce/tinymce-docs](https://context7.com/tinymce/tinymce-docs).
+
+### Cursor
+
+Add to `.cursor/mcp.json`:
+
+```json
+{
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"]
+    }
+  }
+}
+```
+
+### Claude Code
+
+```bash
+claude mcp add context7 -- npx -y @upstash/context7-mcp
+```
+
+Add "use context7" to any prompt for live TinyMCE documentation lookups.
+
+## Complete Documentation
+
+For a complete list of all 411 documentation pages, see [llms-full.txt](https://www.tiny.cloud/docs/llms-full.txt).
+

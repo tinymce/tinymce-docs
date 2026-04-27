@@ -51,9 +51,9 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== New optional `id` property to `tinymceai_quickactions_custom` to register the action as custom menu item
 // #TINY-14229
 
-Previously, custom quick actions defined through the xref:tinymceai.adoc#tinymceai_quickactions_custom[`+tinymceai_quickactions_custom+`] option could only appear inside a dedicated Custom submenu within the Quick Actions menu. This limited integrators who wanted custom actions to appear as top-level menu items alongside predefined actions or in other toolbar and menu configurations.
+Previously, custom quick actions defined through the xref:tinymceai.adoc#tinymceai_quickactions_custom[`+tinymceai_quickactions_custom+`] option could only appear inside a dedicated Custom submenu within the Quick Actions menu. This limited integrators who wanted custom actions to appear as top-level menu items alongside predefined actions or in other menu configurations.
 
-In {productname} {release-version}, an optional `id` property can be included in each custom quick action object. When an `id` is set, the custom action can be listed in the xref:tinymceai.adoc#tinymceai_quickactions_menu[`+tinymceai_quickactions_menu+`] array as its own top-level menu item, added to the xref:quickbars.adoc#quickbars_selection_toolbar[`+quickbars_selection_toolbar+`], or included in any other toolbar or menu configuration that accepts control identifiers.
+In {productname} {release-version}, an optional `id` property can be included in each custom quick action object. When an `id` is set, the custom action can be listed in the xref:tinymceai.adoc#tinymceai_quickactions_menu[`+tinymceai_quickactions_menu+`] array as its own top-level menu item, or included in any menubar menu or menu button configuration that accepts control identifiers.
 
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 

@@ -120,7 +120,7 @@ In {productname} {release-version}, `script` elements that are considered valid 
 === Iframe elements with children would incorrectly be removed by DOMPurify
 // #TINY-9655
 
-Previously, `iframe` elements that contained child nodes were removed entirely during the sanitization process, even when the editor configuration allowed iframes. DOMPurify treated the presence of child nodes within an `iframe` as a potential mXSS risk and stripped the entire element from the content.
+Previously, `iframe` elements that contained child nodes were removed entirely during the sanitization process. DOMPurify treated the presence of child nodes within an `iframe` as a potential mXSS risk and stripped the entire element from the content.
 
 In {productname} {release-version}, `iframe` elements are preserved during sanitization. Any child nodes and unsafe or invalid attributes are removed, but the `iframe` element itself remains in the editor content.
 

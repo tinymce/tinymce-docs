@@ -440,7 +440,7 @@ Array of custom actions rendered in the Custom submenu within the AI Quick Actio
 * `+prompt+`: The prompt sent to the AI
 * `+type+`: `+'action'+` or `+'chat'+`
 * `+model+`: Required for `+action+` type only
-* `+id+` (optional): Stable identifier for the custom action. When set, the same string can be listed in xref:tinymceai.adoc#tinymceai_quickactions_menu[`tinymceai_quickactions_menu`] so the action appears as its own top-level menu item instead of only inside the Custom submenu. The identifier can also be used in xref:quickbars.adoc#quickbars_selection_toolbar[`+quickbars_selection_toolbar+`], the xref:menus-configuration-options.adoc#menu[`+menu+`] option, or any other toolbar or menu configuration that accepts control identifiers.
+* `+id+` (optional): Stable identifier for the custom action. When set, the same string can be listed in xref:tinymceai.adoc#tinymceai_quickactions_menu[`tinymceai_quickactions_menu`] so the action appears as its own top-level menu item instead of only inside the Custom submenu. The identifier can also be used in the xref:menus-configuration-options.adoc#menu[`+menu+`] option or any other menu configuration that accepts menu item identifiers.
 
 *Type:* `+Array+` of `+Object+`
 
@@ -480,9 +480,8 @@ tinymce.init({
 ----
 tinymce.init({
   selector: 'textarea',
-  plugins: 'quickbars tinymceai',
+  plugins: 'tinymceai',
   toolbar: 'tinymceai-chat tinymceai-quickactions tinymceai-review',
-  quickbars_selection_toolbar: 'tinymceai-quickactions | bold italic',
   tinymceai_quickactions_menu: [
     'ai-quickactions-chat-prompts',
     'ai-quote',

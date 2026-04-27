@@ -83,7 +83,7 @@ tinymce.init({
 
 [NOTE]
 ====
-AI controls are not added to the xref:quickbars.adoc#quickbars_selection_toolbar[`+quickbars_selection_toolbar+`] automatically; add the desired toolbar button identifiers to that option when they should appear there. Custom actions defined by xref:tinymceai.adoc#tinymceai_quickactions_custom[`+id+`] can also be listed in `+quickbars_selection_toolbar+`.
+AI controls are not added to the xref:quickbars.adoc#quickbars_selection_toolbar[`+quickbars_selection_toolbar+`] automatically; add the desired toolbar button identifiers to that option when they should appear there.
 
 For example:
 

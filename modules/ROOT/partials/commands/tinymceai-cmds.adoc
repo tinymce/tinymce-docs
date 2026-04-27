@@ -19,10 +19,7 @@ tinymce.activeEditor.execCommand('ToggleSidebar', false, 'tinymceai-chat');
 tinymce.activeEditor.execCommand('ToggleSidebar', false, 'tinymceai-review');
 ----
 
-[[tinymceai-floating-sidebar-api]]
-=== Floating sidebar and `+ToggleSidebar+`
-
-When xref:tinymceai.adoc#tinymceai_sidebar_type[`tinymceai_sidebar_type`] is `+'floating'+`, the core `+ToggleSidebar+` command, the `+ToggleSidebar+` event, and `+queryCommandValue('ToggleSidebar')+` work the same as for a static sidebar for `+'tinymceai-chat'+` and `+'tinymceai-review'+`.
+NOTE: These commands work regardless of xref:tinymceai.adoc#tinymceai_sidebar_type[`tinymceai_sidebar_type`] (`+'static'+` or `+'floating'+`). The `+ToggleSidebar+` event and `+queryCommandValue('ToggleSidebar')+` also behave the same for both sidebar types.
 
 [[tinymceai-plugin-commands]]
 === TinyMCE AI plugin commands

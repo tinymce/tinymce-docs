@@ -52,7 +52,9 @@ The {productname} {release-version} release includes an accompanying release of 
 
 Previously, when a prompt sent to the TinyMCE AI service exceeded size limits, the error message did not include enough detail for integrators to diagnose the issue. The structured error data returned by the service, such as the current prompt length and the maximum allowed length, was not decoded or displayed.
 
-In {productname} {release-version}, TinyMCE AI now decodes and displays detailed error information when a prompt exceeds size limits, including the current prompt length and the maximum allowed length. This makes it easier for integrators to identify and resolve prompt size issues.
+In {productname} {release-version}, TinyMCE AI now decodes and displays detailed error information when a prompt exceeds size limits. When available, this includes the current prompt length and the maximum allowed length, making it easier for integrators to identify and resolve prompt size issues.
+
+NOTE: If the service response includes unrecognized error details alongside recognized ones, the additional detail information may not be displayed. The error notification itself is unaffected.
 
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 

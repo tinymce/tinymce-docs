@@ -51,7 +51,7 @@ The {productname} {release-version} release includes an accompanying release of 
 ==== The first loading card during a review no longer appears focused
 // #TINY-14077
 
-Previously, when running an AI review, the first skeleton card displayed in the Review sidebar while suggestions were being generated appeared with focus styles applied. Because the card content was still loading and could not be interacted with, the visible focus indicator was misleading and created a confusing user experience.
+Previously, when running an AI review, the first skeleton card displayed in the Review sidebar while suggestions were being generated appeared with focus styles applied. Since the card content was still loading and could not be interacted with, the visible focus indicator was misleading and created a confusing user experience.
 
 In {productname} {release-version}, focus styles are no longer applied to loading cards in the Review sidebar. Cards only receive focus styling once their content has fully loaded and they can be interacted with.
 

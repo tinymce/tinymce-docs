@@ -110,12 +110,12 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
-=== Script elements would incorrectly be removed by DOMPurify when considered valid in the schema
+=== Script and style elements would incorrectly be removed by DOMPurify when considered valid in the schema
 // #TINY-9655
 
-Previously, `script` elements that were explicitly allowed through xref:content-filtering.adoc#valid_elements[`+valid_elements+`] or xref:content-filtering.adoc#extended_valid_elements[`+extended_valid_elements+`] were removed during the sanitization process when xref:content-filtering.adoc#xss_sanitization[`+xss_sanitization+`] was enabled. DOMPurify flagged these elements as potential mXSS vectors and removed them entirely, even when the schema configuration indicated they were valid.
+Previously, `script` and `style` elements that were explicitly allowed through xref:content-filtering.adoc#valid_elements[`+valid_elements+`] or xref:content-filtering.adoc#extended_valid_elements[`+extended_valid_elements+`] were removed during the sanitization process when xref:content-filtering.adoc#xss_sanitization[`+xss_sanitization+`] was enabled. DOMPurify flagged these elements as potential mXSS vectors and removed them entirely, even when the schema configuration indicated they were valid.
 
-In {productname} {release-version}, `script` elements that are considered valid in the schema are retained during sanitization. The sanitization process still removes unsafe attributes and content, but no longer removes the entire element when the schema explicitly allows it.
+In {productname} {release-version}, `script` and `style` elements that are considered valid in the schema are retained during sanitization. The sanitization process still removes unsafe attributes and content, but no longer removes the entire element when the schema explicitly allows it.
 
 === Iframe elements with children would incorrectly be removed by DOMPurify
 // #TINY-9655

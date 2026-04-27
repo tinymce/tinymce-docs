@@ -41,6 +41,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== Tag removal was not disabled while the AI was responding
+// #TINY-14132
+
+Previously, the dismiss buttons on context tags in the TinyMCE AI Chat panel remained active while the AI was generating a response. This allowed tags to be removed during response generation, which could interfere with the response context and produce unexpected results.
+
+In {productname} {release-version}, the dismiss buttons on context tags are now disabled while the AI is generating a response. Tags can only be removed once the response is complete, preventing unintended modifications to the request context during generation.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes

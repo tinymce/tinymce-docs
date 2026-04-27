@@ -19,6 +19,18 @@ const BASE_URL = 'https://www.tiny.cloud/docs/tinymce/latest';
 const DOCS_ROOT_URL = 'https://www.tiny.cloud/docs';
 const OUTPUT_DIR = path.join(__dirname, '../modules/ROOT/attachments');
 
+// Convert a trailing-slash doc URL to its Markdown endpoint.
+// e.g. https://www.tiny.cloud/docs/tinymce/latest/basic-setup/
+//   -> https://www.tiny.cloud/docs/tinymce/latest/basic-setup/index.md
+// Rewrite doc page URLs from trailing-slash to index.md Markdown endpoints.
+// Only affects URLs under /docs/tinymce/; CDN and file URLs are unchanged.
+function toMarkdownEndpoints(content) {
+  return content.replace(
+    /https:\/\/www\.tiny\.cloud\/docs\/tinymce\/[^\s)"]+/g,
+    (match) => match.endsWith('/') ? match + 'index.md' : match
+  );
+}
+
 // Fetch sitemap from URL or file
 async function getSitemap(source) {
   if (source.startsWith('http://') || source.startsWith('https://')) {
@@ -1206,6 +1218,33 @@ TinyMCE AI (\`tinymceai\` plugin) is the current AI writing assistant for TinyMC
 - [Upgrading TinyMCE](${BASE_URL}/upgrading/): Upgrade guide
 - [Migration from 7.x](${BASE_URL}/migration-from-7x/): Migrate from TinyMCE 7
 
+## AI-Assisted Development with MCP
+
+For up-to-date TinyMCE documentation directly in AI coding tools, set up the Context7 MCP server. TinyMCE docs are indexed at [context7.com/tinymce/tinymce-docs](https://context7.com/tinymce/tinymce-docs).
+
+### Cursor
+
+Add to \`.cursor/mcp.json\`:
+
+\`\`\`json
+{
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"]
+    }
+  }
+}
+\`\`\`
+
+### Claude Code
+
+\`\`\`bash
+claude mcp add context7 -- npx -y @upstash/context7-mcp
+\`\`\`
+
+Add "use context7" to any prompt for live TinyMCE documentation lookups.
+
 ## Complete Documentation
 
 For a complete list of all ${urls.length} documentation pages, see [llms-full.txt](${DOCS_ROOT_URL}/llms-full.txt).
@@ -1225,11 +1264,11 @@ async function main() {
     const urls = parseSitemap(sitemapContent);
     console.log(`Found ${urls.length} unique URLs in sitemap`);
     
-    const llmsTxt = generateLLMsTxt(urls);
+    const llmsTxt = toMarkdownEndpoints(generateLLMsTxt(urls));
     fs.writeFileSync(path.join(OUTPUT_DIR, 'llms.txt'), llmsTxt);
     console.log('✓ Generated llms.txt');
     
-    const llmsFullTxt = await generateLLMsFullTxt(urls);
+    const llmsFullTxt = toMarkdownEndpoints(await generateLLMsFullTxt(urls));
     fs.writeFileSync(path.join(OUTPUT_DIR, 'llms-full.txt'), llmsFullTxt);
     console.log('✓ Generated llms-full.txt');
     

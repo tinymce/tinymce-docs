@@ -41,7 +41,7 @@ include::partial$misc/bundling-guide-link.adoc[]
 [WARNING]
 ====
 **Certain elements may be removed by XSS sanitization**  
-By default, {productname} sanitizes HTML content to protect against XSS attacks. Elements outside the HTML5 specification, such as `<script>`, are removed. Standard `<meta>` tags are preserved, but attributes not defined in the HTML5 spec (for example, the RDFa `property` attribute) require explicit configuration to be retained.
+By default, {productname} sanitizes HTML content to protect against XSS attacks. Elements outside the HTML5 specification, such as `<script>`, are removed unless explicitly allowed through xref:content-filtering.adoc#valid_elements[`+valid_elements+`] or xref:content-filtering.adoc#extended_valid_elements[`+extended_valid_elements+`]. Standard `<meta>` tags are preserved, but attributes not defined in the HTML5 spec (for example, the RDFa `property` attribute) require explicit configuration to be retained.
 
 If integrators encounter issues with required elements being removed, the following configuration options are available. These options reduce security and should be used with caution:
 

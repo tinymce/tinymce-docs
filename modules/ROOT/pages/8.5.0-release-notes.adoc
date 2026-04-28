@@ -266,6 +266,13 @@ The background color of accordion items in the TinyMCE AI Review list has been u
 
 // CCFR here.
 
+=== Alert and confirm dialogs were not announced properly by some screen readers
+// #TINY-13812
+
+Previously, alert and confirm dialogs in {productname} were not announced correctly by some screen readers, such as NVDA. The dialogs had an empty `aria-label` attribute and lacked appropriate `aria-labelledby` or `aria-describedby` references to the dialog body content. As a result, screen reader users could not hear the message or question presented in these dialogs, making it difficult to respond to confirmation prompts or understand alert messages.
+
+In {productname} {release-version}, alert and confirm dialogs now include proper ARIA attributes that reference the dialog content. Screen readers announce the dialog message when the dialog opens, providing an accessible experience for all users.
+
 === Certain selections would delete the editor body, causing issues
 // #TINY-14149
 

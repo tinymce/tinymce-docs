@@ -62,6 +62,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following fixes, improvements and additions.
 
+==== Preserved the selected diff when switching between diff and preview modes
+// #TINY-13402
+
+Previously, switching between preview and diff modes in the TinyMCE AI review panel did not preserve the current suggestion selection. The view would reset to the first suggestion, causing the document to jump to the top rather than maintaining the position within the current context. This disrupted the review experience, particularly for users working through suggestions further down the document.
+
+In {productname} {release-version}, the active suggestion is now preserved when switching between preview and diff modes. Users return to the same suggestion they were viewing prior to the mode change, and manually scrolling in preview mode no longer forces the view to jump when switching back to diff mode.
+
 ==== Improved error message for too-large prompts.
 // #TINY-14104
 

@@ -62,6 +62,15 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following fixes, improvements and additions.
 
+==== Improved error message for too-large prompts.
+// #TINY-14104
+
+Previously, when a prompt sent to the TinyMCE AI service exceeded size limits, the error message did not include enough detail for integrators to diagnose the issue. The structured error data returned by the service, such as the current prompt length and the maximum allowed length, was not decoded or displayed.
+
+In {productname} {release-version}, TinyMCE AI now decodes and displays detailed error information when a prompt exceeds size limits. When available, this includes the current prompt length and the maximum allowed length, making it easier for integrators to identify and resolve prompt size issues.
+
+NOTE: If the service response includes unrecognized error details alongside recognized ones, the additional detail information may not be displayed. The error notification itself is unaffected.
+
 ==== Arrow key navigation did not cycle between the first and last menu items
 // #TINY-14193
 

@@ -41,6 +41,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Media Optimizer
+
+The {productname} {release-version} release includes an accompanying release of the **Media Optimizer** premium plugin.
+
+**Media Optimizer** includes the following fix.
+
+==== Upload progress UI was not hidden if a file failed to upload
+// #TINY-14181
+
+Previously, the upload progress spinner in the Media Optimizer plugin was recreated each time its visibility status was updated. When a file failed to upload and the spinner needed to be hidden, only the newly created instance was hidden while the original spinner remained visible. This left the upload progress UI permanently displayed even after an upload error.
+
+In {productname} {release-version}, the spinner is now created once and reused when its visibility status changes. The upload progress UI is hidden as expected when a file upload fails.
+
+For information on the **Media Optimizer** plugin, see: xref:uploadcare.adoc[Media Optimizer].
+
 === PowerPaste
 
 The {productname} {release-version} release includes an accompanying release of the **PowerPaste** premium plugin.

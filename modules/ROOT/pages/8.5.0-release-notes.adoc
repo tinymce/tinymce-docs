@@ -62,6 +62,15 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following fixes, improvements and additions.
 
+==== New chat button was not disabled when the chat was empty
+// #TINY-14094
+
+Previously, the New Chat button in the TinyMCE AI sidebar remained enabled even when the current conversation was empty. Clicking the button in this state had no effect, which created a confusing experience and an accessibility issue, as screen readers and keyboard users could interact with a control that performed no action.
+
+In {productname} {release-version}, the New Chat button is now disabled when no conversation has been started, ensuring the button state accurately reflects its availability.
+
+**TinyMCE AI** includes the following fixes, improvements and additions.
+
 ==== Layout would shift causing the text to jump when action button appears on hover in the chat history list
 // #TINY-14157
 

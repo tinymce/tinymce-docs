@@ -124,6 +124,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following fixes, improvements and additions.
 
+==== Previous and next buttons are now disabled when only one pending change remains
+// #TINY-13334
+
+Previously, the previous and next navigation buttons in the TinyMCE AI review panel remained active even when only one pending suggestion was available. This created a misleading interface, as the buttons implied additional suggestions to navigate through when none existed.
+
+In {productname} {release-version}, the previous and next buttons are now disabled when only one pending suggestion remains. This provides a clearer indication of the available navigation options and prevents users from attempting unavailable actions.
+
 ==== History entries with lengthy names with no line breaks were overflowing
 // #TINY-14075
 

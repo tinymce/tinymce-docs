@@ -41,6 +41,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== PowerPaste
+
+The {productname} {release-version} release includes an accompanying release of the **PowerPaste** premium plugin.
+
+**PowerPaste** includes the following fix.
+
+==== Super and subscript text was not properly converted to `sub` or `sup` elements on newer versions of Firefox
+// #TINY-14256
+
+Previously, pasting content containing subscript or superscript text from Google Docs into {productname} on Firefox 149 and later did not properly convert the text to semantic `sub` or `sup` elements. Newer versions of Firefox use the `baseline-shift` CSS property instead of the `vertical-align` property for sub and superscript formatting, and PowerPaste did not recognize this property. As a result, the pasted text lost its subscript or superscript formatting.
+
+In {productname} {release-version}, PowerPaste now correctly handles the `baseline-shift` CSS property during paste operations, converting content styled with `baseline-shift: sub` or `baseline-shift: super` into the corresponding `sub` and `sup` elements.
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
+
 === TinyMCE AI
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.

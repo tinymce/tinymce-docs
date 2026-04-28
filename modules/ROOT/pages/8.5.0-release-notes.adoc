@@ -124,6 +124,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following fixes, improvements and additions.
 
+==== A long list of fetched sources could overflow the submenu in the AI chat without a way to scroll
+// #TINY-14064
+
+Previously, when the list of fetched sources returned from the AI chat exceeded the available space, the submenu overflowed beyond the visible area without any scrolling mechanism. This prevented users from viewing or selecting sources beyond the visible area, blocking functionality and creating a poor user experience. Attempting to scroll within the overflowed submenu closed the menu entirely.
+
+In {productname} {release-version}, the AI chat source submenu includes a maximum height constraint and scrollbar support. Long lists of fetched sources now display within a scrollable area, allowing access to all sources regardless of list length.
+
 ==== In some browser/OS combinations it was not possible to have 3 source tags in the same row because of the scrollbar
 // #TINY-14156
 

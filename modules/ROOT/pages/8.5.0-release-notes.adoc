@@ -124,6 +124,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following fixes, improvements and additions.
 
+==== In some browser/OS combinations it was not possible to have 3 source tags in the same row because of the scrollbar
+// #TINY-14156
+
+Previously, in the TinyMCE AI Chat panel, source tags displayed in the response area could appear in rows of only two instead of three on certain browser and operating system combinations. The `max-width` of the source tags did not account for the additional space consumed by thicker scrollbars on some platforms, causing the third tag to wrap to the next row.
+
+In {productname} {release-version}, the maximum width of source tags has been reduced to accommodate scrollbar width variations across platforms. Source tags now consistently display three per row regardless of scrollbar size.
+
 ==== Previous and next buttons are now disabled when only one pending change remains
 // #TINY-13334
 

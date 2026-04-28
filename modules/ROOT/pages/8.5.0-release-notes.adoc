@@ -41,6 +41,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Accessibility Checker
+
+The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.
+
+**Accessibility Checker** includes the following fix.
+
+==== Accessibility checker overlay was too dark on multiline inline elements
+// #TINY-14246
+
+Previously, when the Accessibility Checker highlighted multiline inline elements, the overlay effect appeared excessively dark. The box-shadow dimming applied to these elements stacked across multiple lines, making the highlighted content difficult to read.
+
+In {productname} {release-version}, the overlay styling for multiline inline elements has been corrected. The Accessibility Checker highlight now displays at the expected brightness level regardless of how many lines an inline element spans.
+
+For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
+
 === Media Optimizer
 
 The {productname} {release-version} release includes an accompanying release of the **Media Optimizer** premium plugin.

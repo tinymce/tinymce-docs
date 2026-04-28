@@ -121,6 +121,22 @@ In {productname} {release-version}, the AI Chat loading spinner is now sized to 
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following improvement.
+
+==== While the plugin is generating a review or quick action, the Stop button in the loading indicator receives focus
+// #TINY-14083
+
+Previously, the TinyMCE AI plugin displayed the “Stop generating” control inconsistently across different contexts. The review loading indicator used a text-based button, while the AI Chat sidebar used an icon-based button. In addition, the control did not receive focus when it appeared, which negatively impacted keyboard accessibility.
+
+In {productname} {release-version}, the stop button in the loading indicator now matches the icon button used in the AI Chat sidebar, providing a more consistent visual experience. The button also receives focus when displayed, improving keyboard navigation and accessibility during content generation.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
+
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes
 

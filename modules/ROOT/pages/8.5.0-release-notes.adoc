@@ -365,6 +365,13 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Improved visual styling of inline diff highlights in Suggested Edits and TinyMCE AI plugin.
+// #TINY-13958
+
+Previously, when diff highlights were selected in the Suggested Edits and TinyMCE AI plugins, the visual styling produced overlapping effects that cluttered the display. Multiple style layers, including borders, box shadows, and background colors, combined to obscure the highlighted content. This made it difficult to read and review suggested changes, particularly for inline text elements spanning multiple lines.
+
+In {productname} {release-version}, the visual styling for selected diff highlights has been simplified and refined. Border-based highlighting has been replaced with background gradient images, box shadows have been repositioned, and background sizing now accounts for line height. These changes reduce visual noise and provide cleaner, more readable diff highlights, making the review workflow easier to follow.
+
 
 [[additions]]
 == Additions

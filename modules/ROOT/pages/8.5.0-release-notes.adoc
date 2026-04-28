@@ -275,6 +275,13 @@ The background color of accordion items in the TinyMCE AI Review list has been u
 
 // CCFR here.
 
+=== URIs with non-Latin1 characters were returning an error
+// #TINY-13938
+
+Previously, inserting images with data URIs that contained non-Latin 1 characters, such as SVG data URIs with a byte order mark (BOM), caused {productname} to throw an `InvalidCharacterError`. This occurred because {productname} used the `btoa` function to encode data URIs to base64, and `btoa` does not support characters outside the Latin 1 range. The error could cause the editor to hang or fail to process the image.
+
+In {productname} {release-version}, data URIs are now encoded using `TextEncoder` before being passed to `btoa`, ensuring that non-Latin 1 characters are handled correctly. Images with data URIs containing such characters are now processed without errors.
+
 === Alert and confirm dialogs were not announced properly by some screen readers
 // #TINY-13812
 

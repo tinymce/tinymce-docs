@@ -224,6 +224,13 @@ The background color of accordion items in the TinyMCE AI Review list has been u
 
 // CCFR here.
 
+=== Certain selections would delete the editor body, causing issues
+// #TINY-14149
+
+Previously, selecting content that included a table by dragging from inside the editor and releasing the mouse button outside the editor, then pressing the Delete key, could remove the editor body element from the DOM. This caused a console error and left the editor in an unusable state where any subsequent interaction, such as focusing or selecting content, would produce additional errors.
+
+In {productname} {release-version}, the editor now prevents deletion operations from removing the editor body element. Selections that span tables and extend beyond the editor boundary are handled safely, preserving the editor structure and allowing continued use without errors.
+
 === Certain combinations of divs inside of lists would cause issues turning off lists
 // #TINY-14070
 

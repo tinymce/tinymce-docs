@@ -14,19 +14,27 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Improved visual styling of inline diff highlights in Suggested Edits and TinyMCE AI plugin.
 // #TINY-13958
 
+### Changed
+* Updated the Review list accordion item background color.
+// #TINY-14158
+
+### Deprecated
+* Deprecated `spellchecker_language` config option. Use `content_language` instead.
+// #TINY-11214
+
 ### Fixed
-* Script elements would incorrectly be removed by DomPurify when considered valid in the schema.
-// #TINY-9655
-* Iframe elements with children would incorrectly be removed by DomPurify.
-// #TINY-9655
-* Certain combinations of divs inside of lists would cause issues turning off lists.
-// #TINY-14070
-* Certain selections would delete the editor body, causing issues.
-// #TINY-14149
 * URIs with non-Latin1 characters were returning an error.
 // #TINY-13938
 * Alert and confirm dialogs were not announced properly by some screen readers.
 // #TINY-13812
+* Certain selections would delete the editor body, causing issues.
+// #TINY-14149
+* Certain combinations of divs inside of lists would cause issues turning off lists.
+// #TINY-14070
+* Script elements would incorrectly be removed by DomPurify when considered valid in the schema.
+// #TINY-9655
+* Iframe elements with children would incorrectly be removed by DomPurify.
+// #TINY-9655
 
 == xref:8.4.0-release-notes.adoc[8.4.0 - 2026-02-04]
 

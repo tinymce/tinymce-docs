@@ -19,27 +19,13 @@ include::partial$misc/admon-releasenotes-for-stable.adoc[]
 * xref:additions[Additions]
 * xref:changes[Changes]
 * xref:bug-fixes[Bug fixes]
-* xref:security-fixes[Security fixes]
 * xref:deprecated[Deprecated]
-* xref:known-issues[Known issues]
 
 
 [[accompanying-premium-plugin-changes]]
 == Accompanying Premium plugin changes
 
 The following premium plugin updates were released alongside {productname} {release-version}.
-
-=== <Premium plugin name 1> <Premium plugin name 1 version>
-
-The {productname} {release-version} release includes an accompanying release of the **<Premium plugin name 1>** premium plugin.
-
-**<Premium plugin name 1>** <Premium plugin name 1 version> includes the following <fixes, changes, improvements>.
-
-==== <Premium plugin name 1 change 1>
-
-// CCFR here.
-
-For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
 === Spell Checker
 
@@ -62,7 +48,7 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **Accessibility Checker** includes the following fix.
 
-==== Accessibility checker overlay was too dark on multiline inline elements
+==== Accessibility Checker overlay was too dark on multiline inline elements
 // #TINY-14246
 
 Previously, when the Accessibility Checker highlighted multiline inline elements, the overlay effect appeared excessively dark. The box-shadow dimming applied to these elements stacked across multiple lines, making the highlighted content difficult to read.
@@ -137,7 +123,7 @@ For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
-**TinyMCE AI** includes the following fixes, improvements and additions.
+**TinyMCE AI** includes the following fixes, improvements, and additions.
 
 ==== A long list of fetched sources could overflow the submenu in the AI chat without a way to scroll
 // #TINY-14064
@@ -146,7 +132,7 @@ Previously, when the list of fetched sources returned from the AI chat exceeded 
 
 In {productname} {release-version}, the AI chat source submenu includes a maximum height constraint and scrollbar support. Long lists of fetched sources now display within a scrollable area, allowing access to all sources regardless of list length.
 
-==== In some browser/OS combinations it was not possible to have 3 source tags in the same row because of the scrollbar
+==== In some browser/OS combinations, it was not possible to have 3 source tags in the same row because of the scrollbar
 // #TINY-14156
 
 Previously, in the TinyMCE AI Chat panel, source tags displayed in the response area could appear in rows of only two instead of three on certain browser and operating system combinations. The `max-width` of the source tags did not account for the additional space consumed by thicker scrollbars on some platforms, causing the third tag to wrap to the next row.
@@ -182,7 +168,7 @@ Previously, renaming a conversation in the TinyMCE AI Chat History panel preserv
 
 In {productname} {release-version}, conversation titles are now trimmed on save, removing any leading and trailing whitespace before the name is stored. Titles display consistently in the Chat History panel without unintended spacing.
 
-==== It was possible to submit white space only titles when renaming a conversation
+==== It was possible to submit whitespace-only titles when renaming a conversation
 // #TINY-14251
 
 Previously, in the TinyMCE AI Chat History panel, renaming a conversation and clearing the title field would correctly disable the Save button. However, pressing Enter while the input was empty or contained only whitespace bypassed the disabled button and submitted the empty title. This resulted in conversations being saved with blank names, making them difficult to identify in the history.
@@ -196,7 +182,7 @@ Previously, switching between preview and diff modes in the TinyMCE AI review pa
 
 In {productname} {release-version}, the active suggestion is now preserved when switching between preview and diff modes. Users return to the same suggestion they were viewing prior to the mode change, and manually scrolling in preview mode no longer forces the view to jump when switching back to diff mode.
 
-==== Improved error message for too-large prompts.
+==== Improved error message for too-large prompts
 // #TINY-14104
 
 Previously, when a prompt sent to the TinyMCE AI service exceeded size limits, the error message did not include enough detail for integrators to diagnose the issue. The structured error data returned by the service, such as the current prompt length and the maximum allowed length, was not decoded or displayed.
@@ -261,7 +247,7 @@ Previously, the actions container in the TinyMCE AI Chat History panel had no re
 
 In {productname} {release-version}, the actions container now reserves minimum horizontal space to accommodate the icon button and its surrounding padding. Action buttons appear and disappear without causing layout shifts, providing smoother and more predictable interactions with the Chat History.
 
-==== Focus is no longer lost when deleting a context source using delete or backspace key.
+==== Focus is no longer lost when deleting a context source using the Delete or Backspace key
 // #TINY-13949
 
 Previously, keyboard focus was lost when deleting a context source tag using the `Delete` or `Backspace` key in the TinyMCE AI sidebar chat view. After removing a context source, the focus disappeared entirely, making it difficult to continue keyboard navigation. This particularly affected accessibility and keyboard-only workflows.
@@ -275,14 +261,14 @@ Previously, the `+ToggleSidebar+` event was not emitted when opening or closing 
 
 In {productname} {release-version}, floating sidebars now fully support the existing sidebar APIs. The `+ToggleSidebar+` event fires when floating sidebars are opened, closed, or switched, and `+queryCommandValue+` returns the correct sidebar identifier. This brings floating sidebars to full API parity with regular sidebars.
 
-==== AI Review suggestion cards now stay available when you close and reopen the review sidebar while suggestions are still loading
+==== AI Review suggestion cards now stay available when the review sidebar is closed and reopened while suggestions are still loading
 // #TINY-14197
 
 Previously, closing the TinyMCE AI Review sidebar immediately after starting a review and then reopening it after the AI finished generating suggestions would reset the sidebar state. The suggestion cards associated with the review were not displayed, and instead the list of available reviews appeared alongside the preview. This prevented the generated suggestions from being actioned.
 
 In {productname} {release-version}, the sidebar state is now correctly preserved when the sidebar is closed and reopened during or after suggestion generation. The review suggestion cards remain visible and actionable, even if the sidebar was closed while the AI was still streaming results.
 
-==== Menus no longer close on mouse out.
+==== Menus no longer close on mouse out
 // #TINY-14055
 
 Previously, submenus in the TinyMCE AI plugin closed when the mouse pointer moved outside the menu area. This did not match the behavior of other {productname} menus, where submenus remain open until another item in the parent menu is selected or the entire menu is dismissed. The inconsistency made submenu navigation unreliable and could cause confusion during use.
@@ -303,7 +289,7 @@ Previously, Quick Actions in TinyMCE AI could only be triggered through the plug
 
 In {productname} {release-version}, the TinyMCE AI plugin registers a set of editor commands that mirror each Quick Action. These include commands for built-in actions such as `TinyMCEAIQuickActionImproveWriting`, `TinyMCEAIQuickActionCheckGrammar`, and `TinyMCEAIQuickActionTranslate` (which accepts a language argument), as well as `TinyMCEAIQuickActionCustom` for running a custom prompt with a specified model. A `TinyMCEAIChatPrompt` command is also available for sending a prompt directly to the Chat sidebar. For the full list of commands, see xref:tinymceai.adoc#tinymceai-plugin-commands[TinyMCE AI plugin commands].
 
-==== New optional `id` property to `tinymceai_quickactions_custom` to register the action as custom menu item
+==== New optional `id` property to `tinymceai_quickactions_custom` to register the action as a custom menu item
 // #TINY-14229
 
 Previously, custom quick actions defined through the xref:tinymceai.adoc#tinymceai_quickactions_custom[`+tinymceai_quickactions_custom+`] option could only appear inside a dedicated Custom submenu within the Quick Actions menu. This limited integrators who wanted custom actions to appear as top-level menu items alongside predefined actions or in other menu configurations.
@@ -334,7 +320,7 @@ The {productname} {release-version} release includes an accompanying release of 
 
 === Enhanced Skins & Icon Packs
 
-The **Enhanced Skins & Icon Packs** release includes the following updates and fix.
+The **Enhanced Skins & Icon Packs** release includes the following updates and fixes.
 
 The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} {release-version} skin, Oxide.
 
@@ -358,14 +344,9 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 [[improvements]]
 == Improvements
 
-{productname} {release-version} also includes the following improvement<s>:
+{productname} {release-version} also includes the following improvement:
 
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-=== Improved visual styling of inline diff highlights in Suggested Edits and TinyMCE AI plugin.
+=== Improved visual styling of inline diff highlights in Suggested Edits and TinyMCE AI plugin
 // #TINY-13958
 
 Previously, when diff highlights were selected in the Suggested Edits and TinyMCE AI plugins, the visual styling produced overlapping effects that cluttered the display. Multiple style layers, including borders, box shadows, and background colors, combined to obscure the highlighted content. This made it difficult to read and review suggested changes, particularly for inline text elements spanning multiple lines.
@@ -376,12 +357,7 @@ In {productname} {release-version}, the visual styling for selected diff highlig
 [[additions]]
 == Additions
 
-{productname} {release-version} also includes the following addition<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+{productname} {release-version} also includes the following addition:
 
 === New `content_language` option to set the `lang` attribute on the iframe's `html` element or the inline editor's target element
 // #TINY-11214
@@ -394,12 +370,7 @@ In {productname} {release-version}, the new xref:content-localization.adoc#conte
 [[changes]]
 == Changes
 
-{productname} {release-version} also includes the following change<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+{productname} {release-version} also includes the following change:
 
 === Updated the Review list accordion item background color
 // #TINY-14158
@@ -407,33 +378,17 @@ In {productname} {release-version}, the new xref:content-localization.adoc#conte
 The background color of accordion items in the TinyMCE AI Review list has been updated from `#F7F7F7` to `#F0F0F0` to improve visual contrast and align with the current design specifications.
 
 
-[[removed]]
-== Removed
-
-{productname} {release-version} also includes the following removal<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
 [[bug-fixes]]
 == Bug fixes
 
-{productname} {release-version} also includes the following bug fix<es>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+{productname} {release-version} also includes the following bug fixes:
 
 === URIs with non-Latin1 characters were returning an error
 // #TINY-13938
 
-Previously, inserting images with data URIs that contained non-Latin 1 characters, such as SVG data URIs with a byte order mark (BOM), caused {productname} to throw an `InvalidCharacterError`. This occurred because {productname} used the `btoa` function to encode data URIs to base64, and `btoa` does not support characters outside the Latin 1 range. The error could cause the editor to hang or fail to process the image.
+Previously, inserting images with data URIs that contained non-Latin 1 characters, such as SVG data URIs with a byte order mark (BOM), caused {productname} to throw an `InvalidCharacterError`. This occurred because {productname} used the `btoa` function to encode data URIs to base64, and `btoa` does not support characters outside the Latin1 range. The error could cause the editor to hang or fail to process the image.
 
-In {productname} {release-version}, data URIs are now encoded using `TextEncoder` before being passed to `btoa`, ensuring that non-Latin 1 characters are handled correctly. Images with data URIs containing such characters are now processed without errors.
+In {productname} {release-version}, data URIs are now encoded using `TextEncoder` before being passed to `btoa`, ensuring that non-Latin1 characters are handled correctly. Images with data URIs containing such characters are now processed without errors.
 
 === Alert and confirm dialogs were not announced properly by some screen readers
 // #TINY-13812
@@ -471,35 +426,14 @@ Previously, `iframe` elements that contained child nodes were removed entirely d
 In {productname} {release-version}, `iframe` elements are preserved during sanitization. Any child nodes and unsafe or invalid attributes are removed, but the `iframe` element itself remains in the editor content.
 
 
-[[security-fixes]]
-== Security fixes
-
-{productname} {release-version} includes <a fix | fixes for the following security issue<s>:
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
-
-
 [[deprecated]]
 == Deprecated
 
-{productname} {release-version} includes the following deprecation<s>:
+{productname} {release-version} includes the following deprecation:
 
-=== The `<plugin>` configuration property, `<name>`, has been deprecated
+=== The Spell Checker configuration property, `spellchecker_language`, has been deprecated
+// #TINY-11214
 
-// placeholder here.
+The `+spellchecker_language+` option has been deprecated as of {productname} {release-version} and will be removed in a future major release. Use xref:content-localization.adoc#content_language[`+content_language+`] instead, which sets both the default content language and the Spell Checker proofing language.
 
-
-[[known-issues]]
-== Known issues
-
-This section describes issues that users of {productname} {release-version} may encounter and possible workarounds for these issues.
-
-There <is one | are <number> known issue<s> in {productname} {release-version}.
-
-=== <TINY-vwxyz 1 changelog entry>
-// #TINY-vwxyz1
-
-// CCFR here.
+For information on the `+content_language+` option, see: xref:content-localization.adoc#content_language[Content localization].

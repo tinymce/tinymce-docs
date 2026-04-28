@@ -41,6 +41,21 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== Menus no longer close on mouse out.
+// #TINY-14055
+
+Previously, submenus in the TinyMCE AI plugin closed when the mouse pointer moved outside the menu area. This did not match the behavior of other {productname} menus, where submenus remain open until another item in the parent menu is selected or the entire menu is dismissed. The inconsistency made submenu navigation unreliable and could cause confusion during use.
+
+In {productname} {release-version}, submenus in the TinyMCE AI plugin no longer close on mouse out. Submenus now remain open until another parent menu item is selected or the menu is dismissed, matching the behavior of all other {productname} menus.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes

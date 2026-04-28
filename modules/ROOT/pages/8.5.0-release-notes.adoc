@@ -159,9 +159,16 @@ The {productname} {release-version} release includes an accompanying release of 
 
 === Enhanced Skins & Icon Packs
 
-The **Enhanced Skins & Icon Packs** release includes the following updates:
+The **Enhanced Skins & Icon Packs** release includes the following updates and fix.
 
 The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also incorporated into the default {productname} {release-version} skin, Oxide.
+
+==== Premium content CSS files contained extraneous styles from the default theme
+// #TINY-14129
+
+Previously, premium skin content CSS files for the fabric, fluent, material-classic, and material-outline skins imported styles from the default theme's content UI. This caused duplicate styles to load into the editor and unnecessarily increased the size of the premium content CSS files.
+
+In {productname} {release-version}, the outdated import has been removed from the premium content CSS files. The premium content CSS files now contain only the styles specific to each skin, reducing file size and eliminating duplicate style loading.
 
 For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
 

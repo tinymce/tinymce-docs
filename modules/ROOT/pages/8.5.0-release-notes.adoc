@@ -62,6 +62,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following fixes, improvements and additions.
 
+==== Tab could be used to move focus between segmented button options in the preview footer
+// #TINY-14161
+
+Previously, the Tab key could be used to move focus between individual options within the segmented button in the TinyMCE AI preview mode footer. This was inconsistent with standard keyboard navigation behavior, where arrow keys should navigate between options in a segmented control and Tab should move focus to the next interactive element outside the group.
+
+In {productname} {release-version}, the focus order in the TinyMCE AI preview footer has been corrected. The Tab key now moves focus to the next interactive element outside the segmented button, and arrow keys navigate between options within the group. This provides a more predictable and accessible keyboard navigation experience.
+
 ==== Reduced spacing between label and body in decision card details
 // #TINY-14057
 

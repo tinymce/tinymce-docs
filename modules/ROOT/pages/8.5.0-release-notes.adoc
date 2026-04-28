@@ -56,11 +56,51 @@ In {productname} {release-version}, PowerPaste now correctly handles the `baseli
 
 For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
 
+=== Revision History
+
+The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
+
+**Revision History** includes the following fix.
+
+[[revisionhistory-preview-iframe-missing-content-styles]]
+==== Preview iframe missing content styles such as figure alignment
+// #TINY-14194
+
+Previously, the Revision History preview iframe did not include the `mce-content-body` class, causing content styles such as figure alignment to render incorrectly.
+
+In {productname} {release-version}, the `mce-content-body` class is applied to the preview iframe, ensuring content renders consistently with the editor.
+
+For information on the **Revision History** plugin, see: xref:revisionhistory.adoc[Revision History].
+
+=== Suggested Edits
+
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
+
+**Suggested Edits** includes the following fix.
+
+[[suggestededits-preview-iframe-missing-content-styles]]
+==== Preview iframe missing content styles such as figure alignment
+// #TINY-14194
+
+Previously, the Suggested Edits preview iframe did not include the `mce-content-body` class, causing content styles such as figure alignment to render incorrectly.
+
+In {productname} {release-version}, the `mce-content-body` class is applied to the preview iframe, ensuring content renders consistently with the editor.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
+
 === TinyMCE AI
 
 The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
 
 **TinyMCE AI** includes the following fixes, improvements and additions.
+
+[[tinymceai-preview-iframe-missing-content-styles]]
+==== Preview iframe missing content styles such as figure alignment
+// #TINY-14194
+
+Previously, the TinyMCE AI preview iframe did not include the `mce-content-body` class, causing content styles such as figure alignment to render incorrectly.
+
+In {productname} {release-version}, the `mce-content-body` class is applied to the preview iframe, ensuring content renders consistently with the editor.
 
 ==== History conversation titles were not trimmed
 // #TINY-14076
@@ -141,8 +181,6 @@ Previously, the New Chat button in the TinyMCE AI sidebar remained enabled even 
 
 In {productname} {release-version}, the New Chat button is now disabled when no conversation has been started, ensuring the button state accurately reflects its availability.
 
-**TinyMCE AI** includes the following fixes, improvements and additions.
-
 ==== Layout would shift causing the text to jump when action button appears on hover in the chat history list
 // #TINY-14157
 
@@ -212,6 +250,7 @@ In {productname} {release-version}, the AI Chat loading spinner is now sized to 
 Previously, the TinyMCE AI plugin displayed the “Stop generating” control inconsistently across different contexts. The review loading indicator used a text-based button, while the AI Chat sidebar used an icon-based button. In addition, the control did not receive focus when it appeared, which negatively impacted keyboard accessibility.
 
 In {productname} {release-version}, the stop button in the loading indicator now matches the icon button used in the AI Chat sidebar, providing a more consistent visual experience. The button also receives focus when displayed, improving keyboard navigation and accessibility during content generation.
+
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 
 

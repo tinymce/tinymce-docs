@@ -41,6 +41,262 @@ The {productname} {release-version} release includes an accompanying release of 
 
 For information on the **<Premium plugin name 1>** plugin, see: xref:<plugincode>.adoc[<Premium plugin name 1>].
 
+=== Accessibility Checker
+
+The {productname} {release-version} release includes an accompanying release of the **Accessibility Checker** premium plugin.
+
+**Accessibility Checker** includes the following fix.
+
+==== Accessibility checker overlay was too dark on multiline inline elements
+// #TINY-14246
+
+Previously, when the Accessibility Checker highlighted multiline inline elements, the overlay effect appeared excessively dark. The box-shadow dimming applied to these elements stacked across multiple lines, making the highlighted content difficult to read.
+
+In {productname} {release-version}, the overlay styling for multiline inline elements has been corrected. The Accessibility Checker highlight now displays at the expected brightness level regardless of how many lines an inline element spans.
+
+For information on the **Accessibility Checker** plugin, see: xref:a11ychecker.adoc[Accessibility Checker].
+
+=== Media Optimizer
+
+The {productname} {release-version} release includes an accompanying release of the **Media Optimizer** premium plugin.
+
+**Media Optimizer** includes the following fix.
+
+==== Upload progress UI was not hidden if a file failed to upload
+// #TINY-14181
+
+Previously, the upload progress spinner in the Media Optimizer plugin was recreated each time its visibility status was updated. When a file failed to upload and the spinner needed to be hidden, only the newly created instance was hidden while the original spinner remained visible. This left the upload progress UI permanently displayed even after an upload error.
+
+In {productname} {release-version}, the spinner is now created once and reused when its visibility status changes. The upload progress UI is hidden as expected when a file upload fails.
+
+For information on the **Media Optimizer** plugin, see: xref:uploadcare.adoc[Media Optimizer].
+
+=== PowerPaste
+
+The {productname} {release-version} release includes an accompanying release of the **PowerPaste** premium plugin.
+
+**PowerPaste** includes the following fix.
+
+==== Super and subscript text was not properly converted to `sub` or `sup` elements on newer versions of Firefox
+// #TINY-14256
+
+Previously, pasting content containing subscript or superscript text from Google Docs into {productname} on Firefox 149 and later did not properly convert the text to semantic `sub` or `sup` elements. Newer versions of Firefox use the `baseline-shift` CSS property instead of the `vertical-align` property for sub and superscript formatting, and PowerPaste did not recognize this property. As a result, the pasted text lost its subscript or superscript formatting.
+
+In {productname} {release-version}, PowerPaste now correctly handles the `baseline-shift` CSS property during paste operations, converting content styled with `baseline-shift: sub` or `baseline-shift: super` into the corresponding `sub` and `sup` elements.
+
+For information on the **PowerPaste** plugin, see: xref:introduction-to-powerpaste.adoc[PowerPaste].
+
+=== Revision History
+
+The {productname} {release-version} release includes an accompanying release of the **Revision History** premium plugin.
+
+**Revision History** includes the following fix.
+
+[[revisionhistory-preview-iframe-missing-content-styles]]
+==== Preview iframe missing content styles such as figure alignment
+// #TINY-14194
+
+Previously, the Revision History preview iframe did not include the `mce-content-body` class, causing content styles such as figure alignment to render incorrectly.
+
+In {productname} {release-version}, the `mce-content-body` class is applied to the preview iframe, ensuring content renders consistently with the editor.
+
+For information on the **Revision History** plugin, see: xref:revisionhistory.adoc[Revision History].
+
+=== Suggested Edits
+
+The {productname} {release-version} release includes an accompanying release of the **Suggested Edits** premium plugin.
+
+**Suggested Edits** includes the following fix.
+
+[[suggestededits-preview-iframe-missing-content-styles]]
+==== Preview iframe missing content styles such as figure alignment
+// #TINY-14194
+
+Previously, the Suggested Edits preview iframe did not include the `mce-content-body` class, causing content styles such as figure alignment to render incorrectly.
+
+In {productname} {release-version}, the `mce-content-body` class is applied to the preview iframe, ensuring content renders consistently with the editor.
+
+For information on the **Suggested Edits** plugin, see: xref:suggestededits.adoc[Suggested Edits].
+
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fixes, improvements and additions.
+
+==== Previous and next buttons are now disabled when only one pending change remains
+// #TINY-13334
+
+Previously, the previous and next navigation buttons in the TinyMCE AI review panel remained active even when only one pending suggestion was available. This created a misleading interface, as the buttons implied additional suggestions to navigate through when none existed.
+
+In {productname} {release-version}, the previous and next buttons are now disabled when only one pending suggestion remains. This provides a clearer indication of the available navigation options and prevents users from attempting unavailable actions.
+
+==== History entries with lengthy names with no line breaks were overflowing
+// #TINY-14075
+
+Previously, chat history entries in the TinyMCE AI plugin did not handle text overflow for titles containing lengthy names without spaces. The title text extended beyond the visible area, hiding the options menu (three-dot button) and making the entry difficult to manage.
+
+In {productname} {release-version}, chat history item titles now correctly truncate with an ellipsis when the text exceeds the available width. The options menu remains visible and accessible regardless of title length.
+
+[[tinymceai-preview-iframe-missing-content-styles]]
+==== Preview iframe missing content styles such as figure alignment
+// #TINY-14194
+
+Previously, the TinyMCE AI preview iframe did not include the `mce-content-body` class, causing content styles such as figure alignment to render incorrectly.
+
+In {productname} {release-version}, the `mce-content-body` class is applied to the preview iframe, ensuring content renders consistently with the editor.
+
+==== History conversation titles were not trimmed
+// #TINY-14076
+
+Previously, renaming a conversation in the TinyMCE AI Chat History panel preserved leading and trailing whitespace exactly as entered. If a title was submitted with extra spaces before or after the text, those spaces were saved as part of the name. This could result in conversation titles that appeared blank or misaligned in the history list.
+
+In {productname} {release-version}, conversation titles are now trimmed on save, removing any leading and trailing whitespace before the name is stored. Titles display consistently in the Chat History panel without unintended spacing.
+
+==== It was possible to submit white space only titles when renaming a conversation
+// #TINY-14251
+
+Previously, in the TinyMCE AI Chat History panel, renaming a conversation and clearing the title field would correctly disable the Save button. However, pressing Enter while the input was empty or contained only whitespace bypassed the disabled button and submitted the empty title. This resulted in conversations being saved with blank names, making them difficult to identify in the history.
+
+In {productname} {release-version}, the save handler now validates the title value directly, applying the same check used to disable the Save button. Pressing Enter with an empty or whitespace-only title no longer submits the rename, ensuring all conversations retain a meaningful title in the Chat History.
+
+==== Preserved the selected diff when switching between diff and preview modes
+// #TINY-13402
+
+Previously, switching between preview and diff modes in the TinyMCE AI review panel did not preserve the current suggestion selection. The view would reset to the first suggestion, causing the document to jump to the top rather than maintaining the position within the current context. This disrupted the review experience, particularly for users working through suggestions further down the document.
+
+In {productname} {release-version}, the active suggestion is now preserved when switching between preview and diff modes. Users return to the same suggestion they were viewing prior to the mode change, and manually scrolling in preview mode no longer forces the view to jump when switching back to diff mode.
+
+==== Improved error message for too-large prompts.
+// #TINY-14104
+
+Previously, when a prompt sent to the TinyMCE AI service exceeded size limits, the error message did not include enough detail for integrators to diagnose the issue. The structured error data returned by the service, such as the current prompt length and the maximum allowed length, was not decoded or displayed.
+
+In {productname} {release-version}, TinyMCE AI now decodes and displays detailed error information when a prompt exceeds size limits. When available, this includes the current prompt length and the maximum allowed length, making it easier for integrators to identify and resolve prompt size issues.
+
+NOTE: If the service response includes unrecognized error details alongside recognized ones, the additional detail information may not be displayed. The error notification itself is unaffected.
+
+==== Arrow key navigation did not cycle between the first and last menu items
+// #TINY-14193
+
+Previously, when navigating TinyMCE AI menus using the arrow keys, the focus did not cycle between the first and last menu items. Pressing the down arrow on the last item or the up arrow on the first item had no effect. This was inconsistent with the cycling behavior of menus elsewhere in {productname} and could slow down keyboard-based navigation.
+
+In {productname} {release-version}, arrow key navigation in TinyMCE AI menus now cycles between the first and last items, matching the standard keyboard navigation behavior used throughout the editor.
+
+==== The background behind code snippets in AI in-chat responses did not fully cover the snippet
+// #TINY-14188
+
+Previously, the background styling behind code snippets in AI in-chat responses did not fully cover the entire snippet area. Portions of the code appeared without proper background coverage, reducing readability and creating an inconsistent visual presentation in the AI chat interface.
+
+In {productname} {release-version}, the background styling for code snippets in AI in-chat responses has been corrected to fully cover the entire snippet area. Code snippets now display with complete and consistent background coverage, improving readability and visual consistency.
+
+==== Tag removal was not disabled while the AI was responding
+// #TINY-14132
+
+Previously, the dismiss buttons on context tags in the TinyMCE AI Chat panel remained active while the AI was generating a response. This allowed tags to be removed during response generation, which could interfere with the response context and produce unexpected results.
+
+In {productname} {release-version}, the dismiss buttons on context tags are now disabled while the AI is generating a response. Tags can only be removed once the response is complete, preventing unintended modifications to the request context during generation.
+
+==== The user prompt background color was incorrect in the AI Chat dark mode
+// #TINY-14160
+
+Previously, the user prompt background color in the TinyMCE AI Chat panel was incorrect when using the dark skin. The low contrast between the text and background made prompts more difficult to read, reducing accessibility and usability of the AI Chat interface in dark mode.
+
+In {productname} {release-version}, the user prompt background color in the AI Chat panel has been corrected for the dark skin. The updated color provides proper contrast, improving readability and accessibility for dark mode users.
+
+==== Tab could be used to move focus between segmented button options in the preview footer
+// #TINY-14161
+
+Previously, the Tab key could be used to move focus between individual options within the segmented button in the TinyMCE AI preview mode footer. This was inconsistent with standard keyboard navigation behavior, where arrow keys should navigate between options in a segmented control and Tab should move focus to the next interactive element outside the group.
+
+In {productname} {release-version}, the focus order in the TinyMCE AI preview footer has been corrected. The Tab key now moves focus to the next interactive element outside the segmented button, and arrow keys navigate between options within the group. This provides a more predictable and accessible keyboard navigation experience.
+
+==== Reduced spacing between label and body in decision card details
+// #TINY-14057
+
+Previously, the spacing between the label and body elements in the TinyMCE AI decision card details was larger than intended. The combined gap and padding resulted in 24 pixels of space between these elements, creating a visually inconsistent layout within the card.
+
+In {productname} {release-version}, the internal spacing in the decision card has been reduced to a consistent 12 pixels between elements. This provides a more compact and visually cohesive card layout in the TinyMCE AI interface.
+
+==== New chat button was not disabled when the chat was empty
+// #TINY-14094
+
+Previously, the New Chat button in the TinyMCE AI sidebar remained enabled even when the current conversation was empty. Clicking the button in this state had no effect, which created a confusing experience and an accessibility issue, as screen readers and keyboard users could interact with a control that performed no action.
+
+In {productname} {release-version}, the New Chat button is now disabled when no conversation has been started, ensuring the button state accurately reflects its availability.
+
+==== Layout would shift causing the text to jump when action button appears on hover in the chat history list
+// #TINY-14157
+
+Previously, the actions container in the TinyMCE AI Chat History panel had no reserved space for the icon button that appears on hover. When hovering over a chat history item, the button became visible and caused the entire layout to shift, making content jump position unexpectedly. This resulted in jarring visual inconsistency and inconsistent spacing throughout the component.
+
+In {productname} {release-version}, the actions container now reserves minimum horizontal space to accommodate the icon button and its surrounding padding. Action buttons appear and disappear without causing layout shifts, providing smoother and more predictable interactions with the Chat History.
+
+==== Focus is no longer lost when deleting a context source using delete or backspace key.
+// #TINY-13949
+
+Previously, keyboard focus was lost when deleting a context source tag using the `Delete` or `Backspace` key in the TinyMCE AI sidebar chat view. After removing a context source, the focus disappeared entirely, making it difficult to continue keyboard navigation. This particularly affected accessibility and keyboard-only workflows.
+
+In {productname} {release-version}, focus management now tracks tag deletion events. When a context source tag is deleted, focus moves to either the previous context source tag or, when the first or only remaining tag is removed, back to the prompt input field. This ensures seamless keyboard navigation when managing context sources.
+
+==== `ToggleSidebar` events were not being triggered when toggling floating sidebars
+// #TINY-14243
+
+Previously, the `+ToggleSidebar+` event was not emitted when opening or closing floating sidebars in the TinyMCE AI plugin. Additionally, querying the current sidebar value using `+editor.queryCommandValue('ToggleSidebar')+` did not return the correct identifier when a floating sidebar was open. This made it difficult to programmatically determine the state of floating sidebars or respond to state changes.
+
+In {productname} {release-version}, floating sidebars now fully support the existing sidebar APIs. The `+ToggleSidebar+` event fires when floating sidebars are opened, closed, or switched, and `+queryCommandValue+` returns the correct sidebar identifier. This brings floating sidebars to full API parity with regular sidebars.
+
+==== AI Review suggestion cards now stay available when you close and reopen the review sidebar while suggestions are still loading
+// #TINY-14197
+
+Previously, closing the TinyMCE AI Review sidebar immediately after starting a review and then reopening it after the AI finished generating suggestions would reset the sidebar state. The suggestion cards associated with the review were not displayed, and instead the list of available reviews appeared alongside the preview. This prevented the generated suggestions from being actioned.
+
+In {productname} {release-version}, the sidebar state is now correctly preserved when the sidebar is closed and reopened during or after suggestion generation. The review suggestion cards remain visible and actionable, even if the sidebar was closed while the AI was still streaming results.
+
+==== Menus no longer close on mouse out.
+// #TINY-14055
+
+Previously, submenus in the TinyMCE AI plugin closed when the mouse pointer moved outside the menu area. This did not match the behavior of other {productname} menus, where submenus remain open until another item in the parent menu is selected or the entire menu is dismissed. The inconsistency made submenu navigation unreliable and could cause confusion during use.
+
+In {productname} {release-version}, submenus in the TinyMCE AI plugin no longer close on mouse out. Submenus now remain open until another parent menu item is selected or the menu is dismissed, matching the behavior of all other {productname} menus.
+
+==== The first loading card during a review no longer appears focused
+// #TINY-14077
+
+Previously, when running an AI review, the first skeleton card displayed in the Review sidebar while suggestions were being generated appeared with focus styles applied. Since the card content was still loading and could not be interacted with, the visible focus indicator was misleading and created a confusing user experience.
+
+In {productname} {release-version}, focus styles are no longer applied to loading cards in the Review sidebar. Cards only receive focus styling once their content has fully loaded and they can be interacted with.
+
+==== New commands for executing AI UI actions
+// #TINY-14266
+
+Previously, Quick Actions in TinyMCE AI could only be triggered through the plugin's built-in menus and toolbar buttons. Integrators who wanted to invoke these actions from custom UI elements or automation workflows had no programmatic way to do so.
+
+In {productname} {release-version}, the TinyMCE AI plugin registers a set of editor commands that mirror each Quick Action. These include commands for built-in actions such as `TinyMCEAIQuickActionImproveWriting`, `TinyMCEAIQuickActionCheckGrammar`, and `TinyMCEAIQuickActionTranslate` (which accepts a language argument), as well as `TinyMCEAIQuickActionCustom` for running a custom prompt with a specified model. A `TinyMCEAIChatPrompt` command is also available for sending a prompt directly to the Chat sidebar. For the full list of commands, see xref:tinymceai.adoc#tinymceai-plugin-commands[TinyMCE AI plugin commands].
+
+==== New optional `id` property to `tinymceai_quickactions_custom` to register the action as custom menu item
+// #TINY-14229
+
+Previously, custom quick actions defined through the xref:tinymceai.adoc#tinymceai_quickactions_custom[`+tinymceai_quickactions_custom+`] option could only appear inside a dedicated Custom submenu within the Quick Actions menu. This limited integrators who wanted custom actions to appear as top-level menu items alongside predefined actions or in other menu configurations.
+
+In {productname} {release-version}, an optional `id` property can be included in each custom quick action object. When an `id` is set, the custom action can be listed in the xref:tinymceai.adoc#tinymceai_quickactions_menu[`+tinymceai_quickactions_menu+`] array as its own top-level menu item, or included in any menubar menu or menu button configuration that accepts control identifiers.
+
+==== Loader in the chat was normal size instead of small size
+// #TINY-14155
+
+Previously, the loading spinner displayed in the AI Chat area while generating a response used the default size rather than the small size. This caused the spinner to appear visually larger than the adjacent AI response icon, creating an inconsistent appearance within the chat interface.
+
+In {productname} {release-version}, the AI Chat loading spinner is now sized to match the AI response icon dimensions, providing a consistent and polished visual experience.
+
+==== While the plugin is generating a review or quick action, the Stop button in the loading indicator receives focus
+// #TINY-14083
+
+Previously, the TinyMCE AI plugin displayed the “Stop generating” control inconsistently across different contexts. The review loading indicator used a text-based button, while the AI Chat sidebar used an icon-based button. In addition, the control did not receive focus when it appeared, which negatively impacted keyboard accessibility.
+
+In {productname} {release-version}, the stop button in the loading indicator now matches the icon button used in the AI Chat sidebar, providing a more consistent visual experience. The button also receives focus when displayed, improving keyboard navigation and accessibility during content generation.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
 
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes
@@ -59,6 +315,13 @@ The **Enhanced Skins & Icon Packs** were rebuilt to pull in the changes also inc
 Previously, the floating toolbar background was transparent in the fabric, snow, and naked skins, causing editor content below to show through the toolbar. This reduced readability and made the toolbar difficult to use.
 
 In {productname} {release-version}, the toolbar background styling uses proper background colors for the affected skins. The floating toolbar now has a solid background in all three skins, ensuring proper visual separation from editor content.
+
+==== Premium content CSS files contained extraneous styles from the default theme
+// #TINY-14129
+
+Previously, premium skin content CSS files for the fabric, fluent, material-classic, and material-outline skins imported styles from the default theme's content UI. This caused duplicate styles to load into the editor and unnecessarily increased the size of the premium content CSS files.
+
+In {productname} {release-version}, the outdated import has been removed from the premium content CSS files. The premium content CSS files now contain only the styles specific to each skin, reducing file size and eliminating duplicate style loading.
 
 For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-and-icon-packs.adoc[Enhanced Skins & Icon Packs].
 
@@ -95,6 +358,11 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 
 // CCFR here.
 
+=== Updated the Review list accordion item background color
+// #TINY-14158
+
+The background color of accordion items in the TinyMCE AI Review list has been updated from `#F7F7F7` to `#F0F0F0` to improve visual contrast and align with the current design specifications.
+
 
 [[removed]]
 == Removed
@@ -116,6 +384,48 @@ For information on using Enhanced Skins & Icon Packs, see: xref:enhanced-skins-a
 // #TINY-vwxyz1
 
 // CCFR here.
+
+=== URIs with non-Latin1 characters were returning an error
+// #TINY-13938
+
+Previously, inserting images with data URIs that contained non-Latin 1 characters, such as SVG data URIs with a byte order mark (BOM), caused {productname} to throw an `InvalidCharacterError`. This occurred because {productname} used the `btoa` function to encode data URIs to base64, and `btoa` does not support characters outside the Latin 1 range. The error could cause the editor to hang or fail to process the image.
+
+In {productname} {release-version}, data URIs are now encoded using `TextEncoder` before being passed to `btoa`, ensuring that non-Latin 1 characters are handled correctly. Images with data URIs containing such characters are now processed without errors.
+
+=== Alert and confirm dialogs were not announced properly by some screen readers
+// #TINY-13812
+
+Previously, alert and confirm dialogs in {productname} were not announced correctly by some screen readers, such as NVDA. The dialogs had an empty `aria-label` attribute and lacked appropriate `aria-labelledby` or `aria-describedby` references to the dialog body content. As a result, screen reader users could not hear the message or question presented in these dialogs, making it difficult to respond to confirmation prompts or understand alert messages.
+
+In {productname} {release-version}, alert and confirm dialogs now include proper ARIA attributes that reference the dialog content. Screen readers announce the dialog message when the dialog opens, providing an accessible experience for all users.
+
+=== Certain selections would delete the editor body, causing issues
+// #TINY-14149
+
+Previously, selecting content that included a table by dragging from inside the editor and releasing the mouse button outside the editor, then pressing the Delete key, could remove the editor body element from the DOM. This caused a console error and left the editor in an unusable state where any subsequent interaction, such as focusing or selecting content, would produce additional errors.
+
+In {productname} {release-version}, the editor now prevents deletion operations from removing the editor body element. Selections that span tables and extend beyond the editor boundary are handled safely, preserving the editor structure and allowing continued use without errors.
+
+=== Certain combinations of divs inside of lists would cause issues turning off lists
+// #TINY-14070
+
+Previously, certain combinations of `+div+` elements inside list items could prevent lists from being toggled off. The list detection logic would prematurely identify a `+div+` within a list item as a list host rather than recognizing it as content inside an existing list. This made it impossible to remove the list formatting in affected content structures.
+
+In {productname} {release-version}, the list detection logic now correctly identifies when a `+div+` is inside a list and locates the parent list before treating the element as a host. Lists with nested `+div+` elements can now be toggled off as expected.
+
+=== Script and style elements would incorrectly be removed by DOMPurify when considered valid in the schema
+// #TINY-9655
+
+Previously, `script` and `style` elements that were explicitly allowed through xref:content-filtering.adoc#valid_elements[`+valid_elements+`] or xref:content-filtering.adoc#extended_valid_elements[`+extended_valid_elements+`] were removed during the sanitization process when xref:content-filtering.adoc#xss_sanitization[`+xss_sanitization+`] was enabled. DOMPurify flagged these elements as potential mXSS vectors and removed them entirely, even when the schema configuration indicated they were valid.
+
+In {productname} {release-version}, `script` and `style` elements that are considered valid in the schema are retained during sanitization. The sanitization process still removes unsafe attributes and content, but no longer removes the entire element when the schema explicitly allows it.
+
+=== Iframe elements with children would incorrectly be removed by DOMPurify
+// #TINY-9655
+
+Previously, `iframe` elements that contained child nodes were removed entirely during the sanitization process. DOMPurify treated the presence of child nodes within an `iframe` as a potential mXSS risk and stripped the entire element from the content.
+
+In {productname} {release-version}, `iframe` elements are preserved during sanitization. Any child nodes and unsafe or invalid attributes are removed, but the `iframe` element itself remains in the editor content.
 
 
 [[security-fixes]]

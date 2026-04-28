@@ -62,6 +62,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following fixes, improvements and additions.
 
+==== Reduced spacing between label and body in decision card details
+// #TINY-14057
+
+Previously, the spacing between the label and body elements in the TinyMCE AI decision card details was larger than intended. The combined gap and padding resulted in 24 pixels of space between these elements, creating a visually inconsistent layout within the card.
+
+In {productname} {release-version}, the internal spacing in the decision card has been reduced to a consistent 12 pixels between elements. This provides a more compact and visually cohesive card layout in the TinyMCE AI interface.
+
 ==== New chat button was not disabled when the chat was empty
 // #TINY-14094
 

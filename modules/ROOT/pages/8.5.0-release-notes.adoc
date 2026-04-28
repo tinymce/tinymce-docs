@@ -62,6 +62,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following fixes, improvements and additions.
 
+==== Tag removal was not disabled while the AI was responding
+// #TINY-14132
+
+Previously, the dismiss buttons on context tags in the TinyMCE AI Chat panel remained active while the AI was generating a response. This allowed tags to be removed during response generation, which could interfere with the response context and produce unexpected results.
+
+In {productname} {release-version}, the dismiss buttons on context tags are now disabled while the AI is generating a response. Tags can only be removed once the response is complete, preventing unintended modifications to the request context during generation.
+
 ==== The user prompt background color was incorrect in the AI Chat dark mode
 // #TINY-14160
 

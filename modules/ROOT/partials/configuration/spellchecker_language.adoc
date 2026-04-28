@@ -1,6 +1,8 @@
 [[spellchecker_language]]
 == `+spellchecker_language+`
 
+IMPORTANT: This option has been marked as *deprecated* as of {productname} 8.5. It will be removed in a future major release. Use xref:content-localization.adoc#content_language[`+content_language+`] instead, which sets both the default content language and the Spell Checker proofing language.
+
 This option specifies the default language used by Spell Checker.
 
 *Type:* `+String+`

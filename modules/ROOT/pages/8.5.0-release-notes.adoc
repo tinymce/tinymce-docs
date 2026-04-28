@@ -62,6 +62,13 @@ The {productname} {release-version} release includes an accompanying release of 
 
 **TinyMCE AI** includes the following fixes, improvements and additions.
 
+==== Arrow key navigation did not cycle between the first and last menu items
+// #TINY-14193
+
+Previously, when navigating TinyMCE AI menus using the arrow keys, the focus did not cycle between the first and last menu items. Pressing the down arrow on the last item or the up arrow on the first item had no effect. This was inconsistent with the cycling behavior of menus elsewhere in {productname} and could slow down keyboard-based navigation.
+
+In {productname} {release-version}, arrow key navigation in TinyMCE AI menus now cycles between the first and last items, matching the standard keyboard navigation behavior used throughout the editor.
+
 ==== The background behind code snippets in AI in-chat responses did not fully cover the snippet
 // #TINY-14188
 

@@ -89,6 +89,22 @@ In {productname} {release-version}, the TinyMCE AI plugin registers a set of edi
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following addition.
+
+==== New optional `id` property to `tinymceai_quickactions_custom` to register the action as custom menu item
+// #TINY-14229
+
+Previously, custom quick actions defined through the xref:tinymceai.adoc#tinymceai_quickactions_custom[`+tinymceai_quickactions_custom+`] option could only appear inside a dedicated Custom submenu within the Quick Actions menu. This limited integrators who wanted custom actions to appear as top-level menu items alongside predefined actions or in other menu configurations.
+
+In {productname} {release-version}, an optional `id` property can be included in each custom quick action object. When an `id` is set, the custom action can be listed in the xref:tinymceai.adoc#tinymceai_quickactions_menu[`+tinymceai_quickactions_menu+`] array as its own top-level menu item, or included in any menubar menu or menu button configuration that accepts control identifiers.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
+
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes
 

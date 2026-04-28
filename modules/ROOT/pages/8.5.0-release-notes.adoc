@@ -105,6 +105,22 @@ In {productname} {release-version}, an optional `id` property can be included in
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following fix.
+
+==== Loader in the chat was normal size instead of small size
+// #TINY-14155
+
+Previously, the loading spinner displayed in the AI Chat area while generating a response used the default size rather than the small size. This caused the spinner to appear visually larger than the adjacent AI response icon, creating an inconsistent appearance within the chat interface.
+
+In {productname} {release-version}, the AI Chat loading spinner is now sized to match the AI response icon dimensions, providing a consistent and polished visual experience.
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
+
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes
 

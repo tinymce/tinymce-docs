@@ -73,6 +73,22 @@ In {productname} {release-version}, focus styles are no longer applied to loadin
 For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
 
 
+=== TinyMCE AI
+
+The {productname} {release-version} release includes an accompanying release of the **TinyMCE AI** premium plugin.
+
+**TinyMCE AI** includes the following addition.
+
+==== New commands for executing AI UI actions
+// #TINY-14266
+
+Previously, Quick Actions in TinyMCE AI could only be triggered through the plugin's built-in menus and toolbar buttons. Integrators who wanted to invoke these actions from custom UI elements or automation workflows had no programmatic way to do so.
+
+In {productname} {release-version}, the TinyMCE AI plugin registers a set of editor commands that mirror each Quick Action. These include commands for built-in actions such as `TinyMCEAIQuickActionImproveWriting`, `TinyMCEAIQuickActionCheckGrammar`, and `TinyMCEAIQuickActionTranslate` (which accepts a language argument), as well as `TinyMCEAIQuickActionCustom` for running a custom prompt with a specified model. A `TinyMCEAIChatPrompt` command is also available for sending a prompt directly to the Chat sidebar. For the full list of commands, see xref:tinymceai.adoc#tinymceai-plugin-commands[TinyMCE AI plugin commands].
+
+For information on the **TinyMCE AI** plugin, see: xref:tinymceai.adoc[TinyMCE AI].
+
+
 [[accompanying-enhanced-skins-and-icon-packs-changes]]
 == Accompanying Enhanced Skins & Icon Packs changes
 

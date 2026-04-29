@@ -1,0 +1,24 @@
+[[content_language]]
+== `content_language`
+
+The `+content_language+` option sets the default content language of the editor by applying a `+lang+` attribute to the document element. In classic (iframe) mode, the attribute is set on the `+<html>+` element inside the editor's iframe. In inline mode, the attribute is set on the target element specified in the editor's `+selector+` option.
+
+Setting this option helps meet accessibility standards such as link:https://www.w3.org/WAI/standards-guidelines/act/rules/b5c3f8/[WCAG Success Criterion 3.1.1 (Language of Page)], which requires that the default human language of a web page can be programmatically determined.
+
+NOTE: This option is separate from the xref:ui-localization.adoc#language[`+language+`] option, which controls the language of the {productname} user interface. The `+content_language+` option controls only the language attribute of the editor content area.
+
+When the xref:introduction-to-tiny-spellchecker.adoc[Spell Checker] plugin is active, it uses `+content_language+` as its default proofing language. If `+content_language+` is not set, the Spell Checker falls back to xref:introduction-to-tiny-spellchecker.adoc#spellchecker_language[`+spellchecker_language+`].
+
+*Type:* `+String+`
+
+*Default value:* Not set (`+undefined+`)
+
+=== Example: using `content_language`
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to your HTML
+  content_language: 'fr'
+});
+----

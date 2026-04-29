@@ -113,9 +113,7 @@ For endpoint details, request and response schemas, authentication, and streamin
 [[reviews-custom-reviews]]
 === Custom reviews (API)
 
-Integrators can also call the Custom Review API endpoint directly. It streams suggestions in the same way as system reviews but takes a custom `prompt` (and `model`) with document `content` in the request body. Custom reviews can be as simple as checking for specific words or phrases, or as complex as applying a company style guide that includes business logic, specific terminology, and more.
-
-See https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for the endpoint, parameters, and examples.
+Integrators can also call the Custom Review API endpoint directly. It streams suggestions in the same way as system reviews but takes a custom `prompt` (and `model`) with document `content` in the request body. Custom reviews can be as simple as checking for specific words or phrases, or as complex as applying a company style guide that includes business logic, specific terminology, and more. See https://tinymceai.api.tiny.cloud/docs#tag/Reviews[Reviews API] for the endpoint, parameters, and examples.
 
 Users can also run custom reviews directly from the editor through the xref:tinymceai-review.adoc#custom-review-choose-review[Custom review] category in the Review sidebar.
 

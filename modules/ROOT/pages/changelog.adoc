@@ -14,14 +14,6 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * Improved visual styling of inline diff highlights in Suggested Edits and TinyMCE AI plugin.
 // #TINY-13958
 
-### Changed
-* Updated the Review list accordion item background color.
-// #TINY-14158
-
-### Deprecated
-* Deprecated `spellchecker_language` config option. Use `content_language` instead.
-// #TINY-11214
-
 ### Fixed
 * URIs with non-Latin1 characters were returning an error.
 // #TINY-13938

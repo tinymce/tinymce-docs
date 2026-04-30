@@ -9,18 +9,18 @@
 
 include::partial$misc/admon-premium-plugin.adoc[]
 
-The {pluginname} Premium plugin detects pure {pluginname} from a paste event within a {productname} editor instance.
+The {pluginname} Premium plugin detects pure markdown from a paste event within a {productname} editor instance.
 
 == Using the {pluginname} plugin
 
 === How it works
 
-The **{pluginname}** Premium Plugin detects if pure {pluginname} is pasted into the {productname} editor instance.
+The **{pluginname}** Premium Plugin detects if pure markdown is pasted into the {productname} editor instance.
 
-If {pluginname} content is detected during a paste event, the editor will:
+If markdown content is detected during a paste event, the editor will:
 
-* Attempt to convert the {pluginname} into HTML
-* Add an undo level before the conversion, allowing the original plain text to be restored
+* attempt to convert the markdown into HTML
+* add an undo level before the conversion, allowing the original plain text to be restored
 
 [TIP]
 ====
@@ -31,7 +31,7 @@ To paste text without formatting use:
 * *Windows*: `Ctrl+Shift+V`.
 * *Mac*: `Cmd+Shift+V`.
 
-These shortcuts allow pasting of `plain-text` which removes existing formatting (such as bold, italics, or different fonts). This is particularly useful when copying {pluginname} syntax (text) from websites or documents as it ensures the text is pasted into the new location without the original HTML formatting. 
+These shortcuts allow pasting of `plain-text` which removes existing formatting (such as bold, italics, or different fonts). This is particularly useful when copying {pluginname} syntax (text) from websites or documents as it ensures the text is pasted into the new location without the original HTML formatting.
 ====
 
 == Basic setup

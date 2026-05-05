@@ -1,0 +1,55 @@
+= {productname} {release-version}
+:release-version: 7.9.3
+:navtitle: {productname} {release-version}
+:description: Release notes for {productname} {release-version}
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+
+[[overview]]
+== Overview
+
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on <weekday>, <month> <DD>^<st|nd|rd|th>^, <YYYY>. These release notes provide an overview of the changes for {productname} {release-version}, including:
+
+* xref:security-fixes[Security fixes]
+
+
+[[security-fixes]]
+== Security fixes
+
+{productname} {release-version} includes fixes for the following security issues:
+
+=== Fixed stored XSS vulnerability using media plugin `data-mce-object` injection
+// #TINY-14357
+
+A stored cross-site scripting (XSS) vulnerability was identified in the media plugin. Malicious scripts could be injected through crafted `data-mce-object` and `data-mce-p-*` attributes, which were executed when content was rendered. {productname} {release-version} ensures that content with `data-mce-object` and `data-mce-p-*` attributes is properly sanitized when the media plugin is in use.
+
+CVE: _pending_
+
+GHSA: https://github.com/tinymce/tinymce/security/advisories/GHSA-vg35-5wq7-3x7w[GitHub Advisories].
+
+// Credits: _pending_
+
+=== Fixed stored XSS vulnerability through `mce:protected` comments
+// #TINY-14353
+
+A stored cross-site scripting (XSS) vulnerability was identified through forged `mce:protected` comments. Attackers could bypass sanitization and inject scripts that executed when content was restored. This issue affected configurations using the `protect` option. {productname} {release-version} validates decoded `mce:protected` content against configured `protect` regex rules before restoring.
+
+CVE: _pending_
+
+GHSA: https://github.com/tinymce/tinymce/security/advisories/GHSA-v98h-vmpc-fpqv[GitHub Advisories].
+
+// Credits: _pending_
+
+=== Fixed stored XSS vulnerability through `data-mce-` prefixed `src`, `href`, `style` attributes
+// #TINY-14333
+
+A stored cross-site scripting (XSS) vulnerability was identified through unsanitized `data-mce-href`, `data-mce-src`, and `data-mce-style` attributes. Malicious values in these attributes could override safe attributes during serialization, bypassing validation. {productname} {release-version} strips unsafe `data-mce-*` attributes during parsing.
+
+CVE: _pending_
+
+GHSA: https://github.com/tinymce/tinymce/security/advisories/GHSA-q742-qvgc-gc2f[GitHub Advisories].
+
+// Credits: _pending_

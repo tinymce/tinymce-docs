@@ -1,55 +1,15 @@
 This section lists the open source plugins provided with {productname}.
 
+== Core Writing & Formatting Tools
+
 [cols="1,1"]
 |===
-
-a|
-[.lead]
-xref:accordion.adoc[Accordion]
-
-Create expandable and collapsible sections.
-
-a|
-[.lead]
-xref:anchor.adoc[Anchor]
-
-Insert anchors (sometimes referred to as a bookmarks).
-
-a|
-[.lead]
-xref:autolink.adoc[Autolink]
-
-Automatically create hyperlinks.
-
-a|
-[.lead]
-xref:autoresize.adoc[Autoresize]
-
-Automatically resize {productname} to fit content.
-
-a|
-[.lead]
-xref:autosave.adoc[Autosave]
-
-Automatically save content in your local browser.
 
 a|
 [.lead]
 xref:charmap.adoc[Character Map]
 
 Insert special characters into {productname}.
-
-a|
-[.lead]
-xref:code.adoc[Code]
-
-Edit your content’s HTML source.
-
-a|
-[.lead]
-xref:codesample.adoc[Code Sample]
-
-Insert and embed syntax highlighted code snippets.
 
 a|
 [.lead]
@@ -65,27 +25,9 @@ Bring a smiley to your content.
 
 a|
 [.lead]
-xref:fullscreen.adoc[Full Screen]
-
-Expand {productname} to fill the entire screen.
-
-a|
-[.lead]
-xref:help.adoc[Help]
-
-Shows the help dialog.
-
-a|
-[.lead]
 xref:image.adoc[Image]
 
 Insert an image into {productname}.
-
-a|
-[.lead]
-xref:importcss.adoc[Import CSS]
-
-Automatically populate CSS class names into the Format dropdown.
 
 a|
 [.lead]
@@ -97,7 +39,7 @@ a|
 [.lead]
 xref:link.adoc[Link]
 
-Add hyperlinks to content.
+Add and edit links in {productname}.
 
 a|
 [.lead]
@@ -115,13 +57,13 @@ a|
 [.lead]
 xref:media.adoc[Media]
 
-Add HTML5 video and audio elements.
+Embed and manage HTML5 video and audio elements.
 
 a|
 [.lead]
 xref:nonbreaking.adoc[Nonbreaking Space]
 
-Insert a nonbreaking space.
+Insert a non-breaking space.
 
 a|
 [.lead]
@@ -131,33 +73,52 @@ Add a page break.
 
 a|
 [.lead]
+xref:table.adoc[Table]
+
+Create and edit tables, including rows, columns, and cell formatting.
+
+|===
+
+== Content Structure & Layout Controls
+
+[cols="1,1"]
+|===
+
+a|
+[.lead]
+xref:accordion.adoc[Accordion]
+
+Create expandable and collapsible sections.
+
+a|
+[.lead]
+xref:anchor.adoc[Anchor]
+
+Insert anchors (bookmarks) that allow users to link directly to content.
+
+a|
+[.lead]
+xref:fullscreen.adoc[Full Screen]
+
+Expands the editor to full-screen mode. 
+
+a|
+[.lead]
+xref:importcss.adoc[Import CSS]
+
+Automatically populate CSS class names into the Format dropdown.
+
+a|
+[.lead]
 xref:preview.adoc[Preview]
 
-Show a dialog of the current content in read-only format.
+Displays a read-only preview of the current content in a separate dialog.
 
 a|
 [.lead]
 xref:quickbars.adoc[Quick Toolbars]
 
 User interface controls to create content faster.
-
-a|
-[.lead]
-xref:save.adoc[Save]
-
-Add a save button to the {productname} toolbar.
-
-a|
-[.lead]
-xref:searchreplace.adoc[Search and Replace]
-
-Find and replace content in {productname}.
-
-a|
-[.lead]
-xref:table.adoc[Table]
-
-Table editing features.
 
 a|
 [.lead]
@@ -171,11 +132,75 @@ xref:visualchars.adoc[Visual Characters]
 
 See invisible characters such as non-breaking spaces.
 
+|===
+
+
+== Code & Technical Editing
+
+[cols="1,1"]
+|===
+
+a|
+[.lead]
+xref:code.adoc[Code]
+
+Edit the current content’s HTML source.
+
+a|
+[.lead]
+xref:codesample.adoc[Code Sample]
+
+Insert and embed syntax-highlighted code snippets.
+
+a|
+[.lead]
+xref:searchreplace.adoc[Search and Replace]
+
+Find and replace content in {productname}.
+
+|===
+
+== Productivity & Automation
+
+[cols="1,1"]
+|===
+
+
+a|
+[.lead]
+xref:autolink.adoc[Autolink]
+
+Automatically create hyperlinks when a user types a valid URL.
+
+a|
+[.lead]
+xref:autoresize.adoc[Autoresize]
+
+Automatically resize {productname} to fit content.
+
+a|
+[.lead]
+xref:autosave.adoc[Autosave]
+
+Automatically save content in your local browser.
+
+a|
+[.lead]
+xref:help.adoc[Help]
+
+Opens the built-in help dialog.
+
+a|
+[.lead]
+xref:save.adoc[Save]
+
+Add toolbar button to trigger saving of editor content.
+
 a|
 [.lead]
 xref:wordcount.adoc[Word Count]
 
-Show a word count in the {productname} status bar.
+Show a word count in the {productname} editor status bar.
 
 // Dummy table cell.
 // 1. Remove the inline comment markup pre-pending this

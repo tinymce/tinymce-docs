@@ -15,23 +15,23 @@ The {pluginname} Premium plugin detects pure markdown from a paste event within 
 
 === How it works
 
-The **Markdown** Premium Plugin allows the editor to detect if pure markdown is pasted into the {productname} editor instance.
+The **{pluginname}** Premium Plugin detects if pure markdown is pasted into the {productname} editor instance.
 
-During this paste event, If the editor detects markdown has been pasted it will:
+If markdown content is detected during a paste event, the editor will:
 
-* attempt to convert the markdown to HTML, while
-* add a undo level before the conversion to allow for undo of plain-text.
+* attempt to convert the markdown into HTML
+* add an undo level before the conversion, allowing the original plain text to be restored
 
 [TIP]
 ====
-Below is a list of handy shortcuts for pasting in `plain-text` format when using the {pluginname} plugin within {productname}.
+Below are useful keyboard shortcuts for pasting in `plain-text` format when using the {pluginname} plugin within {productname}.
 
-To paste text in plain form using keyboard shortcuts, use:
+To paste text without formatting use:
 
 * *Windows*: `Ctrl+Shift+V`.
 * *Mac*: `Cmd+Shift+V`.
 
-These shortcuts allow pasting of `plain-text` without formatting, particularly when copying markdown syntax (text) from websites or documents. If the user copied text from one source with certain formatting (such as bold, italics, or different fonts), using this command will paste the text into the new location without carrying over the original formatting.
+These shortcuts allow pasting of `plain-text` which removes existing formatting (such as bold, italics, or different fonts). This is particularly useful when copying {pluginname} syntax (text) from websites or documents as it ensures the text is pasted into the new location without the original HTML formatting.
 ====
 
 == Basic setup

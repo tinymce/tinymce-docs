@@ -5,7 +5,7 @@
 [[creating-custom-dictionary-files]]
 == Creating custom dictionary files
 
-One custom dictionary can be created for each language already supported by the spell checker (see xref:introduction-to-tiny-spellchecker.adoc#supported-languages[supported languages]) or any arbitrary language added by additional Hunspell dictionary files included in Hunspell Dictionary Path (See xref:self-hosting-hunspell.adoc[Add Hunspell dictionaries to Spell Checker]). It's also possible to define an additional "global" dictionary that contains words that are valid across all languages, such as trademarks.
+One custom dictionary can be created for each language already supported by the spell checker (see xref:introduction-to-tiny-spellchecker.adoc#supported-languages[supported languages]) or any arbitrary language added by additional Hunspell dictionary files included in Hunspell Dictionary Path (See xref:self-hosting-hunspell.adoc[Add Hunspell dictionaries to Spell Checker]). It is also possible to define an additional "global" dictionary that contains words that are valid across all languages, such as trademarks.
 
 A custom dictionary file for a particular language must be named with the language code of the language (see xref:introduction-to-tiny-spellchecker.adoc#supported-languages[supported languages] for language code examples), plus the suffix `+.txt+`: E.g. `+en.txt+`, `+en-GB.txt+`, `+fr.txt+`, `+de.txt+` etc.
 
@@ -28,7 +28,7 @@ NOTE: *German and Finnish languages* - Spell checking in German and Finnish will
 
 == Configuring the custom dictionary feature
 
-Additional configuration to your `+application.conf+` file is required. (Don't forget to restart the Java application server after updating the configuration.)
+Additional configuration to the `+application.conf+` file is required. (Don't forget to restart the Docker container after updating the configuration.)
 
 include::partial$misc/custom-dictionaries-path.adoc[]
 
@@ -38,7 +38,7 @@ include::partial$misc/dynamic-custom-dictionaries.adoc[]
 
 == Verifying custom dictionary functionality
 
-If successfully configured, the custom dictionary feature will report dictionaries found in the application server's log at service startup when using Static Custom Dictionaries.
+If successfully configured, the custom dictionary feature will report dictionaries found in the service log at startup when using Static Custom Dictionaries.
 
 Example:
 

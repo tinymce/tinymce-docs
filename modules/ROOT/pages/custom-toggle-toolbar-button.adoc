@@ -44,7 +44,7 @@ liveDemo::custom-toolbar-toggle-button[tab="js"]
 
 The example above adds two custom *strikethrough* toggle buttons. Both buttons use the xref:editor-command-identifiers.adoc[`+mceToggleFormat+`] command to apply and remove strikethrough formatting. This command toggles a specified format on and off, but only works for xref:content-formatting.adoc#formats[formats] already registered with the editor. In this example, `+strikethrough+` is the registered format.
 
-=== Basic togle: manual state management
+=== Basic toggle: manual state management
 
 The first (`+customStrikethrough+`) button applies and removes strikethrough formatting. Its state toggles upon click using `+api.setActive(!api.isActive())+`. However, this button does not reflect whether the selected content has strikethrough formatting which is its expected behavior. Moving the cursor into content with strikethrough formatting does not activate the button, and moving it out does not deactivate it.
 

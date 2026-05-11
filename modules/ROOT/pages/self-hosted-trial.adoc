@@ -119,19 +119,9 @@ For the full list of features included in a trial, see the link:https://www.tiny
 
 == Network requirements
 
-When `+cloud_services_trial+` is enabled, the editor connects to {cloudname} services. Ensure the following domains allow outbound access if the network uses a forward proxy or firewall:
+When `+cloud_services_trial+` is enabled, the editor connects to {cloudname} services. Ensure that `+*.tiny.cloud+` is allowed for outbound access if the network uses a forward proxy or firewall.
 
-* `+https://spelling.tiny.cloud+`
-* `+https://hyperlinking.tiny.cloud+`
-* `+https://imageproxy.tiny.cloud+`
-* `+https://exportpdf.tiny.cloud+`
-* `+https://exportdocx.tiny.cloud+`
-* `+https://importdocx.tiny.cloud+`
-
-[NOTE]
-====
-The exact list of required domains depends on which cloud-powered features are enabled in the editor configuration. Only domains for enabled features require network access.
-====
+For detailed Content Security Policy (CSP) configuration, see xref:tinymce-and-csp.adoc[{productname} and Content Security Policy].
 
 == Trial limitations
 

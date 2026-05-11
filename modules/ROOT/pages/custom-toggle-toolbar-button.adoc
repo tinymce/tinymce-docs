@@ -52,7 +52,7 @@ The first (`+customStrikethrough+`) button applies and removes strikethrough for
 
 The second button (`+customToggleStrikethrough+`) addresses this by using xref:apis/tinymce.formatter.adoc#formatChanged[`+editor.formatter.formatChanged+`] in its `+onSetup+` callback to monitor the formatting state of the current selection.
 
-Note: The format name passed to +mceToggleFormat+ via +editor.execCommand(command, ui, args)+ is the same as the one used in +editor.formatter.formatChanged(formatName, callback)+.
+NOTE: The format name passed to `+mceToggleFormat+` via `+editor.execCommand(command, ui, args)+` is the same as the one used in `+editor.formatter.formatChanged(formatName, callback)+`.
 
 The `+formatChanged+` method accepts the following parameters:
 

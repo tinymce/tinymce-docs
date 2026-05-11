@@ -18,7 +18,7 @@ onSetup: (api) => {
 };
 ----
 
-To bind a callback function to an editor event use `xref:apis/tinymce.editor.adoc#on[`+editor.off(eventName, callback)+`]. To unbind an event listener use `xref:apis/tinymce.editor.adoc#off[`+editor.off(eventName, callback)+`]. Any event listeners _should_ be unbound in the teardown callback. The only editor event which does not need to be unbound is `+init+` e.g. `+editor.on('init', callback)+`.
+To bind a callback function to an editor event use xref:apis/tinymce.editor.adoc#on[`+editor.on(eventName, callback)+`]. To unbind an event listener use xref:apis/tinymce.editor.adoc#off[`+editor.off(eventName, callback)+`]. Any event listeners _should_ be unbound in the teardown callback. The only editor event which does not need to be unbound is `+init+` e.g. `+editor.on('init', callback)+`.
 
 [NOTE]
 ====

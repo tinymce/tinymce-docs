@@ -58,7 +58,7 @@ The `+formatChanged+` method accepts the following parameters:
 
 The `+formatChanged+` method accepts the following parameters:
 
-* `+formats+` (String, required) -- The name of the registered format to monitor.
+* `+formats+` (String, required) -- A comma-separated list of registered format names to monitor.
 * `+callback+` (Function, required) -- A function called when the formatting state changes. The callback receives a `+state+` boolean indicating whether the format is present (`+true+`) or absent (`+false+`) in the current selection.
 * `+similar+` (Boolean, optional) -- When `+true+`, treats all similar variants of the same format name as equivalent, regardless of variables. Defaults to `+false+`.
 * `+vars+` (Object, optional) -- When `+similar+` is `+false+`, specifies which format variables must match for the callback to execute.

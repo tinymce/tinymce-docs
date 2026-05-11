@@ -48,7 +48,7 @@ The example above adds two custom *strikethrough* toggle buttons. Both buttons u
 
 The first (`+customStrikethrough+`) button applies and removes strikethrough formatting. Its state toggles upon click using `+api.setActive(!api.isActive())+`. However, this button does not reflect whether the selected content has strikethrough formatting which is its expected behavior. Moving the cursor into content with strikethrough formatting does not activate the button, and moving it out does not deactivate it.
 
-=== State-synced toggle: automatic state updates 
+=== State-synced toggle: automatic state updates
 
 The second button (`+customToggleStrikethrough+`) addresses this by using xref:apis/tinymce.formatter.adoc#formatChanged[`+editor.formatter.formatChanged+`] in its `+onSetup+` callback to monitor the formatting state of the current selection.
 

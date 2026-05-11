@@ -1,0 +1,189 @@
+= Self-hosted trial with cloud services
+:navtitle: Self-hosted trial
+:description: Set up a self-hosted {productname} trial with access to cloud-powered premium features using NPM.
+:keywords: trial, self-hosted, npm, cloud services, premium plugins, license key, tinymce-premium
+
+// TODO: Update option name `cloud_services_trial` when final name is confirmed (TINY-14259).
+
+== Overview
+
+A self-hosted trial provides access to {productname} premium plugins and cloud-powered services in a self-hosted environment. This allows evaluation of the full {productname} feature set, including features that depend on cloud services, without requiring a separate cloud deployment or additional scripts.
+
+During the trial period, {productname} connects to {cloudname} services using the trial license key. No separate API key is required.
+
+[NOTE]
+====
+Only new customers can start a self-hosted trial. The trial period lasts 14 days from the date of sign-up.
+====
+
+== Prerequisites
+
+* A {productname} trial account with "self-hosted" selected as the deployment option. Sign up at link:https://www.tiny.cloud/get-tiny/[Get {productname}].
+* A trial license key, issued after sign-up.
+* https://nodejs.org/[Node.js (and npm)] installed.
+* A project directory with a `+package.json+` file. Initialize one by running `+npm init+` if needed.
+
+== Setup
+
+=== Step 1: Install {productname} and premium plugins
+
+Install both the core editor and premium plugins package:
+
+[source,sh,subs="attributes+"]
+----
+npm install tinymce@^{productmajorversion} tinymce-premium@^{productmajorversion}
+----
+
+[NOTE]
+====
+The self-hosted trial also supports installation using a ZIP package. For ZIP-based setup instructions, see xref:zip-install.adoc[Quick start: ZIP]. The remaining steps in this guide apply regardless of the installation method.
+====
+
+=== Step 2: Configure the editor with the trial license key
+
+Add the trial license key to the {productname} configuration using the `+license_key+` option:
+
+[source,js]
+----
+tinymce.init({
+  selector: 'textarea',  // change this value according to the HTML
+  license_key: 'your-trial-license-key',
+  plugins: [
+    'advlist', 'autolink', 'lists', 'link', 'image', 'charmap', 'preview',
+    'anchor', 'searchreplace', 'visualblocks', 'code', 'fullscreen',
+    'insertdatetime', 'media', 'table', 'help', 'wordcount',
+    'tinymcespellchecker', 'exportpdf', 'exportword', 'importword',
+    'linkchecker', 'mediaembed', 'editimage', 'autocorrect', 'tinymceai'
+  ],
+  toolbar: 'undo redo | blocks | bold italic | alignleft aligncenter alignright | bullist numlist outdent indent | help',
+  cloud_services_trial: true
+});
+----
+
+Replace the `+'your-trial-license-key'+` placeholder with the trial license key provided during sign-up.
+
+=== Step 3: Enable cloud services
+
+Set the `+cloud_services_trial+` option to `+true+` in the editor configuration. This option explicitly enables the connection to {cloudname} services for the duration of the trial.
+
+[IMPORTANT]
+====
+Setting `+cloud_services_trial+` to `+true+` enables a network connection from the editor to {cloudname}. Features that depend on cloud services will not function without this option enabled. Remove or set this option to `+false+` to disable the cloud connection at any time.
+====
+
+=== Step 4: Ensure the license key manager is available
+
+The `+tinymce-premium+` NPM package includes the license key manager. If bundling {productname}, ensure the license key manager is imported:
+
+[source,javascript]
+----
+import 'tinymce-premium/plugins/licensekeymanager';
+----
+
+For hosting setups, ensure the `+licensekeymanager+` folder is present in the `+plugins+` directory alongside all other plugins. For more details, see xref:license-key.adoc#_setting_up_the_commercial_license_key_manager[Setting up the Commercial License Key Manager].
+
+== Available features
+
+The self-hosted trial includes access to the following cloud-powered premium features:
+
+[cols="1,2", options="header"]
+|===
+| Feature | Description
+
+| xref:introduction-to-tiny-spellchecker.adoc[Spell Checker Pro]
+| Real-time spellchecking powered by cloud-based language services.
+
+| xref:linkchecker.adoc[Link Checker]
+| Validates hyperlinks within content using a cloud-based link validation service.
+
+| xref:introduction-to-mediaembed.adoc[Enhanced Media Embed]
+| Rich media previews for URLs using a cloud-based media resolution service.
+
+| xref:exportpdf.adoc[Export to PDF]
+| Converts editor content to PDF format using a cloud-based conversion service.
+
+| xref:exportword.adoc[Export to Word]
+| Converts editor content to DOCX format using a cloud-based conversion service.
+
+| xref:importword.adoc[Import from Word]
+| Imports DOCX content into the editor using a cloud-based conversion service.
+
+| xref:editimage.adoc[Image Editing]
+| Advanced image editing with cloud-based image proxy support.
+
+| xref:autocorrect.adoc[Autocorrect]
+| Automatic text corrections powered by cloud-based language services.
+
+| xref:tinymceai.adoc[TinyMCE AI]
+| AI-powered content generation and editing.
+|===
+
+In addition to cloud-powered features, all self-hosted premium plugins included in the `+tinymce-premium+` package are available during the trial without requiring a cloud connection.
+
+== Network requirements
+
+When `+cloud_services_trial+` is enabled, the editor connects to {cloudname} services. Ensure the following domains allow outbound access if the network uses a forward proxy or firewall:
+
+* `+https://spelling.tiny.cloud+`
+* `+https://hyperlinking.tiny.cloud+`
+* `+https://imageproxy.tiny.cloud+`
+* `+https://exportpdf.tiny.cloud+`
+* `+https://exportdocx.tiny.cloud+`
+* `+https://importdocx.tiny.cloud+`
+
+[NOTE]
+====
+The exact list of required domains depends on which cloud-powered features are enabled in the editor configuration. Only domains for enabled features require network access.
+====
+
+== Trial limitations
+
+[cols="1,2", options="header"]
+|===
+| Limitation | Details
+
+| Duration
+| 14 days from sign-up.
+
+| Eligibility
+| New customers only. Existing customers with an active subscription are not eligible for a self-hosted trial.
+
+| After expiry
+| The editor ceases to function when the trial license key expires. Purchase a commercial license to continue using {productname}.
+
+| Cloud services
+| Cloud-powered features require an active internet connection and the `+cloud_services_trial+` option set to `+true+`.
+|===
+
+== After the trial
+
+To continue using {productname} after the trial period:
+
+* *Purchase a commercial license:* Visit link:https://www.tiny.cloud/pricing[{productname} Pricing] to select a plan. A commercial license key is provided for ongoing self-hosted use.
+* *Self-hosted premium services:* For production use of features such as Spell Checker, Export to PDF, and Import from Word, self-host the required server-side services or use a {cloudname} plan. See xref:bundle-intro-setup.adoc[Premium server-side services] for self-hosting options.
+* *Cloud deployment:* Alternatively, switch to a fully cloud-hosted deployment. See xref:editor-and-features.adoc[Cloud deployment] for setup instructions.
+
+== FAQ
+
+[cols="1,2", options="header"]
+|===
+| Question | Answer
+
+| Does the trial require an API key?
+| No. The trial license key is the only key required. There is no need to configure a separate API key for cloud services during the trial.
+
+| Can the cloud connection be disabled?
+| Yes. Remove the `+cloud_services_trial+` option or set it to `+false+`. Cloud-powered features will not function without this option, but all self-hosted plugins will continue to operate.
+
+| What happens when the trial expires?
+| {productname} disables the editor and displays a notification indicating that the license key has expired. Purchase a commercial license to continue use.
+
+| Is a separate script tag required for cloud services?
+| No. Unlike a hybrid deployment, the self-hosted trial does not require an additional script tag. The `+cloud_services_trial+` option and the trial license key handle all cloud service connectivity.
+
+| Which plugins work without cloud services?
+| All premium plugins that do not depend on an external service function during the trial regardless of the `+cloud_services_trial+` option value. This includes plugins such as xref:advtable.adoc[Advanced Tables], xref:introduction-to-powerpaste.adoc[PowerPaste], xref:footnotes.adoc[Footnotes], and xref:mergetags.adoc[Merge Tags], among others.
+
+| Can the trial be extended?
+| Trial extensions are not available through self-service. Contact link:https://support.tiny.cloud[{productname} Support] for assistance.
+|===

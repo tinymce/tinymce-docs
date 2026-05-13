@@ -6,7 +6,7 @@
 
 
 
-The `PROVIDERS` environment variable tells the AI service how to reach the upstream LLM. The `MODELS` environment variable tells the service which models are exposed to clients and which features each model supports. This page is the definitive reference for both: every supported `type`, every required field, and every known issue encountered in production.
+The `PROVIDERS` environment variable tells the AI service how to reach the upstream large language model (LLM). The `MODELS` environment variable tells the service which models are exposed to clients and which features each model supports. This page is the definitive reference for both: every supported `type`, every required field, and every known issue encountered in production.
 
 Start with the xref:tinymceai-on-premises-getting-started.adoc[Getting Started guide] if the AI service container is not yet running. The following sections assume a running `ai-service` container.
 
@@ -19,7 +19,7 @@ The AI service uses two related environment variables:
 |Variable |Type |What it does
 |`PROVIDERS` |JSON object |Map of provider IDs to provider configurations. Each entry says how to authenticate with one upstream LLM API.
 |`MODELS` |JSON array |List of models exposed to clients. Each model points at a `PROVIDERS` entry and declares which features it can serve.
-|JWT `auth.ai.permissions` |string array |Per-user authorization list. Includes `ai:models:<provider-key>:<model-id>` entries to gate access to individual models.
+|JSON Web Token (JWT) `auth.ai.permissions` |string array |Per-user authorization list. Includes `ai:models:<provider-key>:<model-id>` entries to gate access to individual models.
 |===
 
 The `PROVIDERS` keys are arbitrary identifiers (for example `"openai"`, `"my-bedrock"`, `"team-azure"`). Each value object has a `type` field that picks the implementation:
@@ -378,7 +378,7 @@ Amazon's hosted-model marketplace (Anthropic, Meta, Mistral, Cohere, Amazon Tita
 .Configuration details
 [%collapsible]
 ====
-IMPORTANT: The AI service does *not* use the AWS SDK default credential chain. `AWS_PROFILE`, `~/.aws/credentials`, IRSA, EC2 instance profiles, ECS task roles, and web identity tokens are all ignored. Inline the credentials in the `PROVIDERS` JSON.
+IMPORTANT: The AI service does *not* use the AWS SDK default credential chain. `AWS_PROFILE`, `~/.aws/credentials`, IAM Roles for Service Accounts (IRSA), EC2 instance profiles, ECS task roles, and web identity tokens are all ignored. Inline the credentials in the `PROVIDERS` JSON.
 
 *JSON shape:*
 
@@ -505,7 +505,7 @@ Google's enterprise model surface. Project-scoped, IAM-driven, GCP-billed. Crede
 .Configuration details
 [%collapsible]
 ====
-IMPORTANT: The Vertex adapter ignores ADC, `GOOGLE_APPLICATION_CREDENTIALS`, GKE Workload Identity, and Compute Engine metadata server credentials. Inline either a service-account key or an account-bound API key in the `PROVIDERS` JSON.
+IMPORTANT: The Vertex adapter ignores Application Default Credentials (ADC), `GOOGLE_APPLICATION_CREDENTIALS`, GKE Workload Identity, and Compute Engine metadata server credentials. Inline either a service-account key or an account-bound API key in the `PROVIDERS` JSON.
 
 *JSON shape (service account):*
 
@@ -666,7 +666,7 @@ For any HTTP API that implements the OpenAI Chat Completions interface, includin
 |===
 |Field |Required |Notes
 |`type` |Yes |Literal `"openai-compatible"`
-|`baseUrl` |Yes |*Must include the `/v1` suffix.* Without it, every request fails with a misleading "Not Found" SSE error.
+|`baseUrl` |Yes |*Must include the `/v1` suffix.* Without it, every request fails with a misleading "Not Found" Server-Sent Events (SSE) error.
 |`apiKeys` |No |Sent as `Authorization: Bearer <key>`. Most local runtimes ignore it.
 |`headers` |No |Additional headers such as auth tokens or tenant IDs.
 |===

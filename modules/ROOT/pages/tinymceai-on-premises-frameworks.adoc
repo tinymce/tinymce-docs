@@ -7,10 +7,10 @@
 This page covers the *editor-side* configuration that connects TinyMCE to the on-premises AI service. It assumes:
 
 * The AI service is already running. See xref:tinymceai-on-premises-getting-started.adoc[Getting started] for setup instructions.
-* A token endpoint exists that signs JWTs for the AI service. See xref:tinymceai-on-premises-jwt.adoc[JWT authentication] for back-end implementations.
+* A token endpoint exists that signs JSON Web Tokens (JWTs) for the AI service. See xref:tinymceai-on-premises-jwt.adoc[JWT authentication] for back-end implementations.
 * The TinyMCE API key has the AI feature enabled. Retrieve or upgrade a key at https://www.tiny.cloud/my-account/integrate/.
 
-For general framework setup (installing wrappers, component structure, SSR patterns), see the existing integration guides:
+For general framework setup (installing wrappers, component structure, server-side rendering (SSR) patterns), see the existing integration guides:
 
 * xref:react-cloud.adoc[React]
 * xref:vue-cloud.adoc[Vue.js]
@@ -151,7 +151,7 @@ This pattern avoids cookies entirely and works well for cross-origin setups.
 
 == Cross-origin requests to the AI service
 
-When `tinymceai_service_url` points to a different origin from the page (the common production case), the AI service must return CORS headers permitting the editor origin. The service reads the `ALLOWED_ORIGINS` environment variable for this.
+When `tinymceai_service_url` points to a different origin from the page (the common production case), the AI service must return Cross-Origin Resource Sharing (CORS) headers permitting the editor origin. The service reads the `ALLOWED_ORIGINS` environment variable for this.
 
 To verify CORS from a terminal:
 
@@ -167,7 +167,7 @@ The response should include `Access-Control-Allow-Origin: \https://app.yourcompa
 
 
 
-== Content Security Policy
+== Content Security Policy (CSP)
 
 If the application sets a `Content-Security-Policy` header, allow the AI service origin in `connect-src`:
 
@@ -197,7 +197,7 @@ If using the Tiny CDN instead of self-hosted assets, also add `\https://cdn.tiny
 |Confirm the fetch sends the session cookie (`credentials: 'include'`) or `Authorization` header that the back end expects.
 
 |AI responses hang then time out
-|Reverse proxy is buffering SSE
+|Reverse proxy is buffering Server-Sent Events (SSE)
 |Disable proxy buffering. See xref:tinymceai-on-premises-production.adoc[Production deployment].
 
 |Browser console shows a CORS error on `/v1/conversations`
@@ -217,6 +217,6 @@ For other issues, see xref:tinymceai-on-premises-troubleshooting.adoc[Troublesho
 
 * xref:tinymceai-on-premises-getting-started.adoc[Getting started]
 * xref:tinymceai-on-premises-jwt.adoc[JWT authentication]
-* xref:tinymceai-on-premises-providers.adoc[LLM providers]
+* xref:tinymceai-on-premises-providers.adoc[large language model (LLM) providers]
 * xref:tinymceai-on-premises-production.adoc[Production deployment]
 * xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting]

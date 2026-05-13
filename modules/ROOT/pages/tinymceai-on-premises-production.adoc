@@ -17,7 +17,7 @@ The AI service is stateless, persists all state to MySQL/PostgreSQL and Redis, a
 
 == TLS / HTTPS
 
-The AI service does not terminate TLS. Place a reverse proxy in front.
+The AI service does not terminate Transport Layer Security (TLS). Place a reverse proxy in front.
 
 === Nginx example
 
@@ -48,7 +48,7 @@ server {
 
 [IMPORTANT]
 --
-SSE streaming requires `proxy_buffering off`. Without it, AI responses appear to hang until the entire response is generated.
+Server-Sent Events (SSE) streaming requires `proxy_buffering off`. Without it, AI responses appear to hang until the entire response is generated.
 --
 
 === AWS ALB
@@ -383,7 +383,7 @@ spec:
 [cols=",",options="header",]
 |===
 |Service |AWS recommendation
-|Database |RDS for MySQL 8.0 (Multi-AZ for HA)
+|Database |RDS for MySQL 8.0 (Multi-AZ for high availability (HA))
 |Redis |ElastiCache for Redis 7 (cluster mode)
 |Storage |Same-region S3 bucket
 |Load balancer |ALB with `/health` target health check, 300 s idle timeout
@@ -400,16 +400,16 @@ spec:
 |Practice |Implementation
 |Network isolation |Place the AI service in a private subnet; expose only through a load balancer. Restrict database and Redis to the AI service security group.
 |Block panel from the public internet |Restrict `/panel/` to an admin VPN or IP allowlist. The panel manages secrets and access keys.
-|TLS everywhere |Terminate TLS 1.3 at the reverse proxy. Use internal mTLS between the AI service and the data layer where supported.
+|TLS everywhere |Terminate TLS 1.3 at the reverse proxy. Use internal mutual TLS (mTLS) between the AI service and the data layer where supported.
 |Secrets management |Use Vault, AWS Secrets Manager, Azure Key Vault, or GCP Secret Manager. Never store secrets directly in orchestration manifests or commit them to source control.
 |Database encryption at rest |Turn on encryption at rest in the cloud provider console. RDS, Cloud SQL, and Azure Database enable this by default.
 |Redis authentication |Always set `REDIS_PASSWORD` (or use a managed Redis instance with authentication enabled).
 |Container security |Run as non-root, use a read-only filesystem where possible, and drop unnecessary Linux capabilities.
 |Image scanning |Scan `registry.containers.tiny.cloud/ai-service` with Trivy, Snyk, or the registry's built-in scanner.
-|Least-privilege JWTs |Grant only the permissions each user role requires. Avoid full-access tokens in production.
+|Least-privilege JSON Web Tokens (JWTs) |Grant only the permissions each user role requires. Avoid full-access tokens in production.
 |API secret rotation |Periodically create a new access key, add the new key to the configuration, then revoke the old key. The token endpoint reads the secret at request time.
-|Audit logging |Enable `ENABLE_METRIC_LOGS=true` and ship logs to a SIEM.
-|LLM API key rotation |Add the new key to the `PROVIDERS` array, restart the service, then revoke the old key after confirming the new one works.
+|Audit logging |Enable `ENABLE_METRIC_LOGS=true` and ship logs to a Security Information and Event Management (SIEM).
+|Large language model (LLM) API key rotation |Add the new key to the `PROVIDERS` array, restart the service, then revoke the old key after confirming the new one works.
 |===
 
 == Rate limiting
@@ -479,7 +479,7 @@ When enabled, the service writes a structured JSON entry for each request. Key f
 |===
 |Variable |Required |Default |Description
 |`LLM_TELEMETRY_ENABLED` |Yes |`false` |Primary telemetry switch
-|`OTEL_EXPORTER_OTLP_TRACES_ENDPOINT` |Yes |- |OTLP endpoint URL
+|`OTEL_EXPORTER_OTLP_TRACES_ENDPOINT` |Yes |- |OpenTelemetry Protocol (OTLP) endpoint URL
 |`OTEL_TRACES_SAMPLER_ARG` |No |`1.0` |Sampling rate (0.0 to 1.0)
 |`OTEL_DEBUG` |No |- |Verbose OTLP diagnostic logging
 |===
@@ -632,7 +632,7 @@ These values are approximate and vary with hardware, provider latency, and promp
 |1 to 50 |1 |db.t3.small (or 2 vCPU / 4 GB self-managed) |cache.t3.micro |Development and small teams
 |50 to 500 |2 |db.r6g.large |cache.r6g.large |Small production
 |500 to 5,000 |3 to 5 |db.r6g.xlarge (Multi-AZ) |cache.r6g.xlarge (cluster) |Medium production
-|5,000{plus} |5{plus} (HPA) |db.r6g.2xlarge{plus} |cache.r6g.2xlarge{plus} |Large production; contact Tiny for guidance
+|5,000{plus} |5{plus} (Horizontal Pod Autoscaler (HPA)) |db.r6g.2xlarge{plus} |cache.r6g.2xlarge{plus} |Large production; contact Tiny for guidance
 |===
 
 Starting point for self-managed deployments:

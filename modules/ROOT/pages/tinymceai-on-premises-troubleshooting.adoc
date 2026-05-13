@@ -15,7 +15,7 @@ image::tinymceai-on-premises/troubleshooting-fig-1.svg[alt="Troubleshooting tria
 |Symptom area |Go to
 |Container will not start or exits during boot |<<container-startup-failures>>
 |Container is running, `/health` returns OK, but API calls fail |<<api-and-jwt-authentication>>
-|Conversation starts, but the SSE stream carries an `event: error` |<<llm-provider-errors>>
+|Conversation starts, but the Server-Sent Events (SSE) stream carries an `event: error` |<<llm-provider-errors>>
 |Editor renders, but AI toolbar is missing, token fetch fails, or responses hang |<<editor-and-front-end>>
 |Responses are slow or time out |<<performance>>
 |Scaling, upgrades, or deployment questions |xref:tinymceai-on-premises-production.adoc[Production deployment]
@@ -66,7 +66,7 @@ Run `docker logs ai-service` first. All entries below assume the log output is a
 
 
 [[api-and-jwt-authentication]]
-== API and JWT authentication
+== API and JSON Web Token (JWT) authentication
 
 These assume the container is running and `/health` returns OK.
 
@@ -84,7 +84,7 @@ These assume the container is running and `/health` returns OK.
 
 |`invalid-jwt` (expired)
 |Token is past its `exp` claim
-|Issue tokens with a reasonable lifetime (for example `exp = now {plus} 3600`) and refresh before expiry. Synchronize clocks with NTP.
+|Issue tokens with a reasonable lifetime (for example `exp = now {plus} 3600`) and refresh before expiry. Synchronize clocks with Network Time Protocol (NTP).
 
 |`Environment not found`
 |Environment was not created through the Management Panel UI
@@ -128,7 +128,7 @@ Common mistakes that produce `allowed: false`: `"permissions": "ai:admin"` (stri
 
 
 [[llm-provider-errors]]
-== LLM provider errors
+== Large language model (LLM) provider errors
 
 These appear as `event: error` inside the SSE stream. The HTTP response is still 200.
 
@@ -156,7 +156,7 @@ These appear as `event: error` inside the SSE stream. The HTTP response is still
 [cols="2,3",options="header"]
 |===
 |Error |Fix
-|`NoValidApiKeysFoundError` |Inline `clientEmail` and `privateKey` inside `credentials` in `PROVIDERS`. Google ADC is not used. See xref:tinymceai-on-premises-providers.adoc[LLM providers].
+|`NoValidApiKeysFoundError` |Inline `clientEmail` and `privateKey` inside `credentials` in `PROVIDERS`. Google Application Default Credentials (ADC) is not used. See xref:tinymceai-on-premises-providers.adoc[LLM providers].
 |Auth errors with a valid service account |`private_key` newlines were mangled during copy-paste. Build `PROVIDERS` with a script (`json.dumps()` on the SA JSON file) rather than hand-editing.
 |`SERVICE_DISABLED` |Run `gcloud services enable aiplatform.googleapis.com --project=<PROJECT_ID>`.
 |Blocked by GCP org policy |Check `iam.disableServiceAccountCreation`, `iam.disableServiceAccountKeyCreation`, and account-bound API key policies. Exempt the AI service project from all three.
@@ -196,7 +196,7 @@ Confirm `/health` is OK and a direct `curl` to `/v1/conversations` works before 
 |Ensure TinyMCE 8{plus} is loaded, `plugins: 'tinymceai'` is set, and the toolbar string includes `tinymceai`. Verify the API key has the AI feature enabled.
 
 |Token fetch returns 401
-|The token endpoint's own authentication middleware is rejecting the request. Check session cookies, CORS credentials, and bearer tokens in the browser network tab.
+|The token endpoint's own authentication middleware is rejecting the request. Check session cookies, Cross-Origin Resource Sharing (CORS) credentials, and bearer tokens in the browser network tab.
 
 |Token returned but rejected by the AI service
 |See <<api-and-jwt-authentication>> above: wrong secret, wrong `aud`, wrong algorithm (RS256 instead of HS256), or wrong permissions shape.

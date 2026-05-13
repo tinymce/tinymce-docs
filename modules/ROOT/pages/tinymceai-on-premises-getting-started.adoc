@@ -238,7 +238,7 @@ Always create environments through the Management Panel UI. Environments created
 
 === Create the token server
 
-The token server signs JWTs for the editor. The Node.js example below is for the demo only; the xref:tinymceai-on-premises-jwt.adoc[JWT authentication] guide contains production-ready endpoints in 8 languages (Node, Django, Flask, Laravel, Rails, .NET, Go, Spring Boot).
+The token server signs JSON Web Tokens (JWTs) for the editor. The Node.js example below is for the demo only; the xref:tinymceai-on-premises-jwt.adoc[JWT authentication] guide contains production-ready endpoints in 8 languages (Node, Django, Flask, Laravel, Rails, .NET, Go, Spring Boot).
 
 Create `package.json`:
 
@@ -351,7 +351,7 @@ npm start
 
 === Open the demo
 
-Open *http://localhost:3000* in a browser. The editor loads with the AI toolbar. Select text and try the AI features. Responses stream in real time from the chosen LLM provider, processed entirely within the local infrastructure.
+Open *http://localhost:3000* in a browser. The editor loads with the AI toolbar. Select text and try the AI features. Responses stream in real time from the chosen large language model (LLM) provider, processed entirely within the local infrastructure.
 
 The TinyMCE AI on-premises service is now running.
 
@@ -423,7 +423,7 @@ event: done
 data: {}
 ----
 
-If the stream emits `event: error`, inspect the `data` payload. Provider errors (invalid API key, IAM denial, model unavailable) ride inside the SSE response. The HTTP status stays 200. See the xref:tinymceai-on-premises-troubleshooting.adoc[LLM provider errors] section in the Troubleshooting guide for details.
+If the stream emits `event: error`, inspect the `data` payload. Provider errors (invalid API key, IAM denial, model unavailable) ride inside the Server-Sent Events (SSE) response. The HTTP status stays 200. See the xref:tinymceai-on-premises-troubleshooting.adoc[LLM provider errors] section in the Troubleshooting guide for details.
 
 A successful round-trip confirms: container health, database connectivity, Redis connectivity, JWT signing, JWT verification, permissions checking, environment registration, LLM provider authentication, and SSE streaming. If problems persist after these checks, focus on the editor configuration next.
 

@@ -150,7 +150,7 @@ The assistant calls the `search_knowledge_base` tool, retrieves the relevant pol
 
 == Multi-tenant SaaS platform
 
-*Use case:* A SaaS platform provides AI writing features to customers. Each customer gets isolated conversations, separate LLM budgets, and per-tenant configuration.
+*Use case:* A SaaS platform provides AI writing features to customers. Each customer gets isolated conversations, separate large language model (LLM) budgets, and per-tenant configuration.
 
 === Architecture
 
@@ -171,7 +171,7 @@ Each environment provides:
 * Customer B -> Environment `env-customer-b`
 * Customer C -> Environment `env-customer-c`
 
-. *Token server generates JWTs with the correct environment:*
+. *Token server generates JSON Web Tokens (JWTs) with the correct environment:*
 +
 .Multi-tenant JWT generation
 [%collapsible]

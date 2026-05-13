@@ -1,0 +1,4 @@
+flowchart LR
+    Editor[TinyMCE editor] <-->|chat / quick actions| AI[AI Service]
+    AI -->|MCP tools/call| MCP[MCP Server<br>knowledge-hub]
+    MCP -->|read| KB[Confluence ·<br>Notion ·<br>GitBook ·<br>internal wiki]

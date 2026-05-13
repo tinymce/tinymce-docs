@@ -1,0 +1,145 @@
+= TinyMCE AI On-Premise
+:navtitle: Overview
+:description: Self-hosted AI writing assistance for TinyMCE; architecture, prerequisites, and topic guide
+:keywords: AI, on-premises, self-hosted, deployment, overview
+
+The TinyMCE AI on-premises service is a self-hosted back end that powers AI writing assistance inside the TinyMCE rich text editor. It runs entirely within the host infrastructure. Editor content, conversation history, file attachments, and user data never leave the network.
+
+The service ships as a single OCI container image (`registry.containers.tiny.cloud/ai-service`). It exposes a REST API, a Management Panel, Server-Sent Events streaming, and an OpenAPI spec.
+
+== Architecture
+
+[.text-center]
+image::tinymceai-on-premises/complete-guide-fig-1.svg[alt="Service architecture showing browser with TinyMCE token endpoint AI service database Redis and LLM providers",width=100%]
+
+Data flow for a single AI request:
+
+[arabic]
+. The browser loads TinyMCE with the `tinymceai` plugin.
+. The user triggers an AI feature (chat, review, quick action).
+. The plugin calls the token endpoint, which signs an HS256 JWT with the API Secret.
+. The plugin sends the JWT and prompt to the AI service.
+. The AI service verifies the token, checks per-feature permissions, and forwards the prompt to the configured LLM.
+. The LLM streams its response back to the browser through Server-Sent Events.
+
+The shared secret (API Secret) never leaves the back end; the editor and the AI service only ever see signed tokens.
+
+== Prerequisites
+
+[cols="1,3",options="header"]
+|===
+|Requirement |Details
+
+|Container runtime
+|Docker 20.10{plus}, Podman 4{plus}, or any OCI-compatible runtime. Kubernetes, AWS ECS, or Azure Container Apps are also supported.
+
+|SQL database
+|MySQL 8.0 or PostgreSQL 13{plus} (16 recommended).
+
+|Redis
+|3.2.6{plus} (7.x recommended). Single node, Sentinel, or Cluster mode.
+
+|LLM access
+|At least one provider. Multiple providers can coexist.
+
+|TinyMCE 8.0{plus}
+|The `tinymceai` plugin is a premium plugin.
+
+|License key and registry credentials
+|Provided by a Tiny account representative.
+
+|Token endpoint
+|A back end that signs HS256 JWTs.
+
+|Reverse proxy
+|The AI service does not terminate TLS. Use nginx, HAProxy, or a cloud load balancer.
+|===
+
+== Choosing a setup path
+
+[.text-center]
+image::tinymceai-on-premises/complete-guide-fig-2.svg[Setup path decision tree,width=100%]
+
+Each path carries the same level of documentation. After identifying which path fits the operational model, complete its topic guides in the order listed.
+
+== Topic guides
+
+For a first-time deployment, progress through the guides in order. Each topic guide also stands alone when only one area applies.
+
+[cols="1,3",options="header"]
+|===
+|Guide |Scope
+
+|xref:tinymceai-on-premises-getting-started.adoc[Getting started]
+|Five-minute Docker Compose quick start. Stand up the AI service, database, Redis, token server, and a browser editor.
+
+|xref:tinymceai-on-premises-database.adoc[Database, Redis, and storage]
+|MySQL and PostgreSQL setup, Redis configuration, container runtimes (Docker, Podman, Kubernetes, ECS), and reverse proxy with TLS.
+
+|xref:tinymceai-on-premises-providers.adoc[LLM providers]
+|OpenAI, Anthropic, Google Gemini, Azure OpenAI, AWS Bedrock, Google Vertex AI, and self-hosted endpoints (Ollama, vLLM, LM Studio). Custom model catalog and API key rotation.
+
+|xref:tinymceai-on-premises-jwt.adoc[JWT authentication]
+|HS256 signing model, required and optional claims, permissions reference, and token endpoint examples in 8 languages.
+
+|xref:tinymceai-on-premises-frameworks.adoc[Framework integration]
+|Editor-side configuration: plugin options, token provider, authentication patterns, CORS, and deployment checklists.
+
+|xref:tinymceai-on-premises-production.adoc[Production deployment]
+|Kubernetes manifests, AWS ECS task definitions, horizontal scaling, sizing, security hardening, rate limiting, observability, backup and recovery, and upgrades.
+
+|xref:tinymceai-on-premises-advanced.adoc[Advanced scenarios]
+|MCP server integration, web scraping and search, multi-tenant patterns, custom models with guardrails, and AI-powered document pipelines.
+
+|xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting]
+|Quick triage, container startup failures, JWT errors, LLM provider errors, editor issues, performance, and diagnostic recipes.
+
+|xref:tinymceai-on-premises-reference.adoc[Reference]
+|Environment variable reference, API endpoint reference, Server-Sent Events reference, and error code reference.
+|===
+
+== Support
+
+* *Technical support:* https://support.tiny.cloud[Submit a support request] (available to customers with an active commercial license).
+* *Account and licensing:* https://www.tiny.cloud/contact/[Contact Tiny].
+
+When submitting a support request, include:
+
+Container logs::
++
+[source,console]
+----
+docker logs ai-service --tail 200
+----
+
+Effective environment::
+Redact secrets before submitting.
++
+[source,console]
+----
+docker inspect ai-service | jq '.[0].Config.Env'
+----
+
+Health check::
++
+[source,console]
+----
+curl -fsS http://localhost:8000/health
+----
++
+Expected response:
++
+[source,json]
+----
+{"serviceName":"on-premises-http","uptime":1234}
+----
+
+Decoded JWT payload::
+Strip the signature and decode with a JWT library.
+
+Image version::
++
+[source,console]
+----
+docker inspect ai-service | jq '.[0].Config.Image'
+----

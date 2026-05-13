@@ -1,0 +1,12 @@
+flowchart TD
+    Start([Where will MySQL/Postgres and Redis run?]) --> Q1{Evaluating or<br>deploying to prod?}
+    Q1 -->|Evaluating locally| Compose[Docker Compose<br>image: mysql:8.0 or postgres:16<br>+ redis:7]
+    Q1 -->|Deploying| Q2{Cloud or self-managed?}
+    Q2 -->|Cloud / managed services| Managed[AWS RDS · Cloud SQL ·<br>Azure Database<br>+ ElastiCache · Memorystore ·<br>Azure Cache for Redis]
+    Q2 -->|Self-managed| Q3{Container runtime<br>available?}
+    Q3 -->|Docker or Podman| Containers[Containers on the same<br>network or pod as ai-service]
+    Q3 -->|None - bare metal or VM| Native[Native install<br>brew · apt · yum · dnf<br>service runs on host]
+    Compose --> Verify([Verify: nc -zv host port<br>then start ai-service])
+    Managed --> Verify
+    Containers --> Verify
+    Native --> Verify

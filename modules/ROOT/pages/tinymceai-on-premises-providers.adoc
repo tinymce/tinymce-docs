@@ -319,7 +319,7 @@ Azure-hosted OpenAI models. Requires an Azure subscription, an Azure OpenAI reso
 |`type` |Yes |Literal `"azure"`
 |`resourceName` |Yes |The `*.openai.azure.com` prefix only, not the full URL.
 |`apiKeys` |Yes |Array. Azure issues two keys per resource for zero-downtime key rotation.
-|`apiVersion` |Yes |Always set explicitly. Refer to https://learn.microsoft.com/azure/ai-services/openai/reference[Microsoft's API version matrix] for current values.
+|`apiVersion` |Yes |Always set explicitly. Omitting it produces a confusing SDK error about a missing query string parameter. Refer to https://learn.microsoft.com/azure/ai-services/openai/reference[Microsoft's API version matrix] for current stable values.
 |===
 
 IMPORTANT: The ``MODELS[].id`` value must match the Azure *deployment name* exactly. A mismatch produces a `DeploymentNotFound` error. Use human-readable deployment names because the ID also appears in JWT permission strings and the editor model picker.
@@ -682,6 +682,17 @@ Ollama listens on `127.0.0.1:11434` by default, which is unreachable from inside
 OLLAMA_HOST=0.0.0.0:11434 ollama serve
 ----
 
+On Linux with systemd, create an override file instead:
+
+[source,ini]
+----
+# /etc/systemd/system/ollama.service.d/override.conf
+[Service]
+Environment="OLLAMA_HOST=0.0.0.0:11434"
+----
+
+Then reload and restart: `sudo systemctl daemon-reload && sudo systemctl restart ollama`.
+
 On Linux, add the host gateway so `host.docker.internal` resolves:
 
 [source,yaml]
@@ -694,6 +705,27 @@ services:
 ----
 
 If Ollama returns "does not support tools", the model was built from a raw GGUF without a chat template. Use `ollama pull` for a Library model that includes a proper Modelfile, or author a custom one.
+
+.Custom Modelfile example
+[%collapsible]
+====
+[source]
+----
+FROM /path/to/your-model.gguf
+
+TEMPLATE """{{ if .System }}<|im_start|>system
+{{ .System }}<|im_end|>
+{{ end }}{{ range .Messages }}<|im_start|>{{ .Role }}
+{{ .Content }}<|im_end|>
+{{ end }}<|im_start|>assistant
+"""
+
+PARAMETER stop "<|im_end|>"
+PARAMETER stop "<|im_start|>"
+----
+
+The exact template depends on the base model. Check the model card for the recommended chat template. Verify tool support with `ollama show <model>` before connecting to the AI service.
+====
 
 The reasoning toggle (`capabilities.reasoning: true`) is cosmetic for Ollama-backed models; the openai-compatible adapter does not translate it to the native Ollama API.
 

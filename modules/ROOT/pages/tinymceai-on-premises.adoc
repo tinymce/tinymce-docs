@@ -24,6 +24,49 @@ Data flow for a single AI request:
 
 The shared secret (API Secret) never leaves the back end; the editor and the AI service only ever see signed tokens.
 
+== Capabilities
+
+[cols="1,2",options="header"]
+|===
+|Capability |Details
+
+|Conversational AI assistant
+|Multi-turn chat sidebar. Conversation history is isolated per user through the JWT `sub` claim.
+
+|Document review
+|Correctness, clarity, readability, tone, and translation.
+
+|Quick actions
+|Rewrite, summarize, expand, change tone, fix grammar, translate, continue, and improve writing.
+
+|LLM provider flexibility
+|OpenAI, Anthropic, Google Gemini, Azure OpenAI, AWS Bedrock, Google Vertex AI, or any self-hosted OpenAI-compatible endpoint. Multiple providers can coexist.
+
+|MCP integration
+|Connect internal tools, databases, and knowledge bases through Model Context Protocol over Streamable HTTP transport.
+
+|Web scraping and web search
+|Pluggable endpoints for fetching web pages and running searches.
+
+|Multi-tenant environments
+|Isolated conversation history and per-tenant access keys through Environments.
+
+|Per-user, per-feature permissions
+|Fine-grained control through the `auth.ai.permissions` JWT claim.
+
+|Streaming responses
+|Server-Sent Events from the LLM back to the browser.
+
+|File attachments
+|Database, filesystem, Amazon S3, or Azure Blob Storage.
+
+|Observability
+|Structured request logs, OpenTelemetry, and Langfuse. All three run as independent simultaneous pipelines.
+
+|Horizontal scaling
+|The service is stateless. Share identical environment configuration across replicas.
+|===
+
 == Prerequisites
 
 [cols="1,3",options="header"]

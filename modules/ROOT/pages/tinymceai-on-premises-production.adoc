@@ -83,6 +83,41 @@ When deploying for the first time or upgrading to a new version, start a single 
 
 
 
+== Podman deployment
+
+The AI service works with Podman as an alternative to Docker. In Podman, containers within a pod share a network namespace, so use `127.0.0.1` instead of container names for hostnames.
+
+[source,bash]
+----
+podman login -u 'TINY_REGISTRY_USERNAME' registry.containers.tiny.cloud
+
+podman pull registry.containers.tiny.cloud/ai-service:latest
+
+podman pod create --name ai-pod -p 8000:8000 -p 3306:3306 -p 6379:6379
+
+podman run -d --pod ai-pod --name mysql \
+  -e MYSQL_ROOT_PASSWORD=ROOT_PASSWORD \
+  -e MYSQL_DATABASE=ai_service \
+  mysql:8.0
+
+podman run -d --pod ai-pod --name redis redis:7
+
+podman run --init -d --pod ai-pod --name ai-service \
+  -e LICENSE_KEY='T8LK:...' \
+  -e ENVIRONMENTS_MANAGEMENT_SECRET_KEY='MANAGEMENT_SECRET' \
+  -e DATABASE_DRIVER='mysql' \
+  -e DATABASE_HOST='127.0.0.1' \
+  -e DATABASE_USER='root' \
+  -e DATABASE_PASSWORD='ROOT_PASSWORD' \
+  -e DATABASE_DATABASE='ai_service' \
+  -e REDIS_HOST='127.0.0.1' \
+  -e PROVIDERS='{"openai":{"type":"openai","apiKeys":["sk-proj-..."]}}' \
+  -e STORAGE_DRIVER='database' \
+  registry.containers.tiny.cloud/ai-service:latest
+----
+
+IMPORTANT: Pin to `mysql:8.0`. The `mysql:8` tag floats to MySQL 8.4, which removes the `default-authentication-plugin` flag and causes a crash loop. See xref:tinymceai-on-premises-database.adoc[Database, Redis, and storage] for details.
+
 == Kubernetes deployment
 
 === Namespace and image pull secret
@@ -561,6 +596,33 @@ Review the release notes for the target version and take a database backup befor
 License keys are per-deployment, not per-replica. One key covers any number of replicas of a single deployment.
 
 
+
+== Performance characteristics
+
+[cols="1,1",options="header"]
+|===
+|Metric |Typical value
+
+|Cold start
+|Approximately 3 seconds
+
+|Health check response
+|Less than 10 ms
+
+|Token validation
+|Less than 5 ms
+
+|Time to first token (LLM)
+|200 ms to 2 s (depends on provider and model)
+
+|Memory per instance
+|256 to 512 MB
+
+|Concurrent connections
+|1,000{plus} per instance
+|===
+
+These values are approximate and vary with hardware, provider latency, and prompt complexity. The LLM provider's rate limits are typically the binding constraint before the AI service becomes one.
 
 == Sizing guide
 

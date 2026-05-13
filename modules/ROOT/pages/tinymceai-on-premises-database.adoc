@@ -95,7 +95,7 @@ Do *not* use `mysql:8`. That tag now floats to MySQL 8.4, which removes the `def
 [ERROR] [MY-010119] [Server] Aborting
 ....
 
-Pin to `mysql:8.0` in every manifest: `docker run`, Docker Compose, Kubernetes, Helm, ECS.
+Pin to `mysql:8.0` in every manifest: `docker run`, Docker Compose, Kubernetes, Helm, ECS. Running MySQL 8.4 with workarounds (removing the flag and switching to `caching_sha2_password`) is not a supported configuration.
 
 TIP: The same principle applies to PostgreSQL. Pin `postgres:16` rather than `postgres:latest`.
 

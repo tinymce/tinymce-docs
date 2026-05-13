@@ -170,8 +170,19 @@ Error codes returned in HTTP 4xx responses and inside SSE `event: error` payload
 [cols="1,1,3",options="header"]
 |===
 |Limit |Value |Notes
-|Maximum prompt length |100,000 characters |Hard limit enforced by the service. Summarize or shorten source content before it exceeds this threshold.
+
+|Maximum prompt length |100,000 characters |Hard limit enforced by the service. Requests exceeding this return `invalid-request-data`. Summarize or shorten source content before it exceeds this threshold.
+|Conversation create |Client-supplied `id` required |The plugin auto-generates `tiny-<uuid>`. Raw API callers must supply a unique `id` in the create body.
+|Stream-abort recovery |Stop button leaves stale state |The next message returns `409 conversation in use` then `404 conversation does not exist`. Recovery: start a new conversation or reload.
+|Built-in rate limiting |None |Front the service with nginx `limit_req` or ALB rate-limit rules. See xref:tinymceai-on-premises-production.adoc#rate-limiting[Rate limiting].
 |File support (OpenAI-compatible providers) |Images only (`image/*`) |PDFs, text, and Office files are not forwarded to OpenAI-compatible providers. Use a non-OpenAI-compatible provider for non-image file attachments.
 |MCP tool availability |Conversations only |MCP tools are not available in reviews or quick actions.
 |MCP authentication |Single shared token per server |The `headers` field in `MCP_SERVERS` is fixed at deploy time. Per-user authentication is not supported.
+|PostgreSQL default schema |`cs-on-premises` (with hyphen) |Pre-create with `CREATE SCHEMA "cs-on-premises";` or set `DATABASE_SCHEMA=public`.
+|`/v1/models/\{compatibilityVersion}` |Only accepts `1` |Values such as `v1`, `v2`, or `latest` return 500.
+|Environment creation through raw API |Not supported |Always create environments through the Management Panel UI.
+|Bedrock credentials |Inline only |The SDK default credential chain (IRSA, instance roles, `AWS_PROFILE`) is not used.
+|Vertex credentials |Inline only |Application Default Credentials, `GOOGLE_APPLICATION_CREDENTIALS`, and the metadata server are not used.
+|Azure `MODELS[].id` |Must equal deployment name |There is no separate `deploymentName` field. The ID is the deployment name.
+|OpenAI-compatible `baseUrl` |Must include `/v1` suffix |Omitting it produces a "Not Found" SSE error.
 |===

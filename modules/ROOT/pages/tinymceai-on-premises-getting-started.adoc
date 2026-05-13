@@ -426,3 +426,42 @@ data: {}
 If the stream emits `event: error`, inspect the `data` payload. Provider errors (invalid API key, IAM denial, model unavailable) ride inside the SSE response. The HTTP status stays 200. See the xref:tinymceai-on-premises-troubleshooting.adoc[LLM provider errors] section in the Troubleshooting guide for details.
 
 A successful round-trip confirms: container health, database connectivity, Redis connectivity, JWT signing, JWT verification, permissions checking, environment registration, LLM provider authentication, and SSE streaming. If problems persist after these checks, focus on the editor configuration next.
+
+== Updating configuration
+
+IMPORTANT: `docker compose restart` after `.env` changes silently keeps the old environment values. The restart preserves the container and does not re-read `.env`. Always use `docker compose up -d --force-recreate` instead.
+
+[source,bash]
+----
+docker compose up -d --force-recreate
+# Or recreate only the AI service:
+docker compose up -d --force-recreate ai-service
+----
+
+For Kubernetes, update the Secret and trigger a rollout restart:
+
+[source,bash]
+----
+kubectl rollout restart deployment/ai-service -n tinymce-ai
+----
+
+== Stopping and cleaning up
+
+[source,bash]
+----
+# Stop the AI service (standalone Docker)
+docker stop ai-service && docker rm ai-service
+
+# Stop the Docker Compose stack
+docker compose down
+
+# Remove all data including volumes (destructive)
+docker compose down -v
+----
+
+For Kubernetes, scale the deployment to zero or delete it. Persistent volumes for the database are retained unless explicitly deleted.
+
+[source,bash]
+----
+kubectl delete deployment ai-service -n tinymce-ai
+----

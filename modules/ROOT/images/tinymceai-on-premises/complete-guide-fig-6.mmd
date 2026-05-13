@@ -1,0 +1,20 @@
+sequenceDiagram
+    autonumber
+    actor User
+    participant Editor as TinyMCE + tinymceai plugin
+    participant Provider as tinymceai_token_provider<br>your function
+    participant App as Your backend<br>token endpoint
+    participant AI as AI service
+
+    Note over Editor: tinymce.init runs once<br>plugin registers toolbar buttons
+    User->>Editor: Click AI button or open chat
+    Editor->>Provider: invoke
+    Provider->>App: fetch /api/ai-token<br>credentials include
+    App-->>Provider: { token eyJ... }
+    Provider-->>Editor: { token }
+    Editor->>AI: HTTPS request<br>Authorization Bearer eyJ...
+    AI-->>Editor: SSE stream
+    loop For each chunk
+        Editor->>Editor: Render streaming text
+    end
+    Note over Editor,Provider: Plugin re-invokes the provider<br>before token expiry<br>do not cache the JWT yourself

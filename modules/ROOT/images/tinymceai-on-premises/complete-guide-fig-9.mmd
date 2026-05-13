@@ -1,0 +1,20 @@
+flowchart TD
+    Start([Something is wrong]) --> Q1{Container is<br>running?<br>docker ps shows it}
+    Q1 -->|No - exited or wont pull| S1[Container startup failures]
+    Q1 -->|Yes| Q2{curl /health<br>returns 200?}
+    Q2 -->|No - times out or 5xx| S1
+    Q2 -->|Yes| Q3{API call returns<br>auth error?}
+    Q3 -->|Yes - 401 allowed false<br>invalid-jwt-...| S2[API and JWT authentication]
+    Q3 -->|No| Q4{SSE stream<br>carries event error<br>from LLM?}
+    Q4 -->|Yes| S3[LLM provider errors]
+    Q4 -->|No| Q5{Editor side<br>broken?<br>no toolbar token 401<br>hanging stream}
+    Q5 -->|Yes| S4[Editor and front-end]
+    Q5 -->|No| Q6{Slow timing out<br>or failing under load?}
+    Q6 -->|Yes| S5[Performance and capacity]
+    Q6 -->|No| S6[Diagnostic recipes]
+    S1 --> Recipe([If none fit<br>see Diagnostic recipes<br>then escalate])
+    S2 --> Recipe
+    S3 --> Recipe
+    S4 --> Recipe
+    S5 --> Recipe
+    S6 --> Recipe

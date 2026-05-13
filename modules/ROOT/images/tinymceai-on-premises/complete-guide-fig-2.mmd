@@ -1,0 +1,17 @@
+flowchart TD
+    Start([New deployment]) --> Q1{Evaluating or<br>going to production?}
+    Q1 -->|Evaluating locally| Compose[Docker Compose<br>all services on one host<br>Part 2 quick start]
+    Q1 -->|Production| Q2{Orchestrator?}
+    Q2 -->|Kubernetes| K8s[Kubernetes deployment<br>Section 33]
+    Q2 -->|AWS ECS / Fargate| ECS[ECS task definition<br>Section 34]
+    Q2 -->|Docker / Podman on VMs| VMs[Docker or Podman compose<br>Sections 9.1 / 9.2]
+    Q2 -->|Bare metal / no containers| Bare[Native install for<br>data layer; container<br>for AI service<br>Section 8.5]
+    Compose --> DB{Database?}
+    K8s --> DB
+    ECS --> DB
+    VMs --> DB
+    Bare --> DB
+    DB -->|Managed cloud DB| Managed[RDS · Cloud SQL ·<br>Azure Database]
+    DB -->|Self-managed| Self[Containers or native install]
+    Managed --> Done([Continue with Part 3])
+    Self --> Done

@@ -1,0 +1,18 @@
+flowchart TB
+    Internet([Internet]) --> Ingress[Ingress controller<br>nginx-ingress · ALB controller<br>proxy-buffering off]
+    Ingress --> SvcAI[Service: ai-service]
+    SvcAI --> Pod1[Pod: ai-service replica 1]
+    SvcAI --> Pod2[Pod: ai-service replica 2]
+    SvcAI --> PodN[Pod: ai-service replica N]
+    Pod1 --> SvcDB[Service: database<br>or external RDS]
+    Pod2 --> SvcDB
+    PodN --> SvcDB
+    Pod1 --> SvcRedis[Service: redis<br>or external ElastiCache]
+    Pod2 --> SvcRedis
+    PodN --> SvcRedis
+    Pod1 --> S3[(S3 / Azure Blob)]
+    Pod2 --> S3
+    PodN --> S3
+    HPA[HorizontalPodAutoscaler] -. scales .-> Pod1
+    HPA -. scales .-> Pod2
+    HPA -. scales .-> PodN

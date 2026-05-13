@@ -4,7 +4,7 @@
 :keywords: AI, on-premises, database, MySQL, PostgreSQL, Redis, Docker, Podman, file storage, S3, Azure Blob
 
 This page covers the data layer: the SQL database, Redis, and file storage.
-For container runtimes, reverse proxies, TLS, Kubernetes, and ECS deployment, see the xref:tinymceai-on-premises-production.adoc[Production deployment guide].
+For container runtimes, reverse proxies, Transport Layer Security (TLS), Kubernetes, and ECS deployment, see the xref:tinymceai-on-premises-production.adoc[Production deployment guide].
 
 == Supported versions
 
@@ -439,7 +439,7 @@ docker run --add-host=host.docker.internal:host-gateway ...
 
 == Redis
 
-Every AI service instance must reach Redis. Redis holds session coordination, SSE delivery, and rate-limiting state. A temporary Redis outage degrades streaming but does not destroy persistent data.
+Every AI service instance must reach Redis. Redis holds session coordination, Server-Sent Events (SSE) delivery, and rate-limiting state. A temporary Redis outage degrades streaming but does not destroy persistent data.
 
 === Setup
 

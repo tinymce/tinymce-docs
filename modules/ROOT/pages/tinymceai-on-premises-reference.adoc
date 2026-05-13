@@ -10,29 +10,29 @@ Alphabetized. Required-ness is marked relative to a minimum working deployment.
 [cols=",,,",options="header",]
 |===
 |Variable |Required |Default |Description
-|`ALLOWED_ORIGINS` |Recommended |- |Comma-separated list of CORS-allowed editor origins. Required for cross-origin editor deployments.
+|`ALLOWED_ORIGINS` |Recommended |- |Comma-separated list of Cross-Origin Resource Sharing (CORS)-allowed editor origins. Required for cross-origin editor deployments.
 |`DATABASE_DATABASE` |Yes |- |Database name (`ai_service` is the convention).
 |`DATABASE_DRIVER` |Yes |- |`mysql` or `postgres`.
 |`DATABASE_HOST` |Yes |- |Database hostname or IP.
 |`DATABASE_PASSWORD` |Yes |- |Database password.
 |`DATABASE_PORT` |No |3306 (MySQL) / 5432 (PostgreSQL) |Database port.
 |`DATABASE_SCHEMA` |PostgreSQL only |`cs-on-premises` |PostgreSQL schema name. Pre-create or set to `public`.
-|`DATABASE_SSL_CA` |No |- |Path to CA cert for database TLS.
+|`DATABASE_SSL_CA` |No |- |Path to CA cert for database Transport Layer Security (TLS).
 |`DATABASE_SSL_CERT` |No |- |Path to client cert.
 |`DATABASE_SSL_KEY` |No |- |Path to client key.
 |`DATABASE_USER` |Yes |- |Database user.
 |`ENABLE_METRIC_LOGS` |No |`false` |Emit JSON request logs to stdout.
-|`ENVIRONMENTS_MANAGEMENT_SECRET_KEY` |Yes |- |Management Panel login secret. *Not* used to sign user JWTs.
+|`ENVIRONMENTS_MANAGEMENT_SECRET_KEY` |Yes |- |Management Panel login secret. *Not* used to sign user JSON Web Tokens (JWTs).
 |`LANGFUSE_BASE_URL` |No |`https://cloud.langfuse.com` |Self-hosted Langfuse URL.
 |`LANGFUSE_DEBUG` |No |- |Verbose Langfuse logging.
 |`LANGFUSE_PUBLIC_KEY` |If using Langfuse |- |Langfuse public key.
 |`LANGFUSE_SECRET_KEY` |If using Langfuse |- |Langfuse secret key.
 |`LICENSE_KEY` |Yes |- |AI service license key (long string from Tiny).
 |`LLM_TELEMETRY_ENABLED` |No |`false` |Primary OpenTelemetry switch.
-|`LLM_TIMEOUT_MS` |No |180000 |Per-request LLM timeout in ms. Raise for large self-hosted models.
-|`MCP_SERVERS` |No |- |JSON object; MCP server configuration. See xref:tinymceai-on-premises-advanced.adoc[Advanced scenarios].
+|`LLM_TIMEOUT_MS` |No |180000 |Per-request large language model (LLM) timeout in ms. Raise for large self-hosted models.
+|`MCP_SERVERS` |No |- |JSON object; Model Context Protocol (MCP) server configuration. See xref:tinymceai-on-premises-advanced.adoc[Advanced scenarios].
 |`MODELS` |Sometimes |- |JSON array; required for Azure / Bedrock / Vertex / openai-compatible. See xref:tinymceai-on-premises-providers.adoc[LLM providers].
-|`OTEL_DEBUG` |No |- |Verbose OTLP diagnostic logging.
+|`OTEL_DEBUG` |No |- |Verbose OpenTelemetry Protocol (OTLP) diagnostic logging.
 |`OTEL_EXPORTER_OTLP_TRACES_ENDPOINT` |If using OTEL |- |OTLP traces endpoint URL.
 |`OTEL_TRACES_SAMPLER_ARG` |No |`1.0` |OTLP sampling rate (0.0 to 1.0).
 |`PROVIDERS` |Yes |- |JSON object; LLM provider configuration. See xref:tinymceai-on-premises-providers.adoc[LLM providers].
@@ -79,7 +79,7 @@ Alphabetized. Required-ness is marked relative to a minimum working deployment.
 |POST |`/v1/conversations` |JWT |Create a conversation. Body *must* include client-supplied `id`.
 |GET |`/v1/conversations` |JWT |List conversations for the current `sub`.
 |GET |`/v1/conversations/\{id}` |JWT |Read one conversation.
-|POST |`/v1/conversations/\{id}/messages` |JWT |Send a message. Returns SSE stream.
+|POST |`/v1/conversations/\{id}/messages` |JWT |Send a message. Returns Server-Sent Events (SSE) stream.
 |DELETE |`/v1/conversations/\{id}` |JWT |Delete a conversation.
 |POST |`/v1/actions/\{actionId}` |JWT |Run a quick action. Body shape: `{"content":[{"type":"text","content":"..."}]}` (no `modelId`).
 |POST |`/v1/reviews/\{reviewId}` |JWT |Run a review.
@@ -181,7 +181,7 @@ Error codes returned in HTTP 4xx responses and inside SSE `event: error` payload
 |PostgreSQL default schema |`cs-on-premises` (with hyphen) |Pre-create with `CREATE SCHEMA "cs-on-premises";` or set `DATABASE_SCHEMA=public`.
 |`/v1/models/\{compatibilityVersion}` |Only accepts `1` |Values such as `v1`, `v2`, or `latest` return 500.
 |Environment creation through raw API |Not supported |Always create environments through the Management Panel UI.
-|Bedrock credentials |Inline only |The SDK default credential chain (IRSA, instance roles, `AWS_PROFILE`) is not used.
+|Bedrock credentials |Inline only |The SDK default credential chain (IAM Roles for Service Accounts (IRSA), instance roles, `AWS_PROFILE`) is not used.
 |Vertex credentials |Inline only |Application Default Credentials, `GOOGLE_APPLICATION_CREDENTIALS`, and the metadata server are not used.
 |Azure `MODELS[].id` |Must equal deployment name |There is no separate `deploymentName` field. The ID is the deployment name.
 |OpenAI-compatible `baseUrl` |Must include `/v1` suffix |Omitting it produces a "Not Found" SSE error.

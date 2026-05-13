@@ -5,7 +5,7 @@
 
 The TinyMCE AI on-premises service is a self-hosted back end that powers AI writing assistance inside the TinyMCE rich text editor. It runs entirely within the host infrastructure. Editor content, conversation history, file attachments, and user data never leave the network.
 
-The service ships as a single OCI container image (`registry.containers.tiny.cloud/ai-service`). It exposes a REST API, a Management Panel, Server-Sent Events streaming, and an OpenAPI spec.
+The service ships as a single Open Container Initiative (OCI) container image (`registry.containers.tiny.cloud/ai-service`). It exposes a REST API, a Management Panel, Server-Sent Events streaming, and an OpenAPI spec.
 
 == Architecture
 
@@ -17,9 +17,9 @@ Data flow for a single AI request:
 [arabic]
 . The browser loads TinyMCE with the `tinymceai` plugin.
 . The user triggers an AI feature (chat, review, quick action).
-. The plugin calls the token endpoint, which signs an HS256 JWT with the API Secret.
+. The plugin calls the token endpoint, which signs an HS256 JSON Web Token (JWT) with the API Secret.
 . The plugin sends the JWT and prompt to the AI service.
-. The AI service verifies the token, checks per-feature permissions, and forwards the prompt to the configured LLM.
+. The AI service verifies the token, checks per-feature permissions, and forwards the prompt to the configured large language model (LLM).
 . The LLM streams its response back to the browser through Server-Sent Events.
 
 The shared secret (API Secret) never leaves the back end; the editor and the AI service only ever see signed tokens.
@@ -42,7 +42,7 @@ The shared secret (API Secret) never leaves the back end; the editor and the AI 
 |LLM provider flexibility
 |OpenAI, Anthropic, Google Gemini, Azure OpenAI, AWS Bedrock, Google Vertex AI, or any self-hosted OpenAI-compatible endpoint. Multiple providers can coexist.
 
-|MCP integration
+|Model Context Protocol (MCP) integration
 |Connect internal tools, databases, and knowledge bases through Model Context Protocol over Streamable HTTP transport.
 
 |Web scraping and web search
@@ -95,7 +95,7 @@ The shared secret (API Secret) never leaves the back end; the editor and the AI 
 |A back end that signs HS256 JWTs.
 
 |Reverse proxy
-|The AI service does not terminate TLS. Use nginx, HAProxy, or a cloud load balancer.
+|The AI service does not terminate Transport Layer Security (TLS). Use nginx, HAProxy, or a cloud load balancer.
 |===
 
 == Choosing a setup path
@@ -126,7 +126,7 @@ For a first-time deployment, progress through the guides in order. Each topic gu
 |HS256 signing model, required and optional claims, permissions reference, and token endpoint examples in 8 languages.
 
 |xref:tinymceai-on-premises-frameworks.adoc[Framework integration]
-|Editor-side configuration: plugin options, token provider, authentication patterns, CORS, and deployment checklists.
+|Editor-side configuration: plugin options, token provider, authentication patterns, Cross-Origin Resource Sharing (CORS), and deployment checklists.
 
 |xref:tinymceai-on-premises-production.adoc[Production deployment]
 |Kubernetes manifests, AWS ECS task definitions, horizontal scaling, sizing, security hardening, rate limiting, observability, backup and recovery, and upgrades.

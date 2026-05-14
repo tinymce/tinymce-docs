@@ -55,9 +55,9 @@ The following is a complete example, where:
 <html>
 ----
 
-== Step 3: Forward proxy configuration
+== Step 3: Forward proxy and firewall configuration
 
-If the network has a forward proxy that controls access to the internet, ensure that the following URLs are accessible:
+If the network has a firewall or forward proxy that controls access to the internet, ensure that the following URLs are accessible:
 
 * All URLs where the editor is deployed.
 * All URLs where the plugins are deployed.

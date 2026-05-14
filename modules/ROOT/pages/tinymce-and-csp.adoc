@@ -8,7 +8,7 @@ include::partial$misc/general-csp.adoc[]
 [[firewall-and-proxy-allowlisting]]
 == Firewall and proxy allowlisting
 
-Organizations operating behind a firewall or forward proxy that restricts outbound internet access must allowlist {cloudname} domains for cloud-hosted {productname} features to function.
+Organizations operating behind a firewall or forward proxy that restricts outbound internet access must allowlist {cloudname} domains. {productname} cloud-hosted features require the browser to make outbound HTTPS requests to these domains; no inbound access from {cloudname} is required.
 
 [[required-domains]]
 === Required domains

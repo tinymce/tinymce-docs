@@ -54,9 +54,9 @@ include::partial$misc/premium-plugin-list.adoc[]
 
 include::partial$misc/admon-cloud-configured-options.adoc[]
 
-=== Step 4: Forward proxy configuration
+=== Step 4: Forward proxy and firewall configuration
 
-If the network has a forward proxy that controls access to the internet, ensure that the following URLs are accessible:
+If the network has a firewall or forward proxy that controls access to the internet, ensure that the following URLs are accessible:
 
 * All URLs where the editor is deployed.
 * All URLs where the plugins are deployed.

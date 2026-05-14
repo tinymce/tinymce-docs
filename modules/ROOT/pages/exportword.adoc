@@ -11,8 +11,6 @@
 
 include::partial$misc/admon-export-word-paid-addon-pricing.adoc[]
 
-include::partial$misc/admon-cloud-firewall.adoc[]
-
 The export to Microsoft Word feature collects the HTML generated with the `tinymce.editor.getContent()` method and combines it with the default editor content styles along with the styles provided in the plugin configuration. The combined content and styles are then processed by the included server-side converter service, which can be either self-hosted or cloud-based. Following this processing, a Word file is generated, which is subsequently returned to the user's browser, enabling them to save it in the Word format onto their disk or drive.
 
 == Interactive example
@@ -56,6 +54,7 @@ For more infomation on the exportword_token_provider option, see xref:exportword
 
 include::partial$misc/admon-jwt-authentication-requirements.adoc[]
 
+include::partial$misc/admon-cloud-firewall.adoc[]
 
 == Basic setup using the self-hosted service
 

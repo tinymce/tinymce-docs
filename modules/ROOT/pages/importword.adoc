@@ -13,8 +13,6 @@ include::partial$misc/admon-import-word-paid-addon-pricing.adoc[]
 
 The {pluginname} plugin lets you import `.docx` (Word document) or `.dotx` (Word template) files into the editor. The process preserves formatting and rich media.
 
-include::partial$misc/admon-cloud-firewall.adoc[]
-
 == Interactive example
 
 liveDemo::importword[]
@@ -49,6 +47,7 @@ For more infomation on the importword_token_provider option, see xref:importword
 
 include::partial$misc/admon-jwt-authentication-requirements.adoc[]
 
+include::partial$misc/admon-cloud-firewall.adoc[]
 
 == Basic setup using the self-hosted service
 

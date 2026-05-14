@@ -13,8 +13,6 @@ include::partial$misc/admon-premium-plugin.adoc[]
 
 The {pluginname} plugin integrates AI-assisted authoring with rich-text editing. Users can interact through Actions, Reviews, or Conversations that can use relevant context from multiple sources.
 
-include::partial$misc/admon-cloud-firewall.adoc[]
-
 [[interactive-example]]
 == Interactive example
 
@@ -28,6 +26,8 @@ To set up the {pluginname} plugin in {productname}:
 * add `{plugincode}` to the `plugins` option in the editor configuration;
 * configure the `tinymceai_token_provider` option to provide authentication tokens (must return `+{ token: string }+`). During a {cloudname} trial, the xref:tinymceai-jwt-authentication-intro.adoc#trial-demo-identity-service[demo identity service] can supply JWTs so a custom token endpoint is not required;
 * when the `toolbar` option is omitted or left at the default, the Silver theme toolbar already includes the AI toolbar buttons once the plugin is enabled: `+tinymceai-chat+` image:icons-premium/ai-assistant.svg[Chat icon,24px], `+tinymceai-quickactions+` image:icons/ai-prompt.svg[Quick Actions icon,24px], and `+tinymceai-review+` image:icons-premium/ai-review.svg[Review icon,24px]. When a custom `toolbar` string is set, add those button ids to the string explicitly.
+
+include::partial$misc/admon-cloud-firewall.adoc[]
 
 [[minimal-setup]]
 === Minimal setup

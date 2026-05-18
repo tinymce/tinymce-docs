@@ -98,7 +98,7 @@ The AI service works with Podman as an alternative to Docker. In Podman, contain
 ----
 podman login -u 'TINY_REGISTRY_USERNAME' registry.containers.tiny.cloud
 
-podman pull registry.containers.tiny.cloud/ai-service:latest
+podman pull registry.containers.tiny.cloud/ai-service-tiny:latest
 
 podman pod create --name ai-pod -p 8000:8000 -p 3306:3306 -p 6379:6379
 
@@ -120,7 +120,7 @@ podman run --init -d --pod ai-pod --name ai-service \
   -e REDIS_HOST='127.0.0.1' \
   -e PROVIDERS='{"openai":{"type":"openai","apiKeys":["sk-proj-..."]}}' \
   -e STORAGE_DRIVER='database' \
-  registry.containers.tiny.cloud/ai-service:latest
+  registry.containers.tiny.cloud/ai-service-tiny:latest
 ----
 
 IMPORTANT: Pin to `mysql:8.0`. The `mysql:8` tag floats to MySQL 8.4, which removes the `default-authentication-plugin` flag and causes a crash loop. See xref:tinymceai-on-premises-database.adoc[Database, Redis, and storage] for details.
@@ -192,7 +192,7 @@ spec:
         - name: tiny-registry
       containers:
         - name: ai-service
-          image: registry.containers.tiny.cloud/ai-service:latest
+          image: registry.containers.tiny.cloud/ai-service-tiny:latest
           ports:
             - containerPort: 8000
           env:
@@ -355,7 +355,7 @@ spec:
   "containerDefinitions": [
     {
       "name": "ai-service",
-      "image": "registry.containers.tiny.cloud/ai-service:latest",
+      "image": "registry.containers.tiny.cloud/ai-service-tiny:latest",
       "portMappings": [{ "containerPort": 8000 }],
       "healthCheck": {
         "command": ["CMD-SHELL", "curl -f http://localhost:8000/health || exit 1"],
@@ -412,7 +412,7 @@ spec:
 |Database encryption at rest |Turn on encryption at rest in the cloud provider console. RDS, Cloud SQL, and Azure Database enable this by default.
 |Redis authentication |Always set `REDIS_PASSWORD` (or use a managed Redis instance with authentication enabled).
 |Container security |Run as non-root, use a read-only filesystem where possible, and drop unnecessary Linux capabilities.
-|Image scanning |Scan `registry.containers.tiny.cloud/ai-service` with Trivy, Snyk, or the registry's built-in scanner.
+|Image scanning |Scan `registry.containers.tiny.cloud/ai-service-tiny` with Trivy, Snyk, or the registry's built-in scanner.
 |Least-privilege JSON Web Tokens (JWTs) |Grant only the permissions each user role requires. Avoid full-access tokens in production.
 |API secret rotation |Periodically create a new access key, add the new key to the configuration, then revoke the old key. The token endpoint reads the secret at request time.
 |Audit logging |Enable `ENABLE_METRIC_LOGS=true` and ship logs to a Security Information and Event Management (SIEM).
@@ -592,7 +592,7 @@ Redis holds ephemeral state. Losing Redis data does not affect persistent data. 
 +
 [source,bash]
 ----
-docker pull registry.containers.tiny.cloud/ai-service:NEW_VERSION
+docker pull registry.containers.tiny.cloud/ai-service-tiny:NEW_VERSION
 ----
 . For rolling deploys across version boundaries: start *one* instance at the new version and wait for it to become healthy before rolling the rest.
 . For Kubernetes: update the image tag in the Deployment. The default `RollingUpdate` strategy handles zero-downtime upgrades, provided the first new pod becomes Ready before the rollout continues.

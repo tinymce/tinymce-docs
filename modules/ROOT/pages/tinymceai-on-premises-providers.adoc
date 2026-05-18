@@ -153,7 +153,7 @@ docker run --init -d -p 8000:8000 \
   -e REDIS_HOST='redis' \
   -e STORAGE_DRIVER='database' \
   -e PROVIDERS='{"openai":{"type":"openai","apiKeys":["sk-proj-YOUR_KEY_HERE"]}}' \
-  registry.containers.tiny.cloud/ai-service:latest
+  registry.containers.tiny.cloud/ai-service-tiny:latest
 ----
 
 *Verify:*
@@ -699,7 +699,7 @@ On Linux, add the host gateway so `host.docker.internal` resolves:
 ----
 services:
   ai-service:
-    image: registry.containers.tiny.cloud/ai-service:latest
+    image: registry.containers.tiny.cloud/ai-service-tiny:latest
     extra_hosts:
       - "host.docker.internal:host-gateway"
 ----

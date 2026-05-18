@@ -5,7 +5,7 @@
 
 The TinyMCE AI on-premises service is a self-hosted back end that powers AI writing assistance. It can be used with the TinyMCE rich text editor, particularly the xref:tinymceai.adoc[TinyMCE AI plugin], or as a standalone service. It runs entirely within the host infrastructure. Document content, conversation history, file attachments, and user data never leave the network.
 
-The service ships as a single Open Container Initiative (OCI) container image (`registry.containers.tiny.cloud/ai-service`). It exposes a REST API, a Management Panel, Server-Sent Events streaming, and an OpenAPI spec.
+The service ships as a single Open Container Initiative (OCI) container image (`registry.containers.tiny.cloud/ai-service-tiny`). It exposes a REST API, a Management Panel, Server-Sent Events streaming, and an OpenAPI spec.
 
 == Architecture
 

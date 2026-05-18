@@ -16,7 +16,7 @@ mkdir tinymce-ai-onpremise && cd tinymce-ai-onpremise
 
 === Authenticate with the container registry
 
-The service image lives at `registry.containers.tiny.cloud/ai-service`.
+The service image lives at `registry.containers.tiny.cloud/ai-service-tiny`.
 
 For Docker:
 
@@ -39,7 +39,7 @@ Replace `TINY_REGISTRY_USERNAME` with the username supplied by the Tiny account 
 
 [source,bash]
 ----
-docker pull registry.containers.tiny.cloud/ai-service:latest
+docker pull registry.containers.tiny.cloud/ai-service-tiny:latest
 ----
 
 For Podman, substitute `podman pull`. For production, pin a specific version tag (for example `:5.1.0`) rather than `:latest`.
@@ -184,7 +184,7 @@ docker run --init -d -p 8000:8000 \
   -e PROVIDERS="$PROVIDERS" \
   -e STORAGE_DRIVER='database' \
   -e ENABLE_METRIC_LOGS='true' \
-  registry.containers.tiny.cloud/ai-service:latest
+  registry.containers.tiny.cloud/ai-service-tiny:latest
 ----
 ====
 

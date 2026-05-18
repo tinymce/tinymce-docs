@@ -420,7 +420,7 @@ When the AI service runs in Docker but the database or Redis runs natively on th
 ----
 services:
   ai-service:
-    image: registry.containers.tiny.cloud/ai-service:latest
+    image: registry.containers.tiny.cloud/ai-service-tiny:latest
     extra_hosts:
       - "host.docker.internal:host-gateway"
     environment:

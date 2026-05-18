@@ -1,6 +1,6 @@
 This section lists the open source plugins provided with {productname}.
 
-== Core Writing & Formatting Tools
+== Core Writing & Formatting
 
 [cols="1,1"]
 |===
@@ -9,25 +9,25 @@ a|
 [.lead]
 xref:charmap.adoc[Character Map]
 
-Insert special characters into {productname}.
+Enables insertion of special characters into {productname}.
 
 a|
 [.lead]
 xref:directionality.adoc[Directionality]
 
-Toolbar buttons for setting the left-to-right or right-to-left direction of content.
+Adds toolbar buttons for setting text direction to left-to-right or right-to-left.
 
 a|
 [.lead]
 xref:emoticons.adoc[Emoticons]
 
-Bring a smiley to your content.
+Enables insertion of emoticons into {productname} content.
 
 a|
 [.lead]
 xref:image.adoc[Image]
 
-Insert an image into {productname}.
+Enables inserting and managing images in {productname}.
 
 a|
 [.lead]
@@ -39,47 +39,47 @@ a|
 [.lead]
 xref:link.adoc[Link]
 
-Add and edit links in {productname}.
+Enables adding and editing hyperlinks within content.
 
 a|
 [.lead]
 xref:lists.adoc[Lists]
 
-Normalize list behavior between browsers.
+Normalize list behavior across different browsers.
 
 a|
 [.lead]
 xref:advlist.adoc[List Styles]
 
-Create styled number and bulleted lists.
+Enables creation of styled ordered and unordered lists.
 
 a|
 [.lead]
 xref:media.adoc[Media]
 
-Embed and manage HTML5 video and audio elements.
+Embed and manage HTML5 video and audio elements in {productname}.
 
 a|
 [.lead]
 xref:nonbreaking.adoc[Nonbreaking Space]
 
-Insert a non-breaking space.
+Enables insertion of non-breaking spaces.
 
 a|
 [.lead]
 xref:pagebreak.adoc[Page Break]
 
-Add a page break.
+Enables insertion of a page break into content.
 
 a|
 [.lead]
 xref:table.adoc[Table]
 
-Create and edit tables, including rows, columns, and cell formatting.
+Create and edit tables, including structure and cell formatting.
 
 |===
 
-== Content Structure & Layout Controls
+== Content Structure & Layout
 
 [cols="1,1"]
 |===
@@ -88,7 +88,7 @@ a|
 [.lead]
 xref:accordion.adoc[Accordion]
 
-Create expandable and collapsible sections.
+Enables creation of expandable and collapsible content sections.
 
 a|
 [.lead]
@@ -100,37 +100,37 @@ a|
 [.lead]
 xref:fullscreen.adoc[Full Screen]
 
-Expands the editor to full-screen mode. 
+Expands the editor to full-screen mode for focused editing.
 
 a|
 [.lead]
 xref:importcss.adoc[Import CSS]
 
-Automatically populate CSS class names into the Format dropdown.
+Imports CSS class names into the Format dropdown for styling content.
 
 a|
 [.lead]
 xref:preview.adoc[Preview]
 
-Displays a read-only preview of the current content in a separate dialog.
+Displays a read-only preview of the current content in a separate view.
 
 a|
 [.lead]
 xref:quickbars.adoc[Quick Toolbars]
 
-User interface controls to create content faster.
+Provides contextual toolbar controls that appear near selected content to speed up formatting and editing workflows.
 
 a|
 [.lead]
 xref:visualblocks.adoc[Visual Blocks]
 
-Allow a user to see block level elements such as paragraphs.
+Enables visual outlines of block elements, helping users understand and structure document layout more effectively. 
 
 a|
 [.lead]
 xref:visualchars.adoc[Visual Characters]
 
-See invisible characters such as non-breaking spaces.
+Enables visibility of hidden characters such as spaces and breaks to help troubleshoot formatting issues.
 
 |===
 
@@ -144,19 +144,19 @@ a|
 [.lead]
 xref:code.adoc[Code]
 
-Edit the current content’s HTML source.
+Enables direct editing of HTML source code for users who need full control over document markup.
 
 a|
 [.lead]
 xref:codesample.adoc[Code Sample]
 
-Insert and embed syntax-highlighted code snippets.
+Enables insertion of formatted, syntax-highlighted code snippets for technical documentation or developer content.
 
 a|
 [.lead]
 xref:searchreplace.adoc[Search and Replace]
 
-Find and replace content in {productname}.
+Find and replace text across content, improving efficiency when making large-scale edits.
 
 |===
 
@@ -170,37 +170,39 @@ a|
 [.lead]
 xref:autolink.adoc[Autolink]
 
-Automatically create hyperlinks when a user types a valid URL.
+Automatically converts URLs into clickable links, saving users time and ensuring consistent link formatting.
 
 a|
 [.lead]
 xref:autoresize.adoc[Autoresize]
 
-Automatically resize {productname} to fit content.
+Automatically adjusts the editor height to match content, improving usability and reducing scroll friction.
 
 a|
 [.lead]
 xref:autosave.adoc[Autosave]
 
-Automatically save content in your local browser.
+Automatically saves content in the browser to prevent data loss during editing sessions.
 
 a|
 [.lead]
 xref:help.adoc[Help]
 
-Opens the built-in help dialog.
+Provides quick access to documentation and guidance, helping users understand editor features without leaving the interface.
 
 a|
 [.lead]
 xref:save.adoc[Save]
 
-Add toolbar button to trigger saving of editor content.
+Adds a manual save button so users can explicitly store content when needed.
 
 a|
 [.lead]
 xref:wordcount.adoc[Word Count]
 
-Show a word count in the {productname} editor status bar.
+Displays real-time word count to help users track content length and meet writing requirements.
+
+|===
 
 // Dummy table cell.
 // 1. Remove the inline comment markup pre-pending this
@@ -208,7 +210,6 @@ Show a word count in the {productname} editor status bar.
 //    odd.
 // 2. Prepend the inline comment markup to this element
 //    when the number of cells in the table is even.
-a|
 
-|===
+
 

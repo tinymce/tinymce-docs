@@ -1,5 +1,5 @@
 = TinyMCE AI on-premises: editor-side integration
-:navtitle: Framework integration
+:navtitle: TinyMCE integration
 :description: Connecting the TinyMCE editor to the on-premises AI service from React, Vue, Angular, Svelte, or vanilla JavaScript.
 :keywords: AI, on-premises, React, Vue, Angular, Svelte, token provider
 
@@ -8,7 +8,7 @@ This page covers the *editor-side* configuration that connects TinyMCE to the on
 
 * The AI service is already running. See xref:tinymceai-on-premises-getting-started.adoc[Getting started] for setup instructions.
 * A token endpoint exists that signs JSON Web Tokens (JWTs) for the AI service. See xref:tinymceai-on-premises-jwt.adoc[JWT authentication] for back-end implementations.
-* The TinyMCE API key has the AI feature enabled. Retrieve or upgrade a key at https://www.tiny.cloud/my-account/integrate/.
+* A valid TinyMCE license key or API key with the AI feature enabled. On-premises deployments typically use a license key provided by a Tiny account representative.
 
 For general framework setup (installing wrappers, component structure, server-side rendering (SSR) patterns), see the existing integration guides:
 

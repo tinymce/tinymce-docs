@@ -1,0 +1,32 @@
+= {productname} {release-version}
+:release-version: 8.6.0
+:navtitle: {productname} {release-version}
+:description: Release notes for {productname} {release-version}
+:keywords: releasenotes, new, changes, bugfixes
+:page-toclevels: 1
+
+include::partial$misc/admon-releasenotes-for-stable.adoc[]
+
+
+[[overview]]
+== Overview
+
+{productname} {release-version} was released for {enterpriseversion} and {cloudname} on Wednesday, May 27^th^, 2026. These release notes provide an overview of the changes for {productname} {release-version}, including:
+
+* xref:additions[Additions]
+
+
+[[additions]]
+== Additions
+
+{productname} {release-version} includes the following addition:
+
+=== Self-hosted trial with cloud services
+
+{productname} {release-version} introduces self-hosted trials with optional access to cloud-powered premium features. Integrators can install {productname} and premium plugins via NPM, configure a trial license key, and optionally enable a connection to {cloudname} services by setting `+cloud_services_trial+` to `+true+`.
+
+When enabled, cloud-powered features such as Spell Checker Pro, Link Checker, Enhanced Media Embed, Export to PDF, Export to Word, Import from Word, Image Editing, Autocorrect, and TinyMCE AI become available during the trial period without requiring a separate API key or cloud deployment.
+
+Without the `+cloud_services_trial+` option, the editor operates entirely self-hosted with no external network connection. All premium plugins that do not depend on cloud services continue to function regardless.
+
+For setup instructions, see xref:self-hosted-trial.adoc[Self-hosted trial with cloud services].

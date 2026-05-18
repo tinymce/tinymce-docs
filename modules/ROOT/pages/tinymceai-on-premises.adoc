@@ -3,24 +3,24 @@
 :description: Self-hosted AI writing assistance for TinyMCE; architecture, prerequisites, and topic guide
 :keywords: AI, on-premises, self-hosted, deployment, overview
 
-The TinyMCE AI on-premises service is a self-hosted back end that powers AI writing assistance inside the TinyMCE rich text editor. It runs entirely within the host infrastructure. Editor content, conversation history, file attachments, and user data never leave the network.
+The TinyMCE AI on-premises service is a self-hosted back end that powers AI writing assistance. It can be used with the TinyMCE rich text editor, particularly the xref:tinymceai.adoc[TinyMCE AI plugin], or as a standalone service. It runs entirely within the host infrastructure. Document content, conversation history, file attachments, and user data never leave the network.
 
 The service ships as a single Open Container Initiative (OCI) container image (`registry.containers.tiny.cloud/ai-service`). It exposes a REST API, a Management Panel, Server-Sent Events streaming, and an OpenAPI spec.
 
 == Architecture
 
 [.text-center]
-image::tinymceai-on-premises/complete-guide-fig-1.svg[alt="Service architecture showing browser with TinyMCE token endpoint AI service database Redis and LLM providers",width=100%]
+image::tinymceai-on-premises/overview-fig-1.svg[alt="High-level architecture showing client token endpoint AI service LLM provider and data layer",width=100%]
 
 Data flow for a single AI request:
 
 [arabic]
-. The browser loads TinyMCE with the `tinymceai` plugin.
-. The user triggers an AI feature (chat, review, quick action).
-. The plugin calls the token endpoint, which signs an HS256 JSON Web Token (JWT) with the API Secret.
-. The plugin sends the JWT and prompt to the AI service.
+. The client application requests a signed token from the token endpoint.
+. The client sends the JWT and prompt to the AI service over HTTPS.
 . The AI service verifies the token, checks per-feature permissions, and forwards the prompt to the configured large language model (LLM).
-. The LLM streams its response back to the browser through Server-Sent Events.
+. The LLM streams its response back to the client through Server-Sent Events (SSE).
+
+When used with TinyMCE, the `tinymceai` plugin handles steps 1, 2, and 4 automatically through the `tinymceai_token_provider` callback.
 
 The shared secret (API Secret) never leaves the back end; the editor and the AI service only ever see signed tokens.
 
@@ -31,10 +31,10 @@ The shared secret (API Secret) never leaves the back end; the editor and the AI 
 |Capability |Details
 
 |Conversational AI assistant
-|Multi-turn chat sidebar. Conversation history is isolated per user through the JWT `sub` claim.
+|Multi-turn AI chat with support for document and file context. Conversation history is isolated per user through the JWT `sub` claim.
 
 |Document review
-|Correctness, clarity, readability, tone, and translation.
+|Review a document for correctness, clarity, readability, tone, and more, or translate to another language.
 
 |Quick actions
 |Rewrite, summarize, expand, change tone, fix grammar, translate, continue, and improve writing.
@@ -58,13 +58,13 @@ The shared secret (API Secret) never leaves the back end; the editor and the AI 
 |Server-Sent Events from the LLM back to the browser.
 
 |File attachments
-|Database, filesystem, Amazon S3, or Azure Blob Storage.
+|Use additional files as context for AI conversations. Storage options include database, filesystem, Amazon S3, or Azure Blob Storage.
 
 |Observability
 |Structured request logs, OpenTelemetry, and Langfuse. All three run as independent simultaneous pipelines.
 
 |Horizontal scaling
-|The service is stateless. Share identical environment configuration across replicas.
+|The service is stateless; add replicas behind a load balancer without shared local state.
 |===
 
 == Prerequisites
@@ -80,13 +80,10 @@ The shared secret (API Secret) never leaves the back end; the editor and the AI 
 |MySQL 8.0 or PostgreSQL 13{plus} (16 recommended).
 
 |Redis
-|3.2.6{plus} (7.x recommended). Single node, Sentinel, or Cluster mode.
+|3.2.6{plus} (7.x recommended). Single node or Cluster mode supported. Sentinel not supported.
 
 |LLM access
 |At least one provider. Multiple providers can coexist.
-
-|TinyMCE 8.0{plus}
-|The `tinymceai` plugin is a premium plugin.
 
 |License key and registry credentials
 |Provided by a Tiny account representative.
@@ -94,8 +91,8 @@ The shared secret (API Secret) never leaves the back end; the editor and the AI 
 |Token endpoint
 |A back end that signs HS256 JWTs.
 
-|Reverse proxy
-|The AI service does not terminate Transport Layer Security (TLS). Use nginx, HAProxy, or a cloud load balancer.
+|Reverse proxy (recommended)
+|The AI service does not terminate Transport Layer Security (TLS). A reverse proxy such as nginx, HAProxy, or a cloud load balancer is recommended for TLS termination in production.
 |===
 
 == Choosing a setup path
@@ -117,15 +114,15 @@ For a first-time deployment, progress through the guides in order. Each topic gu
 |Five-minute Docker Compose quick start. Stand up the AI service, database, Redis, token server, and a browser editor.
 
 |xref:tinymceai-on-premises-database.adoc[Database, Redis, and storage]
-|MySQL and PostgreSQL setup, Redis configuration, container runtimes (Docker, Podman, Kubernetes, ECS), and reverse proxy with TLS.
+|Data layer setup: MySQL and PostgreSQL setup, Redis configuration, container runtimes (Docker, Podman, Kubernetes, ECS), and reverse proxy with TLS.
 
 |xref:tinymceai-on-premises-providers.adoc[LLM providers]
-|OpenAI, Anthropic, Google Gemini, Azure OpenAI, AWS Bedrock, Google Vertex AI, and self-hosted endpoints (Ollama, vLLM, LM Studio). Custom model catalog and API key rotation.
+|Connect to OpenAI, Anthropic, Google Gemini, Azure OpenAI, AWS Bedrock, Google Vertex AI, or any OpenAI-compatible endpoint (Ollama, vLLM, LM Studio). Custom model catalog and API key rotation.
 
 |xref:tinymceai-on-premises-jwt.adoc[JWT authentication]
 |HS256 signing model, required and optional claims, permissions reference, and token endpoint examples in 8 languages.
 
-|xref:tinymceai-on-premises-frameworks.adoc[Framework integration]
+|xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration]
 |Editor-side configuration: plugin options, token provider, authentication patterns, Cross-Origin Resource Sharing (CORS), and deployment checklists.
 
 |xref:tinymceai-on-premises-production.adoc[Production deployment]
@@ -155,14 +152,6 @@ Container logs::
 docker logs ai-service --tail 200
 ----
 
-Effective environment::
-Redact secrets before submitting.
-+
-[source,console]
-----
-docker inspect ai-service | jq '.[0].Config.Env'
-----
-
 Health check::
 +
 [source,console]
@@ -179,6 +168,14 @@ Expected response:
 
 Decoded JWT payload::
 Strip the signature and decode with a JWT library.
+
+Environment variables::
+Redact secrets before submitting.
++
+[source,console]
+----
+docker inspect ai-service | jq '.[0].Config.Env'
+----
 
 Image version::
 +

@@ -7,19 +7,17 @@ Match the symptom to the fix below. If the symptom does not fit any section, esc
 
 == Quick triage
 
-[.text-center]
-image::tinymceai-on-premises/troubleshooting-fig-1.svg[alt="Troubleshooting triage decision tree covering container health JWT and LLM connectivity failures",width=100%]
+Work through this list to identify the symptom area:
 
-[cols="1,1",options="header"]
-|===
-|Symptom area |Go to
-|Container will not start or exits during boot |<<container-startup-failures>>
-|Container is running, `/health` returns OK, but API calls fail |<<api-and-jwt-authentication>>
-|Conversation starts, but the Server-Sent Events (SSE) stream carries an `event: error` |<<llm-provider-errors>>
-|Editor renders, but AI toolbar is missing, token fetch fails, or responses hang |<<editor-and-front-end>>
-|Responses are slow or time out |<<performance>>
-|Scaling, upgrades, or deployment questions |xref:tinymceai-on-premises-production.adoc[Production deployment]
-|===
+. *Is the container running?* Run `docker ps` to check. If the container has exited or will not pull, see <<container-startup-failures>>.
+. *Does `/health` return 200?* Run `curl -fsS \http://localhost:8000/health`. If it times out or returns 5xx, see <<container-startup-failures>>.
+. *Does the API return an auth error?* If the response is 401, `allowed:false`, or `invalid-jwt-*`, see <<api-and-jwt-authentication>>.
+. *Does the SSE stream carry an `event: error` from the LLM?* If yes, see <<llm-provider-errors>>.
+. *Is the editor side broken?* Missing toolbar, token 401, or hanging stream? See <<editor-and-front-end>>.
+. *Slow, timing out, or failing under load?* See <<performance>>.
+. *Scaling, upgrades, or deployment questions?* See xref:tinymceai-on-premises-production.adoc[Production deployment].
+
+If none of the above match, see <<diagnostic-recipes>> and then escalate to `support@tiny.cloud`.
 
 
 [[container-startup-failures]]
@@ -208,7 +206,7 @@ Confirm `/health` is OK and a direct `curl` to `/v1/conversations` works before 
 |Add the editor's origin (scheme {plus} host {plus} port) to the `ALLOWED_ORIGINS` environment variable.
 
 |Editor renders then disappears (Next.js / Nuxt / SvelteKit)
-|TinyMCE references `window` at load time. Load the editor client-only: `dynamic(() => import('./Editor'), { ssr: false })` in Next.js, `<ClientOnly>` in Nuxt, `onMount` in SvelteKit. See xref:tinymceai-on-premises-frameworks.adoc[Framework integration].
+|TinyMCE references `window` at load time. Load the editor client-only: `dynamic(() => import('./Editor'), { ssr: false })` in Next.js, `<ClientOnly>` in Nuxt, `onMount` in SvelteKit. See xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration].
 
 |`tinymceai_token_provider` called in a tight loop
 |Token endpoint is returning an invalid JWT or non-JSON response. Test with `curl -X POST http://localhost:3000/api/ai-token` and verify the response is `pass:c[{"token":"eyJ..."}]`.
@@ -226,6 +224,7 @@ Confirm `/health` is OK and a direct `curl` to `/v1/conversations` works before 
 |===
 
 
+[[diagnostic-recipes]]
 == Diagnostic recipes
 
 .Expand for copy-ready diagnostic commands
@@ -306,5 +305,5 @@ curl -N -X POST http://localhost:8000/v1/conversations/smoke-1/messages \
 * xref:tinymceai-on-premises-jwt.adoc[JWT authentication]
 * xref:tinymceai-on-premises-providers.adoc[LLM providers]
 * xref:tinymceai-on-premises-database.adoc[Database, Redis, and storage]
-* xref:tinymceai-on-premises-frameworks.adoc[Framework integration]
+* xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration]
 * xref:tinymceai-on-premises-production.adoc[Production deployment]

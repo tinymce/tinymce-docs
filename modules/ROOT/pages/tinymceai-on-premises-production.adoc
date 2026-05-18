@@ -13,6 +13,13 @@ image::tinymceai-on-premises/production-guide-fig-1.svg[alt="Production deployme
 
 The AI service is stateless, persists all state to MySQL/PostgreSQL and Redis, and scales horizontally behind a load balancer.
 
+.Detailed enterprise deployment topology
+[%collapsible]
+====
+[.text-center]
+image::tinymceai-on-premises/complete-guide-fig-1.svg[alt="Enterprise architecture showing browser with TinyMCE token endpoint multiple AI service replicas database Redis LLM providers and observability",width=100%]
+====
+
 
 
 == TLS / HTTPS

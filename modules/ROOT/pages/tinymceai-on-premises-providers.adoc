@@ -725,11 +725,10 @@ PARAMETER stop "<|im_start|>"
 ----
 
 The exact template depends on the base model. Check the model card for the recommended chat template. Verify tool support with `ollama show <model>` before connecting to the AI service.
-====
 
 The reasoning toggle (`capabilities.reasoning: true`) is cosmetic for Ollama-backed models; the openai-compatible adapter does not translate it to the native Ollama API.
 
-*Timeout:*
+=== Timeout
 
 Large self-hosted models on consumer hardware can exceed the default 180-second timeout. Override with:
 
@@ -738,7 +737,7 @@ Large self-hosted models on consumer hardware can exceed the default 180-second 
 -e LLM_TIMEOUT_MS='600000'
 ----
 
-*Example -- Ollama:*
+=== Example -- Ollama
 
 [source,bash]
 ----
@@ -762,7 +761,7 @@ Large self-hosted models on consumer hardware can exceed the default 180-second 
 -e LLM_TIMEOUT_MS='600000'
 ----
 
-*Example -- vLLM:*
+=== Example -- vLLM
 
 [source,bash]
 ----
@@ -785,7 +784,7 @@ Large self-hosted models on consumer hardware can exceed the default 180-second 
 ]'
 ----
 
-*Example -- LM Studio:*
+=== Example -- LM Studio
 
 [source,bash]
 ----
@@ -807,7 +806,7 @@ Large self-hosted models on consumer hardware can exceed the default 180-second 
 ]'
 ----
 
-*Verify:*
+=== Verify
 
 [source,bash]
 ----
@@ -821,7 +820,6 @@ curl -s http://host.docker.internal:11434/v1/chat/completions \
 ----
 
 When the `curl` call returns a chat completion, the AI service can use the same endpoint.
-====
 
 
 

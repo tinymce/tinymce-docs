@@ -9,16 +9,9 @@
 == Architecture overview
 
 [.text-center]
-image::tinymceai-on-premises/production-guide-fig-1.svg[alt="Production deployment topology with reverse proxy AI service replicas database and Redis behind TLS",width=100%]
+image::tinymceai-on-premises/complete-guide-fig-1.svg[alt="Enterprise architecture showing browser with TinyMCE token endpoint AI service replicas database Redis LLM providers and observability",width=100%]
 
 The AI service is stateless, persists all state to MySQL/PostgreSQL and Redis, and scales horizontally behind a load balancer.
-
-.Detailed enterprise deployment topology
-[%collapsible]
-====
-[.text-center]
-image::tinymceai-on-premises/complete-guide-fig-1.svg[alt="Enterprise architecture showing browser with TinyMCE token endpoint multiple AI service replicas database Redis LLM providers and observability",width=100%]
-====
 
 
 
@@ -123,7 +116,7 @@ podman run --init -d --pod ai-pod --name ai-service \
   registry.containers.tiny.cloud/ai-service-tiny:latest
 ----
 
-IMPORTANT: Pin to `mysql:8.0`. The `mysql:8` tag floats to MySQL 8.4, which removes the `default-authentication-plugin` flag and causes a crash loop. See xref:tinymceai-on-premises-database.adoc[Database, Redis, and storage] for details.
+IMPORTANT: Pin to `mysql:8.0`. The `mysql:8` tag floats to the latest MySQL, which removes the `default-authentication-plugin` flag and causes a crash loop. See xref:tinymceai-on-premises-database.adoc[Database, Redis, and storage] for details.
 
 == Kubernetes deployment
 
@@ -606,6 +599,8 @@ License keys are per-deployment, not per-replica. One key covers any number of r
 
 == Performance characteristics
 
+NOTE: The following values are approximate baselines observed during internal testing. Actual performance depends on hardware, network conditions, LLM provider latency, and prompt complexity.
+
 [cols="1,1",options="header"]
 |===
 |Metric |Typical value
@@ -629,7 +624,7 @@ License keys are per-deployment, not per-replica. One key covers any number of r
 |1,000{plus} per instance
 |===
 
-These values are approximate and vary with hardware, provider latency, and prompt complexity. The LLM provider's rate limits are typically the binding constraint before the AI service becomes one.
+The LLM provider's rate limits are typically the binding constraint before the AI service becomes one.
 
 == Sizing guide
 

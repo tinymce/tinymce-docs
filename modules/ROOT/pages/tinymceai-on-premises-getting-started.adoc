@@ -80,7 +80,7 @@ volumes:
   mysql_data:
 ----
 
-TIP: Pin `mysql:8.0`, not `mysql:8`. The `:8` tag points to MySQL 8.4, which is incompatible with the AI service. See xref:tinymceai-on-premises-database.adoc#mysql-version-pinning[MySQL version pinning] for details.
+TIP: Pin `mysql:8.0`, not `mysql:8`. The `:8` tag points to the latest MySQL, which is incompatible with the AI service. See xref:tinymceai-on-premises-database.adoc#mysql-version-pinning[MySQL version pinning] for details.
 
 PostgreSQL is equally supported. See xref:tinymceai-on-premises-database.adoc[Database, Redis, and storage] for an equivalent compose file. Review the xref:tinymceai-on-premises-database.adoc#postgresql-schema-prerequisite[PostgreSQL schema prerequisite] before switching.
 

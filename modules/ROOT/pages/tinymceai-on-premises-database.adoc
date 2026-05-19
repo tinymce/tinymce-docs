@@ -88,14 +88,14 @@ NOTE: MySQL does not have this issue. The database itself is the namespace, set 
 [[mysql-version-pinning]]
 == MySQL version pinning
 
-Do *not* use `mysql:8`. That tag now floats to MySQL 8.4, which removes the `default-authentication-plugin=mysql_native_password` startup flag the AI service relies on. The container crashloops with:
+Do *not* use `mysql:8`. That tag now floats to the latest MySQL, which removes the `default-authentication-plugin=mysql_native_password` startup flag the AI service relies on. The container crashloops with:
 
 ....
 [ERROR] [MY-000067] [Server] unknown variable 'default-authentication-plugin=mysql_native_password'.
 [ERROR] [MY-010119] [Server] Aborting
 ....
 
-Pin to `mysql:8.0` in every manifest: `docker run`, Docker Compose, Kubernetes, Helm, ECS. Running MySQL 8.4 with workarounds (removing the flag and switching to `caching_sha2_password`) is not a supported configuration.
+Pin to `mysql:8.0` in every manifest: `docker run`, Docker Compose, Kubernetes, Helm, ECS. Running newer MySQL versions with workarounds (removing the flag and switching to `caching_sha2_password`) is not a supported configuration.
 
 TIP: The same principle applies to PostgreSQL. Pin `postgres:16` rather than `postgres:latest`.
 

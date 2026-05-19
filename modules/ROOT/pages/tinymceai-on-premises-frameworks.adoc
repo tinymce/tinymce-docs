@@ -28,7 +28,7 @@ The on-premises AI integration adds the options documented below to the standard
 |Option |Description
 
 |`plugins`
-|Must include `tinymceai`.
+|`tinymceai`.
 
 |`toolbar`
 |Include one or more of `tinymceai-chat`, `tinymceai-review`, `tinymceai-quickactions`.
@@ -190,7 +190,7 @@ If using the Tiny CDN instead of self-hosted assets, also add `\https://cdn.tiny
 
 |Editor loads but no AI buttons appear
 |`plugins` does not include `tinymceai`, or TinyMCE is version 7.x or earlier
-|Set `plugins: 'tinymceai'` and confirm the script URL uses `/tinymce/8/`. Verify the API key has the AI feature enabled.
+|Add `tinymceai` to the `plugins` list and confirm the script URL uses `/tinymce/8/`. Verify the API key has the AI feature enabled.
 
 |`POST /api/ai-token` returns 401
 |The token endpoint rejects the fetch

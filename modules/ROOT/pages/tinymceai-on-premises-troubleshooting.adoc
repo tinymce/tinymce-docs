@@ -46,7 +46,7 @@ Run `docker logs ai-service` first. All entries below assume the log output is a
 |Run `CREATE SCHEMA "cs-on-premises";` (double quotes required), or set `DATABASE_SCHEMA=public`. See xref:tinymceai-on-premises-database.adoc[Database, Redis, and storage].
 
 |`[MY-000067] unknown variable 'default-authentication-plugin'`
-|`mysql:8` tag now points to MySQL 8.4, which removed that variable
+|`mysql:8` tag now points to the latest MySQL, which removed that variable
 |Pin `mysql:8.0` in the compose file and run `docker compose up -d --force-recreate mysql`.
 
 |Container exits with no useful log

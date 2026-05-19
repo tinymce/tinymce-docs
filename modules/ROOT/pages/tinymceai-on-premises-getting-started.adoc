@@ -215,7 +215,6 @@ If the container exits immediately, run `docker logs ai-service`. The most commo
 
 The AI service isolates users into Environments. Each environment has its own access keys.
 
-[arabic]
 . Open the Management Panel: *http://localhost:8000/panel/*
 . Sign in using the `MANAGEMENT_SECRET` from `.env`.
 . Click *Create Environment* and give it a name (for example "Development").

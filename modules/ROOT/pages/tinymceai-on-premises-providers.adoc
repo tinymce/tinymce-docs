@@ -291,7 +291,6 @@ Azure-hosted OpenAI models. Requires an Azure subscription, an Azure OpenAI reso
 ====
 *Prerequisites in the Azure portal:*
 
-[arabic]
 . Create an Azure OpenAI resource. Note the *resource name*; this is the subdomain prefix in `https://<RESOURCE_NAME>.openai.azure.com`.
 . Apply for model access if required by the region.
 . In Azure AI Studio, create a *deployment* for each model to expose. The deployment name is arbitrary (for example `prod-gpt4o`, `cheap-mini`).
@@ -401,7 +400,6 @@ The `sessionToken` field is optional but required for STS-issued short-lived cre
 
 *Prerequisites checklist:*
 
-[arabic]
 . *Enable model access.* Bedrock console -> *Model access* -> Manage model access. Each model must be approved per-region.
 . *Subscribe through AWS Marketplace* for non-Amazon models. Anthropic Claude on Bedrock requires a one-time Marketplace subscription.
 . *Create an IAM user or role* with the permissions below.
@@ -959,7 +957,6 @@ A model with no `features` entry, or with only sub-features the editor does not 
 
 The `apiKeys` field on every provider type that has one is an *array*. The service treats all entries as valid for incoming requests, which allows rotating keys with zero downtime:
 
-[arabic]
 . Append the new key to the array:
 +
 [source,json]

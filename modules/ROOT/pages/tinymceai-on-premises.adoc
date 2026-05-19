@@ -14,7 +14,6 @@ image::tinymceai-on-premises/overview-fig-1.svg[alt="High-level architecture sho
 
 Data flow for a single AI request:
 
-[arabic]
 . The client application requests a JWT from the token endpoint.
 . The client sends a prompt with the JWT to the AI service over HTTPS.
 . The AI service verifies the token, checks per-feature permissions, and forwards the prompt to the configured large language model (LLM).

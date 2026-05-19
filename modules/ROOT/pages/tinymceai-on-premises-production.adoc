@@ -62,7 +62,7 @@ Server-Sent Events (SSE) streaming requires `proxy_buffering off`. Without it, A
 
 == Horizontal scaling
 
-The AI service is stateless. All persistent state lives in the SQL database, Redis, and the file-storage back end. Any number of replicas can run behind a load balancer. All replicas must share identical environment variable configuration.
+The AI service is stateless. All persistent state lives in the SQL database, Redis, and the file-storage back end. Any number of replicas can run behind a load balancer. All replicas must share identical environment variable configuration. On first boot or after an image upgrade, start a single replica and wait for it to become healthy before scaling up (see <<upgrade-process>>).
 
 === Scaling considerations
 
@@ -71,7 +71,7 @@ The AI service is stateless. All persistent state lives in the SQL database, Red
 |Component |Scaling approach
 |AI service |Add more containers (stateless)
 |MySQL / PostgreSQL |Read replicas or managed DB (RDS, Cloud SQL, Azure Database)
-|Redis |Redis Cluster or Sentinel; managed Redis (ElastiCache, Memorystore, Azure Cache)
+|Redis |Redis Cluster or managed Redis with built-in replication (ElastiCache, Memorystore, Azure Cache). Redis Sentinel is not supported.
 |File storage |S3 / Azure Blob recommended for production. The `database` storage driver is intended for development only.
 |===
 
@@ -181,6 +181,14 @@ spec:
       labels:
         app: ai-service
     spec:
+      terminationGracePeriodSeconds: 120
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: topology.kubernetes.io/zone
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: ai-service
       imagePullSecrets:
         - name: tiny-registry
       containers:
@@ -230,6 +238,16 @@ spec:
               value: "us-east-1"
             - name: STORAGE_BUCKET
               value: "example-ai-storage-bucket"
+            - name: STORAGE_ACCESS_KEY_ID
+              valueFrom:
+                secretKeyRef:
+                  name: ai-service-secrets
+                  key: storage-access-key
+            - name: STORAGE_SECRET_ACCESS_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: ai-service-secrets
+                  key: storage-secret-key
             - name: ENABLE_METRIC_LOGS
               value: "true"
           readinessProbe:
@@ -254,6 +272,8 @@ spec:
 ----
 ====
 
+TIP: For PostgreSQL, change `DATABASE_DRIVER` to `"postgres"`, update `DATABASE_HOST` to the PostgreSQL endpoint, and ensure the `cs-on-premises` schema exists or set `DATABASE_SCHEMA=public`. See xref:tinymceai-on-premises-database.adoc#postgresql-schema-prerequisite[PostgreSQL schema prerequisite].
+
 === Service
 
 [source,yaml]
@@ -270,6 +290,22 @@ spec:
     - port: 8000
       targetPort: 8000
 ----
+
+=== Bootstrap the environment
+
+After the first pod reaches Ready status, create an environment and access key through the Management Panel:
+
+. Access the Management Panel at `\https://<ingress-host>/panel/`.
+. Sign in using the `ENVIRONMENTS_MANAGEMENT_SECRET_KEY`.
+. Create an environment and note the Environment ID.
+. Create an access key and copy the API Secret immediately (shown only once).
+
+These values are required by the token endpoint. See xref:tinymceai-on-premises-getting-started.adoc#_create_an_environment_and_access_key[Getting started — Create an environment and access key] for details.
+
+[IMPORTANT]
+--
+Always create environments through the Management Panel UI. Environments created through the raw management API are not fully registered and cause `invalid-jwt-payload` errors.
+--
 
 === Ingress
 
@@ -327,6 +363,24 @@ spec:
           averageUtilization: 70
 ----
 
+NOTE: The AI service is I/O-bound (waiting on upstream LLM responses). CPU-based autoscaling is a safe starting point but may not trigger under high concurrency if CPU remains low. For production, consider supplementing with custom metrics (concurrent SSE streams, request queue depth) through KEDA or the Prometheus Adapter.
+
+=== Pod disruption budget
+
+[source,yaml]
+----
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: ai-service-pdb
+  namespace: tinymce-ai
+spec:
+  minAvailable: 1
+  selector:
+    matchLabels:
+      app: ai-service
+----
+
 
 
 
@@ -378,13 +432,15 @@ spec:
 ----
 ====
 
+NOTE: The AI service does not use ECS task role credentials for S3 access. Add `STORAGE_ACCESS_KEY_ID` and `STORAGE_SECRET_ACCESS_KEY` as secrets entries from AWS Secrets Manager.
+
 === Infrastructure recommendations
 
 [cols=",",options="header",]
 |===
 |Service |AWS recommendation
 |Database |RDS for MySQL 8.0 (Multi-AZ for high availability (HA))
-|Redis |ElastiCache for Redis 7 (cluster mode)
+|Redis |ElastiCache for Redis 7 (cluster-mode-disabled with Multi-AZ replication, or cluster-mode-enabled with `REDIS_CLUSTER_NODES`)
 |Storage |Same-region S3 bucket
 |Load balancer |ALB with `/health` target health check, 300 s idle timeout
 |Secrets |AWS Secrets Manager
@@ -411,6 +467,8 @@ spec:
 |Audit logging |Enable `ENABLE_METRIC_LOGS=true` and ship logs to a Security Information and Event Management (SIEM).
 |Large language model (LLM) API key rotation |Add the new key to the `PROVIDERS` array, restart the service, then revoke the old key after confirming the new one works.
 |===
+
+NOTE: Azure-specific (AKS, Azure Database, Azure Cache) and GCP-specific (GKE, Cloud SQL, Memorystore) deployment guidance is planned. The secrets management, encryption, and observability recommendations above apply across all cloud providers.
 
 == Rate limiting
 
@@ -464,6 +522,14 @@ Set the `ENABLE_METRIC_LOGS` environment variable to enable request-level JSON l
 ----
 
 When enabled, the service writes a structured JSON entry for each request. Key fields include the request duration, HTTP status code, and outcome status. These entries are suitable for ingestion into any log aggregator that supports JSON parsing.
+
+.Example metric log entry
+[source,json]
+----
+{"timestamp":"2026-05-19T10:30:00.123Z","method":"POST","path":"/v1/conversations/abc123/messages","statusCode":200,"durationMs":3421}
+----
+
+TIP: Inspect the first few entries with `docker logs ai-service --tail 5 | jq .` to discover all available fields for the current service version.
 
 === OpenTelemetry
 
@@ -588,7 +654,7 @@ Redis holds ephemeral state. Losing Redis data does not affect persistent data. 
 docker pull registry.containers.tiny.cloud/ai-service-tiny:NEW_VERSION
 ----
 . For rolling deploys across version boundaries: start *one* instance at the new version and wait for it to become healthy before rolling the rest.
-. For Kubernetes: update the image tag in the Deployment. The default `RollingUpdate` strategy handles zero-downtime upgrades, provided the first new pod becomes Ready before the rollout continues.
+. For Kubernetes: update the image tag in the Deployment. Set `strategy.rollingUpdate.maxSurge: 1` and `maxUnavailable: 0` to ensure at least one old pod remains available during migrations. The default `RollingUpdate` strategy handles zero-downtime upgrades, provided the first new pod becomes Ready before the rollout continues.
 . Verify `/health` on every replica before declaring the upgrade complete.
 
 Review the release notes for the target version and take a database backup before upgrading.

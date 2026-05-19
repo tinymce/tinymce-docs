@@ -116,7 +116,7 @@ OPENAI_API_KEY=sk-proj-PASTE_OPENAI_KEY_HERE
 # ANTHROPIC_API_KEY=sk-ant-PASTE_ANTHROPIC_KEY_HERE
 # GOOGLE_API_KEY=AIza-PASTE_GOOGLE_KEY_HERE
 
-# --- Filled in after creating an environment (leave blank for now) ---
+# --- Filled in after creating an environment (Step 7). Used by the token server, not the AI service. ---
 AI_ENV_ID=
 AI_API_SECRET=
 ----
@@ -140,6 +140,8 @@ docker compose ps
 Both containers should report `healthy` in the STATUS column. If MySQL still shows `starting`, wait another 10 seconds and re-run.
 
 === Launch the AI service
+
+The AI service runs as a standalone container outside of the Docker Compose stack. This separation allows upgrading or reconfiguring the AI service without restarting the database and Redis.
 
 Run from the same folder as the `.env` file:
 
@@ -165,9 +167,10 @@ fi
 PROVIDERS+='}'
 
 # Resolve the compose network name (varies across Docker versions and folder names)
-NETWORK=$(docker network ls --format '{{.Name}}' | grep "^$(basename "$PWD" | tr '[:upper:]' '[:lower:]')_default$" | head -1)
+NETWORK=$(docker network ls --format '{{.Name}}' | grep -E "^$(basename "$PWD" | tr '[:upper:]' '[:lower:]')[_-]default$" | head -1)
 if [ -z "$NETWORK" ]; then
-  NETWORK="$(basename "$PWD" | tr '[:upper:]' '[:lower:]')_default"
+  echo "ERROR: Could not find the Docker Compose network. Run 'docker network ls' and pass the network name with --network=<name>."
+  exit 1
 fi
 
 docker run --init -d -p 8000:8000 \
@@ -188,7 +191,7 @@ docker run --init -d -p 8000:8000 \
 ----
 ====
 
-For Podman, replace `docker run` with `podman run` and use a Podman pod instead of a compose network. See xref:tinymceai-on-premises-production.adoc[Production deployment] for Podman-specific guidance.
+For Podman, replace `docker run` with `podman run` and use a Podman pod instead of a compose network. See xref:tinymceai-on-premises-production.adoc[Production deployment] for Podman-specific guidance. See xref:tinymceai-on-premises-production.adoc#_podman_deployment[Podman deployment] for a full example.
 
 For native databases (the database runs on the host or in a managed service rather than in Docker), drop the `--network` flag and set `DATABASE_HOST=host.docker.internal` (Docker Desktop and Podman 4{plus}). On native Linux Docker, additionally pass `--add-host=host.docker.internal:host-gateway`.
 
@@ -396,6 +399,8 @@ curl -s -X POST http://localhost:8000/v1/conversations \
   -H "Content-Type: application/json" \
   -d '{"id":"verify-1","title":"Verification"}'
 
+NOTE: The command below uses the built-in `agent-1` model. If `MODELS` has been explicitly configured, replace `agent-1` with the `id` of one of the configured models. See xref:tinymceai-on-premises-providers.adoc#models-required[Defining the model list].
+
 curl -s -N -X POST http://localhost:8000/v1/conversations/verify-1/messages \
   -H "Authorization: Bearer $TOKEN" \
   -H "Content-Type: application/json" \
@@ -428,13 +433,16 @@ A successful round-trip confirms: container health, database connectivity, Redis
 
 == Updating configuration
 
-IMPORTANT: `docker compose restart` after `.env` changes silently keeps the old environment values. The restart preserves the container and does not re-read `.env`. Always use `docker compose up -d --force-recreate` instead.
+IMPORTANT: After changing `.env` values, containers must be recreated to pick up new environment variables. A simple restart (`docker restart` or `docker compose restart`) preserves the old values.
 
 [source,bash]
 ----
+# Recreate the data layer (MySQL, Redis):
 docker compose up -d --force-recreate
-# Or recreate only the AI service:
-docker compose up -d --force-recreate ai-service
+
+# Recreate the standalone AI service:
+docker stop ai-service && docker rm ai-service
+# Then re-run the launch script from Step 5.
 ----
 
 For Kubernetes, update the Secret and trigger a rollout restart:

@@ -113,7 +113,7 @@ For a first-time deployment, progress through the guides in order. Each guide ca
 |Five-minute Docker Compose quick start. Stand up the AI service, database, Redis, token server, and a browser editor.
 
 |xref:tinymceai-on-premises-database.adoc[Database, Redis, and storage]
-|Data layer setup: MySQL and PostgreSQL setup, Redis configuration, container runtimes (Docker, Podman, Kubernetes, ECS), and reverse proxy with TLS.
+|Data layer setup: MySQL and PostgreSQL configuration, Redis connectivity, file storage options (S3, Azure Blob, filesystem, database), and host-local database connectivity.
 
 |xref:tinymceai-on-premises-providers.adoc[LLM providers]
 |Connect to OpenAI, Anthropic, Google Gemini, Azure OpenAI, AWS Bedrock, Google Vertex AI, or any OpenAI-compatible endpoint (Ollama, vLLM, LM Studio). Custom model catalog and API key rotation.

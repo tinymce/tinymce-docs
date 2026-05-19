@@ -291,6 +291,7 @@ curl -s -X POST http://localhost:8000/v1/conversations \
   -H "Content-Type: application/json" \
   -d '{"id":"smoke-1","title":"Smoke test"}'
 
+# Replace 'agent-1' with a model ID from MODELS if explicitly configured
 curl -N -X POST http://localhost:8000/v1/conversations/smoke-1/messages \
   -H "Authorization: Bearer $TOKEN" \
   -H "Content-Type: application/json" \

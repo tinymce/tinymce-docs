@@ -31,7 +31,7 @@ Alphabetized. Required-ness is marked relative to a minimum working deployment.
 |`LLM_TELEMETRY_ENABLED` |No |`false` |Primary OpenTelemetry switch.
 |`LLM_TIMEOUT_MS` |No |180000 |Per-request large language model (LLM) timeout in ms. Raise for large self-hosted models.
 |`MCP_SERVERS` |No |- |JSON object; Model Context Protocol (MCP) server configuration. See xref:tinymceai-on-premises-advanced.adoc[Advanced scenarios].
-|`MODELS` |Sometimes |- |JSON array; required for Azure / Bedrock / Vertex / openai-compatible. See xref:tinymceai-on-premises-providers.adoc[LLM providers].
+|`MODELS` |Yes (Azure, Bedrock, Vertex, openai-compatible); recommended for all providers |- |JSON array defining exposed models. Required for Azure, Bedrock, Vertex, and openai-compatible providers. Recommended for OpenAI, Anthropic, and Google direct. See xref:tinymceai-on-premises-providers.adoc[LLM providers].
 |`OTEL_DEBUG` |No |- |Verbose OpenTelemetry Protocol (OTLP) diagnostic logging.
 |`OTEL_EXPORTER_OTLP_TRACES_ENDPOINT` |If using OTEL |- |OTLP traces endpoint URL.
 |`OTEL_TRACES_SAMPLER_ARG` |No |`1.0` |OTLP sampling rate (0.0 to 1.0).
@@ -74,7 +74,7 @@ Alphabetized. Required-ness is marked relative to a minimum working deployment.
 |GET |`/health` |None |Liveness probe. Returns `{"serviceName":"on-premises-http","uptime":<seconds>}`. Not metric-logged.
 |GET |`/docs/` |None |ReDoc-rendered API documentation.
 |GET |`/v1/api/doc.json` |None |OpenAPI 3 JSON spec.
-|GET |`/panel/` |Management secret |Management Panel UI. Sign in with `ENVIRONMENTS_MANAGEMENT_SECRET_KEY`.
+|GET |`/panel/` |Management secret (login form) |Management Panel UI. Sign in with `ENVIRONMENTS_MANAGEMENT_SECRET_KEY` through the browser login form.
 |GET |`/v1/models/1` |JWT |List available models for the current token. The compatibility version literal `1` is the only accepted value; `v1`, `v2`, `latest` all return 500.
 |POST |`/v1/conversations` |JWT |Create a conversation. Body *must* include client-supplied `id`.
 |GET |`/v1/conversations` |JWT |List conversations for the current `sub`.

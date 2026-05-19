@@ -62,7 +62,9 @@ The diagram reflects three stacked layers: *how to authenticate* with each upstr
 [[models-required]]
 == Defining the model list
 
-The on-premises service ships with a built-in default model list that covers *only* OpenAI, Anthropic, and Google direct. For every other provider type (Azure, Bedrock, Vertex, openai-compatible), define `MODELS` explicitly; otherwise nothing usable is exposed.
+`MODELS` is required for Azure, Bedrock, Vertex, and openai-compatible providers. Without it, these providers expose nothing usable to clients.
+
+For OpenAI, Anthropic, and Google direct, the service has built-in routing knowledge that allows requests to reach those providers without an explicit `MODELS` definition. However, the `/v1/models/1` endpoint still returns only a disabled `agent-1` placeholder, and the editor model picker will not display real model names. For a production deployment, always define `MODELS` explicitly regardless of provider type.
 
 When only `PROVIDERS` is configured and `MODELS` is omitted, a `GET /v1/models/1` call returns only the built-in `agent-1` placeholder with `allowed: false`:
 
@@ -110,7 +112,7 @@ A full field reference for `MODELS` is at the end of this page.
 
 == OpenAI
 
-API key from https://platform.openai.com/api-keys[platform.openai.com]. With OpenAI alone, `MODELS` can be omitted; the built-in catalog covers common models.
+API key from https://platform.openai.com/api-keys[platform.openai.com]. The built-in routing handles OpenAI models without an explicit `MODELS` definition, but defining `MODELS` is recommended for production (see <<models-required>>).
 
 .Configuration details
 [%collapsible]
@@ -877,7 +879,7 @@ A `MODELS` array routes individual models to specific providers using the `provi
 
 This wires conversations to OpenAI, reviews to Bedrock-hosted Claude, and quick actions to a local Ollama model. The TinyMCE editor will pick the appropriate provider for each feature based on which models declare which `features`.
 
-A `MODELS` entry with a `provider` value that does not exist in `PROVIDERS` is silently skipped; that model will not appear in `/v1/models/1`. When a model is missing from the model selector in the rich text editor, check the spelling of its `provider` field.
+A `MODELS` entry with a `provider` value that does not exist in `PROVIDERS` is silently skipped; that model will not appear in `/v1/models/1`. When a model is missing from the model selector in the rich text editor, check the spelling of its `provider` field against the keys in `PROVIDERS` (case-sensitive). See xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting] for additional debugging steps.
 
 
 

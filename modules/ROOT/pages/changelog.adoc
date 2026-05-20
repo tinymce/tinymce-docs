@@ -454,6 +454,10 @@ NOTE: This is the {productname} Community version changelog. For information abo
 * The "Open Link" context menu action was not enabled for links on images.
 // #TINY-10391
 
+=== Security
+
+* Fixed stored XSS vulnerability using sanitization bypass through nested SVGs.
+
 == xref:7.0.1-release-notes.adoc[7.0.1 - 2024-04-10]
 
 === Fixed

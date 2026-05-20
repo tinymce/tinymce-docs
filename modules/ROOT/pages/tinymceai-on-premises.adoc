@@ -1,4 +1,4 @@
-= TinyMCE AI On-Premise
+= TinyMCE AI on-premises
 :navtitle: Overview
 :description: Self-hosted AI writing assistance for TinyMCE; architecture, prerequisites, and topic guide
 :keywords: AI, on-premises, self-hosted, deployment, overview
@@ -160,7 +160,7 @@ For a first-time deployment, progress through the guides in order. Each guide ca
 |Kubernetes manifests, AWS ECS task definitions, horizontal scaling, security hardening, rate limiting, observability, backup and recovery, and upgrades.
 
 |xref:tinymceai-on-premises-advanced.adoc[Advanced scenarios]
-|MCP server integration, web scraping and search, multi-tenant patterns, custom models with guardrails, and AI-powered document pipelines.
+|MCP server integration, web scraping and search, and multi-tenant patterns.
 
 |xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting]
 |Quick triage, container startup failures, JWT errors, LLM provider errors, editor issues, performance, and diagnostic recipes.

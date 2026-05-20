@@ -1,4 +1,4 @@
-= Getting started with TinyMCE AI On-Premise
+= Getting started with TinyMCE AI on-premises
 :navtitle: Getting started
 :description: Five-minute Docker Compose quick start for TinyMCE AI on-premises service
 :keywords: AI, on-premises, getting started, docker, quick start
@@ -11,7 +11,7 @@ This guide sets up a fully working local stack in roughly five minutes on any ma
 * **A minimal token server** (Node.js) — signs JWTs for the editor
 * **A browser page with TinyMCE** — validates the end-to-end flow
 
-The quick start is designed to validate the stack components before moving to a production deployment. Production engineers should still review this section to understand the conceptual flow before continuing to xref:tinymceai-on-premises-production.adoc[the Production Deployment Guide].
+The quick start is designed to validate the stack components before moving to a production deployment. Production engineers can review this section to understand the conceptual flow before continuing to xref:tinymceai-on-premises-production.adoc[Production deployment].
 
 == Five-minute demo with Docker Compose
 
@@ -50,7 +50,7 @@ Replace `TINY_REGISTRY_USERNAME` with the username supplied by the Tiny account 
 docker pull registry.containers.tiny.cloud/ai-service-tiny:latest
 ----
 
-For Podman, substitute `podman pull`. For production, pin a specific version tag (for example `:5.1.0`) rather than `:latest` to ensure repeatable deployments and avoid unexpected breaking changes.
+For Podman, substitute `podman pull`. For production, pin a specific version tag (for example `:5.1.0`) rather than `:latest` for repeatable deployments and to avoid unexpected breaking changes.
 
 === Create `docker-compose.yml` (data layer)
 

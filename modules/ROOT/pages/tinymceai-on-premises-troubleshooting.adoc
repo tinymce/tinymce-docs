@@ -78,7 +78,7 @@ These assume the container is running and `/health` returns OK.
 
 |`invalid-jwt-payload`
 |`aud` claim does not match a known Environment ID, or `aud` is an array instead of a string
-|Copy the Environment ID from `/panel/`. Ensure `aud` is a string, not an array. Recreate environments through the Panel UI only.
+|Copy the Environment ID from `/panel/`. Set `aud` to a string, not an array. Recreate environments through the Panel UI only.
 
 |`invalid-jwt` (expired)
 |Token is past its `exp` claim

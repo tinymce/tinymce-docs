@@ -59,7 +59,7 @@ server {
 
 [IMPORTANT]
 --
-Server-Sent Events (SSE) streaming requires `proxy_buffering off`. Without it, AI responses appear to hang until the entire response is generated.
+Server-Sent Events (SSE) streaming requires https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffering[`proxy_buffering off`]. Without it, AI responses appear to hang until the entire response is generated.
 --
 
 === AWS ALB
@@ -168,7 +168,7 @@ stringData:
     }
 ----
 
-In production, use Sealed Secrets, External Secrets Operator, or HashiCorp Vault rather than committing raw secret manifests.
+In production, use https://sealed-secrets.netlify.app/[Sealed Secrets], https://external-secrets.io/[External Secrets Operator], or https://www.vaultproject.io/[HashiCorp Vault] rather than committing raw secret manifests. For the Kubernetes Secret resource itself, see the https://kubernetes.io/docs/concepts/configuration/secret/[Kubernetes Secrets documentation].
 
 === Deployment
 
@@ -316,7 +316,7 @@ These values are required by the token endpoint. See xref:tinymceai-on-premises-
 Always create environments through the Management Panel UI. Environments created through the raw management API are not fully registered and cause `invalid-jwt-payload` errors.
 --
 
-=== Ingress
+=== https://kubernetes.io/docs/concepts/services-networking/ingress/[Ingress]
 
 [source,yaml]
 ----
@@ -372,7 +372,7 @@ spec:
           averageUtilization: 70
 ----
 
-NOTE: The AI service is I/O-bound (waiting on upstream LLM responses). CPU-based autoscaling is a safe starting point but may not trigger under high concurrency if CPU remains low. For production, consider supplementing with custom metrics (concurrent SSE streams, request queue depth) through KEDA or the Prometheus Adapter.
+NOTE: The AI service is I/O-bound (waiting on LLM provider responses). CPU-based autoscaling is a safe starting point but may not trigger under high concurrency if CPU remains low. For production, consider supplementing with custom metrics (concurrent SSE streams, request queue depth) through https://keda.sh/[KEDA] or the https://github.com/kubernetes-sigs/prometheus-adapter[Prometheus Adapter]. For HPA configuration, see the https://kubernetes.io/docs/tasks/run-application/horizontal-pod-autoscale/[Kubernetes HPA documentation].
 
 == AWS ECS / Fargate
 
@@ -521,7 +521,7 @@ TIP: Inspect the first few entries with `docker logs ai-service --tail 5 | jq .`
 |`OTEL_DEBUG` |No |- |Verbose OTLP diagnostic logging
 |===
 
-Compatible with Jaeger, Grafana Tempo, Datadog, New Relic, Honeycomb, and any OTLP-compatible back end.
+Compatible with Jaeger, Grafana Tempo, Datadog, New Relic, Honeycomb, and any https://opentelemetry.io/docs/specs/otlp/[OTLP-compatible] back end.
 
 === Langfuse
 

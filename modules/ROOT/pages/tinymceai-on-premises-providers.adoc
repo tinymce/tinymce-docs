@@ -6,9 +6,9 @@
 
 
 
-The `PROVIDERS` environment variable tells the AI service how to reach the upstream large language model (LLM). The `MODELS` environment variable tells the service which models are exposed to clients and which features each model supports. This page is the definitive reference for both: every supported `type`, every required field, and every known issue encountered in production.
+The `PROVIDERS` environment variable tells the AI service how to reach the configured large language model (LLM) provider. The `MODELS` environment variable tells the service which models are exposed to clients and which features each model supports. This page documents every supported `type`, every required field, and every known production issue for both variables.
 
-Start with the xref:tinymceai-on-premises-getting-started.adoc[Getting Started guide] if the AI service container is not yet running. The following sections assume a running `ai-service` container.
+Start with the xref:tinymceai-on-premises-getting-started.adoc[Getting started guide] if the AI service container is not yet running. The following sections assume a running `ai-service` container.
 
 == Provider and model architecture
 
@@ -17,7 +17,7 @@ The AI service uses two related environment variables:
 [cols=",,",options="header",]
 |===
 |Variable |Type |What it does
-|`PROVIDERS` |JSON object |Map of provider IDs to provider configurations. Each entry says how to authenticate with one upstream LLM API.
+|`PROVIDERS` |JSON object |Map of provider IDs to provider configurations. Each entry says how to authenticate with one LLM provider API.
 |`MODELS` |JSON array |List of models exposed to clients. Each model points at a `PROVIDERS` entry and declares which features it can serve.
 |JSON Web Token (JWT) `auth.ai.permissions` |string array |Per-user authorization list. Includes `ai:models:<provider-key>:<model-id>` entries to gate access to individual models.
 |===
@@ -72,7 +72,7 @@ However, the default `agent-1` model has important limitations:
 * The TinyMCE editor model picker does not display real model names — it shows only the generic `agent-1` entry.
 * Azure, Bedrock, Vertex, and openai-compatible providers do not work at all without `MODELS`.
 
-For production deployments, always set `MODELS` explicitly regardless of provider type. This ensures the editor model picker displays meaningful names, the correct provider handles each request, and JWT permissions can reference specific model IDs.
+For production deployments, always set `MODELS` explicitly regardless of provider type. Setting `MODELS` explicitly makes the editor model picker display meaningful names, the correct provider handles each request, and JWT permissions can reference specific model IDs.
 
 The `ai:models:agent` permission in the JWT grants access to the built-in `agent-1` model. When adding custom models through `MODELS`, also add `ai:models:<provider>:<model-id>` permissions to expose each model to users. See xref:tinymceai-on-premises-jwt.adoc[JWT authentication] for permission syntax.
 

@@ -158,7 +158,7 @@ This pattern avoids cookies entirely and works well for cross-origin setups.
 
 == Cross-origin requests to the AI service
 
-In production the editor page and the AI service almost always live on different origins (`\https://app.yourcompany.com` vs `\https://ai.yourcompany.com`). The AI service must respond with CORS headers that permit the editor origin; otherwise the browser blocks every request.
+In production the editor page and the AI service typically run on different origins (`\https://app.yourcompany.com` and `\https://ai.yourcompany.com`). The AI service must respond with CORS headers that permit the editor origin; otherwise the browser blocks every request.
 
 === Configuring `ALLOWED_ORIGINS`
 
@@ -217,7 +217,7 @@ The response should include `Access-Control-Allow-Origin: \https://app.yourcompa
 |All cross-origin requests fail silently. Add the editor origin.
 
 |Reverse proxy stripping `Origin` header
-|Ensure the proxy passes the `Origin` header to the AI service.
+|Configure the proxy to pass the `Origin` header to the AI service.
 |===
 
 

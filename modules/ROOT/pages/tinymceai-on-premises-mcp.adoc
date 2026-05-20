@@ -49,7 +49,9 @@ The `headers` field is fixed at deploy time. Every MCP tool call uses the same c
 
 === MCP server example
 
-.Knowledge-base MCP server (Express)
+The following is an illustrative example showing the JSON-RPC message flow. Production MCP servers must implement the full https://modelcontextprotocol.io/specification/2025-11-25/basic/transports#streamable-http[Streamable HTTP transport specification].
+
+.Knowledge-base MCP server (illustrative)
 [%collapsible]
 ====
 [source,javascript]

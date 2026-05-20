@@ -632,6 +632,73 @@ Files are stored in the SQL database as blobs, capped at roughly 4 GB total. Thi
 
 
 
+== Connecting the AI service
+
+After provisioning the database and Redis, pass the connection details to the AI service container through environment variables.
+
+=== MySQL connection
+
+[source,bash]
+----
+-e DATABASE_DRIVER='mysql' \
+-e DATABASE_HOST='mysql' \
+-e DATABASE_PORT='3306' \
+-e DATABASE_USER='ai_service' \
+-e DATABASE_PASSWORD='STRONG_PASSWORD' \
+-e DATABASE_DATABASE='ai_service' \
+-e REDIS_HOST='redis' \
+-e REDIS_PORT='6379'
+----
+
+=== PostgreSQL connection
+
+[source,bash]
+----
+-e DATABASE_DRIVER='postgres' \
+-e DATABASE_HOST='postgres' \
+-e DATABASE_PORT='5432' \
+-e DATABASE_USER='ai_service' \
+-e DATABASE_PASSWORD='STRONG_PASSWORD' \
+-e DATABASE_DATABASE='ai_service' \
+-e DATABASE_SCHEMA='cs-on-premises' \
+-e REDIS_HOST='redis' \
+-e REDIS_PORT='6379'
+----
+
+Set `DATABASE_SCHEMA` to `public` if the `cs-on-premises` schema was not created. See <<postgresql-schema-prerequisite>>.
+
+=== Managed cloud with TLS
+
+When connecting to managed database services (Amazon RDS, Azure Database, Cloud SQL), add the TLS certificate path:
+
+[source,bash]
+----
+-e DATABASE_SSL_CA='/certs/rds-combined-ca-bundle.pem'
+----
+
+Mount the certificate into the container with `-v /local/certs:/certs:ro` in `docker run` or a volume mount in the Kubernetes pod spec.
+
+For Redis with authentication (ElastiCache, Azure Cache, Memorystore):
+
+[source,bash]
+----
+-e REDIS_PASSWORD='REDIS_AUTH_TOKEN' \
+-e REDIS_TLS='true'
+----
+
+For Redis Cluster mode, use `REDIS_CLUSTER_NODES` instead of `REDIS_HOST`:
+
+[source,bash]
+----
+-e REDIS_CLUSTER_NODES='node1.cache.amazonaws.com:6379,node2.cache.amazonaws.com:6379'
+----
+
+When `REDIS_CLUSTER_NODES` is set, `REDIS_HOST` is ignored.
+
+For a complete `docker run` command including all env vars, see the xref:tinymceai-on-premises-getting-started.adoc[Getting started] launch script or the xref:tinymceai-on-premises-production.adoc[Production deployment] manifests.
+
+
+
 == Verification
 
 === MySQL

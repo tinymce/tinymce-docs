@@ -125,6 +125,97 @@ tinymceai_token_provider: () => {
 
 
 
+== Framework-specific examples
+
+The examples below show the minimum configuration needed to connect the TinyMCE AI plugin to the on-premises service. Each uses the framework wrapper's `init` prop to pass the same options documented above.
+
+=== React
+
+[source,jsx]
+----
+import { Editor } from '@tinymce/tinymce-react';
+
+function MyEditor() {
+  return (
+    <Editor
+      licenseKey="T8LK:..."
+      init={{
+        plugins: 'tinymceai',
+        toolbar: 'undo redo | bold italic | tinymceai-chat tinymceai-review tinymceai-quickactions',
+        height: 500,
+        tinymceai_service_url: 'https://ai.yourcompany.com',
+        tinymceai_token_provider: () =>
+          fetch('/api/ai-token', { method: 'POST', credentials: 'include' })
+            .then((r) => r.json())
+            .then((data) => ({ token: data.token }))
+      }}
+    />
+  );
+}
+----
+
+=== Vue.js
+
+[source,html]
+----
+<template>
+  <Editor
+    license-key="T8LK:..."
+    :init="editorInit"
+  />
+</template>
+
+<script setup>
+import Editor from '@tinymce/tinymce-vue';
+
+const editorInit = {
+  plugins: 'tinymceai',
+  toolbar: 'undo redo | bold italic | tinymceai-chat tinymceai-review tinymceai-quickactions',
+  height: 500,
+  tinymceai_service_url: 'https://ai.yourcompany.com',
+  tinymceai_token_provider: () =>
+    fetch('/api/ai-token', { method: 'POST', credentials: 'include' })
+      .then((r) => r.json())
+      .then((data) => ({ token: data.token }))
+};
+</script>
+----
+
+=== Angular
+
+[source,html]
+----
+<!-- app.component.html -->
+<editor
+  [licenseKey]="'T8LK:...'"
+  [init]="editorInit"
+></editor>
+----
+
+[source,typescript]
+----
+// app.component.ts
+import { Component } from '@angular/core';
+
+@Component({ selector: 'app-root', templateUrl: './app.component.html' })
+export class AppComponent {
+  editorInit = {
+    plugins: 'tinymceai',
+    toolbar: 'undo redo | bold italic | tinymceai-chat tinymceai-review tinymceai-quickactions',
+    height: 500,
+    tinymceai_service_url: 'https://ai.yourcompany.com',
+    tinymceai_token_provider: () =>
+      fetch('/api/ai-token', { method: 'POST', credentials: 'include' })
+        .then((r: Response) => r.json())
+        .then((data: { token: string }) => ({ token: data.token }))
+  };
+}
+----
+
+For general framework setup (installing wrappers, SSR configuration, bundler setup), refer to the framework integration guides linked at the top of this page. Replace `T8LK:...` with the license key from the Tiny account representative.
+
+
+
 == Authenticating the token request
 
 The `tinymceai_token_provider` fetches a JWT from the application back end. How that back end authenticates the browser request depends on the application architecture.

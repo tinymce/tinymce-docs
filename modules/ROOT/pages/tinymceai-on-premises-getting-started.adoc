@@ -13,6 +13,13 @@ This guide sets up a fully working local stack in roughly five minutes on any ma
 
 The quick start is designed to validate the stack components before moving to a production deployment. Production engineers can review this section to understand the conceptual flow before continuing to xref:tinymceai-on-premises-production.adoc[Production deployment].
 
+=== Prerequisites
+
+* Docker 20.10{plus} (or Podman 4{plus})
+* Node.js 18{plus} and npm (for the demo token server)
+* A TinyMCE license key and container registry credentials (from the Tiny account representative)
+* At least one LLM provider API key (OpenAI, Anthropic, or Google)
+
 == Five-minute demo with Docker Compose
 
 === Create the project folder
@@ -96,15 +103,7 @@ PostgreSQL is equally supported. See xref:tinymceai-on-premises-database.adoc[Da
 
 [NOTE]
 --
-If any service in the stack needs to reach the host machine (for example a self-hosted Ollama running on the host), add an `extra_hosts` entry to the `ai-service` block in the compose file above:
-
-[source,yaml]
-----
-extra_hosts:
-  - "host.docker.internal:host-gateway"
-----
-
-Docker Desktop (macOS, Windows) and Podman 4{plus} auto-inject this alias. Native Linux Docker does not.
+If the AI service needs to reach the host machine (for example a self-hosted Ollama running on the host), add `--add-host=host.docker.internal:host-gateway` to the `docker run` command in the Launch section below. Docker Desktop (macOS, Windows) and Podman 4{plus} auto-inject this alias; native Linux Docker does not.
 --
 
 === Create the `.env` file
@@ -114,8 +113,8 @@ Docker Desktop (macOS, Windows) and Podman 4{plus} auto-inject this alias. Nativ
 # --- Required: provided by Tiny ---
 LICENSE_KEY=<paste-license-key-here>
 
-# --- Optional: only required when loading TinyMCE from cdn.tiny.cloud ---
-# Omit for self-hosted editor bundles.
+# --- Required for this demo (loads TinyMCE from cdn.tiny.cloud) ---
+# Omit only when using a self-hosted editor bundle with license_key.
 TINYMCE_API_KEY=<paste-api-key-here>
 
 # --- Required: strong secret used to log into the Management Panel ---
@@ -129,7 +128,7 @@ OPENAI_API_KEY=<paste-openai-key-here>
 # ANTHROPIC_API_KEY=<paste-anthropic-key-here>
 # GOOGLE_API_KEY=<paste-google-key-here>
 
-# --- Filled in after creating an environment (Step 7). Used by the token server, not the AI service. ---
+# --- Filled in after creating an environment (see "Create an environment and access key" below). Used by the token server, not the AI service. ---
 AI_ENV_ID=
 AI_API_SECRET=
 ----
@@ -158,9 +157,6 @@ The AI service runs as a standalone container outside of the Docker Compose stac
 
 Run from the same folder as the `.env` file:
 
-.Full launch script
-[%collapsible]
-====
 [source,bash]
 ----
 set -a && source .env && set +a
@@ -199,10 +195,10 @@ docker run --init -d -p 8000:8000 \
   -e REDIS_HOST='redis' \
   -e PROVIDERS="$PROVIDERS" \
   -e STORAGE_DRIVER='database' \
+  -e ALLOWED_ORIGINS='http://localhost:3000' \
   -e ENABLE_METRIC_LOGS='true' \
   registry.containers.tiny.cloud/ai-service-tiny:latest
 ----
-====
 
 For Podman, replace `docker run` with `podman run` and use a Podman pod instead of a compose network. See xref:tinymceai-on-premises-production.adoc[Production deployment] for Podman-specific guidance. See xref:tinymceai-on-premises-production.adoc#_podman_deployment[Podman deployment] for a full example.
 
@@ -411,9 +407,12 @@ curl -s -X POST http://localhost:8000/v1/conversations \
   -H "Authorization: Bearer $TOKEN" \
   -H "Content-Type: application/json" \
   -d '{"id":"verify-1","title":"Verification"}'
+----
 
 NOTE: The command below uses the built-in `agent-1` model. If `MODELS` has been explicitly configured, replace `agent-1` with the `id` of one of the configured models. See xref:tinymceai-on-premises-providers.adoc#models-required[Defining the model list].
 
+[source,bash]
+----
 curl -s -N -X POST http://localhost:8000/v1/conversations/verify-1/messages \
   -H "Authorization: Bearer $TOKEN" \
   -H "Content-Type: application/json" \
@@ -455,7 +454,7 @@ docker compose up -d --force-recreate
 
 # Recreate the standalone AI service:
 docker stop ai-service && docker rm ai-service
-# Then re-run the launch script from Step 5.
+# Then re-run the launch script from "Launch the AI service" above.
 ----
 
 For Kubernetes, update the Secret and trigger a rollout restart:

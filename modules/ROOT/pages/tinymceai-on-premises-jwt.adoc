@@ -62,7 +62,7 @@ Every token MUST contain the following claims.
 [cols=",,",options="header",]
 |===
 |Claim |Type |Description
-|`aud` |string |The Environment ID, copied from the Management Panel. UUID-shaped. Type *must be string*, not array; the verifier rejects array-shaped `aud` (the default in some JWT libraries) with `invalid-jwt-payload`.
+|`aud` |string |The Environment ID, copied from the Management Panel (for example `viOu8BnjJHb0HGK091p`). Type *must be string*, not array; the verifier rejects array-shaped `aud` (the default in some JWT libraries) with `invalid-jwt-payload`.
 |`iat` |number |Issued-at, seconds since epoch (UTC).
 |`exp` |number |Expiry, seconds since epoch (UTC). Recommend `iat {plus} 3600` for demos, `iat {plus} 900` for production. The server applies 60 seconds of clock-skew leeway; tokens up to 60 seconds past `exp` still verify.
 |`sub` |string |Unique, stable user identifier. Conversation history is isolated per-`sub`; do not reuse one `sub` across users or conversations will leak between them.
@@ -877,7 +877,7 @@ When debugging, start here. Most "auth failures" reflect wrong claim values rath
 
 [source,bash]
 ----
-TOKEN=$(curl -s -X POST http://localhost:3001/api/ai-token | jq -r .token)
+TOKEN=$(curl -s -X POST http://localhost:3000/api/ai-token | jq -r .token)
 
 curl -i https://ai.example.com/v1/conversations \
   -H "Authorization: Bearer $TOKEN" \
@@ -940,7 +940,7 @@ app.post('/api/ai-token', requireAuth, (req, res) => {
 
   const token = jwt.sign({
     aud: customer.envId,
-    sub: req.user.id,
+    sub: String(req.user.id),
     user: { name: req.user.name, email: req.user.email },
     auth: {
       ai: {

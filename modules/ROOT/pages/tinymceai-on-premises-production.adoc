@@ -96,6 +96,8 @@ When deploying for the first time or upgrading to a new version, start a single 
 
 == Podman deployment
 
+NOTE: This example uses `STORAGE_DRIVER='database'` for simplicity. For production workloads, use S3 or Azure Blob storage. See xref:tinymceai-on-premises-database.adoc#_file_storage[File storage] for options.
+
 The AI service works with Podman as an alternative to Docker. In Podman, containers within a pod share a network namespace, so use `127.0.0.1` instead of container names for hostnames.
 
 [source,bash]
@@ -159,6 +161,8 @@ stringData:
   management-secret: "EXAMPLE_MANAGEMENT_SECRET"
   db-password: "EXAMPLE_DB_PASSWORD"
   redis-password: "EXAMPLE_REDIS_PASSWORD"
+  storage-access-key: "EXAMPLE_S3_ACCESS_KEY_ID"
+  storage-secret-key: "EXAMPLE_S3_SECRET_ACCESS_KEY"
   providers: |
     {
       "openai": {
@@ -255,6 +259,8 @@ spec:
                 secretKeyRef:
                   name: ai-service-secrets
                   key: storage-secret-key
+            - name: ALLOWED_ORIGINS
+              value: "https://app.example.com"
             - name: ENABLE_METRIC_LOGS
               value: "true"
           readinessProbe:
@@ -361,7 +367,7 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: ai-service
-  minReplicas: 3
+  minReplicas: 2
   maxReplicas: 20
   metrics:
     - type: Resource
@@ -398,7 +404,8 @@ NOTE: The AI service is I/O-bound (waiting on LLM provider responses). CPU-based
         "command": ["CMD-SHELL", "wget -q --spider http://localhost:8000/health || exit 1"],
         "interval": 30,
         "timeout": 5,
-        "retries": 3
+        "retries": 3,
+        "startPeriod": 60
       },
       "secrets": [
         { "name": "LICENSE_KEY", "valueFrom": "arn:aws:secretsmanager:us-east-1:111122223333:secret:ai-license" },
@@ -416,6 +423,7 @@ NOTE: The AI service is I/O-bound (waiting on LLM provider responses). CPU-based
         { "name": "STORAGE_DRIVER", "value": "s3" },
         { "name": "STORAGE_BUCKET", "value": "example-ai-storage-bucket" },
         { "name": "STORAGE_REGION", "value": "us-east-1" },
+        { "name": "ALLOWED_ORIGINS", "value": "https://app.example.com" },
         { "name": "ENABLE_METRIC_LOGS", "value": "true" }
       ]
     }

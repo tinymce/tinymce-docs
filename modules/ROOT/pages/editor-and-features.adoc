@@ -60,7 +60,7 @@ If the network has a firewall or forward proxy that controls access to the inter
 
 * All URLs where the editor is deployed.
 * All URLs where the plugins are deployed.
-* `+*.tiny.cloud+` — covers all {cloudname} services, including the image proxy, link checker, spell checker, AI, and document converters.
+* `+*.tiny.cloud+` — covers all {cloudname} services, including the image proxy, link checker, spell checker, AI API, and document converters.
 
 Ensure the `+tiny-api-key+` and `+tinymce-api-key+` headers are retained while requesting the above URLs.
 

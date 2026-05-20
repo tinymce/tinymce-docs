@@ -1,9 +1,44 @@
-= The TinyMCE Content Security Policy guide
+= {productname} Content Security Policy and allowed domains
 :navtitle: Content Security Policies (CSP)
-:description: Information and options related to using TinyMCE with a Content Security Policy (CSP)
-:keywords: security, csp
+:description: Content Security Policy directives, firewall allowlisting, and proxy configuration for {productname} and {cloudname} services
+:keywords: security, csp, firewall, allowlist, proxy, whitelist
 
 include::partial$misc/general-csp.adoc[]
+
+[[firewall-and-proxy-allowlisting]]
+== Firewall and proxy allowlisting
+
+Organizations operating behind a firewall or forward proxy that restricts outbound internet access must allowlist {cloudname} domains. {productname} cloud-hosted features require the browser to make outbound HTTPS requests to these domains; no inbound access from {cloudname} is required.
+
+[[required-domains]]
+=== Required domains
+
+Allowlist the following wildcard domain to cover all {cloudname} services:
+
+`+*.tiny.cloud+`
+
+This single entry covers all cloud-hosted services, including but not limited to:
+
+* Editor loading and plugin delivery (`+cdn.tiny.cloud+`)
+* xref:tinymceai.adoc[TinyMCE AI] (`+tinymceai.api.tiny.cloud+`)
+* xref:importword.adoc[Import from Word] (`+importdocx.api.tiny.cloud+`)
+* xref:exportword.adoc[Export to Word] (`+exportdocx.api.tiny.cloud+`)
+* xref:exportpdf.adoc[Export to PDF] (`+exportpdf.api.tiny.cloud+`)
+* Image proxy (`+imageproxy.tiny.cloud+`)
+* Link checking (`+hyperlinking.tiny.cloud+`)
+* Spell checking (`+spelling.tiny.cloud+`)
+
+NOTE: Self-hosted deployments that do not connect to any {cloudname} services do not require this allowlisting. For self-hosted services such as on-premises document converters or AI, allowlist the domain where the self-hosted service is running instead.
+
+[[required-http-headers]]
+=== Required HTTP headers
+
+Ensure the proxy retains (does not strip) the following HTTP headers on requests to `+*.tiny.cloud+` domains:
+
+* `+tiny-api-key+`
+* `+tinymce-api-key+`
+
+These headers are required for API key validation and service authentication.
 
 == Content Security Policy related options
 

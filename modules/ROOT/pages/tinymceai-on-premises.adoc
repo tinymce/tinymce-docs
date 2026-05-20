@@ -151,16 +151,13 @@ For a first-time deployment, progress through the guides in order. Each guide ca
 |Connect to OpenAI, Anthropic, Google Gemini, Azure OpenAI, AWS Bedrock, Google Vertex AI, or any OpenAI-compatible endpoint (Ollama, vLLM, LM Studio). Custom model catalog and API key rotation.
 
 |xref:tinymceai-on-premises-jwt.adoc[JWT authentication]
-|HS256 signing model, required and optional claims, permissions reference, and token endpoint examples in 8 languages.
+|HS256 signing model, required and optional claims, permissions reference, token endpoint examples in 8 languages, and multi-tenant deployment patterns.
 
 |xref:tinymceai-on-premises-frameworks.adoc[TinyMCE integration]
 |Editor-side configuration: plugin options, token provider, authentication patterns, Cross-Origin Resource Sharing (CORS), and deployment checklists.
 
 |xref:tinymceai-on-premises-production.adoc[Production deployment]
 |Kubernetes manifests, AWS ECS task definitions, horizontal scaling, security hardening, rate limiting, observability, backup and recovery, and upgrades.
-
-|xref:tinymceai-on-premises-advanced.adoc[Advanced scenarios]
-|MCP server integration, web scraping and search, and multi-tenant patterns.
 
 |xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting]
 |Quick triage, container startup failures, JWT errors, LLM provider errors, editor issues, performance, and diagnostic recipes.

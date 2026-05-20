@@ -30,7 +30,7 @@ Alphabetized. Required-ness is marked relative to a minimum working deployment.
 |`LICENSE_KEY` |Yes |- |AI service license key (long string from Tiny).
 |`LLM_TELEMETRY_ENABLED` |No |`false` |Primary OpenTelemetry switch.
 |`LLM_TIMEOUT_MS` |No |180000 |Per-request large language model (LLM) timeout in ms. Raise for large self-hosted models.
-|`MCP_SERVERS` |No |- |JSON object; Model Context Protocol (MCP) server configuration. See xref:tinymceai-on-premises-advanced.adoc[Advanced scenarios].
+|`MCP_SERVERS` |No |- |JSON object; Model Context Protocol (MCP) server configuration. See xref:tinymceai-on-premises-mcp.adoc#mcp-integration[MCP integration].
 |`MODELS` |Yes (Azure, Bedrock, Vertex, openai-compatible); recommended for all providers |- |JSON array defining exposed models. Required for Azure, Bedrock, Vertex, and openai-compatible providers. Recommended for OpenAI, Anthropic, and Google direct. See xref:tinymceai-on-premises-providers.adoc[LLM providers].
 |`OTEL_DEBUG` |No |- |Verbose OpenTelemetry Protocol (OTLP) diagnostic logging.
 |`OTEL_EXPORTER_OTLP_TRACES_ENDPOINT` |If using OTEL |- |OTLP traces endpoint URL.
@@ -57,10 +57,10 @@ Alphabetized. Required-ness is marked relative to a minimum working deployment.
 |`STORAGE_LOCATION` |If using filesystem |- |Mount point for filesystem storage. Must be writable by the container user.
 |`STORAGE_REGION` |If using S3 |- |S3 region.
 |`STORAGE_SECRET_ACCESS_KEY` |If using S3 |- |S3 secret access key.
-|`WEBRESOURCES_ENABLED` |No |`false` |Enable web scraping endpoint forwarding.
+|`WEBRESOURCES_ENABLED` |No |`false` |Enable web scraping endpoint forwarding. See xref:tinymceai-on-premises-mcp.adoc#web-scraping-and-search[Web scraping and web search].
 |`WEBRESOURCES_ENDPOINT` |If web resources enabled |- |Scraper URL.
 |`WEBRESOURCES_REQUEST_TIMEOUT` |No |- |Scraper request timeout in ms.
-|`WEBSEARCH_ENABLED` |No |`false` |Enable web search forwarding.
+|`WEBSEARCH_ENABLED` |No |`false` |Enable web search forwarding. See xref:tinymceai-on-premises-mcp.adoc#web-scraping-and-search[Web scraping and web search].
 |`WEBSEARCH_ENDPOINT` |If web search enabled |- |Search URL.
 |`WEBSEARCH_HEADERS` |No |- |JSON object; extra headers sent to the search endpoint.
 |`WEBSEARCH_REQUEST_TIMEOUT` |No |- |Search request timeout in ms.

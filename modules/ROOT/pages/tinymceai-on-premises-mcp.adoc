@@ -1,0 +1,265 @@
+= MCP and web integrations
+:navtitle: MCP and web integrations
+:description: Model Context Protocol (MCP) server integration and web scraping/search configuration for TinyMCE AI on-premises
+:keywords: AI, on-premises, MCP, Model Context Protocol, web search, web scraping
+
+The AI service extends model capabilities through two integration points: the https://modelcontextprotocol.io/[Model Context Protocol] (MCP) for tool calling, and pluggable web endpoints for page fetching and search. Both features operate within AI conversations only.
+
+
+
+[[mcp-integration]]
+== Model Context Protocol (MCP)
+
+MCP allows the AI service to call external tools — internal wikis, API specifications, runbooks, contract databases, and compliance checkers — during conversations. The service connects to MCP servers over *Streamable HTTP transport*.
+
+[.text-center]
+image::tinymceai-on-premises/advanced-scenarios-fig-1.svg[MCP integration: TinyMCE rich text editor communicates with AI service which calls MCP server,width=100%]
+
+NOTE: MCP tools are available in AI *conversations* only. Reviews and quick actions do not invoke MCP tools.
+
+=== Configuration
+
+Set the `MCP_SERVERS` environment variable to a JSON object. Each key is a server identifier; each value describes the connection:
+
+[source,bash]
+----
+-e MCP_SERVERS='{
+  "knowledge-hub": {
+    "url": "http://host.docker.internal:3001/mcp",
+    "options": { "callToolTimeout": 30 }
+  }
+}'
+----
+
+[cols="1,3",options="header"]
+|===
+|Field |Description
+|`url` |HTTP endpoint of the MCP server (Streamable HTTP transport).
+|`headers` |Authentication headers sent with every request. Single shared token per server. See <<mcp-shared-token>>.
+|`tools.disabled` |Array of tool names to exclude from LLM access.
+|`options.callToolTimeout` |Per-tool-call timeout in seconds (default 60).
+|===
+
+TIP: On Linux Docker, add `extra_hosts: ["host.docker.internal:host-gateway"]` to the AI service compose entry to reach MCP servers running on the host machine.
+
+[[mcp-shared-token]]
+=== Shared-token authentication limitation
+
+The `headers` field is fixed at deploy time. Every MCP tool call uses the same credentials; there is no per-user MCP authentication path. If the MCP server requires per-user context, encode identity in the conversation prompt or in a header that the MCP server resolves to a per-user identity on its own side.
+
+=== MCP server example
+
+.Knowledge-base MCP server (Express)
+[%collapsible]
+====
+[source,javascript]
+----
+// knowledge-mcp-server.js
+const express = require('express');
+const app = express();
+app.use(express.json());
+
+const KNOWLEDGE_BASE = {
+  'api-guidelines': 'All REST APIs must use JSON, include pagination through Link headers, and return 4xx for client errors with a machine-readable error code.',
+  'deployment-process': 'Deployments require: 1) PR approval, 2) passing CI, 3) staging verification, 4) production canary (5% traffic for 30min), 5) full rollout.',
+  'security-policy': 'All user data must be encrypted at rest (AES-256) and in transit (TLS 1.3). PII requires additional field-level encryption.',
+};
+
+app.post('/mcp', (req, res) => {
+  const { method, id, params } = req.body;
+
+  if (method === 'initialize') {
+    return res.json({
+      jsonrpc: '2.0', id,
+      result: {
+        protocolVersion: '2024-11-05',
+        capabilities: { tools: {} },
+        serverInfo: { name: 'knowledge-hub', version: '1.0.0' }
+      }
+    });
+  }
+
+  if (method === 'tools/list') {
+    return res.json({
+      jsonrpc: '2.0', id,
+      result: {
+        tools: [{
+          name: 'search_knowledge_base',
+          description: 'Search the company knowledge base for policies, guidelines, and procedures',
+          inputSchema: {
+            type: 'object',
+            properties: {
+              query: { type: 'string', description: 'Search query' }
+            },
+            required: ['query']
+          }
+        }, {
+          name: 'get_api_spec',
+          description: 'Get the OpenAPI spec for an internal service',
+          inputSchema: {
+            type: 'object',
+            properties: {
+              service: { type: 'string', description: 'Service name (for example user-service, billing-api)' }
+            },
+            required: ['service']
+          }
+        }]
+      }
+    });
+  }
+
+  if (method === 'tools/call') {
+    const { name, arguments: args } = params;
+    if (name === 'search_knowledge_base') {
+      const query = (args?.query || '').toLowerCase();
+      const results = Object.entries(KNOWLEDGE_BASE)
+        .filter(([key]) => key.includes(query) || query.includes(key.split('-')[0]))
+        .map(([key, value]) => `##${key}\n${value}`)
+        .join('\n\n');
+      return res.json({
+        jsonrpc: '2.0', id,
+        result: { content: [{ type: 'text', text: results || 'No results found.' }] }
+      });
+    }
+    return res.json({
+      jsonrpc: '2.0', id,
+      result: { content: [{ type: 'text', text: 'Spec not found for: ' + args?.service }] }
+    });
+  }
+
+  res.json({ jsonrpc: '2.0', id, error: { code: -32601, message: 'Unknown method' } });
+});
+
+app.listen(3001, () => console.log('Knowledge MCP server on http://localhost:3001/mcp'));
+----
+====
+
+
+
+[[web-scraping-and-search]]
+== Web scraping and web search
+
+The AI service can forward web page fetches and search queries to external endpoints, enabling AI conversations to reference live web content.
+
+=== Configuration
+
+[source,bash]
+----
+-e WEBRESOURCES_ENABLED='true' \
+-e WEBRESOURCES_ENDPOINT='http://host.docker.internal:4000/scrape' \
+-e WEBRESOURCES_REQUEST_TIMEOUT='10000' \
+-e WEBSEARCH_ENABLED='true' \
+-e WEBSEARCH_ENDPOINT='http://host.docker.internal:4001/search' \
+-e WEBSEARCH_REQUEST_TIMEOUT='10000' \
+-e WEBSEARCH_HEADERS='{"Authorization":"Bearer search-api-key"}'
+----
+
+NOTE: A model must include `capabilities.webSearch: true` in its xref:tinymceai-on-premises-providers.adoc#models-required[`MODELS` entry] for the web search toggle to appear in the editor.
+
+=== Web scraping endpoint contract
+
+[cols="1,2",options="header"]
+|===
+|Direction |Payload
+|Request |JSON object with a `url` field (page to fetch).
+|Response |JSON object with `type` (`text/html` or `text/markdown`) and `data` (body content).
+|===
+
+.Request body
+[source,json]
+----
+{ "url": "https://example.com/article" }
+----
+
+.Response body
+[source,json]
+----
+{ "type": "text/html", "data": "<html><body><p>Example page body</p></body></html>" }
+----
+
+==== Scraper implementation example (Playwright)
+
+[source,javascript]
+----
+// scraper-service.js
+const { chromium } = require('playwright');
+const express = require('express');
+const app = express();
+app.use(express.json());
+
+app.post('/scrape', async (req, res) => {
+  const browser = await chromium.launch();
+  const page = await browser.newPage();
+  await page.goto(req.body.url, { waitUntil: 'networkidle' });
+  const content = await page.content();
+  await browser.close();
+  res.json({ type: 'text/html', data: content });
+});
+
+app.listen(4000);
+----
+
+=== Web search endpoint contract
+
+[cols="1,2",options="header"]
+|===
+|Direction |Payload
+|Request |JSON object with a `query` field (search string).
+|Response |JSON object with a `results` array; each item includes `url`, `text`, `title`, and optional `author`, `publishedAt`, and `favicon`.
+|===
+
+.Request body
+[source,json]
+----
+{ "query": "search string" }
+----
+
+.Response body
+[source,json]
+----
+{
+  "results": [
+    {
+      "url": "https://example.com/article",
+      "text": "Content snippet",
+      "title": "Article Title",
+      "author": "Author",
+      "publishedAt": "2026-04-30T10:00:00Z",
+      "favicon": "https://example.com/favicon.ico"
+    }
+  ]
+}
+----
+
+==== Search implementation example (SerpAPI)
+
+[source,javascript]
+----
+// search-service.js
+const express = require('express');
+const app = express();
+app.use(express.json());
+
+app.post('/search', async (req, res) => {
+  const response = await fetch(
+    `https://serpapi.com/search.json?q=${encodeURIComponent(req.body.query)}&api_key=${process.env.SERP_API_KEY}`
+  );
+  const data = await response.json();
+  const results = (data.organic_results || []).slice(0, 5).map(r => ({
+    url: r.link,
+    title: r.title,
+    text: r.snippet
+  }));
+  res.json({ results });
+});
+
+app.listen(4001);
+----
+
+
+
+== See also
+
+* xref:tinymceai-on-premises-providers.adoc[LLM providers] -- provider configuration and the `MODELS` catalog
+* xref:tinymceai-on-premises-reference.adoc[Reference] -- full environment variable reference including `MCP_SERVERS`, `WEBRESOURCES_*`, and `WEBSEARCH_*`
+* xref:tinymceai-on-premises-troubleshooting.adoc[Troubleshooting] -- general troubleshooting

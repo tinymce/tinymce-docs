@@ -1,7 +1,7 @@
 = JWT authentication for the on-premises AI service
 :navtitle: JWT authentication
 :description: JWT authentication for the TinyMCE AI on-premises service using HS256 symmetric signing
-:keywords: AI, on-premises, JWT, authentication, HS256
+:keywords: AI, on-premises, JWT, authentication, HS256, multi-tenant
 
 The on-premises AI service uses *HS256* (HMAC-SHA256, symmetric shared secret) for JSON Web Token (JWT) authentication. This is different from the Tiny Cloud AI service, which uses RS256.
 
@@ -833,17 +833,7 @@ For deployments that should expose history without allowing new conversations:
 
 === Multi-tenant: separate environments
 
-If tenants must be *fully isolated* (separate conversation history, separate access keys, separate audit logs), give each tenant its own Environment in the Management Panel, mint tokens with the tenant-specific `aud` and `AI_API_SECRET`, and route in the token endpoint:
-
-[source,javascript]
-----
-function envFor(tenantId) {
-  return {
-    envId:     process.env[`AI_ENV_ID_${tenantId}`],
-    apiSecret: process.env[`AI_API_SECRET_${tenantId}`],
-  };
-}
-----
+If tenants require full isolation (separate conversation history, separate access keys, separate audit logs), assign each tenant its own Environment in the Management Panel and mint tokens with tenant-specific `aud` and API Secret values. See <<multi-tenant-deployment>> for implementation details.
 
 
 
@@ -912,6 +902,79 @@ A `201 Created` confirms the full chain works: secret, claims, permissions, envi
 
 Short-lived tokens limit exposure if a token leaks through a browser extension, log capture, or error report. The editor re-requests a token as needed through `tinymceai_token_provider`, so long-lived tokens provide no practical benefit.
 
+
+
+[[multi-tenant-deployment]]
+== Multi-tenant deployment
+
+For SaaS platforms that serve multiple customers from a single AI service instance, Environments provide full tenant isolation.
+
+=== Architecture
+
+[.text-center]
+image::tinymceai-on-premises/advanced-scenarios-fig-2.svg[alt="Multi-tenant SaaS architecture with per-customer environments access keys and conversation isolation",width=100%]
+
+Each Environment provides:
+
+* Independent access keys with separate rotation schedules
+* Isolated conversation history (queries are partitioned by `sub` within an environment)
+* Separate usage tracking (through Langfuse or a custom metrics pipeline keyed by environment)
+
+=== Implementation
+
+. *Create one Environment per tenant through the Management Panel:*
++
+* Customer A -> Environment `env-customer-a`
+* Customer B -> Environment `env-customer-b`
+* Customer C -> Environment `env-customer-c`
+
+. *Route token generation to the correct Environment:*
++
+.Multi-tenant token endpoint
+[%collapsible]
+====
+[source,javascript]
+----
+app.post('/api/ai-token', requireAuth, (req, res) => {
+  const customer = getCustomerConfig(req.user.organizationId);
+
+  const token = jwt.sign({
+    aud: customer.envId,
+    sub: req.user.id,
+    user: { name: req.user.name, email: req.user.email },
+    auth: {
+      ai: {
+        permissions: getPermissionsForPlan(customer.plan)
+      }
+    }
+  }, customer.apiSecret, { algorithm: 'HS256', expiresIn: '1h' });
+
+  res.json({ token });
+});
+
+function getPermissionsForPlan(plan) {
+  switch (plan) {
+    case 'enterprise':
+      return ['ai:conversations:*', 'ai:models:agent', 'ai:actions:system:*', 'ai:reviews:system:*'];
+    case 'pro':
+      return ['ai:conversations:*', 'ai:actions:system:*'];
+    case 'basic':
+      return ['ai:actions:system:*'];
+  }
+}
+
+function getCustomerConfig(tenantId) {
+  return {
+    envId:     process.env[`AI_ENV_ID_${tenantId}`],
+    apiSecret: process.env[`AI_API_SECRET_${tenantId}`]
+  };
+}
+----
+====
+
+. *Result:* Full data isolation between tenants, with feature gating derived from subscription tier.
+
+CAUTION: Conversation history is isolated by the `sub` claim within each Environment. Reusing a single `sub` value for multiple users within one Environment causes those users to share conversation history. Always use a stable, unique-per-user identifier (such as an internal user ID) as the `sub` value.
 
 
 
